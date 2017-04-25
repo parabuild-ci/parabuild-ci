@@ -1,0 +1,141 @@
+<!-- Copyright 2003 Zelix Pty Ltd (ABN 47 078 740 093) -->
+<html>
+<head>
+<title>Zelix KlassMaster - Executing a ZKM Script</title>
+   <meta name="keywords" content="java obfuscator,java code obfuscator,obfuscation">
+   <meta name="description" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <meta name="classification" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <link rel=stylesheet href="../ZKM.css" TYPE="text/css">
+</head>
+<body background="../images/small-white-mist1.jpg" bgcolor="#E1E1E1">
+<center><a href="index.html"><img src=../images/ZKM_b4.gif alt="Zelix KlassMaster" width=264 height=62 border=0></a></center>
+<hr>
+<center>
+<table width=770 border=0>
+   <tr>
+      <td colspan=2>
+         <h1>Executing a ZKM Script File</h1>
+         ZKM Scripts are scripts that have been written in the <a href=langZKMScript.html>ZKM Script language</a> that
+         automate the process of using Zelix KlassMaster. They allow you to integrate the use of Zelix KlassMaster
+         into your development procedures. Basic ZKM Scripts can be created interactively using the
+         <a href=toolsZKMScriptHelper.html>ZKM Script Helper</a> tool. More advanced scripts can be created using a 
+         basic text editor.
+         <h3>Basic Usage</h3>
+         The basic usage is: <code><b>java -jar ZKM.jar [[-options] &lt;scriptFileName&gt;]</b></code>
+         <p>
+         If no options or script file name are present then the GUI interface will be started. 
+         To execute a ZKM Script you simply pass the name of the ZKM Script file to Zelix KlassMaster.
+         <p>
+         For example <code><b>java ZKM MyScript.txt</b></code> will execute the <code>MyScript.txt</code> ZKM Script file. 
+         Informative messages are written to standard out and the log file. Error messages are written to the standard error
+         stream and the log file.
+         
+<h3>The options</h3>
+         <table border=1>
+            <tr>
+               <td>
+                  <b>-?</b>
+               </td>
+               <td>
+                  Show the usage
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <b>-p</b>
+               </td>
+               <td>
+                  Parse the ZKM Script file and display any errors but don't execute the script. This option is handy for 
+                  syntax checking a long and complicated script.
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <b>-v</b>
+               </td>
+               <td>
+                  Verbose. Display extra information in the log file.
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <b>-l&nbsp;&lt;logFileName&gt;</b>
+               </td>
+               <td>
+                  Use the specified file as the log file to which messages should be written. May be relative or absolute. 
+                  If the path is relative, then the file will be written to the default directory.  
+                  By default the file "ZKM_log.txt" in the default directory will be used.
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <b>-tl&nbsp;&lt;trimLogFileName&gt;</b>
+               </td>
+               <td>
+                  Use the specified file as the trim log file. May be relative or absolute. 
+                  If the path is relative, then the file will be written to the default directory.  
+                  By default the file "ZKM_TrimLog.txt" in the default directory will be used.
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <b>-de&nbsp;&lt;defaultExcludeFileName&gt;</b>
+               </td>
+               <td>
+                  Specifies the path name of the file containing the default name exclusions. May be relative or absolute. 
+                  If the path is relative, Zelix KlassMaster will look in the default directory.  
+                  By default Zelix KlassMaster will look in the default directory for the file "defaultExclude.txt".
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <b><nobr>-dte&nbsp;&lt;defaultTrimExcludeFileName&gt;</nobr></b>
+               </td>
+               <td>
+                  Specifies the path name of the file containing the default trim exclusions. May be relative or absolute. 
+                  If the path is relative, Zelix KlassMaster will look in the default directory.  
+                  By default Zelix KlassMaster will look in the default directory for the file "defaultTrimExclude.txt".
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <b>-dd&nbsp;&lt;defaultDirectoryName&gt;</b>
+               </td>
+               <td>
+                  Specifies the path name of the directory which will be used as the default directory. May be relative or absolute. 
+                  If the path is relative, then it will be relative to the current working directory.
+                  By default, the default directory will be the current working directory.
+               </td>
+            </tr>
+            <tr>
+               <td valign="top">
+                  <b>&lt;ZKMScriptFileName&gt;</b>
+               </td>
+               <td>
+                  The name of the ZKM Script file to execute. May be relative or absolute. 
+                  If the path is relative, then it will be relative to the current working directory.
+               </td>
+            </tr>
+         </table>
+      </td>
+   </tr>
+   <tr>
+      <td colspan=2>
+         &nbsp;
+      </td>
+   </tr>
+</table>
+</center>
+<hr>
+<center>
+<table>
+   <tr>
+      <td>
+         <a href=index.html><img src=../images/uarrw.gif alt="Documentation Table of Contents"></a>
+      </td>
+   </tr>
+</table>
+</center>
+Copyright &copy; 2003 <a href="mailto:WebMaster@zelix.com"><font size=-1>Zelix Pty Ltd</font></a> (ABN 47 078 740 093)
+</body>
+</html>

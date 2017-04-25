@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Setting Up a Project Database</TITLE>
+<!--<SetupProjects.html>-->
+<!--<toc parent="getting_started_for_administrators" label="Setting Up a Project Database" anchor="SetupProjects" sortkey="02">-->
+<!--<index parent="project_databases" label="setting up" anchor="SetupProjects">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Getting Started\nGetting Started for Admininstrators\nSetting Up a Project Database");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="SetupProjects"></A>Setting Up a Project Database</H1>
+<P>If you have not read the help topic, <a href="planproject.html">Planning a Project Database</a>, we recommend you read this before setting up a <a href="aboutprjdb.html">project database</a>.
+<P>
+The basic steps for setting up a project database are:
+</P>
+<OL>
+<LI>
+<a href="createprjdb.html">Create a project database</a>, which defines where the archives for the project are located. You can have Version Manager create a new <a href="emptyprojectdb.html">empty project database</a> the first time you run the program. You can use this project database rather than create a new one.
+<br><br>
+<LI>
+<a href="createproject.html">Create projects</a> within the database (optional), which define the workfile location for the files in the project. If you are setting up a project for existing files, you do not have to create a project. You can simply add directories to the project database, and Version Manager will create the project for you. You must create a project only if you want to add individual files to a project or to organize files in a manner other than the current workfile structure.
+Copy files across projects to share archives (optional).
+<br>
+<LI><a href="addfiles.html">Add the workfiles</a> to the project database or project.<br><br>
+<LI><a href="copyversionedfile.html">Copy  files across projects to share archives</a> (optional).
+<br><br>
+<LI><a href="copyvm5_3proj.html">Upgrade</a> 5.3/6.0 projects (optional).
+</OL>
+<P>
+These steps create a basic project. After you have a basic model in place, you can <a href="configureoverview.html">configure the project database</a>, <a href="createworkspaces.html">define workspaces</a>, <a href="usingsecurity.html">add security</a>, <a href="definingpromomodel.html">define promotion models</a>, and much more.
+</P>
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a href="aboutprjdb.html">About Project Databases</a></TD>
+		<TD><A HREF="planproject.html">Planning a Project Database</A></TD>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

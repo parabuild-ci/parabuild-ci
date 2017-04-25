@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Login Sources</TITLE>
+<!--<loginsources.html>-->
+<!--<index parent="login_sources" label="about" anchor="loginsources">-->
+<!--<index parent="options" label="login sources" anchor="loginsources">-->
+<!--<index parent="configuration_options" label="login sources" anchor="loginsources">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="loginsources"></A>Login Sources</H1>
+<P>
+Before users begin using Serena ChangeMan Version Manager, you should set up Version Manager to obtain user identification from a login source. A login source is an operating system, network, or utility that Version Manager uses to obtain user identification. Version Manager uses the user identification it obtains as the author for archive operations.
+</P>
+<P>When you use a Version Manager command, the program attempts to obtain user identification from each of the login sources that you specify within Version Manager. If Version Manager cannot obtain user identification, it displays an error message and terminates. If a user ID can be obtained and no access control databases are enabled, any user can access the archives.
+</P>
+<P>
+<b>NOTE</b> A Login dialog box appears if VLOGIN is set as your login source. Canceling the login from this dialog box cancels the login operation. Additional login sources are not searched and you cannot log in to the project database or project.</P>
+<p>
+Valid login sources are:
+</P>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR><TD><b>Host ID</b></TD>
+	<TD>Host operating system. Use this source with systems that provide a user identification mechanism, such as UNIX, or for environments in which more than one network is in use. Use this option on UNIX and Windows systems. The directive for this option is LogIn=HOST.</TD>
+</TR>
+<TR><TD><b>LDAP ID</b></TD>
+	<TD>Lightweight Directory Access Protocol (LDAP). Use this source to authenticate user IDs and passwords against an LDAP server. Once authenticated against LDAP, user IDs are passed to the access control database, if one is in effect. The passwords, if any, in the access control database are ignored. The directive for this option is LogIn=LDAP.<br><br>LDAP does not work with the command-line interface (CLI). If LDAP is the first login source specified, the CLI will attempt to use the next login source. If no other login sources are specified, the CLI command will fail.
+<br><br><b>NOTE</b> Microsoft Active Directory uses LDAP.
+	</TD>
+</TR>
+<TR><TD><b>Login Dialog</b></TD>
+<TD>The Version Manager desktop client login utility. This source requires users to enter a password before they can use Version Manager. To use password protection, an access control database must be defined. This source applies only to the operation of the desktop client. The directive for this option is LogIn=VLOGIN.</TD>
+</TR>
+<TR><TD><b>Netware ID</b></TD>
+<TD>Novell NetWare (Windows only). Use this source to obtain user IDs from a Novell NetWare server, rather than Windows. The directive for this option is LogIn=NETWARE.</TD>
+</TR>
+<TR><TD><b>VCS ID</b></TD>
+<TD>The user&rsquo;s PVCS ID, which Version Manager derives from the value of the VCSID environment variable. The directive for this option is LogIn=VCSID.<BR>
+Be aware that using VCSID as a source for user identification is not secure. Users can circumvent security by logging in as another user or resetting the value of the VCSID environment variable.</TD>
+</TR>
+<TR><TD><b>WNet ID</b></TD>
+<TD>Microsoft Windows networks. Version Manager obtains the user ID from the Microsoft WNET API. The directive for this option is LogIn=WNET.</TD>
+</TR>
+</TABLE>
+
+<p>When you execute Version Manager, it searches for a user ID according to the order in which you specified the login sources. Therefore, you must consider the security limitations of your operating systems and login sources when specifying the login source order to ensure that your most vulnerable systems are protected.</p>
+<p><b>NOTE</b> A Login dialog box appears if VLOGIN or LDAP is set as your login source. Canceling the login from this dialog box cancels the login operation. Additional login sources are not searched and you cannot log in to the project database or project.</p>
+<p><b>For UNIX users:</b> The UNIX GUI and PCLI support only the Host ID, LDAP ID, Login Dialog (PCLI uses the PCLI_ID environment variable or the -id switch rather than a dialog), and VCS ID login sources. The UNIX CLI supports only Host ID and VCS ID. The default value is Host ID.</p>
+<p><b>For desktop client users:</b> When Version Manager obtains a user ID, the program can check the access control database to see if the user ID exists there. If the user ID does not exist, you can configure Version Manager to automatically create the user ID in the access control database and assign privileges to the user.</p>
+<p>This is a useful feature for organizations that have not yet decided to use access control databases. If at some point the organization decides to enable access control, the users are already defined--thus, reducing the time it would take to set up security. Also, this is a simple way to allow guest accounts with restricted privileges.</p>
+<p>User Ids can be either case-sensitive or case-insensitive; however, you cannot define duplicate user IDs that differ only in case. The directive that controls case sensitivity is CASE.</p>
+
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a href="setloginsources.html">Setting Login Sources</a></TD>
+		<TD><a href="settingldapauthenticationoptions.html">Setting LDAP Authentication Options</a></TD>
+	</TR>
+	<TR>
+		<TD><a href="embedloginsources.html">Embedding Login Sources</a></TD>
+		<TD></TD>
+	</TR>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

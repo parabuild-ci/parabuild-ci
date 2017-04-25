@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Planning a Project Database</TITLE>
+<!--<PlanProject.html>-->
+<!--<toc parent="getting_started_for_administrators" label="Planning a Project Database" anchor="PlanProject" sortkey="01">-->
+<!--<index parent="project_databases" label="planning" anchor="PlanProject">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Getting Started\nGetting Started for Admininstrators\nPlanning a Project Database");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="PlanProject"></A>Planning a Project Database</H1>
+<P>Typically, a Serena ChangeMan Version Manager <a href="aboutprjdb.html">project database</a>, which includes the archives, is on a networked file system and developers work on files locally. The workflow is as follows:</P>
+<img src="../graphics/workflow.gif" border="0" alt>
+<P>Before you define a project database, you need to know the following:</P>
+<UL>
+<LI>Where the <a href="aboutworkfiles.html">workfiles</a>, or source files, that you want to place under source control are located.
+<LI>Where you want the archives for the files to be located, known as the <a href="archivelocation.html">archive location</a>.
+<LI>
+Where, by default, you want users to edit the workfiles. Often the <a href="workfilelocation.html">workfile location</a> is the directory in which the files originally reside.
+<LI>Whether or not any of the files that you are placing under source control are <a href="sharedarchives.html">shared</a> by more than one project or subproject.
+<LI>Whether or not you have existing (5.3/6.0) Version Manager archives and projects that you want to <a href="about_copyvm5_3proj.html">upgrade</a> to the new release of Version Manager.
+<LI>Whether or not your environment is <a href="crossplatform.html">cross-platform</a>.
+</UL>
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a href="aboutprjdb.html">About Project Databases</a></TD>
+		<TD><a href="setupprojects.html">Setting Up a Project Database</a></TD>
+	<TR>
+		<TD><A HREF="aboutprojects.html">About Version Manager Projects</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

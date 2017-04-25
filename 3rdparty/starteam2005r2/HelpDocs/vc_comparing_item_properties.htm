@@ -1,0 +1,186 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Comparing Item Properties</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=copyright value="Copyright© 1995-2003, Borland Software Corporation. All rights reserved.">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=534>
+<meta name=layout-width content=702>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<!--(Scripts)=======================================================-->
+
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="./ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Working with the Application\nComparing and Merging\nComparing and Merging Views\nWorking with the View Comparison Utility\nComparing Folder and Item Properties");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Comparing Folder and Item Properties</h1>
+
+<p class=Body>If you have Enterprise Advantage, you can use the View Comparison 
+ utility to compare the properties of items other than files &#8211; 
+ that is, folders, change requests, requirements, topics, and tasks. If 
+ you have other versions of StarTeam, you will not be able to make all 
+ of these comparisons.</p>
+
+<p class=Body>Remember that tasks and topics never branch. Therefore, if 
+ a topic exists in more than one project view with a current configuration, 
+ changing the topic in one view changes it in the other views. As a result, 
+ your source and target views may never contain a task or topic that needs 
+ merging, unless you have reconfigured at least one of the views.</p>
+
+<p class=Proc>To compare items other than files:</p>
+
+<ol>
+  <li class=kadov-p-CList-1> 
+    <p class=List-1>Open the view to be used as the source.</p>
+  </li>
+  <li class=kadov-p-CList-1> 
+    <p class=List-1>Click <span style="font-weight: bold;"><B>View &gt; Compare/Merge</B></span> 
+      to select the view that will serve as the target. </p>
+  </li>
+  <li class=kadov-p-CList-1> 
+    <p class=List-1>Select the appropriate tab from the lower pane of the View 
+      Comparison window.</p>
+  </li>
+  <li class=kadov-p-CList-1> 
+    <p class=List-1>Select a pair of folders or items from the item pane. Remember 
+      that items that do <span style="font-weight: bold;"><B>not</B></span> exist in 
+      both views cannot be compared. </p>
+  </li>
+  <li class=kadov-p-CList-1> 
+    <p class=List-1>Do one of the following:</p>
+  </li>
+  <ul>
+    <li class=kadov-p-CBullet-1-Indent> 
+      <p class=Bullet-1-Indent>From the Item or context menu, select <span style="font-weight: bold;"><B>Compare 
+        Items</B></span>.</p>
+    </li>
+    <li class=kadov-p-CBullet-1-Indent> 
+      <p class=Bullet-1-Indent>Click the <span style="font-weight: bold;"><B>Compare 
+        Items</B></span> button on the toolbar.</p>
+    </li>
+  </ul>
+  <li class=kadov-p-CList-1> 
+    <p class=List-1>If a selected pair of items has the same properties in both 
+      the source and target folders, the application displays a message stating 
+      that the items are identical. </p>
+  </li>
+  <p class=List-1-text>An icon that shows two pieces of blank paper, side-by-side, 
+    identifies identical items unless <span style="font-weight: bold;"><B>Use merge 
+    tracking for merge resolution</B></span> has been selected. If this option is 
+    selected, the same icon indicates that the properties of the two items have 
+    not changed since the last recorded merge in either direction. Note that this 
+    option works as a toggle. Right-click on an item in the lower pane, and choose 
+    <b>Display &gt; Use merge tracking for merge resolution</b>. </p>
+  <li class=kadov-p-CList-1> 
+    <p class=List-1>If a selected pair of items has different properties in both 
+      folders, the <span style="font-style: italic;"><I>Compare</I></span> dialog displays 
+      the properties of the items side-by-side. Properties that differ appear 
+      in boldface type.</p>
+  </li>
+  <li class=kadov-p-CList-1> 
+    <p class=List-1>Use the <span style="font-weight: bold;"><B>&lt;&lt;Previous 
+      and Next&gt;&gt;</B></span> buttons to move from one pair of items to the next.</p>
+  </li>
+</ol>
+
+<p class=Body><span style="font-weight: bold;"><B>Note:&nbsp;</B></span>Custom 
+ fields appear in the dialogs that compare properties, unless the fields 
+ are disabled.</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

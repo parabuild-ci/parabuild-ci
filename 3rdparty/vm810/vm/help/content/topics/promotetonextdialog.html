@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Promote Dialog Box</TITLE>
+<!--<promotetonextdialog.html>-->
+<!--<index parent="promoting" label="Promote dialog box" anchor="promotetonext">-->
+<!--<index parent="versioned_files" label="Promote dialog box" anchor="promotetonext">-->
+<!--<index parent="promotion_groups" label="Promote dialog box" anchor="promotetonext">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiPromoteToNextDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="promotetonext"></A>Promote</H1>
+<P>Use the Promote dialog box (Actions | Promotion Group | Promote) to promote selected items to the next level in the promotion model hierarchy. You can promote selected versioned files, projects, or project databases.</P>
+
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD COLSPAN=2><CENTER><B>General Tab</B></CENTER></TD>
+	</TR>
+	<TR>
+		<TD><b>Promote From</b></TD>
+		<TD><!--<control name="PromoteToNext.PROMOGROUP_LB">-->
+		Select the name of promotion group assigned to the selected items.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>OK to move across branches</b></TD>
+		<TD><!--<control name="PromoteToNext.PROMOTE_ACROSS_BRANCHES_CB">-->
+		Select to allow reassignment of a promotion group across branches. Otherwise, the promotion will fail if a revision on another branch is already assigned the next highest promotion group.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Include files in subprojects</b></TD>
+		<TD><!--<control name="PromoteToNext.RECURSIVE_CB">-->
+		This field is available only when the selected item is a project or project database. Select to promote all projects and files included in the project or project database.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=2><CENTER><B>Selected Files Tab</B></CENTER></TD>
+	</TR>
+	<TR>
+		<TD><B>File list </B></TD>
+		<TD><!--<control name="Files.FILES_TREE">-->
+		Review the selected files or projects that you want to promote to the next level.
+		<!--</control>--></TD></TR>
+		<TR>
+		<TD><B>Properties button</B></TD> <TD><!--<control name="Files.PROPERTIES_BUTTON">-->
+		Click to display information on the item selected. If you select a project, you can view project  information and workspace settings. If you select a versioned file, you can view versioned file information and workspace settings.
+		<!--</control>--></TD>
+		</tr>
+	</TABLE>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="promotetonext.html">Promoting to the Next Level</A></TD>
+		<TD><A HREF="aboutprommodels.html">About Promotion Models</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="prommodelrules.html">Promotion Modeling Rules</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

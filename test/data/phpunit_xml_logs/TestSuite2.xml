@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="FailureErrorTest" tests="2" failures="1" errors="1" time="0.013603">
+    <testcase name="testFailure" class="FailureErrorTest" time="0.011872">
+      <failure message="" type="PHPUnit_Framework_AssertionFailedError"></failure>
+    </testcase>
+    <testcase name="testError" class="FailureErrorTest" time="0.001731">
+      <error message="" type="Exception"></error>
+    </testcase>
+  </testsuite>
+</testsuites>

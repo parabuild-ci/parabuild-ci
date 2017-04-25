@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project>
+
+    <pomVersion>3</pomVersion>
+
+    <id>rome-samples</id>
+
+    <name>Rome samples</name>
+
+    <groupId>rome</groupId>
+
+    <currentVersion>0.7</currentVersion>
+
+    <organization>
+        <name>Sun Microsystems</name>
+        <url>http://java.sun.com/</url>
+    </organization>
+
+    <inceptionYear>2004</inceptionYear>
+    <package>com.sun.syndication.samples</package>
+
+    <shortDescription>Rome v0.4 Tutorials sample code</shortDescription>
+
+    <dependencies>
+        <dependency>
+            <groupId>jdom</groupId>
+            <artifactId>jdom</artifactId>
+            <version>1.0</version>
+            <properties>
+                <war.bundle>true</war.bundle>
+            </properties>
+        </dependency>
+        <dependency>
+            <groupId>rome</groupId>
+            <artifactId>rome</artifactId>
+            <version>0.7</version>
+            <properties>
+                <war.bundle>true</war.bundle>
+            </properties>
+        </dependency>
+        <dependency>
+            <groupId>servletapi</groupId>
+            <artifactId>servletapi</artifactId>
+            <version>2.3</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <sourceDirectory>src/java</sourceDirectory>
+
+        <resources>
+            <resource>
+                <directory>src/java</directory>
+                <includes>
+                    <include>rome.properties</include>
+                </includes>
+            </resource>
+        </resources>
+
+    </build>
+
+</project>

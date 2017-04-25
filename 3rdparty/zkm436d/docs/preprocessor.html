@@ -1,0 +1,116 @@
+<!-- Copyright 2003 Zelix Pty Ltd (ABN 47 078 740 093) -->
+<html>
+<head>
+<title>Zelix KlassMaster - The ZKM Preprocessor</title>
+   <meta name="keywords" content="java obfuscator,java code obfuscator,obfuscation">
+   <meta name="description" CONTENT="Zelix KlassMaster preprocessor">
+   <meta name="classification" CONTENT="Zelix KlassMaster preprocessor">
+   <link rel=stylesheet href="../ZKM.css" TYPE="text/css">
+</head>
+<body background="../images/small-white-mist1.jpg" bgcolor="#E1E1E1">
+<center><a href="index.html"><img src=../images/ZKM_b4.gif alt="Zelix KlassMaster" width=264 height=62 border=0></a></center>
+<hr>
+<center>
+<table width=770 border=0>
+   <tr>
+      <td>
+         <h1>The ZKM Preprocessor</h1>
+         The ZKM preprocessor processes a ZKM Script before it is parsed and executed. The preprocessor
+         <ul>
+            <li>actions <a href=#variable>system variables</a> by replacing them with their equivalent value.
+            <li>actions <a href=#include>include directives</a> by replacing them with the contents of the file specified by the directive.
+         </ul>
+         System variables are replaced before include directives are actioned so an include directive may make use of a system variable.
+         Also, an included file may itself contain include directives.
+         <p>
+         Note that if you start Zelix KlassMaster using the <code>&quot;<a href="runZKMScript.html">-v</a>&quot;</code> (ie. verbose) parameter then 
+         <ul>
+            <li>the contents of the properties as delivered to Zelix KlassMaster and
+            <li>the expanded ZKM Script
+         </ul>
+         will be written to the Zelix KlassMaster log file which is named <code>ZKM_log.txt</code> by default. This can be very handy for debugging purposes.
+
+         <h3><a name="variable">System Variables</a></h3>
+            A system variable has the form 
+            <p>
+            <code><b>&#37;&lt;variable_name&gt;&#37;</b></code>
+            <p>
+            The preprocessor looks
+            <ol>
+               <li>firstly in the extra properties (if they were passed in via the <a href="buildToolApi.html">build tool API</a>) and then,
+               <li>the System properties
+            </ol>
+            for a key equal to the variable name.  If the key
+            exists then the preprocessor replaces the variable with the corresponding value retrieved from the properties.
+            <p>
+            For example, if there is a key <code>my_home</code> in the System properties associated with the value <code>/projects/home</code>
+            then the preprocessor takes the script fragment
+            <p>
+            <code>open "&#37;my_home&#37;/*";</code>
+            <p>
+            and converts it to
+            <p>
+            <code>open "/projects/home/*";</code>
+            <p>System variables can refer to the standard contents of System properties like <code>java.home</code> as <code>&#37;java.home&#37;</code>. 
+            You can add your own variables to the System properties by using the <code><b>java -D&lt;variable_name&gt;=&lt;variable_value&gt;</b></code> syntax
+            when you start Zelix KlassMaster.  For example:
+            <p>
+            <code>java -Dmy_home=/projects/home -jar ZKM.jar</code>
+            <p>
+            Note that the command line processor of your operating system may require to use slightly different syntax.  For example, in the Windows environment,
+            if you are executing Zelix KlassMaster through a batch or command file, then you will need to enclose the name value pair in double quotes as follows.
+            <p>
+            <code>java -D"my_home=/projects/home" -jar ZKM.jar</code>
+            <p>To refer to an existing environment variable such as <code>PATH</code> use the following syntax to put the value into System properties.
+            <table border=1>
+               <tr>
+                  <td>
+                     In Windows
+                  </td>
+                  <td>
+                     <code>java -D"PATH=&#37;PATH&#37;"</code>
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     In Unix
+                  </td>
+                  <td>
+                     <code>java -DPATH=$PATH</code>
+                  </td>
+               </tr>
+            </table>
+         <h3><a name="include">Include Directives</a></h3>
+            An include directive has the form 
+            <p>
+            <code><b>&lt;&#37; include "&lt;file_name&gt;" &#37;&gt;</b></code> 
+            <p>
+            where <code><b>&lt;file_name&gt;</b></code> is the name of the file to be included. 
+            The file name can be relative (to the current directory) or absolute. For example, the include directive
+            <p>
+            <code>&lt;&#37; include "fragment.txt" &#37;&gt;</code>
+            <p>
+            Will be replaced by the contents of the file "fragment.txt". As mentioned above, include directives can make use of 
+            system variables as in the following example:
+            <p>
+            <code>&lt;&#37; include "&#37;my_home&#37;/fragment.txt" &#37;&gt;</code>
+   </tr>
+   <tr>
+      <td>
+         &nbsp;
+      </td>
+   </tr>
+</table>
+<hr>
+<center>
+<table>
+   <tr>
+      <td>
+         <a href=index.html><img src=../images/uarrw.gif alt="Documentation Table of Contents"></a>
+      </td>
+   </tr>
+</table>
+</center>
+Copyright &copy; 2003 <a href="mailto:WebMaster@zelix.com"><font size=-1>Zelix Pty Ltd</font></a> (ABN 47 078 740 093)
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Understanding Views</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=copyright value="Copyright© 1995-2003, Borland Software Corporation. All rights reserved.">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=608>
+<meta name=layout-width content=707>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<!--(Scripts)=======================================================-->
+
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="./ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Working with the Application\nManaging Views\nUnderstanding Views");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Understanding Views</h1>
+
+<p class=Body>When you create a project, you also create an initial, or 
+ root, view of that project. The initial view has the same name as the 
+ project, although you can change either or both names later. It contains 
+ a root folder and a hierarchy of child folders. The root folder also has 
+ the same name as the project and view by default.</p>
+
+<p class=Body>The root view is called a dynamic view, because it shows 
+ all items in the project as they change, making it ideal for collaborative 
+ development. It displays when you highlight <span style="font-weight: bold;"><B>View 
+ &gt; Select Configuration &gt; Current Configuration</B></span> on the menu. 
+ </p>
+
+<p class=Body>Users with administrative privileges can create the other 
+ types of views in StarTeam, such as:</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1><span style="font-weight: bold;"><B>Branch 
+ All</B></span> views. In these views, which are based on a configuration of 
+ the current view, all items are set to branch when they are modified. 
+ After the view is created, however, this behavior can be changed for individual 
+ items. Branching views can be used to modify the items found in a specific 
+ view without affecting these items in other views. They are typically 
+ used to create and support a maintenance baseline.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1><span style="font-weight: bold;"><B>Branch 
+ None</B></span> views. In these views, which are also based on a configuration 
+ of the current view, none of the items are set to branch on change when 
+ they are modified. An item cannot branch until its behavior is changed. 
+ Changes to an item show up in the parent view if &nbsp;the 
+ configuration of the parent view is current (floating), but if it &nbsp;is 
+ not current, items become read-only.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1><span style="font-weight: bold;"><B>Reference</B></span> 
+ views. These read/write views reference a subset of items found in the 
+ current configuration of the parent view. They often contain only the 
+ items of interest to a specific group of workers or an individual. Any 
+ change made in a view of this type changes the same item in the parent 
+ view. </p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1><span style="font-weight: bold;"><B>Read-only 
+ Reference</B></span> views. These views are based upon a specific state of 
+ the original view but are read only. They are typically created for convenience 
+ so that revisions of items used in specific product releases can be easily 
+ located. For example, a 4.1 Release view might be used to rebuild the 
+ 4.1 Release in the future. These views may be float or be frozen.A read-only 
+ reference view that is not floating cannot be rolled back.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1><span style="font-weight: bold;"><B>Non-derived</B></span> 
+ views. As their name implies, these views are not derived from an existing 
+ view, although a parent is selected for them and they display in the view 
+ hierarchy. Folders and items are usually added to, moved to, or shared 
+ with these views.</p></li>
+</ul>
+
+<p class=Body>Views are highly flexible. For example, they can be reconfigured 
+ to show items as they existed at an earlier point in time or based on 
+ a view label or associated promotion state. Rollback views are read-only, 
+ as they show a precise state of the items, and no longer permit changes. 
+ </p>
+
+<p class=Body><span style="font-weight: bold;"><B>Important:&nbsp;</B></span>Requirements, 
+ tasks and topics never branch. Changes to such items can be made in the 
+ view in which they were created, in a view in which they have been moved 
+ or shared, or in floating child views that are not read-only. New revisions 
+ of such items can be reviewed from any floating child view. </p>
+
+<p class=Body>See also <a href="understanding_branching.htm">Understanding 
+ Branching Views</a>.</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

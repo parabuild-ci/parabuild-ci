@@ -1,0 +1,52 @@
+# version 1.1
+- Group 관리
+- 자신의 FriendlyName 변경하기
+
+# version 1.0
+- 안정화, Bug fix
+
+# version 0.9
+- Group 관리를 위한 로그인시 버젼 변경
+- Group 관리를 위해 MsnFriend class에 Group frield 및 set/get method 추가
+
+# version 0.8
+- Synchronization하기 위한 SerialNumber를 사용자의 홈 디렉토리 밑의
+  .msnm-java 디렉토리를 만들고 LoginName 디렉토리 밑에 SerialNumber와
+  Performance를 위한 각 BuddyList들을 file로 cache함. (FL/AL/BL/RL)
+- Buddy들을 효율적으로 관리하기 위해 BuddyGroup 클래스와 BuddyList 클래스 작성.
+  + BuddyList
+    rath.msnm.entity.MsnFriend 인스턴스들을 포함하는 것으로, 
+    각 친구들을 List와 Map 두 곳에 보관하여, memory는 조금 낭비되지만, 
+    편리한 관리를 도모하였다.
+  + BuddyGroup
+    각 Forward, Allow, Block, Reverse List에 대한 BuddyList 4개를 캡슐화하는
+    클래스이다.
+- rath.msnm.entity.MsnFriend 클래스에 
+  각 getFormattedXXX 메소드를 성능향상을 위해 최초 한번만 Formatting 하도록 
+  수정하고, Map이나 List와의 interoperability를 위하여 equals, hashCode메소드를 
+  overriding 하였다.
+
+# version 0.4
+- Add된것과 Remove된 것에 대한 Event 수신 가능 
+  (whoAddedMe, whoRemovedMe)
+- 친구 등록, 친구 삭제 기능 
+  (MSNMessenger.addFriend, MSNMessenger.removeFriend)
+- setInitialStatus로 초기상태값을 지정하지 않았을 경우 
+  Default로 ONLINE이 대입되도록 수정
+
+# version 0.3
+- File 송/수신에 관련하여 MSNMessenger, Switchboard 등등 메소드 추가.
+- File 송/수신 관련 패키지 개발. package rath.msnm.ftp 
+- File 송/수신 관련 이벤트 rath.msnm.event.MsnListener, MsnAdapter에 추가
+- 문서 추가  
+- MSNMessenger에 doCall은 세션의 유무에 상관없이 무조건 실제 call을 한다.
+  이것의 오버헤드를 막기위해 findSwitchboardSession 메소드를 추가했다. 
+  즉, 메시지를 일방적으로 보낼때, 무조건 doCall을 하지 말고, 
+  findSwitchboardSession으로 찾아보고 null이라면 doCall을 하도록 하라.
+- MSNMessenger.doCall의 비동기처리 대신 동기 메소드 추가 
+  MSNMessenger.doCallWait. 이 메소드를 사용하게 되면, 
+  호출을 하고, 연결이 걸릴때까지 Object.wait()에 걸리게 된다.
+- Callback 메소드중, 3분 이상 응답이 오지 않은 Callback 메소드들은
+  CallbackMap으로 부터 제거된다. 이것을 계속 감시하는 thread는 
+  30분 간격으로 가장 낮은 priority를 가지고 실행된다.
+- Call 연락대기 callback에서 queue를 map으로 변경하여 안정성 증가 

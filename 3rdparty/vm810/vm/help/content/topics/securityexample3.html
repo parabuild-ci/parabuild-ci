@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Security Example 3</TITLE>
+<!--<securityexample3.html>-->
+<!--<index parent="security" label="example 3" anchor="securexample3">-->
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="securexample3"></A>Security Example 3</H1>
+<P>You need a different security definition for the archives in each individual project in a project database. Before you make each project secure, you must specify a separate <A HREF="aboutconfigfiles.html">configuration file</a> and a separate <A HREF="aboutacdb.html">access control database</a> for each project that requires a different security definition. For this level of security, complete the following steps of <A HREF="setupsecurity.html">Setting Up Security</a>:</P>
+<ul type="square">
+	<b>Step 1</b> - <A HREF="assocconfigfile.html">Associate a configuration with projects</a>. Each project that requires a different security definition requires that it be associated with its own configuration file. You can use a existing configuration files for each of the projects, as long as each configuration file is used by only one project. When you assign a new configuration file, Version Manager uses the <A HREF="defaults.html">default configuration settings</a> for the desktop client. <br><br>
+	<b>Step 2</b> - <A HREF="specifyacdblocation.html">Specifying the location of the access control database</a>. Each project that requires a different security definition (for example, different users will access it) must be assigned its own access control database. You can use existing access control databases, provided each access control database is used by only one project; or you can assign a new access control database to each project. <br><br>
+	<b>Step 3</b> (optional) - <A HREF="definecustomprivsets.html">Define custom privilege sets</a>. This step is optional because you can assign individual privileges or the <A HREF="defaultprivtables.html">default privilege sets</a> provided in Version Manager to your users. Version Manager's default privilege sets are tailored to role-related groups within a company. If the default privilege sets do not meet your needs, you will need to define a custom privilege set and assign it to the users when you create them.<br><br>
+	<b>Step 4</b> - <A HREF="defineusers.html">Define users</a>. You define all the users who require access to the project database, which includes <A HREF="defineusers.html#userprivs">assigning privileges to users</a>. You can assign individual privileges, the custom privilege sets you created in step 3, or any one of the role-related default privilege sets that Version Manager provides. <br><br>
+	<b>Step 7</b> - <A HREF="enablesecurity.html">Enable security</a>. Before security is active for the project database, you must set the configuration option that tells the project database to use the access control database in which you've created the users and assigned the privileges.<br><br>
+</ul> 
+<BR>
+<p><b>Hint:</b> When defining security for multiple projects where the definitions have similar settings (privileges and users), complete the steps above for one project, then copy the access control database when you get to step 2, then make the necessary modifications. </p>
+<p>To increase the level of security for the individual archives of in the project database, see <A HREF="securityexample4.html">security example 4</A>.</p>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="plansecurity.html">Planning Security</A></TD>
+		<TD><A HREF="securityexample2.html">Security Example 2</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="securityexample2.html">Security Example 2</A></TD>
+		<TD><A HREF="securityexample4.html">Security Example 4</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

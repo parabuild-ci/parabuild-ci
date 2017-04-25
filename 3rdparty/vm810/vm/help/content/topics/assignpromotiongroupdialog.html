@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Assign Promotion Group Dialog Box</TITLE>
+<!--<assignpromotiongroupdialog.html>-->
+<!--<index parent="assigning" label="Assign Promotion Group dialog box" anchor="assignpromotion">-->
+<!--<index parent="promotion_groups" label="Assign Promotion Group dialog box" anchor="assignpromotion">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiAssignPromotionGroupDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="assignpromotion"></A>Assign Promotion Group</H1>
+<P>Use the Assign Promotion Group dialog box (Actions | Promotion Group | Assign) to assign a promotion group to one or more versioned files or projects, or a project database to associate them with a particular promotion group.</P>
+
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD COLSPAN=2><CENTER><B>General Tab</B></CENTER></TD>
+	</TR>
+	<TR>
+		<TD><b>Assign promotion group</b></TD>
+		<TD><!--<control name="AssignPromotionGroup.PROMOGROUP_LB">-->
+		Select a promotion group to assign to the selected item. You can select any promotion group that has been configured for the project (from Admin | Configure Project).
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>To revision</b></TD>
+		<TD><!--<control name="AssignPromotionGroup.ASSIGN_TO_EDIT">-->
+		Enter the revision to which you want the promotion group assigned, or click the Browse button to select one. The Browse button enables you to select files by revision, version label, or promotion group.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>If promotion group exists</b></TD>
+		<TD><!--<control name="AssignPromotionGroup.IF_GROUP_EXISTS_CHOICE">-->
+		Select one of the following actions to occur if a promotion group has already been assigned to the file.<br>
+<b>Prompt</b> to prompt for confirmation before assigning the promotion group<br>
+<b>Reassign</b> to reassign the promotion group without prompt<br>
+<b>Don't reassign</b> to prevent the promotion group from being assigned
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Include files in subprojects</b></TD>
+		<TD><!--<control name="AssignPromotionGroup.RECURSIVE_CB">-->
+		This field is available only when the selected item is a project or project database. Select to assign the promotion group to all projects and files included in the project or project database.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=2><CENTER><B>Selected Files Tab</B></CENTER></TD>
+	</TR>
+	<TR>
+		<TD><B>File list</B></TD>
+		<TD><!--<control name="Files.FILES_TREE">-->
+		Review the selected files or projects to which you want to assign a promotion group.
+		<!--</control>--></TD></TR>
+		<TR>
+		<TD><B>Properties button</B></TD> <TD><!--<control name="Files.PROPERTIES_BUTTON">-->
+		Click to display information on the item selected. You can view information on the item selected, including workspace settings and granted privileges.
+		<!--</control>--></TD>
+		</tr>
+	</TABLE>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="assignpromotiongroup.html">Assigning a Promotion Group</A></TD>
+		<TD><A HREF="aboutprommodels.html">About Promotion Models</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="prommodelrules.html">Promotion Modeling Rules</A></TD>
+
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

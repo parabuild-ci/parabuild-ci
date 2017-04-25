@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" name="test.build.SATestBuildLabelNameGenerator" tests="7" time="1.281">
+  <properties>
+    <property name="file.encoding.pkg" value="sun.io"></property>
+    <property name="env.PROMPT" value="$P$G"></property>
+    <property name="java.home" value="C:\DEV\jdk142_03\jre"></property>
+    <property name="test.war.staging" value="D:\projectory\bt/temp/test_war_staging"></property>
+    <property name="viewtier.jar" value="D:\projectory\bt\3rdparty\viewtier\lib\viewtier.jar"></property>
+    <property name="apache.license" value="D:\projectory\bt\3rdparty\hibernate201\lib\apache.license.txt"></property>
+    <property name="odmg.jar" value="D:\projectory\bt\3rdparty\hibernate201\lib\odmg.jar"></property>
+    <property name="java.endorsed.dirs" value="C:\DEV\jdk142_03\jre\lib\endorsed"></property>
+    <property name="env.USERNAME" value="simeshev"></property>
+    <property name="build.dir.test.classes" value="D:\projectory\bt/temp/test_classes"></property>
+    <property name="docbookdtd.home" value="D:\projectory\bt\3rdparty\docbookxml42"></property>
+    <property name="mail.jar" value="D:\projectory\bt\3rdparty\javamail131\mailapi.jar"></property>
+    <property name="sun.os.patch.level" value="Service Pack 4"></property>
+    <property name="java.vendor.url" value="http://java.sun.com/"></property>
+    <property name="env.PROJECT_HOME" value="D:\projectory\bt\"></property>
+    <property name="env.COMPUTERNAME" value="SIMESHEV"></property>
+    <property name="test.temp.dir" value="D:\projectory\bt/temp/test_temp"></property>
+    <property name="java.version" value="1.4.2_03"></property>
+    <property name="dbunit.home" value="D:\projectory\bt\3rdparty\dbunit156"></property>
+    <property name="httpunit.jar" value="D:\projectory\bt\3rdparty\cactus141j2ee13\lib\httpunit-1.4.1.jar"></property>
+    <property name="cactus.jar" value="D:\projectory\bt\3rdparty\cactus141j2ee13\lib\cactus-1.4.1.jar"></property>
+    <property name="build.dir.result" value="D:\projectory\bt/temp/result"></property>
+    <property name="aspectjrt.jar" value="D:\projectory\bt\3rdparty\cactus141j2ee13\lib\aspectjrt-1.0.5.jar"></property>
+    <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi"></property>
+    <property name="env.USERPROFILE" value="C:\Documents and Settings\simeshev"></property>
+    <property name="pv.exe" value="D:\projectory\bt\3rdparty\prcview3731\pv.exe"></property>
+    <property name="env.SystemRoot" value="C:\WINNT"></property>
+    <property name="jta.license" value="D:\projectory\bt\3rdparty\hibernate201\lib\jta.licence.txt"></property>
+    <property name="user.name" value="simeshev"></property>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"></property>
+    <property name="java.runtime.name" value="Java(TM) 2 Runtime Environment, Standard Edition"></property>
+    <property name="p4.linux.exe" value="D:\projectory\bt\3rdparty\perforce20011\linux386\p4"></property>
+    <property name="commons-beanutils.jar" value="D:\projectory\bt\3rdparty\hibernate201\lib\commons-beanutils.jar"></property>
+    <property name="tomcat.test.http.port" value="8080"></property>
+    <property name="java.specification.name" value="Java Platform API Specification"></property>
+    <property name="env.P4CLIENT" value="vimeshev"></property>
+    <property name="user.timezone" value=""></property>
+    <property name="path.separator" value=";"></property>
+    <property name="env.PROCESSOR_IDENTIFIER" value="x86 Family 15 Model 1 Stepping 2, GenuineIntel"></property>
+    <property name="env._JAVACMD" value="C:\DEV\jdk142_03\bin\java.exe"></property>
+    <property name="commons-httpclient.jar" value="D:\projectory\bt\3rdparty\cactus141j2ee13\lib\commons-httpclient-2.0alpha1-20020606.jar"></property>
+    <property name="xdoclet.lib" value="D:\projectory\bt\3rdparty\xdoclet12b3"></property>
+    <property name="file.encoding" value="Cp1252"></property>
+    <property name="3rdparty" value="D:\projectory\bt\3rdparty"></property>
+    <property name="env.NUMBER_OF_PROCESSORS" value="2"></property>
+    <property name="activation.jar" value="D:\projectory\bt\3rdparty\jaf102\activation.jar"></property>
+    <property name="env.APPDATA" value="C:\Documents and Settings\simeshev\Application Data"></property>
+    <property name="commons-collections.jar" value="D:\projectory\bt\3rdparty\hibernate201\lib\commons-collections.jar"></property>
+    <property name="servlet.jar" value="D:\projectory\bt\3rdparty\tomcat4127\common\lib\servlet.jar"></property>
+    <property name="ant.file" value="D:\projectory\bt\runtests-standalone.xml"></property>
+    <property name="quartz.jar" value="D:\projectory\bt\3rdparty\quartz123\lib\quartz.jar"></property>
+    <property name="env.LOCALCLASSPATH" value="C:\DEV\jdk142_03\lib\tools.jar;D:\projectory\bt\3rdparty\ant153\lib\xml-apis.jar;D:\projectory\bt\3rdparty\ant153\lib\xercesImpl.jar;D:\projectory\bt\3rdparty\ant153\lib\xalan.jar;D:\projectory\bt\3rdparty\ant153\lib\optional.jar;D:\projectory\bt\3rdparty\ant153\lib\ant.jar;D:\projectory\bt\3rdparty\junit37\junit.jar;"></property>
+    <property name="test.log.dir" value="D:\projectory\bt/temp/test_logs"></property>
+    <property name="tomcat.http.port" value="8080"></property>
+    <property name="java.io.tmpdir" value="D:\projectory\bt/temp"></property>
+    <property name="user.language" value="en"></property>
+    <property name="env.SystemDrive" value="C:"></property>
+    <property name="hsqldb.jar" value="D:\projectory\bt\3rdparty\hsqldb171\lib\hsqldb.jar"></property>
+    <property name="line.separator" value="
+"></property>
+    <property name="smtp.jar" value="D:\projectory\bt\3rdparty\javamail131\smtp.jar"></property>
+    <property name="config" value="D:\projectory\bt\conf"></property>
+    <property name="cactus.home" value="D:\projectory\bt\3rdparty\cactus141j2ee13"></property>
+    <property name="xerces.jar" value="D:\projectory\bt\3rdparty\tomcat4127\common\endorsed\xercesImpl.jar"></property>
+    <property name="java.vm.info" value="mixed mode"></property>
+    <property name="build.dir.temp" value="D:\projectory\bt/temp/build_temp"></property>
+    <property name="build.dir.test.result" value="D:\projectory\bt/temp/test_result"></property>
+    <property name="java.util.prefs.PreferencesFactory" value="java.util.prefs.WindowsPreferencesFactory"></property>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"></property>
+    <property name="env.PARABUILD_HOME" value="D:\projectory\bt\temp\result\prod"></property>
+    <property name="xmlapis.jar" value="D:\projectory\bt\3rdparty\tomcat4127\common\endorsed\xmlParserAPIs.jar"></property>
+    <property name="env.PATHEXT" value=".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH"></property>
+    <property name="test.home" value="D:\projectory\bt\test"></property>
+    <property name="env.LOGONSERVER" value="\\MOZART"></property>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"></property>
+    <property name="build.dir.classes" value="D:\projectory\bt/temp/classes"></property>
+    <property name="junit.jar" value="D:\projectory\bt\3rdparty\junit37\junit.jar"></property>
+    <property name="test.src" value="D:\projectory\bt\test\src"></property>
+    <property name="catalina.home" value="D:\projectory\bt/temp/result/prod"></property>
+    <property name="ant.version" value="Apache Ant version 1.5.3 compiled on April 16 2003"></property>
+    <property name="env.USERDOMAIN" value="TBHQ"></property>
+    <property name="build.dir.database" value="D:\projectory\bt/temp/result/prod/etc/data"></property>
+    <property name="env.PROCESSOR_LEVEL" value="15"></property>
+    <property name="docbook.home" value="D:\projectory\bt\3rdparty\docbookxsl1641"></property>
+    <property name="env.P4PORT" value="localhost:9999"></property>
+    <property name="env.windir" value="C:\WINNT"></property>
+    <property name="env.CLASSPATH" value="D:\projectory\bt\3rdparty\junit37\junit.jar;"></property>
+    <property name="os.name" value="Windows 2000"></property>
+    <property name="java.specification.vendor" value="Sun Microsystems Inc."></property>
+    <property name="ehcache.jar" value="D:\projectory\bt\3rdparty\ehcache06\ehcache-0.6.jar"></property>
+    <property name="env.TMP" value="C:\DOCUME~1\simeshev\LOCALS~1\Temp"></property>
+    <property name="httpclient.jar" value="D:\projectory\bt\3rdparty\cactus141j2ee13\lib\commons-httpclient-2.0alpha1-20020606.jar"></property>
+    <property name="env.include" value="C:\Program Files\Microsoft Visual Studio\VC98\atl\include;C:\Program Files\Microsoft Visual Studio\VC98\mfc\include;C:\Program Files\Microsoft Visual Studio\VC98\include"></property>
+    <property name="java.vm.name" value="Java HotSpot(TM) Client VM"></property>
+    <property name="env.OS" value="Windows_NT"></property>
+    <property name="java.library.path" value="C:\DEV\jdk142_03\jre\bin;.;C:\WINNT\system32;C:\WINNT;C:\DEV\jdk142_03\bin;D:\projectory\bt\3rdparty\ant153\bin;D:\projectory\bt\3rdparty\jikes118;D:\projectory\bt\3rdparty\wincvs12;D:\projectory\bt\internal\bin;D:\projectory\bt\temp\result\prod\bin;D:\projectory\bt\temp\result\prod\bin\win;D:\projectory\bt\temp\result\prod\bin\linux386;D:\projectory\bt\3rdparty\prcview3731;C:\todelete\glue412\bin;C:\DEV\ORA90\BIN;C:\PROGRAM FILES\ORACLE\JRE\1.1.8\BIN;C:\WINNT\SYSTEM32;C:\WINNT;C:\WINNT\SYSTEM32\WBEM;C:\PROGRA~1\TCL\BIN;C:\DMI\WIN32\BIN;C:\PROGRA~1\MICROS~4\Common\MSDev98\bin;C:\jonas_3_3_6\ant\bin;C:\DEV\jdk141_03\bin;C:\jonas_3_3_6\bin\nt;C:\todelete\glue412\bin;C:\Program Files\Microsoft Visual Studio\Common\Tools\WinNT;C:\Program Files\Microsoft Visual Studio\Common\MSDev98\Bin;C:\Program Files\Microsoft Visual Studio\Common\Tools;C:\Program Files\Microsoft Visual Studio\VC98\bin;C:\Program Files\SSH Communications Security\SSH Secure Shell"></property>
+    <property name="commons-pool.jar" value="D:\projectory\bt\3rdparty\hibernate201\lib\commons-pool.jar"></property>
+    <property name="ant.java.version" value="1.4"></property>
+    <property name="jaas.license" value="D:\projectory\bt\3rdparty\hibernate201\lib\jaas.licence.txt"></property>
+    <property name="basedir" value="D:\projectory\bt"></property>
+    <property name="java.class.version" value="48.0"></property>
+    <property name="env.WIN32DMIPATH" value="C:\DMI\WIN32"></property>
+    <property name="ant.home" value="D:\projectory\bt\3rdparty\ant153"></property>
+    <property name="env.Path" value="C:\DEV\jdk142_03\bin;D:\projectory\bt\3rdparty\ant153\bin;D:\projectory\bt\3rdparty\jikes118;D:\projectory\bt\3rdparty\wincvs12;D:\projectory\bt\internal\bin;D:\projectory\bt\temp\result\prod\bin;D:\projectory\bt\temp\result\prod\bin\win;D:\projectory\bt\temp\result\prod\bin\linux386;D:\projectory\bt\3rdparty\prcview3731;C:\todelete\glue412\bin;C:\DEV\ORA90\BIN;C:\PROGRAM FILES\ORACLE\JRE\1.1.8\BIN;C:\WINNT\SYSTEM32;C:\WINNT;C:\WINNT\SYSTEM32\WBEM;C:\PROGRA~1\TCL\BIN;C:\DMI\WIN32\BIN;C:\PROGRA~1\MICROS~4\Common\MSDev98\bin;C:\jonas_3_3_6\ant\bin;C:\DEV\jdk141_03\bin;C:\jonas_3_3_6\bin\nt;C:\todelete\glue412\bin;C:\Program Files\Microsoft Visual Studio\Common\Tools\WinNT;C:\Program Files\Microsoft Visual Studio\Common\MSDev98\Bin;C:\Program Files\Microsoft Visual Studio\Common\Tools;C:\Program Files\Microsoft Visual Studio\VC98\bin;C:\Program Files\SSH Communications Security\SSH Secure Shell"></property>
+    <property name="env._CLASSPATHCOMPONENT" value="D:\projectory\bt\3rdparty\ant153\lib\xml-apis.jar"></property>
+    <property name="xml-apis.jar" value="D:\projectory\bt\3rdparty\ant153\lib\xml-apis.jar"></property>
+    <property name="build.dir.tomcat" value="D:\projectory\bt/temp/result/prod"></property>
+    <property name="dbunit.dtdparser.jar" value="D:\projectory\bt\3rdparty\dbunit156\lib\dtdparser.jar"></property>
+    <property name="cactus.ant.jar" value="D:\projectory\bt\3rdparty\cactus141j2ee13\lib\cactus-ant-1.4.1.jar"></property>
+    <property name="env.P4USER" value="vimeshev"></property>
+    <property name="anthelope.jar" value="D:\projectory\bt\3rdparty\anthelope255\AntelopeTasks.jar"></property>
+    <property name="env.HOMEDRIVE" value="U:"></property>
+    <property name="env.HOMESHARE" value="\\bach\users\simeshev"></property>
+    <property name="build.dir.docs" value="D:\projectory\bt/temp/result/prod/docs"></property>
+    <property name="env.Os2LibPath" value="C:\WINNT\system32\os2\dll;"></property>
+    <property name="log4j.jar" value="D:\projectory\bt\3rdparty\cactus141j2ee13\lib\log4j-1.2.5.jar"></property>
+    <property name="sun.boot.library.path" value="C:\DEV\jdk142_03\jre\bin"></property>
+    <property name="build.dir" value="D:\projectory\bt/temp"></property>
+    <property name="hibernate.license" value="D:\projectory\bt\3rdparty\hibernate201\lgpl.txt"></property>
+    <property name="env.PROCESSOR_REVISION" value="0102"></property>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"></property>
+    <property name="user.variant" value=""></property>
+    <property name="junitaddons.jar" value="D:\projectory\bt\3rdparty\junitaddons371\junit-addons-3.7.1.jar"></property>
+    <property name="test.config" value="D:\projectory\bt\test\config"></property>
+    <property name="xalan.jar" value="D:\projectory\bt\3rdparty\ant153\lib\xalan.jar"></property>
+    <property name="env.P4HOST" value="slava"></property>
+    <property name="jmx.jar" value="D:\projectory\bt\3rdparty\tomcat4127\server\lib\mx4j-jmx.jar"></property>
+    <property name="ant.project.name" value="bt"></property>
+    <property name="java.vm.specification.version" value="1.0"></property>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"></property>
+    <property name="sun.cpu.isalist" value="pentium i486 i386"></property>
+    <property name="env.PARABUILD_BASE" value="D:\projectory\bt\temp\result\prod"></property>
+    <property name="jdbc2_0-stdext.license" value="D:\projectory\bt\3rdparty\hibernate201\lib\jdbc2_0-stdext.licence.txt"></property>
+    <property name="connector.license" value="D:\projectory\bt\3rdparty\hibernate201\lib\connector.licence.txt"></property>
+    <property name="java.ext.dirs" value="C:\DEV\jdk142_03\jre\lib\ext"></property>
+    <property name="os.version" value="5.0"></property>
+    <property name="dbunit.jar" value="D:\projectory\bt\3rdparty\dbunit156\lib\dbunit.jar"></property>
+    <property name="user.home" value="C:\Documents and Settings\simeshev"></property>
+    <property name="commons-logging.jar" value="D:\projectory\bt\3rdparty\hibernate201\lib\commons-logging.jar"></property>
+    <property name="java.vm.vendor" value="Sun Microsystems Inc."></property>
+    <property name="build.dir.prod" value="D:\projectory\bt/temp/result/prod"></property>
+    <property name="env.JAVA_HOME" value="C:\DEV\jdk142_03"></property>
+    <property name="env.USERDNSDOMAIN" value="tbhq.tradebeam.com"></property>
+    <property name="env.MSDevDir" value="C:\Program Files\Microsoft Visual Studio\Common\MSDev98"></property>
+    <property name="user.dir" value="D:\projectory\bt"></property>
+    <property name="cglib-asm.jar" value="D:\projectory\bt\3rdparty\hibernate201\lib\cglib-asm.jar"></property>
+    <property name="build.compiler" value="jikes"></property>
+    <property name="sun.cpu.endian" value="little"></property>
+    <property name="c3p0.license" value="D:\projectory\bt\3rdparty\hibernate201\lib\c3p0.license.txt"></property>
+    <property name="env.ALLUSERSPROFILE" value="C:\Documents and Settings\All Users"></property>
+    <property name="commons-lang.jar" value="D:\projectory\bt\3rdparty\hibernate201\lib\commons-lang.jar"></property>
+    <property name="project.home" value="D:\projectory\bt"></property>
+    <property name="env.PROCESSOR_ARCHITECTURE" value="x86"></property>
+    <property name="java.vm.version" value="1.4.2_03-b02"></property>
+    <property name="java.class.path" value="D:\projectory\bt\temp\test_classes;D:\projectory\bt\temp\classes;D:\projectory\bt\test\config;D:\projectory\bt\3rdparty\cactus141j2ee13\lib\log4j-1.2.5.jar;D:\projectory\bt\3rdparty\junit37\junit.jar;D:\projectory\bt\3rdparty\junitaddons371\junit-addons-3.7.1.jar;D:\projectory\bt\3rdparty\dbunit156\lib\dbunit.jar;D:\projectory\bt\3rdparty\cactus141j2ee13\lib\cactus-1.4.1.jar;D:\projectory\bt\3rdparty\cactus141j2ee13\lib\aspectjrt-1.0.5.jar;D:\projectory\bt\3rdparty\cactus141j2ee13\lib\commons-httpclient-2.0alpha1-20020606.jar;D:\projectory\bt\3rdparty\hsqldb171\lib\hsqldb.jar;D:\projectory\bt\3rdparty\gbase20\gsbase-2.0.jar;D:\projectory\bt\3rdparty\viewtier\lib\viewtier.jar;D:\projectory\bt\3rdparty\tomcat4127\common\endorsed\xercesImpl.jar;D:\projectory\bt\3rdparty\tomcat4127\common\lib\servlet.jar;D:\projectory\bt\3rdparty\hibernate201\hibernate2.jar;D:\projectory\bt\3rdparty\hibernate201\lib\dom4j.jar;D:\projectory\bt\3rdparty\javamail131\mailapi.jar;D:\projectory\bt\3rdparty\javamail131\smtp.jar;D:\projectory\bt\3rdparty\jaf102\activation.jar;D:\projectory\bt\3rdparty\hibernate201\lib\commons-lang.jar;D:\projectory\bt\3rdparty\hibernate201\lib\commons-collections.jar;D:\projectory\bt\3rdparty\hibernate201\lib\commons-beanutils.jar;D:\projectory\bt\3rdparty\hibernate201\lib\commons-logging.jar;D:\projectory\bt\3rdparty\tomcat4127\common\endorsed\xmlParserAPIs.jar;D:\projectory\bt\3rdparty\quartz123\lib\quartz.jar;D:\projectory\bt\3rdparty\ehcache06\ehcache-0.6.jar;D:\projectory\bt\3rdparty\tomcat4127\server\lib\mx4j-jmx.jar;D:\projectory\bt\3rdparty\ant153\lib\ant.jar;D:\projectory\bt\3rdparty\ant153\lib\optional.jar"></property>
+    <property name="env.HOMEPATH" value="\"></property>
+    <property name="dbunit.exml.jar" value="D:\projectory\bt\3rdparty\dbunit156\lib\exml.jar"></property>
+    <property name="project.bin" value="D:\projectory\bt\bin"></property>
+    <property name="c3p0.jar" value="D:\projectory\bt\3rdparty\hibernate201\lib\c3p0.jar"></property>
+    <property name="os.arch" value="x86"></property>
+    <property name="gbase.jar" value="D:\projectory\bt\3rdparty\gbase20\gsbase-2.0.jar"></property>
+    <property name="p4.win.exe" value="D:\projectory\bt\3rdparty\perforce20011\windows\p4.exe"></property>
+    <property name="env.CommonProgramFiles" value="C:\Program Files\Common Files"></property>
+    <property name="env.ProgramFiles" value="C:\Program Files"></property>
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."></property>
+    <property name="file.separator" value="\"></property>
+    <property name="hibernate2.jar" value="D:\projectory\bt\3rdparty\hibernate201\hibernate2.jar"></property>
+    <property name="java.runtime.version" value="1.4.2_03-b02"></property>
+    <property name="env.ANT_CMD_LINE_ARGS" value="run.tests.standalone"></property>
+    <property name="test.data.home" value="D:\projectory\bt\test\config"></property>
+    <property name="sun.boot.class.path" value="C:\DEV\jdk142_03\jre\lib\rt.jar;C:\DEV\jdk142_03\jre\lib\i18n.jar;C:\DEV\jdk142_03\jre\lib\sunrsasign.jar;C:\DEV\jdk142_03\jre\lib\jsse.jar;C:\DEV\jdk142_03\jre\lib\jce.jar;C:\DEV\jdk142_03\jre\lib\charsets.jar;C:\DEV\jdk142_03\jre\classes"></property>
+    <property name="test.dataset" value="D:\projectory\bt\test\config\dataset.xml"></property>
+    <property name="env.ComSpec" value="C:\WINNT\system32\cmd.exe"></property>
+    <property name="tomcat.home" value="D:\projectory\bt\3rdparty\tomcat4127"></property>
+    <property name="dom4j.jar" value="D:\projectory\bt\3rdparty\hibernate201\lib\dom4j.jar"></property>
+    <property name="env.TEMP" value="C:\DOCUME~1\simeshev\LOCALS~1\Temp"></property>
+    <property name="sun.java2d.fontpath" value=""></property>
+    <property name="user.country" value="US"></property>
+    <property name="env.ANT_HOME" value="D:\projectory\bt\3rdparty\ant153"></property>
+    <property name="tomcat.serv.port" value="8005"></property>
+    <property name="pmd.home" value="D:\projectory\bt\3rdparty\pmd15"></property>
+    <property name="env.JONAS_ROOT" value="C:\jonas_3_3_6"></property>
+    <property name="src" value="D:\projectory\bt\src"></property>
+    <property name="quartz.licence" value="D:\projectory\bt\3rdparty\quartz123\license.txt"></property>
+    <property name="java.vendor" value="Sun Microsystems Inc."></property>
+    <property name="build.dir.distrib" value="D:\projectory\bt/temp/result_distrib"></property>
+    <property name="fop.home" value="D:\projectory\bt\3rdparty\fop0205"></property>
+    <property name="java.specification.version" value="1.4"></property>
+    <property name="sun.arch.data.model" value="32"></property>
+    <property name="commons-dbcp.jar" value="D:\projectory\bt\3rdparty\hibernate201\lib\commons-dbcp.jar"></property>
+    <property name="env.lib" value="C:\Program Files\Microsoft Visual Studio\VC98\mfc\lib;C:\Program Files\Microsoft Visual Studio\VC98\lib"></property>
+  </properties>
+  <testcase name="test_isTemplateValid" time="0.406"></testcase>
+  <testcase name="test_isTemplateValidInvalidatesMisformedTemplates" time="0.0"></testcase>
+  <testcase name="test_isTemplateValidInvalidatesNonExistingProperties" time="0.0"></testcase>
+  <testcase name="test_isTemplateValidInvalidatesNonWordCharacters" time="0.016"></testcase>
+  <testcase name="test_isTemplateStatic" time="0.0"></testcase>
+  <testcase name="test_generateLabelName" time="0.0"></testcase>
+  <testcase name="test_regexp" time="0.0"></testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

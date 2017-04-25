@@ -1,0 +1,4 @@
+<vault>
+<history />
+<result success="yes" />
+</vault>

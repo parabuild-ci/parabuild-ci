@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd">
+<book>
+  <title>Viewtier Parabuild 3.2</title>
+
+  <subtitle>Installation Guide</subtitle>
+
+  <bookinfo>
+    <copyright>
+      <year>2004-2008</year>
+
+      <holder>Viewtier Systems</holder>
+    </copyright>
+  </bookinfo>
+
+  <toc></toc>
+
+  <preface>
+    <title>Preface</title>
+
+    <sect1>
+      <title>About This Manual</title>
+
+      <para>This document provides the information you need to install and configure a Viewtier Parabuild server as a stand-alone server or as a remote builder.</para>
+
+      <para>Viewtier Parabuild (Parabuild) is an automated multi-platform software build management server. Parabuild provides automatic (integration) and scheduled builds. Automatic builds are fired upon every check-in or a group of check-ins into a project source line. Scheduled builds are fired at a configured time.</para>
+    </sect1>
+
+    <sect1>
+      <title>Audience</title>
+
+      <para>This guide is intended for anyone who is installing a Parabuild server or a remote builder on a computer running a supported version of Microsoft Windows, Linux or Unix. It assumes a basic knowledge of corresponding operating systems and their conventions.</para>
+    </sect1>
+
+    <sect1>
+      <title>Technical Support</title>
+
+      <para>If you have any problems with the software or documentation, please contact Viewtier Technical Support via online support forums, electronic mail, fax, or as described below. For information regarding other support information, click the Support link on the Viewtier Web site at
+        <ulink url="http://www.viewtier.com">www.viewtier.com</ulink>
+        .
+      </para>
+
+      <variablelist>
+        <varlistentry>
+          <term>Support Forum:</term>
+
+          <listitem>
+            <para>
+              <ulink url="http://www.viewtier.com/support/online/forum.jspa?forumID=8">http://www.viewtier.com/support/online/forum.jspa?forumID=8</ulink>
+            </para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>Electronic Mail:</term>
+
+          <listitem>
+            <para>
+              <ulink url="mailto:support@viewtier.com">support@viewtier.com</ulink>
+            </para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>Fax:</term>
+
+          <listitem>
+            <para>650-240-4455</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect1>
+  </preface>
+
+  <chapter>
+    <title>Installing Parabuild</title>
+
+    <para>Parabuild distribution is available for many operating systems, including Windows, Linux, Solaris, Mac OS X, and other flavors of Unix. Following chapters talk about installing Parabuild for the specific operating systems. We assume that you have already downloaded a version suitable for your operating system.</para>
+
+    <para>The average time to install Parabuild, including post-installation tasks, is about five minutes.</para>
+  </chapter>
+
+  <chapter>
+    <title>System Requirements</title>
+
+    <para>Parabuild is an integral part of the Application Lifecycle Management (ALM) infrastructure. A typical ALM infrastructure consists of a version control system, a bug or an issue tracking system, and a build server. Software build processes such as Continuous Integration and daily builds are highly IO, memory and computationally intensive. Dedicating adequate resources to Parabuild ensures efficient software development.</para>
+
+    <sect1>
+      <title>Default Installation Directory</title>
+
+      <para>A default installation directory under Windows is C:\parabuild. A default installation directory under Unix is /opt/parabuild.</para>
+    </sect1>
+
+    <sect1>
+      <title>CPU</title>
+
+      <para>Build processes are usually dependent on the CPU. CPU speed for Parabuild should be at least equal to the speed of the fastest development machine. A better approach here would be to obtain the fastest CPU your budget could afford. Faster builds produce quicker feedback, thus providing greater timing and financial savings.</para>
+    </sect1>
+
+    <sect1>
+      <title>Quantity of CPUs</title>
+
+      <para>It is essential that Parabuild runs on a dedicated multiprocessor system. Multiprocessor systems are better suited to perform multiple computationally intensive tasks that build processes are. The quantity of CPUs depends on the number of the build configurations and percentage of time each build runs. It can be estimated as the sum of the total build time percentage divided by one hundred and rounded to the next two, four, eight, 16, or 32. For example, if Parabuild runs eight builds and each build runs 20% of the time, the quantity of CPUs needed for the server is two.</para>
+    </sect1>
+
+    <sect1>
+      <title>Size of RAM</title>
+
+      <para>Selecting the adequate size of the build server&#39;s RAM is important. In case of low physical memory builds can be slow because of swapping. The minimum amount of RAM can be estimated as the sum of RAM need to run each build plus RAM needed by a version control client running full checkout plus RAM needed by the operating system and system processes. We recommend multiplying the result by 1.2 coefficients to offset unaccounted factors. Example: let OS RAM is 120Mb, each build run needs 100Mb, and each client needs 1Mb. The minimal size of RAM is going to be
+        <programlisting>(120Mb + 8*100Mb + 8*1Mb) * 1.2 = 1,113.6Mb</programlisting>
+        or roughly 1Gb.
+      </para>
+    </sect1>
+
+    <sect1>
+      <title>Disk Space</title>
+
+      <para>Free disk space needed on Parabuild machine depends on the number of build configurations, the number of build runs per day, and the size of build artifacts to be placed in the build archive after each build run. The estimated size of the needed free disk space in megabytes may be calculated by using this formula
+        <programlisting>Sz = (Nbuilds * 2 * Bsize) + (Nbuilds * NRuns *Asize * 3 *365)</programlisting>
+        Where Sz is minimum required disk space, Nbuilds is a quantity of build configurations, Bsize is disk space occupied by the code base, Nruns is a number of times build runs a day, Asize is disk space occupied by results placed in build archive. Example: consider a build server running 4 build configurations, each code base taking 200Mb when checked out; each build runs 10 times a day and stores 5Mb of logs and build artifacts each time; an archived items should be stored for a year. The estimated minimum disk space needed for this configuration would be
+        <programlisting>220,600Mb = 4*2*200Mb + 4*10*5Mb*3*365</programlisting>
+      </para>
+    </sect1>
+
+    <sect1>
+      <title>Disk Speed</title>
+
+      <para>Speed of the disk subsystem is an important factor affecting overall performance of a build server. Build processes are I/O intensive and more read than write –oriented. Typical writes/reads ratios range from 2 to 5. We recommend using a high-speed 10,000 or 15,000 rpm SCSI RAID-1 array under management of a quality RAID controller. RAID-1 provides high-speed concurrent reads and writes while maintaining reliability of the disk subsystem. We do not recommend using RAID-5 because of its significantly slower write speeds. If a high speed SCSI RAID-1 is not an option because of budget concerns, 7200 rpm IDE RAID-1 is a minimal configuration.</para>
+    </sect1>
+
+    <sect1>
+      <title>Networking</title>
+
+      <para>Parabuild listens on port 8080. Certain applications and services such as Tomcat and Apache may also listen on port 8080. This may prevent Parabuild from starting up correctly. Make sure that no other services listen on port 8080.</para>
+
+      <para>It is important that Parabuild is connected to the rest of the ALM infrastructure through a high-speed local area network (LAN). Parabuild accesses a version control system to create local copies of the projects&#39; code base to build and query for the latest changes. It can also access the issue tracking system to obtain release notes. Slow or congested LAN may significantly increase build roundtrip time if the size of the code base is significant (hundreds of megabytes). Ideally, Parabuild should be connected to the same network switch as the version control server is.</para>
+    </sect1>
+  </chapter>
+
+  <chapter>
+    <title>Installing Parabuild Under Windows</title>
+
+    <para>For Windows, a single Parabuild setup program is available. In order to begin installation, type this command in the Windows command prompt:</para>
+
+    <programlisting>
+      parabuild_2_0_windows.exe</programlisting>
+
+    <para>This will launch a graphical user interface (GUI) installer that will lead you through the rest of the installation process. As a part of the installation process, the set up program will offer to select a destination directory for Parabuild. The default directory is C:\parabuild. You can change it if necessary. We recommend leaving it as is.</para>
+
+    <note>
+      <para>When installing Parabuild, please avoid using directories containing spaces or long names.</para>
+    </note>
+
+    <para>After the installation is complete, a program group named &#34;Parabuild&#34; will appear in your Programs menu. The program group contains links to installed Parabuild documentation.</para>
+
+    <sect1>
+      <title>Starting Parabuild Service</title>
+
+      <para>Parabuild is installed as a Windows service and is started automatically when the installation is complete. Parabuild service starts automatically when the Windows system is re-started.</para>
+
+      <para>It is possible to start Parabuild service manually if it is not running, for example because it was stopped before. To start Parabuild from the command line, follow the steps below:
+        <orderedlist>
+          <listitem>
+            <para>Press the &#34;Start&#34; button;</para>
+          </listitem>
+          <listitem>
+            <para>Click on &#34;Run&#34; menu item;</para>
+          </listitem>
+          <listitem>
+            <para>Type &#34;cmd&#34; in the &#34;Open&#34; field, a command shell will open;</para>
+          </listitem>
+          <listitem>
+            <para>Type &#34;net start parabuild&#34;. This command will start Parabuild service.</para>
+          </listitem>
+        </orderedlist>
+      </para>
+
+      <para>It is also possible to start Parabuild service using administrative interface:
+        <orderedlist>
+          <listitem>
+            <para>Press the &#34;Start&#34; button;</para>
+          </listitem>
+          <listitem>
+            <para>Click on &#34;Settings&#34; menu item, Windows control panel will open;</para>
+          </listitem>
+          <listitem>
+            <para>Click on &#34;Administrative Tools&#34; icon;</para>
+          </listitem>
+          <listitem>
+            <para>Click on &#34;Services&#34; icon, Services management window will open;</para>
+          </listitem>
+          <listitem>
+            <para>Find Parabuild in the list of services, right click on it, select &#34;Start&#34;. Parabuild service will start.</para>
+          </listitem>
+        </orderedlist>
+      </para>
+    </sect1>
+
+    <sect1>
+      <title>Stopping Parabuild Service</title>
+
+      <para>It is possible to stop Parabuild service manually, for example to perform an upgrade. To stop Parabuild from the command line, follow the steps below:
+        <orderedlist>
+          <listitem>
+            <para>Press the &#34;Start&#34; button;</para>
+          </listitem>
+          <listitem>
+            <para>Click on &#34;Run&#34; menu item;</para>
+          </listitem>
+          <listitem>
+            <para>Type &#34;cmd&#34; in the &#34;Open&#34; field, a command shell will open;</para>
+          </listitem>
+          <listitem>
+            <para>Type &#34;net stop Parabuild&#34;. This command will stop Parabuild service.</para>
+          </listitem>
+        </orderedlist>
+      </para>
+
+      <para>It is also possible to stop Parabuild service using administrative interface:
+        <orderedlist>
+          <listitem>
+            <para>Press the &#34;Start&#34; button;</para>
+          </listitem>
+          <listitem>
+            <para>Click on &#34;Settings&#34; menu item, Windows control panel will open;</para>
+          </listitem>
+          <listitem>
+            <para>Click on &#34;Administrative Tools&#34; icon;</para>
+          </listitem>
+          <listitem>
+            <para>Click on &#34;Services&#34; icon, Services management window will open;</para>
+          </listitem>
+          <listitem>
+            <para>Find Parabuild in the list of services, right click on it, select &#34;Stop&#34;. Parabuild service will stop.</para>
+          </listitem>
+        </orderedlist>
+      </para>
+    </sect1>
+
+    <sect1>
+      <title>Post-Installation Actions</title>
+
+      <para>Some environments require manual actions to be taken after the installation of Parabuild is completed. Below you can find considerations for such environments.</para>
+
+      <sect2>
+        <title>ClearCase Considerations</title>
+
+        <para>To access ClearCase, a user that Parabuild service runs as should be changed from a default user to a valid domain user. Please check section
+          <link linkend="changing_parabuild_service_user">Changing Parabuild Service User</link>
+          for instructions.
+        </para>
+      </sect2>
+
+      <sect2>
+        <title>Devenv Considerations</title>
+
+        <para>For devenv to function properly, a user that Parabuild service runs as should be changed from a default user to a valid domain user. Please check section
+          <link linkend="changing_parabuild_service_user">Changing Parabuild Service User</link>
+          for instructions.
+        </para>
+      </sect2>
+
+      <sect2>
+        <title>Visual SourceSafe Considerations</title>
+
+        <para>To access Visual SourceSafe, a user that Parabuild service runs as should be changed from a default user to a valid domain user. Such user should have adequate rights to access a Visual SourceSafe database on your network. Please check section
+          <link linkend="changing_parabuild_service_user">Changing Parabuild Service User</link>
+          for instructions.
+        </para>
+      </sect2>
+
+      <sect2>
+        <title>Adjusting Memory Size</title>
+        <para>The default size of the memory allocated to Parabuild is 60 Megabytes. This value maybe too low for some environments. Under Windows, it is possible to change this value to a higher number. To change the size of the memory avalable to Parabuild, edit file <filename>parabuild.vmoptions</filename> under <filename>bin</filename> directory and chage option <filename>-Xmx60m</filename>. For example, to allocate 500 Megabytes to Parabuild, this option should be equal <filename>-Xmx500m</filename>. Parabuild service needs to be restarted for changes to take effect.</para>
+      </sect2>
+    </sect1>
+
+    <sect1>
+      <title id="changing_parabuild_service_user">Changing Parabuild Service User</title>
+
+      <para>By default, Parabuild service runs as a user with name &#34;LocalSystem&#34;. Certain version control and build scripting systems require their clients to run as a domain user rather than &#34;LocalSystem&#34;. To change a user Parabuild service runs as, follow the steps below:</para>
+
+      <para>
+        <orderedlist>
+          <listitem>
+            <para>Press the &#34;Start&#34; button;</para>
+          </listitem>
+          <listitem>
+            <para>Click on &#34;Settings&#34; menu item, Windows control panel will open;</para>
+          </listitem>
+          <listitem>
+            <para>Click on &#34;Administrative Tools&#34; icon;</para>
+          </listitem>
+          <listitem>
+            <para>Click on &#34;Services&#34; icon, Services management window will open;</para>
+          </listitem>
+          <listitem>
+            <para>Find Parabuild in the list of services, right click on it, select &#34;Properties&#34; menu item;</para>
+          </listitem>
+          <listitem>
+            <para>Select &#34;Log On&#34; tab;</para>
+          </listitem>
+          <listitem>
+            <para>Select &#34;This account&#34; radio button.</para>
+          </listitem>
+          <listitem>
+            <para>Enter a user name, an optional domain name and a password.</para>
+          </listitem>
+          <listitem>
+            <para>Press &#34;OK&#34; button.</para>
+          </listitem>
+          <listitem>
+            <para>Stop and start Parabuild service to activate the changes.</para>
+          </listitem>
+        </orderedlist>
+      </para>
+    </sect1>
+  </chapter>
+
+  <chapter>
+    <title>Installing Parabuild Under Linux</title>
+
+    <para>In order to install Parabuild, you need to log in as a root. It is necessary because the Parabuild installer will create a daemon that will start upon the build box startup. Also, post-installations tasks for Parabuild may require root privileges.</para>
+
+    <sect1>
+      <title>Installing From Binary Distribution</title>
+
+      <para>The installation of Parabuild is simple. To install Parabuild, start a shell, cd to a directory where installer file is located and type this command:</para>
+
+      <programlisting>sudo mkdir /opt/parabuild
+        sudo sh parabuild_2_0_linux.sh -q</programlisting>
+
+      <para>Please note using &#34;-q&#34; switch. This switch asks Parabuild installer not to launch the installation process in a graphical mode. We recommend to use this switch whenever Parabuild installation is performed from a remote terminal. Once the installer finishes the execution, Parabuild is installed in the
+        <filename>/opt/parabuild</filename>
+        directory.
+      </para>
+    </sect1>
+
+    <sect1>
+      <title>Installing From tar.gz Archive</title>
+
+      <para>Installing Parabuild from tar.gz archive consists of creating a Parabuild installation directory and extracting the Parabuild distribution to the installation directory using the tar archiving utility.</para>
+
+      <para>Start a shell and execute the following commands:</para>
+
+      <programlisting>
+        mkdir /opt/parabuild tar -Zxf parabuild_2_0_linux.tar.gz -C /opt</programlisting>
+
+      <para>To complete installation, please proceed to the Post-installation Tasks chapter.</para>
+    </sect1>
+  </chapter>
+
+  <chapter>
+    <title>Installing Under Solaris</title>
+
+    <note>
+      <para>Parabuild installation creates a home directory for
+        <filename>parabuild</filename>
+        user under
+        <filename>/home</filename>
+        . Newly installed Solaris 9 and 10 systems may not allow to do so because
+        <filename>/home</filename>
+        is controlled by the automounter. Before installing make sure that
+        <filename>/home</filename>
+        is not under the control of automountd. Either edit the /
+        <filename>etc/auto_master</filename>
+        or
+        <filename>/etc/auto_home</filename>
+        or stop the automountd service from running.
+      </para>
+    </note>
+
+    <para>To install Parabuild, start a shell, cd to a directory where installer file is located and type this command:</para>
+
+    <programlisting>
+      sudo mkdir /opt/parabuild sudo sh parabuild_2_0_solaris.sh -q</programlisting>
+
+    <para>When installer finishes execution, Parabuild is installed in
+      <filename>/opt/parabuild</filename>
+      directory.
+    </para>
+  </chapter>
+
+  <chapter>
+    <title>Installing Under Mac OS X</title>
+
+    <sect1>
+      <title>Prerequisites</title>
+
+      <para>
+        <itemizedlist>
+          <listitem>
+            <para>Parabuild is installed on Mac OS X 10.2.x (&#34;Jaguar&#34;) and up using a Mac OS X binary package in PKG format. Please note that older versions of Mac OS X (for example, 10.1.x) are not supported by this package.</para>
+          </listitem>
+          <listitem>
+            <para>To be installed on Mac OS X, Parabuild requires that Java SDK version 1.4.2 is available on a machine that will run Parabuild.</para>
+          </listitem>
+        </itemizedlist>
+      </para>
+
+      <important>
+        <para>If you are upgrading Parabuild, first stop Parabuild daemon and perform a full back up of the Parabuild installation directory.</para>
+      </important>
+    </sect1>
+
+    <sect1>
+      <title>Installing From Binary Distribution</title>
+
+      <para>The installation of Parabuild from binary distribution is simple. To install Parabuild, start a terminal, cd to a directory where installer file is located and type this command:</para>
+
+      <programlisting>
+        sudo sh parabuild_2_0_mac_osx.sh -q</programlisting>
+
+      <para>Please note using &#34;-q&#34; switch. This switch asks Parabuild installer not to launch the installation process in a graphical mode. We recommend to use this switch whenever Parabuild installation is performed from a terminal. Once the installer finishes the execution, Parabuild is installed in the
+        <filename>/usr/local/parabuild</filename>
+        directory.
+      </para>
+    </sect1>
+
+    <sect1>
+      <title>Starting Parabuild Daemon</title>
+
+      <para>Parabuild is installed as a Mac OS X startup item. To start Parabuild daemon manually if it is not running follow the steps below:
+        <orderedlist>
+          <listitem>
+            <para>Open Terminal.</para>
+          </listitem>
+          <listitem>
+            <para>Type
+              <filename>sudo /Library/StartupItems/Parabuild/Parabuild start</filename>
+            </para>
+          </listitem>
+          <listitem>
+            <para>Enter su&#39;s password</para>
+          </listitem>
+        </orderedlist>
+      </para>
+
+      <para>Parabuild daemon starts automatically when the Mac OS X system is re-started.</para>
+    </sect1>
+
+    <sect1>
+      <title>Stopping Parabuild Daemon</title>
+
+      <para>To stop Parabuild daemon manually if it is running follow the steps below:
+        <orderedlist>
+          <listitem>
+            <para>Open Terminal.</para>
+          </listitem>
+          <listitem>
+            <para>Type
+              <filename>sudo /Library/StartupItems/Parabuild/Parabuild stop</filename>
+            </para>
+          </listitem>
+          <listitem>
+            <para>Enter su&#39;s password</para>
+          </listitem>
+        </orderedlist>
+      </para>
+    </sect1>
+  </chapter>
+
+  <chapter>
+    <title>Installing under Generic Unix</title>
+
+    <para>Currently Parabuild distribution packages for the following operating systems do not require installation of additional software: 32-bit Windows x86, 32-bit Linux x86, Solaris Sparc and HP-UX 11 PA-RISC.</para>
+
+    <para>To be installed on other Unix flavors such as FreeBSD, Parabuild requires that Java SDK version 1.4.2 is available on a machine that will run Parabuild. A generic Unix Parabuild distribution should be used for such operating systems.</para>
+
+    <para>Installing Parabuild from generic distribution consists of installing Java SDK version 1.4.2, installing Parabuild itself, and adjusting the Parabuild startup scripts to point to Java SDK location. These steps are considered in detail below.</para>
+
+    <sect1>
+      <title>Installing Java SDK 1.4.2</title>
+
+      <para>If you do not have Java SDK 1.4.2 already installed, download it and install it with the following installation instructions provided by your Java SDK vendor. Make a record of Java SDK installation home. For instance, it may look like
+        <filename>/opt/j2sdk1.4.2_03</filename>
+        .
+      </para>
+    </sect1>
+
+    <sect1>
+      <title>Installing Parabuild From Generic Unix Distribution</title>
+
+      <para>To install Parabuild, start a shell, cd to a directory where installer file is located and type this command:</para>
+
+      <programlisting>
+        sudo mkdir /opt/parabuild sudo sh parabuild_2_0_generic_unix.sh -q</programlisting>
+
+      <para>When installer finishes execution, Parabuild is installed in
+        <filename>
+          /opt/parabuild</filename>
+        directory.
+      </para>
+    </sect1>
+
+    <sect1>
+      <title>Adjusting Startup Scripts</title>
+
+      <para>Parabuild startup scripts need to know the location of the Java SDK. Go to /opt/parabuild/bin directory and modify parabuild.sh and parabuild shell scripts by adding the following lines right after the header comment lines:</para>
+
+      <programlisting>
+        JAVA_HOME=&#60;path to Java installation home&#62; export JAVA_HOME</programlisting>
+
+      <para>If Java is installed in
+        <filename>/opt/j2sdk1.4.2_03</filename>
+        , the added line would look like this:
+      </para>
+
+      <programlisting>
+        JAVA_HOME=/opt/j2sdk1.4.2_03 export JAVA_HOME</programlisting>
+
+      <para>To complete the installation, please proceed to Unix Post-installation Tasks chapter.</para>
+    </sect1>
+
+    <sect1>
+      <title>Starting and Stopping Parabuild</title>
+
+      <para>Once the installation is complete and secured, you can start or stop Parabuild service using the created daemon commands according to the paths to startup scripts for the target operating system.</para>
+
+      <example>
+        <title>Starting Parabuild Service Under Linux</title>
+
+        <programlisting>
+          /etc/init.d/parabuild start</programlisting>
+      </example>
+
+      <example>
+        <title>Stopping Parabuild Under Linux</title>
+
+        <programlisting>
+          /etc/init.d/parabuild stop</programlisting>
+      </example>
+
+      <note>
+        <para>Normally Parabuild runs a few external process, so clearing them up may take few seconds.</para>
+      </note>
+    </sect1>
+  </chapter>
+
+  <chapter>
+    <title>Upgrading</title>
+
+    <para>
+      <important>
+        <para>Always stop the Parabuild server before upgrading. Performing an upgrade operation while the Parabuild server is running may render it unusable.</para>
+      </important>
+      <important>
+        <para>Always perform a full back up of the Parabuild installation before upgrading. Though the Parabuild installer handles upgrade tasks automatically, unforeseen conditions may hinder the installation process and leave Parabuild installation in a incomplete state.</para>
+      </important>
+      To upgrade, just run the binary installer for the targeted operating system. Parabuild installation process will preserve all modifications.
+    </para>
+
+    <example>
+      <title>Upgrading Parabuild Under Solaris</title>
+
+      <para>sudo sh parabuild_2_0_solaris_sparc.sh -q</para>
+    </example>
+  </chapter>
+
+  <chapter>
+    <title>Configuring builds</title>
+
+    <para>After you have completed installation and started Parabuild, you may begin configuring builds. You should be able to access. Suppose you installed Parabuild at a machine with the network name BUILD. Then you would be able to access Parabuild at the URL</para>
+
+    <programlisting>
+      http://build:8080/parabuild/admin/builds.htm</programlisting>
+
+    <para>A public build status page would be available for the members of your engineering team at the URL</para>
+
+    <programlisting>
+      http://build:8080/parabuild/index.htm</programlisting>
+
+    <para>The default administrative password is &#34;admin&#34;. Parabuild Administrator&#39;s Guide describes build administration in detail.</para>
+  </chapter>
+
+  <chapter>
+    <title>Running Parabuild in Remote Builder Mode</title>
+
+    <sect1>
+      <title>Prerequisites</title>
+      <sect2>
+        <title>Windows XP</title>
+        <para>Parabuild uses a custom protocol to access remote builders. Parabuild needs port number 8080 open on a Windows XP machine. If this is a stock Windows XP, the firewall is on and the port is closed. Open the port. After installing Parabuild in the remote builder mode, make sure you can telnet port 8080 on the XP machine from the build manager machine.</para>
+      </sect2>
+    </sect1>
+
+    <sect1>
+      <title>Installing Parabuild in Remote Builder Mode</title>
+
+      <para>Parabuild can run in two modes: as a build manager mode or as remote builder. By default the Parabuild installation is set to run in the build manager mode. This chapter describes actions that need to be taken to set Parabuild up to run in a remote builder mode.</para>
+
+      <variablelist>
+        <varlistentry>
+          <term>Build manager mode</term>
+
+          <listitem>
+            <para>In the build manager mode Parabuild:</para>
+
+            <itemizedlist>
+              <listitem>
+                <para>Serves web user interface requests.</para>
+              </listitem>
+
+              <listitem>
+                <para>Maintains build archive</para>
+              </listitem>
+
+              <listitem>
+                <para>Runs local and remote builds</para>
+              </listitem>
+
+              <listitem>
+                <para>Sends build notifications.</para>
+              </listitem>
+            </itemizedlist>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>Remote builder mode</term>
+
+          <listitem>
+            <para>In addition to running builds locally, Parabuild can run builds remotely on machines other than the one the build manager is installed on. Running builds remotely may offer the following benefits:</para>
+
+            <itemizedlist>
+              <listitem>
+                <para>Remote builds allow to run builds on a variety of platforms yet to have an access to the build results at a single entry point (build manager).</para>
+              </listitem>
+
+              <listitem>
+                <para>Remote builds allow to partition the load by moving CPU and IO load off the build manager.</para>
+              </listitem>
+
+              <listitem>
+                <para>Remote builds allow to create more secure build infrastructure so that build scripts are not executed at the build manager box.</para>
+              </listitem>
+            </itemizedlist>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+
+      <para>To set up Parabuild to run as a remote builder, follow the standard installation procedure described earlier. Once the installation is complete, modify the Parabuild configuration file
+        <filename>&#60;Parabuild installation directory&#62;/etc/system/parabuild.conf</filename>
+        . Modify or set the property
+        <filename>parabuild.build.manager.ipaddress</filename>
+        in the configuration file by assigning an IP address of the machine running Parabuild in the build manager mode. With
+        <filename>parabuild.build.manager.ipaddress</filename>
+        set Parabuild will start in the remote builder mode.
+      </para>
+
+      <example>
+        <title>Fragment of parabuild.conf for Parabuild running in remote builder mode</title>
+
+        <programlisting>
+          parabuild.build.manager.ipaddress=192.168.123.2</programlisting>
+      </example>
+
+      <para>A build manager can run builds on multiple remote builders. A remote builder will serve as single build manager with the configured IP address only. The remote builder will accept requests coming from local addresses only, i.e. those starting with 192.168.*, 10.*, 172.16.*, 169.254.* and 127.0.0.1.</para>
+    </sect1>
+  </chapter>
+
+  <chapter>
+    <title>Build Server Security Implications</title>
+
+    <para>Security implications of running a build server are significantly different from ones for other components of the software change management (SCM) infrastructure, namely version control systems and the issue or bug trackers. What the control users of such servers have is usually limited to secured user interface fronts. As a result, securing such servers is a relatively simple task because version control systems and issue trackers generally do not allow running arbitrary commands on the hosts running such servers.</para>
+
+    <para>Unlike version control and issue tracking systems,
+      <emphasis role="bold">build servers are inherently insecure because the main task of a build server is running arbitrary shell commands controlled by users</emphasis>
+      , directly or by invoking scripting languages or tools such as Perl, make or ANT. Such commands perform file and network operations that alter the file system, and they also access various local and network resources as part of normal operations. Thus, build servers are inherently insecure. This is generally not a problem in a controlled or trusted environment of a software organization where the employees are usually not considered a security threat.
+    </para>
+
+    <para>Running a build server in uncontrolled or untrustworthy environments may present a serious security challenge. In the uncontrolled environment malicious users can easily modify build scripts in a version control system to perform tasks presenting various security threats ranging from access to sensitive data to the disclosure of security arrangements that might compromise the surrounding security infrastructure.
+      <important>
+        <para>Understand that build servers do run user-controlled shell commands and scripts.
+          <emphasis role="bold">Do not run Viewtier Parabuild if one of these apply to you SCM infrastructure:</emphasis>
+        </para>
+        <para>1.
+          <emphasis role="bold">Your version control system allows anonymous write access to your project source line</emphasis>
+          ;
+        </para>
+        <para>2.
+          <emphasis role="bold">Untrustworthy persons have write access to project your source line</emphasis>
+          ;
+        </para>
+        <para>3.
+          <emphasis role="bold">There is no gate keeping process for anonymous or untrustworthy submissions and checkins</emphasis>
+          .
+        </para>
+      </important>
+    </para>
+  </chapter>
+</book>

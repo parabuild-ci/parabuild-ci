@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>About Branching</TITLE>
+<!--<aboutbranching.html>-->
+<!--<toc parent="branching" label="Overview" anchor="aboutbranching" sortkey="01">-->
+<!--<index parent="branching" label="about" anchor="aboutbranching">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nBranching and Merging Files\nBranching\nOverview");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="aboutbranching"></A>About Branching</H1>
+<P>Branching is a separate line of development consisting of one or more revisions that diverge from a revision on the trunk (main line) or from another development branch. Branching lets you develop alternate versions of a file in parallel with other developers who are working on the trunk or on another branch.</P>
+<p>Some common reasons for creating branches are:</p>
+<UL>
+	<LI>To develop a version of a file for a different platform. For example, if you have several archives that store source code files for a Windows application, you can start branches in each archive to develop an alternate version of the application for UNIX. 
+	<LI>To fix a defect without interrupting development on the trunk. If you discover a defect, but want development to continue in other areas of the source code file, you can create a branch from the revision containing the defect, fix it, and test it without impeding progress on trunk development. You can later merge the fix in with the newest revision on the trunk.
+	<LI>To create a baseline product and then customize the product for major customers.
+</ul>
+<p>Branching lets a number of developers continue parallel development on different revisions of the same file; it is also possible for one developer to work on both trunk development and various branches.</p>
+<p>Branches can diverge from the trunk or from other branches. The revision from which a branch begins is called the branch point (also known as the base version). The first branch revision from the branch point carries the entire branch point revision number followed by 1.0. Version Manager increments each subsequent branch by 0.1. For example, if revision 1.2 is the branch point, the first branch revision is numbered 1.2.1.0. As with trunk revisions, Version Manager increments each new branch revision by .1; subsequent revisions on this branch would be 1.2.1.1, 1.2.1.2, etc.</p>
+<img src="../graphics/branch.gif" width="358" height="142" border="0">
+<p>Additionally, revision 1.2.1.2 is another branch point, so the first branch revision is numbered 1.2.1.2.1.0. Subsequent revisions on the branch would be 1.2.1.2.1.1, 1.2.1.2.1.2, etc. Version Manager identifies a branch by its branch point revision number followed by 1.*.</p>
+<p>However, if you create multiple branches from the same revision, Version Manager increments each new branch revision by 1.0. For example, if you use revision 1.2 to create multiple branches, the first branch will be 1.2.1.*, the second branch will be 1.2.2.*, the third branch would be 1.2.3.*, etc.</p>
+<p>The Revision pane is the only pane from the main window that displays branch information.</p>
+<h2><A NAME="branchmultilock"></A>How Branches are Created</h2>
+<p>Branches are created when you:</p>
+<UL>
+	<LI><A HREF="branchfile.html#branchnontip">Check in a non-tip revision.</a>
+	<LI><A HREF="branchfile.html#branchtip">Force a branch</a> when checking in a locked tip revision. You force a branch by selecting the <b>Force branch</b> check box in the Check In dialog box.
+	<LI><A HREF="branchfile.html#branchmultilock">Check in a revision with a multiple locks.</a> This means that multiple Users have checked out the same revision with a lock. The first User who locks the revision reserves the primary lock on the revision. The other Users who have the revision locked must check in their revisions as branches. You can only lock a revision more than once if your project or project database is configured to allow multiple locks per revision. Note that you must also specify the branch tip revision each time you want to check it out and reassign the version label each time you check in a new revision. See <A HREF="multilockbranchsetup.html">Setting Up Multiple Locks for Branching</A> for more detail about how to configure Version Manager to use multiple locks.
+<LI>Set up <A HREF="setautobranch.html">automatic branching</A> from the trunk revision using version labels and project configuration options. 
+</UL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="autobranch.html">About Automatic Branching</A></TD>
+		<TD><A HREF="setautobranch.html">Setting Up Automatic Branching</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="aboutbranchusemultilock.html">About Branching Using Multiple Locks</A></TD>
+		<TD><A HREF="multilockbranchsetup.html">Setting Up Multiple Locks for Branching</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="branchfile.html">Branching Files</A></TD>
+		<TD><A HREF="checkingin.html">Checking In</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="checkindialog.html">Check In Dialog Box</A></TD>
+		<TD>About Merging</TD> 
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

@@ -1,0 +1,102 @@
+<!-- Copyright 2005 Zelix Pty Ltd (ABN 47 078 740 093) -->
+<html>
+<head>
+<title>Zelix KlassMaster - Change Logs and Incremental Obfuscation</title>
+   <meta name="keywords" content="java obfuscator,java code obfuscator,obfuscation,incremental">
+   <meta name="description" CONTENT="Zelix KlassMaster Change Logs and Incremental Obfuscation">
+   <meta name="classification" CONTENT="Zelix KlassMaster Change Logs and Incremental Obfuscation">
+   <link rel=stylesheet href="../../ZKM.css" TYPE="text/css">
+</head>
+<body background="../../images/small-white-mist1.jpg" bgcolor="#E1E1E1">
+<center><a href="../index.html"><img src=../../images/ZKM_b4.gif alt="Zelix KlassMaster" width=264 height=62 border=0></a></center>
+<hr>
+<center>
+<table width=770 border=0>
+   <tr>
+      <td>
+         <h1>Change Logs and Incremental Obfuscation</h1>
+         <h3>Change Logs</h3>
+         <a href="../chnglg1.html">Change&nbsp;logs</a> record the mapping of:
+         <ul>
+            <li>old names to new names,
+            <li>original source line numbers to scrambled line numbers (if you used Line&nbsp;Number&nbsp;Scrambling),
+            <li>flow obfuscation data (if you used flow&nbsp;obfuscation).
+         </ul>
+         You should always let Zelix KlassMaster produce a change log when you perform your final obnfuscation and then store it a safe place.
+         You will need it:
+         <ul>
+            <li>to translate any stack trace you might get if your bytecode contains some bugs,
+            <li>to use as an <a href="#inputChangeLog">input change log</a> when you obfuscate future releases so that objects are consistently renamed.
+                This is called <a href="#incrementalObfuscation">incremental obfuscation</a>.
+         </ul>
+This is the kind of stack trace you may get from an obfuscated application.
+<pre>
+java.lang.NullPointerException: 
+        at a.a.b.gp.a(gp.java:101)
+        at a.a.b.gp.a(gp.java:457)
+        at a.a.b.gp.b(gp.java:13)
+        at a.a.b.gp.a(gp.java:501)
+        at a.a.b.b.a(b.java:4)
+        at a.a.b.b.a(b.java:98)
+        at Main.main(Main.java:433)
+</pre>
+         Without the change log that was produced when the application was obfuscated, the stack trace will be close to indecipherable. 
+         Note that if you have a change log, you can use the <a href="../toolsStackTraceTranslate.html">Stack Trace Translate</a> tool to help you decipher stack traces.
+         
+         <h3><a name="inputChangeLog">Input Change Logs</a></h3>
+          You can specify that a change log should be used as a guide when assigning new names to packages, classes, fields and methods. 
+          When a change log is used in this way it is refered to as an <b>input change log</b>.  
+          Input change logs are the basis of Zelix KlassMaster's <a href="#incrementalObfuscation">incremental obfuscation</a>.
+          <p>
+          When you are using the ZKM Script <a href="../obfuscateStatement.html">obfuscate</a> statement, you can specify more than one input change log.
+          If more than one input change log is specified then the change logs are effectively merged. 
+          Change logs appearing first in the list have precedence over those appearing later in the list. 
+          <p>
+          By default, Zelix KlassMaster will honour the mappings in an input change log and it will give those mappings precedence over 
+          any name obfuscation exclusion settings that may be in place.  So input change log mappings overrule your exclusion settings.
+          This strictness is essential for incremental obfuscation.
+          <p>
+          However, the <a href="../obfuscateStatement.html">obfuscate</a> statement also allows you to specify "loose" input change logs.  
+          An input change log is specified as "loose" if the <code>looseChangeLogFileIn</code> rather than the <code>changeLogFileIn</code> parameter
+          is used with the <a href="../obfuscateStatement.html">obfuscate</a> statement. Loose input change logs are different in that your exclusion settings
+          take precedence over the change log mappings. They are typically only usefull when you need to produce a slightly different for some special purpose.
+          They are not suitable for <a href="#incrementalObfuscation">incremental obfuscation</a> because the slight changes that can result
+          could break compatability with previous releases.
+
+         <h3><a name="incrementalObfuscation">Incremental Obfuscation</a></h3>
+         Incremental Obfuscation is the ability to consistently obfuscate subsequent versions of your bytecode such that:
+         <ul>
+            <li>the same new names are assigned to each particular package, class, field and method in all releases,
+            <li>flow obfuscation is consistent across releases.
+         </ul>
+         This consistency is necessary:
+         <ul>
+            <li>for Java Serialization support,
+            <li>if you wish to release just a subset of your application's classes in the form of a patch.
+         </ul>
+         <p>
+         Zelix KlassMaster supports incremental obfuscation through its <a href="#inputChangeLog">input change log</a> functionality.  
+         The change log generated when the previous version was obfuscated must be specified as the input change log when the next release
+         is obfuscated.  However, note that:
+         <ul>
+            <li>you must always open and obfuscate <b>all</b> of the classes of your application even if you intend to release just the changed subset,
+            <li>you should be careful that your output and input change logs have different names so that one does not overwrite the other.
+         </ul>
+
+     </td>
+   </tr>
+</table>
+</center>
+<hr>
+<center>
+<table>
+   <tr>
+      <td>
+         <a href="../index.html"><img src=../../images/uarrw.gif alt="Documentation Table of Contents"></a>
+      </td>
+   </tr>
+</table>
+</center>
+Copyright &copy; 2005 <a href="mailto:WebMaster@zelix.com"><font size=-1>Zelix Pty Ltd</font></a> (ABN 47 078 740 093)
+</body>
+</html>

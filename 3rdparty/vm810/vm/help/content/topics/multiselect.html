@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Selecting Multiple Projects and Folders</TITLE>
+<!--<multiselect.html>-->
+<!--<toc parent="working_with_items_main_window" label="Selecting Multiple Projects and Folders" anchor="multiselect" sortkey="05">-->
+<!--<index parent="projects" label="selecting multiple" anchor="multiselect">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Getting Started\nOverview of the Version Manager Interface\nWorking with Items in the Main Window\nSelecting Multiple Projects and Folders");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="multiselect"></A>Selecting Multiple Projects and Folders</H1>
+<P>
+Serena ChangeMan Version Manager supports the selection of multiple projects in a project database and the selection of multiple folders in a 5.3/6.0 project root. Multiple projects may <b>not</b> be selected in a 5.3/6.0 project root. Multiple projects or folders can be selected in the project pane if they all have the same parent project or parent project database/project root.</P>
+
+<b>To select:</b>
+<ul><li>A series of items, click the items while holding down the SHIFT key</li>
+<li>To select non-adjacent items, click the items while holding down the CTRL key</li>
+</ul>
+<P>
+When multiple projects/folders are selected, all of the files contained within each selected item are shown in the file pane. The File pane displays a header line for each project/folder that is selected, followed by the files contained within the item. If you have the recursive file filter turned on (View | Filter | Recursive), then all of the subprojects and their files are also displayed.</P>
+<P>Within the file pane, you can select a subset of the files to perform an action on; the action does not have to be performed on all of the files. The selected files do not have to have the same parent project/folder.</P> 
+<H2>Actions Allowed</H2>
+The following actions are allowed when multiple projects/folders are selected.
+<UL>
+<LI>Check In
+<LI>Get
+<LI>Check Out
+<LI>Copy
+<LI>Move
+<LI>Delete
+<LI>Archive Attributes
+<LI>Lock/Unlock
+<LI>Assign, Delete, Rename Version Labels
+<LI>Promote, Assign, Change, and Remove Promotion Groups
+<LI>Set Workspace
+<LI>Show History Report
+<LI>Set Workfile Location
+<LI>Show Journal Report
+</UL>
+<P>
+<b>Note:</b> You cannot drag and drop multiple projects/folders to perform an action. You must either use the menu, context menu, tool bar button, or the shortcut method to perform the action. For example, to check in revisions from multiple projects, you must either use Actions | Check In, select Check In from the context menu, click the Check In button on the tool bar, or press CTRL+I (the shortcut method).</P>
+<H2>Access Control Database Privileges, Promotion Groups, and Workfile Locations</H2>
+This section discusses how Version Manager handles access control database privileges, promotion groups, and workfile locations when multiple projects/folders are selected.</P>
+<P>
+<b>Access Control Database Permissions</b><BR>
+When multiple projects/folders are selected, Version Manager does not disable menu items regardless of the access control database privileges. Version Manager attempts to perform the chosen action on all of the selected items, and if the action is not allowed on a selected item, Version Manager generates an error and then continues processing the remaining selected items.</P>
+<P>
+<b>Promotion Groups</b><BR>
+If you are performing an action that can use a promotion group (like check out, check in), the dialog box for each action displays the promotion groups of the promotion model defined for the parent project database/project. If when defining the action you want to perform, you select a promotion group that is incompatible with a project's promotion model, Version Manager generates an error and then continues processing the remaining selected items.</P>
+<P>
+<b>Workfile Locations</b><BR>
+If you are performing an action that uses a workfile location (like checkout or check-in), Version Manager displays in the action's dialog box the workfile location of the parent project database/project. However, absolute workfile locations of selected projects/folders are respected and are not changed to the workfile location of the parent project database/project. In the case of non-absolute workfile locations, Version Manager determines the workfile location by taking the parent project database/project's workfile location and adding relative paths for each selected project/folder. The project/folder name will be appended to the parent's absolute workfile location to determine the project/folder's workfile location. For example, if the parent's workfile location is c:\producta\work and the names of the selected projects are proj1, proj2, and proj3, the workfile locations for the selected projects are c:\producta\work\proj1, c:\producta\work\proj2, and c:\producta\work\proj3, respectively.</P>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

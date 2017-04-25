@@ -1,0 +1,2 @@
+<!DOCTYPE hibernate-configuration PUBLIC 	"-//Hibernate/Hibernate Configuration DTD//EN"	"http://hibernate.sourceforge.net/hibernate-configuration-2.0.dtd">
+<hibernate-configuration>	<session-factory name="foo">		<property name="show_sql">true</property>		<mapping resource="org/hibernate/test/Simple.hbm.xml"/>		<class-cache 			class="org.hibernate.test.Simple" 			region="Simple" 			usage="read-write"/>	</session-factory></hibernate-configuration>

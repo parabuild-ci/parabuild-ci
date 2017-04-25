@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>File Selection Dialog Box</TITLE>
+<!--<FileChooserDialog.html>-->
+<!--<control base="pvcs.gui.FileChooserDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="FileChooserDialog"></A>File Selection</H1>
+<P>Use this dialog box to select files, folders, or directories for an action.</P>
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><b>Look in</b></TD>
+		<TD><!--<control name="FileGeneral.LOOK_IN_CHOICE">-->
+		Select a valid drive or directory. The contents of the drive or path you select appear in the <B>Contents list</B>. 
+		<!--</control>--></TD>
+	</TR>
+		<TR>
+		<TD><img src="../graphics/upone.gif" width="26" height="24" border="0"></TD>
+		<TD>Opens the directory one level above the current level. This button is disabled if you are at the top level of a directory.</TD>
+	</TR>
+	<TR>
+		<TD><img src="../graphics/newfolder.gif" width="26" height="24" border="0"></TD>
+		<TD>Creates a new folder in the currently selected directory. You may rename the new folder using in-place editing. The following characters are not allowed in new folder names: \ / : * ? &quot; &lt; &gt; | .</TD>
+	</TR>
+	<TR>
+		<TD><b>Contents list</b></TD>
+		<TD><!--<control name="FileGeneral.CONTENT_VIEW">-->
+		Select a file or directory. To display the contents of a directory, double-click the directory icon. The <b>Look in</b> and  <B>Folder/File name</b> fields are updated upon selection.
+		<!--</control>--></TD>
+	</TR>
+		<TR>
+		<TD><b>File/Folder name</b></TD>
+		<TD><!--<control name="FileGeneral.SELECTION_EDIT">-->Use the <b>Look in</b> and <B>Contents list</B> fields to select and display a folder or file name, or enter a path and folder or file name.<!--</control>--></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

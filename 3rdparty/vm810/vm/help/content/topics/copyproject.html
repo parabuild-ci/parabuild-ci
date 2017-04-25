@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Copying Projects</TITLE>
+<!--<copyproject.html>-->
+<!--<toc parent="working_with_projects" label="Copying Projects" anchor="copyproject" sortkey="03">-->
+<!--<index parent="copying" label="projects" anchor="copyproject">-->
+<!--<index parent="projects" label="copying" anchor="copyproject">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with Project Databases/Projects\nProjects\nCopying Projects");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="copyproject"></A>Copying Projects</H1>
+<P>Copying a Serena ChangeMan Version Manager project copies the project to a different project or project database. For more information about the system defaults and what happens when you copy a project, refer to <a href="aboutcopyproject.html">about copying projects.</a>
+<H2>To copy a project:</H2>
+<OL>
+	<LI>In the Project pane, select the project you want to copy.<br><br>
+	<LI>Select Edit | Copy. The Copy Project dialog box appears.<br><br>
+	<LI>Select a destination project database or project and click Next. You can copy a project to an open project database or project. A second Copy Project dialog box appears.<br><br>
+	<li>Accept the defaults and click Next, or override the defaults by editing any of the fields below:<br><br>
+<TABLE  WIDTH="87%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><b>To...</b></TD>
+		<TD><b>Do this...</b></TD>
+	</TR>
+	<TR>
+		<TD>Copy the project's archive directory (and its contents) and places it beneath the archives directory of the target project database. The location of the new archive directory mirrors the hierarchy of the target project database within the archives directory</TD>
+		<TD>Select the <b>Copy archives to project location</b> button. </TD>
+	</TR>
+	<TR>
+		<TD>Allow the selection of a specified revision as the <A HREF="gloss.html#Baselining">base revision</a> (starting point) for the new archives. </TD>
+		<TD>Click the <b>Keep specified revision and discard change history</b> check box. Note that this field is available only if <B>Copy archives to project location</b> is selected.</TD> 
+	</TR>
+	<TR>
+		<TD>Select the revision that Version Manager will use as the initial revision (or baseline)</TD>
+		<TD>Enter a version label or promotion group in the <b>Default Revision</b> field to select an initial revision, or click the Browse button to select one.</TD>
+	</TR>
+	<TR>
+		<TD>Include subprojects and their files</TD>
+		<TD>Click the <b>Include subprojects</b> check box.</TD>
+	</TR>
+</table><br><br>
+	<li>On the third Copy Project dialog box, accept the defaults and click Finish, or override the defaults by editing any of the fields below:<br><br>
+<TABLE  WIDTH="87%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><b>To...</b></TD>
+		<TD><b>Do this...</b></TD>
+	</TR>
+		<TR>
+		<TD>Use the existing configuration file without copying the file to the new project location</TD>
+		<TD>Select the <b>Use existing Configuration Files</b> to copy all existing configuration files to the new project location. The copied project shares the configuration file with the original project.</TD>
+	</TR>
+	<TR>
+		<TD>Copy the existing configuration files to the new project</TD>
+		<TD>Select the <b>Copy Existing Configuration Files</b> to copy all existing configuration files to the new project location.</TD>
+	</TR>
+	<TR>
+		<TD>Create a new default configuration file for the new project</TD>
+		<TD>Select the <b>Create a new Configuration File</b> button. Version Manager creates a default configuration file by copying the default.cfg file and places it in the archives directory beneath the project database location.</TD>
+	</TR>
+	<TR>
+		<TD>Copy all existing access control databases to the new project</TD>
+		<TD>This option is not available if you opted to use the existing configuration files. Select the <B>Copy Access Control Database to new location</b> button. The project's access control database is placed in the archives directory beneath the project database location. Project access control databases (if any) are placed in directories named for the projects beneath the archives directory.</TD>
+	</TR>
+	<TR>
+		<TD>Create a new access control database for the new project</TD>
+		<TD>This option is not available if you opted to use the existing configuration files. Select the <B>Create a new Access Control Database</b> button. Version Manager creates a default access control database by copying the default.db file. This new access control database is disabled in the configuration file. By default, the new access control database file is located in the archives directory.</TD>
+	</TR>
+</TABLE><br><br>
+	<LI>Click Finish. <br><br>
+</OL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="copyproject.html">About Copying Projects</A></TD>
+		<TD><A HREF="archivelocation.html">Archive Locations</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="aboutconfigfiles.html">About Configuration Files</A></TD>
+		<TD><A HREF="workfilelocation.html">Workfile Locations</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="aboutprojects.html">About Projects</A></TD>
+		<TD><A HREF="aboutprjdb.html">About Project Databases</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="copymatrix.html">Copy Matrix</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

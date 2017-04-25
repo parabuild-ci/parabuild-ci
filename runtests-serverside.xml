@@ -1,0 +1,192 @@
+<!--
+  This is a dispatcher script. It does common work and delegates
+  server-specific processing to helper scripts.
+  This script gets a helper script as a parameter
+-->
+<project name="bt" default="run.serverside.test">
+
+  <!--
+  This property controls JUNIT behaviour in case of test
+  errors. It can be overriden by a calling script (see build.xml)
+  -->
+  <property name="fail.fast" value="on"/>
+
+   <!--
+   default is false, may be overriden by caller
+   -->
+  <property name="test.remote.builder" value="false"/>
+  <property name="test.database" value="hsqldb"/>
+  <property name="serverside.test.helper" value="runtests-helper-tomcat40.xml"/>
+
+  <!-- cleans up temp test dir -->
+  <target name="run.tests.serverside.init">
+    <delete dir="${test.temp.dir}"/>
+    <mkdir dir="${test.temp.dir}"/>
+  </target>
+
+
+  <target name="start.test.client">
+    <waitfor maxwait="10" maxwaitunit="second">
+      <socket server="localhost" port="9001"/>
+    </waitfor>
+    <junit printsummary="yes" haltonfailure="${fail.fast}" haltonerror="${fail.fast}" errorproperty="test.errors" fork="yes">
+      <sysproperty key="test.dataset" value="${test.dataset}"/>
+      <sysproperty key="test.data.home" value="${test.data}"/>
+      <sysproperty key="test.temp.dir" value="${test.temp.dir}"/>
+      <sysproperty key="test.dir.manager" value="${test.dir.manager}"/>
+      <sysproperty key="parabuild.notification.prefix" value="[test]"/>
+      <sysproperty key="parabuild.print.stacktrace" value="true"/>
+      <classpath>
+        <pathelement path="${build.dir.classes}/"/>
+        <pathelement path="${build.dir.test.classes}/"/>
+        <pathelement path="${installer.classes.dir}/"/>
+        <pathelement path="${test.classpath}/"/>
+        <pathelement path="${test.config}"/>
+        <!-- REVIEWME: - simeshev@parabuilci.org - this one is added to supply path to hibernate.properties -->
+        <pathelement path="${config}"/>
+        <pathelement path="${build.dir}/generated_home"/>
+        <pathelement path="${test.classpath}"/>
+        <!--<path refid="test.classpath"/>-->
+      </classpath>
+      <!--
+      run only test defined by test.single property
+      this property normally set via -D option of ant command line
+      and holds prefix name of the class(es) with test case
+      -->
+      <batchtest fork="yes" todir="${test.log.dir}" haltonfailure="${fail.fast}" haltonerror="${fail.fast}" errorproperty="test.errors" if="test.single">
+        <fileset dir="${build.dir.test.classes}">
+          <include name="**/${test.single}.class"/>
+          <exclude name="**/*$*.class"/> <!-- internal classes -->
+        </fileset>
+      </batchtest>
+
+      <!--
+      run all serverside tests as a batch
+      -->
+      <batchtest fork="yes" todir="${test.log.dir}" haltonfailure="${fail.fast}" haltonerror="${fail.fast}" errorproperty="test.errors" unless="test.single">
+        <fileset dir="${build.dir.test.classes}">
+          <include name="**/SSTest*.class"/>
+          <exclude name="**/SOTest*.class"/>
+          <exclude name="**/*$*.class"/> <!-- internal classes -->
+          <exclude name="**/SSTestSurroundSourceControl.class"/> <!-- temporately excluded from batch -->
+          <exclude name="**/SSTestClearCase*.class"/> <!-- temporately excluded from batch -->
+          <exclude name="**/SSTestVaultSourceControl.class"/> <!-- temporately excluded from batch -->
+          <exclude name="**/SSTestPVCSSourceControl.class"/> <!-- temporately excluded from batch -->
+          <exclude name="**/SSTestStarTeamSourceControl.class"/> <!-- temporately excluded from batch -->
+          <exclude name="**/SSTestMKSSourceControl.class"/> <!-- temporately excluded from batch -->
+        </fileset>
+      </batchtest>
+      <formatter type="plain" usefile="false"/>
+      <formatter type="xml"/>
+    </junit>
+  </target>
+
+
+  <!-- Prepare test directories -->
+  <target name="prepare.serverside.test" depends="run.tests.serverside.init">
+    <!-- cleanup database -->
+    <delete>
+      <fileset dir="${build.dir.database}" includes="parabuild.*"/>
+    </delete>
+  </target>
+
+
+  <!-- Run tests -->
+  <target name="run.serverside.test" depends="prepare.serverside.test">
+    <taskdef name="runservertests" classname="org.apache.cactus.ant.RunServerTestsTask" classpath="${cactus.ant.jar}"/>
+    <echo message="test.manager.http.port = ${test.manager.http.port}"/>
+    <echo message="test.builder.http.port = ${test.builder.http.port}"/>
+    <echo message="test.remote.builder = ${test.remote.builder}"/>
+    <runservertests testURL="http://localhost:${test.manager.http.port}/parabuild/index.htm"
+      startTarget="start.test.server"
+      stopTarget="stop.test.server"
+      testTarget="start.test.client"/>
+    <echo message="serverside.test.failed: ${serverside.test.failed}"/>
+    <fail message="Serverside test failed" if="serverside.test.failed"/>
+  </target>
+
+
+  <!-- Start test servers  -->
+  <target name="start.test.server">
+    <parallel>
+      <ant antfile="${serverside.test.helper}" target="start.test.server" inheritall="true" inheritrefs="true">
+        <property name="catalina.home" value="${test.dir.manager}/lib"/>
+        <property name="catalina.base" value="${test.dir.manager}/etc"/>
+        <property name="parabuild.build.manager.ipaddress" value=""/> <!-- not a agent -->
+      </ant>
+      <ant antfile="${serverside.test.helper}" target="start.test.server" inheritall="true" inheritrefs="true">
+        <property name="catalina.home" value="${test.dir.builder}/lib"/>
+        <property name="catalina.base" value="${test.dir.builder}/etc"/>
+        <property name="parabuild.build.manager.ipaddress" value="127.0.0.1"/> <!-- accept from 127.0.0.1 -->
+      </ant>
+    </parallel>
+  </target>
+
+
+  <!-- Stop test servers -->
+  <target name="stop.test.server">
+    <ant antfile="${serverside.test.helper}" target="stop.test.server" inheritall="true" inheritrefs="true">
+      <property name="catalina.home" value="${test.dir.manager}/lib"/>
+      <property name="catalina.base" value="${test.dir.manager}/etc"/>
+    </ant>
+    <antcall target="wait.for.stop">
+      <param name="port.to.wait" value="${test.manager.http.port}"/>
+    </antcall>
+    <ant antfile="${serverside.test.helper}" target="stop.test.server" inheritall="true" inheritrefs="true">
+      <property name="catalina.home" value="${test.dir.builder}/lib"/>
+      <property name="catalina.base" value="${test.dir.builder}/etc"/>
+    </ant>
+    <antcall target="wait.for.stop">
+      <param name="port.to.wait" value="${test.builder.http.port}"/>
+    </antcall>
+  </target>
+
+
+  <!-- Helper -->
+  <target name="wait.for.stop">
+    <echo message="Wait for server on port ${port.to.wait} to stop"/>
+    <waitfor maxwait="120" maxwaitunit="second">
+      <not>
+        <socket server="localhost" port="${port.to.wait}"/>
+      </not>
+    </waitfor>
+    <echo message="Finised waiting for server on port ${port.to.wait} to stop"/>
+  </target>
+
+
+  <!-- Runs UAT test -->
+  <target name="run.uat.test" depends="run.tests.serverside.init">
+    <taskdef file="${webtest.home}/webtestTaskdefs.properties">
+      <classpath>
+        <pathelement path="${webtest.home}/lib"/>
+        <fileset dir="${webtest.home}" includes="lib/**.jar"/>
+        <fileset dir="${webtest.home}" includes="lib/base/**.jar"/>
+        <fileset dir="${webtest.home}" includes="lib/optional/**.jar"/>
+      </classpath>
+    </taskdef>
+    <parallel>
+      <!-- Start servers -->
+      <echo message="====================================== Start server ======================================"/>
+      <antcall target="start.test.server" inheritall="true"/>
+      <echo message="====================================== Start client ======================================"/>
+      <sequential>
+        <!-- Run tests -->
+        <echo message="====================================== Wait for server ======================================"/>
+        <waitfor maxwait="10" maxwaitunit="second">
+          <socket server="localhost" port="8080"/>
+        </waitfor>
+        <echo message="====================================== Start test ======================================"/>
+        <testSpec name="Acceptance test">
+          <config host="localhost" port="8080" protocol="http" basepath="parabuild" verbose="true" showhtmlparseroutput="true"/>
+          <steps>
+              <invoke stepid="Verify remote agent" url="admin/about.htm?mode=test"/>
+              <verifytitle stepid="We should see the login title" text="About"/>
+          </steps>
+        </testSpec>
+        <!-- Stop servers -->
+        <echo message="====================================== Stop servers ======================================"/>
+        <antcall target="stop.test.server" inheritall="true"/>
+      </sequential>
+    </parallel>
+  </target>
+</project>

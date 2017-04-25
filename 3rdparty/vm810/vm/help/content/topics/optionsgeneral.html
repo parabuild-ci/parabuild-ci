@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Options Dialog Box/General Tab</TITLE>
+<!--<optionsgeneral.html>-->
+<!--<index parent="options" label="Options dialog box/General tab" anchor="optionsgeneral">-->
+<!--<control base="pvcs.suite.gui.PvcsOptionsDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="optionsgeneral"></A>Options Dialog/General Tab</H1>
+<P>Use the General tab in the Options dialog box (View | Options | General tab) to tell Serena ChangeMan Version Manager to:
+</P>
+<UL>
+	<LI>Show the Welcome to Serena ChangeMan Version Manager dialog box each time Version Manager starts, which enables you to open the sample project database or open the last opened Version Manager project root.<br>
+	<LI>Display the Revision Pane, which is a third pane that is displayed in the lower right corner of the main window. It shows the revisions of a selected versioned file.<BR>
+	<LI>Enable the Application Log, which causes diagnostic messages to be placed in an application log file.<BR>
+	<LI>Include subprojects in project operations.<BR>
+	<LI>Specify a character to delimit items entered into fields on dialog boxes, such as version labels and file names.<BR>
+	<LI>Display a confirmation message when you copy, move, or delete an item.<br>
+	<LI>Change the way Version Manager behaves when you check in workfiles or check out revisions.<br>
+	<LI>Set the file cache size for the number of files Version Manager loads in the File pane.
+</ul>
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><b>Show Welcome Dialog</b></TD>
+		<TD><!--<control name="OptionsGeneral.SHOW_WELCOME_CB">-->
+		Select to display the Welcome to Serena ChangeMan Version Manager dialog box when Version Manager starts.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Show Revision Pane</b></TD>
+		<TD><!--<control name="OptionsGeneral.SHOW_REVISIONS_CB">-->
+		Select to display a Revision pane in the main window.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Enable Application Log</b></TD>
+		<TD><!--<control name="OptionsGeneral.KEEPLOG_CB">-->
+		Select to generate an application log. Errors that result in a command failure are written to this file. In addition, unexpected conditions, such as OutOfMemoryError, result in a stack trace in this file. The application log option is specific to each workstation that runs Version Manager. When you enable the application log, Version Manager creates a file called pvcsapp.log in your home directory. To view the log, open the file with your default editor.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Include subproject in project operations</b></TD>
+		<TD><!--<control name="OptionsGeneral.INCLUDE_SUBPROJECTS_CB">-->
+		Select to automatically include subprojects and their files in project operations, such as check in or check out.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Separate dialog items by</b></td>
+		<TD><!--control name="OptionsGeneral.DELIMITER_CHOICE">-->
+		Select one of the following options to define the character used to separate multiple entries in dialog box fields. This delimiter character will be used for all fields that accept multiple entries. 
+
+		<ul><LI><b>Comma</b></LI>
+		<LI><b>Colon</b></LI>
+		<LI><B>Semicolon</b> (default)<BR><BR></LI></ul>
+		
+		<b>IMPORTANT!</b> Choose a delimiter character that is <i>not</i> present in the items you wish to enter into dialog box fields.
+		<!--</control>-->
+		</td>
+	</tr>
+	<TR>
+		<TD><b>Confirm On</b></TD>
+		<TD><b>Copy via mouse action:</b>
+		<!--<control name="OptionsGeneral.COPY_CB">-->
+		Select to display a confirmation message when you copy an item.
+	<!--</control>-->
+	<BR>
+	<b>Move via mouse action:</b>
+		<!--<control name="OptionsGeneral.MOVE_CB">-->
+		Select to display a confirmation message when you move an item.
+	<!--</control>-->
+	<BR>
+	<b>Delete File or Project:</b>
+		<!--<control name="OptionsGeneral.DELETE_FILE_PROJECT_CB">-->
+		Select to display a confirmation message when you delete an item.
+	<!--</control>-->
+	</TD>
+	</TR>
+	<TR>
+		<TD><b>Check In/Out Options</b></TD>
+		<TD><b>Delete workfile after check in: </b>
+		<!--<control name="OptionsGeneral.DELETE_WORKFILE_CB">-->
+		Select to delete workfiles from the workfile location after you check them in.
+		<!--</control>--><br>
+		<b>Get read-only revision: </b>
+		<!--<control name="OptionsGeneral.READONLY_REVISION_CB">-->
+		Select to get a read-only copy of a revision when you select Actions | Get.
+		<!--</control>--><br>
+		<b>If Workfile Exists:</b>
+		<!--<control name="OptionsGeneral.OVERWRITE_WORKFILE_CHOICE">-->
+		If a workfile currently exists in the workfile location, select one of the following:<BR>
+		<ul><li>
+<B>Prompt</B> to prompt for confirmation before overwriting the workfile.<BR>
+</li>
+		<li>
+<B>Overwrite</B> to overwrite the workfile.<BR>
+</li>
+		<li>
+<B>Don't Overwrite</B> to prevent the workfile from being overwritten.
+</li>
+</ul><!--</control>-->
+		
+<b>Get only if revision is newer than workfile:</b> Select to check out only those revisions that are newer than the workfiles.<br>
+</li></TD>
+	</TR>
+		<TR>
+		<TD><b>File Cache Options</b></TD>
+		<TD><b>Minimum #: </b>
+		<!--<control name="OptionsGeneral.MIN_FILE_CACHE_SIZE_EDIT">-->
+		The minimum number of files that Version Manager will load into the File pane at one time. This is the minimum number loaded regardless of the percentage setting. If the number of files exceeds this number, the next minimum number of files will be loaded as required.<!--</control>--><br>
+		<b>Maximum % (0-100):</b>
+		<!--<control name="OptionsGeneral.MAX_FILE_CACHE_PERCENT_EDIT">-->
+		The maximum number of files to load at a time as a percentage of the total number of files.
+		<!--</control>--><br><br>
+		For example, say you select 100 files in the minimum field and a maximum percentage of 25% for  project that contains 2000 files. Version Manager compares the values in the fields and uses the one that will display the largest number of files (in this case, it compared 100 to 25 percent of the project's total files (or 500), and loads 500 files). <br>
+	Selecting a small minimum will load files for initial display faster, while a large maximum percentage will allow for faster scrolling.<br>
+In general, the minimum number should be set to the average number of files in each project. The percentage can then be set for when the average is exceeded.</TD>
+	</TR>
+</TABLE>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="optionsdialog.html">Dialog Options</A></TD>
+		<TD><A HREF="optionseditor.html">Application Options</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="disablingdialogs.html">Disabling the Welcome and Confirmation Dialog Display</A></TD>
+		</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

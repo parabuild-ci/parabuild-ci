@@ -1,0 +1,8 @@
+[StJava]
+class=com.borland.starteam.utility.BulkCheckOut
+starteam=8.0
+test=0
+[Java VM]
+name=Sun1.5.0_03
+classpath=BulkCheckout.jar;%CLASSPATH%
+librarypath=%LIBRARYPATH%;

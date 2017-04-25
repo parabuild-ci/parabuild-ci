@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>About Access Control Databases</TITLE>
+<!--<aboutacdb.html>-->
+
+<!--<index parent="access_control_database" label="about" anchor="aboutacdb">-->
+<!--<index parent="security" label="about access control databases" anchor="aboutacdb">-->
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="aboutacdb"></A>About Access Control Databases</H1>
+<P>An access control database defines the users who are authorized to perform actions on projects and defines the actions that users can perform. In Serena ChangeMan Version Manager, the actions are associated with Version Manager <A HREF="aboutprivileges.html">privileges</a>. An access control database is an encrypted file.</p>
+<h2>Users</h2>
+<p>When you define an access control database, part of the definition is a user ID for each authorized user. When you are using an access control database for security, if the user ID that Version Manager obtains is not defined in the access control database for a project database or project, then that user cannot access the project database or project--meaning that the user cannot access the archives. Version Manager uses <A HREF="setloginsources.html">login sources</a> to obtain user IDs.</p>
+<p>When Version Manager obtains a user ID, the program can check the access control database to see if the user ID exists there. If the user ID does not exist, you can configure Version Manager to automatically create the user ID in the access control database associated with a project database or project and assign default privileges to the user. See <A HREF="setloginsources.html">Setting Login Sources</a> for a discussion of how to set up Version Manager to automatically create users in the access control database.</p>
+
+<h2>How Access Control Databases are used in Version Manager</h2>
+<p>Access control databases are associated with project databases and projects. Version Manager uses an access control database if it is specified and <A HREF="enablesecurity.html">enabled in the configuration file</a> associated with the project database or project or if it is <A HREF="embedacdb.html">embedded into Version Manager</a>. By default, when you create a project database, an access control database is created and specified but not enabled in the master configuration file that is also created.</p>
+
+<p>A project database can have one access control database associated with it, and each project within the project database can have an access control database associated with it. If you have an access control database defined for your project database and not for the projects within the project database, the projects use the access control database associated with the project database. Also, you can define an access control database for some of the projects in a project database and not others. For example, if you have three projects in a project database and you have defined an access control database for two of the three projects, those two projects will use their access control database and the third will use the project database's access control database.</P>
+<img src="../graphics/acdb.gif" width="333" height="220" border="0">
+<p>If you define an access control database for a project database, you have the same access control for all the projects in the project database. By defining an access control database for each project, you can further restrict the control for each project. And by using <A HREF="aboutaccesslists.html">access lists</a> you can control access for each individual archive of a project.</p>
+
+<h2>About the Default Access Control Database</h2>
+<p>When you create a project database, Version Manager creates a <A HREF="aboutdefaultacdb.html">default access control database</a>. This access control database contains one user with your user ID, the SuperUser privilege set assigned to you, and a few default privilege sets (see <A HREF="defaultprivtables.html">Default Privilege Sets</a>). This access control database is specified but not enabled in the project database's master configuration file, meaning that the project database does not use the access control database for security.</p>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="usingsecurity.html">Using Security</A></TD>
+		<TD><A HREF="enablesecurity.html">Enabling Security</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="specifyacdblocation.html">Specifying the Access Control Database Location</A></TD>
+		<TD><A HREF="assocconfigfile.html">Associating Configuration Files with Projects</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="embedacdb.html">Embedding an Access Control Database</A></TD>
+		<TD><A HREF="createprjdb.html">Creating Project Databases</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

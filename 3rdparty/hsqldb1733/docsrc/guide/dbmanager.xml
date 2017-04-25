@@ -1,0 +1,59 @@
+<!-- $Id: dbmanager.xml,v 1.3 2004/06/18 14:24:42 fredt Exp $ -->
+
+<appendix>
+<title>Database Manager</title>
+<appendixinfo>
+    <authorgroup>
+        <author>
+            <firstname>Fred</firstname><surname>Toussi</surname>
+            <email>&fredaddr;</email>
+            <affiliation>
+                <orgname>HSQLDB Development Group</orgname>
+            </affiliation>
+        </author>
+    </authorgroup>
+    <edition>$Revision: 1.3 $</edition>
+    <pubdate>$Date: 2004/06/18 14:24:42 $</pubdate>
+    <keywordset>
+        <keyword>Hsqldb</keyword>
+        <keyword>Database</keyword>
+        <keyword>Manager</keyword>
+    </keywordset>
+</appendixinfo>
+
+<section>
+    <title>Brief Introduction</title>
+    <para>The Database Manager tool is a simple GUI database query tool with a 
+	tree display of the tables. Both AWT and SWING versions of the tool are
+	available and work almost identically. The AWT version class name is
+	org.hsqldb.util.DatabaseManager; the SWING version,
+	org.hsqldb.util.DatabaseManagerSwing. 
+	</para><para>
+	The AWT version of the database manager can be deployed as an applet in
+	a browser. A demo HTML file with an embedded Database Manager is included
+	in the /demo directory.
+	</para><para>
+	When the Database Manager is started, a dialogue allows you to
+	enter the JDBC driver, URL, user and password for the new connection.
+	A drop-down box, Type, offers preset values for JDBC driver and URL for
+	most popular database engines, including HSQLDB. Once you have selected
+	an item from this drop-down box, you should edit the URL to specify
+	the details of the database or any additional properties to pass. You should
+	also enter the username and password before clicking on the OK button. 	
+	</para><para>
+	The AWT connection dialogue allows you to save the settings for the connection
+	you are about to make. You can then access the connection in future sessions.
+	To save a connection setting, enter a name in the Setting Name box before
+	clicking on the OK button. Next time the connection dialogue is displayed,
+	the drop-down box labeled Recent will include the name for all the saved
+	connection settings. When you select a name, the individual settings are
+	displayed in the appropriate boxes.
+	</para><para>
+	The small Clr button next to the drop-down box allows you to clear all the
+	saved settings. If you want to modify an existing setting, first select
+	it from the drop-down box then modify any of the text boxes before making
+	the connection. The modified values will be saved.
+	</para>
+</section> 
+
+</appendix>

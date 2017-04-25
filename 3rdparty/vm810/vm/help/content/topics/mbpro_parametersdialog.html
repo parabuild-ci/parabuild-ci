@@ -1,0 +1,192 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Build Parameters Dialog Box</TITLE>
+<!--<MBPro_ParametersDialog.html>-->
+<!--<index parent="Merant Build" label="Parameters dialog box" anchor="parameters">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiBuildParameterDlg.VmGuiMerantBuildParameterDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nSerena ChangeMan Builder for Professional\nBuild Parameters Dialog Box");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="parameters"></A>Build Parameters</H1>
+<P>Use the Build Parameters dialog box to specify the various settings and values for the build job.</P>
+
+<P>After you have filled out the fields on this dialog box, click Next to go to the
+<A HREF="mbpro_submissiondialog.html">Submission</A> dialog box.</P>
+
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+        <TD><b>Serena ChangeMan Builder project</b></TD>
+		<TD><!--<control name="BPD_BUILD_PROJECT_TEXTFIELD">-->
+        A read-only field displaying the name of the Serena ChangeMan Builder project.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Search path</b></TD>
+		<TD><!--<control name="BPD_SEARCH_PATH_TEXTFIELD">-->
+		A read-only field displaying the name of the search path.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Job name</b></TD>
+		<TD><!--<control name="BPD_JOB_NAME_TEXTFIELD">-->
+		A read-only field displaying the name of the build job.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Build machine</b></TD>
+		<TD><!--<control name="BPD_BUILD_MACHINE_CHOICE">-->
+		Choose from the available build machines. The build machines displayed are those that
+                were added to the build machine list box in the <A HREF="mbpro_jobselectiondialog.html">Job Selection Dialog Box</A>.
+                Changing the build machine changes the parameters, because each build machine has its own
+                saved settings.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Build directory</b></TD>
+		<TD><!--<control name="BPD_BUILD_DIR_TEXTFIELD">-->
+		You can enter the name of a local build directory, or browse for it.
+                If the build job has been executed before, this field contains the 
+                previous build directory. If the build job has not been executed before, 
+                it contains the default values of C:\Serena_Builder for Windows or $HOME\Serena_Builder
+                for UNIX.
+                If you are performing a remote build, the directory must be entered as it
+                would be from the remote build machine.
+                If the remote machine is mapped to a local drive, you can use the browse
+                button to locate the remote build directory, but you may have to edit
+                the resulting path.
+                You can also use a predefined environment variable; for example, %SERENA_BUILDER_DIR%.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Bldmake parameters</b></TD>
+		<TD><!--<control name="BPD_BLD_MAKE_PARAM_TEXTFIELD">-->
+		Accept the existing bldmake parameters, which are from the 
+                specified build job, or edit the parameters as desired.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>OM parameters</b></TD>
+		<TD><!--<control name="BPD_OM_PARAM_TEXTFIELD">-->
+		Accept the existing OM parameters, which are from the 
+                specified build job, or edit the parameters as desired.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Compile flags: Debug</b></TD>
+		<TD><!--<control name="BPD_DEBUG_CHECKBOX">-->
+		Click to select the debug compiler flags. The default value
+                is the value specified in the build job.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Compile flags: Release</b></TD>
+		<TD><!--<control name="BPD_RELEASE_CHECKBOX">-->
+		Click to select the release compiler flags. The default value
+                is the value specified in the build job.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Build mode</b></TD>
+		<TD><!--<control name="BPD_BLD_MODE_CHOICE">-->
+		Select Incremental, Exact, Clean, New, or Rebuild. <b>Incremental</b> retrieves newer 
+                workfiles from the archives. This is the default. <b>Exact</b> retrieves workfiles whose 
+                date and time do not exactly match the archives. <b>Clean</b> deletes all existing workfiles
+                before retrieving archives. <b>New</b> requires that the build directory not currently exist. 
+                <b>Rebuild</b> rebuilds all intermediate and final targets.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Enable footprinting</b></TD>
+		<TD><!--<control name="BPD_ENABLE_FOOT_CHECKBOX">-->
+		Click to cause a list of dependencies, including environment variable settings, to be
+                embedded inside the final executable. You can later view this information with the 
+                OMIDENT utility in the /bin folder of the build directory. OMIDENT <i>filename</i> > footprint.txt
+                will write the footprinting information to a file named footprint.txt.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Enable project processing</b></TD>
+		<TD><!--<control name="BPD_ENABLE_PROJ_CHECKBOX">-->
+		By default this option is selected; click to disable Version Manager project processing. When disabled, 
+                the following behavior ensues: <b>1)</b> Target file revisions are retrieved but source file 
+                revisions are not; <b>2)</b> Build mode is disabled, so Serena ChangeMan Builder uses only the files already 
+                in the build directory; <b>3)</b> the Footprinting option is disabled.<!--</control>--></TD>
+	</TR>
+	</TABLE>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="mbpro_jobselectiondialog.html">Build Job Selection Dialog Box</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="mbpro_targetselectiondialog.html">Target Selection Dialog Box</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="mbpro_submissiondialog.html">Submission Dialog Box</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

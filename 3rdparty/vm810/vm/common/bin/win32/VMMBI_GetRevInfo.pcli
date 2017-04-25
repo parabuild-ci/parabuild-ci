@@ -1,0 +1,565 @@
+#
+# $Header:   Y:/archives/dv/intersolv/Merant_Build/VM/Integration/Event_Triggers/VMMBI_GetRevInfo.pcli-arc   1.8   Jan 13 2005 16:47:44   rjoachim  $
+#
+# Title:
+#
+#         VMMBI_GetRevInfo.pcli
+#
+#         Copyright (c) 2003, MERANT.  All Rights Reserved.
+#
+# Author:
+#
+#          Richard.Gering@Merant.com
+#
+# Description:
+#
+#          This script will list revision information for all files that are associated
+#          with a specified version label or promotion group (in a way that climbs the
+#          promotion model: if the specified promotion group is not associated with any
+#          revision, the script will look for matches using promotion groups defined
+#          higher up in the promotion model).
+#
+#          The revision information output is tailored for use by Merant BUILD.
+#
+#          This PCLI script implements the function ListRevision4Group().
+#
+# Usage:
+#
+#           pcli run -sVMMBI_GetRevInfo.pcli
+#                     [PR=<pdb>]
+#                     [ID=[<user_id][:<password>]]
+#                     [NoWarn=True|False]
+#                     [Recursive=True|False]
+#                     [Label=<Label>]
+#                     [Group=<Group>]
+#                     [<Project>] ...
+#
+# Where:
+#
+#           <pdb>            Porject database path
+#           <user_id>        User ID
+#           <password>       Password
+#           <label>          Version label
+#           <group>          Promotion group
+#           <project> ...    One or more project names
+#
+#           NoWarn:
+#
+#              If set to True, the NoWarn option suppresses the warning that is normally
+#              printed if the specified promotion group does not exist in the promotion
+#              group hierarchy for the file.
+#
+#              Defalut = false
+#
+#           Recursive:
+#
+#              If Recursive is set to True then all sub-projects are processed otherwise
+#              only the specified project is processed.
+#
+#              Defalut = false
+#
+#           Notes:
+#
+#              (1) Any parameter value which contains white space must be enclosed in
+#                  double quoptes.  Any parameter value can be enclosed in double
+#                  quotes.
+#
+# Examples:
+#
+#           (1) List the revision information for all revision associated with the
+#               label "Test" in the Project DataBase "D:\proj", using the UserID
+#               "Admin" with the password "Secret".
+#
+#               pcli run -sVMMBI_GetRevInfo.pcli PR=D:\PDB ID=Admin:Secret Label=Test /QA
+#
+#           (2) As above, but use the promotion group "QA", and limit the output to
+#               files from the project "Src".
+#
+#               pcli run -sVMMBI_GetRevInfo.pcli PR=D:\PDB ID=Admin:Secret Group=QA /Src
+#
+#           (3) Using values containing white space.
+#
+#               pcli run -sVMMBI_GetRevInfo.pcli PR="D:\PDB 2" ID="Admin:Secret" Label="Test 2" "/QA 2"
+#
+
+#
+# Debug function
+#
+
+dbg()
+{
+        if test $DEBUG > 0
+        {
+                echo $*
+        }
+}
+
+#
+# This PCLI function tries to be a close replica of the ListRevision command
+# operating on a single file while passing a promotion group, except that it
+# will climb the promotion model and report revision numbers that match groups
+# higher up in the promotion model hierarchy. This will allow you to obtain
+# the revision number a "Get -g<Group>" command would extract from the archive.
+#
+
+ListRevision4Group()
+{
+        set -l -vSearchGroup $1 # Argument 1: the requested promotion group
+        set -l -vFile $2        # Argument 2: the versioned file entity
+        set -l -vNoWarn $3          # If set to true, don't warn if promotion
+                                            # group does not exist in hierarchy for file.
+
+        # First check if the specified promotion group is assigned to a
+        # revision. If so, we are done. This also makes it possible for a
+        # user to still search for a group that is removed from the model,
+        # but that is still applied to a revision in the versioned file.
+
+        set -l -vRevOut
+        set -l -vCmdOut -a
+        run -vaCmdOut ListRevision -g"$SearchGroup" '"$File"'
+        set -l -vRC $?
+        if [ $RC = 0 ]
+        {
+                set -vRevOut "$CmdOut[0]"
+        }
+
+        if [ "$RevOut" = "" & $RC = 0 ]
+        {
+                # No direct match for the given promotion group.  Try to
+                # find one by listing the model and walking the groups.
+
+                # Obtain fully qualified entity path for File and unset PCLI_PP
+                # for the remainder of this block to work around quote problem.
+
+                set -vFile "$[ ListVersionedFiles -l '"$File"' ]"
+
+                set -l -vPCLI_PP
+
+                set -l -vModel -a
+                run -vaModel ListPromotionModel '"$File"'
+                calc -l -vModelCnt $(ArraySize Model) - 1
+                set -l -vIdx $ModelCnt
+                set -l -vSpaceString ""
+                set -l -vFoundGroup 0
+
+                while [ $Idx > 0 & "$RevOut" = "" ]
+                {
+                        set -l -vGroup "$Model[$Idx]"
+                        # echo "Group $Idx = '$Group'"
+                        set -l -vNoSpaceGroup $Group
+
+                        calc -vIdx $Idx - 1
+
+                        if [ $FoundGroup = 0 & "$SearchGroup" != "$NoSpaceGroup" ]
+                        {
+                                continue
+                        }
+
+                        # Test if the level in the promotion model hierarchy
+                        # (as identified by the indentation) has changed.
+
+                        if [ "$Group" != "${SpaceString}${NoSpaceGroup}" ]
+                        {
+                                if [ $FoundGroup != 0 & "$Group" = "${SpaceString}*${NoSpaceGroup}" ]
+                                {
+                                        # Encountered a lower level group than
+                                        # the previous one (= different branch)
+                                        # Simply ignore to speed up process.
+
+                                        continue
+                                }
+
+                                # When we get here, we are either calculating
+                                # SpaceString after finding our first match,
+                                # or the promotion hierarchy went up one level.
+                                # By ignoring subsequent entries at the same
+                                # level, we avoid comparing the wrong branch.
+
+                                set -vSpaceString ""
+                                set -l -vSpaceCount 0
+                                while [ "$Group" != "${SpaceString}${NoSpaceGroup}" ]
+                                {
+                                        calc -vSpaceCount $SpaceCount + 2
+                                        set -vSpaceString "${SpaceString}  "
+                                }
+
+                                if [ $FoundGroup = 0 ]
+                                {
+                                        set -vFoundGroup 1
+                                        # No need to call ListRevision here,
+                                        # since we already tried that before
+                                        # starting to examine the model.
+                                }
+                                else
+                                {
+                                        set -ns -vRevOut $[ListRevision -g"$NoSpaceGroup" '"$File"']
+                                }
+                        }
+                }
+
+                if [ -i $FoundGroup = 0 & "$NoWarn" != "true" ]
+                {
+                        #
+                        # This SHOULD go to stderr, but no such capability yet.
+                        #
+                        
+                        echo "Warning: Group "'"'"${SearchGroup}"'"'" does not exist in promotion hierarchy for file "'"'"${File}"'"'"."
+                        set -vRC 16
+                }
+        }
+
+        if [ "$RevOut" != "" ]
+        {
+                echo "$RevOut"
+        }
+
+        return $RC
+}
+
+#
+# Function to extract just the revision number from the output of ListRevision
+# or ListRevision4Group.
+#
+
+ExtractRevNum()
+{
+        set -l -vPCLI_IFS "="   # Inter-Field-Separator is "="
+        
+        #
+        # Get first (only) line of output and create array split on "="
+        # Use two set commands to strip any quotes that could affect
+        # the array splitting process (we don't care about quotes here).
+        #
+        
+        set -l -vRevOut $*
+        set -vRevOut $RevOut    # More quote stripping
+        set -l -a -vOutput $RevOut
+        set -vPCLI_IFS          # Reset Inter-Field-Separator
+
+        #
+        # Last element in the array is the revision number. However, if there
+        # is only one element (LastIdx=0) don't print it: there is no RevNum.
+        #
+        
+        calc -l -vLastIdx $(ArraySize Output) - 1
+        if [ $LastIdx > 0 ]
+        {
+                echo "$Output[$LastIdx]"
+        }
+}
+
+
+#
+# Convert a regular version number into a string that can be appened to an
+# entity path so the List command can get information for a specific revision.
+# In: 1.2.3.4   Out: 1.2/1.2.3/1.2.3.4
+#
+
+MakeRevNum4List()
+{
+        set -l -vRevNum4List "$1"
+        if [ "$RevNum4List" = "*.*.*" ]
+        {
+                #
+                # More than 1 dot in the revision number: we're special
+                #
+
+                set -l -vPCLI_IFS -r "."
+                set -ns -l -vlineArg -a $RevNum4List
+                set -vPCLI_IFS          # Reset Inter-Field-Separator
+
+
+                calc -l -vNumElements $(ArraySize lineArg) - 1
+                set -vRevNum4List "$lineArg[0].$lineArg[1]"
+                set -l -vAddString "$RevNum4List"
+                set -l -vidx 2
+                
+                while [ $idx <= $NumElements ]
+                {
+                        set -vAddString "${AddString}.${lineArg[$idx]}"
+                        set -vRevNum4List "$RevNum4List/$AddString"
+                        calc -vidx $idx + 1
+                }
+        }
+
+        echo "$RevNum4List"
+}
+
+
+#
+# Main Program 
+#
+
+set -vNoWarn false
+set -vRecursive false                # Default is to not process sub-projects
+
+#set -vDEBUG 1
+
+if test "$DEBUG" = ""
+{
+        set -vDEBUG 0
+}
+
+set -vGroup ""
+set -vLabel ""
+
+#
+# Create ARGC and $ARGV[] array, similar to C
+#
+
+set -a -vARGC $#
+set -a -vARGV "$0"
+set -vi 1
+
+while test $i <= $ARGC
+{
+        set -a -vARGV -i$i $[echo -ns \"'$'$i\"]
+        calc -vi $i + 1
+}
+
+#
+# Parse through arguments, looking for "OPT=VAL" pairs
+#
+
+set -vi 1
+while test $i <= $ARGC
+{
+        parseBoolean()
+        {
+                set -l -vVariable $1
+                set -l -vName $2
+                set -l -vValue $3
+                
+                if test -i "$Value" = true | "$Value" = yes
+                {
+                        set -v$Variable true
+                }
+                elif test -i "$Value" = false | "$Value" = no
+                {
+                        set -v$Variable false
+                }
+                else
+                {
+                        echo "$ARGV[0]: $Name can only be set to True or False"
+                        exit 1
+                }
+        }
+
+        if test "$ARGV[$i]" != "*=*"
+        {
+                break
+        }
+
+        set -l -vPCLI_IFS -r "="
+        set -ns -l -vlineArg -a $ARGV[$i]
+        set -vPCLI_IFS          # Reset Inter-Field-Separator
+        dbg -ns Option: $lineArg[0] Value: $lineArg[1]
+
+        if test $[ArraySize lineArg] != 2
+        {
+                echo "$ARGV[0]: Incomplete option: $ARGV[$i]"
+                exit 1
+        }
+
+        if test -i "$lineArg[0]" = "PR"
+        {
+                # PR=<PDB>
+                set -vPCLI_PR "$lineArg[1]"
+        }
+        elif test -i "$lineArg[0]" = "ID"
+        {
+                # ID=<UserID>
+                set -vPCLI_ID "$lineArg[1]"
+        }
+        elif test -i "$lineArg[0]" = "SP"
+        {
+                # SP=<Workspace>
+                set -vPCLI_SP "$lineArg[1]"
+        }
+        elif test -i "$lineArg[0]" = "PP"
+        {
+                # PP=<Project>
+                set -vPCLI_PP "$lineArg[1]"
+        }
+        elif test -i "$lineArg[0]" = "Group"
+        {
+                # Group=<Group>
+                set -vGroup "$lineArg[1]"
+        }
+        elif test -i "$lineArg[0]" = "Label"
+        {
+                # Label=<Label>
+                set -vLabel "$lineArg[1]"
+        }
+        elif test -i "$lineArg[0]" = "Recursive"
+        {
+                # Recursive=True|False
+                parseBoolean Recursive Recursive "$lineArg[1]"
+        }
+        elif test -i "$lineArg[0]" = "NoWarn"
+        {
+                # NoWarn=True|False
+                parseBoolean NoWarn NoWarn "$lineArg[1]"
+        }
+        else
+        {
+                echo "$ARGV[0]: Unknown option '$ARGV[$i]'"
+                exit 1
+        }
+
+        calc -vi $i + 1
+}
+
+
+dbg -ns Label=$Label
+dbg -ns Group=$Group
+dbg -ns NoWarn=$NoWarn
+dbg -ns Recursive=$Recursive
+
+#
+# If recursive is set (do sub-projects) then we will set up to use the pcli -z option
+#
+
+if [ "$Recursive" = "true" ]
+{
+   set -vZoption " -z"
+}
+
+#
+# The Group and Label parameters are mutually exclusive
+#
+
+if [ "$Group" != "" & "$Label" != "" ]
+{
+        echo "$0: ERROR: Cannot specify both Group=<Group> and Label=<Label>: exiting"
+        exit 1
+}
+
+#
+# If neither the Group or Lable parameters are specified then we will use DefaultRevision
+#
+
+elif [ "$Group" = "" & "$Label" = "" ]
+{
+        # Uncomment the following 2 lines if you don't want to allow the script
+        # to use the DefaultRevision for the active workspace.
+
+        # echo "$0: ERROR: Neither Group=<Group> nor Label=<Label> was specified: exiting"
+        # exit 1
+}
+
+#
+# Main Processing
+#
+
+dbg -ns Zoption="$Zoption"
+
+set -a -vEntities -i0 "/"       # Default in case no project specified
+set -vx 0
+
+while test $i <= $ARGC
+{
+        set -a -vEntities -i$x "$ARGV[$i]"
+
+        dbg "Entities[$x]=$Entities[$x]"
+
+        calc -vi $i + 1
+        calc -vx $x + 1
+}
+
+if [ "$PCLI_PP" != "" ]
+{
+        #
+        # Need to test in two parts, as an empty string throws off ' test below
+        #
+
+        if [ "$PCLI_VERSION" < "6.8.10" & "$PCLI_PP" = "*'*" ]
+        {
+                echo
+                echo "WARNING: You need VM 6.8.10 or later to reliably use PCLI_PP with a ' in it"
+                echo
+        }
+}
+
+for Entity in $Entities[]
+{
+        for File in $[ ListVersionedFiles -l $Zoption '"$Entity"' ]
+        {
+                #
+                # Run the GetRevision4Group function, capturing output and return code
+                #
+
+                set -l -a -vCmdOut
+                if [ "$Group" != "" ]
+                {
+                        run -vaCmdOut ListRevision4Group '"$Group"' '"$File"' "$NoWarn"
+                }
+                elif [ "$Label" != "" ]
+                {
+                        run -vaCmdOut ListRevision -f -v'"$Label"' '"$File"'
+                }
+                else
+                {
+                        run -vaCmdOut ListRevision -f '"$File"'
+                }
+
+                set -l -vRC $?
+
+                if [ $RC = 0 ]
+                {
+                        #
+                        # No errors. See if first line of output has RevNum
+                        # 
+                        
+                        set -l -vRevNum $[ExtractRevNum "$CmdOut[0]"]
+                        
+                        if [ "$RevNum" != "" ]
+                        {
+                                set -l -vArchiveLocation "$[GetArchiveLocation '"$File"']"
+                                set -vRevNum4List $[MakeRevNum4List $RevNum]
+                                set -l -a -vCmdOut
+
+                                run -vaCmdOut List -aArchiveRevision:ModificationDate -aArchiveRevision:CheckedInDate '"$File/$RevNum4List"'
+
+                                set -l -vRC $?
+                                
+                                if [ $RC != 0 ]
+                                {
+                                        # Couldn't fetch revision information.
+                                        # If we fail at this level, it is most
+                                        # likely due to ACD permissions. A Java
+                                        # stack trace is already printed on,
+                                        # stdout :-(  Skip file and move on.
+                                        continue
+                                }
+
+                                set -l -vPCLI_IFS "="   # Inter-Field-Separator is "="
+                                set -l -a -vModifyDateOut $CmdOut[1]
+                                set -l -a -vCheckinDateOut $CmdOut[2]
+                                set -vPCLI_IFS          # Reset Inter-Field-Separator
+                                set -l -vModifyDate "$ModifyDateOut[1]"
+                                set -l -vCheckinDate "$CheckinDateOut[1]"
+
+                                echo -n -ns "VMMBI_GetRevInfo_ID"
+                                echo -n -r "\t"
+                                echo -n -ns "${File}"
+                                echo -n -r "\t"
+                                echo -n -ns "${ArchiveLocation}"
+                                echo -n -r "\t"
+                                echo -n -ns "${RevNum}"
+                                echo -n -r "\t"
+                                echo -n -ns "${ModifyDate}"
+                                echo -n -r "\t"
+                                echo -ns "${CheckinDate}"
+                        }
+                }
+                else
+                {
+                        #
+                        # Caught an error. If output in $CmdOut array: pass it along.
+                        # 
+                        
+                        echo -ns $CmdOut[]
+                }
+        }
+}

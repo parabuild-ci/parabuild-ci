@@ -1,0 +1,161 @@
+<!-- Copyright 2003 Zelix Pty Ltd (ABN 47 078 740 093) -->
+<html>
+<head>
+<title>Zelix KlassMaster Stack Trace Translate</title>
+   <meta name="keywords" content="java obfuscator,java code obfuscator,obfuscation">
+   <meta name="description" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <meta name="classification" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <link rel=stylesheet href="../ZKM.css" TYPE="text/css">
+</head>
+<body background="../images/small-white-mist1.jpg" bgcolor="#E1E1E1">
+<center><a href="index.html"><img src=../images/ZKM_b4.gif alt="Zelix KlassMaster" width=264 height=62 border=0></a></center>
+<hr>
+<center>
+<table width=770 border=0>
+   <tr>
+      <td valign="top" colspan=2>
+         <h1>Tools | Stack Trace Translate</h1>
+         <h2>Overview</h2>
+         The <b>"Stack Trace Translate"</b> tool translates a stack trace produced by obfuscated bytecode by replacing obfuscated class and method names with the unobfuscated equivalents.
+         If you used Zelix KlassMaster's line number scrambling feature then the scrambled line numbers will be translated to the original numbers.
+         The tool reads the change log that you created when obfuscating your classes and, ideally, it will also analyze the obfuscated bytecode itself.
+         <p>
+         By analyzing the obfuscated bytecode, the Stack Trace Translate tool can usually identify a single original method for each obfuscated method name in the stack trace, 
+         <b>even if line numbers are not present in the stack trace</b>.
+         Alternatively, if you do not specify the path to your obfuscated bytecode, then the Stack Trace Translate tool will not be able to distinguish between overloaded obfuscated method names
+         and it will have to present you with a list of possible alternative original method names.
+         <p>
+         Note that there is also an <a href="stackTraceTranslateApi.html">API</a> that allows you to call the Stack Trace Translate tool from another program.
+         <h3>Obfuscated stack trace</h3>
+<pre>
+Exception in thread "main" java.lang.NullPointerException
+        at a.a.c.a(c.java:7)
+        at a.a.b.a(b.java:7)
+        at a.a.a.a(a.java:3)
+        at a.a.a.main(a.java:10)
+</pre>
+         <h3>Translated stack trace if obfuscated bytecode is analyzed</h3>
+<pre>
+Exception in thread "main" java.lang.NullPointerException
+    at com.mycompany.MyClass2.method1(String)(MyClass2.java:9)
+    at com.mycompany.MyClass1.method1(String)(MyClass1.java:9)
+    at com.mycompany.MyClass0.method1(String)(MyClass0.java:9)
+    at com.mycompany.MyClass0.main(String[])(MyClass0.java:25)
+</pre>
+         <h3>Translated stack trace if obfuscated bytecode is NOT analyzed</h3>
+<pre>
+NOTE: Obfuscated bytecode not analyzed so there could be multiple possible methods for each trace line.
+
+Exception in thread "main" java.lang.NullPointerException
+    at com.mycompany.MyClass2.method1(String)
+                              method2()
+    at com.mycompany.MyClass1.method1(String)
+                              method2()
+    at com.mycompany.MyClass0.method1(String)
+                              method2()
+                              method3(String, int)
+    at com.mycompany.MyClass0.main(String[])(MyClass0.java:25)
+</pre>
+      </td>
+   </tr>
+   <tr>
+      <td colspan=2>
+          &nbsp; <!-- Force an empty row -->
+      </td>
+   </tr>
+   <tr>
+      <td valign="top">
+         <h2>Basics</h2>
+         You can start the Stack Trace Translate tool at any time by selecting the <b>"Tools | Stack Trace Translate"</b> menu.
+         <p>Note that there is also an <a href="stackTraceTranslateApi.html">API</a> that allows you to call the Stack Trace Translate tool from another program.
+      </td>
+      <td valign="top">
+         <img src=../images/toolsStackTraceTranslate.gif width=283 height=166 alt="Zelix KlassMaster - Selecting Stack Trace Translate"><p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+      </td>
+      <td align="center" valign="middle">
+         <img src=../images/down_arrow.gif width=20 height=24 alt="Leads to..."><p>
+      </td>
+   </tr>
+   </tr>
+      <td valign="top">
+         The first step is to select your change log file by clicking on
+         <img src=../images/browseBtn.gif align="absmiddle" alt="..." width=31 height=25> to the right of the in the <b>"Change log file"</b> label to browse for the file.
+         You should select the change log that was produced when you obfuscated the bytecode that generated the stack trace. 
+         The selected file name will appear in the field to the left of the button. You <b>must</b> specify the change log.
+         <p>
+         It is highly recommended that you then specify the obfuscated bytecode classpath that the Stack Trace Translate tool should use to find the obfuscated bytecode that generated the stack trace.
+         You do this by clicking on the <img src=../images/browseBtn.gif align="absmiddle" alt="..." width=31 height=25> to the right of the in the <b>"Obfuscated bytecode"</b> label.
+      </td>
+      <td valign="top">
+         <img src=../images/stackTraceTranslate1.gif width=459 height=567 alt="Zelix KlassMaster - Stack Trace Translate"><p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+      </td>
+      <td align="center" valign="middle">
+         <img src=../images/down_arrow.gif width=20 height=24 alt="Leads to..."><p>
+      </td>
+   </tr>
+   </tr>
+      <td valign="top">
+         After clicking on the <img src=../images/browseBtn.gif align="absmiddle" alt="..." width=31 height=25> to the right of the in the <b>"Obfuscated bytecode"</b> label
+         you will be presented with the Obfuscated Bytecode Classpath dialog that will allow you to specify
+         <ul>
+            <li>the path to your obfuscated bytecode,
+            <li>the path to any class libraries that your obfuscated bytecode requires to be able to run,
+            <li>the path to the Java bootstrap classes (eg. <code>java.lang.Object</code>).
+         </ul>
+         Note that the classpath must allow the Stack Trace Translate tool to find <code>java.lang.Object</code> and all the classes that your 
+         application requires to be able to run.
+         <p>
+         If you choose to not set the obfuscated bytecode path then you should deselect the <b>"Analyze obfuscated bytecode"</b> checkbox so
+         that the tool knows to ignore the classpath setting.
+      </td>
+      <td valign="top" align="center">
+         <img src=../images/stackTraceTranslateClasspath.gif width=358 height=296 alt="Zelix KlassMaster - Stack Trace Translate"><p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+      </td>
+      <td align="center" valign="middle">
+         <img src=../images/down_arrow.gif width=20 height=24 alt="Leads to..."><p>
+      </td>
+   </tr>
+   </tr>
+      <td valign="top">
+         You should then 
+         <ul>
+            <li>paste the stack trace that you wish to tranlsate into the <b>"Paste original stack trace here"</b> area,
+            <li>click on <img src=../images/translateBtn.gif align="absmiddle" alt="Translate" width=80 height=25> to obtain the translated details which appear in the 
+                <b>"Translated stack trace will appear here"</b> area.
+         </ul>
+         <p>
+         Again, note that if you do not specify that the obfuscated bytecode be analyzed 
+         then more than one original method name may match each obfuscated method name in the stack trace.
+         This is due to method overloading.
+      </td>
+      <td valign="top">
+         <img src=../images/stackTraceTranslate2.gif width=459 height=517 alt="Zelix KlassMaster - Stack Trace Translate"><p>
+      </td>
+   </tr>
+</table>
+</center>
+<hr>
+<center>
+<table>
+   <tr>
+      <td>
+         <a href=index.html><img src=../images/uarrw.gif alt="Documentation Table of Contents"></a>
+      </td>
+   </tr>
+</table>
+</center>
+Copyright &copy; 2003 <a href="mailto:WebMaster@zelix.com"><font size=-1>Zelix Pty Ltd</font></a> (ABN 47 078 740 093)
+</body>
+</html>

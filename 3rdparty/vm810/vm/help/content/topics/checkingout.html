@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Checking Out Revisions/Editing Files</TITLE>
+<!--<CheckingOut.html>-->
+<!--<toc parent="checking_in_checking_out" label="Checking Out/Editing Files" anchor="CheckingOut" sortkey="05">-->
+<!--<index parent="checking_out" label="revisions and projects" anchor="CheckingOut">-->
+<!--<index parent="revisions" label="checking out" anchor="CheckingOut">-->
+<!--<index parent="projects" label="checking out" anchor="CheckingOut">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nChecking In/Checking Out\nChecking Out / Editing Files");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="CheckingOut"></A>Checking Out Revisions/Editing Files</H1>
+<P>Check out allows you to retrieve a revision from one or more <A HREF="aboutversionedfiles.html">versioned files</A>, from each versioned file in a <A HREF="aboutprojects.html">project</A>, or from each versioned file in a <A HREF="aboutprjdb.html">project database</A>.  However, the Edit command (Edit | Edit File) allows you retrieve only one revision at a time.</P>
+<P>If you have installed Tracker TrackerLink or TeamTrack SourceBridge, Version Manager can <A HREF="trackerlink.html">associate issues</a> with the files you check out. If you associate a file with an issue when you check it out, SourceBridge annotates the issue to say that the file was locked. If you unlock the file without checking in changes, the association is dissolved and a notation is made in the issue that the file was unlocked.</P>
+<P>When you check out a revision, Version Manager creates a workfile in the location currently set as the workfile location. You can later open this revision in an editor of your choice. By contrast, when you edit, Version Manager checks out a revision and opens the associated workfile in an editor for you.</P>
+
+<P>When you edit a workfile, Version Manager:</P>
+<UL>
+	<LI>Copies the revision into TEMP directory defined for your system instead of the location currently set as the workfile location. On Windows, the TEMP directory is defined by the TEMP environment variable. Version Manager creates a \PVCS directory in your TEMP directory the first time you edit a file (for example, \TEMP\PVCS). On UNIX, this is defined by the pvcsvmux script, which sets it to /tmp/pvcs.
+	<LI>Launches the editor of your choice.  On Windows, the editor that Version Manager uses to display the workfile is either defined by the default Windows associations or by the editor location that you specify in the View | Options dialog box. On UNIX, you must specify an editor location in the View | Options dialog box.
+</UL>
+<P>Using Check Out or Edit locks the revision. When you perform a check out operation, you can select multiple files, a project, or a project database and specify a specific revision by revision number, version label, or promotion group.</P>
+<h2>Using the System Default Options</h2>
+<p>Version Manager uses the following initial defaults when you check out a revision. These defaults can be overridden when checking out the revision, and in some cases, the defaults can be redefined in the <a href="optionsgeneral.html">Options dialog box</a> (View | Options | General tab).</P>
+<UL>
+	<LI>Checks out the <A HREF="defaultrevision.html">default revision</A> from the location currently set as the workfile location.
+	<LI>Checks out only the files of the selected project and does not include the files of the project's subprojects.
+	<LI>Prompts for confirmation before overwriting the workfile if a workfile currently exists in the workfile location.<br>
+<b>Note:</b> Version Manager does not prompt for confirmation if a read-only workfile exists in the current workfile location.
+	<LI>Retains the promotion group currently assigned to the revision, if a <A HREF="aboutprommodels.html">promotion model</a> is in effect.
+	<li>
+Checks out a revision whether or not it is newer than the workfile
+</li>
+</UL>
+<H2>To check out a revision:</H2>
+<OL>
+	<LI>Select the versioned file, project, or project database associated with the revision(s) you want to check out.<BR><BR>
+	<LI>Select Actions | Check Out.<BR><BR>
+	<b>Note:</b> The Check Out dialog box appears if the Check Out/Edit option for the versioned file actions, and the Check Out option for project actions is selected in View | Options | Dialog Behavior.<BR><BR>
+	<li>Accept the defaults listed above and click OK, or do the following:
+<p>
+<ol type="a">
+<li>To override the defaults on the General tab, edit any of the fields below:<br><br>
+<TABLE  WIDTH="87%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+<TR>
+	<TD><b>To...</b></TD>
+	<TD><b>Do this...</b></TD>
+</TR>
+<TR>
+	<TD>Modify the location to which the revisions will be checked out</TD>
+	<TD>Edit the location in the <b> Check Out To</b> field. By editing this path, you are changing the workfile location for this action only; it does not change the workfile location permanently.</TD>
+</TR>
+<TR>
+	<TD>Check out using the project hierarchy as the workfile locations instead of the default workfile locations</TD>
+	<TD>Select the <b>Check out using project hierarchy instead of workfile location(s)</b> check box. This option is not available when operating on a single file. This option overrides the default workfile locations of each project/subproject within the selected project database/project when checking out files and places the files in subdirectories that mirror the project structure relative to the workfile location specified in the <b>Check Out To</b> field. If the subdirectories do not exist, Version Manager creates them. For example, if the value in the <b>Check Out To</b> field is c:\projdb\work and the project structure is /proj1/subproj1, /proj1/subproj2, and proj2/subproj1, Version Manager  places the files in c:\projdb\work\proj1\subproj1, c:\projdb\work\proj1\subproj1, and c:\projdb\work\proj2\subproj1.</TD>
+</TR>
+<TR>
+	<TD>Check out a revision other than the <A HREF="defaultrevision.html">default revision</A></TD>
+	<TD>Enter the revision number, version label, or promotion group associated with the revision you want to check out in the <b>Revision</b> field or click the Browse button to select one. If checking out the revision by a version label, enter a backslash before a version label that begins with a numeric character (such as \1.2label). </TD>
+</TR>
+<TR>
+	<TD>Select an action to occur if a workfile with the same name currently exists in the workfile location</TD>
+	<TD>Select <B>Prompt</B>, <B>Overwrite</B>, or <B>Don't Overwrite</B> from the <b>If Workfile Exists </b>drop-down list.</TD>
+</TR>
+<TR>
+	<TD>Associate a lowest-level promotion group with the revision, if a promotion model is in effect</TD>
+		<TD>If the currently selected files are associated with a project database that has a <A HREF="aboutprommodels.html">promotion model</a> assigned to it, select a lowest-level promotion group to associate with the revision you are checking out. 
+<br>Workspace settings may be used to define a Default Promotion Group. If a Default Promotion Group is not defined for the active workspace, Version Manager will either:
+<UL><li>Prompt you to select a lowest level promotion group, if more than one is defined within the promotion model, or
+<li>Use the lowest-level promotion group if only one is defined within a promotion model.</ul>
+<b>Note:</b> This field is not used to select the revision to be checked out. To select a revision based on a promotion group, enter a promotion group in the <b>Revision</b> field.</TD>
+</TR>
+<TR>
+	<TD>Check out all files of all subprojects included in the project or project database</TD>
+	<TD>Select the <b> Include files in subprojects </b>check box.</TD> 
+</TR>
+<TR>
+		<TD>Check out only those revisions that are newer than the workfiles</TD>
+		<TD>Select the <b>Get only if revision is newer than workfile</b> check box. This saves time by not checking out files that have not changed.</TD>
+	</TR>
+<TR>
+	<TD><A HREF="trackerlink.html">Associate Issues</a> with the files you are checking out.</TD>
+    <TD>Click the <b> Associate Issues </b>button and select the issues from the associate dialog box.  This option is available only if Tracker TrackerLink or TeamTrack SourceBridge is installed. 
+<BR><BR><B>Note:</b> If you disable the Check Out File dialog box, to prevent it from displaying when performing an edit or check out operation, and you enabled the association dialog box and require issue associations, Version Manager displays the association dialog box when you check out or edit revisions.</TD>
+</TR>
+</TABLE>
+<p>
+<LI>To override the defaults on the Advanced tab, click the Advanced tab and edit any of the fields below:
+<p>
+<TABLE  WIDTH="87%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+<TR>
+	<TD><b>To...</b></TD>
+	<TD><b>Do this...</b></TD>
+</TR>
+<TR>
+	<TD>Check out a revision according to a specified date</TD>
+	<TD>Select the <B>Check out by date</B> check box and then select one of the following:
+	<UL>
+		<LI><B>Revision newer than</B> and enter a date or click the Browse button to select one<br>
+ 		<LI><B>Revision checked in before</B> and enter a date or click the Browse button to select one</TD>
+</TR>
+<TR>
+	<TD>Update the time stamp of the workfile to the current date and time</TD>
+	<TD>Select the <B>Set workfile time to current time</B> check box. If you don't select this option, the workfile timestamp reflects the date and time the file was last modified.</TD>
+</TR>
+</TABLE>
+<p>
+	<LI>To review the selected files or projects before checking them out or to review versioned file properties and workspace information, click the Selected Files tab.<BR><BR></p>
+	<LI>Click OK.</p>
+</OL>
+</OL>
+<H2>To edit a workfile:</H2>
+  <OL>
+      <LI>Select the versioned file you want to edit in the File pane and select Edit | Edit File.<BR><BR>
+      <b>Note:</b> The Check Out dialog box appears if the Check Out/Edit option for the versioned file actions, and the Check Out option for the project actions is selected in View | Options | Dialog Behavior.<BR><BR>
+	  <LI>Click OK. Version Manager locks the revision and opens the workfile in the associated application.<BR><BR>
+  </OL>
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="checkoutdialog.html">Check Out Dialog Box</A></TD>
+		<TD><A HREF="checkindialog.html">Check In Dialog Box</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="checkingin.html">Checking In</A></TD>
+		<TD><A HREF="trackerlink.html">Associating Issues</A></TD>
+	</TR>
+</TABLE>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

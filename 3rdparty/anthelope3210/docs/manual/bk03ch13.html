@@ -1,0 +1,221 @@
+<html><head><META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Chapter&nbsp;13.&nbsp;StringUtils</title><link href="./style.css" rel="stylesheet" type="text/css"><meta content="DocBook XSL Stylesheets V1.69.1" name="generator"><link rel="start" href="index.html" title="Antelope Users Guide"><link rel="up" href="bk03.html" title="Additional Ant Tasks"><link rel="prev" href="bk03ch12.html" title="Chapter&nbsp;12.&nbsp;FileUtils"><link rel="next" href="bk03ch14.html" title="Chapter&nbsp;14.&nbsp;UID"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table summary="Navigation header" width="100%"><tr><th align="center" colspan="3">Chapter&nbsp;13.&nbsp;StringUtils</th></tr><tr><td align="left" width="20%"><a accesskey="p" href="bk03ch12.html">Prev</a>&nbsp;</td><th align="center" width="60%">Additional Ant Tasks</th><td align="right" width="20%">&nbsp;<a accesskey="n" href="bk03ch14.html">Next</a></td></tr></table><hr></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="StringUtils"></a>Chapter&nbsp;13.&nbsp;StringUtils</h2></div></div><div></div></div>
+<STYLE TYPE="text/css"> <!-- @import url(./style.css); --> </STYLE>
+   <p>
+The StringUtils task provides a number of useful string manipulation functions, such as converting a string to upper or lower case, trimming white space, finding a substring, etc. <span class="bold"><strong>Caution: this task does not follow the standard Ant convention of property immutability.</strong></span>
+</p><p>
+To use this task in your build files, include a task definition like this:
+</p><p>
+<pre class="programlisting">
+
+    &lt;taskdef name="stringutil" classname="ise.antelope.tasks.StringUtilTask"/&gt;
+   
+</pre>
+</p><p>
+<div class="table"><a name="N10C62"></a><p class="title"><b>Table&nbsp;13.1.&nbsp;StringUtil Task Attributes</b></p><table summary="StringUtil Task Attributes" border="1"><colgroup><col><col><col><col></colgroup><thead><tr><th>Attribute</th><th>Description</th><th>Default</th><th>Required</th></tr></thead><tbody><tr><td>string</td><td>The string to manipulate.</td><td>None</td><td>No</td></tr><tr><td>property</td><td>Where to store the manipulated string. Caution: this task will overwrite any existing property with this name.</td><td>None</td><td>No</td></tr></tbody></table></div>
+</p><p>
+Operations as nested elements:
+</p><p>
+<div class="table"><a name="N10C8A"></a><p class="title"><b>Table&nbsp;13.2.&nbsp;indexof, lastindexof: Find the index of or the last index of a substring.</b></p><table summary="indexof, lastindexof: Find the index of or the last index of a substring." border="1"><colgroup><col><col><col><col></colgroup><thead><tr><th>Attribute</th><th>Description</th><th>Default</th><th>Required</th></tr></thead><tbody><tr><td>string</td><td>The string to find the index of.</td><td>None</td><td>No</td></tr><tr><td>fromindex</td><td>Where to start looking.</td><td>0</td><td>No</td></tr></tbody></table></div>
+
+
+<div class="table"><a name="N10CAE"></a><p class="title"><b>Table&nbsp;13.3.&nbsp;substring: Get a substring from the string.</b></p><table summary="substring: Get a substring from the string." border="1"><colgroup><col><col><col><col></colgroup><thead><tr><th>Attribute</th><th>Description</th><th>Default</th><th>Required</th></tr></thead><tbody><tr><td>beginindex</td><td>Start of substring.</td><td>0</td><td>No</td></tr><tr><td>endindex</td><td>End of substring.</td><td>End of string.</td><td>No</td></tr></tbody></table></div>
+
+
+<div class="table"><a name="N10CD2"></a><p class="title"><b>Table&nbsp;13.4.&nbsp;replace: Replace parts of the string.</b></p><table summary="replace: Replace parts of the string." border="1"><colgroup><col><col><col><col></colgroup><thead><tr><th>Attribute</th><th>Description</th><th>Default</th><th>Required</th></tr></thead><tbody><tr><td>regex</td><td>Pattern to replace.</td><td>None</td><td>No</td></tr><tr><td>replacement</td><td>What to replace with.</td><td>None</td><td>No</td></tr></tbody></table></div>
+
+<div class="table"><a name="N10CF6"></a><p class="title"><b>Table&nbsp;13.5.&nbsp;sort: Sort items in a string.</b></p><table summary="sort: Sort items in a string." border="1"><colgroup><col><col><col><col></colgroup><thead><tr><th>Attribute</th><th>Description</th><th>Default</th><th>Required</th></tr></thead><tbody><tr><td>separator</td><td>The character separating individual items in the string.</td><td>Any of tab, new line, carriage return, line feed, or space.</td><td>No</td></tr></tbody></table></div>
+This is useful for sorting a comma separated list or a property value that spans several lines.
+
+</p><p>
+<div class="table"><a name="N10D13"></a><p class="title"><b>Table&nbsp;13.6.&nbsp;messagebox: Put the string in a box for nice display.</b></p><table summary="messagebox: Put the string in a box for nice display." border="1"><colgroup><col><col><col><col></colgroup><thead><tr><th>Attribute</th><th>Description</th><th>Default</th><th>Required</th></tr></thead><tbody><tr><td>title</td><td>Title for the message box.</td><td>None</td><td>No</td></tr><tr><td>width</td><td>
+Maximum width in characters for the message box. Lines 
+will be wrapped to fit inside the box.  The box will not 
+stretch to this width if the message is less than 
+width - 4 characters wide. 
+</td><td>60</td><td>No</td></tr></tbody></table></div>
+</p><p>
+These operations have no attributes:
+<div class="itemizedlist"><ul type="disc"><li><p>
+<span class="bold"><strong>lowercase</strong></span> Converts the string to lowercase.
+</p></li><li><p>
+<span class="bold"><strong>uppercase</strong></span> Converts the string to uppercase.
+</p></li><li><p>
+<span class="bold"><strong>length</strong></span> Finds the length of the string.
+</p></li><li><p>
+<span class="bold"><strong>trim</strong></span> Removes white space from boths ends of the string.
+</p></li></ul></div>
+
+</p><p>
+More than one of the operations can be used at once, that is, you can convert a string to lowercase and trim it at the same time.  See below for examples.
+</p><p>
+Examples:
+</p><p>
+Convert a string to lower case:
+<pre class="programlisting">
+
+   &lt;target name="test1"&gt;
+      &lt;property name="prop1" value="ABCDE"/&gt;
+      &lt;echo&gt;prop1 before = ${prop1}&lt;/echo&gt;
+      &lt;a:stringutil string="${prop1}" property="prop1"&gt;
+         &lt;a:lowercase/&gt;
+      &lt;/a:stringutil&gt;
+      &lt;echo&gt;prop1 after = ${prop1}&lt;/echo&gt;
+      &lt;a:assert message="prop1, expected abcde, got ${prop1}"&gt;
+         &lt;bool&gt;
+            &lt;equals arg1="abcde" arg2="${prop1}"/&gt;
+         &lt;/bool&gt;
+      &lt;/a:assert&gt;
+   &lt;/target&gt;
+
+</pre>
+</p><p>
+Convert a string to upper case:
+<pre class="programlisting">
+
+   &lt;target name="test2"&gt;
+      &lt;property name="prop2" value="abcdefgh"/&gt;
+      &lt;echo&gt;prop2 before = ${prop2}&lt;/echo&gt;
+      &lt;a:stringutil string="${prop2}" property="prop2"&gt;
+         &lt;a:uppercase/&gt;
+      &lt;/a:stringutil&gt;
+      &lt;echo&gt;prop2 after = ${prop2}&lt;/echo&gt;
+      &lt;a:assert message="prop2, expected ABCDEFGH, got ${prop2}"&gt;
+         &lt;bool&gt;
+            &lt;equals arg1="ABCDEFGH" arg2="${prop2}"/&gt;
+         &lt;/bool&gt;
+      &lt;/a:assert&gt;
+   &lt;/target&gt;
+
+</pre>
+</p><p>
+Convert a string to upper case and trim white space:
+<pre class="programlisting">
+
+   &lt;target name="test3"&gt;
+      &lt;property name="prop3" value=" abcdefgh "/&gt;
+      &lt;echo&gt;prop3 before = ${prop3}&lt;/echo&gt;
+      &lt;a:stringutil string="${prop3}" property="prop3"&gt;
+         &lt;a:uppercase/&gt;
+         &lt;a:trim/&gt;
+      &lt;/a:stringutil&gt;
+      &lt;echo&gt;prop3 after = ${prop3}&lt;/echo&gt;
+      &lt;a:assert message="prop3, expected ABCDEFGH, got ${prop3}"&gt;
+         &lt;bool&gt;
+            &lt;equals arg1="ABCDEFGH" arg2="${prop3}"/&gt;
+         &lt;/bool&gt;
+      &lt;/a:assert&gt;
+   &lt;/target&gt;
+
+</pre>
+</p><p>
+Convert a string to upper case, trim white space, and find a substring:
+<pre class="programlisting">
+
+   &lt;target name="test4"&gt;
+      &lt;property name="prop4" value=" abcdefgh "/&gt;
+      &lt;echo&gt;prop4 before = ${prop4}&lt;/echo&gt;
+      &lt;a:stringutil string="${prop4}" property="prop4"&gt;
+         &lt;a:uppercase/&gt;
+         &lt;a:trim/&gt;
+         &lt;a:substring beginindex="3"/&gt;
+      &lt;/a:stringutil&gt;
+      &lt;echo&gt;prop4 after = ${prop4}&lt;/echo&gt;
+      &lt;a:assert message="prop4, expected DEFGH, got ${prop4}"&gt;
+         &lt;bool&gt;
+            &lt;equals arg1="DEFGH" arg2="${prop4}"/&gt;
+         &lt;/bool&gt;
+      &lt;/a:assert&gt;
+   &lt;/target&gt;
+
+</pre>
+</p><p>
+Get the length of a string:
+<pre class="programlisting">
+
+   &lt;target name="test7"&gt;
+      &lt;property name="prop7" value="abcdefgh"/&gt;
+      &lt;echo&gt;prop7 before = ${prop7}&lt;/echo&gt;
+      &lt;a:stringutil string="${prop7}" property="prop7"&gt;
+         &lt;a:length/&gt;
+      &lt;/a:stringutil&gt;
+      &lt;echo&gt;prop7 length = ${prop7}&lt;/echo&gt;
+      &lt;a:assert message="prop7, expected 8, got ${prop7}"&gt;
+         &lt;bool&gt;
+            &lt;mathequals arg1="8" arg2="${prop7}"/&gt;
+         &lt;/bool&gt;
+      &lt;/a:assert&gt;
+   &lt;/target&gt;
+
+</pre>
+</p><p>
+Sort a list:
+<pre class="programlisting">
+
+   &lt;target name="test12"&gt;
+      &lt;property name="prop12" value="a,b,c,d,e,f,g,h,a,b,c,d,e,f,g,h"/&gt;
+      &lt;echo&gt;prop12 before = ${prop12}&lt;/echo&gt;
+      &lt;a:stringutil string="${prop12}" property="prop12"&gt;
+         &lt;a:sort separator=","/&gt;
+      &lt;/a:stringutil&gt;
+      &lt;echo&gt;prop12 sorted = ${prop12}&lt;/echo&gt;
+      &lt;a:assert message="prop12, expected 'a,a,b,b,c,c,d,d,e,e,f,f,g,g,h,h', got ${prop12}"&gt;
+         &lt;bool&gt;
+            &lt;equals arg1="a,a,b,b,c,c,d,d,e,e,f,f,g,g,h,h" arg2="${prop12}"/&gt;
+         &lt;/bool&gt;
+      &lt;/a:assert&gt;
+   &lt;/target&gt;
+
+</pre>
+</p><p>
+Message boxes:
+<pre class="programlisting">
+
+   &lt;target name="test13"&gt;
+      &lt;property name="prop13" value="Character boundary analysis allows users to interact with characters as they expect to, for example, when moving the cursor around through a text string. Character boundary analysis provides correct navigation of through character strings, regardless of how the character is stored. For example, an accented character might be stored as a base character and a diacritical mark. What users consider to be a character can differ between languages."/&gt;
+      &lt;echo&gt;prop13 before = ${prop13}&lt;/echo&gt;
+      &lt;a:stringutil string="${prop13}" property="prop13"&gt;
+         &lt;a:messagebox/&gt;
+      &lt;/a:stringutil&gt;
+      &lt;echo&gt;prop13 in messagebox:${line.separator}${prop13}&lt;/echo&gt;
+
+      &lt;property name="prop13a" value="Character boundary analysis allows users to interact with characters as they expect to, for example, when moving the cursor around through a text string. Character boundary analysis provides correct navigation of through character strings, regardless of how the character is stored. For example, an accented character might be stored as a base character and a diacritical mark. What users consider to be a character can differ between languages."/&gt;
+      &lt;a:stringutil string="${prop13a}" property="prop13a"&gt;
+         &lt;a:messagebox title="About Character Boundaries"/&gt;
+      &lt;/a:stringutil&gt;
+      &lt;echo&gt;prop13a in messagebox with title:${line.separator}${prop13a}&lt;/echo&gt;
+      
+   &lt;/target&gt;
+   
+test13:
+     [echo] prop13 before = Character boundary analysis allows users to interact with characters as they expect to, for
+example, when moving the cursor around through a text string. Character boundary analysis provides correct navigation of
+ through character strings, regardless of how the character is stored. For example, an accented character might be store
+d as a base character and a diacritical mark. What users consider to be a character can differ between languages.
+     [echo] prop13 in messagebox:
+     [echo]
+     [echo] +----------------------------------------------------------------------+
+     [echo] | Character boundary analysis allows users to interact with characters |
+     [echo] | as they expect to, for example, when moving the cursor around        |
+     [echo] | through a text string. Character boundary analysis provides correct  |
+     [echo] | navigation of through character strings, regardless of how the       |
+     [echo] | character is stored. For example, an accented character might        |
+     [echo] | be stored as a base character and a diacritical mark. What users     |
+     [echo] | consider to be a character can differ between languages.             |
+     [echo] +----------------------------------------------------------------------+
+     [echo] prop13a in messagebox with title:
+     [echo]
+     [echo] +----------------------------------------------------------------------+
+     [echo] | About Character Boundaries                                           |
+     [echo] +----------------------------------------------------------------------+
+     [echo] | Character boundary analysis allows users to interact with characters |
+     [echo] | as they expect to, for example, when moving the cursor around        |
+     [echo] | through a text string. Character boundary analysis provides correct  |
+     [echo] | navigation of through character strings, regardless of how the       |
+     [echo] | character is stored. For example, an accented character might        |
+     [echo] | be stored as a base character and a diacritical mark. What users     |
+     [echo] | consider to be a character can differ between languages.             |
+     [echo] +----------------------------------------------------------------------+
+[antlib:ise.antelope.tasks:testcase] test13 passed.   
+
+</pre>
+</p></div><div class="navfooter"><hr><table summary="Navigation footer" width="100%"><tr><td align="left" width="40%"><a accesskey="p" href="bk03ch12.html">Prev</a>&nbsp;</td><td align="center" width="20%"><a accesskey="u" href="bk03.html">Up</a></td><td align="right" width="40%">&nbsp;<a accesskey="n" href="bk03ch14.html">Next</a></td></tr><tr><td valign="top" align="left" width="40%">Chapter&nbsp;12.&nbsp;FileUtils&nbsp;</td><td align="center" width="20%"><a accesskey="h" href="index.html">Home</a></td><td valign="top" align="right" width="40%">&nbsp;Chapter&nbsp;14.&nbsp;UID</td></tr></table></div></body></html>

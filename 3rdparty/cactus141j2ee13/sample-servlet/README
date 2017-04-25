@@ -1,0 +1,24 @@
+This sample application demonstrates how to use Cactus for unit testing
+server side java code (Servlet, Taglib and Filters). The goal is to show as
+many use cases as possible. You can use this sample to get familiar with
+Cactus and also as a starting point for building your own test classes.
+
+In addition, it also shows the following features :
+- how to integrate Cactus unit tests with Ant by providing an already made
+  Ant build script and several batch/script files.
+- how to automatically run the unit tests for a great variety of servlet engines
+  (Tomcat 3.2, Tomcat 4.0, Resin 1.2+, Resin 1.3+, Orion 1.4, WebLogic 5.1, ...)
+- how to completely automate the running of the unit tests for several servlet
+  engines with a single batch/script file and using build listener to report
+  errors. This is very useful for continuous integration for example.
+
+For documentation on how to use Cactus, Ant integration, ... see the Cactus
+web site at http://jakarta.apache.org/cactus
+
+Note: Before running the ant build file, you'll need to create a
+build/build.properties file (a sample one, build/build.properties.sample is
+provided that you can copy) and edit it. Then you can type 'ant -projecthelp' to
+get the list of available targets.
+
+Thank you.
+The Cactus Team.

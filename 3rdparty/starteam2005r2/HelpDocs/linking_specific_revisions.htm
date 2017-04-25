@@ -1,0 +1,270 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Linking Specific Revisions</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=copyright value="Copyright© 1995-2003, Borland Software Corporation. All rights reserved.">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=1021>
+<meta name=layout-width content=702>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<!--(Scripts)=======================================================-->
+
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="./ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Working with the Application\nPerforming Common Operations\nWorking with Links\nLinking Specific Revisions");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Linking Specific Revisions</h1>
+
+<p class=Body>Each end of a link has an associated start revision and an 
+ end revision that determines the range of revisions to which the link 
+ applies. The start revision is always fixed at the time of the creation 
+ of the link and is set to the first revision on the current branch. The 
+ end revision is under the user's control and may be fixed (or pinned), 
+ which puts an upper bound on the linked revisions, or floating, which 
+ does not. If a link end is pinned, it is always attached to the same version 
+ of the linked folder or file. If a link end floats, it moves from revision 
+ to revision, as new revisions of the linked folder or item are created.</p>
+
+<p class=Body>By default, a link connects the tip revisions of the linked 
+ pair. &nbsp;The 
+ revisions selected for both links appear as columns on the Link pane.</p>
+
+<p class=Body>Determining whether a link is visible on a given item is 
+ simple. If any of the revisions between the start and the end revision 
+ defined for the link are in the history of the selected item, it is visible. 
+ Otherwise, it is not. </p>
+
+<p class=Proc>To link to tip revisions:</p>
+
+<ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select a folder or item for 
+ which you have created a link.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Do one of the following:</p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>If you selected an 
+ item, select the <span style="font-weight: bold;"><B>Link</B></span> tab from 
+ the lower pane.<br>
+		The<span style="font-weight: bold;"><B> Link</B></span> tab shows the 
+ links to other items.</p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>If you selected a 
+ folder, select<span style="font-weight: bold;"><B> Folder &gt; Properties</B></span> 
+ to display the <span style="font-style: italic;"><I>Folder Properties</I></span> 
+ dialog. Then select the <span style="font-weight: bold;"><B>Link</B></span> tab.</p></li>
+	</ul>
+	
+	<li class=kadov-p-CList-1><p class=List-1>From the <span style="font-weight: bold;"><B>Link</B></span> 
+ tab, select one or more links.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Right-click to display the 
+ Link context menu.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Choose one of the following 
+ options for the selected links:</p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1><span style="font-weight: bold;"><B>Pin 
+ Link &gt; To Source Item At Tip</B></span>: This command pins the link to 
+ the tip revision of the source (that is, the folder whose properties you 
+ are reviewing or the item selected from the upper pane). </p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1><span style="font-weight: bold;"><B>Pin 
+ Link &gt; To Target Items At Tip</B></span>: This command pins the link to 
+ the tip revision of the target (that is, the folder or item in the<span 
+ style="font-weight: bold;"><B> Item</B></span> column on the Link pane). </p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1><span style="font-weight: bold;"><B>Pin 
+ Link &gt; To Source And Target Items At Tip</B></span>: This command pins 
+ the link to the tip revisions of both the source and target.</p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1><span style="font-weight: bold;"><B>Float 
+ Link &gt; To Source Item</B></span>: This command allows the link to float 
+ from tip revision to tip revision of the source as new revisions are created. 
+ </p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1><span style="font-weight: bold;"><B>Float 
+ Link &gt; To Target Items</B></span>: This command allows the link to float 
+ from tip revision to tip revision of the target as new revisions are created.</p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1><span style="font-weight: bold;"><B>Float 
+ Link &gt; To Source And Target Items</B></span>: This command allows both 
+ the source and the target of the link to float from tip revision to tip 
+ revision.</p></li>
+	</ul>
+</ol>
+
+<p class=Proc><span style="font-weight: bold;"><B>To link specific revisions:</B></span></p>
+
+<ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select a folder or item for 
+ which you have created a link.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Do one of the following:</p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>If you selected an 
+ item, select the<span style="font-weight: bold;"><B> Link</B></span> tab from 
+ the lower pane.</p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>If you selected a 
+ folder, select<span style="font-weight: bold;"><B> Folder &gt; Properties 
+ </B></span>to display the <span style="font-style: italic;"><I>Folders Property</I></span> 
+ dialog. Then select the <span style="font-weight: bold;"><B>Link</B></span> tab. 
+ </p></li>
+	</ul>
+	
+	<li class=kadov-p-CList-1><p class=List-1>From the<span style="font-weight: bold;"><B> 
+ Link</B></span> tab, select a link.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Right-click to open the Link 
+ context menu.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select<span style="font-weight: bold;"><B> 
+ Link Properties</B></span>. The<span style="font-style: italic;"><I> Link Properties</I></span> 
+ dialog opens.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>(Optional) Enter a description 
+ or comment about the link in the <span style="font-weight: bold;"><B>Comment</B></span> 
+ text box. This text will appear in the <span style="font-weight: bold;"><B>Comment</B></span> 
+ column of the Link pane.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>In the <span style="font-weight: bold;"><B>Source 
+ Item</B></span> group box, do one of the following:</p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>Click<span style="font-weight: bold;"><B> 
+ Pin</B></span> to display the <span style="font-style: italic;"><I>Select Version</I></span> 
+ dialog. Select a specific &nbsp;folder 
+ or item revision from the list. This revision number will appear in the 
+ <span style="font-weight: bold;"><B>Selection Version</B></span> column of the 
+ Link pane.</p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>Click <span style="font-weight: bold;"><B>Float</B></span> 
+ so that the link is always connected to the tip revision of this item.</p></li>
+	</ul>
+	
+	<li class=kadov-p-CList-1><p class=List-1>In the <span style="font-weight: bold;"><B>Is 
+ Linked To Target Item</B></span> group box, do one of the following:</p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>Click <span style="font-weight: bold;"><B>Pin</B></span> 
+ to display the<span style="font-style: italic;"><I> Select Version</I></span> 
+ dialog. Select a specific folder or item revision from the list. This 
+ revision number will appear in the <span style="font-weight: bold;"><B>Item 
+ Version</B></span> column of the Link pane.</p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>Click<span style="font-weight: bold;"><B> 
+ Float</B></span> so that the link is always connected to the tip revision 
+ of this item.</p></li>
+	</ul>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Click <span style="font-weight: bold;"><B>OK</B></span>. 
+ </p></li>
+</ol>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

@@ -1,0 +1,663 @@
+<tierlet-jar>
+
+    <!-- Home page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/index</name>
+        <class>org.parabuild.ci.webui.BuildsStatusesPage</class>
+    </tierlet-map>
+
+    <!-- Agents page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/agents</name>
+        <class>org.parabuild.ci.webui.agent.status.AgentStatusesPage</class>
+    </tierlet-map>
+
+    <!-- Agent environment page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/agent/environment</name>
+        <class>org.parabuild.ci.webui.agent.status.AgentEnvironmentPage</class>
+    </tierlet-map>
+
+    <!-- User preferences page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/preferences</name>
+        <class>org.parabuild.ci.webui.UserPreferencesPage</class>
+    </tierlet-map>
+
+    <!-- Run changes page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/build/changes</name>
+        <class>org.parabuild.ci.webui.BuildRunChangesPage</class>
+    </tierlet-map>
+
+    <!-- Config report page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/build/configreport</name>
+        <class>org.parabuild.ci.webui.BuildRunConfigReportPage</class>
+    </tierlet-map>
+
+    <!-- About page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/about</name>
+        <class>org.parabuild.ci.webui.AboutPage</class>
+    </tierlet-map>
+
+    <!-- Undocumented Commands -->
+    <tierlet-map>
+        <name>tierlet:parabuild/undocumented</name>
+        <class>org.parabuild.ci.webui.UndocumentedCommandsPage</class>
+    </tierlet-map>
+
+    <!-- Last clean build -->
+    <tierlet-map>
+        <name>tierlet:parabuild/latest/successful/build</name>
+        <class>org.parabuild.ci.webui.LatestSuccessfulBuildPage</class>
+    </tierlet-map>
+
+
+    <!-- Log page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/build/log</name>
+        <class>org.parabuild.ci.webui.LogPage</class>
+    </tierlet-map>
+
+
+    <!-- Results page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/build/results</name>
+        <class>org.parabuild.ci.webui.ResultsPage</class>
+    </tierlet-map>
+
+    <!-- Diff page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/build/diff</name>
+        <class>org.parabuild.ci.webui.BuildRunChangesDiffPage</class>
+    </tierlet-map>
+
+    <!-- Diff two builds page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/build/difftwo</name>
+        <class>org.parabuild.ci.webui.DiffBuildPage</class>
+    </tierlet-map>
+
+    <!-- History page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/build/statistics</name>
+        <class>org.parabuild.ci.webui.BuildStatisticsPage</class>
+    </tierlet-map>
+
+
+    <!-- History page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/build/history</name>
+        <class>org.parabuild.ci.webui.RecentBuildHistoryPage</class>
+    </tierlet-map>
+
+
+    <!-- Release notes -->
+    <tierlet-map>
+        <name>tierlet:parabuild/build/relnotes</name>
+        <class>org.parabuild.ci.webui.ReleaseNotesPage</class>
+    </tierlet-map>
+
+    <!-- Release notes details-->
+    <tierlet-map>
+        <name>tierlet:parabuild/build/relnote/details</name>
+        <class>org.parabuild.ci.webui.ReleaseNoteDetailsPage</class>
+    </tierlet-map>
+
+    <!-- Admin home -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin</name>
+        <class>org.parabuild.ci.webui.admin.AdminStatusPage</class>
+    </tierlet-map>
+
+    <!-- Security configuration -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/system/security</name>
+        <class>org.parabuild.ci.webui.admin.security.SecurityConfigurationPage</class>
+    </tierlet-map>
+
+    <!-- Email configuration -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/system/email</name>
+        <class>org.parabuild.ci.webui.admin.email.EmailConfigurationPage</class>
+    </tierlet-map>
+
+    <!-- Global VCS user to email map list page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/system/email/global/vcs/map</name>
+        <class>org.parabuild.ci.webui.admin.email.GlobalVCSUserMapTablePage</class>
+    </tierlet-map>
+
+    <!-- Global VCS user to email map edit page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/system/email/global/vcs/map/edit</name>
+        <class>org.parabuild.ci.webui.admin.email.GlobalVCSUserMapPage</class>
+    </tierlet-map>
+
+    <!-- Global VCS user to email map delete page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/system/email/global/vcs/map/delete</name>
+        <class>org.parabuild.ci.webui.admin.email.GlobalVCSUserMapDeletePage</class>
+    </tierlet-map>
+
+    <!-- Appearance configuration -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/system/appearance</name>
+        <class>org.parabuild.ci.webui.admin.appearance.AppearanceConfigurationPage</class>
+    </tierlet-map>
+
+    <!-- Stability configuration -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/system/stability</name>
+        <class>org.parabuild.ci.webui.admin.stability.StabilityConfigurationPage</class>
+    </tierlet-map>
+
+    <!-- Admin home -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/status</name>
+        <class>org.parabuild.ci.webui.admin.AdminStatusPage</class>
+    </tierlet-map>
+
+    <!-- Admin password reset -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/rpass</name>
+        <class>org.parabuild.ci.webui.admin.ResetPasswordPage</class>
+    </tierlet-map>
+
+    <!-- Admin login -->
+    <tierlet-map>
+        <name>tierlet:parabuild/login</name>
+        <class>org.parabuild.ci.webui.LoginPage</class>
+    </tierlet-map>
+
+
+    <!-- Admin logout -->
+    <tierlet-map>
+        <name>tierlet:parabuild/logout</name>
+        <class>org.parabuild.ci.webui.LogoutPage</class>
+    </tierlet-map>
+
+    <!-- Admin system status -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/builds</name>
+        <class>org.parabuild.ci.webui.admin.AdminStatusPage</class>
+    </tierlet-map>
+
+    <!-- Admin general system configuration -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/system/imconfig</name>
+        <class>org.parabuild.ci.webui.admin.messaging.InstantMessagingConfigPage</class>
+    </tierlet-map>
+
+    <!-- Admin LDAP authentication -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/system/ldapconfig</name>
+        <class>org.parabuild.ci.webui.admin.ldap.LDAPConfigurationPage</class>
+    </tierlet-map>
+
+    <!-- Admin system configuration links -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/system/list</name>
+        <class>org.parabuild.ci.webui.admin.SystemConfigLinksPage</class>
+    </tierlet-map>
+
+    <!-- Admin build edit/create page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/build/edit</name>
+        <class>org.parabuild.ci.webui.admin.BuildConfigPage</class>
+    </tierlet-map>
+
+    <!-- Admin build change build type: -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/build/change/schedule/type</name>
+        <class>org.parabuild.ci.webui.admin.ChangeBuildScheduleTypePage</class>
+    </tierlet-map>
+
+    <!-- Admin clone build -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/build/clone</name>
+        <class>org.parabuild.ci.webui.admin.CloneBuildPage</class>
+    </tierlet-map>
+
+    <!-- Admin delete build -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/build/delete</name>
+        <class>org.parabuild.ci.webui.admin.DeleteBuildPage</class>
+    </tierlet-map>
+
+    <!-- Admin activate build -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/build/activate</name>
+        <class>org.parabuild.ci.webui.admin.ActivateBuildPage</class>
+    </tierlet-map>
+
+    <!-- Admin deactivate build -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/build/deactivate</name>
+        <class>org.parabuild.ci.webui.admin.DeactivateBuildPage</class>
+    </tierlet-map>
+
+    <!-- Admin start build -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/build/start</name>
+        <class>org.parabuild.ci.webui.admin.StartBuildPage</class>
+    </tierlet-map>
+
+    <!-- Admin Stop build -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/build/stop</name>
+        <class>org.parabuild.ci.webui.admin.StopBuildPage</class>
+    </tierlet-map>
+
+    <!-- Admin Stop group -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/build/stop/group</name>
+        <class>org.parabuild.ci.webui.admin.StopGroupPage</class>
+    </tierlet-map>
+
+    <!-- Admin Resume build -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/build/resume</name>
+        <class>org.parabuild.ci.webui.admin.ResumeBuildPage</class>
+    </tierlet-map>
+
+    <!-- Admin Resume group -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/build/resume/group</name>
+        <class>org.parabuild.ci.webui.admin.ResumeGroupPage</class>
+    </tierlet-map>
+
+    <!-- Admin request next clean checkout -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/build/request/clean/checkout</name>
+        <class>org.parabuild.ci.webui.admin.RequestNextCleanCheckoutPage</class>
+    </tierlet-map>
+
+
+    <!-- Admin ReRun build -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/build/rerun</name>
+        <class>org.parabuild.ci.webui.admin.ReRunBuildPage</class>
+    </tierlet-map>
+
+    <!-- Admin cleanup build logs -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/build/cleanuplogs</name>
+        <class>org.parabuild.ci.webui.admin.CleanUpBuildLogArchivePage</class>
+    </tierlet-map>
+
+    <!-- Admin cleanup build results -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/build/cleanupresults</name>
+        <class>org.parabuild.ci.webui.admin.CleanUpBuildResultArchivePage</class>
+    </tierlet-map>
+
+    <!-- Admin build command list-->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/build/commands</name>
+        <class>org.parabuild.ci.webui.BuildCommandListPage</class>
+    </tierlet-map>
+
+    <!-- Admin error list -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/errors</name>
+        <class>org.parabuild.ci.webui.admin.error.ErrorListPage</class>
+    </tierlet-map>
+
+    <!-- Admin error details -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/errors/showerror</name>
+        <class>org.parabuild.ci.webui.admin.error.ShowErrorDetailsPage</class>
+    </tierlet-map>
+
+    <!-- Admin clear error page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/errors/clearerror</name>
+        <class>org.parabuild.ci.webui.admin.error.ClearErrorPage</class>
+    </tierlet-map>
+
+    <!-- Admin process list page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/proclist</name>
+        <class>org.parabuild.ci.webui.admin.ProcessListPage</class>
+    </tierlet-map>
+
+    <!-- Admin docs -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/docs</name>
+        <class>org.parabuild.ci.webui.admin.DocumentationLinksPage</class>
+    </tierlet-map>
+
+    <!-- Support links -->
+    <tierlet-map>
+        <name>tierlet:parabuild/support</name>
+        <class>org.parabuild.ci.webui.SupportLinksPage</class>
+    </tierlet-map>
+
+    <!-- Admin reset build statistics caches -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/build/rstatcaches</name>
+        <class>org.parabuild.ci.webui.admin.ResetBuildStatisticsPage</class>
+    </tierlet-map>
+
+    <!-- Builder status page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/builderstatus</name>
+        <class>org.parabuild.ci.webui.AgentStatusPage</class>
+    </tierlet-map>
+
+    <!-- Search page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/search</name>
+        <class>org.parabuild.ci.webui.SearchPage</class>
+    </tierlet-map>
+
+    <!-- Users page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/users</name>
+        <class>org.parabuild.ci.webui.admin.usermanagement.UsersPage</class>
+    </tierlet-map>
+
+    <!-- Users edit page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/user/edit</name>
+        <class>org.parabuild.ci.webui.admin.usermanagement.EditUserPage</class>
+    </tierlet-map>
+
+    <!-- Users delete page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/user/delete</name>
+        <class>org.parabuild.ci.webui.admin.usermanagement.DeleteUserPage</class>
+    </tierlet-map>
+
+    <!-- Groups page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/groups</name>
+        <class>org.parabuild.ci.webui.admin.usermanagement.GroupsPage</class>
+    </tierlet-map>
+
+    <!-- Groups edit page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/group/edit</name>
+        <class>org.parabuild.ci.webui.admin.usermanagement.EditGroupPage</class>
+    </tierlet-map>
+
+    <!-- Groups delete page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/group/delete</name>
+        <class>org.parabuild.ci.webui.admin.usermanagement.DeleteGroupPage</class>
+    </tierlet-map>
+
+    <!-- Display groups page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/displaygroups</name>
+        <class>org.parabuild.ci.webui.admin.displaygroup.DisplayGroupListPage</class>
+    </tierlet-map>
+
+    <!-- Display groups edit page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/displaygroup/edit</name>
+        <class>org.parabuild.ci.webui.admin.displaygroup.EditDisplayGroupPage</class>
+    </tierlet-map>
+
+    <!-- Display groups delete page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/displaygroup/delete</name>
+        <class>org.parabuild.ci.webui.admin.displaygroup.DeleteDisplayGroupPage</class>
+    </tierlet-map>
+
+    <!-- builders page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/build/farms</name>
+        <class>org.parabuild.ci.webui.admin.builder.BuilderListPage</class>
+    </tierlet-map>
+
+    <!-- builders edit page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/build/farm/edit</name>
+        <class>org.parabuild.ci.webui.admin.builder.EditBuilderPage</class>
+    </tierlet-map>
+
+    <!-- builders delete page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/build/farm/delete</name>
+        <class>org.parabuild.ci.webui.admin.builder.DeleteBuilderPage</class>
+    </tierlet-map>
+
+    <!-- Builder details page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/build/farm/details</name>
+        <class>org.parabuild.ci.webui.admin.builder.BuilderDetailsPage</class>
+    </tierlet-map>
+
+    <!-- Result groups page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/result/groups</name>
+        <class>org.parabuild.ci.webui.result.ResultGroupListPage</class>
+    </tierlet-map>
+
+    <!-- Edit result group page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/result/group/edit</name>
+        <class>org.parabuild.ci.webui.result.EditResultGroupPage</class>
+    </tierlet-map>
+
+    <!-- Delete result group page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/result/group/delete</name>
+        <class>org.parabuild.ci.webui.result.DeleteResultGroupPage</class>
+    </tierlet-map>
+
+    <!-- Show result group content page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/result/group/content</name>
+        <class>org.parabuild.ci.webui.result.PublishedResultsPage</class>
+    </tierlet-map>
+
+    <!-- Unpublishing result -->
+    <tierlet-map>
+        <name>tierlet:parabuild/result/group/content/unpublish</name>
+        <class>org.parabuild.ci.webui.result.UnpublishResultPage</class>
+    </tierlet-map>
+
+    <!-- Project list -->
+    <tierlet-map>
+        <name>tierlet:parabuild/projects</name>
+        <class>org.parabuild.ci.webui.admin.project.ProjectListPage</class>
+    </tierlet-map>
+
+    <!-- Edit project -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/project/edit</name>
+        <class>org.parabuild.ci.webui.admin.project.EditProjectPage</class>
+    </tierlet-map>
+
+    <!-- Delete project -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/project/delete</name>
+        <class>org.parabuild.ci.webui.admin.project.DeleteProjectPage</class>
+    </tierlet-map>
+
+    <!-- Promotion list -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/promotion/policies</name>
+        <class>org.parabuild.ci.webui.admin.promotion.PromotionPolicyListPage</class>
+    </tierlet-map>
+
+    <!-- Edit promotion policy -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/promotion/policy/edit</name>
+        <class>org.parabuild.ci.webui.admin.promotion.EditPromotionPolicyPage</class>
+    </tierlet-map>
+
+    <!-- Delete promotion policy -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/promotion/policy/delete</name>
+        <class>org.parabuild.ci.webui.admin.promotion.DeletePromotionPolicyPage</class>
+    </tierlet-map>
+
+    <!-- Promotion policy details page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/promotion/policy/view/details</name>
+        <class>org.parabuild.ci.webui.admin.promotion.PromotionPolicyDetailsPage</class>
+    </tierlet-map>
+
+    <!-- Promotion policy step details page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/promotion/policy/step/view/details</name>
+        <class>org.parabuild.ci.webui.admin.promotion.PromotionPolicyStepDetailsPage</class>
+    </tierlet-map>
+
+    <!-- Edit promotion policy step page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/promotion/policy/step/edit</name>
+        <class>org.parabuild.ci.webui.admin.promotion.EditPromotionPolicyStepPage</class>
+    </tierlet-map>
+
+    <!-- Delete promotion policy step page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/promotion/policy/step/delete</name>
+        <class>org.parabuild.ci.webui.admin.promotion.DeletePromotionPolicyStepPage</class>
+    </tierlet-map>
+
+    <!-- Modify promotion step order -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/promotion/step/change/order</name>
+        <class>org.parabuild.ci.webui.admin.promotion.ModifyPromotionPolicyStepOrderPage</class>
+    </tierlet-map>
+
+    <!-- Merge list -->
+    <tierlet-map>
+        <name>tierlet:parabuild/merge/status/list</name>
+        <class>org.parabuild.ci.webui.merge.MergeStatusesPage</class>
+    </tierlet-map>
+
+    <!-- Merge list -->
+    <tierlet-map>
+        <name>tierlet:parabuild/merge/commands</name>
+        <class>org.parabuild.ci.webui.merge.MergeCommandListPage</class>
+    </tierlet-map>
+
+    <!-- Merge edit -->
+    <tierlet-map>
+        <name>tierlet:parabuild/merge/edit</name>
+        <class>org.parabuild.ci.webui.merge.EditMergePage</class>
+    </tierlet-map>
+
+    <!-- Merge start -->
+    <tierlet-map>
+        <name>tierlet:parabuild/merge/start</name>
+        <class>org.parabuild.ci.webui.merge.StartMergePage</class>
+    </tierlet-map>
+
+    <!-- Merge stop -->
+    <tierlet-map>
+        <name>tierlet:parabuild/merge/stop</name>
+        <class>org.parabuild.ci.webui.merge.StopMergePage</class>
+    </tierlet-map>
+
+    <!-- Merge resume -->
+    <tierlet-map>
+        <name>tierlet:parabuild/merge/resume</name>
+        <class>org.parabuild.ci.webui.merge.ResumeMergePage</class>
+    </tierlet-map>
+
+    <!-- Merge delete -->
+    <tierlet-map>
+        <name>tierlet:parabuild/merge/delete</name>
+        <class>org.parabuild.ci.webui.merge.DeleteMergePage</class>
+    </tierlet-map>
+
+    <!-- Merge report -->
+    <tierlet-map>
+        <name>tierlet:parabuild/merge/report</name>
+        <class>org.parabuild.ci.webui.merge.MergeReportPage</class>
+    </tierlet-map>
+
+    <!-- Merge queue report -->
+    <tierlet-map>
+        <name>tierlet:parabuild/merge/queue</name>
+        <class>org.parabuild.ci.webui.merge.MergeQueuePage</class>
+    </tierlet-map>
+
+    <!-- Reset all pasued merges -->
+    <tierlet-map>
+        <name>tierlet:parabuild/merge/resetall</name>
+        <class>org.parabuild.ci.webui.merge.ResetAllMergesPage</class>
+    </tierlet-map>
+
+    <!-- Deleted all inactive workspaces -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/builds/cleanup/inactive</name>
+        <class>org.parabuild.ci.webui.admin.CleanupAllInactiveWorkspacesPage</class>
+    </tierlet-map>
+
+    <!-- Branch change list -->
+    <tierlet-map>
+        <name>tierlet:parabuild/merge/changelist</name>
+        <class>org.parabuild.ci.webui.merge.BrancheChangeListPage</class>
+    </tierlet-map>
+
+
+    <!-- Build run tests page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/build/run/tests</name>
+        <class>org.parabuild.ci.webui.BuildRunTestsPage</class>
+    </tierlet-map>
+
+    <!-- Error page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/error</name>
+        <class>org.parabuild.ci.webui.ErrorPage</class>
+    </tierlet-map>
+
+    <!-- Agent configuration list -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/agent/list</name>
+        <class>org.parabuild.ci.webui.admin.builder.AgentListPage</class>
+    </tierlet-map>
+
+    <!-- Agent edit page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/agent/edit</name>
+        <class>org.parabuild.ci.webui.admin.builder.EditAgentPage</class>
+    </tierlet-map>
+
+    <!-- Agent delete page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/agent/delete</name>
+        <class>org.parabuild.ci.webui.admin.builder.DeleteAgentPage</class>
+    </tierlet-map>
+
+    <!-- Agent detach page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/build/farm/detach/agent</name>
+        <class>org.parabuild.ci.webui.admin.builder.DetachBuilderAgentPage</class>
+    </tierlet-map>
+
+    <!-- Agent attach page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/build/farm/add/agent</name>
+        <class>org.parabuild.ci.webui.admin.builder.EditBuilderAgentPage</class>
+    </tierlet-map>
+
+    <!-- SystemProperty configuration list -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/variable/list</name>
+        <class>org.parabuild.ci.webui.admin.parameters.SystemVariableListPage</class>
+    </tierlet-map>
+
+    <!-- SystemProperty edit page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/variable/edit</name>
+        <class>org.parabuild.ci.webui.admin.parameters.EditSystemVariablePage</class>
+    </tierlet-map>
+
+    <!-- SystemProperty delete page -->
+    <tierlet-map>
+        <name>tierlet:parabuild/admin/variable/delete</name>
+        <class>org.parabuild.ci.webui.admin.parameters.DeleteSystemVariablePage</class>
+    </tierlet-map>
+</tierlet-jar>

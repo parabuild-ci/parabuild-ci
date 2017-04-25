@@ -1,0 +1,212 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Adding Views: stcmd add-view</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=copyright value="Copyright© 1995-2003, Borland Software Corporation. All rights reserved.">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=788>
+<meta name=layout-width content=702>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<!--(Scripts)=======================================================-->
+
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="./ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Working with the Application\nUsing the Command Line Interface\nAdding Views");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Adding Views: stcmd add-view</h1>
+
+<p class=Body>Use stcmd add-view to add a view to a server configuration 
+ from the command line. When the view is created, its parent view is the 
+ view specified with the -p option and its root folder is the folder specified 
+ with the -p option. In this command, the -rp option specifies the working 
+ folder for the root folder.</p>
+
+<p class=Body>Use the following options to create the following types of 
+ views:</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Use -dr to create a read/write 
+ reference view.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Use -dr -ro to create 
+ a read-only reference view.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Use -dr -ba to create 
+ a branching view in which the behavior of existing items is set to branch 
+ on change.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Use -dr -bn to create 
+ a branching view in which the behavior of existing items is <span style="font-style: italic;"><I>not</I></span> 
+ set to branch on change.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>If you do <span style="font-style: italic;"><I>not</I></span> 
+ use -dr, a blank view is created.</p></li>
+</ul>
+
+<p class=Body>If you use -ro, -ba, or -bn without the -dr option, an error 
+ message displays.</p>
+
+<p class=Body>If you use -cfgl, -cfgp, or -cfgd without the -dr option 
+ and one of the -ro, -ba, or -bn options, an error message displays.</p>
+
+<p class=Body>See the <span style="font-style: italic;"><I>StarTeam Administrator’ 
+ s Guide</I></span> for more information about each type of view.</p>
+
+<h2>Syntax</h2>
+
+<p class=Code><span style="font-weight: bold;"><B>stcmd add-view -p</B></span> 
+ <span style="font-weight: bold;"><B>&quot;</B></span><span style="font-style: italic;"><I>projectSpecifier&quot; 
+ </I></span>[-<span style="font-weight: bold;"><B>pwdfile</B></span> &quot;<span style="font-style: italic;"><I>filePath</I></span>&quot;] 
+ [-<span style="font-weight: bold;"><B>cmp</B></span>] [-<span style="font-weight: bold;"><B>encrypt 
+ </B></span><span style="font-style: italic;"><I>encryptionType</I></span>]<span style="font-weight: bold;"> 
+ <B></B></span>[-<span style="font-weight: bold;"><B>q</B></span>] [-<span style="font-weight: bold;"><B>x</B></span>] 
+ [-<span style="font-weight: bold;"><B>stop</B></span>] -<span style="font-weight: bold;"><B>name</B></span> 
+ &quot;<span style="font-style: italic;"><I>viewName</I></span>&quot; [-<span 
+ style="font-weight: bold;"><B>rp</B></span> &quot;<span style="font-style: italic;"><I>folderPath</I></span>&quot;] 
+ [-<span style="font-weight: bold;"><B>d</B></span> &quot;<span style="font-style: italic;"><I>description</I></span>&quot;] 
+ [-<span style="font-weight: bold;"><B>dr</B></span> [-<span style="font-weight: bold;"><B>ro</B></span> 
+ |<span style="font-weight: bold;"><B> -ba</B></span> |<span style="font-weight: bold;"><B> 
+ -bn</B></span> [<span style="font-weight: bold;"><B>-cfgl</B></span> &quot;<span 
+ style="font-style: italic;"><I>labelName</I></span>&quot; | -<span style="font-weight: bold;"><B>cfgp</B></span> 
+ &quot;<span style="font-style: italic;"><I>stateName</I></span>&quot; | -<span 
+ style="font-weight: bold;"><B>cfgd</B></span> &quot;<span style="font-style: italic;"><I>asOfDate</I></span>&quot;]]]</p>
+
+<h2>Examples</h2>
+
+<p class=Body>The following example uses stcmd add-view to create a branching 
+ view named Maintenance 5.1 on the computer named Orion. (Orion is running 
+ an instance of the Server with a server configuration that uses port 49201.) 
+ </p>
+
+<p class=Body>This command creates the view as a child of the existing 
+ StarDraw view and uses the StarDraw folder as its root folder. The new 
+ view is based on the label used for the last build of the 5.1 product 
+ before it shipped (Build 403). It has a working folder that is different 
+ from the parent’s working folder. All existing items in the view will 
+ have their behavior set to branch on change.</p>
+
+<p class=Code>stcmd add-view -p &quot;JMarsh:password@Orion:49201/StarDraw/StarDraw/&quot; 
+ -cmp -encrypt &quot;RC4&quot; -name &quot;Maintenance 5.1&quot; -rp &quot;C:\StarDraw\Maintenance 
+ 5.1&quot; -d &quot;Maintenance view for 5.1 release of our product&quot; 
+ -dr -ba -cfgl &quot;Build 403&quot;</p>
+
+<p class=Body>The following example uses stcmd add-view to create a read/write 
+ reference view named Rooted At Source Code on the computer named Orion.</p>
+
+<p class=Body>This command creates the view as a child of the existing 
+ StarDraw view and uses the SourceCode folder as its root folder. It has 
+ the same working folder as its parent. </p>
+
+<p class=Body>Because a read/write reference view must have the same configuration 
+ as its parent, none of the -cfgl, -cfgp, and -cfgd options can be used.</p>
+
+<p class=Code>stcmd add-view -p &quot;JMarsh:password@Orion:49201/ StarDraw/StarDraw/Source 
+ Code&quot; -cmp -encrypt &quot;RC4&quot; -name &quot;Rooted At SourceCode&quot; 
+ -d &quot;StarDraw main view but with SourceCode folder as the root of 
+ the hierarchy&quot; -dr</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Body>For more information, see <a href="cl_common_stcmd_options.htm">Using 
+ Common stcmd Options</a>.</p>
+
+<p class=body>&nbsp;</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

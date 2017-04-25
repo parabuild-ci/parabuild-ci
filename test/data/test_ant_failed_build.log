@@ -1,0 +1,139 @@
+Buildfile: build.xml
+
+clean:
+
+clean:
+   [delete] Deleting directory D:\viewtier\bt\temp
+
+init:
+
+init:
+    [mkdir] Created dir: D:\viewtier\bt\temp
+    [mkdir] Created dir: D:\viewtier\bt\temp\classes
+    [mkdir] Created dir: D:\viewtier\bt\temp\result
+    [mkdir] Created dir: D:\viewtier\bt\temp\temp
+    [mkdir] Created dir: D:\viewtier\bt\temp\test_classes
+    [mkdir] Created dir: D:\viewtier\bt\temp\test_result
+    [mkdir] Created dir: D:\viewtier\bt\temp\result\prod
+    [mkdir] Created dir: D:\viewtier\bt\temp\result\prod\tomcat
+    [mkdir] Created dir: D:\viewtier\bt\temp\database
+    [mkdir] Created dir: D:\viewtier\bt\temp\test_war_staging
+    [mkdir] Created dir: D:\viewtier\bt\temp\test_temp
+    [mkdir] Created dir: D:\viewtier\bt\temp\test_logs
+
+init.jikes:
+
+init.tomcat:
+     [copy] Copying 52 files to D:\viewtier\bt\temp\result\prod\tomcat
+     [copy] Copying 1 file to D:\viewtier\bt\temp\result\prod\tomcat\conf
+    [mkdir] Created dir: D:\viewtier\bt\temp\result\prod\tomcat\webapps
+
+init.all:
+
+database:
+
+database.uptodate:
+
+database:
+
+database.init:
+   [delete] Deleting directory D:\viewtier\bt\temp\database
+    [mkdir] Created dir: D:\viewtier\bt\temp\database
+
+database.start:
+     [java] server.properties not found, using command line or default properties
+     [java] Opening database: D:\viewtier\bt/temp/database/parabuild
+     [java] HSQLDB server 1.7.1 is running
+     [java] Use SHUTDOWN to close normally. Use [Ctrl]+[C] to abort abruptly
+     [java] Tue Aug 26 15:12:48 PDT 2003 Listening for connections ...
+      [sql] Executing file: D:\viewtier\bt\conf\schema.sql
+      [sql] 15 of 15 SQL statements executed successfully
+
+database.stop:
+     [java] Tue Aug 26 15:12:49 PDT 2003 SHUTDOWN : System.exit() is called next
+
+product:
+
+product.prepare:
+    [mkdir] Created dir: D:\viewtier\bt\temp\staging\war
+    [mkdir] Created dir: D:\viewtier\bt\temp\staging\war\WEB-INF\lib
+    [mkdir] Created dir: D:\viewtier\bt\temp\result_war
+     [copy] Copying 1 file to D:\viewtier\bt\temp\staging\war\WEB-INF\lib
+     [copy] Copying 1 file to D:\viewtier\bt\temp\staging\war\WEB-INF\lib
+     [copy] Copying 1 file to D:\viewtier\bt\temp\staging\war\WEB-INF\lib
+     [copy] Copying 1 file to D:\viewtier\bt\temp\staging\war\WEB-INF\lib
+     [copy] Copying 1 file to D:\viewtier\bt\temp\staging\war\WEB-INF\lib
+     [copy] Copying 1 file to D:\viewtier\bt\temp\staging\war\WEB-INF\lib
+     [copy] Copying 1 file to D:\viewtier\bt\temp\staging\war\WEB-INF\lib
+     [copy] Copying 1 file to D:\viewtier\bt\temp\staging\war\WEB-INF\lib
+     [copy] Copying 1 file to D:\viewtier\bt\temp\staging\war\WEB-INF\lib
+     [copy] Copying 1 file to D:\viewtier\bt\temp\staging\war\WEB-INF\lib
+     [copy] Copying 1 file to D:\viewtier\bt\temp\staging\war\WEB-INF\lib
+     [copy] Copying 1 file to D:\viewtier\bt\temp\staging\war\WEB-INF\lib
+     [copy] Copying 1 file to D:\viewtier\bt\temp\staging\war\WEB-INF\lib
+     [copy] Copying 1 file to D:\viewtier\bt\temp\staging\war\WEB-INF\lib
+     [copy] Copying 1 file to D:\viewtier\bt\temp\staging\war\WEB-INF\lib
+
+product.compile:
+    [javac] Compiling 104 source files to D:\viewtier\bt\temp\classes
+
+product.hibernate.uptodate:
+
+product.hibernate:
+    [mkdir] Created dir: D:\viewtier\bt\temp\generated_home
+[hibernatedoclet] Generating mapping file for org.parabuild.ci.configuration.VCSUserToEmailMap.
+[hibernatedoclet]    org.parabuild.ci.configuration.VCSUserToEmailMap
+[hibernatedoclet] Generating mapping file for org.parabuild.ci.configuration.BuildConfig.
+[hibernatedoclet]    org.parabuild.ci.configuration.BuildConfig
+[hibernatedoclet] Generating mapping file for org.parabuild.ci.configuration.SystemProperty.
+[hibernatedoclet]    org.parabuild.ci.configuration.SystemProperty
+[hibernatedoclet] Generating mapping file for org.parabuild.ci.configuration.User.
+[hibernatedoclet]    org.parabuild.ci.configuration.User
+[hibernatedoclet]    org.parabuild.ci.configuration.Administrator
+[hibernatedoclet] Generating mapping file for org.parabuild.ci.configuration.BuildSequence.
+[hibernatedoclet]    org.parabuild.ci.configuration.BuildSequence
+[hibernatedoclet] Generating mapping file for org.parabuild.ci.configuration.SourceControlSetting.
+[hibernatedoclet]    org.parabuild.ci.configuration.SourceControlSetting
+[hibernatedoclet] Generating mapping file for org.parabuild.ci.configuration.ScheduleProperty.
+[hibernatedoclet]    org.parabuild.ci.configuration.ScheduleProperty
+
+product.jar:
+      [jar] Building jar: D:\viewtier\bt\temp\staging\war\WEB-INF\lib\bt.jar
+
+product.war.prepare:
+
+product.war:
+     [copy] Copying 1 file to D:\viewtier\bt\temp\staging\war\WEB-INF
+      [zip] Building zip: D:\viewtier\bt\temp\result_war\bt.war
+     [java] Viewtier Application compiler
+     [java] Parsing command line parameters ...
+     [java] Processing file bt.jar ...
+     [java] Processing  tierlet:bt/index ...
+     [java] Processing  tierlet:bt/admin ...
+     [java] Processing  tierlet:bt/admin/login ...
+     [java] Processing  tierlet:bt/admin/status ...
+     [java] Processing  tierlet:bt/admin/system ...
+     [java] Processing  tierlet:bt/admin/builds ...
+     [java] Processing  tierlet:bt/admin/build/edit ...
+     [java] Processing  tierlet:bt/admin/build/delete ...
+     [java] Processing  tierlet:bt/error ...
+     [java] Compiling Viewtier application ...
+     [java] Done
+
+product.deploy:
+     [copy] Copying 1 file to D:\viewtier\bt\temp\result\prod\tomcat\webapps
+
+product.all:
+
+tests:
+
+tests.compile:
+    [javac] Compiling 27 source files to D:\viewtier\bt\temp\test_classes
+
+    [javac] Found 1 syntax error in "D:/viewtier/bt/test/src/test/build/SATestLogAnalizer.java":
+
+    [javac]     35.     BuildSequence buildSequence = makeTestSequence("", "BUILD SUCCESSFUL")
+    [javac]             ^--------------------------------------------------------------------^
+    [javac] *** Syntax: ";" inserted to complete BlockStatements
+BUILD FAILED
+file:D:/viewtier/bt/build-tests.xml:6: Compile failed; see the compiler error output for details.

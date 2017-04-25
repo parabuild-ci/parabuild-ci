@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 1.1//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="org.parabuild.ci.object.BuildChangeList"
+        table="BUILD_CHANGELIST"
+    >
+        <cache usage="read-write" />
+
+        <id
+            name="ID"
+            column="ID"
+            type="int"
+            unsaved-value="-1"
+        >
+            <generator class="identity">
+            </generator>
+        </id>
+
+        <property
+            name="changeListID"
+            type="int"
+            column="CHANGELIST_ID"
+            unique="false"
+        />
+
+        <property
+            name="changeListCreatedAt"
+            type="java.util.Date"
+            column="CHANGELIST_CREATED"
+            unique="false"
+        />
+
+        <property
+            name="buildID"
+            type="int"
+            column="BUILD_ID"
+            unique="false"
+        />
+
+        <property
+            name="new"
+            type="java.lang.String"
+            column="NEW"
+            unique="false"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-BuildChangeList.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

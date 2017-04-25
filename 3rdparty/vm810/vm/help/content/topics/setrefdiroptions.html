@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Setting Reference Directory Options</TITLE>
+<!--<setrefdiroptions.html>-->
+<!--<toc parent="setting_configuration_options" label="Setting Reference Directory Options" anchor="setrefdiroptions" sortkey="11">-->
+<!--<toc parent="setting_project_configuration_options" label="Setting Reference Directory Options" anchor="setrefdiroptions" sortkey="11">-->
+<!--<index parent="setting" label="reference directory options" anchor="setrefdiroptions">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with Project Databases/Projects\nConfiguring Project Databases/Projects\nSetting Reference Directory Options");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="setrefdiroptions"></A>Setting Reference Directory Options</H1>
+<p>To perform this procedure, you must first select the project database or project you want to configure. The project database or project must also be <a href="assocconfigfile.html">associated with a configuration file</a>.</p>
+<H2>To set <a href="refdiroptions.html">reference directory options</a>:</H2>
+<OL>
+<LI>
+Select Admin | Configure Project. The Configure Project dialog box appears with the General tab active.
+<br><br>
+<LI>
+If not already selected, select the <b>Show Advanced Options</b> check box.
+<br><br>
+<LI>Select <b>Reference Directory</b> beneath Workfiles. The Reference Directory pane on the right appears. The values that display for each option are the settings that are currently defined in the configuration file associated with the project database or project.
+<BR><BR>
+<LI>Enter the location of the reference directory in the <b>Reference Directory</b> field. <BR><BR>
+You can enter a directory name and make it parallel to the archive directory structure by selecting the <b>Keep a reference directory for each archive directory</b> check box. For example, d:\refdir\project1\foo.c, d:\refdir\project2\bar.c is parallel to c:\db\archives\project1\foo.c-arc, c:\db\archives\project2\bar.c-arc.
+<BR><BR>
+<LI>To maintain copies of tip revisions from the trunk only, select the <b>Reference directory for trunk revisions only</b> check box. 
+<BR><BR>
+<LI>To write-protect the files in the reference directory, select the <b>Make reference files read only</b> check box.
+<BR><BR>
+<LI>
+Click OK if you are finished defining options, or click Apply to save the settings and continue to define other options.
+</OL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a href="aboutconfigfiles.html">About Configuration Files</a></TD>
+		<TD><a href="configureoverview.html">Configuring Project Databases and Projects</a></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="configureprojectreferencedirectorydialog.html">Configure Project/Reference Directory dialog box</A></TD>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

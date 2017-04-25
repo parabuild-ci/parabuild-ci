@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Configure Project Dialog Box/Journal File</TITLE>
+<!--<configureprojectjournalfiledialog.html>-->
+<!--<index parent="configuring" label="Configure Project/Journal File dialog box" anchor="configureprojectjournalfiledialog">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiConfigureProjectDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="configureprojectjournalfiledialog"></A>Configure Project/Journal File</H1>
+<P>Use the Configure Project dialog box (Admin | Configure Project | General Tab | Security | Journal File) to keep a journal file, which contains a record of the actions that users perform on archives. You can keep a journal file for each archive or a journal file for all archives within a project.
+</P>
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+<TR>
+<TD COLSPAN=2><CENTER><B>Security | Journal File</B></CENTER></TD>
+</TR>
+	<TR><TD><B>Journal File</b></TD>
+		<TD>Do one of the following:<BR><br>
+		<!--<control name="ConfigureProjectGeneral.NO_JOURNAL_RB">-->
+		Select <b>Do not keep a journal file</b> to not keep a journal file.<!--</control>--><BR><BR>
+		<!--<control name="ConfigureProjectGeneral.DEFAULT_JOURNAL_RB">-->Select <b>Keep journal 'journal.vcs' in each archive directory</b> to create a separate journal file for each archive, name it journal.vcs, and store it in the archive's directory.
+		<!--</control>--><BR><BR>
+		<!--<control name="ConfigureProjectGeneral.USER_DEFINED_JOURNAL_RB">-->
+		Select <b>Keep a journal file named</b> to keep a single journal file for all archives of a project database or project.<!--</control>--><BR>
+<!--<control name="ConfigureProjectGeneral.USER_DEFINED_JOURNAL_EDIT">-->
+If you specify a path but no name for the journal file, Version Manager names the file journal.vcs and places the journal file in the location you specified. If you do not specify a path with the file name, Version Manager places the journal file in the project database's or project's archive directory. <!--</control>--></td>
+	</TR>
+	</TABLE>
+<h2>See Also</h2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="setjournalfileoptions.html">Setting Journal File Options</A></TD>
+		<TD><A HREF="journalfileoptions.html">Journal File Options</A></TD>
+	</tr>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

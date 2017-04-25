@@ -1,0 +1,312 @@
+2006-06-13 Michael Shan <michael_shan@dev.java.net>
+    
+    * Build 20060613
+
+    * Fixed issue list:   
+      ID  Pri  Summary
+      ==  ===  =======      
+      254 P3  WebBrowser doesn't pass cookies to popup - session lost      
+      399 P2  WebBrowser doe not find java-native.jar using Mustang      
+      398 P2  JDIC WebStart Demo failes under JRE1.6.0
+      342 P3  JdicManager throws exception if not loaded with URLClassLoader
+      403 P3  The browser demo can't  run under jdk1.4
+      397 P3  Merge cross platform verion's JDICManager.java with single platform one
+      387 P3  executeScript freezes the application when passed more than about a 1K string
+      395 P3  Add webstart deployment  docs to faq page
+      392 P3  willOpenWindow(URL) not working yet.
+      391 P3  Comment out getBrowserVersion method      
+      388 P3  Calling executeScript with Japanese characters corrupts the data.
+      387 P3  executeScript freezes the application when passed more than about a 1K string
+      243 P3  IeEmbed.exe - Application Error using setContent()
+      375 P3  Support synchronization operations
+      383 P3  Add LogIntMsg method to Util
+      382 P3  Wrong link of Changlog file for build20060308
+      48  P3  Error using WebBrowser component in a SplitPane
+      379 P3  Erase "" in xpcom path got from win registry table
+      378 P3  Makefile build unix native mozilla error      
+      402 P3  JDIC build error
+      
+    * Known issue list:   
+      Below are some of the most frequently mentioned known issues.
+      222 P3  Mac OS X support
+      144 P3  New Browser APIs supporting DOM/javascript execution support
+      
+2006-03-08 Michael Shan <michael_shan@dev.java.net>
+    
+    * Build 20060308
+
+    * Fixed issue list:   
+      ID  Pri  Summary
+      ==  ===  =======      
+      167 P3  Refactoring browser package; introducing Factory pattern
+      181 P3  We need the method: static public void setUseNativeBrowser(boolean useNative)
+      183 P3  Specify embedded browser instead of using system defaul
+      237 P3  Deprecate willOpenWindow() method with willOpenWindow(URL url)
+      337 P3  JDIC Browser fails with error on Mustang b52
+      343 P3  Can't get the JAWT native window handler 
+      345 P3  Better window open suppor
+      352 P3  add a getenv and setenv methods      
+      354 P3  Add existing browser UT cases
+      355 P3  Fix packager's Mac OS not support build error
+      357 P3  UnsatisfiedLinkError due to libm.so.2 on Solaris 8 
+      359 P3  New - Relative  "fiel://" url suppors
+      362 P3  initShareNative before loading jdic lib      
+      365 P3  New Windows in my own GUI, not the native browsers      
+      367 P3  NullPointerException from Browser when closing the frame
+      369 P3  Return "" instedof null for mozilla engine getFileProtocolURLPrefix() 
+      377 P3  Removes WebBrowser.Status, WebBrowser.getStatus and IWebBrowser.getStatus
+
+    * Known issue list:   
+      Below are some of the most frequently mentioned known issues.
+      254 P3  WebBrowser doesn't pass cookies to popup - session lost
+      144 P3  New Browser APIs supporting DOM/javascript execution support
+      
+
+2005-09-30 Michael Shan <michael_shan@dev.java.net>
+    
+    * Build 20050930
+
+    * Fixed issue list:   
+      ID  Pri  Summary
+      ==  ===  =======
+      152 P2  Add API destroy() or dispose() to WebBrowser.
+      265 P3  getIconFileName doesn't escape path variables like %ProgramFiles% in icon paths
+      266 P3  File types API does not work correctly with Adobe Reader 7.0
+      292 P3  IndexOutOfBounds in WinUtility.getMozMailerLocation()
+      293 P3  Tray ActionListener does not respect key masks
+      299 P3  WebBrowser.setContent() not working with large content.
+      301 P3  Add support for requesting browser to print
+      305 P3  NullPointerException on WebBrowser.removeNotify()
+      306 P3  Web start demo doesn't work when clicking in firefox.            
+      310 P1  StringIndexOutOfBounds Exception in WinUtility when launching Mozilla Thunderbird
+      311 P3  Seperate JDIC API release from JDIC Packager
+      317 P3  Newmethod WebBrowser.setURL(URL, Strin postData, String headers)
+      320 P3  ant buildtray forgets to include the png's
+      321 P3  WinTrayIconService should call actionPerformed on WM_RBUTTONUP
+      322 P1  Browser hangs and keeps consuming memory
+      324 P3  Browser message client uses excessive CPU
+      326 P3  JVM crash if using the JDK1.6
+      328 P3  bind Server Socket to loopback device only to avoid firewall issues
+      332 P3  WebBrowser.getWebBrowserListeners() throws ClassCastException
+      
+    * Known issue list:   
+      Below are some of the most frequently mentioned known issues.
+      
+      
+2005-06-20 Armin Chen <armin_chen@dev.java.net>
+    
+    * Release 0.9.1
+
+    * Fixed issue list:   
+      ID  Pri  Summary
+      ==  ===  =======
+      145 P3   IeEmbed haven't implement post data method.
+      146 P2   libjdic.so depends on libjawt.so and other libraries.
+      244 P3   Embedding IE requires NSPR library (nspr4.dll).
+      247 P2   Carriage Returns in Script fails
+      248 P3   Make it possible for Desktop.open() to use directories.
+      249 P1   IeEmbed.exe crash on browser.setContent(String)
+      250 P2   when preferred browser is not set JDIC crashes VM
+      253 P3   Tray icon prevents the application from terminating
+      277 P3   JDIC binary error message using the Browser with local files
+      280 P3   64bit Linux Support
+      286 P3   Include NetBeans project file in JDIC source tree.
+      288 P3   Add ability to receive events from bubbles
+
+2005-03-18 Armin Chen <armin_chen@dev.java.net>
+
+    * Release 0.9
+    
+    * Fixed issue list:   
+      ID  Pri  Summary
+      ==  ===  =======
+       67 P3   PopMenu does not close when focus is lost
+      144 P3   New Browser APIs supporting DOM/javascript execution support
+      161 P3   Add a method documentCompleted on the WebBrowserListener
+      177 P3   Balloon Messages / Notification Window
+      185 P3   Tray icon is lost when taskbar is restarted.
+      191 P3   JDIC Browser doesn't work with Mozilla using gtk1.2 on Solar
+      192 P3   Add version info to the JDIC release binaries on Windows.
+      194 P3   Browser DOM support lacks unicode support
+      195 P3   Add property to build.xml to support debug compiling
+      197 P3   Common.cpp building error: IsEmpty' undeclared.
+      223 P3   Events defined in WebBrowserEvent don't match WebBrowserList
+      224 P3   Unclear definition of addNotify and paint methods in WebBrow
+      225 P3   Javadoc comments need to be improved.
+      226 P3   Deprecate WebBrowserUtil class.
+      227 P3   Remove WebBrowser.getBrowserBinary() method.
+      231 P3   Deprecate WebBrowser.Status class.
+      232 P3   Add WebBrowser.getWebBrowserListeners method.
+      236 P3   NullPointerException thrown when running Tray demo.
+      238 P3   getLocationOnScreen() can not return the location of the icon
+      241 P3   Trayicon actionlistener dosen't works without pupup menu.
+      
+    * Known issue list:   
+      Below are some of the most frequently mentioned known issues.
+      170 P3   Browser doesn't work with Mozilla 1.4 .exe installation.
+      221 P3   popmenu flashes when first right-click to the icon.
+
+2005-01-27 George Zhang <georgez@dev.java.net>
+
+    * Release 0.8.8
+    
+    * Fixed issue list:   
+      ID  Pri  Summary
+      ==  ===  =======      
+      101 P2   Browser not working with Mozilla installable (.exe) package
+      102 P3   PrivilegedActionException left wrapped in reporting in web b
+      106 P1   Tray disapears under windows
+      141 P3   I18N issue with tray support
+      147 P3   Jnlp2msi dose not support relative path.
+      148 P3   Empty space after remove/add
+      149 P3   Browser demo application can't handle "file://" protocol.
+      150 P3   Tray's popup menu shows behind the frame if JFrame.setAlways
+      155 P3   JDIC Tray Demo icon in system tray only quickly flashes menu
+      158 P3   MozEmbed.exe needs to be copied to work.
+      165 P3   isDefaultBrowserMozilla() should not be true for Opera
+      166 P3   Internet Explorer does not return URLs for local files
+      168 P3   popup menu does not appear on J2SE1.4.2
+
+    * Known issue list:   
+      Below are some of the most frequently mentioned known issues.
+      170 P3   Browser doesn't work with Mozilla 1.4 .exe installation.
+
+2004-12-09 Armin Chen <armin_chen@dev.java.net>
+
+    * Release 0.8.7
+    
+    * Fixed issue list:   
+      ID  Pri  Summary
+      ==  ===  =======
+      109 P3   Desktop Mailer does not support Mozilla Thunderbird
+       82 P3   Auto-check MOZILLA_FIVE_HOME setting running Browser component
+       97 P3   Embedded IE has problem with some https sites
+      126 P2   Browser component can not resolve the symbolic link
+      125 P2   Failed to generate msi package when speicfy the rd paramter 
+      123 P1   Packager can not generate packages
+      136 P3   Update init package implementation.  
+      138 P3   Dependence on libpopt.so.0
+      139 P3   Tray requires setting JAVA_HOME to work.
+      140 P3   Desktop.browse takes long time if you call it from TrayIcon
+      142 P3   Automatically set java.library.path property for Tray.
+
+2004-11-10 Armin Chen <armin_chen@dev.java.net>
+
+    * Release 0.8.6.3
+    
+    * Fixed issue list:   
+      ID  Pri  Summary
+      ==  ===  =======   
+      133 P3   Native browser binary lose executation permission(when running under WebStart).
+      126 P2   Browser component can not resolve the symbolic link
+      87  P3   Browser component doesn't work with mozilla 1.7 on Solaris.
+      119 P3   Build JDIC Browser component against Gecko SDK and Mozilla binary on Solaris.
+
+    * Known issue list:   
+      Below are some of the most frequently mentioned known issues.
+      118 P3   Browser component doesn't work with mozilla 1.7 on Windows.
+
+2004-10-19 Armin Chen <armin_chen@dev.java.net>
+
+    * Release 0.8.6.2
+    
+    * Fixed issue list:   
+      ID  Pri  Summary
+      ==  ===  =======   
+      87  P3   Browser component doesn't work with mozilla 1.7 on Solaris.
+      119 P3   Build JDIC Browser component against Gecko SDK and Mozilla binary on Solaris.
+
+    * Known issue list:   
+      Below are some of the most frequently mentioned known issues.
+      118 P3   Browser component doesn't work with mozilla 1.7 on Windows.
+
+2004-10-08 George Zhang <georgez@dev.java.net>
+
+    * Release 0.8.6.1
+    
+    * Fixed issue list:   
+      ID  Pri  Summary
+      ==  ===  =======   
+      87  P3   Browser component doesn't work with mozilla 1.7 on Unix.
+      119 P3   Build JDIC Browser component against Gecko SDK and Mozilla binary on Unix.
+
+    * Known issue list:   
+      Below are some of the most frequently mentioned known issues.
+      118 P3   Browser component doesn't work with mozilla 1.7 on Windows.
+
+2004-09-27 George Zhang <georgez@dev.java.net>
+
+    * Release 0.8.6
+    
+    * Fixed issue list:   
+      Note: All the feature enhancements are handled via the reported issues.
+
+      ID  Pri  Summary
+      ==  ===  =======   
+      89  P2   <Extension> Jnlp key word support
+      93  P3   Incorporate Tray Icon API into JDIC API.
+      95  P3   Remove JAVA_HOME setting to run JDIC Browser component.
+      99  P3   Add "builddemo" target to build demo applications.
+      100 P3   Generate JDIC API binary files that run on JDK 1.4 and later.
+
+    * Known issue list:   
+      Below are some of the most frequently mentioned known issues.
+      Any fixes or contributions to these issues are welcome!
+
+      87  P3   Browser component doesn't work with mozilla 1.7 on Unix.
+
+2004-09-07 George Zhang <georgez@dev.java.net>
+
+    * Release 0.8.5
+    
+    * Fixed issue list:   
+      Note: All the feature enhancements are handled via the reported issues.
+
+      ID  Pri  Summary
+      ==  ===  =======   
+      9   P3   [Windows] jnlp2msi reports "Create Native process failed"
+      12  P3   [Windows] Can't find packager.jar when it is put as the first item in classpath
+      13  P3   [windows] can't install into system cache unless javaws system cache gets set
+      14  P3   [windows] exception was thrown by using -ld
+      16  P3   [Windows] Ambiguous Error Msg by using -pn
+      17  P3   [Windows] Ambiguous error info by using -od
+      18  P3   [Windows] No exception for invalide version value
+      19  P3   Windows] -msd option is not easy to use
+      51  P2   Packager cannot get javaws path correctly from /etc/mailcap
+      52  P3   typos in browser.jnlp of the online JNLP Browser demo.
+      54  P3   Embeded browser component in Java WebStart doesn't work.
+      56  P3   The demo jnlp file need support jdk1.5
+      58  P4   Update packager .jar file name and -enableassociation option
+      59  P4   COPYING file update.
+      60  P3   Browser demo doesn't handle "https" protocol correctly.
+      65  P3   Support TitleChange and StatusTextChange event
+      68  P3   Getting Default Browser from Windows Registry Table
+      71  P4   WebBrowser.willOpenURL(URL url) throws Null Pointer with Files
+      79  P3   Exception java.lang.UnsatisfiedLinkError with liblinc.so link error
+      83  P2   Packager can not get remote file through a proxy
+      86  P3   Browser component doesn't work with mozilla 1.4.1
+
+    * Known issue list:   
+      Below are some of the most frequently mentioned known issues.
+      Any fixes or contributions to these issues are welcome!
+
+      87  P3   Browser component doesn't work with mozilla 1.7.
+
+2004-07-07 George Zhang <georgez@dev.java.net>
+
+    * Release 0.8.4.1
+    
+    * Fixed issue list:   
+      ID  Pri  Summary
+      ==  ===  =======   
+      11  P3   Executable files lost executable permission in the generated
+      15  P3   [Windows] Exception by using -rd
+      22  P3   Patch or Issue 9, 12~19
+      27  P3   Error to package web-based webstart application
+      49  P3   Further browsing doesn't work with browser component.
+      50  P3   "jni.h not found" error building JDIC source on Windows
+
+2004-06-01 George Zhang <georgez@dev.java.net>
+
+    * Release 0.8.4 (initial release)
+

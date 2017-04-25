@@ -1,0 +1,207 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Importing StarTeam Work Records</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=720>
+<meta name=layout-width content=705>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Working with the Application\nManaging Tasks\nUsing Tasks in Microsoft Project\nImporting Work Records");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Importing Work Records</h1>
+
+<p class=Body>With the StarTeam Microsoft Project Integration, you can 
+ import the number of hours worked and the number of hours remaining from 
+ StarTeam &nbsp;work 
+ records. These work records can be associated with a single task, a task 
+ hierarchy (the selected task and its children), or all the tasks linked 
+ to the current Microsoft Project (.mpp) file.</p>
+
+<p class=Body>When importing work records, be aware of the following:</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>If a user unknown to 
+ Microsoft Project has worked on a task in StarTeam, the application asks 
+ if the user should be added as a resource to that Microsoft Project task 
+ and the .mpp file. </p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>If a user known to Microsoft 
+ Project has worked on a StarTeam task to which he or she is not assigned, 
+ the user is automatically added to the resources for the task in Microsoft 
+ Project.</p></li>
+</ul>
+
+<p class=Body>A Microsoft Project task has one cumulative work record for 
+ each resource, while StarTeam may have several records for the same individual.</p>
+
+<p class=Body><span style="font-weight: bold;"><B>Important:</B></span> Always 
+ import work for a StarTeam task into the .mpp file before selecting the 
+ <span style="font-weight: bold;"><B>Sync StarTeam Tasks</B></span> command from 
+ the StarTeam menu in Microsoft Project. Otherwise, the work hours for 
+ the task in StarTeam will be negatively adjusted to equal the previous 
+ work entered but not imported into Microsoft Project. The comment for 
+ this adjustment in the StarTeam work record will read: &quot;<span style="font-family: Courier, monospace;">Adjusted 
+ for Microsoft Project plan change.</span>” This adjustment occurs by design, 
+ because the <span style="font-weight: bold;"><B>Sync StarTeam Tasks</B></span> 
+ command overwrites information in StarTeam.</p>
+
+<p class=Proc>To import work record information from StarTeam to Microsoft 
+ Project:</p>
+
+<ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select a task in Microsoft 
+ Project for which you want to import the StarTeam work record. </p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select <span style="font-weight: bold;"><B>StarTeam 
+ &gt; Import Work</B></span> from the Microsoft Project menu. The <span style="font-style: italic;"><I>Import 
+ Work Records</I></span> dialog appears. </p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select one of the following 
+ import options:</p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1><span style="font-weight: bold;"><B>Selected 
+ task only</B></span> (disabled if no task selected).</p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1><span style="font-weight: bold;"><B>Selected 
+ task and children</B></span> (disabled if no task selected or if the selected 
+ task has no children).</p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1
+										style="font-weight: bold;">All 
+ exported tasks <span style="font-weight: normal;">(default).</span></p></li>
+	</ul>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Click<span style="font-weight: bold;"><B> 
+ OK</B></span>.</p></li>
+</ol>
+
+<p class=Proc>To see work imported in Microsoft Project:</p>
+
+<ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select a task in Microsoft 
+ Project.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select <span style="font-weight: bold;"><B>Window 
+ &gt; Split</B></span> from the Microsoft Project menu. The window splits into 
+ two panes, with the upper pane showing your tasks and the lower pane shows 
+ data fields containing the name of the task, its duration and so on. Beneath 
+ these fields are one or more tables with column headers.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>To display a context menu, 
+ right-click a column header in a table.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>To see the resources for 
+ the task, select <span style="font-weight: bold;"><B>Resource Work</B></span> 
+ from the context menu. The lower pane now displays only one table, which 
+ lists the resources for the task and other work-related information. The 
+ last two columns of the table are <span style="font-weight: bold;"><B>Act. 
+ Work</B></span> (actual work) and <span style="font-weight: bold;"><B>Rem. Work</B></span> 
+ (for remaining work). The data in these two columns comes from StarTeam.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Update the Gantt charts. 
+ The procedure for doing this depends upon several factors, such as how 
+ work is measured and whether the project needs to be leveled.</p></li>
+</ol>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

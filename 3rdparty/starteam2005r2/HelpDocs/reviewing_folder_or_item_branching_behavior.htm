@@ -1,0 +1,186 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Reviewing Folder or Item Branching Behavior</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=553>
+<meta name=layout-width content=699>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Working with the Application\nManaging Views\nReviewing Folder or Item Branching Behavior");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Reviewing Folder or Item Branching Behavior</h1>
+
+<p class=Body>At any time, you can determine whether a folder, file, or 
+ change request in a branch view is set to <span style="font-weight: bold;"><B>Branch 
+ on change </B></span>(that is, its current branching behavior). Requirements, 
+ tasks, and topics never branch.</p>
+
+<p class=Proc>To determine the branching behavior for a specific folder 
+ or item:</p>
+
+<ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select the folder or item.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Highlight <span style="font-weight: bold;"><B>Advanced 
+ &gt; Behavior</B></span> from the Folder, File, or Change Request menu, as 
+ appropriate: </p></li>
+	
+	<p class=List-1-text>The <span style="font-weight: bold;"><B>Branch on 
+ change</B></span> check box may be:</p>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1><span style="font-weight: bold;"><B>Enabled 
+ and selected</B></span>. With this setting, branching occurs when the item 
+ changes. The child item separates from its corresponding item in the parent 
+ view and receives a new revision number. (After the item has branched, 
+ the <span style="font-weight: bold;"><B>Branch on change</B></span> check box 
+ becomes disabled.)</p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1><span style="font-weight: bold;"><B>Enabled 
+ but not selected</B></span>. In this situation, branching does not occur when 
+ you change the item. </p></li>
+		
+		<ul>
+			
+			<li class=kadov-p-CBullet-2><p class=Bullet-2>If the view configuration 
+ floats, any changes to an item in the child view will be propagated to 
+ the corresponding item in the parent view (and possibly to other child 
+ views).</p></li>
+			
+			<li class=kadov-p-CBullet-2><p class=Bullet-2>If the view configuration 
+ does not float, items in the child view cannot be changed because the 
+ corresponding item in the parent view cannot be changed. Therefore, the 
+ item is treated as though it were read-only (no data about the item can 
+ be changed). </p></li>
+		</ul>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1><span style="font-weight: bold;"><B>Disabled</B></span>. 
+ The check box may be disabled for a variety of reasons, including: </p></li>
+		
+		<ul>
+			
+			<li class=kadov-p-CBullet-2><p class=Bullet-2>The item has 
+ already branched.</p></li>
+			
+			<li class=kadov-p-CBullet-2><p class=Bullet-2>The item is in 
+ a reference view. Reference views do not permit branching, although some 
+ views of this type do allow items to change. Changes in a reference view 
+ item are automatically propagated to the corresponding item in the other 
+ view.</p></li>
+			
+			<li class=kadov-p-CBullet-2><p class=Bullet-2>Branching makes 
+ no sense, given the time at which and the location to which the item was 
+ created, moved, shared, etc. For example, an item in a child view that 
+ has no corresponding item in the parent has no reason to branch.</p></li>
+			
+			<li class=kadov-p-CBullet-2><p class=Bullet-2>The item may 
+ have been added to a blank branching view. Because this type of view is 
+ not derived from its parent view, it contains no items that correspond 
+ to those in the parent. Therefore, its branching behavior is disabled.</p></li>
+		</ul>
+	</ul>
+</ol>
+
+<p class=Body><span style="font-weight: bold;"><B>Note:</B></span> To choose a 
+ different branching behavior, see <a href="changing_folder_or_item_branching_behavior.htm">Changing 
+ Folder or Item Branching Behavior</a>.</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

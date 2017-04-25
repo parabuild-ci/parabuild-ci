@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Fixed vs. Floating Version Labels</TITLE>
+<!--<floatfixlabels.html>-->
+
+<!--<index parent="version_labels" label="fixed vs. floating version labels" anchor="floatfixlabels">-->
+<!--<index parent="labels" label="fixed vs. floating" anchor="floatfixlabels">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="floatfixlabels"></A>Fixed vs. Floating Version Labels</H1>
+<P>You can assign a version label directly to a single revision (fixed), or you can assign a version label so that the label moves with the latest revision of the selected versioned file (floating). You can also <a href="changetypeversionlabel.html">change the label type</a> (fixed vs. floating) after the label is assigned.
+<p>Typically, a floating version label is used when you have parallel development (branching). Developers working on a branch can assign a floating version label to check out revisions on the tip of a branch instead of the tip of the trunk. Floating version labels float to the highest <i>minor</i> revision number, not to the next <i>major</i> revision number. For example, if an archive contains revisions 1.0, 1.1, 1.2, 2.0, and 2.1, and the floating version label is assigned to revision 1.0, it will float to revision 1.2, not revision 2.1.
+<p>Once labels are assigned to revisions, you can perform actions by specifying version labels instead of revisions. These actions include, but are not limited to, checking in workfiles, checking out revisions, promoting groups of files, and generating reports.
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="assignversionlabeldialog.html">Assign Version Label Dialog</A></TD>
+		<TD><A HREF="assigningaversionlabel.html">Assigning a Version Label</A></TD>
+
+	<tr>
+		<td><A HREF="changetypeversionlabel.html">Changing a Version Label Type (Fixed vs. Floating) </a></td>
+	</tr
+	</TR>
+	
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

@@ -1,0 +1,66 @@
+<project name="bt" default="deploy.to.website" basedir=".">
+  <!-- Deploys to website -->
+  <target name="deploy.to.website">
+    <if name="deploy.to.downloads" value="Yes">
+      <property name="downloads.staging.dir" value="/home/vimeshev/downloads/4_3"/>
+      <property name="downloads.destination.dir" value="/home/vimeshev/downloads.parabuildci.org/downloads/parabuild/4_3"/>
+      <!--
+      Prepare path
+      -->
+      <pathconvert targetos="unix" property="unix.result.distrib">
+        <path location="${build.dir.distrib}"/>
+      </pathconvert>
+      <pathconvert targetos="unix" property="unix.result.descriptor">
+        <path location="${build.dir.distrib.descriptor}"/>
+      </pathconvert>
+      <!--
+      Create staging  and result directories
+      -->
+      <echo message="Create staging  and result directories"/>
+      <exec failonerror="true" executable="ssh">
+          <arg value="vimeshev@downloads.parabuildci.org"/>
+          <arg value="mkdir -p ${downloads.staging.dir}; mkdir -p ${downloads.destination.dir}"/>
+      </exec>
+
+        <!--
+        Copy to the downloads website staging
+        -->
+      <echo message="Copy to the downloads website staging"/>
+      <echo message="      unix.result.distrib: ${unix.result.distrib}"/>
+      <echo message="   unix.result.descriptor: ${unix.result.descriptor}"/>
+      <exec failonerror="true" executable="sh">
+        <arg value="-c"/>
+        <arg value="scp -Crpqv ${unix.result.distrib}/* vimeshev@downloads.parabuildci.org:${downloads.staging.dir}/"/>
+      </exec>
+      <!--
+      Remove old downloads
+      -->
+      <!-- ...
+      <echo message="Remove old downloads"/>
+      <exec failonerror="true" executable="ssh">
+        <arg value="rm -rf ${downloads.destination.dir}/*"/>
+      </exec>
+      -->
+      <!--
+      Copy from staging to downloads
+      -->
+      <echo message="Copy from staging to downloads"/>
+      <exec failonerror="true" executable="ssh">
+        <arg value="vimeshev@downloads.parabuildci.org"/>
+        <arg value="cp -rp ${downloads.staging.dir}/* ${downloads.destination.dir}/; chmod +x ${downloads.destination.dir}/docs; chmod -R ag+r ${downloads.destination.dir}"/>
+      </exec>
+      <!--
+      Cleanup staging
+      -->
+      <echo message="Cleanup staging"/>
+      <exec failonerror="true" executable="ssh">
+        <arg value="vimeshev@downloads.parabuildci.org"/>
+        <arg value="rm -rf ${downloads.staging.dir}/*"/>
+      </exec>
+      <!--
+      Update website links
+      -->
+      <!-- ... -->
+    </if>
+  </target>
+</project>

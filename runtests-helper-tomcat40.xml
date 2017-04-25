@@ -1,0 +1,75 @@
+<!--
+This is a serverside helper for tomcat 3.3.
+
+Each helper should implement the following targets:
+  o  start.test.server - should start test server;
+  o  stop.test.server - should sopt test server;
+-->
+<project name="bt" default="tests">
+
+  <!-- Parameters:   -->
+  <!-- catalina.home -->
+
+  <!-- Mandatory target to be called from dispatcher -->
+  <target name="start.test.server">
+    <antcall target="tomcat40" inheritall="true">
+      <param name="command" value="start"/>
+    </antcall>
+  </target>
+
+
+  <!-- Mandatory target to be called from dispatcher -->
+  <target name="stop.test.server">
+    <antcall target="tomcat40" inheritall="true">
+      <param name="command" value="stop"/>
+    </antcall>
+  </target>
+
+
+  <!-- Tomcat 4.0 commander -->
+  <target name="tomcat40">
+    <echo message="${test.config}"/>
+    <java classname="org.apache.catalina.startup.Bootstrap" fork="yes">
+      <jvmarg value="-Xms60m"/>
+      <jvmarg value="-Xmx200m"/>
+      <!-- Tomcat related parameters -->
+      <jvmarg value="-Dcatalina.base=${catalina.base}"/>
+      <jvmarg value="-Dcatalina.home=${catalina.home}"/>
+      <jvmarg value="-Djava.awt.headless=true"/>
+      <jvmarg value="-Djava.io.tmpdir=${catalina.base}/temp"/>
+      <jvmarg value="-Dparabuild.active.build.id.validation.enabled=true"/>
+      <jvmarg value="-Dparabuild.build.manager.ipaddress=${parabuild.build.manager.ipaddress}"/> <!-- not a manager -->
+      <jvmarg value="-Dparabuild.cccmdd.enabled=true"/>
+      <jvmarg value="-Dparabuild.cvscmdd.enabled=true"/>
+      <jvmarg value="-Dparabuild.email.disabled=true"/>
+      <jvmarg value="-Dparabuild.notification.prefix=[test]"/>
+      <jvmarg value="-Dparabuild.p4cmdd.enabled=true"/>
+      <jvmarg value="-Dparabuild.print.stacktrace=true"/>
+      <jvmarg value="-Dparabuild.source.ip.address.check.disabled=true"/>
+      <jvmarg value="-Dparabuild.starteamcmdd.enabled=true"/>
+      <jvmarg value="-Dparabuild.svncmdd.enabled=true"/>
+      <jvmarg value="-Dparabuild.vsscmdd.enabled=true"/>
+      <jvmarg value="-Dtest.builder.http.port=${test.builder.http.port}"/>
+      <jvmarg value="-Dtest.cvs.exe=${cvs.exe}"/>
+      <jvmarg value="-Dtest.cvsnt.home=${cvsnt.home}"/>
+      <jvmarg value="-Dtest.data.home=${test.data}"/>
+      <jvmarg value="-Dtest.dataset=${test.dataset}"/>
+      <jvmarg value="-Dtest.dir.manager=${test.dir.manager}"/>
+      <jvmarg value="-Dtest.manager.http.port=${test.manager.http.port}"/>
+      <jvmarg value="-Dtest.remote.builder=${test.remote.builder}"/>
+      <jvmarg value="-Dtest.temp.dir=${test.temp.dir}"/>
+      <!-- Tomcat command -->
+      <arg value="${command}"/>
+      <!-- Tomcat classpath -->
+      <classpath>
+        <pathelement path="${java.home}/../lib/tools.jar"/>
+        <pathelement path="${clover.jar}"/>
+        <pathelement path="${mysql.jar}"/>
+        <pathelement path="${catalina.home}/../license"/>
+        <fileset dir="${catalina.home}/..">
+          <include name="bin/bootstrap.jar"/>
+        </fileset>
+      </classpath>
+    </java>
+  </target>
+</project>

@@ -1,0 +1,369 @@
+Install Begin: Tue Dec 27 21:50:44 PST 2005
+Install End:   Tue Dec 27 21:52:51 PST 2005
+
+Created with Zero G's InstallAnywhere 6.1 Enterprise Build 2325
+
+
+Summary
+-------
+
+Installation: Successful.
+
+112 SUCCESSES
+0 WARNINGS
+0 NONFATAL ERRORS
+0 FATAL ERRORS
+
+Action Notes:
+
+None.
+
+Install Log Detail:
+
+Custom Action:            com.accurev.ia.customcode.ResolveVariable
+                          Status: SUCCESSFUL
+
+Custom Action:            com.accurev.ia.customcode.CheckRootAccess
+                          Status: SUCCESSFUL
+
+
+Custom Action:            com.accurev.ia.customcode.CheckSystemTime
+                          Status: SUCCESSFUL
+
+Custom Action:            com.accurev.ia.customcode.CheckLocalhost
+                          Status: SUCCESSFUL
+
+Custom Action:            com.accurev.ia.customcode.CheckHostPort
+                          Status: SUCCESSFUL
+
+
+Check Disk Space:         D:\mor2\dev\bt\3rdparty\accurev381
+                          Status: SUCCESSFUL
+                          Additional Notes: NOTE - Required Disk Space: 75 657 805; Free Disk Space: 600 801 280
+
+Install Directory:        D:\mor2\dev\bt\3rdparty\accurev381\
+                          Status: SUCCESSFUL
+                          Additional Notes: NOTE - Directory already existed
+
+Install Directory:        D:\mor2\dev\bt\3rdparty\accurev381\UninstallerData\
+                          Status: SUCCESSFUL
+
+Custom Action:            com.accurev.ia.customcode.UninstallAccuRevService
+                          Status: SUCCESSFUL
+
+Install Uninstaller:      AccuRev 3.8.1 (Install All Uninstaller Components)
+                          Status: SUCCESSFUL
+
+MakeExecutable : 	  resource jar is empty
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\UninstallerData\Uninstall AccuRev.exe
+                          Status: SUCCESSFUL
+
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\UninstallerData\Uninstall AccuRev.lax
+                          Status: SUCCESSFUL
+
+Install Directory:        D:\mor2\dev\bt\3rdparty\accurev381\UninstallerData\resource\
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\UninstallerData\resource\iawin32.dll
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\UninstallerData\resource\remove.exe
+                          Status: SUCCESSFUL
+
+Make Registry Entry:      Key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\AccuRev 3.8.1
+                          Value Name: DisplayName
+                          Value Data: AccuRev 3.8.1
+                          Status: SUCCESSFUL
+
+Make Registry Entry:      Key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\AccuRev 3.8.1
+                          Value Name: UninstallString
+                          Value Data: "D:\mor2\dev\bt\3rdparty\accurev381\UninstallerData\Uninstall AccuRev.exe"
+                          Status: SUCCESSFUL
+
+Make Registry Entry:      Key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\AccuRev 3.8.1
+                          Value Name: Publisher
+                          Value Data: AccuRev
+                          Status: SUCCESSFUL
+
+Make Registry Entry:      Key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\AccuRev 3.8.1
+                          Value Name: Contact
+                          Value Data: oleg@accurev.com
+                          Status: SUCCESSFUL
+
+Make Registry Entry:      Key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\AccuRev 3.8.1
+                          Value Name: ProductID
+                          Value Data: b5f5adee-1ecd-11b2-b73e-e853b562a9d6
+                          Status: SUCCESSFUL
+
+Make Registry Entry:      Key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\AccuRev 3.8.1
+                          Value Name: InstallLocation
+                          Value Data: D:\mor2\dev\bt\3rdparty\accurev381
+                          Status: SUCCESSFUL
+
+Make Registry Entry:      Key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\AccuRev 3.8.1
+                          Value Name: InstallDate
+                          Value Data: Tue Dec 27 21:52:29 PST 2005
+                          Status: SUCCESSFUL
+
+Make Registry Entry:      Key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\AccuRev 3.8.1
+                          Value Name: DisplayVersion
+                          Value Data: 3.7.1.0
+                          Status: SUCCESSFUL
+
+Install Uninstaller:      AccuRev 3.8.1 (Install All Uninstaller Components)
+                          Status: SUCCESSFUL
+
+Install Directory:        D:\mor2\dev\bt\3rdparty\accurev381\bin\
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\bin\fw.jar
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\bin\diff.jar
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\bin\werken.opt.jar
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\bin\xercesImpl.jar
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\bin\oro.jar
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\bin\ac_sunjava.jar
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\bin\com.accurev.eclipse.zip
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\bin\xml-apis.jar
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\bin\acserverctl
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\bin\accurev.exe
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\bin\accurevw.exe
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\bin\acdiff.exe
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\bin\diffw.exe
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\bin\SwitchSCC.exe
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\bin\SCCAcc.dll
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\bin\acdiff3.exe
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\bin\SCCAcc.zip
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\bin\ExPat-Copyright.txt
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\bin\libexpat.dll
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\bin\SCCAcc-ReadMe.txt
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\bin\maintain.exe
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\bin\accurev_server.exe
+                          Status: SUCCESSFUL
+
+Create LaunchAnywhere:    acgui.exe (Install All LaunchAnywhere Java Executable Components)
+                          Status: SUCCESSFUL
+
+MakeExecutable : 	  resource jar is empty
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\bin\acgui.exe
+                          Status: SUCCESSFUL
+
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\bin\acgui.lax
+                          Status: SUCCESSFUL
+
+Create LaunchAnywhere:    acgui.exe (Install All LaunchAnywhere Java Executable Components)
+                          Status: SUCCESSFUL
+
+Create LaunchAnywhere:    acdiffgui.exe (Install All LaunchAnywhere Java Executable Components)
+                          Status: SUCCESSFUL
+
+MakeExecutable : 	  resource jar is empty
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\bin\acdiffgui.exe
+                          Status: SUCCESSFUL
+
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\bin\acdiffgui.lax
+                          Status: SUCCESSFUL
+
+Create LaunchAnywhere:    acdiffgui.exe (Install All LaunchAnywhere Java Executable Components)
+                          Status: SUCCESSFUL
+
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\bin\acclient.cnf
+                          Status: SUCCESSFUL
+
+Modify Text File - Single File:   acclient.cnf
+                          Status: SUCCESSFUL
+
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\bin\server_start.bat
+                          Status: SUCCESSFUL
+
+Modify Text File - Single File:   server_start.bat
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\bin\acserverctl
+                          Status: SUCCESSFUL
+
+Modify Text File - Single File:   acserverctl
+                          Status: SUCCESSFUL
+
+
+Custom Action:            com.zerog.ia.customcode.util.fileutils.CopyFile
+                          Status: SUCCESSFUL
+
+Custom Action:            com.accurev.ia.customcode.FixVB6ConfigFile
+                          Status: SUCCESSFUL
+
+Install Directory:        D:\mor2\dev\bt\3rdparty\accurev381\doc\
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\doc\AccuRev_Admin.pdf
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\doc\AccuRev_Concepts.pdf
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\doc\AccuRev_Dispatch.pdf
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\doc\AccuRev_Integrations.pdf
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\doc\AccuRev_Notes.pdf
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\doc\AccuRev_User_CLI.pdf
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\doc\AccuRev_User_GUI.pdf
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\doc\get_acquainted.pdf
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\doc\getacq_titlepage.pdf
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\doc\gui_basic_commands_355.pdf
+                          Status: SUCCESSFUL
+
+Make Registry Entry:      Key: HKEY_LOCAL_MACHINE\SOFTWARE\AccuRev\AccuRevCM\3.0
+                          Value Name: InstallPath
+                          Value Data: D:\mor2\dev\bt\3rdparty\accurev381
+                          Status: SUCCESSFUL
+
+Make Registry Entry:      Key: HKEY_CURRENT_USER\SOFTWARE\AccuRev\AccuRevCM\3.0
+                          Value Name: InstallPath
+                          Value Data: D:\mor2\dev\bt\3rdparty\accurev381
+                          Status: SUCCESSFUL
+
+Make Registry Entry:      Key: HKEY_CURRENT_USER\SOFTWARE\AccuRev\AccuRev Studio\3.0
+                          Value Name: Debug
+                          Value Data: off
+                          Status: SUCCESSFUL
+
+Make Registry Entry:      Key: HKEY_LOCAL_MACHINE\SOFTWARE\AccuRev\AccuRevCM\3.0
+                          Value Name: SCCServerName
+                          Value Data: AccuRev
+                          Status: SUCCESSFUL
+
+Make Registry Entry:      Key: HKEY_LOCAL_MACHINE\SOFTWARE\AccuRev\AccuRevCM\3.0
+                          Value Name: SCCServerPath
+                          Value Data: D:\mor2\dev\bt\3rdparty\accurev381\bin\SCCAcc.dll
+                          Status: SUCCESSFUL
+
+Make Registry Entry:      Key: HKEY_LOCAL_MACHINE\SOFTWARE\SourceCodeControlProvider\InstalledSCCProviders
+                          Value Name: AccuRev
+                          Value Data: SOFTWARE\AccuRev\AccuRevCM\3.0
+                          Status: SUCCESSFUL
+
+Install File:             D:\mor2\dev\bt\3rdparty\accurev381\LICENSE.TXT
+                          Status: SUCCESSFUL
+
+Install Directory:        C:\Documents and Settings\All Users\Start Menu\Programs\AccuRev\
+                          Status: SUCCESSFUL
+                          Additional Notes: NOTE - Directory already existed
+
+Create Shortcut:          C:\Documents and Settings\All Users\Start Menu\Programs\AccuRev\AccuRev.lnk
+                          Status: SUCCESSFUL
+
+Create Shortcut:          C:\Documents and Settings\All Users\Start Menu\Programs\AccuRev\Switch SCC Integration.lnk
+                          Status: SUCCESSFUL
+
+Install Directory:        C:\Documents and Settings\All Users\Start Menu\Programs\AccuRev\AccuRev Documentation\
+                          Status: SUCCESSFUL
+
+Create Shortcut:          C:\Documents and Settings\All Users\Start Menu\Programs\AccuRev\AccuRev Documentation\AccuRev Concepts Manual.lnk
+                          Status: SUCCESSFUL
+
+Create Shortcut:          C:\Documents and Settings\All Users\Start Menu\Programs\AccuRev\AccuRev Documentation\AccuRev User's Guide (GUI).lnk
+                          Status: SUCCESSFUL
+
+Create Shortcut:          C:\Documents and Settings\All Users\Start Menu\Programs\AccuRev\AccuRev Documentation\AccuRev User's Guide (CLI).lnk
+                          Status: SUCCESSFUL
+
+Create Shortcut:          C:\Documents and Settings\All Users\Start Menu\Programs\AccuRev\AccuRev Documentation\AccuRev Dispatch Manual.lnk
+                          Status: SUCCESSFUL
+
+Create Shortcut:          C:\Documents and Settings\All Users\Start Menu\Programs\AccuRev\AccuRev Documentation\AccuRev Administrator's Guide.lnk
+                          Status: SUCCESSFUL
+
+Create Shortcut:          C:\Documents and Settings\All Users\Start Menu\Programs\AccuRev\AccuRev Documentation\AccuRev Integrations Manual.lnk
+                          Status: SUCCESSFUL
+
+Create Shortcut:          C:\Documents and Settings\All Users\Start Menu\Programs\AccuRev\AccuRev Documentation\AccuRev Technical Notes.lnk
+                          Status: SUCCESSFUL
+
+Create Shortcut:          C:\Documents and Settings\All Users\Start Menu\Programs\AccuRev\License.lnk
+                          Status: SUCCESSFUL
+
+Create Shortcut:          C:\Documents and Settings\All Users\Start Menu\Programs\AccuRev\Uninstall AccuRev.lnk
+                          Status: SUCCESSFUL
+
+Install Directory:        C:\Documents and Settings\vimeshev\Desktop\
+                          Status: SUCCESSFUL
+                          Additional Notes: NOTE - Directory already existed
+
+Install Directory:        C:\Documents and Settings\All Users\Desktop\
+                          Status: SUCCESSFUL
+                          Additional Notes: NOTE - Directory already existed
+
+Create Shortcut:          C:\Documents and Settings\All Users\Desktop\AccuRev.lnk
+                          Status: SUCCESSFUL
+
+
+
+Starting Windows Service: AccuRev
+                          Status: SUCCESSFUL
+
+

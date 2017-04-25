@@ -1,0 +1,377 @@
+<HTML><HEAD><TITLE>VAJava and WebSphere Test Environment</TITLE></HEAD><BODY alink="#023264" bgcolor="#ffffff" leftmargin="4" link="#525D76" marginheight="4" marginwidth="4" text="#000000" topmargin="4" vlink="#023264"><TABLE border="0" cellpadding="0" cellspacing="0" width="100%"><TR><TD align="left" valign="top"><A href="http://jakarta.apache.org/index.html"><IMG border="0" hspace="0" src="./images/jakarta-logo.gif" vspace="0"></A></TD><TD align="left" bgcolor="#ffffff" valign="middle" width="100%"><IMG align="right" alt="VAJava and WebSphere Test Environment" border="0" hspace="0" src=".//images/logocactus.gif" vspace="0"></TD></TR><TR><TD colspan="2" height="2" width="100%"><HR noshade="" size="1"></TD></TR></TABLE><TABLE border="0" cellpadding="0" cellspacing="0" width="100%"><TR><TD valign="top" width="1%"></TD><TD nowrap="1" valign="top" width="14%"><FONT size="-2">
+              Last update : August 31 2002</FONT><BR><FONT size="-2">
+              Doc for : v1.4.1</FONT><BR><FONT face="arial,helvetica,sanserif">
+
+  <BR><FONT color="#000000" size="+1">About</FONT><BR><FONT size="-1">
+    <LI><A href="./index.html"><FONT size="-1">What is Cactus ?</FONT></A></LI>
+    <LI><A href="./news.html"><FONT size="-1">News</FONT></A></LI>
+    <LI><A href="./changes.html"><FONT size="-1">Changes</FONT></A></LI>
+    <LI><A href="./features.html"><FONT size="-1">Features/Status</FONT></A></LI>
+    <LI><A href="./goals.html"><FONT size="-1">Goals</FONT></A></LI>
+    <LI><A href="./todo.html"><FONT size="-1">Roadmap/Todo</FONT></A></LI>
+    <LI><A href="./contributors.html"><FONT size="-1">Contributors</FONT></A></LI>
+    <LI><A href="./contributing.html"><FONT size="-1">Contributing</FONT></A></LI>
+    <LI><A href="./users.html"><FONT size="-1">Cactus Users</FONT></A></LI>
+    <LI><A href="./testedon.html"><FONT size="-1">Tested on ...</FONT></A></LI>
+    <LI><A href="./license.html"><FONT size="-1">License</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Downloads</FONT><BR><FONT size="-1">
+    <LI><A href="./downloads.html"><FONT size="-1">Downloads</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Documentation</FONT><BR><FONT size="-1">
+    <LI><A href="./how_it_works.html"><FONT size="-1">How it works ?</FONT></A></LI>
+    
+    <LI><A href="./getting_started.html"><FONT size="-1">Getting Started</FONT></A></LI>
+    <LI><A href="./mockobjects.html"><FONT size="-1">Mock vs Container</FONT></A></LI>
+    <LI><A href="./javadoc.html"><FONT size="-1">Javadocs</FONT></A></LI>
+    
+    
+    <LI><A href="./faq.html"><FONT size="-1">FAQ</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Howto Guides</FONT><BR><FONT size="-1">
+    <LI><A href="./howto_classpath.html"><FONT size="-1">Classpath Howto</FONT></A></LI>
+    <LI><A href="./howto_config.html"><FONT size="-1">Config Howto</FONT></A></LI>
+    <LI><A href="./howto_migration.html"><FONT size="-1">Migration Howto</FONT></A></LI>
+
+    
+    <LI><A href="./howto_testcase.html"><FONT size="-1">TestCase Howto</FONT></A></LI>
+    
+    
+    
+
+    <LI><A href="./howto_jsp.html"><FONT size="-1">Jsp Howto</FONT></A></LI>
+    <LI><A href="./howto_runner.html"><FONT size="-1">Runner Howto</FONT></A></LI>
+    <LI><A href="./howto_security.html"><FONT size="-1">Security Howto</FONT></A></LI>
+
+    
+    <LI><A href="./howto_ant.html"><FONT size="-1">Ant Howto</FONT></A></LI>
+    
+    
+    
+
+    <LI><A href="./howto_httpunit.html"><FONT size="-1">HttpUnit Howto</FONT></A></LI>
+    <LI><A href="./howto_sample.html"><FONT size="-1">Sample Howto</FONT></A></LI>
+
+    
+    <LI><A href="./howto_ejb.html"><FONT size="-1">EJB Howto</FONT></A></LI>
+    
+
+    
+    <LI><A href="./howto_ide.html"><FONT size="-1">IDE Howto</FONT></A></LI>
+    
+    
+    
+    
+
+    <LI><A href="./howto_tomcat.html"><FONT size="-1">Tomcat Howto</FONT></A></LI>
+
+    <LI><A href="./howto_junitee.html"><FONT size="-1">JUnitEE Howto</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Support</FONT><BR><FONT size="-1">
+    <LI><FONT size="-1"><A href="http://jakarta.apache.org/site/bugs.html" target="">Bug database</A></FONT></LI>
+    <LI><A href="./mailinglist.html"><FONT size="-1">Mailing list</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Misc.</FONT><BR><FONT size="-1">
+    <LI><A href="./cactusname.html"><FONT size="-1">Why the name ?</FONT></A></LI>
+    <LI><A href="./logos.html"><FONT size="-1">Logo Challenge</FONT></A></LI>
+    <LI><A href="./resources.html"><FONT size="-1">Resources</FONT></A></LI>
+    <LI><A href="./coverage.html"><FONT size="-1">Test Coverage</FONT></A></LI>
+    
+    
+    
+    <LI><FONT size="-1"><A href="http://jakarta.apache.org/cactus/stats/index.html" target="">Stats</A></FONT></LI>
+    
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Developers</FONT><BR><FONT size="-1">
+    <LI><FONT size="-1"><A href="http://jakarta.apache.org/site/cvsindex.html" target="">CVS</A></FONT></LI>
+    <LI><A href="./coding_conventions.html"><FONT size="-1">Coding Conventions</FONT></A></LI>
+    <LI><A href="./build_result.html"><FONT size="-1">Build results</FONT></A></LI>
+    <LI><A href="./release_checklist.html"><FONT size="-1">Release Checklist</FONT></A></LI>
+  </FONT><BR>
+
+</FONT></TD><TD align="left" valign="top" width="*"><TABLE border="0" cellpadding="3" cellspacing="0"><TR><TD><BR>
+  
+
+  
+
+    <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>Forewords and Requirements</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+      <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+        <B>This tutorial is written for Cactus 1.2 only. It will need
+        to adapted if you're using Cactus 1.3</B>
+      </I></FONT></TD></TR></TABLE></P>
+
+      <P align="justify">
+        This tutorial explains how to run Cactus tests within VisualAge for
+        Java WebSphere Test Environment.
+      </P>
+      <P align="justify">
+        We have received reports that the following tutorial works with
+        VAJava 3.5.2 and 3.5.3. Please tell us if you find that it works with
+        other versions.
+      </P>
+
+    </FONT></TD></TR></TABLE></DIV><BR>
+
+    <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>Step 1 : Import the correct packages in VAJava</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+      <P align="justify">
+        Let's assume the following conventions :
+        <B><CODE><FONT face="courier, monospaced">{Cactus dir}</FONT></CODE></B> is the directory where you
+        have unzipped the Cactus distribution or sources and
+        <B><CODE><FONT face="courier, monospaced">{VAJava dir}</FONT></CODE></B> is the directory where
+        VAJava is installed. Let's also define <B><CODE><FONT face="courier, monospaced">{WTE dir}</FONT></CODE>
+        </B> to be the WebSphere Test Environment directories, i.e.
+        <CODE><FONT face="courier, monospaced">{VAJava dir}/ide/project_resources/IBM WebSphere Test
+        Environment</FONT></CODE>.
+      </P>
+
+      <P align="justify">
+        You need to create 4 projects : one for JUnit, one for Cactus (
+        let's call it &quot;Cactus&quot;), one for HttpClient and
+        optionally one for Log4j. Note that the Log4j one is useful only if
+        wish to get some Cactus runtime logs. If you don't import the Log4j
+        classes, some Cactus classes will appear with a red cross in VAJava
+        but you can safely ignore them as they won't be executed.
+      </P>
+
+      <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+        You can either import the source files or the compiled classes as you
+        wish. If you import the source file, you should import the following
+        directories : <CODE><FONT face="courier, monospaced">{Cactus dir}/src/framework/servlet22</FONT></CODE> and
+        <CODE><FONT face="courier, monospaced">{Cactus dir}/src/framework/share</FONT></CODE>. You also need to
+        copy the following files into
+        <CODE><FONT face="courier, monospaced">{VAJava dir}/ide/project_resources/Cactus</FONT></CODE> :
+        <CODE><FONT face="courier, monospaced">log_client.properties</FONT></CODE> and
+        <CODE><FONT face="courier, monospaced">log_server.properties</FONT></CODE> which are located in
+        <CODE><FONT face="courier, monospaced">{Cactus dir}/sample/conf/test</FONT></CODE>. If you have imported from
+        the Cactus jar file, and you have selected to import resources files
+        then they have been automatically imported for you.
+      </I></FONT></TD></TR></TABLE></P>
+
+    </FONT></TD></TR></TABLE></DIV><BR>
+
+    <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>Step 2 : Set up the cactus.properties file</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+      <P align="justify">
+        Copy your <CODE><FONT face="courier, monospaced">cactus.properties</FONT></CODE> file (see the
+        <A href="howto_config.html">Configuration Howto</A>
+        tutorial for details on <CODE><FONT face="courier, monospaced">cactus.properties</FONT></CODE>) to
+        <CODE><FONT face="courier, monospaced">{VAJava dir}/ide/project_resources/Cactus</FONT></CODE>.
+      </P>
+
+      <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+        As WebSphere does not support the <CODE><FONT face="courier, monospaced">jsp-file</FONT></CODE> tag in
+        <CODE><FONT face="courier, monospaced">web.xml</FONT></CODE>, we cannot map the redirector JSP to a name, so
+        instead of writing
+        &quot;<CODE><FONT face="courier, monospaced">cactus.jspRedirectorURL =
+        http://localhost:8080/test/JspRedirector</FONT></CODE>&quot; in
+        <CODE><FONT face="courier, monospaced">cactus.properties</FONT></CODE>, you should simply
+        put the JSP file name, as in
+        &quot;<CODE><FONT face="courier, monospaced">cactus.jspRedirectorURL =
+        http://localhost:8080/test/jspRedirector.jsp</FONT></CODE>&quot;. This is only needed
+        if you have test cases that extend <CODE><FONT face="courier, monospaced">JspTestCase</FONT></CODE>.
+      </I></FONT></TD></TR></TABLE></P>
+
+    </FONT></TD></TR></TABLE></DIV><BR>
+
+    <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>Step 3 : Modify WebSphere Test Environment</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>Edit default.servlet_engine</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+          Edit <CODE><FONT face="courier, monospaced">{WTE dir}/properties/default.servlet_engine</FONT></CODE> and
+          add the following under the <CODE><FONT face="courier, monospaced">default_app</FONT></CODE> webgroup :
+        </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+    &lt;websphere-webgroup name=&quot;test&quot;&gt;
+       &lt;description&gt;Cactus Testing Web Application&lt;/description&gt;
+       &lt;document-root&gt;$approot$/web&lt;/document-root&gt;
+       &lt;classpath&gt;$approot$/servlets&lt;/classpath&gt;
+       &lt;root-uri&gt;/test&lt;/root-uri&gt;
+       &lt;auto-reload enabled=&quot;true&quot; polling-interval=&quot;3000&quot;/&gt;
+       &lt;shared-context&gt;false&lt;/shared-context&gt;
+    &lt;/websphere-webgroup&gt;
+</PRE></TD></TR></TABLE></DIV>
+
+        <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+          The <CODE><FONT face="courier, monospaced">init-parameter</FONT></CODE> is only needed if you wish to run
+          sample application provided in the Cactus distribution. Also, in
+          order to run this sample application you'll need to copy the
+          <CODE><FONT face="courier, monospaced">{Cactus dir}/sample/web/test/test.jsp</FONT></CODE> file to
+          <CODE><FONT face="courier, monospaced">{WTE dir}/hosts/default_host/test/web/test</FONT></CODE> as it is
+          used by a test case.
+        </I></FONT></TD></TR></TABLE></P>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>Create a test directory</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+          Create a directory called <CODE><FONT face="courier, monospaced">test</FONT></CODE> under
+          <CODE><FONT face="courier, monospaced">{WTE dir}/hosts/default_host</FONT></CODE>. Under <CODE><FONT face="courier, monospaced">test</FONT></CODE>
+          create another 2 subdirectories : <CODE><FONT face="courier, monospaced">servlets</FONT></CODE> and
+          <CODE><FONT face="courier, monospaced">web</FONT></CODE>.
+        </P>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>Create a test.webapp file</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+          Create a test.webapp file in
+          <CODE><FONT face="courier, monospaced">{WTE dir}/hosts/default_host/test/servlets</FONT></CODE> and put the
+          following content :
+        </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;webapp&gt;
+   &lt;name&gt;test&lt;/name&gt;
+   &lt;description&gt;Cactus testing web application&lt;/description&gt;
+   &lt;error-page&gt;/ErrorReporter&lt;/error-page&gt;
+
+   &lt;servlet&gt;
+      &lt;name&gt;ServletRedirector&lt;/name&gt;
+      &lt;description&gt;Cactus Testing ServletRedirector&lt;/description&gt;
+      &lt;code&gt;org.apache.cactus.server.ServletTestRedirector&lt;/code&gt;
+      &lt;servlet-path&gt;/ServletRedirector&lt;/servlet-path&gt;
+      &lt;autostart&gt;false&lt;/autostart&gt;
+      &lt;init-parameter&gt;
+        &lt;name&gt;param1&lt;/name&gt;
+        &lt;value&gt;value1 used for testing&lt;/value&gt;
+    &lt;/init-parameter&gt;
+   &lt;/servlet&gt;
+
+   &lt;!-- Note: We don't provide a mapping for the JSP Redirector because
+        WebSphere does not support the jsp-file tag of the Servlet 2.2
+        specification --&gt;
+
+   &lt;servlet&gt;
+      &lt;name&gt;ErrorReporter&lt;/name&gt;
+      &lt;description&gt;Default error reporter servlet&lt;/description&gt;
+      &lt;code&gt;com.ibm.servlet.engine.webapp.DefaultErrorReporter&lt;/code&gt;
+      &lt;servlet-path&gt;/ErrorReporter&lt;/servlet-path&gt;
+      &lt;autostart&gt;true&lt;/autostart&gt;
+   &lt;/servlet&gt;
+
+   &lt;servlet&gt;
+      &lt;name&gt;jsp&lt;/name&gt;
+      &lt;description&gt;JSP support servlet&lt;/description&gt;
+
+      &lt;!--
+        WARNING:
+
+        If you use the JSP 1.0 compiler, use the following
+          &lt;code&gt;com.ibm.ivj.jsp.runtime.JspDebugServlet&lt;/code&gt;
+
+        If you use the JSP 1.1 compiler (VAJava 3.5.3 only), use the following
+          &lt;code&gt;com.ibm.ivj.jsp.jasper.runtime.JspDebugServlet&lt;/code&gt;
+      --&gt;
+      &lt;code&gt;com.ibm.ivj.jsp.jasper.runtime.JspDebugServlet&lt;/code&gt;
+
+      &lt;init-parameter&gt;
+         &lt;name&gt;workingDir&lt;/name&gt;
+         &lt;value&gt;$server_root$/temp/default_app&lt;/value&gt;
+      &lt;/init-parameter&gt;
+      &lt;init-parameter&gt;
+         &lt;name&gt;jspemEnabled&lt;/name&gt;
+         &lt;value&gt;true&lt;/value&gt;
+      &lt;/init-parameter&gt;
+      &lt;init-parameter&gt;
+         &lt;name&gt;scratchdir&lt;/name&gt;
+         &lt;value&gt;$server_root$/temp/JSP1_1/default_app&lt;/value&gt;
+      &lt;/init-parameter&gt;
+      &lt;init-parameter&gt;
+         &lt;name&gt;keepgenerated&lt;/name&gt;
+         &lt;value&gt;true&lt;/value&gt;
+      &lt;/init-parameter&gt;
+      &lt;autostart&gt;true&lt;/autostart&gt;
+      &lt;servlet-path&gt;*.jsp&lt;/servlet-path&gt;
+   &lt;/servlet&gt;
+
+   &lt;servlet&gt;
+      &lt;name&gt;file&lt;/name&gt;
+      &lt;description&gt;File serving servlet&lt;/description&gt;
+      &lt;code&gt;com.ibm.servlet.engine.webapp.SimpleFileServlet&lt;/code&gt;
+      &lt;servlet-path&gt;/&lt;/servlet-path&gt;
+      &lt;init-parameter&gt;
+         &lt;name&gt;&lt;/name&gt;
+         &lt;value&gt;&lt;/value&gt;
+      &lt;/init-parameter&gt;
+      &lt;autostart&gt;true&lt;/autostart&gt;
+   &lt;/servlet&gt;
+&lt;/webapp&gt;
+</PRE></TD></TR></TABLE></DIV>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>Copy the Cactus JSP Redirector file</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+          Copy the <CODE><FONT face="courier, monospaced">{Cactus dir}/sample/web/test/jspRedirector.jsp</FONT></CODE>
+          file to <CODE><FONT face="courier, monospaced">{WTE dir}/hosts/default_host/test/web</FONT></CODE>.
+        </P>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+    </FONT></TD></TR></TABLE></DIV><BR>
+
+    <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>Step 4 : Edit VAJava workspace classpath</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+      <P align="justify">
+        Add the following to the VAJava workspace classpath (select menu
+        &quot;Window... | Resources&quot; under VAJava) :
+      </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+{VAJava dir}\ide\project_resources\JUnit\;
+{VAJava dir}\ide\project_resources\Cactus\;
+{VAJava dir}\ide\project_resources\HttpClient\;
+{VAJava dir}\ide\project_resources\Log4j\;
+{VAJava dir}\ide\project_resources\Servlet API Classes\;
+</PRE></TD></TR></TABLE></DIV>
+
+    </FONT></TD></TR></TABLE></DIV><BR>
+
+    <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>Step 5 : Edit VAJava workspace classpath</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+      <P align="justify">
+        In the WebSphere Test Environment under Servlet Engine, add Cactus,
+        JUnit, HttpClient, Log4j, and the project that contained the tests to
+        the classpath.
+      </P>
+
+    </FONT></TD></TR></TABLE></DIV><BR>
+
+    <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>Final note</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+      <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+        With this configuration, you'll find <CODE><FONT face="courier, monospaced">cactus_client.log</FONT></CODE>
+        under <CODE><FONT face="courier, monospaced">{VAJava dir}/ide/project_resources/{project being
+        tested}</FONT></CODE> and <CODE><FONT face="courier, monospaced">cactus_server.log</FONT></CODE> under
+        <CODE><FONT face="courier, monospaced">{VAJava dir}/ide/tools/com-ibm-ivj-ui-webcontrolcenter</FONT></CODE>
+        when you run your tests.
+      </I></FONT></TD></TR></TABLE></P>
+
+      <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+        If you get a &quot;Failed to invoke suite():
+        java.lang.NoClassDefFoundError&quot; error message, you msy get around that
+        problem by explicitly adding the test cases to the TestSuite that's
+        returned in suite(), for your test case.
+      </I></FONT></TD></TR></TABLE></P>
+
+    </FONT></TD></TR></TABLE></DIV><BR>
+
+  
+</TD></TR></TABLE></TD></TR></TABLE><BR><TABLE border="0" cellpadding="0" cellspacing="0" width="100%"><TR><TD><HR noshade="" size="1"></TD></TR><TR><TD align="center"><FONT color="#525D76" face="arial,helvetica,sanserif" size="-1"><I>
+                Copyright &copy; 2000-2002 The Apache Software Foundation.
+                All Rights Reserved.
+               </I></FONT></TD></TR></TABLE></BODY></HTML>

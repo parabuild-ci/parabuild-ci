@@ -1,0 +1,44 @@
+<project name="bt" default="logviewer.all" basedir=".">
+
+  <property name="build.dir.logviewer.classes" value="${build.dir}/logviewer_classes"/>
+
+  <target name="logviewer.prepare">
+    <mkdir dir="${build.dir.logviewer.classes}"/>
+    <mkdir dir="${build.dir.logviewer.result}"/>
+    <mkdir dir="${build.dir.logviewer.staging}"/>
+  </target>
+
+  <!-- Compile Parabuild remote build manager logviewer-->
+  <target name="logviewer.compile" depends="logviewer.prepare">
+    <javac destdir="${build.dir.logviewer.classes}" includes="org/parabuild/ci/webui/logviewer/LogViewerApplet.java" debug="on">
+      <classpath>
+        <!--<pathelement path="${catalina.jar}"/>-->
+        <pathelement path="${commons-logging.jar}"/>
+      </classpath>
+      <src path="${src}"/>
+    </javac>
+  </target>
+
+
+  <target name="logviewer.jar.prepare" depends="logviewer.compile">
+    <uptodate property="logviewer.jar.uptodate" targetfile="${build.dir.logviewer.staging}/parabuild-logviewer.jar">
+      <srcfiles dir="${build.dir.logviewer.classes}"/>
+    </uptodate>
+  </target>
+
+
+  <target name="logviewer.jar" depends="logviewer.compile, logviewer.jar.prepare" unless="logviewer.jar.uptodate">
+    <!-- jar -->
+    <jar destfile="${build.dir.logviewer.staging}/parabuild-logviewer.jar" compress="true" update="true">
+      <fileset dir="${build.dir.logviewer.classes}"/>
+      <zipfileset src="${commons-logging.jar}"/>
+    </jar>
+  </target>
+
+
+  <target name="logviewer.all"
+    depends="logviewer.compile,
+             logviewer.jar">
+  </target>
+
+</project>

@@ -1,0 +1,2083 @@
+<!-- $Id: sqlsyntax.xml,v 1.23 2004/12/25 04:12:40 fredt Exp $ -->
+
+<chapter id='sqlsyntax-chapter'>
+<title id='sqlsyntax-title'>SQL Syntax</title>
+<chapterinfo>
+    <authorgroup>
+        <corpauthor>The Hypersonic SQL Group</corpauthor>
+        <author>
+            <firstname>Fred</firstname><surname>Toussi</surname>
+            <email>&fredaddr;</email>
+            <affiliation>
+                <orgname>HSQLDB Development Group</orgname>
+            </affiliation>
+        </author>
+        <author>
+            <firstname>Peter</firstname><surname>Hudson</surname>
+            <!-- <email></email> -->
+            <affiliation>
+                <orgname>HSQLDB Development Group</orgname>
+            </affiliation>
+        </author>
+        <author>
+            <firstname>Joe</firstname><surname>Maher</surname>
+            <email>jrmaher@ameritech.net</email>
+            <affiliation>
+                <orgname>HSQLDB Development Group</orgname>
+            </affiliation>
+        </author>
+        <editor>
+            <firstname>Blaine</firstname><surname>Simpson</surname>
+            <email>&blaineaddr;</email>
+            <affiliation>
+                <orgname>HSQLDB Development Group</orgname>
+            </affiliation>
+        </editor>
+    </authorgroup>
+    <edition>$Revision: 1.23 $</edition>
+    <pubdate>$Date: 2004/12/25 04:12:40 $</pubdate>
+    <keywordset>
+        <keyword>Hsqldb</keyword>
+        <keyword>Syntax</keyword>
+        <keyword>SQL</keyword>
+    </keywordset>
+</chapterinfo>
+<para>
+    HSQLDB version 1.7.2 supports the SQL statements and syntax described
+    in this chapter.
+</para>
+
+<section>
+    <title>Notational Conventions Used in this Chapter</title>
+    <para>
+        <literal>[A]</literal> means A is optional.
+    </para>
+    <para>
+        <literal>{ B | C }</literal> means either B or C must be used.
+    </para>
+    <para>
+        <literal>[{ B | C }]</literal> means either B or C may optionally be 
+        used, or nothing at all.
+    </para>
+    <para>
+        <literal>(</literal> and <literal>)</literal> are the actual characters 
+        '(' and ')' used in statements.
+    </para>
+    <para>
+        UPPERCASE words are keywords
+    </para>
+</section>
+
+<section>
+    <title>SQL Commands</title>
+
+    <!-- The first items using footnotes must define them.
+         That's why this one has "<footnode id=" instead of "<footnoteref..."
+     -->
+    <section id="alter_index-section">
+        <title id="alter_index-title">ALTER INDEX<footnote id='posthyper'>
+            <para>
+                These features were added by HSQL Development Group since
+                April 2001
+            </para>
+        </footnote></title>
+        <programlisting>
+ALTER INDEX &lt;indexname&gt; RENAME TO &lt;newname&gt;;</programlisting>
+        <para>
+            Index names can be changed so long as they do not conflict with 
+            other user-defined or sytem-defined names.
+        </para>
+    </section>
+
+    <!-- Template for new items:  (Put new items into alphabetical position)
+    <section id="@-section">
+        <title id="@-title">@<footnoteref linkend="posthyper"/></title>
+        <programlisting>
+        </programlisting>
+        <para>
+        </para> <para>
+        </para>
+    </section>
+    -->
+
+    <section id="alter_sequence-section">
+        <title id="alter_sequence-title">ALTER SEQUENCE<footnoteref linkend='posthyper'/></title>
+        <programlisting>
+ALTER SEQUENCE &lt;sequencename&gt; RESTART WITH &lt;value&gt;;</programlisting>
+        <para>
+            Resets the next value to be returned from the sequence.
+        </para>
+    </section>
+
+    <section id="alter_table-section">
+        <title id="alter_table-title">ALTER TABLE<footnoteref linkend='posthyper'/></title>
+        <programlisting>
+ALTER TABLE &lt;tablename&gt; ADD [COLUMN] &lt;columnname&gt; <link linkend='datatypes-section'>Datatype</link> [(columnSize[,precision])]
+[DEFAULT &lt;defaultValue&gt; [NOT NULL]] [BEFORE &lt;existingcolumn&gt;];</programlisting>
+        <para>
+            Adds the column to the end of the column list.
+            Optional attributes, size and default value (with or without NOT 
+            NULL) can be specified.
+            The optional BEFORE &lt;existingcolumn&gt; can be used to specify 
+            the name of an existing column so that the new column is inserted 
+            in a position just before the &lt;existingcolumn&gt;.
+            If NOT NULL is specified and the table is not empty, then a default 
+            value must be specified.
+        </para> <para>
+            If an SQL view includes a SELECT * FROM &lt;tablename&gt; in its select
+            statement, the new column is added to the view. This is a
+			non-standard feature which is likely to change in the future.
+        </para>
+        <informalexample><programlisting>
+    ALTER TABLE &lt;tablename&gt; DROP [COLUMN] &lt;columnname&gt;;</programlisting>
+        </informalexample>
+        <para>
+            Drops the column from the table.
+            Will not work if column is part of a primary key, unique or foreign 
+            key constraint.
+        </para> <para>
+            This will fail if an SQL view includes the column.
+        </para>
+        <informalexample><programlisting>
+    ALTER TABLE &lt;tablename&gt; ALTER COLUMN &lt;columnname&gt; {RENAME TO &lt;newname&gt; | DROP DEFAULT | SET DEFAULT &lt;defaultvalue&gt;};</programlisting>
+        </informalexample>
+        <para>
+            Changes column name. Or adds or drops the default value.
+        </para>
+        <informalexample><programlisting>
+    ALTER TABLE &lt;tablename&gt; ADD [CONSTRAINT &lt;constraintname&gt;] CHECK (&lt;search condition&gt;);</programlisting>
+        </informalexample>
+        <para>
+            Adds a check constraint to the table.
+            In the current version, a check constraint can reference only the 
+            row being inserted or updated.
+        </para>
+        <informalexample><programlisting>
+    ALTER TABLE &lt;tablename&gt; ADD [CONSTRAINT &lt;constraintname&gt;] UNIQUE (&lt;column list&gt;);</programlisting>
+        </informalexample>
+        <para>
+Adds a unique constraint to the table. This will not work if there is already  a unique constraint covering exactly the same &lt;column list&gt;.
+        </para> <para>
+This will work only if the values of the column list for the existing rows are  unique or include a null value.
+        </para>
+        <informalexample><programlisting>
+    ALTER TABLE &lt;tablename&gt; ADD [CONSTRAINT &lt;constraintname&gt;] FOREIGN KEY (&lt;column list&gt;) REFERENCES &lt;exptablename&gt; (&lt;column list&gt;)
+    [ON {DELETE | UPDATE} {CASCADE | SET DEFAULT | SET NULL}];</programlisting>
+        </informalexample>
+        <para>
+            Adds a foreign key constraint to the table, using the same 
+            constraint syntax as when the foreign key is specified in a table 
+            definition.
+        </para> <para>
+            This will fail if for each existing row in the referring table, a 
+            matching row (with equal values for the  column list) is not found 
+            in the referenced  tables.
+        </para>
+        <informalexample><programlisting>
+    ALTER TABLE &lt;tablename&gt; DROP CONSTRAINT &lt;constraintname&gt;;</programlisting>
+        </informalexample>
+        <para>
+            Drops a named unique, check or foreign key constraint from the 
+            table.
+        </para>
+        <informalexample><programlisting>
+    ALTER TABLE &lt;tablename&gt; RENAME TO &lt;newname&gt;;</programlisting>
+        </informalexample>
+    </section>
+
+    <section id="alter_user-section">
+        <title id="alter_user-title">ALTER USER<footnoteref linkend='posthyper'/></title>
+        <programlisting>
+    ALTER USER &lt;username&gt; SET PASSWORD &lt;password&gt;;</programlisting>
+        <para>
+            Changes the password for an existing user.
+        </para> <para>
+            Only an administrator can do this. 
+        </para>
+    </section>
+
+    <section id="call-section">
+        <title id="call-title">CALL</title>
+        <programlisting>
+CALL <link linkend='expression-section'>Expression</link>;</programlisting>
+        <para>
+            Any expression can be called like a stored procedure, including, 
+            but not only Java stored procedures or functions.
+            This command returns a ResultSet with one column and one row (the 
+            result) just like a SELECT statement with one row and one column. 
+        </para> <para>
+            See also:
+            <link linkend='stored-section' endterm='stored-title'/>,
+            <link linkend='expression-section' endterm='expression-title'/>.
+        </para>
+    </section>
+
+    <section id="checkpoint-section">
+        <title id='checkpoint-title'>CHECKPOINT</title>
+        <programlisting>
+CHECKPOINT [DEFRAG<footnoteref linkend="posthyper"/>];</programlisting>
+        <para>
+            Closes the database files, rewrites the script file, deletes the 
+            log file and opens the database.
+        </para> <para>
+            If DEFRAG is specified, this command also shrinks the .data file to 
+            its minimal size.
+        </para> <para>
+            See also:
+            <link linkend='shutdown-section' endterm='shutdown-title'/>,
+            <link linkend='set_logsize-section' endterm='set_logsize-title'/>.
+        </para>
+    </section>
+
+    <section id="commit-section">
+        <title id="commit-title">COMMIT</title>
+        <programlisting>
+COMMIT [WORK];</programlisting>
+        <para>
+            Ends a transaction and makes the changes permanent. 
+        </para> <para>
+            See also:
+            <link linkend='rollback-section' endterm='rollback-title'/>,
+            <link linkend='set_autocommit-section'
+                  endterm='set_autocommit-title'/>,
+            <link linkend='set_logsize-section' endterm='set_logsize-title'/>.
+        </para>
+    </section>
+
+    <section id="connect-section">
+        <title id="connect-title">CONNECT</title>
+        <programlisting>
+CONNECT USER &lt;username&gt; PASSWORD &lt;password&gt;;</programlisting>
+        <para>
+            Connects to the database as a different user.
+            Use "" for an empty password. 
+        </para> <para>
+            See also:
+            <link linkend='grant-section' endterm='grant-title'/>,
+            <link linkend='revoke-section' endterm='revoke-title'/>.
+        </para>
+    </section>
+
+    <section id="create_alias-section">
+        <title id="create_alias-title">CREATE ALIAS</title>
+        <programlisting>
+CREATE ALIAS &lt;function&gt; FOR &lt;javaFunction&gt;;</programlisting>
+        <para>
+            Creates an alias for a Java function.
+            The function must be accessible from the JVM in which the database 
+            runs. Example:
+        </para>
+        <informalexample><programlisting>
+    CREATE ALIAS ABS FOR "java.lang.Math.abs";</programlisting>
+        </informalexample>
+        <para>
+            See also:
+            <link linkend='call-section' endterm='call-title'/>,
+            <link linkend='stored-section' endterm='stored-title'/>.
+        </para>
+    </section>
+
+    <section id="create_index-section">
+        <title id="create_index-title">CREATE INDEX</title>
+        <programlisting>
+CREATE [UNIQUE] INDEX &lt;index&gt; ON &lt;table&gt; (&lt;column&gt; [DESC] [, ...]) [DESC];</programlisting>
+        <para>
+            Creates an index on one or more columns in a table.
+        </para> <para>
+            Creating an index on searched columns may improve performance.
+            The qualifier DESC can be present for command compatibility with 
+            other databases but it has no effect. 
+            Unique indexes can be defined but this is deprecated. Use
+            UNIQUE constraints instead. The name of an index must be unique
+            within the whole database.
+        </para> <para>
+            See also:
+            <link linkend='create_table-section' endterm='create_table-title'/>,
+            <link linkend='drop_index-section' endterm='drop_index-title'/>.
+        </para>
+    </section>
+
+    <section id="create_sequence-section">
+        <title id="create_sequence-title">CREATE SEQUENCE<footnoteref linkend='posthyper'/></title>
+        <programlisting>
+CREATE SEQUENCE &lt;sequencename&gt; [AS {INTEGER | BIGINT}] [START WITH &lt;startvalue&gt;] [INCREMENT BY &lt;incrementvalue&gt;];</programlisting>
+        <para>
+            Creates a sequence.
+            The default type is INTEGER.
+            The default start value is 0 and the increment 1.
+            Negative values are not allowed.
+            If a sequence goes beyond Integer.MAXVALUE or Long.MAXVALUE, the 
+            next result is determined by 2's complement arithmetic.
+        </para> <para>
+			The next value for a sequence can be included in SELECT, INSERT and
+			UPDATE statements as in the following example:
+        </para> <para><informalexample><programlisting>
+	SELECT [...,] NEXT VALUE FOR &lt;sequencename&gt; [, ...] FROM &lt;tablename&gt;</programlisting>
+	</informalexample></para> <para>
+            In the proposed SQL 200n and in the current version, there is no 
+            way of retreiving the last returned value of a sequence.
+        </para>
+    </section>
+
+    <section id="create_table-section">
+        <title id="create_table-title">CREATE TABLE</title>
+        <programlisting>
+CREATE [MEMORY | CACHED | TEMP<footnoteref linkend="posthyper"/> | TEXT<footnoteref linkend="posthyper"/>] TABLE &lt;name&gt;
+( &lt;columnDefinition&gt; [, ...] [, &lt;constraintDefinition&gt;...] );</programlisting>
+        <para>
+            Creates a tables in memory (default) or on disk and only cached in 
+            memory.
+            If the database is all-in-memory, both MEMORY and CACHED forms of 
+            CREATE TABLE return a MEMORY table.
+            If the database is file based, then MEMORY table contents are 
+            persisted to disk.
+        </para>
+        <variablelist>
+            <title>Components of a CREATE TABLE command</title>
+            <varlistentry><term>columnDefinition</term>
+                <listitem><programlisting>
+    columnname <link linkend='datatypes-section'>Datatype</link> [(columnSize[,precision])] [{DEFAULT &lt;defaultValue&gt; |
+    GENERATED BY DEFAULT AS IDENTITY (START WITH &lt;n&gt;[, INCREMENT BY &lt;m&gt;])}] |
+    [[NOT] NULL] [IDENTITY] [PRIMARY KEY]</programlisting>
+                <para>
+                    Default values that are allowed are constant values or 
+                    certain SQL datetime functions.
+                </para><itemizedlist>
+                    <title>Allowed Default Values in Column Definitions</title>
+                    <listitem><para>
+                        For character column, a single-quoted string or NULL.
+						The only SQL function that can be used is CURRENT_USER.
+                    </para></listitem> <listitem><para>
+                        For datetime columns, a single-quoted DATE, TIME or 
+                        TIMESTAMP value or NULL. Or a datetime SQL function
+                        such as CURRENT_DATE, 
+                        CURRENT_TIME, CURRENT_TIMESTAMP, TODAY, NOW.
+                        Each function is allowed for a certain datetime type.
+                    </para></listitem> <listitem><para>
+                        For BOOLEAN columns, the literals FALSE, TRUE, NULL.
+                    </para></listitem> <listitem><para>
+                        For numeric columns, any valid number or NULL.
+                    </para></listitem> <listitem><para>
+                        For binary columns, any valid hex string or NULL.
+                    </para></listitem>
+                </itemizedlist><para>
+                    Only one identity column is allowed in each table.  
+                    Identity columns are autoincrement columns.
+                    They must be of  INTEGER or BIGINT type and are 
+                    automatically primary key columns (as a result,
+                    multi-column primary keys are not possible with an IDENTITY
+                    column present).
+                    Using the long SQL syntax the (START WITH &lt;n&gt;) clause 
+                    specifies the first value that will be used.
+                    The last inserted value into an identity column for a 
+                    connection is available using the function IDENTITY(), for 
+                    example (where Id is the identity column):
+                </para><informalexample><programlisting>
+    INSERT INTO Test (Id, Name) VALUES (NULL,'Test');
+    CALL IDENTITY();</programlisting>
+                </informalexample>
+                </listitem>
+            </varlistentry>
+            <varlistentry><term>constraintDefinition</term>
+                <listitem><programlisting>
+    [CONSTRAINT &lt;name&gt;]
+    UNIQUE ( &lt;column&gt; [,&lt;column&gt;...] ) |
+    PRIMARY KEY ( &lt;column&gt; [,&lt;column&gt;...] ) |
+    FOREIGN KEY ( &lt;column&gt; [,&lt;column&gt;...] ) REFERENCES &lt;refTable&gt; ( &lt;column&gt; [,&lt;column&gt;...]) 
+    [ON {DELETE | UPDATE} {CASCADE | SET DEFAULT | SET NULL}]<footnoteref linkend="posthyper"/> |
+    CHECK(&lt;search condition&gt;)<footnoteref linkend="posthyper"/></programlisting>
+                </listitem>
+                <para>
+                    Both ON DELETE and ON UPDATE clauses can be used in a single
+					foreign key definition.
+                </para>            
+			</varlistentry>
+            <varlistentry><term>search condition</term>
+                <listitem><para>
+                    A search condition is similar to the set of conditions in a 
+                    WHERE clause.
+                    In the current version of HSQLDB, the conditions for a 
+                    CHECK constraint can only reference the current row, 
+                    meaning there should be no SELECT statement.
+                    Sample table definitions with CHECK constraints are in 
+                    <!-- Would be nice to link to this, but there's no copy
+                         under the doc directory. -->
+                    <literal>TestSelfCheckConstraints.txt</literal>. This file
+					is in the /hsqldb/testrun/hsqldb/ directory of the 
+					zip.
+                </para></listitem>
+            </varlistentry>
+            <varlistentry><term>General syntax limitations</term>
+                <listitem><para>
+                </para><para>
+                    Any supplied column size and precision for numeric types 
+                    is not enforced and serves only for command compatibility 
+                    with other databases.
+                    With character types (CHARACTER and VARCHAR) these are 
+                    enforced only if the database property,
+                    sql.enforce_strict_size has beeen set to true.
+                </para><para>
+                    NOT NULL constraints can be part of the column definition 
+                    only.
+                    Other constraints cannot be part of the column definition 
+                    and must appear at the end of the column definition list.
+                </para></listitem>
+            </varlistentry>
+        </variablelist>
+        <para>
+            See also:
+            <link linkend='drop_table-section' endterm='drop_table-title'/>.
+        </para>
+    </section>
+
+    <section id="create_trigger-section">
+        <title id="create_trigger-title">CREATE TRIGGER<footnoteref linkend='posthyper'/></title>
+        <programlisting>
+CREATE TRIGGER &lt;name&gt; {BEFORE | AFTER} {INSERT | UPDATE | DELETE} ON &lt;table&gt; [FOR EACH ROW] [QUEUE n] [NOWAIT] CALL &lt;TriggerClass&gt;;</programlisting>
+        <para>
+            TriggerClass is an application-supplied class that implements the
+            <classname>org.hsqldb.Trigger</classname> interface e.g.
+            "mypackage.TrigClass".
+            It is the fire method of this class that is invoked when the 
+            trigger event occurs.
+            You should provide this class, which can have any name, and ensure 
+            that this TriggerClass is present in the classpath which you use to 
+            start hsqldb.
+        </para> <para>
+            In 1.7.2 the implementation has been changed and enhanced.
+            When the 'fire' method is called, it is passed the following 
+            arguments:
+        </para><informalexample><programlisting>
+    fire (String name, String table, Object row1[], Object row2[])
+	</programlisting></informalexample>
+        <para>
+            where 'row1' and 'row2' represent the 'before' and 'after' states 
+            of the row acted on, with each column being a member of the array.
+            The mapping of members of the row arrays to database types is 
+            specified in 
+            <link linkend='datatypes-section' endterm='datatypes-title'/>.
+            For example, BIGINT is represented by a
+            <filename>java.lang.Long Object</filename>.
+            Note that the number of elements in the row arrays is larger than 
+            the number of columns by one or two  elements.
+            Never modify the last elements of the array, which are not part of 
+            the actual row.
+        </para> <para>
+            If the trigger method wants to access the database, it must 
+            establish its own JDBC connection. This can cause data inconsistency
+            and other problems so it is not recommended.
+            The <literal>jdbc:default:connection:</literal> URL is not 
+            currently supported.
+        </para> <para>
+            Implementation note: 
+        </para> <para>
+	     If QUEUE 0 is specified, the fire method is execued 
+            in the same thread as the database engine.
+            This allows trigger action to alter the data that is about to be 
+            stored in the database. Data can be checked or modified in
+            BEFORE INSERT / UPDATE + FOR EACH ROW triggers. All table
+            constraints are then enforced by the database engine and if there
+            is a violation, the action is rejected for the SQL command that
+            initiated the INSERT or UPDATE. There is an exception to this
+            rule, that is with UPDATE queries, referential integrity and
+            cascading actions resulting from ON UPDATE CASCASE / SET NULL /
+            SET DEFAULT are all performed prior to the invocation of the
+            trigger method. If an invalid value that breaks referential 
+            integrity is inserted in the row by the trigger method, this
+            action is not checked and results in inconsistent data in the
+            table.  
+        </para> <para>
+			 
+            Alternatively, if the trigger is used for external communications
+            and not for checking or altering the data, a queue size larger than
+            zero can be specified. This is in the interests of not
+            blocking the database's main thread as each trigger will run in a
+            thread that will wait for its firing event to occur.
+            When this happens, the trigger's thread calls TriggerClass.fire.
+            There is a queue of events waiting to be run by each trigger thread.
+            This is particularly useful for 'FOR EACH ROW' triggers, when a 
+            large number of trigger events occur in rapid succession, without 
+            the trigger thread getting a chance to run.
+            If the queue becomes full, subsequent additions to it cause the 
+            database engine to suspend awaiting space in the queue.
+            Take great care to avoid this situation if the trigger action 
+            involves accessing the database, as deadlock will occur.
+            This can be avoided either by ensuring the QUEUE parameter makes a 
+            large enough queue, or by using the NOWAIT parameter, which causes 
+            a new trigger event to overwrite the most recent event in the queue.
+            The default queue size is 1024.
+            Note also that the timing of trigger method calls is not guaranteed,
+            so applications should implement their own synchronization measures
+            if necessary.
+        </para> <para>
+            With a non-zero QUEUE parameter, if the trigger methods modifies
+            the 'row2' values, these changes may or may not affect the database
+            and will almost certainly result in data inconsistency. 
+        </para> <para>
+            Please refer to the code for 
+            <ulink url='../src/org/hsqldb/Trigger.html'>
+            <classname>org.hsqldb.sample.Trigger</classname></ulink>
+            and <ulink url='../src/org/hsqldb/sample/TriggerSample.html'>
+            <classname>org.hsqldb.sample.TriggerSample</classname></ulink>
+            for more information on how to write a trigger class.
+        </para> <para>
+            See also:
+            <link linkend='drop_trigger-section' endterm='drop_trigger-title'/>.
+        </para>
+    </section>
+
+    <section id="create_user-section">
+        <title id="create_user-title">CREATE USER</title>
+        <programlisting>
+CREATE USER username PASSWORD password [ADMIN];</programlisting>
+        <para>
+            Creates a new user or new administrator in this database.
+            Empty password can be made using "".
+            You can change a password afterward using an
+            <link linkend='alter_user-section' endterm='alter_user-title'/>
+            command.
+        </para> <para>
+            Only an administrator can do this. 
+        </para> <para>
+            See also:
+            <link linkend='connect-section' endterm='connect-title'/>,
+            <link linkend='grant-section' endterm='grant-title'/>,
+            <link linkend='revoke-section' endterm='revoke-title'/>.
+            <link linkend='alter_user-section' endterm='alter_user-title'/>,
+        </para>
+    </section>
+
+    <section id="create_view-section">
+        <title id="create_view-title">CREATE VIEW<footnoteref linkend='posthyper'/></title>
+        <programlisting>
+CREATE VIEW &lt;viewname&gt;[(&lt;viewcolumn&gt;,..) AS SELECT ... FROM ... [WHERE Expression];</programlisting>
+        <para>
+            A view can be thought of as either a virtual table or a stored 
+            query.
+            The data accessible through a view is not stored in the database as 
+            a distinct object.
+            What is stored in the database is a SELECT statement.
+            The result set of the SELECT statement forms the virtual table 
+            returned by the view.
+            A user can use this virtual table by referencing the view name in 
+            SQL statements the same way a table is referenced.
+            A view is used to do any or all of these functions:
+        </para> <itemizedlist>
+            <listitem><para>
+                Restrict a user to specific rows in a table.
+                For example, allow an employee to see only the rows 
+                recording his or her work in a labor-tracking table.
+            </para></listitem> <listitem><para>
+                Restrict a user to specific columns.
+                For example, allow employees who do not work in payroll to see 
+                the name, office, work phone, and department columns in an 
+                employee table, but do not allow them to see any columns with 
+                salary information or personal information.
+            </para></listitem> <listitem><para>
+                    Join columns from multiple tables so that they look like a 
+                single table.
+            </para></listitem> <listitem><para>
+                Aggregate information instead of supplying details.
+                For example, present the sum of a column, or the maximum or 
+                minimum value from a column.
+            </para></listitem>
+        </itemizedlist> <para>
+            Views are created by defining the SELECT statement that retrieves 
+            the data to be presented by the view.
+            The data tables referenced by the SELECT statement are known as the 
+            base tables for the view.
+            In this example, is a view that selects data from three base tables 
+            to present a virtual table of commonly needed data:
+        </para><informalexample><programlisting>
+    CREATE VIEW mealsjv AS
+      SELECT m.mid mid, m.name name, t.mealtype mt, a.aid aid,
+             a.gname + ' ' + a.sname author, m.description description,
+             m.asof asof
+        FROM meals m, mealtypes t, authors a
+       WHERE m.mealtype = t.mealtype
+        AND m.aid = a.aid;</programlisting>
+        </informalexample>
+        <para>
+            You can then reference mealsjv in statements in the same way you 
+            would reference a table:
+        </para><informalexample><programlisting>
+    SELECT * FROM mealsjv;</programlisting>
+        </informalexample>
+        <para>
+            A view can reference another view.
+            For example, mealsjv presents information that is useful for long 
+            descriptions that contain identifiers, but a short list might be 
+            all a web page display needs.
+            A view can be built that selects only specific mealsjv columns:
+        </para><informalexample><programlisting>
+    CREATE VIEW mealswebv AS SELECT name, author FROM mealsjv;</programlisting>
+        </informalexample>
+        <para>
+            The SELECT statement in a VIEW definition should return columns 
+            with distinct names.
+            If the names of two columns in the SELECT statement  are the same, 
+            use a column alias to distinguish between them.
+            A list of new column names can always be defined for a view.
+        </para><informalexample><programlisting>
+    CREATE VIEW aview (new_name, new_author) AS
+      SELECT name, author
+      FROM mealsjv</programlisting>
+        </informalexample>
+        <para>
+            See also:
+            <link linkend='expression-section' endterm='expression-title'/>,
+            <link linkend='select-section' endterm='select-title'/>,
+            <link linkend='drop_view-section' endterm='drop_view-title'/>.
+        </para>
+    </section>
+
+    <section id="delete-section">
+        <title id="delete-title">DELETE</title>
+        <programlisting>
+DELETE FROM table [WHERE Expression];</programlisting>
+        <para>
+            Removes rows in a table. 
+        </para> <para>
+            See also:
+            <link linkend='expression-section' endterm='expression-title'/>,
+            <link linkend='insert-section' endterm='insert-title'/>,
+            <link linkend='select-section' endterm='select-title'/>.
+        </para>
+    </section>
+
+    <section id="disconnect-section">
+        <title id="disconnect-title">DISCONNECT</title>
+        <programlisting>
+DISCONNECT;</programlisting>
+        <para>
+            Closes this connection.
+            It is not required to call this command when using the JDBC 
+            interface: it is called automatically when the connection is closed.
+            After disconnecting, it is not possible to execute other queries 
+            (including CONNECT) with this connection. 
+        </para> <para>
+            See also:
+            <link linkend='connect-section' endterm='connect-title'/>.
+        </para>
+    </section>
+
+    <section id="drop_index-section">
+        <title id="drop_index-title">DROP INDEX</title>
+        <programlisting>
+DROP INDEX index [IF EXISTS];</programlisting>
+        <para>
+            Removes the specified index from the database. 
+            Will not work if the index backs a UNIQUE of FOREIGN KEY constraint.
+        </para> <para>
+            See also:
+            <link linkend='create_index-section' endterm='create_index-title'/>.
+        </para>
+    </section>
+
+    <section id="drop_sequence-section">
+        <title id="drop_sequence-title">DROP SEQUENCE<footnoteref linkend='posthyper'/></title>
+        <programlisting>
+DROP SEQUENCE &lt;sequencename&gt;;</programlisting>
+        <para>
+            Removes the specified sequence from the database.
+        </para>
+    </section>
+
+    <section id="drop_table-section">
+        <title id="drop_table-title">DROP TABLE</title>
+        <programlisting>
+DROP TABLE &lt;table&gt; [IF EXISTS];</programlisting>
+        <para>
+            Removes a table, the data and indexes from the database.
+            When IF EXIST is used, the statement returns without an error even 
+            if the table does not exist. Will fail if the table has been 
+			reference by a foreign key or a view.
+        </para> <para>
+            See also:
+            <link linkend='create_table-section' endterm='create_table-title'/>.
+        </para>
+    </section>
+
+    <section id="drop_trigger-section">
+        <title id="drop_trigger-title">DROP TRIGGER</title>
+        <programlisting>
+DROP TRIGGER &lt;trigger&gt;;</programlisting>
+        <para>
+            Removes a trigger from the database.
+        </para> <para>
+            See also:
+            <link linkend='create_trigger-section'
+                  endterm='create_trigger-title'/>.
+        </para>
+    </section>
+
+    <section id="drop_user-section">
+        <title id="drop_user-title">DROP USER</title>
+        <programlisting>
+DROP USER &lt;username&gt;;</programlisting>
+        <para>
+            Removes a user from the database.
+        </para> <para>
+            Only an administrator do this. 
+        </para> <para>
+            See also:
+            <link linkend='create_user-section' endterm='create_user-title'/>.
+        </para>
+    </section>
+
+    <section id="drop_view-section">
+        <title id="drop_view-title">DROP VIEW<footnoteref linkend='posthyper'/></title>
+        <programlisting>
+DROP VIEW &lt;viewname&gt; [IF EXISTS];</programlisting>
+        <para>
+            Removes a view from the database.
+            When IF EXIST is used, the statement returns without an error if 
+            the view does not exist.  
+        </para> <para>
+            See also:
+            <link linkend='create_view-section' endterm='create_view-title'/>.
+        </para>
+    </section>
+
+    <section id="grant-section">
+        <title id="grant-title">GRANT</title>
+        <programlisting>
+GRANT { SELECT | DELETE | INSERT | UPDATE | ALL } [,...]
+ON { table | CLASS "package.class" } TO { username | PUBLIC };</programlisting>
+        <para>
+            Assigns privileges to a user or to all users (PUBLIC) for a table 
+            or for a class.
+            To allow a user to call a function from a class, the right ALL must 
+            be used.
+            Examples:
+        </para> <informalexample><programlisting>
+    GRANT SELECT ON Test TO GUEST;
+    GRANT ALL ON CLASS "java.lang.String" TO PUBLIC;</programlisting>
+        </informalexample><para>
+            Only an administrator do this. 
+        </para> <para>
+            See also:
+            <link linkend='revoke-section' endterm='revoke-title'/>,
+            <link linkend='create_user-section' endterm='create_user-title'/>.
+        </para>
+    </section>
+
+    <section id="insert-section">
+        <title id="insert-title">INSERT</title>
+        <programlisting>
+INSERT INTO table [( column [,...] )]
+{ VALUES(<link linkend='expression-section'>Expression</link> [,...]) | <link linkend='select-section'>SelectStatement</link>};</programlisting>
+        <para>
+            Adds one or more new rows of data into a table. 
+        </para>
+    </section>
+    <section id="revoke-section">
+        <title id="revoke-title">REVOKE</title>
+        <programlisting>
+REVOKE { SELECT | DELETE | INSERT | UPDATE | ALL } [,...]
+ON { table | CLASS "package.class" } TO { username | PUBLIC };</programlisting>
+        <para>
+            Withdraws privileges from a user or for PUBLIC (all users) for a 
+            table or class. 
+        </para> <para>
+            Only an administrator may do this. 
+        </para> <para>
+            See also:
+            <link linkend='grant-section' endterm='grant-title'/>.
+        </para>
+    </section>
+
+    <section id="rollback-section">
+        <title id="rollback-title">ROLLBACK</title>
+        <programlisting>
+ROLLBACK [TO SAVEPOINT &lt;savepoint name&gt;<footnoteref linkend="posthyper"/> |  WORK}];</programlisting>
+        <para>
+            ROLLBACK used on its own, or with WORK, undoes changes made since 
+            the last COMMIT or ROLLBACK.
+        </para> <para>
+            <literal>ROLLBACK TO SAVEPOINT &lt;savepoint name&gt;</literal> 
+            undoes the change since the named savepoint.
+            It has no effect if the savepoint is not found.
+        </para> <para>
+            See also:
+            <link linkend='commit-section' endterm='commit-title'/>.
+        </para>
+    </section>
+
+    <section id="savepoint-section">
+        <title id="savepoint-title">SAVEPOINT<footnoteref linkend='posthyper'/></title>
+        <programlisting>
+SAVEPOINT &lt;savepoint name&gt;;</programlisting>
+        <para>
+            Sets up a SAVEPOINT for use with ROLLBACK TO SAVEPOINT. 
+        </para> <para>
+            See also:
+            <link linkend='commit-section' endterm='commit-title'/>.
+        </para>
+    </section>
+
+    <section id="script-section">
+        <title id="script-title">SCRIPT</title>
+        <programlisting>
+SCRIPT ['file'];</programlisting>
+        <para>
+            Creates an SQL script describing the database.
+            If the file is not specified, a result set containing only the DDL 
+            script is returned.
+            If the file is specified then this file is saved with the path
+			relative to the machine where the database engine is located.
+        </para> <para>
+            Only an administrator may do this. 
+        </para>
+    </section>
+
+    <section id="select-section">
+        <title id="select-title">SELECT<footnoteref linkend='posthyper'/></title>
+        <programlisting>
+SELECT [{LIMIT n m | TOP m}<footnoteref linkend="posthyper"/>][ALL | DISTINCT]
+{ selectExpression | table.* | * } [, ...]
+[INTO [CACHED | TEMP  | TEXT]<footnoteref linkend="posthyper"/> newTable]
+FROM tableList
+[WHERE <link linkend='expression-section'>Expression</link>]
+[GROUP BY Expression [, ...]]
+[HAVING Expression]
+[{ UNION [ALL | DISTINCT] | {MINUS [DISTINCT] | EXCEPT [DISTINCT] } | INTERSECT [DISTINCT] } selectStatement]
+[ORDER BY orderExpression [, ...]];</programlisting>
+
+        <para>
+            Retrieves information from one or more tables in the database. 
+        </para>
+        <variablelist>
+            <title>Components of a SELECT command</title>
+            <varlistentry><term>tableList</term>
+                <listitem><programlisting>
+    table [{ INNER | LEFT OUTER } JOIN table ON Expression] [, ...]</programlisting>
+                </listitem>
+            </varlistentry>
+            <varlistentry><term>table</term>
+                <listitem><programlisting>
+    { (selectStatement) [AS] label | tableName}</programlisting>
+                </listitem>
+            </varlistentry>
+            <varlistentry><term>selectExpression</term>
+                <listitem><programlisting>
+    { Expression | COUNT(*) | {COUNT | MIN | MAX | SUM | AVG | SOME | EVERY | VAR_POP | VAR_SAMP | STDDEV_POP | STDDEV_SAMP} ([ALL | DISTINCT]<footnoteref linkend="posthyper"/>] Expression) } [[AS] label]</programlisting>
+                <para>
+                    If DISTINCT is specified, only one instance of several 
+                    equivalent values is used in the aggregate function.
+					Except COUNT(*), all aggregate functions exclude NULL values. The
+					type of the returned value for SUM is subject to
+					deterministic widenning to ensure lossless results. The
+					returned value type for COUNT is INTEGER, for MIN, MAX and
+					AVG it is the same type as the column, for SOME and EVERY it
+					is BOOLEAN. For VAR_POP, VAR_SAMP, STDDEV_POP and STDDEV_SAMP
+					statistical functions, the type is always DOUBLE. These
+					statistical functions do not allow ALL or DISTINCT qualifiers.
+                </para>
+                </listitem>
+            </varlistentry>
+            <varlistentry><term>orderExpression</term>
+                <listitem><programlisting>
+    { columnNr | columnAlias | selectExpression } [ASC | DESC]</programlisting>
+                </listitem>
+            </varlistentry>
+            <varlistentry><term>LIMIT n m</term>
+                <listitem><para>
+                    Creates the result set for the SELECT statement first and 
+                    then discards the first n rows and returns the first m rows 
+                    of the remaining result set.
+                    Special cases: LIMIT 0 m is equivalent to TOP m or FIRST m 
+                    in other RDBMS's; LIMIT n 0 discards the first n rows and 
+                    returns the rest of the result set.
+                </para></listitem>
+            </varlistentry>
+            <varlistentry><term>TOP m</term>
+                <listitem><para>
+                    Equivalent to LIMIT 0 m.
+                </para></listitem>
+            </varlistentry>
+            <varlistentry><term>UNION and other set operations</term>
+                <listitem><para>
+                </para><para>
+                    Multiple SELECT statements joined with UNION, EXCEPT and INTERSECT
+			  are possible. Each SELECT is then treated as a term, and the 
+			  set operation as an operator in an expression. The expression is
+                    evaluated from left to right but INTERSECT takes 
+                    precedence over the rest of the operators and is applied first.
+                    You can use parentheses around any number of SELECT statements 
+					to change the evaluation order.
+                </para><para>
+                    NOT NULL constraints can be part of the column definition 
+                    only.
+                    Other constraints cannot be part of the column definition 
+                    and must appear at the end of the column definition list.
+                </para></listitem>
+            </varlistentry>
+        </variablelist>
+        <para>
+            See also:
+            <link linkend='insert-section' endterm='insert-title'/>,
+            <link linkend='update-section' endterm='update-title'/>,
+            <link linkend='delete-section' endterm='delete-title'/>.
+        </para>
+    </section>
+
+    <section id="set_autocommit-section">
+        <title id="set_autocommit-title">SET AUTOCOMMIT</title>
+        <programlisting>
+SET AUTOCOMMIT { TRUE | FALSE };</programlisting>
+        <para>
+            Switches on or off the connection's auto-commit mode.
+            If switched on, then all statements will be committed as individual 
+            transactions.
+            Otherwise, the statements are grouped into transactions that are 
+            terminated by either <link linkend='commit-section'>COMMIT</link> 
+            or <link linkend='rollback-section'>ROLLBACK</link>.
+            By default, new connections are in auto-commit mode. This command
+			should not be used directly. Use the JDBC equivalent method,
+			Connection.setAutoCommit(boolean autocommit). 
+        </para>
+    </section>
+
+    <section id="set_ignorecase-section">
+          <title id="set_ignorecase-title">SET IGNORECASE</title>
+          <programlisting>
+SET IGNORECASE { TRUE | FALSE };</programlisting>
+        <para>
+            Disables (ignorecase = true) or enables (ignorecase = false) the 
+            case sensitivity of text comparison and indexing for new tables.
+            By default, character columns in new databases are case sensitive.
+            The sensitivity must be switched before creating tables.
+            Existing tables and their data are not affected. 
+            When switched on, the data type VARCHAR is set to 
+            <literal>VARCHAR_IGNORECASE</literal> in new tables.
+            Alternatively, you can specify the 
+            <literal>VARCHAR_IGNORECASE</literal> type for the definition of 
+            individual columns.
+            So it is possible to have some columns case sensitive and some not,
+            even in the same table.
+        </para> <para>
+            Only an administrator may do this. 
+        </para>
+    </section>
+
+    <section id="set_logsize-section">
+        <title id="set_logsize-title">SET LOGSIZE</title>
+        <programlisting>
+SET LOGSIZE size;</programlisting>
+        <para>
+            Sets the maximum size in MB of the .log file.
+            Default is 200 MB.
+            The database will be closed and opened (just like using CHECKPOINT)
+            if the .log file gets over this limit, and so the .log file 
+            will shrink. 0 means no limit. 
+        </para> <para>
+            See also:
+            <link linkend='checkpoint-section' endterm='checkpoint-title'/>.
+        </para>
+    </section>
+
+    <section id="set_password-section">
+        <title id="set_password-title">SET PASSWORD</title>
+        <programlisting>
+SET PASSWORD password;</programlisting>
+        <para>
+            Changes the password of the currently connected user.
+            Empty password can be set using "".
+        </para>
+    </section>
+
+    <section id="set_property-section">
+        <title id="set_property-title">SET PROPERTY<footnoteref linkend='posthyper'/></title>
+        <programlisting>
+SET PROPERTY &lt;double quoted name&gt; &lt;value&gt;;</programlisting>
+        <para>
+            Sets a database property.
+            Properties that can be set using this command are either boolean or 
+            integral and are listed in the 
+            <link linkend='advanced-chapter' endterm='advanced-title'/>
+            chapter.
+        </para>
+    </section>
+
+    <section id="set_refint-section">
+        <title id="set_refint-title">SET REFERENTIAL INTEGRITY</title>
+        <programlisting>
+SET REFERENTIAL_INTEGRITY { TRUE | FALSE };</programlisting>
+        <para>
+            This commands enables / disables the referential integrity checking 
+            (foreign keys).
+            Normally it should be switched on (this is the default) but when 
+            importing data (and the data is imported in the 'wrong' order) the 
+            checking can be switched off.
+        </para> <warning><para>
+            Note that when referential integrity is switched back on, no check 
+            is made that the changes to the data are consistent with the 
+            existing referential integrity constraints.
+        </para></warning> <para>
+            Only an administrator may do this. 
+        </para> <para>
+            See also:
+            <link linkend='create_table-section' endterm='create_table-title'/>.
+        </para>
+    </section>
+  
+    <section id="set_scriptformat-section">
+        <title id="set_scriptformat-title">SET SCRIPTFORMAT<footnoteref linkend='posthyper'/></title>
+        <programlisting>
+SET SCRIPTFORMAT {TEXT | BINARY | COMPRESSED};</programlisting>
+        <para>
+            Changes the format of the script file.
+            BINARY and COMPRESSED formats are slightly faster and more compact 
+            than the default TEXT.
+            Recommended only for very larg script files.
+        </para>
+    </section>
+  
+    <section id="set_table_index-section">
+        <title id="set_table_index-title">SET TABLE INDEX</title>
+        <programlisting>
+SET TABLE tableName INDEX 'index1rootPos index2rootPos ... ';</programlisting>
+        <para>
+            This command is only used internally to store the position of index 
+            roots in the .data file.
+            It appears only in database script files; it should not be used 
+            directly.
+        </para>
+    </section>
+  
+    <section id="set_table_readonly-section">
+        <title id="set_table_readonly-title">SET TABLE READONLY<footnoteref linkend='posthyper'/></title>
+        <programlisting>
+SET TABLE &lt;tablename&gt; READONLY {TRUE | FALSE};</programlisting>
+        <para>
+            Sets the table as read only.
+        </para>
+    </section>
+
+    <section id="set_table_source-section">
+        <title id="set_table_source-title">SET TABLE SOURCE<footnoteref linkend='posthyper'/></title>
+        <programlisting>
+SET TABLE &lt;tablename&gt; SOURCE &lt;file and options&gt; [DESC];</programlisting>
+        <para>
+            For details see the 
+            <link linkend='texttables-chapter' endterm='texttables-title'/>
+            chapter.
+        </para> <para>
+            This command is used exclusively with TEXT tables to specify which 
+            file is used for storage of the data.
+            The optional DESC qualifier results in the text file indexed from 
+            the end and opened as readonly.
+            The &lt;file and options&gt; argument is a double quoted string 
+            that consists of:
+        </para><programlisting>
+    &lt;file and options&gt;::= &lt;doublequote&gt; &lt;filepath&gt; [&lt;semicolon&gt; &lt;option&gt;...] &lt;doublequote&gt;</programlisting>
+        <para>
+            Example:
+        </para><informalexample><programlisting>
+    SET TABLE mytable SOURCE "myfile;fs=|;vs=.;lvs=~"</programlisting>
+        </informalexample><variablelist>
+            <title>Special indicators for Hsqldb Text Table separators</title>
+            <varlistentry><term>\semi</term>
+                <listitem><para>semicolon</para>
+            </listitem></varlistentry>
+            <varlistentry><term>\quote</term>
+                <listitem><para>quote</para>
+            </listitem></varlistentry>
+            <varlistentry><term>\space</term>
+                <listitem><para>space character</para>
+            </listitem></varlistentry>
+            <varlistentry><term>\apos</term>
+                <listitem><para>apostrophe</para>
+            </listitem></varlistentry>
+            <varlistentry><term>\n</term>
+                <listitem><para>
+                    newline - Used as an end anchor (like $ in regular 
+                    expressions)
+                </para>
+            </listitem></varlistentry>
+            <varlistentry><term>\r</term>
+                <listitem><para>carriage return</para>
+            </listitem></varlistentry>
+            <varlistentry><term>\t</term>
+                <listitem><para>tab</para>
+            </listitem></varlistentry>
+            <varlistentry><term>\\</term>
+                <listitem><para>backslash</para>
+            </listitem></varlistentry>
+            <varlistentry><term>\u####</term>
+                <listitem><para>
+                    a Unicode character specified in hexadecimal
+                </para></listitem>
+            </varlistentry>
+        </variablelist>
+        <para>
+            Only an administrator may do this. 
+        </para>
+    </section>
+
+    <section id="set_write_delay-section">
+        <title id="set_write_delay-title">SET WRITE DELAY</title>
+        <programlisting>
+SET WRITE_DELAY {{ TRUE | FALSE } | &lt;seconds&gt;};</programlisting>
+        <para>
+            In 1.7.2 this controls the frequencty of file synch.
+            When WRITE_DELAY is set to FALSE, the synch takes place once every 
+            second.
+            WRITE_DELAY TRUE performs the synch once every minute.
+            The default is TRUE (60 seconds).
+            A numeric value can be specified instead.
+        </para> <para>
+            Only an administrator may do this.
+        </para>
+    </section>
+
+    <section id="shutdown-section">
+        <title id="shutdown-title">SHUTDOWN</title>
+        <programlisting>
+SHUTDOWN [IMMEDIATELY | COMPACT | SCRIPT<footnoteref linkend="posthyper"/>];</programlisting>
+        <para>
+            Closes the current database.
+        </para><variablelist>
+            <title>Varieties of the SHUTDOWN command</title>
+            <varlistentry><term>SHUTDOWN</term>
+                <listitem><para>
+                    Performs a checkpoint to creates a new .script file that 
+                    has the minimum size and contains the data for memory 
+                    tables only.
+                    It then backs up the .data file containing the CACHED TABLE 
+                    data in zipped format to the .backup file and closes the 
+                    database. 
+                </para></listitem>
+            </varlistentry>
+            <varlistentry><term>SHUTDOWN IMMEDIATELY</term>
+                <listitem><para>
+                    Just closes the database files (like when the Java process 
+                    for the database is terminated); this command is used in 
+                    tests of the recovery mechanism.
+                    This command should not be used as the routine method of 
+                    closing the database.
+                </para></listitem>
+            </varlistentry>
+            <varlistentry><term>SHUTDOWN COMPACT</term>
+                <listitem><para>
+                    Writes out  a new .script file which contains the data for 
+                    all the tables, including CACHED and TEXT tables.
+                    It then deletes the existing text table files and the .data 
+                    file before rewriting them.
+                    After this, it backs up the .data file in the same way as 
+                    normal SHUTDOWN.
+                    This operation shrinks all files to the minimum size.
+                </para></listitem>
+            </varlistentry>
+            <varlistentry><term>SHUTDOWN SCRIPT</term>
+                <listitem><para>
+                    Similar to SHUTDOWN COMPACT but after writing the script 
+                    and deleting the existing files, it does not rewrite the 
+                    .data and text table files.
+                    After SHUTDOWN SCRIPT, only the .script and .properties 
+                    file remain.
+                    At the next startup, these files are processed and the 
+                    .data and .backup files are created.
+                    This command in effect performs part of the job of SHUTDOWN 
+                    COMPACT, leaving the other part to be performed 
+                    automatically at the next startup.
+                </para><para>
+                    This command produces a full script of the database which 
+                    can be edited for special purposes prior to the next 
+                    startup.
+                </para></listitem>
+            </varlistentry>
+            <para>
+                Only an administrator may use the SHUTDOWN command.
+            </para>
+        </variablelist>
+    </section>
+
+    <section id="update-section">
+        <title id="update-title">UPDATE</title>
+        <programlisting>
+UPDATE table SET column = Expression [, ...] [WHERE Expression];</programlisting>
+        <para>
+            Modifies data of a table in the database. 
+        </para><para>
+            See also:
+            <link linkend='select-section' endterm='select-title'/>,
+            <link linkend='insert-section' endterm='insert-title'/>,
+            <link linkend='delete-section' endterm='delete-title'/>.
+        </para>
+    </section>
+</section>
+
+<section id='datatypes-section'>
+    <title id='datatypes-title'>Data Types</title>
+    <table frame='all' tocentry='1' pgwide='1'>
+        <title>Data Types.  The types on the same line are equivalent.</title>
+        <titleabbrev>Data Types</titleabbrev>
+        <tgroup cols='3' align='left'>
+            <thead><row>
+                <entry>Name</entry>
+                <entry>Range</entry>
+                <entry>Java Type</entry>
+            </row></thead>
+            <tbody>
+            <row>
+                <entry>INTEGER | INT</entry>
+                <entry>as Java type</entry>
+                <entry><literal>int</literal> | <classname>java.lang.Integer</classname></entry>
+            </row>
+            <row>
+                <entry>DOUBLE [PRECISION] | FLOAT</entry>
+                <entry>as Java type</entry>
+                <entry><literal>double</literal> | <classname>java.lang.Double</classname></entry>
+            </row>
+            <row>
+                <entry>VARCHAR</entry>
+                <entry>as Integer.MAXVALUE</entry>
+                <entry><classname>java.lang.String</classname></entry>
+            </row>
+            <row>
+                <entry>VARCHAR_IGNORECASE</entry>
+                <entry>as Integer.MAXVALUE</entry>
+                <entry><classname>java.lang.String</classname></entry>
+            </row>
+            <row>
+                <entry>CHAR | CHARACTER</entry>
+                <entry>as Integer.MAXVALUE</entry>
+                <entry><classname>java.lang.String</classname></entry>
+            </row>
+            <row>
+                <entry>LONGVARCHAR</entry>
+                <entry>as Integer.MAXVALUE</entry>
+                <entry><classname>java.lang.String</classname></entry>
+            </row>
+            <row>
+                <entry>DATE</entry>
+                <entry>as Java type</entry>
+                <entry><classname>java.sql.Date</classname></entry>
+            </row>
+            <row>
+                <entry>TIME</entry>
+                <entry>as Java type</entry>
+                <entry><classname>java.sql.Time</classname></entry>
+            </row>
+            <row>
+                <entry>TIMESTAMP | DATETIME</entry>
+                <entry>as Java type</entry>
+                <entry><classname>java.sql.Timestamp</classname></entry>
+            </row>
+            <row>
+                <entry>DECIMAL</entry>
+                <entry>No limit</entry>
+                <entry><classname>java.math.BigDecimal</classname></entry>
+            </row>
+            <row>
+                <entry>NUMERIC</entry>
+                <entry>No limit</entry>
+                <entry><classname>java.math.BigDecimal</classname></entry>
+            </row>
+            <row>
+                <entry>BOOLEAN | BIT</entry>
+                <entry>as Java type</entry>
+                <entry><literal>boolean</literal> | <classname>java.lang.Boolean</classname></entry>
+            </row>
+            <row>
+                <entry>TINYINT</entry>
+                <entry>as Java type</entry>
+                <entry><literal>byte</literal> | <classname>java.lang.Byte</classname></entry>
+            </row>
+            <row>
+                <entry>SMALLINT</entry>
+                <entry>as Java type</entry>
+                <entry><literal>short</literal> | <classname>java.lang.Short</classname></entry>
+            </row>
+            <row>
+                <entry>BIGINT</entry>
+                <entry>as Java type</entry>
+                <entry><filename>long</filename> | <classname>java.lang.Long</classname></entry>
+            </row>
+            <row>
+                <entry>REAL</entry>
+                <entry>as Java type</entry>
+                <entry><literal>double</literal> | <classname>java.lang.Double</classname><footnoteref linkend="posthyper"/></entry>
+            </row>
+            <row>
+                <entry>BINARY</entry>
+                <entry>as Integer.MAXVALUE</entry>
+                <entry><literal>byte[]</literal></entry>
+            </row>
+            <row>
+                <entry>VARBINARY</entry>
+                <entry>as Integer.MAXVALUE</entry>
+                <entry><literal>byte[]</literal></entry>
+            </row>
+            <row>
+                <entry>LONGVARBINARY</entry>
+                <entry>as Integer.MAXVALUE</entry>
+                <entry><literal>byte[]</literal></entry>
+            </row>
+            <row>
+                <entry>OTHER | OBJECT</entry>
+                <entry>as Integer.MAXVALUE</entry>
+                <entry><classname>java.lang.Object</classname></entry>
+            </row>
+            </tbody>
+        </tgroup>
+    </table>
+    <para>
+        The uppercase names are the data types names defined by the SQL 
+        standard or commonly used by RDMS's.
+        The data types in quotes are the Java class names - if these type 
+        names are used then they must be enclosed in quotes because in Java 
+        names are case-sensitive.
+        Range indicates the maximum size of the object that can be stored.
+        Where Integer.MAXVALUE is stated, this is a theoretical limit and 
+        in practice the maximum size of a VARCHAR or BINARY object that can 
+        be stored is dictated by the amount of memory available.
+        In practice, objects of up to a megabyte in size have been 
+        successfully used in production databases.
+    </para> <para>
+        The recommended Java mapping for the JDBC datatype FLOAT is as a 
+        Java type "double".
+        Because of the potential confusion it is recommended that DOUBLE is
+        used instead of FLOAT. 
+    </para> <para>
+        VARCHAR_IGNORECASE is a special case-insensitive type of VARCHAR.
+        This type is not portable. 
+    </para> <para>
+	  In table definition statements, HSQLDB accepts size, precision and
+        scale qualifiers only for certain types: CHAR(n), VARCHAR(n), 
+        DOUBLE(n), DECIMAL(p,s).                  
+    </para> <para>
+	  The specified precision and scale for DOUBLE and DECIMAL is simply
+        ignored by the engine. Instead, the values for the corresponding
+        Java types are always used, which in the case of DECIMAL is
+        an unlimited precision and scale.
+        When defining CHAR and VARCHAR columns, the SIZE 
+        argument is optional and defaults to 0.
+        If any other size is specified, it is stored in the database 
+        definition but is not enforeced by default.
+        Once you have created the database (before adding data), you can 
+        add a database property value to enforce the sizes:
+    </para> <programlisting>
+    SET PROPERTY &quot;sql.enforce_strict_size&quot; true</programlisting>
+    <para>
+        This will enforce the specified size and pad CHAR fields with 
+        spaces to fill the size.
+        This complies with SQL standards by throwing an exception if an 
+        attempt is made to insert a string longer than the maximum size.
+    </para> <para>
+        CHAR and VARCHAR and LONGVARCHAR columns are by default compared 
+        and sorted according to POSIX standards.
+        To use the current JRE locale for sorting and comparison, add the 
+        following database property to the properties file.
+    </para> <programlisting>
+    sql.compare_in_locale=true</programlisting>
+    <para>
+        Columns of the type OTHER or OBJECT contain the serialized form of 
+        a Java Object in binary format.
+        To insert or update such columns, a binary format string (see below 
+        under Expression) should be used.
+        Using PreparedStatements with JDBC automates this transformation.
+    </para>
+</section>
+
+<section>
+    <title>SQL Comments</title>
+    <simplelist>
+        <member><literal>-- SQL style line comment</literal></member>
+        <member><literal>// Java style line comment</literal></member>
+        <member><literal>/* C style line comment */</literal></member>
+    </simplelist>
+    <para>
+        All these types of comments are ignored by the database. 
+    </para>
+</section>
+
+<section id='stored-section'>
+    <title id='stored-title'>Stored Procedures / Functions</title>
+    <para>
+        Stored procedures are Java functions that are called directly from the 
+        SQL language or using an alias.
+        Calling Java functions (directly or using the alias) requires that the 
+        Java class can be reached by the database (server).
+        The syntax is: 
+    </para><programlisting>
+    "java.lang.Math.sqrt"(2.0)</programlisting>
+    <para>
+        This means the package must be provided, and the name must be written 
+        as one word, and inside " because otherwise it is converted to 
+        uppercase (and not found). 
+    </para> <para>
+        An alias can be created using the command CREATE ALIAS: 
+    </para> <programlisting>
+    CREATE ALIAS SQRT FOR "java.lang.Math.sqrt";</programlisting>
+    <para>
+        When an alias is defined, then the function can be called additionally 
+        using this alias: 
+    </para><programlisting>
+    SELECT SQRT(A) , B FROM MYTABLE;</programlisting>
+    <para>
+        Only static java methods can be used as stored procedures.
+        If, within the same class, there are overloaded methods with the same 
+        number of arguments, then the first one encountered by the program will 
+        be used.
+        If you want to use Java library methods, it is recommended that you 
+        create your own class with static methods that act as wrappers around 
+        the Java library methods.
+        This will allow you to control which method signature is used to call 
+        each Java library method.
+    </para>
+</section>
+
+<section>
+    <title>Built-in Functions and Stored Procedures</title>
+    <variablelist>
+        <title>Numerical built-in Functions / Stored Procedures</title>
+        <varlistentry><term>ABS(d)</term>
+            <listitem><para>
+                returns the absolute value of a double value
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>ACOS(d)</term>
+            <listitem><para>
+                returns the arc cosine of an angle
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>ASIN(d)</term>
+            <listitem><para>
+                returns the arc sine of an angle
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>ATAN(d)</term>
+            <listitem><para>
+                returns the arc tangent of an angle
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>ATAN2(a,b)</term>
+            <listitem><para>
+                returns the tangent of a/b
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>BITAND(a,b)</term>
+            <listitem><para>
+                return a &amp; b
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>BITOR(a,b)</term>
+            <listitem><para>
+                returns a | b
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>CEILING(d)</term>
+            <listitem><para>
+                returns the smallest integer that is not less than d
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>COS(d)</term>
+            <listitem><para>
+                returns the cosine of an angle
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>COT(d)</term>
+            <listitem><para>
+                returns the cotangent of an angle
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>DEGREES(d)</term>
+            <listitem><para>
+                converts radians to degrees
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>EXP(d)</term>
+            <listitem><para>
+                returns e (2.718...) raised to the power of d
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>FLOOR(d)</term>
+            <listitem><para>
+                returns the largest integer that is not greater than d
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>LOG(d)</term>
+            <listitem><para>
+                returns the natural logarithm (base e)
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>LOG10(d)</term>
+            <listitem><para>
+                returns the logarithm (base 10)
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>MOD(a,b)</term>
+            <listitem><para>
+                returns a modulo b
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>PI()</term>
+            <listitem><para>
+                returns pi (3.1415...)
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>POWER(a,b)</term>
+            <listitem><para>
+                returns a raised to the power of b
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>RADIANS(d)</term>
+            <listitem><para>
+                converts degrees to radians
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>RAND()</term>
+            <listitem><para>
+                returns a random number x bigger or equal to 0.0 and smaller than 1.0
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>ROUND(a,b)</term>
+            <listitem><para>
+                rounds a to b digits after the decimal point
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>ROUNDMAGIC(d)</term>
+            <listitem><para>
+                solves rounding problems such as 3.11-3.1-0.01
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>SIGN(d)</term>
+            <listitem><para>
+                returns -1 if d is smaller than 0, 0 if d==0 and 1 if d is bigger than 0
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>SIN(d)</term>
+            <listitem><para>
+                returns the sine of an angle
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>SQRT(d)</term>
+            <listitem><para>
+                returns the square root
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>TAN(A)</term>
+            <listitem><para>
+                returns the trigonometric tangent of an angle
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>TRUNCATE(a,b)</term>
+            <listitem><para>
+                truncates a to b digits after the decimal point
+            </para></listitem>
+        </varlistentry>
+    </variablelist>
+
+    <variablelist>
+        <title>String built-in Functions / Stored Procedures</title>
+        <varlistentry><term>ASCII(s)</term>
+            <listitem><para>
+                returns the ASCII code of the leftmost character of s
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>BIT_LENGTH(str)<footnoteref linkend="posthyper"/></term>
+            <listitem><para>
+                returns the length of the string in bits
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>CHAR(c)</term>
+            <listitem><para>
+                returns a character that has the ASCII code c
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>CHAR_LENGTH(str)<footnoteref linkend="posthyper"/></term>
+            <listitem><para>
+                returns the length of the string in characters
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>CONCAT(str1,str2)</term>
+            <listitem><para>
+                returns str1 + str2 
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>DIFFERENCE(s1,s2)</term>
+            <listitem><para>
+                returns the difference between the sound of s1 and s2
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>HEXTORAW(s1)<footnoteref linkend="posthyper"/></term>
+            <listitem><para>
+                returns translated string
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>INSERT(s,start,len,s2)</term>
+            <listitem><para>
+                returns a string where len number of characters beginning at start has been replaced by s2
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>LCASE(s)</term>
+            <listitem><para>
+                converts s to lower case
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>LEFT(s,count)</term>
+            <listitem><para>
+                returns the leftmost count of characters of s) - requires double quoting - use SUBSTRING() instead
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>LENGTH(s)</term>
+            <listitem><para>
+                returns the number of characters in s
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>LOCATE(search,s,[start])</term>
+            <listitem><para>
+                returns the first index (1=left, 0=not found) where search is found in s, starting at start
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>LTRIM(s)</term>
+            <listitem><para>
+                removes all leading blanks in s
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>OCTET_LENGTH(str)<footnoteref linkend="posthyper"/></term>
+            <listitem><para>
+                returns the length of the string in bytes (twice the number of characters)
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>RAWTOHEX(s1)<footnoteref linkend="posthyper"/></term>
+            <listitem><para>
+                returns translated string
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>REPEAT(s,count)</term>
+            <listitem><para>
+                returns s repeated count times
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>REPLACE(s,replace,s2)</term>
+            <listitem><para>
+                replaces all occurrences of replace in s with s2
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>RIGHT(s,count)</term>
+            <listitem><para>
+                returns the rightmost count of characters of s
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>RTRIM(s)</term>
+            <listitem><para>
+                removes all trailing spaces
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>SOUNDEX(s)</term>
+            <listitem><para>
+                returns a four character code representing the sound of s
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>SPACE(count)</term>
+            <listitem><para>
+                returns a string consisting of count spaces
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>SUBSTR(s,start[,len])</term>
+            <listitem><para>
+                alias for substring
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>SUBSTRING(s,start[,len])</term>
+            <listitem><para>
+                returns the substring starting at start (1=left) with length len
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>UCASE(s)</term>
+            <listitem><para>
+                converts s to upper case
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>LOWER(s)</term>
+            <listitem><para>
+                converts s to lower case
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>UPPER(s)</term>
+            <listitem><para>
+                converts s to upper case
+            </para></listitem>
+        </varlistentry>
+    </variablelist>
+
+    <variablelist>
+        <title>Date/Time built-in Functions / Stored Procedures</title>
+        <varlistentry><term>CURDATE()</term>
+            <listitem><para>
+                returns the current date
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>CURTIME()</term>
+            <listitem><para>
+                returns the current time
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>DATEDIFF(string, datetime1, datetime2)<footnoteref linkend="posthyper"/></term>
+            <listitem><para>
+                returns the count of units of time elapsed from datetime1 to datetime2. The string indicates the unit of time and can have the following values 'ms'='millisecond', 'ss'='second','mi'='minute','hh'='hour', 'dd'='day', 'mm'='month', 'yy' = 'year'. Both the long and short form of the strings can be used.
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>DAYNAME(date)</term>
+            <listitem><para>
+                returns the name of the day
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>DAYOFMONTH(date)</term>
+            <listitem><para>
+                returns the day of the month (1-31)
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>DAYOFWEEK(date)</term>
+            <listitem><para>
+                returns the day of the week (1 means Sunday)
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>DAYOFYEAR(date)</term>
+            <listitem><para>
+                returns the day of the year (1-366)
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>HOUR(time)</term>
+            <listitem><para>
+                return the hour (0-23)
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>MINUTE(time)</term>
+            <listitem><para>
+                returns the minute (0-59)
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>MONTH(date)</term>
+            <listitem><para>
+                returns the month (1-12)
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>MONTHNAME(date)</term>
+            <listitem><para>
+                returns the name of the month
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>NOW()</term>
+            <listitem><para>
+                returns the current date and time as a timestamp) - use CURRENT_TIMESTAMP instead
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>QUARTER(date)</term>
+            <listitem><para>
+                returns the quarter (1-4)
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>SECOND(time)</term>
+            <listitem><para>
+                returns the second (0-59)
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>WEEK(date)</term>
+            <listitem><para>
+                returns the week of this year (1-53)
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>YEAR(date)</term>
+            <listitem><para>
+                returns the year
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>CURRENT_DATE<footnoteref linkend="posthyper"/></term>
+            <listitem><para>
+                returns the current date
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>CURRENT_TIME<footnoteref linkend="posthyper"/></term>
+            <listitem><para>
+                returns the current time
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>CURRENT_TIMESTAMP<footnoteref linkend="posthyper"/></term>
+            <listitem><para>
+                returns the current timestamp
+            </para></listitem>
+        </varlistentry>
+    </variablelist>
+
+    <variablelist>
+        <title>System/Connection built-in Functions / Stored Procedures</title>
+        <varlistentry><term>DATABASE()</term>
+            <listitem><para>
+                returns the name of the database of this connection
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>USER()</term>
+            <listitem><para>
+                returns the user name of this connection
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>CURRENT_USER</term>
+            <listitem><para>
+                SQL standard function, returns the user name of this connection
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>IDENTITY()</term>
+            <listitem><para>
+                returns the last identity values that was inserted by this connection
+            </para></listitem>
+        </varlistentry>
+    </variablelist>
+
+    <variablelist>
+        <title>System built-in Functions / Stored Procedures</title>
+        <varlistentry><term>IFNULL(exp,value)</term>
+            <listitem><para>
+                if exp is null, value is returned else exp) - use COALESCE() instead
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>CASEWHEN(exp,v1,v2)</term>
+            <listitem><para>
+                if exp is true, v1 is returned, else v2) - use CASE WHEN instead 
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>CONVERT(term,type)</term>
+            <listitem><para>
+                converts exp to another data type
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>CAST(term AS type)</term>
+            <listitem><para>
+                converts exp to another data type
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>COALESCE(expr1,expr2,expr3,...)<footnoteref linkend="posthyper"/></term>
+            <listitem><para>
+                if expr1 is not null then it is returned else, expr2 is evaluated and if not null it is returned and so on
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>NULLIF(v1,v2)<footnoteref linkend="posthyper"/></term>
+            <listitem><para>
+                if v1 equals v2 return null, otherwise v1
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>CASE v1 WHEN...<footnoteref linkend="posthyper"/></term>
+            <listitem><para>
+                <literal>CASE v1 WHEN v2 THEN v3 [ELSE v4] END</literal>
+            </para> <para>
+                when v1 equals v2 return v3 [otherwise v4 or null if there is no ELSE]
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>CASE WHEN...<footnoteref linkend="posthyper"/></term>
+            <listitem><para>
+                <literal>CASE WHEN expr1 THEN v1[WHEN expr2 THEN v2] [ELSE v4] 
+                END</literal>
+            </para> <para>
+                when expr1 is true return v1 [optionally repeated for more cases] [otherwise v4 or null if there is no ELSE]
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>EXTRACT<footnoteref linkend="posthyper"/></term>
+            <listitem><para>
+                <literal>EXTRACT ({YEAR | MONTH | DAY | HOUR | MINUTE | SECOND} FROM &lt;datetime value&gt;)</literal>
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>POSITION ... IN<footnoteref linkend="posthyper"/></term>
+            <listitem><para>
+                <literal>POSITION(&lt;string expression&gt; IN &lt;string expression&gt;)</literal>
+            </para> <para>
+                if the first string is a sub-string of the second one, returns the position of the
+                sub-string, counting from one; otherwise 0
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>SUBSTRING... FROM<footnoteref linkend="posthyper"/></term>
+            <listitem><para>
+                <literal>SUBSTRING(&lt;string expression&gt; FROM &lt;numeric expression&gt; [FOR &lt;numeric expression&gt;])</literal>
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>TRIM... FROM<footnoteref linkend="posthyper"/></term>
+            <listitem><para>
+                <literal>TRIM([{LEADING | TRAILING | BOTH}] FROM &lt;string expression&gt;)</literal>
+            </para></listitem>
+        </varlistentry>
+    </variablelist>
+    <para>
+        See also:
+        <link linkend='call-section' endterm='call-title'/>,
+        <link linkend='create_alias-section' endterm='create_alias-title'/>.
+    </para>
+</section>
+
+<section id='expression-section'>
+    <title id='expression-title'>SQL Expression</title>
+    <programlisting>[NOT] condition [{ OR | AND } condition]</programlisting>
+    <variablelist>
+        <title>Components of SQL Expressions</title>
+        <varlistentry><term>condition</term>
+            <listitem><programlisting> <![CDATA[
+  { value [|| value]
+  | value { = | < | <= | > | >= | <> | != | IS [NOT] } value
+  | EXISTS(selectStatement)
+  | value BETWEEN value AND value
+  | value [NOT] IN ( {value [, ...] | selectStatement } )
+  | value [NOT] LIKE value [ESCAPE] value }]]></programlisting>
+            </listitem>
+        </varlistentry>
+        <varlistentry><term>value</term>
+            <listitem><programlisting> <![CDATA[
+  [+ | -] { term [{ + | - | * | / | || } term]
+  | ( condition )
+  | function ( [parameter] [,...] )
+  | selectStatement giving one value]]></programlisting>
+            </listitem>
+        </varlistentry>
+        <varlistentry><term>term</term>
+            <listitem><programlisting> <![CDATA[
+  { 'string' | number | floatingpoint
+  | [table.]column | TRUE | FALSE | NULL }]]></programlisting>
+            </listitem>
+        </varlistentry>
+        <varlistentry><term>sequence</term>
+            <listitem><programlisting> <![CDATA[
+  NEXT VALUE FOR <sequence>]]></programlisting>
+                <para>
+                HSQLDB does not currently enforce the SQL 200n proposed rules 
+                on where sequence generated values are allowed to be used.
+                In general, these values can be used in insert and update 
+                statements but not in CASE statements, order by clauses, search 
+                conditions, aggregate functions, or grouped queries.
+                </para>
+            </listitem>
+        </varlistentry>
+        <varlistentry><term>string</term>
+            <listitem><para>
+                Strings in HSQLDB are Unicode strings.
+                A string starts and ends with a single ' (singlequote).
+                In a string started with ' (singlequote) use '' (two 
+                singlequotes) to create a ' (singlequote). 
+            </para><para>
+                String contatenation should be performed with the standard SQL 
+                operator || rather than the non-standard + operator. 
+            </para><para>
+                The LIKE keyword uses '%' to match any (including 0) number of 
+                characters, and '_' to match exactly one character.
+                To search for '%' or '_' itself an escape character must also 
+                be specified using the ESCAPE clause.
+                For example, if the backslash is the escaping character, '\%' 
+                and '\_' can be used to find the '%' and '_' characters 
+                themselves.
+                For example, SELECT .... LIKE '\_%' ESCAPE '\' will find the 
+                strings beginning with an underscore. 
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>name</term>
+            <listitem><para>
+                The character set for quoted identifiers (names) in HSQLDB is Unicode. 
+            </para><para>
+                A unquoted identifier (name) starts with a letter and is 
+                followed by any number of ASCII letters or digits.
+                When an SQL statement is issued, any lowercase characters in 
+                unquoted identifiers are converted to uppercase.
+                Because of this, unquoted names are in fact ALL UPPERCASE when 
+                used in SQL statements.
+                An important implication of this is the for accessing columns 
+                names via JDBC DatabaseMetaData: the internal form, which is 
+                the ALL UPPERCASE must be used if the column name was not 
+                quoted in the CREATE TABLE statement. 
+            </para><para>
+                Quoted identifiers can be used as names (for tables, columns, 
+                constraints or indexes).
+                Quoted identifiers start and end with " (one doublequote).
+                A quoted identifier can contain any Unicode character, 
+                including space.
+                In a quoted identifier use "" (two doublequotes) to create a " 
+                (one doublequote).
+                With quoted identifiers it is possible to create mixed-case 
+                table and column names.
+                Example:
+            </para><informalexample><programlisting>
+    CREATE TABLE "Address" ("Nr" INTEGER,"Name" VARCHAR); SELECT &quot;Nr&quot;, &quot;Name&quot; FROM "Address";</programlisting>
+            </informalexample><para>
+                The equivalent quoted identifier can be used for an unquoted 
+                identifer by converting the identifier to all uppercase and 
+                quoting it.
+                For example, if a table name is defined as Address2 (unquoted), 
+                it can be referred to by its quoted form, &quot;ADDRESS2&quot;,
+                as well as address2, aDDress2 and ADDRESS2.
+                Quoted identifiers should not be confused with SQL strings. 
+            </para><para>
+                Quoting can sometimes be used for identifiers, aliases or 
+                functions when there is an ambiguity. For example: 
+            </para><informalexample><programlisting>
+    SELECT COUNT(*) &quot;COUNT&quot; FROM MYTABLE;
+    SELECT &quot;LEFT&quot;(COL1, 2) FROM MYTABLE;</programlisting>
+            </informalexample><para>Although HSQLDB 1.7.2 does not force
+			    unquoted identifiers to contain only ASCII characters, the
+				use of non-ASCII characters in these identifiers does not 
+				comply with SQL standards.
+                Portability between different JRE locales could be an issue 
+                when accented characters (or extended unicode characters) are 
+                used in unquoted identifiers.
+                Because native Java methods are used to convert the identifier 
+                to uppercase, the result may vary not be expected in different 
+                locales.
+                It is recommended that accented characters are used only in 
+                quoted identifiers. 
+            </para><para>
+                When using JDBC DatabaseMetaData methods that take table, 
+                column, or index identifiers as arguments, treat the names as 
+                they are registered in the database. 
+                With these methods, unquoted identifiers should be used in 
+                all-uppercase to get the correct result.
+                Quoted identifiers should be used in the exact case combination 
+                as they were defined - no quote character should be included 
+                around the name.
+                JDBC methods that return a result set containing such 
+                identifiers return unquoted identifiers as all-uppercase and 
+                quoted identifiers in the exact case they are registered in the 
+                database (a change from 1.6.1 and previous versions). 
+            </para></listitem>
+        </varlistentry>
+        <varlistentry><term>values</term>
+            <listitem>
+            <itemizedlist>
+                <listitem><para>
+                A DATE literal starts and ends with ' (singlequote), the format 
+                is yyyy-mm-dd (see <classname>java.sql.Date</classname>.
+                </para></listitem><listitem><para>
+                A TIME liteal starts and ends with ' (singlequote), the format 
+                is hh:mm:ss (see <classname>java.sql.Time</classname>).
+                </para></listitem><listitem><para>
+                A TIMESTAMP or DATETIME literal starts and ends with '
+                (singlequote), the format is yyyy-mm-dd hh:mm:ss.SSSSSSSSS (see 
+                <classname>java.sql.Timestamp</classname>).
+                </para></listitem>
+            </itemizedlist>
+            <para>
+                When specifying default values for date / time columns in 
+                CREATE TABLE statements, or in SELECT,INSERT, and UPDATE 
+                statements, special SQL functions:
+				NOW, SYSDATE, TODAY, CURRENT_TIMESTAMP, 
+                CURRENT_TIME and CURRENT_DATE (case independent) can 
+                be used. NOW is used for TIME and TIMESTAMP columns, TODAY is 
+                used for DATE columns.
+                The data and time variants CURRENT_* are SQL standard versions
+				and should be used in preference to others. Example: 
+            </para><programlisting>
+    CREATE TABLE T(D DATE DEFAULT CURRENT_DATE);
+    CREATE TABLE T1(TS TIMESTAMP DEFAULT CURRENT_TIMESTAMP);</programlisting>
+            <para>
+                Binary data starts and ends with ' (singlequote), the format is 
+                hexadecimal. '0004ff' for example is 3 bytes, first 0, second 
+                4 and last 255 (0xff). 
+            </para>
+            </listitem>
+        </varlistentry>
+    </variablelist>
+    <para>
+        Any number of commands may be combined.
+        With combined commands,  ';' (semicolon) must be used at the end of 
+        each command to ensure data integrity, despite the fact that the 
+        engine may understand the end of commands and not return an error
+		when a semicolon is not used. 
+    </para>
+</section>
+</chapter>

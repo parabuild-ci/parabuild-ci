@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Restricting the Creation of Project Databases</TITLE>
+<!--<restrictpdb.html>-->
+<!--<index parent="security" label="restricting creation of project databases" anchor="restrictpdb">-->
+<!--<index parent="project_databases" label="restricting the creation of" anchor="restrictpdb">-->
+<!--<toc parent="using_security" label="Restricting the Creation of Project Databases" anchor="restrictpdb" sortkey="05">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nUsing Security\nRestricting the Creation of Project Databases");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="restrictpdb"></A>Restricting the Creation of Project Databases</H1>
+<P>To restrict users from creating project databases, you must define a password that users must enter before the action can take place. Then, you withhold the password from users who are not allowed to create project databases. Note that there is not a privilege associated with this action.
+</P>
+<img src="../graphics/vm_file_server2.gif" alt="File Server" width="50" height="50" border="0" align="left"> <p><b>NOTE</b> This page applies only to non-file-server project databaes. For project databases located on a Version Manager file server, the create project database password is set from the Version Manager File Server Administration utility. This help topic does not apply to the file server. For information about setting the create project database password on a file server, see the <i>Version Manager Administrator's Guide</i> or the Version Manager File Server Administration Utility help.</p>
+
+<P>
+The password that you define is embedded into a security settings file named vmwfvcj.dll on Windows and vmufvcj.a on UNIX. This file is installed in <i>install_dir</i>\serena\vm\win32\bin on Windows and in <i>install_dir</i>/serena/vm/<i>unix_dir</i>/bin on UNIX. By default, this file does not have a password embedded in it, and therefore, any user can create a project database. 
+</P>
+<P>
+When you define a password in this file, all desktop client and project command-line users who are using the copy of Version Manager that contains this file are affected. To define a password in this file, you, as the administrator, must have write permissions to the bin directory. All other users should not have write permissions to the bin directory, or at least to the security settings file, so that they cannot initially define the password or change the password.
+</P>
+<P>
+Your users must use the copy of Version Manager that you configure to restrict project database creation. For this to happen, the users must perform a workstation installation of Version Manager. Refer to the Serena ChangeMan Version Manager Installation Guide for detailed information about workstation installations.
+</P>
+<H2>
+To restrict the creation of project databases:
+</H2>
+<OL>
+<LI>
+Select Admin | Make Secure. The Make Secure dialog box appears.
+<LI>
+Select the <b>Require a password for creation of project databases</b> check box.
+<LI>
+Specify a password in the <b>Password</b> field. The password is case-sensitive. The characters you enter are displayed as asterisks (*) in the field.
+<LI>
+Reenter the password in the <b>Verify Password</b> field. 
+</OL>
+<P>
+When the creation of project databases is password restricted, the desktop client prompts users for a password when they select either Admin | Create Project Database or Edit | Copy when a project database is selected. The password must be entered just as it was defined; the password is case-sensitive.
+</P>
+<P>
+Also, when the creation of project databases is password restricted, users will not see the <b>Create a new project database</b> check box in the Welcome to Serena ChangeMan Version Manager dialog box the first time they start Version Manager.
+</P>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+	<TD><A HREF="makesecuredialog.html">Make Secure Dialog Box</A></TD>
+	</tr>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

@@ -1,0 +1,244 @@
+<html><head><META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Chapter&nbsp;5.&nbsp;If Task</title><link href="./style.css" rel="stylesheet" type="text/css"><meta content="DocBook XSL Stylesheets V1.69.1" name="generator"><link rel="start" href="index.html" title="Antelope Users Guide"><link rel="up" href="bk03.html" title="Additional Ant Tasks"><link rel="prev" href="bk03ch04.html" title="Chapter&nbsp;4.&nbsp;Assert Task"><link rel="next" href="bk03ch05s02.html" title="More Conditions"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table summary="Navigation header" width="100%"><tr><th align="center" colspan="3">Chapter&nbsp;5.&nbsp;If Task</th></tr><tr><td align="left" width="20%"><a accesskey="p" href="bk03ch04.html">Prev</a>&nbsp;</td><th align="center" width="60%">Additional Ant Tasks</th><td align="right" width="20%">&nbsp;<a accesskey="n" href="bk03ch05s02.html">Next</a></td></tr></table><hr></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="IfTask"></a>Chapter&nbsp;5.&nbsp;If Task</h2></div></div><div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="bk03ch05.html#N10740">If</a></span></dt><dt><span class="section"><a href="bk03ch05s02.html">More Conditions</a></span></dt></dl></div>
+<STYLE TYPE="text/css"> <!-- @import url(./style.css); --> </STYLE>
+    <div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N10740"></a>If</h2></div></div><div></div></div><p>
+The If task provides a greatly improved "if" capability to Ant projects. This task works in a manner very similar to the Java <code class="computeroutput">if</code> keyword. This is useful for performing certain tasks only if a property has a specific value or certain conditions are met.
+</p><p>
+This task can hold other tasks including the If task. In particular, it can also have a single "else", which gives Ant a Java-like if/else construct, and a single "bool", which can be used for the "if" boolean expression.
+</p><p>
+To use this task in your build files, include a task definition like this:
+</p><p>
+<pre class="programlisting">
+
+    &lt;taskdef name="if" classname="ise.antelope.tasks.IfTask"/&gt;
+   
+</pre>
+</p><p>
+An If task may contain only one 'bool' and one 'else' and may contain a 'break'. The 'bool' element is identical to the ConditionTask, but unlike the ConditionTask, is actually a Task. The 'bool' element can contain all the conditions permitted by the ConditionTask, plus the <a href="bk03ch05s02.html" title="More Conditions">IsPropertyTrue</a>, <a href="bk03ch05s02.html" title="More Conditions">IsPropertyFalse</a>,
+<a href="bk03ch05s02.html" title="More Conditions">StartsWith</a>,
+<a href="bk03ch05s02.html" title="More Conditions">EndsWith</a>,
+<a href="bk03ch05s02.html" title="More Conditions">IsGreaterThan</a>,
+<a href="bk03ch05s02.html" title="More Conditions">IsLessThan</a> and conditions.
+</p><p>
+Here is a general outline of the If task:
+<pre class="programlisting">
+
+&lt;if&gt;
+    &lt;bool&gt;
+        &lt;some condition(s)/&gt;
+    &lt;/bool&gt;
+    
+    some tasks...
+    
+    &lt;!-- a break is allowed
+    &lt;break/&gt;
+    --&gt;
+    
+    &lt;else&gt;
+        some other tasks...
+        
+        &lt;!-- a break is allowed
+        &lt;break/&gt;
+        --&gt;
+    &lt;/else&gt;
+&lt;/if&gt;
+
+</pre>
+</p><p>
+ 
+<div class="table"><a name="N10775"></a><p class="title"><b>Table&nbsp;5.1.&nbsp;If Task Attributes</b></p><table summary="If Task Attributes" border="1"><colgroup><col><col><col><col></colgroup><thead><tr><th>Attribute</th><th>Description</th><th>Default</th><th>Required</th></tr></thead><tbody><tr><td>name</td><td>The name of the property to test for.</td><td>none</td><td>Yes, unless nested bool is used.</td></tr><tr><td>exists</td><td>Test for existence or non-existence of the property.</td><td>True</td><td>No</td></tr><tr><td>value</td><td>The value to test for, implies 'exists=true'. If the value for the property in the project is the same as this value, embedded tasks will be executed.</td><td>none</td><td>No</td></tr></tbody></table></div>
+
+</p><p>
+The If task can hold any number of Ant tasks. If the property value is correct or the "bool" element evaluates to true, these tasks will be executed.
+</p><p> 
+In addition, the If task supports three special nested elements:
+</p><div class="itemizedlist"><ul type="disc"><li><p>
+<span class="bold"><strong>bool</strong></span> This is very similar to the standard Ant Condition task. All conditions supported by the Condition task are supported by the bool element. This is an optional element and if used, is used to decide if the "if" tasks or the "else" tasks should be executed. If the bool element is not used, then the "name" attribute must be used.
+</p></li><li><p>
+<span class="bold"><strong>else</strong></span> This is very similar to the standard Ant Sequential task. The "else" can hold any number of Ant tasks. These tasks are executed if the "bool" element evaluates to false.
+</p></li><li><p>
+<span class="bold"><strong>break</strong></span> This is very similar to the Java "break" keyword. This is only useful if the If task is nested in another task that understands "break", such as the <a href="bk03ch06.html" title="Chapter&nbsp;6.&nbsp;SwitchTask">Switch</a> task. Like the Java "break", when this element is encountered, no subsequent tasks will be executed and control passes outside the If.
+</p></li></ul></div><p>
+In the following example, the <code class="computeroutput">antcall</code> task will execute only if the project has a property named <code class="computeroutput">test</code> with a value of <code class="computeroutput">true</code>.
+</p><p>
+<pre class="programlisting">
+   
+   &lt;if name="test" value="true"&gt;
+      &lt;antcall target="doUnitTests"/&gt;
+   &lt;/if&gt;
+   
+</pre>
+</p><p>
+In the next example, the <code class="computeroutput">antcall</code> task will execute only if the project has a property named <code class="computeroutput">test</code>. In this example, it does not matter what value is assigned to the <code class="computeroutput">test</code> property.
+</p><p>
+<pre class="programlisting">
+    
+   &lt;if name="test"&gt;
+      &lt;antcall target="doUnitTests"/&gt;
+   &lt;/if&gt;
+   
+</pre>
+</p><p>
+Of course, the same thing could have been done as follows, but the "if" is generally much cleaner.
+<pre class="programlisting">
+   
+   &lt;antcall target="doUnitTests"/&gt;
+   &lt;target name="doUnitTests" if="test"&gt;
+      ...
+   &lt;/target&gt;
+   
+</pre>
+</p><p>
+In the next example, the <code class="computeroutput">antcall</code> task will execute only if the project does not have a property named <code class="computeroutput">test</code>. This is the opposite situation of the previous example.
+</p><p>
+<pre class="programlisting">
+   
+   &lt;if name="test" exists="false"&gt;
+      &lt;antcall target="doUnitTests"/&gt;
+   &lt;/if&gt;
+   
+</pre>
+</p><p>
+The next example demonstrates nested 'if' tasks. This example will run the unit tests, and if it is Monday, will publish the accumulated test results.
+</p><p>
+<pre class="programlisting">
+    
+   &lt;tstamp&gt;
+      &lt;format property="day" pattern="E" /&gt;
+   &lt;/tstamp&gt;
+   &lt;if name="test" value="true"&gt;
+      &lt;antcall target="doUnitTests"/&gt;
+      &lt;if name="day" value="Mon"&gt;
+         &lt;antcall target="publishTestResults"/&gt;
+      &lt;/if&gt;
+   &lt;/if&gt;
+   
+</pre>
+</p><p>
+The next example shows how to use If with Else. Notice that it doesn't matter where the Else is placed inside the If. All tasks in the If that are not in the Else will execute if the property value is correct, otherwise, only those tasks inside the else will execute. The "var" task is discussed <a href="bk03ch09.html" title="Chapter&nbsp;9.&nbsp;Variable Task">here</a>.
+</p><p>
+<pre class="programlisting">
+    
+    &lt;var name="foo" value="bar"/&gt;
+    &lt;if name="foo" value="bar"&gt;
+        &lt;echo&gt;this will happen&lt;/echo&gt;
+        &lt;else&gt;
+            &lt;echo&gt;this won't happen&lt;/echo&gt;
+        &lt;/else&gt;
+        &lt;echo&gt;this will happen also&lt;/echo&gt;
+    &lt;/if&gt;
+    
+    &lt;if name="foo" value="snarf"&gt;
+        &lt;echo&gt;this won't happen&lt;/echo&gt;
+        &lt;else&gt;
+            &lt;echo&gt;this 'else' will happen&lt;/echo&gt;
+            &lt;echo&gt;and so will this&lt;/echo&gt;
+        &lt;/else&gt;
+        &lt;echo&gt;this won't happen either&lt;/echo&gt;
+    &lt;/if&gt;
+    
+</pre>
+</p><p>
+The next example shows the "if" and "assert" tasks working together to validate a property before use, and also shows an example of where the "assert" 'failonerror' attribute might be useful. In this example, if the e-mail address is invalid, the e-mail won't be sent and the build won't fail. The "try" task is discussed <a href="bk03ch07.html" title="Chapter&nbsp;7.&nbsp;Try Task">here</a>.
+</p><p>
+<pre class="programlisting">
+    
+   &lt;if name="email_from" value="buildteam@mycompany.com"&gt;
+      &lt;property name="valid_email" value="true"/&gt;
+   &lt;/if&gt;
+   &lt;if name="email_from" value="buildsite@mycompany.com"&gt;
+      &lt;property name="valid_email" value="true"/&gt;
+   &lt;/if&gt;
+   &lt;assert name="valid_email" value="true" failonerror="false"&gt;
+      &lt;try&gt;
+          &lt;mail from="${email_from}" tolist="${email_to}" 
+              message="New release available"/&gt;
+      &lt;/try&gt;
+   &lt;/assert&gt;
+   
+</pre>
+</p><p>
+Here is the same thing, but using only If and Else:
+</p><p>
+<pre class="programlisting">
+    
+   &lt;try&gt; 
+       &lt;if name="email_from" value="buildteam@mycompany.com"&gt;
+          &lt;mail from="${email_from}" tolist="${email_to}" 
+              message="New release available"/&gt;
+          &lt;else&gt;
+             &lt;if name="email_from" value="buildsite@mycompany.com"&gt;
+                 &lt;mail from="${email_from}" tolist="${email_to}" 
+                      message="New release available"/&gt;
+             &lt;/if&gt;
+          &lt;/else&gt;
+       &lt;/if&gt;
+   &lt;/try&gt;
+   
+</pre>
+</p><p>
+The next example shows how to use the "bool" element:
+</p><p>
+<pre class="programlisting">
+    
+    &lt;if&gt;
+        &lt;!-- "if" evaluates this element --&gt;
+        &lt;bool&gt;
+            &lt;and&gt;
+                &lt;available file="build.xml"/&gt;
+                &lt;available file="run.xml"/&gt;
+            &lt;/and&gt;
+        &lt;/bool&gt;
+        
+        &lt;!-- if true, then tasks listed here will execute --&gt;
+        &lt;echo&gt;build.xml and run.xml are available&lt;/echo&gt;
+        
+        &lt;!-- if false, then tasks inside the "else" will execute --&gt;
+        &lt;else&gt;
+            &lt;echo&gt;didn't find one or both of build.xml and run.xml&lt;/echo&gt;
+        &lt;/else&gt;
+    &lt;/if&gt;
+    
+</pre>
+</p><p>
+The following example shows the "bool" element again:
+</p><p>
+<pre class="programlisting">
+    
+    &lt;if&gt;
+        &lt;bool&gt;
+            &lt;equals arg1="${download.dir}" arg2="test.dir"/&gt;
+        &lt;/bool&gt;
+        
+        &lt;fail message="Download and test directories cannot be 
+            the same! You need to reset to use the production 
+            property set."/&gt;
+            
+        &lt;else&gt;
+            &lt;copy file="installer.zip" todir="${download.dir}"/&gt;
+        &lt;/else&gt;
+    &lt;/if&gt;
+    
+</pre>
+</p><p>
+The following example is from the unit test for the "Limit" task. It shows the Stopwatch task, the Limit task, and the If task with boolean conditions:
+</p><p>
+<pre class="programlisting">
+    
+  &lt;target name="test2"&gt;
+    &lt;!-- should not stop 'sleep' task, should print out '_passed_' --&gt;
+    &lt;stopwatch name="timer"/&gt;
+    &lt;limit maxwait="5"&gt;
+        &lt;sleep seconds="1"/&gt;
+        &lt;echo&gt;_passed_&lt;/echo&gt;
+    &lt;/limit&gt;
+    &lt;stopwatch name="timer" action="total"/&gt;
+    &lt;if&gt;
+        &lt;bool&gt;
+            &lt;isgreaterthan arg1="${timer}" arg2="2"/&gt;
+        &lt;/bool&gt;
+        &lt;fail message="Too much time"/&gt;
+    &lt;/if&gt;
+  &lt;/target&gt;
+    
+</pre>
+</p></div></div><div class="navfooter"><hr><table summary="Navigation footer" width="100%"><tr><td align="left" width="40%"><a accesskey="p" href="bk03ch04.html">Prev</a>&nbsp;</td><td align="center" width="20%"><a accesskey="u" href="bk03.html">Up</a></td><td align="right" width="40%">&nbsp;<a accesskey="n" href="bk03ch05s02.html">Next</a></td></tr><tr><td valign="top" align="left" width="40%">Chapter&nbsp;4.&nbsp;Assert Task&nbsp;</td><td align="center" width="20%"><a accesskey="h" href="index.html">Home</a></td><td valign="top" align="right" width="40%">&nbsp;More Conditions</td></tr></table></div></body></html>

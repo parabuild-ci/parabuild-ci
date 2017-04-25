@@ -1,0 +1,30 @@
+<project name="bt" default="licenses.all" basedir=".">
+  <target name="licenses.3rdparty">
+    <mkdir dir="${build.dir.tomcat}/etc/system"/>
+    <mkdir dir="${build.dir.tomcat}/license"/>
+    <copy file="${3rdparty}/j2sdk/license-j2sdk.txt" todir="${build.dir.tomcat}/license/"/>
+    <copy file="${apache.license}" tofile="${build.dir.tomcat}/license/license-apache.txt"/>
+    <copy file="${c3p0.license}" tofile="${build.dir.tomcat}/license/license-c3p0.txt"/>
+    <copy file="${connector.license}" tofile="${build.dir.tomcat}/license/license-connector.txt"/>
+    <copy file="${hibernate.license}" tofile="${build.dir.tomcat}/license/license-hibernate.txt"/>
+    <copy file="${jaas.license}" tofile="${build.dir.tomcat}/license/license-jaas.txt"/>
+    <copy file="${jdbc2_0-stdext.license}" tofile="${build.dir.tomcat}/license/license-jdbc2_0-stdext.txt"/>
+    <copy file="${jta.license}" tofile="${build.dir.tomcat}/license/license-jta.txt"/>
+    <copy file="${quartz.licence}" tofile="${build.dir.tomcat}/license/license-quartz.txt"/>
+    <copy file="${viewtier.licence}" tofile="${build.dir.tomcat}/license/LICENSE.txt"/>
+    <copy file="${viewtier.copyright}" tofile="${build.dir.tomcat}/license/COPYRIGHT.txt"/>
+    <copy file="${mx4j.license}" tofile="${build.dir.tomcat}/license/license-mx4j.txt"/>
+    <copy file="${jaxen.license}" tofile="${build.dir.tomcat}/license/license-jaxen.txt"/>
+    <copy file="${hsqldb.license}" tofile="${build.dir.tomcat}/license/license-hypersonic.txt"/>
+    <copy file="${jtds.license}" tofile="${build.dir.tomcat}/license/license-jtds.txt"/>
+    <copy file="${jade.license}" tofile="${build.dir.tomcat}/license/license-jade.txt"/>
+    <copy file="${msnm.license}" tofile="${build.dir.tomcat}/license/license-msnm.txt"/>
+    <copy file="${rome.license}" tofile="${build.dir.tomcat}/license/license-rome.txt"/>
+    <copy file="${jdom.license}" tofile="${build.dir.tomcat}/license/license-jdom.txt"/>
+    <!--<copy file="${lucene.license}" tofile="${build.dir.tomcat}/license/license-lucene.txt"/>-->
+  </target>
+
+  <target name="licenses.all" depends="licenses.3rdparty">
+  </target>
+
+</project>

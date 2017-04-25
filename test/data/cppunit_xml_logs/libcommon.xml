@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding='ISO-8859-1' standalone='yes' ?>
+<TestRun>
+  <FailedTests>
+    <FailedTest id="7">
+      <Name>LinePipeTester::testSingleThreadRead</Name>
+      <FailureType>Assertion</FailureType>
+      <Location>
+        <File>/opt/parabuild/etc/build/b0co/a/u/t/o/var/lib/svn/proi/banners/trunk/libcommon/linep_tester.cpp</File>
+        <Line>177</Line>
+      </Location>
+      <Message>assertion failed - Expression: cur_log==ret_log</Message>
+    </FailedTest>
+  </FailedTests>
+  <SuccessfulTests>
+    <Test id="1">
+      <Name>LogTester::testOpenClose</Name>
+    </Test>
+    <Test id="2">
+      <Name>LogTester::testSimpleFilter</Name>
+    </Test>
+    <Test id="3">
+      <Name>LogTester::testAreaLog</Name>
+    </Test>
+    <Test id="4">
+      <Name>ThreadTester::testConstructDestruct</Name>
+    </Test>
+    <Test id="5">
+      <Name>ThreadTester::testSimpleStartStop</Name>
+    </Test>
+    <Test id="6">
+      <Name>LinePipeTester::testConstructDestruct</Name>
+    </Test>
+    <Test id="8">
+      <Name>LinePipeTester::testSingleThreadWrite</Name>
+    </Test>
+    <Test id="9">
+      <Name>LinePipeTester::testTwoProcesses</Name>
+    </Test>
+    <Test id="10">
+      <Name>UtilityTester::testStrnchr</Name>
+    </Test>
+    <Test id="11">
+      <Name>MutexTester::testConstructDestruct</Name>
+    </Test>
+    <Test id="12">
+      <Name>MutexTester::test2ProcessMutex</Name>
+    </Test>
+  </SuccessfulTests>
+  <Statistics>
+    <Tests>12</Tests>
+    <FailuresTotal>1</FailuresTotal>
+    <Errors>0</Errors>
+    <Failures>1</Failures>
+  </Statistics>
+</TestRun>

@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Command-Line Macros</TITLE>
+<!--<parameterfile.html>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="parameterfile"></A>Command-Line Macros</H1>
+<P>You can pass information about the archive or project being acted upon to an event trigger. One method of doing this is to pass a command-line macro. The following table lists the macros available to event triggers.
+</P>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+<TR>
+<TD><b>Command-Line Macro Name</b></TD>
+<TD><b>Definition</b></TD>
+</TR>
+<TR>
+<TD>__EventArchive__</TD>
+<TD>A fully qualified path, including the name of the archive.</TD>
+</TR>
+<TR>
+<TD>__EventWorkfile__</TD>
+<TD>The name of the workfile.</TD>
+</TR>
+<TR>
+<TD>__EventUserID__</TD>
+<TD>The user ID of the person performing the operation.</TD>
+</TR>
+<TR>
+<TD>__EventChgDesc__</TD>
+<TD>The change description. Limited to 1K in size except when used with the parameter file method of passing event information.</TD>
+</TR>
+<TR>
+<TD>__EventRevision__</TD>
+<TD>The revision number being operated on.</TD>
+</TR>
+<TR>
+<TD>__EventVersion__</TD>
+<TD>The version label.</TD>
+</TR>
+<TR>
+<TD>__EventLock__</TD>
+<TD>The value is YES if a lock was requested and is not defined otherwise.</TD>
+</TR>
+<TR>
+<TD>__EventGroup__</TD>
+<TD>The promotion group assigned to the revision.</TD>
+</TR>
+<TR>
+<TD>__EventJournalFile__</TD>
+<TD>The name of the journal file.</TD>
+</TR>
+<TR>
+<TD>__EventJournalEntry__</TD>
+<TD>The journal entry line that was written to the journal file.</TD>
+</TR>
+<TR>
+<TD>__EventDate__</TD>
+<TD>The date when the event trigger was executed. The format of the date is packed decimal numeric. For example, January 20, 1998 appears at 19980120.</TD>
+</TR>
+<TR>
+<TD>__EventTime__</TD>
+<TD>The time when the event trigger was executed. The format of the time is packed decimal numeric. For example 2:35:26 <span style="font-size: 8pt;">P</span>.<span style="font-size: 8pt;">M</span>. appears as 143526.</TD>
+</TR>
+<TR>
+<TD>__EventFQPWorkfile__</TD>
+<TD>A fully qualified path, including the workfile name.</TD>
+</TR>
+<TR>
+<TD>__EventConfigFiles__<BR>
+(desktop client only)</TD>
+<TD>A fully qualified path, including the names of the configuration files listed in the order that Version Manager reads them. This list does not include the master configuration file, if any. Values are separated by semicolons (;)</TD>
+</TR>
+<TR>
+<TD>__EventMasterConfigFile__<BR>
+(desktop client only)</TD>
+<TD>A fully qualified path, including the name of the master configuration file, if any.</TD>
+</TR>
+<TR>
+<TD>__EventArchiveName__<BR>
+(desktop client only)</TD>
+<TD>The name of the archive.</TD>
+</TR>
+<TR>
+<TD>__EventServerWorkfile__<BR>
+(desktop client only)</TD>
+<TD>A fully qualified path, including the name of the workfile on the server.</TD>
+</TR>
+<TR>
+<TD>__EventClientWorkfile__<BR>
+(desktop client only)</TD>
+<TD>A fully qualified path, including the name of the workfile on the client or full path if stand-alone.</TD>
+</TR>
+<TR>
+<TD>__EventProjectDB__<BR>
+(desktop client only)</TD>
+<TD>A fully qualified path, including the name of the project database being used.</TD>
+</TR>
+<TR>
+<TD>__EventProjectName__<BR>
+(desktop client only)</TD>
+<TD>A fully qualified path, including the name of the project in the project database.</TD>
+</TR>
+<TR>
+<TD>__EventItemSelectionType__<BR>
+(desktop client only)</TD>
+<TD>How the item being processed was selected. The possible values are ProjectDB, Project, Folder, File, Revision, VersionLabel, and Group (promotion group).</TD>
+</TR>
+<TR>
+<TD>EventFolderPath<BR>
+(desktop client only)</TD>
+<TD>A fully qualified path, including the name of the folder.</TD>
+</TR>
+</table>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

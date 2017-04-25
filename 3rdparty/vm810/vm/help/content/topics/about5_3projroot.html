@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>About 5.3/6.0 Project Roots</TITLE>
+<!--<about5_3projroot.html>-->
+<!--<toc parent="working_with_5360_project_roots" label="About 5.3/6.0 Project Roots" anchor="about5_3projroot" sortkey="01">-->
+<!--<index parent="projects" label="about 5.3/6.0 project roots" anchor="about5_3projroot">-->
+<!--<index parent="projects" label="locking or unlocking 5.3/6.0 projects" anchor="about5_3projroot">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with 5.3/6.0 Project Roots/Folders\nAbout 5.3/6.0 Project Roots");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="about5_3projroot"></A>About 5.3/6.0 Project Roots</H1>
+<P>When working with 5.2, 5.3, 6.0 Version Manager project roots, you must determine whether you want to upgrade the project roots to the new Version Manager format or leave the project in the existing 5.3/6.0 format. If you want complete Version Manager functionality for your 5.3/6.0 project roots, you must copy your 5.3/6.0 project roots into new Version Manager project databases.</P>
+
+<p>You can open a 5.3/6.0 project root in the current edition of Version Manager and continue to work with the projects and versioned files contained within it without upgrading to the new format. When you open a 5.3/6.0 project root, it appears slightly different than a project database. Some of these differences in appearance include:</p>
+<UL>
+<LI>5.3/6.0 project roots are displayed using only a path, not a name.<br>
+<LI>5.3/6.0 project roots include master projects, which are not used in project databases.<br>
+<LI>The icons that represent the projects within a 5.3/6.0 project root are blue <IMG align="bottom" border="0" height="16" src="../graphics/project53.gif" width="16">, whereas the project and subproject icons within a project database are yellow <IMG align="bottom" border="0" height="16" src="../graphics/projecticon.gif" width="16">.<br></LI>
+</UL>
+<h2>Supported Functionality</h2>
+<p>While some functionality is restricted, the majority of the new functionality is supported on 5.3/6.0 project roots, including:</p>
+<ul>
+<LI>Creating and deleting folders.
+<LI>Checking files in and out of archives.
+<LI>Adding workfiles (but not adding directory structures).
+<LI>Defining and setting workspaces.
+<LI>Deleting revisions.
+<LI>Using promotion models and version labels.
+<LI>Importing archives (but not adding directory 
+  structures).</LI>      
+</ul>
+<p>If you make any changes to the 5.3/6.0 project root using this supported functionality, you can access the changes from Version Manager 5.3/6.0.</p>
+
+<P>Locks placed on projects using Version Manager 5.3/6.0 are honored by the new release of Version Manager. Use Version Manager 5.3/6.0 to lock or unlock a 5.3/6.0 project. The new release of Version Manager does not support project locks; it does, however, support locking each revision in a project.</P>
+
+<h2>Restricted Functionality</h2>
+<p>When working with 5.3/6.0 project roots in the current edition of Version Manager without copying the project roots into a project database, you cannot:</p>
+<ul>
+<LI>Create new projects within the 5.3/6.0 project root. 
+<LI>Delete projects from the 5.3/6.0 project root.
+<LI>Create subprojects within the 5.3/6.0 project root.
+<LI>Copy projects, subprojects, or versioned files from a project database into a 5.3/6.0 project root. 
+<LI>Configure a 5.3/6.0 project root. 
+<LI>Change security settings in the access control database.</LI>
+<li>Use the <a href="about_file_server.html">Version Manager File Server</a>.</li>
+</ul>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A href="openvm5_3proj.html">Opening 5.3/6.0 Project Roots</A></TD>
+		<TD><A href="copyvm5_3proj.html">Copying 5.3/6.0 Project Roots to Project Databases</A></TD>
+	</TR>
+	<TR>
+		<TD><A href="about_copyvm5_3proj.html">About Upgrading 5.3/6.0 Projects</a></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

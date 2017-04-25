@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Changing Promotion Groups</TITLE>
+<!--<changepromotiongroup.html>-->
+<!--<toc parent="working_with_promotion_models" label="Changing Promotion Groups" anchor="ChangePromotionGroup" sortkey="09">-->
+<!--<index parent="promotion_groups" label="changing" anchor="ChangePromotionGroup">-->
+<!--<index parent="changing" label="promotion groups" anchor="ChangePromotionGroup">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nUsing Promotion Models\nChanging Promotion Groups");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="ChangePromotionGroup"></A>Changing Promotion Groups</H1>
+<P>You can change a promotion group if you accidentally assigned the wrong promotion group to a revision, or if you want to reassign a promotion group to a different promotion group within the same promotion level. We do not recommend using the Change option as a means of promoting revisions because it does not enforce the promotion model hierarchy assigned to your project database.</P>
+<p>You can change promotion groups by selecting a revision, a single versioned file, multiple versioned files, a project, a folder, or a project database.</p>
+<H2>Using the System Default Options</H2>
+<p>Unless your Administrator changed the defaults for the project's configuration, when you change a promotion group assigned to a versioned file, Version Manager:</p>
+<ul>
+<li>Uses the first development group for both the <b>Change From</b> and <b>To</b> fields.
+<LI>Does not change the promotion group assigned to files in subprojects.
+</ul>
+<H2>To change a promotion group:</H2>
+<OL>
+	<LI>Select the item that contains the promotion group you want to change.<br><br>
+	<LI>Select Actions | Promotion Group | Change. The Change Promotion Group dialog box appears.<br><br>
+	<LI>Accept the defaults listed above and click OK, or do the following:<br><br>
+	<OL type=a>
+	<LI>To override the defaults on the General tab, edit any of the fields described below:<br><br>
+	<TABLE  WIDTH="87%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+<tr>
+	<td><b>To...</b></td>
+	<td><b>Do this...</b></td>
+</tr>
+<tr>
+	<td>Select the promotion group currently assigned to the items</td>
+	<td>Select the promotion group you would like to change from the <b>Change From</b> list box.</td>
+</tr>
+<tr>
+	<td>Choose a new promotion group to assign to the items</td>
+	<td>Select the new promotion group from the <B>To</b> list box.</td>
+</tr>
+<tr>
+	<td>Assign the new promotion group to all revisions in subprojects</td>
+	<td>Select the <b>Include files in subprojects</b> check box. This field is available only if the item you selected for promotion group change is a project or project database.</td>
+</tr>
+</table><br><br>
+	<LI>To review the selected files:<br><br>
+<TABLE  WIDTH="87%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+<tr>
+	<td><b>To...</b></td>
+	<td><b>Do this...</b></td>
+</tr>
+<tr>
+	<td>View which items will change promotion groups</td>
+	<td>Click the Selected Files tab.</td>
+</tr>
+<tr>
+	<td>View the properties of the items selected for promotion group change</td>
+	<td>Select the item and click the Properties button.</td>
+</tr>
+</table><br><br>
+		</ol>
+	<LI>Click OK. The promotion group is changed on the selected project or files.
+	</ol>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="aboutprommodels.html">About Promotion Models</A></TD>
+		<TD><A HREF="removepromotiongroup.html">Removing Promotion Groups</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="assignpromotiongroup.html">Assigning Promotion Groups</A></TD>
+		<TD><A HREF="promotetonext.html">Promoting Versioned Files to the Next Group</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

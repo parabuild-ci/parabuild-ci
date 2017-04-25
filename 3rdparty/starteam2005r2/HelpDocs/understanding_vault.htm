@@ -1,0 +1,233 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Understanding the Vault</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=1164>
+<meta name=layout-width content=707>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Administering the Application\nWorking with the Vault\nUnderstanding the Vault");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Understanding the Vault</h1>
+
+<p class=Body>&nbsp;</p>
+
+<p class=Body>Server configurations created with StarTeam 6.0 or earlier 
+ releases use Native-I vaults for storage, but configurations created &nbsp;with 
+ StarTeam Server 2005 or later releases use the new Native-II format. The 
+ new Native-II architecture has been created because it allows:</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Larger file revisions</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>More locations to store 
+ archives </p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Faster, more efficient 
+ performance</p></li>
+</ul>
+
+<p class=Body>After you upgrade and start a server configuration created 
+ with StarTeam 6.0 or earlier, the server configuration uses the Native-II 
+ vault for all new files put under application control. However, it continues 
+ to use the prior Native-I vault for existing application files until they 
+ converted manually or as part of a background conversion process. </p>
+
+<p class=Body>New server configurations created with StarTeam 2005 or later 
+ releases use only Native-II vaults.</p>
+
+<p class=Body>Native-II vaults store each revision of a file in a separate 
+ archive file, which allows each revision to be much larger than before. 
+ Compression is used for files that compress well (10% or better), but 
+ delta storage of archives has been eliminated. This format speeds up revision 
+ retrieval.</p>
+
+<p class=Body>Native-I vaults store all revisions for the same file in 
+ the same archive file, which is limited to a maximum size of 2GB for StarTeam 
+ releases prior to 5.3 and 4GB for releases StarTeam 5.3 through 6.0. &nbsp;While 
+ delta storage and compression can reduce the size of this file, it continues 
+ to grow with additional revisions.</p>
+
+<p class=Body>Eventually, the Server will support only Native-II vaults. 
+ </p>
+
+<p class=Body>&nbsp;</p>
+
+<h2>How the Vaults Differ</h2>
+
+<p class=Body>Native-I and Native-II vaults both contain an Attachments 
+ folder, the server log files, and other server-related items. For example, 
+ both vaults store .dmp files and trace files, if they exist. See the <span 
+ style="font-style: italic;"><I>StarTeam Installation Guide</I></span> for more 
+ information.</p>
+
+<p class=Body>However, the basic structure of the vaults differs.</p>
+
+<p class=Body>A Native-I vault has only one Vault folder, a subfolder of 
+ the repository path. The Vault folder has one Archive and one Cache folder. 
+ Initially these folders are subfolders of the Vault folder but you can 
+ change their locations later, if necessary. For example, if the disk becomes 
+ full, you may need to move one or both of these folders (and their files) 
+ to create space for additional files and revisions.</p>
+
+<p class=Body>A Native-II vault has several hives, each of which has its 
+ own Archives folder and Cache folder. If one hive fills up, you can add 
+ another without having to change any data locations or move any archive 
+ files. When a server configuration has more than one hive, the server 
+ adds files to each of them in turn before reusing the first hive’s archive 
+ path.</p>
+
+<h2>How the Vaults Work</h2>
+
+<h3>Adding Files</h3>
+
+<p class=Body>When adding a file to the Native-II vault, the Server stores 
+ the revision in a temporary folder, then computes the MD5 value of its 
+ contents and checks how well it compresses. If the compression is 10% 
+ or greater, the server moves the compressed version to the hive's archive 
+ and the uncompressed version to the hive's cache. If the revision doesn't 
+ compress well, the uncompressed version is moved to the hive’s archive. 
+ </p>
+
+<p class=Body>The MD5 value is converted to a hex string and is used as 
+ the archive file’s name. A .gz extension is used if the file archive is 
+ compressed. If an archive file already exists with that name, no new archive 
+ file is created—although the application file’s properties are updated 
+ to identify the hive in which the revision is stored, the use of compression, 
+ and the archive file’s name.</p>
+
+<p class=Body>To add a new file to a Native-I vault, the Server simply 
+ creates a new archive file. </p>
+
+<h3>Check-in Operations</h3>
+
+<p class=Body>When checking a file revision into a Native-II vault, the 
+ Server stores the revision in a temporary folder in the next hive in the 
+ hive rotation. Then the server computes the MD5 value of the file's contents. 
+ If an archive file with the same name already exists in the hive, no new 
+ archive file is created, although the file revision’s properties are updated. 
+ If such a file does not exist, a new archive file is created. If the application 
+ file has been identified as one that compresses well, the file revision 
+ is compressed and placed in the hive’s archive with a .gz extension. Otherwise 
+ the uncompressed version is moved to the hive’s archive, while the uncompressed 
+ version is moved to the hive’s cache. </p>
+
+<p class=Body>To check a file revision into a Native-I vault, the server 
+ first makes a copy of the archive file, then adds the new revision or 
+ new forward delta to the archive file and deletes the copy.</p>
+
+<h3>Check-out Operations</h3>
+
+<p class=Body>When checking out a file revision from a Native-II vault, 
+ the Server checks the revision's hive ID and archive file name. Then it 
+ retrieves the file revision from the specified hive’s cache or archive. 
+ For StarTeam 6.0 or earlier clients, it checks the cache first, because 
+ the uncompressed version must be sent. For StarTeam 2005 and later clients, 
+ it sends the archive file directly.</p>
+
+<p class=Body>To check out a file revision from a Native-I vault, the Server 
+ first checks the cache. If the file is there, it is sent to the client. 
+ If the file is not there, it is retrieved from the archive and sent. Retrieving 
+ a particular revision from the archive file may require the application 
+ of several deltas.</p>
+
+<p class=Body>&nbsp;</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

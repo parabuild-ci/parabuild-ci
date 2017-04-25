@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Enabling Application Logs</TITLE>
+<!--<enablingapplication.html>-->
+<!--<toc parent="setting_up_your_environment" label="Enabling Application Logs" anchor="enablingapplication" sortkey="02">-->
+<!--<index parent="enabling" label="application logs" anchor="enablingapplication">-->
+<!--<index parent="application_logs" label="enabling" anchor="enablingapplication">-->
+<!--<index parent="logs" label="enabling application logs" anchor="enablingapplication">-->
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Getting Started\nGetting Started for Users\nSetting Up Your User Environment\nEnabling Application Logs");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="enablingapplication"></A>Enabling Application Logs</H1>
+<P>You have the option of creating a pvcsapp.log file that 
+records error messages within Serena ChangeMan Version Manager. Only errors that result in a 
+command failure are written to this file. In addition, unexpected conditions, 
+such as OutOfMemoryError, result in a stack trace in this file. Errors that are written to the command results log do not cause the command 
+to stop processing and are not written to the pvcsapp.log file.</P>
+<P></FONT>                                            The Application Log option is specific to each workstation that runs Version Manager and can be enabled or disabled by each user.
+<P>When you enable the Application Log, Version Manager creates a file called pvcsapp.log in your home directory. To view the log, open the file with your default editor.
+<P><B>Windows Users:</B> Your home directory is determined by the home environment variable set in your system properties. If you do not have a home environment variable set, Version Manager will place the log file in drive:\users\default where drive is the location of your Windows system files.
+<H2>To enable the application log:</H2>
+<OL>
+	<LI>Select View | Options. The Options dialog appears with the General tab active.<br><br>
+	<LI>Select the <B>Enable Application Log</B> check box.<br><br>
+	<LI>Click OK.</LI> 
+</OL>
+<BR><BR>
+
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

@@ -1,0 +1,69 @@
+<project name="DependencyFinder" default="all" basedir=".">
+
+    <description>
+	Extract info using Dependency Finder ant tasks.
+    </description>
+
+    <property name="dependencyfinder.home" value="c:/language/Java/myprojects/DependencyFinder"/>
+
+    <path id="dependencyfinder">
+        <pathelement location="${dependencyfinder.home}/classes"/>
+        <pathelement location="${dependencyfinder.home}/lib/DependencyFinder.jar"/>
+        <pathelement location="${dependencyfinder.home}/lib/jakarta-oro.jar"/>
+        <pathelement location="${dependencyfinder.home}/lib/log4j.jar"/>
+    </path>
+
+    <taskdef resource="dependencyfindertasks.properties">
+        <classpath refid="dependencyfinder"/>
+    </taskdef>
+
+    <target name="all" depends="text, csv, xml"/>
+
+    <target name="csv">
+	<oometrics allmetrics="yes"
+	           projectmetrics="yes"
+	           csv="yes"
+		   destprefix="df.metrics"
+		   configuration="${dependencyfinder.home}/etc/MetricsConfig.xml"
+		   projectname="Dependency Finder">
+	    <path>
+		<pathelement location="DependencyFinder.jar"/>
+	    </path>
+	</oometrics>
+    </target>
+
+    <target name="text">
+	<oometrics allmetrics="yes"
+	           projectmetrics="yes"
+	           txt="yes"
+		   destprefix="df.metrics"
+		   configuration="${dependencyfinder.home}/etc/MetricsConfig.xml"
+		   projectname="Dependency Finder">
+	    <path>
+		<pathelement location="DependencyFinder.jar"/>
+	    </path>
+	</oometrics>
+    </target>
+
+    <target name="xml">
+	<oometrics allmetrics="yes"
+	           projectmetrics="yes"
+	           xml="yes"
+		   destprefix="df.metrics"
+		   configuration="${dependencyfinder.home}/etc/MetricsConfig.xml"
+		   projectname="Dependency Finder">
+	    <path>
+		<pathelement location="DependencyFinder.jar"/>
+	    </path>
+	</oometrics>
+    </target>
+
+    <target name="clean">
+	<delete verbose="yes">
+	    <fileset dir=".">
+		<include name="df.metrics*"/>
+	    </fileset>
+	</delete>
+    </target>
+
+</project>

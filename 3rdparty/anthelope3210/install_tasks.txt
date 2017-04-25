@@ -1,0 +1,15 @@
+Antelope Tasks Installation:
+
+Make sure Ant is installed correctly. Locate the directory where Ant is 
+installed. Locate a directory named "lib" in that directory.
+
+Unzip the distribution file. It will create a directory named 
+AntelopeTasks_3.2.10.
+
+Change to the AntelopeTasks_3.2.10 directory. In this directory will be a 
+jar file named AntelopeTasks_3.2.10.jar.
+
+Copy the jar file to Ant's "lib" directory. 
+
+
+

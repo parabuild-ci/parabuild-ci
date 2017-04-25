@@ -1,0 +1,4 @@
+<?xml version="1.0"?><!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+<hibernate-mapping>	<!-- A default mapping for the ODMG Name class. Applications 	may specify their own mappings instead. -->	<class name="net.sf.hibernate.odmg.Name">		<id name="name" type="string">			<generator class="assigned"/>		</id>		<property name="persistentClass" type="class" not-null="true"/>		<property name="id" type="serializable" not-null="true"/>	</class>
+	<query name="byName">from n in class net.sf.hibernate.odmg.Name where n.name = ?</query>
+</hibernate-mapping>

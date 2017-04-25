@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Change Promotion Group Dialog Box</TITLE>
+<!--<changepromotiongroupdialog.html>-->
+<!--<index parent="changing" label="Change Promotion Group dialog box" anchor="changepromotion">-->
+<!--<index parent="promotion_groups" label="Change Promotion Group dialog box" anchor="changepromotion">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiChangePromotionGroupDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="changepromotion"></A>Change Promotion Group</H1>
+<P>Use the Change Promotion Group dialog box (Actions | Promotion Group | Change) to change a promotion group assigned to one or more versioned files or projects, or to a project database if you've incorrectly assigned a promotion group or if you promoted to the next level by mistake. </P>
+
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD COLSPAN=2><CENTER><B>General Tab</B></CENTER></TD>
+	</TR>
+	<TR>
+		<TD><b>Change From</b></TD>
+		<TD><!--<control name="ChangePromotionGroup.FROM_PROMOGROUP_LB">-->
+		Select the name of the promotion group currently assigned to the selected files.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>To</b></TD>
+		<TD><!--<control name="ChangePromotionGroup.TO_PROMOGROUP_LB">-->
+		Select the name of the new promotion group you want to assign to the files.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Include files in subprojects</b></TD>
+		<TD><!--<control name="ChangePromotionGroup.RECURSIVE_CB">-->
+		This field is available only when the selected item is a project or project database. Select to assign the new promotion group to all projects and files included in the project or project database.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=2><CENTER><B>Selected Files Tab</B></CENTER></TD>
+	</TR>
+	<TR>
+		<TD><B>File list</B></TD>
+		<TD><!--<control name="Files.FILES_TREE">-->
+		Review the selected files or projects to which you want to change the promotion group.
+		<!--</control>--></TD></TR>
+		<TR>
+		<TD><B>Properties button</B></TD> <TD><!--<control name="Files.PROPERTIES_BUTTON">-->
+		Click to display information on the item selected. You can view information on the item selected, including workspace settings and granted privileges.
+		<!--</control>--></TD>
+		</tr>
+	</TABLE>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="changepromotiongroup.html">Changing Promotion Groups</A></TD>
+		<TD><A HREF="aboutprommodels.html">About Promotion Models</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="prommodelrules.html">Promotion Modeling Rules</A></TD>
+		<TD><A HREF="assignpromotiongroup.html">Assigning Promotion Groups</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="removepromotiongroup.html">Removing Promotion Groups</A></TD>
+
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

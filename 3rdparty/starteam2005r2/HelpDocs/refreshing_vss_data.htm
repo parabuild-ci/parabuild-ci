@@ -1,0 +1,155 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Refreshing VSS Data</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=copyright value="Copyright© 1995-2003, Borland Software Corporation. All rights reserved.">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=534>
+<meta name=layout-width content=702>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<!--(Scripts)=======================================================-->
+
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="./ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Administering the Application\nInteroperating with Other Programs\nStarTeam and Visual SourceSafe\nRefreshing VSS Data");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Refreshing VSS Data</h1>
+
+<p class=Body>StarTeam queries the VSS database as to the current status 
+ of files before displaying them in a project view window. Only the Windows 
+ client can refresh VSS data. When you press <span style="font-weight: bold;"><B>F6</B></span> 
+ for a foreign refresh, the application calls a synchronous routine. It 
+ uses the refresh feature instead of the event hook mechanism in VSS because 
+ using the event hook mechanism can make the StarTeam repository out of 
+ sync with VSS. </p>
+
+<p class=Body>Calling the synchronous routine updates the current folder 
+ in StarTeam. Each existing file is checked for new revisions and lock 
+ status. StarTeam requires each new revision of a file to have a check-in 
+ date later than that of the previous revision. Because this restriction 
+ does not exist in VSS, StarTeam changes the check-in dates on revisions 
+ when necessary. </p>
+
+<p class=Body>New files and folders are recognized by StarTeam, and files 
+ that were deleted from VSS are also deleted from the application. However, 
+ folders that were deleted from VSS are not deleted in StarTeam.</p>
+
+<p class=Body>Using rollback views, the historical data for a deleted item 
+ can be displayed in StarTeam. However, because the deleted item was stored 
+ in VSS, rather than a StarTeam repository, revisions of the deleted item 
+ cannot be recovered. Pressing <span style="font-weight: bold;"><B>F6</B></span> 
+ will not refresh the screen in a rollback view, because these views are 
+ treated as read-only.</p>
+
+<p class=Body>It is recommended that you enable the <span style="font-weight: bold;"><B>All 
+ Descendants</B></span> button before pressing<span style="font-weight: bold;"><B> 
+ F6</B></span> so that the refresh recurses through all the known child folders.</p>
+
+<p class=Body>In some circumstances, pressing <span style="font-weight: bold;"><B>F6</B></span> 
+ produces an error message stating that StarTeam is unable to refresh an 
+ item and that the user should delete the item and press <span style="font-weight: bold;"><B>F6</B></span> 
+ again. Doing this produces a current view that correctly represents the 
+ foreign archives. However, in a rollback view, the deleted item now appears 
+ twice. </p>
+
+<p class=Body><span style="font-weight: bold;"><B>Important:</B></span>&nbsp;If 
+ several users simultaneously do foreign refreshes, application performance 
+ may become slower.</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

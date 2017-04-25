@@ -1,0 +1,1517 @@
+<!-- $Id: sqltool.xml,v 1.58 2004/10/20 01:46:51 unsaved Exp $ -->
+
+<chapter id='sqltool-chapter'>
+    <title id='sqltool-title'>SqlTool</title>
+    <subtitle>SqlTool Manual</subtitle>
+    <chapterinfo>
+        <author>
+            <firstname>Blaine</firstname><surname>Simpson</surname>
+            <email>&blaineaddr;</email>
+            <affiliation>
+                <orgname>HSQLDB Development Group</orgname>
+            </affiliation>
+        </author>
+        <edition>$Revision: 1.58 $</edition>
+        <pubdate>$Date: 2004/10/20 01:46:51 $</pubdate>
+        <keywordset>
+            <keyword>SqlTool</keyword>
+            <keyword>HSQLDB</keyword>
+            <keyword>SQL</keyword>
+            <keyword>JDBC</keyword>
+        </keywordset>
+    </chapterinfo>
+
+    <section>
+        <title>Purpose</title>
+        <simpara>
+            This document explains how to use SqlTool, the main purpose of
+            which is to read your SQL text file or stdin, and execute the SQL 
+            commands therein against a JDBC database.
+            There are also a great number of features to facilitate both
+            interactive use (such as command-line editing and aliases) and 
+            automation (such as scripting variables and SQL transaction 
+            control and error handling).
+        </simpara><simpara>
+            Some of the examples below use quoting which works exactly
+            as-is for any normal UNIX shell.
+            I have not yet tested these commands on Windows, and I doubt
+            whether the quoting will work just like this (though it is
+            possible).
+            SqlTool is still a very useful tool even if you have no quoting
+            capability at all.
+        </simpara><simpara>
+            This document is now updated for version 1.37 of SqlTool and
+            1.86 of SqlFile (the latter is the class which does most of the
+            work for SqlTool).
+            The startup banner will report both versions when you run SqlTool
+            interactively.
+            I expect this version of this document to accurately describe 
+            SqlTool for some unknown number of versions into the future.
+        </simpara>
+    </section>
+
+    <section id='baremin-section'>
+        <title>The Bare Minimum You Need to Know to Run SqlTool</title>
+        <titleabbrev id='baremin-title'>The Bare Minimum</titleabbrev>
+        <simpara>
+            If you want to use SqlTool, then you either have an SQL text file, 
+            or you want to interactively type in SQL commands.
+            If neither case applies to you, then you are looking at the wrong 
+            program.
+        </simpara>
+            <procedure>
+                <title>To run SqlTool...</title>
+                <step><simpara>
+                    Copy the file <filename>sqltool.rc</filename> from the
+                    directory <filename>src/org/hsqldb/sample</filename> of 
+                    your HSQLDB distribution
+                    to your home directory and
+                    secure access to it if your home directory is accessible
+                    to anybody else.
+                    This file will work as-is for a Memory Only database
+                    instance; or if your target is a HSQLDB Server 
+                    running on your local computer with default settings
+                    and the password for the "sa" account is blank
+                    (the sa password is blank when new HSQLDB database 
+                    instances are created).
+                    Edit the file if you need to change the target Server URL, 
+                    username, password, character set, JDBC driver, or TLS 
+                    trust store as documented in the 
+                    <link linkend='auth-section' endterm='auth-title'/> section.
+                </simpara></step><step><simpara>
+                    Find out where your hsqldb.jar file resides.
+                    It typically resides at
+<emphasis role='bold'>HSQLDB_HOME</emphasis><filename>/lib/hsqldb.jar</filename>
+                    where <emphasis role='bold'>HSQLDB_HOME</emphasis> is the
+                    base directory of your HSQLDB software installation.
+                    For this reason, I'm going to use 
+                    "$HSQLDB_HOME/lib/hsqldb.jar" as the path to
+                    <filename>hsqldb.jar</filename> for my examples, but 
+                    understand that you need to use the actual path to your
+                    own <filename>hsqldb.jar</filename> file.
+                </simpara></step><step><para>
+                    Run 
+                <informalexample><screen>
+    java -jar $HSQLDB_HOME/lib/hsqldb.jar --help</screen>
+                </informalexample>
+                    to see what command-line arguments are available.
+                    Note that you don't need to worry about setting the 
+                    CLASSPATH when you use the <literal>-jar</literal> switch
+                    to <filename>java</filename>.
+                    Assuming that you set up your SqlTool configuration file 
+                    at the default location and you want to use the HSQLDB 
+                    JDBC driver, you will want to run something like
+                <informalexample><screen>
+    java -jar $HSQLDB_HOME/lib/hsqldb.jar mem</screen>
+                </informalexample>
+                    for interactive use, or
+                <informalexample><screen>
+java -jar $HSQLDB_HOME/lib/hsqldb.jar --noinput --sql 'SQL statement;' mem</screen>
+                    </informalexample>
+                    or
+                    <informalexample><screen>
+    java -jar $HSQLDB_HOME/lib/hsqldb.jar mem filepath1.sql...</screen>
+                    </informalexample>
+                    where <literal>mem</literal> is an
+                    <emphasis>urlid</emphasis>,
+                    and the following arguments are paths to text SQL files.
+                    For the filepaths, you can use whatever wildcards your 
+                    operating system shell supports.
+                    </para><simpara>
+                    The <emphasis>urlid</emphasis> <literal>mem
+                    </literal>in these commands is a key 
+                    into your SqlTool configuration file, as explained in the 
+                    <link linkend='auth-section' endterm='auth-title'/> section.
+                    Since this is a Memory Only database, you can use SqlTool
+                    with this urlid immediately with no database setup 
+                    whatsoever (however, you can't persist any changes that 
+                    you make to this database).
+                    The sample sqltool.rc file also defines the urlid
+                    "localhost-sa" for a local HSQLDB Server.
+                    At the end of this section, I explain how you can load
+                    some sample data to play with, if you want to.
+                </simpara></step>
+            </procedure>
+        <important><simpara>
+            SqlTool does not <emphasis>commit</emphasis> DML changes by default.
+            This leaves it to the user's disgression whether to commit or
+            rollback their modifications.
+            Remember to either run the command <literal>commit;</literal>
+            before quitting SqlTool, or use the <literal>--autoCommit</literal>
+            command-line switch.
+        </simpara></important>
+        <simpara>
+            Note that the <literal>--sql</literal> switch runs the given
+            commands <emphasis>in addition</emphasis> to standard input
+            and/or specified SQL files.
+            If you want to run only SQL command(s) which you give on the
+            command-line, then use the <literal>--sql</literal> switch
+            <emphasis>and</emphasis> the <literal>--noinput</literal> switch.
+        </simpara> <simpara>
+            If you put a file named <filename>auto.sql</filename> into your
+            home directory, this file will be executed automatically every
+            time that you run SqlTool interactively and without the
+            <literal>--noAutoFile</literal> switch.
+        </simpara> <para>
+            To use a JDBC Driver other than the HSQLDB driver, you can't use
+            the <literal>-jar</literal> switch because you need to modify the
+            classpath.
+            You must add the hsqldb.jar file and your JDBC driver classes to
+            your classpath,
+            and you must tell SqlTool what the JDBC driver class name is.
+            The latter can be accomplished by either using the "--driver" 
+            switch, or setting "driver" in your config file.
+            The <link linkend='auth-section' endterm='auth-title'/> section.
+            explains the second method.  Here's an example of the first method
+            (after you have set the classpath appropriately).
+        <informalexample><screen>
+java org.hsqldb.util.SqlTool --driver oracle.jdbc.OracleDriver urlid</screen>
+        </informalexample></para>
+        <tip><simpara>
+            If the tables of query output on your screen are all messy 
+            because of lines wrapping, the best and easiest solution
+            is usually to resize your terminal emulator window to make it
+            wider.
+            (With some terms you click &amp; drag the frame edges to resize,
+            with others you use a menu system where you can enter the number
+            of columns).
+        </simpara></tip>
+        <para>
+            If you want some sample database objects and data to play with,
+            execute the <filename>sampledata.sql</filename> SQL file.
+            <filename>sampledata.sql</filename> resides in the
+            <filename>src/org/hsqldb/sample</filename> directory of your
+            HSQLDB distribution.
+            Run it like this from an SqlTool session
+    <programlisting>\i HSQLDB_HOME/src/org/hsqldb/sample/sampledata.sql</programlisting>
+            where <emphasis role='bold'>HSQLDB_HOME</emphasis> is the
+            base directory of your HSQLDB software installation.
+        </para>
+            For memory-only databases, you'll need to run this every time that
+            you run SqlTool.
+            For other (persistent) databases, the data will reside in your
+            database until you drop the tables.
+    </section>
+
+    <section id='auth-section'>
+        <title id='auth-title'>Authentication Setup</title>
+        <simpara>
+            Authentication setup is accomplished by creating a text SqlTool
+            configuration file.
+            In this section, when I say <emphasis>configuration</emphasis>
+            or <emphasis>config</emphasis> file, I mean an SqlTool 
+            configuration file (aka SqlTool RC file).
+        </simpara><simpara>
+            The following sample <filename>sqltool.rc</filename> file resides
+            in the directory <filename>src/org/hsqldb/sample</filename> of your
+            HSQLDB distribution.
+        </simpara>
+        <example>
+            <title>Sample sqltool.rc File</title>
+            <programlisting>&sqltool.rc-cdata;</programlisting>
+        </example>
+        <para>
+            You can put this file anywhere you want to, and specify the 
+            location to SqlTool by using the "--rcfile" argument.
+            If there is no reason to not use the default location (and there 
+            are situations where you would not want to), then use the default
+            location and you won't have to give "--rcfile" arguments to 
+            SQLTool.
+            The default location is <emphasis>sqltool.rc</emphasis> in your 
+            home directory.
+            If you have any doubt about where that is, then just run SqlTool 
+            with a phony urlid and it will tell you where it expects the 
+            configuration file to be.
+        <informalexample><screen>
+    java -jar $HSQLDB_HOME/lib/hsqldb.jar x</screen>
+        </informalexample></para><para>
+            The config file consists of stanza(s) like this:
+        <informalexample><screen>
+    urlid web
+    url jdbc:hsqldb:hsql://localhost
+    username web
+    password webspassword</screen>
+        </informalexample></para><para>
+            These four settings are required for every urlid.
+            (There are optional settings also, which are described a couple 
+            paragraphs down).
+            You can have as many blank lines and comments like
+        <informalexample><screen>
+    # This comment</screen>
+        </informalexample>
+        </para><simpara>
+            in the file as you like.
+            The whole point is that the <emphasis>urlid</emphasis> that you 
+            give in your SqlTool command must match a <emphasis>urlid
+            </emphasis> in your configuration file.
+        </simpara><important><simpara>
+            Use whatever facilities are at  your disposal to protect your 
+            configuration file.
+        </simpara></important><simpara>
+            It should be readable, both locally and remotely, only to users 
+            who need to use the records in it to run SqlTool.
+            On UNIX, this is easily accomplished by using <literal>chmod/chown
+            </literal> commands and making sure that it is protected from 
+            anonymous remote access (like via NFS, FTP or Samba).
+        </simpara><simpara>
+            You can also put the following optional settings into a urlid 
+            stanza.  The setting will, of course, only apply to that urlid.
+        </simpara>
+        <variablelist>
+            <varlistentry><term>charset</term><listitem><simpara>
+                Sets encoding character set for input.
+                See the <link linkend='charencoding-section'
+                    endterm='charencoding-title'/> section of the
+                <link linkend='nonint-section' endterm='nonint-title'/>
+                section.
+                You can, alternatively, set this for one SqlTool invocation 
+                by setting the system property <property>sqltool.charset
+                </property>.
+                Defaults to <literal>US-ASCII</literal>.
+            </simpara></listitem></varlistentry>
+            <varlistentry><term>driver</term><listitem><simpara>
+                Sets the JDBC driver class name.
+                You can, alternatively, set this for one SqlTool invocation 
+                by using the SqlTool switch <emphasis>--driver</emphasis>.
+                Defaults to <emphasis>org.hsqldb.jdbcDriver</emphasis>.
+            </simpara></listitem></varlistentry>
+            <varlistentry><term>truststore</term><listitem><simpara>
+                TLS trust keystore store file path as documented in the
+                <link linkend='tls-chapter' endterm='tls-title'/> chapter.
+                You usually only need to set this if the server is using a
+                non-publicly-certified certificate (like a self-signed 
+                self-ca'd cert).
+            </simpara></listitem></varlistentry>
+        </variablelist>
+        <simpara>
+            Property and SqlTool command-line switches override settings made 
+            in the configuration file.
+        </simpara>
+    </section>
+
+    <section id='int-section'>
+        <title id='int-title'>Interactive</title>
+        <para>
+            Do read the
+            <link linkend='baremin-section' endterm='baremin-title'/>
+            section before you read this section.
+        </para>
+        <para>
+            You run SqlTool interactively by specifying no SQL filepaths on 
+            the SqlTool command line.  Like this.
+        <informalexample><screen>
+    java -jar $HSQLDB_HOME/lib/hsqldb.jar urlid</screen>
+        </informalexample></para><procedure>
+            <title>What happens when SqlTool is run interactively
+                (using all default settings)
+            </title>
+            <step><simpara>
+                SqlTool starts up and connects to the specified database,
+                using your SqlTool configuration file
+                (as explained in the
+                <link linkend='auth-section' endterm='auth-title'/> section).
+            </simpara></step><step><simpara>
+                SQL file <filename>auto.sql</filename> in your home directory 
+                is executed (if there is one),
+            </simpara></step><step><simpara>
+                SqlTool displays a
+                banner showing the SqlTool and SqlFile version numbers and 
+                describes the different command types that you can give, as 
+                well as commands to list all of the specific commands available 
+                to you.
+            </simpara></step>
+        </procedure><simpara>
+            You exit your session by using the "\q" special command or ending 
+            input (like with Ctrl-D or Ctrl-Z).
+        </simpara>
+        <important><simpara>
+            Every command (regardless of type) and comment must begin at the
+            beginning of a line or immediately after a comment ends with
+            "*/").
+        </simpara><simpara>
+            You can't nest commands or comments.
+            You can only start new commands (and comments) after the preceding
+            statement has been terminated.
+            (Remember that you if you're running SqlTool interactively, you 
+            can terminate an SQL statement without executing it by entering a
+            blank line).
+        </simpara><simpara>
+            (Special Commands, Buffer Commands and PL Commands always consist
+            of just one line.
+            Any of these commands or comments may be preceded by space 
+            characters.)
+        </simpara></important>
+        <simpara>
+            When you are typing into SqlTool, you are always typing part of
+            the <emphasis>current command</emphasis>.
+            The <emphasis>buffer</emphasis> is the <emphasis>last SQL 
+            command</emphasis>.
+            If you're typing an SQL command, then the previous SQL command
+            will be in the buffer, not the one you are currently typing.
+            The current command could be any type of command, but only SQL
+            commands get moved to the buffer when they are completed.
+            When you type command-editing commands, the <emphasis>current
+            command</emphasis> is the editing command (like
+            "<literal>:s/tbl/table/</literal>"), the result of which is to
+            modify the SQL command in the buffer (which can thereafter be
+            executed).
+            The ":a" command (with no argument) is special in that it takes a
+            copy of the SQL command in the buffer and makes that the current 
+            command, leaving you in a state where you are 
+            <emphasis>appending</emphasis> to that 
+            <emphasis>now current</emphasis> command.
+            The buffer is the zeroeth item of the SQL command history.
+        </simpara>
+        <variablelist><title>Command types</title>
+            <varlistentry><term>SQL Statement</term><listitem><simpara>
+                Any command that you enter which does not begin with "\", ":", 
+                or "* " is an SQL Statement.
+                The command is not terminated when you hit ENTER, like most 
+                OS shells.
+                You terminate SQL Statements with either ";" at the end of a 
+                line, or with a blank line.
+                In the former case, the SQL Statement will be executed against 
+                the SQL database and the command will go into the command 
+                buffer and SQL command history for editing or viewing later on.
+                In the latter case (you end an SQL Statement with a blank 
+                line), the command will go to the buffer and SQL history, but 
+                will not be executed (but you can execute it later from the 
+                buffer).
+            </simpara><simpara>
+                (Blank lines are only interpreted this way when SqlTool is
+                run interactively.
+                In SQL files, blank lines inside of SQL statements remain
+                part of the SQL statement).
+            </simpara><simpara>
+                As a result of these termination rules, whenever you are 
+                entering text that is not a Special Command, Buffer Command, 
+                or PL Command, you are always 
+                <emphasis>appending</emphasis> lines to an SQL Statement.
+                (In the case of the first line, you will be appending to an
+                empty SQL statement.  I.e. you will be starting a new SQL 
+                Statement).
+            </simpara></listitem></varlistentry>
+            <varlistentry><term>Special Command</term><listitem><simpara>
+                Run the command "\?" to list the Special Commands.
+                All of the Special Commands begin with "\".
+                I'll describe some of the most 
+                useful Special Commands below.
+            </simpara></listitem></varlistentry>
+            <varlistentry><term>Buffer Command</term><listitem><simpara>
+                Run the command ":?" to list the Special Commands.
+                All of the Special Commands begin with ":".
+                Buffer commands operate upon the command "buffer", so that 
+                you can edit and/or (re-)execute previously entered commands.
+            </simpara></listitem></varlistentry>
+            <varlistentry><term>PL Command</term><listitem><simpara>
+                Procedural Langage commands.
+                Run the command "* ?" to list the PL Commands.
+                All of the PL Commands begin with "* ".
+                PL commands are for setting and using scripting variables
+                and conditional and flow control statements like
+                <literal>* if</literal> and <literal>* while</literal>.
+                Using variables as command aliases (aka macros) can be a real
+                convenience for nearly all users, so this feature will be
+                discussed briefly in this section.
+                More detailed explanation of PL variables and the other 
+                PL features, with examples, are covered in the
+                <link linkend='pl-section' endterm='pl-title'/> section.
+            </simpara></listitem></varlistentry>
+        </variablelist>
+        <variablelist><title>Essential Special Commands</title>
+            <varlistentry><term>\?</term><listitem><simpara>
+                help
+            </simpara></listitem></varlistentry>
+            <varlistentry><term>\q</term><listitem><simpara>
+                quit
+            </simpara></listitem></varlistentry>
+            <varlistentry><term>\dt [filter_substring]</term><listitem><simpara/></listitem></varlistentry>
+            <varlistentry><term>\dv [filter_substring]</term><listitem><simpara/></listitem></varlistentry>
+            <varlistentry><term>\d* [filter_substring]</term><listitem><simpara/></listitem></varlistentry>
+            <varlistentry><term>\ds [filter_substring]</term><listitem><simpara/></listitem></varlistentry>
+            <varlistentry><term>\da [filter_substring]</term><listitem><para>
+                Lists available table-like objects of the given type.
+                <itemizedlist>
+                    <listitem><simpara>t: non-system Tableѕ</simpara></listitem>
+                    <listitem><simpara>v: Views</simpara></listitem>
+                    <listitem><simpara>*: all table-like objects</simpara></listitem>
+                    <listitem><simpara>s: System tableѕ</simpara></listitem>
+                    <listitem><simpara>a: database SQL Aliases</simpara></listitem>
+                </itemizedlist>
+                If your database supports schemas, then the schema name will
+                also be listed.
+                </para><simpara>
+                If you supply an optional <emphasis>filter substring</emphasis>,
+                then only items which contain the given substring (in the object
+                name or schema name) will be listed.
+                The substring test is case-insensitive.
+                </simpara><simpara>
+                I do intent to change "\ds" to "\dS".
+                I would do it right now if the SqlTool code weren't going
+                production in two days.
+                The reason is, I want \ds for listing either Sequences (like
+                psql) or Synonyms.
+            </simpara>
+            </listitem></varlistentry>
+            <varlistentry><term>\d objectname</term><listitem><simpara>
+                Lists names of all columns in the specified table or view.
+                </simpara><tip><simpara>
+                When working with real data (as opposed to learning or playing),
+                I often find it useful to run two SqlTool sessions in two
+                side-by-side terminal emulator windows.
+                I do all of my real work in one window, and use the other
+                mostly for \d commands.
+                This way I can refer to the data dictionary while writing SQL
+                commands, without having to scroll.
+            </simpara></tip></listitem></varlistentry>
+            <varlistentry><term>\s</term><listitem><simpara>
+                Shows the SQL command history.
+                The SQL command history will show a number (a negative number) 
+                for each SQL Statement that has made it into the buffer so 
+                fare (by either executing or entering a blank line).
+                You can then use the "\-" command (which is described next) to 
+                retrieve commands from the SQL history to work with.
+                To list just the very last command, you would use the ":l" 
+                buffer command to list the buffer contents, instead of this 
+                command.
+            </simpara></listitem></varlistentry>
+            <varlistentry><term>\-[3]</term><listitem><simpara>
+                Enter "\" followed by the command number from SQL history, like
+                "\-3".
+                That command will be written to the buffer so that you can 
+                execute it or edit it using buffer commands.
+                </simpara><simpara>
+                (You can append a semicolon to a recall command in order
+                to execute the recalled buffer immediately, like "\-3;".
+                This is actually just a shortcut for running the Special
+                Command "\-3" and the Buffer Command ":;".)
+            </simpara></listitem></varlistentry>
+        </variablelist>
+        <simpara>
+            This list here includes only the <emphasis>essential</emphasis> 
+            Special Commands, but n.b. that there are other useful Special 
+            Commands which you can list by running <literal>\?</literal>.
+            (You can, for example, execute SQL from external SQL files, and 
+            save your interactive SQL commands to files).
+            Some specifics of these other commands are specified immediately 
+            below, and the 
+            <link linkend='report-section' endterm='report-title'/>
+            section explains how to use the "\o" and "\H" special commands to 
+            generate reports.
+        </simpara> <simpara>
+            Be aware that the <literal>\!</literal> Special Command does
+            not work for external programs that read from standard input.
+            You can invoke non-interactive and graphical interactive programs, 
+            but not command-line interactive programs.
+        </simpara> <simpara>
+            SqlTool executes <literal>\!</literal> programs directly, it does 
+            not run an operating system shell (this is to avoid OS-specific
+            code in SqlTool).
+            Because of this, you can give as many command-line arguments
+            as you wish, but you can't use shell wildcards or redirection.
+        </simpara> <simpara>
+            The \w command can be used to store any command in your SQL 
+            history to a file.
+            Just restore the command to the buffer (which is the 0th
+            element of the history) with a command like "\-4" before you give
+            the \w command.
+        </simpara>
+        <variablelist><title>Buffer Commands</title>
+            <varlistentry><term>:?</term><listitem><simpara>
+                help
+            </simpara></listitem></varlistentry>
+            <varlistentry><term>:;</term><listitem><simpara>
+                Executes the SQL statement in the current buffer against the 
+                database.
+            </simpara></listitem></varlistentry>
+            <varlistentry><term>:l</term><listitem><simpara>
+                (This is a lower case L).
+                List the current contents of the buffer.
+            </simpara></listitem></varlistentry>
+            <varlistentry><term>:a</term><listitem><simpara>
+                Enter append mode with the contents of the buffer as the 
+                current SQL Statement.
+                Things will be exactly as if you physically re-typed 
+                the command that is in the buffer.
+                Whatever line you type next will be appended to the SQL 
+                Statement.
+                You can execute the command by terminating a line with ";",
+                or send it back to the buffer by entering a blank line.
+                </simpara><simpara>
+                You can, optionally, put a string after the :a, in which
+                case this text will be appended and you will remain in
+                append mode.
+                (Unless the text ends with ';', in which case the resultant
+                statement will be executed immediately).
+                Note that if you do put text after the "a",
+                <emphasis>exactly</emphasis> what you type immediately after
+                "a" will be appended.
+                If your buffer contains
+                <literal>SELECT x FROM mytab</literal> and you run
+                <literal>a:le</literal>, the resultant command will be
+                <literal>SELECT x FROM mytable</literal>.
+                If your buffer contains
+                <literal>SELECT x FROM mytab</literal> and you run
+                <literal>a: ORDER BY y</literal>, the resultant command will be
+                <literal>SELECT x FROM mytab ORDER BY y</literal>.
+                Notice that in the latter case the append text begins with a
+                space character.
+            </simpara></listitem></varlistentry>
+            <varlistentry>
+                <term>:s/from string/to string/switches</term>
+                <listitem>
+                <simpara>
+                This is the primary command for SqlTool command editing-- 
+                it operates upon the current buffer.
+                The "to string" and the "switches" are both optional.
+                To start with, I'll discuss the use and behavior if you don't
+                supply any substitution mode switches.
+                </simpara>
+                <para>
+                Don't use "/" if it occurs in either "from string" or "to 
+                string".
+                You can use any character that you want in place of "/", but 
+                it must not occur in the <emphasis>from</emphasis> or 
+                <emphasis>to</emphasis> strings.
+                Example
+                <informalexample><screen>
+    :s@from string@to string@</screen>
+                </informalexample></para><simpara>
+                The <emphasis>to</emphasis> string is substituted for the first 
+                occurrence of the (case-specific)<emphasis>from</emphasis>
+                string.
+                The replacement will consider the entire SQL statement, even
+                if it is a multi-line statement.
+                </simpara><para>
+                All occurrences of "$" in the <emphasis>from</emphasis> string
+                and the <emphasis>to</emphasis> string are treated as line 
+                breaks.
+                For example, <emphasis>from</emphasis> string of
+                "<literal>*$FROM mytable</literal>" would 
+                actually look for occurrences of
+                <informalexample><screen>
+     *
+     FROM mytable</screen>
+                </informalexample></para><para>
+                Here is a another meaningful example using $.
+                <informalexample><screen>
+    :s/e)$/e) WHERE col1 is not null$/</screen>
+                </informalexample></para><simpara>
+                This command appends
+                "<literal>WHERE col1 is not null</literal>" to the 
+                line(s) which end with "e)".
+                </simpara><para>
+                The <emphasis>to</emphasis> string may be empty, in which case, 
+                occurrences of the <emphasis>from</emphasis> string are just 
+                deleted.  For example
+                <informalexample><screen>
+    :s/this//</screen>
+                </informalexample></para><simpara>
+                would remove the first occurrence of "this".
+                (With the "g" substitution mode switch, as explained below,
+                it would remove all occurrences of "this").
+                </simpara><simpara>
+                Don't end a <emphasis>to</emphasis> string with ";" in attempt to make a SQL
+                statement execute.
+                There is a substitution mode switch to use for that purpose.
+                </simpara><para>
+                You can use any combination of the substitution mode switches.
+                <itemizedlist>
+                    <listitem><para>
+                        Use "i" to make the searches for 
+                        <emphasis>from</emphasis> string case insensitive.
+                    </para></listitem> <listitem><para>
+                        Use "g" to substitute globally, i.e., for all 
+                        occurrences of <emphasis>from</emphasis> string which 
+                        are found in the text under consideration.
+                    </para></listitem> <listitem><para>
+                        Use ";" to execute the command immediately after the
+                        substitution is performed.
+                    </para></listitem> <listitem><para>
+                        Use an integer (from 1 to 9) to narrow the text under
+                        consideration to a specific line of a multi-line
+                        buffer.
+                    </para></listitem>
+                </itemizedlist>
+            </para>
+            <simpara>
+                The substitution facility doesn't support any regular
+                expressions at all.
+                When we stop supporting Java versions older than 1.4, I'll
+                start supporting regular expressions and other advanced
+                string manipulation functions.
+            </simpara> </listitem></varlistentry>
+        </variablelist>
+
+        <variablelist><title>Essential PL Command</title>
+            <varlistentry><term>* VARNAME = value</term><listitem><simpara>
+                Set the value of a variable.
+                If the variable doesn't exist yet, it will be created.
+            </simpara><para>
+                    If you set a variable to an SQL statement (without the
+                    terminating ";") you can then use it as an alias like
+                    <literal>*VARNAME</literal>, as shown in this example.
+                <example id='alias-example'>
+                    <title>Defining and using an alias (PL variable)</title>
+                    <screen>
+    * q = SELECT COUNT(*) FROM mytable
+    *q;
+    *q WHERE mass > 200;</screen>
+                </example>
+            </para><simpara>
+                If you put variable definitions into the SQL file
+                <filename>auto.sql</filename> in your home directory, those
+                aliases/variables will always be available for interactive use.
+        </simpara></listitem></varlistentry>
+        </variablelist>
+        <simpara>
+            See the <link linkend='pl-section' endterm='pl-title'/> section 
+            below for information on using variables in other ways, and 
+            information on the other PL commands and features.
+        </simpara>
+        <section><title>SQL History</title>
+        <simpara>
+            The SQL history shown by the \s command, and used by other commands,
+            is truncated to 20 entries, since the utility comes from being 
+            able to quickly view the history list.
+            You can change the history length by setting the system property
+            <literal>sqltool.historyLength</literal> to an integer like
+            <screen>
+java -Dsqltool.historyLength=40 -jar $HSQLDB_HOME/lib/hsqldb.jar urlid</screen>
+        </simpara> <simpara>
+            The SQL history list explicitly does not contain Special, Buffer,
+            or PL commands.
+            It only contains SQL commands, valid or invalid, successful or 
+            unsuccessful.
+            The reason for including bad SQL commands is so that you can 
+            recall and edit them if you want to.
+            The same applies to the editing buffer (which is element 0
+            of the history).
+        </simpara>
+        </section>
+    </section>
+
+    <section><title>Raw mode</title>
+        <para>
+            If for some reason you want SqlTool to process your commands as 
+            if it were reading an SQL file (i.e., no startup banner,
+            no command prompts, no Buffer/history commands, aborting upon
+            failure by default, allow blank lines with SQL statements),
+            then specify a SQL filepath of "-", like
+        <informalexample><screen>
+    java -jar $HSQLDB_HOME/lib/hsqldb.jar urlid -</screen>
+        </informalexample></para><para>
+            This is very useful in (at least) two situations.
+            This is how you would pipe input into SqlTool, which is 
+            extremely useful in shell scripts where the SQL code is
+            generated dynamically, like
+        <example><title>Piping input into SqlTool</title><screen>
+    echo "Some SQL commands with '$VARIABLES';" |
+    java -jar $HSQLDB_HOME/lib/hsqldb.jar urlid -</screen>
+        </example></para><simpara>
+            This is also a good way to test what SqlTool will do when it 
+            encounters a specific command in a SQL file.
+            You <emphasis>emulate</emphasis> SQL file execution while
+            giving SqlTool commands interactively.
+        </simpara>
+    </section>
+
+    <section id='nonint-section'>
+        <title id='nonint-title'>Non-Interactive</title>
+        <simpara>
+            Read the <link linkend='int-section' endterm='int-title'/>
+            section if you have not already, 
+            because much of what is in this section builds upon that.
+            Even if your plans are to run SqlTool non-interactively, you 
+            should really learn to run it interactively because it's such a 
+            powerful debugging tool, and you can use it to prototype sql 
+            scripts.
+        </simpara>
+        <important><simpara>
+            If you're doing data updates, remember to issue a commit command
+            or use the <literal>--autoCommit</literal> switch.
+        </simpara></important>
+        <simpara>
+            As you'll see, SqlTool has many features that are very 
+            convenient for scripting.  But what really makes it superior for
+            automation tasks (as compared to SQL tools from other vendors)
+            is the ability to reliably detect errors and to control JDBC
+            transactions.
+        </simpara>
+        <section><title>Giving SQL on the Command Line</title>
+            <para>
+                If you just have a couple SQL commands to run, you can run them 
+                directly from the comand-line or from a shell script without an 
+                SQL file, like this.
+            <informalexample><screen>
+java -jar $HSQLDB_HOME/lib/hsqldb.jar --noinput --sql 'SQL statement;' urlid</screen>
+            </informalexample></para><para>
+                Since SqlTool executes SQL statements only when a statement 
+                line is terminated with ";", you can only execute more than one 
+                SQL statement this way if your OS shell has some mechanism to 
+                pass linebreaks in arguments through to the target program.
+                With any Bourne-compatible shell, you can include linebreaks in 
+                the SQL statements like this.
+            <informalexample><screen>
+java -jar $HSQLDB_HOME/lib/hsqldb.jar --noinput --sql 'SQL statement;' urlid '
+    SQL statement number one;
+    SQL statement
+        number two;
+    SQL statement three;
+' urlid</screen>
+            </informalexample></para><simpara>
+                If you don't give the <literal>--noinput</literal> switch, then 
+                after executing the given statements, an interactive session 
+                will be started.
+            </simpara><para>
+                The <emphasis>--sql</emphasis> switch is very useful for 
+                setting shell variables to the output of SQL Statements, like 
+                this.
+            <informalexample><programlisting>
+    # A shell script
+    USERCOUNT=`java -jar $HSQLDB_HOME/lib/hsqldb.jar --noinput --sql 'select count(*) from usertbl;' urlid` || {
+        # Handle the SqlTool error
+    }
+    echo "There are $USERCOUNT users registered in the database."
+    [ "$USECOUNT" -gt 3 ] &amp;&amp; {   # If there are more than 3 users registered
+        # Some conditional shell scripting</programlisting></informalexample>
+            </para>
+        </section>
+        <section><title>SQL Files</title>
+            <simpara>
+                Just give paths to sql text file(s) on the command line after 
+                the <emphasis>urlid</emphasis>.
+            </simpara><para>
+                Often, you will want to redirect output to a file, like
+            <informalexample><screen>
+java -jar $HSQLDB_HOME/lib/hsqldb.jar sql... > /tmp/log.sql 2>&amp;1</screen>
+            </informalexample></para><simpara>
+                (Skip the "2>&amp;1" if you're on Windows).
+            </simpara><simpara>
+                You can also execute SQL files from an interactive session with
+                the "\i"' Special Command,
+                but be aware that the default behavior in an interactive 
+                session is to continue upon errors.
+                If the SQL file was written without any concern for error
+                handling, then the file will continue to execute after errors
+                occur.
+                You could run <literal>\* false</literal> before 
+                <literal>\i filename</literal>, but then your SqlTool session
+                will exit if an error is encountered in the SQL file.
+                If you have an SQL file without error handling, and you want
+                to abort that file when an error occurs, but not exit 
+                SqlTool, the easiest way to accomplish this is usually to add
+                <literal>\* false</literal> to the top of the script.
+            </simpara><simpara>
+                If you specify multiple SQL files on the command-line, the
+                default behavior is to exit SqlTool if any of the SQL files
+                encounters an error.
+            </simpara><simpara>
+                <emphasis role='bold'>
+                SQL files themselves have ultimate control over error handling.
+                </emphasis>
+                Regardless of what command-line options are set, or what 
+                commands you give interactively, if a SQL file gives error
+                handling statements, they will take precedence.
+            </simpara><simpara>
+                You can also use \i in SQL files.
+                This results in nested SQL files.
+            </simpara><simpara>
+                You can use the following SQL file,
+                <filename>sample.sql</filename>, which resides in the
+                <filename>src/org/hsqldb/sample</filename> directory of your
+                HSQLDB distribution.
+                It contains SQL as well as Special Commands making good
+                use of most of the Special Commands documented below.
+            </simpara>
+            <programlisting>&sample.sql-cdata;</programlisting>
+            <para>
+                You can execute this SQL file with a Memory Only database with 
+                a command like
+            <informalexample><programlisting>
+    java -jar $HSQLDB_HOME/lib/hsqldb.jar  --sql "create user 'tomcat' password 'x';" mem path/to/hsqldb/src/org/hsqldb/sample/sample.sql</programlisting>
+            </informalexample>
+            </para><simpara>
+                (The <literal>--sql "create..."</literal> arguments create an
+                account which the script uses).
+            </simpara>
+        </section>
+        <section>
+            <title>Optimally Compatible SQL Files</title>
+            <simpara>
+                If you want your SQL scripts optimally compatible among other
+                SQL tools, then don't use any Special or PL Commands.
+                SqlTool has default behavior which I think is far superior to 
+                the other SQL tools, but you will have to disable these 
+                defaults in order to have optimally compatible behavior.
+            </simpara><para>
+                These switches provide compatibilty at the cost of poor 
+                control and error detection.
+                <itemizedlist>
+                    <listitem>
+                        <simpara>
+                            --continueOnErr
+                        </simpara> <simpara>
+                            The output will still contain error messages about
+                            everything that SqlTool doesn't like
+                            (malformatted commands, SQL command failures, 
+                            empty SQL commands), but SqlTool will continue to
+                            run.
+                            Errors will not cause rollbacks (but that won't
+                            matter because of the following setting).
+                        </simpara>
+                    </listitem>
+                    <listitem><simpara>--autoCommit</simpara></listitem>
+                </itemizedlist>
+            </para><simpara>
+                You don't have to worry about accidental expansion of 
+                PL variables, since SqlTool will never expand PL variables
+                if you don't set any variables on the command line, or give 
+                any "* " PL commands.
+                (And you could not have "* " commands in a compatible SQL 
+                file).
+            </simpara>
+        </section>
+        <section><title>Comments</title>
+            <simpara>
+                SQL comments of the form <literal>/*...*/</literal> must begin
+                where a (SQL/Special/Buffer/PL) Command could begin, and they
+                end with the very first "*/" (regardless of quotes, nesting,
+                etc.
+                You may have as many blank lines as you want inside of a
+                comment.
+            </simpara>
+            <example><title>Valid comment example</title><programlisting>
+    SELECT count(*) FROM atable;
+    /* Lots of
+     comments interspersed among
+     several lines */   SELECT count(*)
+    FROM btable;</programlisting>
+            </example>
+            <simpara>
+                Notice that a command can start immediate after the comment
+                ends.
+            </simpara>
+            <example><title>Invalid comment example</title><programlisting>
+    SELECT count(*) FROM
+    /* atable */
+    btable;</programlisting>
+            </example>
+            <simpara>
+                This comment is invalid because you could not start another
+                command at the comment location (because it is within an SQL
+                Statement).
+            </simpara>
+            <simpara>
+                You can try using <literal>/*...*/</literal> in other locations,
+                and <literal>--</literal> style SQL comments, but SqlTool will
+                not treat them as comments.
+                If they occur within an SQL Statment, SqlTool will pass them to
+                the database engine, and the DB engine will determine whether
+                to parse them as comments.
+            </simpara>
+        </section>
+        <section>
+            <title>Special Commands and Buffer Commands in SQL Files</title>
+            <simpara>
+                Don't use Buffer Commands in your sql files, because they won't 
+                work.
+                Buffer Commands are for interactive use only.
+            </simpara>
+            <variablelist>
+                <varlistentry><term>\q [abort message]</term><listitem><para>
+                    Be aware that the \q command will cause SqlTool to 
+                    completely exit.
+                    If a script <filename>x.sql</filename> has a \q command in
+                    it, then it doesn't matter if the script is executed like
+                    <screen>
+    java -jar .../hsqldb.jar urlid a.sql x.sql z.sql</screen> or if you use
+                    \i to read it in interactively, or if another SQL file
+                    uses \i to nest it.
+                    If \q is encountered, SqlTool will quit.
+                    See the <link linkend='pl-section' endterm='pl-title'/> 
+                    section for commands to abort an SQL file (or even parts
+                    of an SQL file) without causing SqlTool to exit.
+                </para><simpara>
+                    \q takes an optional argument, which is an abort message.
+                    If you give an abort message, the message is displayed to
+                    the user and SqlTool will exit with a failure status.
+                    If you give no abort message, then SqlTool will exit 
+                    quietly with successful status.
+                </simpara></listitem></varlistentry>
+                <varlistentry><term>\p [text to print]</term><listitem><simpara>
+                    Print the given string to stdout.
+                    Just give "\p" alone to print a blank line.
+                </simpara></listitem></varlistentry>
+                <varlistentry><term>\i /path/to/file.sql</term><listitem><simpara>
+                    Include another SQL file at this location.
+                    You can use this to nest SQL files.
+                    For database installation scripts I often have a master
+                    SQL file which includes all of the other SQL files in the
+                    correct sequence.
+                    Be aware that the current continue-upon-error behavior
+                    will apply to included files until such point as the SQL
+                    file runs its own error handling commands.
+                </simpara></listitem></varlistentry>
+                <varlistentry><term>\H</term><listitem><para>
+                    Toggle HTML output mode.
+                    If you redirect output to a file, this can make a long
+                    session log much easier to view.
+                    This will HTML-ify the entire session.
+                    For example,
+                    <informalexample><screen>
+java -jar $HSQLDB_HOME/lib/hsqldb.jar urlid filepath1.sql... > /tmp/log.html 2>&amp;1</screen>
+                    </informalexample>
+                    (See the
+                    <link linkend='report-section' endterm='report-title'/> 
+                    section about how to easily store just the query output
+                    to file.)
+                </para></listitem></varlistentry>
+                <varlistentry><term>\a [true|false]</term><listitem><simpara>
+                    This turns on and off SQL transaction autocommits.
+                    Auto-commit defaults to false, but you can change that
+                    behavior by using the <literal>--autoCommit</literal>
+                    command-line switch.
+                </simpara></listitem></varlistentry>
+                <varlistentry><term>\* [true|false]</term><listitem><simpara>
+                    A "true" setting tells SqlTool to continue when errors are 
+                    encountered.
+                    The current transaction will not be rolled back upon SQL
+                    errors, so if \* is true, then run the
+                    <literal>ROLLCACK;</literal> command yourself if that's 
+                    what you want to happen.
+                    The default for interactive use is to continue upon error, 
+                    but the default for non-interactive use is to abort upon 
+                    error.
+                    You can override this behavior by using the
+                    <literal>--continueOnErr</literal> or the
+                    <literal>--abortOnErr</literal> command-line switch.
+                    </simpara><simpara>
+                    With database setup scripts, I usually find it convenient 
+                    to set "true" before dropping tables (so that things will 
+                    continue if the tables aren't there), then set it back to 
+                    false so that real errors are caught.
+                    <literal>DROP TABLE tablename IF EXISTS;</literal>
+                    is a more elegant, but less portable, way to accomplish
+                    the same thing.
+                    </simpara>
+                    <tip><simpara>
+                        It depends on what you want your SQL files to do, of
+                        course, but I usually want my SQL files to abort when
+                        an error is encountered, without necessarily killing 
+                        the SqlTool session.
+                        If this is the behavior that you want, then
+                        put an explicit <literal>\* false</literal>
+                        at the top of your SQL file and turn on
+                        continue-upon-error only for sections where you really
+                        want to permit errors, or where you are using PL
+                        commands to handle errors manually.
+                        This will give the desired behavior whether your 
+                        script is called by
+                        somebody interactively, from the SqlTool command-line, 
+                        or included in another SQL file (i.e. nested).
+                    </simpara></tip><important><simpara>
+                        The default settings are usually best for people who 
+                        don't want to put in any explicit \* or error handling 
+                        code at all.
+                        If you run SQL files from the SqlTool command line,
+                        then any errors will cause SqlTool to roll back and
+                        abort immediately.
+                        If you run SqlTool interactively and invoke SQL files
+                        with \i commands, the scripts will continue to run
+                        upon errors (and will not roll back).
+                        This behavior was chosen because there are lots of
+                        SQL files out there that produce errors which can be
+                        ignored; but we don't want to ignore errors that a
+                        user won't see.
+                        I reiterate that any and all of this behavior can (and 
+                        often should) be changed by Special Commands run in 
+                        your interactive shell or in the SQL files.
+                        Only you know whether errors in your SQL files can
+                        safely be ignored.
+                    </simpara></important>
+                </listitem></varlistentry>
+            </variablelist>
+        </section>
+        <section><title>Automation</title>
+            <simpara>
+                SqlTool is ideal for mission-critical automation because,
+                unlike other SQL tools, SqlTool returns a dependable exit 
+                status and gives you control over error handling and SQL 
+                transactions.
+                Autocommit is off by default, so you can build a completely
+                dependable solution by intelligently using \* commands 
+                (Continue upon Errors) and commit statements, and by
+                verifying exit statuses.
+            </simpara> <simpara>
+                Using the SqlTool Procedural Language, you have ultimate
+                control over program flow, and you can use variables for
+                database input and output as well as for many other purposes.
+                See the <link linkend='pl-section' endterm='pl-title'/>
+                section.
+            </simpara>
+        </section>
+        <section><title>Getting Interactive Functionality with SQL Files</title>
+            <para>
+                Some script developers may run into cases where they want to 
+                run with sql files but they alwo want SqlTool's interactive 
+                behavior.
+                For example, they may want to do command recall in the sql file,
+                or they may want to log SqlTool's command-line prompts (which 
+                are not printed in non-interactive mode).
+                In this case, do not give the sql file(s) as an argument to 
+                SqlTool, but pipe them in instead, like
+            <informalexample><screen>
+java -jar $HSQLDB_HOME/lib/hsqldb.jar urlid &lt; filepath1.sql &gt; /tmp/log.html 2&gt;&amp;1</screen>
+            </informalexample>
+                or
+            <informalexample><screen>
+cat filepath1.sql... |
+java -jar $HSQLDB_HOME/lib/hsqldb.jar urlid &gt; /tmp/log.html 2&gt;&amp;1</screen>
+            </informalexample>
+            </para>
+        </section>
+        <section id='charencoding-section'><title id='charencoding-title'>
+                Character Encoding</title>
+            <para>
+                SqlTool defaults to the US-ASCII character set (for reading).
+                You can use another character set by setting the system 
+                property <property>sqltool.charset</property>, like
+            <informalexample><screen>
+java -Dsqltool.charset=UTF-8 -jar $HSQLDB_HOME/lib/hsqldb.jar urlid filepath1.sql...</screen>
+            </informalexample></para><simpara>
+                You can also set this per urlid in the SqlTool configuration 
+                file.
+                See the <link linkend='auth-section' endterm='auth-title'/>
+                section about that.
+            </simpara>
+        </section>
+    </section>
+
+    <section id='report-section'>
+        <title id='report-title'>Generating Text or HTML Reports</title>
+        <simpara>
+            This section is about making a file containing the output of 
+            database queries.
+            You can generate reports by using operating system facilities
+            such as redirection, tee, and cutting and pasting.
+            But it is much easier to use the "\o" and "\H" special commands.
+        </simpara> <procedure>
+            <title>Writing query output to an external file</title>
+            <step><simpara>
+                By default, everthing will be done in plain text.
+                If you want your report to be in HTML format, then give the
+                special command <literal>\H</literal>.
+                If you do so, you will probably want to use filenames with an
+                suffix of ".html" or ".htm" instead of ".txt" in the next step.
+            </simpara></step> <step><simpara>
+                Run the command <literal>\o path/to/reportfile.txt</literal>.
+                From this point on, output from your queries will be appended
+                to the specified file.
+                (I.e. another <emphasis>copy</emphasis> of the output is
+                generated.)
+                This way you can continue to monitor or use output as usual as
+                the report is generated.
+            </simpara></step> <step><simpara>
+                When you want SqlTool to stop writing to the file, run
+                <literal>\o</literal> (or just quit SqlTool if you have no 
+                other work to do).
+            </simpara></step> <step><simpara>
+                If you turned on HTML mode with <literal>\H</literal> before,
+                you can run <literal>\H</literal> again to turn it back off,
+                if you wish.
+            </simpara></step>
+        </procedure>
+        <simpara>
+            It is not just the output of "SELECT" statements that will make
+            it into the report file, but
+            <itemizedlist>
+                <title>Kinds of output that get teed to \o files</title>
+                <listitem><simpara>
+                    Output of SELECT statements.
+                </simpara></listitem> <listitem><simpara>
+                    Output of all "\d" Special Commands.
+                    (I.e., "\dt", "\dv", etc., and "\d OBJECTNAME").
+                </simpara></listitem> <listitem><simpara>
+                    Output of "\p" Special Commands.
+                    You will want to use this to add titles, and perhaps
+                    spacing, for the output of individual queries.
+                </simpara></listitem>
+            </itemizedlist>
+            Other output will go to your screen or stdout, but will not make
+            it into the report file.
+            Be aware that no error messages will go into the report file.
+            If SqlTool is run non-interactively (including if you give any
+            SQL file(s) on the command line), SqlTool will abort with an error
+            status if errors are encountered.
+            The right way to handle errors is to check the SqlTool exit status.
+            (The described error-handling behavior can be modified with
+            SqlTool command-line switches and Special Commands).
+        </simpara> <warning><simpara>
+            Remember that \o <emphasis>appends</emphasis> to the named file.
+            If you want a new file, then use a new file name or remove the
+            targe file ahead of time.
+        </simpara></warning><tip><simpara>
+            So that I don't end up with a bunch of junk in my report file, I
+            usually leave \o off while I perfect my SQL.  With \o off,
+            I perfect the SQL query until it produces on my screen exactly
+            what I want saved to file.
+            At this point I turn on \o and run ":;" to repeat the last SQL
+            command.
+            If I have several complex queries to run, I turn \o off and
+            repeat until I'm finished.
+            (Every time you turn \o on, it will append to the file, just
+            like we need).
+            </simpara><simpara>
+            Usually it doesn't come to mind that I need a wider screen until
+            a query produces lines that are too long.
+            In this case, stretch your window and repeat the last command with
+            the ":;" Buffer Command.
+        </simpara></tip>
+    </section>
+
+    <section id='pl-section'>
+        <title id='pl-title'>Procedural Language</title>
+        <subtitle>Aka PL</subtitle>
+        <simpara>
+            Most importantly, run <filename>SqlTool</filename> interactively 
+            and give the "* ?" command to see what PL commands are available to 
+            you.
+        </simpara> <simpara>
+            PL variables will only be expanded after you run a PL command (or 
+            set variable(s) from the command-line).
+            We only want to turn on variable expansion if the user wants
+            variable expansion.
+            People who don't use PL don't have to worry about strings getting
+            accidentally expanded.
+        </simpara> <simpara>
+            For all PL commands (other than plain "*") the leading "*" must
+            be followed by whitespace.
+            The only reason for this requirement is to provide for
+            aliases, i.e., the ability to short-cut
+            <literal>*VARNAME</literal> for <literal>*{VARNAME}</literal> at
+            the beginning of a command.
+            Therefore, "*X" is an alias whereas "* X" is a PL command.
+        </simpara> <simpara>
+            The command "*" is an exception to this rule.
+            it doesn't matter whether you put white space after it.
+            All other PL commands imply the "*" command, so you only need to 
+            use the "*" statement if your script uses PL variables
+            and it is possible that no variables may be set before-hand (and
+            no PL commands have been run previously).
+            In this case, without "*", your script would silently use a
+            literal value like "*{x}" instead of trying to expand it.
+            With a preceding "*" command, PL will notice that the variable
+            <literal>x</literal> has not been set and will generate an error.
+            (If x had been set here will be no issue because setting a
+            variable automatically turns on PL variable expansion).
+        </simpara> <para>
+            Aliasing may only be used for SQL statements.
+            You can define variables for everything in a Special or PL Command,
+            except for the very first character ("\" or "*").
+            Therefore, you can use variables but not aliasing in Special and
+            PL Commands.
+            Here is a hyperbolically impractical example to show the extent to
+            which PL variables can be used in Special commands even though you
+            can not use them as aliases.
+            <programlisting>
+        sql> * qq = p Hello Butch
+        sql> \*{qq} done now
+        Hello Butch done now</programlisting>
+        </para>
+        <section>
+            <title>Variables</title>
+            <itemizedlist>
+                <listitem><simpara>
+                    Use the <literal>* list</literal> command to list some or
+                    all variables and their values.
+                </simpara></listitem> <listitem><simpara>
+                    You can set variables using the
+                    <literal>* VARNAME = value</literal> command.
+                </simpara></listitem> <listitem><simpara>
+                    You can also set variables using the 
+                    <literal>--setvar</literal> command-line switch.
+                    I give a very brief but useful example of this below.
+                </simpara></listitem> <listitem><simpara>
+                    Variables are always expanded in SQL, Special, and PL
+                    commands if they are written like
+                    <literal>*{VARNAME}</literal>
+                    (assuming that a PL command has been run previously).
+                    Your SQL scripts can give good feedback by echoing the
+                    value of variables with the "\p" special command.
+                </simpara></listitem> <listitem><simpara>
+                    Variables written like <literal>*VARNAME</literal> are
+                    expanded if they <emphasis>begin</emphasis> an SQL
+                    Statement.
+                    (They must also be followed by whitespace or terminate the
+                    Statement).
+                    I usually refer to this use of PL variables as
+                    <emphasis>aliasing</emphasis>.
+                    If the value of a variable is an entire SQL command, you
+                    generally do not want to include the terminating ";" in
+                    the value.
+                    There is an example of this 
+                    <link linkend='alias-example'>above</link>.
+                </simpara></listitem> <listitem><simpara>
+                    Variables are normally written like 
+                    <literal>*VARNAME</literal> in logical expressions to
+                    prevent them from being evaluated too early.
+                    See below about logical expressions.
+                </simpara></listitem> <listitem><para>
+                    You can't do math with expression variables, but you
+                    can get functionality like the traditional
+                    <literal>for (i = 0; i &lt; x; i++)</literal> by appending
+                    to a variable and testing the string length, like
+                    <programlisting>
+    * while (*i &lt; ${x})
+        * i = *{i}.</programlisting>
+                    <literal>i</literal> will be a growing line of dots.
+                </para></listitem>
+            </itemizedlist>
+            <simpara>
+                Here is a short SQL file that gives the specified user write
+                permissions on some application tables.
+            </simpara>
+            <example><title>Simple SQL file using PL</title>
+                <programlisting>
+    /*
+       grantwrite.sql
+
+       Run SqlTool like this:
+           java -jar path/to/hsqldb.jar -setvar USER=debbie grantwrite.sql
+     */
+
+    /* Explicitly turn on PL variable expansion, in case no variables have
+       been set yet.  (Only the case if user did not set USER).
+    */
+    *
+
+    GRANT all ON book TO *{USER};
+    GRANT all ON category TO *{USER};</programlisting>
+            </example>
+            <simpara>
+                Note that this script will work for any (existing) user just
+                by supplying a different user name on the command-line.
+                I.e., no need to modify the tested and proven script.
+                There is no need for a <literal>commit</literal> statement
+                in this SQL file since no DML is done.
+                If the script is accidentally run without setting the
+                USER variable, SqlTool will give a very clear notificaton of
+                that.
+            </simpara> <simpara>
+                The purpose of unsetting the INIT variable is just to 
+                initialize PL so that the *{USER} variables will be expanded.
+                (This would not be necessary if the USER variable, or any
+                other variable, were set, but we don't want to depend upon 
+                that).
+            </simpara>
+        </section>
+        <section>
+            <title>Logical Expressions</title>
+            <simpara>
+                Logical expressions occur only inside of logical expression
+                parentheses in PL statements.
+                For example, <literal>if (*var1 > astring)</literal> and
+                <literal>while (*checkvar)</literal>.
+                (The parentheses after "foreach" do not enclose a logical
+                expression, they just enclose a list).
+            </simpara> <simpara>
+                There is a critical difference between 
+                <literal>*{VARNAME}</literal> and <literal>*VARNAME</literal>
+                inside logical expressions.
+                <literal>*{VARNAME}</literal> is expanded one time when the
+                parser first encounters the logical expression.
+                <literal>*VARNAME</literal> is re-expanded every time that the
+                expression is evaluated.
+                So, you would never want to code
+                <literal>* while (*{X} &lt; 5)</literal> because the statement
+                will always be true or always be false.
+                (I.e. the following block will loop infinitely or will never
+                run).
+            </simpara> <simpara>
+                Don't use quotes or whitespace of any kind in
+                <literal>*{VARNAME}</literal> variables in expressions.
+                (They would expand and then the expression would most likely
+                no longer be a valid expression as listed in the table below).
+                Quotes and whitespace are fine in <literal>*VARNAME</literal>
+                variables, but it is the entire value that will be used in
+                evaluations, regardless of whether quotes match up, etc.
+                I.e. quotes and whitespace are not <emphasis>special</emphasis>
+                to the token evaluator.
+            </simpara>
+            <variablelist>
+                <title>Logical Operators</title>
+                <varlistentry><term>TOKEN</term><listitem><simpara>
+                    The token may be a literal, a <literal>*{VARNAME}</literal>
+                    which is expanded early, or a *VARNAME which is expanded 
+                    late.
+                    (You usually do not want to use 
+                    <literal>*{VARNAME}</literal> in logical expressions).
+                    False if the token is not set, empty, or "0".
+                    True otherwise.
+                </simpara></listitem></varlistentry>
+                <varlistentry><term>TOKEN1 == TOKEN2</term><listitem><simpara>
+                    True if the two tokens are equivalent "strings".
+                </simpara></listitem></varlistentry>
+                <varlistentry><term>TOKEN1 &lt;&gt; TOKEN2</term><listitem><simpara>
+                    Ditto.
+                </simpara></listitem></varlistentry>
+                <varlistentry><term>TOKEN1 &gt;&lt; TOKEN2</term><listitem><simpara>
+                    Ditto.
+                </simpara></listitem></varlistentry>
+                <varlistentry><term>TOKEN1 &gt; TOKEN2</term><listitem><simpara>
+                    True if the TOKEN1 string is longer than TOKEN2 or is
+                    the same length but is greater according to a string sort.
+                </simpara></listitem></varlistentry>
+                <varlistentry><term>TOKEN1 &lt; TOKEN2</term><listitem><simpara>
+                    Similarly to TOKEN1 &gt; TOKEN2.
+                </simpara></listitem></varlistentry>
+                <varlistentry><term>! LOGICAL_EXPRESSION</term><listitem><simpara>
+                    Logical negation of any of the expressions listed above.
+                </simpara></listitem></varlistentry>
+            </variablelist>
+            <simpara>
+                *VARNAMEs in logical expressions, where the VARNAME variable
+                is not set, evaluate to an empty string.
+                Therefore <literal>(*UNSETVAR = 0)</literal> would be false,
+                even though <literal>(*UNSETVAR)</literal> by itself is false
+                and <literal>(0)</literal> by itself is false.
+            </simpara> <simpara>
+                When developing scripts, you definitely use SqlTool 
+                interactively to verify that SqlTool evaluates logical 
+                expressions as you expect.
+                Just run <literal>* if</literal> commands that print something
+                (i.e. \p) if the test expression is true.
+            </simpara>
+        </section>
+        <section>
+            <title>Flow Control</title>
+            <simpara>
+                Flow control works by conditionally executing blocks of 
+                Commands according to conditions specified by logical 
+                expressions.
+            </simpara> <simpara>
+                The conditionally executed blocks are called 
+                <emphasis>PL Blocks</emphasis>.
+                These PL Blocks always occur between a PL flow control 
+                statement (like <literal>* foreach, *while, * if</literal>)
+                and a corresponding <literal>* end</literal> PL Command
+                (like <literal>* end foreach</literal>).
+            </simpara> <caution><simpara>
+                Be aware that the PL block reader is ignorant about SQL 
+                statements and comments when looking for the end of the block.
+                It just looks for lines beginning with some specific PL commands.
+                Therefore, if you put a comment line before a PL statement, 
+                or if a line of a multi-line SQL statement has a line beginning
+                with a PL command, things may break.
+                </simpara> <simpara>
+                I am not saying that you shouldn't use PL commands or SQL
+                commands inside of PL blocks-- you definitely should!
+                I'm saying that in PL blocks you should not have lines inside 
+                of SQL statments or comments which could be mistaken for PL 
+                commands.
+                (Especially, "commenting out" PL end statements will not work
+                if you leave <literal>* end</literal> at the beginning of the
+                line).
+                </simpara> <simpara>
+                (This limitation will very likely be removed in a future 
+                version of SqlTool).
+            </simpara></caution> <simpara>
+                The values of control variables for foreach and while PL
+                blocks will change as expected.
+            </simpara> <simpara>
+                There are <literal>* break</literal> and 
+                <literal>* continue</literal>, which work as any shell
+                scripter would expect them to.
+                The <literal>* break</literal> command can also be used to
+                quit the current SQL file without triggering any error 
+                processing.
+                (I.e. processing will continue with the next line in the 
+                <emphasis>including</emphasis> SQL file or interactive 
+                session, or with the next SQL file if you supplied multiple on 
+                the command-line).
+            </simpara>
+        </section>
+        <para>
+            Below is an example SQL File that shows how to use most PL 
+            features.  If you have a question about how to use a particular PL 
+            feature, check this example before asking for help.
+            This file resides in the
+            <filename>src/org/hsqldb/sample</filename> directory with the
+            name <filename>pl.sql</filename>.
+            Definitely give it a run, like <screen>
+java -jar $HSQLDB_HOME/lib/hsqldb.jar mem $HSQLDB_HOME/src/org/hsqldb/sample/pl.jar</screen>
+        </para>
+        <example><title>SQL File showing use of most PL features</title>
+            <programlisting>&pl.sql-cdata;</programlisting>
+        </example>
+    </section>
+
+    <section>
+        <title>Using hsqlsqltool.jar</title>
+        <simpara>
+            This section is only for those users who want to use SqlTool
+            but without the overhead of hsqldb.jar.
+        </simpara><simpara>
+            If you do not need to directly use JDBC URLs like
+            <literal>jdbc:hsqldb:mem:</literal> + something,
+            <literal>jdbc:hsqldb:file:</literal> + something, or
+            <literal>jdbc:hsqldb:res:</literal> + something,
+            then you can use <filename>hsqlsqltool.jar</filename> in place of
+            the much larger <filename>hsqldb.jar</filename> file.
+            <filename>hsqlsqltool.jar</filename> will work for all JDBC
+            databases other than HSQLDB Memory-only and In-process databases
+            (the latter are fine if you access them via a HSQLB Server or
+            WebServer).
+            You will have to supply the JDBC driver for non-HSQLDB URLs.
+        </simpara><simpara>
+            The HSQLDB distribution doesn't "come with" a pre-built 
+            <filename>hsqlsqltool.jar</filename> file.
+            I recommend that you either download the Java 1.4 jar at
+            <ulink url='http://admc.com/dist/hsqlsqltool-1.7.2.jar'/>
+            (by right-clicking and downloading if you're reading this with a
+            web browser), or build the <emphasis>jarsqltool</emphasis> target, 
+            as explained in the 
+            <link linkend='building-appendix' endterm='building-title'/>
+            appendix.
+        </simpara> <simpara>
+            If you are using the HSQLDB JDBC driver (i.e., you're connecting
+            up to a URL like jdbc:hsqldb:hsql + something or
+            jdbc:hsqldb:http + something), you run SqlTool exactly as with
+            hsqldb.jar except you use the file path to your hsqlsqltool.jar
+            file (for example, <filename>hsqlsqltool-1.7.2.jar</filename>)
+            instead of the path to hsqldb.jar.
+        </simpara> <simpara>
+            If you are using a non-HSQLDB JDBC driver, follow the instructions
+            at the end of the
+            <link linkend='baremin-section' endterm='baremin-title'/> section,
+            but use your hsqlsqltool jar file in place of
+            <filename>hsqldb.jar</filename>.
+        </simpara>
+    </section>
+
+    <section>
+        <title>Unit Testing SqlTool</title>
+        <simpara>
+            A unit testing framework is in place.
+            This assures the robustness of SqlTool.
+            See the file <filename>testrun/sqltool/readme.txt</filename>
+            for instructions on running, modifying, or creating unit
+            tests.
+            To create a new unit test, you create a SQL file and embed
+            metacommands in the SQL file inside of comments.
+            The metacommands tell the test harness
+            (<classname>org.hsqldb.test.SqlToolHarness</classname>)
+            how to run SqlTool (like with what arguments) and what
+            output to expect (i.e. the test criteria).
+            You can run tests without JUnit, or you can make a JUnit
+            wrapper in the normal fashion.  Any SQL test file can
+            be added to our JUnit SqlTool test suite by just adding
+            the SQL file name and description to the 
+            <filename>testrun/sqltool/*.list</filename> file for the 
+            desired JUnit test method.
+        </simpara> <simpara>
+            (The SqlTool unit tests require java 1.4).
+        </simpara>
+    </section>
+</chapter>

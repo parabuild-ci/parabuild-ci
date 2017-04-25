@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Changing a User's ID</TITLE>
+<!--<changeuserid.html>-->
+<!--<toc parent="maintaining_security" label="Changing a User's ID" anchor="changeuserid" sortkey="02">-->
+<!--<index parent="users" label="changing an ID" anchor="changeuserid" >-->
+<!--<index parent="security" label="changing a user's ID" anchor="changeuserid" >-->
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nUsing Security\nMaintaining Security\nChanging a User's ID");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="changeuserid"></A>Changing a User's ID</H1>
+<P>To change a user's ID, you must duplicate the user, change the ID in the duplicated (new) user definition, and then remove the old user definition.</P>
+<H2>To change a User's ID:</H2>
+<OL>
+	<LI>Select the project database or project associated with the access control database you want to modify.<br><br>
+	<LI>Select Admin | Security | Users. The Project Security dialog box appears.<br><br>
+	<LI>In the <b>All Users</b> list, select the user you want to change and click the Duplicate button. The Duplicate User dialog box appears. In the Duplicate User dialog box, do the following:<br><br>
+	<OL type="a">
+		<LI>Change the user's ID in the <b>Name</b> field.<br><br>
+		<LI>Click Close. The Duplicate User dialog box closes and the Project Security dialog box becomes active.<br><br>
+	</ol>
+		<LI>In the Project Security dialog box, select the old user definition from the <b>All Users</b> list.<br><br>
+		<LI>Click the Delete button. A confirmation dialog box appears.<br><br>
+		<LI>Confirm that you want to remove the selected user by clicking Yes.
+</OL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="usingsecurity.html">Using Security</A></TD>
+		<TD><A HREF="defineusers.html">Defining Users</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="setupsecurity.html">Setting Up Security</A></TD>
+		<TD><A HREF="removeusersacdb.html">Removing Users from an Access Control Database</A></TD>
+	</tr>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

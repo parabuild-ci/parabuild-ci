@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Configure Project Dialog Box/Archive Branching</TITLE>
+<!--<configureprojectarchivebranchingdailog.html>-->
+<!--<index parent="archives" label="Configure Project/Archive Branching dialog box" anchor="configureprojectarchivebranching">-->
+<!--<index parent="automatic_branching" label="Configure Project/Archive Branching dialog box" anchor="configureprojectarchivebranching">-->
+<!--<index parent="configuring" label="Configure Project/Archive Branching dialog box" anchor="configureprojectarchivebranching">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiConfigureProjectDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="configureprojectarchivebranching"></A>Configure Project/Archive Branching</H1>
+<P>Use the Configure Project dialog box (Admin | Configure Project | General Tab | Archives | Branching) to set up projects for automatic branching and merging. Before you set up automatic branching, you must place version labels on the revisions from which you want to start a branch. For more information, see the <i>Serena ChangeMan Version Manager Administrator's Guide</i>.</P>
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+<TR>
+<TD COLSPAN=2><CENTER><B>Archives | Branching</B></CENTER></TD>
+</TR>
+	<TR><TD><B>Base Version</b></TD>
+		<TD><!--<control name="ConfigureProjectGeneral.BASE_VERSION_EDIT">-->
+		Enter the version label that you assigned to mark the revision from which you want to start a branch.
+		<!--</control>--></TD>
+	</TR>
+	<TR><TD><b>Branch Version</b></TD>
+		<TD><!--<control name="ConfigureProjectGeneral.BRANCH_VERSION_EDIT">-->
+		Enter the version label that you assigned to the tip of the branch. Initially, this will be the revision from which you want to branch.
+		<!--</control>--></TD>
+	</TR>
+	<TR><TD><b>Default Version</b></TD>
+		<TD><!--<control name="ConfigureProjectGeneral.DEFAULT_VERSION_EDIT">-->
+		Enter the version label you specified for the Branch Version option.
+		<!--</control>--></TD>
+	</TR>
+	<TR><TD><b>Warn before locking for branch</b></TD>
+		<TD><!--<control name="ConfigureProjectGeneral.BRANCH_WARNING_CB">-->
+		Select this check box so that Version Manager will display a message telling users that if they check out the revision with a lock, a branch will be created when the workfile is checked back in.
+		<!--</control>--></TD>
+	</TR>
+	</TABLE>
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="setautobranch.html">Setting Up Automatic Branching</A></TD>
+		<TD><A HREF="archivecreationoptions.html">Branching Options</A></TD>
+	</TR>
+		<TD><A HREF="aboutbranching.html">About Branching</A></TD>
+		<TD>About Merging</TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>
+

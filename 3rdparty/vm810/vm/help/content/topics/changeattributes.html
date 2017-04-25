@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Changing Attributes of Existing Archives</TITLE>
+<!--<changeattributes.html>-->
+<!--<toc parent="working_with_archives" label="Changing Attributes of Existing Archives" anchor="changeattributes" sortkey="01">-->
+<!--<index parent="archives" label="changing existing attributes" anchor="changeattributes">-->
+<!--<index parent="changing" label="attributes of existing archives" anchor="changeattributes">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with Archives\nChanging Attributes of Existing Archives");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="changeattributes"></A>Changing Attributes of Existing Archives</H1>
+<p>Occasionally you may need to change the attributes of an archive that already exists. When you change attributes of existing archives, Serena ChangeMan Version Manager changes the attributes in all of the revisions in the archives.</p>
+<H2>To change archive attributes:</H2>
+<OL>
+<LI>
+Select a project database, project, or versioned file(s). If you select a project database or project and you are changing attributes that are set on a file type basis, the attributes are changed for all file types in the project database or project.
+<BR><BR>
+<LI>
+Select Admin | Archive Attributes. The Archive Attributes dialog box appears with the General tab active.
+<BR><BR>
+<LI>
+The setting for each attribute on the General tab is No Change, which means to leave the attribute setting as it is currently set. To change the settings, do any of the following:
+<BR><BR>
+<UL type=disc>
+<LI>
+Select Yes or No for <b>Exclusive Lock</b>. Yes prevents multiple locks on a single archive. If you allow multiple locks by selecting No, more than one revision in an archive can be locked by different Users at the same time--one User cannot lock more than one revision and one revision can only have one lock. See <a href="archivecreationoptions.html">Archive Creation Options</a>.
+<BR><BR>
+<LI>
+Select Yes or No for <b>Expand Keywords</b>. Yes expands keywords on check in of a workfile. Do <b>not</b> set this option for binary files. This is an attribute that is set on a file type basis. 
+<BR><BR>
+<LI>
+The <b>Comment Prefix</b> field applies only if you are expanding keywords. If you are, this field defines the comment prefix to insert before lines in the &#36;Log&#36; keyword expansion. Select Modify or Delete for Comment Prefix. Modify causes Version Manager to display a Comment Prefix text field in which you can enter a comment prefix. Delete removes the previously specified comment prefix. This is an attribute that is set on a file type basis.
+<BR><BR>
+<LI>
+Select Yes or No for <b>Write Protect</b>. Yes protects archives from inadvertent deletion or modification. Version Manager commands automatically remove write-protection before modifying archives and replace it afterwards.
+<BR><BR>
+<LI>
+Select Yes or No for <b>Store Deltas</b>. Yes stores only the tip revision as a complete copy of the workfile (the work image) and all other revisions as a set of deltas. This is an attribute that is set on a file type basis. See <a href="deltas.html">Storing Deltas</a>.<br>
+</UL>
+<BR>
+<LI>
+Select the <b>Include files in subprojects</b> check box to change the attributes for existing archives in all of the projects/subprojects of the selected project database or project.
+<BR><BR>
+<LI>
+Click the Advanced tab. The setting for each attribute on the Advanced tab is No Change, which means to leave the attribute setting as it is currently set.
+<BR><BR>
+<LI>
+On the Advanced tab, change any of the following attributes:
+<BR><BR>
+<UL type=disc>
+<LI>
+The <b>Newline Character</b> field applies only if you are expanding keywords. If you are, this field defines a newline character for the &#36;Log&#36; keyword expansion. Select Modify or Delete for Newline Character. Modify causes Version Manager to display a Newline Character text field in which you can enter a newline character. Delete removes the previously specified newline character. This is an attribute that is set on a file type basis.
+<BR><BR>
+<LI>
+Select one of the following options to determine if Version Manager translates the end-of-line character. This is an attribute that is set on a file type basis.<br><br>
+<b>Yes</b> translates the end-of-line character. You should always set this option to Yes for text files; EOL Translation of text files is required in a <a href="crossplatform.html">cross-platform environment</a>. <br>
+<b>No</b> does not translate the end-of-line character.
+<br><br><b>Warning!</b> DO NOT set this option to Yes on binary files; it may corrupt the archives.
+<BR><BR>
+<LI>
+Select Modify or Delete for <b>Owner</b>. Modify causes Version Manager to display the Owner text field in which you can enter the user ID of new archive owner. Delete removes the previously specified owner from the archive. See <a href="archivecreationoptions.html">Archive Creation Options</a>.
+<BR><BR>
+<LI>
+Select Modify, Append, or Delete for <b>Access List</b>. Both Modify and Append cause Version Manager to display an Access List text field in which you can enter a new <a href="accesslist.html">access list</a> (in the case of Modify) or enter additional user IDs and/or groups to the existing access list (in the case of Append). The combined value of this field cannot exceed 254 characters in length. Delete removes the existing access list.
+<BR><BR>
+<LI>
+Select Variable Length or Fixed Length for <b>Record Length</b>. Variable length specifies to Version Manager that the archives are storing variable-length files. Fixed Length specifies that the archives are storing fixed-length files. Fixed Length causes Version Manager to display a Record Length text field in which you enter the length of records in fixed-length files so that Version Manager can generate deltas based on logical lines. This is an attribute that is set on a file type basis.<br>
+</UL>
+<BR>
+<LI>
+To modify the attributes that are applicable only if you are creating and modifying files that contain line numbers, click the Masking tab. The setting for each attribute on the Masking tab is No Change, which means to leave the attribute setting as it is currently set.
+<BR><BR>
+<LI>
+On the Masking tab, change any of the following attributes. These attributes are set on a file type basis. See <a href="columnmasking_renumbering.html">Column Masking/Renumbering</a>:
+<BR><BR>
+<UL type=disc>
+<LI> 
+From the <b>Masking</b> group, select one of the following options:
+<BR><BR>
+<UL type=disc>
+<LI>
+<b>Delete Masking</b> to not use masking.
+<BR><BR>
+<LI>
+<b>Use COBOL Masking</b> to use the default COBOL masking definition for COBOL files, which is: Mask columns 73-80 and mask columns 1-6 only if column 1 is numeric.
+<BR><BR>
+<LI>
+<b>Mask Ranges</b> and then enter the column to mask from and the column to mask to in the text field. For example, you could enter 1-6; then, Version Manager would remove columns 1 through 6. To restrict column masking to numeric fields only, enter an asterisk (*) beside the range, for example, 1-6* masks the columns only if column 1 is numeric. You can enter multiple ranges, for example, 1-6*,10-12. Separate ranges with a comma.
+</UL>
+<BR>
+<LI>
+In the <b>Renumbering</b> group, select one of the following options:
+<BR><BR>
+<UL type=disc>
+<LI>
+<b>Delete Renumbering</b> to not use renumbering.
+<BR><BR>
+<LI>
+<b>Use COBOL Renumbering</b> to use the default COBOL renumbering definition for COBOL files, which is: renumber columns 1-6, start with the number 10 increment by 10.
+<BR><BR>
+<LI>
+<b>Renumber</b> and then enter:
+<BR><BR>
+<UL type=disc>
+<LI>
+The number to start numbering with in the <b>Renumber Start</b> field.
+<BR><BR><LI>
+The number by which to increment each line number in the <b>Renumber By</b> field. For example, if you enter 20 as the start number and 5 as the number by which to increment each line, the first line would be numbered 000020, the second 000025, the third 000030, and so forth. This assumes you are renumbering six columns.
+<BR><BR><LI>
+The column to renumber from in the <b>From Column</b> field and the column to renumber to in the <b>To Column</b> field.
+</UL>
+</UL>
+</UL>
+<BR>
+<LI>Click OK.
+</OL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a href="configureoverview.html">Configuring Project Databases and Projects</a></TD>
+<TD><a href="whentochangeattributes.html">When to Change Archive Attributes</a></TD>
+	</TR>
+	<TR>
+		<TD><a href="aboutarchattrib.html">About Archive Attributes</a></TD>
+		<td><a href="filetypeoptions.html">Options Set on a File Type Basis</a></td>
+	</TR>
+
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

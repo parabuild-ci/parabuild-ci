@@ -1,0 +1,39 @@
+<TABLE BORDER="0" CELLPADDING="1">
+<TR VALIGN=TOP>
+<TH WIDTH=180>
+<FONT SIZE="2"><B>File</B></FONT></TH>
+<TH WIDTH=0></TH>
+<TH WIDTH=80>
+<FONT SIZE="2"><B>Status</B></FONT></TH>
+<TH WIDTH=0></TH>
+<TH WIDTH=120>
+<FONT SIZE="2"><B>Locked By</B></FONT></TH>
+<TH WIDTH=0></TH>
+<TH WIDTH=50>
+<FONT SIZE="2"><B>Revision</B></FONT></TH>
+<TH WIDTH=0></TH>
+<TH WIDTH=240>
+<FONT SIZE="2"><B>Description</B></FONT></TH>
+<TH WIDTH=0></TH>
+</TR><TR VALIGN=TOP>
+<TH WIDTH=180><HR></TH><TH WIDTH=0></TH>
+<TH WIDTH=80><HR></TH><TH WIDTH=0></TH>
+<TH WIDTH=120><HR></TH><TH WIDTH=0></TH>
+<TH WIDTH=50><HR></TH><TH WIDTH=0></TH>
+<TH WIDTH=240><HR></TH><TH WIDTH=0></TH>
+<TH WIDTH=0></TH>
+</TR>~~BeginRepeat50~~
+<TR VALIGN=TOP>
+<TD WIDTH=180><FONT SIZE="2">~~Name~~</FONT></TD>
+<TD WIDTH=0></TD>
+<TD WIDTH=80><FONT SIZE="2">~~Status~~</FONT></TD>
+<TD WIDTH=0></TD>
+<TD WIDTH=120><FONT SIZE="2">~~ExclusiveLocker~~</FONT></TD>
+<TD WIDTH=0></TD>
+<TD WIDTH=50 ALIGN=RIGHT><FONT SIZE="2">~~ContentVersion~~</FONT></TD>
+<TD WIDTH=0></TD>
+<TD WIDTH=240><FONT SIZE="2">~~Description~~</FONT></TD>
+<TD WIDTH=0></TD>
+</TR>
+~~EndRepeat~~
+</TABLE>

@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Adding Workfiles</TITLE>
+<!--<AddFiles.html>-->
+<!--<toc parent="getting_started_for_users" label="Adding Workfiles" anchor="AddFiles" sortkey="05">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with Project Databases/Projects\nProjects\nAdding Workfiles");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="AddFiles"></A>Adding Workfiles</H1>
+<P>Complete the following procedure to add existing files, directories, or directory trees to a project or project database.</P>
+<P><B>NOTE:</B> If you are adding workfiles to a 5.3/6.0 project, you must choose the archive directory in which you want to place the workfile archives in the <B>Archive Location</B> list.</P>
+<H2>To add workfiles:</H2>
+<OL>
+	<LI>Select the project database, project, or folder to which you want to add workfiles.<br><br>
+	<LI>Select File | Add Workfiles. The <a href="addfilesdialog.html">Add Workfiles dialog box</a> appears.<br><br>
+	<LI>In the <B>Add Workfiles From</b> field, enter the location of the workfiles you want to add or click the browse button to select a location.<br><br>
+<b>Note:</b> If you specify a path with a filter other than * or *.* (for example, if you specify c:\files\*.cpp), the files matching the filter will be added directly without creating a top-level project. However, if subdirectories are also added, subprojects will be created for them and only files matching the filter will be added.<BR><BR>
+	<LI>For 5.3/6.0 projects: In the <b>Archive Location</b> field, select the location in which to create the archive from the archive directories specified in the configuration file. (For non 5.3/6.0 projects, archives are created in the archive location set for the project database or project.)<br><br>
+	<LI>Enter an archive description for the files you are adding in the <b>Description</b> field. You are required to enter a description for the files you are adding; the OK button is not enabled until you enter a description.<br><br>
+	<LI>Click OK to accept the <a href="aboutaddfiles.html">default options</a>, or use the <a href="addfilesdialog.html">Add Workfiles dialog box</a> to override default options.</OL>
+<H2>See Also</H2>
+
+<TABLE WIDTH="87%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="planproject.html">Planning a Project Database</A></TD>
+		<TD><A HREF="addfilesdialog.html">Add Workfiles Dialog
+Box</A></TD>
+	</TR>
+	<TR><TD><a href="aboutaddfiles.html">About Adding Files to Projects</a></td></tr>
+
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

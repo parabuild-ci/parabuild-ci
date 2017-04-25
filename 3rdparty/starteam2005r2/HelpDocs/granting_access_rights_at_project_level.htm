@@ -1,0 +1,218 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Granting Access Rights at the Project Level</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=copyright value="Copyright© 1995-2003, Borland Software Corporation. All rights reserved.">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=864>
+<meta name=layout-width content=707>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<!--(Scripts)=======================================================-->
+
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="./ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Administering the Application\nControlling Access to Objects\nGranting Access Rights at the Project Level");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Granting Access Rights at the Project Level</h1>
+
+<p class=Body>Project-level settings define access rights for all views, 
+ child folders, and items in the project. A user will <span style="font-weight: bold;"><B>not</B></span> 
+ be able to open a project if you deny any of the following to a user or 
+ to all the groups to which the user belongs:</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>The ability to see the 
+ project.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>The ability to see the 
+ initial (or root) view of the project.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>The ability to see the 
+ project’s initial view’s root folder.</p></li>
+</ul>
+
+<p class=Body>The only level at which you can set project access rights 
+ is at the project level, because this is the only level that has a Project 
+ node in the access rights hierarchy. You can set view access rights at 
+ either the project or view level, because both of those levels have the 
+ View node. You can set folder access rights at the project, view, or folder 
+ levels, and so on.</p>
+
+<p class=Body>It is critically important to define a complete set of project-level 
+ access rights for all groups with view rights to a project. By default, 
+ groups with view rights have complete access to categories that have no 
+ rights defined. Therefore, Borland recommends that you specify access 
+ rights across all project rights for all groups.</p>
+
+<h3>General Rule</h3>
+
+<p class=Body>Any time you create one grant record for a node, you should 
+ also create a grant record for that node for every group that will access 
+ the project at this level. It is also a good idea to include Administrators 
+ on each node. Then if permissions are ignored, an administrator can still 
+ change access rights, etc.</p>
+
+<p class=Proc>To set project access rights:</p>
+
+<ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Open the project.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select <span style="font-weight: bold;"><B>Project 
+ &gt; Access Rights</B></span> from the StarTeam client menu. This action displays 
+ the <span style="font-style: italic;"><I>Project Access Rights</I></span> dialog. 
+ </p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select a node. It is best 
+ to start with the Project node and work down.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Click<span style="font-weight: bold;"><B> 
+ Add</B></span> to add a user or group. The<span style="font-style: italic;"><I> 
+ Assign Access Rights To</I></span> dialog opens.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select a user or group. Users 
+ are listed by their user names and groups are listed by their position 
+ in the group hierarchy, except for the All Users group.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select the<span style="font-weight: bold;"><B> 
+ Grant</B></span> option button. <span style="font-weight: bold;"><B>Note:</B></span> 
+ Never select the <span style="font-weight: bold;"><B>Deny</B></span> option button 
+ unless you are creating an exception. See <a href="setting_access_rights_exceptions.htm">Setting 
+ Access Rights Exceptions</a>.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Click <span style="font-weight: bold;"><B>OK</B></span> 
+ to return to the <span style="font-style: italic;"><I>Project Access Rights</I></span> 
+ dialog.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select and/or clear the appropriate 
+ check boxes for the user or group.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Repeat steps 3-8, as required.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Click <span style="font-weight: bold;"><B>OK</B></span> 
+ when you are done.</p></li>
+</ol>
+
+<h2>Project Access Rights</h2>
+
+<h3>See object and its properties</h3>
+
+<p class=Body>See this project in the projects list, and view its properties 
+ by selecting<span style="font-weight: bold;"><B> Project &gt; Properties</B></span>.</p>
+
+<h3>Modify properties</h3>
+
+<p class=Body>Change the properties for this project. The project properties 
+ that can be modified are its name, description, the keyword expansions 
+ settings, the settings for alternate property editors (APEs), the setting 
+ for process rules, and the settings that require revision comments, file 
+ check-ins only with exclusive locks, and unlocked files to be read-only.</p>
+
+<h3>Delete object</h3>
+
+<p class=Body>Delete this project from its server configuration.</p>
+
+<h3>Change object access rights</h3>
+
+<p class=Body>Change the access rights for this project. If you change 
+ this setting, be sure that you remain one of the users who can change 
+ access rights.</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

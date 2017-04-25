@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Add Workfiles Dialog Box</TITLE>
+<!--<AddFilesDialog.html>-->
+<!--<index parent="files" label="Add Workfiles dialog box" anchor="AddFilesDialog">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiAddFilesDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="AddFilesDialog"></A>Add Workfiles</H1>
+<P>Use the Add Workfiles dialog box to add a directory tree, a single directory, or individual workfiles to a Version Manager project database or project.</P>
+<P><b>5.3/6.0 projects and folders:</b> You can add individual files or a directory of files to 5.3/6.0 projects and folders. When adding a directory of files, Version Manager only adds the files located at the root level of the directory; it does not add files located in subdirectories and it does not create projects or folders.</P>
+<p>You cannot add files with the same name to a 5.3/6.0 project or folder. However, if you used Version Manager 5.3/6.0 to add files with the same name by defining separate archive and workfile locations, the current edition of Version Manager will honor the duplicate names.</p>
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+	<TD COLSPAN=2><CENTER><B>General Tab</b></center></TD>
+	</TR>
+	<TR>
+		<TD><B>Add Workfiles From</b></td>
+		<TD><!--<control name="AddFilesGeneral.WORKING_FOLDER_EDIT">-->
+		Enter the location from which you want to add the workfiles or click the Browse button to select one.<!--</control>--><br> <b>Note:</b> If you specify a path with a filter other than * or *.* (for example, if you specify c:\files\*.cpp), the files matching the filter will be added directly without creating a top-level project. However, if subdirectories are also added, subprojects will be created for them and only files matching the filter will be added.</TD>
+	</TR>
+	<TR>
+	<TD><b>Include workfiles in subdirectories</b></TD>
+		<TD>This field is only available if a directory is selected, and is not available for 5.3/6.0 projects. <!--<control name="AddFilesGeneral.RECURSIVE_CHECK">--> Select to add all of the files from the subdirectories of the selected directory.<!--</control>--></TD>
+	</tr>
+	<TR>
+		<TD><B>Archive Location</b></td>
+		<TD><!--<control name="AddFilesGeneral.ARCHIVE_LOCATION_CHOICE">-->
+		For 5.3/6.0 projects only, select the location in which to create the archive from the archive directories specified in the configuration file.<!--</control>--> New Version Manager projects use the archive location set for the project database or project.</TD>
+	</TR>
+	<TR>
+		<TD><B>Description</b></td>
+		<TD><!--<control name="AddFilesGeneral.DESCRIPTION_AREA">-->
+		Enter a description for the item you are adding. You are required to enter a description; the OK button is not enabled until you enter a description in this field. If you are adding a file for the first time, the text you enter becomes the archive description, and Version Manager enters "Initial revision" for the revision description. (The archive description can be viewed by highlighting the versioned file and selecting File | Properties.) This differs from when you check in a file, where Version Manager uses the text entered in the <b>Description</b> field as the revision description.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Use description for all</b></TD>
+		<TD><!--<control name="AddFilesGeneral.USE_DESCRIPTION_FOR_ALL_CHECKBOX">-->
+		Select to use the archive description you entered for all of the workfiles you are adding. This option is only available if you are adding a directory or more than one workfile. If you do not select this check box, Version Manager prompts you for an archive description for each file.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>If Versioned File Exists</b></TD>
+		<TD><!--<control name="AddFilesGeneral.VERSIONED_FILE_EXISTS_CHOICE">-->
+		Select an action to occur if a versioned file with the same name exists in the project: <b>Skip</b> does not add the file to the project, <b>Skip and show warning</b> does not add the file to the project and displays a message telling you that a versioned file with that name already exists.<!--</control>--></TD>
+	</TR>
+	<TR>
+	<TD><b>After Check In</b></TD>
+	<TD><!--<control name="AddFilesGeneral.AFTER_CHECKIN_CHOICE">-->
+		Select <B>Delete workfile</b> to delete the workfile after checking it in, <B>Keep read-only workfile</b> to keep a read-only workfile in the workfile location, or <b>Keep revision locked</b> to lock the new revision after checking it in.<!--</control>--></TD>
+	</TR>
+		<tr>
+		<td><B>Lowest-level promotion group</B></td>
+		<TD>This field is only available if a <A HREF="aboutprommodels.html">promotion model</a> is in effect.<!--<control name="AddFilesAdvanced.PROMOGROUP_LB">--> Select a lowest-level promotion group to associate with the first revision of the workfile that you are adding or select the value [None] to <b>not </b>associate a promotion group with the revision.<!--</control>--> The default value is [Default Promotion Group], which is a workspace setting that defines a lowest-level promotion group to use for this action. If a value for this workspace setting is not defined and you do not select a value, then no promotion group is associated with the revision.</TR>
+	<TR>
+	<TD><b>Don't check in workfile</b></TD>
+	<TD><!--<control name="AddFilesGeneral.NO_CHECKIN_WORKFILE_CHECKBOX">-->Select to add the workfile, but not check the file in. This option is only available if you have SuperUser or Unlimited privileges.<!--</control>--></td>
+	</tr>
+	<TR>
+        <TD><B><A HREF="trackerlink.html">Associate Issues</a></B></TD>
+        <TD>If Tracker TrackerLink or TeamTrack SourceBridge is installed, this button displays the association dialog box.
+	<!--<control name="AddFilesGeneral.TRACKER_LINK_BUTTON">-->	You can associate the files you are adding with issues. 	<!--</control>-->
+		</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=2><CENTER><B>Advanced Tab</b></center></TD>
+	</TR>
+	<TR>
+		<TD><B>Version Label</b></td>
+		<TD><!--<control name="AddFilesAdvanced.VERSIONLABEL_EDIT">-->Either enter a version label to associate with the revision or click the Browse button and select one. This option is not available if <b>Don't check in workfile</b> is selected on the General tab.<!--</control>-->
+	</tr>
+	<TR>
+		<td><B>Float label with tip</b></td>
+		<TD><!--<control name="AddFilesAdvanced.FLOATINGLABEL_CB">-->Select to make the version label <a href="floatfixlabels.html">float with the tip revision</a>.<br><br>
+<b>NOTE:</b>  This option is not available if <b>Don't check in workfile</b> is selected on the General tab.<!--</control>--></td>
+	</tr>
+	<TR>
+		<TD><b>Set Workfile Location</b></TD>
+		<TD><B>Use project's workfile location:</B> This option is <b>not</b> available if the <b>Don't check in workfile</b> check box is selected on the General tab.<!--<control name="AddFilesAdvanced.COPYWORKFILE_RB">--> Select to copy the file from its current location to the project's workfile location. The workfile will use the project's workfile location as its workfile location.<!--</control>--><BR>
+<b>If workfile already exists at this location:</b> This option is active only if you have chosen the above option. 
+<!--<control name="AddFilesAdvanced.WORKFILE_EXISTS_CHOICE">-->
+		Select one of the following options to determine what Version Manager will do when you attempt to add a file that already exists in the project:<BR>
+		<b>Skip</b> does not add the file to the project.<BR>
+		<b>Overwrite</b> replaces the existing workfile with the file you are adding.<!--</control>--><br><br>
+<b>Use workfile's current location:</b> <!--<control name="AddFilesAdvanced.USEWORKFILE_RB">-->Select to make the file's current location its workfile location.	<!--</control>--></TD>
+	</TR>
+</TABLE>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="setupprojects.html">Setting Up Version Manager Projects</A></TD>
+		<TD><A HREF="checkingin.html">Checking In</A></TD>
+	</TR>
+	<TR>
+		<TD><a href="addfiles.html">Adding Workfiles</a></TD>
+
+	</TR>
+
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

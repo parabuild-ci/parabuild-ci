@@ -1,0 +1,237 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Creating a New Hive</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=898>
+<meta name=layout-width content=707>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Administering the Application\nWorking with the Vault\nCreating a New Hive");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Creating a New Hive</h1>
+
+<p class=List-1-text>Native II vaults store each file revision in its entirety 
+ (even though the archive file may be compressed). But using hives allows 
+ the revisions to be spread over many volumes. If one hive fills up, you 
+ can add another without changing any data locations or moving any archive 
+ files. When a server configuration has multiple hives, the server adds 
+ files to each hive in turn before reusing the first hive's archive path. 
+ </p>
+
+<p class=List-1-text>StarTeam 2005 or later server configurations automatically 
+ have at least one hive (either the default or a custom hive). To increase 
+ the amount of available space for a 2005 or later server configuration, 
+ you can use the Hive Manager to add a new hive. The hive can be created 
+ while the server configuration running, because it already has an initial 
+ path, if only to a Default Hive in the repository path. If the original 
+ hive was running out of space, you should also use the Hive Manager to 
+ display the hive &nbsp;properties 
+ and deselect the &quot;Allow new archives&quot; check box. This action 
+ allows the original hive to remain a check-out location, but keeps it 
+ from acquiring any new files. Files that are added go to the new hive.</p>
+
+<p class=List-1-text>For a server configuration created with StarTeam 6.0 
+ or earlier, Borland recommends that you use the<span style="font-style: italic;"><I> 
+ Hive Manager</I></span> dialog to create a custom hive after installing StarTeam 
+ 2005 or StarTeam 2005 Release 2, but before starting the server. Doing 
+ this allows you to locate the hive somewhere other than the current repository 
+ path, where Default Hive would be placed if you simply started the server.</p>
+
+<p class=Body><span style="font-weight: bold;"><B>Note:</B></span> You can perform 
+ this function only on servers that are currently running.</p>
+
+<p class=Proc>To create a new hive for a current server configuration:</p>
+
+<ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>On a computer that has the 
+ Server installed, select<span style="font-weight: bold;"><B> Start &gt; Programs 
+ &gt; StarTeam &gt; StarTeam Server x.x &gt; StarTeam Server</B></span>. The 
+ <span style="font-style: italic;"><I>Server</I></span> <span style="font-style: italic;"><I>Administration</I></span> 
+ dialog appears. </p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select a server configuration. 
+ If it is a StarTeam 2005 server configuration or later, it may be running 
+ or stopped. If it is a server configuration created with StarTeam 6.0 
+ or earlier, it must be stopped. If you have not logged on already, you 
+ will be asked to do so.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>From the <span style="font-style: italic;"><I>Server 
+ Administration</I></span> dialog, do one of the following:</p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1-Indent><p class=Bullet-1-Indent>Click 
+ the Hive Manager shortcut in the lower left panel. </p></li>
+		
+		<li class=kadov-p-CBullet-1-Indent><p class=Bullet-1-Indent>From 
+ the menu, select <span style="font-weight: bold;"><B>Tools &gt; Administration 
+ &gt; Hive Manager</B></span>.</p></li>
+		
+		<p class=List-1-text>These actions display the <span style="font-style: italic;"><I>Hive 
+ Manager</I></span> dialog, which shows all the hives currently created for 
+ the selected server configuration.</p>
+	</ul>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Click<span style="font-weight: bold;"><B> 
+ New</B></span>. This action displays the<span style="font-weight: bold; font-style: italic;"> 
+ <I><B></B></I></span><span style="font-style: italic;"><I>New Hive</I></span> dialog. Note 
+ that the location of the hive-index.html file, which contains the properties 
+ for each hive used by the server configuration, appears near the top of 
+ the screen.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Enter information about the 
+ new hive in the following fields:</p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1-Indent><p class=Bullet-1-Indent
+												style="font-weight: bold;">Name<span 
+ style="font-weight: normal;">: Unique name for the hive.</span> DefaultHive<span 
+ style="font-weight: normal;"> is the default.</span></p></li>
+		
+		<li class=kadov-p-CBullet-1-Indent><p class=Bullet-1-Indent><span 
+ style="font-weight: bold;"><B>Archive path</B></span>: Path to the hive's Archives 
+ directory. The default path is &lt;repository_path\DefaultHive\Archives.</p></li>
+		
+		<li class=kadov-p-CBullet-1-Indent><p class=Bullet-1-Indent><span 
+ style="font-weight: bold;"><B>Cache path</B></span>: Path to the hive's Cache 
+ directory. The default path is &lt;repository_path\DefaultHive\Cache.</p></li>
+		
+		<li class=kadov-p-CBullet-1-Indent><p class=Bullet-1-Indent><span 
+ style="font-weight: bold;"><B>Maximum cache size</B></span>: Maximum number of 
+ megabytes of hard disk space that the Cache can use. The default is 20% 
+ of the disk space available. If you cannot calculate the maximum size, 
+ enter 100 MB, which is the default size for a Native-I vault.</p></li>
+		
+		<li class=kadov-p-CBullet-1-Indent><p class=Bullet-1-Indent
+												style="font-weight: bold;">Cache 
+ cleanup interval<span style="font-weight: normal;">: Seconds between cache 
+ cleanup/refresh operations. The default value is 600. The range is 60 
+ (1 minute) to 3153600 (1 year).</span></p></li>
+		
+		<li class=kadov-p-CBullet-1-Indent><p class=Bullet-1-Indent
+												style="font-weight: bold;">Storage 
+ limit threshold<span style="font-weight: normal;">: Percentage of total 
+ disk space allowed for hive. When this percentage has been reached, no 
+ more archives can be added to the hive. The default is 95% of the total 
+ disk space. </span></p></li>
+	</ul>
+	
+	<li class=kadov-p-CList-1-text><p class=List-1-text>Select or deselect 
+ <span style="font-weight: bold;"><B>Allow new archives</B></span>. For a new 
+ hive, you will generally want to retain the default, which is selected. 
+ &nbsp;Also, if 
+ no other hives exist for the server configuration, this check box must 
+ be selected.</p></li>
+	
+	<li class=kadov-p-CList-1-text><p class=List-1-text>(Optional) If you 
+ are using StarTeamMPX, set a <span style="font-weight: bold;"><B>Root Cache 
+ Agent</B></span> archive path.</p></li>
+	
+	<li class=kadov-p-CList-1-text><p class=List-1-text>Click <span style="font-weight: bold;"><B>OK</B></span> 
+ to confirm your choices. This action returns you to the <span style="font-style: italic;"><I>Hive 
+ Manager</I></span>.</p></li>
+	
+	<li class=kadov-p-CList-1-text><p class=List-1-text>Click <span style="font-weight: bold;"><B>Close</B></span> 
+ to return to the <span style="font-style: italic;"><I>Server Administration</I></span> 
+ dialog.</p></li>
+</ol>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

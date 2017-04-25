@@ -1,0 +1,239 @@
+<!-- Copyright 2004 Zelix Pty Ltd (ABN 47 078 740 093) -->
+<html>
+<head>
+<title>Zelix KlassMaster ZKM Script Helper</title>
+   <meta name="keywords" content="java,bytecode editor,bytecode viewer,java obfuscator,java mangler,utility,download">
+   <meta name="description" CONTENT="Zelix KlassMaster obfuscator has the ZKM Script Helper wizard">
+   <meta name="classification" CONTENT="Zelix KlassMaster obfuscator has the ZKM Script Helper wizard">
+   <link rel=stylesheet href="../ZKM.css" TYPE="text/css">
+</head>
+<body background="../images/small-white-mist1.jpg" bgcolor="#E1E1E1">
+<center><a href="index.html"><img src=../images/ZKM_b4.gif alt="Zelix KlassMaster" width=264 height=62 border=0></a></center>
+<hr>
+<center>
+<table width=770 border=0>
+   <tr>
+      <td valign="top" colspan=2>
+         <h1>Tools | ZKM Script Helper</h1>
+         The <b>ZKM Script Helper</b> tool leads you through a sequence of dialogs to help you create a basic ZKM Script file.
+         (More elaborate ZKM Scripts can be created using a simple text editor.) Although many of the dialogs in the sequence
+         closely resemble those that can be selected directly from the menus, the ZKM Script Helper doesn't actually open, obfuscate
+         or save your classes. You have to execute the ZKM Script that you create from the command window.
+         <p>
+         Also see:
+         <ul>
+            <li><a href=runZKMScript.html>Executing a ZKM Script file</a>
+            <li><a href=langZKMScript.html>The ZKM Script language</a>
+         </ul>
+      </td>
+   </tr>
+   <tr>
+      <td colspan=2>
+          &nbsp; <!-- Force an empty row -->
+      </td>
+   </tr>
+</table>
+<table width=770 border=0>
+   <tr>
+      <td valign="top">
+         <h2>Basics</h2>
+         You can start the ZKM Script Helper at any time by selecting the <b>Tools&nbsp;|&nbsp;ZKM Script Helper</b> menu.
+      </td>
+      <td valign="top">
+         <img src=../images/toolsZKMScriptHelper.gif width=277 height=170 alt="Zelix KlassMaster - Selecting ZKM Script Helper"><p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+      </td>
+      <td align="center" valign="middle">
+         <img src=../images/down_arrow.gif width=20 height=24 alt="Leads to..."><p>
+      </td>
+   </tr>
+   <tr>
+      <td valign="top">
+         <h2>Introduction</h2>
+         You advance through the dialog sequence by clicking on <img src=../images/nextBtn.gif align="absmiddle" alt="Next" width=75 height=26>.
+         To return to a previous window click on <img src=../images/previousBtn.gif align="absmiddle" alt="Previous" width=75 height=25>.
+         You can exit the sequence at any time by clicking on <img src=../images/cancelBtn.gif align="absmiddle" alt="Cancel" width=80 height=24>.
+      </td>
+      <td valign="top">
+         <img src=../images/ZKMScript0.gif width=436 height=250 alt="ZKM Script Helper - Introduction"><p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+      </td>
+      <td align="center" valign="middle">
+         <img src=../images/down_arrow.gif width=20 height=24 alt="Leads to..."><p>
+      </td>
+   </tr>
+   <tr>
+      <td valign="top">
+         <h2>"classpath" Statement</h2>
+         The ZKM Script Helper <b>"classpath Statement"</b> dialog works in exactly the same way as the 
+         <b><a href=optionsClasspath.html>"Options&nbsp;|&nbsp;Classpath"</a></b> dialog. 
+         <p>
+         The directories and archive files that you put into the classpath must already exist.
+         Also, there must be a path to <code>java.lang.Object</code>.
+      </td>
+      <td valign="top">
+         <img src=../images/ZKMScript1.gif width=369 height=274 alt="ZKM Script Helper - classpath statement"><p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+      </td>
+      <td align="center" valign="middle">
+         <img src=../images/down_arrow.gif width=20 height=24 alt="Leads to..."><p>
+      </td>
+   </tr>
+   <tr>
+      <td valign="top">
+         <h2>"open" statement</h2>
+         The ZKM Script Helper <b>"open Statement"</b> dialog works in exactly the same way as the 
+         <b><a href=fileOpen.html>"File&nbsp;|&nbsp;Open"</a></b> dialog. Of course, no files are actually processed.
+         Your selections are merely converted into a ZKM Script <code>open</code> statement.
+         <p>
+         However, the directories and archive files that you wish to select must already exist and at least one of them
+         must contain a class file.         
+      </td>
+      <td valign="top">
+         <img src=../images/ZKMScript2.gif width=449 height=389 alt="ZKM Script Helper - open statement"><p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+      </td>
+      <td align="center" valign="middle">
+         <img src=../images/down_arrow.gif width=20 height=24 alt="Leads to..."><p>
+      </td>
+   </tr>
+   <tr>
+      <td valign="top">
+         <h2>"trimExclude" Statement</h2>
+         The ZKM Script Helper <b>"trimExclude Statement"</b> dialog works in exactly the same way as the 
+         <b><a href=trimExclude.html>"Trim Exclusions"</a></b> dialog called by the <b><a href=toolsTrim.html>"Tools&nbsp;|&nbsp;Trim"</a></b> menu option except that there is no
+         <img src=../images/testBtn.gif align="absmiddle" alt="Test" width=68 height=25> button.
+         Click on <img src=../images/skipBtn.gif align="absmiddle" alt="Skip" width=78 height=26> 
+         to skip the Trim Exclusion step entirely.
+      </td>
+      <td valign="top">
+         <img src=../images/ZKMScript3.gif width=459 height=466 alt="ZKM Script Helper - trimExclude statement"><p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+      </td>
+      <td align="center" valign="middle">
+         <img src=../images/down_arrow.gif width=20 height=24 alt="Leads to..."><p>
+      </td>
+   </tr>
+   <tr>
+      <td valign="top">
+         <h2>"trim" Statement</h2>
+         The ZKM Script Helper <b>"trim Statement"</b> dialog works in exactly the same way as the 
+         <a href=trimOptions.html><b>"Trim&nbsp;Options"</b></a> dialog called by the <b><a href=toolsTrim.html>"Tools&nbsp;|&nbsp;Trim"</a></b> menu option.
+         Click on <img src=../images/skipBtn.gif align="absmiddle" alt="Skip" width=78 height=26> 
+         to skip the Trim step entirely.
+      </td>
+      <td valign="top">
+         <img src=../images/ZKMScript4.gif width=458 height=213 alt="ZKM Script Helper - trim statement"><p>
+      </td>
+   </tr>
+
+   <tr>
+      <td>
+      </td>
+      <td align="center" valign="middle">
+         <img src=../images/down_arrow.gif width=20 height=24 alt="Leads to..."><p>
+      </td>
+   </tr>
+ 
+   </tr>
+      <td valign="top">
+         <h2>"exclude" Statement</h2>
+         The ZKM Script Helper <b>"exclude Statement"</b> dialog works in exactly the same way as the 
+         <b><a href=advancedExclude.html>"Obfuscate Name Exclusions"</a></b> dialog you can see if you select the <b>"Tools&nbsp;|&nbsp;Obfuscate"</b>
+         menu option.
+         <p>
+      </td>
+      <td valign="top">
+         <img src=../images/ZKMScript5.gif width=461 height=521 alt="ZKM Script Helper - Exclude statement"><p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+      </td>
+      <td align="center" valign="middle">
+         <img src=../images/down_arrow.gif width=20 height=24 alt="Leads to..."><p>
+      </td>
+   </tr>
+   <tr>
+      <td valign="top">
+         <h2>"obfuscate" Statement</h2>
+         The ZKM Script Helper <b>"obfuscate Statement"</b> dialog works in exactly the same way as the 
+         <b><a href=obfuscateOptions.html>"Obfuscate Options"</a></b> dialog.
+      </td>
+      <td valign="top">
+         <img src=../images/ZKMScript6.gif width=387 height=376 alt="ZKM Script Helper - obfuscate statement"><p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+      </td>
+      <td>
+         &nbsp;
+      </td>
+   </tr>
+   <tr>
+      <td>
+      </td>
+      <td align="center" valign="middle">
+         <img src=../images/down_arrow.gif width=20 height=24 alt="Leads to..."><p>
+      </td>
+   </tr>
+   <tr>
+      <td valign="top">
+         <h2>"saveAll" Satement</h2>
+         The ZKM Script Helper <b>"saveAll Statement"</b> dialog works in exactly the same way as the 
+         <b><a href=fileSaveAll.html>"File&nbsp;|&nbsp;Save all"</a></b> dialog.
+         <p>
+         The directory into which you wish to save your classes must already exist or be created at this time.
+      </td>
+      <td valign="top">
+         <img src=../images/ZKMScript7.gif width=369 height=330 alt="ZKM Script Helper - saveAll Statement"><p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+      </td>
+      <td align="center" valign="middle">
+         <img src=../images/down_arrow.gif width=20 height=24 alt="Leads to..."><p>
+      </td>
+   <tr>
+   </tr>
+      <td valign="top">
+         <h2>Finished Script</h2>
+         You can now view your finished ZKM Script. Click on <img src=../images/saveBtn.gif align="absmiddle" alt="Save" width=75 height=26>
+         to save it to a file. You can of course edit the file in a basic text editor to make any changes you wish.
+      </td>
+      <td valign="top">
+         <img src=../images/ZKMScript8.gif width=450 height=480 alt="ZKM Script Helper - Finished script"><p>
+      </td>
+   </tr>
+</table>
+</center>
+<hr>
+<center>
+<table>
+   <tr>
+      <td>
+         <a href=index.html><img src=../images/uarrw.gif alt="Documentation Table of Contents"></a>
+      </td>
+   </tr>
+</table>
+</center>
+Copyright &copy; 2004 <a href="mailto:WebMaster@zelix.com"><font size=-1>Zelix Pty Ltd</font></a> (ABN 47 078 740 093)
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Copy Project Dialog Box/Create Project Database</TITLE>
+<!--<copyprojcreateprojdbdialog.html>-->
+<!--<index parent="project_databases" label="Copy Project/Create Project Database dialog box" anchor="copyprojcreateprojdb">-->
+<!--<index parent="copying" label="Copy Project/Create Project Database dialog box" anchor="copyprojcreateprojdb">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiCopyProjectWizard.CreateProjectDatabasePanel"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="copyprojcreateprojdb"></A>Copy Project/Create Project Database Dialog</H1>
+<P>Use the Copy Project Database dialog box of Copy Project Database (Edit | Copy) to create a new project database from the project database you selected to copy.</P>
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+
+	<TR>
+		<TD><b>Name</b></TD>
+		<TD><!--<control name="CreateRootGeneral.NAME_EDIT">-->
+		Enter a name for the project database. The name cannot begin or end with a tab or blank space. Any character can be used in the name.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Location</b></TD>
+		<TD><!--<control name="CreateRootGeneral.PATH_EDIT">-->
+		Either enter the location of the project database or click the Browse button and select the location. Do not create project databases in the same location as an existing 5.3/6.0 project root. <!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Archive Location</b></TD>
+		<TD><!--<control name="CreateRootGeneral.ARCHIVE_DIRECTORY_EDIT">-->
+		Either enter the archive location of the project database or click the Browse button and select the location if you want it to be a location other than the default. The default is a directory named archives beneath the project database location. If you do not copy archives to the project location (an option on the next screen), then only new archives will be stored in this directory. 
+		<!--</control>--></TD></TR>
+	<TR>
+		<TD><b>Workfile Location</b></td>
+		<TD><!--<control name="CreateRootGeneral.WORKING_FOLDER_EDIT">-->
+		Either enter the workfile location for the project database or click the Browse button and select the location if you want it to be a location other than the default. Workfiles are not copied to the work directory when you copy the project database or project, but will be added to the directory when you check out or get a versioned file. Remember that Users can create private workspaces to change the workfile location to a local drive if they want.
+		<!--</control>--></TD>
+	</tr>	
+</TABLE>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="aboutprjdb.html">About Project Databases</A></TD>
+		<TD><A HREF="aboutworkspaces.html">About Workspaces</A></TD>
+	</TR>
+	<TR>
+		<TD><a href="copyproject.html">Copying Projects</a></TD>
+		<TD><a href="createprjdb.html">Creating Project Databases</a></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

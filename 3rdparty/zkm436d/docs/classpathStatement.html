@@ -1,0 +1,88 @@
+<!-- Copyright 2003 Zelix Pty Ltd (ABN 47 078 740 093) -->
+<html>
+<head>
+<title>Zelix KlassMaster - classpath statement</title>
+   <meta name="keywords" content="java obfuscator,java code obfuscator,obfuscation">
+   <meta name="description" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <meta name="classification" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <link rel=stylesheet href="../ZKM.css" TYPE="text/css">
+</head>
+<body background="../images/small-white-mist1.jpg" bgcolor="#E1E1E1">
+<center><a href="index.html"><img src=../images/ZKM_b4.gif alt="Zelix KlassMaster" width=264 height=62 border=0></a></center>
+<hr>
+<center>
+<table width=770 border=0>
+   <tr>
+      <td>
+         <h1>The <code>classpath</code> Statement</h1>
+         The ZKM Script <code>classpath</code> statement sets the classpath that will be used by Zelix KlassMaster.
+         Zelix KlassMaster uses its classpath to find all classes:
+         <ul>
+            <li>directly or indirectly extended or implemented by the classes you have opened,
+            <li>that are specified in the signatures of any methods in the classes you have opened.
+         </ul>
+         Note that the classes you have opened within Zelix KlassMaster do not have to appear in its classpath.
+         <p>
+         Also, the Java bootstrap classes should appear in whatever classpath you set. 
+         If your classes were compiled using the JDK 1.1 then the path to the JDK 1.1 <code>classes.zip</code> must appear in your classpath.
+         If you used the JDK 1.2 or better then the path to corresponding <code>rt.jar</code> should appear in your classpath.
+         If you do not specify a path to any bootstrap classes then Zelix KlassMaster will automatically append the path to the bootstrap
+         classes associated with the JVM you are using to run Zelix KlassMaster.
+         <p>
+         In the absence of a <code>classpath</code> statement the classpath with which Zelix KlassMaster was started
+         will be used.
+         <p>
+         <h2>Examples</h2>
+         In the Windows&#153; or OS/2&#153; environments
+         <p>
+         <code>
+<pre>
+classpath "." 
+          "c:\jdk1.4\jre\lib\rt.jar";
+</pre>
+         </code>
+         <p>
+         <code>classpath ".;c:\jdk1.4\jre\lib\rt.jar";</code>
+         <p>
+         In a Unix environments (including Mac OS X)
+         <p>
+         <code>
+<pre>
+classpath "." 
+          "/jdk1.4/jre/lib/rt.jar";
+</pre>
+         </code>
+         <p>
+         <code>classpath ".:/opt/jdk1.4/jre/lib/rt.jar";</code>
+         <p>
+         Note that you can break the classpath up into independent Strings without using ";" or ":" separators. 
+         <b>This syntax is platform independent and is recommended</b>.
+
+         <h2><a href="langZKMScript.html#notation">Syntax</a></h2> 
+         <code><b>"<u>classpath</u>" ("\"" classpathString "\"")+ ";"</b></code>
+         <p>
+         <p>
+         <code><b>classpathString ::= path (pathSeparator path)*</b></code>
+         <p>
+         where <code>path</code> is a file system path specifying a folder or archive file and <code>pathSeparator</code> is the character returned by
+         <code>System.getProperty("path.separator")</code> by the JVM running Zelix KlassMaster.
+     </td>
+   </tr>
+</table>
+</center>
+<hr>
+<center>
+<table>
+   <tr>
+      <td>
+         <a href=langZKMScript.html><img src=../images/uarrw.gif alt="The ZKM Script Language"></a>
+      </td>
+      <td>
+         <a href=openStatement.html><img src=../images/rarrw.gif alt="ZKM Script open statement"></a>
+      </td>
+   </tr>
+</table>
+</center>
+Copyright &copy; 2003 <a href="mailto:WebMaster@zelix.com"><font size=-1>Zelix Pty Ltd</font></a> (ABN 47 078 740 093)
+</body>
+</html>

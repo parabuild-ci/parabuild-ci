@@ -1,0 +1,25 @@
+STARTING PARABUILD
+
+WINDOWS
+
+Under Windows Parabuild service is started automatically after installation is complete.
+
+UNIX
+
+Under Unix and Linux Parabuild service should be started using the daemon commands created by Parabuild installer, such as
+
+    /etc/init.d/parabuild start
+
+CONFIGURING BUILDS
+
+After you have completed installation and started Parabuild, you may begin configuring builds. Suppose you installed Parabuild at a machine with the network name BUILD. Then you would be able to access Parabuild by entering this URL in a web browser of your choice:
+
+    http://build:8080/parabuild/admin/builds.htm
+
+The default administrative password is "admin". Parabuild Administrator's Guide describes build administration in detail.
+
+A public build status page would be available for the members of your engineering team at the URL
+
+    http://build:8080/parabuild/index.htm
+
+

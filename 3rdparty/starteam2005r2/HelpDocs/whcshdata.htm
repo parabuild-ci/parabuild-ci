@@ -1,0 +1,118 @@
+<html>
+<head>
+<title>StarTeam Help</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta name="generator" content="RoboHelp by eHelp Corporation   www.ehelp.com">
+<meta name "description" content="WebHelp 5.10">
+</head>
+<body>
+<script language="javascript1.2" src="whver.js"></script>
+<script language="javascript1.2" src="whutils.js"></script>
+<script language="JavaScript">
+<!--
+var gaCsh=new Array();
+
+var gaWindow=new Array();
+
+var gaRmtProj=new Array();
+
+var gsProjPath=_getPath(document.location.href);
+
+function CshEntityItem(strAliasId,nTopicNum,strUrl)
+{
+	this.strAliasId=strAliasId;
+	this.nTopicNum=nTopicNum;
+	this.strUrl=strUrl;
+}
+
+function CshWindow(sWName,bBUseDefault,nWBOptions,sWBLeft,sWBTop,sWBWidth,sWBHeight,sWCaption,nWPanes,nWPOptions,sWPButtons,sWPDefBtn)
+{
+	this.sName=sWName;
+	this.bUseDefault=bBUseDefault;
+	if(!this.bUseDefault)
+	{
+		this.nBOptions=nWBOptions;
+		this.sBLeft=sWBLeft;
+		this.sBTop=sWBTop;
+		this.sBWidth=sWBWidth;
+		this.sBHeight=sWBHeight;
+	}
+	this.sCaption=sWCaption;
+	this.nPanes=nWPanes;
+	if(this.nPanes==2)
+	{
+		this.nPOptions=nWPOptions;
+		this.sPButtons=sWPButtons;
+		this.sPDefBtn=sWPDefBtn;
+	}
+}
+
+function addRemoteProject(sPath)
+{
+	if(sPath.length!=0)
+	{
+		if(sPath.lastIndexOf("/")!=sPath.length-1)
+			sPath+="/";
+		gaRmtProj[gaRmtProj.length]=sPath;	
+	}
+}
+
+//Set Context-sensitive help entity...
+function SetCsh(n,strAliasId,nTopicNum,strUrl)
+{
+	gaCsh[n]=new CshEntityItem(strAliasId,nTopicNum,strUrl);
+}
+
+function addWindow(sWName,bBUseDefault,nWBOptions,sWBLeft,sWBTop,sWBWidth,sWBHeight,sWCaption,nWPanes,nWPOptions,sWPButtons,sWPDefBtn)
+{
+	gaWindow[gaWindow.length]=new CshWindow(sWName,bBUseDefault,nWBOptions,sWBLeft,sWBTop,sWBWidth,sWBHeight,sWCaption,nWPanes,nWPOptions,sWPButtons,sWPDefBtn);
+}
+
+SetCsh(0,"tbtop_startlink",106570,"#tbtop_startlink");
+SetCsh(1,"2starting_ip_box4",-2140470182,"#2starting_ip_box4");
+SetCsh(2,"View_Options",136074,"changing_default_chart_properties.htm");
+SetCsh(3,"2client_activation_key_label",-1819474961,"#2client_activation_key_label");
+SetCsh(4,"topic_send",106503,"#topic_send");
+SetCsh(5,"tbf_startlink",106538,"#tbf_startlink");
+SetCsh(6,"tbf_startlink",106563,"#tbf_startlink");
+SetCsh(7,"2build_number_box",-1819474933,"#2build_number_box");
+SetCsh(8,"2ending_ip_box1",-2135882661,"#2ending_ip_box1");
+SetCsh(9,"2rsa_r2ec",-2135882759,"#2rsa_r2ec");
+SetCsh(10,"tbtask_startlink",106571,"#tbtask_startlink");
+SetCsh(11,"2ending_ip_box2",-2135882660,"#2ending_ip_box2");
+SetCsh(12,"2about_OK",-1819475967,"#2about_OK");
+SetCsh(13,"2ending_ip_box3",-2135882659,"#2ending_ip_box3");
+SetCsh(14,"2client_activation_key_box",-1819474964,"#2client_activation_key_box");
+SetCsh(15,"2ending_ip_box4",-2135882658,"#2ending_ip_box4");
+SetCsh(16,"1static2",-2128345830,"#1static2");
+SetCsh(17,"view_comp_window",146077,"comparing_two_views.htm");
+SetCsh(18,"1static3",-2128345829,"#1static3");
+SetCsh(19,"1ok",-2138374143,"#1OK");
+SetCsh(20,"1cancel",-2138374142,"#1cancel");
+SetCsh(21,"2rsa_r4stream",-2135882760,"#2rsa_r4stream");
+SetCsh(22,"2rsa_r2cbc",-2135882758,"#2rsa_r2cbc");
+SetCsh(23,"2company_box",-1819474965,"#2company_box");
+SetCsh(24,"2no_encryption",-2135882756,"#2no_encryption");
+SetCsh(25,"1compression_list",-2138372845,"#1compression_list");
+SetCsh(26,"2user_box",-1819474942,"#2user_box");
+SetCsh(27,"2starting_ip_box1",-2140470185,"#2starting_ip_box1");
+SetCsh(28,"tbfilter",107536,"#tbfilter");
+SetCsh(29,"2starting_ip_box2",-2140470184,"#2starting_ip_box2");
+SetCsh(30,"2starting_ip_box3",-2140470183,"#2starting_ip_box3");
+
+
+
+
+window.onload=window_OnLoad;
+
+function window_OnLoad()
+{
+	if(parent&&parent!=this&&parent.putCshData)
+	{
+		parent.putCshData(gsProjPath,gaCsh,gaWindow,gaRmtProj);
+	}
+}
+//-->
+</script>
+</body>
+</html>

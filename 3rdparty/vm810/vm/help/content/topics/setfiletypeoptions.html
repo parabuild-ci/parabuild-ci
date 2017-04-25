@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Setting File Type Options</TITLE>
+<!--<setfiletypeoptions.html>-->
+<!--<toc parent="setting_configuration_options" label="Setting File Type Options" anchor="setfiletypeoptions" sortkey="16">-->
+<!--<toc parent="setting_project_configuration_options" label="Setting File Type Options" anchor="setfiletypeoptions" sortkey="16">-->
+<!--<index parent="setting" label="file type options" anchor="setfiletypeoptions">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with Project Databases/Projects\nConfiguring Project Databases/Projects\nSetting File Type Options");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="setfiletypeoptions"></A>Setting File Type Options</H1>
+<p>To perform this procedure, you must first select the project database or project you want to configure. The project database or project must also be <a href="assocconfigfile.html">associated with a configuration file</a>.</p>
+<H2>To set <a href="filetypeoptions.html">file type options</a>:</H2>
+<OL>
+<LI>Select Admin | Configure Project. The Configure Project dialog box appears with the General tab active.<br><br>
+<LI>If not already selected, select the <b>Show Advanced Options</b> check box.<br><br>
+<LI>Select the File Types tab. The values that display for each option are the settings that are currently defined in the configuration file associated with the project database or project.<BR><BR>
+<LI>In the File Type list on the left, select the file type for which you want to define options. You can add and delete file types from this list.
+[Undefined] is all file types that are not specifically defined. For example, if you select [Undefined] and define options, then all file types have these options defined unless you select a specific file type (such as txt) and define options for that file type.<BR><BR>
+You can add file types by duplicating an existing file type and renaming it. When you do this, all of the duplicated file type's options are part of the definition of the new file type.
+<BR><BR>
+<b>Note:</b> You cannot delete the following file types from Version Manager: .c, .h, .pas, .mak, .for, .bas, .prg, .asm, .bat, .obj, .lib, .doc, .y, .l, .o, and .a. The desktop client will allow you to delete these file types from the list, but when you reenter the dialog box, the file types will be listed again.<br><br>
+<LI>Enter the <a href="archivesuffix.html">archive suffix</a> in the <b>Archive Suffix</b> field.<BR><BR>
+<LI>Select the <b>Store Deltas</b> check box to store all revisions other than the tip revision as a set of deltas. <a href="deltas.html">Click here</a> for an explanation of when to store deltas.<BR><BR>
+<LI>Select the <b>Translate EOL</b> check box to translate the end-of-line character. You should always select this option for text files; EOL Translation of text files is required in a <a href="crossplatform.html">cross-platform environment</a>.<BR><BR>
+<b>Warning!</b> Do not select this option for binary files; it may cause archive corruption.
+<BR><BR>
+<LI>Select the <b>Expand Keywords</b> check box to <a href="keywordexpansionoptions.html">expand keywords</a> when workfiles are checked in.<BR><BR>
+<b>Warning!</b> Do not select this option for binary files; it may cause archive corruption.<BR><BR>
+If you select this option, you can do the following:<BR><BR>
+<UL type=disc>
+<LI>Enter a value in the <b>Comment Prefix</b> field to define a comment prefix for the <a href="logkeyword.html">&#36;Log&#36; keyword</a>. The comment prefix is cosmetic, and it is the responsibility of the developer to enter the &#36;Log&#36; keyword within comments in the source file.<BR><BR>
+<LI>Enter a value in the <b>Newline Char</b> field to define a new line character for the &#36;Log&#36; keyword. By default, Version Manager ends lines added for the &#36;Log&#36; keyword with a carriage return/line feed combination. If your operating system requires a different end-of-line character, you must specify it here.<BR><BR>
+</UL>
+<LI>Select the <b><a href="columnmasking_renumbering.html">Column Masking/Renumbering</a></b> check box if the files that you are creating and modifying contain line numbers. Then, you can do any of the following:
+<BR><BR>
+<UL type=disc>
+	<LI>Select <b>COBOL Masking</b> to use the default COBOL masking definition for COBOL files, which is: Mask columns 73-80 and mask columns 1-6 only if column 1 is numeric.
+	<LI>If you did not select COBOL Masking, enter the column to mask from and the column to mask to. For example, you could enter 1 and 6; then, Version Manager would remove columns 1 through 6. To restrict column masking to numeric fields only, enter an asterisk (*) beside the range, for example, 1-6* masks the columns only if column 1 is numeric. You can enter multiple ranges, for example, 1-6*,10-12. Separate ranges with a comma.
+	<LI>Select the <b>COBOL Renumbering</b> check box to use the default COBOL renumbering definition for COBOL files, which is: Renumber columns 1 through 6, start with the number 10 increment by 10.
+	<LI>If you did not select COBOL Renumbering, enter the following:<BR><BR>
+<UL type=disc>
+<LI>The column range to renumber in the <b>Column Range</b> field. For example, to renumber columns 1 through 6, you would enter 1-6.
+<LI>The number to start numbering with in the <b>Start</b> field.
+<LI>The number by which to increment each line number in the <b>By</b> field. For example, if you enter 20 as the start number and 5 as the number by which to increment each line, the first line would be numbered 000020, the second 000025, the third 000030, and so forth. This assumes you are renumbering six columns.
+</UL>
+</UL>
+<BR>
+<LI>Enter the length of records in fixed-length files in the <b>Record Length</b> field so that Version Manager can generate deltas based on logical lines.<BR><BR>
+<b>Warning!</b> Do not select this option for variable length files. If you do, this can potentially corrupt an archive or cause other unexpected results.<BR><BR>
+<LI>Click OK if you are finished defining options, or click Apply to save the settings and continue to define other options.
+</OL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a href="aboutconfigfiles.html">About Configuration Files</a></TD>
+		<TD><a href="configureoverview.html">Configuring Project Databases and Projects</a></TD>
+	</TR>
+	<TR>
+		<TD><a href="configureprojectfiletypesdialog.html">Configure Project/File Types dialog box</a></TD>
+	</tr>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

@@ -1,0 +1,145 @@
+    <!--
+       ========================================================================
+         Run WebLogic 6.1 tests
+       ========================================================================
+    -->
+    <target name="test.weblogic.61" depends="prepare.test.weblogic.61"
+        if="weblogic.home.61" description="Run tests on WebLogic 6.1">
+
+        <!-- Start the servlet engine, wait for it to be started, run the
+             unit tests, stop the servlet engine, wait for it to be stopped.
+             The servlet engine is stopped if the tests fail for any reason -->
+
+        <runservertests 
+            testURL="http://localhost:${test.port}/test/ServletRedirector?Cactus_Service=RUN_TEST"
+            startTarget="start.weblogic.61"
+            stopTarget="stop.weblogic.61"
+            testTarget="test"/>
+
+    </target>
+
+    <!--
+       ========================================================================
+         Start WebLogic 6.1
+       ========================================================================
+    -->
+    <target name="start.weblogic.61">
+
+        <java classname="weblogic.Server" fork="yes"
+            dir="${target.weblogic61.dir}">
+
+            <classpath>
+                <pathelement location="${weblogic.home.61}/wlserver6.1/lib/weblogic.sp.jar"/>
+                <pathelement location="${weblogic.home.61}/wlserver6.1/lib/weblogic.jar"/>
+
+                <!-- Some hack: I still don't understand why I need these jars
+                     to make the cactus clovered jar work. It needs to be
+                     removed as we don't want the mention of these jars in the
+                     sample script that are packaged in the Cactus
+                     distribution ! You can safely remove this if you don't use
+                     Clover -->
+                <pathelement location="${clover.jar}"/>
+                <pathelement location="${junit.jar}"/>
+            </classpath>
+
+            <jvmarg value="-hotspot"/>
+            <jvmarg value="-ms64m"/>
+            <jvmarg value="-mx64m"/>
+            <jvmarg value="-Djava.library.path=${java.library.path};${weblogic.home.61}/wlserver6.1/bin"/>
+            <jvmarg value="-Dweblogic.RootDirectory=."/>
+            <jvmarg value="-Dweblogic.Domain=testdomain"/>
+            <jvmarg value="-Dweblogic.Name=testserver"/>
+            <jvmarg value="-Dbea.home=${weblogic.home.61}"/>
+            <jvmarg value="-Dweblogic.management.password=password"/>
+            <jvmarg value="-Djava.security.policy==./lib/weblogic.policy"/>
+
+        </java>
+
+    </target>
+
+    <!--
+       ========================================================================
+         Stop WebLogic 6.1
+       ========================================================================
+    -->
+    <target name="stop.weblogic.61">
+
+        <java classname="weblogic.Admin" fork="yes">
+
+            <classpath>
+                <pathelement location="${weblogic.home.61}/wlserver6.1/lib/weblogic.sp.jar"/>
+                <pathelement location="${weblogic.home.61}/wlserver6.1/lib/weblogic.jar"/>
+            </classpath>
+
+            <arg line="-url t3://localhost:${test.port}"/>
+            <arg line="-username system"/>
+            <arg line="-password password"/>
+            <arg value="SHUTDOWN"/>
+
+        </java>
+
+    </target>
+
+    <!--
+       ========================================================================
+         Display a warning message if the needed servlet engine home property
+         is not set
+       ========================================================================
+    -->
+    <target name="check.test.weblogic.61" unless="weblogic.home.61">
+
+        <echo message=""/>
+        <echo message="******************************************************"/>
+        <echo message="WARNING : The 'weblogic.home.61' property has not been"/>
+        <echo message="set. No test will be run on that servlet engine."/>
+        <echo message="******************************************************"/>
+        <echo message=""/>
+
+    </target>
+
+    <!--
+       ========================================================================
+         Prepare directories and variables for running the tests
+       ========================================================================
+    -->
+    <target name="prepare.test.weblogic.61"
+        depends="check.test.weblogic.61,testwar" if="weblogic.home.61">
+
+        <echo message="weblogic.home.61 = ${weblogic.home.61}"/>
+
+        <property name="target.weblogic61.dir"
+            value="${target.test.dir}/weblogic61"/>
+        <property name="conf.weblogic61.dir"
+            value="${conf.test.dir}/weblogic61"/>
+
+        <mkdir dir="${target.weblogic61.dir}/config/testdomain/applications"/>
+
+        <!-- Copy WL 6.1 configuration files -->
+        <copy file="${conf.weblogic61.dir}/config.xml"
+            todir="${target.weblogic61.dir}/config/testdomain" filtering="on"/>
+        <copy file="${conf.weblogic61.dir}/fileRealm.properties"
+            todir="${target.weblogic61.dir}/config/testdomain"/>
+        <copy file="${conf.weblogic61.dir}/SerializedSystemIni.dat"
+            todir="${target.weblogic61.dir}/config/testdomain"/>
+
+        <!-- Copy the war file -->
+        <copy file="${target.test.dir}/test.war"
+            todir="${target.weblogic61.dir}/config/testdomain/applications"/>
+
+        <!-- Update the war to include the proprietary weblogic.xml config
+             file. -->
+
+        <!-- Hack: Make sure weblogic.xml is always newer than the war so that
+             the later is always updated. Waiting for an Ant bug fix -->
+        <touch file="${target.weblogic61.dir}/config/testdomain/applications/test.war"
+            datetime="06/28/2000 2:02 pm"/>
+
+        <war update="true"
+            warfile="${target.weblogic61.dir}/config/testdomain/applications/test.war">
+
+            <webinf dir="${conf.weblogic61.dir}">
+                <include name="weblogic.xml"/>
+            </webinf>
+        </war>
+
+    </target>

@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Configure Project Dialog Box/Login Sources</TITLE>
+<!--<configureprojectloginsourcesdialog.html>-->
+<!--<index parent="configuring" label="Configure Project/Login Sources dialog box" anchor="configureprojectloginsourcesdialog">-->
+<!--<index parent="login_sources" label="Configure Project/Login Sources dialog box" anchor="configureprojectloginsourcesdialog">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiConfigureProjectDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="configureprojectloginsourcesdialog"></A>Configure Project/Login Sources</H1>
+<P>Use the Configure Project dialog box (Admin | Configure Project | General Tab | Security | Login Sources) to set the sources from which Serena ChangeMan Version Manager obtains user identification. Valid login sources are: Host ID, LDAP ID, Login Dialog, Netware ID, VCS ID, and WNET ID.</P>
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+	<TD COLSPAN=2><CENTER><B>Security | Login Sources</B></CENTER></TD>
+	</TR>
+		<TR><TD><b>Login Sources</b></TD>
+		<TD><!--<control name="ConfigureProjectGeneral.LOGIN_SOURCE_LIST">-->
+		Select the appropriate login sources for your configuration.
+		<!--</control>--></TD>
+	</TR>
+		<TR><TD><b>Up Arrow</b></TD>
+		<TD><!--<control name="ConfigureProjectGeneral.LOGIN_SOURCE_MOVE_UP">-->
+		Use the Up Arrow to arrange the login sources in the desired order. The order that you define here is the order in which Version Manager searches for user IDs.
+		<!--</control>--></TD>
+	</TR>
+		<TR><TD><b>Down Arrow</b></TD>
+		<TD><!--<control name="ConfigureProjectGeneral.LOGIN_SOURCE_MOVE_DOWN">-->
+		Use the Down Arrow to arrange the login sources in the desired order.
+		<!--</control>--></TD>
+	</TR>
+		<TR><TD><b>Auto create users with these default privileges</b></TD>
+		<TD>This check box has a one-to-one relationship with each login source. First, select a login source.<!--<control name="ConfigureProjectGeneral.AUTO_CREATE_USERS_CB">-->Select this check box to have the selected login source automatically create user IDs in the access control database.
+		<!--</control>--><!--<control name="ConfigureProjectGeneral.DEFAULT_PRIV_EDIT">-->Specify the default privileges that will be assigned to the User, or click the Browse button to select them.<!--</control>--> By default, the Host ID login source automatically creates user IDs in the access control database and assigns them the Unlimited privilege set.<BR><BR></TD>
+	</TR>
+		<TR><TD><b>Case Sensitive User ID</b></TD>
+		<TD><!--<control name="ConfigureProjectGeneral.CASE_SENSITIVE_USERID_CB">-->
+		Select this check box to make user IDs case-sensitive. By default, user IDs are <i>not</i> case sensitive.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Enable Single Sign-on</b></TD>
+		<TD><!--<control name="ConfigureProjectLoginSources.ENABLE_SINGLE_SIGNON_CB">-->Select to enable single sign-on access to the selected project or project database.
+		<br><br><b>NOTE</b> To use <a href="single_sign-on.html">single sign-on</a>, your Version Manager user ID and O/S user ID must match.<!--</control>--></TD>
+	</TR>
+</TABLE>
+<h2>See Also</h2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="setloginsources.html">Setting Login Sources</A></TD>
+		<TD><A HREF="loginsources.html">Login Sources</A></TD>
+	</tr>
+		<TR><TD><A HREF="aboutlogging.html">About Logging In to Project Databases or Projects</a></td>
+		<TD><a href="settingldapauthenticationoptions.html">Setting LDAP Configuration Options</a></TD>
+	</tr>
+	<TR>
+		<TD><A HREF="specifying_ldap_server.html">Specifying an LDAP Server</a></td>
+		<TD><a href="single_sign-on.html">Single Sign-On</a></TD>
+	</tr>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>
+

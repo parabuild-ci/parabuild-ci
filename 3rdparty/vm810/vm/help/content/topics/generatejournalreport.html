@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Generating Journal Reports</TITLE>
+<!--<generatejournalreport.html>-->
+<!--<toc parent="generating_reports" label="Generating Journal Reports" anchor="generatejournalreport" sortkey="04">-->
+<!--<index parent="reports" label="generating journal reports" anchor="generatejournalreport">-->
+<!--<index parent="generating" label="journal reports" anchor="generatejournalreport">-->
+<!--<index parent="journal_files" label="generating journal reports" anchor="generatejournalreport">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nGenerating Reports\nGenerating Journal Reports");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="generatejournalreport"></A>Generating Journal Reports</H1>
+<P>You generate a journal report to display information about changes made to archives, such as assigning version labels, checking workfiles in and out, and assigning a promotion group. You can generate a journal report for a project database, project, multiple versioned files, or a single versioned file. When you select a project database or project, you have the option of generating the report for:</p>
+<UL>
+	<LI>All of the versioned files of all of the projects/subprojects within the project database or project
+	<LI>Or, just the versioned files within the selected project database or project--not including the projects and/or subprojects
+</ul>
+<P>The journal file that is used to generate the report is the one that is specified in the configuration file associated with the item you select. If a journal file is not specified in the configuration file for the selected item, a journal report cannot be generated.</p>
+<P>You must have the Journal Report privilege to generate a journal report.</P>
+<H2>To generate a journal report:</H2>
+<OL>
+	<LI>Select a project database, project, or versioned file(s).<br><br>
+	<LI>Select Actions | Show Journal. The Show Journal dialog box appears with the General tab active.<br><br>
+	<LI>To generate a report that contains every modification that has been made to an archive by every user and all currently locked revisions, click OK. Otherwise, you can limit the contents of the report by doing any of the following:<br><br>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><b>To...</b></TD>
+		<TD><b>Do this...</b></TD>
+	</TR>
+	<TR>
+		<TD>Limit the report to changes made by certain Users</TD>
+		<TD>Enter the user IDs in the <b>User(s)</b> field, separating multiple IDs with commas. You can also select multiple user IDs by clicking the Browse button and selecting them from the Select Users dialog box.</TD>
+	</TR>
+	<TR>
+		<TD>List currently locked revisions</TD>
+		<TD>Select the <b>Show only locked revisions</b> check box. If you entered user IDs in the
+<b>User(s)</b> field and select this check box, Version Manager shows the revisions currently locked by the specified Users.</TD>
+	</TR>
+	<TR>
+		<TD>Limit the report to changes made in a certain range</TD>
+		<TD>Select the start date in the <b>Date Range From</b> field and the stop date in the <b>Date Range To</b> field. Click the browse button to display a calendar. Select a date by selecting a month and year and then clicking the date on the calendar.</TD>
+	</TR>
+	<TR>
+		<TD>Limit the report to show only archives that have had revisions checked out</TD>
+		<TD>Select the <b>Check Out</b> check box.</TD>
+	</TR>
+	<TR>
+		<TD>Limit the report to show only archives that have had workfiles checked in</TD>
+		<TD>Select the <b>Check In</b> check box.</TD>
+	</TR>
+	<TR>
+		<TD>Limit the report to show only archives that have had revisions promoted</TD>
+		<TD>Select the <b>Promote</b> check box.</TD>
+	</TR>
+	<TR>
+		<TD>Limit the report to show only archives that have had revisions deleted</TD>
+		<TD>Select the <b>Delete Revision</b> check box.</TD>
+	</TR>
+	<TR>
+		<TD>Generate a report for an entire project, including all of the versioned files within
+its subprojects</TD>
+		<TD>Select the <b>Include files in subprojects</b> check box.</TD>
+	</TR>
+</TABLE><br>
+<br>
+	<LI>To review the selected versioned files before you generate the journal report, click the Selected Files tab.<br><br>
+	<LI>Click OK. The journal report is generated and displayed in a text editor or HTML browser, depending on what option you selected on the Applications tab of the Options dialog (select View | Options, then click the Applications tab). 
+</OL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="aboutjournalreport.html">About Journal Reports</A></TD>
+		<TD><A HREF="samplejournal.html">Sample Journal Report</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="aboutreports.html">About Reports</A></TD>
+		<TD><a href="customizingreportformat.html">Customizing the Format of HTML Reports</a></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="setjournalfileoptions.html">Setting Journal File Options</A></TD>
+		<TD><A HREF="optionseditor.html">Options Dialog Box/Applications Tab</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

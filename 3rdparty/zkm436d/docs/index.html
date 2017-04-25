@@ -1,0 +1,124 @@
+<!-- Copyright 2005 Zelix Pty Ltd (ABN 47 078 740 093) -->
+<html>
+<head>
+<title>Zelix KlassMaster Documentation</title>
+   <meta name="keywords" content="java obfuscator,java code obfuscator,obfuscation">
+   <meta name="description" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <meta name="classification" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <link rel=stylesheet href="../ZKM.css" TYPE="text/css">
+</head>
+<body background="../images/small-white-mist1.jpg" bgcolor="#E1E1E1">
+<center><a href="../index.html"><img src=../images/ZKM_b4.gif alt="Zelix KlassMaster" width=264 height=62 border=0></a></center>
+<hr>
+<h1>Online Documentation 4.4</h1>
+<h2>Table of Contents</h2>
+<ul>
+   <li><a href=install.html>Installation</a>
+   <li><a href=compatibility.html>Compatibility</a>
+   <li>Tutorials
+      <ul>
+         <!--<li><a href=tutorials/buildTutorial.html>Basic build tutorial</a>-->
+         <li><a href=tutorials/exclusionsTutorial.html>ZKM Script exclusions tutorial</a>
+         <li><a href=tutorials/trimTutorial.html>Trim tutorial</a>
+         <li><a href=tutorials/incrementalObfuscation.html>Change logs and Incremental Obfuscation</a>
+         <li><a href=tutorials/j2meTutorial.html>J2ME MIDlet Obfuscation</a>
+      </ul>
+   <li><a href=mainFrame.html>Main Zelix KlassMaster window</a>
+      <ul>
+         <li><a href=hierarchyPane.html>Class Hierarchy pane</a>
+         <li><a href=classProperties.html>Class properties</a>
+         <li><a href=fieldProperties.html>Field properties</a>
+         <li><a href=methodProperties.html>Method properties</a>
+         <li><a href=constantProperties.html>Constant properties</a>
+         <li><a href=viewPane.html>View pane</a>
+      </ul>
+   <li>File Menu options
+      <ul>
+         <li><a href=fileOpen.html>File | Open</a> - Opening classes
+         <ul>
+            <li type=a><a href=loadWarnings.html>Class Open Warnings</a>
+            <li type=a><a href=loadErrors.html>Class Open Errors</a>
+         </ul>
+         <li><a href=fileSaveAll.html>File | Save all</a> - saving classes (Smart Save<font size=-1> <sup>tm</sup></font>)
+      </ul>
+   <li>Tools Menu options
+      <ul>
+         <li><a href=toolsTrim.html>Tools | Trim</a> - trim unused classes, fields and methods
+            <ul>
+               <li><a href=trimExclude.html>Trim Exclusions</a>
+                  <ul>
+                     <li><a href=excludeClassType.html>Class exclude parameter</a>
+                     <li><a href=excludeFieldType.html>Field exclude parameter</a>
+                     <li><a href=excludeMethodType.html>Method exclude parameter</a>
+                  </ul>
+               <li><a href=trimOptions.html>Trim Options</a>
+            </ul>
+         <li><a href=toolsObfuscate.html>Tools | Obfuscate</a> - obfuscate classes
+            <ul>
+               <li><a href=advancedExclude.html>Obfuscate Name Exclusions</a>
+                  <ul>
+                     <li><a href=excludePackageType.html>Package exclude parameter</a>
+                     <li><a href=excludeClassType.html>Class exclude parameter</a>
+                     <li><a href=excludeFieldType.html>Field exclude parameter</a>
+                     <li><a href=excludeMethodType.html>Method exclude parameter</a>
+                     <li><a href=excludeClassSuffixType.html>Class Suffix exclude parameter</a>
+                  </ul>
+               <li><a href=obfuscateOptions.html>Obfuscate Options</a>
+            </ul>
+         <li><a href=toolsBuildHelper.html>Tools | Build Helper</a> - interactively process your classes
+         <li><a href=toolsZKMScriptHelper.html>Tools | ZKM Script Helper</a> - interactively construct a ZKM Script file
+         <li><a href=toolsStackTraceTranslate.html>Tools | Stack Trace Translate</a>
+      </ul>
+   <li>Options Menu options
+      <ul>
+         <li><a href=optionsClasspath.html>Options | Classpath</a> - set the classpath
+         <li><a href=optionsGC.html>Options | Garbage Collect</a>
+      </ul>
+   <li><a href=j2mePlugin.html>J2ME Wireless Toolkit Obfuscator Plugin</a>
+   <li><a href=stackTraceTranslateApi.html>API for calling the Stack Trace Translate tool</a>
+   <li><a href=buildToolApi.html>Calling Zelix KlassMaster from a build tool</a>
+   <li><a href=runZKMScript.html>Executing a ZKM Script file</a>
+   <li><a href=preprocessor.html>The ZKM Preprocessor</a>
+   <li><a href=langZKMScript.html>The ZKM Script language</a>
+      <ul>
+         <li><b><a href=classpathStatement.html><code>classpath</code></a></b> statement
+         <li><b><a href=openStatement.html><code>open</code></a></b> statement
+         <li><b><a href=trimExcludeStatement.html><code>trimExclude</code></a></b> statement
+         <li><b><a href=trimUnexcludeStatement.html><code>trimUnexclude</code></a></b> statement
+         <li><b><a href=resetTrimExclusionsStatement.html><code>resetTrimExclusions</code></a></b> statement
+         <li><b><a href=trimStatement.html><code>trim</code></a></b> statement
+         <li><b><a href=excludeStatement.html><code>exclude</code></a></b> statement
+         <li><b><a href=unexcludeStatement.html><code>unexclude</code></a></b> statement
+         <li><b><a href=resetExclusionsStatement.html><code>resetExclusions</code></a></b> statement
+         <li><b><a href=obfuscateFlowExcludeStatement.html><code>obfuscateFlowExclude</code></a></b> statement
+         <li><b><a href=resetObfuscateFlowExclusionsStatement.html><code>resetObfuscateFlowExclusions</code></a></b> statement
+         <li><b><a href=stringEncryptionExcludeStatement.html><code>stringEncryptionExclude</code></a></b> statement
+         <li><b><a href=resetStringEncryptionExclusionsStatement.html><code>resetStringEncryptionExclusions</code></a></b> statement
+         <li><b><a href=existingSerializedClassesStatement.html><code>existingSerializedClasses</code></a></b> statement
+         <li><b><a href=resetExistingSerializedClassesStatement.html><code>resetExistingSerializedClasses</code></a></b> statement
+         <li><b><a href=fixedClassesStatement.html><code>fixedClasses</code></a></b> statement
+         <li><b><a href=resetFixedClassesStatement.html><code>resetFixedClasses</code></a></b> statement
+         <li><b><a href=groupingsStatement.html><code>groupings</code></a></b> statement
+         <li><b><a href=resetGroupingsStatement.html><code>resetGroupings</code></a></b> statement
+         <li><b><a href=obfuscateStatement.html><code>obfuscate</code></a></b> statement
+         <li><b><a href=unobfuscateStatement.html><code>unobfuscate</code></a></b> statement
+         <li><b><a href=saveAllStatement.html><code>saveAll</code></a></b> statement
+         <li><b><a href=saveAllOldStatement.html><code>saveAllOld</code></a></b> statement
+         <li><b><a href=gcStatement.html><code>gc</code></a></b> statement
+         <li><b><a href=executeStatement.html><code>execute</code></a></b> statement
+         <li><b><a href=printStatement.html><code>print</code></a></b> statement
+      </ul>
+</ul>
+<hr>
+<center>
+<table>
+   <tr>
+      <td>
+         <a href=../index.html><img src=../images/uarrw.gif alt="Zelix KlassMaster Home"></a>
+      </td>
+   </tr>
+</table>
+</center>
+Copyright &copy; 2005 <a href="mailto:WebMaster@zelix.com"><font size=-1>Zelix Pty Ltd</font></a> (ABN 47 078 740 093)
+</body>
+</html>

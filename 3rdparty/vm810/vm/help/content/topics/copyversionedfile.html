@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Copying a Versioned File</TITLE>
+<!--<copyversionedfile.html>-->
+<!--<toc parent="working_with_versioned_files" label="Copying Versioned Files" anchor="CopyVersionedFile" sortkey="01">-->
+<!--<index parent="files" label="copying versioned files " anchor="CopyVersionedFile">-->
+<!--<index parent="versioned_files" label="copying versioned files " anchor="CopyVersionedFile">-->
+<!--<index parent="copying" label="versioned files" anchor="CopyVersionedFile">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with Versioned Files\nCopying Versioned Files");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="CopyVersionedFile"></A>Copying Versioned Files</H1>
+<P>You can share archives among projects by copying versioned files to any other open project or project database. The destination you can select depends upon the item you are copying. Refer to the <A HREF="copymatrix.html">copy matrix</A> for more information.
+<p>When you copy a versioned file, only the versioned file is copied - the archive that contains the versioned file remains in its original location. All copies of a versioned file share the same archive. Note that when you copy an entire project, you can choose to copy the archive, too. </P>
+<P>One method you can use to share files across projects is to set up a project for all versioned files you want to be accessible from multiple projects, and then reference these files from other projects. This keeps all of the versioned files you want to copy and their archives together in one location. The projects that the versioned files are copied into do not contain archives for the copied files.</P>
+
+
+<H2>To copy versioned files using the menu items:</H2>
+<OL>
+<LI>Select the versioned file (or files) you want to copy from the File pane of the Version Manager window.<br><br>
+<LI>Select Edit | Copy. The Copy File dialog box appears. The dialog box displays all open Version Manager project databases. <br><br>
+<LI>Select a destination project database, project, or subproject where you want to copy the versioned file. <br><br>
+<li>Click Finish. The versioned files are copied to the destination location.<br><br>
+</OL>
+<H2>To copy versioned files using drag and drop:</H2>
+<OL>
+<LI>Select the versioned file (or files) you want to copy from the File pane of the Version Manager window.<br><br>
+<LI>Do one of the following:<br><br>
+	<ul>
+		<LI type="disc">Press the CTRL key and drag and drop the versioned file to the new location within the <i>same</i> project database <br>
+
+		<LI type="disc">Drag and drop the versioned file to the new location in any <i>other</i> open project database.<br><br>
+	</UL>
+The versioned file is copied to the destination location.<br><br>
+<B>Note:</B> Depending on how you've set up your Version Manager environment, a dialog box may ask for confirmation to copy the versioned files. Click Yes to confirm the copy or No to abort.<br><br>
+</OL>
+<P>
+If you are <a href="setupprojects.html">setting up a project database</a>, the next step is to <a href="copyvm5_3proj.html">upgrade 5.3/6.0 projects</a> (optional).</P>
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="aboutversionedfiles.html">About Versioned Files</A></TD>
+		<TD><A HREF="moveversionedfile.html">Moving Versioned Files</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="deleteversionedfile.html">Deleting Versioned Files</A></TD>
+		<TD><A HREF="copymatrix.html">Copy Matrix</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

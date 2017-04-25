@@ -1,0 +1,280 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Configuring Folders and Items</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=copyright value="Copyright© 1995-2003, Borland Software Corporation. All rights reserved.">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=1142>
+<meta name=layout-width content=702>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<!--(Scripts)=======================================================-->
+
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="./ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Working with the Application\nPerforming Common Operations\nConfiguring Folders and Items");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Configuring Folders and Items</h1>
+
+<p class=Body>You can configure (or roll back) an individual folder or 
+ item to a specific view label, promotion state, or date and time. Essentially, 
+ all rollbacks are made to a particular date and time. For example, if 
+ you roll back to a view label, you essentially roll back to the revision 
+ of the folder or item that existed on the date and time at which that 
+ label was attached.</p>
+
+<p class=Body>Unlike a view, a folder or item retains its roll-back configuration 
+ until you manually change it or until the folder or item branches. When 
+ you close the view, the folder or item does not immediately return to 
+ its current configuration.</p>
+
+<p class=Body>Rolling back a folder does not reconfigure any of the items 
+ or child folders associated with it. It only rolls back the folder properties 
+ to the values they had at the configuration time. Depending on the folder 
+ behavior, the folder may become read-only, in which case its properties 
+ cannot be changed.</p>
+
+<p class=Body>The configuration of a folder affects the new items or child 
+ folders that can float into it. For example, in a floating branch view, 
+ you can keep items from floating into a particular folder by configuring 
+ the folder to a particular label, promotion state, or point in the past. 
+ Later, you can reconfigure the folder to floating so that it can receive 
+ new items from its parent. However, the items added to the parent while 
+ the folder was not floating will never automatically go into the folder. 
+ They must be manually shared.</p>
+
+<p class=Body>To freeze a folder or item at a certain point in time so 
+ that it cannot be changed:</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Change its configuration 
+ to a point in the past.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Make sure that its branching 
+ behavior is either disabled or <span style="font-weight: bold;"><B>not</B></span> 
+ set to <span style="font-weight: bold;"><B>Branch on change.</B></span></p></li>
+</ul>
+
+<p class=Body><span style="font-size: 10pt; font-weight: bold;"><font size=2 style="font-size:10pt;"><B><font style="color: #000000;"
+	color=#000000>Warning:&nbsp;</font></B></font></span>There is no way to locate 
+ folders that have been configured to a point in the past, unless you make 
+ a note of them Use this feature with caution.</p>
+
+<p class=Proc>To roll back a folder or item:</p>
+
+<ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select a folder from the 
+ folder hierarchy.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>If desired, select one or 
+ more component items from the upper pane.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select<span style="font-weight: bold;"><B> 
+ Advanced &gt; Behavior</B></span> from the Folder menu, component menu, or 
+ context menu. The <span style="font-style: italic;"><I>Item Behavior</I></span> 
+ dialog opens.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select the <span style="font-weight: bold;"><B>Configuration</B></span> 
+ tab.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select a configuration option:</p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1><span style="font-weight: bold;"><B>Labeled 
+ revision</B></span>: This option uses the folder or item revision with the 
+ specified view label as the tip revision. Existing view labels are listed 
+ in reverse chronological order based on the time for which they were created. 
+ This option is disabled if the view has no labels defined.</p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1><span style="font-weight: bold;"><B>Promotion 
+ state configuration</B></span>: This option uses the folder or item revision 
+ with the view label assigned to the selected promotion state as the tip 
+ revision. This option is disabled if this view has no promotion states 
+ defined.</p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1><span style="font-weight: bold;"><B>Revision 
+ as of</B></span>: This option uses the folder or item revision just prior 
+ to the specified point in time as the tip revision. It defaults to the 
+ current date and time, but you can select a date and time in the past, 
+ as long as it is after the time when the folder or item was created.</p></li>
+	</ul>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Click <span style="font-weight: bold;"><B>OK</B></span>.</p></li>
+</ol>
+
+<p class=Proc>To return to the current folder or item configuration:</p>
+
+<ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select a folder from the 
+ folder hierarchy.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>If desired, select one or 
+ more component items from the upper pane.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select<span style="font-weight: bold;"><B> 
+ Advanced &gt; Behavior</B></span> from the Folder menu, component menu, or 
+ context menu. The<span style="font-style: italic;"><I> Item Behavior</I></span> 
+ dialog opens.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select the <span style="font-weight: bold;"><B>Configuration</B></span> 
+ tab.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select the<span style="font-weight: bold;"><B> 
+ Floating option</B></span> button.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Click <span style="font-weight: bold;"><B>OK</B></span>.</p></li>
+</ol>
+
+<p class=Proc>To identify rolled-back items:</p>
+
+<ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Add the <span style="font-weight: bold;"><B>Configuration 
+ Time</B></span> field to the list displayed in the upper pane.</p></li>
+	
+	<ol>
+		
+		<li class=kadov-p-CList-2><p class=List-2>Right-click the column 
+ headers in the upper pane.</p></li>
+		
+		<li class=kadov-p-CList-2><p class=List-2>Select <span style="font-weight: bold;"><B>Show 
+ Fields </B></span>from the context menu.</p></li>
+		
+		<li class=kadov-p-CList-2><p class=List-2>Select the <span style="font-weight: bold;"><B>Configuration 
+ Time</B></span> field from the <span style="font-weight: bold;"><B>Available 
+ Fields</B></span> list, then click <span style="font-weight: bold;"><B>Add</B></span>. 
+ </p></li>
+	</ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Sort based on the <span style="font-weight: bold;"><B>Configuration 
+ Time</B></span> column, because only items with configuration times in the 
+ past have any values in this field. If the <span style="font-weight: bold;"><B>Configuration 
+ Time</B></span> matches the time for a view label, the item may be configured 
+ to that view label or to a promotion state based on that view label. </p></li>
+	
+	<p class=List-1-text>Other fields that may be of interest are <span 
+ style="font-weight: bold;"><B>Branch On Change</B></span> and <span style="font-weight: bold;"><B>Branch 
+ State</B></span>. </p>
+	
+	<ol>
+		
+		<ul>
+			
+			<li class=kadov-p-CBullet-1><p class=Bullet-1><span style="font-weight: bold;"><B>Branch 
+ On Change</B></span> uses a <span style="font-weight: bold;"><B>Yes</B></span> or 
+ <span style="font-weight: bold;"><B>No</B></span> value to indicate whether a 
+ file will branch when it changes. If <span style="font-weight: bold;"><B>Branch 
+ On Change</B></span> is <span style="font-weight: bold;"><B>No</B></span> and <span 
+ style="font-weight: bold;"><B>Configuration Time</B></span> has a value, the 
+ item is frozen (read-only).</p></li>
+			
+			<li class=kadov-p-CBullet-1><p class=Bullet-1><span style="font-weight: bold;"><B>Branch 
+ State</B></span> indicates whether an item has branched in the child view, 
+ is still unbranched and part of the parent view, or is in the root view 
+ for the project (and, therefore, not branchable). Its values are <span 
+ style="font-weight: bold;"><B>Branched</B></span>, <span style="font-weight: bold;"><B>Not 
+ Branched</B></span>, and <span style="font-weight: bold;"><B>Root</B></span>.</p></li>
+		</ul>
+	</ol>
+</ol>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

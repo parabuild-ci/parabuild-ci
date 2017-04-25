@@ -1,0 +1,233 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Creating a New Property Field</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=copyright value="Copyright© 1995-2003, Borland Software Corporation. All rights reserved.">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=716>
+<meta name=layout-width content=707>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<!--(Scripts)=======================================================-->
+
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="./ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Working with the Application\nCustomizing Property Fields\nCreating a New Property Field");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Creating a New Property Field</h1>
+
+<p class=Body
+	style="margin-top: 7.00pt;">You can create any number of property fields 
+ for application items. A new field can be any of the following types: 
+ date/time, enumerated, integer, <span style="text-transform: lowercase;">Real, 
+ Text, or Us</span>erID.</p>
+
+<p class=Body
+	style="margin-top: 7.00pt;">Enumerated, integer, real and date/time 
+ types have default values, although the user can change them. Text and 
+ user ID types do not have default values, but you can require that the 
+ user provide input for these fields.</p>
+
+<p class=Body
+	style="margin-top: 7.00pt;">Before creating custom fields, use the 
+ stcmd command line to exclusively lock the server to ensure that other 
+ users cannot access it. For information, see <a href="cl_lck.htm">Locking 
+ and Unlocking a Server</a>. </p>
+
+<p class=Proc>To create a new property field:</p>
+
+<ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select one of the following:</p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1
+										style="font-weight: bold;">File 
+ &gt; Advanced &gt; Customize.</p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1
+										style="font-weight: bold;">Change 
+ Request &gt; Advanced &gt; Customize.</p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1
+										style="font-weight: bold;">Topic 
+ &gt; Advanced &gt; Customize.</p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1
+										style="font-weight: bold;">Task 
+ &gt; Advanced &gt; Customize.</p></li>
+	</ul>
+	
+	<li class=kadov-p-CList-1>
+    <p class=List-1>Review the <span style="font-style: italic;"><I>Customize</I></span> 
+      dialog to find the fields that can be customized. The fields and icon graphics 
+      accompanying them are as follows:</p>
+  </li>
+	
+	<ul>
+		
+		
+    <li class=kadov-p-CBullet-1> 
+      <p class=Bullet-1 align="left">A field with a pencil in the center of the 
+        icon is an application field. It is always an enumerated type and is fully 
+        customizable. You can add, disable, rename, and reorder its values.</p>
+    </li>
+		
+		<li class=kadov-p-CBullet-1>
+      <p class=Bullet-1>A new field icon displays the head and shoulders of a 
+        person. It can be one of several types and is fully customizable. If the 
+        new field is disabled, the icon is greyed-out.</p>
+    </li>
+		
+		<li class=kadov-p-CBullet-1>
+      <p class=Bullet-1>An application field with an icon containing a small yellow 
+        lock in the lower left corner is a restricted enumerated type. You can 
+        change only the names the application displays for the values of this 
+        field. Usually these fields have workflow characteristics that cannot 
+        be altered.</p>
+    </li>
+	</ul>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Click <span style="font-weight: bold;"><B>Add</B></span>. 
+ The<span style="font-style: italic;"><I> Add Field</I></span> dialog opens.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Enter the name for the new 
+ field to be used by the database in the <span style="font-weight: bold;"><B>Field 
+ name</B></span> text box. Use only alphanumeric characters and no spaces in 
+ this name. </p></li>
+	
+	<p class=List-1-text>The name should be less than 31 ASCII characters 
+ (including <span style="font-weight: bold;"><B>Usr_</B></span>) and not contain 
+ the following characters, which are not accepted by one or more of the 
+ databases that the application supports:</p>
+	
+	<p class=List-1-text>= \\.^$@,;!:#*&amp;&lt;&gt;?-//%|[](())+&quot; 
+ </p>
+	
+	<p class=List-1-text>Be careful about selecting the field name, as 
+ it cannot be changed once you click <span style="font-weight: bold;"><B>OK</B></span>.</p>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Enter the name that the application 
+ will display to users in the <span style="font-weight: bold;"><B>Display 
+ Name</B></span> text box.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select a type from the<span 
+ style="font-weight: bold;"><B> Type</B></span> list box and follow the steps 
+ in the procedure for that type.</p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1><a href="creating_date-time_field.htm">Create 
+ a date/time field.</a></p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1><a href="creating_enumerated_field.htm">Create 
+ an enumerated field</a>.</p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1><a href="creating_numeric_field.htm">Create 
+ a numeric (real or integer) field</a>.</p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1><a href="creating_text_field.htm">Create 
+ a text field</a>.</p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1><a href="creating_user_id_field.htm">Create 
+ a user ID field</a>.</p></li>
+	</ul>
+</ol>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

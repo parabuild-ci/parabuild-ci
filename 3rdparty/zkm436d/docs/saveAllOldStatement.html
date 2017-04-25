@@ -1,0 +1,66 @@
+<!-- Copyright 2003 Zelix Pty Ltd (ABN 47 078 740 093) -->
+<html>
+<head>
+<title>Zelix KlassMaster - saveAllOld statement</title>
+   <meta name="keywords" content="java obfuscator,java code obfuscator,obfuscation">
+   <meta name="description" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <meta name="classification" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <link rel=stylesheet href="../ZKM.css" TYPE="text/css">
+</head>
+<body background="../images/small-white-mist1.jpg" bgcolor="#E1E1E1">
+<center><a href="index.html"><img src=../images/ZKM_b4.gif alt="Zelix KlassMaster" width=264 height=62 border=0></a></center>
+<hr>
+<center>
+<table width=770 border=0>
+   <tr>
+      <td>
+         <h1>The <code>saveAllOld</code> Statement</h1>
+         <b>Please note that the <code>saveAllOld</code> statement is obsolete and it will eventually be removed from the ZKM Script language.</b>
+         <p>
+         The ZKM Script <code>saveAllOld</code> statement saves all opened classes to the specified directory.
+         It has the limited functionality of the <a href=saveAllStatement.html><code>saveAll</code></a> statement as it was in Zelix KlassMaster 2.4 and earlier.
+         It was created to allow version 2.4 ZKM Scripts to be easily modified to work unchanged with Zelix KlassMaster 2.5 and later.
+         <p>
+         <h2>Explanation</h2>
+         The <code>saveAllOld</code> statement saves all opened classes in their current state. If the statement follows
+         an <a href=obfuscateStatement.html><code>obfuscate</code></a> statement then the classes will be saved in their obfuscated state.
+         If the directory specified by the <code>saveAllOld</code> statement doesn't exist then it will be created.
+         <p>
+         The <code>saveAllOld</code> statement <b>does not perform</b> any of special handling of 
+         <ul>
+            <li>class files opened from jar and zip archives,
+            <li>non-class files such as image and properties files opened from jar and zip archives,
+            <li>manifest, EJB deployment descriptor and service provider files
+         </ul>
+         that is performed by the <code>saveAll</code> statement. Only class files are saved and they are only saved to the directory structure.
+
+         <h2>Example</h2>
+         <code>saveAllOld "c:\temp";</code>
+
+         <h2><a href="langZKMScript.html#notation">Syntax</a></h2> 
+         <code><b>"<u>saveAllOld</u>" "\"" directoryName "\"" ";"</b></code>
+         <p>
+         where <code>directoryName</code> is the name of the directory into which the class files are to be saved.
+     </td>
+   </tr>
+</table>
+</center>
+<hr>
+<center>
+<table>
+   <tr>
+      <td>
+         <a href=saveAllStatement.html><img src=../images/larrw.gif alt="ZKM Script saveAll statement"></a>
+      </td>
+      <td>
+         <a href=langZKMScript.html><img src=../images/uarrw.gif alt="The ZKM Script Language"></a>
+      </td>
+      <td>
+         <a href=gcStatement.html><img src=../images/rarrw.gif alt="ZKM Script gc statement"></a>
+      </td>
+   </tr>
+</table>
+</center>
+Copyright &copy; 2003 <a href="mailto:WebMaster@zelix.com"><font size=-1>Zelix Pty Ltd</font></a> (ABN 47 078 740 093)
+</body>
+</html>

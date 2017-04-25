@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Unlock Dialog Box</TITLE>
+<!--<UnlockDialog.html>-->
+<!--<index parent="files" label="Unlock dialog box" anchor="UnlockDialog">-->
+<!--<index parent="projects" label="Unlock dialog box" anchor="UnlockDialog">-->
+<!--<index parent="unlocking" label="Unlock dialog box" anchor="UnlockDialog">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiUnlockDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="UnlockDialog"></A>Unlock</H1>
+<P>Use the Unlock dialog box (Actions | Unlock) to unlock specific revisions of one or more versioned files or to unlock specific revisions of all versioned files in a project or project database. You can unlock by revision number, version label, or promotion group. 
+</P>
+<P>Locks placed on projects using Version Manager 5.3/6.0 are honored by the current version of Version Manager. Use Version Manager 5.3/6.0 to lock or unlock a 5.3/6.0 project.</P>
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+	<TD COLSPAN=2><CENTER><B>General Tab</B></CENTER></TD>
+	</TR>
+	<TR>
+	<TD><B>Unlock Locks by</B></TD>
+	<TD><B>User:</B>
+		<!--<control name="UnlockGeneral.USER_RB">-->
+		Select to unlock the revision(s) owned by an individual User, and then specify the User in the <b>User</b> edit field.
+		<!--</control>-->
+		<BR><BR>
+		<b>User edit field:</b>
+		<!--<control name="UnlockGeneral.USER_EDIT">-->Either 
+      enter the user name or click the Browse button to select it.
+		<!--</control>-->
+		<BR><BR>
+		<b>All users:</b>
+		<!--<control name="UnlockGeneral.ALLUSERS_RB">-->Select 
+      to unlock the revision(s) owned by all Users.
+		<!--</control>-->
+		</TD>
+	</TR>
+	<TR><TD><b>Revisions</b></TD>
+		<TD>
+      <P><b>Revision:</b>
+		<!--<control name="UnlockGeneral.REVISION_RB">-->
+		Select to unlock a specific revision of a versioned file by the specified User(s), and then specify the revision number or version label of the revision you want to unlock in the <b>Revision</b> 
+      edit field.
+		<!--</control>-->
+		<BR><BR>
+		<b>Revision Edit field:</b>
+		<!--<control name="UnlockGeneral.REVISION_EDIT">-->Either 
+      enter the revision number or version label of the revision you want to 
+      unlock or click the Browse button to select it. If you want to unlock by 
+      promotion group, you must click the Browse button to select it. If 
+      selecting the revision by a version label, enter a backslash before a 
+      version label that begins with a numeric character (such as \1.2label). <!--</control>-->
+<!--</control>-->
+<b>Note:</b> Default Revision is the latest revision of a versioned file. Default Revision, however, can be defined in the project's configuration file to be a version label or a specific revision number.
+
+		<BR><BR>
+		<b>All revisions by selected User(s):</b>
+		<!--<control name="UnlockGeneral.ALLREVISIONS_RB">-->Select 
+      to unlock all revisions of a versioned file owned by the specified 
+      User(s).
+		<!--</control>--></P>
+	</TD>
+	</TR>
+	<TR><TD><b>Include files in subprojects</b></TD>
+		<TD><!--<control name="UnlockGeneral.RECURSIVE_CB">-->This 
+      field is only available if a project is selected. Select to unlock 
+      revisions in subprojects.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+	<TD COLSPAN=2><CENTER><B>Selected Files Tab</B></CENTER></TD>
+	</TR>
+	<TR>
+	<TD><B>Files List</B></TD>
+		<TD><!--<control name="Files.FILES_TREE">-->Review 
+      the revisions that you have selected to unlock.
+		<!--</control>--></TD>
+		</TR>
+	<TR>
+	<TD><b>Properties</b></TD>
+	<TD><!--<control name="Files.PROPERTIES_BUTTON">-->
+		Click to display the Properties dialog box for either <A href="versioneditemdialog.html">versioned files</A> or <A href="projectdialog.html">projects</A>.
+		<!--</control>--></TD>
+	</TR>
+</TABLE>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A href="lockdialog.html">Lock Dialog Box</A></TD>
+		<TD><A href="unlocking.html">Unlocking Revisions</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

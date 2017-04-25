@@ -1,0 +1,378 @@
+<!-- Copyright 2003 Zelix Pty Ltd (ABN 47 078 740 093) -->
+<html>
+<head>
+<title>Zelix KlassMaster - ZKM Script Exclusions Tutorial</title>
+   <meta name="keywords" content="java obfuscator,java code obfuscator,obfuscation">
+   <meta name="description" CONTENT="Zelix KlassMaster ZKM Script Exclusions Tutorial">
+   <meta name="classification" CONTENT="Zelix KlassMaster ZKM Script Exclusions Tutorial">
+   <link rel=stylesheet href="../../ZKM.css" TYPE="text/css">
+</head>
+<body background="../../images/small-white-mist1.jpg" bgcolor="#E1E1E1">
+<center><a href="../index.html"><img src=../../images/ZKM_b4.gif alt="Zelix KlassMaster" width=264 height=62 border=0></a></center>
+<hr>
+<center>
+<table width=770 border=0>
+   <tr>
+      <td>
+         <h1>ZKM Script Exclusions Tutorial</h1>
+         <h2><a name="intro">Introduction</a></h2>
+         The ZKM Script language contains a number of statements that rely on the concept of package, class, field or method exclusion.  These statements include
+         <ul>
+            <li><a href="../trimExcludeStatement.html"><code>trimExclude</code></a>
+            <li><a href="../trimUnexcludeStatement.html"><code>trimUnexclude</code></a>
+            <li><a href="../excludeStatement.html"><code>exclude</code></a>
+            <li><a href="../unexcludeStatement.html"><code>unexclude</code></a>
+            <li><a href="../obfuscateFlowExcludeStatement.html"><code>obfuscateFlowExclude</code></a>
+            <li><a href="../stringEncryptionExcludeStatement.html"><code>stringEncryptionExclude</code></a>
+            <li><a href="../existingSerializedClassesStatement.html"><code>existingSerializedClasses</code></a>
+            <li><a href="../fixedClassesStatement.html"><code>fixedClasses</code></a>
+         </ul>
+         All these statements operate by specifying certain objects (ie. packages, classes, fields or methods) that are to be excluded (or unexcluded) from some aspect of the operation
+         of the ZKM Script <a href="../trimStatement.html"><code>trim</code></a> or <a href="../obfuscateStatement.html"><code>obfuscate</code></a> statement. 
+         All of the statements listed above use the same syntax for specifying objects for exclusion (or unexclusion).  
+         This tutorial focuses on <b>the more complicated aspects of that syntax</b> and gives some examples based on typical scenarios.  
+         The documentation specific to each statement does a good job of explaining basic exclusions and this tutorial assumes that you have already looked at these basic explanations and examples.  
+         Similarly, if you need a explanation of the effect of any of the listed statements you should see the documentation for that statement.
+         <p>
+         This tutorial consists of five parts.
+         <ul>
+            <li><a href="#basic">basic exclusions</a>
+            <li><a href="#containingObject">containing object exclusions</a>
+            <li><a href="#containedObject">contained object exclusions</a>
+            <li><a href="#complex">complex name specifications</a>
+            <li><a href="#signatureClasses">method signature class exclusions</a> (ie. <code>+signatureClasses</code>)
+            <li><a href="#link">class suffix (linked) exclusions</a>
+         </ul>
+
+         <h2><a name="basic">Basic exclusions</a></h2>
+         Generally speaking, an exclusion parameter specifies either a package, a class, a field or a method.
+         <h3><a name="basicPackage">Package exclusion parameters</a></h3>
+         The simplest package exclusion parameter simply specifies a package name. For example, the parameter <code>pack1.pack2.</code> explicitly specifies 
+         one particular package.  Of course, basic package exclusions become more powerful when the <code>"*"</code> wildcard is used.  
+         <table border=1>
+            <tr>
+               <th>Parameter</th>
+               <th>Matches</th>
+            </tr>
+            <tr>
+               <td><code>pack1.pack2.</code></td>
+               <td>just the one package <code>pack1.pack2</code></td>
+            </tr>
+            <tr>
+               <td><code>*.</code></td>
+               <td>all packages</td>
+            </tr>
+            <tr>
+               <td><code>pack1*.</code></td>
+               <td>all packages with names starting with "pack1"</td>
+            </tr>
+            <tr>
+               <td><code>pack1.*.</code></td>
+               <td>all sub-packages of package <code>pack1</code></td>
+            </tr>
+         </table>
+         Note that in ZKM Script <b>the final <code>"."</code> character is part of the package name</b>.  The importance of this point will become clearer
+         when we look at <a href="#containingObject">containing object exclusions</a> and <a href="#complex">complex name specifications</a>.
+         
+         <h3><a name="basicClass">Class exclusion parameters</a></h3>
+         Informally (with mandatory components in bold), the syntax of a class exclusion parameter is: <br>
+         <code>&lt;classModifiers&gt; &lt;packageQualifiers&gt;.<b>&lt;className&gt;</b> &lt;extendsClause&gt; &lt;implementsClause&gt;</code><br>
+         Useful points to note are:
+         <ul>
+            <li>the optional <code>&lt;packageQualifiers&gt;.</code> component has the same syntax as a <a href="#basicPackage">package exclusion parameter</a>.
+            <li>class modifiers can be negated by using the <code>"!"</code> character.
+            <li>classes specified in the <code>&lt;extendsClause&gt;</code> and <code>&lt;implementsClause&gt;</code> components must be <b>fully qualified</b>.
+         </ul>
+         <table border=1>
+            <tr>
+               <th>Parameter</th>
+               <th>Matches</th>
+            </tr>
+            <tr>
+               <td><code>Class1</code></td>
+               <td>just the one class <code>Class1</code> that is in the default package</td>
+            </tr>
+            <tr>
+               <td><code>pack1.Class1</code></td>
+               <td>just the one class <code>Class1</code> that is in the package <code>pack1</code></td>
+            </tr>
+            <tr>
+               <td><code>*</code></td>
+               <td>all classes that are in the default package</td>
+            </tr>
+            <tr>
+               <td><code>*.*</code></td>
+               <td>all classes that are in any package other than the default package</td>
+            </tr>
+            <tr>
+               <td><code>public !final *.* extends java.util.Observable</code></td>
+               <td>all public, non-final classes that are in any package other than the default package and extend (directly or indirectly) <code>java.util.Observable</code></td>
+            </tr>
+            <tr>
+               <td><code>p*.C* implements java.io.Serializable, java.util.Observer</code></td>
+               <td>all classes with names starting with "C" that are in any package starting with "p" and that implement (directly or indirectly) both <code>java.io.Serializable</code> and <code>java.util.Observer</code></td>
+            </tr>
+         </table>
+         
+         <h3><a name="basicField">Field exclusion parameters</a></h3>
+         Informally (with mandatory components in bold), the syntax of a field exclusion parameter is: <br>
+         <code>&lt;classModifiers&gt; &lt;packageQualifiers&gt;.<b>&lt;className&gt;</b> &lt;extendsClause&gt; &lt;implementsClause&gt;<br>
+         &nbsp;&nbsp;&nbsp; &lt;fieldModifiers&gt; &lt;fieldType&gt; <b>&lt;fieldName&gt;</b></code><br>
+         Useful points to note are:
+         <ul>
+            <li>the <code>&lt;classModifiers&gt; &lt;packageQualifiers&gt;.<b>&lt;className&gt;</b> &lt;extendsClause&gt; &lt;implementsClause&gt</code> 
+                component has the same syntax as a <a href="#basicClass">class exclusion parameter</a>.  It specifies the containing class.
+            <li>the field modifiers can be negated by using the <code>"!"</code> character.
+            <li>if the <code>&lt;fieldType&gt;</code> is non-primitive then the class name must be <b>fully qualified</b>.
+         </ul>
+         <table border=1>
+            <tr>
+               <th>Parameter</th>
+               <th>Matches</th>
+            </tr>
+            <tr>
+               <td><code>Class1 field1</code></td>
+               <td>just the one field <code>field1</code> in the one class <code>Class1</code> that is in the default package</td>
+            </tr>
+            <tr>
+               <td><code>pack1.Class1 int f*</code></td>
+               <td>all the <code>int</code> fields starting with "f" in the one class <code>pack1.Class1</code></td>
+            </tr>
+            <tr>
+               <td><code>*.* implements java.io.Serializable !static !transient *</code></td>
+               <td>all the non-static and non-transient fields in classes that implement <code>java.io.Serializable</code></td>
+            </tr>
+            <tr>
+               <td><code>public *.* private java.lang.String[] *</code></td>
+               <td>all the private <code>String[]</code> fields in public classes that are in any package other than the default package</td>
+            </tr>
+         </table>
+         
+         <h3><a name="basicMethod">Method exclusion parameters</a></h3>
+         Informally (with mandatory components in bold), the syntax of a method exclusion parameter is: <br>
+         <code>&lt;classModifiers&gt; &lt;packageQualifiers&gt;.<b>&lt;className&gt;</b> &lt;extendsClause&gt; &lt;implementsClause&gt;<br>
+         &nbsp;&nbsp;&nbsp; &lt;methodModifiers&gt; <b>&lt;methodName&gt;(</b>&lt;argumentTypes&gt;<b>)</b> &lt;throwsClause&gt;</code><br>
+         Useful points to note are:
+         <ul>
+            <li>the <code>&lt;classModifiers&gt; &lt;packageQualifiers&gt;.<b>&lt;className&gt;</b> &lt;extendsClause&gt; &lt;implementsClause&gt</code> 
+                component has the same syntax as a <a href="#basicClass">class exclusion parameter</a>.  It specifies the containing class.
+            <li>the method modifiers can be negated by using the <code>"!"</code> character.
+            <li>the special <code>&lt;methodName&gt;</code> <code>&lt;init&gt;</code> means "method constructor".
+            <li>the special <code>&lt;methodName&gt;</code> <code>&lt;clinit&gt;</code> means "class initializer method".
+            <li>if any of the <code>&lt;argumentTypes&gt;</code> is non-primitive then the class name must be <b>fully qualified</b>.
+            <li>the absence of a <code>&lt;argumentTypes&gt;</code> component means "no arguments".
+            <li>a <code>"*" &lt;argumentTypes&gt;</code> component means "no or any arguments".
+         </ul>
+         <table border=1>
+            <tr>
+               <th>Parameter</th>
+               <th>Matches</th>
+            </tr>
+            <tr>
+               <td><code>Class1 method1()</code></td>
+               <td>just the one method <code>method1()</code> that takes no parameters in the one class <code>Class1</code> that is in the default package</td>
+            </tr>
+            <tr>
+               <td><code>pack1.Class1 m*(*)</code></td>
+               <td>all the methods starting with "m" regardless of parameters in the one class <code>pack1.Class1</code></td>
+            </tr>
+            <tr>
+               <td><code>package *.* !public final *(*)</code></td>
+               <td>all the non-public and final methods in classes with package scope</td>
+            </tr>
+            <tr>
+               <td><code>*.* public static main(java.lang.String[])</code></td>
+               <td>all the public, static <code>main(String[])</code> methods in classes that are in any package other than the default package</td>
+            </tr>
+            <tr>
+               <td><code>*.* *(int, java.lang.String) throws java.lang.Exception</code></td>
+               <td>all the methods that take an <code>int</code> and a <code>String</code> as a argument and throw a <code>java.lang.Exception</code> or one of its subclasses</td>
+            </tr>
+         </table>
+
+         <h2><a name="containingObject">Containing objects exclusions</a></h2>
+         As mentioned above, an exclusion parameter generally specifies either a package, a class, a field or a method. However, with the <a href="../excludeStatement.html"><code>exclude</code></a> 
+         statement there is a way to specify a class name exclusion parameter that also excludes the name of the package that contains the class.  Similarly, you can specify field and method
+         exclusion parameters that exclude
+         <ul>
+            <li>the name of the class that contains the field or method and/or
+            <li>the name of the package that contains the field or method
+         </ul>
+         To do this you append a <code>"^"</code> character to the end of the package or class name.
+         <table border=1>
+            <tr>
+               <th>Parameter</th>
+               <th>Matches</th>
+            </tr>
+            <tr>
+               <td><code><nobr>pack1.^Class1</nobr></code></td>
+               <td>the one class <code>Class1</code> in the package <code>pack1</code>.  Also "matches" the containing package <code>pack1</code>.
+                   Note that the <code>"^"</code> follows the package name and that the package name includes the final <code>"."</code> character.</td>
+            </tr>
+            <tr>
+               <td><code><nobr>Class1^ method1()</nobr></code></td>
+               <td>the one method <code>method1()</code> that takes no parameters in the one class <code>Class1</code> that is in the default package.  Also "matches" the 
+                   containing class <code>Class1</code></td>
+            </tr>
+            <tr>
+               <td><code><nobr>*.^*^ *(*)</nobr></code></td>
+               <td>all methods in any class that is not in the default package.  
+                   Also "matches" the packages and classes that contain a method.
+            </tr>
+         </table>
+
+         <h2><a name="containedObject">Contained objects exclusions</a></h2>
+         As mentioned above, an exclusion parameter generally specifies either a package, a class, a field or a method. However, with the <a href="../excludeStatement.html"><code>exclude</code></a> 
+         statement there is a way to specify a class name exclusion parameter that <u>also excludes the names of all the fields and methods</u> contained in the class.  
+         To do this you follow the class name specification with a <code>"+"</code> character.  You can either append the character directly or separate it with a space.
+         <table border=1>
+            <tr>
+               <th>Parameter</th>
+               <th>Matches</th>
+            </tr>
+            <tr>
+               <td><code><nobr>pack1.Class1 +</nobr></code></td>
+               <td>the one class <code>Class1</code> in the package <code>pack1</code>.  Also "matches" all the fields and methods of <code>pack1.Class1</code></td>
+            </tr>
+            <tr>
+               <td><code><nobr>pack1.* + implements pack2.Class2</nobr></code></td>
+               <td>all classes in the package <code>pack1</code> that implement <code>pack2.Class2</code>.
+                   Also "matches" all the fields and methods of any matched classes.
+               </td>
+            </tr>
+         </table>
+
+         <h2><a name="complex">Complex name specifications</a></h2>
+         Wherever a package, class, field or method name can appear in an exclusion statement, you can use a complex name specification. A complex name specification allows 
+         you to use <code>&&</code> (ie. "and") and <code>||</code> (ie. "or") conditions and negation to more succinctly express complex specifications.
+         Useful points to note are:
+         <ul>
+            <li>the highest level of a complex specification is always enclosed in brackets (ie. "(...)").
+            <li>the negation character <code>"!"</code> must always immediately precede the opening "(" of a bracket pair.
+            <li> a complex name specification is either a package, class, field or method name specification. It cannot be a mixture of these name types.
+            <li> <code>"&&"</code> takes precedence over <code>"||"</code>. So <code>(x || y && z)</code> is equivalent to <code>(x || (y && z))</code>.
+         </ul>
+         <table border=1>
+            <tr>
+               <th>Parameter</th>
+               <th>Matches</th>
+            </tr>
+            <tr>
+               <td><code><nobr>(pack1. || pack2.)Class1</nobr></code></td>
+               <td>any class <code>Class1</code> in either of the packages <code>pack1</code> or <code>pack2</code>.  
+                   Note that the package names end with the <code>"."</code> character.</td>
+            </tr>
+            <tr>
+               <td><code><nobr>(pack1.*. && !(pack1.pack1. || pack1.pack3.))*</nobr></code></td>
+               <td>any class in a sub-package of <code>pack1</code> but not <code>pack1.pack1</code> or <code>pack1.pack3</code>.</td>
+            </tr>
+            <tr>
+               <td><code><nobr>pack1.!(Class1) *</nobr></code></td>
+               <td>any field in a class in package <code>pack1</code> except those in a class named <code>Class1</code>.</td>
+            </tr>
+            <tr>
+               <td><code><nobr>(pack1. || pack1.*.)(C* || D*) (m* || n*)(*)</nobr></code></td>
+               <td>any method starting with either "m" or "n" that is in a class starting with either "C" or "D" that is in the package <code>pack1</code> or one of its sub-packages.
+                   The final <code>(*)</code> specifies that the any method argument types will match.</td>
+            </tr>
+            <tr>
+               <td><code><nobr>(pack1. || pack2.)^Class1</nobr></code></td>
+               <td>any class <code>Class1</code> in either of the packages <code>pack1</code> or <code>pack2</code>.  
+                   Also matches the containing package because of the <code>"^"</code> character.</td>
+            </tr>
+        </table>
+
+         <h2><a name="signatureClasses">Method signature class exclusions (<code>+signatureClasses</code>)</a></h2>
+         If a ZKM Script <code>exclude</code> statement method parameter ends with the keyword <code>+signatureClasses</code> then, 
+         for each matching method,  the fully qualified class names of the method's return and parameter types are also excluded from obfuscation. Types
+         which are primitive are ignored.  So, given an <code>exclude</code> statement
+         <p>
+         <code>exclude *.* method1(*) +signatureClasses;</code>
+         <p>
+         then if a method with the signature <nobr><code>pack1.Class1 method1(pack2.Class2)</code></nobr> matches the exclusion parameter 
+         then, in addition to excluding the name of the method, the <code>+signatureClasses</code> flag has the effect of excluding the fully qualified class names:
+         <ul>
+           <li>pack1.Class1 (because it is the return type of a matching method) and
+           <li>pack2.Class2 (because it is a parameter type of a matching method)
+         </ul>         
+
+
+         <h2><a name="link">Class suffix (linked) exclusions</a></h2>
+         Some features of the Java language create dependencies between class names. For example, the RMI "stub" class of a class <code>Class1</code> must be named
+         <code>Class1_Stub</code>.  For RMI/IIOP the "stub" class must be named <code>_Class1_Stub</code>. So we have a situation where for some classes a suffix (eg. "_Stub") 
+         and perhaps a prefix (eg. "_") must not be changed during obfuscation.  Also, we have a situation where the core part of a class name (ie. non-prefix and non-suffix)
+         must always match the name of some other class.
+         <p>
+         The <a href="../excludeStatement.html#classSuffixExclude"><code>exclude</code></a> statement provides the special class suffix exclusion parameter to deal with these situations.
+         Informally (with mandatory components in bold), the syntax is: <br>
+         <code>&lt;packageQualifiers&gt;.&lt;prefix&gt;<b>&lt;link&gt;&lt;suffix&gt;</b> &lt;extendsClause&gt; &lt;implementsClause&gt; &lt;searchClause&gt;</code><br>
+         Useful points to note are:
+         <ul>
+            <li>the optional <code>&lt;packageQualifiers&gt;</code> component has the same syntax as a <a href="#basicPackage">package exclusion parameter</a>.
+            <li>classes specified in the <code>&lt;extendsClause&gt;</code> and <code>&lt;implementsClause&gt;</code> components must be <b>fully qualified</b>.
+            <li>the packages specified in the <code>&lt;searchClause&gt;</code> component can contain wildcards.
+         </ul>
+         <p>
+         Let's take the following classes as our example set.
+         <p>
+         <code>
+         &nbsp;pack1.Class1<br>
+         &nbsp;pack1.Class1_X<br>
+         &nbsp;pack1.Class2<br>
+         &nbsp;pack1._Class2_Y<br>
+         &nbsp;pack1.pack2.Class3<br>
+         &nbsp;pack1.Class3_Z
+         </code>
+         <p>
+         <table border=1>
+            <tr>
+               <th>Parameter</th>
+               <th>Matches</th>
+            </tr>
+            <tr>
+               <td><code>*.&lt;link&gt;_X</code></td>
+               <td>
+                  <code>pack1.Class1_X</code> is matched because it has the "_X" suffix and it isn't in the default package.
+                  The non-suffix part of the name is <code>Class1</code>.  Zelix KlassMaster looks in the same package for a class named
+                  <code>Class1</code> and finds <code>pack1.Class1</code>. If the name of <code>pack1.Class1</code> is obfuscated to be
+                  <code>pack1.c</code> then the name of <code>pack1.Class1_X</code> will be obfuscated to be <code>pack1.c_X</code>
+               </td>
+            </tr>
+            <tr>
+               <td><code>p*._&lt;link&gt;_Y</code></td>
+               <td>
+                  <code>pack1._Class2_Y</code> is matched because it has the "_" prefix and the "_Y" suffix and it is in a package
+                  starting with "p".
+                  The non-prefix, non-suffix part of the name is <code>Class2</code>.  Zelix KlassMaster looks in the same package for a class named
+                  <code>Class2</code> and finds <code>pack1.Class2</code>. If the name of <code>pack1.Class2</code> is obfuscated to be
+                  <code>pack1.c</code> then the name of <code>pack1._Class2_Y</code> will be obfuscated to be <code>pack1._c_Y</code>
+               </td>
+            </tr>
+            <tr>
+               <td><code>pack1.&lt;link&gt;_Z <nobr>search pack1.pack2</nobr></code></td>
+               <td>
+                  <code>pack1.Class3_Z</code> is matched because it has the "_Z" suffix and it is in the <code>pack1</code> package.
+                  The non-suffix part of the name is <code>Class3</code>.  Zelix KlassMaster looks in the same package for a class named
+                  <code>Class3</code> but cannot find one.  It then looks at the package specified in the search clause and finds <code>pack1.pack2.Class3</code>. 
+                  If the name of <code>pack1.pack2.Class3</code> is obfuscated to be
+                  <code>pack1.pack2.c</code> then the name of <code>pack1.Class3_Z</code> will be obfuscated to be <code>pack1.c_Z</code>
+               </td>
+            </tr>
+         </table>
+     </td>
+   </tr>
+</table>
+</center>
+<hr>
+<center>
+<table>
+   <tr>
+      <td>
+         <a href=../index.html><img src=../../images/uarrw.gif alt="Documentation Table of Contents"></a>
+      </td>
+   </tr>
+</table>
+</center>
+Copyright &copy; 2003 <a href="mailto:WebMaster@zelix.com"><font size=-1>Zelix Pty Ltd</font></a> (ABN 47 078 740 093)
+</body>
+</html>

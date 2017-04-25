@@ -1,0 +1,12 @@
+<vault>
+<history>
+ <item version="7" date="11/30/2005 11:19:15 AM" user="test_user" comment="Added comment with &lt; &gt; brakets" txid="11" />
+ <item version="6" date="11/30/2005 11:16:58 AM" user="test_user" comment="Added braketed strings" txid="10" />
+ <item version="5" date="11/30/2005 11:15:47 AM" user="test_user" txid="9" />
+ <item version="4" date="11/30/2005 10:37:28 AM" user="test_user" txid="8" />
+ <item version="3" date="11/30/2005 10:37:10 AM" user="test_user" txid="7" />
+ <item version="2" date="11/30/2005 10:34:32 AM" user="test_user" comment="Added changes to files" txid="6" />
+ <item version="1" date="11/30/2005 1:14:03 AM" user="test_user" txid="5" />
+</history>
+<result success="yes" />
+</vault>

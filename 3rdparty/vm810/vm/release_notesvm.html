@@ -1,0 +1,2316 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+  <title>Serena ChangeMan Version Manager Release Notes</title>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+  <style type="text/css">
+    body {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 10pt;
+        background-color: #ffffff;
+        color: #000000;
+        padding: 0px;
+        margin: 15px 10px;
+    }
+    h1 {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 16pt;
+        color: #000000;
+        margin-top: 0pt;
+        page-break-after: avoid;
+    }
+    h2 {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 13pt;
+        color: #303090;
+        margin-left: 0em;
+        page-break-after: avoid;
+    }
+    h3 {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 11pt;
+        color: #303090;
+        margin-left: 2em;
+        margin-top: 0pt;
+        margin-bottom: 0pt;
+    }
+    pre {
+        margin-left: 2em;
+    }
+    p {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 10pt;
+        color: #000000;
+        margin-left: 2em;
+    }
+    p.sub {
+        margin-left: 5em;
+    }
+    p.subSub {
+        margin-left: 8em;
+    }
+    p.intro {
+        margin-bottom: 6pt;
+    }
+    p.introSub {
+        margin-left: 5em;
+        margin-bottom: 6pt;
+    }
+    p.inList {
+        margin-left: 0pt;
+    }
+    p.part {
+        font-weight: bold;
+        font-size: 16pt;
+        text-align: center;
+        color: #ffffff;
+        margin-top: 0pt;
+    }
+    p.partTOC {
+        font-weight: bold;
+        font-size: 16pt;
+        color: #302B91;
+        margin-left: 0pt;
+        margin-top: 0pt;
+    }
+    ol {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 10pt;
+        color: #000000;
+        margin-left: 4em;
+        margin-top: 6pt;
+    }
+    ol.sub {
+        margin-left: 7em;
+        margin-top: 6pt;
+    }
+    ul {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 10pt;
+        color: #000000;
+        margin-left: 4em;
+        margin-top: 6pt;
+    }
+    ul.sub {
+        margin-left: 7em;
+        margin-top: 6pt;
+    }
+    table {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 10pt;
+        color: #000000;
+        margin-left: 2em;
+    }
+    table.standard {
+        border-collapse: collapse;
+        border-spacing: 0px;
+    }
+    table.sub {
+        border-collapse: collapse;
+        border-spacing: 0px;
+        margin-left: 5em;
+    }
+    table.part {
+        font-weight: bold;
+        font-size: 16pt;
+        color: #ffffff;
+        text-align: center;
+        background-color: #303090;
+        width: 100%;
+        margin-left: 0em;
+    }
+    td.tablecell {
+        border-bottom-color: #c0c0c0;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        padding-left: 4px;
+        padding-right: 10px;
+        vertical-align: top;
+    }
+    th.tablehead{
+        background-color: #efefef;
+        border-bottom-color: #c0c0c0;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-collapse: collapse;
+        border-spacing: 0px;
+        padding-left: 4px;
+        padding-right: 10px;
+        vertical-align: top;
+    }
+    hr {
+        color: #999999;
+    }
+    .syntax {
+        font-family: Courier New, Courier, monospace;
+    }
+    .spacer {
+        font-size: 2pt;
+    }
+    .caution {
+        font-weight: bold;
+        color: red;
+        background-color: white;
+    }
+    .returnToTop {
+        font-size: 7.5pt;
+        text-align: right;
+    }
+    .pageBreak {
+        font-size: 2pt;
+        margin-top: 0pt;
+        margin-bottom: 0pt;
+        page-break-before: always;
+    }
+    .keepWithNext {
+        page-break-after: avoid;
+    }
+    .stem {
+        page-break-after: avoid;
+    }
+    a:link, a:visited {
+        color: #302B91;
+    }
+    a:hover {
+        color: #000000;
+        text-decoration: underline;
+    }
+    a:active {
+        color : #302B91;
+        text-decoration: underline;
+    }
+  </style>
+
+  <style type="text/css" media="print">
+    .returnToTop {
+        display: none;
+    }
+    a:link {
+        text-decoration: none;
+        font-style: italic;
+    }
+    a:visited {
+        text-decoration: none;
+        font-style: italic;
+    }
+  </style>
+</head>
+
+<body bgcolor="white">
+
+
+<h1>Serena ChangeMan Version Manager Version 8.1.0<br>
+Release Notes<br>
+Last updated on 25 April 2005</h1>
+
+<p>This file lists the recent defects fixed in Version Manager.  For information on installing and using the current release of Version Manager, see the &lt;<i>Install_Directory</i>&gt;\vm\<a href="readmevm.html" target="_blank">readmevm.html</a> file.</p>
+
+<p class="intro"><b>NOTES:</b></p>
+
+<ul>
+  <li>Each service pack contains all previous defect fixes released since the last full Version Manager release, so it is not necessary to install the previous service packs.</li>
+</ul>
+
+
+<a name="TOP"></a>
+<hr size="2" width="100%" noshade>
+<h1>Table of Contents</h1>
+
+<h2>1.0 <a href="#RoboReadme1">Defects Fixed in Version Manager 8.1.0</a></h2>
+<h3>1.1 <a href="#RoboReadme2">Desktop Client, CLI, PCLI, and DTK Defects Fixed</a></h3>
+<h3>1.2 <a href="#RoboReadme3">VM Web Client Defects Fixed</a></h3>
+<h3>1.3 <a href="#RoboReadme4">IDE Client Defects Fixed</a></h3>
+<h2>2.0 <a href="#RoboReadme5">Defects Fixed in Version Manager 8.0.2.3</a></h2>
+<h3>2.1 <a href="#RoboReadme6">Desktop Client, CLI, PCLI, and DTK Defects Fixed</a></h3>
+<h3>2.2 <a href="#RoboReadme7">VM Web Client Defects Fixed</a></h3>
+<h2>3.0 <a href="#RoboReadme8">Defects Fixed in Version Manager 8.0.2.0</a></h2>
+<h3>3.1 <a href="#RoboReadme9">Desktop Client, CLI, PCLI, and DTK Defects Fixed</a></h3>
+<h3>3.2 <a href="#RoboReadme10">VM Web Client Defects Fixed</a></h3>
+<h3>3.3 <a href="#RoboReadme11">IDE Client Defects Fixed</a></h3>
+<h2>4.0 <a href="#RoboReadme12">Defects Fixed in Version Manager 8.0.0.9</a></h2>
+<h3>4.1 <a href="#RoboReadme13">Desktop Client, CLI, PCLI, and DTK Defects Fixed</a></h3>
+<h3>4.2 <a href="#RoboReadme14">VM Web Client Defects Fixed</a></h3>
+<h3>4.3 <a href="#RoboReadme15">IDE Client Defects Fixed</a></h3>
+<h2>5.0 <a href="#RoboReadme16">Defects Fixed in Version Manager 8.0.0.8</a></h2>
+<h3>5.1 <a href="#RoboReadme17">Desktop Client, CLI, PCLI, and DTK Defects Fixed</a></h3>
+<h3>5.2 <a href="#RoboReadme18">VM Web Client Defects Fixed</a></h3>
+<h3>5.3 <a href="#RoboReadme19">IDE Client Defects Fixed</a></h3>
+<h2>6.0 <a href="#RoboReadme20">Defects Fixed in Version Manager 8.0.0.7</a></h2>
+<h3>6.1 <a href="#RoboReadme21">Desktop Client, CLI, PCLI, and DTK Defects Fixed</a></h3>
+<h2>7.0 <a href="#RoboReadme22">Defects Fixed in Version Manager 8.0.0.6</a></h2>
+<h3>7.1 <a href="#RoboReadme23">Desktop Client, CLI, PCLI, and DTK Defects Fixed</a></h3>
+<h3>7.2 <a href="#RoboReadme24">VM Web Client Defects Fixed</a></h3>
+<h2>8.0 <a href="#RoboReadme25">Defects Fixed in Version Manager 8.0.0.5</a></h2>
+<h3>8.1 <a href="#RoboReadme26">IDE Client Defects Fixed</a></h3>
+<h2>9.0 <a href="#RoboReadme27">Defects Fixed in Version Manager 8.0.0.4</a></h2>
+<h3>9.1 <a href="#RoboReadme28">VM Web Client Defects Fixed</a></h3>
+<h2>10.0 <a href="#RoboReadme29">Defects Fixed in Version Manager 8.0.0.3</a></h2>
+<h3>10.1 <a href="#RoboReadme30">Desktop Client, CLI, PCLI, and DTK Defects Fixed</a></h3>
+<h3>10.2 <a href="#RoboReadme31">VM Web Client Defects Fixed</a></h3>
+<h3>10.3 <a href="#RoboReadme32">IDE Client Defects Fixed</a></h3>
+<h2>11.0 <a href="#RoboReadme33">Defects Fixed in Version Manager 8.0.0.2</a></h2>
+<h3>11.1 <a href="#RoboReadme34">Desktop Client, CLI, PCLI, and DTK Defects Fixed</a></h3>
+<h3>11.2 <a href="#RoboReadme35">VM Web Client Defects Fixed</a></h3>
+<h2>12.0 <a href="#RoboReadme36">Defects Fixed in Version Manager 8.0.0.1</a></h2>
+<h3>12.1 <a href="#RoboReadme37">Desktop Client, CLI, PCLI, and DTK Defects Fixed</a></h3>
+<h3>12.2 <a href="#RoboReadme38">VM Web Client Defects Fixed</a></h3>
+<h2>13.0 <a href="#RoboReadme39">Defects Fixed in Version Manager 8.0.0.0</a></h2>
+<h3>13.1 <a href="#RoboReadme40">Desktop Client, CLI, PCLI, and DTK Defects Fixed</a></h3>
+<h3>13.2 <a href="#RoboReadme41">VM Web Client Defects Fixed</a></h3>
+<h3>13.3 <a href="#RoboReadme42">IDE Client Defects Fixed</a></h3>
+<h2>14.0 <a href="#RoboReadme43">Defects Fixed in Version Manager 7.5.2.2</a></h2>
+<h3>14.1 <a href="#RoboReadme44">Development Interface Defects Fixed</a></h3>
+<h2>15.0 <a href="#RoboReadme45">Defects Fixed in Version Manager 7.5.2.1</a></h2>
+<h3>15.1 <a href="#RoboReadme46">GUI, CLI, PCLI, and DTK Defects Fixed</a></h3>
+<h3>15.2 <a href="#RoboReadme47">Development Interface Defects Fixed</a></h3>
+<h2>16.0 <a href="#RoboReadme48">Defects Fixed in Version Manager 7.5.2.0</a></h2>
+<h2>17.0 <a href="#RoboReadme49">Defects Fixed in Version Manager 7.5.1.5</a></h2>
+<h3>17.1 <a href="#RoboReadme50">GUI, CLI, PCLI, and DTK Defects Fixed</a></h3>
+<h2>18.0 <a href="#RoboReadme51">Defects Fixed in Version Manager 7.5.1.4</a></h2>
+<h3>18.1 <a href="#RoboReadme52">GUI, CLI, PCLI, and DTK Defects Fixed</a></h3>
+<h2>19.0 <a href="#RoboReadme53">Defects Fixed in Version Manager 7.5.1.3</a></h2>
+<h3>19.1 <a href="#RoboReadme54">Version Manager Defects Fixed</a></h3>
+<h3>19.2 <a href="#RoboReadme55">Development Interface Defects Fixed</a></h3>
+<h2>20.0 <a href="#RoboReadme56">Defects Fixed in Version Manager 7.5.1.2</a></h2>
+<h3>20.1 <a href="#RoboReadme57">Version Manager GUI, CLI, PCLI, and DTK Defects Fixed</a></h3>
+<h3>20.2 <a href="#RoboReadme58">Development Interface Defects Fixed</a></h3>
+<h3>20.3 <a href="#RoboReadme59">VM I-Net Defects Fixed</a></h3>
+<h2>21.0 <a href="#RoboReadme60">Defects Fixed in Version Manager 7.5.1.0</a></h2>
+<h3>21.1 <a href="#RoboReadme61">Version Manager GUI, CLI, PCLI, and DTK Defects Fixed</a></h3>
+<h3>21.2 <a href="#RoboReadme62">VM I-Net Defects Fixed</a></h3>
+<h2>22.0 <a href="#RoboReadme63">Defects Fixed in Version Manager 7.5.0.1</a></h2>
+<h2>23.0 <a href="#RoboReadme64">Defects Fixed in Version Manager 7.5.0.0</a></h2>
+<h3>23.1 <a href="#RoboReadme65">Version Manager GUI, CLI, PCLI, and DTK Defects Fixed</a></h3>
+<h3>23.2 <a href="#RoboReadme66">Development Interface Defects Fixed</a></h3>
+<h3>23.3 <a href="#RoboReadme67">VM I-Net Defects Fixed</a></h3>
+<h2>24.0 <a href="#RoboReadme68">Defects Fixed in Version Manager 6.8.13</a></h2>
+<h2>25.0 <a href="#RoboReadme69">Defects Fixed in Version Manager 6.8.12</a></h2>
+<h3>25.1 <a href="#RoboReadme70">Version Manager GUI, CLI, PCLI, and DTK Defects Fixed</a></h3>
+<h3>25.2 <a href="#RoboReadme71">Development Interface Defects Fixed</a></h3>
+<h3>25.3 <a href="#RoboReadme72">VM I-Net Defects Fixed</a></h3>
+<h2>26.0 <a href="#RoboReadme73">Defects Fixed in Version Manager 6.8.11</a></h2>
+<h3>26.1 <a href="#RoboReadme74">Version Manager GUI, CLI, PCLI, and DTK Defects Fixed</a></h3>
+<h3>26.2 <a href="#RoboReadme75">VM I-Net Defects Fixed</a></h3>
+<h2>27.0 <a href="#RoboReadme76">Defects Fixed in Version Manager 6.8.10</a></h2>
+<h3>27.1 <a href="#RoboReadme77">Version Manager GUI, CLI, PCLI, and DTK Defects Fixed</a></h3>
+<h3>27.2 <a href="#RoboReadme78">Development Interface Defects Fixed</a></h3>
+<h3>27.3 <a href="#RoboReadme79">VM I-Net Defects Fixed</a></h3>
+<h2>28.0 <a href="#RoboReadme80">Defects Fixed in Version Manager 6.8.00 SP3</a></h2>
+<h3>28.1 <a href="#RoboReadme81">Version Manager GUI, CLI, PCLI, and DTK Defects Fixed</a></h3>
+<h3>28.2 <a href="#RoboReadme82">Development Interface Defects Fixed</a></h3>
+<h2>29.0 <a href="#RoboReadme83">Defects Fixed in Version Manager 6.8.00 SP2</a></h2>
+<h3>29.1 <a href="#RoboReadme84">Version Manager GUI, CLI, PCLI, and DTK Defects Fixed</a></h3>
+
+<!-- End of TOC -->
+
+<p class="pageBreak">&nbsp;</p>
+
+<p class="returnToTop"><a href="#TOP">To Top</a></p>
+
+
+
+
+<hr size="2" width="100%" noshade>
+
+
+<h1>1.0 <a name="RoboReadme1"></a>Defects Fixed in Version Manager 8.1.0</h1>
+
+
+<h2>1.1 <a name="RoboReadme2"></a>Desktop Client, CLI, PCLI, and DTK Defects Fixed</h2>
+
+<h3 class="keepWithNext">UNIX:  Screen updates are very slow with remote X displays [38142]</h3>
+
+<p class="sub">When the Version Manager desktop client opens on a remote X Windows display, screen updates can take a very long time.</p>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Project tree view occasionally collapses [38949, 41229]</h3>
+
+<p class="sub">After you perform certain operations in the project pane of the Version Manager desktop client, the project pane occasionally collapses, requiring you to browse back to your original project.</p>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">vsplit command fails on an archive named <span class="syntax"><i>fileName</i>.$$$-arc</span> [40936]</h3>
+
+<p class="sub">The default semaphore suffix used by <span class="syntax">vsplit</span> (<span class="syntax">??$</span>) results in a failure when you try to split an archive that has a dollar sign (<span class="syntax">$</span>) in the file-name suffix.</p>
+
+<p class="sub">This has been fixed.  The <span class="syntax">vsplit</span> command now supports the <span class="syntax">-C</span> option, which you can use to pass the command a configuration file that redefines the semaphore suffix to be used (for example, <span class="syntax">SemSuffix = +-sem</span>).  For more information, see the <span class="syntax">SemSuffix</span> directive in the <i>Serena ChangeMan Version Manager Command-Line Reference Guide</i>.</p>
+
+<h3 class="keepWithNext">File server returns an error when an event trigger is called from a UNIX client [40937]</h3>
+
+<p class="sub">When an event trigger executed from a UNIX client tries to access a file on a File Server (for example, through a CLI command), that trigger fails with a SOAP FAULT message.</p>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Long convoluted sentence in the admin guide [71355]</h3>
+
+<p class="sub">The description of the different types of configuration files is somewhat confusing.</p>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Differencing tool reports some binary files as being the same when they are not [31714]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">UNIX:  TRANSLATE prevents &quot;unchanged&quot; prompt from appearing [38934]</h3>
+
+<p class="sub">If TRANSLATE is on, the &quot;unchanged&quot; prompt does not appear on Unix.  This has been fixed.</p>
+
+<h3 class="keepWithNext">VTRANSFER -r (UNIX):  Changing the case of a file name on a case-insensitive File Server results in loss of the archive [72245]</h3>
+
+<p class="sub">When <span class="syntax">vtransfer -r</span> is used only to change the case of the name of an archive, it can result in the loss of the archive.</p>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">UNIX:  Unexpected File Server case-sensitivity sometimes causes archives not to appear [72892, 73070]</h3>
+
+<p class="sub">A UNIX File Server configured to be case-insensitive sometimes treats an archve in a case-sensitive manner.  Such archives are temporarily unavailable to the Version Manager clients.</p>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">VM Web Application Server seemingly shuts down at random [74459]</h3>
+
+<p class="sub">The VM Web Application Server process used to provide the File Server, the Version Manager Web Server, and WebDAV services sometimes shuts down on Windows systems when someone logs off from that system's console.</p>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">DBCS File Server:  VSQL and VSPLIT Use 100% of the CPU [75544]</h3>
+
+<p class="sub">Attempts to run <span class="syntax">vsplit</span> or <span class="syntax">vsql</span> against a DBCS (double-byte character set) archive on a File Server locks up those commands.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Vss2VM converter no longer works in 8.0.2.x [72539]</h3>
+
+<p class="sub">In Version Manager 8.0.2.x, the Visual SourceSafe convertor fails with the message &quot;ERROR:  PVCS_E_ACCESS_DENIED".  This has been fixed.</p>
+
+
+<h2>1.2 <a name="RoboReadme3"></a>VM Web Client Defects Fixed</h2>
+
+<h3 class="keepWithNext">Check-out by version label fails if the label contains a space [40565]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Cannot view or edit a file from the Revision pane if the file name contains a single quotation mark [40977]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Cannot view or edit a file if the file name contains an ampersand (<span class="syntax">&amp;</span>) [40978]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Version Manager Web Server does not read embedded master configuration files [73141]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Tomcat exposes potential vulnerabilities [74087]</h3>
+
+<p class="sub">Some of the default configurations in the Tomcat server used by Version Manager can expose potential vulnerablilities.</p>
+
+<p class="sub">This has been fixed by switching to Tomcat 5 and by modifying and removing vulnerable configurations.</p>
+
+
+<h2>1.3 <a name="RoboReadme4"></a>IDE Client Defects Fixed</h2>
+
+<h3 class="keepWithNext">Error occurs when an @ sign is used in the Description field to specify a message file [22203]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">No method to promote a revision to the next promotion group or to manage promotion groups [22048]</h3>
+
+<p class="sub">This has been fixed.  For details, see the online help for the new promotion dialog boxes.</p>
+
+<h3 class="keepWithNext">Configuring File Server to allow HTTPS (SSL) connections results in corrupted connection string [22172]</h3>
+
+<p class="sub">When an <span class="syntax">https:</span> connection string is specified to connect to the File Server, the IDE integration prefixes that string with <span class="syntax">http:</span>.  This makes it impossible for the IDE integration to connect to the File Server via HTTPS.</p>
+
+<p class="sub">This has been fixed.</p>
+
+
+
+
+<hr size="2" width="100%" noshade>
+
+
+<h1>2.0 <a name="RoboReadme5"></a>Defects Fixed in Version Manager 8.0.2.3</h1>
+
+
+<h2>2.1 <a name="RoboReadme6"></a>Desktop Client, CLI, PCLI, and DTK Defects Fixed</h2>
+
+<h3 class="keepWithNext">Four authentication requests are sent when a user successfully logs in using LDAP authentication [27732]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Cannot log in to two project databases simultaneously with named licenses [22612]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Users receive an A: drive error while browsing the local file system [37293]</h3>
+
+<p class="sub">When using the browse capability for local file systems or when trying to open a project database, some users receive the following error:  &quot;There is no disk in the drive.  Please insert a disk into drive <span class="syntax">A:</span>.&quot;</p>
+
+<p class="sub">This has been fixed.</p>
+
+
+<h2>2.2 <a name="RoboReadme7"></a>VM Web Client Defects Fixed</h2>
+
+<h3 class="keepWithNext">Clicking on a file browse button sometimes causes a Java exception [22460]</h3>
+
+<p class="sub">Clicking the file browse button in any Version Manager web client dialog box can cause an error message to appear in the Java Console referring to an <span class="syntax">A:</span> drive security problem.  In that case, the browse dialog box does not open.</p>
+
+<p class="sub">This has been fixed.</p>
+
+
+
+
+<hr size="2" width="100%" noshade>
+
+
+<h1>3.0 <a name="RoboReadme8"></a>Defects Fixed in Version Manager 8.0.2.0</h1>
+
+
+<h2>3.1 <a name="RoboReadme9"></a>Desktop Client, CLI, PCLI, and DTK Defects Fixed</h2>
+
+<h3 class="keepWithNext">PCLI maintains multiple TCP/IP connections to the license server for a single user ID and session [1048543]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Mouse wheel doesn't work in some VM versions [4000040]</h3>
+
+<p class="sub">This has been fixed.  Wheel mice now work correctly in the desktop client, and they work in any web client that uses version 1.4.1 or higher of the Jave Runtime Environment (JRE).</p>
+
+<h3 class="keepWithNext">DTK:  The <span class="syntax">PvcsGetLockInfoVB</span> function always returns 0 when you specify a revision [1026680]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Solaris, Linux, and AIX:  Pop-up menus disabled in the desktop client [1032845]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Cannot use versioned-file entity paths from Event Triggers during Add Workfiles [1031458]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Merge tool fails when you specify a revision using a numeric promotion group [4000789]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Event Triggers:  Need a way to get an entity path for PCLI triggers [1035829]</h3>
+
+<p class="sub">There is no good way to obtain the entity path for the versioned file for which an event trigger is executed.
+
+<p class="sub">This has been fixed.  There is a new event parameter, EVENT_ENTITY_PATH, for all the event types, and the EVENT_WORKFILE parameter is enabled for the events Lock, Unlock, Promote, and Create Archive.</p>
+
+<h3 class="keepWithNext">Cannot see revisions on archive with access list  [1036428]</h3>
+
+<p class="sub">If a user is a member of an access list group, and that group is specifed in an archive after an empty access list group, the user cannot see the revisions even if the user has unlimited privileges.</p>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">CLI on UNIX:  SemaphoreDelay interpreted in seconds [1037358]</h3>
+
+<p class="sub">CLI commands on UNIX interpret the <span class="syntax">SemaphoreDelay</span> as a value expressed in seconds rather than tenths of a second.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Cannot launch Diff/Merge on Red Hat Linux 7.3 [1037751]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Unexplained security privilege discrepancy occurs [1038002]</h3>
+
+<p class="sub">A certain combination of ACD privileges can make a user UNLIMITED.  This has been fixed.</p>
+
+<h3 class="keepWithNext"><span class="syntax">VSS2PVCS</span>:  Shared archives persist in default archive location [1038825]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Allow/Disallow tab should appear only when the file to be edited is a master config file [1039670]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">PCLI <span class="syntax">List</span> and <span class="syntax">GetWorkLocation</span> (<span class="syntax">GWL</span>) return incorrect relative WorkPath [1039753]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">VM adds an extra <span class="syntax">@</span> character in <span class="syntax">islv.ini</span> if a specific port is configured for the license server [1048683]</h3>
+
+<p class="sub">If a specific port is specified for the license server during installation, Version Manager adds an extra <span class="syntax">@</span> character in <span class="syntax">islv.ini</span>.</p>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Need a way to specify custom privilege sets through the PCLI <span class="syntax">AddUser</span> command [1027133]</h3>
+
+<p class="sub">This has been fixed.  The <span class="syntax">AddUser</span> command now has a new <span class="syntax">-ps</span> option for specifying a custom privilege set.</p>
+
+<p class="sub">The following example creates a new user with Developer and PromoteToQA privileges:</p>
+
+<p class="subSub"><span class="syntax">AddUser -ps"Developer,PromoteToQA" Simba</span></p>
+
+<p class="sub">The <span class="syntax">-ps</span> option is not required.  If you specify the option, you must include an argument specifying a list of one or more privileges.  Use commas to separate multiple privileges.  If the argument contains spaces, enclose it within double quotation marks.</p>
+
+<p class="sub">If you do not specify the option, the new user will have the Unlimited privilege set.</p>
+
+<h3 class="keepWithNext">UNIX:  Some dialog boxes ignore the pvcs.fontSize property [1035341]</h3>
+
+<p class="sub">If the default font size used by Version Manager is too small in the your UNIX environment, you can increase the font size through the <span class="syntax">pvcs.fontSize</span> property; however, some dialog boxes do not reflect the change.</p>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">CLI commands do not respect the LOCALE setting in ISLV.INI [1040425]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">The CLI <span class="syntax">readdb</span> command generates an error when LDAP is configured as the primary login source [1045454]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Under certain conditions, an error or crash occurs when you try to view Granted Privileges [1045459]</h3>
+
+<p class="sub">If you are a member of multiple privilege sets and one of these privilege sets is restricted to a promotion group, attempts to view the Granted Privileges on an archive (right-click | Properties) generates a Java exception (Windows) or causes a crash of the desktop client (UNIX).</p>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">The Select Revision dialog box does not correctly handle project expansion [1046006]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">User IDs of users with DBCS names auto-added through VM are corrupted [1046364]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Mover/VM integration on UNIX:  Deployment option isn't enabled after a successful <span class="syntax">regdeploy</span> operation [1048275]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Difference report does not work with certain version labels that start with a digit [1047204]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">VSS2VM fails with a File Server path [1047252]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Single-user login functions properly only if the user has the SuperUser or Unlimited privilege set [1047564]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Cannot select a specific semaphore directory for a non&#8211;File Server PDB [1047813]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Admin | Import Archives on a File Server PDB shows non-archive files [1047809]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Journal file does not properly indicate a floating version label after an Add Workfile operation [1047975]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">PCLI:  ImportPDB does not return a non-zero exit code if the import fails [1048024]</h3>
+
+<p class="sub">This has been fixed.  The command now returns &#8211;1 if the import fails.</p>
+
+<h3 class="keepWithNext">Cannot log in with LDAP definitions set up through the File Server if ACD is named <span class="syntax"><i>fileName</i>.acd</span> [1048027]</h3>
+
+<p class="sub">This problem occurs when your Access Control Database has a file-name extension of <span class="syntax">.acd</span>.</p>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">CLI:  <span class="syntax">vtransfer -r</span> fails if the unsplit archive doesn't have a revision path specified [1048595]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Toolkit:  PvcsGetRevision produces inconsistent results between versions 7.5 and 8.x [1048075]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">VSPLIT option <span class="syntax">-xo</span> incorrectly behaves the same as <span class="syntax">-xe</span> [1048157]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Merge tool:  Ignore Case Difference option not working [1048174]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">PCLI Vlog options should support the DefaultVersion directive when no revision is specified [1048324]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">GET generates an error if performed on an archive directory to which access is denied from an accessDB in the File Server PathMap [1048382]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">PCLI:  The <span class="syntax">put -v</span> option does not work when the <span class="syntax">-u</span> option is also specified [1048404]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">After checking granted privileges and getting an error message, you can no longer see all revision information [1048563]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">PCLI:  Unhelpful error message when workspace doesn't exist [1048600]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Trunk revisions display doesn't expand automatically [1039910]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">VM Application Configuration dialog box displays no information when the <span class="syntax">pvcsservlets.properties</span> file is in use [1048899]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">vlog -d does not account for Daylight Savings Time [1048542]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+
+<h2>3.2 <a name="RoboReadme10"></a>VM Web Client Defects Fixed</h2>
+
+<h3 class="keepWithNext">If a user who is not a superuser tries to add a workfile to a 6.0 folder, an error occurs [1036535]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Users cannot modify private workspace settings [1037719]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Misleading error message occurs on Add Workfile if the reference directory does not exist [1047817]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Incorrectly interpreted ISLVINI environment variable causes a licensing error [1047852]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">UNIX:  Diff/Merge tool does not use TRANSLATE [1048049]</h3>
+
+<p class="sub">Using the Diff/Merge tool from the VM web client on UNIX shows the revision contents in DOS style, even if the archive being examined has the TRANSLATE archive attribute enabled.  If you compare a revision against a checked-out workfile that has TRANSLATE enabled, the Diff/Merge tools reports all lines as being different.</p>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext"><span class="syntax">web.xml</span> refers to <span class="syntax">http://java.sun.com/j2ee/dtds/web-app_2.2.dtd</span>, which should end with <span class="syntax">2_2.dtd</span> rather than <span class="syntax">2.2.dtd</span> [1049156]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">&#36;Log&#36; does not work when you choose to keep the file locked after check-in using the VM web client [1046823]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Problem Expanding Project Folders [1048344]</h3>
+
+<p class="sub">When the user ID is the same throughout the PDB but the password is different among projects or subprojects, the login dialog box does not appear when the user selects the plus sign (without selecting the folder) to expand a project or subproject tree.</p>
+
+<p class="sub">This has been fixed.</p>
+
+
+<h2>3.3 <a name="RoboReadme11"></a>IDE Client Defects Fixed</h2>
+
+<h3 class="keepWithNext">WSAD:  Unlocking an unchanged file triggers a prompt to merge branch to tip [1047106]</h3>
+
+<p class="sub">If you check in an unchanged file, and the option to not check in an unchanged file is enabled, the file is unlocked as expected, but a prompt asks whether you want to merge the branch to the tip (even though there may be no branch revision).</p>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">WSAD:  Users not in ACD cannot cancel the login dialog to access projects not under SCC [1042019]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">WSAD:  When you load a workbench with deleted repository projects, the error messages are insufficiently descriptive [1046059]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">WSAD:  IDE does not ask more than once to remove deleted file from repository [1046718]</h3>
+
+<p class="sub">When you delete a file from your workspace, you get the option of deleting the file from the Source Control Tool; however, if you do not delete the file from the project at that time, you do not get the option again when you run synchronize.</p>
+
+<p class="sub">This has been fixed.</p>
+
+
+
+
+<p class="returnToTop"><a href="#TOP" >To TOC</a></p>
+<hr size="2" width="100%" noshade>
+
+
+<h1>4.0 <a name="RoboReadme12"></a>Defects Fixed in Version Manager 8.0.0.9</h1>
+
+
+<h2>4.1 <a name="RoboReadme13"></a>Desktop Client, CLI, PCLI, and DTK Defects Fixed</h2>
+
+<h3 class="keepWithNext"><span class="syntax">Vcompres</span> fails with large archives [1030515]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Check-in of a large workfile fails if the <span class="syntax">compress</span> directive is set [1039662]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">PCLI <span class="syntax">isDifferent</span> command fails if a version label starts with a digit [1048534]</h3>
+
+<p class="sub">If a version label starts with a digit, the PCLI <span class="syntax">isDifferent</span> command fails, and the error message displays the wrong version label.</p>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">UNIX:  No <span class="syntax">.islvtk</span> file is created, which results in numerous calls to the license server [1048540]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Advanced filtering by two version labels does not work when there is a floating label on a branch [1048462]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">UNIX:  You cannot log in using LDAP if LDAP was configured using a Windows desktop client [1048811]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">AIX and Linux:  LDAP debugging (PVCS_LDAP_DEBUG) does not work [1048813]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Get operation fails on archives with large compressed deltas [1048901]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext"><span class="syntax">&#36;(Command)</span> does not differentiate between the desktop client and PCLI on UNIX/Linux</h3>
+
+<p class="sub">When the <span class="syntax">&#36;(Command)</span> alias is used in configuration files, it incorrectly identifies PCLI as &quot;VMGUI&quot; on UNIX and Linux platforms.</p>
+
+<p class="sub">This has been fixed.</p>
+
+
+<h2>4.2 <a name="RoboReadme14"></a>VM Web Client Defects Fixed</h2>
+
+<h3 class="keepWithNext">HTTP 500 error occurs when the project name includes an ampersand (&) [1046912]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+
+<h2>4.3 <a name="RoboReadme15"></a>IDE Client Defects Fixed</h2>
+
+<h3 class="keepWithNext">WSAD 5 Plug-In:  The Refactor | Rename operation does not complete successfully [1042493]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+
+
+
+<p class="returnToTop"><a href="#TOP" >To TOC</a></p>
+<hr size="2" width="100%" noshade>
+
+
+<h1>5.0 <a name="RoboReadme16"></a>Defects Fixed in Version Manager 8.0.0.8</h1>
+
+
+<h2>5.1 <a name="RoboReadme17"></a>Desktop Client, CLI, PCLI, and DTK Defects Fixed</h2>
+
+<h3 class="keepWithNext">Reference directory fails and shows incorrect path if the path contains spaces [1047343]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Unable to log in to a File Server project using a DBCS ID [1048287]</h3>
+
+<p class="sub">Access to a File Server PDB is denied when you log in using a DBCS (double-byte character system) ID.  This has been fixed.</p>
+
+<h3 class="keepWithNext">File Server:  VM can corrupt archive files if ARCHIVEWORK and WORKDIR use a slow drive [1048300]</h3>
+
+<p class="sub">If your ARCHIVEWORK and WORKDIR directories point to a slow drive, such as a network volume, attempts to update an archive on the File Server may corrupt the archive.  Because ARCHIVEWORK and WORKDIR default to the current directory for command-line interface (CLI) operations, you could trigger this result just by running a CLI command when the current directory is a mapped network drive, or even by using a local drive on a busy system.</p>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">The CLI and DTK applications fail to access files from the File Server when launched from the EventTrigger or Toolbar [1048448]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Admin:  Security report needs a way never to show passwords [1040729]</h3>
+
+<p class="sub">The security report (Admin | Security | Show Report) shows the passwords stored in the ACD if the user running the report is a SUPERUSER.  Because it is fairly easy for an UNLIMITED user to become a SUPERUSER, we need a way to disable this feature.</p>
+
+<p class="sub">This has been fixed.  By default, the Security Report no longer shows passwords, even if the user running the report is a SUPERUSER.</p>
+
+<p class="sub">To allow a SUPERUSER to see passwords (as they could prior to this change), there must be a file called:</p>
+
+<p class="subSub"><span class="syntax"><i>VM_Install_Dir</i>/vm/common/pvcsprop/pvcs/vm/security.properties</span></p>
+
+<p class="sub">with these contents:</p>
+
+<p class="subSub"><span class="syntax">vm.showpasswords=enabled</span></p>
+
+
+<h2>5.2 <a name="RoboReadme18"></a>VM Web Client Defects Fixed</h2>
+
+<h3 class="keepWithNext">Solaris and HPUX:  VM Web Client hangs during pre-processing [1048807]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+
+<h2>5.3 <a name="RoboReadme19"></a>IDE Client Defects Fixed</h2>
+
+<h3 class="keepWithNext">Interdev:  New revisions are not created on check-in [1047354]</h3>
+
+<p class="sub">New revisions are not created when you check in files from Interdev.  This has been fixed.</p>
+
+
+
+
+<p class="returnToTop"><a href="#TOP" >To TOC</a></p>
+<hr size="2" width="100%" noshade>
+
+
+<h1>6.0 <a name="RoboReadme20"></a>Defects Fixed in Version Manager 8.0.0.7</h1>
+
+
+<h2>6.1 <a name="RoboReadme21"></a>Desktop Client, CLI, PCLI, and DTK Defects Fixed</h2>
+
+<h3 class="keepWithNext">PCLI: Problems occur with the ListRevision (<span class="syntax">lr</span>) command if the version label starts with a number [1046536]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+
+
+
+<p class="returnToTop"><a href="#TOP" >To TOC</a></p>
+<hr size="2" width="100%" noshade>
+
+
+<h1>7.0 <a name="RoboReadme22"></a>Defects Fixed in Version Manager 8.0.0.6</h1>
+
+
+<h2>7.1 <a name="RoboReadme23"></a>Desktop Client, CLI, PCLI, and DTK Defects Fixed</h2>
+
+<h3 class="keepWithNext">Journal files and reference directories get randomly modified [1047770]</h3>
+
+<p class="sub">When the File Server and the VM web server are running in the same instance of Tomcat, journal files and reference directories are sometimes modified with information pertaining to <span class="syntax">delta.d</span> file changes.  This has been fixed.</p>
+
+<h3 class="keepWithNext">FS_TEMP setting can cause &quot;unknown exception&quot; error [1047850]</h3>
+
+<p class="sub">The setting of the %TEMP%, %FS_TEMP%, and %FS_TMP% directory environment variables can cause heap corruption that leads to Java "unknown exception" and other failures.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Zero-Byte Archives SER Files  [1047876]</h3>
+
+<p class="sub">These occur if there is no diskspace left on the Temp directory defined under File Server Administrator | Options.  This has been fixed.</p>
+
+
+<h2>7.2 <a name="RoboReadme24"></a>VM Web Client Defects Fixed</h2>
+
+<h3 class="keepWithNext">Temporary archives created in the product installation directory [1047572]</h3>
+
+<p class="sub">If temporary directories are not specified, temporary archive files get created in the product installation directory.  This has been fixed.</p>
+
+<h3 class="keepWithNext">You can no longer use <span class="syntax">&#36;(Command)</span> in your configuration file to identify the VM web client [1047800]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+
+
+
+<p class="returnToTop"><a href="#TOP" >To TOC</a></p>
+<hr size="2" width="100%" noshade>
+
+
+<h1>8.0 <a name="RoboReadme25"></a>Defects Fixed in Version Manager 8.0.0.5</h1>
+
+
+<h2>8.1 <a name="RoboReadme26"></a>IDE Client Defects Fixed</h2>
+
+<h3 class="keepWithNext">Visual Studio .NET: TrackerLink does not update InRev or OutRev [1044194]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+
+
+
+<p class="returnToTop"><a href="#TOP" >To TOC</a></p>
+<hr size="2" width="100%" noshade>
+
+
+<h1>9.0 <a name="RoboReadme27"></a>Defects Fixed in Version Manager 8.0.0.4</h1>
+<h2>9.1 <a name="RoboReadme28"></a>VM Web Client Defects Fixed</h2>
+<h3 class="keepWithNext">Intermittent &quot;No Privilege&quot; Error [1042661]</h3>
+<p>With LDAP authentication in place, users sometimes receive an error stating that they lack the privileges to access files. This has been fixed.</p>
+
+
+
+
+<p class="returnToTop"><a href="#TOP" >To TOC</a></p>
+<hr size="2" width="100%" noshade>
+
+
+<h1>10.0 <a name="RoboReadme29"></a>Defects Fixed in Version Manager 8.0.0.3</h1>
+
+
+<h2>10.1 <a name="RoboReadme30"></a>Desktop Client, CLI, PCLI, and DTK Defects Fixed</h2>
+
+<h3 class="keepWithNext">CLI commands that update archives using 8.3-format file names cause VM to crash [1045357]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext"><span class="syntax">servers.ini</span> cannot be on a read-only network share [1045001]</h3>
+
+<p class="sub">The documentation suggests that a read-only network share is a valid location for the <span class="syntax">servers.ini</span> file; however, this configuration causes error conditions.</p>
+
+<p class="sub">This has been fixed; the product now supports this documented configuration.</p>
+
+<h3 class="keepWithNext">File Server:  Invalid device-specific temp directories can corrupt archives and metadata  [1045858]</h3>
+
+<p class="sub">If the chosen or default device-specific temp directory is invalid because the specified name already exists as a file name, attempts to update files through the VM File Server result in these files being replaced by 0-byte files.</p>
+
+<p class="sub">This has been fixed; an appropriate warning now appears.</p>
+
+<h3 class="keepWithNext">File Server:  <span class="syntax">vsplit</span> does not clean up semaphores [1045832]</h3>
+
+<p class="sub">When you run the <span class="syntax">vsplit</span> command, the <span class="syntax">.??&#36;</span> semaphore file that gets created for the archive does not get removed.  This has been fixed.</p>
+
+<h3 class="keepWithNext">The workstation installation section of the Version Manager Installation Guide contains an error [1045750]</h3>
+
+<p class="sub">This has been fixed.  The section on licensing workstation installs has been removed; the subject is covered correctly in another part of the guide.</p>
+
+<h3 class="keepWithNext">UNIX:  The Copy button in the Results dialog box does not copy to the X primary selection [1040678]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext"><span class="syntax">pvcsldap.ini</span> created in the wrong directory [1046061]</h3>
+
+<p class="sub">The default location for the new <span class="syntax">pvcsldap.ini</span> file is the VM installation directory, which causes problems when the VM installation is local.</p>
+
+<p class="sub">This has been fixed; the default location is now the root of the PDB.</p>
+
+<h3 class="keepWithNext">Change in case of HOST login ID results in loss of private workspaces [1042443]</h3>
+
+<p class="sub">If the case of the login ID returned by the HOST login source changes (for example, as a result of the customer switching domains) in a case-<i>insensitive</i> PDB, the private workspaces for the users are permanently deleted.  This has been fixed.</p>
+
+<h3 class="keepWithNext"><span class="syntax">vsplit</span> cannot parse an @list with quoted path names [1046111]</h3>
+
+<p class="sub">To preserve path names with spaces in an @list, you normally need to enclose the invidual path names within quotation marks; however, the <span class="syntax">vsplit</span> command silently ignores quoted path names.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Local %TEMP% directory fills up with cache files [1046308]</h3>
+
+<p class="sub">The file server client does not honor the total cache file size limit.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Korean:  Last character gets removed from the archive location when you tab to the next field in edit mode [1038984]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Japanese Windows:  Project Database name is corrupted when you use the IME input form [1040977]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">VSS2PVCS conversion involves a labeling anomaly [1046344]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">VM/Collage integration:  <span class="syntax">runvmcm -s</span> command fails [1046978]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">VM/Collage integration:  Integration between Version Manager and Collage does not work with current release of Collage [1046976]</h3>
+
+<p class="sub">If you are using version 4.0 or 4.0.1 of Collage and you try to interface VM and Collage, the files are not uploaded to Collage.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Trackerlink-generated version labels are moved to the wrong revision on checkout [1047449]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+
+<h2>10.2 <a name="RoboReadme31"></a>VM Web Client Defects Fixed</h2>
+
+<h3 class="keepWithNext">Auto-Create Users doesn't work with LDAP on VM web client [1044614]</h3>
+
+<p class="sub">Populating your Access Control Database by adding authenticated LDAP users using the auto-create feature doesn't work if you are using the VM web client.  This has been fixed.</p>
+
+<h3 class="keepWithNext">UNIX:  In Netscape on UNIX, the font size for captions is too large, which makes some text cut short or invisible [1026715]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Documentation regarding linking VM and Tracker web clients contains an error [1045676]</h3>
+
+<p class="sub">The documentation incorrectly refers to a Tracker project rather than a Tracker server in connection with configuring servlets.  This has been fixed.</p>
+
+<h3 class="keepWithNext"><span class="syntax">useDaemons=true</span> is reset by each new version or patch [1039784]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Still shipping mod_jk 1.2.0 for Apache 2 on Solaris [1045434]</h3>
+
+<p class="sub">Though we are shipping mod_jk 1.2.1 for Apache 1.3, a customer noticed that we are still shipping the 1.2.0 release for Apache 2.0 on Solaris.  This has been fixed.</p>
+
+<h3 class="keepWithNext">GET fails on a split archive if it contained an access list when VSPLIT was run [1046354]</h3>
+
+<p class="sub">If you run VSPLIT on archives stored on the File Server, and the archives contain an AccessList at the time of the split, attempts to retrieve revisions from the archives will fail.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Solaris clients:  Execuatable bits are missing from workfiles after check-in [1044750]</h3>
+
+<p class="sub">When you use VM Server 7.5.1.0 on Windows with a client on Solaris, the execuatlable bits of a read-only workfile are lost after a check-in.  This has been fixed.</p>
+
+
+<h2>10.3 <a name="RoboReadme32"></a>IDE Client Defects Fixed</h2>
+
+<h3 class="keepWithNext">Conflict created when you open a pre-existing workspace after applying the &quot;Merant Integrations Patch for Version Manager 7.5.1.0...&quot; [1045236]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Show History on revisions locked by a specific user returns all users [1037527]</h3>
+
+<p class="sub">From within an IDE, performing a Show History operation on revisions locked by a specific user returns all users.  This has been fixed.</p>
+
+<h3 class="keepWithNext">WSAD:  Error not displayed when privileges are not available [1041137]</h3>
+
+<p class="sub">If a user that does not have version label permissions within WSAD connects to a VM Project Database and attempts to label a file from within WSAD, the operation seems to proceed with no errors; however, viewing the file in Version Manager reveals that it does not contain the version label.  This has been fixed.</p>
+
+
+
+
+<p class="returnToTop"><a href="#TOP" >To TOC</a></p>
+<hr size="2" width="100%" noshade>
+
+
+<h1>11.0 <a name="RoboReadme33"></a>Defects Fixed in Version Manager 8.0.0.2</h1>
+
+
+<h2>11.1 <a name="RoboReadme34"></a>Desktop Client, CLI, PCLI, and DTK Defects Fixed</h2>
+
+<h3 class="keepWithNext">Merge Tool's default font cannot display Japanese characters [1040591]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">PCLI:  The <span class="syntax">-nb</span> (No Banner) option does not work on UNIX [1044740]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Manually entering an invalid workfile location renders the file browser unusable [1045308]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+
+<h2>11.2 <a name="RoboReadme35"></a>VM Web Client Defects Fixed</h2>
+
+<h3 class="keepWithNext">Cannot run daemons on UNIX [1037809]</h3>
+
+<p class="sub">UNIX:  Any attempt to start the VM web server with daemons enabled produces an error.</p>
+
+<p class="sub">This has been fixed.</p>
+
+
+
+
+<p class="returnToTop"><a href="#TOP" >To TOC</a></p>
+<hr size="2" width="100%" noshade>
+
+
+<h1>12.0 <a name="RoboReadme36"></a>Defects Fixed in Version Manager 8.0.0.1</h1>
+
+
+<h2>12.1 <a name="RoboReadme37"></a>Desktop Client, CLI, PCLI, and DTK Defects Fixed</h2>
+
+<h3 class="keepWithNext">Promotion model deleted during editing in the desktop client [1042881]</h3>
+
+<p class="sub">When a sufficiently large promotion model is being edited in the desktop client, it gets deleted from the CFG file.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Environment variable LM_LICENSE_FILE prevents evaluation license from working [1044425]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Non&#8211;File Server PDBs should check for split archives and warn appropriately [1044305]</h3>
+
+<p class="sub">When not utilizing File Server, Version Manager should recognize a split archive and display a useful message stating that the archive is split and must be referenced through a file server.  This has been implemented.</p>
+
+
+<h2>12.2 <a name="RoboReadme38"></a>VM Web Client Defects Fixed</h2>
+
+<h3 class="keepWithNext">After <span class="syntax">web.xml</span> is modified, users get errors in all PDBs [1039249 ]</h3>
+
+<p class="sub">Changes made to <span class="syntax">web.xml</span> are not read until the server is restarted, and may cause incorrect operation of the server.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Concurrent licenses not returned to pool [1044247]</h3>
+
+<p class="sub">Licenses allocated to VM web-client user sessions are never returned to the license pool; the license should be returned to the pool five minutes after the user logs out from the web client.</p>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Windows XP:  Applet does not fully install on Internet Explorer 6 with Sun's JRE [1043914]</h3>
+
+<p class="sub">The client appears to work but applet operations fail.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Resource locked by session during Show History [1043662]</h3>
+
+<p class="sub">When the customer performs simultaneous Show History operations on multiple PDBs (in multiple browser windows), Version Manager hangs.  This has been fixed.</p>
+
+
+
+
+<p class="returnToTop"><a href="#TOP" >To TOC</a></p>
+<hr size="2" width="100%" noshade>
+
+
+<h1>13.0 <a name="RoboReadme39"></a>Defects Fixed in Version Manager 8.0.0.0</h1>
+
+
+<h2>13.1 <a name="RoboReadme40"></a>Desktop Client, CLI, PCLI, and DTK Defects Fixed</h2>
+
+
+
+<h3 class="keepWithNext">PCLI online help for the <span class="syntax">-nb</span> option confusing and incorrect [1038900]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Need to persist comments across multiple-file actions by default [1037053]</h3>
+
+<p class="sub">On a multiple-file check-in or add, the <b>Use Change Description for all</b> check box is not selected by default.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Post-put event trigger is called even if the file doesn't get checked in [1039530]</h3>
+
+<p class="sub">If you set up a post-put event trigger, configure the PDB to remove the lock on an unchanged file, check out a file without changing it, check in the file with "Prompt" selected for unchanged workfiles and with "Keep read-only workfile" selected, and reply "no" when asked if you want to check in an unchanged file, an event trigger fires even though no check-in occurred.  This has been fixed.</p>
+
+<h3 class="keepWithNext"><span class="syntax">pcli get -p</span> does not work [1039613]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Error details appear much too slowly [1039145]</h3>
+
+<p class="sub">If you perform an action that results in an error in the desktop client, the Details window takes about five seconds to auto-expand.  This has been fixed.</p>
+
+<h3 class="keepWithNext"><span class="syntax">pcli list -ca</span> format error [1039676]</h3>
+
+<p class="sub">The documentation for the <span class="syntax">pcli list -ca</span> command contains errors (<span class="syntax">:=</span> should be <span class="syntax">=</span>).  This has been fixed.</p>
+
+<h3 class="keepWithNext">Selecting "Don't check in workfile" changes the default workfile location [1038803]</h3>
+
+<p class="sub">If the selected workfile location does not match the project's default location, selecting "Don't check in workfile" changes the default workfile location.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Filter by Version Label returns incorrect results [1039920 ]</h3>
+
+<p class="sub">The comma should remain the default delimiter.  This has been fixed.</p>
+
+<h3 class="keepWithNext">PCLI variables incorrect in PCLI manual [1038997]</h3>
+
+<p class="sub">The PCLI manual contains references to PCLI PR and  PCLI ID (without the underscore).  This has been fixed.</p>
+
+<h3 class="keepWithNext">When you browse from Add Workfiles, the path contains <span class="syntax">\*.*\*.*</span> [1035507]</h3>
+
+<p class="sub">In the Add Workfiles dialog box, clicking the Browse button sometimes displays a path with an extra <span class="syntax">\*.*</span>.  This has been fixed.</p>
+
+<h3 class="keepWithNext">DOC:  Installation Guide link for System Requirements no longer valid [1039038]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Version Manager looks for allusers.ser in the wrong location [1039525]</h3>
+
+<p class="sub">When checking if the <span class="syntax">allusers.ser</span> data in memory is out of date compared with the persistent data, the code looks for the file in the wrong directory.  This has been fixed.</p>
+
+<h3 class="keepWithNext">If the current date is used as an expiration date, the security dialog box locks up [1039618]</h3>
+
+<p class="sub">If you modify an existing user to have an expiration date of today (or any date before today), a blank dialog box appears and cannot be dismissed except through the Windows Task Manager.  This has been fixed.</p>
+
+<h3 class="keepWithNext"><span class="syntax">pcli IsDifferent</span> command does not use the default revision [1039162]</h3>
+
+<p class="sub">The IsDifferent command always performs the comparison against the tip rather than the default revision.  This has been fixed.</p>
+
+<h3 class="keepWithNext">User name in the status bar can become corrupt [1039828]</h3>
+
+<p class="sub">When you enter a new user name in the Switch User dialog box, the user name in the status bar is sometimes repainted incorrectly.  This has been fixed.</p>
+
+<h3 class="keepWithNext">In the PCLI, the <span class="syntax">-v</span> option should accept numeric strings as a version label [1040225]</h3>
+
+<p class="sub">The <span class="syntax">-v</span> option should be treated as a label and accept numeric characters without requiring escape characters.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Incorrect nfsmap file information in the Administrator's Guide [1038249]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Tool configured with a path longer than 80 characters does not run [1040235]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">PCLI ImportArchives and AddFiles do not respect Run options <span class="syntax">-y</span>, <span class="syntax">-n</span>, and <span class="syntax">-np</span> [1041294]</h3>
+
+<p class="sub">The PCLI commands ImportArchives and AddFiles do not observe the Run options <span class="syntax">-y</span>, <span class="syntax">-n</span> and <span class="syntax">-np</span>.  Instead of accepting the Yes, No, and No Prompt options being passed through Run, the functions still pass the question to the user.</p><p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">PCLI <span class="syntax">IsDifferent -v</span> command crashes if the version label contains two or more dots [1040963]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">ACD file is deleted when you try to update an ACD file that is in use [1040386]</h3>
+
+<p class="sub">If you try to update an ACD file (for example, add a user) and the ACD file is flagged by the operating system as being in use (for example, because another process is reading the file), the ACD file is deleted and must be restored from backup.  This has been fixed.</p>
+
+<h3 class="keepWithNext"><span class="syntax">java.lang.NullPointerException</span> during Import Archive [1041296]</h3>
+
+<p class="sub">During import, , a corrupt archive will generate the error "<span class="syntax">Unexpected error:  java.lang.NullPointerException</span>" and halt the process.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Journal Report uses incorrect beginning date in date range [1005578]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">PUT:  Checking in with "remove lock if unchanged" option creates another revision [1006888]</h3>
+
+<p class="sub">On a branch, checking in a file creates a new revision even with a "remove lock if unchanged" option selected ("Don't check in" or "Prompt" when the file is unchanged).  This has been fixed.</p>
+
+<h3 class="keepWithNext">Import Archive dialog box sometimes does not display all files or folders [1037435]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">"Hot key" access to projects in the project pane stopped working [1037750]</h3>
+
+<p class="sub">You can no longer highlight a project by selecting the Project Database root on the left side (Project Pane) and then typing the first letter of the project you want to work on.  This has been fixed.</p>
+
+<h3 class="keepWithNext">"Show Journal" doesn't display the proper journal information [1036675]</h3>
+
+<p class="sub">"Show Journal" doesn't display the proper journal information when the "Date Range" is set from the morning of the current day to the night of current day, even though actions have taken place on the versioned file during the current day.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Need to update documentation to warn about duplicate IDs during multiple runs of VSQL [1035176]</h3>
+
+<p class="sub">If you run two exports within a few seconds of each other, duplicate IDs can occur.  This should be avoided, and a note has been added to the documentation.</p>
+
+<h3 class="keepWithNext">Journal entry date recorded incorrectly between midnight and 1:00 AM during Daylight Savings Time [1035508]</h3>
+
+<p class="sub">When archive operations are performed between midnight and 1:00 AM during Daylight Savings Time, the date incorrectly specifies the previous day.  This has been fixed.</p>
+
+<h3 class="keepWithNext">PCLI <span class="syntax">Vlog</span> options should support the Default Version when no revision is specified [1036271]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">PCLI:  The <span class="syntax">-a</span> option of the <span class="syntax">Readline</span> command does not assign to an array [1037027]</h3>
+
+<p class="sub">The <span class="syntax">-a</span> option of the <span class="syntax">Readline</span> command should be able to assign the individual words in a line of input to elements of an array; however, all words are placed into the first array element.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Installation guide refers to a web site that no longer exists [1037377]</h3>
+
+<p class="sub">The Version Manager product link is out of date in the installation guide.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Promotion model deleted when you edit in the desktop client [1042881]</h3>
+
+<p class="sub">When you edit a large promotion model in the desktop client, the model gets deleted from the configuration file.  This has been fixed.</p>
+
+<h3 class="keepWithNext">VM installation shows wrong Start Menu folders [1043085]</h3>
+
+<p class="sub">The installation does not allow you to select a Program Folder for all users on the machine; it lets you select a Program Folder only for the current user.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Journal files are not created or updated when you use File Server [1043220]</h3>
+
+<p class="sub">When you access a project database through a file server, the journal files do not get created or updated with your last action.  This has been fixed.</p>
+
+<h3 class="keepWithNext"><span class="syntax">vtransfer -f</span> (fix) option does not work [1043290]</h3>
+
+<p class="sub">The <span class="syntax">vtransfer</span> command option <span class="syntax">-f</span> to fix a RevLib path does not work.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Locking problems with File Server [1043304]</h3>
+
+<p class="sub">When accessing a project database through a file server, you may get lock errors after attempting to check in files.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Long label names unnecessarily truncated in Filter Selection list [1035519]</h3>
+
+<p class="sub">In the desktop client and web client, long label names are not allowed to fill up the available space in the Filter Selection list, and so get unnecessarily truncated.  This has been fixed.</p>
+
+
+<h2>13.2 <a name="RoboReadme41"></a>VM Web Client Defects Fixed</h2>
+
+<h3 class="keepWithNext">Long label names unnecessarily truncated in Filter Selection list [1035519]</h3>
+
+<p class="sub">In the desktop client and web client, long label names are not allowed to fill up the available space in the Filter Selection list, and so get unnecessarily truncated.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Need to persist comments across multiple-file actions by default [1037053]</h3>
+
+<p class="sub">On a multiple-file check-in or add, the <b>Use Change Description for all</b> check box is not selected by default.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Receive "internal processing error:  72" when using "@" in the Change Description [1039381]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Different passwords not allowed for the same user within a PDB  [1039078]</h3>
+
+<p class="sub">You do not receive a prompt to enter different passwords to enter subprojects with a different password for the same User ID.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Timestamp changed when an UnconditionalPrePut event trigger is used [1039199]</h3>
+
+<p class="sub">On check-in of an unmodified workfile, the "modified" date is changed if an UnconditionalPrePut event trigger is defined for that project.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Consecutive spaces in version labels are collapsed into a single space [1040379]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Netscape reload problem [1023611]</h3>
+
+<p class="sub">If you are using a Netscape browser and you resize the results window during a checkout, the action is aborted and the results information is lost.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Web client does not load VMINET.HTML or the SampleDB [1043355]</h3>
+
+<p class="sub">The VMINET.HTML page, the vminet_install.html page, and the sample project database servlet page come up blank when you try to access them in your web browser.  This has been fixed.</p>
+
+
+<h2>13.3 <a name="RoboReadme42"></a>IDE Client Defects Fixed</h2>
+
+<h3 class="keepWithNext">Eclipse 2:  Patch to Eclipse plug-in returns &quot;The chosen operation is not currently available&quot; [1038771]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Eclipse/WSAD:  Enhancement request to enable Merant menu and glyphs by default [1039523]</h3>
+
+<p class="sub">For Eclipse-based IDEs, the Merant menu and the source-control glyphs are not enabled by default.  The information is saved in the user workspace, so you have to enable the menu and glyphs for each new workspace you create.  This has been fixed.</p>
+
+<h3 class="keepWithNext">TD:  Setting test types to be placed under version control [1041223]</h3>
+
+<p class="sub">When the TD plug-in is installed, it should create the following registry key:</p>
+
+<p class="sub"><span class="syntax">&nbsp;&nbsp;&nbsp;&nbsp;HKEY_LOCAL_MACHINE->SOFTWARE->Mercury Interactive->Version Manager->Test Type</span></p>
+
+<p class="sub">The value of the string should contain the test types for TD, separated by commas.</p>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">ID:  Can't perform a "Get latest version" on a file unless a local copy already exists [1040799]</h3>
+
+<p class="sub">An "Unable to get file" error occurs during a Get that includes <b>Get latest version of...</b> or <b>Refresh Project View</b>.  This has been fixed.</p>
+
+
+
+
+<p class="returnToTop"><a href="#TOP">To TOC</a></p>
+<hr size="2" width="100%" noshade>
+
+
+<h1>14.0 <a name="RoboReadme43"></a>Defects Fixed in Version Manager 7.5.2.2</h1>
+
+<h2>14.1 <a name="RoboReadme44"></a>Development Interface Defects Fixed</h2>
+
+<h3 class="keepWithNext">WSAD5/Eclipse:  Patch install on Windows XP causes Dev Int to fail to initialize on WSAD 5 [1042706]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+
+
+
+<p class="returnToTop"><a href="#TOP">To TOC</a></p>
+<hr size="2" width="100%" noshade>
+
+
+<h1>15.0 <a name="RoboReadme45"></a>Defects Fixed in Version Manager 7.5.2.1</h1>
+
+<h2>15.1 <a name="RoboReadme46"></a>GUI, CLI, PCLI, and DTK Defects Fixed</h2>
+
+<h3 class="keepWithNext">VM DTK has memory leaks in several functions [1014880]</h3>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Attempting to associate an SCR when adding workfiles returns an error [1039423]</h3>
+
+<p class="sub">If you select a file in the default workfile location and attempt to associate an SCR, nothing appears to happen.  If you click the button again, the following error is returned:  <b>Empty Selection Set:  Browse to select directories or files.</b>  This has been fixed.</p>
+
+<h2>15.2 <a name="RoboReadme47"></a>Development Interface Defects Fixed</h2>
+
+<h3 class="keepWithNext">ALL:  Open files do not return an &quot;in use&quot; error on a GET with VM 7.5.1.0 [1041718]</h3>
+
+<p class="sub">When an item under source control is opened by an external application, such as MS Word, and the user performs a GET function through the IDE, the GET fails.  This is correct behavior; however, in VM 7.5.1.0, no error is passed, and the user is not alerted to the failure.  This has been fixed.</p>
+
+<h3 class="keepWithNext">ECLIPSE:  Unable to modify plugin.xml [1039689]</h3>
+
+<p class="sub">Creating a plug-in project in an Eclipse-based IDE creates a file named plugin.xml.  If you try to modify a field in that file, a dialog box prompts you to check out the file (even if the file is already checked out).  Clicking Yes or No does not dismiss the dialog box or provide a way to check in the modified file.  Shutting down the IDE through the Task Manager is the only way to dismiss the dialog box.</p><p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">WSAD:  Menu options do not conform to Windows standards [1039838]</h3>
+
+<p class="sub">Menu items that spawn dialog boxes are not followed by an ellipsis.  This has been fixed.</p>
+
+<h3 class="keepWithNext">WSAD 5 Plug-In:  Doesn't check out the .websettings file [1042198]</h3>
+
+<p class="sub">When you modify the properties for the Web Project, the .websettings file does not get checked out, and an error is generated.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Eclipse 2 and WSAD 5:  Enhancement request to be able to not check out the .classpath file [1039109]</h3>
+
+<p class="sub">The .classpath file stores the java class path for the application.  This file can contain custom directory values that are specific to the current user workstation.  The .classpath file is getting automatically checked out and can cause problems when a modified version is checked back in.</p><p class="sub">This has been fixed:  The user can now "disconnect" the .classpath file.</p>
+
+
+
+
+<p class="returnToTop"><a href="#TOP" >To TOC</a></p>
+<hr size="2" width="100%" noshade>
+
+
+<h1>16.0 <a name="RoboReadme48"></a>Defects Fixed in Version Manager 7.5.2.0</h1>
+
+<p><b>This release is primarily intended to provide compatibility with Merant&reg; Mover<sup><font size="-1">TM</font></sup>.</b> If you wish to use Merant Mover with Version Manager, you must install this release or upgrade to Version Manager 8.</p>
+
+
+
+
+<p class="returnToTop"><a href="#TOP" >To TOC</a></p>
+<hr size="2" width="100%" noshade>
+
+
+<h1>17.0 <a name="RoboReadme49"></a>Defects Fixed in Version Manager 7.5.1.5</h1>
+
+<h2>17.1 <a name="RoboReadme50"></a>GUI, CLI, PCLI, and DTK Defects Fixed</h2>
+
+<h3 class="keepWithNext">LDAP connection to Microsoft Active Directory Server via SSL fails [1039896]</h3>
+
+<p class="sub">Version Manager may shut down when trying to connect to a Microsoft Active Directory Server via Secure Socket Layer.  This has been fixed.</p>
+
+<h3 class="keepWithNext">PCLI List Archive:LockInfo output format changed [1040524]</h3>
+
+<p class="sub">As of VM 7.5.1.0, the PCLI List output format for the Archive:LockInfo attribute was inadvertently changed, which can adversely affect scripts parsing this output.  With the 7.5.1.5 patch, the original format has been restored.</p>
+
+
+
+
+<p class="returnToTop"><a href="#TOP" >To TOC</a></p>
+<hr size="2" width="100%" noshade>
+
+
+<h1>18.0 <a name="RoboReadme51"></a>Defects Fixed in Version Manager 7.5.1.4</h1>
+
+<h2>18.1 <a name="RoboReadme52"></a>GUI, CLI, PCLI, and DTK Defects Fixed</h2>
+
+<h3 class="keepWithNext">Double-Clicking the Create or Duplicate User Buttons Prevents Login to the Project Database [1039798]</h3>
+
+<p class="sub">Double-clicking the <b>Create</b> or <b>Duplicate</b> buttons on the Create User or Duplicate User dialog boxes may corrupt the list of valid users and prevent login to the project database.  This has been fixed.</p>
+<p class="sub"><b>NOTE:</b>  If you have experienced this problem prior to installing the 7.5.1.4 patch, you may now see the following message when opening the affected project database (PDB):</p>
+
+<p class="sub"><span class="syntax">[Warning] A user with a blank (null) name was found in allusers.ser.  Your access control database might have lost some users--restoring from backup is recommended.</span></p>
+
+<p class="sub">In that case, it is recommended that you restore the related access control database file (e.g. <span class="syntax">access.db</span>) from backup.  The warning message when you open the PDB will persist until a user is added or removed, unless the <span class="syntax">allusers.ser</span> file was also restored (from backup or from <span class="syntax">allusers.old</span>).</p>
+
+<h3 class="keepWithNext">Difference Results Depend on Order in which Files Are Selected [1039504]</h3>
+
+<p class="sub">The results produced by the difference tool can be affected by the order in which the files are selected.  This has been fixed.</p>
+
+
+
+
+<p class="returnToTop"><a href="#TOP" >To TOC</a></p>
+<hr size="2" width="100%" noshade>
+
+
+<h1>19.0 <a name="RoboReadme53"></a>Defects Fixed in Version Manager 7.5.1.3</h1>
+
+<h2>19.1 <a name="RoboReadme54"></a>Version Manager Defects Fixed</h2>
+
+<h3 class="keepWithNext">Long Path to Configuration File Causes VM to Fail [1039271]</h3>
+
+<p class="sub">A long path (over 200 characters) to a Version Manager configuration file may cause operations to fail.  This has been fixed.</p>
+
+<h2>19.2 <a name="RoboReadme55"></a>Development Interface Defects Fixed</h2>
+
+<h3 class="keepWithNext">Integration to SCC and Eclipse IDEs Fails on Windows NT [1039154]</h3>
+
+<p class="sub">The Development Interface does not work correctly with SCC and Eclipse IDEs on Windows NT systems.  This has been fixed.</p>
+
+
+
+
+<p class="returnToTop"><a href="#TOP" >To TOC</a></p>
+<hr size="2" width="100%" noshade>
+
+
+<h1>20.0 <a name="RoboReadme56"></a>Defects Fixed in Version Manager 7.5.1.2</h1>
+
+<h2>20.1 <a name="RoboReadme57"></a>Version Manager GUI, CLI, PCLI, and DTK Defects Fixed</h2>
+
+<h3 class="keepWithNext">Unable to Add Files to Source Control if the Reference Directory Does Not Exist [1039015]</h3>
+
+<p class="sub">If a reference directory is defined for a project but that directory does not exist, you will not be able to add files to source control for that project.  This has been fixed.</p>
+
+<h2>20.2 <a name="RoboReadme58"></a>Development Interface Defects Fixed</h2>
+
+<h3 class="keepWithNext">Visual Studio .NET:  Web Projects on Remote Servers Do Not Include Nested Project Structure [1038885]</h3>
+
+<p class="sub">Visual Studio .NET web projects located on remote servers end up with flat file structures when added to source control.  This has been fixed.</p>
+
+<h2>20.3 <a name="RoboReadme59"></a>VM I-Net Defects Fixed</h2>
+
+<h3 class="keepWithNext">Unable to Add Files to Source Control if the Reference Directory Does Not Exist [1039015]</h3>
+
+<p class="sub">If a reference directory is defined for a project but that directory does not exist, you will not be able to add files to source control for that project.  This has been fixed.</p>
+
+
+
+
+<p class="returnToTop"><a href="#TOP" >To TOC</a></p>
+<hr size="2" width="100%" noshade>
+
+
+<h1>21.0 <a name="RoboReadme60"></a>Defects Fixed in Version Manager 7.5.1.0</h1>
+
+<h2>21.1 <a name="RoboReadme61"></a>Version Manager GUI, CLI, PCLI, and DTK Defects Fixed</h2>
+
+<h3 class="keepWithNext">PCLI Does Not Create Archives That Have German Characters in the File Name [1031395]</h3>
+
+<p class="sub">On Windows, if a CodePage other than 1252 is used, the German umlaut characters are not displayed correctly.  This has been fixed.</p>
+
+<p class="sub"><b>NOTE:</b>  You can change or query your CodePage from a Command Prompt using the command <span class="syntax">chcp</span>.</p>
+
+<h3 class="keepWithNext">Double-Clicking a Project with No Permissions Locks the GUI [1023776]</h3>
+
+<p class="sub">If a user is not defined in the access control database for a project and that user double-clicks a project to open it, the GUI locks up and displays the error message:  "Access to this project has been denied because your login account is invalid".  This has been fixed.</p>
+
+<h3 class="keepWithNext">Version Manager 7.5.0.0 Hangs When You Try to Rename a Promotion Group to an Existing Group [1037855]</h3>
+
+<p class="sub">If you enter the name of an existing promotion group in an attempt to rename that promotion group using Configure Project, the GUI gets stuck in a loop and locks up.  This has been fixed.</p>
+
+<h3 class="keepWithNext">No PCLI Option to Turn Off Header Banner [1003330]</h3>
+
+<p class="sub">There was no way to turn off the display of the Banner Header when running a PCLI command.  This is now possible by passing PCLI the option <span class="syntax">-nb</span> (No Banner), or by assigning a value to the environment variable <span class="syntax">PVCS_NO_BANNER</span>.  This new environment variable is honored by all Version Manager commands.</p>
+
+<h3 class="keepWithNext">Certain Command-Line Executables Did Not Use the nfsmap File [222505]</h3>
+
+<p class="sub">The nfsmap file is not used by the command-line executables <span class="syntax">vcompress</span>, <span class="syntax">vdel</span>, <span class="syntax">vdiff</span>, <span class="syntax">vsql</span>, <span class="syntax">readdb</span>, and <span class="syntax">makedb</span>.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Put Does Not Check the Workfile Name if the User has Locked an Archive and Checked Something Different In [1002176]</h3>
+
+<p class="sub">If you merely lock an archive, rather than doing a checkout with a lock, and then browse to a different file at check-in, Version Manager checks in the file without a warning.  This has been fixed.</p>
+
+<h3 class="keepWithNext">User Cannot Check In Multiple Files That Were Checked Out to Different Locations [1014389]</h3>
+
+<p class="sub">If you check out files in a project to different locations, either manually or by using different workspaces, you cannot check them in as a group; Version Manager defaults to the workfile location for the project and does not use the check-out location embedded in the archive.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Pinned Files Return "specifies a version number, which is illegal" Error When Using Version Manager with VSS [1019336]</h3>
+
+<p class="sub">The command <span class="syntax">ss dir &#36;/pinned</span> returns a list of items in the project specified.  When a file is pinned, the file name is returned with a semicolon and a number to append to it.  This has been fixed.</p>
+
+<h3 class="keepWithNext">No PCLI Command to Promote or Assign Promotion Group [1032167]</h3>
+
+<p class="sub">In previous versions of Version Manager, it was nearly impossible to promote a revision or assign a promotion group from within a PCLI script.  The commands AssignGroup, ChangeGroup, DeleteGroup and PromoteGroup have been added to PCLI to fix this.  See the readme file for a description and syntax of these commands.</p>
+
+<h3 class="keepWithNext">Wrong Workfile Location Used When One User Checks Out the Same Revision Twice [1032683, 1036485]</h3>
+
+<p class="sub">If a file was checked out using the root workspace setting, then the user switched to a new workspace and checked the file out again, Version Manager produced two locks with workfiles in different locations.  When checking in the file, Version Manager did not know which workspace was used to check out the archive and might check in the wrong version.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Quotation Marks Around Name Used Literally in PCLI [1035591]</h3>
+
+<p class="sub">The PCLI DeleteUser and AddUser commands takes any quotation marks around a name, making it impossible to create or delete certain valid names.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Journal File Entries for "modify change description" Truncated to 200 Bytes [1036160]</h3>
+
+<p class="sub">If you modify an existing change description, the journal file entry is limited to 200 characters.  This produces errors when you run the journal report causing, in some cases, an "Unknown Exception" error.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Typing Filename (base) in Add Workfiles From Field Will Create Project [1036310]</h3>
+
+<p class="sub">When a user types a file basename (a name without a path) in the From field of the Add Workfiles dialog box, Version Manager creates a project with the name of that file.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Problem Converting Archives from VSS to Version Manager when Multiple Branches were Deleted [1036609, 1036626]</h3>
+
+<p class="sub">If branch revisions between the trunk and tip are deleted, the trunk is not able to attach itself to a branch.  The VSS Converter tool is unable to build a branch.  This has been fixed.
+</p>
+
+<h3 class="keepWithNext">How to Disable the New Banner and Help Page Buttons, "What's New" and "What's Coming" [1037716]</h3>
+
+<p class="sub">Tracker and Version Manager automatically pop up marketing messages in the What's New and What's Coming topics after a fresh installation.  It is possible to turn off these help messages.  Contact Answerline for assistance.</p>
+
+<h3 class="keepWithNext">Embedded Disallow Directives Appended to Every Configuration File [1020757]</h3>
+
+<p class="sub">When users made changes to the configuration files, disallow statements were appended to the configuration file.  The customer would need to remove the disallow statements that were appended to the configuration file, but when a change was made, the disallow statements were appended again.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Project Metadata Directory (P*.prj) Not Always Moved When the Project is Moved [1038161]</h3>
+
+<p class="sub">Version Manager on Windows platforms could fail a project move operation because the directory being moved was "in use", resulting in error messages such as:  "Could not rename "\\server\share\...\old_dir\P2tkjy.prj" to "\\server\share\...\new_dir\P2tkjy.prj".  This has been fixed.</p>
+
+<h2>21.2 <a name="RoboReadme62"></a>VM I-Net Defects Fixed</h2>
+
+<h3 class="keepWithNext">Incorrect Setup of iPlanet 6.0 Files After Server Configuration Utility [1037641]</h3>
+
+<p class="sub">If iPlanet 6.0 files are set up incorrectly, users would receive Init links in the wrong file and partial tag definitions.  This has been fixed.</p>
+
+<h3 class="keepWithNext">File Does Not Exist &lt;path&gt;BKGRD.gif [1008398]</h3>
+
+<p class="sub">The web server error log recorded the error:  "file does not exist &lt;path&gt;BKGRD.gif".  This file was called by a number of pages and the log could grow very large affecting performance.  This has been fixed.</p>
+
+<h3 class="keepWithNext">VM I-Net Default Version Does Not Work for Diff if Floating Label [1037274]</h3>
+
+<p class="sub">VM I-Net would produce the error:  "Could not find a revision assigned with the version label, 1.*, in the archive &lt;path&gt;&lt;file name-arc&gt;"  when users would try to run a diff report.  This has been fixed.
+</p>
+
+<h3 class="keepWithNext">VM I-Net Gets 404 Error When Trying to Get to a PDB [1035955]</h3>
+
+<p class="sub">When you use Apache with VM I-Net, the attempt to hit the servlet or "install program" generates a segmentation violation in the active Apache thread.  It reports the error:  "[warn] Loaded DSO &lt;Pathname_to_mod_jk&gt; uses plain Apache 1.3 API, this module might crash under EAPI! (please recompile it with -DEAPI)"</p>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">VM I-Net Project Names Not Visible with Certain Display Settings [1036467]</h3>
+
+<p class="sub">If a user's workstation display settings were set to "high contrast black", the names of the projects were not visible with the black background.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Regarding the mod_jk Connector [1037918]</h3>
+
+<p class="sub">A user may connect to the target machine and deliver several requests with invalid chunked coded body.  VM I-Net now includes mod_jk 1.2.1, which no longer suffers from this problem.</p>
+
+<h3 class="keepWithNext">pvcsstart.sh Script Does Not Unset Variables That Can Adversely Affect VM I-Net [1037776]</h3>
+
+<p class="sub">The tomcat.sh script did not calculate JAVACMD if the environment variable already existed.  If a user already had this variable, VM I-Net would not use Merant's JVM.  This has been fixed.
+</p>
+
+<h3 class="keepWithNext">Remove Command in pvcsstart.sh Script is Lacking "Force" Option [1037797]</h3>
+
+<p class="sub">The remove command in the pvcsstart.sh script that clears Tomcat's work directory would require a response if any file in that directory is read-only.  This has been fixed.
+</p>
+
+
+
+
+<p class="returnToTop"><a href="#TOP" >To TOC</a></p>
+<hr size="2" width="100%" noshade>
+
+
+<h1>22.0 <a name="RoboReadme63"></a>Defects Fixed in Version Manager 7.5.0.1</h1>
+
+<h3 class="keepWithNext">Test Connection Fails with Large LDAP Databases</h3>
+
+<p class="sub">When you test the connection to large LDAP databases, the test may fail and return a "Sizelimit Exceeded" error.  This has been fixed.</p>
+
+
+
+
+<p class="returnToTop"><a href="#TOP" >To TOC</a></p>
+<hr size="2" width="100%" noshade>
+
+
+<h1>23.0 <a name="RoboReadme64"></a>Defects Fixed in Version Manager 7.5.0.0</h1>
+
+<h2>23.1 <a name="RoboReadme65"></a>Version Manager GUI, CLI, PCLI, and DTK Defects Fixed</h2>
+
+<h3 class="keepWithNext">Missing Journal File Results in Misleading Error Message [1018413]</h3>
+
+<p>If the path to the journal file is incorrect or if the journal file is missing, an error may appear which does not mention the journal file.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Command-Line Strips Leading Slash (\) from Quoted UNC Paths [223966]</h3>
+
+<p>The command-line strips the leading slash from quoted UNC paths.  This has been fixed.  <b>NOTE:</b>  This fix is still compatible with old scripts that use extra slashes in order to compensate for the previous behavior.</p>
+
+<h3 class="keepWithNext">Incorrect VB Include File in DTK Installation [1035005]</h3>
+
+<p>The correct VB include file is now in the DTK installation.</p>
+
+<h3 class="keepWithNext">PCLI:  Java Exception for Empty @file List [1031370]</h3>
+
+<p>If you use PCLI to expand an empty @file list, it will produce a Java exception error.  This has been fixed.</p>
+
+<h3 class="keepWithNext">"PCLI list -caDefaultVersion" Does Not Work Correctly [1032655]</h3>
+
+<p>"PCLI list -caDefaultVersion" does not give the correct value if the default label is defined for the parent project.  This has been fixed.</p>
+
+<h3 class="keepWithNext">"VLOG -bn -d" Returns Confusing Results [1035459]</h3>
+
+<p>This has been fixed.</p>
+
+<h3 class="keepWithNext">AIX:  Dragging in Tool Tip Causes Core Dump [1035549]</h3>
+
+<p>An invalid tool tip sometimes appears when you resize panes.  Attempting to drag this window causes a core dump.  This has been fixed.</p>
+
+<h3 class="keepWithNext">PCLI Fails to Pass Exit Code Back to the Environment [1036127]</h3>
+
+<p>PCLI fails to pass exit codes back to the environment.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Browsing for the "Copy To" Directory Fails if the Default Directory Does Not Exist [1035953]</h3>
+
+<p>If you browse for the directory to "Copy To" during a check-out or get operation and the default directory does not exist, the operation may fail.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Cannot Save the Output of the Results Dialog Box [1026427]</h3>
+
+<p>There is not an easy way to save the output of the Results dialog box.  This has been fixed.  One can now copy the entire output or multi select individual items to be copied.</p>
+
+<h3 class="keepWithNext">Installer Did Not Accept 14-Digit Serial Numbers [1035914]</h3>
+
+<p>The installer did not accept 14-digit serial numbers.  This has been fixed.</p>
+
+<h3 class="keepWithNext">PCLI:  IF Command Fails with NullPointer Exception if Boolean Function Fails [1036184]</h3>
+
+<p>If the boolean function in the PCLI if command failed (without returning a value), a Null Pointer exception could result.  This has been corrected.</p>
+
+<h3 class="keepWithNext">PCLI:  IsDifferent Command Does Not Remove tmp Files if Execution Fails [1036190]</h3>
+
+<p>Running the PCLI IsDifferent command used to result in many temporary files being created and left behind.  This has been corrected.</p>
+
+<h3 class="keepWithNext">Workstation Install Shows No Feature Selection List when Source Directories Are Read-Only [1036303]</h3>
+
+<p>If the source directory for a workstation installation was read-only, the VM install program did not correctly identify the options available for installation from that directory.  This has been fixed:  You can now write-protect the source directory for workstation installs.</p>
+
+<h3 class="keepWithNext">Specifying Journal File Using Filename Only Does Not Work Correctly [1036363]</h3>
+
+<p>If you specified a journal file name while running a Journal Report from the VM GUI, VM would just look in the application binary directory for the journal files, not in each archive directory as it should have.  Correct location for the Journal files are searched, and Journal reports now contain all the appropriate info.</p>
+
+<h3 class="keepWithNext">PCLI:  VMCopy Produces a Stack Trace When Called with No Parameters [1035964]</h3>
+
+<p>If PCLI VMCopy was called with no parameters, an exception was reported.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Documentation Issue with Respect to Daemons Configuration [1036683]</h3>
+
+<p>Documentation about how to enable daemons was clarified / corrected.</p>
+
+<h3 class="keepWithNext">Versioned File Pane Redrawn for Every Project with a CFG if File Filter Is
+Used [1036949]</h3>
+
+<p>If your project database has multiple configuration files and you use a recursive view in the VM GUI and also apply a filter to that view, the display is updated too frequently.  This has been fixed.</p>
+
+<h2>23.2 <a name="RoboReadme66"></a>Development Interface Defects Fixed</h2>
+
+<h3 class="keepWithNext">Cannot Install Eclipse Integration without Also Installing GUI [1035737]</h3>
+
+<p>Cannot not install the integration to Eclipse/WSAD by itself.  This has been fixed.</p>
+
+
+<h2>23.3 <a name="RoboReadme67"></a>VM I-Net Defects Fixed</h2>
+
+<h3 class="keepWithNext">I-Net Fails with Sun's JRE [1032636]</h3>
+
+<p>This has been fixed.  <b>NOTE:</b>  See the Version Manager readme file for information about using Sun's 1.4.0x JRE and Internet Explorer with TrackerLink.</p>
+
+<h3 class="keepWithNext">Remember Password Option Locks Out Users in Some Cases [1034767]</h3>
+
+<p class="intro">Users may be locked out of a project database when all of the following occur:</p>
+
+<ul>
+  <li>The project database has an access control database.</li>
+
+  <li>A sub project has its own access control database which uses the same user ID but different password.</li>
+
+  <li>The user has selected the Remember Password option.</li>
+
+  <li>The access control database for the sub project is removed.</li>
+</ul>
+
+<p>This scenario can no longer occur.</p>
+
+<h3 class="keepWithNext">readdb and makedb Not Using Compatible User ID Expiration Date Formats [1034777]</h3>
+
+<p>readdb outputs user ID expiration dates in a different format than that expected by makedb.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Must Occasionally Clean Out \tomcat\work\localhost8080 Directory to Run VM I-Net [1034993]</h3>
+
+<p>From time to time, the \tomcat\work\localhost8080 directory must be cleaned out or VM I-Net will no load correctly.  This has been fixed.  The directory is now regenerated whenever VM I-Net Server is restarted.</p>
+
+<h3 class="keepWithNext">"ERROR:  500 Internal Servlet Error" when Viewing Properties of Version Manager 3.2 or Older Archives [1035567]</h3>
+
+<p>Viewing file properties of archives created with Version Manager 3.2 or older will result in an error.  This has been fixed.</p>
+
+<h3 class="keepWithNext">If %TOMCAT_INSTALL% Is Set then VM I-Net will Not Serve Content Correctly [1036254]</h3>
+
+<p>If you set a value for TOMCAT_INSTALL or CLASSPATH in your environment, those values could interfere with the correct operation of VM I-Net.  The VM I-Net startup scripts have been modified to prevent this problem from occurring.</p>
+
+
+
+
+<p class="returnToTop"><a href="#TOP" >To TOC</a></p>
+<hr size="2" width="100%" noshade>
+
+
+<h1>24.0 <a name="RoboReadme68"></a>Defects Fixed in Version Manager 6.8.13</h1>
+
+<h3 class="keepWithNext">DuplicateUser.log File Contains Plain-Text Passwords [1036480]</h3>
+
+<p class="sub"> As of Version Manager 6.8.10, the DuplicateUser.log file may inadvertently include plain-text user passwords.  This security oversight is corrected by this patch.</p>
+
+<p class="sub"><b>NOTE:</b>  A DuplicateUser.log file is created only when case-insensitive logins have resulted in the creation of duplicate user IDs that differ only in case.  This problem was fixed in VM 6.8.10 (see item <a href="#Section_1015437">[1015437]</a>).  The DuplicateUser.log file indicates which duplicate IDs were purged from the project database.</p>
+
+
+
+
+<p class="returnToTop"><a href="#TOP">To TOC</a></p>
+<hr size="2" width="100%" noshade>
+
+
+<h1>25.0 <a name="RoboReadme69"></a>Defects Fixed in Version Manager 6.8.12</h1>
+
+<h2>25.1 <a name="RoboReadme70"></a>Version Manager GUI, CLI, PCLI, and DTK Defects Fixed</h2>
+
+<h3 class="keepWithNext">Windows DTK:  Undefined Entry Point Errors During Compile [1035682]</h3>
+
+<p class="sub">Compile of DTK applications on Windows results in "Undefined Entry Point" errors.  This has been fixed.  In addition, the file (pvcs.h) that was missing from the 6.8.10 DTK distribution on Windows is now included.</p>
+
+
+<h2>25.2 <a name="RoboReadme71"></a>Development Interface Defects Fixed</h2>
+
+<h3 class="keepWithNext">When Opening a Project from Source Control, You Cannot Specify an Alternate Workfile Location [1035961]</h3>
+
+<p class="sub">If you specify an alternate workfile location when opening a project from source control, the workfiles will not be placed there.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Error When Attempting to Add a New File to an Existing Project [1035967]</h3>
+
+<p class="sub">Once a project is under source control, you receive errors when attempting to add additional files to the project and place them under source control.  This has been fixed.</p>
+
+
+<h2>25.3 <a name="RoboReadme72"></a>VM I-Net Defects Fixed</h2>
+
+<h3 class="keepWithNext">Daemons Associate Wrong Users with Actions [1035553]</h3>
+
+<p class="sub">Daemons associate the wrong users with source control actions.  This has been fixed.</p>
+
+<h3 class="keepWithNext">HPUX:  Apache Server Fails to Start after VM I-Net 6.8.10 is Installed [1035746]</h3>
+
+<p class="sub">After installing VM I-Net 6.8.10, the Apache web server fails to start.  This has been fixed.</p>
+
+<h3 class="keepWithNext">HTTP://500 Error on UNIX Servers with No Internet Access [1035750]</h3>
+
+<p class="sub">An "HTTP://500" error occurs on UNIX servers that do not have Internet access.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Persistent Access Denied Warnings</h3>
+
+<p class="sub">When an access attempt times out and produces an Access Denied Warning, that result is cached so--until the server is restarted--all attempts quickly return the same warning.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Prompted for Promotion Group though None Is in Effect</h3>
+
+<p class="sub">If multiple users are accessing a mix of projects, some of which have a promotion model in effect, you may be prompted for a promotion group on a project that does not have a promotion model in effect.  This has been fixed.</p>
+
+
+
+
+<p class="returnToTop"><a href="#TOP">To TOC</a></p>
+<hr size="2" width="100%" noshade>
+
+
+<h1>26.0 <a name="RoboReadme73"></a>Defects Fixed in Version Manager 6.8.11</h1>
+
+<h2>26.1 <a name="RoboReadme74"></a>Version Manager GUI, CLI, PCLI, and DTK Defects Fixed</h2>
+
+<h3 class="keepWithNext">Windows DTK:  Undefined Entry Point Errors During Compile [1035682]</h3>
+
+<p class="sub">Compile of DTK applications on Windows results in "Undefined Entry Point" errors.  This has been fixed.  In addition, the file (pvcs.h) that was missing from the 6.8.10 DTK distribution on Windows is now included.</p>
+
+
+<h2>26.2 <a name="RoboReadme75"></a>VM I-Net Defects Fixed</h2>
+
+<h3 class="keepWithNext">Daemons Associate Wrong Users with Actions [1035553]</h3>
+
+<p class="sub">Daemons associate the wrong users with source control actions.  This has been fixed.</p>
+
+<h3 class="keepWithNext">HPUX:  Apache Server Fails to Start after VM I-Net 6.8.10 is Installed [1035746]</h3>
+
+<p class="sub">After installing VM I-Net 6.8.10, the Apache web server fails to start.  This has been fixed.</p>
+
+<h3 class="keepWithNext">HTTP://500 Error on UNIX Servers with No Internet Access [1035750]</h3>
+
+<p class="sub">An "HTTP://500" error occurs on UNIX servers that do not have Internet access.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Persistent Access Denied Warnings</h3>
+
+<p class="sub">When an access attempt times out and produces an Access Denied Warning, that result is cached so--until the server is restarted--all attempts quickly return the same warning.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Prompted for Promotion Group though None Is in Effect</h3>
+
+<p class="sub">If multiple users are accessing a mix of projects, some of which have a promotion model in effect, you may be prompted for a promotion group on a project that does not have a promotion model in effect.  This has been fixed.</p>
+
+
+
+
+<p class="returnToTop"><a href="#TOP">To TOC</a></p>
+<hr size="2" width="100%" noshade>
+
+
+<h1>27.0 <a name="RoboReadme76"></a>Defects Fixed in Version Manager 6.8.10</h1>
+
+<h2>27.1 <a name="RoboReadme77"></a>Version Manager GUI, CLI, PCLI, and DTK Defects Fixed</h2>
+
+<h3 class="keepWithNext">The Configure Project Database Dialog Box Displays Incorrect File Type Detail
+if the Default, [undefined], is Modified [1014312] [223231]</h3>
+
+<p class="sub">The settings in the [undefined] file type serve as the default when a new file type
+  is defined.  If the [undefined] file type is modified, these new settings are not shown on
+  the File Types tab of the Configure Project Database dialog box when a new file type is
+  created, though they are used to define the new file type.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Version Manager Sometimes Aborts During Edits to Access Control Databases
+[1007312] [222893] [2002412] [1019538]</h3>
+
+<p class="sub">Under certain circumstances, Version Manager aborts while editing the access control database.  When this occurs, an error may also appear:  "The maximum number of open files allowed has been reached."  This has been fixed.</p>
+
+<h3 class="keepWithNext">Private Workspace Hierarchy Temporarily Changes [1009296] [1031087]</h3>
+
+<p class="sub">A private workspace under a public workspace that is not a top-level workspace, may operate incorrectly if operations are attempted before the public workspace has fully loaded.  This has been fixed.</p>
+
+<h3 class="keepWithNext">GUI Edits to Access Control Database in Wrong Order for readdb and makedb
+[1024257]</h3>
+
+<p class="sub">The GUI formats access control database information in the wrong order for use with readdb and makedb.  This has been fixed.</p>
+
+<a name="Section_1015437"></a>
+<h3 class="keepWithNext">Case-Insensitive Login Results in Multiple Private Workspaces [1015437]</h3>
+
+<p class="sub">Logging in as "USER1" opens a different private workspace than logging in as "user1".  This has been fixed.</p>
+
+<h3 class="keepWithNext">Difference Reports on UNIX Contain No Line Breaks [2004818]</h3>
+
+<p class="sub">Difference reports done on UNIX systems appeared as one long line with no line breaks.  This has been fixed.</p>
+
+<h3 class="keepWithNext">PCLI:  Return Treats Negative Values as Switches [1004315]</h3>
+
+<p class="sub">The PCLI Return command treats negative values, for example -1, as command switches.  This has been fixed.</p>
+
+<h3 class="keepWithNext">PCLI:  Excessive Quoting Required to Pass Arguments on UNIX [1005118]</h3>
+
+<p class="sub">Passing arguments on UNIX requires more complicated quoting than on Windows.  This is confusing for customers working on both platforms.  This has been fixed.</p>
+
+<h3 class="keepWithNext">AIX:  Unable to "Save As" in Merge Tool [1007245]</h3>
+
+<p class="sub">On AIX, the Merge Tool does not allow you to "Save As".  The OK button which would complete the process does not function.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Solaris:  Workfile Directories Lack Read Permissions [1008220]</h3>
+
+<p class="sub">On Solaris, when workfile directories are created they may lack read permissions.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Event Triggers Do Not Work with Paths that Contain Spaces [10263]</h3>
+
+<p class="sub">Event triggers do not work with paths that contain spaces.  This has been fixed.</p>
+
+<h3 class="keepWithNext">UNIX:  Directories Created with the "New Folder" Button are Owned by the SETUID
+User ID [1021572]</h3>
+
+<p class="sub">If Version Manager is running in SETUID mode on a UNIX platform, any directories created with the "New Folder" button are owned by the SETUID user ID.  This has been fixed.</p>
+
+<h3 class="keepWithNext">A Common Chinese Character is Incorrectly Displayed [4000417]</h3>
+
+<p class="sub">The Chinese character with the unicode value of \u9FS2 is incorrectly displayed.  This character is essential when the word "function" is used in Chinese.  This has been fixed.</p>
+
+<h3 class="keepWithNext">UNIX:  Each Instance of Version Manager Allocates a Large Amount of Memory
+[1022262]</h3>
+
+<p class="sub">Each instance of Version Manager allocates more memory than should be needed.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Visual SourceSafe to PVCS Converter Fails on Paths Containing Spaces
+[1021736]</h3>
+
+<p class="sub">The Visual SourceSafe to PVCS Converter fails if the project contains any paths that include spaces.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Visual SourceSafe to PVCS Convert Fails if Path or Project Name Contains
+Parentheses [1022083]</h3>
+
+<p class="sub">The Visual SourceSafe to PVCS Converter fails if the path or project name contains parentheses.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Pre-existing PRECLASSPATH Resulted in Errors [1025407]</h3>
+
+<p class="sub">Users who are using the available (Knowledgebase) documentation to make local copies of their JAR files are often running into major problems after installing a new release of Version Manager.  Because the PRECLASSPATH entry has not been removed, Version Manager may end up using (some of) the wrong class files, which can result in a wide range of unpredictable errors.  This has been fixed.</p>
+
+<h3 class="keepWithNext">GUI Menu Items Grayed Out [1023356]</h3>
+
+<p class="sub">If there is a lot of network latency reading the access control database, GUI menu items (Get, Check In, etc.) are disabled--grayed out--once the PDB has loaded.  This has
+been fixed.</p>
+
+<h3 class="keepWithNext">Visual SourceSafe to PVCS Converter Fails to Convert Revisions Checked in After
+a Rollback [102886]</h3>
+
+<p class="sub">The Visual SourceSafe to PVCS converter fails to convert any revisions of a file that were checked in after a rollback operation was performed on the file.  This has been fixed.</p>
+
+<h3 class="keepWithNext">PCLI:  If a Command Fails the Status Variable Should Be Set to Reflect the Most
+Severe Warning or Error that Occurred [1025192]</h3>
+
+<p class="sub">This has been fixed.  The value will be set to the most severe error encountered during an operation.  If the operation is recursive and both warnings and errors are generated, the value will be set to that of the first error encountered.</p>
+
+<h3 class="keepWithNext">GUI does not show promotion group association when you select from multiple locks [1027571]</h3>
+
+<p class="sub">If a developer with multiple locks on a single revision checks in that revision, the GUI will ask what target revision to check in.  However, unlike CLI/PCLI, the GUI does not show which promotion groups these target revisions are associated with.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Double-clicking a Workfile Name that Contains Spaces Fails to Add File
+[1030463]</h3>
+
+<p class="sub">If you double-click to select a single workfile that has spaces in the name, VM appears to perform the action but the file is not added.  Instead, sub projects are created for each word in the file name.  This has been fixed.</p>
+
+<h3 class="keepWithNext">PCLI:  Documentation of -id Option is Confusing [1032398]</h3>
+
+<p class="sub">The description of the -id option in the "PCLI User's Guide and Reference" is  confusing.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Filtered View Does Not Refresh [1032809]</h3>
+
+<p class="sub">If you filter on version labels, locks, or promotion groups and you update a file so that it should no longer be included, it is still included even after doing a refresh.  This has been fixed.</p>
+
+<h3 class="keepWithNext">UNIX:  Execute Bits Are Removed From Workfiles Upon Check In [1032862]</h3>
+
+<p class="sub">Using the default "Keep read-only workfile" setting, the execute bits are removed from workfiles upon check-in.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Value of &#36;HOME Not Expanded Correctly When You Override Check-Out Location [1033061]</h3>
+
+<p class="sub">If you manually enter &#36;HOME as part of the path name when checking out a file, &#36;HOME does not get expanded.  Instead, Version Manager creates a directory named "&#36;HOME" in the directory from which Version Manager was launched.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Windows:  Operations on Large Project Databases Fail [4000796]</h3>
+
+<p class="sub">The GUI and PCLI launcher on Win32 have a fixed maximum Java heap size of 96MB.  When you work on large project databases, this can cause even simple PCLI or GUI operations to fail.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Journal File Option "Include files of subprojects" Is Ignored [1033431]</h3>
+
+<p class="sub">The Journal File option "Include files of subprojects" is ignored when the Version Manager option "Include subprojects in project operations" is selected.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Selecting Incorrect Workfile for Check In Produces Unhelpful Warning [1016929]</h3>
+
+<p class="sub">If you browse to an alternate work file location and select the wrong workfile to check in, you will be warned that you are checking in from the wrong location.  However, it is easy to overlook the fact that the workfile name is different than the file you have checked out.  The warning should be different when there is a file name mismatch.  This has been fixed.</p>
+
+<h3 class="keepWithNext">PCLI:  AddFiles Command Cannot Add Workfiles from a Non-Default Location.  [4000787]</h3>
+
+<p class="sub">PCLI AddFiles command cannot add a workfile from a non-default location without using the -c option.  By design, without using -c, the file should be added from the actual workfile location.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Workfiles Appearing in the BIN Directory [1034268]</h3>
+
+<p class="sub">When you use the GUI to remove the reference directory it is set to REFERENCEDIR = "" in the CFG file.  The correct directive is REFERENCEDIR =.  When the configuration file of a project or project database contains the directive REFERENCEDIR = "" the current directory (from where GUI/Server was launched) will be used as the reference directory.  By default, this is the product's "bin" directory.  This has been fixed.</p>
+
+<h3 class="keepWithNext">PCLI:  vlog -l -z Lists all Versioned Files Rather than Just Locked Ones [1020274]</h3>
+
+<p class="sub">The PCLI vlog -l -z command lists all versioned files rather than just the locked ones.  This has been fixed.</p>
+
+<h3 class="keepWithNext">PCLI:  ListRevision -f Hangs if Branch Contains Two-Digit Revision Number [1025739]</h3>
+
+<p class="sub">When you run PCLI <span class="syntax">ListRevision</span> with the <span class="syntax">-f</span> option (resolve floating label) against a floating label that is associated with a branch containing a two-digit revision number (e.g., 1.10.1.*), PCLI hangs.  This has been fixed.</p>
+
+<h3 class="keepWithNext">PCLI:  Running External Commands Results in Out of Memory Errors [1006672]</h3>
+
+<p class="sub">Running external commands from PCLI uses up memory resources, resulting in out of memory errors.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Visual SourceSafe to PVCS Convert Fails if Path or Project Name Contains Dollar Signs [1033574]</h3>
+
+<p class="sub">The Visual SourceSafe to PVCS Converter fails if the path or project name contains dollar signs.  This has been fixed.</p>
+
+
+<h2>27.2 <a name="RoboReadme78"></a>Development Interface Defects Fixed</h2>
+
+<h3 class="keepWithNext">Visual Basic 6 on Windows 98:  Unable to Add Files to Source Control [4000812]</h3>
+
+<p class="sub">Some configurations of Visual Basic 6 on Windows 98 are unable to add files or projects to source control.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Some Files Not Added to Source Control [1032211]</h3>
+
+<p class="sub">If there are several files with the same name and similar file extensions (for example, funclist.h and funclist.hgr), only one will be added to source control.  This has been fixed.</p>
+
+
+<h2>27.3 <a name="RoboReadme79"></a>VM I-Net Defects Fixed</h2>
+
+<h3 class="keepWithNext">Assigning a Promotion Group while Other Actions are Occurring Causes the Server to Hang [1034648]</h3>
+
+<p class="sub">VM I-Net would hang when a user assigned a promotion group to an archive while another user was performing any other VM I-Net operation.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Difference Reports on Workfiles over 32MB Do Not Work [1009058]</h3>
+
+<p class="sub">When a difference report was run on workfiles that were both over 32MB, no differences were generated.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Cannot Add Workfiles to Projects that Contain Plus (+) Sign [1010523]</h3>
+
+<p class="sub">If a project name contained a plus sign (+), then adding workfiles to that project would fail.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Delete Revision Functionality Missing from VM I-Net [1019772]</h3>
+
+<p class="sub">VM I-Net did not support deleting revisions in previous releases.  This feature is now supported.</p>
+
+<h3 class="keepWithNext">Browser Freezes When You Check Out Multiple (300+) Files [1022746]</h3>
+
+<p class="sub">When you check out over 300 files on UNIX, Netscape freezes and needs to be restarted.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Users Cannot Add, Modify, or Delete Servlets while VM I-Net is Running [1022012]</h3>
+
+<p class="sub">Users needed to shut down VM I-Net in order to add, modify, and delete servlets.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Problems with a Chinese Character [4000418]</h3>
+
+<p class="sub">VM I-Net corrupts the character with the unicode value of \u9FS2.  This character is essential when the word "function" is used in Chinese.</p>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Resource Locked by Session Error [1022744]</h3>
+
+<p class="sub">Long operations could cause other users logging in to receive a "resource locked by" error message.  This has been fixed with the addition of daemon processes.  Refer to PVCS Version Manager Installation Guide for instructions on enabling daemons.</p>
+
+<h3 class="keepWithNext">Installation May Fail to Create Jakarta ISAPI Filter [1032634]</h3>
+
+<p class="sub">The installation program may not create the ISAPI filter on Windows.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Results Window for Adding Workfiles Stays Gray [1032830]</h3>
+
+<p class="sub">When you add workfiles on IE 5.5/NT 4.0, the Results windows stay gray during the first operation.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Show History using "Check In After" Date Option Does Not Work [1026863]</h3>
+
+<p class="sub">The history report does not report revisions checked in today when yesterdays date is input in the Check In After field on the Advanced tab.</p>
+
+<h3 class="keepWithNext">Check Out Location Grayed Out on Non-English Clients [1033798]</h3>
+
+<p class="sub">When you use a workstation with French or German regional settings and hit a UNIX VM I-Net server (with English settings), the check-out location is a gray box that cannot be viewed or modified.  If the work station settings are set to English UK or English US, then the checkout works.</p>
+
+<p class="sub">This has been fixed.</p>
+
+<h3 class="keepWithNext">Certain Characters in Workspace Names Cause Errors [1034222]</h3>
+
+<p class="sub">A workspace name of "C:\" causes errors in VM I-Net.  Such names are not a problem for the GUI.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Security Settings Do Not Take Effect [1034622]</h3>
+
+<p class="sub">When a user is created by the auto-create user method with "unlimited" privileges and then you change the user's permissions to something less, such as developer, the security settings do not take effect until the web server is restarted.  This has been fixed.</p>
+
+<h3 class="keepWithNext">History and Difference Reports Result in Runtime Error [1034790]</h3>
+
+<p class="sub">If IE patch Q316059 was installed on the browser, running a History or Difference report results in a runtime error and a blank Report window.  This has been fixed.</p>
+
+<h3 class="keepWithNext">AIX:  Getting Files with Apache Server Is Much Slower than Using the GUI [1035012]</h3>
+
+<p class="sub">On AIX systems using Apache, get operations run much slower than they do on the Version Manager GUI.  This has been fixed.</p>
+
+<h3 class="keepWithNext">VM I-Net:  The "Don't check in workfile" Option Is Available to All Users [1032784]</h3>
+
+<p class="sub">In VM I-Net the "Don't check in workfiles" option appears even if a user does not have the UNLIMITED or SUPERUSER privilege.  This has been fixed.</p>
+
+
+
+
+<p class="returnToTop"><a href="#TOP">To TOC</a></p>
+<hr size="2" width="100%" noshade>
+
+
+<h1>28.0 <a name="RoboReadme80"></a>Defects Fixed in Version Manager 6.8.00 SP3</h1>
+
+<h2>28.1 <a name="RoboReadme81"></a>Version Manager GUI, CLI, PCLI, and DTK Defects Fixed</h2>
+
+<h3 class="keepWithNext">When VcsEdit Directive is Enabled Check In Still Prompts for Changes [226266]</h3>
+
+<p class="sub">Check-in prompts for a change description twice when the VcsEdit directive is defined.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Some Filenames are Not Visible in the Change Description Dialog Box [1001746]</h3>
+
+<p class="sub">Workfile names with long paths are not always visible in the change description dialog box.  This has been fixed:  A new field has been added to the dialog box so the entire workfile path can be viewed.</p>
+
+<h3 class="keepWithNext">Branches are Not Labeled Correctly in Revision Pane [1003022]</h3>
+
+<p class="sub">The &quot;trunk&quot; or main branch of development was historically labeled &quot;1.*&quot;.  However, this does not accurately describe the &quot;trunk&quot; branch of development in all environments.  This has been changed to reflect the major number of the tip revision in the versioned file.</p>
+
+<h3 class="keepWithNext">PCLI ForEach Statement with Empty Arguments Causes a Stack Trace [1007132]</h3>
+
+<p class="sub">A PCLI ForEach statement in a PCLI script that included variables resolving in empty arguments is not correctly handling certain statements.  In some cases a stack trace is generated.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Unexpected Results During an Add Files Operation [1009699]</h3>
+
+<p class="sub">In the Add Workfiles dialog box, when you add a single file to source control and modify the file name with a space, unpredictable results occur.  In some cases this creates projects even when the current user does not have appropriate permissions to do so.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Version Labels Containing Commas Cause Incorrect Results When You Apply Filters [1014901]</h3>
+
+<p class="sub">When you apply a file filter based on version labels and filter on version labels that contain commas, the filter produces incorrect results.  This has been fixed:  To correctly handle version labels with commas, a delimiter field has been added to the options dialog box that allows users to change their delimiter.</p>
+
+<h3 class="keepWithNext">Revision Properties Shows Incorrect Revision Number [1015045]</h3>
+
+<p class="sub">Viewing properties of a revision sometimes shows the properties of another revision.  This has been fixed.</p>
+
+<h3 class="keepWithNext">PCLI <span class="syntax">vlog -br</span> Ignores Revision Argument [1015099]</h3>
+
+<p class="sub">The PCLI <span class="syntax">vlog -br</span> command ignores the revision specification and produces a report of all revisions.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Defining Default Version in Private Workspaces Requires Configure Project Permissions [1015825]</h3>
+
+<p class="sub">Defining Default Version, Branch Version, Base Version, and Default Development Level promotion group in a private workspace no longer requires the ConfigureProject privilege.</p>
+
+<h3 class="keepWithNext">Revision Properties Does Not Correctly Show Branch Revisions [1015925]</h3>
+
+<p class="sub">Viewing properties of a branch revision always defaults to showing the properties of the versioned file.  This has been fixed.</p>
+
+<h3 class="keepWithNext">PCLI <span class="syntax">vlog -l</span> Lists Revisions That are Not Locked [1020274]</h3>
+
+<p class="sub">The PCLI <span class="syntax">vlog -l</span> command ignores the locker specification and lists all revisions.  This has been fixed:  The command has been corrected to honor the <span class="syntax">-l</span> parameter and only list locked revisions.</p>
+
+<h3 class="keepWithNext">Command Macro Does Not Differentiate Among Products [1020619]</h3>
+
+<p class="sub">The <span class="syntax">&#36;(Command)</span> macro is always set to "VMGUI" when you run the VM GUI, VM PCLI, or VM I-Net components.</p>
+
+<p class="sub">This has been fixed.  Version Manager now correctly distinguishes among these components by setting the <span class="syntax">&#36;(Command)</span> macro to the following values:</p>
+
+<table class="sub" style="margin-bottom: 14.0pt;" cellspacing="0" cellpadding="4" border="2" summary="Two-column table">
+  <tr>
+    <td class="tablecell">Version Manager GUI</td>
+    <td class="tablecell"><span class="syntax">VMGUI</span></td></tr>
+  <tr>
+    <td class="tablecell">Version Manager PCLI</td>
+    <td class="tablecell"><span class="syntax">PCLI</span></td></tr>
+  <tr>
+    <td class="tablecell">VM I-Net</td>
+    <td class="tablecell"><span class="syntax">VMINET</span></td>
+  </tr>
+</table>
+
+<h3 class="keepWithNext">Put Command Writes Two Entries in the Journal File [1020970]</h3>
+
+<p class="sub">The <span class="syntax">put</span> command writes two entries in the journal file in certain situations.  This has been fixed.</p>
+
+<h3 class="keepWithNext">VM May Stop Responding When Locking an Archive in Certain Situations [1023933]</h3>
+
+<p class="sub">When locking an archive, VM sometimes stops responding when passing version-label and promotion-group arguments.  This has been fixed.</p>
+
+<h3 class="keepWithNext">Project Tree Partially Collapses After Importing Archives [1026856]</h3>
+
+<p class="sub">After you perform an Import Archive operation, the Project Tree partially collapses requiring you to browse back to your original project.  This has been fixed.</p>
+
+<h3 class="keepWithNext">PCLI <span class="syntax">CreateProject</span> Does Not Allow for a Fully Qualified Path Argument [1026937]</h3>
+
+<p class="sub">The PCLI <span class="syntax">CreateProject</span> command does not specify a project with a fully qualified entity path.  This requires users to use the <span class="syntax">-pp</span> parameter when creating subprojects.  This has been fixed:  The <span class="syntax">CreateProject</span> command now allows you to specify projects with relative or absolute entity paths.</p>
+
+<h3 class="keepWithNext">PreClassPath Statement is Limited to 256 Characters [1027088]</h3>
+
+<p class="sub">The PRECLASSPATH setting in the islv.ini file is limited to 256 characters; in many situations this path exceeds the limit.  This has been fixed:  The limit was increased to allow up to 20 paths of MAXPATH length.</p>
+
+<h3 class="keepWithNext">PCLI Throws a Stack Trace Using -&lt;options&gt;@filename When the Specified File Does Not Exist [1027095]</h3>
+
+<p class="sub">PCLI commands that take a file argument in the form "@&lt;filename&gt;" throw a stack  trace when the file does not exist.  This has been fixed:  An appropriate error message is returned.</p>
+
+<h3 class="keepWithNext">PCLI <span class="syntax">SetConfigFileCmd</span> Does Not Allow for the Removal of  Configuration Files [1029480]</h3>
+
+<p class="sub">The SetConfigFileCmd does not provide a way to remove existing configuration files from  projects.  This has been fixed:  The command was changed to remove configuration files when the <span class="syntax">-c</span> flag is omitted.  See PCLI <span class="syntax">SetConfigFileCmd -h</span> for more details.</p>
+
+<h3 class="keepWithNext">Absolute Entity Paths are Misinterpreted as Relative Paths When Enclosed in Double Quotation-Marks [1030560]</h3>
+
+<p class="sub">PCLI entity paths enclosed in quotation marks are misinterpreted as relative entity paths causing confusion and in some cases undesirable results.  This has been fixed.</p>
+
+<h3 class="keepWithNext">AddGroup Permission Required for Operations That Should Not  Need It [1030967] [1024893]</h3>
+
+<p class="sub">The "AddGroup" privilege is no longer required for AddFiles or Check-in operations.</p>
+
+<h3 class="keepWithNext">Default Column Mask Settings Should Not Be Used for *.sas  Files [1032606]</h3>
+
+<p class="sub">Files with ".sas" extensions no longer default to using COBOL Column Mask settings.  Existing versioned items with ".sas" extensions will not be affected by this change.  Their Column Mask  attributes will need to be updated with the <span class="syntax">vcs -xcolumnmask=""</span> command, or updated from the "Masking"  page of the Archive Attributes dialog box.</p>
+
+<h3 class="keepWithNext">Reassigning Existing Version Labels is Not Recorded in the Journal File [2002358] [1008348]</h3>
+
+<p class="sub">The label operation is not recorded in the journal file when existing version labels are reassigned.  This has been fixed.</p>
+
+<h3 class="keepWithNext">GUI Security Report Does Not List Passwords [4000245]</h3>
+
+<p class="sub">The VM GUI security report now lists passwords if the current user has "SuperUser" privileges.</p>
+
+<h3 class="keepWithNext">Problems Running PCLI External Commands [1033294]</h3>
+
+<p class="sub">Some PCLI external commands no longer work as they did in previous versions.  This has been fixed.</p>
+
+<p class="sub"><b>NOTE:</b>  To use commands that are internal to the Windows Command Prompt interpreter (for example:  <span class="syntax">dir</span>, <span class="syntax">del</span>), prefix these commands with <span class="syntax">cmd /c</span> on Windows NT/2000/XP or <span class="syntax">command.com /c</span> on Windows 98.</p>
+
+<h3 class="keepWithNext">Default Workspace Setting Ignored [1032955] [4000781] [4000782]</h3>
+
+<p class="sub">Some PCLI commands incorrectly use the Root workspace even when a default workspace for the current user is defined.  This has been fixed.</p>
+
+
+<h2>28.2 <a name="RoboReadme82"></a>Development Interface Defects Fixed</h2>
+
+<h3 class="keepWithNext">Error When Exiting COM IDEs [1007760]</h3>
+
+<p class="sub">Some configurations produce a memory error when you exit COM IDEs.  This has been fixed.</p>
+
+
+
+
+<p class="returnToTop"><a href="#TOP">To TOC</a></p>
+<hr size="2" width="100%" noshade>
+
+
+<h1>29.0 <a name="RoboReadme83"></a>Defects Fixed in Version Manager 6.8.00 SP2</h1>
+
+<h2>29.1 <a name="RoboReadme84"></a>Version Manager GUI, CLI, PCLI, and DTK Defects Fixed</h2>
+
+<h3 class="keepWithNext">Support for Improved Nesting of Groups [1033030]</h3>
+
+<p class="sub">The Access Control Database has been enhanced to provide additional levels of nested user Groups.</p>
+
+<h3 class="keepWithNext">Correct Detection of Invalid Access Control Databases [1030875]</h3>
+
+<p class="sub">Access Control Databases that contain invalid information are now identified correctly when read.</p>
+
+
+
+
+<p class="returnToTop"><a href="#TOP" >To TOC</a></p>
+<hr size="2" width="100%" noshade>
+
+<p>End Release Notes<br>
+Copyright &#169; 2003&#8211;2005 Serena Software, Inc.  All rights reserved.</p>
+
+<p>$Revision:   1.91  $</p>
+
+<hr size="2" width="100%" noshade>
+
+<p>&nbsp;</p>
+
+</body>
+</html>

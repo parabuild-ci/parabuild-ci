@@ -1,0 +1,801 @@
+<!doctype html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<title>The Dependency Finder Developer Guide</title
+
+</head>
+
+<body>
+
+<h1>The Dependency Finder Developer Guide</h1>
+
+<p>
+by Jean Tessier
+</p>
+
+<hr />
+
+<h2>Table of Contents</h2>
+<ul>
+<li><a href="#Introduction">Introduction</a></li>
+<li><a href="#Installation">Installation</a></li>
+<ul>
+<li><a href="#JavaApplication">Java Application</a></li>
+<ul>
+<li><a href="#JAVA_HOME"><code>JAVA_HOME</code></a></li>
+<li><a href="#DEPENDENCYFINDER_HOME"><code>DEPENDENCYFINDER_HOME</code></a></li>
+<li><a href="#DEPENDENCYFINDER_OPTS"><code>DEPENDENCYFINDER_OPTS</code></a></li>
+<li><a href="#DEPENDENCYFINDER_CONSOLE"><code>DEPENDENCYFINDER_CONSOLE</code></a></li>
+</ul>
+<li><a href="#WebApplication">Web Application</a></li>
+<ul>
+<li><a href="#web.xml"><code>web.xml</code></a></li>
+</ul>
+</ul>
+<li><a href="#HistoryBehindDependencyFinder">History Behind Dependency Finder</a></li>
+<ul>
+<li><a href="#ClassFiles">Class Files</a></li>
+<li><a href="#Dependencies">Dependencies</a></li>
+<li><a href="#Metrics">Metrics</a></li>
+<li><a href="#APIDifferences">API Differences</a></li>
+</ul>
+<li><a href="#ContributingtoDependencyFinder">Contributing to Dependency Finder</a></li>
+<ul>
+<li><a href="#SeparateProject">Separate Project</a></li>
+<li><a href="#Assimilation">Assimilation</a></li>
+<li><a href="#Money">Money</a></li>
+</ul>
+<li><a href="#ClassFilesX">Class Files</a></li>
+<ul>
+<li><a href="#ClassfileLoader"><code>ClassfileLoader</code></a></li>
+<li><a href="#Visitor"><code>Visitor</code></a></li>
+</ul>
+<li><a href="#DependenciesX">Dependencies</a></li>
+<ul>
+<li><a href="#VisitorX"><code>Visitor</code></a></li>
+<ul>
+<li><a href="#VisitorandTraversalStrategy"><code>Visitor</code> and <code>TraversalStrategy</code></a></li>
+</ul>
+</ul>
+<li><a href="#OOMetrics">OO Metrics</a></li>
+<ul>
+<li><a href="#DataStructure">Data Structure</a></li>
+</ul>
+<li><a href="#APIDifferencesX">API Differences</a></li>
+<li><a href="#Command-LineParsing">Command-Line Parsing</a></li>
+<li><a href="#BuildingDependencyFinder">Building Dependency Finder</a></li>
+<ul>
+<li><a href="#CompilingaBuild">Compiling a Build</a></li>
+<li><a href="#TestingtheBuild">Testing the Build</a></li>
+<li><a href="#MakingaRelease">Making a Release</a></li>
+</ul>
+</ul>
+
+
+<hr />
+
+<a name="Introduction" />
+<h2>Introduction</h2>
+
+<hr />
+
+<a name="Installation" />
+<h2>Installation</h2>
+<a name="JavaApplication" />
+<h3>Java Application</h3>
+<a name="JAVA_HOME" />
+<h4><code>JAVA_HOME</code></h4>
+<a name="DEPENDENCYFINDER_HOME" />
+<h4><code>DEPENDENCYFINDER_HOME</code></h4>
+<a name="DEPENDENCYFINDER_OPTS" />
+<h4><code>DEPENDENCYFINDER_OPTS</code></h4>
+<a name="DEPENDENCYFINDER_CONSOLE" />
+<h4><code>DEPENDENCYFINDER_CONSOLE</code></h4>
+<a name="WebApplication" />
+<h3>Web Application</h3>
+<a name="web.xml" />
+<h4><code>web.xml</code></h4>
+
+<hr />
+
+<a name="HistoryBehindDependencyFinder" />
+<h2>History Behind Dependency Finder</h2>
+<a name="ClassFiles" />
+<h3>Class Files</h3>
+<a name="Dependencies" />
+<h3>Dependencies</h3>
+<a name="Metrics" />
+<h3>Metrics</h3>
+<a name="APIDifferences" />
+<h3>API Differences</h3>
+
+<hr />
+
+<a name="ContributingtoDependencyFinder" />
+<h2>Contributing to Dependency Finder</h2>
+
+<p>
+I spend a lot of my personal time on Dependency Finder and I have grown very
+attached to it.  I work very hard to keep the code quality as high as I can,
+and in order to do that, I must retain strict control over what goes into
+Dependency Finder.  I take great pride in the work I do on Dependency Finder
+and that is part of why all the package names start with "<code>com.jeantessier</code>".
+</p>
+
+<p>
+If you have built some great addition or enhancement to Dependency Finder,
+there are two ways you can share it with the world and help Dependency Finder
+(and yourself too).
+</p>
+
+<a name="SeparateProject" />
+<h3>Separate Project</h3>
+
+<p>
+The best way to share your addition/enhancement with the world is for you to
+create your own open source project.  <a href="http://sourceforge.net/">SourceForge</a>
+can help you with this and there are other alternatives.  With your own project,
+you can take all the credit for your work and manage it the way <b>you</b> want to.
+You are free to redistribute Dependency Finder with your code.  You don't have
+to make your project open source if you don't want to, you can charge for it or
+release it to the public domain.  The Dependency Finder license is very lax,
+you can do pretty much what you want with it as long as my name remains on the
+Dependency Finder code.
+</p>
+
+<p>
+By pointing to the Dependency Finder project from your project, you help it
+show up on web search engines like <a href="http://www.yahoo.com/">Yahoo!</a> and
+<a href="http://www.google.com/">Google</a>.  This raises awareness of Dependency Finder
+and helps it gain popularity.  I will, of course, return the favor and mention
+you project on the Dependency Finder website.  This way, we both help each
+other.
+</p>
+
+<a name="Assimilation" />
+<h3>Assimilation</h3>
+
+<p>
+Another, less desireable, option is for you to surrender your code to me for
+inclusion in Dependency Finder.  I will review your code thoroughly and I may
+modify it extensively to make it meets <b>my</b> standards of quality (I'm not
+necessarily claiming that my standards are better, but they are <b>mine</b>) and
+that it fits well with the rest of Dependency Finder.  In the end, your code
+will end up in a <code>com.jeantessier</code> package and will bear the standard license
+header.  Your name and the nature of your contribution will be listed on the
+Dependency Finder website and in some of the documentation, but most likely
+nowhere in the code itself.
+</p>
+
+<a name="Money" />
+<h3>Money</h3>
+
+<p>
+At this time, I do not accept any monetary contributions or any other form of
+compensation.  The only thing I get out of Dependency Finder is the joy to
+know people are using my stuff and actually finding it useful.  I don't even
+accept donations as some people might construe it entitles them to
+<i>something</i>.  If you want to help the project, simply tell a friend, or two,
+or three ...
+</p>
+
+<hr />
+
+<a name="ClassFilesX" />
+<h2>Class Files</h2>
+
+<p>
+You use the <code>com.jeantessier.classreader</code> package to parse compiled
+Java code.  You feed <code>.class</code> files to a <code>ClassfileLoader</code> and you get
+instances of <code>Classfile</code> back.
+</p>
+
+<a name="ClassfileLoader" />
+<h3><code>ClassfileLoader</code></h3>
+
+<p>
+The <code>ClassfileLoader</code> classes you will use the most often derive from
+<code>ClassfileLoaderEventSource</code>.  These loaders are the ones who actually
+create instances of <code>Classfile</code>.  They also keep track of <code>LoadListener</code>
+objects and drive the event model associated parsing class files.
+</p>
+
+<p>
+<code>ClassfileLoader</code> has only one public method for loading classes that
+takes a collection of names.  This defines a session.  Listeners will
+receive a <code>BeginSession</code> event at the beginning of the method and an
+<code>EndSession</code> event just before the method returns.  Each name in the
+collection defines a group.  This can be a JAR file, a Zip file, a
+directory hierarchy containing <code>.class</code> files, or even a single <code>.class</code>
+file.  Each group starts with a <code>BeginGroup</code> and ends with an <code>EndGroup</code>
+event.  Finally, the loader sends a <code>BeginClassfile</code> event before
+processing every class file, and an <code>EndClassfile</code> event afterwards.
+</p>
+
+<p>
+There are two concrete subclasses of <code>ClassfileLoaderEventSource</code>:
+</p>
+
+<ul>
+<li>AggregatingClassfileLoader</li>
+<li>TransientClassfileLoader</li>
+</ul>
+
+<p>
+They differ in whether or not they keep track of the classes they parse.
+</p>
+
+<p>
+You can get instances of <code>Classfile</code> either from <code>EndClassfile</code> events
+or by querying the loader.  You can traverse them with objects that
+implement <code>com.jeantessier.classreader.Visitor</code>.  They have callback
+methods that get called by the various parts of <code>Classfile</code> objects.
+</p>
+
+<p>
+Depending on the nature of a given name for a group, the loader uses a
+decorator loader to actually open input streams to individual class files.
+These decorators are subclasses of <code>ClassfileLoaderDecorator</code>.  They are:
+</p>
+
+<ul>
+<li>DirectoryClassfileLoader</li>
+<li>ZipClassfileLoader</li>
+<li>JarClassfileLoader</li>
+</ul>
+
+<p>
+A decorator opens input streams from the data sources and passes them to an
+underlying <code>ClassfileLoader</code>.
+</p>
+
+<p>
+The reason for the distinction is because the first kind handles how long
+the <code>Classfile</code> instances remain in memory, while the second kind handles
+various input file types.
+</p>
+
+<a name="Visitor" />
+<h3><code>Visitor</code></h3>
+
+<p>
+You can implement the <code>Visitor</code> interface to traverse <code>Classfile</code> structures.
+It has callback methods that get called by various parts of the structure.
+</p>
+
+<p>
+Look at the code of <code>ClassMetrics</code> for an example of using the Visitor
+pattern to traverse <code>Classfile</code> instances.
+</p>
+
+<hr />
+
+<a name="DependenciesX" />
+<h2>Dependencies</h2>
+
+<p>
+You create a dependency graph with a <code>NodeFactory</code>.  The factory keeps track
+of the package nodes at the top of the graph and all their surbordinate nodes.
+Individual nodes keep track of their outbound and inbound dependencies.
+</p>
+
+<p>
+You extract dependencies from <code>Classfile</code> instances with a
+<code>CodeDependencyCollector</code>.  You can either give it your own <code>NodeFactory</code> or
+you can let it create one from scratch for you.  Now the interesting part is
+that <code>CodeDependencyCollector</code> is a <code>LoadListener</code>, so you only have to
+register it with a <code>ClassfileLoader</code> and it will visit each <code>Classfile</code> as it
+is loaded.
+</p>
+
+<p>
+<code>CodeDependencyCollector</code> fires its own set of events during processing.  If
+you are interested in those events, simply implement <code>DependencyListener</code> and
+register yourself with it.  You will receive a <code>DependencyEvent</code> and the start
+and end of each <code>Classfile</code>, and a separate one for each and every dependency.
+It is important to note that the dependency graph does not have duplicates
+of dependencies, but there will be multiple events.  It is also impossible to
+determine the order of calls from the dependency graph, but the events arrive
+in the order the dependencies are discovered.
+</p>
+
+<p>
+For example, if you take the following method:
+</p>
+
+<pre>
+    public void f() {
+        try {
+            out.print("abcd");
+        } catch (java.io.Exception ex) {
+            out.close()
+        }
+    }
+</pre>
+
+<p>
+will trigger the following events:
+</p>
+
+<ol>
+<li><code>f() --&gt; out</code></li>
+<li><code>f() --&gt; java.io.Writer.print(java.lang.String)</code></li>
+<li><code>f() --&gt; java.lang.String</code></li>
+<li><code>f() --&gt; java.io.Writer.close()</code></li>
+<li><code>f() --&gt; java.io.IOException</code></li>
+</ol>
+
+<p>
+The third one comes from analyzing the signature of <code>print()</code>, <b>not</b> from
+<code>"abcd"</code>.  The last one comes from looking at exception handlers. 
+</p>
+
+<a name="VisitorX" />
+<h3><code>Visitor</code></h3>
+
+<p>
+You can implement the <code>Visitor</code> interface to traverse <code>Node</code> structures.  It
+has callback methods that get called by various types of nodes.
+</p>
+
+<p>
+Look at the code of <code>DependencyReporter</code> and <code>DependencyMetrics</code> for an example
+of using the Visitor pattern to traverse <code>Node</code> instances.
+</p>
+
+<p>
+If you traverse a standard dependency graph, such as the ones produced by
+<code>CodeDependencyCollector</code>, you will visit <b>each</b> dependency twice.  If we take
+the dependency <code>A&nbsp;--&gt;&nbsp;B</code> as an example, a visitor will see it
+once during the call sequence:
+</p>
+
+<pre>
+    A.Accept(visitor)
+        visitor.Visit[Package|Class|Feature](A)
+            visitor.VisitOutbound(A.Outbound())
+                B.AcceptOutbound(visitor)
+                    visitorVisitOutbound[Package|Class|Feature]Node(B)
+</pre>
+
+<p>
+AND a second time during:
+</p>
+
+<pre>
+    B.Accept(visitor)
+        visitor.Visit[Package|Class|Feature](B)
+            visitor.VisitInbound(B.Inbound())
+                A.AcceptInbound(visitor)
+                    visitor.VisitInbound[Package|Class|Feature]Node(A)
+</pre>
+
+<p>
+In some cases, you can easily limit your processing to calls to
+<code>VisitOutbound[Package|Class|Feature]Node()</code> and cover everything. 
+</p>
+
+<a name="VisitorandTraversalStrategy" />
+<h4><code>Visitor</code> and <code>TraversalStrategy</code></h4>
+
+<p>
+Here is an example showing the sequence of calls betweeen a visitor
+implementation based on <code>VisitorBase</code>, its <code>TraversalStrategy</code>, and a sample
+dependency graphs.
+</p>
+
+<p>
+Here is the sample graph, magnified so you can see what is going on.  The focus
+will be placed on package <code>P1</code>, class <code>C1</code>, and feature <code>f1</code>.  Even-numbered
+elements have dependencies on them and they have dependencies on odd-numbered
+elements.  This example illustrates the traversal order and processing that
+occurs on child nodes, outbound dependencies, and inbound dependencies.
+</p>
+
+<div align="center">
+    <img src="images/DependencyVisitorLegend.gif" /><br />
+<b>Sample Dependency Graph</b>
+</div>
+
+<p>
+For the sake of this example, we use a plain <code>SelectiveTraversalStrategy</code>.  It
+will dictate the traversal of a node's outbound and inbound dependencies before
+the traversal moves on to the subnodes.  We will decorate it with a
+<code>SortedTraversalStrategy</code> that will sort groups of nodes in alphabetical
+order.
+</p>
+
+<pre>
+    visitor = new SomeVisitor(new SortedTraversalStrategy(new SelectiveTraversalStrategy()))
+    visitor.TraverseNodes({P2, P1, P3})
+    strategy.Order({P2, P1, P3})   ==>  {P1, P2, P3}
+</pre>
+
+<div align="center">
+    <img src="images/DependencyVisitorI.gif" /><br />
+</div>
+
+<pre>
+    P1.Accept(visitor)
+    visitor.VisitPackageNode(P1)
+    strategy.InScope(P1)
+        visitor.PreprocessPackageNode(P1)
+        strategy.PreOutboundTraversal()                        ==>  true
+            visitor.TraverseOutbound(P1.Outbound())            // empty
+        strategy.PreInboundTraversal()                         ==>  true
+            visitor.TraverseInbound(P1.Inbound())              // empty
+        visitor.PreprocessAfterDependenciesPackageNode(P1)
+</pre>
+
+<div align="center">
+    <img src="images/DependencyVisitorII.gif" /><br />
+</div>
+
+<pre>
+    visitor.TraverseNodes(P1.Classes())
+    strategy.Order({C2, C1, C3})   ==>  {C1, C2, C3}
+</pre>
+
+<div align="center">
+    <img src="images/DependencyVisitorIII.gif" /><br />
+</div>
+
+<pre>
+    C1.Accept(visitor)
+    visitor.VisitClassNode(C1)
+    strategy.InScope(C1)
+        visitor.PreprocessClassNode(C1)
+</pre>
+
+<div align="center">
+    <img src="images/DependencyVisitorIV.gif" /><br />
+</div>
+
+<pre>
+    strategy.PreOutboundTraversal()   ==>  true
+        visitor.TraverseOutbound(C1.Outbound())
+        strategy.Order({C3, C5})   ==>  {C3, C5}
+        C3.AcceptOutbound(visitor)
+        visitor.VisitOutboundClassNode(C3)
+        C5.AcceptOutbound(visitor)
+        visitor.VisitOutboundClassNode(C5)
+</pre>
+
+<div align="center">
+    <img src="images/DependencyVisitorV.gif" /><br />
+</div>
+
+<pre>
+    strategy.PreInboundTraversal()   ==>  true
+        visitor.TraverseInbound(C1.Inbound())
+        strategy.Order({C4, C2, f6, f4})   ==>  {C2, C4, f4, f6}
+        C2.AcceptInbound(visitor)
+        visitor.VisitInboundClassNode(C2)
+        C4.AcceptInbound(visitor)
+        visitor.VisitInboundClassNode(C4)
+        f4.AcceptInbound(visitor)
+        visitor.VisitInboundFeatureNode(f4)
+        f6.AcceptInbound(visitor)
+        visitor.VisitInboundFeatureNode(f6)
+</pre>
+
+<div align="center">
+    <img src="images/DependencyVisitorVI.gif" /><br />
+</div>
+
+<pre>
+    visitor.PreprocessAfterDependenciesClassNode(C1)
+    visitor.TraverseNodes(C1.Features())
+    strategy.Order({f2, f1, f3})   ==>  {f1, f2, f3}
+</pre>
+
+<div align="center">
+    <img src="images/DependencyVisitorVII.gif" /><br />
+</div>
+
+<pre>
+    f1.Accept(visitor)
+    visitor.VisitFeatureNode(f1)
+    strategy.InScope(f1)
+        visitor.PreprocessFeatureNode(f1)
+</pre>
+
+<div align="center">
+    <img src="images/DependencyVisitorVIII.gif" /><br />
+</div>
+
+<pre>
+    strategy.PreOutboundTraversal()   ==>  true
+        visitor.TraverseOutbound(f1.Outbound())
+        strategy.Order({C3, C5, f3, f5, f7})   ==>  {C3, C5, f3, f5, f7}
+        C3.AcceptOutbound(visitor)
+        visitor.VisitOutboundClassNode(C3)
+        C5.AcceptOutbound(visitor)
+        visitor.VisitOutboundClassNode(C5)
+        f3.AcceptOutbound(visitor)
+        visitor.VisitOutboundFeatureNode(f3)
+        f5.AcceptOutbound(visitor)
+        visitor.VisitOutboundFeatureNode(f5)
+        f7.AcceptOutbound(visitor)
+        visitor.VisitOutboundFeatureNode(f7)
+</pre>
+
+<div align="center">
+    <img src="images/DependencyVisitorIX.gif" /><br />
+</div>
+
+<pre>
+    strategy.PreInboundTraversal()   ==>  true
+        visitor.TraverseInbound(f1.Inbound())
+        strategy.Order({f6, f4, f2})   ==>  {f2, f4, f6}
+        f2.AcceptInbound(visitor)
+        visitor.VisitInboundFeatureNode(f2)
+        f4.AcceptInbound(visitor)
+        visitor.VisitInboundFeatureNode(f4)
+        f6.AcceptInbound(visitor)
+        visitor.VisitInboundFeatureNode(f6)
+</pre>
+
+<div align="center">
+    <img src="images/DependencyVisitorX.gif" /><br />
+</div>
+
+<pre>
+    strategy.PostOutboundTraversal()   ==>  false
+    strategy.PostInboundTraversal()    ==>  false
+    visitor.PostProcessFeatureNode(f1)
+</pre>
+
+<div align="center">
+    <img src="images/DependencyVisitorVIII.gif" /><br />
+</div>
+
+<pre>
+    f2.Accept(visitor)
+        ...
+    f3.Accept(visitor)
+        ...
+    visitor.PostProcessBeforeDependenciesClassNode(C1)
+    strategy.PostOutboundTraversal()   ==>  false
+    strategy.PostInboundTraversal()    ==>  false
+    visitor.PostProcessClassNode(C1)
+</pre>
+
+<div align="center">
+    <img src="images/DependencyVisitorIV.gif" /><br />
+</div>
+
+<pre>
+    C2.Accept(visitor)
+        ...
+    C3.Accept(visitor)
+        ...
+    visitor.PostProcessBeforeDependenciesPackageNode(P1)
+    strategy.PostOutboundTraversal()   ==>  false
+    strategy.PostInboundTraversal()    ==>  false
+    visitor.PostProcessPackageNode(P1)
+</pre>
+
+<div align="center">
+    <img src="images/DependencyVisitorII.gif" /><br />
+</div>
+
+<pre>
+    P2.Accept(visitor)
+        ...
+    P3.Accept(visitor)
+        ...
+</pre>
+
+<hr />
+
+<a name="OOMetrics" />
+<h2>OO Metrics</h2>
+
+<p>
+You use <code>com.jeantessier.metrics.MetricsGatherer</code> instance to read class
+files and compute the metrics.  It is a
+<code>com.jeantessier.classreader.Visitor</code> and will traverse the complete
+structure rooted at the <code>Classfile</code> instance and compute various metrics.
+</p>
+
+<p>
+The <code>MetricsGatherer</code> uses a <code>MetricsFactory</code> to create the various <code>Metrics</code>
+instances.  The factory uses a <code>MetricsConfiguration</code> instance to decide what
+measurements make up a given set of metrics.  The configuration is loaded at
+runtime from an XML file.
+</p>
+
+<p>
+By default, the value of each measurement is computed only the first time
+it is requested and then cached for further request.  You can refresh the
+caches through the API and you can turn off caching of individual
+measurements through their descriptor and in the configuration file.
+</p>
+
+<a name="DataStructure" />
+<h3>Data Structure</h3>
+
+<div align="center">
+    <img src="images/MetricsLegend.gif" /><br />
+    <img src="images/MetricsStructure.gif" /><br />
+</div>
+
+<hr />
+
+<a name="APIDifferencesX" />
+<h2>API Differences</h2>
+
+<p>
+You can use <code>com.jeantessier.classreader.ClassfileLoader</code> classes to
+examine the baseline of your codebase; be they in JAR files, loose
+class files, or a combination of both.  You can apply the same treatment
+to your latest codebase.  You now have two sets <code>Classfile</code> instances.
+</p>
+
+<p>
+You can use <code>com.jeantessier.dependency.NodeFactory</code> to create a tree
+of packages, classes, and features from each codebase.  You can then
+start to compare them to each other.  If a package is in the old
+codebase but not in the new one, you can mark it as having been removed.
+If it is not in the old codebase but it is in new one, then you can
+mark it as having been recently added.  For packages that are present
+in both codebase, you can repeat this analysis at the class level, and
+then at the feature level.
+</p>
+
+<hr />
+
+<a name="Command-LineParsing" />
+<h2>Command-Line Parsing</h2>
+
+<p>
+The <code>com.jeantessier.commandline</code> package gives you the tools you need to parse
+the command-line to your program, validate switches and parameters, and even
+print a summary usage statement when your program is not called properly.
+<i>Switches</i> start with a dash ("<code>-</code>") and usually have specific semantics
+attached to them.  <i>Parameters</i> are just strung out on the command-line and
+usually don't have individual specific semantics, besides those they share as a
+group.
+</p>
+
+<p>
+You create a <code>CommandLine</code> instance to parse your command-line.  At creation
+time, you can supply a specifc <code>ParameterStrategy</code>.  Here are a the ones that
+ship with Dependency Finder.
+</p>
+
+<blockquote>
+<dl>
+    <dt><code>AnyParameterStrategy</code></dt>
+    <dd>No restrictions, the command-line can include any number of parameters,
+    including none at all.  This is the default strategy if you do not specify
+    one.</dd>
+    <dt><code>AtLeastParameterStrategy</code></dt>
+    <dd>The command-line must include at least a certain number of parameters
+    or the framework will find the command-line invalid.</dd>
+    <dt><code>AtMostParameterStrategy</code></dt>
+    <dd>The command-line can include at most a certain number of parameters or
+    the framework will find the command-line invalid.</dd>
+    <dt><code>ExactlyParameterStrategy</code></dt>
+    <dd>The command-line must include an exact number of parameters or the
+    framework will find the command-line invalid.</dd>
+    <dt><code>NullParameterStrategy</code></dt>
+    <dd>The command-line cannot include any parameters or the framework will
+    find the command-line invalid.</dd>
+</dl>
+</blockquote>
+
+<p>
+Once you have a parser, you can add switch definitions to it.  There are four
+types of switches described below. 
+</p>
+
+<blockquote>
+<dl>
+    <dt><code>MultipleValuesSwitch</code></dt>
+    <dd>The switch must be followed by a value, but it can occur multiple times
+    on the command-line.  The values are accumulated in the same order as on
+    the command-line and you retrieve them as a single <code>List</code>.</dd>
+    <dt><code>OptionalValueSwitch</code></dt>
+    <dd>The switch can appear by itself or followed by a value.  It can only
+    appear once on the command-line.</dd>
+    <dt><code>SingleValueSwitch</code></dt>
+    <dd>The switch must be followed by a value.  It can only appear once on the
+    command-line.</dd>
+    <dt><code>ToggleSwitch</code></dt>
+    <dd>The switch be followed by a value.  It acts as a boolean, <code>false</code> if
+    absent or <code>true</code> if present on the command-line.</dd>
+</dl>
+</blockquote>
+
+<p>
+You add switches with the matching <code>AddSwitch()</code> methods on <code>CommandLine</code>.  You
+can supply switches with default values and specify if they are mandatory (must
+appear on the command-line) or not.
+</p>
+
+<p>
+When you create the parser, you can also specify if the parser will be <i>strict</i>
+or not.  Strict parsers will only accept switches that are explicitly specified.
+Non-strict parsers treat an unknown switch as an <code>OptionalValueSwitch</code>.
+</p>
+
+<p>
+Along with your <code>CommandLine</code> parser, you can create a <code>CommandLineUsage</code> that
+will create a summary description of your command-line specification.  You can
+use this summary in error messages for invalid command-lines to help users
+figure out what they did wrong.
+</p>
+
+<p>
+To actually parse your command-line, just call <code>CommandLine</code>'s <code>parse()</code> method
+and pass it the string array that is <code>main()</code>'s sole parameter.  The parser
+will throw an exception if anything went wrong.  After parsing, you can check
+for the presence of specific switches with the <code>IsPresent()</code> method and get
+the value(s) of specific switches with one of the <code>Switch()</code> methods.  You can
+retrieve parameters, if any, with the <code>Parameters()</code> method.
+</p>
+
+<hr />
+
+<a name="BuildingDependencyFinder" />
+<h2>Building Dependency Finder</h2>
+
+<pre>
+    C:\>ant
+</pre>
+
+<a name="CompilingaBuild" />
+<h3>Compiling a Build</h3>
+
+<pre>
+    C:\>ant jar
+    C:\>ant clean
+    C:\>ant docs
+    C:\>ant dist
+    C:\>ant src
+    C:\>ant war
+</pre>
+
+<p>
+or
+</p>
+
+<pre>
+    C:\>ant jar clean docs dist src war
+</pre>
+
+<a name="TestingtheBuild" />
+<h3>Testing the Build</h3>
+
+<pre>
+    C:\>ant tests
+    C:\>textjunit TestAll
+</pre>
+
+<a name="MakingaRelease" />
+<h3>Making a Release</h3>
+
+<ol>
+<li><code>cvs tag release-20030101</code></li>
+<li><code>ant realclean docs dist war realclean src</code></li>
+<li><code>ant ftp</code></li>
+<li><code>cvs log -rrelease-20020711:release-20030101</code></li>
+<li>Create new release on SourceForge.net</li>
+<li>Notify monitoring people</li>
+<li>Close bugs</li>
+<li>Close feature requests</li>
+<li>New news item</li>
+<li>Post to news groups (<code>comp.lang.java</code>, <code>comp.lang.java.announce</code>, <code>comp.lang.java.softwaretools</code>, <code>comp.software.measurement</code>, <code>comp.software-eng</code>)</li>
+<li>Generate sample files</li>
+</ol>
+
+<hr />
+
+</body>
+
+</html>

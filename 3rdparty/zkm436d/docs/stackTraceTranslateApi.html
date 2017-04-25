@@ -1,0 +1,466 @@
+<!-- Copyright 2005 Zelix Pty Ltd (ABN 47 078 740 093) -->
+<html>
+<head>
+<title>Zelix KlassMaster - Stacktrace Translate Tool API</title>
+   <meta name="keywords" content="java obfuscator,java code obfuscator,obfuscation,stack trace">
+   <meta name="description" CONTENT="Zelix KlassMaster Stack Trace Translate API">
+   <meta name="classification" CONTENT="Zelix KlassMaster Stack Trace Translate API">
+   <link rel=stylesheet href="../ZKM.css" TYPE="text/css">
+</head>
+<body background="../images/small-white-mist1.jpg" bgcolor="#E1E1E1">
+<center><a href="index.html"><img src=../images/ZKM_b4.gif alt="Zelix KlassMaster" width=264 height=62 border=0></a></center>
+<hr>
+<center>
+<table width=770 border=0>
+   <tr>
+      <td>
+         <h1>Zelix KlassMaster - Stacktrace Translate Tool API</h1>
+         The Zelix KlassMaster <a href="toolsStackTraceTranslate.html">Stack Trace Translate</a> tool exposes an API that allows it to be called by a Java class.
+         The API is described below along with a very <a href="#simple">simple example</a> and 
+         slightly more complicated <a href="#log4j">log4J SimpleLayout</a> and <a href="#logging">JDK 1.4 logging SimpleFormatter</a> examples.
+         <p>
+         <code><b><pre>
+package com.zelix;
+
+   public class ZKMStackTraceTranslate
+
+   public static final int NO_PARAM_TYPES
+   public static final int UNQUALIFIED_PARAM_TYPES
+   public static final int FULL_PARAM_TYPES
+
+      public ZKMStackTraceTranslate(String changeLogFileName)
+
+      public ZKMStackTraceTranslate(String changeLogFileName, String bytecodeClasspath)
+
+      public String getTranslatedStackTrace(String stackTrace)
+
+      public String getTranslatedStackTrace(String stackTrace, boolean useBytecodeClasspath)
+
+      public String getTranslatedStackTrace(String stackTrace, boolean useBytecodeClasspath, int paramDisplayType)
+
+      public String getOldClassName(String newClassName)
+
+      public String getOldMethodSignatures(String oldClassName, String newMethodName)
+
+      public void close()
+
+         </pre></b></code>
+
+         <table border=1 width=780>
+            <tr>
+               <td colspan=2>
+                  <b>Parameters:</b>
+               </td>
+               <td>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  changeLogFileName
+               </td>
+               <td>
+                  Mandatory. The path name of the change log to use. May be relative or absolute. 
+                  If the path is relative, it will be interpreted as being relative to the current working directory.
+                  <p>
+                  You should specify the change log that was produced when you obfuscated the bytecode which produced the stack trace.
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  bytecodeClasspath
+               </td>
+               <td>
+                  Optional but highly recommended. A standard Java classpath String that must include.
+                  <ul>
+                    <li>the obfuscated bytecode that generated the stack trace
+                    <li>any supporting JAR files required by your obfuscated bytecode to run.
+                  </ul>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  stackTrace
+               </td>
+               <td>
+                  Mandatory. The stack trace that you wish to translate.
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  useBytecodeClasspath
+               </td>
+               <td>
+                  Indicates whether the bytecode in the bytecodeClassPath provided should be analyzed.
+                  If you have specified a bytecode classpath then it is recommended that useBytecodeClasspath be <b>true</b> 
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  paramDisplayType
+               </td>
+               <td>
+                  Can have the values
+                  <table border=1>
+                     <tr>
+                       <td>NO_PARAM_TYPES</td>
+                       <td>which specifies that no method parameter types should be displayed in the translated stack trace.</td>
+                     </tr>
+                     <tr>
+                       <td>UNQUALIFIED_PARAM_TYPES</td>
+                       <td>which specifies that unqualified method parameter types should be displayed in the translated stack trace. This is the default.</td>
+                     </tr>
+                     <tr>
+                       <td>FULL_PARAM_TYPES</td>
+                       <td> which specifies that fully qualified method parameter types should be displayed in the translated stack trace.</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  newClassName
+               </td>
+               <td>
+                  Fully qualified obfuscated class name
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  oldClassName
+               </td>
+               <td>
+                  Fully qualified original class name
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  newMethodName
+               </td>
+               <td>
+                  Obfuscated method name
+               </td>
+            </tr>
+        </table>
+         <p>
+         <a name="simple">For example:</a>
+         <p>
+         <pre>
+import com.zelix.ZKMStackTraceTranslate;
+
+ZKMStackTraceTranslate translator = new ZKMStackTraceTranslate("/projects/ChangeLog.txt", 
+                                                               "/projects/MyApplication.jar:/projects/SomeClassLibrary.jar");
+String translatedStackTrace = translator.getTranslatedStackTrace(myStackTraceString);
+         </pre>
+         
+         <h3><a name="log4j">Example Log4J SimpleLayout</a></h3>
+<u>Contents of <code>ZKMSimpleLayout.properties</code></u>
+<pre>
+changeLogFileName = /Projects/changeLog1.txt
+obfuscatedBytecodeClasspath = /Projects/MyApplication.jar:SomeClassLibrary.jar
+</pre>
+         <p>
+         <code><pre>
+<font color="green">/*
+ * Copyright (c) 2003 Zelix Pty Ltd. All  Rights Reserved.
+ *
+ * You are free to use this software with or without modifications
+ * subject to the following conditions.
+ *
+ * THIS SOFTWARE IS PROVIDED "AS IS," WITHOUT A WARRANTY OF ANY KIND. 
+ * ZELIX PTY LTD MAKES NO WARRANTIES, EITHER EXPRESS OR IMPLIED, WITH 
+ * RESPECT TO THIS SOFTWARE INCLUDING BUT NOT LIMITED TO ANY WARRANTY 
+ * OF MERCHANTABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE.  
+ * ZELIX PTY LTD DOES NOT WARRANT THAT THE OPERATION OF THE SOFTWARE WILL 
+ * BE UNINTERRUPTED OR ERROR-FREE, OR THAT DEFECTS IN THE SOFTWARE WILL 
+ * BE CORRECTED.  YOU THE USER ARE SOLELY RESPONSIBLE FOR DETERMINING THE 
+ * APPROPRIATENESS OF THE SOFTWARE FOR YOUR USE AND ACCEPT FULL RESPONSIBILITY 
+ * FOR ALL RISKS ASSOCIATED WITH ITS USE.  ZELIX PTY LTD IS NOT AND WILL 
+ * NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL OR INCIDENTAL DAMAGES 
+ * (INCLUDING LOSS OF PROFITS OR INTERRUPTION OF BUSINESS) HOWEVER CAUSED 
+ * EVEN IF ZELIX PTY LTD HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+ */</font>
+
+package examples.log4j;
+
+import java.io.*;
+import java.text.*;
+import java.util.*;
+import org.apache.log4j.*;
+import org.apache.log4j.spi.*;
+import com.zelix.ZKMStackTraceTranslate;
+
+<font color="green">/**
+* Formats a LoggingEvent in a simple format.  
+* Translates obfuscated class and method names in a stack trace to original names.
+* A ZKMStackTraceTranslate is cheap to construct but expensive if it actually formats something.  
+* Whether you really need to to translate obfuscated stack traces as they happen is your decision.
+*/</font>
+public class ZKMSimpleLayout extends SimpleLayout {
+
+   private static final String DATE_FORMAT = "yyyy.MM.dd HH:mm:ss";
+   private static final String SPACE = " ";
+   private static final SimpleDateFormat dateFormat;
+   private Date date = new Date();
+   private static ZKMStackTraceTranslate stackTraceTranslate;
+
+   static {
+      dateFormat = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
+      dateFormat.setTimeZone(TimeZone.getDefault());
+      <font color="green">// Get change log file name & classpath to obfuscated bytecode & supporting classes from properties file.</font>
+      ResourceBundle resourceBundle = ResourceBundle.getBundle("examples.log4j.ZKMSimpleFormatter");      
+      stackTraceTranslate = new ZKMStackTraceTranslate(resourceBundle.getString("changeLogFileName"), 
+                                                       resourceBundle.getString("obfuscatedBytecodeClasspath"));
+   }
+
+   <font color="green">/**
+   * Format the specified LoggingEvent. 
+   * If any Throwable while translating then try again without translating.
+   *
+   * @param Log event to format.
+   * @return Formatted log event.
+   */</font>
+   public String format(LoggingEvent event) {
+      StringBuffer buffer = new StringBuffer();
+      try {
+         <font color="green">//format with translation</font>
+         formatHelper(event, buffer, true);
+      }
+      catch(Throwable th) {  
+         th.printStackTrace(System.err);
+         buffer.setLength(0);
+         <font color="green">//1st write the throwable...</font>
+         StringWriter sw = new StringWriter();
+         PrintWriter pw = new PrintWriter(sw);
+         th.printStackTrace(pw);
+         pw.close();
+         buffer.append(sw.toString());
+         buffer.append(LINE_SEP);
+         buffer.append(LINE_SEP);
+         <font color="green">//2nd write the event without translation...</font>
+         formatHelper(event, buffer, false);
+      }
+      return buffer.toString();
+   }
+   
+   <font color="green">/**
+   * Does the actual formatting.
+   *
+   * @param event LoggingEvent to format.
+   * @param buffer Formatted details appended to the StringBuffer.
+   * @param isTranslate If true then class and method name translation will be attempted.
+   */</font>
+   private void formatHelper(LoggingEvent event, StringBuffer buffer, boolean isTranslate) {
+      date.setTime(System.currentTimeMillis());
+      buffer.append(dateFormat.format(date));
+      buffer.append(SPACE);
+      buffer.append(event.getLevel().toString());
+      buffer.append(": ");
+      buffer.append(event.getLoggerName());
+      LocationInfo locationInfo = event.getLocationInformation();
+      if (locationInfo != null) {
+         String className = locationInfo.getClassName();
+         if (className != null) {
+            buffer.append(" - ");
+            if (isTranslate) {
+               className = stackTraceTranslate.getOldClassName(className);
+            }
+            buffer.append(className);
+            String methodName = locationInfo.getMethodName();
+            if (methodName != null) {
+               buffer.append(SPACE);
+               if (isTranslate) {
+                  methodName = stackTraceTranslate.getOldMethodSignatures(className, methodName);
+               }
+               buffer.append(methodName);
+            }
+         }
+      }
+      buffer.append(LINE_SEP);
+      buffer.append(event.getMessage());
+      ThrowableInformation throwableInformation = event.getThrowableInformation();
+      if (throwableInformation != null) {
+         Throwable th = throwableInformation.getThrowable();
+         if (th != null) {
+            buffer.append(LINE_SEP);
+            StringWriter sw = new StringWriter();
+            PrintWriter pw = new PrintWriter(sw);
+            th.printStackTrace(pw);
+            pw.close();
+            String stackTrace = sw.toString();
+            if (isTranslate) {
+               stackTrace = stackTraceTranslate.getTranslatedStackTrace(stackTrace);
+            }
+            buffer.append(stackTrace);
+         }
+      }
+      buffer.append(LINE_SEP);
+   }
+
+   public boolean ignoresThrowable() {
+      return false;
+   }
+}
+      </pre><code>         
+
+         
+         <h3><a name="logging">Example JDK 1.4 Logging SimpleFormatter</a></h3>
+<u>Contents of <code>ZKMSimpleFormatter.properties</code></u>
+<pre>
+changeLogFileName = /Projects/changeLog1.txt
+obfuscatedBytecodeClasspath = /Projects/MyApplication.jar:SomeClassLibrary.jar
+</pre>
+         <p>
+         <code><pre>
+<font color="green">/*
+ * Copyright (c) 2003 Zelix Pty Ltd. All  Rights Reserved.
+ *
+ * You are free to use this software with or without modifications
+ * subject to the following conditions.
+ *
+ * THIS SOFTWARE IS PROVIDED "AS IS," WITHOUT A WARRANTY OF ANY KIND. 
+ * ZELIX PTY LTD MAKES NO WARRANTIES, EITHER EXPRESS OR IMPLIED, WITH 
+ * RESPECT TO THIS SOFTWARE INCLUDING BUT NOT LIMITED TO ANY WARRANTY 
+ * OF MERCHANTABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE.  
+ * ZELIX PTY LTD DOES NOT WARRANT THAT THE OPERATION OF THE SOFTWARE WILL 
+ * BE UNINTERRUPTED OR ERROR-FREE, OR THAT DEFECTS IN THE SOFTWARE WILL 
+ * BE CORRECTED.  YOU THE USER ARE SOLELY RESPONSIBLE FOR DETERMINING THE 
+ * APPROPRIATENESS OF THE SOFTWARE FOR YOUR USE AND ACCEPT FULL RESPONSIBILITY 
+ * FOR ALL RISKS ASSOCIATED WITH ITS USE.  ZELIX PTY LTD IS NOT AND WILL 
+ * NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL OR INCIDENTAL DAMAGES 
+ * (INCLUDING LOSS OF PROFITS OR INTERRUPTION OF BUSINESS) HOWEVER CAUSED 
+ * EVEN IF ZELIX PTY LTD HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+ */</font>
+
+package examples.logging;
+
+import java.util.logging.*;
+import java.io.*;
+import java.text.*;
+import java.util.*;
+import com.zelix.ZKMStackTraceTranslate;
+
+<font color="green">/**
+* Formats a LogRecord in a simple format.  
+* Translates obfuscated class and method names in a stack trace to original names.
+* A ZKMStackTraceTranslate is cheap to construct but expensive if it actually formats something.  
+* Whether you really need to to translate obfuscated stack traces as they happen is your decision.
+*/</font>
+public class ZKMSimpleFormatter extends Formatter {
+
+   private static final String DATE_FORMAT = "yyyy.MM.dd HH:mm:ss";
+   private static final String SPACE = " ";
+   private static final String LINE_SEP = System.getProperty("line.separator");
+   private static final SimpleDateFormat dateFormat;
+   private Date date = new Date();
+   private static ZKMStackTraceTranslate stackTraceTranslate;
+
+   static {
+      dateFormat = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
+      dateFormat.setTimeZone(TimeZone.getDefault());
+      <font color="green">// Get change log file name & classpath to obfuscated bytecode & supporting classes from properties file.</font>
+      ResourceBundle resourceBundle = ResourceBundle.getBundle("examples.logging.ZKMSimpleFormatter");      
+      stackTraceTranslate = new ZKMStackTraceTranslate(resourceBundle.getString("changeLogFileName"), 
+                                                       resourceBundle.getString("obfuscatedBytecodeClasspath"));
+   }
+   
+   /**
+   * Format the specified LogRecord. If any Throwable while translating then try again without translating.
+   *
+   * @param Log record to format.
+   * @return Formatted log record.
+   */</font>
+   public synchronized String format(LogRecord record) {
+      StringBuffer buffer = new StringBuffer();
+      try {
+         <font color="green">//format with translation</font>
+         formatHelper(record, buffer, true);
+      }
+      catch(Throwable th) {         
+         buffer.setLength(0);
+         <font color="green">//1st write the throwable...</font>
+         StringWriter sw = new StringWriter();
+         PrintWriter pw = new PrintWriter(sw);
+         th.printStackTrace(pw);
+         pw.close();
+         buffer.append(sw.toString());
+         buffer.append(LINE_SEP);
+         buffer.append(LINE_SEP);
+         <font color="green">//2nd write the record without translation...</font>
+         formatHelper(record, buffer, false);
+      }
+      return buffer.toString();
+   }
+   
+   <font color="green">/**
+   * Does the actual formatting.
+   *
+   * @param Log record to format.
+   * @param buffer Formatted details appended to the StringBuffer.
+   * @param isTranslate If true then class and method name translation will be attempted.
+   */</font>
+   private void formatHelper(LogRecord record, StringBuffer buffer, boolean isTranslate) {
+      date.setTime(record.getMillis());
+      buffer.append(dateFormat.format(date));
+      buffer.append(SPACE);
+      String sourceClassName = record.getSourceClassName();
+      if (sourceClassName != null) {
+         if (isTranslate) {
+            sourceClassName = stackTraceTranslate.getOldClassName(sourceClassName);
+         }
+         buffer.append(sourceClassName);
+      } 
+      else {
+         buffer.append(record.getLoggerName());
+      }
+      String sourceMethodName = record.getSourceMethodName();
+      if (sourceMethodName != null) {	
+         buffer.append(SPACE);
+         if (sourceClassName != null) {
+            if (isTranslate) {
+               sourceMethodName = stackTraceTranslate.getOldMethodSignatures(sourceClassName, sourceMethodName);
+            }
+         }
+         buffer.append(sourceMethodName);
+      }
+      buffer.append(LINE_SEP);
+      String message = formatMessage(record);
+      buffer.append(record.getLevel().getLocalizedName());
+      buffer.append(": ");
+      buffer.append(message);
+      buffer.append(LINE_SEP);
+      if (record.getThrown() != null) {
+         StringWriter sw = new StringWriter();
+         PrintWriter pw = new PrintWriter(sw);
+         record.getThrown().printStackTrace(pw);
+         pw.close();
+         String stackTrace = sw.toString();
+         if (isTranslate) {
+            stackTrace = stackTraceTranslate.getTranslatedStackTrace(stackTrace);
+         }
+         buffer.append(stackTrace);
+      }
+   }
+}
+      </pre><code>         
+
+   </tr>
+   <tr>
+      <td>
+         &nbsp;
+      </td>
+   </tr>
+</table>
+</center>
+<hr>
+<center>
+<table>
+   <tr>
+      <td>
+         <a href=index.html><img src=../images/uarrw.gif alt="Documentation Table of Contents"></a>
+      </td>
+   </tr>
+</table>
+</center>
+Copyright &copy; 2005 <a href="mailto:WebMaster@zelix.com"><font size=-1>Zelix Pty Ltd</font></a> (ABN 47 078 740 093)
+</body>
+</html>

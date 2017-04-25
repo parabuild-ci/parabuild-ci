@@ -1,0 +1,407 @@
+/* Top page */
+.popup-button {
+	font-size: 0pt;
+	padding: 0px;
+	margin: 0px;
+	display: block;
+}
+
+/* Focused windows */
+.parabuild_buttons {
+	text-align: center;
+}
+
+.overlay_parabuild {
+	background-color: #CCC;
+	filter: alpha(opacity =   60);
+	-moz-opacity: 0.6;
+	opacity: 0.6;
+}
+
+.parabuild_nw {
+	background: transparent url(parabuild/TL_Main.png) no-repeat 0 0;
+	width: 24px;
+	height: 40px;
+}
+
+.parabuild_n {
+	background: transparent url(parabuild/T_Main.png) repeat-x 0 0;
+	height: 40px;
+}
+
+.parabuild_ne {
+	background: transparent url(parabuild/TR_Main.png) no-repeat 0 0;
+	width: 31px;
+	height: 40px;
+}
+
+.parabuild_w {
+	background: transparent url(parabuild/L_Main.png) repeat-y top left;
+	width: 16px;
+}
+
+.parabuild_e {
+	background: transparent url(parabuild/R_Main.png) repeat-y top right;
+	width: 16px;
+}
+
+.parabuild_sw {
+	background: transparent url(parabuild/BL_Main.png) no-repeat 0 0;
+	width: 31px;
+	height: 40px;
+}
+
+.parabuild_s {
+	background: transparent url(parabuild/B_Main.png) repeat-x 0 0;
+	height: 40px;
+}
+
+.parabuild_se,.parabuild_sizer {
+	background: transparent url(parabuild/BR_Main.png) no-repeat 0 0;
+	width: 31px;
+	height: 40px;
+}
+
+.parabuild_sizer {
+	cursor: se-resize;
+}
+
+.parabuild_close {
+	width: 19px;
+	height: 19px;
+	background: transparent url(parabuild/close.gif) no-repeat 0 0;
+	position: absolute;
+	top: 12px;
+	left: 25px;
+	cursor: pointer;
+	z-index: 1000;
+}
+
+.parabuild_minimize {
+	width: 19px;
+	height: 19px;
+	background: transparent url(parabuild/minimize.gif) no-repeat 0 0;
+	position: absolute;
+	top: 12px;
+	left: 45px;
+	cursor: pointer;
+	z-index: 1000;
+}
+
+.parabuild_maximize {
+	width: 19px;
+	height: 19px;
+	background: transparent url(parabuild/maximize.gif) no-repeat 0 0;
+	position: absolute;
+	top: 12px;
+	left: 65px;
+	cursor: pointer;
+	z-index: 1000;
+}
+
+.parabuild_title {
+	float: left;
+	height: 14px;
+	font-family: Tahoma, Arial, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 8px;
+	width: 100%;
+	color: #FFF;
+}
+
+.parabuild_content {
+	overflow: auto;
+	color: #222;
+	font-family: Tahoma, Arial, sans-serif;
+	font-size: 10px;
+	background: #FFF;
+	font-size: 16px;
+	line-height: 18px;
+}
+
+.parabuild_s .status_bar {
+	padding-bottom: 24px;
+}
+
+/* FOR IE */
+* html .parabuild_nw {
+	background-color: transparent;
+	background-image: none;
+	filter: progid :   DXImageTransform .   Microsoft . 
+		
+		AlphaImageLoader(src =   "../themes/parabuild/TL_Main.png", sizingMethod
+		= 
+		 "crop");
+}
+
+* html .parabuild_n {
+	background-color: transparent;
+	background-image: none;
+	filter: progid :   DXImageTransform .   Microsoft . 
+		
+		AlphaImageLoader(src =   "../themes/parabuild/T_Main.png", sizingMethod
+		= 
+		 "scale");
+}
+
+* html .parabuild_ne {
+	background-color: transparent;
+	background-image: none;
+	filter: progid :   DXImageTransform .   Microsoft . 
+		
+		AlphaImageLoader(src =   "../themes/parabuild/TR_Main.png", sizingMethod
+		= 
+		 "crop");
+}
+
+* html .parabuild_w {
+	background-color: transparent;
+	background-image: none;
+	filter: progid :   DXImageTransform .   Microsoft . 
+		
+		AlphaImageLoader(src =   "../themes/parabuild/L_Main.png", sizingMethod
+		= 
+		 "scale");
+}
+
+* html .parabuild_e {
+	background-color: transparent;
+	background-image: none;
+	filter: progid :   DXImageTransform .   Microsoft . 
+		
+		AlphaImageLoader(src =   "../themes/parabuild/R_Main.png", sizingMethod
+		= 
+		 "scale");
+}
+
+* html .parabuild_sw {
+	background-color: transparent;
+	background-image: none;
+	filter: progid :   DXImageTransform .   Microsoft . 
+		
+		AlphaImageLoader(src =   "../themes/parabuild/BL_Main.png", sizingMethod
+		= 
+		 "crop");
+}
+
+* html .parabuild_s {
+	background-color: transparent;
+	background-image: none;
+	filter: progid :   DXImageTransform .   Microsoft . 
+		
+		AlphaImageLoader(src =   "../themes/parabuild/B_Main.png", sizingMethod
+		= 
+		 "scale");
+}
+
+* html .parabuild_se {
+	background-color: transparent;
+	background-image: none;
+	filter: progid :   DXImageTransform .   Microsoft . 
+		
+		AlphaImageLoader(src =   "../themes/parabuild/BR_Main.png", sizingMethod
+		= 
+		 "crop");
+}
+
+* html .parabuild_sizer {
+	background-color: transparent;
+	background-image: none;
+	filter: progid :   DXImageTransform .   Microsoft . 
+		
+		AlphaImageLoader(src =   "../themes/parabuild/BR_Main.png", sizingMethod
+		= 
+		 "crop");
+}
+
+/* Focused windows */
+.overlay_blur_parabuild {
+	background-color: #85BBEF;
+	filter: alpha(opacity =   60);
+	-moz-opacity: 0.6;
+	opacity: 0.6;
+}
+
+.blur_parabuild_nw {
+	background: transparent url(parabuild/TL.png) no-repeat 0 0;
+	width: 24px;
+	height: 40px;
+}
+
+.blur_parabuild_n {
+	background: transparent url(parabuild/T.png) repeat-x 0 0;
+	height: 40px;
+}
+
+.blur_parabuild_ne {
+	background: transparent url(parabuild/TR.png) no-repeat 0 0;
+	width: 31px;
+	height: 40px;
+}
+
+.blur_parabuild_w {
+	background: transparent url(parabuild/L.png) repeat-y top left;
+	width: 16px;
+}
+
+.blur_parabuild_e {
+	background: transparent url(parabuild/R.png) repeat-y top right;
+	width: 16px;
+}
+
+.blur_parabuild_sw {
+	background: transparent url(parabuild/BL.png) no-repeat 0 0;
+	width: 31px;
+	height: 40px;
+}
+
+.blur_parabuild_s {
+	background: transparent url(parabuild/B.png) repeat-x 0 0;
+	height: 40px;
+}
+
+.blur_parabuild_se,.blur_parabuild_sizer {
+	background: transparent url(parabuild/BR.png) no-repeat 0 0;
+	width: 31px;
+	height: 40px;
+}
+
+.blur_parabuild_sizer {
+	cursor: se-resize;
+}
+
+.blur_parabuild_close {
+	width: 19px;
+	height: 19px;
+	background: transparent url(parabuild/close.gif) no-repeat 0 0;
+	position: absolute;
+	top: 12px;
+	left: 25px;
+	cursor: pointer;
+	z-index: 1000;
+}
+
+.blur_parabuild_minimize {
+	width: 19px;
+	height: 19px;
+	background: transparent url(parabuild/minimize.gif) no-repeat 0 0;
+	position: absolute;
+	top: 12px;
+	left: 45px;
+	cursor: pointer;
+	z-index: 1000;
+}
+
+.blur_parabuild_maximize {
+	width: 19px;
+	height: 19px;
+	background: transparent url(parabuild/maximize.gif) no-repeat 0 0;
+	position: absolute;
+	top: 12px;
+	left: 65px;
+	cursor: pointer;
+	z-index: 1000;
+}
+
+.blur_parabuild_title {
+	float: left;
+	height: 14px;
+	font-family: Tahoma, Arial, sans-serif;
+	font-size: 12px;
+	text-align: center;
+	margin-top: 8px;
+	width: 100%;
+	color: #000;
+}
+
+.blur_parabuild_content {
+	overflow: auto;
+	color: #222;
+	font-family: Tahoma, Arial, sans-serif;
+	font-size: 10px;
+	background: #FFF;
+}
+
+.blur_parabuild_s .status_bar {
+	padding-bottom: 24px;
+}
+
+/* FOR IE */
+* html .blur_parabuild_nw {
+	background-color: transparent;
+	background-image: none;
+	filter: progid :   DXImageTransform .   Microsoft . 
+		
+		AlphaImageLoader(src =   "../themes/parabuild/TL.png", sizingMethod = 
+		 "crop");
+}
+
+* html .blur_parabuild_n {
+	background-color: transparent;
+	background-image: none;
+	filter: progid :   DXImageTransform .   Microsoft . 
+		 AlphaImageLoader(src =   "../themes/parabuild/T.png", sizingMethod = 
+		 "scale");
+}
+
+* html .blur_parabuild_ne {
+	background-color: transparent;
+	background-image: none;
+	filter: progid :   DXImageTransform .   Microsoft . 
+		
+		AlphaImageLoader(src =   "../themes/parabuild/TR.png", sizingMethod = 
+		 "crop");
+}
+
+* html .blur_parabuild_w {
+	background-color: transparent;
+	background-image: none;
+	filter: progid :   DXImageTransform .   Microsoft . 
+		 AlphaImageLoader(src =   "../themes/parabuild/L.png", sizingMethod = 
+		 "scale");
+}
+
+* html .blur_parabuild_e {
+	background-color: transparent;
+	background-image: none;
+	filter: progid :   DXImageTransform .   Microsoft . 
+		 AlphaImageLoader(src =   "../themes/parabuild/R.png", sizingMethod = 
+		 "scale");
+}
+
+* html .blur_parabuild_sw {
+	background-color: transparent;
+	background-image: none;
+	filter: progid :   DXImageTransform .   Microsoft . 
+		
+		AlphaImageLoader(src =   "../themes/parabuild/BL.png", sizingMethod = 
+		 "crop");
+}
+
+* html .blur_parabuild_s {
+	background-color: transparent;
+	background-image: none;
+	filter: progid :   DXImageTransform .   Microsoft . 
+		 AlphaImageLoader(src =   "../themes/parabuild/B.png", sizingMethod = 
+		 "scale");
+}
+
+* html .blur_parabuild_se {
+	background-color: transparent;
+	background-image: none;
+	filter: progid :   DXImageTransform .   Microsoft . 
+		
+		AlphaImageLoader(src =   "../themes/parabuild/BR.png", sizingMethod = 
+		 "crop");
+}
+
+* html .blur_parabuild_sizer {
+	background-color: transparent;
+	background-image: none;
+	filter: progid :   DXImageTransform .   Microsoft . 
+		
+		AlphaImageLoader(src =   "../themes/parabuild/BR.png", sizingMethod = 
+		 "crop");
+}

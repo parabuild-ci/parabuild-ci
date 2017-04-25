@@ -1,0 +1,150 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Creating Working Folders: stcmd local-mkdir</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=copyright value="Copyright© 1995-2003, Borland Software Corporation. All rights reserved.">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=534>
+<meta name=layout-width content=702>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<!--(Scripts)=======================================================-->
+
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="./ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Working with the Application\nUsing the Command Line Interface\nCreating Working Folders");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Creating Working Folders: stcmd local-mkdir</h1>
+
+<p class=Body>Use stcmd local-mkdir to create the working folder or working 
+ directory on your workstation for the specified application folder. Use 
+ -is to create working folders (or working directories) for the specified 
+ application folder’s child folders as well.</p>
+
+<h2>Syntax</h2>
+
+<p class=Code><span style="font-weight: bold;"><B>stcmd local-mkdir -p </B></span>&quot;<span 
+ style="font-style: italic;"><I>projectSpecifier</I></span>&quot; [-<span style="font-weight: bold;"><B>pwdfile</B></span> 
+ &quot;<span style="font-style: italic;"><I>filePath</I></span>&quot;] [-<span 
+ style="font-weight: bold;"><B>cmp</B></span>] [-<span style="font-weight: bold;"><B>csf</B></span>] 
+ [-<span style="font-weight: bold;"><B>encrypt </B></span><span style="font-style: italic;"><I>encryptionType</I></span>] 
+ [-<span style="font-weight: bold;"><B>cfgl</B></span> &quot;<span style="font-style: italic;"><I>labelName</I></span>&quot; 
+ | -<span style="font-weight: bold;"><B>cfgp</B></span> &quot;<span style="font-style: italic;"><I>stateName</I></span>&quot; 
+ | -<span style="font-weight: bold;"><B>cfgd</B></span> &quot;<span style="font-style: italic;"><I>asOfDate</I></span>&quot;] 
+ [-<span style="font-weight: bold;"><B>is</B></span>] [-<span style="font-weight: bold;"><B>q</B></span>] 
+ [-<span style="font-weight: bold;"><B>x</B></span>] [-<span style="font-weight: bold;"><B>stop</B></span>] 
+ [-<span style="font-weight: bold;"><B>rp</B></span> &quot;<span style="font-style: italic;"><I>folderPath</I></span>&quot; 
+ | -<span style="font-weight: bold;"><B>fp</B></span> &quot;<span style="font-style: italic;"><I>folderPath</I></span>&quot;]</p>
+
+<h2>Example</h2>
+
+<p class=Body>The following example uses stcmd local-mkdir to create the 
+ working folders for SourceCode, a child of the root folder StarDraw (in 
+ the StarDraw view of the StarDraw project) and its child folders.</p>
+
+<p class=Code>stcmd local-mkdir -p &quot;JMarsh:password@Orion:49201/ StarDraw/StarDraw/SourceCode&quot; 
+ -is</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Body>For more information, see <a href="cl_common_stcmd_options.htm">Using 
+ Common stcmd Options</a>.</p>
+
+<p class=body>&nbsp;</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

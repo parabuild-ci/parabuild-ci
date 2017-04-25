@@ -1,0 +1,27 @@
+pArAbIlDba048490pArAbIlDsunknownpArAbIlDsvimeshev@.(none)pArAbIlDs2010-02-13 15:46:49 -0800pArAbIlDsMultilinepArAbIlDs
+
+M	sourceline/alwaysvalid/src/readme.txt
+pArAbIlDb0f2d214pArAbIlDsunknownpArAbIlDsvimeshev@.(none)pArAbIlDs2010-02-13 15:40:01 -0800pArAbIlDsMultilinepArAbIlDs
+
+M	sourceline/alwaysvalid/src/readme.txt
+pArAbIlDb275b733pArAbIlDsunknownpArAbIlDsvimeshev@.(none)pArAbIlDs2010-02-13 15:37:16 -0800pArAbIlDsMultilinepArAbIlDs
+
+M	sourceline/alwaysvalid/src/readme.txt
+pArAbIlDbcfdeefdpArAbIlDsunknownpArAbIlDsvimeshev@.(none)pArAbIlDs2010-02-13 15:19:04 -0800pArAbIlDsDeleted a filepArAbIlDs
+
+D	sourceline/alwaysvalid/src/file-to-delete.txt
+pArAbIlDb2456376pArAbIlDsunknownpArAbIlDsvimeshev@.(none)pArAbIlDs2010-02-13 15:18:21 -0800pArAbIlDsAdded a file for future deletepArAbIlDs
+
+A	sourceline/alwaysvalid/src/file-to-delete.txt
+pArAbIlDb5935a9dpArAbIlDsunknownpArAbIlDsvimeshev@.(none)pArAbIlDs2010-02-13 14:54:54 -0800pArAbIlDsModified a linepArAbIlDs
+
+M	sourceline/alwaysvalid/src/readme.txt
+pArAbIlDb76606c2pArAbIlDsunknownpArAbIlDsvimeshev@.(none)pArAbIlDs2010-02-13 14:33:20 -0800pArAbIlDsAdded first files to git repositorypArAbIlDs
+
+A	second_sourceline/src/readme.txt
+A	source_path/file_to_ignore_in_branch_view.txt
+A	source_path/mode.txt
+A	source_path/readme.txt
+A	sourceline with spaces/readme.txt
+A	sourceline/alwaysvalid/src/readme.txt
+A	sourceline/alwaysvalid/src/symlinked_readme.txt

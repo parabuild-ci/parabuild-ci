@@ -1,0 +1,533 @@
+<!--
+
+  Hibernate ANT build script.
+
+  (Originally contributed by Fabricio Goncalves) 
+
+-->
+
+<project name="Hibernate" default="jar" basedir=".">
+
+	<!-- Give user a chance to override without editing this file or typing -D -->
+	<property file="build.properties"/>
+	<property file="${user.home}/.ant.properties"/>
+
+	<!-- Name of project and version, used to create filenames -->
+	<property name="Name" value="Hibernate"/>
+	<property name="name" value="hibernate"/>
+	<property name="name2" value="hibernate2"/>
+	<property name="version" value="2.1"/>
+	<property name="patchlevel" value="7"/>
+
+	<!-- set global properties for this build -->
+	<property name="src.dir" value="src"/>
+	<property name="test.dir" value="test"/>
+	<property name="etc.dir" value="etc"/>
+	<property name="lib.dir" value="lib"/>
+	<property name="jdbc.dir" value="lib"/>
+	<property name="build.dir" value="build"/>
+	<property name="classes.dir" value="${build.dir}/classes"/>
+	<property name="testclasses.dir" value="${build.dir}/testclasses"/>
+	<property name="test.out.dir" value="testout"/>
+	<property name="clover.out.dir" value="cloverout"/>
+	<property name="dist.dir" value="../${name}"/>
+	<property name="doc.dir" value="doc"/>
+	<property name="doc.api.dir" value="${doc.dir}/api"/>
+	<property name="doc.ref.dir" value="${doc.dir}/reference"/>
+	<property name="egsrc.dir" value="eg"/>
+
+	<property name="dist.doc.dir"  value="${dist.dir}/doc"/>
+	<property name="dist.api.dir"  value="${dist.dir}/doc/api"/>
+	<property name="dist.ref.dir"  value="${dist.dir}/doc/reference"/>
+
+	<property name="dist.src.dir" value="${dist.dir}/src"/>
+	<property name="dist.test.dir" value="${dist.dir}/test"/>
+	<property name="dist.etc.dir" value="${dist.dir}/etc"/>
+	<property name="dist.lib.dir" value="${dist.dir}/lib"/>
+	<property name="jar.name" value="${name2}"/>
+
+	<property name="javadoc" value="http://java.sun.com/j2se/1.3/docs/api"/>
+	<property name="javac.debug" value="on"/>
+	<property name="javac.optimize" value="off"/>
+	
+	<property name="driver.jar" value="${jdbc.dir}/hsqldb.jar"/>
+	<property name="clover.jar" value="${ant.home}/lib/clover.jar"/>
+	
+	<property name="replace.dir" value="${src.dir}"/>
+	
+	<taskdef resource="clovertasks"/>
+	<target name="with.clover">
+		<clover-setup initString="clover_coverage.db"/>
+	</target>
+	
+	<target name="cloverreport" depends="with.clover,junitreport" description="Run the tests and generate a clover report">
+		<clover-report>
+			<current outfile="${clover.out.dir}">
+			<format type="html"/>
+		</current>
+		</clover-report>
+	</target>
+
+	<path id="lib.class.path">
+		<fileset dir="${lib.dir}">
+			<include name="**/*.jar"/>
+		</fileset>
+		<pathelement path="${clover.jar}"/>
+	</path>
+
+	<patternset id="jar.files">
+		<include name="**/*.dtd"/>
+		<include name="**/*.xml"/>
+		<include name="**/*.xslt"/>
+
+		<!-- exclude everything we don't want in the jar -->
+		<exclude name="net/sf/hibernate/jca/hibernate-service.xml"/>
+		<exclude name="META-INF/ra.xml"/> <!-- don't include ra.xml -->
+	</patternset>
+
+	<patternset id="support.files">
+		<include name="**/*.dtd"/>
+		<include name="**/*.xml"/>
+		<include name="**/*.xslt"/>
+		
+		<!-- exclude everything we don't want in the jar -->
+		<!--<exclude name="${build.dir}/**/*"/>
+		<exclude name="${doc.dir}/**/*"/>
+		<exclude name="classes/**/*"/>
+		<exclude name="build.xml"/>-->
+		<exclude name="**/*.properties"/>
+		<exclude name="**/*.ccf"/>
+		<exclude name="**/*.cfg.xml"/>	
+		<exclude name="net/sf/hibernate/jca/hibernate-service.xml"/>
+		<exclude name="META-INF/ra.xml"/> <!-- don't include ra.xml -->
+	</patternset>
+
+	<patternset id="source.files">
+		<!-- include everything we want in the src directory 
+		     that we didn't want in the jar itself -->
+		<include name="**/*.java"/>
+		<include name="**/*.properties"/>
+		<include name="**/*.ccf"/>
+		<include name="META-INF/ra.xml"/>
+	</patternset>
+
+	<!-- Tasks -->
+
+	<target name="clean" depends="cleantestdb" description="Cleans up build and dist directories">
+		<delete dir="${build.dir}"/>
+		<delete dir="${dist.dir}"/>
+		<delete dir="jca"/>
+		<delete dir="${test.out.dir}"/>
+		<delete dir="${clover.out.dir}"/>
+        <ant dir="${doc.ref.dir}" inheritall="false" target="clean"/>
+	</target>
+
+	<target name="cleantestdb" description="Clean up HSQLDB test database">
+		<delete>
+			<fileset dir="." includes="test.*"/>
+		</delete>
+	</target>
+
+	<target name="init" depends="splash" description="Initialize the build">
+		<tstamp>
+			<format property="subversion" pattern="yyyy-MM-dd hh:mm:ss"/>
+		</tstamp>
+		<echo message="Build ${Name}-${version} (${subversion})"/>
+
+		<mkdir dir="${classes.dir}"/>
+		<copy todir="${classes.dir}">
+			<fileset dir="${src.dir}">
+				<patternset refid="jar.files"/>
+			</fileset>
+		</copy>
+
+	</target>
+
+	<target name="compile" depends="init" description="Compile the Java source code">
+		<available 
+			classname="org.eclipse.core.launcher.Main"
+			property="build.compiler" 
+			value="org.eclipse.jdt.core.JDTCompilerAdapter"
+			classpath="${java.class.path}"/>		
+		<javac
+			srcdir="${src.dir}" 
+			destdir="${classes.dir}"
+			classpathref="lib.class.path" 
+			debug="${javac.debug}"
+			optimize="${javac.optimize}"
+			nowarn="on">
+		</javac>
+	</target>
+	
+	<target name="compiletest" depends="compile" description="Compile the tests">
+		<mkdir dir="${testclasses.dir}"/>
+		<available 
+			classname="org.eclipse.core.launcher.Main"
+			property="build.compiler" 
+			value="org.eclipse.jdt.core.JDTCompilerAdapter"
+			classpath="${java.class.path}"/>		
+		<javac
+			srcdir="${test.dir}"
+			destdir="${testclasses.dir}"
+			debug="${javac.debug}"
+			optimize="${javac.optimize}"
+			nowarn="on">
+			<classpath>
+				<path refid="lib.class.path"/>
+				<pathelement path="${classes.dir}"/>
+			</classpath>
+		</javac>
+
+		<!-- Copy over the mapping files -->
+		<copy todir="${testclasses.dir}">
+			<fileset dir="${test.dir}">
+				<patternset refid="jar.files"/>
+			</fileset>
+		</copy>
+
+	</target>
+	
+	<target name="copysource" description="Copy sources to dist dir">
+		<mkdir dir="${dist.src.dir}"/>
+		<copy todir="${dist.src.dir}">
+			<fileset dir="${src.dir}">
+				<patternset refid="source.files"/>
+			</fileset>
+			<fileset dir="${src.dir}">
+				<patternset refid="support.files"/>
+			</fileset>
+		</copy>
+		<mkdir dir="${dist.test.dir}"/>
+		<copy todir="${dist.test.dir}">
+			<fileset dir="${test.dir}"/>
+		</copy>
+	</target>
+
+	<target name="copylib" description="Copy jars to lib dir">
+		<mkdir dir="${dist.lib.dir}"/>
+		<copy todir="${dist.lib.dir}">
+			<fileset dir="${lib.dir}">
+				<include name="*.jar"/>
+				<exclude name="checkstyle*.jar"/>
+				<include name="*.txt"/>
+			</fileset>
+		</copy>
+	</target>
+	
+	<target name="jar" depends="compile" description="Build the distribution .jar file">
+		<mkdir dir="${dist.dir}"/>
+		<jar jarfile="${dist.dir}/${jar.name}.jar" basedir="${classes.dir}">
+			<include name="net/sf/hibernate/**/*.class"/>
+			<patternset refid="jar.files"/>
+			<manifest>
+				<attribute name="Hibernate-Version" value="${version}.${patchlevel}"/>
+			</manifest>
+		</jar>
+	</target>
+	
+	<target name="rar" depends="jar" description="Build a JCA distribution .rar file">
+		<mkdir dir="jca"/>	
+		<jar jarfile="jca/${jar.name}.rar" basedir="${dist.dir}">
+		  <fileset dir="${dist.dir}">
+			<include name="${dist.dir}/${jar.name}.jar" />
+		  </fileset>
+		  <fileset dir="${src.dir}">
+			<include name="META-INF/ra.xml" />
+		  </fileset>		  
+		</jar>
+	</target>
+
+	<!-- Documentation -->
+
+	<target name="javadoc" 
+		description="Compile the Javadoc API documentation to dist dir"
+		depends="splash">
+		
+		<mkdir dir="${dist.api.dir}"/>
+		<javadoc
+			classpathref="lib.class.path"
+			destdir="${dist.api.dir}"
+			use="true"
+			protected="true"
+			version="true" 
+			windowtitle="${Name} API Documentation" 
+			Overview="${doc.api.dir}/package.html"
+			doctitle="${Name} API Documentation"
+			stylesheetfile="${doc.api.dir}/jdstyle.css"
+			link="${javadoc}">
+			
+			<packageset dir="${src.dir}" defaultexcludes="yes">
+				<include name="net/sf/hibernate/**"/>
+			</packageset>
+			
+			<group title="Core API" 
+				packages="net.sf.hibernate:net.sf.hibernate.expression:net.sf.hibernate.metadata:net.sf.hibernate.cfg"/>
+			<group title="Extension API" 
+				packages="net.sf.hibernate.id:net.sf.hibernate.connection:net.sf.hibernate.transaction:net.sf.hibernate.type:net.sf.hibernate.dialect:net.sf.hibernate.cache:net.sf.hibernate.property:net.sf.hibernate.loader:net.sf.hibernate.persister:net.sf.hibernate.transform:net.sf.hibernate.collection"/>
+			<group title="Miscellaneous API" 
+				packages="net.sf.hibernate.tool.hbm2ddl:net.sf.hibernate.odmg:net.sf.hibernate.jmx:net.sf.hibernate.jca:net.sf.hibernate.mapping"/>
+			<group title="Internal Implementation" 
+				packages="net.sf.hibernate.engine:net.sf.hibernate.impl:net.sf.hibernate.hql:net.sf.hibernate.sql:net.sf.hibernate.lob:net.sf.hibernate.proxy:net.sf.hibernate.xml:net.sf.hibernate.util:net.sf.hibernate.exception"/>
+		</javadoc>
+		<copy file="${doc.api.dir}/package.html" todir="${dist.api.dir}"/>
+			
+	</target>
+
+	<target name="refdoc" 
+		depends="splash"
+		description="Generate and copy reference documentation">
+
+		<ant dir="${doc.ref.dir}" inheritall="false" target="all.doc"/>
+		<copy todir="${dist.ref.dir}">
+			<fileset dir="${doc.ref.dir}/build"/>
+		</copy>
+
+		<mkdir dir="${dist.doc.dir}/other"/>
+		<copy file="${doc.dir}/other/hibernate-quickref.pdf" todir="${dist.doc.dir}/other"/>
+	</target>
+<!--
+	<target name="fetchwikidoc" description="Fetch current Wiki snapshot if Internet connection exists">
+		<echo message="Fetching Wiki snapshot from hibernate.org"/>
+		<mkdir dir="${dist.dir}"/>
+		<get src="http://www.hibernate.org/wiki_snapshot.tar.gz" 
+			ignoreerrors="true" 
+			dest="${dist.dir}/wiki_snapshot.tar.gz" verbose="true" />
+		<available file="${dist.dir}/wiki_snapshot.tar.gz" property="wiki-snapshot-exists"/>
+	</target>
+
+	<target name="wikidoc" 
+		description="Fetch current Wiki snapshot and extract it" 
+		depends="splash,fetchwikidoc" 
+		if="wiki-snapshot-exists">
+		
+		<untar compression="gzip" src="${dist.dir}/wiki_snapshot.tar.gz" dest="${dist.doc.dir}"/>
+		<delete file="${dist.dir}/wiki_snapshot.tar.gz"/>
+
+		<delete dir="${dist.doc.dir}/wiki/hib_docs"/>
+		<replace dir="${dist.doc.dir}/wiki" token="hib_docs/" value="../">
+			<include name="**/*.html"/>
+		</replace>
+	</target>
+-->
+
+	<target name="extras" description="Copies miscellaneous files to root dir">
+		<copy todir="${dist.dir}/eg">
+			<fileset dir="eg"/>
+		</copy>
+		<copy todir="${dist.etc.dir}">
+			<fileset dir="etc"/>
+		</copy>
+		<copy file="readme.txt" todir="${dist.dir}"/>
+		<copy file="lgpl.txt" todir="${dist.dir}"/>
+		<copy file="changelog.txt" todir="${dist.dir}"/>
+		<copy file="build.xml" todir="${dist.dir}"/>
+		<copy file="build.bat" todir="${dist.dir}"/>
+		<copy file="hibernate_logo.gif" todir="${dist.dir}"/>
+		<!-- we don't want a user build to clobber their install dir -->
+		<replace file="${dist.dir}/build.xml">
+			<replacetoken><![CDATA[../${name}]]></replacetoken>
+			<replacevalue><![CDATA[../${name}]]></replacevalue>
+		</replace>
+		<replace file="${dist.dir}/build.xml">
+			<replacetoken><![CDATA[name="jdbc.dir" value="lib"]]></replacetoken>
+			<replacevalue><![CDATA[name="jdbc.dir" value="lib"]]></replacevalue>
+		</replace>
+	</target>
+	
+	<target name="splash" description="Display the logo">
+		<property name="splash.dir" location="."/>
+		<splash imageurl="file:${splash.dir}/hibernate_logo.gif" showduration="0"/>
+	</target>
+	
+	<target name="dist" 
+		depends="splash,jar,javadoc,copysource,copylib,extras,refdoc"
+		description="Build everything and package">
+		<zip zipfile = "${dist.dir}.zip">
+			<zipfileset prefix="${name}-${version}" dir="${dist.dir}"/>
+		</zip>
+		<tar tarfile = "${dist.dir}.tar" >
+			<tarfileset prefix="${name}-${version}" dir="${dist.dir}"/>
+		</tar>
+		<gzip src="${dist.dir}.tar" zipfile="${dist.dir}.tar.gz"/>
+		<delete file = "${dist.dir}.tar"/>
+	</target>
+	
+	<target name="info" description="Echo system properties">
+		<echoproperties/>
+		<!-- <echo message="java.vm.info=${java.vm.info}"/>
+		<echo message="java.vm.name=${java.vm.name}"/>
+		<echo message="java.vm.vendor=${java.vm.vendor}"/>
+		<echo message="java.vm.version=${java.vm.version}"/>
+		<echo message="os.arch=${os.arch}"/>
+		<echo message="os.name=${os.name}"/>
+		<echo message="os.version=${os.version}"/>
+		<echo message="java.home = ${java.home}"/>
+		<echo message="java.class.path = ${java.class.path}"/>
+		<echo message="build.compiler = ${build.compiler}"/>
+		<echo message="file.encoding=${file.encoding}"/>
+		<echo message="user.home = ${user.home}"/>
+		<echo message="user.language=${user.language}"/>
+		<echo message="driver.jar=${driver.jar}"/> -->
+	</target>
+	
+	<target name="junit" depends="cleantestdb,compiletest" description="Run the test suite (requires driver.jar property)">
+		<mkdir dir="${test.out.dir}"/>
+		<junit printsummary="yes" fork="yes" haltonfailure="yes">
+			<classpath>
+				<fileset dir="${lib.dir}">
+					<include name="**/*.jar"/>
+				</fileset>
+				<fileset dir="${jdbc.dir}">
+					<include name="**/*.jar"/>
+					<include name="**/*.zip"/>
+				</fileset>
+				<pathelement path="${classes.dir}"/>
+				<pathelement path="${etc.dir}"/>
+				<pathelement path="${testclasses.dir}"/>
+				<pathelement path="."/>
+				<pathelement path="${driver.jar}"/>
+				<pathelement path="${clover.jar}"/>
+			</classpath>
+			<formatter type="plain"/>
+			<formatter type="xml"/>
+			<!--test name="org.hibernate.test.AllTests" todir="${test.out.dir}" haltonfailure="no"/-->
+			<batchtest todir="${test.out.dir}" haltonfailure="no">
+				<fileset dir="${testclasses.dir}">
+					<include name="org/hibernate/test/*Test.class"/>
+					<exclude name="org/hibernate/test/*PerformanceTest.class"/>
+				</fileset>
+			</batchtest>
+		</junit>
+	</target>
+	
+	<target name="perftest" depends="cleantestdb,compiletest" description="Run the performance tests">
+		<mkdir dir="${test.out.dir}"/>
+		<junit printsummary="yes" fork="yes" haltonfailure="yes">
+			<classpath>
+				<fileset dir="${lib.dir}">
+					<include name="**/*.jar"/>
+				</fileset>
+				<fileset dir="${jdbc.dir}">
+					<include name="**/*.jar"/>
+					<include name="**/*.zip"/>
+				</fileset>
+				<pathelement path="${classes.dir}"/>
+				<pathelement path="${etc.dir}"/>
+				<pathelement path="${testclasses.dir}"/>
+				<pathelement path="."/>
+				<pathelement path="${driver.jar}"/>
+				<pathelement path="${clover.jar}"/>
+			</classpath>
+			<formatter type="plain"/>
+			<test name="org.hibernate.test.NewPerformanceTest" todir="${test.out.dir}" haltonfailure="no"/>
+			<test name="org.hibernate.test.NewerPerformanceTest" todir="${test.out.dir}" haltonfailure="no"/>
+			<test name="org.hibernate.test.PerformanceTest" todir="${test.out.dir}" haltonfailure="no"/>
+		</junit>
+	</target>
+	
+	<target name="junitreport" depends="splash,junit" description="Run tests and create JUnit report (requires driver.jar property)">
+		<junitreport todir="${test.out.dir}">
+			<fileset dir="${test.out.dir}">
+				<include name="TEST-*.xml"/>
+			</fileset>
+			<report format="frames" todir="${test.out.dir}"/>
+		</junitreport>
+	</target>
+
+	<target name="perf" depends="compiletest" description="Compile and run the performance test">
+		<echo message="remember to place your JDBC driver in the lib directory"/>
+		<java 
+			classname="org.hibernate.perf.Main"
+			fork="true"
+			failonerror="true">
+			<classpath>
+				<fileset dir="${lib.dir}">
+					<include name="**/*.jar"/>
+					<include name="**/*.zip"/>
+				</fileset>
+				<fileset dir="${jdbc.dir}">
+					<include name="**/*.jar"/>
+					<include name="**/*.zip"/>
+				</fileset>
+				<pathelement path="${classes.dir}"/>
+				<pathelement path="${etc.dir}"/>
+				<pathelement path="${testclasses.dir}"/>
+				<pathelement path="${src.dir}"/> <!-- properties files live here -->
+				<pathelement path="${test.dir}"/> <!-- mappings live here -->
+				<pathelement path="${build.dir}"/>
+			</classpath>
+		</java>
+		<echo message="Follow the Getting Started Quickly guidelines on www.hibernate.org for more examples."/>
+	</target>
+
+	<!--
+	Makes one patch file containing all local changes. Use this if target if you have
+	a local copy of sources from CVS and want to contribute any fixes you have made.
+	
+	The generated patch.txt file should be attached in a new "Patch" issue in
+	JIRA at http://opensource.atlassian.com/projects/hibernate/ (where you'll have
+	to register and log in).
+	-->
+	<target name="patch" depends="checkstyle" description="Create a patch">
+		<cvs command="-q diff -u -N" output="patch.txt"/>
+	</target>
+	
+	<target name="checkstyle" description="Check coding style">
+		<taskdef resource="checkstyletask.properties" classpath="${basedir}/lib/checkstyle-all.jar"/>
+		<checkstyle config="checkstyle_checks.xml">
+			<fileset dir="${src.dir}">
+				<include name="**/*.java"/>
+			</fileset>
+			<formatter type="plain"/>
+		</checkstyle>
+	</target>
+
+	<target name="eg" description="Compile and run the simple example">
+        <echo message="Remember to place your JDBC driver in the lib directory!"/>
+        <echo message="This target is not runable from a CVS export/checkout!"/>
+		<available
+			classname="org.eclipse.core.launcher.Main"
+			property="build.compiler" 
+			value="org.eclipse.jdt.core.JDTCompilerAdapter"
+			classpath="${java.class.path}"/>		
+		<javac
+			srcdir="${egsrc.dir}" 
+			destdir="${egsrc.dir}"
+			debug="${javac.debug}"
+			optimize="${javac.optimize}"
+			nowarn="on">
+			<classpath>
+				<pathelement path="${basedir}/${jar.name}.jar"/>
+				<fileset dir="${lib.dir}">
+					<include name="**/*.jar"/>
+				</fileset>
+			</classpath>
+		</javac>
+		<java
+			classname="org.hibernate.auction.Main"
+			fork="true"
+			failonerror="true">
+			<classpath>
+				<fileset dir="${lib.dir}">
+					<include name="**/*.jar"/>
+					<include name="**/*.zip"/>
+				</fileset>
+				<fileset dir="${jdbc.dir}">
+					<include name="**/*.jar"/>
+					<include name="**/*.zip"/>
+				</fileset>
+				<pathelement path="${basedir}/${jar.name}.jar"/>
+				<pathelement path="${etc.dir}"/> <!-- properties files live here -->
+				<pathelement path="${egsrc.dir}"/> <!-- compiled into here -->
+			</classpath>
+		</java>
+		<echo message="Follow the Getting Started Quickly guidelines on www.hibernate.org for more examples."/>
+	</target>
+
+	<target name="replace" description="do a text search replace">
+		<replace dir="${replace.dir}"
+			token="${replace.token}"
+			value="${replace.value}"/>
+	</target>
+
+</project>

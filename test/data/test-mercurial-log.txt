@@ -1,0 +1,39 @@
+------------------------------------------------------------------------------------------------------------------------
+changeset: 2:3b8352f003fd
+tag: tip
+user: Test User <test@parabuildci.org>
+date: 2010-06-13 20:28:27 -0700
+description:
+Made changes to multiple files
+files:
+  M second_sourceline/src/second-file.txt
+  M sourceline/alwaysvalid/src/readme.txt
+------------------------------------------------------------------------------------------------------------------------
+changeset: 1:87bb00d42a24
+user: Test User <test@parabuildci.org>
+date: 2010-06-13 20:19:49 -0700
+description:
+Added line to readme.txt
+files:
+  M sourceline/alwaysvalid/src/readme.txt
+------------------------------------------------------------------------------------------------------------------------
+changeset: 0:398519a32d6a
+branch: b1
+branch: b2
+tag: t1
+tag: t2
+parent: p1
+parent: p2
+user: Test User <test@parabuildci.org>
+date: 2010-06-13 19:09:13 -0700
+description:
+Populated test repository
+files:
+  A second_sourceline/src/readme.txt
+  A second_sourceline/src/second-file.txt
+  A source_path/file_to_ignore_in_branch_view.txt
+  A source_path/mode.txt
+  A source_path/readme.txt
+  A sourceline with spaces/readme.txt
+  A sourceline/alwaysvalid/src/readme.txt
+  A sourceline/alwaysvalid/src/symlinked_readme.txt

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="29" failures="1" disabled="0" errors="0" time="0.046" name="AllTests">
+  <testsuite name="KeyPasser" tests="1" failures="1" disabled="0" errors="0" time="0">
+    <testcase name="GetSignalPerBase" status="run" time="0" classname="KeyPasser">
+      <failure message="Value of: try2&#x0A;  Actual: 3&#x0A;Expected: 3.5" type=""><![CDATA[../testCases/testKeyPasser.cpp:64
+Value of: try2
+  Actual: 3
+Expected: 3.5]]></failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="ClusterBuilder" tests="3" failures="0" disabled="0" errors="0" time="0.001">
+    <testcase name="TestShiftPlusArtificial" status="run" time="0" classname="ClusterBuilder" />
+    <testcase name="TestShiftMinusArtificial" status="run" time="0" classname="ClusterBuilder" />
+    <testcase name="TestShift" status="run" time="0" classname="ClusterBuilder" />
+  </testsuite>
+  <testsuite name="SequenceClass" tests="2" failures="0" disabled="0" errors="0" time="0">
+    <testcase name="TestMakeIdealFlowgram" status="run" time="0" classname="SequenceClass" />
+    <testcase name="TestUnknownSequence" status="run" time="0" classname="SequenceClass" />
+  </testsuite>
+</testsuites>
+

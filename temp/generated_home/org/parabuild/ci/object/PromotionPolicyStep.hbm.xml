@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 1.1//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="org.parabuild.ci.object.PromotionPolicyStep"
+        table="PROMOTION_STEP"
+    >
+        <cache usage="read-write" />
+
+        <id
+            name="ID"
+            column="ID"
+            type="int"
+            unsaved-value="-1"
+        >
+            <generator class="identity">
+            </generator>
+        </id>
+
+        <version
+            name="timeStamp"
+            type="long"
+            column="TIMESTAMP"
+        />
+
+        <property
+            name="promotionID"
+            type="int"
+            column="PROMOTION_POLICY_ID"
+            unique="true"
+        />
+
+        <property
+            name="name"
+            type="java.lang.String"
+            column="NAME"
+            unique="true"
+        />
+
+        <property
+            name="description"
+            type="java.lang.String"
+            column="DESCRIPTION"
+            unique="false"
+        />
+
+        <property
+            name="lineNumber"
+            type="int"
+            column="LINE_NUMBER"
+            unique="false"
+        />
+
+        <property
+            name="deleted"
+            type="yes_no"
+            column="DELETED"
+            unique="false"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-PromotionPolicyStep.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

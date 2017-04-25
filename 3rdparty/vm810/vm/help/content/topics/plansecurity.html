@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Planning Security</TITLE>
+<!--<plansecurity.html>-->
+<!--<toc parent="using_security" label="Planning Security" anchor="plansecurity" sortkey="02">-->
+<!--<index parent="security" label="planning" anchor="plansecurity">-->
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nUsing Security\nPlanning Security");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="plansecurity"></A>Planning Security</H1>
+<P>The following is a list of questions that will help you plan security. For more information on the individual steps you need to perform to implement the level of security you select, see <A HREF="setupsecurity.html">Setting Up Security</a>.</p>
+<ul type="square">
+	<LI>What level of security do you need?<br><br>
+		<UL type="disc">
+			<LI>Can you use the same security definition for each project in a project database where all users have the same level of access to the archives? If so, then you can <A HREF="specifyacdblocation.html">specify an access control database</a> for the project database--none for the projects within the project database and no access lists. Then you can <A HREF="defineusers.html">define all of the users</a> that require access to the project database and <A HREF="definecustomprivsets.html">define a custom privilege set</a> or select a <A HREF="defaultprivtables.html">default privilege set</a> for the users and assign it to each user. This level of security is further explained in <A HREF="securityexample1.html">security example 1</a>.<br><br>
+			<LI>Can you use the same security definition for each project in a project database? But, the users have different roles that they perform on the archives. If so, then you can define an access control database for the project database--none for the projects and no access lists. And, you can <A HREF="definecustomprivsets.html">define privilege sets</a> for each user role (or use the <A HREF="defaultprivtables.html">default privilege sets</a>) and assign the appropriate privilege set to each user. This level of security is further explained in <A HREF="securityexample2.html">security example 2</a>.<br><br>
+			<LI>Do you need a different security definition for the archives in each individual project in a project database? If so, then you can define an access control database for each project but not define any access lists. This level of security is further explained in <A HREF="securityexample3.html">security example 3</a>.<br><br>
+			<LI>Do you need a different security definition for some archives of a project database? If so, then you must define an <A HREF="defineaccesslist.html">access list</a> for those archives. This provides the greatest level of security. This level of security is further explained in <A HREF="securityexample4.html">security example 4</a>.<br><br>
+		</UL>
+	<LI>Should you define access list groups to control archive access collectively? This should be done only if you are using access lists. We recommend that you use <A HREF="defineaccesslistgroup.html">access list groups</a> when defining <A HREF="aboutaccesslists.html">access lists</a>.
+</UL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="maintainsecurity.html">Maintaining Security</A></TD>
+	</TR>
+
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

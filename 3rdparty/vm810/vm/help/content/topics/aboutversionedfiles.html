@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>About Versioned Files</TITLE>
+<!--<AboutVersionedFiles.html>-->
+<!--<toc parent="pvcs_version_control_concepts" label="About Versioned Files" anchor="About_Versioned_Files" sortkey="04">-->
+<!--<index parent="versioned_files" label="about" anchor="About_Versioned_Files">-->
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Getting Started\nVersion Manager Concepts\nAbout Versioned Files");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="About_Versioned_Files"></A>About Versioned Files</H1>
+<P>
+A versioned file is a file and its revisions that exist under version control. 
+Each versioned file is associated with one workfile. When you add a file to a project database, Serena ChangeMan Version Manager creates a versioned file, and the initial version of the file becomes its first revision. As you check in subsequent versions of the workfile, each version becomes a revision of the versioned file.
+For instance in the graphic below, the versioned file "shifter.rh" has four revisions: 1.0, 1.1, 1.2, and 1.3.
+<P>
+<p>
+<img src="../graphics/verfile.gif" alt="versioned file">
+
+<p>The versioned file maintains information about the name and location of the archive
+where its revisions are physically stored. When you add a file, Version Manager
+automatically creates and stores the archive in the archive location
+defined by the project or project database.  
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="addfiles.html">Adding Workfiles</A></TD>
+		<td><a href="aboutrevisions.html">About Revisions</a></td>
+		<tr>
+		<td><a href="aboutarchives.html">About Archives</a></td>
+		</tr>
+	
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+
+</HTML>

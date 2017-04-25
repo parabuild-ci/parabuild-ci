@@ -1,0 +1,233 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Locating Server Configuration Data</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=copyright value="Copyright© 1995-2003, Borland Software Corporation. All rights reserved.">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=1079>
+<meta name=layout-width content=707>
+<meta name=x-ignored-words content="starteamserver;fg">
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<!--(Scripts)=======================================================-->
+
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="./ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Administering the Application\nAdministering the Server\nLocating Server Configuration Data");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Locating Server Configuration Data</h1>
+
+<p class=Body>When you create a server configuration, you must specify 
+ the path to the repository. The Server automatically uses this path for 
+ the folders it creates. It also uses this path for the server log files 
+ and certain other files that may be created later, such as .dmp files 
+ and trace files. </p>
+
+<p class=Body>The folders created depend upon whether a Native-I or Native-II 
+ vault has been used to create the server configuration. After StarTeam 
+ 2005 or StarTeam 2005 Release 2 has been installed, all new server configurations 
+ will use Native-II vaults. Previously existing server configurations will 
+ use Native-II vaults for new files, but will maintain prior files in a 
+ Native-I vault until they are converted.</p>
+
+<h3>Attachments (Both Native-I and Native-II Vaults)</h3>
+
+<p class=Body>By default, the repository has an Attachments folder for 
+ the files attached to specific types of items. The location of this folder 
+ can be changed by selecting the <span style="font-weight: bold;"><B>Configure 
+ server</B></span> option on the <span style="font-style: italic;"><I>StarTeam 
+ Administration</I></span> dialog.</p>
+
+<h3>Only Native-II vaults contain these folders:</h3>
+
+<h3>Hive </h3>
+
+<p class=Body-Indent-1><span style="font-weight: bold;"><B>Archives Folder</B></span><br>
+In a Native-II vault, most files in this folder are stored in compressed 
+ format. Each archive file name is the MD5 value of its content converted 
+ to a 32-digit hex string, to which a .gz extension is added of the file 
+ is compressed. The MD5 value is a unique signature; therefore only one 
+ instance of a particular file's content exists for any hive, saving a 
+ considerable amount of vault storage space. </p>
+
+<p class=Body-Indent-1>&nbsp;</p>
+
+<p class=Body-Indent-1>Each revision is stored as a separate file. Files 
+ in the Archives directory are organized into subdirectories, which makes 
+ browsing and managing the files easier. The files are distributed among 
+ 1024 folders within each archive. As the files are converted to Native-II 
+ format, the online conversion process moves them to the new directory 
+ structure. The location of this file may be changed by going to the <span 
+ style="font-style: italic;"><I>Hive Manager</I></span> dialog, selecting the 
+ appropriate hive, and clicking <span style="font-weight: bold;"><B>Properties</B></span>.</p>
+
+<p class=Body-Indent-1>&nbsp;</p>
+
+<p class=Body-Indent-1
+	style="font-weight: bold;">Cache Folder</p>
+
+<p class=Body-Indent-1
+	style="font-weight: normal;">In a Native-II vault, the Cache holds 
+ uncompressed full versions of the files; these files are organized into 
+ subdirectories. The layout of the Cache folder is similar to that of the 
+ archive folder. Each hive has a directory path defined for the root of 
+ the Cache. The location of the Cache file may be changed by going to the 
+ <span style="font-style: italic;"><I>Hive Manager</I></span> dialog, selecting 
+ the appropriate hive, and clicking <span style="font-weight: bold;"><B>Properties</B></span>.</p>
+
+<h3>HiveIndex </h3>
+
+<p class=Body-Indent-1>The HiveIndex folder stores the hive-index.xml file, 
+ which contains the properties for each hive used by the server configuration.</p>
+
+<p class=Body-Indent-1>&nbsp;</p>
+
+<h3>VSS_Hive or PVCS_Hive</h3>
+
+<p class=Body-Indent-1>The VSS_Hive and/or PVCS_Hive folders are created 
+ if the Server locates a VSS or PVCS installation on the computer where 
+ the Server is installed.</p>
+
+<h3>&nbsp;</h3>
+
+<h3>Only Native-I Vaults contain these folders:</h3>
+
+<p class=Body-Indent-1
+	style="font-weight: bold;">Archive Folder</p>
+
+<p class=Body-Indent-1>In a Native-I vault, The revisions of the files 
+ that you place under version control are stored in a single Archive folder, 
+ unless your server interoperates with PVCS and/or Visual SourceSafe (VSS). 
+ The Server uses a proprietary system to store and manage revisions of 
+ project files in the Archive folder when its native archive format is 
+ used. </p>
+
+<p class=Body-Indent-1>&nbsp;</p>
+
+<p class=Body-Indent-1>When a user checks in a working file, the Server 
+ locks the counterpart of that file in the Archive folder, to ensure that 
+ no one else accesses the file until the check-in process is complete. 
+ If the check-in fails, however, the file lock may not be automatically 
+ released, so the application allows you to set a maximum vault file lock 
+ time. </p>
+
+<p class=Body-Indent-1>The location of this file can be changed from the<span 
+ style="font-style: italic;"><I> Server Administration</I></span> dialog by clicking 
+ the <span style="font-weight: bold;"><B>Verify Native-I Vault</B></span> icon 
+ or selecting this option from the Tools menu.</p>
+
+<p class=Body-Indent-1>&nbsp;</p>
+
+<p class=Body-Indent-1><span style="font-weight: bold;"><B>Cache Folder</B></span><br>
+In a Native-I vault, the Cache folder stores the most recently checked-in 
+ revisions (called tip revisions) and copies of the most recently checked-out 
+ file revisions. Most other version control systems keep a full copy of 
+ the tip revision only. The application checks the Cache for a revision 
+ as part of the check-out process, because copying files from the Cache 
+ is faster than retrieving and decompressing files from the Archive. The 
+ location of this file can be changed from the<span style="font-style: italic;"><I> 
+ Server Administration</I></span> dialog by clicking the <span style="font-weight: bold;"><B>Verify 
+ Native-I Vault</B></span> icon or selecting this option from the Tools menu.</p>
+
+<p class=Body-Indent-1>&nbsp;</p>
+
+<p class=Body>For information on the settings that affect these folders, 
+ see <a href="viewing_server_configuration_options.htm">Viewing Server 
+ Configuration Options</a>.</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

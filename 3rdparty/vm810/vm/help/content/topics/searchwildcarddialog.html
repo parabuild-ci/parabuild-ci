@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Filtering Files by Wild Cards</TITLE>
+<!--<searchwildcarddialog.html>-->
+<!--<index parent="filtering" label="Wild Card Filename Filter dialog box" anchor="searchwildcarddialog">-->
+<!--<index parent="wildcards" label="filtering using Wild Card Filename Filter dialog box" anchor="searchwildcarddialog">-->
+<!--<index parent="file_pane" label="filtering using Wild Card Filename Filter dialog box" anchor="searchwildcarddialog">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiSearchWildcardDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="searchwildcarddialog"></A>Filtering Files by Wild Cards</H1>
+<P>Use the Wild Card Filename Filter dialog box (View | Filter | Wild Card) to view only the <A HREF="aboutversionedfiles.html">versioned files</A> that match the specified wild card. </P>
+
+<H2>To filter files by wild cards:</H2>
+<ol>
+<li>Select View | Filter | Wild Card. The Wild Card dialog box appears. <br><Br>
+<li>Complete the fields in the dialog box as follows:<br><br>
+
+<TABLE  WIDTH="90%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><b>Filename Pattern</b></TD>
+		<TD><!--<control name="SearchWildcardGeneral.WILDCARD_EDIT">-->
+        Enter a filter criteria using regular characters and any of the following wildcards:<BR><BR><B>*</B> for zero or more characters (for example, *.DLL for all file names with a .DLL extension);<BR><BR>  <B>?</B> for any one character (e.g. TEST??.DLL for all file names with a pattern such as TEST01.DLL, TEST02.DLL);<BR><BR>  <B>[-]</B> for a range of characters (for example,  [A-D]* for all file names that start with A, B, C, or D);<BR><BR>  <B>[^]</B> for a negative character set matching any character not enclosed (for example, [^A-D]* for all file names that <i>do not</i> start with A, B, C, or D).
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Ignore Case</b></TD>
+		<TD><!--<control name="SearchWildcardGeneral.IGNORE_CASE_CB">-->
+		Select to view versioned files that match the filter pattern regardless of the case of the file name.
+		<!--</control>--></TD>
+	</TR>
+	</TABLE><br><Br>
+	<li>Click <b>OK</b>.
+	</ol>
+			<h2>See Also</h2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="filtering.html">About Filtering the File Pane</A></TD>
+		<TD><A HREF="searchlockedbydialog.html">Filtering by User Locks</A></TD>
+	</TR>
+	<TR>
+		<TD><a href="filterbypromotiongroup.html">Filtering by Promotion Group</a></TD>
+		<TD><a href="filterbyversionlabel.html">Filtering by Version Label</a></TD>
+	</TR>
+	<tr>
+		<TD><a href="filterby2versionlabels.html">Filtering by Difference Using Two Version Labels</a></TD>
+		<TD><a href="filterby2promotiongroups.html">Filtering by Difference Using Two Promotion Groups</a></TD>
+	</tr>
+	<TR>
+		<TD><a href="filterbyversionlabelandpromotiongroup.html">Filtering by Difference Using a Version Label and a Promotion Group</a></TD>
+		<TD><A HREF="removefilter.html">Clearing a Filter</A></TD>
+	</TR>
+</TABLE>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

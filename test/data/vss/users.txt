@@ -1,0 +1,2 @@
+Admin = users\admin\ss.ini
+Test = users\test\ss.ini

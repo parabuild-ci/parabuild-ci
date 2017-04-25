@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Security Example 4</TITLE>
+<!--<securityexample4.html>-->
+<!--<index parent="security" label="example 4" anchor="securexample4">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="securexample2"></A>Security Example 4</H1>
+<P>This example builds on <A HREF="securityexample2.html">security example 2</a>. You need to secure individual archive files that contain sensitive files. For example, most organizations do not want all users to access payroll information. In this example, you want to assign role-related privileges as well as assign an archive list to the sensitive archives.
+<P>Also, you <A HREF="defineaccesslistgroup.html">define the access list group</a> that contains the individual users who will be permitted to access the restricted archives and assign the appropriate privileges or privilege set to the group. This access list group definition can only include individual users who are defined in the <A HREF="aboutacdb.html">access control database</a>.</p>
+
+<P>For this level of security, complete the following steps of <A HREF="setupsecurity.html">Setting Up Security</a>:</P>
+<ul type="square">
+	<b>Step 2</b> (optional) - <A HREF="specifyacdblocation.html">Specifying the location of the access control database</a>. This step is optional because by default, an access control database is automatically assigned to a project database. And because you are defining security for the entire project database--not for individual projects, you do not need to perform this step unless you wish to change the access control database that is currently assigned to the project database or its location.  <br><br>
+	<b>Step 3</b> (optional) - <A HREF="definecustomprivsets.html">Define custom privilege sets</a>. This step is optional because you can assign individual privileges or the <A HREF="defaultprivtables.html">default privilege sets</a> provided in Version Manager to your users. Version Manager's default privilege sets are tailored to role-related groups within a company. If the default privilege sets do not meet your needs, you will need to define a custom privilege set and assign it to the users when you create them.<br><br>
+	<b>Step 4</b> - <A HREF="defineusers.html">Define users</a>. You define all the users who require access to the project database, which includes <A HREF="defineusers.html#userprivs">assigning privileges to users</a>. You can assign individual privileges, the custom privilege sets you created in step 3, or any one of the role-related default privilege sets that Version Manager provides. <br><br>
+	<b>Step 5</b> - <A HREF="defineaccesslistgroup.html">Define an access list group</a>. You define an access list group that contains the individual users who will be permitted to access the restricted archives and assign the appropriate privileges or privilege set to the group. This access list group definition can only include individual users who are defined in the access control database. <br><br>
+	<b>Step 6</b> - <A HREF="defineaccesslist.html">Define an access list</a>. For each existing project or sensitive archive, define an access list will be assigned to each. The access list group you defined in the access control database will be the definition of the access list. If you want to define access lists for newly created archives, you must set the <A HREF="setarchivecreationoptions.html">archive creation options</a>.<br><br>
+	<b>Step 7</b> - <A HREF="enablesecurity.html">Enable security</a>. Before security is active for the project database, you must set the configuration option that tells the project database to use the access control database in which you've created the users and assigned the privileges.<br><br>
+</ul> 
+<BR>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="plansecurity.html">Planning Security</A></TD>
+		<TD><A HREF="securityexample1.html">Security Example 1</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="securityexample2.html">Security Example 2</A></TD>
+		<TD><A HREF="securityexample3.html">Security Example 3</A></TD>
+		</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

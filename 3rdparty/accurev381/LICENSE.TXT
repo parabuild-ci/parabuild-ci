@@ -1,0 +1,97 @@
+AccuRev End User License Agreement
+
+IMPORTANT: Do not use the software accompanying this Agreement (the
+"Software") until you have carefully read the following
+Agreement. Using the Software (or authorizing any other person to do
+so) indicates your acceptance of the terms and conditions contained in
+this Agreement. This Agreement sets forth the terms and conditions for
+licensing of the Software from AccuRev, Inc. ("Licensor").
+
+1. License and Restrictions
+
+You are granted a non-exclusive license to use the Software for the
+number of users for which you have purchased licenses. The Software
+(including any images, icons, graphics, animations, video, audio,
+music, and text incorporated into the Software) is protected by
+copyright laws. The Software contains trade secrets, and in order to
+protect them you may not decompile, reverse engineer, disassemble, or
+otherwise reduce the Software to human-perceivable form. You may not
+modify, adapt, translate, rent, sublicense, assign, lease, loan or
+resell for profit the Software, or related
+materials or create derivative works based upon the Software or any
+part thereof.
+
+2. Trademarks
+
+AccuRev and TimeSafe are trademarks of Licensor.
+
+3. Warranty
+
+THIS SOFTWARE IS PROVIDED "AS-IS," AND TO THE MAXIMUM EXTENT PERMITTED
+BY APPLICABLE LAW, LICENSOR DISCLAIMS ALL OTHER WARRANTIES, EXPRESS OR
+IMPLIED, BY STATUTE OR OTHERWISE, REGARDING THE SOFTWARE, DISK, AND
+RELATED MATERIALS, INCLUDING THEIR FITNESS FOR A PARTICULAR PURPOSE,
+THEIR QUALITY, THEIR MERCHANTABILITY, OR THEIR NONINFRINGEMENT. THE
+LIABILITY OF LICENSOR UNDER THE WARRANTY SET FORTH ABOVE SHALL BE
+LIMITED TO THE AMOUNT PAID BY THE CUSTOMER FOR THE PRODUCT. SOME
+STATES DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES, SO THE ABOVE
+EXCLUSIONS MAY NOT APPLY TO YOU. IN THAT EVENT, ANY IMPLIED
+WARRANTIES ARE LIMITED IN DURATION TO 90 DAYS FROM THE DATE OF
+PURCHASE OF THE SOFTWARE. THIS WARRANTY GIVES YOU SPECIFIC LEGAL
+RIGHTS. YOU MAY HAVE OTHER RIGHTS, WHICH VARY FROM STATE TO STATE.
+
+4. Limitation of Damages
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, LICENSOR AND ITS
+SUPPLIERS WILL NOT BE LIABLE FOR ANY INDIRECT, SPECIAL, INCIDENTAL, OR
+CONSEQUENTIAL DAMAGES (INCLUDING DAMAGES FOR LOSS OF BUSINESS, LOSS OF
+PROFITS, OR THE LIKE), WHETHER BASED ON BREACH OF CONTRACT, TORT
+(INCLUDING NEGLIGENCE), PRODUCT LIABILITY OR OTHERWISE, EVEN IF
+LICENSOR OR ITS REPRESENTATIVES HAVE BEEN ADVISED OF THE POSSIBILITY
+OF SUCH DAMAGES AND EVEN IF A REMEDY SET FORTH HEREIN IS FOUND TO HAVE
+FAILED OF ITS ESSENTIAL PURPOSE. LICENSOR'S TOTAL LIABILITY TO YOU
+FOR ACTUAL DAMAGES FOR ANY CAUSE WHATSOEVER WILL BE LIMITED TO THE
+AMOUNT PAID BY YOU FOR THIS PRODUCT. SOME STATES/COUNTRIES DO NOT
+ALLOW THE LIMITATION OF EXCLUSION OF LIABILITY FOR INCIDENTAL OR
+CONSEQUENTIAL DAMAGES, SO THE ABOVE LIMITATION OR EXCLUSION MAY NOT
+APPLY TO YOU.
+
+5. U.S. Government Restricted Rights
+
+The Software and documentation are provided with RESTRICTED
+RIGHTS. Use, duplication, or disclosure by the Government is subject
+to restrictions as set forth in subparagraph (c)(1)(ii) of the Rights
+in Technical Data and Computer Software clause at DFARS 252.227-7013
+or subparagraphs (c)(1) and (2) of the Commercial Computer
+Software-Restricted Rights at 58 CFR 52.227-19, as applicable. The
+manufacturer is AccuRev, Inc.
+
+6. Miscellaneous
+
+You acknowledge that, in providing you with the Software, Licensor has
+relied upon your agreement to be bound by the terms of this Agreement.
+You further acknowledge that you have read, understood, and agreed to
+be bound by the terms of this Agreement, and hereby reaffirm your
+acceptance of those terms. You further acknowledge that this
+Agreement constitutes the complete statement of the agreement between
+you and Licensor, and that the Agreement does not include any other
+prior or contemporaneous promises, representations, or descriptions
+regarding the Software. This Agreement is not, however to limit any
+rights that Licensor may have under trade secret, copyright, patent,
+or other laws that may be available to it. The agents, employees,
+distributors, and dealers of Licensor are not authorized to make
+modifications to this Agreement, or to make any additional
+representations, commitments, or warranties binding on Licensor.
+Accordingly, additional statements such as dealer or other advertising
+or presentations, whether oral or written, do not constitute
+representations or warranties by Licensor and should not be relied
+upon. This Agreement may be modified only in writing. If any
+provision of this Agreement is invalid or unenforceable under
+applicable law, it is to that extent, deemed omitted and the remaining
+provisions will continue in full force and effect. The validity and
+performance of this Agreement shall be governed by Massachusetts law
+(without reference to choice of law principles), except as to
+copyright and trademark matters, which are covered by Federal
+laws. Jurisdiction for resolution of any disputes shall reside solely
+in Suffolk County, Massachusetts. This Agreement shall be construed as
+to its fair meaning and not strictly for or against either party.

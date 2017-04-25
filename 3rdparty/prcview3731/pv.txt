@@ -1,0 +1,105 @@
+pv.exe – PrcView command line utility allows automating common task like 
+figuring out if particular process is running or killing a running process 
+on scheduler.
+
+Checking if  a particular process is running is easy. For example the 
+following command will show all instances of explorer that are running:
+	pv explorer.exe
+
+Setting a process priority is another common task. To set explorer priority 
+to normal just type:
+	pv –pn explorer.exe
+or if you like a ‘verbose’ style
+	pv -p"Normal" explorer.exe
+
+pv supports the common ‘*’ and ‘?’ wildcards so that the following command 
+will perfectly work by printing out all the processes starting with ‘e’
+	pv  e*
+
+Don’t like a particular process and would like to kill it? The following 
+command will do the job:
+	pv –k thisprocess.exe 
+
+And if you don’t like additional questions and would like to force killing:
+	pv –kf  thisprocess.exe
+
+Don’t like this particular instance of the process and know the window title? 
+The following command will do the job (please note that ‘\’ need to be 
+represented as a ‘\\’ combination if  you enter it from the command line):
+	pv -k thisprocess.exe -w"c:\\"
+
+pv.exe can be easealy executed from a batch file to check if process is running. 
+When writing a command file please note that the ERRORLEVEL number specifies 
+a true condition if the last program run returned an exit code equal to or 
+_greater_ than the number specified. 
+
+The following script illustrates how this could be done:
+
+@echo off
+pv.exe %1 >nul
+if ERRORLEVEL 1 goto Process_NotFound
+:Process_Found
+echo Process %1 is running
+goto END
+:Process_NotFound
+echo Process %1 is not running
+goto END
+:END
+
+Please note that redirecting standard errors by using 2>file_name does not work under 9x 
+Windows. Please use "2>file_name" instead. This notation will be processed by pv.exe.
+
+And finally a copy of the -? command:
+
+PrcView v 3.7.2.4 command line utility by Igor Nys
+Usage: pv -[<MODE>] -[<OPTIONS>] <ARGUMENTS>...-[<OPTIONS>]
+Modes:
+  -h,-?    --help      display this help information
+  -k       --kill      kill PROCESS
+  -a       --activate  activate PROCESS
+  -c       --close     close (send WM_CLOSE) to the PROCESS
+  -m       --module    show modules used by specified PROCESS
+  -g       --getenv    get startup environment for the  PROCESS
+  -p[nihr] --priority  set priority to "Normal", "Idle", "High", "Real Time"
+    [ba]               "Below Normal" and "Above Normal" only on W2K or higher
+  -t       --tree      display process tree, -te for computer-readable format
+  -u       --usage     show processes that uses specified MODULE
+  -s       --summary   show MODULE usage summary
+Options:
+  -f,      --force     never prompt
+  -e,      --extend    show additional information if available
+  -i,      --id        use process ID instead of the PROCESS name
+  -q,      --quiet     supress headers and produce a tab-separated list
+  -d[time] --delay     delay time in milliseconds before executing command
+  -l[mask] --long      include process command line
+  -w[mask] --window    show only processes with visible windows, -e show hidden
+  -r	   --repeat    repeat command in a cycle
+
+Arguments can contain '*' and '?' wildcards.
+Process return code (%ERRORLEVEL%) can be used in batch files
+0 - process found, 1 - empty result set, 2 - programm error
+
+Examples:
+  pv myprocess.exe        get process ID for myprocess.exe.
+  pv -e                   get extended list of running processes.
+  pv -k sleep*            kill all processes starting with "sleep"
+  pv -m -e explorer.exe   get extended information about explorer's modules
+  pv -u oleaut*.dll       list of all processes that use matching dll
+  pv -ph w*.exe           set priority to hight for all matching processes
+  pv explorer.exe -l"*/S" looks for explorer process with /S switch
+
+
+Would like to add an example? Found any errors? Please write at support@prcview.com
+or contact me directly at igornys@writeme.com
+
+-------------------------------------------------
+LIABILITY DISCLAIMER -- READ BEFORE using pv.exe
+THE SOFTWARE IS PROVIDED "AS-IS" AND WITHOUT WARRANTY OF ANY KIND, EXPRESSED, 
+IMPLIED OR OTHERWISE, INCLUDING AND WITHOUT LIMITATION, ANY WARRANTY OF 
+MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL THE 
+AUTHOR OR HIS COMPANY BE LIABLE FOR ANY SPECIAL, INCIDENTAL, INDIRECT OR 
+CONSEQUENTIAL DAMAGES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR 
+LOSS OF PROFITS, BUSINESS INTERRUPTION, LOSS OF INFORMATION, OR ANY OTHER LOSS) , 
+WHETHER OR NOT ADVISED OF THE POSSIBILITY OF DAMAGE, AND ON ANY THEORY OF LIABILITY, 
+ARISING OUT OF OR IN CONNECTION WITH THE USE OR INABILITY TO USE THIS SOFTWARE.
+

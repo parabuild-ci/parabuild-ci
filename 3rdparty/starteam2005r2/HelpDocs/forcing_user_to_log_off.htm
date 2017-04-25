@@ -1,0 +1,186 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Forcing a User to Log Off</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=copyright value="Copyright© 1995-2003, Borland Software Corporation. All rights reserved.">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=526>
+<meta name=layout-width content=707>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<!--(Scripts)=======================================================-->
+
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="./ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Administering the Application\nManaging Users and Groups\nRemoving/Suspending Users and Groups\nForcing a User to Log Off");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Forcing a User to Log Off</h1>
+
+<p class=Body>For a variety of reasons, it may be necessary to force one 
+ or more specific users to log off. These reasons include code violations 
+ or the need for disaster recovery efforts.</p>
+
+<p class=Body>If you force a user to log off, the user’s next operation 
+ produces the following error message:</p>
+
+<p class=Code>You are no longer logged on.</p>
+
+<p class=Body>To log on again, the user must exit the application and restart 
+ it.</p>
+
+<p class=Body><span style="font-weight: bold;"><B>Note:</B></span> You can perform 
+ this function only on servers that are currently running.</p>
+
+<p class=Proc>To force a user to log off:</p>
+
+<ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Do one of the following:</p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1-Indent><p class=Bullet-1-Indent>On 
+ a computer that has the Server installed, select <span style="font-weight: bold;"><B>Start 
+ &gt; Programs &gt; StarTeam &gt; StarTeam Server x.x &gt; StarTeam Server.</B></span></p></li>
+		
+		<li class=kadov-p-CBullet-1-Indent><p class=Bullet-1-Indent>From 
+ the client, select <span style="font-weight: bold;"><B>Start &gt; Programs 
+ &gt; StarTeam &gt; StarTeam client_name &gt; Server Administration</B></span> 
+ (available with custom installations only).</p></li>
+	</ul>
+	
+	<p class=List-1-text>The <span style="font-style: italic;"><I>Server</I></span> 
+ <span style="font-style: italic;"><I>Administration</I></span> dialog appears. 
+ &nbsp;</p>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select a server configuration 
+ from the left pane. If you have not yet logged on to the server configuration, 
+ you will be asked to do so. If you are using the client, you can administer 
+ remote servers only.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>From the <span style="font-style: italic;"><I>Server 
+ Administration</I></span> dialog, do one of the following:</p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1-Indent><p class=Bullet-1-Indent>Click 
+ the <span style="font-weight: bold;"><B>Accounts</B></span> bar in the lower 
+ left panel. Then click the User Manager shortcut.</p></li>
+		
+		<li class=kadov-p-CBullet-1-Indent><p class=Bullet-1-Indent>From 
+ the menu, select <span style="font-weight: bold;"><B>Tools &gt; Accounts 
+ &gt; User Manager</B></span>.</p></li>
+	</ul>
+	
+	<p class=List-1-text>The<span style="font-style: italic;"><I> User Manager 
+ </I></span>dialog opens. By default, the<span style="font-weight: bold;"><B> 
+ All Users</B></span> group is selected, so all user names are shown in the 
+ Users pane.</p>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select the user's name.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Right-click to open the context 
+ menu, and select <span style="font-weight: bold;"><B>Force Logoff</B></span>. 
+ The user is immediately denied access to the Server and to all projects 
+ residing in the server configuration. </p></li>
+</ol>
+
+<p class=Body><span style="font-weight: bold;"><B>Note:&nbsp;</B></span>You cannot 
+ force your own logoff.</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

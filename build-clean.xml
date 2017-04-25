@@ -1,0 +1,82 @@
+<project name="bt" default="clean" basedir=".">
+
+  <!-- Prepares for cleanup -->
+  <target name="clean.prepare">
+    <condition property="is.windows">
+      <and>
+        <os family="windows"/>
+      </and>
+    </condition>
+  </target>
+
+
+  <!-- This target cleans up some illgally-named directories
+       possibly left after test runs -->
+  <target name="clean.windows" if="is.windows" depends="clean.prepare">
+    <antcall target="clean.windows.dir">
+      <param name="dir.to.clean" value="test_run_manager\etc\build\b3co\a\u\t\o\sourceline\alwaysvalid\aux"/>
+    </antcall>
+    <antcall target="clean.windows.dir">
+      <param name="dir.to.clean" value="test_run_builder\etc\build\b3co\a\u\t\o\sourceline\alwaysvalid\aux"/>
+    </antcall>
+    <antcall target="clean.windows.dir">
+      <param name="dir.to.clean" value="test_run_manager\etc\build\b4co\a\u\t\o\sourceline\alwaysvalid\aux"/>
+    </antcall>
+    <antcall target="clean.windows.dir">
+      <param name="dir.to.clean" value="test_run_builder\etc\build\b4co\a\u\t\o\sourceline\alwaysvalid\aux"/>
+    </antcall>
+    <antcall target="clean.windows.dir">
+      <param name="dir.to.clean" value="test_run_manager\etc\build\b27co\a\u\t\o\sourceline\alwaysvalid\aux"/>
+    </antcall>
+    <antcall target="clean.windows.dir">
+      <param name="dir.to.clean" value="test_run_builder\etc\build\b27co\a\u\t\o\sourceline\alwaysvalid\aux"/>
+    </antcall>
+    <antcall target="clean.windows.dir">
+      <param name="dir.to.clean" value="test_run_manager\etc\build\b28co\a\u\t\o\sourceline\alwaysvalid\aux"/>
+    </antcall>
+    <antcall target="clean.windows.dir">
+      <param name="dir.to.clean" value="test_run_builder\etc\build\b28co\a\u\t\o\sourceline\alwaysvalid\aux"/>
+    </antcall>
+    <antcall target="clean.windows.dir">
+      <param name="dir.to.clean" value="test_run_manager\etc\build\b29co\a\u\t\o\sourceline\alwaysvalid\aux"/>
+    </antcall>
+    <antcall target="clean.windows.dir">
+      <param name="dir.to.clean" value="test_run_builder\etc\build\b29co\a\u\t\o\sourceline\alwaysvalid\aux"/>
+    </antcall>
+    <antcall target="clean.windows.dir">
+      <param name="dir.to.clean" value="test_run_manager\etc\build\b33co\a\u\t\o\sourceline\alwaysvalid\aux"/>
+    </antcall>
+    <antcall target="clean.windows.dir">
+      <param name="dir.to.clean" value="test_run_builder\etc\build\b33co\a\u\t\o\sourceline\alwaysvalid\aux"/>
+    </antcall>
+    <antcall target="clean.windows.dir">
+      <param name="dir.to.clean" value="test_run_manager\etc\build\b34co\a\u\t\o\sourceline\alwaysvalid\aux"/>
+    </antcall>
+    <antcall target="clean.windows.dir">
+      <param name="dir.to.clean" value="test_run_builder\etc\build\b34co\a\u\t\o\sourceline\alwaysvalid\aux"/>
+    </antcall>
+  </target>
+
+
+  <!-- "Main" cleanup -->
+  <target name="clean" depends="clean.windows">
+    <delete dir="${build.dir}"/>
+    <delete dir="${build.dir}"/>
+    <delete dir="${build.dir.doc}"/>
+  </target>
+
+
+  <!-- Helper task to delete illegal dir names -->
+  <target name="clean.windows.dir">
+    <pathconvert targetos="windows" property="windows.build.dir">
+      <path location="${build.dir}"/>
+    </pathconvert>
+    <exec executable="${env.ComSpec}" output="nul">
+      <arg value="/C"/>
+      <arg value="rmdir"/>
+      <arg value="/S"/>
+      <arg value="/Q"/>
+      <arg value="\\.\${windows.build.dir}\${dir.to.clean}"/>
+    </exec>
+  </target>
+</project>

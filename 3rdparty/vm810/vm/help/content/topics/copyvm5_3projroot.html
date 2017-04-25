@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Upgrading 5.3/6.0 Project Roots</TITLE>
+<!--<copyvm5_3proj.html>-->
+<!--<toc parent="working_with_5360_project_roots" label="Upgrading 5.3/6.0 Project Roots" anchor="copyvm5_3proj" sortkey="03">-->
+<!--<index parent="copying" label="5.3/6.0 project roots" anchor="copyvm5_3proj">-->
+<!--<index parent="projects" label="upgrading 5.3/6.0 project roots" anchor="copyvm5_3proj">-->
+<!--<index parent="project_roots" label="upgrading 5.3/6.0" anchor="copyvm5_3proj">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with 5.3/6.0 Project Roots/Folders\nUpgrading 5.3/6.0 Project Roots");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="copyvm5_3proj"></A>Upgrading 5.3/6.0 Project Roots</H1>
+<p>To upgrade 5.3/6.0 project roots, copy them to project databases. Once you upgrade 5.3/6.0 project roots you can access all Serena ChangeMan Version Manager features.</p>
+<p>You do not need to create a project database before you begin; Version Manager allows you to create a new project database as part of the copy procedure. You <b>cannot</b> copy a 5.3/6.0 project root into an existing project database.</p>
+
+<P>When you copy a project root, Version Manager lets you:</p>
+<UL>
+	<LI>Copy all of its projects and folders or only copy the projects.
+	<LI>Copy the archives to the new archive location or use the existing archive location.
+	<LI>Create new configuration files, copy existing configuration files to the new project database, or use the existing configuration files.
+	<LI>Create a new access control database, copy the access control database to the new project database, or use the existing access control database.
+</UL>
+
+<H2>Using the System Defaults</H2>
+<p>When you copy a 5.3/6.0 project root, Version Manager:</p>
+<UL>
+	<LI>Organizes the new project structure based on the structure of the existing 5.3/6.0 project root. The advantage of this option is that Version Manager creates a project database structure exactly like the project root structure used in the 5.3/6.0 desktop client. Each top-level folder in the 5.3/6.0 project root will become a project and each folder beneath the top-level folder will become a subproject. Remember that 5.3/6.0 projects allowed only one level of nesting. 
+<P>When you copy 5.3/6.0 project roots to project databases, you can change the default and base the new project database on the structure of the existing 5.3/6.0 workfile hierarchy. The advantage of this option is that Version Manager will create a nested project structure if your workfile hierarchy is nested.<br><br>
+	<LI>References the <i>original</i> project root's archives in the existing <A HREF="archivelocation.html">archive locations</a>. Copied projects will also reference their existing archive locations. When copying a project root that contains multiple projects, remember that the projects may have different archive locations. If you copy a project root and use the existing archive locations, the new project will reference all of the different archive locations.<br><br>
+Note that any <i>new</i> archives added to the project database after it is copied will use the project database's archive location. The default is an archives directory beneath the project database location. <br><br>
+
+	<LI>Copies the project root's existing <A HREF="aboutconfigfiles.html">configuration files</a> and places them in the new project database's structure.<br><br>
+	<LI>Uses the project root's existing access control databases.<br><br>
+</UL>
+<P>You can override any of these defaults when copying a project root. The following procedure explains how.</P>
+<H2>To copy a 5.3/6.0 project root into a project database:</H2>
+<OL>
+	<LI>In the Project pane, select the project root you want to copy.<br><br>
+	<LI>Select Edit | Copy. The Copy Project Database dialog box appears.<br><br>
+	<LI>Specify a name for the project database in the <b>Name</b> field. The name cannot begin or end with a tab or blank space; all characters are valid<br><br>
+	<LI>Specify the location of the project database in the <b>Location</b> field. This location must be accessible to all users who will be accessing this project database. You cannot create a project database beneath another project database; therefore, we recommend that you do not create a project database at the root level of a drive.
+<b>Note:</b> You cannot create a project database in the same location as an existing 5.3/6.0 project root.
+<BR><BR>
+<LI>If you want the archive location to be a location other than the default, which is a directory named archives beneath the project database location, specify the location in the <b>Archive Location</b> field. This location must be accessible to all users who will be accessing the archives.<br><br>
+<LI>Specify  the workfile location in the <b>Workfile Location</b> field.
+<BR><BR>
+Workfile locations can contain $HOME at the root of their paths (for example, on UNIX, $HOME/work could expand to /usrs/cherylc/work). Version Manager substitutes the value of the HOME environment variable to compute the workfile location. The use of $HOME allows you to define a path that is automatically individualized for your users according to the value of their HOME environment variable. If a user's HOME environment variable is not defined, Version Manager substitutes a blank space when computing the workfile location.<BR><BR>
+<b>Note:</b> We recommend that you specify a local drive that is available to most users. Remember that users can create a private workspace to change the workfile location to a different location if they want.<BR><BR> 
+	<LI>Click Next. A second Copy Project dialog box appears<br><br>
+	<li>Specify the following project structure options and click Next:<br><br>
+<TABLE  WIDTH="87%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><b>To...</b></TD>
+		<TD><b>Do this...</b></TD>
+	</TR>
+	<TR>
+		<TD>Create a project database structure to match the existing 5.3/6.0 project root structure. This structure will contain no more than two levels: a project and a subproject.</TD>
+		<TD>Keep the default option, <b>Based on existing 5.3/6.0 project structure</b>, selected.
+
+	<TR>
+		<TD>Copy all archives, including those stored in projects and folders in the archive location.</TD>
+<TD>Select the <b>Copy all items in projects and folders</b> check box. This option is available only if you select to create the project based on the existing 5.3/6.0 project structure.</TD>
+	<TR>
+		<TD>Copy all archives; including archives that are not in folders</TD>
+		<TD>Select the <b>Include archives that are not in folders</b> check box. These archives may be located at the project root level. This option is available only if you select to create the project based on the existing 5.3/6.0 project structure.</TD>
+	</TR>
+	<TR>
+		<TD>Organize the new project database using the structure of the workfiles contained in the 5.3/6.0 project root</TD>
+		<TD>Select the <b>Based on existing 5.3/6.0 workfile hierarchy</b> option. The advantage of this option is that Version Manager will create a nested project structure if you used subdirectories to organize the workfiles.</TD> 
+	</TR>
+	<TR>
+</table><br><br>
+	<li>Specify the following archive location options and click Next:<br><br>
+	<TABLE  WIDTH="87%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><b>To...</b></TD>
+		<TD><b>Do this...</b></TD>
+	</TR>
+	<TR>
+		<TD>Keep the archives in the location used in the 5.3/6.0 project root.</TD>
+		<TD>Keep the default option, <b>Use existing archive location</b>, selected.
+	<TR>
+		<TD>Copy the archives to the archive directory you specified when you created the project database</TD>
+		<TD>Select the <b>Copy archives to project location</b> option.</TD>
+	</TR>
+</table><br><br>
+	<li>Specify the following configuration file and access control database options and click Finish. Note that if the project root does not have a configuration file, the configuration options will be grayed.<br><br>
+<TABLE  WIDTH="87%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><b>To...</b></TD>
+		<TD><b>Do this...</b></TD>
+	</TR>
+	<TR>
+		<TD>Use the existing configuration files of the 5.3/6.0 project root</TD>
+		<TD>Select the <b>Use Existing Configuration Files</b> option. The new project database will continue to reference existing configuration files, thereby sharing the existing configuration files with the old 5.3/6.0 project root. We do not recommend that you use existing configuration files if the project root or any of the projects in the project root use an access control database.
+<p>When you choose this option, the Access Control Database options are grayed.</p></TD>
+	</TR>
+	<TR>
+		<TD>Create a new default configuration file for the new project database</TD>
+		<TD>Select the <b>Create a new Configuration File</b> button. Version Manager creates a default configuration file by copying the default.cfg file and places it in the archives directory beneath the project database location.</TD>
+	</TR>
+	<TR>
+		<TD>Copy all existing access control databases to the new project database</TD>
+		<TD>This option is not available if you opted to use the existing configuration files. Select the <B>Copy Access Control Database to new location</b> button. The project database's access control database is placed in the archives directory beneath the project database location. Project access control databases (if any) are placed in directories named for the folders beneath the archives directory.</TD>
+	</TR>
+	<TR>
+		<TD>Create a new access control database for the new project database</TD>
+		<TD>This option is not available if you opted to use the existing configuration files. Select the <B>Create a new Access Control Database</b> button. Version Manager creates a default access control database by copying the default.db file. This new access control database is disabled in the configuration file. By default, the new access control database file is located in the archives directory.</TD>
+	</TR>
+</TABLE><br><br>
+	<LI>Click Finish. 
+	</ol>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="about5_3projroot.html">About 5.3/6.0 Project Roots</A></TD>
+		<TD><A HREF="openvm5_3proj.html">Opening 5.3/6.0 Project Roots</A></TD>	
+	</TR>
+	<TR>
+		<TD><A HREF="copyvm5_3proj.html">Copying 5.3/6.0 Projects</A></TD>	
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

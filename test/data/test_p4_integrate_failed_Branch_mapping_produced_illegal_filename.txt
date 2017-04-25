@@ -1,0 +1,3 @@
+error: Branch mapping produced illegal filename.
+error: Wildcards (*, %x, ...) not allowed in '//depot/dev/bt31/test/data/vss/users/test/.%23ss.ini.1.1'.
+exit: 1

@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>About Privileges</TITLE>
+<!--<aboutprivileges.html>-->
+<!--<index parent="security" label="about privileges" anchor="aboutprivileges">-->
+<!--<index parent="privileges" label="about" anchor="aboutprivileges">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="aboutprivileges"></A>About Privileges</H1>
+<P>A privilege enables a Serena ChangeMan Version Manager action. Privileges are specified in the <A HREF="aboutacdb.html">access control database</a> to grant users permission to use the action. For example, GetTip is the privilege of letting users check out tip revisions from archives. Privileges are assigned in an access control database to either individual users or groups of users (<A HREF="aboutaccesslistgroups.html">access list groups</a>). </p>
+<P>
+<b>Note:</b> The one major action that does not have a privilege associated with it is Create Project Database. To restrict users from creating project databases, you must define a password that users must enter before the action can take place. Then, you withhold the password from users that are not allowed to create project databases. See "<a href="restrictpdb.html">Restricting the Creation of Project Databases</a>."
+</P>
+<p>Version Manager has three types of privileges:</p>
+<TABLE WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><b>Base privileges</b></TD>
+        <TD>A <A HREF="baseprivtables.html">base privilege</a> is a single Version Manager action. For example, the AddVersion privilege lets users assign version labels to revisions. See the <i>Serena ChangeMan Version Manager Administrator's Guide</i> for more information on base privileges.</TD>
+	</TR>
+	<TR>
+		<TD><b>Composite privileges</b></TD>
+        <TD>A <A HREF="compositeprivtables.html">composite privilege</a> is composed of two or more base privileges. For example, the Get composite privilege is composed of both the GetNonTip and GetTip base privileges. This privilege lets users check out both tip and nontip revisions from archives. See the <i>Serena ChangeMan Version Manager Administrator's Guide</i> for more information on composite privileges.</TD>
+	</TR>
+	<TR>
+		<TD><b>Privilege sets</b></TD>
+        <TD>A privilege set can be composed of base privileges, composite privileges, and other privilege sets. Version Manager has several <A HREF="defaultprivtables.html">default privilege sets</a> that are defined. See the <i>Serena ChangeMan Version Manager Administrator's Guide</i> for more information on default privilege sets.
+<p>Version Manager provides the flexibility of allowing you to <A HREF="definecustomprivsets.html">define a custom privilege set</a> so that you can create privilege sets that are suited to your working environment. For example, you could create a custom privilege set named BasicUser from the composite privileges Get and Put, and the base privilege InitArchive. Then, users with the BasicUser custom privilege set assigned to them could check in and out revisions as well as create archives.</p>
+<p>You can use existing privilege sets (default and custom) as part of the definition of new custom privilege sets.</p></TD>
+	</TR>
+</TABLE>
+<H2>Using Privileges</H2>
+<p>You can use the privileges that are built into Version Manager or <A HREF="definecustomprivsets.html">define custom privilege sets</a> to suit your needs. In the desktop client, privileges are grouped according to function:</p>
+<ul>
+	<LI>Action
+	<LI>Archive
+	<LI>Project
+</ul>
+<P>For more information on privileges, see the <i>Serena ChangeMan Version Manager Administrator's Guide</i> and the <i>Serena ChangeMan Version Manager Command-Line Reference Guide</i>.</p>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="privilegerules.html">Rules for Privileges</A></TD>
+	</tr>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

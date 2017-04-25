@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Defining Access List Groups</TITLE>
+<!--<defineaccesslistgroup.html>-->
+
+<!--<toc parent="set_up_security" label="Defining Access List Groups" anchor="defineaccesslistgroups" sortkey="06">-->
+<!--<index parent="creating" label="access list groups" anchor="defineaccesslistgroups">-->
+<!--<index parent="access_list_groups" label="defining" anchor="defineaccesslistgroups">-->
+<!--<index parent="defining" label="access list groups" anchor="defineaccesslistgroups">-->
+<!--<index parent="assigning" label="privileges to access list groups" anchor="defineaccesslistgroups">-->
+<!--<index parent="privileges" label="assigning to access list groups" anchor="defineaccesslistgroups">-->
+<!--<index parent="users" label="assigning to access list groups" anchor="defineaccesslistgroups">-->
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nUsing Security\nSetting Up Security\nDefining Access List Groups");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="defineaccesslistgroups"></A>Defining Access List Groups</H1>
+<P>If you are planning to use <A HREF="aboutaccesslists.html">access lists</a> as part of your security definition, define the appropriate <A HREF="aboutaccesslistgroups.html">access list groups</a>, which includes assigning privileges and users to the groups.</P>
+<H2>To define access list groups:</H2>
+<OL>
+	<LI>If the Project Security dialog box is already open, select All Access List Groups from the drop-down list in the upper left corner. If it is not open, select Admin | Security | Access List Groups. <br><br>
+	<LI>Click the New button. The Create Access List Group dialog box appears.<br><br>
+	<LI>Enter a name for the group in the <b>Access list group name</b> field. The name cannot contain  a tab or blank space. Any character can be used in the name except * : \ ' &quot; ( ). <br><br>
+	<LI>Click Create. The Create Access List Group dialog box closes and the newly created group is added to and selected in the All Access List Groups list of the Project Security dialog box. The fields in the dialog box are cleared so that you can create another group. When you are done creating groups, click Close. <br><br>
+	<LI>Click the Privileges tab.<br><br>
+	<LI>In the All Access List Groups list, verify that the access list group you are defining is selected.<br><br>
+	<A NAME="privs"></a><LI>On this tab, select the <A HREF="baseprivtables.html">base privileges</a>, <A HREF="compositeprivtables.html">composite privileges</a>, and existing <A HREF="defaultprivtables.html">privilege sets</a> to assign to the access list group. <br><br>
+<p>The options with a + beside them are allowed. The options with a - beside them are denied; only Project privileges are negative privileges, meaning if they are not selected, then they are allowed privileges. To change the status of an option, click the check box beside the option. You can allow or disallow an entire set of related privileges by clicking the parent option. For example, you could assign all of the Action privileges by clicking the check box beside Action Privileges to place a + in the check box.<br><br>
+<p>Note that the Selected Privileges box near the bottom of the dialog box displays a cumulation of the privileges you have selected. If any of the Project privileges are allowed, they are not displayed in this box. They are only displayed in this box when they are denied because they are negative privileges.</p><br><br>
+	<LI>Click the Access List Group Members tab. This tab displays all of the users and existing groups that are defined in the <A HREF="aboutacdb.html">access control database</A>.<br><br>
+	<LI>In the All Access List Groups list, verify that the access list group you are defining is selected.<br><br>
+	<LI>Select the check boxes next to the users and/or access list groups that you want as members of the group.<br><br>
+	<LI>Click Apply.<br><br>
+	<LI>To create another access list group, repeat steps 2 through 11. When you are finished defining access list groups, click OK.<br><br>
+</OL>
+If you are planning to use access lists as part of your security definition, continue to the next procedure, <A HREF="defineaccesslist.html">Defining Access Lists</a>. Otherwise, skip to <A HREF="enablesecurity.html">Enabling Security</a>.
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="setupsecurity.html">Setting Up Security</A></TD>
+		<TD><A HREF="modifyacslstgrpmemb.html">Modifying Access List Group Members</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="modifyacslstgrpprivs.html">Modifying Access List Group Privileges</A></TD>
+		<TD><A HREF="removeacslstgrpsfromacdb.html">Removing Access List Groups from an Access Control Database</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

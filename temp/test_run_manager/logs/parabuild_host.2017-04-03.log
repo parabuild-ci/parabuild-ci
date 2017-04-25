@@ -1,0 +1,8 @@
+2017-04-03 08:43:43 StandardHost[localhost]: Removing web application at context path /manager
+2017-04-03 08:43:43 StandardContext[/manager]: Stopping
+2017-04-03 08:43:43 StandardContext[/manager]: Stopping filters
+2017-04-03 08:43:43 StandardContext[/manager]: Sending application stop events
+2017-04-03 08:43:43 StandardContext[/manager]: Processing standard container shutdown
+2017-04-03 08:43:43 ContextConfig[/manager]: ContextConfig: Processing STOP
+2017-04-03 08:43:43 StandardContext[/manager]: Stopping complete
+2017-04-03 08:43:43 StandardHost[localhost]: Removing web application at context path 

@@ -1,0 +1,2 @@
+cvs server: warning: no revision `test_branch' in `/opt/cvs/cvsroot/test/sourceline/alwaysvalid/src/Attic/readme.txt,v'
+cvs server: warning: no revision `test_branch' in `/opt/cvs/cvsroot/test/sourceline/alwaysvalid/src/Attic/readme_in_test_branch.txt,v'

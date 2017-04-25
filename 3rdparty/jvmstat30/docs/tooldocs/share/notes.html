@@ -1,0 +1,234 @@
+<html><head>
+
+<title>Notes - Notes on the monitoring tools</title>
+
+</head>
+<body bgcolor=white>
+
+
+<h1>Notes - Notes on the monitoring tools</h1>
+
+<ul>
+  <li><a href="#description">Description</a>
+  <li><a href="#monitorable">Monitorable Applications</a>
+  <li><a href="#hostidentifier">Host Identifier</a>
+  <li><a href="#vmidentifier">Virtual Machine Identifier</a>
+  <li><a href="#ipc">Interprocess Communications</a>
+  <li><a href="#bugs">Bugs</a>
+  <li><a href="#seealso">See Also</a>
+</ul>
+
+<a name="description">
+<h2>DESCRIPTION</h2></a>
+<blockquote>
+The page documents characteristics that are common to the various
+jvmstat based tools.
+</blockquote>
+
+<a name="monitorable">
+<h2>MONITORABLE APPLICATIONS</h2></a>
+<blockquote>
+In order to monitor a Java application with this release of the tools,
+the target Java application must be running on the 1.4.1, 1.4.2,
+or 5.0 (1.5) HotSpot Java Virtual Machine. If the target Java application
+is running on the 1.4.1 HotSpot JVM, then that JVM must be started with
+the -XX:+UsePerfData option.
+</blockquote>
+
+<a name="hostidentifier">
+<h2>HOST IDENTIFIER</h2></a>
+<blockquote>
+The Host Identifier, or <i>hostid</i> is a string that indicates the
+target system of the <b>jps</b> command. The syntax of the <i>hostid</i>
+string largely corresponds to the syntax of a URI:
+<blockquote>
+<pre>
+[<i>protocol</i>:][[//]<i>hostname</i>][:<i>port</i>][/<i>servername</i>]
+</pre>
+</blockquote>
+<blockquote>
+<dl>
+     <dt><a name="protocol"><code>protocol</code></a>
+         <dd>The communications protocol. If the <i>protocol</i> is
+             omitted and a <i>hostname</i> is not specified, the default
+             protocol is a platform specific, optimized, local protocol.
+             If the <i>protocol</i> is omitted and a <i>hostname</i> is
+             specified, then the default protocol is <b>rmi</b>.
+
+     <dt><a name="hostname"><code>hostname</code></a>
+         <dd>A hostname or IP address indicating the target host. If
+             <i>hostname</i> is omitted, then the target host is the
+             local host.
+
+     <dt><a name="port"><code>port</code></a>
+         <dd>The default port for communicating with the remote server.
+             If the <i>hostname</i> is omitted or the <i>protocol</i>
+             specifies an optimized, local protocol, then <i>port</i> is
+             ignored. Otherwise, treatment of the <i>port</i> parameter is
+             implementation specific. For the default <b>rmi</b> protocol
+             the <i>port</i> indicates the port number for the rmiregistry
+             on the remote host. If <i>port</i> is omitted, and
+             <i>protocol</i> indicates <b>rmi</b>, then the default
+             rmiregistry port is used (port 1099).
+
+     <dt><a name="servername"><code>servername</code></a>
+         <dd>The treatment of this parameter is implementation dependent.
+             For the optimized, local protocol, this field is ignored. For
+             the <b>rmi</b> protocol, this parameter is string representing
+             the name of the RMI remote object on the remote host.  See the
+             <b>-n</b> option for the <a href=http://java.sun.com/j2se/1.5.0/docs/tooldocs/share/jstatd.html>
+             <b>jstatd</b></a> command.
+</dl>
+</blockquote>
+</blockquote>
+
+<a name="vmidentifier">
+<h2>VIRTUAL MACHINE IDENTIFIER</h2></a>
+<blockquote>
+The virtual machine identifier, or <i>vmid</i> is a string that identifies
+a target JVM. The syntax of the <i>vmid</i> string largely corresponds to
+the syntax of a URI:
+<blockquote>
+<pre>
+[<i>protocol</i>:][//]<b><i>lvmid</i></b>[@<i>hostname</i>][:<i>port</i>][/<i>servername</i>]
+</pre>
+</blockquote>
+<blockquote>
+<dl>
+     <dt><a name="protocol"><code>protocol</code></a>
+         <dd>The communications protocol. If the <i>protocol</i> is
+             omitted and a <i>hostname</i> is not specified, the default
+             protocol is a platform specific, optimized, local protocol.
+             If the <i>protocol</i> is omitted and a <i>hostname</i> is
+             specified, then the default protocol is <b>rmi</b>.
+
+     <dt><a name="lvmid"><code>lvmid</code></a>
+         <dd>The local virtual machine identifier for the target JVM 
+             The <i>lvmid</i> is a platform specific value that
+             uniquely indentifies a JVMachine on a system. The
+             <i>lvmid</i> is the only required component of a virtual machine
+             identifier. The <i>lvmid</i> is typically, but not necessarily
+             the operating system's process identifier for the target JVM
+             process. However, it's recommended that the <b>jps</b> command
+             be used to determine the <i>lvmid</i> for target JVMs.
+
+     <dt><a name="hostname"><code>hostname</code></a>
+         <dd>A hostname or IP address indicating the target host. If
+             <i>hostname</i> is omitted, then the target host is the
+             local host.
+
+     <dt><a name="port"><code>port</code></a>
+         <dd>The default port for communicating with the remote server.
+             If the <i>hostname</i> is omitted or the <i>protocol</i>
+             specifies an optimized, local protocol, then <i>port</i> is
+             ignored. Otherwise, treatment of the <i>port</i> parameter is
+             implementation specific. For the default <b>rmi</b> protocol,
+             the <i>port</i> indicates the port number for the rmiregistry
+             on the remote host. If <i>port</i> is omitted, and 
+             <i>protocol</i> indicates <b>rmi</b>, then the default
+             rmiregistry port (1099) is used.
+
+     <dt><a name="servername"><code>servername</code></a>
+         <dd>The treatment of this parameter is implementation dependent.
+             For the optimized, local protocol, this field is ignored. For
+             the <b>rmi</b> protocol, this parameter is string representing
+             the name of the RMI remote object on the remote host. See the
+             <b>-n</b> option for the <a href=http://java.sun.com/j2se/1.5.0/docs/tooldocs/share/jstatd.html><b>jstatd</b></a> command.
+</dl>
+</blockquote>
+</blockquote>
+
+<a name="ipc">
+<h2>INTERPROCESS COMMUNICATIONS</h2></a>
+<blockquote>
+The interprocess communications mechanism for attaching to the instrumentation
+exported by an instrumented JVM is platform specific. For the HotSpot JVM on
+the Solaris, Linux, and Windows platforms, the IPC mechanism utilizes the
+named shared memory facilities of the underlying platform. A shared memory
+region, with a backing store file in the file system name space, is created
+for each HotSpot JVM on a system. The file location varies depending on the
+native operating environment.
+<p> Solaris and Linux
+<blockquote>
+The file for a particular JVM is named
+/tmp/hsperfdata_<i>username</i>/<i>lvmid</i>, where <i>lvmid</i> is
+the local virtual machine identifier of the target JVM.  For UNIX systems,
+<i>lvmid</i> is the process identifier, or <i>pid</i>, for the target JVM.
+The <i>username</i> component of the path is the name of the user that
+corresponds to the effective user id of the target JVM process.
+<p>
+Access controls for the backing store files are set such that only
+the owner of the JVM has read/write access to the backing store file
+and shared memory region.
+</blockquote>
+<p> Windows
+<blockquote>
+The location of the file differs depending on a number of factors, but is
+generally located in the directory indicated by the <i>java.io.tmpdir</i>
+system property. This property is set according to the value returned by
+the Windows <i>GetTempPath()</i> API. This interface returns the value of
+the <i>%TMP%</i> environment variable. If <i>%TMP%</i> is not defined,
+it returns the value of the <i>%TEMP%</i> environment variable. If neither
+are defined, it returns the <i>Windows</i> directory, which varies depending
+on the Windows operating system version. The <i>java.io.tmpdir</i> property
+is set to this location by default. For Windows installations, it is
+essential that the GetTempPath() API return the same directory location
+for both the monitoring tools and the target JVM. If the monitoring and
+monitored JVMs resolve this property to different locations, the monitoring
+tools will not be able to locate their target JVM processes.
+<p>
+The file for a particular JVM is named
+<i>java.io.tmpdir</i>\hsperfdata_<i>username</i>\<i>lvmid</i>, where
+<i>lvmid</i> is the local virtual machine identifier of the target JVM
+For Windows, this is the process identifier for the JVM process. The
+<i>username</i> component of the path is the name of the user that
+corresponds to the effective user id of the target JVM process.
+<p>
+Access controls for these files are set such that only the owner of
+the JVM process has read/write access to the backing store file and
+shared memory kernel object. In HotSpot 1.4.2 and later, if the
+<i>java.io.tmpdir</i> resides on a FAT or FAT32 file system, the
+instrumentation will be silently disabled as the file system type
+is not capable of providing sufficent access controls. This behavior
+can be overridden by setting the -XX:+PerfBypassFileSystemCheck for
+the target JVMs. Alternatively, the TMP environment variable can be
+set to volume containing an NTFS or other file system type that supports
+persistent access control lists.
+</blockquote>
+</blockquote>
+
+<a name="bugs">
+<h2>BUGS</h2></a>
+<blockquote>
+</blockquote>
+
+<a name="seealso">
+<h2>SEE ALSO</h2></a>
+<blockquote>
+<ul>
+    <li><a href=http://java.sun.com/j2se/1.5.0/docs/tooldocs/index.html#basic>java - the Java Application Launcher</a>
+    <li><a href=http://java.sun.com/j2se/1.5.0/docs/tooldocs/share/jps.html> jps - the Java Process Status Application</a>
+    <li><a href=http://java.sun.com/j2se/1.5.0/docs/tooldocs/share/jstat.html>jstat - the Java Virtual Machine Statistics Monitoring Application</a>
+    <li><a href=../share/visualgc.html>visualgc - the Visual GC tool</a>
+    <li><a href=http://java.sun.com/j2se/1.5.0/docs/tooldocs/share/jstatd.html>jstatd - the Java performance statistics daemon</a>
+</ul>
+</blockquote>
+<HR SIZE=3 NOSHADE>
+<TABLE BORDER="0" WIDTH="100%">
+<TR VALIGN=TOP>
+<TD>
+<P><FONT SIZE="-2">
+  <A HREF="../../relnotes/SMICopyright.html">Copyright</A> &#169; 2003
+  <A HREF="http://www.sun.com">Sun Microsystems, Inc.</A>
+  All Rights Reserved.</FONT></P>
+</TD>
+<TD ALIGN=RIGHT>
+  <IMG SRC="../../images/sunlogo64x30.gif" ALT="Sun" BORDER=0 WIDTH=64 HEIGHT=30>
+  <BR>
+  <FONT SIZE="+1">
+  <i>Java Software</i>
+  </FONT>
+</TD>
+</TR>
+</TABLE>
+</body></html>

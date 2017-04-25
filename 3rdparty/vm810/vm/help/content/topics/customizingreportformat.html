@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Customizing the Format of HTML Reports</TITLE>
+<!--<customizingreportformat.html>-->
+<!--<toc parent="generating_reports" label="Customizing the Format of HTML Reports" anchor="custreportformat" sortkey="03">-->
+<!--<index parent="reports" label="customizing HTML format" anchor="custreportformat">-->
+<!--<index parent="history_reports" label="customizing HTML format" anchor="custreportformat">-->
+<!--<index parent="security" label="reports, customizing HTML format" anchor="custreportformat">-->
+<!--<index parent="journal" label="reports, customizing HTML format" anchor="custreportformat">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nGenerating Reports\nCustomizing the Format of HTML Reports");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="custreportformat"></A>Customizing the Format of HTML Reports</H1>
+<P>You can customize the HTML templates that Serena ChangeMan Version Manager uses to display journal, history, and security reports. There is one template file per type of report:</p>
+<UL>
+	<LI>journal.template
+	<LI>history.template
+	<LI>accessdb.template
+</UL>
+<P>These files are located in the pvcsprop\pvcs\vm subdirectory of the Version Manager installation directory (for example, c:\Program Files\Serena\vm\common\pvcsprop\pvcs\vm on Windows and /usr/serena/vm/common/pvcsprop/pvcs/vm on UNIX). All three of the default template files are the same. Click to see a sample of the <A href="samplereportformat.html">HTML report format</a>.</P>
+
+<p>To display the report title, the template must have the tag:</p>
+<img src="../graphics/subst2.gif" width="370" height="25" border="0">
+<p>To display the report, the template must have the tag:</p>
+<img src="../graphics/subst1.gif" width="365" height="31" border="0">
+<p>You can change any of the formatting tags in the template files. For example, you can customize the report by changing the color and size of the font, the background color, etc. You can also add formatting tags, any text that you want, links to other pages, and graphics files (for example, your company logo).</p>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="aboutreports.html">About Reports</A></TD>
+		<TD><A HREF="setreportoptions.html">Setting Report Options</A></TD>
+	</TR>
+
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

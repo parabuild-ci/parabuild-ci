@@ -1,0 +1,194 @@
+<!-- Copyright 2003 Zelix Pty Ltd (ABN 47 078 740 093) -->
+<html>
+<head>
+<title>Zelix KlassMaster File Save All</title>
+   <meta name="keywords" content="java obfuscator,java code obfuscator,obfuscation">
+   <meta name="description" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <meta name="classification" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <link rel=stylesheet href="../ZKM.css" TYPE="text/css">
+</head>
+<body background="../images/small-white-mist1.jpg" bgcolor="#E1E1E1">
+<center><a href="index.html"><img src=../images/ZKM_b4.gif alt="Zelix KlassMaster" width=264 height=62 border=0></a></center>
+<hr>
+<center>
+<table width=770>
+   <tr>
+      <td colspan=2>
+         <h1>File | Save all</h1>
+         Zelix KlassMaster saves all opened classes in their current state. If you have used the <a href="toolsObfuscate.html"><code>Tools|Obfuscate</code></a>
+         menu option then the classes will be saved in their obfuscated state.
+         <p>
+         Zelix KlassMaster saves class files, into the <a href="#selectedDirectory"><b>selected directory</b></a>, using the current class names and the ".class" extension. 
+         It places the files into directories that reflect the classes package and will automatically 
+         create directories if necessary. So a Class named package1.Class1 will be saved in a file called
+         Class1.class in the package1 directory. 
+         <p>
+         See below for more detail on
+         <ul>
+            <li>Classes <a href="#directories">loaded from directories</a>
+            <li>Zelix KlassMaster Smart Save's<font size=-1> <sup>tm</sup></font> special handling of <a href="#archives">JAR, WAR, EAR and ZIP</a> archive files including
+               <ul>
+                 <li><a href="#manifest">manifest</a> files
+                 <li><a href="#ejbjar">EJB deployment descriptor</a> files
+                 <li><a href="#serviceprovider">service provider</a> files
+               </ul>
+            <li>Smart Save's<font size=-1> <sup>tm</sup></font> handling of <a href="#resourceFiles">resource files</a> such as image and properties files
+            <li><a href="#gui">GUI basics</a>
+         </ul>
+
+         <h2><a name="directories">Classes Opened from Directories</a></h2>
+         If you opened  any classes directly from directories then they will be saved into corresponding directories.  
+         In the interests of safety, <strong>you should not save your classes back into the directories from which you opened them</strong>,
+         especially if you no longer have the source code. Zelix KlassMaster <strong>will not warn you before overwriting</strong> existing class files.
+
+         <h2><a name="archives">Smart Save's<font size=-1> <sup>tm</sup></font> Special Handling of JAR, WAR, EAR and ZIP Archive Files</a></h2>
+         If you opened classes from JAR, WAR, EAR or ZIP archive files, then Zelix KlassMaster <b>Smart Save<font size=-1> <sup>tm</sup></font></b> will save the 
+         class files to a new, identically named archive file in the <b>selected directory</b>. 
+         If a file with the same name already exists in the selected directory, then the existing file will be renamed by appending the <code>".BACKUP"</code> extension. 
+         Zelix KlassMaster automatically handles nested archive files such an EAR archive that contains a WAR archive that contains a JAR archive.
+         Also, it will create new archives as uncompressed if the source archive was uncompressed.
+         <p>
+         <a name="metainf">The following special handling is provided for files appearing in the 
+         <code>META-INF</code></a>
+         directory.
+         <ul>
+            <li>If a <a name="manifest"><b>manifest file</b></a> (ie. <code>META-INF/MANIFEST.MF</code>) appears in a particular archive, then a manifest file will be created in the 
+                new archive. The following standard attributes will be re-created in the new manifest
+                <ul>
+                   <li><code>Manifest-Version</code>
+                   <li><code>Class-Path</code>
+                   <li><code>Main-Class</code>
+                   <li><code>Sealed</code>
+                   <li><code>Name</code>
+                   <li><code>Java-Bean</code>
+                </ul>
+               The <code>Main-Class</code> and <code>Name</code> attribute values will be translated to reflect any new obfuscated class names.
+               However, all signing information is lost.  Non-standard attributes in the main section  and the entry sections of the manifest will be copied across after translation.
+            <li>If an <a name="ejbjar"><b>EJB deployment descriptor file</b></a> (ie. <code>META-INF/ejb-jar.xml</code>) appears in a particular archive, then it will be copied 
+                to the new archive after
+                <ul>
+                  <li><code>ejb-class</code>
+                  <li><code>home</code>
+                  <li><code>remote</code>
+                  <li><code>prim-key-class</code>
+                  <li><code>dependent-class</code>
+                  <li><code>method-param</code>
+                </ul>
+                values have been translated to reflect new obfuscated class names and
+                <ul>
+                  <li><code>field-name</code>
+                  <li><code>primkey-field</code>
+                </ul>
+                values, where they appear within an <code>entity</code> segment, have been translated to reflect new obfuscated field names and
+                <ul>
+                  <li><code>small-icon</code>
+                  <li><code>large-icon</code>
+                </ul>
+                values have been translated to reflect potentially new obfuscated path names.  Note that method names are never translated and 
+                that Zelix KlassMaster does not yet support the field and method name conventions of the EJB 2.0 specification.
+            <li>All other XML files will be copied to the new archive after values have been translated to reflect new obfuscated class names.  These include
+                <ul>
+                   <li><code>application.xml</code>
+                   <li><code>web.xml</code>
+                   <li><code>application-client.xml</code>
+                   <li><code>tld</code> (tag library definition)
+                </ul>
+                files.
+            <li>All files in the <a name="serviceprovider"><code>META-INF/services</code></a> directory will be saved to the corresponding directory in the new archive file after
+               <ul>
+                  <li>the file names have been translated to reflect the new fully qualified name of the abstract service classes
+                  <li>the names of the concrete provider classes listed within each file have been translated to reflect their new obfuscated names.
+               </ul>
+            <li>The INDEX-LIST file and any SF, DSA, RSA or PGP files in the META-INF directory will NOT be copied across.
+         </ul>
+
+         <h2><a name="resourceFiles">Smart Save's<font size=-1> <sup>tm</sup></font> handling of Resource Files</a></h2>
+         Zelix KlassMaster <b>Smart Save<font size=-1> <sup>tm</sup></font></b> provides special handling of non-class files such as <b>image</b> and <b>properties</b> files. 
+         All <nobr>non-class</nobr> files contained in the an opened archive will be copied across to the corresponding archive file in the selected directory. 
+         Note that files within the META-INF directory are <a href="#metainf">specially handled</a>. 
+         <p>
+         If package names have been obfuscated, the paths of non-class files stored in 
+         directories corresponding to Java packages will be changed to match the new package names.  Thus calls to methods 
+         such as <code>Class.getResource(String)</code> and <code>Class.getResourceAsStream(String)</code> that use relative paths
+         will not be broken. Similar calls using absolute paths will not be broken provided the path does NOT include a Java package
+         directory name that has been obfuscated.
+         
+      </td>
+   </tr>
+   <tr>
+      <td colspan=2>
+          &nbsp; <!-- Force an empty row -->
+      </td>
+   </tr>
+   <tr>
+      <td valign="top" rowspan=2>
+         <h2><a name="gui">GUI Basics</a></h2>
+         You may save your classes at any time by selecting the <strong>File Save all</strong> menu.
+         This brings up the <strong>"Select a Directory"</strong> dialog.
+      </td>
+      <td valign="top" align="center">
+         <img src=../images/fileSave0.gif width=298 height=133 alt="File Save all...">
+      </td>
+   </tr>
+   <tr>
+      <td  align="center" valign="middle">
+         <img src=../images/down_arrow.gif width=20 height=24 alt="Leads to..."><p>
+      </td>
+   </tr>
+   <tr>
+      <td valign="top">
+         The main panel of the <strong>"Select a Directory"</strong> dialog is
+         the <strong>directory tree</strong>. It displays the <strong>current directory</strong>
+         between angle brackets 
+         (ie&nbsp;&lt;...&gt;) 
+            <ul>
+               <li>below all of its parent directories and
+               <li>above of all of its <em>immediate</em> subdirectories.
+            </ul>
+         The <strong>current directory</strong> can be changed by  using the mouse to double click on another
+         directory or by selecting another directory and pressing &lt;Enter&gt; (&lt;Shift&gt;&lt;Enter&gt; in Windows). 
+         <p>
+         The <a name="selectedDirectory"><strong>selected directory</strong></a> is the directory that is currently highlighted in the left panel. When you
+         press <img src=../images/okBtn.gif align="absmiddle" alt="OK" width=80 height=25> your class files will be saved. 
+         Classes that were opened directly from directories will be saved directories below the 
+         <strong>selected directory</strong> with names corresponding to the package names.  Note that the package names may
+         have been obfuscated.
+      </td>
+      <td valign="top" align="center">
+         <img src=../images/fileSave1.gif width=322 height=379 alt="Select a Folder">
+      </td>
+   </tr>
+   <tr>
+      <td colspan=2>
+          &nbsp; <!-- Force an empty row -->
+      </td>
+   </tr>
+   <!---
+   <tr>
+      <td valign="top">
+         <h2>Create New Directory</h2>
+         If you press <img src=../images/createBtn.gif align="absmiddle" alt="Create" width=50 height=24> within the 
+         <strong>"Select a Directory"</strong> dialog the <strong>"Create&nbsp;New&nbsp;Directory"</strong> dialog appears.
+         Enter the name of the directory you wish to create under the <strong>selected directory</strong> and
+         press <img src=../images/okBtn.gif align="absmiddle" alt="OK" width=80 height=25>
+      </td>
+      <td valign="top" align="center">
+         <img src=../images/createDir.gif width=293 height=121 alt="Create New Folder">
+      </td>
+   </tr>
+   -->
+</table>
+</center>
+<hr>
+<center>
+<table>
+   <tr>
+      <td>
+         <a href=index.html><img src=../images/uarrw.gif alt="Documentation Table of Contents"></a>
+      </td>
+   </tr>
+</table>
+</center>
+<font size=-1>Copyright &copy; 2003 <a href="mailto:WebMaster@zelix.com">Zelix Pty Ltd</a> (ABN 47 078 740 093)</font>
+</body>
+</html>

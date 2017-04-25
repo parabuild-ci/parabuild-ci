@@ -1,0 +1,6 @@
+/* ------------------------------------------- */
+/* MCAST specific options that must be created */
+/* This file belongs in $RTHOME/standard       */
+/* ------------------------------------------- */
+ 
+createopt mcast_cm_file string $RTHOME/standard/mcast.cm

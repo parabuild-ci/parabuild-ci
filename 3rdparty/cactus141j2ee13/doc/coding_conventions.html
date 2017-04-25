@@ -1,0 +1,447 @@
+<HTML><HEAD><TITLE>Coding Conventions</TITLE></HEAD><BODY alink="#023264" bgcolor="#ffffff" leftmargin="4" link="#525D76" marginheight="4" marginwidth="4" text="#000000" topmargin="4" vlink="#023264"><TABLE border="0" cellpadding="0" cellspacing="0" width="100%"><TR><TD align="left" valign="top"><A href="http://jakarta.apache.org/index.html"><IMG border="0" hspace="0" src="./images/jakarta-logo.gif" vspace="0"></A></TD><TD align="left" bgcolor="#ffffff" valign="middle" width="100%"><IMG align="right" alt="Coding Conventions" border="0" hspace="0" src=".//images/logocactus.gif" vspace="0"></TD></TR><TR><TD colspan="2" height="2" width="100%"><HR noshade="" size="1"></TD></TR></TABLE><TABLE border="0" cellpadding="0" cellspacing="0" width="100%"><TR><TD valign="top" width="1%"></TD><TD nowrap="1" valign="top" width="14%"><FONT size="-2">
+              Last update : August 31 2002</FONT><BR><FONT size="-2">
+              Doc for : v1.4.1</FONT><BR><FONT face="arial,helvetica,sanserif">
+
+  <BR><FONT color="#000000" size="+1">About</FONT><BR><FONT size="-1">
+    <LI><A href="./index.html"><FONT size="-1">What is Cactus ?</FONT></A></LI>
+    <LI><A href="./news.html"><FONT size="-1">News</FONT></A></LI>
+    <LI><A href="./changes.html"><FONT size="-1">Changes</FONT></A></LI>
+    <LI><A href="./features.html"><FONT size="-1">Features/Status</FONT></A></LI>
+    <LI><A href="./goals.html"><FONT size="-1">Goals</FONT></A></LI>
+    <LI><A href="./todo.html"><FONT size="-1">Roadmap/Todo</FONT></A></LI>
+    <LI><A href="./contributors.html"><FONT size="-1">Contributors</FONT></A></LI>
+    <LI><A href="./contributing.html"><FONT size="-1">Contributing</FONT></A></LI>
+    <LI><A href="./users.html"><FONT size="-1">Cactus Users</FONT></A></LI>
+    <LI><A href="./testedon.html"><FONT size="-1">Tested on ...</FONT></A></LI>
+    <LI><A href="./license.html"><FONT size="-1">License</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Downloads</FONT><BR><FONT size="-1">
+    <LI><A href="./downloads.html"><FONT size="-1">Downloads</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Documentation</FONT><BR><FONT size="-1">
+    <LI><A href="./how_it_works.html"><FONT size="-1">How it works ?</FONT></A></LI>
+    
+    <LI><A href="./getting_started.html"><FONT size="-1">Getting Started</FONT></A></LI>
+    <LI><A href="./mockobjects.html"><FONT size="-1">Mock vs Container</FONT></A></LI>
+    <LI><A href="./javadoc.html"><FONT size="-1">Javadocs</FONT></A></LI>
+    
+    
+    <LI><A href="./faq.html"><FONT size="-1">FAQ</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Howto Guides</FONT><BR><FONT size="-1">
+    <LI><A href="./howto_classpath.html"><FONT size="-1">Classpath Howto</FONT></A></LI>
+    <LI><A href="./howto_config.html"><FONT size="-1">Config Howto</FONT></A></LI>
+    <LI><A href="./howto_migration.html"><FONT size="-1">Migration Howto</FONT></A></LI>
+
+    
+    <LI><A href="./howto_testcase.html"><FONT size="-1">TestCase Howto</FONT></A></LI>
+    
+    
+    
+
+    <LI><A href="./howto_jsp.html"><FONT size="-1">Jsp Howto</FONT></A></LI>
+    <LI><A href="./howto_runner.html"><FONT size="-1">Runner Howto</FONT></A></LI>
+    <LI><A href="./howto_security.html"><FONT size="-1">Security Howto</FONT></A></LI>
+
+    
+    <LI><A href="./howto_ant.html"><FONT size="-1">Ant Howto</FONT></A></LI>
+    
+    
+    
+
+    <LI><A href="./howto_httpunit.html"><FONT size="-1">HttpUnit Howto</FONT></A></LI>
+    <LI><A href="./howto_sample.html"><FONT size="-1">Sample Howto</FONT></A></LI>
+
+    
+    <LI><A href="./howto_ejb.html"><FONT size="-1">EJB Howto</FONT></A></LI>
+    
+
+    
+    <LI><A href="./howto_ide.html"><FONT size="-1">IDE Howto</FONT></A></LI>
+    
+    
+    
+    
+
+    <LI><A href="./howto_tomcat.html"><FONT size="-1">Tomcat Howto</FONT></A></LI>
+
+    <LI><A href="./howto_junitee.html"><FONT size="-1">JUnitEE Howto</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Support</FONT><BR><FONT size="-1">
+    <LI><FONT size="-1"><A href="http://jakarta.apache.org/site/bugs.html" target="">Bug database</A></FONT></LI>
+    <LI><A href="./mailinglist.html"><FONT size="-1">Mailing list</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Misc.</FONT><BR><FONT size="-1">
+    <LI><A href="./cactusname.html"><FONT size="-1">Why the name ?</FONT></A></LI>
+    <LI><A href="./logos.html"><FONT size="-1">Logo Challenge</FONT></A></LI>
+    <LI><A href="./resources.html"><FONT size="-1">Resources</FONT></A></LI>
+    <LI><A href="./coverage.html"><FONT size="-1">Test Coverage</FONT></A></LI>
+    
+    
+    
+    <LI><FONT size="-1"><A href="http://jakarta.apache.org/cactus/stats/index.html" target="">Stats</A></FONT></LI>
+    
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Developers</FONT><BR><FONT size="-1">
+    <LI><FONT size="-1"><A href="http://jakarta.apache.org/site/cvsindex.html" target="">CVS</A></FONT></LI>
+    <LI><A href="./coding_conventions.html"><FONT size="-1">Coding Conventions</FONT></A></LI>
+    <LI><A href="./build_result.html"><FONT size="-1">Build results</FONT></A></LI>
+    <LI><A href="./release_checklist.html"><FONT size="-1">Release Checklist</FONT></A></LI>
+  </FONT><BR>
+
+</FONT></TD><TD align="left" valign="top" width="*"><TABLE border="0" cellpadding="3" cellspacing="0"><TR><TD><BR>
+  
+
+  
+
+    <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>Forewords</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+      <P align="justify">
+        This document describes a list of coding conventions that are
+        required for code submissions to the project. By default, the coding
+        conventions for most Open Source Projects should follow the existing
+        coding conventions in the code that you are working on. For example,
+        if the bracket is on the same line as the if statement, then you
+        should write all your code to have that convention.
+      </P>
+      <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+        <B>If you commit code that does not follow these conventions and
+        you are caught, you are responsible for also fixing your own code.
+        </B>
+      </I></FONT></TD></TR></TABLE></P>
+      <P align="justify">
+         Below is a list of coding conventions that are specific to Cactus,
+         everything else not specificially mentioned here should follow the
+         official <A href="http://java.sun.com/docs/codeconv/html/CodeConvTOC.doc.html">Sun
+         Java Coding Conventions</A>.
+      </P>
+
+    </FONT></TD></TR></TABLE></DIV><BR>
+
+    <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>How to apply ?</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+      <P align="justify">
+        Having coding conventions is nice but having a way to ensure they are
+        applied is even better ... :-)
+      </P>
+      <P align="justify">
+        The Cactus Ant build file has a <CODE><FONT face="courier, monospaced">checkstyle</FONT></CODE> target which
+        performs coding conventions using the
+        <A href="http://checkstyle.sf.net">Checkstyle</A> tool. Drop the
+        Checkstyle jars in your <CODE><FONT face="courier, monospaced">ANT_HOME/lib</FONT></CODE>, go in the
+        <CODE><FONT face="courier, monospaced">build/</FONT></CODE> directory and type <CODE><FONT face="courier, monospaced">ant checkstyle</FONT></CODE>.
+      </P>
+      <P align="justify">
+        Please run this target before committing any code.
+      </P>
+
+    </FONT></TD></TR></TABLE></DIV><BR>
+
+    <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>Cactus specific coding conventions</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>1. Brackets</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+          For class and method declaration, brackets should begin and end on a
+          <B>new</B> line. Example :
+        </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+public class SomeClass
+{
+    public void someMethod()
+    {
+    }
+}
+</PRE></TD></TR></TABLE></DIV>
+
+        <P align="justify">
+          Brackets for blocks of code inside methods should begin and end
+          on the <B>same</B> line (this applies to <CODE><FONT face="courier, monospaced">if</FONT></CODE>,
+          <CODE><FONT face="courier, monospaced">for</FONT></CODE>, <CODE><FONT face="courier, monospaced">while</FONT></CODE>, <CODE><FONT face="courier, monospaced">try/catch</FONT></CODE>, ...).
+          Example :
+        </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+public void someMethod()
+{
+    if (expression) {
+    } else if (other_expression) {
+    }
+
+    try {
+    } catch (Exception e) {
+    }
+}
+</PRE></TD></TR></TABLE></DIV>
+
+        <P align="justify">
+          <B>Brackets are mandatory even for single line statements !
+          </B>
+        </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+// Incorrect
+if (expression)
+    // some code
+
+// Correct
+if (expression) {
+    // some code
+}
+</PRE></TD></TR></TABLE></DIV>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>2. Blank Spaces</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+           keywords followed by a parenthesis should be separated by a space.
+           Example :
+        </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+while (true) {
+    // some code
+}
+</PRE></TD></TR></TABLE></DIV>
+
+        <P align="justify">
+          Blank space should appear after commas in argument lists. Binary
+          operators should be separated from their operands by spaces :
+        </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+a += c + d;
+a = (a + b) / (c * d);
+
+while (d++ = s++) {
+    n++;
+}
+
+printSize(&quot;size is &quot; + foo + &quot;\n&quot;);
+</PRE></TD></TR></TABLE></DIV>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>3. Indentations</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+          <B>4 spaces. NO tabs</B>. Period. We understand that a lot
+          of you like to
+          use tabs, but the fact of the matter is that in a distributed
+          development environment, when the cvs commit messages get sent to a
+          mailing list, they are almost impossible to read if you use tabs.
+        </P>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>4. Comments</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+          Javadoc SHOULD exist on all your class members (methods + class
+          variables), including the private ones. Also, if you are working on
+          existing code and there currently isn't a javadoc for that
+          method/class/variable or whatever, then you should contribute and
+          add it. This will improve the project as a whole.
+        </P>
+        <P align="justify">
+          Also add code comments when you think it's necessary (like
+          assumptions), especially when the code is not obvious.
+        </P>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>5. License</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+          The Jakarta Apache/Cactus License MUST be placed at the top of each
+          and every file.
+        </P>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>6. Author references</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+          If you contribute to a file (code or documentation), add yourself to
+          the top of the file (below the existing authors). For java files the
+          preferred Javadoc format is:
+        </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+@author &lt;a href=&quot;mailto:user@domain.com&quot;&gt;John Doe&lt;/a&gt;
+</PRE></TD></TR></TABLE></DIV>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>7. Class variables</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+          Class variables should not have any prefix and <B>must</B>
+          be referenced using the <CODE><FONT face="courier, monospaced">this</FONT></CODE> object. Example :
+        </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+public class SomeClass
+{
+    private String someString;
+[...]
+    public void someMethod()
+    {
+        logger.debug(&quot;Value = &quot; + this.someString);
+    }
+}
+</PRE></TD></TR></TABLE></DIV>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>8. Parameter names</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+          Method parameters should be prefixed by &quot;<CODE><FONT face="courier, monospaced">the</FONT></CODE>&quot; (for
+          differentiating them from inner variables). For example :
+        </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+public void someMethod(String theClassName)
+{
+    String className; // inner variable
+}
+</PRE></TD></TR></TABLE></DIV>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>9. Line length</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+          Avoid lines longer than 80 characters for Code, comments, ...
+        </P>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>10. Versioning</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+          All .java files should have a <CODE><FONT face="courier, monospaced">@version</FONT></CODE> tag like the one
+          below.
+        </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+@version $Id: //depot/dev/bt-open-source/3rdparty/cactus141j2ee13/doc/coding_conventions.html#1 $
+</PRE></TD></TR></TABLE></DIV>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>11. Logging</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+          Do <B>not</B> use <CODE><FONT face="courier, monospaced">System.out</FONT></CODE> to log. Instead,
+          use the Cactus logging classes which are a facade to Log4j. Use the
+          name of your class as the Log4j <CODE><FONT face="courier, monospaced">Category</FONT></CODE>. For
+          example :
+        </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+private static Log logger =
+		LogService.getInstance().getLog(MyClass.class.getName());
+
+public void someMethod()
+{
+		logger.debug(&quot;some debug text&quot;);
+}
+</PRE></TD></TR></TABLE></DIV>
+
+        <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+          As of Cactus 1.3, LogAspect autmatically logs all method entries and
+					exits.
+        </I></FONT></TD></TR></TABLE></P>
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>12. Exception handling</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+          Managing exceptions correctly requires experience. This is not
+          supposed to be a guide on managing exceptions, simply a few best
+          practices.
+        </P>
+        <BLOCKQUOTE><UL>
+          <LI>
+            <B>Rule 1</B> : Try to catch exceptions as much as
+            possible and rethrow higher level exceptions (meaning hiding the
+            low level detailed and putting a message that is more related to
+            the function of your code).
+          </LI>
+          <LI>
+            <B>Rule 2</B> : It is important not to loose the stack
+            trace which contains important information. Use chained exceptions
+            for that. Cactus provides a <CODE><FONT face="courier, monospaced">ChainedRuntimeException</FONT></CODE>
+            for chaining runtime exceptions.
+          </LI>
+          <LI>
+            <B>Rule 3</B> : Always log the exception at the higher
+            level (ie. where it is handled and not rethrown).
+          </LI>
+          <LI>
+            <B>Rule 4</B> : Try to avoid catching
+            <CODE><FONT face="courier, monospaced">Throwable</FONT></CODE> or <CODE><FONT face="courier, monospaced">Exception</FONT></CODE> and catch
+            specific exceptions instead.
+          </LI>
+        </UL></BLOCKQUOTE>
+        <P align="justify">
+          An example :
+        </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+public void getTestClass()
+{
+    try {
+        Class responseClass =
+            Class.forName(&quot;some.package.MyClass&quot;);
+    } catch (ClassNotFoundException cnfe) {
+        String message = &quot;Cannot instantiate test class&quot;;
+        logger.error(message);
+        throw new ChainedRuntimeException(message, e);
+    }
+}
+</PRE></TD></TR></TABLE></DIV>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>13. Qualified imports</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+          All <CODE><FONT face="courier, monospaced">import</FONT></CODE> statements should containing the full class
+          name of classes to import and should not use the <CODE><FONT face="courier, monospaced">&quot;*&quot;</FONT></CODE>
+          notation :
+        </P>
+        <P align="justify">
+          An example :
+        </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+// Correct
+import java.util.Date;
+import java.net.HttpURLConnection;
+
+// Not correct
+import java.util.*;
+import java.net.*;
+</PRE></TD></TR></TABLE></DIV>
+
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+    </FONT></TD></TR></TABLE></DIV><BR>
+
+  
+</TD></TR></TABLE></TD></TR></TABLE><BR><TABLE border="0" cellpadding="0" cellspacing="0" width="100%"><TR><TD><HR noshade="" size="1"></TD></TR><TR><TD align="center"><FONT color="#525D76" face="arial,helvetica,sanserif" size="-1"><I>
+                Copyright &copy; 2000-2002 The Apache Software Foundation.
+                All Rights Reserved.
+               </I></FONT></TD></TR></TABLE></BODY></HTML>

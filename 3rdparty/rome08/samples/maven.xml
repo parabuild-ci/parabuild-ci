@@ -1,0 +1,115 @@
+<project
+    default="jar"
+    xmlns:j="jelly:core"
+    xmlns:u="jelly:util">
+
+    <path id="command.classpath">
+        <path refid="maven.dependency.classpath"/>
+        <fileset dir="${maven.build.dir}">
+            <include name="*.jar">
+            </include>
+        </fileset>
+        <fileset dir="${maven.src.dir}/java"/>
+    </path>
+
+    <goal name="run-aggr">
+        <attainGoal name="jar"/>
+
+        <!-- should not have to fork here, but it produces errors for some people if we don't -->
+        <java classname="com.sun.syndication.samples.FeedAggregator"
+            fork="true">
+            <arg value="rss_2.0"/>
+            <arg value="http://blogs.sun.com/roller/rss/rome"/>
+            <arg value="http://blogs.sun.com/roller/rss/tucu"/>
+            <arg value="http://blogs.sun.com/roller/rss/pat"/>
+            <classpath>
+                <path refid="command.classpath"/>
+            </classpath>
+        </java>
+    </goal>
+    <goal name="run-conv">
+        <attainGoal name="jar"/>
+
+        <!-- should not have to fork here, but it produces errors for some people if we don't -->
+        <java classname="com.sun.syndication.samples.FeedConverter"
+            fork="true">
+            <arg value="rss_0.92"/>
+            <arg value="http://blogs.sun.com/roller/rss/tucu"/>
+            <classpath>
+                <path refid="command.classpath"/>
+            </classpath>
+        </java>
+    </goal>
+
+    <goal name="run-read">
+        <attainGoal name="jar"/>
+
+        <!-- should not have to fork here, but it produces errors for some people if we don't -->
+        <java classname="com.sun.syndication.samples.FeedReader"
+            fork="true">
+            <arg value="http://blogs.sun.com/roller/rss/pat"/>
+            <classpath>
+                <path refid="command.classpath"/>
+            </classpath>
+        </java>
+    </goal>
+
+    <goal name="run-write">
+        <attainGoal name="jar"/>
+
+        <!-- should not have to fork here, but it produces errors for some people if we don't -->
+        <java classname="com.sun.syndication.samples.FeedWriter"
+            fork="true">
+            <arg value="rss_0.92"/>
+            <arg value="myfeed.xml"/>
+            <classpath>
+                <path refid="command.classpath"/>
+            </classpath>
+        </java>
+    </goal>
+
+    <goal name="run-sampleModule">
+        <attainGoal name="jar"/>
+
+        <!-- should not have to fork here, but it produces errors for some people if we don't -->
+        <java classname="com.sun.syndication.samples.FeedConverter"
+            fork="true">
+            <arg value="rss_1.0"/>
+            <arg value="file://${basedir}/src/data/FeedWithSampleModule.xml"/>
+            <classpath>
+                <path refid="command.classpath"/>
+            </classpath>
+        </java>
+    </goal>
+
+    <!-- feed using UTF-8 BOM -->
+    <goal name="run-read0">
+        <attainGoal name="jar"/>
+
+        <!-- should not have to fork here, but it produces errors for some people if we don't -->
+        <java classname="com.sun.syndication.samples.FeedReader"
+            fork="true">
+            <arg value="http://www.magpiebrain.com/index.xml"/>
+<!--
+            <arg value="http://msdn.microsoft.com/rss.xml"/>
+-->
+            <classpath>
+                <path refid="command.classpath"/>
+            </classpath>
+        </java>
+    </goal>
+
+    <!-- feed using UTF-8 BOM -->
+    <goal name="run-read1">
+        <attainGoal name="jar"/>
+
+        <!-- should not have to fork here, but it produces errors for some people if we don't -->
+        <java classname="com.sun.syndication.samples.FeedReader"
+            fork="true">
+            <arg value="http://www.javablogs.com/ViewHotBlogEntries.action?view=rss"/>
+            <classpath>
+                <path refid="command.classpath"/>
+            </classpath>
+        </java>
+    </goal>
+</project>

@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 1.1//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="org.parabuild.ci.object.Group"
+        table="GROUPS"
+    >
+        <cache usage="read-write" />
+
+        <id
+            name="ID"
+            column="ID"
+            type="int"
+            unsaved-value="-1"
+        >
+            <generator class="identity">
+            </generator>
+        </id>
+
+        <version
+            name="timeStamp"
+            type="long"
+            column="TIMESTAMP"
+        />
+
+        <property
+            name="name"
+            type="java.lang.String"
+            column="NAME"
+            unique="true"
+        />
+
+        <property
+            name="description"
+            type="java.lang.String"
+            column="DESCR"
+            unique="true"
+        />
+
+        <property
+            name="enabled"
+            type="yes_no"
+            column="ENABLED"
+            unique="false"
+        />
+
+        <property
+            name="allowedToStartBuild"
+            type="yes_no"
+            column="ALLOWED_TO_START_BUILD"
+            unique="false"
+        />
+
+        <property
+            name="allowedToStopBuild"
+            type="yes_no"
+            column="ALLOWED_TO_STOP_BUILD"
+            unique="false"
+        />
+
+        <property
+            name="allowedToCreateBuild"
+            type="yes_no"
+            column="ALLOWED_TO_CREATE_BUILD"
+            unique="false"
+        />
+
+        <property
+            name="allowedToUpdateBuild"
+            type="yes_no"
+            column="ALLOWED_TO_UPDATE_BUILD"
+            unique="false"
+        />
+
+        <property
+            name="allowedToDeleteBuild"
+            type="yes_no"
+            column="ALLOWED_TO_DELETE_BUILD"
+            unique="false"
+        />
+
+        <property
+            name="allowedToViewBuild"
+            type="yes_no"
+            column="ALLOWED_TO_VIEW_BUILD"
+            unique="false"
+        />
+
+        <property
+            name="allowedToPublishResults"
+            type="yes_no"
+            column="ALLOWED_TO_PUBLISH_RESULTS"
+            unique="false"
+        />
+
+        <property
+            name="allowedToDeleteResults"
+            type="yes_no"
+            column="ALLOWED_TO_DELETE_RESULTS"
+            unique="false"
+        />
+
+        <property
+            name="allowedToCreateResultGroup"
+            type="yes_no"
+            column="ALLOWED_TO_CREATE_RESULT_GROUP"
+            unique="false"
+        />
+
+        <property
+            name="allowedToDeleteResultGroup"
+            type="yes_no"
+            column="ALLOWED_TO_DELETE_RESULT_GROUP"
+            unique="false"
+        />
+
+        <property
+            name="allowedToUpdateResultGroup"
+            type="yes_no"
+            column="ALLOWED_TO_UPDATE_RESULT_GROUP"
+            unique="false"
+        />
+
+        <property
+            name="allowedToViewResultGroup"
+            type="yes_no"
+            column="ALLOWED_TO_VIEW_RESULT_GROUP"
+            unique="false"
+        />
+
+        <property
+            name="allowedToActivateBuild"
+            type="yes_no"
+            column="ALLOWED_TO_ACTIVATE_BUILD"
+            unique="false"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Group.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

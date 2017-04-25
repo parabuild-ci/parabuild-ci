@@ -1,0 +1,777 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="0.8.4">
+  <Project filename="&lt;&lt;unnamed project&gt;&gt;">
+    <Jar>D:\projectory\bt\temp\classes</Jar>
+    <AuxClasspathEntry>D:\projectory\bt\3rdparty\viewtier\lib\viewtier.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>D:\projectory\bt\3rdparty\tomcat4127\common\endorsed\xercesImpl.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>D:\projectory\bt\3rdparty\tomcat4127\common\lib\servlet.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>D:\projectory\bt\3rdparty\hibernate201\hibernate2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>D:\projectory\bt\3rdparty\hibernate201\lib\dom4j.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>D:\projectory\bt\3rdparty\javamail131\mailapi.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>D:\projectory\bt\3rdparty\javamail131\smtp.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>D:\projectory\bt\3rdparty\jaf102\activation.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>D:\projectory\bt\3rdparty\hibernate201\lib\commons-lang.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>D:\projectory\bt\3rdparty\hibernate201\lib\commons-collections.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>D:\projectory\bt\3rdparty\hibernate201\lib\commons-beanutils.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>D:\projectory\bt\3rdparty\hibernate201\lib\commons-logging.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>D:\projectory\bt\3rdparty\tomcat4127\common\endorsed\xmlParserAPIs.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>D:\projectory\bt\3rdparty\quartz123\lib\quartz.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>D:\projectory\bt\3rdparty\ehcache06\ehcache-0.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>D:\projectory\bt\3rdparty\tomcat4127\server\lib\mx4j-jmx.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>D:\projectory\bt\3rdparty\cactus141j2ee13\lib\log4j-1.2.5.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>D:\projectory\bt\3rdparty\clover1302\lib\clover.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>D:\projectory\bt\3rdparty\hessian308\hessian-3.0.8.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>D:\projectory\bt\3rdparty\jaxen10fcs\jaxen-core.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>D:\projectory\bt\3rdparty\jaxen10fcs\jaxen-dom.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>D:\projectory\bt\3rdparty\hsqldb171\lib\hsqldb.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>D:\projectory\bt\3rdparty\jade600\jade-6.0\jade.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>D:\projectory\bt\3rdparty\cactus141j2ee13\lib\commons-httpclient-2.0alpha1-20020606.jar</AuxClasspathEntry>
+    <SrcDir>D:\projectory\bt\src</SrcDir>
+  </Project>
+  <BugInstance type="SE_BAD_FIELD" priority="1" abbrev="Se" category="CORRECTNESS">
+    <Class classname="org.parabuild.ci.services.Build"/>
+    <Field classname="org.parabuild.ci.services.Build" name="buildRunner" signature="Lviewtier/parabuild/build/BuildRunner;" isStatic="false"/>
+  </BugInstance>
+  <BugInstance type="SIC_INNER_SHOULD_BE_STATIC" priority="2" abbrev="SIC" category="PERFORMANCE">
+    <Class classname="org.parabuild.ci.versioncontrol.ChangeListWindowMerger$ChangeListDateComparator"/>
+  </BugInstance>
+  <BugInstance type="SIC_INNER_SHOULD_BE_STATIC" priority="2" abbrev="SIC" category="PERFORMANCE">
+    <Class classname="org.parabuild.ci.versioncontrol.ChangeListWindowMerger$FirstRunChangeListKey"/>
+  </BugInstance>
+  <BugInstance type="SIC_INNER_SHOULD_BE_STATIC" priority="2" abbrev="SIC" category="PERFORMANCE">
+    <Class classname="org.parabuild.ci.build.UnixBuildScriptGenerator$UnixWriter"/>
+  </BugInstance>
+  <BugInstance type="SIC_INNER_SHOULD_BE_STATIC" priority="2" abbrev="SIC" category="PERFORMANCE">
+    <Class classname="org.parabuild.ci.build.WindowsBuildScriptGenerator$WinWriter"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="org.parabuild.ci.error.Error"/>
+    <Method classname="org.parabuild.ci.error.Error" name="getTime" signature="()Ljava/util/Date;">
+      <SourceLine classname="org.parabuild.ci.error.Error" start="169" end="169" startBytecode="0" endBytecode="4" sourcefile="Error.java"/>
+    </Method>
+    <Field classname="org.parabuild.ci.error.Error" name="time" signature="Ljava/util/Date;" isStatic="false"/>
+    <SourceLine classname="org.parabuild.ci.error.Error" start="169" end="169" startBytecode="4" endBytecode="4" sourcefile="Error.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" abbrev="EI2" category="MALICIOUS_CODE">
+    <Class classname="org.parabuild.ci.error.Error"/>
+    <Method classname="org.parabuild.ci.error.Error" name="setTime" signature="(Ljava/util/Date;)V">
+      <SourceLine classname="org.parabuild.ci.error.Error" start="159" end="160" startBytecode="0" endBytecode="5" sourcefile="Error.java"/>
+    </Method>
+    <Field classname="viewtier/parabuild/notification/Error" name="time" signature="Ljava/util/Date;" isStatic="true"/>
+    <SourceLine classname="org.parabuild.ci.error.Error" start="159" end="159" startBytecode="2" endBytecode="2" sourcefile="Error.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="org.parabuild.ci.object.BuildRun"/>
+    <Method classname="org.parabuild.ci.object.BuildRun" name="getFinishedAt" signature="()Ljava/util/Date;">
+      <SourceLine classname="org.parabuild.ci.object.BuildRun" start="148" end="148" startBytecode="0" endBytecode="4" sourcefile="BuildRun.java"/>
+    </Method>
+    <Field classname="org.parabuild.ci.object.BuildRun" name="finishedAt" signature="Ljava/util/Date;" isStatic="false"/>
+    <SourceLine classname="org.parabuild.ci.object.BuildRun" start="148" end="148" startBytecode="4" endBytecode="4" sourcefile="BuildRun.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="org.parabuild.ci.object.BuildRun"/>
+    <Method classname="org.parabuild.ci.object.BuildRun" name="getStartedAt" signature="()Ljava/util/Date;">
+      <SourceLine classname="org.parabuild.ci.object.BuildRun" start="165" end="165" startBytecode="0" endBytecode="4" sourcefile="BuildRun.java"/>
+    </Method>
+    <Field classname="org.parabuild.ci.object.BuildRun" name="startedAt" signature="Ljava/util/Date;" isStatic="false"/>
+    <SourceLine classname="org.parabuild.ci.object.BuildRun" start="165" end="165" startBytecode="4" endBytecode="4" sourcefile="BuildRun.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" abbrev="EI2" category="MALICIOUS_CODE">
+    <Class classname="org.parabuild.ci.object.BuildRun"/>
+    <Method classname="org.parabuild.ci.object.BuildRun" name="setFinishedAt" signature="(Ljava/util/Date;)V">
+      <SourceLine classname="org.parabuild.ci.object.BuildRun" start="153" end="154" startBytecode="0" endBytecode="5" sourcefile="BuildRun.java"/>
+    </Method>
+    <Field classname="viewtier/parabuild/object/BuildRun" name="finishedAt" signature="Ljava/util/Date;" isStatic="true"/>
+    <SourceLine classname="org.parabuild.ci.object.BuildRun" start="153" end="153" startBytecode="2" endBytecode="2" sourcefile="BuildRun.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" abbrev="EI2" category="MALICIOUS_CODE">
+    <Class classname="org.parabuild.ci.object.BuildRun"/>
+    <Method classname="org.parabuild.ci.object.BuildRun" name="setStartedAt" signature="(Ljava/util/Date;)V">
+      <SourceLine classname="org.parabuild.ci.object.BuildRun" start="170" end="171" startBytecode="0" endBytecode="5" sourcefile="BuildRun.java"/>
+    </Method>
+    <Field classname="viewtier/parabuild/object/BuildRun" name="startedAt" signature="Ljava/util/Date;" isStatic="true"/>
+    <SourceLine classname="org.parabuild.ci.object.BuildRun" start="170" end="170" startBytecode="2" endBytecode="2" sourcefile="BuildRun.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="org.parabuild.ci.object.ChangeList"/>
+    <Method classname="org.parabuild.ci.object.ChangeList" name="getCreatedAt" signature="()Ljava/util/Date;">
+      <SourceLine classname="org.parabuild.ci.object.ChangeList" start="52" end="52" startBytecode="0" endBytecode="4" sourcefile="ChangeList.java"/>
+    </Method>
+    <Field classname="org.parabuild.ci.object.ChangeList" name="createdAt" signature="Ljava/util/Date;" isStatic="false"/>
+    <SourceLine classname="org.parabuild.ci.object.ChangeList" start="52" end="52" startBytecode="4" endBytecode="4" sourcefile="ChangeList.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" abbrev="EI2" category="MALICIOUS_CODE">
+    <Class classname="org.parabuild.ci.object.ChangeList"/>
+    <Method classname="org.parabuild.ci.object.ChangeList" name="setCreatedAt" signature="(Ljava/util/Date;)V">
+      <SourceLine classname="org.parabuild.ci.object.ChangeList" start="57" end="58" startBytecode="0" endBytecode="5" sourcefile="ChangeList.java"/>
+    </Method>
+    <Field classname="viewtier/parabuild/object/ChangeList" name="createdAt" signature="Ljava/util/Date;" isStatic="true"/>
+    <SourceLine classname="org.parabuild.ci.object.ChangeList" start="57" end="57" startBytecode="2" endBytecode="2" sourcefile="ChangeList.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="org.parabuild.ci.object.Issue"/>
+    <Method classname="org.parabuild.ci.object.Issue" name="getClosed" signature="()Ljava/util/Date;">
+      <SourceLine classname="org.parabuild.ci.object.Issue" start="198" end="198" startBytecode="0" endBytecode="4" sourcefile="Issue.java"/>
+    </Method>
+    <Field classname="org.parabuild.ci.object.Issue" name="closed" signature="Ljava/util/Date;" isStatic="false"/>
+    <SourceLine classname="org.parabuild.ci.object.Issue" start="198" end="198" startBytecode="4" endBytecode="4" sourcefile="Issue.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="org.parabuild.ci.object.Issue"/>
+    <Method classname="org.parabuild.ci.object.Issue" name="getReceived" signature="()Ljava/util/Date;">
+      <SourceLine classname="org.parabuild.ci.object.Issue" start="213" end="213" startBytecode="0" endBytecode="4" sourcefile="Issue.java"/>
+    </Method>
+    <Field classname="org.parabuild.ci.object.Issue" name="received" signature="Ljava/util/Date;" isStatic="false"/>
+    <SourceLine classname="org.parabuild.ci.object.Issue" start="213" end="213" startBytecode="4" endBytecode="4" sourcefile="Issue.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" abbrev="EI2" category="MALICIOUS_CODE">
+    <Class classname="org.parabuild.ci.object.Issue"/>
+    <Method classname="org.parabuild.ci.object.Issue" name="setClosed" signature="(Ljava/util/Date;)V">
+      <SourceLine classname="org.parabuild.ci.object.Issue" start="203" end="204" startBytecode="0" endBytecode="5" sourcefile="Issue.java"/>
+    </Method>
+    <Field classname="viewtier/parabuild/object/Issue" name="closed" signature="Ljava/util/Date;" isStatic="true"/>
+    <SourceLine classname="org.parabuild.ci.object.Issue" start="203" end="203" startBytecode="2" endBytecode="2" sourcefile="Issue.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" abbrev="EI2" category="MALICIOUS_CODE">
+    <Class classname="org.parabuild.ci.object.Issue"/>
+    <Method classname="org.parabuild.ci.object.Issue" name="setReceived" signature="(Ljava/util/Date;)V">
+      <SourceLine classname="org.parabuild.ci.object.Issue" start="218" end="219" startBytecode="0" endBytecode="5" sourcefile="Issue.java"/>
+    </Method>
+    <Field classname="viewtier/parabuild/object/Issue" name="received" signature="Ljava/util/Date;" isStatic="true"/>
+    <SourceLine classname="org.parabuild.ci.object.Issue" start="218" end="218" startBytecode="2" endBytecode="2" sourcefile="Issue.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="org.parabuild.ci.object.StepRun"/>
+    <Method classname="org.parabuild.ci.object.StepRun" name="getFinishedAt" signature="()Ljava/util/Date;">
+      <SourceLine classname="org.parabuild.ci.object.StepRun" start="120" end="120" startBytecode="0" endBytecode="4" sourcefile="StepRun.java"/>
+    </Method>
+    <Field classname="org.parabuild.ci.object.StepRun" name="finishedAt" signature="Ljava/util/Date;" isStatic="false"/>
+    <SourceLine classname="org.parabuild.ci.object.StepRun" start="120" end="120" startBytecode="4" endBytecode="4" sourcefile="StepRun.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="org.parabuild.ci.object.StepRun"/>
+    <Method classname="org.parabuild.ci.object.StepRun" name="getStartedAt" signature="()Ljava/util/Date;">
+      <SourceLine classname="org.parabuild.ci.object.StepRun" start="138" end="138" startBytecode="0" endBytecode="4" sourcefile="StepRun.java"/>
+    </Method>
+    <Field classname="org.parabuild.ci.object.StepRun" name="startedAt" signature="Ljava/util/Date;" isStatic="false"/>
+    <SourceLine classname="org.parabuild.ci.object.StepRun" start="138" end="138" startBytecode="4" endBytecode="4" sourcefile="StepRun.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" abbrev="EI2" category="MALICIOUS_CODE">
+    <Class classname="org.parabuild.ci.object.StepRun"/>
+    <Method classname="org.parabuild.ci.object.StepRun" name="setFinishedAt" signature="(Ljava/util/Date;)V">
+      <SourceLine classname="org.parabuild.ci.object.StepRun" start="125" end="127" startBytecode="0" endBytecode="9" sourcefile="StepRun.java"/>
+    </Method>
+    <Field classname="viewtier/parabuild/object/StepRun" name="finishedAt" signature="Ljava/util/Date;" isStatic="true"/>
+    <SourceLine classname="org.parabuild.ci.object.StepRun" start="125" end="125" startBytecode="2" endBytecode="2" sourcefile="StepRun.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" abbrev="EI2" category="MALICIOUS_CODE">
+    <Class classname="org.parabuild.ci.object.StepRun"/>
+    <Method classname="org.parabuild.ci.object.StepRun" name="setStartedAt" signature="(Ljava/util/Date;)V">
+      <SourceLine classname="org.parabuild.ci.object.StepRun" start="143" end="145" startBytecode="0" endBytecode="9" sourcefile="StepRun.java"/>
+    </Method>
+    <Field classname="viewtier/parabuild/object/StepRun" name="startedAt" signature="Ljava/util/Date;" isStatic="true"/>
+    <SourceLine classname="org.parabuild.ci.object.StepRun" start="143" end="143" startBytecode="2" endBytecode="2" sourcefile="StepRun.java"/>
+  </BugInstance>
+  <BugInstance type="UI_INHERITANCE_UNSAFE_GETRESOURCE" priority="2" abbrev="UI" category="CORRECTNESS">
+    <Class classname="org.parabuild.ci.configuration.DatabaseSchemeUpgrader"/>
+    <Method classname="org.parabuild.ci.configuration.DatabaseSchemeUpgrader" name="process" signature="()V">
+      <SourceLine classname="org.parabuild.ci.configuration.DatabaseSchemeUpgrader" start="26" end="76" startBytecode="0" endBytecode="380" sourcefile="DatabaseSchemeUpgrader.java"/>
+    </Method>
+    <SourceLine classname="org.parabuild.ci.configuration.DatabaseSchemeUpgrader" start="33" end="33" startBytecode="36" endBytecode="36" sourcefile="DatabaseSchemeUpgrader.java"/>
+  </BugInstance>
+  <BugInstance type="UI_INHERITANCE_UNSAFE_GETRESOURCE" priority="2" abbrev="UI" category="CORRECTNESS">
+    <Class classname="org.parabuild.ci.services.LoggingService"/>
+    <Method classname="org.parabuild.ci.services.LoggingService" name="reInitLog4j" signature="(Z)V">
+      <SourceLine classname="org.parabuild.ci.services.LoggingService" start="61" end="82" startBytecode="0" endBytecode="138" sourcefile="LoggingService.java"/>
+    </Method>
+    <SourceLine classname="org.parabuild.ci.services.LoggingService" start="65" end="65" startBytecode="33" endBytecode="33" sourcefile="LoggingService.java"/>
+  </BugInstance>
+  <Errors/>
+  <SummaryHTML><![CDATA[<html>
+<body>
+<h1>
+<center>Findbugs Summary Report</center>
+</h1>
+<h2>
+<center>Summary Analysis Generated at: <i>Sun, 29 Aug 2004 15:26:23 -0700</i>
+</center>
+</h2>
+<center>
+<table border="1" width="90%">
+<tr>
+<th><font size="4" face="Arial">Type Checked</font></th><th><font size="4" face="Arial">Count</font></th><th><font size="4" face="Arial">Bugs</font></th><th><font size="4" face="Arial">Percentage</font></th>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Outer Classes</font></td><td align="center"><font size="4" color="green" face="Arial">317</font></td><td align="center"><font size="4" color="red" face="Arial">20</font></td><td align="center"><font size="4" color="blue" face="Arial">6.31%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Inner Classes</font></td><td align="center"><font size="4" color="green" face="Arial">163</font></td><td align="center"><font size="4" color="red" face="Arial">4</font></td><td align="center"><font size="4" color="blue" face="Arial">2.45%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Interfaces</font></td><td align="center"><font size="4" color="green" face="Arial">32</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="5" face="Arial">Total</font></td><td align="center"><font size="5" color="green" face="Arial">512</font></td><td align="center"><font size="5" color="red" face="Arial">24</font></td><td align="center"><font size="5" color="blue" face="Arial">4.69%</font></td>
+</tr>
+<tr>
+<td colspan="4" align="center"><font size="4" face="Arial">20 Packages Analyzed</font></td>
+</tr>
+</table>
+</center>
+<br>
+<center>
+<font size="6" face="Arial">Bugs By Package</font>
+<br>
+<font size="4" face="Arial"><i>(Sorted by Total Bugs)</i></font>
+</center>
+<center>
+<h2>Analysis of Package: <i><font color="green">org.parabuild.ci.object</font></i>
+</h2>
+</center>
+<center>
+<table border="1" width="90%">
+<tr>
+<th><font size="4" face="Arial">Type Checked</font></th><th><font size="4" face="Arial">Count</font></th><th><font size="4" face="Arial">Bugs</font></th><th><font size="4" face="Arial">Percentage</font></th>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Outer Classes</font></td><td align="center"><font size="4" color="green" face="Arial">29</font></td><td align="center"><font size="4" color="red" face="Arial">14</font></td><td align="center"><font size="4" color="blue" face="Arial">48.28%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Inner Classes</font></td><td align="center"><font size="4" color="green" face="Arial">0</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Interfaces</font></td><td align="center"><font size="4" color="green" face="Arial">2</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="5" face="Arial">Total</font></td><td align="center"><font size="5" color="green" face="Arial">31</font></td><td align="center"><font size="5" color="red" face="Arial">14</font></td><td align="center"><font size="5" color="blue" face="Arial">45.16%</font></td>
+</tr>
+</table>
+<table border="0" width="90%">
+<tr>
+<td colspan="2" align="left"><font size="4" face="Arial">Most Buggy Class in Package with 4 Bugs:</font></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td align="left"><font size="4" color="red" face="Arial"><i>org.parabuild.ci.object.BuildRun</i></font></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td align="left"><font size="4" color="red" face="Arial"><i>org.parabuild.ci.object.StepRun</i></font></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td align="left"><font size="4" color="red" face="Arial"><i>org.parabuild.ci.object.Issue</i></font></td>
+</tr>
+</table>
+</center>
+<br>
+<center>
+<h2>Analysis of Package: <i><font color="green">org.parabuild.ci.build</font></i>
+</h2>
+</center>
+<center>
+<table border="1" width="90%">
+<tr>
+<th><font size="4" face="Arial">Type Checked</font></th><th><font size="4" face="Arial">Count</font></th><th><font size="4" face="Arial">Bugs</font></th><th><font size="4" face="Arial">Percentage</font></th>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Outer Classes</font></td><td align="center"><font size="4" color="green" face="Arial">57</font></td><td align="center"><font size="4" color="red" face="Arial">1</font></td><td align="center"><font size="4" color="blue" face="Arial">1.75%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Inner Classes</font></td><td align="center"><font size="4" color="green" face="Arial">12</font></td><td align="center"><font size="4" color="red" face="Arial">4</font></td><td align="center"><font size="4" color="blue" face="Arial">33.33%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Interfaces</font></td><td align="center"><font size="4" color="green" face="Arial">6</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="5" face="Arial">Total</font></td><td align="center"><font size="5" color="green" face="Arial">75</font></td><td align="center"><font size="5" color="red" face="Arial">5</font></td><td align="center"><font size="5" color="blue" face="Arial">6.67%</font></td>
+</tr>
+</table>
+<table border="0" width="90%">
+<tr>
+<td colspan="2" align="left"><font size="4" face="Arial">Most Buggy Class in Package with 1 Bug:</font></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td align="left"><font size="4" color="red" face="Arial"><i>org.parabuild.ci.services.Build</i></font></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td align="left"><font size="4" color="red" face="Arial"><i>org.parabuild.ci.versioncontrol.ChangeListWindowMerger$ChangeListDateComparator</i></font></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td align="left"><font size="4" color="red" face="Arial"><i>org.parabuild.ci.versioncontrol.ChangeListWindowMerger$FirstRunChangeListKey</i></font></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td align="left"><font size="4" color="red" face="Arial"><i>org.parabuild.ci.build.UnixBuildScriptGenerator$UnixWriter</i></font></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td align="left"><font size="4" color="red" face="Arial"><i>org.parabuild.ci.build.WindowsBuildScriptGenerator$WinWriter</i></font></td>
+</tr>
+</table>
+</center>
+<br>
+<center>
+<h2>Analysis of Package: <i><font color="green">org.parabuild.ci.notification</font></i>
+</h2>
+</center>
+<center>
+<table border="1" width="90%">
+<tr>
+<th><font size="4" face="Arial">Type Checked</font></th><th><font size="4" face="Arial">Count</font></th><th><font size="4" face="Arial">Bugs</font></th><th><font size="4" face="Arial">Percentage</font></th>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Outer Classes</font></td><td align="center"><font size="4" color="green" face="Arial">10</font></td><td align="center"><font size="4" color="red" face="Arial">2</font></td><td align="center"><font size="4" color="blue" face="Arial">20.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Inner Classes</font></td><td align="center"><font size="4" color="green" face="Arial">0</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Interfaces</font></td><td align="center"><font size="4" color="green" face="Arial">3</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="5" face="Arial">Total</font></td><td align="center"><font size="5" color="green" face="Arial">13</font></td><td align="center"><font size="5" color="red" face="Arial">2</font></td><td align="center"><font size="5" color="blue" face="Arial">15.38%</font></td>
+</tr>
+</table>
+<table border="0" width="90%">
+<tr>
+<td colspan="2" align="left"><font size="4" face="Arial">Most Buggy Class in Package with 2 Bugs:</font></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td align="left"><font size="4" color="red" face="Arial"><i>org.parabuild.ci.error.Error</i></font></td>
+</tr>
+</table>
+</center>
+<br>
+<center>
+<h2>Analysis of Package: <i><font color="green">org.parabuild.ci.configuration</font></i>
+</h2>
+</center>
+<center>
+<table border="1" width="90%">
+<tr>
+<th><font size="4" face="Arial">Type Checked</font></th><th><font size="4" face="Arial">Count</font></th><th><font size="4" face="Arial">Bugs</font></th><th><font size="4" face="Arial">Percentage</font></th>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Outer Classes</font></td><td align="center"><font size="4" color="green" face="Arial">11</font></td><td align="center"><font size="4" color="red" face="Arial">1</font></td><td align="center"><font size="4" color="blue" face="Arial">9.09%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Inner Classes</font></td><td align="center"><font size="4" color="green" face="Arial">109</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Interfaces</font></td><td align="center"><font size="4" color="green" face="Arial">1</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="5" face="Arial">Total</font></td><td align="center"><font size="5" color="green" face="Arial">121</font></td><td align="center"><font size="5" color="red" face="Arial">1</font></td><td align="center"><font size="5" color="blue" face="Arial">0.83%</font></td>
+</tr>
+</table>
+<table border="0" width="90%">
+<tr>
+<td colspan="2" align="left"><font size="4" face="Arial">Most Buggy Class in Package with 1 Bug:</font></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td align="left"><font size="4" color="red" face="Arial"><i>org.parabuild.ci.build.PublicLicenseValidator</i></font></td>
+</tr>
+</table>
+</center>
+<br>
+<center>
+<h2>Analysis of Package: <i><font color="green">org.parabuild.ci.services</font></i>
+</h2>
+</center>
+<center>
+<table border="1" width="90%">
+<tr>
+<th><font size="4" face="Arial">Type Checked</font></th><th><font size="4" face="Arial">Count</font></th><th><font size="4" face="Arial">Bugs</font></th><th><font size="4" face="Arial">Percentage</font></th>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Outer Classes</font></td><td align="center"><font size="4" color="green" face="Arial">12</font></td><td align="center"><font size="4" color="red" face="Arial">1</font></td><td align="center"><font size="4" color="blue" face="Arial">8.33%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Inner Classes</font></td><td align="center"><font size="4" color="green" face="Arial">0</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Interfaces</font></td><td align="center"><font size="4" color="green" face="Arial">1</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="5" face="Arial">Total</font></td><td align="center"><font size="5" color="green" face="Arial">13</font></td><td align="center"><font size="5" color="red" face="Arial">1</font></td><td align="center"><font size="5" color="blue" face="Arial">7.69%</font></td>
+</tr>
+</table>
+<table border="0" width="90%">
+<tr>
+<td colspan="2" align="left"><font size="4" face="Arial">Most Buggy Class in Package with 1 Bug:</font></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td align="left"><font size="4" color="red" face="Arial"><i>org.parabuild.ci.services.LoggingService</i></font></td>
+</tr>
+</table>
+</center>
+<br>
+<center>
+<h2>Analysis of Package: <i><font color="green">org.parabuild.ci.persistance</font></i>
+</h2>
+</center>
+<center>
+<table border="1" width="90%">
+<tr>
+<th><font size="4" face="Arial">Type Checked</font></th><th><font size="4" face="Arial">Count</font></th><th><font size="4" face="Arial">Bugs</font></th><th><font size="4" face="Arial">Percentage</font></th>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Outer Classes</font></td><td align="center"><font size="4" color="green" face="Arial">5</font></td><td align="center"><font size="4" color="red" face="Arial">1</font></td><td align="center"><font size="4" color="blue" face="Arial">20.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Inner Classes</font></td><td align="center"><font size="4" color="green" face="Arial">0</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Interfaces</font></td><td align="center"><font size="4" color="green" face="Arial">2</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="5" face="Arial">Total</font></td><td align="center"><font size="5" color="green" face="Arial">7</font></td><td align="center"><font size="5" color="red" face="Arial">1</font></td><td align="center"><font size="5" color="blue" face="Arial">14.29%</font></td>
+</tr>
+</table>
+<table border="0" width="90%">
+<tr>
+<td colspan="2" align="left"><font size="4" face="Arial">Most Buggy Class in Package with 1 Bug:</font></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td align="left"><font size="4" color="red" face="Arial"><i>org.parabuild.ci.configuration.DatabaseSchemeUpgrader</i></font></td>
+</tr>
+</table>
+</center>
+<br>
+<center>
+<h2>Analysis of Package: <i><font color="green">org.parabuild.ci.webui.common</font></i>
+</h2>
+</center>
+<center>
+<table border="1" width="90%">
+<tr>
+<th><font size="4" face="Arial">Type Checked</font></th><th><font size="4" face="Arial">Count</font></th><th><font size="4" face="Arial">Bugs</font></th><th><font size="4" face="Arial">Percentage</font></th>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Outer Classes</font></td><td align="center"><font size="4" color="green" face="Arial">29</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Inner Classes</font></td><td align="center"><font size="4" color="green" face="Arial">4</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Interfaces</font></td><td align="center"><font size="4" color="green" face="Arial">3</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="5" face="Arial">Total</font></td><td align="center"><font size="5" color="green" face="Arial">36</font></td><td align="center"><font size="5" color="red" face="Arial">0</font></td><td align="center"><font size="5" color="blue" face="Arial">0.00%</font></td>
+</tr>
+</table>
+</center>
+<br>
+<center>
+<h2>Analysis of Package: <i><font color="green">org.parabuild.ci.common</font></i>
+</h2>
+</center>
+<center>
+<table border="1" width="90%">
+<tr>
+<th><font size="4" face="Arial">Type Checked</font></th><th><font size="4" face="Arial">Count</font></th><th><font size="4" face="Arial">Bugs</font></th><th><font size="4" face="Arial">Percentage</font></th>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Outer Classes</font></td><td align="center"><font size="4" color="green" face="Arial">14</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Inner Classes</font></td><td align="center"><font size="4" color="green" face="Arial">1</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Interfaces</font></td><td align="center"><font size="4" color="green" face="Arial">1</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="5" face="Arial">Total</font></td><td align="center"><font size="5" color="green" face="Arial">16</font></td><td align="center"><font size="5" color="red" face="Arial">0</font></td><td align="center"><font size="5" color="blue" face="Arial">0.00%</font></td>
+</tr>
+</table>
+</center>
+<br>
+<center>
+<h2>Analysis of Package: <i><font color="green">org.parabuild.ci.process</font></i>
+</h2>
+</center>
+<center>
+<table border="1" width="90%">
+<tr>
+<th><font size="4" face="Arial">Type Checked</font></th><th><font size="4" face="Arial">Count</font></th><th><font size="4" face="Arial">Bugs</font></th><th><font size="4" face="Arial">Percentage</font></th>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Outer Classes</font></td><td align="center"><font size="4" color="green" face="Arial">14</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Inner Classes</font></td><td align="center"><font size="4" color="green" face="Arial">0</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Interfaces</font></td><td align="center"><font size="4" color="green" face="Arial">4</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="5" face="Arial">Total</font></td><td align="center"><font size="5" color="green" face="Arial">18</font></td><td align="center"><font size="5" color="red" face="Arial">0</font></td><td align="center"><font size="5" color="blue" face="Arial">0.00%</font></td>
+</tr>
+</table>
+</center>
+<br>
+<center>
+<h2>Analysis of Package: <i><font color="green">org.parabuild.ci.webui</font></i>
+</h2>
+</center>
+<center>
+<table border="1" width="90%">
+<tr>
+<th><font size="4" face="Arial">Type Checked</font></th><th><font size="4" face="Arial">Count</font></th><th><font size="4" face="Arial">Bugs</font></th><th><font size="4" face="Arial">Percentage</font></th>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Outer Classes</font></td><td align="center"><font size="4" color="green" face="Arial">29</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Inner Classes</font></td><td align="center"><font size="4" color="green" face="Arial">6</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Interfaces</font></td><td align="center"><font size="4" color="green" face="Arial">0</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="5" face="Arial">Total</font></td><td align="center"><font size="5" color="green" face="Arial">35</font></td><td align="center"><font size="5" color="red" face="Arial">0</font></td><td align="center"><font size="5" color="blue" face="Arial">0.00%</font></td>
+</tr>
+</table>
+</center>
+<br>
+<center>
+<h2>Analysis of Package: <i><font color="green">org.parabuild.ci.remote.internal</font></i>
+</h2>
+</center>
+<center>
+<table border="1" width="90%">
+<tr>
+<th><font size="4" face="Arial">Type Checked</font></th><th><font size="4" face="Arial">Count</font></th><th><font size="4" face="Arial">Bugs</font></th><th><font size="4" face="Arial">Percentage</font></th>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Outer Classes</font></td><td align="center"><font size="4" color="green" face="Arial">10</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Inner Classes</font></td><td align="center"><font size="4" color="green" face="Arial">0</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Interfaces</font></td><td align="center"><font size="4" color="green" face="Arial">0</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="5" face="Arial">Total</font></td><td align="center"><font size="5" color="green" face="Arial">10</font></td><td align="center"><font size="5" color="red" face="Arial">0</font></td><td align="center"><font size="5" color="blue" face="Arial">0.00%</font></td>
+</tr>
+</table>
+</center>
+<br>
+<center>
+<h2>Analysis of Package: <i><font color="green">org.parabuild.ci.integration.bugzilla</font></i>
+</h2>
+</center>
+<center>
+<table border="1" width="90%">
+<tr>
+<th><font size="4" face="Arial">Type Checked</font></th><th><font size="4" face="Arial">Count</font></th><th><font size="4" face="Arial">Bugs</font></th><th><font size="4" face="Arial">Percentage</font></th>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Outer Classes</font></td><td align="center"><font size="4" color="green" face="Arial">3</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Inner Classes</font></td><td align="center"><font size="4" color="green" face="Arial">0</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Interfaces</font></td><td align="center"><font size="4" color="green" face="Arial">0</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="5" face="Arial">Total</font></td><td align="center"><font size="5" color="green" face="Arial">3</font></td><td align="center"><font size="5" color="red" face="Arial">0</font></td><td align="center"><font size="5" color="blue" face="Arial">0.00%</font></td>
+</tr>
+</table>
+</center>
+<br>
+<center>
+<h2>Analysis of Package: <i><font color="green">org.parabuild.ci.archive.internal</font></i>
+</h2>
+</center>
+<center>
+<table border="1" width="90%">
+<tr>
+<th><font size="4" face="Arial">Type Checked</font></th><th><font size="4" face="Arial">Count</font></th><th><font size="4" face="Arial">Bugs</font></th><th><font size="4" face="Arial">Percentage</font></th>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Outer Classes</font></td><td align="center"><font size="4" color="green" face="Arial">2</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Inner Classes</font></td><td align="center"><font size="4" color="green" face="Arial">1</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Interfaces</font></td><td align="center"><font size="4" color="green" face="Arial">0</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="5" face="Arial">Total</font></td><td align="center"><font size="5" color="green" face="Arial">3</font></td><td align="center"><font size="5" color="red" face="Arial">0</font></td><td align="center"><font size="5" color="blue" face="Arial">0.00%</font></td>
+</tr>
+</table>
+</center>
+<br>
+<center>
+<h2>Analysis of Package: <i><font color="green">org.parabuild.ci.remote</font></i>
+</h2>
+</center>
+<center>
+<table border="1" width="90%">
+<tr>
+<th><font size="4" face="Arial">Type Checked</font></th><th><font size="4" face="Arial">Count</font></th><th><font size="4" face="Arial">Bugs</font></th><th><font size="4" face="Arial">Percentage</font></th>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Outer Classes</font></td><td align="center"><font size="4" color="green" face="Arial">1</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Inner Classes</font></td><td align="center"><font size="4" color="green" face="Arial">0</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Interfaces</font></td><td align="center"><font size="4" color="green" face="Arial">2</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="5" face="Arial">Total</font></td><td align="center"><font size="5" color="green" face="Arial">3</font></td><td align="center"><font size="5" color="red" face="Arial">0</font></td><td align="center"><font size="5" color="blue" face="Arial">0.00%</font></td>
+</tr>
+</table>
+</center>
+<br>
+<center>
+<h2>Analysis of Package: <i><font color="green">org.parabuild.ci.relnotes</font></i>
+</h2>
+</center>
+<center>
+<table border="1" width="90%">
+<tr>
+<th><font size="4" face="Arial">Type Checked</font></th><th><font size="4" face="Arial">Count</font></th><th><font size="4" face="Arial">Bugs</font></th><th><font size="4" face="Arial">Percentage</font></th>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Outer Classes</font></td><td align="center"><font size="4" color="green" face="Arial">7</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Inner Classes</font></td><td align="center"><font size="4" color="green" face="Arial">1</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Interfaces</font></td><td align="center"><font size="4" color="green" face="Arial">1</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="5" face="Arial">Total</font></td><td align="center"><font size="5" color="green" face="Arial">9</font></td><td align="center"><font size="5" color="red" face="Arial">0</font></td><td align="center"><font size="5" color="blue" face="Arial">0.00%</font></td>
+</tr>
+</table>
+</center>
+<br>
+<center>
+<h2>Analysis of Package: <i><font color="green">org.parabuild.ci.webui.admin</font></i>
+</h2>
+</center>
+<center>
+<table border="1" width="90%">
+<tr>
+<th><font size="4" face="Arial">Type Checked</font></th><th><font size="4" face="Arial">Count</font></th><th><font size="4" face="Arial">Bugs</font></th><th><font size="4" face="Arial">Percentage</font></th>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Outer Classes</font></td><td align="center"><font size="4" color="green" face="Arial">77</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Inner Classes</font></td><td align="center"><font size="4" color="green" face="Arial">27</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Interfaces</font></td><td align="center"><font size="4" color="green" face="Arial">1</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="5" face="Arial">Total</font></td><td align="center"><font size="5" color="green" face="Arial">105</font></td><td align="center"><font size="5" color="red" face="Arial">0</font></td><td align="center"><font size="5" color="blue" face="Arial">0.00%</font></td>
+</tr>
+</table>
+</center>
+<br>
+<center>
+<h2>Analysis of Package: <i><font color="green">org.parabuild.ci.remote.services</font></i>
+</h2>
+</center>
+<center>
+<table border="1" width="90%">
+<tr>
+<th><font size="4" face="Arial">Type Checked</font></th><th><font size="4" face="Arial">Count</font></th><th><font size="4" face="Arial">Bugs</font></th><th><font size="4" face="Arial">Percentage</font></th>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Outer Classes</font></td><td align="center"><font size="4" color="green" face="Arial">2</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Inner Classes</font></td><td align="center"><font size="4" color="green" face="Arial">0</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Interfaces</font></td><td align="center"><font size="4" color="green" face="Arial">2</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="5" face="Arial">Total</font></td><td align="center"><font size="5" color="green" face="Arial">4</font></td><td align="center"><font size="5" color="red" face="Arial">0</font></td><td align="center"><font size="5" color="blue" face="Arial">0.00%</font></td>
+</tr>
+</table>
+</center>
+<br>
+<center>
+<h2>Analysis of Package: <i><font color="green">org.parabuild.ci.integration</font></i>
+</h2>
+</center>
+<center>
+<table border="1" width="90%">
+<tr>
+<th><font size="4" face="Arial">Type Checked</font></th><th><font size="4" face="Arial">Count</font></th><th><font size="4" face="Arial">Bugs</font></th><th><font size="4" face="Arial">Percentage</font></th>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Outer Classes</font></td><td align="center"><font size="4" color="green" face="Arial">3</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Inner Classes</font></td><td align="center"><font size="4" color="green" face="Arial">2</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Interfaces</font></td><td align="center"><font size="4" color="green" face="Arial">2</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="5" face="Arial">Total</font></td><td align="center"><font size="5" color="green" face="Arial">7</font></td><td align="center"><font size="5" color="red" face="Arial">0</font></td><td align="center"><font size="5" color="blue" face="Arial">0.00%</font></td>
+</tr>
+</table>
+</center>
+<br>
+<center>
+<h2>Analysis of Package: <i><font color="green">org.parabuild.ci</font></i>
+</h2>
+</center>
+<center>
+<table border="1" width="90%">
+<tr>
+<th><font size="4" face="Arial">Type Checked</font></th><th><font size="4" face="Arial">Count</font></th><th><font size="4" face="Arial">Bugs</font></th><th><font size="4" face="Arial">Percentage</font></th>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Outer Classes</font></td><td align="center"><font size="4" color="green" face="Arial">1</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Inner Classes</font></td><td align="center"><font size="4" color="green" face="Arial">0</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Interfaces</font></td><td align="center"><font size="4" color="green" face="Arial">0</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="5" face="Arial">Total</font></td><td align="center"><font size="5" color="green" face="Arial">1</font></td><td align="center"><font size="5" color="red" face="Arial">0</font></td><td align="center"><font size="5" color="blue" face="Arial">0.00%</font></td>
+</tr>
+</table>
+</center>
+<br>
+<center>
+<h2>Analysis of Package: <i><font color="green">org.parabuild.ci.archive</font></i>
+</h2>
+</center>
+<center>
+<table border="1" width="90%">
+<tr>
+<th><font size="4" face="Arial">Type Checked</font></th><th><font size="4" face="Arial">Count</font></th><th><font size="4" face="Arial">Bugs</font></th><th><font size="4" face="Arial">Percentage</font></th>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Outer Classes</font></td><td align="center"><font size="4" color="green" face="Arial">1</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Inner Classes</font></td><td align="center"><font size="4" color="green" face="Arial">0</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="4" face="Arial">Interfaces</font></td><td align="center"><font size="4" color="green" face="Arial">1</font></td><td align="center"><font size="4" color="red" face="Arial">0</font></td><td align="center"><font size="4" color="blue" face="Arial">0.00%</font></td>
+</tr>
+<tr>
+<td align="left"><font size="5" face="Arial">Total</font></td><td align="center"><font size="5" color="green" face="Arial">2</font></td><td align="center"><font size="5" color="red" face="Arial">0</font></td><td align="center"><font size="5" color="blue" face="Arial">0.00%</font></td>
+</tr>
+</table>
+</center>
+<br>
+</body>
+</html>
+    ]]></SummaryHTML>
+</BugCollection>

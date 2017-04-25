@@ -1,0 +1,119 @@
+<!-- Copyright 2003 Zelix Pty Ltd (ABN 47 078 740 093) -->
+<html>
+<head>
+<title>Zelix KlassMaster Trim Class Exclude Parameter</title>
+   <meta name="keywords" content="java obfuscator,java code obfuscator,obfuscation">
+   <meta name="description" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <meta name="classification" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <link rel=stylesheet href="../ZKM.css" TYPE="text/css">
+</head>
+<body background="../images/small-white-mist1.jpg" bgcolor="#E1E1E1">
+<center><a href="index.html"><img src=../images/ZKM_b4.gif alt="Zelix KlassMaster" width=264 height=62 border=0></a></center>
+<hr>
+<center>
+<table width=770 border=0>
+   <tr>
+      <td colspan=2>
+         <h1>Trim Class Exclude Parameter</h1>
+      </td>
+   </tr>
+   <tr>
+      <td colspan=2>
+         &nbsp;
+      </td>
+   </tr>
+   <tr>
+      <td valign="top" colspan=2>
+         The Class Exclude Parameter dialog has two facets:
+         <ul>
+            <li>the specification of the class itself and
+            <li>the specification of the package that contains the class
+         </ul>
+         For a class to be excluded it must match the full specification.
+   </tr>
+   <tr>
+      <td colspan=2>
+         &nbsp;
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <h3>The class itself</h3>
+         In specifying the class which is to be excluded, you can specify:
+         <ul>
+            <li>whether its access level is
+               <ul>
+                  <li>not specifed
+                  <li>public
+                  <li>package (i.e. default)
+               </ul>
+            <li>whether it has or doesn't have the modifiers
+               <ul>
+                  <li>abstract 
+                  <li>final 
+                  <li>interface (i.e. the class is an interface)
+               </ul>
+            <li>its name or a <b>"*" wildcard</b> string that its unqualified name must match
+            <li>the fully qualified name of its superclass
+            <li>a comma separated list of fully qualified interface names that it implements.
+         </ul>
+      </td>
+      <td valign="top">
+         <img src=../images/trimClassExclude0.gif width=474 height=356 alt="Class Exclude Parameter - Class itself"><p>
+      </td>
+   </tr>
+   <tr>
+      <td colspan=2>
+         &nbsp;
+      </td>
+   </tr>
+   <tr>
+      <td valign="top">
+         <h3>The containing package</h3>
+         To specify the containing package, click the <b>Containing package</b> tab.
+        If you clear the <b>Name</b> field then you are specifying that the class is in the default package. 
+      </td>
+      <td valign="top">
+         <img src=../images/trimClassExclude1.gif width=474 height=356 alt="Class Exclude Parameter - Containing package"><p>
+      </td>
+   </tr>
+   <tr>
+      <td colspan=2>
+         &nbsp;
+      </td>
+   </tr>
+   <tr>
+      <td valign="top" colspan=2>
+         <h3>An example</h3>
+         The specification:
+         <p>
+         <code>public final p*.*.C*x extends pack1.Class1 implements java.io.Serializable, pack2.Class2</code>
+         <p>
+         means exclude all classes that:
+         <ul>
+           <li>are <code>public final</code>
+           <li>have a name that matches <code>"C*x"</code>
+           <li>extend <code>pack1.Class1</code>
+           <li>implement <code>java.io.Serializable</code> and <code>pack2.Class2</code>
+           <li>are contained in a package whose name matches <code>"p*.*"</code>
+         </ul>
+      </td>
+   </tr>
+</table>
+</center>
+<hr>
+<center>
+<table>
+   <tr>
+      <td>
+         <a href=trimExclusionType.html><img src=../images/uarrw.gif alt="Trim Exclude Parameter Type"></a>
+      </td>
+      <td>
+         <a href=trimExcludeFieldType.html><img src=../images/rarrw.gif alt="Trim Field Exclude Parameter"></a>
+      </td>
+   </tr>
+</table>
+</center>
+Copyright &copy; 2003 <a href="mailto:WebMaster@zelix.com"><font size=-1>Zelix Pty Ltd</font></a> (ABN 47 078 740 093)
+</body>
+</html>

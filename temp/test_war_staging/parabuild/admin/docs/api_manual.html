@@ -1,0 +1,639 @@
+<html><head><META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Parabuild 4.4</title><link href="ref.css" rel="stylesheet" type="text/css"><meta content="DocBook XSL Stylesheets V1.64.1" name="generator"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="book" lang="en"><div class="titlepage"><div><div><h1 class="title"><a name="N10001"></a>Parabuild 4.4</h1></div><div><h2 class="subtitle">Web Service API Manual</h2></div><div><p class="copyright">Copyright &copy; 2017 Parabuild CI</p></div></div><div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="preface"><a href="#N1000D">Preface</a></span></dt><dd><dl><dt><span class="sect1"><a href="#N10010">1. About This Manual</a></span></dt><dt><span class="sect1"><a href="#N10015">2. Audience</a></span></dt><dt><span class="sect1"><a href="#N1001A">3. Technical Support</a></span></dt></dl></dd><dt><span class="chapter"><a href="#N1003E">1. Accessing Web Service API</a></span></dt><dd><dl><dt><span class="section"><a href="#N10041">1.1. Web Service WSDL</a></span></dt><dt><span class="section"><a href="#N1004B">1.2. Web Service URL</a></span></dt><dt><span class="section"><a href="#N10056">1.3. Authentication and Authorisation</a></span></dt></dl></dd><dt><span class="chapter"><a href="#N1005B">2. Web Service API</a></span></dt><dd><dl><dt><span class="sect1"><a href="#N1005E">2.1. Querying System Information</a></span></dt><dd><dl><dt><span class="sect2"><a href="#N10061">2.1.1. Obtaining Server Version</a></span></dt><dt><span class="sect2"><a href="#N10067">2.1.2. Querying System Properties</a></span></dt><dt><span class="sect2"><a href="#N1006D">2.1.3. Listing Global Version Control User to Email Map</a></span></dt><dt><span class="sect2"><a href="#N10073">2.1.4. Listing Projects</a></span></dt><dt><span class="sect2"><a href="#N10079">2.1.5. Obtaining Project Attributes</a></span></dt><dt><span class="sect2"><a href="#N1007F">2.1.6. Obtaining Project Build Configurations</a></span></dt><dt><span class="sect2"><a href="#N10085">2.1.7. Listing Display Groups</a></span></dt><dt><span class="sect2"><a href="#N1008B">2.1.8. Obtaining Build Configurations Belonging to Display Group</a></span></dt></dl></dd><dt><span class="sect1"><a href="#N10091">2.2. Querying Build Farms and Agents</a></span></dt><dd><dl><dt><span class="sect2"><a href="#N10096">2.2.1. Listing Build Farm Configurations</a></span></dt><dt><span class="sect2"><a href="#N1009C">2.2.2. Obtaining Build Farm Attributes</a></span></dt><dt><span class="sect2"><a href="#N100A2">2.2.3. Obtaining Build Farm Agents</a></span></dt><dt><span class="sect2"><a href="#N100A8">2.2.4. Listing Agent Configurations</a></span></dt><dt><span class="sect2"><a href="#N100AE">2.2.5. Obtaining Agent Configuration</a></span></dt><dt><span class="sect2"><a href="#N100B4">2.2.6. Listing Agent Statuses</a></span></dt></dl></dd><dt><span class="sect1"><a href="#N100BA">2.3. Querying Build Configuration</a></span></dt><dd><dl><dt><span class="sect2"><a href="#N100BF">2.3.1. Listing Active Build Configurations</a></span></dt><dt><span class="sect2"><a href="#N100C5">2.3.2. Obtaining Build Configuration Attributes</a></span></dt><dt><span class="sect2"><a href="#N100CB">2.3.3. Obtaining Version Control Settings</a></span></dt><dt><span class="sect2"><a href="#N100D1">2.3.4. Obtaining Schedule Properties</a></span></dt><dt><span class="sect2"><a href="#N100D7">2.3.5. Obtaining Label Properties</a></span></dt><dt><span class="sect2"><a href="#N100DD">2.3.6. Obtaining Log Configurations</a></span></dt><dt><span class="sect2"><a href="#N100E3">2.3.7. Obtaining Log Configuration Properties</a></span></dt><dt><span class="sect2"><a href="#N100E9">2.3.8. Obtaining Version Control User to Email Map</a></span></dt><dt><span class="sect2"><a href="#N100EF">2.3.9. Obtaining Build Watchers</a></span></dt><dt><span class="sect2"><a href="#N100F5">2.3.10. Obtaining Build Steps</a></span></dt><dt><span class="sect2"><a href="#N100FB">2.3.11. Obtaining Schedule Items</a></span></dt><dt><span class="sect2"><a href="#N10101">2.3.12. Obtaining Issue Trackers</a></span></dt><dt><span class="sect2"><a href="#N10107">2.3.13. Obtaining Issue Tracker Properties</a></span></dt><dt><span class="sect2"><a href="#N1010D">2.3.14. Obtaining Start Parameters</a></span></dt></dl></dd><dt><span class="sect1"><a href="#N10113">2.4. Accessing Build Results</a></span></dt><dd><dl><dt><span class="sect2"><a href="#N10118">2.4.1. Obtaining Number of Build Runs</a></span></dt><dt><span class="sect2"><a href="#N1011E">2.4.2. Obtaining Build Run</a></span></dt><dt><span class="sect2"><a href="#N10124">2.4.3. Querying Completed Build Runs</a></span></dt><dt><span class="sect2"><a href="#N1012A">2.4.4. Obtaining Last Successful Build Run</a></span></dt><dt><span class="sect2"><a href="#N10130">2.4.5. Finding Last Successful Build Runs by Display Group ID and
+          Change List Number
+        </a></span></dt><dt><span class="sect2"><a href="#N10136">2.4.6. Obtaining Build Run Attributes</a></span></dt><dt><span class="sect2"><a href="#N1013C">2.4.7. Obtaining Change Lists in Given Build Run</a></span></dt><dt><span class="sect2"><a href="#N10142">2.4.8. Obtaining Change List Changes</a></span></dt><dt><span class="sect2"><a href="#N10148">2.4.9. Obtaining Build Step Runs</a></span></dt><dt><span class="sect2"><a href="#N1014E">2.4.10. Obtaining Step Run Attributes</a></span></dt><dt><span class="sect2"><a href="#N10154">2.4.11. Obtaining Build Step Logs</a></span></dt><dt><span class="sect2"><a href="#N1015A">2.4.12. Obtaining Build Step Results</a></span></dt><dt><span class="sect2"><a href="#N10160">2.4.13. Obtaining Change List</a></span></dt><dt><span class="sect2"><a href="#N10166">2.4.14. Obtaining Release Notes</a></span></dt><dt><span class="sect2"><a href="#N1016C">2.4.15. Obtaining Issue</a></span></dt><dt><span class="sect2"><a href="#N10172">2.4.16. Obtaining Issue Attributes</a></span></dt><dt><span class="sect2"><a href="#N10178">2.4.17. Obtaining Issue Change Lists</a></span></dt><dt><span class="sect2"><a href="#N1017E">2.4.18. Querying Result Groups</a></span></dt><dt><span class="sect2"><a href="#N10184">2.4.19. Querying Project Result Groups</a></span></dt><dt><span class="sect2"><a href="#N1018A">2.4.20. Obtaining Result Configurations</a></span></dt><dt><span class="sect2"><a href="#N10190">2.4.21. Obtaining Result Configuration Properties</a></span></dt><dt><span class="sect2"><a href="#N10196">2.4.22. Obtaining Published Build Step Results</a></span></dt><dt><span class="sect2"><a href="#N1019C">2.4.23. Obtaining Build Run Actions</a></span></dt><dt><span class="sect2"><a href="#N101A2">2.4.24. Querying Test Suite Names</a></span></dt><dt><span class="sect2"><a href="#N101A8">2.4.25. Obtaining Test Case names</a></span></dt><dt><span class="sect2"><a href="#N101AE">2.4.26. Obtaining Build Run Tests</a></span></dt></dl></dd><dt><span class="sect1"><a href="#N101B4">2.5. Querying Build Statistics</a></span></dt><dd><dl><dt><span class="sect2"><a href="#N101B7">2.5.1. Querying Hourly Build Statistics</a></span></dt><dt><span class="sect2"><a href="#N101BD">2.5.2. Querying Daily Build Statistics</a></span></dt><dt><span class="sect2"><a href="#N101C3">2.5.3. Querying Monthly Build Statistics</a></span></dt><dt><span class="sect2"><a href="#N101C9">2.5.4. Querying Yearly Build Statistics</a></span></dt><dt><span class="sect2"><a href="#N101CF">2.5.5. Querying Hourly Build Distribution</a></span></dt><dt><span class="sect2"><a href="#N101D5">2.5.6. Querying Weekday Build Distribution</a></span></dt><dt><span class="sect2"><a href="#N101DB">2.5.7. Querying Hourly Test Statistics</a></span></dt><dt><span class="sect2"><a href="#N101E1">2.5.8. Querying Daily Test Statistics</a></span></dt><dt><span class="sect2"><a href="#N101E7">2.5.9. Querying Monthly Test Statistics</a></span></dt></dl></dd><dt><span class="sect1"><a href="#N101ED">2.6. Managing Builds</a></span></dt><dd><dl><dt><span class="sect2"><a href="#N101F0">2.6.1. Starting Build</a></span></dt><dt><span class="sect2"><a href="#N1025B">2.6.2. Stopping Build</a></span></dt><dt><span class="sect2"><a href="#N10261">2.6.3. Resuming Build</a></span></dt><dt><span class="sect2"><a href="#N10267">2.6.4. Requesting Clean Checkout</a></span></dt><dt><span class="sect2"><a href="#N1026D">2.6.5. Listing Current Build Statuses</a></span></dt><dt><span class="sect2"><a href="#N10273">2.6.6. Finding a Current Build Status by a Build ID</a></span></dt><dt><span class="sect2"><a href="#N10279">2.6.7. Finding a Current Build Status by a Build Name</a></span></dt><dt><span class="sect2"><a href="#N1027F">2.6.8. Finding Current Build Statuses by Regular Expression</a></span></dt><dt><span class="sect2"><a href="#N10285">2.6.9. Modifying Version Control Settings</a></span></dt><dt><span class="sect2"><a href="#N1028B">2.6.10. Modifying Build Sequence</a></span></dt><dt><span class="sect2"><a href="#N10291">2.6.11. Modifying Schedule Settings</a></span></dt></dl></dd></dl></dd></dl></div><div class="list-of-tables"><p><b>List of Tables</b></p><dl><dt>2.1. <a href="#N101FE"></a></dt><dt>2.2. <a href="#N10243"></a></dt></dl></div><div class="preface" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="N1000D"></a>Preface</h2></div></div><div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="#N10010">1. About This Manual</a></span></dt><dt><span class="sect1"><a href="#N10015">2. Audience</a></span></dt><dt><span class="sect1"><a href="#N1001A">3. Technical Support</a></span></dt></dl></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N10010"></a>1.&nbsp;About This Manual</h2></div></div><div></div></div><p>This manual provides a description for Parabuild web service API.</p></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N10015"></a>2.&nbsp;Audience</h2></div></div><div></div></div><p>This guide is intended for software engineers.</p></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N1001A"></a>3.&nbsp;Technical Support</h2></div></div><div></div></div><p>If you have any problems with the software or documentation,
+        please contact Technical Support via online support forums,
+        electronic mail, fax, or as described below. For information regarding
+        other support information, click the Support link on the web
+        site at<a href="http://www.parabuildci.org" target="_top">www.parabuildci.org</a>.
+      </p><div class="variablelist"><dl><dt><span class="term">Support Forum:</span></dt><dd><p>
+              <a href="http://forums.parabuildci.org/viewforum.php?f=1" target="_top">
+                http://forums.parabuildci.org/viewforum.php?f=1
+              </a>
+            </p></dd><dt><span class="term">Electronic Mail:</span></dt><dd><p>
+              <a href="mailto:support@parabuildci.org" target="_top">support@parabuildci.org</a>
+            </p></dd><dt><span class="term">Fax:</span></dt><dd><p>650-240-4455</p></dd></dl></div></div></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="N1003E"></a>Chapter&nbsp;1.&nbsp;Accessing Web Service API</h2></div></div><div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="#N10041">1.1. Web Service WSDL</a></span></dt><dt><span class="section"><a href="#N1004B">1.2. Web Service URL</a></span></dt><dt><span class="section"><a href="#N10056">1.3. Authentication and Authorisation</a></span></dt></dl></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N10041"></a>1.1.&nbsp;Web Service WSDL</h2></div></div><div></div></div><p>Parabuild web service WSDL can be found at:</p><p><span class="bold"><b>&lt;Parabuild installation
+        directory&gt;/bin/wsdl/Parabuild.wsdl</b></span>.
+      </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N1004B"></a>1.2.&nbsp;Web Service URL</h2></div></div><div></div></div><p>Parabuild web service is available at:</p><p>
+        <span class="bold"><b>http://&lt;parabuild
+          host&gt;:8080/parabuild/integration/webservice/Parabuild
+        </b></span>
+      </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N10056"></a>1.3.&nbsp;Authentication and Authorisation</h2></div></div><div></div></div><p>Parabuild web service uses basic HTTP authentication. Parabuild
+        users with administrative rights are allowed to access the web service.
+      </p></div></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="N1005B"></a>Chapter&nbsp;2.&nbsp;Web Service API</h2></div></div><div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="#N1005E">2.1. Querying System Information</a></span></dt><dd><dl><dt><span class="sect2"><a href="#N10061">2.1.1. Obtaining Server Version</a></span></dt><dt><span class="sect2"><a href="#N10067">2.1.2. Querying System Properties</a></span></dt><dt><span class="sect2"><a href="#N1006D">2.1.3. Listing Global Version Control User to Email Map</a></span></dt><dt><span class="sect2"><a href="#N10073">2.1.4. Listing Projects</a></span></dt><dt><span class="sect2"><a href="#N10079">2.1.5. Obtaining Project Attributes</a></span></dt><dt><span class="sect2"><a href="#N1007F">2.1.6. Obtaining Project Build Configurations</a></span></dt><dt><span class="sect2"><a href="#N10085">2.1.7. Listing Display Groups</a></span></dt><dt><span class="sect2"><a href="#N1008B">2.1.8. Obtaining Build Configurations Belonging to Display Group</a></span></dt></dl></dd><dt><span class="sect1"><a href="#N10091">2.2. Querying Build Farms and Agents</a></span></dt><dd><dl><dt><span class="sect2"><a href="#N10096">2.2.1. Listing Build Farm Configurations</a></span></dt><dt><span class="sect2"><a href="#N1009C">2.2.2. Obtaining Build Farm Attributes</a></span></dt><dt><span class="sect2"><a href="#N100A2">2.2.3. Obtaining Build Farm Agents</a></span></dt><dt><span class="sect2"><a href="#N100A8">2.2.4. Listing Agent Configurations</a></span></dt><dt><span class="sect2"><a href="#N100AE">2.2.5. Obtaining Agent Configuration</a></span></dt><dt><span class="sect2"><a href="#N100B4">2.2.6. Listing Agent Statuses</a></span></dt></dl></dd><dt><span class="sect1"><a href="#N100BA">2.3. Querying Build Configuration</a></span></dt><dd><dl><dt><span class="sect2"><a href="#N100BF">2.3.1. Listing Active Build Configurations</a></span></dt><dt><span class="sect2"><a href="#N100C5">2.3.2. Obtaining Build Configuration Attributes</a></span></dt><dt><span class="sect2"><a href="#N100CB">2.3.3. Obtaining Version Control Settings</a></span></dt><dt><span class="sect2"><a href="#N100D1">2.3.4. Obtaining Schedule Properties</a></span></dt><dt><span class="sect2"><a href="#N100D7">2.3.5. Obtaining Label Properties</a></span></dt><dt><span class="sect2"><a href="#N100DD">2.3.6. Obtaining Log Configurations</a></span></dt><dt><span class="sect2"><a href="#N100E3">2.3.7. Obtaining Log Configuration Properties</a></span></dt><dt><span class="sect2"><a href="#N100E9">2.3.8. Obtaining Version Control User to Email Map</a></span></dt><dt><span class="sect2"><a href="#N100EF">2.3.9. Obtaining Build Watchers</a></span></dt><dt><span class="sect2"><a href="#N100F5">2.3.10. Obtaining Build Steps</a></span></dt><dt><span class="sect2"><a href="#N100FB">2.3.11. Obtaining Schedule Items</a></span></dt><dt><span class="sect2"><a href="#N10101">2.3.12. Obtaining Issue Trackers</a></span></dt><dt><span class="sect2"><a href="#N10107">2.3.13. Obtaining Issue Tracker Properties</a></span></dt><dt><span class="sect2"><a href="#N1010D">2.3.14. Obtaining Start Parameters</a></span></dt></dl></dd><dt><span class="sect1"><a href="#N10113">2.4. Accessing Build Results</a></span></dt><dd><dl><dt><span class="sect2"><a href="#N10118">2.4.1. Obtaining Number of Build Runs</a></span></dt><dt><span class="sect2"><a href="#N1011E">2.4.2. Obtaining Build Run</a></span></dt><dt><span class="sect2"><a href="#N10124">2.4.3. Querying Completed Build Runs</a></span></dt><dt><span class="sect2"><a href="#N1012A">2.4.4. Obtaining Last Successful Build Run</a></span></dt><dt><span class="sect2"><a href="#N10130">2.4.5. Finding Last Successful Build Runs by Display Group ID and
+          Change List Number
+        </a></span></dt><dt><span class="sect2"><a href="#N10136">2.4.6. Obtaining Build Run Attributes</a></span></dt><dt><span class="sect2"><a href="#N1013C">2.4.7. Obtaining Change Lists in Given Build Run</a></span></dt><dt><span class="sect2"><a href="#N10142">2.4.8. Obtaining Change List Changes</a></span></dt><dt><span class="sect2"><a href="#N10148">2.4.9. Obtaining Build Step Runs</a></span></dt><dt><span class="sect2"><a href="#N1014E">2.4.10. Obtaining Step Run Attributes</a></span></dt><dt><span class="sect2"><a href="#N10154">2.4.11. Obtaining Build Step Logs</a></span></dt><dt><span class="sect2"><a href="#N1015A">2.4.12. Obtaining Build Step Results</a></span></dt><dt><span class="sect2"><a href="#N10160">2.4.13. Obtaining Change List</a></span></dt><dt><span class="sect2"><a href="#N10166">2.4.14. Obtaining Release Notes</a></span></dt><dt><span class="sect2"><a href="#N1016C">2.4.15. Obtaining Issue</a></span></dt><dt><span class="sect2"><a href="#N10172">2.4.16. Obtaining Issue Attributes</a></span></dt><dt><span class="sect2"><a href="#N10178">2.4.17. Obtaining Issue Change Lists</a></span></dt><dt><span class="sect2"><a href="#N1017E">2.4.18. Querying Result Groups</a></span></dt><dt><span class="sect2"><a href="#N10184">2.4.19. Querying Project Result Groups</a></span></dt><dt><span class="sect2"><a href="#N1018A">2.4.20. Obtaining Result Configurations</a></span></dt><dt><span class="sect2"><a href="#N10190">2.4.21. Obtaining Result Configuration Properties</a></span></dt><dt><span class="sect2"><a href="#N10196">2.4.22. Obtaining Published Build Step Results</a></span></dt><dt><span class="sect2"><a href="#N1019C">2.4.23. Obtaining Build Run Actions</a></span></dt><dt><span class="sect2"><a href="#N101A2">2.4.24. Querying Test Suite Names</a></span></dt><dt><span class="sect2"><a href="#N101A8">2.4.25. Obtaining Test Case names</a></span></dt><dt><span class="sect2"><a href="#N101AE">2.4.26. Obtaining Build Run Tests</a></span></dt></dl></dd><dt><span class="sect1"><a href="#N101B4">2.5. Querying Build Statistics</a></span></dt><dd><dl><dt><span class="sect2"><a href="#N101B7">2.5.1. Querying Hourly Build Statistics</a></span></dt><dt><span class="sect2"><a href="#N101BD">2.5.2. Querying Daily Build Statistics</a></span></dt><dt><span class="sect2"><a href="#N101C3">2.5.3. Querying Monthly Build Statistics</a></span></dt><dt><span class="sect2"><a href="#N101C9">2.5.4. Querying Yearly Build Statistics</a></span></dt><dt><span class="sect2"><a href="#N101CF">2.5.5. Querying Hourly Build Distribution</a></span></dt><dt><span class="sect2"><a href="#N101D5">2.5.6. Querying Weekday Build Distribution</a></span></dt><dt><span class="sect2"><a href="#N101DB">2.5.7. Querying Hourly Test Statistics</a></span></dt><dt><span class="sect2"><a href="#N101E1">2.5.8. Querying Daily Test Statistics</a></span></dt><dt><span class="sect2"><a href="#N101E7">2.5.9. Querying Monthly Test Statistics</a></span></dt></dl></dd><dt><span class="sect1"><a href="#N101ED">2.6. Managing Builds</a></span></dt><dd><dl><dt><span class="sect2"><a href="#N101F0">2.6.1. Starting Build</a></span></dt><dt><span class="sect2"><a href="#N1025B">2.6.2. Stopping Build</a></span></dt><dt><span class="sect2"><a href="#N10261">2.6.3. Resuming Build</a></span></dt><dt><span class="sect2"><a href="#N10267">2.6.4. Requesting Clean Checkout</a></span></dt><dt><span class="sect2"><a href="#N1026D">2.6.5. Listing Current Build Statuses</a></span></dt><dt><span class="sect2"><a href="#N10273">2.6.6. Finding a Current Build Status by a Build ID</a></span></dt><dt><span class="sect2"><a href="#N10279">2.6.7. Finding a Current Build Status by a Build Name</a></span></dt><dt><span class="sect2"><a href="#N1027F">2.6.8. Finding Current Build Statuses by Regular Expression</a></span></dt><dt><span class="sect2"><a href="#N10285">2.6.9. Modifying Version Control Settings</a></span></dt><dt><span class="sect2"><a href="#N1028B">2.6.10. Modifying Build Sequence</a></span></dt><dt><span class="sect2"><a href="#N10291">2.6.11. Modifying Schedule Settings</a></span></dt></dl></dd></dl></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N1005E"></a>2.1.&nbsp;Querying System Information</h2></div></div><div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N10061"></a>2.1.1.&nbsp;Obtaining Server Version</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns server version.
+          *
+          * @return a string containing server version.
+          */
+          String serverVersion();
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N10067"></a>2.1.2.&nbsp;Querying System Properties</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of global system properties.
+          *
+          * @return a list of global system properties.
+          */
+          SystemProperty[] getSystemProperties();
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N1006D"></a>2.1.3.&nbsp;Listing Global Version Control User to Email Map</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a global version control user to email map.
+          *
+          * @return a global version control user to email map.
+          */
+          GlobalVCSUserMap[] getGlobalVcsUserMap();
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N10073"></a>2.1.4.&nbsp;Listing Projects</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of projects.
+          *
+          * @return a list of projects.
+          */
+          Project[] getProjects();
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N10079"></a>2.1.5.&nbsp;Obtaining Project Attributes</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of project attributes.
+          *
+          * @param projectID project ID
+          *
+          * @return a list of project attributes.
+          */
+          ProjectAttribute[] getProjectAttributes(int projectID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N1007F"></a>2.1.6.&nbsp;Obtaining Project Build Configurations</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of build configurations belonging to a project.
+          *
+          * @param projectID project ID
+          *
+          * @return a list of build configurations belonging to a project.
+          */
+          ProjectBuild[] getProjectBuilds(int projectID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N10085"></a>2.1.7.&nbsp;Listing Display Groups</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of display groups.
+          *
+          * @return a list of display groups.
+          */
+          DisplayGroup[] getDisplayGroups();
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N1008B"></a>2.1.8.&nbsp;Obtaining Build Configurations Belonging to Display Group</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of build configurations are that part of a display group.
+          *
+          * @param displayGroupID display group ID
+          *
+          * @return a list of build configurations are that part of a display group.
+          */
+          DisplayGroupBuild[] getDisplayGroupBuilds(int displayGroupID);
+        </pre></div></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N10091"></a>2.2.&nbsp;Querying Build Farms and Agents</h2></div></div><div></div></div><p>This section enumerates methods available for accessing
+        information about build farms and build agents.
+      </p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N10096"></a>2.2.1.&nbsp;Listing Build Farm Configurations</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of build farm configurations.
+          *
+          * @return a list of build farm configurations.
+          */
+          BuildFarmConfiguration[] getBuildFarmConfigurations();
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N1009C"></a>2.2.2.&nbsp;Obtaining Build Farm Attributes</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of attributes of a build farm.
+          *
+          * This method is added for future compatibility. The current implementation returns an empty array.
+          *
+          * @param buildFarmID build farm ID
+          * @return a list of attributes of a build farm.
+          */
+          BuildFarmConfigurationAttribute[] getBuildFarmConfigurationAttributes(int buildFarmID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N100A2"></a>2.2.3.&nbsp;Obtaining Build Farm Agents</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of agents belonging to a build farm.
+          *
+          * @param buildFarmID build farm ID
+          * @return a list of build agents belonging to a build farm.
+          */
+          BuildFarmAgent[] getBuildFarmAgents(int buildFarmID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N100A8"></a>2.2.4.&nbsp;Listing Agent Configurations</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list agent configurations.
+          *
+          * @return a list agent configurations.
+          */
+          AgentConfiguration[] getAgentConfigurations();
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N100AE"></a>2.2.5.&nbsp;Obtaining Agent Configuration</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns agent configuration.
+          *
+          * @param agentID agent configuration ID
+          *
+          * @return Returns agent configuration..
+          *
+          * @see #getBuildFarmAgents(int)
+          */
+          AgentConfiguration getAgentConfiguration(int agentID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N100B4"></a>2.2.6.&nbsp;Listing Agent Statuses</h3></div></div><div></div></div><pre class="programlisting">
+         /**
+          * Returns a list of agent statuses.
+          *
+          * The agent status code is contained in the field "status". 1 means disabled. 2 means idle.
+          * 3 means busy. 4 means offline. 5 means there is a version mismatch.
+          *
+          * @return a list of agent statuses.
+          */
+          AgentStatus[] getAgentStatuses();
+        </pre></div></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N100BA"></a>2.3.&nbsp;Querying Build Configuration</h2></div></div><div></div></div><p>This section enumerates method for querying information related to
+        build configuration.
+      </p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N100BF"></a>2.3.1.&nbsp;Listing Active Build Configurations</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of active build configurations.
+          *
+          * @return a list of active build configurations.
+          */
+          BuildConfiguration[] getActiveBuildConfigurations();
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N100C5"></a>2.3.2.&nbsp;Obtaining Build Configuration Attributes</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of attributes for a build configuration.
+          *
+          * @param buildID build ID.
+          * @return a list of attributes for a build configuration.
+          */
+          BuildConfigurationAttribute[] getBuildConfigurationAttributes(int buildID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N100CB"></a>2.3.3.&nbsp;Obtaining Version Control Settings</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of version control settings.
+          *
+          * @param buildID build ID
+          * @return a list of version control settings.
+          */
+          VersionControlSetting[] getVersionControlSettings(int buildID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N100D1"></a>2.3.4.&nbsp;Obtaining Schedule Properties</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of schedule properties.
+          *
+          * @param buildID build ID
+          * @return a list of schedule properties.
+          */
+          ScheduleProperty[] getScheduleProperties(int buildID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N100D7"></a>2.3.5.&nbsp;Obtaining Label Properties</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of label properties.
+          *
+          * @param buildID build ID
+          * @return a list of label properties.
+          */
+          LabelProperty[] getLabelProperties(int buildID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N100DD"></a>2.3.6.&nbsp;Obtaining Log Configurations</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of log configurations.
+          *
+          * @param buildID build ID
+          * @return a list of log configurations.
+          */
+          LogConfiguration[] getLogConfigurations(int buildID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N100E3"></a>2.3.7.&nbsp;Obtaining Log Configuration Properties</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of log configuration properties.
+          *
+          * @param logID log ID
+          * @return a list of log configuration properties.
+          */
+          LogConfigurationProperty[] getLogConfigurationProperties(int logID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N100E9"></a>2.3.8.&nbsp;Obtaining Version Control User to Email Map</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of version control user to email maps.
+          *
+          * @param buildID build ID
+          * @return a list of version control use to email maps.
+          */
+          VCSUserToEmailMap[] getVCSUserToEmailMap(int buildID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N100EF"></a>2.3.9.&nbsp;Obtaining Build Watchers</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of build watchers.
+          *
+          * @param buildID a list of build watchers.
+          * @return a list of build watchers.
+          */
+          BuildWatcher[] getBuildWatchers(int buildID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N100F5"></a>2.3.10.&nbsp;Obtaining Build Steps</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of build steps.
+          *
+          * @param buildID build ID
+          * @return a list of build steps.
+          */
+          BuildSequence[] getBuildSequence(int buildID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N100FB"></a>2.3.11.&nbsp;Obtaining Schedule Items</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of schedule items
+          *
+          * @param buildID build ID
+          * @return Returns a list of schedule items
+          */
+          ScheduleItem[] getScheduleItem(int buildID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N10101"></a>2.3.12.&nbsp;Obtaining Issue Trackers</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of issues trackers.
+          *
+          * @param buildID build ID
+          *
+          * @return a list of issues trackers.
+          */
+          IssueTracker[] getIssueTracker(int buildID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N10107"></a>2.3.13.&nbsp;Obtaining Issue Tracker Properties</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of issue tracker properties.
+          *
+          * @param issueTrackerID issue tracker ID
+          *
+          * @return a list of issue tracker properties.
+          */
+          IssueTrackerProperty[] getIssueTrackerProperties(int issueTrackerID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N1010D"></a>2.3.14.&nbsp;Obtaining Start Parameters</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of start parameters.
+          *
+          * @param type parameter type.
+          *
+          * @param ownerID owner ID
+          *
+          * @return a list of start parameters.
+          */
+          StartParameter[] getVariables(int type, int ownerID);
+        </pre></div></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N10113"></a>2.4.&nbsp;Accessing Build Results</h2></div></div><div></div></div><p>This section enumerates methods for accessing build results.</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N10118"></a>2.4.1.&nbsp;Obtaining Number of Build Runs</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns number of build runs for the given build configuration.
+          *
+          * @param activeBuildID build ID
+          * @return number of build runs for the given build configuration.
+          */
+          int getBuildRunCount(int activeBuildID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N1011E"></a>2.4.2.&nbsp;Obtaining Build Run</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns build run for the given build run ID.
+          *
+          * @param buildRunID build run ID
+          * @return build run.
+          */
+          BuildRun getBuildRun(int buildRunID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N10124"></a>2.4.3.&nbsp;Querying Completed Build Runs</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of completed build runs.
+          *
+          * @param activeBuildID build ID
+          * @param firstResult number from that to start listing build runs.
+          * @param maxCount number of build runs to retrieve.
+          * @return a list of completed build runs.
+          */
+          BuildRun[] getCompletedBuildRuns(final int activeBuildID, final int firstResult, final int
+          maxCount);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N1012A"></a>2.4.4.&nbsp;Obtaining Last Successful Build Run</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns the last successful build run.
+          *
+          * @param activeBuildID build ID
+          * @return the last successful build run or null if there is no any.
+          */
+          BuildRun getLastSuccessfulBuildRun(int activeBuildID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N10130"></a>2.4.5.&nbsp;Finding Last Successful Build Runs by Display Group ID and
+          Change List Number
+        </h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns an array of last successful BuildRuns that match given display group ID and change list number.
+          *
+          * @param displayGroupID display group ID
+          * @param changeListNumber change list number
+          * @return array of last successful BuildRuns that matche given display group ID and change list number or an empty array if no matching builds exist.
+          */
+          public BuildRun[] findlLastSuccessfulBuildRuns(final int displayGroupID, final int changeListNumber);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N10136"></a>2.4.6.&nbsp;Obtaining Build Run Attributes</h3></div></div><div></div></div><pre class="programlisting">
+          /**
+          * Returns a list of build run attributes.
+          *
+          * @param buildRunID build run ID
+          * @return list of build run attributes.
+          */
+          BuildRunAttribute[] getBuildRunAttributes(int buildRunID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N1013C"></a>2.4.7.&nbsp;Obtaining Change Lists in Given Build Run</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns change lists that participated in the given build run.
+          *
+          * @param buildRunID build run ID.
+          * @return change lists that participated in the given build run.
+          */
+          ChangeList[] getBuildRunParticipants(int buildRunID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N10142"></a>2.4.8.&nbsp;Obtaining Change List Changes</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of changes in the given change list.
+          *
+          * @param changeListID change list ID
+          * @return a list of changes in the given change list.
+          * @see #getBuildRunParticipants(int)
+          * @see #getChangeList(int)
+          */
+          Change[] getChanges(int changeListID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N10148"></a>2.4.9.&nbsp;Obtaining Build Step Runs</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of build step runs.
+          *
+          * @param buildRunID build run ID
+          * @return a list of step runs.
+          */
+          StepRun[] getStepRuns(int buildRunID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N1014E"></a>2.4.10.&nbsp;Obtaining Step Run Attributes</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of build step run attributes.
+          *
+          * @param stepRunID step run ID
+          * @return a list of step run attributes.
+          * @see #getStepRuns(int)
+          */
+          StepRunAttribute[] getStepRunRunAttributes(int stepRunID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N10154"></a>2.4.11.&nbsp;Obtaining Build Step Logs</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of build step logs.
+          *
+          * @param stepRunID step run ID
+          * @return a list of build step logs.
+          */
+          StepLog[] getStepLogs(int stepRunID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N1015A"></a>2.4.12.&nbsp;Obtaining Build Step Results</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of build step results.
+          *
+          * @param stepRunID step run ID
+          * @return a list of build step results.
+          */
+          StepResult[] getStepResults(int stepRunID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N10160"></a>2.4.13.&nbsp;Obtaining Change List</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a change list.
+          *
+          * @param changeListID change list ID
+          * @return a change list.
+          */
+          ChangeList getChangeList(int changeListID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N10166"></a>2.4.14.&nbsp;Obtaining Release Notes</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of release notes.
+          *
+          * @param buildRunID build run ID
+          * @return a list of release notes.
+          */
+          ReleaseNote[] getReleaseNotes(int buildRunID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N1016C"></a>2.4.15.&nbsp;Obtaining Issue</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns an issue.
+          *
+          * @param issueID an issue ID.
+          * @return an issue.
+          */
+          Issue getIssue(int issueID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N10172"></a>2.4.16.&nbsp;Obtaining Issue Attributes</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of issue attributes.
+          *
+          * @param issueID issue ID.
+          *
+          * @return a list of issue attributes.
+          */
+          IssueAttribute[] getIssueAttributes(int issueID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N10178"></a>2.4.17.&nbsp;Obtaining Issue Change Lists</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of issue change lists.
+          *
+          * @param issueID issue ID.
+          *
+          * @return a list of issue change lists.
+          */
+          IssueChangeList[] getIssueChangeLists(int issueID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N1017E"></a>2.4.18.&nbsp;Querying Result Groups</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of result groups.
+          *
+          * @return list of result groups.
+          */
+          ResultGroup[] getResultGroups();
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N10184"></a>2.4.19.&nbsp;Querying Project Result Groups</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of project result groups.
+          *
+          * @param projectID project ID
+          * @return a list of project result groups.
+          */
+          ProjectResultGroup[] getProjectResultGroups(int projectID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N1018A"></a>2.4.20.&nbsp;Obtaining Result Configurations</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of result configurations.
+          *
+          * @param buildID build ID
+          * @return a list of result configurations.
+          */
+          ResultConfiguration[] getResultConfigurations(int buildID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N10190"></a>2.4.21.&nbsp;Obtaining Result Configuration Properties</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of result configuration properties.
+          *
+          * @param resultConfigID result configuration ID
+          *
+          * @return a list of result configuration properties.
+          */
+          ResultConfigurationProperty[] getResultConfigurationProperties(int resultConfigID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N10196"></a>2.4.22.&nbsp;Obtaining Published Build Step Results</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list published build step results.
+          *
+          * @param resultGroupID result group ID
+          *
+          * @return a list published build step results.
+          */
+          PublishedStepResult[] getPublishedStepResults(int resultGroupID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N1019C"></a>2.4.23.&nbsp;Obtaining Build Run Actions</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of build runs actions.
+          *
+          * @param buildRunID
+          *
+          * @return a list of build runs actions.
+          */
+          BuildRunAction[] getBuildRunActions(int buildRunID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N101A2"></a>2.4.24.&nbsp;Querying Test Suite Names</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of test suite names.
+          *
+          * @return a list of test suite names.
+          */
+          TestSuiteName[] getTestSuiteNames();
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N101A8"></a>2.4.25.&nbsp;Obtaining Test Case names</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of test case names.
+          *
+          * @param testSuiteNameID test suite name ID
+          * @return a list of test case names.
+          */
+          TestCaseName[] getTestCaseNames(int testSuiteNameID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N101AE"></a>2.4.26.&nbsp;Obtaining Build Run Tests</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of build run tests.
+          *
+          * @param buildRunID build run ID
+          *
+          * @return a list of build run tests.
+          */
+          BuildRunTest[] getBuildRunTests(int buildRunID);
+        </pre></div></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N101B4"></a>2.5.&nbsp;Querying Build Statistics</h2></div></div><div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N101B7"></a>2.5.1.&nbsp;Querying Hourly Build Statistics</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns hourly build statistics.
+          *
+          * @param activeBuildID active build ID
+          * @param fromDate from date
+          * @param toDate to date
+          * @return hourly build statistics.
+          */
+          BuildStatistics[] getHourlyStatistics(int activeBuildID, Calendar fromDate, Calendar toDate);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N101BD"></a>2.5.2.&nbsp;Querying Daily Build Statistics</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns daily build statistics.
+          *
+          * @param activeBuildID active build ID
+          * @param fromDate from date
+          * @param toDate to date
+          * @return daily build statistics.
+          */
+          BuildStatistics[] getDailyStatistics(int activeBuildID, Calendar fromDate, Calendar toDate);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N101C3"></a>2.5.3.&nbsp;Querying Monthly Build Statistics</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns monthly build statistics.
+          *
+          * @param activeBuildID active build ID
+          * @param fromDate from date
+          * @param toDate to date
+          * @return monthly build statistics.
+          */
+          BuildStatistics[] getMonthlyStatistics(int activeBuildID, Calendar fromDate, Calendar toDate);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N101C9"></a>2.5.4.&nbsp;Querying Yearly Build Statistics</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns yearly build statistics.
+          *
+          * @param activeBuildID active build ID
+          * @param fromDate from date
+          * @param toDate to date
+          * @return yearly build statistics.
+          */
+          BuildStatistics[] getYearlyStatistics(int activeBuildID, Calendar fromDate, Calendar toDate);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N101CF"></a>2.5.5.&nbsp;Querying Hourly Build Distribution</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Return hourly build distribution.
+          *
+          * @param activeBuildID
+          *
+          * @return hourly build distribution.
+          */
+          BuildDistribution[] getHourlyBuildDistributions(int activeBuildID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N101D5"></a>2.5.6.&nbsp;Querying Weekday Build Distribution</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Return weekday build distribution.
+          *
+          * @param activeBuildID
+          *
+          * @return weekday build distribution.
+          */
+          BuildDistribution[] getWeekdayBuildDistributions(int activeBuildID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N101DB"></a>2.5.7.&nbsp;Querying Hourly Test Statistics</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns hourly test statistics.
+          *
+          * @param activeBuildID active build ID
+          * @param fromDate from date
+          * @param toDate to date
+          * @param testToolCode test tool code.
+          *
+          * @return hourly test statistics.
+          */
+          TestStatistics[] getHourlyTestStatistics(int activeBuildID, final Calendar fromDate, final Calendar
+          toDate, byte testToolCode);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N101E1"></a>2.5.8.&nbsp;Querying Daily Test Statistics</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns daily test statistics.
+          *
+          * @param activeBuildID active build ID
+          * @param fromDate from date
+          * @param toDate to date
+          * @param testToolCode test tool code.
+          *
+          * @return daily test statistics.
+          */
+          TestStatistics[] getDailyTestStatistics(int activeBuildID, final Calendar fromDate, final Calendar
+          toDate, byte testToolCode);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N101E7"></a>2.5.9.&nbsp;Querying Monthly Test Statistics</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns monthly test statistics.
+          *
+          * @param activeBuildID active build ID
+          * @param fromDate from date
+          * @param toDate to date
+          * @param testToolCode test tool code.
+          *
+          * @return monthly test statistics.
+          */
+          TestStatistics[] getMonthlyTestStatistics(int activeBuildID, final Calendar fromDate, final Calendar
+          toDate, byte testToolCode);
+        </pre></div></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N101ED"></a>2.6.&nbsp;Managing Builds</h2></div></div><div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N101F0"></a>2.6.1.&nbsp;Starting Build</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Starts a build.
+          *
+          * @param activeBuildID ID of the build to start.
+          */
+          void startBuild(int activeBuildID);
+        </pre><pre class="programlisting">/**
+          * Starts the build.
+          *
+          * @param activeBuildID ID of the build to start.
+          * @param buildStartRequest an object containing a detailed build start request.
+          */
+          void startBuild(int activeBuildID, BuildStartRequest buildStartRequest) throws IOException;
+        </pre><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="N101F9"></a>2.6.1.1.&nbsp;BuildStartRequest</h4></div></div><div></div></div><p>BuildStartRequest has the following format:</p><div class="table"><a name="N101FE"></a><p class="title"><b>Table&nbsp;2.1.&nbsp;</b></p><table border="1"><colgroup><col><col></colgroup><tbody><tr><td>Field Name</td><td>Description</td></tr><tr><td>requestType</td><td>An
+                    integer request type. 0 means that this is a normal request. A
+                    normal requests starts build with the most recent change list
+                    number. 1 means that this is a build re-run. For build re-run
+                    buildRunID must be set.
+                  </td></tr><tr><td>cleanCheckout</td><td>A
+                    boolean clean checkout flag. If set to true, Parabuild will clean
+                    up a build workspace before starting the build.
+                  </td></tr><tr><td>pinResult</td><td>A
+                    boolean pin result flag. If set to true, build results will be
+                    pinned.
+                  </td></tr><tr><td>buildRunID</td><td>A build
+                    run ID to re-run. If this is not a re-rerun request, buildRunID
+                    must be set to -1.
+                  </td></tr><tr><td>changeListID</td><td>An
+                    integer change list number. The change list number can be used to
+                    start a manual build against a particular change list number. The
+                    change list number is supported for Perforce and Subversion.
+                  </td></tr><tr><td>userID</td><td>An integer ID of a
+                    user that starts the build. If not known, the user ID must be set
+                    to -1.
+                  </td></tr><tr><td>versionCounter</td><td>A
+                    string version counter. If not known, must be set to an empty
+                    string.
+                  </td></tr><tr><td>label</td><td>A string
+                    label that Parabuild has to apply to the version control system if
+                    build is successful. The label must be set to an empty string if
+                    no label should be applied.
+                  </td></tr><tr><td>note</td><td>A
+                    note that Parabuild has to add to the build. The note must be set
+                    to an empty string if no note should be added.
+                  </td></tr><tr><td>versionTemplate</td><td>A
+                    string version template Parabuild has to use to generate product
+                    version. The version template must be set to an empty string if no
+                    product version must be generated.
+                  </td></tr><tr><td>parameterList</td><td>A
+                    list of build start parameters. Please see the description
+                    BuildStartRequestParameter object for information.
+                  </td></tr></tbody></table></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="N1023E"></a>2.6.1.2.&nbsp;BuildStartRequestParameter</h4></div></div><div></div></div><p>BuildStartRequestParameter has the following format:</p><div class="table"><a name="N10243"></a><p class="title"><b>Table&nbsp;2.2.&nbsp;</b></p><table border="1"><colgroup><col><col></colgroup><tbody><tr><td>Field Name</td><td>Description</td></tr><tr><td>variableName</td><td>A
+                    string name of a shell variable to be set before executing build
+                    commands
+                  </td></tr><tr><td>variableValues</td><td>A
+                    string, comma-separated, list of one or more values of the
+                    variable
+                  </td></tr><tr><td>description</td><td>A
+                    string variable description
+                  </td></tr></tbody></table></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N1025B"></a>2.6.2.&nbsp;Stopping Build</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Stops a build.
+          *
+          * @param activeBuildID ID of the build to stop.
+          */
+          void stopBuild(int activeBuildID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N10261"></a>2.6.3.&nbsp;Resuming Build</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Resumes a previously stopped build.
+          *
+          * @param activeBuildID ID of the build to resume.
+          */
+          void resumeBuild(int buildID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N10267"></a>2.6.4.&nbsp;Requesting Clean Checkout</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Requests clean checkout. Parabuild will erase build's work space before running the next
+          build.
+          *
+          * @param activeBuildID ID of the build for that to perform a clean checkout.
+          */
+          void requestCleanCheckout(int activeBuildID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N1026D"></a>2.6.5.&nbsp;Listing Current Build Statuses</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of current build statuses.
+          *
+          * @return a list of current build statuses.
+          */
+          BuildStatus[] getCurrentBuildStatuses();
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N10273"></a>2.6.6.&nbsp;Finding a Current Build Status by a Build ID</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a current status for a build with the given ID.
+          *
+          * @param activeBuildID build ID
+          * @return a current status for a build with the given ID or null if there is no such build.
+          */
+          public BuildStatus getCurrentBuildStatus(final int activeBuildID);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N10279"></a>2.6.7.&nbsp;Finding a Current Build Status by a Build Name</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a current status for a build with the given name.
+          *
+          * @param buildName case-sensitive build
+          * @return a current status for a build with the given name or null if there is no such build
+          */
+          public BuildStatus getCurrentBuildStatus(final String buildName);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N1027F"></a>2.6.8.&nbsp;Finding Current Build Statuses by Regular Expression</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Returns a list of current statuses for builds whose names match the give regex.
+          *
+          * @param regularExpression regular expression to match build names
+          * @return a list of current statuses for builds whose names match the give regex
+          */
+          BuildStatus[] findCurrentBuildStatuses(final String regularExpression);
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N10285"></a>2.6.9.&nbsp;Modifying Version Control Settings</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Updates or creates version control settings.
+          *
+          * @param versionControlSettings version control settings to update or create.
+          */
+          public void updateVersionControlSettings(final VersionControlSetting[] versionControlSettings)
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N1028B"></a>2.6.10.&nbsp;Modifying Build Sequence</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Updates or creates build sequence.
+          *
+          * @param buildSequences build sequence to update or create.
+          */
+          public void updateBuildSequences(final BuildSequence[] buildSequences)
+        </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="N10291"></a>2.6.11.&nbsp;Modifying Schedule Settings</h3></div></div><div></div></div><pre class="programlisting">/**
+          * Updates or creates schedule properties.
+          *
+          * @param scheduleProperties schedule properties to update or create.
+          */
+          public void updateScheduleProperties(final ScheduleProperty[] scheduleProperties)
+        </pre></div></div></div></div></body></html>

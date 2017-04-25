@@ -1,0 +1,233 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Synchronizing Users</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=870>
+<meta name=layout-width content=702>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Working with the Application\nManaging Tasks\nUsing Tasks in Microsoft Project\nSynchronizing Users");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Synchronizing Users</h1>
+
+<p class=Body>The StarTeam Microsoft Project Integration allows you to 
+ add StarTeam users as resources in a Microsoft Project (.mpp) file so 
+ that the same names can be used in both applications. Because of the importance 
+ of this step, the StarTeam menu in Microsoft Project initially displays 
+ only the <span style="font-weight: bold;"><B>Sync StarTeam Users</B></span> command. 
+ Do not assign resources to tasks until you have imported users from StarTeam.</p>
+
+<p class=Body>When users are added manually to Microsoft Project, StarTeam 
+ does not recognize them. Tasks that contain resources unknown to StarTeam 
+ have no resources assigned to them when they are exported to StarTeam. 
+ </p>
+
+<p class=Body><span style="font-weight: bold;"><B>Caution:</B></span> If square 
+ brackets appear around a StarTeam user name, Microsoft Project does not 
+ accept the name as a resource, due to the use of invalid characters.</p>
+
+<p class=Body>If you manage more than one project, but staff those projects 
+ with the same users, you should create a single resource pool in Microsoft 
+ Project after synchronizing users. Doing this allows you to:</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Review resource usage 
+ and costs across projects.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Quickly add shared resources 
+ to a new project.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Identify and resolve 
+ resource over-allocation problems.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Print resource reports 
+ across projects.</p></li>
+</ul>
+
+<p class=Proc>To synchronize users:</p>
+
+<ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>From Microsoft Project, open 
+ the .mpp file to be used with StarTeam. It is best not to use a consolidated 
+ project, which has other project files as subprojects, or a linked project, 
+ which has links to tasks in other project files. </p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select <span style="font-weight: bold;"><B>StarTeam 
+ &gt; Sync StarTeam Users</B></span> from the Microsoft Project menu bar. The 
+ <span style="font-style: italic;"><I>Connection Wizard: Select Server</I></span> 
+ dialog appears. </p></li>
+	
+	<ol>
+		
+		<li class=kadov-p-CList-2><p class=List-2>If the server you need 
+ is not listed in the dialog, add it. See <a href="accessing_starteam_servers.htm">Accessing 
+ StarTeam Servers</a>.</p></li>
+		
+		<li class=kadov-p-CList-2><p class=List-2>Select the appropriate 
+ server description from the list. </p></li>
+		
+		<li class=kadov-p-CList-2><p class=List-2>Click <span style="font-weight: bold;"><B>Next</B></span>. 
+ The <span style="font-style: italic;"><I>Log On to &lt;server description 
+ name&gt;</I></span> dialog appears. </p></li>
+	</ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>In the <span style="font-style: italic;"><I>Log 
+ On</I></span> dialog:</p></li>
+	
+	<ol>
+		
+		<li class=kadov-p-CList-2><p class=List-2>Enter your user name 
+ and password.</p></li>
+		
+		<li class=kadov-p-CList-2><p class=List-2>Click <span style="font-weight: bold;"><B>OK</B></span>. 
+ The<span style="font-style: italic;"><I> Users and Resources</I></span> dialog 
+ appears. It displays a list of current StarTeam users. </p></li>
+	</ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Do one of the following:</p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>Select specific users 
+ from the <span style="font-weight: bold;"><B>Users To Import</B></span> list</p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>Choose <span style="font-weight: bold;"><B>Select 
+ All</B></span> to include all users in the <span style="font-weight: bold;"><B>Users 
+ To Import</B></span> list.</p></li>
+	</ul>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Click<span style="font-weight: bold;"><B> 
+ Import</B></span>. If prompted, save your .mpp file. The selected users are 
+ added to the <span style="font-weight: bold;"><B>Existing Resources</B></span> 
+ list box.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Click <span style="font-weight: bold;"><B>Close</B></span>. 
+ This action adds the StarTeam user list to your Microsoft Project resource 
+ sheet. You can now assign them to Microsoft Project tasks.</p></li>
+</ol>
+
+<p class=Body>After completing this procedure, you will not have to synchronize 
+ users again, unless you need to add more users or to change the address 
+ of the StarTeam server. In either case, you must reopen the mpp file, 
+ select <span style="font-weight: bold;"><B>StarTeam &gt; Sync StarTeam Users</B></span>, 
+ and proceed as described above.</p>
+
+<p class=Body>When you create a new Microsoft project, you can use the 
+ StarTeam resources that were previously added by sharing.</p>
+
+<p class=Proc>To share pooled resources in Microsoft Project:</p>
+
+<ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>In Microsoft Project, select 
+ <span style="font-weight: bold;"><B>Tools &gt; Resources &gt; Share Resources</B></span>. 
+ The <span style="font-style: italic;"><I>Share Resources</I></span> dialog appears.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select the <span style="font-weight: bold;"><B>Use 
+ Resources</B></span> option button.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>From the drop-down list box, 
+ select the StarTeam resource pool file that you have created.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Click <span style="font-weight: bold;"><B>OK</B></span>.</p></li>
+</ol>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

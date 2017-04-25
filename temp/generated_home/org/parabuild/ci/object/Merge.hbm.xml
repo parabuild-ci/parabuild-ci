@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 1.1//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="org.parabuild.ci.object.Merge"
+        table="MERGE"
+    >
+        <cache usage="read-write" />
+
+        <id
+            name="ID"
+            column="ID"
+            type="int"
+            unsaved-value="-1"
+        >
+            <generator class="identity">
+            </generator>
+        </id>
+
+        <property
+            name="mergeConfigurationID"
+            type="int"
+            column="MERGE_CONFIGURATION_ID"
+            unique="false"
+        />
+
+        <property
+            name="validated"
+            type="yes_no"
+            column="VALIDATED"
+            unique="false"
+        />
+
+        <property
+            name="resultCode"
+            type="byte"
+            column="RESULT_CODE"
+            unique="false"
+        />
+
+        <property
+            name="created"
+            type="java.util.Date"
+            column="CREATED"
+            unique="false"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Merge.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

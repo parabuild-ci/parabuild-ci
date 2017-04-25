@@ -1,0 +1,29 @@
+info: # A Perforce Branch Specification.
+info: #
+info: #  Branch:      The branch name.
+info: #  Update:      The date this specification was last modified.
+info: #  Access:      The date of the last 'integrate' using this branch.
+info: #  Owner:       The user who created this branch.
+info: #  Description: A short description of the branch (optional).
+info: #  Options:     Branch update options: [un]locked [in]direct.
+info: #  View:        Lines to map source depot files to target depot files.
+info: #
+info: # Use 'p4 help branch' to see more about branch views.
+info:
+info: Branch:	bt31
+info:
+info: Update:	2007/07/05 23:19:10
+info:
+info: Access:	2007/07/06 00:53:32
+info:
+info: Owner:	vimeshev
+info:
+info: Description:
+info: 	Created by vimeshev.
+info:
+info: Options:	locked direct
+info:
+info: View:
+info: 	//depot/dev/bt/... //depot/dev/bt31/...
+info: 	-//depot/dev/bt/blah/... //depot/dev/bt31/blah/...
+exit: 0

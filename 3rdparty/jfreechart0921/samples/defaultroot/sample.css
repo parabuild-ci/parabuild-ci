@@ -1,0 +1,148 @@
+P, DIV  { font-family: verdana,  tahoma, arial, sans-serif; font-size : 10pt; }
+P.small { font-size: 8pt; }
+P.narrow { font-family: tahoma, verdana, arial, sans-serif; }
+P.smallNarrow { font-family: tahoma, verdana, arial, sans-serif; font-size: 8pt; }
+DIV#content { padding-left: 10px; }
+DIV#topTitle { text-align: left;}
+
+.pullDown {
+	font : normal 10px Verdana, Tahoma, Arial, Helvetica;
+	color : #000000;
+	margin : 0px;
+}
+
+.textBox {
+	font : normal 10px Verdana, Tahoma, Arial, Helvetica;
+	color : #000000;
+	margin : 0px;
+}
+
+.normalText {
+	font-family: Verdana, tahoma, arial, sans-serif;
+	font-size : 10pt;
+}
+
+.boldText {
+	font-family: Verdana, tahoma, arial, sans-serif;
+	font-size : 10pt;
+	font-weight : bold;
+}
+
+.smallText {
+	font-family: Verdana, tahoma, arial, sans-serif;
+	font-size : 8pt;
+}
+
+.smallBoldText {
+	font-family: Verdana, tahoma, arial, sans-serif;
+	font-size : 8pt;
+	font-weight : bold;
+}
+
+.errorText {
+	font-family: Verdana, tahoma, arial, sans-serif;
+	font-size : 10pt;
+	color: 640000;
+	font-weight : bold;
+}
+
+.smallErrorText {
+	font-family: Verdana, tahoma, arial, sans-serif;
+	font-size : 8pt;
+	color: CC0000;
+	font-weight : bold;
+}
+
+A:link {
+	color: 000066;
+}
+
+A:active {
+	color: 000066;
+}
+
+A:visited  {
+	color: 993300;
+}
+
+H1 {
+	font-family: Verdana, Tahoma, arial, sans-serif;
+	font-weight: bold;
+	color : #000000;
+	font-size : 12pt;
+}
+
+H2 {
+	font-family: Verdana ,Tahoma, arial, sans-serif;
+	font-weight: bold;
+	font-size : 10pt;
+	color : #000000;
+	margin-bottom : 0;
+	padding-bottom : 0;
+}
+
+H3 {
+	font-family: Verdana ,Tahoma, arial, sans-serif;
+	font-weight: bold;
+	font-size : 9pt;
+	color : #000000;
+}
+
+TH {
+	font-family: Verdana, tahoma, arial, sans-serif;
+	font-size : 8pt;
+	font-weight : bold;
+	color : #000064;
+	background : #DBD8BD;
+}
+
+TD {
+	font-family: Verdana, tahoma, arial, sans-serif;
+	font-size : 8pt;
+}
+
+TD.medium {
+	font-family: Verdana, tahoma, arial, sans-serif;
+	font-size : 8pt;
+}
+
+TH.dark, TD.dark {
+	background : #000064;
+	color : White;
+	font-weight : bold;
+}
+
+BODY {
+	background-color: #FFFFFF;
+	background-image: url("/jfreechart-sample/images/main_background.png");
+	margin-top: 0;
+	margin-left: 0;
+}
+
+.menuOption:hover	{
+	text-decoration: underline;
+}
+
+.menuOption	{
+	text-decoration: none;
+	color: 000066;
+}
+
+.menuOption:visited {
+	color: 000066;
+}
+.largeMenuOption {
+	font-family: Verdana ,Tahoma, arial, sans-serif;
+	font-weight: bold;
+	font-size : 10pt;
+	color: 000066;
+}
+.largeMenuOption:visited {
+	font-family: Verdana ,Tahoma, arial, sans-serif;
+	font-weight: bold;
+	font-size : 10pt;
+	color: 000066;
+}
+.panel {
+	background-color:#99CC99;
+}

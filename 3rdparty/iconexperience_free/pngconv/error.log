@@ -1,0 +1,14 @@
+UIDefaults.getUI() failed: no ComponentUI class for: javax.swing.JProgressBar[,0,0,0x0,invalid,alignmentX=null,alignmentY=null,border=,flags=0,maximumSize=,minimumSize=,preferredSize=,orientation=HORIZONTAL,paintBorder=false,paintString=false,progressString=,indeterminateString=false]
+java.lang.Error
+	at javax.swing.UIDefaults.getUIError(UIDefaults.java:686)
+	at javax.swing.UIDefaults.getUI(UIDefaults.java:716)
+	at javax.swing.UIManager.getUI(UIManager.java:784)
+	at javax.swing.JProgressBar.updateUI(JProgressBar.java:577)
+	at javax.swing.JProgressBar.<init>(JProgressBar.java:290)
+	at javax.swing.JProgressBar.<init>(JProgressBar.java:235)
+	at javax.swing.JProgressBar.<init>(JProgressBar.java:213)
+	at javax.swing.ProgressMonitor.setProgress(ProgressMonitor.java:230)
+	at com.incors.imageconverter.gifconverter.StepSelectOutput.leave(Unknown Source)
+	at com.incors.wizard.WizardPanel$4.construct(Unknown Source)
+	at com.incors.imageconverter.SwingWorker$2.run(Unknown Source)
+	at java.lang.Thread.run(Thread.java:536)

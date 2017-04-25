@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<pmd>
+  <file name="D:\projectory\bt\src\viewtier\autobuild\build\JUnitLogHandler.java">
+    <violation line="83" rule="UnusedLocalVariable">
+      Avoid unused local variables such as 'successes'
+    </violation>
+  </file>
+  <file name="D:\projectory\bt\src\viewtier\autobuild\integration\jira\AutobuildHttpClient.java">
+    <violation line="48" rule="AvoidReassigningParametersRule">
+      Avoid reassigning parameters such as 'post'
+    </violation>
+    <violation line="62" rule="AvoidReassigningParametersRule">
+      Avoid reassigning parameters such as 'sHostName'
+    </violation>
+  </file>
+  <file name="D:\projectory\bt\src\viewtier\autobuild\integration\jira\AutobuildPushhelper.java">
+    <violation line="139" rule="AvoidReassigningParametersRule">
+      Avoid reassigning parameters such as 'sNumber'
+    </violation>
+    <violation line="165" rule="AvoidReassigningParametersRule">
+      Avoid reassigning parameters such as 'p_sIssueCount'
+    </violation>
+    <violation line="165" rule="AvoidReassigningParametersRule">
+      Avoid reassigning parameters such as 'sNumber'
+    </violation>
+  </file>
+  <file name="D:\projectory\bt\src\viewtier\autobuild\persistance\HSQLDBDatabaseRunner.java">
+    <violation line="68" rule="EmptyTryBlock">
+      Avoid empty try blocks
+    </violation>
+  </file>
+  <file name="D:\projectory\bt\src\viewtier\autobuild\remote\internal\RemoteFileGetter.java">
+    <violation line="49" rule="AvoidCatchingThrowable">
+      A catch statement should never catch throwable since it includes errors
+    </violation>
+    <violation line="50" rule="ExceptionTypeChecking">
+      The catch clause shouldn't check the exception type - catch several exceptions instead
+    </violation>
+  </file>
+  <file name="D:\projectory\bt\src\viewtier\autobuild\remote\services\RemoteBuilderServlet.java">
+    <violation line="120" rule="AvoidCatchingThrowable">
+      A catch statement should never catch throwable since it includes errors
+    </violation>
+  </file>
+  <file name="D:\projectory\bt\src\viewtier\autobuild\webui\admin\VSSSettingsPanel.java">
+    <violation line="148" rule="EmptyTryBlock">
+      Avoid empty try blocks
+    </violation>
+  </file>
+  <file name="D:\projectory\bt\src\viewtier\autobuild\webui\common\AbstractFlatTable.java">
+    <violation line="68" rule="ConstructorCallsOverridableMethodRule">
+      Avoid calls to overridable methods during construction
+    </violation>
+    <violation line="72" rule="ConstructorCallsOverridableMethodRule">
+      Avoid calls to overridable methods during construction
+    </violation>
+  </file>
+</pmd>

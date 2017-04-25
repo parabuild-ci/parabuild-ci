@@ -1,0 +1,80 @@
+<antlib>
+   <taskdef name="antcallback" classname="ise.antelope.tasks.AntCallBack"/>
+   <taskdef name="antfetch" classname="ise.antelope.tasks.AntFetch"/>
+   <taskdef name="assert" classname="ise.antelope.tasks.Assert"/>
+   <taskdef name="antcallback" classname="ise.antelope.tasks.AntCallBack"/>
+   <taskdef name="antfetch" classname="ise.antelope.tasks.AntFetch"/>
+   <taskdef name="assert" classname="ise.antelope.tasks.Assert"/>
+   <taskdef name="bool" classname="ise.antelope.tasks.BooleanConditionTask"/>
+   <taskdef name="break" classname="ise.antelope.tasks.Break"/>
+   <taskdef name="call" classname="ise.antelope.tasks.Call"/>
+   <taskdef name="case" classname="ise.antelope.tasks.Case"/>
+   <taskdef name="catch" classname="ise.antelope.tasks.CatchTask"/>
+   <taskdef name="default" classname="ise.antelope.tasks.DefaultCase"/>
+   <taskdef name="else" classname="ise.antelope.tasks.ElseTask"/>
+   <taskdef name="fileutil" classname="ise.antelope.tasks.FileUtilTask"/>
+   <taskdef name="finally" classname="ise.antelope.tasks.FinallyTask"/>
+   <taskdef name="find" classname="ise.antelope.tasks.Find"/>
+   <taskdef name="foreach" classname="ise.antelope.tasks.Foreach"/>
+   <taskdef name="grep" classname="ise.antelope.tasks.Find"/>
+   <taskdef name="hostname" classname="ise.antelope.tasks.HostnameTask"/>
+   <taskdef name="if" classname="ise.antelope.tasks.IfTask"/>
+   <taskdef name="limit" classname="ise.antelope.tasks.Limit"/>
+   <taskdef name="math" classname="ise.antelope.tasks.MathTask"/>
+   <taskdef name="new" classname="ise.antelope.tasks.New"/>
+   <taskdef name="pw" classname="ise.antelope.tasks.PasswordHandlerTask"/>
+   <taskdef name="post" classname="ise.antelope.tasks.PostTask"/>
+   <taskdef name="readlog" classname="ise.antelope.tasks.ReadLog"/>
+   <taskdef name="repeat" classname="ise.antelope.tasks.Repeat"/>
+   <taskdef name="split" classname="ise.antelope.tasks.SplitTask"/>
+   <taskdef name="stopwatch" classname="ise.antelope.tasks.StopWatchTask"/>
+   <taskdef name="suite" classname="ise.antelope.tasks.Suite"/>
+   <taskdef name="stringutil" classname="ise.antelope.tasks.StringUtilTask"/>
+   <taskdef name="switch" classname="ise.antelope.tasks.SwitchTask"/>
+   <taskdef name="testcase" classname="ise.antelope.tasks.TestCase"/>
+   <taskdef name="try" classname="ise.antelope.tasks.TryTask"/>
+   <taskdef name="uid" classname="ise.antelope.tasks.UIDTask"/>
+   <taskdef name="unset" classname="ise.antelope.tasks.Unset"/>
+   <taskdef name="until" classname="ise.antelope.tasks.BooleanConditionTask"/>
+   <taskdef name="var" classname="ise.antelope.tasks.Variable"/>
+   <taskdef name="xmlprop" classname="ise.antelope.tasks.XmlPropertyTask"/>
+   
+   <typedef name="prop" classname="ise.antelope.tasks.typedefs.Prop"/>
+   
+   <typedef name="contains" classname="ise.antelope.tasks.condition.Contains"/>
+   <typedef name="datedifference" classname="ise.antelope.tasks.condition.DateTimeDifference"/>
+   <typedef name="timedifference" classname="ise.antelope.tasks.condition.DateTimeDifference"/>
+   <typedef name="datebefore" classname="ise.antelope.tasks.condition.DateTimeBefore"/>
+   <typedef name="timebefore" classname="ise.antelope.tasks.condition.DateTimeBefore"/>
+   <typedef name="islessthan" classname="ise.antelope.tasks.condition.IsLessThan"/>
+   <typedef name="isgreaterthan" classname="ise.antelope.tasks.condition.IsGreaterThan"/>
+   <typedef name="mathequals" classname="ise.antelope.tasks.condition.MathEquals"/>
+   <typedef name="endswith" classname="ise.antelope.tasks.condition.EndsWith"/>
+   <typedef name="startswith" classname="ise.antelope.tasks.condition.StartsWith"/>
+   
+   <typedef name="and" classname="ise.antelope.tasks.condition.And"/>
+   <typedef name="or" classname="ise.antelope.tasks.condition.Or"/>
+   <typedef name="not" classname="ise.antelope.tasks.condition.Not"/>
+   
+   <typedef name="lowercase" classname="ise.antelope.tasks.typedefs.string.LowerCase"/>
+   <typedef name="uppercase" classname="ise.antelope.tasks.typedefs.string.UpperCase"/>
+   <typedef name="trim" classname="ise.antelope.tasks.typedefs.string.Trim"/>
+   <typedef name="substring" classname="ise.antelope.tasks.typedefs.string.Substring"/>
+   <typedef name="replace" classname="ise.antelope.tasks.typedefs.string.Replace"/>
+   <typedef name="indexof" classname="ise.antelope.tasks.typedefs.string.IndexOf"/>
+   <typedef name="lastindexof" classname="ise.antelope.tasks.typedefs.string.LastIndexOf"/>
+   <typedef name="length" classname="ise.antelope.tasks.typedefs.string.Length"/>
+   <typedef name="messagebox" classname="ise.antelope.tasks.typedefs.string.MessageBox"/>
+   <typedef name="sort" classname="ise.antelope.tasks.typedefs.string.Sort"/>
+   
+   <typedef name="canread" classname="ise.antelope.tasks.typedefs.file.CanRead"/>
+   <typedef name="canwrite" classname="ise.antelope.tasks.typedefs.file.CanWrite"/>
+   <typedef name="filecount" classname="ise.antelope.tasks.typedefs.file.FileCount"/>
+   <typedef name="filelength" classname="ise.antelope.tasks.typedefs.file.FileLength"/>
+   <typedef name="linecount" classname="ise.antelope.tasks.typedefs.file.FileLineCount"/>
+   <typedef name="listfiles" classname="ise.antelope.tasks.typedefs.file.FileList"/>
+   <typedef name="isdirectory" classname="ise.antelope.tasks.typedefs.file.IsDirectory"/>
+   <typedef name="isfile" classname="ise.antelope.tasks.typedefs.file.IsFile"/>
+   <typedef name="lastmodified" classname="ise.antelope.tasks.typedefs.file.LastModified"/>
+   
+</antlib>

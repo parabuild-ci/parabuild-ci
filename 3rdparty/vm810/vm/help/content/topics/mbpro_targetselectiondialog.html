@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Target Selection Dialog Box</TITLE>
+<!--<MBPro_TargetSelectionDialog.html>-->
+<!--<index parent="Merant Build" label="Target Selection dialog box" anchor="targetselection">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiTargetSelectionDlg.VmGuiMerantBuildTargetSelectionDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nSerena ChangeMan Builder for Professional\nTarget Selection Dialog Box");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="targetselection"></A>Target Selection</H1>
+<P>Use the Target Selection dialog box to select the targets to be built.</P>
+
+<P>After you have filled out the fields on this dialog box, click Next 
+to go to the Build Parameters dialog box.</P>
+
+
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+        <TD><b>Serena ChangeMan Builder project</b></TD>
+		<TD><!--<control name="TSD_BUILD_PROJECT_TEXTFIELD">-->
+        A read-only field displaying the name of the Serena ChangeMan Builder project.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Build machine</b></TD>
+		<TD><!--<control name="TSD_BUILD_MACHINE_CHOICE">-->
+        Choose from the available build machines set up ahead of time by the Serena ChangeMan Builder administrator.
+                The build machine displayed by default is the one selected in the <A HREF="mbpro_jobselectiondialog.html">Job Selection Dialog Box</A>.
+                Changing the build machine also changes the target files that are selected, because each build machine
+                has its own set of targets and settings.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Project Targets Selection</b></TD>
+		<TD><!--<control name="TSD_TARGET_SELECTION_LIST">-->
+		Select the targets to be built, then use the right-pointing arrow buttons to 
+                move the selected targets to the Project Targets Selected list. 
+                You can use CTRL-Select and SHIFT-Select.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Project Targets Selected</b></TD>
+		<TD><!--<control name="TSD_TARGET_SELECTED_LIST">-->
+		Displays the selected targets. If you wish to remove any
+                targets from this list, select them, then use the left-pointing
+                arrow buttons to return the targets to the Project Targets Selection list.
+                You can use CTRL-Select and SHIFT-Select.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>> (Add)</b></TD>
+		<TD><!--<control name="TSD_ADD_BUTTON">-->
+		Click to add the selected target to the Project Targets Selected list.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>>> (Add All)</b></TD>
+		<TD><!--<control name="TSD_ADD_ALL_BUTTON">-->
+		Click to add all targets to the Project Targets Selected list.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>< (Remove)</b></TD>
+		<TD><!--<control name="TSD_REMOVE_BUTTON">-->
+		Click to remove the selected targets from the Project Targets Selected list.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b><< (Remove All)</b></TD>
+		<TD><!--<control name="TSD_REMOVE_ALL_BUTTON">-->
+		Click to remove all targets from the Project Targets Selected list.<!--</control>--></TD>
+	</TR>
+	</TABLE>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="mbpro_parametersdialog.html">Build Parameters Dialog Box</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="mbpro_jobselectiondialog.html">Build Job Selection Dialog Box</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

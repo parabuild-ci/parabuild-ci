@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Fixed-Length Keyword Expansion</TITLE>
+<!--<fixedlengthexpansion.html>-->
+<!--<index parent="keywords" label="fixed-length expansion" anchor="fixedlengthexpansion">-->
+<!--<index parent="options" label="fixed-length keyword expansion" anchor="fixedlengthexpansion">-->
+<!--<index parent="configuration_options" label="fixed-length keyword expansion" anchor="fixedlengthexpansion">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="fixedlengthexpansion"></A>Fixed-Length Keyword Expansion</H1>
+<p>You use fixed-length keyword expansion on two types of files:
+<ul>
+	<LI>Files whose total length must not change in Version Manager (such as Microsoft Word&#8482; documents) 
+	<li>Files which contain fixed-length records or lines (such as some Cobol files)
+</ul>
+<P>When you expand keywords in these types files, you must make sure that the line that contains the expanded keywords is the same length each time it is expanded. This ensures that the files will be read correctly. Other types of fixed-length files include column-sensitive languages, non-text files, word processor files, database files, and spreadsheet files. You regulate the exact length of the expanded keyword by placing character "fillers" between the keyword and its terminating dollar sign (&#36;).</P>
+<P>To insert a fixed-length keyword, use the following syntax in the workfile:
+
+<ul> <p><font face="Courier New">$Header::   $</font></p></ul>
+
+<p>The double colon (::) in the syntax above tells Version Manager that the keyword will be expanded to a fixed length. You can use any character as the x parameter.</p>
+
+<p>You vary the number of x parameters to determine the expanded length. If the keyword expands to fewer than the specified number of characters, the program fills the remaining reserved space with spaces. If it expands to more than the required number of characters, the program includes as many characters as will fit.</p>
+
+<P><b>Warning!</b> Keyword expansion can cause corruption in binary files, so Version Manager disables keyword expansion by default. You should <b>never</b> expand keywords for certain types of binary files (such as .exe, .bmp, .dll). If you decide to implement keyword expansion in other fixed-length record files, use fixed-length keyword expansion.</P>
+<P>You set <a href="keywordexpansionoptions.html">keyword expansion options</a> when configuring your project database or project.</P>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+			<TD><a href="keywords.html">Available Keywords</a></TD>
+	</TR>
+
+</TABLE>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

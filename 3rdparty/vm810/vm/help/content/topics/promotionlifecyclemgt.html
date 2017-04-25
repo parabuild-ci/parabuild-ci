@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Promotion and Lifecycle Management</TITLE>
+<!--<PromotionLifecycleMgt.html>-->
+<!--<toc parent="working_with_promotion_models" label="Promotion and Lifecycle Management" anchor="PromotionLifecycleMgt" sortkey="03">-->
+<!--<index parent="promotion_groups" label="Promotion" anchor="PromotionLifecycleMgt">-->
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nUsing Promotion Models\nPromotion and Lifecycle Management");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="PromotionLifecycleMgt"></A>Promotion and Lifecycle Management</H1>
+<P>The primary purpose of promotion modeling is to formally manage the lifecycle of software development from the design phase to final release.</P>
+<H2>Scenario of Lifecycle Management</H2>
+<p>Suppose a simple lifecycle:</p>
+<p>Development to QA to Release
+
+<p>In this scenario, a promotion model is defined with promotion groups that parallel the lifecycle Development, QA, and Release. With this promotion model in place, the developers are checking out files associated with the Development promotion group, which is, by default, the tip revision. When they check files back in, the new revision is associated with the Development promotion group because the lowest-level promotion group floats with the tip revision.
+<p>Next, the developers complete all of the changes needed for the product release and the revisions are promoted from Development to QA. Here is a before-and-after picture of a hypothetical archive:
+
+<TABLE>
+<TR>
+<TD><b>Before</b></TD>
+<TD><b>After</b></TD>
+</TR>
+<TR>
+<TD>Rev 1.5 Development&nbsp;&nbsp;</TD>
+<TD>Rev 1.5 QA</TD>
+</TR>
+<TR>
+<TD>Rev 1.4</TD>
+<TD>Rev 1.4</TD>
+</TR>
+<TR>
+<TD>Rev 1.3</TD>
+<TD>Rev 1.3</TD>
+</TR>
+<TR>
+<TD>Rev 1.2 Release</TD>
+<TD>Rev 1.2 Release</TD>
+</TR>
+<TR>
+<TD>Rev 1.1</TD>
+<TD>Rev 1.1</TD>
+</TR>
+<TR>
+<TD>Rev 1.0</TD>
+<TD>Rev 1.0</TD>
+</TR>
+</TABLE>
+
+<p>Now the quality assurance department starts testing the software and the developers go to work on the next release, checking out and in more changes. For instance, after a developer adds two revisions in the hypothetical archive, it looks like this:
+
+<p>Rev 1.7 Development<BR>
+Rev 1.6<BR>
+Rev 1.5 QA<BR>
+Rev 1.4<BR>
+Rev 1.3<BR>
+Rev 1.2 Release<BR>
+Rev 1.1<BR>
+Rev 1.0<BR>
+
+<p>The quality assurance department does not have to concern themselves with any of the new development changes because they are referencing the QA promotion group when they check out revisions.
+
+<p>Later, when the quality assurance department is satisfied with the release, the revision associated with QA is promoted to Release. Now the hypothetical archive looks like this:
+
+<p>Rev 1.7 Development<BR>
+Rev 1.6<BR>
+Rev 1.5 Release<BR>
+Rev 1.4<BR>
+Rev 1.3<BR>
+Rev 1.2<BR>
+Rev 1.1<BR>
+Rev 1.0<BR>
+
+<p>Now, the release manager produces a final software product. He references the Release promotion group when checking out revisions; he is not affected by the changes being made by development.
+<BR>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+<TR>
+			<TD><A HREF="aboutprommodels.html">About Promotion Models</A></TD>
+		<TD><A HREF="removepromotiongroup.html">Removing Promotion Groups</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="changepromotiongroup.html">Changing Promotion Groups</A></TD>
+		<TD><A HREF="promotetonext.html">Promoting Versioned Files to the Next Group</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

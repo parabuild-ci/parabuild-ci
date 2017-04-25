@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Deleting Version Manager Projects</TITLE>
+<!--<deleteproject.html>-->
+<!--<toc parent="working_with_projects" label="Deleting Projects" anchor="deleteproject" sortkey="06">-->
+<!--<index parent="deleting" label="projects" anchor="deleteproject">-->
+<!--<index parent="projects" label="deleting" anchor="deleteproject">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with Project Databases/Projects\nProjects\nDeleting Projects");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="deleteproject"></A>Deleting Version Manager Projects</H1>
+<P>When you delete a project, the project and subprojects are deleted from the Project pane and the versioned files are deleted from the File pane. Workfiles and archives associated with the project are not deleted.</p>
+<P>Version Manager also deletes the project metadata directory beneath the project database location. This directory name is masked for security purposes (for example, p1otxdt.prj). This directory contains one file named pvcsproj.ser, which contains project metadata for subprojects, versioned files, configuration file, and archive and workfile locations.
+<P>The project configuration file and access control database associated with the project are <i>not</i> removed. The project's work and archive directories are also not deleted because they may be shared by other projects.</P>
+<H2>To delete a project:</H2>
+<OL>
+	<LI>Select the project or subproject you want to delete from the Project pane.<br><br>
+	<LI>Select File | Delete. Unless you've changed the default options on the View menu, the Confirm Item Deletion dialog box appears.<br><br>
+	<LI>Click Yes to delete the project.<br><br>
+</OL>
+
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="reviewingproperties.html">Reviewing Properties</A></TD>
+		<TD><A HREF="projectdialog.html">Project Database Properties</A></TD>
+	</TR>
+	<TR>
+		<td><a href="deleteversionedfile.html">Deleting Versioned Files</a></td>
+		<td><a href="restoringversionedfiles.html">Restoring Versioned Files</a></td>
+	</TR>
+	<TR>
+		<TD><a href="aboutimportarchive.html">About Importing Archives</A></TD>
+		<TD><a href="cleaninguparchives.html">About Cleaning Up Unwanted Archive Files</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

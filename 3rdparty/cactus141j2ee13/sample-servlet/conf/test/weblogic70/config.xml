@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Domain Name="testdomain">
+    <EmbeddedLDAP
+        Credential="{3DES}55B/7RZVVwwrYUjjEf9Cdd5f72Gj7pm7apl5R36oQfU=" Name="testdomain"/>
+    <FileRealm Name="wl_default_file_realm"/>
+    <PasswordPolicy Name="wl_default_password_policy"/>
+    <Realm FileRealm="wl_default_file_realm" Name="wl_default_realm"/>
+    <Security Name="testdomain"
+        PasswordPolicy="wl_default_password_policy"
+        Realm="wl_default_realm" RealmSetup="true"/>
+    <SecurityConfiguration
+        Credential="{3DES}VXIBKpJ4bKQa1IbvnNqcaZa6BPWIg0zhWlcSd2lrfZmn7KZ9gF7QnMZqhjswb/KzSbiBo/cuJGV7qLrkNbpL64iLduDXGin1" Name="testdomain"/>
+    <Server Name="testserver" NativeIOEnabled="true" ListenPort="@test.port@"/>
+</Domain>

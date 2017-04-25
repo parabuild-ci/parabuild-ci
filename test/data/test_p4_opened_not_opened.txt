@@ -1,0 +1,2 @@
+error: File(s) not opened on this client.
+exit: 0

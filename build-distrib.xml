@@ -1,0 +1,42 @@
+<project name="bt" default="distrib.all" basedir=".">
+
+  <target name="distrib.media">
+
+    <!-- Documentation -->
+    <mkdir dir="${build.dir}/result_distrib/docs"/>
+    <copy todir="${build.dir}/result_distrib/docs" flatten="yes" includeEmptyDirs="no">
+      <fileset dir="${docs.result.dir}"/>
+    </copy>
+
+    <!-- NOTE: this value is overwritten by calling script when actual release build is done -->
+    <property name="release.build" value="SNAPSHOT"/>
+    <ant antfile="build-helper.xml" target="install4j">
+      <property name="param.release.build" value="${release.build}"/>
+      <property name="param.install4j.project" value="${config}/install.install4j"/>
+    </ant>
+  </target>
+
+
+  <!-- Validation -->
+  <target name="distrib.validate" depends="distrib.media">
+    <!-- TODO: Make sure result contains only what it should have -->
+
+    <!-- Make sure docs are in place -->
+    <ant antfile="build-helper.xml" target="validate.file.exists">
+      <property name="file.location" value="${build.dir}/result_distrib/docs/install_guide.html"/>
+      <property name="file.descr" value="Installation guide"/>
+    </ant>
+    <ant antfile="build-helper.xml" target="validate.file.exists">
+      <property name="file.location" value="${build.dir}/result_distrib/docs/admin_manual.html"/>
+      <property name="file.descr" value="Admin manual"/>
+    </ant>
+    <ant antfile="build-helper.xml" target="validate.file.exists">
+      <property name="file.location" value="${build.dir}/result_distrib/docs/user_manual.html"/>
+      <property name="file.descr" value="User manual"/>
+    </ant>
+
+  </target>
+
+
+  <target name="distrib.all" depends="distrib.media, distrib.validate"/>
+</project>

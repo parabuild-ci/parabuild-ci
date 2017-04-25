@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Select Default Privileges for New Users Dialog Box</TITLE>
+<!--<projectprivilegesdialog.html>-->
+<!--<index parent="security" label="Select Default Privileges for New Users dialog box" anchor="projectprivileges">-->
+<!--<index parent="privilege_sets" label="Select Default Privileges for New Users dialog box" anchor="projectprivileges">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiConfigureProjectPrivilegesDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="projectprivileges"></A>Select Default Privileges for New Users</H1>
+<P>Use the Select Default Privileges for New Users dialog box (Admin | Configure Project | General tab | Login Sources | default privileges Browse button) to select the default privileges/privilege sets to be assigned to new users.</P>
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><b>Privilege sets</b></TD>
+		<TD><!--<control name="PrivilegeTreeControlPanelForm.PRIVILEGE_SETS_TREE">-->
+		Select the privilege set(s) that will be assigned to new users. <!--</control>--></TD>
+	</TR>
+	<TR>
+	<TD><b>All privileges</b></TD>
+	<TD><!--<control name="PrivilegeTreeControlPanelForm.BASE_PRIVILEGES_TREE">-->Select the base privileges and composite privileges that will be assigned to new users.<!--</control>--> The options with a + beside them are allowed. The options with a - beside them are denied; only Project privileges are negative privileges, meaning if they are not selected, then they are allowed privileges. To change the status of an option, click the check box beside the option. You can allow or disallow an entire set of related privileges by clicking the parent option. For example, you could assign all of the Action privileges by clicking the check box beside Action Privileges to place a + in the check box.</TD>
+	</TR>
+	<TR>
+		<TD><b>Selected privileges</b></TD>
+		<TD><!--<control name="PrivilegeTreeControlPanelForm.PRIVILEGES_TEXT">-->
+		Displays a list of privilege sets and individual privileges that are currently selected to be assigned to new users.<!--</control>--></TD>
+	</TR>
+	</TABLE>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="createprivsetdialog.html">Create Privilege Set Dialog Box</A></TD>
+		<TD><A HREF="projectsecuritydialog.html">Project Security Dialog Box</a></TD>
+	</TR>
+	<TR>
+		<TD></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<log>
+  <logentry
+          revision="13">
+    <author>test_user</author>
+    <date>2007-06-20T06:47:47.663306Z</date>
+    <paths>
+      <path
+              action="M">/test/spaced source line/alwaysvalid/spaced src/test.txt
+      </path>
+    </paths>
+    <msg>Added a change</msg>
+  </logentry>
+  <logentry
+          revision="12">
+    <author>test_user</author>
+    <date>2007-06-20T06:45:01.383491Z</date>
+    <paths>
+      <path
+              action="A">/test/spaced source line/alwaysvalid/spaced src/test.txt
+      </path>
+    </paths>
+    <msg>Added test file</msg>
+  </logentry>
+  <logentry
+          revision="11">
+    <author>test_user</author>
+    <date>2007-06-20T06:44:07.307111Z</date>
+    <paths>
+      <path
+              action="A">/test/spaced source line/alwaysvalid/spaced src
+      </path>
+    </paths>
+    <msg>Added spaced subdirectory</msg>
+  </logentry>
+  <logentry
+          revision="10">
+    <author>test_user</author>
+    <date>2007-06-20T06:41:13.438435Z</date>
+    <paths>
+      <path
+              copyfrom-path="/test/sourceline"
+              copyfrom-rev="9"
+              action="A">/test/spaced source line
+      </path>
+    </paths>
+    <msg>Created spaced test path using branching</msg>
+  </logentry>
+  <logentry
+          revision="9">
+    <author>test_user</author>
+    <date>2005-12-16T06:55:16.864106Z</date>
+    <paths>
+      <path
+              action="M">/test/sourceline/alwaysvalid/src/readme.txt
+      </path>
+    </paths>
+    <msg>Тестовое сообщение в 1251</msg>
+  </logentry>
+  <logentry
+          revision="8">
+    <author>test_user</author>
+    <date>2005-09-27T00:11:46.291038Z</date>
+    <paths>
+      <path
+              copyfrom-path="/test/renamed_source_line1"
+              copyfrom-rev="7"
+              action="A">/test/renamed_source_line
+      </path>
+      <path
+              action="D">/test/renamed_source_line1
+      </path>
+    </paths>
+    <msg>Renamed back</msg>
+  </logentry>
+  <logentry
+          revision="7">
+    <author>test_user</author>
+    <date>2005-09-27T00:09:04.452861Z</date>
+    <paths>
+      <path
+              action="D">/test/renamed_source_line
+      </path>
+      <path
+              copyfrom-path="/test/renamed_source_line"
+              copyfrom-rev="6"
+              action="A">/test/renamed_source_line1
+      </path>
+    </paths>
+    <msg>Renamed again</msg>
+  </logentry>
+  <logentry
+          revision="6">
+    <author>test_user</author>
+    <date>2005-09-26T23:43:11.935010Z</date>
+    <paths>
+      <path
+              copyfrom-path="/test/source_line_to_rename"
+              copyfrom-rev="5"
+              action="A">/test/renamed_source_line
+      </path>
+      <path
+              action="D">/test/source_line_to_rename
+      </path>
+    </paths>
+    <msg>Renamed source line</msg>
+  </logentry>
+  <logentry
+          revision="5">
+    <author>test_user</author>
+    <date>2005-09-26T23:37:15.346048Z</date>
+    <paths>
+      <path
+              action="A">/test/source_line_to_rename/file_in_source_line_to_rename.txt
+      </path>
+      <path
+              action="A">/test/source_line_to_rename
+      </path>
+    </paths>
+    <msg>Added source line to rename</msg>
+  </logentry>
+  <logentry
+          revision="4">
+    <author>test_user</author>
+    <date>2005-03-06T08:16:58.105621Z</date>
+    <paths>
+      <path
+              action="A">/test/sourceline/alwaysempty
+      </path>
+    </paths>
+    <msg>Added always empty source line</msg>
+  </logentry>
+  <logentry
+          revision="3">
+    <author>test_user</author>
+    <date>2005-03-06T00:38:15.053604Z</date>
+    <paths>
+      <path
+              action="A">/test/second_sourceline/src
+      </path>
+    </paths>
+    <msg>added src</msg>
+  </logentry>
+  <logentry
+          revision="2">
+    <author>root</author>
+    <date>2005-03-03T22:14:35.092690Z</date>
+    <paths>
+      <path
+              action="A">/test/sourceline/alwaysvalid/src/readme.txt
+      </path>
+    </paths>
+    <msg>Added first file</msg>
+  </logentry>
+  <logentry
+          revision="1">
+    <author>root</author>
+    <date>2005-03-03T22:08:36.988333Z</date>
+    <paths>
+      <path
+              action="A">/test/second_sourceline
+      </path>
+      <path
+              action="A">/test/sourceline
+      </path>
+      <path
+              action="A">/test/sourceline/alwaysvalid
+      </path>
+      <path
+              action="A">/test/sourceline/alwaysvalid/src
+      </path>
+      <path
+              action="A">/test
+      </path>
+    </paths>
+    <msg>initial import</msg>
+  </logentry>
+</log>

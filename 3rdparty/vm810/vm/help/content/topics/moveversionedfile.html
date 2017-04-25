@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Moving Versioned Files</TITLE>
+<!--<moveversionedfile.html>-->
+<!--<toc parent="working_with_versioned_files" label="Moving Versioned Files" anchor="MoveVersionedFiles" sortkey="02">-->
+<!--<index parent="files" label="moving versioned files" anchor="MoveVersionedFile">-->
+<!--<index parent="moving" label="versioned files" anchor="MoveVersionedFile">-->
+<!--<index parent="versioned_files" label="moving versioned files" anchor="MoveVersionedFile">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with Versioned Files\nMoving Versioned Files");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="MoveVersionedFile"></A>Moving Versioned Files</H1>
+<P>Moving a versioned file relocates it to any other project or subproject <i>within</i> the same project database. In Serena ChangeMan Version Manager, when you move a versioned file, the archive is not moved--the versioned file references the original archive.</p>
+<p>Move does not change the contents or history of the versioned file; it does, however, change the history of the parent project. <br><br>
+<p>Note that all Version Manager file names must be unique within the same hierarchical level (within projects, subprojects, or project databases). For example, two versioned files within the same project cannot have the same name and extension. </p>
+
+<H2>To move versioned files using the menu items:</H2>
+<OL>
+	<LI>From the File pane, select the versioned file (or files) you want to move.<br><br>
+	<LI>Select Edit | Move. The Project Browse dialog box appears. The dialog box displays the projects and subprojects of the project database.<br><br>
+	<LI>Select a destination project or subproject. To move the file directly beneath the project database, select the project database.<br><br>
+	<li>Click OK. The versioned file is moved to the destination location. <br><br>
+</OL>
+<H2>To move versioned files using drag and drop:</H2>
+<OL>
+	<LI>From the File pane, select the versioned file (or files) you want to move.<br><br>
+	<li>Drag the versioned file to a destination project or subproject within the project database. To move the file directly beneath the project database, select the project database.<br><br>
+	<LI>Release the mouse button. The versioned file is moved to the new location.<br><br>
+	<B>Note:</B> Depending on how you've set up your Version Manager environment, a dialog box may ask for confirmation to move the versioned files. Click Yes to confirm the move or No to abort.
+</OL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="aboutversionedfiles.html">About Versioned Files</A></TD>
+		<TD><A HREF="copyversionedfile.html">Copying Versioned Files</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="deleteversionedfile.html">Deleting Versioned Files</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

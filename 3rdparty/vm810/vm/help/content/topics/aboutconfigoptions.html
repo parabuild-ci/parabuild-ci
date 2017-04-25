@@ -1,0 +1,230 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>About Configuration Options</TITLE>
+<!--<aboutconfigoptions.html>-->
+<!--<index parent="options" label="about" anchor="aboutconfigoptions">-->
+<!--<index parent="configuration_options" label="about" anchor="aboutconfigoptions">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="aboutconfigoptions"></A>About Configuration Options</H1>
+<P>Configuration options are settings that control how Version Manager operates. For example, configuration options control whether workfiles are deleted after check in and which access control database is used, if any.</P>
+<P>Configuration options are set in a configuration file, and you can set configuration options in one configuration file or multiple configuration files.</P>
+<P>The following table lists the available configuration options.</P>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+<TR>
+	<TD COLSPAN=2><CENTER><B>Configuration Options</B></CENTER></TD>
+</TR>
+<TR>
+	<TD><b>Use these options. . .</b></TD>
+	<TD><b>To do this. . .</b></TD>
+</TR>
+<TR>
+	<TD><a href="setarchivecreationoptions.html">Archive Creation</a></TD>
+	<TD><UL>
+	<LI>Exclusively lock an archive.
+	<LI>Assign ownership of archives.
+	<LI>Identify users and groups of users who are allowed to access archives.
+	<LI>Write-protect archives.
+	<LI>Automatically create an archive when you check in a workfile if Version Manager cannot find one for the file.
+</UL></TD>
+</TR>
+<TR>
+	<TD><a href="setautobranch.html">Branching</a></TD>
+	<TD><UL>
+	<LI>Specify the version label that identifies the revision where a branch begins.
+	<LI>Specify the version label assigned to branch revisions.
+	<LI>Identify the revision to use if no other is specified.
+	<LI>Warn the user before a branch is created.
+	</UL></TD>
+</TR>
+<TR>
+	<TD><a href="setlockingoptions.html">Locking</a></TD>
+	<TD><UL>
+	<LI>Permit a user to lock more than one revision.
+	<LI>Permit more than one lock per revision.
+	<LI>Remove the lock when storing an unchanged revision.
+	</UL></TD>
+</TR>
+<TR><TD><a href="definingpromomodel.html">Promotion Model</a></TD>
+<TD><UL>
+<LI>Define a promotion model.
+</UL></TD>
+</TR>
+<TR><TD><a href="specifyacdblocation.html">Access Control Database</a></TD>
+<TD><UL>
+<LI>Identify the access control database.
+<LI>Enable the use of the access control database.
+</UL></TD>
+</TR>
+<TR><TD><a href="setjournalfileoptions.html">Journal File</a></TD>
+<TD><UL>
+<LI>Record an audit trail of archive activity.
+</UL></TD>
+</TR>
+<TR><TD><a href="setloginsources.html">Login Sources</a></TD>
+<TD><UL>
+<LI>Specify the user identification sources.
+<LI>Specify whether or not users are automatically created in the access control database and, if so, the default privileges assigned to each user (desktop client only).
+</UL></TD>
+</TR>
+<TR><TD><a href="setworkfileattroptions.html">Workfile Attributes</a></TD>
+<TD><UL>
+<LI>Delete the workfiles after storing them.
+<LI>Keep read-only copies of workfiles after storing them.
+<LI>Keep writable copies of workfiles after archiving them.
+</UL></TD>
+</TR>
+<TR><TD><a href="setkeywordexpansionoptions.html">Keyword Expansion</a></TD>
+<TD><UL>
+<LI>Specify the path separator character used in keyword expansion.
+<LI>Update the timestamp when expanding keywords.
+</UL></TD>
+</TR>
+<TR><TD><a href="refdiroptions.html">Reference Directory</a></TD>
+<TD><UL>
+<LI>Specify the directory where current workfile copies are automatically stored.
+<LI>Keep a reference directory for each archive directory.
+<LI>Store trunk revisions only.
+<LI>Write-protect the files in the reference directory.
+</UL></TD>
+</TR>
+<TR><TD><a href="setarchivesearchpathoptions.html">Archive Search Path</a> (Command-line interface options only)</TD>
+<TD><UL>
+<LI>Specify where Version Manager searches for archives when you perform an action on a file.
+<LI>Specify where or not wildcard specifications match archives in directories other than the first archive directory in which they are found.
+<LI>Specify how Version Manager searches for archives when only a workfile name is specified.
+</UL></TD>
+</TR>
+<TR><TD><a href="setcommandlineoptions.html">Command Line</a> (Command-line interface options only)</TD>
+<TD><UL>
+<LI>Display sign-on messages.
+<LI>Display detailed messages.
+<LI>Specify a command-line editor.
+<LI>Specify the directory for temporary files.
+<LI>Specify the message file suffix.
+<LI>Delete message files after reading them.
+</UL></TD>
+</TR>
+<TR><TD><a href="setsemaphoreoptions.html">Semaphores</a></TD>
+<TD><UL>
+<LI>Specify the directory where semaphore files are created.
+<LI>Specify the suffix used for semaphore files.
+<LI>Specify the number of attempts to access an archive.
+<LI>Specify the delay between attempts to access shared archives.
+</UL></TD>
+</TR>
+<TR><TD><a href="settempfileoptions.html">Temporary Files</a></TD>
+<TD><UL>
+<LI>Specify the director for temporary archives files.
+<LI>Specify the directory for temporary internal files.
+</UL></TD>
+</TR>
+<TR><TD><a href="setfiletypeoptions.html">File Types</a></TD>
+<TD><UL>
+<LI>Specify an archive suffix.
+<LI>Store deltas.
+<LI>Translate the end-of-line character.
+<LI>Expand keywords.
+<LI>Specify the comment prefix to use when expanding keywords.
+<LI>Specify the newline character to use when expanding keywords.
+<LI>Specify columns to ignore when comparing files.
+<LI>Renumber masked columns.
+<LI>Specify the logical record length.
+</UL></TD>
+</TR>
+<TR>
+	<TD><a href="settinguptriggers.html">Event Triggers</a></TD>
+	<TD><UL>
+	<LI>Execute user-defined instructions before or after a Version Manager event.
+	</UL></TD>
+</TR>
+<TR>
+	<TD><a href="setdisallowoptions.html">Allow/Disallow</a></TD>
+	<TD><UL>
+	<LI>Disallow users from changing a configuration option setting.
+	</UL></TD>
+</TR>
+</TABLE>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a href="guidelinesforsettingconfigoptions.html">Guidelines for Setting Configuration Options</a></TD>
+		<TD><a href="setconfigoptions.html">Setting Configuration Options</a></TD>
+	</TR>
+
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

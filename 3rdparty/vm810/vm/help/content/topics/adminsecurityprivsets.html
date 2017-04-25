@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Project Security Dialog Box/Privilege Sets</TITLE>
+<!--<adminsecurityprivsets.html>-->
+<!--<index parent="access_control_database" label="Project Security/Privilege Sets dialog box" anchor="adminsecurityprivsets">-->
+<!--<index parent="privilege_sets" label="Project Security/Privilege Sets dialog box" anchor="adminsecurityprivsets">-->
+<!--<index parent="security" label="Project Security/Privilege Sets dialog box" anchor="adminsecurityprivsets">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiProjectSecurityTabbedDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="adminsecurityprivsets"></A>Project Security/Privilege Sets</H1>
+<P>Use the Project Security dialog box (Admin | Security | Privilege Sets) to modify, create, duplicate, or delete the definition of a privilege set in an access control database. To create, duplicate, or delete a privilege set, use the appropriate button in the lower-left corner of this dialog box.</P>
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+		<TR>
+	<TD COLSPAN=2><CENTER><B>General Tab</b></center></TD>
+	</TR>
+	<TR><TD><b>Name</b></TD>
+		<TD><!--<control name="ProjectSecurityPrivilegeSetsGeneral.PRIVILEGE_SET_NAME_EDIT">-->
+		Displays the privilege set that is selected in the All Privilege Sets list. This is a read-only field.<!--</control>--></TD>
+	</TR>
+	<TR><TD><b>Restrict by promotion group</b></TD>
+		<TD><!--<control name="ProjectSecurityPrivilegeSetsGeneral.RESTRICT_BY_EDIT">-->
+		Displays the promotion group that this privilege set is restricted to, if any. To remove the restriction, delete the promotion group name from this field. To change the restriction to a different promotion group, enter the name of a promotion group or click the Browse button to select the group.<!--</control>--></TD>
+	</TR>
+	<!--<control base="pvcs.vm.vmgui.VmGuiProjectSecurityPrivilegesDialog"></control>-->
+	<TR><TD COLSPAN=2><CENTER><B>Privileges Tab</b></center></TD></TR>
+<TR>
+<TD><b>All privileges</b></TD>
+		<TD><!--<control name="ProjectSecurityPrivileges.BASE_PRIVILEGES_TREE">-->
+		Displays all base and composite privileges. The options with a + in the box beside them are allowed. The Project privileges are the only privileges that can have a - in the box beside them because they are negative privileges. The - means that the privilege is denied. If a Project privilege is denied, it cannot be allowed in a privilege set that is assigned.<!--</control>--> For example, if the Create Project privilege is denied as a base privilege but is allowed in a privilege set that is assigned to the same User, group, or privilege set, the User, group, or privilege set does not have the Create Project privilege.<br><br>
+To change the status of an option, click the check box beside the option. You can allow or disallow an entire set of related privileges by clicking the parent option. For example, you could assign all of the Action privileges by clicking the check box beside Action Privileges to place a + in the check box.</TD>
+	</TR>
+	<TR><TD><b>Selected privileges</b></TD>
+		<TD><!--<control name="ProjectSecurityPrivileges.PRIVILEGES_TEXT">-->
+		Displays a cumulation of the privileges you have selected. If any of the Project privileges are allowed, they are not displayed in this box. They are only displayed in this box when they are denied because they are negative privileges.<!--</control>--></TD>
+	</TR>
+	</TABLE>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a href="createprivsetdialog.html">Create Privilege Set Dialog Box</a></TD>
+	<TD><A HREF="promomodelsecurity.html">Implementing Security Using Promotion Models</A></TD>
+</TR>
+<TR>
+		<TD><A HREF="restrictaccessbypromogroup.html">Restricting Access Rights  by Promotion Group</A></TD>
+		<TD><A HREF="aboutprivileges.html">About Privileges</A></TD>
+</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

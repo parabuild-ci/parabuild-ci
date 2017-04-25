@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>About Public and Private Workspaces</TITLE>
+<!--<publicprivate.html>-->
+
+<!--<index parent="workspaces" label="about public workspaces" anchor="About_Public">-->
+<!--<index parent="workspaces" label="about private workspaces" anchor="About_Public">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="About_Public"></A>About Public and Private Workspaces</H1>
+
+<p>Workspaces can be public or private. A public workspace affects the workfile locations of everyone using the workspace or using a workspace derived from it. For this reason, you must be careful before changing a workfile location set in a public workspace.
+</P>
+<P>
+You can restrict users from creating, renaming, and deleting public workspaces by not giving them either the SuperUser or Unlimited privilege. These two privilege sets grant users permission to perform these public workspace actions.
+</P>
+<P>Users who can create, rename, and delete public workspaces can disrupt the work of other users. For example:
+</P>
+<UL>
+<LI>If a user renames a public workspace that is the default workspace of other users, the default workspace of those users becomes the Root Workspace.
+<LI>
+If a user deletes a public workspace that is used by other users, the workspace is no longer available to those users, disrupting their work.
+<LI>
+If a user deletes a public workspace and then creates another public workspace with the same name, users will be using a public workspace in which the settings may have changed.
+</UL>
+<P>
+You can also restrict users from modifying the settings defined in public workspaces by denying users the Modify Project and Configure Project base privileges. See the <a target="../using_security/baseprivtables.html">base privilege table</a>.
+</P>
+
+<p>Public workspaces are derived from the <A HREF="rootworkspace.html">Root Workspace</A> or an existing <A HREF="public.html">public workspace</A>. You cannot create a public workspace from a private workspace. 
+</P>
+
+<p>A private workspace only affects the workfile locations of the User who created and set it. You cannot share a private workspace with another User and no one else can access or view it. Typically, you'll create your private workspace based on a public workspace and then modify only the workfile locations that are specific to your personal work environment. This method gives you the benefit of inheriting all of the workfile locations set in the public workspace, while overriding the workfile locations that must be specific to your personal work environment.
+</P>
+
+<p>A private workspace can be derived from the Root Workspace, a public workspace, or another private workspace.
+</P>
+
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="aboutworkspaces.html">About Workspaces</A></TD>
+		<TD><A HREF="workhier.html">About Workspace Hierarchies</A></TD>
+	</tr>
+	<tr>
+		<TD><A HREF="rootworkspace.html">Using the Root Workspace</A></TD>
+		<TD><A HREF="public.html">Creating and Managing Multiple Public Workspaces</A></TD>
+	</tr>
+	<tr>
+		<TD><A HREF="setworkspace.html">Setting Your Workspace</A></TD>
+		<TD><A HREF="createworkspaces.html">Creating Workspaces</A></TD>
+	
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+
+</HTML>

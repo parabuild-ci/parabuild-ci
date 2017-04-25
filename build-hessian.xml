@@ -1,0 +1,28 @@
+<project name="bt" default="hessian.all" basedir=".">
+
+  <property name="build.dir.hessian.classes" value="${build.dir}/hessian_classes"/>
+  <property name="build.dir.hessian.result" value="${build.dir}/hessian_result"/>
+
+  <target name="hessian.compile">
+    <mkdir dir="${build.dir.hessian.classes}"/>
+    <javac destdir="${build.dir.hessian.classes}" includes="**/**.java" debug="on" deprecation="yes">
+      <src path="${3rdparty}/hessian308"/>
+      <classpath>
+        <pathelement path="${servlet.jar}"/>
+      </classpath>
+    </javac>
+  </target>
+
+
+  <target name="hessian.jar" depends="hessian.compile">
+    <mkdir dir="${build.dir.hessian.result}"/>
+    <jar destfile="${build.dir.hessian.result}/hessian.jar" compress="true" update="true">
+      <fileset dir="${build.dir.hessian.classes}"/>
+    </jar>
+  </target>
+
+
+  <target name="hessian.all" depends="hessian.compile,
+             hessian.jar"></target>
+
+</project>

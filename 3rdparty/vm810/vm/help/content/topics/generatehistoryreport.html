@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Generating History Reports</TITLE>
+<!--<generatehistoryreport.html>-->
+<!--<toc parent="generating_reports" label="Generating History Reports" anchor="generatehistoryreport" sortkey="05">-->
+<!--<index parent="reports" label="generating history reports" anchor="generatehistoryreport">-->
+<!--<index parent="history_reports" label="generating" anchor="generatehistoryreport">-->
+<!--<index parent="generating" label="history reports" anchor="generatehistoryreport">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nGenerating Reports\nGenerating History Reports");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="generatehistoryreport"></A>Generating History Reports</H1>
+<P>You generate a history report to view a summary of information about archives and/or
+revisions. A history report provides information about archives that you can use to monitor the development process, review archive histories, and check archive attributes.</p>
+<P>You can generate a history report for a project database, project, multiple versioned files, a single versioned file, or a specific revision. When you select to generate a history report for a project database or project, you have the option of generating the report for:</p>
+<UL>
+	<LI>All of the versioned files of all of the projects/subprojects within the project database or project
+	<LI>Only the versioned files within the selected project, not including the projects and/or subprojects.
+</UL>
+<P><b>NOTE </b>You cannot generate a history report for a 5.3/6.0 project. You can generate the report on the contents of the project, but not the project itself.</P>
+<p>There are three privileges that dictate if you can generate a history report and the information that is available for the report:</p>
+<ul>
+	<LI>ViewArchive privilege. You must have this privilege to generate a history report with both archive and revision information.
+	<LI>ViewArchiveHeader privilege. You must have this privilege to generate a history report that contains only archive information, but not revision information.
+	<LI>ViewArchiveRev privilege. You must have this privilege to generate a history report that contains revision information.</ul>
+<H2>To generate a history report:</H2>
+<OL>
+	<LI>Select the project database, project, versioned file(s), or a specific revision.<br><br>
+	<LI>Select Actions | Show History. The Show History dialog box appears with the General tab active.<br><br>
+	<LI>To generate a full report (both archive and revision information) for all revisions, click OK. Otherwise, you can limit the contents of the report by doing any of the following on the General tab:<br><br>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><b>To...</b></TD>
+		<TD><b>Do this...</b></TD>
+	</TR>
+	<TR>
+		<TD>Limit the report to a specific revision instead of all revisions</TD>
+		<TD>Enter the revision on which you want to run the report or click the Browse button to select one. In the Select Revision dialog box, select the revision you want information about.</TD>
+	</TR>
+	<TR>
+		<TD>Limit the report to archive information but not revision information </TD>
+		<TD>Select <b>File information only</b> from the <b>Report Type</b> drop-down list.</TD>
+	</TR>
+	<TR>
+		<TD>Limit the report to revision information but not archive information</TD>
+		<TD>Select <b>Revision information only</b> from the <b>Report Type</b> drop-down list.</TD>
+	</TR>
+	<TR>
+		<TD>Limit the report to currently locked revisions</TD>
+		<TD>Select <b>List locked revisions</b> from the <b>Report Type</b> drop-down list.</TD>
+	</TR>
+	<TR>
+		<TD>Limit the report to revision numbers that correspond to a specified version label</TD>
+		<TD>Select <b>List revisions with version label</b> from the <b>Report Type</b> drop-down list. Then, select the version label by clicking the Browse button beside the <b>Label</b> field and selecting the version label.</TD>
+	</TR>
+	<TR>
+		<TD>Limit the report to revisions that are associated with a specified promotion group</TD>
+		<TD>Select <b>List revisions in group</b> from the <b>Report Type</b> drop-down list. Then, select the promotion group by clicking the Browse button beside the <b>Group</b> field and selecting the promotion group.</TD>
+	</TR>
+	<TR>
+		<TD>Limit the report to the newest revisions on the trunk</TD>
+		<TD>Select <b>List newest revisions</b> from the <b>Report Type</b> drop-down list.</TD>
+	</TR>
+	<TR>
+		<TD>Limit the report to archives whose tip revisions are not the same as the specified revision number or version label</TD>
+		<TD>Select <b>Check tips against version/revision</b> from the <b>Report Type</b> drop-down list.</TD>
+	</TR>
+	<TR><TD>Generate a report for an entire project, including all of the versioned files within its subprojects</td>
+<TD>Select the <b>Include files in subprojects</b> check box.</td></tr>
+</TABLE><br><br>
+<LI>To further limit the report by date, author, owner, and/or user who has revisions locked (locker), click the Advanced tab and edit up to two of the fields described below. Otherwise, continue with Step 6.<br><br>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><b>To...</b></TD>
+		<TD><b>Do this...</b></TD>
+	</TR>
+	<TR>
+		<TD>Limit the report to revisions authored by certain Users	</TD>
+		<TD>Enter the user IDs of the authors in the <b>Author(s)</b> field or click the Browse button to select them. Separate multiple IDs with commas.</TD>
+	</TR>
+	<TR>
+		<TD>Limit the report revisions locked by specific Users</TD>
+		<TD>Enter the user IDs of the lockers in the <b>Locker(s)</b> field or click the Browse button to select the user IDs. Separate multiple IDs with commas.</TD>
+	</TR>
+	<TR>
+		<TD>Limit the report to archives owned by certain Users</TD>
+		<TD>Enter the user IDs of the owners in the <b>Owner(s)</b> field or click the Browse button to select the owners. Separate multiple IDs with commas.</TD>
+	</TR>
+	<TR>
+		<TD>Limit the report to revisions checked in within the specified range of dates</TD>
+		<TD>Click the browse button to display a calendar. Select a date by selecting a month and year and then clicking the date on the calendar.</TD>
+	</TR>
+</table><br><br>
+	<LI>To review the selected versioned files before you generate the history report, click the Selected Files tab.<br><br>
+	<LI>Click OK. The history report is generated and displayed in a text editor or HTML browser, depending on what option you selected on the Applications tab of the Options dialog box (select View | Options, then click the Applications tab). 
+</OL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="abouthistoryreport.html">About History Reports</A></TD>
+		<TD><A HREF="samplehistory.html">Sample History Report</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="aboutreports.html">About Reports</A></TD>
+		<TD><A HREF="setconfigoptions.html">Setting Configuration Options</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="optionseditor.html">Options Dialog Box/Applications Tab</A></TD>
+	<TD><a href="customizingreportformat.html">Customizing the Format of HTML Reports</a></TD>
+</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

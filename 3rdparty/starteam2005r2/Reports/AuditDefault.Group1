@@ -1,0 +1,10 @@
+<TABLE BORDER="0" CELLPADDING="1">
+~~BeginRepeat~~
+<TR VALIGN=TOP>
+<TD WIDTH=110 ALIGN="RIGHT"><FONT SIZE="2"><B>~~InsertHeading~~:</B></FONT></TD>
+<TD WIDTH=0></TD>
+<TD WIDTH=600><FONT SIZE="2">~~InsertData~~</FONT></TD>
+</TR>
+~~EndRepeat~~
+</TABLE>
+<BR><HR><BR>

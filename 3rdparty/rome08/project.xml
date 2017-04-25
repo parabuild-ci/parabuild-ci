@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project>
+
+  <pomVersion>3</pomVersion>
+
+  <id>rome</id>
+
+  <name>ROME, RSS and atOM utilitiEs for Java</name>
+
+  <groupId>rome</groupId>
+
+  <currentVersion>0.8</currentVersion>
+
+  <organization>
+    <name>Sun Microsystems</name>
+    <url>http://java.sun.com/</url>
+  </organization>
+
+  <inceptionYear>2004</inceptionYear>
+  <package>com.sun.syndication</package>
+
+  <shortDescription>Rss and atOM utilitiEs (ROME)</shortDescription>
+
+  <description>
+      All Roads Lead to ROME.
+      ROME is a set of Atom/RSS Java utilities that make it easy to work in Java with most syndication formats.
+      Today it accepts all flavors of RSS (0.90, 0.91, 0.92, 0.93, 0.94, 1.0 and 2.0) and Atom 0.3 feeds.
+      Rome includes a set of parsers and generators for the various flavors of feeds, as well as converters to convert from one format to another.
+      The parsers can give you back Java objects that are either specific for the format you want to work with, or a generic normalized SyndFeed object that lets you work on with the data without bothering about the underlying format.
+  </description>
+
+  <url>https://rome.dev.java.net/</url>
+  <issueTrackingUrl>
+    https://rome.dev.java.net/servlets/ProjectIssues
+  </issueTrackingUrl>
+  <siteAddress>rome.dev.java.net</siteAddress>
+
+  <repository>
+    <connection>
+      scm:cvs:pserver:guest@cvs.dev.java.net:/cvs:rome
+    </connection>
+     <url>
+      https://rome.dev.java.net/source/browse/rome/
+    </url>
+  </repository>
+
+  <versions>
+    <version>
+      <id>0.1</id>
+      <name>0.1</name>
+      <tag>v-0-1</tag>
+    </version>
+    <version>
+      <id>0.2</id>
+      <name>0.2</name>
+      <tag>v-0-2</tag>
+    </version>
+      <version>
+          <id>0.3</id>
+          <name>0.3</name>
+          <tag>v-0-3</tag>
+      </version>
+      <version>
+          <id>0.4</id>
+          <name>0.4</name>
+          <tag>v-0-4</tag>
+      </version>
+      <version>
+          <id>0.5</id>
+          <name>0.5</name>
+          <tag>v-0-5</tag>
+      </version>
+      <version>
+          <id>0.6</id>
+          <name>0.6</name>
+          <tag>v-0-6</tag>
+      </version>
+      <version>
+          <id>0.7</id>
+          <name>0.7</name>
+          <tag>v-0-7</tag>
+      </version>
+      <version>
+          <id>0.8</id>
+          <name>0.8</name>
+      </version>
+  </versions>
+
+  <mailingLists>
+    <mailingList>
+      <name>dev@rome.dev.java.net</name>
+      <subscribe>
+        https://rome.dev.java.net/servlets/ProjectMailingListList
+      </subscribe>
+      <unsubscribe>
+        https://rome.dev.java.net/servlets/ProjectMailingListList
+      </unsubscribe>
+      <archive>
+        https://rome.dev.java.net/servlets/SummarizeList?listName=dev
+      </archive>
+    </mailingList>
+  </mailingLists>
+
+  <developers>
+
+    <developer>
+      <name>Alejandro Abdelnur</name>
+      <url>http://blog.sun.com/roller/page/tucu/</url>
+      <timezone>0</timezone>
+    </developer>
+
+    <developer>
+      <name>Elaine Chien</name>
+      <timezone>0</timezone>
+    </developer>
+
+    <developer>
+      <name>Patrick Chanezon</name>
+      <url>http://www.chanezon.com/pat/weblog/</url>
+      <timezone>-9</timezone>
+    </developer>
+
+  </developers>
+
+  <dependencies>
+    <dependency>
+      <groupId>jdom</groupId>
+      <artifactId>jdom</artifactId>
+      <version>1.0</version>
+    </dependency>
+  </dependencies>
+
+  <!-- build information for the project -->
+  <build>
+    <nagEmailAddress>
+      dev@rome.dev.java.net
+    </nagEmailAddress>
+
+    <sourceDirectory>src/java</sourceDirectory>
+
+    <unitTestSourceDirectory>src/test</unitTestSourceDirectory>
+
+    <!-- Unit test cases -->
+    <unitTest>
+      <includes>
+        <include>**/Test*.java</include>
+      </includes>
+      <resources>
+        <resource>
+          <directory>${basedir}/src/data</directory>
+          <includes>
+            <include>**/*.xml</include>
+          </includes>
+        </resource>
+        <resource>
+          <directory>src/test</directory>
+          <includes>
+              <include>rome.properties</include>
+          </includes>
+        </resource>
+      </resources>
+    </unitTest>
+
+
+    <resources>
+      <resource>
+        <directory>src/java</directory>
+        <includes>
+          <include>**/*.properties</include>
+        </includes>
+      </resource>
+    </resources>
+  </build>
+
+</project>
+

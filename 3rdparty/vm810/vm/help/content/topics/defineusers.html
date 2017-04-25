@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Defining Users</TITLE>
+<!--<defineusers.html>-->
+
+<!--<toc parent="set_up_security" label="Defining Users" anchor="defineusers" sortkey="05">-->
+<!--<index parent="creating" label="users" anchor="defineusers">-->
+<!--<index parent="privileges" label="assigning to users" anchor="defineusers">-->
+<!--<index parent="defining" label="users" anchor="defineusers">-->
+<!--<index parent="assigning" label="privileges to users" anchor="defineusers">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nUsing Security\nSetting Up Security\nDefining Users");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="defineusers"></A>Defining Users</H1>
+<P>When Serena ChangeMan Version Manager obtains a user ID, the program can check the <A HREF="aboutacdb.html">access control database</a> to see if the user ID exists there. If the user ID does not exist, you can configure Version Manager to automatically create the user ID in the access control database and assign privileges to the user. See <A HREF="setloginsources.html">Setting Login Sources</a> and the <i>Serena ChangeMan Version Manager Administrator's Guide</i> for a discussion of how to set up Version Manager to automatically create users in the access control database.</P>
+<p>Defining users for the access control database includes assigning privileges to the users.</p>
+<H2>To define users in the access control database:</H2>
+<OL>
+	<LI>If the Project Security dialog box is already open, select All Users from the drop-down list in the upper left corner. If it is not open, select Admin | Security | Users. <br><br>
+	<LI>Click the New button. The Create User dialog box appears. <br><br>
+	<LI>Enter the user's ID in the <b>Name</b> field. The user ID that you enter here must be the user ID that Version Manager obtains when the user is running Version Manager. Version Manager uses <A HREF="loginsources.html">login sources</a> to obtain user IDs. <br><br>
+	<LI>Optionally, you can enter an expiration date for the user in the <b>Expires on</b> field. For example, if you are defining the user on January 2, 1999 and you enter an expiration date of December 31, 1999, the time period during which this user ID is valid is January 2 to December 31, 1999. You must enter the date and time in the formats that you have set for your operating system. On Windows, you set the date and time formats from the Control Panel | Regional Settings. On UNIX, you define the formats by setting the PVCS_DATE_FORMAT and PVCS_TIME_FORMAT environment variables. For the best results, we recommend that you set the PVCS_DATE_FORMAT to MM/dd/yyyy, or dd/MM/yyyy if you want days to lead months. Notice that the month is specified in capital letters, and that the year is specified in four digits. If there are no control panel settings and these environment variables are not set, then the format is mm/dd/yy hh:mm in the US and dd/mm/yy hh:mm in the UK.<br><br>
+	<LI>If you have Login Dialog (VLOGIN) specified as a <A HREF="loginsources.html">login source</a>, you can enter a password for the user in the <b>Optional password</b> field. Passwords can be up to 30 characters long. If you don't specify a password, Version Manager does not prompt the user for a password. The only time Version Manager uses the password is if Login Dialog is specified as a login source and Version Manager uses this login source to obtain the user ID. <br><br>
+<p>Note that users can change their own passwords at any time using File | Change Password.</p><br><br>
+	<LI>Click Create and then Close to create this user in the access control database. When you click Close, the Create User dialog box closes and the newly created user is added to and selected in the All Users list of the Project Security dialog box. <br><br>
+	<LI><A NAME="userprivs"></a>Click the Privileges tab. <br><br>
+	<LI>In the All Users list, verify that the user you are defining is selected. <br><br>
+	<LI>On this tab, select the <A HREF="privilegetables.html">privileges and/or privilege sets</a> to assign to the user. <br><br>
+The options with a + in the box beside them are allowed. The Project privileges are the only privileges that can have a - in the box beside them because they are negative privileges. The - means that the privilege is denied. If a Project privilege is denied to a user, it cannot be allowed in a privilege set that is assigned to the user. For example, if the Create Project privilege is denied as a base privilege to a user but is allowed in a privilege set that is assigned to the same user, the user does not have the Create Project privilege.  <br><br>
+<p>To change the status of an option, click the check box beside the option. You can allow or disallow an entire set of related privileges by clicking the parent option. For example, you could assign all of the Action privileges by clicking the check box beside Action Privileges to place a + in the check box.</p>
+<p>Note that the Selected Privileges box near the bottom of the dialog box displays a cumulation of the privileges you have selected. If any of the Project privileges are allowed, they are not displayed in this box. They are only displayed in this box when they are denied because they are negative privileges.</p><br><br>
+	<LI>Click Apply to save the privileges you assigned to the user to the access control database. <br><br>
+	<LI>To create another user, click the Create User button and repeat steps 3 through 10. You can also <A HREF="duplicateuser.html">duplicate the user</a> you just created, or any other existing user. <br><br>
+ 	<LI>Click Close. <br><br>
+</OL>
+<p>If you are planning to use access lists as part of your security definition, continue to the next procedure, <A HREF="defineaccesslistgroup.html">Defining Access List Groups</a>. Otherwise, skip to <A HREF="enablesecurity.html">Enabling Security</a>.</p>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="setupsecurity.html">Setting Up Security</A></TD>
+		<TD><A HREF="changeuserid.html">Changing a User's ID</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="modifyuserprivileges.html">Modifying User Privileges</A></TD>
+		<TD><A HREF="duplicateuser.html">Duplicating Users</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

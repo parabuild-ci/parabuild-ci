@@ -1,0 +1,593 @@
+<HTML><HEAD><TITLE>Running Cactus tests from Ant</TITLE></HEAD><BODY alink="#023264" bgcolor="#ffffff" leftmargin="4" link="#525D76" marginheight="4" marginwidth="4" text="#000000" topmargin="4" vlink="#023264"><TABLE border="0" cellpadding="0" cellspacing="0" width="100%"><TR><TD align="left" valign="top"><A href="http://jakarta.apache.org/index.html"><IMG border="0" hspace="0" src="./images/jakarta-logo.gif" vspace="0"></A></TD><TD align="left" bgcolor="#ffffff" valign="middle" width="100%"><IMG align="right" alt="Running Cactus tests from Ant" border="0" hspace="0" src=".//images/logocactus.gif" vspace="0"></TD></TR><TR><TD colspan="2" height="2" width="100%"><HR noshade="" size="1"></TD></TR></TABLE><TABLE border="0" cellpadding="0" cellspacing="0" width="100%"><TR><TD valign="top" width="1%"></TD><TD nowrap="1" valign="top" width="14%"><FONT size="-2">
+              Last update : August 31 2002</FONT><BR><FONT size="-2">
+              Doc for : v1.4.1</FONT><BR><FONT face="arial,helvetica,sanserif">
+
+  <BR><FONT color="#000000" size="+1">About</FONT><BR><FONT size="-1">
+    <LI><A href="./index.html"><FONT size="-1">What is Cactus ?</FONT></A></LI>
+    <LI><A href="./news.html"><FONT size="-1">News</FONT></A></LI>
+    <LI><A href="./changes.html"><FONT size="-1">Changes</FONT></A></LI>
+    <LI><A href="./features.html"><FONT size="-1">Features/Status</FONT></A></LI>
+    <LI><A href="./goals.html"><FONT size="-1">Goals</FONT></A></LI>
+    <LI><A href="./todo.html"><FONT size="-1">Roadmap/Todo</FONT></A></LI>
+    <LI><A href="./contributors.html"><FONT size="-1">Contributors</FONT></A></LI>
+    <LI><A href="./contributing.html"><FONT size="-1">Contributing</FONT></A></LI>
+    <LI><A href="./users.html"><FONT size="-1">Cactus Users</FONT></A></LI>
+    <LI><A href="./testedon.html"><FONT size="-1">Tested on ...</FONT></A></LI>
+    <LI><A href="./license.html"><FONT size="-1">License</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Downloads</FONT><BR><FONT size="-1">
+    <LI><A href="./downloads.html"><FONT size="-1">Downloads</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Documentation</FONT><BR><FONT size="-1">
+    <LI><A href="./how_it_works.html"><FONT size="-1">How it works ?</FONT></A></LI>
+    
+    <LI><A href="./getting_started.html"><FONT size="-1">Getting Started</FONT></A></LI>
+    <LI><A href="./mockobjects.html"><FONT size="-1">Mock vs Container</FONT></A></LI>
+    <LI><A href="./javadoc.html"><FONT size="-1">Javadocs</FONT></A></LI>
+    
+    
+    <LI><A href="./faq.html"><FONT size="-1">FAQ</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Howto Guides</FONT><BR><FONT size="-1">
+    <LI><A href="./howto_classpath.html"><FONT size="-1">Classpath Howto</FONT></A></LI>
+    <LI><A href="./howto_config.html"><FONT size="-1">Config Howto</FONT></A></LI>
+    <LI><A href="./howto_migration.html"><FONT size="-1">Migration Howto</FONT></A></LI>
+
+    
+    <LI><A href="./howto_testcase.html"><FONT size="-1">TestCase Howto</FONT></A></LI>
+    
+    
+    
+
+    <LI><A href="./howto_jsp.html"><FONT size="-1">Jsp Howto</FONT></A></LI>
+    <LI><A href="./howto_runner.html"><FONT size="-1">Runner Howto</FONT></A></LI>
+    <LI><A href="./howto_security.html"><FONT size="-1">Security Howto</FONT></A></LI>
+
+    
+    <LI><A href="./howto_ant.html"><FONT size="-1">Ant Howto</FONT></A></LI>
+    
+    
+    
+
+    <LI><A href="./howto_httpunit.html"><FONT size="-1">HttpUnit Howto</FONT></A></LI>
+    <LI><A href="./howto_sample.html"><FONT size="-1">Sample Howto</FONT></A></LI>
+
+    
+    <LI><A href="./howto_ejb.html"><FONT size="-1">EJB Howto</FONT></A></LI>
+    
+
+    
+    <LI><A href="./howto_ide.html"><FONT size="-1">IDE Howto</FONT></A></LI>
+    
+    
+    
+    
+
+    <LI><A href="./howto_tomcat.html"><FONT size="-1">Tomcat Howto</FONT></A></LI>
+
+    <LI><A href="./howto_junitee.html"><FONT size="-1">JUnitEE Howto</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Support</FONT><BR><FONT size="-1">
+    <LI><FONT size="-1"><A href="http://jakarta.apache.org/site/bugs.html" target="">Bug database</A></FONT></LI>
+    <LI><A href="./mailinglist.html"><FONT size="-1">Mailing list</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Misc.</FONT><BR><FONT size="-1">
+    <LI><A href="./cactusname.html"><FONT size="-1">Why the name ?</FONT></A></LI>
+    <LI><A href="./logos.html"><FONT size="-1">Logo Challenge</FONT></A></LI>
+    <LI><A href="./resources.html"><FONT size="-1">Resources</FONT></A></LI>
+    <LI><A href="./coverage.html"><FONT size="-1">Test Coverage</FONT></A></LI>
+    
+    
+    
+    <LI><FONT size="-1"><A href="http://jakarta.apache.org/cactus/stats/index.html" target="">Stats</A></FONT></LI>
+    
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Developers</FONT><BR><FONT size="-1">
+    <LI><FONT size="-1"><A href="http://jakarta.apache.org/site/cvsindex.html" target="">CVS</A></FONT></LI>
+    <LI><A href="./coding_conventions.html"><FONT size="-1">Coding Conventions</FONT></A></LI>
+    <LI><A href="./build_result.html"><FONT size="-1">Build results</FONT></A></LI>
+    <LI><A href="./release_checklist.html"><FONT size="-1">Release Checklist</FONT></A></LI>
+  </FONT><BR>
+
+</FONT></TD><TD align="left" valign="top" width="*"><TABLE border="0" cellpadding="3" cellspacing="0"><TR><TD><BR>
+  
+
+  
+
+    <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>Introduction</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+      <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+        <B>You need to have a good understanding of Ant before
+        reading this tutorial. If you don't, I suggest you read the
+        <A href="http://jakarta.apache.org/ant/manual/index.html">Ant
+        User Manual</A> first</B>.
+      </I></FONT></TD></TR></TABLE></P>
+
+      <P align="justify">
+        This tutorial explains how start Cactus tests from your Ant build
+        script (i.e. <CODE><FONT face="courier, monospaced">build.xml</FONT></CODE>).
+      </P>
+      <P align="justify">
+        The Ant tasks involved for running a Cactus test are the following :
+      </P>
+      <BLOCKQUOTE><UL>
+        <LI>
+          <I>Step 0</I> : (optional) Deploy configuration files for your
+          container,
+        </LI>
+        <LI>
+          <I>Step 1</I> : Package your Cactus tests as a WAR file and
+          deploy it to your servlet engine webapps directory,
+        </LI>
+        <LI>
+          <I>Step 2</I> : Start your servlet engine if it is not already
+          started,
+         </LI>
+         <LI>
+           <I>Step 3</I> : Run the tests using JUnit,
+         </LI>
+         <LI>
+           <I>Step 4</I> : Stop the servlet engine (if need be)
+         </LI>
+       </UL></BLOCKQUOTE>
+       <P align="justify">
+         Cactus provides a custom Ant task (called the
+         <CODE><FONT face="courier, monospaced">runservertests</FONT></CODE> task) that helps perform all these tasks.
+         The rest of this tutorial will explain how to write an Ant build
+         file (<CODE><FONT face="courier, monospaced">build.xml</FONT></CODE>) that performs these tasks and use
+         the Cactus custom Ant task.
+       </P>
+        <P align="justify">
+          During the remainder of this tutorial we will show examples for
+          Tomcat 4.0. However, the principle can be applied to any other
+          container. Ant Scripts for other containers can be found in the
+          <CODE><FONT face="courier, monospaced">/sample/build</FONT></CODE> directory where you have unpacked the
+          Cactus distribution.
+        </P>
+
+     </FONT></TD></TR></TABLE></DIV><BR>
+
+     <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>The 'runservertests' task</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+          This task will perform several actions, in the following order :
+        </P>
+        <BLOCKQUOTE><UL>
+          <LI>
+            Check if a server is already started by constantly trying to
+            call the test URL defined by the <CODE><FONT face="courier, monospaced">testURL</FONT></CODE>
+            attribute (see the example below),
+          </LI>
+          <LI>
+            If a server is not started, call the Ant target defined by the
+            <CODE><FONT face="courier, monospaced">startTarget</FONT></CODE> attribute (see the example below). This
+            target is
+            supposed to start your container. The <CODE><FONT face="courier, monospaced">runservertests</FONT></CODE>
+            task will then constantly poll the server by calling the test URL
+            until the server answers back,
+          </LI>
+          <LI>
+            It will then call the Ant target defined by the
+            <CODE><FONT face="courier, monospaced">testTarget</FONT></CODE> attribute (see the example below). This
+            target is
+            supposed to start the unit tests. This is usually implemented
+            by using the Ant <CODE><FONT face="courier, monospaced">junit</FONT></CODE> task,
+          </LI>
+          <LI>
+            Once the tests are finished (i.e. when the
+            <CODE><FONT face="courier, monospaced">testTarget</FONT></CODE> has finished executing), it will then
+            call the Ant target defined by the <CODE><FONT face="courier, monospaced">stopTarget</FONT></CODE>
+            attribute (see the example below). This target is supposed to stop
+            the container. The <CODE><FONT face="courier, monospaced">runservertests</FONT></CODE>
+            task will then constantly poll the server by calling the test URL
+            until the server stops answering, at which point it will consider
+            the server to be stopped. Note that the <CODE><FONT face="courier, monospaced">stopTarget</FONT></CODE>
+            will only get called if the server was not already started when
+            the <CODE><FONT face="courier, monospaced">runservertests</FONT></CODE> task began executing. This is to
+            allow keeping running servers for intensive debugging phases.
+          </LI>
+        </UL></BLOCKQUOTE>
+        <P align="justify">
+          The <CODE><FONT face="courier, monospaced">runservertests</FONT></CODE> task is generic in the sense that
+          you are free to implement the <CODE><FONT face="courier, monospaced">startTarget</FONT></CODE>,
+          <CODE><FONT face="courier, monospaced">testTarget</FONT></CODE> and <CODE><FONT face="courier, monospaced">stopTarget</FONT></CODE> as you wish and
+          they will get called at the right time.
+        </P>
+        <P align="justify">
+          Example :
+        </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+&lt;!--
+   ========================================================================
+     Run Tomcat 4.0 tests
+   ========================================================================
+--&gt;
+&lt;target name=&quot;test.tomcat.40&quot; depends=&quot;prepare.test.tomcat.40&quot;
+    if=&quot;tomcat.home.40&quot; description=&quot;Run tests on Tomcat 4.0&quot;&gt;
+
+    &lt;!-- Start the servlet engine, wait for it to be started, run the
+         unit tests, stop the servlet engine, wait for it to be stopped.
+         The servlet engine is stopped if the tests fail for any reason --&gt;
+
+    &lt;runservertests
+        testURL=&quot;http://localhost:${test.port}/test/ServletRedirector?Cactus_Service=RUN_TEST&quot;
+        startTarget=&quot;start.tomcat.40&quot;
+        stopTarget=&quot;stop.tomcat.40&quot;
+        testTarget=&quot;test&quot;/&gt;
+
+&lt;/target&gt;
+</PRE></TD></TR></TABLE></DIV>
+
+       <P align="justify">
+         Before you can execute the <CODE><FONT face="courier, monospaced">runservertests</FONT></CODE> task, you
+         need to define it for Ant as it is not a standard Ant task. A
+         good place to do this is in an <CODE><FONT face="courier, monospaced">init</FONT></CODE> target.
+       </P>
+       <P align="justify">
+         Example :
+       </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+&lt;!--
+   ======================================================================
+     Initialize the build. Must be called by all targets
+   ======================================================================
+--&gt;
+&lt;target name=&quot;init&quot;&gt;
+    [...]
+    &lt;taskdef name=&quot;runservertests&quot; classname=&quot;org.apache.cactus.ant.RunServerTestsTask&quot;&gt;
+        &lt;classpath&gt;
+            &lt;pathelement location=&quot;${cactus.ant.jar}&quot;/&gt;
+        &lt;/classpath&gt;
+    &lt;/taskdef&gt;
+    [...]
+&lt;/target&gt;
+</PRE></TD></TR></TABLE></DIV>
+
+       <P align="justify">
+         where <CODE><FONT face="courier, monospaced">${cactus.ant.jar}</FONT></CODE> is an Ant property that points
+         to the <CODE><FONT face="courier, monospaced">cactus-ant.jar</FONT></CODE> file found in the
+         <CODE><FONT face="courier, monospaced">lib/</FONT></CODE> directory where you unpacked the Cactus
+         distribution.
+       </P>
+
+       <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+         The <CODE><FONT face="courier, monospaced">prepare.test.tomcat.40</FONT></CODE> target is described in
+         Step 0 below.
+       </I></FONT></TD></TR></TABLE></P>
+
+       <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+         The <CODE><FONT face="courier, monospaced">tomcat.home.40</FONT></CODE> is simply an Ant property that
+         points to the directory where Tomcat 4.0 has been installed. If this
+         property is not defined we don't run the tests.
+       </I></FONT></TD></TR></TABLE></P>
+
+     </FONT></TD></TR></TABLE></DIV><BR>
+
+     <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>Step 0: Deploy container configuration files</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+       <P align="justify">
+         There are 2 possibilities for configuring your application server :
+       </P>
+       <BLOCKQUOTE><OL>
+         <LI>
+           You install it somewhere on your computer (or on another machine)
+           and you deploy your test WAR (see Step 1 below) by copying it
+           to the right subdirectory within it. Your WAR will then be placed
+           alongside with others and your webapp will use the configuration
+           files common to all webapps,
+         </LI>
+         <LI>
+           Or, you can create your own set of container configuration files,
+           hosted within your project, that you copy to your own deployment
+           subdirectory (i.e. not shared).
+         </LI>
+       </OL></BLOCKQUOTE>
+       <P align="justify">
+         In the provided Cactus Ant scripts, we have decided to follow
+         approach 2 for the following reasons :
+       </P>
+       <BLOCKQUOTE><UL>
+         <LI>
+           We keep the control of our project files as they are deployed
+           within the directory of our project and thus it is easy to
+           perform a clean of all generated files,
+         </LI>
+         <LI>
+           We do not &quot;pollute&quot; the installed container by dropping files
+           within it and we do not need to modify global configuration
+           files that may prevent other applications we are developing
+           from not running someday (because we would have made an
+           incompatible change),
+         </LI>
+         <LI>
+           We completely control our needed container configuration.
+         </LI>
+         <LI>
+           We can guarantee to the user who wants to try the Cactus sample
+           application that it will not deploy anything outside the scope of
+           the Sample directory. Unlike windows applications that you install
+           and that copies tens of DLL to shared directory, overwrite existing
+           files, ... :(
+         </LI>
+       </UL></BLOCKQUOTE>
+       <P align="justify">
+         However, this may not be the best approach for all cases, as :
+       </P>
+       <BLOCKQUOTE><UL>
+         <LI>
+           It is more difficult to set up as you need to understand how your
+           container is configured (However, we have already done the job for
+           you for most of the existing containers),
+         </LI>
+         <LI>
+           You have only a single application to run and test and have
+           dedicated your application server installation for it so you don't
+           care about putting files in there and modifying global
+           configuration,
+         </LI>
+         <LI>
+           You want to be able to deploy in production several webapps that
+           share the same server and thus must coexist and share common
+           configuration files.
+         </LI>
+       </UL></BLOCKQUOTE>
+
+       <P align="justify">
+         If you choose solution 1, then you can simply skip this step. The
+         only actions to perform will be, for some containers, to edit their
+         configuration files to tell them about your webapp (some will
+         automatically pick you test WAR if you drop it in the correct
+         directory).
+       </P>
+
+       <P align="justify">
+         Example :
+       </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+&lt;!--
+   ========================================================================
+     Prepare directories and variables for running the tests
+   ========================================================================
+--&gt;
+&lt;target name=&quot;prepare.test.tomcat.40&quot;
+    depends=&quot;check.test.tomcat.40,testwar&quot; if=&quot;tomcat.home.40&quot;&gt;
+
+    &lt;echo message=&quot;tomcat.home.40 = ${tomcat.home.40}&quot;/&gt;
+
+    &lt;property name=&quot;target.tomcat40.dir&quot;
+        value=&quot;${target.test.dir}/tomcat40&quot;/&gt;
+    &lt;property name=&quot;conf.tomcat40.dir&quot; value=&quot;${conf.test.dir}/tomcat40&quot;/&gt;
+
+    &lt;!-- Create work and conf directories and copy configuration files --&gt;
+    &lt;mkdir dir=&quot;${target.tomcat40.dir}/conf&quot;/&gt;
+    &lt;mkdir dir=&quot;${target.tomcat40.dir}/work&quot;/&gt;
+    &lt;mkdir dir=&quot;${target.tomcat40.dir}/webapps&quot;/&gt;
+
+    &lt;!-- Delete some config file so that they will be copied every time --&gt;
+    &lt;delete file=&quot;${target.tomcat40.dir}/conf/server.xml&quot;/&gt;
+
+    &lt;!-- Remove the auto deployed webapp so that it is redeployed every
+         time --&gt;
+    &lt;delete dir=&quot;${target.tomcat40.dir}/webapps/test&quot;/&gt;
+
+    &lt;copy todir=&quot;${target.tomcat40.dir}/conf&quot; filtering=&quot;on&quot;&gt;
+        &lt;fileset dir=&quot;${conf.tomcat40.dir}&quot;/&gt;
+    &lt;/copy&gt;
+
+    &lt;!-- Copy the Tomcat web.xml --&gt;
+    &lt;copy file=&quot;${tomcat.home.40}/conf/web.xml&quot;
+        todir=&quot;${target.tomcat40.dir}/conf&quot;/&gt;
+
+    &lt;!-- Copy the war file --&gt;
+    &lt;copy file=&quot;${target.test.dir}/test.war&quot;
+        tofile=&quot;${target.tomcat40.dir}/webapps/test.war&quot;/&gt;
+
+&lt;/target&gt;
+</PRE></TD></TR></TABLE></DIV>
+
+       <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+         The <CODE><FONT face="courier, monospaced">${target.test.dir}</FONT></CODE> Ant property needs to be
+         defined prior to calling this target and needs to be set to the
+         location where the tests will be deployed. It should be set to any
+         subdirectory of your output directory. This property will also be
+         used later on in step 1 to copy the test WAR file.
+       </I></FONT></TD></TR></TABLE></P>
+
+       <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+         The <CODE><FONT face="courier, monospaced">${conf.test.dir}</FONT></CODE> Ant property also needs to be
+         defined prior to calling this target and represent the location of
+         server configuration files (in the current example of Tomcat 4.0,
+         these are the global <CODE><FONT face="courier, monospaced">web.xml</FONT></CODE> and
+         <CODE><FONT face="courier, monospaced">server.xml</FONT></CODE>).
+       </I></FONT></TD></TR></TABLE></P>
+
+     </FONT></TD></TR></TABLE></DIV><BR>
+
+     <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>Step 1: create and deploy test WAR file</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+          Creating a WAR file is the preferred way of deploying Cactus tests
+          to your servlet engine. Check the
+          <A href="getting_started.html">Getting Started</A> guide and
+          the example below for details on what files to include in the WAR.
+        </P>
+        <P align="justify">
+          Example :
+        </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+&lt;!--
+   ========================================================================
+     Create a Cactus test war file for the sample application.
+   ========================================================================
+--&gt;
+&lt;target name=&quot;testwar&quot; depends=&quot;compile&quot;&gt;
+
+    &lt;!-- Create the war file --&gt;
+    &lt;war warfile=&quot;${target.test.dir}/test.war&quot;
+         webxml=&quot;${conf.test.dir}/web.xml&quot;&gt;
+
+        &lt;classes dir=&quot;${target.classes.sample.dir}&quot;/&gt;
+        &lt;classes dir=&quot;${target.classes.unit.dir}&quot;/&gt;
+
+        &lt;!-- log_server.properties need to be in the server classpath --&gt;
+        &lt;classes dir=&quot;${conf.test.dir}&quot;&gt;
+            &lt;include name=&quot;log_server.properties&quot;/&gt;
+            &lt;include name=&quot;cactus.properties&quot;/&gt;
+        &lt;/classes&gt;
+
+        &lt;lib dir=&quot;${target.lib.dir}&quot;/&gt;
+        &lt;fileset dir=&quot;${web.dir}&quot;/&gt;
+   &lt;/war&gt;
+
+&lt;/target&gt;
+</PRE></TD></TR></TABLE></DIV>
+
+       <P align="justify">
+         where :
+       </P>
+       <BLOCKQUOTE><UL>
+         <LI>
+           <CODE><FONT face="courier, monospaced">${conf.test.dir}</FONT></CODE> : directory containing configuration
+           files for the test,
+         </LI>
+         <LI>
+           <CODE><FONT face="courier, monospaced">${target.classes.*.dir}</FONT></CODE> : directory where the java
+           classes have been compiled. These are the classes under test + the
+           test classes,
+         </LI>
+         <LI>
+           <CODE><FONT face="courier, monospaced">${target.lib.dir}</FONT></CODE> : directory containing the needed jars
+           (<CODE><FONT face="courier, monospaced">junit.jar</FONT></CODE>, <CODE><FONT face="courier, monospaced">cactus.jar</FONT></CODE>, ...).
+         </LI>
+         <LI>
+           <CODE><FONT face="courier, monospaced">${web.dir}</FONT></CODE> : directory containing the web files to
+           include in the test webapp (JSPs, HTML, ...).
+         </LI>
+       </UL></BLOCKQUOTE>
+
+       <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+         The <CODE><FONT face="courier, monospaced">compile</FONT></CODE> target is used to compile all java classes
+         into the <CODE><FONT face="courier, monospaced">${target.classes.*.dir}</FONT></CODE> directory.
+       </I></FONT></TD></TR></TABLE></P>
+
+     </FONT></TD></TR></TABLE></DIV><BR>
+
+     <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>Step 2: Start the container</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+       <P align="justify">
+         Example :
+       </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+&lt;!--
+   ========================================================================
+     Start Tomcat 4.0
+   ========================================================================
+--&gt;
+&lt;target name=&quot;start.tomcat.40&quot;&gt;
+
+    &lt;java classname=&quot;org.apache.catalina.startup.Bootstrap&quot; fork=&quot;yes&quot;&gt;
+        &lt;jvmarg value=&quot;-Dcatalina.home=${tomcat.home.40}&quot;/&gt;
+        &lt;jvmarg value=&quot;-Dcatalina.base=${target.tomcat40.dir}&quot;/&gt;
+        &lt;arg value=&quot;start&quot;/&gt;
+        &lt;classpath&gt;
+          &lt;fileset dir=&quot;${tomcat.home.40}&quot;&gt;
+              &lt;include name=&quot;bin/bootstrap.jar&quot;/&gt;
+          &lt;/fileset&gt;
+        &lt;/classpath&gt;
+    &lt;/java&gt;
+
+&lt;/target&gt;
+</PRE></TD></TR></TABLE></DIV>
+
+     </FONT></TD></TR></TABLE></DIV><BR>
+
+     <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>Step 3: Run the unit tests</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+       <P align="justify">
+         We start the unit test by calling a JUnit test runner (we use the
+         text runner in this example). Example :
+       </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+&lt;!--
+   ========================================================================
+     Run the client JUnit test cases.
+   ========================================================================
+--&gt;
+&lt;target name=&quot;test&quot;&gt;
+
+    &lt;junit printsummary=&quot;yes&quot; haltonfailure=&quot;yes&quot; haltonerror=&quot;yes&quot;
+        fork=&quot;yes&quot;&gt;
+
+        &lt;classpath&gt;
+            &lt;!-- Cactus.propertie and log_client.properties need to be in
+                 the classpath --&gt;
+            &lt;pathelement location=&quot;${target.conf.dir}&quot;/&gt;
+            &lt;pathelement location=&quot;${target.classes.sample.dir}&quot;/&gt;
+            &lt;pathelement location=&quot;${target.classes.unit.dir}&quot;/&gt;
+            &lt;path refid=&quot;project.class.path&quot;/&gt;
+        &lt;/classpath&gt;
+
+        &lt;formatter type=&quot;plain&quot; usefile=&quot;false&quot;/&gt;
+        &lt;test name=&quot;org.apache.cactus.unit.TestAll&quot;/&gt;
+        &lt;test name=&quot;org.apache.cactus.sample.TestAll&quot;/&gt;
+
+    &lt;/junit&gt;
+
+&lt;/target&gt;
+</PRE></TD></TR></TABLE></DIV>
+
+       <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+         The list of jars to include in your classpath is explained and
+         detailed in the <A href="howot_classpath.html">Classpath
+         Howto</A> guide.
+       </I></FONT></TD></TR></TABLE></P>
+
+     </FONT></TD></TR></TABLE></DIV><BR>
+
+     <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>Step 4: Stop the container</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+       <P align="justify">
+         Example :
+       </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+&lt;!--
+   ========================================================================
+     Stop Tomcat 4.0
+   ========================================================================
+--&gt;
+&lt;target name=&quot;stop.tomcat.40&quot;&gt;
+
+    &lt;java classname=&quot;org.apache.catalina.startup.Bootstrap&quot; fork=&quot;yes&quot;&gt;
+        &lt;jvmarg value=&quot;-Dcatalina.home=${tomcat.home.40}&quot;/&gt;
+        &lt;jvmarg value=&quot;-Dcatalina.base=${target.tomcat40.dir}&quot;/&gt;
+        &lt;arg value=&quot;stop&quot;/&gt;
+        &lt;classpath&gt;
+          &lt;fileset dir=&quot;${tomcat.home.40}&quot;&gt;
+              &lt;include name=&quot;bin/bootstrap.jar&quot;/&gt;
+          &lt;/fileset&gt;
+        &lt;/classpath&gt;
+    &lt;/java&gt;
+
+&lt;/target&gt;
+</PRE></TD></TR></TABLE></DIV>
+
+     </FONT></TD></TR></TABLE></DIV><BR>
+
+  
+</TD></TR></TABLE></TD></TR></TABLE><BR><TABLE border="0" cellpadding="0" cellspacing="0" width="100%"><TR><TD><HR noshade="" size="1"></TD></TR><TR><TD align="center"><FONT color="#525D76" face="arial,helvetica,sanserif" size="-1"><I>
+                Copyright &copy; 2000-2002 The Apache Software Foundation.
+                All Rights Reserved.
+               </I></FONT></TD></TR></TABLE></BODY></HTML>

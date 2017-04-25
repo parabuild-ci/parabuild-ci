@@ -1,0 +1,148 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Identifying Read-Only Folders and Items</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=534>
+<meta name=layout-width content=702>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Working with the Application\nPerforming Common Operations\nIdentifying Read-Only Folders and Items");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Identifying Read-Only Folders and Items</h1>
+
+<p class=Body>If a folder or item is read-only, its contents or properties 
+ cannot be changed. Also, new revisions cannot be checked into the application.</p>
+
+<p class=Body>A folder or item will be read-only if it is:</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>In a read-only reference 
+ view. Read-only reference views that are not floating cannot be rolled 
+ back.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>In a view currently configured 
+ to a view label, promotion state, or a date/time in the past.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>In a view with a current 
+ configuration, but both of the following are true:</p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-2><p class=Bullet-2>The configuration 
+ of the folder or item is set to a past state based on a label, promotion 
+ state, or a date/time in the past.</p></li>
+		
+		<li class=kadov-p-CBullet-2><p class=Bullet-2>The branching behavior 
+ of the folder or item is disabled or not set to <span style="font-weight: bold;"><B>Branch 
+ on change</B></span>.</p></li>
+	</ul>
+</ul>
+
+<p class=Body>For example, if you create a new view based on a label, promotion 
+ state, or a date and time in the parent view, this action automatically 
+ configures the new view (and all the folders and items it contains) to 
+ a past state. Selecting <span style="font-weight: bold;"><B>Branch none</B></span> 
+ for the new view makes every folder and item in the view read-only until 
+ individual folders or items are set to <span style="font-weight: bold;"><B>Branch 
+ on change</B></span> or given floating configurations. Then the folders or 
+ items will either branch or change along with the corresponding items 
+ in the parent view.</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+MSN 파일 전송 프로토콜 분석 report [@author 황장호 rath@xrath.com]
+
+  (참조1: 각 MIME메시지는 맨 끝에 \r\n을 2회 추가로 보내주어야 한다.)
+  (참조2: MIME 형식이므로 각 property들의 순서는 상관이 없다.) 
+  (참조3: 헤더정보를 제외한 부분에서는 URL-Encode는 할 필요가 없으며, 
+          UTF-8 인코딩만 해주면 된다.)
+ 
+  아래의 2개의 property는 파일송수신에 관련된 모든 MIME메시지에 
+  포함되어야 한다.
+
+  Mime-Version: 1.0
+  Content-Type: text/x-msmsgsinvite; charset=UTF-8
+
+  또한 Content-Type property를 write한후, \r\n은 1회가 아닌 2회를 
+  보내주어야 한다.
+
+
+  보낼 사람이 받을 사람에게 파일전송 초대메시지(Invitation-Command:INVITE)를 보낸다. 
+  전송해야할 property들은 아래와 같다.
+
+  [송신자가 발송]
+  Application-Name: 파일 전송     
+  Application-GUID: {5D3E02AB-6190-11d3-BBBB-00C04F795683}
+  Invitation-Command: INVITE
+  Invitation-Cookie: xxxxxx   (6자리의 숫자)
+  Application-File: 전송하고자 하는 파일의 이름
+  Application-FileSize: 전송하고자 하는 파일의 크기(byte)
+
+
+  초대를 받은 peer는 수락 또는 거절을 할 수 있다. 
+ 
+  수락 메시지는 아래와 같다.  
+
+  [수신자가 발송]  
+  Invitation-Command: ACCEPT  (수락 코드)
+  Invitation-Cookie: 126174   (초대시 받은 쿠키 값)
+  Launch-Application: FALSE
+  Request-Data: IP-Address:
+
+  거절 메시지는 아래와 같다.
+
+  [수신자가 발송]  
+  Invitation-Command: CANCEL  (거절 코드)
+  Invitation-Cookie: 126174   (초대시 받은 쿠키 값)
+  Cancel-Code: REJECT         (거절 종류, TIMEOUT일 수도 있고, 상황에 따라
+                               여러가지 코드값이 존재한다.)
+
+  거절 했을 경우 파일전송 트랜잭션은 종료된다. 
+  수신자가 수락했을 경우에는 송신 peer에서 최종적으로 아래와 같은 정보를 
+  보내야한다.
+
+  [송신자가 발송]  
+  Invitation-Command: ACCEPT  (수락 코드)
+  Invitation-Cookie: 126174   (쿠키 값)
+  AuthCookie: 15148272        (수신자에 대한 인증에 사용할 인증쿠키[임의의숫자])
+  Launch-Application: FALSE   
+  Request-Data: IP-Address:
+  IP-Address: 192.168.1.10    (자신의 ip address)
+  Port: 6891                  (접속해야할 port 번호)
+
+수신 Peer는 송신 Peer가 보내준 마지막 mime 정보를 바탕으로
+송신 peer의 IP-Address에 Port번호로 접속한후 다음과 같은 
+프로토콜로 파일을 주고받는다.
+
+기호 S: 보내는 사람
+기호 R: 받을 사람
+각 메시지의 구분자는 CRLF.
+(중도취소명령은 CCL이다.)
+
+R: VER MSNFTP 
+S: VER MSNFTP 
+R: USR ${자신의LoginName} ${AuthCookie}
+S: FIL ${FileSize}
+R: TFR 
+S: binary 파일을 모두 전송한다.
+
+파일 전송시 앞에 3 byte를 보내야 한다. 
+
+처음 부분의 0은 단순 pad이고, 그 다음 2바이트는
+little endian로 구성된 숫자로 패킷의 크기이다.
+그리고 패킷의 최대 크기는 7FD이다. 결국
+00 FD 07 을 넘어설 수 없다. (이것은 MTU를 고려한 것으로 보인다.)
+
+[자바 프로그래머를 위한 내용]
+ 즉, 한번에 2048 byte를 송신해야 하는 것이다. 이것은 중요하다!
+ msn 메신져는 read할때, 실제로 읽혀진 길이를 검사하지 않고,
+ 단 한번의 read 함수만을 사용한다. 그러므로 byte[2048]을 생성하여 
+ 앞부분 3바이트를 offset 0, 1, 2 에 채운후, File 내용을 아래와 같이 읽는다.
+ 물론 BufferedOutputStream과 flush를 적절히 사용한다면, 아래와 같은 일을 
+ 할필요가 없다.
+ 
+ byte[] buf = new byte[ 2048 ];
+ FileInputStream fis = new FileInputStream(file);
+ int readlen;
+ while( (readlen=fis.read(buf, 3, 2045))!=-1 )
+ {
+   buf[0] = 0;
+   buf[1] = (byte)((readlen>>0) & 0xff);
+   buf[2] = (byte)((readlen>>8) & 0xff);
+   out.write( buf, 0, readlen+3 );
+   out.flush();
+ }
+[자바 프로그래머를 위한 내용 끝]
+
+최후 ascii코드 0을 3회 보내주어야 종료된다.
+
+R: BYE 16777989
+
+접속 종료시 파라미터는16777989 라는 magic number를 사용한다.
+이 숫자가 잘못된 값을 가진다면, 상대방은 전송이 제대로 안되었다는 
+메시지를 받게 될 것이다.

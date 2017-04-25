@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Setting Up Event Triggers</TITLE>
+<!--<settinguptriggers.html>-->
+<!--<toc parent="working_with_event_triggers" label="Setting Up Event Triggers" anchor="settinguptriggers" sortkey="2">-->
+<!--<toc parent="setting_configuration_options" label="Setting Up Event Triggers" anchor="settinguptriggers" sortkey="17">-->
+<!--<toc parent="setting_project_configuration_options" label="Setting Up Event Triggers" anchor="settinguptriggers" sortkey="17">-->
+<!--<index parent="event_triggers" label="setting up" anchor="settinguptriggers">-->
+<!--<index parent="configuring" label="event triggers" anchor="settinguptriggers">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with Project Databases/Projects\nConfiguring Project Databases/Projects\nSetting Up Event Triggers");
+addTocInfo("Using Version Manager\nUsing Event Triggers\nSetting Up Event Triggers");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="settinguptriggers"></A>Setting Up Event Triggers</H1>
+<p>To set up event triggers, you must have the Configure Project privilege assigned to you, your project database must allow the Event Triggers configuration option, and the project database or project must also be <a href="assocconfigfile.html">associated with a configuration file</a>. Otherwise, you cannot perform this procedure.</P>
+<P>This procedure assumes you have an <a href="abouttriggers.html">event trigger file</a> defined.
+<H2>To set up an event trigger:</H2>
+<OL>
+<LI>Decide on the event trigger to be executed before or after a Serena ChangeMan Version Manager event.<br><br>
+<LI>Select the project database or project for which you are defining an event trigger.<br><br>
+<LI>Select Admin | Configure Project. The Configure Project dialog box appears.<br><br>
+<LI>Click the Event Triggers tab.<br><br>
+<LI>Select the event for which you want to define an event trigger in the Event Triggers list on the left.<br><br>
+<LI>Enter the path and the name of the event trigger file in the Event Trigger Detail group. For example, for Windows, you could enter C:\BIN\POSTPUT.BAT in the After field for a Check In event. You can also <a href="passingeventinfo.html">pass event information</a> to an event trigger.<br><br>
+<LI>To set up another event trigger, first click Apply to save the definition of the event trigger you just defined, and then, repeat Steps 5 and 6. Otherwise, click OK.
+</OL>
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a href="examplesoftriggers.html">Examples of Event Triggers</a></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

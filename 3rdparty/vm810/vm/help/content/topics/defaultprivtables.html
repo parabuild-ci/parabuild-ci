@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Default Privilege Sets</TITLE>
+<!--<defaultprivtables.html>-->
+<!--<index parent="security" label="default privilege sets" anchor="defaultprivs">-->
+<!--<index parent="privileges" label="default privilege sets" anchor="defaultprivs">-->
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="defaultprivs"></A>Default Privilege Sets</H1>
+<P>The following table lists the default privilege sets that Serena ChangeMan Version Manager provides and the <A HREF="baseprivtables.html">base privileges</a>, <A HREF="compositeprivtables.html">composite privileges</a>, and other privilege sets that provide the definition of the default privilege sets.</P><br>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+<TR><TD>
+<P><b>Privilege Set</b></TD>
+<TD>
+<P><b>Privileges</b></TD>
+</TR>
+<TR><TD>
+<P>SuperUser</TD>
+<TD>
+<P>All privileges and is not restricted by access lists</TD>
+</TR>
+<TR><TD>
+<P>Unlimited</TD>
+<TD>
+<P>All privileges</TD>
+</TR>
+<TR><TD>
+<P>Developer</TD>
+<TD>
+<P>Lock Tip, Lock Non-tip, Unlock, Check Out Tip, Check Out Non-tip, Check In Tip, Check In Branch, Create Branch, Modify Archive Access List, Modify Archive Owner, Modify Archive Attributes, Modify Comment Delimiter, Modify Versioned File Name, Modify Workfile Description, Modify Change Description, Add Version Label, Delete Version Label, Modify Version Label, Create Archive and Workfile, Delete Tip, Delete Non-tip, View Archive Header, View Archive Revisions, Promote to Next Promotion Group, Add Promotion Group, Modify Promotion Group, Delete Promotion Group, and Show Journal</TD>
+</TR>
+<TR><TD>
+<P>Project Lead</TD>
+<TD>
+<P>Developer privilege set plus Create Project, Configure Project, Copy Project, Delete Project, Add or Remove Versioned Files, Modify Project, and Configure Security</TD>
+</TR>
+<TR><TD>
+<P>Documentation</TD>
+<TD>
+<P>Quality Assurance privilege set plus Lock Tip, Lock Non-tip, Unlock, Check Out Tip, Check Out Non-tip, Check in Tip, Check In Branch, and Create Archive and Workfile</TD>
+</TR>
+<TR><TD>
+<P>Quality Assurance</TD>
+<TD>
+<P>Support privilege set plus Add Version Label, Delete Version Label, Modify Version Label, Promote to Next Promotion Group, Add Promotion Group, Modify Promotion Group, and Delete Promotion Group.</TD>
+</TR>
+<TR><TD>
+<P>Support</TD>
+<TD>
+<P>View Archive Header, View Archive Revisions, and Show Journal</TD>
+</TR>
+</TABLE>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="baseprivtables.html">Base Privileges</A></TD>
+		<TD><A HREF="compositeprivtables.html">Composite Privileges</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="privilegetables.html">Privilege Definitions</A></TD>
+
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

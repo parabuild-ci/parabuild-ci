@@ -1,0 +1,39 @@
+    1 init [5] 
+    2 [keventd]
+    3 [kapmd]
+    4 [ksoftirqd_CPU0]
+    5 [kswapd]
+    6 [bdflush]
+    7 [kupdated]
+    8 [mdrecoveryd]
+   12 [kjournald]
+   79 [khubd]
+  552 syslogd -m 0
+  557 klogd -x
+  577 portmap
+  605 rpc.statd
+  706 /usr/sbin/apmd -p 10 -w 5 -W -P /etc/sysconfig/apm-scripts/apmscript
+  760 /usr/sbin/atd
+  778 /usr/sbin/sshd
+  811 xinetd -stayalive -reuse -pidfile /var/run/xinetd.pid
+  852 sendmail: accepting connections
+  871 gpm -t ps/2 -m /dev/mouse
+  889 crond
+  933 xfs -droppriv -daemon
+  981 /sbin/mingetty tty1
+  982 /sbin/mingetty tty2
+  983 /sbin/mingetty tty3
+  984 /sbin/mingetty tty4
+  985 /sbin/mingetty tty5
+  986 /sbin/mingetty tty6
+  987 /usr/bin/gdm -nodaemon
+  994 /usr/bin/gdm -nodaemon
+  995 /usr/bin/X11/X :0 -auth /var/gdm/:0.Xauth
+ 1000 /usr/bin/gdmlogin --disable-sound --disable-crash-dialog
+ 1001 /usr/bin/xsri --redhat-login --run
+24500 smbd -D
+24505 nmbd -D
+22227 in.telnetd: 10.1.7.144                                                                                                                                                                                                                                                                                                                                                                                       
+22228 login -- lyolik            
+22229 -bash DISPLAY= TERM=at386 REMOTEHOST=10.1.7.144 HOME=/home/lyolik PATH=/usr/local/bin:/bin:/usr/bin SHELL=/bin/bash MAIL=/var/mail/lyolik LOGNAME=lyolik
+22269 /bin/ps -e eh -o pid,command --cols=128000 PWD=/home/lyolik MWCCOMPILEJAVA=jikes TZ=Europe/Kiev CATALINA_HOME=/var/tomcat4 JAVA12COMPILEROOT=/usr/java/jdk1.3.1 REMOTEHOST=10.1.7.144 HOSTNAME=brand.idensoft.com.ua MWCDBPASSWORD= MWCSMTPSERVER=base CLASSPATH=:/usr/share/java/activation.jar LESSOPEN=|/usr/bin/lesspipe.sh %s MWTMAILBOX=cleo MWTPOPSERVER=base USER=lyolik LS_COLORS= JAVA10ROOT=/usr/java/jdk118_v3 MWCDBDRIVER=com.inet.tds.TdsDriver MAIL=/var/spool/mail/lyolik INPUTRC=/etc/inputrc CVS_RSH=ssh MWCPORT=9000 BASH_ENV=/home/lyolik/.bashrc LANG=ru_RU.koi8r JAVA_HOME=/usr/java/jdk1.3.1 DISPLAY= LOGNAME=lyolik SHLVL=1 MWCDBURL=jdbc:inetdae:tower:1433?database=CLEO2&amp;sql7=true MWCOS=linux MWCROOT=/home/lyolik/local/MWC SHELL=/bin/bash USERNAME= MWCRUNTIMEJAVA=jdk MWCDBLOGIN=sa CVSROOT=:ext:lyolik@mwt.eptica.com:/CVS HISTSIZE=1000 TERM=at386 HOME=/home/lyolik SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass PATH=/home/lyolik/bin:/usr/local/bin:/bin:/usr/bin:/usr/X11R6/bin JAVA12RUNTIMEROOT=/usr/java/jdk1.3.1 _=/bin/ps

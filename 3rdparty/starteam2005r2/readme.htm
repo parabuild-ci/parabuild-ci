@@ -1,0 +1,978 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+	<head>
+		<title>StarTeam Release Notes</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<meta content="False" name="vs_showGrid">
+		<meta content="Mozilla/4.8 [en] (Windows NT 5.0; U) [Netscape]" name="GENERATOR">
+	</head>
+	<body>
+		<h1 class="Chapter"><font face="Verdana">Release Notes for</font></h1>
+		<h1 class="Chapter"><font face="Verdana">Borland StarTeam 2005 Release 2</font></h1>
+		<font face="Verdana"><font size="-1">This document explains the new features and major 
+				changes in StarTeam Server and the StarTeam Windows client. For a more 
+				complete list and in-depth explanations of new features, review the <i>New Features 
+					Guide</i> (newfeatures.pdf).</font></font>
+		<P>
+			<h1><font face="Verdana">Contents</font></h1>
+			<div dir="ltr" style="MARGIN-RIGHT: 0px"><font face="Verdana"><font size="-1">1. <A href="#review_the_installation_guide">
+							Review the Installation Guide</A></font></font></div>
+		<p><font face="Verdana"><font size="-1">2. <A href="#common_jre">Common JRE</A></font></font>
+		<p><font face="Verdana"><font size="-1">3. <A href="#starteam_server">StarTeam Server</A></font></font>
+			<UL>
+				<LI>
+					<DIV><font face="Verdana"><font size="-1"><A href="#new_features">New Features for 2005 Release 2</A></font></font></DIV>
+				<LI>
+					<FONT face="Verdana"><FONT size="-1"><A href="#localization">Localization</A></FONT></FONT><font face="Verdana"><font size="-1"></font></font>
+				<LI>
+					<FONT face="Verdana"><FONT size="-1"><A href="#Supported_Databases">Supported Databases: 
+								MSDE, Microsoft SQL Server, Oracle 9i and 10g</A></FONT></FONT>&nbsp;
+				<LI>
+					<font face="Verdana"><font size="-1"><A href="#licensing">Licensing</A></font></font>
+				<LI>
+					<DIV style="MARGIN-RIGHT: 0px"><font face="Verdana"><font size="-1"><A href="#Microsoft Access Replaced with MSDE">MSDE 
+									is Default Database</A></font></font></DIV>
+				<LI>
+					<DIV style="MARGIN-RIGHT: 0px"><font face="Verdana"><font size="-1"><A href="#support_for_double_byte">Support 
+									for Unicode Character Sets</A></font></font></DIV>
+				</LI>
+			</UL>
+			<div dir="ltr" style="MARGIN-RIGHT: 0px"><font size="2" face="Verdana">4. </font><A href="#starteammpx_server">
+					<FONT face="Verdana" size="2">StarTeamMPX Server</FONT></A></FONT></FONT></div>
+		<p><font face="Verdana"><font size="-1">5. <A href="#StarTeam Client">StarTeam Client</A></font></font>
+		<p><font face="Verdana"><font size="-1">6. <A href="#Integrations">Integrations</A></font></font>
+		<p><font face="Verdana"><font size="-1">7. <A href="#Universal Edition">Universal Edition</A></font></font>
+		<p><font face="Verdana"><font size="-1">8. <A href="#Virus Scanning Utilities">Virus Scanning 
+						Utilities</A></font></font>
+		<p><font face="Verdana"><font size="-1">9. <A href="#Backing Up StarTeam Project Data">Backing 
+						Up StarTeam Project Data</A></font></font>
+		<p><font face="Verdana"><font size="-1">10. <A href="#Accessing Electronic Manuals">Accessing 
+						Electronic Manuals</A></font></font>
+		<p><font face="Verdana"><font size="-1">11. <A href="#Synchronizing Workstation and Server Clocks">
+						Synchronizing Workstation and Server Clocks</A></font></font>
+		<p><font face="Verdana"><font size="-1">12. <A href="#Contacting Borland Software Corporation">Contacting 
+						Borland Software Corporation</A></font></font>
+		<p><font face="Verdana"><font size="-1">13. <A href="#Troubleshooting">Known Issues</A></font></font>
+			<ul>
+				<li>
+					<font face="Verdana"><font size="-1"><A href="#Database Issues">Database Issues</A></font></font>
+				<li>
+					<font face="Verdana"><font size="-1"><A href="#StarTeam Server and StarTeam Issues">StarTeam 
+								Server,&nbsp;Client&nbsp;and SDK Issues</A></font></font>
+				<li>
+					<font face="Verdana"><font size="-1"><A href="#Time Issues">Time Issues</A></font></font>
+				<li>
+					<font face="Verdana"><font size="-1"><A href="#Installation Issues">Installation Issues</A></font></font>
+				<li>
+					<font face="Verdana"><font size="-1"><A href="#VSS and PVCS Wrapping Issues">VSS and PVCS 
+								Wrapping Issues</A></font></font>
+				<li>
+					<font face="Verdana"><font size="-1"><A href="#Miscellaneous Issues">Miscellaneous Issues</A></font></font>
+				</li>
+			</ul>
+			<h1><a name="review_the_installation_guide"></a><font face="Verdana"></font>&nbsp;</h1>
+			<H1><FONT face="Verdana">Review the Installation Guide&nbsp;</FONT></H1>
+		<P>
+			<font face="Verdana"><font size="-1">Be sure to read the <i>StarTeam Installation Guide</i>
+					before installing and upgrading StarTeam products.&nbsp;</font></font><FONT face="Verdana"><FONT size="-1">StarTeam&nbsp;2005 
+					Release 2 can upgrade&nbsp;server configurations from&nbsp;6.0 and 2005. If 
+					you&nbsp;are upgrading from a release earlier than 6.0, you must upgrade your 
+					server to 6.0.079 before going on to StarTeam 2005 Release 2.</FONT></FONT>&nbsp;&nbsp;&nbsp;
+			<br>
+			&nbsp;
+		</P>
+		<h1><a name="common_jre"></a><font face="Verdana">Common JRE</font></h1>
+		<font face="Verdana"><font size="-1">Most&nbsp;StarTeam 2005 Release 2 products install 
+				JRE 1.5.0_03 for COM and Java applications.</font></font>&nbsp;<BR>
+		&nbsp;&nbsp;
+		<br>
+		&nbsp;
+		<h1><a name="starteam_server"></a><font face="Verdana">StarTeam Server</font></h1>
+		<P><a name="new_features"></a><b><font face="Verdana"><font size="+2">New Features 
+						for&nbsp;2005 Release 2</font></font></b>
+		</P>
+		<P><FONT face="Verdana" size="2">All of the following features are new with StarTeam 
+				Server 2005 Release 2. They are covered in more depth in the <EM>StarTeam New 
+					Features Guide</EM>.</FONT></P>
+		<UL>
+			<li>
+				<font face="Verdana"><font size="-1"></font></font>
+				<p><FONT face="Verdana" size="2"> support for DB2 in addition to Microsoft SQL Server, 
+						MSDE, and Oracle databases</FONT></p>
+			<LI>
+				<P><FONT face="Verdana" size="2">a new Server Administration utility, which combines 
+						the old Server Tools and Server Administration utility into one tool that does 
+						both:</FONT></P>
+				<UL>
+					<LI>
+						<P><FONT face="Verdana" size="2">local administration of servers as formerly done with 
+								Server Tools (for example, starting and stopping server configurations) </FONT>
+						</P>
+					<LI>
+						<P><FONT face="Verdana" size="2">remote administration of servers as formerly done with 
+								the old Server Administration utility (for example, changing a server 
+								configuration's notification, time outs, and other configuration settings) </FONT>
+						</P>
+					</LI>
+				</UL>
+			</LI>
+		</UL>
+		<BLOCKQUOTE dir="ltr" style="MARGIN-RIGHT: 0px">
+			<P><FONT face="Verdana" size="2">You start the new Server Administration utility using 
+					Start &gt; Programs &gt; StarTeam &gt; StarTeam Server 2005 R2 &gt; StarTeam 
+					Server. This is the same way that Server Tools used to be started.</FONT></P>
+			<P><FONT face="Verdana" size="2">A couple of features from the 2005 Server 
+					Administration utility available from the Windows client are not yet parts of 
+					the new utility. They are </FONT><FONT face="Verdana" size="2">Import Users and 
+					Import Groups, which imported users and groups&nbsp;from the Windows Domain. 
+					The 2005 StarTeam Windows client will be made available to customers who need 
+					to use this import feature. However, you may prefer to use Borland LDAP 
+					QuickStart Manager and import user and group information from a directory 
+					service or LDIF file.</FONT></P>
+		</BLOCKQUOTE><FONT face="Verdana" size="2">
+			<UL dir="ltr">
+				<LI>
+					<DIV>Borland licensing for license servers in now available in addition to the 
+						usual StarTeam licensing.&nbsp;<BR>
+					</DIV>
+				</LI>
+			</UL>
+		</FONT>
+		<h2><a name="localization"></a><font face="Verdana">Localization</font></h2>
+		<P><font face="Verdana"><font size="-1">Starting with the 5.4 release, StarTeam Server has 
+					been localized in English, French, German, and Japanese. The Cross-Platform 
+					client is localized in all four languages and StarDisk is localized in English 
+					and Japanese. Other StarTeam products, such as the Windows client, StarTeam MPX 
+					Server, Web Edition, StarTeam Extensions, Notification Agent, and Workflow 
+					Designer, have graphical user interfaces that are only in English.</font></font>&nbsp;<BR>
+			&nbsp;</P>
+		<h2><a name="Supported Databases"></a><a name="supported_databases"></a><font face="Verdana">Supported 
+				Databases</font></h2>
+		<font face="Verdana"><font size="-1">StarTeam Server supports:</font></font>
+		<ul>
+			<li>
+				<font face="Verdana"><font size="-1">IBM DB2 UDB 8.1.9 and 8.2.2</font></font>
+			<LI>
+				<FONT face="Verdana"><FONT size="-1">Microsoft SQL Server 7.0 SP4</FONT></FONT>
+			<LI>
+				<FONT face="Verdana"><FONT size="-1">Microsoft SQL Server 2000&nbsp;SP3</FONT></FONT>
+			<li>
+				<font face="Verdana"><font size="-1">MSDE 2000 SP2 (with Slammer virus patch)</font></font>
+			<li>
+				<font face="Verdana"><font size="-1">Oracle 9.0.1.3.0</font></font>
+			<li>
+				<font face="Verdana"><font size="-1">Oracle 9.2.0.4</font></font>
+			<LI>
+				<FONT face="Verdana" size="2"><FONT face="Verdana"><FONT size="-1">Oracle 10.1.0.3.0 (with 
+							one of the supported 9i Oracle ODBC drivers)</FONT></FONT></FONT>
+			</LI>
+		</ul>
+		<P><font face="Verdana"><font size="-1">See the <i>StarTeam Installation Guide</i> for 
+					important details about setting up each type of database.</font></font>
+		</P>
+		<P>&nbsp;</P>
+		<h2><a name="licensing"></a><a name="databases_on_hold"></a><font face="Verdana">Licensing<a name="databases_on_hold"></a>&nbsp;</font></h2>
+		<P><font face="Verdana"><font size="-1">Starting with StarTeam 2005 Release 2, you can use 
+					either StarTeam licensing (as supported in previous releases) or Borland 
+					licensing for license servers. User Manager (a part of the Server 
+					Administration utility) has been modified so that users can be assigned to a 
+					specific Borland license slip. See the <EM>New Features Guide</EM> for more 
+					information.</font></font></P>
+		<P><FONT face="Verdana"><FONT size="-1">Starting with StarTeam 2005, StarTeam Windows and 
+					StarTeam Cross-Platform clients no longer require a client license in addition 
+					to the server license.</FONT></FONT></P>
+		<P><FONT face="Verdana"><FONT size="-1">Starting with the 5.4 release of StarTeam Server, 
+					you can add more StarTeam named user or concurrent licenses by entering 
+					additional serial numbers. StarTeam Server keeps track of the total number by 
+					summing the licenses supplied in each serial number. This is referred to as 
+					stackable licensing. However, all the license must be the save edition: 
+					Standard, Enterprise, or Enterprise Advantage.</FONT></FONT>
+		</P>
+		<P><font face="Verdana"><font size="-1">You must delete an evaluation license before 
+					entering the serial numbers for either StarTeam named user or concurrent 
+					licenses. If you are upgrading from a previous release, you must delete the 
+					serial numbers for that release.</font></font>&nbsp;
+			<br>
+			&nbsp;&nbsp;
+			<br>
+			&nbsp;
+		</P>
+		<h1><a name="Microsoft Access Replaced with MSDE"></a></h1>
+		<h2><a name="Microsoft Access Replaced with MSDE"></a><font face="Verdana">MSDE&nbsp; 
+				is Default Database</font></h2>
+		<font face="Verdana"><font size="-1">The English version of MSDE is installed along 
+				with StarTeam Server in a typical installation. This has been well tested and, 
+				while error messages are in English, users rarely see them. StarTeam Server 
+				usually provides its own localized error messages. If you prefer to see 
+				messages from MSDE in your language, visit <a href="http://support.microsoft.com/default.aspx?scid=kb;en-us;277535">
+					http://support.microsoft.com/default.aspx?scid=kb;en-us;277535</a> for 
+				details from Microsoft about installing localized error messages for MSDE (they 
+				are the same as for Microsoft SQL Server).</font></font>
+		<p><font face="Verdana"><font size="-1">If you already have multiple MSDE or Microsoft SQL 
+					Server databases on the computer where you are installing StarTeam Server, you 
+					may need to install from the StarTeam installation CD instead of a download 
+					package. While you only need one instance of MSDE (of the 16 available from 
+					Microsoft), it must be dedicated to StarTeam Server. If you already have one 
+					instance, there are two in the downloaded installation packages and you should 
+					have no problem. If, for some reason, there are more than two instances on the 
+					computer, you must use the CD, which ships with eight instances. If MSDE fails 
+					to install, this may be the reason.</font></font> &nbsp;&nbsp;
+			<br>
+			&nbsp;
+			<h2><a name="support_for_double_byte"></a><font face="Verdana">Support for Unicode 
+					Character Sets</font></h2>
+			<font face="Verdana"><font size="-1">Starting with the 5.3 release, StarTeam Server has 
+					had Unicode character set support. We support all languages that can be encoded 
+					in UTF-8, such as Japanese, German, and French. There are some exceptions to be 
+					aware of:</font></font>
+		<p><span dir="ltr"><font face="Verdana"><font size="-1"><b>Keyword expansion and EOL conversion:</b>
+						The StarTeam Windows client uses only ASCII characters to expand keywords. 
+						Characters outside that range expand to "?".&nbsp;</font></font></span><SPAN dir="ltr"><FONT face="Verdana"><FONT size="-1">
+						<span dir="ltr">The StarTeam Cross-Platform client allows you to select a file 
+						encoding as you check out a file.</FONT></FONT></SPAN>
+		</SPAN>
+		<P><SPAN dir="ltr"></SPAN><span dir="ltr">
+				<font face="Verdana"><font size="-1">Keyword expansion and EOL conversion should work 
+						for all "ASCII-based" encodings, which includes UTF-8, Cp1252, and so on. It 
+						does not include the various UTF-16 encodings. StarTeam currently treats UTF-16 
+						encodings as binary and does not attempt to perform either EOL or keyword 
+						expansion on them.&nbsp;</font></font></span>
+		<P><FONT face="Verdana" size="2">When you use the Cross-Platform client or the Bulk 
+				Checkout utility with Cache Agent, be aware that Cache Agent does not support 
+				keyword expansion of any kind.</FONT>
+		<p><span dir="ltr"><font face="Verdana"><font size="-1"><b>Custom fields: </b>The internal 
+						names of custom fields must be ASCII, but the display names can be in 
+						non-English character sets.</font></font></span>
+		<p><span dir="ltr"><span dir="ltr"><font face="Verdana"><font size="-1"><b>Microsoft SQL 
+Server/MSDE:&nbsp;</span></B>StarTeam server configurations that use Microsoft 
+SQL Server or MSDE databases must have Microsoft ODBC DSNs that have the 
+autotranslation feature turned off. When a database is created for you 
+automatically, this and other settings for the database are exactly as needed by 
+StarTeam Server. However, with the autotranslation turned off, the SQL Server 
+ODBC Data Source Test for the Microsoft ODBC driver will fail with the message: 
+"Perform translation for character data" should be checked. For MSDE and 
+Microsoft SQL Server databases used with StarTeam server configurations, this 
+option should <b>not</b> be checked and the message is an 
+indication that the <b>option is correctly set</b>.</FONT></FONT></span>
+			<BR>
+		<P>
+		<P>
+		<P>
+			<h1><a name="starteammpx_server"></a><font face="Verdana"> StarTeamMPX</font></h1>
+		<P><font face="Verdana"><font size="-1"> StarTeamMPX is a part of StarTeam Enterprise 
+					Advantage. It provides both event messaging and file transmission.</font></font>
+		</P>
+		<P><FONT face="Verdana"><FONT size="-1">Event messaging can improve both StarTeam 
+					performance and scalability<!--kadov_tag{{</ignored>}}-->
+					using an advanced caching and publish/subscribe communication technology. 
+					Information about changed objects in a StarTeam server configuration is 
+					broadcast in encrypted format through a publish/subscribe channel to the 
+					StarTeam client. The caching modules in the StarTeam client automatically 
+					display the new information to the user making operations such as refreshes 
+					much faster. By reducing demand on the StarTeam Server, the caching modules 
+					also increase the number of active sessions that can be effectively managed in 
+					a single server configuration. Several StarTeam clients can take advantage of 
+					event messaging.</FONT></FONT></P>
+		<P><FONT face="Verdana" size="2">File revisions can be&nbsp;transmitted to Cache Agents 
+				distributed throughout&nbsp;a corporation, making check-out operations faster. 
+				The StarTeam Cross-Platform client and the Bulk Check-out command can take 
+				advantage of Cache Agent.&nbsp;</FONT></P>
+		<p><font face="Verdana"><font size="-1">For more information, see the StarTeamMPX readme 
+					and the <EM>StarTeamMPX Administrator's Guide</EM>.</font></font>
+			<br>
+		&nbsp;
+		<p><!--(Table)=========================================================-->
+			<h1><a name="StarTeam Client"></a><font face="Verdana">StarTeam Clients</font></h1>
+			<font face="Verdana"><font size="-1">The&nbsp;StarTeam Windows and StarTeam 
+					Cross-Platform clients can access&nbsp;both&nbsp;StarTeam Server 2005 and 2005 
+					Release 2. This makes it easier to roll out your upgrades of the client after 
+					the StarTeam Server has been installed.</font></font>
+		<P>
+			<h1><a name="StarTeam Status Bar"></a><a name="XML Over TCPIP Protocol"></a><a name="Integration"></a><a name="Integrations"></a><font face="Verdana">Integrations</font></h1>
+			<div class="whs285"><font face="Verdana"><font size="-1">StarTeam integrations are <STRONG>not</STRONG>
+						included on the StarTeam Installation CD, but are posted for download on the 
+						Borland web site as they become available. Check for them at:</font></font></div>
+		<P class="whs286"><font face="Verdana"><font size="-1"><a href="http://starteam.borland.com/starteamintegrations">http://starteam.borland.com/starteamintegrations</a></font></font>
+		</P>
+		<P class="whs286"><FONT face="Verdana" size="2">New integrations for StarTeam 2005 
+				Release 2:</FONT></P>
+		<UL>
+			<LI>
+				<DIV class="whs286"><FONT face="Verdana" size="2">The Visual Studio .NET integration. 
+						While the StarTeam SCC integration still exists, it is no longer used with 
+						Visual Studio .NET.</FONT></DIV>
+			<LI>
+				<DIV class="whs286"><FONT face="Verdana" size="2">The CaliberRM StarTeam Requirements 
+						Publisher which replaces the Import Requirements (impreq) utility formerly 
+						supplied as part of StarTeam Extensions</FONT></DIV>
+			</LI>
+		</UL>
+		<P class="whs286"><FONT face="Verdana" size="2"> Substantially updated for StarTeam 
+				2005 Release 2:</FONT></P>
+		<UL>
+			<LI>
+				<DIV class="whs286"><FONT face="Verdana" size="2">The Eclipse integration now supports 
+						alternate property editors (APEs), the custom forms designed for use with the 
+						StarTeam Enterprise Advantage feature set.</FONT></DIV>
+			</LI>
+		</UL>
+		<P class="whs286"><FONT face="Verdana" size="2">Unchanged (and therefore still using 
+				the release number 2005) but working well with StarTeam Server 2005 Release 2 
+				are:</FONT></P>
+		<div class="whs286"><FONT face="Tahoma" size="2"></FONT></div>
+		<UL>
+			<LI>
+				<DIV class="whs286"><FONT face="Verdana" size="2">Mercury&nbsp;TestDirector 
+						Synchronizer</FONT></DIV>
+			<LI>
+				<DIV class="whs286"><FONT size="2"><FONT face="Verdana" size="2">Mercury TestDirector<SUP> </SUP>
+							Version Control Add-in</FONT></FONT></DIV>
+			<LI>
+				<DIV class="whs286"><FONT face="Verdana" size="2">Mercury Quality Center Version 
+						Control Add-in</FONT></DIV>
+			<LI>
+				<DIV class="whs286"><FONT face="Verdana" size="2">Microsoft SCC integration</FONT></DIV>
+			<LI>
+				<DIV class="whs286"><FONT face="Verdana" size="2">Microsoft Visual Studio .NET Web 
+						Projects</FONT></DIV>
+			</LI>
+		</UL>
+		&nbsp;
+		<h1 class="whs286"><a name="Universal Edition"></a><font face="Verdana">Universal 
+				Edition</font></h1>
+		<div class="whs286"><font face="Verdana"><font size="-1">Universal Edition, the StarTeam 
+					(stcmd) command line for non-Windows platforms was discontinued as an 
+					individual installation starting with the 5.4 release. It is automatically 
+					installed as part of the Cross-Platform client for the desired&nbsp;platform.</font></font></div>
+		<br>
+		&nbsp;
+		<div class="whs286"></div>
+		&nbsp;
+		<h1><a name="Virus Scanning Utilities"></a><font face="Verdana">Virus Scanning 
+				Utilities</font></h1>
+		<font size="-1"><FONT face="Verdana">Every StarTeam client computer should be equipped 
+				with a virus protection utility that has up-to-date virus definition files. All 
+				StarTeam servers should also be equipped with up-to-date virus protection and 
+				the settings should be set to alert only the administrator. The StarTeam 
+				administrator should halt the StarTeam Server immediately upon virus detection, 
+				perform a full StarTeam backup, and then follow the instructions provided by 
+				the virus protection vendor for cleaning the virus from the infected file. If 
+				the infected file cannot be cleaned or if problems exist, contact </FONT><a href="http://support.borland.com/default.asp">
+				<FONT face="Verdana">http://support.borland.com/default.asp</FONT></a><font size="-1" face="Verdana">
+				before restarting the server. Some viruses can be immediately destructive to 
+				the repository and in rare cases data loss will be inevitable. Borland strongly 
+				recommends that regular backups be performed.</font></font><FONT face="Verdana">
+		</FONT>
+		<P class="whs332"><FONT face="Verdana"><font size="-1">A virus that might be a nuisance to 
+					a file system can be far more destructive when checked into the repository. For 
+					example, many virus protection utilities are set by default or can be set to 
+					delete infected files. If an archive file is deleted by the virus protection 
+					utility, data may be lost.</font> </FONT>
+		</P>
+		<P class="whs332"><FONT face="Verdana"><FONT size="-1">Another example is that a virus may 
+					not be detected in the archive and may sit dormant waiting to infect the 
+					computers of all project users. Your network will rapidly spread the virus and 
+					a data loss could occur.</FONT>
+				<br>
+				&nbsp;
+				<br>
+				&nbsp; </FONT>
+		</P>
+		<h1 class="whs335"><a name="Backing Up StarTeam Project Data"></a><a name="Backing Up StarTeam Project Data"></a><FONT face="Verdana">Backing 
+				Up StarTeam Project Data</FONT></h1>
+		<DIV class="whs336"><FONT size="2" face="Verdana">The Native-II vault was introduced in 
+				StarTeam 2005. If you are upgrading to 2005 Release 2 from a pre-2005 StarTeam 
+				release, you will have both a Native-I vault (the old vault) and a Native-II 
+				vault (the new vault) to back up-until you convert the Native-I vault to the 
+				Native-II format. </FONT>
+		</DIV>
+		<DIV class="whs336"><FONT face="Verdana" size="2"></FONT>&nbsp;</DIV>
+		<DIV class="whs336"><FONT face="Verdana" size="2">A complete backup consists of the 
+				StarTeam server configuration's database, archive, and configuration files. If 
+				a mismatch between the database and the archive files occurs, the backup may be 
+				unusable. Backup software capable of backing up open files is required if the 
+				backup is made while the StarTeam Server is running as either an application or 
+				a service. </FONT>
+		</DIV>
+		<DIV class="whs336"><FONT size="2" face="Verdana"></FONT>&nbsp;</DIV>
+		<DIV class="whs336"><FONT size="2" face="Verdana">If you have both a Native-I and 
+				Native-II vault, you must back up both of them at the same time while no users 
+				are logged into the server configuration. Usually you guarantee this by locking 
+				the server. To properly back up StarTeam data in this case, it is necessary to 
+				backup all data before allowing users to continue using the server. </FONT>
+		</DIV>
+		<DIV class="whs336"><FONT size="2" face="Verdana"></FONT>&nbsp;</DIV>
+		<DIV class="whs336"><FONT size="2" face="Verdana">If <STRONG>ALL</STRONG> your archive 
+				files have been converted to the Native-II vault, the vault can be backed up 
+				24/7 without locking the server. To properly back up StarTeam data, it is 
+				necessary to backup all the data at a similar time. The database should be 
+				backed up first. Then the archive files. See the <EM>StarTeam Installation Guide</EM>
+				for information about backing up a database that is in use. </FONT>
+		</DIV>
+		<DIV class="whs336"><FONT face="Verdana" size="2"></FONT>&nbsp;</DIV>
+		<DIV class="whs336"><FONT size="2" face="Verdana">It is recommended that a tape drive 
+				or similar backup device be used to backup StarTeam server configurations. </FONT>
+		</DIV>
+		<DIV class="whs336"><FONT size="2" face="Verdana"></FONT>&nbsp;</DIV>
+		<DIV class="whs336"><FONT face="Verdana"><FONT size="2"><STRONG>Important:</STRONG> Be sure 
+					to verify your backups periodically. Borland recommends that you restore and 
+					test backups of your StarTeam project data on a test system. Restoring and 
+					testing your backups helps to ensure that your data is being backed-up 
+					correctly</FONT>. </FONT>
+		</DIV>
+		<p class="whs337"><FONT face="Verdana"><span style="MARGIN-BOTTOM: 6px; MARGIN-LEFT: 0px"></span><br>
+			</FONT>
+			<span style="MARGIN-BOTTOM: 6px; MARGIN-LEFT: 0px">
+				<h1><a name="Accessing Electronic Manuals"></a><FONT face="Verdana">Accessing 
+						Electronic Manuals</FONT></h1>
+				<P><FONT face="Verdana"><font size="-1">The StarTeam online manuals are in .PDF format and 
+							require Adobe Acrobat 4.0 or higher for viewing. The installation program for 
+							Acrobat is located in the \Docs folder of the StarTeam Installation CD. You can 
+							access the online manuals in several ways.</font> </FONT>
+				</P>
+				<P><font size="-1" face="Verdana">The online manuals are copied to the \User Manuals 
+						folder as part of a typical StarTeam Windows client or StarTeam Server 
+						installation. (Note that clearing the appropriate Online Documentation check 
+						box in the Custom Setup Options dialog box prevents installation of the 
+						manuals.)</font></P>
+				<P><font size="-1" face="Verdana">The electronic manuals can also be accessed from the 
+						\Docs folder on the StarTeam Installation CD.</font></P>
+				<P><FONT size="2" face="Verdana"></FONT>&nbsp;</P>
+				<h1 class="kadov-p"><a name="Clocks"></a><a name="Synchronizing Workstation and Server Clocks"></a><FONT face="Verdana">Synchronizing 
+						Workstation and Server Clocks</FONT></h1>
+				<FONT face="Verdana"><font size="-1">The computers that run StarTeam Server and its 
+						clients must have their dates and times synchronized. Many features of StarTeam 
+						depend on calculations involving times and dates. In particular, labels, 
+						configurations and promotion states are all governed by time and date 
+						calculations. If the client and server are not kept synchronized, a number of 
+						operations may fail, or produce inaccurate or unreliable operations such as 
+						checkout, file status displays or label creation.</font> </FONT>
+				<p><FONT face="Verdana"><font size="-1">Therefore, Borland recommends using whatever 
+							service your network server supports for synchronizing all workstation clocks. 
+							For example, Windows network users can execute the following command to 
+							synchronize their workstation time with the computer on which StarTeam Server 
+							is installed.</font> </FONT><blockquote><font size="-1" face="Verdana">net time 
+							\\<i>server_name</i> /set /yes</font></blockquote><FONT face="Verdana"><font size="-1">
+							In this example, you would replace<i>server_name</i> with the name or IP 
+							address of the network computer running StarTeam Server. Depending on the 
+							synchronization method you use, you may need to resynchronize regularly, for 
+							example, whenever you restart the server.</font>
+						<br>
+						&nbsp; </FONT>
+				<p>
+			</span>
+			<h1><a name="Contacting Borland Software Corporation"></a><FONT face="Verdana">Contacting 
+					Borland Software Corporation</FONT></h1>
+			<div class="whs344"><font size="-1"><FONT face="Verdana">Sales: </FONT><a href="http://www.borland.com/company/contact/where_to_buy.html">
+						<FONT face="Verdana">www.borland.com/company/contact/where_to_buy.html</FONT></a></font></div>
+			<h2 class="whs345"><a name="Getting Help"><FONT face="Verdana"></FONT></a></h2>
+			<div class="whs345">
+				<P><FONT face="Verdana" size="2">Borland® is committed to providing world class 
+						technical support. With over 22 years of experience in supporting developers 
+						and enterprises, Borland® provides support worldwide, delivering timely, 
+						reliable service to ensure every customer's business success.</FONT></P>
+				<P><FONT size="2"><FONT face="Verdana">For more information about Borland® support 
+							services, please see Borland Answers, our support web site, at </FONT><A href="http://support.borland.com">
+							<FONT face="Verdana">http://support.borland.com</FONT></A><FONT face="Verdana">. 
+							Customers under a current technical support contract may log in to view 
+							restricted content, log and update new cases, and review information about 
+							available Patches and Hotfixes. Contact information, including telephone 
+							numbers for Borland® technical support worldwide, is available online at </FONT>
+						<A href="http://support.borland.com/entry.jspa?externalID=123"><FONT face="Verdana">http://support.borland.com/entry.jspa?externalID=123</FONT></A><FONT face="Verdana">.</FONT></FONT></P>
+				<P><FONT size="2"><FONT face="Verdana">Borland® products have a very active user community. 
+							See </FONT><A href="http://support.borland.com/entry.jspa?externalID=1187"><FONT face="Verdana">
+								http://support.borland.com/entry.jspa?externalID=1187</FONT></A><FONT face="Verdana">&nbsp;for 
+							an up-to-date list of free product newsgroups. Also, the Borland® Developer 
+							Network (BDN), hosted by Borland® at </FONT><A href="http://bdn.borland.com"><FONT face="Verdana">
+								http://bdn.borland.com</FONT></A><FONT face="Verdana">, provides access 
+							free-of-charge to third-party articles, code examples, and news.</FONT></FONT></P>
+				<P><FONT face="Verdana"><font size="-1">For support on third-party tools or documentation, 
+							contact the vendor of the tool.</font>
+						<br>
+						&nbsp; </FONT>
+				</P>
+			</div>
+			<div class="whs345"><FONT face="Verdana"></FONT></div>
+			<FONT face="Verdana">&nbsp; </FONT>
+			<h1><a name="Troubleshooting"></a><FONT face="Verdana">Known Issues</FONT></h1>
+			<h2><a name="Database Issues"></a><a name="Database Issues"></a><FONT face="Verdana">Database 
+					Issues</FONT></h2>
+			<BLOCKQUOTE dir="ltr" style="MARGIN-RIGHT: 0px">
+				<div class="whs289"><b><font size="-1" face="Verdana">Microsoft SQL Server/MDSE</font></b></div>
+			</BLOCKQUOTE>
+			<UL>
+				<LI>
+					<div class="whs289"><font size="-1" face="Verdana">When creating a Microsoft SQL Server 
+							database for use with StarTeam, the database name should conform to the 
+							following guidelines:</font></div>
+					<ul>
+						<div class="whs298"><font size="-1" face="Verdana">begin with a letter</font></div>
+						<div class="whs299"><font size="-1" face="Verdana">contain letters and numbers only</font></div>
+						<div class="whs300"><font size="-1" face="Verdana">avoid using spaces in the name</font></div>
+						<div class="whs300"><font size="-1" face="Verdana">Not be a SQL reserved word such as 
+								create, delete, if, then, else, or goto.</font></div>
+					</ul>
+				</LI>
+			</UL>
+			<blockquote dir="ltr" style="MARGIN-RIGHT: 0px"><font size="-1" face="Verdana">The 
+					Server Tools database options may fail to run for databases with names that do 
+					not follow these guidelines.</font></blockquote>
+			<ul>
+				<li>
+					<FONT face="Verdana"><font size="-1">If you use a SQL Server database that is 
+							case-sensitive, the server might not start your server configuration after an 
+							upgrade. This can be fixed, but you will need assistance from technical 
+							support.</font> </FONT>
+				</li>
+			</ul>
+			<BLOCKQUOTE dir="ltr" style="MARGIN-RIGHT: 0px">
+				<P><FONT face="Verdana"><b><font size="-1">Oracle</font></b> </FONT>
+				</P>
+			</BLOCKQUOTE>
+			<ul>
+				<FONT face="Verdana"><font size="-1">When creating a schema user for use with a new 
+						server configuration and/or before upgrading old server configurations, make 
+						sure that the schema user has the following Oracle privileges so that StarTeam 
+						Server can create labels and perform other operations successfully:</font> </FONT>
+				<UL>
+					<UL>
+						<ul>
+							<font size="-1" face="Verdana">create procedure
+								<BR>
+								create sequence
+								<BR>
+								create session
+								<BR>
+								create table
+								<BR>
+								create trigger
+								<BR>
+								create type
+								<BR>
+								create view
+								<BR>
+								unlimited tablespace</font></ul>
+					</UL>
+				</UL>
+			</ul>
+			<ul dir="ltr">
+				<P><FONT face="Verdana"><font size="-1">For 9i installations using Automatic Undo 
+							Management:</font>
+						<br>
+						<font size="-1">Make sure undo retention time is defined correctly.</font></FONT></P>
+				<P><FONT face="Verdana" size="2"></FONT>&nbsp;</P>
+			</ul>
+			<h2><a name="StarTeam Server and StarTeam Issues"></a><a name="StarTeam Server and StarTeam Issues"></a><FONT face="Verdana">StarTeam 
+					Server, Client, and SDK&nbsp;Issues</FONT></h2>
+			<BLOCKQUOTE dir="ltr" style="MARGIN-RIGHT: 0px">
+				<P><FONT size="2" face="Verdana"><STRONG>New vault</STRONG></FONT></P>
+			</BLOCKQUOTE><a name="StarTeam Server and StarTeam Issues"></a>
+			<UL>
+				<div class="whs305"><font size="-1" face="Verdana">Disk volumes used for hives by one 
+						StarTeam server configuration should not be used by any other process including 
+						other StarTeam server configurations.</font></div>
+				<DIV class="whs305"><FONT face="Verdana"></FONT>&nbsp;</DIV>
+				<DIV class="whs305"><FONT face="Verdana"><FONT size="2">Hive threshold limits should never 
+							be set to 100%. You should never totally fill a drive anyway, but when a hive 
+							is set to 100% and runs out of disk space, the server still checks this hive 
+							when it is this hive's turn in the hive rotation. The resulting error is "no 
+							space left on device". The workaround is to clear the "Allow new archives" 
+							check box in Hive Manager for this hive.</FONT></FONT></DIV>
+				<DIV class="whs305"><FONT face="Verdana" size="2"></FONT>&nbsp;</DIV>
+				<DIV class="whs305"><FONT face="Verdana" size="2">When upgrading from a pre-2005 
+						release, it is a good idea to perform a test conversion of your Native-I vault 
+						to a Native-II vault prior to using StarTeam 2005 Release 2. This 
+						is&nbsp;especially true if the Native-I vault is very large or started several 
+						years ago. Running a test conversion before putting&nbsp;StarTeam Server 2005 
+						Release 2 in production allows you to discover any issues that may be peculiar 
+						to your vault.</FONT></DIV>
+				<DIV class="whs305"><FONT face="Verdana" size="2"></FONT>&nbsp;</DIV>
+				<DIV class="whs305"><FONT face="Verdana" size="2"><STRONG>Evaluations</STRONG></FONT></DIV>
+				<DIV class="whs305"><FONT face="Verdana"><FONT size="2"></FONT></FONT>&nbsp;</DIV>
+				<DIV class="whs305"><FONT face="Verdana" size="2">Borland allows you to extend the 
+						evaluation period for StarTeam Server by contacting 
+						www.borland.com/company/contact/where_to_buy.html and obtaining an evaluation 
+						extender key. </FONT>
+				</DIV>
+				<DIV class="whs305"><FONT size="-1">
+						<P><FONT face="Verdana"><FONT size="2"><STRONG>StarTeam Sample server configuration</STRONG></FONT>
+							</FONT>
+					</FONT>
+		</p>
+		</DIV>
+		<DIV class="whs305"><FONT size="-1" face="Verdana">If you plan to use the sample server 
+				configuration, StarDraw, and want to run it as a service, you may have to start 
+				it once as an application, shut it down, and then set it as a service.</FONT></DIV>
+		<DIV class="whs305"><FONT size="2" face="Verdana"></FONT>&nbsp;</DIV>
+		<DIV class="whs305"><FONT size="2"><FONT face="Verdana"><STRONG>4GT RAM Tuning</STRONG> </FONT>
+			</FONT>
+		</DIV>
+		<DIV class="whs305"><FONT size="2" face="Verdana"></FONT>&nbsp;</DIV>
+		<DIV class="whs305"><FONT face="Verdana"><FONT size="2">If your StarTeam Server runs on 
+					Windows Server 2003, either Enterprise Edition or Datacenter Edition, you can 
+					use Microsoft's 4GT RAM Tuning to give the StarTeam Server process the use of 3 
+					GBs of memory. </FONT><FONT size="2">To enable this feature the /3GB switch 
+					needs to be added to the Boot.ini file. </FONT></FONT>
+		</DIV>
+		<DIV class="whs305"><FONT size="2" face="Verdana"></FONT>&nbsp;</DIV>
+		<DIV class="whs305"><FONT size="2"><FONT face="Verdana">Please see: </FONT><A href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/memory/base/4gt_ram_tuning.asp">
+					<FONT face="Verdana">http://msdn.microsoft.com/library/default.asp?url=/library/en-us/memory/base/4gt_ram_tuning.asp</FONT></A><FONT face="Verdana">
+				</FONT></FONT><FONT size="2" face="Verdana">for more information on setting 
+				this switch. </FONT>
+		</DIV>
+		<DIV class="whs305"><FONT size="2" face="Verdana"></FONT>&nbsp;</DIV>
+		<DIV class="whs305"><FONT size="2" face="Verdana">Example:</FONT></DIV>
+		<DIV class="whs305"><FONT face="Verdana" size="2">"multi(0)disk(0)rdisk(0)partition(2)\WINNT="Microsoft 
+				Windows 2000 Advanced Server" /3GB /fastdetect </FONT>
+		</DIV>
+		<DIV class="whs305"><FONT size="2" face="Verdana"></FONT>&nbsp;</DIV>
+		<DIV class="whs305"><FONT size="2" face="Verdana">When the StarTeam Server runs in this 
+				mode, VSS support is disabled.&nbsp;</FONT></DIV>
+		<DIV class="whs305"><FONT size="2" face="Verdana"></FONT>&nbsp;</DIV>
+		<DIV class="whs305"><FONT size="2" face="Verdana">The use of 4GT on Windows Server 
+				2003, Standard Edition, can give the appearance of a 3 GB range of user-mode 
+				memory, but the memory from 0x80000000 through 0xBFFFFFFF is actually not 
+				usable. </FONT>
+		</DIV>
+		<DIV class="whs305"><FONT size="2" face="Verdana"></FONT>&nbsp;</DIV>
+		<DIV class="whs305"><FONT size="2"><FONT face="Verdana">For more details, see&nbsp;</FONT>
+				<A href="http://www.microsoft.com/resources/documentation/WindowsServ/2003/all/techref/en-us/Default.asp?url=/resources/documentation/windowsserv/2003/all/techref/en-us/w2k3tr_4gt_how.asp">
+					<FONT face="Verdana">http://www.microsoft.com/resources/documentation/WindowsServ/2003/all/techref/en-us/Default.asp?url=/resources/documentation/windowsserv/2003/all/techref/en-us/w2k3tr_4gt_how.asp</FONT></A></FONT></DIV>
+		<DIV class="whs305"><FONT size="2" face="Verdana"></FONT>&nbsp;</DIV>
+		<DIV class="whs305"><FONT size="2" face="Verdana"><STRONG></STRONG></FONT>&nbsp;</DIV>
+		<DIV class="whs305"><FONT size="2" face="Verdana"><STRONG> StarTeam Server and Windows XP</STRONG></FONT></DIV>
+		</UL> <BLOCKQUOTE dir="ltr" style="MARGIN-RIGHT: 0px">
+			<P class="whs331"><FONT size="-1" face="Verdana"><FONT face="Verdana" size="-1">StarTeam 
+						Server can run on Windows XP for evaluation or demoing purposes, but there are 
+						some complications.</FONT></P>
+		</BLOCKQUOTE>
+		<UL class="whs305" dir="ltr" style="MARGIN-RIGHT: 0px">
+			<UL>
+				<LI>
+					<DIV class="whs331">Opening Ports on Windows XP<BR>
+						<BR>
+						If you are using a firewall, y</FONT><FONT face="Verdana" size="-1">ou have to open 
+							the port number on Windows XP SP2. This is 4467 by default. If you don't open 
+							this port in the Windows firewall, you cannot connect to the server.<BR>
+							<BR>
+							You will run into a similar problem for an MPX-enabled StarTeam Server. You 
+							will need to open the ports that are used by MPX. For example, the default port 
+							for Message Broker is 5101, and the default port for Multicast Service is 5104. 
+							If you are using these ports you need to open them.<BR>
+							<BR>
+							To open a port:<BR>
+							1. Start the Control panel and select Windows Firewall.
+							<BR>
+							2. Select the Exceptions tab.
+							<BR>
+							3. Select 'Add Port' and enter in any name and the appropriate port number.
+							<BR>
+							4. Press OK closing all of the dialogs.<BR>
+						</FONT>
+					</DIV>
+				<LI>
+					<DIV class="whs331"><FONT face="Verdana" size="2">Security<BR>
+							<BR>
+						</FONT><FONT face="Verdana" size="-1">If you run StarTeam Server on a Windows XP 
+							Professional computer, the person who creates and/or starts the first server 
+							configuration becomes the only person who can create and/or start server 
+							configurations.&nbsp; We provide the GrantAdmin utility that allows other 
+							administrators to create and start server configurations.&nbsp;
+							<BR>
+							<BR>
+							The utility is installed in the server installation folder. It must be run by 
+							the user who installed/started the server. It does not require any arguments. 
+							The GrantAdmin utility grants access rights to the key container to the other 
+							administrators. Otherwise, only the administrator who created the key container 
+							(that is started the server for the first time) has the rights needed to create 
+							and start server configurations.<BR>
+						</FONT>
+					</DIV>
+				<LI>
+					<DIV class="whs331"><FONT face="Verdana" size="2">Blocking<BR>
+							<BR>
+						</FONT><FONT size="2" face="Verdana">If you run StarTeam Server and the StarTeam 
+							Windows client on Windows XP SP2 with all updates, running the StarTeam Server 
+							or the StarTeam Toolbar for the first time can result in a&nbsp;Server_Blocked 
+							or&nbsp;Toolbar_Blocked error message. This is not a problem. Just click 
+							Unblock.<BR>
+						</FONT>
+					</DIV>
+				<LI>
+					<DIV class="whs331"><FONT face="Verdana" size="2">MDAC<BR>
+							<BR>
+						</FONT><FONT size="2" face="Verdana">StarTeam Server needs MDAC 2.8 and Windows XP 
+							SP2 comes with that version of MDAC. During the installation of StarTeam 
+							Server, you may see a message about MDAC 2.8 being incompatible with this 
+							version of Windows. This is not a problem. Just click cancel. </FONT>
+					</DIV>
+				</LI>
+			</UL>
+		</UL>
+		<P class="whs331"><FONT face="Verdana" size="2"><STRONG>Running the Server as a Service</STRONG></FONT></P>
+		<P class="whs331"><FONT size="2"><FONT face="Verdana" size="2">If you are running StarTeam 
+					Server as a service, you may see the&nbsp;Windows error 2186 indicating that 
+					the service is not responding to the Start Control function. Windows 2000 and 
+					XP display this message when a service takes longer to start than expected. 
+					Depending on the size of your database, StarTeam Server may take longer to 
+					complete the startup process than Windows expects. Usually StarTeam Server 
+					starts without a problem (despite this error message). However, to be sure, run 
+					the Event Viewer (Start\Programs\Administration Tools (Common)\Event Viewer. 
+					Check the most recent events for StarTeam Server. You will probably see: 
+					StarTeam Server Service started. If not, you will find the reason why it did 
+					not start or start properly and take appropriate action.</FONT></FONT></P>
+		<P class="whs331"><FONT face="Verdana" size="2"> If an MPX-enabled StarTeam Server runs 
+				as a service, the Message Broker or Multicast Services must start before the 
+				StarTeam Server service. Usually it does. If StarTeam Server fails to enable 
+				MPX and the Message Broker or Multicast Service are on the same 
+				computer,&nbsp;you may want to make the StarTeam Server service dependent on 
+				the Message Broker or Multicast Service service. Check with your system 
+				administrator&nbsp;before using&nbsp;one of the following techniques:
+				<BR>
+				a. To set up a service dependency for Windows&nbsp;2000:
+				<BR>
+				&nbsp;&nbsp;&nbsp;&nbsp; 1. Click Start&gt;Run from the Start menu.
+				<BR>
+				&nbsp;&nbsp;&nbsp;&nbsp; 2. Type Regedt32.
+				<BR>
+				&nbsp;&nbsp;&nbsp;&nbsp; 3. Click OK.
+				<BR>
+				&nbsp;&nbsp;&nbsp;&nbsp; 4. Select 
+				HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\StarTeamServer-<EM>configName</EM>&nbsp;&nbsp;<BR>
+				&nbsp;&nbsp;&nbsp;&nbsp; 5. Select Edit&gt;Add Value.
+				<BR>
+				&nbsp;&nbsp;&nbsp;&nbsp; 6. Set the Value Name to DependOnService.
+				<BR>
+				&nbsp;&nbsp;&nbsp;&nbsp; 7. Set the Data Type to REG_MULTI_SZ.
+				<BR>
+				&nbsp;&nbsp;&nbsp;&nbsp; 8. Enter your StarTeam Message Broker or StarTeam 
+				Multicast Service service name into the data window.&nbsp;(Example: StarTeam 
+				Message Broker 6.4)
+				<BR>
+				b. To set up a service dependency for Windows 2003:
+				<BR>
+				&nbsp;&nbsp;&nbsp; 1. Click Start&gt;Run from the Start menu.
+				<BR>
+				&nbsp;&nbsp;&nbsp; 2. Type Regedt32.
+				<BR>
+				&nbsp;&nbsp;&nbsp; 3. Click OK.
+				<BR>
+				&nbsp;&nbsp;&nbsp; 4. Select 
+				HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\StarTeamServer-<EM>configName</EM>&nbsp;<BR>
+				&nbsp;&nbsp;&nbsp; 5. Select Edit&gt;New&gt;Multi-String Value.
+				<BR>
+				&nbsp;&nbsp;&nbsp; 6. Set the Value Name to DependOnService.
+				<BR>
+				&nbsp;&nbsp;&nbsp; 7. Double-click the DependOnService Value to open the Data 
+				window.
+				<BR>
+				&nbsp;&nbsp;&nbsp; 8. Enter your StarTeam Message Broker or StarTeam Multicast 
+				Service service name into the Data window.&nbsp;(Example: StarTeam Message 
+				Broker 6.4).</FONT></P>
+		<P class="whs331"><FONT face="Verdana" size="2"><STRONG>StarTeam SDK Path</STRONG></FONT></P>
+		<P class="whs331"><FONT face="Verdana" size="2">Uninstalling the SDK runtime does not 
+				reset the installation path-unless all the versions of the runtime have been 
+				uninstalled. A user can manually change the path in the setup.ini file if 
+				desired. The setup.ini file for StarTeam will always be under "Documents and 
+				Settings". However, it may be under All Users or the specific user. Also, 
+				depending on when that user started using StarTeam, the setup.ini may be in the 
+				Application Data\Starbase or Application Data\Borland\StarTeam folder. It may 
+				be easier to search all Documents and Settings for a setup.ini file that 
+				contains "StarTeam SDK". The following is an example of setup.ini: </FONT>
+		</P>
+		<P class="whs331"><FONT face="Verdana" size="2"><FONT face="Courier New">[StarTeam SDK 
+					Folders]
+					<BR>
+					Programs=C:\Program Files\Borland
+					<BR>
+					Java=C:\Program Files\Borland\Java</FONT> </FONT>
+		</P>
+		<P class="whs331">&nbsp;</P>
+		<h2><a name="Time Issues"></a><a name="Time Issues"></a><font face="Verdana">Time 
+				Issues</font></h2>
+		<ul class="whs324" type="disc">
+			<div class="whs325"><font face="Verdana"><font size="-1"> StarTeam Server stores time 
+						stamps in UTC (also known as Universal Coordinated Time, Greenwich time, or 
+						Zulu time) format and adjusts the time stamp for the time zone that the 
+						computer specifies. For example, if a file is saved and checked in at 5 P.M. in 
+						California, its time stamp in California is 5 P.M. However, its time stamp on a 
+						computer in New York would be 8 P.M., the time it was in New York when the file 
+						was checked in. When a file is modified, the time stamp reflects that of the 
+						operating system. This means that if a file is checked in by a user in one time 
+						zone and modified by a user in another, the file's time stamp may appear to be 
+						earlier than the most recently checked-in revision. This does not affect file 
+						statuses within StarTeam because the UTC times are used to calculate statuses.</font></font></div>
+		</ul>
+		<ul class="whs328" type="disc">
+			<div class="whs329"><font face="Verdana"><font size="-1">If you are in an area that 
+						observes Daylight Savings Time (DST), the StarTeam status bar may display the 
+						incorrect time when rolling back a view (View\Select 
+						Configuration\Configuration As Of). For example, if you are currently in DST 
+						and rollback the view to a point in time prior to DST, the time display in the 
+						status bar (lower left corner of the StarTeam window) will be ahead by one 
+						hour. If you are not currently in DST and rollback the view to a point in time 
+						during DST, the time in the status bar will be behind one hour.</font></font></div>
+			<DIV class="whs329"><FONT face="Verdana" size="2"></FONT>&nbsp;</DIV>
+		</ul>
+		<h2><a name="Installation Issues"></a><a name="Installation Issues"></a><font face="Verdana">Installation 
+				Issues</font></h2>
+		<ul class="whs328" type="disc">
+			<div class="whs318"><b><font face="Verdana"><font size="-1">Canceling Installation:</font></font></b></div>
+			<div class="whs318"><font face="Verdana"><font size="-1">If you cancel the installation of 
+						the StarTeam client after you have already installed the StarTeam Runtime, and 
+						then install the StarTeam client again, letting it finish, at the end of the 
+						installation you will not be prompted to reboot the computer, even though you 
+						need to.</font></font></div>
+			<p class="whs318"><b><font face="Verdana"><font size="-1">Uninstalling from Windows Systems:</font></font></b>
+				<br>
+				<font face="Verdana"><font size="-1">StarTeam Server, StarTeam Windows client, and 
+						StarTeamMPX use InstallAnywhere for installation. If you encounter one of the 
+						following error messages when uninstalling this product from a Windows system 
+						(such as 2003 or XP Pro):</font></font>
+			<p><font face="Courier New"><font size="-1">"Can't launch executable. Could not find a 
+						suitable Java Virtual Machine on your system."</font></font>
+			<p><font face="Verdana"><font size="-1">or</font></font>
+			<p><font face="Courier New"><font size="-1">"Windows error 3 occurred while loading the 
+						Java VM."</font></font>
+			<p><font face="Verdana"><font size="-1">you may need to install JRE 1.4.1_04 or earlier 
+						from </font></font><font face="Times New Roman"><font size="+0"><a href="http://java.sun.com/products/archive/index.html">
+							http://java.sun.com/products/archive/index.html</a></font></font><font face="Verdana"><font size="-1">. 
+						A copy of it is also on the StarTeam CD&nbsp;in the Utility folder.</font></font>
+			<p class="whs318"><b><font face="Verdana"><font size="-1">Seeing PATH Error during 
+							Installation:</font></font></b>
+				<div class="whs318"><font face="Verdana"><font size="-1"><FONT face="Verdana"><FONT size="-1">As 
+									you install the product on Windows, the StarTeam SDK runtime may also be 
+									installed. If an error indicates that you must manually edit the PATH system 
+									variable and refers you to the readme file, the length of the PATH variable on 
+									the target computer has exceeded the Windows maximum. </FONT></FONT></font>
+					</font>
+				</div>
+				<DIV class="whs318"><FONT face="Verdana"><FONT size="-1"><FONT face="Verdana"><FONT size="-1"></FONT></FONT></FONT></FONT>&nbsp;</DIV>
+				<DIV class="whs318"><FONT face="Verdana"><FONT size="-1"><FONT face="Verdana"><FONT size="-1">You 
+									must shorten the text and either include the new path for the StarTeam SDK 
+									runtime or run the StarTeam installer a second time. The PATH system variable 
+									cannot exceed 1024 characters. The 1024 characters must include the StarTeam 
+									SDK runtime paths which, by default, are "C:\Program Files\Borland\StarTeam SDK 
+									2005 R2\bin" and "C:\Program Files\Borland\StarTeam SDK 2005 R2\lib". CAUTION - 
+									removing text from the Windows path may cause undesired application failure. </FONT>
+							</FONT></FONT></FONT>
+				</DIV>
+				<DIV class="whs318"><FONT face="Verdana"><FONT size="-1"><FONT face="Verdana"><FONT size="-1"></FONT></FONT></FONT></FONT>&nbsp;</DIV>
+				<DIV class="whs318"><FONT face="Verdana"><FONT size="-1"><FONT face="Verdana"><FONT size="-1">It is 
+									very important to be certain that a path is obsolete before manually deleting 
+									it from the PATH system variable. If you are uncertain, please use the obsolete 
+									application's uninstaller and/or consult your system administrator before 
+									taking any action.</FONT></FONT></FONT></FONT></DIV>
+				<DIV class="whs318"><FONT size="2"></FONT>&nbsp;</DIV>
+		</ul>
+		<h2 class="kadov-p"><a name="Wrapping Issues"></a><a name="VSS and PVCS Wrapping Issues"></a><font face="Verdana">VSS 
+				and PVCS Wrapping Issues</font></h2>
+		<ul>
+			<div class="whs321"><font face="Verdana"><font size="-1">If you delete a file in VSS but 
+						don't destroy it or purge it from VSS, it still exists in StarTeam. If a user 
+						modifies the working file and checks it in, StarTeam creates a new VSS file 
+						because the old one does not exist. This loses the history for the previous 
+						file. If you recover the deleted the file from VSS before doing this check in, 
+						the VSS archive is restored and the history is preserved.</font></font></div>
+			<p class="whs321"><font face="Verdana"><font size="-1">StarTeam&nbsp;2005 Release 2 may not 
+						successfully wrap or interoperate with projects using VSS 6d installations on 
+						the StarTeam Server's computer. To avoid problems, use an earlier release.</font></font>
+			<p class="whs321"><font face="Verdana"><font size="-1">If you interoperate with PVCS or 
+						VSS, be sure to shut down and restart your server configurations&nbsp;<span style="FONT-STYLE: italic"><i>after</span></I> 
+						entering or leaving Daylight Savings Time (DST). StarTeam Server stores the 
+						current DST state and uses that information to compute time stamps. If you are 
+						planning to wrap a PVCS or VSS repository, it is important that StarTeam Server 
+						has the correct DST state information. Wrapping a repository with the wrong DST 
+						state will result in incorrect time values being permanently stored in the 
+						repository database.</font></font>
+			<p class="whs323"><font face="Verdana"><font size="-1">During PVCS or VSS interoperation, 
+						in some circumstances a foreign refresh ( F6 ) command will result in an error 
+						message indicating that StarTeam was unable to refresh an item and that the 
+						user should delete the item from StarTeam and then press F6 again. This results 
+						in the current view having a correct representation of the foreign archives. 
+						However, in a rollback view, the deleted item will now appear twice. Because 
+						both of these items will reference the same foreign archive there is no chance 
+						of incorrect data being checked out. The problem is after the first item is 
+						checked out, the status on the second item may become Merge or Unknown. Since 
+						the foreign data was already checked out to the same location, there is no need 
+						to do a force checkout of the second matching item.</font></font>
+			<p class="whs323"><font face="Verdana"><font size="-1">When you delete a PVCS file, you 
+						should delete it from the PVCS archive and all of its locations in StarTeam. 
+						Suppose that you delete a PVCS file from a StarTeam view that has child views. 
+						If you do not also delete the file from the PVCS archive folder, using foreign 
+						refresh (F6) in the StarTeam parent view reinstates the file. If the file has 
+						branched, using F6 in a child view results in two copies of the file and causes 
+						the following error:</font></font>
+			<p><font face="Courier New"><font size="-1">StarTeam has detected that this folder has at 
+						least 2 items matching the foreign archive...</font></font>
+			<p class="whs323"><font face="Verdana"><font size="-1">If more than one user does a foreign 
+						refresh (F6) at the same time, the refresh is much, much slower than if only 
+						one user refreshes at a time.</font></font>
+			<p class="whs323"><font face="Verdana"><font size="-1">An error can occur when wrapping VSS 
+						or PVCS while StarTeam Server runs as a service if the VSS or PVCS archives are 
+						on a shared network drive. The error message contains the following sentence 
+						along with the problem file's name and some suggestions.</font></font>
+			<p><font face="Courier New"><font size="-1">The foreign configuration file is not 
+						recognized by the selected server.</font></font>
+			<p><font face="Verdana"><font size="-1">To avoid this error, use a user other than 'System' 
+						when setting up StarTeam Server to run as a service, and then give that user 
+						permissions on the network share.</font></font></p>
+			<P><FONT face="Verdana" size="2"></FONT>&nbsp;</P>
+		</ul>
+		<div class="whs323"></div>
+		<h2><a name="Miscellaneous Issues"></a><font face="Verdana">Miscellaneous Issues</font></h2>
+		<ul>
+			<div class="whs314"><font face="Verdana"><font size="-1"><STRONG>Microsoft Project Tasks</STRONG></font></font></div>
+			<DIV class="whs314"><FONT face="Verdana"><FONT size="-1"></FONT></FONT>&nbsp;</DIV>
+			<DIV class="whs314"><FONT face="Verdana"><FONT size="-1">MSP tasks imported into a StarTeam 
+						Server should not have work records that occur before the start date. If they 
+						do, the work hours will not be subtracted from the remaining work. </FONT></FONT>
+			</DIV>
+			<DIV class="whs314"><FONT face="Verdana"><FONT size="-1"></FONT></FONT>&nbsp;</DIV>
+			<FONT face="Verdana"><FONT size="-1">
+					<DIV class="whs314"><FONT face="Verdana"><FONT size="-1"><STRONG>Disk-imaging Software </STRONG>
+							</FONT></FONT>
+					</DIV>
+					<DIV class="whs314"><FONT face="Verdana"><FONT size="-1"></FONT></FONT>&nbsp;</DIV>
+					<DIV class="whs314">Using Disk-imaging Software In StarTeam: Disk-imaging software, 
+						such as Norton Ghost, does not work well with StarTeam. StarTeam needs to be 
+						installed on each workstation. StarTeam creates a unique connectionmanager.ini 
+						file for each workstation. The connectionmanager.ini is used to identify one 
+						workstation from another. If you use disk-imaging software, this .ini file is 
+						copied, and when the image is installed to another computer, there are now two 
+						or more workstations with the same .ini file. This can lead to unusual status 
+						problems.</DIV>
+					<DIV class="whs314">
+						<DIV class="whs314"><FONT face="Verdana"><FONT size="-1"></FONT></FONT>&nbsp;</DIV>
+						<FONT face="Verdana"><FONT size="-1">
+								<DIV class="whs314"><FONT face="Verdana"><FONT size="-1"><STRONG>VMware® Software </STRONG></FONT>
+									</FONT>
+								</DIV>
+								<DIV class="whs314"><FONT face="Verdana"><FONT size="-1"></FONT></FONT>&nbsp;</DIV>
+							</FONT></FONT>
+					</DIV>
+					<DIV class="whs314">In some cases StarTeam products do not function properly when 
+						used with VMware® or similar products. Borland does not support the use of our 
+						products under this configuration.</DIV>
+					<DIV class="whs314">&nbsp;</DIV>
+					<DIV class="whs314">------------------------------------------------------------------------------</DIV>
+					<DIV class="whs314">Made In Borland® Copyright© 1995-2005 Borland Software 
+						Corporation. All rights reserved. All Borland brand and product names are 
+						trademarks or registered trademarks of Borland Software Corporation in the 
+						United States and other countries. All other marks are the property of their 
+						respective owners. Corporate Headquarters: 100 Enterprise Way Scotts Valley, 
+						California 95066-3249 831-431-1000 <A href="http://www.borland.com">www.borland.com</A>
+					</DIV>
+					<DIV class="whs314">&nbsp;</DIV>
+					<DIV class="whs314">Offices in: Australia, Brazil, Canada, China, Czech Republic, 
+						France, Germany, Hong Kong, Hungary, India, Ireland, Italy, Japan, Korea, the 
+						Netherlands, New Zealand, Russia, Singapore, Spain, Sweden, Taiwan, The United 
+						Kingdom, and the United States.
+					</DIV>
+					<DIV class="whs314">&nbsp;</DIV>
+					<DIV class="whs314">
+					Release version 2005 Release 2, updated June 22, 2005</FONT></FONT></DIV>
+		</ul>
+		</FONT></FONT>
+	</body>
+</html>

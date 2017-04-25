@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Setting Semaphore Options</TITLE>
+<!--<setsemaphoreoptions.html>-->
+<!--<toc parent="setting_configuration_options" label="Setting Semaphore Options" anchor="setsemaphoreoptions" sortkey="14">-->
+<!--<toc parent="setting_project_configuration_options" label="Setting Semaphore Options" anchor="setsemaphoreoptions" sortkey="14">-->
+<!--<index parent="setting" label="semaphore options" anchor="setsemaphoreoptions">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with Project Databases/Projects\nConfiguring Project Databases/Projects\nSetting Semaphore Options");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="setsemaphoreoptions"></A>Setting Semaphore Options</H1>
+<p>To perform this procedure, you must first select the project database or project you want to configure. The project database or project must also be <a href="assocconfigfile.html">associated with a configuration file</a>.</p>
+<H2>To set <a href="semaphoreoptions.html">semaphore options</a>:</H2>
+<OL>
+<LI>
+Select Admin | Configure Project. The Configure Project dialog box appears with the General tab active.
+<br><br>
+<LI>Select <b>Semaphores</b> beneath Miscellaneous. The Semaphores pane on the right appears. The values that display for each option are the settings that are currently defined in the configuration file associated with the project database or project.
+<BR><BR>
+<LI>In the <b>Semaphore Directory</b> group, you can either:
+<BR><BR>
+<UL type=disc>
+<LI>Select <b>Archive Directory</b> to place the semaphore files in each archive directory.
+<LI>Select <b>Other Directory</b> and specify the path of the directory to place the semaphore files in a directory other than the archive directory.
+</UL>
+<BR>
+<LI>Specify the suffix template for semaphore files. The default suffix is +-sem, which causes Version Manager to add the characters -sem to the end of the archive filename. For example, if the archive file name is windev.c_v, the semaphore file is windev.c_v-sem.
+<BR><BR>
+<LI>In the <b>Number of Retries</b> field, specify how many attempts Version Manager will make to gain exclusive access to an archive or journal file in networked environments.
+<BR><BR>
+<LI>In the <b>Retry Delay field</b>, specify the delay (in seconds) between attempts to gain exclusive access to archives, journal files, and the access control database.
+<BR><BR>
+<LI>
+Click OK if you are finished defining options, or click Apply to save the settings and continue to define other options.
+</OL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a href="aboutconfigfiles.html">About Configuration Files</a></TD>
+		<TD><a href="configureoverview.html">Configuring Project Databases and Projects</a></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="configureprojectsemaphoresdialog.html">Configure Project/Semaphores dialog box</A></TD>
+	</tr>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Setting Login Sources</TITLE>
+<!--<setloginsources.html>-->
+<!--<toc parent="setting_configuration_options" label="Setting Login Sources" anchor="setloginsources" sortkey="08">-->
+<!--<toc parent="setting_project_configuration_options" label="Setting Login Sources" anchor="setloginsources" sortkey="08">-->
+<!--<index parent="setting" label="login sources" anchor="setloginsources">-->
+<!--<index parent="login_sources" label="setting" anchor="setloginsources">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with Project Databases/Projects\nConfiguring Project Databases/Projects\nSetting Login Sources");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="setloginsources"></A>Setting Login Sources</H1>
+<p>To perform this procedure, you must first select the project database or project you want to configure. The project database or project must also be <a href="assocconfigfile.html">associated with a configuration file</a>.</p>
+<H2>To set <a href="loginsources.html">login sources</a>:</H2>
+<OL>
+<LI>
+Select Admin | Configure Project. The Configure Project dialog box appears with the General tab active.
+<br><br>
+<LI>
+If not already selected, select the <b>Show Advanced Options</b> check box.
+<br><br>
+<LI>Select <b>Login Sources</b> beneath Security. The Login Sources pane on the right appears. The values that display for each option are the settings that are currently defined in the configuration file associated with the project database or project.
+<BR><BR>
+<LI>Select the appropriate login sources for your configuration.
+<BR><BR>
+<LI>Use the up arrow and down arrow buttons to arrange the login sources in the correct order. Remember that the order that you define here is the order in which Version Manager searches for user IDs.<BR><BR>
+By default, the login source that is defined in the master configuration file that is created when you create a project database is Host Id.
+<BR><BR>
+<LI>You can configure any of the login sources that you selected to automatically create user IDs in the access control database associated with the project database or project:
+<OL type=a><BR>
+<LI>Select the login source.
+<LI>Select the <b>Auto create users with these default privileges</b> check box.
+<LI>Specify the default privileges that will be assigned to the user.
+</OL>
+<BR>
+By default, the Host Id login source automatically creates user IDs in the access control database associated with a project database or project and assigns them the Unlimited privilege set.
+<BR><BR>
+<LI>To make user IDs case-sensitive, select the <b>Case Sensitive User ID</b> check box. By default, user IDs are <b>not</b> case-sensitive.
+<BR><BR>
+<LI>To enable <a href="single_sign-on.html">single sign-on</a> access to the selected project or project database, select the <b>Enable single sign-on</b> check box.<br><br><b>NOTE</b> To use single sign-on, your Version Manager user ID and O/S user ID must match.<BR><BR></LI>
+<LI>
+Click OK if you are finished defining options, or click Apply to save the settings and continue to define other options.
+</OL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a href="aboutconfigfiles.html">About Configuration Files</a></TD>
+		<TD><a href="configureoverview.html">Configuring Project Databases and Projects</a></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="configureprojectloginsourcesdialog.html">Configure Project/Login Sources dialog box</A></TD>
+		<TD><a href="embedloginsources.html">Embedding Login Sources</a></td>
+	</tr>
+	<tr>
+		<TD><A HREF="aboutlogging.html">About Logging In to Project Databases or Projects</a></TD>
+		<TD><a href="single_sign-on.html">Single Sign-On</a></TD>
+	</tr>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

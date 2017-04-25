@@ -1,0 +1,74 @@
+<project name="bt" default="cli.all" basedir=".">
+
+  <property name="build.dir.cli.classes" value="${build.dir}/cli_classes"/>
+
+  <path id="cli.compile.classpath">
+    <pathelement path="${commons-cli.jar}"/>
+    <pathelement path="${commons-logging.jar}"/>
+    <pathelement path="${jaxrpc.jar}"/>
+    <pathelement path="${axis.jar}"/>
+  </path>
+
+  <target name="cli.prepare">
+    <mkdir dir="${build.dir.cli.classes}"/>
+    <mkdir dir="${build.dir.cli.staging}"/>
+    <copy file="${config}/cli.log4j.properties" tofile="${build.dir.cli.classes}/log4.properties"/>
+
+    <!-- Copy version to META-INF -->
+    <mkdir dir="${build.dir.cli.classes}/META-INF"/>
+    <copy file="${build.dir.version.staging}/parabuild-version.properties" todir="${build.dir.cli.classes}/META-INF"/>
+  </target>
+
+  <!-- Compile Parabuild remote build manager commandline-->
+  <target name="cli.compile" depends="cli.prepare">
+    <!-- Compile CLI -->
+    <javac destdir="${build.dir.cli.classes}" includes="org/parabuild/ci/cli/**.java" debug="on">
+      <classpath>
+        <path refid="cli.compile.classpath"/>
+      </classpath>
+      <src path="${src}"/>
+      <src path="${webservice.staging}"/>
+    </javac>
+  </target>
+
+
+  <target name="cli.jar.prepare" depends="cli.compile">
+    <uptodate property="cli.jar.uptodate" targetfile="${build.dir.cli.staging}/paracmd.jar">
+      <srcfiles dir="${build.dir.cli.classes}"/>
+      <srcfiles file="${project.home}/build.xml"/>
+      <srcfiles file="${project.home}/build-cli.xml"/>
+      <srcfiles file="${project.home}/build.properties"/>
+    </uptodate>
+  </target>
+
+
+  <target name="cli.jar" depends="cli.compile, cli.jar.prepare" unless="cli.jar.uptodate">
+    <jar destfile="${build.dir.cli.staging}/paracmd.jar" compress="true" update="true">
+      <fileset dir="${build.dir.cli.classes}"/>
+      <zipfileset src="${jaxrpc.jar}"/>
+      <zipfileset src="${log4j.jar}"/>
+      <zipfileset src="${axis.jar}"/>
+      <zipfileset src="${saaj.jar}"/>
+      <zipfileset src="${commons-logging.jar}"/>
+      <zipfileset src="${commons-cli.jar}"/>
+      <zipfileset src="${commons-discovery.jar}"/>
+      <zipfileset src="${wsdl4j.jar}"/>
+      <manifest>
+        <attribute name="Main-Class" value="org.parabuild.ci.cli.CommandLineClient"/>
+      </manifest>
+    </jar>
+  </target>
+
+
+  <target name="cli.distribute" depends="cli.jar">
+    <copy todir="${build.dir.tomcat}/bin" file="${build.dir.cli.staging}/paracmd.jar"/>
+  </target>
+
+
+  <target name="cli.all"
+    depends="cli.compile,
+             cli.jar,
+             cli.distribute">
+  </target>
+
+</project>

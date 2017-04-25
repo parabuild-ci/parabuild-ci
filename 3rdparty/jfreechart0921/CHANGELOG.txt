@@ -1,0 +1,557 @@
+JFreeChart Change Log
+=====================
+
+This change log contains details of the changes between versions. Please be 
+aware that the log *may* be incomplete.
+
+-------------------------------------
+
+10-Sep-2004 : VERSION 0.9.21 RELEASED
+
+10-Sep-2004 : [API] Removed getRangeType() method from XY renderers.
+
+03-Sep-2004 : [NEW] Added an option to XYBarRenderer to use the y-interval
+                    from the dataset to determine the length of the bars.
+
+31-Aug-2004 : [NEW] Added wrapping for the no-data message in plots.
+
+24-Aug-2004 : [API] Split org.jfree.chart.renderer into subpackages for
+                    'category' and 'xy' charts.
+                    
+              [NEW] Some improvements to the chart property editors.
+
+23-Aug-2004 : [BUG] Fixed bug in addOrUpdate() method of TimeSeries class.
+
+19-Aug-2004 : [API] Split org.jfree.data package into various subpackages.
+
+18-Aug-2004 : [NEW] Added removeAnnotation() method to XYPlot.
+
+15-Aug-2004 : [NEW] Added drawBarOutline flag to StackedXYBarRenderer class.
+
+13-Aug-2004 : [NEW] Added new ModuloAxis class.
+
+              [BUG] Fixed bug with maxBarWidth attribute in GanttRenderer.
+              
+              [BUG] Changed default background color for charts.
+
+11-Aug-2004 : [NEW] Italian localisation file added.
+
+              [BUG] Fixed bug in StackedBarRenderer3D drawItem() method.
+
+02-Aug-2004 : [API] Added ImageMapUtil class.
+
+01-Aug-2004 : [API] Modified ChartUtilities to use new EncoderUtil class.
+
+30-Jul-2004 : [BUG] Added method to calculate category coordinates for
+                    CategoryAxis3D.
+                    
+              [BUG] Fixed bug in TaskSeriesCollection where series contain
+                    different task keys.
+
+29-Jul-2004 : [API] Added getDomainOrder() to XYDataset interface.
+
+28-Jul-2004 : [API] In DatasetUtilities, renamed lots of methods and 
+                    changed XYDataset access to retrieve double primitives 
+                    rather than Number objects (where possible).
+
+              [BUG] Fixed bug in createNumber2DArray() method in the
+                    DatasetUtilities class.
+                    
+20-Jul-2004 : [BUG] Fixed bug in getItemLabelFont() method in 
+                    AbstractRenderer.
+                     
+15-Jul-2004 : [API] Switched getZ() and getZValue() methods in the
+                    XYZDataset interface.
+                    
+              [BUG] Fixed bug in StandardXYZToolTipGenerator.
+
+              [NEW] Added time zone to DateAxis.
+              
+13-Jul-2004 : [API] ChartMouseEvent now extends EventObject and implements
+                    Serializable.
+                    
+              [BUG] Added check for null chart to ChartPanel class.
+              
+              [BUG] Fixed bugs in removing subplots from combined plots.
+              
+07-Jul-2004 : [BUG] Fixed problems with KeyToGroupMap class.
+
+22-Jun-2004 : [BUG] Fix for last-modified header in ServletUtilities.
+
+16-Jun-2004 : [BUG] Fixed bug (972454) in LineAndShapeRenderer - label
+                    positioning was incorrect for horizontal charts.
+          
+17-Jun-2004 : [NEW] Added series visibility flag to AbstractRenderer.
+          
+15-Jun-2004 : [BUG] Fixed NullPointerException in TimeSeries.equals().
+
+14-Jun-2004 : [BUG] Fixed bug in drawRangeMarker() method in the 
+                    AbstractCategoryItemRenderer class.
+                    
+              [NEW] Added support for GradientPaint with interval markers.
+            
+10-Jun-2004 : [NEW] Added PeriodAxis class.
+
+09-Jun-2004 : [NEW] Added MiddlePinNeedle class.
+
+-------------------------------------
+
+07-Jun-2004 : VERSION 0.9.20 RELEASED
+
+04-Jun-2004 : [BUG] Legend title positioning bug fixed.
+
+03-Jun-2004 : [BUG] Fixed problem with drawing interval markers.
+
+              [BUG] Fixed problem with zooming.
+              
+              [BUG] Pie chart label distribution has been improved.
+
+02-Jun-2004 : [API] Changed STANDARD --> FORWARD in DatsetRenderingOrder 
+                    class.  Also ensured that CategoryPlot and XYPlot use
+                    REVERSE for the default.
+
+              [BUG] Fixed problem in calculateMedian() method in the 
+                    Statistics class.
+                    
+              [NEW] Added basic tool tip support for the BoxAndWhiskerRenderer
+                    class.
+                    
+              [BUG] Fixed problem in setRangeWithMargins() method in the
+                    ValueAxis class - now works correctly with the DateAxis
+                    class also.
+                    
+01-Jun-2004 : [API] JCommon: Added module support from JFreeReport for a
+                    controlled way to initialize the library.
+
+              [BUG] Fixed some issues with the logging.
+
+-------------------------------------
+
+28-May-2004 : VERSION 0.9.19 RELEASED
+
+25-May-2004 : [API] Modified HighLowItemLabelGenerator to use a NumberFormat
+                    instance (see patch 890496).
+                    
+              [BUG] Fixed sort button renderer problem on MacOSX - see patch
+                    910327.
+
+24-May-2004 : [BUG] Fixed problem with Week class under different locales
+                    (see bug report 922322).
+                    
+21-May-2004 : [NEW] Added extra addOrUpdate() method to the TimeSeries class.
+
+              [BUG] Applied changes to the SegmentedTimeline class - see
+                    http://www.jfree.org/phpBB2/viewtopic.php?t=7093
+                    
+              [BUG] Fixed bug 951870 - precision in 
+                    RefineryUtilities.drawAlignedString() method.
+                    
+              [BUG] Fixed bug 940188 - problem in MatrixSeries getItemColumn() 
+                    and getItemRow() methods.
+                    
+              [API] JDBCXYDataset now implements the TableXYDataset interface
+                    and can also handle SMALLINT values.
+              
+              [BUG] Fixed problem with JDBCXYDataset calculation of min and 
+                    max values (see bug 938138).
+                    
+19-May-2004 : [BUG] Fixed bug (id 939500) where MeterDataset should extend 
+                    ValueDataset.
+
+18-May-2004 : [API] Added item paint methods to CategoryItemRenderer 
+                    and XYItemRenderer interfaces.
+                    
+              [NEW] Added methods to set axis range *including* current
+                    margins.
+                    
+              [API] Eliminated AxisConstants.java.
+
+13-May-2004 : [NEW] Added optional fixedLegendItems attribute to the XYPlot
+                    class.
+                    
+              [NEW] Added shape creation methods to ShapeUtils.java.
+              
+12-May-2004 : [NEW] Added optional fixedLegendItems attribute to the 
+                    CategoryPlot class.
+                    
+              [BUG] Removed AbstractSeriesRenderer.java.
+              
+11-May-2004 : [API] Renamed DatasetUtilities.getPieDatasetTotal() -->
+                    calculatePieDatasetTotal().
+                    
+              [API] Split category item label generators into separate 
+                    classes.
+                    
+06-May-2004 : [API] Added getX() and getY() methods to XYDataset - these
+                    return double primitives.  Similar changes have been
+                    made to the IntervalXYDataset, HighLowDataset and
+                    XYZDataset interfaces.  New abstract base classes provide
+                    default implementations for the methods.  See this 
+                    forum post for the rationale behind the change:
+                    
+                    http://www.jfree.org/phpBB2/viewtopic.php?t=8617
+                    
+              [NEW] Added PlotOrientationDemo.java.
+              
+05-May-2004 : [BUG] Fixed problem where interval markers extended beyond the
+                    axis range.
+                    
+              [API] Added methods to the XYItemRenderer interface that control
+                    the visibility of item labels.
+                    
+29-Apr-2004 : [API] In CategoryPlot, datasets, renderers and axes are now 
+                    stored in lists, doing away with the explicit distinction
+                    between "primary" and "secondary" items.  This has 
+                    involved a significant change to the API (a simplification
+                    overall).
+                    
+              [BUG] Fixed problem in getMiddleMillisecond() method of the 
+                    RegularTimePeriod class - see bug id 943985.
+                    
+              [BUG] Fixed problem with drawing upper and lower shadows in 
+                    BoxAndWhiskerRenderer and XYBoxAndWhiskerRenderer - see 
+                    bug id 944011.
+                    
+              [BUG] Fixed bug in TextTitle.getPreferredWidth() method - see 
+                    bug id 944173.
+                    
+              [API] Added a new GroupedStackedBarRenderer class, which also
+                    called for changes in the CategoryItemRenderer interface.
+                    
+27-Apr-2004 : [API] In XYPlot, datasets, renderers and axes are now stored in 
+                    lists, doing away with the explicit distinction between
+                    "primary" and "secondary" items.  This has involved a
+                    significant change to the API (a simplification overall).
+                    
+              [NEW] Added relative pie chart contributed by Benoit Xhenseval
+                    (see RFE 942195).
+                     
+26-Apr-2004 : [NEW] Added getter/setter methods for arrow shapes in ValueAxis.
+
+              [NEW] Added option to fill quadrant areas in XYPlot.
+              
+              [API] Changed some methods in PiePlot.java from public to
+                    protected.
+
+              [BUG] The XML Parsers SimpleDateFormat handling was invalid
+
+              [NEW] Logging code was improved to be closer to Log4J
+
+23-Apr-2004 : [NEW] Added fillBox attribute to BoxAndWhiskerRenderer and
+                    XYBoxAndRenderer - also extended equals() method and fixed
+                    serialization issues for both.
+
+21-Apr-2004 : [NEW] Barak Naveh has contributed word-wrapping of legend items. 
+                    To use it, see the StandardLegend.setPreferredWidth() 
+                    method. The org.jfree.chart.demo.LegendManiaDemo shows how 
+                    it works.
+                    
+              [NEW] Added CategoryStepRenderer class (plus 
+                    CategoryStepChartDemo.java) contributed by Brian Cole.
+                    
+              [BUG] Fixed bug in DateAxis.estimateMaximumTickLabelWidth() 
+                    method (see bug 939148).
+
+20-Apr-2004 : [BUG] Fixed XYShapeAnnotation drawing for plots with a horizontal
+                    orientation (see bug 934258).
+
+-------------------------------------
+
+15-Apr-2004 : VERSION 0.9.18 RELEASED
+
+              [API] Split PieItemLabelGenerator interface into 
+                    PieSectionLabelGenerator and PieToolTipGenerator.
+
+14-Apr-2004 : [NEW] Added clear() method to TimeSeries class.
+               
+              [BUG] Fixed draw() method in XYLineAnnotation to handle
+                    plot orientation correctly.
+
+08-Apr-2004 : [BUG] Fixed null pointer exception in PiePlot3D with a null
+                    value in the dataset.  Also added a flag to control 
+                    whether or not the keys for null values appear in the
+                    legend.
+
+              [BUG] LogarithmicAxis changed to use numberFormatOverride if it
+                    is set - see patch 930139.
+                    
+              [BUG] Changed the TextUtilities.createTextBlock() method to use
+                    a line break iterator rather than a word break iterator,
+                    see bug 926074.
+                    
+              [API] Changed getScaleX() and getScaleY() in the ChartPanel
+                    class from protected to public.
+                    
+              [BUG] Fixed problem in PiePlot3D where the plot index was not
+                    being passed on to the PieSectionEntity.
+                                        
+07-Apr-2004 : [BUG] Added useFontMetricsGetStringBounds attribute to the
+                    TextUtilities class (set to false by default) and added
+                    code to calculate string bounds with other methods.
+                    
+05-Apr-2004 : [NEW] Added clear() method to DefaultCategoryDataset.
+
+              [BUG] Fixed broken JPEG export.               
+
+01-Apr-2004 : [BUG] Fixed title layout problems with JDK 1.3.1 by replacing 
+                    Dimension2D with Size2D.  The cause of the problem is 
+                    JDK bug 4976448.
+                    
+              [BUG] Fixed bug in TextTitle.getPreferredHeight() method.
+
+31-Mar-2004 : [BUG] Adjusted plot area in PiePlot/PiePlot3D for null label 
+                    generator.
+                    
+              [BUG] Fixed null pointer exception in PiePlot when label 
+                    generator returns null.
+                    
+              [BUG] Added pieIndex to StandardPieURLGenerator and set the
+                    index for each subplot in MultiplePiePlot.
+
+30-Mar-2004 : [BUG] Fixed getNegativePaint() method in XYDifferenceRenderer.
+
+29-Mar-2004 : [NEW] Barak Naveh contributed support for new anchor points for 
+                    legend;
+
+              [NEW] Barak Naveh contributed support for round corners of legend
+                    bounding box;
+
+              [NEW] Barak Naveh contributed the demo app 
+                    org.jfree.chart.demo.LegendManiaDemo which shows legend 
+                    positions and legend bounding box options.
+              
+              [NEW] Barak Naveh added getMaxX() and getMaxY() methods to 
+                    DrawableLegendItem.
+
+-------------------------------------
+
+26-Mar-2004 : VERSION 0.9.17 RELEASED
+
+              [NEW] Added item label support to StackedBarRenderer3D class;
+
+              [NEW] Added ordering option for legend items;
+
+25-Mar-2004 : [NEW] Dutch localization files added;
+
+              [BUG] Fixed bug in correlation calculation in Statistics class,
+                    see bug 922841;
+              
+              [API] Moved Spacer class from org.jfree.chart to org.jfree.ui;
+
+24-Mar-2004 : [NEW] Added file name prefix setting to ServletUtilities class;
+
+              [BUG] 922402 - category axis label paint not used;
+
+23-Mar-2004 : [BUG] Fixed bug in getMaximumStackedRangeValue() method in the 
+                    DatasetUtilities class;
+                    
+              [BUG] Fixed a problem with the secondary axis locations in the
+                    CategoryPlot class;
+                    
+              [BUG] Fixed problems in XYPlot clone() method;
+                    
+22-Mar-2004 : [NEW] Added equals() method and implemented Serialization for 
+                    classes in the org.jfree.text package;
+                    
+              [BUG] Added workaround for bug 920959 (null pointer exception
+                    with no renderer);
+                    
+19-Mar-2004 : [BUG] Fixed tooltip bug and equals() method bug in the
+                    BarRenderer class;
+                    
+              [NEW] Added equals() method to the
+                    StandardGradientPaintTransformer class;
+                    
+16-Mar-2004 : [API] Added tooltip capability to the CategoryAxis class;
+
+              [BUG] Added check for null value in JDBCXYDataset;
+
+12-Mar-2004 : [API] Some major changes to the item label and tooltip generator 
+                    code.  Each CategoryItemRenderer and XYItemRenderer now
+                    keeps a separate label generator and tooltip generator.
+                    The standard generators have been modified to use Java's 
+                    MessageFormat class which makes it easier to customise the
+                    label strings;
+                    
+              [BUG] Fixed bug in DateAxis where the date format override is
+                    being ignored for vertical axes;
+                    
+11-Mar-2004 : [API] *MAJOR* changes to the pie plot classes, including 
+                    enhancements to the section labelling;
+                    
+              [BUG] Fixed bug in drawing symbolic axis grid background where
+                    setXORMode() triggers bug in Apple JDK and huge print
+                    files on Windows (and probably others);
+                    
+10-Mar-2004 : [BUG] Fixed axis range calculation in CategoryPlot when
+                    secondary renderer is stacked;
+                    
+02-Mar-2004 : [NEW] Modified PNG image export to support transparency;
+
+              [NEW] Added XYBarDataset class;
+              
+              [API] Modified parameters for ChartFactory.createXYBarChart()
+                    method to allow for selection of DateAxis or NumberAxis
+                    for the domain axis;
+
+01-Mar-2004 : [API] Moved HistogramBin and HistogramDataset from
+                    org.jfree.data to org.jfree.data.statistics.  Additional
+                    changes were made to ensure that this dataset is cloneable
+                    and serializable;
+
+              [NEW] In BoxAndWhiskerItem class, added equals() method and 
+                    implemented Serializable.  In KeyedObjects2D class, added
+                    equals() and clone() methods;
+                    
+              [BUG] Fixed null pointer exception after deserialization of 
+                    AbstractRenderer;
+                    
+              [BUG] Fixed bug in serialization of TimeSeriesCollection
+                    objects;
+              
+              [   ] Added equals() method to StandardXYURLGenerator;
+                    
+26-Feb-2004 : [   ] Implemented most of the missing hashCode() methods;
+                    modified the equals() implementations to get some
+                    performance;
+
+25-Feb-2004 : [API] Replaced org.jfree.chart.CrosshairInfo with 
+                    org.jfree.chart.plot.CrosshairState, in the process of
+                    fixing a bug with plots with orientation set to
+                    horizontal;
+                    
+              [API] Dropped PeriodMarkerPlot as you can achieve the same
+                    result using markers now;
+              
+              [NEW] Added getLines() method to the TextBlock class;
+
+19-Feb-2004 : [API] Moved ItemLabelAnchor and ItemLabelPosition to the
+                    org.jfree.chart.labels package.  Deleted the deprecated
+                    class ItemLabelAnchorTable;
+                    
+18-Feb-2004 : [NEW] Added CompassFormat.java and CompassFormatDemo.java;
+                    
+12-Feb-2004 : [API] Removed clone() from the CategoryItemLabelGenerator
+                    interface;
+
+11-Feb-2004 : [API] Reworked marker code to support intervals and more
+                    flexible labelling;
+                    
+10-Feb-2004 : [BUG] Removed working line from XYStepRenderer class, now uses
+                    line in the state object;
+                    
+              [API] Added getter and setter methods to XYStepAreaRenderer
+                    class;
+
+                    
+09-Feb-2004 : [BUG] Fixed XYDifferenceRenderer to work with horizontal plot
+                    orientation;
+                    
+              [NEW] Added new demo DifferenceChartDemo2.java showing
+                    sunrise/sunset times in London for 2004;
+              
+              [BUG] Fixed inefficient code in DefaultKeyedValues getIndex()
+                    method - see bug report 893256;
+                    
+              [NEW] Added extra createBufferedImage() method to the JFreeChart
+                    class to create scaled images;
+                    
+              [NEW] Added flag to TimeSeriesToolTipGenerator class to include
+                    or exclude the series name from the tooltip;
+                    
+06-Feb-2004 : [API] Added some methods that were omitted from the 
+                    CategoryItemRenderer interface;
+                    
+              [BUG] Fixed legend in DualAxisDemo5;
+
+04-Feb-2004 : [   ] Fixed Checkstyle complaints in many source files;
+
+03-Feb-2004 : [NEW] Modified the XYSeriesCollection class so that it
+                    implements the IntervalXYDataset interface, making it
+                    possible to create XY bar charts with this dataset;
+                    
+              [NEW] Added get/set methods for GanttRenderer attributes;
+              
+              [NEW] Added indexOf() method to XYSeries class;
+                    
+              [BUG] Fixed bug in TextTitle.getPreferredWidth() method;
+
+02-Feb-2004 : [BUG] BarRenderer3D now respects the 'drawBarOutline' flag;
+
+              [BUG] Fixed bug with the zooming trigger in the ChartPanel
+                    class;
+
+30-Jan-2004 : [API] Refactored PiePlot code to move multiple pie charts code
+                    into a separate class, MultiplePiePlot.  It is now
+                    possible to use 3D pie charts for multiple pie charts;
+                    
+              [BUG] Fixed null pointer exception when setting a secondary
+                    dataset to null (bug id 884782);
+                    
+29-Jan-2004 : [NEW] Added flag to control whether XYSeries is sorted or
+                    unsorted, see patch 886740;
+                    
+              [NEW] Added color option for sublabels in ExtendedCategoryAxis;
+
+              [BUG] Fixed problem in HighLowRenderer with
+                    PlotOrientation.HORIZONTAL - see bug report 882392;
+
+28-Jan-2004 : [NEW] Added German localisation resource files (see patch
+                    884724);
+
+              [BUG] Fixed bug 882890 - problem with y axis range when creating
+                    a chart using ChartFactory.createStackedAreaXYChart();
+
+              [   ] Renamed StackedAreaXYChartDemo.java -->
+                    StackedXYAreaChartDemo.java;
+
+27-Jan-2004 : [NEW] Created a new XYLineAndShapeRenderer;
+
+              [BUG] Fixed index out of bounds bug in KeyedObjects class (see
+                    bug report 885462);
+
+              [BUG] Moved working line attribute from StandardXYItemRenderer
+                    to state object;
+                    
+26-Jan-2004 : [NEW] Added grid lines to the FastScatterPlot class;
+
+22-Jan-2004 : [NEW] Added ImageMapDemo5 as a test for bug report 815817 - it 
+                    works OK;
+                    
+21-Jan-2004 : [NEW] Changed the legend code so that legend shapes reflect the
+                    filled/unfilled status in the renderer;
+
+              [API] Renamed translateValueToJava2D() --> valueToJava2D() and
+                    translateJava2DToValue() --> java2DToValue() in the
+                    ValueAxis class.  The method name has been shortened to
+                    help reduce line wrapping in the renderer source files;
+
+20-Jan-2004 : [NEW] Integrated polar chart classes contributed by 
+                    Daniel Bridenbecker, Solution Engineering, Inc;
+
+17-Jan-2004 : [NEW] Added ability to set custom tooltip timings for the
+                    ChartPanel class - see patch 877565 (thanks to Matthias
+                    Rose);
+                    
+              [BUG] Fixed XYTextAnnotation position for plots with horizontal 
+                    orientation (bug 878706);
+                    
+              [BUG] Fixed incorrect reference to localisation resource in 
+                    ColorBarPropertyEditPanel (bug 862126);
+                    
+              [BUG] Changed MeterPlot to allow dialBackgroundPaint to be set to
+                    null (bug 823628);
+                    
+              [BUG] Added methods to ContourDataset that are required by the
+                    ContourPlot class, then changed references to 
+                    DefaultContourDataset to ContourDataset (bug 741048);
+
+13-Jan-2004 : [BUG] Fixed extra/unwanted tick label on DateAxis with tick size 
+                    of 1 year.  Refer to the following post in the forum:
+                    http://www.jfree.org/phpBB2/viewtopic.php?t=7040;
+
+-------------------------------------
+
+09-Jan-2004 : VERSION 0.9.16 RELEASED
+
+                    

@@ -1,0 +1,123 @@
+<!-- Copyright 2003 Zelix Pty Ltd (ABN 47 078 740 093) -->
+<html>
+<head>
+<title>Zelix KlassMaster - groupings statement</title>
+   <meta name="keywords" content="java obfuscator,java code obfuscator,obfuscation">
+   <meta name="description" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <meta name="classification" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <link rel=stylesheet href="../ZKM.css" TYPE="text/css">
+</head>
+<body background="../images/small-white-mist1.jpg" bgcolor="#E1E1E1">
+<center><a href="index.html"><img src=../images/ZKM_b4.gif alt="Zelix KlassMaster" width=264 height=62 border=0></a></center>
+<hr>
+<center>
+<table width=770 border=0>
+   <tr>
+      <td>
+         <h1>The <code>groupings</code> Statement</h1>
+         Zelix KlassMaster's flow obfuscation functionality (initiated through the <a href=obfuscateStatement.html><code>obfuscate</code></a> statement) needs to know how
+         classes will be grouped at runtime. This knowledge allows it to avoid creating any inappropriate interdependencies between classes.  
+         It will not create an interdependency across groupings.  
+         <p>
+         Normally, Zelix KlassMaster
+         assumes that the groupings implicit in the JAR files from which the classes were  opened specify the groupings that will exist at runtime.
+         However, in some environments this may not be enough because
+         <ul>
+            <li>the JAR structure from which the classes are loaded does not reflect the runtime JAR structure or
+            <li>there are implicit groupings within a JAR file.  
+                That is, in certain scenarios (eg. certain runtime classpath settings), only a subset of the classes within a JAR file can be accessed.
+         </ul>
+         The ZKM Script <code>groupings</code> statement allows you to specify groupings <u>in addition to</u> those implicit in the JAR files.
+         <p>
+         The remainder of this page is organized into the following sections.
+         <ul>
+            <li><a href="#explanation">Explanation</a>
+            <li><a href="#examples">Examples</a>
+            <li><a href="#syntax">Syntax</a>
+         </ul>
+
+         <h2><a name="explanation">Explanation</a></h2>
+         The <code>groupings</code> statement consists of a series of class specifications separated by the <code>and</code> keyword grouped inside of curly brackets (ie. <code>"{...}"</code>).
+         Informally (with mandatory components in bold), the syntax for a class specification is: <br>
+         <code>&lt;classModifiers&gt; &lt;packageQualifiers&gt;.<b>&lt;className&gt;</b> &lt;extendsClause&gt; &lt;implementsClause&gt;<b>;</b></code>
+         <p>
+         For a class to match a class specification, all of the following must be true:
+         <ul>
+           <li>The class's modifiers  (e.g. <code>public final</code>) must match all parameter modifiers. 
+               So if the parameters are <nobr><code>public abstract !interface</code></nobr> then the class must be 
+               <code>public</code>, <code>abstract</code> and NOT an interface to be excluded. 
+           <li>The class's package qualifiers must match any specified package exclude parameter component. If there is no
+               package exclude parameter component then the class must be in the default package.
+           <li>The class's unqualified name must match the parameter's class name specifier.
+           <li>If the parameter has an extends clause then the class must be a subclass of the specified class
+           <li>If the parameter has an implements clause then the class must directly or indirectly implement all of the specified interfaces
+         </ul>
+
+         <h2><a name="examples">Examples</a></h2>
+<pre>
+groupings {pack1.* and pack2.*} //Classes in packages pack1 and pack2
+          {pack3.*}; //Classes in package pack3 form the 2nd grouping
+ 
+groupings {pack1.* and pack.*.*} //Classes in package pack1 and its subpackages
+          {pack3.!(Class1)} //Classes in package pack3 except Class1
+          {pack3.Class1}; //Class pack3.Class1 forms its own one class grouping 
+</pre>
+
+         <h2><a name="syntax"><a href="langZKMScript.html#notation">Syntax</a></a></h2> 
+         <code><b>"<u>groupings</u>" (grouping)<sup>+</sup> ";"</b></code>
+         <p>
+         <code><b>grouping ::= "{" classExcludeParameter ("<u>and</u>" classExcludeParameter )<sup>*</sup> "}"</b></code>
+         <p>
+         <code><b>classExcludeParameter ::=<br> 
+         &nbsp;&nbsp;&nbsp;[["!"] "<u>public</u>" | "<u>package</u>"] [["!"] "<u>abstract</u>"] [["!"] "<u>final</u>"] [["!"] "<u>interface</u>"]<br> 
+         &nbsp;&nbsp;&nbsp;[packageExcludeParameter] nameSpecifier [extendsClause] [implementsClause]</b></code>
+         <p>
+         <code><b>extendsClause ::= "<u>extends</u>" fullyQualifiedClassName</b></code><br>
+         <p>
+         <code><b>fullyQualifiedClassName ::= name ("." name)<sup>*</sup></b></code>
+         <p>
+         <code><b>implementsClause ::= "<u>implements</u>" fullyQualifiedClassName ("," fullyQualifiedClassName)<sup>*</sup></b></code><br>
+         <p>
+         <code><b>name ::= (["0"-"9","a"-"z","A"-"Z","$","_"])<sup>+</sup></b></code><br>
+         &nbsp;&nbsp;&nbsp;i.e. a Java identifer (e.g. a package, class, field or method name) with no wildcards allowed
+         <p>
+         <code><b>nameAndList ::= ["!"] "(" nameOrList ("&&" nameOrList)* ")"</b></code>
+         <p>
+         <code><b>nameOrList ::= nameSpecifier ("||" nameSpecifier)*</b></code>
+         <p>
+         <code><b>nameSpecifier ::= wildcardName | nameAndList</b></code>
+         <p>
+         <code><b>packageExcludeParameter ::= packageName | packageNameAndList</b></code>
+         <p>
+         <code><b>packageName ::= wildcardName ("." wildcardName)<sup>*</sup> "."</b></code><br>
+         &nbsp;&nbsp;&nbsp;NB: the final <code>"."</code> is part of the package name
+         <p>
+         <code><b>packageNameAndList ::= ["!"] "(" packageNameOrList ("&&" packageNameOrList)* ")"</b></code>
+         <p>
+         <code><b>packageNameOrList ::= packageExcludeParameter ("||" packageExcludeParameter)*</b></code>
+         <p>
+         <code><b>wildcardName ::= (["*","0"-"9","a"-"z","A"-"Z","$","_"])<sup>+</sup></b></code><br>
+         &nbsp;&nbsp;&nbsp;i.e. a Java identifer (e.g. a package, class, field or method name) with the "*" wildcard allowed
+      </td>
+   </tr>
+</table>
+</center>
+<hr>
+<center>
+<table>
+   <tr>
+      <td>
+         <a href=resetFixedClassesStatement.html><img src=../images/larrw.gif alt="ZKM Script resetFixedClasses statement"></a>
+      </td>
+      <td>
+         <a href=langZKMScript.html><img src=../images/uarrw.gif alt="The ZKM Script Language"></a>
+      </td>
+      <td>
+          <a href=resetGroupingsStatement.html><img src=../images/rarrw.gif alt="ZKM Script resetGroupings statement"></a>
+     </td>
+   </tr>
+</table>
+</center>
+Copyright &copy; 2003 <a href="mailto:WebMaster@zelix.com"><font size=-1>Zelix Pty Ltd</font></a> (ABN 47 078 740 093)
+</body>
+</html>

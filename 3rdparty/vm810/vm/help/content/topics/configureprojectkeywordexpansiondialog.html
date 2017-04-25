@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Configure Project Dialog Box/Keyword Expansion</TITLE>
+<!--<configureprojectkeywordexpansiondialog.html>-->
+<!--<index parent="keywords" label="Configure Project/Keyword Expansion dialog box" anchor="configureprojectkeywordexpansiondialog">-->
+<!--<index parent="configuring" label="Configure Project/Keyword Expansion dialog box" anchor="configureprojectkeywordexpansiondialog">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiConfigureProjectDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="configureprojectkeywordexpansiondialog"></A>Configure Project/Keyword Expansion</H1>
+<P>Use the Configure Project dialog box (Admin | Configure Project | General Tab | Workfiles | Keyword Expansion) to set which path separator is used for expanded keywords: forward slash (/) or backward slash (\) and whether or not the timestamp of the workfile is updated when Serena ChangeMan Version Manager expands keywords during check in.</P>
+<P><b>Warning!</b> Keyword expansion will cause corruption in binary files, so Version Manager disables keyword expansion by default. Do <b>not</b> enable keyword expansion for binary files.</P>
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+<TD COLSPAN=2><CENTER><B>Workfiles | Keyword Expansion</B></CENTER></TD>
+</TR>
+	<TR><TD><b>Path Separator</b></TD>
+		<TD><!--<control name="ConfigureProjectGeneral.PATH_SEPARATOR_CHOICE">-->
+		Select either Forward Slash (/) or Backward Slash (\).
+		<!--</control>--></TD>
+	</TR>
+	<TR><TD><b>Update timestamp on expand keywords</b></TD>
+		<TD><!--<control name="ConfigureProjectGeneral.UPDATE_TIMESTAMP_CB">-->
+		Select this check box to update the timestamps of workfiles when Version Manager expands keywords during check in.<!--</control>--></TD>
+	</TR>
+
+</TABLE>
+<h2>See Also</h2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="setkeywordexpansionoptions.html">Setting Keyword Expansion  Options</A></TD>
+		<TD><A HREF="keywordexpansionoptions.html">Keyword Expansion Options</A></TD>
+	</tr>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>
+

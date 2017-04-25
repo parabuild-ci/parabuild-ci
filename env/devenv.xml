@@ -1,0 +1,311 @@
+<?xml version="1.0"?><!DOCTYPE environment PUBLIC '-//Viewtier Systems, Inc.//DTD Devenv 2.0//EN' 'http://www.parabuildci.org/devenv/dtd/devenv20.dtd'>
+<environment>
+  <validate>
+    <!-- JDK -->
+    <dir property="java.home" required="yes">
+      <location path="/usr/local/java/j2sdk1.4.2_19"/>
+      <location path="C:\DEV\jdk142_07"/>
+      <location path="C:\DEV\jdk142_03"/>
+      <location path="C:\devenv\java\java142_03"/>
+      <location path="/opt/j2sdk1.4.2_11"/>
+      <location path="/opt/j2sdk1.4.2_09"/>
+      <location path="/opt/j2sdk1.4.2_04"/>
+      <location path="/opt/j2sdk1.4.2_03"/>
+      <location path="/opt/j2sdk1.4.2_19"/>
+      <location path="/data/opt/jdk141_05"/>
+      <location path="/System/Library/Frameworks/JavaVM.framework/Versions/1.4.2/Home"/>
+      <location path="jdk"/>
+    </dir>
+    <dir location="${java.home}/bin" required="yes" path="yes"/>
+
+    <!-- Ant -->
+    <dir property="ant.home" required="yes" location="3rdparty/ant153"/>
+    <dir location="${ant.home}/bin" required="yes" path="yes"/>
+
+    <!-- Accurev -->
+    <!--<dir property="accurev.bin" required="yes" path="yes">-->
+      <!--<location path="C:\Program Files\AccuRev\bin"/>-->
+      <!--<location path="/opt/accurev/4_7_0/bin"/>-->
+      <!--<location path="/Applications/AccuRev/bin"/>-->
+    <!--</dir>-->
+
+
+    <!-- Git -->
+    <dir property="git.bin" required="yes" path="yes">
+      <location path="C:\WORK\mor2\dev\bt40\3rdparty\git-1.6.5.1\bin"/>
+      <location path="/usr/bin"/>
+    </dir>
+
+    <!-- Bazaar -->
+    <dir property="bazaar.bin" required="yes" path="yes">
+      <location path="C:\WORK\mor2\dev\bt40\3rdparty\bzr-2.1.1"/>
+      <location path="/usr/bin"/>
+    </dir>
+
+    <!-- Mercurial -->
+    <dir property="mercurial.bin" required="yes" path="yes">
+      <location path="/usr/local/bin"/>
+      <location path="3rdparty/mercurial-1.5.1"/>
+    </dir>
+
+    <!-- Directories -->
+    <dir property="dir.env" required="yes" location="env"/>
+    <dir property="3rdparty" required="yes" location="3rdparty" build="yes"/>
+    <dir property="viewtier.lib" location="${3rdparty}/viewtier/lib" required="yes"/>
+    <dir property="src" location="src" required="yes" build="yes"/>
+    <dir property="config" location="conf" required="yes" build="yes"/>
+    <dir property="test.home" location="test" required="yes" build="yes"/>
+    <dir property="test.src" location="${test.home}/src" required="yes" build="yes"/>
+    <dir property="test.config" location="${test.home}/config" required="yes" build="yes"/>
+    <dir property="test.data" location="${test.home}/data" required="yes" build="yes"/>
+    <dir property="tomcat.home" location="${3rdparty}/tomcat4131" required="yes" build="yes"/>
+    <dir property="junit.home" location="${3rdparty}/junit37" required="yes"/>
+    <dir property="cactus.home" location="${3rdparty}/cactus141j2ee13" required="yes" build="yes"/>
+    <dir property="wincvs.home" location="${3rdparty}/wincvs12" required="yes" path="yes"/>
+    <dir property="project.bin" location="${project.home}/bin" required="yes" build="yes"/>
+    <dir property="internal.bin" location="${project.home}/internal/bin" required="yes" path="yes"/>
+    <dir property="quartz.home" location="${3rdparty}/quartz123" required="yes"/>
+    <dir property="dbunit.home" location="${3rdparty}/dbunit21" required="yes" build="yes"/>
+    <dir property="fop.home" location="${3rdparty}/fop0205" required="yes" build="yes"/>
+    <dir property="docbook.home" location="${3rdparty}/docbookxsl1641" required="yes" build="yes"/>
+    <dir property="docbookdtd.home" location="${3rdparty}/docbookxml42" required="yes" build="yes"/>
+    <dir property="pmd.home" location="${3rdparty}/pmd38" required="yes" build="yes"/>
+    <dir property="findbugs.home" location="${3rdparty}/findbugs086" required="yes" build="yes"/>
+    <dir property="jade.home" location="${3rdparty}/jade600/jade-6.0" required="yes" build="no"/>
+    <dir property="subversion.home" location="${3rdparty}/subversion113" required="yes" path="yes"/>
+
+    <!-- Jira -->
+    <dir property="jira.home" location="${3rdparty}/jira261" required="yes" build="yes"/>
+    <file property="jira.httpclient.jar" location="${jira.home}/commons-httpclient-2.0-beta2.jar" required="yes" build="yes"/>
+
+    <!-- Clover -->
+    <dir property="clover.home" location="${3rdparty}/clover1312" required="yes" build="yes"/>
+    <file property="clover.jar" location="${clover.home}/lib/clover.jar" required="yes" build="yes" classpath="yes"/>
+    <file property="cenquatasks.jar" location="${clover.home}/etc/cenquatasks.jar" required="yes" build="yes" classpath="yes"/>
+
+    <!-- test time dirs, all optional as they don't exist at clean check out -->
+    <dir property="test.tomcat" location="${project.home}/temp/test_run_manager" required="no"/>
+    <dir location="${test.tomcat}/bin" required="no" path="yes"/>
+    <dir location="${test.tomcat}/bin/win" required="no" path="yes"/>
+    <dir location="${test.tomcat}/bin/linux386" required="no" path="yes"/>
+
+    <!-- Files -->
+    <file property="dbunit.jar" required="yes" location="${dbunit.home}/dbunit-2.1.jar" build="yes"/>
+    <file property="viewtier.jar" required="yes" location="${viewtier.lib}/viewtier.jar" build="yes"/>
+    <file property="resgen.jar" required="yes" location="${viewtier.lib}/resgen_at_739.jar" build="yes"/>
+    <file property="xerces.jar" required="yes" location="${tomcat.home}/common/endorsed/xercesImpl.jar" build="yes"/>
+    <file property="xmlapis.jar" required="yes" location="${tomcat.home}/common/endorsed/xmlParserAPIs.jar" build="yes"/>
+    <file property="servlet.jar" required="yes" location="${tomcat.home}/common/lib/servlet.jar" build="yes"/>
+    <file property="naming-resources.jar" required="yes" location="${tomcat.home}/common/lib/naming-resources.jar" build="yes"/>
+    <file property="jmx.jar" required="yes" location="${tomcat.home}/server/lib/mx4j-jmx.jar" build="yes"/>
+    <file property="catalina.jar" required="yes" location="${tomcat.home}/server/lib/catalina.jar" build="yes"/>
+    <file property="servlets-manager.jar" required="yes" location="${tomcat.home}/server/lib/servlets-manager.jar" build="yes"/>
+    <file property="servlets-common.jar" required="yes" location="${tomcat.home}/server/lib/servlets-common.jar" build="yes"/>
+    <file property="junit.jar" location="${junit.home}/junit.jar" required="yes" classpath="yes" build="yes"/>
+    <file property="cactus.jar" required="yes" location="${cactus.home}/lib/cactus-1.4.1.jar" build="yes"/>
+    <file property="cactus.ant.jar" required="yes" location="${cactus.home}/lib/cactus-ant-1.4.1.jar" build="yes"/>
+    <file property="commons-httpclient.jar" required="yes" location="${cactus.home}/lib/commons-httpclient-2.0alpha1-20020606.jar" build="yes"/>
+    <file property="aspectjrt.jar" required="yes" location="${cactus.home}/lib/aspectjrt-1.0.5.jar" build="yes"/>
+    <file property="httpclient.jar" required="yes" location="${cactus.home}/lib/commons-httpclient-2.0alpha1-20020606.jar" build="yes"/>
+    <file property="anthelope.jar" required="yes" location="${3rdparty}/anthelope255/AntelopeTasks.jar" build="yes"/>
+    <file property="log4j.jar" required="yes" location="${cactus.home}/lib/log4j-1.2.5.jar" build="yes"/>
+    <file property="gbase.jar" required="yes" location="${3rdparty}/gbase20/gsbase-2.0.jar" build="yes"/>
+    <file property="activation.jar" required="yes" location="${3rdparty}/jaf102/activation.jar" build="yes"/>
+    <file property="mail.jar" required="yes" location="${3rdparty}/javamail-1.4.2/lib/mailapi.jar" build="yes"/>
+    <file property="smtp.jar" required="yes" location="${3rdparty}/javamail-1.4.2/lib/smtp.jar" build="yes"/>
+    <file property="quartz.jar" required="yes" location="${quartz.home}/lib/quartz.jar" build="yes"/>
+    <file property="quartz.licence" required="yes" location="${quartz.home}/license.txt" build="yes"/>
+    <file property="viewtier.licence" required="yes" location="${config}/license-viewtier.txt" build="yes"/>
+    <file property="viewtier.copyright" required="yes" location="${config}/copyright-viewtier.txt" build="yes"/>
+    <file property="junitaddons.jar" required="yes" location="${3rdparty}/junitaddons371/junit-addons-3.7.1.jar" build="yes"/>
+    <file property="jade.jar" required="yes" location="${jade.home}/jade.jar" build="yes"/>
+    <file property="mysql.jar" required="yes" location="${3rdparty}/mysql/mysql-connector-java-3.1.13-bin.jar" build="yes"/>
+    <file property="hessian.jar" required="yes" location="${3rdparty}/hessian308/hessian-3.0.8.4.jar" build="yes"/>
+    <file property="cvs.exe" required="yes" location="${wincvs.home}/cvs.exe" build="yes"/>
+
+    <!-- parabuild schema -->
+    <file property="schema.sql" required="yes" location="${config}/schema.sql" build="yes"/>
+
+    <!-- http unit -->
+    <dir property="httpunit.home" location="${3rdparty}/httpunit154/" required="yes" build="no"/>
+    <file property="httpunit.jar" required="yes" location="${httpunit.home}/lib/httpunit.jar" build="yes"/>
+    <file property="tidy.jar" required="yes" location="${httpunit.home}/jars/Tidy.jar" build="yes"/>
+    <file property="js.jar" required="yes" location="${httpunit.home}/jars/js.jar" build="yes"/>
+
+
+    <!-- hibernate -->
+    <dir property="hibernate.home" location="${3rdparty}/hibernate218" required="yes"/>
+    <dir property="hibernate.lib" location="${hibernate.home}/lib" required="yes"/>
+    <file property="c3p0.jar" required="yes" location="${hibernate.lib}/c3p0-0.8.4.5.jar" build="yes"/>
+    <file property="cglib-asm.jar" required="yes" location="${hibernate.lib}/cglib-full-2.0.2.jar" build="yes"/>
+    <file property="commons-collections.jar" required="yes" location="${hibernate.lib}/commons-collections-2.1.1.jar" build="yes"/>
+    <file property="commons-dbcp.jar" required="yes" location="${hibernate.lib}/commons-dbcp-1.2.1.jar" build="yes"/>
+    <file property="commons-lang.jar" required="yes" location="${hibernate.lib}/commons-lang-1.0.1.jar" build="yes"/>
+    <file property="commons-logging.jar" required="yes" location="${hibernate.lib}/commons-logging-1.0.4.jar" build="yes"/>
+    <file property="commons-pool.jar" required="yes" location="${hibernate.lib}/commons-pool-1.2.jar" build="yes"/>
+    <file property="dom4j.jar" required="yes" location="${hibernate.lib}/dom4j-1.4.jar" build="yes"/>
+    <file property="hibernate2.jar" required="yes" location="${hibernate.home}/hibernate2.jar" build="yes"/>
+    <file property="xalan.jar" required="yes" location="${hibernate.lib}/xalan-2.4.0.jar" build="yes"/>
+    <file property="xml-apis.jar" required="yes" location="${hibernate.lib}/xml-apis.jar" build="yes"/>
+    <file property="odmg.jar" required="yes" location="${hibernate.lib}/odmg-3.0.jar" build="yes"/>
+
+    <!-- echcache -->
+    <dir property="ehcache.home" location="${3rdparty}/ehcache10" required="yes"/>
+    <file property="ehcache.jar" required="yes" location="${ehcache.home}/ehcache-1.0.jar" build="yes"/>
+
+    <!-- addon binaries - p4 -->
+    <dir property="p4.home" required="yes" location="${3rdparty}/perforce20011"/>
+    <file property="p4.win.exe" required="yes" location="${p4.home}/windows/p4.exe" build="yes"/>
+    <file property="p4.linux.exe" required="yes" location="${p4.home}/linux386/p4" build="yes"/>
+
+    <!-- addon binaries - pv -->
+    <file property="pv.exe" required="yes" location="${3rdparty}/prcview3731/pv.exe" build="yes"/>
+    <dir required="yes" location="${3rdparty}/prcview3731" path="yes"/>
+    <!-- for access at dev time -->
+
+
+    <!-- HSQL DB -->
+    <dir property="hsqldb.home" location="${3rdparty}/hsqldb_1_8_1_3" required="yes"/>
+    <dir location="${hsqldb.home}/lib" required="yes"/>
+    <file property="hsqldb.jar" location="${hsqldb.home}/lib/hsqldb.jar" required="yes" build="yes" classpath="yes"/>
+    <file property="hsqldb.license" location="${hsqldb.home}/doc/hypersonic_lic.txt" required="yes" build="yes" classpath="no"/>
+
+    <dir property="hsqldb.1.7.3.3.home" location="${3rdparty}/hsqldb1733" required="yes"/>
+    <dir location="${hsqldb.1.7.3.3.home}/lib" required="yes"/>
+    <file property="hsqldb.1.7.3.3.jar" location="${hsqldb.1.7.3.3.home}/lib/hsqldb.jar" required="yes" build="yes" classpath="no"/>
+
+    <!-- xdoclet -->
+    <dir property="xdoclet.lib" location="${3rdparty}/xdoclet12" required="yes" build="yes"/>
+
+    <!-- test datasets -->
+    <file property="test.dataset" required="true" location="${test.home}/config/dataset.xml" build="yes"/>
+
+    <!-- Jaxen -->
+    <dir property="jaxen.home" location="${3rdparty}/jaxen-1.1.1" required="yes" build="no"/>
+    <file property="jaxen.jar" required="true" location="${jaxen.home}/jaxen-1.1.1.jar" build="yes"/>
+
+    <!-- Commons -->
+    <dir property="commons.home" location="${3rdparty}/commons" required="yes" build="no"/>
+    <file property="commons-io.jar" required="true" location="${commons.home}/commons-io-1.0.jar" build="yes"/>
+    <file property="commons-cli.jar" required="true" location="${commons.home}/commons-cli-1.0.jar" build="yes"/>
+
+    <!-- lucene -->
+    <dir property="lucene.home" location="${3rdparty}/lucene143" required="yes" build="no"/>
+    <file property="lucene.jar" required="true" location="${lucene.home}/lucene-1.4.3.jar" build="yes"/>
+
+    <!-- concurrent -->
+    <dir property="concurrent.home" location="${3rdparty}/concurrent134" required="yes" build="no"/>
+    <file property="concurrent.jar" required="true" location="${concurrent.home}/lib/concurrent.jar" build="yes"/>
+
+    <!-- install4j -->
+    <dir property="install4j.home" location="${3rdparty}/install4j4.2" required="yes" build="no"/>
+    <file property="i4jruntime.jar" required="true" location="${install4j.home}/resource/i4jruntime.jar" build="yes"/>
+
+    <!-- jfreechart -->
+    <dir property="jfreechart.home" location="${3rdparty}/jfreechart-1.0.5" required="yes" build="no"/>
+    <file property="jfreechart.jar" required="true" location="${jfreechart.home}/lib/jfreechart-1.0.5.jar" build="yes"/>
+    <file property="jcommon.jar" required="true" location="${jfreechart.home}/lib/jcommon-1.0.9.jar" build="yes"/>
+
+    <!-- smack -->
+    <dir property="smack.home" location="${3rdparty}/smack141" required="yes" build="no"/>
+    <file property="smack.jar" required="true" location="${smack.home}/smack.jar" build="yes"/>
+    <file property="smackx.jar" required="true" location="${smack.home}/smackx.jar" build="yes"/>
+
+    <!-- Axis -->
+    <dir property="axis.home" location="${3rdparty}/axis121" required="yes" build="no"/>
+    <dir property="axis.lib" location="${axis.home}/lib" required="yes" build="no"/>
+    <file property="axis-ant.jar" required="true" location="${axis.lib}/axis-ant.jar" build="yes"/>
+    <file property="axis.jar" required="true" location="${axis.lib}/axis.jar" build="yes"/>
+    <file property="commons-discovery.jar" required="true" location="${axis.lib}/commons-discovery-0.2.jar" build="yes"/>
+    <file property="jaxrpc.jar" required="true" location="${axis.lib}/jaxrpc.jar" build="yes"/>
+    <file property="saaj.jar" required="true" location="${axis.lib}/saaj.jar" build="yes"/>
+    <file property="wsdl4j.jar" required="true" location="${axis.lib}/wsdl4j-1.5.1.jar" build="yes"/>
+
+    <!-- jtds -->
+    <dir property="jtds.home" location="${3rdparty}/jtds103" required="yes" build="no"/>
+    <file property="jtds.jar" required="true" location="${jtds.home}/jtds-1.0.3.jar" build="yes"/>
+    <file property="jtds.license" required="true" location="${jtds.home}/LICENSE" build="yes"/>
+
+    <!-- Vault -->
+    <dir property="vault.home" location="${3rdparty}/vaultclientapi316_3619" required="yes" build="yes" path="yes"/>
+
+    <!-- licenses -->
+    <file property="hibernate.license" required="true" location="${hibernate.home}/lgpl.txt" build="yes"/>
+    <file property="apache.license" required="true" location="${hibernate.home}/lib/apache.license.txt" build="yes"/>
+    <file property="c3p0.license" required="true" location="${hibernate.home}/lib/c3p0.license.txt" build="yes"/>
+    <file property="connector.license" required="true" location="${hibernate.home}/lib/connector.licence.txt" build="yes"/>
+    <file property="jaas.license" required="true" location="${hibernate.home}/lib/jaas.licence.txt" build="yes"/>
+    <file property="jdbc2_0-stdext.license" required="true" location="${hibernate.home}/lib/jdbc2_0-stdext.licence.txt" build="yes"/>
+    <file property="jta.license" required="true" location="${hibernate.home}/lib/jta.licence.txt" build="yes"/>
+    <file property="mx4j.license" required="yes" location="${tomcat.home}/server/lib/mx4j.license" build="yes"/>
+    <file property="jaxen.license" required="yes" location="${jaxen.home}/LICENSE.txt" build="yes"/>
+    <file property="lucene.license" required="yes" location="${lucene.home}/LICENSE.txt" build="yes"/>
+    <file property="jade.license" required="yes" location="${jade.home}/doc/license.txt" build="yes"/>
+
+    <dir property="cvsnt.home" location="${3rdparty}/cvsnt2503" required="yes" path="no" build="yes"/>
+
+    <!-- iconexperience_free -->
+    <dir property="iconexperience.free.home" location="${3rdparty}/iconexperience_free" required="yes" build="no" path="no"/>
+    <dir property="iconexperience.16x16.plain" location="${iconexperience.free.home}/16x16/plain" required="yes" build="yes" path="no"/>
+    <dir property="iconexperience.24x24.plain" location="${iconexperience.free.home}/24x24/plain" required="yes" build="yes" path="no"/>
+    <dir property="iconexperience.32x32.plain" location="${iconexperience.free.home}/32x32/plain" required="yes" build="yes" path="no"/>
+    <dir property="iconexperience.32x32.shadow" location="${iconexperience.free.home}/32x32/shadow" required="yes" build="yes" path="no"/>
+    <dir property="iconexperience.48x48.plain" location="${iconexperience.free.home}/48x48/plain" required="yes" build="yes" path="no"/>
+    <dir property="iconexperience.48x48.shadow" location="${iconexperience.free.home}/48x48/shadow" required="yes" build="yes" path="no"/>
+
+    <!-- JDIC -->
+    <dir property="jdic.home" location="${3rdparty}/jdic20060613bin" required="yes" build="yes" path="no"/>
+    <!--<dir property="jdic.home" location="${3rdparty}/jdic20050930bin" required="yes" build="yes" path="no"/>-->
+    <file property="jdic.jar" required="true" location="${jdic.home}/jdic.jar" build="yes"/>
+
+    <!-- MSN LIB -->
+    <dir property="msnmlib.home" location="${3rdparty}/msnmlib122" required="yes" build="no" path="no"/>
+    <file property="msnm.jar" required="true" location="${msnmlib.home}/msnm.jar" build="yes"/>
+    <file property="msnm.license" required="true" location="${msnmlib.home}/LICENSE.TXT" build="yes"/>
+
+    <!-- StarTeam -->
+    <dir property="starteam.home" location="${3rdparty}/starteam2005r2" build="no" path="yes" required="yes"/>
+
+    <!-- Rome -->
+    <dir property="rome.home" location="${3rdparty}/rome08" build="no" path="no" required="yes"/>
+    <file property="rome.jar" required="true" location="${rome.home}/rome-0.8.jar" build="yes"/>
+    <file property="rome.license" required="true" location="${rome.home}/LICENSE-2.0.txt" build="yes"/>
+
+    <!-- jdom -->
+    <dir property="jdom.home" location="${3rdparty}/jdom10" build="no" path="no" required="yes"/>
+    <file property="jdom.jar" required="true" location="${jdom.home}/build/jdom.jar" build="yes"/>
+    <file property="jdom.license" required="true" location="${jdom.home}/LICENSE.txt" build="yes"/>
+
+    <!-- checkstyle -->
+    <dir property="checkstyle.home" location="${3rdparty}/checkstyle-4.3" build="yes" path="no" required="yes"/>
+    <file property="checkstyle-all.jar" required="true" location="${checkstyle.home}/checkstyle-all-4.3.jar" build="yes"/>
+
+    <!-- MKS -->
+    <!---
+    <dir property="mks.home" required="yes">
+      <location path="E:\OFFICE\MKS\IntegrityClient"/>
+      <location path="C:\devenv\MKS\IntegrityClient"/>
+      <location path="/opt/mks/integrity_client2005"/>
+    </dir>
+    <dir location="${mks.home}/bin" required="yes" path="yes"/>
+    -->
+
+    <dir property="dwr.home" location="${3rdparty}/dwr-2.0.1" build="no" path="no" required="yes"/>
+    <file property="dwr.jar" required="true" location="${dwr.home}/dwr.jar" build="yes"/>
+
+    <!-- saxon -->
+    <dir property="saxon.home" location="${3rdparty}/saxon8-9j" build="no" path="no" required="yes"/>
+    <file property="saxon.jar" required="true" location="${saxon.home}/saxon8.jar" build="yes"/>
+    <file property="saxon-dom.jar" required="true" location="${saxon.home}/saxon8-dom.jar" build="yes"/>
+  </validate>
+
+  <output>
+    <shell variable="JAVA_HOME" path="${java.home}"/>
+    <shell variable="ANT_HOME" path="${ant.home}"/>
+    <shell variable="ANT_OPTS" value="-Xmx100m"/>
+    <shell variable="PARABUILD_HOME" path="${test.tomcat}"/>
+    <shell variable="P4PORT" value="127.0.0.1:1666"/>
+    <shell variable="P4USER" value="test_user"/>
+    <shell variable="P4PASSWD" value="test_password"/>
+  </output>
+</environment>

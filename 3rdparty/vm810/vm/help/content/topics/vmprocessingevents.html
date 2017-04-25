@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Version Manager Processing Events</TITLE>
+<!--<vmprocessingevents.html>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="vmprocessingevents"></A>Version Manager Processing Events</H1>
+<!--<index parent="events" label="list of" anchor="vmprocessingevents">-->
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><b>Event Name</b></TD>
+		<TD><b>Definition</b></TD>
+	</TR>
+	<TR>
+		<TD>AllEvents</TD>
+		<TD>All Version Manager events in this table.</TD>
+	</TR>
+	<TR>
+		<TD>Check In/Before</TD>
+		<TD>Just before checking in a workfile. This event occurs if there is nothing to prevent Version Manager from checking in the file.</TD>
+	</TR>
+		<TD>Check In/After</TD>
+		<TD>After a successful check in of a workfile.</ TD>
+	</TR>
+	<TR>
+		<TD>Check In/Unconditional</TD>
+		<TD>Before checking in a workfile. The workfile has not been read by Version Manager yet.</TD>
+	</TR>
+	<TR>
+		<TD>Check Out/Before</TD>
+		<TD>Just before checking out a revision.</TD>
+	</TR>
+	<TR>
+		<TD>Check Out/After</TD>
+		<TD>After a successful check out of a revision.</TD>
+	</TR>
+	<TR>
+		<TD>Promote/Before</TD>
+		<TD>Just before promoting a revision.</TD>
+	</TR>
+	<TR>
+		<TD>Promote/After</TD>
+		<TD>After a successful promotion of a revision.</TD>
+	</TR>
+	<TR>
+		<TD>Version Label/Before</TD>
+		<TD>Just before applying a version label.</TD>
+	</TR>
+	<TR>
+		<TD>Version Label/After</TD>
+		<TD>After applying a version label. This event does not occur after deleting a version label</TD>
+	</TR>
+	<TR>
+		<TD>Journal/After</TD>
+		<TD>When an entry is made to the journal file.</TD>
+	</TR>
+	<TR>
+		<TD>Lock/Before</TD>
+		<TD>Just before locking a revision. This event occurs whether or not a revision is checked out at the same time.</TD>
+	</TR>
+	<TR>
+		<TD>Lock/After</TD>
+		<TD>After locking a revision. This occurs whether or not a revisions is checked out at the time of the lock.</TD>
+	</TR>
+	<TR>
+		<TD>Unlock/Before</TD>
+		<TD>Just before unlocking a revision. This event also occurs when checking in an unchanged workfile if the Remove Lock on Unchanged Revision configuration option is set.</TD>
+	</TR>
+	<TR>
+		<TD>Unlock/After</TD>
+		<TD>After unlocking a revision. This event also occurs when checking in an unchanged workfile if the Remove Lock on Unchanged Revision configuration option is set.</TD>
+	</TR>
+	<TR>
+		<TD>Create Archive/Before</TD>
+		<TD>Just before creating a new archive. This event also occurs before checking in an initial revision if the OK to Create New Archive on Check In configuration option is set.</TD>
+	</TR>
+	<TR>
+		<TD>Create Archive/After</TD>
+		<TD>After creating a new archive. This event also occurs when checking in an initial revision if the OK to Create New Archive on Check In configuration option is set.</TD>
+	</TR>
+</TABLE>
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a href="iconevents.html">Version Manager Icon and Menu Item Events</a></TD>
+		<TD><a href="examplesoftriggers.html">Examples of Event Triggers</a></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

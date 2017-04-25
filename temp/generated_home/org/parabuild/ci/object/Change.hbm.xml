@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 1.1//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="org.parabuild.ci.object.Change"
+        table="CHANGE"
+    >
+        <cache usage="read-write" />
+
+        <id
+            name="changeID"
+            column="ID"
+            type="int"
+            unsaved-value="-1"
+        >
+            <generator class="identity">
+            </generator>
+        </id>
+
+        <property
+            name="changeListID"
+            type="int"
+            column="CHANGELIST_ID"
+            unique="false"
+        />
+
+        <property
+            name="changeType"
+            type="byte"
+            column="TYPE"
+            unique="false"
+        />
+
+        <property
+            name="filePath"
+            type="java.lang.String"
+            column="FILE_PATH"
+            unique="false"
+        />
+
+        <property
+            name="revision"
+            type="java.lang.String"
+            column="REVISION"
+            unique="false"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Change.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

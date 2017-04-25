@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Toolbar Configuration Dialog Box</TITLE>
+<!--<toolbarconfigdialog.html>-->
+<!--<index parent="configuring" label="Toolbar Configuration dialog box" anchor="toolbarconfig">-->
+<!--<index parent="tool_bar" label="Toolbar Configuration dialog box" anchor="toolbarconfig">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiToolbarConfigDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="toolbarconfig"></A>Tool Configuration</H1>
+<P>Use the Tool Configuration dialog box (Admin | Tool Configuration) to add custom tools that appear as icons on the tool bar and/or as menu items on the Tools menu. This feature is useful when you want to create shortcuts for frequently used applications or tasks. Note that you cannot use a tool bar configuration file with a 5.3/6.0 project root.</P>
+<p>Each project database can have its own custom tool bar and Tools menu. When you switch from a project database with a custom Tools menu to one without, Version Manager disables the Tools menu. When you switch from project database to project database, Version Manager loads the appropriate tool bar.</p>
+
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><b>User Tools</b></TD>
+		<TD><!--<control name="ToolbarConfigGeneral.USER_TOOLS_LIST">-->
+		Existing user-defined tools for the selected project database.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Add button</b></TD>
+		<TD><!--<control name="ToolbarConfigGeneral.ADD_BUTTON">-->
+		Adds a new tool to the User Tools list in the form of a default icon with the name [Untitled].
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Remove button</b></TD>
+		<TD><!--<control name="ToolbarConfigGeneral.REMOVE_BUTTON">-->
+		Removes a selected tool from the list.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Move Up button</b></TD>
+		<TD><!--<control name="ToolbarConfigGeneral.MOVE_UP_BUTTON">-->
+		Moves the selected tool up in the tools list, which affects the order of the tools in the Tools menu and on the tool bar.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><B>Move Down button</B></TD>
+		<TD><!--<control name="ToolbarConfigGeneral.MOVE_DOWN_BUTTON">-->
+		Moves the selected tool down in the tools list, which affects the order of the tools in the Tools menu and on the tool bar.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><B>Change Image button</B></TD> <TD>
+		<!--<control name="ToolbarConfigGeneral.IMAGE_BROWSE">-->
+		Lets you change the icon image associated with the tool, which will be displayed in the tool bar. You can select any GIF or JPG file.
+		<!--</control>--></TD>
+	</tr>
+	<TR>
+		<TD><B>Tool Properties</B></TD> <TD>
+		Enter tool properties:<br><br>
+		<b>Name:</b> <!--<control name="ToolbarConfigGeneral.TOOL_DESCRIPTION_EDIT">-->Enter a name for the tool. If the new tool is a menu item, the text you enter here is the name of the menu item on the Tools menu. If the new tool is a tool bar icon, the text you enter here is the tool bar tip text if you do not specify different text in the Tool Tip field.<!--</control>--><br>
+		<b>Command:</b> <!--<control name="ToolbarConfigGeneral.EXECUTABLE_EDIT">-->Specify the executable file to be invoked when a User clicks the new icon or selects the new menu item.<!--</control>--><br>
+		<b>Arguments:</b> <!--<control name="ToolbarConfigGeneral.ARGUMENTS_EDIT">-->Click the button next to this field and select a <a href="commandlinemacros.html">command-line macro</a> or the <a href="parameterfile.html">parameter file</a> (__EventParmFile__) that will <a href="passingeventinfo.html">pass event information</a> to the executable.<!--</control>--><br>
+		<b>Tool Tip:</b> <!--<control name="ToolbarConfigGeneral.TOOLTIP_EDIT">-->Enter a tool tip to display tip text other than the text specified in the Name field.<!--</control>--> <br>
+		<b>Show on tool bar:</b> <!--<control name="ToolbarConfigGeneral.SHOW_ON_TOOLBAR_CHECKBOX">-->Select this check box to make the new tool a tool bar icon.<!--</control>--> <br>
+		<b>Show on tools menu:</b> <!--<control name="ToolbarConfigGeneral.SHOW_ON_ACTIONS_MENU_CHECKBOX">-->Select this check box to make the new tool a new menu item on the Tools menu.<!--</control>-->
+</TD>
+	</tr>
+	</TABLE>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="changeprjdbprops.html">Changing Project Database Properties</A></TD>
+		<TD><A HREF="projectdialog.html">Project Database Properties Dialog Box</A></TD>
+	</TR>
+	<TR>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

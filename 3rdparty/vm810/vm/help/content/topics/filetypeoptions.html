@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Options Set on a File Type Basis</TITLE>
+<!--<filetypeoptions.html>-->
+<!--<index parent="options" label="setting by file type" anchor="filetypeoptions">-->
+<!--<index parent="archives" label="suffix option" anchor="filetypeoptions">-->
+<!--<index parent="keywords" label="expansion" anchor="filetypeoptions">-->
+<!--<index parent="configuration_options" label="setting by file type" anchor="filetypeoptions">-->
+<!--<index parent="options" label="translate end-of-line character" anchor="filetypeoptions">-->
+<!--<index parent="options" label="store delta" anchor="filetypeoptions">-->
+<!--<index parent="options" label="column masking/renumbering" anchor="filetypeoptions">-->
+<!--<index parent="options" label="record length" anchor="filetypeoptions">-->
+<!--<index parent="configuration_options" label="translating end-of-line character" anchor="filetypeoptions">-->
+<!--<index parent="configuration_options" label="storing deltas" anchor="filetypeoptions">-->
+<!--<index parent="configuration_options" label="column masking/renumbering" anchor="filetypeoptions">-->
+<!--<index parent="configuration_options" label="record length" anchor="filetypeoptions">--> 
+<!--<index parent="storing" label="deltas" anchor="filetypeoptions">-->
+<!--<index parent="translating" label="end-of-line character" anchor="filetypeoptions">-->
+<!--<index parent="column_masking" label="options" anchor="filetypeoptions">-->
+<!--<index parent="renumbering" label="options" anchor="filetypeoptions">-->
+<!--<index parent="deltas" label="generating based on logical lines" anchor="filetypeoptions">-->
+<!--<index parent="deltas" label="storing" anchor="filetypeoptions">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="filetypeoptions"></A>Options Set on a File Type Basis</H1>
+<P>
+On the File Types tab of the Configure Project dialog box, you can set the following options on a per file type basis:
+</P>
+<UL>
+<LI><a href="archivesuffix.html">Archive suffix</a>. The directive for this option is ArchiveSuffix.<BR><BR>
+<LI>Whether or not to <a href="deltas.html">store deltas</a>. The directive for this option is GenerateDelta.<BR><BR>
+<LI>Whether or not to translate the end-of-line character. The directive for this option is Translate.<BR><BR>
+<LI>Whether or not to expand <a href="keywordexpansionoptions.html">keywords</a>. If you choose to expand keywords, there are two additional options you can set: the comment prefix to insert before lines in the <a href="logkeyword.html">&#36;Log&#36; keyword</a> expansion and the end-of-line indicator in the &#36;Log&#36; keyword expansion. The directives for these options are ExpandKeywords, CommentPrefix, and NewLine.<BR><BR>
+<b>Warning!</b> Keyword expansion will cause corruption in binary files, so Version Manager disables keyword expansion by default. Do not enable keyword expansion for binary files.<BR><BR>
+<LI>The <a href="columnmasking_renumbering.html">column masking/renumbering</a> options. The directives for these options are ColumnMask and Renumber.<BR><BR>
+<LI>Record length of fixed-length files so Version Manager can generate deltas based on logical lines. Using this option improves Version Manager's performance when processing fixed-length records. Do not use this option for variable length files. The directive for this option is RecordLength.
+</UL>
+<P>
+<a href="setfiletypeoptions.html">Click here</a> to see how to set these options.
+</P>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

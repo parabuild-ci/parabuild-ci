@@ -1,0 +1,80 @@
+-- v_colors_a has been defined as SELECT * FROM COLORS
+-- at the time COLORS had 2 columns, while it meanwhile has three
+/*r1,red,null
+ 2,green,null
+ 3,orange,null
+ 4,indigo,null*/select * from colors;
+
+/*r1,red
+ 2,green
+ 3,orange
+ 4,indigo*/select * from v_colors_a;
+
+-- check the availability/content of all those views with asterisks
+/*r1,a,b,c
+ 2,d,e,f*/select * from S1;
+/*r1,a,b,c
+ 2,d,e,f*/select * from S2;
+/*r1,a,b,c
+ 2,d,e,f*/select * from S3;
+/*r1,a,b,c
+ 2,d,e,f*/select * from S4;
+/*r1,a,b,c
+ 2,d,e,f*/select * from S5;
+/*r1,a,b,c
+ 2,d,e,f*/select * from S6;
+/*r1,a,b,c
+ 2,d,e,f*/select * from S7;
+/*r1,a,b,c,a
+ 2,d,e,f,d*/select * from C1;
+/*rb,1,a,b,c
+ e,2,d,e,f*/select * from C2;
+
+/*r
+ 1,first A,1,first B
+ 1,first A,2,second B
+ 2,second A,1,first B
+ 2,second A,2,second B*/select * from M1;
+/*r
+ 1,first B,1,first A
+ 2,second B,1,first A
+ 1,first B,2,second A
+ 2,second B,2,second A*/select * from M2;
+/*r
+ 1,first A
+ 1,first A
+ 2,second A
+ 2,second A*/select * from M3;
+
+/*c2*/select * from Q1;
+/*c4*/select * from Q2;
+/*c2*/select * from Q3;
+/*c4*/select * from Q4;
+
+/*r1,a,b,c
+ 2,d,e,f*/select * from L1;
+
+/*r1,a,b,c
+ 2,d,e,f*/select * from VV1;
+
+/*r1
+ 2*/select * from VV2;
+
+/*r1,first A
+ 1,first B
+ 2,second A
+ 2,second B*/select * from U1;
+
+/*r1,first A
+ 1,first B
+ 2,second A
+ 2,second B*/select * from U2;
+
+/*r
+ 1,first A
+ 2,second A*/select * from VM1;
+/*r
+ 1,first A,1,first B
+ 1,first A,2,second B
+ 2,second A,1,first B
+ 2,second A,2,second B*/select * from VM2;

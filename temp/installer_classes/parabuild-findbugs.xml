@@ -1,0 +1,10 @@
+<FindBugsFilter>
+<!--  <Match classregex=".*">-->
+<!--    <Method name="&lt;clinit&gt;"/>-->
+<!--    <BugCode name="UPM"/>-->
+<!--  </Match>-->
+
+  <Match classregex=".*">
+    <BugCode name="EI,EI2"/>
+  </Match>
+</FindBugsFilter>

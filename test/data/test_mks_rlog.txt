@@ -1,0 +1,76 @@
+member name: second_sourceline\src\readme.txt;	working file: 
+head:	1.1
+member:	1.1
+branch:	
+locks:	; strict
+attributes:	
+file format: text
+revision storage: reverse deltas
+total revisions: 1; branches: 0; branch revisions: 0
+description:
+Initial add to the test ptoject
+-----------------------
+revision 1.1
+date: Apr 11, 2006 - 1:32 AM; author: test_user; state: Exp; lines: +0 -0
+change package: 1:1 Pupulated test project
+Initial revision
+Member added to project /opt/mks/integrity_server2005/mksis/projects/project.pj
+===============================================================================
+member name: sourceline\alwaysvalid\src\file_that_shouldnt_exist_when_syncing_to_the_first_change_list.txt;	working file: 
+head:	1.1
+member:	1.1
+branch:	
+locks:	; strict
+attributes:	
+file format: text
+revision storage: reverse deltas
+total revisions: 1; branches: 0; branch revisions: 0
+description:
+Added a test file shouldnt exist when syncing to the first change list
+-----------------------
+revision 1.1
+date: Apr 29, 2006 - 6:29 PM; author: test_user; state: Exp; lines: +0 -0
+Initial revision
+Member added to project /opt/mks/integrity_server2005/mksis/projects/project.pj
+===============================================================================
+member name: sourceline\alwaysvalid\src\readme.txt;	working file: 
+head:	1.2
+member:	1.1
+branch:	
+locks:	; strict
+attributes:	
+file format: text
+revision storage: reverse deltas
+total revisions: 2; branches: 0; branch revisions: 0
+description:
+Initial add to the test ptoject
+-----------------------
+revision 1.2
+date: Apr 11, 2006 - 1:40 AM; author: test_user; state: Exp; lines: +2 -0
+change package: 2:1 Change package to add a line
+Added a line to files in the same subdirectory
+-----------------------
+revision 1.1
+date: Apr 11, 2006 - 1:32 AM; author: test_user; state: Exp; lines: +0 -0
+change package: 1:1 Pupulated test project
+Initial revision
+Member added to project /opt/mks/integrity_server2005/mksis/projects/project.pj
+===============================================================================
+member name: test_cvs_change_log_with_outside_branch.txt;	working file: 
+head:	1.1
+member:	1.1
+branch:	
+locks:	; strict
+attributes:	
+file format: text
+revision storage: reverse deltas
+total revisions: 1; branches: 0; branch revisions: 0
+description:
+Initial add to the test ptoject
+-----------------------
+revision 1.1
+date: Apr 11, 2006 - 1:32 AM; author: test_user; state: Exp; lines: +0 -0
+change package: 1:1 Pupulated test project
+Initial revision
+Member added to project /opt/mks/integrity_server2005/mksis/projects/project.pj
+===============================================================================

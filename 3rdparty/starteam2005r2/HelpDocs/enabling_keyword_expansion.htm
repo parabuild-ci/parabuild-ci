@@ -1,0 +1,247 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Enabling Keyword Expansion</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=copyright value="Copyright© 1995-2003, Borland Software Corporation. All rights reserved.">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=1281>
+<meta name=layout-width content=614>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<!--(Scripts)=======================================================-->
+
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="./ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Working with the Application\nManaging Projects\nEnabling Keyword Expansion");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Enabling Keyword Expansion</h1>
+
+<p class=Body>By enabling keyword expansion for a project, you can embed 
+ keywords within text files. These keywords are automatically expanded 
+ during file check-outs, to provide file and revision information within 
+ the file. You should use only one keyword per line. Keywords are not expanded 
+ for Unicode files.</p>
+
+<p class=Body><span style="font-weight: bold;"><B>Caution</B></span>: Never use 
+ a keyword in a revision comment, as it will be expanded during the keyword 
+ expansion process.</p>
+
+<p class=Proc><span style="font-weight: bold;"><B>To turn keyword expansion 
+ on or off:</B></span></p>
+
+<ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select<span style="font-weight: bold;"><B> 
+ Project &gt; Properties</B></span> from the menu bar. The <span style="font-style: italic;"><I>Project 
+ Properties</I></span> dialog opens.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select the <span style="font-weight: bold;"><B>Options</B></span> 
+ tab.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select the<span style="font-weight: bold;"><B> 
+ Keyword Expansion</B></span> check box to enable keyword expansion and use 
+ keywords in your text files. This check box applies to files added or 
+ checked in from StarTeam or from StarTeam integrations with third-party 
+ applications.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>In the <span style="font-weight: bold;"><B>Expand 
+ keywords for these file extensions</B></span> text box, enter the file extensions 
+ (e.g., .bat, .cpp) for which you want to use keywords. You can use a space, 
+ comma, or semicolon as keyword delimiters. The file extensions list can 
+ contain a maximum of 254 characters. If you leave this text box blank, 
+ no keywords will be expanded.</p></li>
+</ol>
+
+<p class=Proc><span style="font-weight: bold;"><B>To turn keyword expansion 
+ off:</B></span></p>
+
+<ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select<span style="font-weight: bold;"><B> 
+ Project &gt; Properties</B></span> from the menu bar. The <span style="font-style: italic;"><I>Project 
+ Properties</I></span> dialog opens.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select the <span style="font-weight: bold;"><B>Options</B></span> 
+ tab.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Clear the<span style="font-weight: bold;"><B> 
+ Keyword Expansion</B></span> check box to disable keyword expansion for your 
+ text files.</p></li>
+</ol>
+
+<h2>StarTeam Keywords</h2>
+
+<h3>$Author$</h3>
+
+<p class=Body>User who checked in the revision.</p>
+
+<h3>$Date$ and $DateUTC$</h3>
+
+<p class=Body>Date and time stamps for the revision. $DateUTC$ is the same 
+ as $Date$ except that a UTC time replaces the local time. UTC times end 
+ in a “Z,” which makes them readily identifiable.</p>
+
+<h3>$Header$ and $HeaderUTC$</h3>
+
+<p class=Body>Combinations of Workfile, Revision, Date, and Author. $HeaderUTC$ 
+ is the same as $Header$ except that a UTC time replaces the local time. 
+ UTC times end in a “Z” which makes them readily identifiable.</p>
+
+<p class=Body-Indent-1><span style="font-weight: bold;"><B>Note for Java Users</B></span>: 
+ $Header$ can cause problems if \u (for unicode) appears in the expanded 
+ header. For example, suppose that a file named foo.java is stored in D:\util. 
+ The first time you compile it with $Header$, the header is expanded to:</p>
+
+<p class=Code>$Header: D:\util\foo.java, 1, 7/27/99 11:05:48 AM, StarTeam 
+ Server Administrator$</p>
+
+<p class=Body-Indent-1>Even though this header is contained in a Java comment, 
+ the Java compiler always looks for \u. The second time you compile foo.java, 
+ a compiler error occurs.</p>
+
+<h3>$Id$</h3>
+
+<p class=Body>Similar to $HeaderUTC$ except that it is a combination of 
+ Workfile, the branch revision number (preceded by &quot;v&quot; for version; 
+ e.g., v 1.2.1.0), UTC time, and Author. The branch revision number is 
+ in dot notation.</p>
+
+<h3>$Locker$</h3>
+
+<p class=Body>User who has the file exclusively locked (if any).</p>
+
+<h3>$Log$, $Log[x]$, $LogUTC$, and $LogUTC[x]$</h3>
+
+<p class=Body>File change history. $Log$ is a special keyword because it 
+ expands to a multiline entry. The $Log$ keyword expands to include information 
+ for each revision of the file. Revision history includes Revision Number, 
+ Date, Author, and Reason for Check In.</p>
+
+<p class=Body>Use $Log$ to retain entries for each revision within the 
+ file. </p>
+
+<p class=Body>Use $Log[x]$ to limit the number of revisions for which entries 
+ are retained. Replace x with the number of entries to be retained. For 
+ example, $Log[8] saves the entries for the most recent 8 revisions. If 
+ you replace x with a number less than 1 or with a nonnumeric character, 
+ StarTeam ignores x and retains all entries (as with $Log$).</p>
+
+<p class=Body>$LogUTC$ and $LogUTC[x]$ are the same as $Log$ and $Log[x]$ 
+ except that a UTC time replaces the local time. UTC times end in a “Z”.</p>
+
+<h3>$NoKeywords$</h3>
+
+<p class=Body>Turn off keyword expansion for the rest of the file.</p>
+
+<h3>$Project$</h3>
+
+<p class=Body>Name of the project.</p>
+
+<h3>$Revision$</h3>
+
+<p class=Body>Revision number (an integer).</p>
+
+<h3>$Folder$</h3>
+
+<p class=Body>Name of the folder.</p>
+
+<h3>$Workfile$</h3>
+
+<p class=Body>Unqualified name of the working file (for example, foo.cpp).</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

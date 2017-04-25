@@ -1,0 +1,300 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Reviewing the Security Event Log</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=copyright value="Copyright© 1995-2003, Borland Software Corporation. All rights reserved.">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=1608>
+<meta name=layout-width content=707>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<!--(Scripts)=======================================================-->
+
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="./ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Administering the Application\nManaging Server Logs\nReviewing the Security Event Log");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Reviewing the Security Event Log</h1>
+
+<p class=Body>You can view the application security event log at any time, 
+ provided that you have access rights to the server configuration. It is 
+ not a typical .log file, as its data is stored in the application database 
+ and cannot be accessed from the Server Administration tool. </p>
+
+<p class=Body>The log lists each secured event (such as logging on or off 
+ and creating items), the date and time it occurred, the ID of the user 
+ performing the operation, the IP address of the workstation from which 
+ the operation was initiated, the item acted upon, and whether the operation 
+ failed. </p>
+
+<p class=Body><span style="font-weight: bold;"><B>Note:</B></span> You can perform 
+ this function only on servers that are currently running.</p>
+
+<p class=Proc>To view the security event log:</p>
+
+<ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Do one of the following:</p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>On a computer that 
+ has the Server installed, select<span style="font-weight: bold;"><B> Start 
+ &gt; Programs &gt; StarTeam &gt; StarTeam Server x.x &gt; StarTeam Server</B></span>. 
+ </p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>From the client, 
+ select <span style="font-weight: bold;"><B>Start &gt; Programs &gt; StarTeam 
+ &gt; StarTeam client_name &gt; Server Administration</B></span> (available 
+ with custom installations only). </p></li>
+	</ul>
+	
+	<p class=List-1-text>These actions display the <span style="font-style: italic;"><I>Server 
+ Administration</I></span> dialog.</p>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select a server configuration 
+ from the left pane. &nbsp;If 
+ you have not yet logged onto the server configuration, you will be asked 
+ to do so. If you are using the client, you can access remote server configurations 
+ only.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>From the <span style="font-style: italic;"><I>Server 
+ Administration</I></span> dialog, do one of the following:</p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1-Indent><p class=Bullet-1-Indent>Click 
+ the <span style="font-weight: bold;"><B>Accounts</B></span> bar in the lower 
+ left panel. Then click the Security Log shortcut.</p></li>
+		
+		<li class=kadov-p-CBullet-1-Indent><p class=Bullet-1-Indent>From 
+ the menu, select <span style="font-weight: bold;"><B>Tools &gt; Accounts 
+ &gt; User Manager</B></span>.</p></li>
+	</ul>
+	
+	<p class=List-1-text>The<span style="font-style: italic;"><I> Security 
+ Log </I></span>dialog opens. &nbsp;</p>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select an event of interest 
+ from the <span style="font-weight: bold;"><B>Security event type</B></span> drop-down 
+ list box to see all events of that type. </p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>To print the data, select 
+ it and click the <span style="font-weight: bold;"><B>Print Selection</B></span> 
+ button.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>To reload the security event 
+ log and review the most recent entries, click <span style="font-weight: bold;"><B>Reload</B></span>. 
+ </p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Click <span style="font-weight: bold;"><B>OK</B></span> 
+ to exit the dialog.</p></li>
+</ol>
+
+<h2 class=Heading2norule>Event Types</h2>
+
+<p class=Body>The following types of events are included in the Security 
+ Event Log:</p>
+
+<h3><span style="font-weight: bold;"><B>Acquire item ownership</B></span> </h3>
+
+<p class=Body>Ownership is not implemented at this time.</p>
+
+<h3>Add item owner </h3>
+
+<p class=Body>At this time, indicates that a user created a folder or an 
+ item.</p>
+
+<h3>Add user/group</h3>
+
+<p class=Body>Indicates that a user or group was added to the server configuration.</p>
+
+<h3>Add/Edit container access rights</h3>
+
+<p class=Body>Indicates that access rights were added or changed for a 
+ group of objects contained in another object. For example, if you select<span 
+ style="font-weight: bold;"><B> Project &gt; Access Rights</B></span> and change 
+ access rights for all change requests in the project, that event fits 
+ in this category.</p>
+
+<h3>Add/Edit item access rights</h3>
+
+<p class=Body>Indicates that access rights were added or changed for a 
+ specific object. For example, if you change project access rights, that 
+ event shows up under this heading. If you change the access rights for 
+ a specific change request, that event fits in this category.</p>
+
+<h3>Delete container access rights</h3>
+
+<p class=Body>Indicates that access rights were deleted at the container 
+ level.</p>
+
+<h3>Delete item access rights</h3>
+
+<p class=Body>Indicates that access rights were deleted at the item level.</p>
+
+<h3>Delete item owner</h3>
+
+<p class=Body>Ownership is not implemented at this time.</p>
+
+<h3>Delete user/group</h3>
+
+<p class=Body>Indicates that a user or group was deleted.</p>
+
+<h3>Edit user/group</h3>
+
+<p class=Body>Indicates that the properties for user or group were changed 
+ in some way.</p>
+
+<h3>Force user logoff</h3>
+
+<p class=Body>Indicates that a user was forced to log off the server configuration.</p>
+
+<h3>Logon</h3>
+
+<p class=Body>Indicates that a user logged onto the server configuration.</p>
+
+<h3>Logon attempt: Suspended account</h3>
+
+<p class=Body>Indicates that a user attempted to log on, and the account 
+ was suspended.</p>
+
+<h3>Logon attempt: Account lockout</h3>
+
+<p class=Body>Indicates that a user attempted to log on, and the account 
+ was locked.</p>
+
+<h3>Logon attempt: Expired password</h3>
+
+<p class=Body>Indicates that a user attempted to log on, and the password 
+ had expired.</p>
+
+<h3>Logon attempt: No such logon name</h3>
+
+<p class=Body>Indicates that a user attempted to log on with a non-existent 
+ user name.</p>
+
+<h3>Logon attempt: Restricted access time</h3>
+
+<p class=Body>Indicates that a user attempted to log on at a time when 
+ he or she was not allowed access.</p>
+
+<h3>Logon failure</h3>
+
+<p class=Body>Indicates that an incorrect password was used during the 
+ log on process.</p>
+
+<h3>Logoff</h3>
+
+<p class=Body>Indicates that a user logged off the server configuration.</p>
+
+<h3>Item access check</h3>
+
+<p class=Body>Indicates that access rights were checked to see if the user 
+ could access a specific item.</p>
+
+<h3>Policy change</h3>
+
+<p class=Body>Indicates that a system policy has changed.</p>
+
+<h3>User status change</h3>
+
+<p class=Body>Indicates that an administrator suspended, reactivated, locked, 
+ unlocked or required a password change on a user's account.</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

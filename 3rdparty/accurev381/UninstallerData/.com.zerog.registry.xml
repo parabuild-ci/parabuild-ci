@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<registry install_date="2005-12-27 21:52:28" version="1.1" last_modified="2005-12-27 21:52:32">
+	<products>
+		<product name="AccuRev 3.8.1" id="b5f5adee-1ecd-11b2-b73e-e853b562a9d6" version="3.7.1.0" copyright="2004" info_url="" support_url="" location="D:\mor2\dev\bt\3rdparty\accurev381" last_modified="2005-12-27 21:52:28">
+			<vendor name="AccuRev" id="b5f5aded-1ecd-11b2-b73e-e853b562a9d6" home_page="" email="oleg@accurev.com"/>
+			<feature name="Help" last_modified="2005-12-27 21:52:30">
+			<![CDATA[This installs AccuRev 3.8.1 documentation.]]>
+				<component ref_id="b5f5c4a0-1ecd-11b2-b80e-e853b562a9d6" version="1.0.0.0" location="D:\mor2\dev\bt\3rdparty\accurev381\UninstallerData\Uninstall AccuRev.exe"/>
+				<component ref_id="b5f5c49e-1ecd-11b2-b80e-e853b562a9d6" version="1.0.0.0" location="D:\mor2\dev\bt\3rdparty\accurev381\LICENSE"/>
+				<component ref_id="b5f5c4d7-1ecd-11b2-b80e-e853b562a9d6" version="1.0.0.0" location="C:\Documents and Settings\All Users\Start Menu\Programs\AccuRev\AccuRev Documentation\AccuRev Concepts Manual.lnk"/>
+			</feature>
+			<feature name="Client" last_modified="2005-12-27 21:52:31">
+			<![CDATA[This installs AccuRev 3.8.1 Client software.]]>
+				<component ref_id="b5f5c4a0-1ecd-11b2-b80e-e853b562a9d6" version="1.0.0.0" location="D:\mor2\dev\bt\3rdparty\accurev381\UninstallerData\Uninstall AccuRev.exe"/>
+				<component ref_id="b5f5c49e-1ecd-11b2-b80e-e853b562a9d6" version="1.0.0.0" location="D:\mor2\dev\bt\3rdparty\accurev381\LICENSE"/>
+				<component ref_id="b5f5c4a2-1ecd-11b2-b80e-e853b562a9d6" version="1.0.0.0" location="D:\mor2\dev\bt\3rdparty\accurev381\bin\acserver.cnf"/>
+				<component ref_id="b5f5c4a4-1ecd-11b2-b80e-e853b562a9d6" version="1.0.0.0" location="C:\Documents and Settings\All Users\Start Menu\Programs\AccuRev\accurev.lnk"/>
+			</feature>
+		</product>
+	</products>
+	<components>
+		<component id="b5f5c4a4-1ecd-11b2-b80e-e853b562a9d6" version="1.0.0.0" name="C- Client" location="C:\Documents and Settings\All Users\Start Menu\Programs\AccuRev\accurev.lnk" vendor="AccuRev">
+			<resource keyfile="false" name="win_reg_entry" location="$INSTALLED$|HKEY_CURRENT_USER\SOFTWARE\AccuRev\AccuRev Studio||STRING|$DELETE$|HKEY_CURRENT_USER\SOFTWARE\AccuRev\AccuRev Studio|" type="win_reg_entry" uninstall="true"/>
+			<resource keyfile="false" name="win_reg_entry" location="$INSTALLED$|HKEY_CURRENT_USER\SOFTWARE\AccuRev\AccuRev Studio\3.0||STRING|$DELETE$|HKEY_CURRENT_USER\SOFTWARE\AccuRev\AccuRev Studio\3.0|" type="win_reg_entry" uninstall="true"/>
+			<resource keyfile="false" name="win_reg_entry" location="$INSTALLED$|HKEY_CURRENT_USER\SOFTWARE\AccuRev\AccuRev Studio\3.0|Debug|STRING|off$DELETE$|HKEY_CURRENT_USER\SOFTWARE\AccuRev\AccuRev Studio\3.0|Debug" type="win_reg_entry" uninstall="true"/>
+			<resource keyfile="false" name="win_reg_entry" location="$INSTALLED$|HKEY_LOCAL_MACHINE\SOFTWARE\AccuRev\AccuRevCM\3.0|SCCServerName|STRING|AccuRev$DELETE$|HKEY_LOCAL_MACHINE\SOFTWARE\AccuRev\AccuRevCM\3.0|SCCServerName" type="win_reg_entry" uninstall="true"/>
+			<resource keyfile="false" name="win_reg_entry" location="$INSTALLED$|HKEY_LOCAL_MACHINE\SOFTWARE\AccuRev\AccuRevCM\3.0|SCCServerPath|STRING|D:\mor2\dev\bt\3rdparty\accurev381\bin\SCCAcc.dll$DELETE$|HKEY_LOCAL_MACHINE\SOFTWARE\AccuRev\AccuRevCM\3.0|SCCServerPath" type="win_reg_entry" uninstall="true"/>
+			<resource keyfile="false" name="win_reg_entry" location="$INSTALLED$|HKEY_LOCAL_MACHINE\SOFTWARE\SourceCodeControlProvider\InstalledSCCProviders|AccuRev|STRING|SOFTWARE\AccuRev\AccuRevCM\3.0$DELETE$|HKEY_LOCAL_MACHINE\SOFTWARE\SourceCodeControlProvider\InstalledSCCProviders|AccuRev" type="win_reg_entry" uninstall="true"/>
+			<resource keyfile="false" name="acgui.ico" location="D:\mor2\dev\bt\3rdparty\accurev381\bin\acgui.ico" type="file" uninstall="true"/>
+			<resource keyfile="false" name="AccuRev.lnk" location="C:\Documents and Settings\All Users\Start Menu\Programs\AccuRev\AccuRev.lnk" type="shortcut" uninstall="true"/>
+			<resource keyfile="false" name="SwitchSCC.ico" location="D:\mor2\dev\bt\3rdparty\accurev381\bin\SwitchSCC.ico" type="file" uninstall="true"/>
+			<resource keyfile="false" name="Switch SCC Integration.lnk" location="C:\Documents and Settings\All Users\Start Menu\Programs\AccuRev\Switch SCC Integration.lnk" type="shortcut" uninstall="true"/>
+			<resource keyfile="false" name="acgui.ico" location="D:\mor2\dev\bt\3rdparty\accurev381\bin\acgui.ico" type="file" uninstall="true"/>
+			<resource keyfile="false" name="AccuRev.lnk" location="C:\Documents and Settings\All Users\Desktop\AccuRev.lnk" type="shortcut" uninstall="true"/>
+		</component>
+		<component id="b5f5c4a0-1ecd-11b2-b80e-e853b562a9d6" version="1.0.0.0" name="InstallAnywhere Uninstall Component" location="D:\mor2\dev\bt\3rdparty\accurev381\UninstallerData\Uninstall AccuRev.exe" vendor="AccuRev">
+			<resource keyfile="false" name="AccuRev_3.8.1_InstallLog.log" location="D:\mor2\dev\bt\3rdparty\accurev381\AccuRev_3.8.1_InstallLog.log" type="file" uninstall="true"/>
+			<resource keyfile="false" name="UninstallerData" location="D:\mor2\dev\bt\3rdparty\accurev381\UninstallerData" type="directory" uninstall="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="uninstaller.jar" location="D:\mor2\dev\bt\3rdparty\accurev381\UninstallerData\uninstaller.jar" type="file" uninstall="true"/>
+			<resource keyfile="true" name="Uninstall AccuRev.exe" location="D:\mor2\dev\bt\3rdparty\accurev381\UninstallerData\Uninstall AccuRev.exe" type="executable" uninstall="true"/>
+			<resource keyfile="false" name="Uninstall AccuRev.lax" location="D:\mor2\dev\bt\3rdparty\accurev381\UninstallerData\Uninstall AccuRev.lax" type="file" uninstall="true"/>
+			<resource keyfile="false" name="resource" location="D:\mor2\dev\bt\3rdparty\accurev381\UninstallerData\resource" type="directory" uninstall="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="iawin32.dll" location="D:\mor2\dev\bt\3rdparty\accurev381\UninstallerData\resource\iawin32.dll" type="file" uninstall="true"/>
+			<resource keyfile="false" name="remove.exe" location="D:\mor2\dev\bt\3rdparty\accurev381\UninstallerData\resource\remove.exe" type="file" uninstall="true"/>
+			<resource keyfile="false" name="win_reg_entry" location="$INSTALLED$|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\AccuRev 3.8.1||STRING|$DELETE$|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\AccuRev 3.8.1|" type="win_reg_entry" uninstall="true"/>
+			<resource keyfile="false" name="win_reg_entry" location="$INSTALLED$|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\AccuRev 3.8.1|DisplayName|STRING|AccuRev 3.8.1$DELETE$|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\AccuRev 3.8.1|DisplayName" type="win_reg_entry" uninstall="true"/>
+			<resource keyfile="false" name="win_reg_entry" location="$INSTALLED$|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\AccuRev 3.8.1|UninstallString|STRING|&quot;D:\mor2\dev\bt\3rdparty\accurev381\UninstallerData\Uninstall AccuRev.exe&quot;$DELETE$|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\AccuRev 3.8.1|UninstallString" type="win_reg_entry" uninstall="true"/>
+			<resource keyfile="false" name="win_reg_entry" location="$INSTALLED$|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\AccuRev 3.8.1|Publisher|STRING|AccuRev$DELETE$|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\AccuRev 3.8.1|Publisher" type="win_reg_entry" uninstall="true"/>
+			<resource keyfile="false" name="win_reg_entry" location="$INSTALLED$|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\AccuRev 3.8.1|Contact|STRING|oleg@accurev.com$DELETE$|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\AccuRev 3.8.1|Contact" type="win_reg_entry" uninstall="true"/>
+			<resource keyfile="false" name="win_reg_entry" location="$INSTALLED$|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\AccuRev 3.8.1|ProductID|STRING|b5f5adee-1ecd-11b2-b73e-e853b562a9d6$DELETE$|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\AccuRev 3.8.1|ProductID" type="win_reg_entry" uninstall="true"/>
+			<resource keyfile="false" name="win_reg_entry" location="$INSTALLED$|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\AccuRev 3.8.1|InstallLocation|STRING|D:\mor2\dev\bt\3rdparty\accurev381$DELETE$|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\AccuRev 3.8.1|InstallLocation" type="win_reg_entry" uninstall="true"/>
+			<resource keyfile="false" name="win_reg_entry" location="$INSTALLED$|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\AccuRev 3.8.1|InstallDate|STRING|Tue Dec 27 21:52:29 PST 2005$DELETE$|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\AccuRev 3.8.1|InstallDate" type="win_reg_entry" uninstall="true"/>
+			<resource keyfile="false" name="win_reg_entry" location="$INSTALLED$|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\AccuRev 3.8.1|DisplayVersion|STRING|3.7.1.0$DELETE$|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\AccuRev 3.8.1|DisplayVersion" type="win_reg_entry" uninstall="true"/>
+			<resource keyfile="false" name="ZGWin32LaunchHelper.exe" location="D:\mor2\dev\bt\3rdparty\accurev381\UninstallerData\resource\ZGWin32LaunchHelper.exe" type="file" uninstall="true"/>
+			<resource keyfile="false" name=".com.zerog.registry.xml" location="D:\mor2\dev\bt\3rdparty\accurev381\UninstallerData\.com.zerog.registry.xml" type="file" uninstall="true"/>
+		</component>
+		<component id="b5f5c4a2-1ecd-11b2-b80e-e853b562a9d6" version="1.0.0.0" name="C- Client, Server" location="D:\mor2\dev\bt\3rdparty\accurev381\bin\acserver.cnf" vendor="AccuRev">
+			<resource keyfile="false" name="bin" location="D:\mor2\dev\bt\3rdparty\accurev381\bin" type="directory" uninstall="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="fw.jar" location="D:\mor2\dev\bt\3rdparty\accurev381\bin\fw.jar" type="file" uninstall="true"/>
+			<resource keyfile="false" name="diff.jar" location="D:\mor2\dev\bt\3rdparty\accurev381\bin\diff.jar" type="file" uninstall="true"/>
+			<resource keyfile="false" name="werken.opt.jar" location="D:\mor2\dev\bt\3rdparty\accurev381\bin\werken.opt.jar" type="file" uninstall="true"/>
+			<resource keyfile="false" name="xercesImpl.jar" location="D:\mor2\dev\bt\3rdparty\accurev381\bin\xercesImpl.jar" type="file" uninstall="true"/>
+			<resource keyfile="false" name="oro.jar" location="D:\mor2\dev\bt\3rdparty\accurev381\bin\oro.jar" type="file" uninstall="true"/>
+			<resource keyfile="false" name="ac_sunjava.jar" location="D:\mor2\dev\bt\3rdparty\accurev381\bin\ac_sunjava.jar" type="file" uninstall="true"/>
+			<resource keyfile="false" name="com.accurev.eclipse.zip" location="D:\mor2\dev\bt\3rdparty\accurev381\bin\com.accurev.eclipse.zip" type="file" uninstall="true"/>
+			<resource keyfile="false" name="xml-apis.jar" location="D:\mor2\dev\bt\3rdparty\accurev381\bin\xml-apis.jar" type="file" uninstall="true"/>
+			<resource keyfile="false" name="acserverctl" location="D:\mor2\dev\bt\3rdparty\accurev381\bin\acserverctl" type="file" uninstall="true"/>
+			<resource keyfile="false" name="accurev.exe" location="D:\mor2\dev\bt\3rdparty\accurev381\bin\accurev.exe" type="file" uninstall="true"/>
+			<resource keyfile="false" name="accurevw.exe" location="D:\mor2\dev\bt\3rdparty\accurev381\bin\accurevw.exe" type="file" uninstall="true"/>
+			<resource keyfile="false" name="acdiff.exe" location="D:\mor2\dev\bt\3rdparty\accurev381\bin\acdiff.exe" type="file" uninstall="true"/>
+			<resource keyfile="false" name="diffw.exe" location="D:\mor2\dev\bt\3rdparty\accurev381\bin\diffw.exe" type="file" uninstall="true"/>
+			<resource keyfile="false" name="SwitchSCC.exe" location="D:\mor2\dev\bt\3rdparty\accurev381\bin\SwitchSCC.exe" type="file" uninstall="true"/>
+			<resource keyfile="false" name="SCCAcc.dll" location="D:\mor2\dev\bt\3rdparty\accurev381\bin\SCCAcc.dll" type="file" uninstall="true"/>
+			<resource keyfile="false" name="acdiff3.exe" location="D:\mor2\dev\bt\3rdparty\accurev381\bin\acdiff3.exe" type="file" uninstall="true"/>
+			<resource keyfile="false" name="SCCAcc.zip" location="D:\mor2\dev\bt\3rdparty\accurev381\bin\SCCAcc.zip" type="file" uninstall="true"/>
+			<resource keyfile="false" name="ExPat-Copyright.txt" location="D:\mor2\dev\bt\3rdparty\accurev381\bin\ExPat-Copyright.txt" type="file" uninstall="true"/>
+			<resource keyfile="false" name="libexpat.dll" location="D:\mor2\dev\bt\3rdparty\accurev381\bin\libexpat.dll" type="file" uninstall="true"/>
+			<resource keyfile="false" name="SCCAcc-ReadMe.txt" location="D:\mor2\dev\bt\3rdparty\accurev381\bin\SCCAcc-ReadMe.txt" type="file" uninstall="true"/>
+			<resource keyfile="false" name="maintain.exe" location="D:\mor2\dev\bt\3rdparty\accurev381\bin\maintain.exe" type="file" uninstall="true"/>
+			<resource keyfile="false" name="accurev_server.exe" location="D:\mor2\dev\bt\3rdparty\accurev381\bin\accurev_server.exe" type="file" uninstall="true"/>
+			<resource keyfile="false" name="lax.jar" location="D:\mor2\dev\bt\3rdparty\accurev381\bin\lax.jar" type="file" uninstall="true"/>
+			<resource keyfile="false" name="acgui.exe" location="D:\mor2\dev\bt\3rdparty\accurev381\bin\acgui.exe" type="executable" uninstall="true"/>
+			<resource keyfile="false" name="acgui.lax" location="D:\mor2\dev\bt\3rdparty\accurev381\bin\acgui.lax" type="file" uninstall="true"/>
+			<resource keyfile="false" name="lax.jar" location="D:\mor2\dev\bt\3rdparty\accurev381\bin\lax.jar" type="file" uninstall="true"/>
+			<resource keyfile="false" name="acdiffgui.exe" location="D:\mor2\dev\bt\3rdparty\accurev381\bin\acdiffgui.exe" type="executable" uninstall="true"/>
+			<resource keyfile="false" name="acdiffgui.lax" location="D:\mor2\dev\bt\3rdparty\accurev381\bin\acdiffgui.lax" type="file" uninstall="true"/>
+			<resource keyfile="false" name="acclient.cnf" location="D:\mor2\dev\bt\3rdparty\accurev381\bin\acclient.cnf" type="file" uninstall="true"/>
+			<resource keyfile="false" name="server_start.bat" location="D:\mor2\dev\bt\3rdparty\accurev381\bin\server_start.bat" type="file" uninstall="true"/>
+			<resource keyfile="false" name="acserverctl" location="D:\mor2\dev\bt\3rdparty\accurev381\bin\acserverctl" type="file" uninstall="true"/>
+			<resource keyfile="false" name="customcode" location="com.zerog.ia.customcode.util.fileutils.CopyFile &quot;C:\\WINNT\\vbaddin.ini.bak&quot;" type="customcode" uninstall="true"/>
+			<resource keyfile="false" name="customcode" location="com.accurev.ia.customcode.FixVB6ConfigFile " type="customcode" uninstall="true"/>
+		</component>
+		<component id="b5f5c49e-1ecd-11b2-b80e-e853b562a9d6" version="1.0.0.0" name="C- Client, Help, Server" location="D:\mor2\dev\bt\3rdparty\accurev381\LICENSE" vendor="AccuRev">
+			<resource keyfile="false" name="UninstallerData" location="D:\mor2\dev\bt\3rdparty\accurev381\UninstallerData" type="directory" uninstall="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="customcode" location="com.accurev.ia.customcode.UninstallAccuRevService " type="customcode" uninstall="true"/>
+			<resource keyfile="false" name="win_reg_entry" location="$INSTALLED$|HKEY_LOCAL_MACHINE\SOFTWARE\AccuRev||STRING|$DELETE$|HKEY_LOCAL_MACHINE\SOFTWARE\AccuRev|" type="win_reg_entry" uninstall="true"/>
+			<resource keyfile="false" name="win_reg_entry" location="$INSTALLED$|HKEY_LOCAL_MACHINE\SOFTWARE\AccuRev\AccuRevCM||STRING|$DELETE$|HKEY_LOCAL_MACHINE\SOFTWARE\AccuRev\AccuRevCM|" type="win_reg_entry" uninstall="true"/>
+			<resource keyfile="false" name="win_reg_entry" location="$INSTALLED$|HKEY_LOCAL_MACHINE\SOFTWARE\AccuRev\AccuRevCM\3.0||STRING|$DELETE$|HKEY_LOCAL_MACHINE\SOFTWARE\AccuRev\AccuRevCM\3.0|" type="win_reg_entry" uninstall="true"/>
+			<resource keyfile="false" name="win_reg_entry" location="$INSTALLED$|HKEY_LOCAL_MACHINE\SOFTWARE\AccuRev\AccuRevCM\3.0|InstallPath|STRING|D:\mor2\dev\bt\3rdparty\accurev381$DELETE$|HKEY_LOCAL_MACHINE\SOFTWARE\AccuRev\AccuRevCM\3.0|InstallPath" type="win_reg_entry" uninstall="true"/>
+			<resource keyfile="false" name="win_reg_entry" location="$INSTALLED$|HKEY_CURRENT_USER\SOFTWARE\AccuRev||STRING|$DELETE$|HKEY_CURRENT_USER\SOFTWARE\AccuRev|" type="win_reg_entry" uninstall="true"/>
+			<resource keyfile="false" name="win_reg_entry" location="$INSTALLED$|HKEY_CURRENT_USER\SOFTWARE\AccuRev\AccuRevCM||STRING|$DELETE$|HKEY_CURRENT_USER\SOFTWARE\AccuRev\AccuRevCM|" type="win_reg_entry" uninstall="true"/>
+			<resource keyfile="false" name="win_reg_entry" location="$INSTALLED$|HKEY_CURRENT_USER\SOFTWARE\AccuRev\AccuRevCM\3.0||STRING|$DELETE$|HKEY_CURRENT_USER\SOFTWARE\AccuRev\AccuRevCM\3.0|" type="win_reg_entry" uninstall="true"/>
+			<resource keyfile="false" name="win_reg_entry" location="$INSTALLED$|HKEY_CURRENT_USER\SOFTWARE\AccuRev\AccuRevCM\3.0|InstallPath|STRING|D:\mor2\dev\bt\3rdparty\accurev381$DELETE$|HKEY_CURRENT_USER\SOFTWARE\AccuRev\AccuRevCM\3.0|InstallPath" type="win_reg_entry" uninstall="true"/>
+			<resource keyfile="false" name="LICENSE.TXT" location="D:\mor2\dev\bt\3rdparty\accurev381\LICENSE.TXT" type="file" uninstall="true"/>
+			<resource keyfile="false" name="LICENSE.ico" location="D:\mor2\dev\bt\3rdparty\accurev381\LICENSE.ico" type="file" uninstall="true"/>
+			<resource keyfile="false" name="License.lnk" location="C:\Documents and Settings\All Users\Start Menu\Programs\AccuRev\License.lnk" type="shortcut" uninstall="true"/>
+			<resource keyfile="false" name="Uninstall AccuRev.ico" location="D:\mor2\dev\bt\3rdparty\accurev381\UninstallerData\Uninstall AccuRev.ico" type="file" uninstall="true"/>
+			<resource keyfile="false" name="Uninstall AccuRev.lnk" location="C:\Documents and Settings\All Users\Start Menu\Programs\AccuRev\Uninstall AccuRev.lnk" type="shortcut" uninstall="true"/>
+		</component>
+		<component id="b5f5c4d7-1ecd-11b2-b80e-e853b562a9d6" version="1.0.0.0" name="C- Help" location="C:\Documents and Settings\All Users\Start Menu\Programs\AccuRev\AccuRev Documentation\AccuRev Concepts Manual.lnk" vendor="AccuRev">
+			<resource keyfile="false" name="doc" location="D:\mor2\dev\bt\3rdparty\accurev381\doc" type="directory" uninstall="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="AccuRev_Admin.pdf" location="D:\mor2\dev\bt\3rdparty\accurev381\doc\AccuRev_Admin.pdf" type="file" uninstall="true"/>
+			<resource keyfile="false" name="AccuRev_Concepts.pdf" location="D:\mor2\dev\bt\3rdparty\accurev381\doc\AccuRev_Concepts.pdf" type="file" uninstall="true"/>
+			<resource keyfile="false" name="AccuRev_Dispatch.pdf" location="D:\mor2\dev\bt\3rdparty\accurev381\doc\AccuRev_Dispatch.pdf" type="file" uninstall="true"/>
+			<resource keyfile="false" name="AccuRev_Integrations.pdf" location="D:\mor2\dev\bt\3rdparty\accurev381\doc\AccuRev_Integrations.pdf" type="file" uninstall="true"/>
+			<resource keyfile="false" name="AccuRev_Notes.pdf" location="D:\mor2\dev\bt\3rdparty\accurev381\doc\AccuRev_Notes.pdf" type="file" uninstall="true"/>
+			<resource keyfile="false" name="AccuRev_User_CLI.pdf" location="D:\mor2\dev\bt\3rdparty\accurev381\doc\AccuRev_User_CLI.pdf" type="file" uninstall="true"/>
+			<resource keyfile="false" name="AccuRev_User_GUI.pdf" location="D:\mor2\dev\bt\3rdparty\accurev381\doc\AccuRev_User_GUI.pdf" type="file" uninstall="true"/>
+			<resource keyfile="false" name="get_acquainted.pdf" location="D:\mor2\dev\bt\3rdparty\accurev381\doc\get_acquainted.pdf" type="file" uninstall="true"/>
+			<resource keyfile="false" name="getacq_titlepage.pdf" location="D:\mor2\dev\bt\3rdparty\accurev381\doc\getacq_titlepage.pdf" type="file" uninstall="true"/>
+			<resource keyfile="false" name="gui_basic_commands_355.pdf" location="D:\mor2\dev\bt\3rdparty\accurev381\doc\gui_basic_commands_355.pdf" type="file" uninstall="true"/>
+			<resource keyfile="false" name="AccuRev Documentation" location="C:\Documents and Settings\All Users\Start Menu\Programs\AccuRev\AccuRev Documentation" type="directory" uninstall="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="true" name="AccuRev Concepts Manual.lnk" location="C:\Documents and Settings\All Users\Start Menu\Programs\AccuRev\AccuRev Documentation\AccuRev Concepts Manual.lnk" type="shortcut" uninstall="true"/>
+			<resource keyfile="false" name="AccuRev User&apos;s Guide (GUI).lnk" location="C:\Documents and Settings\All Users\Start Menu\Programs\AccuRev\AccuRev Documentation\AccuRev User&apos;s Guide (GUI).lnk" type="shortcut" uninstall="true"/>
+			<resource keyfile="false" name="AccuRev User&apos;s Guide (CLI).lnk" location="C:\Documents and Settings\All Users\Start Menu\Programs\AccuRev\AccuRev Documentation\AccuRev User&apos;s Guide (CLI).lnk" type="shortcut" uninstall="true"/>
+			<resource keyfile="false" name="AccuRev Dispatch Manual.lnk" location="C:\Documents and Settings\All Users\Start Menu\Programs\AccuRev\AccuRev Documentation\AccuRev Dispatch Manual.lnk" type="shortcut" uninstall="true"/>
+			<resource keyfile="false" name="AccuRev Administrator&apos;s Guide.lnk" location="C:\Documents and Settings\All Users\Start Menu\Programs\AccuRev\AccuRev Documentation\AccuRev Administrator&apos;s Guide.lnk" type="shortcut" uninstall="true"/>
+			<resource keyfile="false" name="AccuRev Integrations Manual.lnk" location="C:\Documents and Settings\All Users\Start Menu\Programs\AccuRev\AccuRev Documentation\AccuRev Integrations Manual.lnk" type="shortcut" uninstall="true"/>
+			<resource keyfile="false" name="AccuRev Technical Notes.lnk" location="C:\Documents and Settings\All Users\Start Menu\Programs\AccuRev\AccuRev Documentation\AccuRev Technical Notes.lnk" type="shortcut" uninstall="true"/>
+		</component>
+	</components>
+</registry>

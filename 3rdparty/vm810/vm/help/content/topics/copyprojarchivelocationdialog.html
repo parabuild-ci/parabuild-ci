@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Copy Project/Select Archive Location Dialog Box</TITLE>
+<!--<copyprojarchivelocationdialog.html>-->
+<!--<index parent="projects" label="Copy Project/Select Archive Location dialog box" anchor="copyprojarchivelocation">-->
+<!--<index parent="archives" label="Copy Project/Select Archive Location dialog box" anchor="copyprojarchivelocation">-->
+<!--<index parent="copying" label="Copy Project/Select Archive Location dialog box" anchor="copyprojarchivelocation">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiArchivesWizardPage"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="copyprojarchivelocation"></A>Copy Project/Select Archive Location Dialog Box</H1>
+<P>Use the Select Archive Location dialog box of the Copy Project wizard (Edit | Copy) to select an archive location for the new project.</P>
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><b>Archives</b></td>
+		<td><ul><li><B>Use existing archive location: </b>
+		<!--<control name="CopyOptionsArchives.REFERENCEARCHIVES_RB">-->
+		Select to reference the archives in their original location. Future archive-creation operations will create new archives in the archives directory of the project database.
+		<!--</control>--><br>
+		<li><b>Copy archives to project location:</b> 
+		<!--<control name="CopyOptionsArchives.COPYARCHIVES_RB">-->
+		Select to copy the archives from their current location to the project database or project archive location.
+		<!--</control>--><br>
+		<li><b>Keep specified revision and discard change history:</b> 
+		<!--<control name="CopyOptionsArchives.BASELINE_CB">-->
+		Select to enable the selection of a specified revision as the base revision (starting point) for the new archive. Then enter a version label or promotion group to specify a revision. Note that this option is not available when copying 5.3/6.0 projects or project roots.<!--</control>--><br>
+		<li><b>Revision field:</b> 
+		<!--<control name="CopyOptionsArchives.BASELINE_EDIT">-->
+		Enter a version label or promotion group to specify a revision to use as the base revision for the new archive, or click the Browse button to select one. Version Manager discards all other revisions and their change history for the new archive. Note that this option is not available when copying 5.3/6.0 projects or project roots.</ul>
+		<!--</control>-->
+		</TD>
+	</TR>
+	<TR>
+		<TD><b>Include subprojects</b></TD>
+		<TD><!--<control name="CopyOptionsArchives.RECURSIVE_CB">-->
+		Select to copy all subprojects beneath the project you are copying.<!--</control>--> This field is available only if the project you are copying contains subprojects.
+		</TD>
+		</TR>
+</TABLE>
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="copyprojbrowsedialog.html">Copy Project - Browse Location Dialog Box</A></TD>
+		<TD><A HREF="copyprojcreateprojdbdialog.html">Copy Project - Create Project Database Dialog Box</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="copyprojconfigacdbdialog.html">Copy Project - Configuration File and Access Control Database Dialog Box</A></TD>
+		<TD><A HREF="copyfolder.html">Copying Folders</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="copyproject.html">Copying Projects</A></TD>
+		<TD><A HREF="copyprjdb.html">Copying Project Databases</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

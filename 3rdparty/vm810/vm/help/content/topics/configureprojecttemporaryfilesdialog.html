@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Configure Project Dialog Box/Temporary Files</TITLE>
+<!--<configureprojecttemporaryfilesdialog.html>-->
+<!--<index parent="configuring" label="Configure Project/Temporary Files dialog box" anchor="configureprojecttemporaryfilesdialog">-->
+<!--<index parent="temporary_files" label="Configure Project/Temporary Files dialog box" anchor="configureprojecttemporaryfilesdialog">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiConfigureProjectDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="configureprojecttemporaryfilesdialog"></A>Configure Project/Temporary Files</H1>
+<P>Use the Configure Project dialog box (Admin | Configure Project | General Tab | Miscellaneous | Temporary Files) to set the options for <a href="tempfile2.html">temporary files</a>. The options are:</P>
+<UL>
+	<LI>The directory where Version Manager creates temporary files that are generated during delta processing.
+	<LI>The directory where Version Manager stores the temporary copies of archives before updating them.
+</UL>
+
+<p><b>NOTE</b> If you are using a <a href="about_file_server.html">Version Manager File Server</a>, do not set WorkDir or ArchiveWork to a directory that is mapped to the file server.</p>
+
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+	<TD COLSPAN=2><CENTER><B>Miscellaneous | Temporary Files</B></CENTER></TD>
+	</TR>
+	<TR><TD><b>Temporary Archive Copies Directory</b></TD>
+		<TD><!--<control name="ConfigureProjectGeneral.ARCHIVE_COPIES_EDIT">-->
+		Enter the directory in which Version Manager will store the temporary archive copies or click the Browse button and select it.
+		<!--</control>--></TD>
+	</TR>
+	<TR><TD><b>Temporary Internal Files Directory</b></TD>
+		<TD><!--<control name="ConfigureProjectGeneral.INTERNAL_FILES_EDIT">-->
+		Enter the directory in which Version Manager will create the temporary internal files or click the Browse button to select it.
+		<!--</control>--></TD>
+	</TR>
+</TABLE>
+<h2>See Also</h2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="settempfileoptions.html">Setting Temporary File Options</A></TD>
+		<TD><A HREF="tempfileoptions.html">Temporary File Options</A></TD>
+	</tr>
+
+
+</TABLE>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>
+

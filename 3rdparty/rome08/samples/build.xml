@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project default="war" name="rome-samples" basedir=".">
+    <import file="../../build.xml"/>
+  
+    <target name="init" depends="rome.init,subproject.init" />
+  
+    <path id="command.classpath">
+        <fileset dir="${libdir}">
+            <include name="*.jar" />
+        </fileset>
+        <pathelement location="target/${final.name}.jar" />
+        <fileset dir="src/java"/>
+    </path>
+
+    <target name="run-aggr" depends="jar">
+        <java classname="com.sun.syndication.samples.FeedAggregator"
+            output="toto" fork="true">
+            <arg value="rss_2.0"/>
+            <arg value="http://blogs.sun.com/roller/rss/rome"/>
+            <arg value="http://blogs.sun.com/roller/rss/tucu"/>
+            <arg value="http://blogs.sun.com/roller/rss/pat"/>
+            <classpath>
+                <path refid="command.classpath"/>
+            </classpath>
+        </java>
+        <concat>
+            <filelist dir="." files="toto"/>
+        </concat>
+    </target>
+    <target name="run-conv" depends="jar">
+        <java classname="com.sun.syndication.samples.FeedConverter"
+            output="toto" fork="true">
+            <arg value="rss_1.0"/>
+            <arg value="http://blogs.sun.com/roller/rss/tucu"/>
+            <classpath>
+                <path refid="command.classpath"/>
+            </classpath>
+        </java>
+        <concat>
+            <filelist dir="." files="toto"/>
+        </concat>
+    </target>
+    <target name="run-read" depends="compile">
+        <java classname="com.sun.syndication.samples.FeedReader"
+            output="toto" fork="true">
+            <arg value="http://blogs.sun.com/roller/rss/tucu"/>
+            <classpath>
+                <path refid="command.classpath"/>
+            </classpath>
+        </java>
+        <concat>
+            <filelist dir="." files="toto"/>
+        </concat>
+    </target>
+    <target name="run-write" depends="jar">
+        <java classname="com.sun.syndication.samples.FeedWriter" fork="true">
+            <arg value="rss_0.92"/>
+            <arg value="myfeed.xml"/>
+            <classpath>
+                <path refid="command.classpath"/>
+            </classpath>
+        </java>
+    </target>
+    <target name="run-sampleModule" depends="jar">
+        <java classname="com.sun.syndication.samples.FeedConverter"
+            output="toto" fork="true">
+            <arg value="rss_1.0"/>
+            <arg value="file://${basedir}/src/data/FeedWithSampleModule.xml"/>
+            <classpath>
+                <path refid="command.classpath"/>
+            </classpath>
+        </java>
+        <concat>
+            <filelist dir="." files="toto"/>
+        </concat>
+    </target>
+
+    <target name="war" depends="jar">
+      <war warfile="target/rome-samples.war" webxml="src/webapp/WEB-INF/web.xml">
+        <classes dir="${defaulttargetdir}/classes"/>
+        <lib dir="${libdir}">
+          <exclude name="servlet*.jar" />
+        </lib>
+        <lib file="../../${final.name}.jar"/>
+      </war>
+    </target>
+
+    <target name="get-deps" depends="rome.get-deps">
+      <get dest="${libdir}/servletapi-2.3.jar" usetimestamp="true" ignoreerrors="true" src="http://www.ibiblio.org/maven/servletapi/jars/servletapi-2.3.jar" />
+    </target>
+</project>

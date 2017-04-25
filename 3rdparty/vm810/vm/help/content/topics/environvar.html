@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Environment Variable Method</TITLE>
+<!--<environvar.html>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="environvar"></A>Environment Variable Method</H1>
+<p>
+If event information is passed through environment variables, the event trigger queries the environment for values it needs. For example, a batch file might query %EVENTARCHIVE%, a UNIX shell script might query $EVENTARCHIVE, a build script would query $(EVENTARCHIVE), and a C program would perform a getenv("EVENTARCHIVE") function call.
+</P>
+<P>
+An example of a Windows batch file named POSTPUT.BAT:
+</P>
+<P>
+<FONT FACE="COURIER NEW">
+H:\PUBLIC\SEND "Just checked in %EVENTWORKFILE%, revision %EVENTREVISION% to group %EVENTGROUP%"</FONT>
+</P>
+<P>
+The event trigger
+</P>
+<P>
+<FONT FACE="COURIER NEW">POSTPUT C:\BIN\POSTPUT.BAT</FONT>
+</P>
+<P>
+sends a message to a work group after Version Manager successfully checks in a workfile.
+</P>
+<P>
+An example of a UNIX shell file named postput:
+</P>
+<P>
+<FONT FACE="COURIER NEW">/usr/pvcstools/send "Just checked in $EVENTWORKFILE, revision $EVENTREVISION to group $EVENTGROUP"</FONT>
+</P>
+<P>
+The event trigger
+</P>
+<P>
+<FONT FACE="COURIER NEW">POSTPUT /usr/bin/postput</FONT>
+</P>
+<P>
+sends a message to a work group after Version Manager successfully checks in a workfile.
+</P>
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a href="cmdlinemacro.html">Command-line Macro Method</a></TD>
+		<TD><a href="parameterfile.html">Parameter File Method</a></TD>
+	</TR>
+	<TR>
+		<TD><a href="examplesoftriggers.html">Examples of Event Triggers</a></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

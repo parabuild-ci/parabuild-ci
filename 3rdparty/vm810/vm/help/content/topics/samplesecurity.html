@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Sample Security Report</TITLE>
+<!--<samplesecurity.html>-->
+<!--<index parent="reports" label="sample security report" anchor="samplesecurity">-->
+<!--<index parent="security" label="sample security report" anchor="samplesecurity">-->
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="samplesecurity"></A>Sample Security Report</H1>
+<P>Following is an example of a security report. This report shows that two custom privilege sets, five users, and two groups are defined in the access control database.</P>
+
+<p><FONT FACE="COURIER NEW">
+&#35; Define two custom privilege sets<br>
+privilege Update: Unlimited, NoDeleteRev, &#92;<br>
+	NoDeleteVersion<br>
+privilege View: Get, ViewArchive<br>
+&#35; Define five users<br>
+user annab/annab (SuperUser)<br>
+user jimp/jimp &#40;&#41;<br>
+user kayj/kayj &#40;&#41;<br>
+user samg/samg &#40;&#41;<br>
+user timf/timf &#40;&#41;<br>
+&#35; Define two groups<br>
+group PROGRAM (Update): jimp kayj<br>
+group DOCUMENT (View): samg timf</FONT></p>
+
+<p>In a security report:</p>
+<ul>
+	<li>Comment lines are preceded by either a pound sign &#40;#&#41; or an exclamation point &#40;!&#41;.
+	<li>A backslash &#40;&#92;&#41; is used to continue a line.
+	<li>Each privilege set, User, and group must start a new line, only one on a line.
+	<li>Each privilege set definition line contains the name of the privilege set followed by the privileges that define the privilege set.
+	<li>Each User definition line contains the user ID/password and the given privileges or privilege set in parentheses. A password does not have to be specified.
+	<li>Each group definition line contains the name of the group, the given privileges or privilege set in parentheses and the Users assigned to the group.
+</ul>
+<p>In the example above, the three lines below the first comment line define custom privilege sets. The privileges listed after the colon &#40;:&#41; on the privilege lines specify the privileges that define
+the privilege set. Annab is the Administrator and is given SuperUser privileges. This means she can perform any Version Manager action on any archive. The other four Users have Unlimited privileges, which is indicated by the empty parentheses &#40; &#41;. Then, there are two groups defined, PROGRAM and DOCUMENT. The PROGRAM group has the Update privilege set assigned to it, and the DOCUMENT groups has the View privilege set assigned to it. The user IDs listed after the colon &#40;:&#41; on the group lines specify the Users who are part of each group.</p>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="aboutsecurityreport.html">About Security Reports</A></TD>
+		<TD><A HREF="aboutreports.html">About Reports</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="generatesecurityreport.html">Generating Security Reports</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

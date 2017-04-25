@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Moving Version Labels</TITLE>
+<!--<changetypeversionlabel.html>-->
+
+<!--<index parent="version_labels" label="changing the type" anchor="changetypeversionlabel">-->
+<!--<index parent="floating_version_labels" label="changing to fixed" anchor="changetypeversionlabel">-->
+<!--<index parent="fixed_version_labels" label="changing to floating" anchor="changetypeversionlabel">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="changetypeversionlabel"></A>Changing the Version Label Type (Fixed vs. Floating)</H1>
+<P>Once you have assigned a version label to a revision, project, or project database, you can change its type from <A HREF="floatfixlabels.html">fixed to floating or from floating to fixed </a>. 
+
+<H2>To change a version label type:</H2>
+<OL>
+	<LI>Select the versioned file(s), project, folder, or project database that contains the version label you want to change.<BR><BR>
+	<LI>Select Actions | Version Label | Assign.  The Assign Version Label dialog box appears.<BR><BR>
+	<LI>In the <b>Assign Version Label</b> field, enter the version label that you want to change.<BR><BR>
+	<LI>In the <B>To revision</B> field, do one of the following: <br><br>
+		<ul>
+		<li type="disc">If you are changing a fixed label to a floating label, leave [Default Revision] in this field or leave the field blank.
+		<li>If you are changing a floating label to a fixed label, enter the revision number, version label, or promotion group identifying the specific revision or click the Browse button to select the revision.
+
+		</ul><BR><BR>
+
+<LI>Select the <b>Float label with tip</b> check box if you are changing a fixed label to a floating label. If you are changing a floating label to a fixed label, do not select this check box.   <BR><BR>
+<li>From the <b>If version label exists</b> drop-down list, select Reassign.<BR><BR>
+<li>If you are changing a version label assigned to a project or project database, select the <b>Include files in subprojects</b> check box to change the version label in all of the versioned files contained in the project or project database. <BR><BR> 
+
+<LI>Click OK.
+</OL>
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+			<TD><A HREF="aboutversionlabels.html">About Version Labels</A></TD>
+	<TD><A HREF="assignversionlabeldialog.html">Assign Version Label Dialog Box</A></TD>	</TR>
+	<TR>
+	<TD><A HREF="assigningaversionlabel.html">Assigning a Version Label</A>
+</TD>
+	<td><A HREF="floatfixlabels.html">Fixed vs. Floating Version Labels</a></td>
+
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

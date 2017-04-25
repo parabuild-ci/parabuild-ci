@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE connector PUBLIC "-//Sun Microsystems, Inc.//DTD Connector 1.0//EN" "http://java.sun.com/dtd/connector_1_0.dtd">
+
+<connector>
+    <display-name>Hibernate Resource Adapter</display-name>
+    <vendor-name>Hibernate</vendor-name>
+    <spec-version>1.0</spec-version>
+    <eis-type>Hibernate Sessions</eis-type>
+    <version>2.0</version>
+  	<license>
+  		<description>LGPL</description>
+    	<license-required>false</license-required>
+    </license>
+    <resourceadapter>
+        <managedconnectionfactory-class>net.sf.hibernate.jca.ManagedConnectionFactoryImpl</managedconnectionfactory-class>
+        <connectionfactory-interface>net.sf.hibernate.SessionFactory</connectionfactory-interface>
+        <connectionfactory-impl-class>net.sf.hibernate.jca.JCASessionFactoryImpl</connectionfactory-impl-class>
+        <connection-interface>net.sf.hibernate.Session</connection-interface>
+        <connection-impl-class>net.sf.hibernate.jca.JCASessionImpl</connection-impl-class>
+        <transaction-support>XATransaction</transaction-support>
+        <config-property>
+            <config-property-name>Dialect</config-property-name>
+            <config-property-type>java.lang.String</config-property-type>
+        </config-property>
+        <config-property>
+            <config-property-name>MapResources</config-property-name>
+            <config-property-type>java.lang.String</config-property-type>
+        </config-property>
+        <config-property>
+            <config-property-name>DatasourceJndi</config-property-name>
+            <config-property-type>java.lang.String</config-property-type>
+        </config-property>
+        <config-property>
+            <config-property-name>HibernateProperties</config-property-name>
+            <config-property-type>java.lang.String</config-property-type>
+        </config-property>
+        <!--
+        	JCA 1.0, 10.3.1
+        	If no authentication mechanism is specified as part of the deployment 
+        	descriptor, the resource adapter supports no standard security 
+        	authentication mechanism as part of thesecurity contract.
+        <authentication-mechanism>
+      	 	<description>BasicPassword</description>
+            <authentication-mechanism-type>BasicPassword</authentication-mechanism-type>
+            <credential-interface>javax.resource.security.PasswordCredential</credential-interface>
+        </authentication-mechanism>
+        -->
+        <reauthentication-support>true</reauthentication-support>
+        <!--
+        	JCA 1.0, 10.3.1 (what is that supposed to mean???)
+        	The security permissions listed in the deployment descriptor are 
+        	different from those required by the default permission set (refer 
+        	to Section 11.2 for more details on security permissions).
+    	<security-permission>
+    		<description></description>
+    		<security-permission-spec>
+      		</security-permission-spec>
+    	</security-permission>
+    	-->
+    </resourceadapter>
+</connector>

@@ -1,0 +1,472 @@
+<project name="bt" default="product.all" basedir=".">
+
+  <property name="war.staging.lib" value="${war.staging}/WEB-INF/lib"/>
+  <property name="war.staging.classes" value="${war.staging}/WEB-INF/classes"/>
+  <property name="war.staging.images" value="${war.staging}/parabuild/images"/>
+  <property name="war.staging.styles" value="${war.staging}/parabuild/styles"/>
+  <property name="war.staging.scripts" value="${war.staging}/parabuild/scripts"/>
+  <property name="war.staging.applets" value="${war.staging}/parabuild/applets"/>
+  <property name="war.staging.admin.docs" value="${war.staging}/parabuild/admin/docs"/>
+
+
+  <!-- Inits tomcat distribution -->
+  <target name="product.init.tomcat">
+    <!-- Create plaform specific dirs -->
+    <mkdir dir="${build.dir.tomcat}/bin/win"/>
+    <mkdir dir="${build.dir.tomcat}/bin/wsdl"/>
+    <mkdir dir="${build.dir.tomcat}/bin/linux386"/>
+    <mkdir dir="${build.dir.tomcat}/lib/common/lib"/>
+    <mkdir dir="${build.dir.tomcat}/lib/server/lib"/>
+    <!-- Copy tomcat common files -->
+    <property name="parabuild.common.jar" value="${build.dir.tomcat}/lib/common/lib/parabuild-common.jar"/>
+    <if>
+      <bool>
+        <not>
+          <uptodate targetfile="${parabuild.common.jar}">
+            <srcfiles dir="${tomcat.home}/common/lib"/>
+          </uptodate>
+        </not>
+      </bool>
+      <jar destfile="${parabuild.common.jar}" compress="false" update="true">
+        <zipfileset src="${tomcat.home}/common/lib/ant.jar"/>
+        <zipfileset src="${tomcat.home}/common/lib/commons-collections.jar"/>
+        <zipfileset src="${tomcat.home}/common/lib/commons-dbcp-1.1.jar"/>
+        <zipfileset src="${tomcat.home}/common/lib/commons-logging-api.jar"/>
+        <zipfileset src="${tomcat.home}/common/lib/commons-pool-1.1.jar"/>
+        <zipfileset src="${tomcat.home}/common/lib/jasper-compiler.jar"/>
+        <zipfileset src="${tomcat.home}/common/lib/jasper-runtime.jar"/>
+        <zipfileset src="${tomcat.home}/common/lib/naming-common.jar"/>
+        <zipfileset src="${tomcat.home}/common/lib/naming-factory.jar"/>
+        <zipfileset src="${tomcat.home}/common/lib/naming-resources.jar"/>
+        <zipfileset src="${tomcat.home}/common/lib/servlet.jar"/>
+        <zipfileset src="${tomcat.home}/common/lib/jta.jar"/>
+        <zipfileset src="${concurrent.jar}"/>
+        <zipfileset src="${hsqldb.jar}"/>
+      </jar>
+    </if>
+    <!-- Copy tomcat server files -->
+    <property name="parabuild.server.jar" value="${build.dir.tomcat}/lib/server/lib/parabuild-server.jar"/>
+    <if>
+      <bool>
+        <not>
+          <uptodate targetfile="${parabuild.server.jar}">
+            <srcfiles dir="${tomcat.home}/server/lib"/>
+            <srcfiles dir="${build.dir.realm.staging}"/>
+          </uptodate>
+        </not>
+      </bool>
+      <jar destfile="${parabuild.server.jar}" compress="false" update="true">
+        <zipfileset src="${build.dir.realm.staging}/parabuild-realm.jar"/>
+        <zipfileset src="${tomcat.home}/server/lib/catalina.jar"/>
+        <zipfileset src="${tomcat.home}/server/lib/commons-beanutils.jar"/>
+        <zipfileset src="${tomcat.home}/server/lib/commons-digester.jar"/>
+        <zipfileset src="${tomcat.home}/server/lib/commons-fileupload-1.0.jar"/>
+        <zipfileset src="${tomcat.home}/server/lib/commons-logging.jar"/>
+        <zipfileset src="${tomcat.home}/server/lib/commons-modeler.jar"/>
+        <zipfileset src="${tomcat.home}/server/lib/jakarta-regexp-1.3.jar"/>
+        <zipfileset src="${tomcat.home}/server/lib/mx4j-jmx.jar"/>
+        <zipfileset src="${tomcat.home}/server/lib/servlets-common.jar"/>
+        <zipfileset src="${tomcat.home}/server/lib/servlets-default.jar"/>
+        <zipfileset src="${tomcat.home}/server/lib/servlets-invoker.jar"/>
+        <zipfileset src="${tomcat.home}/server/lib/servlets-manager.jar"/>
+        <zipfileset src="${tomcat.home}/server/lib/servlets-webdav.jar"/>
+        <zipfileset src="${tomcat.home}/server/lib/tomcat-coyote.jar"/>
+        <zipfileset src="${tomcat.home}/server/lib/tomcat-http11.jar"/>
+        <zipfileset src="${tomcat.home}/server/lib/tomcat-jk.jar"/>
+        <zipfileset src="${tomcat.home}/server/lib/tomcat-jk2.jar"/>
+        <zipfileset src="${tomcat.home}/server/lib/tomcat-util.jar"/>
+        <zipfileset src="${tomcat.home}/server/lib/tomcat-warp.jar"/>
+      </jar>
+    </if>
+    <!-- Copy tomcat config files -->
+    <mkdir dir="${build.dir.tomcat}/etc/conf"/>
+    <copy file="${tomcat.home}/conf/web.xml" todir="${build.dir.tomcat}/etc/conf"/>
+    <copy file="${tomcat.home}/conf/catalina.policy" todir="${build.dir.tomcat}/etc/conf"/>
+    <copy file="${tomcat.home}/temp/README.txt" todir="${build.dir.tomcat}/etc/temp"/>
+    <filter token="http.port" value="${tomcat.http.port}"/>
+    <filter token="serv.port" value="${tomcat.serv.port}"/>
+    <copy file="${config}/server.xml" todir="${build.dir.tomcat}/etc/conf" filtering="on"/>
+    <!-- Release notes -->
+    <copy file="${config}/RELEASE-NOTES.txt" todir="${build.dir.tomcat}"/>
+    <!-- Init parabuild config -->
+    <mkdir dir="${build.dir.tomcat}/etc/system"/>
+    <copy file="${config}/parabuild.conf" todir="${build.dir.tomcat}/etc/system"/>
+    <!-- VM options for Windows (and Unix, if any) launchers -->
+    <copy file="${config}/parabuild.vmoptions" todir="${build.dir.tomcat}/bin"/>
+    <!-- Init common bin directory -->
+    <copy todir="${build.dir.tomcat}/bin">
+      <fileset dir="${project.bin}" excludes="startup_jprofiler.*"/>
+      <fileset dir="${tomcat.home}/bin" includes="bootstrap.jar, commons-daemon.jar, tomcat-jni.jar"/>
+    </copy>
+    <!-- Init windows specific bin dirs -->
+    <copy file="${pv.exe}" tofile="${build.dir.tomcat}/bin/win/p6.exe"/>
+    <copy file="${p4.win.exe}" todir="${build.dir.tomcat}/bin/win"/>
+    <!-- Vault -->
+    <copy todir="${build.dir.tomcat}/bin/win">
+      <fileset file="${vault.home}/vault.exe"/>
+      <fileset file="${vault.home}/VaultClientNetLib.dll"/>
+      <fileset file="${vault.home}/VaultClientOperationsLib.dll"/>
+      <fileset file="${vault.home}/VaultLib.dll"/>
+      <fileset file="${vault.home}/VCDiff.dll"/>
+    </copy>
+    <!-- Init linux specific bin directories -->
+    <copy file="${p4.linux.exe}" todir="${build.dir.tomcat}/bin/linux386"/>
+    <chmod dir="${build.dir.tomcat}/bin" perm="ugo+rwx" excludes="*.bat,*.cmd,*.exe,*.dll"/>
+    <!-- Prepare shell files to make sure it's not screwed by windows/unix -->
+    <fixcrlf srcdir="${build.dir.tomcat}/bin" eol="lf" includes="*.sh"/>
+    <fixcrlf srcdir="${build.dir.tomcat}/bin" eol="lf" includes="parabuild"/>
+    <fixcrlf srcdir="${build.dir.tomcat}/bin" eol="crlf" includes="*.cmd,*.bat"/>
+  </target>
+
+
+  <target name="product.prepare" depends="product.init.tomcat">
+    <mkdir dir="${war.staging}"/>
+    <mkdir dir="${war.staging.lib}"/>
+    <mkdir dir="${war.staging.classes}"/>
+    <mkdir dir="${war.staging.admin.docs}"/>
+    <mkdir dir="${war.staging.images}"/>
+    <mkdir dir="${war.staging.styles}"/>
+    <mkdir dir="${war.staging.scripts}"/>
+    <mkdir dir="${war.staging.applets}"/>
+    <mkdir dir="${build.dir}/result_war"/>
+    <mkdir dir="${build.dir}/generated_home"/>
+
+    <jar destfile="${war.staging.lib}/parabuild-3rdparty.jar" compress="false" update="true">
+      <zipfileset src="${axis.jar}"/>
+      <zipfileset src="${cglib-asm.jar}"/>
+      <zipfileset src="${commons-discovery.jar}"/>
+      <zipfileset src="${commons-lang.jar}"/>
+      <zipfileset src="${commons-logging.jar}"/>
+      <zipfileset src="${commons-io.jar}"/>
+      <zipfileset src="${dom4j.jar}"/>
+      <zipfileset src="${ehcache.jar}"/>
+      <zipfileset src="${hessian.jar}"/>
+      <zipfileset src="${hibernate2.jar}"/>
+      <zipfileset src="${jade.jar}"/>
+      <zipfileset src="${jaxen.jar}"/>
+      <zipfileset src="${jcommon.jar}"/>
+      <zipfileset src="${jfreechart.jar}"/>
+      <zipfileset src="${log4j.jar}"/>
+      <zipfileset src="${lucene.jar}"/>
+      <zipfileset src="${odmg.jar}"/>
+      <zipfileset src="${quartz.jar}"/>
+      <zipfileset src="${smack.jar}"/>
+      <zipfileset src="${smackx.jar}"/>
+      <zipfileset src="${msnm.jar}"/>
+      <zipfileset src="${rome.jar}"/>
+      <zipfileset src="${jdom.jar}"/>
+      <zipfileset src="${dwr.jar}"/>
+      <zipfileset src="${saxon.jar}"/>
+      <zipfileset src="${saxon-dom.jar}"/>
+      <!-- Web Service -->
+      <zipfileset src="${jaxrpc.jar}"/>
+      <zipfileset src="${log4j.jar}"/>
+      <zipfileset src="${axis.jar}"/>
+      <zipfileset src="${saaj.jar}"/>
+      <zipfileset src="${wsdl4j.jar}"/>
+    </jar>
+    <copy todir="${war.staging.lib}">
+      <fileset file="${mail.jar}"/>
+      <fileset file="${smtp.jar}"/>
+      <fileset file="${activation.jar}"/>
+    </copy>
+  </target>
+
+  <!-- Builds Parabuild web service -->
+  <property name="parabuild.wsdl" value="${build.dir.tomcat}/bin/wsdl/Parabuild.wsdl"/>
+
+  <target name="product.webservice.prepare">
+    <uptodate property="product.wsdl.uptodate" targetfile="${parabuild.wsdl}">
+      <srcfiles dir="${src}/org/parabuild/ci/webservice"/>
+    </uptodate>
+  </target>
+
+  <!-- Our web service to WSDL -->
+  <target name="product.webservice" depends="product.webservice.prepare" unless="product.wsdl.uptodate">
+    <!-- NOTE: vimeshev - 02/16/2005 - we use up-to-date because the tasks
+java2wsdl fails weirdly when running run.tests.all -->
+    <path id="axis.tasks.classpath">
+      <path refid="common.classpath"/>
+      <pathelement location="${axis-ant.jar}"/>
+      <pathelement location="${axis.jar}"/>
+      <pathelement location="${commons-discovery.jar}"/>
+      <pathelement location="${jaxrpc.jar}"/>
+      <pathelement location="${saaj.jar}"/>
+      <pathelement location="${wsdl4j.jar}"/>
+    </path>
+    <taskdef name="foreach" classname="org.apache.axis.tools.ant.foreach.ForeachTask">
+      <classpath refid="axis.tasks.classpath"/>
+    </taskdef>
+    <taskdef name="wsdl2java" classname="org.apache.axis.tools.ant.wsdl.Wsdl2javaAntTask">
+      <classpath refid="axis.tasks.classpath"/>
+    </taskdef>
+    <taskdef name="java2wsdl" classname="org.apache.axis.tools.ant.wsdl.Java2WsdlAntTask">
+      <classpath refid="axis.tasks.classpath"/>
+    </taskdef>
+
+    <!-- Create template -->
+    <javac destdir="${build.dir.classes}" includes="**/Parabuild.java" debug="on">
+      <classpath>
+        <path refid="compile.classpath"/>
+      </classpath>
+      <src path="${src}"/>
+    </javac>
+    <java2wsdl classname="org.parabuild.ci.webservice.templ.Parabuild"
+               output="${parabuild.wsdl}"
+               location="http://localhost:8080/parabuild/integration/webservice/Parabuild"
+               namespace="http://www.parabuildci.org/products/parabuild/webservice/parabuild">
+      <classpath>
+        <pathelement location="${build.dir.classes}"/>
+      </classpath>
+    </java2wsdl>
+
+    <!-- Create stubs -->
+    <mkdir dir="${webservice.staging}"/>
+    <wsdl2java url="${parabuild.wsdl}" output="${webservice.staging}" deployscope="request" serverSide="yes" skeletonDeploy="yes" noimports="no" verbose="yes" typeMappingVersion="1.1" testcase="no">
+      <mapping namespace="http://www.parabuildci.org/products/parabuild/webservice/parabuild" package="org.parabuild.ci.webservice"/>
+    </wsdl2java>
+    <delete>
+      <fileset dir="${webservice.staging}" includes="**/*BindingImpl.java"/>
+    </delete>
+  </target>
+
+
+  <target name="product.resources">
+
+    <!-- Copy resources to the root of the classes directory -->
+    <copy todir="${build.dir.classes}">
+      <fileset refid="product.resources"/>
+    </copy>
+
+    <!-- Copy version to META-INF -->
+    <mkdir dir="${build.dir.classes}/META-INF"/>
+    <copy file="${build.dir.version.staging}/parabuild-version.properties" todir="${build.dir.classes}/META-INF"/>
+  </target>
+
+  <!-- Compile Parabuild -->
+  <target name="product.compile" depends="product.webservice, product.resources">
+    <!-- Compile product -->
+    <javac destdir="${build.dir.classes}" includes="**/**.java" debug="on" memorymaximumsize="200m" fork="true">
+      <classpath>
+        <path refid="compile.classpath"/>
+      </classpath>
+      <src path="${src}"/>
+      <src path="${webservice.staging}"/>
+      <include name="org/parabuild/ci/realm/RealmConstants.java"/>
+      <exclude name="org/parabuild/ci/installer/**"/>
+      <exclude name="org/parabuild/ci/realm/**"/>
+      <exclude name="org/parabuild/ci/cli/**"/>
+      <exclude name="org/parabuild/ci/manager/server/**"/>
+      <exclude name="org/parabuild/ci/webui/logviewer/**"/>
+    </javac>
+  </target>
+
+
+  <!-- Check if we need to run hibernate descriptor generator -->
+  <target name="product.hibernate.uptodate" depends="product.compile">
+    <uptodate property="product.hibernate.uptodate" targetfile="${war.staging.lib}/parabuild-core.jar">
+      <srcfiles dir="${build.dir.classes}" includes="org/parabuild/ci/object/**.class"/>
+    </uptodate>
+  </target>
+
+
+  <!-- Process persistance layer -->
+  <target name="product.hibernate" depends="product.hibernate.uptodate" unless="product.hibernate.uptodate">
+    <taskdef name="hibernatedoclet" classname="xdoclet.modules.hibernate.HibernateDocletTask">
+      <classpath>
+        <fileset dir="${xdoclet.lib}">
+          <include name="*.jar"/>
+        </fileset>
+        <path refid="compile.classpath"/>
+      </classpath>
+    </taskdef>
+    <!-- hibernatize classes in org.parabuild.ci.configuration package -->
+    <hibernatedoclet destdir="${build.dir}/generated_home" excludedtags="@version,@author,@todo"
+                     force="${build.dir}/generated_home" mergedir="${build.dir}/generated_home" verbose="false">
+      <fileset dir="${src}">
+        <include name="org/parabuild/ci/object/**.java"/>
+        <exclude name="org/parabuild/ci/object/Runtime*.java"/>
+      </fileset>
+      <hibernate/>
+    </hibernatedoclet>
+    <!-- Hibernate 2 enable -->
+    <replace dir="${build.dir}/generated_home">
+      <include name="**/**.hbm.xml"/>
+      <replacefilter token="readonly" value="inverse"/>
+      <replacefilter token="role" value="name"/>
+      <replacefilter token="hibernate-mapping-1.1.dtd" value="hibernate-mapping-2.0.dtd"/>
+    </replace>
+  </target>
+
+
+  <target name="product.jar.uptodate" depends="product.compile, product.hibernate, product.webservice">
+    <uptodate property="product.jar.uptodate" targetfile="${war.staging.lib}/parabuild-core.jar">
+      <srcfiles dir="${build.dir.classes}"/>
+      <srcfiles dir="${build.dir}/generated_home"/>
+      <srcfiles dir="${project.home}/conf"/>
+      <srcfiles dir="${config}"/>
+    </uptodate>
+  </target>
+
+
+  <target name="product.jar" depends="product.compile, product.hibernate, product.jar.uptodate" unless="product.jar.uptodate">
+    <jar destfile="${war.staging.lib}/parabuild-core.jar" compress="false" update="true">
+      <fileset dir="${build.dir.classes}"/>
+      <fileset dir="${build.dir}/generated_home"/>
+      <fileset dir="${project.home}/conf" includes="quartz.properties,cache.ccf"/>
+      <zipfileset src="${viewtier.jar}"/>
+      <metainf dir="${config}" includes="tierlet-jar.xml"/>
+    </jar>
+  </target>
+
+
+  <target name="product.war.prepare" depends="product.jar">
+
+    <!-- war is up-to-date -->
+    <uptodate property="product.war.uptodate" targetfile="${build.dir}/result_war/parabuild.war">
+      <srcfiles dir="${war.staging.lib}"/>
+    </uptodate>
+
+    <!-- setup log4j -->
+    <ant antfile="build-helper.xml" target="setup.log4j">
+      <property name="param.is.release.build" value="${is.release.build}"/>
+      <property name="param.destination.dir" value="${war.staging.classes}"/>
+    </ant>
+
+    <!-- copy index.jsp -->
+    <copy file="${config}/index.jsp" todir="${war.staging}"/>
+    <copy file="${config}/images/favicon.ico" todir="${war.staging}"/>
+    <copy file="${config}/images/favicon.ico" todir="${war.staging}/parabuild"/>
+
+    <!-- copy admin docs -->
+    <copy todir="${war.staging.admin.docs}">
+      <fileset dir="${docs.result.dir}/html"/>
+    </copy>
+
+    <!-- copy images -->
+    <copy file="${config}/green_dot.gif" todir="${war.staging.images}"/>
+    <copy file="${config}/white_dot.gif" todir="${war.staging.images}"/>
+    <copy file="${config}/red_dot.gif" todir="${war.staging.images}"/>
+    <copy file="${config}/xml.gif" todir="${war.staging.images}"/>
+    <copy file="${config}/RSS.gif" todir="${war.staging.images}"/>
+    <!-- Throbbers -->
+    <copy file="${config}/throbber-green.gif" todir="${war.staging.images}"/>
+    <copy file="${config}/throbber-red.gif" todir="${war.staging.images}"/>
+    <copy file="${config}/throbber-black.gif" todir="${war.staging.images}"/>
+    <!-- Green dashboard -->
+    <copy file="${config}/dash_green_bl.gif" todir="${war.staging.images}"/>
+    <copy file="${config}/dash_green_br.gif" todir="${war.staging.images}"/>
+    <copy file="${config}/dash_green_grad.gif" todir="${war.staging.images}"/>
+    <copy file="${config}/dash_green_tl.gif" todir="${war.staging.images}"/>
+    <copy file="${config}/dash_green_tr.gif" todir="${war.staging.images}"/>
+    <copy file="${config}/throbber-dash-green.gif" todir="${war.staging.images}"/>
+    <!-- Red dashboard -->
+    <copy file="${config}/dash_red_bl.gif" todir="${war.staging.images}"/>
+    <copy file="${config}/dash_red_br.gif" todir="${war.staging.images}"/>
+    <copy file="${config}/dash_red_grad.gif" todir="${war.staging.images}"/>
+    <copy file="${config}/dash_red_tl.gif" todir="${war.staging.images}"/>
+    <copy file="${config}/dash_red_tr.gif" todir="${war.staging.images}"/>
+    <copy file="${config}/throbber-dash-red.gif" todir="${war.staging.images}"/>
+
+    <!-- gray dashboard -->
+    <copy file="${config}/dash_gray_bl.gif" todir="${war.staging.images}"/>
+    <copy file="${config}/dash_gray_br.gif" todir="${war.staging.images}"/>
+    <copy file="${config}/dash_gray_grad.gif" todir="${war.staging.images}"/>
+    <copy file="${config}/dash_gray_tl.gif" todir="${war.staging.images}"/>
+    <copy file="${config}/dash_gray_tr.gif" todir="${war.staging.images}"/>
+    <copy file="${config}/throbber-dash-gray.gif" todir="${war.staging.images}"/>
+
+    <!-- Dashboard style -->
+    <copy file="${config}/dashboard.css" todir="${war.staging.styles}"/>
+
+
+    <!-- DWR -->
+    <copy file="${config}/dwr.xml" todir="${war.staging}/WEB-INF"/>
+
+    <!-- Tail script -->
+    <copy file="${config}/tail.js" todir="${war.staging.scripts}"/>
+    <copy file="${config}/tail.css" todir="${war.staging.styles}"/>
+
+    <!-- Modal dialog scripts -->
+    <mkdir dir="${war.staging.scripts}/windows-js"/>
+    <copydir src="${config}/windows-js" dest="${war.staging.scripts}/windows-js"/>
+
+    <property name="war.staging.images.3232" value="${war.staging.images}/3232"/>
+    <property name="war.staging.images.1616" value="${war.staging.images}/1616"/>
+    <mkdir dir="${war.staging.images.3232}"/>
+    <mkdir dir="${war.staging.images.1616}"/>
+    <copy file="${iconexperience.32x32.plain}/bullet_ball_glass_blue.gif" todir="${war.staging.images.3232}"/>
+    <copy file="${iconexperience.32x32.plain}/bullet_ball_glass_green.gif" todir="${war.staging.images.3232}"/>
+    <copy file="${iconexperience.32x32.plain}/bullet_ball_glass_red.gif" todir="${war.staging.images.3232}"/>
+    <copy file="${iconexperience.32x32.plain}/bullet_ball_glass_yellow.gif" todir="${war.staging.images.3232}"/>
+    <copy file="${iconexperience.32x32.plain}/bullet_ball_glass_gray.gif" todir="${war.staging.images.3232}"/>
+    <copy file="${iconexperience.32x32.plain}/bullet_triangle_blue.gif" todir="${war.staging.images.3232}"/>
+    <copy file="${iconexperience.32x32.plain}/bullet_triangle_green.gif" todir="${war.staging.images.3232}"/>
+    <copy file="${iconexperience.32x32.plain}/bullet_triangle_red.gif" todir="${war.staging.images.3232}"/>
+    <copy file="${iconexperience.32x32.plain}/bullet_triangle_red_up.gif" todir="${war.staging.images.3232}"/>
+    <copy file="${iconexperience.32x32.plain}/bullet_triangle_yellow.gif" todir="${war.staging.images.3232}"/>
+    <copy file="${iconexperience.16x16.plain}/bullet_square_blue.gif" todir="${war.staging.images.1616}"/>
+    <copy file="${iconexperience.16x16.plain}/bullet_square_green.gif" todir="${war.staging.images.1616}"/>
+    <copy file="${iconexperience.16x16.plain}/bullet_triangle_red_up.gif" todir="${war.staging.images.1616}"/>
+    <copy file="${iconexperience.16x16.plain}/bullet_triangle_green_up.gif" todir="${war.staging.images.1616}"/>
+
+    <!-- copy applets -->
+    <copy file="${build.dir.logviewer.staging}/parabuild-logviewer.jar" todir="${war.staging.applets}"/>
+
+    <!-- copy webservice server config -->
+    <copy file="${config}/parabuild.wsdd" tofile="${war.staging}/WEB-INF/server-config.wsdd"/>
+  </target>
+
+
+  <!-- Compile jsp -->
+  <target name="product.war.jspc" depends="product.war.prepare">
+    <property name="web.xml.fragment" value="${build.dir.temp}/generated_web.xml"/>
+    <property name="jspc.output" value="${build.dir}/staging_jspc"/>
+    <mkdir dir="${jspc.output}"/>
+    <!-- jspc -->
+    <jasper2 validateXml="false" uriroot="${war.staging}"
+             webXmlFragment="${web.xml.fragment}" outputDir="${jspc.output}"/>
+    <!-- merge partial jspc web.xml to app web.xml -->
+    <loadfile property="web.xml.fragment.text" srcFile="${web.xml.fragment}"/>
+    <copy file="${config}/web.xml" overwrite="true" todir="${war.staging}/WEB-INF" filtering="true">
+      <filterset begintoken="&lt;" endtoken="&gt;">
+        <filter token="!-- Precompiled JSP Servlets --" value="${web.xml.fragment.text}"/>
+      </filterset>
+    </copy>
+    <!-- compile -->
+    <javac srcdir="${jspc.output}" destdir="${war.staging.classes}" includes="**/**.java" debug="on">
+      <classpath>
+        <path refid="compile.classpath"/>
+        <path refid="jspc.classpath"/>
+      </classpath>
+    </javac>
+  </target>
+
+
+  <!-- war -->
+  <target name="product.war" depends="product.war.prepare,product.war.jspc" unless="product.war.uptodate">
+    <!-- create war -->
+    <zip destfile="${build.dir}/result_war/parabuild.war" basedir="${war.staging}" update="true" compress="false"/>
+    <!-- viewletc -->
+    <java classname="viewtier.util.viewletc" fork="yes" failonerror="yes">
+      <classpath>
+        <pathelement location="${viewtier.jar}"/>
+        <pathelement location="${xerces.jar}"/>
+        <pathelement location="${xmlapis.jar}"/>
+      </classpath>
+      <arg line="-strict -verbose -warfile ${build.dir}/result_war/parabuild.war"/>
+      <jvmarg line="-Djava.io.tmpdir=${build.dir.temp}"/>
+    </java>
+    <!-- copy result to dist -->
+    <copy file="${build.dir}/result_war/parabuild.war" todir="${build.dir.tomcat}/etc/app"/>
+  </target>
+
+
+  <target name="product.all"
+          depends="product.prepare,
+             product.compile,
+             product.jar,
+             product.war">
+  </target>
+
+</project>

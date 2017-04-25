@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>About Master Configuration Files</TITLE>
+<!--<masterconfigfiles.html>-->
+<!--<index parent="files" label="master configuration" anchor="masterconfigfiles">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="masterconfigfiles"></A>About Master Configuration Files</H1>
+<P>
+A master configuration file lets you standardize how Serena ChangeMan Version Manager operates by identifying options that cannot be reset by other configuration files. When you disallow options in the master configuration file, Version Manager is forced to operate according to the settings in the master configuration file.  
+</P>
+<P>
+For example, if the master configuration file sets the option to automatically create an archive when checking in a new file and then disallows the option, you cannot change the option in other configuration files and, therefore, Version Manager automatically creates archives. In other words, you set the option in the master configuration file and then disallow it so that other configuration files cannot reset the option.
+</P>
+<H2>The Default Master Configuration File</H2>
+<p>
+Version Manager automatically creates a master configuration file for each project database you create. You can change the settings in this file to meet your needs. This file has a masked file name. For security purposes Version Manager masks the name of this configuration file. For example, this file may be assigned a name such as "c6bonpj1.cfg." The file is located, by default, in the archives directory.
+</P>
+<P>
+Version Manager creates this master configuration file by making a copy of the default.cfg file (for file servers, defaultfs.cfg), which is installed when you install Version Manager. By default, this file is placed in the following location during Version Manager installation:
+</P>
+<UL>
+<LI>On Windows: drive:\Program Files\Serena\vm\common\Pvcsprop\Pvcs\Vm
+<LI>On UNIX: /usr/serena/vm/common/pvcsprop/pvcs/vm
+</UL>
+<P>
+You can modify the settings in the default.cfg file to suit your needs, and then Version Manager will use the modified file to create new master configuration files.
+</P>
+<P>
+Optionally, you can <a href="embedmasterconfigfile.html">embed one master configuration file</a> into Version Manager; this configuration file will control how Version Manager operates for all project databases.
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a href="guidelinesforsettingconfigoptions.html">Guidelines for Setting Configuration Options</a></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

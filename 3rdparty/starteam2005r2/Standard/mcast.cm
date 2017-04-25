@@ -1,0 +1,12 @@
+/* ---------------------------------------------------- */
+/* mcast.cm -- PGM options used by StarTeamMPX clients. */
+/* ---------------------------------------------------- */
+
+setopt pgm_udp_encapsulation 1
+setopt pgm_receive_nak_ttl   5
+
+/* Note that pgm_receive_nak_ttl should be set the to maximum number of       */
+/* routers (switches) over which multicast traffic must traverse plus one.    */
+/* For example, if there are two switches between StarTeamMPX client's        */
+/* network segment and the Multicast Service's network segment,               */
+/* pgm_receive_nak_ttl must be set to at least 3.                             */

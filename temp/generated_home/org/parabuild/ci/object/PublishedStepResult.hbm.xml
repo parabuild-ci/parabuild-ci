@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 1.1//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="org.parabuild.ci.object.PublishedStepResult"
+        table="PUBLISHED_STEP_RESULT"
+    >
+        <cache usage="read-write" />
+
+        <id
+            name="ID"
+            column="ID"
+            type="int"
+            unsaved-value="-1"
+        >
+            <generator class="identity">
+            </generator>
+        </id>
+
+        <property
+            name="resultGroupID"
+            type="int"
+            column="RESULT_GROUP_ID"
+            unique="false"
+        />
+
+        <property
+            name="stepResultID"
+            type="int"
+            column="STEP_RESULT_ID"
+            unique="false"
+        />
+
+        <property
+            name="activeBuildID"
+            type="int"
+            column="ACTIVE_BUILD_ID"
+            unique="false"
+        />
+
+        <property
+            name="buildRunID"
+            type="int"
+            column="BUILD_RUN_ID"
+            unique="false"
+        />
+
+        <property
+            name="publisherBuildRunID"
+            type="int"
+            column="PUBLISHER_BUILD_RUN_ID"
+            unique="false"
+        />
+
+        <property
+            name="publishDate"
+            type="java.util.Date"
+            column="PUBLISH_DATE"
+            unique="false"
+        />
+
+        <property
+            name="buildName"
+            type="java.lang.String"
+            column="BUILD_NAME"
+            unique="false"
+        />
+
+        <property
+            name="buildRunDate"
+            type="java.util.Date"
+            column="BUILD_RUN_DATE"
+            unique="false"
+        />
+
+        <property
+            name="buildRunNumber"
+            type="int"
+            column="BUILD_RUN_NUMBER"
+            unique="false"
+        />
+
+        <property
+            name="description"
+            type="java.lang.String"
+            column="DESCRIPTION"
+            unique="false"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-PublishedStepResult.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding='ISO-8859-1' standalone='yes' ?>
+<TestRun>
+  <FailedTests>
+    <FailedTest id="18">
+      <Name>CProcessingTestSuite::PolicyProcessingTest</Name>
+      <FailureType>Assertion</FailureType>
+      <Location>
+        <File>e:\unit test framework\rac server manager\unittest\processtest.cpp</File>
+        <Line>193</Line>
+      </Location>
+      <Message>assertion failed
+- Expression: !bRet
+</Message>
+    </FailedTest>
+  </FailedTests>
+  <SuccessfulTests>
+    <Test id="1">
+      <Name>CSvcMgrCOMTestSuite::ServiceMgrCOMTest</Name>
+    </Test>
+    <Test id="2">
+      <Name>CPolicyTestSuite::PolicyGetUIPolicy</Name>
+    </Test>
+    <Test id="3">
+      <Name>CPhoneBookTestSuite::PhoneBookGetCountries</Name>
+    </Test>
+    <Test id="4">
+      <Name>CPhoneBookTestSuite::PhoneBookGetStates</Name>
+    </Test>
+    <Test id="5">
+      <Name>CPhoneBookTestSuite::PhoneBookGetCities</Name>
+    </Test>
+    <Test id="6">
+      <Name>CPhoneBookTestSuite::PhoneBookGetPHSStates</Name>
+    </Test>
+    <Test id="7">
+      <Name>CPhoneBookTestSuite::PhoneBookGetPHSStateCities</Name>
+    </Test>
+    <Test id="8">
+      <Name>CAccessDirectoryTestSuite::GetBoingoCountriesTest</Name>
+    </Test>
+    <Test id="9">
+      <Name>CAccessDirectoryTestSuite::GetBoingoStatesTest</Name>
+    </Test>
+    <Test id="10">
+      <Name>CAccessDirectoryTestSuite::GetBoingoCitiesTest</Name>
+    </Test>
+    <Test id="11">
+      <Name>CAccessDirectoryTestSuite::GetBoingoCategoriesTest</Name>
+    </Test>
+    <Test id="12">
+      <Name>CAccessDirectoryTestSuite::BoingoHotspotSearchTest</Name>
+    </Test>
+    <Test id="13">
+      <Name>CAccessDirectoryTestSuite::GetWayportCountriesTest</Name>
+    </Test>
+    <Test id="14">
+      <Name>CAccessDirectoryTestSuite::GetWayportStatesTest</Name>
+    </Test>
+    <Test id="15">
+      <Name>CAccessDirectoryTestSuite::GetWayportCitiesTest</Name>
+    </Test>
+    <Test id="16">
+      <Name>CAccessDirectoryTestSuite::GetWayportCategoriesTest</Name>
+    </Test>
+    <Test id="17">
+      <Name>CAccessDirectoryTestSuite::WayportLocationSearchTest</Name>
+    </Test>
+    <Test id="19">
+      <Name>CProcessingTestSuite::PhoneBookProcessingTest</Name>
+    </Test>
+    <Test id="20">
+      <Name>CProcessingTestSuite::AccessDirectoryProcessingTest</Name>
+    </Test>
+  </SuccessfulTests>
+  <Statistics>
+    <Tests>20</Tests>
+    <FailuresTotal>1</FailuresTotal>
+    <Errors>0</Errors>
+    <Failures>1</Failures>
+  </Statistics>
+</TestRun>

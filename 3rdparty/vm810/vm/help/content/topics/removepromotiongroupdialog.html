@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Remove Promotion Group Dialog Box</TITLE>
+<!--<removepromotiongroupdialog.html>-->
+<!--<index parent="removing" label="Remove Promotion Group dialog box" anchor="removepromotion">-->
+<!--<index parent="promotion_groups" label="Remove Promotion Group dialog box" anchor="removepromotion">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiUnassignPromotionGroupDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="removepromotion"></A>Remove Promotion Group</H1>
+<P>Use the Remove Promotion Group dialog box (Actions | Promotion Group | Remove) to remove a promotion group assigned to one or more versioned files or projects, or to a project database.</P>
+
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD COLSPAN=2><CENTER><B>General Tab</B></CENTER></TD>
+	</TR>
+	<TR>
+		<TD><b>Promotion Group</b></TD>
+		<TD><!--<control name="UnassignPromotionGroup.PROMOGROUP_LB">-->
+		Select the name of the promotion group to remove from the selected items.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Include files in subprojects</b></TD>
+		<TD><!--<control name="UnassignPromotionGroup.RECURSIVE_CB">-->
+		This field is available only when the selected item is a project or project database. Select to remove the promotion group from all projects and files included in the project database or project.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=2><CENTER><B>Selected Files Tab</B></CENTER></TD>
+	</TR>
+	<TR>
+		<TD><B>File list</B></TD>
+		<TD><!--<control name="Files.FILES_TREE">-->
+		Review the selected files or projects from which you want to remove the promotion group.
+		<!--</control>--></TD></TR>
+		<TR>
+		<TD><B>Properties button</B></TD> <TD><!--<control name="Files.PROPERTIES_BUTTON">-->
+		Click to display information on the item selected. You can view information on the item selected, including workspace settings and granted privileges.
+		<!--</control>--></TD>
+		</tr>
+	</TABLE>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="removepromotiongroup.html">Removing Promotion Groups</A></TD>
+		<TD><A HREF="aboutprommodels.html">About Promotion Models</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="prommodelrules.html">Promotion Modeling Rules</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

@@ -1,0 +1,259 @@
+<!-- Copyright 2004 Zelix Pty Ltd (ABN 47 078 740 093) -->
+<html>
+<head>
+<title>Zelix KlassMaster ZKM Build Helper</title>
+   <meta name="keywords" content="java,bytecode editor,bytecode viewer,java obfuscator,java mangler,utility,download">
+   <meta name="description" CONTENT="Zelix KlassMaster obfuscator has the ZKM Script Helper wizard">
+   <meta name="classification" CONTENT="Zelix KlassMaster obfuscator has the ZKM Build Helper wizard">
+   <link rel=stylesheet href="../ZKM.css" TYPE="text/css">
+</head>
+<body background="../images/small-white-mist1.jpg" bgcolor="#E1E1E1">
+<center><a href="index.html"><img src=../images/ZKM_b4.gif alt="Zelix KlassMaster" width=264 height=62 border=0></a></center>
+<hr>
+<center>
+<table width=770 border=0>
+   <tr>
+      <td valign="top" colspan=2>
+         <h1>Tools | Build Helper</h1>
+         The <b>Build Helper</b> will guide you through the basic steps of trimming and/or obfuscating your classes.
+         The Build Helper is handy for evaluating Zelix KlassMaster.  However, because each step is executed online, using the
+         Build Helper can be time consuming for large applications.  Therefore you should consider using
+         <a href=toolsZKMScriptHelper.html>ZKM Script</a> as an
+         alternative.  The Build Helper will lead you through a sequence of steps that will allow you to:
+         <ul>
+            <li>set the classpath that Zelix KlassMaster<sup><font size=-2>TM</font></sup> should use,
+            <li>open your classes,
+            <li>set your trim exclusions,
+            <li>trim your classes,
+            <li>set your name obfuscation exclusions,
+            <li>obfuscate your classes,
+            <li>save your trimmed and/or obfuscated classes,
+            <li>save the equivalent ZKM Script to file
+         </ul>
+         <p>
+      </td>
+   </tr>
+   <tr>
+      <td colspan=2>
+          &nbsp; <!-- Force an empty row -->
+      </td>
+   </tr>
+</table>
+<table width=770 border=0>
+   <tr>
+      <td valign="top">
+         <h2>Basics</h2>
+         You will be given the option to launch the Build Helper when you first start up Zelix KlassMaster.
+         Alternately, you can start the Build Helper at any time by selecting the <b>Tools&nbsp;|&nbsp;Build Helper</b> menu.
+      </td>
+      <td valign="top">
+         <img src=../images/toolsBuildHelper.gif width=294 height=173 alt="Zelix KlassMaster - Selecting Build Helper"><p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+      </td>
+      <td align="center" valign="middle">
+         <img src=../images/down_arrow.gif width=20 height=24 alt="Leads to..."><p>
+      </td>
+   </tr>
+   <tr>
+      <td valign="top">
+         <h2>Introduction</h2>
+         You advance through the dialog sequence by clicking on <img src=../images/nextBtn.gif align="absmiddle" alt="Next" width=75 height=26>.
+         To return to a previous window click on <img src=../images/previousBtn.gif align="absmiddle" alt="Previous" width=75 height=25>.
+         You can exit the sequence at any time by clicking on <img src=../images/cancelBtn.gif align="absmiddle" alt="Cancel" width=80 height=24>.
+      </td>
+      <td valign="top">
+         <img src=../images/buildHelper0.gif width=437 height=254 alt="Build Helper - Introduction"><p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+      </td>
+      <td align="center" valign="middle">
+         <img src=../images/down_arrow.gif width=20 height=24 alt="Leads to..."><p>
+      </td>
+   </tr>
+   <tr>
+      <td valign="top">
+         <h2>Classpath</h2>
+         The Build Helper <b>"Classpath"</b> dialog works in exactly the same way as the 
+         <b><a href=optionsClasspath.html>"Options&nbsp;|&nbsp;Classpath"</a></b> dialog. 
+         <p>
+         The directories and archive files that you put into the classpath must already exist.
+         Also, there must be a path to <code>java.lang.Object</code>.
+      </td>
+      <td valign="top">
+         <img src=../images/buildHelper1.gif width=369 height=275 alt="Build Helper - Classpath"><p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+      </td>
+      <td align="center" valign="middle">
+         <img src=../images/down_arrow.gif width=20 height=24 alt="Leads to..."><p>
+      </td>
+   </tr>
+   <tr>
+      <td valign="top">
+         <h2>Open Classes</h2>
+         The Build Helper <b>"Open Classes"</b> dialog works in exactly the same way as the 
+         <b><a href=fileOpen.html>"File&nbsp;|&nbsp;Open"</a></b> dialog.  The directories and archive files that you
+         wish to select must already exist and at least one of them must contain a class file.         
+      </td>
+      <td valign="top">
+         <img src=../images/buildHelper2.gif width=454 height=390 alt="Build Helper - Open Classes"><p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+      </td>
+      <td align="center" valign="middle">
+         <img src=../images/down_arrow.gif width=20 height=24 alt="Leads to..."><p>
+      </td>
+   </tr>
+   <tr>
+      <td valign="top">
+         <h2>Trim Exclusions</h2>
+         The Build Helper <b>"Trim Exclusions"</b> dialog works in exactly the same way as the 
+         dialog called by the <b><a href=trimExclude.html>"Tools&nbsp;|&nbsp;Trim"</a></b> menu option.
+         Click on <img src=../images/skipBtn.gif align="absmiddle" alt="Skip" width=78 height=26> 
+         to skip the Trim Exclusion step entirely.
+      </td>
+      <td valign="top">
+         <img src=../images/buildHelper3.gif width=550 height=464 alt="Build Helper - Trim Exclusions"><p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+      </td>
+      <td align="center" valign="middle">
+         <img src=../images/down_arrow.gif width=20 height=24 alt="Leads to..."><p>
+      </td>
+   </tr>
+   <tr>
+      <td valign="top">
+         <h2>Trim Options</h2>
+         The Build Helper <b>"Trim Options"</b> dialog works in exactly the same way as the 
+         <a href=trimExclude.html><b>"Trim Options"</b></a> dialog called by the <a href=toolsTrim.html><b>"Tools&nbsp;|&nbsp;Trim"</b></a> menu option.
+         Click on <img src=../images/skipBtn.gif align="absmiddle" alt="Skip" width=78 height=26> 
+         to skip the Trim step entirely.
+      </td>
+      <td valign="top">
+         <img src=../images/buildHelper4.gif width=458 height=218 alt="Build Helper - Trim Options"><p>
+      </td>
+   </tr>
+
+   <tr>
+      <td>
+      </td>
+      <td align="center" valign="middle">
+         <img src=../images/down_arrow.gif width=20 height=24 alt="Leads to..."><p>
+      </td>
+   </tr>
+   </tr>
+      <td valign="top">
+         <h2>Obfuscate Name Exclusions</h2>
+         The Build Helper <b>"Obfuscate Name Exclusions"</b> dialog works in exactly the same way as the 
+         <b><a href=advancedExclude.html>"Obfuscate Name Exclusions"</a></b> dialog you can see if you select
+         the <a href=toolsTrim.html><b>"Tools&nbsp;|&nbsp;Trim"</b></a> menu option.
+         <p>
+      </td>
+      <td valign="top">
+         <img src=../images/buildHelper5.gif width=460 height=526 alt="Build Helper - Obfuscate Name Exclusions"><p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+      </td>
+      <td align="center" valign="middle">
+         <img src=../images/down_arrow.gif width=20 height=24 alt="Leads to..."><p>
+      </td>
+   </tr>
+   <tr>
+      <td valign="top">
+         <h2>Obfuscate Options</h2>
+         The Build Helper <b>"Obfuscate Options"</b> dialog works in exactly the same way as the 
+         <b><a href=obfuscateOptions.html>"Obfuscate Options"</a></b> dialog called by the <b>"Tools&nbsp;|&nbsp;Obfuscate"</b> menu option.
+      </td>
+      <td valign="top">
+         <img src=../images/buildHelper6.gif width=383 height=376 alt="Build Helper - Obfuscate Options"><p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+      </td>
+      <td>
+         &nbsp;
+      </td>
+   </tr>
+   <tr>
+      <td>
+      </td>
+      <td align="center" valign="middle">
+         <img src=../images/down_arrow.gif width=20 height=24 alt="Leads to..."><p>
+      </td>
+   </tr>
+   <tr>
+      <td valign="top">
+         <h2>SaveAll</h2>
+         The Build Helper <b>"SaveAll"</b> dialog works in exactly the same way as the 
+         dialog you can see if you select the <b><a href=fileSaveAll.html>"File&nbsp;|&nbsp;Save all"</a></b> menu option.
+         <p>
+         The directory into which you wish to save your classes must already exist or be created at this time.
+      </td>
+      <td valign="top">
+         <img src=../images/buildHelper7.gif width=325 height=338 alt="ZKM Script Helper - saveAll Statement"><p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+      </td>
+      <td align="center" valign="middle">
+         <img src=../images/down_arrow.gif width=20 height=24 alt="Leads to..."><p>
+      </td>
+   <tr>
+   </tr>
+      <td valign="top">
+         <h2>Finished Build</h2>
+         The Build Helper creates ZKM Script equivalent to the GUI commands entered throughout the Build Helper dialog.
+         Click on <img src=../images/zkmScriptBtn.gif align="absmiddle" alt="ZKM Script" width=88 height=25> to view and save 
+         the equivalent ZKM Script. 
+      </td>
+      <td valign="top">
+         <img src=../images/buildHelper8.gif width=450 height=208 alt="Build Helper - Finished Build"><p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+      </td>
+      <td align="center" valign="middle">
+         <img src=../images/down_arrow.gif width=20 height=24 alt="Leads to..."><p>
+      </td>
+   <tr>
+   </tr>
+      <td valign="top">
+         <h2>Equivalent ZKM Script</h2>
+         You can now view the equivalent ZKM Script, and if you wish, save it to file. Click on  <img src=../images/saveBtn.gif align="absmiddle" alt="Save" width=75 height=26>
+         to access the save dialog. 
+      </td>
+      <td valign="top">
+         <img src=../images/buildHelper9.gif width=513 height=480 alt="Build Helper - Equivalent ZKM Script"><p>
+      </td>
+   </tr>
+</table>
+</center>
+<hr>
+<center>
+<table>
+   <tr>
+      <td>
+         <a href=index.html><img src=../images/uarrw.gif alt="Documentation Table of Contents"></a>
+      </td>
+   </tr>
+</table>
+</center>
+Copyright &copy; 2004 <a href="mailto:WebMaster@zelix.com"><font size=-1>Zelix Pty Ltd</font></a> (ABN 47 078 740 093)
+</body>
+</html>

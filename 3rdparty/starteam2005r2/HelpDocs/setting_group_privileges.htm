@@ -1,0 +1,248 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Setting Group Privileges</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=copyright value="Copyright© 1995-2003, Borland Software Corporation. All rights reserved.">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=1064>
+<meta name=layout-width content=707>
+<meta name=x-ignored-words content=client_name>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<!--(Scripts)=======================================================-->
+
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="./ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Administering the Application\nControlling Access to Objects\nSetting Group Privileges");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Setting Group Privileges</h1>
+
+<p class=Body>Depending upon your <span style="font-weight: bold;"><B>System 
+ Policy</B></span> settings, group privileges can allow members of a group 
+ to access objects and perform operations that they would not otherwise 
+ be allowed to do. If the server configuration checks for privileges, they 
+ can override the application's access rights’ settings.</p>
+
+<p class=Body>By default, the Administrators group has all group privileges. 
+ Also by default, other default groups (such as the All Users group) have 
+ no privileges. </p>
+
+<p class=Body>If privileges are being used, all members of a group have 
+ the same privileges on every project managed by a specific server configuration. 
+ These privileges apply to all levels equally &#8211; 
+ projects, views, folders, items, and components. If users belong to more 
+ than one group, they are given the maximum amount of privileges, regardless 
+ of which group provides them with those privileges.</p>
+
+<p class=Proc>To set group privileges:</p>
+
+<ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Do one of the following:</p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>On a computer that 
+ has the Server installed, select<span style="font-weight: bold;"><B> Start 
+ &gt; Programs &gt; StarTeam &gt; StarTeam Server x.x &gt; StarTeam Server</B></span>. 
+ </p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>From the client, 
+ select <span style="font-weight: bold;"><B>Start &gt; Programs &gt; StarTeam 
+ &gt; StarTeam client_name &gt; Server </B></span>Administration (available 
+ with custom installations only).</p></li>
+	</ul>
+	
+	<p class=List-1-text>These actions display the <span style="font-style: italic;"><I>Server 
+ Administration</I></span> dialog.</p>
+	
+	<li style="/*begin!kadov{{*/ font-weight: normal; /*}}end!kadov*/ "
+		class=kadov-p-CList-1><p class=List-1
+								style="font-weight: normal;">Select a server 
+ configuration from the left pane. If you have not yet logged onto the 
+ server configuration, you will be asked to do so. If you are using the 
+ client, you can administer remote servers only.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>From the <span style="font-style: italic;"><I>Server 
+ Administration</I></span> dialog, do one of the following:</p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1-Indent><p class=Bullet-1-Indent>Click 
+ the <span style="font-weight: bold;"><B>Accounts</B></span> bar in the lower 
+ left panel. Then click the User Manager shortcut.</p></li>
+		
+		<li class=kadov-p-CBullet-1-Indent><p class=Bullet-1-Indent>From 
+ the menu, select <span style="font-weight: bold;"><B>Tools &gt; Accounts 
+ &gt; User Manager</B></span>.</p></li>
+		
+		<p class=Bullet-1-text>These actions display the <span style="font-style: italic;"><I>User 
+ Manager</I></span> dialog.</p>
+	</ul>
+	
+	<li style="/*begin!kadov{{*/ font-weight: normal; /*}}end!kadov*/ "
+		class=kadov-p-CList-1><p class=List-1
+								style="font-weight: normal;">Select the 
+ group's name on the <span style="font-weight: bold;"><B>Groups</B></span> tree.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Right-click to display the 
+ context menu, and select <span style="font-weight: bold;"><B>Properties</B></span>. 
+ This action displays the<span style="font-style: italic;"><I> Group Properties</I></span> 
+ dialog.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select the<span style="font-weight: bold;"><B> 
+ Privileges</B></span> tab.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Grant privileges to or take 
+ privileges away from the group, as appropriate, by selecting and clearing 
+ the check boxes. For a list of group privileges, see below.</p></li>
+	
+	<li class=kadov-p-CList-1-text><p class=List-1-text>Click <span style="font-weight: bold;"><B>OK</B></span>.</p></li>
+</ol>
+
+<p class=Proc>Note<span style="font-weight: normal;">: To change group 
+ privileges, follow the procedure outlined above.</span></p>
+
+<p class=Proc>&nbsp;</p>
+
+<h2 class=Body>List of Group Privileges</h2>
+
+<h3>See object and its properties</h3>
+
+<p class=Body>See all projects, views, folders, items, and their properties. 
+ </p>
+
+<h3>Modify object properties</h3>
+
+<p class=Body>Modify the properties of any projects, views, folders, or 
+ items. </p>
+
+<h3>Delete object</h3>
+
+<p class=Body>Delete any projects, views, folders, or items. </p>
+
+<h3>Purge object (delete permanently)</h3>
+
+<p class=Body>This privilege is not supported at this time.</p>
+
+<h3>Acquire object ownership</h3>
+
+<p class=Body>This privilege is not supported at this time.</p>
+
+<h3>Change object access rights</h3>
+
+<p class=Body>Change access rights for any projects, views, folders, or 
+ items. </p>
+
+<h3>Create object and place it in a container</h3>
+
+<p class=Body>Create new objects and put them in containers. When this 
+ privilege is set, the group can add new views to a project, new folders 
+ to a view, and new folders and items to a folder. This privilege overrides 
+ the similarly named access right found in the Generic Object Rights in 
+ the<span style="font-style: italic;"><I> Access Rights</I></span> dialogs. It 
+ does not override the server-level access right that allows users to create 
+ projects.</p>
+
+<h3>Grant all specific class-level rights for all classes of objects</h3>
+
+<p class=Body>Perform any operation not covered by the preceding privileges. 
+ For example, this privilege allows group members to check out files, break 
+ locks, perform linking operations, and perform labeling operations.</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

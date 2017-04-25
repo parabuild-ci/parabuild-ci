@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Configure Project Dialog Box/Semaphores</TITLE>
+<!--<configureprojectsemaphoresdialog.html>-->
+<!--<index parent="configuring" label="Configure Project/Semaphores dialog box" anchor="configureprojectsemaphoresdialog">-->
+<!--<index parent="semaphores" label="Configure Project/Semaphores dialog box" anchor="configureprojectsemaphoresdialog">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiConfigureProjectDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="configureprojectsemaphoresdialog"></A>Configure Project/Semaphores</H1>
+<P>Use the Configure Project dialog box (Admin | Configure Project | General Tab | Miscellaneous | Semaphores) to set the semaphore options, which prevent data corruption by coordinating the activities of programs and processes in multi-user and multi-tasking environments. The options are:</P>
+<UL>
+	<LI>The directory where the semaphore file is created.
+	<LI>The delay time between attempts to gain exclusive access to an archive.
+	<LI>The number of times Version Manager will attempt to gain exclusive access to an archive.
+	<LI>The suffix (extension) of semaphore files.
+</UL>
+
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+	<TD COLSPAN=2><CENTER><B>Miscellaneous | Semaphores</B></CENTER></TD>
+	</TR>
+	<TR><TD><b>Semaphore Directory</b></TD>
+		<TD><b>Archive Directory</b> - <!--<control name="ConfigureProjectGeneral.ARCHIVE_DIR_RB">--> Places the semaphore files in each archive directory.	<!--</control>--><br>
+		<b>Other Directory</b> - <!--<control name="ConfigureProjectGeneral.OTHER_DIR_RB">-->Places the semaphore files in a directory other than the archive directory.<!--</control>-->
+<!--<control name="ConfigureProjectGeneral.OTHER_DIR_EDIT">-->Specify the path of the directory in the edit field.<!--</control>-->
+		</TD>
+	</TR>
+	<TR><TD><b>Semaphore Suffix</b></TD>
+	<TD><!--<control name="ConfigureProjectGeneral.SUFFIX_EDIT">-->
+		Specify the suffix template for semaphore files. The default suffix is +-sem, which causes Version Manager to add the characters -sem to the end of the archive file name.<!--</control>--></TD>
+	</TR>
+	<TR><TD><b>Number of Retries</b></TD>
+		<TD><!--<control name="ConfigureProjectGeneral.RETRY_EDIT">-->
+		Specify how many attempts Version Manager will make to gain exclusive access to an archive or journal file in networked environments. The default is 6.
+		<!--</control>--></TD>
+	</TR>
+	<TR><TD><b>Retry Delay (in seconds)</b></TD>
+		<TD><!--<control name="ConfigureProjectGeneral.DELAY_EDIT">-->
+		Specify the delay between attempts to gain exclusive access to archives, journal files, and the access control database. The default is three seconds.
+		<!--</control>--></TD>
+	</TR>
+</TABLE>
+
+<h2>See Also</h2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="setsemaphoreoptions.html">Setting Semaphore Options</A></TD>
+		<TD><A HREF="semaphoreoptions.html">Semaphore Options</A></TD>
+	</tr>
+</TABLE>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>
+

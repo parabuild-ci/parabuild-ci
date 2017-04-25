@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Setting Archive Creation Options</TITLE>
+<!--<setarchivecreationoptions.html>-->
+<!--<toc parent="setting_configuration_options" label="Setting Archive Creation Options" anchor="setarchivecreationoptions" sortkey="02">-->
+<!--<toc parent="setting_project_configuration_options" label="Setting Archive Creation Options" anchor="setarchivecreationoptions" sortkey="02">-->
+<!--<index parent="setting" label="archive creation options" anchor="setarchivecreationoptions">-->
+<!--<index parent="configuration_options" label="archive creation" anchor="setarchivecreationoptions">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with Project Databases/Projects\nConfiguring Project Databases/Projects\nSetting Archive Creation Options");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="setarchivecreationoptions"></A>Setting Archive Creation Options</H1>
+<p>To perform this procedure, you must first select the project database or project you want to configure. The project database or project must also be <a href="assocconfigfile.html">associated with a configuration file</a>.</p>
+<H2>To set <a href="archivecreationoptions.html">archive creation options</a>:</H2>
+<OL>
+<LI>Select Admin | Configure Project. The Configure Project dialog box appears with the General tab active.
+<br><br>
+<LI>If not already selected, select the <b>Show Advanced Options</b> check box.<br><br>
+<LI>Select <b>Creation Attributes</b> beneath Archives. The Creation Attributes pane on the right appears. The values that display for each option are the settings that are currently defined in the configuration file associated with the project database or project.
+<BR><BR>
+<LI>
+To set the options, do any of the following:
+<BR><BR>
+<UL type=disc>
+<LI>Select either <b>One</b> or <b>More Than One</b> for the locks allowed on each archive.
+<LI>Enter the user ID of the owner of new archives. The value &lt;Current User&gt; is the user who is running Version Manager at the time of archive creation.
+<LI>Enter the access list groups and individual users (user IDs) who can access newly created archives in the <b>Access List</b> field. The combined value of this field cannot exceed 254 characters in length. The groups and user IDs that you specify must be defined in the access control database. Values must be separated by commas. 
+<LI>Select the <b>Write protect archive</b> check box to write-protect the archives. Setting this option protects archives from inadvertent deletion or modification.
+<LI>Select the <b>OK to create new archive on check in</b> check box to automatically create an archive when you check in a workfile if Version Manager cannot find one for the file. Otherwise, a message is issued and no archive is created. This option applies only to the command-line interface.
+<LI>Select the <b>Split On Create</b> check box to automatically split new archives into separate metadata and revision components if they are mapped to a revision path by the Version Manager File Server. This directive is for use with the Revision Library feature of the <a href="about_file_server.html">Version Manager File Server</a>.</LI>
+</UL>
+<BR>
+<LI>
+Click OK if you are finished defining options, or click Apply to save the settings and continue to define other options.
+</OL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a href="aboutconfigfiles.html">About Configuration Files</a></TD>
+		<TD><a href="configureoverview.html">Configuring Project Databases and Projects</a></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="configureprojectarchiveattributesdialog.html">Configure Project/Archive Creation Options dialog box</A></td>
+		<TD><A HREF="changeattributes.html">Changing the Attributes of Existing Archives</A><td/>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

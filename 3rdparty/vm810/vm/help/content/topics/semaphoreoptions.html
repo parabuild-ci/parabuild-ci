@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Semaphore Options</TITLE>
+<!--<sempahoreoptions.html>-->
+<!--<index parent="semaphores" label="options" anchor="sempahoreoptions">-->
+<!--<index parent="options" label="semaphore" anchor="sempahoreoptions">-->
+<!--<index parent="configuration_options" label="semaphore" anchor="sempahoreoptions">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="sempahoreoptions"></A>Semaphore Options</H1>
+<P>
+The semaphore options let you prevent data corruption by coordinating the activities of programs and processes in multi-user and multi-tasking environments. In these environments, semaphores ensure that Version Manager processes have exclusive access to shared archives, journal files, and the access control database. Semaphores ensure that only one process at a time can write to a file.
+</P>
+<P>
+Version Manager creates a semaphore when access begins and removes it when access ends. When other users or programs try to access the file, the presence of the semaphore signals Version Manager that the archive is in use. Version Manager uses <a href="filesempahores.html">file semaphores</a>.
+</P>
+<P>
+The options that you can set for semaphores are:
+</P>
+<UL>
+<LI>The directory where the semaphore file is created. All users of an archive should use the same directory for semaphores. If two users specify different directories, they will lose all semaphore protection. For this reason, you should use set the semaphore directory in the master configuration file, and then disallow the option. The directive for this option is SemaphoreDir.
+<LI>The delay time between attempts to gain exclusive access to an archive. The directive for this option is SemaphoreDelay.
+<LI>The number of times Version Manager will attempt to gain exclusive access to an archive. The directive for this option is SemaphoreRetry.
+<LI>The suffix (extension) of semaphore files. The directive for this option is SemSuffix.
+</UL>
+<P>
+<a href="setsemaphoreoptions.html">Click here</a> to see how to set these options.
+</P>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

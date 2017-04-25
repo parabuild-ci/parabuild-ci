@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Configure Project Dialog Box/File Types</TITLE>
+<!--<configureprojectfiletypesdialog.html>-->
+<!--<index  parent="configuring" label="Configure Project/File Types dialog box" anchor="configureprojectfiletypes">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiConfigureProjectDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="configureprojectfiletypes"></A>Configure Project/File Types</H1>
+<P>Use the Configure Project dialog box (Admin | Configure Project | File Types tab) to set archive options that are set on a per <a href="filetypebasis.html">file type basis</a>.</P>
+
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><b>File Type list</b></TD>
+		<TD><!--<control name="ConfigureProjectFileTypes.TYPES_LIST">-->
+		Select the file type for which you want to define options. You can add and delete file types from this list. [Undefined] is all file types that are not specifically defined. You cannot delete the following file types: .c, .h, .pas, .mak, .for, .bad, .prg, .asm, .bat, .obj, .lib, .doc, .y, .l, .o, and .a. The desktop client will allow you to delete these file types from the list, but when you re-enter the dialog, the file types will be listed again.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Archive Suffix</b></TD>
+		<TD><!--<control name="ConfigureProjectFileTypes.ARCHIVE_SUFFIX_EDIT">-->
+		Enter the archive suffix for the selected file type. You can tell Version Manager to add characters to the end of the workfile name by beginning the archive suffix with a plus sign (+). The characters after the plus sign are added to the end of the file name. You can also define a suffix template, which consists of a suffix mask and a default suffix.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Store Deltas</b></TD>
+		<TD><!--<control name="ConfigureProjectFileTypes.STORE_DELTAS_CB">-->
+		Select this check box to tell Version Manager to store all revisions other than the tip revision as a set of <A HREF="deltas.html">deltas</A>.
+<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Translate EOL</b></TD>
+		<TD><!--<control name="ConfigureProjectFileTypes.XLATE_EOL_CB">-->
+		Select this check box to translate the end-of-line character for new archives created in the project database. You should always select this option for text files; EOL Translation of text files is required in a <a href="crossplatform.html">cross-platform environment</a>.<BR><BR>
+<b>Warning!</b> Do not select this option for binary files; it may cause archive corruption.
+	<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Expand Keywords</b></TD>
+		<TD><!--<control name="ConfigureProjectFileTypes.EXPAND_KEYWORDS_CB_GB">-->
+		Select this check box to expand keywords when workfiles are checked in. Keywords are special character strings that you can place in workfiles that define information about the archive when expanded. <b>DO NOT</b> set this option for binary files; it may cause archive corruption.<!--</control>--> If you select this option, you can define the following two options for the <a href="logkeyword.html">&#36;Log&#36; keyword</a>:<BR>
+	<b>Comment Prefix:</b>
+		<!--<control name="ConfigureProjectFileTypes.COMMENT_PREFIX_EDIT">-->
+		To define a comment prefix for the &#36;Log&#36; keyword, enter the value in the <B>Comment Prefix</B> field. The comment prefix is cosmetic, and it is the responsibility of the developer to enter the &#36;Log&#36; keyword within comments in the source file.<!--</control>--><BR>
+		<b>Newline Char</b>
+		<!--<control name="ConfigureProjectFileTypes.NEWLINE_CHAR_EDIT">-->
+		Enter the value to define a new line character for the &#36;Log&#36; keyword. By default, Version Manager ends lines added for the &#36;Log&#36; keyword with a carriage return/line feed combination. If you operating system requires a different end-of-line character, you must specify it here.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Column Masking/Renumbering</b></TD>
+		<TD><!--<control name="ConfigureProjectFileTypes.COL_MASK_RENUM_CB_GB">-->
+		Select this check box if the files that you are creating and modifying contain line numbers. Then, you can change any of the fields in this group.<!--</control>--><BR>
+
+	<b>COBOL Masking:</b>
+		<!--<control name="ConfigureProjectFileTypes.COBOL_MASK_CB">-->
+		Select to use the default COBOL masking definition for COBOL files, which is: mask columns 73-80 and mask columns 1 through 6 only if column 1 is numeric.<!--</control>--><BR>
+		<b>Mask Ranges:</b>
+		<!--<control name="ConfigureProjectFileTypes.MASK_RANGE_EDIT">-->
+		If you did not select COBOL Masking, enter the column to mask from and the column to mask to. For example, you could enter 1 and 6; then, Version Manager would remove columns 1 through 6. To restrict column masking to numeric fields only, enter an asterisk (*) beside the range, for example, 1-6* masks the columns only if column 1 is numeric. You can enter multiple ranges, for example, 1-6*,10-12. Separate ranges with a comma.<!--</control>--><BR>
+		<b>COBOL Renumbering:</b>
+		<!--<control name="ConfigureProjectFileTypes.COBOL_RENUM_CB">-->
+		Select this check box to use the default COBOL renumbering definition for COBOL files, which is: renumber columns 1 through 6, start with the number 10 increment by 10.	<!--</control>--> If you did not select COBOL Renumbering, enter the following:<BR>
+
+		<b>Column Range:</b><!--<control name="ConfigureProjectFileTypes.RENUM_RANGE_CHOICE">-->
+		If you did not select COBOL Renumbering, enter the column range to renumber in this
+field. For example, to renumber columns 1 through 6, you would enter 1-6.<!--</control>--><BR>
+		<b>Start:</b>
+		<!--<control name="ConfigureProjectFileTypes.RENUM_START_EDIT">-->
+		The number to start numbering with.	<!--</control>--><br>
+		<b>By:</b>
+		<!--<control name="ConfigureProjectFileTypes.RENUM_BY_EDIT">-->
+		The number by which to increment each line number. For example, if you enter 20 as the start
+number and 5 as the number by which to increment each line, the first line would be numbered 000020, the
+second 000025, the third 000030, and so forth. This assumes you are renumbering six columns.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Record Length</b></TD>
+		<TD><!--<control name="ConfigureProjectFileTypes.RECORD_LENGTH_EDIT">-->
+		Enter the length of records in fixed-length files so that Version Manager can generate deltas based on logical lines. <b>DO NOT</b> select this option for variable length files. If you do, this can potentially corrupt an archive or cause other unexpected results.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Add button</b></TD>
+		<TD><!--<control name="ConfigureProjectFileTypes.ADD_FILE_TYPE">-->
+		Click this button to add a file type not found in the list.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Copy button</b></TD>
+		<TD><!--<control name="ConfigureProjectFileTypes.COPY_FILE_TYPE">-->
+		Click this button to copy an existing file type from the list. When you do this, all of the duplicated file type's options are part of the definition of the new file type.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Delete button</b></TD>
+		<TD><!--<control name="ConfigureProjectFileTypes.DELETE_FILE_TYPE">-->
+		Click this button to delete the selected file type from the list. Note that you cannot delete the [Undefined] file type or any of the types listed in the File Types field description above.<!--</control>--></TD>
+	</TR>
+</TABLE>
+<h2>See Also</h2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="setfiletypeoptions.html">Setting File Type Options</A></TD>
+		<TD><A HREF="filetypeoptions.html">File Type Options</A></TD>
+	</tr>
+	<TR>
+		<TD><A HREF="deltas.html">Storing Deltas</A></TD>
+		<TD><A HREF="keywordexpansionoptions.html">Keyword Expansion Options</A></TD>
+	<TR>
+	<TR>
+		<TD><A HREF="logkeyword.html">&#36;Log&#36; Keyword</A></TD>
+		<TD><A HREF="columnmasking_renumbering.html">Column Masking and Renumbering</A></TD>
+	<TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

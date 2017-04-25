@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Filtering by Difference Using a Version Label and a Promotion Group</TITLE>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="searchlockedbydialog"></A>Filtering by Difference Using a Version Label and a Promotion Group</H1>
+<P>Use this filter to view only the <A HREF="aboutversionedfiles.html">versioned files</A> with revisions that differ between a specified version label and a specified promotion group.</P>
+
+<h2>To set a difference filter using a version label and a promotion group:</h2>
+<ol><LI>Select View | Filter | Advanced Filter, or select the Advanced Filter option from the file filter list on the tool bar. The Advanced Filter dialog box appears.<BR><BR></LI>
+<LI>Select the <b>One Label and One Promotion Group</b> option from the <b>Filter by</b> list.<BR><BR></LI>
+<LI>Enter the name of the version label that you want to filter by in the <b>Version label</b> field or browse to select one.<BR><BR><b>NOTE</b> Version labels are case sensitive. Make sure you use the correct case.<br><br></LI>
+<LI>Enter the name of the promotion group that you want to filter by in the <b>Promotion group</b> field or browse to select one. <BR><BR></LI>
+<LI>If the specified promotion group is not found, the filter can search for the next highest promotion group, continuing up the promotion model hierarchy until a match is found or the highest level of the promotion model is reached. To enable this feature, select the <b>Climb the promotion model hierarchy</b> check box.<BR><BR></LI>
+<LI>Select one of the following options to show versioned files with revisions that differ by:<br><br>
+	<ul><LI><b>Revision number</b>.<BR><BR></LI>
+	<LI><b>Modification time</b>.<BR><BR></LI>
+	<LI><b>Modification time OR Revision contents:</b> First compares the modification time of the revisions. If the modification time does not differ, then compares the revision contents. This option takes longer if many revisions have the same modification time.<br><br></LI>
+	<LI><b>Revision contents:</b> Compares the contents of the revisions. This option takes the most time.<BR><BR></LI>
+	</ul></LI>
+<LI>To inverse the logic of the filter, select the <b>Show files not matched by this filter</b> check box.<BR><BR></LI>
+<LI>Click <b>OK</b>.<BR><BR></LI></ol>
+
+<H2>See Also</H2>
+
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="filtering.html">About Filtering the File Pane</A></TD>
+		<TD><A HREF="searchwildcarddialog.html">Filtering by Wildcard Filename</A></TD>
+	</TR>
+	<TR>
+		<TD><a href="filterbyversionlabel.html">Filtering by Version Label</a></TD>
+		<TD><A HREF="searchlockedbydialog.html">Filtering by User Locks</A></TD>
+	</TR>
+	<tr>
+		<TD><a href="filterby2promotiongroups.html">Filtering by Difference Using Two Promotion Groups</a></TD>
+		<TD><a href="filterbypromotiongroup.html">Filtering by Promotion Group</a></TD>
+	</tr>
+	<TR>
+		<TD><a href="filterby2versionlabels.html">Filtering by Difference Using Two Version Labels</a></TD>
+		<TD><A HREF="removefilter.html">Clearing a Filter</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

@@ -1,0 +1,8 @@
+REGEDIT4
+
+[HKEY_LOCAL_MACHINE\Software\Tigris.org\Subversion\servers\global]
+"#http-proxy-host"="proxy host (remove '#' from key name to enable)"
+"#http-proxy-port"="proxy port (remove '#' from key name to enable)"
+"#http-proxy-username"="proxy username (remove '#' from key name to enable)"
+"#http-proxy-password"="proxy password (remove '#' from key name to enable)"
+"#http-proxy-timeout"="0 timeout in seconds (remove '#' from key name to enable)"

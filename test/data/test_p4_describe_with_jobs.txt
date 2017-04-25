@@ -1,0 +1,98 @@
+text: Change 1 by admin@vimeshev on 2003/11/10 15:11:27
+text: 
+text: 	Initiated test source line
+
+text: 
+text: Affected files ...
+text: 
+info1: //test/sourceline/alwaysvalid/src/readme.txt#1 add
+text: 
+text: Change 2 by vimeshev@vimeshev on 2003/11/11 16:03:06
+text: 
+text: 	Added change list #2
+text: 
+text: Affected files ...
+text: 
+info1: //test/sourceline/alwaysvalid/src/readme.txt#2 edit
+text: 
+text: Change 3 by vimeshev@vimeshev on 2003/11/11 16:04:13
+text: 
+text: 	Added change list #3
+text: 
+text: Affected files ...
+text: 
+info1: //test/sourceline/alwaysvalid/src/readme.txt#3 edit
+text: 
+text: Change 4 by test_user@vimeshev on 2004/01/15 09:55:56
+text: 
+text: 	Added
+
+line to readme
+
+text: 
+text: Affected files ...
+text: 
+info1: //test/sourceline/alwaysvalid/src/readme.txt#4 edit
+text: 
+text: Change 5 by vimeshev@vimeshev on 2004/04/27 23:01:58
+text: 
+text: 	Added secon source line
+text: 
+text: Affected files ...
+text: 
+info1: //test/second_sourceline/src/readme.txt#1 add
+text: 
+text: Change 6 by vimeshev@vimeshev on 2004/04/29 14:46:39
+text: 
+text: 	Added second read.me
+text: 
+text: Jobs fixed ...
+text: 
+text: job000002 on 2004/06/12 by vimeshev *closed*
+text: 
+text: 	other test job
+text: 
+text: Affected files ...
+text: 
+info1: //test/second_sourceline/src/readme.2.txt#1 add
+text: 
+text: Change 7 by test_user@vimeshev on 2004/06/12 18:49:49
+text: 
+text: 	test jobs
+text: 
+text: Jobs fixed ...
+text: 
+text: job000002 on 2004/06/12 by vimeshev *closed*
+text: 
+text: 	other test job
+text: 
+text: Affected files ...
+text: 
+info1: //test/sourceline/alwaysvalid/src/readme.txt#5 edit
+text: 
+text: Change 8 by test_user@vimeshev on 2004/06/13 12:06:44
+text: 
+text: 	test job job000001
+text: 
+text: Jobs fixed ...
+text: 
+text: job000001 on 2004/06/13 by test_user *closed*
+text: 
+text: 	This is a first test job
+text: 	that contains multiple lines
+text: 	
+
+line without text prefix
+
+text: 	including incorrect separators
+text: 	in drescription
+text: 
+text: job000003 on 2004/06/13 by test_user *closed*
+text: 
+text: 	test job
+text: 
+text: Affected files ...
+text: 
+info1: //test/sourceline/alwaysvalid/src/readme.txt#6 edit
+text: 
+exit: 0

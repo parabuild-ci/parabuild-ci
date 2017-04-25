@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Changing the Access Control Database Associated with a Project Database</TITLE>
+<!--<changeacdbassocpdb.html>-->
+<!--<toc parent="maintaining_security" label="Changing the Access Control Database Associated with a Project Database" anchor="chgacdbassocwpdb" sortkey="09">-->
+<!--<index parent="security" label="changing the access control database associated with a project database" anchor="chgacdbassocwpdb" >-->
+<!--<index parent="access_control_database" label="changing the association with a project database" anchor="chgacdbassocwpdb" >-->
+<!--<index parent="project_databases" label="changing the access control database associated with" anchor="chgacdbassocwpdb" >-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nUsing Security\nMaintaining Security\nChanging the Access Control Database Associated with a Project Database");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="chgacdbassocwpdb"></A>Changing the Access Control Database Associated with a Project Database</H1>
+
+<H2>To change the access control database associated with a project database or project:</H2>
+<OL>
+	<LI>Select the project database or project for which you want to change the access control database.<br><br>
+	<LI>Select Admin | Configure Project. The Configure Project dialog box appears with the General tab active.<br><br>
+	<LI>If not already selected, select the <b>Show Advanced Options</b> check box.<br><br>
+	<LI>In the Options list, select <b>Access Control Database</b> beneath Security. The Access Control Database pane on the right appears.<br><br>
+	<LI>The <b>Access Control Database</b> field displays the access control database currently associated with the project database or project. To use a different access control database, do any of the following:<br><br>
+<UL type="disc">
+	<LI>Click <b>Create a new access control database</b> to create a new access control database in the archive directory of the project database or project. Version Manager copies the default access control database (default.db) to this location.<br><br>
+	<LI>Click <b>Use an existing access control database</b> to use an existing access control database. When you click this button, the Select Access Control Database dialog box appears so that you can choose an access control database. This option works well when you have multiple project databases that need to use the same security information. If you use the same access control database for each of the project databases, then you only have to update one access control database when your security situation changes, for example, when you need to add a new user to the access control database.<br><br>
+	<LI>Click Duplicate an existing access control database to duplicate an existing access control database. When you click this button, the Select Access Control Database dialog box appears so that you can choose an access control database. Version Manager makes a copy of the access control database that you choose and places it in the archives directory of the project database.<br><br>
+</ul>
+	<LI>Click OK.
+</OL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="usingsecurity.html">Using Security</A></TD>
+		<TD><A HREF="plansecurity.html">Planning Security</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="enablesecurity.html">Enabling Security</A></TD>
+		<TD><A HREF="aboutconfigoptions.html">About Configuration Options</A></TD>
+	</tr>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

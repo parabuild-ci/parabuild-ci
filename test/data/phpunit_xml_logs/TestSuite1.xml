@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="ArrayTest" tests="2" failures="0" errors="0" time="0.020026">
+    <testcase name="testNewArrayIsEmpty" class="ArrayTest" time="0.014449"/>
+    <testcase name="testArrayContainsAnElement" class="ArrayTest" time="0.005577"/>
+  </testsuite>
+</testsuites>

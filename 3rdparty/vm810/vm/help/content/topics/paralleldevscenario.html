@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Scenario: Defining Promotion Groups for Multi-Platform Development</TITLE>
+<!--<paralleldevscenario.html>-->
+<!--<index parent="promotion_groups" label="scenario for mutli-platform development" anchor="paralleldevscenario">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="paralleldevscenario"></A>Scenario: Defining Promotion Groups for Multi-Platform Development</H1>
+<P>
+This scenario explains the implications of using a promotion model to accommodate branches for alternate versions of a product. 
+</P>
+<P>
+<b>Note:</b> If you never intend to merge a branch back to the trunk, or you plan to make major changes to either the branch or the trunk, we recommend that you create separate archives for each line of development.
+</P>
+<P>
+The promotion model below accommodates multi-platform development. In each archive, the trunk is used to develop the product for Windows, and a branch is used to develop for UNIX.
+</P>
+<P>
+WinDev -&gt; WinTest -&gt; Production<BR>
+UnixDev -&gt; UnixTest<BR>
+Note that UnixTest never promotes to Production.
+</P>
+<P>
+Designing a promotion model for this purpose is useful only if the changes made for the UNIX version are fairly minor and if merges are performed on a regular basis.
+</P>
+<P>
+The following steps explain how you would:
+</P>
+<UL>
+<LI>Make changes on the branch
+<LI>
+Promote to testing
+<LI>
+Merge the changes to the main line of development
+<LI>
+Promote to production
+</UL>
+<P>
+<b>Step 1:</b> Developers make changes to source code at UnixDev level, creating branches for UNIX development.
+</P>
+<img src="../graphics/scenario1.gif" width="336" height="168" border="0">
+<P>
+<b>Step 2:</b> Developers promote revisions to the UnixTest group for unit testing. Revisions associated with UnixTest are never promoted to the top-level group. This ensures that all code is merged and then promoted through the proper testing phases before it reaches Production.
+</P>
+<img src="../graphics/scenario2.gif" width="336" height="168" border="0">
+<P>
+<b>Step 3:</b> Developers merge revisions associated with UnixTest with revisions at the WinDev promotion level.
+</P>
+<img src="../graphics/scenario3.gif" width="336" height="168" border="0">
+<P>
+<b>Step 4:</b> Promote revisions from WinDev to WinTest and finally to Production.
+</P>
+<img src="../graphics/scenario4.gif" width="336" height="168" border="0">
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

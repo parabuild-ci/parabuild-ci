@@ -1,0 +1,210 @@
+<HTML><HEAD><TITLE>EJB Testing with Cactus Howto</TITLE></HEAD><BODY alink="#023264" bgcolor="#ffffff" leftmargin="4" link="#525D76" marginheight="4" marginwidth="4" text="#000000" topmargin="4" vlink="#023264"><TABLE border="0" cellpadding="0" cellspacing="0" width="100%"><TR><TD align="left" valign="top"><A href="http://jakarta.apache.org/index.html"><IMG border="0" hspace="0" src="./images/jakarta-logo.gif" vspace="0"></A></TD><TD align="left" bgcolor="#ffffff" valign="middle" width="100%"><IMG align="right" alt="EJB Testing with Cactus Howto" border="0" hspace="0" src=".//images/logocactus.gif" vspace="0"></TD></TR><TR><TD colspan="2" height="2" width="100%"><HR noshade="" size="1"></TD></TR></TABLE><TABLE border="0" cellpadding="0" cellspacing="0" width="100%"><TR><TD valign="top" width="1%"></TD><TD nowrap="1" valign="top" width="14%"><FONT size="-2">
+              Last update : August 31 2002</FONT><BR><FONT size="-2">
+              Doc for : v1.4.1</FONT><BR><FONT face="arial,helvetica,sanserif">
+
+  <BR><FONT color="#000000" size="+1">About</FONT><BR><FONT size="-1">
+    <LI><A href="./index.html"><FONT size="-1">What is Cactus ?</FONT></A></LI>
+    <LI><A href="./news.html"><FONT size="-1">News</FONT></A></LI>
+    <LI><A href="./changes.html"><FONT size="-1">Changes</FONT></A></LI>
+    <LI><A href="./features.html"><FONT size="-1">Features/Status</FONT></A></LI>
+    <LI><A href="./goals.html"><FONT size="-1">Goals</FONT></A></LI>
+    <LI><A href="./todo.html"><FONT size="-1">Roadmap/Todo</FONT></A></LI>
+    <LI><A href="./contributors.html"><FONT size="-1">Contributors</FONT></A></LI>
+    <LI><A href="./contributing.html"><FONT size="-1">Contributing</FONT></A></LI>
+    <LI><A href="./users.html"><FONT size="-1">Cactus Users</FONT></A></LI>
+    <LI><A href="./testedon.html"><FONT size="-1">Tested on ...</FONT></A></LI>
+    <LI><A href="./license.html"><FONT size="-1">License</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Downloads</FONT><BR><FONT size="-1">
+    <LI><A href="./downloads.html"><FONT size="-1">Downloads</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Documentation</FONT><BR><FONT size="-1">
+    <LI><A href="./how_it_works.html"><FONT size="-1">How it works ?</FONT></A></LI>
+    
+    <LI><A href="./getting_started.html"><FONT size="-1">Getting Started</FONT></A></LI>
+    <LI><A href="./mockobjects.html"><FONT size="-1">Mock vs Container</FONT></A></LI>
+    <LI><A href="./javadoc.html"><FONT size="-1">Javadocs</FONT></A></LI>
+    
+    
+    <LI><A href="./faq.html"><FONT size="-1">FAQ</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Howto Guides</FONT><BR><FONT size="-1">
+    <LI><A href="./howto_classpath.html"><FONT size="-1">Classpath Howto</FONT></A></LI>
+    <LI><A href="./howto_config.html"><FONT size="-1">Config Howto</FONT></A></LI>
+    <LI><A href="./howto_migration.html"><FONT size="-1">Migration Howto</FONT></A></LI>
+
+    
+    <LI><A href="./howto_testcase.html"><FONT size="-1">TestCase Howto</FONT></A></LI>
+    
+    
+    
+
+    <LI><A href="./howto_jsp.html"><FONT size="-1">Jsp Howto</FONT></A></LI>
+    <LI><A href="./howto_runner.html"><FONT size="-1">Runner Howto</FONT></A></LI>
+    <LI><A href="./howto_security.html"><FONT size="-1">Security Howto</FONT></A></LI>
+
+    
+    <LI><A href="./howto_ant.html"><FONT size="-1">Ant Howto</FONT></A></LI>
+    
+    
+    
+
+    <LI><A href="./howto_httpunit.html"><FONT size="-1">HttpUnit Howto</FONT></A></LI>
+    <LI><A href="./howto_sample.html"><FONT size="-1">Sample Howto</FONT></A></LI>
+
+    
+    <LI><A href="./howto_ejb.html"><FONT size="-1">EJB Howto</FONT></A></LI>
+    
+
+    
+    <LI><A href="./howto_ide.html"><FONT size="-1">IDE Howto</FONT></A></LI>
+    
+    
+    
+    
+
+    <LI><A href="./howto_tomcat.html"><FONT size="-1">Tomcat Howto</FONT></A></LI>
+
+    <LI><A href="./howto_junitee.html"><FONT size="-1">JUnitEE Howto</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Support</FONT><BR><FONT size="-1">
+    <LI><FONT size="-1"><A href="http://jakarta.apache.org/site/bugs.html" target="">Bug database</A></FONT></LI>
+    <LI><A href="./mailinglist.html"><FONT size="-1">Mailing list</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Misc.</FONT><BR><FONT size="-1">
+    <LI><A href="./cactusname.html"><FONT size="-1">Why the name ?</FONT></A></LI>
+    <LI><A href="./logos.html"><FONT size="-1">Logo Challenge</FONT></A></LI>
+    <LI><A href="./resources.html"><FONT size="-1">Resources</FONT></A></LI>
+    <LI><A href="./coverage.html"><FONT size="-1">Test Coverage</FONT></A></LI>
+    
+    
+    
+    <LI><FONT size="-1"><A href="http://jakarta.apache.org/cactus/stats/index.html" target="">Stats</A></FONT></LI>
+    
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Developers</FONT><BR><FONT size="-1">
+    <LI><FONT size="-1"><A href="http://jakarta.apache.org/site/cvsindex.html" target="">CVS</A></FONT></LI>
+    <LI><A href="./coding_conventions.html"><FONT size="-1">Coding Conventions</FONT></A></LI>
+    <LI><A href="./build_result.html"><FONT size="-1">Build results</FONT></A></LI>
+    <LI><A href="./release_checklist.html"><FONT size="-1">Release Checklist</FONT></A></LI>
+  </FONT><BR>
+
+</FONT></TD><TD align="left" valign="top" width="*"><TABLE border="0" cellpadding="3" cellspacing="0"><TR><TD><BR>
+  
+
+  
+
+  <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>Introduction</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+    <P align="justify">
+      This document explains how to unit test EJBs with Cactus. It is
+      divided in 2 parts :
+    </P>
+    <BLOCKQUOTE><UL>
+      <LI>
+        <A href="#ejb_general">General concepts</A> : explains the
+        generic concepts behind EJB unit testing with Cactus,
+      </LI>
+      <LI>
+        <A href="#ejb_j2eeri">J2EE RI tutorial</A> : provides a
+        detailed tutorial, on a sample, on how to explicitely perform EJB
+        unit testing with the
+        <A href="http://java.sun.com/j2ee/download.html#sdk">J2EE Reference
+        Implementation</A> server from Sun.
+      </LI>
+    </UL></BLOCKQUOTE>
+
+    <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+      EJB unit testing works with Cactus 1.0 or later.
+    </I></FONT></TD></TR></TABLE></P>
+
+  </FONT></TD></TR></TABLE></DIV><BR>
+
+  <A name="ejb_general"><!--anchor--></A>
+  <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>General Concepts</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+    <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>Why use Cactus for testing EJBs ?</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+      <P align="justify">
+        You might be wondering why you would use Cactus to unit test your
+        EJBs whereas you could use standard JUnit test cases. Indeed,
+        you could write a standard JUnit test case and view your code as
+        client side code for the EJB to test ... There are actually a few
+        reasons to choose Cactus instead :
+      </P>
+      <BLOCKQUOTE><UL>
+        <LI>
+          If you are using local interfaces (EJB 2.0), then your beans cannot be called remotely
+          (i.e. the caller need to be in the same jvm). However, as all Cactus redirectors run on
+          the server side, you can unit test your local interfaces with Cactus.
+        </LI>
+        <LI>
+          Very often the production code that will call the EJBs is server
+          side code (Servlets, JSPs, Tag libs or Filters). This means that if
+          you run the tests from a standard JUnit test case, your tests will
+          run in a different execution environment than the production one,
+          which can lead to different test results,
+        </LI>
+        <LI>
+          An application using EJBs very often includes a front end part which
+          is in almost all cases a web application (i.e. using Servlets,
+          JSP, Tag libs or Filters). It means that you would also need a
+          framework for unit testing these components. Cactus is providing
+          a comprehensive and consistent framework for testing all server
+          side components. This is a compelling enough reason to use it !
+        </LI>
+        <LI>
+          Cactus provides automated Ant tasks to automatically start your
+          EJB server, run the tests and stop it, thus automating your
+          entire test process and making it easy to implement continuous
+          build and continuous integration of your J2EE project.
+        </LI>
+      </UL></BLOCKQUOTE>
+
+    </FONT></TD></TR></TABLE></DIV><BR>
+
+    <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>The process</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+      <P align="justify">
+        You can unit test your EJBs from any of Cactus redirectors :
+        <CODE><FONT face="courier, monospaced">ServletTestCase</FONT></CODE>, <CODE><FONT face="courier, monospaced">JspTestCase</FONT></CODE> or
+        <CODE><FONT face="courier, monospaced">FilterTestCase</FONT></CODE>.
+      </P>
+      <P align="justify">
+        This means that you would write a test case class that extends any
+        of Cactus redirectors, get a home reference to your EJB, create an
+        instance of it, call the method to test and perform asserts on the
+        result.
+      </P>
+      <P align="justify">
+        It is that simple ! What is slightly more complex is the deployment
+        of your EJBs to your EJB container but you should be familiar with
+        this, right ?
+      </P>
+
+    </FONT></TD></TR></TABLE></DIV><BR>
+
+  </FONT></TD></TR></TABLE></DIV><BR>
+
+  <A name="ejb_j2eeri"><!--anchor--></A>
+  <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>J2EE RI Tutorial</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+    <P align="justify">
+      This <A href="howto_ejb_j2eeri.html">J2EE RI tutorial</A>
+      is a step by step guide for writing Cactus EJB unit test for the
+      Sun J2EE RI server.
+    </P>
+
+  </FONT></TD></TR></TABLE></DIV><BR>
+
+  
+</TD></TR></TABLE></TD></TR></TABLE><BR><TABLE border="0" cellpadding="0" cellspacing="0" width="100%"><TR><TD><HR noshade="" size="1"></TD></TR><TR><TD align="center"><FONT color="#525D76" face="arial,helvetica,sanserif" size="-1"><I>
+                Copyright &copy; 2000-2002 The Apache Software Foundation.
+                All Rights Reserved.
+               </I></FONT></TD></TR></TABLE></BODY></HTML>

@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>About the New Project Database</TITLE>
+<!--<emptyprojectdb.html>-->
+<!--<index parent="project_databases" label="creating a new project database" anchor="emptyprojectdb">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="emptyprojectdb"></A>About the New Project Database</H1>
+<P>When you first invoke Serena ChangeMan Version Manager, you can create a new project database by selecting the <b>Create a new project database</b> check box from the Welcome to Serena ChangeMan Version Manager dialog box. You can use this new project database, along with the <A HREF="aboutsampledatabase.html">sample project database</a>, to practice Version Manager tasks, or you can rename it and set it up to store your actual workfiles.</p>
+
+<P>By default, the new project database is created and stored beneath the installation directory:
+<UL>
+<LI>For Windows: <i>vm_install</i>\vm\newdb
+<LI>For UNIX: /usr/vm/newdb
+</UL>
+<p>Where <i>vm_install</i> is the directory where you selected to install Version Manager.</p>
+
+<P>The directories and files that are created on your operating system for the new project database are as follows:</P>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><b>Archives directory</b> (\newdb\archives)</TD>
+		<TD>When you add projects to the project database, the archives are stored in this directory. Initially, this directory contains no archive files. It will be populated with archive files when you create projects within the project database and add files to the projects.</TD>
+	</tr>
+	<TR>
+		<TD><b>A configuration file</b> </TD>
+		<TD>A new <A HREF="aboutconfigfiles.html">configuration file</a> is created and placed in this directory. For security purposes, Version Manager masks the name of this configuration file. For example, this file may be assigned a name such as "c6bonpj1.cfg." A configuration file contains configuration settings for all projects within the project database. Version Manager reads this file before any other configuration file; this ensures that all users share the same settings for options. You can modify the settings in this file to suit your needs.</TD>
+	</tr>
+	<TR>
+		<TD><b>An access control database</b> </TD>
+		<TD>By default, a new <A HREF="aboutacdb.html">access control database</a> is created and also placed in the archives directory; this file is not enabled in the configuration file. For security purposes, Version Manager masks the name of this access control database. For example, this file may be assigned a name such as "c6bonpj1.db." An access control database defines the users who are authorized to perform actions on projects and defines the actions that users can perform.</TD></TR>
+	<TR>
+		<TD><b>Lib directory</b> (\newdb\lib)</TD>
+		<TD>This directory contains information about the Version Manager release you used to create the project database.</TD></TR>
+	<TR>
+		<TD><b>Pvcsuser directory</b> (\newdb\pvcsuser)</TD>
+		<TD>Contains user information such as private workspace settings.</TD>
+	</TR>
+	<TR>
+		<TD><b>Work directory</b> (\newdb\work)</TD>
+		<TD>The work directory is empty and is the default location for the workfiles when you check out revisions from Version Manager archives. You specify the location for this directory when you create a project database.</TD>
+	</TR>
+	<TR>
+		<TD><b>Tool configuration file</b> (\newdb\tools.cfg)</TD>
+		<TD>You can add definitions of <A HREF="toolbaroverview.html">custom tools</a> to this file so you can launch them from the Version Manager desktop client.</TD>
+	</TR>
+	<TR>
+		<TD>A system identification file and metadata file</TD>
+		<TD>A system identification file named pvcsid.ser is created. Do not move or delete this file. A pvcsroot.ser file is created and contains metadata such as which configuration file, workfile locations, and archive locations are being used.</TD>
+	</TR>
+</TABLE>
+<P>If you need to create a project database after you initially start Version Manager, select Admin | Create Project Database.</P>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="aboutprjdb.html">About Project Databases</A></TD>
+		<TD><A HREF="createprjdb.html">Creating Project Databases</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="createworkspaces.html">Creating Workspaces</A></TD>
+		<TD><A HREF="createproject.html">Creating Projects</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="addfiles.html">Adding Workfiles</A></TD>
+		<TD><A HREF="importarchives.html">Importing Archives</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="reviewingproperties.html">Reviewing Properties</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

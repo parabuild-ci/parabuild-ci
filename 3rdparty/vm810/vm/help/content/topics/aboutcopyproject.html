@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>About Copying Projects</TITLE>
+<!--<copyproject.html>-->
+<!--<toc parent="working_with_projects" label="About Copying Projects" anchor="copyproject" sortkey="02">-->
+<!--<index parent="copying" label="projects" anchor="aboutcopyproject">-->
+<!--<index parent="projects" label="copying" anchor="aboutcopyproject">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with Project Databases/Projects\nProjects\nAbout Copying Projects");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="aboutcopyproject"></A>About Copying Projects</H1>
+<P>Copying a Version Manager project copies the project to a different project or project database. The location you select to copy the item into depends upon the item you are copying. Refer to the <A HREF="copymatrix.html">copy matrix</A> for more information.
+<p>When you copy a project, Version Manager lets you: </P>
+<UL>
+	<LI>Copy all of its subprojects or only copy the project,</LI>
+	<LI>Copy the archives to the new archive location or use the existing archive location,
+	<LI>Create new configuration files, copy existing configuration files to the new project location, or use the existing configuration files, and
+	<LI>Create a new access control database, copy the existing access control database to the new project location, or use the existing access control database.
+</UL>
+<P>Note that when you copy a project, the workspace settings for the project are not retained.</P>
+<H2>Using the System Defaults</H2>
+<p>When you copy a project, Version Manager:</p> 
+<UL>
+	<LI>References the <i>original</i> project's archives in the existing <A HREF="archivelocation.html">archive locations</a>. Copied subprojects will also reference their existing archive locations. When copying a project that contains multiple subprojects, remember that the subprojects may have different archive locations. If you copy a project and use the existing archive locations, the new project will reference all of the different archive locations.<br><br>
+Note that any <i>new</i> archives added to the project after it is copied will use the project's archive location. The default is a directory named for the project beneath the archives directory of the project database location. <br><br>
+	<LI>Uses the project's existing <A HREF="aboutconfigfiles.html">configuration files</a>. <br><br>
+	<LI>Uses the project's existing access control databases.<br><br>
+	<LI>Includes subprojects in copy project operations.<br><br>
+	<LI>Uses a directory named work beneath the project database location as the workfile location. When you check out versioned files from a project, Version Manager creates a directory named for the project beneath the work directory and uses it as the new project's default workfile location. (You can change the default workfile location after you copy a project by selecting File | Properties, then clicking the Workspace Settings tab and modifying the <b>Workfile Location</b> field.)<br><br>
+</UL>
+<P>You can override any of these defaults when copying a project. The following procedure explains how.
+</P>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="copyproject.html">Copying Projects</A></TD>
+		<TD><A HREF="aboutprojects.html">About Projects</A></TD>
+	</TR>
+
+	<TR>
+		<TD><A HREF="copymatrix.html">Copy Matrix</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

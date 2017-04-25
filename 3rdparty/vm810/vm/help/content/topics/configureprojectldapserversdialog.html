@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Configure Project Dialog Box/LDAP Servers</TITLE>
+<!--<configureprojectldapauthenticationdialog.html>-->
+<!--<control base="pvcs.vm.vmgui.VmGuiConfigureProjectDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1>Configure Project/LDAP Servers</H1>
+<P>Use the LDAP Servers pane of the Configure Project dialog box (Admin | Configure Project | General tab | Security | LDAP Servers) to tell Serena ChangeMan Version Manager which Lightweight Directory Access Protocol (LDAP) authentication server to use. To make use of this feature, you must:</P>
+<ul>
+<li>Have a functional LDAP server</li>
+<li>Select LDAP ID as one of your login sources</li>
+</ul>
+
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+	<TD COLSPAN=2><CENTER><B>Security | LDAP Servers</B></CENTER></TD>
+	<TR>
+		<TD><b>LDAP Servers</b></TD>
+		<TD><!--<control name="ConfigureProjectLdapServers.LDAP_SERVERS_LIST">-->Version Manager searches for LDAP login authorization starting from the top of this list. Select a server in this list to reposition or delete it.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><img src="../graphics/ldap_down_button.gif"> <img src="../graphics/ldap_up_button.gif"></TD>
+		<TD><!--<control name="ConfigureProjectLdapServers.LDAP_MOVE_SERVER_UP">-->Click to reposition the selected server in the LDAP Servers list. Version Manager searches for login authorization starting from the top of the list.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><img src="../graphics/ldap_delete_button.gif"></TD>
+		<TD><!--<control name="ConfigureProjectLdapServers.LDAP_DELETE_SERVER">-->Click to delete the selected server from the list.<!--</control>--></TD>
+	</TR>
+	<TR><TD><b>Test</b></TD>
+		<TD><!--<control name="ConfigureProjectLdapServers.LDAP_TEST">-->
+		Click to test the connection to the LDAP server.
+		<!--</control>--></TD>
+	</TR>
+	</TR>
+		<TR><TD><b>Name</b></TD>
+		<TD><!--<control name="ConfigureProjectLdapServers.LDAP_SERVER_EDIT">-->
+		Enter the host name or IP address of the LDAP server. For example, myserver.mydomain.com
+		<!--</control>--></TD>
+	</TR>
+		<TR><TD><b>Port</b></TD>
+		<TD><!--<control name="ConfigureProjectLdapServers.LDAP_PORT_EDIT">-->
+		Enter the port number of the LDAP server. Typically LDAP servers are configured to use port 389; 636 for SSL.
+		<!--</control>--></TD>
+	<TR>
+		<TD>Add</TD>
+		<TD><!--<control name="ConfigureProjectLdapServers.LDAP_ADD">-->Click to add the server to the <b>LDAP Servers</b> list. <br><br><b>NOTE</b> If you are using redundant servers, add each server to the list. If you are using referrals to search among unique servers, only one server is needed in the list.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Store server configuration info in a file named</b></TD>
+        <TD><!--<control name="ConfigureProjectLdapServers.LDAP_SERVER_CONFIG_FILE_EDIT">-->Enter a path and file name (<FONT Class="syntax">*.ini</FONT>) in which to store server configuration information. LDAP configuration information can be shared between Version Manager and other LDAP enabled Serena applications via this <FONT Class="syntax">.ini</FONT> file. To share the LDAP configuration file, you must place the file in an accessible location. By default, the LDAP configuration file is created in the root of the project database. If you used the File Server Administration Utility to assign LDAP protection to a Client Name, the Version Manager File Server will look for configuration information in the following file:
+<FONT Class="syntax"><i>VM_Install</i>\vm\common\bin\<i>OS</i>\pvcsldap.ini</FONT> 
+<br><br><b>NOTE</b> This field is not available if the ServerConfigInfoPath directive is embedded.<!--</control>--></TD>
+	</TR>
+	<TR><TD><b>Apply</b></TD>
+		<TD>
+		Click to apply the settings without closing the dialog box.
+		</TD>
+	</TR>
+	<TR><TD><b>OK</b></TD>
+		<TD>
+		Click to apply the settings and close the dialog box.
+		</TD>
+	</TR>
+</TABLE>
+<h2>See Also</h2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="setloginsources.html">Setting Login Sources</A></TD>
+		<TD><A HREF="loginsources.html">Login Sources</A></TD>
+	</tr>
+	<TR>
+		<TD><A HREF="ldap_configuration_examples.html">LDAP Configuration Examples</A></td>
+		<TD><A HREF="aboutlogging.html">About Logging In to Project Databases or Projects</a></td>
+	</tr>
+	<TR>
+		<TD><A HREF="settingldapauthenticationoptions.html">Setting LDAP Configuration Options</A></TD>
+		<TD><A HREF="specifying_ldap_server.html">Specifying an LDAP Server</a></td>
+	</tr>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>
+

@@ -1,0 +1,1397 @@
+Tue Dec 27 21:51:27 PST 2005
+
+
+InstallAnywhere Variables:
+/=$prop.file.separator$
+:=$prop.path.separator$
+;=$prop.path.separator$
+\=$prop.file.separator$
+AC_DL_PAGE=http://www.accurev.com/download
+ADMIN_NAME=Administrator
+BACK_TEXT=click 'Previous'
+BIN_DIR=D:\mor2\dev\bt\3rdparty\accurev381\bin
+CHOSEN_INSTALL_BUNDLE_1=Client
+CHOSEN_INSTALL_BUNDLE_2=Help
+CHOSEN_INSTALL_BUNDLE_3=
+CHOSEN_INSTALL_BUNDLE_LIST=Client,Help
+CHOSEN_INSTALL_BUNDLE_NUM=2
+CHOSEN_INSTALL_SET=Client
+CIP_DEFAULT=1
+CIP_LIST=Typical,Custom
+CIP_PROMPT=Typical or Custom?
+CIP_TEXT=Select Typical or Custom Installation.
+CIP_TITLE=Choose Install Type
+CIP_TYPE=list
+CIP_VARIABLE=INST_TYPE
+CLI_NAME=AccuRev Client
+COMMA=,
+DAEMON_NAME=Service
+DeleteFile_File=D:\mor2\dev\bt\3rdparty\accurev381\installer-debug-4.txt
+DESKTOP=C:\Documents and Settings\vimeshev\Desktop
+DEVELOPER_DISK_SPACE_ADDITIONAL=20000000
+DIR_NAME=Folder
+DO_NOT_INSTALL=Do Not Install
+DOLLAR=$
+EMPTY_STRING=
+EXTRACTOR_DIR=D:\DOWNLOAD
+EXTRACTOR_EXECUTABLE=D:\DOWNLOAD\AccuRev_3_8_1_Windows_x86_all.exe
+FONTS=C:\WINNT\Fonts
+IA_CUSTOM_CODE_ZIP_SIZE=146964
+INST_CLI_AND_SRV=false
+INST_CLI_OR_SRV=true
+INST_CLIENT=true
+INST_DEBUG=true
+INST_DIR_TEXT=Please select an install location.
+INST_DIRNAME=AccuRev
+INST_DOCS=true
+INST_ROOT=true
+INST_SERVER=false
+INST_SERVER_AS_SERVICE=true
+INST_TYPE="","Custom"
+INST_TYPE_1=
+INST_TYPE_2=Custom
+INST_TYPE_BOOLEAN_1=0
+INST_TYPE_BOOLEAN_2=1
+INST_WINDOWS=true
+INSTALL_DRIVE_ROOT=D:\
+INSTALL_LOGFILE=D:\mor2\dev\bt\3rdparty\accurev381\AccuRev 3.8.1_InstallLog.log
+INSTALL_SUCCESS=SUCCESS
+INSTALLER_LAUNCH_DIR=D:\DOWNLOAD
+INSTALLER_LOCALE=en
+INSTALLER_TEMP_DIR=C:\Documents and Settings\vimeshev\Local Settings\Temp\9225.tmp
+INSTALLER_TITLE=AccuRev 3.8.1
+INSTALLER_UI=SWING
+JAVA_DOT_HOME=D:\mor2\dev\bt\3rdparty\accurev381\jre
+JAVA_EXECUTABLE=D:\mor2\dev\bt\3rdparty\accurev381\jre\bin\java.exe
+JAVA_HOME=D:\mor2\dev\bt\3rdparty\accurev381\jre
+JDK_HOME=
+lax.application.name=AccuRevInstall
+lax.class.path=../InstallerData/IAClasses.zip;resource/jdglue.zip;../InstallerData/Execute.zip;InstallerData/Execute.zip;../InstallerData/Resource1.zip;InstallerData/Resource1.zip;../InstallerData;InstallerData
+lax.command.line.args=$CMD_LINE_ARGUMENTS$
+lax.installer.win32.internal.property.0=bin\java.exe
+lax.main.class=com.zerog.ia.installer.Main
+lax.main.method=main
+lax.nl.current.vm=resource\jre\bin\java.exe
+lax.nl.env.=D:=D:\DOWNLOAD
+lax.nl.env.allusersprofile=C:\Documents and Settings\All Users
+lax.nl.env.ALLUSERSPROFILE=C:\Documents and Settings\All Users
+lax.nl.env.APPDATA=C:\Documents and Settings\vimeshev\Application Data
+lax.nl.env.appdata=C:\Documents and Settings\vimeshev\Application Data
+lax.nl.env.APR_ICONV_PATH=D:\todelete\subversion\iconv
+lax.nl.env.apr_iconv_path=D:\todelete\subversion\iconv
+lax.nl.env.aslogdir=E:\OFFICE\QuickBooks\
+lax.nl.env.ASLOGDIR=E:\OFFICE\QuickBooks\
+lax.nl.env.commonprogramfiles=C:\Program Files\Common Files
+lax.nl.env.COMMONPROGRAMFILES=C:\Program Files\Common Files
+lax.nl.env.computername=SLAVA
+lax.nl.env.COMPUTERNAME=SLAVA
+lax.nl.env.COMSPEC=C:\WINNT\system32\cmd.exe
+lax.nl.env.comspec=C:\WINNT\system32\cmd.exe
+lax.nl.env.exact_case.=D:=D:\DOWNLOAD
+lax.nl.env.exact_case.ALLUSERSPROFILE=C:\Documents and Settings\All Users
+lax.nl.env.exact_case.APPDATA=C:\Documents and Settings\vimeshev\Application Data
+lax.nl.env.exact_case.APR_ICONV_PATH=D:\todelete\subversion\iconv
+lax.nl.env.exact_case.ASLOGDIR=E:\OFFICE\QuickBooks\
+lax.nl.env.exact_case.CommonProgramFiles=C:\Program Files\Common Files
+lax.nl.env.exact_case.COMPUTERNAME=SLAVA
+lax.nl.env.exact_case.ComSpec=C:\WINNT\system32\cmd.exe
+lax.nl.env.exact_case.HOMEDRIVE=C:
+lax.nl.env.exact_case.HOMEPATH=\Documents and Settings\vimeshev
+lax.nl.env.exact_case.JAVA_HOME=C:\devenv\java\java131_08
+lax.nl.env.exact_case.LOGONSERVER=\\SLAVA
+lax.nl.env.exact_case.NUMBER_OF_PROCESSORS=2
+lax.nl.env.exact_case.OS=Windows_NT
+lax.nl.env.exact_case.Os2LibPath=C:\WINNT\system32\os2\dll;
+lax.nl.env.exact_case.Path=d:\todelete\jprobe521\bin;D:\todelete\subversion\bin;D:\TODELETE\Seapine\Surround;D:\TODELETE\Seapine\License;D:\Rational\common;D:\Rational\ClearCase\bin;C:\OFFICE\winrar;C:\devenv\java\java131_08\bin\;C:\devenv\p4client\;C:\devenv\ssh;C:\WINNT;C:\WINNT\system32;d:\todelete\jprobe521\bin;C:\PROGRA~1\COMMON~1\MGISHA~1\Video
+lax.nl.env.exact_case.PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH
+lax.nl.env.exact_case.PROCESSOR_ARCHITECTURE=x86
+lax.nl.env.exact_case.PROCESSOR_IDENTIFIER=x86 Family 6 Model 11 Stepping 1, GenuineIntel
+lax.nl.env.exact_case.PROCESSOR_LEVEL=6
+lax.nl.env.exact_case.PROCESSOR_REVISION=0b01
+lax.nl.env.exact_case.ProgramFiles=C:\Program Files
+lax.nl.env.exact_case.PROMPT=G
+lax.nl.env.exact_case.SystemDrive=C:
+lax.nl.env.exact_case.SystemRoot=C:\WINNT
+lax.nl.env.exact_case.TEMP=C:\DOCUME~1\vimeshev\LOCALS~1\Temp
+lax.nl.env.exact_case.TMP=C:\DOCUME~1\vimeshev\LOCALS~1\Temp
+lax.nl.env.exact_case.tvdumpflags=8
+lax.nl.env.exact_case.USERDOMAIN=SLAVA
+lax.nl.env.exact_case.USERNAME=vimeshev
+lax.nl.env.exact_case.USERPROFILE=C:\Documents and Settings\vimeshev
+lax.nl.env.exact_case.windir=C:\WINNT
+lax.nl.env.HOMEDRIVE=C:
+lax.nl.env.homedrive=C:
+lax.nl.env.HOMEPATH=\Documents and Settings\vimeshev
+lax.nl.env.homepath=\Documents and Settings\vimeshev
+lax.nl.env.java_home=C:\devenv\java\java131_08
+lax.nl.env.JAVA_HOME=C:\devenv\java\java131_08
+lax.nl.env.logonserver=\\SLAVA
+lax.nl.env.LOGONSERVER=\\SLAVA
+lax.nl.env.NUMBER_OF_PROCESSORS=2
+lax.nl.env.number_of_processors=2
+lax.nl.env.OS=Windows_NT
+lax.nl.env.os=Windows_NT
+lax.nl.env.os2libpath=C:\WINNT\system32\os2\dll;
+lax.nl.env.OS2LIBPATH=C:\WINNT\system32\os2\dll;
+lax.nl.env.PATH=d:\todelete\jprobe521\bin;D:\todelete\subversion\bin;D:\TODELETE\Seapine\Surround;D:\TODELETE\Seapine\License;D:\Rational\common;D:\Rational\ClearCase\bin;C:\OFFICE\winrar;C:\devenv\java\java131_08\bin\;C:\devenv\p4client\;C:\devenv\ssh;C:\WINNT;C:\WINNT\system32;d:\todelete\jprobe521\bin;C:\PROGRA~1\COMMON~1\MGISHA~1\Video
+lax.nl.env.path=d:\todelete\jprobe521\bin;D:\todelete\subversion\bin;D:\TODELETE\Seapine\Surround;D:\TODELETE\Seapine\License;D:\Rational\common;D:\Rational\ClearCase\bin;C:\OFFICE\winrar;C:\devenv\java\java131_08\bin\;C:\devenv\p4client\;C:\devenv\ssh;C:\WINNT;C:\WINNT\system32;d:\todelete\jprobe521\bin;C:\PROGRA~1\COMMON~1\MGISHA~1\Video
+lax.nl.env.PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH
+lax.nl.env.pathext=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH
+lax.nl.env.PROCESSOR_ARCHITECTURE=x86
+lax.nl.env.processor_architecture=x86
+lax.nl.env.PROCESSOR_IDENTIFIER=x86 Family 6 Model 11 Stepping 1, GenuineIntel
+lax.nl.env.processor_identifier=x86 Family 6 Model 11 Stepping 1, GenuineIntel
+lax.nl.env.processor_level=6
+lax.nl.env.PROCESSOR_LEVEL=6
+lax.nl.env.PROCESSOR_REVISION=0b01
+lax.nl.env.processor_revision=0b01
+lax.nl.env.programfiles=C:\Program Files
+lax.nl.env.PROGRAMFILES=C:\Program Files
+lax.nl.env.PROMPT=G
+lax.nl.env.prompt=G
+lax.nl.env.systemdrive=C:
+lax.nl.env.SYSTEMDRIVE=C:
+lax.nl.env.SYSTEMROOT=C:\WINNT
+lax.nl.env.systemroot=C:\WINNT
+lax.nl.env.TEMP=C:\DOCUME~1\vimeshev\LOCALS~1\Temp
+lax.nl.env.temp=C:\DOCUME~1\vimeshev\LOCALS~1\Temp
+lax.nl.env.tmp=C:\DOCUME~1\vimeshev\LOCALS~1\Temp
+lax.nl.env.TMP=C:\DOCUME~1\vimeshev\LOCALS~1\Temp
+lax.nl.env.TVDUMPFLAGS=8
+lax.nl.env.tvdumpflags=8
+lax.nl.env.USERDOMAIN=SLAVA
+lax.nl.env.userdomain=SLAVA
+lax.nl.env.username=vimeshev
+lax.nl.env.USERNAME=vimeshev
+lax.nl.env.USERPROFILE=C:\Documents and Settings\vimeshev
+lax.nl.env.userprofile=C:\Documents and Settings\vimeshev
+lax.nl.env.windir=C:\WINNT
+lax.nl.env.WINDIR=C:\WINNT
+lax.nl.java.launcher.main.class=com.zerog.lax.LAX
+lax.nl.java.launcher.main.method=main
+lax.nl.java.option.additional=
+lax.nl.java.option.check.source=off
+lax.nl.java.option.java.heap.size.initial=16777216
+lax.nl.java.option.java.heap.size.max=50331648
+lax.nl.java.option.verify.mode=none
+lax.nl.valid.vm.list=J2 J1 MSJ
+lax.nl.win32.i386.microsoft.java.compiler=on
+lax.nl.win32.microsoftvm.min.version=3167
+lax.resource.dir=Windows
+lax.stderr.redirect=
+lax.stdin.redirect=
+lax.stdout.redirect=
+lax.user.dir=.
+lax.version=6.0
+MAC_APPLE_MENU=
+MAC_CHEWABLE=
+MAC_CONTROL_PANELS=
+MAC_EXTENSIONS=
+MAC_PREFERENCES=
+MACX_DOCK=
+MACX_USER_APPLICATIONS=
+NULL=
+ORIG_INSTALL_DIR=C:\Program Files\AccuRev
+OVERWRITE_IA_CHMOD=false
+PREV_AC3_INST_EXISTS=false
+PRODNAME1=AccuRev 3.8.1
+PRODNAME2=AccuRev
+PRODUCT_ID=b5f5adee-1ecd-11b2-b73e-e853b562a9d6
+PRODUCT_NAME=AccuRev 3.8.1
+PRODUCT_VERSION_NUMBER=3.7.1.0
+PROGRAMS_DIR=C:\Program Files
+prop.awt.toolkit=sun.awt.windows.WToolkit
+prop.file.encoding=Cp1251
+prop.file.encoding.pkg=sun.io
+prop.file.separator=\
+prop.java.awt.graphicsenv=sun.awt.Win32GraphicsEnvironment
+prop.java.awt.printerjob=sun.awt.windows.WPrinterJob
+prop.java.class.path=C:\DOCUME~1\vimeshev\LOCALS~1\Temp\I1135749017\InstallerData\IAClasses.zip;C:\DOCUME~1\vimeshev\LOCALS~1\Temp\I1135749017\Windows\resource\jdglue.zip;C:\DOCUME~1\vimeshev\LOCALS~1\Temp\I1135749017\InstallerData\Execute.zip;C:\DOCUME~1\vimeshev\LOCALS~1\Temp\I1135749017\Windows\InstallerData\Execute.zip;C:\DOCUME~1\vimeshev\LOCALS~1\Temp\I1135749017\InstallerData\Resource1.zip;C:\DOCUME~1\vimeshev\LOCALS~1\Temp\I1135749017\Windows\InstallerData\Resource1.zip;C:\DOCUME~1\vimeshev\LOCALS~1\Temp\I1135749017\InstallerData;C:\DOCUME~1\vimeshev\LOCALS~1\Temp\I1135749017\Windows\InstallerData;
+prop.java.class.version=48.0
+prop.java.endorsed.dirs=C:\Documents and Settings\vimeshev\Local Settings\Temp\I1135749017\Windows\resource\jre\lib\endorsed
+prop.java.ext.dirs=C:\Documents and Settings\vimeshev\Local Settings\Temp\I1135749017\Windows\resource\jre\lib\ext
+prop.java.home=C:\Documents and Settings\vimeshev\Local Settings\Temp\I1135749017\Windows\resource\jre
+prop.java.io.tmpdir=C:\DOCUME~1\vimeshev\LOCALS~1\Temp\
+prop.java.library.path=C:\Documents and Settings\vimeshev\Local Settings\Temp\I1135749017\Windows\resource\jre\bin;.;C:\WINNT\system32;C:\WINNT;d:\todelete\jprobe521\bin;D:\todelete\subversion\bin;D:\TODELETE\Seapine\Surround;D:\TODELETE\Seapine\License;D:\Rational\common;D:\Rational\ClearCase\bin;C:\OFFICE\winrar;C:\devenv\java\java131_08\bin\;C:\devenv\p4client\;C:\devenv\ssh;C:\WINNT;C:\WINNT\system32;d:\todelete\jprobe521\bin;C:\PROGRA~1\COMMON~1\MGISHA~1\Video
+prop.java.runtime.name=Java(TM) 2 Runtime Environment, Standard Edition
+prop.java.runtime.version=1.4.2_04-b05
+prop.java.specification.name=Java Platform API Specification
+prop.java.specification.vendor=Sun Microsystems Inc.
+prop.java.specification.version=1.4
+prop.java.util.prefs.PreferencesFactory=java.util.prefs.WindowsPreferencesFactory
+prop.java.vendor=Sun Microsystems Inc.
+prop.java.vendor.url=http://java.sun.com/
+prop.java.vendor.url.bug=http://java.sun.com/cgi-bin/bugreport.cgi
+prop.java.version=1.4.2_04
+prop.java.vm.info=mixed mode
+prop.java.vm.name=Java HotSpot(TM) Client VM
+prop.java.vm.specification.name=Java Virtual Machine Specification
+prop.java.vm.specification.vendor=Sun Microsystems Inc.
+prop.java.vm.specification.version=1.0
+prop.java.vm.vendor=Sun Microsystems Inc.
+prop.java.vm.version=1.4.2_04-b05
+prop.line.separator=
+
+prop.os.arch=x86
+prop.os.name=Windows 2000
+prop.os.version=5.0
+prop.path.separator=;
+prop.sun.arch.data.model=32
+prop.sun.boot.class.path=C:\Documents and Settings\vimeshev\Local Settings\Temp\I1135749017\Windows\resource\jre\lib\rt.jar;C:\Documents and Settings\vimeshev\Local Settings\Temp\I1135749017\Windows\resource\jre\lib\i18n.jar;C:\Documents and Settings\vimeshev\Local Settings\Temp\I1135749017\Windows\resource\jre\lib\sunrsasign.jar;C:\Documents and Settings\vimeshev\Local Settings\Temp\I1135749017\Windows\resource\jre\lib\jsse.jar;C:\Documents and Settings\vimeshev\Local Settings\Temp\I1135749017\Windows\resource\jre\lib\jce.jar;C:\Documents and Settings\vimeshev\Local Settings\Temp\I1135749017\Windows\resource\jre\lib\charsets.jar;C:\Documents and Settings\vimeshev\Local Settings\Temp\I1135749017\Windows\resource\jre\classes
+prop.sun.boot.library.path=C:\Documents and Settings\vimeshev\Local Settings\Temp\I1135749017\Windows\resource\jre\bin
+prop.sun.cpu.endian=little
+prop.sun.cpu.isalist=pentium i486 i386
+prop.sun.io.unicode.encoding=UnicodeLittle
+prop.sun.java2d.fontpath=
+prop.sun.os.patch.level=Service Pack 4
+prop.user.country=RU
+prop.user.dir=C:\Documents and Settings\vimeshev\Local Settings\Temp\I1135749017\Windows
+prop.user.home=C:\Documents and Settings\vimeshev
+prop.user.language=ru
+prop.user.name=vimeshev
+prop.user.timezone=America/Los_Angeles
+prop.user.variant=
+QUIT_TEXT=click 'Cancel'
+RESOLVE_VAR_NAME=ORIG_INSTALL_DIR
+RESOLVE_VAR_NAME_OUT=C:\Program Files\AccuRev
+ROOT_CHECK_STATUS=1
+SERVICE_NAME=AccuRevServer
+SHORTCUT_NAME=Shortcut
+SRV_NAME=AccuRev Server
+STARTUP=C:\Documents and Settings\vimeshev\Start Menu\Programs\Startup
+SUPPORTEMAIL=support@accurev.com
+SYSTEM=C:\WINNT\system32
+SYSTEM_DRIVE_ROOT=C:\
+TEMP_DIR=C:\Documents and Settings\vimeshev\Local Settings\Temp
+UNIX_OPT=
+UNIX_USER_HOME=C:\Documents and Settings\vimeshev
+UNIX_USR_BIN=
+UNIX_USR_LOCAL_BIN=
+USER_HOME=C:\Documents and Settings\vimeshev
+USER_INSTALL_DIR=D:\mor2\dev\bt\3rdparty\accurev381
+USER_MAGIC_FOLDER_1=
+USER_MAGIC_FOLDER_10=
+USER_MAGIC_FOLDER_2=
+USER_MAGIC_FOLDER_3=
+USER_MAGIC_FOLDER_4=
+USER_MAGIC_FOLDER_5=
+USER_MAGIC_FOLDER_6=
+USER_MAGIC_FOLDER_7=
+USER_MAGIC_FOLDER_8=
+USER_MAGIC_FOLDER_9=
+USER_SHORTCUTS=C:\Documents and Settings\All Users\Start Menu\Programs\AccuRev
+WIN_COMMON_DESKTOP=C:\Documents and Settings\All Users\Desktop
+WIN_COMMON_PROGRAMS_MENU=C:\Documents and Settings\All Users\Start Menu\Programs
+WIN_COMMON_START_MENU=C:\Documents and Settings\All Users\Start Menu
+WIN_COMMON_STARTUP=C:\Documents and Settings\All Users\Start Menu\Programs\Startup
+WIN_PROGRAMS_MENU=C:\Documents and Settings\vimeshev\Start Menu\Programs
+WIN_QUICK_LAUNCH_BAR=C:\Documents and Settings\vimeshev\Application Data\Microsoft\Internet Explorer\Quick Launch\
+WIN_START_MENU=C:\Documents and Settings\vimeshev\Start Menu
+WIN_WINDOWS=C:\WINNT
+
+Magic Folders:
+Installer Temp Directory ($INSTALLER_TEMP_DIR$)=C:\Documents and Settings\vimeshev\Local Settings\Temp\9225.tmp
+Temp Directory ($TEMP_DIR$)=C:\Documents and Settings\vimeshev\Local Settings\Temp
+User Applications Folder ($MACX_USER_APPLICATIONS$)=
+The Dock ($MACX_DOCK$)=
+Windows Directory ($WIN_WINDOWS$)=C:\WINNT
+Programs Folder ($PROGRAMS_DIR$)=C:\Program Files
+System Folder ($SYSTEM$)=C:\WINNT\system32
+Shortcuts' Destination Folder ($USER_SHORTCUTS$)=C:\Documents and Settings\All Users\Start Menu\Programs\AccuRev
+System Drive Root ($SYSTEM_DRIVE_ROOT$)=C:\
+Installation Drive Root ($INSTALL_DRIVE_ROOT$)=D:\
+User Install Folder ($USER_INSTALL_DIR$)=D:\mor2\dev\bt\3rdparty\accurev381
+Apple Menu Items ($MAC_APPLE_MENU$)=
+Control Panels Folder ($MAC_CONTROL_PANELS$)=
+Extensions Folder ($MAC_EXTENSIONS$)=
+Java Home ($JAVA_HOME$)=D:\mor2\dev\bt\3rdparty\accurev381\jre
+/usr/local/bin ($UNIX_USR_LOCAL_BIN$)=
+Home Directory ($UNIX_USER_HOME$)=C:\Documents and Settings\vimeshev
+DO NOT INSTALL ($DO_NOT_INSTALL$)=Do Not Install
+$USER_MAGIC_FOLDER_1$ ($USER_MAGIC_FOLDER_1$)=
+$USER_MAGIC_FOLDER_2$ ($USER_MAGIC_FOLDER_2$)=
+$USER_MAGIC_FOLDER_3$ ($USER_MAGIC_FOLDER_3$)=
+$USER_MAGIC_FOLDER_4$ ($USER_MAGIC_FOLDER_4$)=
+$USER_MAGIC_FOLDER_5$ ($USER_MAGIC_FOLDER_5$)=
+/opt ($UNIX_OPT$)=
+/usr/bin ($UNIX_USR_BIN$)=
+Clean-Up at Startup Folder ($MAC_CHEWABLE$)=
+Preferences Folder ($MAC_PREFERENCES$)=
+$USER_MAGIC_FOLDER_6$ ($USER_MAGIC_FOLDER_6$)=
+$USER_MAGIC_FOLDER_7$ ($USER_MAGIC_FOLDER_7$)=
+$USER_MAGIC_FOLDER_8$ ($USER_MAGIC_FOLDER_8$)=
+$USER_MAGIC_FOLDER_9$ ($USER_MAGIC_FOLDER_9$)=
+Quick Launch Bar ($WIN_QUICK_LAUNCH_BAR$)=C:\Documents and Settings\vimeshev\Application Data\Microsoft\Internet Explorer\Quick Launch\
+$USER_MAGIC_FOLDER_10$ ($USER_MAGIC_FOLDER_10$)=
+All Users Desktop ($WIN_COMMON_DESKTOP$)=C:\Documents and Settings\All Users\Desktop
+All Users Startup ($WIN_COMMON_STARTUP$)=C:\Documents and Settings\All Users\Start Menu\Programs\Startup
+All Users Programs Menu ($WIN_COMMON_PROGRAMS_MENU$)=C:\Documents and Settings\All Users\Start Menu\Programs
+All Users Start Menu ($WIN_COMMON_START_MENU$)=C:\Documents and Settings\All Users\Start Menu
+Fonts Directory ($FONTS$)=C:\WINNT\Fonts
+Desktop Folder ($DESKTOP$)=C:\Documents and Settings\vimeshev\Desktop
+Start Menu ($WIN_START_MENU$)=C:\Documents and Settings\vimeshev\Start Menu
+Startup Folder ($STARTUP$)=C:\Documents and Settings\vimeshev\Start Menu\Programs\Startup
+Programs Menu ($WIN_PROGRAMS_MENU$)=C:\Documents and Settings\vimeshev\Start Menu\Programs
+
+Java System Properties:
+-- listing properties --
+file.encoding.pkg=sun.io
+lax.user.dir=.
+lax.nl.env.HOMEPATH=\Documents and Settings\vimeshev
+lax.resource.dir=Windows
+lax.application.name=AccuRevInstall
+lax.nl.env.TEMP=C:\DOCUME~1\vimeshev\LOCALS~1\Temp
+java.home=C:\Documents and Settings\vimeshev\Lo...
+lax.nl.env.programfiles=C:\Program Files
+lax.nl.env.PROCESSOR_REVISION=0b01
+lax.nl.env.exact_case.Path=d:\todelete\jprobe521\bin;D:\todelete...
+lax.nl.env.prompt=$P$G
+lax.nl.env.HOMEDRIVE=C:
+lax.nl.env.exact_case.APR_ICONV_PATH=D:\todelete\subversion\iconv
+lax.nl.win32.microsoftvm.min.version=3167
+lax.nl.env.exact_case.PROCESSOR_ARCHITECTURE=x86
+lax.nl.env.OS=Windows_NT
+lax.main.class=com.zerog.ia.installer.Main
+java.endorsed.dirs=C:\Documents and Settings\vimeshev\Lo...
+lax.stderr.redirect=
+lax.nl.env.systemroot=C:\WINNT
+lax.nl.java.option.java.heap.size.max=50331648
+lax.nl.env.SYSTEMDRIVE=C:
+lax.nl.env.exact_case.ProgramFiles=C:\Program Files
+lax.nl.env.PROGRAMFILES=C:\Program Files
+sun.os.patch.level=Service Pack 4
+java.vendor.url=http://java.sun.com/
+java.version=1.4.2_04
+lax.nl.env.WINDIR=C:\WINNT
+lax.nl.env.exact_case.USERNAME=vimeshev
+lax.nl.java.option.verify.mode=none
+lax.nl.env.JAVA_HOME=C:\devenv\java\java131_08
+lax.nl.env.exact_case.tvdumpflags=8
+lax.nl.env.ASLOGDIR=E:\OFFICE\QuickBooks\
+lax.nl.env.apr_iconv_path=D:\todelete\subversion\iconv
+lax.nl.env.logonserver=\\SLAVA
+java.vendor.url.bug=http://java.sun.com/cgi-bin/bugreport...
+lax.nl.java.option.check.source=off
+lax.nl.env.homepath=\Documents and Settings\vimeshev
+lax.nl.env.exact_case.windir=C:\WINNT
+lax.nl.env.COMSPEC=C:\WINNT\system32\cmd.exe
+user.name=vimeshev
+lax.nl.env.processor_architecture=x86
+sun.io.unicode.encoding=UnicodeLittle
+lax.nl.env.ALLUSERSPROFILE=C:\Documents and Settings\All Users
+java.runtime.name=Java(TM) 2 Runtime Environment, Stand...
+lax.nl.env.exact_case.=D:=D:\DOWNLOAD
+lax.nl.env.USERDOMAIN=SLAVA
+java.specification.name=Java Platform API Specification
+user.timezone=America/Los_Angeles
+path.separator=;
+lax.nl.env.APR_ICONV_PATH=D:\todelete\subversion\iconv
+file.encoding=Cp1251
+lax.nl.env.systemdrive=C:
+lax.nl.env.USERNAME=vimeshev
+lax.nl.env.aslogdir=E:\OFFICE\QuickBooks\
+lax.nl.env.allusersprofile=C:\Documents and Settings\All Users
+lax.nl.env.processor_revision=0b01
+lax.nl.env.exact_case.SystemRoot=C:\WINNT
+lax.nl.env.TVDUMPFLAGS=8
+lax.version=6.0
+java.io.tmpdir=C:\DOCUME~1\vimeshev\LOCALS~1\Temp\
+lax.nl.env.username=vimeshev
+lax.nl.env.exact_case.COMPUTERNAME=SLAVA
+user.language=ru
+line.separator=
+
+lax.nl.java.launcher.main.class=com.zerog.lax.LAX
+lax.nl.env.appdata=C:\Documents and Settings\vimeshev\Ap...
+lax.nl.env.windir=C:\WINNT
+lax.command.line.args=$CMD_LINE_ARGUMENTS$
+java.vm.info=mixed mode
+lax.nl.env.exact_case.TMP=C:\DOCUME~1\vimeshev\LOCALS~1\Temp
+lax.nl.env.exact_case.USERPROFILE=C:\Documents and Settings\vimeshev
+java.util.prefs.PreferencesFactory=java.util.prefs.WindowsPreferencesFac...
+lax.nl.java.launcher.main.method=main
+java.vm.specification.name=Java Virtual Machine Specification
+lax.nl.current.vm=resource\jre\bin\java.exe
+lax.nl.env.exact_case.TEMP=C:\DOCUME~1\vimeshev\LOCALS~1\Temp
+lax.nl.env.os=Windows_NT
+lax.nl.env.PROCESSOR_IDENTIFIER=x86 Family 6 Model 11 Stepping 1, Gen...
+lax.nl.env.exact_case.ComSpec=C:\WINNT\system32\cmd.exe
+lax.nl.env.commonprogramfiles=C:\Program Files\Common Files
+lax.nl.env.processor_identifier=x86 Family 6 Model 11 Stepping 1, Gen...
+lax.nl.env.SYSTEMROOT=C:\WINNT
+lax.nl.env.NUMBER_OF_PROCESSORS=2
+lax.nl.env.computername=SLAVA
+lax.nl.env.tvdumpflags=8
+java.awt.printerjob=sun.awt.windows.WPrinterJob
+lax.nl.env.=D:=D:\DOWNLOAD
+lax.nl.env.pathext=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JS...
+lax.stdout.redirect=
+lax.nl.env.exact_case.USERDOMAIN=SLAVA
+lax.nl.env.exact_case.HOMEDRIVE=C:
+os.name=Windows 2000
+java.specification.vendor=Sun Microsystems Inc.
+java.vm.name=Java HotSpot(TM) Client VM
+lax.nl.env.exact_case.PROCESSOR_REVISION=0b01
+lax.nl.env.homedrive=C:
+java.library.path=C:\Documents and Settings\vimeshev\Lo...
+lax.nl.env.exact_case.SystemDrive=C:
+java.class.version=48.0
+lax.nl.env.exact_case.JAVA_HOME=C:\devenv\java\java131_08
+lax.nl.env.exact_case.PROCESSOR_LEVEL=6
+lax.nl.env.COMPUTERNAME=SLAVA
+lax.nl.win32.i386.microsoft.java.compiler=on
+lax.nl.env.path=d:\todelete\jprobe521\bin;D:\todelete...
+sun.boot.library.path=C:\Documents and Settings\vimeshev\Lo...
+lax.nl.env.number_of_processors=2
+lax.nl.env.PATH=d:\todelete\jprobe521\bin;D:\todelete...
+java.awt.graphicsenv=sun.awt.Win32GraphicsEnvironment
+user.variant=
+lax.nl.env.PROCESSOR_ARCHITECTURE=x86
+lax.nl.env.TMP=C:\DOCUME~1\vimeshev\LOCALS~1\Temp
+lax.nl.env.exact_case.LOGONSERVER=\\SLAVA
+lax.nl.env.processor_level=6
+lax.class.path=../InstallerData/IAClasses.zip;resour...
+lax.nl.env.comspec=C:\WINNT\system32\cmd.exe
+lax.nl.env.USERPROFILE=C:\Documents and Settings\vimeshev
+lax.nl.env.tmp=C:\DOCUME~1\vimeshev\LOCALS~1\Temp
+java.vm.specification.version=1.0
+lax.main.method=main
+lax.nl.java.option.additional=
+lax.nl.env.java_home=C:\devenv\java\java131_08
+lax.nl.java.option.java.heap.size.initial=16777216
+awt.toolkit=sun.awt.windows.WToolkit
+lax.nl.env.OS2LIBPATH=C:\WINNT\system32\os2\dll;
+lax.installer.win32.internal.property.0=bin\java.exe
+sun.cpu.isalist=pentium i486 i386
+java.ext.dirs=C:\Documents and Settings\vimeshev\Lo...
+os.version=5.0
+lax.nl.env.exact_case.Os2LibPath=C:\WINNT\system32\os2\dll;
+lax.nl.env.exact_case.OS=Windows_NT
+user.home=C:\Documents and Settings\vimeshev
+lax.nl.env.exact_case.PROMPT=$P$G
+java.vm.vendor=Sun Microsystems Inc.
+lax.nl.env.COMMONPROGRAMFILES=C:\Program Files\Common Files
+lax.nl.env.os2libpath=C:\WINNT\system32\os2\dll;
+lax.nl.env.exact_case.APPDATA=C:\Documents and Settings\vimeshev\Ap...
+lax.stdin.redirect=
+lax.nl.env.exact_case.CommonProgramFiles=C:\Program Files\Common Files
+user.dir=C:\Documents and Settings\vimeshev\Lo...
+lax.nl.valid.vm.list=J2 J1 MSJ
+sun.cpu.endian=little
+lax.nl.env.APPDATA=C:\Documents and Settings\vimeshev\Ap...
+java.vm.version=1.4.2_04-b05
+lax.nl.env.PROMPT=$P$G
+java.class.path=C:\DOCUME~1\vimeshev\LOCALS~1\Temp\I1...
+os.arch=x86
+lax.nl.env.userprofile=C:\Documents and Settings\vimeshev
+lax.nl.env.userdomain=SLAVA
+lax.nl.env.PROCESSOR_LEVEL=6
+lax.nl.env.exact_case.HOMEPATH=\Documents and Settings\vimeshev
+java.vm.specification.vendor=Sun Microsystems Inc.
+file.separator=\
+lax.nl.env.exact_case.PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JS...
+java.runtime.version=1.4.2_04-b05
+sun.boot.class.path=C:\Documents and Settings\vimeshev\Lo...
+lax.nl.env.exact_case.ALLUSERSPROFILE=C:\Documents and Settings\All Users
+lax.nl.env.exact_case.PROCESSOR_IDENTIFIER=x86 Family 6 Model 11 Stepping 1, Gen...
+sun.java2d.fontpath=
+user.country=RU
+lax.nl.env.PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JS...
+lax.nl.env.exact_case.NUMBER_OF_PROCESSORS=2
+java.vendor=Sun Microsystems Inc.
+lax.nl.env.LOGONSERVER=\\SLAVA
+lax.nl.env.exact_case.ASLOGDIR=E:\OFFICE\QuickBooks\
+lax.nl.env.temp=C:\DOCUME~1\vimeshev\LOCALS~1\Temp
+java.specification.version=1.4
+sun.arch.data.model=32
+
+Visual Tree:
+-- com.zerog.ia.installer.Installer -- AccuRev 3.8.1
+   |-- com.zerog.ia.installer.InstallSet -- Client
+   |-- com.zerog.ia.installer.InstallBundle -- Client
+   |-- com.zerog.ia.installer.InstallBundle -- Help
+   |-- com.zerog.ia.installer.InstallBundle -- Server
+   |-- com.zerog.ia.installer.InstallComponent -- No Features Component
+   |-- com.zerog.ia.installer.InstallComponent -- C- Client, Help, Server
+   |-- com.zerog.ia.installer.InstallComponent -- InstallAnywhere Uninstall Component
+   |-- com.zerog.ia.installer.InstallComponent -- C- Client, Server
+   |-- com.zerog.ia.installer.InstallComponent -- C- Client
+   |-- com.zerog.ia.installer.InstallComponent -- C- Server
+   |-- com.zerog.ia.installer.InstallComponent -- C- Help
+   |-- com.zerog.ia.installer.GhostDirectory -- accurev381
+   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- UninstallerData
+   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- 
+   |   |   |-- com.zerog.ia.installer.actions.InstallUninstaller -- Uninstall AccuRev.exe
+   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- bin
+   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- client
+   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- server
+   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- jet
+   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Linux_i386_2.0.36_client
+   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Linux_i386_2.0.36_server
+   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Linux_ppc_2.4.18-0.9a_client
+   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Linux_ppc_2.4.18-0.9a_server
+   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- SunOS_sparc_5.8_client
+   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- SunOS_sparc_5.8_server
+   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- SunOS_i386_5.10_client
+   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- SunOS_i386_5.10_server
+   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Windows 2000_x86_5.0_client
+   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Windows 2000_x86_5.0_server
+   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- AIX_POWER_PC_4.3_client
+   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- AIX_POWER_PC_4.3_server
+   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- FreeBSD_x86_3.3-RELEASE_client
+   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- FreeBSD_x86_3.3-RELEASE_server
+   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- FreeBSD_x86_3.3-RELEASE_client
+   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- FreeBSD_x86_3.3-RELEASE_server
+   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Irix_mips_6.2_client
+   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Irix_mips_6.2_server
+   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Mac OS X_ppc_10.1.5_client
+   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Mac OS X_ppc_10.1.5_server
+   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- HP-UX_PA_RISC_B.11.00_client
+   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- HP-UX_PA_RISC_B.11.00_server
+   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- OSF1_alpha_V4.0_client
+   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- OSF1_alpha_V4.0_server
+   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- UnixWare_IA32_7.1.1_client
+   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- UnixWare_IA32_7.1.1_server
+   |   |   |-- com.zerog.ia.installer.actions.MakeExecutable -- acgui.exe
+   |   |   |-- com.zerog.ia.installer.actions.MakeExecutable -- acdiffgui.exe
+   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acgui.lax
+   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acdiffgui.lax
+   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: D:\mor2\dev\bt\3rdparty\accurev381\bin\targetSettings
+   |   |   |-- com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- Copying files
+   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- acclient.cnf
+   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acclient.cnf
+   |   |   |-- com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- Copying files
+   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- acserver.cnf
+   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acserver.cnf
+   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acserver.cnf
+   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acserver.cnf
+   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- server_start.bat
+   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: server_start.bat
+   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- acserverctl
+   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acserverctl
+   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- xbind.bat
+   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: xbind.bat
+   |   |   |-- com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- Copying files
+   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- Checking VB6 Config File
+   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- doc
+   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- doc
+   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- examples
+   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- examples
+   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- extras
+   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: InstallPath
+   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: InstallPath
+   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: SCC key
+   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: SCCServerName
+   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: SCCServerPath
+   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: ProviderRegKey
+   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: InstalledSCCProviders
+   |   |-- com.zerog.ia.installer.actions.InstallNTService -- Windows Service:  AccuRev Server
+   |   |-- com.zerog.ia.installer.actions.EditEnvironment -- Environment Variable: PATH
+   |   |-- com.zerog.ia.installer.actions.EditEnvironment -- Environment Variable: PATH
+   |   |-- com.zerog.ia.installer.actions.EditEnvironment -- Environment Variable: PATH
+   |   |-- com.zerog.ia.installer.actions.InstallFile -- LICENSE
+   |   |-- com.zerog.ia.installer.actions.InstallFile -- LICENSE.TXT
+   |-- com.zerog.ia.installer.GhostDirectory -- AccuRev
+   |   |-- com.zerog.ia.installer.actions.Comment -- Comment: ***** unix, mac: links.  win: programs menu icons *****
+   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- accurev.lnk
+   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- acgui.lnk
+   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- acdiff.lnk
+   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- acdiff3.lnk
+   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev.lnk
+   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- Switch SCC Integration.lnk
+   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- Start AccuRev Server.lnk
+   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- AccuRev Documentation
+   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev Concepts Manual.lnk
+   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev User's Guide (GUI).lnk
+   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev User's Guide (CLI).lnk
+   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev Dispatch Manual.lnk
+   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev Administrator's Guide.lnk
+   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev Integrations Manual.lnk
+   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev Technical Notes.lnk
+   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- License.lnk
+   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- Uninstall AccuRev.lnk
+   |-- com.zerog.ia.installer.GhostDirectory -- 
+   |   |-- com.zerog.ia.installer.actions.Comment -- Comment: ***** SERVER STORAGE *****
+   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- site_slice
+   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- dispatch
+   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- datadict.ndb
+   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- datadict.ndb
+   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- datadict.ndb
+   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- datadict.ndb
+   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- datadict.ndb
+   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- datadict.ndb
+   |   |   |-- com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- Copying files
+   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- keys.txt
+   |   |   |-- com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- Copying files
+   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- depots
+   |   |-- com.zerog.ia.installer.actions.Exec -- Execute Command: chown -R nobody:nobody 
+   |-- com.zerog.ia.installer.GhostDirectory -- Desktop
+   |   |-- com.zerog.ia.installer.actions.Comment -- Comment: ***** win, mac and linux user-only desktop icons *****
+   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev.lnk
+   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev.lnk
+   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- Start AccuRev Server.lnk
+   |-- com.zerog.ia.installer.GhostDirectory -- Desktop
+   |   |-- com.zerog.ia.installer.actions.Comment -- Comment: ***** windows all-users desktop icons *****
+   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev.lnk
+   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- Start AccuRev Server.lnk
+   |-- com.zerog.ia.installer.GhostDirectory -- 
+   |   |-- com.zerog.ia.installer.actions.Comment -- Comment: ***** mac server startup script *****
+   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- AccuRev
+   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: AccuRev
+   |-- com.zerog.ia.installer.Billboard -- billboardImage.gif
+
+Component Tree:
+-- com.zerog.ia.installer.Installer -- AccuRev 3.8.1
+   |-- com.zerog.ia.installer.InstallSet -- Client
+   |   |-- com.zerog.ia.installer.InstallBundle -- Client
+   |   |   |-- com.zerog.ia.installer.Billboard -- billboardImage.gif
+   |   |   |-- com.zerog.ia.installer.InstallComponent -- C- Client, Help, Server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- LICENSE
+   |   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- 
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- UninstallerData
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: InstallPath
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: InstallPath
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- LICENSE.TXT
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- License.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- Uninstall AccuRev.lnk
+   |   |   |-- com.zerog.ia.installer.InstallComponent -- InstallAnywhere Uninstall Component
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallUninstaller -- Uninstall AccuRev.exe
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- UninstallerData
+   |   |   |-- com.zerog.ia.installer.InstallComponent -- C- Client, Server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- acserver.cnf
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: D:\mor2\dev\bt\3rdparty\accurev381\bin\targetSettings
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Linux_i386_2.0.36_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Linux_ppc_2.4.18-0.9a_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- SunOS_sparc_5.8_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Windows 2000_x86_5.0_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- AIX_POWER_PC_4.3_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- FreeBSD_x86_3.3-RELEASE_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- FreeBSD_x86_3.3-RELEASE_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Irix_mips_6.2_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Mac OS X_ppc_10.1.5_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- HP-UX_PA_RISC_B.11.00_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- OSF1_alpha_V4.0_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- UnixWare_IA32_7.1.1_server
+   |   |   |   |-- com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+   |   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- Copying files
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acserver.cnf
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acserver.cnf
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acserver.cnf
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- server_start.bat
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: server_start.bat
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- acserverctl
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acserverctl
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- jet
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Linux_i386_2.0.36_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Linux_ppc_2.4.18-0.9a_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- SunOS_sparc_5.8_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Windows 2000_x86_5.0_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- AIX_POWER_PC_4.3_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- FreeBSD_x86_3.3-RELEASE_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- FreeBSD_x86_3.3-RELEASE_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Irix_mips_6.2_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Mac OS X_ppc_10.1.5_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- HP-UX_PA_RISC_B.11.00_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- OSF1_alpha_V4.0_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- UnixWare_IA32_7.1.1_client
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeExecutable -- acgui.exe
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeExecutable -- acdiffgui.exe
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acgui.lax
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acdiffgui.lax
+   |   |   |   |-- com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+   |   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- Copying files
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- acclient.cnf
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acclient.cnf
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- xbind.bat
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: xbind.bat
+   |   |   |   |-- com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+   |   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- Copying files
+   |   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- Checking VB6 Config File
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- SunOS_i386_5.10_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- SunOS_i386_5.10_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- bin
+   |   |   |-- com.zerog.ia.installer.InstallComponent -- C- Client
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- accurev.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: SCC key
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: SCCServerName
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: SCCServerPath
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: ProviderRegKey
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: InstalledSCCProviders
+   |   |   |   |-- com.zerog.ia.installer.actions.EditEnvironment -- Environment Variable: PATH
+   |   |   |   |-- com.zerog.ia.installer.actions.EditEnvironment -- Environment Variable: PATH
+   |   |   |   |-- com.zerog.ia.installer.actions.EditEnvironment -- Environment Variable: PATH
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- acgui.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- acdiff.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- acdiff3.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- Switch SCC Integration.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev.lnk
+   |   |-- com.zerog.ia.installer.InstallBundle -- Help
+   |   |   |-- com.zerog.ia.installer.Billboard -- billboardImage.gif
+   |   |   |-- com.zerog.ia.installer.InstallComponent -- C- Client, Help, Server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- LICENSE
+   |   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- 
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- UninstallerData
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: InstallPath
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: InstallPath
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- LICENSE.TXT
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- License.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- Uninstall AccuRev.lnk
+   |   |   |-- com.zerog.ia.installer.InstallComponent -- InstallAnywhere Uninstall Component
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallUninstaller -- Uninstall AccuRev.exe
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- UninstallerData
+   |   |   |-- com.zerog.ia.installer.InstallComponent -- C- Help
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev Concepts Manual.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- doc
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- doc
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev Technical Notes.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev User's Guide (GUI).lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev User's Guide (CLI).lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev Dispatch Manual.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev Administrator's Guide.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev Integrations Manual.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- AccuRev Documentation
+   |-- com.zerog.ia.installer.InstallSet -- Full
+   |   |-- com.zerog.ia.installer.InstallBundle -- Help
+   |   |   |-- com.zerog.ia.installer.Billboard -- billboardImage.gif
+   |   |   |-- com.zerog.ia.installer.InstallComponent -- C- Client, Help, Server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- LICENSE
+   |   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- 
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- UninstallerData
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: InstallPath
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: InstallPath
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- LICENSE.TXT
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- License.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- Uninstall AccuRev.lnk
+   |   |   |-- com.zerog.ia.installer.InstallComponent -- InstallAnywhere Uninstall Component
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallUninstaller -- Uninstall AccuRev.exe
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- UninstallerData
+   |   |   |-- com.zerog.ia.installer.InstallComponent -- C- Help
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev Concepts Manual.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- doc
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- doc
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev Technical Notes.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev User's Guide (GUI).lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev User's Guide (CLI).lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev Dispatch Manual.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev Administrator's Guide.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev Integrations Manual.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- AccuRev Documentation
+   |   |-- com.zerog.ia.installer.InstallBundle -- Server
+   |   |   |-- com.zerog.ia.installer.Billboard -- billboardImage.gif
+   |   |   |-- com.zerog.ia.installer.InstallComponent -- C- Client, Help, Server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- LICENSE
+   |   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- 
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- UninstallerData
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: InstallPath
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: InstallPath
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- LICENSE.TXT
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- License.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- Uninstall AccuRev.lnk
+   |   |   |-- com.zerog.ia.installer.InstallComponent -- InstallAnywhere Uninstall Component
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallUninstaller -- Uninstall AccuRev.exe
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- UninstallerData
+   |   |   |-- com.zerog.ia.installer.InstallComponent -- C- Client, Server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- acserver.cnf
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: D:\mor2\dev\bt\3rdparty\accurev381\bin\targetSettings
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Linux_i386_2.0.36_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Linux_ppc_2.4.18-0.9a_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- SunOS_sparc_5.8_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Windows 2000_x86_5.0_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- AIX_POWER_PC_4.3_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- FreeBSD_x86_3.3-RELEASE_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- FreeBSD_x86_3.3-RELEASE_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Irix_mips_6.2_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Mac OS X_ppc_10.1.5_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- HP-UX_PA_RISC_B.11.00_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- OSF1_alpha_V4.0_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- UnixWare_IA32_7.1.1_server
+   |   |   |   |-- com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+   |   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- Copying files
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acserver.cnf
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acserver.cnf
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acserver.cnf
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- server_start.bat
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: server_start.bat
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- acserverctl
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acserverctl
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- jet
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Linux_i386_2.0.36_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Linux_ppc_2.4.18-0.9a_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- SunOS_sparc_5.8_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Windows 2000_x86_5.0_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- AIX_POWER_PC_4.3_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- FreeBSD_x86_3.3-RELEASE_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- FreeBSD_x86_3.3-RELEASE_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Irix_mips_6.2_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Mac OS X_ppc_10.1.5_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- HP-UX_PA_RISC_B.11.00_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- OSF1_alpha_V4.0_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- UnixWare_IA32_7.1.1_client
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeExecutable -- acgui.exe
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeExecutable -- acdiffgui.exe
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acgui.lax
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acdiffgui.lax
+   |   |   |   |-- com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+   |   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- Copying files
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- acclient.cnf
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acclient.cnf
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- xbind.bat
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: xbind.bat
+   |   |   |   |-- com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+   |   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- Copying files
+   |   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- Checking VB6 Config File
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- SunOS_i386_5.10_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- SunOS_i386_5.10_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- bin
+   |   |   |-- com.zerog.ia.installer.InstallComponent -- C- Server
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- Start AccuRev Server.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- extras
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallNTService -- Windows Service:  AccuRev Server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- dispatch
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- datadict.ndb
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- datadict.ndb
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- datadict.ndb
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- datadict.ndb
+   |   |   |   |-- com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+   |   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- Copying files
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- keys.txt
+   |   |   |   |-- com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+   |   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- Copying files
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- depots
+   |   |   |   |-- com.zerog.ia.installer.actions.Exec -- Execute Command: chown -R nobody:nobody 
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- Start AccuRev Server.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- Start AccuRev Server.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- AccuRev
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: AccuRev
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- examples
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- examples
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- datadict.ndb
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- datadict.ndb
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- site_slice
+   |   |-- com.zerog.ia.installer.InstallBundle -- Client
+   |   |   |-- com.zerog.ia.installer.Billboard -- billboardImage.gif
+   |   |   |-- com.zerog.ia.installer.InstallComponent -- C- Client, Help, Server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- LICENSE
+   |   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- 
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- UninstallerData
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: InstallPath
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: InstallPath
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- LICENSE.TXT
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- License.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- Uninstall AccuRev.lnk
+   |   |   |-- com.zerog.ia.installer.InstallComponent -- InstallAnywhere Uninstall Component
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallUninstaller -- Uninstall AccuRev.exe
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- UninstallerData
+   |   |   |-- com.zerog.ia.installer.InstallComponent -- C- Client, Server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- acserver.cnf
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: D:\mor2\dev\bt\3rdparty\accurev381\bin\targetSettings
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Linux_i386_2.0.36_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Linux_ppc_2.4.18-0.9a_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- SunOS_sparc_5.8_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Windows 2000_x86_5.0_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- AIX_POWER_PC_4.3_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- FreeBSD_x86_3.3-RELEASE_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- FreeBSD_x86_3.3-RELEASE_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Irix_mips_6.2_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Mac OS X_ppc_10.1.5_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- HP-UX_PA_RISC_B.11.00_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- OSF1_alpha_V4.0_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- UnixWare_IA32_7.1.1_server
+   |   |   |   |-- com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+   |   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- Copying files
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acserver.cnf
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acserver.cnf
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acserver.cnf
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- server_start.bat
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: server_start.bat
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- acserverctl
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acserverctl
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- jet
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Linux_i386_2.0.36_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Linux_ppc_2.4.18-0.9a_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- SunOS_sparc_5.8_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Windows 2000_x86_5.0_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- AIX_POWER_PC_4.3_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- FreeBSD_x86_3.3-RELEASE_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- FreeBSD_x86_3.3-RELEASE_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Irix_mips_6.2_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Mac OS X_ppc_10.1.5_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- HP-UX_PA_RISC_B.11.00_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- OSF1_alpha_V4.0_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- UnixWare_IA32_7.1.1_client
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeExecutable -- acgui.exe
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeExecutable -- acdiffgui.exe
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acgui.lax
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acdiffgui.lax
+   |   |   |   |-- com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+   |   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- Copying files
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- acclient.cnf
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acclient.cnf
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- xbind.bat
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: xbind.bat
+   |   |   |   |-- com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+   |   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- Copying files
+   |   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- Checking VB6 Config File
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- SunOS_i386_5.10_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- SunOS_i386_5.10_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- bin
+   |   |   |-- com.zerog.ia.installer.InstallComponent -- C- Client
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- accurev.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: SCC key
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: SCCServerName
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: SCCServerPath
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: ProviderRegKey
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: InstalledSCCProviders
+   |   |   |   |-- com.zerog.ia.installer.actions.EditEnvironment -- Environment Variable: PATH
+   |   |   |   |-- com.zerog.ia.installer.actions.EditEnvironment -- Environment Variable: PATH
+   |   |   |   |-- com.zerog.ia.installer.actions.EditEnvironment -- Environment Variable: PATH
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- acgui.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- acdiff.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- acdiff3.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- Switch SCC Integration.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev.lnk
+   |-- com.zerog.ia.installer.InstallSet -- Custom
+   |   |-- com.zerog.ia.installer.InstallBundle -- Help
+   |   |   |-- com.zerog.ia.installer.Billboard -- billboardImage.gif
+   |   |   |-- com.zerog.ia.installer.InstallComponent -- C- Client, Help, Server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- LICENSE
+   |   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- 
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- UninstallerData
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: InstallPath
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: InstallPath
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- LICENSE.TXT
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- License.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- Uninstall AccuRev.lnk
+   |   |   |-- com.zerog.ia.installer.InstallComponent -- InstallAnywhere Uninstall Component
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallUninstaller -- Uninstall AccuRev.exe
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- UninstallerData
+   |   |   |-- com.zerog.ia.installer.InstallComponent -- C- Help
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev Concepts Manual.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- doc
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- doc
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev Technical Notes.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev User's Guide (GUI).lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev User's Guide (CLI).lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev Dispatch Manual.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev Administrator's Guide.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev Integrations Manual.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- AccuRev Documentation
+   |   |-- com.zerog.ia.installer.InstallBundle -- Server
+   |   |   |-- com.zerog.ia.installer.Billboard -- billboardImage.gif
+   |   |   |-- com.zerog.ia.installer.InstallComponent -- C- Client, Help, Server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- LICENSE
+   |   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- 
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- UninstallerData
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: InstallPath
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: InstallPath
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- LICENSE.TXT
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- License.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- Uninstall AccuRev.lnk
+   |   |   |-- com.zerog.ia.installer.InstallComponent -- InstallAnywhere Uninstall Component
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallUninstaller -- Uninstall AccuRev.exe
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- UninstallerData
+   |   |   |-- com.zerog.ia.installer.InstallComponent -- C- Client, Server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- acserver.cnf
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: D:\mor2\dev\bt\3rdparty\accurev381\bin\targetSettings
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Linux_i386_2.0.36_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Linux_ppc_2.4.18-0.9a_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- SunOS_sparc_5.8_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Windows 2000_x86_5.0_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- AIX_POWER_PC_4.3_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- FreeBSD_x86_3.3-RELEASE_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- FreeBSD_x86_3.3-RELEASE_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Irix_mips_6.2_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Mac OS X_ppc_10.1.5_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- HP-UX_PA_RISC_B.11.00_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- OSF1_alpha_V4.0_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- UnixWare_IA32_7.1.1_server
+   |   |   |   |-- com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+   |   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- Copying files
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acserver.cnf
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acserver.cnf
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acserver.cnf
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- server_start.bat
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: server_start.bat
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- acserverctl
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acserverctl
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- jet
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Linux_i386_2.0.36_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Linux_ppc_2.4.18-0.9a_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- SunOS_sparc_5.8_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Windows 2000_x86_5.0_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- AIX_POWER_PC_4.3_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- FreeBSD_x86_3.3-RELEASE_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- FreeBSD_x86_3.3-RELEASE_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Irix_mips_6.2_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Mac OS X_ppc_10.1.5_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- HP-UX_PA_RISC_B.11.00_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- OSF1_alpha_V4.0_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- UnixWare_IA32_7.1.1_client
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeExecutable -- acgui.exe
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeExecutable -- acdiffgui.exe
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acgui.lax
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acdiffgui.lax
+   |   |   |   |-- com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+   |   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- Copying files
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- acclient.cnf
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acclient.cnf
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- xbind.bat
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: xbind.bat
+   |   |   |   |-- com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+   |   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- Copying files
+   |   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- Checking VB6 Config File
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- SunOS_i386_5.10_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- SunOS_i386_5.10_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- bin
+   |   |   |-- com.zerog.ia.installer.InstallComponent -- C- Server
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- Start AccuRev Server.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- extras
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallNTService -- Windows Service:  AccuRev Server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- dispatch
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- datadict.ndb
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- datadict.ndb
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- datadict.ndb
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- datadict.ndb
+   |   |   |   |-- com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+   |   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- Copying files
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- keys.txt
+   |   |   |   |-- com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+   |   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- Copying files
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- depots
+   |   |   |   |-- com.zerog.ia.installer.actions.Exec -- Execute Command: chown -R nobody:nobody 
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- Start AccuRev Server.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- Start AccuRev Server.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- AccuRev
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: AccuRev
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- examples
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- examples
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- datadict.ndb
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- datadict.ndb
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- site_slice
+   |   |-- com.zerog.ia.installer.InstallBundle -- Client
+   |   |   |-- com.zerog.ia.installer.Billboard -- billboardImage.gif
+   |   |   |-- com.zerog.ia.installer.InstallComponent -- C- Client, Help, Server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- LICENSE
+   |   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- 
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- UninstallerData
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: InstallPath
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: InstallPath
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- LICENSE.TXT
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- License.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- Uninstall AccuRev.lnk
+   |   |   |-- com.zerog.ia.installer.InstallComponent -- InstallAnywhere Uninstall Component
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallUninstaller -- Uninstall AccuRev.exe
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- UninstallerData
+   |   |   |-- com.zerog.ia.installer.InstallComponent -- C- Client, Server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- acserver.cnf
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: D:\mor2\dev\bt\3rdparty\accurev381\bin\targetSettings
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Linux_i386_2.0.36_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Linux_ppc_2.4.18-0.9a_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- SunOS_sparc_5.8_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Windows 2000_x86_5.0_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- AIX_POWER_PC_4.3_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- FreeBSD_x86_3.3-RELEASE_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- FreeBSD_x86_3.3-RELEASE_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Irix_mips_6.2_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Mac OS X_ppc_10.1.5_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- HP-UX_PA_RISC_B.11.00_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- OSF1_alpha_V4.0_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- UnixWare_IA32_7.1.1_server
+   |   |   |   |-- com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+   |   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- Copying files
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acserver.cnf
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acserver.cnf
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acserver.cnf
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- server_start.bat
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: server_start.bat
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- acserverctl
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acserverctl
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- jet
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Linux_i386_2.0.36_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Linux_ppc_2.4.18-0.9a_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- SunOS_sparc_5.8_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Windows 2000_x86_5.0_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- AIX_POWER_PC_4.3_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- FreeBSD_x86_3.3-RELEASE_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- FreeBSD_x86_3.3-RELEASE_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Irix_mips_6.2_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- Mac OS X_ppc_10.1.5_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- HP-UX_PA_RISC_B.11.00_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- OSF1_alpha_V4.0_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- UnixWare_IA32_7.1.1_client
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeExecutable -- acgui.exe
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeExecutable -- acdiffgui.exe
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acgui.lax
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acdiffgui.lax
+   |   |   |   |-- com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+   |   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- Copying files
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- acclient.cnf
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: acclient.cnf
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallFile -- xbind.bat
+   |   |   |   |-- com.zerog.ia.installer.actions.ASCIIFileManipulator -- Modifying: xbind.bat
+   |   |   |   |-- com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+   |   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- Copying files
+   |   |   |   |-- com.zerog.ia.installer.actions.CustomAction -- Checking VB6 Config File
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- SunOS_i386_5.10_client
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirCont -- SunOS_i386_5.10_server
+   |   |   |   |-- com.zerog.ia.installer.actions.InstallDirectory -- bin
+   |   |   |-- com.zerog.ia.installer.InstallComponent -- C- Client
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- accurev.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: SCC key
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: SCCServerName
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: SCCServerPath
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: ProviderRegKey
+   |   |   |   |-- com.zerog.ia.installer.actions.MakeRegEntry -- Registry Entry: InstalledSCCProviders
+   |   |   |   |-- com.zerog.ia.installer.actions.EditEnvironment -- Environment Variable: PATH
+   |   |   |   |-- com.zerog.ia.installer.actions.EditEnvironment -- Environment Variable: PATH
+   |   |   |   |-- com.zerog.ia.installer.actions.EditEnvironment -- Environment Variable: PATH
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- acgui.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- acdiff.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- acdiff3.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- Switch SCC Integration.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev.lnk
+   |   |   |   |-- com.zerog.ia.installer.actions.CreateShortcut -- AccuRev.lnk
+
+Pre-install Actions:
+com.zerog.ia.installer.actions.Comment -- Comment: ************************* INITIALIZE CONSTANTS **********************************************
+com.zerog.ia.installer.actions.EditVariableTable -- InstallAnywhere Variable
+com.zerog.ia.installer.actions.EditVariableTable -- InstallAnywhere Variable
+com.zerog.ia.installer.actions.EditVariableTable -- InstallAnywhere Variable
+com.zerog.ia.installer.actions.EditVariableTable -- InstallAnywhere Variable
+com.zerog.ia.installer.actions.EditVariableTable -- InstallAnywhere Variable
+com.zerog.ia.installer.actions.EditVariableTable -- InstallAnywhere Variable
+com.zerog.ia.installer.actions.EditVariableTable -- InstallAnywhere Variable
+com.zerog.ia.installer.actions.EditVariableTable -- InstallAnywhere Variable
+com.zerog.ia.installer.actions.EditVariableTable -- InstallAnywhere Variable
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.CustomAction -- Resolving Variable
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.Comment -- Comment: ************************* INTRODUCTION **********************************************
+com.zerog.ia.installer.actions.IntroAction -- Panel: Introduction: Introduction
+com.zerog.ia.installer.actions.IntroActionConsole -- Console: Introduction: Introduction
+com.zerog.ia.installer.actions.Comment -- Comment: ************************* LICENSE AGREEMENT **********************************************
+com.zerog.ia.installer.actions.LicenseAgrAction -- Panel: License Agreement: License Agreement
+com.zerog.ia.installer.actions.LicenseAgrActionConsole -- Console: License Agreement: License Agreement
+com.zerog.ia.installer.actions.Comment -- Comment: ************************* CHECK USER PRIVILEGES **********************************************
+com.zerog.ia.installer.actions.CustomAction -- Checking Priviledges
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.CreateDialog -- Panel: Get User Input - Simple: Choose Install Type
+com.zerog.ia.installer.actions.InstallConsoleAction -- Console: Custom Code: com.accurev.ia.customcode.ConsoleInput2
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.DisplayMessage -- Panel: Display Message: Warning: Non-Administrator Installation
+com.zerog.ia.installer.actions.DisplayMessageConsole -- Console: Display Message: Warning: Non-Administrator Installation
+com.zerog.ia.installer.actions.Comment -- Comment: ************************* TYPICAL OR CUSTOM **********************************************
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.CreateDialog -- Panel: Get User Input - Simple: Choose Install Type
+com.zerog.ia.installer.actions.InstallConsoleAction -- Console: Custom Code: com.accurev.ia.customcode.ConsoleInput2
+com.zerog.ia.installer.actions.Comment -- Comment: ************************* CHOOSE FEATURES ********************************
+com.zerog.ia.installer.actions.ChooseInstallSetAction -- Panel: Choose Install Sets: Choose Product Features
+com.zerog.ia.installer.actions.CustomizeBundles -- Panel: Choose Features to Uninstall: Choose Product Components
+com.zerog.ia.installer.actions.ChooseInstallSetActionConsole -- Console: Choose Install Sets: Choose Product Features
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditVariableTable -- InstallAnywhere Variable
+com.zerog.ia.installer.actions.EditVariableTable -- InstallAnywhere Variable
+com.zerog.ia.installer.actions.Comment -- Comment: ************************* INSTALL LOCATION ***********************************
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.GetRegEntry -- Getting Registry Entry: InstallPath
+com.zerog.ia.installer.actions.InstallDirAction -- Panel: Choose Install Folder: Choose Install Folder
+com.zerog.ia.installer.actions.InstallDirActionConsole -- Console: Choose Install Folder: Choose Install Folder
+com.zerog.ia.installer.actions.ShowDialogAction -- Message Dialog: Invalid Install Folder
+com.zerog.ia.installer.actions.ShowDialogAction -- Message Dialog: Invalid Install Folder
+com.zerog.ia.installer.actions.ShowDialogAction -- Message Dialog: Existing ACCUREV_BIN mismatch
+com.zerog.ia.installer.actions.DisplayMessageConsole -- Console: Display Message: ***** ERROR ***** Invalid Install Folder *****
+com.zerog.ia.installer.actions.DisplayMessageConsole -- Console: Display Message: ***** ERROR ***** Invalid Install Folder *****
+com.zerog.ia.installer.actions.DisplayMessageConsole -- Console: Display Message: ***** WARNING ***** existing ACCUREV_BIN mismatch *****
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.Comment -- Comment: ************************* CLEANUP OLD DEBUG LOGS ********************************
+com.zerog.ia.installer.actions.EditVariableTable -- InstallAnywhere Variable
+com.zerog.ia.installer.actions.CustomAction -- Removing files
+com.zerog.ia.installer.actions.EditVariableTable -- InstallAnywhere Variable
+com.zerog.ia.installer.actions.CustomAction -- Removing files
+com.zerog.ia.installer.actions.EditVariableTable -- InstallAnywhere Variable
+com.zerog.ia.installer.actions.CustomAction -- Removing files
+com.zerog.ia.installer.actions.EditVariableTable -- InstallAnywhere Variable
+com.zerog.ia.installer.actions.CustomAction -- Removing files
+com.zerog.ia.installer.actions.DumpDebugInfo -- Output Debug Information
+com.zerog.ia.installer.actions.Comment -- Comment: ************************* SYSTEM WARNINGS ***********************************
+com.zerog.ia.installer.actions.ShowDialogAction -- Message Dialog: Warning: Windows 95, 98, Me
+com.zerog.ia.installer.actions.Comment -- Comment: ************************* CHECK SYSTEM TIME ********************************
+com.zerog.ia.installer.actions.CustomAction -- Checking System Time
+com.zerog.ia.installer.actions.DisplayMessage -- Panel: Display Message: Verify System Time
+com.zerog.ia.installer.actions.DisplayMessageConsole -- Console: Display Message: Verify System Time
+com.zerog.ia.installer.actions.Comment -- Comment: ********************* WHICH CONFIG FILES TO INSTALL ***********************
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.CreateDialog -- Panel: Get User Input - Simple: Customize: Choose Install Type
+com.zerog.ia.installer.actions.InstallConsoleAction -- Console: Custom Code: com.accurev.ia.customcode.ConsoleInput2
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.Comment -- Comment: ************************* SERVER DATA FOLDER **********************************************
+com.zerog.ia.installer.actions.CustomAction -- Reading AccuRev Config File
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.DisplayMessage -- Panel: Display Message: Warning: Unable to parse existing config file
+com.zerog.ia.installer.actions.DisplayMessageConsole -- Console: Display Message: Warning: Unable to parse existing config file
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.ChooseFolder -- Panel: Choose Folder: Customize: Choose Install Type
+com.zerog.ia.installer.actions.InstallConsoleAction -- Console: Custom Code: com.accurev.ia.customcode.ConsoleInput2
+com.zerog.ia.installer.actions.ShowDialogAction -- Message Dialog: Invalid Server Storage Folder
+com.zerog.ia.installer.actions.ShowDialogAction -- Message Dialog: Invalid Server Storage Folder
+com.zerog.ia.installer.actions.DisplayMessageConsole -- Console: Display Message: ***** ERROR ***** Invalid Server Storage Folder *****
+com.zerog.ia.installer.actions.DisplayMessageConsole -- Console: Display Message: ***** ERROR ***** Invalid Server Storage Folder *****
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.CustomAction -- Resolving Variable
+com.zerog.ia.installer.actions.Comment -- Comment: ************************* UPGRADES ******************************
+com.zerog.ia.installer.actions.NTServiceController -- Stopping Windows Service: AccuRev
+com.zerog.ia.installer.actions.ShowDialogAction -- Message Dialog: Close running AccuRev software
+com.zerog.ia.installer.actions.DisplayMessageConsole -- Console: Display Message: ***** NOTE ***** Close running AccuRev Software *****
+com.zerog.ia.installer.actions.Comment -- Comment: ************************* LICENSE KEY **********************************************
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.CreateDialog -- Panel: Get User Input - Simple: Customize: Choose Install Type
+com.zerog.ia.installer.actions.InstallConsoleAction -- Console: Custom Code: com.accurev.ia.customcode.ConsoleInput2
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.ChooseFile -- Panel: Choose File: Choose Install Type
+com.zerog.ia.installer.actions.InstallConsoleAction -- Console: Custom Code: com.accurev.ia.customcode.ConsoleInput2
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.CustomAction -- Resolving Variable
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.CustomAction -- Resolving Variable
+com.zerog.ia.installer.actions.DisplayMessage -- Panel: Display Message: Error: Unable to find license key file
+com.zerog.ia.installer.actions.DisplayMessageConsole -- Console: Display Message: Error: Unable to find license key file
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.Comment -- Comment: ************************* LOCAL HOSTNAME **********************************************
+com.zerog.ia.installer.actions.CustomAction -- Checking TCP/IP
+com.zerog.ia.installer.actions.DisplayMessage -- Panel: Display Message: NOT IN USE - Error: unable to find network name
+com.zerog.ia.installer.actions.ShowDialogAction -- Message Dialog: Error: Unable to find network name
+com.zerog.ia.installer.actions.DisplayMessageConsole -- Console: Display Message: Error: Unable to find network name
+com.zerog.ia.installer.actions.Comment -- Comment: ************************* HOST AND PORT **********************************************
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.CustomAction -- Testing Host and Port
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.CreateDialog -- Panel: Get User Input - Simple: Configure: Set Host and Port
+com.zerog.ia.installer.actions.InstallConsoleAction -- Console: Custom Code: com.accurev.ia.customcode.ConsoleHostPort
+com.zerog.ia.installer.actions.ShowDialogAction -- Message Dialog: Invalid Host/Port
+com.zerog.ia.installer.actions.DisplayMessageConsole -- Console: Display Message: ***** WARNING ***** Invalid Host/Port *****
+com.zerog.ia.installer.actions.Comment -- Comment: ************************* HOST AND PORT CHECK **********************************************
+com.zerog.ia.installer.actions.CustomAction -- Testing Host and Port
+com.zerog.ia.installer.actions.DisplayMessage -- Panel: Display Message: Warning: Unable to locate host
+com.zerog.ia.installer.actions.DisplayMessageConsole -- Console: Display Message: Warning: Unable to locate host
+com.zerog.ia.installer.actions.DisplayMessage -- Panel: Display Message: Warning: Unable to connect to server
+com.zerog.ia.installer.actions.DisplayMessageConsole -- Console: Display Message: Warning: Unable to connect to server
+com.zerog.ia.installer.actions.DisplayMessage -- Panel: Display Message: Warning: Port is currently in use
+com.zerog.ia.installer.actions.DisplayMessageConsole -- Console: Display Message: Warning: Port is currently in use
+com.zerog.ia.installer.actions.Comment -- Comment: ************************* SHORTCUT LOCATION **********************************************
+com.zerog.ia.installer.actions.ShortcutLocAction -- Panel: Choose Alias, Link, Shortcut Folder: Customize: Choose Shortcut Folder
+com.zerog.ia.installer.actions.ShortcutLocActionConsole -- Console: Choose Link Folder: Choose Link Location
+com.zerog.ia.installer.actions.Comment -- Comment: ************************* PATH **********************************************
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.CreateDialog -- Panel: Get User Input - Simple: Customize: Choose Install Type
+com.zerog.ia.installer.actions.InstallConsoleAction -- Console: Custom Code: com.accurev.ia.customcode.ConsoleInput2
+com.zerog.ia.installer.actions.Comment -- Comment: ************************* SCC INTEGRATION **********************************************
+com.zerog.ia.installer.actions.GetRegEntry -- Getting Registry Entry: Check Installed SCC Providers
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.CreateDialog -- Panel: Get User Input - Simple: Customize: Source Control Integration
+com.zerog.ia.installer.actions.DisplayMessage -- Panel: Display Message: Warning: Existing Source Code Control Integration
+com.zerog.ia.installer.actions.DisplayMessage -- Panel: Display Message: Warning: Source Code Control Integration
+com.zerog.ia.installer.actions.Comment -- Comment: ************************* JAVA VM **********************************************
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.DisplayMessage -- Panel: Display Message: Warning: Old Java Virtual Machine
+com.zerog.ia.installer.actions.DisplayMessageConsole -- Console: Display Message: Warning: Old Java Virtual Machine
+com.zerog.ia.installer.actions.ChooseJavaVMAction -- Panel: Choose Java VM: Choose Java Virtual Machine
+com.zerog.ia.installer.actions.ShowDialogAction -- Message Dialog: Java Virtual Machine Warning
+com.zerog.ia.installer.actions.ChooseJavaVMActionConsole -- Console: Choose Java VM: Choose Java Virtual Machine
+com.zerog.ia.installer.actions.Comment -- Comment: ********************************* Compiled GUI ***************************************
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.CreateDialog -- Panel: Get User Input - Simple: Customize: Choose Install Type
+com.zerog.ia.installer.actions.Comment -- Comment: ************************* PRE-INSTALL SUMMARY **********************************************
+com.zerog.ia.installer.actions.DumpDebugInfo -- Output Debug Information
+com.zerog.ia.installer.actions.EditVariableTable -- InstallAnywhere Variable
+com.zerog.ia.installer.actions.InstallSummary -- Panel: Pre-Install Summary: Pre-Installation Summary
+com.zerog.ia.installer.actions.InstallSummaryConsole -- Console: Pre-Install Summary: Pre-Installation Summary
+com.zerog.ia.installer.actions.CheckDiskSpace -- Check Free Disk Space
+
+Post-install Actions:
+com.zerog.ia.installer.actions.DumpDebugInfo -- Output Debug Information
+com.zerog.ia.installer.actions.Comment -- Comment: ************************** JET BINDING *************************************
+com.zerog.ia.installer.actions.ExecFile -- Execute Target File: xbind.bat
+com.zerog.ia.installer.actions.Comment -- Comment: ************************* START SERVER **********************************************
+com.zerog.ia.installer.actions.Exec -- Execute Command: D:\mor2\dev\bt\3rdparty\accurev381\bin\accurev_server.exe install
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.CreateDialog -- Panel: Get User Input - Simple: Configure: Start AccuRev Server
+com.zerog.ia.installer.actions.CreateDialog -- Panel: Get User Input - Simple: Configure: Start AccuRev Server
+com.zerog.ia.installer.actions.CreateDialog -- Panel: Get User Input - Simple: Configure: Start AccuRev Server
+com.zerog.ia.installer.actions.NTServiceController -- Starting Windows Service: AccuRev
+com.zerog.ia.installer.actions.Exec -- Execute Command: D:\mor2\dev\bt\3rdparty\accurev381\bin\acserverctl start
+com.zerog.ia.installer.actions.Comment -- Comment: ************************* DELETE JAVA ****************************
+com.zerog.ia.installer.actions.EditMultipleVariables -- InstallAnywhere Variables
+com.zerog.ia.installer.actions.CustomAction -- Deleting directories
+com.zerog.ia.installer.actions.Comment -- Comment: *************** CHECK JETVMPROP VARIABLE *****************
+com.zerog.ia.installer.actions.ShowDialogAction -- Message Dialog: Environment variable JETVMPROP is set
+com.zerog.ia.installer.actions.DisplayMessageConsole -- Console: Display Message: Environment variable JETVMPROP is set
+com.zerog.ia.installer.actions.Comment -- Comment: ************************* INSTALL COMPLETED **********************************************
+com.zerog.ia.installer.actions.InstallCompleteAction -- Panel: Install Complete: Installation Complete
+com.zerog.ia.installer.actions.InstallCompleteActionConsole -- Console: Install Complete: Installation Complete
+com.zerog.ia.installer.actions.InstallFailedAction -- Panel: Install Failed: Installation Complete (errors occurred)
+com.zerog.ia.installer.actions.DisplayMessageConsole -- Console: Display Message: Installation Complete (errors occurred)
+com.zerog.ia.installer.actions.DumpDebugInfo -- Output Debug Information

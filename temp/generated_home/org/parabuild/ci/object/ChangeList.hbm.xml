@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 1.1//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="org.parabuild.ci.object.ChangeList"
+        table="CHANGELIST"
+    >
+        <cache usage="read-write" />
+
+        <id
+            name="changeListID"
+            column="ID"
+            type="int"
+            unsaved-value="-1"
+        >
+            <generator class="identity">
+            </generator>
+        </id>
+
+        <property
+            name="createdAt"
+            type="java.util.Date"
+            column="CREATED"
+            unique="false"
+        />
+
+        <property
+            name="number"
+            type="java.lang.String"
+            column="NUMBER"
+            unique="false"
+        />
+
+        <property
+            name="description"
+            type="java.lang.String"
+            column="DESCRIPTION"
+            unique="false"
+        />
+
+        <property
+            name="user"
+            type="java.lang.String"
+            column="USER"
+            unique="false"
+        />
+
+        <property
+            name="branch"
+            type="java.lang.String"
+            column="BRANCH"
+            unique="false"
+        />
+
+        <property
+            name="client"
+            type="java.lang.String"
+            column="CLIENT"
+            unique="false"
+        />
+
+        <property
+            name="email"
+            type="java.lang.String"
+            column="EMAIL"
+            length="50"
+            unique="false"
+        />
+
+        <property
+            name="truncated"
+            type="yes_no"
+            column="TRUNCATED"
+            unique="false"
+        />
+
+        <property
+            name="originalSize"
+            type="int"
+            column="ORIGINAL_SIZE"
+            unique="false"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-ChangeList.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

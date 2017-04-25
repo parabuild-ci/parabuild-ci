@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>About Logging In to Project Databases</TITLE>
+<!--<aboutlogging.html>-->
+<!--<toc parent="opening_closing_project_databases" label="About Logging into Project Databases" anchor="aboutlogging" sortkey="04">-->
+<!--<index parent="project_databases" label="about logging into" anchor="aboutlogging">-->
+<!--<index parent="logging_in" label="about" anchor="aboutlogging">-->
+<!--<index parent="users" label="about logging into a project database" anchor="aboutlogging">-->
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Getting Started\nGetting Started for Users\nOpening/Closing Project Databases\nAbout Logging into Project Databases");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="aboutlogging"></A>About Logging In to Project Databases or Projects</H1>
+
+<P>You will need to log in to a project database or project only if your administrator configured the project or project database to use:
+<UL>
+	<LI>The Login Dialog <A HREF="loginsources.html">login source</a> along with an access control database.
+	<LI>An <A HREF="aboutacdb.html">access control database</a> that contains your user ID and password.
+</ul>
+<p></p>
+
+<h2>Logging In to Projects and Subprojects</h2>
+<p>It is possible that you will not be able to log in to all of the projects and subprojects within a single project database. Your administrator might configure the project database's security so that all users have access to some files, but access to other projects is restricted based on job responsibilities. For instance, if everyone on your team works in the same project database, some projects might contain source code and some projects might contain documentation files. In this situation, the administrator might configure the security so that developers would not be able to access the project for documentation files and writers would not be able to access the project for source code.
+<p>If you attempt to open a project or subproject for which a separate access control database has been defined and this access control database does not contain the user ID you used to log in to the project database, a login error message displays and Version Manager prompts you to log in again. This Project Login dialog box contains an option that is not available in the Project Database Login dialog box: the option to remember your user name and password. If you select this option, Version Manager logs you in to the project or subproject automatically the next time you select it. 
+ <h2>What Happens when Access is Denied</h2>
+If you cannot log in to the project database or project, one of the following happens: </P>
+<ul>
+
+<li type="disc">If you cannot log in to a project database because your user name or password is invalid, you will not be able to open it. It will not appear in the Project pane.</p>
+<li type="disc">If you cannot log in to a project or subproject because your user name or password is invalid, Version Manager displays the project using an "x" (<img src="../graphics/project_x.gif">) after your unsuccessful login attempt. 
+</ul>
+
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+			<TR>
+	<TD><A HREF="logging.html">Logging In to Project Databases</A></TD>
+	<TD><A HREF="logindialog.html">Login/Switch Users Dialog Box</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

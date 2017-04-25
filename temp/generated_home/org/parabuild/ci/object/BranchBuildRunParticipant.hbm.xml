@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 1.1//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="org.parabuild.ci.object.BranchBuildRunParticipant"
+        table="BRANCH_BUILD_RUN_PARTICIPANT"
+    >
+        <cache usage="read-write" />
+
+        <id
+            name="ID"
+            column="ID"
+            type="int"
+            unsaved-value="-1"
+        >
+            <generator class="identity">
+            </generator>
+        </id>
+
+        <property
+            name="branchChangeListID"
+            type="int"
+            column="BRANCH_CHANGELIST_ID"
+            unique="false"
+        />
+
+        <property
+            name="buildRunParticipantID"
+            type="int"
+            column="BUILD_RUN_PARTICIPANT_ID"
+            unique="false"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-BranchBuildRunParticipant.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

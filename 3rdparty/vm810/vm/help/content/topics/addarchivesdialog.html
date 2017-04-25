@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Import Archives Dialog Box</TITLE>
+<!--<AddArchivesDialog.html>-->
+<!--<index parent="archives" label="Import Archives dialog box" anchor="AddArchivesDialog">-->
+<!--<index parent="importing" label="Import Archives dialog box" anchor="AddArchivesDialog">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiAddArchivesDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="AddArchivesDialog"></A>Import Archives</H1>
+<P>Use the Import Archives dialog box (Admin | Import Archives) to import existing archives into a project database or project.</P>
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+	<TD COLSPAN=2><CENTER><B>General Tab</b></center></TD>
+	</TR>
+	<TR><TD><b>Show warning if versioned file already exists</b></TD>
+		<TD><!--<control name="AddArchivesGeneral.VERSIONED_FILE_EXISTS_WARNING_CHECKBOX">-->
+		Select this check box to tell Version Manager to display a warning message when you attempt to import an archive for which a versioned file already exists in the project. <!--</control>--></TD>
+	</TR>
+	<TR><TD><b>Archive Location</b></TD>
+	<TD>
+		<B>Copy to project archive location</B>
+		<!--<control name="AddArchivesGeneral.COPY_ARCHIVE_RB">-->
+		Select to copy the archive from its current location to the project's archive location and to make the project's archive location the new archive location. When you select this option, you can set Show warning if archive already exists. This option is not available if the archives you selected to import already exist in the project's archive location.
+		<!--</control>--><br><br>
+		<B>Archive Location</B>
+		<!--<control name="AddArchivesGeneral.ARCHIVE_LOCATION_CHOICE">-->
+		For 5.3/6.0 projects, select to import the archives into one of the project's existing archive locations.<!--</control>--><br><br>
+		<B>Show warning if archive already exists</B>
+		<!--<control name="AddArchivesGeneral.ARCHIVE_EXISTS_WARNING_CHECKBOX">-->
+		Select this check box to tell Version Manager to display a warning when you attempt to import an archive that already exists in the project.	<!--</control>--><br><br>
+		<B>Use existing archive location</b>
+		<!--<control name="AddArchivesGeneral.USE_ARCHIVE_RB">-->
+		Select to make the archive's current location the new archive location.
+		<!--</control>--></TD>
+	</TR>
+	<TR><TD><b>Include archives in subdirectories</b></TD>
+		<TD><!--<control name="AddArchivesGeneral.RECURSIVE_CHECK">-->
+		This field is only available if a directory is selected. Select to import all of the archives from the subdirectories of the selected directory.
+		<!--</control>--></TD>
+		</TR>
+	<TR>
+	<TD COLSPAN=2><CENTER><B>Selected Archives Tab</b></center></TD>
+	</TR>
+	<TR>
+	<TD><B>Archives List</b></td>
+		<TD><!--<control name="AddFilesSelected.SELECTED_FILES_LIST">-->
+		Review the archives that you have selected to import into the project.
+		<!--</control>--></TD>
+		</TR>
+</TABLE>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="aboutarchives.html">About Archives</A></TD>
+		<TD><a href="importarchives.html">Importing Archives</a></TD>
+
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE web-site PUBLIC "Orion Web-site" "http://www.orionserver.com/dtds/web-site.dtd">
+
+<web-site host="[ALL]" port="@test.port@" display-name="Default Orion WebSite">
+
+    <!-- The default web-app for this site, bound to the root -->
+    <default-web-app application="default" name="test"/>
+
+    <web-app application="default" name="test" root="/test" />
+
+</web-site>

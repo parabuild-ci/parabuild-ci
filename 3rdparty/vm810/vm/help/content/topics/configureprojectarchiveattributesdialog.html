@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Configure Project Dialog Box/Archive Creation</TITLE>
+<!--<ConfigureProjectArchiveAttributesDialog.html>-->
+<!--<index parent="archives" label="Configure Project/Archive Creation Options dialog box" anchor="configureprojectarchiveattributesdialog">-->
+<!--<index parent="configuring" label="Configure Project/Archive Creation Options dialog box" anchor="configureprojectarchiveattributesdialog">-->
+<!--<index parent="access_lists" label="Configure Project/Archive Creation Options dialog box" anchor="configureprojectarchiveattributesdialog">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiConfigureProjectDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="configureprojectarchiveattributesdialog"></A>Configure Project/Archive Creation Options</H1>
+<P>Use the Configure Project dialog box (Admin | Configure Project | Archives | Creation Attributes) to set the following options on newly created archives:
+</P>
+<UL>
+	<LI>Whether or not multiple locks are allowed on an archive
+	<LI>The owner of archives
+	<LI>An <a href="accesslist.html">access list</a> for archives
+	<LI>Write protection for archives
+	<LI>Whether or not an archive is created when you check in a workfile if Version Manager cannot find one for the file
+	<LI>Whether or not a newly created archive is split for use with the Revision Library feature of the <a href="about_file_server.html">Version Manager File Server</a></LI>
+</UL>
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD COLSPAN=2><CENTER><B>Archives | Creation Attributes</B></CENTER></TD>
+	</TR>
+	<TR><TD><b>Locks Allowed on Each Archive</b></TD>
+		<TD>Do one of the following:<BR>
+		<!--<control name="ConfigureProjectGeneral.ONE_LOCK_RB">-->
+		Select <b>One</b> to allow only one lock per archive.
+		<!--</control>--><BR>
+		<!--<control name="ConfigureProjectGeneral.MULTI_LOCK_RB">-->
+		Select <b>More Than One</b> to allow multiple locks per archive. <!--</control>--></TD>
+	</TR>
+		<TR><TD><b>Owner</b></TD>
+		<TD><!--<control name="ConfigureProjectGeneral.OWNER_EDIT">-->
+		Specify the user ID of the owner of new archives. The value &lt;Current User&gt; is the User who is running Version Manager.
+		<!--</control>--></TD>
+	</TR>
+	<TR><TD><b>Access List</b></TD>
+		<TD><!--<control name="ConfigureProjectGeneral.ACCESS_LIST_EDIT">-->
+		Enter the groups and individual Users (user IDs) who can access newly created archives. The groups and user IDs that you specify must be defined in the access control database. The values must be separated by commas. The combined value of the field cannot exceed 254 characters in length.
+		<!--</control>--></TD></TR>
+	<TR><TD><b>Write protect archive</b></TD>
+		<TD><!--<control name="ConfigureProjectGeneral.WRITE_PROTECT_CB">-->
+		Select this check box to write-protect archives. Setting this option protects archives from inadvertent deletion or modification.
+		<!--</control>--></TD></TR>
+		<TR><TD><b>OK to create new archives on check in</b></TD>
+		<TD><!--<control name="ConfigureProjectGeneral.AUTO_CREATE_CB">-->
+		Select this check box to automatically create an archive when you check in a workfile if Version Manager cannot find one for the file. Otherwise, an error message is issued and no archive is created. This option applies only to the command-line interface.
+		<!--</control>--></TD></TR>
+	<TR>
+		<TD><b>Split On Create</b></TD>
+		<TD><!--<control name="ConfigureProjectGeneral.SPLIT_ON_CREATE_CB">-->
+		Select this check box to automatically split new archives into separate metadata and revision components if they are mapped to a revision path by the Version Manager File Server. This directive is for use with the Revision Library feature of the Version Manager File Server.
+		<!--</control>--></TD>
+	</TR>
+		
+</TABLE>
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="setarchivecreationoptions.html">Setting Archive Creation Options</A></TD>
+		<TD><A HREF="archivecreationoptions.html">Archive Creation Options</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>
+

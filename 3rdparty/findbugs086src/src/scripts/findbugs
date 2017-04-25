@@ -1,0 +1,115 @@
+#! /bin/sh
+
+# Launch FindBugs from the command line.
+
+@DEFINE_ESCAPE_ARG@
+
+@GET_FBHOME@
+
+@SET_DEFAULT_JAVA@
+
+maxheap=256
+
+Usage() {
+	echo "Usage: findbugs [options]"
+	echo "   -gui            Use the Graphical UI (default behavior)"
+	echo "   -textui         Use the Text UI"
+	echo "   -jvmArgs args   Pass args to JVM"
+	echo "   -maxHeap size   Maximum Java heap size in megabytes (default=$maxheap)"
+	echo "   -javahome dir   Specify location of JRE"
+	echo "   -help           Display this message"
+	echo "   -debug          Enable debug tracing in FindBugs"
+	echo "   -conserveSpace  Conserve memory at the expense of precision"
+	echo "   -workHard       Do extra work to make the analysis more precise"
+	echo "All other options are passed to the FindBugs application"
+	exit 0
+}
+
+# Set defaults
+fb_appjar="$findbugs_home/lib/findbugsGUI.jar"
+user_jvmargs=''
+debug_arg=''
+conservespace_arg=''
+workhard_arg=''
+user_props=''
+
+# Handle command line arguments.
+while [ $# -gt 0 ]; do
+	case $1 in
+	-gui)
+		fb_appjar="$findbugs_home/lib/findbugsGUI.jar"
+		;;
+
+	-textui)
+		fb_appjar="$findbugs_home/lib/findbugs.jar"
+		;;
+
+	-jvmArgs)
+		shift
+		user_jvmargs="$1"
+		;;
+
+	-maxHeap)
+		shift
+		maxheap="$1"
+		;;
+
+	-javahome)
+		shift
+		fb_javacmd="$1/bin/java"
+		;;
+
+	-debug)
+		debug_arg="-Dfindbugs.debug=true"
+		;;
+
+	-conserveSpace)
+		conservespace_arg="-Dfindbugs.conserveSpace=true"
+		;;
+
+	-workHard)
+		workhard_arg="-Dfindbugs.workHard=true"
+		;;
+
+	-property)
+		shift
+		user_props="-D$1 $user_props"
+		;;
+
+	-version)
+		fb_mainclass=edu.umd.cs.findbugs.Version
+		fb_appargs="-release"
+		while [ $# -gt 0 ]; do
+			shift
+		done
+		@WRAP_JAVA@
+		exit 0
+		;;
+
+	-help)
+		Usage
+		;;
+
+	# All unrecognized arguments will be accumulated and
+	# passed to the application.
+	*)
+		fb_appargs="$fb_appargs `escape_arg "$1"`"
+		;;
+	esac
+
+	shift
+done
+
+fb_jvmargs="$user_jvmargs $debug_arg $conservespace_arg $workhard_arg $user_props"
+fb_maxheap="-Xmx${maxheap}m"
+
+# Extra JVM args for MacOSX.
+if [ $fb_osname = "Darwin" ]; then
+	fb_jvmargs="$fb_jvmargs \
+		-Xdock:name=FindBugs -Xdock:icon=${findbugs_home}/lib/buggy.icns \
+		-Dapple.laf.useScreenMenuBar=true"
+fi
+
+@WRAP_JAR@
+
+# vim:ts=3

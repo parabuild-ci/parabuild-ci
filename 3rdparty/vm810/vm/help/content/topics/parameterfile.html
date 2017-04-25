@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Parameter File Method</TITLE>
+<!--<parameterfile.html>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="parameterfile"></A>Parameter File Method</H1>
+<p>
+The parameter file method of passing event information can be used by specifying the macro __EventParmFile__ on the command-line (not in the event trigger file). The parameter file method of passing event information is the slowest and should be used only if the environment variable method does not work for your particular event trigger or a change description is longer than 1K.
+</P>
+<P>
+Using this method, Serena ChangeMan Version Manager creates a temporary file that contains values for event information that is available for the event trigger being executed. This information can then be used by the event trigger. Remember that not all event information is available for all Version Manager events.
+</P>
+<P>
+The following example illustrates the use of __EventParmFile__. The example shows an event trigger definition that calls Configuration Builder and creates a temporary file in the current working directory. Version Manager writes the name and value of each macro definition in the syntax name=value.
+</P>
+<P>
+EventTrigger = ALLEVENTS Build.exe -FMYEVENT.BLD EventInfoFile=__EventParmFile__
+</P>
+<P>
+Continuing with the previous example, when Version Manager executes any Version Manager event, the command-line executable expands to the following:
+</P>
+<P>
+Build.exe -FMYEVENT.BLD EventInfoFile=E:\TMP\PVCS0024.TMP
+</P>
+<P>
+Version Manager creates the temporary file, executes the event trigger, and then removes the file. The contents of the temporary file are placed in EventInfoFile for use by Configuration Builder.
+</P>
+<P>
+Where, for example, the file E:\TMP\PVCS0024.TMP contains the following:
+</P>
+<P>
+EVENTNAME=PostPut<BR>
+EVENTARCHIVE=E:\TMP\ET\FOO.C_V<BR>
+EVENTWORKFILE=FOO.C<BR>
+USERID=BLAIR<BR>
+EVENTLOCK=<BR>
+EVENTREVISION=1.1<BR>
+EVENTVERSION=<BR>
+EVENTGROUP=<BR>
+EVENTJOURNALFILE=<BR>
+EVENTJOURNALENTRY=<BR>
+EVENTDATE=19990123<BR>
+EVENTTIME=112104<BR>
+EVENTFQPWORKFILE=D:\TMP\ET\FOO.C<BR>
+EVENTCONFIGFILES=<BR>
+EVENTMASTERCONFIGFILE=E:\PRJDB\ARCHIVES\CPE2QP.CFG<BR>
+EVENTARCHIVEPATH=<BR>
+EVENTCLIENTWORKFILE=<BR>
+EVENTPROJECTDB=<BR>
+EVENTPROJECTNAME=<BR>
+EVENTITEMSELECTIONTYPE=<BR>
+EVENTFOLDERPATH=<BR>
+EVENTCHGDESC=No change.
+</P>
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a href="environvar.html">Environment Variable Method</a></TD>
+		<TD><a href="cmdlinemacro.html">Command-Line Macro Method</a></TD>
+	</TR>
+	<TR>
+		<TD><a href="examplesoftriggers.html">Examples of Event Triggers</a></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

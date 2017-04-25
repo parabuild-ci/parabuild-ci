@@ -1,0 +1,206 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Identifying Files Checked in by View Manager</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=586>
+<meta name=layout-width content=702>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Working with the Application\nComparing and Merging\nComparing and Merging Views\nWorking with the View Manager Utility\nIdentifying Files Checked in by View Manager");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Identifying Files Checked in by View Manager</h1>
+
+<p class=Body>You can use StarTeam to identify files that have been replicated 
+ by View Manager. These files have RM as the first two characters in their 
+ <span style="font-weight: bold;"><B>Comment</B></span> field, followed by the 
+ date and time at which the file was checked in by View Manager. This information 
+ is followed by the original <span style="font-weight: bold;"><B>Comment</B></span> 
+ provided for the file.</p>
+
+<p class=Body>When a merged file is checked in as a new revision, the revision's 
+ <span style="font-weight: bold;"><B>Comment</B></span> field provides merge information. 
+ The comment identifies the source item that was used in the merge when 
+ a file is checked into the target, and vice versa. </p>
+
+<p class=Proc>To use StarTeam to find files checked in by View Manager:</p>
+
+<ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Open the appropriate project 
+ view.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Click the <span style="font-weight: bold;"><B>Files</B></span> 
+ tab.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Display the <span style="font-weight: bold;"><B>Comment</B></span> 
+ field in the upper pane.</p></li>
+	
+	<ol>
+		
+		<li class=kadov-p-CList-2><p class=List-2>Do one of the following:</p></li>
+		
+		<ul>
+			
+			<li class=kadov-p-CBullet-2-Indent><p class=Bullet-2-Indent>Right-click 
+ a column header on the upper pane, then select <span style="font-weight: bold;"><B>Show 
+ fields</B></span> from the pop-up menu. </p></li>
+			
+			<li class=kadov-p-CBullet-2-Indent><p class=Bullet-2-Indent>Select 
+ <span style="font-weight: bold;"><B>Filters &gt; Show Fields</B></span> from 
+ an appropriate menu or pop-up menus. </p></li>
+		</ul>
+		
+		<li class=kadov-p-CList-2><p class=List-2>The <span style="font-style: italic;"><I>Show 
+ Fields</I></span> dialog displays two lists. The<span style="font-weight: bold;"><B> 
+ Avai</B></span><span style="font-weight: bold; text-transform: lowercase;"><B>lable 
+ Fields </B></span>list box contains all the fields that could be displayed 
+ as column headers but that are not currently displayed. The <span style="font-weight: bold;"><B>Show 
+ these fields in this order</B></span> list box displays all the fields that 
+ are currently displayed.</p></li>
+		
+		<li class=kadov-p-CList-2><p class=List-2>Double-click the <span 
+ style="font-weight: bold;"><B>Comment</B></span> field in the <span style="font-weight: bold;"><B>Available 
+ fields</B></span> list box to move it to the <span style="font-weight: bold;"><B>Show 
+ these fields in this order</B></span> list box.</p></li>
+		
+		<li class=kadov-p-CList-2><p class=List-2>Click <span style="font-weight: bold;"><B>OK</B></span>.</p></li>
+		
+		<li class=kadov-p-CList-2><p class=List-2>To change the order of 
+ the fields to be displayed in the upper pane, drag each field name to 
+ the desired location in the <span style="font-weight: bold;"><B>Show these 
+ fields in this order</B></span> list box. </p></li>
+	</ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Find files that have<span 
+ style="font-weight: bold;"><B> RM</B></span> in the<span style="font-weight: bold;"><B> 
+ Comment</B></span> field of their tip revisions.</p></li>
+	
+	<ol>
+		
+		<li class=kadov-p-CList-2><p class=List-2>Select<span style="font-weight: bold;"><B> 
+ File &gt; Find</B></span> from the menu bar. The <span style="font-style: italic;"><I>Find</I></span> 
+ dialog appears. </p></li>
+		
+		<li class=kadov-p-CList-2><p class=List-2>Type <span style="font-weight: bold;"><B>RM</B></span> 
+ in the <span style="font-weight: bold;"><B>Search for</B></span> text box.</p></li>
+		
+		<li class=kadov-p-CList-2><p class=List-2>From the <span style="font-weight: bold;"><B>Look 
+ in</B></span> group box, select the <span style="font-weight: bold;"><B>This 
+ field</B></span> option button.</p></li>
+		
+		<li class=kadov-p-CList-2><p class=List-2>Select <span style="font-weight: bold;"><B>Comment</B></span> 
+ from the drop-down list box.</p></li>
+		
+		<li class=kadov-p-CList-2><p class=List-2>Select the <span style="font-weight: bold;"><B>Match 
+ case</B></span> check box.</p></li>
+		
+		<li class=kadov-p-CList-2><p class=List-2>Click <span style="font-weight: bold;"><B>OK</B></span> 
+ to locate the first file.</p></li>
+		
+		<li class=kadov-p-CList-2><p class=List-2>Press <span style="font-weight: bold;"><B>F3</B></span> 
+ or <span style="font-weight: bold;"><B>Shift + F3</B></span> to find the next 
+ file or previous file.</p></li>
+	</ol>
+</ol>
+
+<p class=Body><span style="font-weight: bold;"><B>Tip</B></span>: You can also 
+ sort files based on the contents of the <span style="font-weight: bold;"><B>Comment</B></span> 
+ field in their tip revisions. &nbsp;</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

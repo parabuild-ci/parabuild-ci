@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head><title>jaxen: universal Java XPath engine - FAQ</title><style type="text/css" media="all">
+          @import url("./style/maven-base.css");
+          
+			    @import url("./style/maven-theme.css");</style><link rel="stylesheet" href="./style/print.css" type="text/css" media="print"></link><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta><meta name="author" content="bob mcwhirter"></meta><meta name="email" content="bob@eng.werken.com"></meta></head><body class="composite"><div id="banner"><a href="http://codehaus.org" id="organizationLogo"><img alt="Codehaus" src="http://codehaus.org/codehaus-small.gif"></img></a><a href="http://jaxen.codehaus.org/" id="projectLogo"><img alt="jaxen" src="../jaxen.gif"></img></a><div class="clear"><hr></hr></div></div><div id="breadcrumbs"><div class="xleft">
+                	Last published: 05 May 2007
+                  | Doc for 1.1.1</div><div class="xright">
+        
+        <a href="http://www.fnokd.com/" class="externalLink" title="External Link">The Werken Company</a>
+      </div><div class="clear"><hr></hr></div></div><div id="leftColumn"><div id="navcolumn"><div id="menujaxen"><h5>jaxen</h5><ul><li class="none"><a href="index.html">Overview</a></li><li class="none"><a href="releases.html">Download Jaxen</a></li><li class="none"><a href="apidocs/index.html">API Documentation</a></li><li class="none"><strong><a href="faq.html">FAQ</a></strong></li><li class="none"><a href="extensions.html">Writing Extension Functions</a></li><li class="none"><a href="building.html">Build Instructions</a></li><li class="none"><a href="releases.html">Releases</a></li><li class="none"><a href="cvs-usage.html">CVS Access</a></li><li class="none"><a href="status.html">Status</a></li></ul></div><div id="menuProject_Documentation"><h5>Project Documentation</h5><ul><li class="none"><a href="index.html">About jaxen</a></li><li class="collapsed"><a href="project-info.html">Project Info</a></li><li class="collapsed"><a href="maven-reports.html">Project Reports</a></li><li class="none"><a href="http://maven.apache.org/development-process.html" class="externalLink" title="External Link">Development Process</a></li></ul></div><a href="http://maven.apache.org/" title="Built by Maven" id="poweredBy"><img alt="Built by Maven" src="./images/logos/maven-button-1.png"></img></a></div></div><div id="bodyColumn"><div class="contentBox"><div class="section"><a name="What_is_jaxen_"></a><h2>What is jaxen?</h2><p>
+      The <code>jaxen</code> project is a Java XPath Engine.
+      <code>jaxen</code> is a universal object model walker, capable of evaluating
+      XPath expressions across multiple models.  Currently supported
+      are <a href="http://dom4j.org" class="externalLink" title="External Link">dom4j</a>, <a href="http://jdom.org" class="externalLink" title="External Link">JDOM</a>, and DOM.
+      </p></div><div class="section"><a name="What_is_the_jaxen_license_"></a><h2>What is the jaxen license?</h2><p>We use an Apache-style open source license which is one of the least
+        restrictive licenses around, you can use <code>jaxen</code> to create new products
+        without them having to be open source.
+      </p></div><div class="section"><a name="Why_is_jaxen_useful_"></a><h2>Why is jaxen useful?</h2><p>
+      After implementing an XPath engine for both <a href="http://dom4j.org" class="externalLink" title="External Link">dom4j</a> and
+      <a href="http://jdom.org" class="externalLink" title="External Link">JDOM</a>, and attempting to keep them both in sync, it was
+      decided that factoring out the commonality would be a Good Thing.  Thus, <code>jaxen</code>
+      provides a single point for XPath expression evaluation, regardless of the target
+      object model, whether its <strong>dom4j</strong>, <strong>JDOM</strong>, <strong>DOM</strong>, 
+      <strong>XOM</strong>, <strong>JavaBeans</strong>,
+      or what not.
+      </p></div><div class="section"><a name="Why_is_jaxen_better_than__some_other_XPath_technology_"></a><h2>Why is jaxen better than [some other XPath technology]</h2><p>
+      <code>jaxen</code> is better than <code>werken.xpath</code> specifically because it better
+      handles XPath expressions, and syntax error reporting.  Additionally, since
+      jaxen is a unified code-base, developer effort isn't split between maintaining
+      the <strong>dom4j</strong> version and the <strong>JDOM</strong> version.  More hands working on
+      the same project reduces bug count.
+      </p><p>
+      <code>jaxen</code> may be perceived to be better than other XPath technologies since it
+      provides a single cohesive API for evaluating XPaths against multiple object
+      models.  Learn the <code>jaxen</code> API, and apply it to <strong>dom4j</strong>, <strong>JDOM</strong>,
+      <strong>XOM</strong> or <strong>DOM</strong> trees in exactly the same way.
+      </p><p>
+      Also, since <code>jaxen</code> works against an adaptor which provides InfoSet access
+      to arbitrary object models, it should be possible to build even larger
+      tools in terms of <code>jaxen</code>, to work with multiple models.  For example, an
+      <strong>XQL</strong> engine could be developed, which would automagically work with
+      all models already supported by <code>jaxen</code>.
+      </p></div><div class="section"><a name="What_are_some_related_technologies_"></a><h2>What are some related technologies?</h2><p>
+      <code>jaxen</code> itself is based upon SAXPath, which is
+      an event-based model for parsing XPath expressions.
+      </p><p>
+      <code>jaxen</code> currently has navigators defined for <a href="http://dom4j.org/" class="externalLink" title="External Link">dom4j</a>
+      and <a href="http://jdom.org/" class="externalLink" title="External Link">JDOM</a>, two popular and convenient object models
+      for representing XML documents.  
+      Of course, <a href="http://www.w3.org/DOM/" class="externalLink" title="External Link">W3C DOM</a> is also supported.
+      </p></div><div class="section"><a name="Which_version_of_XPath_does_jaxen_support__Does_jaxen_support_XPath_2_"></a><h2>Which version of XPath does jaxen support? Does jaxen support XPath 2?</h2><p>
+      <code>jaxen</code> supports XPath 1.0. It does not support XPath 2.0. 
+      XPath 2.0 is a very different spec with many things to recommend it and a
+      few things not to like as well. However XPath 2.0 is not compatible with XPath 1.0.
+      It is far from a simple upgrade from XPath 1.0. It has a very different data model,
+      that might well require significant revisions to <code>jaxen</code>'s internal data structures,
+      and possibly a very different API as well. 
+      </p><p>
+      The current release plan focuses exclusively on XPath 1.0 compatibility. 
+      Perhaps one day someone will make a branch or fork of <code>jaxen</code>
+      that supports XPath 2. However, this would be a  significant undertaking,
+      and so far little interest in this has been shown. 
+      </p></div><div class="section"><a name="How_do_I_support_a_different_object_model_"></a><h2>How do I support a different object model?</h2><p>
+      The only thing required is an implementation of the interface 
+      <code>org.jaxen.Navigator</code>.  Not all of the interface is required,
+      and a default implementation, in the form of <code>org.jaxen.DefaultNavigator</code>
+      is also provided.
+      </p><p>
+      Since many of the XPath axes can be defined in terms of each other (for example,
+      the <code>ancestor</code> axis is merely a the <code>parent</code> recursively
+      applied), only a few low-level axis iterators are required to initially get
+      started.  Of course, you may implement them directly, instead of relying upon
+      <code>jaxen</code>'s composition ability.
+      </p></div><div class="section"><a name="Is_jaxen_only_good_for_XPath_evaluation_"></a><h2>Is jaxen only good for XPath evaluation?</h2><p>
+      No. 
+      </p><p>
+      The <code>DocumentNavigators</code> provided with <code>jaxen</code> would be used
+      by themselves, without the XPath evaluation engine, to provide univeral
+      access to many object models for other technologies.
+      </p></div><div class="section"><a name="Who_uses_jaxen_"></a><h2>Who uses jaxen?</h2><p>
+      <code>jaxen</code> has been embedded directly into <strong>dom4j</strong> and 
+      <strong><a href="http://www.xom.nu/" class="externalLink" title="External Link">XOM 1.1</a></strong> to provide
+      easy XPath evaluation directly from your documents.  Additionally, it's
+      being integrated into David Megginson's 
+      <a href="http://newsml-toolkit.sourceforge.net/" class="externalLink" title="External Link">NewsML Framework</a>.
+      Tom Copeland's <a href="http://pmd.sourceforge.net/" class="externalLink" title="External Link">PMD</a> static code analyzer uses jaxen to query Java code structures using XPath.  
+      </p></div><div class="section"><a name="How_do_I_write_a_query_for_namespace_qualified_elements_attributes_in_Jaxen_"></a><h2>How do I write a query for namespace qualified elements/attributes in Jaxen?</h2><p>
+      The XPath expression that selects elements or attributes in a namespace 
+      looks exactly the same as it does in any other XPath context; that is, use prefixed names where the
+      prefixes are bound to the namespace URIs. For example,
+      </p><p><code>/pre:bar/@xlink:href</code></p><p>
+      However, because a Java program is not an XML document, it is also necessary to
+      bind the prefixes to the appropriate namespace URIs through a <code>NamespaceContext</code> object.
+      For example, this code sets up and then executes the above query:
+      </p><pre>  XPath xpath = new DOMXPath("/foo:bar/@xlink:href", nav);
+  SimpleNamespaceContext nsContext = new SimpleNamespaceContext();
+  nsContext.addNamespace("pre", "http://www.foo.org/");
+  nsContext.addNamespace("xlink", "http://www.w3.org/1999/xlink");
+  xpath.setNamespaceContext(nsContext);
+  List result = contextpath.selectNodes(document);</pre><p>
+        As a shortcut, you can simply add a namespace binding
+        to the XPath expression's current context using the 
+        <code>addNamespace</code> method: 
+        </p><pre>  XPath xpath = new DOMXPath("/pre:root");
+  xpath.addNamespace("pre", "http://www.example.org/");
+  List result = xpath.selectNodes(root);</pre><p>
+         If the namespace context does not contain a binding for a prefix that is used in
+         the XPath expression, an <code>UnresolvableException</code> 
+         (a subclass of <code>JaxenException</code>
+         is thrown when you attempt
+         to evaluate it.
+       </p></div><div class="section"><a name="How_do_I_write_a_query_for_namespace_qualified_elements_attributes_in_the_default_namespace_"></a><h2>How do I write a query for namespace qualified elements/attributes in the default namespace?</h2><p>
+      The same way you do for elements and attributes that
+      are in prefixed namespaces. That is, you use a prefix in the XPath expression and bind 
+      the prefix to the namespace URI. You do this even if the document you're querying
+      uses unprefixed namespaced qualified names. In XPath 1.0, all unprefixed names are unqualified. 
+      There is no requirement that the prefixes used in the XPath expression are the same as the prefixes used in the
+      document being queried. Only the namespace URIs need to match, not the prefixes. 
+      </p><p>For example, this code fragment queries the document 
+      <code>[&lt;root xmlns="http://www.example.org/"/&gt;</code> using the XPath expression
+      <code>/pre:root</code>:
+      
+      </p><pre>        Element root = doc.createElementNS("http://www.example.org/", "root");
+        doc.appendChild(root);
+        XPath xpath = new DOMXPath("/pre:root");
+        SimpleNamespaceContext context = new SimpleNamespaceContext();
+        context.addNamespace("pre", "http://www.example.org/");
+        xpath.setNamespaceContext(context);
+        List result = xpath.selectNodes(root);</pre><p>Alternately, using the shortcut:
+      </p><pre>        Element root = doc.createElementNS("http://www.example.org/", "root");
+        doc.appendChild(root);
+        XPath xpath = new DOMXPath("/pre:root");
+        xpath.addNamespace("pre", "http://www.example.org/");
+        List result = xpath.selectNodes(root);</pre></div></div></div><div class="clear"><hr></hr></div><div id="footer"><div class="xright">© 2001-2007, Codehaus</div><div class="clear"><hr></hr></div></div></body></html>

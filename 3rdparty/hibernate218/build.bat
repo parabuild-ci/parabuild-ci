@@ -1,0 +1,2 @@
+set JDBC_DRIVER=C:\mysql\mysql-connector-java-3.0.8-stable-bin.jar
+java -cp "lib/ant-1.5.3.jar;lib/ant-optional-1.5.3.jar;lib/junit-3.8.1.jar;lib/xerces-2.4.0.jar;%JAVA_HOME%/lib/tools.jar" org.apache.tools.ant.Main -Ddriver.jar=%JDBC_DRIVER% %1 %2 %3 %4 %5

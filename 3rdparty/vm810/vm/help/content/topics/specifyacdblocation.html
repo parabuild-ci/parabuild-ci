@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Specifying an Access Control Database for your Project Database or Project</TITLE>
+<!--<specifyacdblocation.html>-->
+<!--<toc parent="setting_configuration_options" label="Specifying an Access Control Database for your Project Database or Project" anchor="specifyacdblocation" sortkey="06">-->
+<!--<toc parent="setting_project_configuration_options" label="Specifying an Access Control Database for your Project Database or Project" anchor="specifyacdblocation" sortkey="06">-->
+<!--<toc parent="set_up_security" label="Specifying an Access Control Database for your Project Database or Project" anchor="specifyacdblocation" sortkey="03">-->
+<!--<index parent="security" label="specifying the access control database for your project database or project" anchor="specifyacdblocation">-->
+<!--<index parent="access_control_database" label="specifying for your project database or project" anchor="specifyacdblocation">-->
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with Project Databases/Projects\nConfiguring Project Databases/Projects\nSpecifying an Access Control Database for your Project Database or Project");
+addTocInfo("Using Version Manager\nUsing Security\nSetting Up Security\nSpecifying an Access Control Database for your Project Database or Project");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="specifyacdblocation"></A>Specifying an Access Control Database for your Project Database or Project</H1>
+
+<H2>To specify the access control database location:</H2>
+<OL>
+	<LI>Select the project database or project for which you want to define an access control database. The project database or project must have a <A HREF="aboutconfigfiles.html">configuration file</a> associated with it.<br><br>
+	<LI>Select Admin | Configure Project. The Project Configuration dialog box appears with the General tab active.<br><br>
+	<LI>If not already selected, select the <b>Show Advanced Options</b> check box.<br><br>
+	<LI>In the Options list, select <b>Access Control Database</b> beneath Security. The access control database information appears in the Access Control Database pane (the right pane).<br><br>
+	<LI>Do one of the following:<br><br>
+		<UL type="disc">
+		<LI>Click <b>Create a new access control database</b> to create a new access control database in the archive directory of the project database or project. Version Manager copies the default access control database (default.db) to this location.<br><br>
+		<LI>Click <b>Use an existing access control database</b> to use an existing access control database. When you click this button, the Select Access Control Database dialog box appears so that you can choose an access control database. This option works well when you have multiple project databases that need to use the same security information. If you use the same access control database for each of the project databases, then you only have to update one access control database when your security situation changes, for example, when you need to add a new user to the access control database.<br><br>
+		<LI>Click <b>Duplicate an existing access control database</b> to duplicate an existing access control database. When you click this button, the Select Access Control Database dialog box appears so that you can choose an access control database. Version Manager makes a copy of the access control database that you choose and places it in the archive directory of the project database.<br><br>
+		</UL>
+	<LI>Leave the <b>Enable access control database security</b> check box deselected to modify the access control database without having it enforced.<br><br>
+	<LI>Click OK.<br><br>
+</OL>
+
+Continue to the next procedure, <A HREF="definecustomprivsets.html">defining custom privilege sets</a>.
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="aboutconfigoptions.html">About Configuration Options</A></TD>
+		<TD><A HREF="setconfigoptions.html">Setting Configuration Options</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="setupsecurity.html">Setting Up Security</A></TD>
+		<td><A HREF="changeacdbassocpdb.html">Changing the Access Control Database Associated with a Project Database or Project</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

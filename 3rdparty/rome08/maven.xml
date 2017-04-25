@@ -1,0 +1,16 @@
+<project default="dobuild"
+  xmlns:j="jelly:core"
+  xmlns:u="jelly:util"
+  xmlns:ant="jelly:ant"
+  xmlns:maven="jelly:maven"
+  xmlns:deploy="deploy">     
+
+  <goal name="dobuild">
+    <j:set var="goals" value="clean,java:compile,javadoc,jar,dist"/>
+    <u:tokenize var="goals" delim=",">${goals}</u:tokenize>
+    <j:forEach items="${goals}" var="goal" indexVar="goalNumber">
+      <attainGoal name="${goal}"/>
+    </j:forEach>
+  </goal>
+</project>
+

@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>About Locking Revisions</TITLE>
+<!--<aboutlocking.html>-->
+<!--<index parent="files" label="about locking revisions" anchor="aboutlocking">-->
+<!--<index parent="locking" label="about" anchor="aboutlocking">-->
+<!--<index parent="revisions" label="about locking" anchor="aboutlocking">-->
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="aboutlocking"></A>About Locking Revisions</H1>
+<p>Use locks when you want to prevent other Project Team Members from editing a revision that you are working on. A lock controls access to revisions by warning other Users that a file is in use. Other Project Team Members can always view or get the revision, but they cannot check in and overwrite the revision.</P>
+
+When you check out a revision, a lock is automatically placed on the revision. The lock remains on the revision until you either check the workfile back in or unlock it. </P>
+
+<h2>What Happens During a Lock</h2>
+When you lock a versioned file, technically, you are locking a specific revision of the versioned file. Locking a specific revision denies other Project Team Members access to that revision.</P>
+The only time other Project Team Members can edit a locked revision is if multiple locking has been enabled on the project you are working on. For more information on multiple locking, see <a href="multilocks.html">multiple locking</a>.
+
+<h2>Specifying a Lock</H2>
+You can lock a revision by specifying a revision number, version label, or promotion group. You can lock revisions by selecting a single revision or versioned file, multiple versioned files, a project, or an entire project database.</P>
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a href="lockdialog.html">Lock Dialog Box</a></TD>
+		<TD><a href="locking.html">Locking Revisions</a></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

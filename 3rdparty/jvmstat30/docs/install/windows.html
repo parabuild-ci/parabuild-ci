@@ -1,0 +1,419 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
+	<TITLE>jvmstat 3.0 Windows Installation Instructions</TITLE>
+	<META NAME="GENERATOR" CONTENT="StarOffice 6.0  (Solaris Sparc)">
+	<META NAME="AUTHOR" CONTENT="Brian Doherty">
+	<META NAME="CREATED" CONTENT="20010711;8551800">
+	<META NAME="CHANGED" CONTENT="20020723;15525700">
+</HEAD>
+<BODY LANG="en-US" BGCOLOR="#ffffff">
+<H1 ALIGN=CENTER><FONT FACE="Helvetica, sans-serif">
+Windows Installation Instructions</FONT></H1>
+<H2 ALIGN=LEFT><FONT FACE="Helvetica, sans-serif">
+J2SE Installation</FONT></H1>
+<P ALIGN=LEFT STYLE="margin-left: 2cm"><FONT FACE="Helvetica, sans-serif">
+If you have not already downloaded and installed the J2SE 5.0 JDK,
+please do so now. Follow the
+<A HREF="http://java.sun.com/j2se/1.5.0/download.html">J2SE 5.0 JDK download
+and installation instructions</A>. Once you have a working J2SE 5.0 JDK
+installation, continue with <A HREF="#jvmstatinstall"> jvmstat Tools
+Installation</A>. Note that the J2SE 5.0 JRE does not contian the class
+file needed to run the jvmstat 3.0 tools. You must download the J2SE 5.0
+JDK to run the jvmstat 3.0 tools.
+</FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 2cm; font-style: normal; font-weight: medium">
+<FONT FACE="Helvetica, sans-serif"><FONT SIZE=3>Please note that the
+HotSpot JVM instrumentation is not accessible on Windows 95, 98, or ME
+platforms. Therefore, the jvmstat tools can only monitor HotSpot JVMs
+running on the Windows NT 3.1 and later platforms. In addition, the HotSpot
+JVM instrumentation is not accessible on Windows NT based systems where
+the application's temporary directory is stored on a FAT type file system, as
+such file systems provide insufficient security controls. Please consult the
+<A HREF="http://developers.sun.com/dev/coolstuff/jvmstat/faq.html"> jvmstat FAQ</A>
+for work-around solutions.
+</FONT></FONT></P>
+
+<a name="jvmstatinstall">
+<H2 ALIGN=LEFT><FONT FACE="Helvetica, sans-serif">
+jvmstat Tools Installation</FONT></H1>
+<P ALIGN=LEFT STYLE="margin-left: 2cm"><FONT FACE="Helvetica, sans-serif">
+The jvmstat tools distribution is released in both tar and zip formats for
+all platforms. There is a single distribution for all supported platforms.
+These instructions will guide you through an installation using the DOS
+Command tool. If you have the MKS toolkit package installed on your Windows
+system, you can choose to follow the
+<A HREF="solaris.html"> Solaris and Linux installation instructions</A> 
+instead.
+</FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 2cm"><FONT FACE="Helvetica, sans-serif">
+To use the tar archive, you must have a <I>tar</I> executable on your system.
+Similarly, to use the zip format, you need to have an <I>unzip</I> executable
+on your system. The <I>jar</I> command can be used in place of the
+<I>unzip</I> command, as jar files are an extension of zip archives. In
+any case, these instructions assume that the necessary executable can be
+found in a directory included in the user's PATH environment variable.
+</FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 2cm"><FONT FACE="Helvetica, sans-serif">
+In the following instructions, text such as <B><I>C:\&gt;</I></B> or
+<B><I>C:\jvmstat&gt; </I></B>represent the DOS command tool prompt.
+Text following these prompts that represent commands you need to type
+are indicated by text typeset in <B>bold</B>. These instructions will
+also contain references to <CODE><B><I><FONT FACE="Courier">JVMSTAT_HOME</FONT></I></B></CODE>
+and <CODE><B><I><FONT FACE="Courier">JAVA_HOME</FONT></I></B></CODE>
+strings. Although these appear to be environment variables at first
+glance, they are intended to be substituted with the paths to the
+installation directories for jvmstat and the Java 2 SDK, respectively.
+You may choose to create environment variables with these names; however,
+they are not required for proper installation or operation of the jvmstat
+tools.
+</FONT></P>
+<H2><FONT FACE="Helvetica, sans-serif"><FONT SIZE=4>
+<I><B>Step 1: Open a DOS Command Prompt window</B></I>
+</FONT></FONT></H2>
+<P STYLE="margin-left: 2cm"><FONT FACE="Helvetica, sans-serif">
+The first step is to open a DOS command prompt window. The location of
+this command is different depending on the Windows NT variant that
+you are using. Look for this command in Start-&gt;Programs-&gt;Command
+Prompt or Start-&gt;Programs-&gt;Accessories-&gt;Command Prompt.
+Next, select the command prompt window and set your PATH environment
+variable to include the directory to the necessary tar, unzip, or jar
+binary:
+</FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 4cm"><CODE><FONT FACE="Courier">
+C:\&gt; <B>SET PATH=%PATH%;<I>&lt;path to tar/unzip directory&gt;</I></B>
+</FONT></CODE></P>
+<P STYLE="margin-left: 2cm"><FONT FACE="Helvetica, sans-serif">
+If you plan to use the jar command in the Java 2 SDK, make sure the bin
+directory for the JDK is in your PATH:
+</FONT></P>
+<P STYLE="margin-left: 4cm"><CODE><FONT FACE="Courier">
+C:\&gt; <B>SET PATH=%PATH%;<I>JAVA_HOME</I>\bin;</B>
+</FONT></CODE></P>
+<P STYLE="margin-left: 2cm"><FONT FACE="Helvetica, sans-serif">
+The above assumes that a version of the J2SE JRE or JDK is not already
+found in the user's PATH.
+</FONT></P>
+<H2><FONT FACE="Helvetica, sans-serif"><FONT SIZE=4>
+<I>Step 2: Select Installation Directory</I>
+</FONT></FONT></H2>
+<P ALIGN=LEFT STYLE="margin-left: 2cm; font-style: normal; font-weight: medium">
+<FONT FACE="Helvetica, sans-serif"><FONT SIZE=3>
+The next step is to select an installation directory. Select any directory
+for which you have the appropriate permissions to create files and directories.
+These instructions will assume that you selected <B>C:\</B> as the
+installation directory and that the <b>jvmstat-3.0_b03.tar</b> or
+<b>jvmstat-3.0_b03.zip</b> distribution file is located in this directory.
+Installing the jvmstat distribution will result in the creation of
+a <b>jvmstat</b> subdirectory containing the entire distribution. 
+The instructions will refer to <B>C:\jvmstat</B> directory as
+<B><I><FONT FACE="Courier, monospace">JVMSTAT_HOME</FONT></I></B>.
+</FONT></FONT></P>
+<H2><FONT FACE="Helvetica, sans-serif"><FONT SIZE=4>
+<I>Step 3: Install the jvmstat distribution</I>
+</FONT></FONT></H2>
+<P ALIGN=LEFT STYLE="margin-left: 2cm; font-style: normal; font-weight: medium">
+<FONT FACE="Helvetica, sans-serif"><FONT SIZE=3>
+To install the distribution, perform the following steps.
+</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 4cm; font-style: normal; font-weight: medium">
+<FONT FACE="Helvetica, sans-serif"><FONT SIZE=3>
+Change your working directory to the installation directory.
+</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 6cm"><CODE><FONT FACE="Courier">
+C:\&gt; <B>cd c:\</B>
+</FONT></CODE></P>
+<P ALIGN=LEFT STYLE="margin-left: 4cm; font-style: normal; font-weight: medium">
+<FONT FACE="Helvetica, sans-serif"><FONT SIZE=3>
+Verify that the jvmstat distribution is located in the current directory.
+</FONT></FONT></P>
+<P STYLE="margin-left: 6cm"><CODE><FONT FACE="Courier">
+C:\&gt; <B>dir</B><BR>
+08/13/2004  5.58p 148,461 jvmstat-3.0_b03.zip<BR>
+08/13/2004  5.58p 344,576 jvmstat-3.0_b03.tar
+</FONT></CODE></P>
+<P ALIGN=LEFT STYLE="margin-left: 4cm; font-style: normal; font-weight: medium">
+<FONT FACE="Helvetica, sans-serif"><FONT SIZE=3>
+Install the distribution.
+</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 6cm; font-style: normal; font-weight: medium">
+<FONT FACE="Helvetica, sans-serif"><FONT SIZE=3>
+If you are installing the <I>tar</I> file, enter the following
+</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 8cm"><CODE><FONT FACE="Courier">
+C:\&gt; <B>tar xf jvmstat-3.0_b03.tar</B>
+</FONT></CODE></P>
+<P ALIGN=LEFT STYLE="margin-left: 6cm; font-style: normal; font-weight: medium">
+<FONT FACE="Helvetica, sans-serif"><FONT SIZE=3>
+If you are installing the <I>zip</I> file, enter the following
+</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 8cm"><CODE><FONT FACE="Courier">
+C:\&gt; <B>unzip jvmstat-3.0_b03.zip</B>
+</FONT></CODE></P>
+<P ALIGN=LEFT STYLE="margin-left: 4cm; font-style: normal; font-weight: medium">
+<FONT FACE="Helvetica, sans-serif"><FONT SIZE=3>
+These commands will extract the distribution from the archive file and
+install it in the <I>jvmstat</I> subdirectory. At this time, the distribution
+file is no longer needed. You can delete it or move it to another location.
+</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 6cm"><CODE><FONT FACE="Courier">
+C:\&gt; <B>del jvmstat-3.0_b03.tar jvmstat-3.0_b03.zip</B>
+</FONT></CODE></P>
+<P ALIGN=LEFT STYLE="margin-left: 4cm; font-style: normal; font-weight: medium">
+<FONT FACE="Helvetica, sans-serif"><FONT SIZE=3>
+After the archive files are deleted or moved to a new location, the
+<B><I><FONT FACE="Courier, monospace">JVMSTAT_HOME</FONT></I></B>
+directory will contain the following directories.
+</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 6cm"><CODE><FONT FACE="Courier">
+C:\gt; <B>dir /w jvmstat</B><BR>
+[.]   [..]   [bat]   [bin]   [classes]   [docs]   [etc]   LICENSE   README
+</FONT></CODE></P>
+<a name="setenviron">
+<H2><FONT FACE="Helvetica, sans-serif"><FONT SIZE=4>
+<I>Step 4: Set Environment Variables</I>
+</FONT></FONT></H2>
+<P ALIGN=LEFT STYLE="margin-left: 2cm; font-style: normal; font-weight: medium">
+<FONT FACE="Helvetica, sans-serif"><FONT SIZE=3>
+The scripts provided with the jvmstat distribution rely upon the
+PATH environment variable. The PATH environment variable must be changed to
+include the jvmstat <I>bin</I> and the J2SE 5.0 SDK <I>bin</I> directories.
+If the <I>java.exe</I> executable is found in a directory in the PATH
+other than a J2SE 5.0 SDK, such as the Windows <I>System32</I> directory,
+then the scripts will not be able to locate the <I>tools.jar</I> archive
+and will fail to launch the tools.
+</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 4cm; font-style: normal; font-weight: medium">
+<FONT FACE="Helvetica, sans-serif"><FONT SIZE=3>
+Set your PATH variable to include the jvmstat and J2SE 5.0 sdk bin directories
+</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 6cm"><CODE><FONT FACE="Courier">
+C:\&gt; <B>SET PATH=<I>JVMSTAT_HOME</I>\bat;<I>JAVA_HOME</I>\bin;%PATH%</B>
+</FONT></CODE></P>
+<H2><FONT FACE="Helvetica, sans-serif"><FONT SIZE=4>
+<I>Step 5: Install the jstatd policy file</I>
+</FONT></FONT></H2>
+<P STYLE="margin-left: 2cm"><FONT FACE="Helvetica, sans-serif">
+The <B>jstatd</B> tool is an RMI based server that ships with the
+J2SE 5.0 SDK and allows the various jvmstat tools to remotely monitor
+target JVM processes. By default, the <B>jstatd</B> server installs an
+instance of the RMI security manager and therefore requires a security
+policy file. The
+<A HREF="http://java.sun.com/j2se/1.5.0/docs/tooldocs/share/jstatd.html">J2SE 5.0 <B>jstatd</B> documentation</A>
+describes a simple security policy that procides unlimited access to
+classes loaded from the <I>tools.jar</I> archive.
+</FONT></P>
+<P STYLE="margin-left: 2cm"><FONT FACE="Helvetica, sans-serif">
+First, create a file called <I>jstatd.policy</I> using your favorite text
+editor. The file should contian the following text:
+</FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 4cm"><FONT FACE="Courier"><CODE>
+<pre>
+grant codebase "file:${java.home}/../lib/tools.jar" {
+    permission java.security.AllPermission;
+};
+</pre>
+</CODE></FONT></P>
+<P STYLE="margin-left: 2cm"><FONT FACE="Helvetica, sans-serif">
+The <I>jstatd.policy</I> file can reside in any directory you choose.
+The instructions that follow assume that the <I>jstatd.policy</I>
+file is located in the <I>C:\</I> directory.
+</FONT></P>
+
+
+
+<H2><FONT FACE="Helvetica, sans-serif"><FONT SIZE=4>
+<I>Step 6: Test the installation</I>
+</FONT></FONT></H2>
+<P STYLE="margin-left: 2cm; font-style: normal; font-weight: medium"><FONT FACE="Helvetica, sans-serif"><FONT SIZE=3>
+Now that your jvmstat distribution is installed and configured, let's run
+a couple of tests.
+</FONT></FONT></P>
+<A NAME="simpletest">
+<P STYLE="margin-left: 2cm; font-weight: medium"><FONT FACE="Helvetica, sans-serif"><FONT SIZE=4>
+<I>Simple Test</I>
+</FONT></FONT></P>
+<P STYLE="margin-left: 4cm; font-style: normal; font-weight: medium"><FONT FACE="Helvetica, sans-serif"><FONT SIZE=3>
+The first test is a simple test that verifies that the bundled <B>jstat</B>
+tools is working as expected. This test runs the <B>jstat</B> command such
+that it attaches to its own JVM, by specifying 0 as the <I>lvmid</I> of
+the target process, and takes 3 samples of the instrumentation at 1000
+millisecond intervals.
+</FONT></FONT></P>
+<P STYLE="margin-left: 6cm"><CODE><FONT FACE="Courier">
+C:\&gt; <B>jstat -gcutil 0 1000 3</B>
+<pre>
+  S0     S1     E      O      P     YGC     YGCT    FGC    FGCT     GCT
+  0.00   0.00  37.20  55.10  15.77    106    0.174    58    5.268    5.442
+  0.00   0.00  45.87  55.14  15.77    106    0.174    59    5.357    5.531
+  0.00   0.00  96.42  55.14  15.77    106    0.174    59    5.357    5.531
+</pre>
+</FONT></CODE></P>
+<P STYLE="margin-left: 4cm; font-style: normal; font-weight: medium"><FONT FACE="Helvetica, sans-serif"><FONT SIZE=3>
+The output from the <B>jstat</B> command should be similar to the output
+shown above. If an error message or exception is output, then proceed to
+the <A HREF="#troubleshooting">Troubleshooting</A> section below.
+</FONT></FONT></P>
+<a name="localtest">
+<P STYLE="margin-left: 2cm; font-weight: medium"><FONT FACE="Helvetica, sans-serif"><FONT SIZE=4>
+<I>Local Test</I>
+</FONT></FONT></P>
+<P STYLE="margin-left: 4cm; font-style: normal; font-weight: medium"><FONT FACE="Helvetica, sans-serif"><FONT SIZE=3>
+This test uses the <B>jstat</B> and <B>visualgc</B> commands to monitor
+another Java application. In this test, we will start up a Java application,
+determine its <I>lvmid</I> with the <B>jps</B> command, and then connect to
+the target JVM with both the <B>jstat</B> and <B>visualgc</B> commands.
+</FONT></FONT></P>
+<P STYLE="margin-left: 4cm; font-style: normal; font-weight: medium"><FONT FACE="Helvetica, sans-serif"><FONT SIZE=3>
+Begin by starting up your target Java application. Any 1.4.2 or later Java
+application will work. This example uses the Java2Demo application.
+</FONT></FONT></P>
+<P STYLE="margin-left: 6cm"><CODE><FONT FACE="Courier">
+C:\&gt; <B>java -jar <I>JAVA_HOME</I>\demo\jfc\Java2D\Java2Demo.jar</B>
+</FONT></CODE></P>
+<P STYLE="margin-left: 4cm"><FONT FACE="Helvetica, sans-serif"><FONT SIZE=3>
+Once the target Java application is running, execute the <B>jps</B>
+command from a separate Command Prompt window and find the <I>lvmid</I>
+for the target JVM. Remember, you need to set the PATH environment variable
+in this new window as described in <A HREF="#setenviron">Set Environment
+Variables</A> section above.
+</FONT></FONT></P>
+<P STYLE="margin-left: 6cm"><CODE><FONT FACE="Courier">
+C:\&gt; <B>jps</B><BR>
+23551 Java2Demo.jar<BR>
+23581 Jps
+</FONT></CODE></P>
+<P STYLE="margin-left: 4cm"><FONT FACE="Helvetica, sans-serif">
+It's typical to see <B><I>Jps</I></B> listed in the output of the
+<B>jps</B> command. Next, run <B>jstat</B>, telling it to monitor
+<I>lvmid</I> 23551, taking 3 samples at one second intervals:
+</FONT></P>
+<P STYLE="margin-left: 6cm"><CODE><FONT FACE="Courier">
+C:\&gt; <B>jstat -gcutil 23551 1000 3</B>
+</FONT></CODE></P>
+<P STYLE="margin-left: 4cm; font-style: normal; font-weight: medium"><FONT FACE="Helvetica, sans-serif"><FONT SIZE=3>
+The output from <B>jstat</B> is omitted here; however, it should be similar
+to the output observed in the
+<A HREF="#simpletest">Simple Test</A> section above.
+</FONT></FONT </P>
+<P STYLE="margin-left: 4cm; font-style: normal; font-weight: medium"><FONT FACE="Helvetica, sans-serif"><FONT SIZE=3>
+Now, run <B>visualgc</B> telling it to monitor <I>lvmid</I> 23551:
+</FONT></FONT></P>
+<P STYLE="margin-left: 6cm"><CODE><FONT FACE="Courier">
+C:\&gt; <B>visualgc 23551</B>
+</FONT></CODE></P>
+<P STYLE="margin-left: 4cm; font-style: normal; font-weight: medium"><FONT FACE="Helvetica, sans-serif"><FONT SIZE=3>
+Two or three windows will appear (depending on which garbage collection
+policy is in effect). The following two windows will appear regardless
+of the garbage collection policy:
+</FONT></FONT></P>
+<DL><DL><DL><DL>
+<TABLE>
+<TD>
+<A HREF="../images/visualheap.jpg" TITLE="Visual Heap Window"><img src="../images/visualheap.jpg" width="150" height="200" border="1"></A>
+</TD>
+<TD>
+<A HREF="../images/visualgraph.jpg" TITLE="Visual Graph Window"><img src="../images/visualgraph.jpg" width="150" height="200" border="1"></A>
+</TD>
+</TABLE>
+</DL></DL></DL></DL>
+<P STYLE="margin-left: 4cm; font-style: normal; font-weight: medium"><FONT FACE="Helvetica, sans-serif"><FONT SIZE=3>
+Descriptions of the various panels in these windows are provided in the
+<A HREF="../tooldocs/share/visualgc.html">visualgc manual page</A>.
+If an error message or exception is output, then proceed to the
+<A HREF="#troubleshooting">trouble shooting</A> section below.
+</FONT></FONT></P>
+<P STYLE="margin-left: 2cm; font-weight: medium"><FONT FACE="Helvetica, sans-serif"><FONT SIZE=4>
+<I>Remote test</I>
+</FONT></FONT></P>
+<P STYLE="margin-left: 4cm; font-style: normal; font-weight: medium"><FONT FACE="Helvetica, sans-serif"><FONT SIZE=3>
+This test will verify that the remote monitoring functionality is working.
+This test can be run on one system, but it is better to run it on two
+systems. For a two system test, you will need to perform the installation
+of the jvmstat tools on the second system before proceeding with this test.
+</FONT></FONT></P>
+<P STYLE="margin-left: 4cm; font-style: normal; font-weight: medium"><FONT FACE="Helvetica, sans-serif"><FONT SIZE=3>
+For this test, we will assume that the system names are <I>monitored</I> for
+the system running the target application and <I>monitoring</I> for the system
+running the jvmstat tools.
+</FONT></FONT></P>
+<P STYLE="margin-left: 4cm; font-style: normal; font-weight: medium"><FONT FACE="Helvetica, sans-serif"><FONT SIZE=3>
+On <I>monitored</I>, startup the <B>jstatd</B> server and the target
+Java application. Once again, we will use the Java2Demo application as
+our target Java application. The <B>jstatd</B> server is started as follows:
+</FONT></FONT></P>
+<P STYLE="margin-left: 6cm"><CODE><FONT FACE="Courier">
+C:\&gt; <Bjstatd -J-Djava.security.policy=C:\jstatd.policy</B>
+</FONT></CODE></P>
+<P STYLE="margin-left: 4cm"><FONT FACE="Helvetica, sans-serif">
+Now, from another Command Prompt window on the <I>monitoring</I>, run
+the <I>jps</I> command to discover the <I>lvmid</I> of the target Java
+application. Substitute the name of your monitored system for
+<I>monitored</I> in the following commands.
+</FONT></P>
+<P STYLE="margin-left: 6cm"><CODE><FONT FACE="Courier">
+C:\&gt; <B>jps monitored</B><BR>
+17869 Java2Demo.jar<BR>
+17876 Jstatd<BR>
+17877 Jps
+</FONT></CODE></P>
+<P STYLE="margin-left: 4cm"><FONT FACE="Helvetica, sans-serif">
+It's typical to see both <B><I>Jps</I></B> and <B><I>Jstatd</I></B> listed
+in the output of the <B>jps</B> command. Next, run <B>jstat</B>, telling
+it to monitor process id 23551 on the system named <I>monitored</I>,
+taking 3 samples at one second intervals.
+</FONT></P>
+<P STYLE="margin-left: 6cm"><CODE><FONT FACE="Courier">
+C:\&gt; <B>jstat -gcutil 17869@monitored 1000 3</B>
+</FONT></CODE></P>
+<P STYLE="margin-left: 4cm"><FONT FACE="Helvetica, sans-serif">
+The output from <B>jstat</B> is omitted here; however, it should be similar
+to the output observed in the
+<A HREF="#simpletest">Simple Test</A> section above.
+</FONT></P>
+<P STYLE="margin-left: 4cm; font-style: normal; font-weight: medium"><FONT FACE="Helvetica, sans-serif"><FONT SIZE=3>
+Now, run <B>visualgc</B> telling it to monitor <I>lvmid</I> 17869 on
+the system named <I>monitored</I>:
+</FONT></FONT></P>
+<P STYLE="margin-left: 6cm"><CODE><FONT FACE="Courier">
+&gt; <B>visualgc 17869@monitored</B>
+</FONT></CODE></P>
+<P STYLE="margin-left: 4cm; font-style: normal; font-weight: medium"><FONT FACE="Helvetica, sans-serif"><FONT SIZE=3>
+Two or three windows will appear as decribed in the
+<A HREF="#localtest">Local Test</A> section above.
+</FONT></FONT></P>
+
+<P STYLE="margin-left: 2cm; font-weight: medium"><FONT FACE="Helvetica, sans-serif"><FONT SIZE=4>
+<I>Terminating Processes</I></FONT></FONT></P>
+<P STYLE="margin-left: 4cm; font-style: normal; font-weight: medium"><FONT FACE="Helvetica, sans-serif"><FONT SIZE=3>
+You may want to terminate the processes we started in the above tests.
+The <B>jstatd</B> process must be terminated using the Windows Task
+Manager. You can use the <I>lvmid</I> reported by the <i>jps</i>
+command or attempt to identify the process directly in the Windows
+Task Manager process list. See your Windows documentation for information on
+accessing and using the Task Manager.
+</FONT></FONT></P>
+
+<a name="troubleshooting">
+<H2><FONT FACE="Helvetica, sans-serif"><FONT SIZE=4>
+<I>Troubleshooting</I>
+</FONT></FONT></H2>
+
+<P STYLE="margin-left: 4cm"><FONT FACE="Helvetica, sans-serif">
+If you experience error messages or exceptions from any of the jvmstat
+tools, check that your PATH variable is set correctly. Also, check the
+<A HREF="../tooldocs/tools.html"> manual pages</A> for the tools for proper
+usage. If these suggestions do not resolve your problems, consult the
+<A HREF="http://developers.sun.com/dev/coolstuff/jvmstat/faq.html"> jvmstat FAQ</A>.
+If the jvmstat FAQ does not provide a resolution for the problem you are
+experencing, then send an e-mail to
+<A HREF="mailto:jvmstat-support@sun.com">jvmstat-support@sun.com</A>.
+Please include the J2SE JDK version information (java -version) and the
+jvmstat version information (visualgc -version) in the e-mail along with
+a description of the problem you are experiencing.
+</FONT></P>
+<P STYLE="margin-left: 4cm"><BR><BR>
+</P>
+</BODY>
+</HTML>

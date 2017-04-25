@@ -1,0 +1,51 @@
+﻿D:\jade-6.0>java -jar jade.jar perf
+
+Java(TM) Addition to Default Environment (http://jade.dautelle.com/)
+Version 6.0.Beta February 13 2004
+
+Benchmark...
+
+Initialization: 0.31 s
+
+java.lang.Double Heap Creation: 164 ns
+char[128] Heap Creation: 5.63 µs
+char[256] Heap Creation: 8.81 µs
+com.dautelle.math.Numerics.Float64 Pool-Context Creation: 88 ns
+char[128] Pool-Context Creation: 0.27 µs
+char[256] Pool-Context Creation: 0.23 µs
+
+Numerics: 
+com.dautelle.math.Numerics.Float64 add: 81 ns
+com.dautelle.math.Complex add: 84 ns
+com.dautelle.physics.Quantity (mass) add: 133 ns
+com.dautelle.math.Numerics.Float64 multiply: 81 ns
+com.dautelle.math.Complex multiply: 88 ns
+com.dautelle.physics.Quantity (mass) multiply: 169 ns
+
+LargeInteger (PoolContext) versus BigInteger: 
+java.math.BigInteger (1024 bits) add: 4.17 µs
+com.dautelle.math.LargeInteger (1024 bits) add: 0.78 µs
+
+FastString versus String/StringBuffer: 
+"Performs 100 successive concatenations of this string."
+java.lang.String Concatenation: 1.566 ms
+java.lang.StringBuffer Concatenation: 0.113 ms
+com.dautelle.util.FastString Concatenation(Heap-Context): 0.119 ms
+com.dautelle.realtime.FastString Concatenation(Pool-Context): 0.031 ms
+
+XML Parsing:
+class org.apache.crimson.parser.XMLReaderImpl : 735
+class com.dautelle.xml.sax.XMLReaderImpl : 281
+class com.dautelle.xml.sax.RealtimeParser : 156
+
+FastMap versus HashMap:
+java.util.HashMap#put(key, value): 1.6 µs
+java.util.HashMap#get(key): 0.5 µs
+java.util.HashMap#entrySet()#iterator(): 0.2 µs
+java.util.HashMap#remove(key): 0.6 µs
+com.dautelle.util.FastMap#put(key, value): 0.5 µs
+com.dautelle.util.FastMap#get(key): 0.5 µs
+java.util.FastMap#entrySet()#iterator(): 0.0 µs
+java.util.FastMap#remove(key): 0.6 µs
+
+More performance analysis in future versions...

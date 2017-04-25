@@ -1,0 +1,1640 @@
+<dataset>
+
+  <!--
+    List of passwords encryped using default system password:
+
+    original/encrypted = test_password/973908CD78928E660B047F5DE5130BE0
+    original/encrypted = password/FED13585645B0EE34267AAAED4697000
+    original/encrypted = test_bugs/736A57903E1728B83188B67DDEF9ABE0
+  -->
+
+
+  <!-- SYSTEM_PROPERTY -->
+  <SYSTEM_PROPERTY ID="0" NAME="parabuild.schema.version" VALUE="79" TIMESTAMP="0"/>
+  <SYSTEM_PROPERTY ID="1" NAME="parabuild.date.format" VALUE="MM/dd/yyyy" TIMESTAMP="0"/>
+  <SYSTEM_PROPERTY ID="2" NAME="parabuild.date.time.format" VALUE="hh:mm a MM/dd/yyyy" TIMESTAMP="0"/>
+  <SYSTEM_PROPERTY ID="3" NAME="parabuild.smtp.server.name" VALUE="localhost" TIMESTAMP="2"/>
+  <SYSTEM_PROPERTY ID="4" NAME="parabuild.admin.email" VALUE="imeshev@yahoo.com" TIMESTAMP="2"/>
+  <SYSTEM_PROPERTY ID="5" NAME="parabuild.enable.anon.builds" VALUE="checked" TIMESTAMP="2"/>
+  <SYSTEM_PROPERTY ID="6" NAME="parabuild.enable.test.logging" VALUE="checked" TIMESTAMP="2"/>
+  <SYSTEM_PROPERTY ID="7" NAME="parabuild.enable.advanced.build.settings" VALUE="checked" TIMESTAMP="2"/>
+  <SYSTEM_PROPERTY ID="9" NAME="parabuild.build.sequence.number" VALUE="20" TIMESTAMP="1"/>
+  <SYSTEM_PROPERTY ID="10" NAME="result.sequence.number" VALUE="0" TIMESTAMP="1"/>
+  <SYSTEM_PROPERTY ID="11" NAME="show.merge.statuses" VALUE="checked" TIMESTAMP="1"/>
+  <SYSTEM_PROPERTY ID="12" NAME="enable.publishing.commands" VALUE="checked" TIMESTAMP="1"/>
+  <SYSTEM_PROPERTY ID="13" NAME="enable.build.promotion" VALUE="checked" TIMESTAMP="1"/>
+  <SYSTEM_PROPERTY ID="14" NAME="parabuild.admin.name" VALUE="Build Administrator" TIMESTAMP="1"/>
+
+  <SYSTEM_PROPERTY ID="15" NAME="retry.vcs.command.times" VALUE="5" TIMESTAMP="1"/>
+  <SYSTEM_PROPERTY ID="16" NAME="retry.vcs.command.interval" VALUE="1" TIMESTAMP="1"/>
+  <SYSTEM_PROPERTY ID="17" NAME="retry.vcs.command.patterns" VALUE="chmod:.*p4tickets\.txt: Access is denied" TIMESTAMP="1"/>
+
+  <SYSTEM_PROPERTY ID="18" NAME="round.robin.load.balancing" VALUE="checked" TIMESTAMP="1"/>
+  <SYSTEM_PROPERTY ID="19" NAME="default.build.name.validation" VALUE="selected" TIMESTAMP="1"/>
+  <SYSTEM_PROPERTY ID="20" NAME="custom.build.name.validation" VALUE="unselected" TIMESTAMP="1"/>
+  <SYSTEM_PROPERTY ID="21" NAME="custom.build.name.regex.template" VALUE="[a-zA-Z][-a-zA-Z_0-9]*" TIMESTAMP="1"/>
+  <SYSTEM_PROPERTY ID="22" NAME="fail.build.if.intermediate.step.fails" VALUE="checked" TIMESTAMP="1"/>
+
+  <PROJECT ID="0" NAME="System" DESCRIPTION="System project" KEY="SYSTEM" TYPE="1" DELETED="N" TIMESTAMP="0"/>
+  <PROJECT ID="1" NAME="My project" DESCRIPTION="Change this project name to reflect actual needs of your system" KEY="MYPROJECT" TYPE="2" DELETED="N" TIMESTAMP="0"/>
+
+  <!-- AGENT -->
+  <AGENT ID="0" HOST="&lt;Build Manager&gt;" DESCRIPTION="Agent that runs on the build manager machine" ENABLED="Y" SERIALIZE="N" DELETED="N" CAPACITY="1" TIMESTAMP="0"/>
+  <AGENT ID="1" HOST="Remote agent" DESCRIPTION="Remote agent" ENABLED="Y" SERIALIZE="N" DELETED="N" CAPACITY="1" TIMESTAMP="0"/>
+  <AGENT ID="3" HOST="always_offline:1212" DESCRIPTION="Agent that is always offline" ENABLED="Y" SERIALIZE="N" DELETED="N" CAPACITY="1" TIMESTAMP="0"/>
+
+  <!-- CLUSTER -->
+  <CLUSTER ID="0" NAME="Local Build Farm" DESCR="Single-agent build farm that runs builds on the build manager machine" ENABLED="Y" DELETED="N" TIMESTAMP="0"/>
+  <CLUSTER ID="1" NAME="Multi-Agent Build Farm" DESCR="Multi-agent build farm" ENABLED="Y" DELETED="N" TIMESTAMP="0"/>
+  <CLUSTER ID="3" NAME="Always offline build farm" DESCR="Build farm that is always offline" ENABLED="Y" DELETED="N" TIMESTAMP="0"/>
+
+  <!-- CLUSTER_MEMBER -->
+  <CLUSTER_MEMBER ID="0" CLUSTER_ID="0" AGENT_ID="0" TIMESTAMP="0"/>
+  <CLUSTER_MEMBER ID="1" CLUSTER_ID="1" AGENT_ID="1" TIMESTAMP="0"/>
+  <CLUSTER_MEMBER ID="2" CLUSTER_ID="1" AGENT_ID="0" TIMESTAMP="0"/>
+  <CLUSTER_MEMBER ID="3" CLUSTER_ID="3" AGENT_ID="3" TIMESTAMP="0"/>
+
+  <!-- BUILD_CONFIG -->
+  <BUILD_CONFIG ID="1" NAME="cvs_test_build" SCHEDULE="1" SCM="2" ACCESS="1" EMAIL_DOMAIN="" SCM_EMAIL="yes" BUILDER_ID="0" SUBORDINATE="N" TIMESTAMP="1" DISCRIMINATOR="C" ORIGNL_CONFIG_ID="1"/>
+  <BUILD_CONFIG ID="2" NAME="src_autobuild_nightly" SCHEDULE="1" SCM="1" ACCESS="1" EMAIL_DOMAIN="" SCM_EMAIL="yes" BUILDER_ID="0" SUBORDINATE="N" TIMESTAMP="1" DISCRIMINATOR="C" ORIGNL_CONFIG_ID="2"/>
+  <BUILD_CONFIG ID="3" NAME="p4_test_build" SCHEDULE="1" SCM="1" ACCESS="2" EMAIL_DOMAIN="" SCM_EMAIL="yes" BUILDER_ID="0" SUBORDINATE="N" TIMESTAMP="1" DISCRIMINATOR="C" ORIGNL_CONFIG_ID="3"/>
+  <BUILD_CONFIG ID="4" NAME="ref_p4_test_build" SCHEDULE="2" SCM="3" ACCESS="2" EMAIL_DOMAIN="" SCM_EMAIL="yes" BUILDER_ID="0" SUBORDINATE="N" TIMESTAMP="1" DISCRIMINATOR="C" ORIGNL_CONFIG_ID="4"/>
+  <BUILD_CONFIG ID="5" NAME="cvs_always_empty" SCHEDULE="1" SCM="2" ACCESS="1" EMAIL_DOMAIN="" SCM_EMAIL="yes" BUILDER_ID="0" SUBORDINATE="N" TIMESTAMP="1" DISCRIMINATOR="C" ORIGNL_CONFIG_ID="5"/>
+  <BUILD_CONFIG ID="6" NAME="vss_test_build" SCHEDULE="1" SCM="4" ACCESS="1" EMAIL_DOMAIN="" SCM_EMAIL="yes" BUILDER_ID="0" SUBORDINATE="N" TIMESTAMP="1" DISCRIMINATOR="C" ORIGNL_CONFIG_ID="6"/>
+  <BUILD_CONFIG ID="7" NAME="svn_test_build" SCHEDULE="1" SCM="6" ACCESS="1" EMAIL_DOMAIN="" SCM_EMAIL="yes" BUILDER_ID="0" SUBORDINATE="N" TIMESTAMP="1" DISCRIMINATOR="C" ORIGNL_CONFIG_ID="7"/>
+  <BUILD_CONFIG ID="8" NAME="svn_always_empty" SCHEDULE="1" SCM="6" ACCESS="1" EMAIL_DOMAIN="" SCM_EMAIL="yes" BUILDER_ID="0" SUBORDINATE="N" TIMESTAMP="1" DISCRIMINATOR="C" ORIGNL_CONFIG_ID="8"/>
+  <BUILD_CONFIG ID="16" NAME="ref_ref_p4_test_build" SCHEDULE="2" SCM="3" ACCESS="2" EMAIL_DOMAIN="" SCM_EMAIL="yes" BUILDER_ID="0" SUBORDINATE="N" TIMESTAMP="1" DISCRIMINATOR="C" ORIGNL_CONFIG_ID="16"/>
+  <BUILD_CONFIG ID="18" NAME="surround_test_build" SCHEDULE="1" SCM="7" ACCESS="1" EMAIL_DOMAIN="" SCM_EMAIL="yes" BUILDER_ID="0" SUBORDINATE="N" TIMESTAMP="1" DISCRIMINATOR="C" ORIGNL_CONFIG_ID="18"/>
+  <BUILD_CONFIG ID="19" ORIGNL_CONFIG_ID="19" NAME="cc_test_build" SCHEDULE="1" SCM="5" ACCESS="1" EMAIL_DOMAIN="" SCM_EMAIL="N" BUILDER_ID="0" SUBORDINATE="N" DISCRIMINATOR="C" TIMESTAMP="1"/>
+  <BUILD_CONFIG ID="20" ORIGNL_CONFIG_ID="20" NAME="vault_test" SCHEDULE="1" SCM="9" ACCESS="1" EMAIL_DOMAIN="" SCM_EMAIL="N" BUILDER_ID="0" SUBORDINATE="N" DISCRIMINATOR="C" TIMESTAMP="1"/>
+  <BUILD_CONFIG ID="21" ORIGNL_CONFIG_ID="21" NAME="pvcs_test" SCHEDULE="1" SCM="10" ACCESS="1" EMAIL_DOMAIN="" SCM_EMAIL="N" BUILDER_ID="0" SUBORDINATE="N" DISCRIMINATOR="C" TIMESTAMP="1"/>
+  <BUILD_CONFIG ID="22" ORIGNL_CONFIG_ID="22" NAME="starteam_test" SCHEDULE="1" SCM="8" ACCESS="1" EMAIL_DOMAIN="" SCM_EMAIL="N" BUILDER_ID="0" SUBORDINATE="N" DISCRIMINATOR="C" TIMESTAMP="1"/>
+  <BUILD_CONFIG ID="23" ORIGNL_CONFIG_ID="23" NAME="mks_test" SCHEDULE="1" SCM="11" ACCESS="1" EMAIL_DOMAIN="" SCM_EMAIL="N" BUILDER_ID="0" SUBORDINATE="N" DISCRIMINATOR="C" TIMESTAMP="1"/>
+  <BUILD_CONFIG ID="26" ORIGNL_CONFIG_ID="26" NAME="generic_vcs_test" SCHEDULE="1" SCM="13" ACCESS="1" EMAIL_DOMAIN="" SCM_EMAIL="N" BUILDER_ID="0" SUBORDINATE="N" DISCRIMINATOR="C" TIMESTAMP="1"/>
+  <BUILD_CONFIG ID="27" ORIGNL_CONFIG_ID="27" NAME="p4_test_parallel_ldr" SCHEDULE="1" SCM="1" ACCESS="2" EMAIL_DOMAIN="" SCM_EMAIL="N" BUILDER_ID="0" SUBORDINATE="N" DISCRIMINATOR="C" TIMESTAMP="3"/>
+  <BUILD_CONFIG ID="28" ORIGNL_CONFIG_ID="28" NAME="p4_test_parallel_dp1" SCHEDULE="4" SCM="3" ACCESS="2" EMAIL_DOMAIN="" SCM_EMAIL="N" BUILDER_ID="0" SUBORDINATE="N" DISCRIMINATOR="C" TIMESTAMP="5"/>
+  <BUILD_CONFIG ID="29" ORIGNL_CONFIG_ID="29" NAME="p4_test_parallel_dp2" SCHEDULE="4" SCM="3" ACCESS="2" EMAIL_DOMAIN="" SCM_EMAIL="N" BUILDER_ID="0" SUBORDINATE="N" DISCRIMINATOR="C" TIMESTAMP="7"/>
+  <BUILD_CONFIG ID="30" ORIGNL_CONFIG_ID="27" NAME="p4_test_parallel_ldr" SCHEDULE="1" SCM="1" ACCESS="2" EMAIL_DOMAIN="" SCM_EMAIL="N" BUILDER_ID="0" SUBORDINATE="N" DISCRIMINATOR="R" TIMESTAMP="3"/>
+  <BUILD_CONFIG ID="31" ORIGNL_CONFIG_ID="29" NAME="p4_test_parallel_dp2" SCHEDULE="4" SCM="3" ACCESS="2" EMAIL_DOMAIN="" SCM_EMAIL="N" BUILDER_ID="0" SUBORDINATE="N" DISCRIMINATOR="R" TIMESTAMP="7"/>
+  <BUILD_CONFIG ID="32" ORIGNL_CONFIG_ID="28" NAME="p4_test_parallel_dp1" SCHEDULE="4" SCM="3" ACCESS="2" EMAIL_DOMAIN="" SCM_EMAIL="N" BUILDER_ID="0" SUBORDINATE="N" DISCRIMINATOR="R" TIMESTAMP="5"/>
+  <BUILD_CONFIG ID="33" ORIGNL_CONFIG_ID="33" NAME="accurev_test" SCHEDULE="1" SCM="15" ACCESS="1" EMAIL_DOMAIN="" SCM_EMAIL="N" BUILDER_ID="0" SUBORDINATE="N" DISCRIMINATOR="C" TIMESTAMP="2"/>
+  <BUILD_CONFIG ID="34" ORIGNL_CONFIG_ID="34" NAME="git_test" SCHEDULE="1" SCM="16" ACCESS="1" EMAIL_DOMAIN="" SCM_EMAIL="N" BUILDER_ID="0" SUBORDINATE="N" DISCRIMINATOR="C" TIMESTAMP="2"/>
+  <BUILD_CONFIG ID="35" ORIGNL_CONFIG_ID="35" NAME="bazaar_test" SCHEDULE="1" SCM="17" ACCESS="1" EMAIL_DOMAIN="" SCM_EMAIL="N" BUILDER_ID="0" SUBORDINATE="N" DISCRIMINATOR="C" TIMESTAMP="2"/>
+  <BUILD_CONFIG ID="36" ORIGNL_CONFIG_ID="36" NAME="mercurial_test" SCHEDULE="1" SCM="18" ACCESS="1" EMAIL_DOMAIN="" SCM_EMAIL="N" BUILDER_ID="0" SUBORDINATE="N" DISCRIMINATOR="C" TIMESTAMP="2"/>
+
+  <!--- BUILD RUN CONFIGS -->
+  <BUILD_CONFIG ID="9" NAME="cvs_test_build" SCHEDULE="1" SCM="2" ACCESS="1" EMAIL_DOMAIN="" SCM_EMAIL="N" BUILDER_ID="0" SUBORDINATE="N" TIMESTAMP="1" DISCRIMINATOR="R" ORIGNL_CONFIG_ID="1"/>
+  <BUILD_CONFIG ID="10" NAME="cvs_test_build" SCHEDULE="1" SCM="2" ACCESS="1" EMAIL_DOMAIN="" SCM_EMAIL="N" BUILDER_ID="0" SUBORDINATE="N" TIMESTAMP="1" DISCRIMINATOR="R" ORIGNL_CONFIG_ID="1"/>
+  <BUILD_CONFIG ID="11" NAME="cvs_test_build" SCHEDULE="1" SCM="2" ACCESS="1" EMAIL_DOMAIN="" SCM_EMAIL="N" BUILDER_ID="0" SUBORDINATE="N" TIMESTAMP="1" DISCRIMINATOR="R" ORIGNL_CONFIG_ID="1"/>
+  <BUILD_CONFIG ID="12" NAME="p4_test_build" SCHEDULE="1" SCM="1" ACCESS="2" EMAIL_DOMAIN="" SCM_EMAIL="N" BUILDER_ID="0" SUBORDINATE="N" TIMESTAMP="1" DISCRIMINATOR="R" ORIGNL_CONFIG_ID="3"/>
+  <BUILD_CONFIG ID="13" NAME="ref_p4_test_build" SCHEDULE="2" SCM="3" ACCESS="2" EMAIL_DOMAIN="" SCM_EMAIL="N" BUILDER_ID="0" SUBORDINATE="N" TIMESTAMP="1" DISCRIMINATOR="R" ORIGNL_CONFIG_ID="4"/>
+  <BUILD_CONFIG ID="14" NAME="ref_p4_test_build" SCHEDULE="2" SCM="3" ACCESS="2" EMAIL_DOMAIN="" SCM_EMAIL="N" BUILDER_ID="0" SUBORDINATE="N" TIMESTAMP="1" DISCRIMINATOR="R" ORIGNL_CONFIG_ID="4"/>
+  <BUILD_CONFIG ID="15" NAME="ref_p4_test_build" SCHEDULE="2" SCM="3" ACCESS="2" EMAIL_DOMAIN="" SCM_EMAIL="N" BUILDER_ID="0" SUBORDINATE="N" TIMESTAMP="1" DISCRIMINATOR="R" ORIGNL_CONFIG_ID="4"/>
+  <BUILD_CONFIG ID="17" NAME="p4_test_build" SCHEDULE="1" SCM="1" ACCESS="2" EMAIL_DOMAIN="" SCM_EMAIL="N" BUILDER_ID="0" SUBORDINATE="N" DISCRIMINATOR="R" TIMESTAMP="1" ORIGNL_CONFIG_ID="3"/>
+  <BUILD_CONFIG ID="24" ORIGNL_CONFIG_ID="23" NAME="mks_test" SCHEDULE="1" SCM="11" ACCESS="1" EMAIL_DOMAIN="" SCM_EMAIL="N" BUILDER_ID="0" SUBORDINATE="N" DISCRIMINATOR="R" TIMESTAMP="1"/>
+  <BUILD_CONFIG ID="25" ORIGNL_CONFIG_ID="25" NAME="fsvcs_test" SCHEDULE="1" SCM="12" ACCESS="2" EMAIL_DOMAIN="" SCM_EMAIL="N" BUILDER_ID="0" SUBORDINATE="N" DISCRIMINATOR="C" TIMESTAMP="1"/>
+
+  <!-- BUILD_PROPERTY-->
+  <BUILD_ATTRIBUTE BUILD_ID="1" ID="2" NAME="build.log.retention.days" VALUE="2" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="1" ID="3" NAME="build.log.pack.days" VALUE="2" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="1" ID="4" NAME="build.result.retention.days" VALUE="2" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="9" ID="5" NAME="build.log.pack.days" VALUE="2" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="9" ID="6" NAME="build.log.retention.days" VALUE="2" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="9" ID="7" NAME="build.result.retention.days" VALUE="2" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="10" ID="8" NAME="build.log.pack.days" VALUE="2" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="10" ID="9" NAME="build.log.retention.days" VALUE="2" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="10" ID="10" NAME="build.result.retention.days" VALUE="2" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="11" ID="11" NAME="build.log.pack.days" VALUE="2" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="11" ID="12" NAME="build.log.retention.days" VALUE="2" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="11" ID="13" NAME="build.result.retention.days" VALUE="2" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="19" ID="14" NAME="build.msg.prefix" VALUE="[cc_test]" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="19" ID="15" NAME="build.send.failures.only" VALUE="checked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="19" ID="16" NAME="build.send.failure.once" VALUE="unchecked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="19" ID="17" NAME="build.log.pack.days" VALUE="30" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="20" ID="18" NAME="build.send.email.file.details" VALUE="unchecked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="20" ID="19" NAME="build.msg.prefix" VALUE="" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="20" ID="20" NAME="build.send.only.last.step.result" VALUE="unchecked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="20" ID="21" NAME="build.send.failures.only" VALUE="unchecked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="20" ID="22" NAME="build.send.failure.once" VALUE="unchecked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="20" ID="23" NAME="build.log.pack.days" VALUE="30" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="21" ID="24" NAME="build.send.email.file.details" VALUE="unchecked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="21" ID="25" NAME="build.msg.prefix" VALUE="" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="21" ID="26" NAME="build.send.only.last.step.result" VALUE="unchecked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="21" ID="27" NAME="build.send.failures.only" VALUE="unchecked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="21" ID="28" NAME="build.send.failure.once" VALUE="unchecked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="21" ID="29" NAME="build.log.pack.days" VALUE="30" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="22" ID="30" NAME="build.send.email.file.details" VALUE="unchecked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="22" ID="31" NAME="build.msg.prefix" VALUE="" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="22" ID="32" NAME="build.send.only.last.step.result" VALUE="unchecked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="22" ID="33" NAME="build.send.failures.only" VALUE="unchecked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="22" ID="34" NAME="build.send.failure.once" VALUE="unchecked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="22" ID="35" NAME="build.log.pack.days" VALUE="30" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="23" ID="36" NAME="build.send.email.file.details" VALUE="unchecked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="23" ID="37" NAME="build.msg.prefix" VALUE="" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="23" ID="38" NAME="build.send.only.last.step.result" VALUE="unchecked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="23" ID="39" NAME="build.send.failures.only" VALUE="unchecked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="23" ID="40" NAME="build.send.failure.once" VALUE="unchecked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="23" ID="41" NAME="build.log.pack.days" VALUE="30" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="24" ID="42" NAME="build.log.pack.days" VALUE="30" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="24" ID="43" NAME="build.msg.prefix" VALUE="" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="24" ID="44" NAME="build.send.email.file.details" VALUE="unchecked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="24" ID="45" NAME="build.send.failure.once" VALUE="unchecked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="24" ID="46" NAME="build.send.failures.only" VALUE="unchecked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="24" ID="47" NAME="build.send.only.last.step.result" VALUE="unchecked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="24" ID="48" NAME="build.source.config.id" VALUE="23" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="25" ID="49" NAME="build.send.email.file.details" VALUE="unchecked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="25" ID="50" NAME="build.msg.prefix" VALUE="" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="25" ID="51" NAME="build.send.only.last.step.result" VALUE="unchecked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="25" ID="52" NAME="build.send.failures.only" VALUE="unchecked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="25" ID="53" NAME="build.send.failure.once" VALUE="unchecked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="25" ID="54" NAME="build.log.pack.days" VALUE="30" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="26" ID="55" NAME="build.send.email.file.details" VALUE="unchecked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="26" ID="56" NAME="build.msg.prefix" VALUE="" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="26" ID="57" NAME="build.send.only.last.step.result" VALUE="unchecked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="26" ID="58" NAME="build.send.failures.only" VALUE="unchecked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="26" ID="59" NAME="build.send.failure.once" VALUE="unchecked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="26" ID="60" NAME="build.log.pack.days" VALUE="30" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="3" ID="61" NAME="build.log.retention.days" VALUE="2" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="1" ID="62" NAME="enable.version" VALUE="checked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="1" ID="63" NAME="version.template" VALUE="2.0.${version.counter}.${build.number}" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="1" ID="64" NAME="version.counter.increment.mode" VALUE="0" TIMESTAMP="1"/>
+  <!-- Automatic -->
+  <BUILD_ATTRIBUTE BUILD_ID="1" ID="65" NAME="version.counter.increment.if.broken" VALUE="checked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="27" ID="66" NAME="build.log.retention.days" VALUE="2" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="27" ID="67" NAME="build.source.config.id" VALUE="3" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="27" ID="68" NAME="build.send.email.file.details" VALUE="unchecked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="27" ID="69" NAME="build.msg.prefix" VALUE="" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="27" ID="70" NAME="build.send.only.last.step.result" VALUE="checked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="27" ID="71" NAME="build.send.failures.only" VALUE="checked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="27" ID="72" NAME="build.send.start.notice.for.first.step.only" VALUE="checked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="27" ID="73" NAME="build.send.failure.once" VALUE="unchecked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="27" ID="74" NAME="build.log.pack.days" VALUE="30" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="27" ID="75" NAME="build.result.retention.days" VALUE="" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="27" ID="76" NAME="enable.deleting.old.build.results" VALUE="unchecked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="27" ID="77" NAME="version.template" VALUE="test_version_${version.counter}" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="27" ID="78" NAME="version.counter.increment.if.broken" VALUE="checked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="27" ID="79" NAME="enable.version" VALUE="checked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="27" ID="80" NAME="version.counter.increment.mode" VALUE="0" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="27" ID="81" NAME="last.saved.tab" VALUE="5" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="28" ID="82" NAME="build.log.pack.days" VALUE="30" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="28" ID="83" NAME="build.log.retention.days" VALUE="2" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="28" ID="84" NAME="build.msg.prefix" VALUE="" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="28" ID="85" NAME="build.result.retention.days" VALUE="" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="28" ID="86" NAME="build.send.email.file.details" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="28" ID="87" NAME="build.send.failure.once" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="28" ID="88" NAME="build.send.failures.only" VALUE="checked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="28" ID="89" NAME="build.send.only.last.step.result" VALUE="checked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="28" ID="90" NAME="build.send.start.notice.for.first.step.only" VALUE="checked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="28" ID="91" NAME="enable.deleting.old.build.results" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="28" ID="93" NAME="last.saved.tab" VALUE="0" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="28" ID="97" NAME="build.source.config.id" VALUE="27" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="29" ID="98" NAME="build.log.pack.days" VALUE="30" TIMESTAMP="3"/>
+  <BUILD_ATTRIBUTE BUILD_ID="29" ID="99" NAME="build.log.retention.days" VALUE="2" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="29" ID="100" NAME="build.msg.prefix" VALUE="" TIMESTAMP="3"/>
+  <BUILD_ATTRIBUTE BUILD_ID="29" ID="101" NAME="build.result.retention.days" VALUE="" TIMESTAMP="3"/>
+  <BUILD_ATTRIBUTE BUILD_ID="29" ID="102" NAME="build.send.email.file.details" VALUE="unchecked" TIMESTAMP="3"/>
+  <BUILD_ATTRIBUTE BUILD_ID="29" ID="103" NAME="build.send.failure.once" VALUE="unchecked" TIMESTAMP="3"/>
+  <BUILD_ATTRIBUTE BUILD_ID="29" ID="104" NAME="build.send.failures.only" VALUE="checked" TIMESTAMP="3"/>
+  <BUILD_ATTRIBUTE BUILD_ID="29" ID="105" NAME="build.send.only.last.step.result" VALUE="checked" TIMESTAMP="3"/>
+  <BUILD_ATTRIBUTE BUILD_ID="29" ID="106" NAME="build.send.start.notice.for.first.step.only" VALUE="checked" TIMESTAMP="3"/>
+  <BUILD_ATTRIBUTE BUILD_ID="29" ID="107" NAME="enable.deleting.old.build.results" VALUE="unchecked" TIMESTAMP="3"/>
+  <BUILD_ATTRIBUTE BUILD_ID="29" ID="109" NAME="last.saved.tab" VALUE="0" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="29" ID="113" NAME="build.source.config.id" VALUE="28" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="30" ID="114" NAME="build.log.pack.days" VALUE="30" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="30" ID="115" NAME="build.log.retention.days" VALUE="2" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="30" ID="116" NAME="build.msg.prefix" VALUE="" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="30" ID="117" NAME="build.result.retention.days" VALUE="" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="30" ID="118" NAME="build.send.email.file.details" VALUE="unchecked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="30" ID="119" NAME="build.send.failure.once" VALUE="unchecked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="30" ID="120" NAME="build.send.failures.only" VALUE="checked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="30" ID="121" NAME="build.send.only.last.step.result" VALUE="checked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="30" ID="122" NAME="build.send.start.notice.for.first.step.only" VALUE="checked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="30" ID="123" NAME="enable.deleting.old.build.results" VALUE="unchecked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="30" ID="124" NAME="enable.version" VALUE="checked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="30" ID="125" NAME="last.saved.tab" VALUE="5" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="30" ID="126" NAME="version.counter.increment.if.broken" VALUE="checked" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="30" ID="127" NAME="version.counter.increment.mode" VALUE="0" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="30" ID="128" NAME="version.template" VALUE="test_version_${version.counter}" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="30" ID="129" NAME="build.source.config.id" VALUE="27" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="31" ID="130" NAME="build.log.pack.days" VALUE="30" TIMESTAMP="3"/>
+  <BUILD_ATTRIBUTE BUILD_ID="31" ID="131" NAME="build.log.retention.days" VALUE="2" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="31" ID="132" NAME="build.msg.prefix" VALUE="" TIMESTAMP="3"/>
+  <BUILD_ATTRIBUTE BUILD_ID="31" ID="133" NAME="build.result.retention.days" VALUE="" TIMESTAMP="3"/>
+  <BUILD_ATTRIBUTE BUILD_ID="31" ID="134" NAME="build.send.email.file.details" VALUE="unchecked" TIMESTAMP="3"/>
+  <BUILD_ATTRIBUTE BUILD_ID="31" ID="135" NAME="build.send.failure.once" VALUE="unchecked" TIMESTAMP="3"/>
+  <BUILD_ATTRIBUTE BUILD_ID="31" ID="136" NAME="build.send.failures.only" VALUE="checked" TIMESTAMP="3"/>
+  <BUILD_ATTRIBUTE BUILD_ID="31" ID="137" NAME="build.send.only.last.step.result" VALUE="checked" TIMESTAMP="3"/>
+  <BUILD_ATTRIBUTE BUILD_ID="31" ID="138" NAME="build.send.start.notice.for.first.step.only" VALUE="checked" TIMESTAMP="3"/>
+  <BUILD_ATTRIBUTE BUILD_ID="31" ID="139" NAME="enable.deleting.old.build.results" VALUE="unchecked" TIMESTAMP="3"/>
+  <BUILD_ATTRIBUTE BUILD_ID="31" ID="145" NAME="build.source.config.id" VALUE="29" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="32" ID="146" NAME="build.log.pack.days" VALUE="30" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="32" ID="147" NAME="build.log.retention.days" VALUE="2" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="32" ID="148" NAME="build.msg.prefix" VALUE="" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="32" ID="149" NAME="build.result.retention.days" VALUE="" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="32" ID="150" NAME="build.send.email.file.details" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="32" ID="151" NAME="build.send.failure.once" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="32" ID="152" NAME="build.send.failures.only" VALUE="checked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="32" ID="153" NAME="build.send.only.last.step.result" VALUE="checked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="32" ID="154" NAME="build.send.start.notice.for.first.step.only" VALUE="checked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="32" ID="155" NAME="enable.deleting.old.build.results" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="32" ID="161" NAME="build.source.config.id" VALUE="28" TIMESTAMP="1"/>
+  <BUILD_ATTRIBUTE BUILD_ID="33" ID="162" NAME="fail.if.dependent.build.cannot.be.started" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="33" ID="163" NAME="dependent.build.id" VALUE="-1" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="33" ID="164" NAME="build.msg.prefix" VALUE="" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="33" ID="165" NAME="build.send.email.file.details" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="33" ID="166" NAME="send.start.notice" VALUE="checked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="33" ID="167" NAME="build.send.start.notice.for.first.step.only" VALUE="checked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="33" ID="168" NAME="notify.watchers.only" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="33" ID="169" NAME="notify.build.admin" VALUE="checked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="33" ID="170" NAME="build.send.only.last.step.result" VALUE="checked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="33" ID="171" NAME="build.send.failures.only" VALUE="checked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="33" ID="172" NAME="build.send.failure.once" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="33" ID="173" NAME="build.log.pack.days" VALUE="30" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="33" ID="174" NAME="build.result.retention.days" VALUE="" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="33" ID="175" NAME="enable.deleting.old.build.results" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="33" ID="176" NAME="show.results.on.leader.page" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="33" ID="177" NAME="version.template" VALUE="" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="33" ID="178" NAME="version.counter.increment.if.broken" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="33" ID="179" NAME="enable.version" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="33" ID="180" NAME="version.counter.increment.mode" VALUE="1" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="33" ID="181" NAME="use.first.parameter.value.as.default" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="33" ID="182" NAME="promotion.policy.id" VALUE="-1" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="33" ID="183" NAME="last.saved.tab" VALUE="0" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="33" ID="184" NAME="initial.number.of.change.lists" VALUE="99" TIMESTAMP="2"/>
+
+  <BUILD_ATTRIBUTE BUILD_ID="34" ID="185" NAME="fail.if.dependent.build.cannot.be.started" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="34" ID="186" NAME="dependent.build.id" VALUE="-1" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="34" ID="187" NAME="build.msg.prefix" VALUE="" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="34" ID="188" NAME="build.send.email.file.details" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="34" ID="189" NAME="send.start.notice" VALUE="checked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="34" ID="190" NAME="build.send.start.notice.for.first.step.only" VALUE="checked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="34" ID="191" NAME="notify.watchers.only" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="34" ID="192" NAME="notify.build.admin" VALUE="checked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="34" ID="193" NAME="build.send.only.last.step.result" VALUE="checked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="34" ID="194" NAME="build.send.failures.only" VALUE="checked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="34" ID="195" NAME="build.send.failure.once" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="34" ID="196" NAME="build.log.pack.days" VALUE="30" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="34" ID="197" NAME="build.result.retention.days" VALUE="" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="34" ID="198" NAME="enable.deleting.old.build.results" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="34" ID="199" NAME="show.results.on.leader.page" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="34" ID="200" NAME="version.template" VALUE="" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="34" ID="201" NAME="version.counter.increment.if.broken" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="34" ID="202" NAME="enable.version" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="34" ID="203" NAME="version.counter.increment.mode" VALUE="1" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="34" ID="204" NAME="use.first.parameter.value.as.default" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="34" ID="205" NAME="promotion.policy.id" VALUE="-1" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="34" ID="206" NAME="last.saved.tab" VALUE="0" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="34" ID="207" NAME="initial.number.of.change.lists" VALUE="99" TIMESTAMP="2"/>
+
+  <BUILD_ATTRIBUTE BUILD_ID="35" ID="208" NAME="fail.if.depedent.build.cannot.be.started" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="35" ID="209" NAME="dependent.build.id" VALUE="-1" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="35" ID="210" NAME="build.msg.prefix" VALUE="" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="35" ID="211" NAME="build.send.email.file.details" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="35" ID="212" NAME="send.start.notice" VALUE="checked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="35" ID="213" NAME="build.send.start.notice.for.first.step.only" VALUE="checked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="35" ID="214" NAME="notify.watchers.only" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="35" ID="215" NAME="notify.build.admin" VALUE="checked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="35" ID="216" NAME="build.send.only.last.step.result" VALUE="checked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="35" ID="217" NAME="build.send.failures.only" VALUE="checked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="35" ID="218" NAME="build.send.failure.once" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="35" ID="219" NAME="build.log.pack.days" VALUE="30" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="35" ID="220" NAME="build.result.retention.days" VALUE="" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="35" ID="221" NAME="enable.deleting.old.build.results" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="35" ID="222" NAME="show.results.on.leader.page" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="35" ID="223" NAME="version.template" VALUE="" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="35" ID="224" NAME="version.counter.increment.if.broken" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="35" ID="225" NAME="enable.version" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="35" ID="226" NAME="version.counter.increment.mode" VALUE="1" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="35" ID="227" NAME="use.first.parameter.value.as.default" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="35" ID="228" NAME="promotion.policy.id" VALUE="-1" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="35" ID="229" NAME="last.saved.tab" VALUE="0" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="35" ID="230" NAME="initial.number.of.change.lists" VALUE="99" TIMESTAMP="2"/>
+
+
+  <BUILD_ATTRIBUTE BUILD_ID="36" ID="231" NAME="fail.if.depedent.build.cannot.be.started" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="36" ID="232" NAME="dependent.build.id" VALUE="-1" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="36" ID="233" NAME="build.msg.prefix" VALUE="" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="36" ID="234" NAME="build.send.email.file.details" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="36" ID="235" NAME="send.start.notice" VALUE="checked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="36" ID="236" NAME="build.send.start.notice.for.first.step.only" VALUE="checked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="36" ID="237" NAME="notify.watchers.only" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="36" ID="238" NAME="notify.build.admin" VALUE="checked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="36" ID="239" NAME="build.send.only.last.step.result" VALUE="checked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="36" ID="240" NAME="build.send.failures.only" VALUE="checked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="36" ID="241" NAME="build.send.failure.once" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="36" ID="242" NAME="build.log.pack.days" VALUE="30" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="36" ID="243" NAME="build.result.retention.days" VALUE="" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="36" ID="244" NAME="enable.deleting.old.build.results" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="36" ID="245" NAME="show.results.on.leader.page" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="36" ID="246" NAME="version.template" VALUE="" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="36" ID="247" NAME="version.counter.increment.if.broken" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="36" ID="248" NAME="enable.version" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="36" ID="249" NAME="version.counter.increment.mode" VALUE="1" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="36" ID="250" NAME="use.first.parameter.value.as.default" VALUE="unchecked" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="36" ID="251" NAME="promotion.policy.id" VALUE="-1" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="36" ID="252" NAME="last.saved.tab" VALUE="0" TIMESTAMP="2"/>
+  <BUILD_ATTRIBUTE BUILD_ID="36" ID="253" NAME="initial.number.of.change.lists" VALUE="99" TIMESTAMP="2"/>
+
+  <!-- ACTIVE_BUILD -->
+  <ACTIVE_BUILD ID="1" STARTUP_STATUS="0" DELETED="N" SEQUENCE_NUMBER="1" TIMESTAMP="1"/>
+  <ACTIVE_BUILD ID="2" STARTUP_STATUS="0" DELETED="N" SEQUENCE_NUMBER="2" TIMESTAMP="1"/>
+  <ACTIVE_BUILD ID="3" STARTUP_STATUS="0" DELETED="N" SEQUENCE_NUMBER="3" TIMESTAMP="1"/>
+  <ACTIVE_BUILD ID="4" STARTUP_STATUS="0" DELETED="N" SEQUENCE_NUMBER="4" TIMESTAMP="1"/>
+  <ACTIVE_BUILD ID="5" STARTUP_STATUS="0" DELETED="N" SEQUENCE_NUMBER="5" TIMESTAMP="1"/>
+  <ACTIVE_BUILD ID="6" STARTUP_STATUS="0" DELETED="N" SEQUENCE_NUMBER="6" TIMESTAMP="1"/>
+  <ACTIVE_BUILD ID="7" STARTUP_STATUS="0" DELETED="N" SEQUENCE_NUMBER="7" TIMESTAMP="1"/>
+  <ACTIVE_BUILD ID="8" STARTUP_STATUS="0" DELETED="N" SEQUENCE_NUMBER="8" TIMESTAMP="1"/>
+  <ACTIVE_BUILD ID="16" STARTUP_STATUS="0" DELETED="N" SEQUENCE_NUMBER="9" TIMESTAMP="1"/>
+  <ACTIVE_BUILD ID="18" STARTUP_STATUS="0" DELETED="N" SEQUENCE_NUMBER="10" TIMESTAMP="1"/>
+  <ACTIVE_BUILD ID="19" STARTUP_STATUS="0" DELETED="N" SEQUENCE_NUMBER="11" TIMESTAMP="0"/>
+  <ACTIVE_BUILD ID="20" STARTUP_STATUS="0" DELETED="N" SEQUENCE_NUMBER="12" TIMESTAMP="0"/>
+  <ACTIVE_BUILD ID="21" STARTUP_STATUS="0" DELETED="N" SEQUENCE_NUMBER="13" TIMESTAMP="0"/>
+  <ACTIVE_BUILD ID="22" STARTUP_STATUS="0" DELETED="N" SEQUENCE_NUMBER="14" TIMESTAMP="0"/>
+  <ACTIVE_BUILD ID="23" STARTUP_STATUS="0" DELETED="N" SEQUENCE_NUMBER="15" TIMESTAMP="0"/>
+  <ACTIVE_BUILD ID="25" STARTUP_STATUS="0" DELETED="N" SEQUENCE_NUMBER="16" TIMESTAMP="0"/>
+  <ACTIVE_BUILD ID="26" STARTUP_STATUS="0" DELETED="N" SEQUENCE_NUMBER="17" TIMESTAMP="0"/>
+  <ACTIVE_BUILD ID="27" STARTUP_STATUS="0" DELETED="N" SEQUENCE_NUMBER="18" TIMESTAMP="3"/>
+  <ACTIVE_BUILD ID="28" STARTUP_STATUS="0" DELETED="N" SEQUENCE_NUMBER="19" TIMESTAMP="1"/>
+  <ACTIVE_BUILD ID="29" STARTUP_STATUS="0" DELETED="N" SEQUENCE_NUMBER="20" TIMESTAMP="1"/>
+  <ACTIVE_BUILD ID="33" STARTUP_STATUS="0" DELETED="N" SEQUENCE_NUMBER="21" TIMESTAMP="1"/>
+  <ACTIVE_BUILD ID="34" STARTUP_STATUS="0" DELETED="N" SEQUENCE_NUMBER="22" TIMESTAMP="1"/>
+  <ACTIVE_BUILD ID="35" STARTUP_STATUS="0" DELETED="N" SEQUENCE_NUMBER="23" TIMESTAMP="1"/>
+  <ACTIVE_BUILD ID="36" STARTUP_STATUS="0" DELETED="N" SEQUENCE_NUMBER="24" TIMESTAMP="1"/>
+
+  <!-- ACTIVE_BUILD_ATTRIBUTE -->
+  <ACTIVE_BUILD_ATTRIBUTE ID="0" ACTIVE_BUILD_ID="1" NAME="build.number.sequence" VALUE="3" TIMESTAMP="1"/>
+  <ACTIVE_BUILD_ATTRIBUTE ID="1" ACTIVE_BUILD_ID="3" NAME="build.number.sequence" VALUE="1" TIMESTAMP="1"/>
+  <ACTIVE_BUILD_ATTRIBUTE ID="2" ACTIVE_BUILD_ID="4" NAME="build.number.sequence" VALUE="1" TIMESTAMP="1"/>
+  <ACTIVE_BUILD_ATTRIBUTE ID="3" ACTIVE_BUILD_ID="3" NAME="build.stat.successful.builds.to.date" VALUE="0" TIMESTAMP="1"/>
+  <ACTIVE_BUILD_ATTRIBUTE ID="4" ACTIVE_BUILD_ID="3" NAME="build.stat.failed.builds.to.date" VALUE="1" TIMESTAMP="1"/>
+  <ACTIVE_BUILD_ATTRIBUTE ID="5" ACTIVE_BUILD_ID="3" NAME="build.stat.change.lists.to.date" VALUE="5" TIMESTAMP="1"/>
+  <ACTIVE_BUILD_ATTRIBUTE ID="6" ACTIVE_BUILD_ID="3" NAME="build.stat.issues.to.date" VALUE="0" TIMESTAMP="1"/>
+  <ACTIVE_BUILD_ATTRIBUTE ID="7" ACTIVE_BUILD_ID="27" NAME="build.number.sequence" VALUE="1" TIMESTAMP="1"/>
+  <ACTIVE_BUILD_ATTRIBUTE ID="8" ACTIVE_BUILD_ID="29" NAME="build.number.sequence" VALUE="1" TIMESTAMP="1"/>
+  <ACTIVE_BUILD_ATTRIBUTE ID="9" ACTIVE_BUILD_ID="28" NAME="build.number.sequence" VALUE="1" TIMESTAMP="1"/>
+  <ACTIVE_BUILD_ATTRIBUTE ID="10" ACTIVE_BUILD_ID="27" NAME="version.counter.sequence" VALUE="0" TIMESTAMP="1"/>
+  <ACTIVE_BUILD_ATTRIBUTE ID="11" ACTIVE_BUILD_ID="27" NAME="build.stat.successful.builds.to.date" VALUE="0" TIMESTAMP="1"/>
+  <ACTIVE_BUILD_ATTRIBUTE ID="12" ACTIVE_BUILD_ID="27" NAME="build.stat.failed.builds.to.date" VALUE="1" TIMESTAMP="1"/>
+  <ACTIVE_BUILD_ATTRIBUTE ID="13" ACTIVE_BUILD_ID="27" NAME="build.stat.change.lists.to.date" VALUE="7" TIMESTAMP="1"/>
+  <ACTIVE_BUILD_ATTRIBUTE ID="14" ACTIVE_BUILD_ID="27" NAME="build.stat.issues.to.date" VALUE="0" TIMESTAMP="1"/>
+  <ACTIVE_BUILD_ATTRIBUTE ID="15" ACTIVE_BUILD_ID="28" NAME="build.stat.successful.builds.to.date" VALUE="0" TIMESTAMP="1"/>
+  <ACTIVE_BUILD_ATTRIBUTE ID="16" ACTIVE_BUILD_ID="28" NAME="build.stat.failed.builds.to.date" VALUE="1" TIMESTAMP="1"/>
+  <ACTIVE_BUILD_ATTRIBUTE ID="17" ACTIVE_BUILD_ID="28" NAME="build.stat.change.lists.to.date" VALUE="7" TIMESTAMP="1"/>
+  <ACTIVE_BUILD_ATTRIBUTE ID="18" ACTIVE_BUILD_ID="28" NAME="build.stat.issues.to.date" VALUE="0" TIMESTAMP="1"/>
+  <ACTIVE_BUILD_ATTRIBUTE ID="19" ACTIVE_BUILD_ID="29" NAME="build.stat.successful.builds.to.date" VALUE="0" TIMESTAMP="1"/>
+  <ACTIVE_BUILD_ATTRIBUTE ID="20" ACTIVE_BUILD_ID="29" NAME="build.stat.failed.builds.to.date" VALUE="1" TIMESTAMP="1"/>
+  <ACTIVE_BUILD_ATTRIBUTE ID="21" ACTIVE_BUILD_ID="29" NAME="build.stat.change.lists.to.date" VALUE="7" TIMESTAMP="1"/>
+  <ACTIVE_BUILD_ATTRIBUTE ID="22" ACTIVE_BUILD_ID="29" NAME="build.stat.issues.to.date" VALUE="0" TIMESTAMP="1"/>
+
+  <!-- PROJECT_BUILD -->
+  <PROJECT_BUILD ACTIVE_BUILD_ID="1" PROJECT_ID="1" ID="0"/>
+  <PROJECT_BUILD ACTIVE_BUILD_ID="2" PROJECT_ID="1" ID="1"/>
+  <PROJECT_BUILD ACTIVE_BUILD_ID="3" PROJECT_ID="1" ID="2"/>
+  <PROJECT_BUILD ACTIVE_BUILD_ID="4" PROJECT_ID="1" ID="3"/>
+  <PROJECT_BUILD ACTIVE_BUILD_ID="5" PROJECT_ID="1" ID="4"/>
+  <PROJECT_BUILD ACTIVE_BUILD_ID="6" PROJECT_ID="1" ID="5"/>
+  <PROJECT_BUILD ACTIVE_BUILD_ID="7" PROJECT_ID="1" ID="6"/>
+  <PROJECT_BUILD ACTIVE_BUILD_ID="8" PROJECT_ID="1" ID="7"/>
+  <PROJECT_BUILD ACTIVE_BUILD_ID="16" PROJECT_ID="1" ID="8"/>
+  <PROJECT_BUILD ACTIVE_BUILD_ID="18" PROJECT_ID="1" ID="9"/>
+  <PROJECT_BUILD ACTIVE_BUILD_ID="19" PROJECT_ID="1" ID="10"/>
+  <PROJECT_BUILD ACTIVE_BUILD_ID="20" PROJECT_ID="1" ID="11"/>
+  <PROJECT_BUILD ACTIVE_BUILD_ID="21" PROJECT_ID="1" ID="12"/>
+  <PROJECT_BUILD ACTIVE_BUILD_ID="22" PROJECT_ID="1" ID="13"/>
+  <PROJECT_BUILD ACTIVE_BUILD_ID="23" PROJECT_ID="1" ID="14"/>
+  <PROJECT_BUILD ACTIVE_BUILD_ID="25" PROJECT_ID="1" ID="15"/>
+  <PROJECT_BUILD ACTIVE_BUILD_ID="26" PROJECT_ID="1" ID="16"/>
+  <PROJECT_BUILD ACTIVE_BUILD_ID="27" PROJECT_ID="1" ID="17"/>
+  <PROJECT_BUILD ACTIVE_BUILD_ID="28" PROJECT_ID="1" ID="18"/>
+  <PROJECT_BUILD ACTIVE_BUILD_ID="29" PROJECT_ID="1" ID="19"/>
+  <PROJECT_BUILD ACTIVE_BUILD_ID="33" PROJECT_ID="1" ID="20"/>
+  <PROJECT_BUILD ACTIVE_BUILD_ID="34" PROJECT_ID="1" ID="21"/>
+  <PROJECT_BUILD ACTIVE_BUILD_ID="35" PROJECT_ID="1" ID="22"/>
+  <PROJECT_BUILD ACTIVE_BUILD_ID="36" PROJECT_ID="1" ID="23"/>
+
+
+  <!-- SOURCE_CONTROL_PROPERTY-->
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="1" ID="1" NAME="cvs.root" TIMESTAMP="1"
+                           VALUE=":pserver:slava@localhost:/opt/cvs/cvsroot"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="1" ID="2" NAME="cvs.password" TIMESTAMP="1"
+                           VALUE="FED13585645B0EE34267AAAED4697000"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="1" ID="4" NAME="cvs.path.to.private.key" TIMESTAMP="1"
+                           VALUE="/path/to/public/key"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="1" ID="5" NAME="cvs.source.line.path" TIMESTAMP="1"
+                           VALUE="test/sourceline/alwaysvalid"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="1" ID="6" NAME="cvs.path.to.client" TIMESTAMP="1" VALUE="cvs"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="1" ID="7" NAME="cvs.change.window" TIMESTAMP="1" VALUE="0"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="3" ID="8" NAME="p4.user" TIMESTAMP="1" VALUE="test_user"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="3" ID="9" NAME="p4.password" TIMESTAMP="1"
+                           VALUE="973908CD78928E660B047F5DE5130BE0"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="3" ID="10" NAME="p4.port" TIMESTAMP="1" VALUE="localhost:1666"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="3" ID="11" NAME="p4.depot.path" TIMESTAMP="1"
+                           VALUE="//test/sourceline/alwaysvalid/..."/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="3" ID="12" NAME="p4.path.to.client" TIMESTAMP="1" VALUE="p4"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="3" ID="13" NAME="p4.use.unc.paths" TIMESTAMP="1" VALUE="checked"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="5" ID="14" NAME="cvs.root" TIMESTAMP="1"
+                           VALUE=":pserver:slava@localhost:/opt/cvs/cvsroot"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="5" ID="15" NAME="cvs.password" TIMESTAMP="1"
+                           VALUE="FED13585645B0EE34267AAAED4697000"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="5" ID="16" NAME="cvs.source.line.path" TIMESTAMP="1"
+                           VALUE="test/sourceline/alwaysempty"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="4" ID="17" NAME="build.id.reference" TIMESTAMP="1" VALUE="3"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="6" ID="18" NAME="vss.change.window" TIMESTAMP="1" VALUE="10"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="6" ID="19" NAME="vss.db.path" TIMESTAMP="1"
+                           VALUE="..\..\..\..\..\..\..\..\test_temp\test_vss_db"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="6" ID="20" NAME="vss.password" TIMESTAMP="1"
+                           VALUE="973908CD78928E660B047F5DE5130BE0"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="6" ID="21" NAME="vss.path.to.client" TIMESTAMP="1" VALUE="SS.EXE"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="6" ID="22" NAME="vss.project.path" TIMESTAMP="1"
+                           VALUE="$/test/sourceline/alwaysvalid"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="6" ID="23" NAME="vss.user" TIMESTAMP="1" VALUE="test"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="7" ID="24" NAME="svn.depot.path" TIMESTAMP="1"
+                           VALUE="test/sourceline/alwaysvalid"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="7" ID="25" NAME="svn.exe.path" TIMESTAMP="1" VALUE="svn"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="7" ID="26" NAME="svn.url" TIMESTAMP="1" VALUE="svn://localhost:11111"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="7" ID="27" NAME="svn.user" TIMESTAMP="1" VALUE="test_user"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="7" ID="28" NAME="svn.password" TIMESTAMP="1"
+                           VALUE="973908CD78928E660B047F5DE5130BE0"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="8" ID="29" NAME="svn.depot.path" TIMESTAMP="1"
+                           VALUE="test/sourceline/alwaysempty"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="8" ID="30" NAME="svn.exe.path" TIMESTAMP="1" VALUE="svn"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="8" ID="31" NAME="svn.url" TIMESTAMP="1" VALUE="svn://localhost:11111"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="8" ID="32" NAME="svn.user" TIMESTAMP="1" VALUE="test_user"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="8" ID="33" NAME="svn.password" TIMESTAMP="1"
+                           VALUE="973908CD78928E660B047F5DE5130BE0"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="9" ID="34" NAME="cvs.root" TIMESTAMP="1"
+                           VALUE=":pserver:slava@localhost:/opt/cvs/cvsroot"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="9" ID="35" NAME="cvs.password" TIMESTAMP="1"
+                           VALUE="FED13585645B0EE34267AAAED4697000"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="9" ID="36" NAME="cvs.path.to.private.key" TIMESTAMP="1"
+                           VALUE="/path/to/public/key"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="9" ID="37" NAME="cvs.source.line.path" TIMESTAMP="1"
+                           VALUE="test/sourceline/alwaysvalid"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="9" ID="38" NAME="cvs.path.to.client" TIMESTAMP="1" VALUE="cvs"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="9" ID="39" NAME="cvs.change.window" TIMESTAMP="1" VALUE="0"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="10" ID="40" NAME="cvs.root" TIMESTAMP="1"
+                           VALUE=":pserver:slava@localhost:/opt/cvs/cvsroot"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="10" ID="41" NAME="cvs.password" TIMESTAMP="1"
+                           VALUE="FED13585645B0EE34267AAAED4697000"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="10" ID="42" NAME="cvs.path.to.private.key" TIMESTAMP="1"
+                           VALUE="/path/to/public/key"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="10" ID="43" NAME="cvs.source.line.path" TIMESTAMP="1"
+                           VALUE="test/sourceline/alwaysvalid"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="10" ID="44" NAME="cvs.path.to.client" TIMESTAMP="1" VALUE="cvs"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="10" ID="45" NAME="cvs.change.window" TIMESTAMP="1" VALUE="0"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="11" ID="46" NAME="cvs.root" TIMESTAMP="1"
+                           VALUE=":pserver:slava@localhost:/opt/cvs/cvsroot"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="11" ID="47" NAME="cvs.password" TIMESTAMP="1"
+                           VALUE="FED13585645B0EE34267AAAED4697000"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="11" ID="48" NAME="cvs.path.to.private.key" TIMESTAMP="1"
+                           VALUE="/path/to/public/key"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="11" ID="49" NAME="cvs.source.line.path" TIMESTAMP="1"
+                           VALUE="test/sourceline/alwaysvalid"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="11" ID="50" NAME="cvs.path.to.client" TIMESTAMP="1" VALUE="cvs"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="11" ID="51" NAME="cvs.change.window" TIMESTAMP="1" VALUE="0"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="12" ID="52" NAME="p4.user" TIMESTAMP="1" VALUE="test_user"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="12" ID="53" NAME="p4.password" TIMESTAMP="1"
+                           VALUE="973908CD78928E660B047F5DE5130BE0"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="12" ID="54" NAME="p4.port" TIMESTAMP="1" VALUE="localhost:1666"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="12" ID="55" NAME="p4.depot.path" TIMESTAMP="1"
+                           VALUE="//test/sourceline/alwaysvalid/..."/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="12" ID="56" NAME="p4.path.to.client" TIMESTAMP="1" VALUE="p4"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="12" ID="57" NAME="p4.use.unc.paths" TIMESTAMP="1" VALUE="checked"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="13" ID="58" NAME="build.id.reference" TIMESTAMP="1" VALUE="3"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="14" ID="59" NAME="build.id.reference" TIMESTAMP="1" VALUE="3"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="15" ID="60" NAME="build.id.reference" TIMESTAMP="1" VALUE="3"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="16" ID="61" NAME="build.id.reference" TIMESTAMP="1" VALUE="4"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="17" ID="62" NAME="p4.depot.path" TIMESTAMP="1"
+                           VALUE="//test/sourceline/alwaysvalid/..."/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="17" ID="63" NAME="p4.password" TIMESTAMP="1"
+                           VALUE="973908CD78928E660B047F5DE5130BE0"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="17" ID="64" NAME="p4.path.to.client" TIMESTAMP="1" VALUE="p4"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="17" ID="65" NAME="p4.port" TIMESTAMP="1" VALUE="localhost:1666"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="17" ID="66" NAME="p4.user" TIMESTAMP="1" VALUE="test_user"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="17" ID="67" NAME="p4.use.unc.paths" TIMESTAMP="1" VALUE="checked"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="18" ID="68" NAME="surround.repository" TIMESTAMP="1"
+                           VALUE="test/sourceline/alwaysvalid"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="18" ID="69" NAME="surround.exe" TIMESTAMP="1" VALUE="sscm"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="18" ID="70" NAME="surround.branch" TIMESTAMP="1" VALUE="test"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="18" ID="71" NAME="surround.user" TIMESTAMP="1" VALUE="test_user"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="18" ID="72" NAME="surround.port" TIMESTAMP="1" VALUE="4900"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="18" ID="74" NAME="surround.address" TIMESTAMP="1" VALUE="localhost"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="18" ID="75" NAME="surround.password" TIMESTAMP="1"
+                           VALUE="973908CD78928E660B047F5DE5130BE0"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="19" ID="76" NAME="cc.change.window" TIMESTAMP="1" VALUE="0"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="19" ID="77" NAME="cc.relative.build.dir" TIMESTAMP="1"
+                           VALUE="test_parabuild_vob\test\sourceline"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="19" ID="78" NAME="cc.cleartool" TIMESTAMP="1"
+                           VALUE="D:\Rational\ClearCase\bin\cleartool.exe"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="19" ID="79" NAME="cc.view.name.template" TIMESTAMP="1"
+                           VALUE="parabuild_${build.id}"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="19" ID="80" NAME="cc.view.config.spec" TIMESTAMP="1"
+                           VALUE="element * CHECKEDOUT&#13;&#10;element * /main/LATEST&#13;&#10;load \test_parabuild_vob\test\sourceline"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="20" ID="81" NAME="vault.user" TIMESTAMP="1" VALUE="test_user"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="20" ID="82" NAME="vault.proxy.domain" TIMESTAMP="1" VALUE=""/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="20" ID="83" NAME="vault.proxy.password" TIMESTAMP="1" VALUE="F8F50C5ADEEE7476"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="20" ID="84" NAME="vault.proxy.server" TIMESTAMP="1" VALUE=""/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="20" ID="85" NAME="vault.repository" TIMESTAMP="1" VALUE="test_repository"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="20" ID="86" NAME="vault.repository.path" TIMESTAMP="1"
+                           VALUE="$/test/sourceline/alwaysvalid"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="20" ID="87" NAME="vault.host" TIMESTAMP="1" VALUE="192.168.123.181"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="20" ID="88" NAME="vault.use.ssl" TIMESTAMP="1" VALUE="unchecked"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="20" ID="89" NAME="vault.proxy.user" TIMESTAMP="1" VALUE=""/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="20" ID="90" NAME="vault.proxy.port" TIMESTAMP="1" VALUE=""/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="20" ID="91" NAME="vault.password" TIMESTAMP="1" VALUE="973908CD78928E660B047F5DE5130BE0"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="21" ID="94" NAME="pvcs.repository" VALUE="D:\mor2\dev\bt\test\data\pvcs" TIMESTAMP="1"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="21" ID="95" NAME="pvcs.project" VALUE="/test_project/sourceline/alwaysvalid" TIMESTAMP="1"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="21" ID="96" NAME="pvcs.pcli.path" VALUE="D:\mor2\dev\bt\3rdparty\vm810\vm\win32\bin\pcli.exe" TIMESTAMP="1"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="21" ID="97" NAME="pvcs.branch" VALUE="" TIMESTAMP="1"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="21" ID="98" NAME="pvcs.label" VALUE="" TIMESTAMP="1"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="21" ID="99" NAME="pvcs.promotion.group" VALUE="" TIMESTAMP="1"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="21" ID="100" NAME="pvcs.change.window" VALUE="0" TIMESTAMP="1"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="3" ID="101" NAME="p4.p4web.url" TIMESTAMP="1" VALUE="http://blah:999"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="22" ID="102" NAME="starteam.password" TIMESTAMP="1" VALUE="973908CD78928E660B047F5DE5130BE0"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="22" ID="103" NAME="starteam.user" TIMESTAMP="1" VALUE="test_user"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="22" ID="104" NAME="starteam.host" TIMESTAMP="1" VALUE="localhost"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="22" ID="105" NAME="starteam.port" TIMESTAMP="1" VALUE="49201"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="22" ID="106" NAME="starteam.project.path" TIMESTAMP="1" VALUE="/test_project/sourceline/alwaysvalid"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="22" ID="107" NAME="starteam.exe.path" TIMESTAMP="1" VALUE="stcmd"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="22" ID="108" NAME="starteam.eol.conversion" TIMESTAMP="1" VALUE="2"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="23" ID="109" NAME="mks.host" TIMESTAMP="1" VALUE="localhost"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="23" ID="110" NAME="mks.port" TIMESTAMP="1" VALUE="7001"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="23" ID="111" NAME="mks.path.to.exe" TIMESTAMP="1" VALUE="si"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="23" ID="112" NAME="mks.user" TIMESTAMP="1" VALUE="test_user"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="23" ID="113" NAME="mks.password" TIMESTAMP="1" VALUE="973908CD78928E660B047F5DE5130BE0"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="23" ID="114" NAME="mks.project" TIMESTAMP="1" VALUE="/opt/mks/integrity_server2005/mksis/projects/project.pj"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="24" ID="115" NAME="mks.host" TIMESTAMP="1" VALUE="localhost"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="24" ID="116" NAME="mks.password" TIMESTAMP="1" VALUE="973908CD78928E660B047F5DE5130BE0"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="24" ID="117" NAME="mks.path.to.exe" TIMESTAMP="1" VALUE="si"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="24" ID="118" NAME="mks.port" TIMESTAMP="1" VALUE="7001"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="24" ID="119" NAME="mks.project" TIMESTAMP="1" VALUE="/opt/mks/integrity_server2005/mksis/projects/project.pj"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="24" ID="120" NAME="mks.user" TIMESTAMP="1" VALUE="test_user"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="25" ID="121" NAME="command.vcs.label.command" TIMESTAMP="1" VALUE="echo &apos;Label/tag a build called&apos;"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="25" ID="122" NAME="command.vcs.user" TIMESTAMP="1" VALUE="test_user"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="25" ID="123" NAME="command.vcs.path" TIMESTAMP="1" VALUE="test_path"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="25" ID="124" NAME="command.vcs.sync.to.change.list.command" TIMESTAMP="1" VALUE="echo &apos;Sync to change list called&apos;"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="25" ID="125" NAME="command.vcs.remove.label.command" TIMESTAMP="1" VALUE="echo &apos;Remove tabel/tag called&apos;"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="26" ID="126" NAME="command.vcs.label.command" TIMESTAMP="1" VALUE="echo &apos;Label/tag a build called&apos;"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="26" ID="127" NAME="command.vcs.sync.to.change.list.command" TIMESTAMP="1" VALUE="echo &apos;Sync to change list called&apos;"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="26" ID="128" NAME="command.vcs.remove.label.command" TIMESTAMP="1" VALUE="echo &apos;Remove tabel/tag called&apos;"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="26" ID="129" NAME="command.vcs.column.divider" TIMESTAMP="1" VALUE="@@#@@"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="26" ID="130" NAME="command.vcs.end.of.record" TIMESTAMP="1" VALUE="$$#$$"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="26" ID="131" NAME="command.vcs.change.date.format" TIMESTAMP="1" VALUE="yyyyMMdd.HHmmss"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="26" ID="132" NAME="command.vcs.get.changes.command" TIMESTAMP="1" VALUE="echo 'test_user@@#@@20040303.235352@@#@@second_sourceline\src\readme.txt@@#@@@@#@@mkelem@@#@@made from flat file@@#@@$$#$$'"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="27" ID="134" NAME="p4.p4web.url" TIMESTAMP="2" VALUE=""/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="27" ID="135" NAME="p4.password" TIMESTAMP="1" VALUE="973908CD78928E660B047F5DE5130BE0"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="27" ID="136" NAME="p4.path.to.client" TIMESTAMP="1" VALUE="p4"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="27" ID="137" NAME="p4.port" TIMESTAMP="1" VALUE="localhost:1666"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="27" ID="138" NAME="p4.use.unc.paths" TIMESTAMP="1" VALUE="checked"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="27" ID="139" NAME="p4.user" TIMESTAMP="1" VALUE="test_user"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="27" ID="140" NAME="p4.depot.path" TIMESTAMP="1" VALUE="//test/sourceline/alwaysvalid/..."/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="27" ID="141" NAME="p4.advanced.view.mode" TIMESTAMP="1" VALUE="unchecked"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="27" ID="142" NAME="p4.option.clobber" TIMESTAMP="1" VALUE="0"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="27" ID="143" NAME="vcs.exclusion.paths" TIMESTAMP="1" VALUE=""/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="27" ID="144" NAME="p4.client.name.template" TIMESTAMP="1" VALUE=""/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="27" ID="145" NAME="p4.option.modtime" TIMESTAMP="1" VALUE="0"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="27" ID="146" NAME="p4.counter" TIMESTAMP="1" VALUE=""/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="27" ID="147" NAME="p4.variables.override" TIMESTAMP="1" VALUE="unchecked"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="27" ID="148" NAME="p4.custom.rel.build.dir" TIMESTAMP="1" VALUE=""/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="28" ID="149" NAME="build.id.reference" TIMESTAMP="1" VALUE="27"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="28" ID="158" NAME="p4.path.to.client" TIMESTAMP="1" VALUE="p4"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="29" ID="165" NAME="build.id.reference" TIMESTAMP="1" VALUE="27"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="29" ID="174" NAME="p4.path.to.client" TIMESTAMP="1" VALUE="p4"/>
+  <!-- Leader's build run copy -->
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="30" ID="181" NAME="p4.advanced.view.mode" TIMESTAMP="1" VALUE="unchecked"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="30" ID="182" NAME="p4.client.name.template" TIMESTAMP="1" VALUE=""/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="30" ID="183" NAME="p4.counter" TIMESTAMP="1" VALUE=""/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="30" ID="184" NAME="p4.custom.rel.build.dir" TIMESTAMP="1" VALUE=""/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="30" ID="185" NAME="p4.depot.path" TIMESTAMP="1"
+                           VALUE="//test/sourceline/alwaysvalid/..."/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="30" ID="186" NAME="p4.option.clobber" TIMESTAMP="1" VALUE="0"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="30" ID="187" NAME="p4.option.modtime" TIMESTAMP="1" VALUE="0"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="30" ID="188" NAME="p4.p4web.url" TIMESTAMP="2" VALUE=""/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="30" ID="189" NAME="p4.password" TIMESTAMP="1"
+                           VALUE="973908CD78928E660B047F5DE5130BE0"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="30" ID="190" NAME="p4.path.to.client" TIMESTAMP="1" VALUE="p4"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="30" ID="191" NAME="p4.port" TIMESTAMP="1" VALUE="localhost:1666"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="30" ID="192" NAME="p4.use.unc.paths" TIMESTAMP="1" VALUE="checked"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="30" ID="193" NAME="p4.user" TIMESTAMP="1" VALUE="test_user"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="30" ID="194" NAME="p4.variables.override" TIMESTAMP="1" VALUE="unchecked"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="30" ID="195" NAME="vcs.exclusion.paths" TIMESTAMP="1" VALUE=""/>
+  <!-- Parallel 1's build run copy -->
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="31" ID="196" NAME="p4.advanced.view.mode" TIMESTAMP="1" VALUE="unchecked"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="31" ID="197" NAME="p4.client.name.template" TIMESTAMP="1" VALUE=""/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="31" ID="198" NAME="p4.counter" TIMESTAMP="1" VALUE=""/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="31" ID="199" NAME="p4.custom.rel.build.dir" TIMESTAMP="1" VALUE=""/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="31" ID="200" NAME="p4.depot.path" TIMESTAMP="1"
+                           VALUE="//test/sourceline/alwaysvalid/..."/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="31" ID="201" NAME="p4.option.clobber" TIMESTAMP="1" VALUE="0"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="31" ID="202" NAME="p4.option.modtime" TIMESTAMP="1" VALUE="0"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="31" ID="203" NAME="p4.p4web.url" TIMESTAMP="2" VALUE=""/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="31" ID="204" NAME="p4.password" TIMESTAMP="1"
+                           VALUE="973908CD78928E660B047F5DE5130BE0"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="31" ID="205" NAME="p4.path.to.client" TIMESTAMP="1" VALUE="p4"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="31" ID="206" NAME="p4.port" TIMESTAMP="1" VALUE="localhost:1666"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="31" ID="207" NAME="p4.use.unc.paths" TIMESTAMP="1" VALUE="checked"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="31" ID="208" NAME="p4.user" TIMESTAMP="1" VALUE="test_user"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="31" ID="209" NAME="p4.variables.override" TIMESTAMP="1" VALUE="unchecked"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="31" ID="210" NAME="vcs.exclusion.paths" TIMESTAMP="1" VALUE=""/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="31" ID="211" NAME="build.id.reference" TIMESTAMP="1" VALUE="30"/>
+  <!-- Points to leader's build config run copy --><!-- Parallel 2's build run copy -->
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="32" ID="212" NAME="p4.advanced.view.mode" TIMESTAMP="1" VALUE="unchecked"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="32" ID="213" NAME="p4.client.name.template" TIMESTAMP="1" VALUE=""/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="32" ID="214" NAME="p4.counter" TIMESTAMP="1" VALUE=""/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="32" ID="215" NAME="p4.custom.rel.build.dir" TIMESTAMP="1" VALUE=""/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="32" ID="216" NAME="p4.depot.path" TIMESTAMP="1"
+                           VALUE="//test/sourceline/alwaysvalid/..."/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="32" ID="217" NAME="p4.option.clobber" TIMESTAMP="1" VALUE="0"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="32" ID="218" NAME="p4.option.modtime" TIMESTAMP="1" VALUE="0"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="32" ID="219" NAME="p4.p4web.url" TIMESTAMP="2" VALUE=""/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="32" ID="220" NAME="p4.password" TIMESTAMP="1"
+                           VALUE="973908CD78928E660B047F5DE5130BE0"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="32" ID="221" NAME="p4.path.to.client" TIMESTAMP="1" VALUE="p4"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="32" ID="222" NAME="p4.port" TIMESTAMP="1" VALUE="localhost:1666"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="32" ID="223" NAME="p4.use.unc.paths" TIMESTAMP="1" VALUE="checked"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="32" ID="224" NAME="p4.user" TIMESTAMP="1" VALUE="test_user"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="32" ID="225" NAME="p4.variables.override" TIMESTAMP="1" VALUE="unchecked"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="32" ID="226" NAME="vcs.exclusion.paths" TIMESTAMP="1" VALUE=""/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="32" ID="227" NAME="build.id.reference" TIMESTAMP="1" VALUE="30"/>
+
+  <!-- Accurev -->
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="33" ID="228" NAME="accurev.line.terminator" TIMESTAMP="1" VALUE="1"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="33" ID="229" NAME="accurev.password" TIMESTAMP="1" VALUE="973908CD78928E660B047F5DE5130BE0"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="33" ID="230" NAME="vcs.exclusion.paths" TIMESTAMP="1" VALUE=""/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="33" ID="231" NAME="accurev.exe.path" TIMESTAMP="1" VALUE="accurev"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="33" ID="232" NAME="accurev.workspace.kind" TIMESTAMP="1" VALUE="1"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="33" ID="233" NAME="accurev.stream" TIMESTAMP="1" VALUE="test_depot"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="33" ID="234" NAME="accurev.host" TIMESTAMP="1" VALUE="127.0.0.1"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="33" ID="235" NAME="accurev.user" TIMESTAMP="1" VALUE="test_user"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="33" ID="236" NAME="accurev.port" TIMESTAMP="2" VALUE="5050"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="33" ID="237" NAME="vcs.custom.checkout.dir.template" TIMESTAMP="1" VALUE=""/>
+
+
+  <!-- Git -->
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="34" ID="238" NAME="git.exe.path" TIMESTAMP="1" VALUE="git"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="34" ID="239" NAME="git.password" TIMESTAMP="1" VALUE="973908CD78928E660B047F5DE5130BE0"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="34" ID="240" NAME="git.repository" TIMESTAMP="1" VALUE="file://C:\WORK\mor2\dev\test_git"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="34" ID="241" NAME="git.user" TIMESTAMP="1" VALUE="test_user"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="34" ID="242" NAME="git.depot.path" TIMESTAMP="1" VALUE="/"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="34" ID="243" NAME="vcs.exclusion.paths" TIMESTAMP="1" VALUE=""/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="34" ID="244" NAME="vcs.custom.checkout.dir.template" TIMESTAMP="1" VALUE=""/>
+
+
+  <!-- Bazaar -->
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="35" ID="245" NAME="bazaar.exe.path" TIMESTAMP="1" VALUE="bzr"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="35" ID="246" NAME="bzr.branch.location" TIMESTAMP="1" VALUE="bzr://127.0.0.1"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="35" ID="247" NAME="vcs.exclusion.paths" TIMESTAMP="1" VALUE=""/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="35" ID="248" NAME="vcs.custom.checkout.dir.template" TIMESTAMP="1" VALUE=""/>
+
+
+  <!-- Mercurial -->
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="36" ID="249" NAME="hg.exe.path" TIMESTAMP="1" VALUE="hg"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="36" ID="250" NAME="hg.branch" TIMESTAMP="1" VALUE=""/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="36" ID="251" NAME="hg.url" TIMESTAMP="1" VALUE="http://127.0.0.1:8000"/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="36" ID="252" NAME="vcs.exclusion.paths" TIMESTAMP="1" VALUE=""/>
+  <SOURCE_CONTROL_PROPERTY BUILD_ID="36" ID="253" NAME="vcs.custom.checkout.dir.template" TIMESTAMP="1" VALUE=""/>
+
+
+  <!-- SCHEDULE_PROPERTY -->
+  <SCHEDULE_PROPERTY BUILD_ID="1" ID="1" NAME="auto.poll.interval" VALUE="10" TIMESTAMP="1"/>
+  <SCHEDULE_PROPERTY BUILD_ID="1" ID="2" NAME="auto.clean.checkout.interval" VALUE="10" TIMESTAMP="1"/>
+  <SCHEDULE_PROPERTY BUILD_ID="1" ID="3" NAME="auto.clean.checkout.if.broken" VALUE="unchecked" TIMESTAMP="1"/>
+  <SCHEDULE_PROPERTY BUILD_ID="5" ID="4" NAME="auto.poll.interval" VALUE="10" TIMESTAMP="1"/>
+  <SCHEDULE_PROPERTY BUILD_ID="5" ID="5" NAME="auto.clean.checkout.interval" VALUE="10" TIMESTAMP="1"/>
+  <SCHEDULE_PROPERTY BUILD_ID="9" ID="6" NAME="auto.poll.interval" VALUE="10" TIMESTAMP="1"/>
+  <SCHEDULE_PROPERTY BUILD_ID="9" ID="7" NAME="auto.clean.checkout.interval" VALUE="10" TIMESTAMP="1"/>
+  <SCHEDULE_PROPERTY BUILD_ID="10" ID="8" NAME="auto.poll.interval" VALUE="10" TIMESTAMP="1"/>
+  <SCHEDULE_PROPERTY BUILD_ID="10" ID="9" NAME="auto.clean.checkout.interval" VALUE="10" TIMESTAMP="1"/>
+  <SCHEDULE_PROPERTY BUILD_ID="11" ID="10" NAME="auto.poll.interval" VALUE="10" TIMESTAMP="1"/>
+  <SCHEDULE_PROPERTY BUILD_ID="11" ID="11" NAME="auto.clean.checkout.interval" VALUE="10" TIMESTAMP="1"/>
+  <SCHEDULE_PROPERTY BUILD_ID="19" ID="12" NAME="auto.poll.interval" VALUE="10" TIMESTAMP="1"/>
+  <SCHEDULE_PROPERTY BUILD_ID="19" ID="13" NAME="auto.clean.checkout.interval" VALUE="10" TIMESTAMP="1"/>
+  <SCHEDULE_PROPERTY BUILD_ID="19" ID="14" NAME="auto.clean.checkout.if.broken" VALUE="unchecked" TIMESTAMP="1"/>
+  <SCHEDULE_PROPERTY BUILD_ID="19" ID="15" NAME="auto.cooldown.interval" VALUE="0" TIMESTAMP="1"/>
+  <SCHEDULE_PROPERTY BUILD_ID="27" ID="16" NAME="auto.poll.interval" VALUE="10" TIMESTAMP="1"/>
+  <SCHEDULE_PROPERTY BUILD_ID="27" ID="17" NAME="auto.clean.checkout.interval" VALUE="10" TIMESTAMP="1"/>
+  <SCHEDULE_PROPERTY BUILD_ID="27" ID="18" NAME="auto.clean.checkout.if.broken" VALUE="unchecked" TIMESTAMP="1"/>
+  <SCHEDULE_PROPERTY BUILD_ID="27" ID="19" NAME="auto.cooldown.interval" VALUE="0" TIMESTAMP="1"/>
+  <SCHEDULE_PROPERTY BUILD_ID="30" ID="28" NAME="auto.clean.checkout.if.broken" VALUE="unchecked" TIMESTAMP="1"/>
+  <SCHEDULE_PROPERTY BUILD_ID="30" ID="29" NAME="auto.clean.checkout.interval" VALUE="10" TIMESTAMP="1"/>
+  <SCHEDULE_PROPERTY BUILD_ID="30" ID="30" NAME="auto.cooldown.interval" VALUE="0" TIMESTAMP="1"/>
+  <SCHEDULE_PROPERTY BUILD_ID="28" ID="31" NAME="auto.clean.checkout.if.broken" VALUE="unchecked" TIMESTAMP="1"/>
+  <SCHEDULE_PROPERTY BUILD_ID="28" ID="32" NAME="auto.clean.checkout.interval" VALUE="10" TIMESTAMP="1"/>
+
+  <!-- SCHEDULE_ITEM -->
+  <SCHEDULE_ITEM BUILD_ID="4" ID="1" HOUR="1" WEEK_DAY="1" MONTH_DAY="" CLEAN_CHECKOUT="N" RUN_IF_NO_CHANGES="N" TIMESTAMP="1"/>
+  <SCHEDULE_ITEM BUILD_ID="4" ID="2" HOUR="12" WEEK_DAY="" MONTH_DAY="1" CLEAN_CHECKOUT="N" RUN_IF_NO_CHANGES="N" TIMESTAMP="1"/>
+  <SCHEDULE_ITEM BUILD_ID="13" ID="3" HOUR="1" WEEK_DAY="1" MONTH_DAY="" CLEAN_CHECKOUT="N" RUN_IF_NO_CHANGES="N" TIMESTAMP="1"/>
+  <SCHEDULE_ITEM BUILD_ID="13" ID="4" HOUR="12" WEEK_DAY="" MONTH_DAY="1" CLEAN_CHECKOUT="N" RUN_IF_NO_CHANGES="N" TIMESTAMP="1"/>
+  <SCHEDULE_ITEM BUILD_ID="14" ID="5" HOUR="1" WEEK_DAY="1" MONTH_DAY="" CLEAN_CHECKOUT="N" RUN_IF_NO_CHANGES="N" TIMESTAMP="1"/>
+  <SCHEDULE_ITEM BUILD_ID="14" ID="6" HOUR="12" WEEK_DAY="" MONTH_DAY="1" CLEAN_CHECKOUT="N" RUN_IF_NO_CHANGES="N" TIMESTAMP="1"/>
+  <SCHEDULE_ITEM BUILD_ID="15" ID="7" HOUR="1" WEEK_DAY="1" MONTH_DAY="" CLEAN_CHECKOUT="N" RUN_IF_NO_CHANGES="N" TIMESTAMP="1"/>
+  <SCHEDULE_ITEM BUILD_ID="15" ID="8" HOUR="12" WEEK_DAY="" MONTH_DAY="1" CLEAN_CHECKOUT="N" RUN_IF_NO_CHANGES="N" TIMESTAMP="1"/>
+  <SCHEDULE_ITEM BUILD_ID="16" ID="9" HOUR="12" WEEK_DAY="" MONTH_DAY="1" CLEAN_CHECKOUT="N" RUN_IF_NO_CHANGES="N" TIMESTAMP="1"/>
+
+  <!-- LABELING -->
+  <LABEL_PROPERTY BUILD_ID="1" ID="1" NAME="build.label.type" VALUE="build.label.type.custom" TIMESTAMP="1"/>
+  <LABEL_PROPERTY BUILD_ID="1" ID="2" NAME="build.label.custom.value" VALUE="cvs_test_build_${build.number}_${build.timestamp}" TIMESTAMP="1"/>
+  <LABEL_PROPERTY BUILD_ID="2" ID="3" NAME="build.label.type" VALUE="build.label.type.none" TIMESTAMP="1"/>
+  <LABEL_PROPERTY BUILD_ID="3" ID="4" NAME="build.label.type" VALUE="build.label.type.custom" TIMESTAMP="1"/>
+  <LABEL_PROPERTY BUILD_ID="3" ID="5" NAME="build.label.custom.value" VALUE="p4_test_build_${build.timestamp}" TIMESTAMP="1"/>
+  <LABEL_PROPERTY BUILD_ID="3" ID="6" NAME="build.label.delete.enabled" VALUE="checked" TIMESTAMP="1"/>
+  <LABEL_PROPERTY BUILD_ID="3" ID="7" NAME="build.label.delete.days" VALUE="30" TIMESTAMP="1"/>
+  <LABEL_PROPERTY BUILD_ID="4" ID="8" NAME="build.label.type" VALUE="build.label.type.none" TIMESTAMP="1"/>
+  <LABEL_PROPERTY BUILD_ID="5" ID="9" NAME="build.label.type" VALUE="build.label.type.none" TIMESTAMP="1"/>
+  <LABEL_PROPERTY BUILD_ID="5" ID="10" NAME="build.label.custom.value" VALUE="" TIMESTAMP="1"/>
+  <LABEL_PROPERTY BUILD_ID="9" ID="11" NAME="build.label.custom.value" VALUE="cvs_test_build_${build.number}_${build.timestamp}" TIMESTAMP="1"/>
+  <LABEL_PROPERTY BUILD_ID="9" ID="12" NAME="build.label.type" VALUE="build.label.type.custom" TIMESTAMP="1"/>
+  <LABEL_PROPERTY BUILD_ID="10" ID="13" NAME="build.label.custom.value" VALUE="cvs_test_build_${build.number}_${build.timestamp}" TIMESTAMP="1"/>
+  <LABEL_PROPERTY BUILD_ID="10" ID="14" NAME="build.label.type" VALUE="build.label.type.custom" TIMESTAMP="1"/>
+  <LABEL_PROPERTY BUILD_ID="11" ID="15" NAME="build.label.custom.value" VALUE="cvs_test_build_${build.number}_${build.timestamp}" TIMESTAMP="1"/>
+  <LABEL_PROPERTY BUILD_ID="11" ID="16" NAME="build.label.type" VALUE="build.label.type.custom" TIMESTAMP="1"/>
+  <LABEL_PROPERTY BUILD_ID="12" ID="17" NAME="build.label.custom.value" VALUE="p4_test_build_${build.timestamp}" TIMESTAMP="1"/>
+  <LABEL_PROPERTY BUILD_ID="12" ID="18" NAME="build.label.type" VALUE="build.label.type.custom" TIMESTAMP="1"/>
+  <LABEL_PROPERTY BUILD_ID="13" ID="19" NAME="build.label.type" VALUE="build.label.type.none" TIMESTAMP="1"/>
+  <LABEL_PROPERTY BUILD_ID="14" ID="20" NAME="build.label.type" VALUE="build.label.type.none" TIMESTAMP="1"/>
+  <LABEL_PROPERTY BUILD_ID="15" ID="21" NAME="build.label.type" VALUE="build.label.type.none" TIMESTAMP="1"/>
+  <LABEL_PROPERTY BUILD_ID="17" ID="22" NAME="build.label.custom.value" VALUE="p4_test_build_${build.timestamp}" TIMESTAMP="1"/>
+  <LABEL_PROPERTY BUILD_ID="17" ID="23" NAME="build.label.type" VALUE="build.label.type.custom" TIMESTAMP="1"/>
+  <LABEL_PROPERTY BUILD_ID="19" ID="24" NAME="build.label.custom.value" VALUE="" TIMESTAMP="1"/>
+  <LABEL_PROPERTY BUILD_ID="19" ID="25" NAME="build.label.delete.days" VALUE="" TIMESTAMP="1"/>
+  <LABEL_PROPERTY BUILD_ID="19" ID="26" NAME="build.label.delete.enabled" VALUE="unchecked" TIMESTAMP="1"/>
+  <LABEL_PROPERTY BUILD_ID="19" ID="27" NAME="build.label.type" VALUE="build.label.type.none" TIMESTAMP="1"/>
+
+  <!-- VCS_USER_TO_EMAIL_MAP -->
+  <VCS_USER_TO_EMAIL_MAP ID="1" BUILD_ID="1" USER_NAME=" user1 " USER_EMAIL="user1@email" DISABLED="no" IM_TYPE="0" TIMESTAMP="1"/>
+  <VCS_USER_TO_EMAIL_MAP ID="2" BUILD_ID="1" USER_NAME="test" USER_EMAIL="simeshev@comcast.net" DISABLED="no" IM_TYPE="0" TIMESTAMP="1"/>
+  <VCS_USER_TO_EMAIL_MAP ID="3" BUILD_ID="1" USER_NAME="slava" USER_EMAIL="simeshev@comcast.net" DISABLED="no" IM_TYPE="0" TIMESTAMP="1"/>
+  <VCS_USER_TO_EMAIL_MAP ID="4" BUILD_ID="1" USER_NAME="user2" USER_EMAIL="user2@email" DISABLED="no" IM_TYPE="0" TIMESTAMP="1"/>
+  <VCS_USER_TO_EMAIL_MAP ID="5" BUILD_ID="2" USER_NAME="user1" USER_EMAIL="user1@email" DISABLED="no" IM_TYPE="0" TIMESTAMP="1"/>
+  <VCS_USER_TO_EMAIL_MAP ID="6" BUILD_ID="3" USER_NAME="user2" USER_EMAIL="user2@email" DISABLED="no" IM_TYPE="0" TIMESTAMP="1"/>
+  <VCS_USER_TO_EMAIL_MAP ID="7" BUILD_ID="9" USER_NAME="user1" USER_EMAIL="user1@email" DISABLED="N" IM_TYPE="0" TIMESTAMP="1"/>
+  <VCS_USER_TO_EMAIL_MAP ID="8" BUILD_ID="9" USER_NAME="test" USER_EMAIL="simeshev@comcast.net" DISABLED="N" IM_TYPE="0" TIMESTAMP="1"/>
+  <VCS_USER_TO_EMAIL_MAP ID="9" BUILD_ID="9" USER_NAME="slava" USER_EMAIL="simeshev@comcast.net" DISABLED="N" IM_TYPE="0" TIMESTAMP="1"/>
+  <VCS_USER_TO_EMAIL_MAP ID="10" BUILD_ID="9" USER_NAME="user2" USER_EMAIL="user2@email" DISABLED="N" IM_TYPE="0" TIMESTAMP="1"/>
+  <VCS_USER_TO_EMAIL_MAP ID="11" BUILD_ID="10" USER_NAME="user1" USER_EMAIL="user1@email" DISABLED="N" IM_TYPE="0" TIMESTAMP="1"/>
+  <VCS_USER_TO_EMAIL_MAP ID="12" BUILD_ID="10" USER_NAME="test" USER_EMAIL="simeshev@comcast.net" DISABLED="N" IM_TYPE="0" TIMESTAMP="1"/>
+  <VCS_USER_TO_EMAIL_MAP ID="13" BUILD_ID="10" USER_NAME="slava" USER_EMAIL="simeshev@comcast.net" DISABLED="N" IM_TYPE="0" TIMESTAMP="1"/>
+  <VCS_USER_TO_EMAIL_MAP ID="14" BUILD_ID="10" USER_NAME="user2" USER_EMAIL="user2@email" DISABLED="N" IM_TYPE="0" TIMESTAMP="1"/>
+  <VCS_USER_TO_EMAIL_MAP ID="15" BUILD_ID="11" USER_NAME="user1" USER_EMAIL="user1@email" DISABLED="N" IM_TYPE="0" TIMESTAMP="1"/>
+  <VCS_USER_TO_EMAIL_MAP ID="16" BUILD_ID="11" USER_NAME="test" USER_EMAIL="simeshev@comcast.net" DISABLED="N" IM_TYPE="0" TIMESTAMP="1"/>
+  <VCS_USER_TO_EMAIL_MAP ID="17" BUILD_ID="11" USER_NAME="slava" USER_EMAIL="simeshev@comcast.net" DISABLED="N" IM_TYPE="0" TIMESTAMP="1"/>
+  <VCS_USER_TO_EMAIL_MAP ID="18" BUILD_ID="11" USER_NAME="user2" USER_EMAIL="user2@email" DISABLED="N" IM_TYPE="0" TIMESTAMP="1"/>
+  <VCS_USER_TO_EMAIL_MAP ID="19" BUILD_ID="12" USER_NAME="user2" USER_EMAIL="user2@email" DISABLED="N" IM_TYPE="0" TIMESTAMP="1"/>
+  <VCS_USER_TO_EMAIL_MAP ID="20" BUILD_ID="17" USER_NAME="user2" USER_EMAIL="user2@email" DISABLED="N" IM_TYPE="0" TIMESTAMP="1"/>
+
+
+  <!-- BUILD SEQUENCE -->
+  <BUILD_SEQUENCE BUILD_ID="1" ID="1" LINE_NUMBER="1" NAME="BUILD" SCRIPT="ant all.clean"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="no"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="1" ID="2" LINE_NUMBER="2" NAME="TEST" SCRIPT="ant run.tests"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="no"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="3" ID="3" LINE_NUMBER="3" NAME="BUILD" SCRIPT="ant all.clean"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="no"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="3" ID="4" LINE_NUMBER="4" NAME="TEST" SCRIPT="ant run.tests"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="no"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="4" ID="5" LINE_NUMBER="5" NAME="BUILD" SCRIPT="echo BUILD SUCCESSFUL"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="no"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="4" ID="6" LINE_NUMBER="6" NAME="TEST" SCRIPT="echo BUILD SUCCESSFUL"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="no"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="5" ID="7" LINE_NUMBER="7" NAME="BUILD" SCRIPT="ant all.clean"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="no"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="7" ID="8" LINE_NUMBER="8" NAME="BUILD" SCRIPT="echo BUILD SUCCESSFUL"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="no"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="8" ID="9" LINE_NUMBER="9" NAME="BUILD" SCRIPT="echo BUILD SUCCESSFUL"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="no"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="9" ID="10" LINE_NUMBER="10" NAME="BUILD" SCRIPT="ant all.clean"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="N"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="9" ID="11" LINE_NUMBER="11" NAME="TEST" SCRIPT="ant run.tests"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="N"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="10" ID="12" LINE_NUMBER="12" NAME="BUILD" SCRIPT="ant all.clean"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="N"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="10" ID="13" LINE_NUMBER="13" NAME="TEST" SCRIPT="ant run.tests"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="N"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="11" ID="14" LINE_NUMBER="14" NAME="BUILD" SCRIPT="ant all.clean"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="N"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="11" ID="15" LINE_NUMBER="15" NAME="TEST" SCRIPT="ant run.tests"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="N"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="12" ID="16" LINE_NUMBER="16" NAME="BUILD" SCRIPT="ant all.clean"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="N"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="12" ID="17" LINE_NUMBER="17" NAME="TEST" SCRIPT="ant run.tests"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="N"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="13" ID="18" LINE_NUMBER="18" NAME="BUILD" SCRIPT="echo BUILD SUCCESSFUL"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="N"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="13" ID="19" LINE_NUMBER="19" NAME="TEST" SCRIPT="echo BUILD SUCCESSFUL"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="N"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="14" ID="20" LINE_NUMBER="20" NAME="BUILD" SCRIPT="echo BUILD SUCCESSFUL"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="N"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="14" ID="21" LINE_NUMBER="21" NAME="TEST" SCRIPT="echo BUILD SUCCESSFUL"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="N"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="15" ID="22" LINE_NUMBER="22" NAME="BUILD" SCRIPT="echo BUILD SUCCESSFUL"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="N"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="15" ID="23" LINE_NUMBER="23" NAME="TEST" SCRIPT="echo BUILD SUCCESSFUL"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="N"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="16" ID="24" LINE_NUMBER="24" NAME="BUILD" SCRIPT="echo BUILD SUCCESSFUL"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="no"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="16" ID="25" LINE_NUMBER="25" NAME="TEST" SCRIPT="echo BUILD SUCCESSFUL"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="no"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="17" ID="26" LINE_NUMBER="26" NAME="BUILD" SCRIPT="ant all.clean"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="N"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="17" ID="27" LINE_NUMBER="27" NAME="TEST" SCRIPT="ant run.tests"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="N"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="18" ID="28" LINE_NUMBER="28" NAME="BUILD" SCRIPT="echo BUILD SUCCESSFUL"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="no"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="19" ID="29" LINE_NUMBER="29" NAME="BUILD" SCRIPT="echo BUILD SUCCESSFUL"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD FAILED" RESPECT_ERROR_CODE="Y"
+                  TIMEOUT="30" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="20" ID="30" LINE_NUMBER="30" NAME="BUILD" SCRIPT="ant all"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD FAILED" RESPECT_ERROR_CODE="Y"
+                  TIMEOUT="30" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="21" ID="31" LINE_NUMBER="31" NAME="BUILD" SCRIPT="echo BUILD SUCCESSFUL"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD FAILED" RESPECT_ERROR_CODE="Y"
+                  TIMEOUT="30" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="22" ID="32" LINE_NUMBER="32" NAME="BUILD" SCRIPT="echo BUILD SUCCESSFUL"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD FAILED" RESPECT_ERROR_CODE="Y"
+                  TIMEOUT="30" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="23" ID="33" LINE_NUMBER="33" NAME="BUILD" SCRIPT="echo BUILD SUCCESSFUL"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD FAILED" RESPECT_ERROR_CODE="Y"
+                  TIMEOUT="30" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="24" ID="34" LINE_NUMBER="34" NAME="BUILD" SCRIPT="echo BUILD SUCCESSFUL"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD FAILED" RESPECT_ERROR_CODE="Y"
+                  TIMEOUT="30" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="25" ID="35" LINE_NUMBER="35" NAME="BUILD" SCRIPT="echo BUILD SUCCESSFUL"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD FAILED" RESPECT_ERROR_CODE="Y"
+                  TIMEOUT="30" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="26" ID="36" LINE_NUMBER="36" NAME="BUILD" SCRIPT="echo BUILD SUCCESSFUL"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD FAILED" RESPECT_ERROR_CODE="Y"
+                  TIMEOUT="30" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="27" ID="37" LINE_NUMBER="37" NAME="BUILD" SCRIPT="ant all.clean"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="N"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="27" ID="38" LINE_NUMBER="38" NAME="TEST" SCRIPT="ant run.tests"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="N"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="Y" TYPE="0" TIMESTAMP="2"/>
+  <BUILD_SEQUENCE BUILD_ID="28" ID="39" LINE_NUMBER="39" NAME="BUILD" SCRIPT="ant all.clean"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="N"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="28" ID="40" LINE_NUMBER="40" NAME="TEST" SCRIPT="ant run.tests"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="N"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="Y" TYPE="0" TIMESTAMP="2"/>
+  <BUILD_SEQUENCE BUILD_ID="29" ID="41" LINE_NUMBER="41" NAME="BUILD" SCRIPT="ant all.clean"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="N"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="29" ID="42" LINE_NUMBER="42" NAME="TEST" SCRIPT="ant run.tests"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="N"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="Y" TYPE="0" TIMESTAMP="2"/>
+  <BUILD_SEQUENCE BUILD_ID="30" ID="43" LINE_NUMBER="43" NAME="BUILD" SCRIPT="ant all.clean"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="N"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="30" ID="44" LINE_NUMBER="44" NAME="TEST" SCRIPT="ant run.tests"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="N"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="Y" TYPE="0" TIMESTAMP="2"/>
+  <BUILD_SEQUENCE BUILD_ID="31" ID="45" LINE_NUMBER="45" NAME="BUILD" SCRIPT="ant all.clean"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="N"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="31" ID="46" LINE_NUMBER="46" NAME="TEST" SCRIPT="ant run.tests"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="N"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="Y" TYPE="0" TIMESTAMP="2"/>
+  <BUILD_SEQUENCE BUILD_ID="32" ID="47" LINE_NUMBER="47" NAME="BUILD" SCRIPT="ant all.clean"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="N"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="32" ID="48" LINE_NUMBER="48" NAME="TEST" SCRIPT="ant run.tests"
+                  SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD_FAILED" RESPECT_ERROR_CODE="N"
+                  TIMEOUT="5" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="Y" TYPE="0" TIMESTAMP="2"/>
+  <BUILD_SEQUENCE BUILD_ID="3" ID="49" NAME="PUBLISH" SCRIPT="echo PUBLISH SUCCESSFUL"
+                  SUCCESS_PATTERNS="PUBLISH SUCCESSFUL" FAILURE_PATTERNS="" RESPECT_ERROR_CODE="Y" TIMEOUT="30"
+                  DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" LINE_NUMBER="0" TYPE="1" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="9" ID="50" NAME="PUBLISH" SCRIPT="echo PUBLISH SUCCESSFUL"
+                  SUCCESS_PATTERNS="PUBLISH SUCCESSFUL" FAILURE_PATTERNS="" RESPECT_ERROR_CODE="Y" TIMEOUT="30"
+                  DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" LINE_NUMBER="0" TYPE="1" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="33" ID="51" NAME="BUILD" SCRIPT="echo BUILD SUCCESSFUL" SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD FAILED" RESPECT_ERROR_CODE="Y" TIMEOUT="30" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" LINE_NUMBER="0" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="34" ID="52" NAME="BUILD" SCRIPT="echo BUILD SUCCESSFUL" SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD FAILED" RESPECT_ERROR_CODE="Y" TIMEOUT="30" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" LINE_NUMBER="0" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="35" ID="53" NAME="BUILD" SCRIPT="echo BUILD SUCCESSFUL" SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD FAILED" RESPECT_ERROR_CODE="Y" TIMEOUT="30" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" LINE_NUMBER="0" TYPE="0" TIMESTAMP="1"/>
+  <BUILD_SEQUENCE BUILD_ID="36" ID="54" NAME="BUILD" SCRIPT="echo BUILD SUCCESSFUL" SUCCESS_PATTERNS="BUILD SUCCESSFUL" FAILURE_PATTERNS="BUILD FAILED" RESPECT_ERROR_CODE="Y" TIMEOUT="30" DISABLED="N" CONTINUE="N" INITIALIZER="N" FINALIZER="N" LINE_NUMBER="0" TYPE="0" TIMESTAMP="1"/>
+
+  <!-- LOG_CONFIG --><!-- Note: vimeshev - added trailing and leading spaces to paths to test that it can be handled (see Bug #602) -->
+  <LOG_CONFIG ID="1" BUILD_ID="1" DESCRIPTION="File test log" PATH=" test/log/build_log.log " TYPE="1" TIMESTAMP="1"/>
+  <LOG_CONFIG ID="2" BUILD_ID="1" DESCRIPTION="Directory test log" PATH=" test/log/dir " TYPE="2" TIMESTAMP="1"/>
+  <LOG_CONFIG ID="3" BUILD_ID="1" DESCRIPTION="JUnit log" PATH=" test/log/junit_log_dir " TYPE="3" TIMESTAMP="1"/>
+  <LOG_CONFIG ID="4" BUILD_ID="1" DESCRIPTION="PMD log" PATH=" test/log/pmd_xml_report.xml " TYPE="4" TIMESTAMP="1"/>
+  <LOG_CONFIG ID="5" BUILD_ID="1" DESCRIPTION="Test HTML file" PATH=" test/log/test_html_log.html " TYPE="5" TIMESTAMP="1"/>
+  <LOG_CONFIG ID="6" BUILD_ID="1" DESCRIPTION="Test HTML dir" PATH=" test/log/httpunit_log_dir " TYPE="6" TIMESTAMP="1"/>
+  <LOG_CONFIG ID="7" BUILD_ID="9" DESCRIPTION="Directory test log" PATH=" test/log/dir " TYPE="2" TIMESTAMP="1"/>
+  <LOG_CONFIG ID="8" BUILD_ID="9" DESCRIPTION="File test log" PATH=" test/log/build_log.log " TYPE="1" TIMESTAMP="1"/>
+  <LOG_CONFIG ID="9" BUILD_ID="9" DESCRIPTION="JUnit log" PATH=" test/log/junit_log_dir " TYPE="3" TIMESTAMP="1"/>
+  <LOG_CONFIG ID="10" BUILD_ID="9" DESCRIPTION="PMD log" PATH=" test/log/pmd_xml_report.xml " TYPE="4" TIMESTAMP="1"/>
+  <LOG_CONFIG ID="11" BUILD_ID="9" DESCRIPTION="Test HTML dir" PATH=" test/log/httpunit_log_dir " TYPE="6" TIMESTAMP="1"/>
+  <LOG_CONFIG ID="12" BUILD_ID="9" DESCRIPTION="Test HTML file" PATH=" test/log/test_html_log.html " TYPE="5" TIMESTAMP="1"/>
+  <LOG_CONFIG ID="13" BUILD_ID="10" DESCRIPTION="Directory test log" PATH=" test/log/dir " TYPE="2" TIMESTAMP="1"/>
+  <LOG_CONFIG ID="14" BUILD_ID="10" DESCRIPTION="File test log" PATH=" test/log/build_log.log " TYPE="1" TIMESTAMP="1"/>
+  <LOG_CONFIG ID="15" BUILD_ID="10" DESCRIPTION="JUnit log" PATH=" test/log/junit_log_dir " TYPE="3" TIMESTAMP="1"/>
+  <LOG_CONFIG ID="16" BUILD_ID="10" DESCRIPTION="PMD log" PATH=" test/log/pmd_xml_report.xml " TYPE="4" TIMESTAMP="1"/>
+  <LOG_CONFIG ID="17" BUILD_ID="10" DESCRIPTION="Test HTML dir" PATH=" test/log/httpunit_log_dir " TYPE="6" TIMESTAMP="1"/>
+  <LOG_CONFIG ID="18" BUILD_ID="10" DESCRIPTION="Test HTML file" PATH=" test/log/test_html_log.html " TYPE="5" TIMESTAMP="1"/>
+  <LOG_CONFIG ID="19" BUILD_ID="11" DESCRIPTION="Directory test log" PATH=" test/log/dir " TYPE="2" TIMESTAMP="1"/>
+  <LOG_CONFIG ID="20" BUILD_ID="11" DESCRIPTION="File test log" PATH=" test/log/build_log.log " TYPE="1" TIMESTAMP="1"/>
+  <LOG_CONFIG ID="21" BUILD_ID="11" DESCRIPTION="JUnit log" PATH=" test/log/junit_log_dir " TYPE="3" TIMESTAMP="1"/>
+  <LOG_CONFIG ID="22" BUILD_ID="11" DESCRIPTION="PMD log" PATH=" test/log/pmd_xml_report.xml " TYPE="4" TIMESTAMP="1"/>
+  <LOG_CONFIG ID="23" BUILD_ID="11" DESCRIPTION="Test HTML dir" PATH=" test/log/httpunit_log_dir " TYPE="6" TIMESTAMP="1"/>
+  <LOG_CONFIG ID="24" BUILD_ID="11" DESCRIPTION="Test HTML file" PATH=" test/log/test_html_log.html " TYPE="5" TIMESTAMP="1"/>
+  <LOG_CONFIG ID="25" BUILD_ID="1" DESCRIPTION="NUnit log" PATH=" test/log/nunit_log_dir " TYPE="7" TIMESTAMP="1"/>
+  <LOG_CONFIG ID="26" BUILD_ID="1" DESCRIPTION="Findbugs log" PATH=" test/log/findbugs_xml_report.xml " TYPE="8" TIMESTAMP="1"/>
+  <LOG_CONFIG ID="27" BUILD_ID="9" DESCRIPTION="CppUnit log" PATH=" test/log/cpp_log_dir " TYPE="9" TIMESTAMP="1"/>
+  <LOG_CONFIG ID="28" BUILD_ID="1" DESCRIPTION="Checkstyle Report" PATH=" test/log/checkstyle_xml_report.xml " TYPE="10" TIMESTAMP="1"/>
+  <LOG_CONFIG ID="29" BUILD_ID="1" DESCRIPTION="PHPUnit log" PATH=" test/log/phpunit_log_dir " TYPE="11" TIMESTAMP="1"/>
+  <LOG_CONFIG ID="30" BUILD_ID="1" DESCRIPTION="Generic test log" PATH=" test/log/generic-test.properties " TYPE="13" TIMESTAMP="1"/>
+  <LOG_CONFIG ID="31" BUILD_ID="1" DESCRIPTION="Boost test log" PATH=" test/log/boost_dir " TYPE="14" TIMESTAMP="1"/>
+  <LOG_CONFIG ID="32" BUILD_ID="1" DESCRIPTION="UnitTestPP test log" PATH=" test/log/unittestpp_dir " TYPE="12" TIMESTAMP="1"/>
+  <LOG_CONFIG ID="33" BUILD_ID="1" DESCRIPTION="GoogleTest Log" PATH=" test/log/googletest_report.xml " TYPE="15" TIMESTAMP="1"/>
+  <LOG_CONFIG ID="34" BUILD_ID="1" DESCRIPTION="Squish Tester Log" PATH=" test/log/SquishReport.xml " TYPE="16" TIMESTAMP="1"/>
+
+  <!-- LOG_CONFIG_PROPERTY -->
+  <LOG_CONFIG_PROPERTY ID="1" LOG_CONFIG_ID="6" NAME="log.config.html.index" VALUE="com/meterware/servletunit/InvocationContext.html" TIMESTAMP="1"/>
+  <LOG_CONFIG_PROPERTY ID="2" LOG_CONFIG_ID="11" NAME="log.config.html.index" VALUE="com/meterware/servletunit/InvocationContext.html" TIMESTAMP="1"/>
+  <LOG_CONFIG_PROPERTY ID="3" LOG_CONFIG_ID="17" NAME="log.config.html.index" VALUE="com/meterware/servletunit/InvocationContext.html" TIMESTAMP="1"/>
+  <LOG_CONFIG_PROPERTY ID="4" LOG_CONFIG_ID="23" NAME="log.config.html.index" VALUE="com/meterware/servletunit/InvocationContext.html" TIMESTAMP="1"/>
+  <LOG_CONFIG_PROPERTY ID="5" LOG_CONFIG_ID="2" NAME="log.config.file.extensions" VALUE="log, txt" TIMESTAMP="1"/>
+
+
+  <!-- RESULT_CONFIG --><!-- Note: vimeshev - added trailing and leading spaces to paths to test that it can be handled (see Bug #601) -->
+  <RESULT_CONFIG ID="1" BUILD_ID="1" DESCRIPTION="File test result" PATH=" test/result/build_result1.dat &#13;&#10; test/result/build_result2.dat " TYPE="1" FAIL_IF_NOT_FOUND="N" IGNORE_TIMESTAMP="N" SHELL_VARIABLE="" TIMESTAMP="1"/>
+  <RESULT_CONFIG ID="2" BUILD_ID="1" DESCRIPTION="Directory test result" PATH=" test\result\dir " TYPE="2" FAIL_IF_NOT_FOUND="N" IGNORE_TIMESTAMP="N" SHELL_VARIABLE="" TIMESTAMP="1"/>
+  <RESULT_CONFIG ID="3" BUILD_ID="9" DESCRIPTION="Directory test result" PATH=" test/result/dir " TYPE="2" FAIL_IF_NOT_FOUND="N" IGNORE_TIMESTAMP="N" SHELL_VARIABLE="" TIMESTAMP="1"/>
+  <RESULT_CONFIG ID="4" BUILD_ID="9" DESCRIPTION="File test result" PATH=" test/result/build_result.dat " TYPE="1" FAIL_IF_NOT_FOUND="N" IGNORE_TIMESTAMP="N" SHELL_VARIABLE="" TIMESTAMP="1"/>
+  <RESULT_CONFIG ID="5" BUILD_ID="10" DESCRIPTION="Directory test result" PATH=" test/result/dir " TYPE="2" FAIL_IF_NOT_FOUND="N" IGNORE_TIMESTAMP="N" SHELL_VARIABLE="" TIMESTAMP="1"/>
+  <RESULT_CONFIG ID="6" BUILD_ID="10" DESCRIPTION="File test result" PATH=" test/result/build_result.dat " TYPE="1" FAIL_IF_NOT_FOUND="N" IGNORE_TIMESTAMP="N" SHELL_VARIABLE="" TIMESTAMP="1"/>
+  <RESULT_CONFIG ID="7" BUILD_ID="11" DESCRIPTION="Directory test result" PATH=" test/result/dir " TYPE="2" FAIL_IF_NOT_FOUND="N" IGNORE_TIMESTAMP="N" SHELL_VARIABLE="" TIMESTAMP="1"/>
+  <RESULT_CONFIG ID="8" BUILD_ID="11" DESCRIPTION="File test result" PATH=" test/result/build_result.dat " TYPE="1" FAIL_IF_NOT_FOUND="N" IGNORE_TIMESTAMP="N" SHELL_VARIABLE="" TIMESTAMP="1"/>
+  <RESULT_CONFIG ID="9" BUILD_ID="1" DESCRIPTION="URL test result" PATH=" http://www.yahoo.com " TYPE="3" FAIL_IF_NOT_FOUND="N" IGNORE_TIMESTAMP="N" SHELL_VARIABLE="" TIMESTAMP="1"/>
+
+
+  <!-- RESULT_CONFIG_PROPERTY -->
+  <RESULT_CONFIG_PROPERTY ID="1" RESULT_CONFIG_ID="2" NAME="result.config.file.extensions" VALUE=".dat" TIMESTAMP="1"/>
+  <RESULT_CONFIG_PROPERTY ID="2" RESULT_CONFIG_ID="3" NAME="result.config.file.extensions" VALUE=".dat" TIMESTAMP="1"/>
+  <RESULT_CONFIG_PROPERTY ID="3" RESULT_CONFIG_ID="5" NAME="result.config.file.extensions" VALUE=".dat" TIMESTAMP="1"/>
+  <RESULT_CONFIG_PROPERTY ID="4" RESULT_CONFIG_ID="7" NAME="result.config.file.extensions" VALUE=".dat" TIMESTAMP="1"/>
+  <RESULT_CONFIG_PROPERTY ID="5" RESULT_CONFIG_ID="8" NAME="result.config.test.url" VALUE="checked" TIMESTAMP="1"/>
+
+  <!-- ISSUE_TRACKER -->
+  <ISSUE_TRACKER BUILD_ID="1" ID="1" TYPE="1" TIMESTAMP="1"/>
+  <ISSUE_TRACKER BUILD_ID="1" ID="2" TYPE="1" TIMESTAMP="1"/>
+  <ISSUE_TRACKER BUILD_ID="1" ID="3" TYPE="2" TIMESTAMP="1"/>
+  <ISSUE_TRACKER BUILD_ID="4" ID="4" TYPE="3" TIMESTAMP="1"/>
+  <ISSUE_TRACKER BUILD_ID="9" ID="5" TYPE="1" TIMESTAMP="1"/>
+  <ISSUE_TRACKER BUILD_ID="9" ID="6" TYPE="1" TIMESTAMP="1"/>
+  <ISSUE_TRACKER BUILD_ID="9" ID="7" TYPE="2" TIMESTAMP="1"/>
+  <ISSUE_TRACKER BUILD_ID="10" ID="8" TYPE="1" TIMESTAMP="1"/>
+  <ISSUE_TRACKER BUILD_ID="10" ID="9" TYPE="1" TIMESTAMP="1"/>
+  <ISSUE_TRACKER BUILD_ID="10" ID="10" TYPE="2" TIMESTAMP="1"/>
+  <ISSUE_TRACKER BUILD_ID="11" ID="11" TYPE="1" TIMESTAMP="1"/>
+  <ISSUE_TRACKER BUILD_ID="11" ID="12" TYPE="1" TIMESTAMP="1"/>
+  <ISSUE_TRACKER BUILD_ID="11" ID="13" TYPE="2" TIMESTAMP="1"/>
+  <ISSUE_TRACKER BUILD_ID="13" ID="14" TYPE="3" TIMESTAMP="1"/>
+  <ISSUE_TRACKER BUILD_ID="14" ID="15" TYPE="3" TIMESTAMP="1"/>
+  <ISSUE_TRACKER BUILD_ID="15" ID="16" TYPE="3" TIMESTAMP="1"/>
+
+  <!-- ISSUE_TRACKER_PROPERTY -->
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="1" ID="1" NAME="jira.project" VALUE="test_project_1" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="1" ID="2" NAME="jira.versions" VALUE="v1.0" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="1" ID="3" NAME="issue.filter" VALUE="" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="1" ID="4" NAME="jira.url" VALUE="" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="1" ID="5" NAME="issue.url.template" VALUE="http://jira?bugid=${issue.key}" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="2" ID="6" NAME="jira.project" VALUE="test_project_2" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="2" ID="7" NAME="jira.versions" VALUE="" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="2" ID="8" NAME="issue.filter" VALUE="" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="2" ID="9" NAME="jira.url" VALUE="" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="3" ID="10" NAME="bugzilla.product" VALUE="devenv" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="3" ID="11" NAME="bugzilla.version" VALUE="devenv" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="3" ID="12" NAME="bugzilla.mysql.host" VALUE="localhost" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="3" ID="13" NAME="bugzilla.mysql.port" VALUE="3307" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="3" ID="14" NAME="bugzilla.mysql.db" VALUE="test_bugs" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="3" ID="15" NAME="bugzilla.mysql.user" VALUE="test_bugs" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="3" ID="16" NAME="bugzilla.mysql.password" VALUE="736A57903E1728B83188B67DDEF9ABE0" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="3" ID="17" NAME="issue.url.template" VALUE="http://test?bugid=${issue.key}" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="5" ID="18" NAME="issue.filter" VALUE="" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="5" ID="19" NAME="issue.url.template" VALUE="http://jira?bugid=${issue.key}" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="5" ID="20" NAME="jira.project" VALUE="test_project_1" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="5" ID="21" NAME="jira.url" VALUE="" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="5" ID="22" NAME="jira.versions" VALUE="v1.0" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="6" ID="23" NAME="issue.filter" VALUE="" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="6" ID="24" NAME="jira.project" VALUE="test_project_2" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="6" ID="25" NAME="jira.url" VALUE="" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="6" ID="26" NAME="jira.versions" VALUE="" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="7" ID="27" NAME="bugzilla.mysql.db" VALUE="test_bugs" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="7" ID="28" NAME="bugzilla.mysql.host" VALUE="localhost" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="7" ID="29" NAME="bugzilla.mysql.password" VALUE="736A57903E1728B83188B67DDEF9ABE0" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="7" ID="30" NAME="bugzilla.mysql.port" VALUE="3307" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="7" ID="31" NAME="bugzilla.mysql.user" VALUE="test_bugs" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="7" ID="32" NAME="bugzilla.product" VALUE="devenv" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="7" ID="33" NAME="bugzilla.version" VALUE="devenv" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="7" ID="34" NAME="issue.url.template" VALUE="http://test?bugid=${issue.key}" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="8" ID="35" NAME="issue.filter" VALUE="" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="8" ID="36" NAME="issue.url.template" VALUE="http://jira?bugid=${issue.key}" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="8" ID="37" NAME="jira.project" VALUE="test_project_1" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="8" ID="38" NAME="jira.url" VALUE="" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="8" ID="39" NAME="jira.versions" VALUE="v1.0" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="9" ID="40" NAME="issue.filter" VALUE="" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="9" ID="41" NAME="jira.project" VALUE="test_project_2" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="9" ID="42" NAME="jira.url" VALUE="" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="9" ID="43" NAME="jira.versions" VALUE="" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="10" ID="44" NAME="bugzilla.mysql.db" VALUE="test_bugs" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="10" ID="45" NAME="bugzilla.mysql.host" VALUE="localhost" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="10" ID="46" NAME="bugzilla.mysql.password" VALUE="736A57903E1728B83188B67DDEF9ABE0" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="10" ID="47" NAME="bugzilla.mysql.port" VALUE="3307" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="10" ID="48" NAME="bugzilla.mysql.user" VALUE="test_bugs" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="10" ID="49" NAME="bugzilla.product" VALUE="devenv" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="10" ID="50" NAME="bugzilla.version" VALUE="devenv" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="10" ID="51" NAME="issue.url.template" VALUE="http://test?bugid=${issue.key}" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="11" ID="52" NAME="issue.filter" VALUE="" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="11" ID="53" NAME="issue.url.template" VALUE="http://jira?bugid=${issue.key}" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="11" ID="54" NAME="jira.project" VALUE="test_project_1" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="11" ID="55" NAME="jira.url" VALUE="" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="11" ID="56" NAME="jira.versions" VALUE="v1.0" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="12" ID="57" NAME="issue.filter" VALUE="" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="12" ID="58" NAME="jira.project" VALUE="test_project_2" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="12" ID="59" NAME="jira.url" VALUE="" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="12" ID="60" NAME="jira.versions" VALUE="" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="13" ID="61" NAME="bugzilla.mysql.db" VALUE="test_bugs" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="13" ID="62" NAME="bugzilla.mysql.host" VALUE="localhost" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="13" ID="63" NAME="bugzilla.mysql.password" VALUE="736A57903E1728B83188B67DDEF9ABE0" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="13" ID="64" NAME="bugzilla.mysql.port" VALUE="3307" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="13" ID="65" NAME="bugzilla.mysql.user" VALUE="test_bugs" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="13" ID="66" NAME="bugzilla.product" VALUE="devenv" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="13" ID="67" NAME="bugzilla.version" VALUE="devenv" TIMESTAMP="1"/>
+  <ISSUE_TRACKER_PROPERTY ISSUE_TRACKER_ID="13" ID="68" NAME="issue.url.template" VALUE="http://test?bugid=${issue.key}" TIMESTAMP="1"/>
+
+  <!-- MANUAL_RUN_PARAMETER -->
+  <MANUAL_RUN_PARAMETER BUILD_ID="21" ID="0" DESCRIPTION="Check list parameter" ENABLED="Y" MODIFIABLE="Y" NAME="CHECK_LIST_PARAMETER" REQUIRED="N" TIMESTAMP="1" TYPE="0" PRESENTATION="0" VALUE="test_value1,test_value2" RUNTIME_VALUE=""/>
+  <MANUAL_RUN_PARAMETER BUILD_ID="21" ID="1" DESCRIPTION="Radio list parameter" ENABLED="Y" MODIFIABLE="Y" NAME="RADIO_LIST_PARAMETER" REQUIRED="N" TIMESTAMP="1" TYPE="0" PRESENTATION="1" VALUE="test_value1,test_value2" RUNTIME_VALUE=""/>
+  <MANUAL_RUN_PARAMETER BUILD_ID="21" ID="2" DESCRIPTION="Dropdown list parameter" ENABLED="Y" MODIFIABLE="Y" NAME="DROPDOWN_LIST_PARAMETER" REQUIRED="N" TIMESTAMP="1" TYPE="0" PRESENTATION="2" VALUE="test_value1,test_value2" RUNTIME_VALUE=""/>
+  <MANUAL_RUN_PARAMETER BUILD_ID="21" ID="3" DESCRIPTION="Single value parameter" ENABLED="Y" MODIFIABLE="Y" NAME="SINGLE_VALUE_PARAMETER" REQUIRED="N" TIMESTAMP="1" TYPE="0" PRESENTATION="3" VALUE="test_value1" RUNTIME_VALUE=""/>
+  <MANUAL_RUN_PARAMETER BUILD_ID="1" ID="4" DESCRIPTION="Check list parameter" ENABLED="Y" MODIFIABLE="Y" NAME="CHECK_LIST_PARAMETER" REQUIRED="N" TIMESTAMP="1" TYPE="0" PRESENTATION="0" VALUE="test_value1,test_value2" RUNTIME_VALUE=""/>
+  <MANUAL_RUN_PARAMETER BUILD_ID="1" ID="5" DESCRIPTION="Radio list parameter" ENABLED="Y" MODIFIABLE="Y" NAME="RADIO_LIST_PARAMETER" REQUIRED="N" TIMESTAMP="1" TYPE="0" PRESENTATION="1" VALUE="test_value1,test_value2" RUNTIME_VALUE=""/>
+  <MANUAL_RUN_PARAMETER BUILD_ID="1" ID="6" DESCRIPTION="Dropdown list parameter" ENABLED="Y" MODIFIABLE="Y" NAME="DROPDOWN_LIST_PARAMETER" REQUIRED="N" TIMESTAMP="1" TYPE="0" PRESENTATION="2" VALUE="test_value1,test_value2" RUNTIME_VALUE=""/>
+  <MANUAL_RUN_PARAMETER BUILD_ID="1" ID="7" DESCRIPTION="Single value parameter" ENABLED="Y" MODIFIABLE="Y" NAME="SINGLE_VALUE_PARAMETER" REQUIRED="N" TIMESTAMP="1" TYPE="0" PRESENTATION="3" VALUE="test_value1" RUNTIME_VALUE=""/>
+  <MANUAL_RUN_PARAMETER ID="8" BUILD_ID="27" DESCRIPTION="Test parameter in leader" ENABLED="Y" MODIFIABLE="Y" NAME="TEST_LEADER_PARAMETER" REQUIRED="Y" TIMESTAMP="1" TYPE="0" PRESENTATION="2" VALUE="test_value1,test_value2" RUNTIME_VALUE=""/>
+  <MANUAL_RUN_PARAMETER ID="10" BUILD_ID="30" DESCRIPTION="Test parameter in leader" ENABLED="Y" MODIFIABLE="Y" NAME="TEST_LEADER_PARAMETER" REQUIRED="Y" TIMESTAMP="1" TYPE="0" PRESENTATION="2" VALUE="test_value1,test_value2" RUNTIME_VALUE=""/>
+  <MANUAL_RUN_PARAMETER BUILD_ID="9" ID="11" DESCRIPTION="Publish parameter 1 " ENABLED="Y" MODIFIABLE="Y" NAME="CHECK_LIST_PARAMETER" REQUIRED="N" TIMESTAMP="1" TYPE="1" PRESENTATION="0" VALUE="test_value1,test_value2" RUNTIME_VALUE=""/>
+  <MANUAL_RUN_PARAMETER BUILD_ID="9" ID="12" DESCRIPTION="Publish parameter 2 " ENABLED="Y" MODIFIABLE="Y" NAME="RADIO_LIST_PARAMETER" REQUIRED="N" TIMESTAMP="1" TYPE="1" PRESENTATION="1" VALUE="test_value1,test_value2" RUNTIME_VALUE=""/>
+  <MANUAL_RUN_PARAMETER BUILD_ID="9" ID="13" DESCRIPTION="Publish parameter 3 " ENABLED="Y" MODIFIABLE="Y" NAME="DROPDOWN_LIST_PARAMETER" REQUIRED="N" TIMESTAMP="1" TYPE="1" PRESENTATION="2" VALUE="test_value1,test_value2" RUNTIME_VALUE=""/>
+  <MANUAL_RUN_PARAMETER BUILD_ID="9" ID="14" DESCRIPTION="Publish parameter 4 " ENABLED="Y" MODIFIABLE="Y" NAME="SINGLE_VALUE_PARAMETER" REQUIRED="N" TIMESTAMP="1" TYPE="1" PRESENTATION="3" VALUE="test_value1" RUNTIME_VALUE=""/>
+  <MANUAL_RUN_PARAMETER ID="15" BUILD_ID="3" DESCRIPTION="Publish to host" ENABLED="Y" MODIFIABLE="Y" NAME="PUBLISH_TO_HOST" PRESENTATION="1" REQUIRED="Y" TIMESTAMP="1" TYPE="1" VALUE="qa1.corp, qa2.corp, prod.corp" RUNTIME_VALUE=""/>
+  <MANUAL_RUN_PARAMETER ID="16" BUILD_ID="3" DESCRIPTION="Publishing level" ENABLED="Y" MODIFIABLE="Y" NAME="PUBLISH_LEVEL" PRESENTATION="2" REQUIRED="Y" TIMESTAMP="1" TYPE="1" VALUE="QA, PRODUCTION" RUNTIME_VALUE=""/>
+  <MANUAL_RUN_PARAMETER ID="17" BUILD_ID="-1" DESCRIPTION="System-level parameter" ENABLED="Y" MODIFIABLE="N" NAME="SYSTEM_LEVEL_PARAMETER" PRESENTATION="3" REQUIRED="Y" TIMESTAMP="1" TYPE="2" VALUE="SYSTEM_LEVEL_PARAMETER_VALUE" RUNTIME_VALUE="SYSTEM_LEVEL_PARAMETER_VALUE"/>
+  <MANUAL_RUN_PARAMETER ID="18" BUILD_ID="1" DESCRIPTION="Project-level parameter" ENABLED="Y" MODIFIABLE="N" NAME="PROJECT_LEVEL_PARAMETER" PRESENTATION="3" REQUIRED="Y" TIMESTAMP="1" TYPE="4" VALUE="PROJECT_LEVEL_PARAMETER_VALUE" RUNTIME_VALUE="PROJECT_LEVEL_PARAMETER_VALUE"/>
+
+  <!-- CHANGE LIST -->
+  <CHANGELIST ID="1" CREATED="2003-09-09 00:00:00.0" NUMBER="1" USER="test" DESCRIPTION="test description" TRUNCATED="N" ORIGINAL_SIZE="2"/>
+  <CHANGELIST ID="2" CREATED="2003-09-09 00:00:01.0" NUMBER="2" USER="test" DESCRIPTION="test description" TRUNCATED="N" ORIGINAL_SIZE="0"/>
+  <CHANGELIST ID="3" CREATED="2003-09-09 00:00:02.0" NUMBER="3" USER="test" DESCRIPTION="test description" TRUNCATED="N" ORIGINAL_SIZE="2"/>
+  <CHANGELIST ID="4" CREATED="2003-01-03 00:00:00.0" NUMBER="834" USER="test" DESCRIPTION="test description, Fixed TEST-0002" TRUNCATED="N" ORIGINAL_SIZE="0"/>
+  <CHANGELIST ID="5" CREATED="2003-01-03 00:00:01.0" NUMBER="999999" USER="test" DESCRIPTION="test description, Implemented TEST-0001" TRUNCATED="N" ORIGINAL_SIZE="0"/>
+  <CHANGELIST ID="6" CREATED="2003-01-03 00:00:02.0" NUMBER="" USER="test" DESCRIPTION="test description" TRUNCATED="N" ORIGINAL_SIZE="0"/>
+  <CHANGELIST ID="7" CREATED="2003-01-03 00:00:03.0" NUMBER="835" USER="test" DESCRIPTION="test description" TRUNCATED="N" ORIGINAL_SIZE="0"/>
+  <CHANGELIST ID="8" CREATED="2003-01-03 00:00:04.0" NUMBER="836" USER="test" DESCRIPTION="test description" TRUNCATED="N" ORIGINAL_SIZE="0"/>
+  <CHANGELIST ID="9" CREATED="2004-03-03 23:53:53.0" NUMBER="9" USER="test" DESCRIPTION="test description" TRUNCATED="N" ORIGINAL_SIZE="0"/>
+  <CHANGELIST ID="10" CREATED="2004-03-03 23:53:53.0" NUMBER="838" USER="test" DESCRIPTION="test description" TRUNCATED="N" ORIGINAL_SIZE="0"/>
+  <CHANGELIST ID="11" CREATED="2004-09-14 15:22:00.0" NUMBER="" USER="test" DESCRIPTION="test description" TRUNCATED="N" ORIGINAL_SIZE="0"/>
+  <CHANGELIST ID="12" CREATED="2005-03-03 06:08:36.0" NUMBER="1" USER="root" DESCRIPTION="initial import" TRUNCATED="N" ORIGINAL_SIZE="0"/>
+  <CHANGELIST ID="13" CREATED="2005-03-03 06:14:35.0" NUMBER="2" USER="root" DESCRIPTION="Added first file" TRUNCATED="N" ORIGINAL_SIZE="0"/>
+  <CHANGELIST ID="14" CREATED="2005-03-05 08:38:15.0" NUMBER="3" USER="test_user" DESCRIPTION="added src" TRUNCATED="N" ORIGINAL_SIZE="0"/>
+  <CHANGELIST ID="15" CREATED="2005-04-12 20:43:57.0" NUMBER="838" USER="vimeshev" CLIENT="vimeshev" DESCRIPTION="Added a line break to keep a change." TRUNCATED="N" ORIGINAL_SIZE="1"/>
+  <CHANGELIST ID="16" CREATED="2005-04-12 21:21:01.0" NUMBER="839" USER="vimeshev" CLIENT="vimeshev" DESCRIPTION="Fixed job 000002" TRUNCATED="N" ORIGINAL_SIZE="1"/>
+  <CHANGELIST ID="17" CREATED="2005-05-19 16:42:55.0" NUMBER="899" USER="test_user" CLIENT="SLAVA" DESCRIPTION="Added file into the reserved DOS name directory (aux)" TRUNCATED="N" ORIGINAL_SIZE="1"/>
+  <CHANGELIST ID="18" CREATED="2005-11-05 13:03:27.0" NUMBER="1072" USER="vimeshev" CLIENT="SLAVA" DESCRIPTION="Added line numbers" TRUNCATED="N" ORIGINAL_SIZE="0"/>
+  <CHANGELIST ID="19" CREATED="2005-12-11 04:55:16.0" NUMBER="5" USER="test_user" DESCRIPTION="" TRUNCATED="N" ORIGINAL_SIZE="4"/>
+  <CHANGELIST ID="20" CREATED="2005-12-11 04:58:04.0" NUMBER="5" USER="test_user" DESCRIPTION="Added source line" TRUNCATED="N" ORIGINAL_SIZE="8"/>
+  <CHANGELIST ID="21" CREATED="2005-12-11 05:00:45.0" NUMBER="8" USER="test_user" DESCRIPTION="added another line to the file" TRUNCATED="N" ORIGINAL_SIZE="1"/>
+  <CHANGELIST ID="22" CREATED="2005-12-11 05:01:39.0" NUMBER="9" USER="test_user" DESCRIPTION="Added line" TRUNCATED="N" ORIGINAL_SIZE="1"/>
+  <CHANGELIST ID="23" CREATED="2006-01-30 23:17:22.0" NUMBER="24" USER="vimeshev" DESCRIPTION="Populated test project" TRUNCATED="N" ORIGINAL_SIZE="1"/>
+  <CHANGELIST ID="24" CREATED="2006-01-30 23:18:04.0" NUMBER="25" USER="vimeshev" DESCRIPTION="Added a line" TRUNCATED="N" ORIGINAL_SIZE="1"/>
+  <CHANGELIST ID="25" CREATED="2006-03-06 00:46:21.0" NUMBER="1" USER="test_user" DESCRIPTION="Initial add" TRUNCATED="N" ORIGINAL_SIZE="1"/>
+  <CHANGELIST ID="26" CREATED="2006-03-06 01:06:59.0" NUMBER="2" USER="test_user" DESCRIPTION="Added empty lines to add a revision" TRUNCATED="N" ORIGINAL_SIZE="1"/>
+  <CHANGELIST ID="27" CREATED="2006-04-11 01:32:00.0" NUMBER="27" USER=" test_user" DESCRIPTION="Initial add to the test ptoject" TRUNCATED="N" ORIGINAL_SIZE="3"/>
+  <CHANGELIST ID="28" CREATED="2006-01-31 02:16:00.0" NUMBER="28" USER="test_user" DESCRIPTION="File(s) changed at 01/31/2006  02:16a" TRUNCATED="N" ORIGINAL_SIZE="1"/>
+  <CHANGELIST ID="29" CREATED="2006-01-31 02:16:00.0" NUMBER="29" USER="test_user" DESCRIPTION="Initiall add to generic VCS" TRUNCATED="N" ORIGINAL_SIZE="0"/>
+  <CHANGELIST ID="30" CREATED="2005-04-12 19:57:45.0" NUMBER="834" USER="vimeshev" CLIENT="vimeshev" DESCRIPTION="Added test source line" TRUNCATED="N" ORIGINAL_SIZE="1"/>
+  <CHANGELIST ID="31" CREATED="2005-04-12 20:43:57.0" NUMBER="838" USER="vimeshev" CLIENT="vimeshev" DESCRIPTION="Added a line break to keep a change." TRUNCATED="N" ORIGINAL_SIZE="1"/>
+  <CHANGELIST ID="32" CREATED="2005-04-12 21:21:01.0" NUMBER="839" USER="vimeshev" CLIENT="vimeshev" DESCRIPTION="Fixed job 000002" TRUNCATED="N" ORIGINAL_SIZE="1"/>
+  <CHANGELIST ID="33" CREATED="2005-05-19 16:42:55.0" NUMBER="899" USER="test_user" CLIENT="SLAVA" DESCRIPTION="Added file into the reserved DOS name directory (aux)" TRUNCATED="N" ORIGINAL_SIZE="1"/>
+  <CHANGELIST ID="34" CREATED="2005-11-05 12:31:17.0" NUMBER="1071" USER="vimeshev" CLIENT="build" DESCRIPTION="Added symlinked readme.txt" TRUNCATED="N" ORIGINAL_SIZE="1"/>
+  <CHANGELIST ID="35" CREATED="2005-11-05 13:03:27.0" NUMBER="1072" USER="vimeshev" CLIENT="vimeshev" DESCRIPTION="Added line numbers" TRUNCATED="N" ORIGINAL_SIZE="1"/>
+  <CHANGELIST ID="36" CREATED="2005-12-12 02:17:29.0" NUMBER="5291" USER="vimeshev" CLIENT="vimeshev" DESCRIPTION="Comment in Russian (see i18n bug):" TRUNCATED="N" ORIGINAL_SIZE="1"/>
+  <CHANGELIST ID="37" CREATED="2009-02-12 15:49:04.0" NUMBER="3" USER="test_user" DESCRIPTION="Added test workspace" TRUNCATED="N" ORIGINAL_SIZE="0"/>
+  <CHANGELIST ID="38" CREATED="2009-02-12 15:49:05.0" NUMBER="4" USER="test_user" DESCRIPTION="Added test workspace" TRUNCATED="N" ORIGINAL_SIZE="0"/>
+  <CHANGELIST ID="39" CREATED="2009-02-12 15:50:55.0" NUMBER="6" USER="test_user" DESCRIPTION="Added line" TRUNCATED="N" ORIGINAL_SIZE="0"/>
+
+
+  <!-- BUILD_CHANGELIST -->
+  <BUILD_CHANGELIST ID="1" BUILD_ID="1" CHANGELIST_CREATED="2003-09-09 00:00:00.0" CHANGELIST_ID="1" NEW="N"/>
+  <BUILD_CHANGELIST ID="2" BUILD_ID="1" CHANGELIST_CREATED="2003-09-09 00:00:01.0" CHANGELIST_ID="2" NEW="N"/>
+  <BUILD_CHANGELIST ID="3" BUILD_ID="1" CHANGELIST_CREATED="2003-09-09 00:00:02.0" CHANGELIST_ID="3" NEW="Y"/>
+  <BUILD_CHANGELIST ID="4" BUILD_ID="3" CHANGELIST_CREATED="2003-01-03 00:00:00.0" CHANGELIST_ID="4" NEW="Y"/>
+  <BUILD_CHANGELIST ID="5" BUILD_ID="3" CHANGELIST_CREATED="2003-01-03 00:00:01.0" CHANGELIST_ID="5" NEW="Y"/>
+  <BUILD_CHANGELIST ID="6" BUILD_ID="3" CHANGELIST_CREATED="2003-01-03 00:00:02.0" CHANGELIST_ID="6" NEW="N"/>
+  <BUILD_CHANGELIST ID="7" BUILD_ID="3" CHANGELIST_CREATED="2003-01-03 00:00:03.0" CHANGELIST_ID="7" NEW="N"/>
+  <BUILD_CHANGELIST ID="8" BUILD_ID="3" CHANGELIST_CREATED="2003-01-03 00:00:04.0" CHANGELIST_ID="8" NEW="N"/>
+  <BUILD_CHANGELIST ID="9" BUILD_ID="4" CHANGELIST_CREATED="2003-01-03 00:00:02.0" CHANGELIST_ID="6" NEW="N"/>
+  <BUILD_CHANGELIST ID="10" BUILD_ID="4" CHANGELIST_CREATED="2003-01-03 00:00:03.0" CHANGELIST_ID="7" NEW="N"/>
+  <BUILD_CHANGELIST ID="11" BUILD_ID="1" CHANGELIST_CREATED="2004-03-03 23:53:53.0" CHANGELIST_ID="9" NEW="N"/>
+  <BUILD_CHANGELIST ID="12" BUILD_ID="6" CHANGELIST_CREATED="2004-09-14 15:22:00.0" CHANGELIST_ID="11" NEW="N"/>
+  <BUILD_CHANGELIST ID="13" BUILD_ID="7" CHANGELIST_CREATED="2005-03-03 06:08:36.0" CHANGELIST_ID="12" NEW="N"/>
+  <BUILD_CHANGELIST ID="14" BUILD_ID="7" CHANGELIST_CREATED="2005-03-03 06:14:35.0" CHANGELIST_ID="13" NEW="N"/>
+  <BUILD_CHANGELIST ID="15" BUILD_ID="7" CHANGELIST_CREATED="2005-03-05 08:38:15.0" CHANGELIST_ID="14" NEW="N"/>
+  <BUILD_CHANGELIST ID="16" BUILD_ID="3" CHANGELIST_CREATED="2005-04-12 20:43:57.0" CHANGELIST_ID="15" NEW="N"/>
+  <BUILD_CHANGELIST ID="17" BUILD_ID="3" CHANGELIST_CREATED="2005-04-12 21:21:01.0" CHANGELIST_ID="16" NEW="N"/>
+  <BUILD_CHANGELIST ID="18" BUILD_ID="3" CHANGELIST_CREATED="2005-05-19 16:42:55.0" CHANGELIST_ID="17" NEW="N"/>
+  <BUILD_CHANGELIST ID="19" BUILD_ID="3" CHANGELIST_CREATED="2005-11-05 13:03:27.0" CHANGELIST_ID="18" NEW="N"/>
+  <BUILD_CHANGELIST ID="20" BUILD_ID="20" CHANGELIST_CREATED="2005-12-11 04:55:16.0" CHANGELIST_ID="19" NEW="N"/>
+  <BUILD_CHANGELIST ID="21" BUILD_ID="20" CHANGELIST_CREATED="2005-12-11 04:58:04.0" CHANGELIST_ID="20" NEW="N"/>
+  <BUILD_CHANGELIST ID="22" BUILD_ID="20" CHANGELIST_CREATED="2005-12-11 05:00:45.0" CHANGELIST_ID="21" NEW="N"/>
+  <BUILD_CHANGELIST ID="23" BUILD_ID="20" CHANGELIST_CREATED="2005-12-11 05:01:39.0" CHANGELIST_ID="22" NEW="N"/>
+  <BUILD_CHANGELIST ID="24" BUILD_ID="23" CHANGELIST_CREATED="2006-04-11 01:32:00.0" CHANGELIST_ID="27" NEW="N"/>
+  <BUILD_CHANGELIST ID="25" BUILD_ID="27" CHANGELIST_CREATED="2005-04-12 19:57:45.0" CHANGELIST_ID="30" NEW="N"/>
+  <BUILD_CHANGELIST ID="26" BUILD_ID="27" CHANGELIST_CREATED="2005-04-12 20:43:57.0" CHANGELIST_ID="31" NEW="N"/>
+  <BUILD_CHANGELIST ID="27" BUILD_ID="27" CHANGELIST_CREATED="2005-04-12 21:21:01.0" CHANGELIST_ID="32" NEW="N"/>
+  <BUILD_CHANGELIST ID="28" BUILD_ID="27" CHANGELIST_CREATED="2005-05-19 16:42:55.0" CHANGELIST_ID="33" NEW="N"/>
+  <BUILD_CHANGELIST ID="29" BUILD_ID="27" CHANGELIST_CREATED="2005-11-05 12:31:17.0" CHANGELIST_ID="34" NEW="N"/>
+  <BUILD_CHANGELIST ID="30" BUILD_ID="27" CHANGELIST_CREATED="2005-11-05 13:03:27.0" CHANGELIST_ID="35" NEW="N"/>
+  <BUILD_CHANGELIST ID="31" BUILD_ID="27" CHANGELIST_CREATED="2005-12-12 02:17:29.0" CHANGELIST_ID="36" NEW="N"/>
+  <BUILD_CHANGELIST ID="32" BUILD_ID="29" CHANGELIST_CREATED="2005-04-12 19:57:45.0" CHANGELIST_ID="30" NEW="N"/>
+  <BUILD_CHANGELIST ID="33" BUILD_ID="29" CHANGELIST_CREATED="2005-04-12 20:43:57.0" CHANGELIST_ID="31" NEW="N"/>
+  <BUILD_CHANGELIST ID="34" BUILD_ID="29" CHANGELIST_CREATED="2005-04-12 21:21:01.0" CHANGELIST_ID="32" NEW="N"/>
+  <BUILD_CHANGELIST ID="35" BUILD_ID="29" CHANGELIST_CREATED="2005-05-19 16:42:55.0" CHANGELIST_ID="33" NEW="N"/>
+  <BUILD_CHANGELIST ID="36" BUILD_ID="29" CHANGELIST_CREATED="2005-11-05 12:31:17.0" CHANGELIST_ID="34" NEW="N"/>
+  <BUILD_CHANGELIST ID="37" BUILD_ID="29" CHANGELIST_CREATED="2005-11-05 13:03:27.0" CHANGELIST_ID="35" NEW="N"/>
+  <BUILD_CHANGELIST ID="38" BUILD_ID="29" CHANGELIST_CREATED="2005-12-12 02:17:29.0" CHANGELIST_ID="36" NEW="N"/>
+  <BUILD_CHANGELIST ID="39" BUILD_ID="28" CHANGELIST_CREATED="2005-04-12 19:57:45.0" CHANGELIST_ID="30" NEW="N"/>
+  <BUILD_CHANGELIST ID="40" BUILD_ID="28" CHANGELIST_CREATED="2005-04-12 20:43:57.0" CHANGELIST_ID="31" NEW="N"/>
+  <BUILD_CHANGELIST ID="41" BUILD_ID="28" CHANGELIST_CREATED="2005-04-12 21:21:01.0" CHANGELIST_ID="32" NEW="N"/>
+  <BUILD_CHANGELIST ID="42" BUILD_ID="28" CHANGELIST_CREATED="2005-05-19 16:42:55.0" CHANGELIST_ID="33" NEW="N"/>
+  <BUILD_CHANGELIST ID="43" BUILD_ID="28" CHANGELIST_CREATED="2005-11-05 12:31:17.0" CHANGELIST_ID="34" NEW="N"/>
+  <BUILD_CHANGELIST ID="44" BUILD_ID="28" CHANGELIST_CREATED="2005-11-05 13:03:27.0" CHANGELIST_ID="35" NEW="N"/>
+  <BUILD_CHANGELIST ID="45" BUILD_ID="28" CHANGELIST_CREATED="2005-12-12 02:17:29.0" CHANGELIST_ID="36" NEW="N"/>
+  <BUILD_CHANGELIST ID="46" BUILD_ID="33" CHANGELIST_CREATED="2009-02-12 15:49:04.0" CHANGELIST_ID="37" NEW="N"/>
+  <BUILD_CHANGELIST ID="47" BUILD_ID="33" CHANGELIST_CREATED="2009-02-12 15:49:05.0" CHANGELIST_ID="38" NEW="N"/>
+  <BUILD_CHANGELIST ID="48" BUILD_ID="33" CHANGELIST_CREATED="2009-02-12 15:50:55.0" CHANGELIST_ID="39" NEW="N"/>
+
+  <!-- CHANGE -->
+  <CHANGE CHANGELIST_ID="1" ID="1" REVISION="1.0" TYPE="1" FILE_PATH="test/test.xml"/>
+  <CHANGE CHANGELIST_ID="1" ID="2" REVISION="1.0" TYPE="1" FILE_PATH="test/test.sql"/>
+  <CHANGE CHANGELIST_ID="3" ID="3" REVISION="1.0" TYPE="1" FILE_PATH="test/test.sql"/>
+  <CHANGE CHANGELIST_ID="3" ID="4" REVISION="1.0" TYPE="1" FILE_PATH="test/test.sql"/>
+  <CHANGE CHANGELIST_ID="15" ID="5" REVISION="2" TYPE="2" FILE_PATH="//test/sourceline/alwaysvalid/src/readme.txt"/>
+  <CHANGE CHANGELIST_ID="16" ID="6" REVISION="3" TYPE="2" FILE_PATH="//test/sourceline/alwaysvalid/src/readme.txt"/>
+  <CHANGE CHANGELIST_ID="17" ID="7" REVISION="1" TYPE="1" FILE_PATH="//test/sourceline/alwaysvalid/aux/test_file_in_reserved_name_dir.txt"/>
+  <CHANGE CHANGELIST_ID="19" ID="8" REVISION="1" TYPE="10" FILE_PATH="test"/>
+  <CHANGE CHANGELIST_ID="19" ID="9" REVISION="1" TYPE="10" FILE_PATH="test/second_sourceline/src"/>
+  <CHANGE CHANGELIST_ID="19" ID="10" REVISION="1" TYPE="10" FILE_PATH="test/second_sourceline"/>
+  <CHANGE CHANGELIST_ID="19" ID="11" REVISION="1" TYPE="10" FILE_PATH="test/second_sourceline/src/readme.txt"/>
+  <CHANGE CHANGELIST_ID="20" ID="12" REVISION="1" TYPE="10" FILE_PATH="test/sourceline/alwaysvalid/src/readme.txt"/>
+  <CHANGE CHANGELIST_ID="20" ID="13" REVISION="1" TYPE="1" FILE_PATH="test/sourceline/alwaysvalid"/>
+  <CHANGE CHANGELIST_ID="20" ID="14" REVISION="1" TYPE="1" FILE_PATH="test/sourceline/alwaysvalid/src"/>
+  <CHANGE CHANGELIST_ID="20" ID="15" REVISION="1" TYPE="10" FILE_PATH="test/sourceline"/>
+  <CHANGE CHANGELIST_ID="20" ID="16" REVISION="1" TYPE="1" FILE_PATH="test/sourceline"/>
+  <CHANGE CHANGELIST_ID="20" ID="17" REVISION="1" TYPE="10" FILE_PATH="test/sourceline/alwaysvalid/src"/>
+  <CHANGE CHANGELIST_ID="20" ID="18" REVISION="1" TYPE="10" FILE_PATH="test/sourceline/alwaysvalid"/>
+  <CHANGE CHANGELIST_ID="20" ID="19" REVISION="2" TYPE="1" FILE_PATH="test"/>
+  <CHANGE CHANGELIST_ID="21" ID="20" REVISION="2" TYPE="8" FILE_PATH="test/second_sourceline/src/readme.txt"/>
+  <CHANGE CHANGELIST_ID="22" ID="21" REVISION="2" TYPE="8" FILE_PATH="test/sourceline/alwaysvalid/src/readme.txt"/>
+  <CHANGE CHANGELIST_ID="23" ID="22" REVISION="1.0" TYPE="1" FILE_PATH="\test_project\sourceline\alwaysvalid\src\readme.txt"/>
+  <CHANGE CHANGELIST_ID="24" ID="23" REVISION="1.1" TYPE="1" FILE_PATH="test_project\second_sourceline\src\readme.txt"/>
+  <CHANGE CHANGELIST_ID="25" ID="24" REVISION="1" TYPE="1" FILE_PATH="test_cvs_change_log_with_outside_branch.txt"/>
+  <CHANGE CHANGELIST_ID="26" ID="25" REVISION="2" TYPE="1" FILE_PATH="sourceline\alwaysvalid\src\readme.txt"/>
+  <CHANGE CHANGELIST_ID="27" ID="26" REVISION="1.1" TYPE="1" FILE_PATH="second_sourceline/src/readme.txt"/>
+  <CHANGE CHANGELIST_ID="27" ID="27" REVISION="1.1" TYPE="1" FILE_PATH="test_cvs_change_log_with_outside_branch.txt"/>
+  <CHANGE CHANGELIST_ID="27" ID="28" REVISION="1.1" TYPE="1" FILE_PATH="sourceline/alwaysvalid/src/readme.txt"/>
+  <CHANGE CHANGELIST_ID="28" ID="29" REVISION="1.1" TYPE="1" FILE_PATH="sourceline/alwaysvalid/src/readme.txt"/>
+  <CHANGE CHANGELIST_ID="30" ID="30" REVISION="1" TYPE="4" FILE_PATH="//test/sourceline/alwaysvalid/src/readme.txt"/>
+  <CHANGE CHANGELIST_ID="31" ID="31" REVISION="2" TYPE="2" FILE_PATH="//test/sourceline/alwaysvalid/src/readme.txt"/>
+  <CHANGE CHANGELIST_ID="32" ID="32" REVISION="3" TYPE="2" FILE_PATH="//test/sourceline/alwaysvalid/src/readme.txt"/>
+  <CHANGE CHANGELIST_ID="33" ID="33" REVISION="1" TYPE="1" FILE_PATH="//test/sourceline/alwaysvalid/aux/test_file_in_reserved_name_dir.txt"/>
+  <CHANGE CHANGELIST_ID="34" ID="34" REVISION="1" TYPE="1" FILE_PATH="//test/sourceline/alwaysvalid/src/symlinked_readme.txt"/>
+  <CHANGE CHANGELIST_ID="35" ID="35" REVISION="4" TYPE="2" FILE_PATH="//test/sourceline/alwaysvalid/src/readme.txt"/>
+  <CHANGE CHANGELIST_ID="36" ID="36" REVISION="5" TYPE="2" FILE_PATH="//test/sourceline/alwaysvalid/src/readme.txt"/>
+  <CHANGE CHANGELIST_ID="37" ID="37" REVISION="w4_test_user/1" TYPE="1" FILE_PATH="\.\test_project"/>
+  <CHANGE CHANGELIST_ID="37" ID="38" REVISION="w4_test_user/1" TYPE="1" FILE_PATH="\.\test_project\file1.txt"/>
+  <CHANGE CHANGELIST_ID="37" ID="39" REVISION="w4_test_user/1" TYPE="1" FILE_PATH="\.\test_project\drectory1\file2.txt"/>
+  <CHANGE CHANGELIST_ID="37" ID="40" REVISION="w4_test_user/1" TYPE="1" FILE_PATH="\.\test_project\drectory1"/>
+  <CHANGE CHANGELIST_ID="38" ID="41" REVISION="test_depot/1" TYPE="16" FILE_PATH="\.\test_project\drectory1\file2.txt"/>
+  <CHANGE CHANGELIST_ID="38" ID="42" REVISION="test_depot/1" TYPE="16" FILE_PATH="\.\test_project"/>
+  <CHANGE CHANGELIST_ID="38" ID="43" REVISION="test_depot/1" TYPE="16" FILE_PATH="\.\test_project\file1.txt"/>
+  <CHANGE CHANGELIST_ID="38" ID="44" REVISION="test_depot/1" TYPE="16" FILE_PATH="\.\test_project\drectory1"/>
+  <CHANGE CHANGELIST_ID="39" ID="45" REVISION="test_depot/2" TYPE="16" FILE_PATH="\.\test_project\file1.txt"/>
+
+
+  <!-- BUILD_RUN -->
+  <BUILD_RUN BUILD_ID="9" ID="1" ACTIVE_BUILD_ID="1" NUMBER="1" COMPLETE="1" STARTED_AT="2001-09-09 00:00:00.0"
+             FINISHED_AT="2003-09-09 00:10:00.0" RESULT="1" RESULT_DESCRIPTION="BUILD SUCCESSFUL"
+             BUILD_NAME="cvs_test_build" SYNC_NOTE="Not provided" CHANGELIST_NUM="1" LAST_STEP_NAME="BUILD"
+             LABEL_STATUS="0" RERUN="N" DEPENDENCE="0" TYPE="0" TIMESTAMP="2"/>
+  <BUILD_RUN BUILD_ID="10" ID="2" ACTIVE_BUILD_ID="1" NUMBER="2" COMPLETE="1" STARTED_AT="2001-01-02 00:00:00.0"
+             FINISHED_AT="2003-01-01 00:00:00.0" RESULT="2" RESULT_DESCRIPTION="BUILD FAILED"
+             BUILD_NAME="cvs_test_build" SYNC_NOTE="Not provided" CHANGELIST_NUM="2" LAST_STEP_NAME="BUILD"
+             LABEL_STATUS="0" RERUN="N" DEPENDENCE="0" TYPE="0" TIMESTAMP="2"/>
+  <BUILD_RUN BUILD_ID="11" ID="3" ACTIVE_BUILD_ID="1" NUMBER="3" COMPLETE="0" STARTED_AT="2003-05-15 23:07:06.0"
+             RESULT="2" RESULT_DESCRIPTION="BUILD FAILED" BUILD_NAME="cvs_test_build" SYNC_NOTE="Not provided"
+             CHANGELIST_NUM="2" LAST_STEP_NAME="" LABEL_STATUS="0" RERUN="N" DEPENDENCE="0" TYPE="0" TIMESTAMP="2"/>
+  <BUILD_RUN BUILD_ID="12" ID="4" ACTIVE_BUILD_ID="3" NUMBER="1" COMPLETE="1" STARTED_AT="2003-01-03 00:00:00.0"
+             RESULT="1" RESULT_DESCRIPTION="BUILD SUCCESSFUL" BUILD_NAME="p4_test_build" SYNC_NOTE="Not provided"
+             CHANGELIST_NUM="3" LAST_STEP_NAME="BUILD" LABEL_STATUS="0" RERUN="N" DEPENDENCE="0" TYPE="0"
+             TIMESTAMP="2"/>
+  <BUILD_RUN BUILD_ID="13" ID="5" ACTIVE_BUILD_ID="4" NUMBER="1" COMPLETE="1" STARTED_AT="2003-01-03 00:00:00.0"
+             RESULT="1" RESULT_DESCRIPTION="BUILD SUCCESSFUL" BUILD_NAME="ref_p4_test_build" SYNC_NOTE="Not provided"
+             CHANGELIST_NUM="3" LAST_STEP_NAME="BUILD" LABEL_STATUS="0" RERUN="N" DEPENDENCE="0" TYPE="0"
+             TIMESTAMP="2"/>
+  <BUILD_RUN BUILD_ID="14" ID="6" ACTIVE_BUILD_ID="4" NUMBER="2" COMPLETE="1" STARTED_AT="2003-01-03 05:00:00.0"
+             RESULT="2" RESULT_DESCRIPTION="BUILD FAILED" BUILD_NAME="ref_p4_test_build" SYNC_NOTE="Not provided"
+             CHANGELIST_NUM="3" LAST_STEP_NAME="BUILD" LABEL_STATUS="0" RERUN="N" DEPENDENCE="0" TYPE="0"
+             TIMESTAMP="2"/>
+  <BUILD_RUN BUILD_ID="15" ID="7" ACTIVE_BUILD_ID="4" NUMBER="3" COMPLETE="1" STARTED_AT="2003-01-03 10:00:00.0" FINISHED_AT="2003-01-03 10:10:00.0" RESULT="1" RESULT_DESCRIPTION="BUILD SUCCESSFUL" BUILD_NAME="ref_p4_test_build" SYNC_NOTE="Not provided" CHANGELIST_NUM="3" LAST_STEP_NAME="BUILD" LABEL_STATUS="0" RERUN="N" DEPENDENCE="0" TYPE="0" TIMESTAMP="2"/>
+  <BUILD_RUN BUILD_ID="17" ID="8" ACTIVE_BUILD_ID="3" NUMBER="2" COMPLETE="1" STARTED_AT="2005-07-10 16:09:59.109"
+             FINISHED_AT="2005-07-10 16:10:01.875" RESULT="2" RESULT_DESCRIPTION="Build result cannot be identified"
+             BUILD_NAME="p4_test_build" SYNC_NOTE="p4 sync ...@899" CHANGELIST_NUM="899" LAST_STEP_NAME="BUILD"
+             LABEL_STATUS="0" RERUN="N" DEPENDENCE="0" TYPE="0" TIMESTAMP="2"/>
+  <BUILD_RUN BUILD_ID="24" ID="9" ACTIVE_BUILD_ID="23" NUMBER="1" COMPLETE="0" STARTED_AT="2006-04-19 17:04:44.474"
+             RESULT="0" LABEL_STATUS="0" BUILD_NAME="mks_test" SYNC_NOTE="No information provided" CHANGELIST_NUM="28"
+             LAST_STEP_NAME="" RERUN="N" DEPENDENCE="0" TYPE="0" TIMESTAMP="0"/>
+  <BUILD_RUN BUILD_ID="30" ACTIVE_BUILD_ID="27" ID="10" NUMBER="1" COMPLETE="1" STARTED_AT="2006-12-06 23:50:17.5"
+             FINISHED_AT="2006-12-06 23:52:43.218" RESULT="2" RESULT_DESCRIPTION="Build result cannot be identified"
+             LABEL_STATUS="0" BUILD_NAME="p4_test_parallel_ldr" SYNC_NOTE="p4 sync ...@5291" CHANGELIST_NUM="5291"
+             LAST_STEP_NAME="TEST" RERUN="N" DEPENDENCE="1" TYPE="0" TIMESTAMP="3"/>
+  <BUILD_RUN BUILD_ID="31" ACTIVE_BUILD_ID="29" ID="11" NUMBER="1" COMPLETE="1" STARTED_AT="2006-12-06 23:52:43.203"
+             FINISHED_AT="2006-12-06 23:54:46.203" RESULT="2" RESULT_DESCRIPTION="Build result cannot be identified"
+             LABEL_STATUS="0" BUILD_NAME="p4_test_parallel_dp2" SYNC_NOTE="p4 sync ...@5291" CHANGELIST_NUM="5291"
+             LAST_STEP_NAME="TEST" RERUN="N" DEPENDENCE="2" TYPE="0" TIMESTAMP="3"/>
+  <BUILD_RUN BUILD_ID="32" ACTIVE_BUILD_ID="28" ID="12" NUMBER="1" COMPLETE="1" STARTED_AT="2006-12-06 23:52:43.078"
+             FINISHED_AT="2006-12-06 23:54:46.14" RESULT="2" RESULT_DESCRIPTION="Build result cannot be identified"
+             LABEL_STATUS="0" BUILD_NAME="p4_test_parallel_dp1" SYNC_NOTE="p4 sync ...@5291" CHANGELIST_NUM="5291"
+             LAST_STEP_NAME="TEST" RERUN="N" DEPENDENCE="2" TYPE="0" TIMESTAMP="3"/>
+
+  <!-- BUILD_RUN_ATTRIBUTE -->
+  <BUILD_RUN_ATTRIBUTE ID="0" BUILD_RUN_ID="9" NAME="attr.clean.checkout" VALUE="true" TIMESTAMP="1"/>
+  <BUILD_RUN_ATTRIBUTE ID="1" BUILD_RUN_ID="9" NAME="attr.started.user.id" VALUE="1" TIMESTAMP="1"/>
+
+  <BUILD_RUN_ATTRIBUTE ID="2" BUILD_RUN_ID="2" NAME="stat.parabuild.junit.errors" VALUE="10" TIMESTAMP="1"/>
+  <BUILD_RUN_ATTRIBUTE ID="3" BUILD_RUN_ID="2" NAME="stat.parabuild.junit.failures" VALUE="5" TIMESTAMP="1"/>
+  <BUILD_RUN_ATTRIBUTE ID="4" BUILD_RUN_ID="2" NAME="stat.parabuild.junit.successes" VALUE="85" TIMESTAMP="1"/>
+  <BUILD_RUN_ATTRIBUTE ID="5" BUILD_RUN_ID="2" NAME="stat.parabuild.junit.tests" VALUE="100" TIMESTAMP="1"/>
+  <BUILD_RUN_ATTRIBUTE ID="6" BUILD_RUN_ID="2" NAME="attr.clean.checkout" VALUE="false" TIMESTAMP="1"/>
+  <BUILD_RUN_ATTRIBUTE ID="7" BUILD_RUN_ID="10" NAME="attr.builder.timestamp" VALUE="1165477817500" TIMESTAMP="1"/>
+  <BUILD_RUN_ATTRIBUTE ID="8" BUILD_RUN_ID="11" NAME="attr.started.user.id" VALUE="0" TIMESTAMP="1"/>
+  <BUILD_RUN_ATTRIBUTE ID="9" BUILD_RUN_ID="12" NAME="attr.started.user.id" VALUE="0" TIMESTAMP="1"/>
+  <BUILD_RUN_ATTRIBUTE ID="10" BUILD_RUN_ID="12" NAME="attr.builder.timestamp" VALUE="1165477963078" TIMESTAMP="1"/>
+  <BUILD_RUN_ATTRIBUTE ID="11" BUILD_RUN_ID="11" NAME="attr.builder.timestamp" VALUE="1165477963203" TIMESTAMP="1"/>
+  <BUILD_RUN_ATTRIBUTE ID="12" BUILD_RUN_ID="10" NAME="version" VALUE="test_version_0" TIMESTAMP="1"/>
+  <BUILD_RUN_ATTRIBUTE ID="13" BUILD_RUN_ID="10" NAME="version.counter" VALUE="0" TIMESTAMP="1"/>
+
+  <!-- BUILD_RUN_DEPENDENCE -->
+  <BUILD_RUN_DEPENDENCE ID="0" LEADER_BUILD_RUN_ID="10" DEPENDENT_BUILD_RUN_ID="11"/>
+  <BUILD_RUN_DEPENDENCE ID="1" LEADER_BUILD_RUN_ID="10" DEPENDENT_BUILD_RUN_ID="12"/>
+
+  <!-- BUILD_RUN_PARTICIPANT -->
+  <BUILD_RUN_PARTICIPANT BUILD_RUN_ID="1" CHANGELIST_ID="1" ID="1" FIRST_BUILD_RUN_ID="1" FIRST_BUILD_RUN_NUMBER="1"/>
+  <BUILD_RUN_PARTICIPANT BUILD_RUN_ID="2" CHANGELIST_ID="2" ID="2" FIRST_BUILD_RUN_ID="2" FIRST_BUILD_RUN_NUMBER="2"/>
+  <BUILD_RUN_PARTICIPANT BUILD_RUN_ID="4" CHANGELIST_ID="8" ID="3" FIRST_BUILD_RUN_ID="4" FIRST_BUILD_RUN_NUMBER="1"/>
+  <BUILD_RUN_PARTICIPANT BUILD_RUN_ID="5" CHANGELIST_ID="8" ID="4" FIRST_BUILD_RUN_ID="5" FIRST_BUILD_RUN_NUMBER="1"/>
+  <BUILD_RUN_PARTICIPANT BUILD_RUN_ID="8" CHANGELIST_ID="4" ID="5" FIRST_BUILD_RUN_ID="8" FIRST_BUILD_RUN_NUMBER="2"/>
+  <BUILD_RUN_PARTICIPANT BUILD_RUN_ID="8" CHANGELIST_ID="5" ID="6" FIRST_BUILD_RUN_ID="8" FIRST_BUILD_RUN_NUMBER="2"/>
+  <BUILD_RUN_PARTICIPANT BUILD_RUN_ID="8" CHANGELIST_ID="15" ID="7" FIRST_BUILD_RUN_ID="8"
+                         FIRST_BUILD_RUN_NUMBER="2"/>
+  <BUILD_RUN_PARTICIPANT BUILD_RUN_ID="8" CHANGELIST_ID="16" ID="8" FIRST_BUILD_RUN_ID="8"
+                         FIRST_BUILD_RUN_NUMBER="2"/>
+  <BUILD_RUN_PARTICIPANT BUILD_RUN_ID="8" CHANGELIST_ID="17" ID="9" FIRST_BUILD_RUN_ID="8"
+                         FIRST_BUILD_RUN_NUMBER="2"/>
+  <BUILD_RUN_PARTICIPANT BUILD_RUN_ID="9" CHANGELIST_ID="27" ID="10" FIRST_BUILD_RUN_ID="9"
+                         FIRST_BUILD_RUN_NUMBER="1"/>
+  <BUILD_RUN_PARTICIPANT BUILD_RUN_ID="10" CHANGELIST_ID="30" ID="11" FIRST_BUILD_RUN_ID="10"
+                         FIRST_BUILD_RUN_NUMBER="1"/>
+  <BUILD_RUN_PARTICIPANT BUILD_RUN_ID="10" CHANGELIST_ID="31" ID="12" FIRST_BUILD_RUN_ID="10"
+                         FIRST_BUILD_RUN_NUMBER="1"/>
+  <BUILD_RUN_PARTICIPANT BUILD_RUN_ID="10" CHANGELIST_ID="32" ID="13" FIRST_BUILD_RUN_ID="10"
+                         FIRST_BUILD_RUN_NUMBER="1"/>
+  <BUILD_RUN_PARTICIPANT BUILD_RUN_ID="10" CHANGELIST_ID="33" ID="14" FIRST_BUILD_RUN_ID="10"
+                         FIRST_BUILD_RUN_NUMBER="1"/>
+  <BUILD_RUN_PARTICIPANT BUILD_RUN_ID="10" CHANGELIST_ID="34" ID="15" FIRST_BUILD_RUN_ID="10"
+                         FIRST_BUILD_RUN_NUMBER="1"/>
+  <BUILD_RUN_PARTICIPANT BUILD_RUN_ID="10" CHANGELIST_ID="35" ID="16" FIRST_BUILD_RUN_ID="10"
+                         FIRST_BUILD_RUN_NUMBER="1"/>
+  <BUILD_RUN_PARTICIPANT BUILD_RUN_ID="10" CHANGELIST_ID="36" ID="17" FIRST_BUILD_RUN_ID="10"
+                         FIRST_BUILD_RUN_NUMBER="1"/>
+  <BUILD_RUN_PARTICIPANT BUILD_RUN_ID="11" CHANGELIST_ID="30" ID="18" FIRST_BUILD_RUN_ID="11"
+                         FIRST_BUILD_RUN_NUMBER="1"/>
+  <BUILD_RUN_PARTICIPANT BUILD_RUN_ID="11" CHANGELIST_ID="31" ID="19" FIRST_BUILD_RUN_ID="11"
+                         FIRST_BUILD_RUN_NUMBER="1"/>
+  <BUILD_RUN_PARTICIPANT BUILD_RUN_ID="11" CHANGELIST_ID="32" ID="20" FIRST_BUILD_RUN_ID="11"
+                         FIRST_BUILD_RUN_NUMBER="1"/>
+  <BUILD_RUN_PARTICIPANT BUILD_RUN_ID="11" CHANGELIST_ID="33" ID="21" FIRST_BUILD_RUN_ID="11"
+                         FIRST_BUILD_RUN_NUMBER="1"/>
+  <BUILD_RUN_PARTICIPANT BUILD_RUN_ID="11" CHANGELIST_ID="34" ID="22" FIRST_BUILD_RUN_ID="11"
+                         FIRST_BUILD_RUN_NUMBER="1"/>
+  <BUILD_RUN_PARTICIPANT BUILD_RUN_ID="11" CHANGELIST_ID="35" ID="23" FIRST_BUILD_RUN_ID="11"
+                         FIRST_BUILD_RUN_NUMBER="1"/>
+  <BUILD_RUN_PARTICIPANT BUILD_RUN_ID="11" CHANGELIST_ID="36" ID="24" FIRST_BUILD_RUN_ID="11"
+                         FIRST_BUILD_RUN_NUMBER="1"/>
+  <BUILD_RUN_PARTICIPANT BUILD_RUN_ID="12" CHANGELIST_ID="30" ID="25" FIRST_BUILD_RUN_ID="12"
+                         FIRST_BUILD_RUN_NUMBER="1"/>
+  <BUILD_RUN_PARTICIPANT BUILD_RUN_ID="12" CHANGELIST_ID="31" ID="26" FIRST_BUILD_RUN_ID="12"
+                         FIRST_BUILD_RUN_NUMBER="1"/>
+  <BUILD_RUN_PARTICIPANT BUILD_RUN_ID="12" CHANGELIST_ID="32" ID="27" FIRST_BUILD_RUN_ID="12"
+                         FIRST_BUILD_RUN_NUMBER="1"/>
+  <BUILD_RUN_PARTICIPANT BUILD_RUN_ID="12" CHANGELIST_ID="33" ID="28" FIRST_BUILD_RUN_ID="12"
+                         FIRST_BUILD_RUN_NUMBER="1"/>
+  <BUILD_RUN_PARTICIPANT BUILD_RUN_ID="12" CHANGELIST_ID="34" ID="29" FIRST_BUILD_RUN_ID="12"
+                         FIRST_BUILD_RUN_NUMBER="1"/>
+  <BUILD_RUN_PARTICIPANT BUILD_RUN_ID="12" CHANGELIST_ID="35" ID="30" FIRST_BUILD_RUN_ID="12"
+                         FIRST_BUILD_RUN_NUMBER="1"/>
+  <BUILD_RUN_PARTICIPANT BUILD_RUN_ID="12" CHANGELIST_ID="36" ID="31" FIRST_BUILD_RUN_ID="12"
+                         FIRST_BUILD_RUN_NUMBER="1"/>
+  <!-- Duplicate changes for the test -->
+  <BUILD_RUN_PARTICIPANT BUILD_RUN_ID="12" CHANGELIST_ID="36" ID="32" FIRST_BUILD_RUN_ID="12"
+                         FIRST_BUILD_RUN_NUMBER="1"/>
+  <BUILD_RUN_PARTICIPANT BUILD_RUN_ID="12" CHANGELIST_ID="36" ID="33" FIRST_BUILD_RUN_ID="12"
+                         FIRST_BUILD_RUN_NUMBER="1"/>
+  <BUILD_RUN_PARTICIPANT BUILD_RUN_ID="3" CHANGELIST_ID="2" ID="34" FIRST_BUILD_RUN_ID="12"
+                         FIRST_BUILD_RUN_NUMBER="1"/>
+  <BUILD_RUN_PARTICIPANT BUILD_RUN_ID="7" CHANGELIST_ID="3" ID="35" FIRST_BUILD_RUN_ID="7"
+                         FIRST_BUILD_RUN_NUMBER="3"/>
+
+  <!-- STEP_RUN -->
+  <STEP_RUN BUILD_RUN_ID="1" ID="1" NAME="BUILD" RESULT="1" RESULT_DESCRIPTION="BUILD SUCCESSFUL"
+            STARTED_AT="2003-01-01 00:00:00.0" FINISHED_AT="2003-01-01 00:10:00.0" TIMESTAMP="1"/>
+  <STEP_RUN BUILD_RUN_ID="1" ID="2" NAME="TEST" RESULT="2" RESULT_DESCRIPTION="BUILD FAILED"
+            STARTED_AT="2003-01-01 00:00:01.0" FINISHED_AT="2003-01-01 00:20:00.0" TIMESTAMP="1"/>
+  <STEP_RUN BUILD_RUN_ID="4" ID="3" NAME="BUILD" RESULT="1" RESULT_DESCRIPTION="BUILD SUCCESSFUL"
+            STARTED_AT="2003-01-01 00:00:00.0" FINISHED_AT="2003-01-01 00:10:00.0" TIMESTAMP="1"/>
+  <STEP_RUN BUILD_RUN_ID="8" ID="4" NAME="BUILD" RESULT="2" RESULT_DESCRIPTION="Build result cannot be identified"
+            STARTED_AT="2005-07-10 16:10:01.156" FINISHED_AT="2005-07-10 16:10:01.468" TIMESTAMP="0"/>
+  <STEP_RUN BUILD_RUN_ID="2" ID="5" NAME="TEST" RESULT="2" RESULT_DESCRIPTION="BUILD FAILED"
+            STARTED_AT="2003-01-01 00:00:01.0" FINISHED_AT="2003-01-01 00:20:00.0" TIMESTAMP="1"/>
+  <STEP_RUN BUILD_RUN_ID="10" ID="6" NAME="BUILD" RESULT="2" RESULT_DESCRIPTION="Build result cannot be identified"
+            STARTED_AT="2006-12-06 23:50:17.64" FINISHED_AT="2006-12-06 23:50:18.375" TIMESTAMP="0"/>
+  <STEP_RUN BUILD_RUN_ID="10" ID="7" NAME="TEST" RESULT="2" RESULT_DESCRIPTION="Build result cannot be identified"
+            STARTED_AT="2006-12-06 23:51:39.281" FINISHED_AT="2006-12-06 23:51:39.734" TIMESTAMP="0"/>
+  <STEP_RUN BUILD_RUN_ID="12" ID="8" NAME="BUILD" RESULT="2" RESULT_DESCRIPTION="Build result cannot be identified"
+            STARTED_AT="2006-12-06 23:52:43.203" FINISHED_AT="2006-12-06 23:52:43.89" TIMESTAMP="0"/>
+  <STEP_RUN BUILD_RUN_ID="11" ID="9" NAME="BUILD" RESULT="2" RESULT_DESCRIPTION="Build result cannot be identified"
+            STARTED_AT="2006-12-06 23:52:43.328" FINISHED_AT="2006-12-06 23:52:44.078" TIMESTAMP="0"/>
+  <STEP_RUN BUILD_RUN_ID="11" ID="10" NAME="TEST" RESULT="2" RESULT_DESCRIPTION="Build result cannot be identified"
+            STARTED_AT="2006-12-06 23:53:54.843" FINISHED_AT="2006-12-06 23:53:55.359" TIMESTAMP="0"/>
+  <STEP_RUN BUILD_RUN_ID="12" ID="11" NAME="TEST" RESULT="2" RESULT_DESCRIPTION="Build result cannot be identified"
+            STARTED_AT="2006-12-06 23:53:54.859" FINISHED_AT="2006-12-06 23:53:55.359" TIMESTAMP="0"/>
+
+  <!-- STEP_RUN -->
+  <STEP_RUN_ATTRIBUTE STEP_RUN_ID="2" ID="0" NAME="stat.parabuild.junit.errors" VALUE="10" TIMESTAMP="1"/>
+  <STEP_RUN_ATTRIBUTE STEP_RUN_ID="2" ID="1" NAME="stat.parabuild.junit.failures" VALUE="5" TIMESTAMP="1"/>
+  <STEP_RUN_ATTRIBUTE STEP_RUN_ID="2" ID="2" NAME="stat.parabuild.junit.successes" VALUE="85" TIMESTAMP="1"/>
+  <STEP_RUN_ATTRIBUTE STEP_RUN_ID="2" ID="3" NAME="stat.parabuild.junit.tests" VALUE="100" TIMESTAMP="1"/>
+
+  <!-- STEP LOG -->
+  <STEP_LOG STEP_RUN_ID="1" ID="1" FILE="my/log/file1" PATH="my/log/file1" DESCRIPTION="stdout" TYPE="1" PATH_TYPE="1"
+            FOUND="1" TIMESTAMP="1"/>
+  <STEP_LOG STEP_RUN_ID="1" ID="2" FILE="my/log/file2" PATH="my/log/file2" DESCRIPTION="stderr" TYPE="1" PATH_TYPE="1"
+            FOUND="1" TIMESTAMP="1"/>
+  <STEP_LOG STEP_RUN_ID="2" ID="3" FILE="my/log/file1" PATH="my/log/file1" DESCRIPTION="stdout" TYPE="1" PATH_TYPE="1"
+            FOUND="1" TIMESTAMP="1"/>
+  <STEP_LOG STEP_RUN_ID="2" ID="4" FILE="my/log/file2" PATH="my/log/file2" DESCRIPTION="stderr" TYPE="1" PATH_TYPE="1"
+            FOUND="1" TIMESTAMP="1"/>
+  <STEP_LOG STEP_RUN_ID="2" ID="5" FILE="b1s1" PATH="test/log/test_html_log.html" DESCRIPTION="Test HTML log" TYPE="1"
+            PATH_TYPE="5" FOUND="1" TIMESTAMP="1"/>
+  <STEP_LOG STEP_RUN_ID="2" ID="6" FILE="b1s5" PATH="com/test/path/index.html" DESCRIPTION="Test HTML log" TYPE="1"
+            PATH_TYPE="6" FOUND="1" TIMESTAMP="1"/>
+  <STEP_LOG STEP_RUN_ID="2" ID="7" FILE="b1s7" PATH="test/log/dir" DESCRIPTION="Directory test log" TYPE="4"
+            PATH_TYPE="2" FOUND="1" TIMESTAMP="1"/>
+  <STEP_LOG STEP_RUN_ID="4" ID="8" FILE="b3s26_11121037001140.log" PATH="" DESCRIPTION="Main BUILD log" TYPE="1"
+            PATH_TYPE="1" FOUND="1" TIMESTAMP="0"/>
+  <STEP_LOG STEP_RUN_ID="4" ID="9" FILE="b3s26_21121037001141.log" PATH="" DESCRIPTION="Error lines" TYPE="5"
+            PATH_TYPE="1" FOUND="1" TIMESTAMP="0"/>
+  <STEP_LOG STEP_RUN_ID="6" ID="10" FILE="b27s43_11165477817625.log" PATH="" DESCRIPTION="Main BUILD log" TYPE="1"
+            PATH_TYPE="1" FOUND="1" TIMESTAMP="0"/>
+  <STEP_LOG STEP_RUN_ID="6" ID="11" FILE="b27s43_21165477817625.log" PATH="" DESCRIPTION="Error lines" TYPE="5"
+            PATH_TYPE="1" FOUND="1" TIMESTAMP="0"/>
+  <STEP_LOG STEP_RUN_ID="7" ID="12" FILE="b27s44_31165477899281.log" PATH="" DESCRIPTION="Main TEST log" TYPE="1"
+            PATH_TYPE="1" FOUND="1" TIMESTAMP="0"/>
+  <STEP_LOG STEP_RUN_ID="7" ID="13" FILE="b27s44_41165477899281.log" PATH="" DESCRIPTION="Error lines" TYPE="5"
+            PATH_TYPE="1" FOUND="1" TIMESTAMP="0"/>
+  <STEP_LOG STEP_RUN_ID="8" ID="14" FILE="b28s47_51165477963203.log" PATH="" DESCRIPTION="Main BUILD log" TYPE="1"
+            PATH_TYPE="1" FOUND="1" TIMESTAMP="0"/>
+  <STEP_LOG STEP_RUN_ID="8" ID="15" FILE="b28s47_61165477963203.log" PATH="" DESCRIPTION="Error lines" TYPE="5"
+            PATH_TYPE="1" FOUND="1" TIMESTAMP="0"/>
+  <STEP_LOG STEP_RUN_ID="9" ID="16" FILE="b29s45_71165477963328.log" PATH="" DESCRIPTION="Main BUILD log" TYPE="1"
+            PATH_TYPE="1" FOUND="1" TIMESTAMP="0"/>
+  <STEP_LOG STEP_RUN_ID="9" ID="17" FILE="b29s45_81165477963328.log" PATH="" DESCRIPTION="Error lines" TYPE="5"
+            PATH_TYPE="1" FOUND="1" TIMESTAMP="0"/>
+  <STEP_LOG STEP_RUN_ID="10" ID="18" FILE="b29s46_91165478034843.log" PATH="" DESCRIPTION="Main TEST log" TYPE="1"
+            PATH_TYPE="1" FOUND="1" TIMESTAMP="0"/>
+  <STEP_LOG STEP_RUN_ID="11" ID="19" FILE="b28s48_111165478034859.log" PATH="" DESCRIPTION="Main TEST log" TYPE="1"
+            PATH_TYPE="1" FOUND="1" TIMESTAMP="0"/>
+  <STEP_LOG STEP_RUN_ID="10" ID="20" FILE="b29s46_101165478034843.log" PATH="" DESCRIPTION="Error lines" TYPE="5"
+            PATH_TYPE="1" FOUND="1" TIMESTAMP="0"/>
+  <STEP_LOG STEP_RUN_ID="11" ID="21" FILE="b28s48_121165478034859.log" PATH="" DESCRIPTION="Error lines" TYPE="5"
+            PATH_TYPE="1" FOUND="1" TIMESTAMP="0"/>
+
+  <!-- STEP_RESULT -->
+  <STEP_RESULT ID="0" STEP_RUN_ID="1" FILE="b1r0" PATH="test/result/build_result.dat" DESCRIPTION="File test result"
+               PATH_TYPE="1" FOUND="Y" PINNED="N"/>
+  <STEP_RESULT ID="1" STEP_RUN_ID="1" FILE="b1r1" PATH="test/result/other_dir" DESCRIPTION="Directory test result"
+               PATH_TYPE="2" FOUND="Y" PINNED="N"/>
+  <STEP_RESULT ID="3" STEP_RUN_ID="1" FILE="b1r3" PATH="test/never/existed/dir"
+               DESCRIPTION="Directory test result that doesn&apos;t exist" PATH_TYPE="2" FOUND="Y" PINNED="N"/>
+
+  <!-- ISSUE -->
+  <ISSUE ID="1" TRACKER_TYPE="1" KEY="TEST-0001" DESCRIPTION="Test issue 1" PRODUCT="" VERSION=""
+         PROJECT="test_project" STATUS="" PRIORITY="" RECEIVED="2003-01-03 00:00:00.0" URL=""/>
+  <ISSUE ID="2" TRACKER_TYPE="1" KEY="TEST-0002" DESCRIPTION="Test issue 2" PRODUCT="" VERSION=""
+         PROJECT="test_project" STATUS="" PRIORITY="" RECEIVED="2003-01-03 00:00:00.0" URL=""/>
+  <ISSUE ID="3" TRACKER_TYPE="2" KEY="301" DESCRIPTION="Test issue 3" PRODUCT="" VERSION="" PROJECT="" STATUS=""
+         PRIORITY="" RECEIVED="2003-01-03 00:00:00.0" URL=""/>
+  <ISSUE ID="4" TRACKER_TYPE="2" KEY="302" DESCRIPTION="Test issue 4" PRODUCT="" VERSION="" PROJECT="" STATUS=""
+         PRIORITY="" RECEIVED="2003-01-03 00:00:00.0" URL=""/>
+  <ISSUE ID="5" TRACKER_TYPE="2" KEY="303" DESCRIPTION="Test issue 6" PRODUCT="test product" VERSION="test version"
+         PROJECT="" STATUS="" PRIORITY="" RECEIVED="2003-01-03 00:00:00.0" URL=""/>
+  <ISSUE ID="6" TRACKER_TYPE="2" KEY="304" DESCRIPTION="Test issue 7" PRODUCT="test product 7"
+         VERSION="test version 7" PROJECT="" STATUS="" PRIORITY="" RECEIVED="2003-01-03 00:00:00.0" URL=""/>
+  <ISSUE ID="7" TRACKER_TYPE="1" KEY="TEST-0005" DESCRIPTION="Test issue 5" PRODUCT="" VERSION=""
+         PROJECT="test_project" STATUS="" PRIORITY="" RECEIVED="2003-01-03 00:00:00.0" URL=""/>
+  <ISSUE ID="8" TRACKER_TYPE="3" KEY="job0001" DESCRIPTION="Test issue 8" PRODUCT="" VERSION="" PROJECT="" STATUS=""
+         PRIORITY="" RECEIVED="2003-01-03 00:00:00.0" URL=""/>
+  <ISSUE ID="9" TRACKER_TYPE="3" KEY="job0002" DESCRIPTION="Test issue 3" PRODUCT="" VERSION="" PROJECT="" STATUS=""
+         PRIORITY="" RECEIVED="2003-01-03 00:00:00.0" URL=""/>
+  <ISSUE ID="10" TRACKER_TYPE="3" KEY="job0002" DESCRIPTION="Test issue 10" PRODUCT="" VERSION="" PROJECT="" STATUS=""
+         PRIORITY="" RECEIVED="2003-01-03 04:00:00.0" URL=""/>
+  <ISSUE ID="11" TRACKER_TYPE="3" KEY="job000002" DESCRIPTION="Test issue 8" PRODUCT="" VERSION="" PROJECT=""
+         STATUS="*closed*" PRIORITY="" CLOSED="2005-04-12 00:00:00.0" CLOSED_BY="vimeshev"
+         RECEIVED="2005-07-10 16:09:48.14" URL=""/>
+
+  <!-- ISSUE_ATTR -->
+  <ISSUE_ATTR ID="1" ISSUE_ID="3" NAME="other.attribute.1" VALUE="other_value"/>
+  <ISSUE_ATTR ID="2" ISSUE_ID="3" NAME="other.attribute.2" VALUE="other_value"/>
+  <ISSUE_ATTR ID="3" ISSUE_ID="4" NAME="other.attribute.4" VALUE="other_value"/>
+
+  <!-- ISSUE_CHANGELIST -->
+  <ISSUE_CHANGELIST ID="1" ISSUE_ID="8" CHANGELIST_ID="8"/>
+  <ISSUE_CHANGELIST ID="2" ISSUE_ID="11" CHANGELIST_ID="16"/>
+  <ISSUE_CHANGELIST ID="3" ISSUE_ID="10" CHANGELIST_ID="15"/>
+
+  <!-- RELEASE_NOTE -->
+  <RELEASE_NOTE ID="1" BUILD_RUN_ID="1" ISSUE_ID="1"/>
+  <RELEASE_NOTE ID="2" BUILD_RUN_ID="1" ISSUE_ID="2"/>
+  <RELEASE_NOTE ID="3" BUILD_RUN_ID="3" ISSUE_ID="1"/>
+  <RELEASE_NOTE ID="4" BUILD_RUN_ID="3" ISSUE_ID="2"/>
+  <RELEASE_NOTE ID="5" BUILD_RUN_ID="4" ISSUE_ID="1"/>
+  <RELEASE_NOTE ID="6" BUILD_RUN_ID="4" ISSUE_ID="2"/>
+  <RELEASE_NOTE ID="7" BUILD_RUN_ID="6" ISSUE_ID="10"/>
+
+  <!-- GROUPS -->
+  <GROUPS ID="0" NAME="Administrators" DESCR="System group" ENABLED="Y" ALLOWED_TO_CREATE_BUILD="N"
+          ALLOWED_TO_DELETE_BUILD="N" ALLOWED_TO_START_BUILD="N" ALLOWED_TO_STOP_BUILD="N" ALLOWED_TO_UPDATE_BUILD="N"
+          ALLOWED_TO_VIEW_BUILD="Y" ALLOWED_TO_PUBLISH_RESULTS="Y" ALLOWED_TO_DELETE_RESULTS="Y"
+          ALLOWED_TO_CREATE_RESULT_GROUP="Y" ALLOWED_TO_DELETE_RESULT_GROUP="Y" ALLOWED_TO_UPDATE_RESULT_GROUP="Y"
+          ALLOWED_TO_VIEW_RESULT_GROUP="Y" TIMESTAMP="1"/>
+  <GROUPS ID="1" NAME="Test group 1" DESCR="Test group description 1" ENABLED="Y" ALLOWED_TO_CREATE_BUILD="N"
+          ALLOWED_TO_DELETE_BUILD="N" ALLOWED_TO_START_BUILD="Y" ALLOWED_TO_STOP_BUILD="Y" ALLOWED_TO_UPDATE_BUILD="N"
+          ALLOWED_TO_VIEW_BUILD="Y" ALLOWED_TO_PUBLISH_RESULTS="N" ALLOWED_TO_DELETE_RESULTS="N"
+          ALLOWED_TO_CREATE_RESULT_GROUP="N" ALLOWED_TO_DELETE_RESULT_GROUP="N" ALLOWED_TO_UPDATE_RESULT_GROUP="N"
+          ALLOWED_TO_VIEW_RESULT_GROUP="Y" TIMESTAMP="1"/>
+  <GROUPS ID="2" NAME="Test group 2" DESCR="Test group description 2" ENABLED="Y" ALLOWED_TO_CREATE_BUILD="N"
+          ALLOWED_TO_DELETE_BUILD="N" ALLOWED_TO_START_BUILD="N" ALLOWED_TO_STOP_BUILD="N" ALLOWED_TO_UPDATE_BUILD="N"
+          ALLOWED_TO_VIEW_BUILD="Y" ALLOWED_TO_PUBLISH_RESULTS="N" ALLOWED_TO_DELETE_RESULTS="N"
+          ALLOWED_TO_CREATE_RESULT_GROUP="N" ALLOWED_TO_DELETE_RESULT_GROUP="N" ALLOWED_TO_UPDATE_RESULT_GROUP="N"
+          ALLOWED_TO_VIEW_RESULT_GROUP="Y" TIMESTAMP="1"/>
+  <GROUPS ID="3" NAME="Anonymous" DESCR="Users that are not logged in" ENABLED="Y" ALLOWED_TO_CREATE_BUILD="N"
+          ALLOWED_TO_DELETE_BUILD="N" ALLOWED_TO_START_BUILD="N" ALLOWED_TO_STOP_BUILD="N" ALLOWED_TO_UPDATE_BUILD="N"
+          ALLOWED_TO_VIEW_BUILD="Y" ALLOWED_TO_PUBLISH_RESULTS="N" ALLOWED_TO_DELETE_RESULTS="N"
+          ALLOWED_TO_CREATE_RESULT_GROUP="N" ALLOWED_TO_DELETE_RESULT_GROUP="N" ALLOWED_TO_UPDATE_RESULT_GROUP="N"
+          ALLOWED_TO_VIEW_RESULT_GROUP="Y" TIMESTAMP="1"/>
+
+  <!-- USER --><!-- digested admin         : 21232F297A57A5A743894A0E4A801FC3 --><!-- digested not_admin     : 7FAA159E67372AFC85BFE8160F1FD66A --><!-- digested test_password : 16EC1EBB01FE02DED9B7D5447D3DFC65 -->
+  <USERS ID="0" NAME="admin" FNAME="Build Administrator" EMAIL="" PASSWORD="21232F297A57A5A743894A0E4A801FC3" IS_ADMIN="Y" ROLES="admin" ENABLED="Y" IM_TYPE="0" IM_ADDRESS="" LDAP_AUTH="N" DISABLE_ALL_EMAIL="N" TIMESTAMP="1"/>
+  <USERS ID="1" NAME="not_admin" FNAME="Not Admin" EMAIL="" PASSWORD="7FAA159E67372AFC85BFE8160F1FD66A" IS_ADMIN="N" ROLES="user" ENABLED="Y" IM_TYPE="0" IM_ADDRESS="" LDAP_AUTH="N" DISABLE_ALL_EMAIL="N" TIMESTAMP="1"/>
+  <USERS ID="2" NAME="test_user" FNAME="Test User" EMAIL="imeshev@yahoo.com" PASSWORD="16EC1EBB01FE02DED9B7D5447D3DFC65" IS_ADMIN="N" ROLES="user" ENABLED="Y" IM_TYPE="0" IM_ADDRESS="" LDAP_AUTH="N" DISABLE_ALL_EMAIL="N" TIMESTAMP="1"/>
+  <USERS ID="3" NAME="test_user_id_4" FNAME="Test User 4" EMAIL="test@email" PASSWORD="16EC1EBB01FE02DED9B7D5447D3DFC65" IS_ADMIN="N" ROLES="user" ENABLED="Y" IM_TYPE="0" IM_ADDRESS="" LDAP_AUTH="N" DISABLE_ALL_EMAIL="N" TIMESTAMP="1"/>
+
+  <!-- USER_ATTRIBUTE -->
+  <USER_ATTRIBUTE ID="0" USER_ID="0" NAME="show.inactive.builds" VALUE="checked" TIMESTAMP="1"/>
+
+  <!-- USER_GROUP -->
+  <USER_GROUP ID="0" USER_ID="0" GROUP_ID="0"/>
+  <USER_GROUP ID="1" USER_ID="2" GROUP_ID="1"/>
+
+
+  <!-- BUILD_ACCESS -->
+  <BUILD_ACCESS ID="0" GROUP_ID="1" BUILD_ID="1" TIMESTAMP="0"/>
+  <BUILD_ACCESS ID="1" GROUP_ID="3" BUILD_ID="1" TIMESTAMP="0"/>
+  <BUILD_ACCESS ID="2" GROUP_ID="3" BUILD_ID="2" TIMESTAMP="0"/>
+  <BUILD_ACCESS ID="3" GROUP_ID="3" BUILD_ID="3" TIMESTAMP="0"/>
+  <BUILD_ACCESS ID="4" GROUP_ID="3" BUILD_ID="4" TIMESTAMP="0"/>
+  <BUILD_ACCESS ID="5" GROUP_ID="3" BUILD_ID="5" TIMESTAMP="0"/>
+  <BUILD_ACCESS ID="6" GROUP_ID="3" BUILD_ID="6" TIMESTAMP="0"/>
+  <BUILD_ACCESS ID="7" GROUP_ID="3" BUILD_ID="20" TIMESTAMP="0"/>
+  <BUILD_ACCESS ID="8" GROUP_ID="3" BUILD_ID="27" TIMESTAMP="0"/>
+  <BUILD_ACCESS ID="9" GROUP_ID="3" BUILD_ID="28" TIMESTAMP="0"/>
+  <BUILD_ACCESS ID="10" GROUP_ID="3" BUILD_ID="29" TIMESTAMP="0"/>
+
+
+  <!-- RESULT_GROUP -->
+  <RESULT_GROUP ID="0" NAME="Test result group 1" DESCRIPTION="Description for test result group 1"
+                LAST_PUBLISHED="2003-09-09 00:00:00.0" ENABLED="Y" DELETED="N" TIMESTAMP="0"/>
+
+  <!-- PROJECT_RESULT_GROUP -->
+  <PROJECT_RESULT_GROUP ID="0" PROJECT_ID="1" RESULT_GROUP_ID="0"/>
+
+  <!-- RESULT_GROUP_ACCESS -->
+  <RESULT_GROUP_ACCESS ID="0" GROUP_ID="1" RESULT_GROUP_ID="0" TIMESTAMP="0"/>
+
+
+  <!-- BUILD_RUN_ACTION -->
+  <BUILD_RUN_ACTION ID="0" BUILD_RUN_ID="1" CODE="0" ACTION="Test action" DESCRIPTION="Test action description"
+                    ACTION_DATE="2003-09-09 00:00:00.0" USER_ID="1"/>
+
+
+  <!-- PUBLISHED_STEP_RESULT -->
+  <PUBLISHED_STEP_RESULT ID="0" RESULT_GROUP_ID="0" ACTIVE_BUILD_ID="1" BUILD_RUN_ID="1" PUBLISHER_BUILD_RUN_ID="1"
+                         STEP_RESULT_ID="0" PUBLISH_DATE="2003-09-09 00:00:00.0" BUILD_NAME="cvs_test_build"
+                         BUILD_RUN_DATE="2003-09-09 00:10:00.0" BUILD_RUN_NUMBER="1"
+                         DESCRIPTION="Test build results"/>
+
+
+  <!-- DISPLAY_GROUP -->
+  <DISPLAY_GROUP ID="0" NAME="Test display group 1" DESCR="Description for display group 1" ENABLED="Y"
+                 TIMESTAMP="1"/>
+  <DISPLAY_GROUP ID="1" NAME="Test display group 2" DESCR="Description for display group 2" ENABLED="Y"
+                 TIMESTAMP="1"/>
+
+  <!-- DISPLAY_GROUP_BUILD -->
+  <DISPLAY_GROUP_BUILD BUILD_ID="1" DISPLAY_GROUP_ID="0" ID="0" TIMESTAMP="0"/>
+  <DISPLAY_GROUP_BUILD BUILD_ID="2" DISPLAY_GROUP_ID="0" ID="1" TIMESTAMP="0"/>
+
+  <!-- MERGE_CONFIGURATION -->
+  <MERGE_CONFIGURATION ID="0" ACTIVE_MERGE_CONFIGURATION_ID="0" SOURCE_BUILD_ID="3" TARGET_BUILD_ID="3"
+                       BRANCH_VIEW_SOURCE="0" BRANCH_VIEW="" BRANCH_VIEW_NAME="test_target_branch"
+                       CONFLICT_RESOLUTION_MODE="0" DESCRIPTION="Test Merge 0 Description" DISCRIMINATOR="A"
+                       MARKER="TESTMARKER" MERGE_MODE="1" NAME="Test Merge 0" REVERSE_BRANCH_VIEW="Y"
+                       INDIRECT_MERGE="Y" PRESERVE_MARKER="N" TIMESTAMP="0"/>
+
+  <!-- MERGE_SERVICE_CONFIGURATION -->
+  <MERGE_SERVICE_CONFIGURATION ID="0" PROJECT_ID="1" DELETED="N" STARTUP_MODE="1" TIMESTAMP="0"/>
+
+
+  <!--
+  <DAILY_TEST_STATS ID="2" ACTIVE_BUILD_ID="1" TEST_CODE="1" SAMPLE_TIME="2006-07-12 00:00:00.0" SUCCESSFUL_TEST_COUNT="90" SUCCESSFUL_TEST_PERCENT="90" ERROR_TEST_COUNT="5" ERROR_TEST_PERCENT="5" FAILED_TEST_COUNT="5" FAILED_TEST_PERCENT="5" TOTAL_TEST_COUNT="100"/>
+  <DAILY_TEST_STATS ID="3" ACTIVE_BUILD_ID="1" TEST_CODE="1" SAMPLE_TIME="2006-07-10 00:00:00.0" SUCCESSFUL_TEST_COUNT="90" SUCCESSFUL_TEST_PERCENT="90" ERROR_TEST_COUNT="5" ERROR_TEST_PERCENT="5" FAILED_TEST_COUNT="5" FAILED_TEST_PERCENT="5" TOTAL_TEST_COUNT="100"/>
+  <DAILY_TEST_STATS ID="6" ACTIVE_BUILD_ID="1" TEST_CODE="1" SAMPLE_TIME="2006-07-07 00:00:00.0" SUCCESSFUL_TEST_COUNT="90" SUCCESSFUL_TEST_PERCENT="90" ERROR_TEST_COUNT="5" ERROR_TEST_PERCENT="5" FAILED_TEST_COUNT="5" FAILED_TEST_PERCENT="5" TOTAL_TEST_COUNT="100"/>
+  <DAILY_TEST_STATS ID="7" ACTIVE_BUILD_ID="1" TEST_CODE="1" SAMPLE_TIME="2006-07-06 00:00:00.0" SUCCESSFUL_TEST_COUNT="100" SUCCESSFUL_TEST_PERCENT="100" ERROR_TEST_COUNT="0" ERROR_TEST_PERCENT="0" FAILED_TEST_COUNT="0" FAILED_TEST_PERCENT="0" TOTAL_TEST_COUNT="100"/>
+  <DAILY_TEST_STATS ID="8" ACTIVE_BUILD_ID="1" TEST_CODE="1" SAMPLE_TIME="2006-07-05 00:00:00.0" SUCCESSFUL_TEST_COUNT="100" SUCCESSFUL_TEST_PERCENT="100" ERROR_TEST_COUNT="0" ERROR_TEST_PERCENT="0" FAILED_TEST_COUNT="0" FAILED_TEST_PERCENT="0" TOTAL_TEST_COUNT="100"/>
+  <DAILY_TEST_STATS ID="9" ACTIVE_BUILD_ID="1" TEST_CODE="1" SAMPLE_TIME="2006-07-04 00:00:00.0" SUCCESSFUL_TEST_COUNT="90" SUCCESSFUL_TEST_PERCENT="90" ERROR_TEST_COUNT="5" ERROR_TEST_PERCENT="5" FAILED_TEST_COUNT="5" FAILED_TEST_PERCENT="5" TOTAL_TEST_COUNT="100"/>
+  <DAILY_TEST_STATS ID="10" ACTIVE_BUILD_ID="1" TEST_CODE="1" SAMPLE_TIME="2006-07-03 00:00:00.0" SUCCESSFUL_TEST_COUNT="90" SUCCESSFUL_TEST_PERCENT="90" ERROR_TEST_COUNT="5" ERROR_TEST_PERCENT="5" FAILED_TEST_COUNT="5" FAILED_TEST_PERCENT="5" TOTAL_TEST_COUNT="100"/>
+  <DAILY_TEST_STATS ID="13" ACTIVE_BUILD_ID="1" TEST_CODE="1" SAMPLE_TIME="2006-06-30 00:00:00.0" SUCCESSFUL_TEST_COUNT="90" SUCCESSFUL_TEST_PERCENT="90" ERROR_TEST_COUNT="5" ERROR_TEST_PERCENT="5" FAILED_TEST_COUNT="5" FAILED_TEST_PERCENT="5" TOTAL_TEST_COUNT="100"/>
+  <DAILY_TEST_STATS ID="14" ACTIVE_BUILD_ID="1" TEST_CODE="1" SAMPLE_TIME="2006-06-29 00:00:00.0" SUCCESSFUL_TEST_COUNT="90" SUCCESSFUL_TEST_PERCENT="90" ERROR_TEST_COUNT="5" ERROR_TEST_PERCENT="5" FAILED_TEST_COUNT="5" FAILED_TEST_PERCENT="5" TOTAL_TEST_COUNT="100"/>
+  <DAILY_TEST_STATS ID="15" ACTIVE_BUILD_ID="1" TEST_CODE="1" SAMPLE_TIME="2006-06-28 00:00:00.0" SUCCESSFUL_TEST_COUNT="90" SUCCESSFUL_TEST_PERCENT="90" ERROR_TEST_COUNT="5" ERROR_TEST_PERCENT="5" FAILED_TEST_COUNT="5" FAILED_TEST_PERCENT="5" TOTAL_TEST_COUNT="100"/>
+  <DAILY_TEST_STATS ID="16" ACTIVE_BUILD_ID="1" TEST_CODE="1" SAMPLE_TIME="2006-06-27 00:00:00.0" SUCCESSFUL_TEST_COUNT="90" SUCCESSFUL_TEST_PERCENT="90" ERROR_TEST_COUNT="5" ERROR_TEST_PERCENT="5" FAILED_TEST_COUNT="5" FAILED_TEST_PERCENT="5" TOTAL_TEST_COUNT="100"/>
+  <DAILY_TEST_STATS ID="18" ACTIVE_BUILD_ID="1" TEST_CODE="1" SAMPLE_TIME="2006-06-25 00:00:00.0" SUCCESSFUL_TEST_COUNT="90" SUCCESSFUL_TEST_PERCENT="90" ERROR_TEST_COUNT="5" ERROR_TEST_PERCENT="5" FAILED_TEST_COUNT="5" FAILED_TEST_PERCENT="5" TOTAL_TEST_COUNT="100"/>
+  <DAILY_TEST_STATS ID="19" ACTIVE_BUILD_ID="1" TEST_CODE="1" SAMPLE_TIME="2006-06-24 00:00:00.0" SUCCESSFUL_TEST_COUNT="90" SUCCESSFUL_TEST_PERCENT="90" ERROR_TEST_COUNT="5" ERROR_TEST_PERCENT="5" FAILED_TEST_COUNT="5" FAILED_TEST_PERCENT="5" TOTAL_TEST_COUNT="100"/>
+  <DAILY_TEST_STATS ID="20" ACTIVE_BUILD_ID="1" TEST_CODE="1" SAMPLE_TIME="2006-06-23 00:00:00.0" SUCCESSFUL_TEST_COUNT="90" SUCCESSFUL_TEST_PERCENT="90" ERROR_TEST_COUNT="5" ERROR_TEST_PERCENT="5" FAILED_TEST_COUNT="5" FAILED_TEST_PERCENT="5" TOTAL_TEST_COUNT="100"/>
+  <DAILY_TEST_STATS ID="21" ACTIVE_BUILD_ID="1" TEST_CODE="1" SAMPLE_TIME="2006-06-22 00:00:00.0" SUCCESSFUL_TEST_COUNT="90" SUCCESSFUL_TEST_PERCENT="90" ERROR_TEST_COUNT="5" ERROR_TEST_PERCENT="5" FAILED_TEST_COUNT="5" FAILED_TEST_PERCENT="5" TOTAL_TEST_COUNT="100"/>
+  <DAILY_TEST_STATS ID="22" ACTIVE_BUILD_ID="1" TEST_CODE="1" SAMPLE_TIME="2006-06-21 00:00:00.0" SUCCESSFUL_TEST_COUNT="90" SUCCESSFUL_TEST_PERCENT="90" ERROR_TEST_COUNT="5" ERROR_TEST_PERCENT="5" FAILED_TEST_COUNT="5" FAILED_TEST_PERCENT="5" TOTAL_TEST_COUNT="100"/>
+  <DAILY_TEST_STATS ID="23" ACTIVE_BUILD_ID="1" TEST_CODE="1" SAMPLE_TIME="2006-06-20 00:00:00.0" SUCCESSFUL_TEST_COUNT="90" SUCCESSFUL_TEST_PERCENT="90" ERROR_TEST_COUNT="5" ERROR_TEST_PERCENT="5" FAILED_TEST_COUNT="5" FAILED_TEST_PERCENT="5" TOTAL_TEST_COUNT="100"/>
+  <DAILY_TEST_STATS ID="24" ACTIVE_BUILD_ID="1" TEST_CODE="1" SAMPLE_TIME="2006-06-19 00:00:00.0" SUCCESSFUL_TEST_COUNT="90" SUCCESSFUL_TEST_PERCENT="90" ERROR_TEST_COUNT="5" ERROR_TEST_PERCENT="5" FAILED_TEST_COUNT="5" FAILED_TEST_PERCENT="5" TOTAL_TEST_COUNT="100"/>
+  <DAILY_TEST_STATS ID="27" ACTIVE_BUILD_ID="1" TEST_CODE="1" SAMPLE_TIME="2006-06-16 00:00:00.0" SUCCESSFUL_TEST_COUNT="90" SUCCESSFUL_TEST_PERCENT="90" ERROR_TEST_COUNT="5" ERROR_TEST_PERCENT="5" FAILED_TEST_COUNT="5" FAILED_TEST_PERCENT="5" TOTAL_TEST_COUNT="100"/>
+  <DAILY_TEST_STATS ID="28" ACTIVE_BUILD_ID="1" TEST_CODE="1" SAMPLE_TIME="2006-06-15 00:00:00.0" SUCCESSFUL_TEST_COUNT="90" SUCCESSFUL_TEST_PERCENT="90" ERROR_TEST_COUNT="5" ERROR_TEST_PERCENT="5" FAILED_TEST_COUNT="5" FAILED_TEST_PERCENT="5" TOTAL_TEST_COUNT="100"/>
+  -->
+
+  <GLOBAL_VCS_USER_EMAIL_MAP ID="0" VCS_USER_NAME="test_vcs_user_name" EMAIL="test_vcs_user_name@test"
+                             DESCRIPTION="test_description"/>
+
+
+  <!-- PROMOTION_POLICY  -->
+  <PROMOTION_POLICY ID="0" PROJECT_ID="0" NAME="Promotion policy 0" DESCRIPTION="Promotion policy 0" DELETED="N" TIMESTAMP="0"/>
+
+  <!-- PROMOTION_STEP  -->
+  <PROMOTION_STEP ID="0" PROMOTION_POLICY_ID="0" NAME="Step 0" DESCRIPTION="Step 0" LINE_NUMBER="0" DELETED="N" TIMESTAMP="0"/>
+  <PROMOTION_STEP ID="1" PROMOTION_POLICY_ID="0" NAME="Step 1" DESCRIPTION="Step 1" LINE_NUMBER="1" DELETED="N" TIMESTAMP="0"/>
+</dataset>

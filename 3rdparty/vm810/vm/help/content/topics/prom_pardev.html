@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<HTML>
+
+<HEAD>
+
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Promotion and Parallel Development</TITLE>
+
+<!--<Prom_ParDev.html>-->
+
+<!--<toc parent="working_with_promotion_models" label="Promotion and Parallel Development" anchor="Prom_ParDev" sortkey="04">-->
+<!--<index parent="promotion_groups" label="parallel development" anchor="Prom_ParDev">-->
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nUsing Promotion Models\nPromotion and Parallel Development");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+
+<BODY BGCOLOR="#ffffee">
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="Prom_ParDev"></A>Promotion and Parallel Development</H1>
+
+<P>
+
+Parallel development is a separate line of development that <A HREF="branchfile.html">branches</A> off of the main line
+
+of development. Typically, this occurs when development:
+
+</P>
+
+<UL>
+
+<LI>Makes changes, such as bug fixes, that they do not want to immediately affect the
+
+main line of development. For example, to make bug fixes to a release while work continues in development.
+
+<LI>Works on alternate versions of a product simultaneously (for example, <a href="paralleldevscenario.html">multi-platform development</a>).
+
+</UL>
+
+<P>
+
+To develop two versions of the same file in parallel when a promotion model exists, you
+
+must create a lowest-level group for each branch.
+
+</P>
+
+<P>
+
+The benefit of using a promotion model with parallel development is that you can control
+
+the number of branches that can be created from any one revision. Because an archive can
+
+have only one revision associated with a promotion group and you must always check out a
+
+revision at a lowest-level group, the number of lowest-level groups you define in your
+
+promotion model determines the number of locks that Version Manager will allow on a revision.
+
+Therefore, the number of lowest-level groups you define determines the number of branches
+
+that you can create from a revision. For example, if you define two lowest-level groups, you
+
+can have two branches-the main branch (the trunk) and one parallel branch.
+
+</P>
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+<TR>
+	<TD><A HREF="aboutbranching.html">About Branching</A></TD>
+	<TD><A HREF="definingpromomodel.html">Defining Promotion Models</A></TD>
+</TR>
+<TR>
+	<TD><A HREF="branchfile.html">Branching Files</A></TD>
+	<TD><a href="promotionlifecyclemgt.html">Promotion and Lifecycle Management</a></TD>
+</TABLE>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+
+</HTML>

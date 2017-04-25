@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Naming Conventions</TITLE>
+<!--<namingconventions.html>-->
+<!--<index parent="naming" label="conventions" anchor="namingconventions">-->
+<!--<index parent="version_labels" label="naming conventions" anchor="namingconventions">-->
+<!--<index parent="project_databases" label="naming conventions" anchor="namingconventions">-->
+<!--<index parent="projects" label="naming conventions" anchor="namingconventions">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="namingconventions"></A>Naming Conventions</H1>
+<P>You can use most alpha, numeric, and special characters when creating or renaming Version Manager project databases, projects, and version labels. Your operating system also determines the conventions that apply to file and directory names. </p>
+<P>You should never use spaces or tabs at the beginning or end of Version Manager names. When working in a cross-platform environment, remember what may work in one environment may not work for another environment.</p>
+<P>When naming files or directories, the following characters are prohibited by Version Manager and most operating systems:</p>
+<ul>
+	<li>Asterisk (*)
+	<li>Colon (:)
+	<li>Pipe (vertical bar) (|)
+	<li>Forward (/) and backward slash (\)
+	<li>Question mark (?) 
+	<li>Angle brackets (&gt;) and (&lt;)
+	<li>Tabs
+	<li>Quotation marks (&quot;)
+</ul>
+<P>Version Manager has the following limitations on path and other names:<br><br>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<tr>
+		<td><b>Component</b></td>
+		<td><b>Limitation</b></td>
+	</tr>
+	<tr>
+		<td>Project database names</td>
+		<td>The name cannot begin or end with a tab or blank space. Any character can be used in the name.</td>
+	</tr>
+		<tr>
+		<td>Project names</td>
+		<td>In addition to the characters listed above, do not begin or end names with a tab or blank space. Do not use the two-character name of <B>..</B>, the one-character name of <B>.</B>, or the one-character name of <b>@</b>.</td>
+	</tr>
+	<tr>
+		<td>User, group, and privilege set names</td>
+		<td>Maximum length is 30 characters.</td>
+	</tr>
+	<tr>
+		<td>Archive suffix</td>
+		<td>Maximum length is 10 characters. Suffixes longer than 10 characters will be truncated.</td>
+	</tr>
+	<tr>
+		<td>Archive name and path</td>
+		<td>Limited to 254 characters.</td>
+	</tr>
+	<tr>
+		<td>Version labels</td>
+		<td>Limited to 254 characters. Do not use a colon (:), double quotes (&quot;), a plus sign (+), or a minus sign (-).</td>
+	</tr>
+	<tr>
+		<td>Workfile name and path</td>
+		<td>Limited to 254 characters.</td>
+	</tr>
+	<tr>
+		<td>Temporary file name and path</td>
+		<td>Limited to 254 characters.</td>
+	</tr>
+	<tr>
+		<td>Workpath and lock record</td>
+		<td>Limited to 254 characters.</td>
+	</tr>
+	<tr>
+		<td>Configuration file name and path</td>
+		<td>Limited to 254 characters.</td>
+	</tr>
+	<tr>
+		<td>Access control database name and path</td>
+		<td>Limited to 254 characters.</td>
+	</tr>
+	<tr>
+		<td>pvcs_bindir name and path</td>
+		<td>Limited to 254 characters. On UNIX systems, it must be able to hold the name of the vconfig file as well as the separator character.</td>
+	</tr>
+	<tr>
+		<td>Catalog directory name and path</td>
+		<td>Limited to 254 characters.</td>
+	</tr>
+	</table>
+
+<H2>Universal Naming Conventions</H2>
+
+<P>Version Manager supports the following uses of universal naming conventions (UNC):</P>
+<UL>
+<LI>In the nfsmap file, for cross-platform environments.
+<LI>In the desktop client, within all path names.
+<LI>In the command-line interface, within all path names.
+</UL>
+<BR><BR>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

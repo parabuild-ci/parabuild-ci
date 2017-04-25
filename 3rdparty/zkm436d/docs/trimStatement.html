@@ -1,0 +1,163 @@
+<!-- Copyright 2005 Zelix Pty Ltd (ABN 47 078 740 093) -->
+<html>
+<head>
+<title>Zelix KlassMaster - trim statement</title>
+   <meta name="keywords" content="java obfuscator,java code obfuscator,obfuscation">
+   <meta name="description" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <meta name="classification" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <link rel=stylesheet href="../ZKM.css" TYPE="text/css">
+</head>
+<body background="../images/small-white-mist1.jpg" bgcolor="#E1E1E1">
+<center><a href="index.html"><img src=../images/ZKM_b4.gif alt="Zelix KlassMaster" width=264 height=62 border=0></a></center>
+<hr>
+<center>
+<table width=770 border=0>
+   <tr>
+      <td>
+         <h1>The <code>trim</code> Statement</h1>
+         The ZKM Script <code>trim</code> statement trims all opened classes. It removes classes, fields and methods 
+         that have not been explicitly or implicitly excluded by a preceding <a href=trimExcludeStatement.html><code>trimExclude</code></a> statement.
+         <p>
+         The <code>trim</code> statement can also remove specified bytecode attributes.
+         </ul>
+         The remainder of this page is organized into the following sections.
+         <ul>
+            <li><a href="#explanation">Explanation</a>
+            <li><a href="#examples">Examples</a>
+            <li><a href="#syntax">Syntax</a>
+         </ul>
+
+         <h2><a name="explanation">Explanation</a></h2>          
+<h3><a name="source">deleteSourceFileAttributes parameter</a></h3>
+Set this parameter to <code>true</code> to remove any Source File attributes from your classes. 
+Source File Attributes store the name of the source file that was compiled to produce a particular class.
+This information is typically only used to report the source file name when producing a stack trace. 
+However, some JVMs may not display line numbers in a stack trace for a particular class unless a Source File attribute is present in that class.
+So, if your processed bytecode will have Line Number information (scrambled or otherwise), then you should not select this box.
+
+<h3><a name="deprecated">deleteDeprecatedAttributes parameter</a></h3>
+Set this parameter to <code>true</code> to remove any Source File attributes from your classes. 
+remove any Deprecated attributes from your classes. 
+Deprecated Attributes are added to class files by compilers in response to &quot;@deprecated&quot; javadoc parameters.
+Typically, these attributes are only used by compilers to determine when &quot;deprecated&quot; warnings should be reported.
+So, if you do not expect users to compile new classes against your obfuscated classes, then you can safely select this box.
+
+<h3><a name="annotation">deleteAnnotationAttributes parameter</a></h3>
+Annotation attributes where introduced with the JDK 1.5. Set this parameter to <code>true</code> to remove any annotation attributes from your classes. 
+
+<h3><a name="unknown">deleteUnknownAttributes parameter</a></h3>
+Set this parameter to <code>true</code> to remove any attributes from your classes that are not recognized by Zelix KlassMaster. 
+If Zelix KlassMaster doesn't recognize an attribute then it most probably is not a standard attribute.
+Such attributes may be added to your bytecode by various utilities but are typically not required for the running of your classes.
+If you select this option then Zelix KlassMaster will report the names of the unknown attributes that it deletes.
+         <p>
+         The <code>trim</code> statement has useful defaults which are as follows:
+         <p>
+         <table border=1>
+            <tr>
+               <th>
+                  Omitted parameter
+               </th>
+               <th>
+                  Effect
+               </th>
+            </tr>
+            <tr>
+               <td>
+                  <code><b>deleteSourceFileAttributes </b></code>
+               </td>
+               <td>
+                  <code><b>deleteSourceFileAttributes=false</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <code><b>deleteDeprecatedAttributes</b></code>
+               </td>
+               <td>
+                  <code><b>deleteDeprecatedAttributes=true</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <code><b>deleteAnnotationAttributes</b></code>
+               </td>
+               <td>
+                  <code><b>deleteAnnotationAttributes=true</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <code><b>deleteUnknownAttributes</b></code>
+               </td>
+               <td>
+                  <code><b>deleteUnknownAttributes=false</b></code>
+               </td>
+            </tr>
+         </table>
+         <p>
+
+         <h2><a name="examples">Examples</a></h2>          
+<pre>
+trim;                       //Trim using the defaults
+
+trim deleteSourceFileAttributes=false    //Don't remove Source File Attributes
+     deleteDeprecatedAttributes=true     //Remove Deprecated Attributes
+     deleteAnnotationAttributes=true      //Remove annotation attributes
+     deleteUnknownAttributes=false;      //Don't remove unrecognized attributes
+</pre>
+         <h2><a name="syntax"><a href="langZKMScript.html#notation">Syntax</a></a></h2> 
+         <table>
+            <tr>
+               <td>
+                  <code><b>"<u>trim</u>"</b></code>
+               </td>
+               <td>
+                  <code><b>["<u>deleteSourceFileAttributes</u>" "=" ("<u>true</u>" | "<u>false</u>")]</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>
+               </td>
+               <td>
+                  <code><b>["<u>deleteDeprecatedAttributes</u>" "=" ("<u>true</u>" | "<u>false</u>")]</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>
+               </td>
+               <td>
+                  <code><b>["<u>deleteAnnotationAttributes</u>" "=" ("<u>true</u>" | "<u>false</u>")]</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>
+               </td>
+               <td>
+                  <code><b>["<u>deleteUnknownAttributes</u>" "=" ("<u>true</u>" | "<u>false</u>")]&nbsp;"<u>;</u>"</b></code>
+               </td>
+            </tr>
+         </table>
+     </td>
+   </tr>
+</table>
+</center>
+<hr>
+<center>
+<table>
+   <tr>
+      <td>
+          <a href=resetTrimExclusionsStatement.html><img src=../images/larrw.gif alt="ZKM Script resetTrimExclusions statement"></a>
+      </td>
+      <td>
+         <a href=langZKMScript.html><img src=../images/uarrw.gif alt="The ZKM Script Language"></a>
+      </td>
+      <td>
+         <a href=excludeStatement.html><img src=../images/rarrw.gif alt="ZKM Script exclude statement"></a>
+      </td>
+   </tr>
+</table>
+</center>
+Copyright &copy; 2005 <a href="mailto:WebMaster@zelix.com"><font size=-1>Zelix Pty Ltd</font></a> (ABN 47 078 740 093)
+</body>
+</html>

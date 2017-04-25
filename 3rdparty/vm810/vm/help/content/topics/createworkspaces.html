@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Creating Workspaces</TITLE>
+<!--<createworkspaces.html>-->
+<!--<toc parent="working_with_workspaces" label="Creating Workspaces" anchor="createworkspaces" sortkey="01">-->
+<!--<index parent="workspaces" label="creating" anchor="createworkspaces">-->
+<!--<index parent="creating" label="workspaces" anchor="createworkspaces">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with Workspaces\nCreating Workspaces");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="createworkspaces">Creating Workspaces</A></H1>
+<P>A <a href="aboutworkspaces.html">workspace</a> is a collection of work settings defined for a project database. You can create multiple workspaces for a project database; however, each user can set only one workspace on a project database at a time.
+<p>Follow these guidelines when creating workspaces:</P>
+<ul>
+<li>You cannot create a new workspace using the name <i>Root Workspace</i>. There can only be one Root Workspace defined for a project database, and that is the default workspace that is automatically set on a project database when it is first created. 
+<li>You cannot create a new workspace using the name of an existing public workspace or the name of any of your own private workspaces. 
+<li>Public workspaces can be created from the Root Workspace or a public workspace.
+<li>Private workspaces can be created from the Root Workspace, a public workspace, or a private workspace.
+</ul> 
+<H2>To create a workspace:</H2>
+<OL>
+	<LI>Select the project database for which you want to create a workspace.<BR><BR>
+	<LI>Select File | Set Workspaces. The Set Workspaces dialog box appears with a list of all top-level public workspaces and top-level private workspaces owned by you that are defined for the project database. The top-level workspaces can be expanded to display all public workspaces and all of your private workspaces.<br><br>
+	<li>Select a workspace from which the new workspace will inherit its settings. Public workspaces cannot inherit from private workspaces.<BR><BR>
+	<LI>Click New. The New Workspace dialog box appears.<br><br>
+	
+	<LI>Enter the name of the new workspace in the <B>Name</B> field.<br><br>
+
+	<li>If you want to make the new workspace a private workspace, select the <B>Private</b> check box. If this check box is not selected, the workspace will be public. Note that if you do not have the Unlimited or SuperUser privilege, the Private check box will always be selected and you will not be able to deselect it.<BR><BR>
+	<LI>Click OK to close the Set Workspace dialog box. The new workspace is now set as the current workspace.<br><br>
+	<LI>To define the settings for the new workspace, do the following:
+	<OL type=a>
+	<LI>Select File | Properties. The Properties dialog box appears with the Project Database tab active.<BR><BR>
+<LI>Click the Workspace Settings tab. This tab lists the workspace settings.<BR><BR>
+<LI>To change the settings, do any of the following:
+<UL>
+<LI>Modify the workfile location. You can define a relative location by appending a directory name to the initial workfile location or by entering only a directory name, such as qa. When you enter only a directory name, Version Manager appends this directory to the workfile location of the parent project. You cannot specify a relative workfile location for a project database.<BR><BR>
+Workfile locations can contain $HOME at the root of their paths (for example, on UNIX, $HOME/work could expand to /usrs/cherylc/work). Version Manager substitutes the value of the HOME environment variable to compute the workfile location. The use of $HOME allows you to define a path that is automatically individualized for your users according to the value of their HOME environment variable.<BR><BR>
+<LI>
+Specify the revision to operate on for all actions in the Default Version field. You can specify a revision number, or a version label. By default, Version Manager uses the tip revision.<BR><BR>
+<LI>
+Define automatic branching by entering the appropriate version label for Base, Branch, and Default. Base Version specifies the version label that you assigned to mark the revision from which you want to start a branch. Branch Version specifies the version label that you assigned to the tip of the branch. Initially, this will be the revision from which you want to branch. As you check in subsequent branch revisions, this label will automatically reassign itself to the tip revision on the branch. Default Version is the version label you specified for the Branch Version option. This version label tells Version Manager which revision to operate on for all actions.<BR>
+Note that these values will override the values in any configuration file associated with the project database or projects if these options are not disallowed in the master configuration file associated with the project database.<BR><BR>
+<LI>Define a default lowest-level promotion group by selecting one from the <b>Default Promotion Group</b> field. This field is available only if a <A HREF="aboutprommodels.html">promotion model</a> is in effect for the selected project database or project. This setting is useful when a promotion model has more than one lowest-level promotion group defined. Default promotion group is a lowest-level promotion group of a promotion model; by default, Version Manager associates the default promotion group you specify with revisions when checking out revisions, locking revisions, and adding workfiles. By defining a default promotion group, you eliminate the need for a user to specify which lowest-level promotion group to use for these actions.<BR><BR>
+</OL>
+</UL>
+<LI>Click OK. You have created a new workspace and defined its settings. If you want to define workspace settings for any of the projects in the project database, go to Step 10.<BR><BR>
+<LI>To define workspace settings for a project in the project database, select the project in the project pane and repeat Steps 8 and 9.
+</ul>
+</OL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="aboutworkspaces.html">About Workspaces</A></TD>
+		<TD><A HREF="namingconventions.html">Naming Conventions</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="renameworkspace.html">Renaming Workspaces</a></td>
+		<TD><A HREF="deleteworkspace.html">Deleting Workspaces</a></td>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

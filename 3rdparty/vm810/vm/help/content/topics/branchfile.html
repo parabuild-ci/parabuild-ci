@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Branching Files</TITLE>
+<!--<branchfile.html>-->
+<!--<toc parent="branching" label="Branching Files" anchor="branchfile" sortkey="04">-->
+<!--<index parent="branching" label="files" anchor="branchfile">-->
+<!--<index parent="files" label="branching" anchor="branchfile">-->
+<!--<index parent="revisions" label="branching" anchor="branchfile">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nBranching and Merging Files\nBranching\nBranching Files");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="branchfile"></A>Branching Files</H1>
+<p>You branch revisions to create a separate line of development that diverges from a revision on the trunk (main line of development) or from another branch.</p>
+
+<H2><A NAME="branchnontip"></A>To create a branch by checking in a non-tip revision:</H2>
+<OL>
+	<LI>From the Revision pane, select the non-tip revision that you want to use as the starting point of the branch.<br><br>
+	<LI>Select Actions | Check Out. The Check Out File dialog box appears.<br><br>
+	<LI>Click OK. A confirmation dialog box warns that locking the selected revision will create a branch when the revision is checked in and asks if you wish to check out the file anyway.<br><br>
+	<LI>Click Yes. Version Manager checks out the revision to the location currently set as the workfile location and places a lock on the revision.<br><br>
+	<LI>Modify the workfile as necessary and save your changes.<br><br>
+	<LI>To check the workfile back in to the archive, select Actions | Check In. The Check In dialog box appears.<br><br>
+	<LI>Enter a change description in the <b>Description</b> field.<br><br>
+	<LI>Click OK. Version Manager creates a branch from the non-tip revision and displays the branches (illustrated by the branch icon <img src="../graphics/branchic.gif" width="16" height="16" border="0"> ) and assigns it the branch point revision number followed by 1.*, and assigns the initial branch revision the branch point revision number followed by 1.0.
+<br>
+<IMG SRC="../graphics/ckinontip.gif" WIDTH="321" HEIGHT="124" BORDER="0" ALT>
+</OL>
+<BR><BR>
+<H2><A NAME="branchtip"></A>To force a branch at the tip revision:</H2>
+<OL>
+	<LI>From the Revision pane, select the tip revision you want to use as the starting point of the branch.<br><br>
+	<LI>Select Actions | Check Out. The Check Out File dialog box appears.<br><br>
+	<LI>Click OK. The tip revision is checked out and locked.<br><br>
+	<LI>Modify the workfile as necessary and save your changes.<br><br>
+	<LI>Select Actions | Check In. The Check In dialog box appears.<br><br>
+	<LI>Enter a change description in the <b>Description</b> field.<br><br>
+	<LI>Click the Advanced tab and select the <B>Force branch</b> check box.<br><br>
+	<LI>Click OK. Version Manager creates a branch from the tip revision and displays the branches  (illustrated by the branch icon <img src="../graphics/branchic.gif" width="16" height="16" border="0"> ) in the Revision pane.
+</OL>
+<BR><BR>
+<H2><A NAME="branchmultilock"></A>To create a branch by checking in a revision with multiple locks:</H2>
+To check in a revision with multiple locks, you must first <A HREF="multilockbranchsetup.html">enable your project/project database for multiple locking</A>.
+<OL>
+	<LI>From the Revision pane, select a locked revision.<br><br>
+	<LI>To apply a secondary lock, select Actions | Check Out or Actions| Lock. The Check Out File or Lock File dialog box appears.<br><br>
+	<LI>Click OK. A confirmation dialog box warns that the revision is already locked and asks if you want apply an additional lock.<br><br>
+	<LI>Click Yes. A second confirmation dialog box warns that locking the selected revision will force a branch when the revision is checked in and asks if you wish to lock or check out the file anyway.<br><br>
+	<LI>Click Yes. Version Manager checks out or locks the revision.<br><br>
+	<LI>Modify the workfile as necessary and save your changes.<br><br>
+	<LI>Select Actions | Check In. The Check In dialog box appears.<br><br>
+	<LI>Enter a change description in the <b>Description</b> field.<br><br>
+	<LI>Click OK. Because you are checking in a workfile with multiple locks, the Select Revision dialog box appears.<BR><BR>
+<LI>From the <B>New Revision</B> drop-down list, select the revision number that will create a new branch when the workfile is checked in.<BR><BR>
+<LI>Click OK. Version Manager creates a branch from the revision and displays the branches  (illustrated by the branch icon <img src="../graphics/branchic.gif" width="16" height="16" border="0"> ) in the Revision pane.
+</OL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="autobranch.html">About Automatic Branching</A></TD>
+		<TD><A HREF="setautobranch.html">Setting Up Automatic Branching</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="aboutbranching.html">About Branching</A></TD>
+		<TD><A HREF="aboutbranchusemultilock.html">About Branching Using Multiple Locks</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="multilockbranchsetup.html">Setting Up Multiple Locks for Branching</A></TD>
+		<TD><A HREF="aboutbranching.html#branchmultilock">How Branches are Created</A></TD>
+	</tr>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

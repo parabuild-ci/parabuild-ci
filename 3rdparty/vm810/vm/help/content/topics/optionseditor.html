@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Options Dialog Box/Applications Tab</TITLE>
+<!--<optionseditor.html>-->
+<!--<index parent="options" label="Options dialog box/Applications tab" anchor="optionseditor">-->
+<!--<control base="pvcs.suite.gui.PvcsOptionsDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="optionseditor"></A>Options Dialog/Applications Tab</H1>
+<P>Use the Applications tab in the Options dialog box (View | Options) to:</P>
+<UL>
+    <LI>Select the editor that Serena ChangeMan Version Manager will use to view and edit your workfiles. UNIX users must also specify a location for the editor.
+	<LI>Specify the action that Version Manager performs when you double-click a versioned file.
+	<LI>(Unix users only.) Specify the location of the HTML browser that Version Manager will use to display help and reports.
+	<LI>Select to use a text editor or an HTML browser to view Version Manager reports. Using an HTML browser, you can customize the presentation of the reports and make the reports available via the Internet or an intranet. When you use a text editor, Version Manager generates reports quickly, although your formatting options are limited.
+</UL>
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><b>Use default Windows associations</b></TD>
+		<TD><!--<control name="OptionsEditor.USEWINDEFAULT_CB">-->
+		This field is available on Windows platforms only. Select to use Windows default associations for files. For example, for files with a TXT extension, Version Manager would start Microsoft Notepad. If Windows cannot find an association, you can configure Version Manager to use a specified editor by completing the <B>Editor Location</B> field. Windows uses the registry information it stores for Explorer. In Explorer you can modify which application is launched when you double-click a file extension by selecting View | Options | File Types tab. 
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Editor Location</b></TD>
+		<TD><!--<control name="OptionsEditor.EDITORPATH_EDIT">-->Windows users do not need to specify an editor location if using default Windows associations. Enter the location of the editor program or click the Browse button and select the location. UNIX platforms cannot use default file associations, so you must define a path and an editor or Version Manager will not be able to launch the file. If you want to use a GUI-based editor in UNIX, you can specify the path and name of the editor (for example: /usr/dt/bin/dtpad). If you are using a text editor that is <i>not</i> a GUI-based application that launches its own window (such as vi), you will need to launch the editor in an xterm or other type of window (for example: xterm -e /bin/vi). 
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Default Double-Click Action</b></TD>
+		<TD><!--<control name="OptionsEditor.DOUBLECLICK_ACTION_CHOICE">-->
+		Select the action Version Manager will perform when you double-click a file:<BR><BR>
+		<b>Ask</b> displays a dialog box that asks the user which action to take--view the file or edit the file.<BR><BR>
+		<b>View file</b> gets the file for viewing only.<BR><BR>
+		<b>Edit file</b> checks out the file for editing. Version Manager locks the file and opens it in the editor you specified.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><B>Browser Location</b></td>
+		<TD>This field is available on UNIX platforms only.<!--<control name="OptionsEditor.BROWSERPATH_EDIT">--> Enter the location of the HTML browser or click the Browse button to select it. You must enter the location of an HTML browser in this field in order to view online help or to view reports in HTML format.<!--</control>--></TD></TR>
+	<TR>
+		<TD><b>Report Viewer</b></TD>
+		<TD>Select how Version Manager will display the report once it is generated: <br><BR><b>Use text editor:</b> <!--<control name="OptionsEditor.TEXT_RB">-->Displays Version Manager reports inside a text editor. For UNIX, if you select this check box, enter the editor's location in the <B>Editor Location</b> field above. Selecting this option enables Version Manager to generate reports quickly.<!--</control>--><br><BR>
+		<B>Use default HTML browser:</b> <!--<control name="OptionsEditor.HTML_RB">-->Displays Version Manager reports in HTML format. For UNIX, if you select this checkbox, enter the browser's location in the <b>Browser Location</b> field. Selecting this option enables you to format the generated report using templates, style sheets, and logos.  <!--</control>--><br>
+		
+</TD>
+	</TR>
+</TABLE>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a href="setreportoptions.html">Setting Report Options</a></TD>
+		<TD><a href="seteditor.html">Setting Your Default Editor</a></TD></TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

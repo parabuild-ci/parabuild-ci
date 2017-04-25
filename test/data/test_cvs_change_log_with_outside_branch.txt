@@ -1,0 +1,95 @@
+? test_cvs_change_log_with_outside_branch.txt
+
+RCS file: /opt/cvs/cvsroot/test/second_sourceline/src/readme.txt,v
+Working file: second_sourceline/src/readme.txt
+head: 1.1
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2004/03/04 07:53:52;  author: slava;  state: Exp;
+Added readme.txt
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/test/sourceline/alwaysvalid/src/readme.txt,v
+Working file: sourceline/alwaysvalid/src/readme.txt
+head: 1.8
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 8;	selected revisions: 8
+description:
+----------------------------
+revision 1.8
+date: 2004/05/14 22:16:27;  author: slava;  state: Exp;  lines: +1 -0
+Added line to check if appears in the "branch log"
+----------------------------
+revision 1.7
+date: 2004/03/04 09:14:47;  author: slava;  state: Exp;  lines: +1 -0
+Added more changes
+----------------------------
+revision 1.6
+date: 2004/01/16 04:09:23;  author: slava;  state: Exp;  lines: +1 -0
+Added empty line
+----------------------------
+revision 1.5
+date: 2003/11/23 23:11:50;  author: slava;  state: Exp;  lines: +1 -0
+Added line
+----------------------------
+revision 1.4
+date: 2003/09/10 03:14:53;  author: slava;  state: Exp;  lines: +0 -1
+Test
+----------------------------
+revision 1.3
+date: 2003/09/09 05:31:45;  author: slava;  state: Exp;  lines: +1 -0
+Test
+----------------------------
+revision 1.2
+date: 2003/08/30 00:28:00;  author: slava;  state: Exp;  lines: +1 -0
+Added second change
+----------------------------
+revision 1.1
+date: 2003/08/29 16:23:27;  author: slava;  state: Exp;
+
+Added readme.txt so that there are files on the test dir to allow tests pick up changes
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/test/sourceline/alwaysvalid/src/Attic/readme_in_test_branch.txt,v
+Working file: sourceline/alwaysvalid/src/readme_in_test_branch.txt
+head: 1.1
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2004/05/14 21:01:26;  author: slava;  state: dead;
+branches:  1.1.2;
+file readme_in_test_branch.txt was initially added on branch test_branch.
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/test/sourceline/alwaysvalid/src/Attic/test_delete.txt,v
+Working file: sourceline/alwaysvalid/src/test_delete.txt
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/08/30 00:48:04;  author: slava;  state: dead;  lines: +0 -0
+Removed file
+----------------------------
+revision 1.1
+date: 2003/08/30 00:39:43;  author: slava;  state: Exp;
+Added file to be deleted for log testing purposes
+=============================================================================

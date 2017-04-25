@@ -1,0 +1,46 @@
+#!/bin/sh
+
+os=`uname -s`
+case ${os} in
+  Win*)
+    # mks doesn't have a /bin/sh, only ksh. Furthermore, a simple
+    # dirname $0 with mks always returns ".", so it is insufficient for
+    # determining the install directory. mks provides a which command,
+    # but it won't locate shell scripts, only binaries. The  whence command,
+    # which is ksh specific, will locate shell scripts, so we use it here.
+    SCRIPT_PATH=`whence "$0"`
+    BIN_DIR=`dirname "${SCRIPT_PATH}"`
+    JAVA_BIN=`whence java`
+    JAVA_BIN_DIR=`dirname "${JAVA_BIN}"`
+    ;;
+  *)
+    BIN_DIR=`/usr/bin/dirname "${0}"`
+    JAVA_BIN=`which java`
+    if [ ! -x "$JAVA_BIN" ] ; then
+      echo "Could not determine java bin directory: set JAVA_HOME and try again"
+      exit 1
+    fi
+    JAVA_BIN_DIR=`dirname "${JAVA_BIN}"`
+    ;;
+esac
+
+JVMSTAT_HOME=`(cd "${BIN_DIR}/.." && pwd)`
+JVMSTAT_JAVA_HOME=`(cd "${JAVA_BIN_DIR}/.." && pwd)`
+VISUALGC_JAR=${JVMSTAT_HOME}/jars/visualgc.jar
+
+if [ ! -x "${JVMSTAT_JAVA_HOME}/bin/jps" -a \
+     ! -x "${JVMSTAT_JAVA_HOME}/bin/jps.exe" ] ; then
+  echo "A J2SE 5.0 or later JDK is required to run this tool."
+  echo "The java version found in the PATH is:"
+  java -version
+  exit 1
+fi
+
+if [ ! -f "${JVMSTAT_JAVA_HOME}/lib/tools.jar" ] ; then
+  echo "A J2SE 5.0 or later JDK is required to run this tool."
+  exit 1
+fi
+
+# including tools.jar in the standard classpath has no effect with -jar
+# and tools.jar can't be included in the jar manifest.
+java $VMARGS -Xbootclasspath/p:"$JVMSTAT_JAVA_HOME/lib/tools.jar" -jar "${VISUALGC_JAR}" $*

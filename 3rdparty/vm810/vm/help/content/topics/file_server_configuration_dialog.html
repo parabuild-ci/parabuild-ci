@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>File Server Configuration Dialog Box</TITLE>
+<!--<file_server_configuration_dialog.html>-->
+<!--<control base="pvcs.vm.vmgui.VmGuiFileServerConfigurationDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1>File Server Configuration Dialog Box</H1>
+<P>Use the File Server Configuration dialog box (Admin | File Servers) to tell Serena ChangeMan Version Manager clients which Version Manager File Server to use. To make use of this feature, you must have a functional Version Manager File Server.</P>
+
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><b>File Servers</b> list</TD>
+		<TD><!--<control name="FileServerConfiguration.SERVER_NAME">-->Version Manager searches starting from the top of this list. Select a server in this list to reposition, test, or delete.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><img src="../graphics/ldap_down_button.gif"> <img src="../graphics/ldap_up_button.gif"></TD>
+		<TD><!--<control name="FileServerConfiguration.UP_BUTTON">-->Click to reposition the selected server in the <b>File Servers</b> list. Version Manager searches starting from the top of the list.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><img src="../graphics/vms_fsc_delete_button.gif"></TD>
+		<TD><!--<control name="FileServerConfiguration.DELETE_BUTTON">-->Click to delete the selected server from the list.<!--</control>--></TD>
+	</TR>
+	<tr>
+		<TD><img src="../graphics/vms_fsc_add_button.gif"></TD>
+		<TD><!--<control name="FileServerConfiguration.ADD_BUTTON">-->Click to add a server to the <b>File Servers</b> list. The <a href="file_server_url_configuration_dialog.html">Add File Server URL dialog box</a> appears.<!--</control>--></TD>
+	</TR>
+	<tr>
+		<TD><img src="../graphics/vms_fsc_edit_button.gif"></TD>
+		<TD><!--<control name="FileServerConfiguration.EDIT_BUTTON">-->Click to edit the selected server URL. The <a href="file_server_edit_url_configuration_dialog.html">Edit File Server URL dialog box</a> appears.<!--</control>--></TD>
+	</TR>
+	<TR><TD><b>Test</b></TD>
+		<TD><!--<control name="FileServerConfiguration.TEST_BUTTON">-->
+		Click to test the connection to the selected server.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Store server configuration information in</b></TD>
+		<TD><!--<control name="FileServerConfiguration.SERVER_CONFIGURATION_INFO_TEXT_FIELD">-->Enter a path and file name (<FONT Class="syntax">*.ini</FONT>) in which to store server configuration information. To ease configuration for all users, setup the list of servers then place the configuration file on a network where all users can access it. Then the users need only specify the shared location of the configuration file to automatically populate their own <b>File Servers</b> list.
+<!--</control>--></TD>
+	</TR>
+	<TR><TD><b>OK</b></TD>
+		<TD>
+		Click to apply the settings and close the dialog box.
+		</TD>
+	</TR>
+</TABLE>
+
+<h2>See Also</h2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="about_file_server.html">About the Version Manager File Server</A></TD>
+		<TD><A HREF="configuring_clients_for_file_server.html">Configuring Clients for Use with File Servers</A></TD>
+	</tr>
+	<TR>
+        <TD><i>Serena ChangeMan Version Manager Administrator's Guide</i></TD>
+		<TD></TD>
+	</tr>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>
+

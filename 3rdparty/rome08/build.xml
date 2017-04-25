@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project default="jar" name="rome" basedir=".">
+  
+  <dirname property="master.basedir" file="${ant.file.rome}" />
+  <property file="${master.basedir}/build.properties"/>
+  <property file="build.properties"/>
+  <xmlproperty file="project.xml" prefix="maven"/>
+  <property name="defaulttargetdir" location="target" />
+  <property name="libdir" value="${defaulttargetdir}/lib" />
+  <property name="classesdir" value="${defaulttargetdir}/classes" />
+  <property name="testclassesdir" value="${defaulttargetdir}/test-classes" />
+  <property name="testreportdir" value="${defaulttargetdir}/test-reports" />
+  <property name="distdir" location="dist" />
+  <property name="javadocdir" location="dist/docs/api" />
+  <property name="final.name" value="${maven.project.id}-${maven.project.currentVersion}" />
+  <property name="jdom" location="${libdir}/jdom-1.0.jar" />
+  <available property="tests.present" file="src/test"/>
+  <available property="data.present" file="src/data"/>
+  <available property="noget" file="${jdom}"/>
+
+  <path id="build.classpath">
+    <fileset dir="${libdir}">
+      <include name="**/*.jar" />
+    </fileset>
+  </path>
+  
+  <target name="init">
+<!--  	<echo>${maven.project.dependencies.dependency.version}</echo> -->
+<!-- if many dependencies, gives you all values separated by comma -->
+<!-- such as b10,b11 -->
+<!-- now way to do xpath -->  	
+    <tstamp />
+    <condition property="tests.available">
+       <and>
+         <available classname="junit.framework.Test" />
+         <available file="src/test"/>
+       </and>
+     </condition>
+    <available property="Junit.present" classname="junit.framework.Test" />
+  </target>
+
+  <target name="setproxy" if="maven.proxy.host" description="Sets the proxy" depends="init">
+  	<setproxy proxyhost="${maven.proxy.host}" proxyport="${maven.proxy.port}"/>
+  </target>
+	  	   
+  <target name="compile" description="Compile the code" depends="get-deps">
+    <mkdir dir="${classesdir}" />
+    <javac destdir="${classesdir}" deprecation="true" debug="true" optimize="false" excludes="**/package.html">
+      <src>
+        <pathelement location="src/java" />
+      </src>
+      <classpath refid="build.classpath" />
+    </javac>
+    <copy todir="${classesdir}">
+      <fileset dir="src/java">
+        <include name="**/*.properties" />
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="subproject.init">
+    <copy todir="${libdir}">
+      <fileset dir="${master.basedir}/target">
+        <include name="*.jar" />
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="jar" description="Create the jar" depends="compile">
+    <jar jarfile="${defaulttargetdir}/${final.name}.jar" excludes="**/package.html" basedir="${classesdir}" />
+  </target>
+  
+  <target name="clean" description="Clean up the generated directories">
+    <delete dir="${defaulttargetdir}" />
+    <delete dir="${distdir}" />
+  </target>
+  
+  <target name="dist" description="Create a distribution" depends="jar, javadoc">
+    <mkdir dir="dist" />
+    <copy todir="dist">
+      <fileset dir="${defaulttargetdir}" includes="*.jar" />
+      <fileset dir="${basedir}" includes="LICENSE*, README*" />
+      <fileset dir="${libdir}" includes="*.jar" />
+    </copy>
+  </target>
+  
+  <target name="test" description="Run the test cases" if="test.failure" depends="internal-test">
+    <fail message="There were test failures." />
+  </target>
+  
+  <target name="internal-test" if="tests.available" depends="junit-present,compile-tests">
+    <mkdir dir="${testreportdir}" />
+    <junit failureproperty="test.failure" printSummary="yes" fork="onceonly" haltonerror="true">
+      <formatter type="xml" />
+      <formatter usefile="false" type="plain" />
+      <classpath>
+        <path refid="build.classpath" />
+        <pathelement path="${testclassesdir}" />
+        <pathelement path="${classesdir}" />
+      </classpath>
+      <batchtest todir="${testreportdir}">
+        <fileset dir="src/test">
+          <include name="**/Test*.java" />
+        </fileset>
+      </batchtest>
+    </junit>
+  </target>
+  
+  <target name="junit-present" unless="Junit.present" depends="init">
+    <echo>================================= WARNING ================================</echo>
+    <echo>Junit isn't present in your ${ANT_HOME}/lib directory. Tests not executed.</echo>
+    <echo>==========================================================================</echo>
+  </target>
+  
+  <target name="compile-tests" if="tests.available" depends="junit-present,compile,copy-data">
+    <mkdir dir="${testclassesdir}" />
+    <javac destdir="${testclassesdir}" deprecation="true" debug="true" optimize="false" excludes="**/package.html">
+      <src>
+        <pathelement location="src/test" />
+      </src>
+      <classpath>
+        <path refid="build.classpath" />
+        <pathelement path="${classesdir}" />
+      </classpath>
+    </javac>
+  </target>
+  
+  <target name="copy-data" if="data.present">
+    <copy todir="${testclassesdir}">
+      <fileset dir="src/data">
+        <include name="**/*.xml" />
+      </fileset>
+    </copy>    
+  </target>
+  
+  <target name="javadoc" description="Generate javadoc" depends="get-deps">
+    <mkdir dir="${javadocdir}" />
+    <tstamp>
+      <format pattern="${maven.project.inceptionYear}-yyyy" property="year" />
+    </tstamp>
+    <property name="copyright" value="Copyright &amp;copy;  ${maven.project.organization.name}. All Rights Reserved." />
+    <property name="title" value="Rome, Atom/RSS Java utilities ${maven.project.currentVersion} API" />
+    <javadoc use="true" private="true" destdir="${javadocdir}" author="true" version="true" sourcepath="src/java" packagenames="com.sun.syndication.*" windowtitle="${title}">
+    	  <doctitle>${title}</doctitle>
+    	  <bottom>${copyright}</bottom>
+      <classpath>
+        <path refid="build.classpath" />
+      </classpath>
+    </javadoc>
+  </target>
+  
+  <target name="get-deps" unless="noget" depends="init, setproxy">
+    <mkdir dir="${libdir}" />
+    <get dest="${jdom}" usetimestamp="true" ignoreerrors="true" src="http://www.ibiblio.org/maven/jdom/jars/jdom-1.0.jar" />
+  </target>
+  
+</project>

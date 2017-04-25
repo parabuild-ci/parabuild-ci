@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Project Security Dialog Box/Users</TITLE>
+<!--<adminsecurityusers.html>-->
+<!--<index parent="access_control_database" label="Project Security/Users dialog box" anchor="adminsecurityusers">-->
+<!--<index parent="security" label="Project Security/Users dialog box" anchor="adminsecurityusers">-->
+<!--<index parent="users" label="Project Security/Users dialog box" anchor="adminsecurityusers">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiProjectSecurityTabbedDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="adminsecurityusers"></A>Project Security/Users</H1>
+<P>Use the Project Security dialog box (Admin | Security | Users) to modify, create, duplicate, or delete the definition of a User in an access control database. To create, duplicate, or delete a User, use the appropriate button in the lower-left corner of this dialog box.</P>
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+		<TR>
+	<TD COLSPAN=2><CENTER><B>General Tab</b></center></TD>
+	</TR>
+	<TR><TD><b>Name</b></TD>
+		<TD><!--<control name="ProjectSecurityUserInformation.USER_ID_EDIT">-->
+		Displays the user ID that is selected in the All Users list. This is a read-only field.
+		<!--</control>--></TD>
+	</TR>
+	<TR><TD><b>Expires on</b></TD>
+		<TD><!--<control name="ProjectSecurityUserInformation.EXPIRES_ON_EDIT">-->
+		Displays the date and time on which this user ID will expire, if any. To modify this date or add an expiration date, enter the date in the format that you have set for your operating system. <!--</control>-->On Windows, you set the date and time formats from the Control Panel | Regional Settings. On UNIX, you define the formats by setting the PVCS_DATE_FORMAT and PVCS_TIME_FORMAT environment variables. For the best results, we recommend that you set the PVCS_DATE_FORMAT to MM/dd/yyyy, or dd/MM/yyyy if you want days to lead months. Notice that the month is specified in capital letters, and that the year is specified in four digits. If there are no control panel settings and these environment variables are not set, then the format is mm/dd/yy hh:mm in the US and dd/mm/yy hh:mm in the UK. </TD>
+	</TR>
+	<TR><TD><b>Optional password</b></TD>
+		<TD><!--<control name="ProjectSecurityUserInformation.PASSWORD_EDIT">-->
+		Displays the password defined for the selected user ID, if any. To modify this password or add a password for the User, enter a password. The only time Version Manager uses the password is if Login Dialog (VLogin) is specified as a login source and Version Manager uses this login source to obtain the user ID.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+	<TD COLSPAN=2><CENTER><B>Privileges Tab</b></center></TD>
+	</TR>
+	<TR><TD><b>Privilege sets</b></TD>
+		<TD><!--<control name="ProjectSecurityPrivileges.PRIVILEGE_SET_TREE">-->
+		Displays all defined privilege sets. The privilege sets with a check mark beside them are the ones that are assigned to the selected User. You can assign and unassign privilege sets by selecting and deselecting the check boxes beside the privilege sets.
+		<!--</control>--></TD>
+	</TR>
+<TR><TD><b>All privileges</b></TD>
+		<TD><!--<control name="ProjectSecurityPrivileges.BASE_PRIVILEGES_TREE">-->
+		Displays all base and composite privileges. The options with a + in the box beside them are allowed. The Project privileges are the only privileges that can have a - in the box beside them because they are negative privileges. The - means that the privilege is denied. If a Project privilege is denied, it cannot be allowed in a privilege set that is assigned.<!--</control>--> For example, if the Create Project privilege is denied as a base privilege but is allowed in a privilege set that is assigned to the same User, group, or privilege set, the User, group, or privilege set does not have the Create Project privilege.<br><br>
+To change the status of an option, click the check box beside the option. You can allow or disallow an entire set of related privileges by clicking the parent option. For example, you could assign all of the Action privileges by clicking the check box beside Action Privileges to place a + in the check box.</TD>
+	</TR>
+	<TR><TD><b>Selected privileges</b></TD>
+		<TD><!--<control name="ProjectSecurityPrivileges.PRIVILEGES_TEXT">-->
+		Displays a cumulation of the privileges you have selected. If any of the Project privileges are allowed, they are not displayed in this box. They are only displayed in this box when they are denied because they are negative privileges.<!--</control>--></TD>
+	</TR>
+	<TR>
+	<TD COLSPAN=2><CENTER><B>Access List Group Membership Tab</b></center></TD>
+	</TR>
+	<TR><TD><b>Access List Group Membership Tree</b></TD>
+		<TD><!--<control name="ProjectSecurityGroupMembership.GROUPS_MEMBERSHIP_TREE">-->
+		Displays all defined access list groups. The groups with a check mark beside them are the ones that the selected User is a member of. You can unassign and assign groups to the selected User by selecting and deselecting the check boxes beside the groups.
+		<!--</control>--></TD>
+	</TR>
+<TR>
+<TD><b>Show selected groups only</b></TD>
+		<TD><!--<control name="ProjectSecurityGroupMembership.SHOW_SELECTED_GROUPS_CB">-->
+		Select this check box to display only the groups that the selected User is a member of in the Access List Group Membership tree.
+		<!--</control>--></TD>
+	</TR>
+	</TABLE>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a href="createuserdialog.html">Create User Dialog Box</a></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

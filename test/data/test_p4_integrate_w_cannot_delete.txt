@@ -1,0 +1,2 @@
+info: //depot/dev/bt/test/src/org/parabuild/ci/versioncontrol/SATestSVNVersionParser.java - can't delete from //depot/dev/bt30/test/src/org/parabuild/ci/versioncontrol/SATestSVNVersionParser.java#2 without -d flag
+exit: 0

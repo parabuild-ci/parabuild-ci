@@ -1,0 +1,43 @@
+<project name="bt" default="manager.all" basedir=".">
+
+
+  <property name="manager.staging" value="${build.dir}/manager_staging"/>
+  <property name="manager.classes.dir" value="${manager.staging}/classes"/>
+  <property name="manager.war.staging" value="${build.dir}/staging_manager_war"/>
+
+
+  <target name="mnager.prepare">
+    <mkdir dir="${manager.classes.dir}"/>
+  </target>
+
+
+  <target name="manager.compile" depends="mnager.prepare">
+    <javac destdir="${manager.classes.dir}" includes="org/parabuild/ci/manager/server/**.java" debug="on">
+      <classpath>
+        <pathelement path="${catalina.jar}"/>
+        <pathelement path="${servlets-manager.jar}"/>
+        <pathelement path="${servlets-common.jar}"/>
+        <pathelement path="${naming-resources.jar}"/>
+        <pathelement path="${servlet.jar}"/>
+        <pathelement path="${commons-logging.jar}"/>
+      </classpath>
+      <src path="${src}"/>
+    </javac>
+  </target>
+
+
+  <target name="manager.jar" depends="manager.compile">
+    <jar destfile="${build.dir.tomcat}/lib/server/lib/parabuild-manager.jar" compress="false" update="true">
+      <fileset dir="${manager.classes.dir}"/>
+    </jar>
+  </target>
+
+
+  <target name="manager.war" depends="manager.jar">
+    <mkdir dir="${build.dir.tomcat}/lib/server/webapps"/>
+    <copy file="${config}/manager-web.xml" tofile="${manager.war.staging}/WEB-INF/web.xml"/>
+    <zip destfile="${build.dir.tomcat}/lib/server/webapps/parabuild-manager.war" basedir="${manager.war.staging}" update="true" compress="false"/>
+  </target>
+
+  <target name="manager.all" depends="manager.war"/>
+</project>

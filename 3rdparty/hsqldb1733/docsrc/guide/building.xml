@@ -1,0 +1,253 @@
+<!-- $Id: building.xml,v 1.9 2004/06/06 08:45:56 unsaved Exp $ -->
+
+<appendix id='building-appendix'>
+    <title id='building-title'>Building Hsqldb version 1.7.2</title>
+    <titleabbrev>Building Hsqldb</titleabbrev>
+    <appendixinfo>
+        <authorgroup>
+            <author>
+                <firstname>Fred</firstname><surname>Toussi</surname>
+                <email>&fredaddr;</email>
+                <affiliation>
+                    <orgname>HSQLDB Development Group</orgname>
+                </affiliation>
+            </author>
+        </authorgroup>
+        <edition>$Revision: 1.9 $</edition>
+        <pubdate>$Date: 2004/06/06 08:45:56 $</pubdate>
+        <keywordset>
+            <keyword>Hsqldb</keyword>
+            <keyword>Building</keyword>
+            <keyword>Ant</keyword>
+        </keywordset>
+    </appendixinfo>
+
+   <section>
+        <title>Purpose</title>
+		<para> From 1.7.2, the supplied <filename>hsqldb.jar</filename> file is
+		built with Java 1.4.2. If you want to run the engine under JDK1.3 or
+		earlier, you should rebuild the jar with Ant. </para>
+   </section> 
+   <section> 
+		<title>Building with Ant, from the Apache Jakarta Project</title>
+        <titleabbrev>Building with Ant</titleabbrev>
+        <para>
+            Ant (Another Neat Tool) is used for building hsqldb.
+            The version currently used to test the build script is 1.6.1 but 
+            versions since 1.5.1 should also be compatible.
+        </para>
+        <section>
+            <title>Obtaining Ant</title>
+            <para>
+                Ant is a part of the Jakarta/Apache Project.
+            </para>
+            <itemizedlist>
+                <listitem><para>
+                    <ulink url='http://ant.apache.org'>Home of the Apache Ant
+                    project</ulink>
+                </para></listitem> <listitem><para>
+                    The 
+            <ulink url='http://ant.apache.org/manual/install.html#installing'>
+                    Installing Ant</ulink> page of the 
+                    <ulink url='http://ant.apache.org/manual'>Ant Manual
+                    </ulink>.
+                    Follow the directions for your platform.
+                </para></listitem>
+            </itemizedlist>
+        </section>
+        <section>
+            <title>Building Hsqldb with Ant</title>
+			<para> Once you have unpacked the zip package for hsqldb, under the
+			<filename>/hsqldb</filename> folder, in <filename>/build</filename>
+			there is a <filename>build.xml</filename> file that builds the 
+			<filename>hsqldb.jar</filename> with Ant (Ant must be already 
+			installed). To use it, change to <filename>/build</filename> 
+			then type: </para> 
+			<informalexample>
+			<screen> ant -projecthelp</screen> </informalexample>
+			<para>This displays the available ant targets, which you can supply
+			as command line arguments to ant. These include </para>
+			<variablelist> <varlistentry><term>jar</term> 
+			<listitem>
+			<para> to make the <filename>hsqldb.jar</filename> </para>
+			</listitem> </varlistentry><varlistentry>
+			<term>clean</term>
+			<listitem>
+			<para> to clean up the /classes directory that is created </para>
+			</listitem> </varlistentry> 
+			<varlistentry>
+			<term>cleanall</term> 
+			<listitem><para> to remove the old jar as well </para></listitem>
+			</varlistentry><varlistentry><term>javadoc</term> <listitem><para>
+			to build javadoc </para></listitem></varlistentry>
+			<varlistentry><term>jarmain</term> <listitem><para> to build a 
+			smaller jar for hsqldb that does not contain utilities
+			</para></listitem> </varlistentry>
+			<varlistentry><term>jarclient</term> <listitem><para> to build an
+			extremely small jar containing only the client-side JDBC driver
+            (does not support direct connection to HSQLDB URLs of the form
+            jdbc:hsldb:mem:*, jdbc:hsqldb:file:*, nor jdbc:hsqldb:res:*).
+			</para></listitem> </varlistentry> 
+			<varlistentry><term>jarmin</term>
+			<listitem>
+			<para> to build a very small jar with no support for servers </para>
+			</listitem> 
+			</varlistentry><varlistentry><term>jartest</term>
+			<listitem><para> to build a larger jar for hsqldb that contains
+			tests </para></listitem> </varlistentry>
+			<varlistentry><term>...</term> 
+			<listitem><para> Many more targets are available </para></listitem>
+			</varlistentry> 
+			</variablelist>
+			<para> HSQLDB can be built in any combination of five different 
+			sizes and three JRE (Java Runtime Environment) versions. The
+			smallest jar size(<filename>hsqljdbc.jar</filename>) contains only
+			the HSQLDB JDBC Driver client. The next smallest jar size
+			(<filename>hsqldbmin.jar</filename>) contains only the standalone
+			database (no servers) and JDBC support and is suitable for embedded 
+			applications. The default size (<filename>hsqldb.jar</filename>)
+			also contains server mode support and the utilities. The largest
+			size (<filename>hsqldbtest.jar</filename>)includes some test 
+            classes as well.
+            (You can also build hsqlsqltool.jar.
+            If you use SqlTool, see the
+            <link linkend='sqltool-chapter' endterm='sqltool-title'/> chapter
+            about that.)
+            </para>
+            <para> In order to build and run the 
+			test classes, you need the JUnit jar in the 
+			<filename>/lib</filename> directory. This is available from
+			<ulink url="http://www.junit.org"/>. </para> <para> The preferred 
+			method of rebuilding the jar is with Ant. After installing Ant on
+			your system use the following command from the 
+			<filename>/build</filename> directory: </para>
+			<informalexample><screen>ant explainjars</screen></informalexample>
+			<para> The command displays a list 
+			of different options for building different sizes of the HSQLDB Jar.
+			The default is built using: </para>
+			<example> 
+			<title>Buiding the standard Hsqldb jar file with Ant</title>
+            <screen>    ant jar</screen>
+            </example>
+            <para>
+                The Ant method always builds a jar with the JDK that is used by 
+                Ant and specified in the JAVA_HOME environment variable.
+                Building with JDK 1.4.x will result in a jar that is not 
+                backward compatible.
+                From version 1.7.2, use of JDK 1.1.x is not recommended for 
+                building the JAR, even for running under JDK 1.1.x -- use 
+                JDK 1.3.1 for compatibility with 1.1.x.
+            </para> <para>
+                Before building the <filename>hsqldbtest.jar</filename> 
+                package, you should download the junit jar from 
+                <ulink url="http://www.junit.org"/>  and put it in the 
+                <filename>/lib</filename> directory, alongside 
+                <filename>servlet.jar</filename>, which is included in the 
+                .zip package.
+            </para>
+        </section>
+    </section>
+
+    <section>
+        <title>Building with DOS Batch Files</title>
+        <para>
+            UNIX users must use Ant to build hsqldb.
+        </para> <para>
+            For DOS/Windows users, a set of MSDOS batch files is provided as an
+            alternative to using Ant.
+            These produce only the default jar size.
+            The path and classpath variables for the JDK should of course be 
+            set before running any of the batch files.
+        </para> <para>
+            If you are compiling for JDK's other than 1.4.x, you 
+            should use the appropriate <filename>switchToJDK11.bat</filename>
+            or <filename>switchToJDK12.bat</filename> to adapt the source files 
+            to the target JDK before running the appropriate 
+            <filename>buildJDK11.bat</filename> or
+            <filename>buildJDK12.bat</filename> JDK and JRE versions.
+        </para> 
+		<para>
+            From version 1.7.2, Use of JDK 1.1.x is not recommended for 
+            building the JAR, even for running under JDK 1.1.x --
+            use JDK1.3 for running under 1.1.x.
+            Javadoc can be built with Ant and batch files.
+        </para>
+    </section>
+
+    <section>
+        <title>Hsqldb  CodeSwitcher</title>
+        <para>
+            CodeSwitcher is a tool to manage different version of Java source 
+            code.
+            It allows to compile HSQLDB for different JDKs.
+            It is something like a precompiler in C but it works directly on 
+            the source code and does not create intermediate output or extra 
+            files.
+        </para> <para>
+            CodeSwitcher is used internally in HSQLDB build scripts.
+            You do not have to use it separately to compile HSQLDB.
+        </para> <para>
+            CodeSwitcher reads the source code of a file, removes comments 
+            where appropriate and comments out the blocks that are not used for 
+            a particular version of the file.
+            This operation is done for all files of a defined directory, and 
+            all subdirectories. 
+        </para> <example>
+            <title>Example source code before CodeSwitcher is run</title>
+            <programlisting>
+        ...
+
+    //#ifdef JAVA2
+
+        properties.store(out,"hsqldb database");
+
+    //#else
+
+    /*
+
+        properties.save(out,"hsqldb database");
+
+    */
+
+    //#endif
+
+        ...</programlisting>
+        </example> <para>
+            The next step is to run CodeSwitcher.
+        </para> <example>
+            <title>CodeSwitcher command line invocation</title>
+            <screen>
+    java org.hsqldb.util.CodeSwitcher . -JAVA2</screen>
+        </example> <para>
+            The '.' means the program works on the current directory (all 
+            subdirectories are processed recursively).
+            <literal>-JAVA2</literal> means the code labelled with JAVA2 must
+            be switched off.
+        </para> <example>
+            <title>Source code after CodeSwitcher processing</title>
+            <programlisting>
+        ...
+
+    //#ifdef JAVA2
+
+    /*
+
+        pProperties.store(out,"hsqldb database");
+
+    */
+
+    //#else
+
+        pProperties.save(out,"hsqldb database");
+
+    //#endif
+
+        ...</programlisting>
+        </example> <para>
+            For detailed information on the command line options run
+            <classname>java org.hsqldb.util.CodeSwitcher</classname>.
+            Usage examples can be found in the switchtojdk1*.bat files in the 
+            <filename>/build</filename> directory.
+        </para>
+    </section>
+</appendix>

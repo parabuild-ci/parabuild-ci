@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Defining Custom Privilege Sets</TITLE>
+<!--<definecustomprivsets.html>-->
+<!--<toc parent="set_up_security" label="Defining Custom Privilege Sets" anchor="definecustomprivset" sortkey="04">-->
+<!--<index parent="security" label="defining custom privilege sets" anchor="definecustomprivset">-->
+<!--<index parent="privilege_sets" label="defining custom" anchor="definecustomprivset">-->
+<!--<index parent="privileges" label="defining custom privilege sets" anchor="definecustomprivset">-->
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nUsing Security\nSetting Up Security\nDefining Custom Privilege Sets");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="definecustomprivset"></A>Defining Custom Privilege Sets</H1>
+<P>You define custom privilege sets to combine a group of privileges into a single task-oriented privilege. By defining custom privilege sets, you can give individual users or members of a group access to only the privileges they need.</P>
+<H2>To define custom privilege sets:</H2>
+<OL>
+	<LI>Select the project database or project associated with the access control database you are defining.<br><br>
+	<LI>Select Admin | Security | Privilege Sets. The Project Security dialog box appears with the General tab active.<br><br>
+	<LI>Click the New button. The Create Privilege Set dialog box appears.<br><br>
+	<LI>Enter a name for the custom privilege set. The name cannot begin or end with a tab or blank space. Any character can be used in the name except * : \ ' &quot; ( ).<br><br>
+	<LI>Select the <A HREF="baseprivtables.html">base privileges</a>, <A HREF="compositeprivtables.html">composite privileges</a>, and existing <A HREF="defaultprivtables.html">privilege sets</a> that will define this new custom privilege set. 
+<p>The options with a + in the box beside them are allowed. The Project privileges are the only privileges that can have a - in the box beside them because they are negative privileges. The - means that the privilege is denied. If a Project privilege is denied to a user, it cannot be allowed in a privilege set that is assigned to the user. For example, if the Create Project privilege is denied as a base privilege to a user but is allowed in a privilege set that is assigned to the same user, the user does not have the Create Project privilege. </p>
+<p>To change the status of an option, click the check box beside the option. You can allow or disallow an entire set of related privileges by clicking the parent option. For example, you could assign all of the Action privileges by clicking the check box beside Action Privileges to place a + in the check box.</p>
+<p>Note that the Selected Privileges box near the bottom of the dialog box displays an accumulation of the privileges you have selected. If any of the Project privileges are allowed, they are not displayed in this box. They are only displayed in this box when they are denied because they are negative privileges.</p><br><br>
+	<LI>In the <b>Restrict by promotion group</b> field, enter the <A HREF="restrictaccessbypromogroup.html">promotion group by which this custom privilege set will be restricted</a>. <br><br>
+	<LI>Click Create to add the newly created privilege set to the All Privilege Sets list of the Project Security dialog box.<br><br>
+	<LI>To define another privilege set, repeat steps 4 through 7. Otherwise, click Close.<br><br>
+</OL>
+Continue to the next procedure, <A HREF="defineusers.html">Defining Users</a>.
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="setupsecurity.html">Setting Up Security</A></TD>
+		<TD><A HREF="modifyuserprivileges.html">Modifying User Privileges</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="modifyacslstgrpprivs.html">Modifying Access List Group Privileges</A></TD>
+		<TD><A HREF="promomodelsecurityexample.html">Example: Restricting Access and Privileges by Promotion Group</A></TD>
+
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

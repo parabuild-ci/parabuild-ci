@@ -1,0 +1,981 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/TR/xhtml1/strict">
+<head>
+<title>Components</title>
+<!--
+   Copyright 1999-2004 The Apache Software Foundation
+ 
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+ 
+       http://www.apache.org/licenses/LICENSE-2.0
+ 
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+<meta content="1999-2004 The Apache Software Foundation" name="copyright"/>
+<meta content="$Date: 2004/08/22 16:34:14 $" name="last-changed"/>
+<meta content="Costin Manolache" name="author"/>
+<meta content="cmanolache@yahoo.com" name="email"/>
+<meta content="Jean-Frederic Clere" name="author"/>
+<meta content="jfrederic.clere@fujitsu-siemens.com" name="email"/>
+<meta content="Yoav Shapira" name="author"/>
+<meta content="yoavs@apache.org" name="email"/>
+<link href="..//style.css" type="text/css" rel="stylesheet"/>
+<link href="../images/tomcat.ico" rel="shortcut icon"/>
+</head>
+<body link="#525D76" vlink="#525D76" alink="#525D76" text="#000000" bgcolor="#ffffff">
+<a name="TOP"/>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr height="1">
+<td class="nil" height="1" bgcolor="#ffffff" width="150">
+<img hspace="0" vspace="0" height="1" width="150" border="0" src="../images/pixel.gif"/>
+</td>
+<td class="nil" height="1" bgcolor="#ffffff" width="*">
+<img hspace="0" vspace="0" height="1" width="370" border="0" src="../images/pixel.gif"/>
+</td>
+</tr>
+<tr>
+<td width="*" colspan="2" class="logo" bgcolor="#ffffff">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left">
+<img align="left" height="48" width="505" border="0" src="../images/jakarta.gif"/>
+</td>
+<td align="right">
+<img align="right" border="0" src="../images/mod_jk.jpg"/>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2" width="*" align="right" class="head" bgcolor="#999999">
+<nobr>
+<a href="http://www.apache.org/" class="head">Apache Software Foundation</a> |
+                <a href="http://jakarta.apache.org/" class="head">Jakarta Project</a> |
+                <a href="http://jakarta.apache.org/tomcat/" class="head">Apache Tomcat</a>
+</nobr>
+</td>
+</tr>
+<tr>
+<td class="body" valign="top" width="*" bgcolor="#ffffff">
+<table cellspacing="4" width="100%" border="0">
+<tr>
+<td nowrap="true" valign="top" align="left">
+<h2>Components</h2>
+</td>
+<td nowrap="true" valign="top" align="right">
+<img border="0" hspace="0" vspace="0" height="1" width="1" src="../images/void.gif"/>
+</td>
+</tr>
+</table>
+<a name="Intro">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="top" class="section" bgcolor="#525D76">
+<img border="0" vspace="0" hspace="0" align="left" valign="top" src="../images/corner.gif"/>Intro</td>
+</tr>
+</table>
+</a>
+<p class="section">
+    Each component instance has a name, that is used for configuration and at runtime.
+    Each component has a number of configurable properties. The following rules are used:
+    <ul>
+<li>The name is composed from the type and a local part, separated with a ':' ( example: channel.unixsocket:/tmp/jk.socket ) </li>
+<li>The 'type' consist of '.' and ascii characters.  It is mapped to a JMX 'domain'.  </li>
+<li>The local part consists of ascii characters and .:/; 
+
+        
+      </li>
+<li>The property is a simple name, with no dots. </li>
+<li>A simple form of substitution is used in values, where $(property) will be replaced with a previously defined setting. If the property has ':' in it, it'll take the value from the object, if not it'll take the value from a global map.
+      </li>
+</ul>
+  </p>
+<br/>
+<a name="Common properties">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="top" class="section" bgcolor="#525D76">
+<img border="0" vspace="0" hspace="0" align="left" valign="top" src="../images/corner.gif"/>Common properties</td>
+</tr>
+</table>
+</a>
+<p class="section">
+    Common properties for all components
+  </p>
+<p class="section">
+    <table border="0">
+<tr>
+<td align="middle" valign="top" bgcolor="#039acc">Property name</td>
+<td align="middle" valign="top" bgcolor="#039acc">Default</td>
+<td align="middle" valign="top" bgcolor="#039acc">Description</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">disabled</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">0 (false)</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">"disabled" state for the component, 1=true 0=false</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">debug</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">0 (false)</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Debug level for the component, 0=disabled, 1..10 enabled. Higher levels
+            generate more debug information.</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">ver (short for, and formerly known as, version)</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">0</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">'Generation' of the component config. Important for runtime reconfiguration.
+            If you edit the config file or set the shmem properties, you need to also
+            upgrade the version of the modified component. The config layer will detect
+            the change and call the setter method.</td>
+</tr>
+</table>
+  </p>
+<br/>
+<a name="workerEnv">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="top" class="section" bgcolor="#525D76">
+<img border="0" vspace="0" hspace="0" align="left" valign="top" src="../images/corner.gif"/>workerEnv</td>
+</tr>
+</table>
+</a>
+<p class="section">This component represent the core jk2, it has the default logger for all other components. Is the central controller, it controls global properties
+and  provides access to all other objects</p>
+<p class="section">
+                <table border="0">
+<tr>
+<td align="middle" valign="top" bgcolor="#039acc">Property name</td>
+<td align="middle" valign="top" bgcolor="#039acc">Default</td>
+<td align="middle" valign="top" bgcolor="#039acc">Description</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">logger</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">logger</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Default loger used by jk2 components, can be changed in the config file, normally it defaults to "logger" the Alias for the default logger for the Server/platform.</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">sslEnable</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">1 (true)</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Enable handling of SSL</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">timing</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">0</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Will jk2 get request timing (needs APR?)</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">forwardKeySize</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">not set</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Enable filling of javax.servlet.request.key_size</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">forwardURICompat</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">set</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Pass the URI untouched.</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">forwardURICompatUnparsed</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">not set</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Parse the URI until the '?'.</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">forwardURIEscaped</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">not set</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Pass the URI escaped.</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">noRecoveryIfRequestSent</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">set</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">No recovery in LB mode if a Tomcat allready received the request.</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">noRecoveryIfHeaderSent</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">set</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">No recovery in LB mode if a Tomcat allready start to send reply to client.</td>
+</tr>
+</table>
+            </p>
+<p class="section">Only one of the forwardURI option could be used it replaces the default value.</p>
+<br/>
+<a name="config">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="top" class="section" bgcolor="#525D76">
+<img border="0" vspace="0" hspace="0" align="left" valign="top" src="../images/corner.gif"/>config</td>
+</tr>
+</table>
+</a>
+<p class="section">The config component, hold the detail of the conifg system, such config file name, create global defines</p>
+<p class="section">
+                <table border="0">
+<tr>
+<td align="middle" valign="top" bgcolor="#039acc">Property name</td>
+<td align="middle" valign="top" bgcolor="#039acc">Default</td>
+<td align="middle" valign="top" bgcolor="#039acc">Description</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">file</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">${serverRoot}/conf/workers2.properties</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Location of the workers2.properties file</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">debug</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">0</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Set the debug level of the config component</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">debugEnv</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">0</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Set the debug level of the hidden env component </td>
+</tr>
+</table>
+            </p>
+<br/>
+<a name="uriMap">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="top" class="section" bgcolor="#525D76">
+<img border="0" vspace="0" hspace="0" align="left" valign="top" src="../images/corner.gif"/>uriMap</td>
+</tr>
+</table>
+</a>
+<br/>
+<a name="shm">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="top" class="section" bgcolor="#525D76">
+<img border="0" vspace="0" hspace="0" align="left" valign="top" src="../images/corner.gif"/>shm</td>
+</tr>
+</table>
+</a>
+<p class="section">Shared memory descriptor</p>
+<p class="section">
+                <table border="0">
+<tr>
+<td align="middle" valign="top" bgcolor="#039acc">Property name</td>
+<td align="middle" valign="top" bgcolor="#039acc">Default</td>
+<td align="middle" valign="top" bgcolor="#039acc">Description</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">file</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">No default value</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Name of the file that will be mmapped to use as shared memory, If set to 'anonymous' use the anonymous shered memory</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">size</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">No default value</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Deprecated. Size of the file.</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">slots</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">256</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Number of shared memory slots. Set to the number of child processes</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">useMemory</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">0</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Use process memory instead of shared memory. Useful for single child mpm's</td>
+</tr>
+</table>
+            </p>
+<br/>
+<a name="uri">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="top" class="section" bgcolor="#525D76">
+<img border="0" vspace="0" hspace="0" align="left" valign="top" src="../images/corner.gif"/>uri</td>
+</tr>
+</table>
+</a>
+<p class="section">A uri stores a pattern that is used
+ to match requests to workers, and asociated properties</p>
+<p class="section">If the uri name doesn't have a slash then it is considered as a virtual host
+            directive. Uri name can have a virtual host name and(or) port associated with. Format
+            of such a name is <b>
+<font color="#333333">hostname</font>
+</b> or <b>
+<font color="#333333">hostname:port</font>
+</b> where hostname
+            is virtual server name and the port is vitual server port number. The port number
+            is used only for the non default server ports.</p>
+<p class="section">
+            Special case is a default server named as <b>
+<font color="#333333">[uri:*]</font>
+</b> that is used when the virtual
+            host cannot be found inside the configuration. All the uri directives not containing
+            host name belongs to this default server making global mappings.
+            </p>
+<p class="section">
+            Addition wild char scheme id <b>
+<font color="#333333">[uri:*:port]</font>
+</b> that is used when you wish to
+            match any virtual host having specified (non-default) port number, like [uri:*:443].
+            This will map all the virtual hosts no mather what is their name but that have port number 443.            
+            </p>
+<p class="section">
+            The order how the host names are resolved is :
+            <ul>
+<li>Exact host name and optional non default port number</li>
+<li>Alias matching host name and port number</li>
+<li>*:port if the port is other then default</li>
+<li>Default server</li>
+</ul>
+            </p>
+<p class="section">
+                <table border="0">
+<tr>
+<td align="middle" valign="top" bgcolor="#039acc">Property name</td>
+<td align="middle" valign="top" bgcolor="#039acc">Default</td>
+<td align="middle" valign="top" bgcolor="#039acc">Description</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">group</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">lb:lb (The default loadbalancer)</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Name of the tomcat group or worker that will process the request corresponding to the uri. This used
+                            to be called 'worker'</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">context</td>
+<td align="left" valign="top" bgcolor="#a0ddf0"/>
+<td align="left" valign="top" bgcolor="#a0ddf0">the context path for this uri component (webapp style).</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">servlet</td>
+<td align="left" valign="top" bgcolor="#a0ddf0"/>
+<td align="left" valign="top" bgcolor="#a0ddf0">Servlet path for this mapping</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">alias</td>
+<td align="left" valign="top" bgcolor="#a0ddf0"/>
+<td align="left" valign="top" bgcolor="#a0ddf0">server name alias. This setting should only be used for 
+                            host uris like [uri:myHost:myPort] ( i.e. no /) </td>
+</tr>
+</table>
+            </p>
+<br/>
+<a name="vm">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="top" class="section" bgcolor="#525D76">
+<img border="0" vspace="0" hspace="0" align="left" valign="top" src="../images/corner.gif"/>vm</td>
+</tr>
+</table>
+</a>
+<p class="section">Represents the JVM when used as inprocess container
+            </p>
+<p class="section">
+                <table border="0">
+<tr>
+<td align="middle" valign="top" bgcolor="#039acc">Property name</td>
+<td align="middle" valign="top" bgcolor="#039acc">Default</td>
+<td align="middle" valign="top" bgcolor="#039acc">Description</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">JVM</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">(Autoguess)</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">JVM to use for this vm</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">OPT</td>
+<td align="left" valign="top" bgcolor="#a0ddf0"/>
+<td align="left" valign="top" bgcolor="#a0ddf0">Option to pass to this vm, this is a multivalued property</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">classpath</td>
+<td align="left" valign="top" bgcolor="#a0ddf0"/>
+<td align="left" valign="top" bgcolor="#a0ddf0">-Djava.class.path 0ption to pass to this vm, this is a multivalued property</td>
+</tr>
+</table>
+            </p>
+<br/>
+<a name="channels">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="top" class="section" bgcolor="#525D76">
+<img border="0" vspace="0" hspace="0" align="left" valign="top" src="../images/corner.gif"/>channels</td>
+</tr>
+</table>
+</a>
+<p class="section">A channel represents a transport protocol, connecting 2
+sides  for RPC communication. The most common and standard is the tcp socket.
+Other  important  channels are unix socket and jni</p>
+<a name="sub_channel.un">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="top" class="subsection" bgcolor="#828DA6">
+<img border="0" vspace="0" hspace="0" align="left" valign="top" src="../images/corner.gif"/>channel.un</td>
+</tr>
+</table>
+</a>
+<p class="section">
+    AF_UNIX socket. Only on UNIX like platform. These sockets are faster
+    than "normal" sockets but they are limited to the machine. 
+</p>
+<p class="section">
+                    <table border="0">
+<tr>
+<td align="middle" valign="top" bgcolor="#039acc">Property name</td>
+<td align="middle" valign="top" bgcolor="#039acc">Default</td>
+<td align="middle" valign="top" bgcolor="#039acc">Description</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">file</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Name of socket</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Name of the socket file (It is created by the Tomcat ChannelUn)</td>
+</tr>
+</table>
+                </p>
+<br/>
+<a name="sub_channel.socket">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="top" class="subsection" bgcolor="#828DA6">
+<img border="0" vspace="0" hspace="0" align="left" valign="top" src="../images/corner.gif"/>channel.socket</td>
+</tr>
+</table>
+</a>
+<p class="section">
+    Defines a communication transport to a remote Servlet Engine. </p>
+<p class="section">The name of the channels should be: channel.socket:HOST:PORT, where HOST and PORT are the 
+tomcat Ajp location.  You could use other names and explicitely set HOST and PORT, but this
+is discouraged. In most cases, you don't need to set any other config - just add a line like
+[channel.socket:localhost:8009] and all other things will have good defaults. 
+</p>
+<p class="section">
+NB: Starting with JK2 2.0.4, APR is mandatory and the channel.socket use APR (previously
+called channel.apr).
+</p>
+<p class="section">
+Tomcat Engine must be set with jvmRoute="HOST:PORT", to match the default tomcatId of the channel.
+</p>
+<p class="section">
+                    <table border="0">
+<tr>
+<td align="middle" valign="top" bgcolor="#039acc">Property name</td>
+<td align="middle" valign="top" bgcolor="#039acc">Default</td>
+<td align="middle" valign="top" bgcolor="#039acc">Description</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">port</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">extracted from the component name</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Port where Tomcat is listening. It is automatically extracted from the name - you shouldn't have to specify it explicitely.</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">host</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">extracted from the component name</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Remote host. You should use the name, no need to override it</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">graceful</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">0</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">If 1, only requests for existing sessions will be forwarded</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">keepalive</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">0</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">? </td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">timeout</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">0 (infinite)</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Socket timeout for sending and receiving</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">ndelay</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">0</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">If set to 1 Disables the Nagle algorithm for send coalescing</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">lb_factor</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">1</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Load balancing factor to use. The lower the lb_factor the more often that tomcat will get requests but see
+                                "level" below.</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">level</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">1</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Worker Priority.  Valid values are 0-3.  The functioning workers with the lowest level
+                                will be checked for the lowest lb_value, and if found will be run.  The upper level workers are
+                                only checked upon failure of all workers on ALL of the levels below them.  This is very 
+                                useful for implementing failover withing a cluster.  You could set the tomcat server local 
+                                on the same machine as the apache instance to level 0 and all of the other workers to level 1.
+                                This would cause apache to only use the external tomcats when the local tomcat is down.</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">group</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">lb</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">loadbalanced groups to which this channel and the associated worker will be added, multivalued. You need to set it only if you have an advanced setup with multiple clusters.</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">tomcatId</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Automatically set to the localname ( host:port )</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Must match the JVM route on tomcat the server.xml Engine element, for load balancing</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">route</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Automatically set to the localname ( host:port )</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Same as tomcatId</td>
+</tr>
+</table>
+                </p>
+<br/>
+<a name="sub_channel.jni">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="top" class="subsection" bgcolor="#828DA6">
+<img border="0" vspace="0" hspace="0" align="left" valign="top" src="../images/corner.gif"/>channel.jni</td>
+</tr>
+</table>
+</a>
+<p class="section">The jni channel, used if tomcat is started inprocess</p>
+<br/>
+<br/>
+<a name="workers">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="top" class="section" bgcolor="#525D76">
+<img border="0" vspace="0" hspace="0" align="left" valign="top" src="../images/corner.gif"/>workers</td>
+</tr>
+</table>
+</a>
+<p class="section">
+             For the moment 4 worker types are supported: worker.jni,ajp13,status,lb.
+            </p>
+<a name="sub_worker.jni">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="top" class="subsection" bgcolor="#828DA6">
+<img border="0" vspace="0" hspace="0" align="left" valign="top" src="../images/corner.gif"/>worker.jni</td>
+</tr>
+</table>
+</a>
+<p class="section">worker used in inprocess, holds the details of the Tomcat class to startup, and parameters to pass</p>
+<p class="section">There are two predefined jni workers <b>
+<font color="#333333">onStartup</font>
+</b> and <b>
+<font color="#333333">onShutdown</font>
+</b>. Those two workers are executed
+                during startup and shutdown phase of the connector. Both must exists in the configuration to be able to start
+                and shutdown Tomcat.
+                </p>
+<p class="section">
+                    <table border="0">
+<tr>
+<td align="middle" valign="top" bgcolor="#039acc">Property name</td>
+<td align="middle" valign="top" bgcolor="#039acc">Default</td>
+<td align="middle" valign="top" bgcolor="#039acc">Description</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">class</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">org/apache/jk/apr/TomcatStarter</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">class that holds the main method called to start tomcat</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">ARG</td>
+<td align="left" valign="top" bgcolor="#a0ddf0"/>
+<td align="left" valign="top" bgcolor="#a0ddf0">Arguments to pass to main method when called</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">stdout</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">NULL</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">file to redirect Standard output from the java process</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">stderr</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">NULL</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">file to redirect Standard output from the java process </td>
+</tr>
+</table>
+                </p>
+<br/>
+<a name="sub_ajp13">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="top" class="subsection" bgcolor="#828DA6">
+<img border="0" vspace="0" hspace="0" align="left" valign="top" src="../images/corner.gif"/>ajp13</td>
+</tr>
+</table>
+</a>
+<p class="section">Default worker.  If a property is in both the worker and the channel, you only need to define it in one place.
+                    The channel passes down the properties to its worker.  (at least in the ajp13-channel.socket linkage)</p>
+<p class="section">
+                    <table border="0">
+<tr>
+<td align="middle" valign="top" bgcolor="#039acc">Property name</td>
+<td align="middle" valign="top" bgcolor="#039acc">Default</td>
+<td align="middle" valign="top" bgcolor="#039acc">Description</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">secretkey</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">NULL</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">
+                                <b>
+<font color="#333333">Magic:</font>
+</b> The secret key will be set automatically on the associated
+    worker.
+  </td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">tomcatId</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Automatically set to the localname ( host:port )</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Must match the JVM route on the tomcat server.xml Engine element, for load balancing</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">route</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Automatically set to the localname ( host:port )</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Same as tomcatId</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">group</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">lb</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">loadbalanced groups to which this channel and the associated worker will be added, multivalued. You need to set it only if you have an advanced setup with multiple clusters.</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">lb_factor</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">1</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Load balancing factor to use. The lower the lb_factor the more often that tomcat will get requests but see
+                                "level" below.</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">level</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">1</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Worker Priority.  Valid values are 0-3.  The functioning workers with the lowest level
+                                will be checked for the lowest lb_value, and if found will be run.  The upper level workers are
+                                only checked upon failure of all workers on ALL of the levels below them.  This is very 
+                                useful for implementing failover withing a cluster.  You could set the tomcat server local 
+                                on the same machine as the apache instance to level 0 and all of the other workers to level 1.
+                                This would cause apache to only use the external tomcats when the local tomcat is down.</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">channel</td>
+<td align="left" valign="top" bgcolor="#a0ddf0"/>
+<td align="left" valign="top" bgcolor="#a0ddf0">Communication channel used by the worker.  Use the full name of the channel (everything between the []'s).</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">max_connections</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">0 (unlimited)</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Maximum number of currently used endpoints.
+                                If the specified number is reached then the load balancer has the chance
+                                to try another worker. This is very useful in situations when having multiple
+                                servers and you wish to finer grade the lb_factor.
+                            </td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">connectTimeout</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">0 (no timeout)</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">With such timeout set, the web-server will send a CPING request just after physical connect to the remote Tomcat 
+                                and will wait for a CPONG reply for the connectTimeout milliseconds, a guarantee that the remote Tomcat is not hang.
+                                Side effect, this round trip add a little delay at connection time and require a recent AJP13 implementation, 
+                                with support for CPING/CPONG command.
+                            </td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">replyTimeout</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">0 (no timeout)</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">With such timeout set, the web-server will wait for Tomcat reply to a forwarded request for replyTimeout milliseconds.
+                                Another guarantee that the remote Tomcat is not hang.
+                                Warning, if you have 'normal' long running processes on Tomcat side, you shouldn't use this feature to avoid
+                                invalid errors reports or set the timeout accordingly.
+                            </td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">prepostTimeout</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">0 (no timeout)</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">With such timeout set, the web-server will send a CPING request just before forwarding the request to the remote Tomcat 
+                                and will wait for a CPONG reply for the prepostTimeout milliseconds, a guarantee that the remote Tomcat is not hang.
+                                Side effect, this round trip add a little delay in forwarding request and require a recent AJP13 implementation, 
+                                with support for CPING/CPONG command.
+                            </td>
+</tr>
+</table>
+                </p>
+<br/>
+<a name="sub_status">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="top" class="subsection" bgcolor="#828DA6">
+<img border="0" vspace="0" hspace="0" align="left" valign="top" src="../images/corner.gif"/>status</td>
+</tr>
+</table>
+</a>
+<p class="section">An optional worker that outputs (HTML) pages with useful information to monitor JK2.</p>
+<p class="section">To create the worker, add a [status:] or [status:'a name'] section.</p>
+<p class="section">The status worker needs no 'local' name, although one can be used if desired.</p>
+<p class="section">To access the worker, add a [uri] section with the group= assigned to this worker.</p>
+<p class="section">The status worker has the following additional properties:
+                    <table border="0">
+<tr>
+<td align="middle" valign="top" bgcolor="#039acc">Property name</td>
+<td align="middle" valign="top" bgcolor="#039acc">Default</td>
+<td align="middle" valign="top" bgcolor="#039acc">Description</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">styleMode</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">0 (None)</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Defines if or how the status worker will apply a Style Sheet to returned pages.</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">stylePath</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">NULL</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">For styleMode=2 or 3, where to find the Style Sheet file.</td>
+</tr>
+</table>
+                </p>
+<p class="section">The syleMode setting accepts the following values:
+                    <table border="0">
+<tr>
+<td align="middle" valign="top" bgcolor="#039acc">styleMode value</td>
+<td align="middle" valign="top" bgcolor="#039acc">Description</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">0</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">No Style settings are used. (Default)</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">1</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Use the built-in Default Style Sheet. It is presented as an 'Internal Style Sheet' to HTML pages.</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">2</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Use stylePath as a URI context to an external Style Sheet file to be returned by the Web Server.</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">3</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Use stylePath as a file-system reference to a Style Sheet file. It is presented as an 'Internal Style
+                                Sheet' to HTML pages.</td>
+</tr>
+</table>
+                </p>
+<p class="section">If the stylePath has not been set, styleMode=2 and 3 are ignored.</p>
+<p class="section">The sylePath setting accepts the following values:
+                    <table border="0">
+<tr>
+<td align="middle" valign="top" bgcolor="#039acc">styleMode value</td>
+<td align="middle" valign="top" bgcolor="#039acc">stylePath Description</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">2</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">A URI context to a file (e.g  /styles/jkstatus.css). It must begin with '/' and include the file name.</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">3</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">A file-system path (suitable for the OS in use) plus file name. Also ${serverRoot}/conf/'file name'
+                                allows the file to be located in Apache's conf directory.</td>
+</tr>
+</table>
+                </p>
+<p class="section">If the Style file cannot be found, Mode 2 and 3 record Apache log entries.</p>
+<p class="section">For styleMode=2 and 3, changes in the Style Sheet are effective on the next access to the status worker.</p>
+<br/>
+<a name="sub_lb">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="top" class="subsection" bgcolor="#828DA6">
+<img border="0" vspace="0" hspace="0" align="left" valign="top" src="../images/corner.gif"/>lb</td>
+</tr>
+</table>
+</a>
+<p class="section">Loadbalanced worker</p>
+<p class="section">
+                    <table border="0">
+<tr>
+<td align="middle" valign="top" bgcolor="#039acc">Property name</td>
+<td align="middle" valign="top" bgcolor="#039acc">Default</td>
+<td align="middle" valign="top" bgcolor="#039acc">Description</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">worker</td>
+<td align="left" valign="top" bgcolor="#a0ddf0"/>
+<td align="left" valign="top" bgcolor="#a0ddf0"/>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">noErrorHeader</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">1 (true)</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">If set, jk2 won't touch the headers in case of error and will let for example Apache present the ErrorDocument via mod_alias. 
+                            </td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">noWorkerMsg</td>
+<td align="left" valign="top" bgcolor="#a0ddf0"/>
+<td align="left" valign="top" bgcolor="#a0ddf0"/>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">noWorkerCode</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">503</td>
+<td align="left" valign="top" bgcolor="#a0ddf0"/>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">hwBalanceErr</td>
+<td align="left" valign="top" bgcolor="#a0ddf0"/>
+<td align="left" valign="top" bgcolor="#a0ddf0"/>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">timeout</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">0 (disabled)</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">If all the workers are in the error state, probably by Tomcat
+refusing any new connections due to the overload, you can set the timeout forcing lb to wait that some
+worker becomes available, instead of immediately returning error to the client. This is very useful in
+situations with high peek load. The timeout should be set to the maximum application call time, but
+not less then 1 second.
+                            </td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">attempts</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">3</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Number of attempts that lb will try on each worker before
+                            giving up.
+                            </td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">recovery</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">60 (seconds)</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Time to wait before retrying to see if the worker came out
+                            of the error state.
+                            </td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">stickySession</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">1 (true)</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Sessions stick to the same worker, 1=true 0=false
+                            </td>
+</tr>
+</table>
+                </p>
+<br/>
+<br/>
+<a name="loggers">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="top" class="section" bgcolor="#525D76">
+<img border="0" vspace="0" hspace="0" align="left" valign="top" src="../images/corner.gif"/>loggers</td>
+</tr>
+</table>
+</a>
+<p class="section">Any connector based on jk2, at least has a default logger, that can be reached using the "logger" alias, the logger used is the more appropiate for the plataform/server combination, Apache2 under in any platform has logger.apache2 as default, IIS on his only platform uses logger.win32, and Any apache 1 install uses logger.file as default.., the config file lets you change that defaults, you can end using logger.file in IIs i.e</p>
+<p class="section">The properties shared by all loggers are:
+<table border="0">
+<tr>
+<td align="middle" valign="top" bgcolor="#039acc">Property name</td>
+<td align="middle" valign="top" bgcolor="#039acc">Default</td>
+<td align="middle" valign="top" bgcolor="#039acc">Description</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">level</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">INFO</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">Text of the log level. Strings supported: EMERG, ERROR, INFO, DEBUG</td>
+</tr>
+</table>
+            </p>
+<a name="sub_logger.file">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="top" class="subsection" bgcolor="#828DA6">
+<img border="0" vspace="0" hspace="0" align="left" valign="top" src="../images/corner.gif"/>logger.file</td>
+</tr>
+</table>
+</a>
+<p class="section">
+                    <table border="0">
+<tr>
+<td align="middle" valign="top" bgcolor="#039acc">Property name</td>
+<td align="middle" valign="top" bgcolor="#039acc">Default</td>
+<td align="middle" valign="top" bgcolor="#039acc">Description</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#a0ddf0">file</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">${serverRoot}/logs/jk2.log</td>
+<td align="left" valign="top" bgcolor="#a0ddf0">
+    Log file.  XXX you may be able to change this at runtime,
+               to implement rolling.
+  </td>
+</tr>
+</table>
+                </p>
+<br/>
+<a name="sub_logger.win32">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="top" class="subsection" bgcolor="#828DA6">
+<img border="0" vspace="0" hspace="0" align="left" valign="top" src="../images/corner.gif"/>logger.win32</td>
+</tr>
+</table>
+</a>
+<p class="section">logger used in the IIS server by default, it ends at native Application Event Log.</p>
+<br/>
+<a name="sub_logger.apache2">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="top" class="subsection" bgcolor="#828DA6">
+<img border="0" vspace="0" hspace="0" align="left" valign="top" src="../images/corner.gif"/>logger.apache2</td>
+</tr>
+</table>
+</a>
+<p class="section">Logger used in Apache2 servers, it normally in ends in error.log </p>
+<br/>
+<br/>
+<a name="How Load Balancing Works">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="top" class="section" bgcolor="#525D76">
+<img border="0" vspace="0" hspace="0" align="left" valign="top" src="../images/corner.gif"/>How Load Balancing Works</td>
+</tr>
+</table>
+</a>
+<p class="section">The lb_factor and level properties combine to deliver a flexible static load balancing solution.
+            The level property is used to create up to four pools over workers in descending priority and lb_factor
+            is used to weight the workers within a pool.  The lower the level the more likely the worker is to be used
+            and the lower the lb_factor the more likely the worker is to be used.  Here is how the algorithm is
+            currently implemented:</p>
+<p class="section">
+(Assume that every worker's lb_value is set to their lb_factor)<br/>
+<br/>
+<pre class="section">
+if (loadbalancer has a route) and (stickysession=1){
+    worker= loadbanlancer.getWorkerForRoute(route)
+    if worker.hasRedirect
+        redirect=worker.redirect
+    else if !worker.hasError
+        return worker
+    }
+
+selectedWorker=null
+foreach lb_level {
+    foreach worker in the level {
+        if worker.isNotWorking
+            continue
+        if selectedWorker == null
+            selectedWorker = worker
+            continue
+        if worker.lb_value &lt; selectedWorker.lb_value
+            selectedWorker = worker
+            continue
+    }
+    if selectedWorker !=null
+        break
+}
+
+Reenable workers in error state if the timeout has passed()
+
+if selectedWorker !=null {
+    selectedWorker.lb_value += selectedWorker.lb_factor
+    if selectedWorker.lb_value &gt; 255 {
+        foreach worker in load_balancer.workers[selectedWorker.level]
+            worker.lb_value=worker.lb_factor
+        }
+    }
+    return selectedWorker
+}</pre>
+</p>
+<br/>
+</td>
+</tr>
+</table>
+</body>
+</html>

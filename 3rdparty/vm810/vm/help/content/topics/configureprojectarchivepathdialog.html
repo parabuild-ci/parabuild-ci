@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Configure Project Dialog Box/Archive Search Path</TITLE>
+<!--<configureprojectarchivepathdailog.html>-->
+<!--<index parent="archives" label="Configure Project/Archive Search Path dialog box" anchor="configureprojectarchivepath">-->
+<!--<index parent="configuring" label="Configure Project/Archive Search Path dialog box" anchor="configureprojectarchivepath">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiConfigureProjectDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="configureprojectarchivepath">Configure Project/Archive Search Path</A></H1>
+<P>Use the Configure Project dialog box (Admin | Configure Project | General Tab | Miscellaneous | Archive Search Path) to define where Serena ChangeMan Version Manager searches for archives when you perform an action on a file. The archive search path options are applicable only to the command-line interface. The options can be set in the desktop client even though they affect only the command-line interface.</P>
+<p>The desktop client archive search path options are automatically defined and updated based on the archive locations defined or modified in the project database.</p>
+<p>When you create a project database in the desktop client, Version Manager sets the VCSDir to the database's archive location in the master configuration file. If you customize and add archive locations to other directories for subprojects, you must update the VCSDir setting so that command-line operations work.</p>
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+<TR>
+<TD COLSPAN=2><CENTER><B>Archives | Search Path</B></CENTER></TD>
+</TR>
+	<TR>
+		<TD><B>Path</b></TD>
+		<TD><!--<control name="ConfigureProjectGeneral.ARCHIVE_PATH_EDIT">-->
+		List the directories in which you want Version Manager to search for archives. Separate each directory path with a semicolon (;). The directories can be absolute or relative path names. Version Manager searches for archives by looking from left to right in the directories listed.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Ignore workfile path when searching for archives</b></TD>
+		<TD><!--<control name="ConfigureProjectGeneral.IGNORE_WORKFILE_PATH_CB">-->
+		Select this check box to have Version Manager ignore the workfile path name specified by the user when searching for archives and search only in the directories specified in the <b>Path</b> field above.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Stop wildcard search after first archive directory</b></TD>
+		<TD><!--<control name="ConfigureProjectGeneral.STOP_AFTER_FIRST_MATCH_CB">-->
+		Select this check box to have Version Manager stop wildcard searching after the first match. If this is not selected, Version Manager will continue searching all specified archive directories.
+		<!--</control>--></TD>
+	</TR>
+	</TABLE>
+<h2>See Also</h2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="setarchivesearchpathoptions.html">Setting Archive Search Path Options</A></TD>
+		<TD><A HREF="archivesearchpathoptions.html">Archive Search Path Options</A></TD>
+	</tr>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>
+

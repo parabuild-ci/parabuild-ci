@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Embedding an Access Control Database</TITLE>
+<!--<embedacdb.html>-->
+<!--<toc parent="using_security" label="Embedding an Access Control Database" anchor="embedacdb" sortkey="04">-->
+<!--<index parent="access_control_database" label="embedding" anchor="embedacdb">-->
+<!--<index parent="security" label="embedding an access control database" anchor="embedacdb">-->
+<!--<index parent="embedding" label="access control databases" anchor="embedacdb">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nUsing Security\nEmbedding an Access Control Database");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="embedacdb"></A>Embedding an Access Control Database</H1>
+<P>You can embed <i>one</i> <A HREF="aboutacdb.html">access control database</a> into Serena ChangeMan Version Manager, which will control security for all project databases. Embedding an access control database ensures that both command line and desktop client users who are using the copy of Version Manager that has the database embedded will be using the same security definition and that they cannot use a different access control database. Version Manager <i>cannot</i> automatically create users for an access control database that is embedded into Version Manager.</p>
+<p>An access control database that is embedded into Version Manager does not work unless it is <A HREF="enablesecurity.html">enabled</a>. By default, the access control database is enabled.</p>
+<p>The command-line interface uses an access control database if it is specified in a configuration file used by the command-line interface or if it is embedded into Version Manager. For instructions on how to embed an access control database using the command-line interface, see the <i>Serena ChangeMan Version Manager Administrator's Guide</i>.</p>
+<H2>To embed an access control database:</H2>
+<OL>
+	<LI>Select the project database associated with the access control database you want to embed into Version Manager.<br><br>
+	<LI>Select Admin | Make Secure. The Make Secure dialog box appears.<br><br>
+	<LI>Select the <b>Access Database</b> check box. The field next to this check box displays the location and name of the access control database you are embedding. You cannot edit this field. (To change the access control database associated with the project database, see <A HREF="changeacdbassocpdb.html">Changing the Access Control Database Associated with a Project Database</a>.)<br><br>
+	<LI>Click OK.
+</OL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="aboutacdb.html">About Access Control Databases</A></TD>
+		<TD><A HREF="enablesecurity.html">Enabling Security</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="usingsecurity.html">Using Security</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

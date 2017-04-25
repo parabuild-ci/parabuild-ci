@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Modifying Windows File Associations</TITLE>
+<!--<SetEditor.html>-->
+<!--<toc parent="setting_up_your_environment" label="Modifying Windows File Associations" anchor="associations" sortkey="06">-->
+<!--<index parent="Windows_file_associations" label="modifying" anchor="associations">-->
+<!--<index parent="file_associations" label="modifying Windows file associations" anchor="associations">-->
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Getting Started\nGetting Started for Users\nSetting Up Your User Environment\nModifying Windows File Associations");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="associations"></A>Modifying Windows File Associations</H1>
+<P>
+By default, Serena ChangeMan Version Manager uses Windows file associations. For example, if you select an HTML file to view, Version Manager launches the file in the application defined by Windows as the HTML viewer, such as Internet Explorer. However, if you select an HTML file to edit, Version Manager launches the file in the application defined by Windows as the HTML editor, such as FrontPage. If these applications are not the applications you normally use, you can modify the Windows default file associations for each action using Windows Explorer.  
+
+<p><b>Note:</b> You can opt to not use Windows file associations at all, use a specific editor for files not associated with an editor by Windows or use the same editor for all file types by <A HREF="seteditor.html">changing the editor settings </A> on the Applications tab of the Options dialog box. 
+</P>
+<H2>To modify your Windows file association settings:</H2>
+<OL>
+<LI>
+Start Windows Explorer. 
+<br><br>
+<LI>Select View | Folder Options. The Options dialog box appears.
+<p>
+<li>Click the File Types tab.
+<p>
+<li>In the <B>Registered file types</B> list, select a file type and then click Edit. The Edit File Type dialog opens.
+<p>
+<li>In the <B>Actions</B> list, select an action, such as <B>Open</B> or <B>Edit</B>.
+<p><b>Note:</b> When you <A href="gettingarevision.html"> view a file </a>, Version Manager launches the application associated with the Open action. When you <A href="checkingout.html">edit a file</a>, Version Manager launches the application associated with the Edit action.
+<p>
+<li>Click Edit. The Editing File Type dialog box appears.
+<p>
+<li>In the <B>Application Used to Perform Action</B> field, modify the path of the application or click Browse to select the application. 
+<p>
+<li>Click OK.
+<p>
+<li>Click Close in the Edit File Type dialog box and again in the Folder Options dialog box
+</ol>
+<p>Version Manager launches the editor you selected whenever you view or edit a file of the specified type from within Version Manager.
+
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="seteditor.html">Setting Your Editor</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

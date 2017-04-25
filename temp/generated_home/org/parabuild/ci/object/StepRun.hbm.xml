@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 1.1//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="org.parabuild.ci.object.StepRun"
+        table="STEP_RUN"
+    >
+        <cache usage="read-write" />
+
+        <id
+            name="ID"
+            column="ID"
+            type="int"
+            unsaved-value="-1"
+        >
+            <generator class="identity">
+            </generator>
+        </id>
+
+        <version
+            name="timeStamp"
+            type="long"
+            column="TIMESTAMP"
+        />
+
+        <property
+            name="buildRunID"
+            type="int"
+            column="BUILD_RUN_ID"
+            unique="false"
+        />
+
+        <property
+            name="name"
+            type="java.lang.String"
+            column="NAME"
+            unique="false"
+        />
+
+        <property
+            name="resultID"
+            type="byte"
+            column="RESULT"
+            unique="false"
+        />
+
+        <property
+            name="resultDescription"
+            type="java.lang.String"
+            column="RESULT_DESCRIPTION"
+            unique="false"
+        />
+
+        <property
+            name="finishedAt"
+            type="java.util.Date"
+            column="FINISHED_AT"
+            unique="false"
+        />
+
+        <property
+            name="startedAt"
+            type="java.util.Date"
+            column="STARTED_AT"
+            unique="false"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-StepRun.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Interpreting Difference Results</TITLE>
+<!--<readingdifreport.html>-->
+<!--<toc parent="comparing_files" label="Viewing Difference Results" anchor="readingdifreport" sortkey="02">-->
+<!--<index parent="differences" label="viewing difference results" anchor="readingdifreport">-->
+<!--<index parent="reports" label="viewing difference results" anchor="readingdifreport">-->
+<!--<index parent="comparing" label="viewing difference results" anchor="readingdifreport">-->
+<!--<index parent="show_differences" label="viewing difference results" anchor="readingdifreport">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nGenerating Reports\nInterpreting Difference Results");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+
+<BODY BGCOLOR="#ffffee">
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="readingdifreport"></A>Interpreting Difference Results</H1>
+<P>When you view differences using  Actions | Show Differences, File 1 is used as the base file and File 2 is compared to File 1. Differences between the files are categorized into:</P>
+
+<ul><LI><b>Additions:</b> The lines of text that were added to File 2. These lines of text are not in File 1.<BR><BR></LI>
+<LI><b>Deletions:</b> The lines of text that were deleted from File 2. These lines of text are in File 1.<BR><BR></LI>
+<LI><b>Changes:</b> The lines of text that were modified in one of the files.<BR><BR></LI></ul>
+
+<P>Placeholders are the blocks of colors used to identify the types of differences between the files. Each difference type (additions, deletions, and changes) has two placeholders (or colors) assigned to it: one for selected one for unselected.</P>
+
+<P>Windows users have the option of changing the colors of the placeholders. To change the colors, from the Serena ChangeMan Merge Tool, click the Configuration (<img src="../graphics/tbopnconfig.gif" alt border="0">) button and select the Colors tab. Windows Users have the option of displaying a color legend to help identify placeholders. To display a color legend, from the Serena ChangeMan Merge Tool, click the Color Tips (<img src="../graphics/tbopnctps30.gif" alt border="0">) button. The Color Tips dialog appears:<br><br> <div align="center"><img src="../graphics/merge_color_tips.gif" alt border="0"></div></P>
+
+<h2>Examples</h2>
+<P>The following examples show how the differences between two files can vary depending on the file you select as File 1 (the base file).</P>
+
+<P>This example shows two revisions from the same versioned file. Version 1.0 was selected as File 1 (base file) and version 1.2 was selected as File 2.</P>
+<IMG SRC="../graphics/diff_example-1.gif" BORDER="0" ALT>
+<P>Lines 4, 5, and 6 have been changed and are highlighted as one block of differences. These differences are identified by change placeholders. Line 6.5 was added to File 2 and is highlighted as another block of differences. These differences are identified by addition placeholders.</P>
+
+<P>Using the same files as above but reversing the order of the files, you get the following results.</P>
+<IMG SRC="../graphics/diff_example-2.gif" BORDER="0" ALT>
+<P>Lines 4, 5, and 6 are still highlighted as differences and identified by change placeholders. However, the added line, line 6.5, is now in File 1 (the base file) but no longer in File 2. This difference is identified by deletion placeholders.</P>
+
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="generatedifferencereport.html">Comparing Files</A></TD>
+		<TD><A HREF="diffreportdialog.html">Show Differences dialog box</A></TD>
+	</TR>
+		<TR>
+        <TD><A HREF="aboutmergetool.html">About the Serena ChangeMan Merge Tool</A></TD>
+</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

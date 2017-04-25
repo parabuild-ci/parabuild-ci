@@ -1,0 +1,29 @@
+info: c:\WORK\mor2\dev\bt\conf\RELEASE-NOTES.txt - vs //depot/dev/bt31/conf/RELEASE-NOTES.txt#32,#56
+info: c:\WORK\mor2\dev\bt\conf\install.install4j - vs //depot/dev/bt31/conf/install.install4j#2,#21
+info: c:\WORK\mor2\dev\bt\conf\tray.install4j - vs //depot/dev/bt31/conf/tray.install4j#3,#18
+info: c:\WORK\mor2\dev\bt\src\viewtier\autobuild\Version.java - vs //depot/dev/bt31/src/org/parabuild/ci/Version.java#3,#17
+info: c:\WORK\mor2\dev\bt\src\viewtier\autobuild\build\TextDirLogHandler.java - vs //depot/dev/bt31/src/org/parabuild/ci/build/TextDirLogHandler.java#2,#3
+info: c:\WORK\mor2\dev\bt\src\viewtier\autobuild\versioncontrol\FileSystemSourceControl.java - vs //depot/dev/bt31/src/org/parabuild/ci/versioncontrol/FileSystemSourceControl.java#2
+info: c:\WORK\mor2\dev\bt\src\viewtier\autobuild\versioncontrol\GenericSourceControl.java - vs //depot/dev/bt31/src/org/parabuild/ci/versioncontrol/GenericSourceControl.java#2,#3
+info: //vimeshev/dev/bt/conf/RELEASE-NOTES.txt - copy from //depot/dev/bt31/conf/RELEASE-NOTES.txt
+info: //vimeshev/dev/bt/conf/install.install4j - copy from //depot/dev/bt31/conf/install.install4j
+info: //vimeshev/dev/bt/conf/tray.install4j - copy from //depot/dev/bt31/conf/tray.install4j
+info: c:\WORK\mor2\dev\bt\src\viewtier\autobuild\versioncontrol\MKSSourceControl.java - vs //depot/dev/bt31/src/org/parabuild/ci/versioncontrol/MKSSourceControl.java#2,#3
+info: c:\WORK\mor2\dev\bt\src\viewtier\autobuild\versioncontrol\PVCSSourceControl.java - vs //depot/dev/bt31/src/org/parabuild/ci/versioncontrol/PVCSSourceControl.java#2,#3
+info: //vimeshev/dev/bt/src/org/parabuild/ci/Version.java - copy from //depot/dev/bt31/src/org/parabuild/ci/Version.java
+info: //vimeshev/dev/bt/src/org/parabuild/ci/build/TextDirLogHandler.java - copy from //depot/dev/bt31/src/org/parabuild/ci/build/TextDirLogHandler.java
+info: //vimeshev/dev/bt/src/org/parabuild/ci/versioncontrol/FileSystemSourceControl.java - copy from //depot/dev/bt31/src/org/parabuild/ci/versioncontrol/FileSystemSourceControl.java
+info: c:\WORK\mor2\dev\bt\src\viewtier\autobuild\versioncontrol\StarTeamSourceControl.java - vs //depot/dev/bt31/src/org/parabuild/ci/versioncontrol/StarTeamSourceControl.java#2,#3
+info: c:\WORK\mor2\dev\bt\src\viewtier\autobuild\versioncontrol\SurroundSourceControl.java - vs //depot/dev/bt31/src/org/parabuild/ci/versioncontrol/SurroundSourceControl.java#2,#3
+info: c:\WORK\mor2\dev\bt\src\viewtier\autobuild\versioncontrol\VaultSourceControl.java - vs //depot/dev/bt31/src/org/parabuild/ci/versioncontrol/VaultSourceControl.java#2,#5
+info: //vimeshev/dev/bt/src/org/parabuild/ci/versioncontrol/GenericSourceControl.java - copy from //depot/dev/bt31/src/org/parabuild/ci/versioncontrol/GenericSourceControl.java
+info: //vimeshev/dev/bt/src/org/parabuild/ci/versioncontrol/MKSSourceControl.java - copy from //depot/dev/bt31/src/org/parabuild/ci/versioncontrol/MKSSourceControl.java
+info: c:\WORK\mor2\dev\bt\src\viewtier\autobuild\webui\admin\ParallelSourceControlPanel.java - vs //depot/dev/bt31/src/org/parabuild/ci/webui/admin/ParallelSourceControlPanel.java#2
+info: c:\WORK\mor2\dev\bt\src\viewtier\autobuild\webui\common\Pages.java - vs //depot/dev/bt31/src/org/parabuild/ci/webui/common/Pages.java#3
+info: //vimeshev/dev/bt/src/org/parabuild/ci/versioncontrol/PVCSSourceControl.java - copy from //depot/dev/bt31/src/org/parabuild/ci/versioncontrol/PVCSSourceControl.java
+info: //vimeshev/dev/bt/src/org/parabuild/ci/versioncontrol/StarTeamSourceControl.java - copy from //depot/dev/bt31/src/org/parabuild/ci/versioncontrol/StarTeamSourceControl.java
+info: //vimeshev/dev/bt/src/org/parabuild/ci/versioncontrol/SurroundSourceControl.java - copy from //depot/dev/bt31/src/org/parabuild/ci/versioncontrol/SurroundSourceControl.java
+info: //vimeshev/dev/bt/src/org/parabuild/ci/versioncontrol/VaultSourceControl.java - copy from //depot/dev/bt31/src/org/parabuild/ci/versioncontrol/VaultSourceControl.java
+info: //vimeshev/dev/bt/src/org/parabuild/ci/webui/admin/ParallelSourceControlPanel.java - copy from //depot/dev/bt31/src/org/parabuild/ci/webui/admin/ParallelSourceControlPanel.java
+info: //vimeshev/dev/bt/src/org/parabuild/ci/webui/common/Pages.java - copy from //depot/dev/bt31/src/org/parabuild/ci/webui/common/Pages.java
+exit: 0

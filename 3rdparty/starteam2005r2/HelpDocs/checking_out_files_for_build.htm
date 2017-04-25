@@ -1,0 +1,301 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Checking out Files for a Build</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=943>
+<meta name=layout-width content=702>
+
+
+<!--(Links)=========================================================-->
+
+<link rel="StyleSheet" href="starteam.css">
+
+
+
+<!--(Style Sheet)===================================================-->
+
+<style>
+<!--
+
+div.WebHelpPopupMenu {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 4;
+	visibility: hidden;
+}
+
+p.WebHelpNavBar {
+	text-align: right;
+}
+
+/*=(Generated Code)=================================================*/
+/*=(WARNING: DO NOT EDIT OR DELETE THIS SECTION!)===================*/
+/*begin!kadov{{=====================================================*/ 
+LI.kadov-p-CWebHelpNavBar {
+	text-align: right;
+}
+/*}}end!kadov=======================================================*/ 
+
+
+
+-->
+</style>
+
+<!--(Scripts)=======================================================-->
+
+<script type="text/javascript"
+		language=JavaScript
+		title=WebHelpSplitCss><!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//--></script>
+
+<script type="text/javascript"
+		language=JavaScript
+		title=WebHelpInlineScript><!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//--></script>
+
+<script type="text/javascript"
+		language=javascript1.2><!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Working with StarTeam\nUsing the Bulk Check-Out Utility\nChecking out Files for a Build");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//--></script>
+
+<style type="text/css">
+<!--
+h2.whs1 {font-family: sans-serif;}
+p.whs2 {font-size: 10pt;}
+-->
+</style>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Working with the Application\nUsing the Bulk-Checkout Utility\nChecking out Files for a Build");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Checking Out Files for a Build</h1>
+
+<p class=Body
+	style="font-family: sans-serif; font-size: 10pt;">Borland recommends 
+ that you use the Bulk Check-out (bco) utility when you need to check out 
+ files for builds because it is faster than the stcmd co command, especially 
+ when combined with the Cache Agent.</p>
+
+<p class=Body><span style="font-family: sans-serif; font-size: 10pt;"><font size=2 style="font-size:10pt;">The 
+ Bulk Check-out utility does not recognize differences in folder names 
+ due to case-sensitivity. It does recognize these differences in file names. 
+ For most users, this should not be a prob</font></span>lem.</p>
+
+<h2 class="whs1">Syntax</h2>
+
+<p><b style="font-weight: bold;">bco</b> <b>&nbsp;-p</b> &quot;<span style="font-style: italic;"><I><i>projectSpecifier</i></I></span>&quot;[<b>-pwdfile</b> 
+ &quot;<span style="font-style: italic;"><I><i>filePath</i></I></span>&quot;]<span 
+ style="font-family: sans-serif; font-size: 10pt;"><font size=2 style="font-size:10pt;"><br>
+[<b style="font-family: sans-serif; font-size: 10pt;">-autoLogon</b>] [<b 
+ style="font-family: sans-serif; font-size: 10pt;">-is</b>] </font></span></p>
+
+<p class="whs2">[<b>-rp</b> &quot;<i>folderPath</i>&quot; | 
+ <b>-fp</b> &quot;<i>folderPath</i>&quot;] </p>
+
+<p class="whs2">[<b>-cmp</b>] [<b>-dryrun</b>] [<b>-vb</b>] 
+ [<b>-useCA</b>] </p>
+
+<p class="whs2">[<b>-encrypt</b> <i>encryptionType</i>] </p>
+
+<p class="whs2">[<b>-cfgl</b> &quot;<i>labelName</i>&quot;| 
+ <b>-cfgp</b> &quot;<i>stateName</i>&quot; | <b>-cfgd</b> &quot;<i>asOfDate</i>&quot;] 
+ </p>
+
+<p class="whs2">[<b>-filter</b> &quot;<i>fileStatus</i>&quot;]</p>
+
+<p class="whs2">[<b>-o</b>] [<b>-ro</b>] [<b>-ts</b>] [<b>-fs</b>]</p>
+
+<p><span style="font-family: sans-serif; font-size: 10pt;"><font size=2 style="font-size:10pt;">[<b style="font-family: sans-serif; font-size: 10pt;">-eol 
+ on</b> | <b style="font-family: sans-serif; font-size: 10pt;">off</b> 
+ | <b style="font-family: sans-serif; font-size: 10pt;">cr </b>| <b style="font-family: sans-serif; font-size: 10pt;">lf 
+ </b>| <b style="font-family: sans-serif; font-size: 10pt;">crlf</b>]</font></span> 
+ </p>
+
+<p class=Code>[<span style="font-weight: bold;"><B><b>-netmon</b></B></span>] 
+ [<span style="font-weight: bold;"><B><b>-t</b></B></span>] [<span style="font-weight: bold;"><B><b>-h</b></B></span> 
+ | <span style="font-weight: bold;"><B><b>-help</b></B></span>]</p>
+
+<p class=Code>[<span style="font-style: italic;"><I><i>files...</i></I></span>]</p>
+
+<h2>Example</h2>
+
+<p class=Body>The following example uses bco to check out all the files 
+ from Source Code, a child of the root folder StarDraw (in the StarDraw 
+ view of the StarDraw project).</p>
+
+<p class=Code>bco -p &quot;JMarsh:password@Orion:1024/StarDraw/StarDraw/Source 
+ Code&quot; -is -o &quot;*&quot; </p>
+
+<p class=Body>&nbsp;</p>
+
+<p class=Body>The next example shows a bco command that uses -netmon and 
+ the output displayed by Net Monitor.</p>
+
+<p class=Code>bco -p &quot;Administrator:Administrator@10.50.6.91:49201/StarDraw/WebSite&quot; 
+ -fp D:\Test -netmon -o &quot;*.htm&quot;</p>
+
+<p class=Body>&nbsp;</p>
+
+<h3>Output:</h3>
+
+<p class=Body>StarTeam BulkCheckOut Utility version 7.0.xxx</p>
+
+<p class=Body>Copyright (c) 2004 Borland Software Corporation. All rights 
+ reserved.</p>
+
+<p class=Body>Start: (rev 100) SRVR_CMD_GET_PROJECT_LIST Time: 62 millis; 
+ Sent: 42 bytes; Got: 1834 bytes</p>
+
+<p class=Body>Start: (rev 100) SRVR_CMD_GET_PROJECT_VIEWS Time: 47 millis; 
+ Sent: 46 bytes; Got: 186 bytes</p>
+
+<p class=Body>Start: (rev 100) SRVR_CMD_GET_PROJECT_VIEWS Time: 15 millis; 
+ Sent: 46 bytes; Got: 186 bytes</p>
+
+<p class=Body>Start: (rev 100) SRVR_CMD_PROJECT_OPEN Time: 188 millis; 
+ Sent: 70 bytes; Got: 120 bytes</p>
+
+<p class=Body>Start: (rev 100) PROJ_CMD_GET_VIEW_PROPERTIES Time: 31 millis; 
+ Sent: 42 bytes; Got: 2556 bytes</p>
+
+<p class=Body>Start: (rev 100) PROJ_CMD_GET_FOLDERS Time: 63 millis; Sent: 
+ 42 bytes; Got: 1112 bytes</p>
+
+<p class=Body>Start: (rev 100) PROJ_CMD_GET_FOLDER_ITEMS Time: 16 millis; 
+ Sent: 50 bytes; Got: 40 bytes</p>
+
+<p class=Body>Start: (rev 100) PROJ_CMD_REFRESH_ITEMS Time: 3562 millis; 
+ Sent: 122 bytes; Got: 414 bytes</p>
+
+<p class=Body>Start: (rev 100) SRVR_CMD_GET_PROJECT_VIEWS Time: 16 millis; 
+ Sent: 46 bytes; Got: 186 bytes</p>
+
+<p class=Body>Start: (rev 100) PROJ_CMD_GET_PROJECT_PROPERTIES Time: 31 
+ millis; Sent: 42 bytes; Got: 4797 bytes</p>
+
+<p class=Body>Start: (rev 100) FILE_CMD_CHECKOUT Time: 47 millis; Sent: 
+ 78 bytes; Got: 108 bytes</p>
+
+<p class=Body>Start: (rev 100) FILE_CMD_CHECKOUT Time: 31 millis; Sent: 
+ 78 bytes; Got: 1767 bytes</p>
+
+<p class=Body>Start: (rev 100) FILE_CMD_CHECKOUT Time: 31 millis; Sent: 
+ 78 bytes; Got: 1140 bytes</p>
+
+<p class=Body>Start: (rev 100) SRVR_CMD_PROJECT_CLOSE Time: 15 millis; 
+ Sent: 62 bytes; Got: 16 bytes</p>
+
+<p class=Body>Start: (rev 100) SRVR_CMD_RELEASE_CLIENT Time: 31 millis; 
+ Sent: 42 bytes; Got: 16 bytes</p>
+
+<p class=Body>&nbsp;</p>
+
+<p class=Body>For more information, see<a href="using_bco_options.htm"> 
+ Using bco Options</a>.</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

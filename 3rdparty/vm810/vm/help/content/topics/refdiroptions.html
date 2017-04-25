@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Reference Directory Options</TITLE>
+<!--<refdiroptions.html>-->
+<!--<index parent="reference_directories" label="options" anchor="refdiroptions">-->
+<!--<index parent="options" label="reference directory" anchor="refdiroptions">-->
+<!--<index parent="configuration_options" label="reference directory" anchor="refdiroptions">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="refdiroptions"></A>Reference Directory Options</H1>
+<P>
+A reference directory is the location where Serena ChangeMan Version Manager automatically stores a copy of each workfile each time it is checked in to an archive. A reference directory provides a central repository of workfiles for browsing, printing, or copying. The reference copies enable developers to reuse or examine code without having to check out revisions.
+</P>
+<P>
+Unless you are using a workbench or integrated development environment that cannot perform any action on write-protected files, including reading them, we recommend that you always maintain read-only workfiles in either reference directories (as described in this topic) or in the workfile location (as described in <a href="workfileattroptions.html">Workfile Attributes Options</a>). Read-only workfiles remind users not to modify workfiles without locking the archive first.
+</P>
+<P>
+The options that you can set for reference directories are:
+</P>
+<UL>
+<LI>The location of the reference directory. The directive for this option is ReferenceDir.
+<LI>Whether Version Manager maintains copies of tip revisions from the trunk only or from both the trunk and any branches. The directive for this option is ReferenceDir=TrunkOnly | All.
+<LI>Whether or not Version Manager write-protects the files in the reference directory. The directive for this option is ReferenceDir=[No]WriteProtect.
+</UL>
+<P>
+<a href="setrefdiroptions.html">Click here</a> to see how to set these options.
+</P>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

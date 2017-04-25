@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>LDAP Configuration Examples</title>
+	<link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<body>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>LDAP Configuration Examples</h1>
+
+<p>Following are examples of typical LDAP configurations.</p>
+
+<h2>Example 1: Microsoft Active Directory Server</h2>
+<b>Server Name:</b> myserver.mydomain.com<br>
+<b>Server Port:</b> 389 (unless using SSL, then 636)<br>
+<b>Use Secure Socket Layer:</b> Not selected (or selected)<br>
+<b>Base User Context:</b> ou=people, dc=mydomain, dc=com<br>
+<b>User Naming Attribute:</b> sAMAccountName<br>
+<b>Bind Anonymously:</b> Not selected<br>
+<b>User DN:</b> cn=User One, cn=Users, dc=mydomain, dc=com<br>
+<b>Password:</b> OpenSesame
+
+<h2>Example 2: Netscape Server</h2>
+<b>Server Name:</b> myserver.mydomain.com<br>
+<b>Server Port:</b> 389 (unless using SSL, then 636)<br>
+<b>Use Secure Socket Layer:</b> Not selected (or selected)<br>
+<b>Base User Context:</b> ou=people, dc=mydomain, dc=com<br>
+<b>User Naming Attribute:</b> uid<br>
+<b>Bind Anonymously:</b> Selected<br>
+<b>User DN:</b> n/a<br>
+<b>Password:</b> n/a
+
+<h2>See Also</h2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="settingldapauthenticationoptions.html">Setting LDAP Configuration Options</A></TD>
+		<TD><A HREF="specifying_ldap_server.html">Specifying an LDAP Server</a></td>
+	</tr>
+	<TR>
+		<TD><A HREF="configureprojectldapauthenticationdialog.html">Configure Project/LDAP Configuration Dialog Box</A></TD>
+		<TD><A HREF="configureprojectldapserversdialog.html">Configure Project/LDAP Servers Dialog Box</A></TD>
+	</TR>
+</TABLE>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

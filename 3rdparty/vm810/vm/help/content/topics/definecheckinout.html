@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Defining Check In/Check Out Options</TITLE>
+<!--<definecheckinout.html>-->
+<!--<toc parent="setting_up_your_environment" label="Defining Check In/Check Out Options" anchor="definecheckinout" sortkey="04">-->
+<!--<index parent="checking_in" label="defining options" anchor="definecheckinout">-->
+<!--<index parent="checking_out" label="defining options" anchor="definecheckinout">-->
+<!--<index parent="options" label="defining Check In/Check Out" anchor="definecheckinout">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Getting Started\nGetting Started for Users\nSetting Up Your User Environment\nDefining Check In/Check Out Options");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="definecheckinout"></A>Defining Check In/Check Out/Get Options</H1>
+<P>When you perform check in/check out/get actions, Serena ChangeMan Version Manager defaults to the following options:
+
+<UL>
+	<LI>Prompts you if a workfile already exists during a check out.<br><br>
+	<LI>Leaves a read-only copy of the workfile in the workfile location after a check in.<br><br>
+	<LI>Copies out a read-only workfile when you perform a get.<br><br>
+	<li>Gets or checks out a revision whether or not it is newer than the workfile.</li>
+</UL>
+
+<P>If you find that you usually change these default options when you perform check in/check out/get actions, Version Manager enables you to change these default settings to fit your working style.
+<H2>To change check in/check out/get options:</H2>
+
+<OL>
+	<LI>Select View | Options. The Options dialog box appears with the General tab active.<br><br>
+	<LI>Select options from the Check In/Out Options group.<br><br>
+	<p>
+<UL TYPE=disc>
+	<LI> To delete workfiles from the workfile location after a successful check in, select the <B>Delete workfile after check in </B> check box.
+
+	<LI>To make workfiles writable when you perform a get, deselect the <B>Get read-only revision</B> check box.
+	<LI>To choose an option other than <B>Prompt</B> when a workfile already exists, select an option from the <B>If Workfile Exists</B> drop-down menu. The other options include <B>Overwrite</B>, which adds the workfile even if a duplicate workfile exists, or <B>Don't Overwrite</B>, which does not add the workfile to the workfile location.
+	<li>To get or check out only those revisions that are newer than the workfiles, select the <b>Get only if revision is newer than workfile</b> check box.</li>
+</UL><BR>
+	<LI>Click OK.
+</OL>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

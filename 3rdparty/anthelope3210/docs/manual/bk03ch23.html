@@ -1,0 +1,102 @@
+<html><head><META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Chapter&nbsp;23.&nbsp;Split Task</title><link href="./style.css" rel="stylesheet" type="text/css"><meta content="DocBook XSL Stylesheets V1.69.1" name="generator"><link rel="start" href="index.html" title="Antelope Users Guide"><link rel="up" href="bk03.html" title="Additional Ant Tasks"><link rel="prev" href="bk03ch22.html" title="Chapter&nbsp;22.&nbsp;Grep Task"><link rel="next" href="bk03ch24.html" title="Chapter&nbsp;24.&nbsp;Repeat Task"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table summary="Navigation header" width="100%"><tr><th align="center" colspan="3">Chapter&nbsp;23.&nbsp;Split Task</th></tr><tr><td align="left" width="20%"><a accesskey="p" href="bk03ch22.html">Prev</a>&nbsp;</td><th align="center" width="60%">Additional Ant Tasks</th><td align="right" width="20%">&nbsp;<a accesskey="n" href="bk03ch24.html">Next</a></td></tr></table><hr></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="Split"></a>Chapter&nbsp;23.&nbsp;Split Task</h2></div></div><div></div></div>
+<STYLE TYPE="text/css"> <!-- @import url(./style.css); --> </STYLE>
+    <p>
+This task splits a property or file into pieces.  This is similar to the "split" utility found on most Unix and Linux distributions.
+</p><p>
+To use this task in your build files, include a task definition like this:
+</p><p>
+<pre class="programlisting">
+
+    &lt;taskdef name="split" classname="ise.antelope.tasks.SplitTask"/&gt;
+   
+</pre>
+</p><p>
+Once a file has been split into smaller pieces, it can be rejoined with the "concat" task that is part of the standard Ant core tasks.
+</p><p>
+<div class="table"><a name="N1110C"></a><p class="title"><b>Table&nbsp;23.1.&nbsp;Split Task Attributes</b></p><table summary="Split Task Attributes" border="1"><colgroup><col><col><col><col></colgroup><thead><tr><th>Attribute</th><th>Description</th><th>Default</th><th>Required</th></tr></thead><tbody><tr><td>prefix</td><td>The start of the filename(s) to write the parts to.</td><td>x</td><td>No</td></tr><tr><td>bytes</td><td>How big, in bytes, to make the individual pieces. In general, use lines for text files, bytes or size for binary files.</td><td>None</td><td>No</td></tr><tr><td>size</td><td>How big to make the individual pieces. Like the Unix/Linux split utility, this attribute allows modifiers: b for 512, k for 1K, m for 1 Meg, so 100k is the same as passing 102400 in the bytes attribute.  In general, use lines for text files, bytes or size for binary files.</td><td>None</td><td>No</td></tr><tr><td>lines</td><td>How big to make the individual pieces in lines.  In general, use lines for text files, bytes or size for binary files.</td><td>1000</td><td>No</td></tr><tr><td>property</td><td>Split the value of the property into several files.</td><td>None</td><td>No</td></tr><tr><td>string</td><td>Split this string into several files.</td><td>None</td><td>No</td></tr><tr><td>file</td><td>Split this file into several files.</td><td>None</td><td>No</td></tr><tr><td>outputdir</td><td>Destination for the output files.</td><td>None</td><td>Maybe.  If file is given and output dir is not, will write to the same directory as file, otherwise, this is a required attribute.</td></tr><tr><td>failonerror</td><td>Should the build stop if this task fails?</td><td>Yes</td><td>No</td></tr></tbody></table></div>
+</p><p>
+Examples
+</p><p>
+Split the value of a property into several files:
+<pre class="programlisting">
+
+   &lt;target name="test1" depends="clean"&gt;
+      &lt;property name="prop1" value="ABCDE"/&gt;
+      &lt;a:split property="prop1" bytes="1" outputdir="${out_dir}"/&gt;
+      &lt;a:fileutil file="${out_dir}" property="file_count"&gt;
+         &lt;a:filecount/&gt;
+      &lt;/a:fileutil&gt;
+      &lt;a:assert message="Expected 5 files, got ${file_count}"&gt;
+         &lt;bool&gt;
+            &lt;a:mathequals arg1="5" arg2="${file_count}"/&gt;
+         &lt;/bool&gt;
+      &lt;/a:assert&gt;
+   &lt;/target&gt;
+
+</pre>
+This will result in 5 files named x.0, x.1, x.2, x.3, and x.4, each containing a single character.
+</p><p>
+This more involved example shows how to split ant.jar into several files each 100000 bytes in size.  The files will be names ant.jar.0, ant.jar.1, ..., ant.jar.10.  Then the parts are put back together with concat.
+<pre class="programlisting">
+
+   &lt;target name="test2" depends="clean"&gt;
+      &lt;!-- make sure ant.jar is available --&gt;
+      &lt;property name="ant.jar" value="${ant.library.dir}/ant.jar"/&gt;
+      &lt;available property="ant.jar.available" file="${ant.jar}"/&gt;
+      
+      &lt;a:if name="ant.jar.available" value="true"&gt;
+         &lt;!-- ant.jar generally runs around 1MB in size, so split into 100000 byte pieces --&gt;
+         &lt;a:unset name="piece_size"/&gt;
+         &lt;property name="piece_size" value="100000"/&gt;
+         &lt;a:split file="${ant.jar}" bytes="${piece_size}" outputdir="${out_dir}" prefix="ant.jar"/&gt;
+         
+         &lt;!-- count the parts --&gt;
+         &lt;a:fileutil file="${out_dir}" property="file_count"&gt;
+            &lt;a:filecount/&gt;
+         &lt;/a:fileutil&gt;
+         
+         &lt;!-- calculate how many parts there should be --&gt;
+         &lt;a:fileutil file="${ant.jar}" property="ant_size"&gt;
+            &lt;a:filelength/&gt;
+         &lt;/a:fileutil&gt;
+         &lt;a:math result="split_size"&gt;
+            &lt;a:op op="ceil"&gt;
+               &lt;a:op op="/"&gt;
+                  &lt;a:num value="${ant_size}"/&gt;
+                  &lt;a:num value="${piece_size}"/&gt;
+               &lt;/a:op&gt;
+            &lt;/a:op&gt;
+         &lt;/a:math&gt;
+         
+         &lt;!-- make sure there are the right number of parts --&gt;
+         &lt;a:assert message="Expected ${split_size} files, got ${file_count}"&gt;
+            &lt;bool&gt;
+               &lt;a:mathequals arg1="${split_size}" arg2="${file_count}"/&gt;
+            &lt;/bool&gt;
+         &lt;/a:assert&gt;
+
+         &lt;!-- sort the filenames of the parts so concat puts them together in
+         the right order--&gt;
+         &lt;a:fileutil file="${out_dir}" property="file_list"&gt;
+            &lt;a:listfiles includepath="no"/&gt;
+         &lt;/a:fileutil&gt;
+         &lt;a:stringutil string="${file_list}" property="file_list"&gt;
+            &lt;a:sort/&gt;
+         &lt;/a:stringutil&gt;
+         
+         &lt;!-- put them back together --&gt;
+         &lt;concat destfile="${out_dir}/ant.jar" binary="true"&gt;
+            &lt;filelist dir="${out_dir}" files="${file_list}"/&gt;
+         &lt;/concat&gt;
+
+         &lt;!-- make sure the new file is the identical to the original --&gt;
+         &lt;a:assert message="concat did not produce identical file"&gt;
+            &lt;bool&gt;
+               &lt;filesmatch file1="${ant.jar}" file2="${out_dir}/ant.jar"/&gt;
+            &lt;/bool&gt;
+         &lt;/a:assert&gt;
+      &lt;/a:if&gt;
+   &lt;/target&gt;
+
+</pre>
+</p></div><div class="navfooter"><hr><table summary="Navigation footer" width="100%"><tr><td align="left" width="40%"><a accesskey="p" href="bk03ch22.html">Prev</a>&nbsp;</td><td align="center" width="20%"><a accesskey="u" href="bk03.html">Up</a></td><td align="right" width="40%">&nbsp;<a accesskey="n" href="bk03ch24.html">Next</a></td></tr><tr><td valign="top" align="left" width="40%">Chapter&nbsp;22.&nbsp;Grep Task&nbsp;</td><td align="center" width="20%"><a accesskey="h" href="index.html">Home</a></td><td valign="top" align="right" width="40%">&nbsp;Chapter&nbsp;24.&nbsp;Repeat Task</td></tr></table></div></body></html>

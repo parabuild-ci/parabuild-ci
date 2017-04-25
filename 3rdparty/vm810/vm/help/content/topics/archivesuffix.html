@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Archive Suffix</TITLE>
+<!--<archivesuffix.html>-->
+<!--<index parent="archives" label="suffix" anchor="archivesuffix">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="archivesuffix"></A>Archive Suffix</H1>
+<P>
+The default archive suffix for the desktop client is to add the characters -arc to the end of the workfile name (for example, myfile.txt-arc), which creates unique archive names. However, the default archive suffix for the command-line is to substitute the letter V for the third character in the suffix (extension) of the workfile name (for example, myfile.txv), which can result in identical archive names. For example, using the command-line interface default archive suffix, two workfiles named myfile.cpp and myfile.cpy end up sharing the same archive name, myfile.cpv. 
+</P>
+<P>
+There are two ways that you can define an archive suffix. First you can define an archive suffix that adds characters to the end of the workfile name. To do this, you begin the archive suffix with a plus sign (+). The characters after the plus sign are added to the end of the workfile name. For example, if the archive suffix is +-arc and the workfile name is main.c, the archive name would be main.c-arc.
+</P>
+<P>
+Second, you can define an archive suffix that consists of two parts--a suffix mask and a default suffix, for example, ??V___. The first three characters are the suffix mask, which determines which characters Version Manager uses for the archive extension if the workfile extension consists of three characters. For example, the questions marks in the default suffix mask direct Version Manager to use the first and second characters of the workfile extension, if they exist. The letter V directs Version Manager to substitute the third character in the workfile extension, if it exists, with a V. If you check in the workfile main.asm, Version Manager would create the archive main.asv.
+</P>
+<P>The second three characters are the suffix default, which determines which characters Version Manager uses for the extension if any of the characters in the workfile extension do not exist. For example, the underscores in the default suffix direct Version Manager to substitute an underscore whenever a character in a workfile extension does not exist. If you check in the workfile main.c, Version Manager would create the archive main.c_v.
+</P>
+<P>
+Note that the archive suffix definition of ??V___ should not be used for files with the letter V as the third letter in the suffix because the workfile and archive names will be the same (for example, the workfile test.java would have an archive name of test.java).
+</P>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

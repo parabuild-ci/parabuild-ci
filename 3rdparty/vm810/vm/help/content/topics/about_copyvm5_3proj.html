@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>About Copying 5.3/6.0 Projects into Project Databases</TITLE>
+<!--<about_copyvm5_3proj.html>-->
+<!--<toc parent="working_with_5360_project_roots" label="Upgrading 5.3/6.0 Projects" anchor="about_copyvm5_3proj" sortkey="04">-->
+<!--<index parent="copying" label="5.3/6.0 projects" anchor="about_copyvm5_3proj">-->
+<!--<index parent="projects" label="copying 5.3/6.0" anchor="about_copyvm5_3proj">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with 5.3/6.0 Project Roots/Folders\nUpgrading 5.3/6.0 Projects");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="copyvm5_3proj"></A>About Upgrading 5.3/6.0 Projects</H1>
+<p>To upgrade 5.3/6.0 projects to the new project format, <a href="copyvm5_3proj.html">copy them into project databases</a>. Upgrading 5.3/6.0 projects allows you to access all Serena ChangeMan Version Manager features. You can also <A HREF="copyvm5_3projroot.html">copy 5.3/6.0 project roots into new project databases</a>.</p> 
+<p><b>NOTE</b>  If you want to upgrade a Version Manager Source Code Control (SCC) Interface 5.3/6.0 project, see the <i>Serena ChangeMan Version Manager IDE Client Implementation Guide</i> for your development environment for more information.</p>
+<H2>Default Options for 5.3/6.0 Project Upgrades</H2>
+<p>When you upgrade a 5.3/6.0 project, Version Manager:</p>
+<UL>
+	<LI>Organizes the new project based on the structure of the existing 5.3/6.0 project and includes archives that are not in folders. These archives may be located at the project root level. This option is available only if you create the project based on the existing 5.3/6.0 project structure.<br><br>
+	<LI>References the <i>original</i> archives in the existing <A HREF="archivelocation.html">archive locations</a>. Copied folders will also reference their existing archive locations. When copying a project that contains multiple folders, remember that the folders may have different archive locations. The new project will reference all of the different archive locations.<br><br>
+Note that any <i>new</i> archives added to the project after it is copied will use the project's archive location. The default is a directory named for the project beneath the archives directory of the project database location. <br><br>
+
+	<LI>Copies the project's existing <A HREF="aboutconfigfiles.html">configuration files</a> and places them in the new project's structure.<br><br>
+	<LI>Uses the 5.3/6.0 project's existing access control databases.<br><br>
+	
+</UL>
+<P>You can override any of these defaults when <a href="copyvm5_3proj.html">copying a project</a>. </p>
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="about5_3projroot.html">About 5.3/6.0 Project Roots</A></TD>
+		<TD><A HREF="copyvm5_3projroot.html">Copying 5.3/6.0 Project Roots</A></TD>	
+	</TR>
+	<TR>
+		<TD><A HREF="openvm5_3proj.html">Opening 5.3/6.0 Project Roots</A></TD>	
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

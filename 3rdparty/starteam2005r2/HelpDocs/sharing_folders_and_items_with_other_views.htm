@@ -1,0 +1,185 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Sharing Folders and Items with Other Views</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=copyright value="Copyright© 1995-2003, Borland Software Corporation. All rights reserved.">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=661>
+<meta name=layout-width content=614>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<!--(Scripts)=======================================================-->
+
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="./ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Working with the Application\nManaging Folders\nSharing Folders and Items with Other Views");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Sharing Folders and Items with Other Views</h1>
+
+<p class=Body>You can share folders and items, such as files or change 
+ requests, between views if the views belong to projects that are located 
+ on the same server configuration. You can also share a folder or item 
+ at two locations in the same view. Labels cannot be moved from view to 
+ view.</p>
+
+<p class=Body>When a folder is shared, users of both views can access its 
+ contents, including its child folders and their contents. You can also 
+ share a folder or item to two locations in the same view.</p>
+
+<p class=Body>As a rule, the behavior of the shared item is governed by 
+ the <span style="font-weight: bold;"><B>Set items shared into view to branch 
+ on change</B></span> property of the new view, not by that of its parent view. 
+ If the new view is a reference view (that is, a view that does not permit 
+ branching), it does not have that property, so the shared item’s <span 
+ style="font-weight: bold;"><B>Branch on change</B></span> setting is controlled 
+ by the setting of its parent view.</p>
+
+<p class=Body>Tasks and topics do not branch, so this view property does 
+ not affect them. </p>
+
+<p class=Body>If a folder or item is shared, its configuration (floating, 
+ based on a label, a promotion state, or a point in time) is initially 
+ identical in both views. However, the configuration can be modified in 
+ either view, which means that shared items can differ. To freeze shared 
+ folders or items, you must configure each of them to a specific date and 
+ time. Once items have been shared into a view, you can change their branching 
+ behavior on an item-by-item basis.</p>
+
+<p class=Body>Shared folders or items have the access rights originally 
+ set for them at the folder or item level, until they branch in their new 
+ location. Branching creates a new object that initially has no access 
+ rights at the folder or item levels.</p>
+
+<p class=Proc>To share a folder or item in two locations in the same view:</p>
+
+<ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select <span style="font-weight: bold;"><B>Project 
+ &gt; Open</B></span> to open the project view window.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Press <span style="font-weight: bold;"><B>Ctrl</B></span> 
+ and drag the folder or item that is to be shared from one location in 
+ the view to another. A message box appears, asking you to confirm this 
+ change.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Click <span style="font-weight: bold;"><B>Yes</B></span>.</p></li>
+</ol>
+
+<p class=Proc>To share a folder or item between two different views:</p>
+
+<ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select <span style="font-weight: bold;"><B>Project 
+ &gt; Open</B></span> from the menu to open a view window.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Repeat step 1 to open a second 
+ window. Make sure both project views are visible, resizing the windows 
+ if required.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Press <span style="font-weight: bold;"><B>Ctrl</B></span> 
+ and drag the folder or item that is to be shared from one view to the 
+ other. A message box appears, asking you to confirm this change.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Click <span style="font-weight: bold;"><B>Yes</B></span>.</p></li>
+</ol>
+
+<p class=Body><span style="font-weight: bold;"><B>Warning:&nbsp;</B></span>When 
+ you share tasks that have been exported from MS Project, you must share 
+ an entire task tree, starting with the root task.</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

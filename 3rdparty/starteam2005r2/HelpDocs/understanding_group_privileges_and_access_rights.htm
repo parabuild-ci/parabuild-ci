@@ -1,0 +1,210 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Understanding Group Privileges and Access Rights</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=copyright value="Copyright© 1995-2003, Borland Software Corporation. All rights reserved.">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=790>
+<meta name=layout-width content=707>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<!--(Scripts)=======================================================-->
+
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="./ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Administering the Application\nControlling Access to Objects\nUnderstanding Group Privileges and Access Rights");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Understanding Group Privileges and Access Rights</h1>
+
+<p class=Body>When users log onto a server configuration, they are identified 
+ individually by their user names and as members of the groups to which 
+ they belong. The application stores this information as an access token 
+ for each user. As users perform operations on application objects (projects, 
+ views, folders, and items), the application examines these tokens and 
+ the access rights for the objects on which the users are performing the 
+ operations.</p>
+
+<p class=Body>The application checks access rights in layers. The right 
+ to access an object begins with the <span style="font-style: italic;"><I>System 
+ Policy</I></span> dialog, which can be accessed from the <span style="font-style: italic;"><I>Server 
+ Administration</I></span> dialog. When not ignored, the right of ownership 
+ and the right of privileges take precedence over all other rights configured 
+ elsewhere.</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>By default, the application 
+ gives special rights to the owner of an item or object (generally, the 
+ user who created the project, view, folder, or item). Unless ownership 
+ is being ignored, the right of ownership overrides and takes precedence 
+ over all rights configured elsewhere.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Similarly, unless group 
+ privileges are being ignored, these privileges also override and take 
+ precedence over rights configured elsewhere. Privileges are group properties 
+ set on the <span style="font-weight: bold;"><B>Privileges</B></span> tab of the 
+ <span style="font-style: italic;"><I>Group Properties</I></span> dialog. </p></li>
+	
+	<p class=Bullet-1-text>A user is granted the same privileges as those 
+ of the group to which he or she belongs. If the user belongs to two groups, 
+ and one is granted certain privileges while the other is denied the same 
+ privileges, the user is granted the privileges. </p>
+</ul>
+
+<p class=Body>After consideration of object ownership and/or group privileges, 
+ the application checks the access rights granted for specific objects. 
+ Settings on the <span style="font-style: italic;"><I>Access</I></span> <span 
+ style="font-style: italic;"><I>Rights</I></span> dialogs for projects, views, 
+ folders, and individual items grant or deny users or groups the ability 
+ to perform operations at those levels. It is important to remember that 
+ if access rights are granted to any user or group at a given level in 
+ an <span style="font-style: italic;"><I>Access Rights</I></span> dialog, users 
+ or groups who are not granted access rights at that level are effectively 
+ denied all rights. </p>
+
+<p class=Body>Ultimately, if a user can see an object and is not stopped 
+ from performing an operation by a deny record, the user can do anything 
+ that a grant record allows, whether as an individual user or as a member 
+ of any group. The only exceptions have to do with ownership and privileges.</p>
+
+<p class=Proc>To determine whether a user can perform an operation, the 
+ application performs the following checks:</p>
+
+<ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>If the user requesting the 
+ operation is the owner of the object being operated on and ownership is 
+ not being ignored, access to the object is granted. When ownership is 
+ not ignored, it takes precedence over both privileges and access rights.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>If the user belongs to a 
+ group that has an appropriate privilege and privileges are not being ignored, 
+ access to the object is granted. Privileges, when not ignored, take precedence 
+ over the access rights that are set. Users who belong to a group with 
+ the correct privileges can have rights that are specifically denied to 
+ them in the application.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>If a user or group to which 
+ a user belongs has satisfactory access rights set for an object on which 
+ an operation will be performed, access is granted to the user. If the 
+ object has access rights set, but none are satisfactory, the user is denied 
+ access. </p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>If no access rights have 
+ been set for the object, step 3 is repeated at the next higher level.</p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>If the operation 
+ is on an item, the access rights for the parent folder are checked.</p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>If the operation 
+ is on a root folder, the access rights for the view are checked.</p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>If the operation 
+ is on a view, the access rights for the project are checked.</p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>If the operation 
+ is creating a project, the Server access rights are checked.</p></li>
+	</ul>
+	
+	<li class=kadov-p-CList-1><p class=List-1>If none of the levels has 
+ access rights set, access is granted to the user.</p></li>
+</ol>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

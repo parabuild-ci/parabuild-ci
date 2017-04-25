@@ -1,0 +1,71 @@
+<!-- Copyright 2003 Zelix Pty Ltd (ABN 47 078 740 093) -->
+<html>
+<head>
+<title>Zelix KlassMaster Java Obfuscator</title>
+   <meta name="keywords" content="java,code obfuscator,java obfuscator">
+   <meta name="description" CONTENT="Zelix KlassMaster is a second generation Java obfuscator">
+   <meta name="classification" CONTENT="Zelix KlassMaster is a second generation Java obfuscator">
+   <link rel=stylesheet href="../ZKM.css" TYPE="text/css">
+</head>
+<body background="../images/small-white-mist1.jpg" bgcolor="#E1E1E1">
+<center><a href="index.html"><img src=../images/ZKM_b4.gif alt="Zelix KlassMaster" width=264 height=62 border=0></a></center>
+<hr>
+<center>
+<table width=770 border=0>
+   <tr>
+      <td>
+         <h1>Exclude Parameter Type</h1>
+      </td>
+   </tr>
+   <tr>
+      <td valign="top">
+         <img src=../images/excludeType.gif align="right" width=325 height=287 alt="Zelix KlassMaster - Exclude Parameter Type"><p>
+         The <b>Exclude Parameter Type</b> window allows you to select the type of exclude 
+         parameter you wish to add.  There are five kinds of name exclusion parameter.
+         <p>
+         <h3><a name="packageExclusion"><a href=excludePackageType.html>Package exclusion parameters</a></a></h3>
+         An exclusion parameter that <b>excludes a package</b> name prevents that package and its sub-packages from being renamed. 
+         However, in itself it will not prevent the class, field and the method names within that package from being renamed.
+
+         <h3><a name="classExclusion"><a href=excludeClassType.html>Class exclusion parameters</a></a></h3>
+         An exclusion parameter that <b>excludes a class</b> name prevents that class from being renamed. 
+         However, in itself it will not prevent the field and the method names of that class from being renamed.
+
+         <h3><a name="fieldExclusion"><a href=excludeFieldType.html>Field exclusion parameters</a></a></h3>
+         An exclusion parameter that <b>excludes a field</b> name prevents that field from being renamed. 
+
+         <h3><a name="methodExclusion"><a href=excludeMethodType.html>Method exclusion parameters</a></a></h3>
+         An exclusion parameter that <b>excludes a method</b> name prevents that method from being renamed.
+
+         <h3><a name="suffixExclusion"><a href=excludeClassSuffixType.html>Class suffix exclusion parameters</a></a></h3>
+         A class suffix exclusion parameter is a relatively complex and specialized exclusion parameter. It works in two stages.
+If a class matches a class suffix exclusion parameter then
+<ol>
+<li>its specified suffix is excluded from being renamed 
+<li>if a class X can be found that has an unqualified name matching the non-suffix part of the matching class's name, 
+then the non-suffix part of the matching class's name will be renamed to the new name of class X. 
+</ol>
+Its operation is best explained with an example. 
+Consider a class suffix exclude parameter specifying the suffix &quot;_Stub&quot;. 
+A hypothetical class named &quot;Class1_Stub&quot; matches the parameter so the suffix part of the name will be retained. 
+The non-suffix part of the matching class name &quot;Class1_Stub&quot; is &quot;Class1&quot;. 
+If there is a class in the same package named &quot;Class1&quot; and if, when obfuscating, &quot;Class1&quot; is renamed to &quot;abc&quot; 
+then the class &quot;Class1_Stub&quot; will be renamed to &quot;abc_Stub&quot;.
+         <p>
+      </td>
+   </tr>
+</table>
+</center>
+<hr>
+<center>
+<table>
+   <tr>
+      <td>
+         <a href=advancedExclude.html><img src=../images/uarrw.gif alt="Obfuscate Name Exclusions"></a>
+      </td>
+   </tr>
+</table>
+</center>
+Copyright &copy; 2003 <a href="mailto:WebMaster@zelix.com"><font size=-1>Zelix Pty Ltd</font></a> (ABN 47 078 740 093)
+</body>
+</html>

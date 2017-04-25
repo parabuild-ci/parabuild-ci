@@ -1,0 +1,210 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Controlling File Status Storage</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=copyright value="Copyright© 1995-2003, Borland Software Corporation. All rights reserved.">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=738>
+<meta name=layout-width content=707>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<!--(Scripts)=======================================================-->
+
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="./ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Working with the Application\nCustomizing Personal Options\nControlling File Status Storage");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Controlling File Status Storage</h1>
+
+<p class=Body>File status information is stored on your workstation. By 
+ default, this information is stored at a central location. The default 
+ location is a folder named syncdb, but its path differs depending on your 
+ workstation platform.</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>For Windows NT, syncdb 
+ is a child of the folder in which the application has been installed.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>For Windows 2000 or XP, 
+ syncdb is a child of:<span style="font-family: 'Courier New', monospace;"><br>
+	C:\Documents and Settings\</span><span style="font-style: italic; font-family: 'Courier New', monospace;"><I>username</I></span><span 
+ style="font-family: 'Courier New', monospace;">\Local Settings\Application 
+ Data\Borland\StarTeam\</span></p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>For non-Windows platforms 
+ syncdb is a child of:<span style="font-family: 'Courier New', monospace;"><br>
+	/</span><span style="font-style: italic; font-family: 'Courier New', monospace;"><I>user_home_directory</I></span><span 
+ style="font-family: 'Courier New', monospace;">/.starteam-client/</span></p></li>
+</ul>
+
+<p class=Body>Each syncdb folder contains folders that represent your working 
+ folders (although their names appear to be unrelated) and contains a .sdb 
+ and .lck file.</p>
+
+<p class=Body>You can change the central storage location or, if you prefer, 
+ specify per-folder storage. Then each working folder has file status information 
+ stored in a child folder named .sbas. Each .sbas folder contains a Sync 
+ and a SyncLock file.</p>
+
+<p class=Proc>To specify the type of file status storage:</p>
+
+<ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select <span style="font-weight: bold;"><B>Tools 
+ &gt; Personal Options</B></span> from the menu bar. The <span style="font-style: italic;"><I>Personal 
+ Options</I></span> dialog opens.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select the <span style="font-weight: bold;"><B>Files</B></span> 
+ tab.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>From the<span style="font-weight: bold;"><B> 
+ File status repository</B></span> options, select the <span style="font-weight: bold;"><B>Central</B></span> 
+ or <span style="font-weight: bold;"><B>Per folder</B></span> option button. If 
+ you select<span style="font-weight: bold;"><B> Central</B></span>, you can enter 
+ or browse for a location other than the default. The new location goes 
+ in the <span style="font-weight: bold;"><B>Central repository location</B></span> 
+ text box. The repository to which this option refers is a location for 
+ storing file statuses, not a database.</p></li>
+	
+	<p class=List-1-text>Suppose several users all check files in and out 
+ of StarTeam from a shared working folder, such as \\OurDevServer\SourceCode\WorkingFolder 
+ &lt;file:///\\OurDevServer\SourceCode\WorkingFolder&gt;. If these users 
+ select the central repository option for file statuses, the statuses are 
+ stored on each of their computers. Whenever a user makes a change to a 
+ file in the working folder, the status for that file is undated only on 
+ that user’s computer. Everyone else sees the status “Unknown” for that 
+ file. Over time, all the files may have been changed, and the statuses 
+ can become “Unknown” for all users of all files. Using the per-folder 
+ option causes the statuses to be updated within the working folder itself. 
+ Everyone has access to those status changes and “Unknown” statuses do 
+ not occur.</p>
+</ol>
+
+<p class=Body><span style="font-weight: bold;"><B>Tip:</B></span>&nbsp;To return 
+ to the default setting for the <span style="font-weight: bold;"><B>Central 
+ repository location</B></span>, simply click<span style="font-weight: bold;"><B> 
+ Default</B></span>. </p>
+
+<p class=Proc>To clean up the file status repository:</p>
+
+<ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select <span style="font-weight: bold;"><B>Tools 
+ &gt; Personal Options</B></span> from the menu bar. The <span style="font-style: italic;"><I>Personal 
+ Options</I></span> dialog opens.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select the <span style="font-weight: bold;"><B>Files</B></span> 
+ tab.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>From the<span style="font-weight: bold;"><B> 
+ File status repository</B></span> options, click the<span style="font-weight: bold;"><B> 
+ Purge</B></span> button. This action displays the<span style="font-style: italic;"><I> 
+ Status</I></span> <span style="font-style: italic;"><I>Repository Purge</I></span> 
+ dialog.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Click <span style="font-weight: bold;"><B>Start</B></span> 
+ to generate a list of paths to folders that no longer exist. </p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Click<span style="font-weight: bold;"><B> 
+ Purge</B></span> to delete status information for selected folders or <span 
+ style="font-weight: bold;"><B>Purge All</B></span> to delete all superfluous 
+ status information.</p></li>
+</ol>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

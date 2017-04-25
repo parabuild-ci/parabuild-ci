@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Setting Up Security</TITLE>
+<!--<setupsecurity.html>-->
+<!--<toc parent="set_up_security" label="Overview" anchor="setupsecurity" sortkey="01">-->
+<!--<index parent="security" label="setting up" anchor="setupsecurity">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nUsing Security\nSetting Up Security\nOverview");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="setupsecurity"></A>Setting Up Security</H1>
+<P>This section provides step-by-step procedures for setting up security using the Serena ChangeMan Version Manager desktop client. <A HREF="plansecurity.html">Planning security</A> provides four example scenarios to help you decide what level of security would work best for your location.</P>
+<H2>To set up security:</H2>
+<OL>
+	<LI> If you want to set up security for a project, you must <A HREF="assocconfigfile.html">associate a project configuration file</A> with the project, unless this has already been done. Then, you must specify the location of an access control database or create a new one for the project.<br><br>
+	<LI>If you are setting up security for a project database and you want to use an access control database other than the one that was created with the project database, <A HREF="specifyacdblocation.html">specify the location of an access control database</A> or create a new one.<br><br>
+	<LI><A HREF="definecustomprivsets.html">Define custom privilege sets</A> for the access control database. This step is optional because you can assign individual privileges or the <A HREF="defaultprivtables.html">default privilege sets</a> provided in Version Manager to your users. If the default privilege sets do not meet your needs, you can define a custom privilege set and assign it to the users when you create them.<br><br>
+	<LI><A HREF="defineusers.html">Define users</A>, which includes assigning privileges to the users.<br><br>
+	<LI>If you are planning to use access lists as part of your security definition, <A HREF="defineaccesslistgroup.html">define the appropriate access list groups</A>, which includes assigning privileges and users to the groups.<br><br>
+	<LI>If you are using access lists, <A HREF="defineaccesslist.html">define access lists</A> for the appropriate archives.<br><br>
+	<LI><A HREF="enablesecurity.html">Enable security</a>.
+</OL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="usingsecurity.html">Using Security</A></TD>
+		<TD><A HREF="maintainsecurity.html">Maintaining Security</A></TD></tr>
+	
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

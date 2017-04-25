@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Moving Version Labels</TITLE>
+<!--<moveversionlabel.html>-->
+<!--<toc parent="labeling_revisions" label="Moving Version Labels" anchor="moveversionlabel" sortkey="06">-->
+<!--<index parent="version_labels" label="moving" anchor="moveversionlabel">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nUsing Version Labels\nMoving Version Labels");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="moveversionlabel"></A>Moving Version Labels</H1>
+<P>Moving a version label moves an existing label from one revision to another within the same versioned file. When moving version labels at the project, folder or project database level, all of the version labels that match the version label you are reassigning are moved.
+
+<H2>To move a version label:</H2>
+<OL>
+	<LI>Select the versioned file(s), project, folder, or project database that contains the version label you want to move.<BR><BR>
+	<LI>Select Actions | Version Label | Assign.  The <a href="assignversionlabeldialog.html">Assign Version Label dialog box</a> appears.<BR><BR>
+	<LI>In the <b>Assign Version Label</b> field, enter the version label that you want to move.<BR><BR>
+	<LI>In the <B>To revision</B> field, enter the revision number, version label, or promotion group that identifies the revision you want the version label moved to or click the Browse button to select the revision.<BR><BR>
+
+<LI>To instruct Version Manager to automatically move the version label with the latest (tip) revision each time a new revision is checked in, select the <b>Float label with tip</b> check box.   <BR><BR>
+<li>From the <b>If version label exists</b> drop-down list, select Reassign.<BR><BR>
+<li>If you are moving a version label assigned to a project or project database, select the <b>Include files in subprojects</b> check box to move the version label in all of the versioned files contained in the project or project database. <BR><BR> 
+
+<LI>Click OK.
+</OL>
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+			<TD><A HREF="aboutversionlabels.html">About Version Labels</A></TD>
+<TD><A HREF="removingaversionlabel.html">Removing a Version Label</A></TD>
+	</TR>
+	<TR>
+	<TD><A HREF="assigningaversionlabel.html">Assigning a Version Label</A></TD>
+	<TD><A HREF="assignversionlabeldialog.html">Assign Version Label Dialog Box</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

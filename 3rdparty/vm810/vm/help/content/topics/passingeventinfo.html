@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Passing Information to Event Triggers</TITLE>
+<!--<passingeventinfo.html>-->
+<!--<index parent="event_triggers" label="passing information to" anchor="passingeventinfo">-->
+<!--<toc parent="working_with_event_triggers" label="Passing Information to Event Triggers" anchor="passingeventinfo" sortkey="3">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nUsing Event Triggers\nPassing Information to Event Triggers");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="passingeventinfo"></A>Passing Information to Event Triggers</H1>
+<p>
+You can pass information about the archive being acted upon to an event trigger. This information can be used to collect information about the archive and to validate that the event trigger is acting upon the correct archive. You can also pass infomration about the project being acted upon to an event trigger.
+</P>
+<P>
+For example, suppose you want e-mail to notify you when someone checks in a revision. Therefore, you create a program that writes an e-mail notify message, and you configure Version Manager to run the program when a new revision is checked in. The program you write can access information that contains the user ID, name of the archive and workfile, revision number, and time. The program will format this information into a text file and instruct the e-mail importer to send the file as a message. The program you write is the event trigger. The event is PostPut.
+</P>
+<P>
+<a href="eventinfo.html">Click here</a> for a list of available event information.
+</P>
+<H2>How Version Manager Passes Event Information</H2>
+<p>
+Version Manager passes event information through:
+</P>
+<UL>
+<LI>
+<a href="environvar.html">Environment variables</a>
+<LI>
+<a href="cmdlinemacro.html">Command-line macros</a>
+<LI>
+<a href="parameterfile.html">Parameter files</a>
+</UL>
+<P>
+If event information is passed through environment variables, the event trigger queries the environment for values it needs. In the situations where event information cannot be passed using environment variables, use either the command-line macros or parameter file method. 
+</P>
+<P>
+Not all methods of passing event information work for all event triggers, and not all event triggers can be used for abortable events--all Pre events are abortable; all Post events are not. For example, you could write a PrePut event trigger to verify that the program being checked in has been compiled correctly without syntax errors or warnings. If the compile fails, the event trigger could return a nonzero exit code that would instruct Version Manager to terminate the process. In this case, Version Manager would terminate the check in (Put).
+</P>
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a href="iconeventinfo.html">Event Information for Icon and Menu Item Events</a></TD>
+		<TD><a href="examplesoftriggers.html">Examples of Event Triggers</a></TD>
+		</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

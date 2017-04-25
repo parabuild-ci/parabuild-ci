@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Restricting a User's Ability to Promote</TITLE>
+<!--<PromoModelSecurity.html>-->
+<!--<toc parent="working_with_promotion_models" label="Restricting a User's Ability to Promote" anchor="securityandpromomodel" sortkey="05">-->
+<!--<index parent="promotion_groups" label="Security" anchor="PromoModelSecurity">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nUsing Promotion Models\nRestricting a User's Ability to Promote");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="securityandpromomodel"></A>Restricting a User's Ability to Promote</H1>
+<P>The integration of promotion models with  <A HREF="usingsecurity.html">security</A> enables you to control how revisions are promoted from one promotion level to the next within a promotion hierarchy. To use the Restrict By Promotion Group feature, you must do the following:</P>
+<ol>
+<LI>Define a custom privilege set.
+<LI>Restrict the custom privilege set to a promotion level.
+<li>Assign this privilege set to a user or access group.
+</ol>
+<P>The user can then promote only from the assigned promotion level to the next promotion level. Restricting promotion from one level to the next by user or group ensures that the revision goes through the promotion hierarchy without skipping any levels.</P>
+<p>For example, suppose you have created a promotion model that progresses from Dev to QA to Prod. If you create a custom privilege set and enable the privilege Promote to Next Promotion Group, and then restrict this custom privilege set to the promotion level Dev, any user assigned this custom privilege set can only promote from Dev to QA. This prevents any user in Dev from promoting directly to Prod.</p>
+ 
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+<TR>
+		<TD><A HREF="restrictaccessbypromogroup.html">Restricting Access Rights  by Promotion Group</A></TD>
+		<TD><A HREF="aboutprivileges.html">About Privileges</A></TD>
+</TR>
+<TR>
+	<TD><A HREF="prommodelrules.html">Rules Governing Promotion Models</A></TD>
+	<TD><A HREF="prom_pardev.html">Promotion and Parallel Development</A></TD>
+</TR>
+<TR>
+	<TD><A HREF="usingsecurity.html">Using Security</A></TD>
+</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

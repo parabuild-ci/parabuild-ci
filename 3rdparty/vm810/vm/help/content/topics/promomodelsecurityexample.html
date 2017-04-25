@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>An Example of Restricting Access and Privileges by Promotion Group</TITLE>
+<!--<PromoModelSecurityExample.html>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="PromoModelSecurityExample"></A>An Example of Restricting Access and Privileges by Promotion Group</H1>
+
+<P> Suppose that:
+
+<UL>
+	<li>Developers can work only on revisions associated with the Development promotion group.
+
+	<li>QA engineers can work only on revisions associated with the QA promotion group.
+
+	<li>The Project Leader can access any revision no matter which promotion group it is associated with.
+</UL>
+
+<P>To creates these restrictions, you<A HREF="definecustomprivsets.html"> define a custom privilege set</A> for two of the three groups of users (access list groups) discussed above.  These two custom privilege sets that were defined in the Create Privilege Set dialog box (Admin | Privileges Sets | Create) are: </P>
+<UL>
+	<li>DEVPRIV
+	<li>QAPRIV
+</UL>
+<P>The DEVPRIV custom privilege set is restricted to the Development promotion group, meaning that developers can only work on revisions associated with the Development promotion group. The actions the developers can perform on the revisions are the actions (privileges) that define the DEVPRIV custom privilege set.</P>
+ 
+
+<P>The QAPRIV custom privilege set is <A HREF="restrictaccessbypromogroup.html">restricted</A> to the QA promotion group, meaning that QA engineers can only work on revisions associated with the QA promotion group. The actions the QA engineers perform on the revisions are the actions (privileges) that define the QAPRIV custom privilege set.</P>
+
+<P>Members of the Project Leaders access list group can work on any revision associated with any promotion group or even if it is not associated with a promotion group. The SuperUser <A HREF="defaultprivtables.html">default privilege set</A> assigned to the Project Leaders group means any action can be performed on a revision.</P>
+
+<P>For group privileges to work in this example, the archive <A HREF="aboutaccesslists.html">access list</A> should contain only access list groups, no individual users. The reason is that this safeguards against the possibility of the privileges of an individual user granting more actions than the privileges of an access list group for the user. </P>
+
+<P>For example, AnnaB has unlimited privileges assigned to her as an individual user and she is a member of the Developers access list group. In this case, if an archive access list has both AnnaB and Developers, an access list group to which she belongs, she would have unlimited privileges in the archive because her privileges as an individual user take precedence over the Developers access list group privileges. When access lists contain only access list groups, individual users are limited to the privileges defined for the access list group they are a member of.</P>
+
+<H2>An Important Consideration</H2>
+<P>When you define a custom privilege set for the purpose of assigning a promotion group, the restriction is to the revision in an archive that has the appropriate promotion group associated with it, not to the access list group associated to the custom privilege set. A common misconception is that the restriction is to a particular group of users, such as Developers. Therefore, a common mistake is to restrict too many base privileges to a promotion group, while thinking that the restriction is to the group. For example, you decide you want the Developers group to have get, put, lock, unlock, and promote privileges for revisions at the Development promotion level. Therefore, you define a custom privilege set that includes these privileges, restrict the privilege set to the Development promotion group, and assign the custom privilege set to the Developers group.</P>
+
+<P>Once the developers <A HREF="promotetonextdialog.html">promote their revisions to the next promotion level</A>, they can no longer work on any revisions because they have been restricted to working on only revisions associated with the Development promotion group. You must carefully consider which privileges you want to restrict in this way. In a case like this, the project leader or Administrator can associate the tip revisions with the Development promotion group so that the developers can work on revisions again.</P>
+
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+<TR>
+	<TD><A HREF="prommodelrules.html">Rules Governing Promotion Models</A></TD>
+	<TD><A HREF="prom_pardev.html">Promotion and Parallel Development</A></TD>
+</TR>
+<TR>
+	<TD><A HREF="promomodelsecurity.html">Promotion Model Security</A></TD>
+</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

@@ -1,0 +1,231 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Wrapping StarTeam around VSS Projects</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=copyright value="Copyright© 1995-2003, Borland Software Corporation. All rights reserved.">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=808>
+<meta name=layout-width content=702>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<!--(Scripts)=======================================================-->
+
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="./ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Administering the Application\nInteroperating with Other Programs\nStarTeam and Visual SourceSafe\nWrapping StarTeam around VSS Projects");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Wrapping StarTeam around VSS Projects</h1>
+
+<p class=Body>StarTeam projects can be wrapped around VSS projects by creating 
+ a project in StarTeam that uses a VSS project as its root folder. To accomplish 
+ this, the application reads the VSS folder hierarchy and the entire revision 
+ history and lock status for each file in the hierarchy. In addition, the 
+ application calculates the size of each revision. The same user name and 
+ password should be used in StarTeam Server and VSS.</p>
+
+<p class=Proc>To wrap a StarTeam project around a VSS project, so that 
+ they are interoperable:</p>
+
+<ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Do one of the following:</p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>Click the <span style="font-weight: bold;"><B>New 
+ Project</B></span> button on the toolbar.</p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>Select <span style="font-weight: bold;"><B>Project 
+ &gt; New</B></span> from the menu bar.</p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>Drag the srcsafe.ini 
+ file from Network Neighborhood or Explorer to an empty portion of the 
+ window to create the project.</p></li>
+	</ul>
+	
+	<p class=Body>The <span style="font-style: italic;"><I>New Project Wizard 
+ </I></span>opens.</p>
+	
+	<li class=kadov-p-CList-1><p class=List-1>From the server list, do 
+ one of the following:</p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>Select the server 
+ configuration that will store the project. If you are not currently logged 
+ onto this server, the <span style="font-weight: bold;"><B>Log On</B></span> dialog 
+ will request a log-on name and password. Enter this information, and click 
+ <span style="font-weight: bold;"><B>Next</B></span>.</p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>If the desired server 
+ configuration does not appear on the list, click <span style="font-weight: bold;"><B>Add 
+ Server</B></span> to add access to it. See <a href="adding_server_configuration.htm">Adding 
+ a Server Configuration</a>. Then select the new configuration.</p></li>
+	</ul>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Click <span style="font-weight: bold;"><B>Next</B></span>. 
+ The <span style="font-style: italic;"><I>New Project Wizard: Project Name</I></span> 
+ dialog opens.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Enter the name of the new 
+ project in the <span style="font-weight: bold;"><B>Project Name</B></span> text 
+ box.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Enter a description of the 
+ project in the <span style="font-weight: bold;"><B>Project Description</B></span> 
+ text box.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Click <span style="font-weight: bold;"><B>Foreign 
+ Archives</B></span>. The <span style="font-style: italic;"><I>Select Foreign 
+ Archive</I></span> dialog opens.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select the<span style="font-weight: bold;"><B> 
+ Create project from</B></span> check box.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select the <span style="font-weight: bold;"><B>Visual 
+ SourceSafe</B></span> option button.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>In the<span style="font-weight: bold;"><B> 
+ Database File Path </B></span>text box, enter or browse for the database file 
+ path (by default, srcsafe.ini).</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>In the<span style="font-weight: bold;"><B> 
+ Password</B></span> text box, type the VSS password for the user currently 
+ logged onto StarTeam. This password should be the same as the StarTeam 
+ password.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Click<span style="font-weight: bold;"><B> 
+ OK</B></span>.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Click <span style="font-weight: bold;"><B>Next</B></span> 
+ from the <span style="font-style: italic;"><I>New Project Wizard: Project 
+ Name</I></span> dialog. The <span style="font-style: italic;"><I>New Project 
+ Wizard: VSS Project</I></span> dialog displays the VSS project hierarchy within 
+ the VSS database.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select the VSS project or 
+ subproject that will be the root folder for the new project, then click 
+ <span style="font-weight: bold;"><B>Next</B></span>. The <span style="font-style: italic;"><I>New 
+ Project Wizard: Working Folder</I></span> dialog opens.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>In the <span style="font-weight: bold;"><B>Default 
+ Working Folder</B></span> text box, enter or browse for the path to the root 
+ folder’s working folder. StarTeam wraps itself around the specified VSS 
+ project and its subprojects, recursively creating working folders for 
+ each VSS project beneath the project selected as the root. To create the 
+ working paths for each of these folders, the application starts with the 
+ path to the root folder’s working folder and appends folders for each 
+ level in the hierarchy, using the names of the subprojects. With VSS, 
+ StarTeam does not support user-specified working folder paths, except 
+ at the view level. As a result, some or all VSS working folders may be 
+ obsolete. If any problems are found, an error message asks you to check 
+ the vss-err.<span style="font-style: italic;"><I>locale</I></span>.log file. 
+ If the problems in the vss-err.<span style="font-style: italic;"><I>locale</I></span>.log 
+ file are severe, you can delete the StarTeam project and re-wrap the VSS 
+ project.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Click <span style="font-weight: bold;"><B>Finish</B></span> 
+ to open the project. </p></li>
+</ol>
+
+<p class=Body><span style="font-weight: bold;"><B>Note:</B></span> Any VSS files 
+ with working folders in VSS that happen to match the working folders in 
+ StarTeam are displayed in the File list with the Unknown status. You must 
+ update the status of these files on your workstation. </p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

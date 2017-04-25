@@ -1,0 +1,148 @@
+<!-- Copyright 2003 Zelix Pty Ltd (ABN 47 078 740 093) -->
+<html>
+<head>
+<title>Zelix KlassMaster File Open</title>
+   <meta name="keywords" content="java obfuscator,java code obfuscator,obfuscation">
+   <meta name="description" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <meta name="classification" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <link rel=stylesheet href="../ZKM.css" TYPE="text/css">
+</head>
+<body background="../images/small-white-mist1.jpg" bgcolor="#E1E1E1">
+<center><a href="index.html"><img src=../images/ZKM_b4.gif alt="Zelix KlassMaster" width=264 height=62 border=0></a></center>
+<hr>
+<center>
+<table width=770>
+   <tr>
+      <td colspan=2>
+         <h1>File | Open</h1>
+         With Zelix KlassMaster you open classes by specifying directories or archive files. So to open a class
+         you must either:
+         <ul>
+            <li>load the directory in which it is stored or
+            <li>load the <b>zip</b> or <b>jar</b> archive file in which it is stored.
+         </ul>
+         In either case, all the files with the ".class" extension in that directory or archive are opened.
+         <p>
+         Opening classes may result in <b><a href=loadWarnings.html>"Class Open Warnings"</a></b> and/or   <b><a href=loadErrors.html>"Class Open Errors"</a></b>.
+      </td>
+   </tr>
+   <tr>
+      <td colspan=2>
+          &nbsp; <!-- Force an empty row -->
+      </td>
+   </tr>
+   <tr>
+      <td valign="top" rowspan=2>
+         <h2>Basics</h2>
+         When Zelix KlassMaster is started it automatically opens the 
+         <strong>"Select Package Directories"</strong> dialog. You may open the dialog 
+         at any other time by selecting the <strong>File Open</strong> menu.
+      </td>
+      <td valign="top" align="center">
+         <img src=../images/fileopen1.gif width=405 height=122 alt="File Open...">
+      </td>
+   </tr>
+   <tr>
+      <td  align="center" valign="middle">
+         <img src=../images/down_arrow.gif width=20 height=24 alt="Leads to..."><p>
+      </td>
+   </tr>
+   <tr>
+      <td valign="top">
+         The left panel of the <strong>"Select Package Directories"</strong> dialog is
+         the <strong>directory tree</strong>. It displays the <strong>current directory</strong>
+         between angle brackets 
+         (ie&nbsp;&lt;...&gt;) 
+            <ul>
+               <li>below all of its parent directories and
+               <li>above of all of its <em>immediate</em> subdirectories and archive files.
+            </ul>
+         The <strong>current directory</strong> can be changed by using the mouse to double click on another
+         directory or by selecting another directory and pressing &lt;Enter&gt; (&lt;Shift&gt;&lt;Enter&gt; in Windows). 
+         <p>
+         The <strong>selected directory</strong> is the directory that is currently highlighted in the left panel.
+      </td>
+      <td valign="top" align="center">
+         <img src=../images/load2.gif width=456 height=383 alt="Select Package Directories">
+      </td>
+   </tr>
+   <tr>
+      <td colspan=2>
+          &nbsp; <!-- Force an empty row -->
+      </td>
+   </tr>
+   <tr>
+      <td valign="top">
+         <h2>Selecting Directories</h2>
+         The <strong>Selected Directories</strong> panel lists the directories and file archives that will be searched
+         for ".class" files to open. Select a directory or archive file in the directory tree then 
+         <ul>
+            <li>Click on <img src=../images/selectOneBtn.gif align="absmiddle" alt=">" width=27 height=24>
+         </ul>
+         to move it to the <strong>Selected Directories</strong> panel.
+         <p>
+         Alternatively
+         <ul>
+            <li>Click on <img src=../images/selectAllBtn.gif align="absmiddle" alt=">>" width=27 height=24> or
+            <li>Press &lt;Ctrl&gt;&lt;Enter&gt;
+         </ul>
+         to move a selected directory <em>and all its subdirectories</em> to the 
+         <strong>Selected Directories</strong> panel.
+      </td>
+      <td valign="top" align="center">
+         <img src=../images/load3.gif width=456 height=383 alt="Select Package Directories">
+      </td>
+   </tr>
+   <tr>
+      <td colspan=2>
+          &nbsp; <!-- Force an empty row -->
+      </td>
+   </tr>
+   <tr>
+      <td valign="top">
+         <h2>Removing Directories</h2>
+         To remove a directory or archive file from the <strong>Selected Directories</strong> panel, select it and 
+         <ul>
+            <li>Click on <img src=../images/removeOneBtn.gif align="absmiddle" alt="<" width=27 height=24> or
+            <li>Double click on the directory in the <strong>Selected Directories</strong> panel or
+            <li>Press &lt;Delete&gt;
+         </ul>
+         <p>
+         To remove all directories and archive files from the <strong>Selected Directories</strong> panel, simply 
+         click on <img src=../images/removeAllBtn.gif align="absmiddle" alt="<<" width=27 height=24>
+         <p>
+         Click on <img src=../images/okBtn.gif align="absmiddle" alt="OK" width=80 height=25> to open the ".class" files stored
+         in the selected directories.  Otherwise press <img src=../images/cancelBtn.gif align="absmiddle" alt="Cancel" width=80          height=24>
+      </td>
+      <td valign="top" align="center">
+         <img src=../images/load4.gif width=456 height=383 alt="Select Package Directories">
+      </td>
+   </tr>
+
+   <tr>
+      <td colspan=2>
+          &nbsp; <!-- Force an empty row -->
+      </td>
+   </tr>
+   <tr>
+      <td valign="top">
+         <h2>OK to Open Classes</h2>
+         Once you have all of your classes in the <b>Selected Directories</b> panel, click on <img src=../images/okBtn.gif                 align="absmiddle" alt="OK" width=80 height=25>  to open the selected classes.  This may result in <b><a href=loadWarnings.html>"Class Open Warnings"</a></b> and/or  <b><a href=loadErrors.html>"Class Open Errors"</a></b>.         
+      </td>
+   </tr>
+
+</table>
+</center>
+<hr>
+<center>
+<table>
+   <tr>
+      <td>
+         <a href=index.html><img src=../images/uarrw.gif alt="Documentation Table of Contents"></a>
+      </td>
+   </tr>
+</table>
+</center>
+Copyright &copy; 2003 <a href="mailto:WebMaster@zelix.com"><font size=-1>Zelix Pty Ltd</font></a> (ABN 47 078 740 093)
+</body>
+</html>

@@ -1,0 +1,7 @@
+/*
+ * $Id: q-arg1.nsql 215 2007-06-10 02:33:27Z unsaved $
+ *
+ * Simplest test of \q with arg
+ */
+
+\q Quitting with non-zero exit status

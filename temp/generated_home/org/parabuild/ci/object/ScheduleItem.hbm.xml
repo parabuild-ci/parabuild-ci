@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 1.1//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="org.parabuild.ci.object.ScheduleItem"
+        table="SCHEDULE_ITEM"
+    >
+        <cache usage="read-write" />
+
+        <id
+            name="scheduleItemID"
+            column="ID"
+            type="int"
+            unsaved-value="-1"
+        >
+            <generator class="identity">
+            </generator>
+        </id>
+
+        <version
+            name="timeStamp"
+            type="long"
+            column="TIMESTAMP"
+        />
+
+        <property
+            name="buildID"
+            type="int"
+            column="BUILD_ID"
+            unique="false"
+        />
+
+        <property
+            name="dayOfMonth"
+            type="java.lang.String"
+            column="MONTH_DAY"
+            unique="true"
+        />
+
+        <property
+            name="dayOfWeek"
+            type="java.lang.String"
+            column="WEEK_DAY"
+            unique="false"
+        />
+
+        <property
+            name="hour"
+            type="java.lang.String"
+            column="HOUR"
+            unique="false"
+        />
+
+        <property
+            name="cleanCheckout"
+            type="yes_no"
+            column="CLEAN_CHECKOUT"
+            unique="false"
+        />
+
+        <property
+            name="runIfNoChanges"
+            type="yes_no"
+            column="RUN_IF_NO_CHANGES"
+            unique="false"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-ScheduleItem.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

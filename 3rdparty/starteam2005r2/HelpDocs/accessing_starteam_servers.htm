@@ -1,0 +1,207 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Accessing StarTeam Servers</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=824>
+<meta name=layout-width content=702>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Working with the Application\nManaging Tasks\nUsing Tasks in Microsoft Project\nAccessing StarTeam Servers");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Accessing StarTeam Servers</h1>
+
+<p class=Body>To interoperate StarTeam with Microsoft Project, you must 
+ be able to access the appropriate StarTeam server configuration. Ask your 
+ administrator for the name or IP address and the endpoint for the TCP/IP 
+ (Sockets) protocol for the computer that runs the server configuration. 
+ </p>
+
+<h3>Understanding Server Access Rights</h3>
+
+<p class=Body>You do not need any server access rights to synchronize users 
+ and import work records. However, to export, synchronize or unlink tasks, 
+ you must have permission to see, create, and modify those tasks. Access 
+ rights can be assigned to individual tasks, tasks within a specific folder, 
+ tasks within a specific view, and tasks within a specific project. These 
+ rights can be overridden based on group privileges or by virtue of having 
+ created the task.</p>
+
+<h3>Using the Same Server Description Name</h3>
+
+<p class=Body>A server description is the name assigned to a particular 
+ StarTeam server configuration in StarTeam. However, StarTeam and Microsoft 
+ Project use server descriptions differently. For StarTeam, the description 
+ of a particular server configuration can differ from workstation to workstation 
+ because the application connects to it based on other information (the 
+ name or address of the computer that runs the server and the protocol 
+ and endpoint used to connect to that computer). Microsoft Project does 
+ not have this capability, but relies on the server description alone. 
+ As a result, if project managers use more than one workstation to connect 
+ to the same server configuration and access data for a Microsoft project, 
+ the server descriptions on each workstation must be the same. Otherwise, 
+ Microsoft Project does not connect properly.</p>
+
+<h3>Adding a Server</h3>
+
+<p class=Body>The StarTeam Microsoft Project Integration comes with its 
+ own server list (StarTask.st). If you have Microsoft Project files that 
+ you used with earlier versions of this product, you must use the same 
+ names for server descriptions that were used in the past. </p>
+
+<p class=Body>If you will be working on a project that another project 
+ manager has already synchronized, ask that manager for the server description 
+ name and add it to your list of StarTeam servers. </p>
+
+<p class=Body>The following procedure explains how to add a server configuration 
+ for projects that have already been synchronized. This procedure requires 
+ you to open a new project that you will later discard. Its only purpose 
+ is to add a server to the server list.</p>
+
+<p class=Proc>To add a server:</p>
+
+<ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>From Microsoft Project, open 
+ a new project file.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select <span style="font-weight: bold;"><B>StarTeam 
+ &gt; Sync StarTeam Users</B></span>. The <span style="font-style: italic;"><I>Connection 
+ Wizard: Select</I></span> <span style="font-style: italic;"><I>Server</I></span> 
+ dialog appears. </p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Click <span style="font-weight: bold;"><B>Add 
+ Server</B></span>. The <span style="font-style: italic;"><I>StarTeam Server</I></span> 
+ dialog appears. </p></li>
+	
+	<ol>
+		
+		<li class=kadov-p-CList-2><p class=List-2>In the <span style="font-weight: bold;"><B>Server 
+ Description</B></span> text box, enter the description to be used by everyone 
+ who will access this server for a specific project. If a project is updated 
+ from more than one workstation, each workstation must use the same server 
+ description for the StarTeam server or operations with Microsoft Project 
+ will fail. </p></li>
+		
+		<li class=kadov-p-CList-2><p class=List-2>In the <span style="font-weight: bold;"><B>Server 
+ Address</B></span> text box, enter the name of the computer on which the server 
+ runs or its IP address. You can browse for the name if you prefer. The 
+ <span style="font-weight: bold;"><B>TCP/IP (Sockets)</B></span> protocol is preselected.</p></li>
+		
+		<li class=kadov-p-CList-2><p class=List-2>In the <span style="font-weight: bold;"><B>Endpoint</B></span> 
+ text box, enter the endpoint that the StarTeam server uses for this protocol.</p></li>
+		
+		<li class=kadov-p-CList-2><p class=List-2>Click <span style="font-weight: bold;"><B>OK</B></span> 
+ to return to the <span style="font-style: italic;"><I>Connection Wizard: 
+ Select Server</I></span> dialog. Your new server description appears in the 
+ server list and can now be used with other projects.</p></li>
+	</ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>If your sole purpose was 
+ to add a server description:</p></li>
+	
+	<ol>
+		
+		<li class=kadov-p-CList-2><p class=List-2>Click <span style="font-weight: bold;"><B>Cancel</B></span>.</p></li>
+		
+		<li class=kadov-p-CList-2><p class=List-2>Close the new project 
+ without saving it.</p></li>
+	</ol>
+</ol>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

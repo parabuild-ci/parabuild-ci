@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Creating and Managing Multiple Public Workspaces</TITLE>
+<!--<workhier.html>-->
+
+<!--<index parent="workspaces" label="managing public workspaces" anchor="Understanding_Public">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="Understanding_Public"></A>Creating and Managing Multiple Public Workspaces</H1>
+<p>Workspaces are particularly useful when your organization uses identical directory structures on separate drives for different groups, such as Quality Assurance (QA) and Developers. To do this, you would set the Root Workspace and define an absolute workfile location for the project database. You would then define relative workfile locations for the projects and subprojects contained within the project database. For instance, the Root Workspace might define the project database workfile location as D:\Games and the Checkers project workfile location as \Checkers.
+<p>You would then create public workspaces such as Version 1.0 - Developers and Version 1.0 - QA, as shown below.
+<p><p><img src="../graphics/workspace.gif">
+
+<p>Then set a public workspace and modify the absolute path defined for the project database workfile location. For example, you would set the QA workspace and then change the project database workfile location from D:\Games to Y:\Test. The absolute workfile location of the project database would be the location where the group works. The public workspace would then continue to inherit the relative workfile locations defined for the projects in the Root Workspace because you did not modify those values. The entire workfile location of the Checkers project as defined by the new workspace would be, Y:\Test\Checkers. All other projects within the project database would be affected the same way. Using workspaces in this manner provides a quick and easy way to define multiple workfile locations by changing only the absolute workfile location defined for the project database. 
+
+<p>For more information about ways to use workspaces to manage environments, refer to the <i>Serena ChangeMan Version Manager Administrator's Guide.</i>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="aboutworkspaces.html">About Workspaces</A></TD>
+		<TD><A HREF="workhier.html">Understanding Workspace Hierarchies</A></TD>
+	</tr>
+	<tr>
+		<TD><A HREF="publicprivate.html">About Public and Private Workspace</A></TD>
+		<TD><A HREF="rootworkspace.html">Using the Root Workspace</A></TD>
+	</tr>
+	<tr>
+		<TD><A HREF="createworkspaces.html">Creating Workspaces</A></TD>
+		<TD><A HREF="setworkspace.html">Setting Your Workspace</A></TD>
+	</TR>
+
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+
+</HTML>

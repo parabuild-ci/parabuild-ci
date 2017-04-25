@@ -1,0 +1,39 @@
+    1     0 root     init [5] 
+    2     1 root     [keventd]
+    3     1 root     [kapmd]
+    4     1 root     [ksoftirqd_CPU0]
+    5     1 root     [kswapd]
+    6     1 root     [bdflush]
+    7     1 root     [kupdated]
+    8     1 root     [mdrecoveryd]
+   12     1 root     [kjournald]
+   79     1 root     [khubd]
+  552     1 root     syslogd -m 0
+  557     1 root     klogd -x
+  577     1 rpc      portmap
+  605     1 rpcuser  rpc.statd
+  706     1 root     /usr/sbin/apmd -p 10 -w 5 -W -P /etc/sysconfig/apm-scripts/apmscript
+  760     1 daemon   /usr/sbin/atd
+  778     1 root     /usr/sbin/sshd
+  811     1 root     xinetd -stayalive -reuse -pidfile /var/run/xinetd.pid
+  852     1 root     sendmail: accepting connections
+  871     1 root     gpm -t ps/2 -m /dev/mouse
+  889     1 root     crond
+  933     1 xfs      xfs -droppriv -daemon
+  981     1 root     /sbin/mingetty tty1
+  982     1 root     /sbin/mingetty tty2
+  983     1 root     /sbin/mingetty tty3
+  984     1 root     /sbin/mingetty tty4
+  985     1 root     /sbin/mingetty tty5
+  986     1 root     /sbin/mingetty tty6
+  987     1 root     /usr/bin/gdm -nodaemon
+  994   987 root     /usr/bin/gdm -nodaemon
+  995   994 root     /usr/bin/X11/X :0 -auth /var/gdm/:0.Xauth
+ 1000   994 gdm      /usr/bin/gdmlogin --disable-sound --disable-crash-dialog
+ 1001  1000 gdm      /usr/bin/xsri --redhat-login --run
+24500     1 root     smbd -D
+24505     1 root     nmbd -D
+22227   811 root     in.telnetd: 10.1.7.144                                                                                                                                                                                                                                                                                                                                                                                       
+22228 22227 root     login -- lyolik            
+22229 22228 lyolik   -bash
+22267 22229 lyolik   /bin/ps -e h -o pid,ppid,user,command --cols=128000

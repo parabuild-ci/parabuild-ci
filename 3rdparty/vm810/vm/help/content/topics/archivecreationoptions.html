@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Archive Creation Options</TITLE>
+<!--<archivecreationoptions.html>-->
+<!--<index parent="archives" label="creation options" anchor="archivecreationoptions">-->
+<!--<index parent="options" label="archive creation" anchor="archivecreationoptions">-->
+<!--<index parent="archives" label="owner of" anchor="archivecreationoptions">-->
+<!--<index parent="access_lists" label="defining for new archives" anchor="archivecreationoptions">-->
+<!--<index parent="archives" label="creating upon check in" anchor="archivecreationoptions">-->
+<!--<index parent="archives" label="write protect" anchor="archivecreationoptions">-->
+<!--<index parent="archives" label="multiple locks" anchor="archivecreationoptions">-->
+<!--<index parent="configuring" label="multiple locks" anchor="archivecreationoptions">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="archivecreationoptions"></A>Archive Creation Options</H1>
+<P>
+The archive creation options only affect newly created archives. You can set these options on existing archives by using the Admin | Archive Attributes menu item.
+</P>
+<P>
+The archive creation options let you:
+</P>
+<UL>
+<LI>Prevent multiple locks on a single archive. If you allow multiple locks, different users can place locks on different revisions in an archive at the same time. The directive for this option is ExclusiveLock.
+<BR><BR>
+<b>Note:</b> The MultiLock and ExclusiveLock directives are mutually exclusive. The MultiLock directive has no affect on an archive that was created while the ExclusiveLock directive was in effect. See <a href="lockingoptions.html">Locking Options</a> for information about MultiLock.
+<BR><BR>
+<LI>Assign ownership of archives. The directive for this option is Owner.
+<LI>Define an <a href="accesslist.html">access list</a> for archives, which identifies users and groups of users who are allowed to access archives. The directive for this option is AccessList.
+<LI>Write-protect archives. Doing this protects archives from inadvertent deletion or modification. Version Manager commands automatically remove write-protection before modifying archives and replace it afterwards. The directive for this option is WriteProtect.
+<LI>Automatically create an archive when you check in a workfile if Version Manager cannot find one for the file. This option applies only to the command-line interface. The directive for this option is AutoCreate.
+</UL>
+<P>
+<a href="setarchivecreationoptions.html">Click here</a> to see how to set these options.
+</P>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

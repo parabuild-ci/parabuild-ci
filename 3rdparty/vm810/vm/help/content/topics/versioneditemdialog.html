@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Versioned File Properties Dialog Box</TITLE>
+<!--<VersionedItemDialog.html>-->
+<!--<toc parent="working_with_versioned_files" label="Reviewing Versioned File Properties" anchor="VersionedItemDialog" sortkey="05">-->
+<!--<index parent="files" label="Versioned File Properties dialog box" anchor="VersionedItemDialog">-->
+<!--<index parent="properties" label="Versioned File Properties dialog box" anchor="VersionedItemDialog">-->
+<!--<index parent="versioned_files" label="Versioned File Properties dialog box" anchor="VersionedItemDialog">-->
+<!--<index parent="revisions" label="Versioned File Properties dialog box" anchor="VersionedItemDialog">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiVersionedItemDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with Versioned Files\nReviewing Versioned File Properties");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="VersionedItemDialog"></A>Versioned File Properties</H1>
+<P>Use the Properties dialog box (File | Properties) to view <A HREF="aboutarchives.html">archive</A> creation and lock information, <A HREF="aboutworkspaces.html">workspace</A> settings, and privilege information for a <A HREF="aboutversionedfiles.html">versioned file</A>.</P>
+
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD COLSPAN=2><CENTER><B>Versioned File Tab</B></CENTER></TD>
+	</TR>
+	<TR><TD><B>Archive</B></TD>
+		<TD><!--<control name="NewVersionedItemArchive.ARCHIVE_FIELD">-->The location of the archive for the versioned file.
+		<!--</control>--></TD>
+	</TR>
+		<TR><TD><B>Created</B></TD>
+		<TD><!--<control name="NewVersionedItemArchive.CREATION_DATE_LABEL">-->The date the archive was created.
+		<!--</control>--></TD></TR>
+		<TR><TD><B>Owner</B></TD>
+		<TD><!--<control name="NewVersionedItemArchive.OWNER_LABEL">-->The user ID of the person who created the archive.
+		<!--</control>--></TD></TR>
+		<TR><TD><B>Locked by</B></TD>
+		<TD><!--<control name="NewVersionedItemArchive.LOCKED_BY_LABEL">-->The number of users who currently have locks on revisions in the file.
+		<!--</control>--></TD></TR>
+				<TR><TD><B>Description</B></TD>
+		<TD><!--<control name="NewVersionedItemArchive.DESCRIPTION_MLE">-->The description entered when the file was added to the project; enter changes if necessary.
+		<!--</control>--></TD></TR>
+			<TR>
+		<TD COLSPAN=2><CENTER><B>Workspace Settings Tab</B></CENTER></TD>
+	</TR>
+		<!-- note no control names needed for workspace in this file.  They are in ProjectDialog.html -->
+		<TR>
+		<TD><B>Workfile Location</B></TD>
+		<TD>The working directory from which revisions are checked out and to which revisions are checked in. Enter changes as necessary or click the Browse button to select a location.
+		</TD>
+	</TR>
+		<TR>
+		<TD><B>Workspace Information</B></TD>
+		<TD>The work environment settings assigned to the project or versioned file. If the workspace is public, the specified workfile location affects all Users who will access the project or file using the public workspace. If the workspace is private, the specified workfile location will not affect other Users.
+		</TD>
+	</TR>
+
+	<TR>
+		<TD COLSPAN=2><CENTER><B>Granted Privileges Tab</B></CENTER></TD>
+	</TR>
+	<!--<control base="pvcs.vm.vmgui.GrantedPrivilegesDialog"></control>-->
+	<TR>
+		<TD><B>Granted Privileges list</B></TD>
+		<TD><!--<control name="GrantedPrivilegesForm.PRIVILEGES_TEXT">-->
+		A read-only listing of privileges for actions the user can perform. These privileges are assigned to the user ID currently logged in to the project database.
+		<!--</control>--></TD>
+	</tr>
+</TABLE>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="createproject.html">Creating Projects</A></TD>
+		<TD><A HREF="addfiles.html">Adding Workfiles</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="reviewingproperties.html">Reviewing Properties</A></TD>
+		<TD><A HREF="locking.html">Locking Revisions</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="unlocking.html">Unlocking Revisions</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

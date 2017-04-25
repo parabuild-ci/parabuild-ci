@@ -1,0 +1,108 @@
+    <!--
+       ========================================================================
+         Run Orion 1.6 tests
+       ========================================================================
+    -->
+    <target name="test.orion.16" depends="prepare.test.orion.16"
+        if="orion.home.16" description="Run tests on Orion 1.6">
+
+        <!-- Start the servlet engine, wait for it to be started, run the
+             unit tests, stop the servlet engine, wait for it to be stopped.
+             The servlet engine is stopped if the tests fail for any reason -->
+
+        <runservertests
+            testURL="http://localhost:${test.port}/test/ServletRedirector?Cactus_Service=RUN_TEST"
+            startTarget="start.orion.16"
+            stopTarget="stop.orion.16"
+            testTarget="test"/>
+
+    </target>
+
+    <!--
+       ========================================================================
+         Start Orion 1.6
+       ========================================================================
+    -->
+    <target name="start.orion.16">
+
+        <java classname="com.evermind.server.ApplicationServer" fork="yes">
+            <arg value="-config"/>
+            <arg value="${target.orion16.dir}/conf/server.xml"/>
+            <classpath>
+              <fileset dir="${orion.home.16}">
+                  <include name="*.jar"/>
+              </fileset>
+            </classpath>
+        </java>
+
+    </target>
+
+    <!--
+       ========================================================================
+         Stop Orion 1.6
+       ========================================================================
+    -->
+    <target name="stop.orion.16">
+
+        <java classname="com.evermind.client.orion.OrionConsoleAdmin"
+            fork="yes">
+            <arg value="ormi://localhost:23791/"/>
+            <arg value="admin"/>
+            <arg value="password"/>
+            <arg value="-shutdown"/>
+            <classpath>
+              <fileset dir="${orion.home.16}">
+                  <include name="*.jar"/>
+              </fileset>
+            </classpath>
+        </java>
+
+    </target>
+
+    <!--
+       ========================================================================
+         Display a warning message if the needed servlet engine home property
+         is not set
+       ========================================================================
+    -->
+    <target name="check.test.orion.16" unless="orion.home.16">
+
+        <echo message=""/>
+        <echo message="******************************************************"/>
+        <echo message="WARNING : The 'orion.home.16' property has not been"/>
+        <echo message="set. No test will be run on that servlet engine."/>
+        <echo message="******************************************************"/>
+        <echo message=""/>
+
+    </target>
+
+    <!--
+       ========================================================================
+         Prepare directories and variables for running the tests
+       ========================================================================
+    -->
+    <target name="prepare.test.orion.16"
+        depends="check.test.orion.16,testwar" if="orion.home.16">
+
+        <echo message="orion.home.16 = ${orion.home.16}"/>
+
+        <property name="target.orion16.dir" value="${target.test.dir}/orion16"/>
+        <property name="conf.orion16.dir" value="${conf.test.dir}/orion16"/>
+
+        <!-- Create work and conf directories and copy configuration files -->
+        <mkdir dir="${target.orion16.dir}"/>
+        <mkdir dir="${target.orion16.dir}/conf"/>
+
+        <!-- Orion need to have a /persistence directory created, otherwise
+             it throws an error -->
+        <mkdir dir="${target.orion16.dir}/persistence"/>
+
+        <copy todir="${target.orion16.dir}/conf" filtering="on">
+            <fileset dir="${conf.orion16.dir}"/>
+        </copy>
+
+        <!-- Copy the war file -->
+        <copy file="${target.test.dir}/test.war"
+            tofile="${target.orion16.dir}/test.war"/>
+
+    </target>

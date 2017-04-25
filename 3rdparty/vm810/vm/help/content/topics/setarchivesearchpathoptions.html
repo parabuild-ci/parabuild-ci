@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Setting Archive Search Path Options</TITLE>
+<!--<setarchivesearchpathoptions.html>-->
+<!--<toc parent="setting_configuration_options" label="Setting Archive Search Path Options" anchor="setarchivesearchpathoptions" sortkey="12">-->
+<!--<toc parent="setting_project_configuration_options" label="Setting Archive Search Path Options" anchor="setarchivesearchpathoptions" sortkey="12">-->
+<!--<index parent="setting" label="archive search path options" anchor="setarchivesearchpathoptions">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with Project Databases/Projects\nConfiguring Project Databases/Projects\nSetting Archive Search Path Options");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="setarchivesearchpathoptions"></A>Setting Archive Search Path Options</H1>
+<p>To perform this procedure, you must first select the project database or project you want to configure. The project database or project must also be <a href="assocconfigfile.html">associated with a configuration file</a>.</p>
+<H2>To set <a href="archivesearchpathoptions.html">archive search path options</a>:</H2>
+<OL>
+<LI>
+Select Admin | Configure Project. The Configure Project dialog box appears with the General tab active.
+<br><br>
+<LI>
+If not already selected, select the <b>Show Advanced Options</b> check box.
+<br><br>
+<LI>Select <b>Archive Search Path</b> beneath Miscellaneous. The Archive Search Path pane on the right appears. The values that display for each option are the settings that are currently defined in the configuration file associated with the project database or project.
+<BR><BR>
+<LI>
+In the <b>Path</b> box, list the directories in which you want Version Manager to search for archives. Separate each directory path with a semicolon (;). The directories can be absolute or relative path names. For example, for Windows:<BR><BR> 
+..\vcs; c:\proj\archives<BR><BR>
+Version Manager searches for archives by looking from left to right in the directories listed.
+<BR><BR>
+<LI> 
+Select the <b>Ignore workfile path when searching for archives</b> check box to have Version Manager ignore the workfile path name specified by the user when searching for archives and search only in the directories specified in the Path field above.
+<BR><BR>
+<LI>
+Select the <b>Stop wildcard search after first archive directory</b> check box to have Version Manager stop wildcard searching after the first match. If this is not selected, Version Manager will continue searching all specified archive directories.
+<BR><BR>
+<LI>
+Click OK if you are finished defining options, or click Apply to save the settings and continue to define other options.
+</OL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a href="aboutconfigfiles.html">About Configuration Files</a></TD>
+		<TD><a href="configureoverview.html">Configuring Project Databases and Projects</a></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="configureprojectarchivepathdialog.html">Configure Project/Archive Search Path dialog box</A>
+		
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

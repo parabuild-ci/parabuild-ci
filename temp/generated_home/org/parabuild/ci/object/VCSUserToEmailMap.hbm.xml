@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 1.1//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="org.parabuild.ci.object.VCSUserToEmailMap"
+        table="VCS_USER_TO_EMAIL_MAP"
+    >
+
+        <id
+            name="mapID"
+            column="ID"
+            type="int"
+            unsaved-value="-1"
+        >
+            <generator class="identity">
+            </generator>
+        </id>
+
+        <version
+            name="timeStamp"
+            type="long"
+            column="TIMESTAMP"
+        />
+
+        <property
+            name="buildID"
+            type="int"
+            column="BUILD_ID"
+            unique="false"
+        />
+
+        <property
+            name="userName"
+            type="java.lang.String"
+            column="USER_NAME"
+            unique="true"
+        />
+
+        <property
+            name="userEmail"
+            type="java.lang.String"
+            column="USER_EMAIL"
+            unique="true"
+        />
+
+        <property
+            name="disabled"
+            type="yes_no"
+            column="DISABLED"
+            unique="false"
+        />
+
+        <property
+            name="instantMessengerAddress"
+            type="java.lang.String"
+            column="IM_ADDRESS"
+            unique="false"
+        />
+
+        <property
+            name="instantMessengerType"
+            type="byte"
+            column="IM_TYPE"
+            unique="false"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-VCSUserToEmailMap.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Importing Archives After Moving the Location</TITLE>
+<!--<importarchivestomovelocation.html>-->
+<!--<index parent="archives" label="moving" anchor="importarchivestomovelocation">-->
+<!--<index parent="archives" label="importing after moving" anchor="importarchivestomovelocation">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="importarchivestomovelocation"></A>Importing Archives After Moving the Location</H1>
+<p>You import archives into a project database or project after moving the archives from one location to another. This restores the link between the archives' versioned files and the archives themselves. </p>
+<P>This procedure assumes that you have physically moved the archives of a project to a new location (using Windows Explorer or another tool). Before you import the archives, you must delete the existing versioned files that correspond to the archives that you moved from the project. To avoid name conflicts, Version Manager will not let you import an archive if a versioned file of the same name already exists in the project.</P>
+
+<H2>To import archives:</H2>
+<OL>
+	<LI>Select the versioned files whose archives you have moved. To select all the archives in a project database or project, use Edit | Select All.<BR><BR>
+	<LI>Select File | Delete.<BR><BR>
+	<LI>Select the project to which you want to import archives.<BR><BR>
+	<LI>Select Admin | Import Archives. The Select Archives dialog box appears. Note that the initial location of the selection pane of this dialog box is the archive location of the selected project.<BR><BR> 
+	<LI>Navigate to the new location of the archives (the location where you moved the archives). Then, select the entire folder that contains the archives or select only the archives that you want to import, and click OK. The Import Archives dialog box appears with the General tab active.<BR><BR>
+	<b>Note:</b> In the <b>File name</b> field, if you specify a path with a filter other than * or *.* (for example, if you specify c:\files\*.cpp), the files matching the filter will be added directly without creating a top-level project. However, if subdirectories are also added, subprojects will be created for them and only files matching the filter will be added.<BR><BR>
+	<LI>Select <b>Use existing archive location</b> from the <b>Archive Location</b> group. This choice changes the archive location for the project to the new archive location.<BR><BR>
+	<LI>If you selected an entire folder, you can add all archives of all subdirectories included in the archive structure by selecting the <b>Include archives in subdirectories</b> check box.<BR><BR>
+	<LI>To review the selected archives before importing them, click the Selected Archives tab.<BR><BR>
+	<LI>Click OK.
+</OL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a href="changearchivelocation.html">Changing the Archive Location</a></TD>
+	</TR>
+
+</TABLE>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

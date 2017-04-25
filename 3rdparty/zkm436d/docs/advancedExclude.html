@@ -1,0 +1,170 @@
+<!-- Copyright 2003 Zelix Pty Ltd (ABN 47 078 740 093) -->
+<html>
+<head>
+<title>Zelix KlassMaster Obfuscate Name Exclusions</title>
+   <meta name="keywords" content="java obfuscator,java code obfuscator,obfuscation">
+   <meta name="description" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <meta name="classification" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <link rel=stylesheet href="../ZKM.css" TYPE="text/css">
+</head>
+<body background="../images/small-white-mist1.jpg" bgcolor="#E1E1E1">
+<center><a href="index.html"><img src=../images/ZKM_b4.gif alt="Zelix KlassMaster" width=264 height=62 border=0></a></center>
+<hr>
+<center>
+<table width=770 border=0>
+   <tr>
+      <td colspan=2>
+         <h1>Obfuscate Name Exclusions</h1>
+         <h2><a name=overview>Overview</a></h2>
+         The Zelix KlassMaster<sup><font size=-2>TM</font></sup> &quot;Obfuscate&quot; tool renames packages, classes, fields and methods.
+         Name exclusions specify the package, class, field and method names that <b>should <u>not</u> be renamed</b> by the 
+         &quot;Obfuscate&quot; tool. 
+         Zelix KlassMaster has inbuilt <a href="#defaultExclusions">default (name) exclusion parameters</a> that, 
+         along with your <b>&quot;Application type&quot;</b>, 
+         <b>&quot;Exclude package qualifiers&quot;</b> and <b>&quot;Don't change main class name&quot;</b> settings, are adequate 
+         for most purposes.         
+         <p>
+         However, the <b>"Obfuscate Name Exclusions"</b> window also allows you to interactively construct precise custom exclusion specifications. 
+         Exclude parameters may be added, modified and deleted from the list.
+         If an exclusion parameter is selected in the list, an explanation of its exclusion effect appears in the lower pane.
+         <p>
+         Just before this dialog is displayed, all the classes specified by your earlier <code>open</code> statement
+         are partially opened so that the <b>"don't change main class name"</b> list can be populated and so that any 
+         package names you enter in the <b>"exclude package qualifiers"</b> field can be validated. So, if you wish to 
+         make use of these options, your class files must already exist in the specified directories and/or archive files.
+      </td>
+   </tr>
+   <tr>
+      <td colspan=2>
+         &nbsp;
+      </td>
+   </tr>
+   <tr>
+      <td valign="top" colspan=2>
+         <img src=../images/advExclude0a.gif width=449 height=469 align="right" alt="Zelix KlassMaster - Obfuscate Name Exclusions"><p>
+         <ul>
+         <li><a href="#paramList">Exclusion parameter list</a>
+         <li><a href="#add">Add button</a>
+         <li><a href="#modify">Modify button</a>
+         <li><a href="#delete">Delete button</a>
+         <li><a href="#explanation">Explanation area</a>
+         <li><a href="#type">Application type list</a>
+         <li><a href="#excludePackage">Exclude package qualifiers list</a>
+         <li><a href="#mainClass">Don't change main class name list</a>
+         <li><a href="#defaultExclusions">Default exclusion parameters</a>
+         </ul>
+         <h2><a name="paramList">Exclusion parameter list</a></h2>
+         Shows the current exclusion parameters.  Any <a href="#defaultExclusions">default exclusion parameters</a> will appear as disabled items. 
+         Although the form of the exclusion parameters is the <a href="excludeStatement.html"><b>ZKM Script</b></a> syntax (where  &quot;*&quot; is a wildcard), you do not need to know this syntax.
+ 
+         <h2><a name="add">Add button</a></h2>
+         Click this button to add an exclusion parameter to the <b>&quot;Exclusion parameter&quot;</b> list.  
+         It will open the <a href="nameExclusionType.html">&quot;Exclusion Parameter Type&quot;</a> dialog.
+ 
+         <h2><a name="modify">Modify button</a></h2>
+         Click this button to modify the selected exclusion parameter in the <b>&quot;Exclusion parameter&quot;</b> list.
+
+         <h2><a name="delete">Delete button</a></h2>
+         Click this button to delete the selected exclusion parameter in the <b>&quot;Exclusion parameter&quot;</b> list.
+
+         <h2><a name="explanation">Explanation area</a></h2>
+         Displays a plain language explanation of the effect of the selected exclusion parameter in the <b>&quot;Exclusion parameter&quot;</b> list.
+
+         <h2><a name="type">Application type list</a></h2>
+         This list adds standard exclusion parameters to the <b>&quot;Exclusion parameter&quot;</b> list based upon the application type. 
+         The added exclusion parameters are based on the access modifiers of your classes, fields and methods.<p>
+         <table border=1>
+         <tr>
+         <td>
+         <b>List item</b>
+         </td>
+         <td>
+         <b>Explanation</b>
+         </td>
+         </tr>
+         <tr>
+         <td valign="top">
+         Non-extensible library
+         </td>
+         <td valign="top">
+         Your application is a &quot;non-extensible library&quot; if it does not form a complete application in its own right but rather is intended to be used by other developers
+         as part of their application without them having to extend any of your classes. An example is a 3rd party statistics library.
+         <p>
+         This setting of the <b>&quot;Application type&quot;</b> list means that your public classes, fields and methods need to be accessible to other 
+         classes but your classes will not be extended or implemented by other classes.  It adds exclusion parameters that prevent your <u>public classes, fields and methods</u> from being renamed.
+         </td>
+         </tr>
+         <tr>
+         <td valign="top">
+         Extensible&nbsp;framework
+         </td>
+         <td valign="top">
+         Your application is an &quot;extensible&nbsp;framework&quot; if it does not form a complete application in its own right but rather is intended to be extended by other developers to become part of their application.  The key difference between an &quot;extensible&nbsp;framework&quot; and a &quot;non-extensible library&quot; is that an &quot;extensible&nbsp;framework&quot; has classes that are abstract which need to be extended before they can do real work.
+         <p>
+         This setting of the <b>&quot;Application type&quot;</b> list means that your public classes, fields and methods and protected fields and methods need to be accessible 
+         to other classes because your classes will be extended or implemented by other classes. It adds exclusion parameters that prevent your <u>public classes, fields 
+         and methods and protected fields and methods</u> from being renamed.
+         </td>
+         </tr>
+         <tr>
+         <td valign="top">
+         J2ME&nbsp;MIDlet
+         </td>
+         <td valign="top">
+         This setting of the <b>&quot;Application type&quot;</b> list adds exclusion parameters that will prevent your <u>classes that extend javax.microedition.midlet.MIDlet</u> from being renamed.
+         </td>
+         </tr>
+         <tr>
+         <td valign="top">
+         Self contained application or applet
+         </td>
+         <td valign="top">
+         This setting of the <b>&quot;Application type&quot;</b> list means that your classes are self contained. It does not add any exclusion parameters to the 
+         <b>&quot;Exclusion parameter&quot;</b> list.
+         Instead, you need to select the application entry point or Applet class in the <a href="#mainClass">Don't change main class name list</a>.
+         </td>
+         </tr>
+         </table>
+
+         <h2><a name="excludePackage">Exclude package qualifiers list</a></h2>
+         This list contains the package names of all the classes that have been opened in Zelix KlassMaster. 
+         If you select a package name, then an exclusion parameter will be added to the <b>&quot;Exclusion parameter&quot;</b> list that will exclude that package from being renamed.  Alternatively, if you select the special <b><code>&lt;All&gt;</code></b> item then an exclusion parameter will be added that will exclude <u>all</u> package names 
+         from being renamed.
+         <p>
+         For example, if your classes are within the package &quot;com.mycompany&quot; then typically you will want to exclude that package from being renamed. This would eliminate the risk of class name clashes when your classes appear in the same classpath as classes produced and obfuscated by other companies. 
+
+         <h2><a name="mainClass">Don't change main class name list</a></h2>
+         This list adds an exclusion parameter that excludes the selected &quot;entry point&quot; class from being renamed. 
+         The contents of the list consist of all the opened classes that contain the <code>public&nbsp;static&nbsp;main(java.lang.String[])</code> method 
+         or that extend <code>java.applet.Applet</code>.
+         If your application contains more than one entry point then you will need to exclude these additional entry points by adding custom exclude parameters using the <a href="#add">Add button</a>.      
+
+         <h2><a name="defaultExclusions">Default exclusion parameters</a></h3>
+         Zelix KlassMaster has some default exclusions that are applied everytime you obfuscate.
+         However, you may override these defaults with your own. Zelix KlassMaster
+         looks for a file in the current user directory named <code>&quot;defaultExclude.txt&quot;</code>. If it finds the file
+         then it will use its contents as the default exclusions.
+         <p>
+         If the defaultExclude.txt file doesn't exist then Zelix KlassMaster applies its predefined internal default exclusions.
+         If the defaultExclude.txt file exists but is is empty then there are no default exclusions.
+         <p>
+         The default exclusion parameters appear as disabled list entries in the <b>&quot;Exclusion parameter list&quot;</b>. 
+         They can only be altered by editing the <code>&quot;defaultExclude.txt&quot;</code> file. 
+         They cannot be altered by using this dialog.
+      </td>
+   </tr>
+</table>
+</center>
+<hr>
+<center>
+<table>
+   <tr>
+      <td>
+         <a href=toolsObfuscate.html><img src=../images/uarrw.gif alt="Tools | Obfuscate"></a>
+      </td>
+   </tr>
+</table>
+</center>
+Copyright &copy; 2003 <a href="mailto:WebMaster@zelix.com"><font size=-1>Zelix Pty Ltd</font></a> (ABN 47 078 740 093)
+</body>
+</html>

@@ -1,0 +1,44 @@
+vimeshev~F~20050906.212819~F~second_sourceline\src\readme.txt~F~\main\4~F~checkin~F~multi
+line
+comment~F~~Q~
+vimeshev~F~20050906.210812~F~sourceline\alwaysvalid\src~F~\main\2~F~checkin~F~Removed file element "readme.txt".~F~~Q~
+vimeshev~F~20050906.210659~F~second_sourceline\src\readme.txt~F~\main\3~F~checkin~F~Some change~F~~Q~
+vimeshev~F~20050831.221654~F~.~F~\main\3~F~checkin~F~dir check in~F~~Q~
+vimeshev~F~20050831.221512~F~sourceline~F~\main\2~F~checkin~F~~F~~Q~
+vimeshev~F~20050831.221511~F~second_sourceline~F~\main\2~F~checkin~F~~F~~Q~
+vimeshev~F~20050831.221259~F~.~F~\main\2~F~checkin~F~Checked in two files.~F~~Q~
+vimeshev~F~20050831.221207~F~second_sourceline\src\readme.txt~F~\main\2~F~checkin~F~changed text~F~~Q~
+vimeshev~F~20050831.000854~F~.~F~\main\1~F~checkin~F~~F~~Q~
+vimeshev~F~20050831.000854~F~sourceline~F~\main\1~F~checkin~F~~F~~Q~
+vimeshev~F~20050831.000854~F~sourceline\alwaysvalid~F~\main\1~F~checkin~F~~F~~Q~
+vimeshev~F~20050831.000854~F~sourceline\alwaysvalid\src~F~\main\1~F~checkin~F~~F~~Q~
+vimeshev~F~20050831.000854~F~second_sourceline~F~\main\1~F~checkin~F~~F~~Q~
+vimeshev~F~20050831.000854~F~second_sourceline\src~F~\main\1~F~checkin~F~~F~~Q~
+vimeshev~F~20050831.000853~F~test_cvs_change_log_with_outside_branch.txt~F~~F~**null operation kind**~F~~F~~Q~
+vimeshev~F~20050831.000853~F~second_sourceline\src\readme.txt~F~~F~**null operation kind**~F~~F~~Q~
+vimeshev~F~20050831.000851~F~second_sourceline\src~F~\main\0~F~mkelem~F~~F~~Q~
+vimeshev~F~20050831.000851~F~second_sourceline\src~F~\main~F~mkelem~F~~F~~Q~
+vimeshev~F~20050831.000851~F~second_sourceline\src~F~~F~mkelem~F~~F~~Q~
+vimeshev~F~20050831.000851~F~second_sourceline~F~\main\0~F~mkelem~F~~F~~Q~
+vimeshev~F~20050831.000851~F~second_sourceline~F~\main~F~mkelem~F~~F~~Q~
+vimeshev~F~20050831.000851~F~second_sourceline~F~~F~mkelem~F~~F~~Q~
+vimeshev~F~20050831.000850~F~sourceline\alwaysvalid\src~F~\main\0~F~mkelem~F~~F~~Q~
+vimeshev~F~20050831.000850~F~sourceline\alwaysvalid\src~F~\main~F~mkelem~F~~F~~Q~
+vimeshev~F~20050831.000850~F~sourceline\alwaysvalid\src~F~~F~mkelem~F~~F~~Q~
+vimeshev~F~20050831.000850~F~sourceline\alwaysvalid~F~\main\0~F~mkelem~F~~F~~Q~
+vimeshev~F~20050831.000850~F~sourceline\alwaysvalid~F~\main~F~mkelem~F~~F~~Q~
+vimeshev~F~20050831.000850~F~sourceline\alwaysvalid~F~~F~mkelem~F~~F~~Q~
+vimeshev~F~20050831.000850~F~sourceline~F~\main\0~F~mkelem~F~~F~~Q~
+vimeshev~F~20050831.000850~F~sourceline~F~\main~F~mkelem~F~~F~~Q~
+vimeshev~F~20050831.000850~F~sourceline~F~~F~mkelem~F~~F~~Q~
+vimeshev~F~20050831.000849~F~.~F~\main\0~F~mkelem~F~~F~~Q~
+vimeshev~F~20050831.000849~F~.~F~\main~F~mkelem~F~~F~~Q~
+vimeshev~F~20050831.000849~F~.~F~~F~mkelem~F~~F~~Q~
+vimeshev~F~20040617.015818~F~test_cvs_change_log_with_outside_branch.txt~F~\main\1~F~checkin~F~made from flat file~F~~Q~
+vimeshev~F~20040617.015818~F~test_cvs_change_log_with_outside_branch.txt~F~\main\0~F~mkelem~F~~F~~Q~
+vimeshev~F~20040617.015818~F~test_cvs_change_log_with_outside_branch.txt~F~\main~F~mkelem~F~~F~~Q~
+vimeshev~F~20040617.015818~F~test_cvs_change_log_with_outside_branch.txt~F~~F~mkelem~F~made from flat file~F~~Q~
+vimeshev~F~20040303.235352~F~second_sourceline\src\readme.txt~F~\main\1~F~checkin~F~made from flat file~F~~Q~
+vimeshev~F~20040303.235352~F~second_sourceline\src\readme.txt~F~\main\0~F~mkelem~F~~F~~Q~
+vimeshev~F~20040303.235352~F~second_sourceline\src\readme.txt~F~\main~F~mkelem~F~~F~~Q~
+vimeshev~F~20040303.235352~F~second_sourceline\src\readme.txt~F~~F~mkelem~F~made from flat file~F~~Q~

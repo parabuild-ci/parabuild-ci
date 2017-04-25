@@ -1,0 +1,133 @@
+? test_cvsnt_2503_log.txt
+
+RCS file: /opt/cvs/cvsroot/bt/internal/bin/SS.EXE,v
+Working file: SS.EXE
+head: 1.1
+branch:
+locks: strict
+access list:
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2004/09/15 04:54:31;  author: slava;  state: Exp;
+Added SS
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/internal/bin/SSUS.DLL,v
+Working file: SSUS.DLL
+head: 1.1
+branch:
+locks: strict
+access list:
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2004/09/15 04:54:31;  author: slava;  state: Exp;
+Added SS
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/internal/bin/apas.bat,v
+Working file: apas.bat
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2004/11/05 07:04:08;  author: slava;  state: Exp;  lines: +1 -1
+Finished (?) renaming.
+----------------------------
+revision 1.1
+date: 2004/01/25 21:54:45;  author: slava;  state: Exp;
+Added shortcut script for building-starting
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/internal/bin/sleep.exe,v
+Working file: sleep.exe
+head: 1.3
+branch:
+locks: strict
+access list:
+keyword substitution: b
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/12/29 22:10:28;  author: slava;  state: Exp;  lines: +159 -2
+Added sleep.exe w/-kb
+----------------------------
+revision 1.2
+date: 2003/12/29 22:07:49;  author: slava;  state: dead;  lines: +0 -0
+Removed sleep that was inserted w/o -kb
+----------------------------
+revision 1.1
+date: 2003/12/29 03:03:56;  author: slava;  state: Exp;
+Moved service binaries and scripts to "internal" dir
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/internal/bin/testsa.bat,v
+Working file: testsa.bat
+head: 1.1
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2003/12/29 03:03:56;  author: slava;  state: Exp;
+Moved service binaries and scripts to "internal" dir
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/internal/bin/testsa.sh,v
+Working file: testsa.sh
+head: 1.1
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2004/03/07 07:39:05;  author: slava;  state: Exp;
+Added helper script to run a single standalone test under *nix.
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/internal/bin/testss.bat,v
+Working file: testss.bat
+head: 1.1
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2003/12/29 03:03:56;  author: slava;  state: Exp;
+Moved service binaries and scripts to "internal" dir
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/internal/bin/testss.sh,v
+Working file: testss.sh
+head: 1.1
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2003/12/29 03:03:56;  author: slava;  state: Exp;
+Moved service binaries and scripts to "internal" dir
+=============================================================================

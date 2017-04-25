@@ -1,0 +1,1296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+        "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd">
+<book>
+  <title>Parabuild 4.4</title>
+
+  <subtitle>Web Service API Manual</subtitle>
+
+  <bookinfo>
+    <copyright>
+      <year>2017</year>
+
+      <holder>Parabuild CI</holder>
+    </copyright>
+  </bookinfo>
+
+  <preface>
+    <title>Preface</title>
+
+    <sect1>
+      <title>About This Manual</title>
+
+      <para>This manual provides a description for Parabuild web service API.</para>
+    </sect1>
+
+    <sect1>
+      <title>Audience</title>
+
+      <para>This guide is intended for software engineers.</para>
+    </sect1>
+
+    <sect1>
+      <title>Technical Support</title>
+
+      <para>If you have any problems with the software or documentation,
+        please contact Technical Support via online support forums,
+        electronic mail, fax, or as described below. For information regarding
+        other support information, click the Support link on the web
+        site at<ulink url="http://www.parabuildci.org">www.parabuildci.org</ulink>.
+      </para>
+
+      <variablelist>
+        <varlistentry>
+          <term>Support Forum:</term>
+
+          <listitem>
+            <para>
+              <ulink
+                      url="http://forums.parabuildci.org/viewforum.php?f=1">
+                http://forums.parabuildci.org/viewforum.php?f=1
+              </ulink>
+            </para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>Electronic Mail:</term>
+
+          <listitem>
+            <para>
+              <ulink url="mailto:support@parabuildci.org">support@parabuildci.org</ulink>
+            </para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>Fax:</term>
+
+          <listitem>
+            <para>650-240-4455</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect1>
+  </preface>
+
+  <chapter>
+    <title>Accessing Web Service API</title>
+
+    <section>
+      <title>Web Service WSDL</title>
+
+      <para>Parabuild web service WSDL can be found at:</para>
+
+      <para><emphasis role="bold">&#60;Parabuild installation
+        directory&#62;/bin/wsdl/Parabuild.wsdl</emphasis>.
+      </para>
+    </section>
+
+    <section>
+      <title>Web Service URL</title>
+
+      <para>Parabuild web service is available at:</para>
+
+      <para>
+        <emphasis role="bold">http://&#60;parabuild
+          host&#62;:8080/parabuild/integration/webservice/Parabuild
+        </emphasis>
+      </para>
+    </section>
+
+    <section>
+      <title>Authentication and Authorisation</title>
+
+      <para>Parabuild web service uses basic HTTP authentication. Parabuild
+        users with administrative rights are allowed to access the web service.
+      </para>
+    </section>
+  </chapter>
+
+  <chapter>
+    <title>Web Service API</title>
+
+    <sect1>
+      <title>Querying System Information</title>
+
+      <sect2>
+        <title>Obtaining Server Version</title>
+
+        <programlisting>/**
+          * Returns server version.
+          *
+          * @return a string containing server version.
+          */
+          String serverVersion();
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Querying System Properties</title>
+
+        <programlisting>/**
+          * Returns a list of global system properties.
+          *
+          * @return a list of global system properties.
+          */
+          SystemProperty[] getSystemProperties();
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Listing Global Version Control User to Email Map</title>
+
+        <programlisting>/**
+          * Returns a global version control user to email map.
+          *
+          * @return a global version control user to email map.
+          */
+          GlobalVCSUserMap[] getGlobalVcsUserMap();
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Listing Projects</title>
+
+        <programlisting>/**
+          * Returns a list of projects.
+          *
+          * @return a list of projects.
+          */
+          Project[] getProjects();
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Project Attributes</title>
+
+        <programlisting>/**
+          * Returns a list of project attributes.
+          *
+          * @param projectID project ID
+          *
+          * @return a list of project attributes.
+          */
+          ProjectAttribute[] getProjectAttributes(int projectID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Project Build Configurations</title>
+
+        <programlisting>/**
+          * Returns a list of build configurations belonging to a project.
+          *
+          * @param projectID project ID
+          *
+          * @return a list of build configurations belonging to a project.
+          */
+          ProjectBuild[] getProjectBuilds(int projectID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Listing Display Groups</title>
+
+        <programlisting>/**
+          * Returns a list of display groups.
+          *
+          * @return a list of display groups.
+          */
+          DisplayGroup[] getDisplayGroups();
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Build Configurations Belonging to Display Group</title>
+
+        <programlisting>/**
+          * Returns a list of build configurations are that part of a display group.
+          *
+          * @param displayGroupID display group ID
+          *
+          * @return a list of build configurations are that part of a display group.
+          */
+          DisplayGroupBuild[] getDisplayGroupBuilds(int displayGroupID);
+        </programlisting>
+      </sect2>
+    </sect1>
+
+    <sect1>
+      <title>Querying Build Farms and Agents</title>
+
+      <para>This section enumerates methods available for accessing
+        information about build farms and build agents.
+      </para>
+
+      <sect2>
+        <title>Listing Build Farm Configurations</title>
+
+        <programlisting>/**
+          * Returns a list of build farm configurations.
+          *
+          * @return a list of build farm configurations.
+          */
+          BuildFarmConfiguration[] getBuildFarmConfigurations();
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Build Farm Attributes</title>
+
+        <programlisting>/**
+          * Returns a list of attributes of a build farm.
+          *
+          * This method is added for future compatibility. The current implementation returns an empty array.
+          *
+          * @param buildFarmID build farm ID
+          * @return a list of attributes of a build farm.
+          */
+          BuildFarmConfigurationAttribute[] getBuildFarmConfigurationAttributes(int buildFarmID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Build Farm Agents</title>
+
+        <programlisting>/**
+          * Returns a list of agents belonging to a build farm.
+          *
+          * @param buildFarmID build farm ID
+          * @return a list of build agents belonging to a build farm.
+          */
+          BuildFarmAgent[] getBuildFarmAgents(int buildFarmID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Listing Agent Configurations</title>
+
+        <programlisting>/**
+          * Returns a list agent configurations.
+          *
+          * @return a list agent configurations.
+          */
+          AgentConfiguration[] getAgentConfigurations();
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Agent Configuration</title>
+
+        <programlisting>/**
+          * Returns agent configuration.
+          *
+          * @param agentID agent configuration ID
+          *
+          * @return Returns agent configuration..
+          *
+          * @see #getBuildFarmAgents(int)
+          */
+          AgentConfiguration getAgentConfiguration(int agentID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Listing Agent Statuses</title>
+
+        <programlisting>
+         /**
+          * Returns a list of agent statuses.
+          *
+          * The agent status code is contained in the field "status". 1 means disabled. 2 means idle.
+          * 3 means busy. 4 means offline. 5 means there is a version mismatch.
+          *
+          * @return a list of agent statuses.
+          */
+          AgentStatus[] getAgentStatuses();
+        </programlisting>
+      </sect2>
+
+    </sect1>
+
+    <sect1>
+      <title>Querying Build Configuration</title>
+
+      <para>This section enumerates method for querying information related to
+        build configuration.
+      </para>
+
+      <sect2>
+        <title>Listing Active Build Configurations</title>
+
+        <programlisting>/**
+          * Returns a list of active build configurations.
+          *
+          * @return a list of active build configurations.
+          */
+          BuildConfiguration[] getActiveBuildConfigurations();
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Build Configuration Attributes</title>
+
+        <programlisting>/**
+          * Returns a list of attributes for a build configuration.
+          *
+          * @param buildID build ID.
+          * @return a list of attributes for a build configuration.
+          */
+          BuildConfigurationAttribute[] getBuildConfigurationAttributes(int buildID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Version Control Settings</title>
+
+        <programlisting>/**
+          * Returns a list of version control settings.
+          *
+          * @param buildID build ID
+          * @return a list of version control settings.
+          */
+          VersionControlSetting[] getVersionControlSettings(int buildID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Schedule Properties</title>
+
+        <programlisting>/**
+          * Returns a list of schedule properties.
+          *
+          * @param buildID build ID
+          * @return a list of schedule properties.
+          */
+          ScheduleProperty[] getScheduleProperties(int buildID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Label Properties</title>
+
+        <programlisting>/**
+          * Returns a list of label properties.
+          *
+          * @param buildID build ID
+          * @return a list of label properties.
+          */
+          LabelProperty[] getLabelProperties(int buildID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Log Configurations</title>
+
+        <programlisting>/**
+          * Returns a list of log configurations.
+          *
+          * @param buildID build ID
+          * @return a list of log configurations.
+          */
+          LogConfiguration[] getLogConfigurations(int buildID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Log Configuration Properties</title>
+
+        <programlisting>/**
+          * Returns a list of log configuration properties.
+          *
+          * @param logID log ID
+          * @return a list of log configuration properties.
+          */
+          LogConfigurationProperty[] getLogConfigurationProperties(int logID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Version Control User to Email Map</title>
+
+        <programlisting>/**
+          * Returns a list of version control user to email maps.
+          *
+          * @param buildID build ID
+          * @return a list of version control use to email maps.
+          */
+          VCSUserToEmailMap[] getVCSUserToEmailMap(int buildID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Build Watchers</title>
+
+        <programlisting>/**
+          * Returns a list of build watchers.
+          *
+          * @param buildID a list of build watchers.
+          * @return a list of build watchers.
+          */
+          BuildWatcher[] getBuildWatchers(int buildID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Build Steps</title>
+
+        <programlisting>/**
+          * Returns a list of build steps.
+          *
+          * @param buildID build ID
+          * @return a list of build steps.
+          */
+          BuildSequence[] getBuildSequence(int buildID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Schedule Items</title>
+
+        <programlisting>/**
+          * Returns a list of schedule items
+          *
+          * @param buildID build ID
+          * @return Returns a list of schedule items
+          */
+          ScheduleItem[] getScheduleItem(int buildID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Issue Trackers</title>
+
+        <programlisting>/**
+          * Returns a list of issues trackers.
+          *
+          * @param buildID build ID
+          *
+          * @return a list of issues trackers.
+          */
+          IssueTracker[] getIssueTracker(int buildID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Issue Tracker Properties</title>
+
+        <programlisting>/**
+          * Returns a list of issue tracker properties.
+          *
+          * @param issueTrackerID issue tracker ID
+          *
+          * @return a list of issue tracker properties.
+          */
+          IssueTrackerProperty[] getIssueTrackerProperties(int issueTrackerID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Start Parameters</title>
+
+        <programlisting>/**
+          * Returns a list of start parameters.
+          *
+          * @param type parameter type.
+          *
+          * @param ownerID owner ID
+          *
+          * @return a list of start parameters.
+          */
+          StartParameter[] getVariables(int type, int ownerID);
+        </programlisting>
+      </sect2>
+    </sect1>
+
+    <sect1>
+      <title>Accessing Build Results</title>
+
+      <para>This section enumerates methods for accessing build results.</para>
+
+      <sect2>
+        <title>Obtaining Number of Build Runs</title>
+
+        <programlisting>/**
+          * Returns number of build runs for the given build configuration.
+          *
+          * @param activeBuildID build ID
+          * @return number of build runs for the given build configuration.
+          */
+          int getBuildRunCount(int activeBuildID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Build Run</title>
+
+        <programlisting>/**
+          * Returns build run for the given build run ID.
+          *
+          * @param buildRunID build run ID
+          * @return build run.
+          */
+          BuildRun getBuildRun(int buildRunID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Querying Completed Build Runs</title>
+
+        <programlisting>/**
+          * Returns a list of completed build runs.
+          *
+          * @param activeBuildID build ID
+          * @param firstResult number from that to start listing build runs.
+          * @param maxCount number of build runs to retrieve.
+          * @return a list of completed build runs.
+          */
+          BuildRun[] getCompletedBuildRuns(final int activeBuildID, final int firstResult, final int
+          maxCount);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Last Successful Build Run</title>
+
+        <programlisting>/**
+          * Returns the last successful build run.
+          *
+          * @param activeBuildID build ID
+          * @return the last successful build run or null if there is no any.
+          */
+          BuildRun getLastSuccessfulBuildRun(int activeBuildID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Finding Last Successful Build Runs by Display Group ID and
+          Change List Number
+        </title>
+
+        <programlisting>/**
+          * Returns an array of last successful BuildRuns that match given display group ID and change list number.
+          *
+          * @param displayGroupID display group ID
+          * @param changeListNumber change list number
+          * @return array of last successful BuildRuns that matche given display group ID and change list number or an empty array if no matching builds exist.
+          */
+          public BuildRun[] findlLastSuccessfulBuildRuns(final int displayGroupID, final int changeListNumber);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Build Run Attributes</title>
+
+        <programlisting>
+          /**
+          * Returns a list of build run attributes.
+          *
+          * @param buildRunID build run ID
+          * @return list of build run attributes.
+          */
+          BuildRunAttribute[] getBuildRunAttributes(int buildRunID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Change Lists in Given Build Run</title>
+
+        <programlisting>/**
+          * Returns change lists that participated in the given build run.
+          *
+          * @param buildRunID build run ID.
+          * @return change lists that participated in the given build run.
+          */
+          ChangeList[] getBuildRunParticipants(int buildRunID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Change List Changes</title>
+
+        <programlisting>/**
+          * Returns a list of changes in the given change list.
+          *
+          * @param changeListID change list ID
+          * @return a list of changes in the given change list.
+          * @see #getBuildRunParticipants(int)
+          * @see #getChangeList(int)
+          */
+          Change[] getChanges(int changeListID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Build Step Runs</title>
+
+        <programlisting>/**
+          * Returns a list of build step runs.
+          *
+          * @param buildRunID build run ID
+          * @return a list of step runs.
+          */
+          StepRun[] getStepRuns(int buildRunID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Step Run Attributes</title>
+
+        <programlisting>/**
+          * Returns a list of build step run attributes.
+          *
+          * @param stepRunID step run ID
+          * @return a list of step run attributes.
+          * @see #getStepRuns(int)
+          */
+          StepRunAttribute[] getStepRunRunAttributes(int stepRunID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Build Step Logs</title>
+
+        <programlisting>/**
+          * Returns a list of build step logs.
+          *
+          * @param stepRunID step run ID
+          * @return a list of build step logs.
+          */
+          StepLog[] getStepLogs(int stepRunID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Build Step Results</title>
+
+        <programlisting>/**
+          * Returns a list of build step results.
+          *
+          * @param stepRunID step run ID
+          * @return a list of build step results.
+          */
+          StepResult[] getStepResults(int stepRunID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Change List</title>
+
+        <programlisting>/**
+          * Returns a change list.
+          *
+          * @param changeListID change list ID
+          * @return a change list.
+          */
+          ChangeList getChangeList(int changeListID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Release Notes</title>
+
+        <programlisting>/**
+          * Returns a list of release notes.
+          *
+          * @param buildRunID build run ID
+          * @return a list of release notes.
+          */
+          ReleaseNote[] getReleaseNotes(int buildRunID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Issue</title>
+
+        <programlisting>/**
+          * Returns an issue.
+          *
+          * @param issueID an issue ID.
+          * @return an issue.
+          */
+          Issue getIssue(int issueID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Issue Attributes</title>
+
+        <programlisting>/**
+          * Returns a list of issue attributes.
+          *
+          * @param issueID issue ID.
+          *
+          * @return a list of issue attributes.
+          */
+          IssueAttribute[] getIssueAttributes(int issueID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Issue Change Lists</title>
+
+        <programlisting>/**
+          * Returns a list of issue change lists.
+          *
+          * @param issueID issue ID.
+          *
+          * @return a list of issue change lists.
+          */
+          IssueChangeList[] getIssueChangeLists(int issueID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Querying Result Groups</title>
+
+        <programlisting>/**
+          * Returns a list of result groups.
+          *
+          * @return list of result groups.
+          */
+          ResultGroup[] getResultGroups();
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Querying Project Result Groups</title>
+
+        <programlisting>/**
+          * Returns a list of project result groups.
+          *
+          * @param projectID project ID
+          * @return a list of project result groups.
+          */
+          ProjectResultGroup[] getProjectResultGroups(int projectID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Result Configurations</title>
+
+        <programlisting>/**
+          * Returns a list of result configurations.
+          *
+          * @param buildID build ID
+          * @return a list of result configurations.
+          */
+          ResultConfiguration[] getResultConfigurations(int buildID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Result Configuration Properties</title>
+
+        <programlisting>/**
+          * Returns a list of result configuration properties.
+          *
+          * @param resultConfigID result configuration ID
+          *
+          * @return a list of result configuration properties.
+          */
+          ResultConfigurationProperty[] getResultConfigurationProperties(int resultConfigID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Published Build Step Results</title>
+
+        <programlisting>/**
+          * Returns a list published build step results.
+          *
+          * @param resultGroupID result group ID
+          *
+          * @return a list published build step results.
+          */
+          PublishedStepResult[] getPublishedStepResults(int resultGroupID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Build Run Actions</title>
+
+        <programlisting>/**
+          * Returns a list of build runs actions.
+          *
+          * @param buildRunID
+          *
+          * @return a list of build runs actions.
+          */
+          BuildRunAction[] getBuildRunActions(int buildRunID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Querying Test Suite Names</title>
+
+        <programlisting>/**
+          * Returns a list of test suite names.
+          *
+          * @return a list of test suite names.
+          */
+          TestSuiteName[] getTestSuiteNames();
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Test Case names</title>
+
+        <programlisting>/**
+          * Returns a list of test case names.
+          *
+          * @param testSuiteNameID test suite name ID
+          * @return a list of test case names.
+          */
+          TestCaseName[] getTestCaseNames(int testSuiteNameID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Obtaining Build Run Tests</title>
+
+        <programlisting>/**
+          * Returns a list of build run tests.
+          *
+          * @param buildRunID build run ID
+          *
+          * @return a list of build run tests.
+          */
+          BuildRunTest[] getBuildRunTests(int buildRunID);
+        </programlisting>
+      </sect2>
+    </sect1>
+
+    <sect1>
+      <title>Querying Build Statistics</title>
+
+      <sect2>
+        <title>Querying Hourly Build Statistics</title>
+
+        <programlisting>/**
+          * Returns hourly build statistics.
+          *
+          * @param activeBuildID active build ID
+          * @param fromDate from date
+          * @param toDate to date
+          * @return hourly build statistics.
+          */
+          BuildStatistics[] getHourlyStatistics(int activeBuildID, Calendar fromDate, Calendar toDate);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Querying Daily Build Statistics</title>
+
+        <programlisting>/**
+          * Returns daily build statistics.
+          *
+          * @param activeBuildID active build ID
+          * @param fromDate from date
+          * @param toDate to date
+          * @return daily build statistics.
+          */
+          BuildStatistics[] getDailyStatistics(int activeBuildID, Calendar fromDate, Calendar toDate);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Querying Monthly Build Statistics</title>
+
+        <programlisting>/**
+          * Returns monthly build statistics.
+          *
+          * @param activeBuildID active build ID
+          * @param fromDate from date
+          * @param toDate to date
+          * @return monthly build statistics.
+          */
+          BuildStatistics[] getMonthlyStatistics(int activeBuildID, Calendar fromDate, Calendar toDate);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Querying Yearly Build Statistics</title>
+
+        <programlisting>/**
+          * Returns yearly build statistics.
+          *
+          * @param activeBuildID active build ID
+          * @param fromDate from date
+          * @param toDate to date
+          * @return yearly build statistics.
+          */
+          BuildStatistics[] getYearlyStatistics(int activeBuildID, Calendar fromDate, Calendar toDate);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Querying Hourly Build Distribution</title>
+
+        <programlisting>/**
+          * Return hourly build distribution.
+          *
+          * @param activeBuildID
+          *
+          * @return hourly build distribution.
+          */
+          BuildDistribution[] getHourlyBuildDistributions(int activeBuildID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Querying Weekday Build Distribution</title>
+
+        <programlisting>/**
+          * Return weekday build distribution.
+          *
+          * @param activeBuildID
+          *
+          * @return weekday build distribution.
+          */
+          BuildDistribution[] getWeekdayBuildDistributions(int activeBuildID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Querying Hourly Test Statistics</title>
+
+        <programlisting>/**
+          * Returns hourly test statistics.
+          *
+          * @param activeBuildID active build ID
+          * @param fromDate from date
+          * @param toDate to date
+          * @param testToolCode test tool code.
+          *
+          * @return hourly test statistics.
+          */
+          TestStatistics[] getHourlyTestStatistics(int activeBuildID, final Calendar fromDate, final Calendar
+          toDate, byte testToolCode);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Querying Daily Test Statistics</title>
+
+        <programlisting>/**
+          * Returns daily test statistics.
+          *
+          * @param activeBuildID active build ID
+          * @param fromDate from date
+          * @param toDate to date
+          * @param testToolCode test tool code.
+          *
+          * @return daily test statistics.
+          */
+          TestStatistics[] getDailyTestStatistics(int activeBuildID, final Calendar fromDate, final Calendar
+          toDate, byte testToolCode);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Querying Monthly Test Statistics</title>
+
+        <programlisting>/**
+          * Returns monthly test statistics.
+          *
+          * @param activeBuildID active build ID
+          * @param fromDate from date
+          * @param toDate to date
+          * @param testToolCode test tool code.
+          *
+          * @return monthly test statistics.
+          */
+          TestStatistics[] getMonthlyTestStatistics(int activeBuildID, final Calendar fromDate, final Calendar
+          toDate, byte testToolCode);
+        </programlisting>
+      </sect2>
+    </sect1>
+
+    <sect1>
+      <title>Managing Builds</title>
+
+      <sect2>
+        <title>Starting Build</title>
+
+        <programlisting>/**
+          * Starts a build.
+          *
+          * @param activeBuildID ID of the build to start.
+          */
+          void startBuild(int activeBuildID);
+        </programlisting>
+
+        <programlisting>/**
+          * Starts the build.
+          *
+          * @param activeBuildID ID of the build to start.
+          * @param buildStartRequest an object containing a detailed build start request.
+          */
+          void startBuild(int activeBuildID, BuildStartRequest buildStartRequest) throws IOException;
+        </programlisting>
+
+        <sect3>
+          <title>BuildStartRequest</title>
+
+          <para>BuildStartRequest has the following format:</para>
+
+          <table>
+            <tgroup cols="2">
+              <tbody>
+                <row>
+                  <entry>Field Name</entry>
+                  <entry>Description</entry>
+                </row>
+                <row>
+                  <entry>requestType</entry>
+                  <entry>An
+                    integer request type. 0 means that this is a normal request. A
+                    normal requests starts build with the most recent change list
+                    number. 1 means that this is a build re-run. For build re-run
+                    buildRunID must be set.
+                  </entry>
+                </row>
+                <row>
+                  <entry>cleanCheckout</entry>
+                  <entry>A
+                    boolean clean checkout flag. If set to true, Parabuild will clean
+                    up a build workspace before starting the build.
+                  </entry>
+                </row>
+                <row>
+                  <entry>pinResult</entry>
+                  <entry>A
+                    boolean pin result flag. If set to true, build results will be
+                    pinned.
+                  </entry>
+                </row>
+                <row>
+                  <entry>buildRunID</entry>
+                  <entry>A build
+                    run ID to re-run. If this is not a re-rerun request, buildRunID
+                    must be set to -1.
+                  </entry>
+                </row>
+                <row>
+                  <entry>changeListID</entry>
+                  <entry>An
+                    integer change list number. The change list number can be used to
+                    start a manual build against a particular change list number. The
+                    change list number is supported for Perforce and Subversion.
+                  </entry>
+                </row>
+                <row>
+                  <entry>userID</entry>
+                  <entry>An integer ID of a
+                    user that starts the build. If not known, the user ID must be set
+                    to -1.
+                  </entry>
+                </row>
+                <row>
+                  <entry>versionCounter</entry>
+                  <entry>A
+                    string version counter. If not known, must be set to an empty
+                    string.
+                  </entry>
+                </row>
+                <row>
+                  <entry>label</entry>
+                  <entry>A string
+                    label that Parabuild has to apply to the version control system if
+                    build is successful. The label must be set to an empty string if
+                    no label should be applied.
+                  </entry>
+                </row>
+                <row>
+                  <entry>note</entry>
+                  <entry>A
+                    note that Parabuild has to add to the build. The note must be set
+                    to an empty string if no note should be added.
+                  </entry>
+                </row>
+                <row>
+                  <entry>versionTemplate</entry>
+                  <entry>A
+                    string version template Parabuild has to use to generate product
+                    version. The version template must be set to an empty string if no
+                    product version must be generated.
+                  </entry>
+                </row>
+                <row>
+                  <entry>parameterList</entry>
+                  <entry>A
+                    list of build start parameters. Please see the description
+                    BuildStartRequestParameter object for information.
+                  </entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </table>
+        </sect3>
+
+        <sect3>
+          <title>BuildStartRequestParameter</title>
+
+          <para>BuildStartRequestParameter has the following format:</para>
+
+          <table>
+            <tgroup cols="2">
+              <tbody>
+                <row>
+                  <entry>Field Name</entry>
+                  <entry>Description</entry>
+                </row>
+                <row>
+                  <entry>variableName</entry>
+                  <entry>A
+                    string name of a shell variable to be set before executing build
+                    commands
+                  </entry>
+                </row>
+                <row>
+                  <entry>variableValues</entry>
+                  <entry>A
+                    string, comma-separated, list of one or more values of the
+                    variable
+                  </entry>
+                </row>
+                <row>
+                  <entry>description</entry>
+                  <entry>A
+                    string variable description
+                  </entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </table>
+        </sect3>
+      </sect2>
+
+      <sect2>
+        <title>Stopping Build</title>
+
+        <programlisting>/**
+          * Stops a build.
+          *
+          * @param activeBuildID ID of the build to stop.
+          */
+          void stopBuild(int activeBuildID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Resuming Build</title>
+
+        <programlisting>/**
+          * Resumes a previously stopped build.
+          *
+          * @param activeBuildID ID of the build to resume.
+          */
+          void resumeBuild(int buildID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Requesting Clean Checkout</title>
+
+        <programlisting>/**
+          * Requests clean checkout. Parabuild will erase build&#39;s work space before running the next
+          build.
+          *
+          * @param activeBuildID ID of the build for that to perform a clean checkout.
+          */
+          void requestCleanCheckout(int activeBuildID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Listing Current Build Statuses</title>
+
+        <programlisting>/**
+          * Returns a list of current build statuses.
+          *
+          * @return a list of current build statuses.
+          */
+          BuildStatus[] getCurrentBuildStatuses();
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Finding a Current Build Status by a Build ID</title>
+
+        <programlisting>/**
+          * Returns a current status for a build with the given ID.
+          *
+          * @param activeBuildID build ID
+          * @return a current status for a build with the given ID or null if there is no such build.
+          */
+          public BuildStatus getCurrentBuildStatus(final int activeBuildID);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Finding a Current Build Status by a Build Name</title>
+
+        <programlisting>/**
+          * Returns a current status for a build with the given name.
+          *
+          * @param buildName case-sensitive build
+          * @return a current status for a build with the given name or null if there is no such build
+          */
+          public BuildStatus getCurrentBuildStatus(final String buildName);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Finding Current Build Statuses by Regular Expression</title>
+
+        <programlisting>/**
+          * Returns a list of current statuses for builds whose names match the give regex.
+          *
+          * @param regularExpression regular expression to match build names
+          * @return a list of current statuses for builds whose names match the give regex
+          */
+          BuildStatus[] findCurrentBuildStatuses(final String regularExpression);
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Modifying Version Control Settings</title>
+
+        <programlisting>/**
+          * Updates or creates version control settings.
+          *
+          * @param versionControlSettings version control settings to update or create.
+          */
+          public void updateVersionControlSettings(final VersionControlSetting[] versionControlSettings)
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Modifying Build Sequence</title>
+
+        <programlisting>/**
+          * Updates or creates build sequence.
+          *
+          * @param buildSequences build sequence to update or create.
+          */
+          public void updateBuildSequences(final BuildSequence[] buildSequences)
+        </programlisting>
+      </sect2>
+
+      <sect2>
+        <title>Modifying Schedule Settings</title>
+
+        <programlisting>/**
+          * Updates or creates schedule properties.
+          *
+          * @param scheduleProperties schedule properties to update or create.
+          */
+          public void updateScheduleProperties(final ScheduleProperty[] scheduleProperties)
+        </programlisting>
+      </sect2>
+    </sect1>
+  </chapter>
+</book>

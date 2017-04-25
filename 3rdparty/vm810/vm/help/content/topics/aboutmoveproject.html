@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>About Moving Projects</TITLE>
+<!--<aboutmoveproject.html>-->
+<!--<index parent="moving" label="about moving projects" anchor="aboutmoveproject">-->
+<!--<index parent="projects" label="about moving" anchor="aboutmoveproject">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="aboutmoveproject"></A>About Moving Projects</H1>
+<P>Moving a Version Manager project moves the project and all of its versioned files to the destination location <i>within the same project database</i>. The project's archives do not move; the versioned files that you move reference the archives in their original location.</P>
+<P>When you move a project, one of two things happens to the workfile location:
+<ul>
+<li type="disc">If the workfile location of the project was not modified when or since the project was created, then the workfile location changes to be relative to the new location. By default, projects inherit a relative workfile location from the project above it in the project structure. As long as the workfile location is not changed manually, a project's workfile location will always be relative to the project that contains it.<br><Br>
+<li type="disc">If the workfile location is not relative because someone assigned the project an absolute workfile location, then the workfile location remains the same when the project is moved to the new location. Once a workfile location is modified, the project no longer inherits the relative workfile location from the project that contains it.
+</ul>
+<p>For example, if you created a subproject named Acme within the Chess project of the sample project database, then Acme's workfile location would be defined initially as c:\Program Files\Serena\vm\common\SampleDb\work\chess\Acme. Moving Acme to the Bridge project would automatically update the workfile location to be relative to Bridge: c:\Program Files\Serena\vm\common\SampleDb\work\Bridge\Acme. 
+For more information on workspaces, see the <i>Serena ChangeMan Version Manager User's Guide.</i></P>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="copyproject.html">Copying Projects</A></TD>
+		<TD><A HREF="moveproject.html">Moving Projects</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="optionsgeneral.html">Options Dialog Box/General Tab</A></TD>
+		<TD><A HREF="setdialogdisplay.html">Setting Dialog Display Options</A></TD>
+	</tr>
+	<TR>
+		<TD><A HREF="aboutworkspaces.html">About Workspaces</A></TD>
+	</tr>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

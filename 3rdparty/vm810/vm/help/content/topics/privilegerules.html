@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Rules for Privileges</TITLE>
+<!--<privilegerules.html>-->
+<!--<index parent="security" label="rules for privileges" anchor="privrules">-->
+<!--<index parent="privileges" label="rules for" anchor="privrules">-->
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="privrules"></A>Rules for Privileges</H1>
+<P>Serena ChangeMan Version Manager privileges are governed by the following rules:</p>
+<UL>
+	<LI>By default, users have the Unlimited privilege. And, if a user has been assigned the Unlimited privilege in the <A HREF="aboutacdb.html">access control database</a>, access rights to archives are limited only by <A HREF="aboutaccesslists.html">access lists</a>.<br><br>
+	<LI>If a user has been assigned the SuperUser privilege in the access control database, archive access is not restricted regardless of whether or not the user exists in the access lists for the archives.<br><br>
+	<LI>Privileges assigned to an <A HREF="aboutaccesslistgroups.html">access list group</a> can only limit the privileges of the users of the group, not increase the privileges of the users of the group. For example, JohnD has the Unlimited privilege set assigned to him and belongs to the Developer group that has the privilege set Developer assigned to it. The Developer privilege set has the rights of lock, unlock, get, and put. An archive that JohnD wants to access has the Developer group on the access list and not JohnD as an individual user. In this case, JohnD is limited to the privileges lock, unlock, get, and put; all of the other privileges that were assigned to JohnD are not available to him when accessing the archive because the Developer group is on the archive's access list.
+<p>If on the other hand, both the Developer group and JohnD were on the archive's access list, JohnD would have his Unlimited privileges available to him.</p>
+<p>Conversely, JohnD is a user with the Developer privilege set assigned to him and belongs to the Developer group that has the Unlimited privilege set assigned to it. An archive that JohnD wants to access has only the Developer group on its access list. In this case, JohnD is limited to the Developer privileges (lock, unlock, get, and put). The Unlimited privilege set that was assigned to the Developer group does not get assigned to JohnD because he did not have them assigned to him as an individual user.</p>
+	<LI>Access list group definitions can include other groups as well as individual users. If an individual user is a member of more than one group and each of the groups the user belongs to is part of the definition of an access list group, the user has the union of the privileges assigned to each group.<br><br>
+	<LI>The SuperUser privilege cannot be assigned to a group, only to individual users.
+</ul>
+<p>For more information on privileges, see the <i>Serena ChangeMan Version Manager Administrator's Guide</i> and the <i>Serena ChangeMan Version Manager Command-Line Reference Guide</i>.</p>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="aboutacdb.html">About Access Control Databases</A></TD>
+		<TD><A HREF="aboutaccesslists.html">About Access Lists</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="aboutprivileges.html">About Privileges</A></TD>
+		<TD><A HREF="privilegetables.html">Privilege Definitions</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

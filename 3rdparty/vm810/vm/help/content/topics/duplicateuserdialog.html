@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Duplicate User Dialog Box</TITLE>
+<!--<duplicateuserdialog.html>-->
+<!--<index parent="security" label="Duplicate User dialog box" anchor="duplicateuser">-->
+<!--<index parent="users" label="Duplicate User dialog box" anchor="duplicateuser">-->
+<!--<index parent="copying" label="Duplicate User dialog box" anchor="duplicateuser">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiDuplicateUserDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="duplicateuser"></A>Duplicate User</H1>
+<P>Use the Duplicate User dialog box (Admin | Security | Users | Duplicate button) to duplicate the user you selected from the All Users list.</P>
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><b>Name</b></TD>
+		<TD><!--<control name="DuplicateUserGeneral.USER_ID_EDIT">-->
+		Enter a User ID for the new user. The user ID that you enter here must be the user ID that Version Manager obtains when the user is running Version Manager. <!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Expires On</b></TD>
+		<TD><!--<control name="DuplicateUserGeneral.EXPIRES_ON_EDIT">-->
+		Enter the date on which the User's account will expire (optional). Enter the date in the format that you have set for your operating system. <!--</control>-->On Windows, you set the date and time formats from the Control Panel | Regional Settings. On UNIX, you define the formats by setting the PVCS_DATE_FORMAT and PVCS_TIME_FORMAT environment variables. For the best results, we recommend that you set the PVCS_DATE_FORMAT to MM/dd/yyyy, or dd/MM/yyyy if you want days to lead months. Notice that the month is specified in capital letters, and that the year is specified in four digits. If there are no control panel settings and these environment variables are not set, then the format is mm/dd/yy hh:mm in the US and dd/mm/yy hh:mm in the UK.</TD>
+	</TR>
+	<TR>
+		<TD><b>Optional password</b></TD>
+		<TD><!--<control name="DuplicateUserGeneral.PASSWORD_EDIT">-->
+		Enter the password for the User ID (optional). Passwords can be up to 30 characters long.<!--</control>-->Users can change their own password at any time (File | Change Password).<BR>
+Version Manager prompts the User for a password only if the project database is configured to use the Login Dialog (VLogin) as a login source.</TD>
+	</TR>
+	<TR>
+	<TD><b>Duplicate from</b></TD>
+	<TD>Displays the ID of the User you are duplicating.</TD>
+	</TR>
+	<TR>
+		<TD><b>Copy group membership</b></TD>
+		<TD><!--<control name="DuplicateUserGeneral.COPY_MEMBERSHIP_CB">-->
+		Select this check box to copy the existing User's group membership to the new User. <!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Copy privileges</b></TD>
+		<TD><!--<control name="DuplicateUserGeneral.COPY_PRIVILEGES_CB">-->
+		Select this check box to copy the existing User's privileges to the new User. <!--</control>--></TD>
+	</TR>
+	</TABLE>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="createuserdialog.html">Create User Dialog Box</A></TD>
+		<TD><A HREF="projectsecuritydialog.html">Project Security Dialog Box</a></TD>
+	</TR>
+	<TR>
+		<TD></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

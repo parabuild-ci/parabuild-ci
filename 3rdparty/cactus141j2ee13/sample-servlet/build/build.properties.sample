@@ -1,0 +1,77 @@
+# -----------------------------------------------------------------------------
+# build.properties.sample
+#
+# This is an example "build.properties" file, used to customize building the
+# Cactus Servlet Sample for your local environment.  Make any changes you need,
+# and rename this file to "build.properties" in the same directory that
+# contains the "build.xml" file.
+#
+# $Id: //depot/dev/bt-open-source/3rdparty/cactus141j2ee13/sample-servlet/build/build.properties.sample#1 $
+# -----------------------------------------------------------------------------
+
+# WARNING:  The relative paths below are relative to the directory where the
+# build.xml file is located.
+
+# -----------------------------------------------------------------------------
+# Mandatory properties
+# -----------------------------------------------------------------------------
+
+# The location of the Cactus framework jar
+cactus.framework.jar = ../lib/cactus-1.4.1.jar
+
+# The location of the Cactus custom Ant tasks jar
+cactus.ant.jar = ../lib/cactus-ant-1.4.1.jar
+
+# The location of the Servlet API 2.3 jar
+servlet.jar = ../lib/servletapi-2.3.jar
+
+# The location of the AspectJ runtime jar
+aspectjrt.jar = ../lib/aspectjrt-1.0.5.jar
+
+# The location of the Commons Logging jar
+commons.logging.jar = ../lib/commons-logging-1.0.jar
+
+# The location of the log4j jar (optional). Only needed if you want Cactus to
+# generate logs
+log4j.jar = ../lib/log4j-1.2.5.jar
+
+# The location of the Commons Httpclient jar
+commons.httpclient.jar = ../lib/commons-httpclient-2.0alpha1-20020606.jar
+
+# The location of the Junit jar
+junit.jar = ../lib/junit-3.7.jar
+
+# The location of the Httpunit jar
+httpunit.jar = ../lib/httpunit-1.4.1.jar
+
+# -----------------------------------------------------------------------------
+# Optional properties
+# -----------------------------------------------------------------------------
+
+# The port to use for starting the servers during unit testing. If not
+# sepcified, it defaults to port 8080.
+#test.port = 8081
+
+# Servlet engine locations for the tests
+
+# Note: If you don't want to run the test on a given servlet engine, just
+#       comment it's home property. For example, if you don't want to run the
+#       tests on the Resin 1.2, comment the "resin.home.12" property.
+
+#resin.home.20 = c:/Apps/resin-2.1.2
+#resin.home.13 = xxx
+#tomcat.home.40 = c:/Apps/jakarta-tomcat-4.0.4
+#orion.home.15 = c:/Apps/orion-1.5.4
+#orion.home.16 = c:/Apps/orion-1.6.0
+
+# Note: weblogic.home.61 is the location of BEA Home and NOT the location of
+# wlserver6.1, inside the bea home directory.
+#weblogic.home.61 = c:/Apps/bea
+
+# Note: weblogic.home.70 is the location of BEA Home and NOT the location of
+# wlserver7.0, inside the bea home directory.
+#weblogic.home.70 = c:/bea
+
+# Note: There seems to be a bug in Orion 1.4 preventing it to run correctly
+#       the testSendUserData() test. It runs fine in Orion 1.5 though.
+#orion.home.14 = xxx

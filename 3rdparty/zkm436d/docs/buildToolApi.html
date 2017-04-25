@@ -1,0 +1,363 @@
+<!-- Copyright 2003 Zelix Pty Ltd (ABN 47 078 740 093) -->
+<html>
+<head>
+<title>Zelix KlassMaster - Build Tool API</title>
+   <meta name="keywords" content="java obfuscator,java code obfuscator,obfuscation,apache ant">
+   <meta name="description" CONTENT="Zelix KlassMaster can be called by a build tool such as Apache Ant">
+   <meta name="classification" CONTENT="Zelix KlassMaster can be called by a build tool such as Apache Ant">
+   <link rel=stylesheet href="../ZKM.css" TYPE="text/css">
+</head>
+<body background="../images/small-white-mist1.jpg" bgcolor="#E1E1E1">
+<center><a href="index.html"><img src=../images/ZKM_b4.gif alt="Zelix KlassMaster" width=264 height=62 border=0></a></center>
+<hr>
+<center>
+<table width=770 border=0>
+   <tr>
+      <td>
+         <h1>Calling Zelix KlassMaster from a Build Tool</h1>
+         Zelix KlassMaster exposes a <u>generic</u> Java API that allows it to be called by a build tool. 
+         Although the build API is generic, it has only been tested with the Apache Ant build tool. 
+         A simple <a href="#ant">example</a> of the Apache Ant XML appears below.
+
+         <h3>Generic API</h3>
+         <code><b><pre>
+package com.zelix;
+
+   public class ZKM
+
+      public static void run(String zkmScriptFileName, 
+                             String logFileName,
+                             String trimLogFileName,
+                             String defaultExcludeFileName, 
+                             String defaultTrimExcludeFileName, 
+                             String defaultDirectoryName, 
+                             boolean isVerbose, 
+                             boolean isParseOnly) 
+                      throws Exception
+
+      public static void run(String zkmScriptFileName, 
+                             String logFileName, 
+                             String trimLogFileName,
+                             String defaultExcludeFileName, 
+                             String defaultTrimExcludeFileName, 
+                             String defaultDirectoryName, 
+                             boolean isVerbose, 
+                             boolean isParseOnly,
+                             Hashtable extraPropertiesTable) 
+                      throws Exception
+
+      public static void run(String zkmScriptFileName, 
+                             String logFileName, 
+                             String trimLogFileName,
+                             String defaultExcludeFileName, 
+                             String defaultTrimExcludeFileName, 
+                             String defaultDirectoryName, 
+                             boolean isVerbose, 
+                             boolean isParseOnly,
+                             Properties extraProperties) 
+                      throws Exception
+         </pre></b></code>
+         <table border=1 width=780>
+            <tr>
+               <td colspan=2>
+                  <b>Parameters:</b>
+               </td>
+               <td>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  zkmScriptFileName
+               </td>
+               <td>
+                  The path name of the <a href=langZKMScript.html>ZKM Script</a> file to execute. May be relative or absolute. 
+                  Mandatory. If the path is relative, Zelix KlassMaster will look in the default directory.
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  logFileName
+               </td>
+               <td>
+                  The path name of the log file to which messages should be written. May be relative or absolute. 
+                  Optional. If the path is relative, then it will be written to the default directory.  
+                  If null then the file "ZKM_log.txt" will be used.
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  trimLogFileName
+               </td>
+               <td>
+                  The path name of the trim log file to which trim results should be written. May be relative or absolute. 
+                  Optional. If the path is relative, then it will be written to the default directory.  
+                  If null then the file "ZKM_TrimLog.txt" will be used.
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  defaultExcludeFileName
+               </td>
+               <td>
+                  The path name of the file containing the default name exclusions. May be relative or absolute. 
+                  Optional. If the path is relative, Zelix KlassMaster will look in the default directory.  
+                  If null then Zelix KlassMaster will look in the default directory for the file "defaultExclude.txt".
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  defaultTrimExcludeFileName
+               </td>
+               <td>
+                  The path name of the file containing the default trim exclusions. May be relative or absolute. 
+                  Optional. If the path is relative, Zelix KlassMaster will look in the default directory.  
+                  If the path is null then Zelix KlassMaster will look in the default directory for the file "defaultTrimExclude.txt".
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  defaultDirectoryName
+               </td>
+               <td>
+                  The path name of the directory which will be used as the default directory. May be relative or absolute. 
+                  Optional. If the path is relative, then it will be relative to the current working directory.
+                  If the path is null then the default directory will be the current working directory.
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  isVerbose
+               </td>
+               <td>
+                  If <code>true</code>, extra information is written to the log file. 
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  isParseOnly
+               </td>
+               <td>
+                  If <code>true</code>, the ZKM Script file will be parsed but not executed.
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  extraPropertiesTable
+               </td>
+               <td>
+                  A Hashtable of String name value pairs for use in ZKM Script <a href="preprocessor.html#variable">System Variable</a> substitution.
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  extraProperties
+               </td>
+               <td>
+                  A Properties object containing name value pairs for use in ZKM Script <a href="preprocessor.html#variable">System Variable</a> substitution.
+               </td>
+            </tr>
+            <tr>
+               <td colspan=2>
+                  <b>Throws:</b>
+               </td>
+               <td>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  Exception
+               </td>
+               <td>
+                  If any errors are encountered in parsing and executing the ZKM Script.
+               </td>
+            </tr>
+         </table>
+         <p>
+         For example:
+         <p>
+         <code>com.zelix.ZKM.run("/projects/myScript.txt", null, null, null, null, null, false, false, myProperties);</code>
+
+         <h3><a name="ant">Apache Ant Example</a></h3>
+         A simple Ant task for the Zelix KlassMaster obfuscator is already included in the ZKM.jar file.  
+         The task is called <code><a href="#task">ZKMTask</a></code>.  
+         An example of a simple <code>build.xml</code> to call <code>ZKMTask</code> appears below.
+<pre>
+&lt;?xml version="1.0"?&gt;
+&lt;project name="ZKMTask" default="main" basedir="."&gt;
+  &lt;property name="MY_PROPERTY" value="myValue"/&gt; <font color="green">&lt;!-- Example of setting a property for use as a ZKM Script <a href="preprocessor.html#variable">System Variable</a> --&gt;</font>
+  &lt;taskdef name="ZKM" classname="ZKMTask"/&gt;
+  &lt;target name="main"&gt;
+     <font color="green">&lt;!-- Attributes correspond to Zelix KlassMaster command line options. scriptFileName is <b>only mandatory attribute</b> --&gt;</font>
+     &lt;ZKM scriptFileName="myZKMScript.txt"
+          logFileName="ZKM_log.txt" 
+          trimLogFileName="ZKM_TrimLog.txt" 
+          defaultExcludeFileName="defaultExclude.txt" 
+          defaultTrimExcludeFileName="defaultTrimExclude.txt" 
+          defaultDirectoryName="." 
+          isParseOnly="false" 
+          isVerbose="true" 
+     /&gt;
+  &lt;/target&gt;
+&lt;/project&gt;
+
+</pre>
+
+         <h3><a name="task">Apache Ant 1.4.1 Task Definition</a></h3>
+         <code>ZKMTask</code> is a simple Ant task definition for the Zelix KlassMaster obfuscator. 
+         It passes in the Ant Project properties by default. It can be modified to pass in Properties of your own choosing.
+         The compiled version of this class <b>is already included</b> in the ZKM.jar file.
+         <p>
+         <code><pre>
+<font color="green">/*
+ * Copyright (c) 2003 Zelix Pty Ltd. All  Rights Reserved.
+ *
+ * Modification of Sun Microsystem's java.util.logging.SimpleFormatter.
+ *
+ * You are free to use this software with or without modifications
+ * subject to the following conditions.
+ *
+ * THIS SOFTWARE IS PROVIDED "AS IS," WITHOUT A WARRANTY OF ANY KIND. 
+ * ZELIX PTY LTD MAKES NO WARRANTIES, EITHER EXPRESS OR IMPLIED, WITH 
+ * RESPECT TO THIS SOFTWARE INCLUDING BUT NOT LIMITED TO ANY WARRANTY 
+ * OF MERCHANTABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE.  
+ * ZELIX PTY LTD DOES NOT WARRANT THAT THE OPERATION OF THE SOFTWARE WILL 
+ * BE UNINTERRUPTED OR ERROR-FREE, OR THAT DEFECTS IN THE SOFTWARE WILL 
+ * BE CORRECTED.  YOU THE USER ARE SOLELY RESPONSIBLE FOR DETERMINING THE 
+ * APPROPRIATENESS OF THE SOFTWARE FOR YOUR USE AND ACCEPT FULL RESPONSIBILITY 
+ * FOR ALL RISKS ASSOCIATED WITH ITS USE.  ZELIX PTY LTD IS NOT AND WILL 
+ * NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL OR INCIDENTAL DAMAGES 
+ * (INCLUDING LOSS OF PROFITS OR INTERRUPTION OF BUSINESS) HOWEVER CAUSED 
+ * EVEN IF ZELIX PTY LTD HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+ */</font>
+
+import org.apache.tools.ant.*;
+import java.util.Properties;
+
+public class ZKMTask extends Task {
+
+   private static final String TRUE = "true";
+   private static final String YES = "yes";
+   private String scriptFileName;
+   private String logFileName;
+   private String trimLogFileName;
+   private String defaultExcludeFileName;
+   private String defaultTrimExcludeFileName;
+   private String defaultDirectoryName;
+   private boolean isVerbose = false;
+   private boolean isParseOnly = false;
+
+   <font color="green">/**
+   * A ZKM Script file name must be specified.
+   */</font>
+   public void setScriptFileName(String scriptFileName) {
+      this.scriptFileName = scriptFileName;
+   }
+
+   <font color="green">/**
+   * Set the log file name. The file name can be relative or absolute. This parameter is optional.
+   * The log file name will default to "ZKM_log.txt".
+   */</font>
+   public void setLogFileName(String logFileName) {
+      this.logFileName = logFileName;
+   }
+
+   <font color="green">/**
+   * Set the trim log file name. The file name can be relative or absolute. This parameter is optional.
+   * The trim log file name will default to "ZKM_TrimLog.txt".
+   */</font>
+   public void setTrimLogFileName(String trimLogFileName) {
+      this.trimLogFileName = trimLogFileName;
+   }
+
+   <font color="green">/**
+   * Set the 'default exclusions' file name. The file name can be relative or absolute. This parameter is optional.
+   * The 'default exclusions' file name will default to "defaultExclude.txt".
+   */</font>
+   public void setDefaultExcludeFileName(String defaultExcludeFileName) {
+      this.defaultExcludeFileName = defaultExcludeFileName;
+   }
+
+   <font color="green">/**
+   * Set the 'default trim exclusions' file name. The file name can be relative or absolute. This parameter is optional.
+   * The 'default trim exclusions' file name will default to "defaultTrimExclude.txt".
+   */</font>
+   public void setDefaultTrimExcludeFileName(String defaultTrimExcludeFileName) {
+      this.defaultTrimExcludeFileName = defaultTrimExcludeFileName;
+   }
+
+   <font color="green">/**
+   * Set the name of the default directory. The directory name can be relative or absolute. 
+   * If any of the log file, trim log file, 'default exclusion' file or 
+   * the 'default trim exclusions' file names are relative then
+   * they will be relative to this default directory. This parameter is optional.
+   * The directory name will default to that of the current working directory.
+   */</font>
+   public void setDefaultDirectoryName(String defaultDirectoryName) {
+      this.defaultDirectoryName = defaultDirectoryName;
+   }
+
+   <font color="green">/**
+   * Optional. Defaults to false.
+   * @param isParseOnlyString Should be "true" or "false"
+   */</font>
+   public void setIsVerbose(String isVerboseString) {
+      if (isVerboseString != null) {
+         if (isVerboseString.equalsIgnoreCase(TRUE) ||
+             isVerboseString.equalsIgnoreCase(YES))
+         {
+            isVerbose = true;
+         }
+      }
+   }
+
+   <font color="green">/**
+   * Optional. Defaults to false.
+   * @param isParseOnlyString Should be "true" or "false"
+   */</font>
+   public void setIsParseOnly(String isParseOnlyString) {
+      if (isParseOnlyString != null) {
+         if (isParseOnlyString.equalsIgnoreCase(TRUE) ||
+             isParseOnlyString.equalsIgnoreCase(YES))
+         {
+            isParseOnly = true;
+         }
+      }
+   }
+
+   public void execute() throws BuildException {
+      System.out.println("execute called");
+      if (scriptFileName == null || scriptFileName.length() == 0) {
+         throw new BuildException("Missing or empty ZKM Script file name");
+      }
+      try {
+         com.zelix.ZKM.run(scriptFileName, logFileName, trimLogFileName, defaultExcludeFileName, defaultTrimExcludeFileName, 
+                           defaultDirectoryName, isVerbose, isParseOnly, project.getProperties());
+      }
+      catch(Exception ex) {
+         ex.printStackTrace();
+         throw new BuildException(ex.toString());
+      }
+   }
+   
+}      </pre><code>         
+   </tr>
+   <tr>
+      <td>
+         &nbsp;
+      </td>
+   </tr>
+</table>
+</center>
+<hr>
+<center>
+<table>
+   <tr>
+      <td>
+         <a href=index.html><img src=../images/uarrw.gif alt="Documentation Table of Contents"></a>
+      </td>
+   </tr>
+</table>
+</center>
+Copyright &copy; 2003 <a href="mailto:WebMaster@zelix.com"><font size=-1>Zelix Pty Ltd</font></a> (ABN 47 078 740 093)
+</body>
+</html>

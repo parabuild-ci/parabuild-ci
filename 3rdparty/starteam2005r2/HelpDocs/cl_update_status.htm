@@ -1,0 +1,168 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Updating File Status: stcmd update-status</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=copyright value="Copyright© 1995-2003, Borland Software Corporation. All rights reserved.">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=534>
+<meta name=layout-width content=702>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<!--(Scripts)=======================================================-->
+
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="./ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Working with the Application\nUsing the Command Line Interface\nUpdating File Status");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Updating File Status: stcmd update-status</h1>
+
+<p class=Body>When you update the status of a file, the application compares 
+ the working file with the revision you checked out and the tip revision. 
+ For example, your File list may say that the file is Current, but someone 
+ else has just checked in a copy of it, so the status of your file is actually 
+ is Out Of Date.</p>
+
+<p class=Body>Updating file statuses is not the same as updating files. 
+ If a file is not in your working folder, updating the status lets you 
+ know that the file’s status is Missing, but will not check out the file 
+ for you. Normally, you update file status to determine whether a file 
+ should be checked in, checked out, added, or ignored. </p>
+
+<p class=Body>Use stcmd update-status to display the file name, its status 
+ before the command, and its status after the command. A sample line of 
+ output might be:</p>
+
+<p class=Code>x.cpp: status is Current (was Unknown)</p>
+
+<h2>Syntax</h2>
+
+<p class=Code><span style="font-weight: bold;"><B>stcmd update-status -p</B></span> 
+ &quot;<span style="font-style: italic;"><I>projectSpecifier</I></span>&quot; 
+ [-<span style="font-weight: bold;"><B>pwdfile</B></span> &quot;<span style="font-style: italic;"><I>filePath</I></span>&quot;] 
+ [-<span style="font-weight: bold;"><B>cmp</B></span>] [-<span style="font-weight: bold;"><B>csf</B></span>] 
+ [<span style="font-weight: bold;"><B>-encrypt </B></span><span style="font-style: italic;"><I>encryptionType</I></span>] 
+ [-<span style="font-weight: bold;"><B>is</B></span>] [-<span style="font-weight: bold;"><B>q</B></span>] 
+ [-<span style="font-weight: bold;"><B>x</B></span>] [-<span style="font-weight: bold;"><B>stop</B></span>] 
+ [-<span style="font-weight: bold;"><B>rp</B></span> &quot;<span style="font-style: italic;"><I>folderPath</I></span>&quot; 
+ | -<span style="font-weight: bold;"><B>fp</B></span> &quot;<span style="font-style: italic;"><I>folderPath</I></span>&quot;] 
+ [-<span style="font-weight: bold;"><B>cfgl</B></span> &quot;<span style="font-style: italic;"><I>labelName</I></span>&quot; 
+ | -<span style="font-weight: bold;"><B>cfgp</B></span> &quot;<span style="font-style: italic;"><I>stateName</I></span>&quot; 
+ | -<span style="font-weight: bold;"><B>cfgd</B></span> &quot;<span style="font-style: italic;"><I>asOfDate</I></span>&quot;] 
+ [-<span style="font-weight: bold;"><B>filter</B></span> &quot;<span style="font-style: italic;"><I>fileStatus</I></span>&quot;] 
+ [<span style="font-weight: bold;"><B>-eol </B></span>[<span style="font-weight: bold;"><B>on 
+ </B></span>| <span style="font-weight: bold;"><B>off </B></span>]][<span style="font-weight: bold;"><B>-v</B></span>] 
+ [<span style="font-style: italic;"><I>files...</I></span>]</p>
+
+<h2>Example</h2>
+
+<p class=Body>The following example uses stcmd update-status to verify 
+ that each file in the working folder for the StarTeam folder named SourceCode 
+ has an accurate status. SourceCode is a child of the root folder StarDraw 
+ (in the StarDraw view of the StarDraw project). </p>
+
+<p class=Code
+	style="margin-top: 6.00pt;">stcmd update-status -p &quot;JMarsh:password@Orion:49201/StarDraw/StarDraw/SourceCode&quot; 
+ &quot;*&quot;</p>
+
+<p class=Code
+	style="margin-top: 6.00pt;">&nbsp;</p>
+
+<p class=Body>For more information, see Using<a href="cl_common_stcmd_options.htm"> 
+ Common stcmd Options</a>.</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

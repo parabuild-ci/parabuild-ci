@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" /><title>VariableContext xref</title>
+<link type="text/css" rel="stylesheet" href="../../stylesheet.css" />
+</head>
+<body>
+<div id="overview"><a href="../../../apidocs/org/jaxen/VariableContext.html">View Javadoc</a></div><pre>
+
+<a name="1" href="#1">1</a>   <em class="comment">/*</em>
+<a name="2" href="#2">2</a>   <em class="comment"> * $Header: /home/projects/jaxen/scm/jaxen/src/java/main/org/jaxen/VariableContext.java,v 1.11 2006/07/03 11:58:31 elharo Exp $</em>
+<a name="3" href="#3">3</a>   <em class="comment"> * $Revision: 1.11 $</em>
+<a name="4" href="#4">4</a>   <em class="comment"> * $Date: 2006/07/03 11:58:31 $</em>
+<a name="5" href="#5">5</a>   <em class="comment"> *</em>
+<a name="6" href="#6">6</a>   <em class="comment"> * ====================================================================</em>
+<a name="7" href="#7">7</a>   <em class="comment"> *</em>
+<a name="8" href="#8">8</a>   <em class="comment"> * Copyright 2000-2002 bob mcwhirter &amp; James Strachan.</em>
+<a name="9" href="#9">9</a>   <em class="comment"> * All rights reserved.</em>
+<a name="10" href="#10">10</a>  <em class="comment"> *</em>
+<a name="11" href="#11">11</a>  <em class="comment"> * Redistribution and use in source and binary forms, with or without</em>
+<a name="12" href="#12">12</a>  <em class="comment"> * modification, are permitted provided that the following conditions are</em>
+<a name="13" href="#13">13</a>  <em class="comment"> * met:</em>
+<a name="14" href="#14">14</a>  <em class="comment"> * </em>
+<a name="15" href="#15">15</a>  <em class="comment"> *   * Redistributions of source code must retain the above copyright</em>
+<a name="16" href="#16">16</a>  <em class="comment"> *     notice, this list of conditions and the following disclaimer.</em>
+<a name="17" href="#17">17</a>  <em class="comment"> * </em>
+<a name="18" href="#18">18</a>  <em class="comment"> *   * Redistributions in binary form must reproduce the above copyright</em>
+<a name="19" href="#19">19</a>  <em class="comment"> *     notice, this list of conditions and the following disclaimer in the</em>
+<a name="20" href="#20">20</a>  <em class="comment"> *     documentation and/or other materials provided with the distribution.</em>
+<a name="21" href="#21">21</a>  <em class="comment"> * </em>
+<a name="22" href="#22">22</a>  <em class="comment"> *   * Neither the name of the Jaxen Project nor the names of its</em>
+<a name="23" href="#23">23</a>  <em class="comment"> *     contributors may be used to endorse or promote products derived </em>
+<a name="24" href="#24">24</a>  <em class="comment"> *     from this software without specific prior written permission.</em>
+<a name="25" href="#25">25</a>  <em class="comment"> * </em>
+<a name="26" href="#26">26</a>  <em class="comment"> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS</em>
+<a name="27" href="#27">27</a>  <em class="comment"> * IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED</em>
+<a name="28" href="#28">28</a>  <em class="comment"> * TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A</em>
+<a name="29" href="#29">29</a>  <em class="comment"> * PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER</em>
+<a name="30" href="#30">30</a>  <em class="comment"> * OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,</em>
+<a name="31" href="#31">31</a>  <em class="comment"> * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,</em>
+<a name="32" href="#32">32</a>  <em class="comment"> * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR</em>
+<a name="33" href="#33">33</a>  <em class="comment"> * PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF</em>
+<a name="34" href="#34">34</a>  <em class="comment"> * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING</em>
+<a name="35" href="#35">35</a>  <em class="comment"> * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS</em>
+<a name="36" href="#36">36</a>  <em class="comment"> * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</em>
+<a name="37" href="#37">37</a>  <em class="comment"> *</em>
+<a name="38" href="#38">38</a>  <em class="comment"> * ====================================================================</em>
+<a name="39" href="#39">39</a>  <em class="comment"> * This software consists of voluntary contributions made by many </em>
+<a name="40" href="#40">40</a>  <em class="comment"> * individuals on behalf of the Jaxen Project and was originally </em>
+<a name="41" href="#41">41</a>  <em class="comment"> * created by bob mcwhirter &lt;bob@werken.com> and </em>
+<a name="42" href="#42">42</a>  <em class="comment"> * James Strachan &lt;jstrachan@apache.org>.  For more information on the </em>
+<a name="43" href="#43">43</a>  <em class="comment"> * Jaxen Project, please see &lt;<a href="http://www.jaxen.org/" target="alexandria_uri">http://www.jaxen.org/</a>>.</em>
+<a name="44" href="#44">44</a>  <em class="comment"> * </em>
+<a name="45" href="#45">45</a>  <em class="comment"> * $Id: VariableContext.java,v 1.11 2006/07/03 11:58:31 elharo Exp $</em>
+<a name="46" href="#46">46</a>  <em class="comment"> */</em>
+<a name="47" href="#47">47</a>  
+<a name="48" href="#48">48</a>  
+<a name="49" href="#49">49</a>  <strong>package</strong> <a href="../../org/jaxen/package-summary.html">org.jaxen</a>;
+<a name="50" href="#50">50</a>  
+<a name="51" href="#51">51</a>  <em>/**<em>* Resolves variable bindings within an XPath expression.</em></em>
+<a name="52" href="#52">52</a>  <em> *</em>
+<a name="53" href="#53">53</a>  <em> *  &lt;p></em>
+<a name="54" href="#54">54</a>  <em> *  Variables within an XPath expression are denoted using</em>
+<a name="55" href="#55">55</a>  <em> *  notation such as &lt;code>$varName&lt;/code> or </em>
+<a name="56" href="#56">56</a>  <em> *  &lt;code>$nsPrefix:varName&lt;/code>, and may</em>
+<a name="57" href="#57">57</a>  <em> *  refer to a &lt;code>Boolean&lt;/code>, &lt;code>Double&lt;/code>, &lt;code>String&lt;/code>,</em>
+<a name="58" href="#58">58</a>  <em> *  node-set (&lt;code>List&lt;/code>) or individual XML node.</em>
+<a name="59" href="#59">59</a>  <em> *  &lt;/p></em>
+<a name="60" href="#60">60</a>  <em> *</em>
+<a name="61" href="#61">61</a>  <em> *  &lt;p></em>
+<a name="62" href="#62">62</a>  <em> *  When a variable is bound to a node-set, the</em>
+<a name="63" href="#63">63</a>  <em> *  actual Java object returned should be a &lt;code>java.util.List&lt;/code></em>
+<a name="64" href="#64">64</a>  <em> *  containing XML nodes from the object-model (e.g. dom4j, JDOM, DOM, etc.)</em>
+<a name="65" href="#65">65</a>  <em> *  being used with the XPath.</em>
+<a name="66" href="#66">66</a>  <em> *  &lt;/p></em>
+<a name="67" href="#67">67</a>  <em> *</em>
+<a name="68" href="#68">68</a>  <em> *  &lt;p></em>
+<a name="69" href="#69">69</a>  <em> *  A variable may validly be assigned the &lt;code>null&lt;/code> value,</em>
+<a name="70" href="#70">70</a>  <em> *  but an unbound variable (one that this context does not know about)</em>
+<a name="71" href="#71">71</a>  <em> *  should cause an {@link UnresolvableException} to be thrown.</em>
+<a name="72" href="#72">72</a>  <em> *  &lt;/p></em>
+<a name="73" href="#73">73</a>  <em> *  </em>
+<a name="74" href="#74">74</a>  <em> *  &lt;p></em>
+<a name="75" href="#75">75</a>  <em> *  Implementations of this interface should implement &lt;code>Serializable&lt;/code>.</em>
+<a name="76" href="#76">76</a>  <em> *  &lt;/p></em>
+<a name="77" href="#77">77</a>  <em> *</em>
+<a name="78" href="#78">78</a>  <em> *  @see SimpleVariableContext</em>
+<a name="79" href="#79">79</a>  <em> *  @see NamespaceContext</em>
+<a name="80" href="#80">80</a>  <em> *</em>
+<a name="81" href="#81">81</a>  <em> *  @author &lt;a href="<a href="mailto:bob@werken.com" target="alexandria_uri">mailto:bob@werken.com</a>">bob mcwhirter&lt;/a></em>
+<a name="82" href="#82">82</a>  <em> *  @author &lt;a href="<a href="mailto:jstrachan@apache.org" target="alexandria_uri">mailto:jstrachan@apache.org</a>">James Strachan&lt;/a></em>
+<a name="83" href="#83">83</a>  <em> */</em>
+<a name="84" href="#84">84</a>  <strong>public</strong> <strong>interface</strong> <a href="../../org/jaxen/VariableContext.html">VariableContext</a>
+<a name="85" href="#85">85</a>  {
+<a name="86" href="#86">86</a>      <em>/**<em>* An implementation should return the value of an XPath variable</em></em>
+<a name="87" href="#87">87</a>  <em>     *  based on the namespace URI and local name of the variable-reference</em>
+<a name="88" href="#88">88</a>  <em>     *  expression.</em>
+<a name="89" href="#89">89</a>  <em>     *</em>
+<a name="90" href="#90">90</a>  <em>     *  &lt;p></em>
+<a name="91" href="#91">91</a>  <em>     *  It must not use the prefix parameter to select a variable,</em>
+<a name="92" href="#92">92</a>  <em>     *  because a prefix could be bound to any namespace; the prefix parameter</em>
+<a name="93" href="#93">93</a>  <em>     *  could be used in debugging output or other generated information.</em>
+<a name="94" href="#94">94</a>  <em>     *  The prefix may otherwise be ignored.</em>
+<a name="95" href="#95">95</a>  <em>     *  &lt;/p></em>
+<a name="96" href="#96">96</a>  <em>     *</em>
+<a name="97" href="#97">97</a>  <em>     *  @param namespaceURI  the namespace URI to which the prefix parameter</em>
+<a name="98" href="#98">98</a>  <em>     *                       is bound in the XPath expression. If the variable</em>
+<a name="99" href="#99">99</a>  <em>     *                       reference expression had no prefix, the namespace</em>
+<a name="100" href="#100">100</a> <em>     *                       URI is &lt;code>null&lt;/code>.</em>
+<a name="101" href="#101">101</a> <em>     *  @param prefix        the prefix that was used in the variable reference</em>
+<a name="102" href="#102">102</a> <em>     *                       expression; this value is ignored and has no effect</em>
+<a name="103" href="#103">103</a> <em>     *  @param localName     the local name of the variable-reference</em>
+<a name="104" href="#104">104</a> <em>     *                       expression. If there is no prefix, then this is</em>
+<a name="105" href="#105">105</a> <em>     *                       the whole name of the variable.</em>
+<a name="106" href="#106">106</a> <em>     *</em>
+<a name="107" href="#107">107</a> <em>     *  @return  the variable's value (which can be &lt;code>null&lt;/code>)</em>
+<a name="108" href="#108">108</a> <em>     *  @throws UnresolvableException  when the variable cannot be resolved</em>
+<a name="109" href="#109">109</a> <em>     */</em>
+<a name="110" href="#110">110</a>     <strong>public</strong> Object getVariableValue( String namespaceURI,
+<a name="111" href="#111">111</a>                                     String prefix,
+<a name="112" href="#112">112</a>                                     String localName )
+<a name="113" href="#113">113</a>         throws UnresolvableException;
+<a name="114" href="#114">114</a> }
+</pre>
+<hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
+</html>
+

@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Serena ChangeMan Builder for Pro Source Selection Dialog Box</TITLE>
+<!--<MBPro_SourceSelectionDialog.html>-->
+<!--<index parent="Source Selection" label="Merant Build for Pro Source Selection dialog box" anchor="sourceselection">-->
+<!--<index parent="Merant Build" label="Merant Build for Pro Source Selection dialog box" anchor="sourceselection">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiSourceSelectionDlg.VmGuiMerantBuildSourceSelectionDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nSerena ChangeMan Builder for Professional\nSource Selection Dialog Box");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="sourceselection"></A>Source Selection</H1>
+<P>Use the Source Selection dialog box to indicate how files will be selected 
+from the project archives.</P>
+
+<P>This dialog box appears after you choose Actions | Serena ChangeMan Builder
+and after Serena ChangeMan Builder has scanned your Serena ChangeMan Version Manager project
+for target files.</P>
+
+<P>When choosing between Default revision, Version label, and Promotion group, remember that 
+the choices affect both the source files and the Serena ChangeMan Builder .TGT files. That is, if you
+want to use source files with a given version label, the Serena ChangeMan Builder .TGT files must have 
+that version label also. The same applies to promotion groups.</P>
+
+<P>After you have filled out the fields on this dialog box, click Next to go to the
+<A HREF="mbpro_jobselectiondialog.html">Build Job Selection</A> dialog box. 
+</P>
+
+
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><b>Default revision</b></TD>
+		<TD><!--<control name="SSD_DEFAULT_REV_CHECKBOX">--> 
+                Default revision means either the latest version or the default version label.
+                <!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Version label</b></TD>
+		<TD><!--<control name="SSD_VERSION_LABEL_CHECKBOX">-->
+		Type a version label into the text box. If you are using the desktop client, you can use the browse button to select a version label.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Promotion group</b></TD>
+		<TD><!--<control name="SSD_PROMOTION_GROUP_CHECKBOX">-->
+		Type a promotion group name into the text box. If you are using the desktop client, you can use the browse button to select a promotion group.<!--</control>--></TD>
+	</TR>
+        <TR>
+		<TD><b>(Text Field)</b></TD>
+		<TD><!--<control name="SSD_FILE_NAME_TEXTFIELD">-->
+		This field is disabled if you select Default Revision. If you select Version Label or Promotion Group, type the name of the desired label or group. If you are using the desktop client, you can use the browse button to select a version label or promotion group.<!--</control>--></TD>
+        </TR>
+	<TR>
+		<TD><b>Include source files in subprojects</b></TD>
+		<TD><!--<control name="SSD_INCLUDE_CHECKBOX">-->
+		Select to include all files in subprojects.<!--</control>--></TD>
+	</TR>
+	</TABLE>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="mbpro_jobselectiondialog.html">Build Job Selection Dialog Box</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 1.1//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="org.parabuild.ci.object.Issue"
+        table="ISSUE"
+    >
+        <cache usage="read-write" />
+
+        <id
+            name="ID"
+            column="ID"
+            type="int"
+            unsaved-value="-1"
+        >
+            <generator class="identity">
+            </generator>
+        </id>
+
+        <property
+            name="key"
+            type="java.lang.String"
+            column="KEY"
+            unique="false"
+        />
+
+        <property
+            name="trackerType"
+            type="byte"
+            column="TRACKER_TYPE"
+            unique="false"
+        />
+
+        <property
+            name="description"
+            type="java.lang.String"
+            column="DESCRIPTION"
+            length="500"
+            unique="false"
+        />
+
+        <property
+            name="product"
+            type="java.lang.String"
+            column="PRODUCT"
+            unique="false"
+        />
+
+        <property
+            name="project"
+            type="java.lang.String"
+            column="PROJECT"
+            unique="false"
+        />
+
+        <property
+            name="version"
+            type="java.lang.String"
+            column="VERSION"
+            unique="false"
+        />
+
+        <property
+            name="status"
+            type="java.lang.String"
+            column="STATUS"
+            unique="false"
+        />
+
+        <property
+            name="priority"
+            type="java.lang.String"
+            column="PRIORITY"
+            unique="false"
+        />
+
+        <property
+            name="closedBy"
+            type="java.lang.String"
+            column="CLOSED_BY"
+            unique="false"
+        />
+
+        <property
+            name="closed"
+            type="java.util.Date"
+            column="CLOSED"
+            unique="false"
+        />
+
+        <property
+            name="received"
+            type="java.util.Date"
+            column="RECEIVED"
+            unique="false"
+        />
+
+        <property
+            name="url"
+            type="java.lang.String"
+            column="URL"
+            unique="false"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Issue.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

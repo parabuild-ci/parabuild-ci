@@ -1,0 +1,196 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Preparing to Wrap a PVCS Project</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=copyright value="Copyright© 1995-2003, Borland Software Corporation. All rights reserved.">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=654>
+<meta name=layout-width content=702>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<!--(Scripts)=======================================================-->
+
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="./ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Administering the Application\nInteroperating with Other Programs\nStarTeam and PVCS\nPreparing to Wrap a PVCS Project");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Preparing to Wrap a PVCS Project</h1>
+
+<p class=Body>The wrapping process must be performed on a computer that 
+ has the Windows client installed and a hierarchy of archived PVCS files 
+ on its hard drive. Before you perform the wrapping process, you must prepare 
+ for this operation.</p>
+
+<p class=Proc>To prepare for wrapping:</p>
+
+<ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Install PVCS on the computer 
+ that runs the Server. The Server must be running.</p></li>
+	
+	<p class=List-1-text>The user running the server process must have 
+ execute privileges for the PVCS library, usually C:\Program Files\PVCS\VM\Win32\Bin. 
+ This can be verified by executing the vlog program. Depending on how PVCS 
+ was installed, this may involve modifying the user ID membership in particular 
+ user groups or the protection attributes on the PVCS installation files. 
+ See the<span style="font-style: italic;"><I> PVCS Version Manager Installation 
+ Guide</I></span>.</p>
+	
+	<li class=kadov-p-CList-1-text><p class=List-1-text>Verify that the 
+ PVCS Bin folder is in the computer's path statement. Otherwise, neither 
+ the PVCS command line nor the StarTeam interoperation with PVCS will work 
+ properly. The PVCS installation does not set the PATH environment variable, 
+ so this must be done manually. Be sure that the environment variable is 
+ either set for all users or set specifically for the user who starts the 
+ server.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Verify that the PVCS command 
+ line is working.</p></li>
+	
+	<li style="/*begin!kadov{{*/ color: #000000; /*}}end!kadov*/ "
+		class=kadov-p-CList-1><p class=List-1><font style="color: #000000;"
+													color=#000000>Place 
+ the PVCS archives to be wrapped on the same computer as the Server. Although 
+ this is not required, it reduces network traffic and, therefore, improves 
+ performance.</font></p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Rename any files with problematic 
+ paths prior to wrapping. &nbsp;StarTeam 
+ cannot process PVCS archives that contain parentheses in their file names 
+ or that have file paths with more than 128 characters. Some special characters, 
+ such as the backslash, are counted as two characters. </p></li>
+	
+	<li style="/*begin!kadov{{*/ color: #000000; /*}}end!kadov*/ "
+		class=kadov-p-CList-1><p class=List-1><font style="color: #000000;"
+													color=#000000>Because 
+ StarTeam uses the PVCS configuration file (by default,vcs.cfg) to locate 
+ the PVCS files, verify that the path to this file and all the path names 
+ within it are recognized by the Server.</font></p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Ensure that the directives 
+ listed in the configuration file are appropriate. </p></li>
+	
+	<li style="/*begin!kadov{{*/ color: #000000; /*}}end!kadov*/ "
+		class=kadov-p-CList-1><p class=List-1><font style="color: #000000;"
+													color=#000000>Add the 
+ users in the PVCS archives to the server configuration that will manage 
+ the new project. The users’ logon IDs must be identical, except for case. 
+ For</font> any revision author who is not listed as a user in the server 
+ configuration, StarTeam substitutes the name of the user creating the 
+ project. If an archive is locked by someone who is not found as a user 
+ in the server configuration and NOMULTILOCK is set, StarTeam shows the 
+ file as unlocked but does not allow a user to lock it.</p></li>
+	
+	<p class=List-1-text><span style="font-weight: bold;"><B>Tip:</B></span>&nbsp;If 
+ PVCS and StarTeam Server run on NT systems and PVCS users use their NT 
+ logon names as PVCS logon names, you can import these user names into 
+ the Server to save time and prevent typographical errors.</p>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Check archives for labels. 
+ All labels must be unique. It is recommended that you use no more than 
+ one floating label per branch. All label names should be unique.</p></li>
+</ol>
+
+<p class=Body>If your team decides to use StarTeam exclusively, you can 
+ convert the PVCS files to StarTeam files, stored in a StarTeam repository, 
+ after the wrapping process has taken place. </p>
+
+<p class=Body><span style="font-weight: bold;"><B>Note</B></span>: Do not make 
+ any changes to the PVCS archives during the wrapping process.</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

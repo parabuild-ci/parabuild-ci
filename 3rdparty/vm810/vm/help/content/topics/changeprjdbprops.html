@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Changing Project Database Properties</TITLE>
+<!--<changeprjdbprops.html>-->
+<!--<toc parent="working_with_project_databases" label="Changing Project Database Properties" anchor="changeprjdbprops" sortkey="02">-->
+<!--<index parent="changing" label="project database properties" anchor="changeprjdbprops">-->
+<!--<index parent="project_databases" label="changing properties" anchor="changeprjdbprops">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with Project Databases/Projects\nProject Databases\nChanging Project Database Properties");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="changeprjdbprops"></A>Changing Project Database Properties</H1>
+<P>A <A HREF="aboutprjdb.html">project database</a> defines how Serena ChangeMan Version Manager operates on all of the <A HREF="aboutprojects.html">projects</a> within the project database. You can change the following properties of a project database:
+</P>
+<UL>
+<LI>
+The configuration file
+<LI>The workspace settings
+<LI>The archive location
+<LI>The toolbar configuration file
+</UL>
+<H2>To change project database properties:</H2>
+<OL>
+	<LI>Select the project database whose properties you want to modify in the Project pane.<br><br>
+	<LI>Select File | Properties. The Properties dialog box appears.<br><br>
+	<LI>To change any of the fields on the Project Database tab, edit any of the fields below:<br><br>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<tr>
+	<td><b>To...</b></td>
+	<td><b>Do this...</b></td>
+	</tr>
+	<TR>
+		<TD>Change the configuration file associated with the project database</TD>
+		<TD>Edit the name and location in the <B>Configuration File</b> field, or click the Browse button to select a new configuration file.</TD>
+	</TR>
+	<TR>
+		<TD>Change the archive location </TD>
+		<TD>Edit the name and location in the <B>New Archive Location</b> field, or click the Browse button to select a new archive location. Note that only archives added to the project database <i>after</i> you change the archive location will be created in the new location; existing archives remain in the current location.</TD>
+	</TR>
+	<TR>
+		<TD>Change the toolbar configuration file</TD>
+		<TD>Edit the name and location in the <B>Toolbar Configuration File</b> field, or click the Browse button to select a new toolbar configuration file. Note that you cannot configure this option for 5.3/6.0 project roots.</TD>
+	</TR>
+</table><br><br>
+	<LI>To change any of the fields on the Workspace Settings tab, edit any of the fields below. Note that if the current workspace is public and you modify any of the workspace settings, it will affect everyone who uses the public workspace.<br><br>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<tr>
+	<td><b>To...</b></td>
+	<td><b>Do this...</b></td>
+	</tr>
+	<TR>
+		<TD>Change the workfile location</TD>
+		<TD>Edit the location in the <B>Workfile Location</B> field or click the Browse button to select a new location. </TD>
+	</TR>
+	<TR>
+		<TD>Change the value of the default version, which is the revision number or version label Version Manager will operate on for all actions when no specific revision is selected</TD>
+		<TD>Edit the value of the <B>Default Version</B> field or click the Browse button to select a new value. </TD>
+	</TR>
+	<TR>
+		<TD>Change the branch version, which is the floating version label assigned to the tip of a branch</TD>
+		<TD>Edit the value of the <B>Branch Version</B> field or click the Browse button to select a new value.</TD>
+	</TR>
+	<TR>
+		<TD>Change the base version, which is the version label assigned to the revision at the start of the branch</TD>
+		<TD>Edit the value of the <B>Base Version</B> field or click the Browse button to select a new value.</TD>
+</TR>
+<TR>
+<TD>Change the default promotion group, which is a lowest-level promotion group of a <A HREF="aboutprommodels.html">promotion model</a>; by default, Version Manager associates the default promotion group you specify with revisions when checking out revisions, locking revisions, and adding workfiles. By defining a default promotion group, you eliminate the need for a user to specify which lowest-level promotion group to use for these actions.</TD>
+<TD>Select one of the choices from the drop-down list. If the current workspace has a parent workspace and you select the value &lt;none&gt;, this setting inherits the value from the parent workspace. </TD>
+	</TR>
+</TABLE>
+</OL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="aboutprjdb.html">About Project Databases</A></TD>
+		<TD><A HREF="projectdialog.html">Project Database/Project Properties</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="aboutconfigfiles.html">About Configuration Files</A></TD>
+		<TD><A HREF="toolbarconfigdialog.html">Toolbar Configuration Dialog Box</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="aboutworkspaces.html">About Workspaces</A></TD>
+		<TD><A HREF="archivelocation.html">Archive Locations</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="workfilelocation.html">Workfile Locations</A></TD>
+		<TD><A HREF="createprjdb.html">Creating Project Databases</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="reviewingproperties.html">Reviewing Properties</A></TD>
+		
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

@@ -1,0 +1,458 @@
+<html>
+<head>
+<title>FindBugs Change Log</title>
+<link rel="stylesheet" type="text/css" href="findbugs.css">
+</head>
+
+<body>
+
+<table width="100%"><tr>
+
+@HTML_SIDEBAR@
+
+<td align="left" valign="top">
+
+<h1>FindBugs Change Log</h1>
+
+<p> Changes since version 0.8.4:
+
+<ul>
+<!-- new detectors -->
+<li> New detector for violatile references to arrays (Bill Pugh)
+<li> New detector to find instanceof usage where inheritance can be determined statically (Dave Brosius)
+<li> New detector to find ResultSet.getXXX updateXXX calls using index 0 (Dave Brosius)
+<li> New detector to find empty zip or jar entries (Bill Pugh)
+
+<!-- feature enhancements -->
+<li> HTML output generation using built-in XSLT stylesheet or
+     user-defined stylesheet (David Hovemeyer)
+<li> Allow URLs to be specified to analyze zip/jar files,
+  local directories, and single classfiles (David Hovemeyer)
+<li> New command line option -onlyAnalyze restricts analysis to selected
+     classes and packages without reducing accuracy (David Hovemeyer)
+<li> Allow Swing GUI to show source code in jar files on Windows systems (Dave Brosius)
+
+<!-- Bug fixes -->
+<li> Fix the Switch Fall Thru detector (Dave Brosius, David Hovemeyer, Bill Pugh)
+<li> MacOS GUI fixes (Rohan Lloyd)
+<li> Fix false positive in BOA in case where method is correctly and 'incorrectly' overridden (Dave Brosius)
+<li> Fixed memory blowup when analyzing methods which access
+     a large number of fields (David Hovemeyer)
+</ul>
+
+<p> Changes since version 0.8.3:
+<ul>
+<li> Initial and preliminary localization of the Swing GUI.&nbsp; Translations by:
+	<ul>
+		<li>German - Peter D. Stout, Holger Stenzhorn</li>
+		<li>Finnish - Juha Knuutila</li>
+		<li>Estonian - Tanel Lebedev</li>
+		<li>Japanese - Hanai Shisei</li>
+	</ul>
+</li>
+<li> Eliminated debug print statements inadvertently left enabled
+<li> Reverted some changes in the open stream detector:
+     this should fix some false positives that were introduced in
+     the previous release
+<li> Fixed a couple missing class reports
+</ul>
+
+<p> Changes since version 0.8.2:
+<ul>
+
+<!-- New detectors -->
+<li> New detector to find improperly overridden GUI Adapter classes (Dave Brosius)
+<li> New detector to find improperly setup JUnit TestCases (Dave Brosius)
+<li> New detector to find variables that mask class level fields (Dave Brosius)
+<li> New detector to find comparisions of values computed
+     with bitwise operators that always yield the same result
+     (Tom Truscott)
+<li> New detector to find unsafe getClass().getResource() calls (Bill Pugh)
+<li> New detector to find GUI changes not in GUI thread but in static main (Bill Pugh)
+<li> New detector to find calls to Collection.toArray() with zero-length
+     array argument; it is more efficient to pass an array the size
+     of the collection, which can be populated and returned as the result (Dave Brosius)
+
+<!-- Analysis improvements -->
+<li> Better suppression of false warnings in various detectors (Bill Pugh, David Hovemeyer)
+<li> Enhancement to ReadReturnShouldBeChecked detector for skip() (Dave Brosius)
+<li> Enhancement to DumbMethods detector (Dave Brosius)
+<li> Open stream detector does not report wrappers of
+     streams passed as method parameters (David Hovemeyer)
+
+<!-- Feature enhancements -->
+<li> Cancel confirmation dialog in Swing GUI (Pete Angstadt)
+<li> Better relative path saving in Project file (Dave Brosius)
+<li> Detector Priority in GUI is now saved in prefs file (Dave Brosius)
+<li> Controls in GUI to reorder source and classpath entries, and
+     ability to flip between Project details and bugs pages (Dave Brosius)
+<li> In Swing GUI, analysis error dialog supports "Select All"
+     and "Copy" operations for easy generation of error reports
+     (Dave Brosius)
+<li> Complete translation of bug descriptions and messages
+     into Japanese (Hanai Shisei)
+
+<!-- Bug fixes -->
+<li> Fixed bug in DroppedException detector (Dave Brosius)
+
+<!-- Development stuff -->
+<li> The source distribution defaults to using JDK 1.5 javac
+     to compile, but support for compiling with JSR-14 prototype
+     is still supported
+</ul>
+
+<p> Changes since version 0.8.1:
+<ul>
+<li> Fixed a critical ClassCastException bug (triggered if the -workHard
+     option was used, and an exception type was merged with an
+     array type during type inference)
+</ul>
+
+<p> Changes since version 0.8.0:
+
+<ul>
+<li> Disabled SwitchFallthrough detector to work around NullPointerExceptions
+<li> Added some additional false positive suppression heuristics
+</ul>
+
+<p> Also, two contributors to the 0.8.0 release were inadvertently
+left out of the credits:
+
+<ul>
+<li> Pete Angstadt fixed several problems in the Swing GUI
+<li> Francis Lalonde provided a task resource file for the
+     FindBugs Ant task
+</ul>
+
+<p> Changes since version 0.7.4:
+
+<ul>
+<li> New detector to look for uses of "+" operator to
+     concatenate String objects in a loop (Dave Brosius)
+<li> Reference comparision detector looks for places where the
+     argument passed to the equals(Object) method isn't the
+     same type as the receiver object
+<li> Better suppression of false warnings in many detectors
+<li> Many improvements to Eclipse plugin (Andrei Loskutov,
+     Peter Friese)
+<li> Fixed problem with building Eclipse plugin on Windows
+     (Thomas Klaeger)
+<li> Open stream detector looks for unclosed PreparedStatement
+     objects (Thomas Klaeger, Rohan Lloyd)
+<li> Fix for open stream detector: it wasn't detecting close() methods
+     called through an invokeinterface instruction (Thomas Klaeger)
+<li> Refactoring of visitor classes to enforce
+     use of accessors for visited class features (Brian Goetz)
+</ul>
+
+<p> Changes since version 0.7.3:
+
+<ul>
+<li> Experimental modification of open stream detector
+     to look for non-escaping JDBC resources
+     (connections and statements) that aren't
+     closed on all paths out of method
+<li> Eclipse plugin fixed so it compiles and runs on Eclipse 2.1.x
+     (Peter Friese)
+<li> Option to Swing GUI and command line to generate project file
+     using relative paths for archives, source directories,
+     and aux classpath entries (Dave Brosius)
+<li> Improvements to findbugs.bat script for launching FindBugs
+     on Windows (Dave Brosius)
+<li> Updated Japanese message translations (Hiroshi Okugawa)
+<li> Uncalled private methods are now reported as low priority,
+     unless they have the same name as another method in the class
+     (which is more likely to indicate an actual bug)
+<li> Added some missing data in the bug messages XML files
+<li> Fixed some problems building from source on Windows systems
+<li> Various minor bug fixes
+</ul>
+
+<p> Changes since version 0.7.2:
+
+<ul>
+<li> Enhanced Eclipse plugin, which displays the detailed bug
+     description in a view (Phil Crosby)
+<li> Various tweaks to existing detectors to reduce false warnings
+<li> New command line option <code>-workHard</code> enables pruning
+     of infeasible or unlikely exception edges, which results in
+     better accuracy in the open stream detector, at the expense
+     of a 30%-100% slowdown
+<li> New website and HTML documentation design
+<li> Documentation includes an HTML document with descriptions of
+     all bug patterns reported by FindBugs
+<li> Web page has a link to a
+     <a href="http://www.simeji.com/findbugs/doc/manual_ja/index.html">Japanese translation</a>
+     of the FindBugs manual, contributed by Hiroshi Okugawa
+<li> Changed the Inconsistent Synchronization detector so that fields
+     synchronized 50% of the time (or more) are reported as
+     medium priority bugs (previously they were reported as low)
+<li> New detector to find code that catches IllegalMonitorStateException
+<li> New detector to find private methods that are never called
+<li> New detector to find suspicious uses of non-short-circuiting boolean
+     operators (<code>&amp;</code> and <code>|</code>, rather than
+     <code>&amp;&amp;</code> and <code>||</code>)
+</ul>
+
+<p> Changes since version 0.7.1:
+
+<ul>
+<li> Incorporated patched version of BCEL, which allows classes compiled
+     with JDK 1.5.0 beta to be analyzed
+<li> Fixed some bugs related to lookups of array classes
+<li> Fixed bug that prevented GUI from loading XML result files
+     when running under JDK 1.5.0 beta
+<li> Added new experimental bug detector, LazyInit, which looks for potentially buggy
+     lazy initializations of static fields
+<li> Because of long filenames, switched to distributing the source archive
+     as a zip file rather than a tar file
+<li> The 0.7.1 source tarfile was botched - 0.7.2 has a valid
+     source archive
+<li> Fixed some problems in the Ant build script
+<li> Fixed NullPointerException when checking Class-Path attribute for
+     Jar files without manifests
+<li> Generate version numbers for the core and UI Eclipse plugins
+     using the Version class; all version numbers are now in a common
+     location
+</ul>
+
+<p> Changes since version 0.7.0:
+
+<ul>
+<li> Eclipse plugin (contributed by Peter Friese)
+<li> Source package structure rearranged: all source
+     (other than Eclipse plugin UI) is in
+     the edu.umd.cs.findbugs package, or a subpackage
+<li> Class-Path attributes of manifests of analyzed jar files are
+     used to set the aux classpath automatically (Peter D. Stout)
+<li> GUI starts in directory specified by user.home property (Peter D. Stout)
+<li> Added -project option to GUI (Mikko T.)
+<li> Added -look:{plastic,gtk,native} option to GUI, for setting
+     look and feel (Mikko T.)
+<li> Fixed DataflowAnalysisException in inconsistent synchronization detector
+<li> Ant task supports failOnError parameter (Rohan Lloyd)
+<li> Serializable class warnings are downgraded to low priority for
+     GUI classes
+<li> MWN detector will only report calls to wait(), notify(),
+     and notifyAll() methods that have the correct signature
+<li> FindBugs works with latest CVS version of BCEL
+<li> Zip and Jar files may be added to the source path
+<li> The GUI will automatically find source files residing in
+     analyzed Zip or Jar files
+</ul>
+
+<p> Note that the version number jumped from 0.6.6 to 0.6.9;
+there were no 0.6.7 or 0.6.8 releases.
+
+<p> Changes since version 0.6.9:
+<ul>
+<li> Added -conserveSpace option to reduce memory use
+     at the expense of analysis precision
+<li> Bug fixes in findbugs.bat script: JAVA_HOME handling,
+     autodetection of FINDBUGS_HOME, missing output with -textui
+<li> Fixed NullPointerException when a missing class is encountered
+</ul>
+
+<p> Changes since version 0.6.6:
+
+<ul>
+<li> The null pointer dereference detector is more powerful
+<li> Significantly improved heuristics and bug fixes in
+     inconsistent synchronization detector
+<li> Improved heuristics in open stream and dropped exception detectors;
+     fewer false positives should be reported
+<li> Save HTML summary in XML results files, rather than recomputing;
+     this makes loading results in GUI much faster
+<li> Report at most one String comparison using == or != per method
+<li> The findbugs.bat script on Windows autodetects FINDBUGS_HOME,
+     and doesn't open a DOS window when launching the GUI
+     (contributed by TJSB)
+<li> Emacs reporting format (contributed by David Li)
+<li> Various bug fixes
+</ul>
+
+<p> Changes since 0.6.5:
+
+<ul>
+<li> Rewritten inconsistent synchronization detector;
+     accuracy is significantly improved, and bug reports are
+     prioritized
+<li> New detector to find self assignment (x=x) of local variables
+     (suggested by Jeff Martin)
+<li> New detector to find calls to wait(), notify(), and notifyAll()
+     on an object which is not obviously locked
+<li> Open stream detector now reports Readers and Writers
+<li> Fixed bug in finalizer idioms detector which caused spurious warnings about
+     failure to call super.finalize() (reported by Jim Menard)
+<li> Fixed bug where output stream was not closed using non-XML output
+     (reported by Sigiswald Madou)
+<li> Fixed corrupted HTML bug detail message (reported by Trevor Harmon)
+</ul>
+
+<p> Changes since version 0.6.4:
+
+<ul>
+<li> For redundant comparison of reference values, fixed false positives 
+     resulting from duplication of code in finally blocks
+<li> Fixed false positives resulting from wrapped byte array streams left open
+<li> Fixed bug in Ant task preventing output file from working properly
+     if a relative path was used
+</ul>
+
+<p> Changes since version 0.6.3:
+
+<ul>
+<li> Fixed bug in Ant task where output would be corrupted, and
+     added a <code>timeout</code> attribute
+<li> Added -outputFile option to text UI, for explicitly specifying an output file
+<li> GUI has a summary window, for statistics about overall bug densities
+     (contributed by Mike Fagan)
+<li> Find redundant comparisons of reference values
+<li> More accurate detection of Strings compared with == and != operators
+<li> Detection of other reference types which should generally not be compared
+     with == and != operators; Boolean, Integer, etc.
+<li> Find non-transient non-serializable instance fields in Serializable classes
+<li> Source code may be compiled with latest early access generics-enabled javac (version 2.2)
+</ul>
+
+<p> Changes since version 0.6.2:
+
+<ul>
+<li> GUI supports filtering bugs by priority
+<li> Ant task rewritten; supports all functionality offered by Text UI
+     (contributed by Mike Fagan)
+<li> Ant task is fully documented in the manual
+<li> Classes in nested archives are analyzed; this allows full support for
+     analyzing .ear and .war files (contributed by Mike Fagan)
+<li> DepthFirstSearch changed to use non-recursive implementation;
+     this should fix the StackOverflowErrors that several users
+     reported
+<li> Various minor bugfixes and improvements
+</ul>
+
+<p> Changes since version 0.6.1:
+
+<ul>
+<li> New detector to look for useless control flow (suggested by
+     Richard P. King and Mike Fagan)
+<li> Look for places where return value of java.io.File.createNewFile()
+     is ignored (suggested by Richard P. King)
+<li> Fixed bug in resolution of source files (only the first
+     source directory was searched)
+<li> Fixed a NullPointerException in the bytecode pattern matching code
+<li> Ant task supports project files (contributed by Mike Fagan)
+<li> Unix findbugs script honors the <code>JAVA_HOME</code>
+     environment variable (contributed by Pedro Morais)
+<li> Allow .war and .ear files to be analyzed
+</ul>
+
+<p> Changes since version 0.6.0:
+
+<ul>
+<li> New bug pattern detector which looks for places where a
+     null pointer might be dereferenced
+<li> New bug pattern detector which looks for IO streams that are opened,
+     do not escape the method, and are not closed on all paths out of the method
+<li> New bug pattern detector to find methods that can return null instead
+     of a zero-length array
+<li> New bug pattern detector to find places where the == or != operators
+     are used to compare String objects
+<li> Command line interface can save bugs as XML
+<li> GUI can save bugs to and load bugs from XML
+<li> An "Annotations" window in the GUI allows the user to add
+     textual annotations to bug reports; these annotations are preserved
+     when bugs are saved as XML
+<li> In this release, the Japanese bug summary translations by
+     Germano Leichsenring are really included (they were inadvertently
+     omitted in the previous release)
+<li> Completely rewrote the control flow graph builder, hopefully
+     for the last time
+<li> Simplified implementation of control flow graphs, which should reduce
+     memory use and possibly improve performance
+<li> Improvements to command line interface (list bug priorities, filter by priority,
+     specify aux classpath, specify project to analyze)
+<li> Various bug fixes and enhancements
+</ul>
+
+<p> Changes since version 0.5.4
+
+<ul>
+<li> Added an <a href="http://ant.apache.org/">Ant</a> task for FindBugs,
+     contributed by Mike Fagan.
+<li> Added a GUI dialog which allows individual bug pattern detectors
+     to be enabled or disabled.&nbsp; Disabling certain slow detectors
+     can greatly speed up analysis of large programs, at the expense of
+     reducing the number of potential bugs found.
+<li> Added a new detector for finding improperly ignored return values for
+     methods such as <code>String.trim()</code>.&nbsp; Suggested
+     by Andreas Mandel.
+<li> Japanese translations of the bug summaries, contributed by Germano Leichsenring.
+<li> Filtering of results is supported in command line interface.
+     See the <a href="manual/index.html">FindBugs manual</a> for details.
+<li> Added "byte code patterns", a general pattern matching infrastructure
+     for bytecode instructions.&nbsp; This feature significantly reduces
+     the complexity of implementing new bug pattern detectors.
+<li> Enabled a new general dataflow analysis to track values in methods.
+<li> Switched to new control-flow graph builder implementation.
+</ul>
+
+<p>Changes since version 0.5.3
+
+<ul>
+<li> Fixed a bug in the script used to launch FindBugs on Windows platforms.
+<li> Fixed crashes when analyzing class files without source line information.
+<li> All major errors are reported using an error dialog; file not found errors
+     are more informative.
+<li> Minor GUI improvements.
+</ul>
+
+<p>Changes since version 0.5.2
+
+<ul>
+<li> All of the source code and related files are in a single directory tree.
+<li> Updated some of the detectors to produce source line information.
+<li> <a href="http://ant.apache.org/">Ant</a> build script and several
+     GUI enhancements and fixes contributed by Mike Fagan.
+<li> Converted to use a <a href="AddingDetectors.txt">plugin architecture</a> for
+     loading bug detectors.
+<li> Eliminated generics-related compiler warnings.
+<li> More complete documentation has been added.
+</ul>
+
+<p> Changes since version 0.5.1:
+<ul>
+<li> Fixed a large number of bugs in the BCEL Repository and FindBugs's use
+     of the Repository.&nbsp; With these changes, FindBugs should <em>never</em>
+     crash or otherwise misbehave because of Repository lookup failures.&nbsp;
+     Because of these changes, you must use a modified version of <code>bcel.jar</code>
+     with FindBugs.&nbsp; This jar file is included in the FindBugs 0.5.2
+     binary release.&nbsp; A complete patch containing the 
+     <a href="http://www.cs.umd.edu/~pugh/java/bugs/bcel-30-April-2003.patch"
+     >modifications against the BCEL CVS main branch as of April 30, 2003</a>
+     is also available.
+<li> Implemented the "auxiliary classpath entry list".&nbsp; Aux classpath entries
+     can be added to a project to provide classes that are referenced by the
+     analyzed application, but should not themselves be analyzed.&nbsp; Having
+     all referenced classes available allows FindBugs to produce more
+     accurate results.
+</ul>
+
+<p> Changes since version 0.5.0:
+<ul>
+<li> Many user interface bugs have been fixed.
+<li> Upgraded to a recent CVS version of BCEL, with some bug fixes.&nbsp;
+This should prevent FindBugs from crashing when there is a failure to find
+a class on the classpath.
+<li> Added support for Plastic look and feel from <a href="http://www.jgoodies.com/">jgoodies.com</a>.
+<li> Major overhaul of infrastructure for doing dataflow analysis.
+</ul>
+
+@HTML_FOOTER@
+
+</td>
+
+</tr></table>
+
+</body>
+
+</html>

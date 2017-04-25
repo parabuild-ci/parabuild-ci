@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Defining a Promotion Model</TITLE>
+<!--<DefiningPromoModel.html>-->
+<!--<toc parent="working_with_promotion_models" label="Defining a Promotion Model" anchor="DefiningPromoModel" sortkey="02">-->
+<!--<toc parent="setting_configuration_options" label="Defining a Promotion Model" anchor="DefiningPromoModel" sortkey="05">-->
+<!--<toc parent="setting_project_configuration_options" label="Defining a Promotion Model" anchor="DefiningPromoModel" sortkey="05">-->
+<!--<index parent="promotion_groups" label="defining" anchor="DefiningPromoModel">-->
+<!--<index parent="promotion_groups" label="renaming" anchor="DefiningPromoModel">-->
+<!--<index parent="promotion_groups" label="adding" anchor="DefiningPromoModel">-->
+<!--<index parent="promotion_groups" label="deleting" anchor="DefiningPromoModel">-->
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with Project Databases/Projects\nConfiguring Project Databases/Projects\nDefining a Promotion Model");
+addTocInfo("Using Version Manager\nUsing Promotion Models\nDefining a Promotion Model");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="DefiningPromoModel"></A>Defining a Promotion Model</H1>
+<P>A promotion model can be defined in both a <A HREF="masterconfigfiles.html">master configuration file</A> and project or local <A HREF="aboutconfigfiles.html">configuration files</A>. For more information, see <a href="aboutdefiningpromo.html">about defining promotion models</a>. </P>
+<p>To perform this procedure, the project database or project must first be <a href="assocconfigfile.html">associated with a configuration file</a>.</p>
+<H2>To define a promotion model:</H2>
+<P>
+
+<OL>
+	<LI>Select the project database or project for which you want to define a promotion model.<BR><BR>
+	<LI>Select Admin | Configure Project. The <A HREF="setconfigoptions.html">Configure Project</A> dialog box appears with the General tab active.<BR><BR>
+	<LI>In the Options list, select Promotion Model. The Promotion Model pane appears on the right. If you are defining a promotion model for a project with a parent project or project database that has a promotion model defined, the promotion model that is displayed includes the promotion model definition from the parent project. You should not, however, rename or delete any part of the promotion model that is defined in the parent project. To do this, you must select the parent project in 
+step 1. <BR><BR>
+<b>Note:</b> The desktop client allows you to select a promotion group of a parent project when working with a child project and use the Delete button, but the changes are not saved. Also, the desktop client allows you to use the Rename button on a promotion group defined in the parent project. In this case, the renamed promotion group is added to the current project's promotion model, but the promotion group in the parent project is not renamed. This could possibly cause conflicts. When working with a child project that has a promotion model defined in a parent project, you should only make changes to the promotion model defined in the child project, not in any of the promotion models above it in the hierarchy.<BR><BR>
+	<LI>To add promotion groups, do any of the following:
+	<UL>
+		<LI type=disc>If no promotion groups exist, click Add to define the highest-level group. 
+		<LI type=disc>If there are existing promotion groups, select the group below which you want to add the new group and click Add. The new group is added below the group you selected.
+		<LI type=disc>To add an additional lowest-level promotion group, select the existing lowest-level group and click Add. Then, you must move the group to make it at the same level as the existing lowest-level group. See step 6 for how to move a promotion group.<BR><BR>
+	</UL>
+	<LI>To rename any of the promotion groups, select the promotion group you want to rename, click Rename, and enter a new name for the promotion group.<BR><BR>
+	<LI>To move a promotion group up or down in the promotion model hierarchy, select the promotion group and click Move. A dialog box appears that lets you select the new parent promotion group of the group you want to move.<BR><BR>
+	<LI>To delete any of the promotion groups, select the promotion group and click Delete. All promotion groups below the deleted group will also be deleted.<BR><BR>
+	<LI> Click OK.
+
+</OL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+<TR>
+	<TD><A HREF="aboutdefiningpromo.html">About Defining Promotion Models</A></TD>
+	<TD><A HREF="prom_pardev.html">Promotion and Parallel Development</A></TD>
+</TR>
+<TR>
+	<TD><A HREF="promotionlifecyclemgt.html">Promotion and Lifecycle Management</A></TD>
+<TD><A HREF="aboutprommodels.html">About Promotion Models</A></TD>
+		
+</TR>
+<TR>
+	<TD><A HREF="configureoverview.html">Configuring Project and Project Databases</A></TD>
+	<TD><A HREF="prommodelrules.html">Rules Governing Promotion Models</A></TD>
+</TR>
+
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

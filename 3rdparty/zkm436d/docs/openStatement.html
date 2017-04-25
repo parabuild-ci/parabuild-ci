@@ -1,0 +1,149 @@
+<!-- Copyright 2005 Zelix Pty Ltd (ABN 47 078 740 093) -->
+<html>
+<head>
+<title>Zelix KlassMaster - open statement</title>
+   <meta name="keywords" content="java obfuscator,java code obfuscator,obfuscation">
+   <meta name="description" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <meta name="classification" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <link rel=stylesheet href="../ZKM.css" TYPE="text/css">
+</head>
+<body background="../images/small-white-mist1.jpg" bgcolor="#E1E1E1">
+<center><a href="index.html"><img src=../images/ZKM_b4.gif alt="Zelix KlassMaster" width=264 height=64 border=0></a></center>
+<hr>
+<center>
+<table width=770 border=0>
+   <tr>
+      <td>
+         <h1>The <code>open</code> Statement</h1>
+         The ZKM Script <code>open</code> statement opens class files and J2ME <code>JAD</code> files for processing by Zelix KlassMaster. Successive
+         <code>open</code> statements do not have a cumulative effect.
+         <p>
+         If you open an archive that contains nested <code>JAR</code>, <code>ZIP</code>, <code>WAR</code> or <code>RAR</code> archives then the nested
+         archives will also be opened for obfuscation.  This typically happens in the case of J2EE <code>EAR</code> archives.  
+         Occassionally this can cause a problem where your <code>EAR</code> contains a nested third party <code>JAR</code> that you don't want to obfuscate.
+         In such cases you can use the <code>-"x.ear!y.war!WEB-INF/lib/z.jar"</code> syntax to tell Zelix KlassMaster to not open a specified nested archive file.
+
+         <p>
+         <h2>Examples</h2>
+         <pre>
+open "c:\directory1\Class1.class" //a single class file
+     "c:\directory1\MyJar.jar"    //all the class files in a single jar
+     "c:\directory2"              //all the class files in a single directory
+     "c:\directory3\*"   //all the class files in a single directory AND its subdirectories
+     "c:\directory1\MyJar.jad"; //J2ME JAD file will be associated with the JAR it specifies
+
+open "c:\directory1\MyEar.ear"     //Open the <code>EAR</code> and all its nested <code>WAR</code> and <code>JAR</code> files
+     //Don't open the archive <code>X.jar</code> (in the <code>WEB-INF/lib/</code> directory) nested within <code>MyWar.war</code> nested within <code>MyEar.ear</code> 
+     -"MyEar.ear!MyWar.war!WEB-INF/lib/X.jar"; 
+</pre>
+         <h2>Explanation</h2>
+         The statement's action for each of the <code>sourceName</code> types is
+         <table border=1>
+            <tr>
+               <th>
+                  Type
+               </th>
+               <th>
+                  Action
+               </th>
+            </tr>
+            <tr>
+               <td>
+                  class file
+               </td>
+               <td>
+                  Open the specified class file
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <code>ZIP</code> file
+               </td>
+               <td>
+                  Open all class files stored in the <code>ZIP</code> file
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <code>JAR</code> file
+               </td>
+               <td>
+                  Open all class files stored in the <code>JAR</code> file
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <code>EAR</code> file
+               </td>
+               <td>
+                  Open all class files stored in the nested <code>WAR</code>, <code>JAR</code> or <code>RAR</code> files
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  directory
+               </td>
+               <td>
+                  Open all class files stored in the directory
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  directory followed by an "*"
+               </td>
+               <td>
+                  Open all class files stored in the directory and all of its subdirectories
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  J2ME <code>JAD</code> file
+               </td>
+               <td>
+                  Open the <code>JAD</code> file and associate it with the opened <code>JAR</code> that it specifies
+               </td>
+            </tr>
+         </table>
+         <h2><a href="langZKMScript.html#notation">Syntax</a></h2> 
+         <code><b>"<u>open</u>" "\"" sourceName "\"" ("\"" sourceName "\"" | ("-" "\"" skipName "\""))<sup>*</sup> ";"</b></code>
+         <p>
+         where 
+         <ul>
+            <li><code>sourceName</code> is the fully qualified pathname of a:
+               <ul>
+                  <li>class file or
+                  <li><code>JAR</code> file or
+                  <li><code>EAR</code> file or
+                  <li><code>WAR</code> file or
+                  <li><code>RAR</code> file or
+                  <li><code>ZIP</code> file or
+                  <li>directory or
+                  <li>directory followed by an <code><b>"*"</b></code> or
+                  <li>J2ME <code>JAD</code>  file
+               </ul>
+            <li><code>skipName</code> is the path to a nested archive that should NOT be opened. The levels of nesting must be separated by <code>"!"</code> characters. 
+                (eg.&nbsp;<nobr><code>x.ear!y.war!WEB-INF/lib/z.jar</code></nobr>)
+         </ul>
+     </td>
+   </tr>
+</table>
+</center>
+<hr>
+<center>
+<table>
+   <tr>
+      <td>
+         <a href=classpathStatement.html><img src=../images/larrw.gif alt="ZKM Script classpath statement"></a>
+      </td>
+      <td>
+         <a href=langZKMScript.html><img src=../images/uarrw.gif alt="The ZKM Script Language"></a>
+      </td>
+      <td>
+         <a href=trimExcludeStatement.html><img src=../images/rarrw.gif alt="ZKM Script trimExclude statement"></a>
+      </td>
+   </tr>
+</table>
+</center>
+Copyright &copy; 2005 <a href="mailto:WebMaster@zelix.com"><font size=-1>Zelix Pty Ltd</font></a> (ABN 47 078 740 093)
+</body>
+</html>

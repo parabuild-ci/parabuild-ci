@@ -1,0 +1,562 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" /><title>Navigator xref</title>
+<link type="text/css" rel="stylesheet" href="../../stylesheet.css" />
+</head>
+<body>
+<div id="overview"><a href="../../../apidocs/org/jaxen/Navigator.html">View Javadoc</a></div><pre>
+
+<a name="1" href="#1">1</a>   <strong>package</strong> <a href="../../org/jaxen/package-summary.html">org.jaxen</a>;
+<a name="2" href="#2">2</a>   
+<a name="3" href="#3">3</a>   <em class="comment">/*</em>
+<a name="4" href="#4">4</a>   <em class="comment"> * $Header: /home/projects/jaxen/scm/jaxen/src/java/main/org/jaxen/Navigator.java,v 1.30 2006/06/03 20:07:19 elharo Exp $</em>
+<a name="5" href="#5">5</a>   <em class="comment"> * $Revision: 1.30 $</em>
+<a name="6" href="#6">6</a>   <em class="comment"> * $Date: 2006/06/03 20:07:19 $</em>
+<a name="7" href="#7">7</a>   <em class="comment"> *</em>
+<a name="8" href="#8">8</a>   <em class="comment"> * ====================================================================</em>
+<a name="9" href="#9">9</a>   <em class="comment"> *</em>
+<a name="10" href="#10">10</a>  <em class="comment"> * Copyright 2000-2005 bob mcwhirter &amp; James Strachan.</em>
+<a name="11" href="#11">11</a>  <em class="comment"> * All rights reserved.</em>
+<a name="12" href="#12">12</a>  <em class="comment"> *</em>
+<a name="13" href="#13">13</a>  <em class="comment"> *</em>
+<a name="14" href="#14">14</a>  <em class="comment"> * Redistribution and use in source and binary forms, with or without</em>
+<a name="15" href="#15">15</a>  <em class="comment"> * modification, are permitted provided that the following conditions are</em>
+<a name="16" href="#16">16</a>  <em class="comment"> * met:</em>
+<a name="17" href="#17">17</a>  <em class="comment"> * </em>
+<a name="18" href="#18">18</a>  <em class="comment"> *   * Redistributions of source code must retain the above copyright</em>
+<a name="19" href="#19">19</a>  <em class="comment"> *     notice, this list of conditions and the following disclaimer.</em>
+<a name="20" href="#20">20</a>  <em class="comment"> * </em>
+<a name="21" href="#21">21</a>  <em class="comment"> *   * Redistributions in binary form must reproduce the above copyright</em>
+<a name="22" href="#22">22</a>  <em class="comment"> *     notice, this list of conditions and the following disclaimer in the</em>
+<a name="23" href="#23">23</a>  <em class="comment"> *     documentation and/or other materials provided with the distribution.</em>
+<a name="24" href="#24">24</a>  <em class="comment"> * </em>
+<a name="25" href="#25">25</a>  <em class="comment"> *   * Neither the name of the Jaxen Project nor the names of its</em>
+<a name="26" href="#26">26</a>  <em class="comment"> *     contributors may be used to endorse or promote products derived </em>
+<a name="27" href="#27">27</a>  <em class="comment"> *     from this software without specific prior written permission.</em>
+<a name="28" href="#28">28</a>  <em class="comment"> * </em>
+<a name="29" href="#29">29</a>  <em class="comment"> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS</em>
+<a name="30" href="#30">30</a>  <em class="comment"> * IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED</em>
+<a name="31" href="#31">31</a>  <em class="comment"> * TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A</em>
+<a name="32" href="#32">32</a>  <em class="comment"> * PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER</em>
+<a name="33" href="#33">33</a>  <em class="comment"> * OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,</em>
+<a name="34" href="#34">34</a>  <em class="comment"> * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,</em>
+<a name="35" href="#35">35</a>  <em class="comment"> * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR</em>
+<a name="36" href="#36">36</a>  <em class="comment"> * PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF</em>
+<a name="37" href="#37">37</a>  <em class="comment"> * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING</em>
+<a name="38" href="#38">38</a>  <em class="comment"> * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS</em>
+<a name="39" href="#39">39</a>  <em class="comment"> * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</em>
+<a name="40" href="#40">40</a>  <em class="comment"> *</em>
+<a name="41" href="#41">41</a>  <em class="comment"> * ====================================================================</em>
+<a name="42" href="#42">42</a>  <em class="comment"> * This software consists of voluntary contributions made by many</em>
+<a name="43" href="#43">43</a>  <em class="comment"> * individuals on behalf of the Jaxen Project and was originally</em>
+<a name="44" href="#44">44</a>  <em class="comment"> * created by bob mcwhirter &lt;bob@werken.com> and</em>
+<a name="45" href="#45">45</a>  <em class="comment"> * James Strachan &lt;jstrachan@apache.org>.  For more information on the</em>
+<a name="46" href="#46">46</a>  <em class="comment"> * Jaxen Project, please see &lt;<a href="http://www.jaxen.org/" target="alexandria_uri">http://www.jaxen.org/</a>>.</em>
+<a name="47" href="#47">47</a>  <em class="comment"> *</em>
+<a name="48" href="#48">48</a>  <em class="comment"> * $Id: Navigator.java,v 1.30 2006/06/03 20:07:19 elharo Exp $</em>
+<a name="49" href="#49">49</a>  <em class="comment">*/</em>
+<a name="50" href="#50">50</a>  
+<a name="51" href="#51">51</a>  <strong>import</strong> java.io.Serializable;
+<a name="52" href="#52">52</a>  <strong>import</strong> java.util.Iterator;
+<a name="53" href="#53">53</a>  
+<a name="54" href="#54">54</a>  <strong>import</strong> org.jaxen.saxpath.SAXPathException;
+<a name="55" href="#55">55</a>  
+<a name="56" href="#56">56</a>  <em>/**<em>* Interface for navigating around an arbitrary object</em></em>
+<a name="57" href="#57">57</a>  <em> *  model, using XPath semantics.</em>
+<a name="58" href="#58">58</a>  <em> *</em>
+<a name="59" href="#59">59</a>  <em> *  &lt;p></em>
+<a name="60" href="#60">60</a>  <em> *  There is a method to obtain a &lt;code>java.util.Iterator&lt;/code>,</em>
+<a name="61" href="#61">61</a>  <em> *  for each axis specified by XPath.  If the target object model</em>
+<a name="62" href="#62">62</a>  <em> *  does not support the semantics of a particular axis, an</em>
+<a name="63" href="#63">63</a>  <em> *  {@link UnsupportedAxisException} is to be thrown. If there are</em>
+<a name="64" href="#64">64</a>  <em> *  no nodes on that axis, an empty iterator should be returned.</em>
+<a name="65" href="#65">65</a>  <em> *  &lt;/p></em>
+<a name="66" href="#66">66</a>  <em> *</em>
+<a name="67" href="#67">67</a>  <em> *  @author &lt;a href="<a href="mailto:bob@eng.werken.com" target="alexandria_uri">mailto:bob@eng.werken.com</a>">bob mcwhirter&lt;/a></em>
+<a name="68" href="#68">68</a>  <em> *  @author &lt;a href="<a href="mailto:jstrachan@apache.org" target="alexandria_uri">mailto:jstrachan@apache.org</a>">James Strachan&lt;/a></em>
+<a name="69" href="#69">69</a>  <em> *</em>
+<a name="70" href="#70">70</a>  <em> *  @version $Id: Navigator.java,v 1.30 2006/06/03 20:07:19 elharo Exp $</em>
+<a name="71" href="#71">71</a>  <em> */</em>
+<a name="72" href="#72">72</a>  <strong>public</strong> <strong>interface</strong> <a href="../../org/jaxen/Navigator.html">Navigator</a> <strong>extends</strong> Serializable
+<a name="73" href="#73">73</a>  {
+<a name="74" href="#74">74</a>      <em class="comment">// ----------------------------------------------------------------------</em>
+<a name="75" href="#75">75</a>      <em class="comment">//     Axis Iterators</em>
+<a name="76" href="#76">76</a>      <em class="comment">// ----------------------------------------------------------------------</em>
+<a name="77" href="#77">77</a>  
+<a name="78" href="#78">78</a>      <em>/**<em>* Retrieve an &lt;code>Iterator&lt;/code> matching the &lt;code>child&lt;/code></em></em>
+<a name="79" href="#79">79</a>  <em>     *  XPath axis.</em>
+<a name="80" href="#80">80</a>  <em>     *</em>
+<a name="81" href="#81">81</a>  <em>     *  @param contextNode the original context node</em>
+<a name="82" href="#82">82</a>  <em>     *</em>
+<a name="83" href="#83">83</a>  <em>     *  @return an Iterator capable of traversing the axis, not null</em>
+<a name="84" href="#84">84</a>  <em>     *</em>
+<a name="85" href="#85">85</a>  <em>     *  @throws UnsupportedAxisException if the semantics of the child axis are</em>
+<a name="86" href="#86">86</a>  <em>     *          not supported by this object model</em>
+<a name="87" href="#87">87</a>  <em>     */</em>
+<a name="88" href="#88">88</a>      Iterator getChildAxisIterator(Object contextNode)
+<a name="89" href="#89">89</a>          throws UnsupportedAxisException;
+<a name="90" href="#90">90</a>  
+<a name="91" href="#91">91</a>      <em>/**<em>* Retrieve an &lt;code>Iterator&lt;/code> matching the &lt;code>descendant&lt;/code></em></em>
+<a name="92" href="#92">92</a>  <em>     *  XPath axis.</em>
+<a name="93" href="#93">93</a>  <em>     *</em>
+<a name="94" href="#94">94</a>  <em>     *  @param contextNode the original context node</em>
+<a name="95" href="#95">95</a>  <em>     *</em>
+<a name="96" href="#96">96</a>  <em>     *  @return an Iterator capable of traversing the axis, not null</em>
+<a name="97" href="#97">97</a>  <em>     *</em>
+<a name="98" href="#98">98</a>  <em>     *  @throws UnsupportedAxisException if the semantics of the desscendant axis are</em>
+<a name="99" href="#99">99</a>  <em>     *          not supported by this object model</em>
+<a name="100" href="#100">100</a> <em>     */</em>
+<a name="101" href="#101">101</a>     Iterator getDescendantAxisIterator(Object contextNode)
+<a name="102" href="#102">102</a>         throws UnsupportedAxisException;
+<a name="103" href="#103">103</a> 
+<a name="104" href="#104">104</a>     <em>/**<em>* Retrieve an &lt;code>Iterator&lt;/code> matching the &lt;code>parent&lt;/code> XPath axis.</em></em>
+<a name="105" href="#105">105</a> <em>     *</em>
+<a name="106" href="#106">106</a> <em>     *  @param contextNode the original context node</em>
+<a name="107" href="#107">107</a> <em>     *</em>
+<a name="108" href="#108">108</a> <em>     *  @return an Iterator capable of traversing the axis, not null</em>
+<a name="109" href="#109">109</a> <em>     *</em>
+<a name="110" href="#110">110</a> <em>     *  @throws UnsupportedAxisException if the semantics of the parent axis are</em>
+<a name="111" href="#111">111</a> <em>     *          not supported by this object model</em>
+<a name="112" href="#112">112</a> <em>     */</em>
+<a name="113" href="#113">113</a>     Iterator getParentAxisIterator(Object contextNode)
+<a name="114" href="#114">114</a>         throws UnsupportedAxisException;
+<a name="115" href="#115">115</a> 
+<a name="116" href="#116">116</a>     <em>/**<em>* Retrieve an &lt;code>Iterator&lt;/code> matching the &lt;code>ancestor&lt;/code></em></em>
+<a name="117" href="#117">117</a> <em>     *  XPath axis.</em>
+<a name="118" href="#118">118</a> <em>     *</em>
+<a name="119" href="#119">119</a> <em>     *  @param contextNode the original context node</em>
+<a name="120" href="#120">120</a> <em>     *</em>
+<a name="121" href="#121">121</a> <em>     *  @return an Iterator capable of traversing the axis, not null</em>
+<a name="122" href="#122">122</a> <em>     *</em>
+<a name="123" href="#123">123</a> <em>     *  @throws UnsupportedAxisException if the semantics of the ancestor axis are</em>
+<a name="124" href="#124">124</a> <em>     *          not supported by this object model</em>
+<a name="125" href="#125">125</a> <em>     */</em>
+<a name="126" href="#126">126</a>     Iterator getAncestorAxisIterator(Object contextNode)
+<a name="127" href="#127">127</a>         throws UnsupportedAxisException;
+<a name="128" href="#128">128</a> 
+<a name="129" href="#129">129</a>     <em>/**<em>* Retrieve an &lt;code>Iterator&lt;/code> matching the</em></em>
+<a name="130" href="#130">130</a> <em>     *  &lt;code>following-sibling&lt;/code> XPath axis.</em>
+<a name="131" href="#131">131</a> <em>     *</em>
+<a name="132" href="#132">132</a> <em>     *  @param contextNode the original context node</em>
+<a name="133" href="#133">133</a> <em>     *</em>
+<a name="134" href="#134">134</a> <em>     *  @return an Iterator capable of traversing the axis, not null</em>
+<a name="135" href="#135">135</a> <em>     *</em>
+<a name="136" href="#136">136</a> <em>     *  @throws UnsupportedAxisException if the semantics of the following-sibling axis are</em>
+<a name="137" href="#137">137</a> <em>     *          not supported by this object model</em>
+<a name="138" href="#138">138</a> <em>     */</em>
+<a name="139" href="#139">139</a>     Iterator getFollowingSiblingAxisIterator(Object contextNode)
+<a name="140" href="#140">140</a>         throws UnsupportedAxisException;
+<a name="141" href="#141">141</a> 
+<a name="142" href="#142">142</a>     <em>/**<em>* Retrieve an &lt;code>Iterator&lt;/code> matching the</em></em>
+<a name="143" href="#143">143</a> <em>     *  &lt;code>preceding-sibling&lt;/code> XPath axis.</em>
+<a name="144" href="#144">144</a> <em>     *</em>
+<a name="145" href="#145">145</a> <em>     *  @param contextNode the original context node</em>
+<a name="146" href="#146">146</a> <em>     *</em>
+<a name="147" href="#147">147</a> <em>     *  @return an Iterator capable of traversing the axis, not null</em>
+<a name="148" href="#148">148</a> <em>     *</em>
+<a name="149" href="#149">149</a> <em>     *  @throws UnsupportedAxisException if the semantics of the preceding-sibling axis are</em>
+<a name="150" href="#150">150</a> <em>     *          not supported by this object model</em>
+<a name="151" href="#151">151</a> <em>     */</em>
+<a name="152" href="#152">152</a>     Iterator getPrecedingSiblingAxisIterator(Object contextNode)
+<a name="153" href="#153">153</a>         throws UnsupportedAxisException;
+<a name="154" href="#154">154</a> 
+<a name="155" href="#155">155</a>     <em>/**<em>* Retrieve an &lt;code>Iterator&lt;/code> matching the &lt;code>following&lt;/code></em></em>
+<a name="156" href="#156">156</a> <em>     *  XPath axis.</em>
+<a name="157" href="#157">157</a> <em>     *</em>
+<a name="158" href="#158">158</a> <em>     *  @param contextNode the original context node</em>
+<a name="159" href="#159">159</a> <em>     *</em>
+<a name="160" href="#160">160</a> <em>     *  @return an Iterator capable of traversing the axis, not null</em>
+<a name="161" href="#161">161</a> <em>     *</em>
+<a name="162" href="#162">162</a> <em>     *  @throws UnsupportedAxisException if the semantics of the following axis are</em>
+<a name="163" href="#163">163</a> <em>     *          not supported by this object model</em>
+<a name="164" href="#164">164</a> <em>     */</em>
+<a name="165" href="#165">165</a>     Iterator getFollowingAxisIterator(Object contextNode)
+<a name="166" href="#166">166</a>         throws UnsupportedAxisException;
+<a name="167" href="#167">167</a> 
+<a name="168" href="#168">168</a>     <em>/**<em>* Retrieve an &lt;code>Iterator&lt;/code> matching the &lt;code>preceding&lt;/code> XPath axis.</em></em>
+<a name="169" href="#169">169</a> <em>     *</em>
+<a name="170" href="#170">170</a> <em>     *  @param contextNode the original context node</em>
+<a name="171" href="#171">171</a> <em>     *</em>
+<a name="172" href="#172">172</a> <em>     *  @return an Iterator capable of traversing the axis, not null</em>
+<a name="173" href="#173">173</a> <em>     *</em>
+<a name="174" href="#174">174</a> <em>     *  @throws UnsupportedAxisException if the semantics of the preceding axis are</em>
+<a name="175" href="#175">175</a> <em>     *          not supported by this object model</em>
+<a name="176" href="#176">176</a> <em>     */</em>
+<a name="177" href="#177">177</a>     Iterator getPrecedingAxisIterator(Object contextNode)
+<a name="178" href="#178">178</a>         throws UnsupportedAxisException;
+<a name="179" href="#179">179</a> 
+<a name="180" href="#180">180</a>     <em>/**<em>* Retrieve an &lt;code>Iterator&lt;/code> matching the &lt;code>attribute&lt;/code></em></em>
+<a name="181" href="#181">181</a> <em>     *  XPath axis.</em>
+<a name="182" href="#182">182</a> <em>     *</em>
+<a name="183" href="#183">183</a> <em>     *  @param contextNode the original context node</em>
+<a name="184" href="#184">184</a> <em>     *</em>
+<a name="185" href="#185">185</a> <em>     *  @return an Iterator capable of traversing the axis, not null</em>
+<a name="186" href="#186">186</a> <em>     *</em>
+<a name="187" href="#187">187</a> <em>     *  @throws UnsupportedAxisException if the semantics of the attribute axis are</em>
+<a name="188" href="#188">188</a> <em>     *          not supported by this object model</em>
+<a name="189" href="#189">189</a> <em>     */</em>
+<a name="190" href="#190">190</a>     Iterator getAttributeAxisIterator(Object contextNode)
+<a name="191" href="#191">191</a>         throws UnsupportedAxisException;
+<a name="192" href="#192">192</a> 
+<a name="193" href="#193">193</a>     <em>/**<em>* Retrieve an &lt;code>Iterator&lt;/code> matching the &lt;code>namespace&lt;/code></em></em>
+<a name="194" href="#194">194</a> <em>     *  XPath axis.</em>
+<a name="195" href="#195">195</a> <em>     *</em>
+<a name="196" href="#196">196</a> <em>     *  @param contextNode the original context node</em>
+<a name="197" href="#197">197</a> <em>     *</em>
+<a name="198" href="#198">198</a> <em>     *  @return an Iterator capable of traversing the axis, not null</em>
+<a name="199" href="#199">199</a> <em>     *</em>
+<a name="200" href="#200">200</a> <em>     *  @throws UnsupportedAxisException if the semantics of the namespace axis are</em>
+<a name="201" href="#201">201</a> <em>     *          not supported by this object model</em>
+<a name="202" href="#202">202</a> <em>     */</em>
+<a name="203" href="#203">203</a>     Iterator getNamespaceAxisIterator(Object contextNode)
+<a name="204" href="#204">204</a>         throws UnsupportedAxisException;
+<a name="205" href="#205">205</a> 
+<a name="206" href="#206">206</a>     <em>/**<em>* Retrieve an &lt;code>Iterator&lt;/code> matching the &lt;code>self&lt;/code> XPath</em></em>
+<a name="207" href="#207">207</a> <em>     *  axis.</em>
+<a name="208" href="#208">208</a> <em>     *</em>
+<a name="209" href="#209">209</a> <em>     *  @param contextNode the original context node</em>
+<a name="210" href="#210">210</a> <em>     *</em>
+<a name="211" href="#211">211</a> <em>     *  @return an Iterator capable of traversing the axis, not null</em>
+<a name="212" href="#212">212</a> <em>     *</em>
+<a name="213" href="#213">213</a> <em>     *  @throws UnsupportedAxisException if the semantics of the self axis are</em>
+<a name="214" href="#214">214</a> <em>     *          not supported by this object model</em>
+<a name="215" href="#215">215</a> <em>     */</em>
+<a name="216" href="#216">216</a>     Iterator getSelfAxisIterator(Object contextNode)
+<a name="217" href="#217">217</a>         throws UnsupportedAxisException;
+<a name="218" href="#218">218</a> 
+<a name="219" href="#219">219</a>     <em>/**<em>* Retrieve an &lt;code>Iterator&lt;/code> matching the</em></em>
+<a name="220" href="#220">220</a> <em>     *  &lt;code>descendant-or-self&lt;/code> XPath axis.</em>
+<a name="221" href="#221">221</a> <em>     *</em>
+<a name="222" href="#222">222</a> <em>     *  @param contextNode the original context node</em>
+<a name="223" href="#223">223</a> <em>     *</em>
+<a name="224" href="#224">224</a> <em>     *  @return an Iterator capable of traversing the axis, not null</em>
+<a name="225" href="#225">225</a> <em>     *</em>
+<a name="226" href="#226">226</a> <em>     *  @throws UnsupportedAxisException if the semantics of the descendant-or-self axis are</em>
+<a name="227" href="#227">227</a> <em>     *          not supported by this object model</em>
+<a name="228" href="#228">228</a> <em>     */</em>
+<a name="229" href="#229">229</a>     Iterator getDescendantOrSelfAxisIterator(Object contextNode)
+<a name="230" href="#230">230</a>         throws UnsupportedAxisException;
+<a name="231" href="#231">231</a> 
+<a name="232" href="#232">232</a>     <em>/**<em>* Retrieve an &lt;code>Iterator&lt;/code> matching the</em></em>
+<a name="233" href="#233">233</a> <em>     *  &lt;code>ancestor-or-self&lt;/code> XPath axis.</em>
+<a name="234" href="#234">234</a> <em>     *</em>
+<a name="235" href="#235">235</a> <em>     *  @param contextNode the original context node</em>
+<a name="236" href="#236">236</a> <em>     *</em>
+<a name="237" href="#237">237</a> <em>     *  @return an Iterator capable of traversing the axis, not null</em>
+<a name="238" href="#238">238</a> <em>     *</em>
+<a name="239" href="#239">239</a> <em>     *  @throws UnsupportedAxisException if the semantics of the ancestor-or-self axis are</em>
+<a name="240" href="#240">240</a> <em>     *          not supported by this object model</em>
+<a name="241" href="#241">241</a> <em>     */</em>
+<a name="242" href="#242">242</a>     Iterator getAncestorOrSelfAxisIterator(Object contextNode)
+<a name="243" href="#243">243</a>         throws UnsupportedAxisException;
+<a name="244" href="#244">244</a> 
+<a name="245" href="#245">245</a>     <em class="comment">// ----------------------------------------------------------------------</em>
+<a name="246" href="#246">246</a>     <em class="comment">//     Extractors</em>
+<a name="247" href="#247">247</a>     <em class="comment">// ----------------------------------------------------------------------</em>
+<a name="248" href="#248">248</a> 
+<a name="249" href="#249">249</a>     <em>/**<em>* Loads a document from the given URI</em></em>
+<a name="250" href="#250">250</a> <em>     *</em>
+<a name="251" href="#251">251</a> <em>     *  @param uri the URI of the document to load</em>
+<a name="252" href="#252">252</a> <em>     *</em>
+<a name="253" href="#253">253</a> <em>     *  @return the document</em>
+<a name="254" href="#254">254</a> <em>     *</em>
+<a name="255" href="#255">255</a> <em>      * @throws FunctionCallException if the document could not be loaded</em>
+<a name="256" href="#256">256</a> <em>     */</em>
+<a name="257" href="#257">257</a>     Object getDocument(String uri)
+<a name="258" href="#258">258</a>         throws FunctionCallException;
+<a name="259" href="#259">259</a> 
+<a name="260" href="#260">260</a>     <em>/**<em>* Returns the document node that contains the given context node.</em></em>
+<a name="261" href="#261">261</a> <em>     *</em>
+<a name="262" href="#262">262</a> <em>     *  @see #isDocument(Object)</em>
+<a name="263" href="#263">263</a> <em>     *</em>
+<a name="264" href="#264">264</a> <em>     *  @param contextNode the context node</em>
+<a name="265" href="#265">265</a> <em>     *</em>
+<a name="266" href="#266">266</a> <em>     *  @return the document of the context node</em>
+<a name="267" href="#267">267</a> <em>     */</em>
+<a name="268" href="#268">268</a>     Object getDocumentNode(Object contextNode);
+<a name="269" href="#269">269</a>     
+<a name="270" href="#270">270</a>     <em>/**<em>* Returns the parent of the given context node.</em></em>
+<a name="271" href="#271">271</a> <em>     *</em>
+<a name="272" href="#272">272</a> <em>     *  &lt;p></em>
+<a name="273" href="#273">273</a> <em>     *  The parent of any node must either be a document</em>
+<a name="274" href="#274">274</a> <em>     *  node or an element node.</em>
+<a name="275" href="#275">275</a> <em>     *  &lt;/p></em>
+<a name="276" href="#276">276</a> <em>     *</em>
+<a name="277" href="#277">277</a> <em>     *  @see #isDocument</em>
+<a name="278" href="#278">278</a> <em>     *  @see #isElement</em>
+<a name="279" href="#279">279</a> <em>     *</em>
+<a name="280" href="#280">280</a> <em>     *  @param contextNode the context node</em>
+<a name="281" href="#281">281</a> <em>     *</em>
+<a name="282" href="#282">282</a> <em>     *  @return the parent of the context node, or null if this is a document node.</em>
+<a name="283" href="#283">283</a> <em>     *</em>
+<a name="284" href="#284">284</a> <em>     *  @throws UnsupportedAxisException if the parent axis is not</em>
+<a name="285" href="#285">285</a> <em>     *          supported by the model</em>
+<a name="286" href="#286">286</a> <em>     */</em>
+<a name="287" href="#287">287</a>     Object getParentNode(Object contextNode)
+<a name="288" href="#288">288</a>         throws UnsupportedAxisException;
+<a name="289" href="#289">289</a>     
+<a name="290" href="#290">290</a>     <em>/**<em>* Retrieve the namespace URI of the given element node.</em></em>
+<a name="291" href="#291">291</a> <em>     *</em>
+<a name="292" href="#292">292</a> <em>     *  @param element the context element node</em>
+<a name="293" href="#293">293</a> <em>     *</em>
+<a name="294" href="#294">294</a> <em>     *  @return the namespace URI of the element node</em>
+<a name="295" href="#295">295</a> <em>     */</em>
+<a name="296" href="#296">296</a>     String getElementNamespaceUri(Object element);    
+<a name="297" href="#297">297</a> 
+<a name="298" href="#298">298</a>     <em>/**<em>* Retrieve the local name of the given element node.</em></em>
+<a name="299" href="#299">299</a> <em>     *</em>
+<a name="300" href="#300">300</a> <em>     *  @param element the context element node</em>
+<a name="301" href="#301">301</a> <em>     *</em>
+<a name="302" href="#302">302</a> <em>     *  @return the local name of the element node</em>
+<a name="303" href="#303">303</a> <em>     */</em>
+<a name="304" href="#304">304</a>     String getElementName(Object element);    
+<a name="305" href="#305">305</a> 
+<a name="306" href="#306">306</a>     <em>/**<em>* Retrieve the qualified name of the given element node.</em></em>
+<a name="307" href="#307">307</a> <em>     *</em>
+<a name="308" href="#308">308</a> <em>     *  @param element the context element node</em>
+<a name="309" href="#309">309</a> <em>     *</em>
+<a name="310" href="#310">310</a> <em>     *  @return the qualified name of the element node</em>
+<a name="311" href="#311">311</a> <em>     */</em>
+<a name="312" href="#312">312</a>     String getElementQName(Object element);
+<a name="313" href="#313">313</a> 
+<a name="314" href="#314">314</a>     <em>/**<em>* Retrieve the namespace URI of the given attribute node.</em></em>
+<a name="315" href="#315">315</a> <em>     *</em>
+<a name="316" href="#316">316</a> <em>     *  @param attr the context attribute node</em>
+<a name="317" href="#317">317</a> <em>     *</em>
+<a name="318" href="#318">318</a> <em>     *  @return the namespace URI of the attribute node</em>
+<a name="319" href="#319">319</a> <em>     */</em>
+<a name="320" href="#320">320</a>     String getAttributeNamespaceUri(Object attr);    
+<a name="321" href="#321">321</a> 
+<a name="322" href="#322">322</a>     <em>/**<em>* Retrieve the local name of the given attribute node.</em></em>
+<a name="323" href="#323">323</a> <em>     *</em>
+<a name="324" href="#324">324</a> <em>     *  @param attr the context attribute node</em>
+<a name="325" href="#325">325</a> <em>     *</em>
+<a name="326" href="#326">326</a> <em>     *  @return the local name of the attribute node</em>
+<a name="327" href="#327">327</a> <em>     */</em>
+<a name="328" href="#328">328</a>     String getAttributeName(Object attr);
+<a name="329" href="#329">329</a> 
+<a name="330" href="#330">330</a>     <em>/**<em>* Retrieve the qualified name of the given attribute node.</em></em>
+<a name="331" href="#331">331</a> <em>     *</em>
+<a name="332" href="#332">332</a> <em>     *  @param attr the context attribute node</em>
+<a name="333" href="#333">333</a> <em>     *</em>
+<a name="334" href="#334">334</a> <em>     *  @return the qualified name of the attribute node</em>
+<a name="335" href="#335">335</a> <em>     */</em>
+<a name="336" href="#336">336</a>     String getAttributeQName(Object attr);
+<a name="337" href="#337">337</a> 
+<a name="338" href="#338">338</a>     <em>/**<em>* Retrieve the target of a processing-instruction.</em></em>
+<a name="339" href="#339">339</a> <em>     *</em>
+<a name="340" href="#340">340</a> <em>     *  @param pi the context processing-instruction node</em>
+<a name="341" href="#341">341</a> <em>     *</em>
+<a name="342" href="#342">342</a> <em>     *  @return the target of the processing-instruction node</em>
+<a name="343" href="#343">343</a> <em>     */</em>
+<a name="344" href="#344">344</a>     String getProcessingInstructionTarget(Object pi);
+<a name="345" href="#345">345</a> 
+<a name="346" href="#346">346</a>     <em>/**<em>* Retrieve the data of a processing-instruction.</em></em>
+<a name="347" href="#347">347</a> <em>     *</em>
+<a name="348" href="#348">348</a> <em>     *  @param pi the context processing-instruction node</em>
+<a name="349" href="#349">349</a> <em>     *</em>
+<a name="350" href="#350">350</a> <em>     *  @return the data of the processing-instruction node</em>
+<a name="351" href="#351">351</a> <em>     */</em>
+<a name="352" href="#352">352</a>     String getProcessingInstructionData(Object pi);
+<a name="353" href="#353">353</a> 
+<a name="354" href="#354">354</a>     <em class="comment">// ----------------------------------------------------------------------</em>
+<a name="355" href="#355">355</a>     <em class="comment">//     isXXX testers</em>
+<a name="356" href="#356">356</a>     <em class="comment">// ----------------------------------------------------------------------</em>
+<a name="357" href="#357">357</a> 
+<a name="358" href="#358">358</a>     <em>/**<em>* Returns whether the given object is a document node. A document node</em></em>
+<a name="359" href="#359">359</a> <em>     *  is the node that is selected by the XPath expression &lt;code>/&lt;/code>.</em>
+<a name="360" href="#360">360</a> <em>     *</em>
+<a name="361" href="#361">361</a> <em>     *  @param object the object to test</em>
+<a name="362" href="#362">362</a> <em>     *</em>
+<a name="363" href="#363">363</a> <em>     *  @return &lt;code>true&lt;/code> if the object is a document node,</em>
+<a name="364" href="#364">364</a> <em>     *          else &lt;code>false&lt;/code></em>
+<a name="365" href="#365">365</a> <em>     */</em>
+<a name="366" href="#366">366</a>     <strong>boolean</strong> isDocument(Object object);
+<a name="367" href="#367">367</a> 
+<a name="368" href="#368">368</a>     <em>/**<em>* Returns whether the given object is an element node.</em></em>
+<a name="369" href="#369">369</a> <em>     *</em>
+<a name="370" href="#370">370</a> <em>     *  @param object the object to test</em>
+<a name="371" href="#371">371</a> <em>     *</em>
+<a name="372" href="#372">372</a> <em>     *  @return &lt;code>true&lt;/code> if the object is an element node,</em>
+<a name="373" href="#373">373</a> <em>     *          else &lt;code>false&lt;/code></em>
+<a name="374" href="#374">374</a> <em>     */</em>
+<a name="375" href="#375">375</a>     <strong>boolean</strong> isElement(Object object);
+<a name="376" href="#376">376</a> 
+<a name="377" href="#377">377</a>     <em>/**<em>* Returns whether the given object is an attribute node. </em></em>
+<a name="378" href="#378">378</a> <em>     *</em>
+<a name="379" href="#379">379</a> <em>     *  @param object the object to test</em>
+<a name="380" href="#380">380</a> <em>     *</em>
+<a name="381" href="#381">381</a> <em>     *  @return &lt;code>true&lt;/code> if the object is an attribute node,</em>
+<a name="382" href="#382">382</a> <em>     *          else &lt;code>false&lt;/code></em>
+<a name="383" href="#383">383</a> <em>     */</em>
+<a name="384" href="#384">384</a>     <strong>boolean</strong> isAttribute(Object object);
+<a name="385" href="#385">385</a> 
+<a name="386" href="#386">386</a>     <em>/**<em>* Returns whether the given object is a namespace node. </em></em>
+<a name="387" href="#387">387</a> <em>     *</em>
+<a name="388" href="#388">388</a> <em>     *  @param object the object to test</em>
+<a name="389" href="#389">389</a> <em>     *</em>
+<a name="390" href="#390">390</a> <em>     *  @return &lt;code>true&lt;/code> if the object is a namespace node,</em>
+<a name="391" href="#391">391</a> <em>     *          else &lt;code>false&lt;/code></em>
+<a name="392" href="#392">392</a> <em>     */</em>
+<a name="393" href="#393">393</a>     <strong>boolean</strong> isNamespace(Object object);
+<a name="394" href="#394">394</a> 
+<a name="395" href="#395">395</a>     <em>/**<em>* Returns whether the given object is a comment node. </em></em>
+<a name="396" href="#396">396</a> <em>     *</em>
+<a name="397" href="#397">397</a> <em>     *  @param object the object to test</em>
+<a name="398" href="#398">398</a> <em>     *</em>
+<a name="399" href="#399">399</a> <em>     *  @return &lt;code>true&lt;/code> if the object is a comment node,</em>
+<a name="400" href="#400">400</a> <em>     *          else &lt;code>false&lt;/code></em>
+<a name="401" href="#401">401</a> <em>     */</em>
+<a name="402" href="#402">402</a>     <strong>boolean</strong> isComment(Object object);
+<a name="403" href="#403">403</a> 
+<a name="404" href="#404">404</a>     <em>/**<em>* Returns whether the given object is a text node. </em></em>
+<a name="405" href="#405">405</a> <em>     *</em>
+<a name="406" href="#406">406</a> <em>     *  @param object the object to test</em>
+<a name="407" href="#407">407</a> <em>     *</em>
+<a name="408" href="#408">408</a> <em>     *  @return &lt;code>true&lt;/code> if the object is a text node,</em>
+<a name="409" href="#409">409</a> <em>     *          else &lt;code>false&lt;/code></em>
+<a name="410" href="#410">410</a> <em>     */</em>
+<a name="411" href="#411">411</a>     <strong>boolean</strong> isText(Object object);
+<a name="412" href="#412">412</a> 
+<a name="413" href="#413">413</a>     <em>/**<em>* Returns whether the given object is a processing-instruction node.</em></em>
+<a name="414" href="#414">414</a> <em>     *</em>
+<a name="415" href="#415">415</a> <em>     *  @param object the object to test</em>
+<a name="416" href="#416">416</a> <em>     *</em>
+<a name="417" href="#417">417</a> <em>     *  @return &lt;code>true&lt;/code> if the object is a processing-instruction node,</em>
+<a name="418" href="#418">418</a> <em>     *          else &lt;code>false&lt;/code></em>
+<a name="419" href="#419">419</a> <em>     */</em>
+<a name="420" href="#420">420</a>     <strong>boolean</strong> isProcessingInstruction(Object object);
+<a name="421" href="#421">421</a> 
+<a name="422" href="#422">422</a>     <em class="comment">// ----------------------------------------------------------------------</em>
+<a name="423" href="#423">423</a>     <em class="comment">//     String-Value extractors</em>
+<a name="424" href="#424">424</a>     <em class="comment">// ----------------------------------------------------------------------</em>
+<a name="425" href="#425">425</a> 
+<a name="426" href="#426">426</a>     <em>/**<em>* Retrieve the string-value of a comment node.</em></em>
+<a name="427" href="#427">427</a> <em>     * This may be the empty string if the comment is empty,</em>
+<a name="428" href="#428">428</a> <em>     * but must not be null.</em>
+<a name="429" href="#429">429</a> <em>     *</em>
+<a name="430" href="#430">430</a> <em>     *  @param comment the comment node</em>
+<a name="431" href="#431">431</a> <em>     *</em>
+<a name="432" href="#432">432</a> <em>     *  @return the string-value of the node</em>
+<a name="433" href="#433">433</a> <em>     */</em>
+<a name="434" href="#434">434</a>     String getCommentStringValue(Object comment);
+<a name="435" href="#435">435</a> 
+<a name="436" href="#436">436</a>     <em>/**<em>* Retrieve the string-value of an element node.</em></em>
+<a name="437" href="#437">437</a> <em>     * This may be the empty string if the element is empty,</em>
+<a name="438" href="#438">438</a> <em>     * but must not be null.</em>
+<a name="439" href="#439">439</a> <em>     *</em>
+<a name="440" href="#440">440</a> <em>     *  @param element the comment node.</em>
+<a name="441" href="#441">441</a> <em>     *</em>
+<a name="442" href="#442">442</a> <em>     *  @return the string-value of the node.</em>
+<a name="443" href="#443">443</a> <em>     */</em>
+<a name="444" href="#444">444</a>     String getElementStringValue(Object element);
+<a name="445" href="#445">445</a> 
+<a name="446" href="#446">446</a>     <em>/**<em>* Retrieve the string-value of an attribute node. </em></em>
+<a name="447" href="#447">447</a> <em>     *  This should be the XML 1.0 normalized attribute value.</em>
+<a name="448" href="#448">448</a> <em>     *  This may be the empty string but must not be null. </em>
+<a name="449" href="#449">449</a> <em>     *</em>
+<a name="450" href="#450">450</a> <em>     *  @param attr the attribute node</em>
+<a name="451" href="#451">451</a> <em>     *</em>
+<a name="452" href="#452">452</a> <em>     *  @return the string-value of the node</em>
+<a name="453" href="#453">453</a> <em>     */</em>
+<a name="454" href="#454">454</a>     String getAttributeStringValue(Object attr);
+<a name="455" href="#455">455</a> 
+<a name="456" href="#456">456</a>     <em>/**<em>* Retrieve the string-value of a namespace node.</em></em>
+<a name="457" href="#457">457</a> <em>     * This is generally the namespace URI.</em>
+<a name="458" href="#458">458</a> <em>     * This may be the empty string but must not be null.</em>
+<a name="459" href="#459">459</a> <em>     *</em>
+<a name="460" href="#460">460</a> <em>     *  @param ns the namespace node</em>
+<a name="461" href="#461">461</a> <em>     *</em>
+<a name="462" href="#462">462</a> <em>     *  @return the string-value of the node</em>
+<a name="463" href="#463">463</a> <em>     */</em>
+<a name="464" href="#464">464</a>     String getNamespaceStringValue(Object ns);
+<a name="465" href="#465">465</a> 
+<a name="466" href="#466">466</a>     <em>/**<em>* Retrieve the string-value of a text node.</em></em>
+<a name="467" href="#467">467</a> <em>     * This must not be null and should not be the empty string.</em>
+<a name="468" href="#468">468</a> <em>     * The XPath data model does not allow empty text nodes.</em>
+<a name="469" href="#469">469</a> <em>     *</em>
+<a name="470" href="#470">470</a> <em>     *  @param text the text node</em>
+<a name="471" href="#471">471</a> <em>     *</em>
+<a name="472" href="#472">472</a> <em>     *  @return the string-value of the node</em>
+<a name="473" href="#473">473</a> <em>     */</em>
+<a name="474" href="#474">474</a>     String getTextStringValue(Object text);
+<a name="475" href="#475">475</a> 
+<a name="476" href="#476">476</a>     <em class="comment">// ----------------------------------------------------------------------</em>
+<a name="477" href="#477">477</a>     <em class="comment">//     General utilities</em>
+<a name="478" href="#478">478</a>     <em class="comment">// ----------------------------------------------------------------------</em>
+<a name="479" href="#479">479</a> 
+<a name="480" href="#480">480</a>     <em>/**<em>* Retrieve the namespace prefix of a namespace node.</em></em>
+<a name="481" href="#481">481</a> <em>     *</em>
+<a name="482" href="#482">482</a> <em>     *  @param ns the namespace node</em>
+<a name="483" href="#483">483</a> <em>     *</em>
+<a name="484" href="#484">484</a> <em>     *  @return the prefix associated with the node</em>
+<a name="485" href="#485">485</a> <em>     */</em>
+<a name="486" href="#486">486</a>     String getNamespacePrefix(Object ns);
+<a name="487" href="#487">487</a> 
+<a name="488" href="#488">488</a>     
+<a name="489" href="#489">489</a>     <em>/**<em>* Translate a namespace prefix to a namespace URI, &lt;strong>possibly&lt;/strong></em></em>
+<a name="490" href="#490">490</a> <em>     *  considering a particular element node.</em>
+<a name="491" href="#491">491</a> <em>     *</em>
+<a name="492" href="#492">492</a> <em>     *  &lt;p></em>
+<a name="493" href="#493">493</a> <em>     *  Strictly speaking, prefix-to-URI translation should occur</em>
+<a name="494" href="#494">494</a> <em>     *  irrespective of any element in the document.  This method</em>
+<a name="495" href="#495">495</a> <em>     *  is provided to allow a non-conforming ease-of-use enhancement.</em>
+<a name="496" href="#496">496</a> <em>     *  &lt;/p></em>
+<a name="497" href="#497">497</a> <em>     *</em>
+<a name="498" href="#498">498</a> <em>     *  @see NamespaceContext</em>
+<a name="499" href="#499">499</a> <em>     *</em>
+<a name="500" href="#500">500</a> <em>     *  @param prefix the prefix to translate</em>
+<a name="501" href="#501">501</a> <em>     *  @param element the element to consider during translation</em>
+<a name="502" href="#502">502</a> <em>     *</em>
+<a name="503" href="#503">503</a> <em>     *  @return the namespace URI associated with the prefix</em>
+<a name="504" href="#504">504</a> <em>     */</em>
+<a name="505" href="#505">505</a>     String translateNamespacePrefixToUri(String prefix,
+<a name="506" href="#506">506</a>                                          Object element);
+<a name="507" href="#507">507</a> 
+<a name="508" href="#508">508</a>     <em>/**<em>* Returns a parsed form of the given XPath string, which will be suitable</em></em>
+<a name="509" href="#509">509</a> <em>     *  for queries on documents that use the same navigator as this one.</em>
+<a name="510" href="#510">510</a> <em>     *</em>
+<a name="511" href="#511">511</a> <em>     *  @see XPath</em>
+<a name="512" href="#512">512</a> <em>     *</em>
+<a name="513" href="#513">513</a> <em>     *  @param xpath the XPath expression</em>
+<a name="514" href="#514">514</a> <em>     *</em>
+<a name="515" href="#515">515</a> <em>     *  @return a new XPath expression object</em>
+<a name="516" href="#516">516</a> <em>     *</em>
+<a name="517" href="#517">517</a> <em>     *  @throws SAXPathException if the string is not a syntactically </em>
+<a name="518" href="#518">518</a> <em>     *      correct XPath expression</em>
+<a name="519" href="#519">519</a> <em>     */</em>
+<a name="520" href="#520">520</a>     <a href="../../org/jaxen/XPath.html">XPath</a> parseXPath(String xpath) throws SAXPathException;
+<a name="521" href="#521">521</a> 
+<a name="522" href="#522">522</a>     <em>/**<em>*</em></em>
+<a name="523" href="#523">523</a> <em>     *  Returns the element whose ID is given by elementId.</em>
+<a name="524" href="#524">524</a> <em>     *  If no such element exists, returns null.</em>
+<a name="525" href="#525">525</a> <em>     *  Attributes with the name "ID" are not of type ID unless so defined.</em>
+<a name="526" href="#526">526</a> <em>     *  Implementations that do not know whether attributes are of type ID or</em>
+<a name="527" href="#527">527</a> <em>     *  not are expected to return null.</em>
+<a name="528" href="#528">528</a> <em>     *</em>
+<a name="529" href="#529">529</a> <em>     *  @param contextNode   a node from the document in which to look for the</em>
+<a name="530" href="#530">530</a> <em>     *                       id</em>
+<a name="531" href="#531">531</a> <em>     *  @param elementId   id to look for</em>
+<a name="532" href="#532">532</a> <em>     *</em>
+<a name="533" href="#533">533</a> <em>     *  @return   element whose ID is given by elementId, or null if no such</em>
+<a name="534" href="#534">534</a> <em>     *            element exists in the document or if the implementation</em>
+<a name="535" href="#535">535</a> <em>     *            does not know about attribute types</em>
+<a name="536" href="#536">536</a> <em>     */</em>
+<a name="537" href="#537">537</a>     Object getElementById(Object contextNode,
+<a name="538" href="#538">538</a>                           String elementId);
+<a name="539" href="#539">539</a> 
+<a name="540" href="#540">540</a>     <em>/**<em>* Returns a number that identifies the type of node that the given</em></em>
+<a name="541" href="#541">541</a> <em>     *  object represents in this navigator.</em>
+<a name="542" href="#542">542</a> <em>     * </em>
+<a name="543" href="#543">543</a> <em>     * @param node ????</em>
+<a name="544" href="#544">544</a> <em>     * @return ????</em>
+<a name="545" href="#545">545</a> <em>     *</em>
+<a name="546" href="#546">546</a> <em>     *  @see org.jaxen.pattern.Pattern</em>
+<a name="547" href="#547">547</a> <em>     */</em>
+<a name="548" href="#548">548</a>     <strong>short</strong> getNodeType(Object node);
+<a name="549" href="#549">549</a> }
+</pre>
+<hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
+</html>
+

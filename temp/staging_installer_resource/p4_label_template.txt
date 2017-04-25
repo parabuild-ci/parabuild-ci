@@ -1,0 +1,21 @@
+# A Perforce Label Specification.
+#
+#  Label:       The label name.
+#  Update:      The date this specification was last modified.
+#  Access:      The date of the last 'labelsync' on this label.
+#  Owner:       The user who created this label.
+#  Description: A short description of the label (optional).
+#  Options:     Label update options: locked or unlocked.
+#  View:        Lines to select depot files for the label.
+
+Label:  {0}
+
+Owner:  {1}
+
+Description:
+        Created by {1}
+
+Options:        {3}
+
+View:
+        {2}

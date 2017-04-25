@@ -1,0 +1,422 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Base Privileges</TITLE>
+<!--<baseprivtables.html>-->
+<!--<index parent="security" label="base privileges" anchor="baseprivs">-->
+<!--<index parent="privileges" label="base" anchor="baseprivs">-->
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="baseprivs"></A>Base Privileges</H1>
+<P>The following table lists the base privileges, the actions they enable, and the desktop client command or dialog box fields they enable. Refer to the <I>Serena ChangeMan Version Manager Command-Line Reference Guide</I> for information about which commands in the command-line interface the privileges enable.</P>
+<br>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR><TD valign="top"><b>Command-Line Base Privilege Name Desktop Client Base Privilege Name</b></TD>
+	<TD valign="top"><b>Action <br>Desktop Client Command or Dialog Box Fields Enabled</b></TD>
+</TR>
+<TR>
+	<TD COLSPAN=2><P><b>Action Privileges</b></TD>
+</TR>
+<TR>
+	<TD valign="top">GetTip
+	<P><br><br>Check Out Tip</p></TD>
+<TD>
+<P>Check out tip revisions.<br>Invoke Merge Tool. <br>Generate Difference Reports.</P>
+<P>Actions | Check Out, Actions | Show Merge, and Actions | Show Differences when tip revision is selected.</TD>
+</TR>
+<TR><TD valign="top">
+<P>GetNonTip
+<P><br><br>Check Out Non-Tip</TD>
+<TD>
+<P>Check out revisions other than the tip.<br>Invoke Merge Tool. <br>Generate Difference Reports.</P>
+<P>Actions | Check Out, Actions | Show Merge, and Actions | Show Differences when nontip revision is selected.</TD>
+</TR>
+<TR><TD>
+<P>PutTrunk</P>
+<P>Check In Tip</TD>
+<TD>
+<P>Store revisions.</P>
+<P>Actions | Check In when tip revision is selected.<BR>
+File | Add Workfiles.</TD>
+</TR>
+<TR><TD>
+<P>PutBranch</P>
+<P>Check In Branch</TD>
+<TD>
+<P>Store branch revisions.</P>
+<P>Actions | Check In when nontip revision is selected.</TD>
+</TR>
+<TR><TD>
+<P>StartBranch</P>
+<P>Create Branch</TD>
+<TD>
+<P>Create branches.</P>
+<P><b>Force Branch</b> check box is enabled in the Check In dialog box.</TD>
+</TR>
+<TR><TD>
+<P>LockTip</P>
+<P>Lock Tip</TD>
+<TD>
+<P>Lock tip revisions.</P>
+<P>Actions | Lock when tip revision is selected.</TD>
+</TR>
+<TR><TD>
+<P>LockNonTip</P>
+<P>Lock Non-Tip</TD>
+<TD>
+<P>Lock nontip revisions.</P>
+<P>Actions | Lock when nontip revision is selected.</TD>
+</TR>
+<TR><TD>
+<P>Unlock</P>
+<P>Unlock </TD>
+<TD>
+<P>Remove locks on revisions owned by user.</P>
+<P>If both this and the Break Lock privilege are granted, Actions | Unlock.</TD>
+</TR>
+<TR><TD>
+<P>BreakLock</P>
+<P>Break Lock</TD>
+<TD>
+<P>Unlock revisions.</P>
+<P><b>Users</b> field enabled in Unlock dialog box.</TD>
+</TR>
+<TR><TD>
+<P>AddVersion</P>
+<P>Add Version Label</TD>
+<TD>
+<P>Assign version labels to revisions.</P>
+<P>Actions | Version Label | Assign.
+<br><br>(Combine with DeleteVersion to rename version labels: Actions | Version Label | Rename.)</TD>
+</TR>
+<TR><TD>
+<P>ModifyVersion</P>
+<P>Modify Version Label</TD>
+<TD>
+<P>Reassign version labels to different revisions.</P>
+<P>Actions | Version Label | Assign.</TD>
+</TR>
+<TR><TD>
+<P>DeleteVersion</P>
+<P>Delete Version Label
+</TD>
+<TD>
+<P>Delete version labels.</P>
+<P>Actions | Version Label | Delete.
+<br><br>(Combine with AddVersion to rename version labels: Actions | Version Label | Rename.)</TD>
+</TR>
+<TR><TD>
+<P>AddGroup</P>
+<P>Add Promotion Group</TD>
+<TD>
+<P>Assign promotion groups to revisions.</P>
+<P>Actions | Promotion Group | Assign.</TD>
+</TR>
+<TR><TD>
+<P>ModifyGroup</P>
+<P>Modify Promotion Group</TD>
+<TD>
+<P>Rename/move promotion groups.</P>
+<P>Actions | Promotion Group | Change.</TD>
+</TR>
+<TR><TD>
+<P>DeleteGroup</P>
+<P>Delete Promotion Group</TD>
+<TD>
+<P>Disassociate promotion groups from revisions.</P>
+<P>Actions | Promotion Group | Remove.</TD>
+</TR>
+<TR><TD>
+<P>Promote</P>
+<P>Promote to the Next Promotion Group</TD>
+<TD>
+<P>Promote revisions.</P>
+<P>Actions | Promotion Group | Promote.</TD>
+</TR>
+<TR><TD>
+<P>ViewAccessDB</P>
+<P>View Access Control Database</TD>
+<TD>
+<P>Generate a security report.</P>
+<P>Admin | Security | Show Report.</TD>
+</TR>
+<TR><TD COLSPAN=2>
+<B><P>Archive Privileges</b></TD>
+</TR>
+<TR><TD>
+<P>InitArchive</P>
+<P>Create Archive and Workfile</TD>
+<TD>
+<P>Create archives.</P>
+<P>File | Add Workfiles.</TD>
+</TR>
+<TR><TD valign="top">
+<P>ChangeAccessList</P>
+<P>Modify Archive Access List.</TD>
+<TD>
+<P>Modify access lists</P>
+<P><b>Access List field</b> is enabled in Archive Attributes dialog box.</TD>
+</TR>
+<TR><TD valign="top">
+<P>ChangeCommentDelimiter</P>
+<P>Modify Comment Delimiter</TD>
+<TD>
+<P>Change comment prefixes.</P>
+<P><b>Comment Delimiter</b> field is enabled in the Archive Attributes dialog box.</TD>
+</TR>
+<TR><TD valign="top">
+<P>ChangeOwner</P>
+<P>Modify Archive Owner</TD>
+<TD>
+<P>Change archive owners.</P>
+<P><b>Owner</b> field is enabled in the Archive Attributes dialog box.</TD>
+</TR>
+<TR><TD valign="top">
+<P>ChangeProtection</P>
+<P><br><br>Modify Archive Attributes</TD>
+<TD>
+<P>Change the following archive attributes: whether revision locking is enabled, more than one revision can be locked at a time, keywords are expanded, translation is performed on UNIX, archives are write-protected, information is compressed, and delta records are generated.</P>
+<P><b>Protection</b> fields are enabled in the Archive Attributes dialog box.</TD>
+</TR>
+<TR><TD valign="top">
+<P>ChangeWorkfileName</P>
+<P>Modify Versioned File Name</TD>
+<TD>
+<P>Rename versioned files and change the workfile name attribute for archives.</P>
+<P><b>Workfile Name</b> field is enabled in the Archives Attributes dialog box.</TD>
+</TR>
+<TR><TD valign="top">
+<P>ModifyChangeDescription</P>
+<P>Modify Change Description</TD>
+<TD>
+<P>Edit change descriptions for revisions.</P>
+<P><b>Revision Description</b> field is enabled in the Properties dialog box.</TD>
+</TR>
+<TR><TD valign="top">
+<P>ModifyWorkfileDescription</P>
+<P>Modify Workfile Description</TD>
+<TD>
+<P>Change workfile descriptions.</P>
+<P><b>Workfile Description</b> field is enabled in the Properties dialog box.</TD>
+</TR>
+<TR><TD valign="top">
+<P>DeleteRevTip</P>
+<P>Delete Tip</TD>
+<TD>
+<P>Delete tip revisions.</P>
+<P>Actions | Delete Revision and File | Delete when tip revision is selected.</TD>
+</TR>
+<TR><TD valign="top">
+<P>DeleteRevNonTip</P>
+<P>Delete Non-Tip</TD>
+<TD>
+<P>Delete nontip revisions.</P>
+<P>Actions | Delete Revision and File | Delete when nontip revision is selected.</TD>
+</TR>
+<TR><TD valign="top">
+<P>ViewArchiveHeader</P>
+<P>View Archive Header</TD>
+<TD>
+<P>View archive header information.</P>
+<P>Versioned file information is displayed in the Versioned File Properties dialog box.</TD>
+</TR>
+<TR><TD valign="top">
+<P>ViewArchiveRev</P>
+<P>View Archive Revisions</TD>
+<TD>
+<P>View revision histories.</P>
+<P>Archive header information is displayed in the Versioned File Properties dialog box.</TD>
+</TR>
+<TR><TD COLSPAN=2>
+<B><P>Project Privileges</b></TD>
+</TR>
+<TR><TD>
+<P>NoProjectNewProject</P>
+<P>Create Project</TD>
+<TD>
+<P>Create projects.</P>
+<P>File | Create Project.</TD>
+</TR>
+<TR><TD>
+<P>NoFolderChangeFolder</P>
+<P>Modify Project</TD>
+<TD>
+<P>Rename projects and change projects' attributes.</P>
+<P>File | Properties. <br>File | Rename.
+<P>Modify workfile locations of Root and public workspaces.</TD>
+</TR>
+<TR><TD>
+<P>NoProjectDeleteProject</P>
+<P>Delete Project</TD>
+<TD>
+<P>Delete projects.</P>
+<P>File | Delete with project selected.</TD>
+</TR>
+<TR><TD>
+<P>NoProjectCopyProject</P>
+<P>Copy Project</TD>
+<TD>
+<P>Copy projects.</P>
+<P>File | Copy with project selected.</TD>
+</TR>
+<TR><TD valign="top">
+<P>NoFolderChangeFolderMembers</P>
+<P>Add or Remove Versioned Files</TD>
+<TD>
+<P>Add workfiles to a project database or project.
+<BR>File | Add Workfile.</P>
+<P>Import archives.
+<BR>Admin | Import Archives.</P>
+<P>Delete versioned files from project databases or projects.<BR>
+File | Delete when versioned file is selected.</P></TD>
+</TR>
+<TR><TD>
+<P>NoProjectConfigureProject</P>
+<P>Configure Project</TD>
+<TD>
+<P>Configure a project or project database.</P>
+<P>Admin | Configure Project.
+<P>Modify the Base, Branch, and Default version settings for Root, public, and private workspaces.</TD>
+</TR>
+<TR><TD>
+<P>NoOptionsSecurity</P>
+<P>Configure Security</TD>
+<TD>
+<P>Define users, groups, privileges, and login sources for security.</P>
+<P>Admin | Security.</TD>
+</TR>
+<TR><TD>
+<P>NoActionsJournalReport</P>
+<P>Show Journal</TD>
+<TD>
+<P>Generate Journal Reports.</P>
+<P>Actions | Show Journal.</TD>
+</TR>
+
+<TR><TD VALIGN="TOP" COLSPAN=3>
+<B><P>Folder Privileges (5.3/6.0 projects only, these privileges do not appear in the updated desktop client)</b></TD>
+</TR>
+<TR><TD valign="top">
+<P>NoFolderNewFolder</TD>
+<TD>
+<P>Create folders.</P>
+<P>File | Create Folder.</TD>
+</TR>
+<TR><TD valign="top">
+<P>NoFolderChangeFolder</TD>
+<TD>
+<P>Rename folders and change folders' attributes.</P>
+<P>File | Properties File | Rename.</TD>
+</TR>
+<TR><TD valign="top">
+<P>NoFolderDeleteFolder</TD>
+<TD>
+<P>Delete folders.</P>
+<P>File | Delete with folder selected.</TD>
+</TR>
+<TR><TD valign="top">
+<P>NoFolderCopyFolderMembers</TD>
+<TD>
+<P>Copy folders.</P>
+<P>File | Copy with folder selected.</TD>
+</TR>
+<TR><TD valign="top">
+<P>NoFolderChangeFolderMembers</TD>
+<TD>
+<P>Add workfiles to 5.3/6.0 project.</P>
+<P>File | Add Workfile.</P>
+<P>Delete versioned files from 5.3/6.0 projects.</P>
+<P>File | Delete when versioned file is selected.</TD>
+</TR>
+<TR><TD valign="top">
+<P>NoFolderUpdateProjectFolder</TD>
+<TD>
+<P>Update a 5.3/6.0 project.</P>
+<P>File | Update Project Folder.</TD>
+</TR>
+</TABLE>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="compositeprivtables.html">Composite Privileges</A></TD>
+		<TD><A HREF="defaultprivtables.html">Default Privilege Sets</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="privilegetables.html">Privilege Definitions</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

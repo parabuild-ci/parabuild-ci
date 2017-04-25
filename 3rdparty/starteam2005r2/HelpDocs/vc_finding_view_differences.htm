@@ -1,0 +1,328 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Finding View Differences</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=copyright value="Copyright© 1995-2003, Borland Software Corporation. All rights reserved.">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=1525>
+<meta name=layout-width content=702>
+<meta name=x-ignored-words content="starteamserver;fg">
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<!--(Scripts)=======================================================-->
+
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="./ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Working with the Application\nComparing and Merging\nComparing and Merging Views\nWorking with the View Comparison Utility\nFinding View Differences");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Finding View Differences</h1>
+
+<p class=Body>With the View Comparison utility, you can use the<span style="font-weight: bold;"><B> 
+ Find Differences</B></span> command on the View menu to search for differences 
+ within the views. This command finds the first folder or pair of corresponding 
+ folders that meet your criteria for the type of item on the selected tab. 
+ On the item pane, the application displays the items within these folders 
+ that match your search criteria. </p>
+
+<p class=Body><span style="font-weight: bold;"><B>Caution:&nbsp;</B></span>Remember 
+ that two folders with the same name may or may not correspond. </p>
+
+<p class=Body>When the application searches for differences, several key 
+ elements are critical:</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>The search criteria specified 
+ in the <span style="font-style: italic;"><I>Find Differences</I></span> dialog.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>The tab selected from 
+ the item pane. The selected search criteria apply to only one type of 
+ item at a time. </p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>The specific pane (source 
+ or target pane) active at the time you selected search options from the 
+ <span style="font-style: italic;"><I>Find Differences</I></span> dialog. The 
+ active pane is underscored with a specific color (by default, dark blue). 
+ You must select the pane for the view to which you want to make changes, 
+ as this will be the destination for any merge. </p></li>
+	
+	<p class=Bullet-1-text
+		style="margin-left: 24px;">If the source pane is active, <span 
+ style="font-weight: bold;"><B>Find Differences</B></span> locates items in the 
+ target that need to be merged to the source. If the target pane is active, 
+ <span style="font-weight: bold;"><B>Find Differences</B></span> locates items 
+ in the source that need to be merged to the target. &nbsp;&nbsp;To 
+ find all items that need to be merged with the source and all items that 
+ need to be merged with the target, &nbsp;you 
+ must search first in one direction, then in the other. Between searches, 
+ you must change the active pane, and reset the search options using the 
+ <span style="font-style: italic;"><I>Find Differences</I></span> dialog.</p>
+	
+	<p class=Bullet-1-text>To locate all items to be merged, regardless 
+ of direction, select <span style="font-weight: bold;"><B>Item &gt; Display</B></span> 
+ and clear the<span style="font-weight: bold;"><B> Use merge tracking for 
+ merge resolution</B></span> option. All items to be merged will then show 
+ a two-way arrow icon, which simply indicates that they differ from one 
+ another. </p>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>The folder selected on 
+ the active pane. You can start the search with this folder.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>The folder selected on 
+ the pane that is not active. You can limit the search to a branch of the 
+ folder hierarchy in the inactive pane by selecting the folder that is 
+ the root of that branch.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>The display setting for 
+ the item pane. If this setting is not correct, you will not be able to 
+ see the items that match your search criteria.</p></li>
+</ul>
+
+<p class=Proc>To find folders containing items that match your search criteria:</p>
+
+<ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Open the view to be used 
+ as the source.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Click <span style="font-weight: bold;"><B>View 
+ &gt; Compare/Merge</B></span> to select the view that will serve as the target. 
+ </p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select a folder from the 
+ source pane and a folder from the target pane.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Click the source pane or 
+ the target pane to make it active.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select a tab from the lower 
+ pane to specify the type of item to which the search criteria will apply.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select the display setting 
+ for your items. Be careful that your choice is appropriate. It is recommended 
+ that you select <span style="font-weight: bold;"><B>Item &gt; Display &gt; 
+ All Items</B></span> or <span style="font-weight: bold;"><B>Item &gt; Display 
+ &gt; All Items With Differences </B></span>so that you can see any items in 
+ the item pane that match your search criteria. </p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>(Optional) To limit the search, 
+ select a folder from the inactive pane. Do one of the following:</p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>If you plan to compare 
+ the source view with the target view, select a folder from the target 
+ folder hierarchy as the root of the branch to be searched.</p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>If you plan to compare 
+ the target view with the source view, select a folder from the source 
+ folder hierarchy as the root of the branch to be searched.</p></li>
+	</ul>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Specify the pane that will 
+ initiate the comparison by making it the active pane. Select the source 
+ or the target by clicking the pane or selecting a folder in the pane. 
+ The selected folder can also indicate where the search should start. </p></li>
+	
+	<p class=List-1-text>When the source pane is active, the application 
+ compares the source view with the target view, and vice versa. If neither 
+ pane is active (the cursor is in the item pane), the application compares 
+ the source view with the target view.</p>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Do one of the following:</p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>Select<span style="font-weight: bold;"><B> 
+ Find Differences</B></span> from the View or context menu.</p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>Click the <span style="font-weight: bold;"><B>Find 
+ Differences</B></span> button on the toolbar.</p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>Press <span style="font-weight: bold;"><B>Ctrl 
+ + F</B></span>.</p></li>
+		
+		<p class=Body>The <span style="font-style: italic;"><I>Find Differences</I></span> 
+ dialog opens. The dialog title is<span style="font-style: italic;"><I> Find 
+ Differences in Source View</I></span> or <span style="font-style: italic;"><I>Find 
+ Differences in Target View</I></span>, depending on which pane is currently 
+ active.</p>
+	</ul>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select or clear one or more 
+ check boxes to specify the differences in which you are interested.</p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>Select the <span 
+ style="font-weight: bold;"><B>Items that need to be merged</B></span> check box 
+ to locate corresponding folders that contain items that are different 
+ in each folder and need to be merged.</p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>Select the<span style="font-weight: bold;"><B> 
+ Item only in source view</B></span> check box to locate corresponding folders 
+ in which the source folder has at least one item that is not in the target 
+ folder.</p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>Select the<span style="font-style: italic;"> 
+ <I></I></span><span style="font-weight: bold;"><B>Item only in target view</B></span> 
+ check box to locate corresponding folders in which the target folder has 
+ at least one item that is not in the source folder.</p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>Select the <span 
+ style="font-weight: bold;"><B>No matching folder in source/target view</B></span> 
+ check box to locate a folder in the active view that has no corresponding 
+ folder in the inactive view. (This is the only search criteria check box 
+ that is unrelated to the tab selected from the item pane.)</p></li>
+	</ul>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select the <span style="font-weight: bold;"><B>Root 
+ folder</B></span> or<span style="font-weight: bold;"><B> Selected folder</B></span> 
+ option button to indicate where the search should start in the active 
+ pane.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>(Optional) Select the <span 
+ style="font-weight: bold;"><B>Restrict source/target view scope to selected 
+ folder branch</B></span> check box to search only a branch of the folder hierarchy 
+ in the inactive pane. The folder selected in the inactive pane is the 
+ root of that branch.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Click <span style="font-weight: bold;"><B>OK</B></span>. 
+ The application finds the first folder or pair of corresponding folders 
+ that meet your criteria for the type of item indicated by your tab selection. 
+ From the item pane,the application selects the items within these folders 
+ that match your search criteria.</p></li>
+	
+	<p class=List-1-text>If you are searching only for child folders that 
+ have no corresponding folders in the other view, ignore the contents of 
+ the item pane. Your search will apply only to the folder hierarchy. If 
+ you are using additional search criteria, be careful to distinguish between 
+ folders that have <span style="font-weight: bold;"><B>no</B></span> corresponding 
+ folders (for which you should ignore the contents of the item pane) and 
+ folders that have corresponding folders (for which you should view the 
+ contents of the item pane). When no corresponding folder exists, a folder 
+ is selected from the active pane, the root folder is selected from the 
+ inactive pane, and nothing is selected in the item pane.</p>
+	
+	<li class=kadov-p-CList-1><p class=List-1>(Optional) Do one of the 
+ following:</p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1-Indent><p class=Bullet-1-Indent>Find 
+ the next difference by selecting <span style="font-weight: bold;"><B>Find 
+ Next Difference</B></span> from the View or context menu, clicking the <span 
+ style="font-weight: bold;"><B>Find Next Difference</B></span>&nbsp;button on 
+ the toolbar, or pressing <span style="font-weight: bold;"><B>F3</B></span>.</p></li>
+		
+		<li class=kadov-p-CBullet-1-Indent><p class=Bullet-1-Indent>Find 
+ the previous difference by selecting<span style="font-weight: bold;"><B> 
+ Find Previous Difference</B></span> from the View or context menu, clicking 
+ the <span style="font-weight: bold;"><B>Find Previous Difference</B></span> button 
+ on the toolbar or pressing <span style="font-weight: bold;"><B>Shift + F3</B></span>.</p></li>
+	</ul>
+	
+	<p class=Body><span style="font-weight: bold;"><B>Important:&nbsp;</B></span> 
+ Finding the next or previous difference is based on the criteria you previously 
+ set for a search, even you have changed the active pane since that time. 
+ Changing the tab at the bottom of the window changes the type of item 
+ to which the search is applied, but changing the active window does not 
+ change the direction of the search.</p>
+</ol>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

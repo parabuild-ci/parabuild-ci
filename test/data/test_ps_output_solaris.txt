@@ -1,0 +1,39 @@
+    USER   PID  PPID COMMAND
+    root     0     0 sched
+    root     1     0 /etc/init -
+    root     2     0 pageout
+    root     3     0 fsflush
+    root   150     1 /usr/lib/saf/sac -t 300
+    root   162     1 /usr/lib/inet/xntpd
+    root  5593  5592 -bash
+    root    43     1 /usr/lib/sysevent/syseventd
+   qatb2  5711  5601 tail -f /export/bea/qatb2/wlserver6.1/config/tb/logs/wl-console.log
+    root   139     1 /usr/lib/sendmail -bd -q15m
+    root   103     1 /usr/sbin/inetd -s
+    root   153   150 /usr/lib/saf/ttymon
+    root   151     1 /usr/lib/saf/ttymon -g -h -p appdev04 console login:  -T sun -d /dev/console -l
+    root   115     1 /usr/sbin/syslogd
+    root   117     1 /usr/sbin/cron
+    root   133     1 /usr/lib/utmpd
+    root   154     1 /usr/local/sbin/sshd -f /usr/local/etc/sshd_config
+eyamaura  5592  5590 -bash
+   qatb2  5665  5664 -bash
+    root  5641   154 /usr/local/sbin/sshd -f /usr/local/etc/sshd_config
+   qatb2  5601  5593 -bash
+eyamaura  5662  5660 /usr/local/sbin/sshd -f /usr/local/etc/sshd_config
+    root  5588   154 /usr/local/sbin/sshd -f /usr/local/etc/sshd_config
+eyamaura  5590  5588 /usr/local/sbin/sshd -f /usr/local/etc/sshd_config
+eyamaura  5643  5641 /usr/local/sbin/sshd -f /usr/local/etc/sshd_config
+eyamaura  5645  5643 -bash
+   qatb2  6627  5646 sh ./cronjob.sh
+   qatb2  5646  5645 -bash
+   qatb2  5695  5601 /bin/ksh ./startserver.sh -all
+   qatb2  6641  5646 tail -f /export/bea/qatb2/wlserver6.1/config/tb/logs/or-console.log
+  rqatb2  8430  8428 /usr/local/sbin/sshd -f /usr/local/etc/sshd_config
+eyamaura  5664  5662 -bash
+    root  8577  8432 ps -e -o user,pid,ppid,args
+    root  8428   154 /usr/local/sbin/sshd -f /usr/local/etc/sshd_config
+  rqatb2  8432  8430 -bash
+   qatb2  5700  5695 /export/bea/qatb2/jdk131/bin/../bin/sparc/native_threads/java -hotspot -ms512m
+   qatb2  6628  6627 /export/bea/qatb2/jdk131/bin/../bin/sparc/native_threads/java com.tradebeam.app
+    root  5660   154 /usr/local/sbin/sshd -f /usr/local/etc/sshd_config

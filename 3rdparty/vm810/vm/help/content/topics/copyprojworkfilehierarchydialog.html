@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Copy Project/Organize New Project Structure Dialog Box</TITLE>
+<!--<copyprojworkfilehierarchydialog.html>-->
+<!--<index parent="project_databases" label="Copy Project/Organize New Project Structure dialog box" anchor="copyprojworkfilehierarchy">-->
+<!--<index parent="projects" label="Copy Project/Organize New Project Structure dialog box" anchor="copyprojworkfilehierarchy">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiCopyWorkfileHierarchyWizardPage"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="copyprojworkfilehierarchy"></A>Copy Project/Organize New Project Structure</H1>
+<P>Use the Organize New Project Structure dialog box of the Copy Project wizard (Edit | Copy) to specify how you want to organize new copies of 5.3/6.0 projects. You can organize the new project based the existing 5.3/6.0 project structure, or organize it based on workfile hierarchy. </p>
+<P><b>NOTE</b>  If you are copying a Version Manager SCC Interface 5.3/6.0 project,  you must organize the new project based on the 5.3/6.0 project workfile hierarchy.</P>
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+
+	<TR>
+		<TD><b>Based on existing 5.3/6.0 project structure</b></TD>
+		<TD><!--<control name="CopyWorkfileHierarchyGeneral.PROJECTSTRUCTURE_RB">-->
+		Select to organize the newly copied project based on the existing 5.3/6.0 project structure.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+	<TD><b>Copy all items in folders</b></TD>
+	<TD><!--<control name="CopyWorkfileHierarchyGeneral.RECURSIVE_CB">-->Select to copy all archives, including those stored in folders in the archive location.<!--</control>--> This option is available only if you select to create the project based on the existing 5.3/6.0 project structure.</TD>
+</TR>
+	<TR>
+		<TD><b>Include archives that are not in folders</b></TD>
+		<TD><!--<control name="CopyWorkfileHierarchyGeneral.COPY_PROJECT_ARCHIVES_CHECKBOX">-->
+		Select to include archives that are not in folders. These archives may be located at the project root level. This option is available only if you select to create the project based on the existing 5.3/6.0 project structure.<!--</control>--></TD>
+	</TR>	
+	<TR>
+		<TD><b>Based on existing 5.3/6.0 workfile hierarchy</b></TD>
+		<TD><!--<control name="CopyWorkfileHierarchyGeneral.WORKFILEHIERARCHY_RB">-->
+		Select to organize the new project based on the organization of your 5.3/6.0 project workfiles on your hard drive. The advantage of this option is that Version Manager will create a nested project structure if your workfile hierarchy is nested.<!--</control>--> </LI><br><br>
+<p>For example, if you copy a 5.3/6.0 project called Project1, with project files stored in c:\projects\Project1\files1 and c:\projects\Project1\files2, the new project appears as illustrated below:</p>
+<img src="../graphics/vmprojtree.gif"><br><br></TD>
+	</TR>	
+	<TR>
+	<TD><b>Migrate SCC Project</b></TD>
+	<TD><!--<control name="CopyWorkfileHierarchyGeneral.MIGRATE_SCC_FRONTPAGE_CB">-->
+    Select to migrate a Version Manager SCC Interface 5.3/6.0 project. To migrate a SCC 5.3/6.0 project, you must also select the <b>Based on existing 5.3/6.0 workfile hierarchy</b> option.<!--</control>--> For complete information about how to upgrade 5.3/6.0 projects that were created via the Version Manager SCC Interface, refer to the <i>Serena ChangeMan Version Manager IDE Client Implementation Guide</i> for your development environment.</TD>
+</TR>
+</TABLE>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="aboutprojects.html">About Projects</A></TD>
+		<TD><A HREF="aboutworkfiles.html">About Workfiles</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="copyprojbrowsedialog.html">Copy Project - Browse Location Dialog</A></TD>
+		<TD><A HREF="copyprojcreateprojdbdialog.html">Copy Project - Create Project Database Dialog</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="copyprojarchivelocationdialog.html">Copy Project - Archive Location Dialog</A></TD>
+		<TD><a href="copyproject.html">Copying Projects</a></TD>
+
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

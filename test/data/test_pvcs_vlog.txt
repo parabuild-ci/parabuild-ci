@@ -1,0 +1,108 @@
+Archive:          D:\mor2\dev\bt\test\data\pvcs\archives\test_project\second_sourceline\src\readme.txt-arc
+Workfile:         readme.txt
+Archive created:  Jan 30 2006 23:17:22
+Split mode:       Unsplit 
+Owner:            vimeshev
+Last trunk rev:   1.1
+Locks:            
+Groups:           
+Rev count:        2
+Attributes:
+   WRITEPROTECT
+   CHECKLOCK
+   NOEXCLUSIVELOCK
+   EXPANDKEYWORDS
+   TRANSLATE
+   NOCOMPRESSDELTA
+   NOCOMPRESSWORKIMAGE
+   GENERATEDELTA
+   COMMENTPREFIX = ""
+   NEWLINE = "\r\n"
+Version labels:
+Description:
+Populated test project
+
+-----------------------------------
+Rev 1.1
+Checked in:     Jan 30 2006 23:18:04
+Last modified:  Jan 30 2006 23:17:48
+Author id: vimeshev     lines deleted/added/moved: 1/3/0
+Added a line
+-----------------------------------
+Rev 1.0
+Checked in:     Jan 30 2006 23:17:22
+Last modified:  Oct 01 2005 16:43:00
+Author id: vimeshev     lines deleted/added/moved: 0/0/0
+Initial revision.
+===================================
+
+Archive:          D:\mor2\dev\bt\test\data\pvcs\archives\test_project\sourceline\alwaysvalid\src\readme.txt-arc
+Workfile:         readme.txt
+Archive created:  Jan 30 2006 23:17:22
+Split mode:       Unsplit 
+Owner:            vimeshev
+Last trunk rev:   1.1
+Locks:            
+Groups:           
+Rev count:        2
+Attributes:
+   WRITEPROTECT
+   CHECKLOCK
+   NOEXCLUSIVELOCK
+   EXPANDKEYWORDS
+   TRANSLATE
+   NOCOMPRESSDELTA
+   NOCOMPRESSWORKIMAGE
+   GENERATEDELTA
+   COMMENTPREFIX = ""
+   NEWLINE = "\r\n"
+Version labels:
+Description:
+Populated test project
+
+-----------------------------------
+Rev 1.1
+Checked in:     Jan 30 2006 23:18:52
+Last modified:  Jan 30 2006 23:18:26
+Author id: vimeshev     lines deleted/added/moved: 1/3/0
+Added a line to readme in always valid
+-----------------------------------
+Rev 1.0
+Checked in:     Jan 30 2006 23:17:22
+Last modified:  Oct 01 2005 16:43:00
+Author id: vimeshev     lines deleted/added/moved: 0/0/0
+Initial revision.
+===================================
+
+Archive:          D:\mor2\dev\bt\test\data\pvcs\archives\test_project\test_cvs_change_log_with_outside_branch.txt-arc
+Workfile:         test_cvs_change_log_with_outside_branch.txt
+Archive created:  Jan 30 2006 23:17:20
+Split mode:       Unsplit 
+Owner:            vimeshev
+Last trunk rev:   1.0
+Locks:            
+Groups:           
+Rev count:        1
+Attributes:
+   WRITEPROTECT
+   CHECKLOCK
+   NOEXCLUSIVELOCK
+   EXPANDKEYWORDS
+   TRANSLATE
+   NOCOMPRESSDELTA
+   NOCOMPRESSWORKIMAGE
+   GENERATEDELTA
+   COMMENTPREFIX = ""
+   NEWLINE = "\r\n"
+Version labels:
+Description:
+Populated test project
+
+-----------------------------------
+Rev 1.0
+Checked in:     Jan 30 2006 23:17:20
+Last modified:  Sep 30 2005 00:31:46
+Author id: vimeshev     lines deleted/added/moved: 0/0/0
+Initial revision.
+===================================
+

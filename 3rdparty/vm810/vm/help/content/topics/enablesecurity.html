@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Enabling Security</TITLE>
+<!--<enablesecurity.html>-->
+<!--<index parent="enabling" label="security" anchor="defineaccesslist">-->
+<!--<index parent="security" label="enabling" anchor="enablesecurity">-->
+<!--<toc parent="set_up_security" label="Enabling Security" anchor="enablesecurity" sortkey="08">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nUsing Security\nSetting Up Security\nEnabling Security");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="enablesecurity"></A>Enabling Security</H1>
+<P>Now that you have defined an <A HREF="aboutacdb.html">access control database</a>, you must tell Serena ChangeMan Version Manager to use it to control security for your project database or project. </P>
+<H2>To enable the access control database for security:</H2>
+<OL>
+	<LI>Select the project database or project for which this access control database will control security.<br><br>
+	<LI>Select Admin | Configure Project. The Configure Project dialog box appears with the General tab active.<br><br>
+	<LI>If not already selected, select the <b>Show Advanced Options</b> check box.<br><br>
+	<LI>In the Options list, select <b>Access Control Database</b> beneath Security. The Access Control Database pane on the right appears.<br><br>
+	<LI>Verify that the location and name displayed in the <b>Access Control Database</b> field are correct. Modify it if necessary.<br><br>
+	<LI>Select the <b>Enable access control database security</b> check box.<br><br>
+	<LI>Click OK.
+</OL>
+<p>Projects that users do not have access to (because their user IDs are not defined in the access control database associated with the project) are displayed in the desktop client with a red X on the folder icon ( <img src="../graphics/noaccess.gif" width="16" height="15" border="0"> ).</p>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="setupsecurity.html">Setting Up Security</A></TD>
+		<TD><A HREF="disablingsecurity.html">Disabling Security</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="configureoverview.html">Configuring Project Databases and Projects</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

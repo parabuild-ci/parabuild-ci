@@ -1,0 +1,14 @@
+-- TESTS FOR CASE AND SIMILAR OPERATIONS
+--
+drop table testCase if exists;
+create table testCase(id integer, data varchar, filler varchar);
+insert into testCase values(100,'xxxx',null);
+insert into testCase values(200,'yyyy',null);
+/*u1*/insert into testCase values(300,null,null);
+/*r300*/select id from testCase where data is null;
+/*c2*/select id from testCase where data is not null;
+/*rNULLVALUE*/select ifnull(data,'NULLVALUE') from testCase where data is null;
+/*rNULLVALUE*/select case data when 'xxxx' then 'X' else 'NULLVALUE' end from testCase where data is null;
+SELECT CASE data WHEN 'xxxx' THEN 'X' ELSE (CASE data WHEN 'yyyy' THEN 'Y' ELSE (CASE data WHEN 'zzzz' THEN 'Z' ELSE 'NOTFOUND' END) END) END FROM testCase;
+SELECT CASE data WHEN 'xxxx' THEN 'X' WHEN 'yyyy' THEN 'Y' WHEN 'zzzz' THEN 'Z' ELSE 'NOTFOUND' END FROM testCase;
+/*rALLNULL*/SELECT COALESCE (filler, data, 'ALLNULL') FROM testCase WHERE id = 300;

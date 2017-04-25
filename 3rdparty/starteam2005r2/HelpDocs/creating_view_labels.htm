@@ -1,0 +1,185 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Creating View Labels</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=copyright value="Copyright© 1995-2003, Borland Software Corporation. All rights reserved.">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=566>
+<meta name=layout-width content=699>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<!--(Scripts)=======================================================-->
+
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="./ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Working with the Application\nPerforming Common Operations\nUsing Labels\nCreating View Labels");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Creating View Labels</h1>
+
+<p class=Body>View labels can be extremely useful when you want to label 
+ every folder and item in a particular view. For more information, see 
+ <a href="understanding_labels.htm">Understanding Labels</a>.</p>
+
+<p class=Proc>To create a view label:</p>
+
+<ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>On the View or context menu, 
+ click <span style="font-weight: bold;"><B>Labels</B></span>. The <span style="font-style: italic;"><I>Labels</I></span> 
+ dialog opens, with the<span style="font-weight: bold;"><B> View</B></span> tab 
+ already selected. This tab lists existing view labels in reverse chronological 
+ order, based on the time at which they were created.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Click <span style="font-weight: bold;"><B>New</B></span> 
+ to create a new label, and add its name to the list box. The <span style="font-style: italic;"><I>View 
+ Label</I></span> dialog opens.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Enter a name and description 
+ for the label in the appropriate text boxes. The maximum label name length 
+ is 64 characters, and the description length is 254 characters.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select one of the following 
+ options:</p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1><span style="font-weight: bold;"><B>Current 
+ configuration</B></span>: This attaches the label to the tip revision of every 
+ item in this view’s current configuration.</p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1><span style="font-weight: bold;"><B>Labeled 
+ configuration</B></span>: This option attaches the label to the revision with 
+ the label you specify.</p></li>
+		
+		<p class=Bullet-1-text><span style="font-weight: bold;"><B>Note:&nbsp;</B></span>Creating 
+ a view label based on another view label is equivalent to copying that 
+ view label.</p>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1><span style="font-weight: bold;"><B>Promotion 
+ state configuration</B></span>: This option attaches the label to the revision 
+ currently in the promotion state that you specify. (Actually, the label 
+ is attached to the revision that has the promotion state’s current view 
+ label.)</p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1><span style="font-weight: bold;"><B>Configuration 
+ as of</B></span>: This option attaches the label to the revision that was 
+ the tip revision at the specified date and time.</p></li>
+	</ul>
+	
+	<li class=kadov-p-CList-1><p class=List-1>(Optional) Select the <span 
+ style="font-weight: bold;"><B>Use as build label</B></span> check box to update 
+ each change request that has Next Build as the setting for its <span style="font-weight: bold;"><B>Addressed 
+ in build</B></span> property. If this option is not selected, change requests 
+ will still have the view label, but it will not affect the setting of 
+ the <span style="font-weight: bold;"><B>Addressed in build</B></span> property.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>(Optional) To freeze the 
+ label so that the revisions attached to it cannot be changed, select the<span 
+ style="font-weight: bold;"><B> Freeze</B></span> check box.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Click <span style="font-weight: bold;"><B>OK</B></span>. 
+ </p></li>
+</ol>
+
+<p class=Body><span style="font-weight: bold;"><B>Note:&nbsp;</B></span>If you 
+ select the current time for the label configuration, it is important to 
+ synchronize the dates and times of the computers that run the StarTeam 
+ clients and the StarTeam server. Otherwise, the labels may not be immediately 
+ visible.</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

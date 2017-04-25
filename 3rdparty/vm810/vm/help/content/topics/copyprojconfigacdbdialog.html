@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Copy Project/Select Configuration File and Access Control Database Dialog Box</TITLE>
+<!--<copyprojconfigacdbdialog.html>-->
+<!--<index parent="projects" label="Copy Project/Select Configuration and Access Control Database Location dialog box" anchor="copyprojconfigacdb">-->
+<!--<index parent="project_databases" label="Copy Project/Select Configuration and Access Control Database Location dialog box" anchor="copyprojconfigacdb">-->
+<!--<index parent="configuring" label="Copy Project/Select Configuration and Access Control Database Location dialog box" anchor="copyprojconfigacdb">-->
+<!--<index parent="copying" label="Copy Project/Select Configuration and Access Control Database Location dialog box" anchor="copyprojconfigacdb">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiConfigWizardPage"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="copyprojconfigacdb"></A>Copy Project/Select Configuration File and Access Control Database Dialog</H1>
+<P>Use the Select Configuration File and Access Control Database dialog box of the Copy Project wizard (Edit | Copy) to select a configuration file and access control database for the new project.</P>
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><b>Configuration File</b></td>
+		<td><B>Use existing Configuration Files:</b> 
+		<!--<control name="CopyOptionsConfigACDB.REFERENCECONFIG_RB">-->
+		References the original configuration files in their original location, thereby sharing the existing configuration files with the item you are copying.<br><br>
+For 5.3/6.0 projects and project roots, the existing configuration files are shared between the old 5.3/6.0 project or project root and the new, copied project or project database. We do not recommend that you use existing configuration files if the project, project root, or any of the projects in the project root use an access control database.<br><br>
+When you choose this option, the Access Control Database options are grayed.<!--</control>--><br><br>
+		<b>Copy existing Configuration Files:</b> 
+		<!--<control name="CopyOptionsConfigACDB.COPYCONFIG_RB">-->
+		Copies existing configuration files and place them in the new project or project database's structure.
+		<!--</control>--><br><br>
+		<b>Create a new Configuration File:</b> 
+		<!--<control name="CopyOptionsConfigACDB.NEWCONFIG_RB">-->
+		Creates a new default configuration file for the project. The default settings of your configuration file are controlled by your Administrator.<!--</control>-->
+		</TD>
+	</TR>
+	<TR>
+		<TD><b>Access Control Database</b></TD>
+		<td><B>Use existing Access Control Database:</b> 
+		<!--<control name="CopyOptionsConfigACDB.REFERENCEACCESSDB_RB">-->
+		 Copies the project to a new location but continues referencing the existing access control database. This option is not available if you select the <B>Use existing Configuration Files</b> option above.<!--</control>--><br><br>
+		<b>Copy Access Control Database to new location:</b>  
+		<!--<control name="CopyOptionsConfigACDB.COPYACCESSDB_RB">-->
+		Select to copy the access control database to the new project location and place it at the root of the project database directory. This option is not available if you select the <B>Use existing Configuration Files</b> option above.<!--</control>--><br><br>
+		<b>Create a new Access Control Database:</b> 
+		<!--<control name="CopyOptionsConfigACDB.NEWACCESSDB_RB">-->
+		Select to create a new access control database for the project. This option is not available if you select the <B>Use existing Configuration Files</b> option above.<!--</control>--></TD>
+		</TR>
+</TABLE>
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="copyprojbrowsedialog.html">Copy Project - Browse Location Dialog Box</A></TD>
+		<TD><A HREF="copyprojcreateprojdbdialog.html">Copy Project - Create Project Database Dialog Box</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="copyprojarchivelocationdialog.html">Copy Project - Archive Location Dialog Box</A></TD>
+		<TD><A HREF="copyfolder.html">Copying Folders</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="copyproject.html">Copying Projects</A></TD>
+		<TD><A HREF="copyprjdb.html">Copying Project Databases</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

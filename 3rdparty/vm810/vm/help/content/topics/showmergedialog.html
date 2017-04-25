@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Show Merge Dialog Box</TITLE>
+<!--<showmergedialog.html>-->
+<!--<index parent="merging" label="Show Merge dialog box" anchor="showmerge">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiMergeReportDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="showmerge"></A>Show Merge</H1>
+<P>Use the Show Merge dialog box (Actions | Show Merge) to select options for merging a revision with a workfile, revisions within a single versioned file, revisions in different versioned files, or workfiles. Note that the appearance of the Show Merge dialog box will vary depending on the files you select and what type of merge you select.</p>
+
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD COLSPAN=2><CENTER><B>General Tab</B></CENTER></TD>
+	</TR>
+	<TR>
+		<TD><b>Merge</b></TD>
+		<!--<control name="MergeReport.REPORT_CHOICE">-->
+		<TD>Select the type of merge you want to perform: <b>A revision and a workfile</b>, <b>Revisions in a single versioned file</b>, <b>Revisions in two different versioned files</b>, or <b>Workfiles</b>.	<!--</control>--></TD>
+	</tr>
+	<TR>
+		<TD><b>Base</b> group</TD>
+		<TD><b>Base: </b><!--<control name="MergeReport.BASE_EDIT_FILE">-->Displays the name of the first (or only) file you selected before launching the dialog. If you are merging workfiles, you can specify a different file by entering a file name or clicking the Browse button; otherwise, the field is read-only and you must exit the dialog if you wish to select a different file.
+<!--</control>--><BR><br>
+		<b>Revision:</b><!--<control name="MergeReport.BASE_EDIT_REV">-->
+		The revision selected as the base for the merge. To change the revision used as the base, click the Browse button to select a revision by version label, revision number, or promotion group. <!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Branch 1</b> group</TD>
+		<TD><b>Branch 1 (text field):</b> <!--<control name="MergeReport.BRANCH_1_EDIT_FILE">-->The name of the the first item to merge with the Base file. If you are merging workfiles, you can specify a different file by entering a file name or clicking the Browse button; otherwise, the field is read-only and you must exit the dialog if you wish to select a different file.<!--</control>--><BR><br>
+		<b>Revision:</b><!--<control name="MergeReport.BRANCH_1_EDIT_REV">-->
+		The revision number of the first item selected to merge with the base file. To change the revision or file used as branch 1, click the Browse button to select a revision by version label, revision number, or promotion group.<!--</control>-->
+		</TD>		
+	</TR>
+	<TR>
+		<TD><b>Branch 2</b> group<br>(Windows&nbsp;only)</TD>
+		<TD><b>Branch 2 (text field):</b> <!--<control name="MergeReport.BRANCH_2_EDIT_FILE">-->The name of the second item you selected to merge with the Base workfile. If you are merging workfiles, you can specify a different file by entering a file name or clicking the Browse button; otherwise, the field is read-only and you must exit the dialog if you wish to select a different file.<!--</control>--><BR><br>
+		<b>Revision:</b><!--<control name="MergeReport.BRANCH_2_EDIT_REV">-->
+		The revision number of the second item you selected to merge with the base file. To change the revision used as branch 2,  click the Browse button to select a revision by version label, revision number, or promotion group.<!--</control>-->
+		</TD>		
+	</TR>
+	<TR>
+		<TD><b>Output file</b></TD>
+		<TD><b>Output:</b>
+		<!--<control name="MergeReport.OUTPUT_EDIT_FILE">-->
+		Enter a file name for the output (target) file or click the Browse button to select an existing file. Note that if you enter an output filename without specifying a path, the output file will be created in the BIN directory of the Version Manager installation directory. <!--</control>-->
+		</TD>
+	</TR>
+<TR>
+		<TD COLSPAN=2><CENTER><B>Advanced Tab</B> (Windows only)</CENTER></TD>
+	</TR>
+	<TR>
+		<TD><B>Cobol Masking</B></TD>
+		<TD><!--<control name="MergeReportAdvancedForm.COBOL_MASKING">-->Select the Cobol Masking check box to use the default Cobol masking definition for Cobol files.<!--</control>-->
+	</TD>
+	</TR>
+	<TR>
+		<TD><B>Mask Ranges</B></TD>
+		<TD><!--<control name="MergeReportAdvancedForm.COLUMN_MASK">-->
+		The default value is automatically displayed in the Mask Ranges field. The default is mask columns 73-80 and mask columns 1 through 6 only if these columns are numeric. You may override these values by entering new values.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><B>Record Length</B></TD>
+		<TD><!--<control name="MergeReportAdvancedForm.RECORD_LENGTH">-->
+			Enter the length of records in fixed-length files so that Version Manager can generate deltas based on logical lines. Do not enter a value in this field for variable length files. Doing so could cause the output to be invalid or incorrect. <!--</control>--></TD>
+	</TR>
+	</TABLE>
+<BR><BR>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="mergefiles.html">Merging Files</A></TD>
+        <TD><A href="aboutmergetool.html">About the Serena ChangeMan Merge Tool</A></TD>
+	</TR>
+	<tr>
+		<TD><A href="aboutautomerge.html">Merging Files Automatically</A></TD>
+	</tr>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

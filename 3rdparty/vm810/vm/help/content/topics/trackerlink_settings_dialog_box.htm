@@ -1,0 +1,191 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+
+<title>SourceBridge Settings Dialog Box</title>
+
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nIssue Management\nSourceBridge Settings Dialog Box");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+<BODY BGCOLOR="#ffffee">
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>SourceBridge Settings Dialog Box</h1>
+
+<p>Use the SourceBridge Settings dialog box (Admin | SourceBridge Settings) to set up SourceBridge options for Serena ChangeMan Version Manager users. You must have Superuser privileges to access this dialog box.</p>
+
+<a href="aboutsourcebridge.html">SourceBridge</a> allows you to associate TeamTrack and TrackerLink issues to versioned files when you do a check out or check in.
+
+<p>SourceBridge settings are assigned on a project-database-by-project-database basis. You can apply them to all clients accessing the project database or just to web clients and the rich IDE integrations. Note, only three fields affect the rich IDE integrations: <b>Use Version Labels on checkin</b>; <b>Tag workfile comment with association</b>; and <b>Association required</b> (on checkin).</p>
+
+<p><b>NOTE</b> This dialog configures the issue management integration to both TeamTrack and Tracker. Some fields are specific to one provider and are so noted.</p>
+
+<h2>Field Descriptions</h2>
+
+<table WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+
+<tr>
+	<td><b>VM web client and rich IDE integration users</b></td>
+	<td>Select to apply the SourceBridge settings to just Version Manager web client and rich IDE integration users.</td>
+</tr>
+
+<tr>
+	<td><b>All Users</b></td>
+	<td>Select to apply SourceBridge settings to all users of the project database. Otherwise desktop client users can specify local settings to override those set here.</td>
+</tr>
+
+<tr>
+	<td><b>Auto-Login to project</b></td>
+    <td>Select to automatically log in to the TeamTrack or TrackerLink project associated with the Version Manager project database. If this option is not selected, you will be prompted to log in when making associations.</td>
+</tr>
+
+<tr>
+	<td><b>Show Issue association dialog on checkout</b></td>
+	<td>Select to display the dialog box that allows you to associate issues and workfiles whenever you check out a file or lock a file.</td>
+</tr>
+
+<tr>
+	<td><b>Association required</b></td>
+	<td>Select to require issue associations on files you are checking out or locking.</td>
+</tr>
+
+<tr>
+	<td><b>Show Issue association dialog on checkin</b></td>
+	<td>Select to display the dialog box that allows you to associate issues and workfiles whenever you check in a file or add new workfiles.</td>
+</tr>
+
+<tr>
+	<td><b>Association required</b></td>
+	<td>Select to require issue associations on files you are checking in or adding to the project database.</td>
+</tr>
+
+<tr>
+	<td><b>Show only if needed</b></td>
+	<td>Select to display the dialog box that allows you to associate issues and workfiles only if needed.  That is, if the files already have issues associated with them, the dialog box will not display; on the other hand, if at least one of the files being checked in does not have an issues associated with it, the association dialog box will display.</td>
+</tr>
+
+<tr>
+	<td><b>Cleanup association on undo checkout</b></td>
+	<td><p>Select to automatically remove any issue-workfile associations created since the last checkout operation when you undo a check out (unlock a file).</p>
+<p>If this option is not checked, Undo Checkout and Unlock operations will have no effect on issue-workfile associations.</p></td>
+</tr>
+
+<tr>
+	<td><b>Tag workfile comment with association</b></td>
+	<td>Select to record the issue-workfile associations in the workfile comment.</td>
+</tr>
+
+<tr>
+	<td><b>Before existing comment</b></td>
+	<td>Select to place the issue comment before the existing revision comment text.</td>
+</tr>
+
+<tr>
+	<td><b>After existing comment</b></td>
+	<td>Select to place the issue comment after the existing revision comment text.</td>
+</tr>
+
+<tr>
+	<td><b>Tag:</b></td>
+	<td><p>Specify a format for issue information added to comments. You can enter text and/or any of the following:</p>
+<p>$id -- Expands to the issue ID number</p>
+<p>$ownid -- Expands to the user ID of the issue owner</p>
+<p>$owner -- Expands to the name of the issue owner</p>
+<p>$project -- Expands to the name of the current project</p>
+<p>$title -- Expands to the title of the issue</p></td>
+</tr>
+
+<tr>
+	<td><b>Use Version Labels on checkin</b></td>
+	<td>Select to apply a version label consisting of the issue number when checking in a file.</td>
+</tr>
+</table>
+
+<h2>See Also</h2>
+
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A href="abouttrackerlink.html">Setting Up SourceBridge Options</a></TD>
+		<TD><A href="trackerlink.html">Associating Issues</a></TD>
+	</TR>
+	<TR>
+		<TD><a href="aboutsourcebridge.html">About SourceBridge</a></TD>
+		<TD><a HREF="settingupsourcebridge.html">About Setting Up SourceBridge</a></TD>
+	</TR>
+</TABLE>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</html>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+"http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd">
+<book>
+  <title>Parabuild 4.4</title>
+
+  <subtitle>User&#39;s Manual</subtitle>
+
+  <bookinfo>
+    <copyright>
+      <year>2017</year>
+
+      <holder>Parabuild CI</holder>
+    </copyright>
+  </bookinfo>
+
+  <chapter>
+    <title>Build Statuses Page</title>
+
+    <para>Build statuses page shows configured builds and their current
+    statuses. The page refreshes automatically every thirty seconds. The
+    content of the page depends on the &#34;page view&#34; mode. There are two
+    view modes: list view and detailed view. To switch between these modes
+    click &#34;List view&#34; or &#34;Detailed view&#34; links respectively.
+    Differences between the modes are considered below.</para>
+
+    <section>
+      <title>List View Mode</title>
+
+      <para>This mode allows to see an overview of all build statuses on a
+      single page. It is suitable for ongoing build statuses monitoring. When
+      in the list view mode, the build statuses page shows a table with a list
+      of builds and their current statuses (waiting, building, etc.) and a
+      link to the page with the last build result, if any. The link is in red
+      if the last build failed or in green if the last build was successful. A
+      caption of the link tells the last build number and time.</para>
+    </section>
+
+    <section>
+      <title>Detailed View Mode</title>
+
+      <para>This mode allows monitoring of the detailed status of a selected
+      build. In the detailed view the page it is split into two parts. On the
+      left side there is a vertical navigation bar that allows selecting a
+      particular build to view. The right side of the page contains detailed
+      information about the current build status including:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>Build name with the current build status.</para>
+        </listitem>
+
+        <listitem>
+          <para>Currently running build steps.</para>
+        </listitem>
+
+        <listitem>
+          <para>Links to the last build result including build logs, error
+          quotes, and changes in the last build, build history, date and time
+          of the last build.</para>
+        </listitem>
+
+        <listitem>
+          <para>Link to the last clean build, if any.</para>
+        </listitem>
+
+        <listitem>
+          <para>List of changes in the currently running build (or changes in
+          the last build if the build is not running).</para>
+        </listitem>
+      </itemizedlist>
+    </section>
+
+    <section>
+      <title>Disabling Page Refresh</title>
+
+      <para>To provide online infromation about build statuses the build
+      status page refreshes automatically. To disable automatic refresh click
+      on &#34;Turn refresh OFF&#34; link. The link can be found in the top
+      right corner of the status page. Once the refresh is disabled, the links
+      changes its caption to &#34;Turn refresh ON&#34;. Clicking on this links
+      will re-enable the automatic refresh of the builds status page.<figure><mediaobject><imageobject><imagedata
+      align="center" fileref="refresh_on_off.gif"></imagedata></imageobject></mediaobject></figure></para>
+    </section>
+
+    <section>
+      <title>Setting Page Refresh Rate</title>
+
+      <para>By default the page refresh rate is set to 10 seconds. To set
+      refresh rate of the build status page log in to Parabuild and select
+      &#34;Preferences&#34; link on the top navigation bar:<figure><mediaobject><imageobject><imagedata
+      align="center" fileref="preferences_link.gif"></imagedata></imageobject></mediaobject></figure></para>
+
+      <para>A form with your personal preferences will open. Fill &#34;Build
+      status refresh rate&#34; field and click on &#34;Save&#34; button:<figure><mediaobject><imageobject><imagedata
+      align="center" fileref="setting_refresh_rate.gif"></imagedata></imageobject></mediaobject></figure></para>
+    </section>
+  </chapter>
+</book>

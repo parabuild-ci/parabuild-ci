@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Locking Revisions</TITLE>
+<!--<locking.html>-->
+<!--<toc parent="Locking_Unlocking" label="Locking Revisions" anchor="locking" sortkey="01">-->
+<!--<index parent="files" label="locking revisions" anchor="locking">-->
+<!--<index parent="projects" label="locking revisions" anchor="locking">-->
+<!--<index parent="locking" label="revisions" anchor="locking">-->
+<!--<index parent="revisions" label="locking" anchor="locking">-->
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with Revisions\nLocking Revisions");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="locking"></A>Locking Revisions</H1>
+<P>A <A href="aboutlocking.html">lock</a> controls access to revisions by warning other users that a file is in use. By default, when you check out a revision, a lock is automatically placed on the revision. 
+<p>If you have installed Tracker TrackerLink or TeamTrack SourceBridge, Version Manager can <A href="trackerlink.html">associate issues</A> with the files you lock. If you associate a file with an issue when you lock it, SourceBridge annotates the issue to say that the file was locked. If you unlock the file without checking in changes, the association is dissolved and a notation is made in the issue that the file was unlocked.
+
+<H2>To lock a revision:</H2>
+<OL>
+	<LI>Select the versioned file or project that contains the revisions you want to lock.<br><br>
+	<LI>Select Actions | Lock. The Lock File or Project dialog box appears with the General tab active.<BR><BR>
+	<LI>Accept the defaults and click OK, or do the following:
+<P>
+<OL type=a>
+	<LI>To override the defaults on the General tab, edit any of the fields described below:
+<P>
+<TABLE  WIDTH="87%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+<TR>
+	<TD><b>To...</b></TD>
+	<TD><b>Do this...</b></TD>
+</TR>
+<TR>
+	<TD>Lock a specific revision instead of the default revision</TD>
+	<TD>In the <b>Revision</b>  field, enter the revision number, version label, or promotion group associated with the revision you want to lock or click the Browse button to select it. If selecting the revision by a version label, enter a backslash before a version label that begins with a numeric character (such as \1.2label).</TD>
+</TR>
+<TR>
+	<TD>Lock a revision and associate it with a lowest-level promotion group</TD>
+		<TD>If the currently selected files are associated with a project database that has a <A href="aboutprommodels.html">promotion model</A> assigned to it, select a lowest-level promotion group to associate with the revision you are locking.  
+<br>Workspace settings may be used to define a Default Promotion Group. If a Default Promotion Group is not defined for the active workspace, Version Manager will either:
+<UL><li>Prompt you to select a lowest level promotion group, if more than one is defined within the promotion model, or
+<li>Use the lowest-level promotion group if 
+            only one is defined within a promotion model.</li>             </UL>
+<b>Note:</b> This field is not used to select the revision to be locked. To select a revision based on a promotion group, enter a promotion group in the <b>Revision</b> field.</TD>
+		</TR>
+<TR>
+	<TD>Lock files within subprojects of the selected project</TD>
+	<TD>Select the <b>Include files in subprojects</b> check box.</TD>
+</TR>
+<TR>
+	<TD><A href="trackerlink.html">Associate Issues</A> with the files you are locking</TD>
+    <TD>If Tracker TrackerLink or TeamTrack SourceBridge is installed, this button displays the association dialog box. You can associate the files you are locking with issues.
+    <BR><BR><b>Note:</b> If you disable the Lock dialog box, to prevent it from displaying when performing a lock operation, and you enabled the SourceBridge association dialog box and require associations, Version Manager displays the association dialog box when you lock revisions.
+	</TD></TR>
+</TABLE>
+<p></p>
+	<LI>To review the selected revisions to lock, click the Selected Files tab. You can also review properties for the versioned files and projects by clicking the Properties button.<BR><BR>
+    <P></P>
+	<LI>Click OK.<BR><BR></LI>
+</OL></LI>
+</OL>
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A href="lockdialog.html">Lock Dialog Box</a></TD>
+		<TD><A href="unlocking.html">Unlocking Revisions</a></TD>
+	</TR>
+	<TR>
+		<TD><A href="checkingout.html">Checking Out</A></TD>
+		<TD><A href="trackerlink.html">Associating Issues</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

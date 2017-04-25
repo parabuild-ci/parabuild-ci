@@ -1,0 +1,116 @@
+MSN File Transfer protocol report [@author Jang-Ho Hwang rath@linuxkorea.co.kr]
+
+  Notice:
+    - Every MIME message must send a trailing \r\n\r\n.
+    - Each property has no order
+    - Need not URL-Encode, but UTF-8 encoding.
+
+  Every MIME message must include the following two properties.
+
+  -------------------------------------------------------------
+  Mime-Version: 1.0
+  Content-Type: text/x-msmsgsinvite; charset=UTF-8
+  -------------------------------------------------------------
+
+  After Content-Type property write, you must send additional CRLF.(not 1 but 2)
+
+  First, you must send Invitation command(INVITE).
+
+  [Sender -> Receiver]
+  Application-Name: 颇老 傈价
+  Application-GUID: {5D3E02AB-6190-11d3-BBBB-00C04F795683}
+  Invitation-Command: INVITE
+  Invitation-Cookie: xxxxxx   (Random number with 6 field)
+  Application-File: ${Filename}
+  Application-FileSize: ${Filesize(byte)}
+
+  > Example
+
+  Application-Name: 颇老 傈价
+  Application-GUID: {5D3E02AB-6190-11d3-BBBB-00C04F795683}
+  Invitation-Command: INVITE
+  Invitation-Cookie: 126174
+  Application-File: Sleep now in the fire.mp3
+  Application-FileSize: 4048576
+
+  The receiver can accept or reject.
+  The following is Accept message.
+ 
+  [Receiver -> Sender]
+  Application-Name: 颇老 傈价
+  Application-GUID: {5D3E02AB-6190-11d3-BBBB-00C04F795683}
+  Invitation-Command: ACCEPT  (Accept code)
+  Invitation-Cookie: 126174   (Cookie value when receive invitation)
+  Launch-Application: FALSE
+  Request-Data: IP-Address:   (Do not replace ${IP-Address} to your ip address!)
+
+  The following is Reject message.
+
+  [Receiver -> Sender]  
+  Invitation-Command: CANCEL  (Reject code)
+  Invitation-Cookie: 126174   (Cookie value when receive invitation)
+  Cancel-Code: REJECT         (Reject code, REJECT or TIMEOUT or .. ?)
+
+  If receiver reject a file transfer request, file transfer transaction will be 
+  terminate. If receiver accept a invitation, receiver must send 'accept' message.
+
+  [Sender -> Receiver]  
+  Invitation-Command: ACCEPT  (Accept code)
+  Invitation-Cookie: 126174   (Cookie value when send invitation)
+  AuthCookie: 15148272        (Authenticate random number, may be 8 field?)
+  Launch-Application: FALSE   
+  Request-Data: IP-Address:
+  IP-Address: 192.168.1.10    (Sender's public host address)
+  Port: 6891                  (Bind port number(default 6891), but any port number available)
+
+The receiver can connect sender's PC via TCP/IP.
+Receiver open a socket with a last MIME message information.
+(In this example, new Socket("192.168.1.10", 6891))
+
+Mark S: Sender
+Mark R: Receiver
+
+Each message's separator is CRLF.
+(In anytime, you can cancel a file transfer transaction by write 'CCL')
+
+R: VER MSNFTP 
+S: VER MSNFTP 
+R: USR ${Receiver's LoginName} ${AuthCookie}
+S: FIL ${FileSize}
+R: TFR 
+S: binary write.
+
+Before write a binary, you must send a following 3 bytes.
+
+First, 0 (simple padding?)
+Second and third byte is packet size.
+The packet size is represent by LITTLE ENDIAN.
+And maximum packet size is 0x7FD so that your packet size must little than 00FD07.
+(Maybe MTU?)
+
+[For a java programmer]
+ 
+ byte[] buf = new byte[ 2048 ];
+ FileInputStream fis = new FileInputStream(file);
+ int readlen;
+ while( (readlen=fis.read(buf, 3, 2045))!=-1 )
+ {
+   buf[0] = 0;
+   buf[1] = (byte)((readlen>>0) & 0xff);
+   buf[2] = (byte)((readlen>>8) & 0xff);
+   out.write( buf, 0, readlen+3 );
+   out.flush();
+ }
+[EOJ]
+
+After write a binary, you must write 3 bytes that all zero.
+
+  write( 0 );
+  write( 0 );
+  write( 0 );
+
+R: BYE 16777989
+
+the last parameter 1677989 is magic number.
+If you write a different value, receiver is notified 
+'File transfer is insufficient'

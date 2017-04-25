@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Revision Properties Dialog Box</TITLE>
+<!--<RevisionDetailsDialog.html>-->
+<!--<toc parent="working_with_revisions" label="Reviewing Revision Properties" anchor="ReviewingProperties" sortkey="06">-->
+<!--<index parent="revisions" label="Revision Properties dialog box" anchor="RevisionDetailsDialog">-->
+<!--<index parent="properties" label="Revision Properties dialog box" anchor="RevisionDetailsDialog">-->
+<!--<control base="pvcs.vm.vmgui.RevisionDetailsDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with Revisions\nReviewing Revision Properties");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="RevisionDetailsDialog"></A>Revision Properties</H1>
+<P>Use the Properties dialog box (File | Properties) to view <A HREF="aboutrevisions.html">revision</A>,  <A HREF="aboutversionlabels.html">version label</A>, and <A HREF="aboutprommodels.html">promotion group</A> information.</P>
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD COLSPAN=2><CENTER><B>Revision Tab</B></CENTER></TD>
+	</TR>
+	<TR><TD><B>Checked in</B></TD>
+		<TD>The date and time the file was last checked in for the specified revision.</TD>
+	</TR>
+	<TR><TD><B>Modified</B></TD>
+		<TD><!--<control name="RevisionDetailsGeneral.AUTHOR_LABEL">-->
+		The date and time the file was last modified for the specified revision.<!--</control>--></TD>
+	</TR>
+		<TR><TD><B>Author</B></TD>
+		<TD><!--<control name="RevisionDetailsGeneral.AUTHOR_LABEL">-->The user ID of the person who checked in the revision.
+		<!--</control>--></TD></TR>
+		<TR><TD><B>Locked by</B></TD>
+		<TD><!--<control name="RevisionDetailsGeneral.LOCKED_BY_LABEL">-->The user ID of the person who has placed a lock on the revision.
+		<!--</control>--></TD></TR>
+				<TR><TD><B>Description</B></TD>
+		<TD><!--<control name="RevisionDetailsGeneral.CHANGEDESCRIPTION_MLE">-->The description entered when the file was checked in; enter changes as necessary.
+		<!--</control>--></TD></TR>
+	<TR>
+		<TD COLSPAN=2><CENTER><B>Version Labels Tab</B></CENTER></TD>
+	</tr>
+	<TR>
+		<TD><B>Version Label</B></TD>
+		<TD>
+		<!--<control name="RevisionDetailsGeneral.REVISION_LABEL_GRID">-->
+		A list of all version labels applied to the selected revision, and the revision number.
+		<!--</control>-->
+		</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=2><CENTER><B>Promotion Groups Tab</B></CENTER></TD>
+	</tr>
+	<TR>
+		<TD><B>Promotion Group</B></TD>
+		<TD>
+		<!--<control name="RevisionDetailsGeneral.REVISION_PROMOTION_GRID">-->
+		A list of all promotion groups applied to the selected revision, and the revision number.
+		<!--</control>-->
+		</TD>
+	</TR>
+</TABLE>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+                <TD><A HREF="versioneditemdialog.html">Versioned File Properties Dialog Box</A>
+</TD>
+<TD><a href="reviewingproperties.html">Reviewing Properties</a></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

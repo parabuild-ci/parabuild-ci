@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>About Copying Project Databases</TITLE>
+<!--<copyprjdb.html>-->
+<!--<index parent="copying" label="about copying project databases" anchor="aboutcopyprjdb">-->
+<!--<index parent="project_databases" label="about copying" anchor="aboutcopyprjdb">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="aboutcopyprjdb"></A>About Copying Project Databases</H1>
+<P>Copying a Version Manager project database copies the project database to a new project database. When you copy a project database, Version Manager lets you:</p>
+
+<UL>
+	<LI>Copy all of its projects and subprojects or only copy the projects,
+	<LI>Copy the archives to the new archive location or use the existing archive location,
+	<LI>Create new configuration files, copy existing configuration files to the new project database, or use the existing configuration files, and
+	<LI>Create a new access control database, copy the access control database to the new project database, or use the existing access control database.
+</UL>
+<P>Note that when you copy a project database, the public and private workspaces and workspace settings for the project database are not retained. </p>
+<P>Also note that the toolbar configuration file is copied to the new project database location.</P>
+<H2>Using the System Defaults</H2>
+<p>When you copy a project database, Version Manager:
+<UL>
+<LI>References the <i>original</i> project database's archives in the existing <A HREF="archivelocation.html">archive locations</a>. Copied subprojects will also reference their existing archive locations. When copying a project database that contains multiple subprojects, remember that the subprojects may have different archive locations. If you copy a project database and use the existing archive locations, the new project database will reference all of the different archive locations.<br><br>
+Note that any <i>new</i> archives added to the project database after it is copied will use the project database's archive location. The default is an archives directory of the project database location. <br><br>
+<LI>Uses the project databases's existing <A HREF="aboutconfigfiles.html">configuration files</a>. Copied subprojects will also use existing configuration files (if any).<br><br>
+<LI>Uses the project database's existing access control database. Copied subprojects will also use existing access control databases (if any).<br><br>
+</UL>
+<P>You can override any of these defaults when copying a project database using the procedure in <A HREF="copyprjdb.html">Copying Project Databases</A>.
+</P>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="aboutprjdb.html">About Project Databases</A></TD>
+		<TD><A HREF="copyprjdb.html">Copying Project Databases</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="copymatrix.html">Copy Matrix</A></TD>
+	</TR>
+
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

@@ -1,0 +1,555 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Using bco Options</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=4014>
+<meta name=layout-width content=702>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Working with the Application\nUsing the Bulk-Checkout Utility\nUsing bco Options");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Using bco Options</h1>
+
+<p class=Body>The following list shows the options that may be used with 
+ the Bulk Check-out utility. For the syntax, see <a href="checking_out_files_for_build.htm">Checking 
+ out Files for a Build</a>. </p>
+
+<h3 class=Body>-autoLogon </h3>
+
+<p class=Body>If a user name is not specified in the -p option, an attempt 
+ is made to logon using the user ID and password for the specified Server 
+ as stored by the Toolbar utility. This is available only on Windows operating 
+ systems.</p>
+
+<h3>-cfgd</h3>
+
+<p class=Body>Configures the view as of the specified date/time. Examples 
+ include:</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>&quot;12/29/01 10:52 
+ AM&quot;</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>&quot;December 29, 2001 
+ 10:52:00 AM PST&quot;</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>&quot;Monday, December 
+ 29, 2001 10:52:00 oclock AM PST&quot;</p></li>
+</ul>
+
+<h3>-cfgl</h3>
+
+<p class=Body>Configures the view using the specified label. Without -cfgl 
+ or -cfgp or -cfgd, the view’s current configuration is used.</p>
+
+<h3>-cfgp</h3>
+
+<p class=Body>Configures the view using the specified promotion state.</p>
+
+<h3>-cmp</h3>
+
+<p class=Body>Compresses all the data sent between the workstation and 
+ the server and decompresses it when it arrives. Without this option, no 
+ compression takes place.</p>
+
+<p class=Body>Compression is most useful and appropriate when the client 
+ and server communicate over a slow connection. To determine whether to 
+ use compression, a small test case may be helpful. You must consider whether 
+ the time spent compressing and uncompressing data is better than the longer 
+ transfer time of uncompressed data sent over the slow connection.</p>
+
+<h3>-csf</h3>
+
+<p class=Body>When the command maps the folder specified in the -p option 
+ to the underlying application folder, the use of -csf causes the command 
+ to differentiate application folders based on the case-sensitive spelling 
+ of their names. For example, with this option, application folders named 
+ doc and Doc are recognized as different folders. Without this option, 
+ either of these folders could be recognized as the &quot;doc'&quot; folder.</p>
+
+<p class=Body>The default is that application folders are not differentiated 
+ based on the case of letters in their names.</p>
+
+<p class=Body>This option has nothing to do with the case-sensitivity of 
+ file names.</p>
+
+<h3>-dryrun</h3>
+
+<p class=Body>Does not check out files, but displays a list of the files 
+ that would be checked-out if -dryrun were not specified.</p>
+
+<h3>-encrypt</h3>
+
+<p class=Body>Encrypts all the data sent between the workstation and the 
+ server and unencrypts it when it arrives. Without this option, no encryption 
+ takes place. Encryption protects files and other project information from 
+ being read by unauthorized parties over unsecured network lines (like 
+ the Internet).</p>
+
+<p class=Body>The full syntax is:</p>
+
+<p class=Body><span style="font-weight: bold;"><B>-encrypt</B></span> <span style="font-style: italic;"><I>encryptionType</I></span> 
+ </p>
+
+<p class=Body>The types of encryption are:</p>
+
+<p class=Body><span style="font-weight: bold;"><B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RC4 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</B></span>RSA 
+ R4 stream cipher (fast)</p>
+
+<p class=Body><span style="font-weight: bold;"><B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RC2_ECB 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</B></span>RSA 
+ R2 block cipher (Electronic Codebook)</p>
+
+<p class=Body><span style="font-weight: bold;"><B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RC2_CBC 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</B></span>RSA 
+ R2 block cipher (Cipher Block Chaining)</p>
+
+<p class=Body><span style="font-weight: bold;"><B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RC2_CFB</B></span> 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Windows 
+ platforms only) </p>
+
+<p class=Body><span style="font-weight: bold;"><B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</B></span>&nbsp;&nbsp;RSA 
+ R2 block cipher (Cipher Feedback)</p>
+
+<p class=Body>These encryption types are ordered from fastest to slowest. 
+ Each of the slower encryption types is safer than the one preceding it.</p>
+
+<h3>-eol</h3>
+
+<p class=Body><span style="font-weight: normal;">Can automatically convert 
+ end-of-line markers.</span></p>
+
+<p class=Body>When on, text files are transferred from the Server’s repository 
+ to the workstation’s working folder with the end-of-line convention for 
+ the platform executing the command as determined by the Java VM. When 
+ off, the default, no end-of-line conversion is performed. Using off is 
+ the same as not using -eol at all.</p>
+
+<p class=Body>When you specify the end-of-line character (cr, lf, or crlf), 
+ text files are transferred from the Server’s repository to the workstation’s 
+ working folder with the specified end-of-line convention.</p>
+
+<p class=Body>For Windows clients, the end-of-line marker is a carriage 
+ return/line feed (crlf) combination; for UNIX platforms, it is a line 
+ feed (lf); for MAC systems, a carriage return (cr).</p>
+
+<p class=Body>For example, you would set this option to on or lf when you 
+ compare a file from the repository with a working file on a UNIX system 
+ (if the repository stores text files as crlf).</p>
+
+<h3>files... </h3>
+
+<p class=Body>Specifies the files to be used in the command by name or 
+ by file name-pattern specification (such as &quot;*.c&quot;). All options 
+ are interpreted using the semantic conventions of UNIX instead of Windows 
+ because the UNIX conventions are more specific. This means that &quot;*&quot; 
+ (rather than &quot;*.*&quot;) means “all files.” The pattern &quot;*.*&quot; 
+ means “all files with file name extensions.” For example, “star*.*” finds 
+ starteam.doc and starteam.cpp but not starteam. To find all of these, 
+ you could use &quot;star*&quot;.</p>
+
+<p class=Body>Without this option, the default is &quot;*&quot;. When used, 
+ this option must always be the last option. Any options after it are ignored.</p>
+
+<p class=Body>If you use * rather than &quot;*&quot; to indicate all files, 
+ a UNIX shell expands it into a series of items and passes this series 
+ as a group of options to the bco command. This can cause problems, for 
+ example, when you are checking out missing files, so it is best to use 
+ &quot;*&quot; to avoid unwanted complications.</p>
+
+<p class=Body>If you use a set of file patterns, each pattern should be 
+ enclosed in its own set of quotation marks. For example, you can use &quot;*.bat&quot; 
+ &quot;*.c&quot;, but you cannot use &quot;*.bat *.c&quot;.</p>
+
+<p class=Body
+	&lt;b>We recommend that you enclose this option in quotation marks, 
+ regardless of platform, but for different reasons. On Windows platforms, 
+ file and folder names that contain spaces will not be interpreted correctly. 
+ On UNIX platforms, the shell will expand the option, then pass the list 
+ of items produced by the expansion to the client. Frequently, this produces 
+ unintended results. You can avoid both of these consequences by always 
+ enclosing this option in quotation marks. Only if it is essential that 
+ the option be expanded by the UNIX shell is it advisable to omit the quotation 
+ marks. Mysterious failures of batch scripts on either platform may be 
+ due to this omission. </p>
+
+<p class=Body>Several special characters can be used in the file specification:</p>
+
+<p class=Body
+	style="font-weight: bold;">*</p>
+
+<p class=Body>Matches any string including the empty string. For example, 
+ &quot;*&quot; matches any file name, with or without an extension. &quot;xyz*&quot; 
+ will match &quot;xyz&quot; and &quot;xyz.cpp&quot; and &quot;xyzutyfj&quot;.</p>
+
+<p class=Body
+	style="font-weight: bold;">?</p>
+
+<p class=Body>&nbsp;Matches 
+ any single character. For example, &quot;a?c&quot; will match &quot;abc&quot; 
+ but NOT &quot;ac&quot;</p>
+
+<p class=Body
+	style="font-weight: bold;">[...]</p>
+
+<p class=Body>Matches any one of the characters enclosed by the left and 
+ right brackets. </p>
+
+<p class=Body>A pair of characters separated by a hyphen (-) specifies 
+ a range of characters to be matched. </p>
+
+<p class=Body>If the first character following the right bracket ( [ ) 
+ is an exclamation point ( ! ) or a caret ( ^ ), the rest of the characters 
+ are not matched. Any character not enclosed in the brackets is matched. 
+ For example, &quot;x[a-d]y&quot; matches &quot;xby&quot; but not &quot;xey&quot;. 
+ &quot;x[!a-d]y&quot; matches &quot;xey&quot; but not &quot;xby&quot;.</p>
+
+<p class=Body>A hyphen (-) or right bracket ( ] ) may be matched by including 
+ it as the first or last character in the bracketed set.</p>
+
+<p class=Body>To use an asterisk (*), question mark (?), or left bracket 
+ ( [ ) in a pattern you must precede it with the escape character (which 
+ is the backslash \ ).</p>
+
+<h3>-filter</h3>
+
+<p class=Body>Specifies a string of one or more characters, each of which 
+ represents a file status. Never include spaces or other whitespace in 
+ this string. Only files that currently have the specified statuses will 
+ be checked out. You cannot check out files that are Not In View. </p>
+
+<p class=Body>The letters used to represent the statuses are:</p>
+
+<p class=Body>C &nbsp;&nbsp;&nbsp;Current 
+ </p>
+
+<p class=Body>M &nbsp;&nbsp;&nbsp;Modified</p>
+
+<p class=Body>G &nbsp;&nbsp;&nbsp;Merge 
+ </p>
+
+<p class=Body>O &nbsp;&nbsp;&nbsp;Out 
+ Of Date</p>
+
+<p class=Body>I &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Missing 
+ </p>
+
+<p class=Body>U &nbsp;&nbsp;&nbsp;&nbsp;Unknown</p>
+
+<p class=Body>If you use G, M, O, or U, you must also specify -o to force 
+ the check-out operation. Without -o, files with the statuses represented 
+ by G, M, O and U are skipped, but a warning is logged in the log file.</p>
+
+<h3>-fp </h3>
+
+<p class=Body>Overrides the specified folder’s working folder or working 
+ directory. This is equivalent to setting an alternate working path for 
+ the folder.</p>
+
+<p class=Body>While this enables you to use a different working folder 
+ than the one specified by the application folder, its critical importance 
+ is its use to provide cross-platform compatibility. For example, UNIX 
+ and Windows systems specify drive and directory path names in incompatible 
+ ways. Although the path &quot;D:\MYPRODUCT\DEVELOPMENT\SOURCE&quot; is 
+ understood on a Windows platform, it is not understood on a UNIX platform. 
+ Use this option to define the working path if your platform does not understand 
+ the path specified in the project.</p>
+
+<p class=Body>A backslash (\) is interpreted as an escape character when 
+ it precedes quotation marks. As a result, an error occurs in the following 
+ example:</p>
+
+<p class=Code>bco -p &quot;xxx&quot; -fp &quot;C:\&quot; &quot;*&quot;</p>
+
+<p class=Body>which is interpreted as:</p>
+
+<p class=Code>bco -p &quot;xxx&quot; -fp &quot;C:&quot; *&quot;</p>
+
+<p class=Body>To avoid a situation like this, escape the final character 
+ in &quot;C:\&quot; as follows:</p>
+
+<p class=Code>bco -p &quot;xxx&quot; -fp &quot;C:\\&quot; &quot;*&quot;</p>
+
+<p class=Body>Or avoid it as follows when the -fp path does not end with 
+ the root folder as in &quot;C:\orion\&quot;:</p>
+
+<p class=Code>bco -p &quot;xxx&quot; -fp &quot;C:\orion&quot; &quot;*&quot;</p>
+
+<p class=Body>The full syntax is:</p>
+
+<p class=Body><span style="font-weight: bold;"><B>-fp</B></span> &quot;f<span 
+ style="font-style: italic;"><I>olderPath</I></span>&quot;</p>
+
+<p class=Body>Folder is the Windows term and appears in the user interface. 
+ Directory is the correct term for the UNIX platform.</p>
+
+<h3>-fs</h3>
+
+<p class=Body>Prevents file statuses from being remembered after the check-out 
+ occurs. Subsequent status values for these files will be incorrect and 
+ indeterminate. Use this option where a file’s status is irrelevant. For 
+ example, if you routinely delete the working folders before checking out 
+ files for a build, there are no files and their statuses do not matter.</p>
+
+<p class=Body>Be aware that the file statuses may never be known—even if 
+ you use the update-status command later. You can do a force check out 
+ without the -fs option to obtain current files with correct statuses.</p>
+
+<h3>-h</h3>
+
+<h3>-help</h3>
+
+<p class=Body>Displays information about the options.</p>
+
+<h3>-is</h3>
+
+<p class=Body>Applies the command to recursively to all child folders. 
+ Without this option, the command applies only to the specified folder.</p>
+
+<h3>-netmon</h3>
+
+<p class=Body>Outputs SDK NetMonitor information to the console window.&amp;&amp;&amp;</p>
+
+<h3>-o</h3>
+
+<p class=Body>Forces the check-out of files whose status would normally 
+ not allow them to be checked out. Those statuses are Modified, Merge, 
+ or Unknown.</p>
+
+<h3>-p</h3>
+
+<p class=Body>Indicates what view or folder is to be used, as well a providing 
+ the user name and password needed to access the server.</p>
+
+<p class=Body>The full syntax is: </p>
+
+<p class=Body><span style="font-weight: bold;"><B>-p</B></span> &quot;<span style="font-style: italic;"><I>userName:password@hostName:portNumber/</I></span></p>
+
+<p class=Body><span style="font-style: italic;"><I>projectName/[viewName/][folderHierarchy/</I></span>]&quot;</p>
+
+<p class=Body>For example:</p>
+
+<p class=Body>-p &quot;JMarsh:password@orion:49201/StarDraw/StarDraw/SourceCode/&quot;</p>
+
+<p class=Body>If the user name is omitted, the current user name is used.</p>
+
+<p class=Body>If the password is omitted, the user is prompted to enter 
+ the password. When the user types a password, the characters are not displayed 
+ on the screen. </p>
+
+<p class=Body>If the host name is omitted, the default is localhost.</p>
+
+<p class=Body>The port number is required. The default port number, 49201, 
+ is used in the example.</p>
+
+<p class=Body>The project name is always required. The project name in 
+ the example is StarDraw.</p>
+
+<p class=Body>Use a view hierarchy to identify the view. Use the colon 
+ (:) as a delimiter between view names. The view hierarchy should always 
+ include the root view. For example, &quot;StarDraw:Release 4:Service Packs&quot; 
+ indicates that the view to be used is the Service Packs view, which is 
+ a child of the Release 4 view and a grandchild of the StarDraw root view. 
+ If the view name is omitted, the root (default) view is used. If the view 
+ is the only view in that project with that name, you can use only the 
+ view name. (This is not recommended because another view with that name 
+ could be created at a later date and cause confusion.) The view name in 
+ the example is StarDraw. Because this is the root view of the StarDraw 
+ project, it could have been omitted.</p>
+
+<p class=Body>Use a folder hierarchy to identify the folder. Use the forward 
+ slash (/) as a delimiter between folder names. The folder hierarchy<span 
+ style="font-weight: bold;"><B> never</B></span> includes the root folder. Omit 
+ the folder hierarchy if the file is in the view’s root folder. For example, 
+ if the root folder of the view is StarDraw and the hierarchy to your files 
+ is &quot;StarDraw/SourceCode/Client&quot;, use only &quot;SourceCode/Client&quot;.</p>
+
+<p class=Body>If any of the variables used with this option, for example, 
+ user names or view names, contain characters that are used as delimiters, 
+ please use the percent sign (%) followed by the hex code for each of those 
+ characters. For example, if &quot;@&quot; appears as a character in a 
+ password, you must replace it with &quot;%40&quot;.</p>
+
+<p class=Body>For &quot;:&quot;, use &quot;%3a&quot;.</p>
+
+<p class=Body>For &quot;/&quot;, use &quot;%2f&quot;.</p>
+
+<p class=Body>For &quot;@&quot;, use &quot;%40&quot;.</p>
+
+<p class=Body>For &quot;%&quot;, use &quot;%25</p>
+
+<p class=Body>In UNIX and other operating systems, some special characters 
+ must be preceded by a backslash &quot;\&quot; or another escape character. 
+ In the -p option, you can replace such characters with hex codes. For 
+ example, &quot;%3c&quot; could be &nbsp;used 
+ in UNIX instead of &quot;\&lt;&quot;.</p>
+
+<p class=Body>For a space, use &quot;%20&quot;.</p>
+
+<p class=Body>For &quot;&lt;&quot;, use &quot;%3c&quot;.</p>
+
+<p class=Body>For &quot;&gt;&quot;, use &quot;%3e&quot;.</p>
+
+<h3>-pwdfile</h3>
+
+<p class=Body>Specifies the path to a file that stores the user’s password. 
+ This option overrides the password used as part of the -p option. It prevents 
+ others from seeing the user’s password on the command line. It must be 
+ saved in UTF-8 format.</p>
+
+<p class=Body>The full syntax is:</p>
+
+<p class=Body><span style="font-weight: bold;"><B>-pwdfile</B></span> &quot;<span 
+ style="font-style: italic;"><I>filePath</I></span>&quot;</p>
+
+<p class=Body>The password file should consist only of the password. Leading 
+ and trailing whitespace is ignored.</p>
+
+<h3>-ro</h3>
+
+<p class=Body>Makes the working file read-only after this operation. Without 
+ this option, the file remains as it was prior to the operation. Usually, 
+ you use -ro to prevent yourself from editing a file that is not locked 
+ by you. Without -ro, the files are read/write.</p>
+
+<h3>-rp</h3>
+
+<p class=Body>Specifies or overrides the working folder or working directory 
+ for the view’s root folder. This is equivalent to setting an alternate 
+ working path for the view. See also -fp.</p>
+
+<p class=Body>The full syntax is:</p>
+
+<p class=Body><span style="font-weight: bold;"><B>-rp</B></span> &quot;<span style="font-style: italic;"><I>folderPath</I></span>&quot;</p>
+
+<h3>-t</h3>
+
+<p class=Body>Displays check-out volume and timing statistics.</p>
+
+<h3>-ts</h3>
+
+<p class=Body>Sets each working file’s time stamp to the check-out time. 
+ Without this option, the file is given the same time stamp as the checked-in 
+ revision of the file.</p>
+
+<h3>-useCA</h3>
+
+<p class=Body>Attempts to check-out files using a StarTeamMPX Cache Agent. 
+ </p>
+
+<p class=Body>The full syntax is:</p>
+
+<p class=Body><span style="font-weight: bold;"><B>-useca</B></span> <span style="font-style: italic;"><I>hostName:portNumber</I></span> 
+ | <span style="font-weight: bold;"><B>autolocate</B></span></p>
+
+<p class=Body>If you specify the host name (or IP address) and port number 
+ of the Cache Agent to be used, you do not have to have the Server MPX-enabled 
+ at the time of you run the BCO utility.</p>
+
+<p class=Body>If you use autolocate instead of specifying the host name 
+ and port number, the utility can automatically locate the network-nearest 
+ Cache Agent, but only if the server is MPX-enabled.</p>
+
+<h3>-vb </h3>
+
+<p class=Body>Output is verbose. Displays each file as it is checked-out.</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

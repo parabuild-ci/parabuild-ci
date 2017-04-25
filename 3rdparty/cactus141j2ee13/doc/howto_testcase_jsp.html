@@ -1,0 +1,720 @@
+<HTML><HEAD><TITLE>JspTestCase Principles</TITLE></HEAD><BODY alink="#023264" bgcolor="#ffffff" leftmargin="4" link="#525D76" marginheight="4" marginwidth="4" text="#000000" topmargin="4" vlink="#023264"><TABLE border="0" cellpadding="0" cellspacing="0" width="100%"><TR><TD align="left" valign="top"><A href="http://jakarta.apache.org/index.html"><IMG border="0" hspace="0" src="./images/jakarta-logo.gif" vspace="0"></A></TD><TD align="left" bgcolor="#ffffff" valign="middle" width="100%"><IMG align="right" alt="JspTestCase Principles" border="0" hspace="0" src=".//images/logocactus.gif" vspace="0"></TD></TR><TR><TD colspan="2" height="2" width="100%"><HR noshade="" size="1"></TD></TR></TABLE><TABLE border="0" cellpadding="0" cellspacing="0" width="100%"><TR><TD valign="top" width="1%"></TD><TD nowrap="1" valign="top" width="14%"><FONT size="-2">
+              Last update : August 31 2002</FONT><BR><FONT size="-2">
+              Doc for : v1.4.1</FONT><BR><FONT face="arial,helvetica,sanserif">
+
+  <BR><FONT color="#000000" size="+1">About</FONT><BR><FONT size="-1">
+    <LI><A href="./index.html"><FONT size="-1">What is Cactus ?</FONT></A></LI>
+    <LI><A href="./news.html"><FONT size="-1">News</FONT></A></LI>
+    <LI><A href="./changes.html"><FONT size="-1">Changes</FONT></A></LI>
+    <LI><A href="./features.html"><FONT size="-1">Features/Status</FONT></A></LI>
+    <LI><A href="./goals.html"><FONT size="-1">Goals</FONT></A></LI>
+    <LI><A href="./todo.html"><FONT size="-1">Roadmap/Todo</FONT></A></LI>
+    <LI><A href="./contributors.html"><FONT size="-1">Contributors</FONT></A></LI>
+    <LI><A href="./contributing.html"><FONT size="-1">Contributing</FONT></A></LI>
+    <LI><A href="./users.html"><FONT size="-1">Cactus Users</FONT></A></LI>
+    <LI><A href="./testedon.html"><FONT size="-1">Tested on ...</FONT></A></LI>
+    <LI><A href="./license.html"><FONT size="-1">License</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Downloads</FONT><BR><FONT size="-1">
+    <LI><A href="./downloads.html"><FONT size="-1">Downloads</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Documentation</FONT><BR><FONT size="-1">
+    <LI><A href="./how_it_works.html"><FONT size="-1">How it works ?</FONT></A></LI>
+    
+    <LI><A href="./getting_started.html"><FONT size="-1">Getting Started</FONT></A></LI>
+    <LI><A href="./mockobjects.html"><FONT size="-1">Mock vs Container</FONT></A></LI>
+    <LI><A href="./javadoc.html"><FONT size="-1">Javadocs</FONT></A></LI>
+    
+    
+    <LI><A href="./faq.html"><FONT size="-1">FAQ</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Howto Guides</FONT><BR><FONT size="-1">
+    <LI><A href="./howto_classpath.html"><FONT size="-1">Classpath Howto</FONT></A></LI>
+    <LI><A href="./howto_config.html"><FONT size="-1">Config Howto</FONT></A></LI>
+    <LI><A href="./howto_migration.html"><FONT size="-1">Migration Howto</FONT></A></LI>
+
+    
+    <LI><A href="./howto_testcase.html"><FONT size="-1">TestCase Howto</FONT></A></LI>
+    
+    
+    
+
+    <LI><A href="./howto_jsp.html"><FONT size="-1">Jsp Howto</FONT></A></LI>
+    <LI><A href="./howto_runner.html"><FONT size="-1">Runner Howto</FONT></A></LI>
+    <LI><A href="./howto_security.html"><FONT size="-1">Security Howto</FONT></A></LI>
+
+    
+    <LI><A href="./howto_ant.html"><FONT size="-1">Ant Howto</FONT></A></LI>
+    
+    
+    
+
+    <LI><A href="./howto_httpunit.html"><FONT size="-1">HttpUnit Howto</FONT></A></LI>
+    <LI><A href="./howto_sample.html"><FONT size="-1">Sample Howto</FONT></A></LI>
+
+    
+    <LI><A href="./howto_ejb.html"><FONT size="-1">EJB Howto</FONT></A></LI>
+    
+
+    
+    <LI><A href="./howto_ide.html"><FONT size="-1">IDE Howto</FONT></A></LI>
+    
+    
+    
+    
+
+    <LI><A href="./howto_tomcat.html"><FONT size="-1">Tomcat Howto</FONT></A></LI>
+
+    <LI><A href="./howto_junitee.html"><FONT size="-1">JUnitEE Howto</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Support</FONT><BR><FONT size="-1">
+    <LI><FONT size="-1"><A href="http://jakarta.apache.org/site/bugs.html" target="">Bug database</A></FONT></LI>
+    <LI><A href="./mailinglist.html"><FONT size="-1">Mailing list</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Misc.</FONT><BR><FONT size="-1">
+    <LI><A href="./cactusname.html"><FONT size="-1">Why the name ?</FONT></A></LI>
+    <LI><A href="./logos.html"><FONT size="-1">Logo Challenge</FONT></A></LI>
+    <LI><A href="./resources.html"><FONT size="-1">Resources</FONT></A></LI>
+    <LI><A href="./coverage.html"><FONT size="-1">Test Coverage</FONT></A></LI>
+    
+    
+    
+    <LI><FONT size="-1"><A href="http://jakarta.apache.org/cactus/stats/index.html" target="">Stats</A></FONT></LI>
+    
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Developers</FONT><BR><FONT size="-1">
+    <LI><FONT size="-1"><A href="http://jakarta.apache.org/site/cvsindex.html" target="">CVS</A></FONT></LI>
+    <LI><A href="./coding_conventions.html"><FONT size="-1">Coding Conventions</FONT></A></LI>
+    <LI><A href="./build_result.html"><FONT size="-1">Build results</FONT></A></LI>
+    <LI><A href="./release_checklist.html"><FONT size="-1">Release Checklist</FONT></A></LI>
+  </FONT><BR>
+
+</FONT></TD><TD align="left" valign="top" width="*"><TABLE border="0" cellpadding="3" cellspacing="0"><TR><TD><BR>
+  
+
+  
+
+    <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>When to use ?</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+      <P align="justify">
+        Your test case class should extend <CODE><FONT face="courier, monospaced">JspTestCase</FONT></CODE>
+        whenever you are unit testing :
+      </P>
+      <BLOCKQUOTE><UL>
+        <LI>
+          Custom tags,
+        </LI>
+        <LI>
+          Any java code that uses JSP API objects
+          (<CODE><FONT face="courier, monospaced">PageContext</FONT></CODE>, ...)
+        </LI>
+      </UL></BLOCKQUOTE>
+      <P align="justify">
+        This tutorial focuses on testing custom tags, as they are the principal
+        code which uses the JSP API objects. Future versions of this tutorial
+        will expand upon testing actual JSPs.
+      </P>
+    </FONT></TD></TR></TABLE></DIV><BR>
+
+    <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>Overview of Tag Library Testing</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+        <P align="justify">
+            Custom tags consist of entries in a Tag Library Descriptor file 
+            (TLD) and a tag handler class. Cactus provides the facility to test 
+            both aspects of a custom tag. However, since the TLD contains no 
+            logic, you will use Cactus primarily to test the tag handler class.
+        </P>
+        <P align="justify">
+            To test the tag handler class, use the implicit objects provided by
+            JspTestCase to set up the initial state for the test. Then create 
+            and initialize your custom tag using the <CODE><FONT face="courier, monospaced">pageContext</FONT></CODE>
+            implicit
+            object. After setting up the tag, call the lifecycle methods 
+            implemented by your tag in the correct order and verify that the 
+            methods return the expected results. The tag's output can be 
+            inspected in the <CODE><FONT face="courier, monospaced">endXXX()</FONT></CODE> method.
+        </P>
+        <P align="justify">
+            For an additional degree of integration testing, you can create a
+            JSP that exercises your custom tag and call it from within a regular
+            Cactus test case. See the section on <A href="#further_integration">Further Integration Testing</A> 
+            for details.
+        </P>
+    </FONT></TD></TR></TABLE></DIV><BR>
+
+    <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>Provided Implicit Objects</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+      <P align="justify">
+        Cactus automatically initializes the following implicit objects.
+        They are made available to your <CODE><FONT face="courier, monospaced">setUp()</FONT></CODE>,
+        <CODE><FONT face="courier, monospaced">testXXX()</FONT></CODE> and <CODE><FONT face="courier, monospaced">tearDown()</FONT></CODE> methods as
+        instance variables of the <CODE><FONT face="courier, monospaced">JspTestCase</FONT></CODE> class (and thus
+        as instance variables of your test case class).
+      </P>
+      <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+        See the <A href="how_it_works.html">How it
+        works</A> guide for details on how Cactus initializes these objects.
+      </I></FONT></TD></TR></TABLE></P>
+
+      <P align="justify">
+        The provided implicit objects are :
+      </P>
+
+      <A name="jsp_request"><!--anchor--></A>
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>request</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+         See <CODE><FONT face="courier, monospaced">ServletTestCase</FONT></CODE><CODE><FONT face="courier, monospaced">
+         <A href="howto_testcase_servlet.html#servlet_request">request
+         </A></FONT></CODE> implicit object for documentation.
+       </P>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <A name="jsp_response"><!--anchor--></A>
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>response</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+         See <CODE><FONT face="courier, monospaced">ServletTestCase</FONT></CODE><CODE><FONT face="courier, monospaced">
+         <A href="howto_testcase_servlet.html#servlet_response">response
+         </A></FONT></CODE> implicit object for documentation.
+        </P>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <A name="jsp_config"><!--anchor--></A>
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>config</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+         See <CODE><FONT face="courier, monospaced">ServletTestCase</FONT></CODE><CODE><FONT face="courier, monospaced">
+         <A href="howto_testcase_servlet.html#servlet_config">config
+         </A></FONT></CODE> implicit object for documentation.
+        </P>
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <A name="jsp_session"><!--anchor--></A>
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>session</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+         See <CODE><FONT face="courier, monospaced">ServletTestCase</FONT></CODE><CODE><FONT face="courier, monospaced">
+         <A href="howto_testcase_servlet.html#servlet_session">session
+         </A></FONT></CODE> implicit object for documentation.
+        </P>
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <A name="jsp_out"><!--anchor--></A>
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>out</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <TABLE border="0" cellpadding="2" cellspacing="2" width="100%"><CAPTION></CAPTION>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Instance variable name
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <B><CODE><FONT face="courier, monospaced">out</FONT></CODE></B>
+            &nbsp;
+          </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Class name
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <CODE><FONT face="courier, monospaced">public javax.servlet.jsp.JspWriter</FONT></CODE>
+            &nbsp;
+          </FONT></TD>
+          </TR>
+        </TABLE>
+
+        <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+          Cactus does not wrap the out object.
+        </I></FONT></TD></TR></TABLE></P>
+        <P align="justify">
+         You can use this object to write data to the response, thereby
+         simulating the body of a tag (if the tag does not modify its body). If
+         the tag <B>does</B> modify its body, then you will need to 
+         generate a BodyContent object before writing out the simualted body.
+         See <A href="#body_content"><CODE><FONT face="courier, monospaced">bodyContent</FONT></CODE></A> for
+         details.
+        </P>
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <A name="jsp_pageContext"><!--anchor--></A>
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>pageContext</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <TABLE border="0" cellpadding="2" cellspacing="2" width="100%"><CAPTION></CAPTION>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Instance variable name
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <B><CODE><FONT face="courier, monospaced">pageContext</FONT></CODE></B>
+            &nbsp;
+          </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Class name
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <CODE><FONT face="courier, monospaced">org.apache.cactus.server.PageContextWrapper
+              </FONT></CODE>, which inherits from
+              <CODE><FONT face="courier, monospaced">javax.servlet.jsp.PageContext</FONT></CODE>
+            &nbsp;
+          </FONT></TD>
+          </TR>
+        </TABLE>
+
+        <P align="justify">
+          Custom tags rely exclusively on the <CODE><FONT face="courier, monospaced">pageContext</FONT></CODE> object to
+          provide information about the enclosing JSP. Therefore this is the 
+          most important implicit object for testing custom tags. Cactus 
+          provides a very thin wrapper that ensures that all of the objects that 
+          <CODE><FONT face="courier, monospaced">pageContext</FONT></CODE> returns (such as the <CODE><FONT face="courier, monospaced">ServletRequest
+          </FONT></CODE> from <CODE><FONT face="courier, monospaced">pageContext.getRequest()</FONT></CODE>) are the correctly
+          wrapped versions available in the other implicit variables.
+        </P>
+        <P align="justify">
+          See the javadoc for
+          <CODE><FONT face="courier, monospaced">org.apache.cactus.server.PageContextWrapper</FONT></CODE>
+          for more details. You should also look at the
+          samples provided in the Cactus distribution.
+        </P>
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+
+    <A name="jsp_bodyContent"><!--anchor--></A>
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>bodyContent</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <TABLE border="0" cellpadding="2" cellspacing="2" width="100%"><CAPTION></CAPTION>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Instance variable name
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <B><CODE><FONT face="courier, monospaced">bodyContent</FONT></CODE></B>
+            &nbsp;
+          </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Class name
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <CODE><FONT face="courier, monospaced">javax.servlet.jsp.tagext.BodyContent</FONT></CODE>
+            &nbsp;
+          </FONT></TD>
+          </TR>
+        </TABLE>
+
+        <P align="justify">
+          JspTestCase does not actually provide a <CODE><FONT face="courier, monospaced">bodyContent</FONT></CODE> 
+          implicit object for use with <CODE><FONT face="courier, monospaced">BodyTags</FONT></CODE>. However, obtaining
+          one is so easy that it deserves mention here. Calling <CODE><FONT face="courier, monospaced">
+          pageContext.pushBody()</FONT></CODE> returns an object of type <CODE><FONT face="courier, monospaced">
+          javax.servlet.jsp.tagext.BodyContent</FONT></CODE> (which inherits from 
+          <CODE><FONT face="courier, monospaced">JspWriter</FONT></CODE>). This call also changes the value of the 
+          &quot;out&quot; variable stored in page scope (and thus the value of 
+          <CODE><FONT face="courier, monospaced">pageContext.getOut()</FONT></CODE>). To put test content into the 
+          <CODE><FONT face="courier, monospaced">bodyContent</FONT></CODE> object, simply use its writer methods. To
+          quote Sun's API reference on the matter: &quot;Note that the content of
+          BodyContent is the result of evaluation, so it will not contain
+          actions and the like, but the result of their invocation.&quot; 
+          See <A href="#using_body_content">Body Tags</A> 
+          for more information.
+        </P>
+            <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+                It's important to balance 
+                calls to <CODE><FONT face="courier, monospaced">pushBody()</FONT></CODE> with calls to 
+                <CODE><FONT face="courier, monospaced">popBody()</FONT></CODE>--otherwise many servlet engines will not
+                output the tag's body. The easiest way to accomplish this is to
+                call pushBody in <CODE><FONT face="courier, monospaced">setUp()</FONT></CODE> and <CODE><FONT face="courier, monospaced">popBody()</FONT></CODE>
+                in <CODE><FONT face="courier, monospaced">tearDown()</FONT></CODE>.
+            </I></FONT></TD></TR></TABLE></P>
+        
+      </FONT></TD></TR></TABLE></DIV><BR>
+    </FONT></TD></TR></TABLE></DIV><BR>
+
+    <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>Custom Tag Set Up</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+        <P align="justify">
+            Creating the test fixture for a custom tag test involves several 
+            steps. The exact order of the steps can vary depending on the 
+            needs of the test. For instance, placing the test data in the 
+            correct scope would probably happen before a real JSP began its
+            execution. You can emulate this, or choose to do it after the 
+            tag has been in initialized (as described below). In most cases 
+            you can determine the exact order of the steps based on what 
+            is most convenient for a given test (some steps may be specific 
+            to only one test in the <CODE><FONT face="courier, monospaced">TestCase</FONT></CODE> and so should 
+            be executed after common <CODE><FONT face="courier, monospaced">setUp()</FONT></CODE> code).
+        </P>
+        <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>Step 1: Create the Tag (Required)</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+            <P align="justify">
+                Instantiate a copy of the tag you wish to test.
+            </P>
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>SomeTag tag = new SomeTag();</PRE></TD></TR></TABLE></DIV>
+        </FONT></TD></TR></TABLE></DIV><BR>
+
+        <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>Step 2: Set the pageContext (Optional)</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+            <P align="justify">
+                Call the <CODE><FONT face="courier, monospaced">setPageContext()</FONT></CODE> method with the implicit
+                object provided by Cactus to register the pageContext with the
+                tag.
+            </P>
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>tag.setPageContext(pageContext);</PRE></TD></TR></TABLE></DIV>
+        </FONT></TD></TR></TABLE></DIV><BR>
+
+        <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>Step 3: Set the tag's attributes (Optional)</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+            <P align="justify">
+                If your tag takes attributes, call setter methods to initialize
+                the tag's state. Setters on the tag handler class represent the 
+                attributes of custom tags. Thus to emulate this JSP fragment:
+            </P>
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>&lt;someTag foo=&quot;10&quot; bar=&quot;11&quot;/&gt;</PRE></TD></TR></TABLE></DIV>
+            <P align="justify">
+                You would need to use the following:
+            </P>
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+someTag.setFoo(&quot;10&quot;);
+someTag.setBar(&quot;11&quot;);
+</PRE></TD></TR></TABLE></DIV>
+
+        </FONT></TD></TR></TABLE></DIV><BR>
+
+        <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>Step 4: Set the parent tag (Optional)</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+            <P align="justify">
+                If you would like the tag you are testing to access a parent 
+                tag, you will need to call 
+            </P>
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>tag.setParent(enclosingTag);</PRE></TD></TR></TABLE></DIV>
+            <P align="justify">
+                This will allow tag to successfully call <CODE><FONT face="courier, monospaced">getParent</FONT></CODE>
+                and <CODE><FONT face="courier, monospaced">TagSupport.findAncestorWithClass()</FONT></CODE>. Of course 
+                <CODE><FONT face="courier, monospaced">enclosingTag</FONT></CODE> will have to be instantiated and 
+                set up as well, including another call to 
+                <CODE><FONT face="courier, monospaced">setParent()</FONT></CODE> if you would like to simulate multiple
+                levels of nesting.
+            </P>
+        </FONT></TD></TR></TABLE></DIV><BR>
+    
+
+        <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>Step 5: Create the BodyContent Object (Optional)</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+            <P align="justify">
+                If your tag processes its body, call 
+                <CODE><FONT face="courier, monospaced">pageContext.pushBody()</FONT></CODE> 
+                to obtain a <CODE><FONT face="courier, monospaced">BodyContent</FONT></CODE>. If you employ this step,
+                be sure to also include a call to 
+                <CODE><FONT face="courier, monospaced">pageContext.popBody()</FONT></CODE> after the tag finishes 
+                execution. See the 
+                <A href="#using_body_content">Body Tags</A> section
+                for more details.
+            </P>
+        </FONT></TD></TR></TABLE></DIV><BR>
+
+
+        <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>Step 6: Set up page state (Optional)</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+            <P align="justify">
+                Set up any necessary page state by putting test objects into the
+                appropriate scopes. Tags frequently access data in the 
+                session, the request, or the page. If your tag operates on data 
+                contained in any of these (or in the application scope), be sure
+                to set up this part of the test fixture. Objects can be placed 
+                in these scopes by using the implicit objects provided by Cactus
+                directly, or by accessing them indirectly through the 
+                <CODE><FONT face="courier, monospaced">pageContext</FONT></CODE> object.
+            </P>
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+request.setAttribute(&quot;key&quot;, new DomainObject(&quot;testValue&quot;));
+//or
+pageContext.setAttribute(&quot;key&quot;, new DomainObject(&quot;testValue&quot;), PageContext.REQUEST_SCOPE);
+</PRE></TD></TR></TABLE></DIV>
+        </FONT></TD></TR></TABLE></DIV><BR>
+    </FONT></TD></TR></TABLE></DIV><BR>
+
+    <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>Running the Test</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+        <P align="justify">
+            Once the tag has been set up and any necessary page data has been 
+            placed in the appropriate scopes, testing a custom tag consists of 
+            calling the relevant life-cycle methods and then using JUnit 
+            asserts to verify the outcome.
+        </P>
+        <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>Verifying individual methods</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+            <P align="justify">
+                Most of the life cycle methods return <CODE><FONT face="courier, monospaced">ints</FONT></CODE>, 
+                which signal that 
+                the container should take a certain action after the method. 
+                For instance, the constant <CODE><FONT face="courier, monospaced">EVAL_BODY_INCLUDE</FONT></CODE> 
+                returned from <CODE><FONT face="courier, monospaced">doStartTag()</FONT></CODE> tells the container to 
+                include the tag's body in the JSP's output response. So a tag 
+                which conditionally includes its body based on the value of one 
+                of its attributes might be verified like this:
+            </P>
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+tag.setValueThatResultsInInclude(&quot;correct value&quot;);
+assertEquals(Tag.EVAL_BODY_INCLUDE, tag.doStartTag());
+</PRE></TD></TR></TABLE></DIV>
+        </FONT></TD></TR></TABLE></DIV><BR>
+        <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>Checking effects on page data</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+            <P align="justify">
+            In addition to &quot;listening&quot; for the signals that your tag sends to 
+            the container, you may want to verify that the tag's execution 
+            has the appropriate effects upon the page data. Use 
+            <CODE><FONT face="courier, monospaced">JspTestCase's</FONT></CODE> implicit objects to verify that the 
+            tag has correctly modified the information. The following 
+            snippet verifies that the <CODE><FONT face="courier, monospaced">CatalogListTag</FONT></CODE> has placed a 
+            collection of objects in the request under the key &quot;catalogs&quot;:
+            </P>
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+catalogListTag.doStartTag();
+Collection catalogs = (Collection)request.getAttribute(&quot;catalogs&quot;);
+assertNotNull(catalogs);
+</PRE></TD></TR></TABLE></DIV>
+        </FONT></TD></TR></TABLE></DIV><BR>
+        
+        <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>Verifying tag output</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+            <P align="justify">
+                Use the <CODE><FONT face="courier, monospaced">endXXX</FONT></CODE> method to verify that your tag's 
+                methods have resulted in the correct data being written 
+                to the response.
+            </P>
+            <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+                    This example uses the <CODE><FONT face="courier, monospaced">endXXX()</FONT></CODE> 
+                    signature from Cactus 1.2 or above.
+            </I></FONT></TD></TR></TABLE></P>
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+public void endSomeTagTest (WebResponse response)
+{
+    String output = response.getText();
+    assertEquals(&quot;&lt;b&gt;expected output&lt;/b&gt;&quot;, output);
+}
+</PRE></TD></TR></TABLE></DIV>
+        </FONT></TD></TR></TABLE></DIV><BR>
+
+    </FONT></TD></TR></TABLE></DIV><BR>
+
+    <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>Special Cases</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+        <P align="justify">
+            There are a few scenarios in custom tag testing that deserve extra
+            attention.
+        </P>
+        <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>Iteration Tags</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+            <P align="justify">
+                To test a tag that repeats its body processing a number of 
+                times, simply create a <CODE><FONT face="courier, monospaced">do-while</FONT></CODE> loop that mimics  
+                the life cycle of an iteration tag:
+            </P>
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+//[...tag set up and early life cycle methods omitted...]
+
+int count = 0;
+do
+{
+    count++;
+
+} while (tag.doAfterBody() == tag.EVAL_BODY_AGAIN);
+
+tag.doEndTag();
+
+//based on setUp we expect 9 repetitions
+assertEquals(9, count);
+</PRE></TD></TR></TABLE></DIV>
+            <P align="justify">
+                You can use a count variable (such as the one illustrated 
+                in the example) to check whether the tag's body was processed 
+                the expected number of times.
+            </P>
+        </FONT></TD></TR></TABLE></DIV><BR>
+        <A name="using_body_content"><!--anchor--></A>
+        <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>Body Tags</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+            <P align="justify">
+                Unless specified otherwise by the deployment descriptor, all 
+                tags can include a body, which can in turn include other tags 
+                or scriptlet expressions. These are automatically evaluated at 
+                run time, and the content of the body is simply written out 
+                if the tag signals it should be (with 
+                <CODE><FONT face="courier, monospaced">EVAL_BODY_INCLUDE </FONT></CODE> for instance). Nothing special 
+                is required to test this sort of tag, since the tag is 
+                unconcerned about its contents.
+            </P>
+            <P align="justify">
+                Testing BodyTags--tags which actually perform some processing
+                on their content--is a little trickier.
+                BodyTags can choose to return a constant (
+                <CODE><FONT face="courier, monospaced">EVAL_BODY_TAG</FONT></CODE> in JSP 1.1, 
+                <CODE><FONT face="courier, monospaced">EVAL_BODY_BUFFERED</FONT></CODE> in 1.2)  from 
+                <CODE><FONT face="courier, monospaced">doStartTag()</FONT></CODE> which signals to the container that 
+                the tag would like a chance to handle its own body. 
+                If it receives this result, the container calls 
+                <CODE><FONT face="courier, monospaced">pageContext.pushBody()</FONT></CODE> to obtain a 
+                <CODE><FONT face="courier, monospaced">BodyContent</FONT></CODE>object. The <CODE><FONT face="courier, monospaced">BodyContent</FONT></CODE> 
+                object is passed to the tag through the tag's 
+                <CODE><FONT face="courier, monospaced">setBodyContent()</FONT></CODE>method. The container then uses 
+                this object (the old out object is saved) to capture all of the 
+                response writing that goes on in the body of the tag. After the 
+                tag's body has been evaluated, the tag itself has a chance to 
+                do something with the result of the evaluation in it's 
+                <CODE><FONT face="courier, monospaced">doAfterBody()</FONT></CODE> method. After the tag has completed 
+                its execution, the container restores the old out object with
+                a call to <CODE><FONT face="courier, monospaced">pageContext.popBody()</FONT></CODE>.
+            </P>
+            <P align="justify">
+                To test body tags, your test must replicate this somewhat   
+                complicated lifecycle. The following code covers all of the 
+                steps as they might appear in a typical test:
+            </P>
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+//standard set up
+YourTag tag = new YourTag();
+tag.setPageContext(this.pageContext);
+tag.doStartTag();
+
+//obtain the bodyContent object--presumably doStartTag has returned 
+//EVAL_BODY_TAG or EVAL_BODY_BUFFERED.
+BodyContent bodyContent = this.pageContext.pushBody();
+this.tag.setBodyContent(bodyContent);
+this.tag.doInitBody();
+
+
+//write some &quot;output&quot; into the bodyContent so that endXXX can test for it.
+bodyContent.println(&quot;Some content&quot;);
+bodyContent.print(&quot;Some evaluated content &quot; + (5 + 9));
+
+//actually handles the processing of the body
+tag.doAfterBody();
+
+//after the body processing completes
+tag.doEndTag();
+
+//finally call popBody
+this.pageContext.popBody();
+
+</PRE></TD></TR></TABLE></DIV>
+            <P align="justify">
+                This sample does not fully replicate the container's handling of
+                the tag (for instance, the tag would only receive the 
+                <CODE><FONT face="courier, monospaced">bodyContent</FONT></CODE> object if the result of 
+                <CODE><FONT face="courier, monospaced">doStartTag</FONT></CODE> indicated that it should do so). 
+                However, in a test environment, you can make assumptions if 
+                doing so simplifies the workings of the test.
+            </P>
+            <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+                Again, you can check that the body of the tag was handled
+                correctly by verifying the total output in the 
+                <CODE><FONT face="courier, monospaced">endXXX()</FONT></CODE> method.
+            </I></FONT></TD></TR></TABLE></P>
+        </FONT></TD></TR></TABLE></DIV><BR>
+        <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>TagExtraInfo classes</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+            <P align="justify">
+                Cactus does not offer any specific services to support the 
+                testing of <CODE><FONT face="courier, monospaced">TagExtraInfo</FONT></CODE> classes because they do 
+                not depend on any of the implicit objects.
+            </P>
+        </FONT></TD></TR></TABLE></DIV><BR>
+    </FONT></TD></TR></TABLE></DIV><BR>
+
+    <A name="further_integration"><!--anchor--></A>
+    <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>Further Integration Testing</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+        <P align="justify">
+            You can use Cactus to test how your tag will react when put into a 
+            real JSP. This allows you to verify that there are no problems with 
+            the deployment descriptor, or unexpected behavior on the part of the 
+            container. You accomplish this by writing a small JSP that 
+            makes use of your custom tag, and then calling it from within a 
+            Cactus test case. You can even use JUnit assertions within 
+            scriptlets to verify certain aspects of the Tag's behavior. However,
+            this method requires that you write a separate JSP for each 
+            test case (or lump several cases into a single JSP). Both options 
+            pose problems, so it may be  best to 
+            include one or two tests of this type and rely on 
+            the more traditional methods described earlier to ensure 
+            total coverage.
+        </P>
+        <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>The test JSP</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+            <P align="justify">
+                All the JSP needs to do is include the tag library that 
+                describes the tag you are testing and makes use of it in 
+                some way. You can import <CODE><FONT face="courier, monospaced">junit.framework.Assert</FONT></CODE>
+                to do some simple checks on the effects of the tag. 
+                Here is a short example of a JSP that exercises a tag:
+            </P>
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+&lt;%@page import=&quot;junit.framework.Assert&quot;%&gt;
+&lt;%@taglib uri=&quot;WEB-INF/yourTagLib.tld&quot; prefix=&quot;example&quot;%&gt;
+
+Here is the custom tag this page verifies:
+&lt;example:someTag variableName=&quot;foo&quot; variableValue=&quot;bar&quot;/&gt;
+
+Here is the JUnit assert that checks whether the tag correctly created a 
+scripting variable named &lt;code&gt;foo&lt;/code&gt; with the value &quot;bar&quot;:
+&lt;%
+//attempt to reference foo will cause a translation error if the tag did not 
+//create the scripting variable
+Assert.assertEquals(&quot;bar&quot;, foo);
+%&gt;
+</PRE></TD></TR></TABLE></DIV>
+           <P align="justify">
+                It's a bad idea to put too many assertions into the 
+                JSP. In the example above, the creation of a scripting variable 
+                can <B>only</B> be tested within the JSP page. (The 
+                same goes for any objects in page scope, because each JSP 
+                creates its own.) If you
+                want to use other assertions with this type of test,
+                call them in your test case after 
+                <CODE><FONT face="courier, monospaced">pageContext.include()</FONT></CODE> (See below for an example.)
+           </P>
+        </FONT></TD></TR></TABLE></DIV><BR>
+
+        <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>The TestCase</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+            <P align="justify">
+                To use the test JSP, include it from within a 
+                <CODE><FONT face="courier, monospaced">JspTestCase.</FONT></CODE> 
+                The convenience function <CODE><FONT face="courier, monospaced">pageContext.include()</FONT></CODE> 
+                takes care of this nicely:
+            </P>
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+public void testSomeTag () throws Exception
+{
+    pageContext.include(&quot;/test_some_tag.jsp&quot;);
+
+    //an assert to check whether the page also mapped foo into the session
+    assert(&quot;bar&quot;, session.getAttribute(&quot;foo&quot;));
+}
+</PRE></TD></TR></TABLE></DIV>
+            <P align="justify">
+                Exceptions that result from either page translation 
+                (such as required attributes being omitted, or the tag missing  
+                a part of its descriptor entry) or page execution 
+                (such as the tag being unable to find required data in the 
+                appropriate scope) are automatically be thrown up to 
+                this level. If you do not catch them there they will be 
+                logged by Cactus/JUnit as failures--which is just what you want.
+            </P>
+            <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+                Any output that the test JSP generates can be checked normally 
+                in the <CODE><FONT face="courier, monospaced">endXXX</FONT></CODE> method.
+            </I></FONT></TD></TR></TABLE></P>
+            <P align="justify">
+                Of course, using this strategy means that you need to put 
+                the <CODE><FONT face="courier, monospaced">test_some_tag.jsp</FONT></CODE> in the specified location 
+                within your web application. If you are using JSP test case 
+                your build script should already deploy the redirector JSP, so 
+                it should be easy to include another JSP in the build process.
+            </P>
+        </FONT></TD></TR></TABLE></DIV><BR>
+    </FONT></TD></TR></TABLE></DIV><BR>
+  
+</TD></TR></TABLE></TD></TR></TABLE><BR><TABLE border="0" cellpadding="0" cellspacing="0" width="100%"><TR><TD><HR noshade="" size="1"></TD></TR><TR><TD align="center"><FONT color="#525D76" face="arial,helvetica,sanserif" size="-1"><I>
+                Copyright &copy; 2000-2002 The Apache Software Foundation.
+                All Rights Reserved.
+               </I></FONT></TD></TR></TABLE></BODY></HTML>

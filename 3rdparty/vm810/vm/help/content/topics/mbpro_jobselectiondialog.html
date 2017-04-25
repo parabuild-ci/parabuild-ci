@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Build Job Selection Dialog Box</TITLE>
+<!--<MBPro_JobSelectionDialog.html>-->
+<!--<index parent="Job selection" label="Job Selection dialog box" anchor="jobselection">-->
+<!--<index parent="Merant Build" label="Merant Build for Pro Job Selection dialog box" anchor="searchpathselection">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiSearchPathSelectionDlg.VmGuiMerantBuildSearchPathDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nSerena ChangeMan Builder for Professional\nBuild Job Selection Dialog Box");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="jobselection"></A>Build Job Selection</H1>
+<P>Use the Build Job Selection dialog box to select a search path, a build job, and build machines.</P>
+
+<H2>Search Paths</H2>
+<P>A search path is identified by a name such as DEVELOPMENT or TESTING. The name and definition of a search path
+occurs in the standalone Serena ChangeMan Builder web client.</P>
+
+<P>Search paths are used to locate source files and build tools. If any of your builds occur on machines with operating systems different from your own, or on varying operating systems, you may need to select a different search path, because build tools vary with the operating system.</P>
+
+<P>All of the search path information should be set up ahead of time by the Serena ChangeMan Builder administrator. 
+You simply select a search path. That search path becomes the second part of the default build job name.
+</P>
+
+<H2>Build Machines</H2>
+<P>When there is only one build machine in the list, it is obvious that
+   Serena ChangeMan Builder will use that build machine. But when there is 
+   more than one build machine in the list, Serena ChangeMan Builder applies
+   the following rules for deciding which build machine to use:</P>
+<UL>
+            <LI>If a machine is highlighted, that machine will be used. If more than 
+                one machine is highlighted, the first one will be used.</LI>
+            <LI>If a machine is highlighted in the Build machine field
+                and also exists in the list, that machine will be used.</LI>
+            <LI>If no machines are highlighted, the first machine
+                in the list is used.</LI>
+</UL>
+
+<P>After you have filled out the fields on this dialog box, click Next 
+to go to the Target Selection dialog box.</P>
+
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+        <TD><b>Serena ChangeMan Builder project</b></TD>
+		<TD><!--<control name="SPSD_BUILD_PROJECT_TEXTFIELD">-->
+        A read-only field displaying the name of the Serena ChangeMan Builder project.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Search path name</b></TD>
+		<TD><!--<control name="SPSD_PATH_NAME_CHOICE">-->
+        Choose from the named search paths set up ahead of time by the Serena ChangeMan Builder administrator.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Available build jobs</b></TD>
+		<TD><!--<control name="SPSD_AVAILABLE_BUILD_JOB_CHOICE">-->
+        Choose from the available build jobs set up ahead of time by the Serena ChangeMan Builder administrator. You can also
+                create a new private build job by entering a new name.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Build job name</b></TD>
+		<TD><!--<control name="SPSD_BUILD_JOB_NAME_TEXTFIELD">-->
+		Accept the default build job name, or enter a name of your own.
+                If you then save the job, it will be saved as a private build job.
+                The default build job name is composed of the project name 
+                followed by the search path name.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Build machine</b></TD>
+		<TD><!--<control name="SPSD_BUILD_MACHINE_CHOICE">-->
+        Choose from the available build machines set up ahead of time by the Serena ChangeMan Builder administrator.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>(Build machine list box)</b></TD>
+		<TD><!--<control name="SPSD_PATH_BUILD_MACHINE_LIST">-->
+		Displays the build machines that you have selected for this
+                build job. If the build job has been executed previously, 
+                the machines used are automatically placed in this list.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Add</b></TD>
+		<TD><!--<control name="SPSD_BUILD_MACHINE_ADD_BUTTON">-->
+		Click to add the build machine displayed in the Build machine
+                field to the list.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Remove</b></TD>
+		<TD><!--<control name="SPSD_BUILD_MACHINE_REM_BUTTON">-->
+		Click to remove the selected build machine(s) from the list.<!--</control>--></TD>
+	</TR>
+	</TABLE>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="mbpro_sourceselectiondialog.html">Source Selection Dialog Box</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="mbpro_targetselectiondialog.html">Target Selection Dialog Box</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="mbpro_parametersdialog.html">Build Parameters Dialog Box</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

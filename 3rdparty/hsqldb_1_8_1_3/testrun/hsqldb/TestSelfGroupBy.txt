@@ -1,0 +1,19 @@
+drop table t0 if exists;
+create table t0(c varchar(20), i integer, d date);
+insert into t0 values ('first', 1, '2000-01-01');
+insert into t0 values ('second', 2, '2000-01-02');
+insert into t0 values ('third', 3, '2000-02-01');
+select year(d), month(d), day(d) from t0;
+select year(d) y, month(d) m, day(d) d from t0 group by y, d, m;
+
+
+drop table trades_a if exists;
+create table trades_a(opened timestamp, userid int, points int);
+CREATE VIEW trades_scores AS SELECT (EXTRACT(YEAR FROM
+ opened) || '-' || EXTRACT(MONTH FROM opened) || '-' ||
+ EXTRACT(DAY FROM opened)) AS date, userid, SUM(points)
+ AS score FROM trades_a GROUP BY date, userid
+
+insert into trades_a values (now, 1, 10);
+select * from trades_scores;
+drop table trades_a cascade;

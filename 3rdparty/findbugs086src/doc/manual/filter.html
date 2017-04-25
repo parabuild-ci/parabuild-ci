@@ -1,0 +1,146 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Chapter&nbsp;8.&nbsp;Filter Files</title><meta name="generator" content="DocBook XSL Stylesheets V1.61.0"><link rel="home" href="index.html" title="FindBugs Manual"><link rel="up" href="index.html" title="FindBugs Manual"><link rel="previous" href="eclipse.html" title="Chapter&nbsp;7.&nbsp;Using the FindBugs Eclipse plugin"><link rel="next" href="analysisprops.html" title="Chapter&nbsp;9.&nbsp;Analysis Properties"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter&nbsp;8.&nbsp;Filter Files</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="eclipse.html">Prev</a>&nbsp;</td><th width="60%" align="center">&nbsp;</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="analysisprops.html">Next</a></td></tr></table><hr></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="filter"></a>Chapter&nbsp;8.&nbsp;Filter Files</h2></div></div><div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt>1. <a href="filter.html#d0e1399">Introduction to Filter Files</a></dt><dt>2. <a href="filter.html#d0e1467">Types of Match clauses</a></dt><dt>3. <a href="filter.html#d0e1534">Caveats</a></dt><dt>4. <a href="filter.html#d0e1564">Examples</a></dt><dt>5. <a href="filter.html#d0e1587">Complete Example</a></dt></dl></div><p>
+Filter files may be used to include or exclude bug reports for particular classes
+and methods.  This chapter explains how to use filter files.
+
+</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Note: Planned Features"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="note.png"></td><th align="left">Planned Features</th></tr><tr><td colspan="2" align="left" valign="top"><p>
+  Filters are currently only supported by the Command Line interface.
+  Eventually, filter support will be added to the GUI.
+</p></td></tr></table></div><p>
+</p><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e1399"></a>1.&nbsp;Introduction to Filter Files</h2></div></div><div></div></div><p>
+Conceptually, a filter matches bug instances against a set of criteria.
+By defining a filter, you can select bug instances for special treatment;
+for example, to exclude or include them in a report.
+</p><p>
+A filter file is an <a href="http://www.w3.org/XML/" target="_top">XML</a> document with a top-level <tt class="literal">FindBugsFilter</tt> element
+which has some number of <tt class="literal">Match</tt> elements as children.  Each <tt class="literal">Match</tt>
+element represents a predicate which is applied to generated bug instances.
+Usually, a filter will be used to exclude bug instances.  For example:
+
+</p><pre class="screen">
+<tt class="prompt">$ </tt><b class="command">findbugs -textui -exclude <i class="replaceable"><tt>myExcludeFilter.xml</tt></i> <i class="replaceable"><tt>myApp.jar</tt></i></b>
+</pre><p>
+
+However, a filter could also be used to select bug instances to specifically
+report:
+
+</p><pre class="screen">
+<tt class="prompt">$ </tt><b class="command">findbugs -textui -include <i class="replaceable"><tt>myIncludeFilter.xml</tt></i> <i class="replaceable"><tt>myApp.jar</tt></i></b>
+</pre><p>
+</p><p>
+<tt class="literal">Match</tt> elements have <tt class="literal">class</tt> and <tt class="literal">classregex</tt>
+attributes specifying what class or classes the predicate applies to.
+The <tt class="literal">class</tt> attribute specifies the name of a class.
+The <tt class="literal">classregex</tt> attribute specifies a regular expression
+applied to class names of bug instances.  The regular expression is
+used to create a <tt class="literal">java.util.regex.Pattern</tt> object,
+which does the matching.
+<tt class="literal">Match</tt> elements contain children, which are conjuncts of the predicate.
+In other words, each of the children must be true for the predicate to be true.
+</p></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e1467"></a>2.&nbsp;Types of Match clauses</h2></div></div><div></div></div><div class="variablelist"><dl><dt><span class="term"><tt class="literal">&lt;BugCode&gt;</tt></span></dt><dd><p>
+    This element specifies abbreviations of bugs.
+   The <tt class="literal">name</tt> attribute is a comma-seperated list of abbreviations.
+   </p></dd><dt><span class="term"><tt class="literal">&lt;Method&gt;</tt></span></dt><dd><p>This element specifies a method.  The <tt class="literal">name</tt> attribute is the name
+   of the method.  The <tt class="literal">params</tt> attribute is a comma separated list
+   of the types of the method's parameters.  The <tt class="literal">returns</tt> attribute is
+   the method's return type.  In <tt class="literal">params</tt> and <tt class="literal">returns</tt>, class names
+   must be fully qualified.  (E.g., "java.lang.String" instead of just
+   "String".)  Note that <tt class="literal">params</tt> and <tt class="literal">returns</tt> are optional; you can
+   just specify <tt class="literal">name</tt>, and the clause will match all methods with
+   that name.  However, if you specify either <tt class="literal">params</tt> or <tt class="literal">returns</tt>,
+   you must specify both of them.
+   </p></dd><dt><span class="term"><tt class="literal">&lt;Or&gt;</tt></span></dt><dd><p>
+   This element combines <tt class="literal">Match</tt> clauses as disjuncts.  I.e., you can put two
+   <tt class="literal">Method</tt> elements in an <tt class="literal">Or</tt> clause in order match either method.
+   </p></dd></dl></div></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e1534"></a>3.&nbsp;Caveats</h2></div></div><div></div></div><p>
+<tt class="literal">Match</tt> clauses can only match information that is actually contained in the
+bug instances.  Every bug instance has a class, so in general, excluding
+bugs by class will work.
+</p><p>
+Some bug instances have two classes.  For example, the DE (dropped exception)
+bugs report both the class containing the method where the dropped exception
+happens, and the class which represents the type of the dropped exception.
+Only the <span class="emphasis"><em>first</em></span> (primary) class is matched against <tt class="literal">Match</tt> clauses.
+So, for example, if you want to suppress IC (initialization circularity)
+reports for classes "com.foobar.A" and "com.foobar.B", you would use
+two <tt class="literal">Match</tt> clauses:
+
+</p><pre class="programlisting">
+   &lt;Match class="com.foobar.A"&gt;
+      &lt;BugCode name="IC" /&gt;
+   &lt;/Match&gt;
+
+   &lt;Match class="com.foobar.B"&gt;
+      &lt;BugCode name="IC" /&gt;
+   &lt;/Match&gt;
+</pre><p>
+
+By explicitly matching both classes, you ensure that the IC bug instance will be
+matched regardless of which class involved in the circularity happens to be
+listed first in the bug instance.  (Of course, this approach might accidentally
+supress circularities involving "com.foobar.A" or "com.foobar.B" and a third
+class.)
+</p><p>
+Many kinds of bugs report what method they occur in.  For those bug instances,
+you can put <tt class="literal">Method</tt> clauses in the <tt class="literal">Match</tt> element and they should work
+as expected.
+</p></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e1564"></a>4.&nbsp;Examples</h2></div></div><div></div></div><p>
+  1. Match all bug reports for a class.
+
+</p><pre class="programlisting">
+     &lt;Match class="com.foobar.MyClass" /&gt;
+</pre><p>
+
+</p><p>
+  2. Match certain tests from a class.
+</p><pre class="programlisting">
+     &lt;Match class="com.foobar.MyClass"&gt;
+       &lt;BugCode name="DE,UrF,SIC" /&gt;
+     &lt;/Match&gt;
+</pre><p>
+</p><p>
+  3. Match certain tests from all classes.
+
+</p><pre class="programlisting">
+     &lt;Match classregex=".*" &gt;
+       &lt;BugCode name="DE,UrF,SIC" /&gt;
+     &lt;/Match&gt;
+</pre><p>
+</p><p>
+  4. Match bug types from specified methods of a class.
+
+</p><pre class="programlisting">
+     &lt;Match class="com.foobar.MyClass"&gt;
+       &lt;Or&gt;
+         &lt;Method name="frob" params="int,java.lang.String" returns="void" /&gt;
+         &lt;Method name="blat" params="" returns="boolean" /&gt;
+       &lt;/Or&gt;
+       &lt;BugCode name="DC" /&gt;
+     &lt;/Match&gt;
+</pre><p>
+</p></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e1587"></a>5.&nbsp;Complete Example</h2></div></div><div></div></div><pre class="programlisting">
+
+&lt;FindBugsFilter&gt;
+     &lt;Match class="com.foobar.ClassNotToBeAnalyzed" /&gt;
+
+     &lt;Match class="com.foobar.ClassWithSomeBugsMatched"&gt;
+       &lt;BugCode name="DE,UrF,SIC" /&gt;
+     &lt;/Match&gt;
+
+     &lt;!-- Match all XYZ violations. --&gt;
+     &lt;Match classregex=".*" &gt;
+       &lt;BugCode name="XYZ" /&gt;
+     &lt;/Match&gt;
+
+     &lt;!-- Match all doublecheck violations in these methods of "AnotherClass". --&gt;
+     &lt;Match class="com.foobar.AnotherClass"&gt;
+       &lt;Or&gt;
+         &lt;Method name="nonOverloadedMethod" /&gt;
+         &lt;Method name="frob" params="int,java.lang.String" returns="void" /&gt;
+         &lt;Method name="blat" params="" returns="boolean" /&gt;
+       &lt;/Or&gt;
+       &lt;BugCode name="DC" /&gt;
+     &lt;/Match&gt;
+&lt;/FindBugsFilter&gt;
+</pre></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="eclipse.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="index.html">Up</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="analysisprops.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter&nbsp;7.&nbsp;Using the FindBugs Eclipse plugin&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;Chapter&nbsp;9.&nbsp;Analysis Properties</td></tr></table></div></body></html>

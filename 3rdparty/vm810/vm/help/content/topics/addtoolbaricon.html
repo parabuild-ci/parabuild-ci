@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Adding a Tool Bar Icon and Menu Item</TITLE>
+<!--<addtoolbaricon.html>-->
+<!--<toc parent="customizing_toolbar_and_menubar" label="Adding a Tool Bar Icon and Menu Item" anchor="addtoolbaricon" sortkey="02">-->
+<!--<index parent="adding" label="custom tools" anchor="addtoolbaricon">-->
+<!--<index parent="tool_bar" label="adding custom tools" anchor="addtoolbaricon">-->
+<!--<index parent="menu_bar" label="adding custom tools" anchor="addtoolbaricon">-->
+<!--<index parent="customizing" label="tool bar and menu bar" anchor="addtoolbaricon">-->
+<!--<index parent="tools" label="adding custom tools" anchor="addtoolbaricon">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Getting Started\nGetting Started for Admininstrators\nAdding Custom Tools\nAdding a Tool Bar Icon and Menu Item");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="addtoolbaricon"></A>Adding a Tool Bar Icon and Menu Item</H1>
+<P>When you add a <a href="toolbaroverview.html">custom tool</a>, you can specify the following:</P>
+<UL>
+<LI>The image to use for the icon. Version Manager provides a default image (GIF file) for new tool bar icons. You can use your own GIF or JPG file. The image is scaled to 21 pixels wide x 19 pixels tall.
+<LI>The command (file) to be executed when a user clicks the icon. Version Manager supports the following:
+<UL type=disc>
+<LI>Stand-alone Windows (.EXE) and UNIX executable programs
+<LI>Windows batch scripts (.BAT)
+<LI>Windows program information files (.PIF)
+<LI>UNIX shell scripts
+</UL>
+<LI>Information (arguments) to pass to the executable associated with the new tool bar icon or new menu item.
+<LI>The tool tip text to display when the mouse is stationary over the tool bar icon.
+</UL>
+<H2>To add a tool bar icon and/or menu item:</H2>
+<OL>
+<LI>Select a project database.<br><br>
+<LI>Select Admin | Tool Configuration. The Tool Configuration dialog box appears.<br><br>
+<LI>Click Add. The default icon with the name [Untitled] appears in the User Tools box on the left. You can change the icon image as discussed in Step 8.<br><br>
+<LI>Specify a name for the new tool in the <b>Name</b> field. If the new tool is a menu item, the text you enter here is the name of the menu item on the Tools menu. If the new tool is a tool bar icon, the text you enter here is the tool bar tip text if you do not specify different text in the Tool Tip field.<br><br>
+<LI>In the <b>Command</b> field, specify the executable file to be invoked when a user clicks the new icon or selects the new menu item. To execute a file that requires user input or output, or internal commands such as pause or echo, you must start the command file in a separate window (DOS or xterm).</p>
+<p>To start the command file in a separate window, include the command to invoke the window before the command path and name in the Command field in the Tool Configuration dialog box. For example:</p>
+<TABLE WIDTH="100%" CELLSPACING="1" CELLPADDING="1">
+	<TR><TD>Windows</td><TD><font face="Courier New">cmd /c start D:\batch\mkuser.bat</font></td></tr>
+	<TR><TD>UNIX</td><TD><font face="Courier New">xterm -e /usr/files/mkuser.sh</font></td></tr>
+</TABLE>	  
+<p>Files that do not require user input or output do not need to be started in a separate window.</p>
+<LI>Select the <b>Show on tool bar</b> check box to make the new tool a tool bar icon.<br><br>
+<LI>Select the <b>Show on Tools menu</b> check box to make the new tool a new menu item on the Tools menu.<br><br>
+<LI>Optionally, you can do any of the following:<br><br>
+<UL type=disc>
+<LI>To change the icon image, click <b>Change Image</b> and select the GIF or JPG file to use instead of the default one.
+<LI>To specify tip text other than the text specified in the Name field, enter the appropriate text in the <b>Tool Tip</b> field.
+<LI>To pass information (arguments) to the executable specified in the Command field, click the button <img src="../graphics/argicon.gif" width="21" height="19" border="0"> next to the <b>Arguments</b> field and select a <a href="commandlinemacros.html">command-line macro</a> or the parameter file (__EventParmFile__) that will <a href="howtopasseventinfo.html">pass event information</a> to the executable.
+</UL>
+<br>
+<LI>Click OK. By default, the tool configuration information is saved in a file named tools.cfg beneath the project database location. Do not move this file unless you specify its new location or Version Manager will not be able to customize the tool bar and menu bar.
+</OL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a href="movetoolsconfigfile.html">Moving the Tools Configuration File</a></TD>
+		<TD><a href="toolbarconfigdialog.html">Tool Bar Configuration Dialog Box</a></TD>
+</TR>
+	<TR>
+		<TD><a href="toolbaroverview.html">Custom Tools Overview</a></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

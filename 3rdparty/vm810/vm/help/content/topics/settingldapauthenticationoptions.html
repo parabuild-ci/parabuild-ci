@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Setting LDAP Configuration Options</TITLE>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with Project Databases/Projects\nConfiguring Project Databases/Projects\nSetting LDAP Configuration Options");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1>Setting LDAP Configuration Options</H1>
+<p>To perform this procedure, you must first select the project database or project you want to configure. The project database or project must also be <a href="assocconfigfile.html">associated with a configuration file</a>.</p>
+<p>The LDAP authentication options let you configure Version Manager for use with a Lightweight Directory Access Protocol (LDAP) authentication server. To make use of this feature, you must:</p>
+<ul><li>
+Have a functional LDAP server.
+</li>
+<li>
+Select LDAP ID as one of your login sources.
+</li></ul>
+
+<b>To set LDAP Authentication options:</b>
+<ol><li>
+Select Admin | Configure Project. The Configure Project dialog box appears.<br><br>
+</li>
+<li>
+If not already selected, select the <b>Show Advanced Options</b> check box.<br><br>
+</li>
+<li>
+Select <b>LDAP Configuration</b> beneath Security. The LDAP Configuration pane appears on the right. The fields display the current settings as defined in the configuration file associated with the project database or project.<br><br>
+</li>
+<li>
+To enable the Secure Socket Layer, select the <b>Use SSL (Secure Socket Layer)</b> checkbox.<br><br>
+</li>
+<LI>To allow Version Manager to follow referrals from one LDAP server to another, select the <b>Follow referrals</b> check box. Use this feature to support properly configured non-redundant distributed servers.<BR><BR></LI>
+<li>
+Specify the base user context (distinguished name) in the <b>Base User Context</b> field. This is the base from which to search for users.<br><br>
+</li>
+<li>
+Select the user naming attribute in the <b>User Naming Attribute</b> list. This is the attribute in which the LDAP server holds the user ID value.<br><br>
+</li>
+<li>
+Select a method of querying the LDAP server to retrieve the list of users:<br><br>
+</li>
+<ul><li>
+To query anonymously, select the <b>Bind Anonymously</b> check box. This requires that the LDAP server is configured to allow anonymous users to retrieve a list of users and attributes.<br><br>
+<b>NOTE</b> You cannot bind anonymously to a Microsoft Active Directory Server.<br><br>
+</li>
+<li>
+To require a user ID and password for queries:<br><br>
+</li>
+<ol><li type="a">
+Specify a full user DN in the <b>User DN</b> field.<br><br>
+</li>
+<li type="a">
+Specify a user password in the <b>Password</b> field.<br><br>
+</li></ol></ul>
+<li>
+Enter a value in the <b>Connection timeout</b> field to set the idle time in seconds before the connection to the LDAP server times out.<br><br></li>
+<li>Click <b>OK</b>.
+</li></ol>
+
+<h2>See Also</h2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="setloginsources.html">Setting Login Sources</A></TD>
+		<TD><A HREF="loginsources.html">Login Sources</A></TD>
+	</tr>
+	<TR>
+		<TD><A HREF="specifying_ldap_server.html">Specifying an LDAP Server</A></TD>
+		<TD><A HREF="aboutlogging.html">About Logging In to Project Databases or Projects</a></td>
+	</tr>
+	<TR>
+		<TD><A HREF="ldap_configuration_examples.html">LDAP Configuration Examples</A></TD>
+		<TD><A HREF="configureprojectldapauthenticationdialog.html">Configure Project/LDAP Configuration Dialog Box</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>
+

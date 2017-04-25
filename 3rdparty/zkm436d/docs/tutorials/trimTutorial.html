@@ -1,0 +1,226 @@
+<!-- Copyright 2003 Zelix Pty Ltd (ABN 47 078 740 093) -->
+<html>
+<head>
+<title>Zelix KlassMaster - Trim Tutorial</title>
+   <meta name="keywords" content="java obfuscator,java code obfuscator,obfuscation,incremental">
+   <meta name="description" CONTENT="Zelix KlassMaster Change Logs and Incremental Obfuscation">
+   <meta name="classification" CONTENT="Zelix KlassMaster Change Logs and Incremental Obfuscation">
+   <link rel=stylesheet href="../../ZKM.css" TYPE="text/css">
+</head>
+<body background="../../images/small-white-mist1.jpg" bgcolor="#E1E1E1">
+<center><a href="../index.html"><img src=../../images/ZKM_b4.gif alt="Zelix KlassMaster" width=264 height=62 border=0></a></center>
+<hr>
+<center>
+<table width=770 border=0>
+   <tr>
+      <td>
+         <h1>Trim Tutorial</h1>
+            This tutorial is divided into the following sections:
+            <ul>
+              <li><a href="#overview">Overview</a>
+              <li><a href="#howWorks">How Trim Exclusions Works</a>
+              <li><a href="#defaultExclusions">Default Trim Exclusions</a>
+              <li><a href="#gui">Trim Exclusions Using the GUI</a>
+              <li><a href="#trouble">Trim Exclusion Troubleshooting</a>
+            </ul>
+         <h3><a name="overview">Overview</a></h3>
+The Zelix KlassMaster<sup><font size=-2>TM</font></sup> "Trim" function deletes unused classes, fields and methods. It can also optionally delete specified attributes within bytecode.
+By doing this the Trim function reduces the overall size of your application.
+<p>
+Trim exclusions specify the classes, fields and methods that should not be deleted by the "Trim" function. 
+By default, the Trim function will delete all classes, fields and methods that have not been explicitly or implicitly excluded from being trimmed.
+If there are no trim exclusions at all then the Trim function will delete ALL opened classes along with their fields and methods.
+So, the way to understand the Trim function is to understand how trim exclusions are processed.
+
+<h3><a name="howWorks">How Trim Exclusions Works</a></h3>
+The key aspects of trim exclusions are
+<ol>
+<li>Any class, field or method that is not explicitly or implicitly excluded will be deleted. So if you have no trim exclusions then every class, field and method will be deleted.
+<li>If a class is implicitly or explicitly excluded then it will not be deleted. However, its fields and methods will be deleted unless they are otherwise excluded.
+<li>If a field is implicitly or explicitly excluded <b>and</b> its containing class has also been implicitly or explicitly excluded then the field will not be deleted.
+<li>If a method is implicitly or explicitly excluded <b>and</b> its containing class has also been implicitly or explicitly excluded then 
+   <ol type="a">
+      <li>the method will not be deleted and
+      <li>all the classes, fields and methods directly or indirectly accessed by the method will be <b>implicitly excluded</b> from being trimmed.
+   </ol>
+</ol>
+
+Methods are also implicitly excluded if
+<ol start=5>
+<li>They override a method in a class that has not been opened for trimming.
+    <ol type="a">  
+    <li>For example, if an opened class contains the method <code>hashCode()</code> then that method will be implicitly excluded 
+        because it overrides the corresponding method in <code>java.lang.Object</code> (which presumably has not been opened for obfuscation).
+    </ol>
+<li>They override a method that has been explicitly or implicitly excluded.
+    <ol type="a">  
+    <li>For example, if you explicitly exclude the method <nobr><code>method1()</code></nobr> in a particular interface then the method <nobr><code>method1()</code></nobr>
+        will be implicitly excluded in all classes that implement that interface.
+    </ol>
+</ol>
+
+It is very important to note that the exclusion of classes and the fields and methods they contain are handled separately.
+As indicated by point 2 above, the exclusion of a class does not in itself exclude the fields and methods of that class.
+Also, as indicated by points 3 and 4 above, the exclusion of a field or method does not in itself exclude the class containing the field or method.
+This separation gives you the flexibility to specify that if a class contains a field named <code>serialVersionUID</code> <b>and</b> the class is not going to be deleted then do not delete the field named <code>serialVersionUID</code>. 
+<p>
+The final thing to note is that, as indicated by point 4b above, Zelix KlassMaster will trace all possible lines of execution from all methods that will not be deleted and implicitly exclude all classes, fields and methods that can be accessed directly or indirectly by the methods.  This means that you do not have to explicitly exclude all classes, fields and methods that should not be deleted.  Typically, you only need to explicitly exclude the <b>"entry point"</b> methods and the classes that contain them.
+
+<h4>Trimming "classic" applications</h4>
+If you are obfuscating a classic application with one <code>public&nbsp;static&nbsp;<nobr>main(java.lang.String[])</nobr></code> method which is the only "entry point" into
+the application then you only need to explicitly exclude 
+<ul>
+<li>the <code>public&nbsp;static&nbsp;<nobr>main(java.lang.String[])</nobr></code> method and
+<li>the class that contains the <code>public&nbsp;static&nbsp;<nobr>main(java.lang.String[])</nobr></code> method.
+</ul>
+Because the method <code>public&nbsp;static&nbsp;<nobr>main(java.lang.String[])</nobr></code> will not be deleted, Zelix KlassMaster will trace all classes, fields and methods
+that are accessed directly or directly from that method and implicitly exclude them.
+<p>
+A typical ZKM Script <a href="../trimExcludeStatement.html">trimExclude</a> statement for a classic application would be
+<pre>
+trimExclude com.mycompany.MyMainClass^ public static main(java.lang.String[]);
+</pre>
+Note the <code>'^'</code> <a href="exclusionsTutorial.html#containingObject">containing object exclusion</a> tag that specifies that the containing class should also be excluded.
+
+<h4>Trimming applets</h4>
+If your application is a straightforward Applet then you only need to explicitly exclude the Applet class itself.  The <nobr><code>init()</code></nobr>, 
+<nobr><code>start()</code></nobr>, <nobr><code>stop()</code></nobr> and <nobr><code>destroy()</code></nobr> methods will be implicitly excluded 
+because they override methods in the <code>java.applet.Applet</code> API (see point 5a above).  
+Zelix KlassMaster will then implicitly exclude all classes, fields and methods accessed directly or indirectly by these methods.
+<p>
+A typical ZKM Script <a href="../trimExcludeStatement.html">trimExclude</a> statement for an applet would be
+<pre>
+trimExclude com.mycompany.Applet;
+</pre>
+
+<h4>Trimming class libraries and extensible frameworks</h4>
+If you are trimming a class library then you need to exclude the classes, fields and methods that can be accessed by an application using the class library.
+Typically that means that you should exclude
+<ul>
+<li><code>public</code> classes and
+<li><code>public</code> fields and methods <b>and</b> the classes containing them
+</ul>
+<p>
+A typical ZKM Script <a href="../trimExcludeStatement.html">trimExclude</a> statement for a non-extensible class library would be
+<pre>
+trimExclude public *.* and   //public classes in all packages
+            *.* public * and //public fields in all classes in all packages
+            *.* public *(*); //public methods in all classes in all packages
+</pre>
+
+If the class library is really an extensible framework then you typically should also exclude
+<ul>
+<li><code>protected</code> fields and methods <b>and</b> the classes containing them
+</ul>
+A typical ZKM Script <a href="../trimExcludeStatement.html">trimExclude</a> statement for an extensible framework would be
+<pre>
+trimExclude public *.* and      //public classes in all packages
+            *.* public * and    //public fields in all classes in all packages
+            *.* protected * and //protected fields in all classes in all packages
+            *.* public *(*) and //public methods in all classes in all packages
+            *.* protected *(*); //protected methods in all classes in all packages
+</pre>
+
+<h3><a name="defaultExclusions">Default Trim Exclusions</a></h3>
+Zelix KlassMaster has some default trim exclusions that are applied everytime you trim.
+These default exclusions cover a number of APIs such as Serialization and RMI.
+For example, <code>static final long serialVersionUID</code> fields are excluded by default.
+The default exclusions are intended to free you from the need to specify general purposes exclusions that apply to a wide range of applications.  
+However, you will almost always have to explicitly exclude you "entry point" methods and the classes that contain them.
+<p>
+You may override these defaults with your own. 
+Zelix KlassMaster looks for a file in the default directory (which is the current working directory unless you have specified otherwise) 
+named <code>&quot;defaultTrimExclude.txt&quot;</code>. 
+This file should either be empty or contain a single ZKM Script "trimeExclude" statement. 
+If Zelix KlassMaster finds the file then it will use its contents as the default trim exclusions.
+<p>
+If the defaultTrimExclude.txt file doesn't exist then Zelix KlassMaster applies its predefined internal default trim exclusions 
+that are identical to those in the original defaultTrimExclude.txt file.
+If the defaultTrimExclude.txt file exists but is is empty then there are no default trim exclusions.
+<p>
+Note that, in the Zelix KlassMaster GUI, the default trim exclusion parameters appear as disabled list entries in the <b>&quot;Exclusion parameter list&quot;</b> of the <b>"Trim Exclusions"</b> window. 
+These disabled entries can only be altered by editing the <code>&quot;defaultTrimExclude.txt&quot;</code> file.
+
+      </td>
+   </tr>
+   <tr><td>&nbsp;<td></tr>
+   <tr>
+      <td>
+
+<h3><a name="gui">Trim Exclusions Using the GUI</a></h3>
+<img src=../../images/trimExclude0.gif width=481 height=472 align="right" alt="Zelix KlassMaster - Trim Exclusions">
+Typically you will only need to set the <a href="../trimExclude.html#type"><b>Application Type</b></a> and 
+<a href="../trimExclude.html#mainClass"><b>Application Entry Point Class</b></a> lists.
+<p>
+If you are obfuscating a classic application with one <code>public static <nobr>main(java.lang.String[])</nobr></code> method which is the only "entry point" into
+the application then you should 
+<ul>
+<li>set the <b>Application Type</b> to <code>"Self contained application or applet"</code>
+<li>select the class containing the <code><nobr>main(java.lang.String[])</nobr></code> method in the <b>Application Entry Point Class</b> list.
+</ul>
+<p>
+If you are obfuscating an applet then you should 
+<ul>
+<li>set the <b>Application Type</b> to <code>"Self contained application or applet"</code>
+<li>select the applet class in the <b>Application Entry Point Class</b> list.
+</ul>
+<p>
+If you are obfuscating a class library that is NOT going to be extended by your users then you should 
+<ul>
+<li>set the <b>Application Type</b> to <code>"Non-extensible class library"</code>
+<li>set the <b>Application Entry Point Class</b> to <code>"none</code>.
+</ul>
+<p>
+If you are obfuscating a class library that IS going to be extended by your users then you should 
+<ul>
+<li>set the <b>Application Type</b> to <code>"Extensible framework"</code>
+<li>set the <b>Application Entry Point Class</b> to <code>"none</code>.
+</ul>
+
+
+      </td>
+   </tr>
+   <tr><td>&nbsp;<td></tr>
+   <tr>
+      <td>
+
+<h3><a name="trouble">Trim Exclusion Troubleshooting</a></h3>
+The settings discussed above will be adequate for relatively straightforward applications.  However, more complex application may require extra trim exclusions.
+You may even have to do a little experimentation with your trim exclusions.  Some scenarios that can cause problems are
+<ol>
+<li>Reflection API accesses to classes, fields and methods that Zelix KlassMaster was unable to fully resolve.
+    (If Zelix KlassMaster was unable to fully resolve a Reflection API call then it will report the fact in the <b>Class Open Warnings</b> dialog or the Zelix KlassMaster log.}
+<li>Specialized APIs (not catered for by the existing default exclusions) that directly access your classes, fields or methods.
+</ol>
+In such cases the best solution is to add explicit trim exclusions to tell Zelix KlassMaster that additional classes, fields or methods are indeed accessed.
+<p>
+If you find yourself needing to debug your trim exclusions when running a ZKM Script then you may  find it helpful to run Zelix KlassMaster using the <code>"-v"</code> (ie. verbose) parameter.
+This will result in a great deal of extra information being written to the log.  This extra information will include
+<ul>
+<li>the effective trim exclude parameters (including the default exclusions)
+<li>which classes, fields and methods were directly matched by an exclusion parameter
+<li>which classes, fields and methods were deleted as part of the trim process.
+</ul>
+Note that the list of trimmed classes, fields and methods is also written to the <code>ZKM_TrimLog.txt</code> file regardless of how you start Zelix KlassMaster.
+<p>
+When debugging your trim exclusions, it can also be very useful to temporarily halt any name obfuscation by excluding all class, field and method names or 
+by simply commenting out your "obfuscate" statement.
+With name obfuscation suspended any runtime stack traces you are getting will specify real class, field and methods names which usually makes the root cause of any trim problem obvious.
+
+      </td>
+   </tr>
+</table>
+</center>
+<hr>
+<center>
+<table>
+   <tr>
+      <td>
+         <a href="../index.html"><img src=../../images/uarrw.gif alt="Documentation Table of Contents"></a>
+      </td>
+   </tr>
+</table>
+</center>
+Copyright &copy; 2003 <a href="mailto:WebMaster@zelix.com"><font size=-1>Zelix Pty Ltd</font></a> (ABN 47 078 740 093)
+</body>
+</html>

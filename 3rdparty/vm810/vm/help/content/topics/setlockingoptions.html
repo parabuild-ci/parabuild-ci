@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Setting Locking Options</TITLE>
+<!--<setlockingoptions.html>-->
+<!--<toc parent="setting_configuration_options" label="Setting Locking Options" anchor="setlockingoptions" sortkey="04">-->
+<!--<toc parent="setting_project_configuration_options" label="Setting Locking Options" anchor="setlockingoptions" sortkey="04">-->
+<!--<index parent="setting" label="locking options" anchor="setlockingoptions">-->
+<!--<index parent="locking" label="setting options" anchor="setlockingoptions">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with Project Databases/Projects\nConfiguring Project Databases/Projects\nSetting Locking Options");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="setlockingoptions"></A>Setting Locking Options</H1>
+<p>To perform this procedure, you must first select the project database or project you want to configure. The project database or project must also be <a href="assocconfigfile.html">associated with a configuration file</a>.</p>
+<H2>To set <a href="lockingoptions.html">locking options</a>:</H2>
+<OL>
+<LI>Select Admin | Configure Project. The Configure Project dialog box appears with the General tab active.<br><br>
+<LI>If not already selected, select the <b>Show Advanced Options</b> check box.<br><br>
+<LI>Select <b>Locking</b> beneath Archives. The Archive Locking pane on the right appears. The values that display for each option are the settings that are currently defined in the configuration file associated with the project database or project.<BR><BR>
+<LI>To set the options, do any of the following:<BR><BR>
+<UL type=disc>
+<LI>Select either <b>One</b> or <b>More Than One</b> for the locks allowed on each revision.
+<LI>Select either <b>One</b> or <b>More Than One</b> for the locks allowed by each user.
+<LI>Select the <b>Remove lock on unchanged revision</b> check box to unlock unchanged revisions during checkin without incrementing the revision number. If this option is deselected, Version Manager cancels the checkin of unchanged revisions and leaves them locked.
+</UL>
+<BR><br>
+<LI>Click OK if you are finished defining options, or click Apply to save the settings and continue to define other options.
+</OL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a href="aboutconfigfiles.html">About Configuration Files</a></TD>
+		<TD><a href="configureoverview.html">Configuring Project Databases and Projects</a></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="configureprojectarchivelockingdialog.html">Configure Project/Archive Locking dialog box</A>
+		<TD><A HREF="lockingoptions.html">Locking Options</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

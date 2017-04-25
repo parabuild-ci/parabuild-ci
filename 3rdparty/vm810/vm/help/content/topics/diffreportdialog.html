@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Show Differences Dialog Box</TITLE>
+<!--<diffreportdialog.html>-->
+<!--<index parent="differences" label="Show Differences dialog box" anchor="diffreportdialog">-->
+<!--<index parent="reports" label="Show Differences dialog box" anchor="diffreportdialog">-->
+<!--<index parent="comparing" label="Show Differences dialog box" anchor="diffreportdialog">-->
+<!--<index parent="show_differences" label="Show Differences dialog box" anchor="diffreportdialog">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiDiffReportDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+
+<BODY BGCOLOR="#ffffee">
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="diffreportdialog"></A>Show Differences Dialog Box</H1>
+
+<P>Select Actions | Show Differences to view the differences between two revisions, two workfiles, or a revision and a workfile. 
+
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD COLSPAN=2><CENTER><B>General Tab</B></CENTER></TD>
+	</TR>
+	<TR>
+		<TD><b>Compare</b></TD>
+		<TD><!--<control name="DiffReportGeneral.REPORT_CHOICE">-->Select the type of items to compare: <b>A revision and a workfile</b>, <b>Revisions in a single versioned file</b>, <b>Revisions in two different versioned files</b>, or <b>Two workfiles</b>.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><B>First File</B></TD>
+		<TD><b>First File (text field): </b><!--<control name="DiffReportGeneral.FILE_1_EDIT_FILE">-->The 
+      name of the first file you selected to compare. If you are comparing workfiles, you can specify a different file by entering a file name or clicking the Browse button; otherwise, the field is read-only and you must exit the dialog if you wish to select a different file.
+		<!--</control>-->
+	<br><br><B>Revision: </B><!--<control name="DiffReportGeneral.FILE_1_EDIT_REV">-->The revision of the file to compare. To specify a different revision, click the Browse button to select a revision by version label, revision number, or promotion group.<!--</control>-->  This field does not appear if you select <b>Two Workfiles</b> from the <B>Compare</B> menu.</TD>		
+	</TR>
+	<TR>
+		<TD><B>Second File</B></TD>
+		<TD><B>Second File (text field): </B><!--<control name="DiffReportGeneral.FILE_2_EDIT_FILE">-->The name of the second workfile you selected to compare. To specify a different file, enter it in the text field, or click the Browse button to select one.<!--</control>--> This field appears only if you select <b>Two Workfiles</b> from the <B>Compare</B> menu.<br><br>
+
+<B>Revision: </B><!--<control name="DiffReportGeneral.FILE_2_EDIT_REV">-->The revision of the file to compare. To specify a different revision, click the Browse button to select a revision by version label, revision number, or promotion group.<!--</control>-->  This field does not appear if you select <b>Two Workfiles</b> from the <B>Compare</B> menu.</TD>
+	</TR>
+	<TR>
+		<TD><B>Ignore white space</B></TD>
+		<TD><!--<control name="DiffReportGeneral.IGNORE_WHITE_SPACE">-->Select 
+      to ignore trailing, intervening, and leading white spaces, tabs, and form feeds.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=2><CENTER><B>Advanced Tab</B></CENTER></TD>
+	</TR>
+	<TR>
+		<TD><B>Cobol Masking</B></TD>
+		<TD><!--<control name="DiffReportAdvancedForm.COBOL_MASKING">-->Select 
+      the Cobol Masking check box to use the default Cobol masking definition 
+      for Cobol files.<!--</control>-->
+	</TD>
+	</TR>
+	<TR>
+		<TD><B>Mask Ranges</B></TD>
+		<TD><!--<control name="DiffReportAdvancedForm.COLUMN_MASK">-->The 
+      default value is automatically displayed in the Mask Ranges field. The 
+      default is mask columns 73-80 and mask columns 1 through 6 only if these 
+      columns are numeric. You may override these values by entering new values.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><B>Record Length</B></TD>
+		<TD><!--<control name="DiffReportAdvancedForm.RECORD_LENGTH">-->Enter 
+      the length of records in fixed-length files so that Version Manager can 
+      generate deltas based on logical lines. Do not enter a value in this field 
+      for variable length files. Doing so could cause the output to be invalid 
+      or incorrect. <!--</control>--></TD>
+	</TR>
+	</TABLE>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="generatedifferencereport.html">Comparing Files</A></TD>
+		<TD><A HREF="readingdifreport.html">Interpreting Difference Results</A></TD>
+	</TR>
+		<TR>
+        <TD><A HREF="aboutmergetool.html">About the Serena ChangeMan Merge Tool</A></TD>
+</TR>
+</TABLE>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

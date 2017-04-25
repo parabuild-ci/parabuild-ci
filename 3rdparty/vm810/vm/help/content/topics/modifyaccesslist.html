@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Modifying Access Lists</TITLE>
+<!--<modifyaccesslist.html>-->
+<!--<toc parent="maintaining_security" label="Modifying Access Lists" anchor="modifyaccesslist" sortkey="07">-->
+<!--<index parent="access_lists" label="modifying" anchor="modifyaccesslist" >-->
+<!--<index parent="security" label="modifying access lists" anchor="modifyaccesslist" >-->
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nUsing Security\nMaintaining Security\nModifying Access Lists");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="modifyaccesslist"></A>Modifying Access Lists</H1>
+
+<H2>To modify an access list:</H2>
+<OL>
+	<LI>Select the project or individual versioned file associated with the access list you want to modify. When you select a project, you modify the access list for all of the archives of the project.<br><br>
+	<LI>Select Admin | Archive Attributes. The Archive Attributes dialog box appears with the General tab active. See <A HREF="changeattributes.html">Changing Attributes of Existing Archives</a> for more information.<br><br>
+	<LI>Select the Advanced tab.<br><br>
+	<LI>In the <b>Access List</b> field, select Delete, Modify, or Append. If you select Modify, enter the access list groups and individual users who can access the archive in the text field that appears to the right of the field. Each entry in the list must be separated by a comma (,). Or, you can click the Browse button to select the groups or individual users. The combined value of this field cannot exceed 255 characters in length.
+<p>If you select Append, enter the additional access list groups and users who can access the archive in the text field that appears to the right of the <b>Access List</b> field.</p>
+<p>Remember that the access list groups and users you specify must be defined in the access control database.</p><br><br>
+	<LI>Click OK.
+</OL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="aboutacdb.html">About Access Control Databases</A></TD>
+		<TD><A HREF="modifyacslstgrpmemb.html">Modifying Access List Group Members</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="modifyacslstgrpprivs.html">Modifying Access List Group Privileges</A></TD>
+		<TD><A HREF="changeattributes.html">Changing Attributes of Existing Archives</A></TD>
+	</tr>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

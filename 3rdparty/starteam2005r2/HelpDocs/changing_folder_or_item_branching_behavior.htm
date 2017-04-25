@@ -1,0 +1,218 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Changing Folder or Item Branching Behavior</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=copyright value="Copyright© 1995-2003, Borland Software Corporation. All rights reserved.">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=772>
+<meta name=layout-width content=699>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<!--(Scripts)=======================================================-->
+
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="./ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<style type="text/css">
+<!--
+h1.whs1 {margin-top: 6px; margin-bottom: 6px;}
+-->
+</style>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Working with the Application\nManaging Views\nChanging Folder or Item Branching Behavior");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1 class="whs1">Changing Folder or Item 
+ Branching Behavior</h1>
+
+<p class=Body>Given the appropriate settings, folders, files, and change 
+ requests in a child view can be branched &#8211; 
+ that is, can be separated from the corresponding item in the parent view. 
+ Folders and change requests branch when their properties change, while 
+ files branch when either their contents or their properties change. Requirements, 
+ tasks, and topics can never branch.</p>
+
+<p class=Body>After a folder or item branches, it receives a new revision 
+ number. For example, if the revision number of a file is 1.13 before the 
+ file branches, it becomes 1.13.1.0 after branching. The next change to 
+ the file in the parent view will receive the revision number 1.14.</p>
+
+<p class=Body>Whether or not a folder, file, or change request has the 
+ ability to branch depends upon its history. </p>
+
+<p class=Body>If a folder or item was in parent view at the time the branching 
+ view was created:</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>If the <span style="font-weight: bold;"><B>Branch 
+ all</B></span> option was selected for the branching view, the <span style="font-weight: bold;"><B>Branch 
+ on change</B></span> check box for the folder or item is enabled <span style="font-weight: bold;"><B>and</B></span> 
+ selected. Therefore, the folder or item can branch.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>If the <span style="font-weight: bold;"><B>Branch 
+ none</B></span> option was selected for the branching view, the <span style="font-weight: bold;"><B>Branch 
+ on change</B></span> check box for the folder or item is enabled but <span 
+ style="font-weight: bold;"><B>not</B></span> selected. Therefore, the folder 
+ or item cannot branch, but its behavior can be changed.</p></li>
+</ul>
+
+<p class=Body>If a folder or item was added to the branching view after 
+ the view is created:</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>The <span style="font-weight: bold;"><B>Branch 
+ on change</B></span> check box for the folder or item is disabled and cleared. 
+ Therefore, the behavior of the folder or item cannot be changed. On the 
+ other hand, if you share that folder or item with a new view, its branching 
+ behavior becomes enabled automatically.</p></li>
+</ul>
+
+<p class=List-1-text
+	style="margin-left: 0px;">Before changing the branching behavior of 
+ a folder, keep in mind the fact that this setting determines whether new 
+ items can be added to that folder. New items can be added if the folder 
+ has already branched, if the folder has not yet branched but has its <span 
+ style="font-weight: bold;"><B>Branch on change</B></span> check box selected, 
+ or if the added item has its <span style="font-weight: bold;"><B>Branch on 
+ change</B></span> check box disabled.</p>
+
+<p class=Body>If a folder has not yet branched and its<span style="font-weight: bold;"><B> 
+ Branch on change</B></span> check box is not selected, new items cannot be 
+ added. If you attempt to do so, an error message will appear, stating 
+ that the folder is read-only.</p>
+
+<p class=Body>Changing a folder’s branching behavior does not affect the 
+ behavior of items in the folder before the change, items subsequently 
+ moved to or shared with that folder, or items subsequently propagated 
+ to that folder from the parent view.</p>
+
+<p class=Proc>To review or change a folder or item’s branching behavior:</p>
+
+<ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select the folder from the 
+ folder hierarchy in the left pane or the item from the list in the upper 
+ pane.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select <span style="font-weight: bold;"><B>Advanced 
+ &gt; Behavior</B></span> from the Folder or item menu. The<span style="font-style: italic;"><I> 
+ Item Behavior</I></span> dialog opens. If the folder or item can be made to 
+ branch, the <span style="font-weight: bold;"><B>Branch on change</B></span> check 
+ box will be enabled.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Do one of the following:</p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>Select the <span 
+ style="font-weight: bold;"><B>Branch on change</B></span> check box if you want 
+ the selected folder or item to branch with the next change. If branching 
+ takes place, this check box becomes disabled, while the folder or item 
+ receives a new revision number which has two additional integers.</p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>Clear the <span style="font-weight: bold;"><B>Branch 
+ on change</B></span> check box if you want the selected folder or item to 
+ branch with the next change. </p></li>
+	</ul>
+	
+	<li class=kadov-p-CList-1><p class=List-1>(Optional) If you are changing 
+ the behavior of a folder, you can also change the behavior of its child 
+ folders simultaneously by selecting the <span style="font-weight: bold;"><B>Apply 
+ to entire folder tree</B></span> check box.</p></li>
+</ol>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

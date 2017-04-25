@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 1.1//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="org.parabuild.ci.object.BuildConfig"
+        table="BUILD_CONFIG"
+        polymorphism="explicit"
+    >
+        <cache usage="read-write" />
+
+        <id
+            name="buildID"
+            column="ID"
+            type="int"
+            unsaved-value="-1"
+        >
+            <generator class="identity">
+            </generator>
+        </id>
+
+        <discriminator
+            column="DISCRIMINATOR"
+            type="string"
+        />
+
+        <version
+            name="timeStamp"
+            type="long"
+            column="TIMESTAMP"
+        />
+
+        <property
+            name="activeBuildID"
+            type="int"
+            column="ORIGNL_CONFIG_ID"
+            unique="false"
+        />
+
+        <property
+            name="buildName"
+            type="java.lang.String"
+            column="NAME"
+            unique="true"
+        />
+
+        <property
+            name="scheduleType"
+            type="byte"
+            column="SCHEDULE"
+        />
+
+        <property
+            name="access"
+            type="byte"
+            column="ACCESS"
+            unique="false"
+        />
+
+        <property
+            name="sourceControl"
+            type="byte"
+            column="SCM"
+            unique="false"
+        />
+
+        <property
+            name="sourceControlEmail"
+            type="yes_no"
+            column="SCM_EMAIL"
+            unique="false"
+        />
+
+        <property
+            name="emailDomain"
+            type="java.lang.String"
+            column="EMAIL_DOMAIN"
+            unique="false"
+        />
+
+        <property
+            name="builderID"
+            type="int"
+            column="BUILDER_ID"
+            unique="false"
+        />
+
+        <property
+            name="subordinate"
+            type="yes_no"
+            column="SUBORDINATE"
+            unique="false"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-BuildConfig.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+        <subclass
+            name="org.parabuild.ci.object.BuildRunConfig"
+            discriminator-value="R"
+        >
+	    <!--
+            	To add non XDoclet property mappings, create a file named
+                hibernate-properties-BuildRunConfig.xml
+		containing the additional properties and place it in your merge dir.
+	    -->
+
+        </subclass>
+        <subclass
+            name="org.parabuild.ci.object.ActiveBuildConfig"
+            discriminator-value="C"
+        >
+	    <!--
+            	To add non XDoclet property mappings, create a file named
+                hibernate-properties-ActiveBuildConfig.xml
+		containing the additional properties and place it in your merge dir.
+	    -->
+
+        </subclass>
+
+    </class>
+
+</hibernate-mapping>

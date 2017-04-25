@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Renaming Items</TITLE>
+<!--<sorting.html>-->
+<!--<toc parent="working_with_items_main_window" label="Renaming Items" anchor="renamingitems" sortkey="04">-->
+<!--<index parent="renaming" label="project databases, projects, or subprojects" anchor="renamingitems">-->
+<!--<index parent="projects" label="renaming using File | Rename" anchor="renamingitems">-->
+<!--<index parent="files" label="renaming using File | Rename" anchor="renamingitems">-->
+<!--<index parent="versioned_files" label="renaming using File | Rename" anchor="renamingitems">-->
+<!--<index parent="project_databases" label="renaming using File | Rename" anchor="renamingitems">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Getting Started\nOverview of the Version Manager Interface\nWorking with Items in the Main Window\nRenaming Items");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="renamingitems"></A>Renaming Items</H1>
+<P>
+You can rename a project database, project, or subproject. When you rename an item, only the name displayed in the
+desktop client is changed; the actual archive filename within the archive directory is not changed. You cannot rename 5.3/6.0 folders.</P>
+<P>When you rename projects and subprojects, a new workfile directory is created to match the new project name. Once you change the name of a project or subproject, you will be checking out, copying, and checking in files from the new workfile location. The location is displayed in the <b>Workfile Location</b> field of the Rename dialog box.</P>
+
+<P>When you rename a project database, only the name is changed. You do not need to specify new archive or workfile locations.</P>
+
+<P>If someone has versioned files checked out while you are changing the name of the project or subproject, Version Manager retains the old workfile location. When the file is checked back in, the <b>Check In From</b> field displays the path where the file was originally checked out to.</P>
+
+<H2>To rename a project database, project, or subproject:</H2>
+<OL>
+<LI>Select the item you want to rename.
+<LI>Select File | Rename. The Rename dialog box appears. This dialog box varies depending on the item (project, subproject, or project database) you are renaming. 
+<LI>Enter the new name of the item in the <b>Name</b> field and click OK. The item appears with its new name in the appropriate desktop client pane.
+</OL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+			<TR>
+		<TD><A HREF="namingconventions.html">Naming Conventions</A></TD>
+			<TD><A HREF="renamedialog.html">Rename Dialog Box</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="renameprojectdialog.html">Rename Project Dialog Box</A></TD>
+
+		<TD><A HREF="renameversionlabeldialog.html">Rename Version Label Dialog Box</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

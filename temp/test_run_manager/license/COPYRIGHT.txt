@@ -1,0 +1,46 @@
+Copyright  2004, 2005 Viewtier Systems, Inc. All Rights Reserved.
+
+Restricted Rights Legend
+
+This software and documentation is subject to and made
+available only pursuant to the terms of the Viewtier Systems
+License Agreement and may be used or copied only in
+accordance with the terms of that agreement. It is against
+the law to copy the software except as specifically allowed
+in the agreement. This document may not, in whole or in
+part, be copied, photocopied, reproduced, translated, or
+reduced to any electronic medium or machine-readable form
+without prior consent, in writing, from Viewtier Systems,
+Inc.
+
+Use, duplication or disclosure by the U.S. Government is
+subject to restrictions set forth in the Viewtier Systems
+License Agreement and in subparagraph (c)(1) of the
+Commercial Computer Software-Restricted Rights Clause at FAR
+52.227-19; subparagraph (c)(1)(ii) of the Rights in
+Technical Data and Computer Software clause at DFARS
+252.227-7013, subparagraph (d) of the Commercial Computer
+Software--Licensing clause at NASA FAR supplement
+16-52.227-86; or their equivalent.
+
+Information in this document is subject to change without
+notice and does not represent a commitment on the part of
+VIEWTIER Systems. THE SOFTWARE AND DOCUMENTATION ARE
+PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND INCLUDING
+WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY OR
+FITNESS FOR A PARTICULAR PURPOSE. FURTHER, Viewtier Systems
+DOES NOT WARRANT, GUARANTEE, OR MAKE ANY REPRESENTATIONS
+REGARDING THE USE, OR THE RESULTS OF THE USE, OF THE
+SOFTWARE OR WRITTEN MATERIAL IN TERMS OF CORRECTNESS,
+ACCURACY, RELIABILITY, OR OTHERWISE.
+
+Trademarks or Service Marks
+Viewtier is registered trademarks of Viewtier Systems, Inc.
+Viewtier Parabuild, and Viewtier Devenv are trademarks of
+Viewtier Systems, Inc.
+
+All other company names may be trademarks of the respective
+companies with which they are associated.
+ 
+Last updated 12/16/2004
+ 

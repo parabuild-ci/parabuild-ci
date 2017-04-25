@@ -1,0 +1,70 @@
+<!-- Copyright 2005 Zelix Pty Ltd (ABN 47 078 740 093) -->
+<html>
+<head>
+   <title>Zelix KlassMaster</title>
+   <link rel=stylesheet href="../ZKM.css" TYPE="text/css">
+</head>
+<body background="../images/small-white-mist1.jpg" bgcolor="#E1E1E1">
+<center><a href="index.html"><img src=../images/ZKM_b4.gif alt="Zelix KlassMaster" width=264 height=62 border=0></a></center>
+<hr>
+
+<h1>Installation</h1>
+Zelix KlassMaster 4.4 is distributed in either a zip archive or tar.gz. 
+<ul>
+<li>The evaluation version is distributed as ZKMEval.zip or ZKMEval.tar.gz. 
+<li>The commercial version is distributed as ZKM.zip or ZKM.tar.gz. 
+<li>The <a href=http://www.zelix.com/klassmaster/download1.html>full documentation</a> is distributed separately as ZKMDocs.zip and ZKMDocs.tar.gz.
+</ul>
+To expand the tar.gz archive in Unix use the <b><code>tar</code></b> then the <b><code>gzip</code></b> utilities. 
+The syntax is <b><code>gzip&nbsp;-d&nbsp;ZKMEval.tar.gz</code></b> then <b><code>tar&nbsp;vxf&nbsp;ZKMEval.tar</code></b>. 
+In Windows both the tar.gz and zip files can be expanded using <a href=http://www.winzip.com>WinZip</a>. 
+<p>
+When you expand the distribution archive, you should get 
+<ul>
+   <li>the file <b>ZKM.jar</b>
+   <li>the file <b>ZKM.class</b>
+   <li>the file <b>readme.txt</b>
+   <li>the file <b>license.html</b>
+   <li>the file <b>install.html</b> (this file)
+   <li>the file <b>defaultExclude.txt</b>
+   <li>the file <b>defaultTrimExclude.txt</b>
+</ul> 
+<p>
+Note that Zelix KlassMaster requires Java 2 (ie. JDK 1.2 or better). The cleanest way to run Zelix KlassMaster is use the <code>-jar</code> parameter.  
+Alternatively, you can put ZKM.jar into the classpath.  Note that it is not enough just to put the directory containing ZKM.jar into the classpath. 
+(The file ZKM.class exists as a separate file <b>and</b> as a file within ZKM.jar. The separate file exists purely to catch classpath errors and can be safely ignored.)
+<p>
+You run Zelix KlassMaster by telling Java to run the <code>com.zelix.ZKM</code> class. Typically you should give the JVM more than the default amount of memory to work with.  If you use the <code><b>-Xmx256m</b></code> parameter then you will give the JVM 256MB of memory which should be adequate for most purposes.  However, you should be sure not to give the JVM more memory than is physically available.  Otherwise performance will deteriorate dramatically as the JVM starts to use virtual memory.
+<p>
+<table border>
+   <tr>
+      <td align="center">
+         <b>If you have</b>
+      </td>
+      <td align="center">
+         <b>Start Zelix KlassMaster in this way</b>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         NOT added ZKM.jar to the system classpath
+      </td>
+      <td>
+         type <b><code>java&nbsp;-Xmx256m&nbsp;-jar&nbsp;ZKM.jar</code></b> at a command prompt
+      </td>
+   </tr>
+   <tr>
+      <td>
+         added ZKM.jar to the system classpath
+      </td>
+      <td>
+         type <b><code>java&nbsp;-Xmx256m&nbsp;com.zelix.ZKM</code></b> at a command prompt
+      </td>
+   </tr>
+</table>
+</center>
+<p>
+<hr>
+Copyright &copy; 2005 <a href="mailto:WebMaster@zelix.com"><font size=-1>Zelix Pty Ltd</font></a> (ABN 47 078 740 093)
+</body>
+</html>

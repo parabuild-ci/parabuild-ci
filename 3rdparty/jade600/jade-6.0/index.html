@@ -1,0 +1,250 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>J.A.D.E. Java Addition to Default Environment</TITLE>
+<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+<META content="Java optional library" name=description>
+<META content="java, SI units, math, physics, real-time, currency, matrix,
+               xml serialization, enum, numeric errors, scientific library,
+               open-source, freeware, quantity concurrent programming" name=keywords>
+<BODY aLink=#c19d69 bgColor=#445a45 link=#c19d69 text=#aecaae
+      vLink=#c19d69>
+<FONT face=Verdana><BASEFONT size=2>
+<IMG align=left alt=J.A.D.E. src="doc/img/jade.jpg">
+<H2 align=center>J.A.D.E.<BR>Java<SUP>TM</SUP> Addition to Default Environment.</H2>
+<BLOCKQUOTE><PRE>      Just as the constant increase of entropy is the basic law of the universe,
+      so it is the basic law of life to be ever more highly structured and to
+      struggle against entropy!                    <B>VÃ¡clav Havel</B></PRE></BLOCKQUOTE>
+<CENTER>
+<HR SIZE=4 width="40%">
+</CENTER><BR><B>&nbsp; Here you will find the most comprehensive package for
+       "serious" Java<SUP>TM</SUP> applications:</B> <BR><BR>
+<UL>
+  <LI> <a href="api/com/dautelle/realtime/package-summary.html">Real-time</a> framework:<ul>
+       <li> Objects can be allocated on the "stack" to avoid garbage collection.</li>
+       <li> Faster code executions by reusing stack/pool objects instead of creating new objects.</li>
+       <li> Easier concurrent programming in low level methods with no thread creation overhead.</li>
+       </ul></LI>
+  <LI> A <a href="api/com/dautelle/math/package-summary.html">math</a> package, which includes 
+       a first <i>(and I believe unique)</i> generic <a href="api/com/dautelle/math/Matrix.html">Matrix</a>
+       class capable to resolve linear system of equations involving any kind of elements 
+       (e.g. <code>LargeInteger, Complex, Quantity, Function, Matrix, etc.</code>).</LI>
+  <LI> <a href="api/com/dautelle/math/functions/package-summary.html">Functions</a> package for symbolic
+       calculations and analysis.</LI>
+  <LI> <a href="api/javax/units/package-summary.html">Units</a> package (e.g. SI units) developped in collaboration with
+       the <A href="http://www.jcp.org/jsr/detail/108.jsp">JSR-108</A> experts group. </LI>
+  <LI> Strongly typed quantity classes (in the <a href="api/com/dautelle/physics/package-summary.html">physics</a> package)
+       with dimension-checking done in the form of class-type checking (e.g. the division of a <code>Length</code> by
+       a <code>Duration</code> returns a <code>Velocity</code> instance).</LI>
+  <LI> Support for <code>Standard</code>, <code>Relativistic</code>,
+       <code>High-Energy</code>, <code>Quantum</code> and <code>Natural</code> physical
+       <a href="api/com/dautelle/physics/models/package-summary.html">models</a>.</LI>
+  <LI> Support for the encoding of objects into XML; and the complementary reconstruction
+       of the object graph from XML (see <a href="api/com/dautelle/xml/package-summary.html">xml</a> package).</LI>
+  <LI> XML parsing with no <code>String</code> allocation!
+       It allows our <A href="api/com/dautelle/xml/sax/RealtimeParser.html">RealtimeParser</A>
+       to run several times faster than conventional SAX2 parsers.</LI>
+  <LI> <A href="api/com/dautelle/money/package-summary.html">
+       Monetary</a> package fully integrated with <A href="api/javax/units/package-summary.html">
+       units</a> (JSR-108) and physical <A href="api/com/dautelle/physics/package-summary.html">
+       quantities</a>.</LI>
+  <LI> <a href="api/com/dautelle/util/Struct.html">Struct</a>
+       and <a href="api/com/dautelle/util/Union.html">Union</a> Java<sup>TM</sup> classes for
+       direct interoperability with <code>C/C++</code> applications (<i>public domain</i>).</LI>
+  <LI> Miscellaneous <A href="api/com/dautelle/util/package-summary.html">utilities</A>
+       classes (<i>public domain</i>) such as 
+       <a href="api/com/dautelle/util/FastMap.html">FastMap</a>,
+       <a href="api/com/dautelle/util/FastSet.html">FastSet</a>,
+       <a href="api/com/dautelle/util/FastString.html">FastString</a> and
+       <a href="api/com/dautelle/util/TypeFormat.html">TypeFormat</a>.</LI>
+</UL><BR>
+<P> This library is free software; you can redistribute it and/or modify it
+    under the terms of the <A href="doc/license.txt">GNU Lesser General Public License</A> (LGPL).</P>
+<CENTER>
+<H2 align=center>JADE Version 6.0.0</H2>
+<A href="api/index.html"><IMG alt=Browse src="doc/img/browse.jpg"></A> 
+<A href="jade-6.0.0-src.zip"><IMG alt=Source src="doc/img/source.jpg"></A> 
+<A href="jade-6.0.0-bin.zip"><IMG alt=Library src="doc/img/library.jpg"></A>  
+</CENTER>
+<p><i>Runtime Environment: <code><b>J2SE 1.4+</b> (J2SE 1.3+ for the real-time package alone)</code></i></p>
+<p><i>Compilers:
+   <a href="http://java.sun.com/">
+   Java<small><sup>TM</sup></small></a>,
+   <a href="http://www-124.ibm.com/developerworks/oss/jikes/">
+   Jikes<small><sup>TM</sup></small></a> or
+   <a href="http://www.gnu.org/software/gcc/java/">GNU Compiler for Java (GCJ)</a></i></p>
+<p><i>Build tool: <A href="http://jakarta.apache.org/ant/">Apache Ant</a></i></p>
+<p><i>Collaborative Tool: <a href="http://jade.dev.java.net/">java.net</a> (code development,
+                comments, issues, bug reporting).</i></p>
+<p><i>Coding Standard: <a href="doc/coding_standard.txt">Addendum</a> to 
+     <a href="http://java.sun.com/docs/codeconv/index.html">
+        Sun<sup>TM</sup> Code Convention</a>.</i></p>
+<p><i>Preferred Environment: <A href="http://www.eclipse.org/">Eclipse</A> (<code>UTF-8 Encoding</code>).</i></p>
+<p><i>Benchmark Results: <a href="doc/benchmark.txt">Benchmark (Windows 2000, Compaq at 2.26GHz)</a> (benchmark code in 
+    class <code>com.dautelle.JADE</code>).</i></p>
+
+<H3><U>History</U></H3>
+<UL>
+  <LI><I>Coming soon:</I>
+  <UL>
+    <LI> Article to be published in <b>Java Developer Journal</b>: <i>"Turbo Charging Java for Real-Time Applications"</i>
+         (overview of JADE <a href="api/com/dautelle/realtime/package-summary.html">real-time framework</a>)</LI>
+    <LI> Article to be published in <b>Dr Dobbs Journal</b>: <i>"Java for Real-Time, Closing the gap with C/C++"</i>
+         (white paper on different techniques allowing Java to be used in place of C/C++ for safety
+         critical and real-time systems, it includes the stack allocation approach that JADE supports).</LI> 
+    <LI> Complete the work on numerics: <A href="api/com/dautelle/math/LargeInteger.html">LargeInteger</A>,
+         <A href="api/com/dautelle/math/Rational.html">Rational</A> and 
+         <A href="api/com/dautelle/math/Real.html">Real</A> numbers.</LI>
+    <LI> Add <code>IntervalFunction</code> to allow <A href="api/com/dautelle/math/functions/Function.html">functions</a>
+         to be defined by intervals.</LI>
+  </UL><P></P></LI>
+
+  <LI> March 24, 2004:  JADE 6.0.0<BR>
+  <UL>
+       <LI> <IMG src="doc/img/new.gif"> <A href="api/com/dautelle/math/functions/Function.html">Function</a>
+            and <A href="api/com/dautelle/math/functions/Polynomial.html">Polynomial</a> classes for
+            symbolic functions manipulations.</LI>
+       <LI> <IMG src="doc/img/new.gif"> Real-time compliants iterators for 
+            <A href="api/com/dautelle/util/FastMap.html">FastMap</A> and
+            <A href="api/com/dautelle/util/FastSet.html">FastSet</A> (allocatable on the stack).</LI>
+       <LI> JADE's units package selected as the new baseline for 
+             the <A href="http://sourceforge.net/projects/jsr-108/">JSR-108 reference implementation</A>.</LI>
+       <LI> <A href="http://www.onjava.com/pub/a/onjava/2004/01/07/units.html">O'Reilly article</a>
+            on the Java's units specification and JADE ("Apples and Oranges").</LI>
+  </UL><P></P></LI>
+
+  <LI> December 16, 2003:  JADE 5.3.9<BR>
+  <UL>
+       <LI> Fixed conversion errors in <A href="api/javax/units/NonSI.html">Non-SI units</A>
+            (ref. <A href="https://jade.dev.java.net/issues/show_bug.cgi?id=2">
+            java.net</A> issue).</LI>
+       <LI> Optimized  <A href="api/com/dautelle/math/Matrix.html#inverse">Matrix's inverse</A>.</LI>
+       <LI> Support for references (C/C++ pointers) and
+            <A href="api/com/dautelle/util/Enum.html">Enum</A>
+            in the <A href="api/com/dautelle/util/Struct.html">Struct</A> class.</LI>
+       <LI> <A href="api/com/dautelle/util/FastMap.html">FastMap</A>,
+            a <code>Map</code> collection with real-time behavior. Unless the map's size exceeds 
+            its current capacity, no dynamic memory allocation is ever performed and response
+            time is <B>extremely fast</B> and <B>consistent</B> (up to <B>5x</B> faster than
+            <code>java.util.HashMap</code>).</LI>
+  </UL><P></P></LI>
+
+  <LI> October 20, 2003:  JADE 5.2.5<BR>
+  <UL>
+       <LI>Improved support for multi-dimensional
+          <A href="api/com/dautelle/math/Function.html">Functions</A>.</LI>
+       <LI>Initial capacity property for our <A href="api/com/dautelle/xml/sax/RealtimeParser.html">RealtimeParser</A>.
+          See <A href="https://jade.dev.java.net/servlets/BrowseList?listName=users&count=3">
+          Parse and CDATA</A> discussion.</LI>
+       <LI> <A href="api/com/dautelle/util/Struct.html">Struct</A> and
+           <A href="api/com/dautelle/util/Union.html">Union</A> base classes
+           analogous to <code>C/C++ struct & union</code> (same storage layout,
+           alignment rules, bit-field support, etc.)</LI>
+  </UL><P></P></LI>
+
+  <LI> August 27, 2003:  JADE 5.1.1<BR>
+  <UL>
+    <LI> Real-time facility has been re-engineered (see <a href="#REAL_TIME">above</a>).
+         The new version allows for low-level concurrent programming. For example,
+         it is now relatively easy to write a concurrent quick-sort <b>twice faster</b> on a
+         pentium with hyper-threading technology (hyper-threading doubles the number
+         of executing threads per processor).</p>
+  </UL><P></P></LI>
+
+  <LI> July 20, 2003:  JADE 4.6.10<BR>
+  <UL>
+    <LI> Faster algorithms (based upon LU decomposition)
+         for our generic <A href="api/com/dautelle/math/Matrix.html">Matrix</A> class.</LI>
+    <LI> Member of <a href="http://jade.dev.java.net/">java.net</a>.</LI>
+    <LI> UTF-8 encoding for JADE source code (default encoding on Linux).</LI>
+    <LI> <A href="api/com/dautelle/xml/sax/RealtimeParser.html">Real-time XML parser</A>,
+         extremely fast (faster than any conventional SAX2 parser) and small (15Kbytes compressed).
+         It has the unique characteristic of not allocating dynamic memory and still maintains
+         a very small memory footprint (e.g. less than 16Kbytes while parsing 32Mbytes files).
+         Typical applications include SOAP messaging, embedded/realtime systems, web servers
+         (possibly thousands instances running concurrently), etc.</LI>
+    <LI> Our <A href="api/com/dautelle/xml/package-summary.html">XML serialization/deserialization
+         facility</A> is now using the new <A href="api/com/dautelle/xml/sax/RealtimeParser.html">RealtimeParser</A>
+         (300% improvement in deserialization speed).</LI>
+  </UL><P></P></LI>
+
+  <LI>April 27, 2003:  JADE 4.4.5<BR>
+  <UL>
+    <LI> Utility class <i>(public domain)</i> <A href="api/com/dautelle/util/TypeFormat.html">
+         TypeFormat</A> to parse text into primitive types (fast and unlike the standard library,
+         does not create temporary objects).</LI>
+    <LI> <A href="api/com/dautelle/realtime/StringRT.html">StringRT</A> is fully integrated
+         with the new (1.4) <code>java.lang.CharSequence</code> interface (allows for search,
+         concatenation and comparison with any <code>CharSequence</code> such as itself, <code>
+         java.lang.String</code> or <code>java.lang.StringBuffer</code>).</LI>
+  </UL><P></P></LI>
+
+  <LI>March 25, 2003:  JADE 4.3<BR>
+  <UL>
+    <LI> Updated <A href="api/com/dautelle/realtime/package-summary.html#FAQ">real-time FAQ</a>.</LI>
+    <LI> New class <A href="api/com/dautelle/realtime/StringRT.html">StringRT</A>.
+         This class provides an immutable <code>String</code> several order of magnitude faster
+         than <code>java.lang.String</code>. Concatenation for example, executing in the default JVM heap
+         context (where  immutability is guaranteed) is basically as fast as if <code>StringBuffer</code>
+         were being used! For even greater performance, you may execute within
+         a real-time context, then <A href="api/com/dautelle/realtime/StringRT.html">StringRT</A>
+         is 2x-3x time faster than <code>java.lang.StringBuffer</code>
+         (see <a href="doc/benchmark.txt">Benchmark</a>).</LI>
+    <LI><A href="api/com/dautelle/math/package-summary.html">math</a> package
+        has been extended with generic
+        <A href="api/com/dautelle/math/Function.html">functions</a>.
+        The combination of <A href="api/com/dautelle/math/DiscreteFunction.html">
+        discrete functions</a> and
+        <A href="api/com/dautelle/physics/Quantity.html"> physical
+        quantities</a> allows for the numerical resolution of any real-life system
+        (differential). Furthermore, because quantity calculations take into account numeric
+        errors, the solution obtained can be <b>guaranteed</b>
+        (interval solution always contains the exact "theorical" solution)!</LI>
+  </UL><P></P></LI>
+
+  <LI>February 24, 2003:  JADE 4.2<BR>
+  <UL>
+    <LI> Monetary quantities have been added to
+         the <A href="api/com/dautelle/money/package-summary.html">money</A>
+         package.</LI>
+    <LI> The <A href="api/com/dautelle/physics/package-summary.html">physics</a> package
+         has been re-written to support multiple physical
+         <A href="api/com/dautelle/physics/models/package-summary.html">models</a> (<code>Standard</code>,
+         <code>Relativistic</code>, <code>HighEnergy</code>, <code>Quantum</code> and
+         <code>Natural</code>).</LI>
+    <LI> The <A href="api/com/dautelle/xml/package-summary.html">xml</a> package
+         documentation has been improved.</LI>
+  </UL><P></P></LI>
+
+
+  <LI>November 24, 2002:  JADE 3.1<BR>
+  <p> The <A href="api/com/dautelle/realtime/package-summary.html">real-time</a> package
+      has been finalized. This framework was initially intended for real-time systems,
+      but its "accelerating" effect might appeal to any system dynamically allocating
+      memory.</p>
+  <p> The cost of memory allocations/initialization can be huge (90% of CPU is not
+      rare) and using mutable objects is unsafe... The framework provides "immutable objects"
+      safety and convenience (e.g. no need to specify a "returnValue" parameter) with the
+      performance of "mutable objects".</p>
+  <P></P></LI>
+
+  <LI><B>September 4, 2002: JADE 3.0</B></LI>
+  <LI><B>July 28, 2002: JADE 2.0</B></LI>
+  <LI><B>November 12, 2001: JADE 1.4</B></LI>
+  <LI><B>February 24, 2001: JADE 1.3</B><BR>
+    Article focusing upon JADE XML support, published in the February
+    issue of <B>Dr Dobbs Journal</B>.</LI>
+  <LI><B>December 11, 2000: JADE 1.2</B></LI>
+  <LI><B>December 9, 2000: JADE 1.1</B></LI>
+  <LI><B>September 12, 2000: Official release of JADE 1.0</B></LI>
+</UL><BR>
+
+<HR SIZE=4 width="40%">
+</CENTER>
+<A href="http://www.opensource.org/" alt="OSI Certified"><IMG align=left hspace=4 src="doc/img/osi-certified-72x60.gif" vspace=2> </A>
+<A href="http://www.jars.com/" alt="jars.com"><IMG align=left hspace=4 src="doc/img/jars.gif" vspace=2> </A>
+<ADDRESS>Comments To: <A href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</A>
+<BR>Revision: March 24, 2004<BR>
+<IMG src="/cgi-sys/Count.cgi?df=jade.dat|display=Counter|ft=0|md=6|frgb=0;139;216|dd=B"></ADDRESS>
+
+<H5><A href="http://java.sun.com/" target=_blank>Java<SUP>TM</SUP></A> is a
+trademark of <A href="http://www.sun.com/" target=_blank>Sun Microsystems, Inc</A></H5>
+<H5><U>Copyright&copy; 2004 The Dautelle Family</U></H5></FONT></BODY></HTML>

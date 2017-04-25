@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Setting Up Automatic Branching</TITLE>
+<!--<setautobranch.html>-->
+<!--<toc parent="branching" label="Setting Up Automatic Branching" anchor="setautobranch" sortkey="03">-->
+<!--<toc parent="setting_configuration_options" label="Setting Branching Options" anchor="setautobranch" sortkey="03">-->
+<!--<toc parent="setting_project_configuration_options" label="Setting Branching Options" anchor="setautobranch" sortkey="03">-->
+<!--<index parent="branching" label="setting up automatic" anchor="setautobranch">-->
+<!--<index parent="automatic_branching" label="setting up" anchor="setautobranch">-->
+<!--<index parent="configuring" label="automatic branching" anchor="setautobranch">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with Project Databases/Projects\nConfiguring Project Databases/Projects\nSetting Branching Options");
+addTocInfo("Using Version Manager\nBranching and Merging Files\nBranching\nSetting Up Automatic Branching");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="setautobranch"></A>Setting Up Automatic Branching</H1>
+
+<p>Automatic branching allows you to create a branch automatically from a trunk revision. Then, by default, you work with the tip revision of that branch whenever you perform an action. To perform this procedure, the project database or project must be <a href="assocconfigfile.html">associated with a configuration file</a>.</p>
+
+<H2>To set up automatic branching:</H2>
+<OL>
+	<LI>Select the project database or project for which you are setting up automatic branching.<br><br>
+	<LI>Assign a fixed version label to the revision from which you want to start a branch:<br><br>
+	<oL type="a">
+		<LI>Select the versioned file(s) from the selected project to which you want to assign a version label. To assign a version label to a different revision of the files, you must select each versioned file individually.
+		<LI>Select Actions | Version Label | Assign. The Assign Version Label to File dialog box appears.
+		<LI>Enter the name of the version label in the <b>Assign Version Label</b> field; for example, Rel1.0 Base. Any character can be used in the name except a colon (:).
+<LI>Enter the revision number in the <b>To revision</b> field or click the Browse button to select the revision number.
+		<LI>Click OK. This version label will be defined later as the Base Version.<br><br>
+	</oL>
+	<LI>Assign another fixed version label to the revisions you selected in step 2. <br><br>
+	<oL type="a">
+		<LI>Select the versioned file(s).
+		<LI>Select Actions | Version Label | Assign. The Assign Version Label to File dialog box appears.
+		<LI>Enter the name of the version label in the <b>Assign Version Label</b> field; for example, Rel15.0 Branch. Any character can be used in the name except a colon (:).
+<LI>Enter the revision number in the <b>To revision</b> field or click the Browse button to select the revision number.
+		<LI>Click OK. This version label will be defined later as the Branch Version.
+	</oL><br><br>
+	<LI>Select Admin | Configure Project. The Configure Project dialog box appears with the General tab active.<br><br>
+	<LI>If not already selected, select the <b>Show Advanced Options</b> check box.<br><br>
+	<LI>In the Options list, select <b>Branching</b>  beneath Archives. The Archive Branching pane on the right appears.<br><br>
+	<LI>Specify the Base Version, which is the version label you assigned in step 2; for example, Rel1.0 Base.<br><br>
+	<LI>Specify the Branch Version, which is the version label you assigned in step 3; for example, Rel1.5 Branch.<br><br>
+	<LI>Specify the Default Version, which is the version label you assigned in step 3; for example, Rel1.5 Branch.<br><br>
+	<LI>Click OK.
+</OL>
+<p>Once you set up Version Manager for automatic branching, you can also merge the branch tip with the trunk tip automatically using the Actions | Show Merge command. From the version labels you set up as branching options, Version Manager determines the revision from which the branch originated, the trunk tip revision, and the branch tip revision. Therefore, you do not have to specify these values when you perform a merge.</p>
+<p><b>NOTE</b>  To later resume work on the trunk, reset the Default Version option to the version label you specified in step 2; for example, Rel1.0 Base.</p>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="autobranch.html">About Automatic Branching</A></TD>
+		<TD><A HREF="aboutbranching.html">About Branching</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="branchfile.html">Branching Files</A></TD>
+		<TD><A HREF="multilockbranchsetup.html">Setting Up Multiple Locks for Branching</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="aboutautomerge.html">Merging Files Automatically</A></TD>
+		<TD></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

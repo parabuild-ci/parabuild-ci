@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 1.1//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="org.parabuild.ci.object.WeekDayDistribution"
+        table="WEEKDAY_DISTRIBUTION"
+    >
+        <cache usage="read-write" />
+
+        <id
+            name="ID"
+            column="ID"
+            type="int"
+            unsaved-value="-1"
+        >
+            <generator class="identity">
+            </generator>
+        </id>
+
+        <property
+            name="activeBuildID"
+            type="int"
+            column="ACTIVE_BUILD_ID"
+            unique="false"
+        />
+
+        <property
+            name="target"
+            type="int"
+            column="TARGET"
+            unique="false"
+        />
+
+        <property
+            name="successfulBuildCount"
+            type="int"
+            column="SUCCESSFUL_BUILD_COUNT"
+            unique="false"
+        />
+
+        <property
+            name="failedBuildCount"
+            type="int"
+            column="FAILED_BUILD_COUNT"
+            unique="false"
+        />
+
+        <property
+            name="totalBuildCount"
+            type="int"
+            column="TOTAL_BUILD_COUNT"
+            unique="false"
+        />
+
+        <property
+            name="changeListCount"
+            type="int"
+            column="CHANGE_LIST_COUNT"
+            unique="false"
+        />
+
+        <property
+            name="issueCount"
+            type="int"
+            column="ISSUE_COUNT"
+            unique="false"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-WeekDayDistribution.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

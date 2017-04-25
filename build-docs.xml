@@ -1,0 +1,97 @@
+<project name="bt" default="docs.all" basedir=".">
+
+  <property name="fo.staging.dir" value="${build.dir}/fo_staging"/>
+  <property name="docs.html.result.dir" value="${docs.result.dir}/html"/>
+  <property name="docs.pdf.result.dir" value="${docs.result.dir}/pdf"/>
+
+  <taskdef name="fop" classname="org.apache.fop.tools.anttasks.Fop">
+    <classpath>
+      <pathelement location="${fop.home}/lib/fop.jar"/>
+      <pathelement location="${fop.home}/lib/avalon-framework-cvs-20020806.jar"/>
+      <pathelement location="${fop.home}/lib/batik.jar"/>
+      <pathelement location="${fop.home}/lib/jimi-1.0.jar"/>
+    </classpath>
+  </taskdef>
+
+
+  <xmlcatalog id="docbook">
+    <dtd publicId="-//OASIS//DTD DocBook XML V4.2//EN" location="${docbookdtd.home}/docbookx.dtd"/>
+  </xmlcatalog>
+
+
+  <!-- Prepares directories -->
+  <target name="docs.prepare">
+  </target>
+
+
+  <!-- Generates HTML version of Parabuild Documents -->
+  <target name="docs.generate.html" depends="docs.prepare">
+    <mkdir dir="${docs.html.result.dir}"/>
+    <antcall target="docs.html.helper">
+      <param name="html.includes" value="*.xml"/>
+      <param name="html.destdir" value="${docs.html.result.dir}"/>
+      <param name="html.style" value="${docbook.home}/html/docbook.xsl"/>
+    </antcall>
+  </target>
+
+
+  <!-- Generates PDF version of Parabuild Documents -->
+  <target name="docs.generate.pdf" depends="docs.prepare" if="is.release.build">
+    <mkdir dir="${fo.staging.dir}"/>
+    <!-- Generate FO to be processed by FOP -->
+    <xslt basedir="${project.home}/doc" destdir="${fo.staging.dir}" style="${docbook.home}/fo/docbook.xsl"
+      includes="*.xml" extension=".fo">
+      <param name="fop.extensions" expression="1"/>
+      <param name="generate.index" expression="1"/>
+      <classpath>
+        <pathelement location="${docbook.home}/extensions/xalan2.jar"/>
+      </classpath>
+      <xmlcatalog refid="docbook"/>
+    </xslt>
+    <!-- FOP the FO -->
+    <mkdir dir="${docs.pdf.result.dir}"/>
+    <fop format="application/pdf" outdir="${docs.pdf.result.dir}" messagelevel="debug">
+      <fileset dir="${fo.staging.dir}">
+        <include name="*.fo"/>
+      </fileset>
+    </fop>
+  </target>
+
+
+  <!-- Builds all docs and copies the result to destinations -->
+  <target name="docs.all" depends="docs.prepare, docs.generate.html, docs.generate.pdf">
+    <copy todir="${build.dir.docs}">
+      <fileset dir="${docs.result.dir}"/>
+    </copy>
+  </target>
+
+
+  <!-- HTML helper
+    Parameters:
+      html.includes - what,
+      html.destdir  - to,
+      html.style    - how
+  -->
+  <target name="docs.html.helper">
+    <xslt basedir="${project.home}/doc" includes="${html.includes}" destdir="${html.destdir}" extension=".html"
+      style="${html.style}">
+      <param name="draft.mode" expression="no"/>
+      <param name="generate.index" expression="1"/>
+      <param name="section.autolabel" expression="1"/>
+      <param name="section.label.includes.component.label" expression="1"/>
+      <param name="html.stylesheet" expression="ref.css"/>
+      <!--
+      <param name="toc.section.depth" expression="0"/>
+      <param name="toc.max.depth" expression="0"/>
+      <param name="generate.section.toc.level" expression="0"/>
+      -->
+      <classpath>
+        <pathelement location="${docbook.home}/extensions/xalan2.jar"/>
+      </classpath>
+      <xmlcatalog refid="docbook"/>
+    </xslt>
+    <copy todir="${html.destdir}">
+      <fileset dir="${project.home}/doc" includes="*.css,*.gif,*.png"/>
+    </copy>
+  </target>
+</project>

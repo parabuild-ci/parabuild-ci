@@ -1,0 +1,576 @@
+<HTML><HEAD><TITLE>Configuration Howto</TITLE></HEAD><BODY alink="#023264" bgcolor="#ffffff" leftmargin="4" link="#525D76" marginheight="4" marginwidth="4" text="#000000" topmargin="4" vlink="#023264"><TABLE border="0" cellpadding="0" cellspacing="0" width="100%"><TR><TD align="left" valign="top"><A href="http://jakarta.apache.org/index.html"><IMG border="0" hspace="0" src="./images/jakarta-logo.gif" vspace="0"></A></TD><TD align="left" bgcolor="#ffffff" valign="middle" width="100%"><IMG align="right" alt="Configuration Howto" border="0" hspace="0" src=".//images/logocactus.gif" vspace="0"></TD></TR><TR><TD colspan="2" height="2" width="100%"><HR noshade="" size="1"></TD></TR></TABLE><TABLE border="0" cellpadding="0" cellspacing="0" width="100%"><TR><TD valign="top" width="1%"></TD><TD nowrap="1" valign="top" width="14%"><FONT size="-2">
+              Last update : August 31 2002</FONT><BR><FONT size="-2">
+              Doc for : v1.4.1</FONT><BR><FONT face="arial,helvetica,sanserif">
+
+  <BR><FONT color="#000000" size="+1">About</FONT><BR><FONT size="-1">
+    <LI><A href="./index.html"><FONT size="-1">What is Cactus ?</FONT></A></LI>
+    <LI><A href="./news.html"><FONT size="-1">News</FONT></A></LI>
+    <LI><A href="./changes.html"><FONT size="-1">Changes</FONT></A></LI>
+    <LI><A href="./features.html"><FONT size="-1">Features/Status</FONT></A></LI>
+    <LI><A href="./goals.html"><FONT size="-1">Goals</FONT></A></LI>
+    <LI><A href="./todo.html"><FONT size="-1">Roadmap/Todo</FONT></A></LI>
+    <LI><A href="./contributors.html"><FONT size="-1">Contributors</FONT></A></LI>
+    <LI><A href="./contributing.html"><FONT size="-1">Contributing</FONT></A></LI>
+    <LI><A href="./users.html"><FONT size="-1">Cactus Users</FONT></A></LI>
+    <LI><A href="./testedon.html"><FONT size="-1">Tested on ...</FONT></A></LI>
+    <LI><A href="./license.html"><FONT size="-1">License</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Downloads</FONT><BR><FONT size="-1">
+    <LI><A href="./downloads.html"><FONT size="-1">Downloads</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Documentation</FONT><BR><FONT size="-1">
+    <LI><A href="./how_it_works.html"><FONT size="-1">How it works ?</FONT></A></LI>
+    
+    <LI><A href="./getting_started.html"><FONT size="-1">Getting Started</FONT></A></LI>
+    <LI><A href="./mockobjects.html"><FONT size="-1">Mock vs Container</FONT></A></LI>
+    <LI><A href="./javadoc.html"><FONT size="-1">Javadocs</FONT></A></LI>
+    
+    
+    <LI><A href="./faq.html"><FONT size="-1">FAQ</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Howto Guides</FONT><BR><FONT size="-1">
+    <LI><A href="./howto_classpath.html"><FONT size="-1">Classpath Howto</FONT></A></LI>
+    <LI><A href="./howto_config.html"><FONT size="-1">Config Howto</FONT></A></LI>
+    <LI><A href="./howto_migration.html"><FONT size="-1">Migration Howto</FONT></A></LI>
+
+    
+    <LI><A href="./howto_testcase.html"><FONT size="-1">TestCase Howto</FONT></A></LI>
+    
+    
+    
+
+    <LI><A href="./howto_jsp.html"><FONT size="-1">Jsp Howto</FONT></A></LI>
+    <LI><A href="./howto_runner.html"><FONT size="-1">Runner Howto</FONT></A></LI>
+    <LI><A href="./howto_security.html"><FONT size="-1">Security Howto</FONT></A></LI>
+
+    
+    <LI><A href="./howto_ant.html"><FONT size="-1">Ant Howto</FONT></A></LI>
+    
+    
+    
+
+    <LI><A href="./howto_httpunit.html"><FONT size="-1">HttpUnit Howto</FONT></A></LI>
+    <LI><A href="./howto_sample.html"><FONT size="-1">Sample Howto</FONT></A></LI>
+
+    
+    <LI><A href="./howto_ejb.html"><FONT size="-1">EJB Howto</FONT></A></LI>
+    
+
+    
+    <LI><A href="./howto_ide.html"><FONT size="-1">IDE Howto</FONT></A></LI>
+    
+    
+    
+    
+
+    <LI><A href="./howto_tomcat.html"><FONT size="-1">Tomcat Howto</FONT></A></LI>
+
+    <LI><A href="./howto_junitee.html"><FONT size="-1">JUnitEE Howto</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Support</FONT><BR><FONT size="-1">
+    <LI><FONT size="-1"><A href="http://jakarta.apache.org/site/bugs.html" target="">Bug database</A></FONT></LI>
+    <LI><A href="./mailinglist.html"><FONT size="-1">Mailing list</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Misc.</FONT><BR><FONT size="-1">
+    <LI><A href="./cactusname.html"><FONT size="-1">Why the name ?</FONT></A></LI>
+    <LI><A href="./logos.html"><FONT size="-1">Logo Challenge</FONT></A></LI>
+    <LI><A href="./resources.html"><FONT size="-1">Resources</FONT></A></LI>
+    <LI><A href="./coverage.html"><FONT size="-1">Test Coverage</FONT></A></LI>
+    
+    
+    
+    <LI><FONT size="-1"><A href="http://jakarta.apache.org/cactus/stats/index.html" target="">Stats</A></FONT></LI>
+    
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Developers</FONT><BR><FONT size="-1">
+    <LI><FONT size="-1"><A href="http://jakarta.apache.org/site/cvsindex.html" target="">CVS</A></FONT></LI>
+    <LI><A href="./coding_conventions.html"><FONT size="-1">Coding Conventions</FONT></A></LI>
+    <LI><A href="./build_result.html"><FONT size="-1">Build results</FONT></A></LI>
+    <LI><A href="./release_checklist.html"><FONT size="-1">Release Checklist</FONT></A></LI>
+  </FONT><BR>
+
+</FONT></TD><TD align="left" valign="top" width="*"><TABLE border="0" cellpadding="3" cellspacing="0"><TR><TD><BR>
+  
+
+  
+
+    <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>Cactus Configuration</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+      <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+        You should read the <A href="getting_started.html">Getting
+        Started</A> guide first.
+      </I></FONT></TD></TR></TABLE></P>
+
+      <P align="justify">
+        Here are the configuration files used by Cactus:
+      </P>
+
+      <P align="center"><IMG alt="Configuration files" border="0" hspace="4" src="images/config.jpg" vspace="4"></P>
+
+      <P align="justify">
+        There are 3 kinds of configuration:
+      </P>
+      <BLOCKQUOTE><UL>
+        <LI>
+          <A href="#clientside">Client side configuration</A>
+        </LI>
+        <LI>
+          <A href="#serverside">Server side configuration</A>
+        </LI>
+        <LI>
+          <A href="#logging">Cactus Logging configuration</A>
+        </LI>
+      </UL></BLOCKQUOTE>
+
+      <P align="justify">
+        Cactus configuration works by setting Java System properties. You can
+        set the Cactus configuration properties:
+      </P>
+      <BLOCKQUOTE><UL>
+          <LI>
+            On the command line (using <CODE><FONT face="courier, monospaced">-Dxxx=yyy</FONT></CODE>).
+          </LI>
+          <LI>
+            In a configuration file (recommended). By default Cactus will look
+            for a <CODE><FONT face="courier, monospaced">cactus.properties</FONT></CODE> file located in your
+            classpath. You can override the name and location of the
+            configuration file by setting the <CODE><FONT face="courier, monospaced">cactus.config</FONT></CODE> System
+            property. For example you can pass the following when starting the
+            JVM : <CODE><FONT face="courier, monospaced">-Dcactus.config=c:/cactus.txt</FONT></CODE>.
+          </LI>
+          <LI>
+            In your tests (using <CODE><FONT face="courier, monospaced">System.setProperty()</FONT></CODE>). This
+            option is not recommended as it is better to share a single
+            configuration across all tests.
+          </LI>
+      </UL></BLOCKQUOTE>
+
+      <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+        Please note that the different options for configuring Cactus works
+        both for Cactus client side (i.e. from where you start the JUnit Test
+        Runner) and for the Cactus server side (i.e. from where you start your
+        application server).
+      </I></FONT></TD></TR></TABLE></P>
+
+      <A name="clientside"><!--anchor--></A>
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>Client side configuration</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+          The following table lists the properties that can be defined on
+          Cactus client side:
+        </P>
+
+        <TABLE border="0" cellpadding="2" cellspacing="2" width="100%"><CAPTION></CAPTION>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <B>Property Name</B>
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <CODE><FONT face="courier, monospaced">cactus.contextURL</FONT></CODE>
+            &nbsp;
+          </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <B>Required</B>
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Yes
+            &nbsp;
+          </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <B>Description</B>
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Webapp Context under which the application to test runs.
+            &nbsp;
+          </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <B>Example</B>
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <CODE><FONT face="courier, monospaced">cactus.contextURL = http://localhost:8080/test</FONT></CODE>
+            &nbsp;
+          </FONT></TD>
+          </TR>
+        </TABLE>
+
+        <P align="justify">
+          <BR>
+        </P>
+
+        <TABLE border="0" cellpadding="2" cellspacing="2" width="100%"><CAPTION></CAPTION>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <B>Property Name</B>
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <CODE><FONT face="courier, monospaced">cactus.servletRedirectorName</FONT></CODE>
+            &nbsp;
+          </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <B>Required</B>
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              No. Defaults to &quot;<CODE><FONT face="courier, monospaced">ServletRedirector</FONT></CODE>&quot;.
+            &nbsp;
+          </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <B>Description</B>
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Name of the Cactus Servlet Redirector as it is mapped on the
+              server side in <CODE><FONT face="courier, monospaced">web.xml</FONT></CODE> (see below). This property
+              is needed only if your test classes are extending
+              <CODE><FONT face="courier, monospaced">ServletTestCase</FONT></CODE> (see the
+              <A href="howto_testcase.html">TestCase Howto</A>
+              tutorial).
+            &nbsp;
+          </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <B>Example</B>
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <CODE><FONT face="courier, monospaced">cactus.servletRedirectorName = ServletRedirector</FONT></CODE>
+            &nbsp;
+          </FONT></TD>
+          </TR>
+        </TABLE>
+
+        <P align="justify">
+          <BR>
+        </P>
+
+        <TABLE border="0" cellpadding="2" cellspacing="2" width="100%"><CAPTION></CAPTION>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <B>Property Name</B>
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <CODE><FONT face="courier, monospaced">cactus.jspRedirectorName</FONT></CODE>
+            &nbsp;
+          </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <B>Required</B>
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              No. Defaults to &quot;<CODE><FONT face="courier, monospaced">JspRedirector</FONT></CODE>&quot;.
+            &nbsp;
+          </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <B>Description</B>
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Name of the Cactus JSP Redirector as it is mapped on the
+              server side in <CODE><FONT face="courier, monospaced">web.xml</FONT></CODE> (see below). This property
+              is needed only if your test classes are extending
+              <CODE><FONT face="courier, monospaced">JspTestCase</FONT></CODE> (see the
+              <A href="howto_testcase.html">TestCase Howto</A>
+              tutorial).
+            &nbsp;
+          </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <B>Example</B>
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <CODE><FONT face="courier, monospaced">cactus.jspRedirectorName = JspRedirector</FONT></CODE>
+            &nbsp;
+          </FONT></TD>
+          </TR>
+        </TABLE>
+
+        <P align="justify">
+          <BR>
+        </P>
+
+        <TABLE border="0" cellpadding="2" cellspacing="2" width="100%"><CAPTION></CAPTION>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <B>Property Name</B>
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <CODE><FONT face="courier, monospaced">cactus.filterRedirectorName</FONT></CODE> (For J2EE API 1.3 only)
+            &nbsp;
+          </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <B>Required</B>
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              No. Defaults to &quot;<CODE><FONT face="courier, monospaced">FilterRedirector</FONT></CODE>&quot;.
+            &nbsp;
+          </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <B>Description</B>
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Name of the Cactus Filter Redirector as it is mapped on the
+              server side in <CODE><FONT face="courier, monospaced">web.xml</FONT></CODE> (see below). This property
+              is needed only if your test classes are extending
+              <CODE><FONT face="courier, monospaced">FilterTestCase</FONT></CODE> (see the
+              <A href="howto_testcase.html">TestCase Howto</A>
+              tutorial).
+            &nbsp;
+          </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <B>Example</B>
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <CODE><FONT face="courier, monospaced">cactus.filterRedirectorName = FilterRedirector</FONT></CODE>
+            &nbsp;
+          </FONT></TD>
+          </TR>
+        </TABLE>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <A name="serverside"><!--anchor--></A>
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>Server side configuration</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+          On Cactus server side, you only need to properly configure your
+          application <CODE><FONT face="courier, monospaced">web.xml</FONT></CODE> file to include definitions for
+          Cactus Redirectors (see <A href="how_it_works.html">How it
+          works</A> if you don't know what a Cactus Redirector is).
+        </P>
+
+        <P align="justify">
+          You need to register the Cactus Redirectors that you use, and you
+          need to map them to the <CODE><FONT face="courier, monospaced">cactus.servletRedirectorName</FONT></CODE>,
+          <CODE><FONT face="courier, monospaced">cactus.jspRedirectorName</FONT></CODE> and
+          <CODE><FONT face="courier, monospaced">cactus.filterRedirectorName</FONT></CODE> that you have configured
+          on the client side (or simply make sure that you use the default
+          names, i.e. <CODE><FONT face="courier, monospaced">ServletRedirector</FONT></CODE>,
+          <CODE><FONT face="courier, monospaced">JspRedirector</FONT></CODE> and <CODE><FONT face="courier, monospaced">FilterRedirector</FONT></CODE>
+          respectively).
+        </P>
+
+        <P align="justify">
+          Here is a sample <CODE><FONT face="courier, monospaced">web.xml</FONT></CODE> that defines the 3 Cactus
+          Redirectors:
+        </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+
+&lt;!DOCTYPE web-app
+    PUBLIC &quot;-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN&quot;
+    &quot;http://java.sun.com/j2ee/dtds/web-app_2_3.dtd&quot;&gt;
+
+&lt;web-app&gt;
+
+    &lt;filter&gt;
+        &lt;filter-name&gt;FilterRedirector&lt;/filter-name&gt;
+        &lt;filter-class&gt;org.apache.cactus.server.FilterTestRedirector&lt;/filter-class&gt;
+    &lt;/filter&gt;
+
+    &lt;filter-mapping&gt;
+        &lt;filter-name&gt;FilterRedirector&lt;/filter-name&gt;
+        &lt;url-pattern&gt;/FilterRedirector&lt;/url-pattern&gt;
+    &lt;/filter-mapping&gt;
+
+    &lt;servlet&gt;
+        &lt;servlet-name&gt;ServletRedirector&lt;/servlet-name&gt;
+        &lt;servlet-class&gt;org.apache.cactus.server.ServletTestRedirector&lt;/servlet-class&gt;
+    &lt;/servlet&gt;
+
+    &lt;servlet&gt;
+        &lt;servlet-name&gt;JspRedirector&lt;/servlet-name&gt;
+        &lt;jsp-file&gt;/jspRedirector.jsp&lt;/jsp-file&gt;
+    &lt;/servlet&gt;
+
+    &lt;servlet-mapping&gt;
+        &lt;servlet-name&gt;ServletRedirector&lt;/servlet-name&gt;
+        &lt;url-pattern&gt;/ServletRedirector&lt;/url-pattern&gt;
+    &lt;/servlet-mapping&gt;
+
+    &lt;servlet-mapping&gt;
+        &lt;servlet-name&gt;JspRedirector&lt;/servlet-name&gt;
+        &lt;url-pattern&gt;/JspRedirector&lt;/url-pattern&gt;
+    &lt;/servlet-mapping&gt;
+
+&lt;/web-app&gt;
+</PRE></TD></TR></TABLE></DIV>
+
+        <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+          If you are using the JSP Redirector (i.e. you have test classes
+          that extend <CODE><FONT face="courier, monospaced">JspTestCase</FONT></CODE>), you <B>must</B>
+          copy the <CODE><FONT face="courier, monospaced">jspRedirector.jsp</FONT></CODE> file (found in the
+          <CODE><FONT face="courier, monospaced">sample/web</FONT></CODE> directory where you unpacked your
+          Cactus distribution) in a directory in your webapp and you need to
+          put it's relative path in the mapping defined above (here we
+          have put it in the webapp root.
+        </I></FONT></TD></TR></TABLE></P>
+
+        <P align="justify">
+          If you want to provide some initialisation parameters that will
+          be available to the <CODE><FONT face="courier, monospaced">config</FONT></CODE> implicit object available
+          in your test case, simply use the standard <CODE><FONT face="courier, monospaced">
+          &lt;init-param&gt;</FONT></CODE> tags.
+        </P>
+        <P align="justify">
+          For example, for the Servlet Redirector (same principle applies
+          to all other redirectors) :
+        </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+[...]
+    &lt;servlet&gt;
+        &lt;servlet-name&gt;ServletRedirector&lt;/servlet-name&gt;
+        &lt;servlet-class&gt;org.apache.cactus.server.ServletTestRedirector&lt;/servlet-class&gt;
+        &lt;init-param&gt;
+          &lt;param-name&gt;param1&lt;/param-name&gt;
+          &lt;param-value&gt;value1 used for testing&lt;/param-value&gt;
+        &lt;/init-param&gt;
+    &lt;/servlet&gt;
+[...]
+</PRE></TD></TR></TABLE></DIV>
+
+        <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+          Within your <CODE><FONT face="courier, monospaced">testXXX()</FONT></CODE> code, you can also call the
+          <CODE><FONT face="courier, monospaced">config.setInitParameter()</FONT></CODE> method (<CODE><FONT face="courier, monospaced">config</FONT></CODE>
+          being the implicit object of type <CODE><FONT face="courier, monospaced">ServletConfig</FONT></CODE>) to
+          simulate initialisation parameters as if they had been defined in
+          your <CODE><FONT face="courier, monospaced">web.xml</FONT></CODE>.
+        </I></FONT></TD></TR></TABLE></P>
+
+        <P align="justify">
+          Last, if you need to unit test code that uses the Servlet
+          Security API, please check the
+          <A href="howto_security.html">Security Howto</A>.
+        </P>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <A name="logging"><!--anchor--></A>
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>Cactus logging configuration</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+          Since Cactus 1.4, we have switched to using the
+          <A href="http://jakarta.apache.org/commons/logging">Jakarta
+          Commons Logging</A> framework for Cactus internal logs (and any
+          log you may wish to output as part of your test).
+        </P>
+
+        <P align="justify">
+          This allow Cactus to use any underlying logging framework such as:
+          <A href="http://jakarta.apache.org/log4j">Log4J</A>,
+          <A href="http://jakarta.apache.org/avalon/logkit">LogKit</A>,
+          JDK 1.4 Logging or even a Simple Logger provided as part of Commons
+          Logging (it outputs to the console).
+        </P>
+
+        <P align="justify">
+          Cactus is completely agnostic with regards to the logging framework
+          configuration, so you will have to learn how to configure your
+          favorite logging yourself. However, here are some tips on how to
+          easily configure Log4j.
+        </P>
+
+        <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="96%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="-1"><B>Log4J configuration</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+          <P align="justify">
+            Create a <CODE><FONT face="courier, monospaced">log4j.properties</FONT></CODE> file and drop it in both
+            your client side and server side classpaths. Log4j automatically
+            looks for such a file in the classpath so it should find it easily.
+          </P>
+          <P align="justify">
+            Now you need to add the categories that you want to log to that
+            file. If you wish to see Cactus logs, you will need to add the
+            &quot;<CODE><FONT face="courier, monospaced">org.apache.cactus.*</FONT></CODE>&quot; category and set the logging
+            level to <CODE><FONT face="courier, monospaced">DEBUG</FONT></CODE> as Cactus only outputs logs in that
+            level.
+          </P>
+
+          <P align="justify">
+            Here is a sample <CODE><FONT face="courier, monospaced">log4j.properties</FONT></CODE> file for Cactus
+            client side. You can use the same one for the Server side but we
+            recommend to change the name of the output file in order not to
+            mix the logs.
+          </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+# Properties for configuring Log4j
+# This is the configuring for logging on the JUnit side (i.e. the client side)
+
+log4j.appender.cactus = org.apache.log4j.FileAppender
+log4j.appender.cactus.File = cactus_client.log
+log4j.appender.cactus.Append = false
+log4j.appender.cactus.layout = org.apache.log4j.PatternLayout
+log4j.appender.cactus.layout.ConversionPattern = %d{ABSOLUTE} [%t] %-5p %-30.30c{2} %x - %m %n
+
+# Any application log which uses Log4J will be logged to the Cactus log file
+log4j.rootCategory=DEBUG, cactus
+
+# By default we don't log at the DEBUG level for Cactus log, in order not to generate too
+# many logs. However, should a problem arise and logs need to be sent to the Cactus dev team,
+# then we will ask you to change this to DEBUG.
+log4j.category.org.apache.cactus = WARN, cactus
+log4j.additivity.org.apache.cactus=false
+</PRE></TD></TR></TABLE></DIV>
+
+          <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+            JUnit uses a different classloader to load each test of a TestCase
+            class. Thus, Log4j will reinitialise for each test, thus
+            overwriting the <CODE><FONT face="courier, monospaced">cactus_client.log</FONT></CODE> file each time (this
+            is because we have set <CODE><FONT face="courier, monospaced">log4j.appender.cactus.Append</FONT></CODE> to
+            <CODE><FONT face="courier, monospaced">false</FONT></CODE>. You can set it to <CODE><FONT face="courier, monospaced">true</FONT></CODE> if you
+            wish to keep all the logs but the file size will grow quickly. In
+            addition logs are really only useful when there is a failure and
+            thus not appending is usually a good choice.
+          </I></FONT></TD></TR></TABLE></P>
+
+        </FONT></TD></TR></TABLE></DIV><BR>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+    </FONT></TD></TR></TABLE></DIV><BR>
+
+  
+</TD></TR></TABLE></TD></TR></TABLE><BR><TABLE border="0" cellpadding="0" cellspacing="0" width="100%"><TR><TD><HR noshade="" size="1"></TD></TR><TR><TD align="center"><FONT color="#525D76" face="arial,helvetica,sanserif" size="-1"><I>
+                Copyright &copy; 2000-2002 The Apache Software Foundation.
+                All Rights Reserved.
+               </I></FONT></TD></TR></TABLE></BODY></HTML>

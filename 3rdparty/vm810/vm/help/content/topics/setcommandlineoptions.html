@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Setting Archive Creation Options</TITLE>
+<!--<setcommandlineoptions.html>-->
+<!--<toc parent="setting_configuration_options" label="Setting Command-Line Options" anchor="setcommandlineoptions" sortkey="13">-->
+<!--<toc parent="setting_project_configuration_options" label="Setting Command-Line Options" anchor="setcommandlineoptions" sortkey="13">-->
+<!--<index parent="setting" label="command-line options" anchor="setcommandlineoptions">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with Project Databases/Projects\nConfiguring Project Databases/Projects\nSetting Command-Line Options");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="setcommandlineoptions"></A>Setting Command-Line Options</H1>
+<p>To perform this procedure, you must first select the project database or project you want to configure. The project database or project must also be <a href="assocconfigfile.html">associated with a configuration file</a>.</p>
+<H2>To set <a href="commandlineoptions.html">command-line options</a>:</H2>
+<OL>
+<LI>
+Select Admin | Configure Project. The Configure Project dialog box appears with the General tab active.
+<br><br>
+<LI>
+If not already selected, select the <b>Show Advanced Options</b> check box.
+<br><br>
+<LI>Select <b>Command Line</b> beneath Miscellaneous. The Command Line pane on the right appears. The values that display for each option are the settings that are currently defined in the configuration file associated with the project database or project.
+<BR><BR>
+<LI>
+In the <b>Command Line Output</b> group, you can:
+<BR><BR>
+<UL type=disc>
+<LI>Select the <b>Display sign on messages</b> check box to display copyright and version information when certain Version Manager commands are used (for example, the VCS command).
+<LI>Select the <b>Display detailed messages</b> check box to display details of a command operation such as the workfile and archive names and the current and previous revision numbers.
+</UL>
+<BR>
+<LI>In the <b>Command Line Editor</b> group, you can:
+<BR><BR>
+<UL type=disc>
+<LI>Enter the location and name of the executable for the text editor you want to use for entering workfile or change descriptions. If you do not specify an editor, Version Manager provides a simple internal line editor. 
+<LI>If you specify a command-line editor to use, you must enter the location and name of a temporary file. Version Manager copies two prompt lines to the temporary file. When the editor runs, these prompt lines remind you what description you are entering. You should not change these prompt lines; Version Manager will delete them for you automatically if you do not change them. The temporary file is deleted after use.
+</UL>
+<BR>
+<LI>In the <b>Message Files</b> group, you can:
+<BR><BR>
+<UL type=disc>
+<LI>Enter the suffix for message files. The default suffix is +-msg, which causes Version Manager to add the characters -msg to the end of the workfile name to create the message file name. For example, if the workfile name is windev.cpp, Version Manager looks for a message file with the name windev.cpp-msg from which to read the change description.
+<LI>Select the <b>Delete message file after use</b> check box to delete message files after Version Manager reads them to obtain a change description.
+</UL>
+<BR>
+<LI>
+Click OK if you are finished defining options, or click Apply to save the settings and continue to define other options.
+</OL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a href="aboutconfigfiles.html">About Configuration Files</a></TD>
+		<TD><a href="configureoverview.html">Configuring Project Databases and Projects</a></TD>
+	</TR>
+		<TD><A HREF="configureprojectcommandlinedialog.html">Configure Project/Command Line dialog box</A></TD>
+	</tr>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

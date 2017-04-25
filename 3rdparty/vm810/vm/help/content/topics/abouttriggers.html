@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>About Event Triggers</TITLE>
+<!--<abouttriggers.html>-->
+<!--<index parent="event_triggers" label="about" anchor="abouttriggers">-->
+<!--<toc parent="working_with_event_triggers" label="Overview" anchor="abouttriggers" sortkey="1">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nUsing Event Triggers\nOverview");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="abouttriggers"></A>About Event Triggers</H1>
+<p>
+An event trigger is an administrator-specified program that is executed when a specified Serena ChangeMan Version Manager event occurs. An event is:
+</P>
+<UL>
+<LI>
+A particular action that occurs during Version Manager processing, for example, checking in a file, assigning a version label, and adding an entry to the journal file. <a href="vmprocessingevents.html">Click here</a> for a list of Version Manager processing events.
+<LI>
+The click of a <a href="iconevents.html">user-defined tool bar icon</a>.
+<LI>
+The selection of a <a href="iconevents.html">user-defined menu item</a>.
+</UL>
+<P>
+Version Manager supports the following as event triggers:
+</P>
+<UL>
+<LI>
+Stand-alone Windows (.EXE) and UNIX executable programs
+<LI>
+Windows batch scripts (.BAT)
+<LI>
+Windows program information files (.PIF)
+<LI>
+UNIX shell scripts
+</UL>
+<P>
+Version Manager supports both command-line and graphical applications. All nongraphical applications are executed through the shell or command interpreter: COMPSPEC under Windows and SHELL under UNIX.
+</P>
+<P>
+Some usages of event triggers are to verify new label syntax and author, broadcast a mail message to management when a project is promoted, run a build script after revisions are checked in, and copy journal file entries to a protected file for added security.
+</P>
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a href="examplesoftriggers.html">Examples of Event Triggers</a></TD>
+		<TD><a href="settinguptriggers.html">Setting Up Event Triggers</a></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

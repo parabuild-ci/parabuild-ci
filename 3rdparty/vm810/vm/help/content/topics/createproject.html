@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Creating Projects</TITLE>
+<!--<CreateProject.html>-->
+<!--<toc parent="getting_started_for_users" label="Creating Projects" anchor="CreateProject" sortkey="03">-->
+<!--<toc parent="working_with_projects" label="Creating Projects" anchor="CreateProject" sortkey="01">-->
+<!--<index  parent="creating" label="projects" anchor="CreateProject">-->
+<!--<index  parent="projects" label="creating" anchor="CreateProject">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with Project Databases/Projects\nProjects\nCreating Projects");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="CreateProject"></A>Creating Projects</H1>
+<P>
+If you are setting up a project database for existing files, you do not have to create a project. Instead, you can simply add directories and files to the project database using Add | Workfiles, and Serena ChangeMan Version Manager will create the projects for you. In this case, Version Manager creates projects with the same name as the directories and adds the files within the directories to the projects. If the directories have subdirectories, you can optionally have Version Manager create subprojects and populate the subprojects with the appropriate files.
+</P>
+<P>
+You may want to create a project to organize the versioned files into a structure that is different from their existing file structure.
+</P>
+<H2>To create a project:</H2>
+<OL>
+<LI>
+Select the project database or project to which this project will belong.
+<br><br>
+<LI>
+Select File | Create Project. The Create Project dialog box appears.
+<br><br>
+<LI>
+Specify a unique name for the project in the <B>Name</B> field. No two projects at the same level in the project database can have the same name. The name cannot begin or end with a tab or blank space. Any character can be used in the name except an asterisk (*), a colon (:), a vertical bar (|), forward and backward slashes (/ \), a question mark (?), and angle brackets (&lt; &gt;). No project name can be the two character name of .. or the one character name of . or @.
+<br><br>
+<LI>If you want the workfile location to be a location other than the default, specify the location in the <b>Workfile Location</b> field. The default location is a subdirectory beneath the workfile location of the project or project database to which this new project belongs. For example, if you are creating a project named ProjectA beneath a project database that is located in \myapps\ProjectDB1, the default workfile location for the new project would be \myapps\ProjectDB1\Work\ProjectA.<BR><BR>
+Workfile locations can contain $HOME at the root of their paths (for example, on UNIX, $HOME/work/projecta could expand to /usrs/cherylc/work/projecta). Version Manager substitutes the value of the HOME environment variable to compute the workfile location. The use of $HOME allows you to define a path that is automatically individualized for your users according to the value of their HOME environment variable. If a user's HOME environment variable is not defined, Version Manager substitutes a blank space when computing the workfile location.<BR><BR>
+<b>Note:</b> We recommend that you specify a local drive that is available to most users. Remember that users can create a private workspace to change the workfile location to a different location if they want.<BR><BR>
+<LI>
+Click OK. The directories that are created when you create a project are as follows:
+<UL type=disc><BR>
+<LI>
+A project archives directory beneath the project database's archives directory (for example, myapps\archives\dev).
+<LI>
+A project work directory in the location you specified. By default, it is beneath the project database's work directory (for example, myapps\work\dev).
+<LI>
+A project metadata directory beneath the project database location. This directory name is masked for security purposes (for example, p1otxdt.prj). This directory will contain one file named pvcsproj.ser, which contains project metadata such as subprojects, versioned files, configuration file, and archive and workfile locations, after you add workfiles to the project.
+</UL>
+</OL>
+<P>
+If you are <a href="setupprojects.html">setting up a project database</a>, the next step is to <a href="addfiles.html">add workfiles</a>.
+</P>
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="aboutprojects.html">About Version Manager Projects</A></TD>
+		<TD><A HREF="planproject.html">Planning a Project Database</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="createprojectdialog.html">Create Project Dialog Box</A></TD>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

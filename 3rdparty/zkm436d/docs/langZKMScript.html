@@ -1,0 +1,192 @@
+<!-- Copyright 2004 Zelix Pty Ltd (ABN 47 078 740 093) -->
+<html>
+<head>
+<title>Zelix KlassMaster - ZKM Script Language</title>
+   <meta name="keywords" content="java obfuscator,java code obfuscator,obfuscation">
+   <meta name="description" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <meta name="classification" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <link rel=stylesheet href="../ZKM.css" TYPE="text/css">
+</head>
+<body background="../images/small-white-mist1.jpg" bgcolor="#E1E1E1">
+<center><a href="index.html"><img src=../images/ZKM_b4.gif alt="Zelix KlassMaster" width=264 height=62 border=0></a></center>
+<hr>
+<center>
+<table width=770 border=0>
+   <tr>
+      <td>
+         <h1>The ZKM Script Language</h1>
+         The <b>ZKM Script language</b> is used to write scripts that automate the process of using Zelix KlassMaster. 
+         They allow you to integrate Zelix KlassMaster into your development procedures. A quick way to experiment
+         with and learn the language is by using the interactive <b><a href=toolsZKMScriptHelper.html>"ZKM Script Helper"</a></b> tool.         
+         <p>
+         A ZKM Script consists of <b>a sequence of comments and ZKM Script statements</b>. White space is ignored and 
+         note that ZKM Script is case sensitive.
+         ZKM Script comments are identical to Java comments. You can use 
+         <code><b>"//"</b></code> to comment a line or <code><b>"/* ... */"</b></code> to comment a block.
+         <p>
+         <b><a href=preprocessor.html>Preprocessor directives</a></b> are not part of the ZKM Script language.  They are actioned by the preprocessor
+         prior to the ZKM Script being parsed and executed.  The ZKM Script interpreter doesn't understand and normally will never see preprocessor directives.
+         <p>
+         <a name="notation">In describing the syntax of ZKM Script statements the following notation</a> is used:
+         <ul>
+            <li><code><b>X | Y | Z</b></code> means X or Y or Z
+            <li><code><b>[X]</b></code> means X is optional
+            <li><code><b>(X)<sup>*</sup></b></code> means zero or more occurrences of X
+            <li><code><b>(X)<sup>+</sup></b></code> means one or more occurrences of X
+            <li><code><b><u>X</u></b></code> means X is a key word
+         </ul
+         <p>
+         A ZKM Script statement is always terminated by a <code><b>";"</b></code>. The ZKM Script statements are:
+         <ul>
+            <li><b><a href=classpathStatement.html><code>classpath</code></a></b>
+            <li><b><a href=openStatement.html><code>open</code></a></b>
+            <li><b><a href=trimExcludeStatement.html><code>trimExclude</code></a></b>
+            <li><b><a href=trimUnexcludeStatement.html><code>trimUnexclude</code></a></b>
+            <li><b><a href=resetTrimExclusionsStatement.html><code>resetTrimExclusions</code></a></b>
+            <li><b><a href=trimStatement.html><code>trim</code></a></b>
+            <li><b><a href=excludeStatement.html><code>exclude</code></a></b>
+            <li><b><a href=unexcludeStatement.html><code>unexclude</code></a></b>
+            <li><b><a href=resetExclusionsStatement.html><code>resetExclusions</code></a></b>
+            <li><b><a href=obfuscateFlowExcludeStatement.html><code>obfuscateFlowExclude</code></a></b>
+            <li><b><a href=resetObfuscateFlowExclusionsStatement.html><code>resetObfuscateFlowExclusions</code></a></b>
+            <li><b><a href=stringEncryptionExcludeStatement.html><code>stringEncryptionExclude</code></a></b>
+            <li><b><a href=resetStringEncryptionExclusionsStatement.html><code>resetStringEncryptionExclusions</code></a></b>
+            <li><b><a href=existingSerializedClassesStatement.html><code>existingSerializedClasses</code></a></b>
+            <li><b><a href=resetExistingSerializedClassesStatement.html><code>resetExistingSerializedClasses</code></a></b>
+            <li><b><a href=fixedClassesStatement.html><code>fixedClasses</code></a></b>
+            <li><b><a href=resetFixedClassesStatement.html><code>resetFixedClasses</code></a></b>
+            <li><b><a href=groupingsStatement.html><code>groupings</code></a></b>
+            <li><b><a href=resetGroupingsStatement.html><code>resetGroupings</code></a></b>
+            <li><b><a href=obfuscateStatement.html><code>obfuscate</code></a></b>
+            <li><b><a href=unobfuscateStatement.html><code>unobfuscate</code></a></b>
+            <li><b><a href=saveAllStatement.html><code>saveAll</code></a></b>
+            <li><b><a href=saveAllOldStatement.html><code>saveAllOld</code></a></b>
+            <li><b><a href=gcStatement.html><code>gc</code></a></b>
+            <li><b><a href=executeStatement.html><code>execute</code></a></b>
+            <li><b><a href=printStatement.html><code>print</code></a></b>
+         </ul>
+     </td>
+   </tr>
+   <tr>
+      <td>
+         &nbsp;
+      </td>
+   </tr>
+</table>
+<table width=770 border=1>
+   <tr>
+      <td>
+<h3>An example using every statement and parameter with color coding</h3>
+<pre>
+<font color="green">
+/*****************************************************************************/
+/* Sample ZKM Script using every statement and parameter                     */
+/*****************************************************************************/</font>
+<font color="blue">
+classpath</font>   ".;c:\jdk1.4.0\jre\lib\rt.jar";
+<font color="blue">
+open</font>     "c:\directory1\Class1.class" <font color="green">//load a specific class</font>
+         "c:\directory1\MyZip.zip"    <font color="green">//load all classes in a zip file</font>
+         "c:\directory1\MyJar.jar"    <font color="green">//load all classes in a jar file</font>
+         "c:\directory2"              <font color="green">//load all classes in a specific directory</font>
+         "c:\directory3\*";           <font color="green">//load all classes in a directory and its subdirectories</font>
+<font color="blue">
+trimExclude</font> pack1.Class1^ public static main(java.lang.String[]) and
+            pack2.*.* public *(*);  
+<font color="blue">
+trimUnexclude</font> pack2.pack3.* public method(*); <font color="green">//Don't exclude public methods in pack2.pack3</font>
+<font color="blue">
+trim</font>        deleteSourceFileAttributes=false  <font color="green">//could be omitted. Default is <b>false</b></font>
+            deleteDeprecatedAttributes=true   <font color="green">//could be omitted. Default is <b>true</b></font>
+            deleteAnnotationsAttributes=true  <font color="green">//could be omitted. Default is <b>true</b></font>
+            deleteUnknownAttributes=false;    <font color="green">//could be omitted. Default is <b>false</b></font> 
+<font color="blue">
+exclude</font>     p*2.* and
+            p*.C*1 and
+            *.Class2 implements pack3.Class3, pack4.Class4 and
+            public abstract *.* private transient java.lang.String f* and
+            *.* extends pack2.Class2 public native m*(*) and
+            *.&lt;link&gt;_Skel extends pack2.Class2 implements pack3.Class3 search pack4, pack4.p*5;
+<font color="blue">
+unexclude</font>   pack2.Class4; <font color="green">//Don't exclude pack2.Class4</font>
+<font color="blue">
+obfuscateFlowExclude</font> pack2.Class2 method1() and <font color="green">//Don't flow obfuscate method1() in pack2.Class2</font>
+                     pack1.* *(*) and <font color="green">//Don't flow obfuscate any method in package pack1</font>
+                     pack1.*; <font color="green">//Don't flow obfuscate methods or add special fields to pack1 classes</font>
+<font color="blue">
+stringEncryptionExclude</font> pack2.Class2 and <font color="green">//Don't string encrypt any String literals in pack2.Class2</font>
+                        *.* public *; <font color="green">//Don't string encrypt the value of any public field</font>
+<font color="blue">
+existingSerializedClasses</font> pack2.Class2; <font color="green">//Changes to pack2.Class2 must be Serialization compatible</font>
+<font color="blue">
+fixedClasses</font> pack2.Class2; <font color="green">//Insulates pack2.Class2 from any obfuscation</font>
+<font color="blue">
+groupings</font> {pack1.* and pack2.*} <font color="green">  //1st grouping contains pack1 and pack2 classes</font>
+          {pack3.* and pack4.*}; <font color="green"> //2nd grouping contains pack3 and pack4 classes</font>
+<font color="blue">
+obfuscate</font>   changeLogFileIn="ChangeLogIn.txt" <font color="green">//omit parameter if no input change log</font>
+            changeLogFileOut="ChangeLog.txt" <font color="green">//could be omitted. Default is <b>ChangeLog.txt</b></font>
+            aggressiveMethodRenaming=false      <font color="green">//could be omitted. Default is <b>false</b></font>
+            keepInnerClassInfo=false            <font color="green">//could be omitted. Default is <b>false</b></font>
+            keepGenericsInfo=false              <font color="green">//could be omitted. Default is <b>false</b></font>
+            obfuscateFlow=light                 <font color="green">//could be omitted. Default is <b>light</b></font>
+            encryptStringLiterals=flowObfuscate <font color="green">//could be omitted. Default is <b>flowObfuscate</b></font>
+            collapsePackagesWithDefault="xyz" <font color="green">//could be omitted. Default is to not collapse packages</font>
+            lineNumbers=delete                <font color="green">//could be omitted. Default is <b>delete</b></font>
+            newNamesPrefix="Z"                <font color="green">//Prefix all newly generated names with "Z"</font>
+            legalIdentifiers=true             <font color="green">//<b>Deprecated</b></font>
+            hideFieldNames=false              <font color="green">//<b>Deprecated</b></font>
+            hideStaticMethodNames=false       <font color="green">//<b>Deprecated</b></font>
+            addCorruptInfo=light;             <font color="green">//<b>Deprecated</b></font>
+<font color="blue">
+resetTrimExclusions</font>;          <font color="green">//remove the effect of any preceding trimExclude statement</font>
+<font color="blue">
+resetExclusions</font>;              <font color="green">//remove the effect of any preceding exclude statement</font>
+<font color="blue">
+resetObfuscateFlowExclusions</font>; <font color="green">//remove effect of any preceding obfuscateFlowExclude statement</font>
+<font color="blue">
+resetStringEncryptionExclusions</font>; <font color="green">//remove effect of any preceding stringEncryptionExclude</font>
+<font color="blue">
+resetExistingSerializedClasses</font>; <font color="green">//remove effect of any preceding existingSerializedClasses</font>
+<font color="blue">
+resetFixedClasses</font>; <font color="green">//remove effect of any preceding fixedClasses</font>
+<font color="blue">
+resetGroupings</font>; <font color="green">//remove effect of any preceding groupings</font>
+<font color="blue">
+exclude</font>     *. and          <font color="green">//exclude all packages</font>
+            *.* and         <font color="green">//exclude all classes</font>
+            *.* * and       <font color="green">//exclude all fields</font>
+            *.* *(*);       <font color="green">//exclude all methods</font>
+<font color="blue">
+gc</font> 500;     <font color="green">//500 could have been omitted. 500ms sleep is the default.</font>
+<font color="blue">
+print</font>       "About to unobfuscate";     <font color="green">//prints to standard out and the log</font>
+
+<font color="green">//Note that the "unobfuscated" statement is <b>deprecated</b>!</font>
+<font color="blue">unobfuscate</font> changeLogFileIn="ChangeLogIn.txt"       <font color="green">//omit parameter if no input change log</font>
+            changeLogFileOut="ChangeLog.txt"        <font color="green">//could be omitted. Default is <b>ChangeLog.txt</b></font>
+            keepInnerClassInfo=false                <font color="green">//could be omitted. Default is <b>false</b></font>
+            deriveSubclassNamesFromSuperclass=true; <font color="green">//could be omitted. Default is <b>true</b></font>
+<font color="blue">
+execute</font>     "deltree /Y c:\Temp"; <font color="green">//executes a simple OS command</font>
+<font color="blue">
+saveAll</font>     archiveCompression=asIs "c:\Temp";    
+</pre>
+
+      </td>
+   </tr>
+</table>
+</center>
+<hr>
+<center>
+<table>
+   <tr>
+      <td>
+         <a href=index.html><img src=../images/uarrw.gif alt="Documentation Table of Contents"></a>
+      </td>
+   </tr>
+</table>
+</center>
+Copyright &copy; 2004 <a href="mailto:WebMaster@zelix.com"><font size=-1>Zelix Pty Ltd</font></a> (ABN 47 078 740 093)
+</body>
+</html>

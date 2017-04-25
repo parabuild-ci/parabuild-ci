@@ -1,0 +1,177 @@
+<project name="bt" default="nodefault" basedir=".">
+
+  <target name="nodefault">
+  </target>
+
+  <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+  <!-- Validates file exists -->
+  <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+  <target name="validate.file.exists">
+    <echo message="Checking existance of ${file.descr}"/>
+    <if>
+      <bool>
+        <not>
+          <available file="${file.location}" type="file"/>
+        </not>
+      </bool>
+      <fail message="${file.descr} not found at ${file.location}"/>
+    </if>
+  </target>
+
+
+  <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+  <!-- Helper target to export exports database -->
+  <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+  <target name="export.database">
+    <mkdir dir="${build.dir.temp}"/>
+    <echo message="build.dir.database: ${build.dir.database}"/>
+    <dbunit url="jdbc:hsqldb:${build.dir.database}/parabuild"
+      driver="org.hsqldb.jdbcDriver" userid="sa" password="p0a">
+      <export dest="${build.dir.temp}/exported_autobuild.xml"/>
+    </dbunit>
+  </target>
+
+
+  <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+  <!-- Helpers (work in progress) to re-deploy application -->
+  <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+  <property name="url" value="http://localhost:${tomcat.http.port}/manager"/>
+  <property name="username" value="tomcat"/>
+  <property name="password" value="tomcat"/>
+
+  <!-- Configure the custom Ant tasks for the Manager application -->
+  <taskdef name="install" classname="org.apache.catalina.ant.InstallTask" classpath="${tomcat.home}/server/lib/catalina-ant.jar"/>
+  <taskdef name="reload" classname="org.apache.catalina.ant.ReloadTask" classpath="${tomcat.home}/server/lib/catalina-ant.jar"/>
+  <taskdef name="remove" classname="org.apache.catalina.ant.RemoveTask" classpath="${tomcat.home}/server/lib/catalina-ant.jar"/>
+  <taskdef name="stop" classname="org.apache.catalina.ant.StopTask" classpath="${tomcat.home}/server/lib/catalina-ant.jar"/>
+
+  <!-- Reload bt application -->
+  <target name="deploy">
+    <!-- Check if tomcat is running -->
+    <if>
+      <bool>
+        <http url="${url}"/>
+      </bool>
+      <remove path="" url="${url}" username="${username}" password="${password}"/>
+      <install path="" war="file://${build.dir}/result_war/parabuild.war" url="${url}" username="${username}" password="${password}"/>
+      <!--
+      <reload path="" url="${url}" username="${username}" password="${password}"/>
+      <reload path="" url="${url}" username="${username}" password="${password}"/>
+      -->
+    </if>
+  </target>
+
+
+  <!-- Stop tomcat -->
+  <target name="stop">
+    <stop url="${url}" username="${username}" password="${password}" path="${path}"/>
+  </target>
+
+
+  <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+  <!-- Helper to create installation media using Install4J -->
+  <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+  <target name="install4j">
+    <!-- Prepare Install4J -->
+    <property name="param.release.build" value="internal"/>
+    <property name="param.install4j.project" value=""/>
+
+    <!-- Show params -->
+    <echo message="Creating installation media"/>
+    <echo message="  Release build:     ${param.release.build}"/>
+    <echo message="  Install4j project: ${param.install4j.project}"/>
+
+    <!-- Find Install4j -->
+    <property name="distrib.install4j.home.1" value="C:\Program Files\install4j4_2"/>
+    <property name="distrib.install4j.home.2" value="/opt/install4j-4.2"/>
+    <!-- Try location 1 -->
+    <if>
+      <bool>
+        <available file="${distrib.install4j.home.1}" type="dir"/>
+      </bool>
+      <property name="distrib.install4j.home" value="${distrib.install4j.home.1}"/>
+      <break/>
+    </if>
+    <!-- Try location 2 -->
+    <if>
+      <bool>
+        <available file="${distrib.install4j.home.2}" type="dir"/>
+      </bool>
+      <property name="distrib.install4j.home" value="${distrib.install4j.home.2}"/>
+      <break/>
+    </if>
+    <!-- Check if it's found -->
+    <fail message="Installj4 installation not found" unless="distrib.install4j.home"/>
+
+    <!-- Find JDK  -->
+    <property name="distrib.jdk.dir.1" value="${distrib.install4j.home}/jres"/>
+    <if>
+      <bool>
+        <available file="${distrib.jdk.dir.1}" type="dir"/>
+      </bool>
+      <property name="distrib.jdk.dir" value="${distrib.jdk.dir.1}"/>
+      <break/>
+    </if>
+    <!-- Check if it's found -->
+    <fail message="Directory containing distribution JDKs not found" unless="distrib.jdk.dir"/>
+    <!-- We've found the dir. Now check the files -->
+    <property name="distrib.jdk.linux.x86" value="${distrib.jdk.dir}/linux-x86-1.4.2_13.tar.gz"/>
+    <property name="distrib.jdk.linux.1.5.0.x86" value="${distrib.jdk.dir}/linux-x86-1.5.0_12.tar.gz"/>
+    <property name="distrib.jdk.solaris.sparc" value="${distrib.jdk.dir}/solaris-sparc-1.4.2_13.tar.gz"/>
+    <property name="distrib.jdk.windows.x86" value="${distrib.jdk.dir}/windows-x86-1.4.2_13.tar.gz"/>
+    <!-- Check linux x86 -->
+    <ant antfile="build-helper.xml" target="validate.file.exists">
+      <property name="file.location" value="${distrib.jdk.linux.x86}"/>
+      <property name="file.descr" value="Linux x86 JDK"/>
+    </ant>
+    <ant antfile="build-helper.xml" target="validate.file.exists">
+      <property name="file.location" value="${distrib.jdk.linux.1.5.0.x86}"/>
+      <property name="file.descr" value="Linux x86 JDK"/>
+    </ant>
+    <!-- Check solaris sparc -->
+    <ant antfile="build-helper.xml" target="validate.file.exists">
+      <property name="file.location" value="${distrib.jdk.solaris.sparc}"/>
+      <property name="file.descr" value="Solaris sparc x86 JDK"/>
+    </ant>
+    <!-- Check win x86 -->
+    <ant antfile="build-helper.xml" target="validate.file.exists">
+      <property name="file.location" value="${distrib.jdk.windows.x86}"/>
+      <property name="file.descr" value="Windows x86 JDK"/>
+    </ant>
+
+    <!-- Create post-install message -->
+    <copy file="${config}/post_install_message.txt" todir="${build.dir}"/>
+
+    <!-- Setup template -->
+    <basename property="install4j.project.filename" file="${param.install4j.project}"/>
+    <property name="work.install4j.project" value="${build.dir}/work.${install4j.project.filename}"/>
+    <copy file="${param.install4j.project}" tofile="${work.install4j.project}" overwrite="yes">
+      <filterset begintoken="{" endtoken="}">
+        <filter token="compiler:sys.version" value="{compiler:sys.version}"/>
+      </filterset>
+    </copy>
+
+    <!-- Generate installers -->
+    <taskdef name="install4j" classname="com.install4j.Install4JTask"
+      classpath="${distrib.install4j.home}/bin/ant.jar"/>
+    <install4j projectfile="${work.install4j.project}" verbose="false"/>
+  </target>
+
+
+  <target name="setup.log4j">
+    <echo message="Setting up log4j"/>
+    <echo message="  Is release build: ${param.is.release.build}"/>
+    <echo message="   Destination dir: ${param.destination.dir}"/>
+    <if name="param.is.release.build" value="true">
+      <echo message="Using release build log4j.properties"/>
+      <copy file="${config}/release.log4j.properties" tofile="${param.destination.dir}/log4j.properties"/>
+      <break/>
+      <else>
+        <echo message="Using test log4j.properties"/>
+        <copy file="${test.config}/test.log4j.properties" tofile="${param.destination.dir}/log4j.properties"/>
+      </else>
+    </if>
+    <copy file="${config}/debug.log4j.properties" todir="${param.destination.dir}/"/>
+  </target>
+
+</project>

@@ -1,0 +1,175 @@
+/*                                                               */
+/* ******** NOTE: Do not modify this file unless instructed      */
+/* ********       to by the Talarian Corp. engineering team.     */
+/*                                                               */
+/* The following set of options are created and are not mapped   */
+/* directly to PGM options.  These options are handled           */
+/* differently than the mapped options below.                    */
+/*                                                               */
+/*                                                               */
+/* pgm_port  - Not really a pgm option, used by GMC to configure */
+/*             the sender destination port properly              */
+/*                                                               */
+/* pgm_interface_addr  - used by GMC to set which IP interface   */
+/*             PGM will use to send and receive data on.         */
+/*             The default will be to use the first interface    */
+/*             found (0.0.0.0)                                   */
+/*                                                               */
+/* pgm_rcv_pgmne_addr  -  used by GMC to set the address of      */
+/*             the PGM Network Element.  The default is no       */
+/*             NE.  In this, GMS will receive all of the NAKs    */
+/*             and process them as well.                         */
+/*                                                               */
+/* pgm_ipra_opt - This option tells PGM to set the Router Alert  */
+/*             option or not.  Some systems (like WindowsNT 4.0) */
+/*             do not support this option.  Setting this option  */
+/*             to -1 will use the default for the platform.      */
+/*             0 will force PGM to NOT set the router alert.     */
+/*             1 will have PGM set the router alert.             */
+/*                                                               */
+createopt pgm_port numeric 5202
+createopt pgm_interface_addr string "0.0.0.0"
+createopt pgm_rcv_pgmne_addr string "0.0.0.0"
+createopt pgm_ipra_opt numeric -1
+
+/* Each entry has 2 pieces.  The first being the map piece.  The */
+/* map portion tells GMC the SS option name followed by the pgm  */
+/* option name.  This is used to pass options by name to the pgm */
+/* protocol layer and isolates us from any changes in parameter  */
+/* names.  The second line is the creation of the ss parameter.  */
+/* Each option has a name, type and default value.               */
+
+createopt pgmmap_pgm_late_join str_list pgm_receive_late_join, receive_late_join
+createopt pgm_receive_late_join numeric 0
+
+/* src_adv_data:  1 - advance with data              */
+/*                0 - advance with time.             */
+createopt pgmmap_pgm_source_advance_with_data str_list pgm_source_advance_with_data,source_advance_with_data
+createopt pgm_source_advance_with_data numeric 0
+
+createopt pgmmap_pgm_source_transmit_size_buffer str_list pgm_source_transmit_size_buffer,source_transmit_size_buffer
+createopt pgm_source_transmit_size_buffer numeric 35
+
+/*                                                   */ 
+/* src_txw_max_rte:  Default set for 100mbit network. */
+/*                                                   */ 
+createopt pgmmap_pgm_source_max_trans_rate str_list pgm_source_max_trans_rate,source_max_trans_rate
+createopt pgm_source_max_trans_rate numeric 8000000
+
+createopt pgmmap_pgm_source_admit_high str_list pgm_source_admit_high,source_admit_high
+createopt pgm_source_admit_high numeric 10
+
+createopt pgmmap_pgm_source_admit_low str_list pgm_source_admit_low,source_admit_low
+createopt pgm_source_admit_low numeric 5
+
+createopt pgmmap_source_group_ttl str_list pgm_source_group_ttl,source_group_ttl
+createopt pgm_source_group_ttl numeric 1
+
+createopt pgmmap_receive_nak_ttl str_list pgm_receive_nak_ttl,receive_nak_ttl
+createopt pgm_receive_nak_ttl numeric 1
+
+/*                                                             */
+/*     If running RTgms.x on Unix and not running it as root,  */
+/*     set this option to 1.                                   */
+/*                                                             */
+createopt pgmmap_udp_encapsulation str_list pgm_udp_encapsulation,udp_encapsulation
+createopt pgm_udp_encapsulation numeric 0
+
+/*                                                                   */
+/*     This is set to 64K by default, if the receivers are having    */
+/*     a hard time keeping up this buffer may be incresed.  In some  */
+/*     cases it improves throughput.                                 */
+/*                                                                   */
+
+createopt pgmmap_raw_ip_receive_buffer str_list pgm_raw_ip_receive_buffer,raw_ip_receive_buffer
+createopt pgm_raw_ip_receive_buffer numeric 65536
+
+createopt pgmmap_receive_send_naks str_list pgm_receive_send_naks,receive_send_naks
+createopt pgm_receive_send_naks numeric 1
+
+
+/*                                                               */
+/*     These are the addtional options required to configure     */ 
+/*     SmartSockets/PGM in a satellite environment               */
+/*                                                               */
+
+createopt pgmmap_pgm_source_transmit_advance_interval str_list pgm_source_transmit_advance_interval, source_transmit_advance_interval
+createopt pgm_source_transmit_advance_interval numeric 5 
+
+createopt pgmmap_pgm_receive_nak_random_backoff_interval str_list pgm_receive_nak_random_backoff_interval, receive_nak_random_backoff_interval 
+createopt pgm_receive_nak_random_backoff_interval numeric 500 
+
+createopt pgmmap_pgm_receive_nak_repeat_interval str_list pgm_receive_nak_repeat_interval , receive_nak_repeat_interval 
+createopt pgm_receive_nak_repeat_interval numeric 10000 
+
+createopt pgmmap_pgm_receive_nak_generation_interval str_list pgm_receive_nak_generation_interval, receive_nak_generation_interval 
+createopt pgm_receive_nak_generation_interval numeric 0
+
+createopt pgmmap_pgm_receive_nak_rdata_interval str_list pgm_receive_nak_rdata_interval , receive_nak_rdata_interval 
+createopt pgm_receive_nak_rdata_interval numeric 2000 
+
+createopt pgmmap_pgm_source_fec_transmit_group_size str_list pgm_source_fec_transmit_group_size, source_fec_transmit_group_size
+createopt pgm_source_fec_transmit_group_size numeric 8
+
+createopt pgmmap_pgm_source_fec_proactive_parity str_list pgm_source_fec_proactive_parity, source_fec_proactive_parity
+createopt pgm_source_fec_proactive_parity numeric 0 
+
+createopt pgmmap_pgm_source_fec_delayed_proactive_parity str_list pgm_source_fec_delayed_proactive_parity, source_fec_delayed_proactive_parity
+createopt pgm_source_fec_delayed_proactive_parity numeric 0
+
+/*                                                                     */
+/*  SNMP Options:                                                      */ 
+/*  By default SNMP is turned off, and the Port is accessable by       */
+/*  no root users.                                                     */
+/*                                                                     */
+createopt pgmmap_snmp_port str_list pgm_snmp_port, snmp_port
+createopt pgm_snmp_port numeric 1160
+
+createopt pgmmap_snmp_flag str_list pgm_snmp_flag, snmp_flag
+createopt pgm_snmp_flag numeric 0
+
+/*                                                                     */
+/*  Congestion control options.  For now the default will be off, but  */
+/*  on congested networks there may be a performance hits              */
+/*                                                                     */
+/*  Source Side options:                                               */  
+/*                                                                     */
+createopt pgmmap_source_pgmcc str_list pgm_source_pgmcc,source_pgmcc
+createopt pgm_source_pgmcc numeric 0
+
+createopt pgmmap_source_pgmcc_initial_acker str_list pgm_source_pgmcc_initial_acker,source_pgmcc_initial_acker
+createopt pgm_source_pgmcc_initial_acker string 0.0.0.0
+
+createopt pgmmap_source_pgmcc_acker_selection_constant str_list pgm_source_pgmcc_acker_selection_constant,source_pgmcc_acker_selection_constant
+createopt pgm_source_pgmcc_acker_selection_constant numeric 75
+
+/*                                                                     */
+/*  Receive Side options:                                              */  
+/*                                                                     */
+createopt pgmmap_receive_pgmcc str_list pgm_receive_pgmcc,receive_pgmcc
+createopt pgm_receive_pgmcc numeric 0
+
+createopt pgmmap_receive_pgmcc_loss_constant str_list pgm_receive_pgmcc_loss_constant,receive_pgmcc_loss_constant
+createopt pgm_receive_pgmcc_loss_constant numeric 60000
+
+createopt pgmmap_receive_pgmcc_acker_interval str_list pgm_receive_pgmcc_acker_interval,receive_pgmcc_acker_interval
+createopt pgm_receive_pgmcc_acker_interval numeric 500
+/*                                                                     */
+/*  End of congestion control related options                          */  
+/*                                                                     */
+
+/*                                                                     */
+/*  Bandwidth management options                                       */  
+/*                                                                     */
+createopt pgmmap_source_min_trans_rate str_list pgm_source_min_trans_rate,source_min_trans_rate
+createopt pgm_source_min_trans_rate numeric 56000
+
+createopt pgmmap_source_bandwidth_manager_priority str_list pgm_source_bandwidth_manager_priority,source_bandwidth_manager_priority
+createopt pgm_source_bandwidth_manager_priority numeric 0
+
+createopt pgmmap_bwmgr_allocation_strategy str_list pgm_bwmgr_allocation_strategy,bwmgr_allocation_strategy
+createopt pgm_bwmgr_allocation_strategy numeric 0
+/*                                                                     */
+/*  End of Bandwidth management                                        */  
+/*                                                                     */
+

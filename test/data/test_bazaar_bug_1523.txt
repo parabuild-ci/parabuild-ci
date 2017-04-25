@@ -1,0 +1,32 @@
+------------------------------------------------------------
+revno: 37
+tags: JFREESPACE_0.8.0
+committer: Mark Turner <mark.turner@hillcrestlabs.com>
+branch nick: libfreespace
+timestamp: Fri 2010-03-26 10:57:21 -0400
+message:
+Added new API calls: freespace_sendMessageStruct, freespace_readMessageStruct
+Added USB PIDs for bootloaders and FSP275
+modified:
+common/freespace_codecs.c
+common/freespace_printers.c
+common/messageCodeGenerator.py
+include/freespace/freespace.h
+include/freespace/freespace_codecs.h
+win32/freespace_device.c
+win32/freespace_discoveryDetail.c
+win32/freespace_win32.h
+------------------------------------------------------------
+revno: 36
+committer: Mark Turner <mark.turner@hillcrestlabs.com>
+branch nick: libfreespace
+timestamp: Mon 2010-02-22 13:29:37 -0500
+message:
+Added button test message.
+modified:
+common/freespace_codecs.c
+common/freespace_printers.c
+common/setupMessages.py
+include/freespace/freespace_codecs.h
+include/freespace/freespace_printers.h
+------------------------------------------------------------ 

@@ -1,0 +1,217 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Adopting StarTeam Security Guidelines</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=copyright value="Copyright© 1995-2003, Borland Software Corporation. All rights reserved.">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=818>
+<meta name=layout-width content=707>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<!--(Scripts)=======================================================-->
+
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="./ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Administering the Application\nControlling Access to Objects\nAdopting Application Security Guidelines");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Adopting Application Security Guidelines</h1>
+
+<p class=Body>Borland recommends that your company follow the application 
+ security guidelines outlined below until you become familiar with its 
+ method of handling user and group permissions.</p>
+
+<h3>From the Server</h3>
+
+<p class=Body>When creating users and groups with the <span style="font-style: italic;"><I>User 
+ Manager</I></span> dialog: </p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Do not change the privileges 
+ for the All Users, Administrators, System Managers, and Security Administrators 
+ groups.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Do not create additional 
+ groups under the Administrators group.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Create the groups that 
+ you need under the All Users group or under other groups that have already 
+ been placed under the All Users group.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Create new users as members 
+ of the All Users group. </p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Make sure that at least 
+ two users are Administrators, in case one Administrator is locked out 
+ for some reason. By default, members of the Administrators group have 
+ full privileges (the rights to do anything required in the application 
+ or the server. </p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Remember that access 
+ rights may be overridden by settings on the <span style="font-style: italic;"><I>Access 
+ Rights</I></span> dialog for <span style="font-weight: bold;"><B>System Policy</B></span>. 
+ See <a href="applying_ownership_and_group_privileges.htm">Using/Ignoring 
+ Object Ownership and Group Privileges</a>.</p></li>
+</ul>
+
+<h3>From the Application</h3>
+
+<p class=Body>When setting access rights:</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Grant access right. Although 
+ you can deny access rights, this is not recommended. If you <span style="font-weight: bold;"><B>must</B></span> 
+ deny certain access rights: </p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-2><p class=Bullet-2>Never allow any node 
+ on an <span style="font-style: italic;"><I>Access Rights</I></span> dialog to 
+ have only deny rights records. </p></li>
+		
+		<li class=kadov-p-CBullet-2><p class=Bullet-2>Always ensure that 
+ deny rights records on a node precede the grant rights records for that 
+ node.</p></li>
+		
+		<li class=kadov-p-CBullet-2><p class=Bullet-2>Be aware that the 
+ Windows client and the Cross-Platform client interpret this item differently. 
+ Unchecked items are interpreted as valid in the Windows client, while 
+ checked items are interpreted as valid in the Cross-Platform client.</p></li>
+	</ul>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Set access rights at 
+ the highest possible level that works for your team. The application checks 
+ for access rights from the lowest level (the Item level) to the highest 
+ level (the Project level).</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Set access rights at 
+ the Project level first. These rights should be set for every group (except 
+ the All Users group) for every node. The nodes are Project, View, Promotion 
+ State, Child Folders, File, Change Request, Requirement, Task, and Topic. 
+ The most important nodes to set at this level are the Project and View 
+ nodes. The Project node is the only place where project access rights 
+ can be set, while the View node controls access to all views. Initially, 
+ newly created views start out with only the view access rights set here.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Set access rights at 
+ the View level next. These rights should be set for every user and/or 
+ group that needs access at this level for every node. The nodes are View, 
+ Promotion State, Child Folders, File, Change Request, Requirement, Task, 
+ and Topic.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Grant access rights at 
+ the Folder level only if necessary. These settings accompany the folder 
+ when it is moved to or shared with a new view, although they change when 
+ it branches. Avoid setting access rights on root folders, as these rights 
+ can conflict with rights set at the project or view levels.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Avoid setting access 
+ rights on items. These settings accompany the item when it is moved to 
+ or shared with a new view, although they change when it branches.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Remember that if you 
+ set access rights for any user or group for a specific node in an <span 
+ style="font-style: italic;"><I>Access Rights</I></span> dialog, all users and/or 
+ groups who are not included are denied all access rights for that node. 
+ In general, if you set access rights for any node, be sure to set the 
+ access rights for all users and/or groups that may need to access the 
+ objects affected by that node. </p></li>
+</ul>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

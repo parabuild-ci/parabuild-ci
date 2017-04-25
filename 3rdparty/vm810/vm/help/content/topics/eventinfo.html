@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Event Information</TITLE>
+<!--<eventinfo.html>-->
+<!--<index parent="event_triggers" label="list of event information" anchor="eventinfo">-->
+<!--<index parent="events" label="list of event information" anchor="eventinfo">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="eventinfo"></A>Event Information</H1>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><b>Event Information</b></TD>
+		<TD><b>Definition</b></TD>
+	</TR>
+	<TR>
+		<TD>EventName</TD>
+		<TD>The name of the event. The value for EventName will always be ButtonEvent for icon and menu item events.</TD>
+	</TR>
+	<TR>
+		<TD>EventArchive</TD>
+		<TD>A fully qualified path, including the name of the archive.</TD>
+	</TR>
+	<TR>
+		<TD>EventWorkfile</TD>
+		<TD>The name of the workfile.</TD>
+	</TR>
+	<TR>
+		<TD>EventFQPWorkfile</TD>
+		<TD>A fully qualified path, including the workfile name.</TD>
+	</TR>
+	<TR>
+		<TD>EventUserID</TD>
+		<TD>The user ID of the person performing the operation.</TD>
+	</TR>
+	<TR>
+		<TD>EventChgDesc</TD>
+		<TD>The change description. Limited to 1K in size except when used with the parameter file method of passing event information.</TD>
+	</TR>
+	<TR>
+		<TD>EventRevision</TD>
+		<TD>The revision number being operated on.</TD>
+	</TR>
+	<TR>
+		<TD>EventVersion</TD>
+		<TD>The version label.</TD>
+	</TR>
+	<TR>
+		<TD>EventLock</TD>
+		<TD>The value is YES if a lock was requested and is not defined otherwise.</TD>
+	</TR>
+	<TR>
+		<TD>EventGroup</TD>
+		<TD>The promotion group assigned to the revision. If the event is part of an operation that assigns, changes, or promotes a revision, the new group name appears; otherwise, if the versioned item was selected using a promotion group, that group name appears.</TD>
+	</TR>
+	<TR>
+		<TD>EventJournalFile</TD>
+		<TD>The name of the journal file.</TD>
+	</TR>
+	<TR>
+		<TD>EventJournalEntry</TD>
+		<TD>The journal entry line that was written to the journal file.</TD>
+	</TR>
+	<TR>
+		<TD>EventDate</TD>
+		<TD>The date when the event trigger was executed. The format of the time is packed decimal numeric. For example, January 20, 1998 appears as 19980120.</TD>
+	</TR>
+	<TR>
+		<TD>EventTime</TD>
+        <TD>The time when the event triggers was executed. The format of th time is packed decimal numeric. For example, 2:35:26 <span style="font-size: 8pt;">P</span>.<span style="font-size: 8pt;">M</span>. appears as 143526.</TD>
+	</TR>
+	<TR>
+		<TD>EventArchiveName<BR>
+		(desktop client only)</TD>
+		<TD>The name of the archive.</TD>
+	</TR>
+	<TR>
+		<TD>EventConfigFiles<BR>
+		(desktop client only)</TD>
+		<TD>Fully qualified paths, including the names of the configuration files listed in the order that Version Manager reads them. This list does not include the master configuration file, if any. Values are separated by semicolons (;). </TD>
+	</TR>
+	<TR>
+		<TD>EventMasterConfigFile<BR>
+		(desktop client only)</TD>
+		<TD>A fully qualified path, including the name of the master configuration file.</TD>
+	</TR>
+	<TR>
+		<TD>EventClientWorkfile<BR>
+		(desktop client only)</TD>
+		<TD>A fully qualified path, including the name of the workfile on the client or full path if stand-alone.</TD>
+	</TR>
+	<TR>
+		<TD>EventProjectDB<BR>
+		(desktop client only)</TD>
+		<TD>A fully qualified path, including the name of the project database being used.</TD>
+	</TR>
+	<TR>
+		<TD>EventProjectName<BR>
+		(desktop client only)</TD>
+		<TD>A fully qualified path, including the name of the project in the project database.</TD>
+	</TR>
+	<TR>
+		<TD>EventItemSelectionType<BR>
+		(desktop client only)</TD>
+		<TD>How the item being processed was selected. The possible values are ProjectDB, Project, Folder, File, Revision, VersionLabel, and Group (promotion group).</TD>
+	</TR>
+	<TR>
+		<TD>EventFolderPath<BR>
+		(desktop client only)</TD>
+		<TD>Folder, versioned file, revision, version label, or promotion group in a 5.3/6.0 folder. This only applies to 5.3/6.0 folders and not to projects.</TD>
+	</TR>
+</TABLE>
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a href="passingeventinfo.html">Passing Information to Event Triggers</a></TD>
+		<TD><a href="iconeventinfo.html">Event Information for Icon and Menu Item Events</a></TD>
+	</TR>
+	<TR>
+		<TD><a href="examplesoftriggers.html">Examples of Event Triggers</a></TD>
+		<TD><a href="vmprocessingevents.html">Version Manager Processing Events</a></TD>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

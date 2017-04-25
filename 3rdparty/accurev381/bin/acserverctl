@@ -1,0 +1,384 @@
+#!/bin/sh
+#
+# Copyright (c) 2000-2001 AccuRev Inc.
+# See license at the end of this file.
+#
+# AccuRev control script designed to allow an easy command line interface
+# to controlling AccuRev Server.
+#
+# This file based on similar file used with Apache.
+# 
+# The exit codes returned are:
+#	0 - operation completed successfully
+#	1 - 
+#	2 - usage error
+#	3 - accurev server could not be started
+#	4 - accurev server could not be stopped
+#	5 - accurev server could not be started during a restart
+#	6 - accurev server could not be restarted during a hard restart
+#	7 - accurev server could not be restarted during a restart
+#	8 - accurev server could not be paused
+#	9 - accurev server could not be resumed
+#      10 - configuration problem
+#
+# When multiple arguments are given, only the error from the _last_
+# one is reported.  Run "accurevctl help" for usage info
+#
+#
+# |||||||||||||||||||| START CONFIGURATION SECTION  ||||||||||||||||||||
+# --------------------                              --------------------
+
+# path to accurev binaries
+if [ "$ACCUREV_BIN" = "" ] ; then
+    ACCUREV_BIN=D:\mor2\dev\bt\3rdparty\accurev381\bin
+fi
+
+# path to accurev server binary
+ACSERVER=$ACCUREV_BIN/accurev_server
+
+# config file used by accurev server - we use it to find SITE_SLICE
+ACSERVERCNF=$ACCUREV_BIN/acserver.cnf
+
+if [ -f /bin/uname ]; then
+  UNAME=`/bin/uname`
+elif [ -f /usr/bin/uname ]; then
+  UNAME=`/usr/bin/uname`
+else
+  echo "could not find 'uname'"
+  exit 1
+fi
+
+MAXFILES=12000
+
+# --------------------                              --------------------
+# ||||||||||||||||||||   END CONFIGURATION SECTION  ||||||||||||||||||||
+
+ERROR=0
+ARGV="$@"
+if [ "x$ARGV" = "x" ] ; then
+    ARGS="help"
+fi
+
+if [ -f $ACSERVERCNF ] ; then
+    # find pids in site slice dir
+    SITESLICE=`awk '{if($1 == "SITE_SLICE_LOC") {print $3; exit}}' $ACSERVERCNF`
+else
+    echo "configuration file not found: $ACSERVERCNF"
+    exit 10
+fi
+if [ ! -f $ACSERVER ] ; then
+    echo "accurev server binary not found: $ACSERVER"
+    exit 10
+fi
+WDPIDFILE=$SITESLICE/acwatchdog.pid
+SRVPIDFILE=$SITESLICE/acserver.pid
+STATEFILE=$SITESLICE/acserver.state
+
+for ARG in $@ $ARGS
+do
+    # check if processes are running
+    if [ -f $SRVPIDFILE ] ; then
+	SRVPID=`head -1 $SRVPIDFILE`
+	if [ "x$SRVPID" != "x" ] && kill -0 $SRVPID > /dev/null 2>&1 ; then
+	    SRVSTATUS="accurev server (pid $SRVPID) running"
+	    SRVRUNNING=1
+	else
+	    SRVSTATUS="accurev server (pid $SRVPID) not running, or no permission"
+	    SRVRUNNING=0
+	    SRVPID=""
+	fi
+    else
+	SRVSTATUS="accurev server (no pid file) not running, or no permission"
+	SRVRUNNING=0
+    fi
+    if [ -f $WDPIDFILE ] ; then
+	WDPID=`head -1 $WDPIDFILE`
+	if [ "x$WDPID" != "x" ] && kill -0 $WDPID > /dev/null 2>&1 ; then
+	    WDSTATUS="accurev watchdog (pid $WDPID) running"
+	    WDRUNNING=1
+	else
+	    WDSTATUS="accurev watchdog (pid $WDPID) not running, or no permission"
+	    WDRUNNING=0
+	    WDPID=""
+	fi
+    else
+	WDSTATUS="accurev watchdog (no pid file) not running, or no permission"
+	WDRUNNING=0
+    fi
+    if [ -f $STATEFILE ] ; then
+	SRVSTATE=`head -1 $STATEFILE`
+    else
+	SRVSTATE="stop"
+    fi
+
+    case $ARG in
+    status)
+	if [ $SRVRUNNING -eq 1 ] ; then
+	    echo "$0 $ARG: accurev server (pid $SRVPID $WDPID) is running"
+	else
+	    echo "$0 $ARG: accurev server is stopped"
+	fi
+	;;
+    start)
+	# increase file handle limit for systems with 'sysctl'
+	if [ $UNAME = "Linux" ]; then
+	    MF=`/sbin/sysctl -n fs.file-max`
+	    if [ $MF -lt $MAXFILES ]; then
+	      MFOUT=`/sbin/sysctl -w fs.file-max=$MAXFILES 2>&1`
+	    fi
+	fi
+	if [ $UNAME = "FreeBSD" ]; then
+	    MF=`/sbin/sysctl -n kern.maxfilesperproc`
+	    if [ $MF -lt $MAXFILES ]; then
+	      MFOUT=`/sbin/sysctl -w kern.maxfilesperproc=$MAXFILES 2>&1`
+	    fi
+	    MF=`/sbin/sysctl -n kern.maxfiles`
+	    if [ $MF -lt $MAXFILES ]; then
+	      MFOUT=`/sbin/sysctl -w kern.maxfiles=$MAXFILES 2>&1`
+	    fi
+	fi
+	if [ $UNAME = "Darwin" ]; then
+	    MF=`/sbin/sysctl -n kern.maxfiles`
+	    if [ $MF -lt $MAXFILES ]; then
+	      MFOUT=`/sbin/sysctl -w kern.maxfiles=$MAXFILES 2>&1`
+	    fi
+	fi
+	if [ $UNAME = "NetBSD" ]; then
+	    MF=`/sbin/sysctl -n kern.maxfiles`
+	    if [ $MF -lt $MAXFILES ]; then
+	      MFOUT=`/sbin/sysctl -w kern.maxfiles=$MAXFILES 2>&1`
+	    fi
+	fi
+	if [ -n "$MFOUT" ]; then
+	    echo "warning: unable to increase file handle limit ($MF)"
+	    # /sbin/sysctl -n fs.file-max
+	fi
+	# if already running, 2nd copy will quit right away
+	if $ACSERVER ; then
+	    echo "$0 $ARG: accurev server started"
+	else
+	    echo "$0 $ARG: accurev server could not be started"
+	    ERROR=3
+	fi
+	;;
+    kill)
+	if [ $SRVRUNNING -eq 0 ] && [ $WDRUNNING -eq 0 ]; then
+	    echo "$0 $ARG: $SRVSTATUS"
+	    continue
+	fi
+	if [ $WDRUNNING -eq 1 ]; then
+	    kill $WDPID
+	    if [ $? != 0 ] ; then
+		echo "$0 $ARG: accurev watchdog could not be stopped"
+		ERROR=4
+	    fi
+	fi
+	if [ $SRVRUNNING -eq 1 ]; then
+	    kill $SRVPID
+	    if [ $? != 0 ] ; then
+		echo "$0 $ARG: accurev server could not be stopped"
+		ERROR=4
+	    fi
+	fi
+	if [ $ERROR -eq 0 ]; then
+	    echo "$0 $ARG: accurev server stopped"
+	fi
+	;;
+    stop)
+	if [ $SRVRUNNING -eq 0 ] && [ $WDRUNNING -eq 0 ]; then
+	    echo "$0 $ARG: $SRVSTATUS"
+	    continue
+	fi
+	if [ $WDRUNNING -eq 1 ]; then
+	    touch "$SITESLICE/acwatchdog.command.shutdown"
+	    if [ $? != 0 ]; then
+		echo "$0 $ARG: accurev watchdog could not be stopped"
+		ERROR=4
+	    fi
+	fi
+	if [ $SRVRUNNING -eq 1 ]; then
+	    touch "$SITESLICE/acserver.command.shutdown"
+	    if [ $? != 0 ]; then
+		echo "$0 $ARG: accurev server could not be stopped"
+		ERROR=4
+	    fi
+	fi
+	if [ $ERROR -eq 0 ]; then
+	    echo "$0 $ARG: accurev server stopped"
+	fi
+	;;
+    hardrestart)
+	if [ $SRVRUNNING -eq 0 ] && [ $WDRUNNING -eq 0 ]; then
+	    echo "$0 $ARG: accurev server not running, trying to start"
+	    $0 start
+	    if [ $? != 0 ]; then
+		ERROR=5
+	    fi
+	else
+	    # todo: test for valid config file here before restarting
+	    if $0 kill ; then
+		sleep 2
+		if $0 start ; then
+		    echo "$0 $ARG: accurev server restarted"
+		    continue
+		fi
+	    fi
+	    # error message already printed by stop or start
+	    ERROR=6
+	fi
+	;;
+    restart)
+	if [ $SRVRUNNING -eq 0 ] && [ $WDRUNNING -eq 0 ]; then
+	    echo "$0 $ARG: accurev server not running, trying to start"
+	    $0 start
+	    if [ $? != 0 ]; then
+		ERROR=5
+	    fi
+	else
+	    # todo: test for valid config file here before restarting
+	    if [ $WDRUNNING -eq 0 ]; then
+		echo "$0 $ARG: watchdog not running, doing a hard restart"
+		$0 hardrestart
+		if [ $? != 0 ]; then
+		    ERROR=7
+		fi
+	    else
+		if touch "$SITESLICE/acserver.command.shutdown"; then
+		    echo "$0 $ARG: accurev server restarted"
+		else
+		    echo "$0 $ARG: accurev server could not be restarted"
+		    ERROR=7
+		fi
+	    fi
+	fi
+	;;
+    pause)
+	if [ $SRVRUNNING -eq 0 ]; then
+	    echo "$0 $ARG: $SRVSTATUS"
+	    continue
+	else
+	    touch "$SITESLICE/acserver.command.pause"
+	    if [ $? != 0 ]; then
+		echo "$0 $ARG: accurev server could not be paused"
+		ERROR=8
+	    fi
+	fi
+	if [ $ERROR -eq 0 ]; then
+	    echo "$0 $ARG: accurev server paused"
+	fi
+	;;
+    resume)
+	if [ $SRVRUNNING -eq 0 ]; then
+	    echo "$0 $ARG: $SRVSTATUS"
+	    continue
+	else
+	    rm "$SITESLICE/acserver.command.pause"
+	    if [ $? != 0 ]; then
+		echo "$0 $ARG: accurev server could not be resumed"
+		ERROR=9
+	    fi
+	fi
+	if [ $ERROR -eq 0 ]; then
+	    echo "$0 $ARG: accurev server resumed"
+	fi
+	;;
+    *)
+	cat <<EOF
+
+AccuRev/CM Server Control Script
+
+This script controls the operation of the AccuRev/CM Server and Watchdog
+processes on Unix systems.
+
+Usage:
+
+  acserverctl [ start|stop|status|pause|resume|restart|kill|hardrestart|help ]
+
+Commands:
+  start        - Start a new Server and Watchdog.
+  stop         - Tell the Server and Watchdog to stop gracefully.
+  status       - Report whether the Server is running
+  pause        - Tell the Server to stop accepting new requests.
+  resume       - Tell the Server to start accepting new requests again.
+  restart      - Tell the Server to stop gracefully, allowing
+                 the Watchdog to restart it.
+  kill         - Forcibly stop the Server and Watchdog.
+  hardrestart  - Peform a kill, followed by a start.
+  help         - Display this help information.
+
+Notes:
+
+1) 'restart' and 'hardrestart' both start the Server if it is not
+already running.
+
+2) 'stop', 'restart' and 'pause' tell the Server to perform an action,
+but they do not verify that the action succeeded. To verify the action,
+check the end of the server log file.
+
+EOF
+	ERROR=2
+    ;;
+
+    esac
+
+done
+
+exit $ERROR
+
+# ====================================================================
+# The Apache Software License, Version 1.1
+#
+# Copyright (c) 2000-2001 The Apache Software Foundation.  All rights
+# reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+#
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+#
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in
+#    the documentation and/or other materials provided with the
+#    distribution.
+#
+# 3. The end-user documentation included with the redistribution,
+#    if any, must include the following acknowledgment:
+#       "This product includes software developed by the
+#        Apache Software Foundation (http://www.apache.org/)."
+#    Alternately, this acknowledgment may appear in the software itself,
+#    if and wherever such third-party acknowledgments normally appear.
+#
+# 4. The names "Apache" and "Apache Software Foundation" must
+#    not be used to endorse or promote products derived from this
+#    software without prior written permission. For written
+#    permission, please contact apache@apache.org.
+#
+# 5. Products derived from this software may not be called "Apache",
+#    nor may "Apache" appear in their name, without prior written
+#    permission of the Apache Software Foundation.
+#
+# THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESSED OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+# OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+# DISCLAIMED.  IN NO EVENT SHALL THE APACHE SOFTWARE FOUNDATION OR
+# ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+# SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+# LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF
+# USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+# ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+# OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
+# OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+# ====================================================================
+#
+# This software consists of voluntary contributions made by many
+# individuals on behalf of the Apache Software Foundation.  For more
+# information on the Apache Software Foundation, please see
+# <http://www.apache.org/>.
+#
+# Portions of this software are based upon public domain software
+# originally written at the National Center for Supercomputing Applications,
+# University of Illinois, Urbana-Champaign.
+#

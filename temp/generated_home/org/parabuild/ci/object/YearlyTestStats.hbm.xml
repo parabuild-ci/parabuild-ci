@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 1.1//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="org.parabuild.ci.object.YearlyTestStats"
+        table="MONTHLY_TEST_STATS"
+    >
+        <cache usage="read-write" />
+
+        <id
+            name="ID"
+            column="ID"
+            type="int"
+            unsaved-value="-1"
+        >
+            <generator class="identity">
+            </generator>
+        </id>
+
+        <property
+            name="activeBuildID"
+            type="int"
+            column="ACTIVE_BUILD_ID"
+            unique="false"
+        />
+
+        <property
+            name="sampleTime"
+            type="java.util.Date"
+            column="SAMPLE_TIME"
+            unique="false"
+        />
+
+        <property
+            name="successfulTestCount"
+            type="int"
+            column="SUCCESSFUL_TEST_COUNT"
+            unique="false"
+        />
+
+        <property
+            name="successfulTestPercent"
+            type="int"
+            column="SUCCESSFUL_TEST_PERCENT"
+            unique="false"
+        />
+
+        <property
+            name="failedTestCount"
+            type="int"
+            column="FAILED_TEST_COUNT"
+            unique="false"
+        />
+
+        <property
+            name="totalTestCount"
+            type="int"
+            column="TOTAL_TEST_COUNT"
+            unique="false"
+        />
+
+        <property
+            name="failedTestPercent"
+            type="int"
+            column="FAILED_TEST_PERCENT"
+            unique="false"
+        />
+
+        <property
+            name="testCode"
+            type="byte"
+            column="TEST_CODE"
+            unique="false"
+        />
+
+        <property
+            name="errorTestCount"
+            type="int"
+            column="ERROR_TEST_COUNT"
+            unique="false"
+        />
+
+        <property
+            name="errorTestPercent"
+            type="int"
+            column="ERROR_TEST_PERCENT"
+            unique="false"
+        />
+
+        <property
+            name="buildCount"
+            type="int"
+            column="BUILD_COUNT"
+            unique="false"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-YearlyTestStats.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

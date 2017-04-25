@@ -1,0 +1,187 @@
+<!-- Copyright 2003 Zelix Pty Ltd (ABN 47 078 740 093) -->
+<html>
+<head>
+<title>Zelix KlassMaster - obfuscateFlowExclude statement</title>
+   <meta name="keywords" content="java obfuscator,java code obfuscator,obfuscation">
+   <meta name="description" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <meta name="classification" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <link rel=stylesheet href="../ZKM.css" TYPE="text/css">
+</head>
+<body background="../images/small-white-mist1.jpg" bgcolor="#E1E1E1">
+<center><a href="index.html"><img src=../images/ZKM_b4.gif alt="Zelix KlassMaster" width=264 height=62 border=0></a></center>
+<hr>
+<center>
+<table width=770 border=0>
+   <tr>
+      <td>
+         <h1>The <code>obfuscateFlowExclude</code> Statement</h1>
+         The ZKM Script <code>obfuscateFlowExclude</code> statement excludes the specified methods from being flow obfuscated 
+         by the Zelix KlassMaster <a href=obfuscateStatement.html><code>obfuscate</code></a> statement. It has no impact if the 
+         <code>obfuscate</code> statement's <code>obfuscateFlow</code> parameter is set to <code>none</code>.
+         Successive <code>obfuscateFlowExclude</code> statements <b>have a cumulative effect</b>. Once an exclusion has been set
+         the only way to remove it is with a <a href=resetObfuscateFlowExclusionsStatement.html><code>resetObfuscateFlowExclusions</code></a> statement.
+         <p> 
+         The remainder of this page is organized into the following sections.
+         <ul>
+            <li><a href="#explanation">Explanation and Examples</a>
+            <li><a href="#syntax">Syntax</a>
+         </ul>
+
+         <h2><a name="explanation">Explanation and Examples</a></h2>
+         The primary effect of the <code>obfuscateFlowExclude</code> statement is to exclude methods from flow obfuscation.  
+         You can use either class or method parameters.  If you use a class parameter then
+         <ul>
+            <li>all of the methods of any matching classes will be excluded from flow obfuscation.
+            <li>no special flow obfuscation fields will be added to matching classes.
+         </ul>
+         <code>obfuscateFlowExclude</code> statement parameters may be loosely categorized into the following groups
+         <ul>
+            <li><a href="#classExclude">Class exclude parameters</a> 
+            <li><a href="#methodExclude">Method exclude parameters</a> 
+         </ul>
+         <h3><a name="classExclude">Class exclude parameters</a></h3>
+         Put a little less formally (with mandatory components in bold), the syntax is: <br>
+         <code>&lt;classModifiers&gt; &lt;packageQualifiers&gt;.<b>&lt;className&gt;</b> &lt;extendsClause&gt; &lt;implementsClause&gt;<b>;</b></code>
+         <p>
+         For a class name to be excluded, all of the following must be true:
+         <ul>
+           <li>Its modifiers  (e.g. <code>public final</code>) must match all parameter modifiers. 
+               So if the parameters are <nobr><code>public abstract !interface</code></nobr> then the class must be 
+               <code>public</code>, <code>abstract</code> and NOT an interface to be excluded. 
+           <li>Its package qualifiers must match any specified package exclude parameter component. If there is no
+               package exclude parameter component then the class must be in the default package.
+           <li>Its unqualified name must match the specified class name specification.
+           <li>If the parameter has an extends clause then the class must be a subclass of the specified class
+           <li>If the parameter has an implements clause then the class must directly or indirectly implement all of the specified interfaces
+         </ul>
+<pre>
+obfuscateFlowExclude *          and         //exclude all methods in all classes in default package
+                     *.Class1   and         //exclude all methods in all classes with the unqualified class name "Class1"
+                     *.(Class* && !(Class0 || Class1); 
+                      //exclude all methods in all classes that start with "Class" except for "Class0" and "Class1"
+</pre>
+         <h3><a name="methodExclude">Method exclude parameters</a></h3>
+         Put less formally (with mandatory components in bold), the syntax is: <br>
+         <code>&lt;classModifiers&gt; &lt;packageQualifiers&gt;.<b>&lt;className&gt;</b> &lt;extendsClause&gt; &lt;implementsClause&gt;<br>
+         &nbsp;&nbsp;&nbsp; &lt;methodModifiers&gt; <b>&lt;methodName&gt;(</b>&lt;argumentTypes&gt;<b>)</b> &lt;throwsClause&gt;;</code>
+         <p>
+         For a method to be excluded from flow obfuscation, all of the following must be true:
+         <ul>
+           <li>Its containing class must match any class exclude parameter component.
+           <li>Its modifiers (e.g. <code>public native</code>) must match all parameter method modifiers.
+               So if the parameters are <nobr><code>public static !synchronized</code></nobr> then the method must be 
+               <code>public</code>, <code>static</code> and NOT <code>synchronized</code> to be excluded from obfuscation.
+           <li>Its name must match the parameter method name specification.  
+               The special name <code>&lt;init&gt;</code> matches all constructors and the special name <code>&lt;clinit&gt;</code>
+               matches all static initializers.
+           <li>Its argument types (e.g. <code>int[], java.lang.String</code>) must match the parameter argument types if they exist.
+               (A parameter argument type of <b>"*"</b> matches any method argument types including no arguments.)
+               If the parameter has no argument type then the method must take no arguments.
+           <li>Its throws clause must contain all the classes specified in the obfuscateFlowExclude parameter's throw clause. 
+               So, if the obfuscateFlowExclude parameter's throws clause is <code>throws java.io.IOException</code> then the method
+               must throw <code>java.io.IOException</code> or one of its subclasses to be excluded.
+         </ul>
+<pre>
+obfuscateFlowExclude pack2.Class1 method1(int) and //Exclude method1(int) in class pack2.Class1 from flow obfuscation
+                     *.* *(*)      and    //Exclude all methods from flow obfuscation
+                     *.* &lt;init&gt;(*) and    //Exclude all contructors from flow obfuscation
+                     *.* &lt;clinit&gt;(*) and  //Exclude all static initializers from flow obfuscation
+                     *.* m*()      and    //Exclude all methods taking no parameters with names matching "m*"
+                     *.* *(*) throws java.io.IOException and //Exclude all methods that throw java.io.IOException.
+                     !(pack1*.)* (m* && !(ma* || me*))() and //Exclude all methods in packages that don't start with "pack1"
+                                                             //that have names that start with "m" but not "ma" or "me"
+                     *.* abstract *(java.lang.String) and //Exclude the names of all "abstract" methods that 
+                                                          //take a single String.
+                     pack1.* implements java.io.Serializable *(*); //Exclude all the methods of any class 
+                                                                   //implementing "Serializable" in 
+                                                                   //a package that matches "pack1.*"
+</pre>
+
+         <h2><a name="syntax"><a href="langZKMScript.html#notation">Syntax</a></a></h2> 
+         <code><b>"<u>obfuscateFlowExclude</u>" excludeParameter ("<u>and</u>" excludeParameter)<sup>*</sup> ";"</b></code>
+         <p>
+         <code><b>methodExcludeParameter ::=<br>
+         &nbsp;&nbsp;&nbsp;classExcludeParameter [["!"] "<u>public</u>" | "<u>protected</u>"| "<u>package</u>"| "<u>private</u>"]<br>
+         &nbsp;&nbsp;&nbsp;[["!"] "<u>abstract</u>"] [["!"] "<u>static</u>"] [["!"] "<u>final</u>"][["!"] "<u>native</u>"] [["!"] "<u>synchronized</u>"]<br>
+         &nbsp;&nbsp;&nbsp;(nameSpecifier | "&lt;init&gt;" | "&lt;clinit&gt;") "(" [ "*" | (type ("," type)<sup>*</sup>)] ")"<br>
+         &nbsp;&nbsp;&nbsp;["throws" fullyQualifiedClassName]</b></code>
+         <p>
+         <code><b>classExcludeParameter ::=<br> 
+         &nbsp;&nbsp;&nbsp;[["!"] "<u>public</u>" | "<u>package</u>"] [["!"] "<u>abstract</u>"] [["!"] "<u>final</u>"] [["!"] "<u>interface</u>"]<br> 
+         &nbsp;&nbsp;&nbsp;[packageExcludeParameter] nameSpecifier [extendsClause] [implementsClause]</b></code>
+         <p>
+         <table>
+            <tr>
+               <td>
+                  <code><b>excludeParameter ::=</b></code>
+               </td>
+               <td>
+                  <code><b>classExcludeParameter</b></code>
+               </td>
+               <td>
+                  <code><b>|</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>                   
+               </td>
+               <td>
+                  <code><b>methodExcludeParameter</b></code>
+               </td>
+               <td></td>
+            </tr>
+         </table>
+         <p>
+         <code><b>extendsClause ::= "<u>extends</u>" fullyQualifiedClassName</b></code><br>
+         <p>
+         <code><b>fullyQualifiedClassName ::= name ("." name)<sup>*</sup></b></code>
+         <p>
+         <code><b>implementsClause ::= "<u>implements</u>" fullyQualifiedClassName ("," fullyQualifiedClassName)<sup>*</sup></b></code><br>
+         <p>
+         <code><b>name ::= (["0"-"9","a"-"z","A"-"Z","$","_"])<sup>+</sup></b></code><br>
+         &nbsp;&nbsp;&nbsp;i.e. a Java identifer (e.g. a package, class, field or method name) with no wildcards allowed
+         <p>
+         <code><b>nameAndList ::= ["!"] "(" nameOrList ("&&" nameOrList)* ")"</b></code>
+         <p>
+         <code><b>nameOrList ::= nameSpecifier ("||" nameSpecifier)*</b></code>
+         <p>
+         <code><b>nameSpecifier ::= wildcardName | nameAndList</b></code>
+         <p>
+         <code><b>packageExcludeParameter ::= packageName | packageNameAndList</b></code>
+         <p>
+         <code><b>packageName ::= wildcardName ("." wildcardName)<sup>*</sup> "."</b></code><br>
+         &nbsp;&nbsp;&nbsp;NB: the final <code>"."</code> is part of the package name
+         <p>
+         <code><b>packageNameAndList ::= ["!"] "(" packageNameOrList ("&&" packageNameOrList)* ")"</b></code>
+         <p>
+         <code><b>packageNameOrList ::= packageExcludeParameter ("||" packageExcludeParameter)*</b></code>
+         <p>
+         <code><b>type ::=<br>
+         &nbsp;&nbsp;&nbsp;("<u>byte</u>" | "<u>short</u>" | "<u>char</u>" | "<u>int</u>" | "<u>long</u>" | "<u>float</u>" | "<u>double</u>"| "<u>boolean</u>" |<br>
+         &nbsp;&nbsp;&nbsp;fullyQualifiedClassName) ("[]")<sup>*</sup></b></code><br>
+         <p>
+         <code><b>wildcardName ::= (["*","0"-"9","a"-"z","A"-"Z","$","_"])<sup>+</sup></b></code><br>
+         &nbsp;&nbsp;&nbsp;i.e. a Java identifer (e.g. a package, class, field or method name) with the "*" wildcard allowed
+      </td>
+   </tr>
+</table>
+</center>
+<hr>
+<center>
+<table>
+   <tr>
+      <td>
+         <a href=resetExclusionsStatement.html><img src=../images/larrw.gif alt="ZKM Script resetExclusions statement"></a>
+      </td>
+      <td>
+         <a href=langZKMScript.html><img src=../images/uarrw.gif alt="The ZKM Script Language"></a>
+      </td>
+      <td>
+         <a href=resetObfuscateFlowExclusionsStatement.html><img src=../images/rarrw.gif alt="ZKM Script resetObfuscateFlowExclusions statement"></a>
+      </td>
+   </tr>
+</table>
+</center>
+Copyright &copy; 2003 <a href="mailto:WebMaster@zelix.com"><font size=-1>Zelix Pty Ltd</font></a> (ABN 47 078 740 093)
+</body>
+</html>

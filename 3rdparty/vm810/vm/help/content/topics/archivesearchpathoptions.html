@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Archive Search Path Options</TITLE>
+<!--<archivesearchpathoptions.html>-->
+<!--<index parent="configuration_options" label="archive search path" anchor="archivesearchpathoptions">-->
+<!--<index parent="options" label="archive search path" anchor="archivesearchpathoptions">-->
+<!--<index parent="archives" label="search path" anchor="archivesearchpathoptions">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="archivesearchpathoptions"></A>Archive Search Path Options</H1>
+<P>
+The archive search path options are applicable only to the operation of the command-line interface. The options can be set in the desktop client even though they affect only the command-line interface.
+</P>
+<P>
+The desktop client archive search path options are automatically defined and updated based on the archive locations defined or modified in the project database.
+</P>
+<P>
+The archive search path options let you specify:
+<UL>
+<LI>Where Version Manager searches for archives when you perform an action on a file. This enables users to perform actions on files without having to know where the archives are stored. See "How Version Manager Searches for Archives" in the <i>Serena ChangeMan Version Manager Command-Line Reference Guide</i> for complete information. The directive for this option is VCSDir.
+<LI>Whether or not wildcard specifications match archives in the first archive directory in which they are found. The directive for this option is FirstMatch. This directive is used in conjunction with the VCSDir directive. If only VCSDir is in effect, Version Manager interprets wildcard specifications to match archives in all archive directories.
+<LI>How Version Manager searches for archives when you specify only a workfile name. The directive for this option is IgnorePath. When this directive is in effect, Version Manager ignores any path you specify for a workfile and looks in the VCSDir directories for the archive.
+</UL>
+<P>
+By default, when you create a project database in the desktop client, Version Manager sets the VCSDir to the database's archive location in the master configuration file. If you customize and add archive locations in other directories for subprojects, you must update the VCSDir setting so that command-line operations work.
+</P>
+<P>
+<a href="setarchivesearchpathoptions.html">Click here</a> to see how to set these options.
+</P>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

@@ -1,0 +1,122 @@
+<HTML>
+<HEAD>
+ <TITLE>Connecting to Serena ChangeMan Mover</TITLE>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nSerena ChangeMan Mover\nConnecting to ChangeMan Mover");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY>
+ <script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1>Connecting to Serena ChangeMan Mover</H1>
+
+<p>Use the Deployment Setup dialog box (Admin | Mover Setup) to enable users to access the Mover Login page from Version Manager.</p>
+
+<b>NOTE</b>
+<ul>
+<li>The Mover URL is stored for each project database.<br><br></li>
+<li>You must have Administrator privileges to specify the Mover URL in Version Manager.</li>
+</ul>
+
+<b>To define the Mover URL:</b><br><br>
+
+<ol><li>
+In Version Manager, open the project database for which you want to define the ChangeMan URL. You must log in to this project database as a user who has Administrator privileges.
+<br><br></li>
+<li>
+Select Admin | Mover Setup. The Deployment Setup dialog box appears.
+<br><br></li>
+<li>
+Enter the Mover URL in the <b>Server URL</b> field:<br><br>
+<FONT Class="syntax">http://<i>server</i>:<i>port</i>/<i>servlet</i></FONT><br><br>
+For example, if Mover is installed to port 80 (the default) on a server called Deployment, enter <FONT Class="syntax">http://Deployment:80/servlet</FONT>
+<br><br></li>
+<li>
+Click <b>OK</b>. If Version Manager is unable to establish a connection to the Mover server, an error appears. Otherwise, you are returned to the desktop client and can now log in to Mover.</li></ol>
+
+<b>To access the Mover Login page:</b><br>
+	<ul><li>From the Version Manager desktop client, select Admin | Mover.<br><br></li>
+	<li>From the Version Manager web client, select Actions | Mover.
+	</li></ul>
+
+
+ <H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="about_merant_deploy.html">About Serena ChangeMan Mover</A></TD>
+		<TD><A HREF="deploysettingsdialog.html">Deployment Setup Dialog Box</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF=""></A>The <i>Serena ChangeMan Mover Installation and Setup Guide</i></TD>
+		<TD><A HREF=""></A></TD>
+	</TR>
+ 
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

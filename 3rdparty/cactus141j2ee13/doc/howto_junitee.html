@@ -1,0 +1,236 @@
+<HTML><HEAD><TITLE>JUnitEE Howto</TITLE></HEAD><BODY alink="#023264" bgcolor="#ffffff" leftmargin="4" link="#525D76" marginheight="4" marginwidth="4" text="#000000" topmargin="4" vlink="#023264"><TABLE border="0" cellpadding="0" cellspacing="0" width="100%"><TR><TD align="left" valign="top"><A href="http://jakarta.apache.org/index.html"><IMG border="0" hspace="0" src="./images/jakarta-logo.gif" vspace="0"></A></TD><TD align="left" bgcolor="#ffffff" valign="middle" width="100%"><IMG align="right" alt="JUnitEE Howto" border="0" hspace="0" src=".//images/logocactus.gif" vspace="0"></TD></TR><TR><TD colspan="2" height="2" width="100%"><HR noshade="" size="1"></TD></TR></TABLE><TABLE border="0" cellpadding="0" cellspacing="0" width="100%"><TR><TD valign="top" width="1%"></TD><TD nowrap="1" valign="top" width="14%"><FONT size="-2">
+              Last update : August 31 2002</FONT><BR><FONT size="-2">
+              Doc for : v1.4.1</FONT><BR><FONT face="arial,helvetica,sanserif">
+
+  <BR><FONT color="#000000" size="+1">About</FONT><BR><FONT size="-1">
+    <LI><A href="./index.html"><FONT size="-1">What is Cactus ?</FONT></A></LI>
+    <LI><A href="./news.html"><FONT size="-1">News</FONT></A></LI>
+    <LI><A href="./changes.html"><FONT size="-1">Changes</FONT></A></LI>
+    <LI><A href="./features.html"><FONT size="-1">Features/Status</FONT></A></LI>
+    <LI><A href="./goals.html"><FONT size="-1">Goals</FONT></A></LI>
+    <LI><A href="./todo.html"><FONT size="-1">Roadmap/Todo</FONT></A></LI>
+    <LI><A href="./contributors.html"><FONT size="-1">Contributors</FONT></A></LI>
+    <LI><A href="./contributing.html"><FONT size="-1">Contributing</FONT></A></LI>
+    <LI><A href="./users.html"><FONT size="-1">Cactus Users</FONT></A></LI>
+    <LI><A href="./testedon.html"><FONT size="-1">Tested on ...</FONT></A></LI>
+    <LI><A href="./license.html"><FONT size="-1">License</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Downloads</FONT><BR><FONT size="-1">
+    <LI><A href="./downloads.html"><FONT size="-1">Downloads</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Documentation</FONT><BR><FONT size="-1">
+    <LI><A href="./how_it_works.html"><FONT size="-1">How it works ?</FONT></A></LI>
+    
+    <LI><A href="./getting_started.html"><FONT size="-1">Getting Started</FONT></A></LI>
+    <LI><A href="./mockobjects.html"><FONT size="-1">Mock vs Container</FONT></A></LI>
+    <LI><A href="./javadoc.html"><FONT size="-1">Javadocs</FONT></A></LI>
+    
+    
+    <LI><A href="./faq.html"><FONT size="-1">FAQ</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Howto Guides</FONT><BR><FONT size="-1">
+    <LI><A href="./howto_classpath.html"><FONT size="-1">Classpath Howto</FONT></A></LI>
+    <LI><A href="./howto_config.html"><FONT size="-1">Config Howto</FONT></A></LI>
+    <LI><A href="./howto_migration.html"><FONT size="-1">Migration Howto</FONT></A></LI>
+
+    
+    <LI><A href="./howto_testcase.html"><FONT size="-1">TestCase Howto</FONT></A></LI>
+    
+    
+    
+
+    <LI><A href="./howto_jsp.html"><FONT size="-1">Jsp Howto</FONT></A></LI>
+    <LI><A href="./howto_runner.html"><FONT size="-1">Runner Howto</FONT></A></LI>
+    <LI><A href="./howto_security.html"><FONT size="-1">Security Howto</FONT></A></LI>
+
+    
+    <LI><A href="./howto_ant.html"><FONT size="-1">Ant Howto</FONT></A></LI>
+    
+    
+    
+
+    <LI><A href="./howto_httpunit.html"><FONT size="-1">HttpUnit Howto</FONT></A></LI>
+    <LI><A href="./howto_sample.html"><FONT size="-1">Sample Howto</FONT></A></LI>
+
+    
+    <LI><A href="./howto_ejb.html"><FONT size="-1">EJB Howto</FONT></A></LI>
+    
+
+    
+    <LI><A href="./howto_ide.html"><FONT size="-1">IDE Howto</FONT></A></LI>
+    
+    
+    
+    
+
+    <LI><A href="./howto_tomcat.html"><FONT size="-1">Tomcat Howto</FONT></A></LI>
+
+    <LI><A href="./howto_junitee.html"><FONT size="-1">JUnitEE Howto</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Support</FONT><BR><FONT size="-1">
+    <LI><FONT size="-1"><A href="http://jakarta.apache.org/site/bugs.html" target="">Bug database</A></FONT></LI>
+    <LI><A href="./mailinglist.html"><FONT size="-1">Mailing list</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Misc.</FONT><BR><FONT size="-1">
+    <LI><A href="./cactusname.html"><FONT size="-1">Why the name ?</FONT></A></LI>
+    <LI><A href="./logos.html"><FONT size="-1">Logo Challenge</FONT></A></LI>
+    <LI><A href="./resources.html"><FONT size="-1">Resources</FONT></A></LI>
+    <LI><A href="./coverage.html"><FONT size="-1">Test Coverage</FONT></A></LI>
+    
+    
+    
+    <LI><FONT size="-1"><A href="http://jakarta.apache.org/cactus/stats/index.html" target="">Stats</A></FONT></LI>
+    
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Developers</FONT><BR><FONT size="-1">
+    <LI><FONT size="-1"><A href="http://jakarta.apache.org/site/cvsindex.html" target="">CVS</A></FONT></LI>
+    <LI><A href="./coding_conventions.html"><FONT size="-1">Coding Conventions</FONT></A></LI>
+    <LI><A href="./build_result.html"><FONT size="-1">Build results</FONT></A></LI>
+    <LI><A href="./release_checklist.html"><FONT size="-1">Release Checklist</FONT></A></LI>
+  </FONT><BR>
+
+</FONT></TD><TD align="left" valign="top" width="*"><TABLE border="0" cellpadding="3" cellspacing="0"><TR><TD><BR>
+  
+
+  
+
+    <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>JUnitEE, a TestRunner inside the Container</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+      <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+        Since Version 1.4 Cactus contains a new Servlet Test Runner that
+        enables the same features than the JUnitEE was providing, but in an
+        even easier way. Please check the
+        <A href="howto_runner.html">TestRunner Howto</A> tutorial.
+      </I></FONT></TD></TR></TABLE></P>
+
+      <P align="justify">
+        You can use the
+        <A href="http://junitee.sourceforge.net">JUnitEE</A> user
+        interface to run your all your tests inside the Container. JUnitEE is
+        a JUnit TestRunner that has been written as a servlet with the user
+        interface in HTML format.
+      </P>
+
+      <P align="justify">
+        You cannot achieve all features of Cactus using JUnitEE as
+        part of them depend on being executed on the client side.
+        Executing JUnitEE from ANT commands will probably not be possible.
+        Some benefits however of JUnitEE are:
+      </P>
+
+      <BLOCKQUOTE><UL>
+        <LI>
+          <B>All class files are in one place</B> :  Install all your
+          TestCase class-files only in your container classpath. Both
+          TestCases derived from
+          <CODE><FONT face="courier, monospaced">junit.framework.TestCase</FONT></CODE> and from
+          <CODE><FONT face="courier, monospaced">org.apache.cactus.JspTestCase</FONT></CODE>
+          will be located in the same place and only once.
+        </LI>
+        <LI>
+          <B>Run all TestCases in the container</B> : You can mix
+          both types of TestCases mentioned above in your test. All tests are
+          executed inside the Container. You can use testcases derived from
+          <CODE><FONT face="courier, monospaced">junit.framework.TestCase</FONT></CODE> to test methods that do not
+          require the http objects such as the
+          <CODE><FONT face="courier, monospaced">HttpServletRequest</FONT></CODE> or
+          <CODE><FONT face="courier, monospaced">HttpServletResponse</FONT></CODE> objects.
+        </LI>
+      </UL></BLOCKQUOTE>
+
+      <P align="justify">
+        Using JUnitEE is (relatively) simple. Assuming you have a container
+        such as Weblogic, Tomcat or Orion functioning and you know how to
+        configure Servlets and adding libraries to the Containers classpath and
+        you are familiar with the basics of Cactus then the rest is easy.
+      </P>
+
+      <BLOCKQUOTE><UL>
+        <LI>
+          One good reason to use JUnitEE would be when you want to try Cactus
+          quickly and are not concerned with automatic unit testing.
+      </LI>
+        <LI>
+          Usage of standard JUnit testrunner (textui,swingui, ...) will not be
+          possible if cactus is configured this way and thus the ant junit task
+          cannot be used to automate the test.
+        </LI>
+      </UL></BLOCKQUOTE>
+
+    </FONT></TD></TR></TABLE></DIV><BR>
+
+    <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>How to install JUnitEE</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+      <P align="justify">
+        Download the
+        <A href="http://junitee.sourceforge.net">JUnitEE</A>
+        zip-file. Add a reference to junitee.jar to your Container classpath.
+        Add also references to
+        <CODE><FONT face="courier, monospaced">junit.jar</FONT></CODE>,
+        <CODE><FONT face="courier, monospaced">httpunit.jar</FONT></CODE>
+        <CODE><FONT face="courier, monospaced">cactus.jar</FONT></CODE> and
+        <CODE><FONT face="courier, monospaced">aspectjrt.jar</FONT></CODE> if you have not
+        already done that.
+      </P>
+
+      <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+        add
+        <CODE><FONT face="courier, monospaced">junitee.jar</FONT></CODE> in the same way as cactus.jar is added.
+      </I></FONT></TD></TR></TABLE></P>
+
+      <P align="justify">
+        Configure TestServlet in your Container. You may use the example servlet
+        <CODE><FONT face="courier, monospaced">org.infohazard.servlet.TestServlet</FONT></CODE> that
+        comes with JUnitEE. Check JUnitEE documentation. TestServlet extends
+        <CODE><FONT face="courier, monospaced">junit.htmlui.TestServletBase</FONT></CODE> that executes
+        <CODE><FONT face="courier, monospaced">junit.htmlui.TestRunner</FONT></CODE>
+        i.e. the JUnitEE interface.
+      </P>
+
+    </FONT></TD></TR></TABLE></DIV><BR>
+
+    <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>Executing the tests with JUnitEE</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+      <P align="justify">
+        You request the tests from an html-page in your container. You can
+        write the name of your testclasses according to the examples with
+        JUnitEE as:
+      </P>
+
+      <BLOCKQUOTE><UL>
+        <LI>
+          a commandstring parameter such as &quot;
+          <CODE><FONT face="courier, monospaced">/TestServlet?suite=fi.iki.kaila.MyTests&amp;list=yes</FONT></CODE>&quot;
+        </LI>
+        <LI>
+          as input using
+          <CODE><FONT face="courier, monospaced">&lt;input type=&quot;text&quot; name=&quot;suite&quot; size=60 /&gt;</FONT></CODE> in
+          a form element that requests TestServlet
+        </LI>
+        <LI>
+          as one or more option elements in a select element in the
+          form-element
+        </LI>
+      </UL></BLOCKQUOTE>
+    </FONT></TD></TR></TABLE></DIV><BR>
+
+    <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>Tell JUnitEE to use Cactus redirector</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+      <P align="justify">
+        The
+        <CODE><FONT face="courier, monospaced">cactus.properties</FONT></CODE> file must be located so that your
+        container can find it e.g. in your containers classpath.
+      </P>
+
+    </FONT></TD></TR></TABLE></DIV><BR>
+
+  
+</TD></TR></TABLE></TD></TR></TABLE><BR><TABLE border="0" cellpadding="0" cellspacing="0" width="100%"><TR><TD><HR noshade="" size="1"></TD></TR><TR><TD align="center"><FONT color="#525D76" face="arial,helvetica,sanserif" size="-1"><I>
+                Copyright &copy; 2000-2002 The Apache Software Foundation.
+                All Rights Reserved.
+               </I></FONT></TD></TR></TABLE></BODY></HTML>

@@ -1,0 +1,1 @@
+Don't delete this file - VSS needs label folder so this file allows the labels dir to be checked out from CVS.

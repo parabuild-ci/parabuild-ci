@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Event Information for Icon and Menu Item Events</TITLE>
+<!--<iconeventinfo.html>-->
+<!--<index parent="events" label="information for icon and menu item" anchor="iconeventinfo">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="iconeventinfo"></A>Event Information for Icon and Menu Item Events</H1>
+<p>
+The event information available from icon and menu item events depends on which items are selected in the desktop client when the event takes place. For example, EventArchive event information is available to an event trigger if a versioned file, revision, version label, or promotion group is selected in the desktop client when an icon or menu item event takes place.
+</P>
+<P>
+The following table lists each type of event information and the item that must be selected in the desktop client for the event information to be made available to an event trigger. If an item is not selected, Version Manager returns no corresponding information to the event trigger. For example, if you define an event trigger that asks for the name of a workfile (EventWorkfile) and a versioned file, revision, version label, or promotion group is not selected when the event trigger is executed, the name of the workfile will not be passed to the event trigger.
+</P>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><b>Event Information</b></TD>
+		<TD><b>Item that must be selected in the desktop client</b></TD>
+	</TR>
+	<TR>
+		<TD>EventName</TD>
+		<TD>Project database or lower</TD>
+	</TR>
+	<TR>
+		<TD>EventArchive</TD>
+		<TD>Versioned file, revision, version label, or promotion group</TD>
+	</TR>
+	<TR>
+		<TD>EventArchiveName</TD>
+		<TD>Versioned file, revision, version label, or promotion group</TD>
+	</TR>
+	<TR>
+		<TD>EventWorkfile</TD>
+		<TD>Versioned file, revision, version label, or promotion group</TD>
+	</TR>
+		<TR>
+		<TD>EventUserID</TD>
+		<TD>Project database or lower</TD>
+	</TR>
+	<TR>
+		<TD>EventRevision</TD>
+		<TD>Versioned file or revision</TD>
+	</TR>
+	<TR>
+		<TD>EventVersion</TD>
+		<TD>Version label</TD>
+	</TR>
+	<TR>
+		<TD>EventGroup</TD>
+		<TD>Promotion group</TD>
+	</TR>
+	<TR>
+		<TD>EventDate</TD>
+		<TD>Project database or lower</TD>
+	</TR>
+	<TR>
+		<TD>EventTime</TD>
+		<TD>Project database or lower</TD>
+	</TR>
+	<TR>
+		<TD>EventConfigFiles</TD>
+		<TD>Project database or lower</TD>
+	</TR>
+	<TR>
+		<TD>EventMasterConfigFile</TD>
+		<TD>Project database or lower</TD>
+	</TR>
+	<TR>
+		<TD>EventClientWorkfile</TD>
+		<TD>Versioned file, revision, version label, or promotion group</TD>
+	</TR>
+	<TR>
+		<TD>EventProjectDB</TD>
+		<TD>Project database or lower</TD>
+	</TR>
+	<TR>
+		<TD>EventProjectName</TD>
+		<TD>Project or lower</TD>
+	</TR>
+	<TR>
+		<TD>EventFolderPath</TD>
+		<TD>Folder, versioned file, revision, version label, or promotion group in folder</TD>
+	</TR>
+	<TR>
+		<TD>EventItemSelectionType</TD>
+		<TD>Project database or lower</TD>
+	</TR>
+	<TR>
+		<TD>EventName</TD>
+		<TD>Project database or lower</TD>
+	</TR>
+</TABLE>
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a href="examplesoftriggers.html">Examples of Event Triggers</a></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

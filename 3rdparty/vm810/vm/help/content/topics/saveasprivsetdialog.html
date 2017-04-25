@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Save As Privilege Set Dialog Box</TITLE>
+<!--<saveasprivsetdialog.html>-->
+<!--<index parent="security" label="Save As Privilege Set dialog box" anchor="saveasprivset">-->
+<!--<index parent="privilege_sets" label="Save As Privilege Set dialog box" anchor="saveasprivset">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiSaveAsPrivilegeSetDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="saveasprivset"></A>Save As Privilege Set</H1>
+<P>Use the Save As Privilege Set dialog box (Admin | Security | Users | Privileges tab | Save As  Privilege Set button) to save the selected privileges and privilege sets as a new custom privilege set.</P>
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><b>Name</b></TD>
+		<TD><!--<control name="SaveAsPrivilegeSetGeneral.PRIVILEGE_SET_NAME_EDIT">-->
+		Enter the name for the new privilege set.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Privileges List</b></TD>
+		<TD><!--<control name="SaveAsPrivilegeSetGeneral.SELECTED_PRIVILEGES_TEXTAREA">-->
+		Lists the base privileges, composite privileges, and existing
+privilege sets that will define this new custom privilege set. <!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Restrict by promotion group</b></TD>
+		<TD><!--<control name="SaveAsPrivilegeSetGeneral.RESTRICT_BY_EDIT">-->
+		Enter the name of the promotion group by which to restrict the privilege set or click the Browse button to select one. <!--</control>--></TD>
+	</TR>
+	</TABLE>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="createprivsetdialog.html">Create Privilege Set Dialog Box</A></TD>
+		<TD><A HREF="adminsecurityprivsets.html">Privilege Set Dialog Box</a></TD>
+	</TR>
+	<TR>
+		<TD></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

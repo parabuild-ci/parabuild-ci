@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Setting Up Multiple Locks for Branching</TITLE>
+<!--<multilockbranchsetup.html>-->
+<!--<toc parent="branching" label="Setting Up Multiple Locks for Branching" anchor="multilockbranchsetup" sortkey="03">-->
+<!--<index parent="branching" label="setting up multiple locks for" anchor="multilockbranchsetup">-->
+<!--<index parent="configuring" label="multiple locks for branching" anchor="multilockbranchsetup">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nBranching and Merging Files\nBranching\nSetting Up Multiple Locks for Branching");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="multilockbranchsetup"></A>Setting Up Multiple Locks for Branching</H1>
+<P>Multiple locking is designed for groups who maintain parallel development paths (branches). Multiple locks simplify the creation of branches. If multiple locks per revision is enabled, different users can lock the same revision.</p>
+<H2>To set up multiple locks for newly created archives:</H2>
+<OL>
+	<LI>Select the project database or project for which you are setting up multiple locking. All of the archives in the project database or project will allow multiple locking.<br><br>
+	<LI>Select Admin | Configure Project. The Configure Project dialog box appears with the General tab active.<br><br>
+	<LI>If not already selected, select the <b>Show Advanced Options</b> check box.<br><br>
+	<LI>In the Options list, select <b>Locking</b>  beneath Archives. The Archive Locking pane on the right appears.<br><br>
+	<LI>Do one or both of the following:<br><br>
+	<oL type="a">
+		<LI>Select <b>More Than One</b> in the Locks Allowed on Each Revision group to allow multiple locks for each revision.<br><br>
+		<LI>Select <b>More Than One</b> in the Locks Allowed by Each User group to allow individual users to lock more than one revision of an archive at a time.<br><br>
+	</oL>
+	<LI>Click OK.
+</OL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="branchfile.html">Branching Files</A></TD>
+		<TD><A HREF="aboutbranching.html">About Branching</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="autobranch.html">About Automatic Branching</A></TD>
+		<TD><A HREF="setautobranch.html">Setting Up Automatic Branching</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="aboutbranchusemultilock.html">About Branching Using Multiple Locks</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

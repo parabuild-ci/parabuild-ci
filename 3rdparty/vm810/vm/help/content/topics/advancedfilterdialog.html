@@ -1,0 +1,278 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Advanced Filter Dialog</TITLE>
+
+<!--<control base="pvcs.vm.vmgui.VmGuiAdvancedFilterDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="searchversionlabeldialog"></A>Advanced Filter Dialog</H1>
+<P>Use the Advanced Filter dialog box (View | Filter | Advanced Filter ) to restrict the File pane view to only the versioned files that:
+<UL><li>Match a specified promotion group</a><br><br></li>
+<LI>Match a specified version label</a><BR><BR></LI>
+<li>Differ in terms of revision number, modification time, or revision contents between:<br><br>
+	<ul><li>Two version labels</a><br><br></li>
+	<li>Two promotion groups</a><br><br></li>
+	<li>A version label and a promotion group</a><br><br></li></li></ul>
+</ul>
+<p>The appearance of the Advanced Filter dialog box changes in response to the filter type you select from the <b>Filter by</b> list. The table below groups the fields into those that are common to all filters and those that are for specific filters.</p>
+
+<H2>Field Descriptions</H2>
+
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+<TR><TD colspan=2 align="center"><b>Fields Common to All Filters</b></TD></TR>
+	<TR>
+		<TD><b>Filter by</b></TD>
+		<TD><!--<control name="AdvancedFilter.FILTER_BY">-->Select one of the options to restrict the File pane view<!--</control>--> to only the versioned files that:
+		<UL><li>Match a specified <b>Promotion Group</b></li>
+<LI>Match a specified <b>Version Label</b></a></LI>
+<li>Differ in terms of revision number, modification time, or revision contents between:
+	<ul><li><b>Two Version Labels</b></li>
+	<li><b>Two Promotion Groups</b></li>
+	<li><b>One Label and One Promotion Group</b></li></li></ul>
+</ul></TD>
+	</TR>
+	<TR>
+		<TD><b>OK</b></TD>
+		<TD>Click this button to apply the filter to the File pane.</TD>
+	</TR>
+<TR><TD colspan=2 align="center"><b>Version Label Filter</b></TD></TR>
+	<TR>
+		<TD><b>Version label(s)</b></TD>
+		<TD><!--<control name="AdvancedFilter.VERSION_LABEL_FIELD">-->Enter the name of the version labels that you want to filter by in this field or browse to select them. Separate multiple version labels with the <a href="optionsgeneral.html">delimiter character</a>. The default delimiter is a semicolon (;).<br><br>
+<b>NOTE</b> Version labels are case sensitive. Make sure you use the correct case.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Version label</b></TD>
+		<TD><!--<control name="AdvancedFilter.SHOW_FILE_CONTAINS_BY_DEFAULT_OPTION_VERSION_LABEL">-->Select this option to show files that contain the specified version labels in any revision.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Version label assigned to the tip revision</b></TD>
+		<TD><!--<control name="AdvancedFilter.SHOW_FILE_CONTAINS_BY_ASSIGNED_TO_TIP_REVISION_VERSION_LABEL">-->Select this option to show files that contain the specified version labels in the tip revision.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Version label not assigned to tip revision</b></TD>
+		<TD><!--<control name="AdvancedFilter.SHOW_FILE_CONTAINS_BY_NOT_ASSIGNED_TO_TIP_REVISION_VERSION_LABEL">-->Select this option to show files that contain the specified version labels in any revision except for the tip revision.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Show files not matched by this filter</b></TD>
+		<TD><!--<control name="AdvancedFilter.REVERESE_FILTER_VERSION_LABEL">-->Select this check box to inverse the logic of the filter.<!--</control>--></TD>
+	</TR>
+	
+<TR><TD colspan=2 align="center"><b>Promotion Group Filter</b></TD></TR>
+	<TR>
+		<TD><b>Promotion group(s)</b></TD>
+		<TD><!--<control name="AdvancedFilter.PROMOTION_GROUP_FIELD">-->Enter the names of the promotion groups that you want to filter by in the field or browse to select them. Separate multiple promotion groups with the <a href="optionsgeneral.html">delimiter character</a>. The default delimiter is a semicolon (;).<!--</control>--></TD>
+	</TR>	
+	<TR>
+		<TD><b>Climb the promotion model hierarchy</b></TD>
+		<TD><!--<control name="AdvancedFilter.CLIMB_PROMOTION_MODEL_OF_PROMOTION_GROUP">-->If the specified promotion group is not found, the filter can search for the next highest promotion group, continuing up the promotion model hierarchy until a match is found or the highest level of the promotion model is reached. To enable this feature, select this check box.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Promotion group</b></TD>
+		<TD><!--<control name="AdvancedFilter.SHOW_FILE_CONTAINS_BY_DEFAULT_OPTION_PROMOTION_GROUP">-->Select this option to show files that contain the specified promotion groups in any revision.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Promotion group assigned to the tip revision</b></TD>
+		<TD><!--<control name="AdvancedFilter.SHOW_FILE_CONTAINS_BY_ASSIGNED_TO_TIP_REVISION_PROMOTION_GROUP">-->Select this option to show files that contain the specified promotion groups in the tip revision.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Promotion group not assigned to tip revision</b></TD>
+		<TD><!--<control name="AdvancedFilter.SHOW_FILE_CONTAINS_BY_NOT_ASSIGNED_TO_TIP_REVISION_PROMOTION_GROUP">-->Select this option to show files that contain the specified promotion groups in any revision except for the tip revision.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Show files not matched by this filter</b></TD>
+		<TD><!--<control name="AdvancedFilter.REVERESE_FILTER_PROMOTION_GROUP">-->Select this check box to inverse the logic of the filter.<!--</control>--></TD>
+	</TR>
+	
+<TR><TD colspan=2 align="center"><b>Two Version Labels Filter</b></TD></TR>
+	<TR>
+		<TD><b>First version label</b></TD>
+		<TD><!--<control name="AdvancedFilter.FIRST_FIELD_OF_TWO_VERSION_LABEL">-->Enter the name of a version label that you want to filter by in this field or browse to select one.<br><br>
+		<b>NOTE</b> Version labels are case sensitive. Make sure you use the correct case.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Second version label</b></TD>
+		<TD><!--<control name="AdvancedFilter.SECOND_FIELD_OF_TWO_VERSION_LABEL">-->Enter the name of a version label that you want to filter by in this field or browse to select one.<br><br>
+		<b>NOTE</b> Version labels are case sensitive. Make sure you use the correct case.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Revision number</b></TD>
+		<TD><!--<control name="AdvancedFilter.SHOW_FILE_DIFFER_BY_REVISION_NUMBER_OPTION_TWO_VERSION_LABELS">-->Select this option to show versioned files with revisions that differ by revision number between the two version labels.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Modification time</b></TD>
+		<TD><!--<control name="AdvancedFilter.SHOW_FILE_DIFFER_BY_MODIFICATION_TIME_OPTION_TWO_VERSION_LABELS">-->Select this option to show versioned files with revisions that differ by modification time between the two version labels.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Modification time OR Revision contents</b></TD>
+		<TD><!--<control name="AdvancedFilter.SHOW_FILE_DIFFER_BY_MODIFICATION_TIME_REVISION_CONTENT_OPTION_TWO_VERSION_LABELS">-->Select this option to show versioned files with revisions that differ by modification time or their contents between the two version labels. First compares the modification time of the revisions. If the modification time does not differ, then compares the revision contents. This option takes longer if many revisions have the same modification time.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Revision contents</b></TD>
+		<TD><!--<control name="AdvancedFilter.SHOW_FILE_DIFFER_BY_REVISION_CONTENT_OPTION_TWO_VERSION_LABELS">-->Select this option to show versioned files with revisions that differ by their contents between the two version labels. This option takes the most time.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Show files not matched by this filter</b></TD>
+		<TD><!--<control name="AdvancedFilter.REVERESE_FILTER_TWO_VERSION_LABELS">-->Select this check box to inverse the logic of the filter.<!--</control>--></TD>
+	</TR>
+	
+	
+<TR><TD colspan=2 align="center"><b>Two Promotion Groups Filter</b></TD></TR>	
+	<TR>
+		<TD><b>First promotion group</b></TD>
+		<TD><!--<control name="AdvancedFilter.FIRST_FIELD_OF_TWO_PROMOTION_GROUP">-->Enter the name of a promotion group that you want to filter by in this field or browse to select one.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Second promotion group</b></TD>
+		<TD><!--<control name="AdvancedFilter.SECOND_FIELD_OF_TWO_PROMOTION_GROUP">-->Enter the name of a promotion group that you want to filter by in this field or browse to select one.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Revision number</b></TD>
+		<TD><!--<control name="AdvancedFilter.SHOW_FILE_DIFFER_BY_REVISION_NUMBER_OPTION_TWO_PROMOTION_GROUPS">-->Select this option to show versioned files with revisions that differ by revision number between the two promotion groups.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Modification time</b></TD>
+		<TD><!--<control name="AdvancedFilter.SHOW_FILE_DIFFER_BY_MODIFICATION_TIME_OPTION_TWO_PROMOTION_GROUPS">-->Select this option to show versioned files with revisions that differ by modification time between the two promotion groups.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Modification time OR Revision contents</b></TD>
+		<TD><!--<control name="AdvancedFilter.SHOW_FILE_DIFFER_BY_MODIFICATION_TIME_REVISION_CONTENT_OPTION_TWO_PROMOTION_GROUPS">-->Select this option to show versioned files with revisions that differ by modification time or their contents between the two promotion groups. First compares the modification time of the revisions. If the modification time does not differ, then compares the revision contents. This option takes longer if many revisions have the same modification time.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Revision contents</b></TD>
+		<TD><!--<control name="AdvancedFilter.SHOW_FILE_DIFFER_BY_REVISION_CONTENT_OPTION_TWO_PROMOTION_GROUPS">-->Select this option to show versioned files with revisions that differ by their contents between the two promotion groups. This option takes the most time.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Show files not matched by this filter</b></TD>
+		<TD><!--<control name="AdvancedFilter.REVERESE_FILTER_TWO_PROMOTION_GROUPS">-->Select this check box to inverse the logic of the filter.<!--</control>--></TD>
+	</TR>
+
+<TR><TD colspan=2 align="center"><b>One Label and One Promotion Group Filter</b></TD></TR>	
+	<TR>
+		<TD><b>Version label</b></TD>
+		<TD><!--<control name="AdvancedFilter.FIRST_FIELD_OF_VERSION_LABEL_PROMOTION_GROUP">-->Enter the name of the version label that you want to filter by in this field or browse to select one.<br><br>
+		<b>NOTE</b> Version labels are case sensitive. Make sure you use the correct case.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Promotion group</b></TD>
+		<TD><!--<control name="AdvancedFilter.SECOND_FIELD_OF_VERSION_LABEL_PROMOTION_GROUP">-->Enter the name of the promotion group that you want to filter by in this field or browse to select one.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Climb the promotion model hierarchy</b></TD>
+		<TD><!--<control name="AdvancedFilter.CLIMB_PROMOTION_MODEL_OF_VERSION_LABEL_PROMOTION_GROUP">-->If the specified promotion group is not found, the filter can search for the next highest promotion group, continuing up the promotion model hierarchy until a match is found or the highest level of the promotion model is reached. To enable this feature, select this check box.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Revision number</b></TD>
+		<TD><!--<control name="AdvancedFilter.SHOW_FILE_DIFFER_BY_REVISION_NUMBER_OPTION_LABEL_GROUP">-->Select this option to show versioned files with revisions that differ by revision number between the version label and the promotion group.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Modification time</b></TD>
+		<TD><!--<control name="AdvancedFilter.SHOW_FILE_DIFFER_BY_MODIFICATION_TIME_OPTION_LABEL_GROUP">-->Select this option to show versioned files with revisions that differ by modification time between the version label and the promotion group.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Modification time OR Revision contents</b></TD>
+		<TD><!--<control name="AdvancedFilter.SHOW_FILE_DIFFER_BY_MODIFICATION_TIME_REVISION_CONTENT_OPTION_LABEL_GROUP">-->Select this option to show versioned files with revisions that differ by modification time or their contents between the version label and the promotion group. First compares the modification time of the revisions. If the modification time does not differ, then compares the revision contents. This option takes longer if many revisions have the same modification time.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Revision contents</b></TD>
+		<TD><!--<control name="AdvancedFilter.SHOW_FILE_DIFFER_BY_REVISION_CONTENT_OPTION_LABEL_GROUP">-->Select this option to show versioned files with revisions that differ by their contents between the the version label and the promotion group. This option takes the most time.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Show files not matched by this filter</b></TD>
+		<TD><!--<control name="AdvancedFilter.REVERESE_FILTER_LABEL_GROUP">-->Select this check box to inverse the logic of the filter.<!--</control>--></TD>
+	</TR>
+</TABLE>
+
+<h2>See Also</h2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="searchlockedbydialog.html">Filtering by User Locks</A></TD>
+		<TD><A HREF="searchwildcarddialog.html">Filtering by Wildcard Filename</A></TD>
+	</TR>
+	<TR>
+		<TD><a href="filterbypromotiongroup.html">Filtering by Promotion Group</a></TD>
+		<TD><a href="filterbyversionlabel.html">Filtering by Version Label</a></TD>
+	</TR>
+	<tr>
+		<TD><a href="filterby2versionlabels.html">Filtering by Difference Using Two Version Labels</a></TD>
+		<TD><a href="filterby2promotiongroups.html">Filtering by Difference Using Two Promotion Groups</a></TD>
+	</tr>
+	<TR>
+		<TD><a href="filterbyversionlabelandpromotiongroup.html">Filtering by Difference Using a Version Label and a Promotion Group</a></TD>
+		<TD><A HREF="removefilter.html">Clearing a Filter</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

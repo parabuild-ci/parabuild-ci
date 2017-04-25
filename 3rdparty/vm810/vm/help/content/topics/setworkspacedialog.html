@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Set Workspace Dialog Box</TITLE>
+<!--<SetWorkspaceDialog.html>-->
+<!--<index parent="workspaces" label="Set Workspace dialog box" anchor="SetWorkspaceDialog">-->
+<!--<index parent="assigning" label="Set Workspace dialog box" anchor="SetWorkspaceDialog">-->
+<!--<index parent="setting" label="Set Workspace dialog box" anchor="SetWorkspaceDialog">-->
+<!--<index parent="project_databases" label="Set Workspace dialog box" anchor="SetWorkspaceDialog">-->
+<!--<control base="pvcs.suite.gui.PvcsManageWorkspacesDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="SetWorkspaceDialog"></A>Set Workspace</H1>
+<P>Use the Set Workspace dialog box (File | Set Workspace) to set your <a href="aboutworkspaces.html">workspace</a>. You can also create, rename, or delete a workspace from this dialog box.</P>
+<P><B>Note: </b>Renaming your default workspace automatically resets the root workspace as your default.</P>
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><b>List</b></TD>
+		<TD><!--<control name="ManageWorkspaces.WORKSPACES_TREE">-->
+		Select the workspace to associate with the current project database. A blue diamond identifies the workspace that is currently set. 
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Owner</b></td>
+		<TD><!--<control name="ManageWorkspaces.OWNER_EDIT">-->
+		If the Root Workspace is selected in the Workspaces list, this read-only field displays the project database name. If a workspace is selected, the type of workspace is displayed: <I>public</I>, which affects the workfile location of everyone using it, or <I>private</I>, which only affects the workfile location of the user who created and set it.
+		<!--</control>--></TD>
+	</tr>
+	<TR>
+	<TD><b>Make this your default workspace</b></TD>
+	<TD><!--<control name="ManageWorkspaces.SET_AS_INITIAL_CB">-->
+	Select to associate this workspace with the project database for subsequent Version Manager sessions; otherwise, this workspace will only be active during the current Version Manager session.
+	<!--</control>--></TD>
+	</TR>
+		<TR>
+	<TD><b>New button</b></TD>
+	<TD><!--<control name="ManageWorkspaces.NEW_BUTTON">-->Click to display the <a href="createworkspacedialog.html">New Workspace dialog box</a> for creating a new workspace. The new workspace will take its initial settings from the workspace selected in the Workspace list. (However, public workspaces cannot inherit from private workspaces.)<!--</control>-->
+	</TD>
+	</TR>
+	<TR>
+		<TD><b>Rename button</b></TD>
+		<TD><!--<control name="ManageWorkspaces.RENAME_BUTTON">-->
+		Click to display the <a href="renamedialog.html">Rename dialog box</A> for entering a new name for the selected workspace. You cannot rename the Root Workspace. 
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Delete button</b></TD>
+		<TD><!--<control name="ManageWorkspaces.DELETE_BUTTON">-->
+		Click to delete the selected workspace. You cannot delete the Root Workspace.
+		<!--</control>--></TD>
+	</TR>
+</TABLE>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="aboutworkspaces.html">About Workspaces</A></TD>
+		<TD><A HREF="createworkspaces.html">Creating Workspaces</A></TD>
+</TR>
+<TR>
+<TD><a href="setworkspace.html">Setting Your Workspace</a></TD>
+</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

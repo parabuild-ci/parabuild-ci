@@ -1,0 +1,121 @@
+:Base pvcsmerge.hlp>PVCS Merge tool
+:Title PVCS Merge Tool
+:Link pvcsmerge.hlp
+1 Getting Started with the Merge Tool
+2 Merge Tool Quick Start=quick_start@pvcsmerge.hlp
+2 Using the Merge Tool Window=main_window@pvcsmerge.hlp
+2 The Consolidated View Window=consview_win@pvcsmerge.hlp
+2 The Target Window=target_win@pvcsmerge.hlp
+2 The Global Comparison Window=global_win@pvcsmerge.hlp
+2 The Ancestor Window=ancestor_win@pvcsmerge.hlp
+2 Using the Merge Tool Menus=menu
+1 Selecting Files in the Merge Tool
+2 Using a Configuration File=config_file@pvcsmerge.hlp
+2 Using the Configuration Dialogue
+3 Opening the Configuration Dialogue=configuration@pvcsmerge.hlp
+3 Files Page
+4 Selecting the Ancestor, Derivative and Target Files=compare_files@pvcsmerge.hlp
+3 Options Page
+4 Choosing the Merge Tool Operation=mergeinteractive@pvcsmerge.hlp
+4 Ignore Case=ignore_case@pvcsmerge.hlp
+4 Ignore Blanks and Tab=ignore_space@pvcsmerge.hlp
+4 Lines Displayed in the Global Comparison Window=globlines@pvcsmerge.hlp
+4 Spaces Allocated per Tab=tabwidth1@pvcsmerge.hlp
+3 Startup Page
+4 AutoMerge=automerge1@pvcsmerge.hlp
+4 Save Windows Positions on Exit=savewindow@pvcsmerge.hlp
+4 Auto Resize (Frame Contents)=autoresize@pvcsmerge.hlp
+4 Display Derivative, Target or Ancestor Windows=displaywins@pvcsmerge.hlp
+4 Derivative Frame Window
+5 Include and Display Ancestor=includeanc@pvcsmerge.hlp
+5 Include and Display Consolidated Frame View=includecvf@pvcsmerge.hlp
+5 Sizing of Window=sizingwin@pvcsmerge.hlp
+3 Colors Page
+4 Default Colors=def_cols@pvcsmerge.hlp
+4 Changing the Merge Tool Colors=change_color@pvcsmerge.hlp
+1 Merging Files
+2 The Derivative Frame Window
+3 Consolidated Frame View=conframeview@pvcsmerge.hlp
+3 Hide or Display the Ancestor=ancinframe@pvcsmerge.hlp
+3 Display or Hide Line numbers=show_number@pvcsmerge.hlp
+3 Changing the Font Style=font_style@pvcsmerge.hlp
+3 Synchronous Scrolling=sync_scroll@pvcsmerge.hlp
+3 GoTo Line Number=goto@pvcsmerge.hlp
+3 Moving Between Windows=move_window
+2 Interpreting the Colors
+3 Default Colors=def_cols@pvcsmerge.hlp
+3 Changing the Merge Tool Colors=change_color@pvcsmerge.hlp
+2 Searching for Differences
+3 All Differences=search_diffs@pvcsmerge.hlp
+3 Conflicts Only=search_only_conflicts
+2 Other Windows
+3 Consolidated View Window=consview_win@pvcsmerge.hlp
+3 Global Comparison Window=global_win@pvcsmerge.hlp
+3 Target Window=target_win@pvcsmerge.hlp
+2 Editing the Target
+3 Editing the Target=edit_tarfile@pvcsmerge.hlp
+3 Resolving a Conflict=resolve_conf@pvcsmerge.hlp
+3 General Edit Operations=edit_ops@pvcsmerge.hlp
+2 Saving the Target
+3 Saving the Target=save_target1@pvcsmerge.hlp
+1 Merge tool Quick Reference
+2 Toolbar Commands
+3 Resize Frame Window=resize_icon1@pvcsmerge.hlp
+3 Toggle Consolidated Frame View=cvf_icon1@pvcsmerge.hlp
+3 Toggle Ancestor in Frame=ancframe_icon1@pvcsmerge.hlp
+3 About the Merge tool=about_pcms
+3 Toggle status Bar=status_icon
+3 Display Configuration Dialog=config_icon
+3 Display Consolidated View Window=display_conview@pvcsmerge.hlp
+3 Display Ancestor Window=ancwin_icon1
+3 Display Target Window=target_icon
+3 Display Color Tips=color_tips
+3 Show Only Differences=show_only_differences
+3 Display Line Numbers=line_icon@pvcsmerge.hlp
+3 Sync Scrolling=sync_scrolling
+3 Move to the Next Window=nwin_icon@pvcsmerge.hlp
+3 Move to the Previous Window=pwin_icon@pvcsmerge.hlp
+3 Move to the Next Conflict=ncon_icon@pvcsmerge.hlp
+3 Move to the Previous Conflict=pcon_icon@pvcsmerge.hlp
+3 Move to the Next Difference=ndiff_icon@pvcsmerge.hlp
+3 Move to the Previous Difference=pdiff_icon@pvcsmerge.hlp
+3 Change the Font Style=font_style@pvcsmerge.hlp
+3 Paste (Contents of the Clipboard)=paste_icon@pvcsmerge.hlp
+3 Copy (Contents to the Clipboard)=copy_icon@pvcsmerge.hlp
+3 Save Target=save_icon@pvcsmerge.hlp
+2 Menu Commands
+3 File Menu
+4 Save Target=save_target@pvcsmerge.hlp
+4 Errorlog Window=error_log@pvcsmerge.hlp
+4 Exit=exit@pvcsmerge.hlp
+3 Edit Menu
+4 Copy=copy@pvcsmerge.hlp
+4 Cut=cut
+4 Paste=paste@pvcsmerge.hlp
+4 Undo=undo@pvcsmerge.hlp
+4 Goto=goto@pvcsmerge.hlp
+4 Select All=select_all@pvcsmerge.hlp
+3 View Menu
+4 Configuration=configuration@pvcsmerge.hlp
+4 Display Toolbar=toolbar@pvcsmerge.hlp
+4 Display Status Bar=status_bar
+4 Previous Difference=pdiff_icon
+4 Next Difference=ndiff_icon
+4 Previous Conflict=pcon_icon
+4 Next Conflict=ncon_icon
+4 Previous Window=pwin_icon
+4 Next Window=nwin_icon
+4 Sync Scrolling=sync_scrolling@pvcsmerge.hlp
+4 Show Line Numbers=line_numbers@pvcsmerge.hlp
+4 Show Only Differences=show_only_differences
+4 Colour Tips=color_tips@pvcsmerge.hlp
+3 Windows Menu
+4 Display Target=display_target@pvcsmerge.hlp
+4 Display Consolidated=display_conview@pvcsmerge.hlp
+4 Display Consolidated in Frame=confview@pvcsmerge.hlp
+4 Display Ancestor=displayanc@pvcsmerge.hlp
+4 Display Ancestor in frame=ancinframe@pvcsmerge.hlp
+4 Automatic Resize=resize_icon1
+3 Help Menu
+4 Contents=contents@pvcsmerge.hlp
+4 About the Merge tool=about_pcms@pvcsmerge.hlp

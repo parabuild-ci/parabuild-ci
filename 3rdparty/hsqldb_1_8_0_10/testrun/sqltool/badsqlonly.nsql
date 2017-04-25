@@ -1,0 +1,10 @@
+/*
+ * $Id: badsqlonly.nsql,v 1.1 2007/08/09 03:28:35 unsaved Exp $
+ *
+ * Simplest test possible.  Does absolutely nothing.
+ */
+
+/** Intentional SQL syntax error here */
+CREATE FABLE t(i INTEGER);
+
+\p Should never reach here.

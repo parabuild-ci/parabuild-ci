@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Project Security Dialog Box/Access List Groups</TITLE>
+<!--<adminsecuritygroups.html>-->
+<!--<index parent="security" label="Project Security/Access List Groups dialog box" anchor="adminsecuritygroups">-->
+<!--<index parent="access_control_database" label="Project Security/Access List Groups dialog box" anchor="adminsecuritygroups">-->
+<!--<index parent="access_list_groups" label="Project Security/Access List Groups dialog box" anchor="adminsecuritygroups">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiProjectSecurityTabbedDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="adminsecuritygroups"></A>Project Security/Access List Groups</H1>
+<P>Use the Project Security dialog box (Admin | Security | Access List Groups) to modify, create, duplicate, or delete the definition of an <a href="accesslistgroup.html">access list group</a> in an access control database. To create, duplicate, or delete an access list group, use the appropriate button in the lower-left corner of this dialog box.</P>
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+		<TR>
+	<TD COLSPAN=2><CENTER><B>General Tab</b></center></TD>
+	</TR>
+	<TR><TD><b>Name</b></TD>
+		<TD><!--<control name="ProjectSecurityGroupInformation.GROUP_NAME_EDIT">-->
+		Displays the access list group that is selected in the All Access List Groups list. This is a read-only field.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+	<TD COLSPAN=2><CENTER><B>Privileges Tab</b></center></TD>
+	</TR>
+<TR><TD><b>Privilege sets</b></TD>
+		<TD>
+		Displays all defined privilege sets. The privilege sets with a check mark beside them are the ones that are assigned to the selected access list group. You can assign and unassign privilege sets by selecting and deselecting the check boxes beside the privilege sets.
+	</TD>
+	</TR>
+	<TR>
+<TD><b>All privileges</b></TD>
+		<TD>Displays all base and composite privileges. The options with a + in the box beside them are allowed. The Project privileges are the only privileges that can have a - in the box beside them because they are negative privileges. The - means that the privilege is denied. If a Project privilege is denied, it cannot be allowed in a privilege set that is assigned. For example, if the Create Project privilege is denied as a base privilege but is allowed in a privilege set that is assigned to the same User, group, or privilege set, the User, group, or privilege set does not have the Create Project privilege.<br><br>
+To change the status of an option, click the check box beside the option. You can allow or disallow an entire set of related privileges by clicking the parent option. For example, you could assign all of the Action privileges by clicking the check box beside Action Privileges to place a + in the check box.<br><br>
+Note that the Selected Privileges box near the bottom of the dialog box displays a cumulation of the privileges you have selected. If any of the Project privileges are allowed, they are not displayed in this box. They are only displayed in this box when they are denied because they are negative privileges.
+	</TD>
+	</TR>
+	<TR><TD><b>Selected privileges</b></TD>
+		<TD>
+		Displays all of the base and composite privileges assigned to the selected access list group.
+	</TD>
+	</TR>
+<TR>
+	<TD COLSPAN=2><CENTER><B>Access List Group Members Tab</b></center></TD>
+	</TR>
+	<TR><TD><b>Access List Group Members Tree</b></TD>
+		<TD><!--<control name="ProjectSecurityGroupMembers.GROUPS_TREE">-->
+		Displays all defined Users and groups. The Users and groups with a check mark beside them are the ones that are assigned to the selected access list group. You can assign and unassign Users and groups by selecting and deselecting the check boxes beside the Users and groups.
+		<!--</control>--></TD>
+	</TR>
+<TR>
+<TD><b>Show selected users only</b></TD>
+		<TD><!--<control name="ProjectSecurityGroupMembers.MEMBERS_SHOW_SELECTED_USERS_CB">-->
+		Select this check box to display only the Users and groups that are assigned to the selected access list group in the Access List Group Members tree.
+		<!--</control>--></TD>
+	</TR>
+	</TABLE>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a href="creategroupdialog.html">Create Group Dialog Box</a></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

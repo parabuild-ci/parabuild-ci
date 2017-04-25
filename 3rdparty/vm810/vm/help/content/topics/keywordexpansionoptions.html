@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Keyword Expansion Options</TITLE>
+<!--<keywordexpansionoptions.html>-->
+<!--<index parent="keywords" label="expansion options" anchor="keywordexpansionoptions">-->
+<!--<index parent="options" label="keyword expansion" anchor="keywordexpansionoptions">-->
+<!--<index parent="configuration_options" label="keyword expansion" anchor="keywordexpansionoptions">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="keywordexpansionoptions"></A>Keyword Expansion Options</H1>
+<P>Keywords are special character strings that you can place in workfiles that define information about the archive when expanded. For example, the keyword &#36;Archive&#36; defines the full path name of the archive. Keywords are case-sensitive. You can set a keyword option that tells Version Manager to expand keywords when the workfile is checked in.</P>
+<P><b>Warning!</b> Keyword expansion will cause corruption in binary files, so Version Manager disables keyword expansion by default. Do <b>not</b> enable keyword expansion for binary files.</P>
+<P>Expanded keywords take the form &#36;<i>Keyword</i>:<i>text</i>&#36;, where <i>text</i> is the current value of the keyword. For example, the keyword &#36;Revision&#36; could have the value of &#36;Revision: 1.0&#36; when expanded. The &#36;Log&#36; keyword differs from the other keywords in that its expansion text is not enclosed by dollar signs. Instead, Version Manager inserts the change description after the line that contains the &#36;Log&#36; keyword. The change descriptions accumulate in the workfile in reverse chronological order.</P>
+<p>Certain types of files must maintain a fixed line length to be read correctly. To expand keywords in these types of files, see <a href="fixedlengthexpansion.html">fixed-length keyword expansion</a>.</p>
+<P>The options that you can set for keyword expansion are:</P>
+<UL>
+<LI>Which path separator is used for expanded keywords--forward slash (/) or backward slash (\). This separator specifies the character Version Manager uses to separate the parts of path specifications that appear in expanded keywords such as &#36;Archive&#36;. The directive for this option is PathSeparator.
+<LI>Whether or not the timestamp of the workfile is updated when Version Manager expands keywords after check in. Expanding keywords does not affect the check in and last modified date and time. The directive for this option is ExpandKeywords Touch.
+</UL>
+<P><a href="setkeywordexpansionoptions.html">Click here</a> to see how to set these options.</P>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a href="keywords.html">Available Keywords</a></TD>
+
+	</TR>
+
+</TABLE>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

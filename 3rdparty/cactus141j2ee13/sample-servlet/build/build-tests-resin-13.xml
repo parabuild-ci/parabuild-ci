@@ -1,0 +1,112 @@
+    <!-- 
+       ========================================================================
+         Run Resin 1.3 tests
+       ========================================================================
+    -->
+    <target name="test.resin.13" depends="prepare.test.resin.13"
+        if="resin.home.13" description="Run tests on Resin 1.3">
+
+        <!-- Start the servlet engine, wait for it to be started, run the
+             unit tests, stop the servlet engine, wait for it to be stopped.
+             The servlet engine is stopped if the tests fail for any reason -->
+
+        <runservertests
+            testURL="http://localhost:${test.port}/test/ServletRedirector?Cactus_Service=RUN_TEST"
+            startTarget="start.resin.13"
+            stopTarget="stop.resin.13"
+            testTarget="test"/>
+
+    </target>
+
+    <!-- 
+       ========================================================================
+         Start Resin 1.3
+       ========================================================================
+    -->
+    <target name="start.resin.13">
+
+        <java classname="org.apache.cactus.ant.ResinRun" fork="yes">
+
+            <arg value="-start"/>
+
+            <arg value="-conf"/>
+            <arg value="resin.conf"/>
+
+            <!-- Needed so that Resin use the resin.home.13 variable as it's
+                 root directory for resolving file paths -->
+            <jvmarg value="-Dresin.home=${target.resin13.dir}"/>
+
+            <classpath>
+                <pathelement location="${cactus.ant.jar}"/>
+                <fileset dir="${resin.home.13}/lib">
+                    <include name="*.jar"/>
+                </fileset>
+            </classpath>
+
+        </java>
+
+    </target>
+
+    <!-- 
+       ========================================================================
+         Stop Resin 1.3
+       ========================================================================
+    -->
+    <target name="stop.resin.13">
+
+        <java classname="org.apache.cactus.ant.ResinRun" fork="yes">
+
+            <arg value="-stop"/>
+
+            <classpath>
+                <pathelement location="${cactus.ant.jar}"/>
+                <fileset dir="${resin.home.13}/lib">
+                    <include name="*.jar"/>
+                </fileset>
+            </classpath>
+
+        </java>
+
+    </target>
+
+    <!-- 
+       ========================================================================
+         Display a warning message if the needed servlet engine home property
+         is not set
+       ========================================================================
+    -->
+    <target name="check.test.resin.13" unless="resin.home.13">
+
+        <echo message=""/>
+        <echo message="******************************************************"/>
+        <echo message="WARNING : The 'resin.home.13' property has not been "/>
+        <echo message="set. No test will be run on that servlet engine."/>
+        <echo message="******************************************************"/>
+        <echo message=""/>
+
+    </target>
+
+    <!-- 
+       ========================================================================
+         Prepare directories and variables for running the tests
+       ========================================================================
+    -->
+    <target name="prepare.test.resin.13"
+        depends="check.test.resin.13,testwar" if="resin.home.13">
+
+        <echo message="resin.home.13 = ${resin.home.13}"/>
+
+        <property name="target.resin13.dir" value="${target.test.dir}/resin13"/>
+        <property name="conf.resin13.dir" value="${conf.test.dir}/resin13"/>
+
+        <mkdir dir="${target.resin13.dir}"/>
+
+        <!-- Copy resin configuration files -->
+        <copy file="${conf.resin13.dir}/resin.conf"
+            tofile="${target.resin13.dir}/resin.conf" filtering="on"/>
+
+        <!-- Create the war file -->
+        <copy file="${target.test.dir}/test.war"
+            tofile="${target.resin13.dir}/test.war"/>
+
+    </target>

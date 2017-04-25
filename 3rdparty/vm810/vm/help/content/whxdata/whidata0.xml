@@ -1,0 +1,2761 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<indexdata>
+<key name="$Archive$" >
+  <topic name="Available Keywords" url="topics/keywords.html" />
+</key>
+<key name="$Author$" >
+  <topic name="Available Keywords" url="topics/keywords.html" />
+</key>
+<key name="$Date$" >
+  <topic name="Available Keywords" url="topics/keywords.html" />
+</key>
+<key name="$Header$" >
+  <topic name="Available Keywords" url="topics/keywords.html" />
+</key>
+<key name="$Log$" >
+  <topic name="Available Keywords" url="topics/keywords.html" />
+</key>
+<key name="$Log$ keyword" >
+  <topic name="$Log$ Keyword" url="topics/logkeyword.html" />
+</key>
+<key name="$Modtime$" >
+  <topic name="Available Keywords" url="topics/keywords.html" />
+</key>
+<key name="$Revision$" >
+  <topic name="Available Keywords" url="topics/keywords.html" />
+</key>
+<key name="$Workfile$" >
+  <topic name="Available Keywords" url="topics/keywords.html" />
+</key>
+<key name="5.3/6.0 folders" >
+  <topic name="Copying 5.3/6.0 Folders to Project Databases" url="topics/copyfolder.html" />
+  <topic name="Creating 5.3/6.0 Folders" url="topics/createfolder.html" />
+  <topic name="Moving 5.3/6.0 Folders" url="topics/movefolder.html" />
+  <topic name="Updating 5.3/6.0 Project Folders" url="topics/updateprojectfolder.html" />
+  <key name="copying to project databases" >
+    <topic name="Copying 5.3/6.0 Folders to Project Databases" url="topics/copyfolder.html" />
+  </key>
+  <key name="creating" >
+    <topic name="Creating 5.3/6.0 Folders" url="topics/createfolder.html" />
+  </key>
+  <key name="moving" >
+    <topic name="Moving 5.3/6.0 Folders" url="topics/movefolder.html" />
+  </key>
+  <key name="updating" >
+    <topic name="Updating 5.3/6.0 Project Folders" url="topics/updateprojectfolder.html" />
+  </key>
+</key>
+<key name="5.3/6.0 project roots" >
+  <topic name="About 5.3/6.0 Project Roots" url="topics/about5_3projroot.html" />
+</key>
+<key name="5.3/6.0 projects" >
+  <topic name="About Copying 5.3/6.0 Projects into Project Databases" url="topics/about_copyvm5_3proj.html" />
+  <topic name="Copying 5.3/6.0 Folders" url="topics/copyfolder53.html" />
+  <key name="about upgrading" >
+    <topic name="About Copying 5.3/6.0 Projects into Project Databases" url="topics/about_copyvm5_3proj.html" />
+  </key>
+  <key name="copying" >
+    <topic name="Copying 5.3/6.0 Folders" url="topics/copyfolder53.html" />
+  </key>
+</key>
+<key name="about" >
+  <topic name="About Archive Attributes" url="topics/aboutarchattrib.html" />
+  <topic name="About Configuration Files" url="topics/aboutconfigfiles.html" />
+  <topic name="About Master Configuration Files" url="topics/masterconfigfiles.html" />
+  <topic name="About Moving Projects" url="topics/aboutmoveproject.html" />
+  <topic name="About Privileges" url="topics/aboutprivileges.html" />
+  <topic name="About Reports" url="topics/aboutreports.html" />
+  <topic name="About Revisions" url="topics/aboutrevisions.html" />
+  <topic name="About the Tool Bar" url="topics/aboutthetoolbar.html" />
+  <topic name="About Version Labels" url="topics/aboutversionlabels.html" />
+  <topic name="About Version Manager" url="topics/introducingvm.html" />
+  <topic name="About Version Manager Projects" url="topics/aboutprojects.html" />
+  <topic name="About Versioned Files" url="topics/aboutversionedfiles.html" />
+  <topic name="About Workfiles" url="topics/aboutworkfiles.html" />
+  <topic name="About Workspaces" url="topics/aboutworkspaces.html" />
+  <topic name="Configuring Project Databases and Projects" url="topics/configureoverview.html" />
+  <key name="archive attributes" >
+    <topic name="About Archive Attributes" url="topics/aboutarchattrib.html" />
+  </key>
+  <key name="configuration files" >
+    <topic name="About Configuration Files" url="topics/aboutconfigfiles.html" />
+  </key>
+  <key name="configuring project databases/projects" >
+    <topic name="Configuring Project Databases and Projects" url="topics/configureoverview.html" />
+  </key>
+  <key name="master configuration files" >
+    <topic name="About Master Configuration Files" url="topics/masterconfigfiles.html" />
+  </key>
+  <key name="moving projects" >
+    <topic name="About Moving Projects" url="topics/aboutmoveproject.html" />
+  </key>
+  <key name="privileges" >
+    <topic name="About Privileges" url="topics/aboutprivileges.html" />
+  </key>
+  <key name="projects" >
+    <topic name="About Version Manager Projects" url="topics/aboutprojects.html" />
+  </key>
+  <key name="reports" >
+    <topic name="About Reports" url="topics/aboutreports.html" />
+  </key>
+  <key name="revisions" >
+    <topic name="About Revisions" url="topics/aboutrevisions.html" />
+  </key>
+  <key name="tool bar" >
+    <topic name="About the Tool Bar" url="topics/aboutthetoolbar.html" />
+  </key>
+  <key name="version labels" >
+    <topic name="About Version Labels" url="topics/aboutversionlabels.html" />
+  </key>
+  <key name="Version Manager" >
+    <topic name="About Version Manager" url="topics/introducingvm.html" />
+  </key>
+  <key name="versioned files" >
+    <topic name="About Versioned Files" url="topics/aboutversionedfiles.html" />
+  </key>
+  <key name="workfiles" >
+    <topic name="About Workfiles" url="topics/aboutworkfiles.html" />
+  </key>
+  <key name="workspaces" >
+    <topic name="About Workspaces" url="topics/aboutworkspaces.html" />
+  </key>
+</key>
+<key name="access control databases" >
+  <topic name="About Access Control Databases" url="topics/aboutacdb.html" />
+  <topic name="About Privileges" url="topics/aboutprivileges.html" />
+  <topic name="About the Default Access Control Database" url="topics/aboutdefaultacdb.html" />
+  <topic name="Changing the Access Control Database Associated with a Project Database" url="topics/changeacdbassocpdb.html" />
+  <topic name="Configure Project Dialog Box/Access Control Database" url="topics/configureprojectaccessdatabasedialog.html" />
+  <topic name="Disabling Security" url="topics/disablingsecurity.html" />
+  <topic name="Embedding an Access Control Database" url="topics/embedacdb.html" />
+  <topic name="Project Security Dialog Box/Access List Groups" url="topics/adminsecuritygroups.html" />
+  <topic name="Project Security Dialog Box/Privilege Sets" url="topics/adminsecurityprivsets.html" />
+  <topic name="Project Security Dialog Box/Users" url="topics/adminsecurityusers.html" />
+  <topic name="Removing Access List Groups from an Access Control Database" url="topics/removeacslstgrpsfromacdb.html" />
+  <topic name="Removing the Access Control Database Associated with a Project Database or Project" url="topics/removeacdbassocpdb.html" />
+  <topic name="Removing Users from an Access Control Database" url="topics/removeusersacdb.html" />
+  <topic name="Specifying an Access Control Database for your Project Database or Project" url="topics/specifyacdblocation.html" />
+  <key name="about" >
+    <topic name="About Access Control Databases" url="topics/aboutacdb.html" />
+  </key>
+  <key name="about privileges" >
+    <topic name="About Privileges" url="topics/aboutprivileges.html" />
+  </key>
+  <key name="changing the association with a project database" >
+    <topic name="Changing the Access Control Database Associated with a Project Database" url="topics/changeacdbassocpdb.html" />
+  </key>
+  <key name="Configure Project/Access Control Database dialog box" >
+    <topic name="Configure Project Dialog Box/Access Control Database" url="topics/configureprojectaccessdatabasedialog.html" />
+  </key>
+  <key name="default" >
+    <topic name="About the Default Access Control Database" url="topics/aboutdefaultacdb.html" />
+  </key>
+  <key name="disabling" >
+    <topic name="Disabling Security" url="topics/disablingsecurity.html" />
+  </key>
+  <key name="embedding" >
+    <topic name="Embedding an Access Control Database" url="topics/embedacdb.html" />
+  </key>
+  <key name="Project Security/Access List Groups dialog box" >
+    <topic name="Project Security Dialog Box/Access List Groups" url="topics/adminsecuritygroups.html" />
+  </key>
+  <key name="Project Security/Privilege Sets dialog box" >
+    <topic name="Project Security Dialog Box/Privilege Sets" url="topics/adminsecurityprivsets.html" />
+  </key>
+  <key name="Project Security/Users dialog box" >
+    <topic name="Project Security Dialog Box/Users" url="topics/adminsecurityusers.html" />
+  </key>
+  <key name="removing" >
+    <topic name="Removing the Access Control Database Associated with a Project Database or Project" url="topics/removeacdbassocpdb.html" />
+  </key>
+  <key name="removing access list groups from" >
+    <topic name="Removing Access List Groups from an Access Control Database" url="topics/removeacslstgrpsfromacdb.html" />
+  </key>
+  <key name="removing users from" >
+    <topic name="Removing Users from an Access Control Database" url="topics/removeusersacdb.html" />
+  </key>
+  <key name="specifying" >
+    <topic name="Specifying an Access Control Database for your Project Database or Project" url="topics/specifyacdblocation.html" />
+  </key>
+</key>
+<key name="access list groups" >
+  <topic name="About Access List Groups" url="topics/aboutaccesslistgroups.html" />
+  <topic name="Defining Access List Groups" url="topics/defineaccesslistgroup.html" />
+  <topic name="Modifying Access List Group Members" url="topics/modifyacslstgrpmemb.html" />
+  <topic name="Modifying Access List Group Privileges" url="topics/modifyacslstgrpprivs.html" />
+  <topic name="Removing Access List Groups from an Access Control Database" url="topics/removeacslstgrpsfromacdb.html" />
+  <key name="about" >
+    <topic name="About Access List Groups" url="topics/aboutaccesslistgroups.html" />
+  </key>
+  <key name="defining" >
+    <topic name="Defining Access List Groups" url="topics/defineaccesslistgroup.html" />
+  </key>
+  <key name="modifying group members" >
+    <topic name="Modifying Access List Group Members" url="topics/modifyacslstgrpmemb.html" />
+  </key>
+  <key name="modifying privileges" >
+    <topic name="Modifying Access List Group Privileges" url="topics/modifyacslstgrpprivs.html" />
+  </key>
+  <key name="removing" >
+    <topic name="Removing Access List Groups from an Access Control Database" url="topics/removeacslstgrpsfromacdb.html" />
+  </key>
+</key>
+<key name="access lists" >
+  <topic name="About Access Lists" url="topics/aboutaccesslists.html" />
+  <topic name="Configure Project Dialog Box/Archive Creation" url="topics/configureprojectarchiveattributesdialog.html" />
+  <topic name="Defining Access Lists" url="topics/defineaccesslist.html" />
+  <topic name="Modifying Access Lists" url="topics/modifyaccesslist.html" />
+  <key name="about" >
+    <topic name="About Access Lists" url="topics/aboutaccesslists.html" />
+  </key>
+  <key name="defining" >
+    <topic name="Defining Access Lists" url="topics/defineaccesslist.html" />
+  </key>
+  <key name="modifying" >
+    <topic name="Modifying Access Lists" url="topics/modifyaccesslist.html" />
+  </key>
+</key>
+<key name="Add Workfiles dialog box" >
+  <topic name="Add Workfiles Dialog Box" url="topics/addfilesdialog.html" />
+</key>
+<key name="adding" >
+  <topic name="About Adding Files to Projects" url="topics/aboutaddfiles.html" />
+  <topic name="Adding a Tool Bar Icon and Menu Item" url="topics/addtoolbaricon.html" />
+  <topic name="Adding Workfiles" url="topics/addfiles.html" />
+  <key name="files, about" >
+    <topic name="About Adding Files to Projects" url="topics/aboutaddfiles.html" />
+  </key>
+  <key name="menu items" >
+    <topic name="Adding a Tool Bar Icon and Menu Item" url="topics/addtoolbaricon.html" />
+  </key>
+  <key name="tool bar icons" >
+    <topic name="Adding a Tool Bar Icon and Menu Item" url="topics/addtoolbaricon.html" />
+  </key>
+  <key name="workfiles" >
+    <topic name="Adding Workfiles" url="topics/addfiles.html" />
+  </key>
+</key>
+<key name="allowing options" >
+  <topic name="Allowing and Disallowing Options" url="topics/setdisallowoptions.html" />
+</key>
+<key name="Archive Attributes dialog box" >
+  <topic name="Archive Attributes Dialog Box" url="topics/archiveattributesdialog.html" />
+</key>
+<key name="archive files, removing" >
+  <topic name="About Cleaning Up Unwanted Archive Files" url="topics/cleaninguparchives.html" />
+</key>
+<key name="archives" >
+  <topic name="About Archive Attributes" url="topics/aboutarchattrib.html" />
+  <topic name="About Archives" url="topics/aboutarchives.html" />
+  <topic name="About Importing Archives" url="topics/aboutimportarchive.html" />
+  <topic name="Archive Creation Options" url="topics/archivecreationoptions.html" />
+  <topic name="Archive Search Path Options" url="topics/archivesearchpathoptions.html" />
+  <topic name="Archive Suffix" url="topics/archivesuffix.html" />
+  <topic name="Changing Attributes of Existing Archives" url="topics/changeattributes.html" />
+  <topic name="Defining Access Lists" url="topics/defineaccesslist.html" />
+  <topic name="Import Archives Dialog Box" url="topics/addarchivesdialog.html" />
+  <topic name="Importing Archives" url="topics/importarchives.html" />
+  <topic name="Importing Archives After Moving the Location" url="topics/importarchivestomovelocation.html" />
+  <topic name="Locking Options" url="topics/lockingoptions.html" />
+  <topic name="Moving Archives" url="topics/movearchives.html" />
+  <topic name="Shared Archives" url="topics/sharedarchives.html" />
+  <topic name="When to Change Attributes" url="topics/whentochangeattributes.html" />
+  <key name="about" >
+    <topic name="About Archives" url="topics/aboutarchives.html" />
+  </key>
+  <key name="attributes, about" >
+    <topic name="About Archive Attributes" url="topics/aboutarchattrib.html" />
+  </key>
+  <key name="attributes, when to change" >
+    <topic name="When to Change Attributes" url="topics/whentochangeattributes.html" />
+  </key>
+  <key name="changing attributes" >
+    <topic name="Changing Attributes of Existing Archives" url="topics/changeattributes.html" />
+  </key>
+  <key name="creation options" >
+    <topic name="Archive Creation Options" url="topics/archivecreationoptions.html" />
+  </key>
+  <key name="defining access lists for" >
+    <topic name="Defining Access Lists" url="topics/defineaccesslist.html" />
+  </key>
+  <key name="importing" >
+    <topic name="Importing Archives" url="topics/importarchives.html" />
+  </key>
+  <key name="importing after moving" >
+    <topic name="Importing Archives After Moving the Location" url="topics/importarchivestomovelocation.html" />
+  </key>
+  <key name="importing, about" >
+    <topic name="About Importing Archives" url="topics/aboutimportarchive.html" />
+  </key>
+  <key name="locations" >
+    <topic name="Archive Locations" url="topics/archivelocation.html" />
+  </key>
+  <key name="locking options" >
+    <topic name="Locking Options" url="topics/lockingoptions.html" />
+  </key>
+  <key name="moving" >
+    <topic name="Moving Archives" url="topics/movearchives.html" />
+  </key>
+  <key name="options by file type" >
+    <topic name="Configure Project Dialog Box/File Types" url="topics/configureprojectfiletypesdialog.html" />
+  </key>
+  <key name="properties, viewing" >
+    <topic name="Versioned File Properties Dialog Box" url="topics/versioneditemdialog.html" />
+  </key>
+  <key name="search path options" >
+    <topic name="Archive Search Path Options" url="topics/archivesearchpathoptions.html" />
+  </key>
+  <key name="shared" >
+    <topic name="Shared Archives" url="topics/sharedarchives.html" />
+  </key>
+  <key name="split" >
+    <topic name="About the Version Manager File Server" url="topics/about_file_server.html" />
+  </key>
+  <key name="suffix" >
+    <topic name="Archive Suffix" url="topics/archivesuffix.html" />
+  </key>
+</key>
+<key name="ArchiveWork directive" >
+  <topic name="Temporary File Options" url="topics/tempfileoptions.html" />
+</key>
+<key name="Assign Promotion Group dialog box" >
+  <topic name="Assign Promotion Group Dialog Box" url="topics/assignpromotiongroupdialog.html" />
+</key>
+<key name="Assign Version Label dialog box" >
+  <topic name="Assign Version Label Dialog Box" url="topics/assignversionlabeldialog.html" />
+</key>
+<key name="assigning privileges" >
+  <topic name="Defining Users" url="topics/defineusers.html" />
+</key>
+<key name="automatic branching" >
+  <topic name="About Automatic Branching" url="topics/autobranch.html" />
+  <topic name="Setting Up Automatic Branching" url="topics/setautobranch.html" />
+  <key name="about" >
+    <topic name="About Automatic Branching" url="topics/autobranch.html" />
+  </key>
+  <key name="setting up" >
+    <topic name="Setting Up Automatic Branching" url="topics/setautobranch.html" />
+  </key>
+</key>
+<key name="base privileges" >
+  <topic name="Base Privileges" url="topics/baseprivtables.html" />
+</key>
+<key name="base version" >
+  <topic name="About Automatic Branching" url="topics/autobranch.html" />
+</key>
+<key name="branch version" >
+  <topic name="About Automatic Branching" url="topics/autobranch.html" />
+</key>
+<key name="branching" >
+  <topic name="About Automatic Branching" url="topics/autobranch.html" />
+  <topic name="About Branching" url="topics/aboutbranching.html" />
+  <topic name="About Branching Using Multiple Locks" url="topics/aboutbranchusemultilock.html" />
+  <topic name="Branching Files" url="topics/branchfile.html" />
+  <topic name="Branching Using Multiple Locks" url="topics/multilockbranch.html" />
+  <topic name="Setting Up Automatic Branching" url="topics/setautobranch.html" />
+  <topic name="Using Workspaces for Automatic Branching" url="topics/setbranchworkspace.html" />
+  <key name="about" >
+    <topic name="About Branching" url="topics/aboutbranching.html" />
+  </key>
+  <key name="automatic, about" >
+    <topic name="About Automatic Branching" url="topics/autobranch.html" />
+  </key>
+  <key name="automatic, setting up" >
+    <topic name="Setting Up Automatic Branching" url="topics/setautobranch.html" />
+  </key>
+  <key name="automatic, using workspaces for" >
+    <topic name="Using Workspaces for Automatic Branching" url="topics/setbranchworkspace.html" />
+  </key>
+  <key name="files" >
+    <topic name="Branching Files" url="topics/branchfile.html" />
+  </key>
+  <key name="using multiple locks" >
+    <topic name="Branching Using Multiple Locks" url="topics/multilockbranch.html" />
+  </key>
+  <key name="using multiple locks, about" >
+    <topic name="About Branching Using Multiple Locks" url="topics/aboutbranchusemultilock.html" />
+  </key>
+</key>
+<key name="browsers, setting location in UNIX" >
+  <topic name="Setting Your Default Editor" url="topics/seteditor.html" />
+</key>
+<key name="build job selection" >
+  <topic name="Build Job Selection Dialog Box" url="topics/mbpro_jobselectiondialog.html" />
+</key>
+<key name="Builder" >
+  <key name="build job selection" >
+    <topic name="Build Job Selection Dialog Box" url="topics/mbpro_jobselectiondialog.html" />
+  </key>
+  <key name="build job submission" >
+    <topic name="Submission Dialog Box" url="topics/mbpro_submissiondialog.html" />
+  </key>
+  <key name="build parameters" >
+    <topic name="Build Parameters Dialog Box" url="topics/mbpro_parametersdialog.html" />
+  </key>
+  <key name="default revision" >
+    <topic name="Merant Build for Pro Source Selection Dialog Box" url="topics/mbpro_sourceselectiondialog.html" />
+  </key>
+  <key name="parameters" >
+    <topic name="Build Parameters Dialog Box" url="topics/mbpro_parametersdialog.html" />
+  </key>
+  <key name="promotion group" >
+    <topic name="Merant Build for Pro Source Selection Dialog Box" url="topics/mbpro_sourceselectiondialog.html" />
+  </key>
+  <key name="source selection" >
+    <topic name="Merant Build for Pro Source Selection Dialog Box" url="topics/mbpro_sourceselectiondialog.html" />
+  </key>
+  <key name="submission" >
+    <topic name="Submission Dialog Box" url="topics/mbpro_submissiondialog.html" />
+  </key>
+  <key name="target selection" >
+    <topic name="Target Selection Dialog Box" url="topics/mbpro_targetselectiondialog.html" />
+  </key>
+  <key name="version label" >
+    <topic name="Merant Build for Pro Source Selection Dialog Box" url="topics/mbpro_sourceselectiondialog.html" />
+  </key>
+</key>
+<key name="change descriptions" >
+  <topic name="Modifying Change Descriptions" url="topics/modifyingchangedescriptions.html" />
+  <topic name="Revisions Tab" url="topics/revisionstab.html" />
+  <key name="adding or modifying" >
+    <topic name="Modifying Change Descriptions" url="topics/modifyingchangedescriptions.html" />
+  </key>
+  <key name="viewing" >
+    <topic name="Revisions Tab" url="topics/revisionstab.html" />
+  </key>
+</key>
+<key name="Change Password dialog box" >
+  <topic name="Change Password Dialog Box" url="topics/changepassworddialog.html" />
+</key>
+<key name="change.log" >
+  <topic name="Viewing Changes to Projects (change.log)" url="topics/viewingchangelog.html" />
+</key>
+<key name="ChangeMan Builder" >
+  <key name="build job selection" >
+    <topic name="Build Job Selection Dialog Box" url="topics/mbpro_jobselectiondialog.html" />
+  </key>
+  <key name="build job submission" >
+    <topic name="Submission Dialog Box" url="topics/mbpro_submissiondialog.html" />
+  </key>
+  <key name="build parameters" >
+    <topic name="Build Parameters Dialog Box" url="topics/mbpro_parametersdialog.html" />
+  </key>
+  <key name="default revision" >
+    <topic name="Merant Build for Pro Source Selection Dialog Box" url="topics/mbpro_sourceselectiondialog.html" />
+  </key>
+  <key name="parameters" >
+    <topic name="Build Parameters Dialog Box" url="topics/mbpro_parametersdialog.html" />
+  </key>
+  <key name="promotion group" >
+    <topic name="Merant Build for Pro Source Selection Dialog Box" url="topics/mbpro_sourceselectiondialog.html" />
+  </key>
+  <key name="source selection" >
+    <topic name="Merant Build for Pro Source Selection Dialog Box" url="topics/mbpro_sourceselectiondialog.html" />
+  </key>
+  <key name="submission" >
+    <topic name="Submission Dialog Box" url="topics/mbpro_submissiondialog.html" />
+  </key>
+  <key name="target selection" >
+    <topic name="Target Selection Dialog Box" url="topics/mbpro_targetselectiondialog.html" />
+  </key>
+  <key name="version label" >
+    <topic name="Merant Build for Pro Source Selection Dialog Box" url="topics/mbpro_sourceselectiondialog.html" />
+  </key>
+</key>
+<key name="ChangeMan Mover" >
+  <topic name="About Serena ChangeMan Mover" url="topics/about_merant_deploy.html" />
+  <topic name="Connecting to Serena ChangeMan Mover" url="topics/connecting_to_deploy.html" />
+  <topic name="Deployment Setup Dialog Box" url="topics/deploysettingsdialog.html" />
+  <key name="about" >
+    <topic name="About Serena ChangeMan Mover" url="topics/about_merant_deploy.html" />
+  </key>
+  <key name="connecting to" >
+    <topic name="Connecting to Serena ChangeMan Mover" url="topics/connecting_to_deploy.html" />
+  </key>
+</key>
+<key name="Check In dialog box" >
+  <topic name="Check In Dialog Box" url="topics/checkindialog.html" />
+</key>
+<key name="Check Out dialog box" >
+  <topic name="Check Out Dialog Box" url="topics/checkoutdialog.html" />
+</key>
+<key name="checking in" >
+  <topic name="Checking In" url="topics/checkingin.html" />
+  <topic name="Defining Check In/Check Out Options" url="topics/definecheckinout.html" />
+  <key name="setting defaults" >
+    <topic name="Defining Check In/Check Out Options" url="topics/definecheckinout.html" />
+  </key>
+  <key name="workfiles" >
+    <topic name="Checking In" url="topics/checkingin.html" />
+  </key>
+</key>
+<key name="checking out" >
+  <topic name="Checking Out Revisions/Editing Files" url="topics/checkingout.html" />
+  <topic name="Defining Check In/Check Out Options" url="topics/definecheckinout.html" />
+  <key name="revisions" >
+    <topic name="Checking Out Revisions/Editing Files" url="topics/checkingout.html" />
+  </key>
+  <key name="setting defaults" >
+    <topic name="Defining Check In/Check Out Options" url="topics/definecheckinout.html" />
+  </key>
+</key>
+<key name="clearing a filter" >
+  <topic name="Clearing a Filter" url="topics/removefilter.html" />
+</key>
+<key name="ColumnMask directive" >
+  <topic name="Column Masking/Renumbering" url="topics/columnmasking_renumbering.html" />
+</key>
+<key name="command-line" >
+  <topic name="Command-Line Macro Method" url="topics/cmdlinemacro.html" />
+  <topic name="Command-Line Macros" url="topics/commandlinemacros.html" />
+  <topic name="Command-Line Options" url="topics/commandlineoptions.html" />
+  <topic name="Configure Project Dialog Box/Archive Search Path" url="topics/configureprojectarchivepathdialog.html" />
+  <topic name="Configure Project Dialog Box/Command Line" url="topics/configureprojectcommandlinedialog.html" />
+  <topic name="Setting Archive Creation Options" url="topics/setcommandlineoptions.html" />
+  <topic name="Temporary File" url="topics/tempfile.html" />
+  <key name="archive search path" >
+    <topic name="Configure Project Dialog Box/Archive Search Path" url="topics/configureprojectarchivepathdialog.html" />
+  </key>
+  <key name="macro method" >
+    <topic name="Command-Line Macro Method" url="topics/cmdlinemacro.html" />
+  </key>
+  <key name="macros" >
+    <topic name="Command-Line Macros" url="topics/commandlinemacros.html" />
+  </key>
+  <key name="options" >
+    <topic name="Command-Line Options" url="topics/commandlineoptions.html" />
+  </key>
+  <key name="options, setting" >
+    <topic name="Setting Archive Creation Options" url="topics/setcommandlineoptions.html" />
+  </key>
+  <key name="temporary files for editor" >
+    <topic name="Temporary File" url="topics/tempfile.html" />
+  </key>
+</key>
+<key name="comparing files" >
+  <topic name="Comparing Files" url="topics/generatedifferencereport.html" />
+</key>
+<key name="composite privileges" >
+  <topic name="Composite Privileges" url="topics/compositeprivtables.html" />
+</key>
+<key name="configuration files" >
+  <topic name="About Configuration Files" url="topics/aboutconfigfiles.html" />
+  <topic name="Associating Configuration Files with Project Databases and Projects" url="topics/associateconfigfile.html" />
+  <topic name="Associating Configuration Files with Projects" url="topics/assocconfigfile.html" />
+  <topic name="Embedding a Master Configuration File into Version Manager" url="topics/embedmasterconfigfile.html" />
+  <topic name="Setting Configuration Options" url="topics/setconfigoptions.html" />
+  <key name="about" >
+    <topic name="About Configuration Files" url="topics/aboutconfigfiles.html" />
+  </key>
+  <key name="associating with project databases/projects" >
+    <topic name="Associating Configuration Files with Project Databases and Projects" url="topics/associateconfigfile.html" />
+  </key>
+  <key name="associating with projects" >
+    <topic name="Associating Configuration Files with Projects" url="topics/assocconfigfile.html" />
+  </key>
+  <key name="embedding" >
+    <topic name="Embedding a Master Configuration File into Version Manager" url="topics/embedmasterconfigfile.html" />
+  </key>
+  <key name="options, setting" >
+    <topic name="Setting Configuration Options" url="topics/setconfigoptions.html" />
+  </key>
+</key>
+<key name="configuration options" >
+  <topic name="About Allowing and Disallowing Options" url="topics/disallowoptions.html" />
+  <topic name="About Configuration Options" url="topics/aboutconfigoptions.html" />
+  <topic name="Archive Search Path Options" url="topics/archivesearchpathoptions.html" />
+  <topic name="Column Masking/Renumbering" url="topics/columnmasking_renumbering.html" />
+  <topic name="Command-Line Options" url="topics/commandlineoptions.html" />
+  <topic name="Configure Project Dialog Box/Archive Creation" url="topics/configureprojectarchiveattributesdialog.html" />
+  <topic name="Embedding a Master Configuration File into Version Manager" url="topics/embedmasterconfigfile.html" />
+  <topic name="Guidelines for Setting Configuration Options" url="topics/guidelinesforsettingconfigoptions.html" />
+  <topic name="Journal File Options" url="topics/journalfileoptions.html" />
+  <topic name="Keyword Expansion Options" url="topics/keywordexpansionoptions.html" />
+  <topic name="Locking Options" url="topics/lockingoptions.html" />
+  <topic name="Login Sources" url="topics/loginsources.html" />
+  <topic name="Options Set on a File Type Basis" url="topics/filetypeoptions.html" />
+  <topic name="Reference Directory Options" url="topics/refdiroptions.html" />
+  <topic name="Semaphore Options" url="topics/semaphoreoptions.html" />
+  <topic name="Setting Dialog Display Options" url="topics/setdialogdisplay.html" />
+  <topic name="Temporary File Options" url="topics/tempfileoptions.html" />
+  <topic name="Workfile Attributes Options" url="topics/workfileattroptions.html" />
+  <key name="about" >
+    <topic name="About Configuration Options" url="topics/aboutconfigoptions.html" />
+  </key>
+  <key name="archive creation" >
+    <topic name="Configure Project Dialog Box/Archive Creation" url="topics/configureprojectarchiveattributesdialog.html" />
+  </key>
+  <key name="archive search path" >
+    <topic name="Archive Search Path Options" url="topics/archivesearchpathoptions.html" />
+  </key>
+  <key name="column masking/renumbering" >
+    <topic name="Column Masking/Renumbering" url="topics/columnmasking_renumbering.html" />
+  </key>
+  <key name="command-line" >
+    <topic name="Command-Line Options" url="topics/commandlineoptions.html" />
+  </key>
+  <key name="deltas, storing" >
+    <topic name="Options Set on a File Type Basis" url="topics/filetypeoptions.html" />
+  </key>
+  <key name="disallowing/allowing" >
+    <topic name="About Allowing and Disallowing Options" url="topics/disallowoptions.html" />
+  </key>
+  <key name="embedding a master configuration file" >
+    <topic name="Embedding a Master Configuration File into Version Manager" url="topics/embedmasterconfigfile.html" />
+  </key>
+  <key name="end-of-line character, translating" >
+    <topic name="Options Set on a File Type Basis" url="topics/filetypeoptions.html" />
+  </key>
+  <key name="journal files" >
+    <topic name="Journal File Options" url="topics/journalfileoptions.html" />
+  </key>
+  <key name="keyword expansion" >
+    <topic name="Keyword Expansion Options" url="topics/keywordexpansionoptions.html" />
+  </key>
+  <key name="locking archives" >
+    <topic name="Locking Options" url="topics/lockingoptions.html" />
+  </key>
+  <key name="login sources" >
+    <topic name="Login Sources" url="topics/loginsources.html" />
+  </key>
+  <key name="record length" >
+    <topic name="Options Set on a File Type Basis" url="topics/filetypeoptions.html" />
+  </key>
+  <key name="reference directory" >
+    <topic name="Reference Directory Options" url="topics/refdiroptions.html" />
+  </key>
+  <key name="semaphore" >
+    <topic name="Semaphore Options" url="topics/semaphoreoptions.html" />
+  </key>
+  <key name="setting" >
+    <topic name="Setting Dialog Display Options" url="topics/setdialogdisplay.html" />
+  </key>
+  <key name="setting by file type" >
+    <topic name="Options Set on a File Type Basis" url="topics/filetypeoptions.html" />
+  </key>
+  <key name="temporary files" >
+    <topic name="Temporary File Options" url="topics/tempfileoptions.html" />
+  </key>
+  <key name="workfile attributes" >
+    <topic name="Workfile Attributes Options" url="topics/workfileattroptions.html" />
+  </key>
+</key>
+<key name="Configure Project dialog box" >
+  <topic name="Configure Project Dialog Box/Archive Creation" url="topics/configureprojectarchiveattributesdialog.html" />
+  <topic name="Configure Project Dialog Box/Archives" url="topics/configureprojectarchiveoptionsdialog.html" />
+</key>
+<key name="configuring" >
+  <topic name="About Branching Using Multiple Locks" url="topics/aboutbranchusemultilock.html" />
+  <topic name="Archive Creation Options" url="topics/archivecreationoptions.html" />
+  <topic name="Configure Project Dialog Box/Archive Creation" url="topics/configureprojectarchiveattributesdialog.html" />
+  <topic name="Setting Configuration Options" url="topics/setconfigoptions.html" />
+  <topic name="Setting Up Automatic Branching" url="topics/setautobranch.html" />
+  <topic name="Setting Up Event Triggers" url="topics/settinguptriggers.html" />
+  <topic name="Toolbar Configuration Dialog Box" url="topics/toolbarconfigdialog.html" />
+  <key name="automatic branching" >
+    <topic name="Setting Up Automatic Branching" url="topics/setautobranch.html" />
+  </key>
+  <key name="event triggers" >
+    <topic name="Setting Up Event Triggers" url="topics/settinguptriggers.html" />
+  </key>
+  <key name="multiple locks" >
+    <topic name="Archive Creation Options" url="topics/archivecreationoptions.html" />
+    <topic name="Configure Project Dialog Box/Archive Creation" url="topics/configureprojectarchiveattributesdialog.html" />
+  </key>
+  <key name="multiple locks for branching" >
+    <topic name="About Branching Using Multiple Locks" url="topics/aboutbranchusemultilock.html" />
+  </key>
+  <key name="project databases" >
+    <topic name="Setting Configuration Options" url="topics/setconfigoptions.html" />
+  </key>
+  <key name="projects" >
+    <topic name="Setting Configuration Options" url="topics/setconfigoptions.html" />
+  </key>
+  <key name="tool bar" >
+    <topic name="Toolbar Configuration Dialog Box" url="topics/toolbarconfigdialog.html" />
+  </key>
+</key>
+<key name="connecting to Mover" >
+  <topic name="Connecting to Mover" url="topics/connecting_to_deploy.html" />
+</key>
+<key name="context menus" >
+  <topic name="Using Context Menus" url="topics/usingscontextmenus.html" />
+</key>
+<key name="context sensitive help" >
+  <topic name="Using Version Manager Online Help" url="topics/usinghelp.html" />
+</key>
+<key name="conversion" >
+  <topic name="Converting Other Repositories to Version Manager" url="topics/converting_other_repositories_to_version_manager.html" />
+</key>
+<key name="converting" >
+  <topic name="Converting Other Repositories to Version Manager" url="topics/converting_other_repositories_to_version_manager.html" />
+</key>
+<key name="Copy Project dialog box" >
+  <topic name="Copying Projects" url="topics/copyproject.html" />
+</key>
+<key name="copying" >
+  <topic name="About Copying Project Databases" url="topics/aboutcopyprjdb.html" />
+  <topic name="About Copying Projects" url="topics/aboutcopyproject.html" />
+  <topic name="Copy Matrix" url="topics/copymatrix.html" />
+  <topic name="Copying 5.3/6.0 Folders" url="topics/copyfolder53.html" />
+  <topic name="Copying 5.3/6.0 Folders to Project Databases" url="topics/copyfolder.html" />
+  <topic name="Copying a Versioned File" url="topics/copyversionedfile.html" />
+  <topic name="Copying Projects" url="topics/copyproject.html" />
+  <topic name="Dragging and Dropping" url="topics/dragdrop.html" />
+  <topic name="Upgrading 5.3/6.0 Project Roots" url="topics/copyvm5_3projroot.html" />
+  <key name="5.3/6.0 project roots" >
+    <topic name="Upgrading 5.3/6.0 Project Roots" url="topics/copyvm5_3projroot.html" />
+  </key>
+  <key name="dragging and dropping" >
+    <topic name="Dragging and Dropping" url="topics/dragdrop.html" />
+  </key>
+  <key name="folders to other 5.3/6.0 project roots" >
+    <topic name="Copying 5.3/6.0 Folders" url="topics/copyfolder53.html" />
+  </key>
+  <key name="folders to project databases" >
+    <topic name="Copying 5.3/6.0 Folders to Project Databases" url="topics/copyfolder.html" />
+  </key>
+  <key name="matrix of" >
+    <topic name="Copy Matrix" url="topics/copymatrix.html" />
+  </key>
+  <key name="project databases" >
+    <topic name="Copying Project Databases" url="topics/copyprjdb.html" />
+  </key>
+  <key name="project databases, about" >
+    <topic name="About Copying Project Databases" url="topics/aboutcopyprjdb.html" />
+  </key>
+  <key name="projects" >
+    <topic name="Copying Projects" url="topics/copyproject.html" />
+  </key>
+  <key name="projects, about" >
+    <topic name="About Copying Projects" url="topics/aboutcopyproject.html" />
+  </key>
+  <key name="versioned files" >
+    <topic name="Copying a Versioned File" url="topics/copyversionedfile.html" />
+  </key>
+</key>
+<key name="Create Privilege Set dialog box" >
+  <topic name="Create Privilege Set Dialog Box" url="topics/createprivsetdialog.html" />
+</key>
+<key name="Create Project dialog box" >
+  <topic name="Creating Projects" url="topics/createproject.html" />
+</key>
+<key name="Create User dialog box" >
+  <topic name="Create User Dialog Box" url="topics/createuserdialog.html" />
+</key>
+<key name="creating" >
+  <topic name="Creating 5.3/6.0 Folders" url="topics/createfolder.html" />
+  <topic name="Creating Project Databases" url="topics/createprjdb.html" />
+  <topic name="Creating Projects" url="topics/createproject.html" />
+  <topic name="Defining Users" url="topics/defineusers.html" />
+  <key name="folders" >
+    <topic name="Creating 5.3/6.0 Folders" url="topics/createfolder.html" />
+  </key>
+  <key name="project databases" >
+    <topic name="Creating Project Databases" url="topics/createprjdb.html" />
+  </key>
+  <key name="projects" >
+    <topic name="Creating Projects" url="topics/createproject.html" />
+  </key>
+  <key name="users" >
+    <topic name="Defining Users" url="topics/defineusers.html" />
+  </key>
+</key>
+<key name="cross-platform environment" >
+  <topic name="Cross-Platform Environment" url="topics/crossplatform.html" />
+</key>
+<key name="crossplatform" >
+  <key name="setuid" >
+    <topic name="Using Setuid in a Cross-Platform Environment" url="topics/setuid_crossplatform.html" />
+  </key>
+</key>
+<key name="custom privilege sets, defining" >
+  <topic name="Defining Custom Privilege Sets" url="topics/definecustomprivsets.html" />
+</key>
+<key name="custom tools, about" >
+  <topic name="Custom Tools Overview" url="topics/toolbaroverview.html" />
+</key>
+<key name="default options" >
+  <topic name="Defining Check In/Check Out Options" url="topics/definecheckinout.html" />
+  <key name="setting check in/check out/get" >
+    <topic name="Defining Check In/Check Out Options" url="topics/definecheckinout.html" />
+  </key>
+</key>
+<key name="default privileges for new users" >
+  <topic name="Select Default Privileges for New Users Dialog Box" url="topics/projectprivilegesdialog.html" />
+</key>
+<key name="default revision" >
+  <topic name="About the Default Revision" url="topics/aboutdefaultrevision.html" />
+  <topic name="Default Revision" url="topics/defaultrevision.html" />
+  <key name="about" >
+    <topic name="About the Default Revision" url="topics/aboutdefaultrevision.html" />
+  </key>
+  <key name="defining" >
+    <topic name="Default Revision" url="topics/defaultrevision.html" />
+  </key>
+</key>
+<key name="defining" >
+  <topic name="About Defining a Promotion Model" url="topics/aboutdefiningpromo.html" />
+  <topic name="Defining Access List Groups" url="topics/defineaccesslistgroup.html" />
+  <topic name="Defining Access Lists" url="topics/defineaccesslist.html" />
+  <topic name="Defining Users" url="topics/defineusers.html" />
+  <key name="access list groups" >
+    <topic name="Defining Access List Groups" url="topics/defineaccesslistgroup.html" />
+  </key>
+  <key name="access lists" >
+    <topic name="Defining Access Lists" url="topics/defineaccesslist.html" />
+  </key>
+  <key name="promotion models, about" >
+    <topic name="About Defining a Promotion Model" url="topics/aboutdefiningpromo.html" />
+  </key>
+  <key name="users" >
+    <topic name="Defining Users" url="topics/defineusers.html" />
+  </key>
+</key>
+<key name="Delete Revision dialog box" >
+  <topic name="Delete Revision from File Dialog Box" url="topics/deleterevisiondialog.html" />
+</key>
+<key name="Delete Version Label dialog box" >
+  <topic name="Delete Version Label Dialog Box" url="topics/removeversionlabeldialog.html" />
+</key>
+<key name="deleting" >
+  <topic name="Delete Revision from File Dialog Box" url="topics/deleterevisiondialog.html" />
+  <topic name="Delete Version Label Dialog Box" url="topics/removeversionlabeldialog.html" />
+  <topic name="Deleting a Workspace" url="topics/deleteworkspace.html" />
+  <topic name="Deleting Revisions" url="topics/deletingrevisions.html" />
+  <topic name="Deleting Versioned Files" url="topics/deleteversionedfile.html" />
+  <key name="projects" >
+    <topic name="Deleting Version Manager Projects" url="topics/deleteproject.html" />
+  </key>
+  <key name="revisions" >
+    <topic name="Delete Revision from File Dialog Box" url="topics/deleterevisiondialog.html" />
+    <topic name="Deleting Revisions" url="topics/deletingrevisions.html" />
+  </key>
+  <key name="version labels" >
+    <topic name="Delete Version Label Dialog Box" url="topics/removeversionlabeldialog.html" />
+  </key>
+  <key name="versioned files" >
+    <topic name="Deleting Versioned Files" url="topics/deleteversionedfile.html" />
+  </key>
+  <key name="workspaces" >
+    <topic name="Deleting a Workspace" url="topics/deleteworkspace.html" />
+  </key>
+</key>
+<key name="deltas, storing" >
+  <topic name="Storing Deltas" url="topics/deltas.html" />
+</key>
+<key name="deploying files" >
+  <topic name="About Merant Mover" url="topics/about_merant_deploy.html" />
+</key>
+<key name="Deployment Setup dialog box" >
+  <topic name="Deployment Setup Dialog Box" url="topics/deploysettingsdialog.html" />
+</key>
+<key name="Description dialog box" >
+  <topic name="Change Description Dialog Box" url="topics/changedescriptiondialog.html" />
+</key>
+<key name="desktop client" >
+  <topic name="About the Status Bar" url="topics/aboutthestatusbar.html" />
+  <topic name="About the Tool Bar" url="topics/aboutthetoolbar.html" />
+  <topic name="Sorting" url="topics/sorting.html" />
+  <topic name="Using Context Menus" url="topics/usingscontextmenus.html" />
+  <topic name="Using Shortcut and Mnemonic Keys" url="topics/accelerator.html" />
+  <topic name="Working in the Project Pane" url="topics/workinginprojectpane.html" />
+  <topic name="Working in the Revision Pane" url="topics/displayingrevisionpane.html" />
+  <topic name="Working in the Versioned File Pane" url="topics/workinginfilepane.html" />
+  <key name="context menus" >
+    <topic name="Using Context Menus" url="topics/usingscontextmenus.html" />
+  </key>
+  <key name="Project pane" >
+    <topic name="Working in the Project Pane" url="topics/workinginprojectpane.html" />
+  </key>
+  <key name="Revision pane" >
+    <topic name="Working in the Revision Pane" url="topics/displayingrevisionpane.html" />
+  </key>
+  <key name="shortcut keys" >
+    <topic name="Using Shortcut and Mnemonic Keys" url="topics/accelerator.html" />
+  </key>
+  <key name="sort order" >
+    <topic name="Sorting" url="topics/sorting.html" />
+  </key>
+  <key name="Status bar" >
+    <topic name="About the Status Bar" url="topics/aboutthestatusbar.html" />
+  </key>
+  <key name="Tool bar" >
+    <topic name="About the Tool Bar" url="topics/aboutthetoolbar.html" />
+  </key>
+  <key name="Versioned File pane" >
+    <topic name="Working in the Versioned File Pane" url="topics/workinginfilepane.html" />
+  </key>
+</key>
+<key name="dialog boxes, disabling" >
+  <topic name="Disabling the Welcome and Confirmation Dialog Display" url="topics/disablingdialogs.html" />
+</key>
+<key name="dialog display options" >
+  <topic name="Setting Dialog Display Options" url="topics/setdialogdisplay.html" />
+</key>
+<key name="difference report" >
+  <topic name="Comparing Files" url="topics/generatedifferencereport.html" />
+</key>
+<key name="difference results" >
+  <key name="interpreting" >
+    <topic name="Interpreting Difference Results" url="topics/readingdifreport.html" />
+  </key>
+</key>
+<key name="disallowing options" >
+  <topic name="Allowing and Disallowing Options" url="topics/setdisallowoptions.html" />
+</key>
+<key name="Duplicate Privilege Set dialog box" >
+  <topic name="Duplicate Privilege Set Dialog Box" url="topics/duplicateprivsetdialog.html" />
+</key>
+<key name="editing files" >
+  <topic name="Checking Out Revisions/Editing Files" url="topics/checkingout.html" />
+</key>
+<key name="enhancement requests, submitting" >
+  <topic name="Submitting Enhancement Requests" url="topics/submitenhance.html" />
+</key>
+<key name="environment variable method" >
+  <topic name="Environment Variable Method" url="topics/environvar.html" />
+</key>
+<key name="event information" >
+  <topic name="Event Information" url="topics/eventinfo.html" />
+  <topic name="How Version Manager Passes Event Information" url="topics/howtopasseventinfo.html" />
+  <key name="list of" >
+    <topic name="Event Information" url="topics/eventinfo.html" />
+  </key>
+  <key name="passing" >
+    <topic name="How Version Manager Passes Event Information" url="topics/howtopasseventinfo.html" />
+  </key>
+</key>
+<key name="event triggers" >
+  <topic name="About Event Triggers" url="topics/abouttriggers.html" />
+  <topic name="Examples of Event Triggers" url="topics/examplesoftriggers.html" />
+  <topic name="Passing Information to Event Triggers" url="topics/passingeventinfo.html" />
+  <topic name="Setting Up Event Triggers" url="topics/settinguptriggers.html" />
+  <key name="about" >
+    <topic name="About Event Triggers" url="topics/abouttriggers.html" />
+  </key>
+  <key name="examples" >
+    <topic name="Examples of Event Triggers" url="topics/examplesoftriggers.html" />
+  </key>
+  <key name="passing information to" >
+    <topic name="Passing Information to Event Triggers" url="topics/passingeventinfo.html" />
+  </key>
+  <key name="setting up" >
+    <topic name="Setting Up Event Triggers" url="topics/settinguptriggers.html" />
+  </key>
+</key>
+<key name="EventArchive" >
+  <topic name="Event Information" url="topics/eventinfo.html" />
+</key>
+<key name="EventArchiveName" >
+  <topic name="Event Information" url="topics/eventinfo.html" />
+</key>
+<key name="EventChgDesc" >
+  <topic name="Event Information" url="topics/eventinfo.html" />
+</key>
+<key name="EventClientWorkfile" >
+  <topic name="Event Information" url="topics/eventinfo.html" />
+</key>
+<key name="EventConfigFiles" >
+  <topic name="Event Information" url="topics/eventinfo.html" />
+</key>
+<key name="EventDate" >
+  <topic name="Event Information" url="topics/eventinfo.html" />
+</key>
+<key name="EventFolderPath" >
+  <topic name="Event Information" url="topics/eventinfo.html" />
+</key>
+<key name="EventFQPWorkfile" >
+  <topic name="Event Information" url="topics/eventinfo.html" />
+</key>
+<key name="EventGroup" >
+  <topic name="Event Information" url="topics/eventinfo.html" />
+</key>
+<key name="EventItemSelectionType" >
+  <topic name="Event Information" url="topics/eventinfo.html" />
+</key>
+<key name="EventJournalEntry" >
+  <topic name="Event Information" url="topics/eventinfo.html" />
+</key>
+<key name="EventJournalFile" >
+  <topic name="Event Information" url="topics/eventinfo.html" />
+</key>
+<key name="EventLock" >
+  <topic name="Event Information" url="topics/eventinfo.html" />
+</key>
+<key name="EventMasterConfigFile" >
+  <topic name="Event Information" url="topics/eventinfo.html" />
+</key>
+<key name="EventName" >
+  <topic name="Event Information" url="topics/eventinfo.html" />
+</key>
+<key name="EventProjectDB" >
+  <topic name="Event Information" url="topics/eventinfo.html" />
+</key>
+<key name="EventProjectName" >
+  <topic name="Event Information" url="topics/eventinfo.html" />
+</key>
+<key name="EventRevision" >
+  <topic name="Event Information" url="topics/eventinfo.html" />
+</key>
+<key name="EventTime" >
+  <topic name="Event Information" url="topics/eventinfo.html" />
+</key>
+<key name="EventUserID" >
+  <topic name="Event Information" url="topics/eventinfo.html" />
+</key>
+<key name="EventVersion" >
+  <topic name="Event Information" url="topics/eventinfo.html" />
+</key>
+<key name="EventWorkfile" >
+  <topic name="Event Information" url="topics/eventinfo.html" />
+</key>
+<key name="F1 help" >
+  <topic name="Using Version Manager Online Help" url="topics/usinghelp.html" />
+</key>
+<key name="field help" >
+  <topic name="Using Version Manager Online Help" url="topics/usinghelp.html" />
+</key>
+<key name="file comparison" >
+  <key name="interpreting" >
+    <topic name="Interpreting Difference Results" url="topics/readingdifreport.html" />
+  </key>
+</key>
+<key name="File pane, working in" >
+  <topic name="Working in the Versioned File Pane" url="topics/workinginfilepane.html" />
+</key>
+<key name="file semaphores" >
+  <topic name="File Semaphores" url="topics/filesempahores.html" />
+</key>
+<key name="file server" >
+  <key name="about" >
+    <topic name="About the Version Manager File Server" url="topics/about_file_server.html" />
+  </key>
+  <key name="client configuration" >
+    <topic name="Configuring Clients for Use with File Servers" url="topics/configuring_clients_for_file_server.html" />
+  </key>
+</key>
+<key name="File Server Configuration dialog box" >
+  <topic name="File Server Configuration Dialog Box" url="topics/file_server_configuration_dialog.html" />
+</key>
+<key name="file server status" >
+  <topic name="About the Status Bar" url="topics/aboutthestatusbar.html" />
+</key>
+<key name="file type" >
+  <topic name="Attributes Set by File Type" url="topics/filetypebasis.html" />
+  <topic name="Setting File Type Options" url="topics/setfiletypeoptions.html" />
+  <key name="attributes set by" >
+    <topic name="Attributes Set by File Type" url="topics/filetypebasis.html" />
+  </key>
+</key>
+<key name="files" >
+  <topic name="About Adding Files to Projects" url="topics/aboutaddfiles.html" />
+  <topic name="About Configuration Files" url="topics/aboutconfigfiles.html" />
+  <topic name="About Locking Revisions" url="topics/aboutlocking.html" />
+  <topic name="About Master Configuration Files" url="topics/masterconfigfiles.html" />
+  <topic name="Branching Files" url="topics/branchfile.html" />
+  <topic name="Copying a Versioned File" url="topics/copyversionedfile.html" />
+  <topic name="Deleting Versioned Files" url="topics/deleteversionedfile.html" />
+  <topic name="Getting a Revision/Viewing a File" url="topics/gettingarevision.html" />
+  <topic name="Locking Revisions" url="topics/locking.html" />
+  <topic name="Moving Versioned Files" url="topics/moveversionedfile.html" />
+  <topic name="Promoting Versioned Files to the Next Group" url="topics/promotetonext.html" />
+  <topic name="Reviewing Properties" url="topics/reviewingproperties.html" />
+  <topic name="Sorting" url="topics/sorting.html" />
+  <topic name="Unlocking Revisions" url="topics/unlocking.html" />
+  <key name="adding to projects" >
+    <topic name="About Adding Files to Projects" url="topics/aboutaddfiles.html" />
+  </key>
+  <key name="branching" >
+    <topic name="Branching Files" url="topics/branchfile.html" />
+  </key>
+  <key name="comparing" >
+    <topic name="Comparing Files" url="topics/generatedifferencereport.html" />
+  </key>
+  <key name="configuration files" >
+    <topic name="About Configuration Files" url="topics/aboutconfigfiles.html" />
+  </key>
+  <key name="copying" >
+    <topic name="Copying a Versioned File" url="topics/copyversionedfile.html" />
+  </key>
+  <key name="deleting" >
+    <topic name="Deleting Versioned Files" url="topics/deleteversionedfile.html" />
+  </key>
+  <key name="locking" >
+    <topic name="Locking Revisions" url="topics/locking.html" />
+  </key>
+  <key name="locking, about" >
+    <topic name="About Locking Revisions" url="topics/aboutlocking.html" />
+  </key>
+  <key name="master configuration" >
+    <topic name="About Master Configuration Files" url="topics/masterconfigfiles.html" />
+  </key>
+  <key name="merging" >
+    <topic name="Merging Files" url="topics/mergefiles.html" />
+  </key>
+  <key name="merging automatically" >
+    <topic name="About Automatic Merging" url="topics/aboutautomerge.html" />
+  </key>
+  <key name="moving" >
+    <topic name="Moving Versioned Files" url="topics/moveversionedfile.html" />
+  </key>
+  <key name="promoting to the next group" >
+    <topic name="Promoting Versioned Files to the Next Group" url="topics/promotetonext.html" />
+  </key>
+  <key name="reviewing properties" >
+    <topic name="Reviewing Properties" url="topics/reviewingproperties.html" />
+  </key>
+  <key name="sorting" >
+    <topic name="Sorting" url="topics/sorting.html" />
+  </key>
+  <key name="unlocking" >
+    <topic name="Unlocking Revisions" url="topics/unlocking.html" />
+  </key>
+  <key name="viewing" >
+    <topic name="Getting a Revision/Viewing a File" url="topics/gettingarevision.html" />
+  </key>
+</key>
+<key name="filter, clearing" >
+  <topic name="Clearing a Filter" url="topics/removefilter.html" />
+</key>
+<key name="filtering files" >
+  <key name="about" >
+    <topic name="About Filtering" url="topics/filtering.html" />
+  </key>
+  <key name="by difference between label and promotion group" >
+    <topic name="Filtering by Difference Using a Version Label and a Promotion Group" url="topics/filterbyversionlabelandpromotiongroup.html" />
+  </key>
+  <key name="by difference between promotion groups" >
+    <topic name="Filtering by Difference Using Two Promotion Groups" url="topics/filterby2promotiongroups.html" />
+  </key>
+  <key name="by difference between version labels" >
+    <topic name="Filtering by Difference Using Two Version Labels" url="topics/filterby2versionlabels.html" />
+  </key>
+  <key name="by promotion groups" >
+    <topic name="Filtering by Promotion Group" url="topics/filterbypromotiongroup.html" />
+  </key>
+  <key name="by user locks" >
+    <topic name="Filtering Files by User Locks Dialog Box" url="topics/searchlockedbydialog.html" />
+  </key>
+  <key name="by version labels" >
+    <topic name="Filtering by Version Label" url="topics/filterbyversionlabel.html" />
+  </key>
+  <key name="by wild cards" >
+    <topic name="Wild Card Filename Filter Dialog Box" url="topics/searchwildcarddialog.html" />
+  </key>
+  <key name="recursively" >
+    <topic name="About Filtering" url="topics/filtering.html" />
+  </key>
+</key>
+<key name="floating version labels" >
+  <topic name="Fixed vs. Floating Version Labels" url="topics/floatfixlabels.html" />
+</key>
+<key name="folders" >
+  <topic name="Copying 5.3/6.0 Folders" url="topics/copyfolder53.html" />
+  <topic name="Copying 5.3/6.0 Folders to Project Databases" url="topics/copyfolder.html" />
+  <topic name="Creating 5.3/6.0 Folders" url="topics/createfolder.html" />
+  <topic name="Moving 5.3/6.0 Folders" url="topics/movefolder.html" />
+  <topic name="Updating 5.3/6.0 Project Folders" url="topics/updateprojectfolder.html" />
+  <key name="copying to other 5.3/6.0 project roots" >
+    <topic name="Copying 5.3/6.0 Folders" url="topics/copyfolder53.html" />
+  </key>
+  <key name="copying to project databases" >
+    <topic name="Copying 5.3/6.0 Folders to Project Databases" url="topics/copyfolder.html" />
+  </key>
+  <key name="creating" >
+    <topic name="Creating 5.3/6.0 Folders" url="topics/createfolder.html" />
+  </key>
+  <key name="moving" >
+    <topic name="Moving 5.3/6.0 Folders" url="topics/movefolder.html" />
+  </key>
+  <key name="updating" >
+    <topic name="Updating 5.3/6.0 Project Folders" url="topics/updateprojectfolder.html" />
+  </key>
+</key>
+<key name="get" >
+  <topic name="Defining Check In/Check Out Options" url="topics/definecheckinout.html" />
+  <topic name="Get Dialog Box" url="topics/getrevisiondialog.html" />
+  <key name="dialog box" >
+    <topic name="Get Dialog Box" url="topics/getrevisiondialog.html" />
+  </key>
+  <key name="options, setting defaults" >
+    <topic name="Defining Check In/Check Out Options" url="topics/definecheckinout.html" />
+  </key>
+</key>
+<key name="getting revisions" >
+  <topic name="Getting a Revision/Viewing a File" url="topics/gettingarevision.html" />
+</key>
+<key name="help, using" >
+  <topic name="Using Version Manager Online Help" url="topics/usinghelp.html" />
+</key>
+<key name="history reports" >
+  <topic name="About History Reports" url="topics/abouthistoryreport.html" />
+  <topic name="Generating History Reports" url="topics/generatehistoryreport.html" />
+  <topic name="Sample History Report" url="topics/samplehistory.html" />
+  <key name="about" >
+    <topic name="About History Reports" url="topics/abouthistoryreport.html" />
+  </key>
+  <key name="generating" >
+    <topic name="Generating History Reports" url="topics/generatehistoryreport.html" />
+  </key>
+  <key name="sample of" >
+    <topic name="Sample History Report" url="topics/samplehistory.html" />
+  </key>
+</key>
+<key name="importing" >
+  <topic name="Converting Other Repositories to Version Manager" url="topics/converting_other_repositories_to_version_manager.html" />
+</key>
+<key name="importing archives" >
+  <topic name="About Importing Archives" url="topics/aboutimportarchive.html" />
+  <topic name="Importing Archives" url="topics/importarchives.html" />
+  <topic name="Importing Archives After Moving the Location" url="topics/importarchivestomovelocation.html" />
+  <key name="about" >
+    <topic name="About Importing Archives" url="topics/aboutimportarchive.html" />
+  </key>
+  <key name="after moving the location" >
+    <topic name="Importing Archives After Moving the Location" url="topics/importarchivestomovelocation.html" />
+  </key>
+</key>
+<key name="issue management" >
+  <topic name="About Source Bridge" url="topics/aboutsourcebridge.html" />
+  <topic name="About TeamTrack" url="topics/about_teamtrack.html" />
+</key>
+<key name="issues" >
+  <topic name="Associate SCRs" url="topics/trackerlink.html" />
+  <key name="associating with revisions" >
+    <topic name="Associate SCRs" url="topics/trackerlink.html" />
+  </key>
+</key>
+<key name="journal files" >
+  <topic name="Journal File Options" url="topics/journalfileoptions.html" />
+  <topic name="Setting Journal File Options" url="topics/setjournalfileoptions.html" />
+  <key name="options" >
+    <topic name="Journal File Options" url="topics/journalfileoptions.html" />
+  </key>
+  <key name="setting options" >
+    <topic name="Setting Journal File Options" url="topics/setjournalfileoptions.html" />
+  </key>
+</key>
+<key name="journal reports" >
+  <topic name="About Journal Reports" url="topics/aboutjournalreport.html" />
+  <topic name="Generating Journal Reports" url="topics/generatejournalreport.html" />
+  <topic name="Sample Journal Report" url="topics/samplejournal.html" />
+  <topic name="Show Journal Dialog Box" url="topics/journaldialog.html" />
+  <key name="about" >
+    <topic name="About Journal Reports" url="topics/aboutjournalreport.html" />
+  </key>
+  <key name="generating" >
+    <topic name="Generating Journal Reports" url="topics/generatejournalreport.html" />
+  </key>
+  <key name="options" >
+    <topic name="Show Journal Dialog Box" url="topics/journaldialog.html" />
+  </key>
+  <key name="sample" >
+    <topic name="Sample Journal Report" url="topics/samplejournal.html" />
+  </key>
+</key>
+<key name="keyword expansion" >
+  <topic name="Fixed-Length Keyword Expansion" url="topics/fixedlengthexpansion.html" />
+  <topic name="Keyword Expansion Options" url="topics/keywordexpansionoptions.html" />
+  <topic name="Setting Keyword Expansion Options" url="topics/setkeywordexpansionoptions.html" />
+  <key name="fixed-length" >
+    <topic name="Fixed-Length Keyword Expansion" url="topics/fixedlengthexpansion.html" />
+  </key>
+  <key name="options" >
+    <topic name="Keyword Expansion Options" url="topics/keywordexpansionoptions.html" />
+  </key>
+  <key name="setting options" >
+    <topic name="Setting Keyword Expansion Options" url="topics/setkeywordexpansionoptions.html" />
+  </key>
+</key>
+<key name="keywords" >
+  <topic name="Available Keywords" url="topics/keywords.html" />
+</key>
+<key name="label delimiter" >
+  <topic name="Options Dialog Box/General Tab" url="topics/optionsgeneral.html" />
+</key>
+<key name="labeling" >
+  <topic name="About Version Labels" url="topics/aboutversionlabels.html" />
+</key>
+<key name="labels" >
+  <topic name="About Version Labels" url="topics/aboutversionlabels.html" />
+</key>
+<key name="LDAP" >
+  <topic name="Configure Project Dialog Box/LDAP Authentication" url="topics/configureprojectldapauthenticationdialog.html" />
+  <topic name="Setting LDAP Authentication Options" url="topics/settingldapauthenticationoptions.html" />
+  <topic name="Setting Login Sources" url="topics/setloginsources.html" />
+  <key name="configuration" >
+    <topic name="Configure Project Dialog Box/LDAP Configuration" url="topics/configureprojectldapauthenticationdialog.html" />
+    <topic name="Setting LDAP Authentication Options" url="topics/settingldapauthenticationoptions.html" />
+  </key>
+  <key name="configuration examples" >
+    <topic name="LDAP Configuration Examples" url="topics/ldap_configuration_examples.html" />
+  </key>
+  <key name="servers" >
+    <topic name="Configure Project Dialog Box/LDAP Servers" url="topics/configureprojectldapserversdialog.html" />
+    <topic name="Specifying an LDAP Server" url="topics/specifying_ldap_server.html" />
+  </key>
+</key>
+<key name="lifecycle management" >
+  <topic name="Promotion and Lifecycle Management" url="topics/promotionlifecyclemgt.html" />
+</key>
+<key name="Lock dialog box" >
+  <topic name="Lock Dialog Box" url="topics/lockdialog.html" />
+</key>
+<key name="locking" >
+  <topic name="About Locking Revisions" url="topics/aboutlocking.html" />
+  <topic name="Locking Options" url="topics/lockingoptions.html" />
+  <topic name="Locking Revisions" url="topics/locking.html" />
+  <topic name="Setting Locking Options" url="topics/setlockingoptions.html" />
+  <key name="options" >
+    <topic name="Locking Options" url="topics/lockingoptions.html" />
+  </key>
+  <key name="options, setting" >
+    <topic name="Setting Locking Options" url="topics/setlockingoptions.html" />
+  </key>
+  <key name="revisions" >
+    <topic name="Locking Revisions" url="topics/locking.html" />
+  </key>
+  <key name="revisions, about" >
+    <topic name="About Locking Revisions" url="topics/aboutlocking.html" />
+  </key>
+</key>
+<key name="log file" >
+  <topic name="Failed to Create Log File" url="topics/mbpro_error_failed_to_create_logs.html" />
+</key>
+<key name="log in as different user" >
+  <topic name="Switching Users" url="topics/switchingusers.html" />
+</key>
+<key name="logging in" >
+  <topic name="About Logging into Project Databases" url="topics/aboutlogging.html" />
+  <topic name="Logging into Project Databases" url="topics/logging.html" />
+  <key name="about" >
+    <topic name="About Logging into Project Databases" url="topics/aboutlogging.html" />
+  </key>
+  <key name="to project databases" >
+    <topic name="Logging into Project Databases" url="topics/logging.html" />
+  </key>
+</key>
+<key name="login" >
+  <key name="single sign-on" >
+    <topic name="Single Sign-On" url="topics/single_sign-on.html" />
+  </key>
+</key>
+<key name="Login dialog box" >
+  <topic name="Login Dialog Box" url="topics/logindialog.html" />
+</key>
+<key name="login sources" >
+  <topic name="Configure Project Dialog Box/Login Sources" url="topics/configureprojectloginsourcesdialog.html" />
+  <topic name="Embedding Login Sources" url="topics/embedloginsources.html" />
+  <topic name="Login Dialog Box" url="topics/logindialog.html" />
+  <topic name="Login Sources" url="topics/loginsources.html" />
+  <topic name="Setting Login Sources" url="topics/setloginsources.html" />
+  <key name="embedding" >
+    <topic name="Embedding Login Sources" url="topics/embedloginsources.html" />
+  </key>
+  <key name="setting" >
+    <topic name="Configure Project Dialog Box/Login Sources" url="topics/configureprojectloginsourcesdialog.html" />
+    <topic name="Setting Login Sources" url="topics/setloginsources.html" />
+  </key>
+  <key name="VLOGIN" >
+    <topic name="Login Dialog Box" url="topics/logindialog.html" />
+  </key>
+</key>
+<key name="macros" >
+  <topic name="Command-Line Macros" url="topics/commandlinemacros.html" />
+</key>
+<key name="Make Secure dialog box" >
+  <topic name="Make Secure Dialog Box" url="topics/makesecuredialog.html" />
+</key>
+<key name="manuals" >
+  <topic name="Accessing the Online Manuals" url="topics/accessing_the_online_manuals.htm" />
+  <key name="accessing online" >
+    <topic name="Accessing the Online Manuals" url="topics/accessing_the_online_manuals.htm" />
+  </key>
+</key>
+<key name="master configuration files" >
+  <topic name="About Allowing and Disallowing Options" url="topics/disallowoptions.html" />
+  <topic name="About Master Configuration Files" url="topics/masterconfigfiles.html" />
+  <topic name="Embedding a Master Configuration File into Version Manager" url="topics/embedmasterconfigfile.html" />
+  <key name="about" >
+    <topic name="About Master Configuration Files" url="topics/masterconfigfiles.html" />
+  </key>
+  <key name="embedding" >
+    <topic name="Embedding a Master Configuration File into Version Manager" url="topics/embedmasterconfigfile.html" />
+  </key>
+  <key name="options, about allowing/disallowing" >
+    <topic name="About Allowing and Disallowing Options" url="topics/disallowoptions.html" />
+  </key>
+</key>
+<key name="menu, customizing" >
+  <topic name="Adding a Tool Bar Icon and Menu Item" url="topics/addtoolbaricon.html" />
+</key>
+<key name="merge tool" >
+  <topic name="About the Merant Merge Tool" url="topics/aboutmergetool.html" />
+  <topic name="Merging Files" url="topics/mergefiles.html" />
+</key>
+<key name="merge tool, about" >
+  <topic name="About the PVCS Merge Tool" url="topics/aboutmergetool.html" />
+</key>
+<key name="merging files" >
+  <topic name="Merging Files in Windows" url="topics/mergefiles.html" />
+  <key name="automatically" >
+    <topic name="About Automatic Merging" url="topics/aboutautomerge.html" />
+  </key>
+</key>
+<key name="methods" >
+  <topic name="Environment Variable Method" url="topics/environvar.html" />
+  <topic name="Parameter File Method" url="topics/parameterfile.html" />
+  <key name="__EventParmFile__" >
+    <topic name="Parameter File Method" url="topics/parameterfile.html" />
+  </key>
+  <key name="environment variable" >
+    <topic name="Environment Variable Method" url="topics/environvar.html" />
+  </key>
+</key>
+<key name="Microsoft Active Directory" >
+  <topic name="LDAP Configuration Examples" url="topics/ldap_configuration_examples.html" />
+</key>
+<key name="mismatch" >
+  <topic name="PDB Path Mismatch" url="topics/mbpro_error_pdb_path_mismatch.html" />
+  <topic name="Project Name Mismatch" url="topics/mbpro_error_project_name_mismatch.html" />
+</key>
+<key name="Mover" >
+  <topic name="Connecting to Mover" url="topics/connecting_to_deploy.html" />
+  <key name="about" >
+    <topic name="About Merant Mover" url="topics/about_merant_deploy.html" />
+  </key>
+</key>
+<key name="moving" >
+  <topic name="About Moving Projects" url="topics/aboutmoveproject.html" />
+  <topic name="Moving 5.3/6.0 Folders" url="topics/movefolder.html" />
+  <topic name="Moving Projects" url="topics/moveproject.html" />
+  <topic name="Moving Version Labels" url="topics/moveversionlabel.html" />
+  <topic name="Moving Versioned Files" url="topics/moveversionedfile.html" />
+  <key name="5.3/6.0 folders" >
+    <topic name="Moving 5.3/6.0 Folders" url="topics/movefolder.html" />
+  </key>
+  <key name="projects" >
+    <topic name="Moving Projects" url="topics/moveproject.html" />
+  </key>
+  <key name="projects, about" >
+    <topic name="About Moving Projects" url="topics/aboutmoveproject.html" />
+  </key>
+  <key name="version labels" >
+    <topic name="Moving Version Labels" url="topics/moveversionlabel.html" />
+  </key>
+  <key name="versioned files" >
+    <topic name="Moving Versioned Files" url="topics/moveversionedfile.html" />
+  </key>
+</key>
+<key name="multiple public workspaces" >
+  <topic name="Creating and Managing Multiple Public Workspaces" url="topics/public.html" />
+</key>
+<key name="naming conventions" >
+  <topic name="Naming Conventions" url="topics/namingconventions.html" />
+</key>
+<key name="new users" >
+  <topic name="Select Default Privileges for New Users Dialog Box" url="topics/projectprivilegesdialog.html" />
+  <key name="setting default privileges" >
+    <topic name="Select Default Privileges for New Users Dialog Box" url="topics/projectprivilegesdialog.html" />
+  </key>
+</key>
+<key name="NFS" >
+  <key name="with setuid" >
+    <topic name="Using Setuid in a Cross-Platform Environment" url="topics/setuid_crossplatform.html" />
+  </key>
+</key>
+<key name="online manuals" >
+  <topic name="Accessing the Online Manuals" url="topics/accessing_the_online_manuals.htm" />
+</key>
+<key name="opening" >
+  <topic name="Opening 5.3/6.0 Project Roots" url="topics/openvm5_3proj.html" />
+  <topic name="Opening Project Databases" url="topics/openingprojectdb.html" />
+  <topic name="Opening the Sample Project Database" url="topics/opensample.html" />
+  <key name="5.3/6.0 project roots" >
+    <topic name="Opening 5.3/6.0 Project Roots" url="topics/openvm5_3proj.html" />
+  </key>
+  <key name="project databases" >
+    <topic name="Opening Project Databases" url="topics/openingprojectdb.html" />
+  </key>
+  <key name="sample project database" >
+    <topic name="Opening the Sample Project Database" url="topics/opensample.html" />
+  </key>
+</key>
+<key name="options" >
+  <topic name="About Configuration Options" url="topics/aboutconfigoptions.html" />
+  <topic name="Allowing and Disallowing Options" url="topics/setdisallowoptions.html" />
+  <topic name="Command-Line Options" url="topics/commandlineoptions.html" />
+  <topic name="Setting Dialog Display Options" url="topics/setdialogdisplay.html" />
+  <topic name="Setting Your Default Editor" url="topics/seteditor.html" />
+  <key name="about" >
+    <topic name="About Configuration Options" url="topics/aboutconfigoptions.html" />
+  </key>
+  <key name="allowing/disallowing" >
+    <topic name="Allowing and Disallowing Options" url="topics/setdisallowoptions.html" />
+  </key>
+  <key name="command-line" >
+    <topic name="Command-Line Options" url="topics/commandlineoptions.html" />
+  </key>
+  <key name="default editor" >
+    <topic name="Setting Your Default Editor" url="topics/seteditor.html" />
+  </key>
+  <key name="dialog display" >
+    <topic name="Setting Dialog Display Options" url="topics/setdialogdisplay.html" />
+  </key>
+</key>
+<key name="options, setting" >
+  <topic name="Options Dialog Box" url="topics/optionsdialog.html" />
+</key>
+<key name="parallel development and promotion" >
+  <topic name="Promotion and Parallel Development" url="topics/prom_pardev.html" />
+</key>
+<key name="parameter file method" >
+  <topic name="Parameter File Method" url="topics/parameterfile.html" />
+</key>
+<key name="parameters, build" >
+  <topic name="Build Parameters Dialog Box" url="topics/mbpro_parametersdialog.html" />
+</key>
+<key name="parsing" >
+  <topic name="Unable to Parse Target File" url="topics/mbpro_error_unable_to_parse_target_file.html" />
+</key>
+<key name="Password Required dialog box" >
+  <topic name="Password Required Dialog Box" url="topics/passworddialog.html" />
+</key>
+<key name="passwords, changing" >
+  <topic name="Change Password Dialog Box" url="topics/changepassworddialog.html" />
+  <topic name="Changing Your Password" url="topics/changepassword.html" />
+</key>
+<key name="PDB path" >
+  <topic name="PDB Path Mismatch" url="topics/mbpro_error_pdb_path_mismatch.html" />
+</key>
+<key name="planning" >
+  <topic name="Planning a Project Database" url="topics/planproject.html" />
+  <topic name="Planning Security" url="topics/plansecurity.html" />
+  <key name="project databases" >
+    <topic name="Planning a Project Database" url="topics/planproject.html" />
+  </key>
+  <key name="security" >
+    <topic name="Planning Security" url="topics/plansecurity.html" />
+  </key>
+</key>
+<key name="private workspaces" >
+  <topic name="About Public and Private Workspaces" url="topics/publicprivate.html" />
+</key>
+<key name="privilege definitions" >
+  <topic name="Privilege Definitions" url="topics/privilegetables.html" />
+</key>
+<key name="privilege sets" >
+  <topic name="Create Privilege Set Dialog Box" url="topics/createprivsetdialog.html" />
+  <topic name="Default Privilege Sets" url="topics/defaultprivtables.html" />
+  <topic name="Defining Custom Privilege Sets" url="topics/definecustomprivsets.html" />
+  <key name="creating" >
+    <topic name="Create Privilege Set Dialog Box" url="topics/createprivsetdialog.html" />
+  </key>
+  <key name="custom" >
+    <topic name="Defining Custom Privilege Sets" url="topics/definecustomprivsets.html" />
+  </key>
+  <key name="default" >
+    <topic name="Default Privilege Sets" url="topics/defaultprivtables.html" />
+  </key>
+</key>
+<key name="privileges" >
+  <topic name="About Privileges" url="topics/aboutprivileges.html" />
+  <topic name="Base Privileges" url="topics/baseprivtables.html" />
+  <topic name="Composite Privileges" url="topics/compositeprivtables.html" />
+  <topic name="Defining Access List Groups" url="topics/defineaccesslistgroup.html" />
+  <topic name="Defining Users" url="topics/defineusers.html" />
+  <topic name="Duplicating Users" url="topics/duplicateuser.html" />
+  <topic name="Modifying Access List Group Privileges" url="topics/modifyacslstgrpprivs.html" />
+  <topic name="Modifying User Privileges" url="topics/modifyuserprivileges.html" />
+  <topic name="Restricting a User's Ability to Promote" url="topics/promomodelsecurity.html" />
+  <topic name="Rules for Privileges" url="topics/privilegerules.html" />
+  <key name="about" >
+    <topic name="About Privileges" url="topics/aboutprivileges.html" />
+  </key>
+  <key name="assigning to access list groups" >
+    <topic name="Defining Access List Groups" url="topics/defineaccesslistgroup.html" />
+  </key>
+  <key name="assigning to duplicated users" >
+    <topic name="Duplicating Users" url="topics/duplicateuser.html" />
+  </key>
+  <key name="assigning to users" >
+    <topic name="Defining Users" url="topics/defineusers.html" />
+  </key>
+  <key name="base" >
+    <topic name="Base Privileges" url="topics/baseprivtables.html" />
+  </key>
+  <key name="composite" >
+    <topic name="Composite Privileges" url="topics/compositeprivtables.html" />
+  </key>
+  <key name="modifying for access list groups" >
+    <topic name="Modifying Access List Group Privileges" url="topics/modifyacslstgrpprivs.html" />
+  </key>
+  <key name="modifying for users" >
+    <topic name="Modifying User Privileges" url="topics/modifyuserprivileges.html" />
+  </key>
+  <key name="restricting by promotion group" >
+    <topic name="Restricting a User's Ability to Promote" url="topics/promomodelsecurity.html" />
+  </key>
+  <key name="rules" >
+    <topic name="Rules for Privileges" url="topics/privilegerules.html" />
+  </key>
+</key>
+<key name="project" >
+  <topic name="Project Not Found" url="topics/mbpro_error_project_not_found.html" />
+</key>
+<key name="project databases" >
+  <topic name="About Copying Project Databases" url="topics/aboutcopyprjdb.html" />
+  <topic name="About Project Databases" url="topics/aboutprjdb.html" />
+  <topic name="About the Sample Project Database" url="topics/aboutsampledatabase.html" />
+  <topic name="Associating Configuration Files with Project Databases and Projects" url="topics/associateconfigfile.html" />
+  <topic name="Changing Project Database Properties" url="topics/changeprjdbprops.html" />
+  <topic name="Changing the Access Control Database Associated with a Project Database" url="topics/changeacdbassocpdb.html" />
+  <topic name="Closing Project Databases" url="topics/closingprojectdb.html" />
+  <topic name="Configuring Project Databases and Projects" url="topics/configureoverview.html" />
+  <topic name="Copying Project Databases" url="topics/copyprjdb.html" />
+  <topic name="Creating Project Databases" url="topics/createprjdb.html" />
+  <topic name="Cross-Platform Environment" url="topics/crossplatform.html" />
+  <topic name="Logging into Project Databases" url="topics/logging.html" />
+  <topic name="Naming Conventions" url="topics/namingconventions.html" />
+  <topic name="Opening Project Databases" url="topics/openingprojectdb.html" />
+  <topic name="Planning a Project Database" url="topics/planproject.html" />
+  <topic name="Project Database Structure" url="topics/prjdbstructure.html" />
+  <topic name="Removing the Access Control Database Associated with a Project Database or Project" url="topics/removeacdbassocpdb.html" />
+  <topic name="Renaming Project Databases" url="topics/renameprojdb.html" />
+  <topic name="Restricting the Creation of Project Databases" url="topics/restrictpdb.html" />
+  <topic name="Reviewing Properties" url="topics/reviewingproperties.html" />
+  <topic name="Setting Up a Project Database" url="topics/setupprojects.html" />
+  <key name="about" >
+    <topic name="About Project Databases" url="topics/aboutprjdb.html" />
+  </key>
+  <key name="associating with a different access control database" >
+    <topic name="Changing the Access Control Database Associated with a Project Database" url="topics/changeacdbassocpdb.html" />
+  </key>
+  <key name="associating with configuration files" >
+    <topic name="Associating Configuration Files with Project Databases and Projects" url="topics/associateconfigfile.html" />
+  </key>
+  <key name="closing" >
+    <topic name="Closing Project Databases" url="topics/closingprojectdb.html" />
+  </key>
+  <key name="configuring, about" >
+    <topic name="Configuring Project Databases and Projects" url="topics/configureoverview.html" />
+  </key>
+  <key name="copying" >
+    <topic name="About Copying Project Databases" url="topics/aboutcopyprjdb.html" />
+    <topic name="Copying Project Databases" url="topics/copyprjdb.html" />
+  </key>
+  <key name="creating" >
+    <topic name="Creating Project Databases" url="topics/createprjdb.html" />
+  </key>
+  <key name="default behavior" >
+    <topic name="Configuring Project Databases and Projects" url="topics/defaults.html" />
+  </key>
+  <key name="in a cross-platform environment" >
+    <topic name="Cross-Platform Environment" url="topics/crossplatform.html" />
+  </key>
+  <key name="logging in to" >
+    <topic name="Logging into Project Databases" url="topics/logging.html" />
+  </key>
+  <key name="naming conventions" >
+    <topic name="Naming Conventions" url="topics/namingconventions.html" />
+  </key>
+  <key name="opening" >
+    <topic name="Opening Project Databases" url="topics/openingprojectdb.html" />
+  </key>
+  <key name="planning" >
+    <topic name="Planning a Project Database" url="topics/planproject.html" />
+  </key>
+  <key name="properties, changing" >
+    <topic name="Changing Project Database Properties" url="topics/changeprjdbprops.html" />
+  </key>
+  <key name="removing access control database" >
+    <topic name="Removing the Access Control Database Associated with a Project Database or Project" url="topics/removeacdbassocpdb.html" />
+  </key>
+  <key name="renaming" >
+    <topic name="Renaming Project Databases" url="topics/renameprojdb.html" />
+  </key>
+  <key name="restricting creation of" >
+    <topic name="Restricting the Creation of Project Databases" url="topics/restrictpdb.html" />
+  </key>
+  <key name="reviewing properties" >
+    <topic name="Reviewing Properties" url="topics/reviewingproperties.html" />
+  </key>
+  <key name="sample" >
+    <topic name="About the Sample Project Database" url="topics/aboutsampledatabase.html" />
+  </key>
+  <key name="setting up" >
+    <topic name="Setting Up a Project Database" url="topics/setupprojects.html" />
+  </key>
+  <key name="structure of" >
+    <topic name="Project Database Structure" url="topics/prjdbstructure.html" />
+  </key>
+</key>
+<key name="project name" >
+  <topic name="Project Name Mismatch" url="topics/mbpro_error_project_name_mismatch.html" />
+</key>
+<key name="Project pane" >
+  <topic name="Working in the Project Pane" url="topics/workinginprojectpane.html" />
+</key>
+<key name="project roots, upgrading" >
+  <topic name="Upgrading 5.3/6.0 Project Roots" url="topics/copyvm5_3projroot.html" />
+</key>
+<key name="Project Security dialog box" >
+  <topic name="Project Security Dialog Box" url="topics/projectsecuritydialog.html" />
+  <topic name="Project Security Dialog Box/Privilege Sets" url="topics/adminsecurityprivsets.html" />
+</key>
+<key name="projects" >
+  <topic name="About Adding Files to Projects" url="topics/aboutaddfiles.html" />
+  <topic name="About Moving Projects" url="topics/aboutmoveproject.html" />
+  <topic name="About Version Manager Projects" url="topics/aboutprojects.html" />
+  <topic name="Associating Configuration Files with Project Databases and Projects" url="topics/associateconfigfile.html" />
+  <topic name="Checking In" url="topics/checkingin.html" />
+  <topic name="Checking Out Revisions/Editing Files" url="topics/checkingout.html" />
+  <topic name="Configuring Project Databases and Projects" url="topics/configureoverview.html" />
+  <topic name="Copying Projects" url="topics/copyproject.html" />
+  <topic name="Creating Projects" url="topics/createproject.html" />
+  <topic name="Cross-Platform Environment" url="topics/crossplatform.html" />
+  <topic name="Getting a Revision/Viewing a File" url="topics/gettingarevision.html" />
+  <topic name="Including Subprojects in Project Operations" url="topics/includesubprojects.html" />
+  <topic name="Moving Projects" url="topics/moveproject.html" />
+  <topic name="Multiple Selection of Projects and Folders" url="topics/multiselect.html" />
+  <topic name="Naming Conventions" url="topics/namingconventions.html" />
+  <topic name="Opening 5.3/6.0 Project Roots" url="topics/openvm5_3proj.html" />
+  <topic name="Reviewing Properties" url="topics/reviewingproperties.html" />
+  <topic name="Setting Workfile Locations" url="topics/settingworkfilelocation.html" />
+  <topic name="Unlocking Revisions" url="topics/unlocking.html" />
+  <topic name="Upgrading 5.3/6.0 Project Roots" url="topics/copyvm5_3projroot.html" />
+  <key name="about" >
+    <topic name="About Version Manager Projects" url="topics/aboutprojects.html" />
+  </key>
+  <key name="associating with configuration files" >
+    <topic name="Associating Configuration Files with Project Databases and Projects" url="topics/associateconfigfile.html" />
+  </key>
+  <key name="checking in" >
+    <topic name="Checking In" url="topics/checkingin.html" />
+  </key>
+  <key name="checking out" >
+    <topic name="Checking Out Revisions/Editing Files" url="topics/checkingout.html" />
+  </key>
+  <key name="configuring" >
+    <topic name="Configuring Project Databases and Projects" url="topics/configureoverview.html" />
+  </key>
+  <key name="copying" >
+    <topic name="Copying Projects" url="topics/copyproject.html" />
+  </key>
+  <key name="creating" >
+    <topic name="Creating Projects" url="topics/createproject.html" />
+  </key>
+  <key name="creating from existing files" >
+    <topic name="About Adding Files to Projects" url="topics/aboutaddfiles.html" />
+  </key>
+  <key name="deleting" >
+    <topic name="Deleting Version Manager Projects" url="topics/deleteproject.html" />
+  </key>
+  <key name="getting" >
+    <topic name="Getting a Revision/Viewing a File" url="topics/gettingarevision.html" />
+  </key>
+  <key name="in a cross-platform environment" >
+    <topic name="Cross-Platform Environment" url="topics/crossplatform.html" />
+  </key>
+  <key name="including subprojects in operations on" >
+    <topic name="Including Subprojects in Project Operations" url="topics/includesubprojects.html" />
+  </key>
+  <key name="moving" >
+    <topic name="Moving Projects" url="topics/moveproject.html" />
+  </key>
+  <key name="moving, about" >
+    <topic name="About Moving Projects" url="topics/aboutmoveproject.html" />
+  </key>
+  <key name="naming conventions" >
+    <topic name="Naming Conventions" url="topics/namingconventions.html" />
+  </key>
+  <key name="opening 5.3/6.0 project roots" >
+    <topic name="Opening 5.3/6.0 Project Roots" url="topics/openvm5_3proj.html" />
+  </key>
+  <key name="renaming" >
+    <topic name="Renaming Version Manager Projects" url="topics/renameproject.html" />
+  </key>
+  <key name="reviewing properties" >
+    <topic name="Reviewing Properties" url="topics/reviewingproperties.html" />
+  </key>
+  <key name="selecting multiple" >
+    <topic name="Multiple Selection of Projects and Folders" url="topics/multiselect.html" />
+  </key>
+  <key name="setting workfile location for" >
+    <topic name="Setting Workfile Locations" url="topics/settingworkfilelocation.html" />
+  </key>
+  <key name="unlocking revisions in" >
+    <topic name="Unlocking Revisions" url="topics/unlocking.html" />
+  </key>
+  <key name="upgrading 5.3/6.0 project roots" >
+    <topic name="Upgrading 5.3/6.0 Project Roots" url="topics/copyvm5_3projroot.html" />
+  </key>
+  <key name="viewing changes to" >
+    <topic name="Viewing Changes to Projects (change.log)" url="topics/viewingchangelog.html" />
+  </key>
+</key>
+<key name="promoting versioned files" >
+  <topic name="Promoting Versioned Files to the Next Group" url="topics/promotetonext.html" />
+</key>
+<key name="promotion" >
+  <topic name="Promotion and Lifecycle Management" url="topics/promotionlifecyclemgt.html" />
+  <topic name="Promotion and Parallel Development" url="topics/prom_pardev.html" />
+  <topic name="Restricting a User's Ability to Promote" url="topics/promomodelsecurity.html" />
+  <key name="and parallel development" >
+    <topic name="Promotion and Parallel Development" url="topics/prom_pardev.html" />
+  </key>
+  <key name="lifecycle management" >
+    <topic name="Promotion and Lifecycle Management" url="topics/promotionlifecyclemgt.html" />
+  </key>
+  <key name="restricting" >
+    <topic name="Restricting a User's Ability to Promote" url="topics/promomodelsecurity.html" />
+  </key>
+</key>
+<key name="promotion groups" >
+  <topic name="Assign Promotion Group Dialog Box" url="topics/assignpromotiongroupdialog.html" />
+  <topic name="Assigning Promotion Groups" url="topics/assignpromotiongroup.html" />
+  <topic name="Changing Promotion Groups" url="topics/changepromotiongroup.html" />
+  <topic name="Defining a Promotion Model" url="topics/definingpromomodel.html" />
+  <topic name="Remove Promotion Group Dialog Box" url="topics/removepromotiongroupdialog.html" />
+  <topic name="Removing Promotion Groups" url="topics/removepromotiongroup.html" />
+  <topic name="Scenario: Defining Promotion Groups for Multi-Platform Development" url="topics/paralleldevscenario.html" />
+  <key name="assigning" >
+    <topic name="Assign Promotion Group Dialog Box" url="topics/assignpromotiongroupdialog.html" />
+    <topic name="Assigning Promotion Groups" url="topics/assignpromotiongroup.html" />
+  </key>
+  <key name="changing" >
+    <topic name="Changing Promotion Groups" url="topics/changepromotiongroup.html" />
+  </key>
+  <key name="filter by" >
+    <topic name="Filtering by Difference Using Two Promotion Groups" url="topics/filterby2promotiongroups.html" />
+    <topic name="Filtering by Promotion Group" url="topics/filterbypromotiongroup.html" />
+  </key>
+  <key name="removing" >
+    <topic name="Remove Promotion Group Dialog Box" url="topics/removepromotiongroupdialog.html" />
+    <topic name="Removing Promotion Groups" url="topics/removepromotiongroup.html" />
+  </key>
+  <key name="renaming" >
+    <topic name="Defining a Promotion Model" url="topics/definingpromomodel.html" />
+  </key>
+  <key name="senario for multi-platform development" >
+    <topic name="Scenario: Defining Promotion Groups for Multi-Platform Development" url="topics/paralleldevscenario.html" />
+  </key>
+</key>
+<key name="promotion models" >
+  <topic name="About Defining a Promotion Model" url="topics/aboutdefiningpromo.html" />
+  <topic name="About Promotion Models" url="topics/aboutprommodels.html" />
+  <topic name="Defining a Promotion Model" url="topics/definingpromomodel.html" />
+  <topic name="Promotion Model Rules" url="topics/prommodelrules.html" />
+  <key name="about" >
+    <topic name="About Promotion Models" url="topics/aboutprommodels.html" />
+  </key>
+  <key name="defining" >
+    <topic name="Defining a Promotion Model" url="topics/definingpromomodel.html" />
+  </key>
+  <key name="defining, about" >
+    <topic name="About Defining a Promotion Model" url="topics/aboutdefiningpromo.html" />
+  </key>
+  <key name="rules" >
+    <topic name="Promotion Model Rules" url="topics/prommodelrules.html" />
+  </key>
+</key>
+<key name="Properties dialog box" >
+  <topic name="Changing Project Database Properties" url="topics/changeprjdbprops.html" />
+  <topic name="Project Database/Project Properties Dialog Box" url="topics/projectdialog.html" />
+  <topic name="Properties Dialog Box" url="topics/propertiesdialog.html" />
+  <topic name="Versioned File Properties Dialog Box" url="topics/versioneditemdialog.html" />
+</key>
+<key name="properties, reviewing" >
+  <topic name="Reviewing Properties" url="topics/reviewingproperties.html" />
+</key>
+<key name="public workspaces" >
+  <topic name="About Public and Private Workspaces" url="topics/publicprivate.html" />
+  <topic name="Creating and Managing Multiple Public Workspaces" url="topics/public.html" />
+  <key name="about" >
+    <topic name="About Public and Private Workspaces" url="topics/publicprivate.html" />
+  </key>
+  <key name="multiple" >
+    <topic name="Creating and Managing Multiple Public Workspaces" url="topics/public.html" />
+  </key>
+</key>
+<key name="RCS" >
+  <topic name="Converting Other Repositories to Version Manager" url="topics/converting_other_repositories_to_version_manager.html" />
+</key>
+<key name="recursive filtering" >
+  <topic name="About Filtering" url="topics/filtering.html" />
+</key>
+<key name="reference directory" >
+  <topic name="Reference Directory" url="topics/refdir.html" />
+  <topic name="Reference Directory Options" url="topics/refdiroptions.html" />
+  <topic name="Setting Reference Directory Options" url="topics/setrefdiroptions.html" />
+  <key name="options" >
+    <topic name="Reference Directory Options" url="topics/refdiroptions.html" />
+  </key>
+  <key name="options, setting" >
+    <topic name="Setting Reference Directory Options" url="topics/setrefdiroptions.html" />
+  </key>
+</key>
+<key name="registering online" >
+  <topic name="Registering Online" url="topics/registeronline.html" />
+</key>
+<key name="removing" >
+  <topic name="Removing a Version Label" url="topics/removingaversionlabel.html" />
+  <topic name="Removing Access List Groups from an Access Control Database" url="topics/removeacslstgrpsfromacdb.html" />
+  <topic name="Removing Promotion Groups" url="topics/removepromotiongroup.html" />
+  <topic name="Removing the Access Control Database Associated with a Project Database or Project" url="topics/removeacdbassocpdb.html" />
+  <topic name="Removing Users from an Access Control Database" url="topics/removeusersacdb.html" />
+  <key name="access control databases associated with a project/project database" >
+    <topic name="Removing the Access Control Database Associated with a Project Database or Project" url="topics/removeacdbassocpdb.html" />
+  </key>
+  <key name="access list groups from access control databases" >
+    <topic name="Removing Access List Groups from an Access Control Database" url="topics/removeacslstgrpsfromacdb.html" />
+  </key>
+  <key name="promotion groups" >
+    <topic name="Removing Promotion Groups" url="topics/removepromotiongroup.html" />
+  </key>
+  <key name="users from an access control database" >
+    <topic name="Removing Users from an Access Control Database" url="topics/removeusersacdb.html" />
+  </key>
+  <key name="version labels" >
+    <topic name="Removing a Version Label" url="topics/removingaversionlabel.html" />
+  </key>
+</key>
+<key name="removing archive files" >
+  <topic name="About Cleaning Up Unwanted Archive Files" url="topics/cleaninguparchives.html" />
+</key>
+<key name="renaming" >
+  <topic name="Rename Dialog Box" url="topics/renameprojectdialog.html" />
+  <topic name="Rename Version Label Dialog Box" url="topics/renameversionlabeldialog.html" />
+  <topic name="Renaming Project Databases" url="topics/renameprojdb.html" />
+  <topic name="Renaming Version Manager Projects" url="topics/renameproject.html" />
+  <topic name="Renaming Workspaces" url="topics/renameworkspace.html" />
+  <key name="project databases" >
+    <topic name="Renaming Project Databases" url="topics/renameprojdb.html" />
+  </key>
+  <key name="project databases/projects/folders" >
+    <topic name="Rename Dialog Box" url="topics/renameprojectdialog.html" />
+  </key>
+  <key name="projects" >
+    <topic name="Renaming Version Manager Projects" url="topics/renameproject.html" />
+  </key>
+  <key name="version labels" >
+    <topic name="Rename Version Label Dialog Box" url="topics/renameversionlabeldialog.html" />
+  </key>
+  <key name="workspaces" >
+    <topic name="Renaming Workspaces" url="topics/renameworkspace.html" />
+  </key>
+</key>
+<key name="reports" >
+  <topic name="About History Reports" url="topics/abouthistoryreport.html" />
+  <topic name="About Reports" url="topics/aboutreports.html" />
+  <topic name="About Security Reports" url="topics/aboutsecurityreport.html" />
+  <topic name="Customizing the Format of HTML Reports" url="topics/customizingreportformat.html" />
+  <topic name="Default HTML Template for Version Manager Reports" url="topics/samplereportformat.html" />
+  <topic name="Generating History Reports" url="topics/generatehistoryreport.html" />
+  <topic name="Generating Journal Reports" url="topics/generatejournalreport.html" />
+  <topic name="Generating Security Reports" url="topics/generatesecurityreport.html" />
+  <topic name="Sample History Report" url="topics/samplehistory.html" />
+  <topic name="Sample Journal Report" url="topics/samplejournal.html" />
+  <topic name="Sample Security Report" url="topics/samplesecurity.html" />
+  <topic name="Setting Report Options" url="topics/setreportoptions.html" />
+  <topic name="Setting Your Default Editor" url="topics/seteditor.html" />
+  <topic name="Show Journal Dialog Box" url="topics/journaldialog.html" />
+  <key name="about" >
+    <topic name="About Reports" url="topics/aboutreports.html" />
+  </key>
+  <key name="customizing HTML format" >
+    <topic name="Customizing the Format of HTML Reports" url="topics/customizingreportformat.html" />
+  </key>
+  <key name="default HTML template for" >
+    <topic name="Default HTML Template for Version Manager Reports" url="topics/samplereportformat.html" />
+  </key>
+  <key name="history, about" >
+    <topic name="About History Reports" url="topics/abouthistoryreport.html" />
+  </key>
+  <key name="history, generating" >
+    <topic name="Generating History Reports" url="topics/generatehistoryreport.html" />
+  </key>
+  <key name="history, sample of" >
+    <topic name="Sample History Report" url="topics/samplehistory.html" />
+  </key>
+  <key name="journal" >
+    <topic name="Show Journal Dialog Box" url="topics/journaldialog.html" />
+  </key>
+  <key name="journal, generating" >
+    <topic name="Generating Journal Reports" url="topics/generatejournalreport.html" />
+  </key>
+  <key name="journal, sample of" >
+    <topic name="Sample Journal Report" url="topics/samplejournal.html" />
+  </key>
+  <key name="options, setting" >
+    <topic name="Setting Report Options" url="topics/setreportoptions.html" />
+  </key>
+  <key name="security, about" >
+    <topic name="About Security Reports" url="topics/aboutsecurityreport.html" />
+  </key>
+  <key name="security, generating" >
+    <topic name="Generating Security Reports" url="topics/generatesecurityreport.html" />
+  </key>
+  <key name="security, sample of" >
+    <topic name="Sample Security Report" url="topics/samplesecurity.html" />
+  </key>
+  <key name="viewing as text or HTML" >
+    <topic name="Setting Your Default Editor" url="topics/seteditor.html" />
+  </key>
+</key>
+<key name="restoring versioned files" >
+  <topic name="Restoring Versioned Files" url="topics/restoringversionedfiles.html" />
+</key>
+<key name="restricting promotion" >
+  <topic name="Restricting a User's Ability to Promote" url="topics/promomodelsecurity.html" />
+</key>
+<key name="Revision Control System" >
+  <topic name="Converting Other Repositories to Version Manager" url="topics/converting_other_repositories_to_version_manager.html" />
+</key>
+<key name="revision library" >
+  <topic name="About the Version Manager File Server" url="topics/about_file_server.html" />
+</key>
+<key name="Revision pane" >
+  <topic name="Working in the Revision Pane" url="topics/displayingrevisionpane.html" />
+</key>
+<key name="revisions" >
+  <topic name="About Locking Revisions" url="topics/aboutlocking.html" />
+  <topic name="About Revisions" url="topics/aboutrevisions.html" />
+  <topic name="About the Default Revision" url="topics/aboutdefaultrevision.html" />
+  <topic name="About Unlocking Revisions" url="topics/aboutunlocking.html" />
+  <topic name="Branching Files" url="topics/branchfile.html" />
+  <topic name="Checking In" url="topics/checkingin.html" />
+  <topic name="Checking Out Revisions/Editing Files" url="topics/checkingout.html" />
+  <topic name="Default Revision" url="topics/defaultrevision.html" />
+  <topic name="Deleting Revisions" url="topics/deletingrevisions.html" />
+  <topic name="Getting a Revision/Viewing a File" url="topics/gettingarevision.html" />
+  <topic name="Locking Revisions" url="topics/locking.html" />
+  <topic name="Modifying Change Descriptions" url="topics/modifyingchangedescriptions.html" />
+  <topic name="Reviewing Properties" url="topics/reviewingproperties.html" />
+  <topic name="Unlocking Revisions" url="topics/unlocking.html" />
+  <key name="about" >
+    <topic name="About Revisions" url="topics/aboutrevisions.html" />
+  </key>
+  <key name="branching" >
+    <topic name="Branching Files" url="topics/branchfile.html" />
+  </key>
+  <key name="change descriptions, adding/modifying" >
+    <topic name="Modifying Change Descriptions" url="topics/modifyingchangedescriptions.html" />
+  </key>
+  <key name="checking in" >
+    <topic name="Checking In" url="topics/checkingin.html" />
+  </key>
+  <key name="checking out" >
+    <topic name="Checking Out Revisions/Editing Files" url="topics/checkingout.html" />
+  </key>
+  <key name="comparing" >
+    <topic name="Comparing Files" url="topics/generatedifferencereport.html" />
+  </key>
+  <key name="default, about" >
+    <topic name="About the Default Revision" url="topics/aboutdefaultrevision.html" />
+  </key>
+  <key name="default, defining" >
+    <topic name="Default Revision" url="topics/defaultrevision.html" />
+  </key>
+  <key name="deleting" >
+    <topic name="Deleting Revisions" url="topics/deletingrevisions.html" />
+  </key>
+  <key name="getting" >
+    <topic name="Getting a Revision/Viewing a File" url="topics/gettingarevision.html" />
+  </key>
+  <key name="locking" >
+    <topic name="Locking Revisions" url="topics/locking.html" />
+  </key>
+  <key name="locking, about" >
+    <topic name="About Locking Revisions" url="topics/aboutlocking.html" />
+  </key>
+  <key name="reviewing properties" >
+    <topic name="Reviewing Properties" url="topics/reviewingproperties.html" />
+  </key>
+  <key name="unlocking" >
+    <topic name="Unlocking Revisions" url="topics/unlocking.html" />
+  </key>
+  <key name="unlocking, about" >
+    <topic name="About Unlocking Revisions" url="topics/aboutunlocking.html" />
+  </key>
+  <key name="viewing" >
+    <topic name="Getting a Revision/Viewing a File" url="topics/gettingarevision.html" />
+  </key>
+</key>
+<key name="root workspace" >
+  <topic name="Using the Root Workspace" url="topics/rootworkspace.html" />
+</key>
+<key name="Samba" >
+  <key name="with setuid" >
+    <topic name="Using Setuid in a Cross-Platform Environment" url="topics/setuid_crossplatform.html" />
+  </key>
+</key>
+<key name="sample project database" >
+  <topic name="About the Sample Project Database" url="topics/aboutsampledatabase.html" />
+  <topic name="Opening the Sample Project Database" url="topics/opensample.html" />
+  <key name="about" >
+    <topic name="About the Sample Project Database" url="topics/aboutsampledatabase.html" />
+  </key>
+  <key name="opening" >
+    <topic name="Opening the Sample Project Database" url="topics/opensample.html" />
+  </key>
+</key>
+<key name="SCCS" >
+  <topic name="Converting Other Repositories to Version Manager" url="topics/converting_other_repositories_to_version_manager.html" />
+</key>
+<key name="security" >
+  <topic name="About Access Control Databases" url="topics/aboutacdb.html" />
+  <topic name="About Access List Groups" url="topics/aboutaccesslistgroups.html" />
+  <topic name="About Access Lists" url="topics/aboutaccesslists.html" />
+  <topic name="About Privileges" url="topics/aboutprivileges.html" />
+  <topic name="About the Default Access Control Database" url="topics/aboutdefaultacdb.html" />
+  <topic name="Associating Configuration Files with Project Databases and Projects" url="topics/associateconfigfile.html" />
+  <topic name="Base Privileges" url="topics/baseprivtables.html" />
+  <topic name="Changing a User's ID" url="topics/changeuserid.html" />
+  <topic name="Changing the Access Control Database Associated with a Project Database" url="topics/changeacdbassocpdb.html" />
+  <topic name="Changing Your Password" url="topics/changepassword.html" />
+  <topic name="Composite Privileges" url="topics/compositeprivtables.html" />
+  <topic name="Default Privilege Sets" url="topics/defaultprivtables.html" />
+  <topic name="Defining Access Lists" url="topics/defineaccesslist.html" />
+  <topic name="Defining Custom Privilege Sets" url="topics/definecustomprivsets.html" />
+  <topic name="Disabling Security" url="topics/disablingsecurity.html" />
+  <topic name="Duplicating Users" url="topics/duplicateuser.html" />
+  <topic name="Embedding an Access Control Database" url="topics/embedacdb.html" />
+  <topic name="Enabling Security" url="topics/enablesecurity.html" />
+  <topic name="Login Sources" url="topics/loginsources.html" />
+  <topic name="Maintaining Security" url="topics/maintainsecurity.html" />
+  <topic name="Modifying Access List Group Members" url="topics/modifyacslstgrpmemb.html" />
+  <topic name="Modifying Access List Group Privileges" url="topics/modifyacslstgrpprivs.html" />
+  <topic name="Modifying Access Lists" url="topics/modifyaccesslist.html" />
+  <topic name="Modifying User Privileges" url="topics/modifyuserprivileges.html" />
+  <topic name="Planning Security" url="topics/plansecurity.html" />
+  <topic name="Privilege Definitions" url="topics/privilegetables.html" />
+  <topic name="Removing Access List Groups from an Access Control Database" url="topics/removeacslstgrpsfromacdb.html" />
+  <topic name="Removing the Access Control Database Associated with a Project Database or Project" url="topics/removeacdbassocpdb.html" />
+  <topic name="Removing Users from an Access Control Database" url="topics/removeusersacdb.html" />
+  <topic name="Restricting a User's Ability to Promote" url="topics/promomodelsecurity.html" />
+  <topic name="Restricting the Creation of Project Databases" url="topics/restrictpdb.html" />
+  <topic name="Rules for Privileges" url="topics/privilegerules.html" />
+  <topic name="Setting Login Sources" url="topics/setloginsources.html" />
+  <topic name="Setting Up Security" url="topics/setupsecurity.html" />
+  <topic name="Specifying an Access Control Database for your Project Database or Project" url="topics/specifyacdblocation.html" />
+  <topic name="Using Security" url="topics/usingsecurity.html" />
+  <key name="access control database, default" >
+    <topic name="About the Default Access Control Database" url="topics/aboutdefaultacdb.html" />
+  </key>
+  <key name="access control databases, about" >
+    <topic name="About Access Control Databases" url="topics/aboutacdb.html" />
+  </key>
+  <key name="access control databases, removing" >
+    <topic name="Removing the Access Control Database Associated with a Project Database or Project" url="topics/removeacdbassocpdb.html" />
+  </key>
+  <key name="access control databases, specifying" >
+    <topic name="Specifying an Access Control Database for your Project Database or Project" url="topics/specifyacdblocation.html" />
+  </key>
+  <key name="access list group members, modifying" >
+    <topic name="Modifying Access List Group Members" url="topics/modifyacslstgrpmemb.html" />
+  </key>
+  <key name="access list group privileges, modifying" >
+    <topic name="Modifying Access List Group Privileges" url="topics/modifyacslstgrpprivs.html" />
+  </key>
+  <key name="access list groups, about" >
+    <topic name="About Access List Groups" url="topics/aboutaccesslistgroups.html" />
+  </key>
+  <key name="access list groups, removing" >
+    <topic name="Removing Access List Groups from an Access Control Database" url="topics/removeacslstgrpsfromacdb.html" />
+  </key>
+  <key name="access lists, about" >
+    <topic name="About Access Lists" url="topics/aboutaccesslists.html" />
+  </key>
+  <key name="access lists, defining" >
+    <topic name="Defining Access Lists" url="topics/defineaccesslist.html" />
+  </key>
+  <key name="access lists, modifying" >
+    <topic name="Modifying Access Lists" url="topics/modifyaccesslist.html" />
+  </key>
+  <key name="associating a configuration file with a project/project database" >
+    <topic name="Associating Configuration Files with Project Databases and Projects" url="topics/associateconfigfile.html" />
+  </key>
+  <key name="changing a user's ID" >
+    <topic name="Changing a User's ID" url="topics/changeuserid.html" />
+  </key>
+  <key name="changing the access control database associated with a project database" >
+    <topic name="Changing the Access Control Database Associated with a Project Database" url="topics/changeacdbassocpdb.html" />
+  </key>
+  <key name="disabling" >
+    <topic name="Disabling Security" url="topics/disablingsecurity.html" />
+  </key>
+  <key name="embedding an access control database" >
+    <topic name="Embedding an Access Control Database" url="topics/embedacdb.html" />
+  </key>
+  <key name="enabling" >
+    <topic name="Enabling Security" url="topics/enablesecurity.html" />
+  </key>
+  <key name="login sources" >
+    <topic name="Login Sources" url="topics/loginsources.html" />
+  </key>
+  <key name="login sources, setting" >
+    <topic name="Setting Login Sources" url="topics/setloginsources.html" />
+  </key>
+  <key name="maintaining" >
+    <topic name="Maintaining Security" url="topics/maintainsecurity.html" />
+  </key>
+  <key name="passwords, changing" >
+    <topic name="Changing Your Password" url="topics/changepassword.html" />
+  </key>
+  <key name="planning" >
+    <topic name="Planning Security" url="topics/plansecurity.html" />
+  </key>
+  <key name="privilege definitions" >
+    <topic name="Privilege Definitions" url="topics/privilegetables.html" />
+  </key>
+  <key name="privilege sets, custom" >
+    <topic name="Defining Custom Privilege Sets" url="topics/definecustomprivsets.html" />
+  </key>
+  <key name="privilege sets, default" >
+    <topic name="Default Privilege Sets" url="topics/defaultprivtables.html" />
+  </key>
+  <key name="privileges, about" >
+    <topic name="About Privileges" url="topics/aboutprivileges.html" />
+  </key>
+  <key name="privileges, base" >
+    <topic name="Base Privileges" url="topics/baseprivtables.html" />
+  </key>
+  <key name="privileges, composite" >
+    <topic name="Composite Privileges" url="topics/compositeprivtables.html" />
+  </key>
+  <key name="privileges, rules for" >
+    <topic name="Rules for Privileges" url="topics/privilegerules.html" />
+  </key>
+  <key name="restricting access rights by promotion group" >
+    <topic name="Restricting a User's Ability to Promote" url="topics/promomodelsecurity.html" />
+  </key>
+  <key name="restricting creation of project databases" >
+    <topic name="Restricting the Creation of Project Databases" url="topics/restrictpdb.html" />
+  </key>
+  <key name="setting up" >
+    <topic name="Setting Up Security" url="topics/setupsecurity.html" />
+  </key>
+  <key name="user privileges, modifying" >
+    <topic name="Modifying User Privileges" url="topics/modifyuserprivileges.html" />
+  </key>
+  <key name="users, duplicating" >
+    <topic name="Duplicating Users" url="topics/duplicateuser.html" />
+  </key>
+  <key name="users, removing" >
+    <topic name="Removing Users from an Access Control Database" url="topics/removeusersacdb.html" />
+  </key>
+  <key name="using" >
+    <topic name="Using Security" url="topics/usingsecurity.html" />
+  </key>
+</key>
+<key name="security examples" >
+  <topic name="Security Example 1" url="topics/securityexample1.html" />
+  <topic name="Security Example 2" url="topics/securityexample2.html" />
+  <topic name="Security Example 3" url="topics/securityexample3.html" />
+  <topic name="Security Example 4" url="topics/securityexample4.html" />
+</key>
+<key name="security reports" >
+  <topic name="About Security Reports" url="topics/aboutsecurityreport.html" />
+  <topic name="Customizing the Format of HTML Reports" url="topics/customizingreportformat.html" />
+  <topic name="Generating Security Reports" url="topics/generatesecurityreport.html" />
+  <topic name="Sample Security Report" url="topics/samplesecurity.html" />
+  <key name="about" >
+    <topic name="About Security Reports" url="topics/aboutsecurityreport.html" />
+  </key>
+  <key name="custom HTML format" >
+    <topic name="Customizing the Format of HTML Reports" url="topics/customizingreportformat.html" />
+  </key>
+  <key name="generating" >
+    <topic name="Generating Security Reports" url="topics/generatesecurityreport.html" />
+  </key>
+  <key name="sample" >
+    <topic name="Sample Security Report" url="topics/samplesecurity.html" />
+  </key>
+</key>
+<key name="semaphores" >
+  <topic name="File Semaphores" url="topics/filesempahores.html" />
+  <topic name="Semaphore Options" url="topics/semaphoreoptions.html" />
+  <topic name="Setting Semaphore Options" url="topics/setsemaphoreoptions.html" />
+  <key name="options" >
+    <topic name="Semaphore Options" url="topics/semaphoreoptions.html" />
+  </key>
+  <key name="options, setting" >
+    <topic name="Setting Semaphore Options" url="topics/setsemaphoreoptions.html" />
+  </key>
+</key>
+<key name="Serena ChangeMan Builder for Professional" >
+  <topic name="Failed to Create Log File" url="topics/mbpro_error_failed_to_create_logs.html" />
+  <topic name="No Target Files Found" url="topics/mbpro_error_no_target_files.html" />
+  <topic name="PDB Path Mismatch" url="topics/mbpro_error_pdb_path_mismatch.html" />
+  <topic name="Project Name Mismatch" url="topics/mbpro_error_project_name_mismatch.html" />
+  <topic name="Project Not Found" url="topics/mbpro_error_project_not_found.html" />
+  <topic name="Unable to Parse Target File" url="topics/mbpro_error_unable_to_parse_target_file.html" />
+  <key name="error" >
+    <topic name="Failed to Create Log File" url="topics/mbpro_error_failed_to_create_logs.html" />
+    <topic name="No Target Files Found" url="topics/mbpro_error_no_target_files.html" />
+    <topic name="PDB Path Mismatch" url="topics/mbpro_error_pdb_path_mismatch.html" />
+    <topic name="Project Name Mismatch" url="topics/mbpro_error_project_name_mismatch.html" />
+    <topic name="Project Not Found" url="topics/mbpro_error_project_not_found.html" />
+    <topic name="Unable to Parse Target File" url="topics/mbpro_error_unable_to_parse_target_file.html" />
+  </key>
+</key>
+<key name="Serena ChangeMan Mover" >
+  <key name="about" >
+    <topic name="About Merant Mover" url="topics/about_merant_deploy.html" />
+  </key>
+  <key name="connecting to" >
+    <topic name="Connecting to Mover" url="topics/connecting_to_deploy.html" />
+  </key>
+</key>
+<key name="setuid" >
+  <topic name="Archive Locations" url="topics/archivelocation.html" />
+  <key name="crossplatform" >
+    <topic name="Using Setuid in a Cross-Platform Environment" url="topics/setuid_crossplatform.html" />
+  </key>
+</key>
+<key name="shortcut keys" >
+  <topic name="Using Shortcut and Mnemonic Keys" url="topics/accelerator.html" />
+</key>
+<key name="Show Differences dialog box" >
+  <topic name="Show Differences Dialog Box" url="topics/diffreportdialog.html" />
+</key>
+<key name="Show History dialog box" >
+  <topic name="Show History" url="topics/historyreportdialog.html" />
+</key>
+<key name="Show Merge dialog box" >
+  <topic name="Show Merge Dialog Box" url="topics/showmergedialog.html" />
+</key>
+<key name="single sign-on" >
+  <topic name="Configure Project Dialog Box/Login Sources" url="topics/configureprojectloginsourcesdialog.html" />
+  <topic name="Setting Login Sources" url="topics/setloginsources.html" />
+  <topic name="Single Sign-On" url="topics/single_sign-on.html" />
+</key>
+<key name="sorting files/revisions" >
+  <topic name="Sorting" url="topics/sorting.html" />
+</key>
+<key name="Source Code Control System" >
+  <topic name="Converting Other Repositories to Version Manager" url="topics/converting_other_repositories_to_version_manager.html" />
+</key>
+<key name="SourceBridge" >
+  <topic name="About Source Bridge" url="topics/aboutsourcebridge.html" />
+  <topic name="Associating System Change Requests" url="topics/trackerlink.html" />
+  <topic name="Setting Up SourceBridge" url="topics/settingupsourcebridge.html" />
+  <topic name="Working with Both TeamTrack and TrackerLink" url="topics/switchingissuemanagement.html" />
+</key>
+<key name="split archives" >
+  <topic name="About the Version Manager File Server" url="topics/about_file_server.html" />
+</key>
+<key name="status" >
+  <key name="file server" >
+    <topic name="About the Status Bar" url="topics/aboutthestatusbar.html" />
+  </key>
+</key>
+<key name="status bar" >
+  <topic name="About the Status Bar" url="topics/aboutthestatusbar.html" />
+</key>
+<key name="subprojects, including" >
+  <topic name="Including Subprojects in Project Operations" url="topics/includesubprojects.html" />
+</key>
+<key name="support, contacting" >
+  <topic name="Contacting Technical Support" url="topics/contacttechnicalsupport.html" />
+</key>
+<key name="Switch User dialog box" >
+  <topic name="Login Dialog Box" url="topics/logindialog.html" />
+  <topic name="Switching Users" url="topics/switchingusers.html" />
+</key>
+<key name="system change requests" >
+  <topic name="Associate SCRs" url="topics/trackerlink.html" />
+  <key name="associating with revisions" >
+    <topic name="Associate SCRs" url="topics/trackerlink.html" />
+  </key>
+</key>
+<key name="target file" >
+  <topic name="No Target Files Found" url="topics/mbpro_error_no_target_files.html" />
+  <topic name="Unable to Parse Target File" url="topics/mbpro_error_unable_to_parse_target_file.html" />
+</key>
+<key name="target selection" >
+  <topic name="Target Selection Dialog Box" url="topics/mbpro_targetselectiondialog.html" />
+</key>
+<key name="TeamTrack" >
+  <topic name="About Source Bridge" url="topics/aboutsourcebridge.html" />
+  <topic name="About TeamTrack" url="topics/about_teamtrack.html" />
+  <topic name="Associating System Change Requests" url="topics/trackerlink.html" />
+  <topic name="Setting Up SourceBridge" url="topics/settingupsourcebridge.html" />
+  <topic name="Working with Both TeamTrack and TrackerLink" url="topics/switchingissuemanagement.html" />
+</key>
+<key name="technical support, contacting" >
+  <topic name="Contacting Technical Support" url="topics/contacttechnicalsupport.html" />
+</key>
+<key name="temporary files" >
+  <topic name="Setting Temporary File Options" url="topics/settempfileoptions.html" />
+  <topic name="Temporary File Options" url="topics/tempfileoptions.html" />
+  <topic name="Temporary Files" url="topics/tempfile2.html" />
+  <key name="options" >
+    <topic name="Temporary File Options" url="topics/tempfileoptions.html" />
+  </key>
+  <key name="options, setting" >
+    <topic name="Setting Temporary File Options" url="topics/settempfileoptions.html" />
+  </key>
+</key>
+<key name="tool bar" >
+  <topic name="About the Tool Bar" url="topics/aboutthetoolbar.html" />
+  <topic name="Adding a Tool Bar Icon and Menu Item" url="topics/addtoolbaricon.html" />
+  <key name="about" >
+    <topic name="About the Tool Bar" url="topics/aboutthetoolbar.html" />
+  </key>
+  <key name="customizing" >
+    <topic name="Adding a Tool Bar Icon and Menu Item" url="topics/addtoolbaricon.html" />
+  </key>
+</key>
+<key name="Tracker" >
+  <topic name="About Source Bridge" url="topics/aboutsourcebridge.html" />
+</key>
+<key name="TrackerLink" >
+  <topic name="About TrackerLink" url="topics/abouttrackerlink.html" />
+  <topic name="Associate SCRs" url="topics/trackerlink.html" />
+  <topic name="TrackerLink Settings Dialog Box" url="topics/trackerlink_settings_dialog_box.htm" />
+  <topic name="Working with Both TeamTrack and TrackerLink" url="topics/switchingissuemanagement.html" />
+  <key name="associating issues with revisions" >
+    <topic name="Associate SCRs" url="topics/trackerlink.html" />
+  </key>
+  <key name="setting up" >
+    <topic name="About TrackerLink" url="topics/abouttrackerlink.html" />
+  </key>
+</key>
+<key name="TrackerLink Settings dialog" >
+  <topic name="TrackerLink Settings Dialog Box" url="topics/trackerlink_settings_dialog_box.htm" />
+</key>
+<key name="unable to parse" >
+  <topic name="Unable to Parse Target File" url="topics/mbpro_error_unable_to_parse_target_file.html" />
+</key>
+<key name="Unlock dialog box" >
+  <topic name="Unlock Dialog Box" url="topics/unlockdialog.html" />
+</key>
+<key name="unlocking" >
+  <topic name="About Unlocking Revisions" url="topics/aboutunlocking.html" />
+  <topic name="Unlocking Revisions" url="topics/unlocking.html" />
+  <key name="revisions" >
+    <topic name="Unlocking Revisions" url="topics/unlocking.html" />
+  </key>
+  <key name="revisions, about" >
+    <topic name="About Unlocking Revisions" url="topics/aboutunlocking.html" />
+  </key>
+</key>
+<key name="updating 5.3/6.0 project folders" >
+  <topic name="Updating 5.3/6.0 Project Folders" url="topics/updateprojectfolder.html" />
+</key>
+<key name="upgrading" >
+  <topic name="Upgrading 5.3/6.0 Project Roots" url="topics/copyvm5_3projroot.html" />
+  <key name="5.3/6.0 project roots" >
+    <topic name="Upgrading 5.3/6.0 Project Roots" url="topics/copyvm5_3projroot.html" />
+  </key>
+</key>
+<key name="user IDs" >
+  <topic name="Select New Archive Owner Dialog Box" url="topics/selectarchiveownerdialog.html" />
+  <topic name="Setting Login Sources" url="topics/setloginsources.html" />
+  <topic name="Switching Users" url="topics/switchingusers.html" />
+  <key name="case sensitive" >
+    <topic name="Setting Login Sources" url="topics/setloginsources.html" />
+  </key>
+  <key name="for new archives" >
+    <topic name="Select New Archive Owner Dialog Box" url="topics/selectarchiveownerdialog.html" />
+  </key>
+  <key name="switching" >
+    <topic name="Switching Users" url="topics/switchingusers.html" />
+  </key>
+</key>
+<key name="user locks" >
+  <key name="filter files by" >
+    <topic name="Filtering by User Locks Dialog Box" url="topics/searchlockedbydialog.html" />
+  </key>
+</key>
+<key name="users" >
+  <topic name="Changing a User's ID" url="topics/changeuserid.html" />
+  <topic name="Defining Access List Groups" url="topics/defineaccesslistgroup.html" />
+  <topic name="Defining Users" url="topics/defineusers.html" />
+  <topic name="Duplicating Users" url="topics/duplicateuser.html" />
+  <topic name="Modifying User Privileges" url="topics/modifyuserprivileges.html" />
+  <topic name="Removing Users from an Access Control Database" url="topics/removeusersacdb.html" />
+  <key name="assigning to access list groups" >
+    <topic name="Defining Access List Groups" url="topics/defineaccesslistgroup.html" />
+  </key>
+  <key name="changing ID" >
+    <topic name="Changing a User's ID" url="topics/changeuserid.html" />
+  </key>
+  <key name="defining" >
+    <topic name="Defining Users" url="topics/defineusers.html" />
+  </key>
+  <key name="duplicating" >
+    <topic name="Duplicating Users" url="topics/duplicateuser.html" />
+  </key>
+  <key name="privileges, modifying" >
+    <topic name="Modifying User Privileges" url="topics/modifyuserprivileges.html" />
+  </key>
+  <key name="removing from an access control database" >
+    <topic name="Removing Users from an Access Control Database" url="topics/removeusersacdb.html" />
+  </key>
+</key>
+<key name="using online help" >
+  <topic name="Using Version Manager Online Help" url="topics/usinghelp.html" />
+</key>
+<key name="version labels" >
+  <topic name="About Version Labels" url="topics/aboutversionlabels.html" />
+  <topic name="Assign Version Label Dialog Box" url="topics/assignversionlabeldialog.html" />
+  <topic name="Assigning Version Labels" url="topics/assigningaversionlabel.html" />
+  <topic name="Delete Version Label Dialog Box" url="topics/removeversionlabeldialog.html" />
+  <topic name="Fixed vs. Floating Version Labels" url="topics/floatfixlabels.html" />
+  <topic name="Moving Version Labels" url="topics/moveversionlabel.html" />
+  <topic name="Naming Conventions" url="topics/namingconventions.html" />
+  <topic name="Removing a Version Label" url="topics/removingaversionlabel.html" />
+  <topic name="Rename Version Label Dialog Box" url="topics/renameversionlabeldialog.html" />
+  <topic name="Renaming Version Labels" url="topics/renamingaversionlabel.html" />
+  <key name="about" >
+    <topic name="About Version Labels" url="topics/aboutversionlabels.html" />
+  </key>
+  <key name="assigning" >
+    <topic name="Assign Version Label Dialog Box" url="topics/assignversionlabeldialog.html" />
+    <topic name="Assigning Version Labels" url="topics/assigningaversionlabel.html" />
+  </key>
+  <key name="deleting" >
+    <topic name="Delete Version Label Dialog Box" url="topics/removeversionlabeldialog.html" />
+  </key>
+  <key name="filter by" >
+    <topic name="Filtering by Difference Using Two Version Labels" url="topics/filterby2versionlabels.html" />
+    <topic name="Filtering by Version Label" url="topics/filterbyversionlabel.html" />
+  </key>
+  <key name="fixed vs. floating" >
+    <topic name="Fixed vs. Floating Version Labels" url="topics/floatfixlabels.html" />
+  </key>
+  <key name="moving" >
+    <topic name="Moving Version Labels" url="topics/moveversionlabel.html" />
+  </key>
+  <key name="naming conventions" >
+    <topic name="Naming Conventions" url="topics/namingconventions.html" />
+  </key>
+  <key name="removing" >
+    <topic name="Removing a Version Label" url="topics/removingaversionlabel.html" />
+  </key>
+  <key name="renaming" >
+    <topic name="Rename Version Label Dialog Box" url="topics/renameversionlabeldialog.html" />
+    <topic name="Renaming Version Labels" url="topics/renamingaversionlabel.html" />
+  </key>
+</key>
+<key name="Version Manager" >
+  <topic name="About Version Manager" url="topics/introducingvm.html" />
+  <topic name="Using Version Manager with Previous Releases" url="topics/usingwithprevrel.html" />
+  <key name="about" >
+    <topic name="About Version Manager" url="topics/introducingvm.html" />
+  </key>
+  <key name="using with previous releases" >
+    <topic name="Using Version Manager with Previous Releases" url="topics/usingwithprevrel.html" />
+  </key>
+</key>
+<key name="Version Manager desktop client" >
+  <topic name="About the Status Bar" url="topics/aboutthestatusbar.html" />
+  <topic name="About the Tool Bar" url="topics/aboutthetoolbar.html" />
+  <topic name="Configuring Project Databases and Projects" url="topics/defaults.html" />
+  <topic name="Working in the Project Pane" url="topics/workinginprojectpane.html" />
+  <topic name="Working in the Versioned File Pane" url="topics/workinginfilepane.html" />
+  <key name="default settings" >
+    <topic name="Configuring Project Databases and Projects" url="topics/defaults.html" />
+  </key>
+  <key name="File pane" >
+    <topic name="Working in the Versioned File Pane" url="topics/workinginfilepane.html" />
+  </key>
+  <key name="Project pane" >
+    <topic name="Working in the Project Pane" url="topics/workinginprojectpane.html" />
+  </key>
+  <key name="status bar" >
+    <topic name="About the Status Bar" url="topics/aboutthestatusbar.html" />
+  </key>
+  <key name="Tool bar" >
+    <topic name="About the Tool Bar" url="topics/aboutthetoolbar.html" />
+  </key>
+</key>
+<key name="Version Manager File Server" >
+  <key name="client configuration" >
+    <topic name="Configuring Clients for Use with File Servers" url="topics/configuring_clients_for_file_server.html" />
+  </key>
+</key>
+<key name="Version Manager File Server status" >
+  <topic name="About the Status Bar" url="topics/aboutthestatusbar.html" />
+</key>
+<key name="Version Manager File Server/about" >
+  <topic name="About the Version Manager File Server" url="topics/about_file_server.html" />
+</key>
+<key name="versioned files" >
+  <topic name="About Versioned Files" url="topics/aboutversionedfiles.html" />
+  <topic name="Copying a Versioned File" url="topics/copyversionedfile.html" />
+  <topic name="Deleting Versioned Files" url="topics/deleteversionedfile.html" />
+  <topic name="Moving Versioned Files" url="topics/moveversionedfile.html" />
+  <topic name="Reviewing Properties" url="topics/reviewingproperties.html" />
+  <key name="about" >
+    <topic name="About Versioned Files" url="topics/aboutversionedfiles.html" />
+  </key>
+  <key name="copying" >
+    <topic name="Copying a Versioned File" url="topics/copyversionedfile.html" />
+  </key>
+  <key name="deleting" >
+    <topic name="Deleting Versioned Files" url="topics/deleteversionedfile.html" />
+  </key>
+  <key name="moving" >
+    <topic name="Moving Versioned Files" url="topics/moveversionedfile.html" />
+  </key>
+  <key name="reviewing properties" >
+    <topic name="Reviewing Properties" url="topics/reviewingproperties.html" />
+  </key>
+</key>
+<key name="versioned files, restoring" >
+  <topic name="Restoring Versioned Files" url="topics/restoringversionedfiles.html" />
+</key>
+<key name="view" >
+  <topic name="Getting a Revision/Viewing a File" url="topics/gettingarevision.html" />
+  <key name="files" >
+    <topic name="Getting a Revision/Viewing a File" url="topics/gettingarevision.html" />
+  </key>
+</key>
+<key name="viewing changes to projects" >
+  <topic name="Viewing Changes to Projects (change.log)" url="topics/viewingchangelog.html" />
+</key>
+<key name="viewing files" >
+  <key name="by difference between label and promotion group" >
+    <topic name="Filtering by Difference Using a Version Label and a Promotion Group" url="topics/filterbyversionlabelandpromotiongroup.html" />
+  </key>
+  <key name="by difference between promotion groups" >
+    <topic name="Filtering by Difference Using Two Promotion Groups" url="topics/filterby2promotiongroups.html" />
+  </key>
+  <key name="by difference between version labels" >
+    <topic name="Filtering by Difference Using Two Version Labels" url="topics/filterby2versionlabels.html" />
+  </key>
+  <key name="by promotion groups" >
+    <topic name="Filtering by Promotion Group" url="topics/filterbypromotiongroup.html" />
+  </key>
+  <key name="by user locks" >
+    <topic name="Filtering by User Locks Dialog Box" url="topics/searchlockedbydialog.html" />
+  </key>
+  <key name="by version labels" >
+    <topic name="Filtering by Version Label" url="topics/filterbyversionlabel.html" />
+  </key>
+  <key name="by wild cards" >
+    <topic name="Filtering Files by Wild Cards" url="topics/searchwildcarddialog.html" />
+  </key>
+  <key name="recursively" >
+    <topic name="About Filtering" url="topics/filtering.html" />
+  </key>
+</key>
+<key name="Visual SourceSafe" >
+  <topic name="Converting Other Repositories to Version Manager" url="topics/converting_other_repositories_to_version_manager.html" />
+</key>
+<key name="VLOGIN" >
+  <topic name="Login Dialog Box" url="topics/logindialog.html" />
+</key>
+<key name="VSS" >
+  <topic name="Converting Other Repositories to Version Manager" url="topics/converting_other_repositories_to_version_manager.html" />
+</key>
+<key name="Welcome dialog box, disabling" >
+  <topic name="Disabling the Welcome and Confirmation Dialog Display" url="topics/disablingdialogs.html" />
+</key>
+<key name="wild cards" >
+  <key name="filter files by" >
+    <topic name="Filtering Files by Wild Cards" url="topics/searchwildcarddialog.html" />
+  </key>
+</key>
+<key name="wildcards" >
+  <key name="filter files by" >
+    <topic name="Filtering Files by Wild Cards" url="topics/searchwildcarddialog.html" />
+  </key>
+</key>
+<key name="Windows" >
+  <topic name="Modifying Windows File Associations" url="topics/winassociations.html" />
+  <key name="file associations, modifying" >
+    <topic name="Modifying Windows File Associations" url="topics/winassociations.html" />
+  </key>
+</key>
+<key name="workfile attributes options" >
+  <topic name="Setting Workfile Attributes Options" url="topics/setworkfileattroptions.html" />
+  <topic name="Workfile Attributes Options" url="topics/workfileattroptions.html" />
+</key>
+<key name="workfiles" >
+  <topic name="About Workfiles" url="topics/aboutworkfiles.html" />
+  <topic name="Adding Workfiles" url="topics/addfiles.html" />
+  <topic name="Checking In" url="topics/checkingin.html" />
+  <topic name="Setting Workfile Locations" url="topics/settingworkfilelocation.html" />
+  <topic name="Workfile Attributes Options" url="topics/workfileattroptions.html" />
+  <topic name="Workfile Locations" url="topics/workfilelocation.html" />
+  <key name="about" >
+    <topic name="About Workfiles" url="topics/aboutworkfiles.html" />
+  </key>
+  <key name="adding" >
+    <topic name="Adding Workfiles" url="topics/addfiles.html" />
+  </key>
+  <key name="checking in" >
+    <topic name="Checking In" url="topics/checkingin.html" />
+  </key>
+  <key name="comparing" >
+    <topic name="Comparing Files" url="topics/generatedifferencereport.html" />
+  </key>
+  <key name="deleting after check in" >
+    <topic name="Workfile Attributes Options" url="topics/workfileattroptions.html" />
+  </key>
+  <key name="locations" >
+    <topic name="Workfile Locations" url="topics/workfilelocation.html" />
+  </key>
+  <key name="locations, setting" >
+    <topic name="Setting Workfile Locations" url="topics/settingworkfilelocation.html" />
+  </key>
+  <key name="make read-only after check in" >
+    <topic name="Workfile Attributes Options" url="topics/workfileattroptions.html" />
+  </key>
+</key>
+<key name="workflow" >
+  <topic name="User Workflow" url="topics/userworkflow.html" />
+</key>
+<key name="workspace hierarchies" >
+  <topic name="Understanding Workspace Hierarchies" url="topics/workhier.html" />
+</key>
+<key name="workspaces" >
+  <topic name="About Public and Private Workspaces" url="topics/publicprivate.html" />
+  <topic name="About Workspaces" url="topics/aboutworkspaces.html" />
+  <topic name="Creating and Managing Multiple Public Workspaces" url="topics/public.html" />
+  <topic name="Creating Workspaces" url="topics/createworkspaces.html" />
+  <topic name="Deleting a Workspace" url="topics/deleteworkspace.html" />
+  <topic name="Renaming Workspaces" url="topics/renameworkspace.html" />
+  <topic name="Setting Your Workspace" url="topics/setworkspace.html" />
+  <topic name="Using the Root Workspace" url="topics/rootworkspace.html" />
+  <topic name="Using Workspaces for Automatic Branching" url="topics/setbranchworkspace.html" />
+  <topic name="Versioned File Properties Dialog Box" url="topics/versioneditemdialog.html" />
+  <key name="about" >
+    <topic name="About Workspaces" url="topics/aboutworkspaces.html" />
+  </key>
+  <key name="automatic branching and" >
+    <topic name="Using Workspaces for Automatic Branching" url="topics/setbranchworkspace.html" />
+  </key>
+  <key name="creating" >
+    <topic name="Creating Workspaces" url="topics/createworkspaces.html" />
+  </key>
+  <key name="deleting" >
+    <topic name="Deleting a Workspace" url="topics/deleteworkspace.html" />
+  </key>
+  <key name="multiple public" >
+    <topic name="Creating and Managing Multiple Public Workspaces" url="topics/public.html" />
+  </key>
+  <key name="public and private, about" >
+    <topic name="About Public and Private Workspaces" url="topics/publicprivate.html" />
+  </key>
+  <key name="renaming" >
+    <topic name="Renaming Workspaces" url="topics/renameworkspace.html" />
+  </key>
+  <key name="root" >
+    <topic name="Using the Root Workspace" url="topics/rootworkspace.html" />
+  </key>
+  <key name="setting" >
+    <topic name="Setting Your Workspace" url="topics/setworkspace.html" />
+  </key>
+  <key name="settings, viewing" >
+    <topic name="Versioned File Properties Dialog Box" url="topics/versioneditemdialog.html" />
+  </key>
+</key>
+
+</indexdata>

@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Configure Project Database Dialog Box/Allow/Disallow</TITLE>
+<!--<configureprojectallowdialog.html>-->
+<!--<index parent="configuring" label="Configure Project Database/Allow/Disallow dialog box" anchor="configureprojectallow">-->
+<!--<index parent="project_databases" label="Configure Project Database/Allow/Disallow dialog box" anchor="configureprojectallow">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiConfigureProjectDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="configureprojectallow"></A>Configure Project Database/Allow/Disallow</H1>
+<P>Use the Configure Project Database dialog box (Admin | Configure Project | Allow/Disallow tab) to standardize how Serena ChangeMan Version Manager operates on all the projects within the project database. Allowing/disallowing options in the master configuration file controls whether Users can change the options in other configuration files. Disallowing an option prevents Users from changing the option. You can only disallow options in the master configuration file; the Allow/Disallow tab is available only when you are configuring a project database.</P>
+
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><b>Allow/Disallow list</b></TD>
+		<TD><!--<control name="ConfigureProjectAllowDisallow.ALLOW_DISALLOW_LIST">-->
+		Select the configuration option that you want to allow or disallow. The options with a - beside them are disallowed, and the options with a + beside them are allowed. To change the status of an option, click the check box beside the option. You can allow or disallow an entire set of related options by clicking the parent option.<!--</control>-->For example, you could disallow all of the Branching options, by clicking the check box beside Branching to place a - in the check box.</TD>
+	</TR>
+	<TR>
+		<TD><b>Disallowed Directives</b></TD>
+		<TD><!--<control name="ConfigureProjectAllowDisallow.ALLOW_DISALLOW_TEXT">-->
+		Displays a list of currently disallowed directives for the project database. <!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Show Directive Names</b></TD>
+		<TD><!--<control name="ConfigureProjectAllowDisallow.SHOW_DIRECTIVES_CB">-->
+		Select to show the directive name for each option. When selected, the directive name appears to the right of the configuration option in parentheses.<!--</control>--></TD>
+	</TR>
+</TABLE><br>
+
+<h2>See Also</h2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="setdisallowoptions.html">Allowing and Disallowing Options</A></TD>
+		<TD><A HREF="disallowoptions.html">About Allowing and Disallowing Options</A></TD>
+	</tr>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

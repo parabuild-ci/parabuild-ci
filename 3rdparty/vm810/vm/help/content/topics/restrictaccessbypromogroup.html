@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Restricting Access Rights by Promotion Group</TITLE>
+<!--<restrictaccessbypromogroup.html>-->
+<!--<toc parent="working_with_promotion_models" label="Restricting Access Rights by Promotion Group" anchor="restrictaccessbypromogroup" sortkey="06">-->
+<!--<index parent="promotion_groups" label="Security" anchor="restrictaccessbypromogroup">-->
+<!--<index parent="security" label="restricting access rights by promotion group" anchor="restrictaccessbypromogroup">-->
+<!--<index parent="privileges" label="restricting by promotion group" anchor="restrictaccessbypromogroup">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nUsing Promotion Models\nRestricting Access Rights by Promotion Group");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="restrictaccessbypromogroup"></A>Restricting Access Rights by Promotion Group</H1>
+<OL>
+	<LI>Select the project database or project associated with the access control database in which you are defining privilege sets.<BR><BR>
+	<LI>Select Admin | Security | Privilege Sets. The Project Security dialog box appears with the General tab active.<BR><BR>
+	<LI>Click the New button. The <A HREF="definecustomprivsets.html">Custom Privilege Set</A> dialog box appears.<BR><BR>
+	<LI>Enter a name for the custom privilege set. The name cannot begin or end with a tab or blank space. Any character can be used in the name except * : \ ' " ( ).<BR><BR>
+	<LI>Select the Promote to the Next Promotion Group privilege. All other privileges should be deselected.<BR><BR> 
+	The options with a + in the box beside them are allowed. The Project privileges are the only privileges that can have a - in the box beside them because they are negative privileges. The - means that the privilege is denied.<BR><BR> 
+	To change the status of an option, click the check box beside the option. You can allow or disallow an entire set of related privileges by clicking the parent option. For example, you could assign all of the Action privileges by clicking the check box beside Action Privileges to place a + in the check box.<BR><BR>
+	<LI>In the <B>Restrict by promotion group</B> field, enter the promotion group by which this privilege set will be restricted.<BR><BR>
+	<LI>Click Create and then Close to create this privilege set and return to the Project Security dialog box.<BR><BR>
+	<LI>Click OK.<BR><BR>
+	<LI>Assign the user or group of users to this custom privilege set.<BR><BR>
+</OL>
+
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+<TR>
+		<TD><A HREF="promomodelsecurity.html">Implementing Security Using Promotion Models</A></TD>
+		<TD><A HREF="definecustomprivsets.html">Defining Custom Privilege Sets</A></TD>
+</TR>
+<TR>
+	<TD><A HREF="prommodelrules.html">Rules Governing Promotion Models</A></TD>
+	<TD><A HREF="usingsecurity.html">Using Security</A></TD>
+</TR>
+
+<TR>
+	<TD><A HREF="prom_pardev.html">Promotion and Parallel Development</A></TD>
+	<TD><A HREF="aboutprivileges.html">About Privileges</A></TD>
+</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

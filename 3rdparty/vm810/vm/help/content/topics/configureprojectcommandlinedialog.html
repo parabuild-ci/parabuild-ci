@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Configure Project Dialog Box/Command Line</TITLE>
+<!--<configureprojectcommandlinedialog.html>-->
+<!--<index parent="configuring" label="Configure Project/Command Line dialog box" anchor="configureprojectcommandlinedialog">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiConfigureProjectDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="configureprojectcommandlinedialog"></A>Configure Project/Command Line</H1>
+<P>Use the Configure Project dialog box (Admin | Configure Project | General Tab | Miscellaneous | Command Line) to set the command-line options, which control how the Serena ChangeMan Version Manager command-line interface operates. These options affect only the command-line interface. The options are:</P>
+<UL>
+	<LI>Whether or not to display copyright and version information.
+	<LI>Whether to display detailed messages.
+	<LI>The command-line editor to use for entering workfile or change descriptions.
+	<LI>The name and location of the <a href="tempfile.html">temporary file</a> used for the prompt lines.
+	<LI>The suffix of <a href="messfile.html">message files</a>.
+	<LI>Whether or not to delete message files after Version Manager reads them.
+</UL>
+
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+	<TD COLSPAN=2><CENTER><B>Miscellaneous | Command Line</B></CENTER></TD>
+	</TR>
+	<TR>
+		<TD><b>Command Line Output</b></TD>
+		<TD><b>Display sign on messages:</b> <!--<control name="ConfigureProjectGeneral.SIGNON_MESSAGES_CB">-->Select to display copyright and version information when certain Version Manager commands are used, for example, the VCS command.
+		<!--</control>--><br><br>
+		<b>Display detailed messages:</b>
+		<!--<control name="ConfigureProjectGeneral.DETAILED_MESSAGES_CB">-->
+		Select to display details of a command operation such as the workfile and archive names and the current and previous revision numbers.
+		<!--</control>--></TD>
+	</TR>
+	<TR><TD><b>Command Line Editor</b></TD>
+		<TD><b>Editor:</b> <!--<control name="ConfigureProjectGeneral.EDITOR_PATH_EDIT">-->
+		Enter the location and name of the executable for the text editor you want to use for entering workfile or change descriptions. If you do not specify an editor, Version Manager provides a simple internal line editor.
+		<!--</control>--><br><br>
+		<b>Temporary File:</b>
+		<!--<control name="ConfigureProjectGeneral.TEMP_FILE_PATH_EDIT">-->
+		If you specify a command line editor to use, you must enter the location and name of a <a href="tempfile.html">temporary file</a>. Version Manager copies two prompt lines to the temporary file. When the editor runs, these prompt lines remind you what description you are entering. You should not change these prompt lines; Version Manager will delete them for you automatically if you do not change them. The temporary file is deleted after use.<!--</control>--></TD>
+	</TR>
+	<TR><TD><b>Message Files</b></TD>
+		<TD><b>Message File Suffix:</b> <!--<control name="ConfigureProjectGeneral.MESSAGE_SUFFIX_EDIT">-->
+		Enter the suffix for message files. The default suffix is +-msg, which causes Version Manager to add the characters -msg to the end of the workfile name to create a message file name.<!--</control>--><br><br>
+		<b>Delete message file after use</b> - <!--<control name="ConfigureProjectGeneral.DELETE_MESSAGE_FILE_CB">-->
+		Select to delete message files after Version Manager reads them to obtain a change description.<!--</control>-->
+	</TR>
+</TABLE>
+<h2>See Also</h2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="setcommandlineoptions.html">Setting Command-Line  Options</A></TD>
+		<TD><A HREF="commandlineoptions.html">Command-Line Options</A></TD>
+	</tr>
+</TABLE>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>
+

@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Options Dialog Box/Dialog Behavior Tab</TITLE>
+<!--<optionsactiondialogs.html>-->
+<!--<index parent="options" label="Options dialog box/Dialog Behavior tab" anchor="optionsactiondialog">-->
+<!--<control base="pvcs.suite.gui.PvcsOptionsDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="optionsactiondialog"></A>Options Dialog Behavior Tab</H1>
+<P>Use the Dialog Behavior tab in the Options dialog box (View | Options | Dialog Behavior tab) to set which project or versioned file actions invoke a dialog box. For example, when you select Action | Get, Version Manager can either display or not display a dialog box before processing the action. The dialog box lets you set options for the action.
+</P>
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+<th colspan="2" rowspan="1">
+Project Actions
+</th>
+<TR>
+		<TD><b>Get</b></TD>
+		<TD><!--<control name="OptionsActionDialogs.PROJECT_GETFILE_CB">-->
+		Select to display a dialog box when you use Action | Get on a project or project database.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Check Out</b></TD>
+		<TD><!--<control name="OptionsActionDialogs.PROJECT_CHECKOUT_CB">-->
+		Select to display a dialog box when you use Action | Check Out on a project or project database.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Unlock</b></TD>
+		<TD><!--<control name="OptionsActionDialogs.PROJECT_UNLOCK_CB">-->
+		Select to display a dialog box when you use Action | Unlock on a project or project database.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Lock</b></TD>
+		<TD><!--<control name="OptionsActionDialogs.PROJECT_LOCK_CB">-->
+		Select to display a dialog box when you use Action | Lock on a project or project database.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+	<TD><b>Show History</b></TD>
+	<TD><!--<control name="OptionsActionDialogs.PROJECT_HISTORY_CB">-->
+	Select to display a dialog box when you use Action | Show History on a project or project database.
+		<!--</control>--></TD>
+		</TR>
+<th colspan="2" rowspan="1">
+Versioned File Actions
+</th>
+	<TR>
+	<TD><b>Get/View</b></TD>
+	<TD><!--<control name="OptionsActionDialogs.FILE_GETFILE_CB">-->
+	Select to display a dialog box when you use Action | Get on a versioned file.
+	<!--</control>--></TD>
+	</TR>
+	<TR>
+	<TD><b>Check Out/Edit</b></TD>
+		<TD><!--<control name="OptionsActionDialogs.FILE_CHECKOUT_CB">-->
+		Select to display a  dialog box when you use Action | Check Out on a versioned file.
+		<!--</control>--></TD>
+		</TR>
+	<TR>
+	<TD><b>Unlock</b></TD>
+	<TD><!--<control name="OptionsActionDialogs.FILE_UNLOCK_CB">-->
+	Select to display a dialog box when you use Action | Unlock on a versioned file.
+	<!--</control>--></TD>
+	</TR>
+	<TR>
+	<TD><b>Lock</b></TD>
+		<TD><!--<control name="OptionsActionDialogs.FILE_LOCK_CB">-->
+		Select to display a dialog box when you use Action | Lock on a versioned file.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+	<TD><b>Show History</b></TD>
+		<TD><!--<control name="OptionsActionDialogs.FILE_HISTORY_CB">-->
+		Select to display a dialog box when you use Action | Show History on a versioned file.
+		<!--</control>--></TD>
+		</TR>
+	<TR>
+	<TD><b>Show Difference</b></TD>
+		<TD><!--<control name="OptionsActionDialogs.FILE_DIFFERENCE_CB">-->
+		Select to display a dialog box when you use Action | Show Difference on a versioned file.
+		<!--</control>--></TD>
+		</TR>
+<th colspan="2" rowspan="1">
+Other
+</th>
+	<TR>
+		<TD><b>Automatically dismiss result dialogs when action is successful</b></TD>
+		<TD><!--<control name="OptionsActionDialogs.AUTODISMISS_CB">-->
+		Select to automatically close the results dialog box when the action is successful. Otherwise, you must click Close to dismiss the results dialog box.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Show Copy Options Dialog</b></TD>
+		<TD><!--<control name="OptionsActionDialogs.SHOW_ADVANCED_COPY_CB">-->
+		Select to display the Copy Project dialog box when copying projects or versioned files. The Copy Project dialog box enables you to change whether or not project archives will be copied to the destination location, what configuration file will be used, and whether to create a new access control database, use the existing access control database, or copy the access control database. The dialog box also controls whether or not subprojects are included in the action.
+		<!--</control>--></TD>
+	</TR>
+</TABLE>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a href="setdialogdisplay.html">Setting Dialog Display Options</a></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

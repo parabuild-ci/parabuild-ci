@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Defining Access Lists</TITLE>
+<!--<defineaccesslist.html>-->
+
+<!--<toc parent="set_up_security" label="Defining Access Lists" anchor="defineaccesslist" sortkey="07">-->
+<!--<index parent="creating" label="access lists" anchor="defineaccesslist">-->
+<!--<index parent="defining" label="access lists for archives" anchor="defineaccesslist">-->
+<!--<index parent="assigning" label="access lists to archives" anchor="defineaccesslist">-->
+<!--<index parent="access_lists" label="assigning to archives" anchor="defineaccesslist">-->
+<!--<index parent="archives" label="defining access lists for" anchor="defineaccesslist">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nUsing Security\nSetting Up Security\nDefining Access Lists");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="defineaccesslist"></A>Defining Access Lists</H1>
+<P>If you are using <A HREF="aboutaccesslists.html">access lists</A>, you must define an access list for the appropriate archives. An access list is an attribute of an archive. You can define access lists for newly created archives and for existing archives. If you want to define access lists for newly created archives, you must set the <A HREF="setarchivecreationoptions.html">archive creation options</a>.</P>
+<H2>To define an access list for an existing archive:</H2>
+<OL>
+	<LI>Select the project or individual versioned file associated with the archive that you want to define an access list for. When you select a project, you define the same access list for all of the archives of the project.<br><br>
+	<LI>Select Admin | Archive Attributes. The Archive Attributes dialog box appears with the General tab active.<br><br>
+	<LI>Click the Advanced tab.<br><br>
+	<LI>In the <b>Access List</b> field, select Modify and then enter the <A HREF="aboutaccesslistgroups.html">access list groups</a> and individual users who can access the archive in the text field that appears to the right of the field. Each entry in the list must be separated by a comma ( , ). Or, you can click the Browse button to select the groups or individual users. The combined value of this field cannot exceed 255 characters in length.
+<p>Remember that the access list groups and users who you specify must be defined in the <A HREF="aboutacdb.html">access control database</a>.</p><br>
+	<LI>Click OK.<br><br>
+</OL>
+Continue to the next procedure, <A HREF="enablesecurity.html">Enabling Security</a>.
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="setupsecurity.html">Setting Up Security</A></TD>
+		<TD><A HREF="aboutarchattrib.html">About Archive Atrributes</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="modifyaccesslist.html">Modifying Access Lists</A></TD>
+	</TR>
+
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

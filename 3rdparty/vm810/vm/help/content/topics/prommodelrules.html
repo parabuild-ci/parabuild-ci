@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Promotion Model Rules</TITLE>
+<!--<PromModelRules.html>-->
+<!--<index parent="promotion_groups" label="rules" anchor="PromModelRules">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="PromModelRules"></A>Promotion Model Rules</H1>
+<P>
+<b>Rule 1: A promotion model can have one or more lowest-level groups. </b>
+</P>
+<P>
+<b>Rule 2: When a promotion model is in effect, every revision that you check out with a lock must be associated with a lowest-level promotion group.</b> If your model has only one lowest-level group, Version Manager automatically associates that promotion group with each revision that is checked out with a lock. If your model has more than one lowest-level group, the default value is the default promotion group that is defined in your current workspace settings. If no default promotion group is defined, you must select which lowest-level group to assign to a locked revision.
+</P>
+<P>
+<b>Rule 3: A lowest-level group &quot;floats&quot; with the most recent revision.</b> As you check in subsequent revisions of a file, Version Manager reassigns the lowest-level promotion group to the newest revision. 
+</P>
+<P>
+<b>Rule 4: When a revision is promoted to the next higher promotion group, the revision is no longer associated with the lower-level promotion group.</b> For example, when a revision associated with the Development group is promoted, Version Manager associates the revision with the next higher group, such as QA_Test1, and disassociates it from the Development group.
+</P>
+<P>
+<b>Rule 5: If a revision is associated with a higher promotion group, upon check out Version Manager also associates the revision with the lowest-level promotion group.</b> As stated earlier, revisions that are checked out with a lock must be associated with a lowest-level promotion group. This means that when you check out a revision that is associated with a higher promotion group, such as QA_Test1, Version Manager creates an additional association with the lowest-level promotion group.
+</P>
+<P>
+At this point, the revision is associated with both groups, QA_Test1 and Development. However, when you check in the new revision, it is associated with the Development group only and the previous revision remains associated with the QA_Test1 group.
+</P>
+<P>
+<b>Rule 6: A promotion group can be associated with only one revision in an archive at a time.</b> A revision can be associated with more than one promotion group as we discussed in Rule 5. But, a promotion group can be associated with only one revision in an archive at a time. This means that if the promotion model in effect has only one lowest-level promotion group and you attempt to check out a revision when another revision is already associated with that lowest-level group, Version Manager won't allow you to check out the revision. For example, if there are revisions 1.0 through 1.5 in an archive and the lowest-level promotion group is associated with revision 1.5, Version Manager will not allow you to check out revision 1.4, or any of the other revisions. If you encounter this situation, you must either:</P>
+<UL>
+<LI>Promote the revision associated with the lowest-level group
+<LI>Define another lowest-level group
+</UL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+<TR>
+	<TD><A HREF="promotionlifecyclemgt.html">Promotion and Lifecycle Management</A></TD>
+	<TD><A HREF="checkingout.html">Checking Out Revisions</A></TD>
+</TR>
+<TR>
+	<TD><A HREF="definingpromomodel.html"> Defining a Promotion Model</A></TD>
+	<TD><A HREF="aboutrevisions.html">About Revisions</A></TD>
+</TR>
+<TR>
+	<TD><A HREF="multilocks.html">Multiple Locks</A></TD></TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

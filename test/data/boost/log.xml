@@ -1,0 +1,30 @@
+<TestLog>
+  <TestSuite name="Sample unit test">
+    <TestCase name="SampleTest::SuccessfulTests">
+      <Info file="c:/sandbox/testboost/main.cpp" line="33">check !l.empty() passed</Info>
+      <Info file="c:/sandbox/testboost/main.cpp" line="34">check l.size() == 3 passed</Info>
+      <Info file="c:/sandbox/testboost/main.cpp" line="37">check &apos;no exceptions thrown by x = squareRoot( 9)&apos;
+        passed</Info>
+      <Info file="c:/sandbox/testboost/main.cpp" line="38">check &apos;exception range_error is caught&apos;
+        passed</Info>
+      <TestingTime>0</TestingTime>
+    </TestCase>
+    <TestCase name="SampleTest::FailingTests">
+      <Error file="c:/sandbox/testboost/main.cpp" line="45">check money &gt; wisdom failed</Error>
+      <Error file="c:/sandbox/testboost/main.cpp" line="46">check money == happyness failed [money != happyness]</Error>
+      <Error file="c:/sandbox/testboost/main.cpp" line="49">exception thrown by x = squareRoot(-25)</Error>
+      <Exception name="SampleTest::FailingTests">std::range_error: square root not defined for negative values
+        <LastCheckpoint file="c:\sandbox\testboost\main.cpp" line="50"></LastCheckpoint>
+      </Exception>
+      <TestingTime>0</TestingTime>
+    </TestCase>
+    <TestCase name="SampleTest::CheckpointsAndMessages">
+      <Info file="c:/sandbox/testboost/main.cpp" line="55">check 4 == 2+2 passed</Info>
+      <Info file="c:/sandbox/testboost/main.cpp" line="56">check 5 == 2+3 passed</Info>
+      <Info file="c:/sandbox/testboost/main.cpp" line="58">check 6 == 2+4 passed</Info>
+      <Message file="c:/sandbox/testboost/main.cpp" line="59">a message in middle of tests</Message>
+      <Info file="c:/sandbox/testboost/main.cpp" line="60">check 7 == 2+5 passed</Info>
+      <TestingTime>0</TestingTime>
+    </TestCase>
+  </TestSuite>
+</TestLog>

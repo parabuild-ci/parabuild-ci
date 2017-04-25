@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 1.1//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="org.parabuild.ci.object.ResultConfig"
+        table="RESULT_CONFIG"
+    >
+        <cache usage="read-write" />
+
+        <id
+            name="ID"
+            column="ID"
+            type="int"
+            unsaved-value="-1"
+        >
+            <generator class="identity">
+            </generator>
+        </id>
+
+        <version
+            name="timeStamp"
+            type="long"
+            column="TIMESTAMP"
+        />
+
+        <property
+            name="buildID"
+            type="int"
+            column="BUILD_ID"
+            unique="false"
+        />
+
+        <property
+            name="path"
+            type="java.lang.String"
+            column="PATH"
+            unique="false"
+        />
+
+        <property
+            name="description"
+            type="java.lang.String"
+            column="DESCRIPTION"
+            unique="false"
+        />
+
+        <property
+            name="type"
+            type="byte"
+            column="TYPE"
+            unique="false"
+        />
+
+        <property
+            name="autopublishGroupID"
+            type="java.lang.Integer"
+            column="AUTOPUBLISH_GROUP_ID"
+            unique="false"
+        />
+
+        <property
+            name="failIfNotFound"
+            type="yes_no"
+            column="FAIL_IF_NOT_FOUND"
+            unique="false"
+        />
+
+        <property
+            name="ignoreTimestamp"
+            type="yes_no"
+            column="IGNORE_TIMESTAMP"
+            unique="false"
+        />
+
+        <property
+            name="shellVariable"
+            type="java.lang.String"
+            column="SHELL_VARIABLE"
+            unique="false"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-ResultConfig.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

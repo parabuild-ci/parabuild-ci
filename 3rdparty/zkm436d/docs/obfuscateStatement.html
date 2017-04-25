@@ -1,0 +1,345 @@
+<!-- Copyright 2005 Zelix Pty Ltd (ABN 47 078 740 093) -->
+<html>
+<head>
+<title>Zelix KlassMaster - obfuscate statement</title>
+   <meta name="keywords" content="java obfuscator,java code obfuscator,obfuscation">
+   <meta name="description" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <meta name="classification" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <link rel=stylesheet href="../ZKM.css" TYPE="text/css">
+</head>
+<body background="../images/small-white-mist1.jpg" bgcolor="#E1E1E1">
+<center><a href="index.html"><img src=../images/ZKM_b4.gif alt="Zelix KlassMaster" width=264 height=62 border=0></a></center>
+<hr>
+<center>
+<table width=770 border=0>
+   <tr>
+      <td>
+         <h1>The <code>obfuscate</code> Statement</h1>
+         The ZKM Script <code>obfuscate</code> statement obfuscates all opened classes. Obfuscation includes:
+         <ul>
+            <li>Obfuscating the control flow of all methods that have not been excluded by a 
+                preceding <a href=obfuscateFlowExcludeStatement.html><code>obfuscateFlowExclude</code></a> statement.
+            <li>Changing the names of packages, classes, fields and methods that have not been excluded by a 
+                preceding <a href=excludeStatement.html><code>exclude</code></a> statement.
+            <li>Encrypting string literals that have not been excluded by a 
+                preceding <a href=stringEncryptionExcludeStatement.html><code>stringEncryptionExclude</code></a> statement.
+            <li>Collapsing the package structure.  Excludes packages excluded by a 
+                preceding <a href=excludeStatement.html><code>exclude</code></a> statement.
+            <li>Deleting, scrambling or retaining line number tables.
+            <li>Deleting local variable tables.
+         </ul>
+         The remainder of this page is organized into the following sections.
+         <ul>
+            <li><a href="#explanation">Explanation</a>
+            <li><a href="#examples">Examples</a>
+            <li><a href="#syntax">Syntax</a>
+         </ul>
+
+         <h2><a name="explanation">Explanation</a></h2>          
+         <u>For a detailed explanation of the effect of the obfuscate statement and its parameters
+         see the documentation for the interactive <b><a href=obfuscateOptions.html>"Tools&nbsp;Obfuscate"</a></b>
+         menu option</u>. Functionality that is available only through the ZKM Script interface is documented below.
+         <p>
+         The broad functionality provided by the <b>changeLogFileIn</b> parameter is available through the GUI interface but 
+         the ZKM Script interface allows you to specify more than one input change log. If more than one input change log is specified then 
+         the specified change logs are effectively merged. Change logs appearing first in the list have precedence over those appearing later in the list.
+         The <b>changeLogFileIn</b> and <b>looseChangeLogFileIn</b> parameters are mutually exclusive.
+         <p>
+         The functionality provided by the <b>looseChangeLogFileIn</b> parameter is available only through the ZKM Script interface. 
+         The functionality is the same as that provided by the <b>changeLogFileIn</b> except that the name obfuscation exclusion settings 
+         (see the <a href=excludeStatement.html><code>exclude</code></a> statement) take precedence over the input change log mappings.
+         The <b>looseChangeLogFileIn</b> and <b>changeLogFileIn</b> parameters are mutually exclusive.
+         <p>
+         The functionality provided by the <b>newNamesPrefix</b> parameter is available only through the ZKM Script interface. It allows you to specify a short String prefix
+         which will be prepended to all newly generated package, class, field and method names. 
+         It is highly recommended that the prefix be very short so that it doesn't increase the bytecode size any more than necessary.
+         <p>
+         The functionality provided by the <b>legalIdentifiers</b> parameter is available only through the ZKM Script interface. 
+         If you specify <code>legalIdentifiers=false</code> then Zelix KlassMaster will use numeric identifiers which would not be legal in the Java language.
+         However, this could cause your bytecode to fail verification.
+         The parameter is provided only for backwards compatibility reasons.  
+         <b>It is recommended that you do NOT use this option</b>. 
+         <p>
+         The functionality provided by the <b>hideFieldNames</b> and <b>hideStaticMethodNames</b> parameters are available only through the ZKM Script interface. Prior to 
+         Zelix KlassMaster v2.3.1, field and static method names were hidden by default.  However, because of changes in the second edition of the 
+         Java Language Specification, the default was changed in Zelix KlassMaster v2.3.1 so that the names are not hidden. 
+         These parameters are provided to allow you to override the defaults for compatibility reasons.  
+         <b>It is recommended that you do NOT use this option.</b> 
+         <p>
+         The functionality provided by the <b>addCorruptInfo</b> parameter is available only through the ZKM Script interface.
+         When the option is set to
+         <b>"light"</b>, Zelix KlassMaster will add corrupt debugging information to 
+         every class which implements methods. Setting the parameter to <b>"heavy"</b> options results
+         in additional corrupt pool information being added to every class. This corrupt information can confuse or crash 
+         some decompilers.  
+         <p>
+         The <b>"light"</b> setting has
+         the following properties:
+         <ul>
+            <li>it crashed some early decompilers but is ineffective against the newer versions
+            <li>is easily removed by freely available utilities
+            <li>it didn't have any problems with the JDK 1.1 bytecode verifiers but is caught by the JDK 1.2 verifier
+         </ul>
+         The <b>"heavy"</b> setting has the following properties:
+         <ul>
+            <li>it used to crash most decompilers but is becoming increasingly ineffective
+            <li>it is harder to remove from the bytecode.
+            <li>it will not pass bytecode verification.
+            <li>it will not run on the Microsoft VM.
+         </ul>
+         <b>It is recommended that you do NOT use this option</b>. This is especially the case if there is any chance that
+         your bytecode must pass verification now or in the future. 
+         <p>
+         The <code>obfuscate</code> statement has useful defaults which are as follows:
+         <p>
+         <table border=1>
+            <tr>
+               <th>
+                  Omitted parameter
+               </th>
+               <th>
+                  Effect
+               </th>
+            </tr>
+            <tr>
+               <td>
+                  <code><b>changeLogFileOut</b></code>
+               </td>
+               <td>
+                  <code><b>changeLogFileOut="ChangeLog.txt"</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <code><b>aggressiveMethodRenaming</b></code>
+               </td>
+               <td>
+                  <code><b>aggressiveMethodRenaming=false</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <code><b>keepInnerClassInfo</b></code>
+               </td>
+               <td>
+                  <code><b>keepInnerClassInfo=false</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <code><b>keepGenericsInfo</b></code>
+               </td>
+               <td>
+                  <code><b>keepGenericsInfo=false</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <code><b>obfuscateFlow</b></code>
+               </td>
+               <td>
+                  <code><b>obfuscateFlow=light</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <code><b>encryptStringLiterals</b></code>
+               </td>
+               <td>
+                  <code><b>encryptStringLiterals=flowObfuscate</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <code><b>lineNumbers</b></code>
+               </td>
+               <td>
+                  <code><b>lineNumbers=delete</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <code><b>hideFieldNames</b></code>
+               </td>
+               <td>
+                  <code><b>hideFieldNames=false</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <code><b>hideStaticMethodNames</b></code>
+               </td>
+               <td>
+                  <code><b>hideStaticMethodNames=false</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <code><b>legalIdentifiers</b></code>
+               </td>
+               <td>
+                  <code><b>legalIdentifiers=true</b></code>
+               </td>
+            </tr>
+         </table>
+         <p>
+
+         <h2><a name="examples">Examples</a></h2>          
+<pre>
+obfuscate;                       //Obfuscate using the defaults
+
+obfuscate changeLogFileOut=""    //Don't write to a change log file
+          lineNumbers=scramble   //Scramble and keep the line number tables
+          obfuscateFlow=none;    //Don't obfuscate control flow
+
+obfuscate changeLogFileIn="ChangeLogIn.txt"   //Use ChangeLogIn.txt as the input change log
+          changeLogFileOut="ChangeLog.txt"    //Write to change log file ChangeLog.txt
+          obfuscateFlow=light                 //Light control flow obfuscation
+          encryptStringLiterals=flowObfuscate //Encrypt String literals using a flow obfuscated decrypt method
+          collapsePackagesWithDefault="foo"   //Collapse packages into package "foo"
+          newNamesPrefix="Z";                 //Prepend "Z" to every new obfuscated name
+
+          //Use ChangeLogIn0.txt and ChangeLogIn1.txt as loose input change logs
+obfuscate looseChangeLogFileIn="ChangeLogIn0.txt","ChangeLogIn1.txt"; 
+
+</pre>
+         <h2><a name="syntax"><a href="langZKMScript.html#notation">Syntax</a></a></h2> 
+         <table>
+            <tr>
+               <td>
+                  <code><b>"<u>obfuscate</u>"</b></code>
+               </td>
+               <td>
+                  <code><b>["<u>changeLogFileIn</u>" "=" "\"" changeLogFileNameIn "\"" ("," "\"" changeLogFileNameIn "\"")*]</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>
+               </td>
+               <td>
+                  <code><b>["<u>looseChangeLogFileIn</u>" "=" "\"" changeLogFileNameIn "\"" ("," "\"" changeLogFileNameIn "\"")*]</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>
+               </td>
+               <td>
+                  <code><b>["<u>changeLogFileOut</u>" "=" "\"" changeLogFileNameOut "\""]</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>
+               </td>
+               <td>
+                  <code><b>["<u>aggressiveMethodRenaming</u>" "=" ("<u>true</u>" | "<u>false</u>")]</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>
+               </td>
+               <td>
+                  <code><b>["<u>keepInnerClassInfo</u>" "=" ("<u>true</u>" | "<u>false</u> | "<u>ifNameNotObfuscated</u>")]</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>
+               </td>
+               <td>
+                  <code><b>["<u>keepGenericsInfo</u>" "=" ("<u>true</u>" | "<u>false</u>")]</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>
+               </td>
+               <td>
+                  <code><b>["<u>obfuscateFlow</u>" "=" ("<u>none</u>" | "<u>light</u>" | "<u>normal</u>" | "<u>aggressive</u>")]</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>
+               </td>
+               <td>
+                  <code><b>["<u>encryptStringLiterals</u>" "=" ("<u>none</u>" | "<u>normal</u>" | "<u>aggressive</u>" | "<u>flowObfuscate</u>")]</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>
+               </td>
+               <td>
+                  <code><b>["<u>collapsePackagesWithDefault=</u>" "=" "\"" somePackageName "\""</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>
+               </td>
+               <td>
+                  <code><b>["<u>lineNumbers</u>" "=" ("<u>delete</u>" | "<u>scramble</u>" | "<u>keep</u>")]</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>
+               </td>
+               <td>
+                  <code><b>["<u>newNamesPrefix=</u>" "=" "\"" someShortString "\""</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>
+               </td>
+               <td>
+                  <code><b>["<u>legalIdentifiers</u>" "=" ("<u>true</u>" | "<u>false</u>")]</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>
+               </td>
+               <td>
+                  <code><b>["<u>hideFieldNames</u>" "=" ("<u>true</u>" | "<u>false</u>")]</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>
+               </td>
+               <td>
+                  <code><b>["<u>hideStaticMethodNames</u>" "=" ("<u>true</u>" | "<u>false</u>")]</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>
+               </td>
+               <td>
+                  <code><b>["<u>addCorruptInfo</u>" "=" ("<u>light</u>" | "<u>heavy</u>")] ";"</b></code>
+               </td>
+            </tr>
+         </table>
+         <p>
+         Where 
+         <ul>
+            <li><i>changeLogFileNameIn</i> is the name of the existing change log file from which the previously used name mapping details are to be read.
+            <li><i>changeLogFileNameOut</i> is the name of the file to which the new change details are to be written.
+            <li><i>somePackageName</i> is the name of the package into which unexcluded packages should be collapsed. Can be "" to specify the Java default package.
+         </ul>
+
+     </td>
+   </tr>
+</table>
+</center>
+<hr>
+<center>
+<table>
+   <tr>
+      <td>
+          <a href=resetGroupingsStatement.html><img src=../images/larrw.gif alt="ZKM Script resetGroupings statement"></a>
+      </td>
+      <td>
+         <a href=langZKMScript.html><img src=../images/uarrw.gif alt="The ZKM Script Language"></a>
+      </td>
+      <td>
+         <a href=unobfuscateStatement.html><img src=../images/rarrw.gif alt="ZKM Script unobfuscate statement"></a>
+      </td>
+   </tr>
+</table>
+</center>
+Copyright &copy; 2005 <a href="mailto:WebMaster@zelix.com"><font size=-1>Zelix Pty Ltd</font></a> (ABN 47 078 740 093)
+</body>
+</html>

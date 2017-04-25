@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Configuring Clients for Use with File Servers</TITLE>
+<!--<file_server_configuration_dialog.html>-->
+<!--<control base="pvcs.vm.vmgui.VmGuiConfigureProjectDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Getting Started\nGetting Started for Admininstrators\nConfiguring Clients for Use with File Servers");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1>Configuring Clients for Use with File Servers</H1>
+<p>Once you have configured the file server and created path maps, you must enter the path(s) to the server(s) using the desktop client so all Version Manager clients know where the servers are located.</p>
+<p>Once you have saved a server configuration file, you can point each client system to it.</p>
+<p><b>To configure clients for use with file servers:</b></p>
+<ol><LI>Launch the desktop client.<BR><BR></LI>
+<LI>Select Admin | File Servers. The File Server Configuration dialog box appears.<BR><BR></LI>
+<li>
+Select a server in the <b>File Servers</b> list and do any of the following:<br><br>
+	<ul><LI>To reposition the selected server in the <b>File Servers</b> list, click the Up (<img src="../graphics/ldap_up_button.gif">) or Down (<img src="../graphics/ldap_down_button.gif">) arrow button. Version Manager searches starting from the top of this list. <BR><BR></LI>
+	<LI>To delete the selected server from the list, click the Delete (<img src="../graphics/vms_fsc_delete_button.gif">) button.<BR><BR></LI>
+	<LI>To add a server to the list, click the Add (<img src="../graphics/vms_fsc_add_button.gif">) button. The Add File Server URL dialog box appears.<br><br>
+<ol type="a" class="sub"><LI>Enter the name of the system hosting the server. For example, <FONT Class="syntax"><i>MyServer</i></FONT>. Optionally, you may specify a port. For example, <FONT Class="syntax"><i>MyServer</i>:<i>Port</i></FONT>. By default, port 8080 is used.<BR><BR></LI>
+<LI>Click <b>OK</b>.<BR><BR></LI></OL></LI>
+	<LI>To edit the URL of the selected server, click the Edit (<img src="../graphics/vms_fsc_edit_button.gif">) button. The Edit File Server URL dialog box appears.<br><br>
+<ol type="a" class="sub"><LI>Edit the URL in the <b>Name</b> field.<BR><BR></LI>
+<LI>Click <b>OK</b>.<BR><BR></LI></OL></LI>
+	<LI>To test the connection to the selected server, click the <b>Test</b> button.<BR><BR></LI>
+	</ul>
+</li>
+<LI>Enter a path and file name (<FONT Class="syntax">*.ini</FONT>) in which to store server configuration information in the <b>Store server configuration information in</b> field.<br><br>
+
+To ease configuration for all users, setup the list of servers then place the configuration file on a network where all users can access it. Then the users need only specify the shared location of the configuration file to automatically populate their own <b>File Servers</b> list.<BR><BR></LI>
+<LI>Click <b>OK</b>.<BR><BR></LI></ol>
+<p><b>NOTE</b> Once a user's system is configured, the user can open a server-based project database from the desktop client by selecting File | Open Project Database and then selecting <b>File Servers</b> from the <b>Look in</b> list.</p>
+
+<p><b>NOTE</b> The Version Manager File Server is an option during installation. It is administered via a servlet on the server. For detailed information, see the <i>Serena ChangeMan Version Manager Administrator's Guide</i> or the admin servlet help.</p>
+
+
+<h2>See Also</h2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="about_file_server.html">About the Version Manager File Server</A></TD>
+		<TD><A HREF="file_server_configuration_dialog.html">File Server Configuration Dialog Box</A></TD>
+	</tr>
+	<TR>
+        <TD><i>Serena ChangeMan Version Manager Administrator's Guide</i></TD>
+		<TD></TD>
+	</tr>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>
+

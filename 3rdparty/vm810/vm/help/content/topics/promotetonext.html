@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Promoting Versioned Files to the Next Group</TITLE>
+<!--<promotetonext.html>-->
+<!--<toc parent="working_with_promotion_models" label="Promoting Files to the Next Group" anchor="promotetonext" sortkey="08">-->
+<!--<index parent="promotion_groups" label="promoting files to the next group" anchor="promotetonext">-->
+<!--<index parent="files" label="promoting files to the next group" anchor="promotetonext">-->
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nUsing Promotion Models\nPromoting Files to the Next Group");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="promotetonext"></A>Promoting Versioned Files to the Next Group</H1>
+<P>Once a milestone in the project lifecycle is complete, you can promote revisions to the next group in the promotion hierarchy. This option enforces the promotion model hierarchy assigned to your project database.</p>
+<P>You can promote revisions to the next promotion group by selecting a revision, a single versioned file, multiple versioned files, a project, a folder, or a project database.</P>
+<H2>Using the System Default Options</H2>
+<p>Unless your Administrator changed the defaults for the project's configuration, when you promote a versioned file to the next level, Version Manager:</p>
+<ul>
+<li>Moves the file from the first development group to the next promotion group in the hierarchy.
+<li>Does not reassign a promotion group across branches.
+<LI>Does not include files in subprojects.
+</ul>
+<H2>To promote files to the next group:</H2>
+<OL>
+	<LI>Select the item you want to promote.<br><br>
+	<LI>Select Actions | Promotion Group | Promote. The Promote Group dialog box appears.<br><br>
+	<LI>Accept the defaults listed above and click OK, or do the following:<br><br>
+	<OL type =a>
+	<LI>To override the defaults on the General tab, edit any of the fields described below:<br><br>
+<TABLE  WIDTH="87%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+<tr>
+	<td><b>To...</b></td>
+	<td><b>Do this...</b></td>
+</tr>
+<tr>
+	<td>Choose the promotion group from which the item will be promoted</td>
+	<td>Select a promotion group from the <b>Promote From</b> list box.</td>
+</tr>
+<tr>
+	<td>Allow reassignment of a promotion group across branches</td>
+	<td>Select the <b>OK to move across branches</b> check box. Otherwise, the promotion will fail if a revision on another branch is already assigned the next highest promotion group.</td>
+</tr>
+<tr>
+	<td>Promote all files in all subprojects</td>
+	<td>Select the <b>Include files in subprojects</b> check box. This field is available only if the item you selected to promote is a project or project database.</td>
+</tr>
+</table><br><br>
+	<LI>To review the selected files:<br><br>
+<TABLE  WIDTH="87%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+<tr>
+	<td><b>To...</b></td>
+	<td><b>Do this...</b></td>
+</tr>
+<tr>
+	<td>View the items selected for promotion</td>
+	<td>Click the Selected Files tab.</td>
+</tr>
+<tr>
+	<td>View the properties of the items selected for promotion</td>
+	<td>Select the item and click the Properties button.</td>
+</tr>
+</table><br><br>
+	</OL>
+	<LI>Click OK. The selected project or files are promoted to the next level.
+
+</OL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>		<TD><A HREF="aboutprommodels.html">About Promotion Models</A></TD>
+		<TD><A HREF="assignpromotiongroup.html">Assigning Promotion Groups</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="changepromotiongroup.html">Changing Promotion Groups</A></TD>
+		<TD><A HREF="removepromotiongroup.html">Removing Promotion Groups</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

@@ -1,0 +1,105 @@
+/*
+ * Parabuild CI licenses this file to You under the LGPL 2.1
+ * (the "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *      https://www.gnu.org/licenses/lgpl-3.0.txt
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package org.parabuild.ci.versioncontrol.accurev;
+
+import java.io.IOException;
+
+import org.apache.log4j.Logger;
+
+import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.remote.Agent;
+
+/**
+ * Accurev update command. A workspace should be created before issuing an update command.
+ * <p/>
+ *
+ * @author Slava Imeshev
+ * @since Feb 12, 2009 8:50:04 PM
+ */
+final class AccurevChwsCommand extends AccurevCommand {
+
+  /**
+   * Logger.
+   *
+   * @noinspection UNUSED_SYMBOL,UnusedDeclaration
+   */
+  private static final Logger LOG = Logger.getLogger(AccurevChwsCommand.class); // NOPMD
+  private final String workspaceName;
+  private final String backingStream;
+  private final byte kind;
+  private final byte eolType;
+  private String storage;
+
+
+  /**
+   * accurev mkws -w <workspace-name> -b <backing-stream> -l <storage> [ -k <kind> ] [ -e <eol-type> ] [ -i ]
+   *
+   * @param storage
+   * @param backingStream
+   * @param agent
+   * @param parameters
+   * @param transactionNumber
+   * @throws IOException
+   */
+  AccurevChwsCommand(final Agent agent, final AccurevCommandParameters parameters,
+                     final String workspaceName, final byte kind, final byte eolType,
+                     final String storage, final String backingStream) throws IOException, AgentFailureException {
+    super(agent, parameters);
+    this.workspaceName = workspaceName;
+    this.kind = kind;
+    this.eolType = eolType;
+    this.storage = normalizeStorage(storage);
+    this.backingStream = backingStream;
+  }
+
+
+  private String normalizeStorage(final String storage) throws IOException, AgentFailureException {
+    if (agent.isWindows()) {
+      return storage.replace('/', '\\');
+    } else {
+      return storage.replace('\\', '/');
+    }
+  }
+
+
+  /**
+   * Requests changes in the reverse order of transactions.
+   */
+  protected void preExecute() throws IOException, AgentFailureException {
+    super.preExecute();
+    final StringBuffer cmd = new StringBuffer(200);
+    appendCommand(cmd, StringUtils.putIntoDoubleQuotes(getParameters().getExePath()));
+    appendCommand(cmd, "chws");
+    appendCommand(cmd, "-w", workspaceName);
+    appendCommand(cmd, "-b", backingStream);
+    appendCommand(cmd, "-l", storage);
+    appendCommand(cmd, toStringKind(kind));
+    appendCommand(cmd, toStringEolType(eolType));
+    setCommand(cmd.toString());
+    if (LOG.isDebugEnabled()) {
+      LOG.debug("cmd: " + cmd);
+    }
+  }
+
+
+  public String toString() {
+    return "AccurevMkwsCommand{" +
+            "workspaceName='" + workspaceName + '\'' +
+            ", kind=" + kind +
+            ", eolType=" + eolType +
+            ", storage='" + storage + '\'' +
+            '}';
+  }
+}

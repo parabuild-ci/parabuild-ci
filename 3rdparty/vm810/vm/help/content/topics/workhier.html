@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Understanding Workspace Hierarchies</TITLE>
+<!--<workhier.html>-->
+<!--<index parent="workspaces" label="workspace hierarchies" anchor="Understanding_Workspace_Hierarchies">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="Understanding_Workspace_Hierarchies"></A>Understanding Workspace Hierarchies</H1>
+
+<p>Workspaces are defined hierarchically, and they can be public or private. Workspaces are created by deriving a new workspace from an existing workspace. The <A HREF="rootworkspace.html">Root Workspace</a> is at the top of the hierarchy because when a new project database is created, it automatically has a Root Workspace. Public workspaces are derived from the Root Workspace or existing public workspaces, and private workspaces are derived from the Root Workspace, a public workspace, or another private workspace.
+<p>When a workspace is created, it inherits the workspace settings defined in the workspace from which it was derived, but its own workspace settings override any inherited settings.  
+
+<p>For example, there are three workspaces in the graphic below: Root Workspace,  
+Version 1.0-Developers, and myVersion 1.0. The Root Workspace is the original workspace. The public workspace, Version 1.0-Developers, was derived from the Root Workspace. The private workspace, myVersion 1.0, was derived from the public workspace.  
+
+<p><img src="../graphics/workspace1.gif">
+
+<p>The Administrator created the public workspace <i>Version 1.0-Developers</i> to be used by all of the Developers working in the Version 1.0 project database. This workspace inherits some basic settings from the Root workspace but it also overrides some of the workfile locations so that the work settings are  specific to where Developers work on the network. One of the Developers then created the private <i>myVersion 1.0</i> workspace. This private workspace can only be used by the Developer who created it;
+no one else has access to it or can even see it. The Developer created this private workspace so that she could use a workfile location on her local machine instead of using the public workfile location on the network.
+
+<p><b>Important:</b> If you do not modify a work setting in a workspace, the value of the work setting is updated each time the value is modified in the workspace from which it was derived. However, if you change a work setting and then modify the original workspace, the value is not updated in the workspace because the value is no longer inherited from the original workspace. 
+
+<p>For more information, refer to the <i>Serena ChangeMan Version Manager User's Guide</i> and the <i>Serena ChangeMan Version Manager Administrator's Guide</i>.
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="aboutworkspaces.html">About Workspaces</A></TD>
+		<TD><A HREF="publicprivate.html">About Public and Private Workspace</A></TD>
+	</tr>
+	<tr>
+		<TD><A HREF="rootworkspace.html">Using the Root Workspace</A></TD>
+		<TD><A HREF="public.html">Creating and Managing Multiple Public Workspaces</A></TD>
+	</tr>
+	<TR>
+		<TD><A HREF="createworkspaces.html">Creating Workspaces</A></TD>
+		<TD><A HREF="setworkspace.html">Setting Your Workspace</A></TD>
+	
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+
+</HTML>

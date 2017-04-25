@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='../stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Using Setuid in a Cross-Platform Environment</TITLE>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1>Using Setuid in a Cross-Platform Environment</H1>
+<P>Setuid may be available in a cross-platform environment depending on the method used to map files between UNIX and Windows.
+<h2>Using Setuid with Samba </h2>
+<p>Add or edit lines similar to the following in the Samba configuration file (usually SMB.CONF):</p>
+<p><FONT Class="syntax">[serenavm]<br>
+path = <i>VM_Path</i><br>
+force user = <i>VM_ID</i><br>
+force group = <i>VM_Group</i><br>
+read only = No</FONT></p>
+<p>Where:</p> 
+<ul><LI><FONT Class="syntax"><i>VM_Path</i></FONT> equals the location of the Version Manager project databases on the UNIX system.<BR><BR></LI> 
+<LI><FONT Class="syntax"><i>VM_ID</i></FONT> equals the UNIX ID under which Version Manager was installed on the UNIX system.<BR><BR></LI> 
+<LI><FONT Class="syntax"><i>VM_Group</i></FONT> equals the user group under which Version Manager was installed.<BR><BR></LI> </ul>
+<p><b>IMPORTANT!</b> You should install Version Manager using the same user ID you used for previous installations. Installing under a different user ID will most likely be incompatible with the permissions of existing archives in setuid mode.
+We suggest that you install Version Manager to UNIX as the user <b>pvcs</b> and that you make this user a member of a group named <b>pvcsgrp</b>.</p>
+
+<P><b>NOTE</b> This example works only for a specific share. For information on using these settings in the [global] section of the Samba configuration file, see the Samba documentation. </p>
+
+<h2>Using Setuid with NFS</h2>
+<p>If your NFS client does not allow mapping of user IDs and user groups, then you cannot use setuid on UNIX. To use setuid on UNIX, you must configure your NFS client to allow access by the VM_ID and VM_Group after authentication is complete. (As above, the VM_ID and VM_Group equal the ID and user group under which Version Manager was installed to UNIX.)</p>
+<p><b>IMPORTANT!</b> You should install Version Manager using the same user ID you used for previous installations. Installing under a different user ID will most likely be incompatible with the permissions of existing archives in setuid mode.
+We suggest that you install Version Manager to UNIX as the user <b>pvcs</b> and that you make this user a member of a group named <b>pvcsgrp</b>.</p>
+<p>See the documentation for your NFS client for information on mapping user IDs and groups. </p>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="archivelocation.html">Archive Locations</A></TD>
+		<TD></A></TD>
+	</TR>
+	</TABLE>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

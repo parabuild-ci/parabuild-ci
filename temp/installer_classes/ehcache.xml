@@ -1,0 +1,100 @@
+<ehcache>
+
+  <!-- Sets the path to the directory where cache .data files are created.
+
+       If the path is a Java System Property it is replaced by
+       its value in the running VM.
+
+       The following properties are translated:
+       user.home - User's home directory
+       user.dir - User's current working directory
+       java.io.tmpdir - Default temp file path -->
+  <diskStore path="java.io.tmpdir"/>
+  <defaultCache maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="300" timeToLiveSeconds="300" overflowToDisk="false"/>
+  <!-- System -->
+  <cache name="net.sf.hibernate.cache.UpdateTimestampsCache" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="300" timeToLiveSeconds="300" overflowToDisk="false"/>
+  <cache name="net.sf.hibernate.cache.StandardQueryCache" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="1200" timeToLiveSeconds="1200" overflowToDisk="false"/>
+  <!-- Product -->
+  <cache name="retention_cache" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="1800" timeToLiveSeconds="1800" overflowToDisk="false"/>
+  <cache name="system_configuration_cache" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="1800" timeToLiveSeconds="1800" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.BuildConfigAttribute" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.BuildChangeList" maxElementsInMemory="2000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="300" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.ActiveBuild" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="1200" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.ActiveBuildAttribute" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="1200" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.ActiveBuildConfig" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="1200" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.BuildRunConfig" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="1200" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.BuildConfig" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="1200" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.BuildRun" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.BuildRunAction" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.BuildRunAttribute" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.BuildRunDependence" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.BuildRunParticipant" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.BuildSequence" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.BuildWatcher" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.BranchChangeList" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.BranchBuildRunParticipant" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.Change" maxElementsInMemory="2000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="1200" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.ChangeList" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="1200" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.BuilderConfiguration" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="1200" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.AgentConfig" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="1200" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.Group" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.GroupBuildAccess" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.DisplayGroup" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.DisplayGroupBuild" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.Issue" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.IssueTracker" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.IssueTrackerProperty" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.LogConfig" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.LogConfigProperty" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.ManualStartParameter" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.MergeConfiguration" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.MergeConfigurationAttribute" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.Merge" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400"  timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.MergeChangeList" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.MergeSourceBuildRun" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.MergeTargetBuildRun" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.PublishedStepResult" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="300" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.Project" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="1200" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.ProjectBuild" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="1200" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.ProjectAttribute" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.PromotionPolicy" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.PromotionPolicyStep" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.PromotionStepDependency" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.ReleaseNote" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="300" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.ResultConfig" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.ResultGroup" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.BranchMergeConfiguration" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.ActiveMergeConfiguration" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.MergeServiceConfiguration" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.ProjectResultGroup" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.ResultGroupAccess" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.ResultConfigProperty" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.ScheduleItem" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.ScheduleProperty" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="1800" timeToLiveSeconds="1800" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.SourceControlSetting" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="1800" timeToLiveSeconds="1800" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.StepLog" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.StepRun" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.StepResult" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.SystemProperty" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.User" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.UserProperty" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.UserGroup" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.GlobalVCSUserMap" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.BuilderAgent" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.StartParameter" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <!-- Test stats -->
+  <cache name="org.parabuild.ci.object.TestSuiteName" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.TestCaseName" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.BuildRunTest" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <!-- Statistics -->
+  <cache name="org.parabuild.ci.object.HourlyStats" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.DailyStats" maxElementsInMemory="7300" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.MonthlyStats" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.YearlyStats" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.HourlyDistribution" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.WeekDayDistribution" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.HourlyTestStats" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.DailyTestStats" maxElementsInMemory="7300" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.MonthlyTestStats" maxElementsInMemory="240" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.YearlyTestStats" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+</ehcache>

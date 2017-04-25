@@ -1,0 +1,118 @@
+<!-- Copyright 2004 Zelix Pty Ltd (ABN 47 078 740 093) -->
+<html>
+<head>
+<title>Zelix KlassMaster - existingSerializedClasses statement</title>
+   <meta name="keywords" content="java obfuscator,java code obfuscator,obfuscation">
+   <meta name="description" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <meta name="classification" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <link rel=stylesheet href="../ZKM.css" TYPE="text/css">
+</head>
+<body background="../images/small-white-mist1.jpg" bgcolor="#E1E1E1">
+<center><a href="index.html"><img src=../images/ZKM_b4.gif alt="Zelix KlassMaster" width=264 height=62 border=0></a></center>
+<hr>
+<center>
+<table width=770 border=0>
+   <tr>
+      <td>
+         <h1>The <code>existingSerializedClasses</code> Statement</h1>
+         The ZKM Script <code>existingSerializedClasses</code> statement ensures that any changes made to the specified classes by subsequent 
+         Zelix KlassMaster <a href=trimStatement.html><code>trim</code></a> and 
+         <a href=obfuscateStatement.html><code>obfuscate</code></a> statements will not break already existing serialized objects
+         that are based upon the non-obfuscated class definition.          
+         For each class matched by the statement, Zelix KlassMaster will
+         <ul>
+            <li>add name exclusions for
+               <ol>
+                  <li>the fully qualified name of the class 
+                  <li>the name of every field contained or inherited by the class 
+                  <li>the fully qualified class name of the type of each non-primitive field contained or inherited by the class 
+              </ol>
+            <li>add a <code>serialVersionUID</code> field to the class (if it doesn't already exist) set to a value based upon the non-obfuscated class definition.
+         </ul> 
+         <p>
+         The statement has no impact in the case of specified classes that don't directly or indirectly implement <code>java.io.Serializable</code>.
+         Successive <code>existingSerializedClasses</code> statements (in the same script) <b>have a cumulative effect</b>. Once an existing serialized class 
+         has been specified the only way to remove the specification is with a <a href=resetExistingSerializedClassesStatement.html><code>resetExistingSerializedClasses</code></a> 
+         statement.
+         <ul>
+            <li><a href="#explanation">Explanation and Examples</a>
+            <li><a href="#syntax">Syntax</a>
+         </ul>
+
+         <h2><a name="explanation">Explanation and Examples</a></h2>
+         Put a little less formally (with mandatory components in bold), the syntax for a class exclusion parameter is: <br>
+         <code>&lt;classModifiers&gt; &lt;packageQualifiers&gt;.<b>&lt;className&gt;</b> &lt;extendsClause&gt; &lt;implementsClause&gt;<b>;</b></code>
+         <p>
+         For a class to be treated as a pre-existing serialized class, all of the following must be true:
+         <ul>
+           <li>The class's modifiers  (e.g. <code>public final</code>) must match all parameter modifiers. 
+               So if the parameters are <nobr><code>public abstract !interface</code></nobr> then the class must be 
+               <code>public</code>, <code>abstract</code> and NOT an interface to be excluded. 
+           <li>The class's package qualifiers must match any specified package exclude parameter component. If there is no
+               package exclude parameter component then the class must be in the default package.
+           <li>The class's unqualified name must match the parameter's class name specifier.
+           <li>If the parameter has an extends clause then the class must be a subclass of the specified class
+           <li>If the parameter has an implements clause then the class must directly or indirectly implement all of the specified interfaces
+         </ul>
+<pre>
+existingSerializedClasses pack2.Class1 and //Treat class pack2.Class1 as an existing serialized class
+                          pack3.*; //Treat all classes in package "pack3" as existing serialized classes
+ 
+</pre>
+
+         <h2><a name="syntax"><a href="langZKMScript.html#notation">Syntax</a></a></h2> 
+         <code><b>"<u>existingSerializedClasses</u>" classExcludeParameter ("<u>and</u>" classExcludeParameter )<sup>*</sup> ";"</b></code>
+         <p>
+         <code><b>classExcludeParameter ::=<br> 
+         &nbsp;&nbsp;&nbsp;[["!"] "<u>public</u>" | "<u>package</u>"] [["!"] "<u>abstract</u>"] [["!"] "<u>final</u>"] [["!"] "<u>interface</u>"]<br> 
+         &nbsp;&nbsp;&nbsp;[packageExcludeParameter] nameSpecifier [extendsClause] [implementsClause]</b></code>
+         <p>
+         <code><b>extendsClause ::= "<u>extends</u>" fullyQualifiedClassName</b></code><br>
+         <p>
+         <code><b>fullyQualifiedClassName ::= name ("." name)<sup>*</sup></b></code>
+         <p>
+         <code><b>implementsClause ::= "<u>implements</u>" fullyQualifiedClassName ("," fullyQualifiedClassName)<sup>*</sup></b></code><br>
+         <p>
+         <code><b>name ::= (["0"-"9","a"-"z","A"-"Z","$","_"])<sup>+</sup></b></code><br>
+         &nbsp;&nbsp;&nbsp;i.e. a Java identifer (e.g. a package, class, field or method name) with no wildcards allowed
+         <p>
+         <code><b>nameAndList ::= ["!"] "(" nameOrList ("&&" nameOrList)* ")"</b></code>
+         <p>
+         <code><b>nameOrList ::= nameSpecifier ("||" nameSpecifier)*</b></code>
+         <p>
+         <code><b>nameSpecifier ::= wildcardName | nameAndList</b></code>
+         <p>
+         <code><b>packageExcludeParameter ::= packageName | packageNameAndList</b></code>
+         <p>
+         <code><b>packageName ::= wildcardName ("." wildcardName)<sup>*</sup> "."</b></code><br>
+         &nbsp;&nbsp;&nbsp;NB: the final <code>"."</code> is part of the package name
+         <p>
+         <code><b>packageNameAndList ::= ["!"] "(" packageNameOrList ("&&" packageNameOrList)* ")"</b></code>
+         <p>
+         <code><b>packageNameOrList ::= packageExcludeParameter ("||" packageExcludeParameter)*</b></code>
+         <p>
+         <code><b>wildcardName ::= (["*","0"-"9","a"-"z","A"-"Z","$","_"])<sup>+</sup></b></code><br>
+         &nbsp;&nbsp;&nbsp;i.e. a Java identifer (e.g. a package, class, field or method name) with the "*" wildcard allowed
+      </td>
+   </tr>
+</table>
+</center>
+<hr>
+<center>
+<table>
+   <tr>
+      <td>
+         <a href=resetStringEncryptionExclusionsStatement.html><img src=../images/larrw.gif alt="ZKM Script resetStringEncryptionExclusions statement"></a>
+      </td>
+      <td>
+         <a href=langZKMScript.html><img src=../images/uarrw.gif alt="The ZKM Script Language"></a>
+      </td>
+      <td>
+          <a href=resetExistingSerializedClassesStatement.html><img src=../images/rarrw.gif alt="ZKM Script resetExistingSerializedClasses statement"></a>
+     </td>
+   </tr>
+</table>
+</center>
+Copyright &copy; 2003 <a href="mailto:WebMaster@zelix.com"><font size=-1>Zelix Pty Ltd</font></a> (ABN 47 078 740 093)
+</body>
+</html>

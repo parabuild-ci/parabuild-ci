@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>About Defining a Promotion Model</TITLE>
+<!--<aboutdefiningpromo.html>-->
+<!--<index parent="promotion_groups" label="about defining" anchor="aboutdefiningpromomodel">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="aboutdefiningpromomodel"></A>About Defining a Promotion Model</H1>
+<P>Before you define a promotion model, verify the following:
+<ul>
+<li type="disc">You have been assigned the Configure Project privilege. See <A HREF="privilegetables.html">Privileges</A> for more information.
+<li>The project or project database for which you are defining the promotion model has a configuration file. If not, you must <a href="setconfigoptions.html">set the configuration options for the project or project database</a>.
+<li>If you are defining a promotion model in a project or subproject, the master configuration file must not disallow the Promote option (directive). 
+</ul>
+<h2>Defining Multiple Promotion Models in a Project Database</h2>
+<p>The definition of a promotion model can span multiple configuration files. Portions of the promotion model can be defined in both the <A HREF="masterconfigfiles.html">master configuration file</A> (associated with a project database) and project <A HREF="aboutconfigfiles.html">configuration files</A> (associated with a project). </P>
+<P>When a promotion model is defined in multiple configuration files, the definitions are combined; the promotion model definition in the project configuration file does not override the promotion model definition in the master configuration file. Note that conflicts between the promotion models defined in each configuration file will invalidate the promotion model.
+<P>Two examples of conflicting promotion models are presented: in the first example, the configuration files contradict each other by specifying two different lowest-level promotion group. In the second example, although the two configuration files specify the same lowest-level promotion group, a conflict occurs because the second configuration file tells the lowest-level promotion group to promote to a group other than the one specified in the first configuration file.
+<p>In the first example, you define the following promotion model in the master configuration file:</P>
+<UL><P><b>Dev <img src="../graphics/arrowheadr.gif" width="9" height="9" border="0"> QA <img src="../graphics/arrowheadr.gif" width="9" height="9" border="0"> Production</b></Ul>
+<P>and in the project configuration file, you define the following promotion model: 
+<UL><P><b>Dev1 <img src="../graphics/arrowheadr.gif" width="9" height="9" border="0"> QA</b></ul>
+<P>In this case, the promotion model is invalid because two different lowest-level promotion groups, Dev and Dev1, each promote to QA. (QA promotes to Production, which you defined in the master configuration file.) If a definition conflicts, the promotion model becomes invalid, and you must correct the configuration (by removing the conflict) before opening the project. It is important that when you combine models from multiple configuration files that you avoid conflicts between the definitions. 
+<P>In the second example, if the promotion model in the master configuration file is:
+<UL><P><b>Dev <img src="../graphics/arrowheadr.gif" width="9" height="9" border="0"> QA <img src="../graphics/arrowheadr.gif" width="9" height="9" border="0">  Production</b>, you could not define the promotion model in a project or subproject configuration file as:
+<P><b>Dev <img src="../graphics/arrowheadr.gif" width="9" height="9" border="0"> Production</b><BR></ul>
+<P>because the conflicting promotion definition tells Version Manager conflicting things: first that Dev promotes to QA and second that Dev promotes to Production.</P>
+<h2>How the Desktop Client Displays Multiple Promotion Models</h2>
+<P>The Configure Project dialog box (Admin | Configure Project) displays the promotion model corresponding to the project database or project selected in the Project pane. If there is a hierarchy of projects, each defined with a promotion model, the display combines the promotion groups in each promotion model. For example, if you selected the project database, the promotion model displayed would only show the promotion groups defined in the project database. However, if you selected a project within the project database, the promotion model displayed would include the promotion groups defined in the project database and in the project.
+<p>Using the previous example, the Configure Project dialog box would display the following if you selected the project database (master configuration file):
+<P><IMG SRC="../graphics/promode1.gif" BORDER="0"><BR>
+<P>If you selected the project, the Configure Project dialog box would display the promotion model defined in the project database and the promotion model defined in the project:
+<P><IMG SRC="../graphics/promode0.gif" BORDER="0"><BR>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+<TR>
+	<TD><A HREF="prommodelrules.html">Rules Governing Promotion Models</A></TD>
+	<TD><A HREF="definingpromomodel.html">Defining a Promotion Model</A></TD>
+</TR>
+<TR>
+	<TD><A HREF="promotionlifecyclemgt.html">Promotion and Lifecycle Management</A></TD>
+<TD><A HREF="aboutprommodels.html">About Promotion Models</A></TD>
+</TR>
+<TR>
+	<TD><A HREF="configureoverview.html">Configuring Project and Project Databases</A></TD>
+	<TD><A HREF="prom_pardev.html">Promotion and Parallel Development</A></TD>
+</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

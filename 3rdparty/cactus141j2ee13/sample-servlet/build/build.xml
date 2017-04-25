@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE project [
+    <!ENTITY build-share SYSTEM "file:./build-share.xml">
+    <!ENTITY build-tests-resin-20 SYSTEM "file:./build-tests-resin-20.xml">
+    <!ENTITY build-tests-resin-13 SYSTEM "file:./build-tests-resin-13.xml">
+    <!ENTITY build-tests-orion-14 SYSTEM "file:./build-tests-orion-14.xml">
+    <!ENTITY build-tests-orion-15 SYSTEM "file:./build-tests-orion-15.xml">
+    <!ENTITY build-tests-orion-16 SYSTEM "file:./build-tests-orion-16.xml">
+    <!ENTITY build-tests-tomcat-40 SYSTEM "file:./build-tests-tomcat-40.xml">
+    <!ENTITY build-tests-weblogic-61 SYSTEM "file:./build-tests-weblogic-61.xml">
+    <!ENTITY build-tests-weblogic-70 SYSTEM "file:./build-tests-weblogic-70.xml">
+]>
+
+<!--
+  =============================================================================
+    Build file for the Cactus Servlet Sample subproject (it shows how to use
+    Cactus for unit testing the Servlet API : Servlets, Fitlers, Taglibs).
+
+    The following Ant tasks need to be available in your ant installation (i.e.
+    the Ant task themselves and their dependent jars need to be put in
+    ANT_HOME/lib) :
+
+        junit                  [REQUIRED] JUnit Ant task
+
+    The following properties need to be set in either a ./build.properties or
+    a ${user.home}/build.properties one or in a calling Ant script :
+
+        cactus.framework.jar   [REQUIRED] Cactus framework jar
+
+        cactus.ant.jar         [REQUIRED] Cactus custom Ant tasks jar
+
+        cactus.framework.web   [REQUIRED] Cactus framework web files location
+                               (JSP Redirector)
+
+        servlet.jar            [REQUIRED] The location of the Servlet API 2.3
+                               jar.
+
+        aspectjrt.jar          [REQUIRED] The location of the AspectJ runtime
+                               jar.
+
+        junit.jar              [REQUIRED] The location of the JUnit jar
+
+        commons.httpclient.jar [REQUIRED] The location of the Commons
+                               Httpclient jar.
+
+        httpunit.jar           [REQUIRED] The location of the HttpUnit jar.
+
+        log4j.jar              [OPTIONAL] The location of the Log4j jar.
+
+        test.port              [OPTIONAL] The port that should be used for
+                               starting the servers during unit testing. This
+                               should be used not to interfere with other
+                               running servers. The default is 8080. This
+                               property is used when running the test target
+
+    Additionally and depending on the servlet engines whith which you wish to
+    run your tests, you'll need to set the following kind of properties
+    (see build.properties.sample) :
+
+        <server name>.home.<version>
+
+    Example: For Resin 2.0, you'll need to have a "resin.home.20" property
+    defined and pointing to the location where Resin 2.0 is installed.
+
+    This script should be started with the following command line :
+
+        ant <target>
+
+    Run "ant -projecthelp" to get a list of available targets. The default
+    target is "dist"
+  =============================================================================
+-->
+<project name="Cactus Servlet Sample for Servlet API 2.3" default="dist"
+    basedir="..">
+
+    &build-share;
+
+    <!--
+       ========================================================================
+         Run all Cactus tests for Servlet API 2.3
+       ========================================================================
+    -->
+    <target name="test.all"
+        depends="test.resin.20,test.resin.13,test.tomcat.40,test.orion.14,test.orion.15,test.orion.16,test.weblogic.61,test.weblogic.70"
+        description="Run tests on all defined containers">
+    </target>
+
+    &build-tests-resin-20;
+    &build-tests-resin-13;
+    &build-tests-orion-14;
+    &build-tests-orion-15;
+    &build-tests-orion-16;
+    &build-tests-tomcat-40;
+    &build-tests-weblogic-61;
+    &build-tests-weblogic-70;
+
+</project>

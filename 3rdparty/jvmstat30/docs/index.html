@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
+	<TITLE>jvmstat</TITLE>
+	<META NAME="GENERATOR" CONTENT="StarOffice 6.0  (Solaris Sparc)">
+	<META NAME="AUTHOR" CONTENT="Brian Doherty">
+	<META NAME="CREATED" CONTENT="20010711;8551800">
+	<META NAME="CHANGED" CONTENT="20020805;12215600">
+</HEAD>
+<BODY LANG="en-US" BGCOLOR="#ffffff">
+<H1 ALIGN=CENTER><FONT FACE="Helvetica, sans-serif">jvmstat</FONT></H1>
+<H1><FONT FACE="Helvetica, sans-serif"><FONT SIZE=4 STYLE="font-size: 16pt">Introduction</FONT></FONT></H1>
+<P ALIGN=LEFT STYLE="margin-left: 2cm"><FONT FACE="Helvetica, sans-serif">The
+jvmstat technology adds light weight performance and configuration
+instrumentation to the HotSpot JVM and provides a set of monitoring APIs
+and tools for monitoring the performance of the HotSpot JVM in production
+environments. The instrumentation is designed such that it is 'always on',
+yet has negligible performance impact. The monitoring interfaces added
+to the HotSpot JVM are proprietary and may or may not be supported in
+future versions of the HotSpot JVM. </FONT>
+</P>
+<H1><FONT FACE="Helvetica, sans-serif"><FONT SIZE=4 STYLE="font-size: 16pt">Availability</FONT></FONT></H1>
+<P STYLE="margin-left: 2cm"><FONT FACE="Helvetica, sans-serif">The
+instrumented HotSpot JVM ships with J2SE 1.4.2 and later, providing always-on
+instrumentation. The HotSpot JVM, verion 1.4.1, also includes the
+the instrumentation, but it must be enabled with the -XX:+UsePerfData
+flag. 
+</FONT>
+</P>
+<P STYLE="margin-left: 2cm"><FONT FACE="Helvetica, sans-serif">As
+of J2SE 5.0 and later, a subset of the jvmstat tools is included with
+the JDK. The tools include are:
+<dl>
+	<dl>
+		<dd>
+		<table WIDTH=259 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+			<col WIDTH=50>
+
+			<col WIDTH=200>
+			<tr>
+				<td WIDTH=50>
+					<p ALIGN=LEFT>jps</p>
+				</td>
+				<td WIDTH=100>
+					<p ALIGN=LEFT>- formerly jvmps</p>
+				</td>
+
+                        </tr>
+			<tr>
+				<td WIDTH=50>
+					<p ALIGN=LEFT>jstat</p>
+				</td>
+				<td WIDTH=100>
+					<p ALIGN=LEFT>- formerly jvmstat</p>
+				</td>
+
+                        </tr>
+			<tr>
+				<td WIDTH=50>
+					<p ALIGN=LEFT>jstatd</p>
+				</td>
+				<td WIDTH=100>
+					<p ALIGN=LEFT>- formerly perfagent</p>
+				</td>
+
+                        </tr>
+		</table>
+	</dl>
+</dl>
+</FONT>
+</P>
+<P STYLE="margin-left: 2cm"><FONT FACE="Helvetica, sans-serif">The
+<b>visualgc</b> tool is not included with the J2SE 5.0 distribution,
+but is instead provided in this unbundled jvmstat 3.0 distribution.
+</FONT>
+</P>
+<P STYLE="margin-left: 2cm"><FONT FACE="Helvetica, sans-serif">
+The jvmstat tools included with J2SE 5.0, and the <b>visualgc</b>
+tool included with the jvmstat 3.0 distribution, are capable of
+monitoring Java applications running on HotSpot 1.4.1 and later JVMs.
+Only this distribution and a J2SE 5.0 JDK are needed to monitor any
+version of an instrumented HotSpot JVM. Therefore, jvmstat versions
+1.1 and 2.0 will be discontinued.
+</FONT>
+</P>
+<P STYLE="margin-left: 2cm"><FONT FACE="Helvetica, sans-serif">Some
+features of the jvmstat tools require the existance of specific counter
+instances in the HotSpot JVM. Older HotSpot JVMs may not contain these
+specific counters. When encountering an older JVM, some features of
+the jvmstat tools may be disabled or warning messages may be issued.
+</FONT>
+</P>
+<H1><FONT FACE="Helvetica, sans-serif"><FONT SIZE=4 STYLE="font-size: 16pt">Installation</FONT></FONT></H1>
+<P ALIGN=LEFT STYLE="margin-left: 2cm"><FONT FACE="Helvetica, sans-serif">
+This distribution of the jvmstat tools requires J2SE 1.5.0 with the HotSpot
+JVM. Before configuring and using the jvmstat tools, first
+<A HREF="http://java.sun.com/j2se/1.5.0/download.html">download
+and install J2SE 5.0 (1.5.0)</A> for your operating environment.
+You must choose the JDK distribution as the class files needed by the
+monitoring tools are not included with the JRE. Once you have a working
+J2SE 5.0 installation, you are ready to install the jvmstat distribution.
+Follow the platform specific instructions for
+<A HREF="install/solaris.html">UNIX platforms</A> and
+<A HREF="install/windows.html">Windows platforms</A>.
+</FONT></P>
+<H1><FONT FACE="Helvetica, sans-serif"><FONT SIZE=4 STYLE="font-size: 16pt">Tools</FONT></FONT></H1>
+<P STYLE="margin-left: 2cm"><FONT FACE="Helvetica, sans-serif">The
+jvmstat 3.0 distribution includes the following tools:</FONT></P>
+<DL>
+	<DL>
+		<DL>
+			<DD>
+			<TABLE WIDTH=615 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+				<COL WIDTH=131>
+				<COL WIDTH=468>
+				<TR VALIGN=TOP>
+					<TD WIDTH=131>
+						<P><FONT FACE="Helvetica, sans-serif">visualgc</FONT></P>
+					</TD>
+					<TD WIDTH=468>
+						<P><FONT FACE="Helvetica, sans-serif">A tool to graphically
+						display instrumentation</FONT></P>
+					</TD>
+				</TR>
+			</TABLE>
+		</DL>
+	</DL>
+</DL>
+<P STYLE="margin-left: 2cm; margin-right: 2cm">
+</P>
+<P STYLE="margin-left: 2cm; margin-right: 2cm"><FONT FACE="Helvetica, sans-serif">Please
+see the </FONT><A HREF="tooldocs/tools.html"><FONT FACE="Helvetica, sans-serif">Tool
+Documentation</FONT></A><FONT FACE="Helvetica, sans-serif"> page for
+more details on these tools.</FONT></P>
+<H1><FONT FACE="Helvetica, sans-serif"><FONT SIZE=4 STYLE="font-size: 16pt">Instrumentation</FONT></FONT></H1>
+<P STYLE="margin-left: 2cm"><FONT FACE="Helvetica, sans-serif">The
+instrumented HotSpot JVM exports a set of instrumentation objects, or
+counters as they are typically called. The set of counters exported
+by a JVM is not static, as a JVM may create certain counters only
+when appropriate arguments are specified on the command line.
+Furthermore, different versions of a JVM may export very different
+sets of instrumentation.  The names of these counters and the
+data structures used to represent them are considered private,
+uncommitted interfaces to the HotSpot JVM. Users should not become
+dependent on any counter names, particularly those that start with
+prefixes other than <i>"java."</i>.
+</FONT>
+</P>
+<H1><FONT FACE="Helvetica, sans-serif"><FONT SIZE=4 STYLE="font-size: 16pt">Support</FONT></FONT></H1>
+<P STYLE="margin-left: 2cm"><FONT FACE="Helvetica, sans-serif">
+The jvmstat tools are officially unsupported. If you are expericencing
+a problem, please check the <A HREF="http://developers.sun.com/dev/coolstuff/jvmstat/faq.html">jvmstat FAQ</a>
+for solutions. If you are still experiencing problems, or have additional
+questions, please send an email to</FONT>
+<A HREF="mailto:jvmstat-support@sun.com">
+<FONT FACE="Helvetica, sans-serif">jvmstat-support@sun.com</FONT></A>
+<FONT FACE="Helvetica, sans-serif">.</FONT>
+</P>
+</BODY>
+</HTML>

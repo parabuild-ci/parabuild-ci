@@ -1,0 +1,8 @@
+#------------------------------------------------------------
+# HotSpot Java VM performance data
+0       belong          0xcafec0c0      HotSpot Java VM performance data file
+>4      byte    0                               big-endian
+>4      byte    1                               little_endian
+>5      byte    >0                              version %d.
+>6      byte    0                               \b%d
+>6      byte    >0                              \b%d

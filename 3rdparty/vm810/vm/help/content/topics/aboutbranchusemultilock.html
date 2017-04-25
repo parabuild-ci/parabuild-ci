@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>About Branching Using Multiple Locks</TITLE>
+<!--<aboutmultilockbranchsetup.html>-->
+<!--<index parent="branching" label="setting up multiple locks for" anchor="aboutbranchusemultilock">-->
+<!--<index parent="configuring" label="multiple locks for branching" anchor="aboutbranchusemultilock">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="aboutbranchusemultilock"></A>About Branching Using Multiple Locks</H1>
+<P>Multiple locking is designed for groups who maintain parallel development paths (branches). You can set configuration options to allow:</P>
+<uL>
+	<LI>Multiple locks on a single revision (multiple locks per revision)
+	<LI>A single user to lock multiple revisions in an archive (multiple locks per user)
+</uL>
+<p>Multiple locks simplify the creation of branches. If multiple locks per revision is enabled, different users can lock the same revision. The first user who locks the revision reserves the primary lock on the revision. The other users who have the revision locked must check in their revisions as branches. Use this option if a user wants to create a branch from a revision that another user is working on; for example, if one user is working on a trunk revision, and another user is working on a branch from that revision.</p>
+<p>If multiple locks per user is enabled, the same user can lock more than one revision in an archive. Use this option if one user is working on two or more different lines of development of a file; for example, if the same user is working on a trunk and a branch revision of a file.</p>
+<p>You can also use both options simultaneously if several users are working on the same two lines of development. </p>
+<p>When you are ready to check in a file and a revision has been locked more than once, Version Manager creates a new branch unless you were the first person to create the lock. Before it creates the branch, it displays the revision numbers of the locked revisions and prompts you to specify the lock you have reserved. Version Manager then checks in your revision as a branch.</p>
+<p>To set up multiple locks, you must have the Configure Project privilege assigned to you, your project database or project must have a configuration file associated with it, and if you are setting up multiple locks in a project, the master configuration file must allow the following two Locking options (directives): Locks Allowed on Each Revision and Locks Allowed by Each User. See <A HREF="setlockingoptions.html">Setting Locking Options</A> for information on  configuring locking options.</p>
+
+<p>See <A HREF="changeattributes.html">Changing the Attributes of Existing Archives</A> to set up multiple locks for existing archives.</p>
+
+<p><b>NOTE</b>  After you have set multiple locking for all archives of a project, you can disallow multiple locking for some archives of a project using Admin | Archive Attributes, setting <b>Exclusive Lock</b> to <b>Yes</b> on the General tab.</p>
+
+<p>To ensure that users cannot change settings for multiple locks, disallow the Locking options in the master configuration file.</p>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="multilockbranchsetup.html">Setting Up Multiple Locks for Branching</A></TD>
+		<TD><A HREF="branchfile.html">Branching Files</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="aboutbranching.html">About Branching</A></TD>
+		<TD><A HREF="setautobranch.html">Setting Up Automatic Branching</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="autobranch.html">About Automatic Branching</A></TD>
+		<TD><A HREF="changeattributes.html">Changing Archive Attributes</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

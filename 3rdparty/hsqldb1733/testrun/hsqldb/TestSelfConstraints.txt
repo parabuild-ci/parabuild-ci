@@ -1,0 +1,18 @@
+--
+-- TestSelfConstraints.txt
+--
+-- Tests for Constraints
+-- bug #733940
+-- NOT NULL enforcement
+-- IDENTITY can be set to NULL to be regenerated but other NOT NULL columns can't
+CREATE CACHED TABLE THEME (idTheme integer NOT NULL IDENTITY,libelle VARCHAR NOT NULL,description VARCHAR);
+insert into theme(libelle, description) values('ESSAI', 'ESSAI');
+/*e*/update theme set libelle = null where idtheme = 0;
+/*u1*/update theme set idTheme = null where idtheme = 0;
+
+-- bug #722442
+create table confignodetype (cnt_nodetypeid numeric(10) not null primary key,
+ cnt_parentid numeric(10) not null,cnt_name varchar(40) not null,
+ constraint fk_cnt_parentid foreign key (cnt_parentid)
+ references confignodetype(cnt_nodetypeid));
+/*u1*/INSERT INTO confignodetype VALUES (-1,-1,'prj');

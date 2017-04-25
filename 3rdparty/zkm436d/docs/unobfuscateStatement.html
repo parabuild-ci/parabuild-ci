@@ -1,0 +1,171 @@
+<!-- Copyright 2003 Zelix Pty Ltd (ABN 47 078 740 093) -->
+<html>
+<head>
+<title>Zelix KlassMaster - unobfuscate statement</title>
+   <meta name="keywords" content="java obfuscator,java code obfuscator,obfuscation">
+   <meta name="description" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <meta name="classification" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <link rel=stylesheet href="../ZKM.css" TYPE="text/css">
+</head>
+<body background="../images/small-white-mist1.jpg" bgcolor="#E1E1E1">
+<center><a href="index.html"><img src=../images/ZKM_b4.gif alt="Zelix KlassMaster" width=264 height=62 border=0></a></center>
+<hr>
+<center>
+<table width=770 border=0>
+   <tr>
+      <td>
+         <h1>The <code>unobfuscate</code> Statement</h1>
+         <b>Please note that the <code>unobfuscate</code> statement is obsolete and it will eventually be removed from the ZKM Script language.</b>
+         <p>
+         The ZKM Script <code>unobfuscate</code> statement unobfuscates all opened classes. Unobfuscation involves
+         changing the names of packages, classes, fields and methods that have not been excluded by a 
+         preceding <a href=excludeStatement.html><code>exclude</code> statement</a> so that they are Java
+         legal and meaningful.
+         However, the <code>unobfuscate</code> statement will not unencrypt String literals encrypted with Zelix KlassMaster nor will it reverse 
+         Zelix KlassMaster's flow obfuscation.  
+         <p> 
+         The remainder of this page is organized into the following sections.
+         <ul>
+            <li><a href="#explanation">Explanation</a>
+            <li><a href="#examples">Examples</a>
+            <li><a href="#syntax">Syntax</a>
+         </ul>
+
+         <h2><a name="explanation">Explanation</a></h2>          
+         <h3>Derive subclass names from the superclass name</h3>
+         By default, Zelix KlassMaster unobfuscates class names to Class<em><font size=+1>n</font></em> or 
+         Interface<em><font size=+1>n</font></em> where <em><font size=+1>n</font></em> is some integer.
+         If the <b>"deriveSubclassNamesFromSuperclass"</b> parameter is set to <code>true</code> then the unobfuscated 
+         subclass names will reflect the name of their superclasses except where the superclass is java.lang.Object. 
+         For example, if there were two classes with
+         <ul>
+            <li>one class being a subclass of <code>java.util.Observable</code> and
+            <li>the other being a subclass of the first
+         </ul>
+         then the unobfuscated names would be
+         <ul>
+            <li><code>Observable_Sub1</code> and
+            <li><code>Observable_Sub1_Sub1</code>.
+         </ul>
+         Selecting this option makes the unobfuscated class names more meaningful but it can also make then rather
+         unwieldly when inheritance hierarchies are several levels deep.
+        
+         <h3>Keep inner class information</h3>
+         The JDK 1.1 introduced inner classes. At the level of the bytecode, inner classes are distinguished by the 
+         structure of their names and by the presence of a few attributes. This inner class information is not critical
+         to the running of your bytecode. It is provided for the use of debuggers and similar utilities.
+         <p>
+         If you set the <b>"keepInnerClassInfo"</b> parameter to <code>true</code> then Zelix KlassMaster will retain this
+         inner class information. You can select this option if you are confident that the obfuscated classes 
+         contain valid inner classes information. If there is no inner class information then the options has no
+         effect.
+
+         <h3>Defaults</h3>
+         The <code>unobfuscate</code> statement has useful defaults which are as follows:
+         <p>
+         <table border=1>
+            <tr>
+               <th>
+                  Omitted parameter
+               </th>
+               <th>
+                  Effect
+               </th>
+            </tr>
+            <tr>
+               <td>
+                  <code><b>changeLogFileOut</b></code>
+               </td>
+               <td>
+                  <code><b>changeLogFileOut="ChangeLog.txt"</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <code><b>keepInnerClassInfo</b></code>
+               </td>
+               <td>
+                  <code><b>keepInnerClassInfo=false</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <code><b>deriveSubclassNamesFromSuperclass</b></code>
+               </td>
+               <td>
+                  <code><b>deriveSubclassNamesFromSuperclass=true</b></code>
+               </td>
+            </tr>
+         </table>
+         <p>
+
+         <h2><a name="examples">Examples</a></h2>          
+<pre>
+unobfuscate;                                          //Unobfuscate using the defaults
+
+unobfuscate changeLogFileOut=""                       //Don't write to a change log file
+            keepInnerClassInfo=true                   //Retain any inner class information
+            deriveSubclassNamesFromSuperclass=false;  //Use simple class names
+</pre>
+
+         <h2><a name="syntax"><a href="langZKMScript.html#notation">Syntax</a></a></h2> 
+         <table>
+            <tr>
+               <td>
+                  <code><b>"<u>unobfuscate</u>"</b></code>
+               </td>
+               <td>
+                  <code><b>["<u>changeLogFileIn</u>" "=" "\"" changeLogFileNameIn "\""]</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>
+               </td>
+               <td>
+                  <code><b>["<u>changeLogFileOut</u>" "=" "\"" changeLogFileNameOut "\""]</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>
+               </td>
+               <td>
+                  <code><b>["<u>keepInnerClassInfo</u>" "=" ("<u>true</u>" | "<u>false</u>")]</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>
+               </td>
+               <td>
+                  <code><b>["<u>deriveSubclassNamesFromSuperclass</u>" "=" ("<u>true</u>" | "<u>false</u>")]</b></code>
+               </td>
+            </tr>
+         </table>
+         <p>
+         Where 
+         <ul>
+            <li><code>changeLogFileNameIn</code> is the name of the existing change log file from which the previously used name mapping details are to be read.
+            <li><code>changeLogFileNameOut</code> is the name of the file to which the new change details are to be written.
+         </ul>
+     </td>
+   </tr>
+</table>
+</center>
+<hr>
+<center>
+<table>
+   <tr>
+      <td>
+         <a href=obfuscateStatement.html><img src=../images/larrw.gif alt="ZKM Script obfuscate statement"></a>
+      </td>
+      <td>
+         <a href=langZKMScript.html><img src=../images/uarrw.gif alt="The ZKM Script Language"></a>
+      </td>
+      <td>
+         <a href=saveAllStatement.html><img src=../images/rarrw.gif alt="ZKM Script saveAll statement"></a>
+      </td>
+   </tr>
+</table>
+</center>
+Copyright &copy; 2003 <a href="mailto:WebMaster@zelix.com"><font size=-1>Zelix Pty Ltd</font></a> (ABN 47 078 740 093)
+</body>
+</html>

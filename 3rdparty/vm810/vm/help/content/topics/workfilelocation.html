@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Workfile Locations</TITLE>
+<!--<workfilelocation.html>-->
+<!--<index parent="workfiles" label="location" anchor="workfilelocation">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="workfilelocation"></A>Workfile Locations</H1>
+<P>
+A workfile location is the location where Serena ChangeMan Version Manager places a revision checked out of an archive. You specify a  workfile location when you create a project database. When you check out a revision, it becomes a workfile.
+</P>
+<P>
+Each project within a project database, also, has a workfile location. For example, c:\prjdb\work\project1, c:\prjdb\work\project2, and so forth.
+</P>
+<P>
+The workfile locations of a project database and its projects are stored in a <a href="aboutworkspaces.html">workspace</a>. Workspaces can be either for public use or private use. A default public workspace (called the Root Workspace) is created for each project database.
+</P>
+<P>
+As the Administrator, you can create other public workspaces and override the original workfile locations. For example, you could create public workspaces that define the workfile locations to be on a networked file system to which all authorized users have access. By doing this, you can be assured that the default workfile locations are ones that users can access. Users can then create private workspaces that change the workfile locations to their local hard drive so that they can work on the files locally. Or, you can specify a common local drive as the default workfile location (for example, C: in Windows).
+</P>
+<P>
+If you are setting up a project for files that already exist, typically, you would define the workfile locations to be the directories in which the existing files reside.
+</P>
+<P>
+Workfile locations can contain $HOME at the root of their paths (for example, on UNIX, $HOME/work could expand to /usrs/cherylc/work). Version Manager substitutes the value of the HOME environment variable to compute the workfile location. The use of $HOME allows you to define a path that is automatically individualized for your users according to the value of their HOME environment variable.
+</P>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

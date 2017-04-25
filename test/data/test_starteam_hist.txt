@@ -1,0 +1,48 @@
+Folder: test_project  (working dir: D:\projectory\test_starteam)
+History for: test_cvs_change_log_with_outside_branch.txt
+Description: Initial add
+Locked by: 
+Status: Current
+----------------------------
+Revision: 2 View: test_project Branch Revision: 1.1
+Author: Test User Date: 3/6/06 1:06:59 AM PST
+Added empty lines to add a revision
+
+----------------------------
+Revision: 1 View: test_project Branch Revision: 1.0
+Author: Test User Date: 3/6/06 12:46:21 AM PST
+=============================================================================
+
+Folder: second_sourceline  (working dir: D:\projectory\test_starteam\second_sourceline)
+Folder: src  (working dir: D:\projectory\test_starteam\second_sourceline\src)
+History for: readme.txt
+Description: Added file in second source line
+Locked by: 
+Status: Current
+----------------------------
+Revision: 2 View: test_project Branch Revision: 1.1
+Author: Test User Date: 3/6/06 1:06:59 AM PST
+Added empty lines to add a revision
+
+----------------------------
+Revision: 1 View: test_project Branch Revision: 1.0
+Author: Test User Date: 3/6/06 12:51:24 AM PST
+=============================================================================
+
+Folder: sourceline  (working dir: D:\projectory\test_starteam\sourceline)
+Folder: alwaysvalid  (working dir: D:\projectory\test_starteam\sourceline\alwaysvalid)
+Folder: src  (working dir: D:\projectory\test_starteam\sourceline\alwaysvalid\src)
+History for: readme.txt
+Description: Added file in always valid sourceline
+Locked by: 
+Status: Current
+----------------------------
+Revision: 2 View: test_project Branch Revision: 1.1
+Author: Test User Date: 3/6/06 1:06:59 AM PST
+Added empty lines to add a revision
+
+----------------------------
+Revision: 1 View: test_project Branch Revision: 1.0
+Author: Test User Date: 3/6/06 12:51:02 AM PST
+=============================================================================
+

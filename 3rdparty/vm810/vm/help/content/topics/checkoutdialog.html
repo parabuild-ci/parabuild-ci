@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Check Out Dialog Box</TITLE>
+<!--<checkoutdialog.html>-->
+<!--<index parent="revisions" label="Check Out dialog box" anchor="checkoutdialog">-->
+<!--<index parent="checking_out" label="Check Out dialog box" anchor="checkoutdialog">-->
+<!--<index parent="projects" label="Check Out dialog box" anchor="checkoutdialog">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiCheckOutDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="checkoutdialog"></A>Check Out</H1>
+<P>Use the Check Out dialog box (Actions | Check Out) to retrieve a revision from one or more <A HREF="aboutversionedfiles.html">versioned files</A>, a revision from each versioned file in a <A HREF="aboutprojects.html">project</A>, or a revision from each versioned file in a <A HREF="aboutprjdb.html">project database</A> for editing. When you check out a <A HREF="aboutrevisions.html">revision</A>, Version Manager locks the revision and creates a <A HREF="aboutworkfiles.html">workfile</A> in the specified location.
+</P>
+<H2>Field Descriptions</H2>
+<TABLE WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD COLSPAN=2><CENTER><B>General Tab</B></CENTER></TD>
+	</TR>
+	<TR>
+		<TD><B>Check Out To</B></TD>
+		<TD><!--<control name="CheckOutGeneral.WORKING_FOLDER_EDIT">-->
+		Enter the location to which the workfile will be checked out or click the Browse button to select one. By editing this path, you are changing the workfile location for this action only; it does not change the workfile location permanently.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><B>Check out using project hierarchy instead of workfile location(s)</B></TD>
+		<TD>
+		This option is not available when operating on a single file. <!--<control name="CheckOutGeneral.WORKING_FOLDER_CB">-->Select to override the default workfile locations and check out files to directories (locations) that mirror the project structure relative to the workfile location specified in the <b>Check Out To</b> field. If the directories do not exist, Version Manager creates them. <!--</control>-->For example, if the value in the <b>Check Out To</b> field is c:\projdb\work and the project structure is /proj1/subproj1, /proj1/subproj2, and /proj2/subproj1, Version Manager places the files in c:\projdb\work\proj1\subproj1, c:\projdb\work\proj1\subproj2, and c:\projdb\work\proj2\subproj1 when this option is selected. Otherwise, Version Manager checks out files to the default workfile locations defined for each project/subproject.</TD>
+	</TR>
+	<TR>
+		<TD><B>Revision</B></TD>
+		<TD><!--<control name="CheckOutGeneral.REVISION_EDIT">-->
+			To check out a revision other than the <A HREF="defaultrevision.html">default revision</A>, enter the revision number, version label, or promotion group associated with the revision you want to check out or click the Browse button to select one. If checking out the revision by a version label, enter a backslash before a version label that begins with a numeric character (such as \1.2label).<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><B>If Workfile Exists</B></TD>
+		<TD><!--<control name="CheckOutGeneral.WORKFILE_EXISTS_CHOICE">-->If a workfile with the same name currently exists in the workfile location, select one of the following:<br><br>
+<B>Prompt</B> to prompt for confirmation before overwriting the workfile.<br><B>Overwrite</B> to overwrite the workfile.<br><B>Don't Overwrite</B> to prevent the workfile from being overwritten.<br><br><b>Note:</b> Version Manager does not prompt for confirmation if a read-only workfile exists in the current workfile location.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><B>Lowest-level promotion group</B></TD>
+		<TD>This field is only available if the currently selected files are associated with a project database that has a <A HREF="aboutprommodels.html">promotion model</a> assigned to it.<!--<control name="CheckOutGeneral.PROMOGROUP_LB">--> Select a lowest-level promotion group to associate with the revision you are checking out.<!--</control>--> 
+<br>Workspace settings may be used to define a Default Promotion Group. If a Default Promotion Group is not defined for the active workspace, Version Manager will either:
+<UL><li>Prompt you to select a lowest level promotion group, if more than one is defined within the promotion model, or
+<li>Use the lowest-level promotion group if only one is defined within a promotion model.</ul>
+<b>Note:</b> This field is not used to select the revision to be locked. To select a revision based on a promotion group, enter a promotion group in the <b>Revision</b> field.</TD>
+	</TR>
+	<TR>
+		<TD><B>Include files in subprojects</B></TD>
+		<TD>This field is only available if a project or project database is selected. 	<!--<control name="CheckOutGeneral.RECURSIVE_CB">-->	Select to check out all files of all subprojects included in the project or project database.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Get only if revision is newer than workfile</b></TD>
+		<TD><!--<control name="CheckOutGeneralForm.NEWERTHANWORKFILE_CB">-->Select to check out only those revisions that are newer than the workfiles. This saves time by not checking out files that have not changed.<!--</control>--></TD>
+	</TR>
+	<TR>
+        <TD><B><A HREF="trackerlink.html">Associate Issues</A></B></TD>
+        <TD>If Tracker TrackerLink or TeamTrack SourceBridge is installed, this button displays the association dialog box.
+	<!--<control name="CheckOutGeneral.TRACKER_LINK_BUTTON">-->You can associate the files you are checking out with issues.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=2><CENTER><B>Advanced Tab</B></CENTER></TD>
+	</TR>
+	<TR>
+		<TD><B>Check out by date</B></TD>
+		<TD><!--<control name="CheckOutAdvanced.CHECK_OUT_BY_DATE_CB">-->
+		Select one of the following to check out a revision according to a specified date:<!--</control>--><BR><br>
+		<B>Revision newer than: </B><!--<control name="CheckOutAdvanced.NEWERTHAN_EDIT">-->
+		Enter the latest date by which the revision should be selected or click the Browse button to display a calendar and select a date. The revision will be checked out only if its modification time is dated later than the specified date.
+		<!--</control>--><BR>
+		<B>Revision checked in before: </B>	<!--<control name="CheckOutAdvanced.LASTREVISION_EDIT">-->
+		Enter a date to check out a revision by check in date or click the Browse button to display a calendar and select a date. The revision is checked out only if its check in time is earlier than the specified date. <!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><B>Set workfile to current time</B></TD>
+		<TD><!--<control name="CheckOutAdvanced.UPDATE_CB">-->Select to update the time stamp of the workfile to the current date and time. If you don't select this option, the workfile time stamp reflects the date and time the selected revision was last modified.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=2><CENTER><B>Selected Files Tab</B></CENTER></TD>
+	</TR>
+	<TR>
+	  	<TD><B>File list</B></TD>
+	  	<TD><!--<control name="Files.FILES_TREE">-->
+		Review the selected files, projects, or project database for check out.
+		<!--</control>--></TD></TR>
+	<TR>
+		<TD><B>Properties button</B></TD>
+		<TD><!--<control name="Files.PROPERTIES_BUTTON">-->
+		Click to display archive, configuration file, workspace information, and view granted privileges for the selected files or projects.
+		<!--</control>--></TD></TR>
+</TABLE>
+<BR><BR>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="checkingout.html">Checking Out/Editing Files</A></TD>
+		<TD><A HREF="checkingin.html">Checking In</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="gettingarevision.html">Getting Revisions/Viewing Files</A></TD>
+		<TD><A HREF="locking.html">Locking Revisions</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="trackerlink.html">Associating Issues</A></TD>
+	</TR>
+</TABLE>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

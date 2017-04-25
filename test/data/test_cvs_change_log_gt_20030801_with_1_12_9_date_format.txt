@@ -1,0 +1,3098 @@
+? change.log
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/Version.java,v
+Working file: bt/com/viewtier/parabuild/Version.java
+head: 1.1
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 0
+description:
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/Attic/Administrator.java,v
+Working file: bt/com/viewtier/parabuild/build/Administrator.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 1
+description:
+----------------------------
+revision 1.2
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: dead;  lines: +0 -0
+Renamed build package to configuration
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/Build.java,v
+Working file: bt/com/viewtier/parabuild/build/Build.java
+head: 1.5
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 5;	selected revisions: 5
+description:
+----------------------------
+revision 1.5
+date: 2003/08/22 07:21:57 +0000; author: slava;  state: Exp;  lines: +6 -3
+Began working on getting CVS changes
+----------------------------
+revision 1.4
+date: 2003/08/20 01:29:24 +0000; author: slava;  state: Exp;  lines: +2 -2
+Continued working on CVSSourceControl
+----------------------------
+revision 1.3
+date: 2003/08/17 22:04:31 +0000; author: slava;  state: Exp;  lines: +33 -0
+Continued working on the build
+----------------------------
+revision 1.2
+date: 2003/08/17 09:43:24 +0000; author: slava;  state: Exp;  lines: +5 -2
+Added directory helper
+----------------------------
+revision 1.1
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;
+Fixed #131
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/Attic/BuildConfig.java,v
+Working file: bt/com/viewtier/parabuild/build/BuildConfig.java
+head: 1.5
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 5;	selected revisions: 0
+description:
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/Attic/BuildConfiguration.java,v
+Working file: bt/com/viewtier/parabuild/build/BuildConfiguration.java
+head: 1.12
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 12;	selected revisions: 5
+description:
+----------------------------
+revision 1.12
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: dead;  lines: +0 -0
+Renamed build package to configuration
+----------------------------
+revision 1.11
+date: 2003/08/12 07:11:57 +0000; author: slava;  state: Exp;  lines: +2 -2
+Finished working on the first iteration public build statuses
+----------------------------
+revision 1.10
+date: 2003/08/10 09:02:44 +0000; author: slava;  state: Exp;  lines: +7 -8
+Finished working on #124,125
+----------------------------
+revision 1.9
+date: 2003/08/08 06:41:30 +0000; author: slava;  state: Exp;  lines: +18 -0
+Added Perforce settings panel
+----------------------------
+revision 1.8
+date: 2003/08/08 01:52:58 +0000; author: slava;  state: Exp;  lines: +7 -7
+Added saving version control properties
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/BuildException.java,v
+Working file: bt/com/viewtier/parabuild/build/BuildException.java
+head: 1.1
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2003/08/18 01:21:44 +0000; author: slava;  state: Exp;
+Added build exception
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/BuildFiles.java,v
+Working file: bt/com/viewtier/parabuild/build/BuildFiles.java
+head: 1.1
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2003/08/20 01:29:24 +0000; author: slava;  state: Exp;
+Continued working on CVSSourceControl
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/BuildManager.java,v
+Working file: bt/com/viewtier/parabuild/build/BuildManager.java
+head: 1.27
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 27;	selected revisions: 11
+description:
+----------------------------
+revision 1.27
+date: 2003/08/15 08:23:05 +0000; author: slava;  state: Exp;  lines: +3 -8
+Comment cleanup
+----------------------------
+revision 1.26
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;  lines: +24 -672
+Fixed #131
+----------------------------
+revision 1.25
+date: 2003/08/14 18:36:43 +0000; author: slava;  state: dead;  lines: +0 -0
+Renamed BuildManager to ConfigurationManager
+----------------------------
+revision 1.24
+date: 2003/08/12 07:11:57 +0000; author: slava;  state: Exp;  lines: +1 -0
+Finished working on the first iteration public build statuses
+----------------------------
+revision 1.23
+date: 2003/08/10 09:02:44 +0000; author: slava;  state: Exp;  lines: +54 -2
+Finished working on #124,125
+----------------------------
+revision 1.22
+date: 2003/08/10 03:41:58 +0000; author: slava;  state: Exp;  lines: +29 -0
+Continued working on creating new build
+----------------------------
+revision 1.21
+date: 2003/08/09 01:59:04 +0000; author: slava;  state: Exp;  lines: +98 -1
+Continued working on build sequence and user email map tables
+----------------------------
+revision 1.20
+date: 2003/08/08 06:41:30 +0000; author: slava;  state: Exp;  lines: +29 -0
+Added Perforce settings panel
+----------------------------
+revision 1.19
+date: 2003/08/08 01:52:58 +0000; author: slava;  state: Exp;  lines: +56 -0
+Added saving version control properties
+----------------------------
+revision 1.18
+date: 2003/08/07 07:51:53 +0000; author: slava;  state: Exp;  lines: +12 -12
+Continued working on new build page
+----------------------------
+revision 1.17
+date: 2003/08/05 07:36:36 +0000; author: slava;  state: Exp;  lines: +27 -1
+Added BuildSequence object
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/Attic/BuildResult.java,v
+Working file: bt/com/viewtier/parabuild/build/BuildResult.java
+head: 1.3
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 3;	selected revisions: 1
+description:
+----------------------------
+revision 1.3
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: dead;  lines: +0 -0
+Renamed build package to configuration
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/Attic/BuildRunner.java,v
+Working file: bt/com/viewtier/parabuild/build/BuildRunner.java
+head: 1.4
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 4;	selected revisions: 2
+description:
+----------------------------
+revision 1.4
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: dead;  lines: +0 -0
+Renamed build package to configuration
+----------------------------
+revision 1.3
+date: 2003/08/02 07:33:05 +0000; author: slava;  state: Exp;  lines: +6 -5
+Added build runner factory
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/Attic/BuildRunnerFactory.java,v
+Working file: bt/com/viewtier/parabuild/build/BuildRunnerFactory.java
+head: 1.3
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: dead;  lines: +0 -0
+Renamed build package to configuration
+----------------------------
+revision 1.2
+date: 2003/08/08 04:47:16 +0000; author: slava;  state: Exp;  lines: +1 -1
+Import optimization
+----------------------------
+revision 1.1
+date: 2003/08/02 07:33:05 +0000; author: slava;  state: Exp;
+Added build runner factory
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/Attic/BuildSequence.java,v
+Working file: bt/com/viewtier/parabuild/build/BuildSequence.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: dead;  lines: +0 -0
+Renamed build package to configuration
+----------------------------
+revision 1.1
+date: 2003/08/05 07:36:36 +0000; author: slava;  state: Exp;
+Added BuildSequence object
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/Attic/BuildServlet.java,v
+Working file: bt/com/viewtier/parabuild/build/BuildServlet.java
+head: 1.3
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 3;	selected revisions: 2
+description:
+----------------------------
+revision 1.3
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: dead;  lines: +0 -0
+Renamed build package to configuration
+----------------------------
+revision 1.2
+date: 2003/08/14 18:36:43 +0000; author: slava;  state: Exp;  lines: +2 -2
+Renamed BuildManager to ConfigurationManager
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/Attic/BuildStatus.java,v
+Working file: bt/com/viewtier/parabuild/build/BuildStatus.java
+head: 1.7
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 7;	selected revisions: 2
+description:
+----------------------------
+revision 1.7
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: dead;  lines: +0 -0
+Renamed build package to configuration
+----------------------------
+revision 1.6
+date: 2003/08/12 07:11:57 +0000; author: slava;  state: Exp;  lines: +43 -0
+Finished working on the first iteration public build statuses
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/Attic/BuildStatusList.java,v
+Working file: bt/com/viewtier/parabuild/build/BuildStatusList.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 1
+description:
+----------------------------
+revision 1.2
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: dead;  lines: +0 -0
+Renamed build package to configuration
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/CVSChange.java,v
+Working file: bt/com/viewtier/parabuild/build/CVSChange.java
+head: 1.1
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2003/08/22 07:21:57 +0000; author: slava;  state: Exp;
+Began working on getting CVS changes
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/CVSSourceControl.java,v
+Working file: bt/com/viewtier/parabuild/build/CVSSourceControl.java
+head: 1.9
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 9;	selected revisions: 9
+description:
+----------------------------
+revision 1.9
+date: 2003/08/22 07:21:57 +0000; author: slava;  state: Exp;  lines: +216 -0
+Began working on getting CVS changes
+----------------------------
+revision 1.8
+date: 2003/08/21 06:51:18 +0000; author: slava;  state: Exp;  lines: +69 -38
+Refactring - extracted reusable methods
+----------------------------
+revision 1.7
+date: 2003/08/21 06:09:57 +0000; author: slava;  state: Exp;  lines: +3 -0
+Added hadnling main CVS problems and related test cases.
+----------------------------
+revision 1.6
+date: 2003/08/21 00:13:24 +0000; author: slava;  state: Exp;  lines: +40 -9
+Continued working on CVSSourceLine
+----------------------------
+revision 1.5
+date: 2003/08/20 01:29:24 +0000; author: slava;  state: Exp;  lines: +23 -17
+Continued working on CVSSourceControl
+----------------------------
+revision 1.4
+date: 2003/08/19 03:10:23 +0000; author: slava;  state: Exp;  lines: +25 -20
+Continued working on CVSSourceControl
+----------------------------
+revision 1.3
+date: 2003/08/18 04:10:40 +0000; author: slava;  state: Exp;  lines: +56 -31
+Continued working on CVSSourceControl
+----------------------------
+revision 1.2
+date: 2003/08/18 03:00:41 +0000; author: slava;  state: Exp;  lines: +36 -0
+Continued working on CVSSourceControl
+----------------------------
+revision 1.1
+date: 2003/08/18 02:21:17 +0000; author: slava;  state: Exp;
+Began working on SourceControl implementation
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/Attic/ConfigurationManager.java,v
+Working file: bt/com/viewtier/parabuild/build/ConfigurationManager.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: dead;  lines: +0 -0
+Renamed build package to configuration
+----------------------------
+revision 1.1
+date: 2003/08/14 18:36:43 +0000; author: slava;  state: Exp;
+Renamed BuildManager to ConfigurationManager
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/Attic/DatabaseService.java,v
+Working file: bt/com/viewtier/parabuild/build/DatabaseService.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: dead;  lines: +0 -0
+Fixed #131
+----------------------------
+revision 1.1
+date: 2003/08/14 23:13:26 +0000; author: slava;  state: Exp;
+Added database service
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/Attic/DirectoryHelper.java,v
+Working file: bt/com/viewtier/parabuild/build/DirectoryHelper.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/08/20 01:29:24 +0000; author: slava;  state: dead;  lines: +0 -0
+Continued working on CVSSourceControl
+----------------------------
+revision 1.1
+date: 2003/08/17 09:43:24 +0000; author: slava;  state: Exp;
+Added directory helper
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/InputStreamToFileCopier.java,v
+Working file: bt/com/viewtier/parabuild/build/InputStreamToFileCopier.java
+head: 1.1
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2003/08/19 03:10:23 +0000; author: slava;  state: Exp;
+Continued working on CVSSourceControl
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/PerforceSourceControl.java,v
+Working file: bt/com/viewtier/parabuild/build/PerforceSourceControl.java
+head: 1.3
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/08/20 01:29:24 +0000; author: slava;  state: Exp;  lines: +1 -1
+Continued working on CVSSourceControl
+----------------------------
+revision 1.2
+date: 2003/08/18 03:00:41 +0000; author: slava;  state: Exp;  lines: +4 -0
+Continued working on CVSSourceControl
+----------------------------
+revision 1.1
+date: 2003/08/18 02:21:17 +0000; author: slava;  state: Exp;
+Began working on SourceControl implementation
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/Attic/ScheduleProperty.java,v
+Working file: bt/com/viewtier/parabuild/build/ScheduleProperty.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 1
+description:
+----------------------------
+revision 1.2
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: dead;  lines: +0 -0
+Renamed build package to configuration
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/Attic/Service.java,v
+Working file: bt/com/viewtier/parabuild/build/Service.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: dead;  lines: +0 -0
+Fixed #131
+----------------------------
+revision 1.1
+date: 2003/08/14 22:58:50 +0000; author: slava;  state: Exp;
+Added service and service manager
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/Attic/ServiceManager.java,v
+Working file: bt/com/viewtier/parabuild/build/ServiceManager.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: dead;  lines: +0 -0
+Fixed #131
+----------------------------
+revision 1.1
+date: 2003/08/14 22:58:50 +0000; author: slava;  state: Exp;
+Added service and service manager
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/SourceControl.java,v
+Working file: bt/com/viewtier/parabuild/build/SourceControl.java
+head: 1.3
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/08/20 01:29:24 +0000; author: slava;  state: Exp;  lines: +1 -1
+Continued working on CVSSourceControl
+----------------------------
+revision 1.2
+date: 2003/08/18 03:00:41 +0000; author: slava;  state: Exp;  lines: +8 -0
+Continued working on CVSSourceControl
+----------------------------
+revision 1.1
+date: 2003/08/18 02:21:17 +0000; author: slava;  state: Exp;
+Began working on SourceControl implementation
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/SourceControlFactory.java,v
+Working file: bt/com/viewtier/parabuild/build/SourceControlFactory.java
+head: 1.1
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2003/08/18 02:21:17 +0000; author: slava;  state: Exp;
+Began working on SourceControl implementation
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/Attic/SourceControlProperty.java,v
+Working file: bt/com/viewtier/parabuild/build/SourceControlProperty.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 1
+description:
+----------------------------
+revision 1.2
+date: 2003/08/08 01:52:58 +0000; author: slava;  state: dead;  lines: +0 -0
+Added saving version control properties
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/Attic/StatusCode.java,v
+Working file: bt/com/viewtier/parabuild/build/StatusCode.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 1
+description:
+----------------------------
+revision 1.2
+date: 2003/08/13 01:29:59 +0000; author: slava;  state: dead;  lines: +0 -0
+Removed uneeded class
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/Attic/StatusList.java,v
+Working file: bt/com/viewtier/parabuild/build/StatusList.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 1
+description:
+----------------------------
+revision 1.2
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: dead;  lines: +0 -0
+Renamed build package to configuration
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/SystemEnvironment.java,v
+Working file: bt/com/viewtier/parabuild/build/SystemEnvironment.java
+head: 1.4
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 4;	selected revisions: 4
+description:
+----------------------------
+revision 1.4
+date: 2003/08/22 07:21:57 +0000; author: slava;  state: Exp;  lines: +2 -1
+Began working on getting CVS changes
+----------------------------
+revision 1.3
+date: 2003/08/19 03:10:23 +0000; author: slava;  state: Exp;  lines: +51 -1
+Continued working on CVSSourceControl
+----------------------------
+revision 1.2
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: dead;  lines: +0 -0
+Renamed build package to configuration
+----------------------------
+revision 1.1
+date: 2003/08/11 20:56:53 +0000; author: slava;  state: Exp;
+Added system environment helper
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/Attic/SystemProperty.java,v
+Working file: bt/com/viewtier/parabuild/build/SystemProperty.java
+head: 1.4
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 4;	selected revisions: 1
+description:
+----------------------------
+revision 1.4
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: dead;  lines: +0 -0
+Renamed build package to configuration
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/Attic/SystemPropertyLine.java,v
+Working file: bt/com/viewtier/parabuild/build/SystemPropertyLine.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 0
+description:
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/Attic/UnexpectedAutobuildException.java,v
+Working file: bt/com/viewtier/parabuild/build/UnexpectedAutobuildException.java
+head: 1.3
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 3;	selected revisions: 1
+description:
+----------------------------
+revision 1.3
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: dead;  lines: +0 -0
+Renamed build package to configuration
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/Attic/User.java,v
+Working file: bt/com/viewtier/parabuild/build/User.java
+head: 1.7
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 7;	selected revisions: 1
+description:
+----------------------------
+revision 1.7
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: dead;  lines: +0 -0
+Renamed build package to configuration
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/Attic/VCSUserToEmailMap.java,v
+Working file: bt/com/viewtier/parabuild/build/VCSUserToEmailMap.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 1
+description:
+----------------------------
+revision 1.2
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: dead;  lines: +0 -0
+Renamed build package to configuration
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/Attic/VersionControlSetting.java,v
+Working file: bt/com/viewtier/parabuild/build/VersionControlSetting.java
+head: 1.3
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: dead;  lines: +0 -0
+Renamed build package to configuration
+----------------------------
+revision 1.2
+date: 2003/08/08 06:41:30 +0000; author: slava;  state: Exp;  lines: +2 -0
+Added Perforce settings panel
+----------------------------
+revision 1.1
+date: 2003/08/08 01:52:58 +0000; author: slava;  state: Exp;
+Added saving version control properties
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/common/AutobuildLog.java,v
+Working file: bt/com/viewtier/parabuild/common/AutobuildLog.java
+head: 1.1
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2003/08/21 00:13:24 +0000; author: slava;  state: Exp;
+Continued working on CVSSourceLine
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/common/IoUtils.java,v
+Working file: bt/com/viewtier/parabuild/common/IoUtils.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/08/22 07:21:57 +0000; author: slava;  state: Exp;  lines: +8 -0
+Began working on getting CVS changes
+----------------------------
+revision 1.1
+date: 2003/08/19 03:10:23 +0000; author: slava;  state: Exp;
+Continued working on CVSSourceControl
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/common/StringUtils.java,v
+Working file: bt/com/viewtier/parabuild/common/StringUtils.java
+head: 1.1
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2003/08/10 03:41:58 +0000; author: slava;  state: Exp;
+Continued working on creating new build
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/configuration/Administrator.java,v
+Working file: bt/com/viewtier/parabuild/configuration/Administrator.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;  lines: +1 -1
+Fixed #131
+----------------------------
+revision 1.1
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;
+Renamed build package to configuration
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/configuration/BuildConfiguration.java,v
+Working file: bt/com/viewtier/parabuild/configuration/BuildConfiguration.java
+head: 1.3
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/08/18 02:21:17 +0000; author: slava;  state: Exp;  lines: +7 -7
+Began working on SourceControl implementation
+----------------------------
+revision 1.2
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;  lines: +6 -6
+Fixed #131
+----------------------------
+revision 1.1
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;
+Renamed build package to configuration
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/configuration/BuildResult.java,v
+Working file: bt/com/viewtier/parabuild/configuration/BuildResult.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;  lines: +2 -2
+Fixed #131
+----------------------------
+revision 1.1
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;
+Renamed build package to configuration
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/configuration/BuildRunner.java,v
+Working file: bt/com/viewtier/parabuild/configuration/BuildRunner.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;  lines: +2 -2
+Fixed #131
+----------------------------
+revision 1.1
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;
+Renamed build package to configuration
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/configuration/BuildRunnerFactory.java,v
+Working file: bt/com/viewtier/parabuild/configuration/BuildRunnerFactory.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;  lines: +4 -4
+Fixed #131
+----------------------------
+revision 1.1
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;
+Renamed build package to configuration
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/configuration/BuildSequence.java,v
+Working file: bt/com/viewtier/parabuild/configuration/BuildSequence.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;  lines: +1 -1
+Fixed #131
+----------------------------
+revision 1.1
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;
+Renamed build package to configuration
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/configuration/Attic/BuildServlet.java,v
+Working file: bt/com/viewtier/parabuild/configuration/BuildServlet.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/08/14 22:42:34 +0000; author: slava;  state: dead;  lines: +0 -0
+Moved BuildServlet to webui package
+----------------------------
+revision 1.1
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;
+Renamed build package to configuration
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/configuration/BuildStatus.java,v
+Working file: bt/com/viewtier/parabuild/configuration/BuildStatus.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;  lines: +5 -5
+Fixed #131
+----------------------------
+revision 1.1
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;
+Renamed build package to configuration
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/configuration/Attic/BuildStatusList.java,v
+Working file: bt/com/viewtier/parabuild/configuration/BuildStatusList.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: dead;  lines: +0 -0
+Fixed #131
+----------------------------
+revision 1.1
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;
+Renamed build package to configuration
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/configuration/ConfigurationManager.java,v
+Working file: bt/com/viewtier/parabuild/configuration/ConfigurationManager.java
+head: 1.5
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 5;	selected revisions: 5
+description:
+----------------------------
+revision 1.5
+date: 2003/08/20 01:29:24 +0000; author: slava;  state: Exp;  lines: +2 -2
+Continued working on CVSSourceControl
+----------------------------
+revision 1.4
+date: 2003/08/18 02:21:17 +0000; author: slava;  state: Exp;  lines: +3 -3
+Began working on SourceControl implementation
+----------------------------
+revision 1.3
+date: 2003/08/17 09:43:24 +0000; author: slava;  state: Exp;  lines: +20 -0
+Added directory helper
+----------------------------
+revision 1.2
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;  lines: +28 -143
+Fixed #131
+----------------------------
+revision 1.1
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;
+Renamed build package to configuration
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/configuration/ScheduleProperty.java,v
+Working file: bt/com/viewtier/parabuild/configuration/ScheduleProperty.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;  lines: +4 -4
+Fixed #131
+----------------------------
+revision 1.1
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;
+Renamed build package to configuration
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/configuration/SourceControlSetting.java,v
+Working file: bt/com/viewtier/parabuild/configuration/SourceControlSetting.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/08/18 03:00:41 +0000; author: slava;  state: Exp;  lines: +1 -0
+Continued working on CVSSourceControl
+----------------------------
+revision 1.1
+date: 2003/08/18 02:21:17 +0000; author: slava;  state: Exp;
+Began working on SourceControl implementation
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/configuration/Attic/StatusList.java,v
+Working file: bt/com/viewtier/parabuild/configuration/StatusList.java
+head: 1.3
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/08/20 00:26:10 +0000; author: slava;  state: dead;  lines: +0 -0
+Removed uneeded class
+----------------------------
+revision 1.2
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;  lines: +6 -6
+Fixed #131
+----------------------------
+revision 1.1
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;
+Renamed build package to configuration
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/configuration/Attic/SystemEnvironment.java,v
+Working file: bt/com/viewtier/parabuild/configuration/SystemEnvironment.java
+head: 1.3
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/08/19 03:10:23 +0000; author: slava;  state: dead;  lines: +0 -0
+Continued working on CVSSourceControl
+----------------------------
+revision 1.2
+date: 2003/08/18 04:10:40 +0000; author: slava;  state: Exp;  lines: +50 -0
+Continued working on CVSSourceControl
+----------------------------
+revision 1.1
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;
+Renamed build package to configuration
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/configuration/SystemProperty.java,v
+Working file: bt/com/viewtier/parabuild/configuration/SystemProperty.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;  lines: +5 -5
+Fixed #131
+----------------------------
+revision 1.1
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;
+Renamed build package to configuration
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/configuration/UnexpectedAutobuildException.java,v
+Working file: bt/com/viewtier/parabuild/configuration/UnexpectedAutobuildException.java
+head: 1.1
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;
+Renamed build package to configuration
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/configuration/User.java,v
+Working file: bt/com/viewtier/parabuild/configuration/User.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;  lines: +1 -1
+Fixed #131
+----------------------------
+revision 1.1
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;
+Renamed build package to configuration
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/configuration/VCSUserToEmailMap.java,v
+Working file: bt/com/viewtier/parabuild/configuration/VCSUserToEmailMap.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;  lines: +2 -2
+Fixed #131
+----------------------------
+revision 1.1
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;
+Renamed build package to configuration
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/configuration/Attic/VersionControlSetting.java,v
+Working file: bt/com/viewtier/parabuild/configuration/VersionControlSetting.java
+head: 1.3
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/08/18 02:21:17 +0000; author: slava;  state: dead;  lines: +0 -0
+Began working on SourceControl implementation
+----------------------------
+revision 1.2
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;  lines: +2 -2
+Fixed #131
+----------------------------
+revision 1.1
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;
+Renamed build package to configuration
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/persistance/Attic/BuildConfiguration.java,v
+Working file: bt/com/viewtier/parabuild/persistance/BuildConfiguration.java
+head: 1.4
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 4;	selected revisions: 0
+description:
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/persistance/DatabaseRunner.java,v
+Working file: bt/com/viewtier/parabuild/persistance/DatabaseRunner.java
+head: 1.1
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 0
+description:
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/persistance/DatabaseRunnerBuilder.java,v
+Working file: bt/com/viewtier/parabuild/persistance/DatabaseRunnerBuilder.java
+head: 1.1
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 0
+description:
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/persistance/HSQLDBDatabaseRunner.java,v
+Working file: bt/com/viewtier/parabuild/persistance/HSQLDBDatabaseRunner.java
+head: 1.3
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 3;	selected revisions: 1
+description:
+----------------------------
+revision 1.3
+date: 2003/08/14 23:13:26 +0000; author: slava;  state: Exp;  lines: +7 -0
+Added database service
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/persistance/MySQLDatabaseRunner.java,v
+Working file: bt/com/viewtier/parabuild/persistance/MySQLDatabaseRunner.java
+head: 1.1
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 0
+description:
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/persistance/PersistanceUtils.java,v
+Working file: bt/com/viewtier/parabuild/persistance/PersistanceUtils.java
+head: 1.3
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 3;	selected revisions: 0
+description:
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/services/BuildService.java,v
+Working file: bt/com/viewtier/parabuild/services/BuildService.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/08/16 01:30:06 +0000; author: slava;  state: Exp;  lines: +1 -0
+Fixed broken tests
+----------------------------
+revision 1.1
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;
+Fixed #131
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/services/ConfigurationService.java,v
+Working file: bt/com/viewtier/parabuild/services/ConfigurationService.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/08/18 02:21:17 +0000; author: slava;  state: Exp;  lines: +1 -1
+Began working on SourceControl implementation
+----------------------------
+revision 1.1
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;
+Fixed #131
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/services/DatabaseService.java,v
+Working file: bt/com/viewtier/parabuild/services/DatabaseService.java
+head: 1.1
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;
+Fixed #131
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/services/NotificationService.java,v
+Working file: bt/com/viewtier/parabuild/services/NotificationService.java
+head: 1.1
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;
+Fixed #131
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/services/Service.java,v
+Working file: bt/com/viewtier/parabuild/services/Service.java
+head: 1.1
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;
+Fixed #131
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/services/ServiceManager.java,v
+Working file: bt/com/viewtier/parabuild/services/ServiceManager.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/08/16 01:30:06 +0000; author: slava;  state: Exp;  lines: +3 -2
+Fixed broken tests
+----------------------------
+revision 1.1
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;
+Fixed #131
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/services/ServiceName.java,v
+Working file: bt/com/viewtier/parabuild/services/ServiceName.java
+head: 1.1
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;
+Fixed #131
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/Attic/AbstractFlatTable.java,v
+Working file: bt/com/viewtier/parabuild/webui/AbstractFlatTable.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 0
+description:
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/Attic/AdminBasePage.java,v
+Working file: bt/com/viewtier/parabuild/webui/AdminBasePage.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 0
+description:
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/Attic/AdminHomePage.java,v
+Working file: bt/com/viewtier/parabuild/webui/AdminHomePage.java
+head: 1.5
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 5;	selected revisions: 0
+description:
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/Attic/AdminLoginPage.java,v
+Working file: bt/com/viewtier/parabuild/webui/AdminLoginPage.java
+head: 1.10
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 10;	selected revisions: 0
+description:
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/Attic/AdminMenuPanel.java,v
+Working file: bt/com/viewtier/parabuild/webui/AdminMenuPanel.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 0
+description:
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/Attic/AdminStatusPage.java,v
+Working file: bt/com/viewtier/parabuild/webui/AdminStatusPage.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/08/15 03:57:25 +0000; author: slava;  state: dead;  lines: +0 -0
+Moved admin status page to admin package
+----------------------------
+revision 1.1
+date: 2003/08/15 03:56:13 +0000; author: slava;  state: Exp;
+Added admin status page
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/Attic/AdminSystemConfigPage.java,v
+Working file: bt/com/viewtier/parabuild/webui/AdminSystemConfigPage.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 0
+description:
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/Attic/BasePage.java,v
+Working file: bt/com/viewtier/parabuild/webui/BasePage.java
+head: 1.14
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 14;	selected revisions: 0
+description:
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/BuildLogLinks.java,v
+Working file: bt/com/viewtier/parabuild/webui/BuildLogLinks.java
+head: 1.1
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2003/08/12 07:11:57 +0000; author: slava;  state: Exp;
+Finished working on the first iteration public build statuses
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/BuildServlet.java,v
+Working file: bt/com/viewtier/parabuild/webui/BuildServlet.java
+head: 1.3
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;  lines: +4 -5
+Fixed #131
+----------------------------
+revision 1.2
+date: 2003/08/14 23:13:26 +0000; author: slava;  state: Exp;  lines: +3 -0
+Added database service
+----------------------------
+revision 1.1
+date: 2003/08/14 22:42:34 +0000; author: slava;  state: Exp;
+Moved BuildServlet to webui package
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/Attic/BuildStatusListTable.java,v
+Working file: bt/com/viewtier/parabuild/webui/BuildStatusListTable.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 0
+description:
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/Attic/BuildStatusTable.java,v
+Working file: bt/com/viewtier/parabuild/webui/BuildStatusTable.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 0
+description:
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/Attic/BuildStatusesPanel.java,v
+Working file: bt/com/viewtier/parabuild/webui/BuildStatusesPanel.java
+head: 1.3
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 3;	selected revisions: 1
+description:
+----------------------------
+revision 1.3
+date: 2003/08/15 18:35:14 +0000; author: slava;  state: dead;  lines: +0 -0
+Removed uneeded BuildStatusesPanel
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/Attic/CommonButton.java,v
+Working file: bt/com/viewtier/parabuild/webui/CommonButton.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 0
+description:
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/Attic/CommonField.java,v
+Working file: bt/com/viewtier/parabuild/webui/CommonField.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 0
+description:
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/Attic/CommonFlatTable.java,v
+Working file: bt/com/viewtier/parabuild/webui/CommonFlatTable.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 0
+description:
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/Attic/CommonHeaderLink.java,v
+Working file: bt/com/viewtier/parabuild/webui/CommonHeaderLink.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 0
+description:
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/ErrorPage.java,v
+Working file: bt/com/viewtier/parabuild/webui/ErrorPage.java
+head: 1.8
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 8;	selected revisions: 2
+description:
+----------------------------
+revision 1.8
+date: 2003/08/08 04:47:16 +0000; author: slava;  state: Exp;  lines: +1 -1
+Import optimization
+----------------------------
+revision 1.7
+date: 2003/08/06 07:54:44 +0000; author: slava;  state: Exp;  lines: +1 -1
+Moved to generic Tierlet.Result processing
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/Attic/GridIterator.java,v
+Working file: bt/com/viewtier/parabuild/webui/GridIterator.java
+head: 1.3
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 3;	selected revisions: 0
+description:
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/HomePage.java,v
+Working file: bt/com/viewtier/parabuild/webui/HomePage.java
+head: 1.10
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 10;	selected revisions: 3
+description:
+----------------------------
+revision 1.10
+date: 2003/08/15 04:27:52 +0000; author: slava;  state: Exp;  lines: +4 -3
+Added build statuses table
+----------------------------
+revision 1.9
+date: 2003/08/08 04:47:16 +0000; author: slava;  state: Exp;  lines: +1 -1
+Import optimization
+----------------------------
+revision 1.8
+date: 2003/08/06 07:54:44 +0000; author: slava;  state: Exp;  lines: +1 -1
+Moved to generic Tierlet.Result processing
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/LayoutUtils.java,v
+Working file: bt/com/viewtier/parabuild/webui/LayoutUtils.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 1
+description:
+----------------------------
+revision 1.2
+date: 2003/08/10 03:41:58 +0000; author: slava;  state: Exp;  lines: +15 -0
+Continued working on creating new build
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/LoginPanel.java,v
+Working file: bt/com/viewtier/parabuild/webui/LoginPanel.java
+head: 1.7
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 7;	selected revisions: 1
+description:
+----------------------------
+revision 1.7
+date: 2003/08/09 23:28:28 +0000; author: slava;  state: Exp;  lines: +18 -24
+Closed some TODOs.
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/Attic/MessagePanel.java,v
+Working file: bt/com/viewtier/parabuild/webui/MessagePanel.java
+head: 1.3
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 3;	selected revisions: 0
+description:
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/Attic/Pages.java,v
+Working file: bt/com/viewtier/parabuild/webui/Pages.java
+head: 1.4
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 4;	selected revisions: 0
+description:
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/PublicBuildsStatusesTable.java,v
+Working file: bt/com/viewtier/parabuild/webui/PublicBuildsStatusesTable.java
+head: 1.13
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 13;	selected revisions: 11
+description:
+----------------------------
+revision 1.13
+date: 2003/08/15 19:42:45 +0000; author: slava;  state: Exp;  lines: +1 -1
+Added tests
+----------------------------
+revision 1.12
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;  lines: +6 -4
+Fixed #131
+----------------------------
+revision 1.11
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;  lines: +4 -4
+Renamed build package to configuration
+----------------------------
+revision 1.10
+date: 2003/08/14 18:36:43 +0000; author: slava;  state: Exp;  lines: +1 -1
+Renamed BuildManager to ConfigurationManager
+----------------------------
+revision 1.9
+date: 2003/08/12 07:11:57 +0000; author: slava;  state: Exp;  lines: +31 -7
+Finished working on the first iteration public build statuses
+----------------------------
+revision 1.8
+date: 2003/08/09 01:59:04 +0000; author: slava;  state: Exp;  lines: +20 -11
+Continued working on build sequence and user email map tables
+----------------------------
+revision 1.7
+date: 2003/08/08 08:02:20 +0000; author: slava;  state: Exp;  lines: +1 -6
+Continued working on editable table
+----------------------------
+revision 1.6
+date: 2003/08/08 06:41:30 +0000; author: slava;  state: Exp;  lines: +1 -1
+Added Perforce settings panel
+----------------------------
+revision 1.5
+date: 2003/08/08 04:47:16 +0000; author: slava;  state: Exp;  lines: +1 -1
+Import optimization
+----------------------------
+revision 1.4
+date: 2003/08/07 01:07:51 +0000; author: slava;  state: Exp;  lines: +1 -0
+Continued working on editable table
+----------------------------
+revision 1.3
+date: 2003/08/06 00:58:41 +0000; author: slava;  state: Exp;  lines: +1 -1
+Continued working on editable table
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/Attic/SystemConfigPanel.java,v
+Working file: bt/com/viewtier/parabuild/webui/SystemConfigPanel.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 0
+description:
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/Attic/UnderConstructionPage.java,v
+Working file: bt/com/viewtier/parabuild/webui/UnderConstructionPage.java
+head: 1.3
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 3;	selected revisions: 0
+description:
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/Attic/User.java,v
+Working file: bt/com/viewtier/parabuild/webui/User.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 0
+description:
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/admin/AccessDropDown.java,v
+Working file: bt/com/viewtier/parabuild/webui/admin/AccessDropDown.java
+head: 1.4
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 4;	selected revisions: 3
+description:
+----------------------------
+revision 1.4
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;  lines: +2 -2
+Fixed #131
+----------------------------
+revision 1.3
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;  lines: +3 -3
+Renamed build package to configuration
+----------------------------
+revision 1.2
+date: 2003/08/08 04:47:16 +0000; author: slava;  state: Exp;  lines: +1 -1
+Import optimization
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/admin/AdminBasePage.java,v
+Working file: bt/com/viewtier/parabuild/webui/admin/AdminBasePage.java
+head: 1.7
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 7;	selected revisions: 3
+description:
+----------------------------
+revision 1.7
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;  lines: +1 -1
+Renamed build package to configuration
+----------------------------
+revision 1.6
+date: 2003/08/08 04:47:16 +0000; author: slava;  state: Exp;  lines: +1 -1
+Import optimization
+----------------------------
+revision 1.5
+date: 2003/08/07 07:51:53 +0000; author: slava;  state: Exp;  lines: +2 -2
+Continued working on new build page
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/admin/AdminBuildConfigsPage.java,v
+Working file: bt/com/viewtier/parabuild/webui/admin/AdminBuildConfigsPage.java
+head: 1.11
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 11;	selected revisions: 5
+description:
+----------------------------
+revision 1.11
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;  lines: +3 -3
+Fixed #131
+----------------------------
+revision 1.10
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;  lines: +3 -3
+Renamed build package to configuration
+----------------------------
+revision 1.9
+date: 2003/08/14 18:36:42 +0000; author: slava;  state: Exp;  lines: +1 -1
+Renamed BuildManager to ConfigurationManager
+----------------------------
+revision 1.8
+date: 2003/08/08 04:47:16 +0000; author: slava;  state: Exp;  lines: +1 -1
+Import optimization
+----------------------------
+revision 1.7
+date: 2003/08/06 07:54:44 +0000; author: slava;  state: Exp;  lines: +2 -2
+Moved to generic Tierlet.Result processing
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/admin/AdminBuildStatusesTable.java,v
+Working file: bt/com/viewtier/parabuild/webui/admin/AdminBuildStatusesTable.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/08/15 19:42:45 +0000; author: slava;  state: Exp;  lines: +1 -1
+Added tests
+----------------------------
+revision 1.1
+date: 2003/08/15 04:27:52 +0000; author: slava;  state: Exp;
+Added build statuses table
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/admin/Attic/AdminHomePage.java,v
+Working file: bt/com/viewtier/parabuild/webui/admin/AdminHomePage.java
+head: 1.6
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 6;	selected revisions: 3
+description:
+----------------------------
+revision 1.6
+date: 2003/08/11 20:56:16 +0000; author: slava;  state: dead;  lines: +0 -0
+Renamed AdminHomePage to AdminStatusPage
+----------------------------
+revision 1.5
+date: 2003/08/09 23:28:28 +0000; author: slava;  state: Exp;  lines: +3 -3
+Closed some TODOs.
+----------------------------
+revision 1.4
+date: 2003/08/06 07:54:44 +0000; author: slava;  state: Exp;  lines: +7 -13
+Moved to generic Tierlet.Result processing
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/admin/AdminLoginPage.java,v
+Working file: bt/com/viewtier/parabuild/webui/admin/AdminLoginPage.java
+head: 1.8
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 8;	selected revisions: 6
+description:
+----------------------------
+revision 1.8
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;  lines: +1 -1
+Renamed build package to configuration
+----------------------------
+revision 1.7
+date: 2003/08/14 18:36:42 +0000; author: slava;  state: Exp;  lines: +1 -1
+Renamed BuildManager to ConfigurationManager
+----------------------------
+revision 1.6
+date: 2003/08/09 23:28:28 +0000; author: slava;  state: Exp;  lines: +14 -3
+Closed some TODOs.
+----------------------------
+revision 1.5
+date: 2003/08/08 04:47:16 +0000; author: slava;  state: Exp;  lines: +1 -1
+Import optimization
+----------------------------
+revision 1.4
+date: 2003/08/07 07:51:53 +0000; author: slava;  state: Exp;  lines: +2 -2
+Continued working on new build page
+----------------------------
+revision 1.3
+date: 2003/08/06 00:58:41 +0000; author: slava;  state: Exp;  lines: +2 -0
+Continued working on editable table
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/admin/AdminMenuPanel.java,v
+Working file: bt/com/viewtier/parabuild/webui/admin/AdminMenuPanel.java
+head: 1.5
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 5;	selected revisions: 2
+description:
+----------------------------
+revision 1.5
+date: 2003/08/11 20:56:16 +0000; author: slava;  state: Exp;  lines: +1 -1
+Renamed AdminHomePage to AdminStatusPage
+----------------------------
+revision 1.4
+date: 2003/08/08 04:47:16 +0000; author: slava;  state: Exp;  lines: +1 -2
+Import optimization
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/admin/AdminStatusPage.java,v
+Working file: bt/com/viewtier/parabuild/webui/admin/AdminStatusPage.java
+head: 1.7
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 7;	selected revisions: 7
+description:
+----------------------------
+revision 1.7
+date: 2003/08/16 01:30:06 +0000; author: slava;  state: Exp;  lines: +0 -1
+Fixed broken tests
+----------------------------
+revision 1.6
+date: 2003/08/15 04:27:52 +0000; author: slava;  state: Exp;  lines: +5 -4
+Added build statuses table
+----------------------------
+revision 1.5
+date: 2003/08/15 03:57:25 +0000; author: slava;  state: Exp;  lines: +8 -14
+Moved admin status page to admin package
+----------------------------
+revision 1.4
+date: 2003/08/15 03:51:25 +0000; author: slava;  state: dead;  lines: +0 -0
+no message
+----------------------------
+revision 1.3
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;  lines: +1 -1
+Renamed build package to configuration
+----------------------------
+revision 1.2
+date: 2003/08/14 18:36:42 +0000; author: slava;  state: Exp;  lines: +1 -1
+Renamed BuildManager to ConfigurationManager
+----------------------------
+revision 1.1
+date: 2003/08/11 20:56:16 +0000; author: slava;  state: Exp;
+Renamed AdminHomePage to AdminStatusPage
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/admin/AdminSystemConfigPage.java,v
+Working file: bt/com/viewtier/parabuild/webui/admin/AdminSystemConfigPage.java
+head: 1.11
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 11;	selected revisions: 5
+description:
+----------------------------
+revision 1.11
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;  lines: +1 -1
+Fixed #131
+----------------------------
+revision 1.10
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;  lines: +1 -1
+Renamed build package to configuration
+----------------------------
+revision 1.9
+date: 2003/08/14 18:36:42 +0000; author: slava;  state: Exp;  lines: +2 -2
+Renamed BuildManager to ConfigurationManager
+----------------------------
+revision 1.8
+date: 2003/08/08 04:47:16 +0000; author: slava;  state: Exp;  lines: +2 -5
+Import optimization
+----------------------------
+revision 1.7
+date: 2003/08/07 07:51:53 +0000; author: slava;  state: Exp;  lines: +2 -2
+Continued working on new build page
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/admin/AdminUnderConstructionPage.java,v
+Working file: bt/com/viewtier/parabuild/webui/admin/AdminUnderConstructionPage.java
+head: 1.3
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 3;	selected revisions: 1
+description:
+----------------------------
+revision 1.3
+date: 2003/08/06 07:54:44 +0000; author: slava;  state: Exp;  lines: +2 -4
+Moved to generic Tierlet.Result processing
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/admin/Attic/AutomaticBuildSettingsPanel.java,v
+Working file: bt/com/viewtier/parabuild/webui/admin/AutomaticBuildSettingsPanel.java
+head: 1.7
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 7;	selected revisions: 4
+description:
+----------------------------
+revision 1.7
+date: 2003/08/04 02:47:11 +0000; author: slava;  state: dead;  lines: +0 -0
+Refactoring - renamed AutomaticBuildSettingsPanel to AutomaticScheduleSettingsPanel
+----------------------------
+revision 1.6
+date: 2003/08/04 02:41:19 +0000; author: slava;  state: Exp;  lines: +42 -24
+Finished working on #119,#122
+----------------------------
+revision 1.5
+date: 2003/08/02 02:26:22 +0000; author: slava;  state: Exp;  lines: +19 -0
+Continued working on property map
+----------------------------
+revision 1.4
+date: 2003/08/01 08:00:09 +0000; author: slava;  state: Exp;  lines: +23 -2
+Refactoring - added reusable property-to-input map
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/admin/AutomaticScheduleSettingsPanel.java,v
+Working file: bt/com/viewtier/parabuild/webui/admin/AutomaticScheduleSettingsPanel.java
+head: 1.7
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 7;	selected revisions: 7
+description:
+----------------------------
+revision 1.7
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;  lines: +2 -2
+Fixed #131
+----------------------------
+revision 1.6
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;  lines: +3 -3
+Renamed build package to configuration
+----------------------------
+revision 1.5
+date: 2003/08/14 18:36:42 +0000; author: slava;  state: Exp;  lines: +1 -1
+Renamed BuildManager to ConfigurationManager
+----------------------------
+revision 1.4
+date: 2003/08/10 03:41:58 +0000; author: slava;  state: Exp;  lines: +56 -13
+Continued working on creating new build
+----------------------------
+revision 1.3
+date: 2003/08/08 06:41:30 +0000; author: slava;  state: Exp;  lines: +1 -1
+Added Perforce settings panel
+----------------------------
+revision 1.2
+date: 2003/08/08 04:47:16 +0000; author: slava;  state: Exp;  lines: +1 -1
+Import optimization
+----------------------------
+revision 1.1
+date: 2003/08/04 02:47:11 +0000; author: slava;  state: Exp;
+Refactoring - renamed AutomaticBuildSettingsPanel to AutomaticScheduleSettingsPanel
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/admin/Attic/BuildConfigsPanel.java,v
+Working file: bt/com/viewtier/parabuild/webui/admin/BuildConfigsPanel.java
+head: 1.5
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 5;	selected revisions: 0
+description:
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/admin/BuildConfigsTable.java,v
+Working file: bt/com/viewtier/parabuild/webui/admin/BuildConfigsTable.java
+head: 1.11
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 11;	selected revisions: 9
+description:
+----------------------------
+revision 1.11
+date: 2003/08/18 00:27:14 +0000; author: slava;  state: Exp;  lines: +2 -2
+Moved FooterLink out of BasePage files
+----------------------------
+revision 1.10
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;  lines: +1 -1
+Renamed build package to configuration
+----------------------------
+revision 1.9
+date: 2003/08/09 06:39:27 +0000; author: slava;  state: Exp;  lines: +1 -1
+Added ability to delete rows from the tables
+----------------------------
+revision 1.8
+date: 2003/08/09 01:59:04 +0000; author: slava;  state: Exp;  lines: +57 -17
+Continued working on build sequence and user email map tables
+----------------------------
+revision 1.7
+date: 2003/08/08 08:02:20 +0000; author: slava;  state: Exp;  lines: +1 -9
+Continued working on editable table
+----------------------------
+revision 1.6
+date: 2003/08/08 06:41:30 +0000; author: slava;  state: Exp;  lines: +1 -1
+Added Perforce settings panel
+----------------------------
+revision 1.5
+date: 2003/08/08 04:47:16 +0000; author: slava;  state: Exp;  lines: +1 -1
+Import optimization
+----------------------------
+revision 1.4
+date: 2003/08/07 01:07:51 +0000; author: slava;  state: Exp;  lines: +1 -0
+Continued working on editable table
+----------------------------
+revision 1.3
+date: 2003/08/06 00:58:41 +0000; author: slava;  state: Exp;  lines: +1 -1
+Continued working on editable table
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/admin/BuildConfigurationPage.java,v
+Working file: bt/com/viewtier/parabuild/webui/admin/BuildConfigurationPage.java
+head: 1.10
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 10;	selected revisions: 10
+description:
+----------------------------
+revision 1.10
+date: 2003/08/18 02:21:17 +0000; author: slava;  state: Exp;  lines: +4 -4
+Began working on SourceControl implementation
+----------------------------
+revision 1.9
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;  lines: +5 -5
+Fixed #131
+----------------------------
+revision 1.8
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;  lines: +8 -8
+Renamed build package to configuration
+----------------------------
+revision 1.7
+date: 2003/08/14 18:36:42 +0000; author: slava;  state: Exp;  lines: +6 -6
+Renamed BuildManager to ConfigurationManager
+----------------------------
+revision 1.6
+date: 2003/08/10 09:02:43 +0000; author: slava;  state: Exp;  lines: +99 -47
+Finished working on #124,125
+----------------------------
+revision 1.5
+date: 2003/08/10 04:35:22 +0000; author: slava;  state: Exp;  lines: +58 -22
+Began working on editing build
+----------------------------
+revision 1.4
+date: 2003/08/10 03:41:58 +0000; author: slava;  state: Exp;  lines: +39 -38
+Continued working on creating new build
+----------------------------
+revision 1.3
+date: 2003/08/09 01:59:04 +0000; author: slava;  state: Exp;  lines: +16 -3
+Continued working on build sequence and user email map tables
+----------------------------
+revision 1.2
+date: 2003/08/08 08:02:20 +0000; author: slava;  state: Exp;  lines: +5 -5
+Continued working on editable table
+----------------------------
+revision 1.1
+date: 2003/08/08 06:44:09 +0000; author: slava;  state: Exp;
+Refactoring - renamed new build page to BuildConfigurationPage
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/admin/Attic/BuildConfigurationsPanel.java,v
+Working file: bt/com/viewtier/parabuild/webui/admin/BuildConfigurationsPanel.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 0
+description:
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/admin/Attic/BuildEditPage.java,v
+Working file: bt/com/viewtier/parabuild/webui/admin/BuildEditPage.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 0
+description:
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/admin/Attic/BuildHeaderEditPage.java,v
+Working file: bt/com/viewtier/parabuild/webui/admin/BuildHeaderEditPage.java
+head: 1.11
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 11;	selected revisions: 3
+description:
+----------------------------
+revision 1.11
+date: 2003/08/07 03:30:18 +0000; author: slava;  state: dead;  lines: +0 -0
+Refactoring - renamed BuildHeaderEditPage to NewBuildPage
+----------------------------
+revision 1.10
+date: 2003/08/05 07:36:36 +0000; author: slava;  state: Exp;  lines: +4 -4
+Added BuildSequence object
+----------------------------
+revision 1.9
+date: 2003/08/04 02:47:11 +0000; author: slava;  state: Exp;  lines: +2 -2
+Refactoring - renamed AutomaticBuildSettingsPanel to AutomaticScheduleSettingsPanel
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/admin/BuildHeaderEditPanel.java,v
+Working file: bt/com/viewtier/parabuild/webui/admin/BuildHeaderEditPanel.java
+head: 1.18
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 18;	selected revisions: 14
+description:
+----------------------------
+revision 1.18
+date: 2003/08/18 02:21:17 +0000; author: slava;  state: Exp;  lines: +2 -2
+Began working on SourceControl implementation
+----------------------------
+revision 1.17
+date: 2003/08/16 01:30:06 +0000; author: slava;  state: Exp;  lines: +0 -3
+Fixed broken tests
+----------------------------
+revision 1.16
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;  lines: +3 -3
+Fixed #131
+----------------------------
+revision 1.15
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;  lines: +4 -4
+Renamed build package to configuration
+----------------------------
+revision 1.14
+date: 2003/08/14 18:36:42 +0000; author: slava;  state: Exp;  lines: +2 -2
+Renamed BuildManager to ConfigurationManager
+----------------------------
+revision 1.13
+date: 2003/08/10 09:02:43 +0000; author: slava;  state: Exp;  lines: +21 -25
+Finished working on #124,125
+----------------------------
+revision 1.12
+date: 2003/08/10 04:35:22 +0000; author: slava;  state: Exp;  lines: +18 -0
+Began working on editing build
+----------------------------
+revision 1.11
+date: 2003/08/10 03:41:58 +0000; author: slava;  state: Exp;  lines: +65 -7
+Continued working on creating new build
+----------------------------
+revision 1.10
+date: 2003/08/08 06:41:30 +0000; author: slava;  state: Exp;  lines: +4 -4
+Added Perforce settings panel
+----------------------------
+revision 1.9
+date: 2003/08/08 04:47:16 +0000; author: slava;  state: Exp;  lines: +1 -1
+Import optimization
+----------------------------
+revision 1.8
+date: 2003/08/07 07:51:53 +0000; author: slava;  state: Exp;  lines: +30 -14
+Continued working on new build page
+----------------------------
+revision 1.7
+date: 2003/08/07 03:30:18 +0000; author: slava;  state: Exp;  lines: +0 -1
+Refactoring - renamed BuildHeaderEditPage to NewBuildPage
+----------------------------
+revision 1.6
+date: 2003/08/06 07:54:44 +0000; author: slava;  state: Exp;  lines: +3 -3
+Moved to generic Tierlet.Result processing
+----------------------------
+revision 1.5
+date: 2003/08/06 00:58:41 +0000; author: slava;  state: Exp;  lines: +8 -0
+Continued working on editable table
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/admin/BuildNotificationSettingsPanel.java,v
+Working file: bt/com/viewtier/parabuild/webui/admin/BuildNotificationSettingsPanel.java
+head: 1.9
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 9;	selected revisions: 7
+description:
+----------------------------
+revision 1.9
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;  lines: +1 -1
+Fixed #131
+----------------------------
+revision 1.8
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;  lines: +2 -2
+Renamed build package to configuration
+----------------------------
+revision 1.7
+date: 2003/08/14 18:36:42 +0000; author: slava;  state: Exp;  lines: +2 -2
+Renamed BuildManager to ConfigurationManager
+----------------------------
+revision 1.6
+date: 2003/08/10 09:02:43 +0000; author: slava;  state: Exp;  lines: +1 -0
+Finished working on #124,125
+----------------------------
+revision 1.5
+date: 2003/08/10 03:41:58 +0000; author: slava;  state: Exp;  lines: +45 -1
+Continued working on creating new build
+----------------------------
+revision 1.4
+date: 2003/08/08 06:41:30 +0000; author: slava;  state: Exp;  lines: +3 -5
+Added Perforce settings panel
+----------------------------
+revision 1.3
+date: 2003/08/04 03:56:05 +0000; author: slava;  state: Exp;  lines: +3 -1
+Continued working on #124
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/admin/BuildRunnerDropDown.java,v
+Working file: bt/com/viewtier/parabuild/webui/admin/BuildRunnerDropDown.java
+head: 1.4
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 4;	selected revisions: 3
+description:
+----------------------------
+revision 1.4
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;  lines: +2 -2
+Fixed #131
+----------------------------
+revision 1.3
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;  lines: +3 -3
+Renamed build package to configuration
+----------------------------
+revision 1.2
+date: 2003/08/08 04:47:16 +0000; author: slava;  state: Exp;  lines: +1 -1
+Import optimization
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/admin/Attic/BuildScriptTable.java,v
+Working file: bt/com/viewtier/parabuild/webui/admin/BuildScriptTable.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 1
+description:
+----------------------------
+revision 1.2
+date: 2003/08/05 07:36:36 +0000; author: slava;  state: dead;  lines: +0 -0
+Added BuildSequence object
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/admin/BuildSequenceTable.java,v
+Working file: bt/com/viewtier/parabuild/webui/admin/BuildSequenceTable.java
+head: 1.12
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 12;	selected revisions: 12
+description:
+----------------------------
+revision 1.12
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;  lines: +2 -2
+Fixed #131
+----------------------------
+revision 1.11
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;  lines: +3 -3
+Renamed build package to configuration
+----------------------------
+revision 1.10
+date: 2003/08/14 18:36:42 +0000; author: slava;  state: Exp;  lines: +2 -2
+Renamed BuildManager to ConfigurationManager
+----------------------------
+revision 1.9
+date: 2003/08/10 03:41:58 +0000; author: slava;  state: Exp;  lines: +54 -9
+Continued working on creating new build
+----------------------------
+revision 1.8
+date: 2003/08/09 06:39:27 +0000; author: slava;  state: Exp;  lines: +1 -1
+Added ability to delete rows from the tables
+----------------------------
+revision 1.7
+date: 2003/08/09 01:59:04 +0000; author: slava;  state: Exp;  lines: +88 -16
+Continued working on build sequence and user email map tables
+----------------------------
+revision 1.6
+date: 2003/08/08 08:02:20 +0000; author: slava;  state: Exp;  lines: +13 -9
+Continued working on editable table
+----------------------------
+revision 1.5
+date: 2003/08/08 06:41:30 +0000; author: slava;  state: Exp;  lines: +9 -1
+Added Perforce settings panel
+----------------------------
+revision 1.4
+date: 2003/08/08 04:47:16 +0000; author: slava;  state: Exp;  lines: +1 -1
+Import optimization
+----------------------------
+revision 1.3
+date: 2003/08/06 00:58:41 +0000; author: slava;  state: Exp;  lines: +1 -2
+Continued working on editable table
+----------------------------
+revision 1.2
+date: 2003/08/05 16:38:10 +0000; author: slava;  state: Exp;  lines: +1 -0
+Continued working on editable table
+----------------------------
+revision 1.1
+date: 2003/08/05 07:36:36 +0000; author: slava;  state: Exp;
+Added BuildSequence object
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/admin/CVSSettingsPanel.java,v
+Working file: bt/com/viewtier/parabuild/webui/admin/CVSSettingsPanel.java
+head: 1.10
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 10;	selected revisions: 8
+description:
+----------------------------
+revision 1.10
+date: 2003/08/18 02:21:17 +0000; author: slava;  state: Exp;  lines: +10 -10
+Began working on SourceControl implementation
+----------------------------
+revision 1.9
+date: 2003/08/15 20:08:02 +0000; author: slava;  state: Exp;  lines: +2 -3
+Added tests
+----------------------------
+revision 1.8
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;  lines: +1 -1
+Fixed #131
+----------------------------
+revision 1.7
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;  lines: +2 -2
+Renamed build package to configuration
+----------------------------
+revision 1.6
+date: 2003/08/14 18:36:42 +0000; author: slava;  state: Exp;  lines: +1 -1
+Renamed BuildManager to ConfigurationManager
+----------------------------
+revision 1.5
+date: 2003/08/10 03:41:58 +0000; author: slava;  state: Exp;  lines: +54 -1
+Continued working on creating new build
+----------------------------
+revision 1.4
+date: 2003/08/08 04:47:16 +0000; author: slava;  state: Exp;  lines: +2 -2
+Import optimization
+----------------------------
+revision 1.3
+date: 2003/08/08 01:52:58 +0000; author: slava;  state: Exp;  lines: +52 -15
+Added saving version control properties
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/admin/DeleteBuildPage.java,v
+Working file: bt/com/viewtier/parabuild/webui/admin/DeleteBuildPage.java
+head: 1.11
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 11;	selected revisions: 9
+description:
+----------------------------
+revision 1.11
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;  lines: +4 -4
+Fixed #131
+----------------------------
+revision 1.10
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;  lines: +5 -5
+Renamed build package to configuration
+----------------------------
+revision 1.9
+date: 2003/08/14 18:36:42 +0000; author: slava;  state: Exp;  lines: +1 -1
+Renamed BuildManager to ConfigurationManager
+----------------------------
+revision 1.8
+date: 2003/08/10 04:35:22 +0000; author: slava;  state: Exp;  lines: +1 -27
+Began working on editing build
+----------------------------
+revision 1.7
+date: 2003/08/10 03:41:58 +0000; author: slava;  state: Exp;  lines: +4 -1
+Continued working on creating new build
+----------------------------
+revision 1.6
+date: 2003/08/09 23:28:28 +0000; author: slava;  state: Exp;  lines: +37 -21
+Closed some TODOs.
+----------------------------
+revision 1.5
+date: 2003/08/08 06:41:30 +0000; author: slava;  state: Exp;  lines: +4 -5
+Added Perforce settings panel
+----------------------------
+revision 1.4
+date: 2003/08/08 04:47:16 +0000; author: slava;  state: Exp;  lines: +0 -1
+Import optimization
+----------------------------
+revision 1.3
+date: 2003/08/07 01:07:51 +0000; author: slava;  state: Exp;  lines: +2 -2
+Continued working on editable table
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/admin/Attic/NewBuildPage.java,v
+Working file: bt/com/viewtier/parabuild/webui/admin/NewBuildPage.java
+head: 1.5
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 5;	selected revisions: 5
+description:
+----------------------------
+revision 1.5
+date: 2003/08/08 06:44:09 +0000; author: slava;  state: dead;  lines: +0 -0
+Refactoring - renamed new build page to BuildConfigurationPage
+----------------------------
+revision 1.4
+date: 2003/08/08 06:41:30 +0000; author: slava;  state: Exp;  lines: +30 -15
+Added Perforce settings panel
+----------------------------
+revision 1.3
+date: 2003/08/08 01:52:58 +0000; author: slava;  state: Exp;  lines: +58 -2
+Added saving version control properties
+----------------------------
+revision 1.2
+date: 2003/08/07 07:51:53 +0000; author: slava;  state: Exp;  lines: +120 -36
+Continued working on new build page
+----------------------------
+revision 1.1
+date: 2003/08/07 03:30:18 +0000; author: slava;  state: Exp;
+Refactoring - renamed BuildHeaderEditPage to NewBuildPage
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/admin/PerforceSettingsPanel.java,v
+Working file: bt/com/viewtier/parabuild/webui/admin/PerforceSettingsPanel.java
+head: 1.5
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 5;	selected revisions: 5
+description:
+----------------------------
+revision 1.5
+date: 2003/08/18 02:21:17 +0000; author: slava;  state: Exp;  lines: +10 -10
+Began working on SourceControl implementation
+----------------------------
+revision 1.4
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;  lines: +1 -1
+Renamed build package to configuration
+----------------------------
+revision 1.3
+date: 2003/08/14 18:36:42 +0000; author: slava;  state: Exp;  lines: +1 -1
+Renamed BuildManager to ConfigurationManager
+----------------------------
+revision 1.2
+date: 2003/08/10 03:41:58 +0000; author: slava;  state: Exp;  lines: +56 -4
+Continued working on creating new build
+----------------------------
+revision 1.1
+date: 2003/08/08 06:41:30 +0000; author: slava;  state: Exp;
+Added Perforce settings panel
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/admin/ScheduleTypeDropDown.java,v
+Working file: bt/com/viewtier/parabuild/webui/admin/ScheduleTypeDropDown.java
+head: 1.4
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 4;	selected revisions: 3
+description:
+----------------------------
+revision 1.4
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;  lines: +2 -2
+Fixed #131
+----------------------------
+revision 1.3
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;  lines: +3 -3
+Renamed build package to configuration
+----------------------------
+revision 1.2
+date: 2003/08/08 04:47:16 +0000; author: slava;  state: Exp;  lines: +1 -1
+Import optimization
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/admin/SystemConfigPanel.java,v
+Working file: bt/com/viewtier/parabuild/webui/admin/SystemConfigPanel.java
+head: 1.11
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 11;	selected revisions: 5
+description:
+----------------------------
+revision 1.11
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;  lines: +1 -1
+Fixed #131
+----------------------------
+revision 1.10
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;  lines: +1 -1
+Renamed build package to configuration
+----------------------------
+revision 1.9
+date: 2003/08/08 01:52:58 +0000; author: slava;  state: Exp;  lines: +6 -6
+Added saving version control properties
+----------------------------
+revision 1.8
+date: 2003/08/04 02:41:19 +0000; author: slava;  state: Exp;  lines: +36 -34
+Finished working on #119,#122
+----------------------------
+revision 1.7
+date: 2003/08/01 08:00:09 +0000; author: slava;  state: Exp;  lines: +21 -28
+Refactoring - added reusable property-to-input map
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/admin/VersionControlDropDown.java,v
+Working file: bt/com/viewtier/parabuild/webui/admin/VersionControlDropDown.java
+head: 1.5
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 5;	selected revisions: 3
+description:
+----------------------------
+revision 1.5
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;  lines: +2 -2
+Fixed #131
+----------------------------
+revision 1.4
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;  lines: +3 -3
+Renamed build package to configuration
+----------------------------
+revision 1.3
+date: 2003/08/08 04:47:16 +0000; author: slava;  state: Exp;  lines: +1 -1
+Import optimization
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/admin/VersionControlUserToEmailTable.java,v
+Working file: bt/com/viewtier/parabuild/webui/admin/VersionControlUserToEmailTable.java
+head: 1.12
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 12;	selected revisions: 10
+description:
+----------------------------
+revision 1.12
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;  lines: +1 -1
+Fixed #131
+----------------------------
+revision 1.11
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;  lines: +2 -2
+Renamed build package to configuration
+----------------------------
+revision 1.10
+date: 2003/08/14 18:36:42 +0000; author: slava;  state: Exp;  lines: +2 -2
+Renamed BuildManager to ConfigurationManager
+----------------------------
+revision 1.9
+date: 2003/08/10 03:41:57 +0000; author: slava;  state: Exp;  lines: +68 -8
+Continued working on creating new build
+----------------------------
+revision 1.8
+date: 2003/08/09 01:59:04 +0000; author: slava;  state: Exp;  lines: +87 -45
+Continued working on build sequence and user email map tables
+----------------------------
+revision 1.7
+date: 2003/08/08 08:02:20 +0000; author: slava;  state: Exp;  lines: +32 -11
+Continued working on editable table
+----------------------------
+revision 1.6
+date: 2003/08/08 06:41:30 +0000; author: slava;  state: Exp;  lines: +1 -1
+Added Perforce settings panel
+----------------------------
+revision 1.5
+date: 2003/08/06 00:58:41 +0000; author: slava;  state: Exp;  lines: +1 -2
+Continued working on editable table
+----------------------------
+revision 1.4
+date: 2003/08/05 16:38:10 +0000; author: slava;  state: Exp;  lines: +1 -0
+Continued working on editable table
+----------------------------
+revision 1.3
+date: 2003/08/04 03:56:05 +0000; author: slava;  state: Exp;  lines: +1 -0
+Continued working on #124
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/common/AbstractFlatTable.java,v
+Working file: bt/com/viewtier/parabuild/webui/common/AbstractFlatTable.java
+head: 1.15
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 15;	selected revisions: 12
+description:
+----------------------------
+revision 1.15
+date: 2003/08/16 01:30:06 +0000; author: slava;  state: Exp;  lines: +0 -2
+Fixed broken tests
+----------------------------
+revision 1.14
+date: 2003/08/15 19:42:45 +0000; author: slava;  state: Exp;  lines: +8 -0
+Added tests
+----------------------------
+revision 1.13
+date: 2003/08/10 03:41:58 +0000; author: slava;  state: Exp;  lines: +0 -9
+Continued working on creating new build
+----------------------------
+revision 1.12
+date: 2003/08/09 06:39:27 +0000; author: slava;  state: Exp;  lines: +0 -1
+Added ability to delete rows from the tables
+----------------------------
+revision 1.11
+date: 2003/08/09 01:59:04 +0000; author: slava;  state: Exp;  lines: +125 -95
+Continued working on build sequence and user email map tables
+----------------------------
+revision 1.10
+date: 2003/08/08 08:02:20 +0000; author: slava;  state: Exp;  lines: +66 -29
+Continued working on editable table
+----------------------------
+revision 1.9
+date: 2003/08/08 06:41:30 +0000; author: slava;  state: Exp;  lines: +3 -3
+Added Perforce settings panel
+----------------------------
+revision 1.8
+date: 2003/08/07 01:07:51 +0000; author: slava;  state: Exp;  lines: +107 -21
+Continued working on editable table
+----------------------------
+revision 1.7
+date: 2003/08/06 00:58:41 +0000; author: slava;  state: Exp;  lines: +68 -39
+Continued working on editable table
+----------------------------
+revision 1.6
+date: 2003/08/05 16:38:10 +0000; author: slava;  state: Exp;  lines: +23 -1
+Continued working on editable table
+----------------------------
+revision 1.5
+date: 2003/08/04 04:10:22 +0000; author: slava;  state: Exp;  lines: +27 -1
+Continued working on #124
+----------------------------
+revision 1.4
+date: 2003/08/04 03:56:05 +0000; author: slava;  state: Exp;  lines: +1 -1
+Continued working on #124
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/common/BasePage.java,v
+Working file: bt/com/viewtier/parabuild/webui/common/BasePage.java
+head: 1.7
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 7;	selected revisions: 3
+description:
+----------------------------
+revision 1.7
+date: 2003/08/18 00:27:14 +0000; author: slava;  state: Exp;  lines: +0 -9
+Moved FooterLink out of BasePage files
+----------------------------
+revision 1.6
+date: 2003/08/08 04:47:16 +0000; author: slava;  state: Exp;  lines: +1 -2
+Import optimization
+----------------------------
+revision 1.5
+date: 2003/08/04 02:39:52 +0000; author: slava;  state: Exp;  lines: +2 -1
+Generalized common reuired field label font
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/common/CancelButton.java,v
+Working file: bt/com/viewtier/parabuild/webui/common/CancelButton.java
+head: 1.1
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2003/08/07 07:51:53 +0000; author: slava;  state: Exp;
+Continued working on new build page
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/common/CommonButton.java,v
+Working file: bt/com/viewtier/parabuild/webui/common/CommonButton.java
+head: 1.1
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 0
+description:
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/common/CommonField.java,v
+Working file: bt/com/viewtier/parabuild/webui/common/CommonField.java
+head: 1.1
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 0
+description:
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/common/CommonHeaderLink.java,v
+Working file: bt/com/viewtier/parabuild/webui/common/CommonHeaderLink.java
+head: 1.1
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 0
+description:
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/common/CommonLabel.java,v
+Working file: bt/com/viewtier/parabuild/webui/common/CommonLabel.java
+head: 1.3
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 3;	selected revisions: 0
+description:
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/common/CommonLink.java,v
+Working file: bt/com/viewtier/parabuild/webui/common/CommonLink.java
+head: 1.1
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2003/08/09 23:28:28 +0000; author: slava;  state: Exp;
+Closed some TODOs.
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/common/ContinueButton.java,v
+Working file: bt/com/viewtier/parabuild/webui/common/ContinueButton.java
+head: 1.1
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2003/08/10 09:02:43 +0000; author: slava;  state: Exp;
+Finished working on #124,125
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/common/FooterLink.java,v
+Working file: bt/com/viewtier/parabuild/webui/common/FooterLink.java
+head: 1.1
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2003/08/18 00:27:14 +0000; author: slava;  state: Exp;
+Moved FooterLink out of BasePage files
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/common/GridIterator.java,v
+Working file: bt/com/viewtier/parabuild/webui/common/GridIterator.java
+head: 1.3
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 3;	selected revisions: 0
+description:
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/common/MessagePanel.java,v
+Working file: bt/com/viewtier/parabuild/webui/common/MessagePanel.java
+head: 1.4
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 4;	selected revisions: 1
+description:
+----------------------------
+revision 1.4
+date: 2003/08/10 03:41:58 +0000; author: slava;  state: Exp;  lines: +41 -1
+Continued working on creating new build
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/common/Pages.java,v
+Working file: bt/com/viewtier/parabuild/webui/common/Pages.java
+head: 1.10
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 10;	selected revisions: 7
+description:
+----------------------------
+revision 1.10
+date: 2003/08/15 03:56:13 +0000; author: slava;  state: Exp;  lines: +1 -1
+Added admin status page
+----------------------------
+revision 1.9
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;  lines: +3 -3
+Fixed #131
+----------------------------
+revision 1.8
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;  lines: +3 -3
+Renamed build package to configuration
+----------------------------
+revision 1.7
+date: 2003/08/12 07:11:57 +0000; author: slava;  state: Exp;  lines: +1 -0
+Finished working on the first iteration public build statuses
+----------------------------
+revision 1.6
+date: 2003/08/11 20:56:15 +0000; author: slava;  state: Exp;  lines: +0 -1
+Renamed AdminHomePage to AdminStatusPage
+----------------------------
+revision 1.5
+date: 2003/08/10 09:02:43 +0000; author: slava;  state: Exp;  lines: +1 -1
+Finished working on #124,125
+----------------------------
+revision 1.4
+date: 2003/08/04 02:39:52 +0000; author: slava;  state: Exp;  lines: +3 -0
+Generalized common reuired field label font
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/common/ParameterUtils.java,v
+Working file: bt/com/viewtier/parabuild/webui/common/ParameterUtils.java
+head: 1.4
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 4;	selected revisions: 4
+description:
+----------------------------
+revision 1.4
+date: 2003/08/15 03:37:48 +0000; author: slava;  state: Exp;  lines: +2 -2
+Fixed #131
+----------------------------
+revision 1.3
+date: 2003/08/14 22:38:53 +0000; author: slava;  state: Exp;  lines: +3 -3
+Renamed build package to configuration
+----------------------------
+revision 1.2
+date: 2003/08/14 18:36:43 +0000; author: slava;  state: Exp;  lines: +1 -1
+Renamed BuildManager to ConfigurationManager
+----------------------------
+revision 1.1
+date: 2003/08/10 04:35:22 +0000; author: slava;  state: Exp;
+Began working on editing build
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/common/PropertyToInputMap.java,v
+Working file: bt/com/viewtier/parabuild/webui/common/PropertyToInputMap.java
+head: 1.3
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/08/04 02:41:19 +0000; author: slava;  state: Exp;  lines: +115 -7
+Finished working on #119,#122
+----------------------------
+revision 1.2
+date: 2003/08/02 02:26:22 +0000; author: slava;  state: Exp;  lines: +11 -3
+Continued working on property map
+----------------------------
+revision 1.1
+date: 2003/08/01 08:00:09 +0000; author: slava;  state: Exp;
+Refactoring - added reusable property-to-input map
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/common/RequiredFieldLabel.java,v
+Working file: bt/com/viewtier/parabuild/webui/common/RequiredFieldLabel.java
+head: 1.2
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 1
+description:
+----------------------------
+revision 1.2
+date: 2003/08/04 02:39:52 +0000; author: slava;  state: Exp;  lines: +4 -0
+Generalized common reuired field label font
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/common/SaveButton.java,v
+Working file: bt/com/viewtier/parabuild/webui/common/SaveButton.java
+head: 1.1
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2003/08/07 07:51:53 +0000; author: slava;  state: Exp;
+Continued working on new build page
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/common/Saveable.java,v
+Working file: bt/com/viewtier/parabuild/webui/common/Saveable.java
+head: 1.1
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2003/08/10 03:41:58 +0000; author: slava;  state: Exp;
+Continued working on creating new build
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/common/UnderConstructionPage.java,v
+Working file: bt/com/viewtier/parabuild/webui/common/UnderConstructionPage.java
+head: 1.3
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 3;	selected revisions: 2
+description:
+----------------------------
+revision 1.3
+date: 2003/08/08 04:47:16 +0000; author: slava;  state: Exp;  lines: +0 -1
+Import optimization
+----------------------------
+revision 1.2
+date: 2003/08/06 07:54:44 +0000; author: slava;  state: Exp;  lines: +2 -2
+Moved to generic Tierlet.Result processing
+=============================================================================
+
+RCS file: /opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/webui/common/Validatable.java,v
+Working file: bt/com/viewtier/parabuild/webui/common/Validatable.java
+head: 1.1
+branch:
+locks: strict
+access list:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2003/08/10 03:41:58 +0000; author: slava;  state: Exp;
+Continued working on creating new build
+=============================================================================

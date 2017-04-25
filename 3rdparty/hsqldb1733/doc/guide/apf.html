@@ -1,0 +1,31 @@
+<html><head><META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Appendix&nbsp;F.&nbsp;Database Manager</title><link href="guide.css" rel="stylesheet" type="text/css"><meta content="DocBook XSL Stylesheets V1.65.1" name="generator"><meta name="keywords" content="Hsqldb, Database, Manager"><meta name="keywords" content="Hsqldb, Hypersonic, Database, JDBC, Java"><link rel="home" href="index.html" title="Hsqldb User Guide"><link rel="up" href="index.html" title="Hsqldb User Guide"><link rel="previous" href="ape.html" title="Appendix&nbsp;E.&nbsp;Hsqldb Test Utility"><link rel="next" href="apg.html" title="Appendix&nbsp;G.&nbsp;Transfer Tool"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table summary="Navigation header" width="100%"><tr><th align="center" colspan="3">Appendix&nbsp;F.&nbsp;Database Manager</th></tr><tr><td align="left" width="20%"><a accesskey="p" href="ape.html"><img src="navicons/prev.gif" alt="Prev"></a>&nbsp;</td><th align="center" width="60%">&nbsp;</th><td align="right" width="20%">&nbsp;<a accesskey="n" href="apg.html"><img src="navicons/next.gif" alt="Next"></a></td></tr></table><hr></div><div class="appendix" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="N123F0"></a>Appendix&nbsp;F.&nbsp;Database Manager</h2></div><div><div class="authorgroup"><div class="author"><h3 class="author"><span class="firstname">Fred</span> <span class="surname">Toussi</span></h3><div class="affiliation"><span class="orgname">HSQLDB Development Group<br></span></div><tt class="email">&lt;<a href="mailto:ft@cluedup.com">ft@cluedup.com</a>&gt;</tt></div></div></div><div><p class="pubdate">$Date: 2004/06/18 14:24:42 $</p></div></div><div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="apf.html#N1240F">Brief Introduction</a></span></dt></dl></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N1240F"></a>Brief Introduction</h2></div></div><div></div></div><p>The Database Manager tool is a simple GUI database query tool with a 
+	tree display of the tables. Both AWT and SWING versions of the tool are
+	available and work almost identically. The AWT version class name is
+	org.hsqldb.util.DatabaseManager; the SWING version,
+	org.hsqldb.util.DatabaseManagerSwing. 
+	</p><p>
+	The AWT version of the database manager can be deployed as an applet in
+	a browser. A demo HTML file with an embedded Database Manager is included
+	in the /demo directory.
+	</p><p>
+	When the Database Manager is started, a dialogue allows you to
+	enter the JDBC driver, URL, user and password for the new connection.
+	A drop-down box, Type, offers preset values for JDBC driver and URL for
+	most popular database engines, including HSQLDB. Once you have selected
+	an item from this drop-down box, you should edit the URL to specify
+	the details of the database or any additional properties to pass. You should
+	also enter the username and password before clicking on the OK button. 	
+	</p><p>
+	The AWT connection dialogue allows you to save the settings for the connection
+	you are about to make. You can then access the connection in future sessions.
+	To save a connection setting, enter a name in the Setting Name box before
+	clicking on the OK button. Next time the connection dialogue is displayed,
+	the drop-down box labeled Recent will include the name for all the saved
+	connection settings. When you select a name, the individual settings are
+	displayed in the appropriate boxes.
+	</p><p>
+	The small Clr button next to the drop-down box allows you to clear all the
+	saved settings. If you want to modify an existing setting, first select
+	it from the drop-down box then modify any of the text boxes before making
+	the connection. The modified values will be saved.
+	</p></div></div><div class="navfooter"><hr><table summary="Navigation footer" width="100%"><tr><td align="left" width="40%"><a accesskey="p" href="ape.html"><img src="navicons/prev.gif" alt="Prev"></a>&nbsp;</td><td align="center" width="20%"><a accesskey="u" href="index.html"><img src="navicons/up.gif" alt="Up"></a></td><td align="right" width="40%">&nbsp;<a accesskey="n" href="apg.html"><img src="navicons/next.gif" alt="Next"></a></td></tr><tr><td valign="top" align="left" width="40%">Appendix&nbsp;E.&nbsp;Hsqldb Test Utility&nbsp;</td><td align="center" width="20%"><a accesskey="h" href="index.html"><img src="navicons/home.gif" alt="Home"></a></td><td valign="top" align="right" width="40%">&nbsp;Appendix&nbsp;G.&nbsp;Transfer Tool</td></tr></table></div></body></html>

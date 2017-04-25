@@ -1,0 +1,8 @@
+0       string          \312\376\300\300        HotSpot Java VM performance data
+ file
+>4      byte            0                               big-endian
+>4      byte            1                               little-endian
+>5      byte            >0                              version %ld.
+>6      byte            0                               %ld
+>6      byte            >0                              %ld
+

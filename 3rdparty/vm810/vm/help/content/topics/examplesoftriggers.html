@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Examples of Event Triggers</TITLE>
+<!--<examplesoftriggers.html>-->
+<!--<index parent="event_triggers" label="examples of" anchor="examplesoftriggers">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="examplesoftriggers"></A>Examples of Event Triggers</H1>
+<p>
+<b>Example 1:</b> Creating a PostPut event trigger to place a floating version label on any revision checked in.
+</P>
+<P>
+The following event trigger will place the floating label 'LATEST' on any revision that is checked in, including branches. If you want to have a floating label on trunk revisions only, then you do not need an event trigger; you can, instead, place the floating label on the trunk of all archives in the project. The definition of the event trigger in a configuration file is:
+</P>
+<P>
+<FONT FACE="COURIER NEW">EventTrigger = POSTPUT vcs -vLATEST:__EventRevision__* -y __EventArchive__</FONT>
+</P>
+<P>
+Note that this event trigger is being passed event information through command-line macros.
+</P>
+<P>
+<b>Example 2:</b> Creating a PrePromote event trigger to get (check out without a lock) a revision being promoted and place it in a specific directory.
+</P>
+<P>
+The following event trigger will get a revision that is being promoted and place it in one directory if it is being promoted to the Stage promotion group and another directory if it is being promoted to the Production promotion group. The definition of the event trigger in a configuration file is:
+</P>
+<P>
+<FONT FACE="COURIER NEW">EventTrigger = [path]prepromote.bat __EventGroup__ __EventArchive__</FONT>
+</P>
+<P>
+The prepromote.bat file looks like this:
+</P>
+<P><FONT FACE="COURIER NEW">
+@echo off<BR>
+rem %1 = EventGroup and %2 = EventArchive<BR>
+IF &quot;%1&quot; == &quot;Development&quot; GOTO STAGE<BR>
+IF &quot;%1&quot; == &quot;Stage&quot; GOTO PRODUCTION<BR>
+:STAGE<BR>
+get -cD:\PVCS\PVCSPROJ\prmsmple.prj\vcs.cfg -gDevelopment %2(c:\staging\famis):PRODUCTION<BR>
+get -cD:\PVCS\PVCSPROJ\prmsmpl.prj\vcs.cfg -gStage %2(c:\production\famis)<BR>
+</FONT>
+</P>
+<P>
+<b>Example 3:</b> Creating an AllEvents event trigger to echo the event information being passed for all events.
+</P>
+<P>
+The following event trigger will display the event information that is available for each Version Manager event in a console window. This event trigger is useful for checking which information is passed during which events. The definition of the event trigger in a configuration file is:
+</P>
+<P>
+<FONT FACE="COURIER NEW">EventTrigger = [path]echovm.bat</FONT>
+</P>
+<P>
+The echovm.bat file uses environment variables to get event information and looks like this:
+</P>
+<P><FONT FACE="COURIER NEW">
+echo off<BR>
+echo Action %EventName% on %EventDate% %EventTime%<BR>
+echo.<BR>
+echo EventName: %EventName%<BR>
+echo EventArchive: %EventArchive%<BR>
+echo EventWorkfile: %EventWorkfile%<BR>
+echo EventUserID: %EventUserID%<BR>
+echo EventLock: %EventLock%<BR>
+echo EventRevision: %EventRevision%<BR>
+echo EventVersion: %EventVersion%<BR>
+echo EventGroup: %EventGroup%<BR>
+</FONT>
+</P>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a href="settinguptriggers.html">Setting Up Event Triggers</a></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

@@ -1,0 +1,214 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Using starteam-client-options.xml</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=copyright value="Copyright© 1995-2003, Borland Software Corporation. All rights reserved.">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=1199>
+<meta name=layout-width content=702>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<!--(Scripts)=======================================================-->
+
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="./ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Appendix\nUnderstanding Initialization Files\nUsing starteam-client-options.xml ");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Using starteam-client-options.xml </h1>
+
+<p class=Body>In the starteam-client-options.xml file, you will find information 
+ about each of the options that can be set from the <span style="font-style: italic;"><I>Personal 
+ Options</I></span> dialog box, which is accessed by selecting <span style="font-weight: bold;"><B>Tools 
+ &gt; Personal Options</B></span> from the application's main window. Most 
+ option names in the .ini file correspond closely to the names of the options 
+ on the dialog box. The options that are check boxes in the <span style="font-style: italic;"><I>Personal 
+ Options</I></span> dialog are set equal to 1 for selected or 0 for cleared. 
+ Intervals are set to a number of minutes or seconds, depending upon the 
+ option. Paths are in text. No quotation marks are used with the text.</p>
+
+<p class=Body>For example, the “Project Component” information provides 
+ the paths to alternate working folders for projects accessed from your 
+ workstation. Each such entry in the starteam-client-options.xml file is 
+ composed of:</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>“Project Component”</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>ViewWorkingFolderOverrides 
+ (if the alternate working folder is either for an entire view) or WorkingFolderOverrides 
+ (if the alternate working folder is for an individual application folder).</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Hex identification of 
+ the project view and folder.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Alternate working folder 
+ path.</p></li>
+</ul>
+
+<p class=Body>Here are some sample lines from this file:</p>
+
+<p class=Code><font style="font-family: 'Courier New';"
+					face="Courier New">&lt;?xml version=&quot;1.0&quot; 
+ encoding=&quot;UTF-8&quot;?&gt;<br>
+&lt;StarTeamClientOptions version=&quot;1.0&quot;&gt;<br>
+&nbsp; &lt;category name=&quot;File Component&quot;&gt;<br>
+&nbsp; &lt;option name=&quot;CentralStatusDir&quot; value=&quot;C:\Documents 
+ and Settings\username\Local Settings\Application Data\Borland\StarTeam\syncdb&quot;/&gt;<br>
+&nbsp; &lt;option name=&quot;Mark Unlocked Files Read Only&quot; value=&quot;0&quot;/&gt;<br>
+&nbsp; &lt;option name=&quot;Clear Locks On Check-In&quot; value=&quot;0&quot;/&gt;<br>
+&nbsp; &lt;option name=&quot;Use MD5 To Calculate Status&quot; value=&quot;0&quot;/&gt;<br>
+&nbsp;...<br>
+&nbsp; &lt;category name=&quot;Filter UI Service&quot;&gt;<br>
+&nbsp; &lt;option name=&quot;LastFilter\Class 66\01b21dd1-e208-51ea-01b2-1dd1e20851ea\208\&quot; 
+ value=&quot;2147483647&quot;/&gt;<br>
+&nbsp; &lt;option name=&quot;LastFilter\Class 50\42bd2e6a-1ce4-43b2-b103-f63d23bc6d9a\4\&quot; 
+ value=&quot;2147483647&quot;/&gt;<br>
+&nbsp; &lt;option name=&quot;LastFilter\Class 42\01b21dd1-e208-51ea-01b2-1dd1e20851ea\259\&quot; 
+ value=&quot;2147483647&quot;/&gt;<br>
+&nbsp;...<br>
+&nbsp; &lt;/category&gt;<br>
+&nbsp; &lt;category name=&quot;Task Component&quot;&gt;<br>
+&nbsp; &lt;option name=&quot;Selected Item Timer Interval&quot; value=&quot;45&quot;/&gt;<br>
+&nbsp; &lt;option name=&quot;Selected Item Timer Activated&quot; value=&quot;0&quot;/&gt;<br>
+&nbsp; &lt;option name=&quot;Check New Item Activated&quot; value=&quot;1&quot;/&gt;<br>
+&nbsp;...<br>
+&nbsp; &lt;/category&gt;<br>
+&nbsp; &lt;category name=&quot;Workspace&quot;&gt;<br>
+&nbsp; &lt;option name=&quot;Log Command Details&quot; value=&quot;0&quot;/&gt;<br>
+&nbsp; &lt;option name=&quot;Instant Refresh&quot; value=&quot;1&quot;/&gt;<br>
+&nbsp;...<br>
+&nbsp; &lt;/category&gt;<br>
+&nbsp; &lt;category name=&quot;Project Component&quot;&gt;<br>
+&nbsp; &lt;option name=&quot;WorkingFolderOverrides\8a955f01-9cd5-4e2b-8a86-d540226f96f7\1\Path&quot; 
+ value=&quot;e:\trueorfalse&quot;/&gt;<br>
+&nbsp; &lt;option name=&quot;FolderCaseOverrides\d75171c2-25f7-11d3-8127-00a02438b61b\89275\Enable&quot; 
+ value=&quot;0&quot;/&gt;<br>
+&nbsp; &lt;option name=&quot;FolderCaseOverrides\c735046b-925d-4dc8-acca-9c0f11dbccc9\322\Preserve&quot; 
+ value=&quot;0&quot;/&gt;<br>
+&nbsp;.....<br>
+&nbsp; &lt;option name=&quot;ProcessActiveItem\01b21dd1-e208-51ea-01b2-1dd1e20851ea\196\ClassID&quot; 
+ value=&quot;35&quot;/&gt;</font></p>
+
+<p class=Code>&lt;option name=&quot;ProcessActiveItem\b4e41a95-5719-11d2-aaed-00805f9bf529\61\ClassID&quot; 
+ value=&quot;36&quot;/&gt;</p>
+
+<p class=Code>&lt;option name=&quot;ProcessActiveItem\01b21dd1-e208-51ea-01b2-1dd1e20851ea\244\ItemID&quot; 
+ value=&quot;1534974&quot;/&gt;</p>
+
+<p class=Code>&lt;option name=&quot;FolderCaseOverrides\01b21dd1-e208-51ea-01b2-1dd1e20851ea\1220745\Enable&quot; 
+ value=&quot;0&quot;/&gt;</p>
+
+<p class=Code>&lt;option name=&quot;FolderCaseOverrides\c735046b-925d-4dc8-acca-9c0f11dbccc9\322\Enable&quot; 
+ value=&quot;0&quot;/&gt;<br>
+&nbsp;...<br>
+&nbsp; &lt;/category&gt;<br>
+&nbsp; &lt;category name=&quot;Item UI Service&quot;&gt;<br>
+&nbsp; &lt;option name=&quot;Class 66\Display\Height&quot; value=&quot;461&quot;/&gt;<br>
+&nbsp; &lt;option name=&quot;Class 52\Display\Left&quot; value=&quot;216&quot;/&gt;<br>
+&nbsp; &lt;option name=&quot;Class 31\Display\Width&quot; value=&quot;572&quot;/&gt;<br>
+&nbsp;...<br>
+&nbsp; &lt;option name=&quot;Application\Open Projects\1\Window State\Right&quot; 
+ value=&quot;892&quot;/&gt;<br>
+&nbsp; &lt;option name=&quot;Application\Open Projects\5\Window State\Show&quot; 
+ value=&quot;1&quot;/&gt;<br>
+&nbsp;...<br>
+&nbsp; &lt;/category&gt;<br>
+&nbsp;&lt;/StarTeamClientOptions&gt;</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

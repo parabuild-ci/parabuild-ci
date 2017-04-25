@@ -1,0 +1,152 @@
+    <!--
+       ========================================================================
+         Run WebLogic 7.0 tests
+       ========================================================================
+    -->
+    <target name="test.weblogic.70" depends="prepare.test.weblogic.70"
+        if="weblogic.home.70" description="Run tests on WebLogic 7.0">
+
+        <!-- Start the servlet engine, wait for it to be started, run the
+             unit tests, stop the servlet engine, wait for it to be stopped.
+             The servlet engine is stopped if the tests fail for any reason -->
+
+        <runservertests 
+            testURL="http://localhost:${test.port}/test/ServletRedirector?Cactus_Service=RUN_TEST"
+            startTarget="start.weblogic.70"
+            stopTarget="stop.weblogic.70"
+            testTarget="test"/>
+
+    </target>
+
+    <!--
+       ========================================================================
+         Start WebLogic 7.0
+       ========================================================================
+    -->
+    <target name="start.weblogic.70">
+
+        <java classname="weblogic.Server" fork="yes"
+            dir="${target.weblogic70.dir}/testdomain">
+
+            <classpath>
+                <pathelement location="${weblogic.home.70}/weblogic700/server/lib/weblogic.sp.jar"/>
+                <pathelement location="${weblogic.home.70}/weblogic700/server/lib/weblogic.jar"/>
+
+                <!-- Some hack: I still don't understand why I need these jars
+                     to make the cactus clovered jar work. It needs to be
+                     removed as we don't want the mention of these jars in the
+                     sample script that are packaged in the Cactus
+                     distribution ! You can safely remove this if you don't use
+                     Clover -->
+                <pathelement location="${clover.jar}"/>
+                <pathelement location="${junit.jar}"/>
+            </classpath>
+
+            <jvmarg value="-hotspot"/>
+            <jvmarg value="-ms64m"/>
+            <jvmarg value="-mx64m"/>
+            <jvmarg value="-Djava.library.path=${java.library.path};${weblogic.home.70}/weblogic700/server/bin"/>
+            <jvmarg value="-Dweblogic.Name=testserver"/>
+            <jvmarg value="-Dbea.home=${weblogic.home.70}"/>
+            <jvmarg value="-Dweblogic.management.username=system"/>
+            <jvmarg value="-Dweblogic.management.password=password"/>
+            <jvmarg value="-Djava.security.policy==./server/lib/weblogic.policy"/>
+
+        </java>
+
+    </target>
+
+    <!--
+       ========================================================================
+         Stop WebLogic 7.0
+       ========================================================================
+    -->
+    <target name="stop.weblogic.70">
+
+        <java classname="weblogic.Admin" fork="yes">
+
+            <classpath>
+                <pathelement location="${weblogic.home.70}/weblogic700/server/lib/weblogic.sp.jar"/>
+                <pathelement location="${weblogic.home.70}/weblogic700/server/lib/weblogic.jar"/>
+            </classpath>
+
+            <arg line="-url t3://localhost:${test.port}"/>
+            <arg line="-username system"/>
+            <arg line="-password password"/>
+            <arg value="SHUTDOWN"/>
+
+        </java>
+
+    </target>
+
+    <!--
+       ========================================================================
+         Display a warning message if the needed servlet engine home property
+         is not set
+       ========================================================================
+    -->
+    <target name="check.test.weblogic.70" unless="weblogic.home.70">
+
+        <echo message=""/>
+        <echo message="******************************************************"/>
+        <echo message="WARNING : The 'weblogic.home.70' property has not been"/>
+        <echo message="set. No test will be run on that servlet engine."/>
+        <echo message="******************************************************"/>
+        <echo message=""/>
+
+    </target>
+
+    <!--
+       ========================================================================
+         Prepare directories and variables for running the tests
+       ========================================================================
+    -->
+    <target name="prepare.test.weblogic.70"
+        depends="check.test.weblogic.70,testwar" if="weblogic.home.70">
+
+        <echo message="weblogic.home.70 = ${weblogic.home.70}"/>
+
+        <property name="target.weblogic70.dir"
+            value="${target.test.dir}/weblogic70"/>
+        <property name="conf.weblogic70.dir"
+            value="${conf.test.dir}/weblogic70"/>
+
+        <mkdir dir="${target.weblogic70.dir}/testdomain/applications"/>
+        <mkdir dir="${target.weblogic70.dir}/testdomain/testserver"/>
+
+        <!-- Copy WL 7.0 configuration files -->
+        <copy file="${conf.weblogic70.dir}/config.xml"
+            todir="${target.weblogic70.dir}/testdomain" filtering="on"/>
+        <copy file="${conf.weblogic70.dir}/fileRealm.properties"
+            todir="${target.weblogic70.dir}/testdomain"/>
+        <copy file="${conf.weblogic70.dir}/SerializedSystemIni.dat"
+            todir="${target.weblogic70.dir}/testdomain"/>
+        <copy file="${conf.weblogic70.dir}/DefaultAuthenticatorInit.ldift"
+            todir="${target.weblogic70.dir}/testdomain"/>
+
+        <!-- Copy security configuration files -->
+        <copy todir="${target.weblogic70.dir}/testdomain/testserver">
+            <fileset dir="${conf.weblogic70.dir}/testserver"/>
+        </copy>
+
+        <!-- Copy the war file -->
+        <copy file="${target.test.dir}/test.war"
+            todir="${target.weblogic70.dir}/testdomain/applications"/>
+
+        <!-- Update the war to include the proprietary weblogic.xml config
+             file. -->
+
+        <!-- Hack: Make sure weblogic.xml is always newer than the war so that
+             the later is always updated. Waiting for an Ant bug fix -->
+        <touch file="${target.weblogic70.dir}/testdomain/applications/test.war"
+            datetime="06/28/2000 2:02 pm"/>
+
+        <war update="true"
+            warfile="${target.weblogic70.dir}/testdomain/applications/test.war">
+
+            <webinf dir="${conf.weblogic70.dir}">
+                <include name="weblogic.xml"/>
+            </webinf>
+        </war>
+
+    </target>

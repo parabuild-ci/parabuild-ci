@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Working with Both TeamTrack and TrackerLink</TITLE>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nIssue Management\nWorking with Both TeamTrack and TrackerLink");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="AboutPrjDB"></A>Working with Both TeamTrack and TrackerLink</H1>
+
+<p>You may wish to retain Tracker for some project databases while implementing TeamTrack for others. Version Manager has provisions for users working across both issue management integrations, but the details vary depending upon which Version Manager client you use. For client specific details, see the following sections.</p>
+
+<h2>Desktop Client</h2>
+
+<p>You can set which issue management integration will be used by the next invocation of the Version Manager Desktop Client. Any currently open client sessions will not be affected.</p>
+
+<ol>
+<LI>Launch the Serena Issue Management Integration utility (from the Serena folder of the Windows Start menu, select ChangeMan Version Manager | Issue Management Integration).<BR><BR></LI>
+<LI>Select <b>TeamTrack SourceBridge</b> or <b>Tracker TrackerLink</b>.<BR><BR></LI>
+<LI>Click the <b>OK</b> or <b>Launch Version Manager</b> button.<BR><BR></LI>
+</ol>
+
+<h2>Web Client</h2>
+
+<p>The servlet for each project database determines which, if any, issue management integration is used. There is nothing to change or configure on the client system when switching between project databases that use a different issue management integration.
+</p>
+
+<h2>SCC IDE's</h2>
+
+<p>To use SourceBridge or TrackerLink with an SCC-based IDE, you set one or the other as your SCC provider.</p>
+
+<ol>
+<LI>Launch the Serena SCC Admin utility (from the Serena folder of the Windows Start menu, select ChangeMan Version Manager | Version Manager IDE Client | Version Manager SCC Admin).<BR><BR></LI>
+<li>Select either <b>Merant TrackerLink</b> or <b>Serena SourceBridge</b> from the list of SCC providers.<br><br></li>
+<li>Click <b>OK</b>.<br><br></li>
+<li>Restart your IDE.<br><br></li>
+</ol>
+
+<h2>Rich IDE Integration to Eclipse and .NET</h2>
+
+<p>The rich integrations to Eclipse and Visual Studio .NET are based on TeamTrack. It is not possible to use TrackerLink with the rich integrations.</p>
+
+<p><b>NOTE</b> The SCC integrations to Eclipse and .NET can use either TrackerLink or TeamTrack.</p>
+
+
+
+
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a HREF="abouttrackerlink.html">Setting Up SourceBridge Options</a></TD>
+		<TD><a href="trackerlink_settings_dialog_box.htm">SourceBridge Settings Dialog</A></TD>
+	</TR>
+	<TR>
+		<TD><a HREF="about_teamtrack.html">About TeamTrack</a></TD>
+		<TD><i>Serena Tracker to TeamTrack Migration Guide</i> (included in the TeamTrack documentation)</TD>
+	</TR>
+	<TR>
+		<TD><a HREF="settingupsourcebridge.html">About Setting Up SourceBridge</a></TD>
+		<TD></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

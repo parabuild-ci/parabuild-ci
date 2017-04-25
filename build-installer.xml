@@ -1,0 +1,61 @@
+<project name="bt" default="installer.all" basedir=".">
+
+  <property name="installer.staging.dir" value="${build.dir}/installer_staging"/>
+  <property name="installer.resource.staging.dir" value="${build.dir}/staging_installer_resource"/>
+  <property name="installer.packagename" value="org.parabuild.ci.installer"/>
+  <property name="installer.dirname" value="org/parabuild/ci/installer"/>
+
+  <target name="installer.prepare">
+    <mkdir dir="${installer.classes.dir}"/>
+    <mkdir dir="${installer.staging.dir}"/>
+  </target>
+
+
+  <!-- Generate String classes -->
+  <target name="installer.resources" depends="installer.prepare">
+    <mkdir dir="${installer.resource.staging.dir}"/>
+    <copy todir="${installer.resource.staging.dir}">
+      <fileset refid="product.resources"/>
+    </copy>
+    <fixcrlf srcdir="${installer.resource.staging.dir}" eol="lf"/>
+  </target>
+
+
+  <!-- Compile Parabuild remote build manager installer-->
+  <target name="installer.compile" depends="installer.resources">
+    <javac destdir="${installer.classes.dir}" includes="org/parabuild/ci/installer/**.java" debug="on">
+      <classpath>
+        <pathelement path="${i4jruntime.jar}"/>
+        <pathelement path="${commons-logging.jar}"/>
+        <pathelement path="${concurrent.jar}"/>
+      </classpath>
+      <src path="${src}"/>
+    </javac>
+  </target>
+
+
+  <target name="installer.jar.prepare" depends="installer.compile">
+    <copydir src="${installer.resource.staging.dir}" dest="${installer.classes.dir}"/>
+    <copy file="${hsqldb.1.7.3.3.jar}" tofile="${installer.classes.dir}/hsqldb-1.7.jar"/>
+    <copy file="${hsqldb.jar}" tofile="${installer.classes.dir}/hsqldb-1.8.jar"/>
+    <uptodate property="installer.jar.uptodate" targetfile="${installer.staging.dir}/parabuild-installer.jar">
+      <srcfiles dir="${installer.classes.dir}"/>
+    </uptodate>
+  </target>
+
+
+  <target name="installer.jar" depends="installer.compile, installer.jar.prepare" unless="installer.jar.uptodate">
+    <jar destfile="${installer.staging.dir}/parabuild-installer.jar" compress="true" update="true">
+      <fileset dir="${installer.classes.dir}"/>
+      <zipfileset src="${commons-logging.jar}"/>
+      <zipfileset src="${concurrent.jar}"/>
+    </jar>
+  </target>
+
+
+  <target name="installer.all"
+          depends="installer.compile,
+             installer.jar">
+  </target>
+
+</project>

@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Unlocking Revisions</TITLE>
+<!--<unlocking.html>-->
+<!--<toc parent="Locking_Unlocking" label="Unlocking Revisions" anchor="unlocking" sortkey="02">-->
+<!--<index parent="files" label="unlocking revisions" anchor="unlocking">-->
+<!--<index parent="projects" label="unlocking revisions" anchor="unlocking">-->
+<!--<index parent="unlocking" label="revisions" anchor="unlocking">-->
+<!--<index parent="revisions" label="unlocking" anchor="unlocking">-->
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with Revisions\nUnlocking Revisions");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="unlocking"></A>Unlocking Revisions</H1>
+<P>You can <A href="aboutunlocking.html">unlock </a> specific revisions of one or more versioned files or unlock specific revisions of all versioned files in a project. You can unlock by revision number, version label, or promotion group. By default, you can only unlock a lock that you have locked. 
+<H2>To unlock a revision:</H2>
+<OL>
+<LI>
+Select the versioned file or project which contains the revisions you want to unlock.
+<br><br>
+<LI>
+Select Actions | Unlock. The Unlock File or Project dialog box appears with the General tab active. <b>Note:</b> This dialog box will appear only if the Unlock option for versioned files and projects is set in the Options dialog box (Dialog Behavior tab).
+<BR><BR>
+<LI>
+Under the General tab, do the following:
+<BR><BR>
+<OL type=a>
+<LI>
+Select either to unlock the revision owned by an individual User or by all Users. You must have Administrator or Super User privileges to unlock locks by all Users. If you select the <b>User</b> button, specify which User in the <b>Edit</b> field.
+<BR><BR>
+<LI>
+Select either to unlock a specific revision of a versioned file, all revisions of a versioned file, or all revisions associated with the user ID specified in the <b>User</b> field. If you select the <b>Revision</b> button, specify the revision number, 
+    version label, or promotion group of the revision that you want to unlock. 
+    If selecting the revision by a version label, enter a backslash before a 
+    version label that begins with a numeric character (such as \1.2label). <!--</control>-->                   Note that Default Revision is the latest revision of a versioned file. The definition of Default Revision can, however, be changed in the project's configuration file to be a version label or a specific revision number.
+<BR><BR>
+<LI>
+If you are unlocking a project, an <b>Include files in subprojects</b> check box is 
+    displayed. Select this check box to unlock revisions in subprojects.</LI>             
+</OL>
+<BR><br>
+<LI>
+To review the selected revisions to unlock, click the Selected Files tab. You can also review properties for versioned files and projects by clicking the Properties button.
+<BR><BR>
+<LI>
+Click OK.</LI>
+ 
+</OL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A href="unlockdialog.html">Unlock Dialog Box</a></TD>
+		<TD><A href="aboutunlocking.html">About Unlocking Revisions</a></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

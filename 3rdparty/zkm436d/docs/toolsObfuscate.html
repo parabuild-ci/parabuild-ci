@@ -1,0 +1,83 @@
+<!-- Copyright 2003 Zelix Pty Ltd (ABN 47 078 740 093) -->
+<html>
+<head>
+<title>Zelix KlassMaster Java Obfuscator</title>
+   <meta name="keywords" content="java,code obfuscator,java obfuscator">
+   <meta name="description" CONTENT="Zelix KlassMaster is a second generation Java obfuscator">
+   <meta name="classification" CONTENT="Zelix KlassMaster is a second generation Java obfuscator">
+   <link rel=stylesheet href="../ZKM.css" TYPE="text/css">
+</head>
+<body background="../images/small-white-mist1.jpg" bgcolor="#E1E1E1">
+<center><a href="index.html"><img src=../images/ZKM_b4.gif alt="Zelix KlassMaster" width=264 height=62 border=0></a></center>
+<hr>
+<center>
+<table width=770 border=0>
+   <tr>
+      <td valign="top" colspan=2>
+         <h1>Tools | Obfuscate</h1>
+         <h2><a name=overview>Overview</a></h2>
+         Java class (bytecode) files can be decompiled back to Java source code. 
+         There is little you can do to your bytecode to prevent this. 
+         However, Zelix KlassMaster can <b>obfuscate</b> your bytecode so that the source code produced by a decompiler
+         is much less readable. As a side effect, obfuscation can <b>reduce the size of your bytecode</b> so your classes 
+         can move across networks more quickly.<p>
+         Zelix KlassMaster has the following obfuscation features:
+         <ul>
+            <li>it provides <b>name obfuscation</b> of your packages, classes, fields and methods,
+            <li>it provides <b>flow obfuscation</b> that
+                changes most selection (eg. if...else) and loop (eg. while and for) constructs so that they have no direct Java
+                language equivalent.
+            <li>it can <b>encrypt your String literals</b> to make decompiled source code less readable.
+            <li>it can collapse your package structure to reduce overall bytecode size,
+            <li>it has sophisticated yet easy to use <b>Name Exclusion</b> functionality that gives you fine control
+                over which names are obfuscated.
+            <li>it can retain <b>scrambled line numbers</b> in your bytecode so that beta test errors can be easily diagnosed
+                without giving decompilers any extra information.
+            <li>it can produce a detailed <b>Change Log</b> recording all name changes and provides a 
+                <b><a href=toolsStackTraceTranslate.html>Stack Trace Translation tool</a></b> to help you interpret it.
+            <li>it can take an existing <b>Change Log</b> as input so that you get consistent renaming and flow obfuscation across releases. 
+                This is important if you use RMI and serialization or if you wish to distribute only the changed subset of your application in the form of
+                a patch.
+            <li>it handles <b>RMI</b>, <b>JavaBeans</b>&#153 & <b>1.1 Enterprise Java Beans</b>&#153 <a href=#defaultExclude>by default</a>.
+         </ul>
+         Note that the ability to exclude specific methods from flow obfuscation is available only through 
+         the <a href=langZKMScript.html>ZKM Script interface.</a>
+         <p>
+         The obfuscation tool works on all <b>open classes</b>. It cannot obfuscate classes that have not been opened. 
+         So you should open your application <u>as a whole</u> so that all references between classes can be updated appropriately.       
+      </td>
+   </tr>
+   <tr>
+      <td colspan=2>
+          &nbsp; <!-- Force an empty row -->
+      </td>
+   </tr>
+   <tr>
+      <td valign="top">
+         <h2><a name=detail>Detail</a></h2>
+         Once your classes are open, you may obfuscate them at any time by selecting the          <b>Tools&nbsp;|&nbsp;Obfuscate</b> menu. 
+         The obfuscation dialog consists of two windows.
+         <ul>
+            <li><a href="advancedExclude.html">"Obfuscate Name Exclusions"</a>
+            <li><a href="obfuscateOptions.html">"Obfuscate Options"</a>
+         </ul>
+      </td>
+      <td valign="top">
+         <img src=../images/toolsObfuscate.gif width=296 height=168 alt="Zelix KlassMaster - Selecting Tools Obfuscate"><p>
+      </td>
+   </tr>
+</table>
+</center>
+<hr>
+<center>
+<table>
+   <tr>
+      <td>
+         <a href=index.html><img src=../images/uarrw.gif alt="Documentation Table of Contents"></a>
+      </td>
+   </tr>
+</table>
+</center>
+Copyright &copy; 2003 <a href="mailto:WebMaster@zelix.com"><font size=-1>Zelix Pty Ltd</font></a> (ABN 47 078 740 093)
+</body>
+</html>

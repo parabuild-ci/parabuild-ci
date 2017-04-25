@@ -1,0 +1,93 @@
+.dash_box_green {
+   background: #00ff00 url(/parabuild/images/dash_green_grad.gif) repeat-x top left;
+}
+.dash_top_green div {
+   background: url(/parabuild/images/dash_green_tl.gif) no-repeat top left;
+}
+.dash_top_green {
+   background: transparent url(/parabuild/images/dash_green_tr.gif) no-repeat top right;
+}
+.dash_bottom_green div {
+   background: url(/parabuild/images/dash_green_bl.gif) no-repeat bottom left;
+}
+.dash_bottom_green {
+   background: transparent url(/parabuild/images/dash_green_br.gif) no-repeat bottom right;
+}
+
+.dash_top_green div, .dash_top_green,
+.dash_bottom_green div, .dash_bottom_green {
+   width: 100%;
+   height: 10px;
+   font-size: 1px;
+}
+.dash_content_green { margin: 0 10px; }
+
+
+
+.dash_box_red {
+   background: #ff0000 url(/parabuild/images/dash_red_grad.gif) repeat-x top left;
+}
+.dash_top_red div {
+   background: url(/parabuild/images/dash_red_tl.gif) no-repeat top left;
+}
+.dash_top_red {
+   background: transparent url(/parabuild/images/dash_red_tr.gif) no-repeat top right;
+}
+.dash_bottom_red div {
+   background: url(/parabuild/images/dash_red_bl.gif) no-repeat bottom left;
+}
+.dash_bottom_red {
+   background: transparent url(/parabuild/images/dash_red_br.gif) no-repeat bottom right;
+}
+
+.dash_top_red div, .dash_top_red,
+.dash_bottom_red div, .dash_bottom_red {
+   width: 100%;
+   height: 10px;
+   font-size: 1px;
+}
+.dash_content_red { margin: 0 10px; }
+
+
+.dash_box_gray {
+   background: #dadada url(/parabuild/images/dash_gray_grad.gif) repeat-x top left;
+}
+.dash_top_gray div {
+   background: url(/parabuild/images/dash_gray_tl.gif) no-repeat top left;
+}
+.dash_top_gray {
+   background: transparent url(/parabuild/images/dash_gray_tr.gif) no-repeat top right;
+}
+.dash_bottom_gray div {
+   background: url(/parabuild/images/dash_gray_bl.gif) no-repeat bottom left;
+}
+.dash_bottom_gray {
+   background: transparent url(/parabuild/images/dash_gray_br.gif) no-repeat bottom right;
+}
+
+.dash_top_gray div, .dash_top_gray,
+.dash_bottom_gray div, .dash_bottom_gray {
+   width: 100%;
+   height: 10px;
+   font-size: 1px;
+}
+.dash_content_gray { margin: 0 10px; }
+
+
+.dash_content_green, .dash_content_red, .dash_content_gray {
+  color: #ffffff; text-align: center; white-space: nowrap;
+  font-family: sans-serif; font-size: 14; font-weight: bold;
+  height: 32px;
+}
+
+
+.dash_content_bottom {
+  color: #ffffff; text-align: center; overflow: hidden;
+  font-family: sans-serif; font-size: 10; font-weight: bold;
+  text-transform: uppercase;
+}
+
+
+.dash_status_anchor {
+  text-decoration: none;
+}

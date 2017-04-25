@@ -1,0 +1,230 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Changing the Working Folder</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=copyright value="Copyright© 1995-2003, Borland Software Corporation. All rights reserved.">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=774>
+<meta name=layout-width content=705>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<!--(Scripts)=======================================================-->
+
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="./ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Working with the Application\nManaging Folders\nChanging the Working Folder");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Changing the Working Folder</h1>
+
+<p class=Body>Although your StarTeam Administrator sets the initial working 
+ folder for the root folder of a view and its child folders, you may prefer 
+ to specify a shorter path for a particular folder or use a different drive 
+ letter. Remember that a working folder must point to a physically discrete 
+ location, such as a drive on your workstation or a personal directory 
+ on a shared file server. Borland does not recommend putting your settings 
+ on a mapped network drive.</p>
+
+<p class=Body>You can change the working folder used for a StarTeam child 
+ folder in three ways:</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>By changing the default 
+ working folder designated for the StarTeam folder.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>By using an alternate 
+ working folder. </p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>By changing the alternate 
+ working folder.</p></li>
+</ul>
+
+<p class=Body>However, changing your working folder can cause file status 
+ information to be lost. That's why it is advisable to check in modified 
+ and new files before performing this operation. You can then check the 
+ files out to the new location without any loss of information. </p>
+
+<p class=Body>If you move a working folder from one location to another 
+ on your hard drive and then change the working folder in StarTeam, the 
+ status of most files in the working folder will change to Unknown. This 
+ change cannot be corrected by using <span style="font-weight: bold;"><B>File 
+ &gt; Update Status</B></span>. However, you can perform a force check out 
+ to obtain the tip revisions (which would overwrite any edits made to these 
+ files on your workstation) or make your working files the tip revisions.</p>
+
+<p class=Proc>To determine the current working folder for a StarTeam folder:</p>
+
+<ol>
+	
+	<p class=ListNoNumber>Do one of the following:</p>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1-Indent><p class=Bullet-1-Indent>Select 
+ the StarTeam folder, then select <span style="font-weight: bold;"><B>Folder 
+ &gt; Properties</B></span> from the menu.</p></li>
+		
+		<li class=kadov-p-CBullet-1-Indent><p class=Bullet-1-Indent>Right-click 
+ the StarTeam folder in the folder hierarchy and select <span style="font-weight: bold;"><B>Properties</B></span> 
+ from the context menu.</p></li>
+	</ul>
+	
+	<p class=ListNoNumber
+		style="margin-top: 2pt;">The Folder <span style="font-style: italic;"><I>Properties</I></span> 
+ dialog displays the path in the <span style="font-weight: bold;"><B>Complete 
+ Working Folder Path</B></span> box.</p>
+</ol>
+
+<p class=Proc>To change the working folder used for a StarTeam folder:</p>
+
+<ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Do one of the following:</p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1-Indent><p class=Bullet-1-Indent>If 
+ the default working folder has changed, note the files that you need to 
+ check in.</p></li>
+		
+		<li class=kadov-p-CBullet-1-Indent><p class=Bullet-1-Indent>If 
+ you are creating a new alternate working folder or changing the existing 
+ alternate working folder, check in the files that need to be checked in 
+ before making the change.</p></li>
+	</ul>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select the StarTeam folder 
+ from the folder hierarchy.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select <span style="font-weight: bold;"><B>Properties</B></span> 
+ from the Folder or context menu. The <span style="font-style: italic;"><I>Folder 
+ Properties</I></span> dialog opens.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select the<span style="font-weight: bold;"><B> 
+ Name</B></span> tab.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Do one of the following:</p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1-Indent><p class=Bullet-1-Indent>Select 
+ the <span style="font-weight: bold;"><B>Default</B></span> option button and 
+ the new default working folder path.</p></li>
+		
+		<li class=kadov-p-CBullet-1-Indent><p class=Bullet-1-Indent>Select 
+ the<span style="font-weight: bold;"><B> Alternate</B></span> option button. Enter 
+ a relative path or enter or browse for an absolute path to the working 
+ folder.</p></li>
+	</ul>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Click <span style="font-weight: bold;"><B>Close</B></span>.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Check out the files to your 
+ new working folder.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>(If required) Copy the files 
+ on your workstation that should have been checked in before the working 
+ folder changed and check them in.</p></li>
+</ol>
+
+<p class=Body><span style="font-weight: bold;"><B>Note:</B></span> If your StarTeam 
+ administrator changes the default working folder, check out your files 
+ to the new working folder, then use Windows Explorer to copy any files 
+ that you have modified or created in the original folder to the new location.</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Reviewing Folder Properties</TITLE>
+<!--<reviewfolderprops.html>-->
+<!--<toc parent="working_with_53_60_folders" label="Reviewing 5.3/6.0 Folder Properties" anchor="reviewfolderprops" sortkey="06">-->
+<!--<index parent="properties" label="reviewing folder" anchor="reviewfolderprops">-->
+<!--<index parent="revisions" label="reviewing 5.3/6.0 folder properties" anchor="reviewfolderprops">-->
+<!--<index parent="files" label="reviewing 5.3/6.0 folder properties" anchor="reviewfolderprops">-->
+<!--<index parent="versioned_files" label="reviewing 5.3/6.0 folder properties" anchor="reviewfolderprops">-->
+<!--<index parent="folders" label="reviewing 5.3/6.0 folder properties" anchor="reviewfolderprops">-->
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with 5.3/6.0 Project Roots/Folders\nReviewing 5.3/6.0 Folder Properties");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+
+<BODY BGCOLOR="#ffffee">
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="reviewfolderprops"></A>Reviewing 5.3/6.0 Folder Properties</H1>
+<P>A folder defines how Serena ChangeMan Version Manager operates on all of the files within the Version Manager 5.3/6.0 folder. For Version Manager 5.3/6.0 folders, you can view the folder name and number of files, or you can change the properties of a folder to modify the workspace settings. You can also view the privileges for the current user.</P>
+<H2>To change folder properties:</H2>
+<OL>
+	<LI>Select the 5.3/6.0 folder whose properties you want to modify in the Project pane.<br><br>
+	<LI>Select File | Properties. The Properties dialog box appears.<br><br>
+	<LI>View the fields on the General tab:<br><br>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<tr>
+		<td><b>To view...</b></td>
+		<td><b>Look here...</b></td>
+	</tr>
+	<TR>
+		<TD>The name of the 5.3/6.0 folder</TD>
+		<TD>The folder name is listed next to the folder icon.</TD>
+	</TR>
+	<TR>
+		<TD>The number of files contained within the folder</TD>
+		<TD>The number of files is listed next to the <B>Contains</b> field.</TD>
+	</TR>
+</table><br><br>
+	<LI>To change any of the fields on the Workspace Settings tab, edit any of the fields below:<br><br>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<tr>
+		<td><b>To...</b></td>
+		<td><b>Do this...</b></td>
+	</tr>
+	<TR>
+		<TD>Change the workfile location</TD>
+		<TD>Edit the location in the <B>Workfile Location</B> field or click the Browse button to select it. Note that if the current workspace is public and you modify any of the workspace settings, you will affect everyone who uses the public workspace.</TD>
+	</TR>
+	<TR>
+		<TD>Change the default version</TD>
+		<TD>Edit the <B>Default Version</B> field or click the Browse button to select one. The default version is the version label Version Manager should operate on for all actions when a specific version is not selected. </TD>
+	</TR>
+	<TR>
+		<TD>Change the branch version</TD>
+		<TD>Edit the <B>Branch Version</B> field or click the Browse button to select one. This is the floating version label assigned to the tip of a branch.</TD>
+	</TR>
+	<TR>
+		<TD>Change the base version</TD>
+		<TD>Edit the <B>Base Version</B> field or click the Browse button to select one. The base version is the version label assigned to the revision at the start of the branch.</TD>
+	</TR>
+	<TR>
+		<TD><B>Workspace Information</B></TD>
+		<TD>The workspace is assigned to the folder. If the workspace is public, the specified workfile location affects all users who will access the folder. If the workspace is private, the specified workfile location will not affect other users.
+		</TD>
+</TABLE>
+<br><br>
+	<LI>Click OK.
+</OL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="aboutworkspaces.html">About Workspaces</A></TD>
+		<TD><A HREF="reviewingproperties.html">Reviewing Properties</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="movefolder.html">Moving 5.3/6.0 Folders</A></TD>
+		<TD><A HREF="copyfolder.html">Copying 5.3/6.0 Folders</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="deletefolder.html">Deleting 5.3/6.0 Folders</A></TD>
+	</TR>
+</TABLE>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

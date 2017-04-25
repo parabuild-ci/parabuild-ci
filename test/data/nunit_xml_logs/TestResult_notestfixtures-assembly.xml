@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="E:\nunit\bin\notestfixtures-assembly.dll" total="0" failures="0" not-run="0" date="9/22/2005" time="3:06 PM">
+  <test-suite name="E:\nunit\bin\notestfixtures-assembly.dll" success="True" time="0" asserts="0">
+    <results />
+  </test-suite>
+</test-results>

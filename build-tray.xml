@@ -1,0 +1,122 @@
+<project name="bt" default="tray.all" basedir=".">
+
+  <property name="build.dir.tray.classes" value="${build.dir}/tray_classes"/>
+  <property name="build.dir.tray.staging" value="${build.dir}/tray_staging"/>
+  <property name="build.dir.tray.result" value="${build.dir}/tray_result"/>
+  <property name="build.dir.tray.distrib" value="${build.dir}/tray_distrib"/>
+
+  <target name="tray.prepare">
+    <mkdir dir="${build.dir.tray.classes}"/>
+    <mkdir dir="${build.dir.tray.staging}"/>
+    <mkdir dir="${build.dir.tray.result}"/>
+    <mkdir dir="${build.dir.tray.distrib}"/>
+  </target>
+
+
+  <!-- Images e.t.c -->
+  <target name="tray.resources" depends="tray.prepare">
+    <property name="build.dir.tray.resources.images" value="${build.dir.tray.classes}/resources/images"/>
+    <mkdir dir="${build.dir.tray.resources.images}"/>
+    <copy file="${iconexperience.24x24.plain}/bullet_ball_glass_blue.gif" todir="${build.dir.tray.resources.images}"/>
+    <copy file="${iconexperience.24x24.plain}/bullet_ball_glass_green.gif" todir="${build.dir.tray.resources.images}"/>
+    <copy file="${iconexperience.24x24.plain}/bullet_ball_glass_red.gif" todir="${build.dir.tray.resources.images}"/>
+    <copy file="${iconexperience.24x24.plain}/bullet_ball_glass_yellow.gif" todir="${build.dir.tray.resources.images}"/>
+    <copy file="${iconexperience.24x24.plain}/bullet_triangle_blue.gif" todir="${build.dir.tray.resources.images}"/>
+    <copy file="${iconexperience.24x24.plain}/bullet_triangle_green.gif" todir="${build.dir.tray.resources.images}"/>
+    <copy file="${iconexperience.24x24.plain}/bullet_triangle_red.gif" todir="${build.dir.tray.resources.images}"/>
+    <copy file="${iconexperience.24x24.plain}/bullet_triangle_yellow.gif" todir="${build.dir.tray.resources.images}"/>
+    <!-- setup log4j -->
+    <ant antfile="build-helper.xml" target="setup.log4j">
+      <property name="param.is.release.build" value="${is.release.build}"/>
+      <property name="param.destination.dir" value="${build.dir.tray.classes}"/>
+    </ant>
+
+    <mkdir dir="${build.dir.tray.classes}/META-INF"/>
+    <copy file="${build.dir.version.staging}/parabuild-version.properties" todir="${build.dir.tray.classes}/META-INF"/>
+  </target>
+
+
+  <!-- Compile tray-->
+  <target name="tray.compile" depends="tray.prepare">
+    <javac destdir="${build.dir.tray.classes}" includes="org/parabuild/ci/tray/**.java" excludes="**/BuildStatusServlet.java" debug="on">
+      <classpath>
+        <pathelement path="${hessian.jar}"/>
+        <pathelement path="${jade.jar}"/>
+        <pathelement path="${jdic.jar}"/>
+        <pathelement path="${log4j.jar}"/>
+        <pathelement path="${concurrent.jar}"/>
+        <pathelement path="${tomcat.home}/common/lib/commons-logging-api.jar"/>
+      </classpath>
+      <src path="${src}"/>
+    </javac>
+  </target>
+
+
+  <target name="tray.jar.prepare" depends="tray.resources, tray.compile">
+    <uptodate property="tray.jar.uptodate" targetfile="${build.dir.tray.staging}/parabuild-tray.jar">
+      <srcfiles dir="${build.dir.tray.classes}"/>
+    </uptodate>
+  </target>
+
+
+  <target name="tray.jar" depends="tray.resources, tray.compile, tray.jar.prepare" unless="tray.jar.uptodate">
+    <jar destfile="${build.dir.tray.staging}/parabuild-tray.jar" compress="true" update="true">
+      <fileset dir="${build.dir.tray.classes}"/>
+      <zipfileset src="${jdic.jar}"/>
+      <zipfileset src="${hessian.jar}"/>
+      <zipfileset src="${jade.jar}"/>
+      <zipfileset src="${tomcat.home}/common/lib/commons-logging-api.jar"/>
+      <zipfileset src="${log4j.jar}"/>
+      <zipfileset src="${concurrent.jar}"/>
+      <manifest>
+        <attribute name="Main-Class" value="org.parabuild.ci.tray.Tray"/>
+      </manifest>
+    </jar>
+  </target>
+
+
+  <target name="tray.package" depends="tray.jar">
+    <!-- define properties -->
+    <property name="build.dir.tray.result.licenses" value="${build.dir.tray.result}/license"/>
+    <property name="build.dir.tray.result.bin" value="${build.dir.tray.result}/bin"/>
+    <property name="build.dir.tray.result.lib" value="${build.dir.tray.result}/lib"/>
+    <!-- prepare directories -->
+    <mkdir dir="${build.dir.tray.result.bin}"/>
+    <mkdir dir="${build.dir.tray.result.lib}"/>
+    <mkdir dir="${build.dir.tray.result.licenses}"/>
+    <!-- copy licenses -->
+    <copy file="${viewtier.licence}" tofile="${build.dir.tray.result.licenses}/LICENSE.txt"/>
+    <copy file="${jade.license}" tofile="${build.dir.tray.result.licenses}/jade-license.txt"/>
+    <copy file="${apache.license}" tofile="${build.dir.tray.result.licenses}/log4j-license.txt"/>
+    <copy file="${apache.license}" tofile="${build.dir.tray.result.licenses}/commons-logging-license.txt"/>
+    <copy file="${jdic.home}/COPYING" tofile="${build.dir.tray.result.licenses}/jdic-license.txt"/>
+    <!-- copy tray jar -->
+    <copy file="${build.dir.tray.staging}/parabuild-tray.jar" todir="${build.dir.tray.result.lib}"/>
+    <!--- copy JDIC -->
+    <copy todir="${build.dir.tray.result.lib}">
+      <fileset dir="${jdic.home}">
+        <include name="linux/**"/>
+        <include name="sunos/**"/>
+        <include name="windows/**"/>
+      </fileset>
+    </copy>
+  </target>
+
+
+  <target name="tray.media" depends="tray.package" if="is.release.build">
+    <property name="release.build" value="internal"/>
+    <ant antfile="build-helper.xml" target="install4j">
+      <property name="param.release.build" value="${release.build}"/>
+      <property name="param.install4j.project" value="${config}/tray.install4j"/>
+    </ant>
+  </target>
+
+
+  <target name="tray.all"
+    depends="tray.compile,
+             tray.jar,
+             tray.package,
+             tray.media">
+  </target>
+
+</project>

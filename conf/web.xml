@@ -1,0 +1,301 @@
+<!DOCTYPE web-app PUBLIC  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+    <display-name>Parabuild</display-name>
+
+    <listener>
+        <listener-class>org.apache.axis.transport.http.AxisHTTPSessionListener</listener-class>
+    </listener>
+
+    <servlet>
+        <servlet-name>ServiceManagerServlet</servlet-name>
+        <servlet-class>org.parabuild.ci.services.ServiceManagerServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+
+    <servlet>
+        <servlet-name>RemoteBuilderServlet</servlet-name>
+        <servlet-class>org.parabuild.ci.remote.services.RemoteBuilderServlet</servlet-class>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+
+
+    <servlet>
+        <servlet-name>TrayBuildStatusServlet</servlet-name>
+        <servlet-class>org.parabuild.ci.tray.BuildStatusServlet</servlet-class>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+
+
+    <servlet>
+        <servlet-name>ReleaseNotesServlet</servlet-name>
+        <servlet-class>org.parabuild.ci.relnotes.ReleaseNotesServlet</servlet-class>
+        <load-on-startup>3</load-on-startup>
+    </servlet>
+
+
+    <servlet>
+        <servlet-name>UIServlet</servlet-name>
+        <servlet-class>org.parabuild.ci.webui.UIServlet</servlet-class>
+        <init-param>
+            <param-name>viewtier-vendor-map-viewtier</param-name>
+            <param-value></param-value>
+        </init-param>
+        <init-param>
+            <param-name>viewtier-url-extension</param-name>
+            <param-value>htm</param-value>
+        </init-param>
+        <init-param>
+            <param-name>viewtier-error-tierlet</param-name>
+            <param-value>tierlet:parabuild/error</param-value>
+        </init-param>
+        <load-on-startup>4</load-on-startup>
+    </servlet>
+
+
+    <servlet>
+        <servlet-name>HTMLLogServlet</servlet-name>
+        <servlet-class>org.parabuild.ci.webui.HTMLLogServlet</servlet-class>
+        <load-on-startup>5</load-on-startup>
+    </servlet>
+
+
+    <servlet>
+        <servlet-name>JavascriptBuildStatusServlet</servlet-name>
+        <servlet-class>org.parabuild.ci.webui.JavascriptBuildStatusServlet</servlet-class>
+        <load-on-startup>5</load-on-startup>
+    </servlet>
+
+
+    <servlet>
+        <servlet-name>ResultDownloadServlet</servlet-name>
+        <servlet-class>org.parabuild.ci.webui.ResultDownloadServlet</servlet-class>
+        <load-on-startup>5</load-on-startup>
+    </servlet>
+
+
+    <servlet>
+        <servlet-name>StatisticsImageServlet</servlet-name>
+        <servlet-class>org.parabuild.ci.webui.StatisticsImageServlet</servlet-class>
+        <load-on-startup>5</load-on-startup>
+    </servlet>
+
+
+    <servlet>
+        <servlet-name>AgentStatusChartServlet</servlet-name>
+        <servlet-class>org.parabuild.ci.webui.agent.status.AgentStatusChartServlet</servlet-class>
+        <load-on-startup>5</load-on-startup>
+    </servlet>
+
+
+    <servlet>
+        <servlet-name>StatusFeedServlet</servlet-name>
+        <servlet-class>org.parabuild.ci.feed.StatusFeedServlet</servlet-class>
+        <load-on-startup>5</load-on-startup>
+    </servlet>
+
+
+    <servlet>
+        <servlet-name>AxisServlet</servlet-name>
+        <!--    <servlet-class>org.apache.axis.transport.http.AxisServlet</servlet-class>-->
+        <servlet-class>org.parabuild.ci.webservice.ParabuildWebServiceServlet</servlet-class>
+        <load-on-startup>6</load-on-startup>
+    </servlet>
+
+    <servlet>
+        <servlet-name>dwr-invoker</servlet-name>
+        <display-name>DWR Servlet</display-name>
+        <servlet-class>uk.ltd.getahead.dwr.DWRServlet</servlet-class>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>false</param-value>
+        </init-param>
+    </servlet>
+
+    <!-- Begin test configuration @start.test.config@
+  <servlet>
+    <servlet-name>ServletRedirector</servlet-name>
+    <servlet-class>org.apache.cactus.server.ServletTestRedirector</servlet-class>
+    <load-on-startup>5</load-on-startup>
+  </servlet>
+
+@end.test.config@ end test configuration -->
+
+    <!--
+    <servlet>
+      <servlet-name>AdminServlet</servlet-name>
+      <display-name>AdminServlet</display-name>
+      <servlet-class>org.apache.axis.transport.http.AdminServlet</servlet-class>
+      <load-on-startup>100</load-on-startup>
+    </servlet>
+
+    <servlet>
+      <servlet-name>SOAPMonitorService</servlet-name>
+      <display-name>SOAPMonitorService</display-name>
+      <servlet-class>org.apache.axis.monitor.SOAPMonitorService</servlet-class>
+      <init-param>
+        <param-name>SOAPMonitorPort</param-name>
+        <param-value>5001</param-value>
+      </init-param>
+      <load-on-startup>100</load-on-startup>
+    </servlet>
+    -->
+    <!-- Precompiled JSP Servlets -->
+
+    <servlet-mapping>
+        <servlet-name>RemoteBuilderServlet</servlet-name>
+        <url-pattern>/parabuild/integration/builder</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ReleaseNotesServlet</servlet-name>
+        <url-pattern>/parabuild/integration/relnotes</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>UIServlet</servlet-name>
+        <url-pattern>*.htm</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>HTMLLogServlet</servlet-name>
+        <url-pattern>/parabuild/build/log/html/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ResultDownloadServlet</servlet-name>
+        <url-pattern>/parabuild/build/result/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>JavascriptBuildStatusServlet</servlet-name>
+        <url-pattern>/parabuild/build/status/buildstatus.js</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>TrayBuildStatusServlet</servlet-name>
+        <url-pattern>/parabuild/build/status/tray</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>StatusFeedServlet</servlet-name>
+        <url-pattern>/parabuild/build/status/feed.xml</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet-mapping>
+        <servlet-name>StatisticsImageServlet</servlet-name>
+        <url-pattern>/parabuild/build/statistics/image/*</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet-mapping>
+        <servlet-name>AgentStatusChartServlet</servlet-name>
+        <url-pattern>/parabuild/agent/status/chart/*</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet-mapping>
+        <servlet-name>AxisServlet</servlet-name>
+        <url-pattern>/parabuild/integration/webservice/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>dwr-invoker</servlet-name>
+        <url-pattern>/parabuild/dwr/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- Begin test configuration @start.test.config@
+  <servlet-mapping>
+    <servlet-name>ServletRedirector</servlet-name>
+    <url-pattern>/ServletRedirector</url-pattern>
+  </servlet-mapping>
+
+   <servlet-mapping>
+     <servlet-name>AxisServlet</servlet-name>
+     <url-pattern>/servlet/AxisServlet</url-pattern>
+   </servlet-mapping>
+
+   <servlet-mapping>
+     <servlet-name>AxisServlet</servlet-name>
+     <url-pattern>*.jws</url-pattern>
+   </servlet-mapping>
+
+@end.test.config@ End test configuration -->
+
+    <!--
+    <servlet-mapping>
+      <servlet-name>SOAPMonitorService</servlet-name>
+      <url-pattern>/SOAPMonitor</url-pattern>
+    </servlet-mapping>
+
+     <servlet-mapping>
+       <servlet-name>AdminServlet</servlet-name>
+       <url-pattern>/servlet/AdminServlet</url-pattern>
+     </servlet-mapping>
+    -->
+    <mime-mapping>
+        <extension>wsdl</extension>
+        <mime-type>text/xml</mime-type>
+    </mime-mapping>
+
+
+    <mime-mapping>
+        <extension>xsd</extension>
+        <mime-type>text/xml</mime-type>
+    </mime-mapping>
+
+
+    <mime-mapping>
+        <extension>gcov</extension>
+        <mime-type>text/plain</mime-type>
+    </mime-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/parabuild/error.htm</location>
+    </error-page>
+
+    <error-page>
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/parabuild/error.htm</location>
+    </error-page>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Remote builder</web-resource-name>
+            <url-pattern>/parabuild/integration/builder</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>parabuild-manager</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Parabuild Webservice</web-resource-name>
+            <url-pattern>/parabuild/integration/webservice/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>parabuild-user</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <login-config>
+        <auth-method>BASIC</auth-method>
+        <realm-name>Build Manager</realm-name>
+    </login-config>
+
+    <security-role>
+        <role-name>parabuild-manager</role-name>
+    </security-role>
+
+    <security-role>
+        <role-name>parabuild-user</role-name>
+    </security-role>
+</web-app>

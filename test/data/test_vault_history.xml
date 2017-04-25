@@ -1,0 +1,34 @@
+<vault>
+  <history>
+    <item txid="8" date="11/30/2005 10:37:28 AM" name="$/test/sourceline/alwaysvalid/src" type="80" version="4" user="test_user" actionString="Deleted vssver.scc"/>
+    <item txid="7" date="11/30/2005 10:37:10 AM" name="$/test/sourceline/alwaysvalid/src" type="10" version="3" user="test_user" actionString="Added BACKUP"/>
+    <item txid="7" date="11/30/2005 10:37:10 AM" name="$/test/sourceline/alwaysvalid/src" type="10" version="3" user="test_user" actionString="Added vssver.scc"/>
+    <item txid="7" date="11/30/2005 10:37:10 AM" name="$/test/sourceline/alwaysvalid/src/BACKUP" type="70" version="1" user="test_user" actionString="Created"/>
+    <item txid="7" date="11/30/2005 10:37:10 AM" name="$/test/sourceline/alwaysvalid/src/BACKUP" type="10" version="1" user="test_user" actionString="Added HOMECOMP"/>
+    <item txid="7" date="11/30/2005 10:37:10 AM" name="$/test/sourceline/alwaysvalid/src/BACKUP/HOMECOMP" type="70" version="1" user="test_user" actionString="Created"/>
+    <item txid="7" date="11/30/2005 10:37:10 AM" name="$/test/sourceline/alwaysvalid/src/BACKUP/HOMECOMP" type="10" version="1" user="test_user" actionString="Added ARCHIVE"/>
+    <item txid="7" date="11/30/2005 10:37:10 AM" name="$/test/sourceline/alwaysvalid/src/BACKUP/HOMECOMP/ARCHIVE" type="70" version="1" user="test_user" actionString="Created"/>
+    <item txid="6" date="11/30/2005 10:34:32 AM" name="$/test/second_sourceline/src/readme.txt" type="60" version="2" user="test_user" comment="Added changes to files" actionString="Checked In"/>
+    <item txid="6" date="11/30/2005 10:34:32 AM" name="$/test/sourceline/alwaysvalid/src/readme.txt" type="60" version="2" user="test_user" comment="Added changes to files" actionString="Checked In"/>
+    <item txid="5" date="11/30/2005 1:14:03 AM" name="$" type="10" version="4" user="test_user" actionString="Added test"/>
+    <item txid="5" date="11/30/2005 1:14:03 AM" name="$/test" type="70" version="1" user="test_user" actionString="Created"/>
+    <item txid="5" date="11/30/2005 1:14:03 AM" name="$/test" type="10" version="1" user="test_user" actionString="Added second_sourceline"/>
+    <item txid="5" date="11/30/2005 1:14:03 AM" name="$/test" type="10" version="1" user="test_user" actionString="Added sourceline"/>
+    <item txid="5" date="11/30/2005 1:14:03 AM" name="$/test/second_sourceline" type="70" version="1" user="test_user" actionString="Created"/>
+    <item txid="5" date="11/30/2005 1:14:03 AM" name="$/test/second_sourceline" type="10" version="1" user="test_user" actionString="Added src"/>
+    <item txid="5" date="11/30/2005 1:14:03 AM" name="$/test/second_sourceline/src" type="70" version="1" user="test_user" actionString="Created"/>
+    <item txid="5" date="11/30/2005 1:14:03 AM" name="$/test/second_sourceline/src" type="10" version="1" user="test_user" actionString="Added readme.txt"/>
+    <item txid="5" date="11/30/2005 1:14:03 AM" name="$/test/second_sourceline/src/readme.txt" type="70" version="1" user="test_user" actionString="Created"/>
+    <item txid="5" date="11/30/2005 1:14:03 AM" name="$/test/sourceline" type="70" version="1" user="test_user" actionString="Created"/>
+    <item txid="5" date="11/30/2005 1:14:03 AM" name="$/test/sourceline" type="10" version="1" user="test_user" actionString="Added alwaysvalid"/>
+    <item txid="5" date="11/30/2005 1:14:03 AM" name="$/test/sourceline/alwaysvalid" type="70" version="1" user="test_user" actionString="Created"/>
+    <item txid="5" date="11/30/2005 1:14:03 AM" name="$/test/sourceline/alwaysvalid" type="10" version="1" user="test_user" actionString="Added src"/>
+    <item txid="5" date="11/30/2005 1:14:03 AM" name="$/test/sourceline/alwaysvalid/src" type="70" version="1" user="test_user" actionString="Created"/>
+    <item txid="5" date="11/30/2005 1:14:03 AM" name="$/test/sourceline/alwaysvalid/src" type="10" version="1" user="test_user" actionString="Added readme.txt"/>
+    <item txid="5" date="11/30/2005 1:14:03 AM" name="$/test/sourceline/alwaysvalid/src/readme.txt" type="70" version="1" user="test_user" actionString="Created"/>
+    <item txid="4" date="11/30/2005 1:13:46 AM" name="$" type="80" version="3" user="test_user" actionString="Deleted test_vault"/>
+    <item txid="3" date="11/30/2005 1:12:32 AM" name="$" type="10" version="2" user="test_user" actionString="Added test_vault"/>
+    <item txid="2" date="11/30/2005 1:05:10 AM" name="$" type="70" version="1" user="admin" comment="creating repository" actionString="Created"/>
+  </history>
+  <result success="yes" other="false"/>
+</vault>

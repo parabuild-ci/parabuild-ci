@@ -1,0 +1,93 @@
+                            jvmstat 3.0
+
+Introduction
+------------
+
+The jvmstat technology adds light weight performance and configuration
+instrumentation to the HotSpot JVM and provides a set of monitoring
+APIs and tools for monitoring the performance of the HotSpot JVM in
+production environments. The instrumentation is designed such that it
+is 'always on', yet has negligible performance impact. The monitoring
+interfaces added to the HotSpot JVM are proprietary and may or may not
+be supported in future versions of the HotSpot JVM.
+
+The core jvmstat technology has now been included in J2SE 5.0. This
+jvmstat 3.0 bundle includes only the visualgc tool and is backwords
+compatable with J2SE 1.4.2 and J2SE 1.4.1. Therefore with J2SE 5.0
+and this jvmstat 3.0 bundle you can use visualgc to monitor applications
+running in either J2SE 5.0, J2SE 1.4.2 or J2SE 1.4.1.
+
+
+Installation
+------------
+
+This distribution of the jvmstat tools requires J2SE 5.0 with the
+HotSpot JVM. Before configuring and using the jvmstat tools, first
+download and install J2SE 5.0 (1.5.0) for your operating environment.
+You must choose the JDK distribution as the class files needed by the
+monitoring tools are not included with the JRE. 
+
+  http://java.sun.com/j2se/1.5.0/download.html
+
+Once you have a working J2SE 5.0 installation, you are ready to install
+the jvmstat distribution. Follow the platform specific instructions for
+UNIX platforms and Windows platforms. The installation instructions are
+online at:
+
+  http://java.sun.com/performance/jvmstat
+
+The installation instructions are also included in the jvmstat 3.0
+distribution in the docs/install directory. Just point your browser
+at file://<jvmstat_install_directory>/docs/index.html and follow the
+links to the installation pages.
+
+
+Files and Directories
+---------------------
+
+README
+        This file
+
+LICENSE
+        The terms of use for jvmstat 3.0
+
+bat/
+        visualgc.cmd -- Windows cmd processor script to launch visualgc
+
+bin/
+        visualgc -- ksh script to launch visualgc
+
+docs/
+        index.html -- HTML documentation (includes platform specific
+        installation instructions).
+	
+jars/
+        Jar files used by visualgc.
+
+
+Online Documentation
+--------------------
+
+For the latest jvmstat information please see:
+
+  http://java.sun.com/performance/jvmstat
+
+
+Local Documentation
+-------------------
+
+Installation documentation and manual pages are included with the
+distribution. Point your browser at:
+
+   file://<jvmstat_install_dir>/docs/index.html
+
+Where <jvmstat_install_dir> is the directory where you installed
+the jvmstat distribution.
+
+
+Problems, Questions, Feedback
+-----------------------------
+
+If you encouner any problems, have any questions, or want to offer
+any feedback, please send email to jvmstat-support@sun.com.
+

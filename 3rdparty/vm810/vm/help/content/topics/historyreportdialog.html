@@ -1,0 +1,202 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Show History</TITLE>
+<!--<historyreportdialog.html>-->
+<!--<index parent="history_reports" label="History Report dialog box" anchor="historyreportdialog">-->
+
+<!--<control base="pvcs.vm.vmgui.VmGuiArchiveReportDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+
+<BODY BGCOLOR="#ffffee">
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="historyreportdialog"></A>Show History</H1>
+
+<P>Select Actions | Show History to review the historical information about a single  versioned file, multiple versioned files, an entire project, or an entire project database.
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD COLSPAN=2><CENTER><B>General Tab</B></CENTER></TD>
+	</TR>
+	<TR>
+
+		<TD><B>Report Type</B></TD>
+		<TD><!--<control name="ArchiveReportGeneral.REPORT_TYPE">-->
+		Select a type of report to generate:
+		<ul>
+		<li><b>Full:</b> Display both an archive summary and a revision summary.
+		<li><b>File information only:</b> Display only an archive summary.
+		<li><b>Revision information only:</b> Display only a revision summary.
+		<li><b>List locked revisions:</b> Display information about currently locked revisions, including the archive name, user ID of the locker, revisions locked, and check-in revision numbers.
+		<li><b>List revisions with version label:</b> Display information about revisions associated with the version label shown in the <b>Label</b> field.
+		<li><b>List revisions in group:</b> Display information about revisions associated with the promotion group shown in the <b>Group</b> field.
+		<li><b>List newest revisions:</b> Display the revision numbers of all trunk tip revisions.
+		<li><b>Check tips against version/revision:</b> Display the names of files whose tip revisions do not correspond to the version label, promotion group, or revision number shown in the <B>Revision entry</B> field.</li> 
+</ul>
+
+		<!--</control>--></TD>
+</TR>
+
+<TR>
+		<TD><B>Revision</B></TD>
+		<TD><!--<control name="ArchiveReportGeneral.REVISION_EDIT">-->Generate 
+      a report for one specific revision, as opposed to all revisions of the 
+      versioned file, by clicking the Browse button to select a revision number, 
+      a version label, or a promotion group. If selecting the revision by a 
+      version label, enter a backslash before a version label that begins with a 
+      numeric character (such as \1.2label). <!--</control>-->
+		<!--</control>--></TD>
+</TR>
+
+<TR>
+		<TD><B>Include files in subproject</B></TD>
+		<TD><!--<control name="ArchiveReportGeneral.RECURSIVE_CB">-->(This 
+      field is only visible when a project or project database is selected.) 
+      Select to report on all versioned files in the subprojects of the selected 
+      project or project database.
+			<!--</control>--></TD>
+</TR>
+
+<TR>
+			<TD COLSPAN=2><CENTER><STRONG>Advanced Tab </STRONG>(you can use 
+      any two of the following to restrict the report)</CENTER></TD>
+</TR>
+
+<TR><TD><B>Author(s)</B></TD>
+		<TD><!--<control name="ArchiveReportAdvanced.AUTHORS_EDIT">-->Limit 
+      the report output to revisions modified by the specified user(s). If you 
+      are entering more than one User, separate the Users with a comma.
+		<!--</control>--></TD>
+</TR>
+<TR>
+	<TD><B>Locker(s)</B></TD>
+		<TD><!--<control name="ArchiveReportAdvanced.LOCKERS_EDIT">-->Limit 
+      the report output to revisions or archives locked by the specified 
+      user(s). If you are entering more than one User, separate the Users with a 
+      comma.
+		<!--</control>--></TD>
+</TR>
+
+<TR><TD><B>Owner(s)</B></TD>
+		<TD><!--<control name="ArchiveReportAdvanced.OWNERS_EDIT">-->Limit 
+      the report output to archives created by the specified user(s). If you are 
+      entering more than one User, separate the Users with a comma.
+		<!--</control>--></TD>
+</TR>
+
+<TR><TD><B>Date Range From</B></TD>
+		<TD><!--<control name="ArchiveReportAdvanced.FROM_DATE_EDIT">-->Select 
+      the earliest date of a revision that the report should include. Click the 
+      browse button to display a calendar. Select a date by selecting a month 
+      and year and then clicking the date on the calendar.
+		<!--</control>-->
+		</TD>
+</TR>
+
+<TR><TD><B>Date Range To</B></TD>
+		<TD><!--<control name="ArchiveReportAdvanced.TO_DATE_EDIT">-->Select 
+      the latest date of a revision that the report should include. Click the 
+      browse button to display a calendar. Select a date by selecting a month 
+      and year and then clicking the date on the calendar.
+		<!--</control>--></TD>
+
+</TR>
+
+<TR>
+		<TD COLSPAN=2><CENTER><B>Selected Files Tab</B></CENTER></TD>
+</TR>
+
+<TR><TD COLSPAN=2><!--<control name="Files.FILES_TREE">-->Review 
+      the selected files for which a report will be generated.
+		<!--</control>--></TD>
+</TR>
+
+<TR><TD><B>Properties button</B></TD>
+		<TD><!--<control name="Files.PROPERTIES_BUTTON">-->Click 
+      the Properties button to display archive information for the versioned 
+      file or project.
+		<!--</control>--></TD>
+</TR>
+</TABLE>
+
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A href="abouthistoryreport.html">About the History Report</A></TD>
+	</TR>
+</TABLE>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

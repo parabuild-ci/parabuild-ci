@@ -1,0 +1,239 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Using StarTeam with VSS</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=copyright value="Copyright© 1995-2003, Borland Software Corporation. All rights reserved.">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=1188>
+<meta name=layout-width content=702>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<!--(Scripts)=======================================================-->
+
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="./ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Administering the Application\nInteroperating with Other Programs\nStarTeam and Visual SourceSafe\nUsing StarTeam with VSS");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Using StarTeam with VSS</h1>
+
+<p class=Body>When StarTeam is first introduced at a company that uses 
+ Microsoft Visual SourceSafe (VSS), some team members usually continue 
+ solely with the VSS user interface and integration tools, while others 
+ rely on the Windows client to access VSS files. </p>
+
+<p class=Body>Both interfaces can be used with the same files, because 
+ StarTeam projects can be “wrapped around” VSS projects. You perform the 
+ wrapping process by creating an application project that uses a VSS project 
+ as its root folder. </p>
+
+<p class=Body>StarTeam interoperates with VSS in three ways:</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Initially, a project 
+ is created by wrapping a set of VSS archives.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>As users check file revisions 
+ into StarTeam, the application updates the VSS archives so that VSS users 
+ can use the new revisions.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>As VSS users check file 
+ revisions into VSS, StarTeam's foreign refresh feature makes the new revisions 
+ available to its users.</p></li>
+</ul>
+
+<p class=Note-1>Important: The person running the StarTeam Server must 
+ have the operating system privileges necessary to access the COM dll (SSAPI.dll) 
+ for VSS.</p>
+
+<h2 class=Heading2norule>Important Facts about StarTeam-VSS Wrapping</h2>
+
+<p class=Body>You cannot wrap the same VSS data as part of more than one 
+ StarTeam project. If you attempt this, the application may display the 
+ error message &quot;Can't get file creation date,&quot; while VSS says: 
+ &quot;A history operation is already in progress.&quot;</p>
+
+<p class=Body>The wrapping process may take a long time and is strongly 
+ affected by the number of revisions and the folder structure of the VSS 
+ projects. Placing the VSS projects on the same computer as the Server 
+ reduces network traffic and saves time. However, it also places files 
+ checked out from VSS in StarTeam’s cache, which can make data about these 
+ files unreliable.</p>
+
+<p class=Body><span style="font-weight: bold;"><B>Caution:&nbsp;</B></span>VSS 
+ projects and folders can be archived. However, if you archive VSS data 
+ and delete it from the repository, wrapping and operations and conversions 
+ from VSS to native StarTeam format may fail because of problems with the 
+ SSAPI.DLL file in your release of VSS. If your version of VSS is later 
+ than version 6, you should (1) locate a copy of version 6 (or earlier), 
+ (2) rename your SSAPI.DLL to SSAPIversionX.DLL so that you do not overwrite 
+ it, (3) copy the SSAPI.DLL from version 6 to your VSS installation, and 
+ (4) register it on Windows using regsrv32. Do this on the same computer 
+ as StarTeam Server, then restart the Server. </p>
+
+<h3>Dates</h3>
+
+<p class=Body>During the wrapping process, if a VSS file has revisions 
+ with check-in dates that do not chronologically increase, StarTeam modifies 
+ the dates to make them chronological. StarTeam logs these changes in the 
+ vss-err.<span style="font-style: italic;"><I>locale</I></span>.log file in the 
+ repository folder, and suggests that you to examine the file before the 
+ wrapping process completes. </p>
+
+<p class=Body>When creating derived views, the creation date given to each 
+ view is the time stamp of the oldest revision in the view.</p>
+
+<h3>Labels</h3>
+
+<p class=Body>VSS has two types of labels: project and revision. During 
+ the wrapping process, all project labels that appear in the archives being 
+ wrapped become view labels in StarTeam. All revision labels in VSS become 
+ revision labels in StarTeam. StarTeam retains only the VSS labels it had 
+ at the time of wrapping. If you convert to StarTeam immediately, no problem 
+ occurs. However, if you interoperate for a while, you may prefer to re-wrap 
+ the project before converting its data to StarTeam formats.</p>
+
+<p class=Body>In VSS, a project label is created by selecting a folder, 
+ clicking <span style="font-weight: bold;"><B>File &gt; Label</B></span>, and 
+ entering a label name and a comment. VSS applies the label to all folders 
+ and files in the folder hierarchy rooted at this project. However, a child 
+ folder can apply the same label, and override the date and comment fields 
+ of the parent folder. Each uniquely named project label becomes a view 
+ label in StarTeam. The time and the comment field for the label that are 
+ the highest in the project hierarchy become the time and description for 
+ the view label. If a file has more than one project label with the same 
+ name (because the same label was applied to different folders), StarTeam 
+ applies the label to the most recent revision with that label.</p>
+
+<p class=Body>A revision label can be created during the check-in process 
+ or by selecting <span style="font-weight: bold;"><B>File &gt; Label</B></span>. 
+ Revision labels can be added, modified, or deleted from any revision at 
+ any time. Each revision label has a name and comment. For any file, a 
+ VSS revision label can be attached to only one revision of that file. 
+ If a revision label has already been applied to another revision of the 
+ file, VSS forces you to either cancel the operation or remove the label 
+ from the other revision. While a VSS revision label can have the same 
+ name as a VSS project label, no StarTeam revision label can have the same 
+ name as a StarTeam view label. For example, StarTeam will create a revision 
+ label with the name ABC only if no project label with the same name exists. 
+ The comment for the VSS revision label becomes the StarTeam revision label’s 
+ description.</p>
+
+<p class=Body>VSS files can also have non-content revision labels. Selecting 
+ a file and then selecting <span style="font-weight: bold;"><B>File &gt; Label</B></span> 
+ to add a label creates a new version of the file, with no change in the 
+ file contents. In this situation, StarTeam generates a new version of 
+ the file to match the version in VSS. One of the versions can be deleted 
+ in VSS by adding the label a second time. In this case, the VSS history 
+ will have an empty space or &quot;hole.&quot; During the wrap, StarTeam 
+ recognizes the empty space, but cannot obtain any data, so it generates 
+ a revision one second after the most recent content revision. For this 
+ &quot;fake&quot; revision, StarTeam uses the revision comment found in 
+ the File history to indicate its purpose.</p>
+
+<h3>Pinned files</h3>
+
+<p class=Body>If a file is pinned in VSS before the wrap, the StarTeam 
+ item configuration for that file shows that the file is pinned. Because 
+ VSS does not supply the time at which a pin operation occurred, StarTeam 
+ pins the revision as of the time immediately after it was checked in. 
+ If a user rolls back a view to a configuration time that is after the 
+ time the revision was pinned, the file will remain pinned. Pinned files 
+ are read-only and therefore cannot be modified.</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

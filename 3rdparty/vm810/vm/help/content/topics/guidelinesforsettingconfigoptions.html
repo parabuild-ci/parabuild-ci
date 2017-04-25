@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Guidelines for Setting Configuration Options</TITLE>
+<!--<guidelinesforsettingconfigoptions.html>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="guidelinesforsettingconfigoptions"></A>Guidelines for Setting Configuration Options</H1>
+<p>
+Here are some guidelines for the types of options to set in the master and project configuration files in the desktop client.
+</p>
+<H2>Master Configuration File</H2>
+<P>
+Use the master configuration file to set options that dictate how Serena ChangeMan Version Manager operates on a project database and specify (disallow) options that cannot be changed in other configuration files (see the explanation of master configuration file above). For example:
+</P>
+<UL>
+<LI>
+The login sources that Version Manager uses to obtain user identification.
+<LI>The location of program files that all users must be able to access, such as the access control database.
+<LI>Locking options that affect revision access and parallel development.
+<LI>Semaphore options that affect how Version Manager protects against archive corruption in the event of simultaneous access.
+<LI>A promotion model that all projects should use.
+</UL>
+<H2>Project Configuration File</H2>
+<P>
+Use project configuration files to set project-specific options. Set options for each project that determine how Version Manager operates for that particular project. For example:
+</P>
+<UL>
+<LI>A promotion model that is custom-designed for a project.
+<LI>A project-specific journal file.
+<LI>A project-specific reference directory.
+</UL>
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="setconfigoptions.html">Setting Configuration Options</A></TD>
+		<TD><a href="aboutconfigoptions.html">About Configuration Options</a></TD>
+	</TR>
+	
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

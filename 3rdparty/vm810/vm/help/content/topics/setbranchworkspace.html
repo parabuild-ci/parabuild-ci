@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Using Workspaces for Automatic Branching</TITLE>
+<!--<setbranchworkspace.html>-->
+<!--<index parent="workspaces" label="using for automatic branching" anchor="setbranchworkspace">-->
+<!--<index parent="branching" label="using workspaces for automatic branching" anchor="setbranchworkspace">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="setbranchworkspace"></A>Using Workspaces for Automatic Branching</H1>
+<P>You can set different <a href="autobranch.html">automatic branching</a> definitions in workspaces when you want to temporarily override the project database's or project's automatic branching options. In this case, you can switch to the workspace where you've set up the options to use the workspace's automatic branching definition. These workspace settings override the settings in the configuration file.
+</P>
+<P>
+Your project database must allow the following three Branching options: Base Version, Branch Version, and Default Version. These options define the starting and ending points for the branch and specify the default revision to operate on:</p>
+<ul>
+	<li>Base Version specifies the version label that you assigned to mark the revision from which you want to start a branch (for example, Rel1.0 Base).
+	<li>Branch Version specifies the version label that you assigned to the tip of the branch (for example, Rel1.5 Branch). Initially, this will be the revision from which you want to branch. As you check in subsequent branch revisions, this label will automatically reassign itself to the tip revision on the branch.
+	<li>Default Version identifies the version label you specified for the Branch Version option (for example, Rel1.5 Branch). This version label tells Version Manager which revision to operate on for all actions.
+</ul>
+<p>Whenever the version labels specified for the Base Version and Branch Version options refer to the same revision, Version Manager automatically begins a branch from that revision when you check in a file. Because you set the Default Version with the same version label as Branch Version, you always check out the tip revision on the branch automatically.</p>
+<H2>To set up automatic branching using a workspace:</H2>
+<OL>
+	<LI>Select the project database associated with the workspace for which you are setting up automatic branching.<br><br>
+	<LI>Assign a fixed version label to the revision from which you want to start a branch:<br><br>
+	<oL type="a">
+		<LI>Select the revision.
+		<LI>Select Actions | Version Label | Assign. The Assign Version Label to File dialog box appears.
+		<LI>Enter the name of the version label in the <b>Assign Version Label</b> field. For example, Rel1.0 Base. Any character can be used in the name except: an asterisk (*), a colon (:), double quotes (&quot;), a plus sign (+), a minus sign (-).
+		<LI>Click OK.<br><br>
+	</oL>
+	<LI>Assign another fixed version label to the revision you selected in Step 2. <br><br>
+	<oL type="a">
+		<LI>Select the revision.
+		<LI>Select Actions | Version Label | Assign. The Assign Version Label to File dialog box appears.
+		<LI>Enter the name of the version label in the <b>Assign Version Label</b> field. For example, Rel1.5 Branch. Any character can be used in the name except: an asterisk (*), a colon (:), double quotes (&quot;), a plus sign (+), a minus sign (-).
+		<LI>Click OK.
+	</oL><br>
+	<LI>Select the workspace for which you want to define automatic branching by selecting File | Set Workspace.<br><br>
+	<LI>If you are defining automatic branching for a project within the project database, select the project.<br><br>
+<LI>Select File | Properties. The Properties dialog box appears with the Project or Project Database tab active.<br><br>
+	<LI>Select the Workspace Settings tab.<br><br>
+	<LI>Specify the Base Version, which is the version label you assigned in Step 2. For example, Rel1.0 Base.<br><br>
+	<LI>Specify the Branch Version, which is the version label you assigned in Step 3. For example, Rel1.5 Branch.<br><br>
+	<LI>Specify the Default Version, which is the version label you assigned in Step 3. For example, Rel1.5 Branch.<br><br>
+	<LI>Click OK.
+</OL>
+<p><b>NOTE</b> To later resume work on the trunk, reset the Default Version option to the version label you specified in step 1.</p>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="aboutbranching.html">About Branching</A></TD>
+		<TD><A HREF="autobranch.html">About Automatic Branching</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="setautobranch.html">Setting Up Automatic Branching</A></TD>
+		<TD><A HREF="branchfile.html">Branching Files</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

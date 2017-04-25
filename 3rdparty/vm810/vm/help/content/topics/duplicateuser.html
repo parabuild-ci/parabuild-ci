@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Duplicating Users</TITLE>
+<!--<defineusers.html>-->
+<!--<index parent="duplicating" label="users" anchor="dupliateusers">-->
+<!--<index parent="privileges" label="assigning to duplicated users" anchor="dupliateusers">-->
+<!--<index parent="assigning" label="privileges to duplicated users" anchor="dupliateusers">-->
+<!--<index parent="copying" label="an existing user to a new user" anchor="dupliateusers">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="dupliateusers"></A>Duplicating Users</H1>
+<P>You duplicate users to define several users with the same set of privileges assigned to them. Duplicating users for the <A HREF="aboutacdb.html">access control database</a> includes assigning privileges to the users.</p>
+<H2>To duplicate users in the access control database:</H2>
+<OL>
+	<LI>If the Project Security dialog box is already open, select All Users from the drop-down list in the upper left corner. If it is not open, select Admin | Security | Users. <br><br>
+	<LI>Click the Duplicate User button. <br><br>
+	<p>In the Duplicate User dialog box, do the following:</p><br>
+	<OL type="a">
+		<LI>Enter the user's ID in the <b>Name</b> field.  <br><br>
+		<LI>Optionally, you can enter an expiration date for the user in the <b>Expires on</b> field. For example, if you are defining the user on January 2, 1999 and you enter an expiration date of December 31, 1999, the time period during which this user ID is valid is January 2 to December 31, 1999. You must enter the date and time in the formats that you have set for your operating system. On Windows, you set the date and time formats from the Control Panel | Regional Settings. On UNIX, you set the formats by setting the PVCS_DATE_FORMAT and PVCS_TIME_FORMAT environment variables. For the best results, we recommend that you set the PVCS_DATE_FORMAT to MM/dd/yyyy, or dd/MM/yyyy if you want days to lead months. Notice that the month is specified in capital letters, and that the year is specified in four digits. If there are no control panel settings and these environment variables are not set, then the format is mm/dd/yy hh:mm in the US and dd/mm/yy hh:mm in the UK.<br><br>
+		<LI>If you have Login Dialog (VLOGIN) specified as a <A HREF="loginsources.html">login source</a>, you can enter a password for the user in the <b>Optional password</b> field. Passwords can be up to 30 characters long. If you don't specify a password, Version Manager does not prompt the user for a password. The only time Version Manager uses the password is if Login Dialog is specified as a login source, and Version Manager uses this login source to obtain the user ID.  <br><br>
+<p>Note that users can change their own passwords at any time using File | Change Password.</p><br><br>
+		<LI>Select the <b>Copy privileges</b> check box to assign all of the privileges defined for the original user to the new user. <br><br>
+		<LI>In this procedure, we have not yet defined groups; therefore, deselect the <b>Copy group membership</b> check box. <br><br>
+		<LI>Click Duplicate. <br><br>
+		<LI>To duplicate another user, repeat steps 11a through f. Otherwise, click Close. <br><br>
+		</OL>
+	</ul>
+</OL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="setupsecurity.html">Setting Up Security</A></TD>
+		<TD><A HREF="defineusers.html">Defining Users</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="changeuserid.html">Changing a User's ID</A></TD>
+		<TD><A HREF="modifyuserprivileges.html">Modifying User Privileges</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

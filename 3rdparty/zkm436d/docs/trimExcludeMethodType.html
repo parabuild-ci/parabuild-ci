@@ -1,0 +1,157 @@
+<!-- Copyright 2003 Zelix Pty Ltd (ABN 47 078 740 093) -->
+<html>
+<head>
+<title>Zelix KlassMaster Trim Method Exclude Parameter</title>
+   <meta name="keywords" content="java obfuscator,java code obfuscator,obfuscation">
+   <meta name="description" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <meta name="classification" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <link rel=stylesheet href="../ZKM.css" TYPE="text/css">
+</head>
+<body background="../images/small-white-mist1.jpg" bgcolor="#E1E1E1">
+<center><a href="index.html"><img src=../images/ZKM_b4.gif alt="Zelix KlassMaster" width=264 height=62 border=0></a></center>
+<hr>
+<center>
+<table width=770 border=0>
+   <tr>
+      <td colspan=2>
+         <h1>Trim Method Exclude Parameter</h1>
+      </td>
+   </tr>
+   <tr>
+      <td colspan=2>
+         &nbsp;
+      </td>
+   </tr>
+   <tr>
+      <td valign="top" colspan=2>
+         The Trim Method Exclude Parameter dialog has three facets:
+         <ul>
+            <li>the specification of the method itself and
+            <li>the specification of the class that contains the method and
+            <li>the specification of the package that contains the class
+         </ul>
+         For a method to be excluded it must match the full specification.
+      </td>
+   </tr>
+   <tr>
+      <td colspan=2>
+         &nbsp;
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <h3>The method itself</h3>
+         In specifying the method which is to be excluded, you can specify:
+         <ul>
+            <li>whether its access level is
+               <ul>
+                  <li>not specifed
+                  <li>public
+                  <li>protected
+                  <li>package (i.e. default)
+                  <li>private
+               </ul>
+            <li>whether it has or doesn't have the modifiers
+               <ul>
+                  <li>abstract
+                  <li>static 
+                  <li>final 
+                  <li>native
+                  <li>synchronized
+               </ul>
+            <li>its name or a <b>"*" wildcard</b> string that its name must match
+            <li>its argument types as either:
+               <ul>
+                  <li>no arguments
+                  <li><b>"*"</b> meaning any argument types
+                  <li>a comma separated list of fully qualified types
+                  <li>the fully qualified name(s) of any exception(s) it throws
+               </ul>
+            <li>the exception classes that it throws.  These are entered as a comma delimited list of fully qualified class names.
+         </ul>
+      </td>
+      <td valign="top">
+         <img src=../images/trimMethodExclude0.gif width=431 height=433 alt="Trim Method Exclude Parameter - Method itself"><p>
+      </td>
+   </tr>
+   <tr>
+      <td colspan=2>
+         &nbsp;
+      </td>
+   </tr>
+   <tr>
+      <td valign="top">
+         <h3>The containing class</h3>
+         To specify the containing class, click the <b>Containing class</b> tab.
+         The dialog basically works the same way as the <b><a href=trimExcludeClassType.html>Trim Class Exclude Parameter</a></b> dialog.
+         The difference is that you are now specifying the containing class of the method which is to be excluded.
+         The class <b>Name</b> field cannot be empty but a simple "*" wildcard is acceptable. 
+         <p>
+         If you wish to <u>exclude the containing class</u> as well as the method then you should select the 
+         <b>Exclude class as well</b> box.
+      </td>
+      <td valign="top">
+         <img src=../images/trimMethodExclude1.gif width=431 height=433 alt="Trim Method Exclude Parameter - Containing package"><p>
+      </td>
+   </tr>
+   <tr>
+      <td colspan=2>
+         &nbsp;
+      </td>
+   </tr>
+   <tr>
+      <td valign="top">
+         <h3>The containing package</h3>
+         To specify the containing package, click the <b>Containing package</b> tab.
+         If you clear the <b>Name</b> input field then you are specifying that the class is in the default package. 
+      </td>
+      <td valign="top">
+         <img src=../images/trimMethodExclude2.gif width=431 height=433 alt="Trim Method Exclude Parameter - Containing package"><p>
+      </td>
+   </tr>
+   <tr>
+      <td colspan=2>
+         &nbsp;
+      </td>
+   </tr>
+   <tr>
+      <td valign="top" colspan=2>
+         <h3>An example</h3>
+         The specification:
+         <p>
+         <code>*.*^ implements java.util.Observer public m*(java.lang.String[], int) throws java.io.IOException</code>
+         <p>
+         means exclude all methods that:
+         <ul>
+           <li>are <code>public</code>
+           <li>have a name that matches <code>"m*"</code>
+           <li>have the argument types <code>java.lang.String[], int</code>
+           <li>throw the exception <code>java.io.IORemoteException</code> or one of its subclasses
+           <li>are contained in a class that:
+              <ul>
+                 <li>has a name that matches <code>"*"</code>
+                 <li>implements <code>java.util.Observer</code>
+                 <li>is contained in a package that matches "*"
+             </ul>
+         </ul>
+         and exclude the containing class as well.
+      </td>
+   </tr>
+</table>
+</center>
+<hr>
+<center>
+<table>
+   <tr>
+      <td>
+         <a href=trimExcludeFieldType.html><img src=../images/larrw.gif alt="Trim Field Exclude Parameter"></a>
+      </td>
+      <td>
+         <a href=trimExclusionType.html><img src=../images/uarrw.gif alt="Trim Exclude Parameter Type"></a>
+      </td>
+   </tr>
+</table>
+</center>
+Copyright &copy; 2003 <a href="mailto:WebMaster@zelix.com"><font size=-1>Zelix Pty Ltd</font></a> (ABN 47 078 740 093)
+</body>
+</html>

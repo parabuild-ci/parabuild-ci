@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>About the Version Manager File Server</TITLE>
+<!--<file_server_configuration_dialog.html>-->
+<!--<control base="pvcs.vm.vmgui.VmGuiConfigureProjectDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Getting Started\nGetting Started for Admininstrators\nAbout the Version Manager File Server");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>About the Version Manager File Server</h1>
+<p>The Serena ChangeMan Version Manager File Server is a server that accesses archives, metadata archives, revisions, and other files on behalf of Version Manager users.</p>
+<p>This optional feature is new as of Version Manager 8.</p>
+
+<p><b>NOTE</b> The Version Manager File Server is an option during installation. It is administered via a servlet on the server. For detailed information, see the <i>Serena ChangeMan Version Manager Administrator's Guide</i> or the admin servlet help.</p>
+
+<h1>Why Use the Version Manager File Server?</h1>
+<p>The Version Manager File Server allows you to configure Version Manager for greatly improved security and performance.</p>
+<h2>Improved Security</h2>
+<p>Previously, Version Manager users needed write/delete access to the archive and metadata files on the file system. This approach left open the possibility that a user could maliciously or accidentally delete archive or metadata files with tools such as Windows Explorer or the command prompt of the O/S.</p>
+<p>With the Version Manager File Server, you can eliminate this vulnerability since only the file server itself needs write/delete access to the archive and metadata files.</p>
+<p><b>NOTE</b> The Version Manager web client has always offered the security advantage of secure archives, but only if you could limit who had access to the CLI, PCLI, and desktop client.</p>
+<h2>Improved Performance</h2>
+<p>With the Version Manager File Server, you can increase the speed of most source control operations. Your net performance gain depends on the characteristics of your work and work practices as well as how closely you model your configuration on the ideal, as outlined below:</p>
+<LI>Locate all archive and metadata files on the server, rather than having the server access them via mapped drives. This saves time and reduces network traffic by allowing:
+	<ul type="circle"><LI>Files to be streamed across the network instead of being read one block at a time.<BR><BR></LI>
+	<LI>Certain operations to be performed entirely on the file server, avoiding the need to transfer files over the network.<BR><BR></LI></ul>
+</LI>
+<LI>Split your archives into separate revision and metadata files. This allows faster:
+	<ul type="circle"><LI>Metadata operations since metadata archives are quite small in comparison to an archive that also includes revisions.<BR><BR>
+	<b>NOTE</b> Metadata includes version labels, promotion groups, check out dates, change descriptions, etc.<br><br></p></LI>
+	<LI>Revision operations since revisions can be stored as individual flat files.<BR><BR></LI>
+	<LI>Access to revisions in a Delta store since revisions can be persisted outside of the Delta store for faster retrieval.<BR><BR></LI>
+	</ul>
+</LI>
+
+
+
+
+<h2>See Also</h2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="configuring_clients_for_file_server.html">Configuring Clients for Use with File Servers</A></TD>
+		<TD><A HREF="file_server_configuration_dialog.html">File Server Configuration Dialog Box</A></TD>
+	</tr>
+	<TR>
+        <TD><i>Serena ChangeMan Version Manager Administrator's Guide</i></TD>
+		<TD></TD>
+	</tr>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>
+

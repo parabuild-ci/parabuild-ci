@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>About the Default Access Control Database</TITLE>
+<!--<aboutdefaultacdb.html>-->
+<!--<index parent="security" label="about the default access control database" anchor="aboutdefaultacdb">-->
+<!--<index parent="access_control_database" label="about the default" anchor="aboutdefaultacdb">-->
+<!--<index parent="project_databases" label="about the default access control database" anchor="aboutdefaultacdb">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="aboutdefaultacdb"></A>About the Default Access Control Database</H1>
+<P>By default, Serena ChangeMan Version Manager creates a default access control database for each project database that you create. This access control database contains one user with your user ID, the SuperUser privilege set assigned to you, and a few default privilege sets (see <A HREF="defaultprivtables.html">Default Privilege Sets</a>). This access control database is specified but not enabled in the project database's master configuration file, meaning that the project database does not use the access control database for security.</p>
+<P>Version Manager creates this default access control database by copying the default.db file. This file is located in the pvcsprop subdirectory of the installation directory (for example, C:\Program Files\serena\vm\common\pvcsprop\pvcs\vm on Windows and /usr/serena/vm/common/pvcsprop/pvcs/vm on UNIX). You can modify the settings in the default.db file to suit your needs, and then Version Manager will use the modified file to create new access control databases.</p>
+<P>In the access control database, you must define the users who will have the right to access the project or project database and the actions that they will be allowed to perform. You can define user IDs, passwords, user expiration dates, groups of users, and privileges assigned to the users in access control databases. Only user IDs are required.  If you do not assign privileges to users, Version Manager assigns them the <A HREF="defaultprivtables.html">Unlimited privilege</A>.</P>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="enablesecurity.html">Enabling Security</A></TD>
+		<TD><A HREF="aboutacdb.html">About Access Control Databases</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="defineusers.html">Defining Users</A></TD>
+		<TD><A HREF="modifyuserprivileges.html">Modifying User Privileges</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="privilegerules.html">Rules for Privileges</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

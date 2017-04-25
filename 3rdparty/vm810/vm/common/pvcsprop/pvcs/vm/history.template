@@ -1,0 +1,33 @@
+<HTML>
+<HEAD>
+<TITLE><subst data="REPORT_TITLE_PROPERTY"></subst></TITLE>
+<META NAME=GENERATOR CONTENT="ChangeMan Version Manager">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" LINK="#0000EE" VLINK="#0000EE" ALINK="#9933EE" TEXT="#000000" LEFTMARGIN="8" TOPMARGIN="8">
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0">
+<TR VALIGN="top">
+<TD>
+<B><FONT SIZE="+2"><subst data="REPORT_TITLE_PROPERTY"></subst></FONT></B>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<HR WIDTH="100%" SIZE="2" COLOR="Black" NOSHADE>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<PRE>
+<subst data="REPORT_FILE_PROPERTY"></subst>
+</PRE>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<HR WIDTH="100%" SIZE="2" COLOR="Black" NOSHADE>
+</TD>
+</TR>
+</TABLE><!--Footnote-->
+<P>
+</BODY>
+</HTML>

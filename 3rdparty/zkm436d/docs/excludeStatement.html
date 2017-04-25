@@ -1,0 +1,340 @@
+<!-- Copyright 2005 Zelix Pty Ltd (ABN 47 078 740 093) -->
+<html>
+<head>
+<title>Zelix KlassMaster - exclude statement</title>
+   <meta name="keywords" content="java obfuscator,java code obfuscator,obfuscation">
+   <meta name="description" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <meta name="classification" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <link rel=stylesheet href="../ZKM.css" TYPE="text/css">
+</head>
+<body background="../images/small-white-mist1.jpg" bgcolor="#E1E1E1">
+<center><a href="index.html"><img src=../images/ZKM_b4.gif alt="Zelix KlassMaster" width=264 height=62 border=0></a></center>
+<hr>
+<center>
+<table width=770 border=0>
+   <tr>
+      <td>
+         <h1>The <code>exclude</code> Statement</h1>
+         The ZKM Script <code>exclude</code> statement excludes the names of specified objects from being renamed 
+         by the Zelix KlassMaster <a href=obfuscateStatement.html><code>obfuscate</code></a> or 
+         <a href=unobfuscateStatement.html><code>unobfuscate</code></a> statements.
+         Successive <code>exclude</code> statements <b>have a cumulative effect</b>. Once an exclusion has been set its effect can be
+         <ul>
+            <li>reduced by a following <a href=unexcludeStatement.html><code>unexclude</code></a> statement.
+            <li>removed entirely by a following <a href=resetExclusionsStatement.html><code>resetExclusions</code></a> statement.
+         </ul>
+         <p> 
+         The remainder of this page is organized into the following sections.
+         <ul>
+            <li><a href="#examples">Examples and Explanation</a>
+            <li><a href="#syntax">Syntax</a>
+         </ul>
+         <h2><a name="examples">Examples and Explanation</a></h2>
+         <code>exclude</code> statement parameters may be loosely categorized into the following groups
+         <ul>
+            <li><a href="#packageExclude">Package exclude parameters</a> 
+            <li><a href="#classExclude">Class exclude parameters</a> 
+            <li><a href="#fieldExclude">Field exclude parameters</a> 
+            <li><a href="#methodExclude">Method exclude parameters</a> 
+            <li><a href="#classSuffixExclude">Class suffix exclude parameters</a>
+         </ul>
+         <h3><a name=packageExclude>Package exclude parameters</a></h3>
+         Any package name matching a package exclusion parameter is excluded. If a package level is specified by a simple "*" wildcard then it matches 
+         one or more levels. 
+         If the package parameter is a component of a class, field, method or class suffix exclude parameter and the package parameter is followed by a <code><b>"^"</b></code> 
+         then the name of the enclosing package is also excluded. Note that a package name specification always ends with a <code>"."</code>.
+<pre>
+exclude pack1.pack2. and  //exclude the package "pack1.pack2"
+        *.           and  //exclude all packages
+        p*1.*.p*1.   and  //exclude any package matching "p*1.*.p1"
+        pack2.*.     and  //exclude all the sub-packages of "pack2"
+        (pack3.*. && !(pack3.pack0. || pack3.pack2.)); //exclude all the sub-packages of "pack3" except for "pack0" and "pack2"
+</pre>
+         <h3><a name=classExclude>Class exclude parameters</a></h3>
+         Put a little less formally (with mandatory components in bold), the syntax is: <br>
+         <code>&lt;classModifiers&gt; &lt;packageQualifiers&gt;.<b>&lt;className&gt;</b> &lt;extendsClause&gt; &lt;implementsClause&gt;<b>;</b></code>
+         <p>
+         For a class name to be excluded, all of the following must be true:
+         <ul>
+           <li>Its modifiers  (e.g. <code>public final</code>) must match all parameter modifiers. 
+               So if the parameters are <nobr><code>public abstract !interface</code></nobr> then the class must be 
+               <code>public</code>, <code>abstract</code> and NOT an interface to be excluded. 
+           <li>Its package qualifiers must match any specified package exclude parameter component 
+               (see <a href=#packageExclude>Package exclude parameters</a>). If there is no
+               package exclude parameter component then the class must be in the default package.
+           <li>Its unqualified name must match the specified class name specification.
+           <li>If the parameter has an extends clause then the class must be a subclass of the specified class
+           <li>If the parameter has an implements clause then the class must directly or indirectly implement all of the specified interfaces
+         </ul>
+         If the class parameter is a component of a field or method exclude parameter then 
+         a final <b>"^"</b> tag after the class name specification causes the enclosing class to be excluded.   
+         <p>  
+         If a class exclusion parameter's <u>class name specification</u> is followed by
+         a <b>"+"</b> tag then the parameter also causes the names of all the fields and methods of the class to be excluded.     
+<pre>
+exclude *          and         //exclude all classes in the default package
+        *.Class1   and         //exclude all classes with the unqualified class name "Class1"
+        public !final *.* and  //exclude all public non-final classes
+        package abstract *.C*s extends pack1.Class1 and 
+                       //exclude all "public abstract" classes that
+                       //have an unqualified name matching "C*s" and extend "pack1.Class1".
+        p*.^*     and //exclude all classes in packages that start with the character "p" and 
+                      //also exclude the names of the enclosing packages.
+        *.* + implements java.io.Serializable and //exclude all classes that implement Serializable 
+                                                 //and also exclude all field and method names
+        *.(Class* && !(Class0 || Class1)); //exclude names of all classes that start with "Class" 
+                                           //except for "Class0" and "Class1"
+</pre>
+         <h3><a name="fieldExclude">Field exclude parameters</a></h3>
+         Put less formally (with mandatory components in bold), the syntax is: <br>
+         <code>&lt;classModifiers&gt; &lt;packageQualifiers&gt;.<b>&lt;className&gt;</b> &lt;extendsClause&gt; &lt;implementsClause&gt;<br>
+         &nbsp;&nbsp;&nbsp; &lt;fieldModifiers&gt; &lt;fieldType&gt; <b>&lt;fieldName&gt;;</b></code>
+         <p>
+         For a field name to be excluded, all of the following must be true:
+         <ul>
+           <li>Its containing class must match any class exclude parameter component (see <a href=#classExclude>Class exclude parameters</a>).
+           <li>Its modifiers (e.g. <code>public volatile</code>) must match all parameter field modifiers.
+               So if the parameters are <nobr><code>public static !transient</code></nobr> then the field must be 
+               <code>public</code>, <code>static</code> and NOT <code>transient</code> to be excluded.
+           <li>Its type (e.g. int[] or java.lang.String) must match the parameter field type if it exists.
+           <li>Its name must match the parameter field name.
+         </ul>
+<pre>
+exclude *.* *                      and //Exclude all field names
+        *.Class1 !transient int f* and //Exclude all non-transient "int" field names matching "f*" 
+                                       //in classes with the unqualified name "Class1"
+        public *.^*^ public volatile * and //Exclude all "public volatile" fields in
+                                           //public classes.
+                                           //Also exclude the containing package and class names.
+</pre>
+         <h3><a name="methodExclude">Method exclude parameters</a></h3>
+         Put less formally (with mandatory components in bold), the syntax is: <br>
+         <code>&lt;classModifiers&gt; &lt;packageQualifiers&gt;.<b>&lt;className&gt;</b> &lt;extendsClause&gt; &lt;implementsClause&gt;<br>
+         &nbsp;&nbsp;&nbsp; &lt;methodModifiers&gt; <b>&lt;methodName&gt;(</b>&lt;argumentTypes&gt;<b>)</b> &lt;throwsClause&gt; +signatureClasses;</code>
+         <p>
+         For a method name to be excluded, all of the following must be true:
+         <ul>
+           <li>Its containing class must match any class exclude parameter component (see <a href=#classExclude>Class exclude parameters</a>).
+           <li>Its modifiers (e.g. <code>public native</code>) must match all parameter method modifiers.
+               So if the parameters are <nobr><code>public static !synchronized</code></nobr> then the method must be 
+               <code>public</code>, <code>static</code> and NOT <code>synchronized</code> to be excluded.
+           <li>Its name must match the parameter method name.
+           <li>Its argument types (e.g. <code>int[], java.lang.String</code>) must match the parameter argument types if they exist.
+               (A parameter argument type of <b>"*"</b> matches any method argument types including no arguments.)
+               If the parameter has no argument type then the method must take no arguments.
+           <li>Its throws clause must contain all the classes specified in the exclude parameter's throw clause. 
+               So, if the exclude parameter's throws clause is <code>throws java.io.IOException</code> then the method
+               must throw <code>java.io.IOException</code> or one of its subclasses to be excluded.
+         </ul>
+         <p>
+         For consistency, the <code>exclude</code> statement supports the special method names <code>&lt;init&gt;</code> and <code>&lt;clinit&gt;</code>
+         which represent constructor and class initializer method names respectively.  However, because constructor and class initializer names cannot be 
+         obfuscated, the syntax has no practical application for this statement.
+         <p>
+         If a method exclude parameter ends with the keyword <code>+signatureClasses</code> then, for each matching method, 
+         the fully qualified class names of the method's return and parameter types are also excluded from obfuscation. Types
+         which are primitive are ignored.  So, if a matching method has the signature <nobr><code>pack1.Class1 method1(pack2.Class2)</code></nobr>
+         then the <code>+signatureClasses</code> flag has the effect of excluding the fully qualified names:
+         <ul>
+           <li>pack1.Class1 (because it is the return type of a matching method) and
+           <li>pack2.Class2 (because it is a parameter type of a matching method)
+         </ul>
+<pre>
+exclude *.* *(*)           and  //Exclude all method names
+        *.* !static m*()   and  //Exclude all non-static methods taking no parameters with names matching "m*"
+        *.^*^ native *(*)  and  //Exclude all "native" methods. 
+                                //Also exclude the containing package and class names.
+        *.* *(*) throws java.io.IOException and  //Exclude all methods that throw java.io.IOException. 
+        *.* abstract *(java.lang.String) and //Exclude the names of all "abstract" methods that 
+                                             //take a single String.
+        pack1.Class1 *(*) +signatureClasses and //Exclude all method names in pack1.Class1 along with 
+                                                //the matching methods' return and parameter types
+        pack1.* implements java.io.Serializable *(*); //Exclude all the methods of any class 
+                                                      //implementing "Serializable" in 
+                                                      //a package that matches "pack1.*"
+</pre>
+         <h3><a name=classSuffixExclude>Class suffix exclude parameters</a></h3>
+         If a class matches a class suffix exclude parameter
+         <ul>
+            <li>its specified suffix is excluded from being renamed
+            <li>if present, its specified prefix is excluded from being renamed
+            <li>if a class <code>X</code> can be found that has an unqualified name matching the non-prefix and non-suffix part of the matching class's name
+                then the non-prefix and non-suffix part of the matching class's name will be renamed to the new name of that the class <code>X</code>.
+         </ul>
+         For example, for a class suffix exclude parameter <code>_&lt;link&gt;_Skel</code> the prefix is <code>_</code> and the suffix is <code>_Skel</code>.
+         A hypothetical class named <code>_Class1_Skel</code> matches the parameter so the prefix and suffix parts of the name will be retained.  
+         The non-prefix and non-suffix part of the matching class name <code>_Class1_Skel</code> is "Class1".
+         If there is a class in the same package or in a package matching any of the search clause packages
+         named <code>Class1</code> and if, when obfuscating, <code>Class1</code> is renamed to <code>abc</code>
+         then the class <code>_Class1_Skel</code> will be renamed to <code>_abc_Skel</code>.
+         <p>
+         The class suffix exclude parameter is useful for situations in the:
+         <ul>
+            <li>RMI (e.g. the <code>_Stub</code> and <code>_Skel</code> suffixes) and 
+            <li>Java Beans (e.g. the <code>BeanInfo</code> and <code>Customizer</code> suffixes) scenarios.
+         </ul>
+         <p>
+         Put less formally (with mandatory components in bold), the syntax is: <br>
+         <code>&lt;packageQualifiers&gt;.&lt;prefix&gt;<b>&lt;link&gt;&lt;suffix&gt;</b> &lt;extendsClause&gt; &lt;implementsClause&gt; &lt;searchClause&gt;<b>;</b></code>
+         <p>
+         For the class suffix of a class to be excluded, all of the following must be true:
+         <ul>
+           <li>The class's package qualifiers must match any specified package exclude parameter component 
+               (see <a href=#packageExclude>Package exclude parameters</a>). If there is no
+               package exclude parameter component then the class must be in the default package.
+           <li>If a prefix is present then class's unqualified name must start with the specified prefix.
+           <li>The class's unqualified name must end with the specified suffix.
+           <li>If the parameter has an extends clause then the class must be a subclass of the specified class
+           <li>If the parameter has an implements clause then the class must directly or indirectly implement all of the specified interfaces
+         </ul>
+         For the non-prefix and non-suffix part of the class name to be renamed to match that of another class, all of the following must be true:
+         <ul>
+            <li>All the above conditions for exclusion of the class name's suffix are met.
+            <li>The other class's original name equals the non-prefix and non-suffix part of the class's name.
+            <li>The other class is contained in
+               <ul>
+                  <li>the same package as the class or
+                  <li>a package that matches one of the packages specified in the search path.
+               </ul>
+         </ul>
+<pre>
+exclude *._&lt;link&gt;_Skel and //Exclude the "_" prefix and the "_Skel" suffix in all classes 
+                           //with unqualified names starting with "_" and ending with "_Skel"                                  
+        &lt;link&gt;BeanInfo search pack1.*, pack2 and 
+                           //Exclude the "BeanInfo" suffix in all classes that end with it
+                           //that are in the default package. Search packages matching
+                           //"pack1.*" or "pack2" for a class with an original name
+                           //matching the non-suffix part of the class name.
+        pack1.&lt;link&gt;X implements pack2.Class2;   
+                           //Exclude the "X" suffix in all classes that end with it
+                           //that are in "pack1" and implement "pack2.Class".
+</pre>
+
+         <h2><a name="syntax"><a href="langZKMScript.html#notation">Syntax</a></a></h2> 
+         <code><b>"<u>exclude</u>" excludeParameter ("<u>and</u>" excludeParameter)<sup>*</sup> ";"</b></code>
+         <p>
+         <code><b>classExcludeParameter ::=<br> 
+         &nbsp;&nbsp;&nbsp;[["!"] "<u>public</u>" | "<u>package</u>"] [["!"] "<u>abstract</u>"] [["!"] "<u>final</u>"] [["!"] "<u>interface</u>"]<br> 
+         &nbsp;&nbsp;&nbsp;[packageExcludeParameter ["^"]] nameSpecifier ["^"] ["+"] [extendsClause] [implementsClause]</b></code>
+         <p>
+         <code><b>classSuffixExcludeParameter ::=<br>
+         &nbsp;&nbsp;&nbsp;[packageExcludeParameter] wildcardName "<u>&lt;link&gt;</u>" name [extendsClause] [implementsClause]<br>
+         &nbsp;&nbsp;&nbsp;[searchClause]</b></code>
+         <p>
+         <table>
+            <tr>
+               <td>
+                  <code><b>excludeParameter ::=</b></code>
+               </td>
+               <td>
+                  <code><b>packageExcludeParameter</b></code>
+               </td>
+               <td>
+                  <code><b>|</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>                   
+               </td>
+               <td>
+                  <code><b>classExcludeParameter</b></code>
+               </td>
+               <td>
+                  <code><b>|</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>                   
+               </td>
+               <td>
+                  <code><b>fieldExcludeParameter</b></code>
+               </td>
+               <td>
+                  <code><b>|</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>                   
+               </td>
+               <td>
+                  <code><b>methodExcludeParameter</b></code>
+               </td>
+               <td>
+                  <code><b>|</b></code>
+               </td>
+            </tr>
+            <tr>
+               <td>                   
+               </td>
+               <td>
+                  <code><b>classSuffixExcludeParameter</b></code>
+               </td>
+               <td>
+               </td>
+            </tr>
+         </table>
+         <p>
+         <code><b>extendsClause ::= "<u>extends</u>" fullyQualifiedClassName</b></code><br>
+         <p>
+         <code><b>fieldExcludeParameter ::=<br> 
+         &nbsp;&nbsp;&nbsp;classExcludeParameter  [["!"] "<u>public</u>" | "<u>protected</u>"| "<u>package</u>"| "<u>private</u>"]<br>
+         &nbsp;&nbsp;&nbsp;[["!"] "<u>static</u>"] [["!"] "<u>final</u>"] [["!"] "<u>transient</u>"] [["!"] "<u>volatile</u>"] [type] nameSpecifier</b></code>
+         <p>
+         <code><b>fullyQualifiedClassName ::= name ("." name)<sup>*</sup></b></code>
+         <p>
+         <code><b>implementsClause ::= "<u>implements</u>" fullyQualifiedClassName ("," fullyQualifiedClassName)<sup>*</sup></b></code><br>
+         <p>
+         <code><b>methodExcludeParameter ::=<br>
+         &nbsp;&nbsp;&nbsp;classExcludeParameter [["!"] "<u>public</u>" | "<u>protected</u>"| "<u>package</u>"| "<u>private</u>"]<br>
+         &nbsp;&nbsp;&nbsp;[["!"] "<u>abstract</u>"] [["!"] "<u>static</u>"] [["!"] "<u>final</u>"][["!"] "<u>native</u>"] [["!"] "<u>synchronized</u>"]<br>
+         &nbsp;&nbsp;&nbsp;nameSpecifier "(" [ "*" | (type ("," type)<sup>*</sup>)] ")" ["throws" fullyQualifiedClassName] ["+signatureClasses"]</b></code>
+         <p>
+         <code><b>name ::= (["0"-"9","a"-"z","A"-"Z","$","_"])<sup>+</sup></b></code><br>
+         &nbsp;&nbsp;&nbsp;i.e. a Java identifer (e.g. a package, class, field or method name) with no wildcards allowed
+         <p>
+         <code><b>nameAndList ::= ["!"] "(" nameOrList ("&&" nameOrList)* ")"</b></code>
+         <p>
+         <code><b>nameOrList ::= nameSpecifier ("||" nameSpecifier)*</b></code>
+         <p>
+         <code><b>nameSpecifier ::= wildcardName | nameAndList</b></code>
+         <p>
+         <code><b>packageExcludeParameter ::= packageName | packageNameAndList</b></code>
+         <p>
+         <code><b>packageName ::= wildcardName ("." wildcardName)<sup>*</sup> "."</b></code><br>
+         &nbsp;&nbsp;&nbsp;NB: the final <code>"."</code> is part of the package name
+         <p>
+         <code><b>packageNameAndList ::= ["!"] "(" packageNameOrList ("&&" packageNameOrList)* ")"</b></code>
+         <p>
+         <code><b>packageNameOrList ::= packageExcludeParameter ("||" packageExcludeParameter)*</b></code>
+         <p>
+         <code><b>searchClause ::= "<u>search</u>" packageName ("," packageName)<sup>*</sup></b></code>
+         <p>
+         <code><b>type ::=<br>
+         &nbsp;&nbsp;&nbsp;("<u>byte</u>" | "<u>short</u>" | "<u>char</u>" | "<u>int</u>" | "<u>long</u>" | "<u>float</u>" | "<u>double</u>"| "<u>boolean</u>" |<br>
+         &nbsp;&nbsp;&nbsp;fullyQualifiedClassName) ("[]")<sup>*</sup></b></code><br>
+         <p>
+         <code><b>wildcardName ::= (["*","0"-"9","a"-"z","A"-"Z","$","_"])<sup>+</sup></b></code><br>
+         &nbsp;&nbsp;&nbsp;i.e. a Java identifer (e.g. a package, class, field or method name) with the "*" wildcard allowed
+      </td>
+   </tr>
+</table>
+</center>
+<hr>
+<center>
+<table>
+   <tr>
+      <td>
+         <a href=trimStatement.html><img src=../images/larrw.gif alt="ZKM Script trim statement"></a>
+      </td>
+      <td>
+         <a href=langZKMScript.html><img src=../images/uarrw.gif alt="The ZKM Script Language"></a>
+      </td>
+      <td>
+         <a href=unexcludeStatement.html><img src=../images/rarrw.gif alt="ZKM Script unexclude statement"></a>
+      </td>
+   </tr>
+</table>
+</center>
+Copyright &copy; 2005 <a href="mailto:WebMaster@zelix.com"><font size=-1>Zelix Pty Ltd</font></a> (ABN 47 078 740 093)
+</body>
+</html>

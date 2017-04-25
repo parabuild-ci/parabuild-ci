@@ -1,0 +1,36 @@
+info: //depot/dev/bt/build-deploy.xml#8 - integrate from //depot/dev/bt31/build-deploy.xml#2,#3
+info: //depot/dev/bt/build-helper.xml#21 - integrate from //depot/dev/bt31/build-helper.xml#2,#4
+info: //depot/dev/bt/build-prod.xml#157 - integrate from //depot/dev/bt31/build-prod.xml#2,#3
+info: //depot/dev/bt/conf/RELEASE-NOTES.txt#259 - integrate from //depot/dev/bt31/conf/RELEASE-NOTES.txt#25,#55
+info: //depot/dev/bt/conf/install.install4j#108 - integrate from //depot/dev/bt31/conf/install.install4j#2,#21
+info: //depot/dev/bt/conf/parabuild.lic#28 - integrate from //depot/dev/bt31/conf/parabuild.lic#3
+info: //depot/dev/bt/conf/tray.install4j#18 - integrate from //depot/dev/bt31/conf/tray.install4j#2,#18
+info: //depot/dev/bt/src/org/parabuild/ci/Version.java#63 - integrate from //depot/dev/bt31/src/org/parabuild/ci/Version.java#2,#17
+info: //depot/dev/bt/src/org/parabuild/ci/archive/ArchiveManager.java#24 - integrate from //depot/dev/bt31/src/org/parabuild/ci/archive/ArchiveManager.java#2,#3
+info: //depot/dev/bt/src/org/parabuild/ci/build/AutomaticScheduler.java#93 - integrate from //depot/dev/bt31/src/org/parabuild/ci/build/AutomaticScheduler.java#5,#6
+info: //depot/dev/bt/src/org/parabuild/ci/build/TextDirLogHandler.java#28 - integrate from //depot/dev/bt31/src/org/parabuild/ci/build/TextDirLogHandler.java#2,#3
+info: //depot/dev/bt/src/org/parabuild/ci/configuration/ConfigurationManager.java#372 - integrate from //depot/dev/bt31/src/org/parabuild/ci/configuration/ConfigurationManager.java#5,#7
+info: //depot/dev/bt/src/org/parabuild/ci/configuration/SystemConfigurationManager.java#28 - integrate from //depot/dev/bt31/src/org/parabuild/ci/configuration/SystemConfigurationManager.java#3
+info: //depot/dev/bt/src/org/parabuild/ci/security/JNDIAuthenticator.java#16 - integrate from //depot/dev/bt31/src/org/parabuild/ci/security/JNDIAuthenticator.java#2
+info: //depot/dev/bt/src/org/parabuild/ci/services/ConfigurationService.java#89 - integrate from //depot/dev/bt31/src/org/parabuild/ci/services/ConfigurationService.java#2
+info: //depot/dev/bt/src/org/parabuild/ci/versioncontrol/FileSystemSourceControl.java#18 - integrate from //depot/dev/bt31/src/org/parabuild/ci/versioncontrol/FileSystemSourceControl.java#2
+info: //depot/dev/bt/src/org/parabuild/ci/versioncontrol/GenericSourceControl.java#13 - integrate from //depot/dev/bt31/src/org/parabuild/ci/versioncontrol/GenericSourceControl.java#2,#3
+info: //depot/dev/bt/src/org/parabuild/ci/versioncontrol/MKSSourceControl.java#21 - integrate from //depot/dev/bt31/src/org/parabuild/ci/versioncontrol/MKSSourceControl.java#2,#3
+info: //depot/dev/bt/src/org/parabuild/ci/versioncontrol/PVCSSourceControl.java#16 - integrate from //depot/dev/bt31/src/org/parabuild/ci/versioncontrol/PVCSSourceControl.java#2,#3
+info: //depot/dev/bt/src/org/parabuild/ci/versioncontrol/StarTeamSourceControl.java#21 - integrate from //depot/dev/bt31/src/org/parabuild/ci/versioncontrol/StarTeamSourceControl.java#2,#3
+info: //depot/dev/bt/src/org/parabuild/ci/versioncontrol/SurroundSourceControl.java#37 - integrate from //depot/dev/bt31/src/org/parabuild/ci/versioncontrol/SurroundSourceControl.java#2,#3
+info: //depot/dev/bt/src/org/parabuild/ci/versioncontrol/VaultSourceControl.java#21 - integrate from //depot/dev/bt31/src/org/parabuild/ci/versioncontrol/VaultSourceControl.java#2,#5
+info: //depot/dev/bt/src/org/parabuild/ci/webui/AboutPage.java#43 - integrate from //depot/dev/bt31/src/org/parabuild/ci/webui/AboutPage.java#2,#3
+info: //depot/dev/bt/src/org/parabuild/ci/webui/SupportLinksPage.java#9 - integrate from //depot/dev/bt31/src/org/parabuild/ci/webui/SupportLinksPage.java#2
+info: //depot/dev/bt/src/org/parabuild/ci/webui/admin/BuildConfigPage.java#52 - integrate from //depot/dev/bt31/src/org/parabuild/ci/webui/admin/BuildConfigPage.java#2
+info: //depot/dev/bt/src/org/parabuild/ci/webui/admin/ErrorPanel.java#28 - integrate from //depot/dev/bt31/src/org/parabuild/ci/webui/admin/ErrorPanel.java#2
+info: //depot/dev/bt/src/org/parabuild/ci/webui/admin/ParallelSourceControlPanel.java#6 - integrate from //depot/dev/bt31/src/org/parabuild/ci/webui/admin/ParallelSourceControlPanel.java#2
+info: //depot/dev/bt/src/org/parabuild/ci/webui/common/BasePage.java#91 - integrate from //depot/dev/bt31/src/org/parabuild/ci/webui/common/BasePage.java#5
+info: //depot/dev/bt/src/org/parabuild/ci/webui/common/Pages.java#119 - integrate from //depot/dev/bt31/src/org/parabuild/ci/webui/common/Pages.java#3
+info: //depot/dev/bt/test/config/dataset.xml#245 - integrate from //depot/dev/bt31/test/config/dataset.xml#2,#5
+info: //depot/dev/bt/test/src/test/build/SSTestTextDirLogHandler.java#9 - integrate from //depot/dev/bt31/test/src/test/build/SSTestTextDirLogHandler.java#3
+info: //depot/dev/bt/test/src/test/build/SSTestTextFileLogHandler.java#7 - integrate from //depot/dev/bt31/test/src/test/build/SSTestTextFileLogHandler.java#2
+info: //depot/dev/bt/test/src/test/service/SSTestServiceLicenseValidator.java#26 - integrate from //depot/dev/bt31/test/src/test/service/SSTestServiceLicenseValidator.java#4
+info: //depot/dev/bt/test/src/test/webui/SSTestPublicLicenseInformation.java#15 - integrate from //depot/dev/bt31/test/src/test/webui/SSTestPublicLicenseInformation.java#5
+info: //depot/dev/bt/test/src/org/parabuild/ci/remote/internal/SSTestLocalBuilder.java - can't integrate from //depot/dev/bt31/test/src/org/parabuild/ci/remote/internal/SSTestLocalBuilder.java#1,#3 without -i flag
+exit: 0

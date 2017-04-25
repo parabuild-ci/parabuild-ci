@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>About Workspaces</TITLE>
+<!--<aboutworkspaces.html>-->
+<!--<toc parent="pvcs_version_control_concepts" label="About Workspaces" anchor="About_Workspaces" sortkey="02">-->
+<!--<index parent="workspaces" label="about" anchor="About_Workspaces">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Getting Started\nVersion Manager Concepts\nAbout Workspaces");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="About_Workspaces"></A>About Workspaces</H1>
+<P>
+A <i>workspace</i> is a collection of work settings defined for a project database. The work settings apply to all of the projects and versioned files contained within the project database. Although you can create and choose from multiple workspaces, you can only set one workspace on a project database at any given time. The workspace set on the currently selected project database is shown in the status bar at the bottom of the main window. 
+<p><IMG SRC="../graphics/workspace3.gif" BORDER="0" ALT>
+
+<p>A workspace stores several work settings:
+<ul>
+<LI>The <i>workfile locations</i> defined for the project database, and the projects, subprojects, and versioned files contained within the project database. A workfile location is the directory from which you check in files and to which you check out files. You define workfile locations when you create a project database, create a project, or add workfiles.<br>
+<LI>The <i>default version</i>, which is the revision Version Manager will automatically operate on when you don't specify a revision number, promotion group, or version label.<br>
+<LI>The <i>default version</i>, <i>base version</i> and <i>branch version</i> used to facilitate automatic branching.<br>
+<LI>The <i>default promotion group</i>, which is valid only if a <A HREF="aboutprommodels.html">promotion model</a> is in effect. The default promotion group is a lowest-level promotion group of a promotion model; by default, Version Manager associates the default promotion group you specify with revisions when checking out revisions, locking revisions, and adding workfiles. By defining a default promotion group, you eliminate the need for a user to specify which lowest-level promotion group to use for these actions.
+
+</ul>
+<p>If you modify any of these settings, the change is saved to the current workspace. If the workspace is private, the change affects only the user working in the private workspace. A private workspace can be set only by the user who created it. However, if the current workspace is public, the change affects everyone working in the public workspace. A public workspace can be set by anyone who has access to the project database and has the correct privileges.</p><br>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+		<TR>
+		<TD><A HREF="workhier.html">Understanding Workspace Hierarchies</A></TD>
+		<TD><A HREF="publicprivate.html">About Public and Private Workspaces</A></TD>
+	</tr>
+	<tr>
+		<TD><A HREF="rootworkspace.html">Using the Root Workspace</A></TD>
+		<TD><A HREF="public.html">Creating and Managing Multiple Public Workspaces</A></TD>
+	</tr>
+	<TR>
+		<TD><A HREF="createworkspaces.html">Creating Workspaces</A></TD>
+		<TD><A HREF="setworkspace.html">Setting Your Workspace</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="workfilelocation.html">Workfile Locations</A></TD>
+
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+
+</HTML>

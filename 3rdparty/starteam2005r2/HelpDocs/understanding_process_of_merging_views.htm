@@ -1,0 +1,174 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Understanding the Process of Merging Views</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=copyright value="Copyright© 1995-2003, Borland Software Corporation. All rights reserved.">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=526>
+<meta name=layout-width content=707>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<!--(Scripts)=======================================================-->
+
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="./ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Working with the Application\nComparing and Merging\nComparing and Merging Views\nUnderstanding the Process of Merging Views");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Understanding the Process of Merging Views</h1>
+
+<p class=Body>Views may be merged for a variety of reasons. For example, 
+ if both maintenance and new development for a software product need to 
+ occur in parallel, a separate view is often created to store each set 
+ of source code files. If you fix some defects in the maintenance view, 
+ you may need to merge items from that view into the new development view 
+ so that the next release of your product does not have those defects.</p>
+
+<p class=Body>You can compare and merge any two project views if those 
+ views are in the same server configuration. However, you can merge only 
+ items that correspond (that is, have a common ancestor), even though that 
+ ancestor may not be in either of the views you are comparing or merging. 
+ Usually you do <span style="font-weight: bold;"><B>not</B></span> compare or 
+ merge two views that have few or no corresponding items in common.</p>
+
+<p class=Body>The application allows you to compare and merge views:</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>On the Windows client, 
+ by using the viewmerge command or by working with the View Comparison 
+ utility.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>On the Cross-Platform 
+ client, by using View Manager as a command line utility or as an application 
+ with a graphical interface.</p></li>
+</ul>
+
+<p class=Body>&nbsp;</p>
+
+<p class=Body>Although two views can be merged in different ways, the basic 
+ steps involved in a merge are similar. </p>
+
+<p class=Proc>To compare and merge views:</p>
+
+<ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>From the main baseline view, 
+ create a new view for maintenance development. </p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Name the view and give it 
+ an appropriate name and description.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Permit items to branch in 
+ the new view and select <span style="font-weight: bold;"><B>Branch all</B></span>. 
+ </p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select a new working folder 
+ for the view. </p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select a view configuration 
+ based on a specific date and time, label, or promotion state.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Check all of your bug fixes 
+ into the new maintenance view.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Then, to merge file changes 
+ in the maintenance view into the mainline view, use the command line interface 
+ or the appropriate utility.</p></li>
+</ol>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

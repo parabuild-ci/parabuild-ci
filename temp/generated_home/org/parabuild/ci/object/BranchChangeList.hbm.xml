@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 1.1//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="org.parabuild.ci.object.BranchChangeList"
+        table="BRANCH_CHANGELIST"
+    >
+        <cache usage="read-write" />
+
+        <id
+            name="ID"
+            column="ID"
+            type="int"
+            unsaved-value="-1"
+        >
+            <generator class="identity">
+            </generator>
+        </id>
+
+        <property
+            name="mergeConfigurationID"
+            type="int"
+            column="MERGE_CONFIGURATION_ID"
+            unique="false"
+        />
+
+        <property
+            name="changeListID"
+            type="int"
+            column="CHANGELIST_ID"
+            unique="false"
+        />
+
+        <property
+            name="mergeStatus"
+            type="byte"
+            column="MERGE_STATUS"
+            unique="false"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-BranchChangeList.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

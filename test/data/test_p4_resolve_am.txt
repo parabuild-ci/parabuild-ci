@@ -1,0 +1,82 @@
+info: c:\WORK\mor2\dev\bt\build-deploy.xml - merging //depot/dev/bt31/build-deploy.xml#2,#3
+info: Diff chunks: 0 yours + 1 theirs + 0 both + 0 conflicting
+info: //vimeshev/dev/bt/build-deploy.xml - copy from //depot/dev/bt31/build-deploy.xml
+info: c:\WORK\mor2\dev\bt\build-helper.xml - merging //depot/dev/bt31/build-helper.xml#2,#4
+info: Diff chunks: 0 yours + 3 theirs + 1 both + 0 conflicting
+info: //vimeshev/dev/bt/build-helper.xml - copy from //depot/dev/bt31/build-helper.xml
+info: c:\WORK\mor2\dev\bt\conf\RELEASE-NOTES.txt - merging //depot/dev/bt31/conf/RELEASE-NOTES.txt#32,#56
+info: Diff chunks: 7 yours + 0 theirs + 0 both + 3 conflicting
+info: //vimeshev/dev/bt/conf/RELEASE-NOTES.txt - resolve skipped.
+info: c:\WORK\mor2\dev\bt\conf\install.install4j - merging //depot/dev/bt31/conf/install.install4j#2,#21
+info: Diff chunks: 0 yours + 4 theirs + 2 both + 1 conflicting
+info: //vimeshev/dev/bt/conf/install.install4j - resolve skipped.
+info: c:\WORK\mor2\dev\bt\conf\parabuild.lic - merging //depot/dev/bt31/conf/parabuild.lic#3
+info: Diff chunks: 0 yours + 0 theirs + 2 both + 0 conflicting
+info: //vimeshev/dev/bt/conf/parabuild.lic - copy from //depot/dev/bt31/conf/parabuild.lic
+info: c:\WORK\mor2\dev\bt\conf\tray.install4j - merging //depot/dev/bt31/conf/tray.install4j#3,#18
+info: Diff chunks: 1 yours + 0 theirs + 1 both + 1 conflicting
+info: //vimeshev/dev/bt/conf/tray.install4j - resolve skipped.
+info: c:\WORK\mor2\dev\bt\src\viewtier\autobuild\Version.java - merging //depot/dev/bt31/src/org/parabuild/ci/Version.java#3,#17
+info: Diff chunks: 0 yours + 0 theirs + 0 both + 1 conflicting
+info: //vimeshev/dev/bt/src/org/parabuild/ci/Version.java - resolve skipped.
+info: c:\WORK\mor2\dev\bt\src\viewtier\autobuild\build\TextDirLogHandler.java - merging //depot/dev/bt31/src/org/parabuild/ci/build/TextDirLogHandler.java#2,#3
+info: Diff chunks: 5 yours + 0 theirs + 1 both + 1 conflicting
+info: //vimeshev/dev/bt/src/org/parabuild/ci/build/TextDirLogHandler.java - resolve skipped.
+info: c:\WORK\mor2\dev\bt\src\viewtier\autobuild\security\JNDIAuthenticator.java - merging //depot/dev/bt31/src/org/parabuild/ci/security/JNDIAuthenticator.java#2
+info: Diff chunks: 12 yours + 2 theirs + 5 both + 0 conflicting
+info: //vimeshev/dev/bt/src/org/parabuild/ci/security/JNDIAuthenticator.java - merge from //depot/dev/bt31/src/org/parabuild/ci/security/JNDIAuthenticator.java
+info: c:\WORK\mor2\dev\bt\src\viewtier\autobuild\services\ConfigurationService.java - merging //depot/dev/bt31/src/org/parabuild/ci/services/ConfigurationService.java#2
+info: Diff chunks: 8 yours + 2 theirs + 0 both + 0 conflicting
+info: //vimeshev/dev/bt/src/org/parabuild/ci/services/ConfigurationService.java - merge from //depot/dev/bt31/src/org/parabuild/ci/services/ConfigurationService.java
+info: c:\WORK\mor2\dev\bt\src\viewtier\autobuild\versioncontrol\FileSystemSourceControl.java - merging //depot/dev/bt31/src/org/parabuild/ci/versioncontrol/FileSystemSourceControl.java#2
+info: Diff chunks: 2 yours + 0 theirs + 4 both + 3 conflicting
+info: //vimeshev/dev/bt/src/org/parabuild/ci/versioncontrol/FileSystemSourceControl.java - resolve skipped.
+info: c:\WORK\mor2\dev\bt\src\viewtier\autobuild\versioncontrol\GenericSourceControl.java - merging //depot/dev/bt31/src/org/parabuild/ci/versioncontrol/GenericSourceControl.java#2,#3
+info: Diff chunks: 1 yours + 0 theirs + 5 both + 5 conflicting
+info: //vimeshev/dev/bt/src/org/parabuild/ci/versioncontrol/GenericSourceControl.java - resolve skipped.
+info: c:\WORK\mor2\dev\bt\src\viewtier\autobuild\versioncontrol\MKSSourceControl.java - merging //depot/dev/bt31/src/org/parabuild/ci/versioncontrol/MKSSourceControl.java#2,#3
+info: Diff chunks: 5 yours + 0 theirs + 8 both + 7 conflicting
+info: //vimeshev/dev/bt/src/org/parabuild/ci/versioncontrol/MKSSourceControl.java - resolve skipped.
+info: c:\WORK\mor2\dev\bt\src\viewtier\autobuild\versioncontrol\PVCSSourceControl.java - merging //depot/dev/bt31/src/org/parabuild/ci/versioncontrol/PVCSSourceControl.java#2,#3
+info: Diff chunks: 5 yours + 0 theirs + 10 both + 6 conflicting
+info: //vimeshev/dev/bt/src/org/parabuild/ci/versioncontrol/PVCSSourceControl.java - resolve skipped.
+info: c:\WORK\mor2\dev\bt\src\viewtier\autobuild\versioncontrol\StarTeamSourceControl.java - merging //depot/dev/bt31/src/org/parabuild/ci/versioncontrol/StarTeamSourceControl.java#2,#3
+info: Diff chunks: 4 yours + 0 theirs + 7 both + 6 conflicting
+info: //vimeshev/dev/bt/src/org/parabuild/ci/versioncontrol/StarTeamSourceControl.java - resolve skipped.
+info: c:\WORK\mor2\dev\bt\src\viewtier\autobuild\versioncontrol\SurroundSourceControl.java - merging //depot/dev/bt31/src/org/parabuild/ci/versioncontrol/SurroundSourceControl.java#2,#3
+info: Diff chunks: 6 yours + 0 theirs + 8 both + 6 conflicting
+info: //vimeshev/dev/bt/src/org/parabuild/ci/versioncontrol/SurroundSourceControl.java - resolve skipped.
+info: c:\WORK\mor2\dev\bt\src\viewtier\autobuild\versioncontrol\VaultSourceControl.java - merging //depot/dev/bt31/src/org/parabuild/ci/versioncontrol/VaultSourceControl.java#2,#5
+info: Diff chunks: 3 yours + 0 theirs + 15 both + 7 conflicting
+info: //vimeshev/dev/bt/src/org/parabuild/ci/versioncontrol/VaultSourceControl.java - resolve skipped.
+info: c:\WORK\mor2\dev\bt\src\viewtier\autobuild\webui\AboutPage.java - merging //depot/dev/bt31/src/org/parabuild/ci/webui/AboutPage.java#2,#3
+info: Diff chunks: 4 yours + 2 theirs + 1 both + 0 conflicting
+info: //vimeshev/dev/bt/src/org/parabuild/ci/webui/AboutPage.java - merge from //depot/dev/bt31/src/org/parabuild/ci/webui/AboutPage.java
+info: c:\WORK\mor2\dev\bt\src\viewtier\autobuild\webui\SupportLinksPage.java - merging //depot/dev/bt31/src/org/parabuild/ci/webui/SupportLinksPage.java#2
+info: Diff chunks: 0 yours + 7 theirs + 0 both + 0 conflicting
+info: //vimeshev/dev/bt/src/org/parabuild/ci/webui/SupportLinksPage.java - copy from //depot/dev/bt31/src/org/parabuild/ci/webui/SupportLinksPage.java
+info: c:\WORK\mor2\dev\bt\src\viewtier\autobuild\webui\admin\BuildConfigPage.java - merging //depot/dev/bt31/src/org/parabuild/ci/webui/admin/BuildConfigPage.java#2
+info: Diff chunks: 7 yours + 0 theirs + 3 both + 0 conflicting
+info: //vimeshev/dev/bt/src/org/parabuild/ci/webui/admin/BuildConfigPage.java - ignored //depot/dev/bt31/src/org/parabuild/ci/webui/admin/BuildConfigPage.java
+info: c:\WORK\mor2\dev\bt\src\viewtier\autobuild\webui\admin\ErrorPanel.java - merging //depot/dev/bt31/src/org/parabuild/ci/webui/admin/ErrorPanel.java#2
+info: Diff chunks: 0 yours + 2 theirs + 0 both + 0 conflicting
+info: //vimeshev/dev/bt/src/org/parabuild/ci/webui/admin/ErrorPanel.java - copy from //depot/dev/bt31/src/org/parabuild/ci/webui/admin/ErrorPanel.java
+info: c:\WORK\mor2\dev\bt\src\viewtier\autobuild\webui\admin\ParallelSourceControlPanel.java - merging //depot/dev/bt31/src/org/parabuild/ci/webui/admin/ParallelSourceControlPanel.java#2
+info: Diff chunks: 5 yours + 0 theirs + 0 both + 1 conflicting
+info: //vimeshev/dev/bt/src/org/parabuild/ci/webui/admin/ParallelSourceControlPanel.java - resolve skipped.
+info: c:\WORK\mor2\dev\bt\src\viewtier\autobuild\webui\common\Pages.java - merging //depot/dev/bt31/src/org/parabuild/ci/webui/common/Pages.java#3
+info: Diff chunks: 7 yours + 0 theirs + 1 both + 1 conflicting
+info: //vimeshev/dev/bt/src/org/parabuild/ci/webui/common/Pages.java - resolve skipped.
+info: c:\WORK\mor2\dev\bt\test\config\dataset.xml - merging //depot/dev/bt31/test/config/dataset.xml#3,#6
+info: Diff chunks: 20 yours + 0 theirs + 0 both + 2 conflicting
+info: //vimeshev/dev/bt/test/config/dataset.xml - resolve skipped.
+info: c:\WORK\mor2\dev\bt\test\src\test\build\SSTestTextFileLogHandler.java - merging //depot/dev/bt31/test/src/test/build/SSTestTextFileLogHandler.java#2
+info: Diff chunks: 1 yours + 1 theirs + 2 both + 0 conflicting
+info: //vimeshev/dev/bt/test/src/test/build/SSTestTextFileLogHandler.java - merge from //depot/dev/bt31/test/src/test/build/SSTestTextFileLogHandler.java
+info: c:\WORK\mor2\dev\bt\test\src\test\service\SSTestServiceLicenseValidator.java - merging //depot/dev/bt31/test/src/test/service/SSTestServiceLicenseValidator.java#4
+info: Diff chunks: 0 yours + 0 theirs + 1 both + 0 conflicting
+info: //vimeshev/dev/bt/test/src/test/service/SSTestServiceLicenseValidator.java - copy from //depot/dev/bt31/test/src/test/service/SSTestServiceLicenseValidator.java
+info: c:\WORK\mor2\dev\bt\test\src\viewtier\autobuild\remote\internal\SSTestLocalBuilder.java - merging //depot/dev/bt31/test/src/org/parabuild/ci/remote/internal/SSTestLocalBuilder.java#1,#3
+info: Diff chunks: 4 yours + 0 theirs + 2 both + 0 conflicting
+info: //vimeshev/dev/bt/test/src/org/parabuild/ci/remote/internal/SSTestLocalBuilder.java - ignored //depot/dev/bt31/test/src/org/parabuild/ci/remote/internal/SSTestLocalBuilder.java
+exit: 0

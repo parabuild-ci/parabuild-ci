@@ -1,0 +1,7 @@
+[Common]
+Software=Subversion
+Install=D:\TODELETE\svn-1.3.2-setup.exe
+Language=en
+Remove=D:\mor2\dev\bt30\3rdparty\subversion132\unins000.exe
+Group=Subversion
+Components=

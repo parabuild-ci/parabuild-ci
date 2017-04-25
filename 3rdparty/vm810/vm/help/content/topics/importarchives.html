@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Importing Archives</TITLE>
+<!--<ImportArchives.html>-->
+<!--<toc parent="working_with_archives" label="Importing Archives" anchor="ImportArchives" sortkey="02">-->
+<!--<index parent="archives" label="importing" anchor="ImportArchives">-->
+<!--<index parent="importing" label="archives" anchor="ImportArchives">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with Archives\nImporting Archives");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="ImportArchives"></A>Importing Archives</H1>
+<P>You import archives to enable users to access existing archives and use them in projects. When you import archives, Serena ChangeMan Version Manager automatically creates a versioned file that references the new archive.</p>
+<H2>To import archives into projects:</H2>
+<OL>
+	<LI>Select the project database or project to which you want to import archives.<br><br>
+	<LI>Select Admin | Import Archives. The Select Archives dialog box appears. Note that the initial location of the selection pane of this dialog box is the archive location of the selected project or project database.<br><br>
+	<LI>Select the entire directory that contains the archives or select only the archives that you want to import, and click OK. The Import Archives dialog box appears with the General tab active.<br>
+<p><b>NOTE</b> In the <b>File Name</b> field, if you specify a path with a filter other than * or *.* (for example *.cpp), the files matching the filter will be added directly without creating a top-level project. However, if subdirectories are also added, subprojects will be created for them and only files matching the filter will be added.</p><br><br>
+	<LI>Under the General tab, do the following:<p>
+<OL TYPE=a>
+	<LI> By default, Version Manager displays a warning message if a versioned file already exists in the project you selected to import archives. If you do not want Version Manager to prompt you with a warning message, deselect the <b>Show warning if versioned file already exists</b> check box.<br><br>
+	<LI>In the Archive Location group, select the archive location for the archives you are importing. <b>Use existing archive location</b> is the default option, which means you are referencing the archives but leaving the archives in their current location.<br><br>
+Your other option is <b>Copy to project archive location</b>, which means you want to copy the archives to the project's archive location and use this location as the new archive location.<br><br>
+By default, Version Manager displays a warning message if an archive you are importing already exists in the specified archive location. If you do not want Version Manager to display a warning message, deselect the <b>Show warning if archive already exists</b> check box.<br><br>
+	<LI>If you are adding a directory of archives, an <b>Include archives in subdirectories</b> check box is available. Select this check box if you want Version Manager to import the archives located in subdirectories.<br><br>
+</ol>
+	<LI>Click OK.<BR><BR>
+</OL><BR>
+<H2>To import archives into 5.3/6.0 projects:</H2>
+<OL>
+	<LI>Select the 5.3/6.0 project or folder to which you want to import archives.<br><br>
+	<LI>Select Admin | Import Archives. The Select Archives dialog box appears. Note that the location displayed in the selection pane is the current archive location of the selected project or project database.<br><br>
+	<LI>Select the archive or directory that you want to add and click OK. The Import Archives dialog box appears.<br><br>
+	<LI>Under the General tab, do the following:<br><br>
+	<OL type=a>
+		<LI>By default, Version Manager displays a warning message if a versioned file already exists in the project you selected to import archives. If you do not want Version Manager to display a warning message, deselect the <b>Show warning if versioned file already exists</b> check box.<br><br>
+		<LI>In the Archive Location group, select the archive location for the archives you are adding. If you are adding archives to a:<br><br>
+<UL>
+		<LI>5.3/6.0 project: Your only option is <b>Copy to project archive location</b>. This option copies the archives to the project's archive location. To specify the archive location, select the location in the Archive Location list. By default, Version Manager displays a warning message if an archive you are importing already exists in the specified archive location. If you do not want Version Manager to display a warning message, deselect the <b>Show warning if archive already exists</b> check box.<br><br>
+		<LI>Folder: <b>Use existing archive location</b> is the default option, which means you are  referencing the archives but leaving the archives in their current location. You can also select the <b>Copy to project archive location option</b>.<br><br>
+</UL></OL>
+<LI>Click OK.
+</OL>
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="aboutarchives.html">About Archives</A></TD>
+		<TD><A HREF="addarchivesdialog.html">Import Archives Dialog Box</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="aboutimportarchive.html">About Importing Archives</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

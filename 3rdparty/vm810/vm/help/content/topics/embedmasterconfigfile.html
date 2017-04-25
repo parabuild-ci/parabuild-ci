@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Embedding a Master Configuration File into Version Manager</TITLE>
+<!--<embedmasterconfigfile.html>-->
+<!--<toc parent="configuring_project_databases" label="Embedding a Master Configuration File" anchor="embedmasterconfigfile" sortkey="03">-->
+<!--<toc parent="configuring_projects" label="Embedding a Master Configuration File" anchor="embedmasterconfigfile" sortkey="03">-->
+<!--<index parent="files" label="embedding a master configuration" anchor="embedmasterconfigfile">-->
+<!--<index parent="configuration_options" label="embedding a master configuration file" anchor="embedmasterconfigfile">-->
+<!--<index parent="embedding" label="master configuration files" anchor="embedmasterconfigfile">-->
+<!--<index parent="configuration_files" label="embedding a master" anchor="embedmasterconfigfile">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with Project Databases/Projects\nConfiguring Project Databases/Projects\nEmbedding a Master Configuration File");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="embedmasterconfigfile"></A>Embedding a Master Configuration File into Version Manager</H1>
+<p>
+Embedding a configuration file into Serena ChangeMan Version Manager ensures that all users will be using the same configuration for Version Manager and that users cannot use a different master configuration file. A master configuration file that is embedded into Version Manager affects all desktop client and command-line users that are using the copy of Version Manager that has the file embedded. 
+</P>
+<P>
+You can embed one master configuration file into Version Manager and this configuration file will control how Version Manager operates for all project databases. When you embed a master configuration file into Version Manager, this file becomes the master configuration file and the configuration file that you have associated with each project database becomes a project configuration file--it is no longer a master configuration file; therefore, any Disallow options in the configuration file are ignored.
+</P>
+<P><b>Note:</b> We recommend that you do not embed the <a href="masterconfigfiles.html">default.cfg file</a> into Version Manager because this is the file that Version Manager uses to create the configuration file for project databases. If you do this, then the embedded master configuration file and project databases' configuration files will initially have the same settings.
+</P>
+<H2>To embed a master configuration file:</H2>
+<OL>
+<LI>Select the project database associated with the master configuration file you want to embed into Version Manager.
+<BR><BR>
+<LI>Select Admin | Make Secure. The Make Settings Secure dialog box appears.
+<BR><BR>
+<LI>
+Select the <b>Configuration</b> check box. The field next to this check box displays the location and name of the configuration file you are embedding. You cannot edit this field.
+<BR><BR>
+<LI>
+Click OK.
+</OL>
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a href="masterconfigfiles.html">About Master Configuration Files</a></TD>
+		<TD><a href="setconfigoptions.html">Setting Configuration Options</a></TD>
+
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

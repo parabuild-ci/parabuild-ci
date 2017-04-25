@@ -1,0 +1,776 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<install4j version="4.2.6" transformSequenceNumber="2">
+  <directoryPresets config="../temp/result/parabuild/lib/server/webapps/parabuild-manager.war"/>
+  <application name="Parabuild CI" distributionSourceDir="" applicationId="2352-6126-7734-6227" mediaDir="../temp/result_distrib" mediaFilePattern="parabuild_${compiler:sys.version}_${compiler:sys.setName}" compression="9" lzmaCompression="true" pack200Compression="false" excludeSignedFromPacking="true" keepModificationTimes="true" missingFilesStrategy="error" shortName="parabuild" publisher="Parabuild CI" publisherWeb="http://www.parabuildci.org" version="4.4.0" allPathsRelative="true" backupOnSave="true" autoSave="true" convertDotsToUnderscores="true" macSignature="????" installerName="" javaMinVersion="1.4.2" javaMaxVersion="1.6" allowBetaVM="false" jdkMode="runtimeJre" jdkName="">
+    <languages skipLanguageSelection="false" languageSelectionInPrincipalLanguage="false">
+      <principalLanguage id="en" customLocalizationFile=""/>
+      <additionalLanguages/>
+    </languages>
+    <searchSequence>
+      <registry/>
+      <envVar name="JAVA_HOME"/>
+    </searchSequence>
+    <variables>
+      <variable name="PARABUILD_HOME" value="${launcher:sys.launcherDirectory}/.."/>
+      <variable name="PARABUILD_TMPDIR" value="${compiler:PARABUILD_HOME}/etc/temp"/>
+    </variables>
+  </application>
+  <files>
+    <filesets/>
+    <roots/>
+    <mountPoints>
+      <mountPoint id="38" root="" location="bin" mode="755"/>
+      <mountPoint id="52" root="" location="bin/win" mode="755"/>
+      <mountPoint id="74" root="" location="lib" mode="755"/>
+      <mountPoint id="75" root="" location="docs" mode="755"/>
+      <mountPoint id="76" root="" location="logs" mode="755"/>
+      <mountPoint id="77" root="" location="etc" mode="755"/>
+      <mountPoint id="78" root="" location="etc/app" mode="755"/>
+      <mountPoint id="79" root="" location="etc/build" mode="755"/>
+      <mountPoint id="80" root="" location="etc/conf" mode="755"/>
+      <mountPoint id="81" root="" location="etc/data" mode="755"/>
+      <mountPoint id="82" root="" location="etc/index" mode="755"/>
+      <mountPoint id="83" root="" location="etc/logs" mode="755"/>
+      <mountPoint id="84" root="" location="etc/msgs" mode="755"/>
+      <mountPoint id="85" root="" location="etc/temp" mode="755"/>
+      <mountPoint id="87" root="" location="etc/work" mode="755"/>
+      <mountPoint id="88" root="" location="etc/system" mode="755"/>
+      <mountPoint id="100" root="" location="license" mode="755"/>
+      <mountPoint id="255" root="" location="" mode="755"/>
+    </mountPoints>
+    <entries>
+      <dirEntry mountPoint="52" file="../temp/result/parabuild/bin/win" overwrite="1" shared="false" mode="644" uninstallMode="0" excludeSuffixes="" dirMode="755">
+        <exclude>
+          <entry location="p4.exe" fileType="regular"/>
+        </exclude>
+      </dirEntry>
+      <fileEntry mountPoint="38" file="../temp/result/parabuild/bin/bootstrap.jar" overwrite="1" shared="false" mode="444" uninstallMode="0"/>
+      <fileEntry mountPoint="38" file="../temp/result/parabuild/bin/parabuild" overwrite="2" shared="false" mode="555" uninstallMode="0"/>
+      <fileEntry mountPoint="38" file="../temp/result/parabuild/bin/parabuild.bat" overwrite="0" shared="false" mode="444" uninstallMode="0"/>
+      <fileEntry mountPoint="38" file="../temp/result/parabuild/bin/parabuild.sh" overwrite="1" shared="false" mode="555" uninstallMode="0"/>
+      <fileEntry mountPoint="38" file="../temp/result/parabuild/bin/commons-daemon.jar" overwrite="1" shared="false" mode="644" uninstallMode="0"/>
+      <fileEntry mountPoint="38" file="../temp/result/parabuild/bin/tomcat-jni.jar" overwrite="1" shared="false" mode="644" uninstallMode="0"/>
+      <fileEntry mountPoint="38" file="../temp/result/parabuild/bin/paracmd.bat" overwrite="3" shared="false" mode="644" uninstallMode="0"/>
+      <fileEntry mountPoint="38" file="../temp/result/parabuild/bin/paracmd.jar" overwrite="1" shared="false" mode="644" uninstallMode="0"/>
+      <fileEntry mountPoint="38" file="../temp/result/parabuild/bin/parabuild.vmoptions" overwrite="1" shared="false" mode="644" uninstallMode="0"/>
+      <fileEntry mountPoint="38" file="../temp/result/parabuild/bin/parabuild.ico" overwrite="1" shared="false" mode="644" uninstallMode="0"/>
+      <fileEntry mountPoint="38" file="../temp/result/parabuild/bin/parabuild.url" overwrite="3" shared="false" mode="644" uninstallMode="0"/>
+      <dirEntry mountPoint="74" file="../temp/result/parabuild/lib" overwrite="1" shared="false" mode="644" uninstallMode="0" excludeSuffixes="" dirMode="755">
+        <exclude/>
+      </dirEntry>
+      <dirEntry mountPoint="75" file="../temp/result/parabuild/docs" overwrite="1" shared="false" mode="644" uninstallMode="0" excludeSuffixes="" dirMode="755">
+        <exclude/>
+      </dirEntry>
+      <dirEntry mountPoint="76" file="../temp/result/parabuild/etc/logs" overwrite="0" shared="false" mode="644" uninstallMode="1" excludeSuffixes="" dirMode="755">
+        <exclude/>
+      </dirEntry>
+      <fileEntry mountPoint="78" file="../temp/result/parabuild/lib/server/webapps/parabuild-manager.war" overwrite="1" shared="false" mode="644" uninstallMode="0"/>
+      <fileEntry mountPoint="78" file="../temp/result/parabuild/etc/app/parabuild.war" overwrite="1" shared="false" mode="644" uninstallMode="0"/>
+      <dirEntry mountPoint="79" file="../temp/result/parabuild/etc/build" overwrite="0" shared="false" mode="644" uninstallMode="0" excludeSuffixes="" dirMode="755">
+        <exclude/>
+      </dirEntry>
+      <fileEntry mountPoint="80" file="../temp/result/parabuild/etc/conf/catalina.policy" overwrite="0" shared="false" mode="644" uninstallMode="0"/>
+      <fileEntry mountPoint="80" file="../temp/result/parabuild/etc/conf/server.xml" overwrite="1" shared="false" mode="644" uninstallMode="0"/>
+      <fileEntry mountPoint="80" file="../temp/result/parabuild/etc/conf/web.xml" overwrite="0" shared="false" mode="644" uninstallMode="0"/>
+      <dirEntry mountPoint="81" file="../temp/result/parabuild/etc/data" overwrite="0" shared="false" mode="644" uninstallMode="1" excludeSuffixes="" dirMode="755">
+        <exclude/>
+      </dirEntry>
+      <dirEntry mountPoint="82" file="../temp/result/parabuild/etc/index" overwrite="0" shared="false" mode="644" uninstallMode="1" excludeSuffixes="" dirMode="755">
+        <exclude/>
+      </dirEntry>
+      <dirEntry mountPoint="83" file="../temp/result/parabuild/etc/logs" overwrite="0" shared="false" mode="644" uninstallMode="1" excludeSuffixes="" dirMode="755">
+        <exclude/>
+      </dirEntry>
+      <dirEntry mountPoint="84" file="../temp/result/parabuild/etc/msgs" overwrite="0" shared="false" mode="644" uninstallMode="1" excludeSuffixes="" dirMode="755">
+        <exclude/>
+      </dirEntry>
+      <dirEntry mountPoint="85" file="../temp/result/parabuild/etc/temp" overwrite="0" shared="false" mode="644" uninstallMode="0" excludeSuffixes="" dirMode="755">
+        <exclude/>
+      </dirEntry>
+      <dirEntry mountPoint="87" file="../temp/result/parabuild/etc/work" overwrite="0" shared="false" mode="644" uninstallMode="0" excludeSuffixes="" dirMode="755">
+        <exclude/>
+      </dirEntry>
+      <fileEntry mountPoint="88" file="../temp/result/parabuild/etc/system/parabuild.conf" overwrite="0" shared="false" mode="644" uninstallMode="1"/>
+      <dirEntry mountPoint="100" file="../temp/result/parabuild/license" overwrite="1" shared="false" mode="644" uninstallMode="1" excludeSuffixes="" dirMode="755">
+        <exclude/>
+      </dirEntry>
+      <fileEntry mountPoint="255" file="../temp/result/parabuild/bin/wsdl/Parabuild.wsdl" overwrite="1" shared="false" mode="644" uninstallMode="0"/>
+    </entries>
+    <components/>
+  </files>
+  <launchers>
+    <launcher name="Parabuild" id="111" external="false" excludeFromMenu="true" menuName="" icnsFile="" pngIcon16File="" pngIcon32File="" macServiceDependencies="" swtApp="false" fileset="">
+      <executable name="parabuild" type="1" iconSet="false" iconFile="" executableDir="bin" redirectStderr="true" stderrFile="../logs/parabuild-stderr.log" stderrMode="overwrite" redirectStdout="true" stdoutFile="../logs/parabuild-stdout.log" stdoutMode="overwrite" failOnStderrOutput="true" executableMode="3" changeWorkingDirectory="true" workingDirectory=".." singleInstance="true" serviceStartType="2" serviceDependencies="" serviceDescription="Parabuild Server" jreLocation="" executionLevel="asInvoker" checkConsoleParameter="false">
+        <versionInfo include="true" fileVersion="" fileDescription="Parabuild" legalCopyright="Copyright © 2017 Parabuild CI. All rights reserved" internalName="Parabuild" productName=""/>
+      </executable>
+      <splashScreen show="false" autoOff="true" alwaysOnTop="true" width="0" height="0" bitmapFile="" java6SplashScreen="false">
+        <text>
+          <statusLine x="20" y="20" text="" font="Arial" fontSize="8" fontColor="0,0,0" fontWeight="500"/>
+          <versionLine x="20" y="40" text="version ${compiler:sys.version}" font="Arial" fontSize="8" fontColor="0,0,0" fontWeight="500"/>
+        </text>
+      </splashScreen>
+      <java mainClass="org.apache.catalina.startup.BootstrapService" vmParameters="&quot;-Djava.endorsed.dirs=${launcher:sys.launcherDirectory}\..\lib\common\endorsed&quot; &quot;-Dcatalina.base=${launcher:sys.launcherDirectory}\..\etc&quot; &quot;-Dcatalina.home=${launcher:sys.launcherDirectory}\..\lib&quot; &quot;-Djava.io.tmpdir=${launcher:sys.launcherDirectory}\..\etc\temp&quot;" arguments="start" allowVMPassthroughParameters="true" preferredVM="" bundleRuntime="true">
+        <classPath>
+          <archive location="bin/bootstrap.jar" failOnError="true"/>
+        </classPath>
+        <nativeLibraryDirectories/>
+      </java>
+      <includedFiles/>
+      <unextractableFiles/>
+      <customScript mode="1" file="">
+        <scriptLines/>
+      </customScript>
+    </launcher>
+  </launchers>
+  <installerGui installerType="1" suggestPreviousProgramGroup="true" addOnAppId="" suggestPreviousLocations="true">
+    <customCode useInstalledFiles="false">
+      <archive location="../temp/installer_staging/parabuild-installer.jar"/>
+    </customCode>
+    <applications>
+      <application name="" id="installer" beanClass="com.install4j.runtime.beans.applications.InstallerApplication" enabled="true" commentSet="false" comment="" customIcnsFile="" customIcoFile="">
+        <serializedBean>
+          <java class="java.beans.XMLDecoder">
+            <object class="com.install4j.runtime.beans.applications.InstallerApplication">
+              <void property="vmParameters">
+                <string>-Xmx300m</string>
+              </void>
+              <void property="watermark">
+                <boolean>false</boolean>
+              </void>
+            </object>
+          </java>
+        </serializedBean>
+        <startup>
+          <screen name="" id="113" beanClass="com.install4j.runtime.beans.screens.StartupScreen" enabled="true" commentSet="false" comment="" rollbackBarrier="false" backButton="2" finishScreen="false">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.StartupScreen"/>
+              </java>
+            </serializedBean>
+            <condition/>
+            <validation/>
+            <preActivation/>
+            <postActivation/>
+            <actions>
+              <action name="" id="114" beanClass="com.install4j.runtime.beans.actions.misc.RequireAdminAction" enabled="true" commentSet="false" comment="" rollbackBarrier="false" multiExec="false" failureStrategy="2" errorMessage="">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.actions.misc.RequireAdminAction"/>
+                  </java>
+                </serializedBean>
+                <condition/>
+              </action>
+            </actions>
+            <formComponents/>
+          </screen>
+        </startup>
+        <screens>
+          <screen name="" id="115" beanClass="com.install4j.runtime.beans.screens.WelcomeScreen" enabled="true" commentSet="false" comment="" rollbackBarrier="false" backButton="2" finishScreen="false">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.WelcomeScreen"/>
+              </java>
+            </serializedBean>
+            <condition/>
+            <validation/>
+            <preActivation/>
+            <postActivation/>
+            <actions/>
+            <formComponents/>
+          </screen>
+          <screen name="" id="116" beanClass="com.install4j.runtime.beans.screens.LicenseScreen" enabled="true" commentSet="false" comment="" rollbackBarrier="false" backButton="2" finishScreen="false">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.LicenseScreen">
+                  <void property="displayedTextFile">
+                    <object class="com.install4j.api.beans.ExternalFile">
+                      <string>../temp/result/parabuild/license/LICENSE.txt</string>
+                    </object>
+                  </void>
+                </object>
+              </java>
+            </serializedBean>
+            <condition/>
+            <validation/>
+            <preActivation/>
+            <postActivation/>
+            <actions/>
+            <formComponents/>
+          </screen>
+          <screen name="" id="117" beanClass="com.install4j.runtime.beans.screens.InstallationDirectoryScreen" enabled="true" commentSet="false" comment="" rollbackBarrier="false" backButton="2" finishScreen="false">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.InstallationDirectoryScreen"/>
+              </java>
+            </serializedBean>
+            <condition/>
+            <validation/>
+            <preActivation/>
+            <postActivation/>
+            <actions/>
+            <formComponents/>
+          </screen>
+          <screen name="" id="118" beanClass="com.install4j.runtime.beans.screens.ComponentsScreen" enabled="true" commentSet="false" comment="" rollbackBarrier="false" backButton="2" finishScreen="false">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.ComponentsScreen"/>
+              </java>
+            </serializedBean>
+            <condition/>
+            <validation/>
+            <preActivation/>
+            <postActivation/>
+            <actions/>
+            <formComponents/>
+          </screen>
+          <screen name="" id="119" beanClass="com.install4j.runtime.beans.screens.StandardProgramGroupScreen" enabled="true" commentSet="false" comment="" rollbackBarrier="false" backButton="2" finishScreen="false">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.StandardProgramGroupScreen"/>
+              </java>
+            </serializedBean>
+            <condition/>
+            <validation/>
+            <preActivation/>
+            <postActivation/>
+            <actions/>
+            <formComponents/>
+          </screen>
+          <screen name="" id="120" beanClass="com.install4j.runtime.beans.screens.ServicesScreen" enabled="true" commentSet="false" comment="" rollbackBarrier="false" backButton="2" finishScreen="false">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.ServicesScreen"/>
+              </java>
+            </serializedBean>
+            <condition/>
+            <validation/>
+            <preActivation/>
+            <postActivation/>
+            <actions/>
+            <formComponents/>
+          </screen>
+          <screen name="" id="121" beanClass="com.install4j.runtime.beans.screens.InstallationScreen" enabled="true" commentSet="false" comment="" rollbackBarrier="true" backButton="2" finishScreen="false">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.InstallationScreen"/>
+              </java>
+            </serializedBean>
+            <condition/>
+            <validation/>
+            <preActivation/>
+            <postActivation/>
+            <actions>
+              <action name="Show upgrading database" id="212" beanClass="com.install4j.runtime.beans.actions.control.SetMessageAction" enabled="true" commentSet="false" comment="" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.actions.control.SetMessageAction">
+                      <void property="detailMessage">
+                        <string>Upgrading database. This may take up to 60 minutes. Please wait.</string>
+                      </void>
+                      <void property="statusMessage">
+                        <string>Upgrading database</string>
+                      </void>
+                      <void property="useDetail">
+                        <boolean>true</boolean>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <condition/>
+              </action>
+              <action name="" id="211" beanClass="org.parabuild.ci.installer.ParabuildPreInstallAction" enabled="true" commentSet="false" comment="" rollbackBarrier="false" multiExec="false" failureStrategy="2" errorMessage="">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="org.parabuild.ci.installer.ParabuildPreInstallAction"/>
+                  </java>
+                </serializedBean>
+                <condition/>
+              </action>
+              <action name="" id="122" beanClass="com.install4j.runtime.beans.actions.InstallFilesAction" enabled="true" commentSet="true" comment="" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.actions.InstallFilesAction">
+                      <void property="fileFilterScript">
+                        <object class="com.install4j.api.beans.ScriptProperty">
+                          <void property="value">
+                            <string>// try {
+                              final String path = fileInfo.getRelativeFilePath();
+                              final String parabuildSh = "bin" + File.separator + "parabuild.sh";
+                              final String parabuildVmoptions = "bin" + File.separator + "parabuild.vmoptions";
+                              final String serverXml = "etc" + File.separator + "conf" + File.separator + "server.xml";
+                              if (path.equals(parabuildSh) || path.equals(parabuildVmoptions)) {
+                              // Check if the file already exists
+                              final File file = fileInfo.getDestinationFile();
+                              if (!file.exists()) {
+                              return true;
+                              }
+
+                              // Read into string
+                              final StringBuffer sb = new StringBuffer(300);
+                              BufferedReader br = null;
+                              try {
+                              br = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
+                              String ln = br.readLine();
+                              while (ln != null) {
+                              sb.append(ln).append('\n');
+                              ln = br.readLine();
+                              }
+                              } finally {
+                              if (br != null) {
+                              try {
+                              br.close();
+                              } catch (IOException ignore) {
+                              }
+                              }
+                              }
+
+                              // Find matchs
+                              final java.util.regex.Pattern pattern = java.util.regex.Pattern.compile("-Xmx([0-9]+)m", java.util.regex.Pattern.CASE_INSENSITIVE);
+                              final java.util.regex.Matcher matcher = pattern.matcher(sb);
+                              while (matcher.find()) {
+                              // add to set of key to look up in the DB
+                              final String maxHeapMegabytes = matcher.group(1);
+                              final int heap = Integer.parseInt(maxHeapMegabytes);
+                              if (heap &lt; 300) {
+                              return true;
+                              }
+                              }
+
+                              // Did not find the mx don't install.
+                              return false;
+                              } if (path.equals(serverXml)) {
+                              // Install if does not exist
+                              if (!context.getDestinationFile(serverXml).exists()) {
+                              return true;
+                              }
+                              // Read properties and see if this is an agent
+                              final String parabuildConf = "etc" + File.separator + "system" + File.separator + "parabuild.conf";
+                              final File parabuildConfFile = context.getDestinationFile(parabuildConf);
+                              if (!parabuildConfFile.exists()) {
+                              return true;
+                              }
+                              FileInputStream fis = null;
+                              try {
+                              final Properties props = new Properties();
+                              fis = new FileInputStream(parabuildConfFile);
+                              props.load(fis);
+                              if (props.getProperty("parabuild.build.manager.ipaddress", "").trim().length() == 0) {
+                              // Not an agent, don't overwrite
+                              return false;
+                              } else {
+                              // Agent, overwrite
+                              return true;
+                              }
+                              } catch (Exception e) {
+                              // Don't overwrite by defau;t
+                              return false;
+                              } finally {
+                              if (fis != null) {
+                              try {
+                              fis.close();
+                              } catch (IOException ignore) {
+                              }
+                              }
+                              }
+                              } else {
+                              return true;
+                              }
+                              // } catch (Exception e) {
+                              // Always overwrite in case of error.
+                              // return true;
+                              // }
+                            </string>
+                          </void>
+                        </object>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <condition/>
+              </action>
+              <action name="" id="123" beanClass="com.install4j.runtime.beans.actions.desktop.CreateProgramGroupAction" enabled="true" commentSet="false" comment="" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.actions.desktop.CreateProgramGroupAction">
+                      <void property="programGroupEntryConfigs">
+                        <void method="add">
+                          <object class="com.install4j.runtime.beans.screens.components.ProgramGroupEntryConfig">
+                            <void property="iconFile">
+                              <object class="com.install4j.api.beans.ExternalFile">
+                                <string>../temp/result/parabuild/bin/parabuild.ico</string>
+                              </object>
+                            </void>
+                            <void property="name">
+                              <string>Parabuild Console</string>
+                            </void>
+                            <void property="target">
+                              <object class="java.io.File">
+                                <string>bin/parabuild.url</string>
+                              </object>
+                            </void>
+                          </object>
+                        </void>
+                        <void method="add">
+                          <object class="com.install4j.runtime.beans.screens.components.ProgramGroupEntryConfig">
+                            <void property="name">
+                              <string>Parabuild Installation Manual</string>
+                            </void>
+                            <void property="target">
+                              <object class="java.io.File">
+                                <string>docs/html/install_guide.html</string>
+                              </object>
+                            </void>
+                          </object>
+                        </void>
+                        <void method="add">
+                          <object class="com.install4j.runtime.beans.screens.components.ProgramGroupEntryConfig">
+                            <void property="name">
+                              <string>Parabuild Administrator's Manual</string>
+                            </void>
+                            <void property="target">
+                              <object class="java.io.File">
+                                <string>docs/html/admin_manual.html</string>
+                              </object>
+                            </void>
+                          </object>
+                        </void>
+                        <void method="add">
+                          <object class="com.install4j.runtime.beans.screens.components.ProgramGroupEntryConfig">
+                            <void property="name">
+                              <string>Parabuild Web Service API Manual</string>
+                            </void>
+                            <void property="target">
+                              <object class="java.io.File">
+                                <string>docs/html/api_manual.html</string>
+                              </object>
+                            </void>
+                          </object>
+                        </void>
+                        <void method="add">
+                          <object class="com.install4j.runtime.beans.screens.components.ProgramGroupEntryConfig">
+                            <void property="arguments">
+                              <string>/stop</string>
+                            </void>
+                            <void property="name">
+                              <string>Stop Parabuild Service</string>
+                            </void>
+                            <void property="target">
+                              <object class="java.io.File">
+                                <string>bin/parabuild.exe</string>
+                              </object>
+                            </void>
+                          </object>
+                        </void>
+                        <void method="add">
+                          <object class="com.install4j.runtime.beans.screens.components.ProgramGroupEntryConfig">
+                            <void property="arguments">
+                              <string>/start</string>
+                            </void>
+                            <void property="name">
+                              <string>Start Parabuild Service</string>
+                            </void>
+                            <void property="target">
+                              <object class="java.io.File">
+                                <string>bin/parabuild.exe</string>
+                              </object>
+                            </void>
+                          </object>
+                        </void>
+                      </void>
+                      <void property="programGroupName">
+                        <string>Parabuild</string>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <condition/>
+              </action>
+              <action name="" id="164" beanClass="org.parabuild.ci.installer.ParabuildPostInstallAction" enabled="true" commentSet="false" comment="" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="org.parabuild.ci.installer.ParabuildPostInstallAction"/>
+                  </java>
+                </serializedBean>
+                <condition/>
+              </action>
+              <action name="" id="124" beanClass="com.install4j.runtime.beans.actions.desktop.RegisterAddRemoveAction" enabled="true" commentSet="false" comment="" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.actions.desktop.RegisterAddRemoveAction">
+                      <void property="itemName">
+                        <string>${compiler:sys.fullName} ${compiler:sys.version}</string>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <condition/>
+              </action>
+              <action name="" id="125" beanClass="com.install4j.runtime.beans.actions.services.InstallServiceAction" enabled="true" commentSet="false" comment="" rollbackBarrier="false" multiExec="false" failureStrategy="3" errorMessage="Installer failed to install Parabuild service">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.actions.services.InstallServiceAction">
+                      <void property="addToScreen">
+                        <boolean>false</boolean>
+                      </void>
+                      <void property="allowUserChangeStartType">
+                        <boolean>false</boolean>
+                      </void>
+                      <void property="launcherId">
+                        <string>111</string>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <condition>Boolean.TRUE.equals(context.getVariable("installService"))</condition>
+              </action>
+              <action name="" id="126" beanClass="com.install4j.runtime.beans.actions.services.StartServiceAction" enabled="true" commentSet="false" comment="" rollbackBarrier="false" multiExec="false" failureStrategy="3" errorMessage="">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.actions.services.StartServiceAction">
+                      <void property="launcherId">
+                        <string>111</string>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <condition>Util.isWindows()</condition>
+              </action>
+            </actions>
+            <formComponents/>
+          </screen>
+          <screen name="" id="127" beanClass="com.install4j.runtime.beans.screens.DefaultInfoScreen" enabled="true" commentSet="false" comment="" rollbackBarrier="false" backButton="2" finishScreen="false">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.DefaultInfoScreen">
+                  <void property="displayedTextFile">
+                    <object class="com.install4j.api.beans.ExternalFile">
+                      <string>./post_install_message.txt</string>
+                    </object>
+                  </void>
+                </object>
+              </java>
+            </serializedBean>
+            <condition/>
+            <validation/>
+            <preActivation/>
+            <postActivation/>
+            <actions/>
+            <formComponents/>
+          </screen>
+          <screen name="" id="128" beanClass="com.install4j.runtime.beans.screens.FinishedScreen" enabled="true" commentSet="false" comment="" rollbackBarrier="false" backButton="2" finishScreen="true">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.FinishedScreen"/>
+              </java>
+            </serializedBean>
+            <condition/>
+            <validation/>
+            <preActivation/>
+            <postActivation/>
+            <actions/>
+            <formComponents/>
+          </screen>
+        </screens>
+      </application>
+      <application name="" id="uninstaller" beanClass="com.install4j.runtime.beans.applications.UninstallerApplication" enabled="true" commentSet="false" comment="" customIcnsFile="" customIcoFile="">
+        <serializedBean>
+          <java class="java.beans.XMLDecoder">
+            <object class="com.install4j.runtime.beans.applications.UninstallerApplication">
+              <void property="allowConsole">
+                <boolean>false</boolean>
+              </void>
+              <void property="allowUnattended">
+                <boolean>false</boolean>
+              </void>
+              <void property="resizable">
+                <boolean>false</boolean>
+              </void>
+              <void property="watermark">
+                <boolean>false</boolean>
+              </void>
+            </object>
+          </java>
+        </serializedBean>
+        <startup>
+          <screen name="" id="130" beanClass="com.install4j.runtime.beans.screens.StartupScreen" enabled="true" commentSet="false" comment="" rollbackBarrier="false" backButton="2" finishScreen="false">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.StartupScreen"/>
+              </java>
+            </serializedBean>
+            <condition/>
+            <validation/>
+            <preActivation/>
+            <postActivation/>
+            <actions>
+              <action name="" id="131" beanClass="com.install4j.runtime.beans.actions.misc.RequireAdminAction" enabled="true" commentSet="false" comment="" rollbackBarrier="false" multiExec="false" failureStrategy="2" errorMessage="">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.actions.misc.RequireAdminAction"/>
+                  </java>
+                </serializedBean>
+                <condition/>
+              </action>
+            </actions>
+            <formComponents/>
+          </screen>
+        </startup>
+        <screens>
+          <screen name="" id="132" beanClass="com.install4j.runtime.beans.screens.UninstallWelcomeScreen" enabled="true" commentSet="false" comment="" rollbackBarrier="false" backButton="2" finishScreen="false">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.UninstallWelcomeScreen"/>
+              </java>
+            </serializedBean>
+            <condition/>
+            <validation/>
+            <preActivation/>
+            <postActivation/>
+            <actions/>
+            <formComponents/>
+          </screen>
+          <screen name="" id="133" beanClass="com.install4j.runtime.beans.screens.UninstallationScreen" enabled="true" commentSet="false" comment="" rollbackBarrier="false" backButton="2" finishScreen="false">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.UninstallationScreen"/>
+              </java>
+            </serializedBean>
+            <condition/>
+            <validation/>
+            <preActivation/>
+            <postActivation/>
+            <actions>
+              <action name="" id="134" beanClass="com.install4j.runtime.beans.actions.UninstallFilesAction" enabled="true" commentSet="false" comment="" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.actions.UninstallFilesAction"/>
+                  </java>
+                </serializedBean>
+                <condition/>
+              </action>
+            </actions>
+            <formComponents/>
+          </screen>
+          <screen name="" id="135" beanClass="com.install4j.runtime.beans.screens.UninstallFailureScreen" enabled="true" commentSet="false" comment="" rollbackBarrier="false" backButton="2" finishScreen="true">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.UninstallFailureScreen"/>
+              </java>
+            </serializedBean>
+            <condition/>
+            <validation/>
+            <preActivation/>
+            <postActivation/>
+            <actions/>
+            <formComponents/>
+          </screen>
+          <screen name="" id="136" beanClass="com.install4j.runtime.beans.screens.UninstallSuccessScreen" enabled="true" commentSet="false" comment="" rollbackBarrier="false" backButton="2" finishScreen="true">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.UninstallSuccessScreen"/>
+              </java>
+            </serializedBean>
+            <condition/>
+            <validation/>
+            <preActivation/>
+            <postActivation/>
+            <actions/>
+            <formComponents/>
+          </screen>
+        </screens>
+      </application>
+    </applications>
+  </installerGui>
+  <mediaSets>
+    <unixInstaller name="Solaris Sparc" id="66" mediaFileName="parabuild_${compiler:sys.version}_solaris_sparc" installDir="parabuild" overridePrincipalLanguage="true" requires64bit="false" jreBitType="all" runPostProcessor="false" postProcessor="" failOnPostProcessorError="false" includedJRE="solaris-sparc-1.4.2_13" manualJREEntry="false" bundleType="1" jreURL="" jreFtpURL="" jreShared="false" directDownload="false" customInstallBaseDir="/opt" createUninstallIcon="false" contentFilesType="1" downloadURL="">
+      <excludedLaunchers>
+        <launcher id="111"/>
+      </excludedLaunchers>
+      <excludedComponents/>
+      <excludedBeans/>
+      <overriddenPrincipalLanguage id="en" customLocalizationFile=""/>
+      <exclude/>
+      <variables/>
+      <installerScript mode="1" file="">
+        <scriptLines/>
+      </installerScript>
+    </unixInstaller>
+    <unixInstaller name="HPUX 11 PA-RISC" id="69" mediaFileName="parabuild_${compiler:sys.version}_hpux11_parisc" installDir="parabuild" overridePrincipalLanguage="true" requires64bit="false" jreBitType="all" runPostProcessor="false" postProcessor="" failOnPostProcessorError="false" includedJRE="hpux11-parisc-1.4.2_01" manualJREEntry="false" bundleType="1" jreURL="" jreFtpURL="" jreShared="false" directDownload="false" customInstallBaseDir="/opt" createUninstallIcon="false" contentFilesType="1" downloadURL="">
+      <excludedLaunchers>
+        <launcher id="111"/>
+      </excludedLaunchers>
+      <excludedComponents/>
+      <excludedBeans/>
+      <overriddenPrincipalLanguage id="en" customLocalizationFile=""/>
+      <exclude/>
+      <variables/>
+      <installerScript mode="1" file="">
+        <scriptLines/>
+      </installerScript>
+    </unixInstaller>
+    <unixInstaller name="Linux" id="73" mediaFileName="parabuild_${compiler:sys.version}_linux" installDir="parabuild" overridePrincipalLanguage="true" requires64bit="false" jreBitType="all" runPostProcessor="false" postProcessor="" failOnPostProcessorError="false" includedJRE="linux-x86-1.5.0_12" manualJREEntry="false" bundleType="1" jreURL="" jreFtpURL="" jreShared="false" directDownload="false" customInstallBaseDir="/opt" createUninstallIcon="false" contentFilesType="1" downloadURL="">
+      <excludedLaunchers>
+        <launcher id="111"/>
+      </excludedLaunchers>
+      <excludedComponents/>
+      <excludedBeans/>
+      <overriddenPrincipalLanguage id="en" customLocalizationFile=""/>
+      <exclude/>
+      <variables/>
+      <installerScript mode="1" file="">
+        <scriptLines/>
+      </installerScript>
+    </unixInstaller>
+    <unixInstaller name="Generic Unix (no JRE)" id="110" mediaFileName="parabuild_${compiler:sys.version}_generic_unix" installDir="parabuild" overridePrincipalLanguage="true" requires64bit="false" jreBitType="all" runPostProcessor="false" postProcessor="" failOnPostProcessorError="false" includedJRE="" manualJREEntry="false" bundleType="1" jreURL="" jreFtpURL="" jreShared="false" directDownload="false" customInstallBaseDir="/opt" createUninstallIcon="false" contentFilesType="1" downloadURL="">
+      <excludedLaunchers>
+        <launcher id="111"/>
+      </excludedLaunchers>
+      <excludedComponents/>
+      <excludedBeans/>
+      <overriddenPrincipalLanguage id="en" customLocalizationFile=""/>
+      <exclude/>
+      <variables/>
+      <installerScript mode="1" file="">
+        <scriptLines/>
+      </installerScript>
+    </unixInstaller>
+    <win32 name="Windows .exe" id="116" mediaFileName="parabuild_${compiler:sys.version}_windows" installDir="parabuild" overridePrincipalLanguage="true" requires64bit="false" jreBitType="32" runPostProcessor="false" postProcessor="" failOnPostProcessorError="false" includedJRE="windows-x86-1.5.0_17" manualJREEntry="false" bundleType="1" jreURL="@windows.x86.jre.url@" jreFtpURL="" jreShared="false" directDownload="false" customInstallBaseDir="C:\" createUninstallIcon="true" contentFilesType="1" downloadURL="" runAsAdmin="true">
+      <excludedLaunchers/>
+      <excludedComponents/>
+      <excludedBeans/>
+      <overriddenPrincipalLanguage id="en" customLocalizationFile=""/>
+      <exclude/>
+      <variables/>
+    </win32>
+    <unixInstaller name="Solaris x86" id="118" mediaFileName="parabuild_${compiler:sys.version}_solaris_i586" installDir="parabuild" overridePrincipalLanguage="true" requires64bit="false" jreBitType="all" runPostProcessor="false" postProcessor="" failOnPostProcessorError="false" includedJRE="solaris-x86-1.4.2_10" manualJREEntry="false" bundleType="1" jreURL="" jreFtpURL="" jreShared="false" directDownload="false" customInstallBaseDir="/opt" createUninstallIcon="false" contentFilesType="1" downloadURL="">
+      <excludedLaunchers>
+        <launcher id="111"/>
+      </excludedLaunchers>
+      <excludedComponents/>
+      <excludedBeans/>
+      <overriddenPrincipalLanguage id="en" customLocalizationFile=""/>
+      <exclude/>
+      <variables/>
+      <installerScript mode="1" file="">
+        <scriptLines/>
+      </installerScript>
+    </unixInstaller>
+    <unixInstaller name="Mac OS X (cmd line)" id="128" mediaFileName="parabuild_${compiler:sys.version}_mac_osx" installDir="parabuild" overridePrincipalLanguage="true" requires64bit="false" jreBitType="all" runPostProcessor="false" postProcessor="" failOnPostProcessorError="false" includedJRE="" manualJREEntry="false" bundleType="1" jreURL="" jreFtpURL="" jreShared="false" directDownload="false" customInstallBaseDir="/usr/local" createUninstallIcon="false" contentFilesType="1" downloadURL="">
+      <excludedLaunchers>
+        <launcher id="111"/>
+      </excludedLaunchers>
+      <excludedComponents/>
+      <excludedBeans/>
+      <overriddenPrincipalLanguage id="en" customLocalizationFile=""/>
+      <exclude/>
+      <variables/>
+      <installerScript mode="1" file="">
+        <scriptLines/>
+      </installerScript>
+    </unixInstaller>
+  </mediaSets>
+  <buildIds buildAll="false">
+    <mediaSet refId="116"/>
+  </buildIds>
+</install4j>
+

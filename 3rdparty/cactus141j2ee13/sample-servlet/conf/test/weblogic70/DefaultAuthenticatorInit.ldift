@@ -1,0 +1,65 @@
+dn: dc=@domain@
+dc: @domain@
+objectclass: top
+objectclass: domain
+
+dn: ou=@realm@, dc=@domain@
+ou: @realm@
+objectclass: top
+objectclass: organizationalUnit
+
+dn: ou=groups,ou=@realm@, dc=@domain@
+ou: groups
+objectclass: organizationalUnit
+objectclass: top
+
+dn: cn=Administrators,ou=groups,ou=@realm@, dc=@domain@
+memberURL: ldap:///ou=groups,ou=@realm@,dc=@domain@??sub?(&(objectclass=person)(wlsMemberOf=cn=Administrators,ou=groups,ou=@realm@,dc=@domain@))
+description: Administrators group
+objectclass: top
+objectclass: groupOfUniqueNames
+objectclass: groupOfURLs
+cn: Administrators
+
+dn: cn=Deployers,ou=groups,ou=@realm@, dc=@domain@
+memberURL: ldap:///ou=groups,ou=@realm@,dc=@domain@??sub?(&(objectclass=person)(wlsMemberOf=cn=Deployers,ou=groups,ou=@realm@,dc=@domain@))
+description: Deployers group
+objectclass: top
+objectclass: groupOfUniqueNames
+objectclass: groupOfURLs
+cn: Deployers
+
+dn: cn=Operators,ou=groups,ou=@realm@, dc=@domain@
+memberURL: ldap:///ou=groups,ou=@realm@,dc=@domain@??sub?(&(objectclass=person)(wlsMemberOf=cn=Operators,ou=groups,ou=@realm@,dc=@domain@))
+description: Operators group
+objectclass: top
+objectclass: groupOfUniqueNames
+objectclass: groupOfURLs
+cn: Operators
+
+dn: cn=Monitors,ou=groups,ou=@realm@, dc=@domain@
+memberURL: ldap:///ou=groups,ou=@realm@,dc=@domain@??sub?(&(objectclass=person)(wlsMemberOf=cn=Monitors,ou=groups,ou=@realm@,dc=@domain@))
+description: Monitors group
+objectclass: top
+objectclass: groupOfUniqueNames
+objectclass: groupOfURLs
+cn: Monitors
+
+dn: ou=people,ou=@realm@, dc=@domain@
+ou: people
+objectclass: organizationalUnit
+objectclass: top
+
+dn: uid=system,ou=people,ou=@realm@, dc=@domain@
+description: system
+objectclass: inetOrgPerson
+objectclass: organizationalPerson
+objectclass: person
+objectclass: top
+cn: system
+sn: system
+userpassword: {ssha}XYqqB9c/6OXoNVCOil7ZRdbb/GSIXVcE
+uid: system
+objectclass: wlsUser
+wlsMemberOf: cn=Administrators,ou=groups,ou=@realm@,dc=@domain@
+

@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Project Database/Project Properties Dialog Box</TITLE>
+<!--<ProjectDialog.html>-->
+<!--<toc parent="working_with_project_databases" label="Reviewing Project Database Properties" anchor="projectdialog" sortkey="06">-->
+<!--<toc parent="working_with_projects" label="Reviewing Project Properties" anchor="projectdialog" sortkey="08">-->
+<!--<index parent="projects" label="Project Database/Project Properties dialog box" anchor="projectdialog">-->
+<!--<index parent="project_databases" label="Project Database/Project Properties dialog box" anchor="projectdialog">-->
+<!--<index parent="properties" label="Project Database/Project/Folder Properties dialog box" anchor="projectdialog">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiProjectDialog"></control>-->
+<!--<index parent="folders" label="Project Database/Project/Folder Properties dialog box" anchor="projectdialog">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with Project Databases/Projects\nProject Databases\nReviewing Project Database Properties");
+addTocInfo("Using Version Manager\nWorking with Project Databases/Projects\nProjects\nReviewing Project Properties");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="projectdialog"></A>Project Database/Project/Folder Properties</H1>
+<P>Use the Properties dialog box (File | Properties) to view or change the following for a <A HREF="aboutprjdb.html">project database</A>, <A HREF="aboutprojects.html">project</A>, or 5.3/6.0 folder: configuration file, workfile location, default, base, and branch versions, default promotion group, and granted privileges. You can also view or change the archive location for project databases and projects.</P>
+
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD COLSPAN=2><CENTER><B>Project Database or Project Tab</B></CENTER></TD>
+	</TR>
+	<TR><TD><B>Configuration File</B></TD>
+		<TD><!--<control name="ProjectGeneral.CONFIG_FILE_EDIT">-->
+		Enter the location of a configuration file or click the Browse button to select one. Version Manager creates a configuration file when a project database is created. By default, this file is used by projects within the project database. If you select another configuration file to use for a project, the newly selected file's settings override the project database's settings unless the project database's configuration file disallows the options.
+		<!--</control>--></TD>
+	</TR>
+		<TR><TD><B>New Archive Location</B></TD>
+		<TD><!--<control name="ProjectGeneral.ARCHIVE_DIRECTORY_EDIT">-->The directory where new archives will be created for project databases and projects. Enter changes as necessary or click the Browse button to select a location. Note that only archives added to the project database <i>after</i> you change the archive location will be created in the new location. Existing archives remain in the current location. This option is not available on 5.3/6.0 project roots.
+		<!--</control>--></TD>
+		</TR>
+		<TR><TD><B>Toolbar Configuration File</B></TD>
+		<TD><!--<control name="ProjectGeneral.TOOL_CONFIG_EDIT">-->
+		Use this field to select the toolbar configuration file that your Administrator has created for your project database. Enter the location of a toolbar configuration file or click the Browse button to select one. This option is not available on 5.3/6.0 project roots.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=2><CENTER><B>Workspace Settings Tab</B></CENTER></TD>
+	<!--<control base="pvcs.vm.vmgui.WorkPathDialog"></control>-->
+	</TR>
+	    <TR>
+		<TD><B>Workfile Location</B></TD>
+		<TD><!--<control name="PropertiesWorkPath.WORKPATH_EDIT">-->
+		The workfile location of the folder, project or project database. Enter changes as necessary or click the Browse button to select a location.
+		<!--</control>--></TD>
+		</tr>
+		<TR>
+		<TD><B>Default Version</B></TD>
+		<TD><!--<control name="PropertiesWorkPath.DEFAULT_VER_EDIT">-->
+		Enter or select a version label to define which revision Version Manager should operate on for all actions when a specific revision is not selected.
+<!--</control>--></TD>
+		</tr>
+		<TR><TD><B>Branch Version</B></TD>
+		<TD><!--<control name="PropertiesWorkPath.BRANCH_VER_EDIT">-->
+		To enable automatic branching, enter the floating version label assigned to the tip of a branch.<!--</control>--></TD>
+		</tr>
+		<TR><TD><B>Base Version</B></TD>
+		<TD><!--<control name="PropertiesWorkPath.BASE_VER_EDIT">-->
+		To enable automatic branching, enter a version label assigned to the revision at the start of the branch.<!--</control>--></TD>
+		</TR>
+		<TR><TD><b>Default Promotion Group</b></TD>
+		<TD>
+		Only valid if a <a href="aboutprommodels.html">promotion model</a> is in effect. <!--<control name="PropertiesWorkPath.DEFAULT_PROMO_GROUP_CHOICE">-->Select a default promotion group, which is a lowest-level promotion group of a promotion model; by default, Version Manager associates the default promotion group you specify with revisions when checking out revisions, locking revisions, and adding workfiles.<!--</control>--> By defining a default promotion group, you eliminate the need for a user to specify which lowest-level promotion group to use for these actions.
+		<TR>
+		<TD><B>Workspace Information</B></TD>
+		<TD>The workspace assigned to the project or project database. If the workspace is public, the specified workfile location affects all users who will access the project or file. If the workspace is private, the specified workfile location will not affect other users.
+		</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=2><CENTER><B>Granted Privileges Tab</B></CENTER></TD>
+	</TR>
+	<!--<control base="pvcs.vm.vmgui.GrantedPrivilegesDialog"></control>-->
+	<TR>
+		<TD><B>Granted Privileges list</B></TD>
+		<TD><!--<control name="GrantedPrivilegesFrom.PRIVILEGES_TEXT">-->
+		A read-only listing of privileges for actions the user can perform. These privileges are assigned to the user ID currently logged in to the project database. 
+		<!--</control>--></TD>
+	</tr>
+</TABLE>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="createproject.html">Creating Projects</A></TD>
+		<TD><A HREF="createprjdb.html">Creating Project Databases</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="aboutconfigfiles.html">About Configuration Files</A></TD>
+		<TD><A HREF="aboutworkspaces.html">About Workspaces</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="workfilelocation.html">Workfile Location</A></TD>
+		<TD><A HREF="toolbarconfigdialog.html">Tool Bar Configuration Dialog Box</A></TD>
+
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

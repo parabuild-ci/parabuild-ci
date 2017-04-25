@@ -1,0 +1,1611 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head><title>jaxen: universal Java XPath engine - JDepend Source Code Analysis</title><style type="text/css" media="all">
+          @import url("./style/maven-base.css");
+          
+			    @import url("./style/maven-theme.css");</style><link rel="stylesheet" href="./style/print.css" type="text/css" media="print"></link><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta><style type="text/css">.jdepend td ul, .jdepend td ul li { margin:0; padding:0; list-style-type: none; }</style></head><body class="jdepend"><div id="banner"><a href="http://codehaus.org" id="organizationLogo"><img alt="Codehaus" src="http://codehaus.org/codehaus-small.gif"></img></a><a href="http://jaxen.codehaus.org/" id="projectLogo"><img alt="jaxen" src="../jaxen.gif"></img></a><div class="clear"><hr></hr></div></div><div id="breadcrumbs"><div class="xleft">
+                	Last published: 05 May 2007
+                  | Doc for 1.1.1</div><div class="xright">
+        
+        <a href="http://www.fnokd.com/" class="externalLink" title="External Link">The Werken Company</a>
+      </div><div class="clear"><hr></hr></div></div><div id="leftColumn"><div id="navcolumn"><div id="menujaxen"><h5>jaxen</h5><ul><li class="none"><a href="index.html">Overview</a></li><li class="none"><a href="releases.html">Download Jaxen</a></li><li class="none"><a href="apidocs/index.html">API Documentation</a></li><li class="none"><a href="faq.html">FAQ</a></li><li class="none"><a href="extensions.html">Writing Extension Functions</a></li><li class="none"><a href="building.html">Build Instructions</a></li><li class="none"><a href="releases.html">Releases</a></li><li class="none"><a href="cvs-usage.html">CVS Access</a></li><li class="none"><a href="status.html">Status</a></li></ul></div><div id="menuProject_Documentation"><h5>Project Documentation</h5><ul><li class="none"><a href="index.html">About jaxen</a></li><li class="collapsed"><a href="project-info.html">Project Info</a></li><li class="expanded"><a href="maven-reports.html">Project Reports</a><ul><li class="none"><strong><a href="jdepend-report.html">Metrics</a></strong></li><li class="none"><a href="checkstyle/index.html">Checkstyle</a></li><li class="none"><a href="cobertura/index.html" class="newWindow" title="New Window" target="_blank">Cobertura</a></li><li class="none"><a href="changelog-report.html">Change Log</a></li><li class="none"><a href="developer-activity-report.html">Developer Activity</a></li><li class="none"><a href="file-activity-report.html">File Activity</a></li><li class="none"><a href="license.html">Project License</a></li><li class="none"><a href="apidocs/index.html" class="newWindow" title="New Window" target="_blank">JavaDocs</a></li><li class="none"><a href="javadoc.html">JavaDoc Report</a></li><li class="none"><a href="javadoc-warnings-report.html">JavaDoc Warnings Report</a></li><li class="none"><a href="xref/index.html" class="newWindow" title="New Window" target="_blank">Source Xref</a></li><li class="none"><a href="xref-test/index.html" class="newWindow" title="New Window" target="_blank">Test Xref</a></li><li class="none"><a href="junit-report.html">Unit Tests</a></li><li class="none"><a href="linkcheck.html">Link Check Report</a></li><li class="none"><a href="pmd-report.html">PMD Report</a></li><li class="none"><a href="findbugs-report.html">FindBugs Report</a></li></ul></li><li class="none"><a href="http://maven.apache.org/development-process.html" class="externalLink" title="External Link">Development Process</a></li></ul></div><a href="http://maven.apache.org/" title="Built by Maven" id="poweredBy"><img alt="Built by Maven" src="./images/logos/maven-button-1.png"></img></a></div></div><div id="bodyColumn"><div class="contentBox"><div class="section"><a name="Metric_Results"></a><h2>Metric Results</h2><p>[
+        <a href="#Summary">summary</a>] [
+        <a href="#Packages">packages</a>] [
+        <a href="#Cycles">cycles</a>] [
+        <a href="#Explanations">explanations</a>]</p><p>The following document contains the results of a
+        <a href="http://www.clarkware.com/software/JDepend.html" class="externalLink" title="External Link">JDepend</a>metric analysis. The various metrics are defined at the bottom of this document.</p></div><div class="section"><a name="Summary"></a><h2>Summary</h2><p>[
+        <a href="#Summary">summary</a>] [
+        <a href="#Packages">packages</a>] [
+        <a href="#Cycles">cycles</a>] [
+        <a href="#Explanations">explanations</a>]</p><table class="bodyTable"><thead>
+          <tr class="a"><th title="Package">Package</th><th style="text-align:right">
+              <acronym title="Total Classes">TC</acronym>
+            </th><th style="text-align:right">
+              <acronym title="Abstract Classes">AC</acronym>
+            </th><th style="text-align:right">
+              <acronym title="Concrete Classes">CC</acronym>
+            </th><th style="text-align:right">
+              <acronym title="Afferent Couplings">AC</acronym>
+            </th><th style="text-align:right">
+              <acronym title="Efferent Couplings">EC</acronym>
+            </th><th style="text-align:right">
+              <acronym title="Abstractness">A</acronym>
+            </th><th style="text-align:right">
+              <acronym title="Instability">I</acronym>
+            </th><th style="text-align:right">
+              <acronym title="Distance">D</acronym>
+            </th></tr>
+        </thead><tbody>
+          <tr class="b"><td>
+              <a href="#org_jaxen">org.jaxen</a>
+            </td><td style="text-align:right">24</td><td style="text-align:right">8</td><td style="text-align:right">16</td><td style="text-align:right">13</td><td style="text-align:right">10</td><td style="text-align:right">0.33</td><td style="text-align:right">43%</td><td style="text-align:right">23%</td></tr>
+          <tr class="a"><td>
+              <a href="#org_jaxen_dom">org.jaxen.dom</a>
+            </td><td style="text-align:right">13</td><td style="text-align:right">1</td><td style="text-align:right">12</td><td style="text-align:right">0</td><td style="text-align:right">9</td><td style="text-align:right">0.08</td><td style="text-align:right">100%</td><td style="text-align:right">8%</td></tr>
+          <tr class="b"><td>
+              <a href="#org_jaxen_dom4j">org.jaxen.dom4j</a>
+            </td><td style="text-align:right">3</td><td style="text-align:right">0</td><td style="text-align:right">3</td><td style="text-align:right">0</td><td style="text-align:right">7</td><td style="text-align:right">0</td><td style="text-align:right">100%</td><td style="text-align:right">0%</td></tr>
+          <tr class="a"><td>
+              <a href="#org_jaxen_expr">org.jaxen.expr</a>
+            </td><td style="text-align:right">72</td><td style="text-align:right">37</td><td style="text-align:right">35</td><td style="text-align:right">2</td><td style="text-align:right">8</td><td style="text-align:right">0.51</td><td style="text-align:right">80%</td><td style="text-align:right">31%</td></tr>
+          <tr class="b"><td>
+              <a href="#org_jaxen_expr_iter">org.jaxen.expr.iter</a>
+            </td><td style="text-align:right">14</td><td style="text-align:right">1</td><td style="text-align:right">13</td><td style="text-align:right">1</td><td style="text-align:right">4</td><td style="text-align:right">0.07</td><td style="text-align:right">80%</td><td style="text-align:right">13%</td></tr>
+          <tr class="a"><td>
+              <a href="#org_jaxen_function">org.jaxen.function</a>
+            </td><td style="text-align:right">27</td><td style="text-align:right">0</td><td style="text-align:right">27</td><td style="text-align:right">4</td><td style="text-align:right">4</td><td style="text-align:right">0</td><td style="text-align:right">50%</td><td style="text-align:right">50%</td></tr>
+          <tr class="b"><td>
+              <a href="#org_jaxen_function_ext">org.jaxen.function.ext</a>
+            </td><td style="text-align:right">5</td><td style="text-align:right">1</td><td style="text-align:right">4</td><td style="text-align:right">1</td><td style="text-align:right">5</td><td style="text-align:right">0.2</td><td style="text-align:right">83%</td><td style="text-align:right">3%</td></tr>
+          <tr class="a"><td>
+              <a href="#org_jaxen_function_xslt">org.jaxen.function.xslt</a>
+            </td><td style="text-align:right">1</td><td style="text-align:right">0</td><td style="text-align:right">1</td><td style="text-align:right">1</td><td style="text-align:right">4</td><td style="text-align:right">0</td><td style="text-align:right">80%</td><td style="text-align:right">20%</td></tr>
+          <tr class="b"><td>
+              <a href="#org_jaxen_javabean">org.jaxen.javabean</a>
+            </td><td style="text-align:right">4</td><td style="text-align:right">0</td><td style="text-align:right">4</td><td style="text-align:right">0</td><td style="text-align:right">6</td><td style="text-align:right">0</td><td style="text-align:right">100%</td><td style="text-align:right">0%</td></tr>
+          <tr class="a"><td>
+              <a href="#org_jaxen_jdom">org.jaxen.jdom</a>
+            </td><td style="text-align:right">4</td><td style="text-align:right">0</td><td style="text-align:right">4</td><td style="text-align:right">0</td><td style="text-align:right">7</td><td style="text-align:right">0</td><td style="text-align:right">100%</td><td style="text-align:right">0%</td></tr>
+          <tr class="b"><td>
+              <a href="#org_jaxen_pattern">org.jaxen.pattern</a>
+            </td><td style="text-align:right">13</td><td style="text-align:right">2</td><td style="text-align:right">11</td><td style="text-align:right">0</td><td style="text-align:right">8</td><td style="text-align:right">0.15</td><td style="text-align:right">100%</td><td style="text-align:right">15%</td></tr>
+          <tr class="a"><td>
+              <a href="#org_jaxen_saxpath">org.jaxen.saxpath</a>
+            </td><td style="text-align:right">7</td><td style="text-align:right">4</td><td style="text-align:right">3</td><td style="text-align:right">11</td><td style="text-align:right">3</td><td style="text-align:right">0.57</td><td style="text-align:right">21%</td><td style="text-align:right">21%</td></tr>
+          <tr class="b"><td>
+              <a href="#org_jaxen_saxpath_base">org.jaxen.saxpath.base</a>
+            </td><td style="text-align:right">5</td><td style="text-align:right">0</td><td style="text-align:right">5</td><td style="text-align:right">0</td><td style="text-align:right">4</td><td style="text-align:right">0</td><td style="text-align:right">100%</td><td style="text-align:right">0%</td></tr>
+          <tr class="a"><td>
+              <a href="#org_jaxen_saxpath_helpers">org.jaxen.saxpath.helpers</a>
+            </td><td style="text-align:right">2</td><td style="text-align:right">0</td><td style="text-align:right">2</td><td style="text-align:right">3</td><td style="text-align:right">2</td><td style="text-align:right">0</td><td style="text-align:right">40%</td><td style="text-align:right">60%</td></tr>
+          <tr class="b"><td>
+              <a href="#org_jaxen_util">org.jaxen.util</a>
+            </td><td style="text-align:right">13</td><td style="text-align:right">1</td><td style="text-align:right">12</td><td style="text-align:right">7</td><td style="text-align:right">3</td><td style="text-align:right">0.08</td><td style="text-align:right">30%</td><td style="text-align:right">62%</td></tr>
+          <tr class="a"><td>
+              <a href="#org_jaxen_xom">org.jaxen.xom</a>
+            </td><td style="text-align:right">6</td><td style="text-align:right">1</td><td style="text-align:right">5</td><td style="text-align:right">0</td><td style="text-align:right">6</td><td style="text-align:right">0.17</td><td style="text-align:right">100%</td><td style="text-align:right">17%</td></tr>
+          <tr class="b"><td>
+              <a href="#org_w3c_dom">org.w3c.dom</a>
+            </td><td style="text-align:right">1</td><td style="text-align:right">1</td><td style="text-align:right">0</td><td style="text-align:right">1</td><td style="text-align:right">1</td><td style="text-align:right">1</td><td style="text-align:right">50%</td><td style="text-align:right">50%</td></tr>
+        </tbody></table></div><div class="section"><a name="Packages"></a><h2>Packages</h2><p>[
+        <a href="#Summary">summary</a>] [
+        <a href="#Packages">packages</a>] [
+        <a href="#Cycles">cycles</a>] [
+        <a href="#Explanations">explanations</a>]</p><div class="subsection"><a name="org_jaxen"></a><h3>org.jaxen</h3><table class="bodyTable"><thead>
+            <tr class="a"><th>Afferent Couplings</th><th>Efferent Couplings</th><th>Abstractness</th><th>Instability</th><th>Distance</th></tr>
+          </thead><tbody>
+            <tr class="b"><td>13</td><td>10</td><td>33%</td><td>43%</td><td>23%</td></tr>
+          </tbody></table><table class="bodyTable"><thead>
+            <tr class="a"><th>Abstract Classes</th><th>Concrete Classes</th><th>Used by Packages</th><th>Uses Packages</th></tr>
+          </thead><tbody>
+            <tr class="b"><td>
+                <ul>
+                  <li>
+                    <a href="xref/org/jaxen/DefaultNavigator.html">DefaultNavigator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/Function.html">Function</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/FunctionContext.html">FunctionContext</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/NamedAccessNavigator.html">NamedAccessNavigator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/NamespaceContext.html">NamespaceContext</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/Navigator.html">Navigator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/VariableContext.html">VariableContext</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/XPath.html">XPath</a>
+                  </li>
+                </ul>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="xref/org/jaxen/BaseXPath.html">BaseXPath</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/Context.html">Context</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/ContextSupport.html">ContextSupport</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/FunctionCallException.html">FunctionCallException</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/JaxenConstants.html">JaxenConstants</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/JaxenException.html">JaxenException</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/JaxenHandler.html">JaxenHandler</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/JaxenRuntimeException.html">JaxenRuntimeException</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/QualifiedName.html">QualifiedName</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/SimpleFunctionContext.html">SimpleFunctionContext</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/SimpleNamespaceContext.html">SimpleNamespaceContext</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/SimpleVariableContext.html">SimpleVariableContext</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/UnresolvableException.html">UnresolvableException</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/UnsupportedAxisException.html">UnsupportedAxisException</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/XPathFunctionContext.html">XPathFunctionContext</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/XPathSyntaxException.html">XPathSyntaxException</a>
+                  </li>
+                </ul>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="#org_jaxen_dom">org.jaxen.dom</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_dom4j">org.jaxen.dom4j</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_expr">org.jaxen.expr</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_expr_iter">org.jaxen.expr.iter</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_function">org.jaxen.function</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_function_ext">org.jaxen.function.ext</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_function_xslt">org.jaxen.function.xslt</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_javabean">org.jaxen.javabean</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_jdom">org.jaxen.jdom</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_pattern">org.jaxen.pattern</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_saxpath">org.jaxen.saxpath</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_util">org.jaxen.util</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_xom">org.jaxen.xom</a>
+                  </li>
+                </ul>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="#java_io">java.io</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_expr">org.jaxen.expr</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_function">org.jaxen.function</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_function_ext">org.jaxen.function.ext</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_function_xslt">org.jaxen.function.xslt</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_saxpath">org.jaxen.saxpath</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_saxpath_helpers">org.jaxen.saxpath.helpers</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_util">org.jaxen.util</a>
+                  </li>
+                </ul>
+              </td></tr>
+          </tbody></table></div><div class="subsection"><a name="org_jaxen_dom"></a><h3>org.jaxen.dom</h3><table class="bodyTable"><thead>
+            <tr class="a"><th>Afferent Couplings</th><th>Efferent Couplings</th><th>Abstractness</th><th>Instability</th><th>Distance</th></tr>
+          </thead><tbody>
+            <tr class="b"><td>0</td><td>9</td><td>8%</td><td>100%</td><td>8%</td></tr>
+          </tbody></table><table class="bodyTable"><thead>
+            <tr class="a"><th>Abstract Classes</th><th>Concrete Classes</th><th>Used by Packages</th><th>Uses Packages</th></tr>
+          </thead><tbody>
+            <tr class="b"><td>
+                <ul>
+                  <li>
+                    <a href="xref/org/jaxen/dom/DocumentNavigator.html">DocumentNavigator$NodeIterator</a>
+                  </li>
+                </ul>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="xref/org/jaxen/dom/DOMXPath.html">DOMXPath</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/dom/DocumentNavigator.html">DocumentNavigator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/dom/DocumentNavigator.html">DocumentNavigator$1</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/dom/DocumentNavigator.html">DocumentNavigator$2</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/dom/DocumentNavigator.html">DocumentNavigator$3</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/dom/DocumentNavigator.html">DocumentNavigator$4</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/dom/DocumentNavigator.html">DocumentNavigator$5</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/dom/DocumentNavigator.html">DocumentNavigator$6</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/dom/DocumentNavigator.html">DocumentNavigator$AttributeIterator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/dom/NamespaceNode.html">NamespaceNode</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/dom/NamespaceNode.html">NamespaceNode$1</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/dom/NamespaceNode.html">NamespaceNode$EmptyNodeList</a>
+                  </li>
+                </ul>
+              </td><td>
+                <em>None</em>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="#java_io">java.io</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang_reflect">java.lang.reflect</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#javax_xml_parsers">javax.xml.parsers</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen">org.jaxen</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_saxpath">org.jaxen.saxpath</a>
+                  </li>
+                  <li>
+                    <a href="#org_w3c_dom">org.w3c.dom</a>
+                  </li>
+                  <li>
+                    <a href="#org_xml_sax">org.xml.sax</a>
+                  </li>
+                </ul>
+              </td></tr>
+          </tbody></table></div><div class="subsection"><a name="org_jaxen_dom4j"></a><h3>org.jaxen.dom4j</h3><table class="bodyTable"><thead>
+            <tr class="a"><th>Afferent Couplings</th><th>Efferent Couplings</th><th>Abstractness</th><th>Instability</th><th>Distance</th></tr>
+          </thead><tbody>
+            <tr class="b"><td>0</td><td>7</td><td>0%</td><td>100%</td><td>0%</td></tr>
+          </tbody></table><table class="bodyTable"><thead>
+            <tr class="a"><th>Abstract Classes</th><th>Concrete Classes</th><th>Used by Packages</th><th>Uses Packages</th></tr>
+          </thead><tbody>
+            <tr class="b"><td>
+                <em>None</em>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="xref/org/jaxen/dom4j/DocumentNavigator.html">DocumentNavigator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/dom4j/DocumentNavigator.html">DocumentNavigator$Singleton</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/dom4j/Dom4jXPath.html">Dom4jXPath</a>
+                  </li>
+                </ul>
+              </td><td>
+                <em>None</em>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#org_dom4j">org.dom4j</a>
+                  </li>
+                  <li>
+                    <a href="#org_dom4j_io">org.dom4j.io</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen">org.jaxen</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_saxpath">org.jaxen.saxpath</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_util">org.jaxen.util</a>
+                  </li>
+                </ul>
+              </td></tr>
+          </tbody></table></div><div class="subsection"><a name="org_jaxen_expr"></a><h3>org.jaxen.expr</h3><table class="bodyTable"><thead>
+            <tr class="a"><th>Afferent Couplings</th><th>Efferent Couplings</th><th>Abstractness</th><th>Instability</th><th>Distance</th></tr>
+          </thead><tbody>
+            <tr class="b"><td>2</td><td>8</td><td>51%</td><td>80%</td><td>31%</td></tr>
+          </tbody></table><table class="bodyTable"><thead>
+            <tr class="a"><th>Abstract Classes</th><th>Concrete Classes</th><th>Used by Packages</th><th>Uses Packages</th></tr>
+          </thead><tbody>
+            <tr class="b"><td>
+                <ul>
+                  <li>
+                    <a href="xref/org/jaxen/expr/AdditiveExpr.html">AdditiveExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/AllNodeStep.html">AllNodeStep</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/BinaryExpr.html">BinaryExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/CommentNodeStep.html">CommentNodeStep</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultAdditiveExpr.html">DefaultAdditiveExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultArithExpr.html">DefaultArithExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultBinaryExpr.html">DefaultBinaryExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultEqualityExpr.html">DefaultEqualityExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultExpr.html">DefaultExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultLocationPath.html">DefaultLocationPath</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultLogicalExpr.html">DefaultLogicalExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultMultiplicativeExpr.html">DefaultMultiplicativeExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultRelationalExpr.html">DefaultRelationalExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultStep.html">DefaultStep</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultTruthExpr.html">DefaultTruthExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/EqualityExpr.html">EqualityExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/Expr.html">Expr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/FilterExpr.html">FilterExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/FunctionCallExpr.html">FunctionCallExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/LiteralExpr.html">LiteralExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/LocationPath.html">LocationPath</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/LogicalExpr.html">LogicalExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/MultiplicativeExpr.html">MultiplicativeExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/NameStep.html">NameStep</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/NumberExpr.html">NumberExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/PathExpr.html">PathExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/Predicate.html">Predicate</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/Predicated.html">Predicated</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/ProcessingInstructionNodeStep.html">ProcessingInstructionNodeStep</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/RelationalExpr.html">RelationalExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/Step.html">Step</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/TextNodeStep.html">TextNodeStep</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/UnaryExpr.html">UnaryExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/UnionExpr.html">UnionExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/VariableReferenceExpr.html">VariableReferenceExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/XPathExpr.html">XPathExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/XPathFactory.html">XPathFactory</a>
+                  </li>
+                </ul>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultAbsoluteLocationPath.html">DefaultAbsoluteLocationPath</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultAllNodeStep.html">DefaultAllNodeStep</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultAndExpr.html">DefaultAndExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultCommentNodeStep.html">DefaultCommentNodeStep</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultDivExpr.html">DefaultDivExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultEqualsExpr.html">DefaultEqualsExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultFilterExpr.html">DefaultFilterExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultFunctionCallExpr.html">DefaultFunctionCallExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultGreaterThanEqualExpr.html">DefaultGreaterThanEqualExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultGreaterThanExpr.html">DefaultGreaterThanExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultLessThanEqualExpr.html">DefaultLessThanEqualExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultLessThanExpr.html">DefaultLessThanExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultLiteralExpr.html">DefaultLiteralExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultMinusExpr.html">DefaultMinusExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultModExpr.html">DefaultModExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultMultiplyExpr.html">DefaultMultiplyExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultNameStep.html">DefaultNameStep</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultNotEqualsExpr.html">DefaultNotEqualsExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultNumberExpr.html">DefaultNumberExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultOrExpr.html">DefaultOrExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultPathExpr.html">DefaultPathExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultPlusExpr.html">DefaultPlusExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultPredicate.html">DefaultPredicate</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultProcessingInstructionNodeStep.html">DefaultProcessingInstructionNodeStep</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultRelativeLocationPath.html">DefaultRelativeLocationPath</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultTextNodeStep.html">DefaultTextNodeStep</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultUnaryExpr.html">DefaultUnaryExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultUnionExpr.html">DefaultUnionExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultVariableReferenceExpr.html">DefaultVariableReferenceExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultXPathExpr.html">DefaultXPathExpr</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/DefaultXPathFactory.html">DefaultXPathFactory</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/IdentitySet.html">IdentitySet</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/IdentitySet.html">IdentitySet$IdentityWrapper</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/NodeComparator.html">NodeComparator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/PredicateSet.html">PredicateSet</a>
+                  </li>
+                </ul>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="#org_jaxen">org.jaxen</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_pattern">org.jaxen.pattern</a>
+                  </li>
+                </ul>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="#java_io">java.io</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen">org.jaxen</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_expr_iter">org.jaxen.expr.iter</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_function">org.jaxen.function</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_saxpath">org.jaxen.saxpath</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_util">org.jaxen.util</a>
+                  </li>
+                </ul>
+              </td></tr>
+          </tbody></table></div><div class="subsection"><a name="org_jaxen_expr_iter"></a><h3>org.jaxen.expr.iter</h3><table class="bodyTable"><thead>
+            <tr class="a"><th>Afferent Couplings</th><th>Efferent Couplings</th><th>Abstractness</th><th>Instability</th><th>Distance</th></tr>
+          </thead><tbody>
+            <tr class="b"><td>1</td><td>4</td><td>7%</td><td>80%</td><td>13%</td></tr>
+          </tbody></table><table class="bodyTable"><thead>
+            <tr class="a"><th>Abstract Classes</th><th>Concrete Classes</th><th>Used by Packages</th><th>Uses Packages</th></tr>
+          </thead><tbody>
+            <tr class="b"><td>
+                <ul>
+                  <li>
+                    <a href="xref/org/jaxen/expr/iter/IterableAxis.html">IterableAxis</a>
+                  </li>
+                </ul>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="xref/org/jaxen/expr/iter/IterableAncestorAxis.html">IterableAncestorAxis</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/iter/IterableAncestorOrSelfAxis.html">IterableAncestorOrSelfAxis</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/iter/IterableAttributeAxis.html">IterableAttributeAxis</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/iter/IterableChildAxis.html">IterableChildAxis</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/iter/IterableDescendantAxis.html">IterableDescendantAxis</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/iter/IterableDescendantOrSelfAxis.html">IterableDescendantOrSelfAxis</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/iter/IterableFollowingAxis.html">IterableFollowingAxis</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/iter/IterableFollowingSiblingAxis.html">IterableFollowingSiblingAxis</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/iter/IterableNamespaceAxis.html">IterableNamespaceAxis</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/iter/IterableParentAxis.html">IterableParentAxis</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/iter/IterablePrecedingAxis.html">IterablePrecedingAxis</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/iter/IterablePrecedingSiblingAxis.html">IterablePrecedingSiblingAxis</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/expr/iter/IterableSelfAxis.html">IterableSelfAxis</a>
+                  </li>
+                </ul>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="#org_jaxen_expr">org.jaxen.expr</a>
+                  </li>
+                </ul>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="#java_io">java.io</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen">org.jaxen</a>
+                  </li>
+                </ul>
+              </td></tr>
+          </tbody></table></div><div class="subsection"><a name="org_jaxen_function"></a><h3>org.jaxen.function</h3><table class="bodyTable"><thead>
+            <tr class="a"><th>Afferent Couplings</th><th>Efferent Couplings</th><th>Abstractness</th><th>Instability</th><th>Distance</th></tr>
+          </thead><tbody>
+            <tr class="b"><td>4</td><td>4</td><td>0%</td><td>50%</td><td>50%</td></tr>
+          </tbody></table><table class="bodyTable"><thead>
+            <tr class="a"><th>Abstract Classes</th><th>Concrete Classes</th><th>Used by Packages</th><th>Uses Packages</th></tr>
+          </thead><tbody>
+            <tr class="b"><td>
+                <em>None</em>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="xref/org/jaxen/function/BooleanFunction.html">BooleanFunction</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/function/CeilingFunction.html">CeilingFunction</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/function/ConcatFunction.html">ConcatFunction</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/function/ContainsFunction.html">ContainsFunction</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/function/CountFunction.html">CountFunction</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/function/FalseFunction.html">FalseFunction</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/function/FloorFunction.html">FloorFunction</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/function/IdFunction.html">IdFunction</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/function/LangFunction.html">LangFunction</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/function/LastFunction.html">LastFunction</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/function/LocalNameFunction.html">LocalNameFunction</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/function/NameFunction.html">NameFunction</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/function/NamespaceUriFunction.html">NamespaceUriFunction</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/function/NormalizeSpaceFunction.html">NormalizeSpaceFunction</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/function/NotFunction.html">NotFunction</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/function/NumberFunction.html">NumberFunction</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/function/PositionFunction.html">PositionFunction</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/function/RoundFunction.html">RoundFunction</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/function/StartsWithFunction.html">StartsWithFunction</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/function/StringFunction.html">StringFunction</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/function/StringLengthFunction.html">StringLengthFunction</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/function/SubstringAfterFunction.html">SubstringAfterFunction</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/function/SubstringBeforeFunction.html">SubstringBeforeFunction</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/function/SubstringFunction.html">SubstringFunction</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/function/SumFunction.html">SumFunction</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/function/TranslateFunction.html">TranslateFunction</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/function/TrueFunction.html">TrueFunction</a>
+                  </li>
+                </ul>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="#org_jaxen">org.jaxen</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_expr">org.jaxen.expr</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_function_ext">org.jaxen.function.ext</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_function_xslt">org.jaxen.function.xslt</a>
+                  </li>
+                </ul>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_text">java.text</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen">org.jaxen</a>
+                  </li>
+                </ul>
+              </td></tr>
+          </tbody></table></div><div class="subsection"><a name="org_jaxen_function_ext"></a><h3>org.jaxen.function.ext</h3><table class="bodyTable"><thead>
+            <tr class="a"><th>Afferent Couplings</th><th>Efferent Couplings</th><th>Abstractness</th><th>Instability</th><th>Distance</th></tr>
+          </thead><tbody>
+            <tr class="b"><td>1</td><td>5</td><td>20%</td><td>83%</td><td>3%</td></tr>
+          </tbody></table><table class="bodyTable"><thead>
+            <tr class="a"><th>Abstract Classes</th><th>Concrete Classes</th><th>Used by Packages</th><th>Uses Packages</th></tr>
+          </thead><tbody>
+            <tr class="b"><td>
+                <ul>
+                  <li>
+                    <a href="xref/org/jaxen/function/ext/LocaleFunctionSupport.html">LocaleFunctionSupport</a>
+                  </li>
+                </ul>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="xref/org/jaxen/function/ext/EndsWithFunction.html">EndsWithFunction</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/function/ext/EvaluateFunction.html">EvaluateFunction</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/function/ext/LowerFunction.html">LowerFunction</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/function/ext/UpperFunction.html">UpperFunction</a>
+                  </li>
+                </ul>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="#org_jaxen">org.jaxen</a>
+                  </li>
+                </ul>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen">org.jaxen</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_function">org.jaxen.function</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_saxpath">org.jaxen.saxpath</a>
+                  </li>
+                </ul>
+              </td></tr>
+          </tbody></table></div><div class="subsection"><a name="org_jaxen_function_xslt"></a><h3>org.jaxen.function.xslt</h3><table class="bodyTable"><thead>
+            <tr class="a"><th>Afferent Couplings</th><th>Efferent Couplings</th><th>Abstractness</th><th>Instability</th><th>Distance</th></tr>
+          </thead><tbody>
+            <tr class="b"><td>1</td><td>4</td><td>0%</td><td>80%</td><td>20%</td></tr>
+          </tbody></table><table class="bodyTable"><thead>
+            <tr class="a"><th>Abstract Classes</th><th>Concrete Classes</th><th>Used by Packages</th><th>Uses Packages</th></tr>
+          </thead><tbody>
+            <tr class="b"><td>
+                <em>None</em>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="xref/org/jaxen/function/xslt/DocumentFunction.html">DocumentFunction</a>
+                  </li>
+                </ul>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="#org_jaxen">org.jaxen</a>
+                  </li>
+                </ul>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen">org.jaxen</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_function">org.jaxen.function</a>
+                  </li>
+                </ul>
+              </td></tr>
+          </tbody></table></div><div class="subsection"><a name="org_jaxen_javabean"></a><h3>org.jaxen.javabean</h3><table class="bodyTable"><thead>
+            <tr class="a"><th>Afferent Couplings</th><th>Efferent Couplings</th><th>Abstractness</th><th>Instability</th><th>Distance</th></tr>
+          </thead><tbody>
+            <tr class="b"><td>0</td><td>6</td><td>0%</td><td>100%</td><td>0%</td></tr>
+          </tbody></table><table class="bodyTable"><thead>
+            <tr class="a"><th>Abstract Classes</th><th>Concrete Classes</th><th>Used by Packages</th><th>Uses Packages</th></tr>
+          </thead><tbody>
+            <tr class="b"><td>
+                <em>None</em>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="xref/org/jaxen/javabean/DocumentNavigator.html">DocumentNavigator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/javabean/Element.html">Element</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/javabean/ElementIterator.html">ElementIterator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/javabean/JavaBeanXPath.html">JavaBeanXPath</a>
+                  </li>
+                </ul>
+              </td><td>
+                <em>None</em>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang_reflect">java.lang.reflect</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen">org.jaxen</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_saxpath">org.jaxen.saxpath</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_util">org.jaxen.util</a>
+                  </li>
+                </ul>
+              </td></tr>
+          </tbody></table></div><div class="subsection"><a name="org_jaxen_jdom"></a><h3>org.jaxen.jdom</h3><table class="bodyTable"><thead>
+            <tr class="a"><th>Afferent Couplings</th><th>Efferent Couplings</th><th>Abstractness</th><th>Instability</th><th>Distance</th></tr>
+          </thead><tbody>
+            <tr class="b"><td>0</td><td>7</td><td>0%</td><td>100%</td><td>0%</td></tr>
+          </tbody></table><table class="bodyTable"><thead>
+            <tr class="a"><th>Abstract Classes</th><th>Concrete Classes</th><th>Used by Packages</th><th>Uses Packages</th></tr>
+          </thead><tbody>
+            <tr class="b"><td>
+                <em>None</em>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="xref/org/jaxen/jdom/DocumentNavigator.html">DocumentNavigator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/jdom/DocumentNavigator.html">DocumentNavigator$Singleton</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/jdom/JDOMXPath.html">JDOMXPath</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/jdom/XPathNamespace.html">XPathNamespace</a>
+                  </li>
+                </ul>
+              </td><td>
+                <em>None</em>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen">org.jaxen</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_saxpath">org.jaxen.saxpath</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_util">org.jaxen.util</a>
+                  </li>
+                  <li>
+                    <a href="#org_jdom">org.jdom</a>
+                  </li>
+                  <li>
+                    <a href="#org_jdom_input">org.jdom.input</a>
+                  </li>
+                </ul>
+              </td></tr>
+          </tbody></table></div><div class="subsection"><a name="org_jaxen_pattern"></a><h3>org.jaxen.pattern</h3><table class="bodyTable"><thead>
+            <tr class="a"><th>Afferent Couplings</th><th>Efferent Couplings</th><th>Abstractness</th><th>Instability</th><th>Distance</th></tr>
+          </thead><tbody>
+            <tr class="b"><td>0</td><td>8</td><td>15%</td><td>100%</td><td>15%</td></tr>
+          </tbody></table><table class="bodyTable"><thead>
+            <tr class="a"><th>Abstract Classes</th><th>Concrete Classes</th><th>Used by Packages</th><th>Uses Packages</th></tr>
+          </thead><tbody>
+            <tr class="b"><td>
+                <ul>
+                  <li>
+                    <a href="xref/org/jaxen/pattern/NodeTest.html">NodeTest</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/pattern/Pattern.html">Pattern</a>
+                  </li>
+                </ul>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="xref/org/jaxen/pattern/AnyChildNodeTest.html">AnyChildNodeTest</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/pattern/AnyNodeTest.html">AnyNodeTest</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/pattern/LocationPathPattern.html">LocationPathPattern</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/pattern/NameTest.html">NameTest</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/pattern/NamespaceTest.html">NamespaceTest</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/pattern/NoNodeTest.html">NoNodeTest</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/pattern/NodeTypeTest.html">NodeTypeTest</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/pattern/PatternHandler.html">PatternHandler</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/pattern/PatternParser.html">PatternParser</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/pattern/TextNodeTest.html">TextNodeTest</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/pattern/UnionPattern.html">UnionPattern</a>
+                  </li>
+                </ul>
+              </td><td>
+                <em>None</em>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="#java_io">java.io</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen">org.jaxen</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_expr">org.jaxen.expr</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_saxpath">org.jaxen.saxpath</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_saxpath_helpers">org.jaxen.saxpath.helpers</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_util">org.jaxen.util</a>
+                  </li>
+                </ul>
+              </td></tr>
+          </tbody></table></div><div class="subsection"><a name="org_jaxen_saxpath"></a><h3>org.jaxen.saxpath</h3><table class="bodyTable"><thead>
+            <tr class="a"><th>Afferent Couplings</th><th>Efferent Couplings</th><th>Abstractness</th><th>Instability</th><th>Distance</th></tr>
+          </thead><tbody>
+            <tr class="b"><td>11</td><td>3</td><td>57%</td><td>21%</td><td>21%</td></tr>
+          </tbody></table><table class="bodyTable"><thead>
+            <tr class="a"><th>Abstract Classes</th><th>Concrete Classes</th><th>Used by Packages</th><th>Uses Packages</th></tr>
+          </thead><tbody>
+            <tr class="b"><td>
+                <ul>
+                  <li>
+                    <a href="xref/org/jaxen/saxpath/Operator.html">Operator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/saxpath/SAXPathEventSource.html">SAXPathEventSource</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/saxpath/XPathHandler.html">XPathHandler</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/saxpath/XPathReader.html">XPathReader</a>
+                  </li>
+                </ul>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="xref/org/jaxen/saxpath/Axis.html">Axis</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/saxpath/SAXPathException.html">SAXPathException</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/saxpath/XPathSyntaxException.html">XPathSyntaxException</a>
+                  </li>
+                </ul>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="#org_jaxen">org.jaxen</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_dom">org.jaxen.dom</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_dom4j">org.jaxen.dom4j</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_expr">org.jaxen.expr</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_function_ext">org.jaxen.function.ext</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_javabean">org.jaxen.javabean</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_jdom">org.jaxen.jdom</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_pattern">org.jaxen.pattern</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_saxpath_base">org.jaxen.saxpath.base</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_saxpath_helpers">org.jaxen.saxpath.helpers</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_xom">org.jaxen.xom</a>
+                  </li>
+                </ul>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="#java_io">java.io</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen">org.jaxen</a>
+                  </li>
+                </ul>
+              </td></tr>
+          </tbody></table></div><div class="subsection"><a name="org_jaxen_saxpath_base"></a><h3>org.jaxen.saxpath.base</h3><table class="bodyTable"><thead>
+            <tr class="a"><th>Afferent Couplings</th><th>Efferent Couplings</th><th>Abstractness</th><th>Instability</th><th>Distance</th></tr>
+          </thead><tbody>
+            <tr class="b"><td>0</td><td>4</td><td>0%</td><td>100%</td><td>0%</td></tr>
+          </tbody></table><table class="bodyTable"><thead>
+            <tr class="a"><th>Abstract Classes</th><th>Concrete Classes</th><th>Used by Packages</th><th>Uses Packages</th></tr>
+          </thead><tbody>
+            <tr class="b"><td>
+                <em>None</em>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="xref/org/jaxen/saxpath/base/Token.html">Token</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/saxpath/base/TokenTypes.html">TokenTypes</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/saxpath/base/Verifier.html">Verifier</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/saxpath/base/XPathLexer.html">XPathLexer</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/saxpath/base/XPathReader.html">XPathReader</a>
+                  </li>
+                </ul>
+              </td><td>
+                <em>None</em>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_saxpath">org.jaxen.saxpath</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_saxpath_helpers">org.jaxen.saxpath.helpers</a>
+                  </li>
+                </ul>
+              </td></tr>
+          </tbody></table></div><div class="subsection"><a name="org_jaxen_saxpath_helpers"></a><h3>org.jaxen.saxpath.helpers</h3><table class="bodyTable"><thead>
+            <tr class="a"><th>Afferent Couplings</th><th>Efferent Couplings</th><th>Abstractness</th><th>Instability</th><th>Distance</th></tr>
+          </thead><tbody>
+            <tr class="b"><td>3</td><td>2</td><td>0%</td><td>40%</td><td>60%</td></tr>
+          </tbody></table><table class="bodyTable"><thead>
+            <tr class="a"><th>Abstract Classes</th><th>Concrete Classes</th><th>Used by Packages</th><th>Uses Packages</th></tr>
+          </thead><tbody>
+            <tr class="b"><td>
+                <em>None</em>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="xref/org/jaxen/saxpath/helpers/DefaultXPathHandler.html">DefaultXPathHandler</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/saxpath/helpers/XPathReaderFactory.html">XPathReaderFactory</a>
+                  </li>
+                </ul>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="#org_jaxen">org.jaxen</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_pattern">org.jaxen.pattern</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_saxpath_base">org.jaxen.saxpath.base</a>
+                  </li>
+                </ul>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_saxpath">org.jaxen.saxpath</a>
+                  </li>
+                </ul>
+              </td></tr>
+          </tbody></table></div><div class="subsection"><a name="org_jaxen_util"></a><h3>org.jaxen.util</h3><table class="bodyTable"><thead>
+            <tr class="a"><th>Afferent Couplings</th><th>Efferent Couplings</th><th>Abstractness</th><th>Instability</th><th>Distance</th></tr>
+          </thead><tbody>
+            <tr class="b"><td>7</td><td>3</td><td>8%</td><td>30%</td><td>62%</td></tr>
+          </tbody></table><table class="bodyTable"><thead>
+            <tr class="a"><th>Abstract Classes</th><th>Concrete Classes</th><th>Used by Packages</th><th>Uses Packages</th></tr>
+          </thead><tbody>
+            <tr class="b"><td>
+                <ul>
+                  <li>
+                    <a href="xref/org/jaxen/util/StackedIterator.html">StackedIterator</a>
+                  </li>
+                </ul>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="xref/org/jaxen/util/AncestorAxisIterator.html">AncestorAxisIterator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/util/AncestorOrSelfAxisIterator.html">AncestorOrSelfAxisIterator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/util/DescendantAxisIterator.html">DescendantAxisIterator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/util/DescendantOrSelfAxisIterator.html">DescendantOrSelfAxisIterator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/util/FollowingAxisIterator.html">FollowingAxisIterator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/util/FollowingSiblingAxisIterator.html">FollowingSiblingAxisIterator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/util/LinkedIterator.html">LinkedIterator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/util/PrecedingAxisIterator.html">PrecedingAxisIterator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/util/PrecedingSiblingAxisIterator.html">PrecedingSiblingAxisIterator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/util/SelfAxisIterator.html">SelfAxisIterator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/util/SingleObjectIterator.html">SingleObjectIterator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/util/SingletonList.html">SingletonList</a>
+                  </li>
+                </ul>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="#org_jaxen">org.jaxen</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_dom4j">org.jaxen.dom4j</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_expr">org.jaxen.expr</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_javabean">org.jaxen.javabean</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_jdom">org.jaxen.jdom</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_pattern">org.jaxen.pattern</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_xom">org.jaxen.xom</a>
+                  </li>
+                </ul>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen">org.jaxen</a>
+                  </li>
+                </ul>
+              </td></tr>
+          </tbody></table></div><div class="subsection"><a name="org_jaxen_xom"></a><h3>org.jaxen.xom</h3><table class="bodyTable"><thead>
+            <tr class="a"><th>Afferent Couplings</th><th>Efferent Couplings</th><th>Abstractness</th><th>Instability</th><th>Distance</th></tr>
+          </thead><tbody>
+            <tr class="b"><td>0</td><td>6</td><td>17%</td><td>100%</td><td>17%</td></tr>
+          </tbody></table><table class="bodyTable"><thead>
+            <tr class="a"><th>Abstract Classes</th><th>Concrete Classes</th><th>Used by Packages</th><th>Uses Packages</th></tr>
+          </thead><tbody>
+            <tr class="b"><td>
+                <ul>
+                  <li>
+                    <a href="xref/org/jaxen/xom/DocumentNavigator.html">DocumentNavigator$IndexIterator</a>
+                  </li>
+                </ul>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="xref/org/jaxen/xom/DocumentNavigator.html">DocumentNavigator</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/xom/DocumentNavigator.html">DocumentNavigator$1</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/xom/DocumentNavigator.html">DocumentNavigator$2</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/xom/DocumentNavigator.html">DocumentNavigator$XPathNamespace</a>
+                  </li>
+                  <li>
+                    <a href="xref/org/jaxen/xom/XOMXPath.html">XOMXPath</a>
+                  </li>
+                </ul>
+              </td><td>
+                <em>None</em>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#nu_xom">nu.xom</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen">org.jaxen</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_saxpath">org.jaxen.saxpath</a>
+                  </li>
+                  <li>
+                    <a href="#org_jaxen_util">org.jaxen.util</a>
+                  </li>
+                </ul>
+              </td></tr>
+          </tbody></table></div><div class="subsection"><a name="org_w3c_dom"></a><h3>org.w3c.dom</h3><table class="bodyTable"><thead>
+            <tr class="a"><th>Afferent Couplings</th><th>Efferent Couplings</th><th>Abstractness</th><th>Instability</th><th>Distance</th></tr>
+          </thead><tbody>
+            <tr class="b"><td>1</td><td>1</td><td>100%</td><td>50%</td><td>50%</td></tr>
+          </tbody></table><table class="bodyTable"><thead>
+            <tr class="a"><th>Abstract Classes</th><th>Concrete Classes</th><th>Used by Packages</th><th>Uses Packages</th></tr>
+          </thead><tbody>
+            <tr class="b"><td>
+                <ul>
+                  <li>
+                    <a href="xref/org/w3c/dom/UserDataHandler.html">UserDataHandler</a>
+                  </li>
+                </ul>
+              </td><td>
+                <em>None</em>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="#org_jaxen_dom">org.jaxen.dom</a>
+                  </li>
+                </ul>
+              </td><td>
+                <ul>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                </ul>
+              </td></tr>
+          </tbody></table></div></div><div class="section"><a name="Cycles"></a><h2>Cycles</h2><p>[
+        <a href="#Summary">summary</a>] [
+        <a href="#Packages">packages</a>] [
+        <a href="#Cycles">cycles</a>] [
+        <a href="#Explanations">explanations</a>]</p><table class="bodyTable"><thead>
+          <tr class="a"><th>Package</th><th>Cyclic Dependencies</th></tr>
+        </thead><tbody>
+          <tr class="b"><td>org.jaxen</td><td>
+              <ul>
+                <li>org.jaxen.saxpath.helpers</li>
+                <li>org.jaxen.saxpath</li>
+                <li>org.jaxen</li>
+              </ul>
+            </td></tr>
+          <tr class="a"><td>org.jaxen.dom</td><td>
+              <ul>
+                <li>org.jaxen</li>
+                <li>org.jaxen.saxpath.helpers</li>
+                <li>org.jaxen.saxpath</li>
+                <li>org.jaxen</li>
+              </ul>
+            </td></tr>
+          <tr class="b"><td>org.jaxen.dom4j</td><td>
+              <ul>
+                <li>org.jaxen</li>
+                <li>org.jaxen.saxpath.helpers</li>
+                <li>org.jaxen.saxpath</li>
+                <li>org.jaxen</li>
+              </ul>
+            </td></tr>
+          <tr class="a"><td>org.jaxen.expr</td><td>
+              <ul>
+                <li>org.jaxen</li>
+                <li>org.jaxen.saxpath.helpers</li>
+                <li>org.jaxen.saxpath</li>
+                <li>org.jaxen</li>
+              </ul>
+            </td></tr>
+          <tr class="b"><td>org.jaxen.expr.iter</td><td>
+              <ul>
+                <li>org.jaxen</li>
+                <li>org.jaxen.saxpath.helpers</li>
+                <li>org.jaxen.saxpath</li>
+                <li>org.jaxen</li>
+              </ul>
+            </td></tr>
+          <tr class="a"><td>org.jaxen.function</td><td>
+              <ul>
+                <li>org.jaxen</li>
+                <li>org.jaxen.saxpath.helpers</li>
+                <li>org.jaxen.saxpath</li>
+                <li>org.jaxen</li>
+              </ul>
+            </td></tr>
+          <tr class="b"><td>org.jaxen.function.ext</td><td>
+              <ul>
+                <li>org.jaxen</li>
+                <li>org.jaxen.saxpath.helpers</li>
+                <li>org.jaxen.saxpath</li>
+                <li>org.jaxen</li>
+              </ul>
+            </td></tr>
+          <tr class="a"><td>org.jaxen.function.xslt</td><td>
+              <ul>
+                <li>org.jaxen</li>
+                <li>org.jaxen.saxpath.helpers</li>
+                <li>org.jaxen.saxpath</li>
+                <li>org.jaxen</li>
+              </ul>
+            </td></tr>
+          <tr class="b"><td>org.jaxen.javabean</td><td>
+              <ul>
+                <li>org.jaxen</li>
+                <li>org.jaxen.saxpath.helpers</li>
+                <li>org.jaxen.saxpath</li>
+                <li>org.jaxen</li>
+              </ul>
+            </td></tr>
+          <tr class="a"><td>org.jaxen.jdom</td><td>
+              <ul>
+                <li>org.jaxen</li>
+                <li>org.jaxen.saxpath.helpers</li>
+                <li>org.jaxen.saxpath</li>
+                <li>org.jaxen</li>
+              </ul>
+            </td></tr>
+          <tr class="b"><td>org.jaxen.pattern</td><td>
+              <ul>
+                <li>org.jaxen</li>
+                <li>org.jaxen.saxpath.helpers</li>
+                <li>org.jaxen.saxpath</li>
+                <li>org.jaxen</li>
+              </ul>
+            </td></tr>
+          <tr class="a"><td>org.jaxen.saxpath</td><td>
+              <ul>
+                <li>org.jaxen</li>
+                <li>org.jaxen.saxpath.helpers</li>
+                <li>org.jaxen.saxpath</li>
+              </ul>
+            </td></tr>
+          <tr class="b"><td>org.jaxen.saxpath.base</td><td>
+              <ul>
+                <li>org.jaxen.saxpath.helpers</li>
+                <li>org.jaxen.saxpath</li>
+                <li>org.jaxen</li>
+                <li>org.jaxen.saxpath.helpers</li>
+              </ul>
+            </td></tr>
+          <tr class="a"><td>org.jaxen.saxpath.helpers</td><td>
+              <ul>
+                <li>org.jaxen.saxpath</li>
+                <li>org.jaxen</li>
+                <li>org.jaxen.saxpath.helpers</li>
+              </ul>
+            </td></tr>
+          <tr class="b"><td>org.jaxen.util</td><td>
+              <ul>
+                <li>org.jaxen</li>
+                <li>org.jaxen.saxpath.helpers</li>
+                <li>org.jaxen.saxpath</li>
+                <li>org.jaxen</li>
+              </ul>
+            </td></tr>
+          <tr class="a"><td>org.jaxen.xom</td><td>
+              <ul>
+                <li>org.jaxen</li>
+                <li>org.jaxen.saxpath.helpers</li>
+                <li>org.jaxen.saxpath</li>
+                <li>org.jaxen</li>
+              </ul>
+            </td></tr>
+        </tbody></table></div><div class="section"><a name="Explanations"></a><h2>Explanations</h2><p>[
+        <a href="#Summary">summary</a>] [
+        <a href="#Packages">packages</a>] [
+        <a href="#Cycles">cycles</a>] [
+        <a href="#Explanations">explanations</a>]</p><p>The following explanations are for quick reference and are lifted directly from the original
+        <a href="http://www.clarkware.com/software/JDepend.html" class="externalLink" title="External Link">JDepend documentation</a>.</p><table class="bodyTable"><thead>
+          <tr class="b"><th>Term</th><th>Description</th></tr>
+        </thead><tbody>
+          <tr class="a"><td>Number of Classes</td><td>The number of concrete and abstract classes (and interfaces) in the package is an indicator of the extensibility of the package.</td></tr>
+          <tr class="b"><td>Afferent Couplings</td><td>The number of other packages that depend upon classes within the package is an indicator of the package's responsibility.</td></tr>
+          <tr class="a"><td>Efferent Couplings</td><td>The number of other packages that the classes in the package depend upon is an indicator of the package's independence.</td></tr>
+          <tr class="b"><td>Abstractness</td><td>The ratio of the number of abstract classes (and interfaces) in the analyzed package to the total number of classes in the analyzed package. The range for this metric is 0 to 1, with A=0 indicating a completely concrete package and A=1 indicating a completely abstract package.</td></tr>
+          <tr class="a"><td>Instability</td><td>The ratio of efferent coupling (Ce) to total coupling (Ce / (Ce + Ca)). This metric is an indicator of the package's resilience to change. The range for this metric is 0 to 1, with I=0 indicating a completely stable package and I=1 indicating a completely instable package.</td></tr>
+          <tr class="b"><td>Distance</td><td>The perpendicular distance of a package from the idealized line A + I = 1. This metric is an indicator of the package's balance between abstractness and stability. A package squarely on the main sequence is optimally balanced with respect to its abstractness and stability. Ideal packages are either completely abstract and stable (x=0, y=1) or completely concrete and instable (x=1, y=0). The range for this metric is 0 to 1, with D=0 indicating a package that is coincident with the main sequence and D=1 indicating a package that is as far from the main sequence as possible.</td></tr>
+          <tr class="a"><td>Cycles</td><td>Packages participating in a package dependency cycle are in a deadly embrace with respect to reusability and their release cycle. Package dependency cycles can be easily identified by reviewing the textual reports of dependency cycles. Once these dependency cycles have been identified with JDepend, they can be broken by employing various object-oriented techniques.</td></tr>
+        </tbody></table></div></div></div><div class="clear"><hr></hr></div><div id="footer"><div class="xright">© 2001-2007, Codehaus</div><div class="clear"><hr></hr></div></div></body></html>

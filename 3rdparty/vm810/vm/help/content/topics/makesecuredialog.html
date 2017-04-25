@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Make Secure Dialog Box</TITLE>
+<!--<makesecuredialog.html>-->
+<!--<index parent="security" label="Make Secure dialog box" anchor="makesecure">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiVConfigDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="makesecure"></A>Make Secure</H1>
+<P>Use the Make Secure dialog box (Admin | Make Secure) to <a href="embedmasterconfigfile.html">embed the configuration file</a>, <a href="embedacdb.html">access control database</a>, and <a href="embedloginsources.html">login sources</a> into Serena ChangeMan Version Manager, and to <a href="restrictpdb.html">restrict the creation of project databases</a>.</P>
+<P>
+Embedding a configuration file into Version Manager ensures that all users will be using the same configuration for Version Manager and that users cannot use a different master configuration file.
+</P>
+<P>Embedding an access control database into Version Manager ensures that all users will be using the same access control database and that users cannot use a different access control database.
+</P>
+<P>Embedding login sources ensures that Version Manager uses the same login sources to obtain user IDs for all users. To prevent users from changing login sources, disallow the LogIn directive in all master configuration files and do not give users the Configure Project privilege.</p>
+<P>
+<b>Note:</b> A master configuration file, access control database, and login sources that are embedded into Version Manager affect all desktop client and command-line users that are using the copy of Version Manager that has the files and login sources embedded. The same is true for the
+copy of Version Manager that you configure to restrict the creation of project databases.
+</P>
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><b>Settings</b></TD>
+		<TD><b>Configuration:</b><!--<control name="VConfigGeneral.CONFIGURATION_CB">-->
+		Select this check box to make the project's configuration file secure. The path and name of the configuration file (if any) associated with the selected project or project database appears in the field. You cannot edit the configuration file associated with the project or project database from this dialog box. <!--</control>--><BR><BR>
+	<b>Access Database:</b><!--<control name="VConfigGeneral.ACCESS_DATABASE_CB">-->
+		Select this check box to make the project's access control database secure. The path and name of the access control database (if any) associated with the selected project or project database appears in the field. You cannot edit the access control database associated with the project or project database from this dialog box. <!--</control>--><BR><BR>
+	<b>Login Sources:</b>
+		<!--<control name="VConfigGeneral.LOGIN_SOURCES_CB">-->
+		Select this check box to make the project's login sources secure. The login sources (if any) associated with the selected project or project database appear in the field. You cannot edit the login sources associated with the project from this dialog box. <!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Create Project Database</b></TD>
+		<TD><b>Require a password for creation of project databases:</b><!--<control name="VConfigGeneral.REQUIREPASSWORD_CB">-->
+		Select this check box to require users to enter a password before they can create a project database. <!--</control>--><BR><BR>
+
+		<b>Password:</b>
+		<!--<control name="VConfigGeneral.PASSWORD_EDIT">-->
+		Specify a password. The password is case-sensitive. The characters you enter are displayed as asterisks (*) in the field. <!--</control>--><BR><BR>
+	<b>Verify Password:</b>
+		<!--<control name="VConfigGeneral.VERIFYPASSWORD_EDIT">-->
+		Reenter the password.<!--</control>--></TD>
+	</TR>
+	</TABLE>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="aboutconfigfiles.html">About Configuration Files</A></TD>
+		<TD></TD>
+	</TR>
+	<TR>
+		<TD></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

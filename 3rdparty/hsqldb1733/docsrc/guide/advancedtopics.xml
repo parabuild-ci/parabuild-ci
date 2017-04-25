@@ -1,0 +1,1209 @@
+<!-- $Id: advancedtopics.xml,v 1.22 2004/11/24 23:06:35 fredt Exp $ -->
+
+<chapter id='advanced-chapter'>
+    <title id='advanced-title'>Advanced Topics</title>
+    <chapterinfo>
+        <authorgroup>
+            <author>
+                <firstname>Fred</firstname><surname>Toussi</surname>
+                <email>&fredaddr;</email>
+                <affiliation>
+                    <orgname>HSQLDB Development Group</orgname>
+                </affiliation>
+            </author>
+        </authorgroup>
+        <edition>$Revision: 1.22 $</edition>
+        <pubdate>$Date: 2004/11/24 23:06:35 $</pubdate>
+        <keywordset>
+            <keyword>Hsqldb</keyword>
+            <keyword>Advanced</keyword>
+        </keywordset>
+        <legalnotice><para>
+            Copyright 2002-2004 Fred Toussi.  Permission is granted to distribute this document without any
+            alteration under the terms of the HSQLDB license.
+            Additional permission is granted to the HSQLDB Development Group
+            to distribute this document with or without alterations under the
+            terms of the HSQLDB license.
+        </para></legalnotice>
+    </chapterinfo>
+   <section>
+       <title>Purpose</title>
+        <para>
+            Many questions repeatedly asked in Forums and mailing lists are
+            answered in this guide.
+            If you want to use HSQLDB with your application, you should read
+            this guide.
+            This document covers system related issues.
+            For issues related to SQL see the
+            <link linkend='sql_issues-chapter' endterm='sql_issues-title'/>
+            chapter.
+        </para>
+    </section>
+    <section>
+        <title>Connections</title>
+        <para>
+            The normal method of accessing an HSQLDB database is via the JDBC
+            Connection interface.
+            An introduction to different methods of providing database services
+            and accessing them can be found in the
+            <link linkend='sql_issues-chapter' endterm='sql_issues-title'/>
+            chapter.
+            Details and examples of how to connect via JDBC are provided in our
+            <ulink url='../src/org/hsqldb/jdbc/jdbcConnection.html'>JavaDoc for
+            <literal>jdbcConnection</literal></ulink>.
+        </para><para>
+            Version 1.7.2 introduces a uniform method of distinguishing between
+            different types of connection, alongside new capabilities to
+            provide access to multiple databases.
+            The common driver identifier is <literal>jdbc:hsqldb:</literal>
+            followed by a protocol identifier (<literal>mem: file: res: hsql:
+            http: hsqls: https:</literal>) then followed by host and port
+            identifiers in the case of servers, then followed by database
+            identifier.
+        </para>
+        <table frame='all' tocentry='1' pgwide='1'>
+            <title>Hsqldb URL Components</title>
+            <tgroup cols='3' align='left'>
+                <colspec colname='c1'/>
+                <colspec colname='c2'/>
+                <colspec colname='c3'/>
+                <thead><row>
+                    <entry>Driver and Protocol</entry>
+                    <entry>Host and Port</entry>
+                    <entry>Database</entry>
+                </row></thead>
+                <tbody valign='top'>
+                <row>
+                    <entry><simplelist type='vert'>
+                        <member><literal>jdbc:hsqldb:mem:</literal></member>
+                    </simplelist></entry>
+                    <entry>not available</entry>
+                    <entry><simplelist type='vert'>
+                        <member><literal>accounts</literal></member>
+                    </simplelist></entry>
+                </row>
+                <row>
+                    <entry namest='c1' nameend='c3'>
+                        <para>
+                        Lowercase, single-word identifier creates the
+                        in-memory database when the first connection is made.
+                        Subsequent use of the same Connection URL connects to
+                        the existing DB.
+                        </para> <para>
+                        The old form for the URL,
+                        <literal>jdbc:hsqldb:.</literal> creates or connects to
+                        the same database as the new form for the URL,
+                        <literal>jdbc:hsqldb:mem:.</literal>
+                        </para>
+                    </entry>
+                </row>
+                <row>
+                    <entry><simplelist type='vert'>
+                        <member><literal>jdbc:hsqldb:file:</literal></member>
+                    </simplelist></entry>
+                    <entry>not available</entry>
+                    <entry><simplelist type='vert'>
+                        <member><filename>mydb</filename></member>
+                        <member><filename>/opt/db/accounts</filename></member>
+                        <member><filename>C:/data/mydb</filename></member>
+                    </simplelist></entry>
+                </row>
+                <row>
+                    <entry namest='c1' nameend='c3'>
+                        <para>
+                        The file path specifies the database file.
+                        In the above examples the first one refers to a set of
+                        mydb.* files in the directory where the
+                        <literal>java</literal>command for running the
+                        application was issued.
+                        The second and third examples refer to absolute paths
+                        on the host machine.
+                        </para>
+                    </entry>
+                </row>
+                <row>
+                    <entry><simplelist type='vert'>
+                        <member><literal>jdbc:hsqldb:res:</literal></member>
+                    </simplelist></entry>
+                    <entry>not available</entry>
+                    <entry><simplelist type='vert'>
+                        <member><filename>/adirectory/dbname</filename></member>
+                    </simplelist></entry>
+                </row>
+                <row>
+                    <entry namest='c1' nameend='c3'>
+                        Database files can be loaded from one of the jars
+                        specified as part of the <literal>Java</literal>
+                        command the same way as resource files are accessed in
+                        Java programs.
+                        The <literal>/adirectory</literal> above stands for a
+                        directory in one of the jars.
+                    </entry>
+                </row>
+                <row>
+                    <entry><simplelist type='vert'>
+                        <member><literal>jdbc:hsqldb:hsql:</literal></member>
+                        <member><literal>jdbc:hsqldb:hsqls:</literal></member>
+                        <member><literal>jdbc:hsqldb:http:</literal></member>
+                        <member><literal>jdbc:hsqldb:https:</literal></member>
+                    </simplelist></entry>
+                    <entry><simplelist type='vert'>
+                        <member><literal>//localhost</literal></member>
+                        <member><literal>//192.0.0.10:9500</literal></member>
+                <member><literal>//dbserver.somedomain.com</literal></member>
+                    </simplelist></entry>
+                    <entry><simplelist type='vert'>
+                        <member><literal>/an_alias</literal></member>
+                        <member><literal>/enrollments</literal></member>
+                        <member><literal>/quickdb</literal></member>
+                    </simplelist></entry>
+                </row>
+                <row>
+                    <entry namest='c1' nameend='c3'>
+                    <para>
+                    The host and port specify the IP address or host name of
+                    the server and an optional port number.
+                    The database to connect to is specified by an alias.
+                    This alias is a lowercase string defined in the
+                    <filename>server.properties</filename> file to refer to an
+                    actual database on the file system of the  server or a
+                    transient, in-memory database on the server.
+                    The following example lines in <filename>server.properties
+                    </filename> or <filename>webserver.properties</filename>
+                    define the database aliases listed above and accessible to
+                    clients to refer to different file and in-memory databases.
+                    </para>
+                    <programlisting>
+    database.0=file:/opt/db/accounts
+    dbname.0=an_alias
+
+    database.1=file:/opt/db/mydb
+    dbname.1=enrollments
+
+    database.2=mem:adatabase
+    dbname.2=quickdb</programlisting>
+                    <para>
+                    The old form for the server URL, e.g.,
+                    <literal>jdbc:hsqldb:hsql//localhost</literal>
+                    connects to the same database as the new form for the URL,
+                    <literal>jdbc:hsqldb:hsql//localhost/</literal> where the
+                    alias is a zero length string.
+                    In the example below, the database files
+                    <literal>lists.*</literal> in the
+                    <literal>/home/dbmaster/</literal> directory are associated
+                    with the empty alias:
+                    </para><programlisting>
+    database.3=/home/dbmaster/lists
+    dbname.3=</programlisting>
+                    </entry>
+                </row>
+                </tbody>
+            </tgroup>
+        </table>
+        <section>
+            <title>Connection properties</title>
+            <para>
+                Each new  JDBC Connection to a database can specify connection
+                properties.
+                The properties <property>user</property> and
+                <property>password</property> are always required.
+                In 1.7.2 the following optional properties can also be used.
+            </para> <para>
+                Connection properties are specified either by establishing the
+                connection via the:
+            </para> <programlisting>
+    DriverManager.getConnection (String url, Properties info);</programlisting>
+            <para>
+                method call, or the property can be appended to the full
+                Connection URL.
+            </para>
+            <table frame='all' tocentry='1' pgwide='1'>
+                <title>Connection Properties</title>
+                <tgroup cols='3' align='left'>
+                    <colspec colname='c1'/>
+                    <colspec colname='c2'/>
+                    <colspec colname='c3'/>
+                    <thead><row>
+                </row></thead>
+                <tbody valign='top'>
+                <row>
+                    <entry><property>get_column_name</property></entry>
+                    <entry><literal>true</literal></entry>
+                    <entry>column name in ResultSet</entry>
+                </row>
+                <row>
+                    <entry namest='c1' nameend='c3'>
+                    <para>
+                    This property is used for compatibility with other JDBC
+					driver implementations. When true (the default),
+                    <literal>ResultSet.getColumnName(int c)</literal>
+                    returns the underlying column name
+                    </para> <para>
+                    When false, the above method returns the same value as
+                    <literal>ResultSet.getColumnLabel(int column)</literal>
+                    Example below:
+                    </para>
+                    <informalexample><programlisting>
+    jdbc:hsqldb:hsql://localhost/enrollments;get_column_name=false
+                    </programlisting></informalexample>
+                    <para>
+                    When a ResultSet is used inside a user-defined stored
+					procedure, the default, true, is always used for this
+					property.
+                    </para>
+                    </entry>
+                </row>
+                <row>
+                    <entry><property>ifexists</property></entry>
+                    <entry><literal>false</literal></entry>
+                    <entry>connect only if database already exists</entry>
+                </row>
+                <row>
+                    <entry namest='c1' nameend='c3'>
+                    <para>
+                    Has an effect only with <literal>mem:</literal> and
+                    <literal>file:</literal> database.
+                    When true, will not create a new database if one does not
+                    already exist for the URL.
+                    </para><para>
+                    When false (the default), a new <literal>mem:</literal> or
+                    <literal>file:</literal> database will be created if it
+                    does not exist.
+                    </para><para>
+                    Setting the property to true is useful when troubleshooting
+                    as no database is created if the URL is malformed.
+                    Example below:
+                    </para>
+                    <informalexample><programlisting>
+    jdbc:hsqldb:file:enrollments;ifexists=true</programlisting>
+                    </informalexample>
+                    </entry>
+                </row>
+                </tbody>
+                </tgroup>
+            </table>
+            <para>
+                In addition, when a connection to an in-process database creates
+                a new database, or opens an existing database (i.e. it is the
+                first connection made to the database by the application), all
+                the user-defined database properties can be specified as URL
+                properties. This is used to specify properties to enforce
+                more strict SQL adherence, or to change cache_scale or similar
+                properties before the database files are created.
+            </para>
+        </section>
+    </section>
+    <section>
+        <title>Properties Files</title>
+        <para>
+            HSQLDB relies on a set of properties files for different settings.
+            Version 1.7.0 streamlines property naming and introduces a number
+            of new properties (in this document, all references to  versions
+            1.7.0 also apply to versions 1.7.1 and 1.7.2 unless stated
+            otherwise).
+            This process will continue with future versions and the properties
+            will be used in a hierarchical manner.
+        </para><para>
+            In all properties files, values are case-sensitive.
+            All values apart from names of files or pages are required in
+            lowercase (e.g. <property>server.silent</property>=<literal>FALSE</literal>
+            will have no effect, but <property>server.silent</property>=<literal>false</literal>
+            will work).
+        </para><para>
+            The properties files and the settings stored in them are as follows:
+        </para>
+        <table frame='all' tocentry='1' pgwide='1'>
+            <title>Hsqldb Server Properties Files</title>
+            <tgroup cols='3' align='left'>
+                <thead><row>
+                    <entry>File Name</entry>
+                    <entry>Location</entry>
+                    <entry>Function</entry>
+                </row></thead>
+                <tbody valign='top'>
+                <row>
+                    <entry><filename>server.properties</filename></entry>
+                    <entry>
+                        the directory where the command to run the
+                        <classname>Server</classname> class is issued
+                    </entry>
+                    <entry>
+                        settings for running HSQLDB as a database server
+                        communicating with the HSQL protocol
+                    </entry>
+                </row>
+                <row>
+                    <entry><filename>webserver.properties</filename></entry>
+                    <entry>
+                        the directory where the command to run the
+                        <classname>WebServer</classname> class is issued
+                    </entry>
+                    <entry>
+                        settings for running HSQLDB as a database server
+                        communicating with the HTTP protocol
+                    </entry>
+                </row>
+                <row>
+                <entry><filename>&lt;dbname&gt;.properties</filename></entry>
+                    <entry>
+                    the directory where all the files for a database are located
+                    </entry>
+                    <entry>settings for each particular database</entry>
+                </row>
+                </tbody>
+            </tgroup>
+        </table>
+        <para>
+            Properties files for running the servers are not created
+            automatically.
+            You should create your own files that contain
+            <property>server.property</property>=<literal>value</literal> pairs for each property.
+        </para> <para>
+            The properties file for each database is generated by the database
+            engine.
+            This file can be edited after closing the database.
+            In 1.7.2, some property values can be changed via SQL commands.
+        </para>
+        <section>
+            <title>Server and Web Server Properties</title>
+            <para>
+                In both <filename>server.properties</filename> and
+                <filename>webserver.properties</filename> files, supported
+                values and their defaults are as follows:
+            </para>
+            <table frame='all' tocentry='1' pgwide='1'>
+                <title>Property File Properties</title>
+                <tgroup cols='3' align='left'>
+                    <thead><row>
+                        <entry>Value</entry>
+                        <entry>Default</entry>
+                        <entry>Description</entry>
+                    </row></thead>
+                    <tbody valign='top'>
+                    <row>
+                        <entry><property>server.database.0</property></entry>
+                        <entry><literal>test</literal></entry>
+                        <entry>
+                            the path and file name of the first database file
+                            to use
+                        </entry>
+                    </row>
+                    <row>
+                        <entry><property>server.dbname.0</property></entry>
+                        <entry><literal>&quot;&quot;</literal></entry>
+                        <entry>lowercase server alias for the first database file</entry>
+                    </row>
+                    <row>
+                        <entry><property>server.urlid.0</property></entry>
+                        <entry><literal>NONE</literal></entry>
+                        <entry>SqlTool urlid used by UNIX init script.
+                                (This property is not used if your are running
+                                Server/Webserver on a platform other than UNIX,
+                                or of you are not using our UNIX init script).
+                        </entry>
+                    </row>
+                    <row>
+                        <entry><property>server.silent</property></entry>
+                        <entry><literal>true</literal></entry>
+                        <entry>
+                            no extensive messages displayed on console
+                        </entry>
+                    </row>
+                    <row>
+                        <entry><property>server.trace</property></entry>
+                        <entry><literal>false</literal></entry>
+                        <entry>JDBC trace messages displayed on console</entry>
+                    </row>
+                    </tbody>
+                </tgroup>
+            </table>
+            <para>
+                In 1.7.2, each server can serve up to 10 different databases
+                simultaneously.
+                The <property>server.database.0</property> property defines the
+                filename / path whereas the <property>server.dbname.0</property>
+                defines the lowercase alias used by clients to connect to that database.
+                The digit 0 is incremented for the second database and so on.
+                Values for the <property>server.database.{0-9}</property>
+                property can use the <literal>mem:</literal>,
+                <literal>file:</literal> or <literal>res:</literal> prefixes and properties as
+                discussed above under CONNECTIONS. For example,
+                <informalexample><programlisting>
+    database.0=mem:temp;sql.enforce_strict_size=true;</programlisting>
+                </informalexample>
+            </para>
+            <para>
+                Values specific to <filename>server.properties</filename> are:
+            </para>
+            <table frame='all' tocentry='1' pgwide='1'>
+                <title>Server Property File Properties</title>
+                <tgroup cols='3' align='left'>
+                    <thead><row>
+                        <entry>Value</entry>
+                        <entry>Default</entry>
+                        <entry>Description</entry>
+                    </row></thead>
+                    <tbody valign='top'>
+                    <row>
+                        <entry><property>server.port</property></entry>
+                        <entry><literal>9001</literal></entry>
+                        <entry>
+                            TCP/IP port used for talking to clients.
+                            All databases are served on the same port.
+                        </entry>
+                    </row>
+                    <row>
+                        <entry><property>server.no_system_exit</property></entry>
+                        <entry><literal>true</literal></entry>
+                        <entry>
+                            no <literal>System.exit()</literal> call when the
+                            database is closed
+                        </entry>
+                    </row>
+                    </tbody>
+                </tgroup>
+            </table>
+            <para>
+              Values specific to <filename>webserver.properties</filename> are:
+            </para>
+            <table frame='all' tocentry='1' pgwide='1'>
+                <title>WebServer Property File Properties</title>
+                <tgroup cols='3' align='left'>
+                    <thead><row>
+                        <entry>Value</entry>
+                        <entry>Default</entry>
+                        <entry>Description</entry>
+                    </row></thead>
+                    <tbody valign='top'>
+                    <row>
+                        <entry><property>server.port</property></entry>
+                        <entry><literal>80</literal></entry>
+                        <entry>TCP/IP port used for talking to clients</entry>
+                    </row>
+                    <row>
+                        <entry><property>server.default_page</property></entry>
+                        <entry><literal>index.html</literal></entry>
+                        <entry>the default web page for server</entry>
+                    </row>
+                    <row>
+                        <entry><property>server.root</property></entry>
+                        <entry><literal>./</literal></entry>
+                        <entry>the location of served pages</entry>
+                    </row>
+                    <row>
+                        <entry><property>.&lt;extension&gt;</property></entry>
+                        <entry><literal>?</literal></entry>
+                        <entry>
+                            multiple entries such as
+                            <literal>.html=text/html</literal> define the mime
+                            types of the static files served by the web server.
+                            See the source for
+                            <filename>WebServer.java</filename> for a list.
+                        </entry>
+                    </row>
+                    </tbody>
+                </tgroup>
+            </table>
+            <para>
+                All the above values can be specified on the command line to
+                start the server by omitting the <literal>server.</literal>
+                prefix.
+            </para>
+        </section>
+        <section>
+            <title>Starting a Server from your application</title>
+            <para>
+                If you want to start the server from within your application,
+                as opposed to the command line or batch files, you should
+                create an instance of Server or Web Server, then assign the
+                properties in the form of a String and start the Server.
+                An example of this can be found in the
+                <classname>org.hsqldb.test.TestBase</classname> source.
+            </para> <note><para>
+                Upgrading: If you have existing custom properties files, change
+                the values to the new naming convention.
+                Note the use of digits at the end of
+                <property>server.database.n</property> and
+                <property>server.dbname.n</property> properties.
+            </para></note>
+        </section>
+        <section>
+            <title>Individual Database Properties</title>
+            <para>
+                Each database has its own <filename>&lt;dbname&gt;.properties
+                </filename> file as part of a small group of files which also
+                includes <filename>&lt;dbname&gt;.script</filename> and
+                <filename>&lt;dbname&gt;.data</filename>.
+                The properties files contain key/value pairs for some important
+                settings.
+            </para> <para>
+                In version 1.7.2 a new SQL command allows some  user-accessible
+                database properties to be modified as follows:
+            </para> <programlisting>
+    SET PROPERTY &quot;property_name&quot; property_value</programlisting>
+            <para>
+                Properties that can be modified via
+                <literal>SET PROPERTY</literal> are indicated in the table
+                below. Other properties are indicated as 
+				<literal>PROPERTIES FILE ONLY</literal> and can be modified only
+				by editing the .properties file after a shutdown and before
+				a restart. 
+
+                The <literal>*.properties</literal> file can be edited
+                after closing the database.
+                Only the user-defined values listed below should ever be
+                modified.
+                Changing any other value will result in unexpected malfunction
+                in database operations.
+                Most of these values have been introduced for the new features
+                since 1.7.0 and are listed below with their default values in
+                different contexts:
+            </para>
+            <table frame='all' tocentry='1' pgwide='1'>
+                <title>Database-specific Property File Properties</title>
+                <tgroup cols='3' align='left'>
+                    <colspec colname='c1'/>
+                    <colspec colname='c2'/>
+                    <colspec colname='c3'/>
+                    <thead><row>
+                        <entry>Value</entry>
+                        <entry>Default</entry>
+                        <entry>Description</entry>
+                    </row></thead>
+                    <tbody valign='top'>
+                    <row>
+                        <entry><property>readonly</property></entry>
+                        <entry><literal>no</literal></entry>
+                        <entry>whole database is read-only</entry>
+                    </row>
+                    <row>
+                        <entry namest='c1' nameend='c3'> <para>
+                            When true, the database cannot be modified in use.
+                            This setting can be changed to
+                            <literal>yes</literal> if the database is to be
+                            opened from a CD.
+                            Prior to changing this setting, the database should
+                            be closed with the
+                            <literal>SHUTDOWN COMPACT</literal> command to
+                            ensure consistency and compactness of the data.
+                            <literal>(PROPERTIES FILE ONLY)</literal>
+                        </para> </entry>
+                    </row>
+                    <row>
+                        <entry><property>hsqldb.files_readonly</property></entry>
+                        <entry><literal>false</literal></entry>
+                        <entry>database files will not be written to</entry>
+                    </row>
+                    <row>
+                        <entry namest='c1' nameend='c3'> <para>
+                            When true, data in MEMORY tables can be modified
+                            and new MEMORY tables can be added.
+                            However, these changes are not saved when the
+                            database is shutdown.
+                            CACHED and TEXT tables are always readonly when
+                            this setting is true.
+                            <literal>(PROPERTIES FILE ONLY)</literal>
+                        </para> </entry>
+                    </row>
+                    <row>
+                        <entry><property>hsqldb.first_identity</property></entry>
+                        <entry><literal>0</literal></entry>
+                        <entry>first identity value for a new table</entry>
+                    </row>
+                    <row>
+                        <entry namest='c1' nameend='c3'> <para>
+                            The first value assigned automatically to the
+                            identity column of new tables.
+                            <literal>(SET PROPERTY)</literal>
+                        </para> </entry>
+                    </row>
+                    <row>
+                        <entry><property>sql.enforce_size</property></entry>
+                        <entry><literal>false</literal></entry>
+                        <entry>trimming and padding string columns</entry>
+                    </row>
+                    <row>
+                        <entry namest='c1' nameend='c3'> <para>
+                            When true, all CHARACTER and VARCHAR values that
+                            are in a row affected by an INSERT INTO or UPDATE
+                            statement are trimmed to the size specified in the
+                            SQL table definition.
+                            Also all char strings that are shorter than the
+                            specified size are padded with spaces.
+                            When false (default), stores the exact string that
+                            is inserted. <literal> (SET PROPERTY) </literal>
+                        </para> </entry>
+                    </row>
+                    <row>
+                        <entry><property>sql.enforce_strict_size</property></entry>
+                        <entry><literal>false</literal></entry>
+                        <entry>
+                            size enforcement and padding string columns
+                        </entry>
+                    </row>
+                    <row>
+                        <entry namest='c1' nameend='c3'> <para>
+                                Conforms to SQL standards.
+                                When true, all CHARACTER and VARCHAR values
+                                that are in a row affected by an INSERT INTO or
+                                UPDATE statement are checked against the size
+                                specified in the SQL table definition.
+                                An exception is thrown if the value is too long.
+                                Also all char strings that are shorter than the
+                                specified size are padded with spaces.
+                                When false (default), stores the exact string
+                                that is inserted.
+                                <literal> (SET PROPERTY)</literal>
+                        </para> </entry>
+                    </row>
+                    <row>
+                        <entry><property>sql.compare_in_locale</property></entry>
+                        <entry><literal>false</literal></entry>
+                        <entry>locale used for sorting</entry>
+                    </row>
+                    <row>
+                        <entry namest='c1' nameend='c3'> <para>
+                            CHARACTER and VARCHAR columns are by default sorted
+                            according to POSIX standards.
+                            Setting the value to true will result in sorting in
+                            the character set of the current JRE locale.
+                            </para><para>
+                            Changing this value for an existing database that
+                            contains cached tables will break the indexing and
+                            result in inconsistent operation.
+                            To avoid this, first change the value in the
+                            properties file, then open the database and issue
+                            the SHUTDOWN COMPACT command to recreate all the
+                            indexes.
+                            </para><para>
+                            If set <literal>true</literal>, this setting
+                            affects all the database in the JVM.
+                            <literal>(PROPERTIES FILE ONLY)</literal>
+                        </para> </entry>
+                    </row>
+                    <row>
+                        <entry><property>hsqldb.cache_scale</property></entry>
+                        <entry><literal>14</literal></entry>
+                        <entry>memory cache exponent</entry>
+                    </row>
+                    <row>
+                        <entry namest='c1' nameend='c3'> <para>
+                            Indicates the maximum number of rows of cached
+                            tables that are held in memory, calculated as
+                            3 *(2**value) (three multiplied by (two to the
+                            power value)).
+                            The default results in up to 3*16384 rows from all
+                            cached tables being held in memory at any time.
+                            </para><para>
+                            The value can range between 8-18. <literal>(SET
+                            PROPERTY)</literal>.
+                            If the value is set via SET PROPERTY then it
+                            becomes effective after the next database SHUTDOWN
+                            or CHECKPOINT.
+                            <literal>(SET PROPERTY)</literal>
+                        </para> </entry>
+                    </row>
+                    <row>
+                    <entry><property>hsqldb.cache_size_scale</property></entry>
+                        <entry><literal>10</literal></entry>
+                        <entry>memory cache exponent</entry>
+                    </row>
+                    <row>
+                        <entry namest='c1' nameend='c3'> <para>
+                            Indicates the average size of each row in the
+                            memory cache used with cached tables, calculated as
+                            2**value (two to the power value).
+                            This result value is multiplied by the maximum
+                            number of rows defined by
+                            <property>hsqldb.cache_scale</property> to form the
+                            maximum number of bytes for all the rows in memory
+                            cache.
+                            The default results in 1024 bytes per row.
+                            This default, combined with the default number of
+                            rows, results in approximately 50MB of the .data
+                            file to be stored in the memory cache.
+                            </para><para>
+                            The value can range between 6-20.
+                            <literal>(SET PROPERTY)</literal>.
+                            If the value is set via SET PROPERTY then it
+                            becomes effective after the next database SHUTDOWN
+                            or CHECKPOINT.
+                            <literal>(SET PROPERTY)</literal>
+                        </para> </entry>
+                    </row>
+                    <row>
+                        <entry><property>hsqldb.log_size</property></entry>
+                        <entry><literal>200</literal></entry>
+                        <entry>size of log when checkpoint is performed</entry>
+                    </row>
+                    <row>
+                        <entry namest='c1' nameend='c3'> <para>
+                            The value is the size in megabytes that the
+                            <literal>.log</literal> file can reach before an
+                            automatic checkpoint occurs. A checkpoint and
+                            rewrites the <literal>.script</literal> file and
+                            clears the <literal>.log</literal> file.
+                            The value can be changed via the <literal>SET
+                            LOGSIZE nnn</literal> SQL command.
+                        </para> </entry>
+                    </row>
+                    <row>
+                        <entry><property>runtime.gc_interval</property></entry>
+                        <entry><literal>0</literal></entry>
+                        <entry>forced garbage collection</entry>
+                    </row>
+                    <row>
+                        <entry namest='c1' nameend='c3'> <para>
+                            This setting forces garbage collection each time a
+                            set number of result set row or cache row objects
+                            are created.
+                            The default, "0" means no garbage collection is
+                            forced by the program.
+                            </para><para>
+                            This should not be set when the database engine is
+                            acting as a server inside an exclusive JVM.
+                            The setting can be useful when the database is used
+                            in-process with the application with some Java
+                            Runtime Environments (JRE's). Some JRE's increase
+                            the size of the memory heap before doing any
+                            automatic garbage collection.
+                            This setting would prevent any unnecessary
+                            enlargement of the heap.
+                            Typical values for this setting would probably be
+                            between 10,000 to 100,000.
+                            <literal>(PROPERTIES FILE ONLY)</literal>
+                        </para> </entry>
+                    </row>
+                    <row>
+                        <entry><property>hsqldb.nio_data_file</property></entry>
+                        <entry><literal>true</literal></entry>
+                        <entry>
+                            use of nio access methods for the .data file
+                        </entry>
+                    </row>
+                    <row>
+                        <entry namest='c1' nameend='c3'> <para>
+                            When HSQLDB is compiled and run in Java 1.4,
+                            setting this property to <literal>false</literal>
+                            will avoid the use of nio access methods, resulting
+                            in reduced speed. If the data file is larger than
+                            512MB when it is first opened, nio access methods
+                            are not used. Also, if the file gets larger than
+                            the amount of available computer memory that needs
+                            to be allocated for nio access, non-nio access
+                            methods are used.
+                            </para><para>
+                            <literal>(SET PROPERTY)</literal>.
+                            If used before defining any CACHED table, it
+                            applies to the current session, otherwise it comes
+                            to effect after a SHUTDOWN and restart or
+                            CHECKPOINT.
+                        </para> </entry>
+                    </row>
+                    <row>
+                        <entry><property>textdb.*</property></entry>
+                        <entry><literal>0</literal></entry>
+                        <entry>default properties for new text tables</entry>
+                    </row>
+                    <row>
+                        <entry namest='c1' nameend='c3'> <para>
+                            Properties that override the database engine
+                            defaults for newly created text tables.
+                            Settings in the text table <literal>SET
+                            &lt;tablename&gt; SOURCE &lt;source string&gt;
+                            </literal>command override both the engine defaults
+                            and the database properties defaults.
+                            Individual <property>textdb.*</property> properties
+                            are listed in the
+                            <link linkend='texttables-chapter'
+                                  endterm='texttables-title'/> chapter.
+                            <literal>(SET PROPERTY)</literal>
+                        </para> </entry>
+                    </row>
+                    </tbody>
+                </tgroup>
+            </table>
+            <para>
+                When connecting to an in-process database creates a new
+                database, or opens an existing database (i.e. it is the first
+                connection made to the database by the application), all the
+                user-defined database properties listed in this section can be
+                specified as URL properties.
+            </para><note><para>
+                Upgrading: From 1.7.0, the location of the database files can
+                no longer be overridden by paths defined in the properties file.
+                All files belonging to a database should reside in the same
+                directory.
+            </para></note>
+        </section>
+    </section>
+
+    <section>
+        <title>JDBC Stream Based Methods</title>
+        <para>
+            The JDBC interface has been significantly improved in 1.7.2.
+            There is almost full support for JDBC2.
+            Under JDK 1.4, there is also some support for JDBC3 methods.
+            ResultSetMetaData methods are now fully supported, as are
+            ParameterMetaData and Savepoint (JDBC3).
+            When upgrading from previous versions, certain issues may arise as
+            several JDBC methods that previously returned incorrect values or
+            were not supported now return correct values.
+            All changes have been documented in the Javadoc for the jdbcXXX
+            classes.
+        </para> <para>
+            Since 1.7.0, the <classname>ResultSet</classname> interface methods,
+            <literal>getAsciiStream()</literal>,
+            <literal>getUnicodeStream()</literal> and
+            <literal>getCharacterStream()</literal> are supported to return
+            byte or char values from CHARACTER columns and its variants.
+            Complementary methods in <classname>PreparedStatement</classname>,
+            <literal>setAsciiStream()</literal>,
+            <literal>setUnicodeStream()</literal> and
+            <literal>setCharacterStream()</literal> are also supported.
+            Unlike most other databases, the <literal>getString()</literal>
+            methods can be used to retrieve very long character strings and is
+            faster than the stream based methods.
+        </para>
+    </section>
+    <section>
+        <title>Managing Database Connections</title>
+        <para>
+            In all running modes (server or in-process) multiple connections to
+            the database engine are supported.
+            In-process (standalone) mode supports connections from the client
+            in the same Java Virtual Machine, while server modes support
+            connections over the network from several different clients.
+        </para> <para>
+            Connection pooling software can be used to connect to the database
+            but it is not generally necessary. With other database engines,
+            connection pools are used for reasons that may not apply to HSQLDB.
+        </para> <itemizedlist>
+            <listitem><para>
+                To allow new queries to be performed while a time-consuming
+                query is being performed in the background.
+                This is not possible with HSQLDB as it blocks while performing
+                the first query and deals with the next query once it has
+                finished it.
+            </para></listitem> <listitem><para>
+                To limit the maximum number of simultaneous connections to the
+                database for performance reasons.
+                With HSQLDB this can be useful only if your application is
+                designed in a way that opens and closes connections for each
+                small task.
+            </para></listitem> <listitem><para>
+                To control transactions in a multi-threaded application.
+                This can be useful with HSQLDB as well.
+                For example, in a web application, a transaction may involve
+                some processing between the queries or user action across web
+                pages.
+                A separate connection should be used for each session so that
+                the work can be committed when completed or rolled back
+                otherwise.
+            </para></listitem>
+        </itemizedlist><para>
+            An application that is not both multi-threaded and transactional,
+            such as an application for recording user login and logout actions,
+            does not need more than one connection.
+            The connection can stay open indefinitely and reopened only when it
+            is dropped due to network problems.
+        </para> <para>
+            When using an in-process database with versions prior to 1.7.2 the
+            application program had to keep at least one connection to the
+            database open, otherwise the database would have been closed and
+            further attempts to create connections could fail.
+            This is not necessary in 1.7.2, which does not automatically close
+            an in-process database that is opened by establishing a connection.
+            An explicit SHTDOWN command, with or without an argument, is
+            required to close the database.
+        </para> <para>
+            When using a server database (and to some extent, an in-process
+            database), care must be taken to avoid creating and dropping JDBC
+            Connections too frequently.
+            Failure to observe this will result in unsuccessful connection
+            attempts when the application is under heavy load.
+        </para>
+    </section>
+
+    <section>
+        <title>Memory and Disk Use</title>
+        <para>
+            Memory used by the program can be thought of as two distinct pools:
+            memory used for table data, and memory used for building result
+            sets and other internal operations.
+            In addition, when transactions are used, memory is utilised for
+            storing the information needed for a rollback.
+        </para> <para>
+            Since version 1.7.1, memory use has been significantly reduced
+            compared to previous versions.
+            The memory used for a MEMORY  table is the sum of memory used by
+            each row. Each MEMORY table row is a Java object that has 2 slots
+            for int or reference variables (10 slots in previous versions).
+            It contains an array of objects for the fields in the row.
+            Each field is an object such as <classname>Integer</classname>,
+            <classname>Long</classname>, <classname>String</classname>, etc.
+            In addition each index on the table adds a node object to the row.
+            Each node object has 6 slots for int or reference variables (12
+            slots in previous versions).
+            As a result, a table with just one column of type INTEGER will have
+            four objects per row, with a total of 10 slots of 4 bytes each -
+            currently taking up 80 bytes per row.
+            Beyond this, each extra column in the table adds at least a few
+            bytes to the size of each row.
+        </para> <para>
+            The memory used for a result set row has fewer overheads (fewer
+            slots and no index nodes) but still uses a lot of memory.
+            All the rows in the result set are built in memory, so very large
+            result sets may not be possible.
+            In server mode databases, the result set memory is released from
+            the server once the database server has returned the result set.
+            In-process databases release the memory when the application
+            program releases the <classname>java.sql.ResultSet</classname>
+            object.
+            Server modes require additional memory for returning result sets,
+            as they convert the full result set into an array of bytes which is
+            then transmitted to the client.
+        </para> <para>
+            When UPDATE and DELETE queries are performed on CACHED tables, the
+            full set of rows that are affected, including those affected due to
+            ON UPDATE actions, is held in memory for the duration of the
+            operation.
+            This means it may not possible to perform deletes or updates
+            involving very large numbers of rows of CACHED tables.
+            Such operations should be performed in smaller sets.
+        </para> <para>
+            When transactions support is enabled with SET AUTOCOMMIT OFF, lists
+            of all insert, delete or update operations are stored in memory so
+            that they can be undone when ROLLBACK is issued.
+            Transactions that span hundreds of modification to data will take
+            up a lot of memory until the next COMMIT or ROLLBACK clears the
+            list.
+        </para> <para>
+            Most JVM implementations allocate up to a maximum amount of memory
+            (usually 64 MB by default).
+            This amount is generally not adequate when large memory tables are
+            used, or when the average size of rows in cached tables is larger
+            than a few hundred bytes.
+            The maximum amount of allocated memory can be set on the java ...
+            command line that is used for running HSQLDB.
+            For example, with Sun JVM version 1.3.0 the parameter -Xmx256m
+            increases the amount to 256 MB.
+        </para> <para>
+            1.7.2 uses a fast cache for immutable objects such as Integer or
+            String that are stored in the database.
+            In most circumstances, this reduces the memory footprint still
+            further as fewer copies of the most frequently-used objects are
+            kept in memory.
+        </para>
+        <section>
+            <title>Cache Memory Allocation</title>
+            <para>
+                With CACHED tables, the data is stored on disk and only up to a
+                maximum number of rows are held in memory at any time.
+                The default is up to 3*16384 rows.
+                The <property>hsqldb.cache_scale</property> database property can
+                be set to alter this amount.
+                As any random subset of the rows in any of the CACHED tables
+                can be held in the cache, the amount of memory needed by cached
+                rows can reach the sum of the rows containing the largest field
+                data.
+                For example if a table with 100,000 rows contains 40,000 rows
+                with 1,000 bytes of data in each row and 60,000 rows with 100
+                bytes in each, the cache can grow to contain nearly 50,000
+                rows, including all the 40,000 larger rows.
+            </para> <para>
+                In 1.7.2, an additional property,
+                <property>hsqldb.cache_size_scale</property> is introduced.
+                This property, combined with the
+                <property>hsqldb.cache_scale</property> property, puts a limit in
+                bytes on the total size of rows that are cached.
+                When the default values is used for both properties, the limit
+                on the total size of rows is approximately 50MB.
+                (This is the size of binary images of the rows and indexes. It
+                translates to more actual memory, typically 2-4 times, used for
+                the cache because the data is represented by Java objects.)
+            </para> <para>
+                If memory is limited, the <property>hsqldb.cache_scale</property>
+                or <property>hsqldb.cache_size_scale</property> database
+                properties can be reduced.
+                In the example above, if the
+                <property>hsqldb.cache_size_scale</property> is reduced from 10
+                to 8, then the total binary size limit is reduced from 50MB to 12.5 MB.
+                This will allow the number of cached rows to reach 50,000 small
+                rows, but only 12,500 of the larger rows.
+            </para>
+        </section>
+    </section>
+
+    <section>
+        <title>Upgrading and Managing Databases</title>
+        <para>
+            Any database not produced with the release version of HSQLDB 1.7.2
+            must be upgraded to this version.
+            This includes databases created with the ALPHA versions of 1.7.2.
+            The instructions under the
+            <link linkend='upgrade_via_script-section'
+                  endterm='upgrade_via_script-title'/> section
+            should be followed in all cases.
+        </para>
+        <para>
+            Once a database is upgraded to 1.7.2, it can no longer be used with
+            Hypersonic or HSQLDB 1.6.x, 1.7.0 or 1.7.1.
+        </para><para>
+            There may be some potential problems in the upgrade which should
+            be resolved by editing the .script file:
+        </para><itemizedlist>
+            <listitem><para>
+                Version 1.7.2 does not accept duplicate names for indexes.
+            </para></listitem> <listitem><para>
+                Version 1.7.2 does not accept duplicate names for table columns.
+            </para></listitem> <listitem><para>
+                Version 1.7.2 does not create the same type of index for
+                foreign keys as previous versions.
+            </para></listitem>
+        </itemizedlist>
+        <section id='upgrade_via_script-section'>
+            <title id='upgrade_via_script-title'>
+                Upgrading Using the SCRIPT Command</title>
+            <para>
+                In all versions of HSQLDB and Hypersonic 1.43, the
+                <literal>SCRIPT 'filename'</literal> command (used as an SQL
+                query) allows you to save a full record of your database,
+                including database object definitions and data, to a file of
+                your choice.
+                You can export a script file using the old
+                version of the database engine and open the script as a
+                database with 1.7.2.
+            </para>
+            <procedure>
+                <title>Upgrade Using SCRIPT procedure</title>
+                <step><para>
+                    Open the original database in the old version of
+                    DatabaseManager
+                </para></step> <step><para>
+                    Issue the SCRIPT command, for example
+                    <literal>SCRIPT 'newversion.script'</literal> to create a
+                    script file containing a copy of the database.
+                </para></step> <step><para>
+                    You can now edit the <filename>newversion.script</filename>
+                    file to change any table and index definition so long as it
+                    is consistent with the data.
+                    Use the guidelines in the next section (Manual Changes to
+                    the .script File).
+                    Use a programming editor that is capable of handling very
+                    large files and does not wrap long lines of text.
+                </para></step> <step><para>
+                    Use the 1.7.2 version of DatabaseManager to create a new
+                    database, in this example <literal>'newversion'</literal>
+                    in a different directory.
+                </para></step> <step><para>
+                    SHUTDOWN this database.
+                </para></step> <step><para>
+                    Copy  the <filename>newversion.script</filename> file from
+                    step 2 over the file of the same name for the new database
+                    created in 4.
+                </para></step> <step><para>
+                    Try to open the new database using DatabaseManager.
+                </para></step> <step><para>
+                    If there is any inconsistency in the data, the script line
+                    number is reported on the console and the opening process
+                    is aborted.
+                    Edit and correct any problems in the
+                    <filename>newversion.script</filename> before attempting to
+                    open again.
+                </para></step>
+            </procedure>
+        </section>
+        <section>
+            <title>Manual Changes to the .script File</title>
+            <para>
+                In 1.7.2 several ALTER TABLE commands are available to change
+                the data structures and their names.
+                However, if an old database cannot be opened due to data
+                inconsistencies, or when there is no ALTER TABLE command for
+                the particular change, manual editing of the SCRIPT file can
+                sometimes be used.
+            </para> <para>
+                Index and row data for  CACHED tables is stored in the *.data
+                file.
+                Because of this, in 1.7.2, a new command, SHUTDOWN SCRIPT, has
+                been introduced to save all the CACHED table data in the
+                .script file and delete the .data and *.backup files.
+                After issuing this command, you can make changes to the
+                *.script file as listed below.
+                This procedure can also be used for adding and removing indexes
+                or constraints to CACHED tables when the size of the *.data
+                file is over 1GB and the normal SQL commands do not work due to
+                the *.data file growing beyond 2GB.
+            </para> <para>
+                The following changes can be applied so long as they do not
+                affect the integrity of existing data.
+            </para> <itemizedlist>
+                <listitem><para>
+                    Names of tables, columns and indexes can be changed.
+                </para></listitem> <listitem><para>
+                    <literal>CREATE UNIQUE INDEX ...</literal> to
+                    <literal>CREATE INDEX ...</literal> and vice versa
+                </para><para>
+                    A unique index can always be converted into a normal index.
+                    A non-unique index can only be converted into a unique
+                    index if the table data for the column(s) is unique in each
+                    row.
+                </para></listitem> <listitem><para>
+                    <literal>NOT NULL</literal>
+                </para><para>
+                    A not-null constraint can always be removed.
+                    It can only be added if the table data for the column has
+                    no null values.
+                </para></listitem> <listitem><para>
+                    <literal>PRIMARY KEY</literal>
+                </para><para>
+                    A primary key constraint can be removed or added.
+                    It cannot be removed if there is a foreign key referencing
+                    the column(s).
+                </para></listitem> <listitem><para>
+                    <literal>COLUMN TYPES</literal>
+                </para><para>
+                    Some changes to column types are possible.
+                    For example an INTEGER column can be changed to BIGINT, or
+                    DATE, TIME and TIMESTAMP columns can be changed to VARCHAR.
+                </para></listitem>
+            </itemizedlist>
+            <para>
+                Any other changes to data structures should be made only
+                through the supported <literal>ALTER</literal> commands.
+            </para> <para>
+                After completing the changes and saving the modified *.script
+                file, you can open the database as normal.
+            </para>
+        </section>
+        <section>
+            <title>Backing Up Databases</title>
+            <para>
+                The data for each database consists of up to 5 files in the
+                same directory.
+                The endings are *.properties, *.script, *.data, *.backup and
+                *.log (a file with the *.lck ending is used for controlling
+                access to the database and should not be backed up).
+                These should be backed up together.
+                The files can be backed up while the engine is running but care
+                should be taken that a CHECKPOINT or SHUTDOWN operation does
+                not take place during the backup.
+                It is more efficient to perform the backup immediately after a
+                CHECKPOINT.
+                The *.data file can be excluded from the backup. In this case,
+				when restoring,	a dummy *.data file is needed which can be an
+				empty, 0 length	file. The engine will expand the *.backup
+                file to replace this dummy file if the backup is
+                restored. If the *.data file is not backed up, the *.properties
+				file may have to be modified to	ensure it contain modified=yes
+				instead of modified=no prior to restoration.
+                If a backup immediately follows a checkpoint, then the *.log
+                file can also be excluded, reducing the significant files to
+                *.properties, *.script and *.backup.
+                Normal backup methods, such as archiving the files in a
+                compressed bundle can be used.
+            </para>
+        </section>
+    </section>
+</chapter>

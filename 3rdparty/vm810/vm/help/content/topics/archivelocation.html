@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Archive Locations</TITLE>
+<!--<archivelocation.html>-->
+<!--<index parent="archives" label="location" anchor="archivelocation">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="archivelocation"></A>Archive Locations</H1>
+<P>The archive location is where the new archives for a project's workfiles are located. Typically, this location is on a networked file system, a location to which all authorized users have access. By default, the archive location is a directory beneath the project database location, but you can specify a different archive location when you create a project database.</p>
+<P>
+<b>For UNIX users:</b> Version Manager files are installed in setuid mode to implement an additional level of security for your archives. In setuid, your users will log in as themselves, but Version Manager will create public archives as the user who owns the executables. We recommend that you create a user named <b>pvcs</b> for this purpose. This will be the only user with access to read and write to your archives.
+</P>
+<P>
+When running in setuid mode, all files will be created as the user who owns the executables, except for workfiles, temporary files, pvcspriv project domain, and $HOME|.islvrc. Access control privileges can be controlled by the Version Manager <a href="aboutacdb.html">access control database</a>. Individual users who are not logged in as the owner of the executables will not have the ability to modify, add, or delete the files or directories unless they are using Version Manager commands.
+</P>
+<P>
+If you do not run in setuid mode, archives can be moved, renamed, corrupted, or deleted with basic UNIX commands by anyone with permissions to your archives directories.
+</P>
+<P>
+<b>Note:</b> You cannot switch between setuid and nonsetuid modes. Also, you may not be able to use setuid if you are running within a <a href="setuid_crossplatform.html">cross-platform</a> environment.
+</P>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="setuid_crossplatform.html">Using Setuid in a Cross-Platform Environment</A></TD>
+		<TD></TD>
+	</TR>
+	
+</TABLE>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

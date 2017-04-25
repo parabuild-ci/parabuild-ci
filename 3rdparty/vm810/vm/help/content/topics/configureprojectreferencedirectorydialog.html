@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Configure Project Dialog Box/Reference Directory</TITLE>
+<!--<configureprojectreferencedirectorydialog.html>-->
+<!--<index parent="configuring" label="Configure Project/Reference Directory dialog box" anchor="configureprojectreferencedirectorydialog">-->
+<!--<index parent="reference_directories" label="Configure Project/Reference Directory dialog box" anchor="configureprojectreferencedirectorydialog">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiConfigureProjectDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="configureprojectreferencedirectorydialog"></A>Configure Project/Reference Directory</H1>
+<P>Use the Configure Project dialog box (Admin | Configure Project | General Tab | Workfiles | Reference Directory) to set the following options:</P>
+<UL>
+	<LI>The location of the <a href="refdir.html">reference directory</a>.
+	<LI>Whether to keep a reference directory for each archive directory.
+	<LI>Whether to keep a reference directory for trunk revisions only.
+	<LI>Whether or not Version Manager write-protects the files in the reference directory.
+</UL>
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+<TD COLSPAN=2><CENTER><B>Workfiles | Reference Directory</B></CENTER></TD>
+</TR>
+<TR><TD><b>Reference Directory</b></TD>
+		<TD><!--<control name="ConfigureProjectGeneral.REFERENCE_DIR_EDIT">-->
+		Enter the location of the reference Directory. You can enter a directory name and make it parallel to the archive directory structure by selecting the <b>Keep a reference directory for each archive directory</b> check box.
+		<!--</control>--></TD>
+	</TR>
+	<TR><TD><b>Keep a reference directory for each archive directory</b></TD>
+		<TD><!--<control name="ConfigureProjectGeneral.REF_DIR_PER_ARCHIVE_DIR_CB">-->
+		Select this check box to make the directory that you entered in the <b>Reference Directory</b> field parallel to the archive directory structure.
+		<!--</control>--></TD>
+	</TR>
+	<TR><TD><b>Reference directory for trunk revisions only</b></TD>
+		<TD><!--<control name="ConfigureProjectGeneral.REF_DIR_TRUNK_ONLY_CB">-->
+		Select this check box to maintain copies of tip revisions from the trunk only. Otherwise, Version Manager will maintain copies of tip revisions from both the trunk and any branches.
+		<!--</control>--></TD>
+	</TR>
+	<TR><TD><b>Make reference files read only</b></TD>
+		<TD><!--<control name="ConfigureProjectGeneral.REF_DIR_WRITE_PROTECT_CB">-->
+		Select this check box to write-protect the files in the reference directory.
+		<!--</control>--></TD>
+	</TR>
+</TABLE>
+<h2>See Also</h2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="setrefdiroptions.html">Setting Reference Directory Options</A></TD>
+		<TD><A HREF="refdiroptions.html">Reference Directory Options</A></TD>
+	</tr>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>
+

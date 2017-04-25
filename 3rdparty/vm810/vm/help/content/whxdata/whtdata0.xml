@@ -1,0 +1,285 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<tocdata>
+<book name="Introducing Version Manager" >
+  <item name="About Version Manager" url="topics/introducingvm.html" />
+  <item name="Using Help" url="topics/usinghelp.html" />
+  <item name="Accessing the Online Manuals" url="topics/accessing_the_online_manuals.htm" />
+  <item name="Using Version Manager with Previous Releases" url="topics/usingwithprevrel.html" />
+</book>
+<book name="Getting Started" >
+  <book name="Version Manager Concepts" >
+    <item name="About Project Databases" url="topics/aboutprjdb.html" />
+    <item name="About Version Manager Projects" url="topics/aboutprojects.html" />
+    <item name="About Workfiles" url="topics/aboutworkfiles.html" />
+    <item name="About Versioned Files" url="topics/aboutversionedfiles.html" />
+    <item name="About Archives" url="topics/aboutarchives.html" />
+    <item name="About Revisions" url="topics/aboutrevisions.html" />
+    <item name="About Workspaces" url="topics/aboutworkspaces.html" />
+    <item name="Glossary" url="topics/gloss.html" />
+  </book>
+  <book name="Overview of the Version Manager Interface" >
+    <item name="Using Shortcut and Mnemonic Keys" url="topics/accelerator.html" />
+    <item name="Using Context Menus" url="topics/usingscontextmenus.html" />
+    <book name="Main Window Components" >
+      <item name="About the Tool Bar" url="topics/aboutthetoolbar.html" />
+      <item name="About the Status Bar" url="topics/aboutthestatusbar.html" />
+      <item name="Working in the Project Pane" url="topics/workinginprojectpane.html" />
+      <item name="Working in the Versioned File Pane" url="topics/workinginfilepane.html" />
+      <item name="Working in the Revision Pane" url="topics/displayingrevisionpane.html" />
+    </book>
+    <book name="Working with Items in the Main Window" >
+      <item name="Filtering" url="topics/filtering.html" />
+      <item name="Sorting" url="topics/sorting.html" />
+      <item name="Dragging and Dropping" url="topics/dragdrop.html" />
+      <item name="Renaming Items" url="topics/renamingitems.html" />
+      <item name="Reviewing Properties" url="topics/reviewingproperties.html" />
+      <item name="Selecting Multiple Projects and Folders" url="topics/multiselect.html" />
+    </book>
+  </book>
+  <book name="Getting Started for Admininstrators" >
+    <item name="About the Version Manager File Server" url="topics/about_file_server.html" />
+    <item name="Configuring Clients for Use with File Servers" url="topics/configuring_clients_for_file_server.html" />
+    <item name="Planning a Project Database" url="topics/planproject.html" />
+    <item name="Setting Up a Project Database" url="topics/setupprojects.html" />
+    <item name="Converting Other Repositories to Version Manager" url="topics/converting_other_repositories_to_version_manager.html" />
+    <book name="Adding Custom Tools" >
+      <item name="Overview" url="topics/toolbaroverview.html" />
+      <item name="Adding a Tool Bar Icon and Menu Item" url="topics/addtoolbaricon.html" />
+      <item name="Moving the Tools Configuration File" url="topics/movetoolsconfigfile.html" />
+    </book>
+  </book>
+  <book name="Getting Started for Users" >
+    <item name="User Workflow" url="topics/userworkflow.html" />
+    <book name="Setting Up Your User Environment" >
+      <item name="Setting Dialog Display Options" url="topics/setdialogdisplay.html" />
+      <item name="Enabling Application Logs" url="topics/enablingapplication.html" />
+      <item name="Including Subprojects in Project Operations" url="topics/includesubprojects.html" />
+      <item name="Defining Check In/Check Out Options" url="topics/definecheckinout.html" />
+      <item name="Setting Your Default Editor" url="topics/seteditor.html" />
+      <item name="Modifying Windows File Associations" url="topics/winassociations.html" />
+      <item name="Setting Your Workspace" url="topics/setworkspace.html" />
+      <item name="Changing Your Password" url="topics/changepassword.html" />
+      <item name="Setting Report Options" url="topics/setreportoptions.html" />
+    </book>
+    <book name="Opening/Closing Project Databases" >
+      <item name="Opening Project Databases" url="topics/openingprojectdb.html" />
+      <item name="Closing Project Databases" url="topics/closingprojectdb.html" />
+      <item name="Switching User IDs" url="topics/switchingusers.html" />
+      <item name="About Logging into Project Databases" url="topics/aboutlogging.html" />
+      <item name="Logging into Project Databases" url="topics/logging.html" />
+    </book>
+  </book>
+  <book name="Working with the Sample Project Database" >
+    <item name="About the Sample Project Database" url="topics/aboutsampledatabase.html" />
+    <item name="Opening the Sample Project Database" url="topics/opensample.html" />
+  </book>
+</book>
+<book name="Using Version Manager" >
+  <book name="Working with Project Databases/Projects" >
+    <book name="Project Databases" >
+      <item name="Creating a Project Database" url="topics/createprjdb.html" />
+      <item name="Reviewing Project Database Properties" url="topics/projectdialog.html" />
+      <item name="Changing Project Database Properties" url="topics/changeprjdbprops.html" />
+      <item name="Copying Project Databases" url="topics/copyprjdb.html" />
+      <item name="Renaming Project Databases" url="topics/renameprojdb.html" />
+    </book>
+    <book name="Projects" >
+      <item name="Creating Projects" url="topics/createproject.html" />
+      <item name="About Copying Projects" url="topics/aboutcopyproject.html" />
+      <item name="About Adding Files to Projects" url="topics/aboutaddfiles.html" />
+      <item name="About Adding Working Directories to Projects" url="topics/aboutadddirs.html" />
+      <item name="Adding Workfiles" url="topics/addfiles.html" />
+      <item name="Copying Projects" url="topics/copyproject.html" />
+      <item name="Moving Projects" url="topics/moveproject.html" />
+      <item name="Renaming Projects" url="topics/renameproject.html" />
+      <item name="Deleting Projects" url="topics/deleteproject.html" />
+      <item name="Reviewing Project Properties" url="topics/projectdialog.html" />
+    </book>
+    <book name="Configuring Project Databases/Projects" >
+      <item name="Overview" url="topics/configureoverview.html" />
+      <item name="Embedding a Master Configuration File" url="topics/embedmasterconfigfile.html" />
+      <item name="Setting Configuration Options" url="topics/setconfigoptions.html" />
+      <item name="Setting Archive Creation Options" url="topics/setarchivecreationoptions.html" />
+      <item name="Setting Branching Options" url="topics/setautobranch.html" />
+      <item name="Setting Locking Options" url="topics/setlockingoptions.html" />
+      <item name="Defining a Promotion Model" url="topics/definingpromomodel.html" />
+      <item name="Specifying an Access Control Database for your Project Database or Project" url="topics/specifyacdblocation.html" />
+      <item name="Setting Journal File Options" url="topics/setjournalfileoptions.html" />
+      <item name="Setting Login Sources" url="topics/setloginsources.html" />
+      <item name="Single Sign-On" url="topics/single_sign-on.html" />
+      <item name="Specifying an LDAP Server" url="topics/specifying_ldap_server.html" />
+      <item name="Setting LDAP Configuration Options" url="topics/settingldapauthenticationoptions.html" />
+      <item name="Setting Workfile Attributes Options" url="topics/setworkfileattroptions.html" />
+      <item name="Setting Keyword Expansion Options" url="topics/setkeywordexpansionoptions.html" />
+      <item name="Setting Reference Directory Options" url="topics/setrefdiroptions.html" />
+      <item name="Setting Archive Search Path Options" url="topics/setarchivesearchpathoptions.html" />
+      <item name="Setting Command-Line Options" url="topics/setcommandlineoptions.html" />
+      <item name="Setting Semaphore Options" url="topics/setsemaphoreoptions.html" />
+      <item name="Setting Temporary File Options" url="topics/settempfileoptions.html" />
+      <item name="Setting File Type Options" url="topics/setfiletypeoptions.html" />
+      <item name="Setting Up Event Triggers" url="topics/settinguptriggers.html" />
+      <item name="Allowing and Disallowing Options" url="topics/setdisallowoptions.html" />
+    </book>
+  </book>
+  <book name="Working with Workspaces" >
+    <item name="Creating Workspaces" url="topics/createworkspaces.html" />
+    <item name="Renaming Workspaces" url="topics/renameworkspace.html" />
+    <item name="Deleting Workspace" url="topics/deleteworkspace.html" />
+  </book>
+  <book name="Checking In/Checking Out" >
+    <item name="Setting Workfile Locations" url="topics/settingworkfilelocation.html" />
+    <item name="Getting Revisions/Viewing Files" url="topics/gettingarevision.html" />
+    <item name="Checking Out / Editing Files" url="topics/checkingout.html" />
+    <item name="Checking In" url="topics/checkingin.html" />
+  </book>
+  <book name="Branching and Merging Files" >
+    <book name="Branching" >
+      <item name="Overview" url="topics/aboutbranching.html" />
+      <item name="Setting Up Automatic Branching" url="topics/setautobranch.html" />
+      <item name="Setting Up Multiple Locks for Branching" url="topics/multilockbranchsetup.html" />
+      <item name="Branching Files" url="topics/branchfile.html" />
+      <item name="Branching Using Multiple Locks" url="topics/multilockbranch.html" />
+    </book>
+    <book name="Merging" >
+      <item name="About the Merge Tool" url="topics/aboutmergetool.html" />
+      <item name="Merging Files" url="topics/mergefiles.html" />
+      <item name="Merging Files Automatically" url="topics/aboutautomerge.html" />
+    </book>
+  </book>
+  <book name="Working with Versioned Files" >
+    <item name="Copying Versioned Files" url="topics/copyversionedfile.html" />
+    <item name="Moving Versioned Files" url="topics/moveversionedfile.html" />
+    <item name="Deleting Versioned Files" url="topics/deleteversionedfile.html" />
+    <item name="Restoring Versioned Files" url="topics/restoringversionedfiles.html" />
+    <item name="Reviewing Versioned File Properties" url="topics/versioneditemdialog.html" />
+  </book>
+  <book name="Working with Revisions" >
+    <item name="Adding/Modifying Change Descriptions" url="topics/modifyingchangedescriptions.html" />
+    <item name="Defining the Default Revision" url="topics/defaultrevision.html" />
+    <item name="Locking Revisions" url="topics/locking.html" />
+    <item name="Unlocking Revisions" url="topics/unlocking.html" />
+    <item name="Reviewing Revision Properties" url="topics/revisiondetailsdialog.html" />
+    <item name="Deleting Revisions" url="topics/deletingrevisions.html" />
+  </book>
+  <book name="Working with Archives" >
+    <item name="Changing Attributes of Existing Archives" url="topics/changeattributes.html" />
+    <item name="Importing Archives" url="topics/importarchives.html" />
+    <item name="Moving Archives" url="topics/movearchives.html" />
+    <item name="About Cleaning Up Unwanted Archive Files" url="topics/cleaninguparchives.html" />
+  </book>
+  <book name="Using Version Labels" >
+    <item name="About Version Labels" url="topics/aboutversionlabels.html" />
+    <item name="Assigning Version Labels" url="topics/assigningaversionlabel.html" />
+    <item name="Renaming Version Labels" url="topics/renamingaversionlabel.html" />
+    <item name="Moving Version Labels" url="topics/moveversionlabel.html" />
+    <item name="Removing Version Labels" url="topics/removingaversionlabel.html" />
+  </book>
+  <book name="Using Promotion Models" >
+    <item name="About Promotion Models" url="topics/aboutprommodels.html" />
+    <item name="Defining a Promotion Model" url="topics/definingpromomodel.html" />
+    <item name="Promotion and Lifecycle Management" url="topics/promotionlifecyclemgt.html" />
+    <item name="Promotion and Parallel Development" url="topics/prom_pardev.html" />
+    <item name="Restricting a User's Ability to Promote" url="topics/promomodelsecurity.html" />
+    <item name="Restricting Access Rights by Promotion Group" url="topics/restrictaccessbypromogroup.html" />
+    <item name="Assigning Promotion Groups" url="topics/assignpromotiongroup.html" />
+    <item name="Promoting Files to the Next Group" url="topics/promotetonext.html" />
+    <item name="Changing Promotion Groups" url="topics/changepromotiongroup.html" />
+    <item name="Removing Promotion Groups" url="topics/removepromotiongroup.html" />
+  </book>
+  <book name="Generating Reports" >
+    <item name="About Reports" url="topics/aboutreports.html" />
+    <item name="Setting Report Options" url="topics/setreportoptions.html" />
+    <item name="Customizing the Format of HTML Reports" url="topics/customizingreportformat.html" />
+    <item name="Generating History Reports" url="topics/generatehistoryreport.html" />
+    <item name="Generating Journal Reports" url="topics/generatejournalreport.html" />
+    <item name="Viewing Changes to Projects (change.log)" url="topics/viewingchangelog.html" />
+    <item name="Generating Security Reports" url="topics/generatesecurityreport.html" />
+    <item name="Comparing Files" url="topics/generatedifferencereport.html" />
+    <item name="Interpreting Difference Results" url="topics/readingdifreport.html" />
+  </book>
+  <book name="Using Security" >
+    <item name="Overview" url="topics/usingsecurity.html" />
+    <item name="Planning Security" url="topics/plansecurity.html" />
+    <item name="Embedding an Access Control Database" url="topics/embedacdb.html" />
+    <item name="Restricting the Creation of Project Databases" url="topics/restrictpdb.html" />
+    <item name="Privilege Definitions" url="topics/privilegetables.html" />
+    <item name="Generating Security Reports" url="topics/generatesecurityreport.html" />
+    <book name="Setting Up Security" >
+      <item name="Overview" url="topics/setupsecurity.html" />
+      <item name="Associating Configuration Files with Projects" url="topics/assocconfigfile.html" />
+      <item name="Specifying an Access Control Database for your Project Database or Project" url="topics/specifyacdblocation.html" />
+      <item name="Defining Custom Privilege Sets" url="topics/definecustomprivsets.html" />
+      <item name="Defining Users" url="topics/defineusers.html" />
+      <item name="Defining Access List Groups" url="topics/defineaccesslistgroup.html" />
+      <item name="Defining Access Lists" url="topics/defineaccesslist.html" />
+      <item name="Enabling Security" url="topics/enablesecurity.html" />
+    </book>
+    <book name="Maintaining Security" >
+      <item name="Overview" url="topics/maintainsecurity.html" />
+      <item name="Removing Users from an Access Control Database" url="topics/removeusersacdb.html" />
+      <item name="Changing a User's ID" url="topics/changeuserid.html" />
+      <item name="Modifying User Privileges" url="topics/modifyuserprivileges.html" />
+      <item name="Modifying Access List Group Privileges" url="topics/modifyacslstgrpprivs.html" />
+      <item name="Modifying Access List Group Members" url="topics/modifyacslstgrpmemb.html" />
+      <item name="Removing Access List Groups from an Access Control Database" url="topics/removeacslstgrpsfromacdb.html" />
+      <item name="Modifying Access Lists" url="topics/modifyaccesslist.html" />
+      <item name="Disabling Security" url="topics/disablingsecurity.html" />
+      <item name="Changing the Access Control Database Associated with a Project Database" url="topics/changeacdbassocpdb.html" />
+      <item name="Removing the Access Control Database Associated with a Project Database or Project" url="topics/removeacdbassocpdb.html" />
+    </book>
+  </book>
+  <book name="Using Event Triggers" >
+    <item name="Overview" url="topics/abouttriggers.html" />
+    <item name="Setting Up Event Triggers" url="topics/settinguptriggers.html" />
+    <item name="Passing Information to Event Triggers" url="topics/passingeventinfo.html" />
+  </book>
+  <book name="Working with 5.3/6.0 Project Roots/Folders" >
+    <item name="About 5.3/6.0 Project Roots" url="topics/about5_3projroot.html" />
+    <item name="Upgrading 5.3/6.0 Project Roots" url="topics/copyvm5_3projroot.html" />
+    <item name="Opening 5.3/6.0 Project Roots" url="topics/openvm5_3proj.html" />
+    <item name="Upgrading 5.3/6.0 Projects" url="topics/about_copyvm5_3proj.html" />
+    <item name="Updating 5.3/6.0 Project Folders" url="topics/updateprojectfolder.html" />
+    <item name="Creating 5.3/6.0 Folders" url="topics/createfolder.html" />
+    <item name="Copying 5.3/6.0 Folders to Project Databases" url="topics/copyfolder.html" />
+    <item name="Copying 5.3/6.0 Folders to Other 5.3/6.0 Project Roots" url="topics/copyfolder53.html" />
+    <item name="Moving 5.3/6.0 Folders" url="topics/movefolder.html" />
+    <item name="Deleting 5.3/6.0 Folders" url="topics/deletefolder.html" />
+    <item name="Reviewing 5.3/6.0 Folder Properties" url="topics/reviewingfolderprops.html" />
+  </book>
+  <book name="Serena ChangeMan Builder for Professional" >
+    <item name="Source Selection Dialog Box" url="topics/mbpro_sourceselectiondialog.html" />
+    <item name="Build Job Selection Dialog Box" url="topics/mbpro_jobselectiondialog.html" />
+    <item name="Target Selection Dialog Box" url="topics/mbpro_targetselectiondialog.html" />
+    <item name="Build Parameters Dialog Box" url="topics/mbpro_parametersdialog.html" />
+    <item name="Submission Dialog Box" url="topics/mbpro_submissiondialog.html" />
+    <book name="Serena ChangeMan Builder Error Messages" >
+      <item name="Failed to Create Log File" url="topics/mbpro_error_failed_to_create_logs.html" />
+      <item name="No Target Files Found" url="topics/mbpro_error_no_target_files.html" />
+      <item name="PDB Path Mismatch" url="topics/mbpro_error_pdb_path_mismatch.html" />
+      <item name="Project Name Mismatch" url="topics/mbpro_error_project_name_mismatch.html" />
+      <item name="Project Not Found" url="topics/mbpro_error_project_not_found.html" />
+      <item name="Unable to Parse Target File" url="topics/mbpro_error_unable_to_parse_target_file.html" />
+    </book>
+  </book>
+  <book name="Serena ChangeMan Mover" >
+    <item name="About Serena ChangeMan Mover" url="topics/about_merant_deploy.html" />
+    <item name="Connecting to ChangeMan Mover" url="topics/connecting_to_deploy.html" />
+  </book>
+  <book name="Issue Management" >
+    <item name="About SourceBridge" url="topics/aboutsourcebridge.html" />
+    <item name="About TeamTrack" url="topics/about_teamtrack.html" />
+    <item name="Associating Issues" url="topics/trackerlink.html" />
+    <item name="About Setting Up SourceBridge" url="topics/settingupsourcebridge.html" />
+    <item name="Setting Up SourceBridge Options" url="topics/abouttrackerlink.html" />
+    <item name="SourceBridge Settings Dialog Box" url="topics/trackerlink_settings_dialog_box.htm" />
+    <item name="Working with Both TeamTrack and TrackerLink" url="topics/switchingissuemanagement.html" />
+  </book>
+</book>
+<book name="Serena Roadmap and Support Information" >
+  <item name="What's New" url="topics/what_s_new.htm" />
+  <item name="Contacting Technical Support" url="topics/contacttechnicalsupport.html" />
+  <item name="Submitting Enhancement Requests" url="topics/submitenhance.html" />
+</book>
+<item name="Readme" url="topics/readme.htm" />
+
+</tocdata>

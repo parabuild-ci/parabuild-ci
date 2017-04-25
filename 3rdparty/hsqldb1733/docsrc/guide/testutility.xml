@@ -1,0 +1,73 @@
+<!-- $Id: testutility.xml,v 1.11 2004/12/24 23:40:59 fredt Exp $ -->
+
+<appendix>
+    <title>Hsqldb Test Utility</title>
+    <appendixinfo>
+        <edition>$Revision: 1.11 $</edition>
+        <pubdate>$Date: 2004/12/24 23:40:59 $</pubdate>
+        <keywordset>
+            <keyword>Hsqldb</keyword>
+            <keyword>Test</keyword>
+            <keyword>Utility</keyword>
+        </keywordset>
+    </appendixinfo>
+
+    <para>
+        The <literal>org.hsqldb.test</literal> package contains a number of 
+        tests for various functions of the database engine.
+        Among these, the <classname>TestSelf</classname> class performs the 
+        tests that are based on scripts.
+        To run the tests, you should compile the
+        <filename>hsqldbtest.jar</filename> target with Ant.
+    </para> <para>
+        For <classname>TestSelf</classname>, a batch file is provided in the 
+		testrun/hsqldb directory, together with a set of TestSelf*.txt files.
+        To start the application in Windows, change to the directory and type:
+    </para><screen>
+    runtest TestSelf</screen><para>
+        In Unix / Linux, type:
+    </para><screen>
+    ./runTest.sh TestSelf</screen>    <para>
+        The new version of <classname>TestSelf</classname> runs multiple SQL 
+        test files to test different SQL operations of the database.
+        All files in the working directory with names matching
+        TestSelf*.txt are processed in alphabetical order.
+    </para> <para>
+        You can add your own scripts to test different series of SQL 
+        queries.
+        The format of the TestSelf*.txt file is simple text, with some 
+        indentation and prefixes in the form of Java-style comments.
+        The prefixes indicate what the expected result should be.
+    </para> <itemizedlist>
+        <listitem><para>
+            Comment lines must start with -- and are ignored
+        </para></listitem><listitem><para>
+            Lines starting with spaces are the continuation of the previous 
+            line
+        </para></listitem><listitem><para>
+            SQL statements with no prefix are simply executed.
+        </para></listitem><listitem><para><emphasis>
+            The remaining items in this list exemplify use of the available
+            command line-prefixes.
+        </emphasis></para></listitem><listitem><informalexample><programlisting>
+/*c&lt;rows&gt;*/ SQL statement returning column count of &lt;rows&gt;</programlisting>
+        </informalexample></listitem><listitem><informalexample><programlisting>
+/*u&lt;count&gt;*/ SQL statement returning an update count equal to &lt;count&gt;</programlisting>
+        </informalexample></listitem><listitem><informalexample><programlisting>
+/*e*/ SQL statement that should produce an error when executing</programlisting>
+        </informalexample></listitem><listitem><informalexample><programlisting>
+/*r&lt;string1&gt;,&lt;string2&gt;*/ SQL statement returning a single row ResultSet equal to the specified value</programlisting>
+        </informalexample></listitem><listitem><informalexample><programlisting>
+/*r
+    &lt;string1&gt;,&lt;string2&gt;
+    &lt;string1&gt;,&lt;string2&gt;
+    &lt;string1&gt;,&lt;string2&gt;
+*/ SQL statement returning a multiple row ResultSet equal to the specified values</programlisting>
+            </informalexample><para>
+                (note that the result set lines are indented).
+        </para></listitem>
+    </itemizedlist>
+    <para>
+        See the TestSelf*.txt files for actual examples.
+    </para>
+</appendix>

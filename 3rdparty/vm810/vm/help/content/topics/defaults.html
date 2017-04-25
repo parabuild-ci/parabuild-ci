@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Default Settings in the Desktop Client</TITLE>
+<!--<defaults.html>-->
+<!--<index parent="project_databases" label="default behavior" anchor="defaults">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="defaults"></A>Default Settings in the Desktop Client</H1>
+<P>
+When a project database is created, by default, a master configuration file is created and associated with the project database. 
+</P>
+<P>
+Serena ChangeMan Version Manager creates this master configuration file by copying the default.cfg file (defaultfs.cfg for a file server), which is installed when you install Version Manager. By default, this file is placed in the following location during Version Manager installation:
+</P>
+<UL>
+<LI>
+On Windows: <i>drive</i>:\Program Files\Serena\vm\common\Pvcsprop\Pvcs\Vm
+<LI>On UNIX: /usr/serena/vm/common/pvcsprop/pvcs/vm</LI>
+  
+</UL>
+<P>
+You can modify the settings in the default.cfg file to suit your needs, and then Version Manager will use the modified file to create new configuration files.
+</P>
+<P>
+If you do not change any settings for the configuration options in this file and do not define any project configuration files, Version Manager will operate according to the settings in this configuration file. You can check the settings of the file by selecting the project database and selecting Configure | Project or by opening the file in a text editor. The settings in the Configure Project Database dialog box reflect the settings in the configuration file. Version Manager will operate as follows:
+</P>
+<UL>
+<LI>
+The archive suffix is +-arc (for example, text.txt-arc).
+<LI>
+Archives are automatically created on check in of a workfile if one does not exist.
+<LI>
+Archives are write-protected.
+<LI>
+The user is warned that a branch will be created.
+<LI>
+Workfiles are not deleted upon check in.
+<LI>
+          Keywords are not expanded in binary files. This behavior applies to newly created archives only and does not affect archives that already exist.
+<LI>End-of-line characters are 
+not translated in binary files or text files. They are translated on UNIX text files with certain suffixes. This behavior applies to newly created archives only and does not affect archives that already exist.
+<LI>
+Multiple locks on a single revision are not allowed.
+<LI>
+A user can lock more than one revision of an archive.
+<LI>
+More than one revision in an archive can be locked.
+<LI>
+File semaphores are specified.
+<LI>
+The semaphore suffix is +-sem (for example, text.txt-sem).
+<LI>
+An archive semaphore is created in the same directory in which the archive resides.
+<LI>
+The number of times Version Manager attempts to access an archive is six.
+<LI>
+The delay between attempts to access an archive is three seconds.
+<LI>
+<b>Non-file-server project databases:</b> The login source is Host. In the desktop client, Version Manager will automatically create users in the access control database if they do not exist and assign them the Unlimited privilege set.<br>
+<b>File-server project databases:</b> The login source is VLOGIN. Users are not automatically added to the access control database.
+<LI>
+<b>Non-file-server project databases:</b> User IDs are not case sensitive.<br>
+ <b>File-server project databases:</b> User IDs are case sensitive.
+<LI>
+The lock on an unchanged revision is removed upon check in if the check in is canceled.
+<LI>
+Revisions must be checked in by the user who locked the file.
+<LI>
+Revisions are not stored as a set of deltas for binary files. They are stored as a set of deltas for text files with certain suffixes. This behavior applies to newly created archives only and does not affect archives that already exist.
+<LI>
+The timestamp is not updated when Version Manager expands keywords upon check in.
+<LI>
+Copies of check in workfiles are not placed in reference directories.
+<LI>
+Characters are not ignored after CTRL+Z.
+<LI>
+Automatic branching is not set up.
+<LI>
+<b>Non-file-server project databases:</b> No access control database is enabled.<br>
+<b>File-server project databases:</b> An access control database is enabled.
+<LI>
+A journal file is not kept.
+<LI>
+The forward slash (/) is specified as the separator character for keyword expansion.
+<LI>
+A revision must be locked before you can check in a 
+  workfile.</LI>
+           
+</UL>
+<P>
+The following list applies to the operation of the command-line interface only:
+</P>
+<UL>
+<LI>
+Message files are not deleted after reading them.
+<LI>
+The message file suffix is +-msg (for example, text.txt-msg).
+<LI>
+Sign-on messages are displayed.
+<LI>
+Detailed messages are displayed.
+<LI>
+VCSDir is set to the root of the project's archives and the directories beneath it are treated as possible archive directories.
+<LI>
+A specified workfile path is used to locate archives instead of VCSDir.
+<LI>
+A default editor is not specified.
+<LI>
+The default date format is 'mm/dd/yyyy hh:mm:ss'.
+<LI>
+The names of the months and the <span style="font-size: 8pt;">A</span>.<span style="font-size: 8pt;">M</span>./<span style="font-size: 8pt;">P</span>.<span style="font-size: 8pt;">M</span>. symbols are 'January February March April May June July August September October November December AM PM.'</LI>
+                       
+</UL>
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A href="setconfigoptions.html">Setting Configuration Options</a></TD>
+		<TD></TD>
+	</TR>
+	<TR>
+	<TD></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Creating Project Databases</TITLE>
+<!--<CreatePrjDb.html>-->
+<!--<toc parent="working_with_project_databases" label="Creating a Project Database" anchor="CreatePrjDB" sortkey="01">-->
+<!--<index  parent="creating" label="project databases" anchor="CreatePrjDB">-->
+<!--<index  parent="project_databases" label="creating" anchor="CreatePrjDB">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with Project Databases/Projects\nProject Databases\nCreating a Project Database");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="CreatePrjDB"></A>Creating a Project Database</H1>
+<P>
+You can have Serena ChangeMan Version Manager create a new <a href="emptyprojectdb.html">project database</a> the first time you run the program if you have the privilege to create project databases. If you do, the option to create a new project database is on the Welcome to Serena ChangeMan Version Manager dialog box. You can add your files to this new project database, which Version Manager creates in the Version Manager installation location, or you can create a new project database on your own in a more appropriate location. 
+</P>
+<H2>To create a project database:</H2>
+<OL>
+<LI>Select Admin | Create Project Database. The Create Project Database dialog box appears.
+<br><br>
+<LI>Specify a name for the project database in the <b>Name</b>  field. The name cannot begin or end with a tab or blank space. Any character can be used in the name.
+<br><br>
+<LI>Specify the location of the project database in the <b>Location</b> field. This location must be accessible to all users who will be accessing this project database. You cannot create a project database beneath another project database; therefore, we recommend that you do not create a project database at the root level of a drive.
+<b>Note:</b> You cannot create a project database in the same location as an existing 5.3/6.0 project root.
+<BR><BR>
+<LI>If you want the archive location to be a location other than the default, which is a directory named archives beneath the project database location, specify the location in the <b>Archive Location</b> field. This location must be accessible to all users who will be accessing the archives.<br><br>
+<LI>Specify  the workfile location in the <b>Workfile Location</b> field.
+<BR><BR>
+Workfile locations can contain $HOME at the root of their paths (for example, on UNIX, $HOME/work could expand to /usrs/cherylc/work). Version Manager substitutes the value of the HOME environment variable to compute the workfile location. The use of $HOME allows you to define a path that is automatically individualized for your users according to the value of their HOME environment variable. If a user's HOME environment variable is not defined, Version Manager substitutes a blank space when computing the workfile location.<BR><BR>
+<b>Note:</b> We recommend that you specify a local drive that is available to most users. Remember that users can create a private workspace to change the workfile location to a different location if they want.<BR><BR>
+<li>Optionally, you can specify a configuration file and access control database to associate with the project database. To do this, click the Advanced tab. If you do not, Version Manager creates a new configuration file and access control database for the project database.
+<br><br>
+<LI>Click OK. Version Manager <a href="prjdbstructure.html">creates several directories and files</a> in the project database's location.<BR><BR>
+</OL>
+<P>If you are <a href="setupprojects.html">setting up a project database</a>, the next step is to <a href="createproject.html">create projects</a> (optional).
+</P>
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="planproject.html">Planning a Project Database</A></TD>
+		<TD><A HREF="aboutprjdb.html">About Project Databases</A></TD>
+	</TR>
+
+<TR>
+		<TD><A HREF="addfiles.html">Adding Workfiles</A></TD>
+		<TD><a href="createrootdialog.html">Create Project Database Dialog Box</a></TD>
+
+	</TR>
+	<TR>
+		<TD><a href="restrictpdb.html">Restricting the Creation of Project Databases</a></TD>
+		<TD><a href="namingconventions.html">Naming Conventions</a></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

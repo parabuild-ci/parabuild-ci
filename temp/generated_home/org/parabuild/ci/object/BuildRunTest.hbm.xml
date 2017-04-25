@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 1.1//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="org.parabuild.ci.object.BuildRunTest"
+        table="BUILD_RUN_TEST"
+    >
+        <cache usage="read-write" />
+
+        <id
+            name="ID"
+            column="ID"
+            type="int"
+            unsaved-value="-1"
+        >
+            <generator class="identity">
+            </generator>
+        </id>
+
+        <property
+            name="testCaseNameID"
+            type="int"
+            column="TEST_CASE_ID"
+            unique="false"
+        />
+
+        <property
+            name="buildRunID"
+            type="int"
+            column="BUILD_RUN_ID"
+            unique="true"
+        />
+
+        <property
+            name="resultCode"
+            type="short"
+            column="RESULT_CODE"
+            unique="true"
+        />
+
+        <property
+            name="durationMillis"
+            type="long"
+            column="DURATION_MILLS"
+            unique="true"
+        />
+
+        <property
+            name="newFailure"
+            type="yes_no"
+            column="NEW_FAILURE"
+            unique="true"
+        />
+
+        <property
+            name="newTest"
+            type="yes_no"
+            column="NEW"
+            unique="true"
+        />
+
+        <property
+            name="fix"
+            type="yes_no"
+            column="FIX"
+            unique="true"
+        />
+
+        <property
+            name="broken"
+            type="yes_no"
+            column="BROKEN"
+            unique="true"
+        />
+
+        <property
+            name="brokenBuildRunCount"
+            type="int"
+            column="BROKEN_BUILD_RUN_COUNT"
+            unique="true"
+        />
+
+        <property
+            name="brokenSinceBuildRunID"
+            type="int"
+            column="BROKEN_SINCE_BUILD_RUN_ID"
+            unique="true"
+        />
+
+        <property
+            name="message"
+            type="java.lang.String"
+            column="MESSAGE"
+            unique="true"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-BuildRunTest.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

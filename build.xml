@@ -1,0 +1,420 @@
+<project name="bt" default="usage" basedir=".">
+
+  <!-- set global properties for this build -->
+  <property file="build.properties"/>
+  <property environment="env"/>
+
+  <!-- Build directories -->
+  <property name="build.dir" value="${project.home}/temp"/>
+  <property name="build.dir.classes" value="${build.dir}/classes"/>
+  <property name="installer.classes.dir" value="${build.dir}/installer_classes"/>
+  <property name="build.dir.test.classes" value="${build.dir}/test_classes"/>
+  <property name="build.dir.version.staging" value="${build.dir}/version_staging"/>
+  <property name="build.dir.realm.staging" value="${build.dir}/realm_staging"/>
+  <property name="build.dir.realm.result" value="${build.dir}/realm_result"/>
+  <property name="build.dir.logviewer.staging" value="${build.dir}/logviewer_staging"/>
+  <property name="build.dir.logviewer.result" value="${build.dir}/logviewer_result"/>
+  <property name="build.dir.cli.staging" value="${build.dir}/staging_cli"/>
+  <property name="build.dir.test.result" value="${build.dir}/test_result"/>
+  <property name="build.dir.temp" value="${build.dir}/build_temp"/>
+  <property name="build.dir.result" value="${build.dir}/result"/>
+  <property name="build.dir.distrib" value="${build.dir}/result_distrib"/>
+  <property name="build.dir.distrib.descriptor" value="${build.dir}/result_distrib_descriptor"/>
+  <property name="build.dir.prod" value="${build.dir.result}/parabuild"/>
+  <property name="build.dir.tomcat" value="${build.dir.prod}"/>
+  <property name="build.dir.database" value="${build.dir.prod}/etc/data"/>
+  <property name="build.dir.clover" value="${build.dir}/clover"/>
+  <property name="build.dir.clover.db" value="${build.dir.clover}/db"/>
+  <property name="war.staging" value="${build.dir}/staging_war"/>
+  <property name="build.dir.docs" value="${build.dir.prod}/docs"/>
+  <property name="docs.result.dir" value="${build.dir}/docs_result"/>
+  <property name="webservice.staging" value="${build.dir}/wsdl2java"/>
+
+  <property name="test.war.staging" value="${build.dir}/test_war_staging"/>
+  <property name="test.quality.logs" value="${build.dir}/logs_code_quality"/>
+
+  <!-- Test directories -->
+  <property name="test.temp.dir" value="${build.dir}/test_temp"/>
+  <property name="test.log.dir" value="${build.dir}/test_logs"/>
+
+  <!-- Product configuration -->
+  <property name="tomcat.http.port" value="8080"/>
+  <property name="tomcat.serv.port" value="8005"/>
+
+  <!-- Automated website deployment -->
+  <property name="deploy.to.downloads" value="${env.DEPLOY_TO_DONWLOADS}"/>
+
+  <!-- Test runtime configuration -->
+  <property name="test.dir.manager" value="${build.dir}/test_run_manager"/>
+  <property name="test.dir.builder" value="${build.dir}/test_run_builder"/>
+
+  <target name="usage">
+    <echo>
+      Build targets:
+      ant all - builds product and tests
+      ant all.clean - builds product and tests cleanly
+      ant cli - builds product command line client
+      ant distrib - builds distribution media
+      ant docs - builds product documentation
+      ant product - builds product
+      ant release - builds product release (add -Ddo.release.build=true to run rlease build)
+      ant tests - builds tests
+
+      Test targets:
+      ant run.tests - runs standalone and serverside test
+      ant run.tests.standalone - runs standalone tests only
+      ant run.tests.serverside - runs serverside tests only
+      ant run.tests.all - runs ALL tests
+      ant run.quality.tests - runs sourceline code quality tests
+      export.database - exports database.
+
+      Options:
+      -Dtest.remote.builder=true - Forces serverside tests to use remote builder (at localhost)
+      -Dtest.single=class name - Executes only single test
+      -Dtest.dataset=path - Overrides fully qualified path to test dataset.
+      -Dschema.sql=path - Overridea fully qualified path to Parabuild database schema.
+
+    </echo>
+  </target>
+
+  <target name="ant">
+    <!-- This is a dummy target to serve cases when ant is called
+    with cut'n'pasted calls from usage, so that
+
+        ant ant all.clean
+
+    does not fail -->
+  </target>
+
+  <path id="common.classpath">
+    <pathelement path="${activation.jar}"/>
+    <pathelement path="${axis.jar}"/>
+    <pathelement path="${clover.jar}"/>
+    <pathelement path="${commons-collections.jar}"/>
+    <pathelement path="${commons-lang.jar}"/>
+    <pathelement path="${commons-logging.jar}"/>
+    <pathelement path="${commons-io.jar}"/>
+    <pathelement path="${concurrent.jar}"/>
+    <pathelement path="${dom4j.jar}"/>
+    <pathelement path="${ehcache.jar}"/>
+    <pathelement path="${hessian.jar}"/>
+    <pathelement path="${hibernate2.jar}"/>
+    <pathelement path="${hsqldb.jar}"/>
+    <pathelement path="${jaxen.jar}"/>
+    <pathelement path="${jaxrpc.jar}"/>
+    <pathelement path="${jcommon.jar}"/>
+    <pathelement path="${jfreechart.jar}"/>
+    <pathelement path="${jmx.jar}"/>
+    <pathelement path="${log4j.jar}"/>
+    <pathelement path="${lucene.jar}"/>
+    <pathelement path="${mail.jar}"/>
+    <pathelement path="${msnm.jar}"/>
+    <pathelement path="${quartz.jar}"/>
+    <pathelement path="${saaj.jar}"/>
+    <pathelement path="${servlet.jar}"/>
+    <pathelement path="${smack.jar}"/>
+    <pathelement path="${smtp.jar}"/>
+    <pathelement path="${viewtier.jar}"/>
+    <pathelement path="${xerces.jar}"/>
+    <pathelement path="${xmlapis.jar}"/>
+    <pathelement path="${rome.jar}"/>
+    <pathelement path="${saxon.jar}"/>
+    <pathelement path="${saxon-dom.jar}"/>
+  </path>
+
+
+  <path id="compile.classpath">
+    <path refid="common.classpath"/>
+    <pathelement path="${jade.jar}"/>
+    <pathelement path="${httpclient.jar}"/>
+    <pathelement path="${jdic.jar}"/>
+  </path>
+
+
+  <path id="test.classpath">
+    <pathelement path="${junit.jar}"/>
+    <pathelement path="${junitaddons.jar}"/>
+    <pathelement path="${dbunit.jar}"/>
+    <pathelement path="${cactus.jar}"/>
+    <pathelement path="${aspectjrt.jar}"/>
+    <pathelement path="${httpclient.jar}"/>
+    <pathelement path="${gbase.jar}"/>
+    <pathelement path="${jade.jar}"/>
+    <pathelement path="${httpunit.jar}"/>
+    <pathelement path="${tidy.jar}"/>
+    <path refid="common.classpath"/>
+    <!-- Should we have separate cp for installer tests? -->
+    <pathelement path="${i4jruntime.jar}"/>
+  </path>
+
+
+  <property name="test.classpath" refid="test.classpath"/>
+
+
+  <path id="jspc.classpath">
+    <pathelement location="${java.home}/../lib/tools.jar"/>
+    <fileset dir="${tomcat.home}">
+      <include name="server/lib/*.jar"/>
+      <include name="common/lib/*.jar"/>
+    </fileset>
+  </path>
+
+
+  <fileset dir="${config}" id="product.resources">
+    <include name="**/macosx/**"/>
+    <include name="checkstyle-report.xsl"/>
+    <include name="boost-test-log-report.xsl"/>
+    <include name="cppunit-log-report.xsl"/>
+    <include name="findbugs-report.xsl"/>
+    <include name="findbugs-report2.xsl"/>
+    <include name="hibernate.properties"/>
+    <include name="hsqldb-database.properties"/>
+    <include name="hsqldb-database.script"/>
+    <include name="junit-log-report.xsl"/>
+    <include name="mercurial-style.txt"/>
+    <include name="nunit-log-report.xsl"/>
+    <include name="p4_change_template.txt"/>
+    <include name="p4_client_template.txt"/>
+    <include name="p4_label_template.txt"/>
+    <include name="parabuild-findbugs.xml"/>
+    <include name="pmd-report.xsl"/>
+    <include name="squish-log-report.xsl"/>
+    <include name="unittestpp-log-report.xsl"/>
+    <include name="ehcache.xml"/>
+  </fileset>
+
+  <!-- Reusable across the scripts taks defs -->
+  <taskdef resource="clovertasks" classpath="${clover.jar}"/>
+  <taskdef name="if" classname="ise.antelope.tasks.IfTask" classpath="${anthelope.jar}"/>
+  <taskdef name="switch" classname="ise.antelope.tasks.SwitchTask" classpath="${anthelope.jar}"/>
+  <taskdef name="antfetch" classname="ise.antelope.tasks.AntFetch" classpath="${anthelope.jar}"/>
+  <taskdef name="jasper2" classname="org.apache.jasper.JspC" classpathref="jspc.classpath"/>
+  <taskdef name="dbunit" classname="org.dbunit.ant.DbUnitTask" classpath="${dbunit.jar}"/>
+  <taskdef name="repeat" classname="ise.antelope.tasks.Repeat" classpath="${3rdparty}/anthelope3210/AntelopeTasks_3.2.10.jar"/>
+
+  <!-- Configure version -->
+  <target name="version">
+
+    <!-- Set version -->
+    <property name="release.major" value="4"/>
+    <property name="release.minor" value="4"/>
+    <property name="release.patch" value="0" />
+    <property name="release.version" value="${release.major}.${release.minor}.${release.patch}" />
+
+    <!-- Set version information -->
+    <tstamp>
+      <!-- Do not change this format - ParabuildPreInstallAction depends on it -->
+      <format property="release.date" pattern="dd MMM yyyy HH:mm" locale="en"/>
+    </tstamp>
+
+
+
+    <if name="do.release.build" value="true">
+
+      <!-- Normal release build -->
+      <fail message="Required environment variable PARABUILD_BUILD_NUMBER is not set" unless="env.PARABUILD_BUILD_NUMBER"/>
+      <fail message="Required environment variable PARABUILD_CHANGE_LIST_NUMBER is not set" unless="env.PARABUILD_CHANGE_LIST_NUMBER"/>
+      <property name="release.build" value="${env.PARABUILD_BUILD_NUMBER}"/>
+      <property name="release.change" value="${env.PARABUILD_CHANGE_LIST_NUMBER}"/>
+      <echo message="Release build"/>
+      <break/>
+      <else>
+
+        <!-- Snapshot build -->
+        <echo message="Snapshot build"/>
+        <property name="release.build" value="SNAPSHOT"/>
+        <property name="release.change" value="SNAPSHOT"/>
+      </else>
+    </if>
+
+    <!-- Show build attributes -->
+    <echo message="        Version: ${release.version}"/>
+    <echo message="   Build number: ${release.build}"/>
+    <echo message="   Build change: ${release.change}"/>
+    <echo message="   Build date  : ${release.date}"/>
+    <echo message="   "/>
+  </target>
+
+  <!-- init -->
+  <target name="init" depends="version">
+    <ant antfile="build-init.xml" inheritall="true"/>
+  </target>
+
+
+  <target name="clean" depends="version">
+    <ant antfile="build-clean.xml" inheritall="true"/>
+  </target>
+
+  <target name="database" depends="init">
+    <ant antfile="build-database.xml" inheritall="true" inheritrefs="true"/>
+  </target>
+
+
+  <target name="realm" depends="init">
+    <antfetch antfile="build-realm.xml" inheritall="true" inheritrefs="true"/>
+  </target>
+
+
+  <target name="logviewer" depends="init">
+    <antfetch antfile="build-logwatcher.xml" inheritall="true" inheritrefs="true"/>
+  </target>
+
+
+  <target name="tray" depends="init">
+    <antfetch antfile="build-tray.xml" inheritall="true" inheritrefs="true"/>
+  </target>
+
+
+  <target name="cli" depends="product">
+    <antfetch antfile="build-cli.xml" inheritall="true" inheritrefs="true"/>
+  </target>
+
+
+  <target name="hessian">
+    <ant antfile="build-hessian.xml" inheritall="true" inheritrefs="true"/>
+  </target>
+
+
+  <target name="installer" depends="init">
+    <antfetch antfile="build-installer.xml" inheritall="true" inheritrefs="true"/>
+  </target>
+
+
+  <target name="product" depends="init,database,realm,tray,logviewer,installer,docs">
+    <!--<target name="product" depends="init,database,realm,jira,tray,installer,docs,resources">-->
+    <antfetch antfile="build-prod.xml" inheritall="true" inheritrefs="true"/>
+    <antfetch antfile="build-cli.xml" inheritall="true" inheritrefs="true"/>
+    <ant antfile="build-licenses.xml" inheritall="true" inheritrefs="true"/>
+  </target>
+
+
+  <!-- Build agent manager -->
+  <target name="manager">
+    <ant antfile="build-manager.xml" inheritall="true" inheritrefs="true"/>
+  </target>
+
+
+  <target name="docs" depends="init">
+    <ant antfile="build-docs.xml" inheritall="true" inheritrefs="true"/>
+  </target>
+
+
+  <!--  <target name="release" depends="all.clean,run.tests"> -->
+  <target name="release" depends="clean">
+    <property name="is.release.build" value="true"/>
+    <antfetch antfile="build-release.xml" inheritall="true" inheritrefs="true" return="release.build,release.change,release.date"/>
+    <ant antfile="build-distrib.xml" inheritall="true" inheritrefs="true"/>
+    <ant antfile="build-deploy.xml" inheritall="true" inheritrefs="true"/>
+  </target>
+
+
+  <target name="distrib" depends="product,docs">
+    <ant antfile="build-distrib.xml" inheritall="true" inheritrefs="true"/>
+  </target>
+
+
+  <target name="with.clover" depends="init">
+    <property name="is.with.clover" value="true"/>
+    <mkdir dir="${build.dir.clover.db}"/>
+    <clover-setup initString="${build.dir.clover.db}/coverage.db"/>
+  </target>
+
+
+  <target name="clover.report">
+    <clover-report>
+      <current outfile="${build.dir.clover}/html_report" title="Parabuild">
+        <format type="html"/>
+      </current>
+    </clover-report>
+  </target>
+
+
+  <target name="tests" depends="product">
+    <!-- First disable for tests -->
+    <clover-setup initString="${build.dir.clover.db}/coverage.db" enabled="no"/>
+    <!-- Build tests -->
+    <antfetch antfile="build-tests.xml" inheritall="true" inheritrefs="true" return="test.manager.http.port, test.builder.http.port"/>
+  </target>
+
+
+  <target name="run.tests.standalone" depends="all">
+    <antfetch antfile="runtests-standalone.xml" inheritall="true" inheritrefs="true" return="test.errors, test.failures"/>
+  </target>
+
+
+  <!-- Run serverside tests under all available servers -->
+  <target name="run.tests.serverside" depends="all">
+    <antfetch antfile="runtests-serverside.xml" inheritall="true" inheritrefs="true" return="test.errors, test.failures"/>
+  </target>
+
+
+  <!-- Run all tests -->
+  <target name="run.tests" depends="run.tests.standalone,run.tests.serverside"></target>
+
+
+  <!-- Run code quality tests -->
+  <target name="run.quality.tests" depends="init">
+    <ant antfile="build-quality.xml" inheritall="true" inheritrefs="true"/>
+  </target>
+
+
+  <!-- Builds product and product documentation -->
+  <target name="product.all" depends="init,docs,product,manager"/>
+
+
+  <!-- Build everything -->
+  <target name="all" depends="init,product.all,manager,tests"/>
+
+
+  <!-- Build everything cleanly -->
+  <target name="all.clean" depends="clean,init,all"/>
+
+
+  <!-- Runs minimum set of tests required to pass before checkin -->
+  <target name="checkin.test" depends="clean">
+    <antcall target="run.tests.standalone"/>
+    <antcall target="run.tests.serverside">
+      <param name="test.remote.builder" value="false"/>
+    </antcall>
+    <antcall target="run.tests.serverside">
+      <param name="test.remote.builder" value="true"/>
+    </antcall>
+  </target>
+
+
+  <!-- Runs ALL tests -->
+  <target name="run.tests.all">
+    <property name="fail.fast" value="off"/>
+    <antcall target="run.tests.standalone"/>
+
+    <echo message="Step 1"/>
+    <echo message="test.errors ${test.errors}"/>
+    <echo message="test.failures ${test.failures}"/>
+
+    <antcall target="run.tests.serverside">
+      <param name="test.remote.builder" value="false"/>
+    </antcall>
+
+    <echo message="Step 2"/>
+    <echo message="test.errors ${test.errors}"/>
+    <echo message="test.failures ${test.failures}"/>
+
+    <antcall target="run.tests.serverside">
+      <param name="test.remote.builder" value="true"/>
+    </antcall>
+
+    <!-- Batch fail -->
+    <echo message="Step 3"/>
+    <echo message="test.errors ${test.errors}"/>
+    <echo message="test.failures ${test.failures}"/>
+
+    <fail message="TEST ERRORS" if="test.errors"/>
+    <fail message="TEST FAILURES" if="test.failures"/>
+  </target>
+
+
+  <!-- Service target -->
+  <target name="export.database">
+    <ant antfile="build-helper.xml" target="export.database" inheritall="true" inheritrefs="true"/>
+  </target>
+</project>

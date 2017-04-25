@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Using the Root Workspace</TITLE>
+<!--<rootworkspace.html>-->
+
+<!--<index parent="workspaces" label="Root Workspace" anchor="root_workspace">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="root_workspace"></A>Using the Root Workspace</H1>
+<p>Serena ChangeMan Version Manager creates a default public workspace, called the Root Workspace, when a project database is created and  sets the Root Workspace as the current workspace. The settings that are initially defined in the Root Workspace are:
+</P>
+<UL>
+<LI>
+The workfile location you set for the project database when you create the database.
+<LI>
+The default revision to use for actions if the master configuration file associated with the project database has the default revision defined. The initial setting is taken from the master configuration file.
+<LI>
+Automatic branching if the master configuration file associated with the project database has automatic branching set up. The initial setting is taken from the master configuration file.
+</UL>
+<P>
+One setting that is not initially defined is default promotion group, which is valid only if a <A HREF="aboutprommodels.html">promotion model</a> is in effect. Default promotion group is a lowest-level promotion group of a promotion model; by default, Version Manager associates the default promotion group you specify with revisions when checking out revisions, locking revisions, and adding workfiles. By defining a default promotion group, you eliminate the need for a user to specify which lowest-level promotion group to use for these actions.
+</P>
+<p>Your ability to change the settings of the Root Workspace is dependent on the <a href="aboutprivileges.html">privileges</a>
+assigned to you by your Administrator. The Root Workspace cannot be deleted or renamed. Only one workspace defined for a project database can be named <i>Root Workspace</i>.
+</P>
+
+<p><img src="../graphics/workspace4.gif">
+
+<P>
+When you add projects to a project database, Version Manager adds workspace settings for each of the projects to the Root Workspace definition.
+</P>
+<p>Anyone using the Root Workspace will be affected by changes made to it. For this reason, using public and private workspaces is highly recommended when multiple users are accessing the same project database.  Typically, the Administrator will create several <A HREF="public.html">public workspaces</a> to define the work environments of specific functional groups, such as Dev, Production, and QA. From a public workspace, you can create a private workspace for working on a local drive.
+</P>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+			<TD><A HREF="aboutworkspaces.html">About Workspaces</A></TD>
+		<TD><A HREF="workhier.html">Understanding Workspace Hierarchies</A></TD>
+	</tr>
+	<tr> 
+		<TD><A HREF="publicprivate.html">About Public and Private Workspaces</A></TD>
+		<TD><A HREF="public.html">Creating and Managing Multiple Public Workspaces</A></TD>
+	</tr>
+	<tr>
+		<TD><A HREF="createworkspaces.html">Creating Workspaces</A></TD>
+		<TD><A HREF="setworkspace.html">Setting Your Workspace</A></TD>
+	
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+
+</HTML>

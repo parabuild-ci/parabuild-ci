@@ -1,0 +1,12 @@
+'{'
+  Description   = "Software build server Parabuild";
+  Provides      = ("Parabuild");
+  Requires      = ("Resolver");
+  Preference    = "Late";
+  Messages =
+  '{'
+    start = "Starting Parabuild server";
+    stop  = "Stopping Parabuild server";
+    restart  = "Restarting Parabuild server";
+  '}';
+'}'

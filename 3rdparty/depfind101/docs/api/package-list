@@ -1,0 +1,10 @@
+com.jeantessier.classreader
+com.jeantessier.commandline
+com.jeantessier.dependency
+com.jeantessier.dependencyfinder
+com.jeantessier.dependencyfinder.ant
+com.jeantessier.dependencyfinder.cli
+com.jeantessier.dependencyfinder.gui
+com.jeantessier.diff
+com.jeantessier.metrics
+com.jeantessier.text

@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Create Project Database Dialog Box</TITLE>
+<!--<CreateRootDialog.html>-->
+<!--<index parent="project_databases" label="Create Project Database dialog box" anchor="CreateRootDialog">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiCreateRootDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="CreateRootDialog"></A>Create Project Database</H1>
+<P>Use the Create Project Database dialog box (Admin | Create Project Database) to create a project database.</P>
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD COLSPAN=2><CENTER><B>General Tab</B></CENTER></TD>
+	</TR>
+	<TR>
+		<TD><b>Name</b></TD>
+		<TD><!--<control name="CreateRootGeneral.NAME_EDIT">-->
+		Enter a name for the project database. The name cannot begin or end with a tab or blank space. Any character can be used in the name.  
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Location</b></TD>
+		<TD><!--<control name="CreateRootGeneral.PATH_EDIT">-->
+		Either enter the location of the project database or click the Browse button to select the location.
+		<!--</control>--> You cannot create a project database beneath another project database; therefore, we recommend that you do not create a project database at the root level of a drive.<BR><BR>
+<b>Note:</b> You cannot create a project database in the same location as an existing 5.3/6.0 project root.</TD>
+	</TR>
+	<TR>
+		<TD><b>Archive Location</b></TD>
+		<TD><!--<control name="CreateRootGeneral.ARCHIVE_DIRECTORY_EDIT">-->
+		Either enter the archive location of the project database or click the Browse button to select the location. The location must be accessible to all users who will be accessing the archives. 
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Workfile Location</b></td>
+		<TD><!--<control name="CreateRootGeneral.WORKING_FOLDER_EDIT">-->
+		Either enter the workfile location for the project database or click the Browse button to select the location. 
+		<!--</control>-->Workfile locations can contain $HOME at the root of their paths (for example, on UNIX, $HOME/work could expand to /usrs/cherylc/work). Version Manager substitutes the value of the HOME environment variable to compute the workfile location. The use of $HOME allows you to define a path that is automatically individualized for your users according to the value of their HOME environment variable. If a user's HOME environment variable is not defined, Version Manager substitutes a blank space when computing the workfile location.<BR><BR>
+<b>Note:</b> We recommend that you specify a local drive that is available to most users. Remember that users can create a private workspace to change the workfile location to a different location if they want.</TD>
+	</tr>
+	<TR>
+		<TD COLSPAN=2><CENTER><B>Advanced Tab</B></CENTER></TD>
+	</TR>
+	<TR>
+		<TD><b>Configuration File group</b></td>
+		<TD>Do one of the following:<BR>
+		<b>Create a new Configuration File:</b> <!--<control name="CreateRootAdvanced.NEWCONFIG_RB">-->Select this button to create a new configuration file for the project database.<!--</control>--><br>
+<b>Copy an Existing Configuration File:</b> <!--<control name="CreateRootAdvanced.COPY_EXISTING_CONF_EDIT">-->Select this button, and then enter the path and name of the configuration file you want to copy or click the Browse button to select one.<!--</control>--><br>
+<b>Use an Existing Configuration File:</b> <!--<control name="CreateRootAdvanced.USE_EXISTING_CONF_EDIT">--> Select this button, and then enter the path and name of the configuration file you want the project database to use or click the Browse button to select one. This option does not copy the configuration file you select; the new project database references the configuration file in its original location.<!--</control>--></td>
+	</tr>
+	<TR>
+		<TD><b>Access Control Database group</b></td>
+		<TD>Do one of the following:<BR>
+		<b>Create a new Access Control Database:</b> <!--<control name="CreateRootAdvanced.NEWACCESSDB_RB">-->Select this button to create a new access control database for the project database.<!--</control>--><br>
+<b>Copy an Existing Access Control Database:</b> <!--<control name="CreateRootAdvanced.COPY_EXISTING_ACDB_EDIT">-->Select this button, and then enter the path and name of the access control database you want to copy or click the Browse button to select one.<!--</control>--><br>
+<b>Use an Existing Access Control Database:</b> <!--<control name="CreateRootAdvanced.USE_EXISTING_ACDB_EDIT">-->Select this button, and then enter the path and name of the access control database you want the project database to use or click the Browse button to select one. This option does not copy the access control database you select; the new project database references the access control database in its original location.<!--</control>--></td>
+	</tr>
+	
+</TABLE>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="aboutprjdb.html">About Project Databases</A></TD>
+		<TD><A HREF="aboutworkspaces.html">About Workspaces</A></TD>
+	</TR>
+	<TR>
+		<TD><a href="createprjdb.html">Creating Project Databases</a></TD>
+		<TD><a href="namingconventions.html">Naming Conventions</a></TD>
+	</TR>
+	<TR>
+		<TD><a href="restrictpdb.html">Restricting the Creation of Project Databases</a></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

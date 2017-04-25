@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>About the Serena ChangeMan Merge Tool</TITLE>
+<!--<mergetool.html>-->
+<!--<toc parent="merging" label="About the PVCS Merge Tool" anchor="aboutmergetool" sortkey="02">-->
+<!--<index parent="merging" label="about the PVCS Merge Tool" anchor="aboutmergetool">-->
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nBranching and Merging Files\nMerging\nAbout the Merge Tool");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="aboutmergetool"></A>About the Serena ChangeMan Merge Tool</H1>
+
+<P>The Serena ChangeMan Merge Tool compares text-based workfiles or revisions with a common base file, accepting or rejecting the differences between them, and combining the changes into a new file.</P>
+<p><b>NOTE</b> You cannot compare or merge binary files.</p>
+<p>Merging is useful when you have parallel development. It enables you to combine the work performed on a branch of development and integrate it back into the main line of development.</p> 
+<P><b>Windows:</b> Version Manager for Windows can perform N-way (unlimited) merges. Although you can select only three files (one base and two branch files) from within Version Manager, you can perform an N-way merge once the Serena ChangeMan Merge Tool is launched. For information on how to perform N-way merges, please see the Serena ChangeMan Merge Tool online help.</P>
+<p><b>UNIX:</b> Version Manager for UNIX can perform two-way (a base file and a branch file) merges. N-way merges are not supported on UNIX.</p>
+
+<h2>What You Can Merge</h2>
+<p>You can merge:
+<ul><LI>A revision with a workfile<BR><BR></LI>
+<LI>Revisions within a single versioned file<BR><BR></LI>
+<LI>Revisions in different versioned files<BR><BR></LI>
+<LI>Workfiles</p></LI></ul>
+
+<h2>Considerations</h2>
+<p>When merging files, consider the following:</p>
+<UL>
+	<LI>The base file is the file to use as your point of reference. This is usually the branch point--the revision from which a branch begins (typically off the main trunk of development).<br><br>
+	<LI>If you are merging revisions that are located in different branches or versioned files, the base file you select should be the revision or file that is the latest file to be created which is a common ancestor to all revisions you wish to merge. The closer the base file is to the desired result, the fewer conflicts you will need to resolve.<br><br>
+	<LI>The order in which you select files determines which file will be the base and branch file(s). The first file you select becomes the base file; the second and third (Windows only) become the branch files.<br><br>
+	<LI>The items you select (project, versioned file, revision) affect the initial options that appear.
+</ul>
+
+<h2>Options</h2>
+<P>There are many options you can customize for both the difference and merge functionality, including:</P>
+<UL>
+<LI>Whether or not case is ignored
+<LI>Which colors denote differences and conflicts
+<LI>Which font styles to use
+<LI>Whether or not to use blank spaces and tabs
+<LI>Whether or not to use line numbers
+</UL>
+<P>Many of these options, including file selection, can be saved in a configuration file for later use.</P>
+
+<h2>For More Information</h2>
+<P>See the <i>Serena ChangeMan Version Manager User's Guide</i> and the Serena ChangeMan Merge Tool online help.</P>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="mergefiles.html">Merging Files</A></TD>
+		<TD><A href="aboutautomerge.html">Merging Files Automatically</A></TD>
+	</TR>
+	<TR>
+	</TR>
+	<TR>
+
+	
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

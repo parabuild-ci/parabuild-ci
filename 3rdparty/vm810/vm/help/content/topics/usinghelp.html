@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Using Version Manager Online Help</TITLE>
+<!--<UsingHelp.html>-->
+<!--<toc parent="introducing_version_manager" label="Using Help" anchor="UsingHelp" sortkey="09">-->
+<!--<index parent="online_help" label="using" anchor="UsingHelp">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Introducing Version Manager\nUsing Help");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="UsingHelp"></A>Using Version Manager Online Help</H1>
+<P>With Serena ChangeMan Version Manager online help, you can easily navigate, search, and print help topics. The online help has these characteristics:
+<ul><li>The online help is HTML based and is displayed in your default browser.
+<li>The Navigation pane on the left has three tabs:
+	<ul><li><b>Contents:</b> Expanding a book icon and clicking a document icon displays that topic in the right pane.
+	<li><b>Index:</b> Typing a keyword or phrase scrolls the list of keywords to the closest match. Double-clicking a keyword in the list displays that topic in the right pane.
+	<li><b>Search:</b> Typing a word or phrase and clicking the Find button displays a list of related topics. Selecting a topic from the list and clicking the Display button loads the topic into the right pane.
+	</ul>
+<li>Links within the page on the right can be selected to display other pages.
+<li>A full text search index is available to search the entire help system (including dialog box help topics that are unavailable from the table of contents).
+<li>A glossary of terms is included as the last topic on the Contents tab.
+</ul>
+<h2>Accessing Online Help</h2>
+<p>Three types of help are available for Version Manager: 
+
+<ul>
+<li>Application help, which is accessed from the Help | Help Topics menu item or by pressing F1 from the Version Manager Desktop. This action provides access to the help system for the entire application. You can invoke application help to view procedures for daily tasks, obtain conceptual information about the application's components, or access the glossary, index, and search features. 
+<li>Dialog box help, which you accesss by clicking a dialog box Help button. This action provides a help topic specific to the dialog box, including its purpose and a description of each field. 
+<li>Context-sensitive help, which you access by clicking a button or clicking inside a field and then pressing F1. This invokes a pop-up help topic relevant to the current item.
+</ul>
+
+<h2>Defining a Search</h2>
+<p>Use the following Boolean operators to define your search.</P>
+<table cols=3 cellspacing=0 cellpadding=4 border=1>
+	<tr>
+	<td width="100"><b>To search for...</b></td>
+	<td width="100"><b>Enter...</b></td>
+	<td width="300"><b>Finds topics containing...</b></td>
+	</tr>
+	<tr>
+	<td>Two or more words</td>
+	<td><i>word-1</i> AND <i>word-2</i></td>
+	<td>Both <i>word-1</i> and <i>word-2</i>
+	<br><br></b>NOTE: Anytime you enter two or more words, the AND is assumed; the search will find all topics containing the words, not just those topics containing the string <i>word-1 word-2.</i></td>
+	</tr>
+	<tr>
+	<td>At least one of a set of words</td>
+	<td><i>word-1</i> OR <i>word-2</i></td>
+	<td>Either <i>word-1</i> or <i>word-2</i> or both</td>
+	</tr>
+	<tr>
+	<td>One word while excluding another</td>
+	<td><i>word-to-find</i> NOT <i>word-to-exclude</i></td>
+	<td>The <i>word-to-find</i> but not the <i>word-to-exclude</i></td>
+	</tr>
+	</table>
+	
+	<h2>Printing Help Topics</h2>
+<P>To print a help topic, you may need to click in the topic (right-hand) pane before selecting Print. Otherwise, if you last clicked in the Navigation pane, the table of contents may print instead of the topic you selected.
+
+	<h2>Show/Hide the Navigation Pane</h2>
+	<p>When you launch help from a dialog box by clicking the Help button, the topic related to that dialog box is opened, but the Navigation pane is not displayed. To display the Navigation pane, click the Show Navigation link at the top of the topic. To hide the Navigation pane, click the Hide Navigation link.
+	
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

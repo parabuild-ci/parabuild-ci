@@ -1,0 +1,1230 @@
+<HTML><HEAD><TITLE>Ant Integration</TITLE></HEAD><BODY alink="#023264" bgcolor="#ffffff" leftmargin="4" link="#525D76" marginheight="4" marginwidth="4" text="#000000" topmargin="4" vlink="#023264"><TABLE border="0" cellpadding="0" cellspacing="0" width="100%"><TR><TD align="left" valign="top"><A href="http://jakarta.apache.org/index.html"><IMG border="0" hspace="0" src="./images/jakarta-logo.gif" vspace="0"></A></TD><TD align="left" bgcolor="#ffffff" valign="middle" width="100%"><IMG align="right" alt="Ant Integration" border="0" hspace="0" src=".//images/logocactus.gif" vspace="0"></TD></TR><TR><TD colspan="2" height="2" width="100%"><HR noshade="" size="1"></TD></TR></TABLE><TABLE border="0" cellpadding="0" cellspacing="0" width="100%"><TR><TD valign="top" width="1%"></TD><TD nowrap="1" valign="top" width="14%"><FONT size="-2">
+              Last update : August 31 2002</FONT><BR><FONT size="-2">
+              Doc for : v1.4.1</FONT><BR><FONT face="arial,helvetica,sanserif">
+
+  <BR><FONT color="#000000" size="+1">About</FONT><BR><FONT size="-1">
+    <LI><A href="./index.html"><FONT size="-1">What is Cactus ?</FONT></A></LI>
+    <LI><A href="./news.html"><FONT size="-1">News</FONT></A></LI>
+    <LI><A href="./changes.html"><FONT size="-1">Changes</FONT></A></LI>
+    <LI><A href="./features.html"><FONT size="-1">Features/Status</FONT></A></LI>
+    <LI><A href="./goals.html"><FONT size="-1">Goals</FONT></A></LI>
+    <LI><A href="./todo.html"><FONT size="-1">Roadmap/Todo</FONT></A></LI>
+    <LI><A href="./contributors.html"><FONT size="-1">Contributors</FONT></A></LI>
+    <LI><A href="./contributing.html"><FONT size="-1">Contributing</FONT></A></LI>
+    <LI><A href="./users.html"><FONT size="-1">Cactus Users</FONT></A></LI>
+    <LI><A href="./testedon.html"><FONT size="-1">Tested on ...</FONT></A></LI>
+    <LI><A href="./license.html"><FONT size="-1">License</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Downloads</FONT><BR><FONT size="-1">
+    <LI><A href="./downloads.html"><FONT size="-1">Downloads</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Documentation</FONT><BR><FONT size="-1">
+    <LI><A href="./how_it_works.html"><FONT size="-1">How it works ?</FONT></A></LI>
+    
+    <LI><A href="./getting_started.html"><FONT size="-1">Getting Started</FONT></A></LI>
+    <LI><A href="./mockobjects.html"><FONT size="-1">Mock vs Container</FONT></A></LI>
+    <LI><A href="./javadoc.html"><FONT size="-1">Javadocs</FONT></A></LI>
+    
+    
+    <LI><A href="./faq.html"><FONT size="-1">FAQ</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Howto Guides</FONT><BR><FONT size="-1">
+    <LI><A href="./howto_classpath.html"><FONT size="-1">Classpath Howto</FONT></A></LI>
+    <LI><A href="./howto_config.html"><FONT size="-1">Config Howto</FONT></A></LI>
+    <LI><A href="./howto_migration.html"><FONT size="-1">Migration Howto</FONT></A></LI>
+
+    
+    <LI><A href="./howto_testcase.html"><FONT size="-1">TestCase Howto</FONT></A></LI>
+    
+    
+    
+
+    <LI><A href="./howto_jsp.html"><FONT size="-1">Jsp Howto</FONT></A></LI>
+    <LI><A href="./howto_runner.html"><FONT size="-1">Runner Howto</FONT></A></LI>
+    <LI><A href="./howto_security.html"><FONT size="-1">Security Howto</FONT></A></LI>
+
+    
+    <LI><A href="./howto_ant.html"><FONT size="-1">Ant Howto</FONT></A></LI>
+    
+    
+    
+
+    <LI><A href="./howto_httpunit.html"><FONT size="-1">HttpUnit Howto</FONT></A></LI>
+    <LI><A href="./howto_sample.html"><FONT size="-1">Sample Howto</FONT></A></LI>
+
+    
+    <LI><A href="./howto_ejb.html"><FONT size="-1">EJB Howto</FONT></A></LI>
+    
+
+    
+    <LI><A href="./howto_ide.html"><FONT size="-1">IDE Howto</FONT></A></LI>
+    
+    
+    
+    
+
+    <LI><A href="./howto_tomcat.html"><FONT size="-1">Tomcat Howto</FONT></A></LI>
+
+    <LI><A href="./howto_junitee.html"><FONT size="-1">JUnitEE Howto</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Support</FONT><BR><FONT size="-1">
+    <LI><FONT size="-1"><A href="http://jakarta.apache.org/site/bugs.html" target="">Bug database</A></FONT></LI>
+    <LI><A href="./mailinglist.html"><FONT size="-1">Mailing list</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Misc.</FONT><BR><FONT size="-1">
+    <LI><A href="./cactusname.html"><FONT size="-1">Why the name ?</FONT></A></LI>
+    <LI><A href="./logos.html"><FONT size="-1">Logo Challenge</FONT></A></LI>
+    <LI><A href="./resources.html"><FONT size="-1">Resources</FONT></A></LI>
+    <LI><A href="./coverage.html"><FONT size="-1">Test Coverage</FONT></A></LI>
+    
+    
+    
+    <LI><FONT size="-1"><A href="http://jakarta.apache.org/cactus/stats/index.html" target="">Stats</A></FONT></LI>
+    
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Developers</FONT><BR><FONT size="-1">
+    <LI><FONT size="-1"><A href="http://jakarta.apache.org/site/cvsindex.html" target="">CVS</A></FONT></LI>
+    <LI><A href="./coding_conventions.html"><FONT size="-1">Coding Conventions</FONT></A></LI>
+    <LI><A href="./build_result.html"><FONT size="-1">Build results</FONT></A></LI>
+    <LI><A href="./release_checklist.html"><FONT size="-1">Release Checklist</FONT></A></LI>
+  </FONT><BR>
+
+</FONT></TD><TD align="left" valign="top" width="*"><TABLE border="0" cellpadding="3" cellspacing="0"><TR><TD><BR>
+  
+
+  
+
+    <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>Continuous integration</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+      <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+        <B>This tutorial was written when I wrote Cactus 1.2. Since then
+        I have improved my command of Ant. However this tutorial has not yet
+        been updated. I believe it still provides some very good
+        methodology on how to use Ant, although not the latest. If you wish to
+        keep track of the latest change, have a look at the Cactus build files,
+        found in the source distribution.</B>
+      </I></FONT></TD></TR></TABLE></P>
+
+      <P align="justify">
+        A strong principle of eXtreme Programming (XP) is the continuous
+        integration aspect (see the
+        <A href="http://www.martinfowler.com/articles/continuousIntegration.html">
+        Continuous Integration</A> article by Martin Fowler). The traditional
+        approach has been
+        to developing the code first, then test it and then integrate
+        it with other appications. The continuous integration principle is to
+        develop code, tests and integrate at the same time, i.e. at any point
+        in time, you have a functioning code along with tests and integrated.
+      </P>
+      <P align="justify">
+        In order to be able to do continuous integration, you need to be able
+        to automatically run the build for your application, including passing
+        the unit tests (based on JUnit, Cactus, HttpUnit or others). Ant is
+        the perfect tool for this task.
+      </P>
+
+    </FONT></TD></TR></TABLE></DIV><BR>
+
+    <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>Ant benefits</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+      <P align="justify">
+        The benefits of using Ant for running unit tests are as follows :
+      </P>
+      <TABLE border="0" cellpadding="2" cellspacing="2" width="100%"><CAPTION></CAPTION>
+        <TR>
+          <TD align="center" bgcolor="#039acc" colspan="" rowspan="" valign="center"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="-1"><B>
+            Benefits
+          </B>&nbsp;
+      </FONT></TD>
+        </TR>
+        <TR>
+          <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+            Ant is written in Java and thus the same scripts can be used on
+            several systems (Windows and Unix for example). Is is therefore very
+            well suited for building java applications.
+          &nbsp;
+          </FONT></TD>
+        </TR>
+        <TR>
+          <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+            Ant provides enough built-in and optional tasks to be able to
+            achieve almost any needed build task without needing to use
+            system dependent scripts.
+          &nbsp;
+          </FONT></TD>
+        </TR>
+        <TR>
+          <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+            By being able to very quickly rerun unit test you can verify that
+            your tests still pass when you modify some part of your code (
+            regression testing)
+          &nbsp;
+          </FONT></TD>
+        </TR>
+        <TR>
+          <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+            As it is automated, it fits well in the continuous integration
+            principle and your tests can thus be ran automatically and
+            continously
+          &nbsp;
+          </FONT></TD>
+        </TR>
+      </TABLE>
+
+    </FONT></TD></TR></TABLE></DIV><BR>
+
+    <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>Writing an Ant build script tutorial</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+      <P align="justify">
+        The sample Ant build file described below is taken from the
+        <A href="downloads.html">Cactus Sample for Servlet API 2.2
+        </A> project.
+      </P>
+
+      <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+        This section is both a tutorial for automating builds and unit testing
+        with Ant and Cactus and also a best practice and methodology guide
+        for using Ant in general (independent of Cactus). This is an Ant
+        configuration that has been working for me on several project. Of course,
+        you are free to adapt/modify it to suit your needs.
+      </I></FONT></TD></TR></TABLE></P>
+
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>Project directory structure</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+          Create the following directories :
+        </P>
+        <TABLE border="0" cellpadding="2" cellspacing="2" width="100%"><CAPTION></CAPTION>
+          <TR>
+            <TD align="center" bgcolor="#039acc" colspan="" rowspan="" valign="center"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="-1"><B>
+              Directory name
+            </B>&nbsp;
+      </FONT></TD>
+            <TD align="center" bgcolor="#039acc" colspan="" rowspan="" valign="center"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="-1"><B>
+              Content of the directory
+            </B>&nbsp;
+      </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <CODE><FONT face="courier, monospaced">build</FONT></CODE>
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              The Ant build file and some other ancillary files (properties file, ...)
+            &nbsp;
+          </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <CODE><FONT face="courier, monospaced">conf</FONT></CODE>
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Configuration files for the project. These are the configuration
+              files that will <I>not</I> be put into the runtime jar. They
+              are configuration file that need to be visible and modifyable
+              by a user of the project. If they were bundled in the jar they
+              would be hard to modify. On the other hand, we don't want a
+              proliferation of configuration files, so all <I>technical</I>
+              configuration files (messages to display for errors, ...)
+              should be put in the <CODE><FONT face="courier, monospaced">src</FONT></CODE> directory in correct java
+              packages.
+            &nbsp;
+          </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <CODE><FONT face="courier, monospaced">conf/test</FONT></CODE>
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Configuration files needed for testing the project only.
+            &nbsp;
+          </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <CODE><FONT face="courier, monospaced">docs</FONT></CODE>
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Project documentation.
+            &nbsp;
+          </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <CODE><FONT face="courier, monospaced">docs/skins</FONT></CODE>
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Documentation skin for Stylebook (if using Stylebook).
+            &nbsp;
+          </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <CODE><FONT face="courier, monospaced">docs/xdocs</FONT></CODE>
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Documentation files (XML files) for Stylebook (if using Stylebook).
+            &nbsp;
+          </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <CODE><FONT face="courier, monospaced">src</FONT></CODE>
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              The project sources : java files + java test files +
+              properties files + test properties files + other files for
+              runtime or test (XML files, ...). Note that all test files
+              should begin by 'Test' or 'test' in order to easily separate them
+              from other files so that in an Ant target we'll be able to include
+              only the runtime files.
+            &nbsp;
+          </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <CODE><FONT face="courier, monospaced">web</FONT></CODE>
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              The project web files : HTML, JSP, ... (if any)
+            &nbsp;
+          </FONT></TD>
+          </TR>
+        </TABLE>
+
+        <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+          In the sample application provided with Cactus, we don't generate
+          any web site documentation (only javadoc) so we're not using the
+          stylebook-related directories and Ant targets. However we do so in
+          Cactus itself, so if you need to take a look, download the Cactus
+          sources.
+        </I></FONT></TD></TR></TABLE></P>
+
+        <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+          An <CODE><FONT face="courier, monospaced">out</FONT></CODE> directory will be created by the Ant build. All
+          build-generated files will be put in that directory (compiled classes,
+          generated javadoc documentation, test configuration files for running
+          an application server, ...).
+        </I></FONT></TD></TR></TABLE></P>
+
+        <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+          We don't have any <CODE><FONT face="courier, monospaced">lib</FONT></CODE> directory because it is always
+          better not to include dependent jars in your project whenever
+          possible for the following reasons : better continuous integration
+          with other libraries (meaning they also evolve and you should test
+          as much as possible with the latest version to discover potential
+          problems early, more lightweight downloads, less jar proliferation
+          (you'll end up with tens of the same jars otherwise), more version
+          control and integration checks (if your project uses 2 external
+          libraries that need another third library but not in the same version
+          you are in trouble !), ...
+        </I></FONT></TD></TR></TABLE></P>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>Ant Target List</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+          Define the following targets in your <CODE><FONT face="courier, monospaced">build.xml</FONT></CODE>.
+        </P>
+
+        <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+          The <I>Type</I> column specify whether the target is an external
+          target that can be called by the user of the build file or if it is
+          an internal target, intended to be called internally by another
+          target inside the build script.
+        </I></FONT></TD></TR></TABLE></P>
+
+        <TABLE border="0" cellpadding="2" cellspacing="2" width="100%"><CAPTION></CAPTION>
+          <TR>
+            <TD align="center" bgcolor="#039acc" colspan="" rowspan="" valign="center"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="-1"><B>
+              Target name
+            </B>&nbsp;
+      </FONT></TD>
+            <TD align="center" bgcolor="#039acc" colspan="" rowspan="" valign="center"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="-1"><B>
+              Description
+            </B>&nbsp;
+      </FONT></TD>
+            <TD align="center" bgcolor="#039acc" colspan="" rowspan="" valign="center"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="-1"><B>
+              Type
+            </B>&nbsp;
+      </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <A href="#init"><CODE><FONT face="courier, monospaced">init</FONT></CODE></A>
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Defines token filters, timestamp, display some information on
+              screen, ...
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Internal
+            &nbsp;
+          </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <A href="#usage"><CODE><FONT face="courier, monospaced">usage</FONT></CODE></A>
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Display usage information about the targets.
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              External
+            &nbsp;
+          </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <A href="#prepare"><CODE><FONT face="courier, monospaced">prepare</FONT></CODE></A>
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Set up the output directory where build generated files will be
+              put and copy the java sources to this output directory,
+              replacing tokens with the values defined in the <CODE><FONT face="courier, monospaced">init</FONT></CODE>
+              target.
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Internal
+            &nbsp;
+          </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <A href="#compile"><CODE><FONT face="courier, monospaced">compile</FONT></CODE></A>
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Compile the java sources and put the result in the output
+              directory. All copies non java source files such as
+              <CODE><FONT face="courier, monospaced">.properties</FONT></CODE> files, XML configuration files, ...
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Internal
+            &nbsp;
+          </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <A href="#source"><CODE><FONT face="courier, monospaced">source</FONT></CODE></A>
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Generate a zipped file containing the full sources of the project
+              (i.e. the whole directory structure, excluding any build
+              generated files).
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              External
+            &nbsp;
+          </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <A href="#javadoc"><CODE><FONT face="courier, monospaced">javadoc</FONT></CODE></A>
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Generates the javadoc of the project. This javadoc will be part
+              of the project documentation, as generated by the <CODE><FONT face="courier, monospaced">doc</FONT></CODE>
+              target.
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Internal
+            &nbsp;
+          </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <A href="#doc"><CODE><FONT face="courier, monospaced">doc</FONT></CODE></A>
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Generates the full project documentation : javadoc + README files
+              + documentation web site (using Stylebook for example).
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              External
+            &nbsp;
+          </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <A href="#clean"><CODE><FONT face="courier, monospaced">clean</FONT></CODE></A>
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Remove any build generated files. In particular, delete the
+              output directory.
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              External
+            &nbsp;
+          </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <A href="#jar"><CODE><FONT face="courier, monospaced">jar</FONT></CODE></A>,
+              <A href="#war"><CODE><FONT face="courier, monospaced">war</FONT></CODE></A>,
+              <CODE><FONT face="courier, monospaced">ear</FONT></CODE>, ...
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Generate the project runtime. If the project is a framework, it
+              is usually a jar. If the project is a web application, it is
+              usually a war file. If the project is an EJB application, it is
+              usually either one or several jars or an ear file. Etc ...
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              External
+            &nbsp;
+          </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <A href="#tests"><CODE><FONT face="courier, monospaced">tests_XXX</FONT></CODE></A> where XXX is
+              the name of the servlet engine on which the tests run.
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Run the Cactus unit tests.
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="" rowspan="" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              External
+            &nbsp;
+          </FONT></TD>
+          </TR>
+        </TABLE>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <A name="basedir"><!--anchor--></A>
+
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>Step 1 : The Ant project basedir</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+          You <CODE><FONT face="courier, monospaced">build.xml</FONT></CODE> file being in located in
+          <CODE><FONT face="courier, monospaced">build/</FONT></CODE> you should set the <CODE><FONT face="courier, monospaced">project</FONT></CODE> tag
+          <CODE><FONT face="courier, monospaced">basedir</FONT></CODE>
+          attribute to '<CODE><FONT face="courier, monospaced">..</FONT></CODE>' so that all other paths are relative
+          to your project root directory. Indeed, the batch file (shell script)
+          that was used to bootstrap Ant is located in
+          <CODE><FONT face="courier, monospaced">&lt;root&gt;/build</FONT></CODE>, so '<CODE><FONT face="courier, monospaced">..</FONT></CODE>' is the root
+          directory.
+        </P>
+        <P align="justify">
+          Example :
+        </P>
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+[...]
+&lt;project name=&quot;Cactus Sample&quot; default=&quot;war&quot; basedir=&quot;..&quot;&gt;
+</PRE></TD></TR></TABLE></DIV>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>Step 2 : initialization of project properties</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+          You should define as properties all values that can be factorized
+          and which are used often in your build file such as source locations,
+          output locations, external jar locations and names, ... You can also
+          define useful file patterns there (see the sample below).
+        </P>
+
+        <P align="justify">
+          A good principle is to defined any properties that depend on your
+          environment (such as external jar locations) in a file (let's call
+          it <CODE><FONT face="courier, monospaced">build.properties</FONT></CODE> located either where
+          <CODE><FONT face="courier, monospaced">build.xml</FONT></CODE> is located or in your home directory. The
+          properties defined in this file will be loaded by
+          <CODE><FONT face="courier, monospaced">build.xml</FONT></CODE> using the following code :
+        </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+    &lt;!-- Give user a chance to override without editing this file
+         (and without typing -D each time it compiles it) --&gt;
+    &lt;property file=&quot;build/build.properties&quot; /&gt;
+    &lt;property file=&quot;${user.home}/build.properties&quot; /&gt;
+</PRE></TD></TR></TABLE></DIV>
+
+        <P align="justify">
+          Here are our properties initializations :
+        </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+&lt;project name=&quot;Cactus Sample&quot; default=&quot;war&quot; basedir=&quot;..&quot;&gt;
+
+    &lt;!-- Give user a chance to override without editing this file
+         (and without typing -D each time it compiles it) --&gt;
+    &lt;property file=&quot;build/build.properties&quot; /&gt;
+    &lt;property file=&quot;${user.home}/build.properties&quot; /&gt;
+
+    &lt;!-- Generic project properties --&gt;
+    &lt;property name=&quot;project.fullname&quot; value=&quot;Cactus Sample&quot;/&gt;
+    &lt;property name=&quot;project.version&quot; value=&quot;1.4.1&quot;/&gt;
+    &lt;property name=&quot;project.name&quot; value=&quot;cactus-sample&quot;/&gt;
+
+    &lt;!-- Miscellaneous settings --&gt;
+    &lt;property name=&quot;year&quot; value=&quot;2000-2002&quot;/&gt;
+    &lt;property name=&quot;debug&quot; value=&quot;on&quot;/&gt;
+    &lt;property name=&quot;optimize&quot; value=&quot;off&quot;/&gt;
+    &lt;property name=&quot;deprecation&quot; value=&quot;off&quot;/&gt;
+
+    &lt;!--
+       ========================================================================
+         Set the properties related to the source tree
+       ========================================================================
+    --&gt;
+    &lt;!-- Source locations for the build --&gt;
+    &lt;property name=&quot;src.dir&quot; value=&quot;src&quot;/&gt;
+    &lt;property name=&quot;src.java.dir&quot; value=&quot;${src.dir}/share&quot;/&gt;
+    &lt;property name=&quot;src.java.servlet.dir&quot; value=&quot;${src.dir}/servlet@servlet.api@&quot;/&gt;
+    &lt;property name=&quot;build.dir&quot; value=&quot;build&quot;/&gt;
+    &lt;property name=&quot;etc.dir&quot; value=&quot;${build.dir}/etc&quot;/&gt;
+    &lt;property name=&quot;lib.dir&quot; value=&quot;lib&quot;/&gt;
+    &lt;property name=&quot;conf.dir&quot; value=&quot;conf&quot;/&gt;
+    &lt;property name=&quot;conf.test.dir&quot; value=&quot;conf/test&quot;/&gt;
+    &lt;property name=&quot;web.dir&quot; value=&quot;web&quot;/&gt;
+
+    &lt;!--
+       ========================================================================
+         Set the properties related to the build area
+       ========================================================================
+    --&gt;
+    &lt;!-- Destination locations for the build (relative to the basedir as --&gt;
+    &lt;!-- specified in the basedir attribute of the project tag)          --&gt;
+    &lt;property name=&quot;out.dir&quot; value=&quot;out&quot;/&gt;
+    &lt;property name=&quot;out.dist.dir&quot; value=&quot;${out.dir}/dist&quot;/&gt;
+    &lt;property name=&quot;out.lib.dir&quot; value=&quot;${out.dir}/lib&quot;/&gt;
+    &lt;property name=&quot;out.test.dir&quot; value=&quot;${out.dir}/test&quot;/&gt;
+    &lt;property name=&quot;out.src.dir&quot; value=&quot;${out.dir}/src&quot;/&gt;
+    &lt;property name=&quot;out.classes.dir&quot; value=&quot;${out.dir}/classes&quot;/&gt;
+    &lt;property name=&quot;out.doc.dir&quot; value=&quot;${out.dir}/doc&quot;/&gt;
+    &lt;property name=&quot;out.javadoc.dir&quot; value=&quot;${out.doc.dir}/javadoc&quot;/&gt;
+    &lt;property name=&quot;out.conf.dir&quot; value=&quot;${out.dir}/conf&quot;/&gt;
+
+    &lt;!-- Names of deliverables --&gt;
+
+    &lt;!-- The Cactus Sample war file. This is the file that should be
+         used at runtime by end users (it excludes the test classes) --&gt;
+    &lt;property name=&quot;final.war.name&quot; value=&quot;${out.dir}/${project.name}-@servlet.api@.war&quot;/&gt;
+
+    &lt;!-- The full sources of Cactus Sample in a zip file --&gt;
+    &lt;property name=&quot;final.src.name&quot; value=&quot;${out.dir}/${project.name}-src-@servlet.api@.zip&quot;/&gt;
+
+    &lt;!-- The Cactus Sample documentation in a zip : javadoc --&gt;
+    &lt;property name=&quot;final.doc.name&quot; value=&quot;${out.dir}/${project.name}-doc-@servlet.api@.zip&quot;/&gt;
+
+    &lt;!--
+       ========================================================================
+         Useful file patterns for targets
+       ========================================================================
+    --&gt;
+    &lt;!-- All source files of the projet. These source files will be copied
+         to the destination source directory in the prepare task --&gt;
+    &lt;patternset id=&quot;all.src.files&quot;&gt;
+
+        &lt;!-- All java files --&gt;
+        &lt;include name=&quot;**/*.java&quot;/&gt;
+
+        &lt;!-- All doc files --&gt;
+        &lt;include name=&quot;**/package.html&quot;/&gt;
+        &lt;include name=&quot;**/overview.html&quot;/&gt;
+
+        &lt;!-- All conf files (including test files) --&gt;
+        &lt;include name=&quot;**/*.txt&quot;/&gt;
+        &lt;include name=&quot;**/*.xml&quot;/&gt;
+        &lt;include name=&quot;**/*.properties&quot;/&gt;
+
+    &lt;/patternset&gt;
+
+    &lt;!-- All non java files in the src directory --&gt;
+    &lt;patternset id=&quot;all.nonjava.files&quot;&gt;
+
+        &lt;!-- All conf files (including test files) --&gt;
+        &lt;include name=&quot;**/*.txt&quot;/&gt;
+        &lt;include name=&quot;**/*.xml&quot;/&gt;
+        &lt;include name=&quot;**/*.properties&quot;/&gt;
+
+    &lt;/patternset&gt;
+</PRE></TD></TR></TABLE></DIV>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <A name="init"><!--anchor--></A>
+
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>Step 3 : 'init' target</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+          Useful for initializing a timestamp (DSTAMP, TODAY, TSTAMP), defining
+          token filters, printing some information messages, registering
+          custom Ant tasks, ...
+        </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+    &lt;!--
+       ========================================================================
+         Initialize the build. Must be called by all targets
+       ========================================================================
+    --&gt;
+    &lt;target name=&quot;init&quot;&gt;
+
+        &lt;!-- So that we can use the ${TSTAMP}, ${DSTAMP}, ... time stamps
+             in targets, if need be --&gt;
+        &lt;tstamp/&gt;
+
+        &lt;echo message=&quot;--------- ${project.fullname} ${project.version} ---------&quot;/&gt;
+        &lt;echo message=&quot;&quot;/&gt;
+
+        &lt;echo message=&quot;java.class.path = ${java.class.path}&quot;/&gt;
+        &lt;echo message=&quot;&quot;/&gt;
+        &lt;echo message=&quot;java.home = ${java.home}&quot;/&gt;
+        &lt;echo message=&quot;user.home = ${user.home}&quot;/&gt;
+        &lt;echo message=&quot;&quot;/&gt;
+        &lt;echo message=&quot;basedir = ${basedir}&quot;/&gt;
+        &lt;echo message=&quot;&quot;/&gt;
+        &lt;echo message=&quot;servlet.jar = ${servlet.jar}&quot;/&gt;
+        &lt;echo message=&quot;cactus.jar = ${cactus.jar}&quot;/&gt;
+        &lt;echo message=&quot;junit.jar = ${junit.jar}&quot;/&gt;
+        &lt;echo message=&quot;cactus.ant.jar = ${cactus.ant.jar}&quot;/&gt;
+
+        &lt;!-- Filters --&gt;
+        &lt;filter token=&quot;version&quot; value=&quot;${project.version}&quot;/&gt;
+        &lt;filter token=&quot;year&quot; value=&quot;${year}&quot;/&gt;
+
+        &lt;!-- Initialize custom Ant task needed for running the server tests --&gt;
+        &lt;taskdef name=&quot;runservertests&quot; classname=&quot;org.apache.cactus.ant.RunServerTestsTask&quot;&gt;
+            &lt;classpath&gt;
+                &lt;pathelement location=&quot;${cactus.ant.jar}&quot;/&gt;
+                &lt;pathelement path=&quot;${java.class.path}&quot;/&gt;
+            &lt;/classpath&gt;
+        &lt;/taskdef&gt;
+
+    &lt;/target&gt;
+</PRE></TD></TR></TABLE></DIV>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <A name="usage"><!--anchor--></A>
+
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>Step 4 : 'usage' targets</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+          Display a usage message.
+        </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+    &lt;!--
+       ========================================================================
+         Help on usage. List available targets
+       ========================================================================
+    --&gt;
+    &lt;target name=&quot;usage&quot; depends=&quot;init&quot;&gt;
+
+        &lt;echo message=&quot;&quot;/&gt;
+        &lt;echo message=&quot;${project.fullname} build file&quot;/&gt;
+        &lt;echo message=&quot;------------------------------------------------------&quot;/&gt;
+        &lt;echo message=&quot;&quot;/&gt;
+        &lt;echo message=&quot; Available targets are :&quot;/&gt;
+        &lt;echo message=&quot;&quot;/&gt;
+        &lt;echo message=&quot; war    --&gt; generates the war file (default)&quot;/&gt;
+        &lt;echo message=&quot; clean  --&gt; cleans up the build directory&quot;/&gt;
+        &lt;echo message=&quot; source --&gt; generates source zip of the project&quot;/&gt;
+        &lt;echo message=&quot; doc    --&gt; generates the docs (javadoc, ...)&quot;/&gt;
+        &lt;echo message=&quot; all    --&gt; do it all at once&quot;/&gt;
+        &lt;echo message=&quot;            (clean, war, source, doc)&quot;/&gt;
+        &lt;echo message=&quot;&quot;/&gt;
+        &lt;echo message=&quot; Targets for running the tests for Servlet API 2.2 :&quot;/&gt;
+        &lt;echo message=&quot;&quot;/&gt;
+        &lt;echo message=&quot; tests_resin_12    --&gt; run tests for Resin 1.2&quot;/&gt;
+        &lt;echo message=&quot; tests_tomcat_32   --&gt; run tests for Tomcat 3.2&quot;/&gt;
+        &lt;echo message=&quot; tests_weblogic_51 --&gt; run tests for WebLogic 5.1&quot;/&gt;
+        &lt;echo message=&quot; tests_orion_14    --&gt; run tests for Orion 1.4&quot;/&gt;
+        &lt;echo message=&quot;&quot;/&gt;
+
+    &lt;/target&gt;
+</PRE></TD></TR></TABLE></DIV>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <A name="prepare"><!--anchor--></A>
+
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>Step 5 : 'prepare' target</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+          This target is needed for both compiling and generating the javadoc.
+          It copies all the source files from their <CODE><FONT face="courier, monospaced">src/</FONT></CODE> directory
+          to the <CODE><FONT face="courier, monospaced">out</FONT></CODE> directory, replacing tokens in the source
+          code (replacing the <CODE><FONT face="courier, monospaced">1.4.1</FONT></CODE> by the version number
+          for example).
+        </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+    &lt;!--
+       ========================================================================
+         Prepare the output directory by copying the source files into it
+       ========================================================================
+    --&gt;
+    &lt;target name=&quot;prepare&quot; depends=&quot;init&quot;&gt;
+
+        &lt;mkdir dir=&quot;${out.src.dir}&quot;/&gt;
+
+        &lt;!-- Copy all source files to destination dir. Apply the filters in
+             order to replace the tokens for the copyright year and the
+             version --&gt;
+        &lt;copy todir=&quot;${out.src.dir}&quot; filtering=&quot;on&quot;&gt;
+            &lt;fileset dir=&quot;${src.java.dir}&quot;&gt;
+                &lt;patternset refid=&quot;all.src.files&quot;/&gt;
+            &lt;/fileset&gt;
+            &lt;fileset dir=&quot;${src.java.servlet.dir}&quot;&gt;
+                &lt;patternset refid=&quot;all.src.files&quot;/&gt;
+            &lt;/fileset&gt;
+        &lt;/copy&gt;
+
+    &lt;/target&gt;
+</PRE></TD></TR></TABLE></DIV>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <A name="compile"><!--anchor--></A>
+
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>Step 6 : 'compile' target</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+          The <CODE><FONT face="courier, monospaced">compile</FONT></CODE> target simply compiles the java files into
+          <CODE><FONT face="courier, monospaced">.class</FONT></CODE> files and also copies the support files that are
+          in <CODE><FONT face="courier, monospaced">src/</FONT></CODE> to the directory where the class file have been
+          generated.
+        </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+    &lt;!--
+       ========================================================================
+         Compiles the source directory
+       ========================================================================
+    --&gt;
+    &lt;!-- Preparation target for the compile target --&gt;
+    &lt;target name=&quot;prepare-compile&quot; depends=&quot;prepare&quot;&gt;
+
+        &lt;mkdir dir=&quot;${out.classes.dir}&quot;/&gt;
+
+    &lt;/target&gt;
+
+    &lt;!-- Run the java compilation --&gt;
+    &lt;target name=&quot;compile&quot; depends=&quot;prepare-compile&quot;&gt;
+
+        &lt;javac srcdir=&quot;${out.src.dir}&quot;
+            destdir=&quot;${out.classes.dir}&quot;
+            debug=&quot;${debug}&quot;
+            deprecation=&quot;${deprecation}&quot;
+            optimize=&quot;${optimize}&quot;&gt;
+
+            &lt;!-- Exclude all files that are not .java source files --&gt;
+
+            &lt;!-- All doc files --&gt;
+            &lt;exclude name=&quot;**/package.html&quot;/&gt;
+            &lt;exclude name=&quot;**/overview.html&quot;/&gt;
+
+            &lt;!-- All conf files (including test files) --&gt;
+            &lt;exclude name=&quot;**/*.txt&quot;/&gt;
+            &lt;exclude name=&quot;**/*.xml&quot;/&gt;
+            &lt;exclude name=&quot;**/*.properties&quot;/&gt;
+
+            &lt;classpath&gt;
+                &lt;pathelement path=&quot;${java.class.path}&quot;/&gt;
+                &lt;pathelement location=&quot;${servlet.jar}&quot;/&gt;
+                &lt;pathelement location=&quot;${cactus.jar}&quot;/&gt;
+            &lt;/classpath&gt;
+
+        &lt;/javac&gt;
+
+        &lt;!-- Copies non java files that need to be in the classes directory --&gt;
+        &lt;copy todir=&quot;${out.classes.dir}&quot;&gt;
+            &lt;fileset dir=&quot;${src.java.dir}&quot;&gt;
+                &lt;patternset refid=&quot;all.nonjava.files&quot;/&gt;
+            &lt;/fileset&gt;
+            &lt;fileset dir=&quot;${conf.test.dir}&quot;&gt;
+                &lt;include name=&quot;cactus.properties&quot;/&gt;
+            &lt;/fileset&gt;
+        &lt;/copy&gt;
+
+    &lt;/target&gt;
+</PRE></TD></TR></TABLE></DIV>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <A name="source"><!--anchor--></A>
+
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>Step 7 : 'source' target</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+          Zip up the sources for distribution.
+        </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+    &lt;!--
+       ========================================================================
+         Generates source zip of the project
+       ========================================================================
+    --&gt;
+    &lt;target name=&quot;source&quot; depends=&quot;prepare&quot;&gt;
+
+        &lt;zip zipfile=&quot;${final.src.name}&quot; basedir=&quot;.&quot;&gt;
+
+            &lt;exclude name=&quot;${out.dir}/**&quot;/&gt;
+            &lt;exclude name=&quot;**/*.log&quot;/&gt;
+            &lt;exclude name=&quot;**/*.bak&quot;/&gt;
+            &lt;exclude name=&quot;**/*.class&quot;/&gt;
+            &lt;exclude name=&quot;${build.dir}/build.properties&quot;/&gt;
+
+        &lt;/zip&gt;
+
+    &lt;/target&gt;
+</PRE></TD></TR></TABLE></DIV>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <A name="javadoc"><!--anchor--></A>
+
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>Step 8 : 'javadoc' target</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+          Generate the project's javadoc.
+        </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+    &lt;!--
+       ========================================================================
+         Generate the javadoc
+       ========================================================================
+    --&gt;
+    &lt;!-- Preparation target for the javadoc target --&gt;
+    &lt;target name=&quot;prepare-javadoc&quot; depends=&quot;prepare&quot;&gt;
+
+        &lt;mkdir dir=&quot;${out.javadoc.dir}&quot;/&gt;
+
+    &lt;/target&gt;
+
+    &lt;!-- Generate the javadoc for the current Servlet API --&gt;
+    &lt;target name=&quot;javadoc&quot; depends=&quot;prepare-javadoc&quot;&gt;
+
+        &lt;javadoc
+            sourcepath=&quot;${out.src.dir}&quot;
+            packagenames=&quot;org.apache.cactus.sample.*&quot;
+            destdir=&quot;${out.javadoc.dir}&quot;
+            author=&quot;true&quot;
+            public=&quot;true&quot;
+            version=&quot;true&quot;
+            use=&quot;true&quot;
+            windowtitle=&quot;${project.fullname} ${project.version} for Servlet @servlet.api@ API&quot;
+            doctitle=&quot;${project.fullname} ${project.version} for Servlet @servlet.api@ API&quot;
+            bottom=&quot;Copyright &amp;amp;copy; ${year} Apache Software Foundation. All Rights Reserved.&quot;&gt;
+
+            &lt;classpath&gt;
+                &lt;pathelement path=&quot;${java.class.path}&quot;/&gt;
+                &lt;pathelement location=&quot;${servlet.jar}&quot;/&gt;
+                &lt;pathelement location=&quot;${cactus.jar}&quot;/&gt;
+            &lt;/classpath&gt;
+
+        &lt;/javadoc&gt;
+
+    &lt;/target&gt;
+</PRE></TD></TR></TABLE></DIV>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <A name="doc"><!--anchor--></A>
+
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>Step 9 : 'doc' target</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+          Generate the project's documentation. It includes the javadoc,
+          additional README files (if any) and the documentation web site
+          (built using Stylebook for example, as shown in the example below).
+        </P>
+
+        <P align="justify">
+          Example not using Stylebook :
+        </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+    &lt;!--
+       ========================================================================
+         Generate the full documentation
+       ========================================================================
+    --&gt;
+    &lt;!-- Preparation target for the doc target --&gt;
+    &lt;target name=&quot;prepare-doc&quot; depends=&quot;javadoc&quot;&gt;
+
+        &lt;mkdir dir=&quot;${out.doc.dir}&quot;/&gt;
+
+    &lt;/target&gt;
+
+    &lt;!-- Generate the documentation --&gt;
+    &lt;target name=&quot;doc&quot; depends=&quot;prepare-doc&quot;&gt;
+
+        &lt;!-- Create the zipped documentation --&gt;
+        &lt;zip zipfile=&quot;${final.doc.name}&quot; basedir=&quot;${out.doc.dir}&quot;/&gt;
+
+    &lt;/target&gt;
+</PRE></TD></TR></TABLE></DIV>
+
+        <P align="justify">
+          Example using Stylebook (from the Cactus build file itself) :
+        </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+    &lt;!--
+       ========================================================================
+         Generate the full documentation for a given Servlet API, i.e.
+         web site + javadoc
+       ========================================================================
+    --&gt;
+    &lt;!-- Preparation target for the doc target --&gt;
+    &lt;target name=&quot;prepare-doc&quot; depends=&quot;javadoc&quot;&gt;
+
+        &lt;mkdir dir=&quot;${out.doc.dir}&quot;/&gt;
+        &lt;mkdir dir=&quot;${out.doc.dir}/images&quot;/&gt;
+
+        &lt;!-- Copy doc-book.xml to book.xml for defining the documentation web
+             site and replacing token filters (year) --&gt;
+        &lt;delete file=&quot;${xdoc.dir}/book.xml&quot;/&gt;
+        &lt;copy file=&quot;${xdoc.dir}/doc-book.xml&quot; tofile=&quot;${xdoc.dir}/book.xml&quot;
+            filtering=&quot;on&quot;/&gt;
+
+        &lt;!-- Copy the images --&gt;
+        &lt;copy todir=&quot;${out.site.dir}/images&quot;&gt;
+            &lt;fileset dir=&quot;${xdoc.dir}/images&quot;/&gt;
+        &lt;/copy&gt;
+
+    &lt;/target&gt;
+
+    &lt;!-- Generate the documentation --&gt;
+    &lt;target name=&quot;doc&quot; depends=&quot;prepare-doc&quot;&gt;
+
+        &lt;!-- Generate the documentation web site --&gt;
+        &lt;stylebook book=&quot;${xdoc.dir}/book.xml&quot;
+            skinDirectory=&quot;${skin.dir}/jakarta.apache.org&quot;
+            targetDirectory=&quot;${out.doc.dir}&quot;&gt;
+
+            &lt;classpath&gt;
+                &lt;pathelement path=&quot;${java.class.path}&quot;/&gt;
+            &lt;/classpath&gt;
+
+        &lt;/stylebook&gt;
+
+    &lt;/target&gt;
+</PRE></TD></TR></TABLE></DIV>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <A name="clean"><!--anchor--></A>
+
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>Step 10 : 'clean' target</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+          Removes all build generated files.
+        </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+    &lt;!--
+       ========================================================================
+         Remove all build generated files
+       ========================================================================
+    --&gt;
+    &lt;target name=&quot;clean&quot; depends=&quot;init&quot;&gt;
+
+        &lt;!-- Deletes all files ending with '~' --&gt;
+        &lt;delete&gt;
+            &lt;fileset dir=&quot;.&quot; includes=&quot;**/*~&quot; defaultexcludes=&quot;no&quot;/&gt;
+        &lt;/delete&gt;
+
+        &lt;!-- Remove the out directory --&gt;
+        &lt;delete dir=&quot;${out.dir}&quot;/&gt;
+
+        &lt;!-- Delete log files --&gt;
+        &lt;delete&gt;
+            &lt;fileset dir=&quot;.&quot;&gt;
+                &lt;include name=&quot;**/*.log&quot;/&gt;
+            &lt;/fileset&gt;
+        &lt;/delete&gt;
+
+    &lt;/target&gt;
+</PRE></TD></TR></TABLE></DIV>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>Step 11 : 'jar', 'war' targets</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <A name="jar"><!--anchor--></A>
+
+        <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="96%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="-1"><B>'jar' target</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+          <P align="justify">
+            This target is useful if your project is a framework for example and
+            you need to deliver a jar file. We also include a manifest file
+            in the jar, with version information. We copy the manifest to the
+            output directory in order to replace the <CODE><FONT face="courier, monospaced">1.4.1</FONT></CODE>
+            token with it's value.
+          </P>
+
+          <P align="justify">
+            Example (from the Cactus build file) :
+          </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+    &lt;!--
+       ========================================================================
+         Create the runtime jar file
+       ========================================================================
+    --&gt;
+    &lt;!-- Preparation target for the jar target --&gt;
+    &lt;target name=&quot;prepare-jar&quot; depends=&quot;compile&quot;&gt;
+
+        &lt;mkdir dir=&quot;${out.conf.dir}&quot;/&gt;
+        &lt;mkdir dir=&quot;${out.lib.dir}&quot;/&gt;
+
+        &lt;!-- Copy the manifest in order to replace the version token filter --&gt;
+        &lt;copy todir=&quot;${out.conf.dir}&quot; filtering=&quot;on&quot;&gt;
+            &lt;fileset dir=&quot;${conf.dir}&quot; &gt;
+                &lt;include name=&quot;manifest&quot;/&gt;
+            &lt;/fileset&gt;
+        &lt;/copy&gt;
+
+    &lt;/target&gt;
+
+    &lt;!-- Generate the jar file --&gt;
+    &lt;target name=&quot;jar&quot; depends=&quot;prepare-jar&quot;&gt;
+
+        &lt;jar jarfile=&quot;${final.jar.name}&quot; basedir=&quot;${out.classes.dir}&quot;
+            manifest=&quot;${out.conf.dir}/manifest&quot;&gt;
+
+            &lt;!-- Do not include test files in the runtime jar --&gt;
+            &lt;exclude name=&quot;**/Test*.*&quot;/&gt;
+            &lt;exclude name=&quot;**/test*.*&quot;/&gt;
+
+        &lt;/jar&gt;
+
+    &lt;/target&gt;
+</PRE></TD></TR></TABLE></DIV>
+
+        </FONT></TD></TR></TABLE></DIV><BR>
+
+        <A name="war"><!--anchor--></A>
+
+        <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="96%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="-1"><B>'war' target</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+          <P align="justify">
+            This target is useful if you're building a web application.
+            We also include a manifest file in the war, with version
+            information. We copy the manifest to the output directory in order
+            to replace the <CODE><FONT face="courier, monospaced">1.4.1</FONT></CODE> token with it's value.
+          </P>
+
+          <P align="justify">
+            Example (from the Cactus sample) :
+          </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+    &lt;!--
+       ========================================================================
+         Create the runtime war file
+       ========================================================================
+    --&gt;
+    &lt;!-- Preparation target for the war target --&gt;
+    &lt;target name=&quot;prepare-war&quot; depends=&quot;compile&quot;&gt;
+
+        &lt;mkdir dir=&quot;${out.conf.dir}&quot;/&gt;
+
+        &lt;!-- Copy the manifest in order to replace the version token filter  --&gt;
+        &lt;copy todir=&quot;${out.conf.dir}&quot; filtering=&quot;on&quot;&gt;
+            &lt;fileset dir=&quot;${conf.dir}&quot; &gt;
+                &lt;include name=&quot;manifest&quot;/&gt;
+            &lt;/fileset&gt;
+        &lt;/copy&gt;
+
+    &lt;/target&gt;
+
+    &lt;!-- Generate the war file --&gt;
+    &lt;target name=&quot;war&quot; depends=&quot;prepare-war&quot;&gt;
+
+        &lt;war warfile=&quot;${final.war.name}&quot;
+             webxml=&quot;${conf.dir}/web.xml&quot;
+             manifest=&quot;${out.conf.dir}/manifest&quot;&gt;
+
+            &lt;classes dir=&quot;${out.classes.dir}&quot;&gt;
+                &lt;!-- Do not include test files in the runtime jar --&gt;
+                &lt;exclude name=&quot;**/Test*.*&quot;/&gt;
+                &lt;exclude name=&quot;**/test*.*&quot;/&gt;
+
+                &lt;!-- Also exclude the test cactus.properties file --&gt;
+                &lt;exclude name=&quot;cactus.properties&quot;/&gt;
+            &lt;/classes&gt;
+
+            &lt;fileset dir=&quot;${web.dir}&quot;&gt;
+                &lt;exclude name=&quot;test/**&quot;/&gt;
+            &lt;/fileset&gt;
+        &lt;/war&gt;
+
+    &lt;/target&gt;
+</PRE></TD></TR></TABLE></DIV>
+
+        </FONT></TD></TR></TABLE></DIV><BR>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <A name="tests"><!--anchor--></A>
+
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>Step 12 : 'tests_XXX' target</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+          The <CODE><FONT face="courier, monospaced">tests_XXX</FONT></CODE> target is in charge of running the
+          Cactus unit tests. It must prepare the test environment for a
+          given servlet engine and package the tests, start that servlet
+          engine, run the tests by starting the JUnit runner and stop the
+          servlet engine.
+        </P>
+
+        <P align="justify">
+          See the <A href="howto_ant_cactus.html">Using Cactus with
+          Ant</A> tutorial for details on to do this.
+        </P>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+    </FONT></TD></TR></TABLE></DIV><BR>
+
+  
+</TD></TR></TABLE></TD></TR></TABLE><BR><TABLE border="0" cellpadding="0" cellspacing="0" width="100%"><TR><TD><HR noshade="" size="1"></TD></TR><TR><TD align="center"><FONT color="#525D76" face="arial,helvetica,sanserif" size="-1"><I>
+                Copyright &copy; 2000-2002 The Apache Software Foundation.
+                All Rights Reserved.
+               </I></FONT></TD></TR></TABLE></BODY></HTML>

@@ -1,0 +1,9 @@
+                          -- CODING STANDARD ADDENDUM--
+
+Addendum to Sun(tm) Coding Standard (http://java.sun.com/docs/codeconv/)
+
+9. Naming Convention:
+   - Private variables start with underscore (e.g. _value).
+   - Static variables name start with uppercase (e.g. _IdCount, CONSTANT).
+   - Variable name for arrays are plurial (e.g. Stack[] _stacks).
+   - Static method invocations start with class prefixes (e.g. MyClass.newId()).

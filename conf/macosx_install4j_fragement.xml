@@ -1,0 +1,8 @@
+<macosFolder name="Mac OS X Folder" id="128" mediaFileName="parabuild_%VERSION%_mac_osx" installDir="parabuild" allLaunchers="true" customInstallBaseDir="/usr/local" allowUserStartAfterFinish="false" launchExecutableId="" createUninstallIcon="true" overrideLicenseFile="false" licenseFile="" overridePreInformationFile="false" preInformationFile="" overridePostInformationFile="false" postInformationFile="" adminRequired="true" languageID="en" modeDesktopIcon="1" desktopLauncherId="" customScriptMode="1" customScriptFile="">
+  <selectedLaunchers/>
+  <messageSet language="English"/>
+  <exclude/>
+  <variables/>
+  <excludedScreenIds/>
+  <customScriptLines/>
+</macosFolder>

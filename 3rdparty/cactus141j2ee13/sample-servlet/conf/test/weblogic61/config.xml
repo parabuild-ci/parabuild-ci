@@ -1,0 +1,3 @@
+<Domain Name="testdomain">
+  <Server Name="testserver" NativeIOEnabled="true" ListenPort="@test.port@"/>
+</Domain>

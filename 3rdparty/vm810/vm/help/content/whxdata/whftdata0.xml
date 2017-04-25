@@ -1,0 +1,431 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<ftstdata>
+<topic name="About 5.3/6.0 Project Roots" url="topics/about5_3projroot.html" />
+<topic name="About Copying 5.3/6.0 Projects into Project Databases" url="topics/about_copyvm5_3proj.html" />
+<topic name="About the Version Manager File Server" url="topics/about_file_server.html" />
+<topic name="About Serena ChangeMan Mover" url="topics/about_merant_deploy.html" />
+<topic name="About TeamTrack" url="topics/about_teamtrack.html" />
+<topic name="About Access List Groups" url="topics/aboutaccesslistgroups.html" />
+<topic name="About Access Lists" url="topics/aboutaccesslists.html" />
+<topic name="About Access Control Databases" url="topics/aboutacdb.html" />
+<topic name="About Adding Existing Directories to Projects" url="topics/aboutadddirs.html" />
+<topic name="About Adding Files to Projects" url="topics/aboutaddfiles.html" />
+<topic name="About Archive Attributes" url="topics/aboutarchattrib.html" />
+<topic name="About Archives" url="topics/aboutarchives.html" />
+<topic name="Merging Files Automatically" url="topics/aboutautomerge.html" />
+<topic name="About Branching" url="topics/aboutbranching.html" />
+<topic name="About Branching Using Multiple Locks" url="topics/aboutbranchusemultilock.html" />
+<topic name="About Configuration Files" url="topics/aboutconfigfiles.html" />
+<topic name="About Configuration Options" url="topics/aboutconfigoptions.html" />
+<topic name="About Copying Project Databases" url="topics/aboutcopyprjdb.html" />
+<topic name="About Copying Projects" url="topics/aboutcopyproject.html" />
+<topic name="About the Default Access Control Database" url="topics/aboutdefaultacdb.html" />
+<topic name="About the Default Revision" url="topics/aboutdefaultrevision.html" />
+<topic name="About Defining a Promotion Model" url="topics/aboutdefiningpromo.html" />
+<topic name="About History Reports" url="topics/abouthistoryreport.html" />
+<topic name="About Importing Archives" url="topics/aboutimportarchive.html" />
+<topic name="About Journal Reports" url="topics/aboutjournalreport.html" />
+<topic name="About Locking Revisions" url="topics/aboutlocking.html" />
+<topic name="About Logging In to Project Databases" url="topics/aboutlogging.html" />
+<topic name="About the Serena ChangeMan Merge Tool" url="topics/aboutmergetool.html" />
+<topic name="About Moving Projects" url="topics/aboutmoveproject.html" />
+<topic name="About Privileges" url="topics/aboutprivileges.html" />
+<topic name="About Project Databases" url="topics/aboutprjdb.html" />
+<topic name="About Version Manager Projects" url="topics/aboutprojects.html" />
+<topic name="About Promotion Models" url="topics/aboutprommodels.html" />
+<topic name="About Reports" url="topics/aboutreports.html" />
+<topic name="About Revisions" url="topics/aboutrevisions.html" />
+<topic name="About the Sample Project Database" url="topics/aboutsampledatabase.html" />
+<topic name="About Security Reports" url="topics/aboutsecurityreport.html" />
+<topic name="About SourceBridge" url="topics/aboutsourcebridge.html" />
+<topic name="About the Status Bar" url="topics/aboutthestatusbar.html" />
+<topic name="About the Tool Bar" url="topics/aboutthetoolbar.html" />
+<topic name="Setting Up SourceBridge Options" url="topics/abouttrackerlink.html" />
+<topic name="About Event Triggers" url="topics/abouttriggers.html" />
+<topic name="About Unlocking Revisions" url="topics/aboutunlocking.html" />
+<topic name="About Versioned Files" url="topics/aboutversionedfiles.html" />
+<topic name="About Version Labels" url="topics/aboutversionlabels.html" />
+<topic name="About Workfiles" url="topics/aboutworkfiles.html" />
+<topic name="About Workspaces" url="topics/aboutworkspaces.html" />
+<topic name="Using Shortcut and Mnemonic Keys" url="topics/accelerator.html" />
+<topic name="Accessing the Online Manuals" url="topics/accessing_the_online_manuals.htm" />
+<topic name="Access Lists" url="topics/accesslist.html" />
+<topic name="Access List Group" url="topics/accesslistgroup.html" />
+<topic name="Import Archives Dialog Box" url="topics/addarchivesdialog.html" />
+<topic name="Adding Workfiles" url="topics/addfiles.html" />
+<topic name="Add Workfiles Dialog Box" url="topics/addfilesdialog.html" />
+<topic name="Adding a Tool Bar Icon and Menu Item" url="topics/addtoolbaricon.html" />
+<topic name="Project Security Dialog Box/Access List Groups" url="topics/adminsecuritygroups.html" />
+<topic name="Project Security Dialog Box/Privilege Sets" url="topics/adminsecurityprivsets.html" />
+<topic name="Project Security Dialog Box/Users" url="topics/adminsecurityusers.html" />
+<topic name="Advanced Filter Dialog" url="topics/advancedfilterdialog.html" />
+<topic name="Example of When to Change Attributes" url="topics/arcattrexample.html" />
+<topic name="Archive Attributes Dialog Box" url="topics/archiveattributesdialog.html" />
+<topic name="Archive Creation Options" url="topics/archivecreationoptions.html" />
+<topic name="Archive Locations" url="topics/archivelocation.html" />
+<topic name="Archive Search Path Options" url="topics/archivesearchpathoptions.html" />
+<topic name="Archive Suffix" url="topics/archivesuffix.html" />
+<topic name="Assigning Version Labels" url="topics/assigningaversionlabel.html" />
+<topic name="Assigning Promotion Groups" url="topics/assignpromotiongroup.html" />
+<topic name="Assign Promotion Group Dialog Box" url="topics/assignpromotiongroupdialog.html" />
+<topic name="Assign Version Label Dialog Box" url="topics/assignversionlabeldialog.html" />
+<topic name="Associating Configuration Files with Projects" url="topics/assocconfigfile.html" />
+<topic name="Associating Configuration Files with Project Databases and Projects" url="topics/associateconfigfile.html" />
+<topic name="About Automatic Branching" url="topics/autobranch.html" />
+<topic name="Banner" url="topics/banner.htm" />
+<topic name="Base Privileges" url="topics/baseprivtables.html" />
+<topic name="Branching Files" url="topics/branchfile.html" />
+<topic name="Select User Dialog Box" url="topics/browsepromotiongroupsdialog.html" />
+<topic name="banner" url="topics/builder.htm" />
+<topic name="Changing the Access Control Database Associated with a Project Database" url="topics/changeacdbassocpdb.html" />
+<topic name="Changing the Archive Location" url="topics/changearchivelocation.html" />
+<topic name="Changing Attributes of Existing Archives" url="topics/changeattributes.html" />
+<topic name="Change Description Dialog Box" url="topics/changedescriptiondialog.html" />
+<topic name="Changing Your Password" url="topics/changepassword.html" />
+<topic name="Change Password Dialog Box" url="topics/changepassworddialog.html" />
+<topic name="Changing Project Database Properties" url="topics/changeprjdbprops.html" />
+<topic name="Changing Promotion Groups" url="topics/changepromotiongroup.html" />
+<topic name="Change Promotion Group Dialog Box" url="topics/changepromotiongroupdialog.html" />
+<topic name="Moving Version Labels" url="topics/changetypeversionlabel.html" />
+<topic name="Changing a User's ID" url="topics/changeuserid.html" />
+<topic name="Check In Dialog Box" url="topics/checkindialog.html" />
+<topic name="Checking In" url="topics/checkingin.html" />
+<topic name="Checking Out Revisions/Editing Files" url="topics/checkingout.html" />
+<topic name="Check Out Dialog Box" url="topics/checkoutdialog.html" />
+<topic name="About Cleaning Up Unwanted Archive Files" url="topics/cleaninguparchives.html" />
+<topic name="Closing Project Databases" url="topics/closingprojectdb.html" />
+<topic name="Command-Line Macro Method" url="topics/cmdlinemacro.html" />
+<topic name="Column Masking/Renumbering" url="topics/columnmasking_renumbering.html" />
+<topic name="Command-Line Macros" url="topics/commandlinemacros.html" />
+<topic name="Command-Line Options" url="topics/commandlineoptions.html" />
+<topic name="Composite Privileges" url="topics/compositeprivtables.html" />
+<topic name="Configuring Project Databases and Projects" url="topics/configureoverview.html" />
+<topic name="Configure Project Dialog Box/Access Control Database" url="topics/configureprojectaccessdatabasedialog.html" />
+<topic name="Configure Project Database Dialog Box/Allow/Disallow" url="topics/configureprojectallowdialog.html" />
+<topic name="Configure Project Dialog Box/Archive Creation" url="topics/configureprojectarchiveattributesdialog.html" />
+<topic name="Configure Project Dialog Box/Archive Branching" url="topics/configureprojectarchivebranchingdialog.html" />
+<topic name="Configure Project Dialog Box/Archive Locking" url="topics/configureprojectarchivelockingdialog.html" />
+<topic name="Configure Project Dialog Box/Archives" url="topics/configureprojectarchiveoptionsdialog.html" />
+<topic name="Configure Project Dialog Box/Archive Search Path" url="topics/configureprojectarchivepathdialog.html" />
+<topic name="Configure Project Dialog Box/Command Line" url="topics/configureprojectcommandlinedialog.html" />
+<topic name="Configure Project Dialog Box/Event Triggers" url="topics/configureprojecteventtriggersdialog.html" />
+<topic name="Configure Project Dialog Box/File Types" url="topics/configureprojectfiletypesdialog.html" />
+<topic name="Configure Project Dialog Box/Journal File" url="topics/configureprojectjournalfiledialog.html" />
+<topic name="Configure Project Dialog Box/Keyword Expansion" url="topics/configureprojectkeywordexpansiondialog.html" />
+<topic name="Configure Project Dialog Box/LDAP Configuration" url="topics/configureprojectldapauthenticationdialog.html" />
+<topic name="Configure Project Dialog Box/LDAP Servers" url="topics/configureprojectldapserversdialog.html" />
+<topic name="Configure Project Dialog Box/Login Sources" url="topics/configureprojectloginsourcesdialog.html" />
+<topic name="Configure Project Dialog Box/Miscellaneous" url="topics/configureprojectmiscellaneousdialog.html" />
+<topic name="Configure Project Dialog Box/Promotion Model" url="topics/configureprojectpromotionmodeldialog.html" />
+<topic name="Configure Project Dialog Box/Reference Directory" url="topics/configureprojectreferencedirectorydialog.html" />
+<topic name="Configure Project Dialog Box/Security" url="topics/configureprojectsecuritydialog.html" />
+<topic name="Configure Project Dialog Box/Semaphores" url="topics/configureprojectsemaphoresdialog.html" />
+<topic name="Configure Project Dialog Box/Temporary Files" url="topics/configureprojecttemporaryfilesdialog.html" />
+<topic name="Configure Project Dialog Box/Workfile Attributes" url="topics/configureprojectworkfileattributesdialog.html" />
+<topic name="Configure Project Dialog Box/Workfiles" url="topics/configureprojectworkfilesdialog.html" />
+<topic name="Configuring Clients for Use with File Servers" url="topics/configuring_clients_for_file_server.html" />
+<topic name="Connecting to Serena ChangeMan Mover" url="topics/connecting_to_deploy.html" />
+<topic name="Contacting Technical Support" url="topics/contacttechnicalsupport.html" />
+<topic name="Converting Other Repositories to Version Manager" url="topics/converting_other_repositories_to_version_manager.html" />
+<topic name="Copy Folder/Select Archive Location Dialog Box" url="topics/copyfoldarchivelocationdialog.html" />
+<topic name="Copying 5.3/6.0 Folders to Project Databases" url="topics/copyfolder.html" />
+<topic name="Copying 5.3/6.0 Folders" url="topics/copyfolder53.html" />
+<topic name="Copy Matrix" url="topics/copymatrix.html" />
+<topic name="Copying Project Databases" url="topics/copyprjdb.html" />
+<topic name="Copy Project/Select Archive Location Dialog Box" url="topics/copyprojarchivelocationdialog.html" />
+<topic name="Copy Project/Select Destination Project Database or Project Dialog Box" url="topics/copyprojbrowsedialog.html" />
+<topic name="Copy Project/Select Configuration File and Access Control Database Dialog Box" url="topics/copyprojconfigacdbdialog.html" />
+<topic name="Copy Project Dialog Box/Create Project Database" url="topics/copyprojcreateprojdbdialog.html" />
+<topic name="Copying Projects" url="topics/copyproject.html" />
+<topic name="Copy Project/Organize New Project Structure Dialog Box" url="topics/copyprojworkfilehierarchydialog.html" />
+<topic name="Copying a Versioned File" url="topics/copyversionedfile.html" />
+<topic name="Copying 5.3/6.0 Projects" url="topics/copyvm5_3proj.html" />
+<topic name="Upgrading 5.3/6.0 Project Roots" url="topics/copyvm5_3projroot.html" />
+<topic name="Creating 5.3/6.0 Folders" url="topics/createfolder.html" />
+<topic name="Create Access List Group Dialog Box" url="topics/creategroupdialog.html" />
+<topic name="Create Privilege Set Dialog Box" url="topics/createprivsetdialog.html" />
+<topic name="Creating Project Databases" url="topics/createprjdb.html" />
+<topic name="Creating Projects" url="topics/createproject.html" />
+<topic name="Create Project Dialog Box" url="topics/createprojectdialog.html" />
+<topic name="Create Project Database Dialog Box" url="topics/createrootdialog.html" />
+<topic name="New Topic" url="topics/createrootfieldhelp.html" />
+<topic name="Create User Dialog Box" url="topics/createuserdialog.html" />
+<topic name="New Workspace Dialog Box" url="topics/createworkspacedialog.html" />
+<topic name="Creating Workspaces" url="topics/createworkspaces.html" />
+<topic name="Cross-Platform Environment" url="topics/crossplatform.html" />
+<topic name="Customizing the Format of HTML Reports" url="topics/customizingreportformat.html" />
+<topic name="Default Privilege Sets" url="topics/defaultprivtables.html" />
+<topic name="Default Revision" url="topics/defaultrevision.html" />
+<topic name="Default Settings in the Desktop Client" url="topics/defaults.html" />
+<topic name="Defining Access Lists" url="topics/defineaccesslist.html" />
+<topic name="Defining Access List Groups" url="topics/defineaccesslistgroup.html" />
+<topic name="Defining Check In/Check Out Options" url="topics/definecheckinout.html" />
+<topic name="Defining Custom Privilege Sets" url="topics/definecustomprivsets.html" />
+<topic name="Defining Users" url="topics/defineusers.html" />
+<topic name="Defining a Promotion Model" url="topics/definingpromomodel.html" />
+<topic name="Deleting 5.3/6.0 Folders" url="topics/deletefolder.html" />
+<topic name="Deleting Version Manager Projects" url="topics/deleteproject.html" />
+<topic name="Delete Revision from File Dialog Box" url="topics/deleterevisiondialog.html" />
+<topic name="Deleting Versioned Files" url="topics/deleteversionedfile.html" />
+<topic name="Deleting a Workspace" url="topics/deleteworkspace.html" />
+<topic name="Deleting Revisions" url="topics/deletingrevisions.html" />
+<topic name="Storing Deltas" url="topics/deltas.html" />
+<topic name="Deployment Setup Dialog Box" url="topics/deploysettingsdialog.html" />
+<topic name="Show Differences Dialog Box" url="topics/diffreportdialog.html" />
+<topic name="Select Location Dialog Box" url="topics/directorydialog.html" />
+<topic name="Disabling the Welcome and Confirmation Dialog Display" url="topics/disablingdialogs.html" />
+<topic name="Disabling Security" url="topics/disablingsecurity.html" />
+<topic name="About Allowing and Disallowing Options" url="topics/disallowoptions.html" />
+<topic name="Working in the Revision Pane" url="topics/displayingrevisionpane.html" />
+<topic name="Dragging and Dropping" url="topics/dragdrop.html" />
+<topic name="Duplicate Group Dialog Box" url="topics/duplicategroupdialog.html" />
+<topic name="Duplicate Privilege Set Dialog Box" url="topics/duplicateprivsetdialog.html" />
+<topic name="Duplicating Users" url="topics/duplicateuser.html" />
+<topic name="Duplicate User Dialog Box" url="topics/duplicateuserdialog.html" />
+<topic name="Embedding an Access Control Database" url="topics/embedacdb.html" />
+<topic name="Embedding Login Sources" url="topics/embedloginsources.html" />
+<topic name="Embedding a Master Configuration File into Version Manager" url="topics/embedmasterconfigfile.html" />
+<topic name="About the New Project Database" url="topics/emptyprojectdb.html" />
+<topic name="Enabling Security" url="topics/enablesecurity.html" />
+<topic name="Enabling Application Logs" url="topics/enablingapplication.html" />
+<topic name="Environment Variable Method" url="topics/environvar.html" />
+<topic name="Event Information" url="topics/eventinfo.html" />
+<topic name="Examples of Event Triggers" url="topics/examplesoftriggers.html" />
+<topic name="File Server Configuration Dialog Box" url="topics/file_server_configuration_dialog.html" />
+<topic name="Edit File Server URL Dialog Box" url="topics/file_server_edit_url_configuration_dialog.html" />
+<topic name="Add File Server URL Dialog Box" url="topics/file_server_url_configuration_dialog.html" />
+<topic name="File Selection Dialog Box" url="topics/filechooserdialog.html" />
+<topic name="File Semaphores" url="topics/filesempahores.html" />
+<topic name="Attributes Set by File Type" url="topics/filetypebasis.html" />
+<topic name="Options Set on a File Type Basis" url="topics/filetypeoptions.html" />
+<topic name="Filtering by Difference Using Two Promotion Groups" url="topics/filterby2promotiongroups.html" />
+<topic name="Filtering by Difference Using Two Version Labels" url="topics/filterby2versionlabels.html" />
+<topic name="Filtering by Promotion Group" url="topics/filterbypromotiongroup.html" />
+<topic name="Filtering by Version Label" url="topics/filterbyversionlabel.html" />
+<topic name="Filtering by Difference Using a Version Label and a Promotion Group" url="topics/filterbyversionlabelandpromotiongroup.html" />
+<topic name="About Filtering the File Pane" url="topics/filtering.html" />
+<topic name="Fixed-Length Keyword Expansion" url="topics/fixedlengthexpansion.html" />
+<topic name="Fixed vs. Floating Version Labels" url="topics/floatfixlabels.html" />
+<topic name="Version Manager Folder Properties Dialog Box" url="topics/folderdialog.html" />
+<topic name="User ID and Optional Password" url="topics/fs_passworddialog.html" />
+<topic name="Comparing Files" url="topics/generatedifferencereport.html" />
+<topic name="Generating History Reports" url="topics/generatehistoryreport.html" />
+<topic name="Generating Journal Reports" url="topics/generatejournalreport.html" />
+<topic name="Generating Security Reports" url="topics/generatesecurityreport.html" />
+<topic name="Get Dialog Box" url="topics/getrevisiondialog.html" />
+<topic name="Getting a Revision/Viewing a File" url="topics/gettingarevision.html" />
+<topic name="Glossary" url="topics/gloss.html" />
+<topic name="Guidelines for Setting Configuration Options" url="topics/guidelinesforsettingconfigoptions.html" />
+<topic name="Show History" url="topics/historyreportdialog.html" />
+<topic name="How Version Manager Passes Event Information" url="topics/howtopasseventinfo.html" />
+<topic name="Event Information for Icon and Menu Item Events" url="topics/iconeventinfo.html" />
+<topic name="Version Manager Icon and Menu Item Events" url="topics/iconevents.html" />
+<topic name="Importing Archives" url="topics/importarchives.html" />
+<topic name="Importing Archives After Moving the Location" url="topics/importarchivestomovelocation.html" />
+<topic name="Including Subprojects in Project Operations" url="topics/includesubprojects.html" />
+<topic name="About Version Manager" url="topics/introducingvm.html" />
+<topic name="Show Journal Dialog Box" url="topics/journaldialog.html" />
+<topic name="Journal File Options" url="topics/journalfileoptions.html" />
+<topic name="Keyword Expansion Options" url="topics/keywordexpansionoptions.html" />
+<topic name="Available Keywords" url="topics/keywords.html" />
+<topic name="LDAP Configuration Examples" url="topics/ldap_configuration_examples.html" />
+<topic name="Lock Dialog Box" url="topics/lockdialog.html" />
+<topic name="Locking Revisions" url="topics/locking.html" />
+<topic name="Locking Options" url="topics/lockingoptions.html" />
+<topic name="Logging In to Project Databases" url="topics/logging.html" />
+<topic name="Login Dialog Box" url="topics/logindialog.html" />
+<topic name="Login Sources" url="topics/loginsources.html" />
+<topic name="$Log$ Keyword" url="topics/logkeyword.html" />
+<topic name="Maintaining Security" url="topics/maintainsecurity.html" />
+<topic name="Make Secure Dialog Box" url="topics/makesecuredialog.html" />
+<topic name="New Topic" url="topics/makesecuredialogfields.html" />
+<topic name="About Master Configuration Files" url="topics/masterconfigfiles.html" />
+<topic name="Failed to Create Log File" url="topics/mbpro_error_failed_to_create_logs.html" />
+<topic name="No Target Files Found" url="topics/mbpro_error_no_target_files.html" />
+<topic name="PDB Path Mismatch" url="topics/mbpro_error_pdb_path_mismatch.html" />
+<topic name="Project Name Mismatch" url="topics/mbpro_error_project_name_mismatch.html" />
+<topic name="Project Not Found" url="topics/mbpro_error_project_not_found.html" />
+<topic name="Unable to Parse Target File" url="topics/mbpro_error_unable_to_parse_target_file.html" />
+<topic name="Serena ChangeMan Builder for Professional Errors" url="topics/mbpro_errorsmain.html" />
+<topic name="Build Job Selection Dialog Box" url="topics/mbpro_jobselectiondialog.html" />
+<topic name="Build Parameters Dialog Box" url="topics/mbpro_parametersdialog.html" />
+<topic name="Serena ChangeMan Builder for Pro Source Selection Dialog Box" url="topics/mbpro_sourceselectiondialog.html" />
+<topic name="Submission Dialog Box" url="topics/mbpro_submissiondialog.html" />
+<topic name="Target Selection Dialog Box" url="topics/mbpro_targetselectiondialog.html" />
+<topic name="Merging Files" url="topics/mergefiles.html" />
+<topic name="Message File" url="topics/messfile.html" />
+<topic name="Modifying Access Lists" url="topics/modifyaccesslist.html" />
+<topic name="Modifying Access List Group Members" url="topics/modifyacslstgrpmemb.html" />
+<topic name="Modifying Access List Group Privileges" url="topics/modifyacslstgrpprivs.html" />
+<topic name="Modifying Change Descriptions" url="topics/modifyingchangedescriptions.html" />
+<topic name="Modifying User Privileges" url="topics/modifyuserprivileges.html" />
+<topic name="Moving Archives" url="topics/movearchives.html" />
+<topic name="Moving 5.3/6.0 Folders" url="topics/movefolder.html" />
+<topic name="Moving Projects" url="topics/moveproject.html" />
+<topic name="Moving the Tools Configuration File" url="topics/movetoolsconfigfile.html" />
+<topic name="Moving Versioned Files" url="topics/moveversionedfile.html" />
+<topic name="Moving Version Labels" url="topics/moveversionlabel.html" />
+<topic name="Branching Using Multiple Locks" url="topics/multilockbranch.html" />
+<topic name="Setting Up Multiple Locks for Branching" url="topics/multilockbranchsetup.html" />
+<topic name="Multiple Locks" url="topics/multilocks.html" />
+<topic name="Selecting Multiple Projects and Folders" url="topics/multiselect.html" />
+<topic name="Naming Conventions" url="topics/namingconventions.html" />
+<topic name="New Folder Dialog Box" url="topics/newdirectorydialog.html" />
+<topic name="New Folder Dialog Box" url="topics/newfolderdialog.html" />
+<topic name="Serena ChangeMan Mover Not Found" url="topics/no_deploy.html" />
+<topic name="Opening Project Databases" url="topics/openingprojectdb.html" />
+<topic name="Open Project Database Dialog Box" url="topics/openprojectdbdialog.html" />
+<topic name="Opening the Sample Project Database" url="topics/opensample.html" />
+<topic name="Opening 5.3/6.0 Project Roots" url="topics/openvm5_3proj.html" />
+<topic name="Options Dialog Box/Dialog Behavior Tab" url="topics/optionsactiondialogs.html" />
+<topic name="Options Dialog Box" url="topics/optionsdialog.html" />
+<topic name="Options Dialog Box/Applications Tab" url="topics/optionseditor.html" />
+<topic name="Options Dialog Box/General Tab" url="topics/optionsgeneral.html" />
+<topic name="Scenario: Defining Promotion Groups for Multi-Platform Development" url="topics/paralleldevscenario.html" />
+<topic name="Parameter File Method" url="topics/parameterfile.html" />
+<topic name="Passing Information to Event Triggers" url="topics/passingeventinfo.html" />
+<topic name="Password Required Dialog Box" url="topics/passworddialog.html" />
+<topic name="Planning a Project Database" url="topics/planproject.html" />
+<topic name="Planning Security" url="topics/plansecurity.html" />
+<topic name="Rules for Privileges" url="topics/privilegerules.html" />
+<topic name="Privilege Definitions" url="topics/privilegetables.html" />
+<topic name="Project Database Structure" url="topics/prjdbstructure.html" />
+<topic name="Project Browse Dialog Box" url="topics/projectbrowsedialog.html" />
+<topic name="Project Database/Project Properties Dialog Box" url="topics/projectdialog.html" />
+<topic name="Select Default Privileges for New Users Dialog Box" url="topics/projectprivilegesdialog.html" />
+<topic name="Project Security Dialog Box" url="topics/projectsecuritydialog.html" />
+<topic name="Promotion and Parallel Development" url="topics/prom_pardev.html" />
+<topic name="Promotion Model Rules" url="topics/prommodelrules.html" />
+<topic name="Restricting a User's Ability to Promote" url="topics/promomodelsecurity.html" />
+<topic name="An Example of Restricting Access and Privileges by Promotion Group" url="topics/promomodelsecurityexample.html" />
+<topic name="Promoting Versioned Files to the Next Group" url="topics/promotetonext.html" />
+<topic name="Promote Dialog Box" url="topics/promotetonextdialog.html" />
+<topic name="Promotion Groups Tab" url="topics/promotiongroupstab.html" />
+<topic name="Promotion and Lifecycle Management" url="topics/promotionlifecyclemgt.html" />
+<topic name="Properties Dialog Box" url="topics/propertiesdialog.html" />
+<topic name="New Topic" url="topics/propertiesdialogfield.html" />
+<topic name="Creating and Managing Multiple Public Workspaces" url="topics/public.html" />
+<topic name="About Public and Private Workspaces" url="topics/publicprivate.html" />
+<topic name="Interpreting Difference Results" url="topics/readingdifreport.html" />
+<topic name="Readme" url="topics/readme.htm" />
+<topic name="Reference Directory" url="topics/refdir.html" />
+<topic name="Reference Directory Options" url="topics/refdiroptions.html" />
+<topic name="Registering Online" url="topics/registeronline.html" />
+<topic name="Removing the Access Control Database Associated with a Project Database or Project" url="topics/removeacdbassocpdb.html" />
+<topic name="Removing Access List Groups from an Access Control Database" url="topics/removeacslstgrpsfromacdb.html" />
+<topic name="Clearing a Filter" url="topics/removefilter.html" />
+<topic name="Removing Promotion Groups" url="topics/removepromotiongroup.html" />
+<topic name="Remove Promotion Group Dialog Box" url="topics/removepromotiongroupdialog.html" />
+<topic name="Removing Users from an Access Control Database" url="topics/removeusersacdb.html" />
+<topic name="Delete Version Label Dialog Box" url="topics/removeversionlabeldialog.html" />
+<topic name="Removing a Version Label" url="topics/removingaversionlabel.html" />
+<topic name="Rename Dialog Box" url="topics/renamedialog.html" />
+<topic name="Renaming Project Databases" url="topics/renameprojdb.html" />
+<topic name="Renaming Version Manager Projects" url="topics/renameproject.html" />
+<topic name="Rename Dialog Box" url="topics/renameprojectdialog.html" />
+<topic name="Rename Version Label Dialog Box" url="topics/renameversionlabeldialog.html" />
+<topic name="Renaming Workspaces" url="topics/renameworkspace.html" />
+<topic name="Renaming Version Labels" url="topics/renamingaversionlabel.html" />
+<topic name="Renaming Items" url="topics/renamingitems.html" />
+<topic name="Restoring Versioned Files" url="topics/restoringversionedfiles.html" />
+<topic name="Restricting Access Rights by Promotion Group" url="topics/restrictaccessbypromogroup.html" />
+<topic name="Restricting the Creation of Project Databases" url="topics/restrictpdb.html" />
+<topic name="Reviewing Folder Properties" url="topics/reviewingfolderprops.html" />
+<topic name="Reviewing Properties" url="topics/reviewingproperties.html" />
+<topic name="Revision Properties Dialog Box" url="topics/revisiondetailsdialog.html" />
+<topic name="Revisions Tab" url="topics/revisionstab.html" />
+<topic name="Select a Revision, Version Label, or Promotion Group Dialog Box" url="topics/revlabelgroupbrowsedialog.html" />
+<topic name="Select One or More Version Labels Dialog Box" url="topics/revlabelgroupbrowsedialogmulti.html" />
+<topic name="Using the Root Workspace" url="topics/rootworkspace.html" />
+<topic name="Sample History Report" url="topics/samplehistory.html" />
+<topic name="Sample Journal Report" url="topics/samplejournal.html" />
+<topic name="Default HTML Template for Version Manager Reports" url="topics/samplereportformat.html" />
+<topic name="Sample Security Report" url="topics/samplesecurity.html" />
+<topic name="Save As Privilege Set Dialog Box" url="topics/saveasprivsetdialog.html" />
+<topic name="Filtering by User Locks Dialog Box" url="topics/searchlockedbydialog.html" />
+<topic name="Filtering Files by Wild Cards" url="topics/searchwildcarddialog.html" />
+<topic name="Security Example 1" url="topics/securityexample1.html" />
+<topic name="Security Example 2" url="topics/securityexample2.html" />
+<topic name="Security Example 3" url="topics/securityexample3.html" />
+<topic name="Security Example 4" url="topics/securityexample4.html" />
+<topic name="Select New Archive Access List Dialog Box" url="topics/selectaccesslistmembersdialog.html" />
+<topic name="Select Archive Location Dialog Box" url="topics/selectarchivelocationdialog.html" />
+<topic name="Select New Archive Owner Dialog Box" url="topics/selectarchiveownerdialog.html" />
+<topic name="Select Workfile Location Dialog Box (Check In)" url="topics/selectcheckinlocationdialog.html" />
+<topic name="Select Workfile Location Dialog Box (Check Out)" url="topics/selectcheckoutlocationdialog.html" />
+<topic name="Select Location for Project Database Dialog Box" url="topics/selectprojectdblocationdialog.html" />
+<topic name="Select User Dialog Box" url="topics/selectuserdialog.html" />
+<topic name="Select View or Edit Dialog Box" url="topics/selectvieworeditdialog.html" />
+<topic name="Select Workfile Location Dialog Box" url="topics/selectworkfilelocationdialog.html" />
+<topic name="Semaphore Options" url="topics/semaphoreoptions.html" />
+<topic name="Setting Archive Creation Options" url="topics/setarchivecreationoptions.html" />
+<topic name="Setting Archive Search Path Options" url="topics/setarchivesearchpathoptions.html" />
+<topic name="Setting Up Automatic Branching" url="topics/setautobranch.html" />
+<topic name="Using Workspaces for Automatic Branching" url="topics/setbranchworkspace.html" />
+<topic name="Setting Archive Creation Options" url="topics/setcommandlineoptions.html" />
+<topic name="Setting Configuration Options" url="topics/setconfigoptions.html" />
+<topic name="Setting Dialog Display Options" url="topics/setdialogdisplay.html" />
+<topic name="Allowing and Disallowing Options" url="topics/setdisallowoptions.html" />
+<topic name="Setting Your Default Editor" url="topics/seteditor.html" />
+<topic name="Setting File Type Options" url="topics/setfiletypeoptions.html" />
+<topic name="Setting Journal File Options" url="topics/setjournalfileoptions.html" />
+<topic name="Setting Keyword Expansion Options" url="topics/setkeywordexpansionoptions.html" />
+<topic name="Setting Locking Options" url="topics/setlockingoptions.html" />
+<topic name="Setting Login Sources" url="topics/setloginsources.html" />
+<topic name="Setting Reference Directory Options" url="topics/setrefdiroptions.html" />
+<topic name="Setting Report Options" url="topics/setreportoptions.html" />
+<topic name="Setting Semaphore Options" url="topics/setsemaphoreoptions.html" />
+<topic name="Setting Temporary File Options" url="topics/settempfileoptions.html" />
+<topic name="Setting LDAP Configuration Options" url="topics/settingldapauthenticationoptions.html" />
+<topic name="About Setting Up SourceBridge" url="topics/settingupsourcebridge.html" />
+<topic name="Setting Up Event Triggers" url="topics/settinguptriggers.html" />
+<topic name="Setting Workfile Locations" url="topics/settingworkfilelocation.html" />
+<topic name="Using Setuid in a Cross-Platform Environment" url="topics/setuid_crossplatform.html" />
+<topic name="Setting Up a Project Database" url="topics/setupprojects.html" />
+<topic name="Setting Up Security" url="topics/setupsecurity.html" />
+<topic name="Setting Workfile Attributes Options" url="topics/setworkfileattroptions.html" />
+<topic name="Set Workfile Location Dialog Box" url="topics/setworkpathdialog.html" />
+<topic name="Setting Your Workspace" url="topics/setworkspace.html" />
+<topic name="Set Workspace Dialog Box" url="topics/setworkspacedialog.html" />
+<topic name="Shared Archives" url="topics/sharedarchives.html" />
+<topic name="Show Merge Dialog Box" url="topics/showmergedialog.html" />
+<topic name="Single Sign-On" url="topics/single_sign-on.html" />
+<topic name="Sorting" url="topics/sorting.html" />
+<topic name="Specifying an Access Control Database for your Project Database or Project" url="topics/specifyacdblocation.html" />
+<topic name="Specifying an LDAP Server" url="topics/specifying_ldap_server.html" />
+<topic name="Submitting Enhancement Requests" url="topics/submitenhance.html" />
+<topic name="Working with Both TeamTrack and TrackerLink" url="topics/switchingissuemanagement.html" />
+<topic name="Switching Users" url="topics/switchingusers.html" />
+<topic name="Temporary File" url="topics/tempfile.html" />
+<topic name="Temporary Files" url="topics/tempfile2.html" />
+<topic name="Temporary File Options" url="topics/tempfileoptions.html" />
+<topic name="Toolbar Configuration Dialog Box" url="topics/toolbarconfigdialog.html" />
+<topic name="Custom Tools Overview" url="topics/toolbaroverview.html" />
+<topic name="Associating Issues" url="topics/trackerlink.html" />
+<topic name="SourceBridge Settings Dialog Box" url="topics/trackerlink_settings_dialog_box.htm" />
+<topic name="Unlock Dialog Box" url="topics/unlockdialog.html" />
+<topic name="Unlocking Revisions" url="topics/unlocking.html" />
+<topic name="Updating 5.3/6.0 Project Folders" url="topics/updateprojectfolder.html" />
+<topic name="User Workflow" url="topics/userworkflow.html" />
+<topic name="Using Version Manager Online Help" url="topics/usinghelp.html" />
+<topic name="Using Context Menus" url="topics/usingscontextmenus.html" />
+<topic name="Using Security" url="topics/usingsecurity.html" />
+<topic name="Using Version Manager with Previous Releases" url="topics/usingwithprevrel.html" />
+<topic name="Verify Password Dialog Box" url="topics/verifypassword.html" />
+<topic name="Versioned File Properties Dialog Box" url="topics/versioneditemdialog.html" />
+<topic name="Version Labels Tab" url="topics/versionlabelstab.html" />
+<topic name="Viewing Changes to Projects (change.log)" url="topics/viewingchangelog.html" />
+<topic name="File Selection Dialog Box" url="topics/vmguifilechooserdialog.html" />
+<topic name="Version Manager Processing Events" url="topics/vmprocessingevents.html" />
+<topic name="Welcome to Version Manager" url="topics/welcometovmdialog.html" />
+<topic name="What's New?" url="topics/what_s_new.htm" />
+<topic name="When to Change Attributes" url="topics/whentochangeattributes.html" />
+<topic name="Modifying Windows File Associations" url="topics/winassociations.html" />
+<topic name="Workfile Attributes Options" url="topics/workfileattroptions.html" />
+<topic name="Workfile Locations" url="topics/workfilelocation.html" />
+<topic name="Understanding Workspace Hierarchies" url="topics/workhier.html" />
+<topic name="Working in the Versioned File Pane" url="topics/workinginfilepane.html" />
+<topic name="Working in the Project Pane" url="topics/workinginprojectpane.html" />
+<topic name="Description Dialog Box" url="topics/workitemdescriptiondialog.html" />
+
+</ftstdata>  

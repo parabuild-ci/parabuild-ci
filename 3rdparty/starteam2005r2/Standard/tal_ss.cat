@@ -1,0 +1,1162 @@
+#
+# TIBCO Software, Inc. SmartSockets Resource File
+#
+# Wed Nov 20 17:58:58 PST 2002
+#
+TAL-SS-00001-I connect: already connected 
+TAL-SS-00002-I Cannot connect to RTserver
+TAL-SS-00003-E Don't know how to connect <%s>
+TAL-SS-00004-I Command Usage:
+TAL-SS-00005-I connect: too many arguments
+TAL-SS-00006-I Connecting (warm) to RTserver
+TAL-SS-00007-I Cannot connect warm connection to RTserver
+TAL-SS-00008-I disconnect: not connected
+TAL-SS-00009-I Disconnecting (warm) from RTserver
+TAL-SS-00010-I Cannot (warm) destroy connection to RTserver
+TAL-SS-00011-E Don't know how to disconnect <%s>
+TAL-SS-00012-I disconnect: too many arguments
+TAL-SS-00013-I Disconnecting (full) from RTserver
+TAL-SS-00014-I Cannot (full) destroy connection to RTserver
+TAL-SS-00015-I subscribe: Cannot connect to RTserver
+TAL-SS-00016-I subscribe: no subjects subscribed to
+TAL-SS-00017-I subscribe: incorrect parameter <-%s>
+TAL-SS-00018-I subscribe: not enough arguments
+TAL-SS-00019-I Start subscribing to subject %s
+TAL-SS-00020-I unsubscribe: Cannot connect to RTserver
+TAL-SS-00021-I unsubscribe: not enough arguments
+TAL-SS-00022-I Stop subscribing to subject %s
+TAL-SS-00023-I licenses: too many arguments
+TAL-SS-00024-I Counted Licenses: 
+TAL-SS-00025-I Extra Licenses: 
+TAL-SS-00026-I retrieve: not enough arguments
+TAL-SS-00027-I retrieve: Cannot connect to RTserver
+TAL-SS-00028-I Retrieving subject %s
+TAL-SS-00029-E Could not connect to runtime process
+TAL-SS-00030-I Connection name was <%s>  Cannot continue
+TAL-SS-00031-W ipcCbMonProcessClientTimeSetWatch:could not find cb for client <%s>
+TAL-SS-00032-I SmartSockets %s %s
+TAL-SS-00033-I TipcDevFork: child could not execvp <%s>
+TAL-SS-00034-I Cannot continue
+TAL-SS-00035-I Don't know how to quit <%s> 
+TAL-SS-00036-W TipcDevMsgWriteRPC: TipcMsgWriteVa failed
+TAL-SS-00037-W TipcDevDefaultCbCreate: could not create default callback
+TAL-SS-00038-W Invalid float value (%s) used in environment variable T_GDI_CONNECT_TIMEOUT  Using %s
+TAL-SS-00039-W The Graphical Development Interface process died abnormally
+TAL-SS-00040-W TipcDevRecvTypedCommand: could read command from message
+TAL-SS-00041-W TipcDevRecvInternalCommand: could read command from message
+TAL-SS-00042-W TipcDevRecvTimeToStringCall: could not parse message
+TAL-SS-00043-W ipcCbMonProcessClientBufferSetWatch: could not find cb for client <%s>
+TAL-SS-00044-W TsessWinProc called recursively, code is not re-entrant !
+TAL-SS-00045-W sessMvsMultiplexListSet ptrary remove failure 
+TAL-SS-00046-W Socket exception happened on %s <%s>
+TAL-SS-00047-W AccpCPICServer should not be called on MVS Exiting
+TAL-SS-00048-W SNA Driver error: Error Initializing %s
+TAL-SS-00049-W SNA Driver error: Invalid value for sna_cpic_lib option 
+TAL-SS-00050-I Not watching anything
+TAL-SS-00051-W RTclient %s appears to have moved from RTserver %s to RTserver %s!
+TAL-SS-00052-W ipcCbMonProcessClientTimeSetWatch: could not parse msg
+TAL-SS-00053-W ipcCbMonProcessClientTimeSetWatch: cb already exists for client <%s>
+TAL-SS-00054-W ipcCbMonProcessClientBufferSetWatch: could not parse msg
+TAL-SS-00055-W ipcCbMonProcessClientBufferSetWatch: cb already exists for client <%s>
+TAL-SS-00056-W ipcCbMonProcessClientMsgRecvSetWatch: could not parse msg
+TAL-SS-00057-W ipcCbMonProcessClientMsgRecvSetWatch:could not find cb for client <%s> and msg type <%s> 
+TAL-SS-00058-W ipcCbMonProcessClientMsgRecvSetWatch: cb already exists for client <%s> and msg type <%s>
+TAL-SS-00059-W ipcCbMonProcessClientMsgSendSetWatch: could not parse msg
+TAL-SS-00060-I InitCpic: GetProcAddr failed - %s 
+TAL-SS-00061-W ipcCbMonProcessClientMsgSendSetWatch: cb already exists for client <%s> and msg type <%s>
+TAL-SS-00062-W ipcCbMonProcessClientGeneralPollCall: could not parse msg
+TAL-SS-00063-W ipcCbMonProcessClientTimePollCall: could not parse msg
+TAL-SS-00064-W ipcCbMonProcessClientBufferPollCall: could not parse msg
+TAL-SS-00065-W ipcCbMonProcessClientOptionPollCall: could not parse msg
+TAL-SS-00066-W ipcCbMonProcessClientMsgTypePollCall: could not parse msg
+TAL-SS-00067-W ipcCbMonProcessClientCbPollCall: could not parse msg
+TAL-SS-00068-W ipcCbMonProcessClientMsgTrafficPollCall: could not parse msg
+TAL-SS-00069-W ipcCbMonProcessClientMsgTypePollCall: could not parse msg
+TAL-SS-00070-W TipcSessionNoDispatchDf called
+TAL-SS-00071-I Waiting before reconnecting
+TAL-SS-00072-I Recursive error detected in TipcCbSrvError (and ignored)
+TAL-SS-00073-I GetPCL: Library Load Failed for library '%s' 
+TAL-SS-00074-I Thread creation failed, %ld, %ld 
+TAL-SS-00075-I Asynchronous recovery initiated
+TAL-SS-00076-I Broadcasting with name <%s> to find RTservers
+TAL-SS-00077-I Packet for network is <%s>
+TAL-SS-00078-I Broadcasting packet
+TAL-SS-00079-I Waiting for broadcast replies
+TAL-SS-00080-W msgMtGrammarCreate: group not at end of grammar %s 
+TAL-SS-00081-I IP address is <%s>
+TAL-SS-00082-I Converted packet from network is <%s>
+TAL-SS-00083-I Empty packet: ignoring packet
+TAL-SS-00084-I Protocol version mismatch ( %ld  vs %d): ignoring packet
+TAL-SS-00085-I Corrupt packet: ignoring packet
+TAL-SS-00086-I Reply packet is from host <%s>
+TAL-SS-00087-I Broadcasting failed
+TAL-SS-00088-I Connecting to project <%s> on <%s> RTserver
+TAL-SS-00089-I Using %s protocol
+TAL-SS-00090-I Could not connect to <%s> RTserver
+TAL-SS-00091-I Message from RTserver: %s
+TAL-SS-00092-I RTserver denied access.
+TAL-SS-00093-I Skipping starting <%s> RTserver
+TAL-SS-00094-I Attempting auto-start of RTserver
+TAL-SS-00095-I Start subscribing to subject <%s> again
+TAL-SS-00096-I Start subscribing to subject <%s>
+TAL-SS-00097-I Attempting to reconnect to RTserver
+TAL-SS-00098-I Cannot reconnect to RTserver
+TAL-SS-00099-I Sending RTserver stop message
+TAL-SS-00100-I Message from RTserver: %s
+TAL-SS-00101-W ipcSrvLogCbMsgWrite: TipcMsgFileWrite failed for mt %ld: error = <%s>
+TAL-SS-00102-W ipcSrvLogCbMsgWrite: TipcMsgFileWrite failed for mt %s: error = <%s>
+TAL-SS-00103-W Recursive TipcSrvRead attempted on connection to RTserver
+TAL-SS-00104-W Lost connection to RTserver: error code = %ld
+TAL-SS-00105-W TipcCbSrvProcessGmdNack2: could not parse message
+TAL-SS-00106-W ipcSrvBroadcast: bad port number <%s>
+TAL-SS-00107-W Read bad broadcast packet <%s>
+TAL-SS-00108-I   Could not print message
+TAL-SS-00109-W Could not send message to RTserver
+TAL-SS-00110-I Using test seed = %ld 
+TAL-SS-00111-I Start subscribing to subject <%s>
+TAL-SS-00112-I Stop subscribing to subject <%s>
+TAL-SS-00113-I Retrieving subject <%s>
+TAL-SS-00114-I Using RTSERVER_CMD <%s>
+TAL-SS-00115-I Could not start RTserver within %s seconds
+TAL-SS-00116-W Not randomizing server_namesNeed at least 2 server names after \"_random\"
+TAL-SS-00117-W TipcCbSrvProcessControl2: received bad CONTROL message
+TAL-SS-00118-W TipcCbSrvProcessGmdFailure2: could not parse message
+TAL-SS-00119-W Starting RTserver failed with error <%s>
+TAL-SS-00120-W TconnCbConnProcessGmdFailure2: could not parse message.
+TAL-SS-00121-W Guaranteed message delivery failed (error code %s) on the connection <%s>.
+TAL-SS-00122-W The message was originally sent at %s
+TAL-SS-00123-W Did not receive acknowledgement within %s seconds for the following guaranteed message:
+TAL-SS-00124-W The receiving RTclient process <%s> did not reconnect in time for the following guaranteed message:
+TAL-SS-00125-W The receiving RTclient process <%s> disconnected before acknowledging the following guaranteed message:
+TAL-SS-00126-W There were no receiving RTclient processes for the following guaranteed message:
+TAL-SS-00127-W Failed process was <%s>
+TAL-SS-00128-W Could not parse GMD_ACK msg
+TAL-SS-00129-W Could not perform handshake: '%s'
+TAL-SS-00130-W Could only send %ld/ %ld bytes to connection %s
+TAL-SS-00131-W Could only recv %ld / %ld first bytes from connection %s
+TAL-SS-00132-W Connection %s protocol version was %ld (should have been at least %d).The two ends of the connection are NOT compatible
+TAL-SS-00133-W Current code is not protocol compatible with original alpha test code
+TAL-SS-00134-W Connection %s handshake size was %ld (should have been at least %ld )The two ends of the connection are NOT compatible
+TAL-SS-00135-W Could only recv %ld / %ld bytes from connection %s
+TAL-SS-00136-W Impossible size %ld of extra handshake infofrom connection %s
+TAL-SS-00137-W Could only recv %ld / %ld  bytes of extra handshake info from connection %s
+TAL-SS-00138-W Connection %s int_format was  %d The two ends of the connection are NOT compatible
+TAL-SS-00139-W Connection %s real_format was %d  The two ends of the connection are NOT compatible
+TAL-SS-00140-W Could not read CONN_INIT message from connection %s:error = <%s>.
+TAL-SS-00141-W Could not parse CONN_INIT message from connection %s: error = <%s>
+TAL-SS-00142-W Could not create GMD file(s) with base name <%s> for connection <%s>
+TAL-SS-00143-W Switching to memory-only GMD
+TAL-SS-00144-W No chmod available for VxWorks
+TAL-SS-00145-W TmsgTraverse: Unknown field type,  %d  at offset  %ld 
+TAL-SS-00146-W TmsgBufPacketSwap: Unknown header extension type,  %d  at offset  %ld  from begining of wire header
+TAL-SS-00147-W msgMtGrammarCreate: empty group.
+TAL-SS-00148-W msgMtGrammarCreate: bad field type %s.
+TAL-SS-00149-W TmsgPropExtSet: bad field type  %d 
+TAL-SS-00150-W msgTestPrintOneField: bad field type  %d 
+TAL-SS-00151-W Received unwanted message at time %s.
+TAL-SS-00152-I Cannot create server connection <%s> on node <%s>
+TAL-SS-00153-I Please correct the 'sna_cpic_lib' option 
+TAL-SS-00154-I SNA global mutex creation failed, %ld, %ld 
+TAL-SS-00155-I SNA global event creation failed, %ld, %ld 
+TAL-SS-00156-W SNA Driver error: Could not find sna_cpic_lib option 
+TAL-SS-00157-W ipcCbMonProcessClientMsgSendSetWatch: could not find cb for client <%s> and msg type <%s> 
+TAL-SS-00158-W Received invalid version from SOCKS4 server: %02X
+TAL-SS-00159-W Connection rejected by SOCKS4 server: %02X
+TAL-SS-00160-W Received invalid result code from SOCKS4 server: %02X
+TAL-SS-00161-W Received invalid version from SOCKS5 server: %02X
+TAL-SS-00162-W Received connect error from SOCKS5 server: %02X
+TAL-SS-00163-W Received invalid address type from SOCKS5 server: %02X
+TAL-SS-00164-W Unauthorized to connect to SOCKS5 server: %02X
+TAL-SS-00165-W Received invalid method from SOCKS5 server: %02X
+TAL-SS-00166-W Could not parse CONN_INIT message from connection %s: error = <%s>.
+TAL-SS-00167-I Handshake compelete: completion status = '%s'.
+TAL-SS-00168-E Conn Handshake Failed: '%s'
+TAL-SS-00169-E Connection %s protocol version was %ld (should have been at least %ld). The two ends of the connection are NOT compatible.
+TAL-SS-00170-E Current code is not protocol compatible with original alpha test code.
+TAL-SS-00171-E Connection %s handshake size was %ld (should have been at least %ld). The two ends of the connection are NOT compatible.
+TAL-SS-00172-E Impossible size %ld of extra handshake info from connection %s.
+TAL-SS-00173-E Connection %s int_format was %ld. The two ends of the connection are NOT compatible.
+TAL-SS-00174-E Connection %s real_format was %d. The two ends of the connection are NOT compatible.
+TAL-SS-00175-W Receiving extra %ld bytes of conn_init from peer.
+TAL-SS-00176-E Conn Handshake Failed: 'failed to receive conn init msg'
+TAL-SS-00177-E Conn Handshake Failed: 'failed to parse conn init msg'
+TAL-SS-00178-W subscribe: %s <%s>
+TAL-SS-00179-W Could not expand lcn <%s>: '%s'.
+TAL-SS-00180-W Could not read credentials from file: %s
+TAL-SS-00181-W Could not get destination field of message.
+TAL-SS-00182-W Could not set current data field to 0.
+TAL-SS-00183-W Could not get seq number from message.
+TAL-SS-00184-W Could not Look up T_MT_CACHE_GMD_ACK.
+TAL-SS-00185-E Could not send cache gmd ack message.
+TAL-SS-00186-I Could not create SmartSockets Cache option %s.
+TAL-SS-00187-I Could Not Set Option %s to Required.
+TAL-SS-00188-E Failed to create SmartSockets Cache messages.
+TAL-SS-00189-W Unable to get value of option CACHE_GROUP_NAMES.
+TAL-SS-00190-W Unable to build %s request message type.
+TAL-SS-00191-W Could not set Lb mode of message
+TAL-SS-00192-W Could not append requested subject to message.
+TAL-SS-00193-W Could not append number of requested messages to message.
+TAL-SS-00194-W Could not append delta time to message.
+TAL-SS-00195-W Could not set message destination - <%s>.
+TAL-SS-00196-E Failed to send Cache request message.
+TAL-SS-00198-I There is more than one reply from cache groups. Accepting only the first.
+TAL-SS-00199-E Error processing cached user message: <%s>
+TAL-SS-00200-E Error processing Cache response message: <%s>
+TAL-SS-00201-E Could not send %s request message.
+TAL-SS-00202-E Invalid flag <%.4X> passed in for type T_SUBJ_CACHE.
+TAL-SS-00203-A Please specify either T_SUBJ_FLAG_SC_LATEST_MSG or T_SUBJ_FLAG_SC_INITIAL_LOAD.
+TAL-SS-00204-I Could not look up read callback.
+TAL-SS-00205-I Could not destroy read callback.
+TAL-SS-00206-E Could not get <%s> option value.
+TAL-SS-00207-E Could not lookup <%s> option.
+TAL-SS-00208-E Invalid Subscribe Type <%ld>.
+TAL-SS-00209-W ipcCbMonProcessClientCpuPollCall: could not parse msg
+TAL-SS-00210-W ipcCbMonProcessClientInfoPollCall: could not parse msg
+TAL-SS-00211-W ipcCbMonProcessClientCongestionSetWatch: could not parse msg
+TAL-SS-00212-W ipcCbMonProcessClientCongestionSetWatch: cb already exists for client <%s>
+TAL-SS-00213-W ipcCbMonProcessClientCongestionSetWatch: could not find cb for client <%s>
+TAL-SS-00214-W TipcSrvMonClientCongestionSetWatch: Low water must be greater than or equal to 0 and not greater than high water
+TAL-SS-00215-W TipcSrvMonServerCongestionSetWatch: Low water must be greater than or equal to 0 and not greater than high water
+TAL-SS-00216-E Invalid reduction option: %s, value %f
+TAL-SS-00217-W TipcSrvMonServerCongestionSetWatch: Connected process name may not be wildcarded
+TAL-SS-05001-W TutCbListSetStartThresh not yet implemented
+TAL-SS-05002-W TutCbListGetStartThresh not yet implemented
+TAL-SS-05003-W TutListSetCurrentThresh not yet implemented
+TAL-SS-05004-W TutCbListGetCurrentThresh not yet implemented
+TAL-SS-05005-W Unable to create lobe
+TAL-SS-05006-W TutCbTypeGetCbList: Attempted to look up local cblist, type: %ld
+TAL-SS-05007-W Attempted to use TutCbTypeCbLookup for local cb list (type: %ld )!
+TAL-SS-05008-W Unexpected global flag ( %d ) in TutCbTypeCall
+TAL-SS-05009-I Redirection open failed: %s - %d
+TAL-SS-05010-I Program execution continuing using STDOUT
+TAL-SS-05011-I Redirection Flushed
+TAL-SS-05012-I alarm is not supported by Windows
+TAL-SS-05013-I alarm is not supported by OS/2
+TAL-SS-05014-I alarm is not supported by NETWARE
+TAL-SS-05015-I alarm is not supported by VxWorks
+TAL-SS-05016-I alarm is not supported by GUARDIAN
+TAL-SS-05017-E Too many arguments for _alarm command
+TAL-SS-05018-I sbrk does not apply for VxWorks
+TAL-SS-05019-I Current break is %ld
+TAL-SS-05020-E Bad argument for _sigint command
+TAL-SS-05021-E Too many arguments for _sigint command
+TAL-SS-05022-I The _set_fd_limit command does not exist on this architecture
+TAL-SS-05023-I Current fd limit is %d soft, %d hard.
+TAL-SS-05024-E Too many arguments for _set_fd_limit command
+TAL-SS-05025-I Frame Count is %ld
+TAL-SS-05026-I Frame count is now %ld
+TAL-SS-05027-I Current time is %s
+TAL-SS-05028-I Current time is now %s
+TAL-SS-05029-I alias: <%s> not found
+TAL-SS-05030-I cd: cannot find HOME directory
+TAL-SS-05031-I Help aborted
+TAL-SS-05032-I no help available for %s
+TAL-SS-05033-I Legal Commands Are:
+TAL-SS-05034-E Unknown Command <%s>
+TAL-SS-05035-I Legal Options Are:
+TAL-SS-05036-E Unknown Option <%s>
+TAL-SS-05037-I Don't know how to quit <%s>
+TAL-SS-05038-I setopt: unknown option <%s>
+TAL-SS-05039-I Cannot set <%s>: option is currently read only.
+TAL-SS-05040-I setopt %s: too many arguments (stopped at %s)
+TAL-SS-05041-I option <%s> already exists
+TAL-SS-05042-I createopt %s: too many arguments (stopped at %s)
+TAL-SS-05043-I NETWARE does not support SH currently 
+TAL-SS-05044-I MVS does not support SH currently 
+TAL-SS-05045-I GUARDIAN does not support SH currently
+TAL-SS-05046-I source: not enough arguments
+TAL-SS-05047-I stats does not apply to VxWorks
+TAL-SS-05048-I Total accumulated CPU time: %s seconds
+TAL-SS-05049-I Total frames processed: %ld
+TAL-SS-05050-I Current sbrk address:  %lu
+TAL-SS-05051-I Differences since last stats command:
+TAL-SS-05052-I   CPU time, %s seconds, wall time, %s seconds
+TAL-SS-05053-I ***** UNUSED *****
+TAL-SS-05054-I   Frame count: %ld , Frame rate: %s frames per wall second
+TAL-SS-05055-I   Sbrk address changed by %d  bytes
+TAL-SS-05056-I No alias named <%s>
+TAL-SS-05057-I Cannot unset <%s>: no such option
+TAL-SS-05058-I Cannot unset <%s>: option is required
+TAL-SS-05059-I Cannot unset <%s>: option is currently read only.
+TAL-SS-05060-I bad command <%s> (type help for help)
+TAL-SS-05061-I %s: not enough arguments
+TAL-SS-05062-I %s: syntax error at or near "%s"
+TAL-SS-05063-I Command Usage:
+TAL-SS-05064-I Alias loop on command <%s>
+TAL-SS-05065-I bad command <%s> (type \help\ for help)
+TAL-SS-05066-I Enable_Control_Msgs is  disallow command <%s>
+TAL-SS-05067-I Enable_Control_Msgs no match: disallow command <%s>
+TAL-SS-05068-I Command <%s> has been disable
+TAL-SS-05069-E Cannot open file <%s> for reading
+TAL-SS-05070-I Cannot open command file <%s> for reading
+TAL-SS-05071-I No history available
+TAL-SS-05072-I No history matching <%s> available
+TAL-SS-05073-I Invalid value <%s> for option command_feedback
+TAL-SS-05074-W Could not set soft fd limit.
+TAL-SS-05075-W utCommandParsePutenv: lib$set_symbol had problems
+TAL-SS-05076-W utCommandParsePutenv: putenv could not allocate memory
+TAL-SS-05077-W Logical %s is not set
+TAL-SS-05078-W Environment variable %s is not set
+TAL-SS-05079-W Aborting help
+TAL-SS-05080-W TutWinSpawnDaemon: badly formed command <%s>
+TAL-SS-05081-W stats: too many arguments
+TAL-SS-05082-W unsetopt: Unexpected error code %ld from TutOptionSetUnknown
+TAL-SS-05083-W bad command %s at line %ld
+TAL-SS-05084-W Found compatible command file <%s>: please rename to <%s>
+TAL-SS-05085-W Cannot open command file <%s> for reading
+TAL-SS-05086-W TutDebugReopen: debug file already open!!
+TAL-SS-05087-W Both old <%s> and new <%s> exist: please rename old one
+TAL-SS-05088-W TutDumpOutVa: dump file is not open
+TAL-SS-05089-E Cannot open %s for writing 
+TAL-SS-05090-W TutHasExtension: Unexpected directory type for \'%s\'
+TAL-SS-05091-W TutBuildFileName: Unexpected directory type for dir name: %s 
+TAL-SS-05092-W TutBuildFileName: Unexpected directory type for \'%s\'
+TAL-SS-05093-W TutBuildDirName: Unexpected directory type for \'%s\'
+TAL-SS-05094-W utHashBaseName: Unexpected directory type for \'%s\'
+TAL-SS-05095-W TutBuildBaseName: Unexpected directory type for \'%s\'
+TAL-SS-05096-W TutOpenFile: environment variable HOME is not set
+TAL-SS-05097-W TutOpenFile: could not backup file %s
+TAL-SS-05098-W TutCloseFile: fclose (fname %s) returned %ld
+TAL-SS-05099-W TutWinSpawnDaemon: %s
+TAL-SS-05100-W Cannot open filesdmp for writing
+TAL-SS-05101-W TutCatFile: could not open file <%s> for reading
+TAL-SS-05102-W Dataset %s does not exist  Edit cancelled
+TAL-SS-05103-W Cannot issue edit while running APF Authorized
+TAL-SS-05104-W utEmacsFile: could not open sys$scratch:edit_filetmp for writing
+TAL-SS-05105-W utEmacsFile: NETWARE does not support EMACS EDIT invoked
+TAL-SS-05106-W utEmacsFile: GUARDIAN does not support EMACS EDIT invoked
+TAL-SS-05107-W utEmacsFile: MVS does not support EMACS EDIT invoked
+TAL-SS-05108-W The VI editor is not available on VMS
+TAL-SS-05109-W The VI editor is not available on Windows
+TAL-SS-05110-W The VI editor is not available on NETWARE
+TAL-SS-05111-W The VI editor is not available on OS/2
+TAL-SS-05112-W The VI editor is not available on MVS  Using MVS services
+TAL-SS-05113-W TutViewFilePtr: could not find file  %p  (fd %d)
+TAL-SS-05114-W TutViewFilePtr: could not reopen file <%s>
+TAL-SS-05115-W TutGetTmpFilePath: Unexpected directory type for RTHOME \'%s\'
+TAL-SS-05116-W TutSwapReal4Ibm370ToIeee: IBM_370 exponent underflows IEEE exponent
+TAL-SS-05117-W TutSwapReal4Ibm370ToIeee: IBM_370 exponent overflows IEEE exponent
+TAL-SS-05118-W TutSwapReal8IeeeToDecD: IEEE exponent %d cannot fit in DEC_D exponent
+TAL-SS-05119-W TutSwapReal8DecGToDecD: DEC_G exponent %d cannot fit in DEC_D exponent
+TAL-SS-05120-W TutSwapReal8IeeeToIbm370: IEEE exponent underflows IBM_370exponent
+TAL-SS-05121-W TutRoundUpToPowerOf2: overflow on %ld
+TAL-SS-05122-W TutHashInsert: key %s already exists in hash table
+TAL-SS-05123-W TutRoundUpToPowerOf2: overflow on %ld
+TAL-SS-05124-W TutHashInsert: key %s already exists in hash table
+TAL-SS-05125-I Restoring SIGBUS to SIG_DFL
+TAL-SS-05126-I Turning off handling of SIGBUS (for bug 2641)
+TAL-SS-05127-I Masking SIGBUS while SIGINT being delivered
+TAL-SS-05128-I utInterruptMax = %ld
+TAL-SS-05129-W TutInterruptReset: could not remove SIGBUS handler
+TAL-SS-05130-W utInterruptEnable: could not install SIGINT handler
+TAL-SS-05131-W utInterruptDisable: could not disable SIGINT handler
+TAL-SS-05132-I File: %s, Line: %ld
+TAL-SS-05133-W TutLexTokenToString: unknown token %ld
+TAL-SS-05134-W unknown escape sequence \\%c at line %ld  of file <%s>
+TAL-SS-05135-W TutLexCreate: redeclaration of input file name <%s>
+TAL-SS-05136-W   existing fname = <%s>, new fname = <%s>
+TAL-SS-05137-W TutLexCreate: redeclaration of lexer input file
+TAL-SS-05138-W TutLexCreate: lexer already has input file
+TAL-SS-05139-W TutLexCreate: lexer already has input string
+TAL-SS-05140-W TutLexCreate: lexer already has error func
+TAL-SS-05141-W TutLexCreate: lexer already has error arg
+TAL-SS-05142-W TutLexCreate: unknown lex att %d 
+TAL-SS-05143-W TutLexGetCurrentPositionInFile: Cannot locate current position in file <%s>
+TAL-SS-05144-W TutListPos: element  %p  is not part of list  %p 
+TAL-SS-05145-W shl_findsym on symbol %s failed 
+TAL-SS-05146-I The option <%s> contains command <%s> which is not a valid command
+TAL-SS-05147-I The option <%s> must be nonnegative.
+TAL-SS-05148-I The option <%s> must be a valid two-byte integer
+TAL-SS-05149-I Opening the file for appending
+TAL-SS-05150-I Could not open file <%s>
+TAL-SS-05151-I Now logging %s messages to <%s>
+TAL-SS-05152-I Option <%s> must be a valid id name
+TAL-SS-05153-I The option <%s> must start with <%s>
+TAL-SS-05154-I The option <%s> cannot contain the wildcard <%s> or <%s>
+TAL-SS-05155-I The option <%s> must start with <%s>
+TAL-SS-05156-I The option <%s> must contain the wildcard(s) <%s> and/or <%s>
+TAL-SS-05157-I The option <%s> cannot contain the wildcard <%s> or <%s>
+TAL-SS-05158-I Accepting override value for %s of <%s>
+TAL-SS-05159-I The option <%s> must start with '%%'
+TAL-SS-05160-I Illegal character '%c' in option <%s>
+TAL-SS-05161-I Bad character '%c' in option <%s> after end of valid format
+TAL-SS-05162-I <%s> is not a legal value for enumerated option %s.
+TAL-SS-05163-I Legal values:%s
+TAL-SS-05164-W TutWinSpawnCommand: %s 
+TAL-SS-05165-W TutWinRedirect: Could not open redirect file %s 
+TAL-SS-05166-W TutWinRedirect: Redirect file name not found on command line
+TAL-SS-05167-I TutWinSpawnDaemon: <%s> 
+TAL-SS-05168-I Redirecting output to file %s 
+TAL-SS-05169-I Appending output to file %s 
+TAL-SS-05170-I Memory will be lost 
+TAL-SS-05171-I TutOptionSetNumValue: Unknown option: %s
+TAL-SS-05172-I TutOptionSetNumValue: option %s not numeric
+TAL-SS-05173-I TutOptionSet: unknown option <%s>
+TAL-SS-05174-I Cannot unset <%s>: no such option
+TAL-SS-05175-I TutOptionSetNumValue: Unknown option: %s
+TAL-SS-05176-I TutOptionSetNumValue: option %s not numeric
+TAL-SS-05177-W TutOptionTypeToStr: bad option type %d 
+TAL-SS-05178-W Time converter <%s> does not exist
+TAL-SS-05179-W File %s exists, but unable to open
+TAL-SS-05180-W Option set for tcpip_procedure_name failed
+TAL-SS-05181-W utOptionValueDestroy: bad type %d for option %s
+TAL-SS-05182-W TutOptionValToStr: bad type %d for option %s
+TAL-SS-05183-W Bad boolean value <%s> for option <%s>.
+TAL-SS-05184-W TutOptionParseValue: bad type %d for option %s
+TAL-SS-05185-W No type for option <%s>
+TAL-SS-05186-W Bad type <%s> for option <%s>
+TAL-SS-05187-W utOptionSet: cannot set option <%s>
+TAL-SS-05188-W utOptionSet: setting type %d not implemented
+TAL-SS-05189-W TutOptionGetValue: unknown option <%s>
+TAL-SS-05190-W str_in_file: could not open file <%s> for reading
+TAL-SS-05191-W TutStringToInt: Unexpected invalid integer detected
+TAL-SS-05192-W TutDumpView: TutDumpClose failed
+TAL-SS-05193-W Failed to duplicate a thread handle
+TAL-SS-05194-W TutStringToSignedReal: Unexpected invalid real number detected
+TAL-SS-05195-W utTimeCvtHttpStrToNum : %s is not a valid day of the month.
+TAL-SS-05196-W utTimeCvtHttpStrToNum: %d is not a valid day of month.
+TAL-SS-05197-W utTimeCvtHttpStrToNum : %s is not a valid month.
+TAL-SS-05198-W utTimeCvtHttpStrToNum: %s is not a valid year.
+TAL-SS-05199-W utTimeCvtHttpStrToNum: %ld is not a valid year.
+TAL-SS-05200-W utTimeCvtHttpStrToNum: %s is not a valid hour.
+TAL-SS-05201-W utTimeCvtHttpStrToNum: %d is not a valid hour.
+TAL-SS-05202-W utTimeCvtHttpStrToNum: %s is not a valid minute.
+TAL-SS-05203-W utTimeCvtHttpStrToNum: %d is not a valid minute.
+TAL-SS-05204-W utTimeCvtHttpStrToNum: %s is not a valid second.
+TAL-SS-05205-W utTimeCvtHttpStrToNum: found extra tokens after year
+TAL-SS-05206-W utTimeCvtHttpStrToNum : %s is not a valid month.
+TAL-SS-05207-W utTimeCvtHttpStrToNum: %s is not a valid day of the month.
+TAL-SS-05208-W utTimeCvtHttpStrToNum: %d is not a valid day of the month.
+TAL-SS-05209-W utTimeCvtFullStrToNum: %s is not a valid second.
+TAL-SS-05210-W utTimeCvtFullStrToNum: %s is not a valid month.
+TAL-SS-05211-W utTimeCvtFullStrToNum: %s is not a valid day of the month.
+TAL-SS-05212-W utTimeCvtFullStrToNum: %d is not a valid day of the month.
+TAL-SS-05213-W utTimeCvtFullStrToNum: %s is not a valid hour.
+TAL-SS-05214-W utTimeCvtFullStrToNum: %d is not a valid hour.
+TAL-SS-05215-W utTimeCvtFullStrToNum: %s is not a valid minute.
+TAL-SS-05216-W utTimeCvtFullStrToNum: %d is not a valid minute.
+TAL-SS-05217-W utTimeCvtFullStrToNum: year not allowed when month and day ommitted.
+TAL-SS-05218-W utTimeCvtFullStrToNum: found extra tokens after year
+TAL-SS-05219-W utTimeCvtFullStrToNum: %s is not a valid year.
+TAL-SS-05220-W utTimeCvtFullStrToNum: %ld is not a valid year.
+TAL-SS-05221-W utTimeCvtHmsStrToNum: %s is not a valid hour.
+TAL-SS-05222-W utTimeCvtHmsStrToNum: %d is not a valid hour.
+TAL-SS-05223-W utTimeCvtHmsStrToNum: %s is not a valid minute.
+TAL-SS-05224-W utTimeCvtHmsStrToNum: %d is not a valid minute.
+TAL-SS-05225-I Attaching task delete routine failed 
+TAL-SS-05226-W utTimeCvtHmsToNum: found extra tokens after second
+TAL-SS-05227-E Cannot access service control manager
+TAL-SS-05228-E Cannot create service, <%s> Service already installed
+TAL-SS-05229-E Cannot create service <%s>
+TAL-SS-05230-I Service <%s> installed successfully
+TAL-SS-05231-W %s:T_START_EVENT_READ failed (%d)
+TAL-SS-05232-E Cannot open service <%s> Service does not exist
+TAL-SS-05233-E Cannot open service <%s>
+TAL-SS-05234-I Service <%s> stopping
+TAL-SS-05235-I Service <%s> stopped
+TAL-SS-05236-I Service <%s> failed to stop
+TAL-SS-05237-I Service <%s> uninstalled successfully
+TAL-SS-05238-E Cannot delete service <%s>
+TAL-SS-05239-I Invalid arg followed by -install  only [-demandstart || -autostart ] supported
+TAL-SS-05240-W utDecnetEventAst: sys$assign(_NET) failed
+TAL-SS-05241-W Unable to keep up with frame interval by %s seconds
+TAL-SS-05242-I Default error jump buffer has not been set  Exiting
+TAL-SS-05243-W TutTypeToString:illegal value: %ld
+TAL-SS-05244-W TutGetUserName: T_C_GETENV(\USER\) failed
+TAL-SS-05245-W TutGetUserName: GetUserName(system.ini) failed
+TAL-SS-05246-W TutGetUserName: T_C_GETENV(\USERNAME\) failed
+TAL-SS-05247-W TutGetUserName: getpwuid failed: errno %d
+TAL-SS-05248-W TutGetUserName: getpwuid failed
+TAL-SS-05249-W TutGetNodeName: Could not determine node name
+TAL-SS-05250-W Internal validation <%s> failed, file: %s, line %ld
+TAL-SS-05251-W Please report this to TIBCO Software, Inc. Technical Support.
+TAL-SS-05252-W TutGetSupportNotice: could not open <%s>
+TAL-SS-05253-W No Support Yet for %s(%s) from file %s
+TAL-SS-05254-I The evaluation license for this process has expired on '%s'
+TAL-SS-05255-I Cannot open debug file <%s>
+TAL-SS-05256-I Dynamic allocation failed: %4X, %4X
+TAL-SS-05257-I Cannot open debug file <%s>, using stderr instead
+TAL-SS-05258-I Can't reopen debug file %s, using stderr
+TAL-SS-05259-I Setting SO_KEEPALIVE to %d
+TAL-SS-05260-I linger = (%d, %d)
+TAL-SS-05261-W TutGetSocketDir: Cannot create directory %s
+TAL-SS-05262-W unknown node %s
+TAL-SS-05263-W inet functions failed for node %s
+TAL-SS-05264-W addrs_addr %ld, inet_addr %ld, inet_ntoa %s
+TAL-SS-05265-W bad IP addr %s
+TAL-SS-05266-W TutSocketRecvTimeout: select failed
+TAL-SS-05267-W Unrecognized signal caught in TutSleep
+TAL-SS-05268-W TutSocketCreateServerTcp:could not set SO_REUSEADDR on TCP socket
+TAL-SS-05269-W TutSocketCreateServerTcp:could not set SO_LINGER on TCP socket
+TAL-SS-05270-W TutSocketCreateServerTcp:could not set SO_KEEPALIVE on TCP socket
+TAL-SS-05271-W TutSocketCreateServerTcp:could not set TCP_NODELAY on TCP socket
+TAL-SS-05272-W TutSocketCreateClientTcpNb: could not set SO_LINGER on TCP socket
+TAL-SS-05273-W TutSocketCreateClientTcpNb: could not set SO_KEEPALIVE on TCP socket
+TAL-SS-05274-W TutSocketCreateClientTcpNb: could not set TCP_NODELAY on TCP socket
+TAL-SS-05275-W utDecnetEventAst: qiow(IO$_ACCESS) failed
+TAL-SS-05276-W TutSocketCreateClientTcp:could not set SO_KEEPALIVE on TCP socket
+TAL-SS-05277-W TutSocketCreateClientTcp:could not set TCP_NODELAY on TCP socket
+TAL-SS-05278-W TutSocketCreateServerBcast:could not set SO_REUSEADDR on UDP socket
+TAL-SS-05279-W unknown node %s
+TAL-SS-05280-W TutSocketCreateClientBcast:could not set SO_BROADCAST on UDP socket
+TAL-SS-05281-W TutSocketCheck: exception happened on fd %ld
+TAL-SS-05282-I Missing semaphore for task delete count 
+TAL-SS-05283-W utUcxSocket: cannot open file <%s> for writing 
+TAL-SS-05284-W utTgvSocket: cannot open file <%s> for writing
+TAL-SS-05285-W utMbxRecv: data queue out of sync
+TAL-SS-05286-W utMbxSocket: cannot open file <%s> for writing 
+TAL-SS-05287-I  getdviw failed 
+TAL-SS-05288-W TutVmsGetServByName: bad TCP/IP protocol
+TAL-SS-05289-W TutSystemTimeout: close on pipe 0 failed
+TAL-SS-05290-W TutSystemTimeout: close on pipe 1 failed
+TAL-SS-05291-W TutSystemTimeout: dup2 failed
+TAL-SS-05292-W TutSystemTimeout: execl failed
+TAL-SS-05293-W TutSystemTimeout: close on pipe_fd failed
+TAL-SS-05294-W TutSystemTimeout: could not stop process
+TAL-SS-05295-W TutSystemTimeout: waitpid failed
+TAL-SS-05296-W TutSystemTimeout: TutVmsGetJpiw failed
+TAL-SS-05297-W TutSystemTimeout: sys$forcex failed
+TAL-SS-05298-W TutSystemTimeout: Could not execute command %s
+TAL-SS-05306-W TutVmsGetHostByName: bad TCP/IP protocol
+TAL-SS-05317-W TutVmsSelect: select is not reentrant 
+TAL-SS-05319-W TutVmsSelect: timeout seconds %d too large 
+TAL-SS-05338-I linger = (%d, %d)
+TAL-SS-05339-W ptITcpRecvTimeout: select failed
+TAL-SS-05340-W ptITcpCreateServerTcp:could not set SO_REUSEADDR on TCP socket
+TAL-SS-05341-W ptITcpCreateServerTcp:could not set SO_LINGER on TCP socket
+TAL-SS-05342-W ptITcpCreateServerTcp: could not close socket
+TAL-SS-05343-W unknown node %s
+TAL-SS-05344-W ptITcpCreateClientTcp: could not close socket
+TAL-SS-05345-W ptITcpCheck: exception happened on fd %ld
+TAL-SS-05346-W TutVmsListen: invalid backlog: %d 
+TAL-SS-05347-W utVmsSetTcp: device %s exists but UCX$INET_HOST doesn't 
+TAL-SS-05348-W utDecnetRecv: data queue out of sync 
+TAL-SS-05349-W utDecnetRecv: sys$waitfr failed
+TAL-SS-05350-W utDecnetConnect: data read failed 
+TAL-SS-05351-W utDecnetConnectAst: data read failed
+TAL-SS-05352-W utDecnetAccept: sys$qio(network read) failed
+TAL-SS-05353-W utDecnetAccept: Lockheed emulation failure
+TAL-SS-05354-W utDecnetBind: qiow(IO$_ACPCONTROL) failed
+TAL-SS-05355-W utDecnetBind: sys$getjpiw failed
+TAL-SS-05356-W utDecnetSocket: cannot open file <%s> for writing
+TAL-SS-05357-W utDecnetSocket: sys$crembx failed
+TAL-SS-05358-W utDecnetEventAst: data read failed: error code %d
+TAL-SS-05359-W utDecnetEventAst: T_C_SOCKET() failed
+TAL-SS-05360-W utDecnetEventAst: qiow(IO$_ACCESS) failed
+TAL-SS-05361-W utDecnetEventAst: sys$assign(_NET) failed
+TAL-SS-05362-W %s:T_START_EVENT_READ failed (%d)
+TAL-SS-05363-W TutThreadCreate: varargs is not NULL--third parameter must be specified and must be NULL, ignoring.  Please consult the SmartSockets documentation.
+TAL-SS-10001-W Invalid router type = %ld specified. Switching to default.  
+TAL-SS-10002-E Routing Engine '%s' (type = %ld) load failure - [DL error = '%s']. 
+TAL-SS-10003-W This RTserver is not licensed to run in multiprocessor mode.
+TAL-SS-10004-I Enabling thread support in server libraries.
+TAL-SS-10005-I Enabling thread support in server apartments.
+TAL-SS-10006-I Distributing threads across server apartments (threads = %ld, apartments = %ld).
+TAL-SS-10007-I (threads = %ld) Operating server in multi processor mode.
+TAL-SS-10008-I (threads = %ld) Operating server in single processor mode.
+TAL-SS-10009-I Starting additional server threads.
+TAL-SS-10010-I Waiting for additional server threads to terminate.
+TAL-SS-10011-A RTserver exiting.
+TAL-SS-10012-I Read <%s> from client.
+TAL-SS-10013-I client_addr.sin_addr = %s".
+TAL-SS-10014-I Reply packet is <%s>
+TAL-SS-10015-I Skip localhost.
+TAL-SS-10016-I Protocol version mismatch (%d vs %d): ignoring packet.
+TAL-SS-10017-I Invalid number of fields in broadcast client packet.
+TAL-SS-10018-I Data available on broadcast socket.
+TAL-SS-10019-I Failed to send reply to broadcast client.
+TAL-SS-10020-I An error occurred while receiving broadcast client packets.
+TAL-SS-10021-I Using <%s> protocol.
+TAL-SS-10022-I Conn <%s> expands to <%s>.
+TAL-SS-10023-I Skipping our own conn <%s>.
+TAL-SS-10024-A RTserver started successfully.
+TAL-SS-10025-I Creating conns to accept connections on.
+TAL-SS-10026-I Creating conn <%s> to listen for connections.
+TAL-SS-10027-E No server connections opened to listen for incoming connections.
+TAL-SS-10028-V Reached IMR flow control HWM.
+TAL-SS-10029-V Reached IMR flow control LWM.
+TAL-SS-10030-V FC stats {amq=%ld, nmq=%lu, lwm=%lu, hwm=%lu, fcc=%ld}.
+TAL-SS-10031-I %s {'%s', '%s', '%s', %ld, %s, %s, %d} DOWN.
+TAL-SS-10032-I %s {'%s', '%s', '%s', %ld, %s, %s, %d} UP.
+TAL-SS-10033-V Resuming port '%s' {timer expired}.
+TAL-SS-10034-V Resuming all ports {LWM in event fuse}.
+TAL-SS-10035-V Resuming all ports {Message queue empty}.
+TAL-SS-10036-V Resuming all ports {LWM on message read}.
+TAL-SS-10037-I Opening PORT (SVC = '%s') in thread %p.
+TAL-SS-10038-I Connecting PORT to SVC '%s'.
+TAL-SS-10039-I Disconnecting PORT from SVC '%s'.
+TAL-SS-10040-V Port '%s' suspended.
+TAL-SS-10041-V Port '%s' resumed.
+TAL-SS-10042-I ****** UNUSED ******
+TAL-SS-10043-I <%lu, %lu, %lu, %lu, @%s, @%s, @%s, @%s, @%s>.
+TAL-SS-10044-I Started port display timer.
+TAL-SS-10045-I Adding thread %p to the thread pool.
+TAL-SS-10046-I Sorting thread pool {policy = <%s>}.
+TAL-SS-10047-I ****** UNUSED ******
+TAL-SS-10048-I <%lu, %lu, @%s, @%s>.
+TAL-SS-10049-I ****** UNUSED ******
+TAL-SS-10050-I Started statistics display timer.
+TAL-SS-10051-I IMR flow control enabled {lwm=%lu, hwm=%lu, sf=%lu, rof=%lu, mst=%s}.
+TAL-SS-10052-I IMR flow control has been disabled.
+TAL-SS-10053-I ****** UNUSED ******
+TAL-SS-10054-I ****** UNUSED ******
+TAL-SS-10055-W Received connect command before OCM has been opened.
+TAL-SS-10056-I ****** UNUSED ******
+TAL-SS-10057-W disconnect: server conn <%s> does not exist.
+TAL-SS-10058-I Disconnecting from <%s>.
+TAL-SS-10059-W Received disconnect command before OCM has been opened.
+TAL-SS-10060-I Disconnecting from %s.
+TAL-SS-10061-W disconnect: not connected.
+TAL-SS-10062-W disconnect: server <%s> does not exist.
+TAL-SS-10063-I Disconnecting from %s.
+TAL-SS-10064-I Received PORT OPEN notification on channel with RTserver <%s>.
+TAL-SS-10065-I ****** UNUSED ******
+TAL-SS-10066-I Received PORT CLOSE notification on channel with RTserver <%s>.
+TAL-SS-10067-I Scheduling connect to single RTserver (conn = '%s').
+TAL-SS-10068-I Scheduling connect to RTservers using server names.
+TAL-SS-10069-I Broadcast complete.
+TAL-SS-10070-I Broadcasting with name <%s> to find RTservers.
+TAL-SS-10071-I Broadcasting packet.
+TAL-SS-10072-I Failed to send broadcast.
+TAL-SS-10073-I Read <%s> from server.
+TAL-SS-10074-I server_addr.sin_addr = %s.
+TAL-SS-10075-I Reply packet is from host <%s>.
+TAL-SS-10076-I Conn name is <%s>.
+TAL-SS-10077-I Corrupt broadcast packet: Ignoring packet.
+TAL-SS-10078-I Protocol version mismatch (%ld vs %ld): ignoring packet.
+TAL-SS-10079-I Empty packet: ignoring packet.
+TAL-SS-10080-I SVC to RTserver with name <%s> opened successfully through <%s>.
+TAL-SS-10081-E SVC to RTserver with name <%s> failed to open : '%s'.
+TAL-SS-10082-I Establishing SVC to RTserver with name <%s>...
+TAL-SS-10083-I RTserver with name <%s> is connected to %ld other RTservers.
+TAL-SS-10084-I Using <%s> protocol.
+TAL-SS-10085-I Server name <%s> expands to <%s>.
+TAL-SS-10086-I Protocol <%s> for server name <%s> is a network protocol,\n but no connections in Conn_Names use a network protocol.\n Skipping this name.
+TAL-SS-10087-I Adding <%s> to connection element list.
+TAL-SS-10088-I Failed to expand server name. <%s>.
+TAL-SS-10089-I Waiting for broadcast replies.
+TAL-SS-10090-I Broadcasting failed.
+TAL-SS-10091-I SVC connect to server with name <%s> pending completion...
+TAL-SS-10092-I SVC connect to server with name <%s> failed : '%s'.
+TAL-SS-10093-I Skipping connection <%s>. RTserver already exists.
+TAL-SS-10094-I Skipping connection <%s>. SVC establishment is currently in progress.
+TAL-SS-10095-I Skipping connection <%s>. Connection is our own.
+TAL-SS-10096-I Stopping on own conn.
+TAL-SS-10097-I Reconnect not scheduled because server_reconnect_interval <= 0.0.
+TAL-SS-10098-I Attempting reconnects.
+TAL-SS-10099-I Connecting to other RTserver processes.
+TAL-SS-10100-I The option server_names is UNKNOWN: cannot connect to other RTservers.
+TAL-SS-10101-I Constructing connect element list.
+TAL-SS-10102-I The option conn_names is UNKNOWN: cannot listen for connections.
+TAL-SS-10103-W Received bad broadcast packet <%s>.
+TAL-SS-10104-W Cannot create more than one broadcast server.
+TAL-SS-10105-E Could not create conn <%s>: '%s'.
+TAL-SS-10106-W Read bad broadcast packet <%s>.\n.
+TAL-SS-10107-W Connection weight in server name <%s> must be a positive integer.
+TAL-SS-10108-W File %s exists, but unable to open.
+TAL-SS-10109-A Note : This is an RTserver evaluation copy that will expire in %ld days.
+TAL-SS-10110-A The server license is invalid. Please contact TIBCO Software, Inc. technical support for further assistance.
+TAL-SS-15001-I Received PORT OPEN notification (sess = '%s', type = '%s').
+TAL-SS-15002-I Received PORT CLOSE notification.
+TAL-SS-15003-W Maximum number of client licenses exceeded, rejecting client. Please contact TIBCO Software, Inc. for more licenses.
+TAL-SS-15004-I Client <%s> is reconnecting: close the old connection.
+TAL-SS-15005-I Client <%s> unique subject check started.
+TAL-SS-15006-W Maximum number of client connections exceeded. Rejecting client <%s>.
+TAL-SS-15007-W srvServerSendAckDestroyUniqueSubjectCheck: failed to merge a unique check message into final result.
+TAL-SS-15008-I Client <%s> disconnected while unique subject check was in progress.
+TAL-SS-15009-I Client <%s> unique subject check complete.
+TAL-SS-15010-I Client <%s> unique subject check stopped.
+TAL-SS-15011-W This server is not licensed for GMD. Please contact TIBCO Software, Inc. to obtain a new license.
+TAL-SS-15012-W This server is not licensed for monitoring. Please contact TIBCO Software, Inc. to obtain a new license.
+TAL-SS-15013-W Received message from invalid group member <group = '%s', member = %ld>.
+TAL-SS-15014-V Cannot send message to %s client <%s>.
+TAL-SS-15015-V Cannot send message to dead server <%s>.
+TAL-SS-15016-V Cannot send message to dead group <%s>.
+TAL-SS-15017-I Client name is <%s>.
+TAL-SS-15018-I Client <%s> belongs to project <%s>.
+TAL-SS-15019-I Client <%s> did not resubscribe to warm subject within %s seconds of reconnection.
+TAL-SS-15020-I Warm client <%s> did not reconnect within %s seconds.
+TAL-SS-15021-I Replacing dispatch function for message type %ld.
+TAL-SS-15022-I Adding new dispatch function for message type %ld.
+TAL-SS-15023-I Replacing filter function for message type %ld.
+TAL-SS-15024-I Adding new filter function for message type %ld.
+TAL-SS-15025-I Closing connection to client <%s>.
+TAL-SS-15026-I Keep subjects being received by client <%s> warm for GMD.
+TAL-SS-15027-W TsmrCbClientControl: could not parse CONTROL message.
+TAL-SS-15028-I RTserver parsing command string <%s>.
+TAL-SS-15029-I Enable_Stop_Msgs is FALSE: disallow stop msg.
+TAL-SS-15030-W TsmrCbClientDisconnect: could not parse DISCONNECT message.
+TAL-SS-15031-W Bad DISCONNECT mode %ld from client %s.
+TAL-SS-15032-W TsmrCbClientGmdDelete: could not parse message.
+TAL-SS-15033-W TsmrCbClientGmdStatusCall: could not parse message.
+TAL-SS-15034-W TsmrCbClientGmdInitCall: could not parse message.
+TAL-SS-15035-W TsmrCbClientSubjectSetSubscribe: could not parse message.
+TAL-SS-15036-W Client <%s> attempted to %s receiving %s subject.
+TAL-SS-15037-W TsmrMonMergeClientNamesPollResult: failed to merge a poll message into final result.
+TAL-SS-15038-W TsmrMonMergeSubjectNamesPollResult: failed to merge a poll message into final result.
+TAL-SS-15039-W srvServerSendAckDestroyCollectivePoll: failed to generate a poll result message.
+TAL-SS-15040-W TsmrCbClientMonClientNamesSetWatch: could not parse message.
+TAL-SS-15041-I Client <%s> is %s watching client names!
+TAL-SS-15042-I Client <%s> has %s watching client names.
+TAL-SS-15043-W TsmrCbClientMonServerNamesSetWatch: could not parse message.
+TAL-SS-15044-I Client <%s> is %s watching server names!
+TAL-SS-15045-I Client <%s> has %s watching server names.
+TAL-SS-15046-W TsmrCbClientMonSubjectNamesSetWatch: could not parse message.
+TAL-SS-15047-I Client <%s> is %s watching dg names!
+TAL-SS-15048-I Client <%s> has %s watching dg names.
+TAL-SS-15049-W TsmrCbClientMonSubjectSubscribeSetWatch: could not parse message.
+TAL-SS-15050-I Client <%s> is %s watching receivers for dg <%s>!
+TAL-SS-15051-I Client <%s> has %s wathcing receivers for dg <%s>.
+TAL-SS-15052-W TsmrCbClientMonClientSubscribeSetWatch: could not parse message.
+TAL-SS-15053-I Client <%s> is %s watching receivers for client <%s>!
+TAL-SS-15054-I Client <%s> has %s watching receivers for client <%s>.
+TAL-SS-15055-W TsmrCbClientMonClientTimeSetWatch: could not parse message.
+TAL-SS-15056-I Client <%s> is %s watching time for client <%s>!
+TAL-SS-15057-I Client <%s> has %s watching time for client <%s>.
+TAL-SS-15058-W TsmrCbClientMonClientBufferSetWatch: could not parse message.
+TAL-SS-15059-I Client <%s> is %s watching buffer for client <%s>!
+TAL-SS-15060-I Client <%s> has %s watching buffer for client <%s>.
+TAL-SS-15061-W TsmrCbClientMonClientMsgRecvSetWatch: could not parse message.
+TAL-SS-15062-I Client <%s> is %s watching received messages for type <%s> for client <%s>!
+TAL-SS-15063-I Client <%s> has %s watching received messages for type <%s> for client <%s>.
+TAL-SS-15064-W TsmrCbClientMonClientMsgSendSetWatch: could not parse message.
+TAL-SS-15065-I Client <%s> is %s watching sent messages for type <%s> for client <%s>!
+TAL-SS-15066-I Client <%s> has %s watching sent messages for type <%s> for client <%s>.
+TAL-SS-15067-W TsmrCbClientMonServerConnSetWatch: could not parse message.
+TAL-SS-15068-I Client <%s> is %s watching server conn!
+TAL-SS-15069-I Client <%s> has %s watching server conn.
+TAL-SS-15070-W TsmrCbClientMonProjectNamesPollCall: could not parse message.
+TAL-SS-15071-I Client <%s> has polled for app names.
+TAL-SS-15072-W TsmrCbClientMonClientGeneralPollCall: could not parse message.
+TAL-SS-15073-I Client <%s> has polled client <%s> for general info.
+TAL-SS-15074-W TsmrCbClientMonClientTimePollCall: could not parse message.
+TAL-SS-15075-I Client <%s> has polled client <%s> for time info.
+TAL-SS-15076-W TsmrCbClientMonClientBufferPollCall: could not parse message.
+TAL-SS-15077-I Client <%s> has polled client <%s> for buffer info.
+TAL-SS-15078-W TsmrCbClientMonClientOptionPollCall: could not parse message.
+TAL-SS-15079-I Client <%s> has polled client <%s> for option <%s> info.
+TAL-SS-15080-W TsmrCbClientMonClientMsgTypePollCall: could not parse message.
+TAL-SS-15081-I Client <%s> has polled client <%s> for msg type <%s> info.
+TAL-SS-15082-W TsmrCbClientMonClientCbPollCall: could not parse message.
+TAL-SS-15083-I Client <%s> has polled client <%s> for cb info.
+TAL-SS-15084-W TsmrCbClientMonClientMsgTrafficPollCall: could not parse message.
+TAL-SS-15085-I Client <%s> has polled client <%s> for msg traffic info.
+TAL-SS-15086-W TsmrCbClientMonClientSubjectPollCall: could not parse message.
+TAL-SS-15087-I Client <%s> has polled client <%s> for dg <%s> info.
+TAL-SS-15088-W TsmrCbClientMonServerNamesPollCall: could not parse message.
+TAL-SS-15089-I Client <%s> has polled for server names.
+TAL-SS-15090-W TsmrCbClientMonServerGeneralPollCall: could not parse message.
+TAL-SS-15091-I Client <%s> has polled server <%s> for general info.
+TAL-SS-15092-W TsmrCbClientMonServerTimePollCall: could not parse message.
+TAL-SS-15093-I Client <%s> has polled server <%s> for time info.
+TAL-SS-15094-W TsmrCbClientMonServerBufferPollCall: could not parse message.
+TAL-SS-15095-I Client <%s> has polled server <%s> for buffer <%s> info.
+TAL-SS-15096-W TsmrCbClientMonServerOptionPollCall: could not parse message.
+TAL-SS-15097-I Client <%s> has polled server <%s> for option <%s> info.
+TAL-SS-15098-W TsmrCbClientMonServerConnPollCall: could not parse message.
+TAL-SS-15099-I Client <%s> has polled for server conn.
+TAL-SS-15100-W TsmrCbClientMonServerRoutePollCall: could not parse message.
+TAL-SS-15101-I Client <%s> has polled server <%s> for route <%s> info.
+TAL-SS-15102-W TsmrCbClientMonServerMsgTrafficPollCall: could not parse message.
+TAL-SS-15103-I Client <%s> has polled server <%s> for msg_traffic <%s> info.
+TAL-SS-15104-W TsmrCbClientMonClientNamePollCall: could not parse message.
+TAL-SS-15105-I Client <%s> has polled for client names.
+TAL-SS-15106-W TsmrCbClientMonSubjectNamesPollCall: could not parse message.
+TAL-SS-15107-I Client <%s> has polled for dg names.
+TAL-SS-15108-W TsmrCbClientMonSubjectSubscribePollCall: could not parse message.
+TAL-SS-15109-I Client <%s> has polled for dg <%s> receivers.
+TAL-SS-15110-W TsmrCbClientMonClientSubscribePollCall: could not parse message.
+TAL-SS-15111-I Client <%s> has polled for client <%s> receivers.
+TAL-SS-15112-W TsmrCbClientMonProjectNamesSetWatch: could not parse message.
+TAL-SS-15113-I Client <%s> is %s watching app names!
+TAL-SS-15114-I Client <%s> has %s watching app names.
+TAL-SS-15115-A NUMBER OF SERVER LICENSES EXCEEDED. Allowed servers = %ld. Running servers = %ld. Please contact TIBCO Software, Inc. technical support to increase the number of allowed servers.
+TAL-SS-15116-W TsmrCbGroupMemberUp : could not parse message.
+TAL-SS-15117-I Member %ld (group '%s') UP.
+TAL-SS-15118-W TsmrCbGroupSetThreshold : could not parse message.
+TAL-SS-15119-W TsmrCbGroupMemberDown : could not parse message.
+TAL-SS-15120-I Member %ld (group '%s') DOWN.
+TAL-SS-15121-W TsmrCbGroupDown : could not parse message.
+TAL-SS-15122-W TsmrCbMonServerGeneralPollResult: could not parse message.
+TAL-SS-15123-I Unknown project in SERVER_GENERAL_POLL_CALL.
+TAL-SS-15124-W TsmrCbMonServerTimePollResult: could not parse message.
+TAL-SS-15125-W TsmrCbMonServerBufferPollResult: could not parse message.
+TAL-SS-15126-I Unknown project in SERVER_BUFFER_POLL_CALL.
+TAL-SS-15127-W TsmrCbMonServerOptionPollResult: could not parse message.
+TAL-SS-15128-W TsmrCbMonServerRoutePollResult: could not parse message.
+TAL-SS-15129-W TsmrCbMonServerMsgTrafficPollResult: could not parse message.
+TAL-SS-15130-I Unknown project in SERVER_MSG_TRAFFIC_POLL_CALL.
+TAL-SS-15131-I Unknown project in CLIENT_*_POLL_CALL.
+TAL-SS-15132-W TsmrCbMonClientPollCall: could not parse message.
+TAL-SS-15133-W Received msg (type %ld) with NULL dest or sender.
+TAL-SS-15134-W Received msg (type %ld) with local delivery mode mis-match.
+TAL-SS-15135-W TsmrCbServerClientRouteMsg: could not lookup server.
+TAL-SS-15136-W smrServerConnCreate: TsmrServerLookup failed for server1 <%s>.
+TAL-SS-15137-W smrServerConnCreate: TsmrServerLookup failed for server2 <%s>.
+TAL-SS-15138-W TsmrCbServerPrime: could not parse message.
+TAL-SS-15139-I TsmrCbServerPrime: Unkown server <%s>.
+TAL-SS-15140-W TsmrCbServerServerCreate: Bad msg from server.
+TAL-SS-15141-W TsmrCbServerConnCreate: could not parse message.
+TAL-SS-15142-W TsmrCbServerConnCreate:TsmrGmdResendAll fail.
+TAL-SS-15143-W TsmrCbServerConnDestroy: could not parse message.
+TAL-SS-15144-W TsmrCbServerConnDestroy: TsmrGmdResendAll fail.
+TAL-SS-15145-W TsmrServerGroupConnCreate:TsmrGmdResendAll fail.
+TAL-SS-15146-W TsmrServerGroupConnDestroy:TsmrGmdResendAll fail.
+TAL-SS-15147-W TsmrServerOnOpen :TsmrGmdResendAll fail
+TAL-SS-15148-I Server <%s> priming successfully completed.
+TAL-SS-15149-E Server <%s> priming failed {%s}.
+TAL-SS-15150-I Server <%s> priming successfully started.
+TAL-SS-15151-W Timed out priming RTserver with name <%s>.
+TAL-SS-15152-I Server <%s> priming successfully started.
+TAL-SS-15153-I Server <%s> queued in priming queue <num = %ld>.
+TAL-SS-15154-W Maximum number of server connections exceeded. Rejecting server <%s>.
+TAL-SS-15155-W Server name <%s> is not unique.
+TAL-SS-15156-W TsmrCbServerGmdAck: could not parse message.
+TAL-SS-15157-I TsmrCbServerGmdAck: Could not find gmd client for sender <%s> and seq num %ld.
+TAL-SS-15158-W TsmrCbServerSrvGmdInit: could not lookup server.
+TAL-SS-15159-W TsmrCbServerSrvGmdInit: couldn't parse GMD_SRV_INIT msg.
+TAL-SS-15160-W TsmrCbServerSrvGmdDeleteInit: could not lookup server.
+TAL-SS-15161-W TsmrCbServerSrvGmdDeleteInit: could not parse GMD_SRV_DELETE_INIT msg.
+TAL-SS-15162-W TsmrCbServerSrvGmdDeleteInit: can't find app <%s>. can not remove gmd watching from subject <%s>
+TAL-SS-15163-W TsmrCbServerSrvGmdDeleteInit: can't find subject <%s>. can not remove gmd watching for server <%s>
+TAL-SS-15164-W TsmrCbServerSrvGmdDeleteInit: server <%s> is not in subjects <%s> list of gmd publishers
+TAL-SS-15165-W TsmrCbServerSrvGmdDeleteInit: subject <%s> does not have a list of gmd publishers
+TAL-SS-15166-W TsmrCbServerSrvGmdClientSubjectSetSubscribe: could not lookup server.
+TAL-SS-15167-W TsmrCbServerSrvGmdClientSubjectSetSubscribe: could not parse SRV_GMD_CLIENT_SUBJECT_SET_SUBSCRIBE msg.
+TAL-SS-15168-W TsmrCbServerSrvGmdClientSubjectSetSubscribe: can't find app <%s>. not adding any gmd clients from server <%s>
+TAL-SS-15169-W TsmrCbServerSrvGmdClientSubjectSetSubscribe: can't find subject <%s>. not adding any gmd clients from server <%s>
+TAL-SS-15170-W TsmrCbServerSrvGmdClientSubjectSetSubscribe: can't find gmd_client <%s>. not removing any gmd clients.
+TAL-SS-15171-W TsmrCbServerSrvGmdClientStatus: could not parse SRV_GMD_CLIENT_STATUS msg.
+TAL-SS-15172-W TsmrCbServerSrvGmdClientStatus: can't find app <%s>. not adding gmd client <%s>
+TAL-SS-15173-W TsmrCbServerSrvGmdClientStatus: can't find gmd_client <%s>. not updating any gmd clients.
+TAL-SS-15174-W TsmrCbServerSrvGmdInitResult: could not lookup server 
+TAL-SS-15175-W TsmrCbServerSrvGmdInitResult: could not parse GMD_SRV_INIT_RESULT msg.
+TAL-SS-15176-W TsmrCbServerSrvGmdInitResult: could not parse GMD_SRV_INIT msg.
+TAL-SS-15177-W TsmrCbServerSrvGmdInitResult: can't find app <%s>. not adding any gmd clients from server <%s>
+TAL-SS-15178-W TsmrCbServerSrvGmdInitResult: can't find subject <%s>. not adding any gmd clients from server <%s>
+TAL-SS-15179-W TsmrCbServerSrvGmdInitAddResult: could not lookup server 
+TAL-SS-15180-W TsmrCbServerSrvGmdInitAddResult: could not parse GMD_SRV_INIT_ADD_RESULT msg.
+TAL-SS-15181-W TsmrCbServerSrvGmdInitAddResult: can't find app <%s>. not adding any gmd clients from server <%s>
+TAL-SS-15182-W TsmrCbServerSrvGmdInitAddResult: can't find subject <%s>. not adding any gmd clients from server <%s>
+TAL-SS-15183-W TsmrCbServerSrvGmdInitAddResult: could not lookup server 
+TAL-SS-15184-W TsmrCbServerSrvGmdInitDeleteResult: could not parse GMD_SRV_INIT_DELETE_RESULT msg.
+TAL-SS-15185-W TsmrCbServerSrvGmdInitDeleteResult: can't find gmd_client <%s>. not removing any gmd clients.
+TAL-SS-15186-W TsmrCbServerSrvGmdInitDeleteResult: can't find subject <%s>. not removing subject from gmd client <%s>
+TAL-SS-15187-W TsmrCbServerServerSubjectSetSubscribe: could not parse message.
+TAL-SS-15188-I TsmrCbServerServerSubjectSetSubscribe: Unkown server <%s>
+TAL-SS-15189-W TsmrCbServerUniqueSubjectCheckCall67: could not lookup server <>
+TAL-SS-15190-W TsmrCbServerUniqueSubjectCheckCall67: could not parse SRV_UNIQUE_SUBJECT_CHECK_CALL_67 message.
+TAL-SS-15191-I TsmrCbServerUniqueSubjectCheckCall67: Unique subject name <%s> is already in use on this server.
+TAL-SS-15192-W TsmrCbServerUniqueSubjectCheckCall: could not lookup server <>
+TAL-SS-15193-W TsmrCbServerUniqueSubjectCheckCall: could not parse SRV_UNIQUE_SUBJECT_CHECK_CALL message.
+TAL-SS-15194-I TsmrCbServerUniqueSubjectCheckCall: Project <%s> dosn't exist on this server, subject name <%s> is unique.
+TAL-SS-15195-I Client <%s> is reconnecting: close the old connection.
+TAL-SS-15196-I TsmrCbServerUniqueSubjectCheckCall: Unique subject name <%s> is already in use on this server.
+TAL-SS-15197-W TsmrCbServerControl: could not parse CONTROL message.
+TAL-SS-15198-W TsmrCbServerStopCall: could not parse message.
+TAL-SS-15199-I Received stop all message.
+TAL-SS-15200-I Received stop server message.
+TAL-SS-15201-I TsmrCbServerStopAll: don't know how to stop %ld
+TAL-SS-15202-I Enable_Stop_Msgs is FALSE: disallow stop msg.
+TAL-SS-15203-I Unknown sender_server in SEND_SERVER_POLL_RESULT.
+TAL-SS-15204-W TsmrCbServerMonClientNamesSetWatch: could not parse message.
+TAL-SS-15205-I TsmrCbServerMonClientNamesSetWatch: Cannot find watch:
+TAL-SS-15206-I TsmrCbServerMonClientNamesSetWatch: project is null.
+TAL-SS-15207-I Message which triggered this callback:
+TAL-SS-15208-I Original set watch message:
+TAL-SS-15209-W TsmrCbServerMonClientNamesStatus: client %s does not exist!
+TAL-SS-15210-W TsmrCbServerMonClientNamesStatus: client %s not watching!
+TAL-SS-15211-W TsmrCbServerMonSubjectNamesSetWatch: could not parse message.
+TAL-SS-15212-I TsmrCbServerMonSubjectNamesSetWatch: Cannot find watch:
+TAL-SS-15213-W TsmrCbServerMonSubjectNamesStatus: client %s does not exist!
+TAL-SS-15214-W TsmrCbServerMonSubjectNamesStatus: client %s not watching!
+TAL-SS-15215-W TsmrCbServerMonSubjectSubscribeSetWatch: could not parse message.
+TAL-SS-15216-I TsmrCbServerMonSubjectSubscribeSetWatch: Cannot find watch:
+TAL-SS-15217-W TsmrCbServerMonSubjectSubscribeStatus: client %s does not exist!
+TAL-SS-15218-W TsmrCbServerMonSubjectSubscribeStatus: client %s not watching!
+TAL-SS-15219-W TsmrCbServerMonSubjectSubscribeStatus: could not parse message.
+TAL-SS-15220-W TsmrCbServerMonClientSubscribeSetWatch: could not parse message.
+TAL-SS-15221-W TsmrCbServerMonClientSubscribeStatus: client %s does not exist!
+TAL-SS-15222-W TsmrCbServerMonClientSubscribeStatus: client %s not watching %s!
+TAL-SS-15223-W TsmrCbServerMonClientSubscribeStatus: could not parse message.
+TAL-SS-15224-W TsmrCbServerMonClientTimeSetWatch: could not parse message.
+TAL-SS-15225-W TsmrCbServerMonClientBufferSetWatch: could not parse message.
+TAL-SS-15226-W TsmrCbServerMonClientMsgRecvSetWatch: could not parse message.
+TAL-SS-15227-W TsmrCbServerMonClientMsgSendSetWatch: could not parse message.
+TAL-SS-15300-I Already subscribing to subject <%s> in project <%s>.
+TAL-SS-15301-I Project <%s> does not exist.
+TAL-SS-15302-I Subject <%s> does not exist in project <%s>.
+TAL-SS-15303-I Not currently subscribed to subject <%s> in project <%s>.
+TAL-SS-15304-I Group name is <%s>, id = {%lx %lx %lx %lx}. 
+TAL-SS-15305-W Group '%s' id {%lx %lx %lx %lx} is not unique.
+TAL-SS-15306-W Attempt to set group <%s> <id = {%lx %lx %lx %lx}> threshold to less than one (%ld).
+TAL-SS-15307-I Group <%s> <id = {%lx %lx %lx %lx}> threshold set to %ld
+TAL-SS-15308-I Closing connection to group <%s> <id = %lx %lx %lx %lx>.
+TAL-SS-15309-I Gmd client <%s> from server <%s> created.
+TAL-SS-15310-I Gmd client <%s> updated with server <%s>
+TAL-SS-15311-I Gmd client <%s> subscribing to subject <%s>
+TAL-SS-15312-I Gmd client <%s> already subscribing to subject <%s>
+TAL-SS-15313-I Gmd client <%s> unsubscribing from subject <%s>
+TAL-SS-15314-I Gmd client <%s> changing to new status <%s>
+TAL-SS-15315-I Removing gmd client <%s> on server <%s>
+TAL-SS-15316-I srvCbMonServerConnGraphChange: Found a null server!
+TAL-SS-15317-I Creating project named <%s>.
+TAL-SS-15318-I Destroying project <%s>.
+TAL-SS-15319-I Adding client <%s> to project <%s>.
+TAL-SS-15320-I Removing client <%s> from project <%s>.
+TAL-SS-15321-I Gmd receiving client <%s> did not reconnect within %s seconds.
+TAL-SS-15322-I Closing connection to RTserver <%s>.  
+TAL-SS-15323-I Destroying indirect RTserver <%s>. 
+TAL-SS-15324-I Converting server <%s> from indirect to direct  
+TAL-SS-15325-W Server name <%s> is not unique.  
+TAL-SS-15326-I A new server <%s> has connected to this group.
+TAL-SS-15327-I Server <%s> is reconnecting: close the old connection. 
+TAL-SS-15328-I Creating subject <%s> in project <%s>. 
+TAL-SS-15329-I Destroying subject <%s> in project <%s>. 
+TAL-SS-15330-W Unexpected reason <%ld> for subject <%s>
+TAL-SS-15331-W Received duplicate ID <%ld> for member on group '%s' <id = {%lx %lx %lx %lx}>.
+TAL-SS-15332-W Cannot find context for group member <id=%ld> during OPEN_CALL processing. Discarding message. 
+TAL-SS-15333-I Client <%s> has %s subscribing to subject <%s> in project <%s>.
+TAL-SS-15334-I Creating server subscribe for subject <%s>.
+TAL-SS-15335-I Destroying server subscribe for subject <%s>.
+TAL-SS-15336-I Creating server subscribe for subject <%s>, because covering subscribe <%s> was removed.
+TAL-SS-15337-I Destroying server subscribe for subject <%s>.
+TAL-SS-15338-I Server <%s> is already subscribing to subject <%s> in project <%s> 
+TAL-SS-15339-I Unsubscribing server <%s> from subject <%s>, because subject <%s> provides wider subscribe coverage.
+TAL-SS-15340-I Server <%s> is not subscribing to subject <%s> in project <%s>  
+TAL-SS-15341-I Server <%s> has %s subscribing to subject <%s> in project <%s>. 
+TAL-SS-15342-I Loading extension '%s'...
+TAL-SS-15343-W Could not find the open func %s in extension '%s'.
+TAL-SS-15344-W Server extension '%s' open func returned failure.
+TAL-SS-15345-W Could not load extension '%s'
+TAL-SS-15346-I The option 'server_extensions' is UNKNOWN. Not loading extensions.
+TAL-SS-15347-I Restarting client '%s'
+TAL-SS-15348-V Resending message with sequence number <%ld> to client <%s>.
+TAL-SS-15349-W smrCbClientGmdAck: could not parse message.
+TAL-SS-15350-I smrCbClientGmdAck: Could not find gmd client for sender <%s> and seq num %ld. 
+TAL-SS-15351-W TsmrCbServerSrvGmdAck: could not parse message.
+TAL-SS-15352-W TsmrServerGroupMsgStart:TsmrServerSendAckLookup returned a send_ack that I wasn't expecting
+TAL-SS-15353-V Resending message with sequence number <%ld> to client <%s>.
+TAL-SS-15354-V Resending message with sequence number <%ld> to client <%s>.
+TAL-SS-15355-I Stalling client '%s'.
+TAL-SS-15356-I Gmd client list preparation for subject '%s' in progress.
+TAL-SS-15357-W TsmrCbServerSrvGmdInitResult: could not parse GMD_SRV_INIT msg.
+TAL-SS-15358-I Gmd client list preparation for subject '%s' complete.
+TAL-SS-15359-I Preparing Gmd client list for subject '%s'.
+TAL-SS-15360-I Server <%s> does not support load balancing. \n Load balanced messages to subject <%s> will not be sent to the server.
+TAL-SS-15361-I Client connection result: %s
+TAL-SS-15362-I RTserver parsing command string <%s>.
+TAL-SS-15363-I Rejecting group <%s> <id = {%lx %lx %lx %lx}>. Server not enabled for multicast.
+TAL-SS-15364-I Rejecting PORT OPEN notification. RTserver is stopping.
+TAL-SS-15365-I RTserver is stopping.
+TAL-SS-15366-W Received msg (type = '%ld') with invalid destination subject ('%s').
+TAL-SS-15367-W TsmrCbClientGmdInitCall: Subject name in message is invalid.
+TAL-SS-15368-W Invalid subject name <%s> in subscribe command.
+TAL-SS-15369-W TsmrCbClientSubjectSetSubscribe: Subject name in message is invalid.
+TAL-SS-15370-W Invalid subject name <%s> in client connect call subject list.
+TAL-SS-15371-I Gmd publish client <%s> from server <%s> created.
+TAL-SS-15372-I Gmd publish client <%s> on server <%s> has started publishing to subject <%s>
+TAL-SS-15373-I Gmd publish client <%s> has moved from server <%s> to server <%s>
+TAL-SS-15374-I Gmd publish client <%s> on server <%s> has stopped publishing to subject <%s>
+TAL-SS-15375-I Gmd publish client <%s> on server <%s> has been destroyed
+TAL-SS-15376-V Resending message with sequence number <%ld> to local client <%s>.
+TAL-SS-15377-I Sending GMD resume message to server <%s> for client <%s> for subject <%s>.
+TAL-SS-15378-I Sending GMD suspend message to server <%s> for client <%s> for subject <%s>.
+TAL-SS-15379-W TsmrCbServerSrvGmdResume: could not lookup server.
+TAL-SS-15380-W TsmrCbServerSrvGmdResume: could not parse GMD_SRV_RESUME msg.
+TAL-SS-15381-W TsmrCbServerSrvGmdResume: can't find app <%s>. Can not resume gmd buffering for client <%s>
+TAL-SS-15382-W TsmrCbServerSrvGmdResume: can't find client <%s> in app <%s>. Can not resume gmd buffering
+TAL-SS-15383-I Resuming GMD processing for client <%s> from server <%s> and subject <%s>.
+TAL-SS-15384-W TsmrCbServerSrvGmdSuspend: could not lookup server.
+TAL-SS-15385-W TsmrCbServerSrvGmdSuspend: could not parse GMD_SRV_SUSPEND msg.
+TAL-SS-15386-W TsmrCbServerSrvGmdSuspend: can't find app <%s>. Can not resume gmd buffering for client <%s>
+TAL-SS-15387-W TsmrCbServerSrvGmdSuspend: can't find client <%s> in app <%s>. Can not resume gmd buffering
+TAL-SS-15388-I Suspending GMD processing for client <%s> from server <%s> and subject <%s>.
+TAL-SS-15389-W Client <%s> is not local, rejecting client. Please contact TIBCO Software, Inc. for different license.
+TAL-SS-15390-W Client <%s> authentication failed, rejecting client.
+TAL-SS-15391-W Received data message from client <%s> before handshake completion. Discarding message.
+TAL-SS-15392-W Failed to parse OPEN_CALL message . Discarding message.
+TAL-SS-15393-W TsmrCbClientBatchSubjectSetSubscribe : could not parse message.
+TAL-SS-15394-W TsmrCbClientBatchSubjectSetSubscribe: Subject name in message is invalid.
+TAL-SS-15395-W An attempt was made to destroy client '%s' during the connect call subscription processing. Request rejected.
+TAL-SS-15396-W Client '%s' failed to start subscribing to subject '%s' - {%s}.
+TAL-SS-15397-W Client '%s' failed to stop  subscribing to subject '%s' - {%s}.
+TAL-SS-15398-I Destroying Gmd client list for subject '%s'.
+TAL-SS-15399-I Requesting server '%s' for Gmd client list for subject '%s'.
+TAL-SS-15400-W TsmrCbClientAdminSetOutboundRateParams: could not parse message.
+TAL-SS-15401-I Client <%s> cannot set outbound rate parameters for connection <%s>!
+TAL-SS-15402-W TsmrCbClientMonClientNamesNumPollCall: could not parse message.
+TAL-SS-15403-I Client <%s> has polled for client names number.
+TAL-SS-15404-W TsmrMonMergeClientNamesNumPollResult: failed to merge a poll message into final result.
+TAL-SS-15405-W TsmrMonMergeClientSubscribeNumPollResult: failed to merge a poll message into final result.
+TAL-SS-15406-W TsmrCbClientMonClientSubscribeNumPollCall: could not parse message.
+TAL-SS-15407-W TsmrCbClientMonClientCpuPollCall: could not parse message.
+TAL-SS-15408-I Client <%s> has polled client <%s> for CPU info.
+TAL-SS-15409-W TsmrCbClientMonServerCpuPollCall: could not parse message.
+TAL-SS-15410-I Client <%s> has polled server <%s> for CPU info.
+TAL-SS-15411-W TsmrCbMonServerCpuPollResult: could not parse message.
+TAL-SS-15412-W TsmrCbClientMonClientInfoPollCall: could not parse message.
+TAL-SS-15413-I Client <%s> has polled client <%s> for info.
+TAL-SS-15414-W smrMonServerCongestionSetWatch: could not parse message.
+TAL-SS-15415-E TsmrMonSendServerCongestionIoctl: could not find server connection for server %s, process %s
+TAL-SS-15416-W TsmrCbClientMonMaxClientLicensesSetWatch: could not parse message.
+TAL-SS-15417-I Client <%s> is %s watching max client licenses on server (%s)!
+TAL-SS-15418-I Client <%s> has %s watching max client licenses on server (%s).
+TAL-SS-15419-I Client <%s> is already watching congestion on client (%s)!
+TAL-SS-15420-I Client <%s> is not watching congestion on client (%s)!
+TAL-SS-15421-I Client <%s> started watching congestion on client (%s) with high water %ld and low water %ld
+TAL-SS-15422-I Client <%s> stopped watching congestion on client (%s)
+TAL-SS-15423-W TsmrCbClientMonClientCongestionSetWatch: could not parse message.
+TAL-SS-15424-I Client <%s> is already watching congestion on server (%s) connection (%s)!
+TAL-SS-15425-I Client <%s> is not watching congestion on server (%s) connection (%s)!
+TAL-SS-15426-I Client <%s> started watching congestion on server (%s) connection (%s) with high water %ld and low water %ld
+TAL-SS-15427-I Client <%s> stopped watching congestion on server (%s) connection(%s)
+TAL-SS-15428-W TsmrCbClientMonServerCongestionSetWatch: could not parse message.
+TAL-SS-15429-W Client (%s) could not send max client licenses watch message to server (%s); no server matches that name.
+TAL-SS-15430-W Client (%s) could not send congestion watch message.  Low water mark (%ld) must be greater than or equal to 0 and not greater than high water mark (%ld)
+TAL-SS-15431-W TsmrCbServerMonSubjectSubscribeStatus: client %s does not exist!
+TAL-SS-15432-W TsmrCbServerMonClientCongestionSetWatch: could not parse message.
+TAL-SS-15433-W TsmrCbServerMonMaxClientLicensesSetWatch: could not parse message.
+TAL-SS-15434-W TsmrCbServerMonServerCongestionSetWatch: could not parse message.
+TAL-SS-15435-W Client (%s) could not send congestion watch message to server (%s); no server matches that name.
+TAL-SS-15436-W TsmrCbServerMonServerCongestionStatus: client %s does not exist!
+TAL-SS-15437-W TsmrCbServerMonServerCongestionStatus: client %s not watching server %s, process %s!
+TAL-SS-15438-W TsmrCbServerMonServerCongestionStatus: could not parse message.
+TAL-SS-15439-W TsmrCbServerMonMaxClientLicensesStatus: client %s does not exist!
+TAL-SS-15440-W TsmrCbServerMonMaxClientLicensesStatus: client %s not watching %s!
+TAL-SS-15441-W TsmrMonServerCongestionSetWatch: Cannot turn watch on for dying client (%s)
+TAL-SS-15442-W TsmrClientOnIoctl: Was about to send server congestion status message to client (%s) but watch no longer exists; perhaps it was just turned off after status message was already on its way.
+TAL-SS-15443-W TsmrServerOnIoctl: Was about to send server congestion status message to client (%s) but watch no longer exists; perhaps it was just turned off after status message was already on its way.
+TAL-SS-15444-W TsmrMCGMOnIoctl: Was about to send server congestion status message to client (%s) but watch no longer exists; perhaps it was just turned off after status message was already on its way.
+TAL-SS-15445-W smrMonMergeClientSubscribeNumPollResult: failed to merge a poll message into final result.
+TAL-SS-30001-W monCbProcessProjectNamesStatus: could not parse message.
+TAL-SS-30002-W monCbProcessClientNamesStatus: could not parse message.
+TAL-SS-30003-W monCbProcessServerNamesStatus: could not parse message.
+TAL-SS-30004-W monCbProcessSubjectNamesStatus: could not parse message.
+TAL-SS-30005-W monCbProcessSubjectSubscribeStatus: could not parse message.
+TAL-SS-30006-W monCbProcessClientSubscribeStatus: could not parse message.
+TAL-SS-30007-W monCbProcessClientTimeStatus: could not parse message.
+TAL-SS-30008-W monCbProcessClientBufferStatus: could not parse message.
+TAL-SS-30009-W monCbProcessClientMsgRecvStatus: could not parse message.
+TAL-SS-30010-W monCbProcessClientMsgSendStatus: could not parse message.
+TAL-SS-30011-W monCbProcessServerConnStatus: could not parse message.
+TAL-SS-30012-W monCbProcessProjectNamesPollResult: could not parse message.
+TAL-SS-30013-W monCbProcessClientNamesPollResult: could not parse message.
+TAL-SS-30014-W monCbProcessServerNamesPollResult: could not parse message.
+TAL-SS-30015-W monCbProcessSubjectNamesPollResult: could not parse message.
+TAL-SS-30016-W monCbProcessSubjectSubscribePollResult: could not parse message.
+TAL-SS-30017-W monCbProcessSubjectSubscribePollResult: did not reach end of message (%ld).
+TAL-SS-30018-W monCbProcessClientSubscribePollResult: could not parse message.
+TAL-SS-30019-W monCbProcessClientSubscribePollResult: did not reach end of message (%ld).
+TAL-SS-30020-W monCbProcessClientGeneralPollResult: could not parse message.
+TAL-SS-30021-W monCbProcessClientTimePollResult: could not parse message.
+TAL-SS-30022-W monCbProcessClientBufferPollResult: could not parse message.
+TAL-SS-30023-W monCbProcessClientOptionPollResult: could not parse message.
+TAL-SS-30024-W monCbProcessClientOptionPollResult: did not reach end of message (%ld).
+TAL-SS-30025-W monCbProcessClientMsgTypePollResult: could not parse message.
+TAL-SS-30026-W monCbProcessClientMsgTypePollResult: did not reach end of message (%ld).
+TAL-SS-30027-W monCbProcessClientCbPollResult: could not parse message.
+TAL-SS-30028-W monCbProcessClientMsgTrafficPollResult: could not parse message.
+TAL-SS-30029-W monCbProcessClientSubjectPollResult: could not parse message.
+TAL-SS-30030-W monCbProcessClientSubjectPollResult: did not reach end of message (%ld).
+TAL-SS-30031-W monCbProcessServerGeneralPollResult: could not parse message.
+TAL-SS-30032-W monCbProcessServerTimePollResult: could not parse message.
+TAL-SS-30033-W monCbProcessServerBufferPollResult: could not parse message.
+TAL-SS-30034-W monCbProcessServerBufferPollResult: did not reach end of message (%ld).
+TAL-SS-30035-W monCbProcessServerOptionPollResult: could not parse message.
+TAL-SS-30036-W monCbProcessServerOptionPollResult: did not reach end of message (%ld).
+TAL-SS-30037-W monCbProcessServerConnPollResult: could not parse message.
+TAL-SS-30038-W monCbProcessServerRoutePollResult: could not parse message.
+TAL-SS-30039-W monCbProcessServerRoutePollResult: did not reach end of message (%ld).
+TAL-SS-30040-W monCbProcessServerMsgTrafficPollResult: could not parse message.
+TAL-SS-30041-W monCbProcessServerMsgTrafficPollResult: did not reach end of message (%ld).
+TAL-SS-30042-W monCbProcessProjectNamesStatus: could not parse message.
+TAL-SS-30043-W monCbProcessClientNamesStatus: could not parse message.
+TAL-SS-30044-W monCbProcessServerNamesStatus: could not parse message.
+TAL-SS-30045-W monCbProcessSubjectNamesStatus: could not parse message.
+TAL-SS-30046-W monCbProcessSubjectSubscribeStatus: could not parse message.
+TAL-SS-30047-W monCbProcessClientSubscribeStatus: could not parse message.
+TAL-SS-30048-W monCbProcessClientTimeStatus: could not parse message.
+TAL-SS-30049-W monCbProcessClientBufferStatus: could not parse message.
+TAL-SS-30050-W monCbProcessClientMsgRecvStatus: could not parse message.
+TAL-SS-30051-W monCbProcessClientMsgSendStatus: could not parse message.
+TAL-SS-30052-W monCbProcessServerConnStatus: could not parse message.
+TAL-SS-30053-W monCbProcessProjectNamesPollResult: could not parse message.
+TAL-SS-30054-W monCbProcessClientNamesPollResult: could not parse message.
+TAL-SS-30055-W monCbProcessServerNamesPollResult: could not parse message.
+TAL-SS-30056-W monCbProcessSubjectNamesPollResult: could not parse message.
+TAL-SS-30057-W monCbProcessSubjectSubscribePollResult: could not parse message.
+TAL-SS-30058-W monCbProcessSubjectSubscribePollResult: did not reach end of message (%ld).
+TAL-SS-30059-W monCbProcessClientSubscribePollResult: could not parse message.
+TAL-SS-30060-W monCbProcessClientSubscribePollResult: did not reach end of message (%ld).
+TAL-SS-30061-W monCbProcessClientGeneralPollResult: could not parse message.
+TAL-SS-30062-W monCbProcessClientTimePollResult: could not parse message.
+TAL-SS-30063-W monCbProcessClientBufferPollResult: could not parse message.
+TAL-SS-30064-W monCbProcessClientOptionPollResult: could not parse message.
+TAL-SS-30065-W monCbProcessClientOptionPollResult: did not reach end of message (%ld).
+TAL-SS-30066-W monCbProcessClientMsgTypePollResult: could not parse message.
+TAL-SS-30067-W monCbProcessClientMsgTypePollResult: did not reach end of message (%ld).
+TAL-SS-30068-W monCbProcessClientCbPollResult: could not parse message.
+TAL-SS-30069-W monCbProcessClientMsgTrafficPollResult: could not parse message.
+TAL-SS-30070-W monCbProcessClientSubjectPollResult: could not parse message.
+TAL-SS-30071-W monCbProcessClientSubjectPollResult: did not reach end of message (%ld).
+TAL-SS-30072-W monCbProcessServerGeneralPollResult: could not parse message.
+TAL-SS-30073-W monCbProcessServerTimePollResult: could not parse message.
+TAL-SS-30074-W monCbProcessServerBufferPollResult: could not parse message.
+TAL-SS-30075-W monCbProcessServerBufferPollResult: did not reach end of message (%ld).
+TAL-SS-30076-W monCbProcessServerOptionPollResult: could not parse message.
+TAL-SS-30077-W monCbProcessServerOptionPollResult: did not reach end of message (%ld).
+TAL-SS-30078-W monCbProcessServerConnPollResult: could not parse message.
+TAL-SS-30079-W monCbProcessServerRoutePollResult: could not parse message.
+TAL-SS-30080-W monCbProcessServerRoutePollResult: did not reach end of message (%ld).
+TAL-SS-30081-W monCbProcessServerMsgTrafficPollResult: could not parse message.
+TAL-SS-30082-W monCbProcessServerMsgTrafficPollResult: did not reach end of message (%ld).
+TAL-SS-30083-W Adding TmonTaskDataPtr task variable failed!
+TAL-SS-30084-W TmonDevRecvGdiSendMessage: could not parse message.
+TAL-SS-30085-W monDevFork: could not create IPC conection.
+TAL-SS-30086-W monDevFork: development (GDI) process not supported on vxWorks.
+TAL-SS-30087-W monDevFork: could not start development (GDI) process.
+TAL-SS-30088-W monDevFork: could not connect to development (GDI) process.
+TAL-SS-30089-I Waiting for up to %s seconds for GDI process to connect.
+TAL-SS-30090-I Graphical Development Interface not supported on this platform.
+TAL-SS-30091-I Switching to runtime mode.
+TAL-SS-30092-I Starting Graphical Development Interface.  Please wait.
+TAL-SS-30093-I Try increasing environment variable T_GDI_CONNECT_TIMEOUT (default is 60) and restart.
+TAL-SS-30094-D could not initialize IPC.
+TAL-SS-30095-W TipcSrvMsgSend failed with error <%s>.
+TAL-SS-30096-W monCbProcessClientNamesNumPollResult: could not parse message.
+TAL-SS-30097-W monCbProcessClientNamesNumPollResult: could not parse message.
+TAL-SS-30098-W monCbProcessClientSubscribeNumPollResult: could not parse message.
+TAL-SS-30099-W monCbProcessClientSubscribeNumPollResult: did not reach end of message (%ld).
+TAL-SS-30100-W monCbProcessClientSubscribeNumPollResult: could not parse message.
+TAL-SS-30101-W monCbProcessClientSubscribeNumPollResult: did not reach end of message (%ld).
+TAL-SS-30102-W monCbProcessClientCpuPollResult: could not parse message.
+TAL-SS-30103-W monCbProcessServerCpuPollResult: could not parse message.
+TAL-SS-30104-W monCbProcessClientCpuPollResult: could not parse message.
+TAL-SS-30105-W monCbProcessServerCpuPollResult: could not parse message.
+TAL-SS-30106-W monCbProcessClientInfoPollResult: could not parse message.
+TAL-SS-30107-W monCbProcessClientInfoPollResult: could not parse message.
+TAL-SS-30108-W monCbProcessClientCongestionStatus: could not parse message.
+TAL-SS-30109-W monCbProcessServerCongestionStatus: could not parse message.
+TAL-SS-30110-W monCbProcessServerMaxClientLicensesStatus: could not parse message.
+TAL-SS-30111-W monCbProcessClientSubscribeNumPollResult: could not parse message.
+TAL-SS-50001-I RTserver is not currently running.
+TAL-SS-50002-W Could not connect to RTserver.
+TAL-SS-50003-I Successfully Stopped RTgms.
+TAL-SS-50004-I RTgms is not currently running
+TAL-SS-50005-W Could not stop RTserver.
+TAL-SS-50006-I Creating daemon child process.
+TAL-SS-50007-I Running command <%s>
+TAL-SS-50008-W Starting remote RTserver from NT is unsupported
+TAL-SS-50009-I Starting remote RTserver on node %s.
+TAL-SS-50010-I RTserver cannot be started.  There appears to be an RTserver already running. 
+TAL-SS-50011-I Child failed.  Try running again with the -no_daemon option to find out why 
+TAL-SS-50012-I Creating daemon child process.
+TAL-SS-50013-I Child process created successfully.  Parent process exiting.
+TAL-SS-50014-I RTserver started successfully.
+TAL-SS-50015-I Could not stop Rtgms.
+TAL-SS-50016-I RTrms is not currently running
+TAL-SS-50017-I Successfully Stopped RTrms.
+TAL-SS-50018-I Could not stop Rtrms.
+TAL-SS-50019-I RTgms started successfully.
+TAL-SS-50020-I RTgms cannot be started.  There appears to be an RTgms already running. 

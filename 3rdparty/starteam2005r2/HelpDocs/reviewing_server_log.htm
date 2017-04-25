@@ -1,0 +1,185 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Reviewing the Server Log</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=copyright value="Copyright© 1995-2003, Borland Software Corporation. All rights reserved.">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=550>
+<meta name=layout-width content=707>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<!--(Scripts)=======================================================-->
+
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="./ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Administering the Application\nManaging Server Logs\nReviewing the Server Logs");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Reviewing the Server Logs</h1>
+
+<p class=Body>The server logs record the activity on a particular server 
+ configuration. Each time you start a server configuration, the Server 
+ creates new files for the current session and renames the existing log 
+ files with names that reflect the date and time at which they were renamed. 
+ </p>
+
+<p class=Body>If the server has a locale other than US English, two server 
+ logs are generated. The format for the new log names is Server.<span style="font-style: italic;"><I>locale</I></span>.log. 
+ The first server log is named Server.en-US.log and is always generated 
+ (if only for support purposes). The name of the second log depends on 
+ the locale where the server has been installed. For example, its name 
+ might be Server.fr-FR.log if it is installed in France.</p>
+
+<p class=Body>Log files are stored in the Repository folder for the server 
+ configuration. You can view their contents at any time, even while the 
+ server configuration is running. <span style="margin-left: 0px;">You can 
+ find the location of the files from the </span><span style="margin-left: 0px; font-style: italic;"><I>Server 
+ Administration</I></span><span style="margin-left: 0px;"> dialog. </span></p>
+
+<p class=Body><span style="margin-left: 0px;"><span style="font-weight: bold;"><B>N</B></span>ote:</span> 
+ You can perform this function only on servers that are currently running.</p>
+
+<p class=Proc>To view the server log:</p>
+
+<ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Do one of the following:</p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>On a computer that 
+ has the Server installed, select<span style="font-weight: bold;"><B> Start 
+ &gt; Programs &gt; StarTeam &gt; StarTeam Server x.x &gt; StarTeam Server</B></span>. 
+ </p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>From the client, 
+ select <span style="font-weight: bold;"><B>Start &gt; Programs &gt; StarTeam 
+ &gt; StarTeam client_name &gt; Server Administration</B></span> (available 
+ with custom installations only).</p></li>
+	</ul>
+	
+	<p class=List-1-text>The <span style="font-style: italic;"><I>Server</I></span> 
+ <span style="font-style: italic;"><I>Administration</I></span> dialog appears. 
+ &nbsp;</p>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select a server configuration 
+ from the left pane. If you have not yet logged onto the server configuration, 
+ you will be asked to do so. If you are using the client, you can administer 
+ remote servers only.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>From the <span style="font-style: italic;"><I>Server 
+ Administration</I></span> dialog, do one of the following:</p></li>
+	
+	<li class=kadov-p-CBullet-1-Indent><p class=Bullet-1-Indent>Click the 
+ Server Log shortcut in the lower left panel. If it is not displayed, click 
+ the<span style="font-weight: bold;"><B> Accounts</B></span> bar and it will display.</p></li>
+	
+	<li class=kadov-p-CBullet-1-Indent><p class=Bullet-1-Indent>From the 
+ menu, select <span style="font-weight: bold;"><B>Tools &gt; Administration 
+ &gt; Server Log.</B></span></p></li>
+	
+	<p class=List-1-text>The<span style="font-style: italic;"><I> Server Log 
+ </I></span>dialog opens. </p>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Review the <span style="font-weight: bold;"><B>Server 
+ Log </B></span>text box to see the contents of the server log files.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>To see the most recent entries, 
+ click <span style="font-weight: bold;"><B>Reload</B></span>.</p></li>
+</ol>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

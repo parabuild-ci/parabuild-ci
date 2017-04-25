@@ -1,0 +1,189 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Locating the Initialization Files</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=copyright value="Copyright© 1995-2003, Borland Software Corporation. All rights reserved.">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=602>
+<meta name=layout-width content=702>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<!--(Scripts)=======================================================-->
+
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="./ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Appendix\nUnderstanding Initialization Files\nLocating the Initialization Files");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Locating the Initialization Files</h1>
+
+<p class=Body>Initialization files have different locations on different 
+ Windows platforms. On NT, C:\interoffice is the <span style="font-style: italic;"><I>pathPrefix</I></span>. 
+ On 2000 and XP, the <span style="font-style: italic;"><I>pathPrefix</I></span> 
+ is C:\Documents and Settings.</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>ClientLicenses.st lists 
+ is located at <span style="font-style: italic;"><I>pathPrefix</I></span>\All 
+ Users\Application Data\Borland\StarTeam\ClientLicenses.st. This file is 
+ installed by StarTeam Runtime and the application clients. If the ClientLicenses.st 
+ file is missing, you are asked to register the product.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>ConnectionManager.ini 
+ (for starting the application) is located at <span style="font-style: italic;"><I>pathPrefix</I></span>\All 
+ Users\Application Data\Borland\StarTeam\ConnectionManager.ini. This file 
+ is installed by StarTeam Runtime and the application clients. If the ConnectionManager.ini 
+ file is missing or corrupted, the application asks if you want it recreated. 
+ Reinstallation can also recreate the missing file. See <a href="using_connection_manager-ini.htm">Using 
+ ConnectionManager.ini</a>.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>The starteam-servers.xml 
+ (formerly ServerList.st) File lists the server configurations for which 
+ you have created server descriptions. It is located at <span style="font-style: italic;"><I>pathPrefix</I></span>\user\Application 
+ Data\Borland\StarTeam\ServerList. This file is installed by StarTeam Runtime 
+ and the application clients. ServerList.st is converted to starteam-servers.xml 
+ when you start the Windows client for the first time. If you do not have 
+ a ServerList.st file, a new, empty starteam-servers.xml is created. See 
+ <a href="using_starteam_server-xml.htm">Using starteam-servers.xml</a>.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>The starteam-client-options.xml 
+ (formerly StarTeam.ini) file is located at <span style="font-style: italic;"><I>pathPrefix</I></span>\<span 
+ style="font-style: italic;"><I>user</I></span>\ Application Data\Borland\StarTeam\starteam-client-options.xml. 
+ This file is installed by StarTeam Runtime and the application clients. 
+ This file lists your personal option settings and any alternate working 
+ folders you have set up via the application. If this file is missing, 
+ the application automatically recreates it without consulting you. However, 
+ the recreated file contains only the default settings for Personal Options 
+ and no alternate working folder information. If the starteam-client-options.xml 
+ file is corrupted, you can delete it, but it might be possible to edit 
+ it. You may want to back up your starteam-client-options.xml or put it 
+ under version control. See <a href="using_starteam_client_options-xml.htm">Using 
+ starteam-client-options.xml</a>.</p></li>
+	
+	<p class=Bullet-1-text>You can tell that the starteam-client-options.xml 
+ file is missing or corrupted when:</p>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-2><p class=Bullet-2>Your Personal Options 
+ are no longer correct.</p></li>
+		
+		<li class=kadov-p-CBullet-2><p class=Bullet-2>Changes you made 
+ to Personal Options disappear when you restart the application.</p></li>
+		
+		<li class=kadov-p-CBullet-2><p class=Bullet-2>Files do not change 
+ even though you have checked them out (because they have been copied to 
+ the wrong working folders).</p></li>
+		
+		<li class=kadov-p-CBullet-2><p class=Bullet-2>The application indicates 
+ that old files are missing and does not see new files (because it looks 
+ for them in the wrong place).</p></li>
+	</ul>
+	
+	<p class=Bullet-1-text>See <a href="using_starteam_client_options-xml.htm">Using 
+ starteam-client-options.xml</a>.</p>
+</ul>
+
+<ul>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>The Starteam-Server-Configs.xml 
+ file, which is used for server session information, is located at <span 
+ style="font-style: italic;"><I>serverinstallationFolder</I></span>\Starteam-Server-Configs.xml.</p></li>
+</ul>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

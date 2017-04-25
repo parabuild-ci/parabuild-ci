@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Rename Version Label Dialog Box</TITLE>
+<!--<renameversionlabeldialog.html>-->
+<!--<index parent="renaming" label="Rename Version Label dialog box" anchor="renameversionlabeldialog">-->
+<!--<index parent="version_labels" label="Rename Version Label dialog box" anchor="renameversionlabeldialog">-->
+<!--<index parent="labels" label="Rename Version Label dialog box" anchor="renameversionlabeldialog">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiRenameVersionLabelDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+
+<BODY BGCOLOR="#ffffee">
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="renameversionlabeldialog"></A>Rename Version Label</H1>
+
+<P>Use the Rename Version Label dialog box (Actions | Version Label | Rename) to change an existing version label.  You can change individual version labels or multiple version labels within a project.</P>
+
+<H2>Field Descriptions</H2>
+<TABLE WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD COLSPAN=2><CENTER><B>General Tab</B></CENTER></TD>
+	</TR>
+		<TR>
+		<TD><B>Rename From</B></TD>
+		<TD><!--<control name="RenameVersionLabelGeneral.VERSION_LABEL_EDIT">-->Enter the version label to rename or click the Browse button to select one.
+		<!--</control>--></TD>
+	</TR>
+		<TR>
+		<TD><B>To</B></TD>
+		<TD><!--<control name="RenameVersionLabelGeneral.RENAME_LABEL_TO_EDIT">-->Enter the new version label or click the Browse button to select one. Do not use an asterisk (*), a colon (:), double quotes (&quot;), a plus sign (+), or a minus sign (-). Names are limited to 254 characters.
+		<!--</control>--></TD>
+	</TR>
+		<TR>
+		<TD><B>Include files in subprojects</B></TD>
+		<TD>This field is available only if a project or folder is selected.  <!--<control name="RenameVersionLabelGeneral.RECURSIVE_CB">-->Select to rename version labels within subprojects that match the label you want to change.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=2><CENTER><B>Selected Files Tab</B></CENTER></TD></TR>
+	   <tr>
+	   <TD><B>File list</B></TD>
+	  <TD><!--<control name="Files.FILES_TREE">-->
+		Review the files selected to have a version label renamed.
+		<!--</control>--></TD>
+		</TR>
+		<TR>
+		<TD><B>Properties button</B></TD> <TD><!--<control name="Files.PROPERTIES_BUTTON">-->
+		Click to display archive, configuration file, or workspace information for the selected files or projects.
+		<!--</control>--></TD>
+		</tr>
+</TABLE>
+<BR><BR>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="assignversionlabeldialog.html">Assign Version Label Dialog Box</A></TD>
+		<TD><A HREF="removeversionlabeldialog.html">Delete Version Label Dialog Box</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="aboutversionlabels.html">About Version Labels</A></TD>
+	</TR>
+</TABLE>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

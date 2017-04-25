@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Setting Your Default Editor</TITLE>
+<!--<SetEditor.html>-->
+<!--<toc parent="setting_up_your_environment" label="Setting Your Default Editor" anchor="SetEditor" sortkey="05">-->
+<!--<index parent="options" label="default editor" anchor="SetEditor">-->
+<!--<index parent="editor" label="setting default" anchor="SetEditor">-->
+<!--<index parent="Adobe_Acrobat" label="setting location" anchor="SetEditor">-->
+<!--<index parent="reader" label="setting Adobe(R) Acrobat(R) location" anchor="SetEditor">-->
+<!--<index parent="browsers" label="setting location" anchor="SetEditor">-->
+<!--<index parent="reports" label="setting browser or editor for viewing" anchor="SetEditor">-->
+<!--<index parent="double_clicking" label="setting for editing or viewing" anchor="SetEditor">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Getting Started\nGetting Started for Users\nSetting Up Your User Environment\nSetting Your Default Editor");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="SetEditor"></A>Setting Your Default Editor</H1>
+<P>When you view or edit a file, Serena ChangeMan Version Manager gets or checks out the default revision of the versioned file and opens the workfile in the specified editor.
+<p>On Windows, you can have Version Manager either open the file with an editor defined by the Windows default file associations, or you can select a specific editor. 
+<p>On UNIX, you must define the location of an editor to use. To view the online help, you must also define the location of a browser.</p>
+
+<H2>Using the Version Manager Default Options</H2>
+<P>Unless you or your Administrator has changed the default editor settings, Version Manager:</P>
+<UL>
+	<LI>On Windows, uses <a href="winassociations.html">Windows default associations</a>. For example, for files with a TXT extension, Microsoft Notepad is used.
+	<LI>Asks you whether you want to view or edit the workfile when you double-click a versioned file.
+</UL>
+
+<H2>To set your default editor:</H2>
+<OL>
+	<LI>Select View | Options. The Options dialog box appears.<br><br>
+	<LI>Click the Applications tab and do any of the following:<BR><BR>
+	<UL type=disc>
+		<LI>To use Windows default associations for files, select the <b>Use default Windows associations</b> check box. Note that this field is available for Windows platforms only.<br><br>
+		<LI>To use a specific editor, enter the location of the editor program in the <b>Editor Location</b> field. <br><BR>
+		<P>(UNIX users only.)  If you specify a non-GUI editor that launches its own window (such as vi), you will need to launch the editor in an xterm or other type of window.  For example, in the <b>Editor Location</b> field, you would enter: xterm <I>editor path</I> as the location of your editor. <BR><BR>
+		<P>(Windows users only.)  If you specify an editor and select the use <b>Windows default associations</b> check box, the editor you specified will be used only if Windows cannot find an association.<BR><BR>
+		<LI>To specify a default action to occur when you double-click a versioned file, select an option from the <b>Default Double-Click Action</b> drop-down list. The options are:<BR><BR>
+<b>Ask</b> displays a dialog box that asks the User which action to take--either view the file or edit the file.<BR>
+<b>View</b> gets the file for viewing and opens the file in the specified editor.<BR>
+<b>Edit</b> checks out the file for editing and opens the file in the specified editor.<BR><BR>
+		<LI>(UNIX users only.) In the Browser Location field, enter the location of the HTML browser that Version Manager will use to display help and reports.<BR><BR>
+		<LI>In the Report Viewer group, select the viewer you want Version Manager to use to display reports. <BR><BR>
+		<P> Select <B>Use text editor</B> if you want to display Version Manager reports in a text editor. Version Manager generates reports quickly using a text editor. <BR><BR>
+		<P>Select <B>Use default HTML browser</B> if you want to display Version Manager reports in HTML format. Using an HTML browser, you can customize the look of the reports and make the reports available via the Internet or an intranet.<BR>
+		
+</UL>
+<br><br>
+
+<LI>
+Click OK.
+</OL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<td><a href="winassociations.html">Modifying Windows File Associations</a></td>
+		<td><a href="optionseditor.html">Options Dialog/Applications Tab</a></td>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

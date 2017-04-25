@@ -1,0 +1,157 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Using View Manager on the Command Line</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=459>
+<meta name=layout-width content=720>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Working with the Application\nComparing and Merging\nComparing and Merging Views\nMerging from the Command Line\nUsing View Manager on the Command Line");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Using View Manager on the Command Line (Cross-Platform Client)</h1>
+
+<p class=Body>On the Cross-Platform client, View Manager can be used to 
+ synchronize different views. For more information on View Manager capabilities, 
+ see <a href="understanding_view_manager_utility.htm">Understanding the 
+ View Manager Utility</a>.</p>
+
+<p class=Body>View Manager can run as a command line utility or as an application 
+ with a graphical user interface. The command-line utility is faster, but 
+ the graphical user interface allows the user to preview what will be done 
+ as well as observe what has been done. In either case, View Manager requires 
+ JRE 1.3.</p>
+
+<p class=Body>When you start View Manager from the command line, you can 
+ either postpone manual file merging or display a merge utility when View 
+ Manager finds a pair of files to be merged.</p>
+
+<p class=Proc>To start View Manager from the command line:</p>
+
+<p class=ListNoNumber>From any platform, use a command similar to the following, 
+ followed by the options you intend to use:</p>
+
+<p class=Code>java -Xmx49201m -classpath &quot;streplicate.jar:jhall.jar:starteam-sdk.jar&quot; 
+ com.starbase.starteam.streplicate.streplicator</p>
+
+<p class=Body>Depending on where you run the command and how your system 
+ is set up, you may need to replace &quot;java&quot; with the complete 
+ path to the JRE.</p>
+
+<p class=Body
+	style="font-weight: bold;">Important<span style="font-weight: normal;">: 
+ Borland recommends using Java’s -Xmx</span><span style="font-weight: normal; font-style: italic;"><I>n</I></span><span 
+ style="font-weight: normal;"> option in the command that runs the command-line 
+ interface. Replace </span><span style="font-weight: normal; font-style: italic;"><I>n</I></span><span 
+ style="font-weight: normal;"> with a number that represents 80% of the 
+ total memory available on your computer.</span></p>
+
+<p class=Body>Here is the documentation that Sun currently provides about 
+ this option:</p>
+
+<p class=Body-Indent-1><span style="font-weight: bold;"><B>-Xmx</B></span><span 
+ style="font-style: italic;"><I>n: </I></span>Specify the maximum size, in bytes, 
+ of the memory allocation pool. This value must be a multiple of 1024 greater 
+ than 2MB. Append the letter<span style="font-family: 'Courier New', monospace;"> 
+ k</span> or<span style="font-family: 'Courier New', monospace;"> </span><span 
+ style="font-family: 'Courier New', monospace;">K</span> to indicate kilobytes, 
+ or <span style="font-family: 'Courier New', monospace;">m</span> or <span 
+ style="font-family: 'Courier New', monospace;">M</span> to indicate megabytes. 
+ The default value is 64MB. </p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

@@ -1,0 +1,363 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Adding Users</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=copyright value="Copyright© 1995-2003, Borland Software Corporation. All rights reserved.">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=1529>
+<meta name=layout-width content=707>
+<meta name=x-ignored-words content="starteamserver;fg">
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<!--(Scripts)=======================================================-->
+
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="./ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Administering the Application\nManaging Users and Groups\nAdding/Importing Users and Groups\nAdding Users");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Adding Users</h1>
+
+<p class=Body>As an administrator, you can add users from the Server Administration 
+ dialog at any time. Normally, a user is added to the All Users group and 
+ then moved to one or more additional groups, such as Developers or Testers.</p>
+
+<p class=Body>Do not create a user account with the name <font style="font-family: 'Times New Roman';"
+	face="Times New Roman">&quot;</font>StarTeam,<font style="font-family: 'Times New Roman';"
+														face="Times New Roman">&quot;</font> 
+ as this can cause problems when the command line stcmd server-mode command 
+ is used to lock or unlock the server configuration. The command requests 
+ a password, even when the user has a blank password or when a password 
+ has already been provided.</p>
+
+<p class=Body><span style="font-weight: bold;"><B>Note:</B></span> This function 
+ can be performed only for servers that are currently running.</p>
+
+<p class=Proc>To add a user:</p>
+
+<ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Do one of the following:</p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1-Indent><p class=Bullet-1-Indent>On 
+ a computer that has the Server installed, select <span style="font-weight: bold;"><B>Start 
+ &gt; Programs &gt; StarTeam &gt; StarTeam Server x.x &gt; StarTeam Server.</B></span></p></li>
+		
+		<li class=kadov-p-CBullet-1-Indent><p class=Bullet-1-Indent>From 
+ the client, select <span style="font-weight: bold;"><B>Start &gt; Programs 
+ &gt; StarTeam &gt; StarTeam client_name &gt; Server Administration</B></span> 
+ (available with custom installations only).</p></li>
+	</ul>
+	
+	<p class=List-1-text>The <span style="font-style: italic;"><I>Server</I></span> 
+ <span style="font-style: italic;"><I>Administration</I></span> dialog appears. 
+ &nbsp;</p>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select a server configuration 
+ from the left pane. If you have not yet logged onto the server configuration, 
+ you will be asked to do so. If you are using the client, you can administer 
+ remote servers only.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>From the <span style="font-style: italic;"><I>Server 
+ Administration</I></span> dialog, do one of the following:</p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1-Indent><p class=Bullet-1-Indent>Click 
+ the <span style="font-weight: bold;"><B>Accounts</B></span> bar in the lower 
+ left panel. Then click the User Manager shortcut.</p></li>
+		
+		<li class=kadov-p-CBullet-1-Indent><p class=Bullet-1-Indent>From 
+ the menu, select <span style="font-weight: bold;"><B>Tools &gt; Accounts 
+ &gt; User Manager</B></span>.</p></li>
+	</ul>
+	
+	<p class=List-1-text>The<span style="font-style: italic;"><I> User Manager 
+ </I></span>dialog opens. </p>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select <span style="font-weight: bold;"><B>All 
+ Users</B></span> from the <span style="font-weight: bold;"><B>Groups</B></span> tree. 
+ New users will be initially added to this group. Later, they can be added 
+ to additional groups.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>To create the new user, do 
+ one of the following:</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Click <span style="font-weight: bold;"><B>New 
+ Group</B></span> button.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Right-click in the Users 
+ pane and select<span style="font-weight: bold;"><B> New</B></span> from the context 
+ menu.</p></li>
+	
+	<p class=List-1-text>The <span style="font-style: italic;"><I>New User 
+ Properties</I></span> dialog opens.</p>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Enter the user’s name in 
+ the<span style="font-weight: bold;"><B> Full Name</B></span> text box.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>(Optional) To enter an e-mail 
+ address for the user, enter the address in the<span style="font-weight: bold;"><B> 
+ E-Mail</B></span> text box using either of the following formats:</p></li>
+	
+	<p class=Code><font style="font-family: 'Courier New';"
+						face="Courier New">yourname@company.com</font></p>
+	
+	<p class=Code><font style="font-family: 'Courier New';"
+						face="Courier New">user_friendly_name&lt;yourname@company.com&gt;</font></p>
+	
+	<p class=List-1-text>If you leave the E-mail text box blank, the following 
+ message displays when you click <span style="font-weight: bold;"><B>OK</B></span>.<span 
+ style="font-family: 'Courier New';"> </span><font style="font-family: 'Courier New';"
+													face="Courier New">Attempt 
+ to resolve e-mail address?</font></p>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>Click <span style="font-weight: bold;"><B>Yes</B></span> 
+ to have the application search your address server for an e-mail address. 
+ If the application cannot locate an e-mail address for this user, the 
+ following message displays. E-mail<font style="font-family: 'Courier New';"
+										face="Courier New"> address cannot 
+ be resolved. The user will be excluded from e-mail related operations.</font><br>
+		You will have to manually enter the e-mail address if the application 
+ is unable to locate one for the user.</p></li>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>Click <span style="font-weight: bold;"><B>No</B></span> 
+ if you do not want the user to have an e-mail address.</p></li>
+	</ul>
+	
+	<p class=List-1-text><span style="font-weight: bold;"><B>Note: </B></span>If 
+ a user's e-mail address is ambiguous or incorrect, your mail application 
+ will find it undeliverable. </p>
+	
+	<li class=kadov-p-CList-1><p class=List-1>(Optional) Enter the user’s 
+ phone number, voice mail number, pager number, fax phone number, and street 
+ address in the appropriate text boxes.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select the <span style="font-weight: bold;"><B>Logon</B></span> 
+ tab.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Enter the name to be entered 
+ when the user logs onto the application in the <span style="font-weight: bold;"><B>User 
+ Name</B></span> text box.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select either the<span style="font-weight: bold;"><B> 
+ Validate through StarTeam Server</B></span> or <span style="font-weight: bold;"><B>Validate 
+ through directory service</B></span> button. The application supports both 
+ Microsoft Active Directory and OpenLDAP. For users to be validated against 
+ the directory server, the Server must be on a trusted domain in relation 
+ to that server. The <span style="font-weight: bold;"><B>Enable directory 
+ service</B></span> option must also be selected and the location and port 
+ number of the directory server entered on the <span style="font-weight: bold;"><B>Directory 
+ Service</B></span> tab of the <span style="font-style: italic;"><I>Server Configuration</I></span> 
+ dialog. </p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>If the user will be validated 
+ through the Server: </p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>Enter a password 
+ for the user in the <span style="font-weight: bold;"><B>Password</B></span> text 
+ box.</p></li>
+	</ul>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1><p class=Bullet-1>Enter the password 
+ again in the <span style="font-weight: bold;"><B>Confirm</B></span> text box.</p></li>
+	</ul>
+	
+	<p class=List-1-text><span style="font-weight: bold;"><B>Notes:</B></span> 
+ If you are using strong passwords, follow the rules for those passwords. 
+ If the minimum length of the password can be zero, you do not have to 
+ enter and confirm a password.</p>
+	
+	<li class=kadov-p-CList-1><p class=List-1>If the user will be validated 
+ through directory service, enter the user's <span style="font-weight: bold;"><B>Distinguished 
+ name</B></span> (unique identifier for a directory service user).</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>(Optional) Select the <span 
+ style="font-weight: bold;"><B>Access Policy</B></span> tab to specify when this 
+ user can access the server configuration. Select one of the following 
+ option buttons:</p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet-1-Indent><p class=Bullet-1-Indent><span 
+ style="font-weight: bold;"><B>Access restricted, </B></span>so the user can access 
+ the server configuration any time day or night.</p></li>
+		
+		<li class=kadov-p-CBullet-1-Indent><p class=Bullet-1-Indent
+												style="font-family: Arial, sans-serif;"><span 
+ style="font-weight: bold;"><B>Standard five-day work week, </B></span>so the 
+ user can access the server configuration Monday through Friday from 8<span 
+ style="font-variant: small-caps;"> </span>A.M. to 5 P.M.</p></li>
+		
+		<li class=kadov-p-CBullet-1-Indent><p class=Bullet-1-Indent><span 
+ style="font-weight: bold;"><B>Custom access hours, </B></span>to set one or two 
+ time periods per day when the user can or cannot access the Server.</p></li>
+		
+		<ul>
+			
+			<li class=kadov-p-CBullet-2><p class=Bullet-2>Select a day 
+ of the week from the <span style="font-weight: bold;"><B>Day</B></span> list 
+ box.</p></li>
+			
+			<li class=kadov-p-CBullet-2><p class=Bullet-2>Select the<span 
+ style="font-weight: bold;"><B> No access on that day</B></span> check box to 
+ deny access or clear it for that day.</p></li>
+			
+			<li class=kadov-p-CBullet-2><p class=Bullet-2>Use the <span 
+ style="font-weight: bold;"><B>From</B></span> and <span style="font-weight: bold;"><B>To</B></span> 
+ boxes to set one or two time periods when access is either allowed or 
+ denied.</p></li>
+		</ul>
+	</ul>
+	
+	<p class=List-1-text>If the user’s workstation is <span style="font-weight: bold;"><B>not</B></span> 
+ in the same time zone as the computer on which the server configuration 
+ is running, select the <span style="font-weight: bold;"><B>Adjust for workstation 
+ time zone</B></span> check box and type the number of hours from Greenwich 
+ Mean Time (GMT) in the <span style="font-weight: bold;"><B>Hours from GMT</B></span> 
+ text box.</p>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Click <span style="font-weight: bold;"><B>OK</B></span>.</p></li>
+</ol>
+
+<p class=Proc>To add a user to additional groups:</p>
+
+<p class=Proc>&nbsp;</p>
+
+<ol>
+	
+	<li style="font-weight: normal;"
+		class=kadov-p-CList-1><p class=List-1>Display the <span style="font-style: italic;"><I>User 
+ Manager</I></span> dialog.</p></li>
+	
+	<li style="font-weight: normal;"
+		class=kadov-p-CList-1><p class=List-1>Select the user name from 
+ the <span style="font-weight: bold;"><B>User</B></span> list. </p></li>
+	
+	<li style="font-weight: normal;"
+		class=kadov-p-CList-1><p class=List-1>Right-click to display the 
+ context menu and select Group<span style="font-weight: bold;"><B> Membership</B></span>. 
+ The <span style="font-style: italic;"><I>Group Membership</I></span> dialog appears.</p></li>
+	
+	<li style="font-weight: normal;"
+		class=kadov-p-CList-1><p class=List-1>Click the check boxes for 
+ the groups to which you want to add this user.</p></li>
+	
+	<li style="font-weight: normal;"
+		class=kadov-p-CList-1><p class=List-1>Click <span style="font-weight: bold;"><B>OK</B></span>.</p></li>
+	
+	<li style="font-weight: normal;"
+		class=kadov-p-CList-1><p class=List-1>A confirmation message appears. 
+ Click <span style="font-weight: bold;"><B>OK</B></span>.</p></li>
+</ol>
+
+<ul>
+	
+	<p class=List-1-text>Remember that a user is implicitly (and automatically) 
+ already a member of the current group’s parent groups. You must explicitly 
+ add a user to groups that are not parents of the current group. </p>
+</ul>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

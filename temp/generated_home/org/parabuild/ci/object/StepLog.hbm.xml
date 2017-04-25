@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 1.1//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="org.parabuild.ci.object.StepLog"
+        table="STEP_LOG"
+    >
+        <cache usage="read-write" />
+
+        <id
+            name="ID"
+            column="ID"
+            type="int"
+            unsaved-value="-1"
+        >
+            <generator class="identity">
+            </generator>
+        </id>
+
+        <version
+            name="timeStamp"
+            type="long"
+            column="TIMESTAMP"
+        />
+
+        <property
+            name="stepRunID"
+            type="int"
+            column="STEP_RUN_ID"
+            unique="false"
+        />
+
+        <property
+            name="archiveFileName"
+            type="java.lang.String"
+            column="FILE"
+            unique="false"
+        />
+
+        <property
+            name="path"
+            type="java.lang.String"
+            column="PATH"
+            unique="false"
+        />
+
+        <property
+            name="description"
+            type="java.lang.String"
+            column="DESCRIPTION"
+            unique="false"
+        />
+
+        <property
+            name="type"
+            type="byte"
+            column="TYPE"
+            unique="false"
+        />
+
+        <property
+            name="found"
+            type="byte"
+            column="FOUND"
+            unique="false"
+        />
+
+        <property
+            name="pathType"
+            type="byte"
+            column="PATH_TYPE"
+            unique="false"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-StepLog.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

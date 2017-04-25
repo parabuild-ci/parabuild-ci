@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Assigning Promotion Groups</TITLE>
+<!--<assignpromotiongroup.html>-->
+<!--<toc parent="working_with_promotion_models" label="Assigning Promotion Groups" anchor="AssignPromotionGroup" sortkey="07">-->
+<!--<index parent="promotion_groups" label="assigning" anchor="AssignPromotionGroup">-->
+<!--<index parent="assigning" label="promotion groups" anchor="AssignPromotionGroup">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nUsing Promotion Models\nAssigning Promotion Groups");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="AssignPromotionGroup"></A>Assigning Promotion Groups</H1>
+<P>You can assign a promotion group to revisions by selecting a revision, a single versioned file, multiple versioned files, a project, a folder, or a project database.</P>
+<H2>Using the System Default Options</H2>
+<p>Unless your Administrator changed the defaults for the project's configuration, when you assign a promotion group to a versioned file, Version Manager:</p>
+<ul>
+<li>Assigns the first development group to the item selected.
+<li>Assigns the promotion group to the default revision.
+<LI>Prompts you to change the promotion group if one has already been assigned.
+<LI>Does not assign the promotion group to files in subprojects.
+</ul>
+<H2>To assign a promotion group:</H2>
+<OL>
+	<LI>Select the item you want to promote.<br><br>
+	<LI>Select Actions | Promotion Group | Assign. The Assign Promotion Group dialog box appears.<br><br>
+	<LI>Accept the defaults listed above and click OK, or do the following:<br><br>
+	<OL type =a>
+	<LI>To override the defaults on the General tab, edit any of the fields described below:<br><br>
+	<TABLE  WIDTH="87%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+<tr>
+	<td><b>To...</b></td>
+	<td><b>Do this...</b></td>
+</tr>
+<tr>
+	<td>Choose the promotion group that will be assigned to the item</td>
+	<td>Select a promotion group from the <b>Assign Promotion Group</b> list box.</td>
+</tr>
+<tr>
+	<td>Choose the revision to which the promotion group will be assigned</td>
+	<td>Enter a new revision number, version label, or promotion group in the <B>To Revision</b> field or use the browse button to select a it.</td>
+</tr>
+<tr>
+	<td>Select an action to occur if a promotion group has already been assigned to the item</td>
+	<td>In the <b>If promotion group exists</b> drop-down menu, select one of the following options.<br>
+<b>Prompt</b> to prompt for confirmation before assigning the promotion group<br>
+<b>Reassign</b> to assign the promotion group without being prompted<br>
+<b>Don't reassign</b> to prevent the promotion group from being assigned</td>
+</tr>
+<tr>
+	<td>Assign the promotion group to all items in subprojects</td>
+	<td>Select the <b>Include files in subprojects</b> check box.</td>
+</tr>
+</table><br><br>
+	<LI>To review the selected files:<br><br>
+<TABLE  WIDTH="87%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+<tr>
+	<td><b>To...</b></td>
+	<td><b>Do this...</b></td>
+</tr>
+<tr>
+	<td>View the items selected for promotion</td>
+	<td>Click the Selected Files tab.</td>
+</tr>
+<tr>
+	<td>View the properties of an item</td>
+	<td>Select the versioned file and click the Properties button.</td>
+</tr>
+</table><br><br>
+</OL>
+	<LI>Click OK. The promotion group is assigned to the selected files.
+</OL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="aboutprommodels.html">About Promotion Models</A></TD>
+		<TD><A HREF="removepromotiongroup.html">Removing Promotion Groups</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="changepromotiongroup.html">Changing Promotion Groups</A></TD>
+		<TD><A HREF="promotetonext.html">Promoting Versioned Files to the Next Group</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

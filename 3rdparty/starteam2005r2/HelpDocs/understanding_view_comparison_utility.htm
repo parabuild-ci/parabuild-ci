@@ -1,0 +1,188 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Understanding the View Comparison Utility</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=598>
+<meta name=layout-width content=681>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Working with the Application\nComparing and Merging\nComparing and Merging Views\nWorking with the View Comparison Utility\nUnderstanding the View Comparison Utility");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Understanding the View Comparison Utility</h1>
+
+<p class=Body>The View Comparison utility:</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Allows the current configuration 
+ of a view to be merged with an earlier configuration of itself. The changes 
+ resulting from the merge must be applied to the current configuration 
+ of the view.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Permits two views to 
+ be merged using an earlier configuration of one of the views. The changes 
+ resulting from the merge must be applied to the view that has the current 
+ configuration.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Allows you to compare 
+ and merge file contents and item properties.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Allows you to merge from 
+ the source view to the target view or from the target to the source.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Never recurses from a 
+ folder to its child folders.</p></li>
+</ul>
+
+<p class=Body>When you use recorded merge points, the View Comparison utility 
+ always uses the source file (that is, the &quot;merge from&quot; file) 
+ from the last recorded merge as the common ancestor. This is the same 
+ as using viewmerge with the option usemp. Only the viewmerge command, 
+ used with the usemptgt option, allows you to use the target file (that 
+ is, the file checked in as a result of the last recorded merge) as the 
+ common ancestor. </p>
+
+<p class=Body>Regardless of your reason for merging two views, the basic 
+ steps you must carry out with the View Comparison utility are the same. 
+ Here is an overview of the process:</p>
+
+<p class=Proc>To merge two views:</p>
+
+<ol>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select the views to be compared.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Select the view configurations 
+ to be compared.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Decide whether one view, 
+ parts of both views, or both views will end up as the merged view. </p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Compare the two views by 
+ manually selecting folders or by using <span style="font-weight: bold;"><B>Find 
+ Differences</B></span>.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Share folders or items that 
+ should be in the merged view but are not now there.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Delete items from the merged 
+ view that are no longer needed.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Compare the properties of 
+ folders and items in both views, and decide what information belongs in 
+ the merged view. Merge the folders and items as necessary to combine their 
+ properties.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Merge text files that are 
+ in both views into a single file with no remaining conflicts (lines of 
+ text that differ in both text files or both revisions of the same text 
+ file). You may combine the file properties, their contents, or both.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>Save the merged text files 
+ in the view that will become the merged view.</p></li>
+	
+	<li class=kadov-p-CList-1><p class=List-1>For binary files, choose 
+ the revision that should end up in the merged view.</p></li>
+	
+	<p class=List-1-text><span style="font-weight: bold;"><B>Tip:</B></span> You 
+ can use the <span style="font-weight: bold;"><B>Reconcile</B></span> command 
+ to perform all or parts of steps 5 through 10.</p>
+</ol>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

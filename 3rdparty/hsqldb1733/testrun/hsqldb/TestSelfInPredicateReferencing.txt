@@ -1,0 +1,11 @@
+CREATE TABLE dups(pk INTEGER NOT NULL PRIMARY KEY,val VARCHAR NOT NULL);
+INSERT INTO dups VALUES (1, 'first');
+INSERT INTO dups VALUES (2, 'second');
+INSERT INTO dups VALUES (3, 'third');
+INSERT INTO dups VALUES (4, 'first');
+INSERT INTO dups VALUES (5, 'first');
+INSERT INTO dups VALUES (6, 'second');
+SELECT sa.pk FROM dups sa, dups sb WHERE sa.val=sb.val AND sa.pk!=sb.pk;
+SELECT a.pk, a.val FROM dups a WHERE a.pk in (1, 2, 4, 5, 6);
+SELECT a.pk, a.val FROM dups a WHERE a.pk in (SELECT sa.pk FROM dups sa, dups sb WHERE sa.val=sb.val AND sa.pk!=sb.pk);
+

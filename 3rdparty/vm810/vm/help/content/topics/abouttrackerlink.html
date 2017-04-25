@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Setting Up SourceBridge Options</TITLE>
+<!--<abouttrackerlink.html>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nIssue Management\nSetting Up SourceBridge Options");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="abouttrackerlink"></A>Setting Up SourceBridge Options</H1>
+
+<p>Before implementing the association of issues with files in Serena ChangeMan Version Manager, you should configure the appropriate fields on the SourceBridge Settings dialog box, which is available from Version Manager by selecting Admin | SourceBridge Settings. You must have Superuser privileges to access this dialog box.</p>
+ 
+ 
+ <p>In the SourceBridge Settings dialog box, you can set up SourceBridge options for all users or just Version Manager web client users to:</p>
+<ul>
+	<LI>Show SCR association on check in
+	<LI>Show SCR association on check out
+	<LI>Association required. An association can be required for both check in and check out
+	<LI>Clean up associations on undo check out
+	<LI>Use version labels with associations on check in
+</ul>
+
+<p><b>NOTE:</b> This procedure configures the issue management integration to both TeamTrack and Tracker. Some fields are specific to one provider and are so noted.</p>
+
+<h2>Setting Up SourceBridge for Version Manager Users</h2>
+
+<p>SourceBridge settings reside in the Version Manager project database. You need to set up the SourceBridge settings for each project database you want to use with TeamTrack or Tracker. These settings can apply to all Version Manager users or you can configure them for just Version Manager web client and rich IDE client users. Note, only three fields affect the rich IDE integrations: <b>Use Version Labels on checkin</b>; <b>Tag workfile comment with association</b>; and <b>Association required</b> (on checkin).</p>
+
+<ul style="list-style: disc;"
+	type=disc>
+	
+    <li class=kadov-p><p>To enforce SourceBridge settings for only Version Manager web client and rich IDE integration users select the <span style="font-weight: bold;">VM web client and rich IDE integration users</span> option. </p></li>
+	
+	<li class=kadov-p><p>To enforce SourceBridge settings for all Version Manager users, select the <span style="font-weight: bold;">All Users</span> option.</p></li>
+</ul>
+
+<p style="margin-left: 40px;"><span style="font-weight: bold;">NOTE:</span> You may have users who set up individual settings on their own systems. The All Users setting will override any individual settings with the ones you set from this dialog.</p>
+
+<h2>Setting up the Auto-Login to Projects (Tracker Only)</h2>
+
+<p>Select Auto-Login to automatically log in to Tracker Projects when using TrackerLink. If this option is not selected, you will be prompted to log in by the Tracker Login dialog box or page the first time you activate TrackerLink.</p>
+
+<h2>Using SourceBridge when Checking Out or Locking Files:</h2>
+
+<ol style="list-style: decimal;"
+	type=1>
+	
+    <li class=kadov-p><p>Select the <b>Show issue association on checkout</b> check box to open the association dialog box during checkouts.</p></li>
+	
+	<li class=kadov-p><p>Select the <b>Association required</b> check box (beneath the <b>Show Issue association on checkout</b> check box) to require associations on checkout. When this check box is selected, Version Manager automatically brings up the association dialog box when you click OK in the Lock and Check Out dialog boxes. The workfiles will not be added or checked in until the user associates the file with one or more issues.</p></li>
+</ol>
+
+<h2>Using SourceBridge When Checking In or Adding Workfiles:</h2>
+
+<ol style="list-style: decimal;"
+	type=1>
+	
+    <li class=kadov-p><p>Select the <b>Show Issue association on checkin</b> check box to open the association dialog box when checking in files.</p></li>
+	
+	<li class=kadov-p><p>Select the <b>Association required</b> check box (beneath the <b>Show Issue association dialog on checkin</b> check box) to require associations when checking in and adding files. </p></li>
+
+	<LI>Select the <b>Show only if needed</b> check box to display the association dialog box only if one or more of the files does not already have an association.<BR><BR></LI>
+</ol>
+
+<p><b>Cleaning Up Workfile Associations when Unlocking Workfiles:</b></p>
+
+<p>Select the <b>Cleanup association on undo checkout</b> check box to clean up all the assigned associations when you choose to unlock workfiles. Associations are not completed unless the workfile is checked in. Using this &quot;clean up&quot; option helps to clean up half-done workfile associations. </p>
+
+<p><b>Tagging Workfile Comments with an Association</b></p>
+
+<p>When you associate files with issues when adding files, the default text &quot;Initial Description&quot; that Version Manager uses when creating an archive is appended or prepended with issue information. You select the format of the comment and the issue information to include by selecting the fields and entering the format in the <b>Tag workfile comment with association</b> field. You select whether the text will go before or after the comment text by selecting either the <b>Before existing comment</b> or <b>After existing comment</b> option. </p>
+
+<h2>Using TrackerLink to Apply Version Labels</h2>
+
+<p>When the <b>Use Version Labels on checkin</b> feature is enabled, a version label containing each issue number associated with the revision is applied to the workfile on check in. For example, a user checks in foo.b, which creates revision 1.4. The user associates the file with two issues: DEF762 and DEF833. When Version Manager creates the revision, two version labels are generated and applied to revision 1.4. </p>
+
+<p>Complete help for Tracker TrackerLink and TeamTrack SourceBridge is available from the Help buttons on the association dialog boxes. </p>
+
+<h2>Accessing SourceBridge</h2>
+
+<p>To access SourceBridge, click the <b>Associate Issues</b> button from the <a href="checkindialog.html">Check  In</a>, <a href="checkoutdialog.html">Check Out</a>, <a href="lockdialog.html">Lock</a>, or <a href="addfilesdialog.html">Add Workfiles</a> dialog boxes or click the TrackerLink or SourceBridge icon on the Actions Tab in the Version Manager web client.</p>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="trackerlink.html">Associating Issues</A></TD>
+		<TD><a HREF="switchingissuemanagement.html">Working with Both TeamTrack and TrackerLink</a></TD>
+	</TR>
+	<TR>
+		<TD><a HREF="settingupsourcebridge.html">About Setting Up SourceBridge</a></TD>
+		<TD><a href="trackerlink_settings_dialog_box.htm">SourceBridge Settings Dialog</A></TD>
+	</TR>
+	<TR>
+		<TD><a HREF="about_teamtrack.html">About TeamTrack</a></TD>
+		<TD></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

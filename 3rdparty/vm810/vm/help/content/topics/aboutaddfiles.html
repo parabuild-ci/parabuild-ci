@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>About Adding Files to Projects</TITLE>
+<!--<AboutAddFiles.html>-->
+<!--<toc parent="getting_started_for_users" label="About Adding Files to Projects" anchor="AboutAddFiles" sortkey="03">-->
+<!--<toc parent="working_with_projects" label="Creating Projects from Existing Files" anchor="AboutAddFiles" sortkey="02">-->
+<!--<index parent="adding" label="workfiles" anchor="AboutAddFiles">-->
+<!--<index parent="workfiles" label="adding" anchor="AboutAddFiles">-->
+<!--<index parent="files" label="adding to projects" anchor="AboutAddFiles">-->
+<!--<index parent="projects" label="creating from existing files" anchor="AboutAddFiles">-->
+<!--<index parent="adding" label="files to new projects" anchor="AboutAddFiles">-->
+<!--<index parent="projects" label="defining a new structure from existing files" anchor="AboutAddFiles">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with Project Databases/Projects\nProjects\nAbout Adding Files to Projects");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>About Adding Files to Projects</h1>
+<P>You can add existing files, <a href="aboutadddirs.html">directories, or entire directory trees</a> to a project database or project. When you add files to a project, Serena ChangeMan Version Manager creates new archives for the files and checks them in as the initial (1.0) revisions. 
+</P>
+<H2>Default Options</h2>
+<P>Version Manager uses the following initial defaults when you add files or directories to a project:</P>
+<UL>
+<li>Uses the revision description of "Initial Revision" when the workfiles are checked in. To modify the revision description, select the revision 1.0 from the Revision pane and <A HREF="modifyingchangedescriptions.html">modify the description</a>.	
+<LI>Copies the workfiles from the selected directory to the project's workfile location.
+	<LI>Displays a message and does not add the versioned file if a versioned file with the same name already exists.
+	<LI>Adds the files in subdirectories if you are adding a directory that has subdirectories.
+	<LI>Keeps a read-only copy of the workfile.
+<LI>Does not keep the revision locked after adding the file.
+	<LI>Does not assign a version label or create a branch.
+</UL>
+<P>You can override these defaults when adding workfiles.</P>
+<P><b>Note about projects and folders:</b> You can add individual files or a directory of files to projects and folders. When adding a directory of files, Version Manager adds the files located only at the root level of the directory; it does not add files located in subdirectories and it does not create projects or folders.</P>
+</P>
+<p>If you have installed Tracker TrackerLink or TeamTrack SourceBridge, Version Manager lets you <A HREF="trackerlink.html">associate issues</a> with the files you add.</P>
+
+<H2>See Also</H2>
+
+<TABLE WIDTH="87%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="planproject.html">Planning a Project Database</A></TD>
+		<TD><A HREF="addfilesdialog.html">Add Workfiles Dialog
+Box</A></TD>
+	</TR>
+	<TR><TD><A HREF="addfiles.html">Adding Workfiles</a></td>
+	<td><a href="aboutadddirs.html">About Adding Existing Directories to Projects</a></td></tr>
+
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</HTML>

@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Working in the Versioned File Pane</TITLE>
+<!--<workinginfilepane.html>-->
+<!--<toc parent="main_window_components" label="Working in the Versioned File Pane" anchor="workinginfilepane" sortkey="04">-->
+<!--<index parent="file_pane" label="working in" anchor="workinginfilepane">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Getting Started\nOverview of the Version Manager Interface\nMain Window Components\nWorking in the Versioned File Pane");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="workinginfilepane"></A>Working in the Versioned File Pane</H1>
+<P>
+The File pane provides access to the <A HREF="aboutversionedfiles.html">versioned files</A> contained within a selected <A HREF="aboutprjdb.html">project database</A>, <A HREF="aboutprojects.html">project</A>, or subproject. The File pane contains the following fields:</P>
+
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+	<TD><b>Name</b></TD><TD>Name of the versioned file.</TD>
+</TR>
+<TR>
+<TD><b>Date Checked In</b></TD><TD>Most recent date and time the versioned file had a revision checked in on the trunk. If no revisions exist, then the date and time the archive was created is displayed.</TD></TR>
+	<TR>
+	<TD><b>Locked By</b></TD><TD>User(s) holding a lock on the item.</TD>
+</TR>
+	<TR>
+	<TD><b>Check Out to Location</b></TD><TD>Path(s) the file was checked out to, if the versioned file was locked or checked out. If more than one path is displayed, the paths are ordered according to the user's displayed in the Locked By column.</TD>
+</TR>
+</TABLE>
+
+<P>Files are represented by the following icons:</P>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+	<TD><img src="../graphics/file.gif"></TD>
+	<TD>A versioned file that does not contain any locked revisions.</TD></TR>
+<TR><TD><img src="../graphics/file_lock.gif"></TD>
+<TD>A versioned file that contains a locked revision.</TD></TR>
+<TR><TD><img src="../graphics/file_missing.gif"></TD>
+<TD>A versioned file that has lost the association with its archive. This occurs when the physical location of an archive is moved. To restore the association, delete the versioned file and then import the archive.</TD>
+</TR>
+</TABLE>
+<p>From the File pane, you can:</P>
+<UL>
+<LI>Click a column header to sort the files in ascending order in the column.
+<LI>Click a sort order button (<IMG SRC="../graphics/sortasc.gif" WIDTH="9" HEIGHT="9" BORDER="0" ALT>) to reverse the sort order (<IMG SRC="../graphics/sortdesc.gif" WIDTH="9" HEIGHT="9" BORDER="0" ALT>).
+<LI>Type a character to jump the display to the first file that starts with that character. (Click any where in the File pane first.)</LI>
+<LI>Right-click a file to access a context menu, which provides quick access to frequently used functions.
+<LI>Double-click a file to view or edit a revision.
+<LI>Drag and drop files into other projects or project databases. Dragging and dropping files into another project within the current project database moves the file. Dragging and dropping files into a different project database copies the file. You cannot drag and drop files to a 5.3/6.0 project or folder.
+<LI><a href="filtering.html">Filter</a> the file display by filename (wild card), locks, version labels, or promotion groups using the Filter drop-down menu. You can also filter the file display recursively (including all subprojects) or non-recursively by toggling the file filter icon.
+<LI>Resize the width of the columns displayed in the File pane.
+</UL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a href="displayingrevisionpane.html">Working in the Revision Pane</a></TD>
+		<TD><a href="workinginprojectpane.html">Working in the Project Pane</a></TD>
+	</TR>
+<TR>
+		<TD><a href="filtering.html">About Filtering the File Pane</a></TD>
+		<TD></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

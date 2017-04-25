@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Copying Project Databases</TITLE>
+<!--<copyprjdb.html>-->
+<!--<toc parent="working_with_project_databases" label="Copying Project Databases" anchor="copyprjdb" sortkey="03">-->
+<!--<index parent="copying" label="project databases" anchor="copyprjdb">-->
+<!--<index parent="project_databases" label="copying" anchor="copyprjdb">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nWorking with Project Databases/Projects\nProject Databases\nCopying Project Databases");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="copyprjdb"></A>Copying Project Databases</H1>
+<P>Copying a Serena ChangeMan Version Manager project database copies the project database to a new project database. For more information about the system defaults and what happens when you copy a project database, refer to <a href="aboutcopyprjdb.html">about copying project databases</a>.
+<H2>To copy a project database:</H2>
+<OL>
+	<LI>In the Project pane, select the project database you want to copy.<br><br>
+	<LI>Select Edit | Copy. The Copy Project Database dialog box appears.<br><br>
+	<LI>Specify a name for the project database in the <b>Name</b> field. The name cannot begin or end with a tab or blank space. Any character can be used in the name. <br><br>
+	<LI>In the <b>Location</b> field, enter a location for the project database or click the Browse button to select a location. This location must be accessible to all users who will be working with the project database. Note that you <i>cannot</i> create a new project database in the same location as an existing 5.3/6.0 project root.<br><br>
+	<LI>If you want to change the default location of the archives, enter a location in the  <b>Archive Location</b> field or click the Browse button to select a location. The default archive location is a directory named archives beneath the project database location. <i>New</i> archives for the project database will be stored in this directory. <br><br>Note that existing archives for the project database will not be copied into this directory unless you select <b>Copy archives to the project location</b> on the next screen.<br><br>
+	<LI>In the <b>Workfile Location</b> field, enter the workfile location for the project database or click the Browse button to select a location. We recommend that you specify a network drive that is available to most users. Remember that users can create a private workspace to change the workfile location to a local drive if they want.<br><br> 
+	<LI>Click Next. A second Copy Project Database dialog box appears.<br><br>
+	<li>Accept the defaults and click Next, or override the defaults by editing any of the fields below:<br><br>
+<TABLE  WIDTH="87%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><b>To...</b></TD>
+		<TD><b>Do this...</b></TD>
+	</TR>
+	<TR>
+		<TD>Copy the archives to the archives directory beneath the project database location (or the directory you specified)</TD>
+		<TD>Select the <b>Copy archives to project location</b> button.</TD
+	</TR>
+	<TR>
+		<TD>Allow the selection of a specified revision as the base revision (starting point) for the new archives.</TD>
+		<TD>Select the <b>Keep specified revision and discard change history</b> check box. Note that this field is available only if <B>Copy archives to project location</b> is selected.</TD> 
+	</TR>
+	<TR>
+		<TD>Select a revision that Version Manager will use as the initial revision (or baseline)</TD>
+		<TD>Enter a version label or promotion group in the <b>Default Revision</b> field to select an initial revision, or click the Browse button to select one.</TD>
+	</TR>
+	<TR>
+		<TD>Copy all files in subprojects</TD>
+		<TD>Select the <b>Include subprojects</b> check box. Version Manager creates containers for all projects in the project database you are copying.</TD>
+	</TR>
+	</table><br><br>
+	<li>On the third Copy Project Database dialog box, accept the defaults and click Finish, or override the defaults by editing any of the fields below:<br><br>
+<TABLE  WIDTH="87%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><b>To...</b></TD>
+		<TD><b>Do this...</b></TD>
+	</TR>
+	<TR>
+		<TD>Copy the existing configuration files to the new project database</TD>
+		<TD>Select the <b>Copy Existing Configuration Files</b> button.</TD>
+	</TR>
+	<TR>
+		<TD>Create a new default configuration file for the project database</TD>
+		<TD>Select the <b>Create a new configuration file</b> button. Version Manager creates a default configuration file by copying the default.cfg file and places it in the archives directory beneath the project database you are copying.</TD>
+	</TR>
+	<TR>
+		<TD>Copy all existing access control databases to the new project database</TD>
+		<TD>Select the <B>Copy Access Control Database to new location</b> button. The project database's access control database is placed in the archives directory of the project database you are copying. Project access control databases (if any) are placed in directories named for the projects beneath the archives directory.</TD>
+	</TR>
+	<TR>
+		<TD>Create a new access control database for the new project database</TD>
+		<TD>Select the <B>Create new Access Control Database</b> button. Version Manager creates a default access control database by copying the default.db file. This new access control database is disabled in the configuration file. By default, the new access control database file is located in the archives directory.</TD>
+	</TR>
+</TABLE><br><br>
+	<LI>Click Finish. <br><br>
+</OL>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<tr>
+		<TD><a href="namingconventions.html">Naming Conventions</a></TD>
+		<TD><a href="aboutcopyprjdb.html">About Copying Project Databases</a></TD>
+	</TR>
+
+	<TR>
+		<TD><A HREF="aboutprjdb.html">About Project Databases</A></TD>
+		<TD><A HREF="aboutconfigfiles.html">About Configuration Files</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="archivelocation.html">Archive Location</A></TD>
+		<TD><A HREF="workfilelocation.html">Workfile Location</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="aboutprojects.html">About Projects</A></TD>
+		<TD><A HREF="setdialogdisplay.html">Setting Dialog Display Options</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="toolbaroverview.html">Toolbar Overview</A></TD>
+		<TD><A HREF="copymatrix.html">Copy Matrix</A></TD>
+	</TR>
+
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

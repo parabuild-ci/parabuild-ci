@@ -1,0 +1,496 @@
+<HTML><HEAD><TITLE>ServletTestCase Principles</TITLE></HEAD><BODY alink="#023264" bgcolor="#ffffff" leftmargin="4" link="#525D76" marginheight="4" marginwidth="4" text="#000000" topmargin="4" vlink="#023264"><TABLE border="0" cellpadding="0" cellspacing="0" width="100%"><TR><TD align="left" valign="top"><A href="http://jakarta.apache.org/index.html"><IMG border="0" hspace="0" src="./images/jakarta-logo.gif" vspace="0"></A></TD><TD align="left" bgcolor="#ffffff" valign="middle" width="100%"><IMG align="right" alt="ServletTestCase Principles" border="0" hspace="0" src=".//images/logocactus.gif" vspace="0"></TD></TR><TR><TD colspan="2" height="2" width="100%"><HR noshade="" size="1"></TD></TR></TABLE><TABLE border="0" cellpadding="0" cellspacing="0" width="100%"><TR><TD valign="top" width="1%"></TD><TD nowrap="1" valign="top" width="14%"><FONT size="-2">
+              Last update : August 31 2002</FONT><BR><FONT size="-2">
+              Doc for : v1.4.1</FONT><BR><FONT face="arial,helvetica,sanserif">
+
+  <BR><FONT color="#000000" size="+1">About</FONT><BR><FONT size="-1">
+    <LI><A href="./index.html"><FONT size="-1">What is Cactus ?</FONT></A></LI>
+    <LI><A href="./news.html"><FONT size="-1">News</FONT></A></LI>
+    <LI><A href="./changes.html"><FONT size="-1">Changes</FONT></A></LI>
+    <LI><A href="./features.html"><FONT size="-1">Features/Status</FONT></A></LI>
+    <LI><A href="./goals.html"><FONT size="-1">Goals</FONT></A></LI>
+    <LI><A href="./todo.html"><FONT size="-1">Roadmap/Todo</FONT></A></LI>
+    <LI><A href="./contributors.html"><FONT size="-1">Contributors</FONT></A></LI>
+    <LI><A href="./contributing.html"><FONT size="-1">Contributing</FONT></A></LI>
+    <LI><A href="./users.html"><FONT size="-1">Cactus Users</FONT></A></LI>
+    <LI><A href="./testedon.html"><FONT size="-1">Tested on ...</FONT></A></LI>
+    <LI><A href="./license.html"><FONT size="-1">License</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Downloads</FONT><BR><FONT size="-1">
+    <LI><A href="./downloads.html"><FONT size="-1">Downloads</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Documentation</FONT><BR><FONT size="-1">
+    <LI><A href="./how_it_works.html"><FONT size="-1">How it works ?</FONT></A></LI>
+    
+    <LI><A href="./getting_started.html"><FONT size="-1">Getting Started</FONT></A></LI>
+    <LI><A href="./mockobjects.html"><FONT size="-1">Mock vs Container</FONT></A></LI>
+    <LI><A href="./javadoc.html"><FONT size="-1">Javadocs</FONT></A></LI>
+    
+    
+    <LI><A href="./faq.html"><FONT size="-1">FAQ</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Howto Guides</FONT><BR><FONT size="-1">
+    <LI><A href="./howto_classpath.html"><FONT size="-1">Classpath Howto</FONT></A></LI>
+    <LI><A href="./howto_config.html"><FONT size="-1">Config Howto</FONT></A></LI>
+    <LI><A href="./howto_migration.html"><FONT size="-1">Migration Howto</FONT></A></LI>
+
+    
+    <LI><A href="./howto_testcase.html"><FONT size="-1">TestCase Howto</FONT></A></LI>
+    
+    
+    
+
+    <LI><A href="./howto_jsp.html"><FONT size="-1">Jsp Howto</FONT></A></LI>
+    <LI><A href="./howto_runner.html"><FONT size="-1">Runner Howto</FONT></A></LI>
+    <LI><A href="./howto_security.html"><FONT size="-1">Security Howto</FONT></A></LI>
+
+    
+    <LI><A href="./howto_ant.html"><FONT size="-1">Ant Howto</FONT></A></LI>
+    
+    
+    
+
+    <LI><A href="./howto_httpunit.html"><FONT size="-1">HttpUnit Howto</FONT></A></LI>
+    <LI><A href="./howto_sample.html"><FONT size="-1">Sample Howto</FONT></A></LI>
+
+    
+    <LI><A href="./howto_ejb.html"><FONT size="-1">EJB Howto</FONT></A></LI>
+    
+
+    
+    <LI><A href="./howto_ide.html"><FONT size="-1">IDE Howto</FONT></A></LI>
+    
+    
+    
+    
+
+    <LI><A href="./howto_tomcat.html"><FONT size="-1">Tomcat Howto</FONT></A></LI>
+
+    <LI><A href="./howto_junitee.html"><FONT size="-1">JUnitEE Howto</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Support</FONT><BR><FONT size="-1">
+    <LI><FONT size="-1"><A href="http://jakarta.apache.org/site/bugs.html" target="">Bug database</A></FONT></LI>
+    <LI><A href="./mailinglist.html"><FONT size="-1">Mailing list</FONT></A></LI>
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Misc.</FONT><BR><FONT size="-1">
+    <LI><A href="./cactusname.html"><FONT size="-1">Why the name ?</FONT></A></LI>
+    <LI><A href="./logos.html"><FONT size="-1">Logo Challenge</FONT></A></LI>
+    <LI><A href="./resources.html"><FONT size="-1">Resources</FONT></A></LI>
+    <LI><A href="./coverage.html"><FONT size="-1">Test Coverage</FONT></A></LI>
+    
+    
+    
+    <LI><FONT size="-1"><A href="http://jakarta.apache.org/cactus/stats/index.html" target="">Stats</A></FONT></LI>
+    
+  </FONT><BR>
+
+  <BR><FONT color="#000000" size="+1">Developers</FONT><BR><FONT size="-1">
+    <LI><FONT size="-1"><A href="http://jakarta.apache.org/site/cvsindex.html" target="">CVS</A></FONT></LI>
+    <LI><A href="./coding_conventions.html"><FONT size="-1">Coding Conventions</FONT></A></LI>
+    <LI><A href="./build_result.html"><FONT size="-1">Build results</FONT></A></LI>
+    <LI><A href="./release_checklist.html"><FONT size="-1">Release Checklist</FONT></A></LI>
+  </FONT><BR>
+
+</FONT></TD><TD align="left" valign="top" width="*"><TABLE border="0" cellpadding="3" cellspacing="0"><TR><TD><BR>
+  
+
+  
+
+    <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>When to use ?</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+      <P align="justify">
+        Your test case class should extend <CODE><FONT face="courier, monospaced">ServletTestCase</FONT></CODE>
+        whenever you are unit testing :
+      </P>
+      <BLOCKQUOTE><UL>
+        <LI>
+          Servlets,
+        </LI>
+        <LI>
+          Any java code that uses Servlet API objects
+          (<CODE><FONT face="courier, monospaced">HttpServletRequest</FONT></CODE>, ...)
+        </LI>
+      </UL></BLOCKQUOTE>
+
+    </FONT></TD></TR></TABLE></DIV><BR>
+
+    <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>Provided Implicit Objects</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+      <P align="justify">
+        Cactus automatically initializes the implicit objects for you and
+        they are made available to your <CODE><FONT face="courier, monospaced">setUp()</FONT></CODE>,
+        <CODE><FONT face="courier, monospaced">testXXX()</FONT></CODE> and <CODE><FONT face="courier, monospaced">tearDown()</FONT></CODE> methods as
+        instance variables of the <CODE><FONT face="courier, monospaced">ServletTestCase</FONT></CODE> class (and thus
+        as instance variables of your test case class as it extends
+        <CODE><FONT face="courier, monospaced">ServletTestCase</FONT></CODE>).
+      </P>
+      <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+        You may ask yourself how Cactus initializes these objects. The
+        mechanism is described in the <A href="how_it_works.html">How it
+        works</A> guide.
+      </I></FONT></TD></TR></TABLE></P>
+
+      <P align="justify">
+        The provided implicit objects are :
+      </P>
+
+      <A name="servlet_request"><!--anchor--></A>
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>request</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <TABLE border="0" cellpadding="2" cellspacing="2" width="100%"><CAPTION></CAPTION>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Instance variable name
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <B><CODE><FONT face="courier, monospaced">request</FONT></CODE></B>
+            &nbsp;
+          </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Class name
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <CODE><FONT face="courier, monospaced">org.apache.cactus.server.HttpServletRequestWrapper
+              </FONT></CODE>, which inherits from
+              <CODE><FONT face="courier, monospaced">javax.servlet.http.HttpServletRequest</FONT></CODE>
+            &nbsp;
+          </FONT></TD>
+          </TR>
+        </TABLE>
+
+        <P align="justify">
+          Cactus wraps methods of the original HTTP request in order to return
+          the HTTP related parameters set up in the <CODE><FONT face="courier, monospaced">beginXXX()</FONT></CODE>
+          method. Thus, you will be able to pass this request object to
+          your code to test and set the needed parameter in the
+          <CODE><FONT face="courier, monospaced">beginXXX()</FONT></CODE> method.
+        </P>
+        <P align="justify">
+          For example, if your code under test calls
+          <CODE><FONT face="courier, monospaced">getCookies()</FONT></CODE> on the request object that you have
+          passed to it, it will return the cookies that you have added to the
+          HTTP request in <CODE><FONT face="courier, monospaced">beginXXX()</FONT></CODE> by calling the
+          <CODE><FONT face="courier, monospaced">WebRequest.addCookie()</FONT></CODE> method.
+        </P>
+        <P align="justify">
+          See the javadoc for the
+          <CODE><FONT face="courier, monospaced">org.apache.cactus.WebRequest</FONT></CODE> and
+          <CODE><FONT face="courier, monospaced">org.apache.cactus.server.HttpServletRequestWrapper
+          </FONT></CODE> classes for all details. You should also look at the
+          samples provided in the Cactus distribution.
+        </P>
+
+        <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="96%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="-1"><B>Additional methods</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+          <P align="justify">
+            Cactus provides some additional methods to ease writing tests
+            (see the javadoc for full details). These methods are provided
+            because it is not easy (if not downright impossible in some
+            cases) to simulate them with real configuration data:
+          </P>
+          <BLOCKQUOTE><UL>
+            <LI>
+              <CODE><FONT face="courier, monospaced">setRemoteIPAddress()</FONT></CODE>: sets the remote IP address
+              that will be returned by <CODE><FONT face="courier, monospaced">getRemoteIPAddress()</FONT></CODE>,
+            </LI>
+            <LI>
+              <CODE><FONT face="courier, monospaced">setRemoteHostName()</FONT></CODE>: sets the remote Host name
+              that will be returned by <CODE><FONT face="courier, monospaced">getRemoteHostName()</FONT></CODE>,
+            </LI>
+          </UL></BLOCKQUOTE>
+
+        </FONT></TD></TR></TABLE></DIV><BR>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <A name="servlet_response"><!--anchor--></A>
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>response</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <TABLE border="0" cellpadding="2" cellspacing="2" width="100%"><CAPTION></CAPTION>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Instance variable name
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <B><CODE><FONT face="courier, monospaced">response</FONT></CODE></B>
+            &nbsp;
+          </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Class name
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <CODE><FONT face="courier, monospaced">javax.servlet.http.HttpServletResponse</FONT></CODE>
+            &nbsp;
+          </FONT></TD>
+          </TR>
+        </TABLE>
+
+        <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+          Cactus does not wrap the response.
+        </I></FONT></TD></TR></TABLE></P>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <A name="servlet_config"><!--anchor--></A>
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>config</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <TABLE border="0" cellpadding="2" cellspacing="2" width="100%"><CAPTION></CAPTION>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Instance variable name
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <B><CODE><FONT face="courier, monospaced">config</FONT></CODE></B>
+            &nbsp;
+          </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Class name
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <CODE><FONT face="courier, monospaced">org.apache.cactus.server.ServletConfigWrapper
+              </FONT></CODE>, which inherits from
+              <CODE><FONT face="courier, monospaced">javax.servlet.ServletConfig</FONT></CODE>
+            &nbsp;
+          </FONT></TD>
+          </TR>
+        </TABLE>
+
+        <P align="justify">
+          Cactus wraps the original Servlet Config for two reasons :
+        </P>
+        <BLOCKQUOTE><UL>
+          <LI>
+            In order to provide additional methods. For example, it is
+            possible to initialise parameters without setting them in
+            <CODE><FONT face="courier, monospaced">web.xml</FONT></CODE>, etc...,
+          </LI>
+          <LI>
+            So that it can return a wrapped Servlet Context instead of the
+            original one. This is because the Servlet Context is used
+            to perform forwards and includes and we need to pass to these
+            methods the original request and response. As we have wrapped
+            the request, we need to wrap the Servlet Context to pass the
+            original request (and not the wrapped one).
+          </LI>
+        </UL></BLOCKQUOTE>
+        <P align="justify">
+          The <CODE><FONT face="courier, monospaced">config</FONT></CODE> implicit object will contain all
+          initialisation parameters defined in <CODE><FONT face="courier, monospaced">web.xml</FONT></CODE>
+          under the Servlet Redirector servlet definition.
+        </P>
+        <P align="justify">
+          See the javadoc for the
+          <CODE><FONT face="courier, monospaced">org.apache.cactus.server.ServletConfigWrapper</FONT></CODE>
+          class for all details. You should also look at the
+          samples provided in the Cactus distribution.
+        </P>
+
+        <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="96%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="-1"><B>Additional methods</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+          <P align="justify">
+            Additional methods provided:
+          </P>
+          <BLOCKQUOTE><UL>
+            <LI>
+              <CODE><FONT face="courier, monospaced">setInitParameter()</FONT></CODE>: sets an initialisation
+              parameter (as if it has been defined in the <CODE><FONT face="courier, monospaced">web.xml</FONT></CODE>
+              file),
+            </LI>
+            <LI>
+              <CODE><FONT face="courier, monospaced">setServletName()</FONT></CODE>: sets the Servlet name that will be
+              returned by <CODE><FONT face="courier, monospaced">getServletName()</FONT></CODE> (if not set, the
+              Cactus Servlet redirector name will be returned).
+            </LI>
+          </UL></BLOCKQUOTE>
+
+        </FONT></TD></TR></TABLE></DIV><BR>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <A name="servlet_context"><!--anchor--></A>
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>ServletContextWrapper</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+          This is not an implicit object per see (as it is not accessible as
+          an instance variable). It is available by calling
+          <CODE><FONT face="courier, monospaced">config.getServletContext()</FONT></CODE>.
+        </P>
+        <P align="justify">
+          However, Cactus wraps the <CODE><FONT face="courier, monospaced">ServletContext</FONT></CODE> in a
+          <CODE><FONT face="courier, monospaced">ServletContextWrapper</FONT></CODE> in order to take into account
+          simulated URLs and provide additional methods to help write tests.
+        </P>
+
+        <P align="justify">
+          See the javadoc for the
+          <CODE><FONT face="courier, monospaced">org.apache.cactus.server.ServletContextWrapper</FONT></CODE>
+          class for all details. You should also look at the
+          samples provided in the Cactus distribution.
+        </P>
+
+        <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="96%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="-1"><B>Additional methods</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+          <P align="justify">
+            Additional methods provided:
+          </P>
+          <BLOCKQUOTE><UL>
+            <LI>
+              <CODE><FONT face="courier, monospaced">getLogs()</FONT></CODE>: returns the text that has been logged
+              by calls to <CODE><FONT face="courier, monospaced">ServletContext.log()</FONT></CODE> methods. This is
+              a helper method that makes it easy to assert what is logged.
+            </LI>
+          </UL></BLOCKQUOTE>
+
+        </FONT></TD></TR></TABLE></DIV><BR>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+      <A name="servlet_session"><!--anchor--></A>
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>session</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <TABLE border="0" cellpadding="2" cellspacing="2" width="100%"><CAPTION></CAPTION>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Instance variable name
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <B><CODE><FONT face="courier, monospaced">session</FONT></CODE></B>
+            &nbsp;
+          </FONT></TD>
+          </TR>
+          <TR>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              Class name
+            &nbsp;
+          </FONT></TD>
+            <TD align="left" bgcolor="#a0ddf0" colspan="1" rowspan="1" valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1">
+              <CODE><FONT face="courier, monospaced">javax.servlet.http.HttpSession</FONT></CODE>
+            &nbsp;
+          </FONT></TD>
+          </TR>
+        </TABLE>
+
+        <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+          Cactus does not wrap the response.
+        </I></FONT></TD></TR></TABLE></P>
+
+        <P align="justify">
+          By default, Cactus always creates an HTRP session for your test
+          case. It is possible to tell it not to do so by calling the
+          <CODE><FONT face="courier, monospaced">WebRequest.setAutomaticSession(false)</FONT></CODE> method (it is
+          <CODE><FONT face="courier, monospaced">true</FONT></CODE> by default). This could be useful for cases
+          where your code under test verifies branches when
+          &quot;<CODE><FONT face="courier, monospaced">request.getSession(false)</FONT></CODE>&quot; is <CODE><FONT face="courier, monospaced">null</FONT></CODE>.
+        </P>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+    </FONT></TD></TR></TABLE></DIV><BR>
+
+    <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>Tips and Tricks</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+      <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="98%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+0"><B>Parameter initialisation</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+        <P align="justify">
+          If your code under test make use of any of the servlet methods
+          inherited from <CODE><FONT face="courier, monospaced">javax.servlet.GenericServlet</FONT></CODE> (these are
+          the <CODE><FONT face="courier, monospaced">log()</FONT></CODE>, <CODE><FONT face="courier, monospaced">getServletConfig()</FONT></CODE>, ...
+          methods), then you need to call the <CODE><FONT face="courier, monospaced">init(ServletConfig)</FONT></CODE>
+          method of your servlet to initialise its internal
+          <CODE><FONT face="courier, monospaced">ServletConfig</FONT></CODE> object.
+        </P>
+        <P align="justify">
+          For example :
+        </P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+public void testXXX()
+{
+    MyServletToTest servlet = new MyServletToTest();
+    servlet.init(config);
+
+    // Call a method to test that uses a method inherited from Generic Servlet
+    servlet.someMethodToTest();
+
+[...]
+}
+</PRE></TD></TR></TABLE></DIV>
+
+        <P align="justify">
+          See the samples provided as part of the Cactus distribution.
+        </P>
+
+      </FONT></TD></TR></TABLE></DIV><BR>
+
+    </FONT></TD></TR></TABLE></DIV><BR>
+
+    <DIV align="right"><TABLE border="0" cellpadding="2" cellspacing="0" width="100%"><TR><TD bgcolor="#525D76"><FONT color="#ffffff" face="arial,helvetica,sanserif" size="+1"><B>Sample</B></FONT></TD></TR><TR><TD><FONT color="#000000" face="arial,helvetica,sanserif"><BR>
+
+      <P align="justify">
+        This is a very basic sample intended to give you a flavour of Servlet
+        unit testing. Check the distribution samples for extensive
+        examples.
+      </P>
+
+      <P><TABLE border="0" cellpadding="0" cellspacing="3" width="100%"><TR><TD valign="top" width="28"><IMG alt="Note" border="0" height="29" hspace="0" src="images/note.gif" vspace="0" width="28"></TD><TD valign="top"><FONT color="#000000" face="arial,helvetica,sanserif" size="-1"><I>
+        This example is for Cactus 1.2 and above as it uses the new
+        <CODE><FONT face="courier, monospaced">WebRequest</FONT></CODE> and <CODE><FONT face="courier, monospaced">WebResponse</FONT></CODE> objects.
+      </I></FONT></TD></TR></TABLE></P>
+
+<DIV align="center"><TABLE border="1" cellpadding="2" cellspacing="2"><TR><TD><PRE>
+public void beginXXX(WebRequest theRequest)
+{
+    // Set up HTTP related parameters
+    theRequest.setURL(&quot;jakarta.apache.org&quot;, &quot;/mywebapp&quot;, &quot;/test/test.jsp&quot;,
+        null, null);
+    theRequest.addCookie(&quot;cookiename&quot;, &quot;cookievalue&quot;);
+}
+
+public void testXXX()
+{
+    MyServletToTest servlet = new MyServletToTest();
+    servlet.init(config);
+
+    // Call method to test
+    servlet.methodToTest();
+
+    // Perform some server side asserts
+    assertEquals(&quot;someValue&quot;, session.getAttribute(&quot;someAttribute&quot;));
+    assertEquals(&quot;jakarta.apache.org&quot;, request.getServerName());
+}
+
+public void endXXX(WebResponse theResponse)
+{
+    // Asserts the returned HTTP response
+
+    Cookie cookie = theResponse.getCookie(&quot;someCookie&quot;);
+    assertEquals(&quot;someValue2&quot;, cookie.getValue());
+
+    assertEquals(&quot;some content here&quot;, theResponse.getText());
+}
+</PRE></TD></TR></TABLE></DIV>
+
+    </FONT></TD></TR></TABLE></DIV><BR>
+
+  
+</TD></TR></TABLE></TD></TR></TABLE><BR><TABLE border="0" cellpadding="0" cellspacing="0" width="100%"><TR><TD><HR noshade="" size="1"></TD></TR><TR><TD align="center"><FONT color="#525D76" face="arial,helvetica,sanserif" size="-1"><I>
+                Copyright &copy; 2000-2002 The Apache Software Foundation.
+                All Rights Reserved.
+               </I></FONT></TD></TR></TABLE></BODY></HTML>

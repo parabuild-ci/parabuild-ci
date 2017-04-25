@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>About Filtering the File Pane</TITLE>
+<!--<filtering.html>-->
+<!--<toc parent="working_with_items_main_window" label="Filtering" anchor="filtering" sortkey="01">-->
+<!--<index parent="filtering" label="about" anchor="filtering">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Getting Started\nOverview of the Version Manager Interface\nWorking with Items in the Main Window\nFiltering");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="filtering"></A>About Filtering the File Pane</H1>
+<P>
+Use filters to restrict which files are displayed in the File pane. This is useful when you want to perform actions on a group of versioned files that match a filterable criteria.
+</P>
+<p>You can restrict the File pane view to only the versioned files that:
+<ul>
+<LI>Match a specified <a href="searchwildcarddialog.html">file name pattern</a> (using wildcards) <BR><BR></LI>
+<LI>Are <a href="searchlockedbydialog.html">locked by</a> specified users or by any user<BR><BR></LI>
+<li>Match a specified <a href="filterbypromotiongroup.html">promotion group</a><br><br></li>
+<LI>Match a specified <a href="filterbyversionlabel.html">version label</a><BR><BR></LI>
+<li>Differ in terms of revision number, modification time, or revision contents between:<br><br>
+<ul><li>Two <a href="filterby2versionlabels.html">version labels</a><br><br></li>
+<li>Two <a href="filterby2promotiongroups.html">promotion groups</a><br><br></li>
+<li>A <a href="filterbyversionlabelandpromotiongroup.html">version label and a promotion group</a><br><br></li></li></ul></ul>
+
+<P>
+A filtered view affects all open <A HREF="aboutprjdb.html">project databases</A> and remains in effect until you select a different filter. To clear a filter and return the File pane to a view of all files, select View | Filter | All Files.
+</P>
+<h2>Version Manager Saves Filter Definitions</h2>
+<P>The last four filters you have defined appear in the filter drop-down list on the toolbar. For example, if you filtered for files locked by <i>user1</i>, then a new option, <b>Locked by 'user1'</b> would appear in the list.
+</P>
+<H2>Viewing Files Recursively</H2>
+<P>By default, the File pane displays only the versioned files located at the root of the item (project database, project, or subproject) you have selected in the Project pane. Unless you select the recursive view, projects, subprojects, and the files contained within nested projects and subprojects are not displayed. To switch between recursive and non-recursive views, click the Recursive/Non-recursive button. The appearance of the button toggles to indicate which filter mode is in effect:
+<ul>
+<li><img src="../graphics/tool_recursive.gif"> <b>Recursive:</b> The File pane displays <i>all</i> projects, subprojects, and versioned files contained within the item selected in the Project pane. <br><br>
+<li><img src="../graphics/tool_nonrecursive.gif"> <b>Non-recursive:</b> The File pane displays only the versioned files contained at the root of the item selected in the Project pane.
+</ul>
+<h2>Performing Actions on a Filtered Project</h2>
+<p>If you perform an action (such as a check out) on a project by selecting it in the Project pane, Version Manager performs the action on the entire project, <b><i>including</i></b> any files not displayed by the current filter. To limit an action to only the versioned files displayed by the current filter, select the versioned files in the File pane and then select the action.</p>
+
+			<h2>See Also</h2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="searchlockedbydialog.html">Filtering by User Locks</A></TD>
+		<TD><A HREF="searchwildcarddialog.html">Filtering by Wildcard Filename</A></TD>
+	</TR>
+	<TR>
+		<TD><a href="filterbypromotiongroup.html">Filtering by Promotion Group</a></TD>
+		<TD><a href="filterbyversionlabel.html">Filtering by Version Label</a></TD>
+	</TR>
+	<tr>
+		<TD><a href="filterby2versionlabels.html">Filtering by Difference Using Two Version Labels</a></TD>
+		<TD><a href="filterby2promotiongroups.html">Filtering by Difference Using Two Promotion Groups</a></TD>
+	</tr>
+	<TR>
+		<TD><a href="filterbyversionlabelandpromotiongroup.html">Filtering by Difference Using a Version Label and a Promotion Group</a></TD>
+		<TD><A HREF="removefilter.html">Clearing a Filter</A></TD>
+	</TR>
+</TABLE>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

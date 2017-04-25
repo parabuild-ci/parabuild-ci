@@ -1,0 +1,2847 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+  <title>Serena ChangeMan Version Manager Readme</title>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+  <style type="text/css">
+    body {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 10pt;
+        background-color: #ffffff;
+        color: #000000;
+        padding: 0px;
+        margin: 15px 10px;
+    }
+    h1 {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 16pt;
+        color: #000000;
+        margin-top: 0pt;
+        page-break-after: avoid;
+    }
+    h2 {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 13pt;
+        color: #303090;
+        margin-left: 0em;
+        page-break-after: avoid;
+    }
+    h3 {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 11pt;
+        color: #303090;
+        margin-left: 2em;
+        margin-top: 0pt;
+        margin-bottom: 0pt;
+    }
+    pre {
+        margin-left: 2em;
+    }
+    p {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 10pt;
+        color: #000000;
+        margin-left: 2em;
+    }
+    p.sub {
+        margin-left: 5em;
+    }
+    p.intro {
+        margin-bottom: 6pt;
+    }
+    p.introSub {
+        margin-left: 5em;
+        margin-bottom: 6pt;
+    }
+    p.inList {
+        margin-left: 0pt;
+    }
+    p.part {
+        font-weight: bold;
+        font-size: 16pt;
+        text-align: center;
+        color: #ffffff;
+        margin-top: 0pt;
+    }
+    p.partTOC {
+        font-weight: bold;
+        font-size: 16pt;
+        color: #302B91;
+        margin-left: 0pt;
+        margin-top: 0pt;
+    }
+    ol {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 10pt;
+        color: #000000;
+        margin-left: 4em;
+        margin-top: 6pt;
+    }
+    ol.sub {
+        margin-left: 7em;
+        margin-top: 6pt;
+    }
+    ul {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 10pt;
+        color: #000000;
+        margin-left: 4em;
+        margin-top: 6pt;
+    }
+    ul.sub {
+        margin-left: 7em;
+        margin-top: 6pt;
+    }
+    table {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 10pt;
+        color: #000000;
+        margin-left: 2em;
+    }
+    table.standard {
+        border-collapse: collapse;
+        border-spacing: 0px;
+    }
+    table.sub {
+        border-collapse: collapse;
+        border-spacing: 0px;
+        margin-left: 5em;
+    }
+    table.part {
+        font-weight: bold;
+        font-size: 16pt;
+        color: #ffffff;
+        text-align: center;
+        background-color: #303090;
+        width: 100%;
+        margin-left: 0em;
+    }
+    td.tablecell {
+        border-bottom-color: #c0c0c0;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        padding-left: 4px;
+        padding-right: 10px;
+        vertical-align: top;
+    }
+    th.tablehead{
+        background-color: #efefef;
+        border-bottom-color: #c0c0c0;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-collapse: collapse;
+        border-spacing: 0px;
+        padding-left: 4px;
+        padding-right: 10px;
+        vertical-align: top;
+    }
+    hr {
+        color: #999999;
+    }
+    .syntax {
+        font-family: Courier New, Courier, monospace;
+    }
+    .spacer {
+        font-size: 2pt;
+    }
+    .caution {
+        font-weight: bold;
+        color: red;
+        background-color: white;
+    }
+    .returnToTop {
+        font-size: 7.5pt;
+        text-align: right;
+    }
+    .pageBreak {
+        font-size: 2pt;
+        margin-top: 0pt;
+        margin-bottom: 0pt;
+        page-break-before: always;
+    }
+    .keepWithNext {
+        page-break-after: avoid;
+    }
+    .stem {
+        page-break-after: avoid;
+    }
+    a:link, a:visited {
+        color: #302B91;
+    }
+    a:hover {
+        color: #000000;
+        text-decoration: underline;
+    }
+    a:active {
+        color : #302B91;
+        text-decoration: underline;
+    }
+  </style>
+
+  <style type="text/css" media="print">
+    .returnToTop {
+        display: none;
+    }
+    a:link {
+        text-decoration: none;
+        font-style: italic;
+    }
+    a:visited {
+        text-decoration: none;
+        font-style: italic;
+    }
+  </style>
+</head>
+
+<body bgcolor="white">
+
+
+<h1>Serena ChangeMan Version Manager<br>
+Version 8.1.0<br>
+Readme File<br>
+Last updated on 25 April 2005<br>
+Build vm81_00_818</h1>
+
+<p>This file contains information on installing and using the current release of Version Manager.  This file contains information not included in the Version Manager manuals and online help.  Additional information is available in <a href="http://support.serena.com" target="_blank">KnowledgeBase</a> articles available via your browser.</p>
+
+<p>For a list of the defects fixed since an earlier release of Version Manager, see <span class="syntax"><a href="release_notesvm.html" target="_blank">release_notesvm.html</a></span>.</p>
+
+<p>To view the Master License Agreement, see <span class="syntax"><a href="MasterLicenseAgreement.pdf" target="_blank">MasterLicenseAgreement.pdf</a></span>.</p>
+
+<p>This readme file is organized into distinct parts.  Please read the parts that correspond to the Version Manager components you are using.</p>
+
+
+<a name="TOP"></a>
+<hr size="2" width="100%" noshade>
+<h1>Table of Contents</h1>
+
+<h2 id="noNumber">
+<a href="#Part1TOC">Part 1:  Version Manager CLI, Desktop Client, and PCLI</a><br>
+<a href="#Part2TOC">Part 2:  Version Manager IDE Client</a><br>
+<a href="#Part3TOC">Part 3:  Version Manager Web Client</a><br>
+<a href="#Part4TOC">Part 4:  Version Manager WebDAV Server</a><br>
+<a href="#Part5TOC">Part 5:  Serena ChangeMan Meritage</a>
+</h2>
+
+<a name="Part1TOC"></a>
+<p>&nbsp;</p>
+<p class="partTOC">Part 1:  Version Manager CLI, Desktop Client, and PCLI</p>
+
+<h2>1.0 <a href="#RoboReadme1">Important Information</a></h2>
+<h3>1.1 <a href="#RoboReadme2">Supported Windows Platforms</a></h3>
+<h3>1.2 <a href="#RoboReadme3">Supported UNIX Platforms</a></h3>
+<h3>1.3 <a href="#RoboReadme4">Supported Versions of TrackerLink</a></h3>
+<h2>2.0 <a href="#RoboReadme5">Installation</a></h2>
+<h3>2.1 <a href="#RoboReadme6">Uninstalling Before Upgrading from Earlier Versions</a></h3>
+<h3>2.2 <a href="#RoboReadme7">Setting the SCC Provider to Version Manager Before Installing SourceBridge</a></h3>
+<h3>2.3 <a href="#RoboReadme8">Linux Error:  &quot;Illegal end day of week in month&quot;; PCLI and Desktop Lockup</a></h3>
+<h3>2.4 <a href="#RoboReadme9"> Stopping the Server and Upgrading Both Client and Server <span class="caution">[REQUIRED]</span></a></h3>
+<h3>2.5 <a href="#RoboReadme10">Removing the NT Service Before Upgrading (Version Manager File Server, Web Server, or WebDAV Server) <span class="caution">[REQUIRED]</span></a></h3>
+<h3>2.6 <a href="#RoboReadme11">Workstation Installation</a></h3>
+<h3>2.7 <a href="#RoboReadme12">Windows Installation</a></h3>
+<h3>2.8 <a href="#RoboReadme13">UNIX Installation</a></h3>
+<h3>2.9 <a href="#RoboReadme14">Serena ChangeMan Builder Integration on UNIX</a></h3>
+<h2>3.0 <a href="#RoboReadme15">Performance Considerations</a></h2>
+<h3>3.1 <a href="#RoboReadme16">Symbolic Linking to Version Manager Commands</a></h3>
+<h3>3.2 <a href="#RoboReadme17">Antivirus Software</a></h3>
+<h2>4.0 <a href="#RoboReadme18">Known Windows and UNIX Issues</a></h2>
+<h3>4.1 <a href="#RoboReadme19">Version Labels That Match Revision Numbers Cause Version Manager to Use the Wrong Revision</a></h3>
+<h3>4.2 <a href="#RoboReadme20">Configuration Builder Cannot Access File Server Archives</a></h3>
+<h3>4.3 <a href="#RoboReadme21">File Server and Web Server Application Must Be Installed Together</a></h3>
+<h3>4.4 <a href="#RoboReadme22">Installing the Web Server Application Separately Requires Additional Steps</a></h3>
+<h3>4.5 <a href="#RoboReadme23">Long User Names with Double-Byte Characters Interfere with Use of the Project Security Dialog Box</a></h3>
+<h3>4.6 <a href="#RoboReadme24">Users with No Assigned Privilege Set Receive the Unlimited Privilege Set</a></h3>
+<h3>4.7 <a href="#RoboReadme25">&quot;Open from Team Provider&quot; Triggers Two Login Prompts</a></h3>
+<h3>4.8 <a href="#RoboReadme26">PCLI:  Command-Line Help for the Deploy Command is Out-of-Date</a></h3>
+<h3>4.9 <a href="#RoboReadme27">Tracker Associations Fail on SSL-Enabled Servers</a></h3>
+<h3>4.10 <a href="#RoboReadme28">LDAP Connection/Authentication Fails</a></h3>
+<h3>4.11 <a href="#RoboReadme29">Quotation Marks Required If the Path Used with INCLUDE Directive Contains Spaces</a></h3>
+<h3>4.12 <a href="#RoboReadme30">Export/Import Project May Fail with Large Projects</a></h3>
+<h3>4.13 <a href="#RoboReadme31">As of Version Manager 6.8:  Create Archive Privilege Name and Behavior Has Changed</a></h3>
+<h3>4.14 <a href="#RoboReadme32">As of Version Manager 6.8:  Behavior of Command-Line Interface Output Messages Has Changed</a></h3>
+<h3>4.15 <a href="#RoboReadme33">As of Version Manager 6.8:  Default Refresh Interval Has Changed</a></h3>
+<h3>4.16 <a href="#RoboReadme34">Extra Colon in Show History Report</a></h3>
+<h3>4.17 <a href="#RoboReadme35">Serena Collage Integration:  Can't Specify Multiple Setup Files</a></h3>
+<h3>4.18 <a href="#RoboReadme36">Output of Vlog Command Has Changed</a></h3>
+<h3>4.19 <a href="#RoboReadme37">DTK:  PvcsSetProjectSemaphore() Is Not Supported by File Servers</a></h3>
+<h3>4.20 <a href="#RoboReadme38">File Server Does Not Resolve Paths in Event Triggers or Custom Tool Definitions</a></h3>
+<h3>4.21 <a href="#RoboReadme39">CLI:  File Server Error Gives Wrong User ID</a></h3>
+<h3>4.22 <a href="#RoboReadme40">CLI:  Help (<span class="syntax">&#8209;h</span>) Output Incorrectly Displays All Options in Uppercase Letters</a></h3>
+<h3>4.23 <a href="#RoboReadme41">Log Entries for File Server Authentication Are Confusing</a></h3>
+<h3>4.24 <a href="#RoboReadme42"><span class="syntax">makedb</span>:  Confusing Error Message If File Server Utilities Are Disabled</a></h3>
+<h3>4.25 <a href="#RoboReadme43">&quot;Check Tip Against Version/Revision&quot; Fails If Default Version Is Set</a></h3>
+<h3>4.26 <a href="#RoboReadme44">Journal Report Fails</a></h3>
+<h2>5.0 <a href="#RoboReadme45">Known Windows Issues</a></h2>
+<h3>5.1 <a href="#RoboReadme46">Keyword Expansion Is Not Enabled by Default for C# Files</a></h3>
+<h3>5.2 <a href="#RoboReadme47">Logging Out of the File Server Generates an Error If You Log In Using the Old URL</a></h3>
+<h3>5.3 <a href="#RoboReadme48">File Server Expects a Configuration File to Have a &quot;.cfg&quot; Extension</a></h3>
+<h3>5.4 <a href="#RoboReadme49">TrackerLink:  Associations Are Required for Check-In If Associations Are Required for Checkout</a></h3>
+<h3>5.5 <a href="#RoboReadme50">Chmod.exe Is No Longer Installed</a></h3>
+<h2>6.0 <a href="#RoboReadme51">Known UNIX Issues</a></h2>
+<h3>6.1 <a href="#RoboReadme52">Font Problems Can Occur in the Desktop Client on UNIX</a></h3>
+<h3>6.2 <a href="#RoboReadme53">PCLI:  Spaces in Directory Path Can Cause Errors</a></h3>
+<h3>6.3 <a href="#RoboReadme54">Version Manager Gets Project Information from the nfsmap File First, Then the File Server</a></h3>
+<h3>6.4 <a href="#RoboReadme55">VTRANSFER -r:  Attempting to Change the Case of a File Name on a Case-Insensitive File Server Fails to Rename the Archive</a></h3>
+<h3>6.5 <a href="#RoboReadme56">Solaris (United Kingdom and Ireland):  Patch Required to Prevent Inconsistent Time-Stamping in Java Applications</a></h3>
+<h3>6.6 <a href="#RoboReadme57">PCLI:  &quot;Kill&quot; Character Conflicts with PCLI Commands</a></h3>
+<h3>6.7 <a href="#RoboReadme58">Default File Descriptor Limit May Be Too Low on Some UNIX Systems</a></h3>
+<h3>6.8 <a href="#RoboReadme59">Full Path to Helper Applications Sometimes Required</a></h3>
+<h3>6.9 <a href="#RoboReadme60">Solaris 8:  Problem with Calendar Sometimes Terminates Version Manager</a></h3>
+<h3>6.10 <a href="#RoboReadme61">Using Exceed 7.1 in Multiple Window Mode Causes Inconsistent Behavior in Version Manager</a></h3>
+<h3>6.11 <a href="#RoboReadme62">HP-UX:  Exceed 7.1 Required</a></h3>
+<h3>6.12 <a href="#RoboReadme63">Cannot Merge Revisions by Version Label If One or More Labels Use Only Numbers</a></h3>
+<h2>7.0 <a href="#RoboReadme64">Known LINUX Issues</a></h2>
+<h3>7.1 <a href="#RoboReadme65">System Hangs When You Check Out or Lock Files in a Project with Multiple Lowest-Level Promotion Groups</a></h3>
+<h3>7.2 <a href="#RoboReadme66">"Segmentation fault (core dump)" Error Occurs During Execution of Command-Line Commands</a></h3>
+<h3>7.3 <a href="#RoboReadme67">Red Hat 9:  Japanese Characters Are Corrupted</a></h3>
+<h2>8.0 <a href="#RoboReadme68">Known PCLI Issues</a></h2>
+<h3>8.1 <a href="#RoboReadme69">Spaces Not Supported in a Variable Index</a></h3>
+<h3>8.2 <a href="#RoboReadme70">Exporting and Then Importing a Project Database Works Only with the Same Platform</a></h3>
+<h3>8.3 <a href="#RoboReadme71">Wildcard Characters Do Not Work at the Top Level of Workspace Paths</a></h3>
+<h3>8.4 <a href="#RoboReadme72">CTRL+D/CTRL+Z Cannot Be Used to End Descriptions</a></h3>
+<h3>8.5 <a href="#RoboReadme73">Slashes (/&nbsp;\), Square Brackets ([&nbsp;]), and Colons (:) in Workspace and User Names May Cause Problems</a></h3>
+<h3>8.6 <a href="#RoboReadme74">HP-UX:  PCLI Out of Memory Messages Appear</a></h3>
+<h3>8.7 <a href="#RoboReadme75">PCLI Put -r: Specifying a Revision Number Results in a Yes/No Prompt</a></h3>
+<h3>8.8 <a href="#RoboReadme76">PCLI:  Deploy Command Fails When the Version Manager Username or Password Contains Spaces</a></h3>
+<h2>9.0 <a href="#RoboReadme77">Conversion Utility for SourceSafe</a></h2>
+<h3>9.1 <a href="#RoboReadme78">General</a></h3>
+<h2>10.0 <a href="#RoboReadme79">Documentation Issues</a></h2>
+<h3>10.1 <a href="#RoboReadme80">Adobe Acrobat Full-Text Search Gives Duplicate Results</a></h3>
+<h3>10.2 <a href="#RoboReadme81">Help Does Not Work on Internet Explorer Using Sun's 1.4.0x JRE</a></h3>
+<h3>10.3 <a href="#RoboReadme82">Help TOC Does Not Resize in Netscape</a></h3>
+<h3>10.4 <a href="#RoboReadme83">Help Navigation Pane Invisible with Sun's JVM</a></h3>
+<h3>10.5 <a href="#RoboReadme84">Solaris: Help Navigation Pane Crashes Netscape</a></h3>
+<a name="Part2TOC"></a>
+<p>&nbsp;</p>
+<p class="partTOC">Part 2:  Version Manager IDE Client</p>
+
+<h2>11.0 <a href="#RoboReadme85">Important Information</a></h2>
+<h3>11.1 <a href="#RoboReadme86">Supported Platforms</a></h3>
+<h3>11.2 <a href="#RoboReadme87">Supported IDEs</a></h3>
+<h3>11.3 <a href="#RoboReadme88">Using Only Windows Security for Web Projects</a></h3>
+<h3>11.4 <a href="#RoboReadme89">Supported Serena TrackerLink Versions</a></h3>
+<h2>12.0 <a href="#RoboReadme90">Installation Issues</a></h2>
+<h3>12.1 <a href="#RoboReadme91">You Must Uninstall the Previous IDE Client Before You Upgrade</a></h3>
+<h3>12.2 <a href="#RoboReadme92">TrackerLink Users Must Select a Source Control Provider</a></h3>
+<h3>12.3 <a href="#RoboReadme93">Eclipse 2:  UNC Workstation Installation Requires Edit to setup.ini File</a></h3>
+<h3>12.4 <a href="#RoboReadme94">IIS 6 on Windows 2003 Server Requires Extra Setup</a></h3>
+<h2>13.0 <a href="#RoboReadme95">General Known Issues</a></h2>
+<h3>13.1 <a href="#RoboReadme96">Cannot Switch Between IDE Client Versions Without Reinstalling</a></h3>
+<h3>13.2 <a href="#RoboReadme97">Interface Libraries Are Listed As Version 8,0,0,1</a></h3>
+<h2>14.0 <a href="#RoboReadme98">Known Issues in SCC IDEs</a></h2>
+<h3>14.1 <a href="#RoboReadme99">SourceBridge:  &quot;Failed to Initialize...&quot;</a></h3>
+<h3>14.2 <a href="#RoboReadme100">ColdFusion:  Pulse Displays Redundant Information</a></h3>
+<h3>14.3 <a href="#RoboReadme101">PowerBuilder:  Removing Locks on Unchanged Revisions Always Required</a></h3>
+<h3>14.4 <a href="#RoboReadme102">Pulse:  Displays &quot;pvcs.vm.param.LogInfo&quot; Messages</a></h3>
+<h3>14.5 <a href="#RoboReadme103">Rational Rose:  Error Occurs on Get or on Undo Checkout</a></h3>
+<h3>14.6 <a href="#RoboReadme104">Rational Rose:  Tracker Admin Dialog Box Is Not Available</a></h3>
+<h3>14.7 <a href="#RoboReadme105">Cleanup Required When You Unlock Files with TrackerLink Associations</a></h3>
+<h3>14.8 <a href="#RoboReadme106">VisualAge for Java:  A Series of Login Dialog Boxes Appear</a></h3>
+<h3>14.9 <a href="#RoboReadme107">Visual Basic:  Prompts for Confirmation of Check-In Location</a></h3>
+<h3>14.10 <a href="#RoboReadme108">Workfile Location Options Are Available for Getting Projects</a></h3>
+<h3>14.11 <a href="#RoboReadme109">IFC_COM.DLL Listed as Not Loaded on About Tab</a></h3>
+<h3>14.12 <a href="#RoboReadme110">Visual Studio .NET:  Error Occurs When You Add a C# ASP Project to Source Control</a></h3>
+<h2>15.0 <a href="#RoboReadme111">Known FrontPage/InterDev Web Project Issues</a></h2>
+<h3>15.1 <a href="#RoboReadme112">FrontPage Allows You to Delete Locked Files</a></h3>
+<h3>15.2 <a href="#RoboReadme113">Files Appear to Lose Source Control Status</a></h3>
+<h3>15.3 <a href="#RoboReadme114">FrontPage:  Square Brackets [&nbsp;] in Folder, Project, or File Names May Cause Problems</a></h3>
+<h3>15.4 <a href="#RoboReadme115">Visual InterDev 6 Does Not Indicate Who Has a File Locked</a></h3>
+<h2>16.0 <a href="#RoboReadme116">Known Issues in Eclipse IDEs</a></h2>
+<h3>16.1 <a href="#RoboReadme117">Eclipse:  SCC Plug-In Sometimes Fails to Initialize After Version Manager Installation</a></h3>
+<h3>16.2 <a href="#RoboReadme118">Eclipse 5:  Conflicts May Occur with the ATL.DLL File Placed by Another Application</a></h3>
+<h2>17.0 <a href="#RoboReadme119">Known Issues in Eclipse and .NET Rich Integrations</a></h2>
+<h3>17.1 <a href="#RoboReadme120">Eclipse:  &quot;Null Output&quot; and &quot;Resource Key&quot; Errors</a></h3>
+<h3>17.2 <a href="#RoboReadme121">Eclipse:  TeamTrack Integration Requires Java Runtime Environment (JRE) 1.4.2_06 or Later</a></h3>
+<h3>17.3 <a href="#RoboReadme122">Eclipse:  Copy All Changes Toolbar Button Not Working</a></h3>
+<h3>17.4 <a href="#RoboReadme123">Eclipse:  Plug-In Attribution Refers to Eclipse 3.1 Instead of 3.0</a></h3>
+<h3>17.5 <a href="#RoboReadme124">Eclipse Command Line:  You Can Specify a Larger Heap Size If You Have Extremely Large Projects</a></h3>
+<h3>17.6 <a href="#RoboReadme125">.NET:  Sort Order in the Compare Workspaces Tree View Can Get Out of Synch</a></h3>
+<h3>17.7 <a href="#RoboReadme126">.NET:  History View Displays Only One Line of a Multiline Comment</a></h3>
+<h3>17.8 <a href="#RoboReadme127">.NET:  Changes Persist in the Set User Options Dialog Box After You Click Cancel</a></h3>
+<h3>17.9 <a href="#RoboReadme128">.NET:  Undo Checkout Disabled in the File Status View Context Menu</a></h3>
+<h3>17.10 <a href="#RoboReadme129">.NET:  Compare Workspaces View Does Not Refresh After Forcing Update</a></h3>
+<h3>17.11 <a href="#RoboReadme130">.NET:  Move Failures May Cause Instability</a></h3>
+<h3>17.12 <a href="#RoboReadme131">.NET:  Overwriting a Local Workspace Causes Failures</a></h3>
+<h3>17.13 <a href="#RoboReadme132">.NET:  CAB Projects Added to an Existing Solution Cannot Be Checked In to the Version Manager Repository</a></h3>
+<h3>17.14 <a href="#RoboReadme133">.NET:  CAB Projects Do Not Support a Context Menu</a></h3>
+<h3>17.15 <a href="#RoboReadme134">.NET (Compare Workspaces):  Cannot Commit an Unsaved CAB Project</a></h3>
+<h3>17.16 <a href="#RoboReadme135">.NET (Compare Workspaces):  Update of Remotely Added Project Results in Missing Menu Items</a></h3>
+<h3>17.17 <a href="#RoboReadme136">TeamTrack Integration:  Upper-ASCII Characters May Be Displayed Incorrectly</a></h3>
+<a name="Part3TOC"></a>
+<p>&nbsp;</p>
+<p class="partTOC">Part 3:  Version Manager Web Client</p>
+
+<h2>18.0 <a href="#RoboReadme137">Installation Considerations</a></h2>
+<h3>18.1 <a href="#RoboReadme138">Supported Version Manager Web Server Platforms</a></h3>
+<h3>18.2 <a href="#RoboReadme139">Supported Version Manager Web Client Platforms</a></h3>
+<h3>18.3 <a href="#RoboReadme140">Internet Explorer Setup for Client Installations</a></h3>
+<h3>18.4 <a href="#RoboReadme141">Problem Installing Applet When an Older Applet Is Loaded</a></h3>
+<h3>18.5 <a href="#RoboReadme142">Problems Resulting from Using JRE 1.4.0x with Internet Explorer and TrackerLink</a></h3>
+<h3>18.6 <a href="#RoboReadme143">Login Problems Resulting from Disabling Cookies</a></h3>
+<h3>18.7 <a href="#RoboReadme144">Installing the Version Manager Web Client on Windows 2000</a></h3>
+<h3>18.8 <a href="#RoboReadme145">iPlanet Web Server on Pentium IV Servers</a></h3>
+<h3>18.9 <a href="#RoboReadme146">Apache Web Servers and Dynamic Shared Object (DSO) Support</a></h3>
+<h3>18.10 <a href="#RoboReadme147">Running configure_inet to Configure a Different Web Server</a></h3>
+<h3>18.11 <a href="#RoboReadme148">Using TrackerLink with Secure Sockets Layer (SSL)</a></h3>
+<h3>18.12 <a href="#RoboReadme149">Large Temporary Web Server Installation File on the Client Machine Resulting from Web Client Installation</a></h3>
+<h3>18.13 <a href="#RoboReadme150">Using the Web Client with a Version Manager File Server</a></h3>
+<h3>18.14 <a href="#RoboReadme151">Preparing IIS 6 on Windows 2003 Server</a></h3>
+<h2>19.0 <a href="#RoboReadme152">Upgrade Considerations</a></h2>
+<h3>19.1 <a href="#RoboReadme153">Uninstalling Before Upgrading from Earlier Versions</a></h3>
+<h3>19.2 <a href="#RoboReadme154">Removing the NT Service Before Upgrading (I-Net or WebDAV Server) <span class="caution">[REQUIRED]</span></a></h3>
+<h3>19.3 <a href="#RoboReadme155">Migrating a Large List of Version Manager Servlets</a></h3>
+<h2>20.0 <a href="#RoboReadme156">Feature Considerations</a></h2>
+<h3>20.1 <a href="#RoboReadme157">Naming Considerations</a></h3>
+<h3>20.2 <a href="#RoboReadme158">Using Event Triggers</a></h3>
+<h3>20.3 <a href="#RoboReadme159">Purging Log Files and Temporary Files from the Server</a></h3>
+<h3>20.4 <a href="#RoboReadme160">Updating Keyword Values When You Add or Check In Workfiles</a></h3>
+<h3>20.5 <a href="#RoboReadme161">Refreshing Content Pane after Viewing Revision</a></h3>
+<h3>20.6 <a href="#RoboReadme162">Error During Startup of Version Manager Web or WebDAV Server</a></h3>
+<h2>21.0 <a href="#RoboReadme163">Performance Considerations</a></h2>
+<h3>21.1 <a href="#RoboReadme164">Antivirus Software</a></h3>
+<h2>22.0 <a href="#RoboReadme165">Known Issues</a></h2>
+<h3>22.1 <a href="#RoboReadme166">UNIX:  Cannot Use Version Manager on AIX with an EAPI Version of Apache 1.3</a></h3>
+<h3>22.2 <a href="#RoboReadme167">UNIX:  Browser Location Must Be Added to Path</a></h3>
+<h3>22.3 <a href="#RoboReadme168">UNIX:  Add Workfiles Directory Browsing Is Sometimes Disabled</a></h3>
+<h3>22.4 <a href="#RoboReadme169">IO Error Messages Occur When the Version Manager Web Server Is Down</a></h3>
+<h3>22.5 <a href="#RoboReadme170">Web Client Login Error Occurs When Sun's Java v1.4.1 Is Enabled with NT Authentication</a></h3>
+<h3>22.6 <a href="#RoboReadme171">Resizing Dialog Boxes May Crash Netscape</a></h3>
+<h3>22.7 <a href="#RoboReadme172">UNIX:  Bad Magic Number Exception Sometimes Occurs</a></h3>
+<h3>22.8 <a href="#RoboReadme173">Unable to Change Password If No ACDB Exists</a></h3>
+<h3>22.9 <a href="#RoboReadme174">UNIX:  Netscape Appears to Be Inactive</a></h3>
+<h3>22.10 <a href="#RoboReadme175">Licenses Tab of Version Manager Web Server Application Configuration Utility Displays Multi-Byte and High-ASCII Characters Incorrectly</a></h3>
+<h3>22.11 <a href="#RoboReadme176">Multi-Byte Characters Not Supported with iPlanet</a></h3>
+<h3>22.12 <a href="#RoboReadme177">UNIX:  Netscape Should Be Set to Override Specified Fonts</a></h3>
+<h3>22.13 <a href="#RoboReadme178">HP-UX:  Get and Checkout Fail; Results Dialog Box Is Blank</a></h3>
+<h3>22.14 <a href="#RoboReadme179">Pop-Up Blocking Prevents Version Manager From Working Correctly</a></h3>
+<h3>22.15 <a href="#RoboReadme180">Netscape 7 Does Not Work with Exceed</a></h3>
+<h3>22.16 <a href="#RoboReadme181">Windows:  Application Server Freezes When Started and Stopped Without Accessing Any Archives</a></h3>
+<h3>22.17 <a href="#RoboReadme182">Windows:  No Apparent Way for Non-Admin to Uninstall the Web Client</a></h3>
+<h3>22.18 <a href="#RoboReadme183">Dates Sometimes Displayed Incorrectly in Web Client Project Pane</a></h3>
+<h3>22.19 <a href="#RoboReadme184">Issue Running Version Manager Web Server on Itanium</a></h3>
+<h3>22.20 <a href="#RoboReadme185">Netscape 7.02 on Windows Causes Some Operations to Fail</a></h3>
+<h3>22.21 <a href="#RoboReadme186">Error: &quot;Certificate not verified&quot;</a></h3>
+<h3>22.22 <a href="#RoboReadme187">Browse Does Not Work After You Switch to a Project on a Different Server</a></h3>
+<h3>22.23 <a href="#RoboReadme188">Mozilla 1.6 Does Not Display the Project Directory Tree</a></h3>
+<h2>23.0 <a href="#RoboReadme189">Documentation Issues</a></h2>
+<h3>23.1 <a href="#RoboReadme190">Help TOC Does Not Resize in Netscape</a></h3>
+<a name="Part4TOC"></a>
+<p>&nbsp;</p>
+<p class="partTOC">Part 4:  Version Manager WebDAV Server</p>
+
+<h2>24.0 <a href="#RoboReadme191">Installation and Configuration</a></h2>
+<h3>24.1 <a href="#RoboReadme192">System Requirements</a></h3>
+<h3>24.2 <a href="#RoboReadme193">Removing the NT Service Before Upgrading (I-Net or WebDAV Server) <span class="caution">[REQUIRED]</span></a></h3>
+<h3>24.3 <a href="#RoboReadme194">Troubleshooting Connection Problems</a></h3>
+<h3>24.4 <a href="#RoboReadme195">Default Versions Visible Through WebDAV Server</a></h3>
+<h3>24.5 <a href="#RoboReadme196">Specifying Privileges</a></h3>
+<h3>24.6 <a href="#RoboReadme197">Error During Startup of Version Manager Web or WebDAV Server</a></h3>
+<h3>24.7 <a href="#RoboReadme198">Apache Web Servers and Dynamic Shared Object (DSO) Support</a></h3>
+<h3>24.8 <a href="#RoboReadme199">Using Microsoft Office with Version Manager WebDAV Server</a></h3>
+<h2>25.0 <a href="#RoboReadme200">Known Issues</a></h2>
+<h3>25.1 <a href="#RoboReadme201">Client Issues</a></h3>
+<h3>25.2 <a href="#RoboReadme202">Password Recommendation for WebDAV Clients</a></h3>
+<h3>25.3 <a href="#RoboReadme203">Using WebDAV with IIS and Microsoft FrontPage Server Extensions</a></h3>
+<h3>25.4 <a href="#RoboReadme204">Using the Euro Character on Solaris</a></h3>
+<h2>26.0 <a href="#RoboReadme205">Support</a></h2>
+<h3>26.1 <a href="#RoboReadme206">Support Information</a></h3>
+<h2>27.0 <a href="#RoboReadme207">Notice Regarding Third Party Software</a></h2>
+<h3>27.1 <a href="#RoboReadme208">Third Party Software Disclaimers</a></h3>
+<a name="Part5TOC"></a>
+<p>&nbsp;</p>
+<p class="partTOC">Part 5:  Serena ChangeMan Meritage</p>
+
+<h2>28.0 <a href="#RoboReadme209">Known Issues</a></h2>
+<h3>28.1 <a href="#RoboReadme210">Office 2000</a></h3>
+<h3>28.2 <a href="#RoboReadme211">WebDAV Server 8.0.0.0</a></h3>
+
+<!-- End of TOC -->
+
+<p class="pageBreak">&nbsp;</p>
+
+<p class="returnToTop"><a href="#TOP">To Top</a></p>
+
+
+
+
+<table class="part" width="100%">
+  <tr>
+    <td>
+      <p class="part">Part 1:  Version Manager CLI, Desktop Client, and PCLI</p>
+    </td>
+  </tr>
+</table>
+
+
+<p class="returnToTop"><a href="#TOP">Return to Contents</a></p>
+<hr size="2" width="100%" noshade>
+<h1>1.0 <a name="RoboReadme1"></a>Important Information</h1>
+
+<h2>1.1 <a name="RoboReadme2"></a>Supported Windows Platforms</h2>
+
+<p class="intro">Version Manager for Windows is supported on:</p>
+
+<ul>
+  <li>Windows 2000:  Professional, Server, Advanced Server</li>
+  <li>Windows 2000 Advanced Server 64-Bit Edition</li>
+  <li>Windows XP Professional</li>
+  <li>Windows XP 64-Bit Edition</li>
+  <li>Windows 2003 Server</li>
+</ul>
+
+<h2>1.2 <a name="RoboReadme3"></a>Supported UNIX Platforms</h2>
+
+<p class="intro">Version Manager for UNIX is supported on:</p>
+
+<ul>
+  <li>AIX 5.1, 5.2, and 5.3</li>
+  <li>HP-UX 11.00, 11.11, and 11.23</li>
+  <li>Red Hat Linux 9.0 and Red Hat Enterprise Linux 3.0</li>
+  <li>SuSE Linux 9.0, 9.1, and 9.2</li>
+  <li>Solaris 8 and 9</li>
+</ul>
+
+<h2>1.3 <a name="RoboReadme4"></a>Supported Versions of TrackerLink</h2>
+<p>Version Manager for Windows supports TrackerLink in Serena Tracker versions 6.5.00 (Build 506) or newer.  However, Tracker 6.6.00 or newer is required for the "Clean up associations on undo checkout" feature.</p>
+
+
+<p class="returnToTop"><a href="#TOP">Return to Contents</a></p>
+<hr size="2" width="100%" noshade>
+<h1>2.0 <a name="RoboReadme5"></a>Installation</h1>
+
+<h2>2.1 <a name="RoboReadme6"></a>Uninstalling Before Upgrading from Earlier Versions</h2>
+
+<p>If you plan to install Version Manager 8.1 in the same location as a previous version, you must uninstall it before upgrading.  The Sample Database may remain, but all other files should be removed.  Failure to perform these uninstall tasks may cause conflicts when you upgrade.</p>
+
+<p>To preserve your Servlet definitions on Windows, back up the <span class="syntax">PVCSServlets.properties</span> file and restore it to <span class="syntax"><i>VM_Install_Dir</i>\vm\inet\props\PVCSServlets.properties</span> after installing the new version.  Next, launch the Version Manager Web Server Application Configuration utility and make sure the "Location of Netscape Configuration Files" and/or "Location of Microsoft IIS Scripts Directory" matches the desired location for the new server installation (as they too will be inherited from <span class="syntax">PVCSServlets.properties</span>).  Finally, go to the Servlets tab, select the first servlet from the list, click Modify and then click Apply.  Repeat this for all remaining servlets.</p>
+
+<p>Users of Version Manager Server 6.8.00 on UNIX should preserve the file <span class="syntax"><i>VM6800_Install_Dir</i>/vminet/tomcat/webapps/vminet/WEB-INF/web.xml</span>, and users of Version Manager I-Net 6.8.1x or later should preserve the file <span class="syntax"><i>VM681x_Install_Dir</i>/vm/common/tomcat/webapps/vminet/WEB-INF/web.xml</span>.  After installing the new version, copy the sections from &lt;servlet&gt; up to and including &lt;/servlet&gt; for every servlet referring to a project database that was added to the old <span class="syntax">web.xml</span> file, and paste them into the new <span class="syntax">web.xml</span> file (which can be found at <span class="syntax"><i>VM_Install_Dir</i>/vm/common/tomcat/webapps/vminet/WEB-INF/web.xml</span>).  The two &lt;servlet-mapping&gt; ... &lt;/servlet-mapping&gt; sections that exist for every one of these servlets should also be copied into the new <span class="syntax">web.xml</span> file.</p>
+
+<p>Servlets defined in UNIX Version Manager Server releases prior to 6.8.00 (using the servlets.properties file) cannot be preserved.</p>
+
+<p>Before uninstalling, ensure that the Version Manager Web Server and your web server (IIS, iPlanet, Java System Web Server, or Apache) are NOT running.</p>
+
+<h3 class="keepWithNext">Backing Up Configuration Files</h3>
+
+<p>It is a good idea to save a backup copy of the following files:</p>
+
+<p class="sub"><span class="syntax">
+  <i>Install_Dir</i>\vm\common\bin\pvcsstart.bat</span> (<span class="syntax">pvcsstart.sh</span> on UNIX)<span class="syntax"><br>
+  <i>Install_Dir</i>\vm\common\tomcat\conf\jk\uriworkermap.properties<br>
+  <i>Install_Dir</i>\vm\inet\props\PVCSServlets.properties</span> (web servers only)<span class="syntax"><br>
+  <i>Install_Dir</i>\vm\common\tomcat\webapps\vminet\WEB-INF\web.xml</span> (file servers only)<span class="syntax"><br>
+  <i>Install_Dir</i>\vm\common\tomcat\webapps\webdav\WEB-INF\web.xml</span> (WebDAV servers only)<span class="syntax"><br>
+  <i>Install_Dir</i>\vm\common\tomcat\webapps\merantfs\WEB-INF\server-config.wsdd</span>
+</p>
+
+<h2>2.2 <a name="RoboReadme7"></a>Setting the SCC Provider to Version Manager Before Installing SourceBridge</h2>
+
+<p>If you currently use TrackerLink with SCC IDEs and wish to use SourceBridge (TeamTrack) instead, change your SCC provider from TrackerLink to Version Manager before installing SourceBridge.  SourceBridge will then set itself as the SCC provider and pass SCC information on to Version Manager.</p>
+
+<p>To set the SCC provider, launch the Version Manager SCC Admin.  For details, see the <i>Serena ChangeMan Version Manager IDE Client Implementation Guide</i>.</p>
+
+<p>If you install SourceBridge while TrackerLink is still set as the SCC provider, SourceBridge will try to use TrackerLink as the SCC provider.  Source control will not work.</p>
+
+<p>To correct this, set the SCC provider in the System Settings tab of the SourceBridge dialog box.  For details, see the &quot;About Setting Up SourceBridge&quot; section of the <i>Serena ChangeMan Version Manager Administrator's Guide</i>.</p>
+
+
+<h2>2.3 <a name="RoboReadme8"></a>Linux Error:  &quot;Illegal end day of week in month&quot;; PCLI and Desktop Lockup</h2>
+
+<p>This error may appear during installation if you chose to install the sample database.  The error may also occur when you attempt to run a PCLI command; the desktop client and the PCLI may hang.  This occurs if the local time zone is set to &quot;Australia/Melbourne&quot;. It may also occur with other time zones.</p>
+
+<p>You can work around this issue by specifying an equivalent time zone (different name, same time). Here are two methods of changing your time zone:</p>
+
+<ul>
+
+  <li>
+    <p class="inList">Use <span class="syntax">/usr/sbin/timeconfig</span> (as root) to set a different time zone.  Try one of the GMT time zones with the same offset as that of your time zone.  This affects the entire system.</p>
+  </li>
+
+  <li>
+    <p class="inList">Define the TZ environment variable just in the shell that is used to launch the Version Manager desktop client or the PCLI. For example:</p>
+
+    <p class="inList"><span class="syntax">export TZ=GMT-9</span></p>
+
+    <p class="inList">To prevent an accidental hang by users who forget to set this variable, you could add the following as the second line in the file <span class="syntax"><i>VM_install_dir</i>/vm/linux/bin/pvcsvmdmn</span>:</p>
+
+    <p class="inList"><span class="syntax">TZ=GMT-9; export TZ</span></p>
+  </li>
+
+</ul>
+
+
+<h2>2.4 <a name="RoboReadme9"></a> Stopping the Server and Upgrading Both Client and Server <span class="caution">[REQUIRED]</span></h2>
+
+<p>If you use the Version Manager Web Server, File Server, or WebDAV Server, you must stop the server before upgrading.  See the <i>Serena ChangeMan Version Manager Installation Guide</i> for details.</p>
+
+<p>If you use the Version Manager File Server, you must install the latest version of both the Version Manager client and the server.</p>
+
+<h2>2.5 <a name="RoboReadme10"></a>Removing the NT Service Before Upgrading (Version Manager File Server, Web Server, or WebDAV Server) <span class="caution">[REQUIRED]</span></h2>
+
+<p>If the Version Manager Application Server is installed as an NT Service, you must remove the service before upgrading.</p>
+
+<p><b>To remove the service, perform the following steps:</b></p>
+
+<ol>
+
+  <li>
+    <p>Launch the Version Manager Application Server Configuration utility from the Serena submenu of the Start menu.</p>
+  </li>
+
+  <li>
+    <p>Click the <b>Remove NT Service</b> button.</p>
+  </li>
+
+  <li>
+    <p>Restart the computer.</p>
+  </li>
+
+</ol>
+
+<h2>2.6 <a name="RoboReadme11"></a>Workstation Installation</h2>
+
+<h3 class="keepWithNext">Installation Using a UNC Path Name with Directory Names Longer Than Eight Characters</h3>
+
+<p class="sub">If you want to install to a server using a path name that contains any directory names longer than eight characters, you may first need to map a network drive to that location and use the drive mapping to install Version Manager.  If you do not use a drive mapping, an error message may appear stating that the path to the setup executable is invalid.</p>
+
+<p class="sub">To prevent errors when installing or working from a network installation of Version Manager, make sure network path names do not contain directory names longer than eight characters.</p>
+
+<h3 class="keepWithNext">Workstation Installation May Fail with Microsoft Novell Client Drivers</h3>
+
+<p class="sub">Workstation installations of Version Manager may behave unpredictably if you are using Microsoft Novell Client drivers to access a Netware server.  We recommend using Novell Netware Client drivers.</p>
+
+<h3 class="keepWithNext">Eclipse 2:  UNC Workstation Installation Requires Edit to setup.ini File</h3>
+
+<p class="sub">See the <a href="#eclipseUNC">topic</a> with this name in Part 2:  Version Manager IDE Client, below.</p>
+
+<h2>2.7 <a name="RoboReadme12"></a>Windows Installation</h2>
+
+<h3 class="keepWithNext">System Requirements</h3>
+
+<p class="sub">In addition to Operating System requirements, the minimum system requirements are:</p>
+
+<table class="sub" style="margin-bottom: 14.0pt;" cellspacing="0" cellpadding="4" border="2" summary="Four-column table">
+  <tr><th class="tablehead" colspan="4">Client Systems &#8211; Minimum</th></tr>
+  <tr>
+    <th align="left">Platform</th>
+    <th align="left">Memory</th>
+    <th align="left">CPU</th>
+    <th align="left">Disk Space</th></tr>
+  <tr>
+    <td class="tablecell">Win 2000 Pro</td>
+    <td class="tablecell">128 MB</td>
+    <td class="tablecell">P200</td>
+    <td class="tablecell">140 MB</td></tr>
+  <tr>
+    <td class="tablecell">Win 2000 Server</td>
+    <td class="tablecell">128 MB</td>
+    <td class="tablecell">P200</td>
+    <td class="tablecell">140 MB</td></tr>
+  <tr>
+    <td class="tablecell">Win XP Pro</td>
+    <td class="tablecell">128 MB</td>
+    <td class="tablecell">P400</td>
+    <td class="tablecell">140 MB</td>
+  </tr>
+  <tr>
+    <td class="tablecell">Win 2003 Server</td>
+    <td class="tablecell">128 MB</td>
+    <td class="tablecell">P400</td>
+    <td class="tablecell">140 MB</td>
+  </tr>
+</table>
+
+<p class="sub">The recommended system requirements are:</p>
+
+<table class="sub" style="margin-bottom: 14.0pt;" cellspacing="0" cellpadding="4" border="2" summary="Four-column table">
+  <tr><th class="tablehead" colspan="4">Client Systems &#8211; Recommended</th></tr>
+  <tr>
+    <th align="left">Platform</th>
+    <th align="left">Memory</th>
+    <th align="left">CPU</th>
+    <th align="left">Disk Space</th></tr>
+  <tr>
+    <td class="tablecell">Win 2000 Pro</td>
+    <td class="tablecell">256 MB</td>
+    <td class="tablecell">P550</td>
+    <td class="tablecell">140 MB</td></tr>
+  <tr>
+    <td class="tablecell">Win 2000 Server</td>
+    <td class="tablecell">256 MB</td>
+    <td class="tablecell">P550</td>
+    <td class="tablecell">140 MB</td></tr>
+  <tr>
+    <td class="tablecell">Win XP Pro</td>
+    <td class="tablecell">256 MB</td>
+    <td class="tablecell">P550</td>
+    <td class="tablecell">140 MB</td>
+  </tr>
+  <tr>
+    <td class="tablecell">Win 2003 Server</td>
+    <td class="tablecell">256 MB</td>
+    <td class="tablecell">P550</td>
+    <td class="tablecell">140 MB</td>
+  </tr>
+</table>
+
+<p class="sub">Memory requirements for the server depend on how many users access the server at the same time and how many daemon processes are running (by default, 5 to 20 daemons are running).  Use the formula in the table below to calculate your memory needs.</p>
+
+<table class="sub" style="margin-bottom: 14.0pt;" cellspacing="0" cellpadding="4" border="2" summary="Five-column table">
+  <tr><th class="tablehead" colspan="5">Server Systems</th></tr>
+  <tr>
+    <th>&nbsp;</th>
+    <th align="left">Base</th>
+    <th align="left">Concurrent Users</th>
+    <th align="left">Daemons</th>
+    <th align="left">Total</th></tr>
+  <tr>
+    <td class="tablecell"><b>Formula</b></td>
+    <td class="tablecell">256 MB</td>
+    <td class="tablecell">+ 6 MB per user</td>
+    <td class="tablecell">+ 8 MB per daemon</td>
+    <td class="tablecell">= ?</td></tr>
+  <tr>
+    <td class="tablecell"><b>Example</b></td>
+    <td class="tablecell">256 MB</td>
+    <td class="tablecell">6 x 100 = 600 MB</td>
+    <td class="tablecell">8 x 20 = 160 MB</td>
+    <td class="tablecell">= 1016 MB</td></tr>
+</table>
+
+<p class="sub"><b>NOTE:</b>  The example is for the case of 100 concurrent users and 20 daemon processes.  It is included only to illustrate the use of the formula and <i>is not</i> intended as a recommendation.</p>
+
+<h3 class="keepWithNext">Administrator's Privileges Required for Windows 2000 Installation</h3>
+
+<p class="sub">Installing without Administrator's privileges results in an InstallShield error that requires you to remove the winnt/IsUnist.exe file.  Removing this file also requires Administrator's privileges.</p>
+
+<p class="sub">If you attempt to install Version Manager without Administrator's privileges and the winnt/IsUnist.exe file is deleted, an error box is displayed with an X in a red background and an OK button.  Clicking OK terminates the installation process; ignoring the error box allows installation to complete successfully.</p>
+
+<h3 class="keepWithNext">IDE Client Upgrade May Be Required</h3>
+
+<p class="sub">If your existing installation of the IDE client is older than 6.7.11 SP2, you must upgrade it when you upgrade Version Manager.  Builds of the Version Manager IDE client prior to 6.7.11 SP2 will not work with newer builds of Version Manager.</p>
+
+<h3 class="keepWithNext">Installation to Root of a UNC Share Shows Space Required as Zero</h3>
+
+<p class="sub">When you install to the root of a UNC share, the installer indicates that zero space is required.  The installer shows the required space correctly if you select a directory on the share.  In either case, Version Manager will be correctly installed--provided you actually have enough disk space on the share.</p>
+
+<h3 class="keepWithNext">Version Manager Installation Fails Without Adequate Disk Space on Root Drive</h3>
+
+<p>To successfully install Version Manager, you need 450 MB of hard disk space on the drive containing Windows (150 MB for the CD-ROM installation) and 600 MB on your destination drive.  If you delete temporary files created during installation, you will not need this amount of space once Version Manager is installed.</p>
+
+<h2>2.8 <a name="RoboReadme13"></a>UNIX Installation</h2>
+
+<h3 class="keepWithNext">System Requirements</h3>
+
+<p class="sub">In addition to Operating System requirements, the minimum system requirements are:</p>
+
+<table class="sub" style="margin-bottom: 14.0pt;" cellspacing="0" cellpadding="4" border="2" summary="Three-column table">
+  <tr><th class="tablehead" colspan="3">Client Systems &#8211; Minimum</th></tr>
+  <tr>
+    <th align="left">Platform</th>
+    <th align="left">Memory</th>
+    <th align="left">Disk Space</th></tr>
+  <tr>
+    <td class="tablecell">Solaris</td>
+    <td class="tablecell">64 MB</td>
+    <td class="tablecell">112 MB</td></tr>
+  <tr>
+    <td class="tablecell">HP-UX</td>
+    <td class="tablecell">64 MB</td>
+    <td class="tablecell">141 MB</td></tr>
+  <tr>
+    <td class="tablecell">AIX</td>
+    <td class="tablecell">64 MB</td>
+    <td class="tablecell">65 MB</td></tr>
+  <tr>
+    <td class="tablecell">Red Hat Linux</td>
+    <td class="tablecell">64 MB</td>
+    <td class="tablecell">117 MB</td></tr>
+  <tr>
+    <td class="tablecell">SuSE</td>
+    <td class="tablecell">64 MB</td>
+    <td class="tablecell">117 MB</td>
+  </tr>
+</table>
+
+<p class="sub">The recommended system requirements are:</p>
+
+<table class="sub" style="margin-bottom: 14.0pt;" cellspacing="0" cellpadding="4" border="2" summary="Three-column table">
+  <tr><th class="tablehead" colspan="3">Client Systems &#8211; Recommended</th></tr>
+  <tr>
+    <th align="left">Platform</th>
+    <th align="left">Memory</th>
+    <th align="left">Disk Space</th></tr>
+  <tr>
+    <td class="tablecell">Solaris</td>
+    <td class="tablecell">128 MB</td>
+    <td class="tablecell">112 MB</td></tr>
+  <tr>
+    <td class="tablecell">HP-UX</td>
+    <td class="tablecell">128 MB</td>
+    <td class="tablecell">141 MB</td></tr>
+  <tr>
+    <td class="tablecell">AIX</td>
+    <td class="tablecell">128 MB</td>
+    <td class="tablecell">65 MB</td></tr>
+  <tr>
+    <td class="tablecell">Red Hat Linux</td>
+    <td class="tablecell">128 MB</td>
+    <td class="tablecell">117 MB</td></tr>
+  <tr>
+    <td class="tablecell">SuSE</td>
+    <td class="tablecell">128 MB</td>
+    <td class="tablecell">117 MB</td>
+  </tr>
+</table>
+
+<p class="sub"><b>NOTE:</b>  Memory requirements are <i>per session</i> of Version Manager.</p>
+
+<p class="sub">Memory requirements for the server depend upon how many users access the server at the same time and how many daemon processes are running (by default, 5 to 20 daemons will be running).  Use the formula in the table below to calculate your memory needs.</p>
+
+<table class="sub" style="margin-bottom: 14.0pt;" cellspacing="0" cellpadding="4" border="2" summary="Five-column table">
+  <tr><th class="tablehead" colspan="5">Server Systems</th></tr>
+  <tr>
+    <th>&nbsp; </th>
+    <th align="left">Base</th>
+    <th align="left">Concurrent Users</th>
+    <th align="left">Daemons</th>
+    <th align="left">Total</th></tr>
+  <tr>
+    <td class="tablecell"><b>Formula</b></td>
+    <td class="tablecell">256 MB</td>
+    <td class="tablecell">+ 6 MB per user</td>
+    <td class="tablecell">+ 8 MB per daemon</td>
+    <td class="tablecell">= ?</td></tr>
+  <tr>
+    <td class="tablecell"><b>Example</b></td>
+    <td class="tablecell">256 MB</td>
+    <td class="tablecell">6 x 100 = 600 MB</td>
+    <td class="tablecell">8 x 20 = 160 MB</td>
+    <td class="tablecell">= 1016 MB</td></tr>
+</table>
+
+<p class="sub"><b>NOTE:</b>  The example is for the case of 100 concurrent users and 20 daemon processes.  It is included only to illustrate the use of the formula and <i>is not</i> intended as a recommendation.</p>
+
+<h3 class="keepWithNext">Required Operating System Patches for UNIX Platforms</h3>
+
+<p class="sub">Some UNIX platforms require patches before they will run the JRE (version 1.4) as used by Version Manager.  See Serena support at <a href="http://support.serena.com" target="_blank">support.serena.com</a> for more information (KnowledgeBase Document 70396).</p>
+
+<h3 class="keepWithNext">HP-UX:  Recommended Kernel Parameter Settings</h3>
+
+<p>Set the following kernel parameters to allow the Version Manager web and file servers to work properly on HP-UX:</p>
+
+<pre>
+max_thread_proc 1000
+maxfiles 2000
+</pre>
+
+<p><b>IMPORTANT:</b>  After setting the kernel parameters, you must rebuild the kernel.</p>
+
+<h3 class="keepWithNext">End-User Licensing on UNIX</h3>
+
+<p class="sub">To set up licensing for end-user workstations on UNIX, a shell script named <span class="syntax">vmreg</span> updates the <span class="syntax">license.ini</span> file in the <span class="syntax">$PVCS_BINDIR</span> directory and/or the <span class="syntax">.islvrc</span> file in an end user's home directory.  The Version Manager installation script and launch scripts run <span class="syntax">vmreg</span> automatically, but Administrators and users can run it as well.  For example, the Administrator can save the current configuration-file information in <span class="syntax">$PVCS_BINDIR/license.ini</span>, and then users can move the information into their personal <span class="syntax">.islvrc</span> files by running <span class="syntax">vmreg</span>.  End users who use the command line, but not PCLI or the desktop client, need to run <span class="syntax">vmreg</span> once before using the command line.</p>
+
+<p class="sub">The script can be called in the following ways:</p>
+
+<ul class="sub">
+
+  <li>
+    <p class="inList"><span class="syntax">vmreg [<i>server</i>]</span> copies license information from <span class="syntax">$PVCS_BINDIR/license.ini</span> to <span class="syntax">.islvrc</span>.  If the <span class="syntax"><i>server</i></span> argument is present, the script takes the server name from the argument rather than from the value in <span class="syntax">$PVCS_BINDIR/license.ini</span>.  Users execute this command from the command line.</p>
+  </li>
+
+  <li>
+    <p class="inList"><span class="syntax">vmreg -t</span> copies license information from <span class="syntax">$PVCS_BINDIR/license.ini</span> to <span class="syntax">.islvrc</span> only if no server definition exists in <span class="syntax">.islvrc</span>.  The PCLI and desktop-client launchers execute this command automatically at startup.</p>
+  </li>
+
+  <li>
+    <p class="inList"><span class="syntax">vmreg -m &lt;<i>server</i>&gt;</span> updates <span class="syntax">$PVCS_BINDIR/license.ini</span> with the name of the server and copies that data to <span class="syntax">.islvrc</span>.  The Version Manager installation script and Administrators execute this command.</p>
+  </li>
+
+  <li>
+    <p class="inList"><span class="syntax">vmreg -h</span> provides usage information.</p>
+  </li>
+
+  <li>
+    <p class="inList"><span class="syntax">vmreg -v</span> provides version information.</p>
+  </li>
+
+</ul>
+
+<h2>2.9 <a name="RoboReadme14"></a>Serena ChangeMan Builder Integration on UNIX</h2>
+<p>The Serena ChangeMan Builder integration to Version Manager may fail. To avoid this issue, make sure you have the latest Serena ChangeMan Builder patch. You can obtain the patch from <a href="http://support.serena.com" target="_blank">support.serena.com</a>.  If your Serena ChangeMan Builder CD is labeled <b>MB 8010</b>, it already contains the fix.  CDs labeled <b>Merant Build 8010</b> require the patch.</p>
+
+
+<p class="returnToTop"><a href="#TOP">Return to Contents</a></p>
+<hr size="2" width="100%" noshade>
+<h1>3.0 <a name="RoboReadme15"></a>Performance Considerations</h1>
+
+<h2>3.1 <a name="RoboReadme16"></a>Symbolic Linking to Version Manager Commands</h2>
+
+<p>If you use symbolic links to specify paths in Version Manager commands, the command will take longer to complete.  To speed execution, specify full paths rather than symbolic links, or add the fully qualified paths of Version Manager commands to your environment.</p>
+
+<h2>3.2 <a name="RoboReadme17"></a>Antivirus Software</h2>
+
+<p>If you use the Serena ChangeMan Version Manager File Server and you run real-time antivirus software on your clients, you may experience degraded performance.  This is because the antivirus software scans the Version Manager file cache every time the cache is updated.  To avoid this performance penalty, exclude the cache directory from real-time virus scans.</p>
+
+<p>By default, the file cache is in a directory named <span class="syntax">pvcsfs</span> under your system's temporary directory (as specified by the TMP or TEMP environment variable).  You can set a different location for the cache by defining a path in either the FS_TMP or FS_TEMP environment variable.</p>
+
+<p>For more information on antivirus-related performance improvements, see Serena KnowldegeBase article 70042.  This article applies to both clients and file servers.</p>
+
+
+<p class="returnToTop"><a href="#TOP">Return to Contents</a></p>
+<hr size="2" width="100%" noshade>
+<h1>4.0 <a name="RoboReadme18"></a>Known Windows and UNIX Issues</h1>
+
+<h2>4.1 <a name="RoboReadme19"></a>Version Labels That Match Revision Numbers Cause Version Manager to Use the Wrong Revision</h2>
+
+<p>If you assign a version label that matches a revision number to a different revision, you cannot access the revision with the matching number using the desktop client, the web client, or the PCLI.</p>
+
+<p>You can avoid this problem in two ways:</p>
+
+<ul>
+
+  <li>
+    <p class="inList">Do not use version labels that look like revision numbers.</p>
+
+    <p class="inList"><i>&#8212;or&#8212;</i></p>
+  </li>
+
+  <li>
+    <p class="inList">Use the CLI when working with archives that use such version labels.</p>
+  </li>
+
+</ul>
+
+<h2>4.2 <a name="RoboReadme20"></a>Configuration Builder Cannot Access File Server Archives</h2>
+
+<p>Configuration Builder does not support the Version Manager File Server.</p>
+
+<h2>4.3 <a name="RoboReadme21"></a>File Server and Web Server Application Must Be Installed Together</h2>
+
+<p>When you install the Version Manager File Server component, you must also select the Web Server Application; otherwise, File Server fails to start properly.</p>
+
+<h2>4.4 <a name="RoboReadme22"></a>Installing the Web Server Application Separately Requires Additional Steps</h2>
+
+<p class="intro">If you add the Version Manager Web Server Application after installing Version Manager, you must run the Version Manager Application Server Admin tool and perform the following steps:</p>
+
+<ol>
+  <li>Go to the Servlets tab.</li>
+  <li>Select a servlet (<b>SampleDB</b> will suffice).</li>
+  <li>Click <b>Modify</b>.</li>
+  <li>Click <b>Apply</b>.</li>
+</ol>
+
+<p>Otherwise, you cannot access <span class="syntax">/vminet.html</span> or (when File Server is installed) <span class="syntax">/serenafs/Admin</span>.</p>
+
+<h2>4.5 <a name="RoboReadme23"></a>Long User Names with Double-Byte Characters Interfere with Use of the Project Security Dialog Box</h2>
+
+<p>User names that contain double-byte characters and are longer than 20 characters get truncated when you close the Project Security dialog box.  In some cases, they also can prevent repeated use of the dialog box.</p>
+
+<h2>4.6 <a name="RoboReadme24"></a>Users with No Assigned Privilege Set Receive the Unlimited Privilege Set</h2>
+
+<p>If you remove all privilege sets from a user (via Admin | Security in the Version Manager desktop client) and then click OK after applying your changes, the user actually recieves the Unlimited privilege set.</p>
+
+<p>If you do not want a user to have Unlimited privileges, make sure that the user has at least one privilege set.</p>
+
+<h2>4.7 <a name="RoboReadme25"></a>&quot;Open from Team Provider&quot; Triggers Two Login Prompts</h2>
+
+<p>When performing &quot;Open from Team Provider&quot; to bring projects from Version Manager into a local workspace, you must enter your correct login information twice.</p>
+
+<h2>4.8 <a name="RoboReadme26"></a>PCLI:  Command-Line Help for the Deploy Command is Out-of-Date</h2>
+
+<p>In Mover 2, you deploy &quot;packages&quot; rather than &quot;deploy maps&quot;.  As a result, the <span class="syntax">deploy</span> command usage statement (output by the <span class="syntax">-h</span> option) should refer to a &quot;package id&quot; rather than a &quot;deploy map id&quot;.</p>
+
+<h2>4.9 <a name="RoboReadme27"></a>Tracker Associations Fail on SSL-Enabled Servers</h2>
+
+<p>If the Tracker web client is running on an SSL-enabled server, associations may fail.  You can resolve this issue by adding an SSL certificate to the JRE keystore, as follows:</p>
+
+<ol>
+
+  <li>
+    <p class="inList">Download and install JDK 1.3.x or 1.4.x.</p>
+  </li>
+
+  <li>
+    <p class="inList">Run the following command:</p>
+
+    <p class="inList"><span class="syntax"><i>JDK_Home</i>\bin\keytool.exe -import -file <i>Certificate_File</i> -keystore <i>Serena_Home</i>\vm\common\jre\win32\lib\security\cacerts</span></p>
+  </li>
+
+  <li>
+    <p class="inList">You will be prompted for a password to the keystore; the default password is <span class="syntax">changeit</span>.</p>
+  </li>
+
+</ol>
+
+<p><b>See also</b><br><span class="spacer">&nbsp;</span><br><a href="#trklinkSSL">Using TrackerLink with Secure Sockets Layer (SSL)</a></p>
+
+<h2>4.10 <a name="RoboReadme28"></a>LDAP Connection/Authentication Fails</h2>
+
+<p class="intro">If your LDAP server is configured to use Secure Sockets Layer (SSL) but there is not a certificate database in the <span class="syntax"><i>VM_Install_Dir</i>/vm/common/bin/<i>OS</i></span> directory or the database is missing the required SSL certificates, you will receive errors, such as:</p>
+
+<ul>
+  <li>&quot;Failed to connect to LDAP server.&quot;</li>
+
+  <li>&quot;You cannot access this project because your login account, <i>UserName</i>, is invalid. . . .&quot;</li>
+</ul>
+
+<p><b>To create and populate a certificate database:</b></p>
+
+<ol>
+
+  <li>
+    <p class="inList">Open the following URL using the Netscape browser:</p>
+
+    <p class="inList"><span class="syntax">http://<i>YourServer</i>:<i>SSLport</i></span></p>
+
+    <p class="inList">Where:</p>
+
+    <ul>
+      <li>
+        <p class="inList"><i>YourServer</i> is the IP address or host name of your LDAP server.</p>
+      </li>
+
+      <li><p class="inList"><i>SSLport</i> is the TCP/IP port number used by your LDAP server for SSL connections (usually 636).</p>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <p class="inList">Follow the instructions on the Netscape Certificate Name Check window, and accept the server certificate for future sessions.</p>
+  </li>
+
+  <li>
+    <p class="inList">Close Netscape.</p>
+  </li>
+
+  <li>
+    <p class="inList">Copy the <span class="syntax">key3.db</span> and <span class="syntax">cert7.db</span> files from the Netscape user profile directory to the <span class="syntax"><i>VM_Install_Dir</i>/vm/common/bin/<i>OS</i></span> directory.</p>
+  </li>
+
+  <li>
+    <p class="inList">Restart your Version Manager interface (desktop client, IDE, web client, or WebDAV).</p>
+  </li>
+
+  <li>
+    <p class="inList">Log in.</p>
+  </li>
+
+</ol>
+
+<h2>4.11 <a name="RoboReadme29"></a>Quotation Marks Required If the Path Used with INCLUDE Directive Contains Spaces</h2>
+
+<p>If you use the INCLUDE directive in a configuration file and there are blank spaces in the path of the configuration file being included, you must use quotation marks around the path.  For example, if the sample project database is installed to the default location, define the INCLUDE directive to its configuration file as:</p>
+
+<p><span class="syntax">INCLUDE "c:\program files\serena\vm\common\sampledb\archives\basecfg.cfg"</span></p>
+
+<h2>4.12 <a name="RoboReadme30"></a>Export/Import Project May Fail with Large Projects</h2>
+
+<p>Version Manager may run out of memory when exporting or importing large projects.  To avoid loss of data, retain the source project after exporting it.  You can then return to it if the project is too large to import.</p>
+
+<p>To increase the amount of memory PCLI (and the desktop client) can allocate, define the environment variable PVCS_MX prior to launching that command.  The following examples show how this can be done, changing Java's Heap Size used by Version Manager to 500MB:</p>
+
+<table class="standard" style="margin-bottom: 14.0pt;" cellspacing="0" cellpadding="4" border="2" summary="Two-column table">
+  <tr>
+    <td class="tablecell"><b>Environment</b></td>
+    <td class="tablecell"><b>Command</b></td>
+  </tr>
+
+  <tr>
+    <td class="tablecell">Windows</td>
+    <td class="tablecell"><span class="syntax">set PVCS_MX=-Xmx500m</span></td>
+  </tr>
+
+  <tr>
+    <td class="tablecell">UNIX Bourne Shell</td>
+    <td class="tablecell"><span class="syntax">PVCS_MX=-mx500m; export PVCS_MX</span></td>
+  </tr>
+
+  <tr>
+    <td class="tablecell">UNIX Korn Shell/Bash</td>
+    <td class="tablecell"><span class="syntax">export PVCS_MX=-mx500m</span></td>
+  </tr>
+
+  <tr>
+    <td class="tablecell">UNIX C-Shell</td>
+    <td class="tablecell"><span class="syntax">setenv PVCS_MX mx500m</span></td>
+  </tr>
+</table>
+
+<h2>4.13 <a name="RoboReadme31"></a>As of Version Manager 6.8:  Create Archive Privilege Name and Behavior Has Changed</h2>
+
+<p>As of Version Manager 6.8, the "Create Archive" privilege has been renamed to "Create Archive and Workfile" because this privilege now allows the user to add workfiles.  In previous releases the "Create Archive" privilege had to be combined with the "Add or Remove Versioned Files" privilege in order to
+allow the same behavior with respect to adding workfiles.  This changed behavior makes it possible to allow users to add workfiles without also allowing them to delete files.</p>
+
+<p>Version Manager Administrators should be aware that users who may have had only the "Create Archive" privilege can now add workfiles.  The behavior of the "Add or Remove Versioned Files" privilege has not changed.</p>
+
+<h2>4.14 <a name="RoboReadme32"></a>As of Version Manager 6.8:  Behavior of Command-Line Interface Output Messages Has Changed</h2>
+
+<p>The output messaging behavior in the Command-line Interface (CLI) has been changed so that all error messages are directed to stderr and all other types of messages are directed to stdout.  This change provides for more consistent behavior, but may have an impact on existing scripts.</p>
+
+<h2>4.15 <a name="RoboReadme33"></a>As of Version Manager 6.8:  Default Refresh Interval Has Changed</h2>
+
+<p>The default refresh interval is now 30 seconds, which means that changes made in one interface will be visible in another interface (or another instance) after 30 seconds.  To refresh immediately from the Version Manager desktop client, choose View | Refresh from the Menu or press CTRL+R.</p>
+
+<h2>4.16 <a name="RoboReadme34"></a>Extra Colon in Show History Report</h2>
+
+<p>The Show History Report contains colons to use when you filter for reports on archives.  The colons are used to separate the "owner", "author", and "locker" filter criteria.  If you use scripts to parse the output of Show History Archive reports, you may need to update the scripts.</p>
+
+<h2>4.17 <a name="RoboReadme35"></a>Serena Collage Integration:  Can't Specify Multiple Setup Files</h2>
+
+<p>Page 388 of the <i>Serena ChangeMan Version Manager Administrator's Guide</i> indicates that multiple setup files can be specified with the runvmcm command.  This does not work correctly at this time.  If you specify more than one setup file, only the last one will be used.</p>
+
+<p>To workaround this issue, define multiple transfers in a single setup file.  See page 385 of the <i>Serena ChangeMan Version Manager Administrator's Guide</i>.</p>
+
+<h2>4.18 <a name="RoboReadme36"></a>Output of Vlog Command Has Changed</h2>
+
+<p>The output of the CLI and PCLI vlog commands have been changed to include the Split mode of an archive.  You may need to update scripts that parse the output of these commands.</p>
+
+<h2>4.19 <a name="RoboReadme37"></a>DTK:  PvcsSetProjectSemaphore() Is Not Supported by File Servers</h2>
+
+<p>The DTK call <span class="syntax">PvcsSetProjectSemaphore()</span> is not supported by file servers.  If you previously used this call to lock down the archives in preparation for builds or backups, you can achieve the same effect with archives on a file server by deselecting the <b>Enable write access</b> option in the Version Manager Administration Utility.</p>
+
+<h2>4.20 <a name="RoboReadme38"></a>File Server Does Not Resolve Paths in Event Triggers or Custom Tool Definitions</h2>
+
+<p>Paths specified in event triggers or custom tool definitions must be accessible by the client operating system.  If you migrate an existing Project Database for use with a file server, you may need to change the definitions so that paths remain accessible to the OS.</p>
+
+<p>For security reasons, only Version Manager executables can access paths served by the Version Manager File Server.  If the directories mapped by the file server contain files other than archives and Project Database files, and if third-party applications need to access these files (or if the files <i>are</i> third-party applications), you need to provide another form of access for these files (such as a shared directory or a mapped drive).</p>
+
+<p><b>NOTE:</b>  Any Version Manager executable used in your event trigger will work fine without a shared directory or mapped drive, as long as the executable itself--and any script containing it--can be found using regular (OS) file access.</p>
+
+<h2>4.21 <a name="RoboReadme39"></a>CLI:  File Server Error Gives Wrong User ID</h2>
+
+<p>If you issue a <span class="syntax">CLI</span> command against a file server path map that has security enabled but the user ID that you pass to that command using <span class="syntax">&#8209;id<i>user:password</i></span> is not authorized, the error message that you receive refers to the HOST user ID as being invalid rather than the incorrect ID that you entered.</p>
+
+<h2>4.22 <a name="RoboReadme40"></a>CLI:  Help (<span class="syntax">&#8209;h</span>) Output Incorrectly Displays All Options in Uppercase Letters</h2>
+
+<p>The output from the <span class="syntax">-h</span> option for CLI commands always shows options as all-uppercase; however, many options do not work if you use uppercase letters.  To be safe, always use lowercase letters for CLI options.</p>
+
+<h2>4.23 <a name="RoboReadme41"></a>Log Entries for File Server Authentication Are Confusing</h2>
+
+<p>If a user performs a <span class="syntax">makedb</span> operation on a path for which the user is not authorized, two messages appear in the log:</p>
+
+<pre>
+    Access to writing utility by user <i>userName</i> is granted
+
+    Error during authentication.
+    User <i>userName</i> is not authorized for path <i>path</i>.
+</pre>
+
+<p>The first message should appear only if the second message does not.</p>
+
+<h2>4.24 <a name="RoboReadme42"></a><span class="syntax">makedb</span>:  Confusing Error Message If File Server Utilities Are Disabled</h2>
+
+<p>If a <span class="syntax">makedb</span> operation fails because the destination is on a file server that disallows utilities, the user sees the confusing error text, &quot;<span class="syntax">makedb:  cannot create semaphore <i>path</i>.</span>&quot;</p>
+
+<h2>4.25 <a name="RoboReadme43"></a>&quot;Check Tip Against Version/Revision&quot; Fails If Default Version Is Set</h2>
+
+<p>If a default version label is defined for the Project Database, the Show History report does not work when you perform a <span style="font-weight: bold;">Check tips against version/revision</span> operation.</p>
+
+<h2>4.26 <a name="RoboReadme44"></a>Journal Report Fails</h2>
+
+<p>If you run a journal report from a UNIX client against a Version Manager File Server, no results are returned. To work around this issue, run the journal report from a Windows client or use the CLI <span class="syntax">vjournal</span> command.</p>
+
+
+<p class="returnToTop"><a href="#TOP">Return to Contents</a></p>
+<hr size="2" width="100%" noshade>
+<h1>5.0 <a name="RoboReadme45"></a>Known Windows Issues</h1>
+
+<h2>5.1 <a name="RoboReadme46"></a>Keyword Expansion Is Not Enabled by Default for C# Files</h2>
+
+<p>Be default, keyword expansion should be enabled for non-binary Visual Studio .NET files; however, <span class="syntax">*.cs</span> files have not yet been added to this list. An administrator can configure projects to expand keywords in this file type.  For details, see the <i>Serena ChangeMan Version Manager Administrator's Guide</i>.</p>
+
+<h2>5.2 <a name="RoboReadme47"></a>Logging Out of the File Server Generates an Error If You Log In Using the Old URL</h2>
+
+<p>Administrators see an error message when logging out of the File Server if they log in using the old URL (<span class="syntax">merantfs</span> rather than <span class="syntax">serenafs</span>).</p>
+
+<p>The error is harmless.</p>
+
+<h2>5.3 <a name="RoboReadme48"></a>File Server Expects a Configuration File to Have a &quot;.cfg&quot; Extension</h2>
+
+<p>If you open a project database (PDB) from a File Server and specify a configuration file with a name that doesn't have a &quot;.cfg&quot; extension, Version Manager does not recognize the configuration file.</p>
+
+<h2>5.4 <a name="RoboReadme49"></a>TrackerLink:  Associations Are Required for Check-In If Associations Are Required for Checkout</h2>
+
+<p>If you set up TrackerLink to require associations for checkout, you should also require associations for check-in.  Otherwise, the revision number of the checked in revision will not appear in the Tracker issue, and the issue information will not be added to the revision description.  You should also select the "Clean up associations on undo checkout" check box from the Serena TrackerLink Settings dialog box (Admin | TrackerLink Settings).</p>
+
+<p>If associations are not required on check-in, you can still complete associations during check-in by clicking the Associate Issues button on the Check In dialog box and clicking OK.</p>
+
+<h2>5.5 <a name="RoboReadme50"></a>Chmod.exe Is No Longer Installed</h2>
+
+<p>Chmod.exe is no longer part of the Version Manager installation.  For similar functionality, use the MSDOS Attrib command.</p>
+
+
+<p class="returnToTop"><a href="#TOP">Return to Contents</a></p>
+<hr size="2" width="100%" noshade>
+<h1>6.0 <a name="RoboReadme51"></a>Known UNIX Issues</h1>
+
+<h2>6.1 <a name="RoboReadme52"></a>Font Problems Can Occur in the Desktop Client on UNIX</h2>
+
+<p>To avoid font problems in the desktop client on UNIX systems, set the following environment variable:</p>
+
+<p style="margin-left: 4em;"><span class="syntax">LC_CTYPE=en_US.ISO8859-15</span></p>
+
+<h2>6.2 <a name="RoboReadme53"></a>PCLI:  Spaces in Directory Path Can Cause Errors</h2>
+
+<p>If the fully qualified path for the current working directory contains a space, attempts to run PCLI commands or launch the desktop client may fail with an error.  For example, if the current directory is <span class="syntax">/home/pvcs/my dir/test</span>, PCLI may return some version of the following message:</p>
+
+<p style="margin-left: 4em;"><span class="syntax">/usr/serena/vm/solaris/bin/pvcsvmdmn: /home/pvcs/my: does not exist</span></p>
+
+<p>To fix this problem, modify the <span class="syntax">pvcsvmdmn</span> script identified in the error message by changing the following line:</p>
+
+<p style="margin-left: 4em;"><span class="syntax">cd ${EXEDIR}</span></p>
+
+<p>To this:</p>
+
+<p style="margin-left: 4em;"><span class="syntax">cd &quot;${EXEDIR}&quot;</span></p>
+
+<p>This will resolve the problem.</p>
+
+<h2>6.3 <a name="RoboReadme54"></a>Version Manager Gets Project Information from the nfsmap File First, Then the File Server</h2>
+
+<p>If you want to make sure that Version Manager gets project information (such as configuration file locations) from the Version Manager File Server, make sure that the location is not also mapped by an entry in the <span class="syntax">nfsmap</span> file.</p>
+
+<h2>6.4 <a name="RoboReadme55"></a>VTRANSFER -r:  Attempting to Change the Case of a File Name on a Case-Insensitive File Server Fails to Rename the Archive</h2>
+
+<p>Attempting to change the case of a file name on a case-insensitive File Server fails to rename the archive.</p>
+
+<h2>6.5 <a name="RoboReadme56"></a>Solaris (United Kingdom and Ireland):  Patch Required to Prevent Inconsistent Time-Stamping in Java Applications</h2>
+
+<p>To prevent inconsistent time-stamping on Version Manager archives and workfiles, Solaris users in the United Kingdom and Ireland must download and install a patch from Sun Microsystems.  The patch, 105210-10 or later, is available from the Sun Microsystems customer support web site, <a href="http://sunsolve.Sun.com">http://sunsolve.Sun.com</a>.</p>
+
+<h2>6.6 <a name="RoboReadme57"></a>PCLI:  &quot;Kill&quot; Character Conflicts with PCLI Commands</h2>
+
+<p>The default kill character on HP-UX (Bourne and Korn shells) is @.  This character conflicts with the PCLI listfile command (@listfile) and specifying a workspace at the command line.  For example:</p>
+
+<p><span class="syntax">pcli listversionedfiles -prd:\productb -pp/newprj @listfile</span></p>
+
+<p><i>&#8212;or&#8212;</i></p>
+
+<p><span class="syntax">pcli getworklocation -sp/@/mariec/myworkspace...</span></p>
+
+<p>To avoid this conflict, set the kill character to a value other than @.  For example:</p>
+
+<p><span class="syntax">stty kill ^U </span>(sets the kill character to CTRL+U)</p>
+
+<h2>6.7 <a name="RoboReadme58"></a>Default File Descriptor Limit May Be Too Low on Some UNIX Systems</h2>
+
+<p>Some PCLI operations, such as ListVersionedFiles, can open many files at a time.  On some UNIX systems, the default open file descriptor limit may be set too low.  We recommend that you set your file descriptor limit to 128 or higher.  For very large databases, we recommend setting the limit as high as allowed by the operating system.  For C shell users, use the "limit" command to set the limit.  For Bourne and Korn shell users, use the "ulimit" command.  The default file descriptor limit varies on each operating system and by system configuration.  The default limit may or may not already be set higher than 128.</p>
+
+<p>A lack of file descriptors can manifest itself in various ways.  Typical problems include a failure to open or locate files in response to file-intensive commands such as AddFiles, ListVersionedFiles, and ImportArchives.</p>
+
+<h2>6.8 <a name="RoboReadme59"></a>Full Path to Helper Applications Sometimes Required</h2>
+
+<p>In some situations, the Helper application may not start correctly unless you enter a full path.</p>
+
+<p>Under the View | Options Application tab, you should enter full paths for the following applications:</p>
+
+<ol>
+
+  <li>
+    <p class="inList">The editor that Version Manager will use to display and edit your workfiles and to display reports</p>
+  </li>
+
+  <li>
+    <p class="inList">Adobe Acrobat Reader, used for viewing online manuals</p>
+  </li>
+
+  <li>
+    <p class="inList">An HTML browser, used for displaying reports and online help</p>
+  </li>
+
+</ol>
+
+<h2>6.9 <a name="RoboReadme60"></a>Solaris 8:  Problem with Calendar Sometimes Terminates Version Manager</h2>
+
+<p>When you select a date range using the Calendar feature, Version Manager may quit unexpectedly.  This is because of a known defect in Solaris 8 that is fixed in Solaris 9.  Sun has not published a plan to patch Solaris 8 for this known issue.  To work around this issue, enter the date ranges directly instead of selecting them from the calendar.</p>
+
+<h2>6.10 <a name="RoboReadme61"></a>Using Exceed 7.1 in Multiple Window Mode Causes Inconsistent Behavior in Version Manager</h2>
+
+<p>Using Exceed 7.1 in Multiple Window mode causes inconsistent behavior in Version Manager when you click tabs in a dialog box with multiple tabs.  The dialog box may move to the upper left corner of the screen.  This problem does not happen in Single Window Mode.</p>
+
+<h2>6.11 <a name="RoboReadme62"></a>HP-UX:  Exceed 7.1 Required</h2>
+
+<p>Earlier versions of Exceed may cause problems with random shut downs and other unexpected behavior.  This is an Exceed issue.  Upgrading to Exceed 7.1 should resolve these issues.</p>
+
+<h2>6.12 <a name="RoboReadme63"></a>Cannot Merge Revisions by Version Label If One or More Labels Use Only Numbers</h2>
+
+<p>Attempting to merge revisions (in either the desktop or web client)&#8212;or to show differences between revisions using the web client&#8212;using version labels comprising only numeric characters generates an error.</p>
+
+
+<p class="returnToTop"><a href="#TOP">Return to Contents</a></p>
+<hr size="2" width="100%" noshade>
+<h1>7.0 <a name="RoboReadme64"></a>Known LINUX Issues</h1>
+
+<h2>7.1 <a name="RoboReadme65"></a>System Hangs When You Check Out or Lock Files in a Project with Multiple Lowest-Level Promotion Groups</h2>
+
+<p>When you check out or lock files in a project that has multiple lowest-level promotion groups, the system may hang.  This problem occurs sporadically on under-powered or overworked systems.  Try closing other open applications to free more memory and CPU resources.</p>
+
+<h2>7.2 <a name="RoboReadme66"></a>"Segmentation fault (core dump)" Error Occurs During Execution of Command-Line Commands</h2>
+
+<p>See "Setting Up Your UNIX Environment for Version Manager" in Chapter 4 of the <i>Serena ChangeMan Version Manager Installation Guide</i>.</p>
+
+<h2>7.3 <a name="RoboReadme67"></a>Red Hat 9:  Japanese Characters Are Corrupted</h2>
+
+<p>Fields, such as the <b>File name</b> field of the Select Workfiles dialog box, may display corrupted Japanese characters.</p>
+
+<p><b>To fix this issue:</b></p>
+
+<ol>
+
+  <li>
+    <p class="inList">Navigate to the following directory:</p>
+
+    <p class="inList"><span class="syntax"><i>VM_Install_Dir</i>/vm/common/java/linux/jre/lib</span></p>
+  </li>
+
+  <li>
+    <p class="inList">Rename the <span class="syntax">font.properties.ja</span> file to <span class="syntax">font.properties.ja.old</span>.</p>
+  </li>
+
+  <li>
+    <p class="inList">Rename the <span class="syntax">font.properties.ja.Redhat8.0</span> file to <span class="syntax">font.properties.ja</span>.</p>
+  </li>
+
+</ol>
+
+<p>You may need to install certain fonts described in this properties file.  Execute the following command to determine whether you have a particular font installed:</p>
+
+<p><span class="syntax">xlsfonts | grep <i>fontName</i></span></p>
+
+
+<p class="returnToTop"><a href="#TOP">Return to Contents</a></p>
+<hr size="2" width="100%" noshade>
+<h1>8.0 <a name="RoboReadme68"></a>Known PCLI Issues</h1>
+
+<h2>8.1 <a name="RoboReadme69"></a>Spaces Not Supported in a Variable Index</h2>
+
+<p>When referencing a variable's elements in PCLI, do not use leading or trailing spaces.  For example:</p>
+
+<p>$FOO[ 3 ] should be changed to $FOO[3]</p>
+
+<h2>8.2 <a name="RoboReadme70"></a>Exporting and Then Importing a Project Database Works Only with the Same Platform</h2>
+
+<p>When you export a project database on Windows, you can import it only on Windows; you cannot import it on UNIX without manually converting all the pathnames in the exported file and in the configuration file(s) it references.  The same is true when you import a file on Windows that was exported on UNIX.</p>
+
+<h2>8.3 <a name="RoboReadme71"></a>Wildcard Characters Do Not Work at the Top Level of Workspace Paths</h2>
+
+<p>You cannot use wildcard characters at the top level of workspace paths.  For example, if you enter the following, the PCLI does not list the names of any public or private workspaces:</p>
+
+<p><span class="syntax">pcli list /@/*</span></p>
+
+<p>However, this command lists all private workspaces of AdamJ, provided you are logged in to the project database as AdamJ:</p>
+
+<p><span class="syntax">pcli list /@/AdamJ/*</span></p>
+
+<p>The following command lists all the public workspaces:</p>
+
+<p><span class="syntax">pcli list /@/Public/*</span></p>
+
+<h2>8.4 <a name="RoboReadme72"></a>CTRL+D/CTRL+Z Cannot Be Used to End Descriptions</h2>
+
+<p>When you are being prompted to enter a description by the AddFiles or Put command, you cannot use the EndOfFile (EOF) character of the operating system you are running on (UNIX:  CTRL+D, Windows:  CTRL+Z).  When prompted, enter a single period (.) on a line by itself to end the description.  Windows users can also press CTRL+D.</p>
+
+<p>Note that this is different from the old-style command-line interface (CLI) that allows you to enter the EOF character to end the description.</p>
+
+<h2>8.5 <a name="RoboReadme73"></a>Slashes (/&nbsp;\), Square Brackets ([&nbsp;]), and Colons (:) in Workspace and User Names May Cause Problems</h2>
+
+<p>Workspace or user names that contain slashes (/&nbsp;\), square brackets ([&nbsp;]), or colons (:) can cause PCLI commands and the import/export of project databases to fail.  Change any such preexisting names before importing/exporting or using other PCLI commands.</p>
+
+<h2>8.6 <a name="RoboReadme74"></a>HP-UX:  PCLI Out of Memory Messages Appear</h2>
+
+<p>On HP-UX systems only, in certain situations, running a complex PCLI script (or many java processes) may result in a message similar to:  "You have encountered an out of memory error.  Please restart Version Manager and try the operation again.  If you continue to have problems, contact your Version Manager administrator for further assistance.  java.lang.OutOfMemoryError:  unable to
+create new native thread...".  Additional Java errors may appear after this message.</p>
+
+<p>HP has a tool called "HPjconfig" that may remedy this situation.  It is designed to tune HP-UX to use Java applications.  Go to <a href="http://www.hp.com">http://www.hp.com</a> and search for "HPjconfig".  Note:  Changes made by HPjconfig will require modifications to the kernel.</p>
+
+<h2>8.7 <a name="RoboReadme75"></a>PCLI Put -r: Specifying a Revision Number Results in a Yes/No Prompt</h2>
+
+<p>If you specify a revision number during check-in, you are prompted to confirm the action.  Use the <span class="syntax">run -y put</span> command in your scripts to automatically answer &quot;Yes&quot; to this prompt.</p>
+
+<h2>8.8 <a name="RoboReadme76"></a>PCLI:  Deploy Command Fails When the Version Manager Username or Password Contains Spaces</h2>
+
+<p>Running Deploy from the command line fails if the Version Manager username or password contains spaces.  The problem does not occur when you perform the deploy operation directly from Mover.</p>
+
+
+<p class="returnToTop"><a href="#TOP">Return to Contents</a></p>
+<hr size="2" width="100%" noshade>
+<h1>9.0 <a name="RoboReadme77"></a>Conversion Utility for SourceSafe</h1>
+
+<h2>9.1 <a name="RoboReadme78"></a>General</h2>
+
+<p>The Version Manager Conversion Utility for SourceSafe can convert your existing SourceSafe databases into Version Manager project databases.</p>
+
+<p>Please refer to the <i>Serena ChangeMan Version Manager Administrator's Guide</i> for information about how to use this utility.</p>
+
+
+<p class="returnToTop"><a href="#TOP">Return to Contents</a></p>
+<hr size="2" width="100%" noshade>
+<h1>10.0 <a name="RoboReadme79"></a>Documentation Issues</h1>
+
+<h2>10.1 <a name="RoboReadme80"></a>Adobe Acrobat Full-Text Search Gives Duplicate Results</h2>
+
+<p>Adobe Acrobat may remember the last index that was used for a full-text search.  This can cause Acrobat to search the index of the current document and of a previous document, resulting in duplication of search results.  To avoid this, make sure that only the index for the current document
+is selected (see the installation guide for details on selecting a search index).</p>
+
+<h2>10.2 <a name="RoboReadme81"></a>Help Does Not Work on Internet Explorer Using Sun's 1.4.0x JRE</h2>
+
+<p>The Version Manager help will not launch on Internet Explorer if IE is using Sun's 1.4.0x JRE.  Use 1.3x or 1.4.1x instead.</p>
+
+<h2>10.3 <a name="RoboReadme82"></a>Help TOC Does Not Resize in Netscape</h2>
+
+<p>If you resize the Netscape browser window, the TOC pane of the help may not resize correctly.  To reload the TOC into the resized pane, click the Hide Navigation link, then click the Show Navigation link.</p>
+
+<h2>10.4 <a name="RoboReadme83"></a>Help Navigation Pane Invisible with Sun's JVM</h2>
+
+<p>When you view the online help on Windows&nbsp;XP using Microsoft IE&nbsp;6.0 with Sun's JVM, the navigation pane in the online help comes up blank.  You can work around this by disabling Sun's JVM and using the Microsoft JVM to view the help.</p>
+
+<h2>10.5 <a name="RoboReadme84"></a>Solaris: Help Navigation Pane Crashes Netscape</h2>
+
+<p>On Solaris systems, invoking the navigation pane of the Version Manager help may crash the Netscape browser.  You can work around this by using the Mozilla browser.</p>
+
+<p>&nbsp;</p>
+
+
+
+
+<table class="part" width="100%">
+  <tr>
+    <td>
+      <p class="part">Part 2:  Version Manager IDE Client</p>
+    </td>
+  </tr>
+</table>
+
+
+<p class="returnToTop"><a href="#TOP">Return to Contents</a></p>
+<hr size="2" width="100%" noshade>
+<h1>11.0 <a name="RoboReadme85"></a>Important Information</h1>
+
+<h2>11.1 <a name="RoboReadme86"></a>Supported Platforms</h2>
+
+<p class="intro">The Version Manager IDE client is supported on:</p>
+
+<ul>
+  <li>Windows 2000 Professional and Server (Service Pack 2)</li>
+  <li>Windows XP Professional</li>
+  <li>Windows XP 64-Bit Edition</li>
+  <li>Windows 2003 Server</li>
+</ul>
+
+<p>The following web server configurations are supported for use with Microsoft FrontPage and Visual InterDev web projects:</p>
+
+<table class="standard" style="margin-bottom: 14.0pt;" cellspacing="0" cellpadding="4" border="2" summary="Two-column table">
+  <tr>
+    <th align="left">Web Server</th>
+    <th align="left">Operating System</th>
+  </tr>
+
+  <tr>
+    <td class="tablecell">IIS 5.0</td>
+    <td class="tablecell">Windows 2000 Server</td>
+  </tr>
+
+  <tr>
+    <td class="tablecell">IIS 6.0</td>
+    <td class="tablecell">Windows 2003 Server</td>
+  </tr>
+</table>
+
+<p><b>NOTE:</b>  If you are using IIS 6 on Windows 2003 Server, there is a little extra work you need to do to set up isapi-redirect.dll as a Web Service Extension File.  See <a href="http://support.microsoft.com/default.aspx?scid=kb;en-us;328419">Microsoft Knowledge Base Article 328419</a>.</p>
+
+<h2>11.2 <a name="RoboReadme87"></a>Supported IDEs</h2>
+
+<p class="intro">The Version Manager IDE client supports the following development environments:</p>
+
+<ul>
+  <li>Eclipse 2.1.2 and 3.0</li>
+  <li>Eclipse 3.0.1 (rich integration)</li>
+  <li>IBM VisualAge for Java 4.0 (requires the IBM External Version Control Fixpack)</li>
+  <li>IBM WebSphere Studio Application Developer 5 (Eclipse)</li>
+  <li>IBM Rational Application Developer 6</li>
+  <li>Macromedia ColdFusion Studio 5.0</li>
+  <li>Mercury Interactive TestDirector 7.6 &amp; 8</li>
+  <li>Microsoft FrontPage 2000, 2002 (XP), and 2003</li>
+  <li>Microsoft Visual Basic 6.0</li>
+  <li>Microsoft Visual C++ 6.0</li>
+  <li>Microsoft Visual InterDev 6.0</li>
+  <li>Microsoft Visual Studio .NET 2002 &amp; 2003</li>
+  <li>Rational Rose Enterprise 2002</li>
+  <li>Sybase PowerBuilder 9 &amp; 10</li>
+  <li>TogetherSoft Together ControlCenter 6.0</li>
+  <li>WebGain VisualCafe 4.5</li>
+</ul>
+
+<p><b>NOTE:</b>  For integration with IBM VisualAge for Java, you must install the appropriate IBM patch as noted above.</p>
+
+<h2>11.3 <a name="RoboReadme88"></a>Using Only Windows Security for Web Projects</h2>
+
+<p>Version Manager projects associated with Visual InterDev/FrontPage web projects rely on Windows security.  For your web projects, do not configure access control databases.</p>
+
+<p>See the <i>Serena ChangeMan Version Manager IDE Client Implementation Guide</i> for more information.</p>
+
+<h2>11.4 <a name="RoboReadme89"></a>Supported Serena TrackerLink Versions</h2>
+
+<p>The Version Manager IDE client is certified for use with Serena TrackerLink 6.5 and above.</p>
+
+
+<p class="returnToTop"><a href="#TOP">Return to Contents</a></p>
+<hr size="2" width="100%" noshade>
+<h1>12.0 <a name="RoboReadme90"></a>Installation Issues</h1>
+
+<h2>12.1 <a name="RoboReadme91"></a>You Must Uninstall the Previous IDE Client Before You Upgrade</h2>
+
+<p>To use version 8 of the Version Manager IDE client, you must uninstall any previous version of the IDE client on your system before installing Version Manager 8.  If you wish to use an older verson of the IDE clinet once Version Manager 8 is installed, you must uninstall Version Manager 8 before installing the older software.</p>
+
+<h2>12.2 <a name="RoboReadme92"></a>TrackerLink Users Must Select a Source Control Provider</h2>
+
+<p>If Serena TrackerLink is installed to your system, it remains the active source control provider after you install the IDE client.</p>
+
+<p><span style="font-weight: bold;">To use the IDE client with TrackerLink:</span></p>
+
+<ol>
+
+  <li>
+    <p class="inList">Exit any open IDEs.</p>
+  </li>
+
+  <li>
+    <p class="inList">Select TrackerLink from the Serena Tracker program group in your Start menu.  The Serena TrackerLink dialog box appears.</p>
+  </li>
+
+  <li>
+    <p class="inList">Select Serena ChangeMan Version Manager from the SCC Provider drop-down list.</p>
+  </li>
+
+  <li>
+    <p class="inList">Click the Activate button.  The change will take effect the next time you start your IDE.</p>
+  </li>
+
+</ol>
+
+<p><span style="font-weight: bold;">To use the IDE client without TrackerLink:</span></p>
+
+<ol>
+
+  <li>
+    <p class="inList">Exit any open IDEs.</p>
+  </li>
+
+  <li>
+    <p class="inList">Select Serena | Serena ChangeMan Version Manager | Version Manager IDE Client | Select Serena Provider from the Windows Start menu.  The Select Serena Provider dialog box appears.</p>
+  </li>
+
+  <li>
+    <p class="inList">Select Serena ChangeMan Version Manager.</p>
+  </li>
+
+  <li>
+    <p class="inList">Click OK.  The change will take effect the next time you start your IDE.</p>
+  </li>
+
+</ol>
+
+<a name="eclipseunc"></a>
+<h2>12.3 <a name="RoboReadme93"></a>Eclipse 2:  UNC Workstation Installation Requires Edit to setup.ini File</h2>
+
+<p>If you use a UNC path to install Version Manager to the network in preparation for a workstation installation of the Eclipse 2 plugin, you must edit the <span class="syntax">setup.ini</span> file
+before installing to workstations or the Eclipse integration will not work correctly.</p>
+
+<p><b>To modify a UNC workstation installation for use with Eclipse 2:</b></p>
+
+<ol>
+
+  <li>
+    <p class="inList">Install Version Manager to a network location as outlined in the <i>Serena ChangeMan Version Manager Installation Guide</i>.</p>
+  </li>
+
+  <li>
+    <p class="inList">Open the <span class="syntax">\workinst\setup.ini</span> file with a text editor.</p>
+  </li>
+
+  <li>
+    <p class="inList">Locate the <span class="syntax">[Workstation]</span> section of the file.  The text will be similar to the following:</p>
+
+    <p class="inList"><span class="syntax">[Workstation]<br>InstallDir=<b>\\server\shared\serena\</b><br>vmdevint=\\server\shared\serena\vm\common\vmdevint</span></p>
+  </li>
+
+  <li>
+    <p class="inList">Change the UNC path on the <span class="syntax">InstallDir=</span> line to a drive mapping available to all workstations.  For example:</p>
+
+    <p class="inList"><span class="syntax">[Workstation]<br>InstallDir=<b>g:\serena\</b><br>vmdevint=\\server\shared\serena\vm\common\vmdevint</span></p>
+  </li>
+
+  <li><p class="inList">Save the file.</p></li>
+
+  <li><p class="inList">You can now install to each workstation.</p></li>
+
+</ol>
+
+<h2>12.4 <a name="RoboReadme94"></a>IIS 6 on Windows 2003 Server Requires Extra Setup</h2>
+
+<p>If you are using IIS 6 on Windows 2003 Server, there is a little extra work you need to do to set up isapi-redirect.dll as a Web Service Extension File.  See <a href="http://support.microsoft.com/default.aspx?scid=kb;en-us;328419">Microsoft Knowledge Base Article 328419</a>.</p>
+
+
+<p class="returnToTop"><a href="#TOP">Return to Contents</a></p>
+<hr size="2" width="100%" noshade>
+<h1>13.0 <a name="RoboReadme95"></a>General Known Issues</h1>
+
+<h2>13.1 <a name="RoboReadme96"></a>Cannot Switch Between IDE Client Versions Without Reinstalling</h2>
+
+<p>If you wish to use a previous version of the Version Manager IDE client (Development Interface), you must uninstall the current version of Version Manager and then reinstall the older version.  To switch back to the current version, you must uninstall the older version and then reinstall the current version.</p>
+
+<h2>13.2 <a name="RoboReadme97"></a>Interface Libraries Are Listed As Version 8,0,0,1</h2>
+
+<p>In the help (Help | About), the interface libraries are listed incorrectly as version 8,0,0,1; however, the build numbers are correct.</p>
+
+
+<p class="returnToTop"><a href="#TOP">Return to Contents</a></p>
+<hr size="2" width="100%" noshade>
+<h1>14.0 <a name="RoboReadme98"></a>Known Issues in SCC IDEs</h1>
+
+<h2>14.1 <a name="RoboReadme99"></a>SourceBridge:  &quot;Failed to Initialize...&quot;</h2>
+
+<p>If you install SourceBridge while TrackerLink is still set as the SCC provider, SourceBridge will try to use TrackerLink as the SCC provider.  Source control will not work.</p>
+
+<p>To correct this, set the SCC provider in the System Settings tab of the SourceBridge dialog box.  For details, see the "About Setting Up SourceBridge" section of the <i>Serena ChangeMan Version Manager Administrator's Guide</i>.</p>
+
+<h2>14.2 <a name="RoboReadme100"></a>ColdFusion:  Pulse Displays Redundant Information</h2>
+
+<p>If you close one project and open another without restarting ColdFusion, Pulse may display redundant source control activity information.</p>
+
+<h2>14.3 <a name="RoboReadme101"></a>PowerBuilder:  Removing Locks on Unchanged Revisions Always Required</h2>
+
+<p>Version Manager allows you to configure a project database or project to always remove locks on unchanged files.  If you are working with Version Manager projects within PowerBuilder, be sure to set this option.  If you do not, objects in your PowerBuilder application may become out of sync with their associated versioned files when you undo a checkout or when you check in an unchanged revision.  Objects may appear to be unlocked in PowerBuilder when in fact their associated Version Manager archives are still locked.</p>
+
+<p>See the <i>Serena ChangeMan Version Manager Administrator's Guide</i> for more information.</p>
+
+<h2>14.4 <a name="RoboReadme102"></a>Pulse:  Displays &quot;pvcs.vm.param.LogInfo&quot; Messages</h2>
+
+<p>Pulse may display messages containing the text &quot;pvcs.vm.param.LogInfo&quot;.  Disregard these messages.</p>
+
+<h2>14.5 <a name="RoboReadme103"></a>Rational Rose:  Error Occurs on Get or on Undo Checkout</h2>
+
+<p>When you perform a get or when you undo checkout of a file or a unit, Rational Rose may display a Version Control Integration message, and the operation may fail.  See the sections below for information on successfully performing a get or undoing checkout.</p>
+
+<h3 class="keepWithNext">Write-Protecting Before Getting Files</h3>
+
+<p class="introSub">To ensure that you can successfully get a file or unit, do one of the following before getting:</p>
+
+<ul class="sub">
+  <li>If you are working with a model file, right-click the file and select Write Protect from the pop-up menu.</li>
+  <li>If you are working with a unit, right-click the unit and select Units | Write Protect from the pop-up menu.</li>
+</ul>
+
+<p class="sub">You can now get the file.</p>
+
+<h3 class="keepWithNext">Completing Undo Checkout</h3>
+
+<p class="introSub">If a Version Control Integration message appears during undo checkout, the following has occurred:</p>
+
+<ul class="sub">
+  <li>The Version Manager archive was successfully unlocked.</li>
+  <li>The workfile has not been refreshed with the latest revision in the Version Manager archive.</li>
+</ul>
+
+<p class="sub">To complete undo checkout, you can get the latest revision of the file by write-protecting it and getting it as explained in the section above.</p>
+
+<p class="sub">To avoid this error on future undo checkout operations, write-protect the model file or unit before attempting the operation.</p>
+
+<h2>14.6 <a name="RoboReadme104"></a>Rational Rose:  Tracker Admin Dialog Box Is Not Available</h2>
+
+<p>In most SCC IDEs, you can submit issues and switch Tracker projects from the TrackerLink Admin dialog box.  In most cases, this dialog box appears when you choose to run the external source control application.</p>
+
+<p>Rational Rose, however, does not display the Tracker Admin dialog box.  When you select Tools | Version Control | Start Version Control Explorer, the TrackerLink Settings dialog box appears instead.</p>
+
+<p>Although there is currently no way to access the TrackerLink Admin dialog box from within Rational Rose, you can still submit issues and switch projects.  See the next two sections for more information.</p>
+
+<h3 class="keepWithNext">Submitting Issues</h3>
+
+<p class="introSub">There are two ways to submit issues with Rational Rose:</p>
+
+<ul class="sub">
+  <li>In Rational Rose, start the check-in process, submit an issue from the Workfile Association dialog box, and then cancel the check-in process.  The issue will be successfully submitted.</li>
+  <li>Use the Tracker desktop client.</li>
+</ul>
+
+<h3 class="keepWithNext">Logging In to Different Projects</h3>
+
+<p class="sub">Complete the procedure below if you are using TrackerLink with Rational Rose and wish to switch to a different Tracker project:</p>
+
+<ol class="sub">
+
+  <li>
+    <p class="inList">Select Tools | Version Control | Start Version Control Explorer.  The Serena TrackerLink Settings dialog box appears.</p>
+  </li>
+
+  <li>
+    <p class="inList">Deselect the <span style="font-weight: bold;">Auto-login to project</span> check box.  Once this option is deselected, you will be prompted to log in to a Tracker project every time you start Rational Rose.</p>
+  </li>
+
+  <li>
+    <p class="inList">Exit and restart Rational Rose.  The Tracker login dialog box appears.</p>
+  </li>
+
+  <li>
+    <p class="inList">Complete the login process.</p>
+  </li>
+
+</ol>
+
+<h2>14.7 <a name="RoboReadme105"></a>Cleanup Required When You Unlock Files with TrackerLink Associations</h2>
+
+<p>You can configure TrackerLink to "clean up" records from files that have been unlocked.  Cleaning up removes the association with the file.  If you are working with TrackerLink 6.5 and you unlock an unchanged file that you have associated with an issue, the file remains associated with the issue.  This does not occur with TrackerLink 6.6 or later.</p>
+
+<h2>14.8 <a name="RoboReadme106"></a>VisualAge for Java:  A Series of Login Dialog Boxes Appear</h2>
+
+<p>When you add a new VisualAge for Java project to source control, a series of Login dialog boxes may appear if all of the following are true:</p>
+
+<ul>
+
+  <li>
+    <p class="inList">An access control database is associated with the project database, and security is in effect.</p>
+  </li>
+
+  <li>
+    <p class="inList">You create the new project as a subproject under existing Version Manager projects.</p>
+  </li>
+
+</ul>
+
+<p>You may be prompted to log in to each level of the project structure twice.  This behavior occurs only when you add a project to source control.</p>
+
+<h2>14.9 <a name="RoboReadme107"></a>Visual Basic:  Prompts for Confirmation of Check-In Location</h2>
+
+<p>Visual Basic may prompt you to confirm the check-in location even though you are checking a file in from the same location to which you checked it out.  This occurs when the case in the filename is changed during the check-in process.  When prompted to check in anyway, select Yes.  The file will be properly checked in to the correct location.</p>
+
+<h2>14.10 <a name="RoboReadme108"></a>Workfile Location Options Are Available for Getting Projects</h2>
+
+<p>Some IDEs allow you to get an entire project from source control, which copies all files in the Version Manager project to the location of your choice.  You can specify any workfile location except a root drive (such as <span class="syntax">C:\</span>).</p>
+
+<h2>14.11 <a name="RoboReadme109"></a>IFC_COM.DLL Listed as Not Loaded on About Tab</h2>
+
+<p>The About tab of the Options dialog box lists the Version Manager modules and their version numbers.  The IFC_COM.DLL may be listed as "not loaded" since the Options dialog box is part of the SCC interface, which does not use the IFC_COM.DLL.</p>
+
+<h2>14.12 <a name="RoboReadme110"></a>Visual Studio .NET:  Error Occurs When You Add a C# ASP Project to Source Control</h2>
+
+<p>When you add a C# ASP project to source control, you may receive an error stating that the <span class="syntax">*.csproj.vcpscc</span> file is not under source control.  This may be followed by another error stating that a writable <span class="syntax">~sak*.tmp</span> (or similarly named) file already exists.</p>
+
+<p>Click OK to dismiss these dialog boxes.  They are a result of the IDE testing the source control connection and do not reflect an actual problem with your project.</p>
+
+
+<p class="returnToTop"><a href="#TOP">Return to Contents</a></p>
+<hr size="2" width="100%" noshade>
+<h1>15.0 <a name="RoboReadme111"></a>Known FrontPage/InterDev Web Project Issues</h1>
+
+<h2>15.1 <a name="RoboReadme112"></a>FrontPage Allows You to Delete Locked Files</h2>
+
+<p>Due to a limitation of the Microsoft FrontPage server extensions, other users may be able to delete files that you have checked out.  To prevent accidental deletion, use Windows security to protect your files, or be sure to notify other users when you check out files.</p>
+
+<h2>15.2 <a name="RoboReadme113"></a>Files Appear to Lose Source Control Status</h2>
+
+<p>FrontPage allows you to view a read-only copy of a file that is currently checked out by another user.  When you close the file, it may appear to lose its source control status in the FrontPage project explorer.  Double-click the file to refresh its status.</p>
+
+<h2>15.3 <a name="RoboReadme114"></a>FrontPage:  Square Brackets [&nbsp;] in Folder, Project, or File Names May Cause Problems</h2>
+
+<p>If you use square brackets [&nbsp;] in folder, project, or file names, source control operations may fail.  Avoid using square brackets in folder, project, and file names.</p>
+
+<h2>15.4 <a name="RoboReadme115"></a>Visual InterDev 6 Does Not Indicate Who Has a File Locked</h2>
+
+<p>If you try to delete a file that is checked out by another user, you receive an error message stating that the file is checked out.  The message should include the ID of the locker, but it does not.</p>
+
+
+<p class="returnToTop"><a href="#TOP">Return to Contents</a></p>
+<hr size="2" width="100%" noshade>
+<h1>16.0 <a name="RoboReadme116"></a>Known Issues in Eclipse IDEs</h1>
+
+<h2>16.1 <a name="RoboReadme117"></a>Eclipse:  SCC Plug-In Sometimes Fails to Initialize After Version Manager Installation</h2>
+
+<p><b>Workaround:</b>  Reboot to update your system's path information.</p>
+
+<h2>16.2 <a name="RoboReadme118"></a>Eclipse 5:  Conflicts May Occur with the ATL.DLL File Placed by Another Application</h2>
+
+<p>If you receive an error similar to &quot;Ordinal 58 not found at ATL.DLL&quot; when launching an Eclipse-based IDE, you may need to update your ATL.DLL file.  Check the ATL.DLL file in the system32 directory of your Windows installation.  The ATL.DLL file should be about 60 KB in size.  If it is much smaller, the installation of another program has overwritten the file with an outdated version.  Obtain the current version from Microsoft or from another computer that has the proper version installed.<p>
+
+<p>For information on Microsoft DLLs, see <a href="http://support.microsoft.com/default.aspx?scid=/servicedesks/fileversion/dllinfo.asp&amp;SD=msdn">support.microsoft.com</a>.</p>
+
+
+<p class="returnToTop"><a href="#TOP">Return to Contents</a></p>
+<hr size="2" width="100%" noshade>
+<h1>17.0 <a name="RoboReadme119"></a>Known Issues in Eclipse and .NET Rich Integrations</h1>
+
+<h2>17.1 <a name="RoboReadme120"></a>Eclipse:  &quot;Null Output&quot; and &quot;Resource Key&quot; Errors</h2>
+
+<p>On systems that are not set to the <span class="syntax">en_US</span> locale, the following errors may occur in the Eclipse Rich Integration:</p>
+
+<ul>
+
+  <li>
+    <p class="inList">&quot;null.output.blank2&quot; appears in dialog boxes.  To eliminate these error messages, see KnowledgeBase article 71502, available from <a href="http://support.serena.com" target="_blank">Serena&nbsp;Support</a>.</p>
+  </li>
+
+  <li>
+    <p class="inList">&quot;Resource Key&quot; errors occur in the <span class="syntax">serena_java.log</span> file in your Serena installation directory.  These errors do not mean that features are not working correctly; however, to ensure that the log remains readable, you can edit the log to remove these error messages.</p>
+  </li>
+
+</ul>
+
+<h2>17.2 <a name="RoboReadme121"></a>Eclipse:  TeamTrack Integration Requires Java Runtime Environment (JRE) 1.4.2_06 or Later</h2>
+
+<p>If you are using an old version of the Java Runtime Environment (JRE), the Eclipse Issue view may not display reports and issues due to a TeamTrack authentication problem exhibited with versions of the JRE prior to 1.4.2_06.</p>
+
+<h2>17.3 <a name="RoboReadme122"></a>Eclipse:  Copy All Changes Toolbar Button Not Working</h2>
+
+<p>In the Compare Revisions dialog box, the &quot;copy all non-conflicting changes from right to left&quot; toolbar button does not work.</p>
+
+<p><b>Workaround:</b>  Click the &quot;three-way compare&quot; toolbar button.</p>
+
+<h2>17.4 <a name="RoboReadme123"></a>Eclipse:  Plug-In Attribution Refers to Eclipse 3.1 Instead of 3.0</h2>
+
+<p>The &quot;About&quot; pages and the <span class="syntax">about.mappings</span> file say:  &quot;Serena ChangeMan Version Manager offering includes Eclipse plug-ins that can be installed and used with other Eclipse (3.1)-based offerings.&quot;  This should be:  &quot;Serena ChangeMan Version Manager offering includes Eclipse plug-ins that can be installed and used with other Eclipse (3.0)-based offerings.&quot;</p>
+
+<h2>17.5 <a name="RoboReadme124"></a>Eclipse Command Line:  You Can Specify a Larger Heap Size If You Have Extremely Large Projects</h2>
+
+<p>Update your Windows shortcut (target value) to use the heap size of your choosing.  For example, if the location of the Eclipse executable is <span class="syntax">D:\eclipse3.0.1\eclipse\eclipse.exe</span> and you want to specify a heap size of 512m, enter the following command:</p>
+
+<p style="margin-left: 4em;"><span class="syntax">D:\eclipse3.0.1\eclipse\eclipse.exe -vmargs -Xmx512m</span></p>
+
+<p>Choose a value that is suitable for the amount of memory on your machine.</p>
+
+<h2>17.6 <a name="RoboReadme125"></a>.NET:  Sort Order in the Compare Workspaces Tree View Can Get Out of Synch</h2>
+
+<p>One action that causes this is double-clicking the Name column.</p>
+
+<h2>17.7 <a name="RoboReadme126"></a>.NET:  History View Displays Only One Line of a Multiline Comment</h2>
+
+<p>In the Version Manager revision pane, end-of-line characters are removed so that the full comment is visible; however, in the History View in Visual Studio .Net, the comment column shows only the first line of the comment.</p>
+
+<h2>17.8 <a name="RoboReadme127"></a>.NET:  Changes Persist in the Set User Options Dialog Box After You Click Cancel</h2>
+
+<p>If you click <b>Cancel</b> (rather than <b>OK</b>) after changing settings in the Set User Options dialog box, the changes are not implemented; however, they still appear in the dialog box when you open it again.  Be careful to note the settings in that dialog box before you click <b>OK</b>.</p>
+
+<h2>17.9 <a name="RoboReadme128"></a>.NET:  Undo Checkout Disabled in the File Status View Context Menu</h2>
+
+<p>This applies to the context menu only; Undo Checkout works properly from the toolbar.</p>
+
+<h2>17.10 <a name="RoboReadme129"></a>.NET:  Compare Workspaces View Does Not Refresh After Forcing Update</h2>
+
+<p>When you force an update from the Compare Workspaces view in order to add a new project to your local workspace, the Compare Workspaces view may continue to display the new project even after you have successfully updated your local workspace.  Choosing to force an update a second time may then cause an error.</p>
+
+<h2>17.11 <a name="RoboReadme130"></a>.NET:  Move Failures May Cause Instability</h2>
+
+<p>In the case of a failure during a move operation, .NET tries to recover; however, if it fails to do so, the IDE may remain unstable.  In this case, return your assets to their original state and perform the move operation again.</p>
+
+<h2>17.12 <a name="RoboReadme131"></a>.NET:  Overwriting a Local Workspace Causes Failures</h2>
+
+<p>In the .NET IDE, if you add a project from Version Manager and specify the local workspace used by the current solution, files with names similar to those in the current project may fail to open.  You must then reopen the project from source control to another location so that you can clean things up.</p>
+
+<p>For best results, do not overwrite a local workspace.</p>
+
+<h2>17.13 <a name="RoboReadme132"></a>.NET:  CAB Projects Added to an Existing Solution Cannot Be Checked In to the Version Manager Repository</h2>
+
+<p>Do not add CAB projects from Version Manager to a solution that is already under source control.</p>
+
+<h2>17.14 <a name="RoboReadme133"></a>.NET:  CAB Projects Do Not Support a Context Menu</h2>
+
+<p>CAB projects in .NET do not support a context menu; however, all operations are available from the main menu.</p>
+
+<h2>17.15 <a name="RoboReadme134"></a>.NET (Compare Workspaces):  Cannot Commit an Unsaved CAB Project</h2>
+
+<p>From the Compare Workspaces view, you cannot commit a CAB project that has not been saved.</p>
+
+<h2>17.16 <a name="RoboReadme135"></a>.NET (Compare Workspaces):  Update of Remotely Added Project Results in Missing Menu Items</h2>
+
+<p>If you are unable to operate on a project that has been added through a synchronize operation, close the project and reopen it from source control.</p>
+
+<h2>17.17 <a name="RoboReadme136"></a>TeamTrack Integration:  Upper-ASCII Characters May Be Displayed Incorrectly</h2>
+
+<p>If TeamTrack data includes upper-ASCII characters and the character set is not consistent among the TeamTrack database, server operating system, and Administrator settings, the Rich Integration interfaces may not display the characters correctly.</p>
+
+<p>&nbsp;</p>
+
+
+
+
+<table class="part" width="100%">
+  <tr>
+    <td>
+      <p class="part">Part 3:  Version Manager Web Client</p>
+    </td>
+  </tr>
+</table>
+
+
+<p class="returnToTop"><a href="#TOP">Return to Contents</a></p>
+<hr size="2" width="100%" noshade>
+<h1>18.0 <a name="RoboReadme137"></a>Installation Considerations</h1>
+
+<h2>18.1 <a name="RoboReadme138"></a>Supported Version Manager Web Server Platforms</h2>
+
+<p>Version Manager Server is supported on the platforms shown below.</p>
+
+<h3 class="keepWithNext">Supported Windows Platforms</h3>
+
+<p class="introSub">Supported Operating Systems:</p>
+
+<ul class="sub">
+  <li>Windows 2000 Server and Advanced Server SP2</li>
+  <li>Windows 2000 Advanced Server 64-Bit Edition</li>
+  <li>Windows 2003 Server</li>
+</ul>
+
+<p class="introSub">Supported Web Servers:</p>
+
+<ul class="sub">
+  <li>iPlanet 6.0 SP1</li>
+  <li>Java System Web Server 6.1 SP1</li>
+  <li>Microsoft Internet Information Server 5.0 (Windows 2000)</li>
+  <li>Microsoft Internet Information Server 6.x (Windows 2003)</li>
+</ul>
+
+<p class="sub"><b>NOTE:</b>  If you are using IIS 6 on Windows 2003 Server, there is a little extra work you need to do to set up isapi-redirect.dll as a Web Service Extension File.  See <a href="http://support.microsoft.com/default.aspx?scid=kb;en-us;328419">Microsoft Knowledge Base Article 328419</a>.</p>
+
+<p class="introSub">Requirements:</p>
+
+<p class="sub">Memory requirements for the server depend upon how many users access the server at the same time and how many daemon processes are running (by default, 5 to 20 daemons will be running).  Use the formula in the table below to calculate your memory needs.</p>
+
+<table class="sub" style="margin-bottom: 14.0pt;" cellspacing="0" cellpadding="4" border="2" summary="Five-column table">
+  <tr><th class="tablehead" colspan="5">Server Systems</th></tr>
+  <tr>
+    <th>&nbsp; </th>
+    <th align="left">Base</th>
+    <th align="left">Concurrent Users</th>
+    <th align="left">Daemons</th>
+    <th align="left">Total</th></tr>
+  <tr>
+    <td class="tablecell"><b>Formula</b></td>
+    <td class="tablecell">256 MB</td>
+    <td class="tablecell">+ 6 MB per user</td>
+    <td class="tablecell">+ 8 MB per daemon</td>
+    <td class="tablecell">= ?</td></tr>
+  <tr>
+    <td class="tablecell"><b>Example</b></td>
+    <td class="tablecell">256 MB</td>
+    <td class="tablecell">6 x 100 = 600 MB</td>
+    <td class="tablecell">8 x 20 = 160 MB</td>
+    <td class="tablecell">= 1016 MB</td></tr>
+</table>
+
+<p class="sub"><b>NOTE:</b>  The example is for the case of 100 concurrent users and 20 daemon processes.  It is included only to illustrate the use of the formula and <i>is not</i> intended as a recommendation.</p>
+
+<h3 class="keepWithNext">Supported UNIX Platforms</h3>
+
+<p class="introSub">Supported Operating Systems:</p>
+
+<ul class="sub">
+  <li>AIX 5.1, 5.2, and 5.3</li>
+  <li>HP-UX 11.00, 11.11, and 11.23</li>
+  <li>Red Hat Linux 9.0 and Red Hat Enterprise Linux 3.0</li>
+  <li>SuSE Linux 9.0, 9.1, and 9.2</li>
+  <li>Solaris 8 and 9</li>
+</ul>
+
+<p class="introSub">Supported Web Servers:</p>
+
+<ul class="sub">
+  <li>Apache 1.3.x (AIX, HP-UX, Linux, Solaris) and 2.0.43 or newer (HP-UX, Linux, Solaris)<br><b>NOTE:</b>  Your Apache server must include <a href="#DSOsupport">DSO support</a>.</li>
+  <li>iPlanet 6.0 SP1 (AIX, HP-UX, Solaris)</li>
+  <li>Java System Web Server 6.1 SP1 (HP-UX, Solaris)</li>
+</ul>
+
+<p class="introSub">Requirements:</p>
+
+<p class="sub">Memory requirements for the server depend upon how many users access the server at the same time and how many daemon processes are running (by default, 5 to 20 daemons will be running).  Use the formula in the table below to calculate your memory needs.</p>
+
+<table class="sub" style="margin-bottom: 14.0pt;" cellspacing="0" cellpadding="4" border="2" summary="Five-column table">
+  <tr><th class="tablehead" colspan="5">Server Systems</th></tr>
+  <tr>
+    <th>&nbsp; </th>
+    <th align="left">Base</th>
+    <th align="left">Concurrent Users</th>
+    <th align="left">Daemons</th>
+    <th align="left">Total</th></tr>
+  <tr>
+    <td class="tablecell"><b>Formula</b></td>
+    <td class="tablecell">256 MB</td>
+    <td class="tablecell">+ 6 MB per user</td>
+    <td class="tablecell">+ 8 MB per daemon</td>
+    <td class="tablecell">= ?</td></tr>
+  <tr>
+    <td class="tablecell"><b>Example</b></td>
+    <td class="tablecell">256 MB</td>
+    <td class="tablecell">6 x 100 = 600 MB</td>
+    <td class="tablecell">8 x 20 = 160 MB</td>
+    <td class="tablecell">= 1016 MB</td></tr>
+</table>
+
+<p class="sub"><b>NOTE:</b>  The example is for the case of 100 concurrent users and 20 daemon processes.  It is included only to illustrate the use of the formula and <i>is not</i> intended as a recommendation.</p>
+
+<h2>18.2 <a name="RoboReadme139"></a>Supported Version Manager Web Client Platforms</h2>
+
+<p>The Version Manager web client is supported on the platforms shown below.</p>
+
+<h3 class="keepWithNext">Supported Windows Platforms</h3>
+
+<p class="introSub">Operating Systems:</p>
+
+<ul class="sub">
+  <li>Windows 2000 Professional, Server, and Advanced Server SP2</li>
+  <li>Windows 2000 Advanced Server 64-Bit Edition</li>
+  <li>Windows XP Professional</li>
+  <li>Windows XP 64-Bit Edition</li>
+  <li>Windows 2003 Server</li>
+</ul>
+
+<p class="introSub">Web Browsers:</p>
+
+<ul class="sub">
+  <li>Internet Explorer 6.x</li>
+  <li>Mozilla 1.7</li>
+  <li>Firefox 1.0</li>
+  <li>Netscape 7.1 or later</li>
+</ul>
+
+<h3 class="keepWithNext">Supported UNIX Platforms</h3>
+
+<p class="introSub">Operating Systems:</p>
+
+<ul class="sub">
+  <li>AIX 5.1, 5.2, and 5.3</li>
+  <li>HP-UX 11.00, 11.11, and 11.23</li>
+  <li>Red Hat Linux 9.0 and Red Hat Enterprise Linux 3.0</li>
+  <li>SuSE Linux 9.0, 9.1, and 9.2</li>
+  <li>Solaris 8 and 9</li>
+</ul>
+
+<p class="introSub">Web Browsers:</p>
+
+<ul class="sub">
+  <li>Mozilla 1.7</li>
+  <li>Firefox 1.0</li>
+  <li>Netscape 7.1 or later</li>
+</ul>
+
+<h2>18.3 <a name="RoboReadme140"></a>Internet Explorer Setup for Client Installations</h2>
+
+<p>If you're using IE 5.5 and don't have SP2 installed, go to <a href="http://windowsupdate.microsoft.com">http://windowsupdate.microsoft.com</a> and click the Product
+Updates link.</p>
+
+<p>Once you have IE 5.5 SP2 installed, perform the following steps:</p>
+
+<ol>
+
+  <li>
+    <p class="inList">Select Tools | Internet Options.</p>
+  </li>
+
+  <li>
+    <p class="inList">On the General tab, click the Settings button.</p>
+  </li>
+
+  <li>
+    <p class="inList">Set <span style="font-weight: bold;">Check for newer versions of stored pages</span> to <span style="font-weight: bold;">Every visit to the page</span>.</p>
+  </li>
+
+</ol>
+
+<h2>18.4 <a name="RoboReadme141"></a>Problem Installing Applet When an Older Applet Is Loaded</h2>
+
+<p>If you try to install the Version Manager web client while another instance is running, an error occurs.  Close other browser windows before installing the Version Manager web client.</p>
+
+<p><b>NOTE:</b>  In some circumstances, you may need to remove the old applet.  See <a href="#uninstallWebClient">Uninstall the Web Client</a>.
+
+<h2>18.5 <a name="RoboReadme142"></a>Problems Resulting from Using JRE 1.4.0x with Internet Explorer and TrackerLink</h2>
+
+<p>Using Sun's JRE 1.4.0x may cause instabilities in Internet Explorer and is not recommended for use with TrackerLink in the Version Manager web client.  Use JRE 1.3x or 1.4.1x.</p>
+
+<h2>18.6 <a name="RoboReadme143"></a>Login Problems Resulting from Disabling Cookies</h2>
+
+<p>If you disable cookies in your browser, you will not be able to log in to the Version Manager web client.  The Version Manager web client uses cookies to store login information.</p>
+
+<h2>18.7 <a name="RoboReadme144"></a>Installing the Version Manager Web Client on Windows 2000</h2>
+
+<p>To install the Version Manager Web Client on Windows 2000 Server machines, you must have local Administrator privileges.</p>
+
+<h2>18.8 <a name="RoboReadme145"></a>iPlanet Web Server on Pentium IV Servers</h2>
+
+<p>To start iPlanet Web Server on Pentium IV servers, you must disable internal servlet support.  From the iPlanet Web Server Administration page, select a server to manage.  Select the Servlets tab, and then select the <span style="font-weight: bold;">No</span> option under <span style="font-weight: bold;">Activate the Servlet Engine</span>.</p>
+
+<a name="DSOsupport"></a>
+<h2>18.9 <a name="RoboReadme146"></a>Apache Web Servers and Dynamic Shared Object (DSO) Support</h2>
+
+<p>To run the Version Manager web server or Version Manager WebDAV Server, your Apache web server must include Dynamic Shared Object (DSO) support.  To see if your web server includes DSO support, run the following command from Apache's bin directory:</p>
+
+<p><span class="syntax">./httpd -l</span></p>
+
+<p>If <span class="syntax">mod_so.c</span> is listed in the command's output, your Apache install includes DSO.</p>
+
+<p>If your installation of Apache does not include DSO support, you must obtain one that does, compile your own Apache server to include DSO support (as detailed in the Apache 1.3 README.configure file or the Apache 2.0 INSTALL file, as found in Apache's source distribution), or use a different web server.</p>
+
+<h2>18.10 <a name="RoboReadme147"></a>Running configure_inet to Configure a Different Web Server</h2>
+
+<p>You can configure a different Web Server to work with Version Manager after the installation has completed.  To do so, run the command:<br><span class="syntax"><i>VM_Install_Dir</i>/vm/<i>OS</i>/bin/configure_inet <i>VM_Install_Dir</i></span>.</p>
+
+<p>For example:<br><span class="syntax">/usr/serena/vm/linux/bin/configure_inet /usr/serena</span></p>
+
+<a name="trklinkSSL"></a>
+<h2>18.11 <a name="RoboReadme148"></a>Using TrackerLink with Secure Sockets Layer (SSL)</h2>
+
+<p>To use TrackerLink with the Version Manager web client and the Tracker web client on an SSL-enabled server, you must add an SSL certificate to the JRE keystore.  Otherwise, TrackerLink issue associations will fail.</p>
+
+<p>After installing and configuring the Tracker web server and the Version Manager web server, do the following:</p>
+
+<ol>
+
+  <li>
+    <p class="inList">If you don't already have it, download and install JDK 1.3.x or 1.4.x.</p>
+  </li>
+
+  <li>
+    <p class="inList">Determine the location of the certificate file that enables SSL on your web server.  Certificate files are issued by signing authorities, such as VeriSign, and have a <span class="syntax">.CER</span> file extension.</p>
+  </li>
+
+  <li>
+    <p class="inList">Run the following command:</p>
+
+    <p class="inList"><span class="syntax"><i>JDK_Install_Dir</i>\bin\keytool.exe -import -file <i>Certificate_File</i> -keystore <i>Install_Dir</i>\vm\common\jre\win32\lib\security\cacerts</span></p>
+
+    <p class="inList">Where:</p>
+
+    <ul>
+      <li><p class="inList"><span class="syntax"><i>JDK_Install_Dir</i></span> equals the location of your 1.3.x or 1.4.x JDK installation.</p></li>
+      <li><p class="inList"><span class="syntax"><i>Certificate_File</i></span> equals the path and name of your SSL certificate file.</p></li>
+      <li><p class="inList"><span class="syntax"><i>Install_Dir</i></span> equals the location of your Version Manager web server installation.</p></li>
+    </ul>
+  </li>
+
+  <li>
+    <p class="inList">When prompted, enter the password for the JRE keystore.  The default password is <span class="syntax">changeit</span>.</p>
+  </li>
+
+</ol>
+
+<h2>18.12 <a name="RoboReadme149"></a>Large Temporary Web Server Installation File on the Client Machine Resulting from Web Client Installation</h2>
+
+<p>Once installation of the Version Manager Web Client is complete, you can delete the file named &quot;Serena ChangeMan Version Manager.msi&quot; if disk space is a consideration.  The file is typically located in a folder named &quot;C:\Windows\Downloaded Installations&quot; and is around 110 MB in version 8.0.</p>
+
+<p>After you delete the file, you can still use Add/Remove Programs to modify or remove Version Manager.</p>
+
+<h2>18.13 <a name="RoboReadme150"></a>Using the Web Client with a Version Manager File Server</h2>
+
+<p>To enable web-client users to access a project database located on a Version Manager File Server, you must configure the web server to access the file server.  You do this by running the desktop client on the system running the Version Manager Web Server and entering the File Server specification in the Admin | File Server menu.  Following that, be sure to specify a file server path map Client Name&#8211;based location for the project database when you set up the servlet.  No setup is required on the web client itself.</p>
+
+<h2>18.14 <a name="RoboReadme151"></a>Preparing IIS 6 on Windows 2003 Server</h2>
+
+<p>If you are using IIS 6 on Windows 2003 Server, there is a little extra work you need to do to set up <span class="syntax">isapi-redirect.dll</span> as a Web Service Extension File.  See <a href="http://support.microsoft.com/default.aspx?scid=kb;en-us;328419">Microsoft Knowledge Base Article 328419</a>.</p>
+
+
+<p class="returnToTop"><a href="#TOP">Return to Contents</a></p>
+<hr size="2" width="100%" noshade>
+<h1>19.0 <a name="RoboReadme152"></a>Upgrade Considerations</h1>
+
+<h2>19.1 <a name="RoboReadme153"></a>Uninstalling Before Upgrading from Earlier Versions</h2>
+
+<p>If you plan to install Version Manager 8.1 in the same location as a previous version, you must uninstall it before upgrading.  The Sample Database may remain, but all other files should be removed.  Failure to perform these uninstall tasks may cause conflicts when you upgrade.</p>
+
+<p>To preserve your Servlet definitions on Windows, back up the <span class="syntax">PVCSServlets.properties</span> file and restore it to <span class="syntax"><i>VM_Install_Dir</i>\vm\inet\props\PVCSServlets.properties</span> after installing the new version.  Next, launch the Version Manager Web Server Application Configuration utility and make sure the "Location of Netscape Configuration Files" and/or "Location of Microsoft IIS Scripts Directory" matches the desired location for the new server installation (as they too will be inherited from <span class="syntax">PVCSServlets.properties</span>).  Finally, go to the Servlets tab, select the first servlet from the list, click Modify and then click Apply.  Repeat this for all remaining servlets.</p>
+
+<p>Users of Version Manager Server 6.8.00 on UNIX should preserve the file <span class="syntax"><i>VM6800_Install_Dir</i>/vminet/tomcat/webapps/vminet/WEB-INF/web.xml</span>, and users of Version Manager I-Net 6.8.1x or later should preserve the file <span class="syntax"><i>VM681x_Install_Dir</i>/vm/common/tomcat/webapps/vminet/WEB-INF/web.xml</span>.  After installing the new version, copy the sections from &lt;servlet&gt; up to and including &lt;/servlet&gt; for every servlet referring to a project database that was added to the old <span class="syntax">web.xml</span> file, and paste them into the new <span class="syntax">web.xml</span> file (which can be found at <span class="syntax"><i>VM_Install_Dir</i>/vm/common/tomcat/webapps/vminet/WEB-INF/web.xml</span>).  The two &lt;servlet-mapping&gt; ... &lt;/servlet-mapping&gt; sections that exist for every one of these servlets should also be copied into the new <span class="syntax">web.xml</span> file.</p>
+
+<p>Servlets defined in UNIX Version Manager Server releases prior to 6.8.00 (using the servlets.properties file) cannot be preserved.</p>
+
+<p>Before uninstalling, ensure that the Version Manager Web Server and your web server (IIS, iPlanet, Java System Web Server, or Apache) are NOT running.</p>
+
+<h3 class="keepWithNext">Backing Up Configuration Files</h3>
+
+<p>It is a good idea to save a backup copy of the following files:</p>
+
+<p class="sub"><span class="syntax">
+  <i>Install_Dir</i>\vm\common\bin\pvcsstart.bat</span> (<span class="syntax">pvcsstart.sh</span> on UNIX)<span class="syntax"><br>
+  <i>Install_Dir</i>\vm\common\tomcat\conf\jk\uriworkermap.properties<br>
+  <i>Install_Dir</i>\vm\inet\props\PVCSServlets.properties</span> (web servers only)<span class="syntax"><br>
+  <i>Install_Dir</i>\vm\common\tomcat\webapps\vminet\WEB-INF\web.xml</span> (file servers only)<span class="syntax"><br>
+  <i>Install_Dir</i>\vm\common\tomcat\webapps\webdav\WEB-INF\web.xml</span> (WebDAV servers only)<span class="syntax"><br>
+  <i>Install_Dir</i>\vm\common\tomcat\webapps\merantfs\WEB-INF\server-config.wsdd</span>
+</p>
+
+<h2>19.2 <a name="RoboReadme154"></a>Removing the NT Service Before Upgrading (I-Net or WebDAV Server) <span class="caution">[REQUIRED]</span></h2>
+
+<p>If the PVCS Version Manager Application Server is installed as an NT Service, you must remove the service before upgrading. To do so, launch the Version Manager I-Net Configuration utility.  By default, you run the Version Manager I-Net Configuration utility by selecting Start | Programs | PVCS Version Manager | PVCS VM I-Net | PVCS VM I-Net Configuration Utility.  Click the <b>Remove NT Service</b> button.</p>
+
+<h2>19.3 <a name="RoboReadme155"></a>Migrating a Large List of Version Manager Servlets</h2>
+
+<p><i><b>NOTE:</b>  This procedure applies to all platforms.</i></p>
+
+<p>It is not realistic to try to manually reconfigure your Version Manager web server for more than five servlets.  You can &quot;migrate&quot; key configuration files over to the new server to help automate the process; however, if you are migrating a large number of servlets, there are some things to know:</p>
+
+<ol>
+
+  <li>
+    <p class="inList">If the installation directory is the same, paths internal to these files should still be valid.  However, you should double-check the following file:</p>
+
+    <p class="inList"><span class="syntax">...\Serena\vm\common\tomcat\webapps\vminet\WEB-INF\web.xml</span></p>
+  </li>
+
+  <li>
+    <p class="inList">If the server name is the same, this parameter should still be valid; however, if you migrate to a new server, you should modify the following files:</p>
+
+    <p class="inList"><span class="syntax">...\Serena\vm\common\tomcat\webapps\vminet\WEB-INF\web.xml<br>...\Serena\vm\inet\props\PVCSServlets.properties</span></p>
+  </li>
+
+  <li>
+    <p class="inList">With Version Manager 8.0, we use a different AJP worker (AJP13 instead of AJP12).  We recommend that you make the change as well.  Check the following file:
+
+    <p class="inList"><span class="syntax">...\Serena\vm\common\tomcat\conf\jk\uriworkermap.properties</span></p>
+  </li>
+
+  <li>
+    <p class="inList">Version Manager 7.5 has a now obsolete parameter.  It should be removed.  It will not be written in the new files.</p>
+
+    <p class="inList">Edit the following file:</p>
+
+    <p class="inList"><span class="syntax">...\Serena\vm\common\tomcat\webapps\vminet\WEB-INF\web.xml</span></p>
+
+    <p class="inList">Remove the servlet mapping for "ProjectServletAlias".  This is a delicate edit.  You must comment out or remove the entire exact section.  As long as you are careful, the format is easy to discern.  It looks like this:</p>
+
+    <p class="inList"><span class="syntax">&lt;servlet-mapping&gt;<br>
+      &nbsp;&nbsp;&lt;servlet-name&gt; ProjectServletAlias &lt;/servlet-name&gt;<br>
+      &nbsp;&nbsp;&lt;url-pattern&gt; /ProjectRootName &lt;/url-pattern&gt;<br>
+      &lt;/servlet-mapping&gt;</span></p>
+  </li>
+
+</ol>
+
+<p><span class="caution">CAUTION:</span>  We recommend that you back up your existing files before modifying them.</p>
+
+<p><b>Additional note:</b>  A project database (PDB) served by File Server appears like any other PDB in the configuration files noted above; you do not have to do anything differently to access a File Server PDB.</p>
+
+
+<p class="returnToTop"><a href="#TOP">Return to Contents</a></p>
+<hr size="2" width="100%" noshade>
+<h1>20.0 <a name="RoboReadme156"></a>Feature Considerations</h1>
+
+<h2>20.1 <a name="RoboReadme157"></a>Naming Considerations</h2>
+
+<ul>
+
+  <li>
+    <p class="inList">Do not use any of the following characters in the name of a <b>project</b>:</p>
+
+    <p class="inList"><span class="syntax">*</span> <span class="syntax">:</span> <span class="syntax">|</span> <span class="syntax">/</span> <span class="syntax">\</span> <span class="syntax">?</span> <span class="syntax">&lt;</span> <span class="syntax">&gt;</span> <span class="syntax">&quot;</span> <i>tab</i> <span class="syntax">~</span> <span class="syntax">%</span> <span class="syntax">&amp;</span> <span class="syntax">'</span> <span class="syntax">,</span></p>
+
+    <p class="inList"><span class="caution">Also:</span>  Do not use &quot;<span class="syntax">..</span>&quot; as a two-character name, and do not use &quot;<span class="syntax">.</span>&quot; or &quot;<span class="syntax">@</span>&quot; as a one-character name.</p>
+  </li>
+
+  <li>
+    <p class="inList">Do not use any of the following characters in the name of a <b>file</b>:</p>
+
+    <p class="inList"><span class="syntax">*</span> <span class="syntax">:</span> <span class="syntax">|</span> <span class="syntax">/</span> <span class="syntax">\</span> <span class="syntax">?</span> <span class="syntax">&lt;</span> <span class="syntax">&gt;</span> <span class="syntax">&quot;</span> <i>tab</i></p>
+  </li>
+
+  <li>
+    <p class="inList">Do not use any of the following characters in the name of a <b>label</b>:</p>
+
+    <p class="inList"><span class="syntax">:</span> <span class="syntax">+</span> <span class="syntax">-</span> <span class="syntax">*</span> <span class="syntax">\</span></p>
+  </li>
+
+  <li>
+    <p class="inList">Do not use any of the following characters in the name of a <b>promotion group</b>:</p>
+
+    <p class="inList"><span class="syntax">&lt;</span> <span class="syntax">=</span> <span class="syntax">&quot;</span> <span class="syntax">,</span></p>
+  </li>
+
+  <li>
+    <p class="inList">Do not use any of the following characters in the name of an <b>archive</b>:</p>
+
+    <p class="inList"><span class="syntax">;</span> <span class="syntax">,</span></p>
+  </li>
+
+</ul>
+
+<h2>20.2 <a name="RoboReadme158"></a>Using Event Triggers</h2>
+
+<p>The functionality of event triggers differs significantly in the Version Manager web client compared to the Version Manager desktop client.  The difference is caused by how archives are modified.  When you use the Version Manager web client to perform a task, the archives are modified by the Version Manager web server--not by the Version Manager web client.  Therefore, the data and operations available to event triggers through the Version Manager web client differ from the data and operations available to event triggers through the Version Manager desktop client.</p>
+
+<p>When working with event triggers, note the following:</p>
+
+<ul>
+
+  <li>
+    <p class="inList">EventWorkfile and EventFQPWorkfile contain the temporary file name that the Version Manager web server is working with instead of the workfile name as seen in the Version Manager web client.</p>
+  </li>
+
+  <li>
+    <p class="inList">If a check-in operation prompts the user for additional information, such as whether or not to continue checking in an unchanged workfile, then the Unconditional PrePut Event Trigger fires twice if the user allows Version Manager to complete the operation.  Event Trigger programs affected by these characteristics may require modification.</p>
+  </li>
+
+  <li>
+    <p class="inList">If the event trigger puts up a dialog box, it is actually displayed on the server, not the client.  If the dialog box is modal, it stops the Version Manager web server from processing any further requests from all users until the dialog box is closed.</p>
+  </li>
+
+</ul>
+
+<h2>20.3 <a name="RoboReadme159"></a>Purging Log Files and Temporary Files from the Server</h2>
+
+<p>The Version Manager web server generates log files and temporary files on the server machine.  These files do not cause problems, but do use up hard drive space until deleted.  We recommend that you purge these files periodically.</p>
+
+<p>You can periodically delete the log files generated in the following directories:</p>
+
+<ul>
+  <li>
+    <p class="inList"><b>UNIX:</b>&nbsp; <span class="syntax"><i>VM_Install_Dir</i>/vm/common/tomcat/logs</span></p>
+  </li>
+
+  <li>
+    <p class="inList"><b>Windows:</b>&nbsp; <span class="syntax"><i>VM_Install_Dir</i>\vm\common\tomcat\logs</span></p>
+  </li>
+
+</ul>
+
+<p>Temporary files are generated on the server if the connection between the client and server is lost in the middle of a file transfer.  Delete these files from the directory <span class="syntax"><i>VM_Install_Dir</i>\vm\inet\temp</span> on Windows, and in the system temp directory on UNIX.  Additionally, temporary files are generated from history and difference reports when users close the browser without logging out of the project.  Delete these files from the <span class="syntax"><i>VM_Install_Dir</i>\vm\inet\temp\html</span> directory.</p>
+
+<h2>20.4 <a name="RoboReadme160"></a>Updating Keyword Values When You Add or Check In Workfiles</h2>
+
+<p>The Version Manager web client does not automatically update the expanded keyword values in your workfiles after you add them or check them in.  To update the keyword values, get or check out the files to your workfile location.</p>
+
+<h2>20.5 <a name="RoboReadme161"></a>Refreshing Content Pane after Viewing Revision</h2>
+
+<p>When viewing a file in the revision pane, you can refresh the contents of its parent project by pressing CTRL and clicking the project in the project pane.  You can also click the Return to Contents of Project link in the revision pane.</p>
+
+<h2>20.6 <a name="RoboReadme162"></a>Error During Startup of Version Manager Web or WebDAV Server</h2>
+
+<p>When attempting to start the Version Manager web server or WebDAV Server, you may get a Java exception error that includes the text <span class="syntax">JVM_Bind:8080</span> or <span class="syntax">JVM_Bind:8090</span>.  This may occur for one of the following reasons:</p>
+
+<ul>
+
+  <li>
+    <p class="inList">Version Manager web or WebDAV Server is already running.  If one feature is started, the other feature is started automatically, since both features share the same installation of Tomcat.  The error occurs when you try to start two instances of Tomcat.  Close the Tomcat window and proceed to use Version Manager web or WebDAV Server.</p>
+  </li>
+
+  <li>
+    <p class="inList">Port 8080 (or 8090) is already in use by another application.  By default, Version Manager web and WebDAV Server use port 8080.  Change the port number if necessary and restart Version Manager web or WebDAV Server.</p>
+  </li>
+
+</ul>
+
+<p>To change the port number, go to <span class="syntax"><i>VM_Install_Dir</i>/vm/common/tomcat/conf/server.xml</span>, and change the value of <span class="syntax">Http10Connector port=</span>.</p>
+
+<p class="intro">You may also need to change the following ports if another application is using them:</p>
+
+<ul>
+  <li><span class="syntax">Ajp12Connector port=&quot;8007&quot;</span></li>
+  <li><span class="syntax">Ajp13Connector port=&quot;8009&quot;</span></li>
+</ul>
+
+<p>If you change one or both of these entries to a different port number, make sure that the same ports are specified in the <span class="syntax">worker.apj12.port=</span> and <span class="syntax">worker.apj13.port=</span> statements of the <span class="syntax"><i>VM_Install_Dir</i>/vm/common/tomcat/conf/jk/workers.properties</span> file.</p>
+
+<p><b>NOTE:</b>  If you already have another Tomcat installation, you should change the shutdown port from 8005 to an unused value.  Otherwise, both applications will stop when either application's shutdown routine is called.</p>
+
+
+<p class="returnToTop"><a href="#TOP">Return to Contents</a></p>
+<hr size="2" width="100%" noshade>
+<h1>21.0 <a name="RoboReadme163"></a>Performance Considerations</h1>
+
+<h2>21.1 <a name="RoboReadme164"></a>Antivirus Software</h2>
+
+<p>If you use the Serena ChangeMan Version Manager File Server and you run real-time antivirus software on the system running the Version Manager web server, you may experience degraded performance.  This is because the antivirus software scans the Version Manager file cache every time the cache is updated.  To avoid this performance penalty, exclude the cache directory from real-time virus scans.</p>
+
+<p>By default, the file cache is in a directory named <span class="syntax">pvcsfs</span> under your system's temporary directory (as specified by the TMP or TEMP environment variable).  You can set a different location for the cache by defining a path in either the FS_TMP or FS_TEMP environment variable.</p>
+
+<p>For more information on antivirus-related performance improvements, see Serena KnowldegeBase article 70042.</p>
+
+
+<p class="returnToTop"><a href="#TOP">Return to Contents</a></p>
+<hr size="2" width="100%" noshade>
+<h1>22.0 <a name="RoboReadme165"></a>Known Issues</h1>
+
+<h2>22.1 <a name="RoboReadme166"></a>UNIX:  Cannot Use Version Manager on AIX with an EAPI Version of Apache 1.3</h2>
+
+<p>If you are using the Version Manager Web server with an Apache 1.3.x server that is configured to use EAPI, you receive an error message when trying to start the Apache server.</p>
+
+<p><b>WORKAROUND:</b>  Contact Support for a copy of the correct <span class="syntax">mod_jk_eapi.a</span> file.</p>
+
+<h2>22.2 <a name="RoboReadme167"></a>UNIX:  Browser Location Must Be Added to Path</h2>
+
+<p>For the Version Manager applet to load properly, you must add the browser location to your path:</p>
+
+<p><span class="syntax">export PATH=/apps/mozilla:$PATH</span></p>
+
+<p><b>ALSO:</b>  You must launch the browser using the PATH statement:</p>
+
+<p><span class="syntax">mozilla &amp;</span></p>
+
+<h2>22.3 <a name="RoboReadme168"></a>UNIX:  Add Workfiles Directory Browsing Is Sometimes Disabled</h2>
+
+<p>When you click the browse button in the Add Workfiles dialog box, the resulting directory selection dialog box sometimes does not function properly on UNIX.</p>
+
+<p>The workaround is to restart the browser.</p>
+
+<h2>22.4 <a name="RoboReadme169"></a>IO Error Messages Occur When the Version Manager Web Server Is Down</h2>
+
+<p>On way in which the web client will report communication difficulties with the web server is by displaying IO error messages (such as &quot;java.io.IOException&quot; or &quot;pvcs.io.CommException&quot;).</p>
+
+<h2>22.5 <a name="RoboReadme170"></a>Web Client Login Error Occurs When Sun's Java v1.4.1 Is Enabled with NT Authentication</h2>
+
+<p>If you're using NT authentication and your web client users are using the Sun Java plug-in v1.4.1x, they will have authentication problems.  If they are able to use the native JVM or version 1.4.2x of the Sun plug-in, they will not have this authentication problem.</p>
+
+<h2>22.6 <a name="RoboReadme171"></a>Resizing Dialog Boxes May Crash Netscape</h2>
+
+<p>When you resize certain dialog boxes on Netscape, Netscape may crash or cancel your operation.  Do not resize dialog boxes on Netscape.</p>
+
+<h2>22.7 <a name="RoboReadme172"></a>UNIX:  Bad Magic Number Exception Sometimes Occurs</h2>
+
+<p>Occasionally, you may get a Bad Magic Number exception when you try to perform an action.  To fix this problem, delete the contents of the following directory on the server:  <i>VM_Install_Dir</i>/vm/common/tomcat/temp/html</p>
+
+<h2>22.8 <a name="RoboReadme173"></a>Unable to Change Password If No ACDB Exists</h2>
+
+<p>If an Access Control Database does not exist for a project database, you cannot change your Version Manager web client password to log in to that project database.  To fix this problem, create a new ACDB for the project database using the Version Manager desktop.  Uncheck the "Enable access control database security" box.  You can now change your password in the Version Manager web client.</p>
+
+<p><b>NOTE:</b>  Creating the new ACDB does not affect the users' existing permissions, since the ACDB is disabled.</p>
+
+<h2>22.9 <a name="RoboReadme174"></a>UNIX:  Netscape Appears to Be Inactive</h2>
+
+<p>Netscape has a known problem on UNIX of not running an applet until the mouse is moved.  If the project pane is not drawing, and there is no error in Netscape's status pane, try moving the mouse.  You may also see this when the Results dialog box appears, but remains gray.</p>
+
+<h2>22.10 <a name="RoboReadme175"></a>Licenses Tab of Version Manager Web Server Application Configuration Utility Displays Multi-Byte and High-ASCII Characters Incorrectly</h2>
+
+<p>The Licenses tab of the Version Manager Web Server Application Configuration utility displays multi-byte and high-ASCII characters as a string of numbers and letters.  This behavior will be addressed in a future release.</p>
+
+<h2>22.11 <a name="RoboReadme176"></a>Multi-Byte Characters Not Supported with iPlanet</h2>
+
+<p>At this time, the Version Manager Web Client does not support multi-byte characters when used with the iPlanet Web server.  For multi-byte support, please use the Microsoft IIS Web server.</p>
+
+<h2>22.12 <a name="RoboReadme177"></a>UNIX:  Netscape Should Be Set to Override Specified Fonts</h2>
+
+<p>To make sure fonts appear legibly on your UNIX machine, set Netscape to override document-specified fonts:</p>
+
+<ol>
+
+  <li><p class="inList">In Netscape, go to Edit | Preferences; then select Appearance | Fonts in the Category list.</p></li>
+
+  <li><p class="inList">Select <span style="font-weight: bold;">Use my default fonts, overriding document-specified fonts</span>.</p></li>
+
+  <li><p class="inList">Make sure your font size is set to something you can read, such as 10 or 12 pt.</p></li>
+
+</ol>
+
+<h2>22.13 <a name="RoboReadme178"></a>HP-UX:  Get and Checkout Fail; Results Dialog Box Is Blank</h2>
+
+<p>On HP-UX clients, archive operations (get, checkout, and so forth) may fail resulting in a blank Results dialog box and the following error in the Java console:  <b>java.lang.UnsatisfiedLinkError:  <i>Netscape_Dir</i>/java/bin/libxfile_jri.sl</b>.  To avoid this behavior, run the <b>chmod +x</b> command on the libxfile_jri.sl file, which is located in the java/bin directory of your Netscape browser installation.</p>
+
+<h2>22.14 <a name="RoboReadme179"></a>Pop-Up Blocking Prevents Version Manager From Working Correctly</h2>
+
+<p>If your browser is configured to prevent pop-up ads, the Version Manager web client may not work correctly.  Either turn off the pop-up blocking feature, or add the Version Manager server to the list of sites that are allowed to disply pop-up windows.</p>
+
+<p>In Netscape 7, for example, you can configure pop-up blocking options using the Popup Window Controls dialog box under Edit | Preferences | Privacy &amp; Security.</p>
+
+<h2>22.15 <a name="RoboReadme180"></a>Netscape 7 Does Not Work with Exceed</h2>
+
+<p>Do not use Netscape 7 with Exceed.</p>
+
+<h2>22.16 <a name="RoboReadme181"></a>Windows:  Application Server Freezes When Started and Stopped Without Accessing Any Archives</h2>
+
+<p>On Windows, if you start the Version Manager Application Server and then stop it before it has been used to access any archives, the daemons do not shut down cleanly.  If this happens, close the Serena ChangeMan Version Manager Application Server console window, and remove the DaemonServer.exe process in the Windows Task Manager.</p>
+
+<h2>22.17 <a name="RoboReadme182"></a><a name="uninstallWebClient">Windows:  No Apparent Way for Non-Admin to Uninstall the Web Client</a></h2>
+
+<p>If the applet is not completely removed, there may be unusual behavior after you install a different version.  Follow these steps to remove the applet:</p>
+
+<h3 style="margin-bottom: 10.0pt;">Version 7.5 or Earlier</h3>
+
+<ol>
+
+  <li>
+    <p class="inList">In &lt;<i>Windows Dir</i>&gt;\Downloaded Program Files, right-click the <span style="font-weight: bold;">VM I-Net</span> applet, and remove it.</p>
+  </li>
+
+  <li>
+    <p class="inList">Remove &lt;<i>Windows System Dir</i>&gt;\vmi660.dll.</p>
+  </li>
+
+  <li>
+    <p class="inList">Remove &lt;<i>Windows Dir</i>&gt;\Java\lib\vmi660.zip.</p>
+  </li>
+
+  <li>
+    <p class="inList">In the registry editor, remove the following entry:</p>
+
+    <p class="inList"><span class="syntax">HKEY_CLASSES_ROOT\CLSID\{CCF028C4-4631-11D3-90BD-00A0C9B727E1}</span></p>
+  </li>
+
+</ol>
+
+<h3 style="margin-bottom: 10.0pt;">Version 8.0 or Later</h3>
+
+<ol>
+
+  <li>
+    <p class="inList">In &lt;<i>Windows Dir</i>&gt;\Downloaded Program Files, right-click the <span style="font-weight: bold;">VM I-Net</span> applet, and remove it.</p>
+  </li>
+
+  <li>
+    <p class="inList">Remove &lt;<i>Windows System Dir</i>&gt;\vmi660.dll.</p>
+  </li>
+
+  <li>
+    <p class="inList">Remove &lt;<i>Windows Dir</i>&gt;\Java\lib\vmi660.jar.</p>
+  </li>
+
+  <li>
+    <p class="inList">In the registry editor, remove the following entry:</p>
+
+    <p class="inList"><span class="syntax">HKEY_CLASSES_ROOT\CLSID\{CCF028C4-4631-11D3-90BD-00A0C9B727E1}</span></p>
+  </li>
+
+</ol>
+
+<h2>22.18 <a name="RoboReadme183"></a>Dates Sometimes Displayed Incorrectly in Web Client Project Pane</h2>
+
+<p>This is a display issue only; the archive data is correct.  If you perform a lock operation on the file and then refresh the display, the dates appear correctly.</p>
+
+<h2>22.19 <a name="RoboReadme184"></a>Issue Running Version Manager Web Server on Itanium</h2>
+
+<p>If you are using the Itanium processor, edit <span class="syntax">vm/common/bin/pvcsstart.bat</span>, replacing <span class="syntax">-server</span> with <span class="syntax">-Xint</span>.  (This disables the HotSpot compiler.)</p>
+
+<h2>22.20 <a name="RoboReadme185"></a>Netscape 7.02 on Windows Causes Some Operations to Fail</h2>
+
+<p>Some confirmation windows fail to appear in Netscape 7.02 for Windows, causing some operations to fail.  Upgrade your browser to Netscape 7.1 or later.</p>
+
+<h2>22.21 <a name="RoboReadme186"></a>Error: &quot;Certificate not verified&quot;</h2>
+
+<p>If you get a &quot;Certificate not verified&quot; error when logging in to the web client, do the following:</p>
+
+<ol>
+
+  <li>
+    <p class="inList">Close the browser and reopen it.</p>
+  </li>
+
+  <li>
+    <p class="inList">Bring up the Login page, but do not log in.  After a moment or two, a Security Warning dialog box appears.</p>
+  </li>
+
+  <li>
+    <p class="inList">Click the <b>Always</b> button on the Security Warning dialog box.</p>
+  </li>
+
+  <li>
+    <p class="inList">Now log in to the web client.</p>
+  </li>
+
+</ol>
+
+<h2>22.22 <a name="RoboReadme187"></a>Browse Does Not Work After You Switch to a Project on a Different Server</h2>
+
+<p>The browse feature may quit working when you switch to a project database on a different server.  This can occur with any browser that uses the Sun Java plugin.  Netscape and Mozillia use the Sun Java plugin, and Internet Explorer can be configured to use it, also.  To switch to a project on another server, exit the browser and restart it.
+</p>
+
+<h2>22.23 <a name="RoboReadme188"></a>Mozilla 1.6 Does Not Display the Project Directory Tree</h2>
+
+<p>On both Windows and UNIX platforms, Mozilla 1.6 is unable to display the project directory tree.</p>
+
+<p><b>Workaround:</b>  Use Mozilla 1.7.</p>
+
+
+<p class="returnToTop"><a href="#TOP">Return to Contents</a></p>
+<hr size="2" width="100%" noshade>
+<h1>23.0 <a name="RoboReadme189"></a>Documentation Issues</h1>
+
+<h2>23.1 <a name="RoboReadme190"></a>Help TOC Does Not Resize in Netscape</h2>
+
+<p>If you resize the Netscape browser window, the TOC pane of the help may not resize correctly.  To reload the TOC into the resized pane, click the Hide Navigation link, then click the Show Navigation link.</p>
+
+<p>&nbsp;</p>
+
+
+
+
+<table class="part" width="100%">
+  <tr>
+    <td>
+      <p class="part">Part 4:  Version Manager WebDAV Server</p>
+    </td>
+  </tr>
+</table>
+
+
+<p class="returnToTop"><a href="#TOP">Return to Contents</a></p>
+<hr size="2" width="100%" noshade>
+<h1>24.0 <a name="RoboReadme191"></a>Installation and Configuration</h1>
+
+<h2>24.1 <a name="RoboReadme192"></a>System Requirements</h2>
+
+<h3 class="keepWithNext">Server Requirements</h3>
+
+<p class="introSub">Supported Operating Systems:</p>
+
+<ul class="sub">
+  <li>Windows 2000 Server and Advanced Server SP2</li>
+  <li>Windows 2000 Advanced Server 64-Bit Edition</li>
+  <li>Windows 2003 Server</li>
+  <li>AIX 5.1, 5.2, and 5.3</li>
+  <li>HP-UX 11.00, 11.11, and 11.23</li>
+  <li>Red Hat Linux 9.0 and Red Hat Enterprise Linux 3.0</li>
+  <li>SuSE Linux 9.0, 9.1, and 9.2</li>
+  <li>Solaris 8 and 9</li>
+</ul>
+
+<p class="introSub">Supported Web Servers:</p>
+
+<ul class="sub">
+  <li>Tomcat 4.1.x (installed with WebDAV Server)</li>
+  <li>Microsoft Internet Information Server 5.0 (Windows 2000)</li>
+  <li>Microsoft Internet Information Server 6.0 (Windows 2003)</li>
+  <li>Apache 1.3.x (AIX, HP-UX, Linux, Solaris) and 2.0.43 or newer (HP-UX, Linux, Solaris)<br><b>NOTE:</b>  Your Apache server must include <a href="#DSOsupport">DSO support</a>.
+  <li>iPlanet 6.0 SP1 (AIX, HP-UX, Solaris, Windows)</li>
+  <li>Java System Web Server 6.1 SP1 (HP-UX, Solaris, Windows)</li>
+</ul>
+
+<h3 class="keepWithNext">Client Requirements</h3>
+
+<p class="introSub">Supported Operating Systems:</p>
+
+<ul class="sub">
+  <li>Windows 2000 Professional, Server, and Advanced Server SP2</li>
+  <li>Windows XP Pro (Network Places only)</li>
+  <li>Windows 2003 Server</li>
+</ul>
+
+<p class="sub"><b>NOTE:</b>  Read-only support for WebDAV is available for the Windows XP DAV File System and Mac OS DAV File System.</p>
+
+<p class="introSub">Supported WebDAV Clients:</p>
+
+<ul class="sub">
+  <li>Microsoft Web Folders, Office 2000, Office XP, and Office 2003</li>
+  <li>Macromedia Dreamweaver 4 and Dreamweaver MX</li>
+  <li>Adobe Acrobat 5 and 6</li>
+  <li>Adobe Photoshop 7 and 8</li>
+</ul>
+
+<p class="sub">Other WebDAV-enabled clients may work but are unsupported at this time.</p>
+
+<h2>24.2 <a name="RoboReadme193"></a>Removing the NT Service Before Upgrading (I-Net or WebDAV Server) <span class="caution">[REQUIRED]</span></h2>
+
+<p>If the PVCS Version Manager Application Server is installed as an NT Service, you must remove the service before upgrading. To do so, launch the Version Manager I-Net Configuration utility.  By default, you run the Version Manager I-Net Configuration utility by selecting Start | Programs | PVCS Version Manager | PVCS VM I-Net | PVCS VM I-Net Configuration Utility.  Click the <b>Remove NT Service</b> button.</p>
+
+<h2>24.3 <a name="RoboReadme194"></a>Troubleshooting Connection Problems</h2>
+
+<p>To troubleshoot connection problems with WebDAV Server, first check the Tomcat server console for any errors or exceptions.</p>
+
+<p>If you do not see any errors, do the following:</p>
+
+<ul>
+
+  <li>
+    <p class="inList">Check that you can access the Version Manager project database by logging in to Version Manager.  Note that you should verify the project database specified in vm.properties.</p>
+  </li>
+
+  <li>
+    <p class="inList">Check that the web server is up and running by entering the web server URL in your web browser.  For example:  <span class="syntax">http://Test1:10070/</span></p>
+  </li>
+
+  <li>
+    <p class="inList">Check that the Tomcat web server is running by entering the Tomcat URL in your web browser.  For example:  <span class="syntax">http://Test1:8080</span></p>
+  </li>
+
+  <li>
+    <p class="inList">Check that the DAV servlet can be accessed from a supported client, such as web folders, by connecting to Tomcat directly from the client.  For example:  <span class="syntax">http://Test1:8080/SampleDB.dav</span>.</p>
+
+    <p class="inList">If you can't access the servlet, check the Tomcat server console for any exceptions.</p>
+  </li>
+
+  <li>
+    <p class="inList">If the DAV servlet can be accessed by a client directly through Tomcat, try adding a web folder using the web server (e.g., Apache or IIS) port number.  For example:  <span class="syntax">http://Test1:10070/SampleDB.dav</span></p>
+
+    <p class="inList">If this does not work, then the problem is with the web server configuration.  Check the Tomcat and web server logs to identify the errors.</p>
+  </li>
+
+  <li>
+    <p class="inList">Check that the web server is using the right port setting to communicate with Tomcat.  Open the following two files:</p>
+
+    <ul>
+      <li><p class="inList"><i>VM_Install_Dir</i>/vm/common/tomcat/conf/jk/workers.properties</p></li>
+      <li><p class="inList"><i>VM_Install_Dir</i>/vm/common/tomcat/conf/server.xml</p></li>
+    </ul>
+
+    <p class="inList">Verify that the port setting for worker.ajp13.port in workers.properties matches the port specified in server.xml under &quot;Apache AJP13 support.&quot;</p>
+
+    <p class="inList">If the port settings do not match, change them so they are the same.</p>
+  </li>
+
+</ul>
+
+<h2>24.4 <a name="RoboReadme195"></a>Default Versions Visible Through WebDAV Server</h2>
+
+<p>The workspace setting for default version (a label) determines which files are visible through WebDAV Server.  Unlike the Version Manager desktop client, WebDAV Server only shows the files that match the default version setting.  If a default version is not set, then the default is the tip revision of the trunk.  In this case, only these tip revisions will be visible through WebDAV Server.</p>
+
+<h2>24.5 <a name="RoboReadme196"></a>Specifying Privileges</h2>
+
+<p>After successfully connecting to WebDAV Server, most failures on common operations (e.g., check out or add workfiles) occur due to lack of privileges.</p>
+
+<p><b>NOTE:</b>  To be able to create new archives through WebDAV, users must be assigned the Add Version Label privilege in addition to the Create Archive privilege.</p>
+
+<p>Log in to Version Manager as that user to verify that you can perform the operations allowed with the specified privileges.  If you can perform the correct operations in Version Manager, you should be able to perform them using WebDAV Server.</p>
+
+<p>If you change a user's privileges, those changes are not visible to the user until you restart Tomcat or the user's current session times out.</p>
+
+<h2>24.6 <a name="RoboReadme197"></a>Error During Startup of Version Manager Web or WebDAV Server</h2>
+
+<p>When attempting to start the Version Manager web server or WebDAV Server, you may get a Java exception error that includes the text <span class="syntax">JVM_Bind:8080</span> or <span class="syntax">JVM_Bind:8090</span>.  This may occur for one of the following reasons:</p>
+
+<ul>
+
+  <li>
+    <p class="inList">Version Manager web or WebDAV Server is already running.  If one feature is started, the other feature is started automatically, since both features share the same installation of Tomcat.  The error occurs when you try to start two instances of Tomcat.  Close the Tomcat window and proceed to use Version Manager web or WebDAV Server.</p>
+  </li>
+
+  <li>
+    <p class="inList">Port 8080 (or 8090) is already in use by another application.  By default, Version Manager web and WebDAV Server use port 8080.  Change the port number if necessary and restart Version Manager web or WebDAV Server.</p>
+  </li>
+
+</ul>
+
+<p>To change the port number, go to <span class="syntax"><i>VM_Install_Dir</i>/vm/common/tomcat/conf/server.xml</span>, and change the value of <span class="syntax">Http10Connector port=</span>.</p>
+
+<p class="intro">You may also need to change the following ports if another application is using them:</p>
+
+<ul>
+  <li><span class="syntax">Ajp12Connector port=&quot;8007&quot;</span></li>
+  <li><span class="syntax">Ajp13Connector port=&quot;8009&quot;</span></li>
+</ul>
+
+<p>If you change one or both of these entries to a different port number, make sure that the same ports are specified in the <span class="syntax">worker.apj12.port=</span> and <span class="syntax">worker.apj13.port=</span> statements of the <span class="syntax"><i>VM_Install_Dir</i>/vm/common/tomcat/conf/jk/workers.properties</span> file.</p>
+
+<p><b>NOTE:</b>  If you already have another Tomcat installation, you should change the shutdown port from 8005 to an unused value.  Otherwise, both applications will stop when either application's shutdown routine is called.</p>
+
+<h2>24.7 <a name="RoboReadme198"></a>Apache Web Servers and Dynamic Shared Object (DSO) Support</h2>
+
+<p>To run Version Manager web or Version Manager WebDAV Server, your Apache web server must include Dynamic Shared Object (DSO) support.  To see if your web server includes DSO support, see the <a href="#DSOsupport">topic</a> in the Web Client section.</p>
+
+<h2>24.8 <a name="RoboReadme199"></a>Using Microsoft Office with Version Manager WebDAV Server</h2>
+
+<p>Version Manager WebDAV Server is configured to work with the Serena ChangeMan Meritage client by default.  Meritage is an extension to Office that enables you to use Version Manager features like Check-In and Checkout from within Word, Excel, or PowerPoint.  If you do not want to use Meritage but you want to use Office as a WebDAV client, you need to configure the WebDAV server by commenting out the following line in <span class="syntax"><i>VM_Install_Dir</i>/mv/common/tomcat/webapps/SampleDB.dav/WEB-INF/classes/webdav.properites</span>:</p>
+
+<p><span class="syntax">Dav.NoLockAgent.Microsoft-Office=Microsoft Data Access Internet Publishing Provider DAV</span></p>
+
+<p><b>Important:</b>  You must restart Tomcat and any configured web server for this change to take effect.</p>
+
+<p>For more information on Meritage and Version Manager WebDAV Server, refer to the user and installation guides.</p>
+
+
+<p class="returnToTop"><a href="#TOP">Return to Contents</a></p>
+<hr size="2" width="100%" noshade>
+<h1>25.0 <a name="RoboReadme200"></a>Known Issues</h1>
+
+<h2>25.1 <a name="RoboReadme201"></a>Client Issues</h2>
+
+<p>If you are able to connect to WebDAV Server and still encounter problems working in a WebDAV client, the client may have WebDAV issues.</p>
+
+<p>We recommend that you:</p>
+
+<ul>
+
+  <li>
+    <p class="inList">Go to the client support web site and install any recommended service packs.  Search the client KnowledgeBase or support documents for reported WebDAV problems and fixes.</p>
+  </li>
+
+  <li>
+    <p class="inList">Check <a href="http://support.serena.com" target="_blank">Serena support</a> for KnowledgeBase articles about specific client problems and fixes.</p>
+  </li>
+
+</ul>
+
+<h2>25.2 <a name="RoboReadme202"></a>Password Recommendation for WebDAV Clients</h2>
+
+<p>Some WebDAV clients (e.g., Dreamweaver) may require you to enter a password for authentication.  We recommend that you have a Version Manager password so that the WebDAV clients will work properly.  If you do not have a Version Manager password, define one using the Version Manager desktop client.</p>
+
+<h2>25.3 <a name="RoboReadme203"></a>Using WebDAV with IIS and Microsoft FrontPage Server Extensions</h2>
+
+<p>Microsoft Web Folders auto-detects if Microsoft FrontPage Server Extensions are running on an IIS web server.  If detected, the Web Folders client does not use a WebDAV protocol and therefore does not interact with the WebDAV server.  If you configure Serena ChangeMan Version Manager WebDAV Server redirected through an IIS webserver server with MS FrontPage Server Extensions, Web Folder clients will only interact with the FrontPage Server Extensions, and not the WebDAV server.</p>
+
+<h2>25.4 <a name="RoboReadme204"></a>Using the Euro Character on Solaris</h2>
+
+<p>To ensure that the Euro character works properly on Solaris, do the following:</p>
+
+<ol>
+
+  <li>
+    <p class="inList">Install the latest OS patches for Solaris.</p>
+  </li>
+
+  <li>
+    <p class="inList">In the Solaris Login dialog box (console), click Options and then select Language | en_ISO8859-15.</p>
+  </li>
+
+  <li>
+    <p class="inList">Log in; then start WebDAV Server by running <span class="syntax">./pvcsstart.sh</span> from <i>VM_Install_Dir</i>/vm/common/bin.</p>
+  </li>
+
+</ol>
+
+
+<p class="returnToTop"><a href="#TOP">Return to Contents</a></p>
+<hr size="2" width="100%" noshade>
+<h1>26.0 <a name="RoboReadme205"></a>Support</h1>
+
+<h2>26.1 <a name="RoboReadme206"></a>Support Information</h2>
+
+<p>To contact Serena support, please log in at <a href="http://support.serena.com" target="_blank">support.serena.com</a>.</p>
+
+
+<p class="returnToTop"><a href="#TOP">Return to Contents</a></p>
+<hr size="2" width="100%" noshade>
+<h1>27.0 <a name="RoboReadme207"></a>Notice Regarding Third Party Software</h1>
+
+<h2>27.1 <a name="RoboReadme208"></a>Third Party Software Disclaimers</h2>
+
+<p>The following disclaimers are provided on behalf of third party components used by and distributed with the Version Manager web server, Version Manager File Server, and WebDAV Server.  Please see the Serena ChangeMan Version Manager documentation for acknowledgements, and individual LICENSE files for additional information, regarding any third party components.</p>
+
+<p>THE JAVA RUNTIME ENGINE, TOMCAT AND XERCES JAVA PARSER (THIS SOFTWARE) IS PROVIDED "AS IS" AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL SUN MICROSYSTEMS, OR THE APACHE SOFTWARE FOUNDATION OR ITS CONTRIBUTORS, BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+
+<p>&nbsp;</p>
+
+
+
+
+<table class="part" width="100%">
+  <tr>
+    <td>
+      <p class="part">Part 5:  Serena ChangeMan Meritage</p>
+    </td>
+  </tr>
+</table>
+
+
+<p class="returnToTop"><a href="#TOP">Return to Contents</a></p>
+<hr size="2" width="100%" noshade>
+<h1>28.0 <a name="RoboReadme209"></a>Known Issues</h1>
+
+<h2>28.1 <a name="RoboReadme210"></a>Office 2000</h2>
+
+<p>In Office 2000, the &quot;My Meritage&quot; icon does not appear in the left pane of the Open File dialog box.</p>
+
+<h2>28.2 <a name="RoboReadme211"></a>WebDAV Server 8.0.0.0</h2>
+
+<p>If you are using version 8.0.0.0 of WebDAV Server and you check in a file from outside of Meritage using the <b>Keep revision locked</b> option, you will not see the new version of the file from within Meritage until the file is checked in or unlocked.</p>
+
+<p class="returnToTop"><a href="#TOP">Return to Contents</a></p>
+
+<hr size="2" width="100%" noshade>
+
+<p>End Readme<br>
+Copyright &#169; 2003&#8211;2005 Serena Software, Inc.  All rights reserved.</p>
+
+<p>$Revision:   1.198  $</p>
+
+<hr size="2" width="100%" noshade>
+
+<p>&nbsp;</p>
+
+</body>
+</html>

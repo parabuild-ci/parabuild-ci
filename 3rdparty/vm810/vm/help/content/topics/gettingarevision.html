@@ -1,0 +1,200 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Getting a Revision/Viewing a File</TITLE>
+<!--<GettingaRevision.html>-->
+<!--<toc parent="checking_in_checking_out" label="Getting Revisions/Viewing Files" anchor="GettingaRevision" sortkey="04">-->
+<!--<index parent="revisions" label="getting" anchor="GettingaRevision">-->
+<!--<index parent="files" label="viewing" anchor="GettingaRevision">-->
+<!--<index parent="getting" label="revisions or projects" anchor="GettingaRevision">-->
+<!--<index parent="projects" label="getting" anchor="GettingaRevision">-->
+<!--<index parent="viewing" label="files" anchor="GettingaRevision">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nChecking In/Checking Out\nGetting Revisions/Viewing Files");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="GettingaRevision"></A>Getting Revisions/Viewing Files</H1>
+<P>Get functionality allows you to get a <A HREF="aboutrevisions.html">revision(s)</A>, project, or project database.  However, when you view, you can only view one <A HREF="aboutworkfiles.html">workfile</a> at a time.
+
+<P>When you get a revision, Version Manager leaves the revision in the state that it is in (locked or unlocked) and creates a read-only workfile in the location currently set as the workfile location. You can later open this revision in an editor of your choice. By contrast, when you view, Version Manager gets a revision and opens the associated workfile in an editor for you.</P>
+
+<P>When you view a workfile, Version Manager:</P>
+<UL>
+	<LI>Copies the revision into your TEMP directory defined for your system instead of the location currently set as the workfile location. On Windows, the TEMP directory is defined by the TEMP environmental variable. Version Manager creates a \PVCS directory in your TEMP directory the first time you view a file (for example, \TEMP\PVCS). On UNIX, the tmp directory is defined by the pvcsvmux script, which sets it to /tmp/pvcs.
+	<LI>Launches the editor of your choice.  On Windows, the editor that Version Manager uses to display the workfile is either defined by the default Windows associations or by the editor location that you specify in the View | Options dialog box. On UNIX, you must specify an editor location in the View | Options dialog box.
+</UL>
+<P>Using Get and View does not lock the revision. When you perform a get operation, you can select multiple files, a project, or a project database and specify a specific revision by revision number, version label, or promotion group.</P>
+
+<h2>Using the System Default Options</h2>
+<p>Version Manager uses the following initial defaults when you get a revision. These defaults can be overridden when getting the revision, and in some cases, the defaults can be redefined in the <a href="optionsgeneral.html">Options dialog box</a> (View | Options | General tab).</P>
+<UL>
+	<LI>Creates a read-only workfile of the <A HREF="defaultrevision.html">default revision</A>  in the location currently set as the workfile location.
+	<LI>Prompts for confirmation before overwriting the workfile if a workfile currently exists in the workfile location.<br>
+<b>Note:</b> Version Manager does not prompt for confirmation if a read-only workfile exists in the current workfile location.
+	<LI>Creates a read-only copy of the files in the selected project, but not the files in the project's subprojects.
+	<LI>Retains the promotion group currently assigned to the revision, if a promotion model is in effect.
+	<li>
+Gets a revision whether or not it is newer than the workfile
+</li>
+</UL>
+<H2>To get a revision, project, or project database:</H2>
+<OL>
+<LI>Select the versioned file, project, or project database and then select  Actions | Get. <br><br>
+<b>Note:</b> The Get dialog box appears if the Get/View option for versioned file actions, and the Get option for project actions is selected in View | Options | Dialog Behavior.<br><br>
+<li>Accept the defaults listed above and click OK, or do the following:
+<p>
+<ol type="a">
+<li>To override the defaults on the General tab, edit any of the fields below:
+
+<TABLE  WIDTH="87%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+<TR>
+	<TD><b>To...</b></TD>
+	<TD><b>Do this...</b></TD>
+</TR>
+<TR>
+	<TD>Modify the location to which revisions will be copied</TD>
+	<TD>Edit the location in the <b>Copy To </b>field or select the Browse button to select a new location. By editing this path, you are changing the workfile location for this action only; it does not change the workfile location permanently.</TD>
+</TR>
+<TR>
+	<TD>Get the files using the project hierarchy as the workfile locations instead of the default workfile locations</TD>
+	<TD>Select the <b>Copy out using project hierarchy instead of workfile location(s)</b> check box. This option is not available when operating on a single file. This option overrides the default workfile locations of each project/subproject within the selected project database/project when getting files and places the files in subdirectories that mirror the project structure relative to the workfile location specified in the <b>Copy To</b> field. If the subdirectories do not exist, Version Manager creates them. For example, if the value in the <b>Copy To</b> field is c:\projdb\work and the project structure is /proj1/subproj1, /proj1/subproj2, and /proj2/subproj1, Version Manager places the files in c:\projdb\work\proj1\subproj1, c:\projdb\work\proj1\subproj1, and c:\projdb\work\proj2\subproj1 when this option is selected. Otherwise, Version Manager places the files in the default workfile locations defined for each project/subproject.</TD>
+</TR>
+<TR>
+	<TD>Create a copy of a revision other than the <A HREF="defaultrevision.html">default revision</A></TD>
+	<TD>Enter the revision number, version label, or promotion group associated with the revision in the <b>Revision</b> field or click the Browse button to select one. If getting the revision by a version label, enter a backslash before a version label that begins with a numeric character (such as \1.2label).</TD>
+</TR>
+<TR>
+	<TD>Select an action to occur if a workfile with the same name currently exists in the workfile location</TD>
+	<TD>Select <B>Prompt</B>, <B>Overwrite</B>, or <B>Don't Overwrite</B> from the <b>If Workfile Exists </b>drop-down list.</TD>
+</TR>
+<TR>
+	<TD>Get a revision associated with a promotion group, if a promotion model is in effect</TD>
+	<TD>Select the promotion group from the <B>Promotion Group </b>drop-down list. If Version Manager can't find a revision associated with the promotion group you specify, it will check out the revision associated with the next highest group in the promotion model.</TD>
+</TR>
+<TR>
+	<TD>Get a writable copy of the revision</TD>
+	<TD>Check the <B>Make workfile writable</B> check box.</TD>
+</TR>
+<TR>
+	<TD>Create a copy of all files in subprojects included in the project or project database</TD>
+	<TD>Select the <b> Include files in subprojects </b>check box.</TD> 
+</TR>
+<TR>
+		<TD>Get only those revisions that are newer than the workfiles</TD>
+		<TD>Select the <b>Get only if revision is newer than workfile</b> check box. This saves time by not getting files that have not changed.</TD>
+	</TR>
+</TABLE>
+<p>
+<li>To override the defaults on the Advanced tab, click the Advanced tab and edit any of the fields below:
+<p>
+<TABLE  WIDTH="87%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+<TR>
+<TD><b>To...</b></TD>
+<TD><b>Do this...</b></TD>
+</TR>
+<TR>
+	<TD>Create a copy of a revision according to a specified date</TD>
+	<TD>Select the <B>Check out by date</B> check box, and then select one of the following:<br><br>
+	<UL>
+        <LI><B>Revision newer than</B> and enter the date or click the Browse button to select one
+        <LI><B>Revision checked in before</B> and enter a date or click the Browse button to select one
+	</UL></TD></TR>
+	<TR></tr><TD>Update the time stamp of the workfile to the current date and time</TD>
+	<TD>Select the <B>Set workfile time to current time</B>. If you don't select this option, the workfile timestamp reflects the date and time the file was last modified.</TD>
+</TR>
+</TABLE>
+ 	<P><LI>To review the selected files or projects before creating the copy or to review versioned file properties and workspace information, click the Selected Files tab.<BR><BR></p>
+	<LI>Click OK.<BR><BR>
+</OL>
+</OL>
+<H2>To view a workfile:</H2>
+<OL>
+<LI>Select the versioned file you want to view in the File pane and select Edit | View File.<BR><BR>
+<b> Note:</b> The Get dialog box appears if the Get/View option for versioned file actions, and the Get option for project actions is selected in View | Options | Dialog Behavior.<BR><BR>
+<LI>Click OK. Version Manager opens a read-only copy of the workfile in the associated application.<BR><BR>
+</OL>
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="getrevisiondialog.html">Get Dialog Box</A></TD>
+		<TD><A HREF="setdialogdisplay.html">Setting Dialog Display Options</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="checkingout.html">Checking Out/Editing Files</A></TD>
+		<TD><A HREF="checkingin.html">Checking In</A></TD>
+	</TR>
+
+</TABLE>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

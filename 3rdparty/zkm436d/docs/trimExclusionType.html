@@ -1,0 +1,59 @@
+<!-- Copyright 2003 Zelix Pty Ltd (ABN 47 078 740 093) -->
+<html>
+<head>
+<title>Zelix KlassMaster Java Obfuscator</title>
+   <meta name="keywords" content="java,code obfuscator,java obfuscator">
+   <meta name="description" CONTENT="Zelix KlassMaster is a second generation Java obfuscator">
+   <meta name="classification" CONTENT="Zelix KlassMaster is a second generation Java obfuscator">
+   <link rel=stylesheet href="../ZKM.css" TYPE="text/css">
+</head>
+<body background="../images/small-white-mist1.jpg" bgcolor="#E1E1E1">
+<center><a href="index.html"><img src=../images/ZKM_b4.gif alt="Zelix KlassMaster" width=264 height=62 border=0></a></center>
+<hr>
+<center>
+<table width=770 border=0>
+   <tr>
+      <td>
+         <h1>Trim Exclude Parameter Type</h1>
+      </td>
+   </tr>
+   <tr>
+      <td valign="top">
+         <img src=../images/trimExcludeType.gif align="right" width=251 height=207 alt="Zelix KlassMaster - Trim Exclude Parameter Type"><p>
+         The <b>Trim Exclude Parameter Type</b> window allows you to select the type of trim exclude 
+         parameter you wish to add.  There are three kinds of trim exclusion parameter.
+         <p>
+<h3><a name="classExclusion"><a href="trimExcludeClassType.html">Class exclusion parameters</a></a></h3>
+An exclusion parameter that <b>excludes a class</b> prevents that class from being removed. However, in itself it will not prevent the fields and the methods of that class
+from being removed.
+
+<h3><a name="fieldExclusion"><a href="trimExcludeFieldType.html">Field exclusion parameters</a></a></h3>
+An exclusion parameter that <b>excludes a field</b> prevents that field from being removed provided its containing class is not removed. 
+So excluding a field will not in itself prevent the containing class from being removed. 
+
+<h3><a name="methodExclusion"><a href="trimExcludeMethodType.html">Method exclusion parameters</a></a></h3>
+Similarly, an exclusion parameter that <b>excludes a method</b> prevents that method from being removed provided its containing class is not removed. 
+So, as with fields, excluding a method will not in itself prevent its containing class from being removed.
+<p>
+If a method and its containing class are explicitly or implicitly excluded then 
+all the classes, fields and methods that that method accesses will implicitly be excluded from being trimmed.
+So, for a simple, self contained application, if the <code>public&nbsp;static&nbsp;main(java.lang.String[])</code> method and its containing class are excluded then all the 
+classes, fields and methods directly or indirectly accessed by the <code>public&nbsp;static&nbsp;main(java.lang.String[])</code> method will be <b>implicitly excluded</b> from being trimmed.
+This will result in all the &quot;used&quot; classes, fields and methods being excluded and all the &quot;unused&quot; classes, fields and methods being removed.
+      </td>
+   </tr>
+</table>
+</center>
+<hr>
+<center>
+<table>
+   <tr>
+      <td>
+         <a href=trimExclude.html><img src=../images/uarrw.gif alt="Trim Exclusions"></a>
+      </td>
+   </tr>
+</table>
+</center>
+Copyright &copy; 2003 <a href="mailto:WebMaster@zelix.com"><font size=-1>Zelix Pty Ltd</font></a> (ABN 47 078 740 093)
+</body>
+</html>

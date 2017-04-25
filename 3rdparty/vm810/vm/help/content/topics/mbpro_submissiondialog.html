@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Submission Dialog Box</TITLE>
+<!--<MBPro_SubmissionDialog.html>-->
+<!--<index parent="Merant Build" label="Submission dialog box" anchor="submission">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiSubmissionDlg.VmGuiMerantBuildSubmissionDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nSerena ChangeMan Builder for Professional\nSubmission Dialog Box");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="submission"></A>Submission</H1>
+<P>Use the Submission dialog box to submit a build job. After you fill out the 
+fields, click Submit to submit the build job and save it.  If you wish to save
+the build job without submitting it, click Save.</P>
+
+<H2>Field Descriptions</H2>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+        <TD><b>Serena ChangeMan Builder project</b></TD>
+		<TD><!--<control name="SD_BUILD_PROJECT_TEXTFIELD">-->
+        A read-only field displaying the name of the Serena ChangeMan Builder project.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Search path</b></TD>
+		<TD><!--<control name="SD_SEARCH_PATH_TEXTFIELD">-->
+		A read-only field displaying the name of the search path.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Job name</b></TD>
+		<TD><!--<control name="SD_JOB_NAME_TEXTFIELD">-->
+		A read-only field displaying the name of the build job.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Job availability: Private</b></TD>
+		<TD><!--<control name="SD_JOB_AVAILABILITY_PRIVATE">-->
+		Click to make the build job private--that is, executable only by you.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Job availability: Public</b></TD>
+		<TD><!--<control name="SD_JOB_AVAILABILITY_PUBLIC">-->
+		Click to make the build job public--that is, executable by anyone.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Build machine</b></TD>
+		<TD><!--<control name="SD_BUILD_MACHINE_CHOICE">-->
+		Choose the build machine on which the build is to run.
+                The build machine displayed by default is the one selected in the <A HREF="mbpro_jobselectiondialog.html">Job Selection Dialog Box</A>.
+                Changing the build machine also changes the displayed build commands, 
+                because each build machine has its own set of saved build commands.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><b>Build commands text area</b></TD>
+		<TD><!--<control name="SD_BUILD_COMMANDS_TEXTAREA">-->
+		Accept the displayed build commands, or edit them. This is the last chance to edit
+                the build commands before Serena ChangeMan Builder executes the build job.<!--</control>--></TD>
+	</TR>
+	</TABLE>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="mbpro_parametersdialog.html">Build Parameters Dialog Box</A></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

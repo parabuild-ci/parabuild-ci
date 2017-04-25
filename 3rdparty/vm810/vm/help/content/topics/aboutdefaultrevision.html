@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>About the Default Revision</TITLE>
+<!--<aboutdefaultrevision.html>-->
+<!--<index parent="revisions" label="about the default revision" anchor="aboutdefaultevision">-->
+<!--<index parent="default_revision" label="about the default revision" anchor="aboutdefaultevision">-->
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+
+<BODY BGCOLOR="#ffffee">
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="aboutdefaultrevision"></A>About the Default Revision</H1>
+When you check out or get a revision, the default revision is checked out unless you specify a different revision. By default, the default revision is the latest revision (also known as the tip) of a versioned file. However, you can define the default revision to be a version label.</P>
+
+<h2>Defining the Default Revision in Project Workspace Settings</h2>
+
+The default revision is stored in the Default Version field of your project or project database's workspace settings (File | Properties | Workspace Settings tab). The default revision can be specified in the project configuration options by your Administrator or Project Leader. When a default revision is specified for your project database, all of the projects within the project database inherit the default revision setting. For more information, see 
+<a href="workhier.html">workspace hierarchies</a>.
+You can define a default revision for a project or project database. When you define a default revision, Serena ChangeMan Version Manager automatically checks out or gets the revision associated with the specified default revision.</P>
+<h2>Using Default Revisions to Automate Branching</h2>
+Defining a default revision is required when your project database is set up for automatic branching and merging. For information on branching, see the &quot;Branching and Merging Revisions&quot; chapter in the <i>Serena ChangeMan Version Manager Administrator's Guide</i>.
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a href="defaultrevision.html">Defining the Default Revision</a></TD>
+		<TD><A HREF="setautobranch.html">Setting Up Automatic Branching</A></TD>
+	</TR>
+
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

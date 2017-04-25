@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Set Workfile Location Dialog Box</TITLE>
+<!--<setworkfilelocationdialog.html>-->
+<!--<index parent="workfiles" label="Set Workfile Location dialog box" anchor="setworkfilelocationdialog">-->
+<!--<index parent="projects" label="Set Workfile Location dialog box" anchor="setworkfilelocationdialog">-->
+<!--<control base="pvcs.suite.gui.SetWorkPathDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+
+<BODY BGCOLOR="#ffffee">
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="setworkfilelocationdialog"></A>Set Workfile Location</H1>
+
+<P>The workfile location is initially set during project creation and stored in the workspace assigned to the project database. Use the Set Workfile Location dialog box (File | Set Workfile Location) to override it and set the default location for checking in, getting, and checking out workfiles. (You are still able to override this default location when you perform those functions.)</P>
+<P>If the workspace is public, the specified workfile location affects all Users who will access the project or file using the public workspace. If the workspace is private, the specified workfile location will not affect other Users.</P>
+
+<H2>Field Descriptions</H2>
+<TABLE WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><B>Workfile Location</B></TD>
+		<TD><!--<control name="SetWorkPath.WORKPATH_EDIT">-->
+		Enter the default location for checking in, getting, and checking out workfiles or click the Browse button to select one.
+		<!--</control>--></TD>
+	</TR>
+		<TR>
+		<TD><B>Workspace Information</B></TD>
+		<TD>The workspace assigned to the project or file. If the workspace is public, the specified workfile location affects all Users who will access the project or file using the public workspace. If the workspace is private, the specified workfile location will not affect other Users.
+		</TD>
+	</TR>
+</TABLE>
+<BR><BR>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="setworkspace.html">Setting Your Workspace</A></TD>
+	<TD><A HREF="settingworkfilelocation.html">Setting Workfile Locations</A></TD>
+	</TR>
+</TABLE>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

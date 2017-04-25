@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE application-server PUBLIC "Orion Application Server Config" "http://www.orionserver.com/dtds/application-server.dtd">
+
+<application-server>
+
+    <global-application name="default" path="./application.xml" />
+
+	<global-web-app-config path="./global-web-application.xml" />
+    <web-site path="./default-web-site.xml" />
+
+	<rmi-config path="./rmi.xml" />
+
+</application-server>

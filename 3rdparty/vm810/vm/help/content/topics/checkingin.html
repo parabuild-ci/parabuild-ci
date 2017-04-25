@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Checking In</TITLE>
+<!--<CheckingIn.html>-->
+<!--<toc parent="checking_in_checking_out" label="Checking In" anchor="CheckingIn" sortkey="06">-->
+<!--<index parent="checking_in" label="workfiles" anchor="CheckingIn">-->
+<!--<index parent="checking_in" label="projects" anchor="CheckingIn">-->
+<!--<index parent="workfiles" label="checking in" anchor="CheckingIn">-->
+<!--<index parent="projects" label="checking in" anchor="CheckingIn">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Using Version Manager\nChecking In/Checking Out\nChecking In");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="CheckingIn"></A>Checking In</H1>
+<P>You check in a <A HREF="aboutworkfiles.html">workfile</A> after you have changed it and want to make these changes available for use at another time or by another user. Each time you check in a new variation of a workfile, it becomes a new <A HREF="aboutrevisions.html">revision</A> in the <A HREF="aboutversionedfiles.html">versioned file</A>. 
+<P>If you have installed Tracker TrackerLink or TeamTrack SourceBridge, Version Manager can <A HREF="trackerlink.html">associate issues</a> with the files you check in. If you associate a revision with an issue when you check it out, SourceBridge annotates the issue to say that the file was locked. If you unlock the revision without checking in changes, the association is dissolved and a notation is made in the issue that the revision was unlocked. Also, you can apply <A HREF="aboutversionlabels.html">version labels</A> containing issue numbers when checking in workfiles.</P>
+<P>
+<h2>Using the System Default Options</h2>
+<p>Version Manager uses the following initial defaults when you check in a workfile. These defaults can be overridden when checking in the workfile, and in some cases, the defaults can be redefined in the <a href="optionsgeneral.html">Options dialog box</a> (View | Options | General tab).
+<UL>
+	<LI>Checks in the workfile from the location to which it was checked out.
+	<LI>Stores the workfile as the next revision in the <A HREF="aboutarchives.html">archive</a>, assigns it the next revision number in sequence, and leaves the revision unlocked.
+	<LI>Leaves a read-only copy of the workfile in the location currently set as the workfile location.
+	<LI>Checks in only the files of the selected project and does not include the files of the project's subprojects.
+	<LI>Prompts you if the workfile is unchanged or older than the one you are checking in.
+	<LI>Does not assign a version label or create a branch.
+</UL>
+<H2>To check in a workfile or the workfiles associated with every versioned file in a project or project database:</H2>
+<OL>
+	<LI>Select the workfile, project, or project database you want to check in.<BR><BR>
+	<LI>Select Actions | Check In. The Check In dialog box appears.<BR><BR>
+	<li>Enter a description of the changes you made to the workfile in the <b>Description</b> text box. The OK button is not enabled until you enter a change description.<br><br>
+	<li>Accept the defaults listed above and click OK, or do the following:
+<p>
+<ol type="a">
+	<li>To override the defaults on the General tab, edit any of the fields below:<br>
+<br>
+
+<TABLE  WIDTH="87%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+<TR>
+<TD><b>To...</b></TD>
+<TD><b>Do this...</b></TD>
+</TR>
+<TR>
+	<TD>Modify the location from which the workfile will be checked in</TD>
+	<TD>Edit the location in the <b> Check In From</b> field or select the Browse button to select the location. By editing this path, you are changing the workfile location temporarily for this action only; it does not change the workfile location permanently. By default, files are checked in from the location to which they where checked out. If a file has no check out location (as when a file is locked, but not checked out), it will be checked in from its default workfile location as defined in the current workspace, unless you specify an alternate location here. </TD>
+</TR>
+<TR>
+	<TD>Check in using the project hierarchy as the workfile locations instead of the default workfile locations</TD>
+	<TD>Select the <b>Check in using project hierarchy instead of workfile location(s)</b> check box. This option is available only when you select a project database or project to check in. This option overrides the default workfile locations of each project/subproject within the selected project database/project when checking in files and checks in the files that are located in subdirectories that mirror the project structure relative to the workfile location specified in the <b>Check In From</b> field. For example, if the value in the <b>Check In From</b> field is c:\projdb\work and the project structure is /proj1/subproj1, /proj1/subproj2, and proj2/subproj1, Version Manager checks in files from c:\projdb\work\proj1\subproj1, c:\projdb\work\proj1\subproj1, and c:\projdb\work\proj2\subproj1 when this option is selected. Otherwise, Version Manager checks in files from the default workfile locations defined for each project/subproject.</TD>
+</TR>
+<TR>
+	<TD>Be prompted for a unique description for each file</TD>
+	<TD>Deselect the <B> Use change description for all  </b>check box. Otherwise, the same change description will be used for all selected files.</TD>
+</TR>
+<TR>
+	<TD>Select an action to occur if the workfile you are checking in is unchanged or older than the previous revision</TD>
+	<TD>Select <B>Prompt</B>, <B>Check in</B>, or <B>Don't check in</B> from the <b>If Workfile Unchanged or Older</b> drop-down list.</TD>
+</TR>
+<TR> 
+	<TD>Select an action to occur after the workfile is checked in</TD>
+	<TD>Select <b>Delete workfile </b> or <b> Keep revision locked </b> from the <b>After Check In</b> drop-down list.</TD>
+</TR>
+<TR>
+	<TD>Check in all files of all subprojects included in the project or project database you are checking in</TD>
+	<TD>Select the <b> Include files in subprojects </b>check box.</TD> 
+</TR>
+<TR>
+	<TD><A HREF="trackerlink.html">Associate Issues</a> with the files you are checking in</TD>
+    <TD>Click the <b> Associate Issues </b>button and select the issues from the resulting associate dialog box. This option is available only if you have Tracker TrackerLink or TeamTrack SourceBridge installed.</TD> 
+</TR>
+</TABLE>
+<p>
+	<LI>To override the defaults on the Advanced tab, click the Advanced tab and edit any of the fields below:
+<p>
+
+<TABLE  WIDTH="87%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+<TR>
+<TD><b>To...</b></TD>
+<TD><b>Do this...</b></TD>
+</TR>
+<TR>
+	<TD>Create a revision with a revision number other than the default revision or select one of multiple revisions that are locked by you </TD>
+	<TD>This field has two purposes. The main purpose is to specify a new revision number for the workfile you are checking in. You must enter the new revision number in the field; you cannot select it.<BR><BR>The second purpose of this field is to identify the locked revision you want to check in when you have multiple revisions of a versioned file checked out with a lock. In this case, you can either:
+<UL>
+<LI>Select the revision number of one of the locked revisions or select a promotion group or version label associated with one of the locked revisions.
+<LI><b>Not</b> select a revision number and you will be prompted to select the revision number to check the workfile in to.</UL></TD>
+</tr>
+<TR>
+	<TD>Create a branch</TD>
+	<TD>Select the <b>Force Branch </b>check box.</TD>
+</TR>
+<TR>
+	<TD>Assign a version label to the checked in revision</TD>
+	<TD>Enter a version label in the<b> Version Label </b>field or click the Browse button to select a pre-defined version label. If checking in the revision by a version label, enter a backslash before a version label that begins with a numeric character (such as \1.2label). </TD>
+</TR>
+<TR>
+	<TD>Allow the specified version label to move with the tip of the current trunk or branch</TD>
+	<TD>Select the <b> Float label with tip </b>check box. Click <a href="floatfixlabels.html">here</a> for more information on <a href="floatfixlabels.html">floating labels</a>.</TD>
+</TR>
+<TR>
+	<TD>Choose what should happen if a version label already exists</TD>
+	<TD>Select <B>Prompt</B>, <B>Reassign</B>, or <B>Don't reassign</B> from the <b> If Version Label Exists </b>drop-down list.</td>
+</TR>
+</TABLE>
+<p>
+	<LI>To review the selected files or projects before checking them in or to review archive, configuration file, or workspace information, click the Selected Files tab.<BR><BR></p>
+	<LI>Click OK.<BR><BR></p>
+<p>
+</OL>
+</OL>
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="checkindialog.html">Check In Dialog Box</A></TD>
+		<TD><A HREF="checkingout.html">Checking Out/Editing Files</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="trackerlink.html">Associating Issues</A></TD>
+	</TR>
+</TABLE>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

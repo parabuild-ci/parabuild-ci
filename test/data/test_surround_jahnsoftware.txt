@@ -1,0 +1,122 @@
+                          Surround SCM History Report
+
+Date: 10/10/2007 06:14 PM
+Actions: All change actions
+Users: All Users
+
+Branch: ProDataWernli
+
+Repository: MainLine/Projekte/ProDataWeb/ProDataWeb/ProDataWeb
+AndreJahn 10/09/2007 08:23 PM Add
+
+File: MainLine/Projekte/ProDataWeb/ProDataWeb/ProDataWeb/build.xml
+1 AndreJahn 10/09/2007 08:27 PM Add      
+2 AndreJahn 10/09/2007 11:23 PM Check in 
+--------------------------------------------------------------------------------
+--- version 1 in <ProDataWernli>
++++ version 2 in <ProDataWernli>
+@@ -62,7 +62,7 @@
+ 
+ 
+ 		<copy todir="${working.dir}/WEB-INF/reports">
+-			<fileset dir="reports">
++			<fileset dir="reports"> 
+ 				<include name="**/*.xsl" />
+ 				<include name="**/*.gif" />
+ 				<include name="**/*.xml" />
+--------------------------------------------------------------------------------
+3 AndreJahn 10/10/2007 09:45 AM Check in 
+--------------------------------------------------------------------------------
+--- version 2 in <ProDataWernli>
++++ version 3 in <ProDataWernli>
+@@ -62,22 +62,14 @@
+ 
+ 
+ 		<copy todir="${working.dir}/WEB-INF/reports">
+-			<fileset dir="reports"> 
++			<fileset dir="WEB-INF/reports"> 
+ 				<include name="**/*.xsl" />
+ 				<include name="**/*.gif" />
+ 				<include name="**/*.xml" />
+ 			</fileset>
+ 		</copy>
+ 
+-		<copy todir="${working.dir}/WEB-INF/reports">
+-			<fileset dir="reports">
+-				<include name="**/*.xsl" />
+-				<include name="**/*.gif" />
+-				<include name="**/*.xml" />
+-			</fileset>
+-		</copy>
+-
+-
++		
+ 		<copy todir="${working.dir}/WEB-INF/">
+ 			<fileset dir="WEB-INF">
+ 				<include name="**/*.tld" />
+
+File: MainLine/Projekte/ProDataWeb/ProDataWeb/ProDataWeb/WEB-INF/reports/templates/GABfo.xsl
+1 AndreJahn 10/09/2007 08:27 PM Add 
+
+File: MainLine/Projekte/ProDataWeb/ProDataWeb/ProDataWeb/WEB-INF/reports/templates/GCfo.xsl
+1 AndreJahn 10/09/2007 08:27 PM Add 
+
+File: MainLine/Projekte/ProDataWeb/ProDataWeb/ProDataWeb/WEB-INF/reports/templates/headerhinw.xsl
+1 AndreJahn 10/09/2007 08:27 PM Add 
+
+File: MainLine/Projekte/ProDataWeb/ProDataWeb/ProDataWeb/WEB-INF/reports/templates/hheader.xsl
+1 AndreJahn 10/09/2007 08:27 PM Add 
+
+File: MainLine/Projekte/ProDataWeb/ProDataWeb/ProDataWeb/WEB-INF/reports/templates/M1fo.xsl
+1 AndreJahn 10/09/2007 08:27 PM Add 
+
+File: MainLine/Projekte/ProDataWeb/ProDataWeb/ProDataWeb/WEB-INF/reports/templates/MBfo.xsl
+1 AndreJahn 10/09/2007 08:27 PM Add 
+
+File: MainLine/Projekte/ProDataWeb/ProDataWeb/ProDataWeb/WEB-INF/reports/templates/MBfoAlt.xsl
+1 AndreJahn 10/09/2007 08:27 PM Add 
+
+File: MainLine/Projekte/ProDataWeb/ProDataWeb/ProDataWeb/WEB-INF/reports/templates/MCfo.xsl
+1 AndreJahn 10/09/2007 08:27 PM Add 
+
+File: MainLine/Projekte/ProDataWeb/ProDataWeb/ProDataWeb/WEB-INF/reports/templates/MDfo.xsl
+1 AndreJahn 10/09/2007 08:27 PM Add 
+
+File: MainLine/Projekte/ProDataWeb/ProDataWeb/ProDataWeb/WEB-INF/reports/templates/MEfo.xsl
+1 AndreJahn 10/09/2007 08:27 PM Add 
+
+File: MainLine/Projekte/ProDataWeb/ProDataWeb/ProDataWeb/WEB-INF/reports/templates/N1fo.xsl
+1 AndreJahn 10/09/2007 08:27 PM Add 
+
+File: MainLine/Projekte/ProDataWeb/ProDataWeb/ProDataWeb/WEB-INF/reports/templates/P1fo.xsl
+1 AndreJahn 10/09/2007 08:27 PM Add 
+
+File: MainLine/Projekte/ProDataWeb/ProDataWeb/ProDataWeb/WEB-INF/reports/templates/PG1fo.xsl
+1 AndreJahn 10/09/2007 08:27 PM Add 
+
+File: MainLine/Projekte/ProDataWeb/ProDataWeb/ProDataWeb/WEB-INF/reports/templates/PG1Pfo.xsl
+1 AndreJahn 10/09/2007 08:27 PM Add 
+
+File: MainLine/Projekte/ProDataWeb/ProDataWeb/ProDataWeb/WEB-INF/reports/templates/PG2fo.xsl
+1 AndreJahn 10/09/2007 08:27 PM Add 
+
+File: MainLine/Projekte/ProDataWeb/ProDataWeb/ProDataWeb/WEB-INF/reports/templates/PG2Pfo.xsl
+1 AndreJahn 10/09/2007 08:27 PM Add 
+
+File: MainLine/Projekte/ProDataWeb/ProDataWeb/ProDataWeb/WEB-INF/reports/templates/reportheader.xsl
+1 AndreJahn 10/09/2007 08:27 PM Add 
+
+File: MainLine/Projekte/ProDataWeb/ProDataWeb/ProDataWeb/WEB-INF/reports/templates/stammdaten.xsl
+1 AndreJahn 10/09/2007 08:27 PM Add 
+
+File: MainLine/Projekte/ProDataWeb/ProDataWeb/ProDataWeb/WEB-INF/reports/templates/test.xml
+1 AndreJahn 10/09/2007 08:27 PM Add 
+
+Repository: MainLine/Projekte/ProDataWeb/ProDataWeb/ProDataWeb/WEB-INF/reports/templates/images
+AndreJahn 10/09/2007 08:27 PM Add
+
+File: MainLine/Projekte/ProDataWeb/ProDataWeb/ProDataWeb/WEB-INF/reports/templates/images/Bahlsen.gif
+1 AndreJahn 10/09/2007 08:27 PM Add 
+
+Number of Repositories: 31
+Number of Files: 519

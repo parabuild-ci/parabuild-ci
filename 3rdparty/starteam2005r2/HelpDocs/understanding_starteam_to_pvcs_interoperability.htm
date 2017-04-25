@@ -1,0 +1,233 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Understanding StarTeam to PVCS Interoperability</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=copyright value="Copyright© 1995-2003, Borland Software Corporation. All rights reserved.">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=945>
+<meta name=layout-width content=702>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<!--(Scripts)=======================================================-->
+
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="./ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Administering the Application\nInteroperating with Other Programs\nStarTeam and PVCS\nUnderstanding StarTeam to PVCS Interoperability");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Understanding StarTeam to PVCS Interoperability</h1>
+
+<p class=Body
+	style="margin-top: 7.00pt;"><font style="color: #000000;"
+										color=#000000>The following functions 
+ in StarTeam result in equivalent operations in PVCS:</font></p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Adding a file. Files 
+ cannot be added directly to a child view in StarTeam. Instead, they must 
+ be added to the root view, then automatically shared to the child view 
+ and set to branch on change. If you want a file to exist only in the root 
+ view, you must explicitly delete it from each child view before it branches 
+ in that view. When a file branches in a child view, it branches in PVCS 
+ and acquires a floating label for that branch.</p></li>
+	
+	<p class=Bullet-1-text>Never delete a file from the root view or from 
+ a child view that has its own child views. If a file is deleted from a 
+ view and not deleted from its child views,<span style="font-weight: bold;"><B> 
+ F6</B></span> restores the file to the view and creates a second copy of the 
+ file in each child view.</p>
+	
+	<p class=Bullet-1-text>Files that you add via StarTeam are immediately 
+ accessible as PVCS archives from the PVCS command line. However, from 
+ the PVCS graphical user interface, you <span style="font-weight: bold;"><B>must</B></span> 
+ use the <span style="font-weight: bold;"><B>Import Archive</B></span> command 
+ to make the archive visible.</p>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Checking in a file.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Getting any revision 
+ of a file.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Checking out a file.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Locking and unlocking 
+ a file in the root view or a child view in which the file has branched. 
+ If a file has not branched in the child view and you lock it from the 
+ child view, PVCS is unaware of the lock.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Unlocking the file for 
+ a former user and relocking it for the current user (that is, breaking 
+ a lock) if PVCS security was disabled when the server started. Security 
+ is considered disabled if the user who locked the file has the empty string 
+ as a password.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Creating views/branches. 
+ Because views created in StarTeam become branches in PVCS, the application 
+ does not allow a PVCS file to be branched into more than one view with 
+ the same name. To work with PVCS branches, child views created in StarTeam 
+ must have the same root folder as their parent views.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Turning views into branches 
+ with floating labels. StarTeam does not create a branch in the PVCS archive 
+ for a file unless the file’s behavior is Branch on Change and a revision 
+ of that file has been checked into the new view. The appropriate revision 
+ is branched, but revision numbers in PVCS and StarTeam may differ. Consequently, 
+ reference views never appear in the PVCS archives and should be avoided 
+ in projects that wrap PVCS archives.</p></li>
+</ul>
+
+<p class=Body>Because StarTeam is a true client-server application, all 
+ archive repository time stamps are translated to the time zone of the 
+ server, then forwarded to PVCS. In this way, clients in different time 
+ zones can work on the same set of files and still maintain a valid chronology 
+ for the revisions. It is very important to keep the times on all workstations 
+ and servers accurate.</p>
+
+<p class=Body>The following functions in StarTeam are not currently translated 
+ in PVCS.</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Renaming a file. To rename 
+ StarTeam files, you change the file’s name in the <span style="font-style: italic;"><I>File 
+ Properties</I></span> dialog. If the file is a foreign file, the <span style="font-weight: bold;"><B>Name</B></span> 
+ text box is disabled.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Deleting a file. If you 
+ delete a file from a view via StarTeam, PVCS does not know that it has 
+ been deleted. If you delete a file with StarTeam before a revision was 
+ checked in for a particular view, it does not have a branch in the PVCS 
+ archive for the view from which it was deleted. In this case, to restore 
+ the deleted file is not a simple <span style="font-weight: bold;"><B>Add 
+ File</B></span> operation. You must open both the view from which you deleted 
+ the file and its parent view, then share the file from the parent view 
+ to the child view. These actions restore the file and its history.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Sharing a file.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Changing the working 
+ path for a folder.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Locking and unlocking 
+ a file in a child view in which the file has <span style="font-weight: bold;"><B>not</B></span> 
+ branched. If you lock a file from a child view in which it has <span style="font-style: italic;"><I>not</I></span> 
+ branched, PVCS is unaware of the lock.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Linking. You can link 
+ items, but the links are available only in StarTeam.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Labeling views or files. 
+ StarTeam labels are not translated in any way into PVCS.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Changing file descriptions. 
+ StarTeam can create a PVCS file description as it adds a file to the project, 
+ but it does not record any changes made to that description.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Breaking a lock if PVCS 
+ security is enabled. Security is considered enabled if the user who locked 
+ the file had a non-empty password when the server started. To break a 
+ lock, log onto another StarTeam client as the person who locked the item,and 
+ then unlock the file. </p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Changing the compression 
+ options of Native-I or Native-II files. This option does not appear for 
+ foreign files in the <span style="font-style: italic;"><I>File Properties</I></span> 
+ dialog.</p></li>
+</ul>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

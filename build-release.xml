@@ -1,0 +1,38 @@
+<project name="bt" default="release.all" basedir=".">
+
+  <!-- Prepare release -->
+  <target name="release.prepare">
+  </target>
+
+
+  <!-- Build release version of the product for test -->
+  <target name="release.build.rc" depends="release.prepare">
+    <!-- Call product build -->
+    <antfetch antfile="build.xml" target="product.all"/>
+    <!-- Store Release candidate -->
+    <mkdir dir="${build.dir}/release_candidate"/>
+    <copy todir="${build.dir}/release_candidate">
+      <fileset dir="${build.dir.result}"/>
+    </copy>
+  </target>
+
+
+  <!-- Smoke test -->
+  <target name="release.smoke.test" depends="release.build.rc">
+    <!-- NOTE: simeshev@parabuildci.org -> serverside smoke test for obfusacted -->
+  </target>
+
+  <!-- Build release version of the product for test -->
+  <target name="release.restore.rc" depends="release.smoke.test">
+    <delete dir="${build.dir.result}"/>
+    <mkdir dir="${build.dir.result}"/>
+    <copy todir="${build.dir.result}">
+      <fileset dir="${build.dir}/release_candidate"/>
+    </copy>
+  </target>
+
+  <target name="release.all"
+    depends="release.build.rc, release.smoke.test, release.restore.rc">
+  </target>
+
+</project>

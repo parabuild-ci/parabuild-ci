@@ -1,0 +1,191 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Understanding Labels</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=copyright value="Copyright© 1995-2003, Borland Software Corporation. All rights reserved.">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=722>
+<meta name=layout-width content=699>
+
+
+<!--(Links)=========================================================-->
+
+ <link rel='stylesheet' href='starteam_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='starteam.css'>");}
+//-->
+</script>
+<!--(Scripts)=======================================================-->
+
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="./ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Working with the Application\nPerforming Common Operations\nUsing Labels\nUnderstanding Labels");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("starteam.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<h1>Understanding Labels</h1>
+
+<p class=Body>StarTeam offers two types of labels: </p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>View labels, which are 
+ automatically and immediately attached to all folders and items in a view 
+ at the time they are created. They have multiple purposes, but are primarily 
+ used as a time stamp for the view and as build labels.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>Revision labels, which 
+ are not automatically attached to any item in the view. Instead, they 
+ are used to designate a set of folders or items within a view. For example, 
+ you might want to label a group of files that should be checked in and 
+ out together. </p></li>
+</ul>
+
+<h2 class=Heading2norule>About Labels in General</h2>
+
+<p class=Body>A label can be attached to any type of StarTeam item, including 
+ files, requirements, change requests, tasks, topics, and audit entries. 
+ Any item can have more than one label. However, no two revisions of the 
+ same item can have the same label at the same time. </p>
+
+<p class=Body>Every label is unique within its view: no view label can 
+ have the same name as any other view label, no revision label can have 
+ the same name as any other revision label, and no view label and revision 
+ label can have the same name.</p>
+
+<p class=Body>Both view labels and revision labels can be manually attached 
+ to or detached from a folder or item. In addition, either type of label 
+ can be used to identify a file when it is checked out. When you check 
+ a file in, you can attach and create a revision label for that file or 
+ attach an existing revision label.</p>
+
+<p class=Body>You can select any type of item by its label. For example, 
+ you can select all files with a particular revision label and roll them 
+ back to that label, making the revision with that label the tip revision. 
+ Then you can compare your working files to the rolled-back revisions.</p>
+
+<p class=Body>Access rights for labels can be set at the view level or 
+ at the folder or item level. The rights to create labels, edit their properties, 
+ and delete them must be granted at the view level. However, the right 
+ to move a label (also called &quot;adjust a label&quot;) can be granted 
+ at the folder or item level.</p>
+
+<h2 class=Heading2norule>About View Labels in Particular</h2>
+
+<p class=Body>Using a view label as a time stamp, you can roll a view back 
+ to see everything in the view as it was at the time the label was attached. 
+ For example, to see if a particular file was in the beta version of a 
+ product, you can roll back the view to the beta label.</p>
+
+<p class=Body>A view label may also be used as a build label, which allows 
+ the QA team to immediately determine what build to test for a fix to any 
+ given change request. To use a view label for this purpose:</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>It must be designated 
+ as a build label.</p></li>
+	
+	<li class=kadov-p-CBullet-1><p class=Bullet-1>It must be created while 
+ the <span style="font-weight: bold;"><B>Addressed in build</B></span> property 
+ for the change request contains the value Next Build.</p></li>
+</ul>
+
+<p class=Body>When StarTeam creates the label, each change request with 
+ Next Build as its <span style="font-weight: bold;"><B>Addressed in build</B></span> 
+ property will be reset to the build label.</p>
+
+<p class=Body>To create a view label, you must select the current configuration 
+ of the view. Historical configurations are read only, and adding a label 
+ is considered a change. However, if a label already exists for a prior 
+ configuration, its name can be adjusted, files and folders can be added 
+ to it or detached from it, etc. You can also move a view label from one 
+ revision to another. </p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+
+</html>

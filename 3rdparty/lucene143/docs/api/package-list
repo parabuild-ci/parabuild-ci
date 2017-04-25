@@ -1,0 +1,11 @@
+org.apache.lucene.analysis
+org.apache.lucene.analysis.de
+org.apache.lucene.analysis.ru
+org.apache.lucene.analysis.standard
+org.apache.lucene.document
+org.apache.lucene.index
+org.apache.lucene.queryParser
+org.apache.lucene.search
+org.apache.lucene.search.spans
+org.apache.lucene.store
+org.apache.lucene.util

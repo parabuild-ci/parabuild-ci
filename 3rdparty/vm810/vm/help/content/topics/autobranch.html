@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>About Automatic Branching</TITLE>
+<!--<autobranch.html>-->
+<!--<index parent="branching" label="about automatic" anchor="autobranch">-->
+<!--<index parent="automatic_branching" label="about" anchor="autobranch">-->
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="autobranch"></A>About Automatic Branching</H1>
+<P>Automatic branching lets you create a branch automatically from a trunk revision. Then, by default, you operate on the tip revision of that branch whenever you perform an action. Without automatic branching, you must create a branch manually, either by locking a non-tip revision or forcing a branch when checking in a tip revision. You must also specify the branch tip revision each time you want to check it out and reassign the version label each time you check in a new revision. See <A HREF="branchfile.html">Branching Files</A> for more information.</p>
+
+<p>When you set the branching options in the configuration file associated with the project database or project, the same automatic branching definition is set up for all of the projects/subprojects in the database or project. Alternatively, you can set different automatic branching definitions in <A HREF="setbranchworkspace.html">workspaces</A>. The settings in a selected workspace override the settings in the configuration file, unless you disallow the branching options in the master configuration file.</p>
+
+<p>Before you set options for automatic branching, you must assign two version labels to the revision from which you want to branch:</p>
+<UL>
+	<LI>Assign a fixed version label to the appropriate revision to mark the branch point.
+	<LI>Then assign another fixed version label to this revision (this becomes a floating label when the branch is created).
+</UL>
+<p>To set up automatic branching, you must have the Configure Project privilege assigned to you, your project database or project must have a configuration file associated with it, and if you are setting up automatic branching in a project, the master configuration file must allow the following three Branching options (directives): Base Version, Branch Version, and Default Version. These options define the starting and ending points for the branch and specify the default revision to operate on:</p>
+<ul>
+	<li>Base Version specifies the version label that you assigned to mark the revision from which you want to start a branch (for example, Rel1.0 Base).
+	<li>Branch Version specifies the version label that you assigned to the tip of the branch (for example, Rel1.5 Branch). Initially, this will be the revision from which you want to branch. As you check in subsequent branch revisions, this label will automatically reassign itself to the tip revision on the branch.
+	<li>Default Version identifies the version label you specified for the Branch Version option (for example, Rel1.5 Branch). This version label tells Version Manager which revision to operate on for all actions.
+</ul>
+<p>Whenever the version labels specified for the Base Version and Branch Version options refer to the same revision, Version Manager automatically begins a branch from that revision when you check in a file. Because you set the Default Version with the same version label as Branch Version, you always check out the tip revision on the branch automatically.</p>
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="setautobranch.html">Setting Up Automatic Branching</A></TD>
+		<TD><A HREF="branchfile.html">Branching Files</A></TD>
+	</TR>
+		<TR>
+		<TD><A HREF="aboutworkspaces.html">About Workspaces</A></TD>
+		<TD><A HREF="aboutbranching.html">About Branching</A></TD>
+	</TR>
+	
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

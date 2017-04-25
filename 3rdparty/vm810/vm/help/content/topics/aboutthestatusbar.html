@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>About the Status Bar</TITLE>
+<!--<aboutthestatusbar.html>-->
+<!--<toc parent="main_window_components" label="About the Status Bar" anchor="aboutthestatusbar" sortkey="02">-->
+<!--<index parent="statusbar" label="about" anchor="aboutthestatusbar">-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addTocInfo("Getting Started\nOverview of the Version Manager Interface\nMain Window Components\nAbout the Status Bar");
+addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="aboutthestatusbar"></A>About the Status Bar</H1>
+<img src="../graphics/statusbar.gif">
+<P>
+The status bar is located at the bottom of the window. It contains the following information and shortcuts from left to right:
+</P>
+<TABLE  WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+<tr>
+<td><b>File Server Status</b></td>
+<td>Displays the status of the <a href="about_file_server.html">Version Manager File Server(s)</a>, if any (click to refresh status):
+<ul><LI><img src="../graphics/fs_notcfg_icon.gif"> No file server is configured.<BR><BR></LI>
+<LI><img src="../graphics/fs_notwork_icon.gif"> One or more configured file servers are not responding.<BR><BR></LI>
+<LI><img src="../graphics/fs_ok_icon.gif"> All configured file servers are working correctly.</LI></ul>
+</td>
+</tr>
+	<TR>
+	<TD><B>System Message</B></TD>
+	<TD>Displays information about the current status of Version Manager, such as &quot;Ready&quot; or &quot;Loading...&quot; or a message specific to the current action, such as &quot;Checking In.&quot;</TD></TR>
+<TR><TD><B>User ID</B></TD>
+<TD>Displays the name of the User logged in to the selected project database along with the user icon <img src="../graphics/usericon.gif">. Click this field to access the Switch User dialog box.</TD></TR>
+<TR><TD><B>Workspace</B></TD>
+<TD>Displays the name of the workspace set on the selected project database along with an icon that identifies whether the workspace is private <img src="../graphics/privatewsicon.gif"> or public <img src="../graphics/publicwsicon.gif">. Click this field to access the Set Workspace dialog box.</TD>
+</TR>
+<TR><TD><B>Files Selected</B></TD>
+<TD>Displays the number of files selected. When you select a project, this number reflects the total number of files in the project. When you select one or more files, this number reflects the total number of files selected.</TD>
+</TR>
+</TABLE>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

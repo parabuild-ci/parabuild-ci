@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  -    MSN messenger Application Programming Interface
+  -    Project Ant build file.
+  -
+  -    @author Jang-Ho Hwang, rath@xrath.com
+  -    @version 1.0.000, 2001/11/07
+  -
+  -    $Id: build.xml,v 1.11 2004/12/28 19:19:23 xrath Exp $
+  -->
+<project name="MSN Messenger library" default="build" basedir=".">
+
+	<property name="src" value="src"/>
+	<property name="doc" value="docs"/>
+	<property name="build" value="classes"/>
+	<property name="dist" value="dist"/>
+	<property name="MainJar" value="msnm.jar"/>
+
+	<target name="compile">
+		<mkdir dir="${build}"/>
+		<javac srcdir="${src}" destdir="${build}"
+			source="1.3"
+			target="1.3"
+			encoding="UTF-8"
+			debug="yes">
+            <classpath>
+                <pathelement location="jsse.jar"/>
+            </classpath>
+        </javac>
+	</target>
+
+	<target name="build" depends="compile">
+		<!-- <delete file="${MainJar}"/> -->
+		<delete dir="${build}/package cache"/>
+		<jar jarfile="${MainJar}"
+			basedir="${build}"
+			compress="yes"/>
+		<copy file="${MainJar}" todir="../jmsn/lib"/>
+	</target>
+
+	<target name="doc">
+		<delete dir="${doc}"/>
+		<mkdir dir="${doc}"/>
+		<javadoc sourcepath="${src}"
+			destdir="${doc}"
+			encoding="UTF-8"
+			docencoding="UTF-8"
+			link="http://java.sun.com/j2se/1.4/docs/api"
+			packagenames="rath.msnm.*"
+			author="yes" version="yes"
+			windowtitle="MSN Messenger"
+			doctitle="MSN Messenger API Document"
+			splitindex="yes">
+		</javadoc>
+	</target>
+
+	<target name="fix">
+		<fixcrlf srcdir="." includes="**/*.java,**/*.xml,**/*.txt"/>
+	</target>
+
+	<target name="clean">
+		<delete dir="${build}"/>
+		<delete file="${MainJar}"/>
+	</target>
+
+	<target name="dist" depends="build">
+		<mkdir dir="${dist}"/>
+		<zip zipfile="${dist}/msnmlib-${build.version}-src.zip"
+			basedir="."
+			excludes="**/CVS/**, .cvsignore, classes/**, bak/**, doc/**, dist/**, msnmlib.jp*, sync*, *.bsh"/>
+		<tar tarfile="${dist}/msnmlib-${build.version}-src.tar"
+			basedir="."
+			excludes="**/CVS/**, .cvsignore, classes/**, bak/**, doc/**, dist/**, msnmlib.jp*, sync*, *.bsh"/>
+		<gzip src="${dist}/msnmlib-${build.version}-src.tar"
+			zipfile="${dist}/msnmlib-${build.version}-src.tar.gz"/>
+		<delete file="${dist}/msnmlib-${build.version}-src.tar"/>
+	</target>
+
+</project>

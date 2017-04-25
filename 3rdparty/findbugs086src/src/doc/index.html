@@ -1,0 +1,83 @@
+<html>
+<head>
+<title>FindBugs - A Bug Pattern Detector for Java</title>
+<link rel="stylesheet" type="text/css" href="findbugs.css">
+</head>
+
+<body>
+
+<table width="100%"><tr>
+
+@HTML_SIDEBAR@
+
+<td align="left" valign="top">
+
+<p> <a href="@WEBSITE@/"><img src="buggy-sm.png" alt="FindBugs logo" border=0></a>
+    <a href="http://www.umd.edu/"><img src="informal.png" alt="UMD logo" border=0></a>
+
+<h1>FindBugs - A Bug Pattern Detector for Java</h1>
+
+<p> This is the web page for FindBugs, a program which looks for bugs
+in Java code.&nbsp; It is free software, distributed under the terms
+of the <a href="http://www.gnu.org/licenses/lgpl.html">Lesser GNU Public License</a>.
+
+<p> FindBugs requires JRE (or JDK) 1.4.0 or later to run.&nbsp; However, it
+can analyze programs compiled for any version of Java.
+
+<p> The current version of FindBugs is @VERSION@,
+released on @RELEASE_DATE@.
+
+<p> FindBugs is beta quality software.&nbsp; You may find bugs in it,
+and the features and source code may change significantly in future releases.&nbsp;
+We are very interested in getting feedback on how to improve FindBugs.&nbsp;
+Send your comments to <a href="mailto:daveho@cs.umd.edu">daveho@cs.umd.edu</a>.
+
+<h1>News</h1>
+
+<p> Changes since version 0.8.5:
+
+<ul>
+<!-- new detectors -->
+<li> New detector to find catch blocks that may inadvertently catch
+     runtime exceptions (Brian Goetz)
+<li> New detector to find objects that are instantiated based on classes that only have
+     static methods and fields, using the synthesized constructor (Dave Brosius)
+<li> New detector to find calls to Thread.interrupted() in a non static context, and especially
+     with non currentThread() threads (Dave Brosius)
+<li> New detector to find calls to equals() methods that use Object's version. (Dave Brosius)
+<li> New detector to find Applets that call methods in the constructor 
+     refering to the AppletStub (Dave Brosius)
+<li> New detector to find some cases of infinite recursion (Bill Pugh)
+<li> New detector to find dead stores to local variables (David Hovemeyer, Bill Pugh)
+<li> Extend Dumb Method detector for toUpperCase(), toLowerCase() without a locale, 
+     new Integer(1).toString(), new XXX().getClass(), and new Thread()
+     without a run implementation (Dave Brosius)
+<!-- feature enhancements -->
+<li> Ant task supports "errorProperty" attribute, which sets an
+     Ant property to "true" if an error occurs running FindBugs (Michael Tamm)
+<li> Eclipse plugin allows filtering of warnings by bug category, priority
+     (David Hovemeyer)
+<li> Swing GUI allows filtering of warnings by bug category (David Hovemeyer)
+<li> Ability to annotate methods using Java 1.5 annotations that suppress FindBugs warnings (Bill Pugh)
+<li> New -adjustExperimental for lowering priority of BugPatterns that are experimental (Dave Brosius)
+<li> Allow for command line options 'files' using the @ symbol (David Hovemeyer)
+<li> New -adjustPriority command line option to for adjusting bug priorites (David Hovemeyer)
+<li> Added an Edit menu (cut/copy/paste) to Swing GUI (Dave Brosius)
+<li> French translation supplied (David Cotton)
+<!-- Bug fixes -->
+</ul>
+
+
+<p> <a href="Changes.html">Older versions...</a>
+
+<h1>Sponsors</h1>
+
+<p> This work has been supported by the National Science Foundation grants
+ASC9720199 and CCR-0098162, and by an IBM Eclipse Innovation award.
+
+@HTML_FOOTER@
+
+</td></tr></table>
+
+</body>
+</html>

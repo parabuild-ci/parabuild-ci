@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <link rel='stylesheet' href='stylesht_ns.css'>
+<script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='stylesht.css'>");}
+//-->
+</script>
+ <TITLE>Get Dialog Box</TITLE>
+<!--<GetRevisionDialog.html>-->
+<!--<index parent="revisions" label="Get dialog box" anchor="GetRevisionDialog">-->
+<!--<index parent="projects" label="Get dialog box" anchor="GetRevisionDialog">-->
+<!--<control base="pvcs.vm.vmgui.VmGuiGetRevisionDialog"></control>-->
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+  div.WebHelpPopupMenu {position:absolute; left:0px; top:0px; z-index:4; visibility:hidden;}
+  p.WebHelpNavBar {text-align:right;}
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.setRelStartPage)
+	{
+	addButton("show",BTN_TEXT,"Show Navigation","","","","",0,0,"../whd_show0.gif","../whd_show2.gif","../whd_show1.gif");
+addButton("hide",BTN_TEXT,"Hide Navigation","","","","",0,0,"../whd_hide0.gif","../whd_hide2.gif","../whd_hide1.gif");
+
+	}
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../vm_help.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#ffffee">
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(4);
+//-->
+</script>
+<H1><A NAME="GetRevisionDialog"></A>Get</H1>
+<P>Use the Get dialog box (Actions | Get) to view one or more <A HREF="aboutworkfiles.html">workfiles</A> without locking or checking out the revision. When you get a <A HREF="aboutrevisions.html">revision</A>, Serena ChangeMan Version Manager leaves the revision in the state that it is in (locked or unlocked) and creates a read-only workfile in the location currently set as the workfile location.
+<P>When getting a revision, you can select multiple <A HREF="aboutversionedfiles.html">versioned files</A>, a <A HREF="aboutprojects.html">project</A> or a<A HREF="aboutprjdb.html">project database</A>, and specify a specific revision by revision number, version label, promotion group, or date.
+<H2>Field Descriptions</H2>
+<TABLE WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD COLSPAN=2><CENTER><B>General Tab</B></CENTER></TD>
+	</TR>
+	<TR>
+		<TD><B>Copy To</B></TD>
+		<TD><!--<control name="GetRevisionGeneral.WORKING_FOLDER_EDIT">-->Enter the location to which the workfile will be copied or click the Browse button to select one. By editing this path, you are changing the workfile location for this action only; it does not change the workfile location permanently.
+		<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><B>Copy out using project hierarchy instead of workfile location(s)</B></TD>
+		<TD>
+		This option is not available when operating on a single file. <!--<control name="GetRevisionGeneral.WORKING_FOLDER_CB">-->Select to override the default workfile locations and copy files to directories (locations) that mirror the project structure relative to the workfile location specified in the <b>Copy To</b> field. If the directories do not exist, Version Manager creates them. <!--</control>-->For example, if the value in the <b>Copy To</b> field is c:\projdb\work and the project structure is /proj1/subproj1, /proj1/subproj2, and /proj2/subproj1, Version Manager copies the files to c:\projdb\work\proj1\subproj1, c:\projdb\work\proj1\subproj1, and c:\projdb\work\proj2\subproj1 when this option is selected. Otherwise, Version Manager copies the files to the default workfile locations defined for each project/subproject. </TD>
+		<TR>
+		<TD><B>Revision</B></TD>
+		<TD><!--<control name="GetRevisionGeneral.REVISION_EDIT">-->To get a revision other than the <A HREF="defaultrevision.html">default revision</A>, enter the revision number, version label, or promotion group associated with the revision you want to get or click the Browse button to select one. If getting the revision by a version label, enter a backslash before a version label that begins with a  numeric character (such as \1.2label).
+			<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD><B>If Workfile Exists</B></TD>
+		<TD><!--<control name="GetRevisionGeneral.WORKFILE_EXISTS_CHOICE">-->If a workfile with the same name currently exists in the workfile location, select one of the following:<BR><BR> <B>Prompt</B> to prompt for confirmation before overwriting the workfile. <BR><B>Overwrite</B> to overwrite the workfile. <BR><B>Don't Overwrite</B> to prevent the workfile from being overwritten.<BR><BR>
+<b>Note:</b> Version Manager does not prompt for confirmation if a read-only workfile exists in the current workfile location.
+			<!--</control>--></TD></TR>
+			<TR><TD><B>Promotion Group</b></td>
+			<TD>This field is only available if a promotion model is in effect.
+		<!--<control name="GetRevisionAdvanced.PROMOGROUP_LB">-->
+		 To get a revision that is associated with a promotion group, select the promotion group. If Version Manager can't find a revision associated with the promotion group you specify, it will check out the revision associated with the next highest group in the promotion model.
+		<!--</control>--></td></TR>
+			</TR>
+			<TR>
+		<TD><B>Make workfile writable</B></TD>
+		<TD><!--<control name="GetRevisionGeneral.WRITABLE_WORKFILE_CB">-->Select to get a writable copy of the workfile.
+			<!--</control>--></TD>
+			</TR>
+	<TR>
+		<TD><b>Get only if revision is newer than workfile</b></TD>
+		<TD><!--<control name="GetRevisionGeneralForm.NEWERTHANWORKFILE_CB">-->Select to get only those revisions that are newer than the workfiles. This saves time by not getting files that have not changed.<!--</control>--></TD>
+	</TR>
+			<TR>
+		<TD><B>Include files in subprojects</B></TD>
+		<TD>This field is available if a project or project database is selected. <!--<control name="GetRevisionGeneral.RECURSIVE_CB">-->Select to get all files of all subprojects included in the  project or project database.
+			<!--</control>--></TD>
+			</TR>
+			<TR>
+		<TD COLSPAN=2><CENTER><B>Advanced Tab</B></CENTER></TD>
+	</TR>
+		<TR><TD><B>Check out by date</B></TD>
+		<TD><!--<control name="GetRevisionAdvanced.CHECK_OUT_BY_DATE_CB">-->
+		Select one of the following to check out a revision according to a specified date.
+		<!--</control>--><BR><BR>
+		<B>Revision newer than: </B>
+		<!--<control name="GetRevisionAdvanced.NEWERTHAN_EDIT">-->
+		Enter the latest date by which the revision should be selected or click the Browse button to select one. The revision will be selected only if it is dated later than the specified date.
+		<!--</control>--><BR>
+		<B>Revision checked in before: </B>
+		<!--<control name="GetRevisionAdvanced.LASTREVISION_EDIT">-->
+		Enter the earliest date by which the revision should be selected or click the Browse button to select one. The revision will be selected only if it is dated earlier than the specified date.
+		<!--</control>--><BR>
+</TD>
+	</TR>
+	<TR>
+		<TD><B>Set workfile time to current time</B></TD>
+		<TD><!--<control name="GetRevisionAdvanced.UPDATE_CB">-->Select to update the time stamp of the workfile to the current date and time. If you don't select this option, the workfile time stamp reflects the date and time the file was last modified.<!--</control>--></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=2><CENTER><B>Selected Files Tab</B></CENTER></TD></TR>
+	   <tr>
+	   <TD><B>File list</B></TD>
+	  <TD><!--<control name="Files.FILES_TREE">-->
+		Review the selected files or projects.
+		<!--</control>--></TD>
+		</TR>
+		<TR>
+		<TD><B>Properties button</B></TD> <TD><!--<control name="Files.PROPERTIES_BUTTON">-->
+		Click to display archive, configuration file, workspace information, and view granted privileges for the selected files or projects.
+		<!--</control>--></TD>
+		</tr>
+</TABLE>
+<BR><BR>
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><A HREF="gettingarevision.html">Getting Revisions/Viewing Files</A></TD>
+		<TD><A HREF="checkoutdialog.html">Check Out Dialog Box</A></TD>
+	</TR>
+	<TR>
+		<TD><A HREF="checkingout.html">Checking Out/Editing Files</A></TD>
+		<TD><A HREF="aboutarchives.html">About Archives</A></TD>
+	</TR>
+</TABLE>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</BODY>
+</HTML>

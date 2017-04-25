@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK REL="STYLESHEET" HREF="stylesht.css" TYPE="text/css">
+<TITLE>About Setting Up SourceBridge</TITLE>
+
+</HEAD> 
+<BODY BGCOLOR="#ffffee">
+<H1><A NAME="AboutPrjDB"></A>About Setting Up SourceBridge</H1>
+<P>
+<P>SourceBridge integrates Serena's version control and issue management solutions. This allows you to associate issues created in <a HREF="about_teamtrack.html">TeamTrack</a> and Tracker with versioned files when you check files in and out from source control. SourceBridge setup varies depending on which Version Manager clients and issue tracking system you use (see the following table).</p>
+
+<p><b>NOTE</b> A specific TeamTrack user privilege is required in order to run TeamTrack SourceBridge. See your TeamTrack administrator if necessary.</p>
+
+
+<TABLE WIDTH=100% BORDER="1" CELLSPACING="0" CELLPADDING="4">
+	<TR bgcolor="#ccccff">
+		<TD><div align="center"><b>VM Client</b></div></TD>
+		<TD><div align="center"><b>TeamTrack</b></div></TD>
+		<TD><div align="center"><b>Tracker</b></div></TD>
+	</TR>
+	<TR>
+		<TD><b>Desktop Client</b></TD>
+		<TD>You must install a SourceBridge component to your Version Manager client. You can download this component using the TeamTrack web client.<br><br> To do so, click the <b>About TeamTrack</b> button in the web client's toolbar. From the About dialog, select the Product Information tab. Click on the Install SourceBridge link. For complete instructions, see the <i>SourceBridge User's Guide</i>.<br><br>Once the SourceBridge component is installed, you must specify a TeamTrack server and login information. <br><br>To do so, select Tools | SourceBridge (The first time you do this, a SourceBridge Settings dialog box will appear. Subsequently you must click the Settings button on the intervening SourceBridge dialog box). For complete instructions, see the <i>SourceBridge User's Guide</i>.</TD>
+		<TD>You must install and configure TrackerLink. See the Tracker documentation for details.</TD>
+	</TR>
+	<TR>
+		<TD><b>Web Client</b></TD>
+		<TD colspan=2>Your Version Manager administrator must configure each web servlet to work with issue management. For more information, click the <b>Help</b> button on the Servlets tab of the Version Manager Application Configuration utility or see the <i>Version Manager Installation Guide</i>.</TD>
+		
+	</TR>
+	<TR>
+		<TD><b>SCC IDE's</b></TD>
+		<TD>You must install a SourceBridge component to your Version Manager client. You can download this component using the TeamTrack web client.<br><br> To do so, click the <b>About TeamTrack</b> button in the web client's toolbar. From the About dialog, select the Product Information tab. Click on the Install SourceBridge link. For complete instructions, see the <i>SourceBridge User's Guide</i>.<br><br>Once the SourceBridge component is installed, SourceBridge will be set as your Source Code Control (SCC) provider. By default, it will use TeamTrack as its issue management provider and Version Manager as its source control provider.<br><br>You can specify what source control provider SourceBridge will use from the System Settings tab of the SourceBridge dialog (but only if it is invoked from an SCC/IDE environment, such as the Test button of the Serena SCC Admin utility). You can change SCC providers via the Serena SCC Admin utility (from the Serena folder of the Windows Start menu, select ChangeMan Version Manager | Version Manager IDE Client | Version Manager SCC Admin). See the <i>Serena ChangeMan IDE Client Implementation Guide</i> for more information. </TD>
+		<TD>You must install TrackerLink and configure your IDE to use TrackerLink as its Source Code Control (SCC) provider. See the Tracker documentation for details.</TD>
+	</TR>
+	<TR>
+		<TD><b>Rich IDE Integrations</b></TD>
+		<TD>The rich IDE integations to Eclipse and .NET integrate Version Manager and TeamTrack features into the IDE. See the <i>Serena ChangeMan IDE Client Implementation Guide</i> for more information.</TD>
+		<TD>N/A The rich integrations do not work with TrackerLink.</TD>
+	</TR>
+	
+	
+</table>
+
+<P><b>NOTE</b> You can set and enforce the behavior of SourceBridge across all clients. See the <a HREF="abouttrackerlink.html">Setting Up SourceBridge Options</a> topic.</P>
+
+
+<H2>See Also</H2>
+<TABLE WIDTH="100%" CELLSPACING="2" CELLPADDING="4">
+	<TR>
+		<TD><a HREF="abouttrackerlink.html">Setting Up SourceBridge Options</a></TD>
+		<TD><a href="trackerlink_settings_dialog_box.htm">SourceBridge Settings Dialog</A></TD>
+	</TR>
+	<TR>
+		<TD><a HREF="about_teamtrack.html">About TeamTrack</a></TD>
+		<TD><a HREF="switchingissuemanagement.html">Working with Both TeamTrack and TrackerLink</a></TD>
+	</TR>
+	<TR>
+		<TD><a href="aboutsourcebridge.html">About SourceBridge</a></TD>
+		<TD><i>Serena Tracker to TeamTrack Migration Guide</i> (included in the TeamTrack documentation)</TD>
+	</TR>
+</TABLE>

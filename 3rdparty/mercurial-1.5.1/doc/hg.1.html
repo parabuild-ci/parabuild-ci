@@ -1,0 +1,2767 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.6: http://docutils.sourceforge.net/" />
+<title>hg</title>
+<meta name="author" content="Matt Mackall &lt;mpm&#64;selenic.com&gt;" />
+<meta name="organization" content="Mercurial" />
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+<body>
+<div class="document" id="hg">
+<h1 class="title">hg</h1>
+<h2 class="subtitle" id="mercurial-source-code-management-system">Mercurial source code management system</h2>
+<table class="docinfo" frame="void" rules="none">
+<col class="docinfo-name" />
+<col class="docinfo-content" />
+<tbody valign="top">
+<tr><th class="docinfo-name">Author:</th>
+<td>Matt Mackall &lt;<a class="reference external" href="mailto:mpm&#64;selenic.com">mpm&#64;selenic.com</a>&gt;</td></tr>
+<tr><th class="docinfo-name">Organization:</th>
+<td>Mercurial</td></tr>
+<tr class="field"><th class="docinfo-name">Manual section:</th><td class="field-body">1</td>
+</tr>
+<tr class="field"><th class="docinfo-name">Manual group:</th><td class="field-body">Mercurial Manual</td>
+</tr>
+</tbody>
+</table>
+<div class="contents htmlonly topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#synopsis" id="id1">Synopsis</a></li>
+<li><a class="reference internal" href="#description" id="id2">Description</a></li>
+<li><a class="reference internal" href="#command-elements" id="id3">Command Elements</a></li>
+<li><a class="reference internal" href="#options" id="id4">Options</a></li>
+<li><a class="reference internal" href="#commands" id="id5">Commands</a></li>
+<li><a class="reference internal" href="#configuration-files" id="id6">Configuration Files</a></li>
+<li><a class="reference internal" href="#date-formats" id="id7">Date Formats</a></li>
+<li><a class="reference internal" href="#file-name-patterns" id="id8">File Name Patterns</a></li>
+<li><a class="reference internal" href="#environment-variables" id="id9">Environment Variables</a></li>
+<li><a class="reference internal" href="#specifying-single-revisions" id="id10">Specifying Single Revisions</a></li>
+<li><a class="reference internal" href="#specifying-multiple-revisions" id="id11">Specifying Multiple Revisions</a></li>
+<li><a class="reference internal" href="#diff-formats" id="id12">Diff Formats</a></li>
+<li><a class="reference internal" href="#template-usage" id="id13">Template Usage</a></li>
+<li><a class="reference internal" href="#url-paths" id="id14">URL Paths</a></li>
+<li><a class="reference internal" href="#using-additional-features" id="id15">Using additional features</a></li>
+<li><a class="reference internal" href="#files" id="id16">Files</a></li>
+<li><a class="reference internal" href="#bugs" id="id17">Bugs</a></li>
+<li><a class="reference internal" href="#see-also" id="id18">See Also</a></li>
+<li><a class="reference internal" href="#author" id="id19">Author</a></li>
+<li><a class="reference internal" href="#resources" id="id20">Resources</a></li>
+<li><a class="reference internal" href="#copying" id="id21">Copying</a></li>
+</ul>
+</div>
+<div class="section" id="synopsis">
+<h1><a class="toc-backref" href="#contents">Synopsis</a></h1>
+<p><strong>hg</strong> <em>command</em> [<em>option</em>]... [<em>argument</em>]...</p>
+</div>
+<div class="section" id="description">
+<h1><a class="toc-backref" href="#contents">Description</a></h1>
+<p>The <strong>hg</strong> command provides a command line interface to the Mercurial
+system.</p>
+</div>
+<div class="section" id="command-elements">
+<h1><a class="toc-backref" href="#contents">Command Elements</a></h1>
+<dl class="docutils">
+<dt>files...</dt>
+<dd>indicates one or more filename or relative path filenames; see
+<a class="reference internal" href="#file-name-patterns">File Name Patterns</a> for information on pattern matching</dd>
+<dt>path</dt>
+<dd>indicates a path on the local machine</dd>
+<dt>revision</dt>
+<dd>indicates a changeset which can be specified as a changeset
+revision number, a tag, or a unique substring of the changeset
+hash value</dd>
+<dt>repository path</dt>
+<dd>either the pathname of a local repository or the URI of a remote
+repository.</dd>
+</dl>
+</div>
+<div class="section" id="options">
+<h1><a class="toc-backref" href="#contents">Options</a></h1>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-R</span>, <span class="option">--repository</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>repository root directory or name of overlay bundle file</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--cwd</span></kbd></td>
+<td>change working directory</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-y</span>, <span class="option">--noninteractive</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>do not prompt, assume 'yes' for any required answers</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-q</span>, <span class="option">--quiet</span></kbd></td>
+<td>suppress output</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-v</span>, <span class="option">--verbose</span></kbd></td>
+<td>enable additional output</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--config</span></kbd></td>
+<td>set/override config option (use 'section.name=value')</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--debug</span></kbd></td>
+<td>enable debugging output</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--debugger</span></kbd></td>
+<td>start debugger</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--encoding</span></kbd></td>
+<td>set the charset encoding (default: cp1252)</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--encodingmode</span></kbd></td>
+<td>set the charset encoding mode (default: strict)</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--traceback</span></kbd></td>
+<td>always print a traceback on exception</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--time</span></kbd></td>
+<td>time how long the command takes</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--profile</span></kbd></td>
+<td>print command execution profile</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--version</span></kbd></td>
+<td>output version information and exit</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></td>
+<td>display help and exit</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="commands">
+<h1><a class="toc-backref" href="#contents">Commands</a></h1>
+<dl class="docutils" id="add">
+<dt><tt class="docutils literal">add <span class="pre">[OPTION]...</span> <span class="pre">[FILE]...</span></tt></dt>
+<dd><p class="first">Schedule files to be version controlled and added to the
+repository.</p>
+<p>The files will be added to the repository at the next commit. To
+undo an add before that, see hg forget.</p>
+<p>If no names are given, add all files to the repository.</p>
+<div class="verbose container">
+<p>An example showing how new (unknown) files are added
+automatically by <tt class="docutils literal">hg add</tt>:</p>
+<pre class="literal-block">
+$ ls
+foo.c
+$ hg status
+? foo.c
+$ hg add
+adding foo.c
+$ hg status
+A foo.c
+</pre>
+</div>
+<p>options:</p>
+<table class="last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-I</span>, <span class="option">--include</span></kbd></td>
+<td>include names matching the given patterns</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-X</span>, <span class="option">--exclude</span></kbd></td>
+<td>exclude names matching the given patterns</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-n</span>, <span class="option">--dry-run</span></kbd></td>
+<td>do not perform actions, just print output</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl class="docutils" id="addremove">
+<dt><tt class="docutils literal">addremove <span class="pre">[OPTION]...</span> <span class="pre">[FILE]...</span></tt></dt>
+<dd><p class="first">Add all new files and remove all missing files from the
+repository.</p>
+<p>New files are ignored if they match any of the patterns in
+.hgignore. As with add, these changes take effect at the next
+commit.</p>
+<p>Use the -s/--similarity option to detect renamed files. With a
+parameter greater than 0, this compares every removed file with
+every added file and records those similar enough as renames. This
+option takes a percentage between 0 (disabled) and 100 (files must
+be identical) as its parameter. Detecting renamed files this way
+can be expensive.</p>
+<p>options:</p>
+<table class="last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-s</span>, <span class="option">--similarity</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>guess renamed files by similarity (0&lt;=s&lt;=100)</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-I</span>, <span class="option">--include</span></kbd></td>
+<td>include names matching the given patterns</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-X</span>, <span class="option">--exclude</span></kbd></td>
+<td>exclude names matching the given patterns</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-n</span>, <span class="option">--dry-run</span></kbd></td>
+<td>do not perform actions, just print output</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl class="docutils" id="annotate">
+<dt><tt class="docutils literal">annotate <span class="pre">[-r</span> REV] <span class="pre">[-f]</span> <span class="pre">[-a]</span> <span class="pre">[-u]</span> <span class="pre">[-d]</span> <span class="pre">[-n]</span> <span class="pre">[-c]</span> <span class="pre">[-l]</span> <span class="pre">FILE...</span></tt></dt>
+<dd><p class="first">List changes in files, showing the revision id responsible for
+each line</p>
+<p>This command is useful for discovering when a change was made and
+by whom.</p>
+<p>Without the -a/--text option, annotate will avoid processing files
+it detects as binary. With -a, annotate will annotate the file
+anyway, although the results will probably be neither useful
+nor desirable.</p>
+<p>options:</p>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-r</span>, <span class="option">--rev</span></kbd></td>
+<td>annotate the specified revision</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--follow</span></kbd></td>
+<td>follow copies/renames and list the filename (DEPRECATED)</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--no-follow</span></kbd></td>
+<td>don't follow copies and renames</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-a</span>, <span class="option">--text</span></kbd></td>
+<td>treat all files as text</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-u</span>, <span class="option">--user</span></kbd></td>
+<td>list the author (long with -v)</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-f</span>, <span class="option">--file</span></kbd></td>
+<td>list the filename</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-d</span>, <span class="option">--date</span></kbd></td>
+<td>list the date (short with -q)</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-n</span>, <span class="option">--number</span></kbd></td>
+<td>list the revision number (default)</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-c</span>, <span class="option">--changeset</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>list the changeset</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-l</span>, <span class="option">--line-number</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>show line number at the first appearance</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-I</span>, <span class="option">--include</span></kbd></td>
+<td>include names matching the given patterns</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-X</span>, <span class="option">--exclude</span></kbd></td>
+<td>exclude names matching the given patterns</td></tr>
+</tbody>
+</table>
+<p class="last">aliases: blame</p>
+</dd>
+</dl>
+<dl class="docutils" id="archive">
+<dt><tt class="docutils literal">archive <span class="pre">[OPTION]...</span> DEST</tt></dt>
+<dd><p class="first">By default, the revision used is the parent of the working
+directory; use -r/--rev to specify a different revision.</p>
+<p>To specify the type of archive to create, use -t/--type. Valid
+types are:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name"><tt class="docutils literal">files</tt>:</th><td class="field-body">a directory full of files (default)</td>
+</tr>
+<tr class="field"><th class="field-name"><tt class="docutils literal">tar</tt>:</th><td class="field-body">tar archive, uncompressed</td>
+</tr>
+<tr class="field"><th class="field-name"><tt class="docutils literal">tbz2</tt>:</th><td class="field-body">tar archive, compressed using bzip2</td>
+</tr>
+<tr class="field"><th class="field-name"><tt class="docutils literal">tgz</tt>:</th><td class="field-body">tar archive, compressed using gzip</td>
+</tr>
+<tr class="field"><th class="field-name"><tt class="docutils literal">uzip</tt>:</th><td class="field-body">zip archive, uncompressed</td>
+</tr>
+<tr class="field"><th class="field-name"><tt class="docutils literal">zip</tt>:</th><td class="field-body">zip archive, compressed using deflate</td>
+</tr>
+</tbody>
+</table>
+<p>The exact name of the destination archive or directory is given
+using a format string; see 'hg help export' for details.</p>
+<p>Each member added to an archive file has a directory prefix
+prepended. Use -p/--prefix to specify a format string for the
+prefix. The default is the basename of the archive, with suffixes
+removed.</p>
+<p>options:</p>
+<table class="last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">--no-decode</span></kbd></td>
+<td>do not pass files through decoders</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-p</span>, <span class="option">--prefix</span></kbd></td>
+<td>directory prefix for files in archive</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-r</span>, <span class="option">--rev</span></kbd></td>
+<td>revision to distribute</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-t</span>, <span class="option">--type</span></kbd></td>
+<td>type of distribution to create</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-I</span>, <span class="option">--include</span></kbd></td>
+<td>include names matching the given patterns</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-X</span>, <span class="option">--exclude</span></kbd></td>
+<td>exclude names matching the given patterns</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl class="docutils" id="backout">
+<dt><tt class="docutils literal">backout <span class="pre">[OPTION]...</span> <span class="pre">[-r]</span> REV</tt></dt>
+<dd><p class="first">Commit the backed out changes as a new changeset. The new
+changeset is a child of the backed out changeset.</p>
+<p>If you backout a changeset other than the tip, a new head is
+created. This head will be the new tip and you should merge this
+backout changeset with another head.</p>
+<p>The --merge option remembers the parent of the working directory
+before starting the backout, then merges the new head with that
+changeset afterwards. This saves you from doing the merge by hand.
+The result of this merge is not committed, as with a normal merge.</p>
+<p>See 'hg help dates' for a list of formats valid for -d/--date.</p>
+<p>options:</p>
+<table class="last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">--merge</span></kbd></td>
+<td>merge with old dirstate parent after backout</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--parent</span></kbd></td>
+<td>parent to choose when backing out merge</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-r</span>, <span class="option">--rev</span></kbd></td>
+<td>revision to backout</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-I</span>, <span class="option">--include</span></kbd></td>
+<td>include names matching the given patterns</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-X</span>, <span class="option">--exclude</span></kbd></td>
+<td>exclude names matching the given patterns</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-m</span>, <span class="option">--message</span></kbd></td>
+<td>use &lt;text&gt; as commit message</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-l</span>, <span class="option">--logfile</span></kbd></td>
+<td>read commit message from &lt;file&gt;</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-d</span>, <span class="option">--date</span></kbd></td>
+<td>record datecode as commit date</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-u</span>, <span class="option">--user</span></kbd></td>
+<td>record the specified user as committer</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl class="docutils" id="bisect">
+<dt><tt class="docutils literal">bisect <span class="pre">[-gbsr]</span> <span class="pre">[-U]</span> <span class="pre">[-c</span> CMD] [REV]</tt></dt>
+<dd><p class="first">This command helps to find changesets which introduce problems. To
+use, mark the earliest changeset you know exhibits the problem as
+bad, then mark the latest changeset which is free from the problem
+as good. Bisect will update your working directory to a revision
+for testing (unless the -U/--noupdate option is specified). Once
+you have performed tests, mark the working directory as good or
+bad, and bisect will either update to another candidate changeset
+or announce that it has found the bad revision.</p>
+<p>As a shortcut, you can also use the revision argument to mark a
+revision as good or bad without checking it out first.</p>
+<p>If you supply a command, it will be used for automatic bisection.
+Its exit status will be used to mark revisions as good or bad:
+status 0 means good, 125 means to skip the revision, 127
+(command not found) will abort the bisection, and any other
+non-zero exit status means the revision is bad.</p>
+<p>options:</p>
+<table class="last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-r</span>, <span class="option">--reset</span></kbd></td>
+<td>reset bisect state</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-g</span>, <span class="option">--good</span></kbd></td>
+<td>mark changeset good</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-b</span>, <span class="option">--bad</span></kbd></td>
+<td>mark changeset bad</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-s</span>, <span class="option">--skip</span></kbd></td>
+<td>skip testing changeset</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-c</span>, <span class="option">--command</span></kbd></td>
+<td>use command to check changeset state</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-U</span>, <span class="option">--noupdate</span></kbd></td>
+<td>do not update to target</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl class="docutils" id="branch">
+<dt><tt class="docutils literal">branch <span class="pre">[-fC]</span> [NAME]</tt></dt>
+<dd><p class="first">With no argument, show the current branch name. With one argument,
+set the working directory branch name (the branch will not exist
+in the repository until the next commit). Standard practice
+recommends that primary development take place on the 'default'
+branch.</p>
+<p>Unless -f/--force is specified, branch will not let you set a
+branch name that already exists, even if it's inactive.</p>
+<p>Use -C/--clean to reset the working directory branch to that of
+the parent of the working directory, negating a previous branch
+change.</p>
+<p>Use the command 'hg update' to switch to an existing branch. Use
+'hg commit --close-branch' to mark this branch as closed.</p>
+<p>options:</p>
+<table class="last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-f</span>, <span class="option">--force</span></kbd></td>
+<td>set branch name even if it shadows an existing branch</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-C</span>, <span class="option">--clean</span></kbd></td>
+<td>reset branch name to parent branch name</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl class="docutils" id="branches">
+<dt><tt class="docutils literal">branches <span class="pre">[-ac]</span></tt></dt>
+<dd><p class="first">List the repository's named branches, indicating which ones are
+inactive. If -c/--closed is specified, also list branches which have
+been marked closed (see hg commit --close-branch).</p>
+<p>If -a/--active is specified, only show active branches. A branch
+is considered active if it contains repository heads.</p>
+<p>Use the command 'hg update' to switch to an existing branch.</p>
+<p>options:</p>
+<table class="last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-a</span>, <span class="option">--active</span></kbd></td>
+<td>show only branches that have unmerged heads</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-c</span>, <span class="option">--closed</span></kbd></td>
+<td>show normal and closed branches</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl class="docutils" id="bundle">
+<dt><tt class="docutils literal">bundle <span class="pre">[-f]</span> <span class="pre">[-t</span> TYPE] <span class="pre">[-a]</span> <span class="pre">[-r</span> <span class="pre">REV]...</span> <span class="pre">[--base</span> <span class="pre">REV]...</span> FILE [DEST]</tt></dt>
+<dd><p class="first">Generate a compressed changegroup file collecting changesets not
+known to be in another repository.</p>
+<p>If you omit the destination repository, then hg assumes the
+destination will have all the nodes you specify with --base
+parameters. To create a bundle containing all changesets, use
+-a/--all (or --base null).</p>
+<p>You can change compression method with the -t/--type option.
+The available compression methods are: none, bzip2, and
+gzip (by default, bundles are compressed using bzip2).</p>
+<p>The bundle file can then be transferred using conventional means
+and applied to another repository with the unbundle or pull
+command. This is useful when direct push and pull are not
+available or when exporting an entire repository is undesirable.</p>
+<p>Applying bundles preserves all changeset contents including
+permissions, copy/rename information, and revision history.</p>
+<p>options:</p>
+<table class="last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-f</span>, <span class="option">--force</span></kbd></td>
+<td>run even when the destination is unrelated</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-r</span>, <span class="option">--rev</span></kbd></td>
+<td>a changeset intended to be added to the destination</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-b</span>, <span class="option">--branch</span></kbd></td>
+<td>a specific branch you would like to bundle</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--base</span></kbd></td>
+<td>a base changeset assumed to be available at the destination</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-a</span>, <span class="option">--all</span></kbd></td>
+<td>bundle all changesets in the repository</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-t</span>, <span class="option">--type</span></kbd></td>
+<td>bundle compression type to use (default: bzip2)</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-e</span>, <span class="option">--ssh</span></kbd></td>
+<td>specify ssh command to use</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--remotecmd</span></kbd></td>
+<td>specify hg command to run on the remote side</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl class="docutils" id="cat">
+<dt><tt class="docutils literal">cat <span class="pre">[OPTION]...</span> <span class="pre">FILE...</span></tt></dt>
+<dd><p class="first">Print the specified files as they were at the given revision. If
+no revision is given, the parent of the working directory is used,
+or tip if no revision is checked out.</p>
+<p>Output may be to a file, in which case the name of the file is
+given using a format string. The formatting rules are the same as
+for the export command, with the following additions:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name"><tt class="docutils literal">%s</tt>:</th><td class="field-body">basename of file being printed</td>
+</tr>
+<tr class="field"><th class="field-name"><tt class="docutils literal">%d</tt>:</th><td class="field-body">dirname of file being printed, or '.' if in repository root</td>
+</tr>
+<tr class="field"><th class="field-name"><tt class="docutils literal">%p</tt>:</th><td class="field-body">root-relative path name of file being printed</td>
+</tr>
+</tbody>
+</table>
+<p>options:</p>
+<table class="last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-o</span>, <span class="option">--output</span></kbd></td>
+<td>print output to file with formatted name</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-r</span>, <span class="option">--rev</span></kbd></td>
+<td>print the given revision</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--decode</span></kbd></td>
+<td>apply any matching decode filter</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-I</span>, <span class="option">--include</span></kbd></td>
+<td>include names matching the given patterns</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-X</span>, <span class="option">--exclude</span></kbd></td>
+<td>exclude names matching the given patterns</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl class="docutils" id="clone">
+<dt><tt class="docutils literal">clone <span class="pre">[OPTION]...</span> SOURCE [DEST]</tt></dt>
+<dd><p class="first">Create a copy of an existing repository in a new directory.</p>
+<p>If no destination directory name is specified, it defaults to the
+basename of the source.</p>
+<p>The location of the source is added to the new repository's
+.hg/hgrc file, as the default to be used for future pulls.</p>
+<p>See 'hg help urls' for valid source format details.</p>
+<p>It is possible to specify an <tt class="docutils literal"><span class="pre">ssh://</span></tt> URL as the destination, but no
+.hg/hgrc and working directory will be created on the remote side.
+Please see 'hg help urls' for important details about <tt class="docutils literal"><span class="pre">ssh://</span></tt> URLs.</p>
+<p>A set of changesets (tags, or branch names) to pull may be specified
+by listing each changeset (tag, or branch name) with -r/--rev.
+If -r/--rev is used, the cloned repository will contain only a subset
+of the changesets of the source repository. Only the set of changesets
+defined by all -r/--rev options (including all their ancestors)
+will be pulled into the destination repository.
+No subsequent changesets (including subsequent tags) will be present
+in the destination.</p>
+<p>Using -r/--rev (or 'clone src#rev dest') implies --pull, even for
+local source repositories.</p>
+<p>For efficiency, hardlinks are used for cloning whenever the source
+and destination are on the same filesystem (note this applies only
+to the repository data, not to the working directory). Some
+filesystems, such as AFS, implement hardlinking incorrectly, but
+do not report errors. In these cases, use the --pull option to
+avoid hardlinking.</p>
+<p>In some cases, you can clone repositories and the working directory
+using full hardlinks with</p>
+<pre class="literal-block">
+$ cp -al REPO REPOCLONE
+</pre>
+<p>This is the fastest way to clone, but it is not always safe. The
+operation is not atomic (making sure REPO is not modified during
+the operation is up to you) and you have to make sure your editor
+breaks hardlinks (Emacs and most Linux Kernel tools do so). Also,
+this is not compatible with certain extensions that place their
+metadata under the .hg directory, such as mq.</p>
+<p>Mercurial will update the working directory to the first applicable
+revision from this list:</p>
+<ol class="loweralpha simple">
+<li>null if -U or the source repository has no changesets</li>
+<li>if -u . and the source repository is local, the first parent of
+the source repository's working directory</li>
+<li>the changeset specified with -u (if a branch name, this means the
+latest head of that branch)</li>
+<li>the changeset specified with -r</li>
+<li>the tipmost head specified with -b</li>
+<li>the tipmost head specified with the url#branch source syntax</li>
+<li>the tipmost head of the default branch</li>
+<li>tip</li>
+</ol>
+<p>options:</p>
+<table class="last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-U</span>, <span class="option">--noupdate</span></kbd></td>
+<td>the clone will include an empty working copy (only a repository)</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-u</span>, <span class="option">--updaterev</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>revision, tag or branch to check out</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-r</span>, <span class="option">--rev</span></kbd></td>
+<td>include the specified changeset</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-b</span>, <span class="option">--branch</span></kbd></td>
+<td>clone only the specified branch</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--pull</span></kbd></td>
+<td>use pull protocol to copy metadata</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--uncompressed</span></kbd></td>
+<td>use uncompressed transfer (fast over LAN)</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-e</span>, <span class="option">--ssh</span></kbd></td>
+<td>specify ssh command to use</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--remotecmd</span></kbd></td>
+<td>specify hg command to run on the remote side</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl class="docutils" id="commit">
+<dt><tt class="docutils literal">commit <span class="pre">[OPTION]...</span> <span class="pre">[FILE]...</span></tt></dt>
+<dd><p class="first">Commit changes to the given files into the repository. Unlike a
+centralized RCS, this operation is a local operation. See hg push
+for a way to actively distribute your changes.</p>
+<p>If a list of files is omitted, all changes reported by &quot;hg status&quot;
+will be committed.</p>
+<p>If you are committing the result of a merge, do not provide any
+filenames or -I/-X filters.</p>
+<p>If no commit message is specified, the configured editor is
+started to prompt you for a message.</p>
+<p>See 'hg help dates' for a list of formats valid for -d/--date.</p>
+<p>options:</p>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-A</span>, <span class="option">--addremove</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>mark new/missing files as added/removed before committing</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--close-branch</span></kbd></td>
+<td>mark a branch as closed, hiding it from the branch list</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-I</span>, <span class="option">--include</span></kbd></td>
+<td>include names matching the given patterns</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-X</span>, <span class="option">--exclude</span></kbd></td>
+<td>exclude names matching the given patterns</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-m</span>, <span class="option">--message</span></kbd></td>
+<td>use &lt;text&gt; as commit message</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-l</span>, <span class="option">--logfile</span></kbd></td>
+<td>read commit message from &lt;file&gt;</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-d</span>, <span class="option">--date</span></kbd></td>
+<td>record datecode as commit date</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-u</span>, <span class="option">--user</span></kbd></td>
+<td>record the specified user as committer</td></tr>
+</tbody>
+</table>
+<p class="last">aliases: ci</p>
+</dd>
+</dl>
+<dl class="docutils" id="copy">
+<dt><tt class="docutils literal">copy <span class="pre">[OPTION]...</span> <span class="pre">[SOURCE]...</span> DEST</tt></dt>
+<dd><p class="first">Mark dest as having copies of source files. If dest is a
+directory, copies are put in that directory. If dest is a file,
+the source must be a single file.</p>
+<p>By default, this command copies the contents of files as they
+exist in the working directory. If invoked with -A/--after, the
+operation is recorded, but no copying is performed.</p>
+<p>This command takes effect with the next commit. To undo a copy
+before that, see hg revert.</p>
+<p>options:</p>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-A</span>, <span class="option">--after</span></kbd></td>
+<td>record a copy that has already occurred</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-f</span>, <span class="option">--force</span></kbd></td>
+<td>forcibly copy over an existing managed file</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-I</span>, <span class="option">--include</span></kbd></td>
+<td>include names matching the given patterns</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-X</span>, <span class="option">--exclude</span></kbd></td>
+<td>exclude names matching the given patterns</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-n</span>, <span class="option">--dry-run</span></kbd></td>
+<td>do not perform actions, just print output</td></tr>
+</tbody>
+</table>
+<p class="last">aliases: cp</p>
+</dd>
+</dl>
+<dl class="docutils" id="diff">
+<dt><tt class="docutils literal">diff <span class="pre">[OPTION]...</span> <span class="pre">([-c</span> REV] | <span class="pre">[-r</span> REV1 <span class="pre">[-r</span> <span class="pre">REV2]])</span> <span class="pre">[FILE]...</span></tt></dt>
+<dd><p class="first">Show differences between revisions for the specified files.</p>
+<p>Differences between files are shown using the unified diff format.</p>
+<p>NOTE: diff may generate unexpected results for merges, as it will
+default to comparing against the working directory's first parent
+changeset if no revisions are specified.</p>
+<p>When two revision arguments are given, then changes are shown
+between those revisions. If only one revision is specified then
+that revision is compared to the working directory, and, when no
+revisions are specified, the working directory files are compared
+to its parent.</p>
+<p>Alternatively you can specify -c/--change with a revision to see
+the changes in that changeset relative to its first parent.</p>
+<p>Without the -a/--text option, diff will avoid generating diffs of
+files it detects as binary. With -a, diff will generate a diff
+anyway, probably with undesirable results.</p>
+<p>Use the -g/--git option to generate diffs in the git extended diff
+format. For more information, read 'hg help diffs'.</p>
+<p>options:</p>
+<table class="last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-r</span>, <span class="option">--rev</span></kbd></td>
+<td>revision</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-c</span>, <span class="option">--change</span></kbd></td>
+<td>change made by revision</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-a</span>, <span class="option">--text</span></kbd></td>
+<td>treat all files as text</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-g</span>, <span class="option">--git</span></kbd></td>
+<td>use git extended diff format</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--nodates</span></kbd></td>
+<td>omit dates from diff headers</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-p</span>, <span class="option">--show-function</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>show which function each change is in</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--reverse</span></kbd></td>
+<td>produce a diff that undoes the changes</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-w</span>, <span class="option">--ignore-all-space</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>ignore white space when comparing lines</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-b</span>, <span class="option">--ignore-space-change</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>ignore changes in the amount of white space</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-B</span>, <span class="option">--ignore-blank-lines</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>ignore changes whose lines are all blank</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-U</span>, <span class="option">--unified</span></kbd></td>
+<td>number of lines of context to show</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--stat</span></kbd></td>
+<td>output diffstat-style summary of changes</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-I</span>, <span class="option">--include</span></kbd></td>
+<td>include names matching the given patterns</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-X</span>, <span class="option">--exclude</span></kbd></td>
+<td>exclude names matching the given patterns</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl class="docutils" id="export">
+<dt><tt class="docutils literal">export <span class="pre">[OPTION]...</span> <span class="pre">[-o</span> OUTFILESPEC] <span class="pre">REV...</span></tt></dt>
+<dd><p class="first">Print the changeset header and diffs for one or more revisions.</p>
+<p>The information shown in the changeset header is: author, date,
+branch name (if non-default), changeset hash, parent(s) and commit
+comment.</p>
+<p>NOTE: export may generate unexpected diff output for merge
+changesets, as it will compare the merge changeset against its
+first parent only.</p>
+<p>Output may be to a file, in which case the name of the file is
+given using a format string. The formatting rules are as follows:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name"><tt class="docutils literal">%%</tt>:</th><td class="field-body">literal &quot;%&quot; character</td>
+</tr>
+<tr class="field"><th class="field-name"><tt class="docutils literal">%H</tt>:</th><td class="field-body">changeset hash (40 bytes of hexadecimal)</td>
+</tr>
+<tr class="field"><th class="field-name"><tt class="docutils literal">%N</tt>:</th><td class="field-body">number of patches being generated</td>
+</tr>
+<tr class="field"><th class="field-name"><tt class="docutils literal">%R</tt>:</th><td class="field-body">changeset revision number</td>
+</tr>
+<tr class="field"><th class="field-name"><tt class="docutils literal">%b</tt>:</th><td class="field-body">basename of the exporting repository</td>
+</tr>
+<tr class="field"><th class="field-name"><tt class="docutils literal">%h</tt>:</th><td class="field-body">short-form changeset hash (12 bytes of hexadecimal)</td>
+</tr>
+<tr class="field"><th class="field-name"><tt class="docutils literal">%n</tt>:</th><td class="field-body">zero-padded sequence number, starting at 1</td>
+</tr>
+<tr class="field"><th class="field-name"><tt class="docutils literal">%r</tt>:</th><td class="field-body">zero-padded changeset revision number</td>
+</tr>
+</tbody>
+</table>
+<p>Without the -a/--text option, export will avoid generating diffs
+of files it detects as binary. With -a, export will generate a
+diff anyway, probably with undesirable results.</p>
+<p>Use the -g/--git option to generate diffs in the git extended diff
+format. See 'hg help diffs' for more information.</p>
+<p>With the --switch-parent option, the diff will be against the
+second parent. It can be useful to review a merge.</p>
+<p>options:</p>
+<table class="last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-o</span>, <span class="option">--output</span></kbd></td>
+<td>print output to file with formatted name</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--switch-parent</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>diff against the second parent</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-r</span>, <span class="option">--rev</span></kbd></td>
+<td>revisions to export</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-a</span>, <span class="option">--text</span></kbd></td>
+<td>treat all files as text</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-g</span>, <span class="option">--git</span></kbd></td>
+<td>use git extended diff format</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--nodates</span></kbd></td>
+<td>omit dates from diff headers</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl class="docutils" id="forget">
+<dt><tt class="docutils literal">forget <span class="pre">[OPTION]...</span> <span class="pre">FILE...</span></tt></dt>
+<dd><p class="first">Mark the specified files so they will no longer be tracked
+after the next commit.</p>
+<p>This only removes files from the current branch, not from the
+entire project history, and it does not delete them from the
+working directory.</p>
+<p>To undo a forget before the next commit, see hg add.</p>
+<p>options:</p>
+<table class="last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-I</span>, <span class="option">--include</span></kbd></td>
+<td>include names matching the given patterns</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-X</span>, <span class="option">--exclude</span></kbd></td>
+<td>exclude names matching the given patterns</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl class="docutils" id="grep">
+<dt><tt class="docutils literal">grep <span class="pre">[OPTION]...</span> PATTERN <span class="pre">[FILE]...</span></tt></dt>
+<dd><p class="first">Search revisions of files for a regular expression.</p>
+<p>This command behaves differently than Unix grep. It only accepts
+Python/Perl regexps. It searches repository history, not the
+working directory. It always prints the revision number in which a
+match appears.</p>
+<p>By default, grep only prints output for the first revision of a
+file in which it finds a match. To get it to print every revision
+that contains a change in match status (&quot;-&quot; for a match that
+becomes a non-match, or &quot;+&quot; for a non-match that becomes a match),
+use the --all flag.</p>
+<p>options:</p>
+<table class="last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-0</span>, <span class="option">--print0</span></kbd></td>
+<td>end fields with NUL</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--all</span></kbd></td>
+<td>print all revisions that match</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-f</span>, <span class="option">--follow</span></kbd></td>
+<td>follow changeset history, or file history across copies and renames</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-i</span>, <span class="option">--ignore-case</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>ignore case when matching</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-l</span>, <span class="option">--files-with-matches</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>print only filenames and revisions that match</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-n</span>, <span class="option">--line-number</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>print matching line numbers</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-r</span>, <span class="option">--rev</span></kbd></td>
+<td>search in given revision range</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-u</span>, <span class="option">--user</span></kbd></td>
+<td>list the author (long with -v)</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-d</span>, <span class="option">--date</span></kbd></td>
+<td>list the date (short with -q)</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-I</span>, <span class="option">--include</span></kbd></td>
+<td>include names matching the given patterns</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-X</span>, <span class="option">--exclude</span></kbd></td>
+<td>exclude names matching the given patterns</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl class="docutils" id="heads">
+<dt><tt class="docutils literal">heads <span class="pre">[-ac]</span> <span class="pre">[-r</span> STARTREV] <span class="pre">[REV]...</span></tt></dt>
+<dd><p class="first">With no arguments, show all repository branch heads.</p>
+<p>Repository &quot;heads&quot; are changesets with no child changesets. They are
+where development generally takes place and are the usual targets
+for update and merge operations. Branch heads are changesets that have
+no child changeset on the same branch.</p>
+<p>If one or more REVs are given, only branch heads on the branches
+associated with the specified changesets are shown.</p>
+<p>If -c/--closed is specified, also show branch heads marked closed
+(see hg commit --close-branch).</p>
+<p>If STARTREV is specified, only those heads that are descendants of
+STARTREV will be displayed.</p>
+<p>If -t/--topo is specified, named branch mechanics will be ignored and only
+changesets without children will be shown.</p>
+<p>options:</p>
+<table class="last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-r</span>, <span class="option">--rev</span></kbd></td>
+<td>show only heads which are descendants of REV</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-t</span>, <span class="option">--topo</span></kbd></td>
+<td>show topological heads only</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-a</span>, <span class="option">--active</span></kbd></td>
+<td>show active branchheads only [DEPRECATED]</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-c</span>, <span class="option">--closed</span></kbd></td>
+<td>show normal and closed branch heads</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--style</span></kbd></td>
+<td>display using template map file</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--template</span></kbd></td>
+<td>display with template</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl class="docutils" id="help">
+<dt><tt class="docutils literal">help [TOPIC]</tt></dt>
+<dd><p class="first">With no arguments, print a list of commands with short help messages.</p>
+<p class="last">Given a topic, extension, or command name, print help for that
+topic.</p>
+</dd>
+</dl>
+<dl class="docutils" id="identify">
+<dt><tt class="docutils literal">identify <span class="pre">[-nibt]</span> <span class="pre">[-r</span> REV] [SOURCE]</tt></dt>
+<dd><p class="first">With no revision, print a summary of the current state of the
+repository.</p>
+<p>Specifying a path to a repository root or Mercurial bundle will
+cause lookup to operate on that repository/bundle.</p>
+<p>This summary identifies the repository state using one or two
+parent hash identifiers, followed by a &quot;+&quot; if there are
+uncommitted changes in the working directory, a list of tags for
+this revision and a branch name for non-default branches.</p>
+<p>options:</p>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-r</span>, <span class="option">--rev</span></kbd></td>
+<td>identify the specified revision</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-n</span>, <span class="option">--num</span></kbd></td>
+<td>show local revision number</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-i</span>, <span class="option">--id</span></kbd></td>
+<td>show global revision id</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-b</span>, <span class="option">--branch</span></kbd></td>
+<td>show branch</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-t</span>, <span class="option">--tags</span></kbd></td>
+<td>show tags</td></tr>
+</tbody>
+</table>
+<p class="last">aliases: id</p>
+</dd>
+</dl>
+<dl class="docutils" id="import">
+<dt><tt class="docutils literal">import <span class="pre">[OPTION]...</span> <span class="pre">PATCH...</span></tt></dt>
+<dd><p class="first">Import a list of patches and commit them individually (unless
+--no-commit is specified).</p>
+<p>If there are outstanding changes in the working directory, import
+will abort unless given the -f/--force flag.</p>
+<p>You can import a patch straight from a mail message. Even patches
+as attachments work (to use the body part, it must have type
+text/plain or text/x-patch). From and Subject headers of email
+message are used as default committer and commit message. All
+text/plain body parts before first diff are added to commit
+message.</p>
+<p>If the imported patch was generated by hg export, user and
+description from patch override values from message headers and
+body. Values given on command line with -m/--message and -u/--user
+override these.</p>
+<p>If --exact is specified, import will set the working directory to
+the parent of each patch before applying it, and will abort if the
+resulting changeset has a different ID than the one recorded in
+the patch. This may happen due to character set problems or other
+deficiencies in the text patch format.</p>
+<p>With -s/--similarity, hg will attempt to discover renames and
+copies in the patch in the same way as 'addremove'.</p>
+<p>To read a patch from standard input, use &quot;-&quot; as the patch name. If
+a URL is specified, the patch will be downloaded from it.
+See 'hg help dates' for a list of formats valid for -d/--date.</p>
+<p>options:</p>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-p</span>, <span class="option">--strip</span></kbd></td>
+<td>directory strip option for patch. This has the same meaning as the corresponding patch option (default: 1)</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-b</span>, <span class="option">--base</span></kbd></td>
+<td>base path</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-f</span>, <span class="option">--force</span></kbd></td>
+<td>skip check for outstanding uncommitted changes</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--no-commit</span></kbd></td>
+<td>don't commit, just update the working directory</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--exact</span></kbd></td>
+<td>apply patch to the nodes from which it was generated</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--import-branch</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>use any branch information in patch (implied by --exact)</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-m</span>, <span class="option">--message</span></kbd></td>
+<td>use &lt;text&gt; as commit message</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-l</span>, <span class="option">--logfile</span></kbd></td>
+<td>read commit message from &lt;file&gt;</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-d</span>, <span class="option">--date</span></kbd></td>
+<td>record datecode as commit date</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-u</span>, <span class="option">--user</span></kbd></td>
+<td>record the specified user as committer</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-s</span>, <span class="option">--similarity</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>guess renamed files by similarity (0&lt;=s&lt;=100)</td></tr>
+</tbody>
+</table>
+<p class="last">aliases: patch</p>
+</dd>
+</dl>
+<dl class="docutils" id="incoming">
+<dt><tt class="docutils literal">incoming <span class="pre">[-p]</span> <span class="pre">[-n]</span> <span class="pre">[-M]</span> <span class="pre">[-f]</span> <span class="pre">[-r</span> <span class="pre">REV]...</span> <span class="pre">[--bundle</span> FILENAME] [SOURCE]</tt></dt>
+<dd><p class="first">Show new changesets found in the specified path/URL or the default
+pull location. These are the changesets that would have been pulled
+if a pull at the time you issued this command.</p>
+<p>For remote repository, using --bundle avoids downloading the
+changesets twice if the incoming is followed by a pull.</p>
+<p>See pull for valid source format details.</p>
+<p>options:</p>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-f</span>, <span class="option">--force</span></kbd></td>
+<td>run even if remote repository is unrelated</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-n</span>, <span class="option">--newest-first</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>show newest record first</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--bundle</span></kbd></td>
+<td>file to store the bundles into</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-r</span>, <span class="option">--rev</span></kbd></td>
+<td>a remote changeset intended to be added</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-b</span>, <span class="option">--branch</span></kbd></td>
+<td>a specific branch you would like to pull</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-p</span>, <span class="option">--patch</span></kbd></td>
+<td>show patch</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-g</span>, <span class="option">--git</span></kbd></td>
+<td>use git extended diff format</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-l</span>, <span class="option">--limit</span></kbd></td>
+<td>limit number of changes displayed</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-M</span>, <span class="option">--no-merges</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>do not show merges</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--style</span></kbd></td>
+<td>display using template map file</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--template</span></kbd></td>
+<td>display with template</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-e</span>, <span class="option">--ssh</span></kbd></td>
+<td>specify ssh command to use</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--remotecmd</span></kbd></td>
+<td>specify hg command to run on the remote side</td></tr>
+</tbody>
+</table>
+<p class="last">aliases: in</p>
+</dd>
+</dl>
+<dl class="docutils" id="init">
+<dt><tt class="docutils literal">init <span class="pre">[-e</span> CMD] <span class="pre">[--remotecmd</span> CMD] [DEST]</tt></dt>
+<dd><p class="first">Initialize a new repository in the given directory. If the given
+directory does not exist, it will be created.</p>
+<p>If no directory is given, the current directory is used.</p>
+<p>It is possible to specify an <tt class="docutils literal"><span class="pre">ssh://</span></tt> URL as the destination.
+See 'hg help urls' for more information.</p>
+<p>options:</p>
+<table class="last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-e</span>, <span class="option">--ssh</span></kbd></td>
+<td>specify ssh command to use</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--remotecmd</span></kbd></td>
+<td>specify hg command to run on the remote side</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl class="docutils" id="locate">
+<dt><tt class="docutils literal">locate <span class="pre">[OPTION]...</span> <span class="pre">[PATTERN]...</span></tt></dt>
+<dd><p class="first">Print files under Mercurial control in the working directory whose
+names match the given patterns.</p>
+<p>By default, this command searches all directories in the working
+directory. To search just the current directory and its
+subdirectories, use &quot;--include .&quot;.</p>
+<p>If no patterns are given to match, this command prints the names
+of all files under Mercurial control in the working directory.</p>
+<p>If you want to feed the output of this command into the &quot;xargs&quot;
+command, use the -0 option to both this command and &quot;xargs&quot;. This
+will avoid the problem of &quot;xargs&quot; treating single filenames that
+contain whitespace as multiple filenames.</p>
+<p>options:</p>
+<table class="last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-r</span>, <span class="option">--rev</span></kbd></td>
+<td>search the repository as it is in REV</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-0</span>, <span class="option">--print0</span></kbd></td>
+<td>end filenames with NUL, for use with xargs</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-f</span>, <span class="option">--fullpath</span></kbd></td>
+<td>print complete paths from the filesystem root</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-I</span>, <span class="option">--include</span></kbd></td>
+<td>include names matching the given patterns</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-X</span>, <span class="option">--exclude</span></kbd></td>
+<td>exclude names matching the given patterns</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl class="docutils" id="log">
+<dt><tt class="docutils literal">log <span class="pre">[OPTION]...</span> [FILE]</tt></dt>
+<dd><p class="first">Print the revision history of the specified files or the entire
+project.</p>
+<p>File history is shown without following rename or copy history of
+files. Use -f/--follow with a filename to follow history across
+renames and copies. --follow without a filename will only show
+ancestors or descendants of the starting revision. --follow-first
+only follows the first parent of merge revisions.</p>
+<p>If no revision range is specified, the default is <a class="reference external" href="tip:0">tip:0</a> unless
+--follow is set, in which case the working directory parent is
+used as the starting revision.</p>
+<p>See 'hg help dates' for a list of formats valid for -d/--date.</p>
+<p>By default this command prints revision number and changeset id,
+tags, non-trivial parents, user, date and time, and a summary for
+each commit. When the -v/--verbose switch is used, the list of
+changed files and full commit message are shown.</p>
+<p>NOTE: log -p/--patch may generate unexpected diff output for merge
+changesets, as it will only compare the merge changeset against
+its first parent. Also, only files different from BOTH parents
+will appear in files:.</p>
+<p>options:</p>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-f</span>, <span class="option">--follow</span></kbd></td>
+<td>follow changeset history, or file history across copies and renames</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--follow-first</span></kbd></td>
+<td>only follow the first parent of merge changesets</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-d</span>, <span class="option">--date</span></kbd></td>
+<td>show revisions matching date spec</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-C</span>, <span class="option">--copies</span></kbd></td>
+<td>show copied files</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-k</span>, <span class="option">--keyword</span></kbd></td>
+<td>do case-insensitive search for a keyword</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-r</span>, <span class="option">--rev</span></kbd></td>
+<td>show the specified revision or range</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--removed</span></kbd></td>
+<td>include revisions where files were removed</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-m</span>, <span class="option">--only-merges</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>show only merges</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-u</span>, <span class="option">--user</span></kbd></td>
+<td>revisions committed by user</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-b</span>, <span class="option">--only-branch</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>show only changesets within the given named branch</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-P</span>, <span class="option">--prune</span></kbd></td>
+<td>do not display revision or any of its ancestors</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-p</span>, <span class="option">--patch</span></kbd></td>
+<td>show patch</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-g</span>, <span class="option">--git</span></kbd></td>
+<td>use git extended diff format</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-l</span>, <span class="option">--limit</span></kbd></td>
+<td>limit number of changes displayed</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-M</span>, <span class="option">--no-merges</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>do not show merges</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--style</span></kbd></td>
+<td>display using template map file</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--template</span></kbd></td>
+<td>display with template</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-I</span>, <span class="option">--include</span></kbd></td>
+<td>include names matching the given patterns</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-X</span>, <span class="option">--exclude</span></kbd></td>
+<td>exclude names matching the given patterns</td></tr>
+</tbody>
+</table>
+<p class="last">aliases: history</p>
+</dd>
+</dl>
+<dl class="docutils" id="manifest">
+<dt><tt class="docutils literal">manifest <span class="pre">[-r</span> REV]</tt></dt>
+<dd><p class="first">Print a list of version controlled files for the given revision.
+If no revision is given, the first parent of the working directory
+is used, or the null revision if no revision is checked out.</p>
+<p>With -v, print file permissions, symlink and executable bits.
+With --debug, print file revision hashes.</p>
+<p>options:</p>
+<table class="last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-r</span>, <span class="option">--rev</span></kbd></td>
+<td>revision to display</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl class="docutils" id="merge">
+<dt><tt class="docutils literal">merge <span class="pre">[-P]</span> <span class="pre">[-f]</span> <span class="pre">[[-r]</span> REV]</tt></dt>
+<dd><p class="first">The current working directory is updated with all changes made in
+the requested revision since the last common predecessor revision.</p>
+<p>Files that changed between either parent are marked as changed for
+the next commit and a commit must be performed before any further
+updates to the repository are allowed. The next commit will have
+two parents.</p>
+<p>If no revision is specified, the working directory's parent is a
+head revision, and the current branch contains exactly one other
+head, the other head is merged with by default. Otherwise, an
+explicit revision with which to merge with must be provided.</p>
+<p>options:</p>
+<table class="last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-f</span>, <span class="option">--force</span></kbd></td>
+<td>force a merge with outstanding changes</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-r</span>, <span class="option">--rev</span></kbd></td>
+<td>revision to merge</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-P</span>, <span class="option">--preview</span></kbd></td>
+<td>review revisions to merge (no merge is performed)</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl class="docutils" id="outgoing">
+<dt><tt class="docutils literal">outgoing <span class="pre">[-M]</span> <span class="pre">[-p]</span> <span class="pre">[-n]</span> <span class="pre">[-f]</span> <span class="pre">[-r</span> <span class="pre">REV]...</span> [DEST]</tt></dt>
+<dd><p class="first">Show changesets not found in the specified destination repository
+or the default push location. These are the changesets that would
+be pushed if a push was requested.</p>
+<p>See pull for details of valid destination formats.</p>
+<p>options:</p>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-f</span>, <span class="option">--force</span></kbd></td>
+<td>run even when the destination is unrelated</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-r</span>, <span class="option">--rev</span></kbd></td>
+<td>a changeset intended to be included in the destination</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-n</span>, <span class="option">--newest-first</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>show newest record first</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-b</span>, <span class="option">--branch</span></kbd></td>
+<td>a specific branch you would like to push</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-p</span>, <span class="option">--patch</span></kbd></td>
+<td>show patch</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-g</span>, <span class="option">--git</span></kbd></td>
+<td>use git extended diff format</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-l</span>, <span class="option">--limit</span></kbd></td>
+<td>limit number of changes displayed</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-M</span>, <span class="option">--no-merges</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>do not show merges</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--style</span></kbd></td>
+<td>display using template map file</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--template</span></kbd></td>
+<td>display with template</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-e</span>, <span class="option">--ssh</span></kbd></td>
+<td>specify ssh command to use</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--remotecmd</span></kbd></td>
+<td>specify hg command to run on the remote side</td></tr>
+</tbody>
+</table>
+<p class="last">aliases: out</p>
+</dd>
+</dl>
+<dl class="docutils" id="parents">
+<dt><tt class="docutils literal">parents <span class="pre">[-r</span> REV] [FILE]</tt></dt>
+<dd><p class="first">Print the working directory's parent revisions. If a revision is
+given via -r/--rev, the parent of that revision will be printed.
+If a file argument is given, the revision in which the file was
+last changed (before the working directory revision or the
+argument to --rev if given) is printed.</p>
+<p>options:</p>
+<table class="last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-r</span>, <span class="option">--rev</span></kbd></td>
+<td>show parents of the specified revision</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--style</span></kbd></td>
+<td>display using template map file</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--template</span></kbd></td>
+<td>display with template</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl class="docutils" id="paths">
+<dt><tt class="docutils literal">paths [NAME]</tt></dt>
+<dd><p class="first">Show definition of symbolic path name NAME. If no name is given,
+show definition of all available names.</p>
+<p>Path names are defined in the [paths] section of /etc/mercurial/hgrc
+and $HOME/.hgrc. If run inside a repository, .hg/hgrc is used, too.</p>
+<p class="last">See 'hg help urls' for more information.</p>
+</dd>
+</dl>
+<dl class="docutils" id="pull">
+<dt><tt class="docutils literal">pull <span class="pre">[-u]</span> <span class="pre">[-f]</span> <span class="pre">[-r</span> <span class="pre">REV]...</span> <span class="pre">[-e</span> CMD] <span class="pre">[--remotecmd</span> CMD] [SOURCE]</tt></dt>
+<dd><p class="first">Pull changes from a remote repository to a local one.</p>
+<p>This finds all changes from the repository at the specified path
+or URL and adds them to a local repository (the current one unless
+-R is specified). By default, this does not update the copy of the
+project in the working directory.</p>
+<p>Use hg incoming if you want to see what would have been added by a
+pull at the time you issued this command. If you then decide to
+added those changes to the repository, you should use pull -r X
+where X is the last changeset listed by hg incoming.</p>
+<p>If SOURCE is omitted, the 'default' path will be used.
+See 'hg help urls' for more information.</p>
+<p>options:</p>
+<table class="last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-u</span>, <span class="option">--update</span></kbd></td>
+<td>update to new branch head if changesets were pulled</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-f</span>, <span class="option">--force</span></kbd></td>
+<td>run even when remote repository is unrelated</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-r</span>, <span class="option">--rev</span></kbd></td>
+<td>a remote changeset intended to be added</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-b</span>, <span class="option">--branch</span></kbd></td>
+<td>a specific branch you would like to pull</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-e</span>, <span class="option">--ssh</span></kbd></td>
+<td>specify ssh command to use</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--remotecmd</span></kbd></td>
+<td>specify hg command to run on the remote side</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl class="docutils" id="push">
+<dt><tt class="docutils literal">push <span class="pre">[-f]</span> <span class="pre">[-r</span> <span class="pre">REV]...</span> <span class="pre">[-e</span> CMD] <span class="pre">[--remotecmd</span> CMD] [DEST]</tt></dt>
+<dd><p class="first">Push changes from the local repository to the specified destination.</p>
+<p>This is the symmetrical operation for pull. It moves changes from
+the current repository to a different one. If the destination is
+local this is identical to a pull in that directory from the
+current one.</p>
+<p>By default, push will refuse to run if it detects the result would
+increase the number of remote heads. This generally indicates the
+user forgot to pull and merge before pushing.</p>
+<p>If -r/--rev is used, the named revision and all its ancestors will
+be pushed to the remote repository.</p>
+<p>Please see 'hg help urls' for important details about <tt class="docutils literal"><span class="pre">ssh://</span></tt>
+URLs. If DESTINATION is omitted, a default path will be used.</p>
+<p>options:</p>
+<table class="last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-f</span>, <span class="option">--force</span></kbd></td>
+<td>force push</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-r</span>, <span class="option">--rev</span></kbd></td>
+<td>a changeset intended to be included in the destination</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-b</span>, <span class="option">--branch</span></kbd></td>
+<td>a specific branch you would like to push</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-e</span>, <span class="option">--ssh</span></kbd></td>
+<td>specify ssh command to use</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--remotecmd</span></kbd></td>
+<td>specify hg command to run on the remote side</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl class="docutils" id="recover">
+<dt><tt class="docutils literal">recover</tt></dt>
+<dd><p class="first">Recover from an interrupted commit or pull.</p>
+<p class="last">This command tries to fix the repository status after an
+interrupted operation. It should only be necessary when Mercurial
+suggests it.</p>
+</dd>
+</dl>
+<dl class="docutils" id="remove">
+<dt><tt class="docutils literal">remove <span class="pre">[OPTION]...</span> <span class="pre">FILE...</span></tt></dt>
+<dd><p class="first">Schedule the indicated files for removal from the repository.</p>
+<p>This only removes files from the current branch, not from the
+entire project history. -A/--after can be used to remove only
+files that have already been deleted, -f/--force can be used to
+force deletion, and -Af can be used to remove files from the next
+revision without deleting them from the working directory.</p>
+<p>The following table details the behavior of remove for different
+file states (columns) and option combinations (rows). The file
+states are Added [A], Clean [C], Modified [M] and Missing [!] (as
+reported by hg status). The actions are Warn, Remove (from branch)
+and Delete (from disk):</p>
+<pre class="literal-block">
+       A  C  M  !
+none   W  RD W  R
+-f     R  RD RD R
+-A     W  W  W  R
+-Af    R  R  R  R
+</pre>
+<p>This command schedules the files to be removed at the next commit.
+To undo a remove before that, see hg revert.</p>
+<p>options:</p>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-A</span>, <span class="option">--after</span></kbd></td>
+<td>record delete for missing files</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-f</span>, <span class="option">--force</span></kbd></td>
+<td>remove (and delete) file even if added or modified</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-I</span>, <span class="option">--include</span></kbd></td>
+<td>include names matching the given patterns</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-X</span>, <span class="option">--exclude</span></kbd></td>
+<td>exclude names matching the given patterns</td></tr>
+</tbody>
+</table>
+<p class="last">aliases: rm</p>
+</dd>
+</dl>
+<dl class="docutils" id="rename">
+<dt><tt class="docutils literal">rename <span class="pre">[OPTION]...</span> <span class="pre">SOURCE...</span> DEST</tt></dt>
+<dd><p class="first">Mark dest as copies of sources; mark sources for deletion. If dest
+is a directory, copies are put in that directory. If dest is a
+file, there can only be one source.</p>
+<p>By default, this command copies the contents of files as they
+exist in the working directory. If invoked with -A/--after, the
+operation is recorded, but no copying is performed.</p>
+<p>This command takes effect at the next commit. To undo a rename
+before that, see hg revert.</p>
+<p>options:</p>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-A</span>, <span class="option">--after</span></kbd></td>
+<td>record a rename that has already occurred</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-f</span>, <span class="option">--force</span></kbd></td>
+<td>forcibly copy over an existing managed file</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-I</span>, <span class="option">--include</span></kbd></td>
+<td>include names matching the given patterns</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-X</span>, <span class="option">--exclude</span></kbd></td>
+<td>exclude names matching the given patterns</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-n</span>, <span class="option">--dry-run</span></kbd></td>
+<td>do not perform actions, just print output</td></tr>
+</tbody>
+</table>
+<p class="last">aliases: mv</p>
+</dd>
+</dl>
+<dl class="docutils" id="resolve">
+<dt><tt class="docutils literal">resolve <span class="pre">[OPTION]...</span> <span class="pre">[FILE]...</span></tt></dt>
+<dd><p class="first">This command includes several actions that are often useful while
+performing a merge, after running <tt class="docutils literal">merge</tt> but before running
+<tt class="docutils literal">commit</tt>.  (It is only meaningful if your working directory has
+two parents.)  It is most relevant for merges with unresolved
+conflicts, which are typically a result of non-interactive merging with
+<tt class="docutils literal">internal:merge</tt> or a command-line merge tool like <tt class="docutils literal">diff3</tt>.</p>
+<p>The available actions are:</p>
+<blockquote>
+<ol class="arabic simple">
+<li>list files that were merged with conflicts (U, for unresolved)
+and without conflicts (R, for resolved): <tt class="docutils literal">hg resolve <span class="pre">-l</span></tt>
+(this is like <tt class="docutils literal">status</tt> for merges)</li>
+<li>record that you have resolved conflicts in certain files:
+<tt class="docutils literal">hg resolve <span class="pre">-m</span> [file <span class="pre">...]</span></tt> (default: mark all unresolved files)</li>
+<li>forget that you have resolved conflicts in certain files:
+<tt class="docutils literal">hg resolve <span class="pre">-u</span> [file <span class="pre">...]</span></tt> (default: unmark all resolved files)</li>
+<li>discard your current attempt(s) at resolving conflicts and
+restart the merge from scratch: <tt class="docutils literal">hg resolve <span class="pre">file...</span></tt>
+(or <tt class="docutils literal"><span class="pre">-a</span></tt> for all unresolved files)</li>
+</ol>
+</blockquote>
+<p>Note that Mercurial will not let you commit files with unresolved merge
+conflicts.  You must use <tt class="docutils literal">hg resolve <span class="pre">-m</span> ...</tt> before you can commit
+after a conflicting merge.</p>
+<p>options:</p>
+<table class="last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-a</span>, <span class="option">--all</span></kbd></td>
+<td>select all unresolved files</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-l</span>, <span class="option">--list</span></kbd></td>
+<td>list state of files needing merge</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-m</span>, <span class="option">--mark</span></kbd></td>
+<td>mark files as resolved</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-u</span>, <span class="option">--unmark</span></kbd></td>
+<td>unmark files as resolved</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-n</span>, <span class="option">--no-status</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>hide status prefix</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-I</span>, <span class="option">--include</span></kbd></td>
+<td>include names matching the given patterns</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-X</span>, <span class="option">--exclude</span></kbd></td>
+<td>exclude names matching the given patterns</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl class="docutils" id="revert">
+<dt><tt class="docutils literal">revert <span class="pre">[OPTION]...</span> <span class="pre">[-r</span> REV] <span class="pre">[NAME]...</span></tt></dt>
+<dd><p class="first">(Use update -r to check out earlier revisions, revert does not
+change the working directory parents.)</p>
+<p>With no revision specified, revert the named files or directories
+to the contents they had in the parent of the working directory.
+This restores the contents of the affected files to an unmodified
+state and unschedules adds, removes, copies, and renames. If the
+working directory has two parents, you must explicitly specify a
+revision.</p>
+<p>Using the -r/--rev option, revert the given files or directories
+to their contents as of a specific revision. This can be helpful
+to &quot;roll back&quot; some or all of an earlier change. See 'hg help
+dates' for a list of formats valid for -d/--date.</p>
+<p>Revert modifies the working directory. It does not commit any
+changes, or change the parent of the working directory. If you
+revert to a revision other than the parent of the working
+directory, the reverted files will thus appear modified
+afterwards.</p>
+<p>If a file has been deleted, it is restored. If the executable mode
+of a file was changed, it is reset.</p>
+<p>If names are given, all files matching the names are reverted.
+If no arguments are given, no files are reverted.</p>
+<p>Modified files are saved with a .orig suffix before reverting.
+To disable these backups, use --no-backup.</p>
+<p>options:</p>
+<table class="last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-a</span>, <span class="option">--all</span></kbd></td>
+<td>revert all changes when no arguments given</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-d</span>, <span class="option">--date</span></kbd></td>
+<td>tipmost revision matching date</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-r</span>, <span class="option">--rev</span></kbd></td>
+<td>revert to the specified revision</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--no-backup</span></kbd></td>
+<td>do not save backup copies of files</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-I</span>, <span class="option">--include</span></kbd></td>
+<td>include names matching the given patterns</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-X</span>, <span class="option">--exclude</span></kbd></td>
+<td>exclude names matching the given patterns</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-n</span>, <span class="option">--dry-run</span></kbd></td>
+<td>do not perform actions, just print output</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl class="docutils" id="rollback">
+<dt><tt class="docutils literal">rollback</tt></dt>
+<dd><p class="first">This command should be used with care. There is only one level of
+rollback, and there is no way to undo a rollback. It will also
+restore the dirstate at the time of the last transaction, losing
+any dirstate changes since that time. This command does not alter
+the working directory.</p>
+<p>Transactions are used to encapsulate the effects of all commands
+that create new changesets or propagate existing changesets into a
+repository. For example, the following commands are transactional,
+and their effects can be rolled back:</p>
+<ul class="simple">
+<li>commit</li>
+<li>import</li>
+<li>pull</li>
+<li>push (with this repository as the destination)</li>
+<li>unbundle</li>
+</ul>
+<p class="last">This command is not intended for use on public repositories. Once
+changes are visible for pull by other users, rolling a transaction
+back locally is ineffective (someone else may already have pulled
+the changes). Furthermore, a race is possible with readers of the
+repository; for example an in-progress pull from the repository
+may fail if a rollback is performed.</p>
+</dd>
+</dl>
+<dl class="docutils" id="root">
+<dt><tt class="docutils literal">root</tt></dt>
+<dd>Print the root directory of the current repository.</dd>
+</dl>
+<dl class="docutils" id="serve">
+<dt><tt class="docutils literal">serve <span class="pre">[OPTION]...</span></tt></dt>
+<dd><p class="first">Start a local HTTP repository browser and pull server.</p>
+<p>By default, the server logs accesses to stdout and errors to
+stderr. Use the -A/--accesslog and -E/--errorlog options to log to
+files.</p>
+<p>options:</p>
+<table class="last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-A</span>, <span class="option">--accesslog</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>name of access log file to write to</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-d</span>, <span class="option">--daemon</span></kbd></td>
+<td>run server in background</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--daemon-pipefds</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>used internally by daemon mode</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-E</span>, <span class="option">--errorlog</span></kbd></td>
+<td>name of error log file to write to</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-p</span>, <span class="option">--port</span></kbd></td>
+<td>port to listen on (default: 8000)</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-a</span>, <span class="option">--address</span></kbd></td>
+<td>address to listen on (default: all interfaces)</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--prefix</span></kbd></td>
+<td>prefix path to serve from (default: server root)</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-n</span>, <span class="option">--name</span></kbd></td>
+<td>name to show in web pages (default: working directory)</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--webdir-conf</span></kbd></td>
+<td>name of the webdir config file (serve more than one repository)</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--pid-file</span></kbd></td>
+<td>name of file to write process ID to</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--stdio</span></kbd></td>
+<td>for remote clients</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-t</span>, <span class="option">--templates</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>web templates to use</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--style</span></kbd></td>
+<td>template style to use</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-6</span>, <span class="option">--ipv6</span></kbd></td>
+<td>use IPv6 in addition to IPv4</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--certificate</span></kbd></td>
+<td>SSL certificate file</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl class="docutils" id="showconfig">
+<dt><tt class="docutils literal">showconfig <span class="pre">[-u]</span> <span class="pre">[NAME]...</span></tt></dt>
+<dd><p class="first">With no arguments, print names and values of all config items.</p>
+<p>With one argument of the form section.name, print just the value
+of that config item.</p>
+<p>With multiple arguments, print names and values of all config
+items with matching section names.</p>
+<p>With --debug, the source (filename and line number) is printed
+for each config item.</p>
+<p>options:</p>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-u</span>, <span class="option">--untrusted</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>show untrusted configuration options</td></tr>
+</tbody>
+</table>
+<p class="last">aliases: debugconfig</p>
+</dd>
+</dl>
+<dl class="docutils" id="status">
+<dt><tt class="docutils literal">status <span class="pre">[OPTION]...</span> <span class="pre">[FILE]...</span></tt></dt>
+<dd><p class="first">Show status of files in the repository. If names are given, only
+files that match are shown. Files that are clean or ignored or
+the source of a copy/move operation, are not listed unless
+-c/--clean, -i/--ignored, -C/--copies or -A/--all are given.
+Unless options described with &quot;show only ...&quot; are given, the
+options -mardu are used.</p>
+<p>Option -q/--quiet hides untracked (unknown and ignored) files
+unless explicitly requested with -u/--unknown or -i/--ignored.</p>
+<p>NOTE: status may appear to disagree with diff if permissions have
+changed or a merge has occurred. The standard diff format does not
+report permission changes and diff only reports changes relative
+to one merge parent.</p>
+<p>If one revision is given, it is used as the base revision.
+If two revisions are given, the differences between them are
+shown. The --change option can also be used as a shortcut to list
+the changed files of a revision from its first parent.</p>
+<p>The codes used to show the status of files are:</p>
+<pre class="literal-block">
+M = modified
+A = added
+R = removed
+C = clean
+! = missing (deleted by non-hg command, but still tracked)
+? = not tracked
+I = ignored
+  = origin of the previous file listed as A (added)
+</pre>
+<p>options:</p>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-A</span>, <span class="option">--all</span></kbd></td>
+<td>show status of all files</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-m</span>, <span class="option">--modified</span></kbd></td>
+<td>show only modified files</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-a</span>, <span class="option">--added</span></kbd></td>
+<td>show only added files</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-r</span>, <span class="option">--removed</span></kbd></td>
+<td>show only removed files</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-d</span>, <span class="option">--deleted</span></kbd></td>
+<td>show only deleted (but tracked) files</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-c</span>, <span class="option">--clean</span></kbd></td>
+<td>show only files without changes</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-u</span>, <span class="option">--unknown</span></kbd></td>
+<td>show only unknown (not tracked) files</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-i</span>, <span class="option">--ignored</span></kbd></td>
+<td>show only ignored files</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-n</span>, <span class="option">--no-status</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>hide status prefix</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-C</span>, <span class="option">--copies</span></kbd></td>
+<td>show source of copied files</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-0</span>, <span class="option">--print0</span></kbd></td>
+<td>end filenames with NUL, for use with xargs</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--rev</span></kbd></td>
+<td>show difference from revision</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--change</span></kbd></td>
+<td>list the changed files of a revision</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-I</span>, <span class="option">--include</span></kbd></td>
+<td>include names matching the given patterns</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-X</span>, <span class="option">--exclude</span></kbd></td>
+<td>exclude names matching the given patterns</td></tr>
+</tbody>
+</table>
+<p class="last">aliases: st</p>
+</dd>
+</dl>
+<dl class="docutils" id="summary">
+<dt><tt class="docutils literal">summary <span class="pre">[--remote]</span></tt></dt>
+<dd><p class="first">This generates a brief summary of the working directory state,
+including parents, branch, commit status, and available updates.</p>
+<p>With the --remote option, this will check the default paths for
+incoming and outgoing changes. This can be time-consuming.</p>
+<p>options:</p>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">--remote</span></kbd></td>
+<td>check for push and pull</td></tr>
+</tbody>
+</table>
+<p class="last">aliases: sum</p>
+</dd>
+</dl>
+<dl class="docutils" id="tag">
+<dt><tt class="docutils literal">tag <span class="pre">[-f]</span> <span class="pre">[-l]</span> <span class="pre">[-m</span> TEXT] <span class="pre">[-d</span> DATE] <span class="pre">[-u</span> USER] <span class="pre">[-r</span> REV] <span class="pre">NAME...</span></tt></dt>
+<dd><p class="first">Name a particular revision using &lt;name&gt;.</p>
+<p>Tags are used to name particular revisions of the repository and are
+very useful to compare different revisions, to go back to significant
+earlier versions or to mark branch points as releases, etc.</p>
+<p>If no revision is given, the parent of the working directory is
+used, or tip if no revision is checked out.</p>
+<p>To facilitate version control, distribution, and merging of tags,
+they are stored as a file named &quot;.hgtags&quot; which is managed
+similarly to other project files and can be hand-edited if
+necessary. The file '.hg/localtags' is used for local tags (not
+shared among repositories).</p>
+<p>See 'hg help dates' for a list of formats valid for -d/--date.</p>
+<p>options:</p>
+<table class="last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-f</span>, <span class="option">--force</span></kbd></td>
+<td>replace existing tag</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-l</span>, <span class="option">--local</span></kbd></td>
+<td>make the tag local</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-r</span>, <span class="option">--rev</span></kbd></td>
+<td>revision to tag</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--remove</span></kbd></td>
+<td>remove a tag</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-m</span>, <span class="option">--message</span></kbd></td>
+<td>use &lt;text&gt; as commit message</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-d</span>, <span class="option">--date</span></kbd></td>
+<td>record datecode as commit date</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-u</span>, <span class="option">--user</span></kbd></td>
+<td>record the specified user as committer</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl class="docutils" id="tags">
+<dt><tt class="docutils literal">tags</tt></dt>
+<dd>This lists both regular and local tags. When the -v/--verbose
+switch is used, a third column &quot;local&quot; is printed for local tags.</dd>
+</dl>
+<dl class="docutils" id="tip">
+<dt><tt class="docutils literal">tip <span class="pre">[-p]</span> <span class="pre">[-g]</span></tt></dt>
+<dd><p class="first">The tip revision (usually just called the tip) is the changeset
+most recently added to the repository (and therefore the most
+recently changed head).</p>
+<p>If you have just made a commit, that commit will be the tip. If
+you have just pulled changes from another repository, the tip of
+that repository becomes the current tip. The &quot;tip&quot; tag is special
+and cannot be renamed or assigned to a different changeset.</p>
+<p>options:</p>
+<table class="last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-p</span>, <span class="option">--patch</span></kbd></td>
+<td>show patch</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-g</span>, <span class="option">--git</span></kbd></td>
+<td>use git extended diff format</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--style</span></kbd></td>
+<td>display using template map file</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--template</span></kbd></td>
+<td>display with template</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl class="docutils" id="unbundle">
+<dt><tt class="docutils literal">unbundle <span class="pre">[-u]</span> <span class="pre">FILE...</span></tt></dt>
+<dd><p class="first">Apply one or more compressed changegroup files generated by the
+bundle command.</p>
+<p>options:</p>
+<table class="last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-u</span>, <span class="option">--update</span></kbd></td>
+<td>update to new branch head if changesets were unbundled</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl class="docutils" id="update">
+<dt><tt class="docutils literal">update <span class="pre">[-c]</span> <span class="pre">[-C]</span> <span class="pre">[-d</span> DATE] <span class="pre">[[-r]</span> REV]</tt></dt>
+<dd><p class="first">Update the repository's working directory to the specified
+changeset.</p>
+<p>If no changeset is specified, attempt to update to the head of the
+current branch. If this head is a descendant of the working
+directory's parent, update to it, otherwise abort.</p>
+<p>The following rules apply when the working directory contains
+uncommitted changes:</p>
+<ol class="arabic simple">
+<li>If neither -c/--check nor -C/--clean is specified, and if
+the requested changeset is an ancestor or descendant of
+the working directory's parent, the uncommitted changes
+are merged into the requested changeset and the merged
+result is left uncommitted. If the requested changeset is
+not an ancestor or descendant (that is, it is on another
+branch), the update is aborted and the uncommitted changes
+are preserved.</li>
+<li>With the -c/--check option, the update is aborted and the
+uncommitted changes are preserved.</li>
+<li>With the -C/--clean option, uncommitted changes are discarded and
+the working directory is updated to the requested changeset.</li>
+</ol>
+<p>Use null as the changeset to remove the working directory (like 'hg
+clone -U').</p>
+<p>If you want to update just one file to an older changeset, use 'hg revert'.</p>
+<p>See 'hg help dates' for a list of formats valid for -d/--date.</p>
+<p>options:</p>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-C</span>, <span class="option">--clean</span></kbd></td>
+<td>discard uncommitted changes (no backup)</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-c</span>, <span class="option">--check</span></kbd></td>
+<td>check for uncommitted changes</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-d</span>, <span class="option">--date</span></kbd></td>
+<td>tipmost revision matching date</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-r</span>, <span class="option">--rev</span></kbd></td>
+<td>revision</td></tr>
+</tbody>
+</table>
+<p class="last">aliases: up checkout co</p>
+</dd>
+</dl>
+<dl class="docutils" id="verify">
+<dt><tt class="docutils literal">verify</tt></dt>
+<dd><p class="first">Verify the integrity of the current repository.</p>
+<p class="last">This will perform an extensive check of the repository's
+integrity, validating the hashes and checksums of each entry in
+the changelog, manifest, and tracked files, as well as the
+integrity of their crosslinks and indices.</p>
+</dd>
+</dl>
+<dl class="docutils" id="version">
+<dt><tt class="docutils literal">version</tt></dt>
+<dd>output version and copyright information</dd>
+</dl>
+</div>
+<div class="section" id="configuration-files">
+<span id="config"></span><h1><a class="toc-backref" href="#contents">Configuration Files</a></h1>
+<p>Mercurial reads configuration data from several files, if they exist.
+Below we list the most specific file first.</p>
+<p>On Windows, these configuration files are read:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">&lt;repo&gt;\.hg\hgrc</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">%USERPROFILE%\.hgrc</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">%USERPROFILE%\Mercurial.ini</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">%HOME%\.hgrc</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">%HOME%\Mercurial.ini</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">C:\Mercurial\Mercurial.ini</span></tt></li>
+<li><tt class="docutils literal">HKEY_LOCAL_MACHINE\SOFTWARE\Mercurial</tt></li>
+<li><tt class="docutils literal"><span class="pre">&lt;install-dir&gt;\Mercurial.ini</span></tt></li>
+</ul>
+<p>On Unix, these files are read:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">&lt;repo&gt;/.hg/hgrc</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">$HOME/.hgrc</span></tt></li>
+<li><tt class="docutils literal">/etc/mercurial/hgrc</tt></li>
+<li><tt class="docutils literal"><span class="pre">/etc/mercurial/hgrc.d/*.rc</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">&lt;install-root&gt;/etc/mercurial/hgrc</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">&lt;install-root&gt;/etc/mercurial/hgrc.d/*.rc</span></tt></li>
+</ul>
+<p>The configuration files for Mercurial use a simple ini-file format. A
+configuration file consists of sections, led by a <tt class="docutils literal">[section]</tt> header
+and followed by <tt class="docutils literal">name = value</tt> entries:</p>
+<pre class="literal-block">
+[ui]
+username = Firstname Lastname &lt;firstname.lastname&#64;example.net&gt;
+verbose = True
+</pre>
+<p>This above entries will be referred to as <tt class="docutils literal">ui.username</tt> and
+<tt class="docutils literal">ui.verbose</tt>, respectively. Please see the hgrc man page for a full
+description of the possible configuration values:</p>
+<ul class="simple">
+<li>on Unix-like systems: <tt class="docutils literal">man hgrc</tt></li>
+<li>online: <a class="reference external" href="http://www.selenic.com/mercurial/hgrc.5.html">http://www.selenic.com/mercurial/hgrc.5.html</a></li>
+</ul>
+</div>
+<div class="section" id="date-formats">
+<span id="dates"></span><h1><a class="toc-backref" href="#contents">Date Formats</a></h1>
+<p>Some commands allow the user to specify a date, e.g.:</p>
+<ul class="simple">
+<li>backout, commit, import, tag: Specify the commit date.</li>
+<li>log, revert, update: Select revision(s) by date.</li>
+</ul>
+<p>Many date formats are valid. Here are some examples:</p>
+<ul class="simple">
+<li><tt class="docutils literal">Wed Dec 6 13:18:29 2006</tt> (local timezone assumed)</li>
+<li><tt class="docutils literal">Dec 6 13:18 <span class="pre">-0600</span></tt> (year assumed, time offset provided)</li>
+<li><tt class="docutils literal">Dec 6 13:18 UTC</tt> (UTC and GMT are aliases for +0000)</li>
+<li><tt class="docutils literal">Dec 6</tt> (midnight)</li>
+<li><tt class="docutils literal">13:18</tt> (today assumed)</li>
+<li><tt class="docutils literal">3:39</tt> (3:39AM assumed)</li>
+<li><tt class="docutils literal">3:39pm</tt> (15:39)</li>
+<li><tt class="docutils literal"><span class="pre">2006-12-06</span> 13:18:29</tt> (ISO 8601 format)</li>
+<li><tt class="docutils literal"><span class="pre">2006-12-6</span> 13:18</tt></li>
+<li><tt class="docutils literal"><span class="pre">2006-12-6</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">12-6</span></tt></li>
+<li><tt class="docutils literal">12/6</tt></li>
+<li><tt class="docutils literal">12/6/6</tt> (Dec 6 2006)</li>
+</ul>
+<p>Lastly, there is Mercurial's internal format:</p>
+<ul class="simple">
+<li><tt class="docutils literal">1165432709 0</tt> (Wed Dec 6 13:18:29 2006 UTC)</li>
+</ul>
+<p>This is the internal representation format for dates. unixtime is the
+number of seconds since the epoch (1970-01-01 00:00 UTC). offset is
+the offset of the local timezone, in seconds west of UTC (negative if
+the timezone is east of UTC).</p>
+<p>The log command also accepts date ranges:</p>
+<ul class="simple">
+<li><tt class="docutils literal">&lt;{datetime}</tt> - at or before a given date/time</li>
+<li><tt class="docutils literal">&gt;{datetime}</tt> - on or after a given date/time</li>
+<li><tt class="docutils literal">{datetime} to {datetime}</tt> - a date range, inclusive</li>
+<li><tt class="docutils literal"><span class="pre">-{days}</span></tt> - within a given number of days of today</li>
+</ul>
+</div>
+<div class="section" id="file-name-patterns">
+<span id="patterns"></span><h1><a class="toc-backref" href="#contents">File Name Patterns</a></h1>
+<p>Mercurial accepts several notations for identifying one or more files
+at a time.</p>
+<p>By default, Mercurial treats filenames as shell-style extended glob
+patterns.</p>
+<p>Alternate pattern notations must be specified explicitly.</p>
+<p>To use a plain path name without any pattern matching, start it with
+<tt class="docutils literal">path:</tt>. These path names must completely match starting at the
+current repository root.</p>
+<p>To use an extended glob, start a name with <tt class="docutils literal">glob:</tt>. Globs are rooted
+at the current directory; a glob such as <tt class="docutils literal">*.c</tt> will only match files
+in the current directory ending with <tt class="docutils literal">.c</tt>.</p>
+<p>The supported glob syntax extensions are <tt class="docutils literal">**</tt> to match any string
+across path separators and <tt class="docutils literal">{a,b}</tt> to mean &quot;a or b&quot;.</p>
+<p>To use a Perl/Python regular expression, start a name with <tt class="docutils literal">re:</tt>.
+Regexp pattern matching is anchored at the root of the repository.</p>
+<p>Plain examples:</p>
+<pre class="literal-block">
+path:foo/bar   a name bar in a directory named foo in the root
+               of the repository
+path:path:name a file or directory named &quot;path:name&quot;
+</pre>
+<p>Glob examples:</p>
+<pre class="literal-block">
+glob:*.c       any name ending in &quot;.c&quot; in the current directory
+*.c            any name ending in &quot;.c&quot; in the current directory
+**.c           any name ending in &quot;.c&quot; in any subdirectory of the
+               current directory including itself.
+foo/*.c        any name ending in &quot;.c&quot; in the directory foo
+foo/**.c       any name ending in &quot;.c&quot; in any subdirectory of foo
+               including itself.
+</pre>
+<p>Regexp examples:</p>
+<pre class="literal-block">
+re:.*\.c$      any name ending in &quot;.c&quot;, anywhere in the repository
+</pre>
+</div>
+<div class="section" id="environment-variables">
+<span id="env"></span><span id="environment"></span><h1><a class="toc-backref" href="#contents">Environment Variables</a></h1>
+<dl class="docutils">
+<dt>HG</dt>
+<dd>Path to the 'hg' executable, automatically passed when running
+hooks, extensions or external tools. If unset or empty, this is
+the hg executable's name if it's frozen, or an executable named
+'hg' (with %PATHEXT% [defaulting to COM/EXE/BAT/CMD] extensions on
+Windows) is searched.</dd>
+<dt>HGEDITOR</dt>
+<dd><p class="first">This is the name of the editor to run when committing. See EDITOR.</p>
+<p class="last">(deprecated, use .hgrc)</p>
+</dd>
+<dt>HGENCODING</dt>
+<dd>This overrides the default locale setting detected by Mercurial.
+This setting is used to convert data including usernames,
+changeset descriptions, tag names, and branches. This setting can
+be overridden with the --encoding command-line option.</dd>
+<dt>HGENCODINGMODE</dt>
+<dd>This sets Mercurial's behavior for handling unknown characters
+while transcoding user input. The default is &quot;strict&quot;, which
+causes Mercurial to abort if it can't map a character. Other
+settings include &quot;replace&quot;, which replaces unknown characters, and
+&quot;ignore&quot;, which drops them. This setting can be overridden with
+the --encodingmode command-line option.</dd>
+<dt>HGMERGE</dt>
+<dd><p class="first">An executable to use for resolving merge conflicts. The program
+will be executed with three arguments: local file, remote file,
+ancestor file.</p>
+<p class="last">(deprecated, use .hgrc)</p>
+</dd>
+<dt>HGRCPATH</dt>
+<dd><p class="first">A list of files or directories to search for hgrc files. Item
+separator is &quot;:&quot; on Unix, &quot;;&quot; on Windows. If HGRCPATH is not set,
+platform default search path is used. If empty, only the .hg/hgrc
+from the current repository is read.</p>
+<p>For each element in HGRCPATH:</p>
+<ul class="last simple">
+<li>if it's a directory, all files ending with .rc are added</li>
+<li>otherwise, the file itself will be added</li>
+</ul>
+</dd>
+<dt>HGPLAIN</dt>
+<dd><p class="first">When set, this disables any options in .hgrc that might change
+Mercurial's default output. This includes encoding, defaults,
+verbose mode, debug mode, quiet mode, tracebacks, and
+localization. This can be useful when scripting against Mercurial
+in the face of existing user configuration.</p>
+<p class="last">Equivalent options set via command line flags or environment
+variables are not overridden.</p>
+</dd>
+<dt>HGUSER</dt>
+<dd><p class="first">This is the string used as the author of a commit. If not set,
+available values will be considered in this order:</p>
+<ul class="simple">
+<li>HGUSER (deprecated)</li>
+<li>hgrc files from the HGRCPATH</li>
+<li>EMAIL</li>
+<li>interactive prompt</li>
+<li>LOGNAME (with <tt class="docutils literal">&#64;hostname</tt> appended)</li>
+</ul>
+<p class="last">(deprecated, use .hgrc)</p>
+</dd>
+<dt>EMAIL</dt>
+<dd>May be used as the author of a commit; see HGUSER.</dd>
+<dt>LOGNAME</dt>
+<dd>May be used as the author of a commit; see HGUSER.</dd>
+<dt>VISUAL</dt>
+<dd>This is the name of the editor to use when committing. See EDITOR.</dd>
+<dt>EDITOR</dt>
+<dd>Sometimes Mercurial needs to open a text file in an editor for a
+user to modify, for example when writing commit messages. The
+editor it uses is determined by looking at the environment
+variables HGEDITOR, VISUAL and EDITOR, in that order. The first
+non-empty one is chosen. If all of them are empty, the editor
+defaults to 'vi'.</dd>
+<dt>PYTHONPATH</dt>
+<dd>This is used by Python to find imported modules and may need to be
+set appropriately if this Mercurial is not installed system-wide.</dd>
+</dl>
+</div>
+<div class="section" id="specifying-single-revisions">
+<span id="revisions"></span><span id="revs"></span><h1><a class="toc-backref" href="#contents">Specifying Single Revisions</a></h1>
+<p>Mercurial supports several ways to specify individual revisions.</p>
+<p>A plain integer is treated as a revision number. Negative integers are
+treated as sequential offsets from the tip, with -1 denoting the tip,
+-2 denoting the revision prior to the tip, and so forth.</p>
+<p>A 40-digit hexadecimal string is treated as a unique revision
+identifier.</p>
+<p>A hexadecimal string less than 40 characters long is treated as a
+unique revision identifier and is referred to as a short-form
+identifier. A short-form identifier is only valid if it is the prefix
+of exactly one full-length identifier.</p>
+<p>Any other string is treated as a tag or branch name. A tag name is a
+symbolic name associated with a revision identifier. A branch name
+denotes the tipmost revision of that branch. Tag and branch names must
+not contain the &quot;:&quot; character.</p>
+<p>The reserved name &quot;tip&quot; is a special tag that always identifies the
+most recent revision.</p>
+<p>The reserved name &quot;null&quot; indicates the null revision. This is the
+revision of an empty repository, and the parent of revision 0.</p>
+<p>The reserved name &quot;.&quot; indicates the working directory parent. If no
+working directory is checked out, it is equivalent to null. If an
+uncommitted merge is in progress, &quot;.&quot; is the revision of the first
+parent.</p>
+</div>
+<div class="section" id="specifying-multiple-revisions">
+<span id="multirevs"></span><span id="mrevs"></span><h1><a class="toc-backref" href="#contents">Specifying Multiple Revisions</a></h1>
+<p>When Mercurial accepts more than one revision, they may be specified
+individually, or provided as a topologically continuous range,
+separated by the &quot;:&quot; character.</p>
+<p>The syntax of range notation is [BEGIN]:[END], where BEGIN and END are
+revision identifiers. Both BEGIN and END are optional. If BEGIN is not
+specified, it defaults to revision number 0. If END is not specified,
+it defaults to the tip. The range &quot;:&quot; thus means &quot;all revisions&quot;.</p>
+<p>If BEGIN is greater than END, revisions are treated in reverse order.</p>
+<p>A range acts as a closed interval. This means that a range of 3:5
+gives 3, 4 and 5. Similarly, a range of 9:6 gives 9, 8, 7, and 6.</p>
+</div>
+<div class="section" id="diff-formats">
+<span id="diffs"></span><h1><a class="toc-backref" href="#contents">Diff Formats</a></h1>
+<p>Mercurial's default format for showing changes between two versions of
+a file is compatible with the unified format of GNU diff, which can be
+used by GNU patch and many other standard tools.</p>
+<p>While this standard format is often enough, it does not encode the
+following information:</p>
+<ul class="simple">
+<li>executable status and other permission bits</li>
+<li>copy or rename information</li>
+<li>changes in binary files</li>
+<li>creation or deletion of empty files</li>
+</ul>
+<p>Mercurial also supports the extended diff format from the git VCS
+which addresses these limitations. The git diff format is not produced
+by default because a few widespread tools still do not understand this
+format.</p>
+<p>This means that when generating diffs from a Mercurial repository
+(e.g. with &quot;hg export&quot;), you should be careful about things like file
+copies and renames or other things mentioned above, because when
+applying a standard diff to a different repository, this extra
+information is lost. Mercurial's internal operations (like push and
+pull) are not affected by this, because they use an internal binary
+format for communicating changes.</p>
+<p>To make Mercurial produce the git extended diff format, use the --git
+option available for many commands, or set 'git = True' in the [diff]
+section of your hgrc. You do not need to set this option when
+importing diffs in this format or using them in the mq extension.</p>
+</div>
+<div class="section" id="template-usage">
+<span id="templates"></span><span id="templating"></span><h1><a class="toc-backref" href="#contents">Template Usage</a></h1>
+<p>Mercurial allows you to customize output of commands through
+templates. You can either pass in a template from the command
+line, via the --template option, or select an existing
+template-style (--style).</p>
+<p>You can customize output for any &quot;log-like&quot; command: log,
+outgoing, incoming, tip, parents, heads and glog.</p>
+<p>Three styles are packaged with Mercurial: default (the style used
+when no explicit preference is passed), compact and changelog.
+Usage:</p>
+<pre class="literal-block">
+$ hg log -r1 --style changelog
+</pre>
+<p>A template is a piece of text, with markup to invoke variable
+expansion:</p>
+<pre class="literal-block">
+$ hg log -r1 --template &quot;{node}\n&quot;
+b56ce7b07c52de7d5fd79fb89701ea538af65746
+</pre>
+<p>Strings in curly braces are called keywords. The availability of
+keywords depends on the exact context of the templater. These
+keywords are usually available for templating a log-like command:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">author:</th><td class="field-body">String. The unmodified author of the changeset.</td>
+</tr>
+<tr class="field"><th class="field-name">branches:</th><td class="field-body">String. The name of the branch on which the changeset was
+committed. Will be empty if the branch name was default.</td>
+</tr>
+<tr class="field"><th class="field-name">date:</th><td class="field-body">Date information. The date when the changeset was committed.</td>
+</tr>
+<tr class="field"><th class="field-name">desc:</th><td class="field-body">String. The text of the changeset description.</td>
+</tr>
+<tr class="field"><th class="field-name">diffstat:</th><td class="field-body">String. Statistics of changes with the following format:
+&quot;modified files: +added/-removed lines&quot;</td>
+</tr>
+<tr class="field"><th class="field-name">files:</th><td class="field-body">List of strings. All files modified, added, or removed by this
+changeset.</td>
+</tr>
+<tr class="field"><th class="field-name">file_adds:</th><td class="field-body">List of strings. Files added by this changeset.</td>
+</tr>
+<tr class="field"><th class="field-name">file_copies:</th><td class="field-body">List of strings. Files copied in this changeset with
+their sources.</td>
+</tr>
+<tr class="field"><th class="field-name" colspan="2">file_copies_switch:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body">List of strings. Like &quot;file_copies&quot; but displayed
+only if the --copied switch is set.</td>
+</tr>
+<tr class="field"><th class="field-name">file_mods:</th><td class="field-body">List of strings. Files modified by this changeset.</td>
+</tr>
+<tr class="field"><th class="field-name">file_dels:</th><td class="field-body">List of strings. Files removed by this changeset.</td>
+</tr>
+<tr class="field"><th class="field-name">node:</th><td class="field-body">String. The changeset identification hash, as a 40-character
+hexadecimal string.</td>
+</tr>
+<tr class="field"><th class="field-name">parents:</th><td class="field-body">List of strings. The parents of the changeset.</td>
+</tr>
+<tr class="field"><th class="field-name">rev:</th><td class="field-body">Integer. The repository-local changeset revision number.</td>
+</tr>
+<tr class="field"><th class="field-name">tags:</th><td class="field-body">List of strings. Any tags associated with the changeset.</td>
+</tr>
+<tr class="field"><th class="field-name">latesttag:</th><td class="field-body">String. Most recent global tag in the ancestors of this
+changeset.</td>
+</tr>
+<tr class="field"><th class="field-name" colspan="2">latesttagdistance:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body">Integer. Longest path to the latest tag.</td>
+</tr>
+</tbody>
+</table>
+<p>The &quot;date&quot; keyword does not produce human-readable output. If you
+want to use a date in your output, you can use a filter to process
+it. Filters are functions which return a string based on the input
+variable. Be sure to use the stringify filter first when you're
+applying a string-input filter to a list-like input variable.
+You can also use a chain of filters to get the desired output:</p>
+<pre class="literal-block">
+$ hg tip --template &quot;{date|isodate}\n&quot;
+2008-08-21 18:22 +0000
+</pre>
+<p>List of filters:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">addbreaks:</th><td class="field-body">Any text. Add an XHTML &quot;&lt;br /&gt;&quot; tag before the end of
+every line except the last.</td>
+</tr>
+<tr class="field"><th class="field-name">age:</th><td class="field-body">Date. Returns a human-readable date/time difference between the
+given date/time and the current date/time.</td>
+</tr>
+<tr class="field"><th class="field-name">basename:</th><td class="field-body">Any text. Treats the text as a path, and returns the last
+component of the path after splitting by the path separator
+(ignoring trailing separators). For example, &quot;foo/bar/baz&quot; becomes
+&quot;baz&quot; and &quot;foo/bar//&quot; becomes &quot;bar&quot;.</td>
+</tr>
+<tr class="field"><th class="field-name">stripdir:</th><td class="field-body">Treat the text as path and strip a directory level, if
+possible. For example, &quot;foo&quot; and &quot;foo/bar&quot; becomes &quot;foo&quot;.</td>
+</tr>
+<tr class="field"><th class="field-name">date:</th><td class="field-body">Date. Returns a date in a Unix date format, including the
+timezone: &quot;Mon Sep 04 15:13:13 2006 0700&quot;.</td>
+</tr>
+<tr class="field"><th class="field-name">domain:</th><td class="field-body">Any text. Finds the first string that looks like an email
+address, and extracts just the domain component. Example: <tt class="docutils literal">User
+&lt;user&#64;example.com&gt;</tt> becomes <tt class="docutils literal">example.com</tt>.</td>
+</tr>
+<tr class="field"><th class="field-name">email:</th><td class="field-body">Any text. Extracts the first string that looks like an email
+address. Example: <tt class="docutils literal">User &lt;user&#64;example.com&gt;</tt> becomes
+<tt class="docutils literal">user&#64;example.com</tt>.</td>
+</tr>
+<tr class="field"><th class="field-name">escape:</th><td class="field-body">Any text. Replaces the special XML/XHTML characters &quot;&amp;&quot;, &quot;&lt;&quot;
+and &quot;&gt;&quot; with XML entities.</td>
+</tr>
+<tr class="field"><th class="field-name">fill68:</th><td class="field-body">Any text. Wraps the text to fit in 68 columns.</td>
+</tr>
+<tr class="field"><th class="field-name">fill76:</th><td class="field-body">Any text. Wraps the text to fit in 76 columns.</td>
+</tr>
+<tr class="field"><th class="field-name">firstline:</th><td class="field-body">Any text. Returns the first line of text.</td>
+</tr>
+<tr class="field"><th class="field-name">nonempty:</th><td class="field-body">Any text. Returns '(none)' if the string is empty.</td>
+</tr>
+<tr class="field"><th class="field-name">hgdate:</th><td class="field-body">Date. Returns the date as a pair of numbers: &quot;1157407993
+25200&quot; (Unix timestamp, timezone offset).</td>
+</tr>
+<tr class="field"><th class="field-name">isodate:</th><td class="field-body">Date. Returns the date in ISO 8601 format: &quot;2009-08-18 13:00
++0200&quot;.</td>
+</tr>
+<tr class="field"><th class="field-name">isodatesec:</th><td class="field-body">Date. Returns the date in ISO 8601 format, including
+seconds: &quot;2009-08-18 13:00:13 +0200&quot;. See also the rfc3339date
+filter.</td>
+</tr>
+<tr class="field"><th class="field-name">localdate:</th><td class="field-body">Date. Converts a date to local date.</td>
+</tr>
+<tr class="field"><th class="field-name">obfuscate:</th><td class="field-body">Any text. Returns the input text rendered as a sequence of
+XML entities.</td>
+</tr>
+<tr class="field"><th class="field-name">person:</th><td class="field-body">Any text. Returns the text before an email address.</td>
+</tr>
+<tr class="field"><th class="field-name">rfc822date:</th><td class="field-body">Date. Returns a date using the same format used in email
+headers: &quot;Tue, 18 Aug 2009 13:00:13 +0200&quot;.</td>
+</tr>
+<tr class="field"><th class="field-name">rfc3339date:</th><td class="field-body">Date. Returns a date using the Internet date format
+specified in RFC 3339: &quot;2009-08-18T13:00:13+02:00&quot;.</td>
+</tr>
+<tr class="field"><th class="field-name">short:</th><td class="field-body">Changeset hash. Returns the short form of a changeset hash,
+i.e. a 12-byte hexadecimal string.</td>
+</tr>
+<tr class="field"><th class="field-name">shortdate:</th><td class="field-body">Date. Returns a date like &quot;2006-09-18&quot;.</td>
+</tr>
+<tr class="field"><th class="field-name">strip:</th><td class="field-body">Any text. Strips all leading and trailing whitespace.</td>
+</tr>
+<tr class="field"><th class="field-name">tabindent:</th><td class="field-body">Any text. Returns the text, with every line except the
+first starting with a tab character.</td>
+</tr>
+<tr class="field"><th class="field-name">urlescape:</th><td class="field-body">Any text. Escapes all &quot;special&quot; characters. For example,
+&quot;foo bar&quot; becomes &quot;foo%20bar&quot;.</td>
+</tr>
+<tr class="field"><th class="field-name">user:</th><td class="field-body">Any text. Returns the user portion of an email address.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="url-paths">
+<span id="urls"></span><h1><a class="toc-backref" href="#contents">URL Paths</a></h1>
+<p>Valid URLs are of the form:</p>
+<pre class="literal-block">
+local/filesystem/path[#revision]
+file://local/filesystem/path[#revision]
+http://[user[:pass]&#64;]host[:port]/[path][#revision]
+https://[user[:pass]&#64;]host[:port]/[path][#revision]
+ssh://[user[:pass]&#64;]host[:port]/[path][#revision]
+</pre>
+<p>Paths in the local filesystem can either point to Mercurial
+repositories or to bundle files (as created by 'hg bundle' or 'hg
+incoming --bundle').</p>
+<p>An optional identifier after # indicates a particular branch, tag, or
+changeset to use from the remote repository. See also 'hg help
+revisions'.</p>
+<p>Some features, such as pushing to <a class="reference external" href="http://">http://</a> and <a class="reference external" href="https://">https://</a> URLs are only
+possible if the feature is explicitly enabled on the remote Mercurial
+server.</p>
+<p>Some notes about using SSH with Mercurial:</p>
+<ul>
+<li><p class="first">SSH requires an accessible shell account on the destination machine
+and a copy of hg in the remote path or specified with as remotecmd.</p>
+</li>
+<li><p class="first">path is relative to the remote user's home directory by default. Use
+an extra slash at the start of a path to specify an absolute path:</p>
+<pre class="literal-block">
+ssh://example.com//tmp/repository
+</pre>
+</li>
+<li><p class="first">Mercurial doesn't use its own compression via SSH; the right thing
+to do is to configure it in your ~/.ssh/config, e.g.:</p>
+<pre class="literal-block">
+Host *.mylocalnetwork.example.com
+  Compression no
+Host *
+  Compression yes
+</pre>
+<p>Alternatively specify &quot;ssh -C&quot; as your ssh command in your hgrc or
+with the --ssh command line option.</p>
+</li>
+</ul>
+<p>These URLs can all be stored in your hgrc with path aliases under the
+[paths] section like so:</p>
+<pre class="literal-block">
+[paths]
+alias1 = URL1
+alias2 = URL2
+...
+</pre>
+<p>You can then use the alias for any command that uses a URL (for
+example 'hg pull alias1' will be treated as 'hg pull URL1').</p>
+<p>Two path aliases are special because they are used as defaults when
+you do not provide the URL to a command:</p>
+<dl class="docutils">
+<dt>default:</dt>
+<dd>When you create a repository with hg clone, the clone command saves
+the location of the source repository as the new repository's
+'default' path. This is then used when you omit path from push- and
+pull-like commands (including incoming and outgoing).</dd>
+<dt>default-push:</dt>
+<dd>The push command will look for a path named 'default-push', and
+prefer it over 'default' if both are defined.</dd>
+</dl>
+</div>
+<div class="section" id="using-additional-features">
+<span id="extensions"></span><h1><a class="toc-backref" href="#contents">Using additional features</a></h1>
+<p>Mercurial has the ability to add new features through the use of
+extensions. Extensions may add new commands, add options to
+existing commands, change the default behavior of commands, or
+implement hooks.</p>
+<p>Extensions are not loaded by default for a variety of reasons:
+they can increase startup overhead; they may be meant for advanced
+usage only; they may provide potentially dangerous abilities (such
+as letting you destroy or modify history); they might not be ready
+for prime time; or they may alter some usual behaviors of stock
+Mercurial. It is thus up to the user to activate extensions as
+needed.</p>
+<p>To enable the &quot;foo&quot; extension, either shipped with Mercurial or in
+the Python search path, create an entry for it in your hgrc, like
+this:</p>
+<pre class="literal-block">
+[extensions]
+foo =
+</pre>
+<p>You may also specify the full path to an extension:</p>
+<pre class="literal-block">
+[extensions]
+myfeature = ~/.hgext/myfeature.py
+</pre>
+<p>To explicitly disable an extension enabled in an hgrc of broader
+scope, prepend its path with !:</p>
+<pre class="literal-block">
+[extensions]
+# disabling extension bar residing in /path/to/extension/bar.py
+bar = !/path/to/extension/bar.py
+# ditto, but no path was supplied for extension baz
+baz = !
+</pre>
+<p>disabled extensions:</p>
+<blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">acl:</th><td class="field-body">hooks for controlling repository access</td>
+</tr>
+<tr class="field"><th class="field-name">bookmarks:</th><td class="field-body">track a line of development with movable markers</td>
+</tr>
+<tr class="field"><th class="field-name">bugzilla:</th><td class="field-body">hooks for integrating with the Bugzilla bug tracker</td>
+</tr>
+<tr class="field"><th class="field-name">children:</th><td class="field-body">command to display child changesets</td>
+</tr>
+<tr class="field"><th class="field-name">churn:</th><td class="field-body">command to display statistics about repository history</td>
+</tr>
+<tr class="field"><th class="field-name">color:</th><td class="field-body">colorize output from some commands</td>
+</tr>
+<tr class="field"><th class="field-name">convert:</th><td class="field-body">import revisions from foreign VCS repositories into Mercurial</td>
+</tr>
+<tr class="field"><th class="field-name">extdiff:</th><td class="field-body">command to allow external programs to compare revisions</td>
+</tr>
+<tr class="field"><th class="field-name">fetch:</th><td class="field-body">pull, update and merge in one command</td>
+</tr>
+<tr class="field"><th class="field-name">gpg:</th><td class="field-body">commands to sign and verify changesets</td>
+</tr>
+<tr class="field"><th class="field-name">graphlog:</th><td class="field-body">command to view revision graphs from a shell</td>
+</tr>
+<tr class="field"><th class="field-name">hgcia:</th><td class="field-body">hooks for integrating with the CIA.vc notification service</td>
+</tr>
+<tr class="field"><th class="field-name">hgk:</th><td class="field-body">browse the repository in a graphical way</td>
+</tr>
+<tr class="field"><th class="field-name">highlight:</th><td class="field-body">syntax highlighting for hgweb (requires Pygments)</td>
+</tr>
+<tr class="field"><th class="field-name">inotify:</th><td class="field-body">accelerate status report using Linux's inotify service</td>
+</tr>
+<tr class="field"><th class="field-name">interhg:</th><td class="field-body">expand expressions into changelog and summaries</td>
+</tr>
+<tr class="field"><th class="field-name">keyword:</th><td class="field-body">expand keywords in tracked files</td>
+</tr>
+<tr class="field"><th class="field-name">mq:</th><td class="field-body">manage a stack of patches</td>
+</tr>
+<tr class="field"><th class="field-name">notify:</th><td class="field-body">hooks for sending email notifications at commit/push time</td>
+</tr>
+<tr class="field"><th class="field-name">pager:</th><td class="field-body">browse command output with an external pager</td>
+</tr>
+<tr class="field"><th class="field-name">parentrevspec:</th><td class="field-body">interpret suffixes to refer to ancestor revisions</td>
+</tr>
+<tr class="field"><th class="field-name">patchbomb:</th><td class="field-body">command to send changesets as (a series of) patch emails</td>
+</tr>
+<tr class="field"><th class="field-name">progress:</th><td class="field-body">show progress bars for some actions</td>
+</tr>
+<tr class="field"><th class="field-name">purge:</th><td class="field-body">command to delete untracked files from the working directory</td>
+</tr>
+<tr class="field"><th class="field-name">rebase:</th><td class="field-body">command to move sets of revisions to a different ancestor</td>
+</tr>
+<tr class="field"><th class="field-name">record:</th><td class="field-body">commands to interactively select changes for commit/qrefresh</td>
+</tr>
+<tr class="field"><th class="field-name">relink:</th><td class="field-body">recreates hardlinks between repository clones</td>
+</tr>
+<tr class="field"><th class="field-name">schemes:</th><td class="field-body">extend schemes with shortcuts to repository swarms</td>
+</tr>
+<tr class="field"><th class="field-name">share:</th><td class="field-body">share a common history between several working directories</td>
+</tr>
+<tr class="field"><th class="field-name">transplant:</th><td class="field-body">command to transplant changesets from another branch</td>
+</tr>
+<tr class="field"><th class="field-name">win32mbcs:</th><td class="field-body">allow the use of MBCS paths with problematic encodings</td>
+</tr>
+<tr class="field"><th class="field-name">win32text:</th><td class="field-body">perform automatic newline conversion</td>
+</tr>
+<tr class="field"><th class="field-name">zeroconf:</th><td class="field-body">discover and advertise repositories on the local network</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+<div class="section" id="files">
+<h1><a class="toc-backref" href="#contents">Files</a></h1>
+<dl class="docutils">
+<dt><tt class="docutils literal">.hgignore</tt></dt>
+<dd>This file contains regular expressions (one per line) that
+describe file names that should be ignored by <strong>hg</strong>. For details,
+see <a class="reference external" href="hgignore.5.html"><strong>hgignore</strong>(5)</a>.</dd>
+<dt><tt class="docutils literal">.hgtags</tt></dt>
+<dd>This file contains changeset hash values and text tag names (one
+of each separated by spaces) that correspond to tagged versions of
+the repository contents.</dd>
+<dt><tt class="docutils literal">/etc/mercurial/hgrc</tt>, <tt class="docutils literal"><span class="pre">$HOME/.hgrc</span></tt>, <tt class="docutils literal">.hg/hgrc</tt></dt>
+<dd>This file contains defaults and configuration. Values in
+<tt class="docutils literal">.hg/hgrc</tt> override those in <tt class="docutils literal"><span class="pre">$HOME/.hgrc</span></tt>, and these override
+settings made in the global <tt class="docutils literal">/etc/mercurial/hgrc</tt> configuration.
+See <a class="reference external" href="hgrc.5.html"><strong>hgrc</strong>(5)</a> for details of the contents and format of these
+files.</dd>
+</dl>
+<p>Some commands (e.g. revert) produce backup files ending in <tt class="docutils literal">.orig</tt>,
+if the <tt class="docutils literal">.orig</tt> file already exists and is not tracked by Mercurial,
+it will be overwritten.</p>
+</div>
+<div class="section" id="bugs">
+<h1><a class="toc-backref" href="#contents">Bugs</a></h1>
+<p>Probably lots, please post them to the mailing list (see <a class="reference internal" href="#resources">Resources</a>
+below) when you find them.</p>
+</div>
+<div class="section" id="see-also">
+<h1><a class="toc-backref" href="#contents">See Also</a></h1>
+<p><a class="reference external" href="hgignore.5.html"><strong>hgignore</strong>(5)</a>, <a class="reference external" href="hgrc.5.html"><strong>hgrc</strong>(5)</a></p>
+</div>
+<div class="section" id="author">
+<h1><a class="toc-backref" href="#contents">Author</a></h1>
+<p>Written by Matt Mackall &lt;<a class="reference external" href="mailto:mpm&#64;selenic.com">mpm&#64;selenic.com</a>&gt;</p>
+</div>
+<div class="section" id="resources">
+<h1><a class="toc-backref" href="#contents">Resources</a></h1>
+<p>Main Web Site: <a class="reference external" href="http://mercurial.selenic.com/">http://mercurial.selenic.com/</a></p>
+<p>Source code repository: <a class="reference external" href="http://selenic.com/hg">http://selenic.com/hg</a></p>
+<p>Mailing list: <a class="reference external" href="http://selenic.com/mailman/listinfo/mercurial">http://selenic.com/mailman/listinfo/mercurial</a></p>
+</div>
+<div class="section" id="copying">
+<h1><a class="toc-backref" href="#contents">Copying</a></h1>
+<p>Copyright (C) 2005-2010 Matt Mackall.
+Free use of this software is granted under the terms of the GNU General
+Public License version 2 or any later version.</p>
+<!-- Common link and substitution definitions. -->
+</div>
+</div>
+</body>
+</html>

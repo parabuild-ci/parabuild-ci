@@ -1,0 +1,192 @@
+<!-- Copyright 2003 Zelix Pty Ltd (ABN 47 078 740 093) -->
+<html>
+<head>
+<title>Zelix KlassMaster Exclude Options</title>
+   <meta name="keywords" content="java obfuscator,java code obfuscator,obfuscation">
+   <meta name="description" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <meta name="classification" CONTENT="Zelix KlassMaster is a second generation Java Obfuscator">
+   <link rel=stylesheet href="../ZKM.css" TYPE="text/css">
+</head>
+<body background="../images/small-white-mist1.jpg" bgcolor="#E1E1E1">
+<center><a href="index.html"><img src=../images/ZKM_b4.gif alt="Zelix KlassMaster" width=264 height=62 border=0></a></center>
+<hr>
+<center>
+<table width=770>
+   <tr>
+      <td valign="top" colspan=2>
+         <h1>Basic Exclusion Options</h1>
+         <a href=#overview>Overview</a><br>
+         <a href=#classNames>The Class Names options</a><br>
+         <a href=#fieldNames>The Field Names options</a><br>
+         <a href=#methodNames>The Method Names options</a><br>
+         <a href=#defaultExclusions>Default Exclusions</a><br>
+         <h2><a name=overview>Overview</a></h2>
+         When obfuscating classes, you don't always want every package, class, field and
+         method name to be changed. For example, when obfuscating a set of classes that will be used as a library
+         by third parties, you don't want to obfuscate package names, public class names or public or protected
+         field or method names. Zelix KlassMaster gives you the ability to exclude the names of specified objects from
+         being changed.
+         <p>
+         The basic Exclusion Options window allows you to set broad exclusions primarily based upon the access modifiers of 
+         objects. If finer control is required click on 
+         <img src="../images/advancedBtn.gif" align="absmiddle" alt="Advanced"> to go to the 
+         <b><a href=advancedExclude.html>"Advanced Exclusion Options"</a></b> window.  
+      </td>
+   </tr>
+   <tr>
+      <td colspan=2>
+          &nbsp; <!-- Force an empty row -->
+      </td>
+   </tr>
+   <tr>
+      <td valign="top" rowspan=2>         
+         <h2><a name=classNames>The "Class names" Options</a></h2>
+         If you are obfuscating all classes in an application or applet, it is recommended that you deselect 
+         <b>"exclude public class names"</b> and <b>"exclude package class names"</b>. 
+         If you are obfuscating a class library it is recommended that you
+         select <b>"exclude public class names"</b>. 
+         <p>
+         If you select:
+         <ul>
+            <li><b>"exclude public class names"</b> then no public class names will be changed.
+            <li><b>"exclude package class names"</b> then no package (default) class names will be changed.
+            <li><b>"exclude public class names"</b> and <b>"exclude package class names"</b> then no 
+                class names will be changed.
+         </ul>
+      </td>
+      <td align="center" valign="middle">
+         <img src=../images/down_arrow.gif width=20 height=24 alt="Leads to...">
+      </td>
+   </tr>
+   <tr>
+      <td valign="top">
+         <img src=../images/exclude1.gif width=430 height=396 alt="Zelix KlassMaster - Exclusion Options"><p>
+      </td>
+   </tr>
+   <tr>
+      <td valign="top" colspan=2>
+         <h3>Warning</h3>
+         If any opened classes are extended by classes that haven't been opened then obfuscation of the extended class names
+         will break the extending classes. Zelix KlassMaster does not check for this situation.
+
+         <h3>Exclude package qualifiers</h3>
+         If <b>"exclude package qualifiers"</b> is selected, Zelix KlassMaster will exclude package qualifiers
+         from being changed. If the field to the right of this option is left blank then all package names will be excluded.
+         If a package qualfier is entered then only those package qualifiers will be excluded.
+         <p>
+         For example, if there were three classes with the fully qualified names 
+         <ul>
+            <li>package1.package2.class1
+            <li>package1.package2.package3.class1
+            <li>package4.class1
+         </ul>
+         and you specified that the package names package1.package2 should be excluded then the changed class names would be
+         <ul>
+            <li>package1.package2.class1
+            <li>package1.package2.a.class1
+            <li>a.class1
+         </ul>
+ 
+        <h3>Don't change main class name</h3>
+        Applications are started by running a class that contains a "main" method. It is usually desirable that this class 
+        have a user friendly name. To ensure this, select the <b>"don't change main class name"</b> option
+        and select your main class from the list box. All opened classes that contain a "main" method will appear in the
+        list.
+
+         <h2><a name=fieldNames>The "Field names" Options</a></h2>
+         If you are obfuscating a stand alone application or applet, it is recommended that you don't select any of the
+         Field Names check boxes. If you are obfuscating a class library it is recommended that you
+         select <b>"exclude public field names"</b> and <b>"exclude package field names"</b>.
+         The use of Field Names check boxes is straightforward:
+         <ul>
+            <li>If you select <b>"exclude public field names"</b> then public field names will not be changed. 
+            <li>If you select <b>"exclude protected field names"</b> then protected field names will not be
+                changed. 
+            <li>If you select <b>"exclude package field names"</b> then package (default) field names will not be
+                changed. 
+            <li>If you select <b>"exclude private field names"</b> then private field names will not be changed. 
+         </ul>
+         If all boxes are selected then no field names will be changed.
+
+         <h2><a name=methodNames>The "Method names" Options</a></h2>
+         If you are obfuscating a stand alone application or applet, it is recommended that you don't select any of the
+         Method Names check boxes. If you are obfuscating a class library it is recommended that you
+         select <b>"exclude public method names"</b> and <b>"exclude package method names"</b>.
+         The use of Method Names check boxes is straightforward:
+         <ul>
+            <li>If you select <b>"exclude public method names"</b> then public method names will not be changed. 
+            <li>If you select <b>"exclude protected method names"</b> then protected method names will not be
+                changed. 
+            <li>If you select <b>"exclude package method names"</b> then package (default) method names will not
+                be changed. 
+            <li>If you select <b>"exclude private method names"</b> then private method names will not be changed. 
+         </ul>
+         If all boxes are selected then no method names will be changed.
+
+         <h3><a name=methodExceptions>Exceptions</a></h3>
+         The name of the method "main" will not normally be changed because it is <a href=#defaultExclusions>excluded by default</a>.
+         <p>
+         A method name will not be changed if 
+         <ul>
+            <li>the method overrides a method in a superclass that hasn't been opened or
+            <li>the method implements a method in an interface that hasn't been opened.
+         </ul>
+         Also, a protected or package method name will not be changed if
+         <ul>
+           <li>the method is overridden in some subclass by a public method and
+           <li>public method names are not being changed.
+         </ul>
+         Zelix KlassMaster uses the path defined in the <a href=optionsClasspath.html>classpath option</a> when
+         searching for unloaded classes.
+         <h3>Warning</h3>
+         If any methods in opened classes are overridden by classes that haven't been opened then obfuscation of the 
+         overridden method names will break the extending classes. Zelix KlassMaster does not check for this situation.
+
+         <h2><a name=defaultExclusions>Default Exclusions</a></h2>
+         Zelix KlassMaster has some default exclusions that are applied everytime you obfuscate.
+         However, you may override these defaults with your own. The commercial version of Zelix KlassMaster
+         looks for a file in the current user directory named <b>defaultExclude.txt</b>. If it finds the file
+         then it will use its contents as the default exclusions.
+         <p>
+         If the defaultExclude.txt file doesn't exist then Zelix KlassMaster applies its predefined default exclusions
+         which are listed below:
+         <ul>
+            <li><code>*.* public static main(java.lang.String[])</code>
+            <li><code>*.&lt;link&gt;_Skel implements java.rmi.server.Skeleton&nbsp;&nbsp;&nbsp;<font color=green>//RMI</font>
+            <li><code>*.&lt;link&gt;_Stub extends java.rmi.server.RemoteStub&nbsp;&nbsp;&nbsp;<font color=green>//RMI</font>
+            <li><code>*._&lt;link&gt;_Stub extends javax.rmi.CORBA.Stub&nbsp;&nbsp;&nbsp;<font color=green>//RMI with iiop</font>
+            <li><code>*._&lt;link&gt;_Tie implements javax.rmi.CORBA.Tie&nbsp;&nbsp;&nbsp;<font color=green>//RMI with iiop</font>
+            <li><code>interface *.* implements java.rmi.Remote *(*) throws java.rmi.RemoteException +signatureClasses</code>&nbsp;&nbsp;&nbsp;<font color=green>//RMI</font>
+            <li><code>*.&lt;link&gt;BeanInfo</code>&nbsp;&nbsp;&nbsp;<font color=green>//JavaBeans&#153;</font>
+            <li><code>*.&lt;link&gt;Customizer</code>&nbsp;&nbsp;&nbsp;<font color=green>//JavaBeans&#153;</font>
+            <li><code>*.* implements javax.ejb.EJBHome public create(*)</code>&nbsp;&nbsp;&nbsp;<font color=green>//EJB Home</font>
+            <li><code>*.* implements javax.ejb.EJBHome public find*(*)</code>&nbsp;&nbsp;&nbsp;<font color=green>//EJB Home</font>
+            <li><code>*.* implements javax.ejb.EJBObject public *(*)</code>&nbsp;&nbsp;&nbsp;<font color=green>//EJB Remote</font>
+            <li><code>*.* implements javax.ejb.EnterpriseBean public *(*)</code>&nbsp;&nbsp;&nbsp;<font color=green>//EJB Bean</font>
+            <li><code>*.* private readObject(java.io.ObjectInputStream)</code>&nbsp;&nbsp;&nbsp;<font color=green>//Serialization</font>
+            <li><code>*.* private writeObject(java.io.ObjectOutputStream)</code>&nbsp;&nbsp;&nbsp;<font color=green>//Serialization</font>
+            <li><code>*.* writeReplace()</code>&nbsp;&nbsp;&nbsp;<font color=green>//Serialization</font>
+            <li><code>*.* readResolve()</code>&nbsp;&nbsp;&nbsp;<font color=green>//Serialization</font>
+            <li><code>*.* readObjectNoData() throws java.io.ObjectStreamException</code>&nbsp;&nbsp;&nbsp;<font color=green>//Serialization</font>
+            <li><code>*.* java.io.ObjectStreamField[] serialPersistentFields</code>&nbsp;&nbsp;&nbsp;<font color=green>//Serialization</font>
+            <li><code>*.* static final long serialVersionUID</code>&nbsp;&nbsp;&nbsp;<font color=green>//Serialization</font>
+            <li><code>*.^*^ native *(*) +signatureClasses</code>&nbsp;&nbsp;&nbsp;<font color=green>//native methods</font>
+         </ul>
+         See the <a href=excludeStatement.html#classSuffixExclude>ZKM Script Language exclude statement</a> documentation for an explanation of the effect of these default exclusions.
+      </td>
+   </tr>
+</table>
+</center>
+<hr>
+<center>
+<table>
+   <tr>
+      <td>
+         <a href=index.html><img src=../images/uarrw.gif alt="Documentation Table of Contents"></a>
+      </td>
+   </tr>
+</table>
+</center>
+Copyright &copy; 2003 <a href="mailto:WebMaster@zelix.com"><font size=-1>Zelix Pty Ltd</font></a> (ABN 47 078 740 093)
+</body>
+</html>
