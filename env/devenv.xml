@@ -1,4 +1,4 @@
-<?xml version="1.0"?><!DOCTYPE environment PUBLIC '-//Viewtier Systems, Inc.//DTD Devenv 2.0//EN' 'http://www.parabuildci.org/devenv/dtd/devenv20.dtd'>
+<?xml version="1.0"?><!DOCTYPE environment PUBLIC '-//Viewtier Systems, Inc.//DTD Devenv 2.0//EN' 'http://www.viewtier.com/devenv/dtd/devenv20.dtd'>
 <environment>
   <validate>
     <!-- JDK -->
