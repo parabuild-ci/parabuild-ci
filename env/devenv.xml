@@ -3,17 +3,8 @@
   <validate>
     <!-- JDK -->
     <dir property="java.home" required="yes">
-      <location path="/usr/local/java/j2sdk1.4.2_19"/>
-      <location path="C:\DEV\jdk142_07"/>
-      <location path="C:\DEV\jdk142_03"/>
-      <location path="C:\devenv\java\java142_03"/>
-      <location path="/opt/j2sdk1.4.2_11"/>
-      <location path="/opt/j2sdk1.4.2_09"/>
-      <location path="/opt/j2sdk1.4.2_04"/>
-      <location path="/opt/j2sdk1.4.2_03"/>
-      <location path="/opt/j2sdk1.4.2_19"/>
-      <location path="/data/opt/jdk141_05"/>
-      <location path="/System/Library/Frameworks/JavaVM.framework/Versions/1.4.2/Home"/>
+      <location path="/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"/>
+      <location path="/opt/jdk1.6.0_32"/>
       <location path="jdk"/>
     </dir>
     <dir location="${java.home}/bin" required="yes" path="yes"/>
