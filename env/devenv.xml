@@ -5,7 +5,6 @@
     <dir property="java.home" required="yes">
       <location path="/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"/>
       <location path="/opt/jdk1.6.0_32"/>
-      <location path="jdk"/>
     </dir>
     <dir location="${java.home}/bin" required="yes" path="yes"/>
 
