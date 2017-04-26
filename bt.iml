@@ -30,8 +30,6 @@
       <sourceFolder url="file://$MODULE_DIR$/conf" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/temp/generated_home" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/temp/generated_installer_source" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/temp/staging_resources" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/temp/wsdl2java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test/src" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/3rdparty" />
@@ -403,4 +401,3 @@
     </option>
   </component>
 </module>
-
