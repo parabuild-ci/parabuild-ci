@@ -1,3 +1,7 @@
+Changes in Parabuild 4.4.0
+
+PARABUILD-1662 - Move Parabuild to GitHub
+
 Changes in Parabuild 4.3.1
 
 PARABUILD-1660 - Expand Subversion's URL to 500 characters
