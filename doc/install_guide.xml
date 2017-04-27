@@ -210,7 +210,7 @@
     to begin installation, type this command in the Windows command prompt:</para>
 
     <programlisting>
-parabuild_4_3_windows.exe</programlisting>
+parabuild_4_4_windows.exe</programlisting>
 
     <para>This will launch a graphical user interface (GUI) installer that
     will lead you through the rest of the installation process. As a part of
@@ -391,7 +391,7 @@ parabuild_4_3_windows.exe</programlisting>
       type this command:</para>
 
       <programlisting>sudo mkdir /opt/parabuild
-sudo sh parabuild_4_3_linux.sh -q</programlisting>
+sudo sh parabuild_4_4_linux.sh -q</programlisting>
 
       <para>Please note using &#34;-q&#34; switch. This switch asks Parabuild
       installer not to launch the installation process in a graphical mode. We
@@ -410,7 +410,7 @@ sudo sh parabuild_4_3_linux.sh -q</programlisting>
           use option <filename>-Dparabuild.chown.build.dirs=no</filename>.
         </para>
         <programlisting>sudo mkdir /opt/parabuild
-sudo sh parabuild_4_3_linux.sh -q -Dparabuild.chown.build.dirs=no</programlisting>
+sudo sh parabuild_4_4_linux.sh -q -Dparabuild.chown.build.dirs=no</programlisting>
 
       </sect2>
     </sect1>
@@ -427,7 +427,7 @@ sudo sh parabuild_4_3_linux.sh -q -Dparabuild.chown.build.dirs=no</programlistin
 
       <programlisting>
 mkdir /opt/parabuild
-tar -Zxf parabuild_4_3_linux.tar.gz -C /opt</programlisting>
+tar -Zxf parabuild_4_4_linux.tar.gz -C /opt</programlisting>
 
       <para>To complete installation, please proceed to the Post-installation
       Tasks chapter.</para>
@@ -453,7 +453,7 @@ tar -Zxf parabuild_4_3_linux.tar.gz -C /opt</programlisting>
 
     <programlisting>
 sudo mkdir /opt/parabuild
-sudo sh parabuild_4_3_solaris.sh -q</programlisting>
+sudo sh parabuild_4_4_solaris.sh -q</programlisting>
 
     <para>When installer finishes execution, Parabuild is installed in
     <filename>/opt/parabuild</filename> directory.</para>
@@ -486,7 +486,7 @@ sudo sh parabuild_4_3_solaris.sh -q</programlisting>
       installer file is located and type this command:</para>
 
       <programlisting>
-sudo sh parabuild_4_3_mac_osx.sh -q</programlisting>
+sudo sh parabuild_4_4_mac_osx.sh -q</programlisting>
 
       <para>Please note using &#34;-q&#34; switch. This switch asks Parabuild
       installer not to launch the installation process in a graphical mode. We
@@ -553,7 +553,7 @@ sudo sh parabuild_4_3_mac_osx.sh -q</programlisting>
 
       <programlisting>
 sudo mkdir /opt/parabuild
-sudo sh parabuild_4_3_generic_unix.sh -q</programlisting>
+sudo sh parabuild_4_4_generic_unix.sh -q</programlisting>
 
       <para>When installer finishes execution, Parabuild is installed in
       <filename> /opt/parabuild</filename> directory.</para>
@@ -624,7 +624,7 @@ JAVA_HOME=/opt/j2sdk1.4.2_03 export JAVA_HOME</programlisting>
     <example>
       <title>Upgrading Parabuild Under Solaris</title>
 
-      <para>sudo sh parabuild_4_3_solaris_sparc.sh -q</para>
+      <para>sudo sh parabuild_4_4_solaris_sparc.sh -q</para>
     </example>
   </chapter>
 
@@ -796,7 +796,7 @@ parabuild.allow.administrator.user=true</programlisting>
       the installer using batch mode with the -q switch:</para>
 
       <programlisting>sudo mkdir /opt/parabuild
-sudo sh parabuild_4_3_linux.sh -q</programlisting>
+sudo sh parabuild_4_4_linux.sh -q</programlisting>
     </sect1>
   </chapter>
 
