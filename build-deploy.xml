@@ -2,8 +2,8 @@
   <!-- Deploys to website -->
   <target name="deploy.to.website">
     <if name="deploy.to.downloads" value="Yes">
-      <property name="downloads.staging.dir" value="/home/vimeshev/downloads/4_4"/>
-      <property name="downloads.destination.dir" value="/home/vimeshev/downloads.parabuildci.org/downloads/parabuild/4_4"/>
+      <property name="downloads.staging.dir" value="/home/vimeshev/downloads/4_5"/>
+      <property name="downloads.destination.dir" value="/home/vimeshev/downloads.parabuildci.org/downloads/parabuild/4_5"/>
       <!--
       Prepare path
       -->

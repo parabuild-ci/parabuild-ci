@@ -197,7 +197,7 @@
 
     <!-- Set version -->
     <property name="release.major" value="4"/>
-    <property name="release.minor" value="4"/>
+    <property name="release.minor" value="5"/>
     <property name="release.patch" value="0" />
     <property name="release.version" value="${release.major}.${release.minor}.${release.patch}" />
 

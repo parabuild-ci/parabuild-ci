@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <install4j version="4.2" transformSequenceNumber="2">
   <directoryPresets config="../temp/tray_result/license"/>
-  <application name="Parabuild CI Tray" distributionSourceDir="" applicationId="8988-4269-6267-4033" mediaDir="../temp/result_distrib" mediaFilePattern="paratray_${compiler:sys.version}_${compiler:sys.setName}" compression="9" lzmaCompression="true" pack200Compression="false" excludeSignedFromPacking="true" keepModificationTimes="true" missingFilesStrategy="warn" shortName="paratray" publisher="Viewtier Systems, Inc." publisherWeb="http://www.parabuildci.org" version="4.4.0" allPathsRelative="true" backupOnSave="true" autoSave="true" convertDotsToUnderscores="true" macSignature="????" installerName="" javaMinVersion="1.4.2" javaMaxVersion="1.5.0" allowBetaVM="true" jdkMode="runtimeJre" jdkName="">
+  <application name="Parabuild CI Tray" distributionSourceDir="" applicationId="8988-4269-6267-4033" mediaDir="../temp/result_distrib" mediaFilePattern="paratray_${compiler:sys.version}_${compiler:sys.setName}" compression="9" lzmaCompression="true" pack200Compression="false" excludeSignedFromPacking="true" keepModificationTimes="true" missingFilesStrategy="warn" shortName="paratray" publisher="Viewtier Systems, Inc." publisherWeb="http://www.parabuildci.org" version="4.5.0" allPathsRelative="true" backupOnSave="true" autoSave="true" convertDotsToUnderscores="true" macSignature="????" installerName="" javaMinVersion="1.4.2" javaMaxVersion="1.5.0" allowBetaVM="true" jdkMode="runtimeJre" jdkName="">
     <languages skipLanguageSelection="false" languageSelectionInPrincipalLanguage="false">
       <principalLanguage id="en" customLocalizationFile=""/>
       <additionalLanguages/>

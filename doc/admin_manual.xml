@@ -2,7 +2,7 @@
 <!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
         "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd">
 <book>
-  <title>Parabuild 4.4</title>
+  <title>Parabuild 4.5</title>
 
   <subtitle>Administrator's Manual</subtitle>
 
@@ -1139,7 +1139,7 @@
             Use it to display your company name, your department name or
             whatever you feel is appropriate. For example, if your company name
             is "MyCompany," you may want to change the branding setting to
-            "MyCompany Build Server". If not set, "Parabuild 4.4" will
+            "MyCompany Build Server". If not set, "Parabuild 4.5" will
             be displayed. This is an optional parameter.
           </para>
         </sect3>
