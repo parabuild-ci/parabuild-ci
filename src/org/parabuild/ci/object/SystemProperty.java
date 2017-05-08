@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.object;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import java.io.Externalizable;
 import java.io.IOException;
@@ -34,7 +35,7 @@ public final class SystemProperty implements Externalizable, ObjectConstants {
    *
    * @noinspection UNUSED_SYMBOL, UnusedDeclaration
    */
-  private static final Logger LOG = Logger.getLogger(SerializationUtils.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(SerializationUtils.class); // NOPMD
   private static final long serialVersionUID = 4471337135531309005L; // NOPMD
 
   public static final int DEFAULT_BUILD_STATUS_REFRESH_RATE = 10;

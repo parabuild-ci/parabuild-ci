@@ -13,6 +13,15 @@
  */
 package org.parabuild.ci.versioncontrol.accurev;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.dom4j.Document;
+import org.dom4j.DocumentException;
+import org.dom4j.Element;
+import org.dom4j.io.SAXReader;
+import org.parabuild.ci.object.Change;
+import org.parabuild.ci.object.ChangeList;
+
 import java.io.File;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
@@ -21,15 +30,6 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-
-import org.apache.log4j.Logger;
-import org.dom4j.Document;
-import org.dom4j.DocumentException;
-import org.dom4j.Element;
-import org.dom4j.io.SAXReader;
-
-import org.parabuild.ci.object.Change;
-import org.parabuild.ci.object.ChangeList;
 
 /**
  * Accurev change log parser.
@@ -45,7 +45,7 @@ final class AccurevChangeLogParser {
    *
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
-  private static final Logger LOG = Logger.getLogger(AccurevChangeLogParser.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(AccurevChangeLogParser.class); // NOPMD
   private int maxChangeListSize;
   private int maxChangeLists = 1;
 

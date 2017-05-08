@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.versioncontrol.bazaar;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.common.BuildException;
 import org.parabuild.ci.common.CommandStoppedException;
@@ -47,7 +48,7 @@ public final class BazaarVersionControl extends AbstractSourceControl {
    *
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
-  private static final Logger LOG = Logger.getLogger(BazaarVersionControl.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(BazaarVersionControl.class); // NOPMD
   private static final int INITIAL_CHANGE_LIST_CAPACITY = 101;
 
   private String lastSyncRevision = null;

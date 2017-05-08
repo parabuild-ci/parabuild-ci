@@ -14,7 +14,8 @@
 package org.parabuild.ci.object;
 
 import junit.framework.TestCase;
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * SATestStartParameter
@@ -30,7 +31,7 @@ public final class SATestStartParameter extends TestCase {
    *
    * @noinspection UNUSED_SYMBOL
    */
-  private static final Logger LOG = Logger.getLogger(SATestStartParameter.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(SATestStartParameter.class); // NOPMD
   private StartParameter parameter;
 
 

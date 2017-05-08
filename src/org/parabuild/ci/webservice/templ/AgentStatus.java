@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.webservice.templ;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import java.io.Serializable;
 
@@ -31,7 +32,7 @@ public final class AgentStatus implements Serializable {
    *
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
-  private static final Logger LOG = Logger.getLogger(AgentStatus.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(AgentStatus.class); // NOPMD
 
   private String hostName;
   private String remoteVersion;
@@ -44,7 +45,7 @@ public final class AgentStatus implements Serializable {
   }
 
 
-  public void setHostName(String hostName) {
+  public void setHostName(final String hostName) {
     this.hostName = hostName;
   }
 
@@ -54,7 +55,7 @@ public final class AgentStatus implements Serializable {
   }
 
 
-  public void setRemoteVersion(String remoteVersion) {
+  public void setRemoteVersion(final String remoteVersion) {
     this.remoteVersion = remoteVersion;
   }
 
@@ -64,7 +65,7 @@ public final class AgentStatus implements Serializable {
   }
 
 
-  public void setStatus(byte status) {
+  public void setStatus(final byte status) {
     this.status = status;
   }
 
@@ -74,7 +75,7 @@ public final class AgentStatus implements Serializable {
   }
 
 
-  public void setAgentID(int agentID) {
+  public void setAgentID(final int agentID) {
     this.agentID = agentID;
   }
 

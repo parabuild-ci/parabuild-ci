@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.versioncontrol.git;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.build.BuildScriptGenerator;
 import org.parabuild.ci.common.BuildException;
@@ -72,7 +73,7 @@ warning: LF will be replaced by CRLF in sourceline/alwaysvalid/src/symlinked_rea
    *
    * @noinspection UNUSED_SYMBOL, UnusedDeclaration
    */
-  private static final Logger LOG = Logger.getLogger(GitSourceControl.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(GitSourceControl.class); // NOPMD
   private static final int INITIAL_CHANGE_LIST_CAPACITY = 101;
 
 

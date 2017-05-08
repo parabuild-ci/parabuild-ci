@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -32,7 +33,7 @@ final class P4PortValidator {
    *
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
-  private static final Logger LOG = Logger.getLogger(P4PortValidator.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(P4PortValidator.class); // NOPMD
   private static final String REGEX = ".+:\\d+";
 
 

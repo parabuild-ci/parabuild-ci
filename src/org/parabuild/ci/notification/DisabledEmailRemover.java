@@ -13,11 +13,12 @@
  */
 package org.parabuild.ci.notification;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.object.User;
 import org.parabuild.ci.security.SecurityManager;
 
-import javax.mail.internet.*;
+import javax.mail.internet.InternetAddress;
 import java.util.Iterator;
 import java.util.List;
 
@@ -35,7 +36,7 @@ public final class DisabledEmailRemover {
    *
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
-  private static final Logger LOG = Logger.getLogger(DisabledEmailRemover.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(DisabledEmailRemover.class); // NOPMD
 
 
   public void removeDisabled(final List addresses) {

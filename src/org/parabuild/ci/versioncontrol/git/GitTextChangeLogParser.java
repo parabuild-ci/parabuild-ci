@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.versioncontrol.git;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.common.IoUtils;
 import org.parabuild.ci.common.StringUtils;
 import org.parabuild.ci.object.Change;
@@ -46,7 +47,7 @@ public final class GitTextChangeLogParser {
    *
    * @noinspection UNUSED_SYMBOL, UnusedDeclaration
    */
-  private static final Logger LOG = Logger.getLogger(GitTextChangeLogParser.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(GitTextChangeLogParser.class); // NOPMD
 
   public static final String CHANGE_LIST_DELIMITER = "pArAbIlDb";
   public static final String FIELD_SEPARATOR = "pArAbIlDs";

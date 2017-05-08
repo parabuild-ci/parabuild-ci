@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.webui.agent.status;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import java.util.Comparator;
 
@@ -27,14 +28,14 @@ import java.util.Comparator;
  */
 public final class AgentStatus {
 
-  public static final byte ACTIVITY_DISABLED = (byte) 1;
-  public static final byte ACTIVITY_IDLE = (byte) 2;
-  public static final byte ACTIVITY_BUSY = (byte) 3;
-  public static final byte ACTIVITY_OFFLINE = (byte) 4;
-  public static final byte ACTIVITY_VERSION_MISMATCH = (byte) 5;
+  static final byte ACTIVITY_DISABLED = (byte) 1;
+  static final byte ACTIVITY_IDLE = (byte) 2;
+  static final byte ACTIVITY_BUSY = (byte) 3;
+  static final byte ACTIVITY_OFFLINE = (byte) 4;
+  static final byte ACTIVITY_VERSION_MISMATCH = (byte) 5;
 
 
-  public static final Comparator BY_NAME_COMPARATOR = new Comparator() {
+  static final Comparator BY_NAME_COMPARATOR = new Comparator() {
 
     public int compare(final Object o1, final Object o2) {
       try {
@@ -44,7 +45,7 @@ public final class AgentStatus {
         final AgentStatus a1 = (AgentStatus) o1;
         final AgentStatus a2 = (AgentStatus) o2;
         return a1.hostName.compareToIgnoreCase(a2.hostName);
-      } catch (Exception e) {
+      } catch (final Exception e) {
         return -1;
       }
     }
@@ -55,7 +56,7 @@ public final class AgentStatus {
    *
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
-  private static final Logger LOG = Logger.getLogger(AgentStatus.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(AgentStatus.class); // NOPMD
 
   private final String hostName;
   private final String remoteVersion;
@@ -99,7 +100,7 @@ public final class AgentStatus {
    *
    * @return activity type as a human-readable string.
    */
-  public String getActivityTypeAsString() {
+  String getActivityTypeAsString() {
     switch (activityType) {
       case ACTIVITY_BUSY:
         return "Busy";

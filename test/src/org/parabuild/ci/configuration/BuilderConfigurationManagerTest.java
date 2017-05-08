@@ -13,7 +13,6 @@
  */
 package org.parabuild.ci.configuration;
 
-import org.apache.log4j.Logger;
 import org.parabuild.ci.ServersideTestCase;
 import org.parabuild.ci.object.AgentConfig;
 import org.parabuild.ci.object.BuilderAgent;
@@ -31,12 +30,6 @@ import java.util.List;
  */
 public final class BuilderConfigurationManagerTest extends ServersideTestCase {
 
-  /**
-   * Logger.
-   *
-   * @noinspection UNUSED_SYMBOL,UnusedDeclaration
-   */
-  private static final Logger LOG = Logger.getLogger(BuilderConfigurationManagerTest.class); // NOPMD
   private BuilderConfigurationManager manager;
 
 

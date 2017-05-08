@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.versioncontrol.accurev;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.common.StringUtils;
 import org.parabuild.ci.remote.Agent;
@@ -34,7 +35,7 @@ final class AccurevMksnapCommand extends AccurevCommand {
    *
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
-  private static final Logger LOG = Logger.getLogger(AccurevMksnapCommand.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(AccurevMksnapCommand.class); // NOPMD
   private final String txNumber;
   private final String snapshotName;
 

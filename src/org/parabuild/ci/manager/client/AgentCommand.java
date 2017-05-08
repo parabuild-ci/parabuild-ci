@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.manager.client;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.common.IoUtils;
 import org.parabuild.ci.common.StringUtils;
 
@@ -39,7 +40,7 @@ public abstract class AgentCommand {
    *
    * @noinspection UNUSED_SYMBOL
    */
-  private static final Logger LOG = Logger.getLogger(AgentCommand.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(AgentCommand.class); // NOPMD
 
 
   // ----------------------------------------------------- Instance Variables

@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.versioncontrol.git;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.common.StringUtils;
 import org.parabuild.ci.remote.Agent;
@@ -39,7 +40,7 @@ final class GitLogCommand extends GitCommand {
    *
    * @noinspection UNUSED_SYMBOL, UnusedDeclaration
    */
-  private static final Logger LOG = Logger.getLogger(GitLogCommand.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(GitLogCommand.class); // NOPMD
 
   private final int maxChangeLists;
   private final RepositoryPath repositoryPath;

@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.webui.agent.status;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.ServersideTestCase;
 import org.parabuild.ci.services.ServiceManager;
 
@@ -31,7 +32,7 @@ public final class SSTestAgentsStatusMonitor extends ServersideTestCase {
    *
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
-  private static final Logger LOG = Logger.getLogger(SSTestAgentsStatusMonitor.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(SSTestAgentsStatusMonitor.class); // NOPMD
 
 
   public void testGetStatuses() {

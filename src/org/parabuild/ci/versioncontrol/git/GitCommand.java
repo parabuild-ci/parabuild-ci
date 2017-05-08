@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.versioncontrol.git;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.common.ArgumentValidator;
 import org.parabuild.ci.common.IoUtils;
@@ -40,7 +41,7 @@ abstract class GitCommand extends VersionControlRemoteCommand {
    *
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
-  private static final Logger LOG = Logger.getLogger(GitCommand.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(GitCommand.class); // NOPMD
 
   private final String exePath;
   private final String repository;

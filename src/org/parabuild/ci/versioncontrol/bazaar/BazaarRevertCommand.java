@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.versioncontrol.bazaar;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.common.StringUtils;
 import org.parabuild.ci.remote.Agent;
@@ -33,7 +34,7 @@ public final class BazaarRevertCommand extends BazaarCommand {
    *
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
-  private static final Logger LOG = Logger.getLogger(BazaarRevertCommand.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(BazaarRevertCommand.class); // NOPMD
   private final String changeListNumber;
   private final String branchLocation;
 

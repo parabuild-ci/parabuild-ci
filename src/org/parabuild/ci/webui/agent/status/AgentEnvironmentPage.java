@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.webui.agent.status;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.configuration.AgentHost;
 import org.parabuild.ci.object.AgentConfig;
 import org.parabuild.ci.remote.AgentEnvironment;
@@ -45,7 +46,7 @@ public final class AgentEnvironmentPage extends BasePage implements StatelessTie
    *
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
-  private static final Logger LOG = Logger.getLogger(AgentEnvironmentPage.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(AgentEnvironmentPage.class); // NOPMD
   private static final long serialVersionUID = 6530850640252632895L;
   private static final String ERROR_AGENT_NOT_FOUND = "Requested agent not found";
   private static final String AGENT_ENVIRONMENT = "Agent Environment";

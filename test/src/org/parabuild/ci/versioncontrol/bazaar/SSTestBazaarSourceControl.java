@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.versioncontrol.bazaar;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.TestHelper;
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.common.BuildException;
@@ -46,7 +47,7 @@ public final class SSTestBazaarSourceControl extends AbstractSourceControlTest {
    *
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
-  private static final Logger LOG = Logger.getLogger(SSTestBazaarSourceControl.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(SSTestBazaarSourceControl.class); // NOPMD
   private BazaarVersionControl bazaar;
   private static final int TEST_CHANGE_LIST_ID = -1;
 

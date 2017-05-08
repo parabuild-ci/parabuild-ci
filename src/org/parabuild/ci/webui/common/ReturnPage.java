@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.webui.common;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import viewtier.ui.Parameters;
 
 import java.io.Serializable;
@@ -35,7 +36,7 @@ public final class ReturnPage implements Serializable {
    *
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
-  private static final Logger LOG = Logger.getLogger(ReturnPage.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(ReturnPage.class); // NOPMD
 
   public static final String PARABUILD_RETURN_PAGE = "parabuild.return.page";
 

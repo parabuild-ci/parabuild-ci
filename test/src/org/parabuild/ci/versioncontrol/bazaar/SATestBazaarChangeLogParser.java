@@ -14,7 +14,8 @@
 package org.parabuild.ci.versioncontrol.bazaar;
 
 import junit.framework.TestCase;
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.TestHelper;
 import org.parabuild.ci.object.ChangeList;
 
@@ -34,7 +35,7 @@ public final class SATestBazaarChangeLogParser extends TestCase {
    *
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
-  private static final Logger LOG = Logger.getLogger(SATestBazaarChangeLogParser.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(SATestBazaarChangeLogParser.class); // NOPMD
 
   private BazaarChangeLogParser parser;
 

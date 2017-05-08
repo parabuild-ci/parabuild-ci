@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.versioncontrol.perforce;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * Holds P4 client.
@@ -29,7 +30,7 @@ public final class P4Client {
    *
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
-  private static final Logger LOG = Logger.getLogger(P4Client.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(P4Client.class); // NOPMD
 
   private final String viewLines;
 

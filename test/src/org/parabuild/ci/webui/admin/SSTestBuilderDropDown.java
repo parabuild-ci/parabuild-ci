@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.ServersideTestCase;
 
 /**
@@ -29,7 +30,7 @@ public final class SSTestBuilderDropDown extends ServersideTestCase {
    *
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
-  private static final Logger LOG = Logger.getLogger(SSTestBuilderDropDown.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(SSTestBuilderDropDown.class); // NOPMD
   private BuilderDropDown dropDown;
 
 

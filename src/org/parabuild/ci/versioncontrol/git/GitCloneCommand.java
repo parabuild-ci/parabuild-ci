@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.versioncontrol.git;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.common.StringUtils;
 import org.parabuild.ci.remote.Agent;
@@ -30,7 +31,7 @@ final class GitCloneCommand extends GitCommand {
    *
    * @noinspection UNUSED_SYMBOL, UnusedDeclaration
    */
-  private static final Logger LOG = Logger.getLogger(GitCloneCommand.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(GitCloneCommand.class); // NOPMD
 
   private final String branch;
   private final String password;

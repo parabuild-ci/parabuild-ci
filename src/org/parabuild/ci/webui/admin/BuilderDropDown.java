@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.configuration.BuilderConfigurationManager;
 import org.parabuild.ci.object.BuilderConfiguration;
 import org.parabuild.ci.webui.common.CodeNameDropDown;
@@ -34,7 +35,7 @@ public final class BuilderDropDown extends CodeNameDropDown {
    *
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
-  private static final Logger LOG = Logger.getLogger(BuilderDropDown.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(BuilderDropDown.class); // NOPMD
   private static final long serialVersionUID = 9122628134658040332L;
 
 

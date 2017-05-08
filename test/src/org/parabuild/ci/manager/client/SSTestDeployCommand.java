@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.manager.client;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.ServersideTestCase;
 import org.parabuild.ci.TestHelper;
 import org.parabuild.ci.build.AgentFailureException;
@@ -40,7 +41,7 @@ public final class SSTestDeployCommand extends ServersideTestCase {
    *
    * @noinspection UNUSED_SYMBOL
    */
-  private static final Logger LOG = Logger.getLogger(SSTestDeployCommand.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(SSTestDeployCommand.class); // NOPMD
   private static final String PATH = "/";
 
 
