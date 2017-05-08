@@ -14,7 +14,8 @@
 package org.parabuild.ci.versioncontrol.perforce;
 
 import junit.framework.TestCase;
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.common.StringUtils;
 import org.parabuild.ci.object.SystemProperty;
 
@@ -30,7 +31,7 @@ public final class SATestP4IgnorePattern extends TestCase {
    *
    * @noinspection UNUSED_SYMBOL
    */
-  private static final Logger LOG = Logger.getLogger(SATestP4IgnorePattern.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(SATestP4IgnorePattern.class); // NOPMD
 
 
   public void testIgnorePattern() {

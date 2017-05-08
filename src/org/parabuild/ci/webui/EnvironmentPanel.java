@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.webui;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.MessagePanel;
 import viewtier.util.StringUtils;
@@ -37,7 +38,7 @@ public final class EnvironmentPanel extends MessagePanel {
    *
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
-  private static final Logger LOG = Logger.getLogger(EnvironmentPanel.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(EnvironmentPanel.class); // NOPMD
   private static final long serialVersionUID = 3734377444641156105L;
 
 

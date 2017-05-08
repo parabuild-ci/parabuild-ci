@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.versioncontrol.bazaar;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.ServersideTestCase;
 
 /**
@@ -30,7 +31,7 @@ public final class SSTestBazaarCommand extends ServersideTestCase {
    *
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
-  private static final Logger LOG = Logger.getLogger(SSTestBazaarCommand.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(SSTestBazaarCommand.class); // NOPMD
 
 
   public SSTestBazaarCommand(final String name) {

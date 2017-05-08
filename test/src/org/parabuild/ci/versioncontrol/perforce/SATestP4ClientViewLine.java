@@ -14,7 +14,8 @@
 package org.parabuild.ci.versioncontrol.perforce;
 
 import junit.framework.TestCase;
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * SATestP4ClientViewLine
@@ -30,7 +31,7 @@ public final class SATestP4ClientViewLine extends TestCase {
    *
    * @noinspection UNUSED_SYMBOL
    */
-  private static final Logger LOG = Logger.getLogger(SATestP4ClientViewLine.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(SATestP4ClientViewLine.class); // NOPMD
 
   private static final String DEPOT_PATH = "//depot/path/...";
   private static final String CLIENT_PATH = "//parabuild/path/...";

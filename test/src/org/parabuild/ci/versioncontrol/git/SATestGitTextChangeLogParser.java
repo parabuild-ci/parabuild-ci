@@ -14,7 +14,8 @@
 package org.parabuild.ci.versioncontrol.git;
 
 import junit.framework.TestCase;
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.TestHelper;
 import org.parabuild.ci.object.ChangeList;
 
@@ -35,7 +36,7 @@ public final class SATestGitTextChangeLogParser extends TestCase {
    *
    * @noinspection UNUSED_SYMBOL, UnusedDeclaration
    */
-  private static final Logger LOG = Logger.getLogger(SATestGitTextChangeLogParser.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(SATestGitTextChangeLogParser.class); // NOPMD
 
   private GitTextChangeLogParser parser;
 

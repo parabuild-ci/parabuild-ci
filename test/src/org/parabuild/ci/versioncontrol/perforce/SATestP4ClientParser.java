@@ -14,7 +14,8 @@
 package org.parabuild.ci.versioncontrol.perforce;
 
 import junit.framework.TestCase;
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.TestHelper;
 
 import java.io.IOException;
@@ -33,7 +34,7 @@ public final class SATestP4ClientParser extends TestCase {
    *
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
-  private static final Logger LOG = Logger.getLogger(SATestP4ClientParser.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(SATestP4ClientParser.class); // NOPMD
   private P4ClientParser parser;
 
 

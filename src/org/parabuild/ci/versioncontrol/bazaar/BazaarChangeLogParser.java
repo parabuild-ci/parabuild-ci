@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.versioncontrol.bazaar;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.common.IoUtils;
 import org.parabuild.ci.object.Change;
 import org.parabuild.ci.object.ChangeList;
@@ -44,7 +45,7 @@ public final class BazaarChangeLogParser {
    *
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
-  private static final Logger LOG = Logger.getLogger(BazaarChangeLogParser.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(BazaarChangeLogParser.class); // NOPMD
 
   public static final String CHANGE_LIST_DELIMITER = "------------------------------------------------------------";
 

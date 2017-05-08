@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
@@ -50,7 +51,7 @@ public final class SVNXmlChangeLogParser extends SVNChangeLogParser {
    *
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
-  private static final Logger LOG = Logger.getLogger(SVNXmlChangeLogParser.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(SVNXmlChangeLogParser.class); // NOPMD
   private final SimpleDateFormat simpleDateFormat = createSvnChangeLogDateFormatter();
 
 

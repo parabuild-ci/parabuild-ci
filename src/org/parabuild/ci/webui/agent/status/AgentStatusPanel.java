@@ -14,7 +14,8 @@
 package org.parabuild.ci.webui.agent.status;
 
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.webui.common.CommonLabel;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.Pages;
@@ -38,7 +39,7 @@ final class AgentStatusPanel extends Panel {
    *
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
-  private static final Logger LOG = Logger.getLogger(AgentStatusPanel.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(AgentStatusPanel.class); // NOPMD
   private static final long serialVersionUID = -3531504395853983857L;
 
 

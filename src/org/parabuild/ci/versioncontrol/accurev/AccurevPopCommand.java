@@ -13,13 +13,13 @@
  */
 package org.parabuild.ci.versioncontrol.accurev;
 
-import java.io.IOException;
-
-import org.apache.log4j.Logger;
-
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.common.StringUtils;
 import org.parabuild.ci.remote.Agent;
+
+import java.io.IOException;
 
 /**
  * Accurev pop command.
@@ -33,7 +33,7 @@ final class AccurevPopCommand extends AccurevCommand {
    *
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
-  private static final Logger LOG = Logger.getLogger(AccurevPopCommand.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(AccurevPopCommand.class); // NOPMD
   private final String versionSpec;
 
 

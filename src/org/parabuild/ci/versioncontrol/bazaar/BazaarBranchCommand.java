@@ -13,14 +13,13 @@
  */
 package org.parabuild.ci.versioncontrol.bazaar;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.common.StringUtils;
 import org.parabuild.ci.remote.Agent;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 
 /**
  * BazaarBranchCommand
@@ -35,7 +34,7 @@ public final class BazaarBranchCommand extends BazaarCommand {
    *
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
-  private static final Logger LOG = Logger.getLogger(BazaarBranchCommand.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(BazaarBranchCommand.class); // NOPMD
   private final String branchLocation;
 
 

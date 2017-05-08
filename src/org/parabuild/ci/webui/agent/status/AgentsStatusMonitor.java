@@ -14,7 +14,8 @@
 package org.parabuild.ci.webui.agent.status;
 
 import EDU.oswego.cs.dl.util.concurrent.ConcurrentHashMap;
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.build.BuildState;
 import org.parabuild.ci.common.StringUtils;
@@ -52,7 +53,7 @@ public final class AgentsStatusMonitor implements Runnable, Service {
    *
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
-  private static final Logger LOG = Logger.getLogger(AgentsStatusMonitor.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(AgentsStatusMonitor.class); // NOPMD
 
   private final Map agentHistoryMap = new ConcurrentHashMap(11);
   private Thread pollThread = null;

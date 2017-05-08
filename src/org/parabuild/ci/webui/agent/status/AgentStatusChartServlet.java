@@ -13,20 +13,20 @@
  */
 package org.parabuild.ci.webui.agent.status;
 
-import java.io.BufferedOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import org.apache.log4j.Logger;
-
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.common.IoUtils;
 import org.parabuild.ci.common.StringUtils;
 import org.parabuild.ci.services.ServiceManager;
 import org.parabuild.ci.webui.common.Pages;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 
 
 /**
@@ -43,7 +43,7 @@ public final class AgentStatusChartServlet extends HttpServlet {
    *
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
-  private static final Logger LOG = Logger.getLogger(AgentStatusChartServlet.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(AgentStatusChartServlet.class); // NOPMD
   private static final long serialVersionUID = -7431763551265797664L;
 
 

@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.manager.client;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
@@ -35,7 +36,7 @@ public final class DeployCommand extends AgentCommand {
    *
    * @noinspection UNUSED_SYMBOL
    */
-  private static final Logger LOG = Logger.getLogger(DeployCommand.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(DeployCommand.class); // NOPMD
 
   /**
    * The context path of the web application we are managing.

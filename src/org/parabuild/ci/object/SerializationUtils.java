@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.object;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import java.io.IOException;
 import java.io.ObjectInput;
@@ -26,14 +27,14 @@ import java.io.ObjectOutput;
  * @author Slava Imeshev
  * @since Nov 20, 2009 3:06:56 PM
  */
-public final class SerializationUtils {
+final class SerializationUtils {
 
   /**
    * Logger.
    *
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
-  private static final Logger LOG = Logger.getLogger(SerializationUtils.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(SerializationUtils.class); // NOPMD
 
 
   private SerializationUtils() {
@@ -45,10 +46,10 @@ public final class SerializationUtils {
    *
    * @param in <code>ObjectInput</code> input stream
    * @return a nullable UTF string from the <code>in</code> stream
-   * @throws IOException
+   * @throws IOException if an IO error occurred.
    * @see #writeNullableUTF(String, ObjectOutput)
    */
-  public static String readNullableUTF(final ObjectInput in) throws IOException {
+  static String readNullableUTF(final ObjectInput in) throws IOException {
     if (in.readBoolean()) {
       return null;
     } else {
@@ -57,7 +58,7 @@ public final class SerializationUtils {
   }
 
 
-  public static void writeNullableUTF(final String utf, final ObjectOutput out) throws IOException {
+  static void writeNullableUTF(final String utf, final ObjectOutput out) throws IOException {
     if (utf == null) {
       out.writeBoolean(true);
     } else {

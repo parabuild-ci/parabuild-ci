@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.BuildState;
 import org.parabuild.ci.common.StringUtils;
 import org.parabuild.ci.configuration.BuilderConfigurationManager;
@@ -60,7 +61,7 @@ public final class ResumeGroupPanel extends MessagePanel {
    *
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
-  private static final Logger LOG = Logger.getLogger(ResumeGroupPanel.class); // NOPMD
+  private static final Log LOG = LogFactory.getLog(ResumeGroupPanel.class); // NOPMD
   private static final long serialVersionUID = -7510168143392460776L;
 
   private final ListBox lbSelectionList = new ListBox();

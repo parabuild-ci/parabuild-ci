@@ -14,7 +14,6 @@
 package org.parabuild.ci.common;
 
 import junit.framework.TestCase;
-import org.apache.log4j.Logger;
 
 import java.util.Collections;
 
@@ -27,13 +26,7 @@ import java.util.Collections;
  */
 public final class SATestNamedPropertyUtils extends TestCase {
 
-  /**
-   * Logger.
-   *
-   * @noinspection UNUSED_SYMBOL,UnusedDeclaration
-   */
-  private static final Logger LOG = Logger.getLogger(SATestNamedPropertyUtils.class); // NOPMD
-  private static final String SHOULD_NOT_CHANGE = "$/test/sourceline/alwaysvalid";
+ private static final String SHOULD_NOT_CHANGE = "$/test/sourceline/alwaysvalid";
 
 
   public SATestNamedPropertyUtils(final String name) {
