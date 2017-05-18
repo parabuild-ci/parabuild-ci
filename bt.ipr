@@ -125,15 +125,6 @@
     </option>
     <option name="USE_PER_PROJECT_SETTINGS" value="true" />
   </component>
-  <component name="CompilerConfiguration">
-    <option name="DEFAULT_COMPILER" value="Javac" />
-    <resourceExtensions />
-    <annotationProcessing>
-      <profile default="true" name="Default" enabled="false">
-        <processorPath useClasspath="true" />
-      </profile>
-    </annotationProcessing>
-  </component>
   <component name="CopyrightManager" default="" />
   <component name="DependenciesAnalyzeManager">
     <option name="myForwardDirection" value="false" />
@@ -152,9 +143,6 @@
   </component>
   <component name="EjbManager" enabled="false" />
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
-  <component name="EntryPointsManager">
-    <entry_points version="2.0" />
-  </component>
   <component name="ExportToHTMLSettings">
     <option name="PRINT_LINE_NUMBERS" value="false" />
     <option name="OPEN_IN_BROWSER" value="false" />
@@ -183,7 +171,6 @@
   <component name="InspectionProjectProfileManager">
     <profile version="1.0">
       <option name="myName" value="Project Default" />
-      <option name="myLocal" value="true" />
       <inspection_tool class="AccessToNonThreadSafeStaticFieldFromInstance" enabled="true" level="WARNING" enabled_by_default="true">
         <option name="nonThreadSafeClasses">
           <value />
@@ -191,7 +178,9 @@
         <option name="nonThreadSafeTypes" value="java.text.DateFormat,java.util.Calendar" />
       </inspection_tool>
       <inspection_tool class="AmbiguousMethodCall" enabled="true" level="WARNING" enabled_by_default="true" />
+      <inspection_tool class="Anonymous2MethodRef" enabled="false" level="WARNING" enabled_by_default="false" />
       <inspection_tool class="AnonymousClassVariableHidesContainingMethodVariable" enabled="true" level="WARNING" enabled_by_default="true" />
+      <inspection_tool class="AnonymousHasLambdaAlternative" enabled="false" level="WARNING" enabled_by_default="false" />
       <inspection_tool class="ArchaicSystemPropertyAccess" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="ArrayEquality" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="AssignmentToCatchBlockParameter" enabled="true" level="WARNING" enabled_by_default="true" />
@@ -232,7 +221,6 @@
       <inspection_tool class="CastToIncompatibleInterface" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="ChainedEquality" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="ChainedEqualityJS" enabled="true" level="WARNING" enabled_by_default="true" />
-      <inspection_tool class="ClassEscapesItsScope" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="ClassInitializer" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="ClassNewInstance" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="CollectionContainsUrl" enabled="true" level="WARNING" enabled_by_default="true" />
@@ -247,6 +235,7 @@
       <inspection_tool class="ConstantAssertCondition" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="ConstantJUnitAssertArgument" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="ControlFlowStatementWithoutBraces" enabled="true" level="WARNING" enabled_by_default="true" />
+      <inspection_tool class="Convert2Lambda" enabled="false" level="WARNING" enabled_by_default="false" />
       <inspection_tool class="CovariantCompareTo" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="CovariantEquals" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="DefaultNotLastCaseInSwitch" enabled="true" level="WARNING" enabled_by_default="true" />
@@ -373,6 +362,9 @@
             <item value="forEach" />
           </value>
         </option>
+        <option name="ignoredClasses">
+          <value />
+        </option>
       </inspection_tool>
       <inspection_tool class="MisspelledCompareTo" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="MisspelledEquals" enabled="true" level="WARNING" enabled_by_default="true" />
@@ -492,9 +484,6 @@
       </inspection_tool>
       <inspection_tool class="StringBufferMustHaveInitialCapacity" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="StringBufferToStringInConcatenation" enabled="true" level="WARNING" enabled_by_default="true" />
-      <inspection_tool class="StringConcatenationInLoops" enabled="true" level="WARNING" enabled_by_default="true">
-        <option name="m_ignoreUnlessAssigned" value="true" />
-      </inspection_tool>
       <inspection_tool class="StringConcatenationInMessageFormatCall" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="StringEqualsEmptyString" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="StringReplaceableByStringBuffer" enabled="true" level="WARNING" enabled_by_default="true">
@@ -556,8 +545,6 @@
         <option name="ignoreNonEmtpyLoops" value="false" />
       </inspection_tool>
     </profile>
-    <option name="PROJECT_PROFILE" value="Project Default" />
-    <option name="USE_PROJECT_PROFILE" value="true" />
     <version value="1.0" />
   </component>
   <component name="JUnitProjectSettings">
@@ -579,6 +566,10 @@
     <option name="HEAP_SIZE" />
     <option name="LOCALE" />
     <option name="OPEN_IN_BROWSER" value="false" />
+  </component>
+  <component name="KotlinCommonCompilerArguments">
+    <option name="languageVersion" value="1.1" />
+    <option name="apiVersion" value="1.1" />
   </component>
   <component name="Palette2">
     <group name="Swing">
@@ -754,6 +745,7 @@
       <words>
         <w>buildid</w>
         <w>github</w>
+        <w>parabuild</w>
       </words>
     </dictionary>
   </component>
@@ -768,7 +760,7 @@
   <component name="ProjectResources">
     <default-html-doctype>http://www.w3.org/1999/xhtml</default-html-doctype>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" default="false" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
   <component name="ResourceBundleManager">
     <file url="file://$PROJECT_DIR$/test/data/parabuild_license_standard_50_lic.lic" />
     <file url="file://$PROJECT_DIR$/test/data/parabuild_license_with_50_lic.lic" />
@@ -831,7 +823,6 @@
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/3rdparty/hibernate218/lib/cglib-full-2.0.2.jar!/" />
         <root url="jar://$PROJECT_DIR$/3rdparty/hibernate218/lib/odmg-3.0.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/hibernate218/lib/log4j-1.2.8.jar!/" />
         <root url="jar://$PROJECT_DIR$/3rdparty/hibernate218/lib/commons-logging-1.0.4.jar!/" />
         <root url="jar://$PROJECT_DIR$/3rdparty/hibernate218/lib/dom4j-1.4.jar!/" />
         <root url="jar://$PROJECT_DIR$/3rdparty/hibernate218/hibernate2.jar!/" />
@@ -893,18 +884,6 @@
       <JAVADOC />
       <SOURCES />
     </library>
-    <library name="JFreeChart">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/3rdparty/jfreechart0921/jfreechart-0.9.21.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/jfreechart0921/lib/jcommon-0.9.6.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="file://$PROJECT_DIR$/3rdparty/jfreechart0921/javadoc" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="file://$PROJECT_DIR$/3rdparty/jfreechart0921/source" />
-      </SOURCES>
-    </library>
     <library name="JFreeChart1.0.5">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/3rdparty/jfreechart-1.0.5/lib/jcommon-1.0.9.jar!/" />
@@ -924,6 +903,23 @@
       </CLASSES>
       <JAVADOC />
       <SOURCES />
+    </library>
+    <library name="Log4j 2.8.2">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/3rdparty/apache-log4j-2.8.2-bin/log4j-api-2.8.2.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/apache-log4j-2.8.2-bin/log4j-core-2.8.2.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/apache-log4j-2.8.2-bin/log4j-1.2-api-2.8.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/3rdparty/apache-log4j-2.8.2-bin/log4j-api-2.8.2-javadoc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/apache-log4j-2.8.2-bin/log4j-core-2.8.2-javadoc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/apache-log4j-2.8.2-bin/log4j-1.2-api-2.8.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/3rdparty/apache-log4j-2.8.2-bin/log4j-api-2.8.2-sources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/apache-log4j-2.8.2-bin/log4j-core-2.8.2-sources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/apache-log4j-2.8.2-bin/log4j-1.2-api-2.8.2-sources.jar!/" />
+      </SOURCES>
     </library>
     <library name="Lucene">
       <CLASSES>

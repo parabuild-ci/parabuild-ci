@@ -6,6 +6,7 @@
   <target name="hessian.compile">
     <mkdir dir="${build.dir.hessian.classes}"/>
     <javac destdir="${build.dir.hessian.classes}" includes="**/**.java" debug="on" deprecation="yes">
+      <compilerarg value="-proc:none"/>
       <src path="${3rdparty}/hessian308"/>
       <classpath>
         <pathelement path="${servlet.jar}"/>

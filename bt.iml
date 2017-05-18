@@ -14,14 +14,12 @@
           <root url="file://$MODULE_DIR$/conf" />
           <root url="file://$MODULE_DIR$/src" />
           <root url="file://$MODULE_DIR$/temp/generated_home" />
-          <root url="file://$MODULE_DIR$/temp/generated_installer_source" />
-          <root url="file://$MODULE_DIR$/temp/staging_resources" />
           <root url="file://$MODULE_DIR$/temp/wsdl2java" />
         </sourceRoots>
       </configuration>
     </facet>
   </component>
-  <component name="NewModuleRootManager" inherit-compiler-output="false">
+  <component name="NewModuleRootManager">
     <output url="file://$MODULE_DIR$/temp/classes" />
     <output-test url="file://$MODULE_DIR$/temp/classes" />
     <exclude-output />
@@ -58,15 +56,6 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/3rdparty/cactus141j2ee13/lib/log4j-1.2.5.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
           <root url="jar://$MODULE_DIR$/3rdparty/cactus141j2ee13/lib/commons-httpclient-2.0alpha1-20020606.jar!/" />
         </CLASSES>
         <JAVADOC />
@@ -77,15 +66,6 @@
       <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/3rdparty/viewtier/lib/viewtier.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/conf/config.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -206,15 +186,7 @@
         </SOURCES>
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$APPLICATION_HOME_DIR$/lib/javaee.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
+    <orderEntry type="library" name="Log4j 2.8.2" level="project" />
   </component>
   <component name="org.twodividedbyzero.idea.findbugs">
     <option name="_basePreferences">

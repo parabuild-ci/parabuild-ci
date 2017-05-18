@@ -13,6 +13,7 @@
 
   <target name="manager.compile" depends="mnager.prepare">
     <javac destdir="${manager.classes.dir}" includes="org/parabuild/ci/manager/server/**.java" debug="on">
+      <compilerarg value="-proc:none"/>
       <classpath>
         <pathelement path="${catalina.jar}"/>
         <pathelement path="${servlets-manager.jar}"/>

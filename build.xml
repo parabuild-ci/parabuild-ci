@@ -86,45 +86,66 @@
     does not fail -->
   </target>
 
+  <property name="struts.lib" value="${3rdparty}/struts-2.5.10.1/lib"/>
+
+  <property name="commons-fileupload-1.3.2.jar" value="${struts.lib}/commons-fileupload-1.3.2.jar"/>
+  <property name="commons-io-2.4.jar" value="${struts.lib}/commons-io-2.4.jar"/>
+  <property name="commons-lang3-3.4.jar" value="${struts.lib}/commons-lang3-3.4.jar"/>
+  <property name="freemarker-2.3.23.jar" value="${struts.lib}/freemarker-2.3.23.jar"/>
+  <property name="javassist-3.20.0-GA.jar" value="${struts.lib}/javassist-3.20.0-GA.jar"/>
+  <property name="log4j-1.2-api-2.8.2.jar" value="${3rdparty}/apache-log4j-2.8.2-bin/log4j-1.2-api-2.8.2.jar"/>
+  <property name="log4j-api-2.8.2.jar" value="${3rdparty}/apache-log4j-2.8.2-bin/log4j-api-2.8.2.jar"/>
+  <property name="log4j-core-2.8.2.jar" value="${3rdparty}/apache-log4j-2.8.2-bin/log4j-core-2.8.2.jar"/>
+  <property name="ognl-3.1.12.jar" value="${struts.lib}/ognl-3.1.12.jar"/>
+  <property name="struts2-core-2.5.10.1.jar" value="${struts.lib}/struts2-core-2.5.10.1.jar"/>
+
   <path id="common.classpath">
     <pathelement path="${activation.jar}"/>
     <pathelement path="${axis.jar}"/>
     <pathelement path="${clover.jar}"/>
     <pathelement path="${commons-collections.jar}"/>
-    <pathelement path="${commons-lang.jar}"/>
+    <pathelement path="${commons-fileupload-1.3.2.jar}"/>
+    <pathelement path="${commons-io-2.4.jar}"/>
+    <pathelement path="${commons-lang3-3.4.jar}"/>
     <pathelement path="${commons-logging.jar}"/>
-    <pathelement path="${commons-io.jar}"/>
     <pathelement path="${concurrent.jar}"/>
     <pathelement path="${dom4j.jar}"/>
     <pathelement path="${ehcache.jar}"/>
+    <pathelement path="${freemarker-2.3.23.jar}"/>
     <pathelement path="${hessian.jar}"/>
     <pathelement path="${hibernate2.jar}"/>
     <pathelement path="${hsqldb.jar}"/>
+    <pathelement path="${javassist-3.20.0-GA.jar}"/>
     <pathelement path="${jaxen.jar}"/>
     <pathelement path="${jaxrpc.jar}"/>
     <pathelement path="${jcommon.jar}"/>
     <pathelement path="${jfreechart.jar}"/>
     <pathelement path="${jmx.jar}"/>
-    <pathelement path="${log4j.jar}"/>
+    <pathelement path="${log4j-1.2-api-2.8.2.jar}"/>
+    <pathelement path="${log4j-api-2.8.2.jar}"/>
+    <pathelement path="${log4j-core-2.8.2.jar}"/>
     <pathelement path="${lucene.jar}"/>
     <pathelement path="${mail.jar}"/>
     <pathelement path="${msnm.jar}"/>
+    <pathelement path="${ognl-3.1.12.jar}"/>
     <pathelement path="${quartz.jar}"/>
+    <pathelement path="${rome.jar}"/>
     <pathelement path="${saaj.jar}"/>
+    <pathelement path="${saxon-dom.jar}"/>
+    <pathelement path="${saxon.jar}"/>
     <pathelement path="${servlet.jar}"/>
     <pathelement path="${smack.jar}"/>
     <pathelement path="${smtp.jar}"/>
+    <pathelement path="${struts2-core-2.5.10.1.jar}"/>
     <pathelement path="${viewtier.jar}"/>
     <pathelement path="${xerces.jar}"/>
     <pathelement path="${xmlapis.jar}"/>
-    <pathelement path="${rome.jar}"/>
-    <pathelement path="${saxon.jar}"/>
-    <pathelement path="${saxon-dom.jar}"/>
   </path>
 
 
   <path id="compile.classpath">
     <path refid="common.classpath"/>
+    <pathelement path="${log4j-core-2.8.2.jar}"/>
     <pathelement path="${jade.jar}"/>
     <pathelement path="${httpclient.jar}"/>
     <pathelement path="${jdic.jar}"/>
