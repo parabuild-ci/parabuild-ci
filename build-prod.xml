@@ -165,6 +165,8 @@
       <fileset file="${smack.jar}"/>
       <fileset file="${smackx.jar}"/>
       <fileset file="${struts2-core-2.5.10.1.jar}"/>
+      <fileset file="${struts2-sitemesh-2.5.10.1.jar}"/>
+      <fileset file="${sitemesh.jar}"/>
       <!-- Web Service -->
       <fileset file="${jaxrpc.jar}"/>
       <fileset file="${axis.jar}"/>
@@ -421,6 +423,10 @@
 
     <!-- copy webservice server config -->
     <copy file="${config}/parabuild.wsdd" tofile="${war.staging}/WEB-INF/server-config.wsdd"/>
+    <copy file="${config}/decorators.xml" todir="${war.staging}/WEB-INF"/>
+
+    <!-- Copy sitemesh config -->
+
   </target>
 
 
