@@ -811,6 +811,38 @@
         <root url="jar://$PROJECT_DIR$/3rdparty/ehcache10/ehcache-1.0-src.zip!/" />
       </SOURCES>
     </library>
+    <library name="GWT">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/gwt-api-checker.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/gwt-codeserver.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/gwt-dev.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/gwt-elemental.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/gwt-servlet-deps.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/gwt-servlet.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/gwt-user.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/requestfactory-apt.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/requestfactory-client.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/requestfactory-client+src.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/requestfactory-server.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/requestfactory-server+src.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/validation-api-1.0.0.GA.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="file://$PROJECT_DIR$/3rdparty/gwt-2.8.1/doc/javadoc" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/gwt-codeserver.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/gwt-dev.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/gwt-elemental.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/gwt-user.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/requestfactory-apt-src.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/requestfactory-client-src.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/requestfactory-client+src.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/requestfactory-server-src.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/requestfactory-server+src.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/validation-api-1.0.0.GA-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="Hessian">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/3rdparty/hessian308/hessian-3.0.8.jar!/" />

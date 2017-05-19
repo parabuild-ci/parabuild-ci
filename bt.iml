@@ -188,6 +188,7 @@
     </orderEntry>
     <orderEntry type="library" name="Log4j 2.8.2" level="project" />
     <orderEntry type="library" name="struts2-core-2.5.10.1" level="project" />
+    <orderEntry type="library" name="GWT" level="project" />
   </component>
   <component name="org.twodividedbyzero.idea.findbugs">
     <option name="_basePreferences">
