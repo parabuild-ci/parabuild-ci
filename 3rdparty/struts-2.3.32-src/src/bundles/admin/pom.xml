@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.apache.struts</groupId>
+        <artifactId>struts2-osgi-bundles</artifactId>
+        <version>2.3.32</version>
+    </parent>
+
+    <artifactId>struts2-osgi-admin-bundle</artifactId>
+    <packaging>bundle</packaging>
+    <name>Struts 2 OSGi Admin Bundle</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-osgi-plugin</artifactId>
+        </dependency>
+    </dependencies>
+   
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <manifestLocation>META-INF</manifestLocation>
+                        <Struts2-Enabled>true</Struts2-Enabled>
+                        <Import-Package>*,com.opensymphony.xwork2</Import-Package>
+                        <Export-Package>org.apache.struts2.osgi.admin*</Export-Package>
+                        <Spring-Context>*;create-asynchronously:=false</Spring-Context>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <properties>
+    	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+</project>
