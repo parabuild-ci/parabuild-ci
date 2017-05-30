@@ -136,17 +136,17 @@
       <fileset file="${cglib-asm.jar}"/>
       <fileset file="${commons-discovery.jar}"/>
       <fileset file="${commons-fileupload-1.3.2.jar}"/>
-      <fileset file="${commons-io-2.4.jar}"/>
-      <fileset file="${commons-lang3-3.4.jar}"/>
+      <fileset file="${commons-io-2.2.jar}"/>
+      <fileset file="${commons-lang3-3.2.jar}"/>
       <fileset file="${commons-logging.jar}"/>
       <fileset file="${dom4j.jar}"/>
       <fileset file="${dwr.jar}"/>
       <fileset file="${ehcache.jar}"/>
-      <fileset file="${freemarker-2.3.23.jar}"/>
+      <fileset file="${freemarker-2.3.22.jar}"/>
       <fileset file="${hessian.jar}"/>
       <fileset file="${hibernate2.jar}"/>
       <fileset file="${jade.jar}"/>
-      <fileset file="${javassist-3.20.0-GA.jar}"/>
+      <fileset file="${javassist-3.11.0.GA.jar}"/>
       <fileset file="${jaxen.jar}"/>
       <fileset file="${jcommon.jar}"/>
       <fileset file="${jdom.jar}"/>
@@ -157,15 +157,16 @@
       <fileset file="${lucene.jar}"/>
       <fileset file="${msnm.jar}"/>
       <fileset file="${odmg.jar}"/>
-      <fileset file="${ognl-3.1.12.jar}"/>
+      <fileset file="${ognl-3.0.19.jar}"/>
       <fileset file="${quartz.jar}"/>
       <fileset file="${rome.jar}"/>
       <fileset file="${saxon-dom.jar}"/>
       <fileset file="${saxon.jar}"/>
       <fileset file="${smack.jar}"/>
       <fileset file="${smackx.jar}"/>
-      <fileset file="${struts2-core-2.5.10.1.jar}"/>
-      <fileset file="${struts2-sitemesh-2.5.10.1.jar}"/>
+      <fileset file="${struts2-core-2.3.32.jar}"/>
+      <fileset file="${xwork-core-2.3.32.jar}"/>
+      <fileset file="${struts2-sitemesh-plugin-2.3.32.jar}"/>
       <fileset file="${sitemesh.jar}"/>
       <!-- Web Service -->
       <fileset file="${jaxrpc.jar}"/>
@@ -175,6 +176,9 @@
       <fileset file="${mail.jar}"/>
       <fileset file="${smtp.jar}"/>
       <fileset file="${activation.jar}"/>
+      <!-- GWT -->
+      <fileset file="${gwt-servlet.jar}"/>
+      <fileset file="${gwt-servlet-deps.jar}"/>
     </copy>
   </target>
 
@@ -267,6 +271,11 @@
       <exclude name="org/parabuild/ci/manager/server/**"/>
       <exclude name="org/parabuild/ci/webui/logviewer/**"/>
     </javac>
+
+    <copy todir="${build.dir.classes}">
+      <fileset dir="${src}" excludes="**/*.java"/>
+    </copy>
+
   </target>
 
 
@@ -455,9 +464,22 @@
     </javac>
   </target>
 
+  <target name="product.gwtc" depends="product.compile,product.war.prepare,product.war.jspc" description="GWT compile to JavaScript (production mode)">
+    <java failonerror="true" fork="true" classname="com.google.gwt.dev.Compiler" maxmemory="512m">
+      <classpath>
+        <pathelement location="${src}"/>
+        <path refid="compile.classpath"/>
+      </classpath>
+      <arg line="-war"/>
+      <arg value="${war.staging}"/>
+      <!-- Additional arguments like -style PRETTY or -logLevel DEBUG -->
+      <arg line="-style PRETTY"/>
+      <arg value="org.parabuild.ci.webui.repository.Repository"/>
+    </java>
+  </target>
 
   <!-- war -->
-  <target name="product.war" depends="product.war.prepare,product.war.jspc" unless="product.war.uptodate">
+  <target name="product.war" depends="product.war.prepare,product.war.jspc,product.gwtc" unless="product.war.uptodate">
     <!-- create war -->
     <zip destfile="${build.dir}/result_war/parabuild.war" basedir="${war.staging}" update="true" compress="false"/>
     <!-- viewletc -->

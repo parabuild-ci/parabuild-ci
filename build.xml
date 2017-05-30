@@ -89,21 +89,37 @@
   <!-- Dependencies -->
 
   <!-- Struts -->
-  <property name="struts.lib" value="${3rdparty}/struts-2.5.10.1/lib"/>
+
+  <!--
+  commons-fileupload-1.3.2.jar	commons-lang3-3.2.jar		freemarker-2.3.22.jar		ognl-3.0.19.jar		**	xwork-core-2.3.32.jar
+commons-io-2.2.jar		commons-logging-1.1.3.jar	javassist-3.11.0.GA.jar		struts2-core-2.3.32.jar
+  -->
+
+  <property name="struts.lib" value="${3rdparty}/struts-2.3.32-lib/lib"/>
   <property name="commons-fileupload-1.3.2.jar" value="${struts.lib}/commons-fileupload-1.3.2.jar"/>
-  <property name="commons-io-2.4.jar" value="${struts.lib}/commons-io-2.4.jar"/>
-  <property name="commons-lang3-3.4.jar" value="${struts.lib}/commons-lang3-3.4.jar"/>
-  <property name="freemarker-2.3.23.jar" value="${struts.lib}/freemarker-2.3.23.jar"/>
-  <property name="javassist-3.20.0-GA.jar" value="${struts.lib}/javassist-3.20.0-GA.jar"/>
+  <property name="commons-io-2.2.jar" value="${struts.lib}/commons-io-2.2.jar"/>
+  <property name="commons-lang3-3.2.jar" value="${struts.lib}/commons-lang3-3.2.jar"/>
+  <property name="freemarker-2.3.22.jar" value="${struts.lib}/freemarker-2.3.22.jar"/>
+  <property name="javassist-3.11.0.GA.jar" value="${struts.lib}/javassist-3.11.0.GA.jar"/>
   <property name="log4j-1.2-api-2.8.2.jar" value="${3rdparty}/apache-log4j-2.8.2-bin/log4j-1.2-api-2.8.2.jar"/>
   <property name="log4j-api-2.8.2.jar" value="${3rdparty}/apache-log4j-2.8.2-bin/log4j-api-2.8.2.jar"/>
   <property name="log4j-core-2.8.2.jar" value="${3rdparty}/apache-log4j-2.8.2-bin/log4j-core-2.8.2.jar"/>
-  <property name="ognl-3.1.12.jar" value="${struts.lib}/ognl-3.1.12.jar"/>
-  <property name="struts2-core-2.5.10.1.jar" value="${struts.lib}/struts2-core-2.5.10.1.jar"/>
-  <property name="struts2-sitemesh-2.5.10.1.jar" value="${struts.lib}/struts2-sitemesh-plugin-2.5.10.1.jar"/>
+  <property name="ognl-3.0.19.jar" value="${struts.lib}/ognl-3.0.19.jar"/>
+  <property name="struts2-core-2.3.32.jar" value="${struts.lib}/struts2-core-2.3.32.jar"/>
+  <property name="xwork-core-2.3.32.jar" value="${struts.lib}/xwork-core-2.3.32.jar"/>
+  <property name="struts2-sitemesh-plugin-2.3.32.jar" value="${struts.lib}/struts2-sitemesh-plugin-2.3.32.jar"/>
 
   <!-- Sitemesh -->
   <property name="sitemesh.jar" value="${3rdparty}/sitemesh/sitemesh-2.4.2.jar"/>
+
+  <!-- GWT -->
+  <property name="gwt.sdk" location="${3rdparty}/gwt-2.8.1" />
+  <property name="gwt-servlet.jar" value="${gwt.sdk}/gwt-servlet.jar"/>
+  <property name="gwt-servlet-deps.jar" value="${gwt.sdk}/gwt-servlet-deps.jar"/>
+  <property name="gwt-user.jar" value="${gwt.sdk}/gwt-user.jar"/>
+  <property name="gwt-dev.jar" value="${gwt.sdk}/gwt-dev.jar"/>
+  <property name="gwt-validation-api.jar" value="${gwt.sdk}/validation-api-1.0.0.GA.jar"/>
+  <property name="gwt-validation-api-sources.jar" value="${gwt.sdk}/validation-api-1.0.0.GA-sources.jar"/>
 
   <path id="common.classpath">
     <pathelement path="${activation.jar}"/>
@@ -111,17 +127,17 @@
     <pathelement path="${clover.jar}"/>
     <pathelement path="${commons-collections.jar}"/>
     <pathelement path="${commons-fileupload-1.3.2.jar}"/>
-    <pathelement path="${commons-io-2.4.jar}"/>
-    <pathelement path="${commons-lang3-3.4.jar}"/>
+    <pathelement path="${commons-io-2.2.jar}"/>
+    <pathelement path="${commons-lang3-3.2.jar}"/>
     <pathelement path="${commons-logging.jar}"/>
     <pathelement path="${concurrent.jar}"/>
     <pathelement path="${dom4j.jar}"/>
     <pathelement path="${ehcache.jar}"/>
-    <pathelement path="${freemarker-2.3.23.jar}"/>
+    <pathelement path="${freemarker-2.3.22.jar}"/>
     <pathelement path="${hessian.jar}"/>
     <pathelement path="${hibernate2.jar}"/>
     <pathelement path="${hsqldb.jar}"/>
-    <pathelement path="${javassist-3.20.0-GA.jar}"/>
+    <pathelement path="${javassist-3.11.0.GA.jar}"/>
     <pathelement path="${jaxen.jar}"/>
     <pathelement path="${jaxrpc.jar}"/>
     <pathelement path="${jcommon.jar}"/>
@@ -133,7 +149,7 @@
     <pathelement path="${lucene.jar}"/>
     <pathelement path="${mail.jar}"/>
     <pathelement path="${msnm.jar}"/>
-    <pathelement path="${ognl-3.1.12.jar}"/>
+    <pathelement path="${ognl-3.0.19.jar}"/>
     <pathelement path="${quartz.jar}"/>
     <pathelement path="${rome.jar}"/>
     <pathelement path="${saaj.jar}"/>
@@ -142,10 +158,18 @@
     <pathelement path="${servlet.jar}"/>
     <pathelement path="${smack.jar}"/>
     <pathelement path="${smtp.jar}"/>
-    <pathelement path="${struts2-core-2.5.10.1.jar}"/>
+    <pathelement path="${struts2-core-2.3.32.jar}"/>
+    <pathelement path="${xwork-core-2.3.32.jar}"/>
     <pathelement path="${viewtier.jar}"/>
     <pathelement path="${xerces.jar}"/>
     <pathelement path="${xmlapis.jar}"/>
+
+    <pathelement path="${gwt-user.jar}"/>
+    <pathelement path="${gwt-dev.jar}"/>
+    <pathelement path="${gwt-validation-api.jar}"/>
+    <pathelement path="${gwt-validation-api-sources.jar}"/>
+    <pathelement path="${gwt-servlet.jar}"/>
+    <pathelement path="${gwt-servlet-deps.jar}"/>
   </path>
 
 
@@ -208,6 +232,7 @@
     <include name="squish-log-report.xsl"/>
     <include name="unittestpp-log-report.xsl"/>
     <include name="ehcache.xml"/>
+    <include name="struts.xml"/>
   </fileset>
 
   <!-- Reusable across the scripts taks defs -->

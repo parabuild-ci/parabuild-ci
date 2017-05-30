@@ -5,7 +5,7 @@
 
     <filter>
         <filter-name>struts-prepare</filter-name>
-        <filter-class>org.apache.struts2.dispatcher.filter.StrutsPrepareFilter</filter-class>
+        <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareFilter</filter-class>
     </filter>
 
     <filter>
@@ -15,7 +15,7 @@
 
     <filter>
         <filter-name>struts-execute</filter-name>
-        <filter-class>org.apache.struts2.dispatcher.filter.StrutsExecuteFilter</filter-class>
+        <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsExecuteFilter</filter-class>
     </filter>
 
     <filter-mapping>
@@ -30,11 +30,11 @@
 
     <filter-mapping>
         <filter-name>struts-execute</filter-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/repositoryList</url-pattern>
     </filter-mapping>
 
     <listener>
-        <listener-class>org.apache.struts2.dispatcher.listener.StrutsListener</listener-class>
+        <listener-class>org.apache.struts2.dispatcher.ng.listener.StrutsListener</listener-class>
     </listener>
 
     <listener>
@@ -164,6 +164,15 @@
         </init-param>
     </servlet>
 
+    <!-- Servlets -->
+
+    <!-- GWT -->
+    <servlet>
+        <servlet-name>greetServlet</servlet-name>
+        <servlet-class>org.parabuild.ci.webui.repository.server.GreetingServiceImpl</servlet-class>
+    </servlet>
+
+
     <!-- Begin test configuration @start.test.config@
   <servlet>
     <servlet-name>ServletRedirector</servlet-name>
@@ -193,6 +202,11 @@
     </servlet>
     -->
     <!-- Precompiled JSP Servlets -->
+
+    <servlet-mapping>
+        <servlet-name>greetServlet</servlet-name>
+        <url-pattern>/gwt/greet</url-pattern>
+    </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>sitemesh-freemarker</servlet-name>

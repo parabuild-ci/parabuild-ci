@@ -8,6 +8,7 @@
         </descriptors>
         <webroots>
           <root url="file://$MODULE_DIR$/conf" relative="/WEB-INF" />
+          <root url="file://$MODULE_DIR$/src" relative="/" />
         </webroots>
         <sourceRoots>
           <root url="file://$MODULE_DIR$/3rdparty/hessian308" />
@@ -16,6 +17,23 @@
           <root url="file://$MODULE_DIR$/temp/generated_home" />
           <root url="file://$MODULE_DIR$/temp/wsdl2java" />
         </sourceRoots>
+      </configuration>
+      <facet type="Struts2" name="Struts 2">
+        <configuration>
+          <fileset id="s2fileset" name="Parabuild CI Struts 2 Fileset" removed="false">
+            <file>file://$MODULE_DIR$/conf/struts.xml</file>
+            <file>jar://$MODULE_DIR$/3rdparty/struts-2.5.10.1/lib/struts2-core-2.5.10.1.jar!/struts-default.xml</file>
+            <file>jar://$MODULE_DIR$/3rdparty/struts-2.5.10.1/lib/struts2-sitemesh-plugin-2.5.10.1.jar!/struts-plugin.xml</file>
+          </fileset>
+          <propertiesKeys disabled="false" />
+        </configuration>
+      </facet>
+    </facet>
+    <facet type="gwt" name="GWT">
+      <configuration>
+        <setting name="compilerMaxHeapSize" value="1024" />
+        <setting name="gwtScriptOutputStyle" value="DETAILED" />
+        <setting name="gwtSdkUrl" value="file://" />
       </configuration>
     </facet>
   </component>
@@ -187,8 +205,9 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="Log4j 2.8.2" level="project" />
-    <orderEntry type="library" name="struts2-core-2.5.10.1" level="project" />
+    <orderEntry type="library" name="struts2-core-2.3.32" level="project" />
     <orderEntry type="library" name="GWT" level="project" />
+    <orderEntry type="library" name="sitemesh-2.4.2" level="project" />
   </component>
   <component name="org.twodividedbyzero.idea.findbugs">
     <option name="_basePreferences">

@@ -1,0 +1,11 @@
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+  <package name="Parabuild CI" extends="struts-default">
+    <action name="repositoryList" class="org.parabuild.ci.webui.repository.RepositoryListAction">
+      <result type="freemarker">org/parabuild/ci/webui/repository/repositoryList.ftl</result>
+    </action>
+    <!-- Add your actions here -->
+  </package>
+</struts>

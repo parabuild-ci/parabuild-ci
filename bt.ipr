@@ -454,7 +454,7 @@
         <option name="ignoreAnonymousInnerClasses" value="false" />
         <option name="superClassString" value="" />
       </inspection_tool>
-      <inspection_tool class="SerializableHasSerializationMethods" enabled="true" level="WARNING" enabled_by_default="true">
+      <inspection_tool class="SerializableHasSerializationMethods" enabled="false" level="WARNING" enabled_by_default="false">
         <option name="ignoreAnonymousInnerClasses" value="false" />
         <option name="superClassString" value="java.awt.Component,java.io.Externalizable" />
       </inspection_tool>
@@ -972,6 +972,13 @@
         <root url="file://$PROJECT_DIR$/3rdparty/rome08/src/java" />
       </SOURCES>
     </library>
+    <library name="sitemesh-2.4.2">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/3rdparty/sitemesh/sitemesh-2.4.2.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
     <library name="Smack">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/3rdparty/smack141/smack.jar!/" />
@@ -981,21 +988,20 @@
       </JAVADOC>
       <SOURCES />
     </library>
-    <library name="struts2-core-2.5.10.1">
+    <library name="struts2-core-2.3.32">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.5.10.1/lib/struts2-core-2.5.10.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.5.10.1/lib/commons-fileupload-1.3.2.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.5.10.1/lib/commons-io-2.4.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.5.10.1/lib/commons-lang3-3.4.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.5.10.1/lib/freemarker-2.3.23.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.5.10.1/lib/javassist-3.20.0-GA.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.5.10.1/lib/ognl-3.1.12.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/sitemesh/sitemesh-2.4.2.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.5.10.1/lib/struts2-sitemesh-plugin-2.5.10.1.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.3.32-min-lib/lib/struts2-core-2.3.32.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.3.32-min-lib/lib/xwork-core-2.3.32.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.3.32-min-lib/lib/ognl-3.0.19.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.3.32-min-lib/lib/commons-fileupload-1.3.2.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.3.32-min-lib/lib/freemarker-2.3.22.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.3.32-min-lib/lib/commons-lang3-3.2.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.3.32-min-lib/lib/javassist-3.11.0.GA.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.3.32-min-lib/lib/commons-io-2.2.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.3.32-min-lib/lib/commons-logging-1.1.3.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.3.32-lib/lib/struts2-sitemesh-plugin-2.3.32.jar!/" />
       </CLASSES>
-      <JAVADOC>
-        <root url="file://$PROJECT_DIR$/3rdparty/struts-2.5.10.1/docs/struts2-core-apidocs" />
-      </JAVADOC>
+      <JAVADOC />
       <SOURCES />
     </library>
     <library name="Tomcat">

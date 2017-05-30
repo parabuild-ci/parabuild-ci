@@ -1,4 +1,4 @@
 /**
- * Created by vimeshev on 5/26/17.
+ * This package contains classes implementing managing version control repositories.
  */
 package org.parabuild.ci.webui.repository;
