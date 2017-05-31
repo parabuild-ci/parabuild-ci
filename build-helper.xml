@@ -163,15 +163,15 @@
     <echo message="  Is release build: ${param.is.release.build}"/>
     <echo message="   Destination dir: ${param.destination.dir}"/>
     <if name="param.is.release.build" value="true">
-      <echo message="Using release build log4j.properties"/>
-      <copy file="${config}/release.log4j.properties" tofile="${param.destination.dir}/log4j.properties"/>
+      <echo message="Using release build log4j2.xml"/>
+      <copy file="${config}/release.log4j2.xml" tofile="${param.destination.dir}/log4j2.xml"/>
       <break/>
       <else>
-        <echo message="Using test log4j.properties"/>
-        <copy file="${test.config}/test.log4j.properties" tofile="${param.destination.dir}/log4j.properties"/>
+        <echo message="Using test log4j2.xml"/>
+        <copy file="${test.config}/test.log4j2.xml" tofile="${param.destination.dir}/log4j2.xml"/>
       </else>
     </if>
-    <copy file="${config}/debug.log4j.properties" todir="${param.destination.dir}/"/>
+    <copy file="${config}/debug.log4j2.xml" todir="${param.destination.dir}/"/>
   </target>
 
 </project>

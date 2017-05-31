@@ -45,6 +45,7 @@ public final class ServiceManagerServlet extends GenericServlet {
   private static final long serialVersionUID = 6247201370637762943L; // NOPMD
   private static final Log log = LogFactory.getLog(ServiceManagerServlet.class);
   private boolean destroyed = false; // NOPMD
+  private final ServiceManager serviceManager = ServiceManager.getInstance();
 
 
   public void init(final ServletConfig servletConfig) throws ServletException {
@@ -67,7 +68,6 @@ public final class ServiceManagerServlet extends GenericServlet {
 
     // startup services
     try {
-      final ServiceManager serviceManager = ServiceManager.getInstance();
       serviceManager.setListenPort(getListenPort());
       serviceManager.startServices();
       printServiceStartedToConsole();
@@ -97,7 +97,6 @@ public final class ServiceManagerServlet extends GenericServlet {
     }
     try {
       reportServiceRequestedToStop();
-      final ServiceManager serviceManager = ServiceManager.getInstance();
       serviceManager.stopServices();
     } catch (Exception e) {
       // We catch this exception in order to prevent failing this method.

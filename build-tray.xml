@@ -39,11 +39,14 @@
   <!-- Compile tray-->
   <target name="tray.compile" depends="tray.prepare">
     <javac destdir="${build.dir.tray.classes}" includes="org/parabuild/ci/tray/**.java" excludes="**/BuildStatusServlet.java" debug="on">
+      <compilerarg value="-proc:none"/>
       <classpath>
         <pathelement path="${hessian.jar}"/>
         <pathelement path="${jade.jar}"/>
         <pathelement path="${jdic.jar}"/>
-        <pathelement path="${log4j.jar}"/>
+        <pathelement path="${log4j-1.2-api-2.8.2.jar}"/>
+        <pathelement path="${log4j-api-2.8.2.jar}"/>
+        <pathelement path="${log4j-core-2.8.2.jar}"/>
         <pathelement path="${concurrent.jar}"/>
         <pathelement path="${tomcat.home}/common/lib/commons-logging-api.jar"/>
       </classpath>
@@ -66,7 +69,9 @@
       <zipfileset src="${hessian.jar}"/>
       <zipfileset src="${jade.jar}"/>
       <zipfileset src="${tomcat.home}/common/lib/commons-logging-api.jar"/>
-      <zipfileset src="${log4j.jar}"/>
+      <zipfileset src="${log4j-1.2-api-2.8.2.jar}"/>
+      <zipfileset src="${log4j-api-2.8.2.jar}"/>
+      <zipfileset src="${log4j-core-2.8.2.jar}"/>
       <zipfileset src="${concurrent.jar}"/>
       <manifest>
         <attribute name="Main-Class" value="org.parabuild.ci.tray.Tray"/>

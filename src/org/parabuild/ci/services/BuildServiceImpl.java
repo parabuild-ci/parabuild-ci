@@ -54,6 +54,7 @@ import java.io.IOException;
 public final class BuildServiceImpl implements BuildService {
 
   private static final Log LOG = LogFactory.getLog(BuildServiceImpl.class);
+  private final RemoteCommandManager commandManager = RemoteCommandManager.getInstance();
 
   private byte serviceStatus = SERVICE_STATUS_NOT_STARTED;
   private int activeBuildID = BuildConfig.UNSAVED_ID;
@@ -143,7 +144,7 @@ public final class BuildServiceImpl implements BuildService {
       buildScheduler.requestPause();
       buildRunner.requestBuildStop(new StopRequestImpl(userID));
 
-      // let it cooldown - wait till everything stopped
+      // let it cool down - wait till everything stopped
       // or given time passed
       final long coolDownMillis = 500L;
       final long stepMillis = 100L;
@@ -160,8 +161,8 @@ public final class BuildServiceImpl implements BuildService {
       if (LOG.isDebugEnabled()) {
         LOG.debug("using hard stop");
       }
-      RemoteCommandManager.getInstance().killBuildCommands(activeBuildID);
-    } catch (Exception e) {
+      commandManager.killBuildCommands(activeBuildID);
+    } catch (final Exception e) {
       reportStopException(e);
     }
   }
@@ -299,10 +300,10 @@ public final class BuildServiceImpl implements BuildService {
       validateBuildServiceStartedUp();
       buildScheduler.requestShutdown();
       buildRunner.requestShutdown();
-      RemoteCommandManager.getInstance().killBuildCommands(activeBuildID);
-    } catch (RuntimeException e) {
+      commandManager.killBuildCommands(activeBuildID);
+    } catch (final RuntimeException e) {
       throw e;
-    } catch (Exception e) {
+    } catch (final Exception e) {
       reportShutdownException(e);
     }
     serviceStatus = SERVICE_STATUS_NOT_STARTED;
@@ -372,7 +373,7 @@ public final class BuildServiceImpl implements BuildService {
       if (buildRunner != null) {
         try {
           buildRunner.requestShutdown();
-        } catch (Exception e) {
+        } catch (final Exception e) {
           if (LOG.isWarnEnabled()) {
             LOG.warn("Ignored exception while shutting down", e);
           }
@@ -456,11 +457,11 @@ public final class BuildServiceImpl implements BuildService {
   /**
    * Re-runs build
    *
-   * @param startRequest
+   * @param startRequest the request to start the build.
    */
   public void rerunBuild(final BuildStartRequest startRequest) {
     // REVIEWME: if any other request comes in, this one will get
-    // overriden. Consider queing re-run requests.
+    // overridden. Consider queuing re-run requests.
     //
     // REVIEWME: this is a plain duplicate of the startBuild method.
     validateBuildServiceStartedUp();
@@ -479,7 +480,7 @@ public final class BuildServiceImpl implements BuildService {
   /**
    * Requests build to start, according to the given {@link BuildStartRequest}.
    *
-   * @param startRequest
+   * @param startRequest the request to start the build.
    */
   public void startBuild(final BuildStartRequest startRequest) {
     validateBuildServiceStartedUp();
@@ -490,7 +491,7 @@ public final class BuildServiceImpl implements BuildService {
 
 
   /**
-   * @param sinceServerTimeMs
+   * @param sinceServerTimeMs the server time since that to return the update.
    * @return Log's {@link TailUpdate} since the given time in millis.
    */
   public TailUpdate getTailUpdate(final long sinceServerTimeMs) throws IOException {
@@ -508,7 +509,7 @@ public final class BuildServiceImpl implements BuildService {
     }
     try {
       return agent.getTailUpdate(currentlyRunningHandle, sinceServerTimeMs);
-    } catch (AgentFailureException e) {
+    } catch (final AgentFailureException e) {
       throw ExceptionUtils.createIOException(e);
     }
   }

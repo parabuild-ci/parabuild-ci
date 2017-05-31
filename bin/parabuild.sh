@@ -41,7 +41,6 @@ fi
 if $cygwin; then
   [ -n "$JAVA_HOME" ] && JAVA_HOME=`cygpath --unix "$JAVA_HOME"`
   [ -n "$PARABUILD_HOME" ] && PARABUILD_HOME=`cygpath --unix "$PARABUILD_HOME"`
-  [ -n "$CLASSPATH" ] && CLASSPATH=`cygpath --path --unix "$CLASSPATH"`
   [ -n "$JSSE_HOME" ] && JSSE_HOME=`cygpath --path --unix "$JSSE_HOME"`
 fi
 
@@ -84,17 +83,17 @@ fi
 # Set the default -Djava.endorsed.dirs argument
 JAVA_ENDORSED_DIRS="$PARABUILD_HOME"/lib/common/endorsed
 
-# Set standard CLASSPATH
-CLASSPATH="$PARABUILD_JAVA_HOME"/lib/tools.jar
+# Set PARABUILD_CLASSPATH
+PARABUILD_CLASSPATH="$PARABUILD_JAVA_HOME"/lib/tools.jar
 
 # Set standard commands for invoking Java.
 _RUNJAVA="$PARABUILD_JAVA_HOME"/bin/java
 
-# Add on extra jar files to CLASSPATH
+# Add on extra jar files to PARABUILD_CLASSPATH
 if [ -n "$JSSE_HOME" ]; then
-  CLASSPATH="$CLASSPATH":"$JSSE_HOME"/lib/jcert.jar:"$JSSE_HOME"/lib/jnet.jar:"$JSSE_HOME"/lib/jsse.jar
+  PARABUILD_CLASSPATH="$PARABUILD_CLASSPATH":"$JSSE_HOME"/lib/jcert.jar:"$JSSE_HOME"/lib/jnet.jar:"$JSSE_HOME"/lib/jsse.jar
 fi
-CLASSPATH="$CLASSPATH":"$PARABUILD_HOME"/bin/bootstrap.jar
+PARABUILD_CLASSPATH="$PARABUILD_CLASSPATH":"$PARABUILD_HOME"/bin/bootstrap.jar
 
 if [ -z "$PARABUILD_TMPDIR" ] ; then
   # Define the java.io.tmpdir to use for Parabuild
@@ -106,7 +105,7 @@ if $cygwin; then
   JAVA_HOME=`cygpath --path --windows "$JAVA_HOME"`
   PARABUILD_HOME=`cygpath --path --windows "$PARABUILD_HOME"`
   PARABUILD_TMPDIR=`cygpath --path --windows "$PARABUILD_TMPDIR"`
-  CLASSPATH=`cygpath --path --windows "$CLASSPATH"`
+  PARABUILD_CLASSPATH=`cygpath --path --windows "$PARABUILD_CLASSPATH"`
   JSSE_HOME=`cygpath --path --windows "$JSSE_HOME"`
 fi
 
@@ -124,7 +123,7 @@ if [ "$1" = "run" ]; then
     echo "Using Security Manager"
     shift
     exec "$_RUNJAVA" $JAVA_OPTS $PARABUILD_OPTS \
-      -Djava.endorsed.dirs="$JAVA_ENDORSED_DIRS" -classpath "$CLASSPATH" \
+      -Djava.endorsed.dirs="$JAVA_ENDORSED_DIRS" -classpath "$PARABUILD_CLASSPATH" \
       -Djava.security.manager \
       -Djava.security.policy=="$PARABUILD_HOME"/etc/conf/catalina.policy \
       -Dcatalina.base="$PARABUILD_HOME"/etc \
@@ -133,7 +132,7 @@ if [ "$1" = "run" ]; then
       org.apache.catalina.startup.Bootstrap "$@" start
   else
     exec "$_RUNJAVA" $JAVA_OPTS $PARABUILD_OPTS \
-      -Djava.endorsed.dirs="$JAVA_ENDORSED_DIRS" -classpath "$CLASSPATH" \
+      -Djava.endorsed.dirs="$JAVA_ENDORSED_DIRS" -classpath "$PARABUILD_CLASSPATH" \
       -Dcatalina.base="$PARABUILD_HOME"/etc \
       -Dcatalina.home="$PARABUILD_HOME"/lib \
       -Djava.io.tmpdir="$PARABUILD_TMPDIR" \
@@ -148,7 +147,7 @@ elif [ "$1" = "start" ] ; then
     echo "Using Security Manager"
     shift
     "$_RUNJAVA" $JAVA_OPTS $PARABUILD_OPTS \
-      -Djava.endorsed.dirs="$JAVA_ENDORSED_DIRS" -classpath "$CLASSPATH" \
+      -Djava.endorsed.dirs="$JAVA_ENDORSED_DIRS" -classpath "$PARABUILD_CLASSPATH" \
       -Djava.security.manager \
       -Djava.security.policy=="$PARABUILD_HOME"/etc/conf/catalina.policy \
       -Dcatalina.base="$PARABUILD_HOME"/etc \
@@ -162,7 +161,7 @@ elif [ "$1" = "start" ] ; then
       fi      
   else
     "$_RUNJAVA" $JAVA_OPTS $PARABUILD_OPTS \
-      -Djava.endorsed.dirs="$JAVA_ENDORSED_DIRS" -classpath "$CLASSPATH" \
+      -Djava.endorsed.dirs="$JAVA_ENDORSED_DIRS" -classpath "$PARABUILD_CLASSPATH" \
       -Dcatalina.base="$PARABUILD_HOME"/etc \
       -Dcatalina.home="$PARABUILD_HOME"/lib \
       -Djava.io.tmpdir="$PARABUILD_TMPDIR" \
@@ -178,7 +177,7 @@ elif [ "$1" = "stop" ] ; then
 
   shift
   exec "$_RUNJAVA" $JAVA_OPTS $PARABUILD_OPTS \
-    -Djava.endorsed.dirs="$JAVA_ENDORSED_DIRS" -classpath "$CLASSPATH" \
+    -Djava.endorsed.dirs="$JAVA_ENDORSED_DIRS" -classpath "$PARABUILD_CLASSPATH" \
     -Dcatalina.base="$PARABUILD_HOME"/etc \
     -Dcatalina.home="$PARABUILD_HOME"/lib \
     -Djava.io.tmpdir="$PARABUILD_TMPDIR" \

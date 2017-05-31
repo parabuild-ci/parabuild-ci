@@ -131,44 +131,54 @@
     <mkdir dir="${build.dir}/result_war"/>
     <mkdir dir="${build.dir}/generated_home"/>
 
-    <jar destfile="${war.staging.lib}/parabuild-3rdparty.jar" compress="false" update="true">
-      <zipfileset src="${axis.jar}"/>
-      <zipfileset src="${cglib-asm.jar}"/>
-      <zipfileset src="${commons-discovery.jar}"/>
-      <zipfileset src="${commons-lang.jar}"/>
-      <zipfileset src="${commons-logging.jar}"/>
-      <zipfileset src="${commons-io.jar}"/>
-      <zipfileset src="${dom4j.jar}"/>
-      <zipfileset src="${ehcache.jar}"/>
-      <zipfileset src="${hessian.jar}"/>
-      <zipfileset src="${hibernate2.jar}"/>
-      <zipfileset src="${jade.jar}"/>
-      <zipfileset src="${jaxen.jar}"/>
-      <zipfileset src="${jcommon.jar}"/>
-      <zipfileset src="${jfreechart.jar}"/>
-      <zipfileset src="${log4j.jar}"/>
-      <zipfileset src="${lucene.jar}"/>
-      <zipfileset src="${odmg.jar}"/>
-      <zipfileset src="${quartz.jar}"/>
-      <zipfileset src="${smack.jar}"/>
-      <zipfileset src="${smackx.jar}"/>
-      <zipfileset src="${msnm.jar}"/>
-      <zipfileset src="${rome.jar}"/>
-      <zipfileset src="${jdom.jar}"/>
-      <zipfileset src="${dwr.jar}"/>
-      <zipfileset src="${saxon.jar}"/>
-      <zipfileset src="${saxon-dom.jar}"/>
-      <!-- Web Service -->
-      <zipfileset src="${jaxrpc.jar}"/>
-      <zipfileset src="${log4j.jar}"/>
-      <zipfileset src="${axis.jar}"/>
-      <zipfileset src="${saaj.jar}"/>
-      <zipfileset src="${wsdl4j.jar}"/>
-    </jar>
+
     <copy todir="${war.staging.lib}">
+      <fileset file="${cglib-asm.jar}"/>
+      <fileset file="${commons-discovery.jar}"/>
+      <fileset file="${commons-fileupload-1.3.2.jar}"/>
+      <fileset file="${commons-io-2.2.jar}"/>
+      <fileset file="${commons-lang3-3.2.jar}"/>
+      <fileset file="${commons-logging.jar}"/>
+      <fileset file="${dom4j.jar}"/>
+      <fileset file="${dwr.jar}"/>
+      <fileset file="${ehcache.jar}"/>
+      <fileset file="${freemarker-2.3.22.jar}"/>
+      <fileset file="${hessian.jar}"/>
+      <fileset file="${hibernate2.jar}"/>
+      <fileset file="${jade.jar}"/>
+      <fileset file="${javassist-3.11.0.GA.jar}"/>
+      <fileset file="${jaxen.jar}"/>
+      <fileset file="${jcommon.jar}"/>
+      <fileset file="${jdom.jar}"/>
+      <fileset file="${jfreechart.jar}"/>
+      <fileset file="${log4j-1.2-api-2.8.2.jar}"/>
+      <fileset file="${log4j-api-2.8.2.jar}"/>
+      <fileset file="${log4j-core-2.8.2.jar}"/>
+      <fileset file="${lucene.jar}"/>
+      <fileset file="${msnm.jar}"/>
+      <fileset file="${odmg.jar}"/>
+      <fileset file="${ognl-3.0.19.jar}"/>
+      <fileset file="${quartz.jar}"/>
+      <fileset file="${rome.jar}"/>
+      <fileset file="${saxon-dom.jar}"/>
+      <fileset file="${saxon.jar}"/>
+      <fileset file="${smack.jar}"/>
+      <fileset file="${smackx.jar}"/>
+      <fileset file="${struts2-core-2.3.32.jar}"/>
+      <fileset file="${xwork-core-2.3.32.jar}"/>
+      <fileset file="${struts2-sitemesh-plugin-2.3.32.jar}"/>
+      <fileset file="${sitemesh.jar}"/>
+      <!-- Web Service -->
+      <fileset file="${jaxrpc.jar}"/>
+      <fileset file="${axis.jar}"/>
+      <fileset file="${saaj.jar}"/>
+      <fileset file="${wsdl4j.jar}"/>
       <fileset file="${mail.jar}"/>
       <fileset file="${smtp.jar}"/>
       <fileset file="${activation.jar}"/>
+      <!-- GWT -->
+      <fileset file="${gwt-servlet.jar}"/>
+      <fileset file="${gwt-servlet-deps.jar}"/>
     </copy>
   </target>
 
@@ -183,8 +193,7 @@
 
   <!-- Our web service to WSDL -->
   <target name="product.webservice" depends="product.webservice.prepare" unless="product.wsdl.uptodate">
-    <!-- NOTE: vimeshev - 02/16/2005 - we use up-to-date because the tasks
-java2wsdl fails weirdly when running run.tests.all -->
+    <!-- NOTE: vimeshev - 02/16/2005 - we use up-to-date because the tasks java2wsdl fails weirdly when running run.tests.all -->
     <path id="axis.tasks.classpath">
       <path refid="common.classpath"/>
       <pathelement location="${axis-ant.jar}"/>
@@ -193,6 +202,7 @@ java2wsdl fails weirdly when running run.tests.all -->
       <pathelement location="${jaxrpc.jar}"/>
       <pathelement location="${saaj.jar}"/>
       <pathelement location="${wsdl4j.jar}"/>
+      <pathelement location="."/>
     </path>
     <taskdef name="foreach" classname="org.apache.axis.tools.ant.foreach.ForeachTask">
       <classpath refid="axis.tasks.classpath"/>
@@ -206,6 +216,7 @@ java2wsdl fails weirdly when running run.tests.all -->
 
     <!-- Create template -->
     <javac destdir="${build.dir.classes}" includes="**/Parabuild.java" debug="on">
+      <compilerarg value="-proc:none"/>
       <classpath>
         <path refid="compile.classpath"/>
       </classpath>
@@ -247,6 +258,7 @@ java2wsdl fails weirdly when running run.tests.all -->
   <target name="product.compile" depends="product.webservice, product.resources">
     <!-- Compile product -->
     <javac destdir="${build.dir.classes}" includes="**/**.java" debug="on" memorymaximumsize="200m" fork="true">
+      <compilerarg value="-proc:none"/>
       <classpath>
         <path refid="compile.classpath"/>
       </classpath>
@@ -259,6 +271,11 @@ java2wsdl fails weirdly when running run.tests.all -->
       <exclude name="org/parabuild/ci/manager/server/**"/>
       <exclude name="org/parabuild/ci/webui/logviewer/**"/>
     </javac>
+
+    <copy todir="${build.dir.classes}">
+      <fileset dir="${src}" excludes="**/*.java"/>
+    </copy>
+
   </target>
 
 
@@ -415,6 +432,10 @@ java2wsdl fails weirdly when running run.tests.all -->
 
     <!-- copy webservice server config -->
     <copy file="${config}/parabuild.wsdd" tofile="${war.staging}/WEB-INF/server-config.wsdd"/>
+    <copy file="${config}/decorators.xml" todir="${war.staging}/WEB-INF"/>
+
+    <!-- Copy sitemesh config -->
+
   </target>
 
 
@@ -435,6 +456,7 @@ java2wsdl fails weirdly when running run.tests.all -->
     </copy>
     <!-- compile -->
     <javac srcdir="${jspc.output}" destdir="${war.staging.classes}" includes="**/**.java" debug="on">
+      <compilerarg value="-proc:none"/>
       <classpath>
         <path refid="compile.classpath"/>
         <path refid="jspc.classpath"/>
@@ -442,9 +464,22 @@ java2wsdl fails weirdly when running run.tests.all -->
     </javac>
   </target>
 
+  <target name="product.gwtc" depends="product.compile,product.war.prepare,product.war.jspc" description="GWT compile to JavaScript (production mode)">
+    <java failonerror="true" fork="true" classname="com.google.gwt.dev.Compiler" maxmemory="512m">
+      <classpath>
+        <pathelement location="${src}"/>
+        <path refid="compile.classpath"/>
+      </classpath>
+      <arg line="-war"/>
+      <arg value="${war.staging}"/>
+      <!-- Additional arguments like -style PRETTY or -logLevel DEBUG -->
+      <arg line="-style PRETTY"/>
+      <arg value="org.parabuild.ci.webui.repository.Repository"/>
+    </java>
+  </target>
 
   <!-- war -->
-  <target name="product.war" depends="product.war.prepare,product.war.jspc" unless="product.war.uptodate">
+  <target name="product.war" depends="product.war.prepare,product.war.jspc,product.gwtc" unless="product.war.uptodate">
     <!-- create war -->
     <zip destfile="${build.dir}/result_war/parabuild.war" basedir="${war.staging}" update="true" compress="false"/>
     <!-- viewletc -->

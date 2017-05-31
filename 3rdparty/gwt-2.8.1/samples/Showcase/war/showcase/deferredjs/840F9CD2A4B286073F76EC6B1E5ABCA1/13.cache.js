@@ -1,0 +1,1 @@
+$wnd.showcase.runAsyncCallback13("function Brb(){var a,b;b=new N0b;b.e[$mc]=5;for(a=1;a<10;a++){K0b(b,new NLb('Bouton '+a))}L0b(b);return b}\nfunction L0b(a){var b,c;w0b((EIb(),a.hb),'',Boc);c=a.j.c;for(b=0;b<c;b++){w0b(PLb(a,Q0b(a.j,b)),Boc,''+b)}}\nvar Boc='cwVerticalPanel';l8(430,1,Elc);_.Bc=function Grb(){Bab(this.a,Brb())};zic(zl)(13);\n//# sourceURL=showcase-13.js\n")

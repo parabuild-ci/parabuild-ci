@@ -3,7 +3,7 @@
   <validate>
     <!-- JDK -->
     <dir property="java.home" required="yes">
-      <location path="/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"/>
+      <location path="/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home"/>
       <location path="/opt/jdk1.6.0_32"/>
     </dir>
     <dir location="${java.home}/bin" required="yes" path="yes"/>
@@ -73,6 +73,12 @@
     <file property="clover.jar" location="${clover.home}/lib/clover.jar" required="yes" build="yes" classpath="yes"/>
     <file property="cenquatasks.jar" location="${clover.home}/etc/cenquatasks.jar" required="yes" build="yes" classpath="yes"/>
 
+    <!-- Log4J -->
+    <dir property="log4j.home" location="${3rdparty}/apache-log4j-2.8.2-bin" required="yes" build="no"/>
+    <file property="log4j-1.2-api-2.8.2.jar" classpath="yes" required="yes" location="${log4j.home}/log4j-1.2-api-2.8.2.jar" build="yes"/>
+    <file property="log4j-api-2.8.2.jar" classpath="yes" required="yes" location="${log4j.home}/log4j-api-2.8.2.jar" build="yes"/>
+    <file property="log4j-core-2.8.2.jar" classpath="yes" required="yes" location="${log4j.home}/log4j-core-2.8.2.jar" build="yes"/>
+
     <!-- test time dirs, all optional as they don't exist at clean check out -->
     <dir property="test.tomcat" location="${project.home}/temp/test_run_manager" required="no"/>
     <dir location="${test.tomcat}/bin" required="no" path="yes"/>
@@ -98,7 +104,7 @@
     <file property="aspectjrt.jar" required="yes" location="${cactus.home}/lib/aspectjrt-1.0.5.jar" build="yes"/>
     <file property="httpclient.jar" required="yes" location="${cactus.home}/lib/commons-httpclient-2.0alpha1-20020606.jar" build="yes"/>
     <file property="anthelope.jar" required="yes" location="${3rdparty}/anthelope255/AntelopeTasks.jar" build="yes"/>
-    <file property="log4j.jar" required="yes" location="${cactus.home}/lib/log4j-1.2.5.jar" build="yes"/>
+    <!--<file property="log4j.jar" required="yes" location="${cactus.home}/lib/log4j-1.2.5.jar" build="yes"/>-->
     <file property="gbase.jar" required="yes" location="${3rdparty}/gbase20/gsbase-2.0.jar" build="yes"/>
     <file property="activation.jar" required="yes" location="${3rdparty}/jaf102/activation.jar" build="yes"/>
     <file property="mail.jar" required="yes" location="${3rdparty}/javamail-1.4.2/lib/mailapi.jar" build="yes"/>
@@ -292,7 +298,7 @@
   <output>
     <shell variable="JAVA_HOME" path="${java.home}"/>
     <shell variable="ANT_HOME" path="${ant.home}"/>
-    <shell variable="ANT_OPTS" value="-Xmx2g -XX:MaxPermSize=512m"/>
+    <shell variable="ANT_OPTS" value="-Xmx2g"/>
     <shell variable="PARABUILD_HOME" path="${test.tomcat}"/>
     <shell variable="P4PORT" value="127.0.0.1:1666"/>
     <shell variable="P4USER" value="test_user"/>

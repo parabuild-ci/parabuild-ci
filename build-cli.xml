@@ -12,7 +12,7 @@
   <target name="cli.prepare">
     <mkdir dir="${build.dir.cli.classes}"/>
     <mkdir dir="${build.dir.cli.staging}"/>
-    <copy file="${config}/cli.log4j.properties" tofile="${build.dir.cli.classes}/log4.properties"/>
+    <copy file="${config}/cli.log4j2.xml" tofile="${build.dir.cli.classes}/log4j2.xml"/>
 
     <!-- Copy version to META-INF -->
     <mkdir dir="${build.dir.cli.classes}/META-INF"/>
@@ -23,6 +23,7 @@
   <target name="cli.compile" depends="cli.prepare">
     <!-- Compile CLI -->
     <javac destdir="${build.dir.cli.classes}" includes="org/parabuild/ci/cli/**.java" debug="on">
+      <compilerarg value="-proc:none"/>
       <classpath>
         <path refid="cli.compile.classpath"/>
       </classpath>
@@ -46,7 +47,9 @@
     <jar destfile="${build.dir.cli.staging}/paracmd.jar" compress="true" update="true">
       <fileset dir="${build.dir.cli.classes}"/>
       <zipfileset src="${jaxrpc.jar}"/>
-      <zipfileset src="${log4j.jar}"/>
+      <zipfileset src="${log4j-1.2-api-2.8.2.jar}"/>
+      <zipfileset src="${log4j-api-2.8.2.jar}"/>
+      <zipfileset src="${log4j-core-2.8.2.jar}"/>
       <zipfileset src="${axis.jar}"/>
       <zipfileset src="${saaj.jar}"/>
       <zipfileset src="${commons-logging.jar}"/>

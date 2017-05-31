@@ -54,8 +54,8 @@
 
   <!-- Compile tests -->
   <target name="tests.compile">
-    <javac srcdir="${test.home}/src" destdir="${build.dir.test.classes}" debug="on"
-           includes="**/*.java">
+    <javac srcdir="${test.home}/src" destdir="${build.dir.test.classes}" debug="on" includes="**/*.java">
+      <compilerarg value="-proc:none"/>
       <classpath>
         <path refid="test.classpath"/>
         <pathelement path="${build.dir.classes}"/>
@@ -69,7 +69,7 @@
   <target name="tests.jar" depends="tests.compile,test.prepare.servers">
     <filter token="test.port" value="${test.manager.http.port}"/>
     <copy file="${test.config}/cactus.properties" todir="${build.dir.test.classes}" filtering="on"/>
-    <copy file="${test.config}/test.log4j.properties" tofile="${build.dir.test.classes}/log4j.properties" overwrite="yes"/>
+    <copy file="${test.config}/test.log4j2.xml" tofile="${build.dir.test.classes}/log4j2.xml" overwrite="yes"/>
     <jar destfile="${build.dir.test.result}/tests.jar" index="true" compress="false">
       <fileset dir="${build.dir.test.classes}"/>
     </jar>
@@ -106,7 +106,7 @@
 
     <!-- copy test over product -->
     <unzip src="${build.dir}/result_war/parabuild.war" dest="${test.war.staging}"/>
-    <copy file="${test.config}/test.log4j.properties" tofile="${test.war.staging}/WEB-INF/classes/log4j.properties" overwrite="yes"/>
+    <copy file="${test.config}/test.log4j2.xml" tofile="${test.war.staging}/WEB-INF/classes/log4j2.xml" overwrite="yes"/>
   </target>
 
 

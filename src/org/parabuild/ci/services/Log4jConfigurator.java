@@ -13,12 +13,15 @@
  */
 package org.parabuild.ci.services;
 
-import java.io.*;
-import java.util.*;
-import org.apache.commons.logging.*;
-import org.apache.log4j.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.PropertyConfigurator;
+import org.parabuild.ci.common.IoUtils;
 
-import org.parabuild.ci.common.*;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 
 /**
  * Singleton to manage logging level (debug/release)
@@ -27,8 +30,8 @@ public final class Log4jConfigurator {
 
   private static final Log log = LogFactory.getLog(Log4jConfigurator.class);
 
-  public static final String DEBUG_LOG4_PROPERTIES = "/debug.log4j.properties";
-  public static final String RELEASE_LOG4_PROPERTIES = "/log4j.properties";
+  public static final String DEBUG_LOG4_PROPERTIES = "/debug.log4j2.xml";
+  public static final String RELEASE_LOG4_PROPERTIES = "/log4j2.xml";
 
   private static Log4jConfigurator instance = new Log4jConfigurator();
 

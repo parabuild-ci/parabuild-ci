@@ -27,7 +27,8 @@
         <pathelement path="${build.dir.classes}/"/>
         <pathelement path="${installer.classes.dir}/"/>
         <pathelement path="${test.config}"/>
-        <pathelement path="${log4j.jar}"/>
+        <pathelement path="${log4j-1.2-api-2.8.2.jar}"/>
+        <pathelement path="${log4j-api-2.8.2.jar}"/>
         <path refid="test.classpath"/>
       </classpath>
       <jvmarg value="-Xms50m"/>
