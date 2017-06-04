@@ -1,0 +1,39 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Chapter 11. Limit</title><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.html" title="Antelope Users Guide"><link rel="up" href="bk03.html" title="Additional Ant Tasks"><link rel="prev" href="bk03ch10.html" title="Chapter 10. Stopwatch"><link rel="next" href="bk03ch12.html" title="Chapter 12. FileUtils"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter 11. Limit</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="bk03ch10.html">Prev</a> </td><th width="60%" align="center">Additional Ant Tasks</th><td width="20%" align="right"> <a accesskey="n" href="bk03ch12.html">Next</a></td></tr></table><hr></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="Limit"></a>Chapter 11. Limit</h2></div></div></div>
+<STYLE TYPE="text/css"> <!-- @import url(./style.css); --> </STYLE>
+   <p>
+The Limit task is a task container (that is, it holds other tasks) and sets a time limit on how long the nested tasks are allowed to run. This is useful for unit tests that go awry, hung socket connections, or other potentially long running tasks that need to be shut off without stopping the build.
+</p><p>
+To use this task in your build files, include a task definition like this:
+</p><p>
+</p><pre class="programlisting">
+
+    &lt;taskdef name="limit" classname="ise.antelope.tasks.Limit"/&gt;
+   
+</pre><p>
+</p><p>
+</p><div class="table"><a name="id2550934"></a><p class="title"><b>Table 11.1. Limit Task Attributes</b></p><div class="table-contents"><table summary="Limit Task Attributes" border="1"><colgroup><col><col><col><col></colgroup><thead><tr><th>Attribute</th><th>Description</th><th>Default</th><th>Required</th></tr></thead><tbody><tr><td>maxwait</td><td>How long to wait for nested tasks to finish, this is in seconds.</td><td>180 seconds (3 minutes)</td><td>No</td></tr><tr><td>failonerror</td><td>Should the build fail if the time limit has been exceeded?</td><td>false</td><td>No</td></tr></tbody></table></div></div><p><br class="table-break">
+</p><p>
+Examples:
+</p><p>
+Neither the echo nor the fail will happen in this example. The build will continue once the time has expired.
+</p><pre class="programlisting">
+
+&lt;limit maxwait="3"&gt;
+   &lt;sleep seconds="10"/&gt;
+   &lt;echo&gt;This won't happen...&lt;/echo&gt;
+   &lt;fail&gt;This won't happen either...&lt;/fail&gt;
+&lt;/limit&gt;
+
+</pre><p>
+</p><p>
+Neither the echo nor the fail will happen in this example. The build will not continue once the time has expired.
+</p><pre class="programlisting">
+
+&lt;limit maxwait="3" failonerror="true"&gt;
+   &lt;sleep seconds="10"/&gt;
+   &lt;echo&gt;This won't happen...&lt;/echo&gt;
+   &lt;fail&gt;This won't happen either...&lt;/fail&gt;
+&lt;/limit&gt;
+
+</pre><p>
+</p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="bk03ch10.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="bk03.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="bk03ch12.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 10. Stopwatch </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Chapter 12. FileUtils</td></tr></table></div></body></html>

@@ -1,0 +1,174 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>More Conditions</title><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.html" title="Antelope Users Guide"><link rel="up" href="bk03ch05.html" title="Chapter 5. If Task"><link rel="prev" href="bk03ch05.html" title="Chapter 5. If Task"><link rel="next" href="bk03ch06.html" title="Chapter 6. SwitchTask"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">More Conditions</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="bk03ch05.html">Prev</a> </td><th width="60%" align="center">Chapter 5. If Task</th><td width="20%" align="right"> <a accesskey="n" href="bk03ch06.html">Next</a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="conditionals"></a>More Conditions</h2></div></div></div><p>
+These conditions are suitable for use in the &lt;bool&gt; element. Unfortunately, they cannot be used in the &lt;condition&gt; task, although all conditions for the &lt;condition&gt; task can be used with the bool and the bool can be used anywhere that &lt;condition&gt; can be used.
+</p><h4><a name="id2549100"></a>IfPropertyTrue</h4><p>
+Given a property name, tests whether the value for that property equals "true" (or "yes" or "on").
+</p><p>
+</p><div class="table"><a name="id2549113"></a><p class="title"><b>Table 5.2. IfPropertyTrue Attributes</b></p><div class="table-contents"><table summary="IfPropertyTrue Attributes" border="1"><colgroup><col><col><col></colgroup><thead><tr><th>Attribute</th><th>Description</th><th>Required</th></tr></thead><tbody><tr><td>property</td><td>The name of a property to test the value of.</td><td>Yes</td></tr></tbody></table></div></div><p><br class="table-break">
+</p><p>
+</p><pre class="programlisting">
+
+&lt;ispropertytrue property="myprop"/&gt;
+&lt;ispropertytrue property="${someprop}"/&gt;
+
+</pre><p>
+</p><h4><a name="id2549172"></a>IfPropertyFalse</h4><p>
+Given a property name, tests whether the value for that property equals "false" (or "no" or "off").
+</p><p>
+</p><div class="table"><a name="id2549185"></a><p class="title"><b>Table 5.3. IfPropertyFalse Attributes</b></p><div class="table-contents"><table summary="IfPropertyFalse Attributes" border="1"><colgroup><col><col><col></colgroup><thead><tr><th>Attribute</th><th>Description</th><th>Required</th></tr></thead><tbody><tr><td>property</td><td>The name of a property to test the value of.</td><td>Yes</td></tr></tbody></table></div></div><p><br class="table-break">
+</p><p>
+</p><pre class="programlisting">
+
+&lt;ispropertyfalse property="myprop"/&gt;
+&lt;ispropertyfalse property="${someprop}"/&gt;
+
+</pre><p>
+</p><h4><a name="id2549244"></a>StartsWith</h4><p>
+Given a property name, tests whether the value for that property starts with a specified string.
+</p><p>
+</p><div class="table"><a name="id2549256"></a><p class="title"><b>Table 5.4. StartsWith Attributes</b></p><div class="table-contents"><table summary="StartsWith Attributes" border="1"><colgroup><col><col><col></colgroup><thead><tr><th>Attribute</th><th>Description</th><th>Required</th></tr></thead><tbody><tr><td>string</td><td>The string to test.</td><td>Yes</td></tr><tr><td>with</td><td>Check if 'string' starts with this value.</td><td>Yes</td></tr></tbody></table></div></div><p><br class="table-break">
+</p><p>
+</p><pre class="programlisting">
+
+&lt;startswith string="abcdefg" with="abc"/&gt;
+&lt;startswith string="${myprop}" with="foo"/&gt;
+
+</pre><p>
+</p><h4><a name="id2549328"></a>EndsWith</h4><p>
+Given a property name, tests whether the value for that ends with with a specified string.
+</p><p>
+</p><div class="table"><a name="id2549340"></a><p class="title"><b>Table 5.5. EndsWith Attributes</b></p><div class="table-contents"><table summary="EndsWith Attributes" border="1"><colgroup><col><col><col></colgroup><thead><tr><th>Attribute</th><th>Description</th><th>Required</th></tr></thead><tbody><tr><td>string</td><td>The string to test.</td><td>Yes</td></tr><tr><td>with</td><td>Check if 'string' ends with this value.</td><td>Yes</td></tr></tbody></table></div></div><p><br class="table-break">
+</p><p>
+</p><pre class="programlisting">
+
+&lt;endswith string="abcdefg" with="efg"/&gt;
+&lt;endswith string="${myprop}" with="bar"/&gt;
+
+</pre><p>
+</p><h4><a name="id2549413"></a>IsGreaterThan</h4><p>
+Tests whether the first argument is greater than the second argument. Will
+automatically treat the arguments as numbers if both arguments consists of only the characters 0 through 9 and optionally a decimal point. Otherwise, a String
+comparison is used.
+</p><p>
+</p><div class="table"><a name="id2549428"></a><p class="title"><b>Table 5.6. IsGreaterThan Attributes</b></p><div class="table-contents"><table summary="IsGreaterThan Attributes" border="1"><colgroup><col><col><col></colgroup><thead><tr><th>Attribute</th><th>Description</th><th>Required</th></tr></thead><tbody><tr><td>arg1</td><td>The first argument.</td><td>Yes</td></tr><tr><td>arg2</td><td>The second argument.</td><td>Yes</td></tr></tbody></table></div></div><p><br class="table-break">
+</p><p>
+</p><pre class="programlisting">
+
+&lt;!-- evaluates to true --&gt;
+&lt;isgreaterthan arg1="6.02" arg2="4"/&gt;
+
+&lt;!-- evaluates to false --&gt;
+&lt;isgreaterthan arg1="bar" arg2="foo"/&gt;
+
+</pre><p>
+</p><h4><a name="id2549495"></a>IsLessThan</h4><p>
+Tests whether the first argument is less than the second argument. Will
+automatically treat the arguments as numbers if both arguments consists of only the characters 0 through 9 and optionally a decimal point. Otherwise, a String
+comparison is used.
+</p><p>
+</p><div class="table"><a name="id2549515"></a><p class="title"><b>Table 5.7. IsLessThan Attributes</b></p><div class="table-contents"><table summary="IsLessThan Attributes" border="1"><colgroup><col><col><col></colgroup><thead><tr><th>Attribute</th><th>Description</th><th>Required</th></tr></thead><tbody><tr><td>arg1</td><td>The first argument.</td><td>Yes</td></tr><tr><td>arg2</td><td>The second argument.</td><td>Yes</td></tr></tbody></table></div></div><p><br class="table-break">
+</p><p>
+</p><pre class="programlisting">
+
+&lt;!-- evaluates to false --&gt;
+&lt;islessthan arg1="6.02" arg2="4"/&gt;
+
+&lt;!-- evaluates to true --&gt;
+&lt;islessthan arg1="bar" arg2="foo"/&gt;
+
+</pre><p>
+</p><h4><a name="id2549583"></a>DateBefore, TimeBefore </h4><p>
+Tests whether the first date/time is before the second date/time.
+</p><p>
+</p><div class="table"><a name="id2549600"></a><p class="title"><b>Table 5.8. DateBefore, TimeBefore</b></p><div class="table-contents"><table summary="DateBefore, TimeBefore" border="1"><colgroup><col><col><col></colgroup><thead><tr><th>Attribute</th><th>Description</th><th>Required</th></tr></thead><tbody><tr><td>datetime1</td><td>The first date/time.</td><td>Yes</td></tr><tr><td>datetime2</td><td>The second date/time.</td><td>Yes</td></tr><tr><td>format</td><td>The format of the date/time stamps.</td><td>Yes</td></tr><tr><td>lenient</td><td>Whether the datetime parser should use lenient parsing, defaults to true.</td><td>No</td></tr></tbody></table></div></div><p><br class="table-break">
+</p><p>
+</p><pre class="programlisting">
+
+   &lt;target name="test1"&gt;
+      &lt;a:assert&gt;
+         &lt;bool&gt;
+            &lt;not&gt;
+            &lt;datebefore datetime1="2005-09-09 14:58:36" datetime2="2005-07-11 14:58:36" format="yyyy-MM-dd HH:mm:ss"/&gt;
+            &lt;/not&gt;
+         &lt;/bool&gt;
+      &lt;/a:assert&gt;
+   &lt;/target&gt;
+
+   &lt;target name="test2"&gt;
+      &lt;a:assert&gt;
+         &lt;bool&gt;
+            &lt;not&gt;
+            &lt;timebefore datetime1="22:58:36" datetime2="10:58:36" format="HH:mm:ss"/&gt;
+            &lt;/not&gt;
+         &lt;/bool&gt;
+      &lt;/a:assert&gt;
+   &lt;/target&gt;
+
+   &lt;target name="test3"&gt;
+      &lt;a:assert&gt;
+         &lt;bool&gt;
+            &lt;timebefore datetime1="2005" datetime2="2030" format="yyyy"/&gt;
+         &lt;/bool&gt;
+      &lt;/a:assert&gt;
+   &lt;/target&gt;
+
+   &lt;target name="test4"&gt;
+      &lt;a:assert&gt;
+         &lt;bool&gt;
+            &lt;timebefore datetime1="01:00:00" datetime2="03:00:00" format="hh:mm:ss"/&gt;
+         &lt;/bool&gt;
+      &lt;/a:assert&gt;
+   &lt;/target&gt;
+
+</pre><p>
+</p><h4><a name="id2549694"></a>DateDifference, TimeDifference </h4><p>
+Tests that the difference between two dates or times is a certain value.
+</p><p>
+</p><div class="table"><a name="id2549706"></a><p class="title"><b>Table 5.9. DateDifference, TimeDifference</b></p><div class="table-contents"><table summary="DateDifference, TimeDifference" border="1"><colgroup><col><col><col></colgroup><thead><tr><th>Attribute</th><th>Description</th><th>Required</th></tr></thead><tbody><tr><td>datetime1</td><td>The first date/time.</td><td>Yes</td></tr><tr><td>datetime2</td><td>The second date/time.</td><td>Yes</td></tr><tr><td>format</td><td>The format of the date/time stamps.</td><td>Yes</td></tr><tr><td>lenient</td><td>Whether the datetime parser should use lenient parsing, defaults to true.</td><td>No</td></tr><tr><td>value</td><td>The expected difference between the 2 datetimes.</td><td>No, default is 0</td></tr><tr><td>unit</td><td>Sets the unit for the difference between the 2 datetimes.  For example,
+if value is 12 and unit is "hours", then this
+condition checks that the difference between the 2 datetimes is 12 hours.
+Valid values are "millisecond", "second", "minute", "hour", "day", "week", "month", "year".</td><td>Yes</td></tr></tbody></table></div></div><p><br class="table-break">
+</p><p>
+</p><pre class="programlisting">
+
+   &lt;target name="test1"&gt;
+      &lt;a:assert message="Difference between dates is not 60 days."&gt;
+         &lt;bool&gt;
+            &lt;datedifference datetime1="2005-09-09 14:58:36" datetime2="2005-07-11 14:58:36" format="yyyy-MM-dd HH:mm:ss" value="60" unit="day"/&gt;
+         &lt;/bool&gt;
+      &lt;/a:assert&gt;
+   &lt;/target&gt;
+
+   &lt;target name="test2"&gt;
+      &lt;a:assert message="Difference between hours is not 12."&gt;
+         &lt;bool&gt;
+            &lt;timedifference datetime1="22:58:36" datetime2="10:58:36" format="HH:mm:ss" value="12" unit="hour"/&gt;
+         &lt;/bool&gt;
+      &lt;/a:assert&gt;
+   &lt;/target&gt;
+
+   &lt;target name="test3"&gt;
+      &lt;a:assert message="Difference between years is not 25."&gt;
+         &lt;bool&gt;
+            &lt;timedifference datetime1="2005" datetime2="2030" format="yyyy" value="25" unit="year"/&gt;
+         &lt;/bool&gt;
+      &lt;/a:assert&gt;
+   &lt;/target&gt;
+
+   &lt;target name="test4"&gt;
+      &lt;a:assert message="Difference between minutes is not 120."&gt;
+         &lt;bool&gt;
+            &lt;timedifference datetime1="01:00:00" datetime2="03:00:00" format="hh:mm:ss" value="120" unit="minute"/&gt;
+         &lt;/bool&gt;
+      &lt;/a:assert&gt;
+   &lt;/target&gt;
+
+   &lt;target name="test5"&gt;
+      &lt;a:assert message="Difference between seconds is not 7200."&gt;
+         &lt;bool&gt;
+            &lt;timedifference datetime1="01:00:00" datetime2="03:00:00" format="hh:mm:ss" value="7200" unit="second"/&gt;
+         &lt;/bool&gt;
+      &lt;/a:assert&gt;
+   &lt;/target&gt;
+
+</pre><p>
+</p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="bk03ch05.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="bk03ch05.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="bk03ch06.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 5. If Task </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Chapter 6. SwitchTask</td></tr></table></div></body></html>

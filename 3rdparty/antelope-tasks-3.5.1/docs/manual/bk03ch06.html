@@ -1,0 +1,37 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Chapter 6. SwitchTask</title><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.html" title="Antelope Users Guide"><link rel="up" href="bk03.html" title="Additional Ant Tasks"><link rel="prev" href="bk03ch05s02.html" title="More Conditions"><link rel="next" href="bk03ch07.html" title="Chapter 7. Try Task"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter 6. SwitchTask</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="bk03ch05s02.html">Prev</a> </td><th width="60%" align="center">Additional Ant Tasks</th><td width="20%" align="right"> <a accesskey="n" href="bk03ch07.html">Next</a></td></tr></table><hr></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="switch"></a>Chapter 6. SwitchTask</h2></div></div></div>
+<STYLE TYPE="text/css"> <!-- @import url(./style.css); --> </STYLE>
+    <p>
+The "Switch" task works much like the Java "switch" construct. It supports nested "case" elements, which in turn, support nested "break" elements. There is also a "default" case element, so this should be very natural for Java developers to use.
+</p><p>
+</p><div class="table"><a name="id2549881"></a><p class="title"><b>Table 6.1. Switch Task Attributes</b></p><div class="table-contents"><table summary="Switch Task Attributes" border="1"><colgroup><col><col><col><col></colgroup><thead><tr><th>Attribute</th><th>Description</th><th>Default</th><th>Required</th></tr></thead><tbody><tr><td>name</td><td>The name of a property whose value will be used for the switch.</td><td>None</td><td>Yes</td></tr></tbody></table></div></div><p><br class="table-break">
+</p><p>
+</p><div class="table"><a name="id2549984"></a><p class="title"><b>Table 6.2. "case" and "default" Attributes</b></p><div class="table-contents"><table summary='"case" and "default" Attributes' border="1"><colgroup><col><col><col><col></colgroup><thead><tr><th>Attribute</th><th>Description</th><th>Default</th><th>Required</th></tr></thead><tbody><tr><td>value</td><td>The value of of the property used for the switch. If this value equals the property value, then all tasks in this 'case' will be executed.</td><td>None</td><td>Yes</td></tr></tbody></table></div></div><p><br class="table-break">
+</p><p>
+</p><pre class="programlisting">
+
+&lt;property name="foo" value="bar"/&gt;
+&lt;switch name="foo"&gt;
+    &lt;case value="baz"&gt;
+        &lt;echo&gt;Executing case baz&lt;/echo&gt;
+        &lt;break/&gt;
+    &lt;/case&gt;
+    &lt;case value="bar"&gt;
+        &lt;echo&gt;Executing case bar&lt;/echo&gt;
+        &lt;if name="foo" value="bar"&gt;
+            &lt;echo&gt;breaking from the if&lt;/echo&gt;
+            &lt;break/&gt;
+        &lt;/if&gt;
+        &lt;echo&gt;Falling through to case "bat"&lt;/echo&gt;
+    &lt;/case&gt;
+    &lt;case value="bat"&gt;
+        &lt;echo&gt;Executing case bat&lt;/echo&gt;
+        &lt;break/&gt;
+    &lt;/case&gt;
+    &lt;default&gt;
+        &lt;echo&gt;Executing default case&lt;/echo&gt;
+        &lt;break/&gt;
+    &lt;/default&gt;
+&lt;/switch&gt;
+
+</pre><p>
+</p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="bk03ch05s02.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="bk03.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="bk03ch07.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">More Conditions </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Chapter 7. Try Task</td></tr></table></div></body></html>

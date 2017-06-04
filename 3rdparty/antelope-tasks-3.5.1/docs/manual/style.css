@@ -1,0 +1,106 @@
+
+.dummy {color: red}
+
+ADDRESS, BLOCKQUOTE, BODY, CAPTION, CENTER, DD, DIR, DIV, DL, DT, FORM, LI, MENU, OL, P, PRE, TD, TH, TR, UL {
+   font-family: verdana, tahoma, geneva, sans-serif;
+   font-size: 12px;
+   color: black;
+}
+
+A {
+   cursor: pointer; 
+   background: transparent;
+   text-decoration: none;
+}
+A:link {color: black; text-decoration: underline}
+A:visited {color: gray; text-decoration: underline}
+A:active {color: black;}
+A:hover {color: gray; background: white}
+
+ADDRESS {font-style: italic}
+
+BIG {font-size: 19px}
+
+BLOCKQUOTE {font-style: italic}
+
+BODY {background: white}
+
+BUTTON {cursor: auto}
+
+CITE {font-style: italic}
+
+.computeroutput {
+   font-family: monospace;
+   border: none;
+   padding: none;
+   background: none;
+}
+
+CODE, KBD, PRE, SAMP, TT {font-size: 12px}
+
+CODE, PRE {
+   font-family: monospace;
+}
+
+
+PRE.PROGRAMLISTING {
+   font-family: monospace;
+   border: solid thin;
+   padding: 2em;
+   background: white;
+}
+
+DT {font-weight: bold}
+
+H1, H2, H3, H4, H5, H6 {
+   font-weight: bold;
+   font-family: verdana, tahoma, geneva, sans-serif;
+   color: black;
+   margin: 0 0 0 0;
+}
+
+H1 {font-size: 22px}
+H2 {font-size: 20px}
+H3 {font-size: 18px}
+H4 {font-size: 16px}
+H5 {font-size: 14px}
+H6 {font-size: 12px}
+
+HTML {margin: 0; padding: 0}
+
+INPUT {cursor: auto}
+
+OL {list-style: decimal}
+UL {list-style: disc}
+
+PRE {margin-left: 0; white-space: pre}
+
+SMALL, SUB, SUP {font-size: 10px}
+
+TEXTAREA {cursor: text}
+
+TABLE {
+   border: solid thin; 
+   background: white; 
+   cellpadding: 3; 
+   cellspacing: 0; 
+}
+
+TD {
+   padding: 3;
+   background: white;
+}
+
+TH {
+   font-weight: bold;
+   text-align: center;
+   margin-left: 0;
+   background: #ADD8E6; 
+   color: black;
+}
+
+
+
+
+
+

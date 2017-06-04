@@ -1,0 +1,96 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Chapter 26. TestCase Task</title><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.html" title="Antelope Users Guide"><link rel="up" href="bk03.html" title="Additional Ant Tasks"><link rel="prev" href="bk03ch25.html" title="Chapter 25. Suite Task"><link rel="next" href="bk03ch27.html" title="Chapter 27. Performance Monitoring"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter 26. TestCase Task</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="bk03ch25.html">Prev</a> </td><th width="60%" align="center">Additional Ant Tasks</th><td width="20%" align="right"> <a accesskey="n" href="bk03ch27.html">Next</a></td></tr></table><hr></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="testcasetask"></a>Chapter 26. TestCase Task</h2></div></div></div>
+<STYLE TYPE="text/css"> <!-- @import url(./style.css); --> </STYLE>
+    <p>
+ Modeled after the TestCase provided by jUnit, this class is an Ant task that
+ looks through the build file that contains this task, calls a 'setUp' target
+ (if it exists), then all targets whose names start with 'test', and last calls
+ a target named 'tearDown' (if it exists).  Both 'setUp' and 'tearDown' are
+ optional targets in the build file.
+</p><p>
+ Ant stores targets in a hashtable, so there is no guaranteed order in which
+ the 'test*' targets will be called.  If order is important, use the 'depends'
+ attribue of a target to enforce order, and do not name dependent targets with
+ a name starting with 'test'.
+</p><p>
+ Most unit tests will make use of Assert.  As the Assert task requires that the property "ant.enable.asserts" be set to true before it will do anything, this task automatically sets this property to true. The Assert task has a "level" attribute.  By default, the level is set to "error", so if the Assert fails, the TestCase fails.  If the level is set to "warning", the test case will be marked as a warning rather than a failure.  If the level is set to "info" or "debug" and the Assert fails, any message associated with the Assert will be written out, but otherwise will be ignored by TestCase.
+</p><p>
+To use this task in your build files, include a task definition like this:
+</p><pre class="programlisting">
+
+    &lt;taskdef name="testcase" classname="ise.antelope.tasks.TestCase"/&gt;
+   
+</pre><p>
+</p><p>
+</p><div class="table"><a name="id2555499"></a><p class="title"><b>Table 26.1. TestCase Attributes</b></p><div class="table-contents"><table summary="TestCase Attributes" border="1"><colgroup><col><col><col><col></colgroup><thead><tr><th>Attribute</th><th>Description</th><th>Default</th><th>Required</th></tr></thead><tbody><tr><td>file</td><td>The file containing tests.</td><td>None</td><td>Yes</td></tr><tr><td>enabled</td><td>Determines if this test should be ran.  By using a property for this attribute, it is easy to turn off/on multiple tests.</td><td>On</td><td>No</td></tr><tr><td>assertenabled</td><td>Generally tests will use the Assert task.  This attribute sets whether asserts should be enabled.</td><td>Yes</td><td>No</td></tr><tr><td>failonerror</td><td>If true, cause the build to fail. By default, a failed test does not cause the build to fail, so all tests may have the opportunity to run.</td><td>No</td><td>No</td></tr><tr><td>showoutput</td><td>If true, show intermediate test results</td><td>Yes</td><td>No</td></tr><tr><td>showsummary</td><td>If true, show a summary of test results at the end of the test run.</td><td>Yes</td><td>Yes</td></tr></tbody></table></div></div><p><br class="table-break">
+</p><p>
+TestCase is most often used in conjunction with the Suite task.
+</p><p>
+</p><pre class="programlisting">
+
+&lt;project name="mathtest" basedir="." default="suite"
+   xmlns:a="antlib:ise.antelope.tasks"&gt;
+
+   &lt;description&gt;
+     Build file to run unit tests for the Math task
+   &lt;/description&gt;
+
+   &lt;a:suite&gt;
+      &lt;a:testcase file="math_basic_tests.xml"/&gt;
+      &lt;a:testcase file="math_rules_tests.xml"/&gt;
+      &lt;a:testcase file="math_precision_tests.xml"/&gt;
+   &lt;/a:suite&gt;
+
+&lt;/project&gt;
+
+</pre><p>
+</p><p>
+Here is an example build file containing actual tests.  The 'setUp' target will execute first, then the two test targets.
+</p><p>
+</p><pre class="programlisting">
+
+&lt;project name="math_precision_tests" basedir="." default="suite"
+   xmlns:a="antlib:ise.antelope.tasks"&gt;
+
+   &lt;target name="setUp"&gt;
+      &lt;echo&gt;Running math precision tests.&lt;/echo&gt;
+   &lt;/target&gt;
+
+   &lt;target name="test10"&gt;
+      &lt;echo&gt;Circle area test&lt;/echo&gt;
+      &lt;a:math result="pi"&gt;
+         &lt;a:op op="*"&gt;
+            &lt;a:num value="PI"/&gt;
+            &lt;a:op op="pow"&gt;
+               &lt;a:num value="1"/&gt;
+               &lt;a:num value="2"/&gt;
+            &lt;/a:op&gt;
+         &lt;/a:op&gt;
+      &lt;/a:math&gt;
+      &lt;a:assert message="failed circle area test"&gt;
+         &lt;a:bool&gt;
+            &lt;a:startswith string="${pi}" with="3.141592653589793"/&gt;
+         &lt;/a:bool&gt;
+      &lt;/a:assert&gt;
+   &lt;/target&gt;
+
+   &lt;target name="test11"&gt;
+      &lt;echo&gt;Division by zero test&lt;/echo&gt;
+      &lt;!-- division by zero --&gt;
+      &lt;a:try&gt;
+         &lt;a:math result="x"&gt;
+            &lt;a:op op="/"&gt;
+               &lt;a:num value="PI"/&gt;
+               &lt;a:num value="0"/&gt;
+            &lt;/a:op&gt;
+         &lt;/a:math&gt;
+         &lt;fail&gt;Division by 0 succeeded: ${x}&lt;/fail&gt;
+         &lt;catch&gt;
+            &lt;assert/&gt;
+         &lt;/catch&gt;
+      &lt;/a:try&gt;
+   &lt;/target&gt;
+
+&lt;/project&gt;
+
+</pre><p>
+</p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="bk03ch25.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="bk03.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="bk03ch27.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 25. Suite Task </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Chapter 27. Performance Monitoring</td></tr></table></div></body></html>
