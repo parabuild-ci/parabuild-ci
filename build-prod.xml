@@ -11,96 +11,73 @@
 
   <!-- Inits tomcat distribution -->
   <target name="product.init.tomcat">
+
+    <!-- Copy Tomcat -->
+    <copy todir="${build.dir.tomcat}">
+      <fileset dir="${tomcat.home}">
+        <exclude name="webapps/**"/>
+        <exclude name="bin/**"/>
+        <exclude name="docs/**"/>
+        <exclude name="LICENSE"/>
+        <exclude name="NOTICE"/>
+        <exclude name="RELEASE-NOTES.txt"/>
+        <exclude name="RUNNING"/>
+        <exclude name="work"/>
+      </fileset>
+    </copy>
+
     <!-- Create plaform specific dirs -->
     <mkdir dir="${build.dir.tomcat}/bin/win"/>
     <mkdir dir="${build.dir.tomcat}/bin/wsdl"/>
     <mkdir dir="${build.dir.tomcat}/bin/linux386"/>
-    <mkdir dir="${build.dir.tomcat}/lib/common/lib"/>
-    <mkdir dir="${build.dir.tomcat}/lib/server/lib"/>
-    <!-- Copy tomcat common files -->
-    <property name="parabuild.common.jar" value="${build.dir.tomcat}/lib/common/lib/parabuild-common.jar"/>
-    <if>
-      <bool>
-        <not>
-          <uptodate targetfile="${parabuild.common.jar}">
-            <srcfiles dir="${tomcat.home}/common/lib"/>
-          </uptodate>
-        </not>
-      </bool>
-      <jar destfile="${parabuild.common.jar}" compress="false" update="true">
-        <zipfileset src="${tomcat.home}/common/lib/ant.jar"/>
-        <zipfileset src="${tomcat.home}/common/lib/commons-collections.jar"/>
-        <zipfileset src="${tomcat.home}/common/lib/commons-dbcp-1.1.jar"/>
-        <zipfileset src="${tomcat.home}/common/lib/commons-logging-api.jar"/>
-        <zipfileset src="${tomcat.home}/common/lib/commons-pool-1.1.jar"/>
-        <zipfileset src="${tomcat.home}/common/lib/jasper-compiler.jar"/>
-        <zipfileset src="${tomcat.home}/common/lib/jasper-runtime.jar"/>
-        <zipfileset src="${tomcat.home}/common/lib/naming-common.jar"/>
-        <zipfileset src="${tomcat.home}/common/lib/naming-factory.jar"/>
-        <zipfileset src="${tomcat.home}/common/lib/naming-resources.jar"/>
-        <zipfileset src="${tomcat.home}/common/lib/servlet.jar"/>
-        <zipfileset src="${tomcat.home}/common/lib/jta.jar"/>
-        <zipfileset src="${concurrent.jar}"/>
-        <zipfileset src="${hsqldb.jar}"/>
-      </jar>
-    </if>
-    <!-- Copy tomcat server files -->
-    <property name="parabuild.server.jar" value="${build.dir.tomcat}/lib/server/lib/parabuild-server.jar"/>
-    <if>
-      <bool>
-        <not>
-          <uptodate targetfile="${parabuild.server.jar}">
-            <srcfiles dir="${tomcat.home}/server/lib"/>
-            <srcfiles dir="${build.dir.realm.staging}"/>
-          </uptodate>
-        </not>
-      </bool>
-      <jar destfile="${parabuild.server.jar}" compress="false" update="true">
-        <zipfileset src="${build.dir.realm.staging}/parabuild-realm.jar"/>
-        <zipfileset src="${tomcat.home}/server/lib/catalina.jar"/>
-        <zipfileset src="${tomcat.home}/server/lib/commons-beanutils.jar"/>
-        <zipfileset src="${tomcat.home}/server/lib/commons-digester.jar"/>
-        <zipfileset src="${tomcat.home}/server/lib/commons-fileupload-1.0.jar"/>
-        <zipfileset src="${tomcat.home}/server/lib/commons-logging.jar"/>
-        <zipfileset src="${tomcat.home}/server/lib/commons-modeler.jar"/>
-        <zipfileset src="${tomcat.home}/server/lib/jakarta-regexp-1.3.jar"/>
-        <zipfileset src="${tomcat.home}/server/lib/mx4j-jmx.jar"/>
-        <zipfileset src="${tomcat.home}/server/lib/servlets-common.jar"/>
-        <zipfileset src="${tomcat.home}/server/lib/servlets-default.jar"/>
-        <zipfileset src="${tomcat.home}/server/lib/servlets-invoker.jar"/>
-        <zipfileset src="${tomcat.home}/server/lib/servlets-manager.jar"/>
-        <zipfileset src="${tomcat.home}/server/lib/servlets-webdav.jar"/>
-        <zipfileset src="${tomcat.home}/server/lib/tomcat-coyote.jar"/>
-        <zipfileset src="${tomcat.home}/server/lib/tomcat-http11.jar"/>
-        <zipfileset src="${tomcat.home}/server/lib/tomcat-jk.jar"/>
-        <zipfileset src="${tomcat.home}/server/lib/tomcat-jk2.jar"/>
-        <zipfileset src="${tomcat.home}/server/lib/tomcat-util.jar"/>
-        <zipfileset src="${tomcat.home}/server/lib/tomcat-warp.jar"/>
-      </jar>
-    </if>
+
+
+    <!-- Copy Parabuild Tomcat lib files -->
+    <copy todir="${build.dir.tomcat}/lib">
+      <fileset file="${build.dir.realm.staging}/parabuild-realm.jar"/>
+      <fileset file="${hsqldb.jar}"/>
+      <fileset file="${commons-logging.jar}"/>
+      <fileset file="${log4j-1.2-api-2.8.2.jar}"/>
+      <fileset file="${log4j-api-2.8.2.jar}"/>
+      <fileset file="${log4j-core-2.8.2.jar}"/>
+    </copy>
+
     <!-- Copy tomcat config files -->
     <mkdir dir="${build.dir.tomcat}/etc/conf"/>
-    <copy file="${tomcat.home}/conf/web.xml" todir="${build.dir.tomcat}/etc/conf"/>
-    <copy file="${tomcat.home}/conf/catalina.policy" todir="${build.dir.tomcat}/etc/conf"/>
+    <copy todir="${build.dir.tomcat}/etc/conf">
+      <fileset dir="${tomcat.home}/conf/">
+        <exclude name="server.xml"/>
+        <exclude name="tomcat-users.xml"/>
+        <exclude name="tomcat-users.xsd"/>
+      </fileset>
+    </copy>
+
     <copy file="${tomcat.home}/temp/README.txt" todir="${build.dir.tomcat}/etc/temp"/>
+
     <filter token="http.port" value="${tomcat.http.port}"/>
     <filter token="serv.port" value="${tomcat.serv.port}"/>
+
+    <echo message="tomcat.http.port: ${tomcat.http.port}"/>
+
     <copy file="${config}/server.xml" todir="${build.dir.tomcat}/etc/conf" filtering="on"/>
+
     <!-- Release notes -->
     <copy file="${config}/RELEASE-NOTES.txt" todir="${build.dir.tomcat}"/>
+
     <!-- Init parabuild config -->
     <mkdir dir="${build.dir.tomcat}/etc/system"/>
     <copy file="${config}/parabuild.conf" todir="${build.dir.tomcat}/etc/system"/>
-    <!-- VM options for Windows (and Unix, if any) launchers -->
-    <copy file="${config}/parabuild.vmoptions" todir="${build.dir.tomcat}/bin"/>
-    <!-- Init common bin directory -->
+
+    <!-- Init base bin directory -->
     <copy todir="${build.dir.tomcat}/bin">
       <fileset dir="${project.bin}" excludes="startup_jprofiler.*"/>
-      <fileset dir="${tomcat.home}/bin" includes="bootstrap.jar, commons-daemon.jar, tomcat-jni.jar"/>
+      <fileset file="${config}/parabuild.vmoptions"/>
     </copy>
+
     <!-- Init windows specific bin dirs -->
     <copy file="${pv.exe}" tofile="${build.dir.tomcat}/bin/win/p6.exe"/>
     <copy file="${p4.win.exe}" todir="${build.dir.tomcat}/bin/win"/>
+
     <!-- Vault -->
     <copy todir="${build.dir.tomcat}/bin/win">
       <fileset file="${vault.home}/vault.exe"/>
@@ -109,9 +86,11 @@
       <fileset file="${vault.home}/VaultLib.dll"/>
       <fileset file="${vault.home}/VCDiff.dll"/>
     </copy>
+
     <!-- Init linux specific bin directories -->
     <copy file="${p4.linux.exe}" todir="${build.dir.tomcat}/bin/linux386"/>
     <chmod dir="${build.dir.tomcat}/bin" perm="ugo+rwx" excludes="*.bat,*.cmd,*.exe,*.dll"/>
+
     <!-- Prepare shell files to make sure it's not screwed by windows/unix -->
     <fixcrlf srcdir="${build.dir.tomcat}/bin" eol="lf" includes="*.sh"/>
     <fixcrlf srcdir="${build.dir.tomcat}/bin" eol="lf" includes="parabuild"/>
@@ -132,41 +111,41 @@
     <mkdir dir="${build.dir}/generated_home"/>
 
 
-    <copy todir="${war.staging.lib}">
+    <copy todir="${war.staging.lib}" failonerror="true">
       <fileset file="${cglib-asm.jar}"/>
+      <fileset file="${commons-collections.jar}"/>
+      <fileset file="${commons-dbcp.jar}"/>
+      <fileset file="${jta.jar}"/>
       <fileset file="${commons-discovery.jar}"/>
       <fileset file="${commons-fileupload-1.3.2.jar}"/>
-      <fileset file="${commons-io-2.2.jar}"/>
-      <fileset file="${commons-lang3-3.2.jar}"/>
-      <fileset file="${commons-logging.jar}"/>
+      <fileset file="${commons-io-2.4.jar}"/>
+      <fileset file="${commons-lang3-3.4.jar}"/>
+      <fileset file="${commons-pool.jar}"/>
       <fileset file="${dom4j.jar}"/>
       <fileset file="${dwr.jar}"/>
       <fileset file="${ehcache.jar}"/>
-      <fileset file="${freemarker-2.3.22.jar}"/>
+      <fileset file="${freemarker-2.3.23.jar}"/>
       <fileset file="${hessian.jar}"/>
       <fileset file="${hibernate2.jar}"/>
       <fileset file="${jade.jar}"/>
-      <fileset file="${javassist-3.11.0.GA.jar}"/>
+      <fileset file="${javassist.jar}"/>
       <fileset file="${jaxen.jar}"/>
       <fileset file="${jcommon.jar}"/>
       <fileset file="${jdom.jar}"/>
       <fileset file="${jfreechart.jar}"/>
-      <fileset file="${log4j-1.2-api-2.8.2.jar}"/>
-      <fileset file="${log4j-api-2.8.2.jar}"/>
-      <fileset file="${log4j-core-2.8.2.jar}"/>
       <fileset file="${lucene.jar}"/>
       <fileset file="${msnm.jar}"/>
       <fileset file="${odmg.jar}"/>
-      <fileset file="${ognl-3.0.19.jar}"/>
+      <fileset file="${ognl-3.1.12.jar}"/>
       <fileset file="${quartz.jar}"/>
       <fileset file="${rome.jar}"/>
       <fileset file="${saxon-dom.jar}"/>
       <fileset file="${saxon.jar}"/>
       <fileset file="${smack.jar}"/>
       <fileset file="${smackx.jar}"/>
-      <fileset file="${struts2-core-2.3.32.jar}"/>
-      <fileset file="${xwork-core-2.3.32.jar}"/>
-      <fileset file="${struts2-sitemesh-plugin-2.3.32.jar}"/>
+      <fileset file="${struts2-core-2.5.10.1.jar}"/>
+      <fileset file="${xwork-core-2.5.10.1.jar}"/>
+      <fileset file="${struts2-sitemesh-plugin-2.5.10.1.jar}"/>
       <fileset file="${sitemesh.jar}"/>
       <!-- Web Service -->
       <fileset file="${jaxrpc.jar}"/>
@@ -179,6 +158,7 @@
       <!-- GWT -->
       <fileset file="${gwt-servlet.jar}"/>
       <fileset file="${gwt-servlet-deps.jar}"/>
+      <fileset file="${concurrent.jar}"/>
     </copy>
   </target>
 
@@ -215,7 +195,7 @@
     </taskdef>
 
     <!-- Create template -->
-    <javac destdir="${build.dir.classes}" includes="**/Parabuild.java" debug="on">
+    <javac destdir="${build.dir.classes}" includes="**/Parabuild.java">
       <compilerarg value="-proc:none"/>
       <classpath>
         <path refid="compile.classpath"/>
@@ -257,7 +237,7 @@
   <!-- Compile Parabuild -->
   <target name="product.compile" depends="product.webservice, product.resources">
     <!-- Compile product -->
-    <javac destdir="${build.dir.classes}" includes="**/**.java" debug="on" memorymaximumsize="200m" fork="true">
+    <javac destdir="${build.dir.classes}" includes="**/**.java" memorymaximumsize="200m" fork="true">
       <compilerarg value="-proc:none"/>
       <classpath>
         <path refid="compile.classpath"/>
@@ -445,8 +425,8 @@
     <property name="jspc.output" value="${build.dir}/staging_jspc"/>
     <mkdir dir="${jspc.output}"/>
     <!-- jspc -->
-    <jasper2 validateXml="false" uriroot="${war.staging}"
-             webXmlFragment="${web.xml.fragment}" outputDir="${jspc.output}"/>
+    <jasper validateXml="false" uriroot="${war.staging}"
+            webXmlFragment="${web.xml.fragment}" outputDir="${jspc.output}"/>
     <!-- merge partial jspc web.xml to app web.xml -->
     <loadfile property="web.xml.fragment.text" srcFile="${web.xml.fragment}"/>
     <copy file="${config}/web.xml" overwrite="true" todir="${war.staging}/WEB-INF" filtering="true">
@@ -455,16 +435,18 @@
       </filterset>
     </copy>
     <!-- compile -->
-    <javac srcdir="${jspc.output}" destdir="${war.staging.classes}" includes="**/**.java" debug="on">
+    <javac srcdir="${jspc.output}" destdir="${war.staging.classes}" includes="**/**.java">
       <compilerarg value="-proc:none"/>
       <classpath>
         <path refid="compile.classpath"/>
-        <path refid="jspc.classpath"/>
+        <path refid="tomcat.ant.classpath"/>
       </classpath>
     </javac>
   </target>
 
-  <target name="product.gwtc" depends="product.compile,product.war.prepare,product.war.jspc" description="GWT compile to JavaScript (production mode)">
+  <target name="product.gwtc"
+          depends="product.compile,product.war.prepare,product.war.jspc"
+          description="GWT compile to JavaScript (production mode)">
     <java failonerror="true" fork="true" classname="com.google.gwt.dev.Compiler" maxmemory="512m">
       <classpath>
         <pathelement location="${src}"/>

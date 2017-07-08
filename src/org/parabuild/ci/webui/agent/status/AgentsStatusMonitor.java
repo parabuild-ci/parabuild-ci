@@ -188,6 +188,10 @@ public final class AgentsStatusMonitor implements Runnable, Service {
   public void shutdownService() {
     if (pollThread != null) {
       pollThread.interrupt();
+      try {
+        pollThread.join(1000);
+      } catch (final InterruptedException ignored) {
+      }
     }
     serviceStatus = SERVICE_STATUS_NOT_STARTED;
   }

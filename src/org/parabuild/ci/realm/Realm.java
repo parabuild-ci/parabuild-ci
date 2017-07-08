@@ -118,10 +118,8 @@ public final class Realm extends RealmBase {
     }
 
     if (validated) {
-      if (debug >= 2) log(sm.getString("parabuild realm authenticate success", username));
       return principal;
     } else {
-      if (debug >= 2) log(sm.getString("parabuild realm authenticate failure", username));
       return null;
     }
   }
@@ -163,7 +161,7 @@ public final class Realm extends RealmBase {
   // ------------------------------------------------------ Lifecycle Methods
 
 
-  /**
+    /**
    * Prepare for active use of the public methods of this
    * Component.
    *
@@ -171,7 +169,7 @@ public final class Realm extends RealmBase {
    *                            component detects a fatal error that prevents it from being
    *                            started
    */
-  public synchronized void start() throws LifecycleException {
+    protected void startInternal() throws LifecycleException {
 
     // NOTE: simeshev@parabuilci.org - 07/25/2004 - we just create a
     // default user with default password. It does not provide
@@ -182,7 +180,7 @@ public final class Realm extends RealmBase {
     System.setProperty(SystemConstants.SYSTEM_PROPERTY_RELOAD_PRINCIPAL, "false");
 
     // Perform normal superclass initialization
-    super.start();
+    super.startInternal();
   }
 
 
@@ -228,6 +226,7 @@ public final class Realm extends RealmBase {
    *                 this user
    */
   private void addUser(final String username, final String password, final String roles) {
+
     // Accumulate the list of roles for this user
     String rolesToProcess = roles + ',';
     final ArrayList list = new ArrayList(1);
@@ -240,7 +239,7 @@ public final class Realm extends RealmBase {
     }
 
     // Construct and cache the Principal for this user
-    final GenericPrincipal principal = new GenericPrincipal(this, username, password, list);
+    final GenericPrincipal principal = new GenericPrincipal(username, password, list);
     principals.put(username, principal);
   }
 
@@ -260,18 +259,6 @@ public final class Realm extends RealmBase {
 //    String password = System.getProperty(SystemConstants.SYSTEM_PROPERTY_BUILDER_PASSWORD, Long.toString(random.nextLong()));
 //    return password;
 //  }
-
-
-  /**
-   * Gracefully shut down active use of the public methods of
-   * this Component.
-   *
-   * @throws LifecycleException if this
-   *                            component detects a fatal error that needs to be reported
-   */
-  public synchronized void stop() throws LifecycleException { // NOPMD UselessOverridingMethod
-    super.stop();
-  }
 
 
   private void closeHard(final Connection conn1) {

@@ -34,10 +34,11 @@
         <setting name="compilerMaxHeapSize" value="1024" />
         <setting name="gwtScriptOutputStyle" value="DETAILED" />
         <setting name="gwtSdkUrl" value="file://" />
+        <setting name="webFacet" value="Web" />
       </configuration>
     </facet>
   </component>
-  <component name="NewModuleRootManager">
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/temp/classes" />
     <output-test url="file://$MODULE_DIR$/temp/classes" />
     <exclude-output />
@@ -205,7 +206,7 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="Log4j 2.8.2" level="project" />
-    <orderEntry type="library" name="struts2-core-2.3.32" level="project" />
+    <orderEntry type="library" name="struts2-core-2.5.10.1" level="project" />
     <orderEntry type="library" name="GWT" level="project" />
     <orderEntry type="library" name="sitemesh-2.4.2" level="project" />
   </component>

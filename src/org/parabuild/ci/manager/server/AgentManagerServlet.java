@@ -31,7 +31,7 @@ import java.io.IOException;
  * @author Slava Imeshev
  * @since May 22, 2009 9:51:04 PM
  */
-public final class AgentManagerServlet extends ManagerServlet {
+public final class AgentManagerServlet extends org.apache.catalina.manager.ManagerServlet {
 
   private static final long serialVersionUID = -3923303883456454357L;
 

@@ -1,21 +1,40 @@
-<Server port="@serv.port@" shutdown="SHUTDOWN" debug="0">
-  <Listener className="org.apache.catalina.mbeans.ServerLifecycleListener" debug="0" descriptors="/org/parabuild/ci/realm/realm-descriptor.xml"/>
-  <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener" debug="0"/>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Server port="@serv.port@" shutdown="SHUTDOWN">
+  <!--<Listener className="org.apache.catalina.mbeans.ServerLifecycleListener" debug="0" descriptors="/org/parabuild/ci/realm/realm-descriptor.xml"/>-->
+  <!--<Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener" debug="0"/>-->
+  <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener"/>
+  <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener"/>
+  <Listener className="org.apache.catalina.core.ThreadLocalLeakPreventionListener"/>
+
   <Service name="Parabuild">
-    <Connector className="org.apache.catalina.connector.http.HttpConnector"
-               port="@http.port@" minProcessors="1" maxProcessors="75" enableLookups="true"
-               acceptCount="10" debug="0" connectionTimeout="60000"/>
-    <Engine name="Standalone" defaultHost="localhost" debug="0">
-      <Logger className="org.apache.catalina.logger.FileLogger" directory="../logs" prefix="parabuild_server." suffix=".log" timestamp="true"/>
+
+    <Connector protocol="HTTP/1.1" port="@http.port@" connectionTimeout="60000"/>
+
+    <Engine name="Standalone" defaultHost="localhost">
+
       <Realm className="org.parabuild.ci.realm.Realm"/>
-      <Host name="localhost" debug="0" appBase="app" unpackWARs="false" autoDeploy="false" liveDeploy="false">
-        <!-- <Valve className="org.apache.catalina.valves.AccessLogValve" directory="../logs" prefix="parabuild_access." suffix=".log" pattern="common"/> -->
-        <Logger className="org.apache.catalina.logger.FileLogger" directory="../logs" prefix="parabuild_host." suffix=".log" timestamp="true"/>
-        <Context path="" docBase="parabuild.war" debug="0" reloadable="true" privileged="true">
-          <Manager saveOnRestart="false" pathname=""/>
+
+      <!--<Host name="localhost" appBase="app" unpackWARs="false" autoDeploy="false">-->
+      <Host name="localhost" unpackWARs="false" autoDeploy="false">
+
+        <Context path="" docBase="../app/parabuild.war" reloadable="true" privileged="true" distributable="false" tldValidation="false">
+
+          <JarScanner scanAllDirectories="false" scanAllFiles="false" scanClassPath="false"
+                      scanBootstrapClassPath="false" scanManifest="false">
+            <JarScanFilter defaultPluggabilityScan="false" defaultTldScan="false"/>
+          </JarScanner>
+
         </Context>
-        <Context path="/manager" debug="2" privileged="true" docBase="../../lib/server/webapps/parabuild-manager.war">
+
+        <Context path="/manager" docBase="../app/parabuild-manager.war" reloadable="false" privileged="true" distributable="false" tldValidation="false">
+
+          <JarScanner scanAllDirectories="false" scanAllFiles="false" scanClassPath="false" scanBootstrapClassPath="false" scanManifest="false">
+            <JarScanFilter defaultPluggabilityScan="false" defaultTldScan="false"/>
+          </JarScanner>
+
         </Context>
+
       </Host>
     </Engine>
   </Service>

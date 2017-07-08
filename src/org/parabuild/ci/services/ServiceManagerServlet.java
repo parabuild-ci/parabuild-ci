@@ -13,8 +13,6 @@
  */
 package org.parabuild.ci.services;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.Version;
 import org.parabuild.ci.common.StringUtils;
 import org.parabuild.ci.common.ThreadUtils;
@@ -33,6 +31,7 @@ import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import java.lang.management.ManagementFactory;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -43,7 +42,7 @@ import java.util.Set;
 public final class ServiceManagerServlet extends GenericServlet {
 
   private static final long serialVersionUID = 6247201370637762943L; // NOPMD
-  private static final Log log = LogFactory.getLog(ServiceManagerServlet.class);
+//  private static final Log log = LogFactory.getLog(ServiceManagerServlet.class);
   private boolean destroyed = false; // NOPMD
   private final ServiceManager serviceManager = ServiceManager.getInstance();
 
@@ -52,14 +51,14 @@ public final class ServiceManagerServlet extends GenericServlet {
     super.init(servletConfig);
     final String startingMessage = "Starting " + Version.versionToString(true);
     printToStdout(startingMessage);
-    log.info(startingMessage);
+//    log.info(startingMessage);
 
     // init shutdown hook
     final Runnable shutdownHook = new Runnable() {
       public void run() {
         final String shuttingDownMessage = "Shutting down " + Version.versionToString(true);
         printToStdout(shuttingDownMessage);
-        log.info(shuttingDownMessage);
+//        log.info(shuttingDownMessage);
         destroy();
       }
     };
@@ -116,13 +115,18 @@ public final class ServiceManagerServlet extends GenericServlet {
     int port = 8080;
     try {
       // get connectors
-      final MBeanServer mbeanServer = (MBeanServer) getServletContext().getAttribute("org.apache.catalina.MBeanServer");
+      final MBeanServer mbeanServer = ManagementFactory.getPlatformMBeanServer();
+      System.out.println("mbeanServer = " + mbeanServer);
 //      if (log.isDebugEnabled()) log.debug("server: " + mbeanServer);
       final ObjectName objectName = new ObjectName("Catalina:type=Connector,*");
+      //noinspection ControlFlowStatementWithoutBraces
+      System.out.println("objectName = " + objectName);
       final Set mbeans = mbeanServer.queryMBeans(objectName, null);
+      System.out.println("mbeans = " + mbeans);
       // find http connector
       for (final Iterator i = mbeans.iterator(); i.hasNext();) {
         final ObjectInstance mbean = (ObjectInstance) i.next();
+        System.out.println("mbean = " + mbean);
 //        if (log.isDebugEnabled()) log.debug("mbean: " + mbean);
 //        if (log.isDebugEnabled()) log.debug("mbean.getClassName(): " + mbean.getClassName());
 //        if (log.isDebugEnabled()) log.debug("mbean.getObjectName(): " + mbean.getObjectName());
@@ -131,15 +135,15 @@ public final class ServiceManagerServlet extends GenericServlet {
         // is it HTTP connector?
         if (handlerClassName.endsWith("HttpConnector")) {
           port = ((Integer) mbeanServer.getAttribute(mbean.getObjectName(), "port")).intValue();
-          if (log.isDebugEnabled()) {
-            log.debug("port: " + port);
-          }
+//          if (log.isDebugEnabled()) {
+//            log.debug("port: " + port);
+//          }
           break;
         }
       }
     } catch (Exception e) {
       // just log error, default value will be used
-      log.error("Error while getting connector list", e);
+//      log.error("Error while getting connector list", e);
     }
     return port;
   }

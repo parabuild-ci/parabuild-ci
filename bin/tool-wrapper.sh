@@ -20,7 +20,7 @@
 #
 # Environment Variable Prerequisites
 #
-#   CATALINA_HOME   May point at your Catalina "build" directory.
+#   PARABUILD_HOME   May point at your Catalina "build" directory.
 #
 #   TOOL_OPTS       (Optional) Java runtime options.
 #
@@ -60,22 +60,22 @@ done
 # Get standard environment variables
 PRGDIR=`dirname "$PRG"`
 
-# Only set CATALINA_HOME if not already set
-[ -z "$CATALINA_HOME" ] && CATALINA_HOME=`cd "$PRGDIR/.." >/dev/null; pwd`
+# Only set PARABUILD_HOME if not already set
+[ -z "$PARABUILD_HOME" ] && PARABUILD_HOME=`cd "$PRGDIR/.." >/dev/null; pwd`
 
 # Ensure that any user defined CLASSPATH variables are not used on startup,
 # but allow them to be specified in setenv.sh, in rare case when it is needed.
 CLASSPATH=
 
-if [ -r "$CATALINA_HOME/bin/setenv.sh" ]; then
-  . "$CATALINA_HOME/bin/setenv.sh"
+if [ -r "$PARABUILD_HOME/bin/setenv.sh" ]; then
+  . "$PARABUILD_HOME/bin/setenv.sh"
 fi
 
 # For Cygwin, ensure paths are in UNIX format before anything is touched
 if $cygwin; then
   [ -n "$JAVA_HOME" ] && JAVA_HOME=`cygpath --unix "$JAVA_HOME"`
   [ -n "$JRE_HOME" ] && JRE_HOME=`cygpath --unix "$JRE_HOME"`
-  [ -n "$CATALINA_HOME" ] && CATALINA_HOME=`cygpath --unix "$CATALINA_HOME"`
+  [ -n "$PARABUILD_HOME" ] && PARABUILD_HOME=`cygpath --unix "$PARABUILD_HOME"`
   [ -n "$CLASSPATH" ] && CLASSPATH=`cygpath --path --unix "$CLASSPATH"`
 fi
 
@@ -97,12 +97,12 @@ if $os400; then
   # 1. owned by the user
   # 2. owned by the PRIMARY group of the user
   # this will not work if the user belongs in secondary groups
-  . "$CATALINA_HOME"/bin/setclasspath.sh
+  . "$PARABUILD_HOME"/bin/setclasspath.sh
 else
-  if [ -r "$CATALINA_HOME"/bin/setclasspath.sh ]; then
-    . "$CATALINA_HOME"/bin/setclasspath.sh
+  if [ -r "$PARABUILD_HOME"/bin/setclasspath.sh ]; then
+    . "$PARABUILD_HOME"/bin/setclasspath.sh
   else
-    echo "Cannot find $CATALINA_HOME/bin/setclasspath.sh"
+    echo "Cannot find $PARABUILD_HOME/bin/setclasspath.sh"
     echo "This file is needed to run this program"
     exit 1
   fi
@@ -112,13 +112,13 @@ fi
 if [ ! -z "$CLASSPATH" ] ; then
   CLASSPATH="$CLASSPATH":
 fi
-CLASSPATH="$CLASSPATH""$CATALINA_HOME"/bin/bootstrap.jar:"$CATALINA_HOME"/bin/tomcat-juli.jar:"$CATALINA_HOME"/lib/servlet-api.jar:"$CATALINA_HOME"/lib/tomcat-util.jar
+CLASSPATH="$CLASSPATH""$PARABUILD_HOME"/bin/bootstrap.jar:"$PARABUILD_HOME"/bin/tomcat-juli.jar:"$PARABUILD_HOME"/lib/servlet-api.jar:"$PARABUILD_HOME"/lib/tomcat-util.jar
 
 # For Cygwin, switch paths to Windows format before running java
 if $cygwin; then
   JAVA_HOME=`cygpath --absolute --windows "$JAVA_HOME"`
   JRE_HOME=`cygpath --absolute --windows "$JRE_HOME"`
-  CATALINA_HOME=`cygpath --absolute --windows "$CATALINA_HOME"`
+  PARABUILD_HOME=`cygpath --absolute --windows "$PARABUILD_HOME"`
   CLASSPATH=`cygpath --path --windows "$CLASSPATH"`
 fi
 
@@ -128,5 +128,5 @@ JAVA_OPTS="$JAVA_OPTS -Djava.util.logging.manager=org.apache.juli.ClassLoaderLog
 
 exec "$_RUNJAVA" $JAVA_OPTS $TOOL_OPTS \
   -classpath "$CLASSPATH" \
-  -Dcatalina.home="$CATALINA_HOME" \
+  -Dcatalina.home="$PARABUILD_HOME" \
   org.apache.catalina.startup.Tool "$@"

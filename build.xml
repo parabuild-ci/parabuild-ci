@@ -91,29 +91,29 @@
   <!-- Struts -->
 
   <!--
-  commons-fileupload-1.3.2.jar	commons-lang3-3.2.jar		freemarker-2.3.22.jar		ognl-3.0.19.jar		**	xwork-core-2.3.32.jar
-commons-io-2.2.jar		commons-logging-1.1.3.jar	javassist-3.11.0.GA.jar		struts2-core-2.3.32.jar
+  commons-fileupload-1.3.2.jar	commons-lang3-3.2.jar		freemarker-2.3.22.jar		ognl-3.0.19.jar		**	xwork-core-2.5.10.1.jar
+commons-io-2.2.jar		commons-logging-1.1.3.jar	javassist-3.11.0.GA.jar		struts2-core-2.5.10.1.jar
   -->
 
-  <property name="struts.lib" value="${3rdparty}/struts-2.3.32-lib/lib"/>
+  <property name="struts.lib" value="${3rdparty}/struts-2.5.10.1/lib"/>
   <property name="commons-fileupload-1.3.2.jar" value="${struts.lib}/commons-fileupload-1.3.2.jar"/>
-  <property name="commons-io-2.2.jar" value="${struts.lib}/commons-io-2.2.jar"/>
-  <property name="commons-lang3-3.2.jar" value="${struts.lib}/commons-lang3-3.2.jar"/>
-  <property name="freemarker-2.3.22.jar" value="${struts.lib}/freemarker-2.3.22.jar"/>
-  <property name="javassist-3.11.0.GA.jar" value="${struts.lib}/javassist-3.11.0.GA.jar"/>
+  <property name="commons-io-2.4.jar" value="${struts.lib}/commons-io-2.4.jar"/>
+  <property name="commons-lang3-3.4.jar" value="${struts.lib}/commons-lang3-3.4.jar"/>
+  <property name="freemarker-2.3.23.jar" value="${struts.lib}/freemarker-2.3.23.jar"/>
+  <property name="javassist.jar" value="${struts.lib}/javassist-3.20.0-GA.jar"/>
   <property name="log4j-1.2-api-2.8.2.jar" value="${3rdparty}/apache-log4j-2.8.2-bin/log4j-1.2-api-2.8.2.jar"/>
   <property name="log4j-api-2.8.2.jar" value="${3rdparty}/apache-log4j-2.8.2-bin/log4j-api-2.8.2.jar"/>
   <property name="log4j-core-2.8.2.jar" value="${3rdparty}/apache-log4j-2.8.2-bin/log4j-core-2.8.2.jar"/>
-  <property name="ognl-3.0.19.jar" value="${struts.lib}/ognl-3.0.19.jar"/>
-  <property name="struts2-core-2.3.32.jar" value="${struts.lib}/struts2-core-2.3.32.jar"/>
-  <property name="xwork-core-2.3.32.jar" value="${struts.lib}/xwork-core-2.3.32.jar"/>
-  <property name="struts2-sitemesh-plugin-2.3.32.jar" value="${struts.lib}/struts2-sitemesh-plugin-2.3.32.jar"/>
+  <property name="ognl-3.1.12.jar" value="${struts.lib}/ognl-3.1.12.jar"/>
+  <property name="struts2-core-2.5.10.1.jar" value="${struts.lib}/struts2-core-2.5.10.1.jar"/>
+  <property name="xwork-core-2.5.10.1.jar" value="${struts.lib}/xwork-core-2.5.10.1.jar"/>
+  <property name="struts2-sitemesh-plugin-2.5.10.1.jar" value="${struts.lib}/struts2-sitemesh-plugin-2.5.10.1.jar"/>
 
   <!-- Sitemesh -->
   <property name="sitemesh.jar" value="${3rdparty}/sitemesh/sitemesh-2.4.2.jar"/>
 
   <!-- GWT -->
-  <property name="gwt.sdk" location="${3rdparty}/gwt-2.8.1" />
+  <property name="gwt.sdk" location="${3rdparty}/gwt-2.8.1"/>
   <property name="gwt-servlet.jar" value="${gwt.sdk}/gwt-servlet.jar"/>
   <property name="gwt-servlet-deps.jar" value="${gwt.sdk}/gwt-servlet-deps.jar"/>
   <property name="gwt-user.jar" value="${gwt.sdk}/gwt-user.jar"/>
@@ -127,17 +127,17 @@ commons-io-2.2.jar		commons-logging-1.1.3.jar	javassist-3.11.0.GA.jar		struts2-c
     <pathelement path="${clover.jar}"/>
     <pathelement path="${commons-collections.jar}"/>
     <pathelement path="${commons-fileupload-1.3.2.jar}"/>
-    <pathelement path="${commons-io-2.2.jar}"/>
-    <pathelement path="${commons-lang3-3.2.jar}"/>
+    <pathelement path="${commons-io-2.4.jar}"/>
+    <pathelement path="${commons-lang3-3.4.jar}"/>
     <pathelement path="${commons-logging.jar}"/>
     <pathelement path="${concurrent.jar}"/>
     <pathelement path="${dom4j.jar}"/>
     <pathelement path="${ehcache.jar}"/>
-    <pathelement path="${freemarker-2.3.22.jar}"/>
+    <pathelement path="${freemarker-2.3.23.jar}"/>
     <pathelement path="${hessian.jar}"/>
     <pathelement path="${hibernate2.jar}"/>
     <pathelement path="${hsqldb.jar}"/>
-    <pathelement path="${javassist-3.11.0.GA.jar}"/>
+    <pathelement path="${javassist.jar}"/>
     <pathelement path="${jaxen.jar}"/>
     <pathelement path="${jaxrpc.jar}"/>
     <pathelement path="${jcommon.jar}"/>
@@ -149,7 +149,7 @@ commons-io-2.2.jar		commons-logging-1.1.3.jar	javassist-3.11.0.GA.jar		struts2-c
     <pathelement path="${lucene.jar}"/>
     <pathelement path="${mail.jar}"/>
     <pathelement path="${msnm.jar}"/>
-    <pathelement path="${ognl-3.0.19.jar}"/>
+    <pathelement path="${ognl-3.1.12.jar}"/>
     <pathelement path="${quartz.jar}"/>
     <pathelement path="${rome.jar}"/>
     <pathelement path="${saaj.jar}"/>
@@ -158,8 +158,8 @@ commons-io-2.2.jar		commons-logging-1.1.3.jar	javassist-3.11.0.GA.jar		struts2-c
     <pathelement path="${servlet.jar}"/>
     <pathelement path="${smack.jar}"/>
     <pathelement path="${smtp.jar}"/>
-    <pathelement path="${struts2-core-2.3.32.jar}"/>
-    <pathelement path="${xwork-core-2.3.32.jar}"/>
+    <pathelement path="${struts2-core-2.5.10.1.jar}"/>
+    <pathelement path="${xwork-core-2.5.10.1.jar}"/>
     <pathelement path="${viewtier.jar}"/>
     <pathelement path="${xerces.jar}"/>
     <pathelement path="${xmlapis.jar}"/>
@@ -202,12 +202,9 @@ commons-io-2.2.jar		commons-logging-1.1.3.jar	javassist-3.11.0.GA.jar		struts2-c
   <property name="test.classpath" refid="test.classpath"/>
 
 
-  <path id="jspc.classpath">
-    <pathelement location="${java.home}/../lib/tools.jar"/>
-    <fileset dir="${tomcat.home}">
-      <include name="server/lib/*.jar"/>
-      <include name="common/lib/*.jar"/>
-    </fileset>
+  <path id="tomcat.ant.classpath">
+    <fileset file="${tomcat.home}/bin/tomcat-juli.jar"/>
+    <fileset dir="${tomcat.home}/lib" includes="*.jar"/>
   </path>
 
 
@@ -240,9 +237,13 @@ commons-io-2.2.jar		commons-logging-1.1.3.jar	javassist-3.11.0.GA.jar		struts2-c
   <taskdef name="if" classname="ise.antelope.tasks.IfTask" classpath="${anthelope.jar}"/>
   <taskdef name="switch" classname="ise.antelope.tasks.SwitchTask" classpath="${anthelope.jar}"/>
   <taskdef name="antfetch" classname="ise.antelope.tasks.AntFetch" classpath="${anthelope.jar}"/>
-  <taskdef name="jasper2" classname="org.apache.jasper.JspC" classpathref="jspc.classpath"/>
   <taskdef name="dbunit" classname="org.dbunit.ant.DbUnitTask" classpath="${dbunit.jar}"/>
   <taskdef name="repeat" classname="ise.antelope.tasks.Repeat" classpath="${3rdparty}/anthelope3210/AntelopeTasks_3.2.10.jar"/>
+  <taskdef name="jasper" classname="org.apache.jasper.JspC" classpathref="tomcat.ant.classpath"/>
+  <taskdef name="deploy" classname="org.apache.catalina.ant.DeployTask" classpathref="tomcat.ant.classpath"/>
+  <taskdef name="reload" classname="org.apache.catalina.ant.ReloadTask" classpathref="tomcat.ant.classpath"/>
+  <taskdef name="undeploy" classname="org.apache.catalina.ant.UndeployTask" classpathref="tomcat.ant.classpath"/>
+  <taskdef name="stop" classname="org.apache.catalina.ant.StopTask" classpathref="tomcat.ant.classpath"/>
 
   <!-- Configure version -->
   <target name="version">
@@ -250,15 +251,14 @@ commons-io-2.2.jar		commons-logging-1.1.3.jar	javassist-3.11.0.GA.jar		struts2-c
     <!-- Set version -->
     <property name="release.major" value="4"/>
     <property name="release.minor" value="5"/>
-    <property name="release.patch" value="0" />
-    <property name="release.version" value="${release.major}.${release.minor}.${release.patch}" />
+    <property name="release.patch" value="0"/>
+    <property name="release.version" value="${release.major}.${release.minor}.${release.patch}"/>
 
     <!-- Set version information -->
     <tstamp>
       <!-- Do not change this format - ParabuildPreInstallAction depends on it -->
       <format property="release.date" pattern="dd MMM yyyy HH:mm" locale="en"/>
     </tstamp>
-
 
 
     <if name="do.release.build" value="true">

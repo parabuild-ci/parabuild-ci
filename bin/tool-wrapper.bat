@@ -19,7 +19,7 @@ rem Wrapper script for command line tools
 rem
 rem Environment Variable Prerequisites
 rem
-rem   CATALINA_HOME   May point at your Catalina "build" directory.
+rem   PARABUILD_HOME   May point at your Parabuild "build" directory.
 rem
 rem   TOOL_OPTS       (Optional) Java runtime options.
 rem
@@ -35,17 +35,17 @@ rem ---------------------------------------------------------------------------
 
 setlocal
 
-rem Guess CATALINA_HOME if not defined
+rem Guess PARABUILD_HOME if not defined
 set "CURRENT_DIR=%cd%"
-if not "%CATALINA_HOME%" == "" goto gotHome
-set "CATALINA_HOME=%CURRENT_DIR%"
-if exist "%CATALINA_HOME%\bin\tool-wrapper.bat" goto okHome
+if not "%PARABUILD_HOME%" == "" goto gotHome
+set "PARABUILD_HOME=%CURRENT_DIR%"
+if exist "%PARABUILD_HOME%\bin\tool-wrapper.bat" goto okHome
 cd ..
-set "CATALINA_HOME=%cd%"
+set "PARABUILD_HOME=%cd%"
 cd "%CURRENT_DIR%"
 :gotHome
-if exist "%CATALINA_HOME%\bin\tool-wrapper.bat" goto okHome
-echo The CATALINA_HOME environment variable is not defined correctly
+if exist "%PARABUILD_HOME%\bin\tool-wrapper.bat" goto okHome
+echo The PARABUILD_HOME environment variable is not defined correctly
 echo This environment variable is needed to run this program
 goto end
 :okHome
@@ -55,15 +55,15 @@ rem but allow them to be specified in setenv.bat, in rare case when it is needed
 set CLASSPATH=
 
 rem Get standard environment variables
-if exist "%CATALINA_HOME%\bin\setenv.bat" call "%CATALINA_HOME%\bin\setenv.bat"
+if exist "%PARABUILD_HOME%\bin\setenv.bat" call "%PARABUILD_HOME%\bin\setenv.bat"
 
 rem Get standard Java environment variables
-if exist "%CATALINA_HOME%\bin\setclasspath.bat" goto okSetclasspath
-echo Cannot find "%CATALINA_HOME%\bin\setclasspath.bat"
+if exist "%PARABUILD_HOME%\bin\setclasspath.bat" goto okSetclasspath
+echo Cannot find "%PARABUILD_HOME%\bin\setclasspath.bat"
 echo This file is needed to run this program
 goto end
 :okSetclasspath
-call "%CATALINA_HOME%\bin\setclasspath.bat" %1
+call "%PARABUILD_HOME%\bin\setclasspath.bat" %1
 if errorlevel 1 goto end
 
 rem Add on extra jar files to CLASSPATH
@@ -72,7 +72,7 @@ rem quotes into the CLASSPATH
 if "%CLASSPATH%" == "" goto emptyClasspath
 set "CLASSPATH=%CLASSPATH%;"
 :emptyClasspath
-set "CLASSPATH=%CLASSPATH%%CATALINA_HOME%\bin\bootstrap.jar;%CATALINA_HOME%\bin\tomcat-juli.jar;%CATALINA_HOME%\lib\servlet-api.jar;%CATALINA_HOME%\lib\tomcat-util.jar"
+set "CLASSPATH=%CLASSPATH%%PARABUILD_HOME%\bin\bootstrap.jar;%PARABUILD_HOME%\bin\tomcat-juli.jar;%PARABUILD_HOME%\lib\servlet-api.jar;%PARABUILD_HOME%\lib\tomcat-util.jar"
 
 set JAVA_OPTS=%JAVA_OPTS% -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
 
@@ -85,6 +85,6 @@ shift
 goto setArgs
 :doneSetArgs
 
-%_RUNJAVA% %JAVA_OPTS% %TOOL_OPTS% -classpath "%CLASSPATH%" -Dcatalina.home="%CATALINA_HOME%" org.apache.catalina.startup.Tool %CMD_LINE_ARGS%
+%_RUNJAVA% %JAVA_OPTS% %TOOL_OPTS% -classpath "%CLASSPATH%" -Dcatalina.home="%PARABUILD_HOME%" org.apache.catalina.startup.Tool %CMD_LINE_ARGS%
 
 :end

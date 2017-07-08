@@ -9,7 +9,7 @@
     <dir location="${java.home}/bin" required="yes" path="yes"/>
 
     <!-- Ant -->
-    <dir property="ant.home" required="yes" location="3rdparty/ant153"/>
+    <dir property="ant.home" required="yes" location="3rdparty/apache-ant-1.9.9"/>
     <dir location="${ant.home}/bin" required="yes" path="yes"/>
 
     <!-- Accurev -->
@@ -48,7 +48,7 @@
     <dir property="test.src" location="${test.home}/src" required="yes" build="yes"/>
     <dir property="test.config" location="${test.home}/config" required="yes" build="yes"/>
     <dir property="test.data" location="${test.home}/data" required="yes" build="yes"/>
-    <dir property="tomcat.home" location="${3rdparty}/tomcat4131" required="yes" build="yes"/>
+    <dir property="tomcat.home" location="${3rdparty}/apache-tomcat-8.5.15" required="yes" build="yes"/>
     <dir property="junit.home" location="${3rdparty}/junit37" required="yes"/>
     <dir property="cactus.home" location="${3rdparty}/cactus141j2ee13" required="yes" build="yes"/>
     <dir property="wincvs.home" location="${3rdparty}/wincvs12" required="yes" path="yes"/>
@@ -75,35 +75,26 @@
 
     <!-- Log4J -->
     <dir property="log4j.home" location="${3rdparty}/apache-log4j-2.8.2-bin" required="yes" build="no"/>
-    <file property="log4j-1.2-api-2.8.2.jar" classpath="yes" required="yes" location="${log4j.home}/log4j-1.2-api-2.8.2.jar" build="yes"/>
-    <file property="log4j-api-2.8.2.jar" classpath="yes" required="yes" location="${log4j.home}/log4j-api-2.8.2.jar" build="yes"/>
-    <file property="log4j-core-2.8.2.jar" classpath="yes" required="yes" location="${log4j.home}/log4j-core-2.8.2.jar" build="yes"/>
+    <file property="log4j-1.2-api-2.8.2.jar" classpath="no" required="yes" location="${log4j.home}/log4j-1.2-api-2.8.2.jar" build="yes"/>
+    <file property="log4j-api-2.8.2.jar" classpath="no" required="yes" location="${log4j.home}/log4j-api-2.8.2.jar" build="yes"/>
+    <file property="log4j-core-2.8.2.jar" classpath="no" required="yes" location="${log4j.home}/log4j-core-2.8.2.jar" build="yes"/>
 
     <!-- test time dirs, all optional as they don't exist at clean check out -->
     <dir property="test.tomcat" location="${project.home}/temp/test_run_manager" required="no"/>
     <dir location="${test.tomcat}/bin" required="no" path="yes"/>
-    <dir location="${test.tomcat}/bin/win" required="no" path="yes"/>
-    <dir location="${test.tomcat}/bin/linux386" required="no" path="yes"/>
 
     <!-- Files -->
     <file property="dbunit.jar" required="yes" location="${dbunit.home}/dbunit-2.1.jar" build="yes"/>
     <file property="viewtier.jar" required="yes" location="${viewtier.lib}/viewtier.jar" build="yes"/>
     <file property="resgen.jar" required="yes" location="${viewtier.lib}/resgen_at_739.jar" build="yes"/>
-    <file property="xerces.jar" required="yes" location="${tomcat.home}/common/endorsed/xercesImpl.jar" build="yes"/>
-    <file property="xmlapis.jar" required="yes" location="${tomcat.home}/common/endorsed/xmlParserAPIs.jar" build="yes"/>
-    <file property="servlet.jar" required="yes" location="${tomcat.home}/common/lib/servlet.jar" build="yes"/>
-    <file property="naming-resources.jar" required="yes" location="${tomcat.home}/common/lib/naming-resources.jar" build="yes"/>
-    <file property="jmx.jar" required="yes" location="${tomcat.home}/server/lib/mx4j-jmx.jar" build="yes"/>
-    <file property="catalina.jar" required="yes" location="${tomcat.home}/server/lib/catalina.jar" build="yes"/>
-    <file property="servlets-manager.jar" required="yes" location="${tomcat.home}/server/lib/servlets-manager.jar" build="yes"/>
-    <file property="servlets-common.jar" required="yes" location="${tomcat.home}/server/lib/servlets-common.jar" build="yes"/>
+    <file property="servlet.jar" required="yes" location="${tomcat.home}/lib/servlet-api.jar" build="yes"/>
     <file property="junit.jar" location="${junit.home}/junit.jar" required="yes" classpath="yes" build="yes"/>
     <file property="cactus.jar" required="yes" location="${cactus.home}/lib/cactus-1.4.1.jar" build="yes"/>
     <file property="cactus.ant.jar" required="yes" location="${cactus.home}/lib/cactus-ant-1.4.1.jar" build="yes"/>
     <file property="commons-httpclient.jar" required="yes" location="${cactus.home}/lib/commons-httpclient-2.0alpha1-20020606.jar" build="yes"/>
     <file property="aspectjrt.jar" required="yes" location="${cactus.home}/lib/aspectjrt-1.0.5.jar" build="yes"/>
     <file property="httpclient.jar" required="yes" location="${cactus.home}/lib/commons-httpclient-2.0alpha1-20020606.jar" build="yes"/>
-    <file property="anthelope.jar" required="yes" location="${3rdparty}/anthelope255/AntelopeTasks.jar" build="yes"/>
+    <file property="anthelope.jar" required="yes" location="${3rdparty}/antelope-tasks-3.5.1/AntelopeTasks_3.5.1.jar" build="yes"/>
     <!--<file property="log4j.jar" required="yes" location="${cactus.home}/lib/log4j-1.2.5.jar" build="yes"/>-->
     <file property="gbase.jar" required="yes" location="${3rdparty}/gbase20/gsbase-2.0.jar" build="yes"/>
     <file property="activation.jar" required="yes" location="${3rdparty}/jaf102/activation.jar" build="yes"/>
@@ -137,13 +128,16 @@
     <file property="commons-collections.jar" required="yes" location="${hibernate.lib}/commons-collections-2.1.1.jar" build="yes"/>
     <file property="commons-dbcp.jar" required="yes" location="${hibernate.lib}/commons-dbcp-1.2.1.jar" build="yes"/>
     <file property="commons-lang.jar" required="yes" location="${hibernate.lib}/commons-lang-1.0.1.jar" build="yes"/>
-    <file property="commons-logging.jar" required="yes" location="${hibernate.lib}/commons-logging-1.0.4.jar" build="yes"/>
     <file property="commons-pool.jar" required="yes" location="${hibernate.lib}/commons-pool-1.2.jar" build="yes"/>
     <file property="dom4j.jar" required="yes" location="${hibernate.lib}/dom4j-1.4.jar" build="yes"/>
     <file property="hibernate2.jar" required="yes" location="${hibernate.home}/hibernate2.jar" build="yes"/>
     <file property="xalan.jar" required="yes" location="${hibernate.lib}/xalan-2.4.0.jar" build="yes"/>
     <file property="xml-apis.jar" required="yes" location="${hibernate.lib}/xml-apis.jar" build="yes"/>
     <file property="odmg.jar" required="yes" location="${hibernate.lib}/odmg-3.0.jar" build="yes"/>
+    <file property="jta.jar" required="yes" location="${3rdparty}/jta-spec1_0_1/jta-spec1_0_1.jar" build="yes"/>
+
+    <!-- Commons logging -->
+    <file property="commons-logging.jar" required="yes" location="${3rdparty}/commons-logging-1.2/commons-logging-1.2.jar" build="yes"/>
 
     <!-- echcache -->
     <dir property="ehcache.home" location="${3rdparty}/ehcache10" required="yes"/>
@@ -233,7 +227,6 @@
     <file property="jaas.license" required="true" location="${hibernate.home}/lib/jaas.licence.txt" build="yes"/>
     <file property="jdbc2_0-stdext.license" required="true" location="${hibernate.home}/lib/jdbc2_0-stdext.licence.txt" build="yes"/>
     <file property="jta.license" required="true" location="${hibernate.home}/lib/jta.licence.txt" build="yes"/>
-    <file property="mx4j.license" required="yes" location="${tomcat.home}/server/lib/mx4j.license" build="yes"/>
     <file property="jaxen.license" required="yes" location="${jaxen.home}/LICENSE.txt" build="yes"/>
     <file property="lucene.license" required="yes" location="${lucene.home}/LICENSE.txt" build="yes"/>
     <file property="jade.license" required="yes" location="${jade.home}/doc/license.txt" build="yes"/>

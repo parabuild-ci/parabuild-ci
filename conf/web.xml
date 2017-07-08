@@ -1,11 +1,16 @@
-<!DOCTYPE web-app PUBLIC  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
-<web-app>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1" metadata-complete="true">
+
+    <absolute-ordering />
+
     <display-name>Parabuild</display-name>
 
     <filter>
         <filter-name>struts-prepare</filter-name>
-        <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareFilter</filter-class>
+        <filter-class>org.apache.struts2.dispatcher.filter.StrutsPrepareFilter</filter-class>
     </filter>
 
     <filter>
@@ -15,7 +20,7 @@
 
     <filter>
         <filter-name>struts-execute</filter-name>
-        <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsExecuteFilter</filter-class>
+        <filter-class>org.apache.struts2.dispatcher.filter.StrutsExecuteFilter</filter-class>
     </filter>
 
     <filter-mapping>
@@ -34,7 +39,7 @@
     </filter-mapping>
 
     <listener>
-        <listener-class>org.apache.struts2.dispatcher.ng.listener.StrutsListener</listener-class>
+        <listener-class>org.apache.struts2.dispatcher.listener.StrutsListener</listener-class>
     </listener>
 
     <listener>
@@ -169,7 +174,11 @@
     <!-- GWT -->
     <servlet>
         <servlet-name>greetServlet</servlet-name>
-        <servlet-class>org.parabuild.ci.webui.repository.server.GreetingServiceImpl</servlet-class>
+        <servlet-class>org.parabuild.ci.webui.repository.server.RepositoryServiceImpl</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>org.parabuild.ci.webui.repository.Repository RepositoryService</servlet-name>
+        <servlet-class>org.parabuild.ci.webui.repository.server.RepositoryServiceImpl</servlet-class>
     </servlet>
 
 
@@ -274,6 +283,10 @@
     <servlet-mapping>
         <servlet-name>dwr-invoker</servlet-name>
         <url-pattern>/parabuild/dwr/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>org.parabuild.ci.webui.repository.Repository RepositoryService</servlet-name>
+        <url-pattern>/repository/calendar</url-pattern>
     </servlet-mapping>
 
     <!-- Begin test configuration @start.test.config@

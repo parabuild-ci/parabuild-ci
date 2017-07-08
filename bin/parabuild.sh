@@ -28,42 +28,42 @@ done
 # Get standard environment variables
 PRGDIR=`dirname "$PRG"`
 
-# Set CATALINA_HOME
-CATALINA_HOME=`cd "$PRGDIR/.." >/dev/null; pwd`
+# Set PARABUILD_HOME
+PARABUILD_HOME=`cd "$PRGDIR/.." >/dev/null; pwd`
 
-# Set CATALINA_BASE from CATALINA_HOME
-CATALINA_BASE="$CATALINA_HOME"
+# Set PARABUILD_BASE from PARABUILD_HOME
+PARABUILD_BASE="$PARABUILD_HOME/etc"
 
 # Ensure that any user defined CLASSPATH variables are not used on startup,
 # but allow them to be specified in setenv.sh, in rare case when it is needed.
 CLASSPATH=
 
-if [ -r "$CATALINA_BASE/bin/setenv.sh" ]; then
-  . "$CATALINA_BASE/bin/setenv.sh"
-elif [ -r "$CATALINA_HOME/bin/setenv.sh" ]; then
-  . "$CATALINA_HOME/bin/setenv.sh"
+if [ -r "$PARABUILD_BASE/bin/setenv.sh" ]; then
+  . "$PARABUILD_BASE/bin/setenv.sh"
+elif [ -r "$PARABUILD_HOME/bin/setenv.sh" ]; then
+  . "$PARABUILD_HOME/bin/setenv.sh"
 fi
 
 # For Cygwin, ensure paths are in UNIX format before anything is touched
 if $cygwin; then
   [ -n "$JAVA_HOME" ] && JAVA_HOME=`cygpath --unix "$JAVA_HOME"`
   [ -n "$JRE_HOME" ] && JRE_HOME=`cygpath --unix "$JRE_HOME"`
-  [ -n "$CATALINA_HOME" ] && CATALINA_HOME=`cygpath --unix "$CATALINA_HOME"`
-  [ -n "$CATALINA_BASE" ] && CATALINA_BASE=`cygpath --unix "$CATALINA_BASE"`
+  [ -n "$PARABUILD_HOME" ] && PARABUILD_HOME=`cygpath --unix "$PARABUILD_HOME"`
+  [ -n "$PARABUILD_BASE" ] && PARABUILD_BASE=`cygpath --unix "$PARABUILD_BASE"`
   [ -n "$CLASSPATH" ] && CLASSPATH=`cygpath --path --unix "$CLASSPATH"`
 fi
 
-# Ensure that neither CATALINA_HOME nor CATALINA_BASE contains a colon
+# Ensure that neither PARABUILD_HOME nor PARABUILD_BASE contains a colon
 # as this is used as the separator in the classpath and Java provides no
 # mechanism for escaping if the same character appears in the path.
-case $CATALINA_HOME in
-  *:*) echo "Using CATALINA_HOME:   $CATALINA_HOME";
-       echo "Unable to start as CATALINA_HOME contains a colon (:) character";
+case $PARABUILD_HOME in
+  *:*) echo "Using PARABUILD_HOME:   $PARABUILD_HOME";
+       echo "Unable to start as PARABUILD_HOME contains a colon (:) character";
        exit 1;
 esac
-case $CATALINA_BASE in
-  *:*) echo "Using CATALINA_BASE:   $CATALINA_BASE";
-       echo "Unable to start as CATALINA_BASE contains a colon (:) character";
+case $PARABUILD_BASE in
+  *:*) echo "Using PARABUILD_BASE:   $PARABUILD_BASE";
+       echo "Unable to start as PARABUILD_BASE contains a colon (:) character";
        exit 1;
 esac
 
@@ -85,12 +85,12 @@ if $os400; then
   # 1. owned by the user
   # 2. owned by the PRIMARY group of the user
   # this will not work if the user belongs in secondary groups
-  . "$CATALINA_HOME"/bin/setclasspath.sh
+  . "$PARABUILD_HOME"/bin/setclasspath.sh
 else
-  if [ -r "$CATALINA_HOME"/bin/setclasspath.sh ]; then
-    . "$CATALINA_HOME"/bin/setclasspath.sh
+  if [ -r "$PARABUILD_HOME"/bin/setclasspath.sh ]; then
+    . "$PARABUILD_HOME"/bin/setclasspath.sh
   else
-    echo "Cannot find $CATALINA_HOME/bin/setclasspath.sh"
+    echo "Cannot find $PARABUILD_HOME/bin/setclasspath.sh"
     echo "This file is needed to run this program"
     exit 1
   fi
@@ -100,23 +100,23 @@ fi
 if [ ! -z "$CLASSPATH" ] ; then
   CLASSPATH="$CLASSPATH":
 fi
-CLASSPATH="$CLASSPATH""$CATALINA_HOME"/bin/bootstrap.jar
+CLASSPATH="$CLASSPATH""$PARABUILD_HOME"/bin/bootstrap.jar
 
-if [ -z "$CATALINA_OUT" ] ; then
-  CATALINA_OUT="$CATALINA_BASE"/logs/catalina.out
+if [ -z "$PARABUILD_OUT" ] ; then
+  PARABUILD_OUT="$PARABUILD_BASE"/logs/catalina.out
 fi
 
-if [ -z "$CATALINA_TMPDIR" ] ; then
-  # Define the java.io.tmpdir to use for Catalina
-  CATALINA_TMPDIR="$CATALINA_BASE"/temp
+if [ -z "$PARABUILD_TMPDIR" ] ; then
+  # Define the java.io.tmpdir to use for Parabuild
+  PARABUILD_TMPDIR="$PARABUILD_BASE"/temp
 fi
 
 # Add tomcat-juli.jar to classpath
 # tomcat-juli.jar can be over-ridden per instance
-if [ -r "$CATALINA_BASE/bin/tomcat-juli.jar" ] ; then
-  CLASSPATH=$CLASSPATH:$CATALINA_BASE/bin/tomcat-juli.jar
+if [ -r "$PARABUILD_BASE/bin/tomcat-juli.jar" ] ; then
+  CLASSPATH=$CLASSPATH:$PARABUILD_BASE/bin/tomcat-juli.jar
 else
-  CLASSPATH=$CLASSPATH:$CATALINA_HOME/bin/tomcat-juli.jar
+  CLASSPATH=$CLASSPATH:$PARABUILD_HOME/bin/tomcat-juli.jar
 fi
 
 # Bugzilla 37848: When no TTY is available, don't output to console
@@ -129,9 +129,9 @@ fi
 if $cygwin; then
   JAVA_HOME=`cygpath --absolute --windows "$JAVA_HOME"`
   JRE_HOME=`cygpath --absolute --windows "$JRE_HOME"`
-  CATALINA_HOME=`cygpath --absolute --windows "$CATALINA_HOME"`
-  CATALINA_BASE=`cygpath --absolute --windows "$CATALINA_BASE"`
-  CATALINA_TMPDIR=`cygpath --absolute --windows "$CATALINA_TMPDIR"`
+  PARABUILD_HOME=`cygpath --absolute --windows "$PARABUILD_HOME"`
+  PARABUILD_BASE=`cygpath --absolute --windows "$PARABUILD_BASE"`
+  PARABUILD_TMPDIR=`cygpath --absolute --windows "$PARABUILD_TMPDIR"`
   CLASSPATH=`cygpath --path --windows "$CLASSPATH"`
 fi
 
@@ -144,8 +144,8 @@ JAVA_OPTS="$JAVA_OPTS -Djava.protocol.handler.pkgs=org.apache.catalina.webresour
 
 # Set juli LogManager config file if it is present and an override has not been issued
 if [ -z "$LOGGING_CONFIG" ]; then
-  if [ -r "$CATALINA_BASE"/conf/logging.properties ]; then
-    LOGGING_CONFIG="-Djava.util.logging.config.file=$CATALINA_BASE/conf/logging.properties"
+  if [ -r "$PARABUILD_BASE"/conf/logging.properties ]; then
+    LOGGING_CONFIG="-Djava.util.logging.config.file=$PARABUILD_BASE/conf/logging.properties"
   else
     # Bugzilla 45585
     LOGGING_CONFIG="-Dnop"
@@ -182,17 +182,17 @@ fi
 
 # Bugzilla 37848: only output this if we have a TTY
 if [ $have_tty -eq 1 ]; then
-  echo "Using CATALINA_BASE:   $CATALINA_BASE"
-  echo "Using CATALINA_HOME:   $CATALINA_HOME"
-  echo "Using CATALINA_TMPDIR: $CATALINA_TMPDIR"
+  echo "Using PARABUILD_BASE:   $PARABUILD_BASE"
+  echo "Using PARABUILD_HOME:   $PARABUILD_HOME"
+  echo "Using PARABUILD_TMPDIR: $PARABUILD_TMPDIR"
   if [ "$1" = "debug" ] ; then
     echo "Using JAVA_HOME:       $JAVA_HOME"
   else
     echo "Using JRE_HOME:        $JRE_HOME"
   fi
   echo "Using CLASSPATH:       $CLASSPATH"
-  if [ ! -z "$CATALINA_PID" ]; then
-    echo "Using CATALINA_PID:    $CATALINA_PID"
+  if [ ! -z "$PARABUILD_PID" ]; then
+    echo "Using PARABUILD_PID:    $PARABUILD_PID"
   fi
 fi
 
@@ -209,7 +209,7 @@ if [ "$1" = "jpda" ] ; then
   if [ -z "$JPDA_OPTS" ]; then
     JPDA_OPTS="-agentlib:jdwp=transport=$JPDA_TRANSPORT,address=$JPDA_ADDRESS,server=y,suspend=$JPDA_SUSPEND"
   fi
-  CATALINA_OPTS="$JPDA_OPTS $CATALINA_OPTS"
+  PARABUILD_OPTS="$JPDA_OPTS $PARABUILD_OPTS"
   shift
 fi
 
@@ -224,22 +224,22 @@ if [ "$1" = "debug" ] ; then
         echo "Using Security Manager"
       fi
       shift
-      exec "$_RUNJDB" "$LOGGING_CONFIG" $LOGGING_MANAGER $JAVA_OPTS $CATALINA_OPTS \
+      exec "$_RUNJDB" "$LOGGING_CONFIG" $LOGGING_MANAGER $JAVA_OPTS $PARABUILD_OPTS \
         -classpath "$CLASSPATH" \
-        -sourcepath "$CATALINA_HOME"/../../java \
+        -sourcepath "$PARABUILD_HOME"/../../java \
         -Djava.security.manager \
-        -Djava.security.policy=="$CATALINA_BASE"/conf/catalina.policy \
-        -Dcatalina.base="$CATALINA_BASE" \
-        -Dcatalina.home="$CATALINA_HOME" \
-        -Djava.io.tmpdir="$CATALINA_TMPDIR" \
+        -Djava.security.policy=="$PARABUILD_BASE"/conf/catalina.policy \
+        -Dcatalina.base="$PARABUILD_BASE" \
+        -Dcatalina.home="$PARABUILD_HOME" \
+        -Djava.io.tmpdir="$PARABUILD_TMPDIR" \
         org.apache.catalina.startup.Bootstrap "$@" start
     else
-      exec "$_RUNJDB" "$LOGGING_CONFIG" $LOGGING_MANAGER $JAVA_OPTS $CATALINA_OPTS \
+      exec "$_RUNJDB" "$LOGGING_CONFIG" $LOGGING_MANAGER $JAVA_OPTS $PARABUILD_OPTS \
         -classpath "$CLASSPATH" \
-        -sourcepath "$CATALINA_HOME"/../../java \
-        -Dcatalina.base="$CATALINA_BASE" \
-        -Dcatalina.home="$CATALINA_HOME" \
-        -Djava.io.tmpdir="$CATALINA_TMPDIR" \
+        -sourcepath "$PARABUILD_HOME"/../../java \
+        -Dcatalina.base="$PARABUILD_BASE" \
+        -Dcatalina.home="$PARABUILD_HOME" \
+        -Djava.io.tmpdir="$PARABUILD_TMPDIR" \
         org.apache.catalina.startup.Bootstrap "$@" start
     fi
   fi
@@ -252,31 +252,31 @@ elif [ "$1" = "run" ]; then
       echo "Using Security Manager"
     fi
     shift
-    eval exec "\"$_RUNJAVA\"" "\"$LOGGING_CONFIG\"" $LOGGING_MANAGER $JAVA_OPTS $CATALINA_OPTS \
+    eval exec "\"$_RUNJAVA\"" "\"$LOGGING_CONFIG\"" $LOGGING_MANAGER $JAVA_OPTS $PARABUILD_OPTS \
       -classpath "\"$CLASSPATH\"" \
       -Djava.security.manager \
-      -Djava.security.policy=="\"$CATALINA_BASE/conf/catalina.policy\"" \
-      -Dcatalina.base="\"$CATALINA_BASE\"" \
-      -Dcatalina.home="\"$CATALINA_HOME\"" \
-      -Djava.io.tmpdir="\"$CATALINA_TMPDIR\"" \
+      -Djava.security.policy=="\"$PARABUILD_BASE/conf/catalina.policy\"" \
+      -Dcatalina.base="\"$PARABUILD_BASE\"" \
+      -Dcatalina.home="\"$PARABUILD_HOME\"" \
+      -Djava.io.tmpdir="\"$PARABUILD_TMPDIR\"" \
       org.apache.catalina.startup.Bootstrap "$@" start
   else
-    eval exec "\"$_RUNJAVA\"" "\"$LOGGING_CONFIG\"" $LOGGING_MANAGER $JAVA_OPTS $CATALINA_OPTS \
+    eval exec "\"$_RUNJAVA\"" "\"$LOGGING_CONFIG\"" $LOGGING_MANAGER $JAVA_OPTS $PARABUILD_OPTS \
       -classpath "\"$CLASSPATH\"" \
-      -Dcatalina.base="\"$CATALINA_BASE\"" \
-      -Dcatalina.home="\"$CATALINA_HOME\"" \
-      -Djava.io.tmpdir="\"$CATALINA_TMPDIR\"" \
+      -Dcatalina.base="\"$PARABUILD_BASE\"" \
+      -Dcatalina.home="\"$PARABUILD_HOME\"" \
+      -Djava.io.tmpdir="\"$PARABUILD_TMPDIR\"" \
       org.apache.catalina.startup.Bootstrap "$@" start
   fi
 
 elif [ "$1" = "start" ] ; then
 
-  if [ ! -z "$CATALINA_PID" ]; then
-    if [ -f "$CATALINA_PID" ]; then
-      if [ -s "$CATALINA_PID" ]; then
+  if [ ! -z "$PARABUILD_PID" ]; then
+    if [ -f "$PARABUILD_PID" ]; then
+      if [ -s "$PARABUILD_PID" ]; then
         echo "Existing PID file found during start."
-        if [ -r "$CATALINA_PID" ]; then
-          PID=`cat "$CATALINA_PID"`
+        if [ -r "$PARABUILD_PID" ]; then
+          PID=`cat "$PARABUILD_PID"`
           ps -p $PID >/dev/null 2>&1
           if [ $? -eq 0 ] ; then
             echo "Tomcat appears to still be running with PID $PID. Start aborted."
@@ -285,10 +285,10 @@ elif [ "$1" = "start" ] ; then
             exit 1
           else
             echo "Removing/clearing stale PID file."
-            rm -f "$CATALINA_PID" >/dev/null 2>&1
+            rm -f "$PARABUILD_PID" >/dev/null 2>&1
             if [ $? != 0 ]; then
-              if [ -w "$CATALINA_PID" ]; then
-                cat /dev/null > "$CATALINA_PID"
+              if [ -w "$PARABUILD_PID" ]; then
+                cat /dev/null > "$PARABUILD_PID"
               else
                 echo "Unable to remove or clear stale PID file. Start aborted."
                 exit 1
@@ -300,9 +300,9 @@ elif [ "$1" = "start" ] ; then
           exit 1
         fi
       else
-        rm -f "$CATALINA_PID" >/dev/null 2>&1
+        rm -f "$PARABUILD_PID" >/dev/null 2>&1
         if [ $? != 0 ]; then
-          if [ ! -w "$CATALINA_PID" ]; then
+          if [ ! -w "$PARABUILD_PID" ]; then
             echo "Unable to remove or write to empty PID file. Start aborted."
             exit 1
           fi
@@ -312,35 +312,35 @@ elif [ "$1" = "start" ] ; then
   fi
 
   shift
-  touch "$CATALINA_OUT"
+  touch "$PARABUILD_OUT"
   if [ "$1" = "-security" ] ; then
     if [ $have_tty -eq 1 ]; then
       echo "Using Security Manager"
     fi
     shift
-    eval $_NOHUP "\"$_RUNJAVA\"" "\"$LOGGING_CONFIG\"" $LOGGING_MANAGER $JAVA_OPTS $CATALINA_OPTS \
+    eval $_NOHUP "\"$_RUNJAVA\"" "\"$LOGGING_CONFIG\"" $LOGGING_MANAGER $JAVA_OPTS $PARABUILD_OPTS \
       -classpath "\"$CLASSPATH\"" \
       -Djava.security.manager \
-      -Djava.security.policy=="\"$CATALINA_BASE/conf/catalina.policy\"" \
-      -Dcatalina.base="\"$CATALINA_BASE\"" \
-      -Dcatalina.home="\"$CATALINA_HOME\"" \
-      -Djava.io.tmpdir="\"$CATALINA_TMPDIR\"" \
+      -Djava.security.policy=="\"$PARABUILD_BASE/conf/catalina.policy\"" \
+      -Dcatalina.base="\"$PARABUILD_BASE\"" \
+      -Dcatalina.home="\"$PARABUILD_HOME\"" \
+      -Djava.io.tmpdir="\"$PARABUILD_TMPDIR\"" \
       org.apache.catalina.startup.Bootstrap "$@" start \
-      >> "$CATALINA_OUT" 2>&1 "&"
+      >> "$PARABUILD_OUT" 2>&1 "&"
 
   else
-    eval $_NOHUP "\"$_RUNJAVA\"" "\"$LOGGING_CONFIG\"" $LOGGING_MANAGER $JAVA_OPTS $CATALINA_OPTS \
+    eval $_NOHUP "\"$_RUNJAVA\"" "\"$LOGGING_CONFIG\"" $LOGGING_MANAGER $JAVA_OPTS $PARABUILD_OPTS \
       -classpath "\"$CLASSPATH\"" \
-      -Dcatalina.base="\"$CATALINA_BASE\"" \
-      -Dcatalina.home="\"$CATALINA_HOME\"" \
-      -Djava.io.tmpdir="\"$CATALINA_TMPDIR\"" \
+      -Dcatalina.base="\"$PARABUILD_BASE\"" \
+      -Dcatalina.home="\"$PARABUILD_HOME\"" \
+      -Djava.io.tmpdir="\"$PARABUILD_TMPDIR\"" \
       org.apache.catalina.startup.Bootstrap "$@" start \
-      >> "$CATALINA_OUT" 2>&1 "&"
+      >> "$PARABUILD_OUT" 2>&1 "&"
 
   fi
 
-  if [ ! -z "$CATALINA_PID" ]; then
-    echo $! > "$CATALINA_PID"
+  if [ ! -z "$PARABUILD_PID" ]; then
+    echo $! > "$PARABUILD_PID"
   fi
 
   echo "Tomcat started."
@@ -364,10 +364,10 @@ elif [ "$1" = "stop" ] ; then
     FORCE=1
   fi
 
-  if [ ! -z "$CATALINA_PID" ]; then
-    if [ -f "$CATALINA_PID" ]; then
-      if [ -s "$CATALINA_PID" ]; then
-        kill -0 `cat "$CATALINA_PID"` >/dev/null 2>&1
+  if [ ! -z "$PARABUILD_PID" ]; then
+    if [ -f "$PARABUILD_PID" ]; then
+      if [ -s "$PARABUILD_PID" ]; then
+        kill -0 `cat "$PARABUILD_PID"` >/dev/null 2>&1
         if [ $? -gt 0 ]; then
           echo "PID file found but no matching process was found. Stop aborted."
           exit 1
@@ -376,35 +376,35 @@ elif [ "$1" = "stop" ] ; then
         echo "PID file is empty and has been ignored."
       fi
     else
-      echo "\$CATALINA_PID was set but the specified file does not exist. Is Tomcat running? Stop aborted."
+      echo "\$PARABUILD_PID was set but the specified file does not exist. Is Tomcat running? Stop aborted."
       exit 1
     fi
   fi
 
   eval "\"$_RUNJAVA\"" $JAVA_OPTS \
     -classpath "\"$CLASSPATH\"" \
-    -Dcatalina.base="\"$CATALINA_BASE\"" \
-    -Dcatalina.home="\"$CATALINA_HOME\"" \
-    -Djava.io.tmpdir="\"$CATALINA_TMPDIR\"" \
+    -Dcatalina.base="\"$PARABUILD_BASE\"" \
+    -Dcatalina.home="\"$PARABUILD_HOME\"" \
+    -Djava.io.tmpdir="\"$PARABUILD_TMPDIR\"" \
     org.apache.catalina.startup.Bootstrap "$@" stop
 
   # stop failed. Shutdown port disabled? Try a normal kill.
   if [ $? != 0 ]; then
-    if [ ! -z "$CATALINA_PID" ]; then
+    if [ ! -z "$PARABUILD_PID" ]; then
       echo "The stop command failed. Attempting to signal the process to stop through OS signal."
-      kill -15 `cat "$CATALINA_PID"` >/dev/null 2>&1
+      kill -15 `cat "$PARABUILD_PID"` >/dev/null 2>&1
     fi
   fi
 
-  if [ ! -z "$CATALINA_PID" ]; then
-    if [ -f "$CATALINA_PID" ]; then
+  if [ ! -z "$PARABUILD_PID" ]; then
+    if [ -f "$PARABUILD_PID" ]; then
       while [ $SLEEP -ge 0 ]; do
-        kill -0 `cat "$CATALINA_PID"` >/dev/null 2>&1
+        kill -0 `cat "$PARABUILD_PID"` >/dev/null 2>&1
         if [ $? -gt 0 ]; then
-          rm -f "$CATALINA_PID" >/dev/null 2>&1
+          rm -f "$PARABUILD_PID" >/dev/null 2>&1
           if [ $? != 0 ]; then
-            if [ -w "$CATALINA_PID" ]; then
-              cat /dev/null > "$CATALINA_PID"
+            if [ -w "$PARABUILD_PID" ]; then
+              cat /dev/null > "$PARABUILD_PID"
               # If Tomcat has stopped don't try and force a stop with an empty PID file
               FORCE=0
             else
@@ -423,7 +423,7 @@ elif [ "$1" = "stop" ] ; then
             echo "PID file was not removed."
           fi
           echo "To aid diagnostics a thread dump has been written to standard out."
-          kill -3 `cat "$CATALINA_PID"`
+          kill -3 `cat "$PARABUILD_PID"`
         fi
         SLEEP=`expr $SLEEP - 1 `
       done
@@ -432,20 +432,20 @@ elif [ "$1" = "stop" ] ; then
 
   KILL_SLEEP_INTERVAL=5
   if [ $FORCE -eq 1 ]; then
-    if [ -z "$CATALINA_PID" ]; then
-      echo "Kill failed: \$CATALINA_PID not set"
+    if [ -z "$PARABUILD_PID" ]; then
+      echo "Kill failed: \$PARABUILD_PID not set"
     else
-      if [ -f "$CATALINA_PID" ]; then
-        PID=`cat "$CATALINA_PID"`
+      if [ -f "$PARABUILD_PID" ]; then
+        PID=`cat "$PARABUILD_PID"`
         echo "Killing Tomcat with the PID: $PID"
         kill -9 $PID
         while [ $KILL_SLEEP_INTERVAL -ge 0 ]; do
-            kill -0 `cat "$CATALINA_PID"` >/dev/null 2>&1
+            kill -0 `cat "$PARABUILD_PID"` >/dev/null 2>&1
             if [ $? -gt 0 ]; then
-                rm -f "$CATALINA_PID" >/dev/null 2>&1
+                rm -f "$PARABUILD_PID" >/dev/null 2>&1
                 if [ $? != 0 ]; then
-                    if [ -w "$CATALINA_PID" ]; then
-                        cat /dev/null > "$CATALINA_PID"
+                    if [ -w "$PARABUILD_PID" ]; then
+                        cat /dev/null > "$PARABUILD_PID"
                     else
                         echo "The PID file could not be removed."
                     fi
@@ -469,9 +469,9 @@ elif [ "$1" = "configtest" ] ; then
 
     eval "\"$_RUNJAVA\"" $LOGGING_MANAGER $JAVA_OPTS \
       -classpath "\"$CLASSPATH\"" \
-      -Dcatalina.base="\"$CATALINA_BASE\"" \
-      -Dcatalina.home="\"$CATALINA_HOME\"" \
-      -Djava.io.tmpdir="\"$CATALINA_TMPDIR\"" \
+      -Dcatalina.base="\"$PARABUILD_BASE\"" \
+      -Dcatalina.home="\"$PARABUILD_HOME\"" \
+      -Djava.io.tmpdir="\"$PARABUILD_TMPDIR\"" \
       org.apache.catalina.startup.Bootstrap configtest
     result=$?
     if [ $result -ne 0 ]; then
@@ -482,32 +482,32 @@ elif [ "$1" = "configtest" ] ; then
 elif [ "$1" = "version" ] ; then
 
     "$_RUNJAVA"   \
-      -classpath "$CATALINA_HOME/lib/catalina.jar" \
+      -classpath "$PARABUILD_HOME/lib/catalina.jar" \
       org.apache.catalina.util.ServerInfo
 
 else
 
-  echo "Usage: catalina.sh ( commands ... )"
+  echo "Usage: parabuild.sh ( commands ... )"
   echo "commands:"
   if $os400; then
-    echo "  debug             Start Catalina in a debugger (not available on OS400)"
-    echo "  debug -security   Debug Catalina with a security manager (not available on OS400)"
+    echo "  debug             Start Parabuild in a debugger (not available on OS400)"
+    echo "  debug -security   Debug Parabuild with a security manager (not available on OS400)"
   else
-    echo "  debug             Start Catalina in a debugger"
-    echo "  debug -security   Debug Catalina with a security manager"
+    echo "  debug             Start Parabuild in a debugger"
+    echo "  debug -security   Debug Parabuild with a security manager"
   fi
-  echo "  jpda start        Start Catalina under JPDA debugger"
-  echo "  run               Start Catalina in the current window"
+  echo "  jpda start        Start Parabuild under JPDA debugger"
+  echo "  run               Start Parabuild in the current window"
   echo "  run -security     Start in the current window with security manager"
-  echo "  start             Start Catalina in a separate window"
+  echo "  start             Start Parabuild in a separate window"
   echo "  start -security   Start in a separate window with security manager"
-  echo "  stop              Stop Catalina, waiting up to 5 seconds for the process to end"
-  echo "  stop n            Stop Catalina, waiting up to n seconds for the process to end"
-  echo "  stop -force       Stop Catalina, wait up to 5 seconds and then use kill -KILL if still running"
-  echo "  stop n -force     Stop Catalina, wait up to n seconds and then use kill -KILL if still running"
+  echo "  stop              Stop Parabuild, waiting up to 5 seconds for the process to end"
+  echo "  stop n            Stop Parabuild, waiting up to n seconds for the process to end"
+  echo "  stop -force       Stop Parabuild, wait up to 5 seconds and then use kill -KILL if still running"
+  echo "  stop n -force     Stop Parabuild, wait up to n seconds and then use kill -KILL if still running"
   echo "  configtest        Run a basic syntax check on server.xml - check exit code for result"
   echo "  version           What version of tomcat are you running?"
-  echo "Note: Waiting for the process to end and use of the -force option require that \$CATALINA_PID is defined"
+  echo "Note: Waiting for the process to end and use of the -force option require that \$PARABUILD_PID is defined"
   exit 1
 
 fi

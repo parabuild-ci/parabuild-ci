@@ -39,11 +39,6 @@
   <property name="username" value="tomcat"/>
   <property name="password" value="tomcat"/>
 
-  <!-- Configure the custom Ant tasks for the Manager application -->
-  <taskdef name="install" classname="org.apache.catalina.ant.InstallTask" classpath="${tomcat.home}/server/lib/catalina-ant.jar"/>
-  <taskdef name="reload" classname="org.apache.catalina.ant.ReloadTask" classpath="${tomcat.home}/server/lib/catalina-ant.jar"/>
-  <taskdef name="remove" classname="org.apache.catalina.ant.RemoveTask" classpath="${tomcat.home}/server/lib/catalina-ant.jar"/>
-  <taskdef name="stop" classname="org.apache.catalina.ant.StopTask" classpath="${tomcat.home}/server/lib/catalina-ant.jar"/>
 
   <!-- Reload bt application -->
   <target name="deploy">
@@ -52,8 +47,8 @@
       <bool>
         <http url="${url}"/>
       </bool>
-      <remove path="" url="${url}" username="${username}" password="${password}"/>
-      <install path="" war="file://${build.dir}/result_war/parabuild.war" url="${url}" username="${username}" password="${password}"/>
+      <undeploy path="" url="${url}" username="${username}" password="${password}"/>
+      <deploy path="" war="file://${build.dir}/result_war/parabuild.war" url="${url}" username="${username}" password="${password}"/>
       <!--
       <reload path="" url="${url}" username="${username}" password="${password}"/>
       <reload path="" url="${url}" username="${username}" password="${password}"/>

@@ -39,7 +39,7 @@ while [ -h "$PRG" ] ; do
 done
 
 PRGDIR=`dirname "$PRG"`
-EXECUTABLE=catalina.sh
+EXECUTABLE=parabuild.sh
 
 # Check that target executable exists
 if $os400; then

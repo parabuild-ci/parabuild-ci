@@ -54,7 +54,7 @@
 
   <!-- Compile tests -->
   <target name="tests.compile">
-    <javac srcdir="${test.home}/src" destdir="${build.dir.test.classes}" debug="on" includes="**/*.java">
+    <javac srcdir="${test.home}/src" destdir="${build.dir.test.classes}" includes="**/*.java">
       <compilerarg value="-proc:none"/>
       <classpath>
         <path refid="test.classpath"/>

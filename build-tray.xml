@@ -26,7 +26,7 @@
     <copy file="${iconexperience.24x24.plain}/bullet_triangle_red.gif" todir="${build.dir.tray.resources.images}"/>
     <copy file="${iconexperience.24x24.plain}/bullet_triangle_yellow.gif" todir="${build.dir.tray.resources.images}"/>
     <!-- setup log4j -->
-    <ant antfile="build-helper.xml" target="setup.log4j">
+    <ant antfile="build-helper.xml" target="setup.log4j" inheritrefs="true" inheritall="true">
       <property name="param.is.release.build" value="${is.release.build}"/>
       <property name="param.destination.dir" value="${build.dir.tray.classes}"/>
     </ant>
@@ -38,17 +38,17 @@
 
   <!-- Compile tray-->
   <target name="tray.compile" depends="tray.prepare">
-    <javac destdir="${build.dir.tray.classes}" includes="org/parabuild/ci/tray/**.java" excludes="**/BuildStatusServlet.java" debug="on">
+    <javac destdir="${build.dir.tray.classes}" includes="org/parabuild/ci/tray/**.java" excludes="**/BuildStatusServlet.java">
       <compilerarg value="-proc:none"/>
       <classpath>
         <pathelement path="${hessian.jar}"/>
         <pathelement path="${jade.jar}"/>
         <pathelement path="${jdic.jar}"/>
+        <pathelement path="${commons-logging.jar}"/>
         <pathelement path="${log4j-1.2-api-2.8.2.jar}"/>
         <pathelement path="${log4j-api-2.8.2.jar}"/>
         <pathelement path="${log4j-core-2.8.2.jar}"/>
         <pathelement path="${concurrent.jar}"/>
-        <pathelement path="${tomcat.home}/common/lib/commons-logging-api.jar"/>
       </classpath>
       <src path="${src}"/>
     </javac>
@@ -68,7 +68,7 @@
       <zipfileset src="${jdic.jar}"/>
       <zipfileset src="${hessian.jar}"/>
       <zipfileset src="${jade.jar}"/>
-      <zipfileset src="${tomcat.home}/common/lib/commons-logging-api.jar"/>
+      <zipfileset src="${commons-logging.jar}"/>
       <zipfileset src="${log4j-1.2-api-2.8.2.jar}"/>
       <zipfileset src="${log4j-api-2.8.2.jar}"/>
       <zipfileset src="${log4j-core-2.8.2.jar}"/>

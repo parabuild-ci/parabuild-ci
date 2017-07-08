@@ -13,9 +13,6 @@
  */
 package org.parabuild.ci.common;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -39,9 +36,6 @@ import java.util.regex.Pattern;
  * Common string utilities
  */
 public final class StringUtils implements CommonConstants {
-
-
-  private static final Log log = LogFactory.getLog(StringUtils.class);
 
 
   private static final char[] HEX_DIGITS = {
@@ -226,7 +220,6 @@ public final class StringUtils implements CommonConstants {
    * Empty exception ingnorer
    */
   private static void ignoreException(final Exception ignore) {
-    if (log.isDebugEnabled()) log.debug("Ignored exception", ignore);
   }
 
 

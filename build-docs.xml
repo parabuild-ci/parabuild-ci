@@ -85,9 +85,9 @@
       <param name="toc.max.depth" expression="0"/>
       <param name="generate.section.toc.level" expression="0"/>
       -->
-      <classpath>
-        <pathelement location="${docbook.home}/extensions/xalan2.jar"/>
-      </classpath>
+      <!--<classpath>-->
+        <!--<pathelement location="${docbook.home}/extensions/xalan2.jar"/>-->
+      <!--</classpath>-->
       <xmlcatalog refid="docbook"/>
     </xslt>
     <copy todir="${html.destdir}">

@@ -13,7 +13,6 @@
     <copy file="${quartz.licence}" tofile="${build.dir.tomcat}/license/license-quartz.txt"/>
     <copy file="${viewtier.licence}" tofile="${build.dir.tomcat}/license/LICENSE.txt"/>
     <copy file="${viewtier.copyright}" tofile="${build.dir.tomcat}/license/COPYRIGHT.txt"/>
-    <copy file="${mx4j.license}" tofile="${build.dir.tomcat}/license/license-mx4j.txt"/>
     <copy file="${jaxen.license}" tofile="${build.dir.tomcat}/license/license-jaxen.txt"/>
     <copy file="${hsqldb.license}" tofile="${build.dir.tomcat}/license/license-hypersonic.txt"/>
     <copy file="${jtds.license}" tofile="${build.dir.tomcat}/license/license-jtds.txt"/>

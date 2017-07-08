@@ -20,22 +20,22 @@ rem ---------------------------------------------------------------------------
 
 setlocal
 
-rem Guess CATALINA_HOME if not defined
+rem Guess PARABUILD_HOME if not defined
 set "CURRENT_DIR=%cd%"
-if not "%CATALINA_HOME%" == "" goto gotHome
-set "CATALINA_HOME=%CURRENT_DIR%"
-if exist "%CATALINA_HOME%\bin\tool-wrapper.bat" goto okHome
+if not "%PARABUILD_HOME%" == "" goto gotHome
+set "PARABUILD_HOME=%CURRENT_DIR%"
+if exist "%PARABUILD_HOME%\bin\tool-wrapper.bat" goto okHome
 cd ..
-set "CATALINA_HOME=%cd%"
+set "PARABUILD_HOME=%cd%"
 cd "%CURRENT_DIR%"
 :gotHome
-if exist "%CATALINA_HOME%\bin\tool-wrapper.bat" goto okHome
-echo The CATALINA_HOME environment variable is not defined correctly
+if exist "%PARABUILD_HOME%\bin\tool-wrapper.bat" goto okHome
+echo The PARABUILD_HOME environment variable is not defined correctly
 echo This environment variable is needed to run this program
 goto end
 :okHome
 
-set "EXECUTABLE=%CATALINA_HOME%\bin\tool-wrapper.bat"
+set "EXECUTABLE=%PARABUILD_HOME%\bin\tool-wrapper.bat"
 
 rem Check that target executable exists
 if exist "%EXECUTABLE%" goto okExec
