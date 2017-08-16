@@ -228,6 +228,7 @@
           </value>
         </option>
       </inspection_tool>
+      <inspection_tool class="BashMissingInclude" enabled="false" level="WARNING" enabled_by_default="false" />
       <inspection_tool class="BigDecimalEquals" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="BooleanMethodIsAlwaysInverted" enabled="false" level="WARNING" enabled_by_default="false" />
       <inspection_tool class="BusyWait" enabled="true" level="WARNING" enabled_by_default="true" />
@@ -1021,18 +1022,11 @@
       </JAVADOC>
       <SOURCES />
     </library>
-    <library name="struts2-core-2.5.10.1">
+    <library name="Struts 2">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.5.10.1/lib/struts2-core-2.5.10.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.5.10.1/lib/xwork-core-2.5.10.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.5.10.1/lib/ognl-3.0.19.jar!/" />
         <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.5.10.1/lib/commons-fileupload-1.3.2.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.5.10.1/lib/freemarker-2.3.22.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.5.10.1/lib/commons-lang3-3.2.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.5.10.1/lib/javassist-3.11.0.GA.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.5.10.1/lib/commons-io-2.2.jar!/" />
         <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.5.10.1/lib/commons-logging-1.1.3.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.5.10.1-lib/lib/struts2-sitemesh-plugin-2.5.10.1.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
@@ -1073,6 +1067,14 @@
         <root url="file://$PROJECT_DIR$/3rdparty/apache-tomcat-8.5.15-src/webapps/examples/WEB-INF/jsp/applet" />
         <root url="file://$PROJECT_DIR$/3rdparty/apache-tomcat-8.5.15-src/webapps/examples/jsp/plugin/applet" />
       </SOURCES>
+    </library>
+    <library name="Tomcat Juli Adapters">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/3rdparty/apache-tomcat-8.5.15-extras/bin/tomcat-juli-adapters.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/apache-tomcat-8.5.15-extras/bin/tomcat-juli.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
     </library>
   </component>
   <component name="org.twodividedbyzero.idea.findbugs">

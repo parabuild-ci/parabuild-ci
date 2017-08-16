@@ -10,7 +10,7 @@
 
   <!-- Compile Parabuild remote build manager logviewer-->
   <target name="logviewer.compile" depends="logviewer.prepare">
-    <javac destdir="${build.dir.logviewer.classes}" includes="org/parabuild/ci/webui/logviewer/LogViewerApplet.java" debug="on">
+    <javac destdir="${build.dir.logviewer.classes}" includes="org/parabuild/ci/webui/logviewer/LogViewerApplet.java"  debug="on" includeantruntime="false">
       <compilerarg value="-proc:none"/>
       <classpath>
         <!--<pathelement path="${catalina.jar}"/>-->

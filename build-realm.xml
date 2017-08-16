@@ -15,7 +15,7 @@
 
   <!-- Compile Parabuild remote build manager realm-->
   <target name="realm.compile" depends="realm.prepare, realm.resources">
-    <javac destdir="${build.dir.realm.classes}" includes="org/parabuild/ci/realm/**.java">
+    <javac destdir="${build.dir.realm.classes}" includes="org/parabuild/ci/realm/**.java"  debug="on" includeantruntime="false">
       <compilerarg value="-proc:none"/>
       <classpath>
         <pathelement path="${commons-logging.jar}"/>

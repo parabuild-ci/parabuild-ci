@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration>
+<Configuration status="debug">
+
+  <Properties>
+    <Property name="appenderPatternLayout">[%t] %d{ABSOLUTE} %5p: %-30.30c{3}(%3L) - %m %n</Property>
+  </Properties>
+
   <Appenders>
     <Console name="stdout" target="SYSTEM_OUT">
-      <PatternLayout pattern="[%t] %d{ABSOLUTE} %5p: %-30.30c{3}(%3L) - %m %n"/>
+      <PatternLayout pattern="${appenderPatternLayout}"/>
     </Console>
   </Appenders>
+
   <Loggers>
     <Logger name="httpclient.wire" level="warn"/>
     <Logger name="net.sf.hibernate.connection.DriverManagerConnectionProvider" level="trace"/>
@@ -12,13 +18,14 @@
     <Logger name="org.apache.axis.management.Registrar$ModelerBinding" level="FATAL"/>
     <Logger name="org.apache.axis" level="warn"/>
     <Logger name="org.apache.cactus" level="warn"/>
-    <Logger name="org.apache.commons.digester" level="debug"/>
+    <Logger name="org.apache.commons.digester" level="warn"/>
     <Logger name="org.apache" level="warn"/>
     <Logger name="org.directwebremoting" level="warn"/>
-    <Logger name="org.parabuild.ci" level="debug"/>
+    <Logger name="org.parabuild.ci" level="warn"/>
     <Logger name="org.quartz" level="warn"/>
     <Root level="warn">
       <AppenderRef ref="stdout"/>
     </Root>
   </Loggers>
+
 </Configuration>

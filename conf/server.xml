@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Server port="@serv.port@" shutdown="SHUTDOWN">
-  <!--<Listener className="org.apache.catalina.mbeans.ServerLifecycleListener" debug="0" descriptors="/org/parabuild/ci/realm/realm-descriptor.xml"/>-->
-  <!--<Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener" debug="0"/>-->
+
+  <Listener className="org.apache.catalina.startup.VersionLoggerListener"/>
+  <Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on"/>
   <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener"/>
   <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener"/>
   <Listener className="org.apache.catalina.core.ThreadLocalLeakPreventionListener"/>

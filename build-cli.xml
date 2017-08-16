@@ -22,7 +22,7 @@
   <!-- Compile Parabuild remote build manager commandline-->
   <target name="cli.compile" depends="cli.prepare">
     <!-- Compile CLI -->
-    <javac destdir="${build.dir.cli.classes}" includes="org/parabuild/ci/cli/**.java" debug="on">
+    <javac destdir="${build.dir.cli.classes}" includes="org/parabuild/ci/cli/**.java" debug="on" includeantruntime="false">
       <compilerarg value="-proc:none"/>
       <classpath>
         <path refid="cli.compile.classpath"/>

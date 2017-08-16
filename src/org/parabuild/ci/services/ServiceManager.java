@@ -104,14 +104,11 @@ public final class ServiceManager {
     for (int index = serviceList.size() - 1; index >= 0; index--) {
       final Service service = (Service) serviceList.get(index);
 
-// REVIEWME: simeshev@parabuilci.org -> Commented until the issue # 1207 is investigated.
-//      if (log.isDebugEnabled()) log.debug("Shutting down " + service.serviceName());
-      System.out.println("Shutting down " + service.serviceName()); // NOPMD
+      if (log.isDebugEnabled()) log.debug("Shutting down " + service.serviceName());
       try {
         service.shutdownService();
       } catch (Throwable e) {
-//        log.warn("Exception while shutting down service: " + StringUtils.toString(e), e);
-        System.err.println("Exception while shutting down service: " + StringUtils.toString(e)); // NOPMD
+        log.warn("Exception while shutting down service: " + StringUtils.toString(e), e);
         e.printStackTrace(System.err); // NOPMD
       }
     }

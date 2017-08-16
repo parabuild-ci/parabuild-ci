@@ -12,7 +12,7 @@
 
 
   <target name="manager.compile" depends="mnager.prepare">
-    <javac destdir="${manager.classes.dir}" includes="org/parabuild/ci/manager/server/**.java">
+    <javac destdir="${manager.classes.dir}" includes="org/parabuild/ci/manager/server/**.java"  debug="on" includeantruntime="false">
       <compilerarg value="-proc:none"/>
       <classpath>
         <pathelement path="${commons-logging.jar}"/>

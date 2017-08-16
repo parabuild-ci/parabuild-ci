@@ -16,14 +16,21 @@
     <copy todir="${build.dir.tomcat}">
       <fileset dir="${tomcat.home}">
         <exclude name="webapps/**"/>
-        <exclude name="bin/**"/>
         <exclude name="docs/**"/>
         <exclude name="LICENSE"/>
         <exclude name="NOTICE"/>
         <exclude name="RELEASE-NOTES.txt"/>
         <exclude name="RUNNING"/>
         <exclude name="work"/>
+        <exclude name="conf/server.xml"/>
+        <exclude name="conf/tomcat-users.xml"/>
+        <exclude name="conf/tomcat-users.xsd"/>
+        <exclude name="conf/logging.properties"/>
       </fileset>
+    </copy>
+
+    <copy todir="${build.dir.tomcat}/conf">
+      <fileset file="${config}/logging.properties"/>
     </copy>
 
     <!-- Create plaform specific dirs -->
@@ -40,17 +47,23 @@
       <fileset file="${log4j-1.2-api-2.8.2.jar}"/>
       <fileset file="${log4j-api-2.8.2.jar}"/>
       <fileset file="${log4j-core-2.8.2.jar}"/>
+      <fileset file="${log4j-web-2.8.2.jar}"/>
+      <fileset file="${project.home}/conf/log4j2.xml"/>
     </copy>
 
     <!-- Copy tomcat config files -->
     <mkdir dir="${build.dir.tomcat}/etc/conf"/>
+    <!--
     <copy todir="${build.dir.tomcat}/etc/conf">
       <fileset dir="${tomcat.home}/conf/">
         <exclude name="server.xml"/>
         <exclude name="tomcat-users.xml"/>
         <exclude name="tomcat-users.xsd"/>
+        <exclude name="logging.properties"/>
       </fileset>
+      <fileset file="${config}/logging.properties"/>
     </copy>
+    -->
 
     <copy file="${tomcat.home}/temp/README.txt" todir="${build.dir.tomcat}/etc/temp"/>
 
@@ -195,7 +208,7 @@
     </taskdef>
 
     <!-- Create template -->
-    <javac destdir="${build.dir.classes}" includes="**/Parabuild.java">
+    <javac destdir="${build.dir.classes}" includes="**/Parabuild.java"  debug="on" includeantruntime="false">
       <compilerarg value="-proc:none"/>
       <classpath>
         <path refid="compile.classpath"/>
@@ -237,7 +250,7 @@
   <!-- Compile Parabuild -->
   <target name="product.compile" depends="product.webservice, product.resources">
     <!-- Compile product -->
-    <javac destdir="${build.dir.classes}" includes="**/**.java" memorymaximumsize="200m" fork="true">
+    <javac destdir="${build.dir.classes}" includes="**/**.java" memorymaximumsize="200m" fork="true"  debug="on" includeantruntime="false">
       <compilerarg value="-proc:none"/>
       <classpath>
         <path refid="compile.classpath"/>
@@ -386,7 +399,9 @@
 
     <!-- Modal dialog scripts -->
     <mkdir dir="${war.staging.scripts}/windows-js"/>
-    <copydir src="${config}/windows-js" dest="${war.staging.scripts}/windows-js"/>
+    <copy todir="${war.staging.scripts}/windows-js">
+      <fileset dir="${config}/windows-js"/>
+    </copy>
 
     <property name="war.staging.images.3232" value="${war.staging.images}/3232"/>
     <property name="war.staging.images.1616" value="${war.staging.images}/1616"/>
@@ -435,7 +450,7 @@
       </filterset>
     </copy>
     <!-- compile -->
-    <javac srcdir="${jspc.output}" destdir="${war.staging.classes}" includes="**/**.java">
+    <javac srcdir="${jspc.output}" destdir="${war.staging.classes}" includes="**/**.java"  debug="on" includeantruntime="false">
       <compilerarg value="-proc:none"/>
       <classpath>
         <path refid="compile.classpath"/>

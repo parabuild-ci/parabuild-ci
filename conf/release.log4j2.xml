@@ -1,42 +1,42 @@
-log4.debug=false
-log4j.rootLogger=ERROR, logfile
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="debug">
 
-## direct log messages to stdout
-log4j.appender.stdout=org.apache.log4j.ConsoleAppender
-log4j.appender.stdout.Target=System.out
-log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
-log4j.appender.stdout.layout.ConversionPattern=[%t] %d{ABSOLUTE} %5p: %-20.20c{3}(%3L) - %m %n
+  <Properties>
+    <Property name="appenderPatternLayout">[%t] %d{ABSOLUTE} %5p: %-30.30c{3}(%3L) - %m %n</Property>
+    <Property name="logDirectory">${sys:catalina.home}/logs</Property>
+  </Properties>
 
-## direct messages to file autobuild.log
-log4j.appender.logfile=org.apache.log4j.RollingFileAppender
-log4j.appender.logfile.File=${catalina.base}/../logs/parabuild_debug.log
-log4j.appender.logfile.MaxFileSize=1MB
-log4j.appender.logfile.MaxBackupIndex=50
-log4j.appender.logfile.layout=org.apache.log4j.PatternLayout
-log4j.appender.logfile.layout.ConversionPattern=[%t] %d{ABSOLUTE} %5p: %-20.20c{3}(%3L) - %m %n
+  <Appenders>
+    <Console name="stdout" target="SYSTEM_OUT">
+      <PatternLayout pattern="${appenderPatternLayout}"/>
+    </Console>
+    <RollingFile name="logfile" fileName="${logDirectory}/parabuild.log"
+                 filePattern="${logDirectory}/parabuild.log.%d{yyyy-MM-dd}.%i.log">
+      <PatternLayout pattern="${appenderPatternLayout}"/>
+      <Policies>
+        <SizeBasedTriggeringPolicy size="1014 KB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="50"/>
+    </RollingFile>
+  </Appenders>
 
-## Hibernate
-log4j.logger.net.sf.hibernate=ERROR
-log4j.logger.net.sf.hibernate.impl.SessionImpl=ERROR
+  <Loggers>
+    <Logger name="httpclient.wire" level="warn"/>
+    <Logger name="net.sf.hibernate.connection.DriverManagerConnectionProvider" level="trace"/>
+    <Logger name="net.sf.hibernate" level="warn"/>
+    <Logger name="org.apache.axis.management.Registrar$ModelerBinding" level="FATAL"/>
+    <Logger name="org.apache.axis" level="warn"/>
+    <Logger name="org.apache.cactus" level="warn"/>
+    <Logger name="org.apache.commons.digester" level="warn"/>
+    <Logger name="org.apache" level="warn"/>
+    <Logger name="org.apache" level="warn"/>
+    <Logger name="org.directwebremoting" level="warn"/>
+    <Logger name="org.parabuild.ci" level="warn"/>
+    <Logger name="org.quartz" level="warn"/>
+    <Root level="warn">
+      <AppenderRef ref="logfile"/>
+      <AppenderRef ref="stdout"/>
+    </Root>
+  </Loggers>
 
-## log JDBC bind parameters
-log4j.logger.net.sf.hibernate.type=ERROR
-
-## log prepared statement cache activity
-log4j.logger.net.sf.hibernate.ps.PreparedStatementCache=ERROR
-
-## Cactus
-log4j.logger.org.apache.cactus=ERROR
-
-## Quartz
-log4j.logger.org.quartz=ERROR
-
-## Ehcache
-log4j.logger.net.sf.ehcache=ERROR
-
-## Parabuild
-log4j.logger.org.parabuild.ci=ERROR
-
-## Axis
-log4j.logger.org.apache.axis=WARN
-log4j.logger.org.apache.axis.management.Registrar$ModelerBinding=FATAL
+</Configuration>
