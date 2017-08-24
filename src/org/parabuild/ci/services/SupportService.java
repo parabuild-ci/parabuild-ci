@@ -20,6 +20,7 @@ import net.sf.ehcache.CacheManager;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.common.IoUtils;
+import org.parabuild.ci.common.RuntimeUtils;
 import org.parabuild.ci.common.StringUtils;
 import org.parabuild.ci.common.ThreadUtils;
 import org.parabuild.ci.configuration.ConfigurationManager;
@@ -91,16 +92,15 @@ public final class SupportService implements Service {
    * Initialises ehcache manager.
    */
   private void initCache() {
-      try {
-          // NOTE: vimeshev - 01/17/2005 - class EhcacheXML is generated from config/ehcache.xml
-          CacheManager.create(IoUtils.stringToInputStream(IoUtils.getResourceAsString("ehcache.xml")));
+    try {
+      CacheManager.create(IoUtils.stringToInputStream(IoUtils.getResourceAsString("ehcache.xml")));
 
-      } catch (RuntimeException e) {
-          throw e;
-      } catch (Exception e) {
-          initCacheHard();
-          reportStartupError("Error starting up cache:", e);
-      }
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      initCacheHard();
+      reportStartupError("Error starting up cache:", e);
+    }
   }
 
 
@@ -132,6 +132,7 @@ public final class SupportService implements Service {
 
   public void shutdownService() {
     executor.shutdownNow();
+    RuntimeUtils.shutdown();
     serviceStatus = SERVICE_STATUS_NOT_STARTED;
   }
 

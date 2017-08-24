@@ -392,7 +392,7 @@ public final class RuntimeUtils {
 
   /**
    * @return true if system considered windows in terms of
-   *         shell.
+   * shell.
    */
   public static boolean isWindows() {
     return systemType() == SYSTEM_TYPE_WIN95 || systemType() == SYSTEM_TYPE_WINNT;
@@ -470,7 +470,7 @@ public final class RuntimeUtils {
     final Map executeMap = new TreeMap();
     executeMap.putAll(startupEnv); // copy in startup env
 
-    for (final Iterator i = environment.entrySet().iterator(); i.hasNext();) {
+    for (final Iterator i = environment.entrySet().iterator(); i.hasNext(); ) {
       final Map.Entry entry = (Map.Entry) i.next();
       if (entry.getValue() != null) {
         executeMap.put(entry.getKey(), entry.getValue());
@@ -483,7 +483,7 @@ public final class RuntimeUtils {
     // create string array
     int index = 0;
     final String[] result = new String[executeMap.size()];
-    for (final Iterator iter = executeMap.entrySet().iterator(); iter.hasNext();) {
+    for (final Iterator iter = executeMap.entrySet().iterator(); iter.hasNext(); ) {
       final Map.Entry e = (Map.Entry) iter.next();
       result[index++] = e.getKey() + "=" + e.getValue();
     }
@@ -514,6 +514,15 @@ public final class RuntimeUtils {
     final boolean existsAfterDelete = pathToDelete.exists();
     if (log.isDebugEnabled()) log.debug("existsAfterDelete: " + existsAfterDelete);
     return !existsAfterDelete;
+  }
+
+
+  /**
+   * Shuts down internally started threads. This method should be called once right before the server shutdown.
+   */
+  public static void shutdown() {
+
+    streamCopierPool.shutdownNow();
   }
 
 
