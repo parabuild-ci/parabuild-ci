@@ -65,7 +65,7 @@ public final class SupportService implements Service {
   /**
    * Asynchronously executes task
    *
-   * @param task
+   * @param task to execute.
    */
   public void executeTask(final Runnable task) {
     try {
