@@ -2,7 +2,7 @@
 <Configuration status="debug">
 
   <Properties>
-    <Property name="appenderPatternLayout">[%t] %d{ABSOLUTE} %5p: %-30.30c{3}(%3L) - %m %n</Property>
+    <Property name="appenderPatternLayout">[%t] %d{yyyy-MM-dd HH:mm:ss.SSS} %5p: %-30.30c{3}(%3L) - %m %n</Property>
     <Property name="logDirectory">${sys:catalina.home}/logs</Property>
   </Properties>
 
@@ -31,7 +31,7 @@
     <Logger name="org.apache" level="warn"/>
     <Logger name="org.apache" level="warn"/>
     <Logger name="org.directwebremoting" level="warn"/>
-    <Logger name="org.parabuild.ci" level="warn"/>
+    <Logger name="org.parabuild.ci" level="debug"/>
     <Logger name="org.quartz" level="warn"/>
     <Root level="warn">
       <AppenderRef ref="logfile"/>
