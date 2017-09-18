@@ -157,7 +157,6 @@
       <fileset file="${smack.jar}"/>
       <fileset file="${smackx.jar}"/>
       <fileset file="${struts2-core-2.5.10.1.jar}"/>
-      <fileset file="${xwork-core-2.5.10.1.jar}"/>
       <fileset file="${struts2-sitemesh-plugin-2.5.10.1.jar}"/>
       <fileset file="${sitemesh.jar}"/>
       <!-- Web Service -->
@@ -465,6 +464,7 @@
     <java failonerror="true" fork="true" classname="com.google.gwt.dev.Compiler" maxmemory="512m">
       <classpath>
         <pathelement location="${src}"/>
+        <pathelement location="${gwt-dev.jar}"/>
         <path refid="compile.classpath"/>
       </classpath>
       <arg line="-war"/>
@@ -483,8 +483,8 @@
     <java classname="viewtier.util.viewletc" fork="yes" failonerror="yes">
       <classpath>
         <pathelement location="${viewtier.jar}"/>
-        <pathelement location="${xerces.jar}"/>
-        <pathelement location="${xmlapis.jar}"/>
+        <!--<pathelement location="${xerces.jar}"/>-->
+        <!--<pathelement location="${xmlapis.jar}"/>-->
       </classpath>
       <arg line="-strict -verbose -warfile ${build.dir}/result_war/parabuild.war"/>
       <jvmarg line="-Djava.io.tmpdir=${build.dir.temp}"/>

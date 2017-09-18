@@ -13,30 +13,32 @@
  */
 package org.parabuild.ci.services;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.PropertyConfigurator;
-import org.parabuild.ci.common.IoUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.LoggerContext;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.util.Properties;
+import java.net.URISyntaxException;
+import java.net.URL;
 
 /**
  * Singleton to manage logging level (debug/release)
  */
+@SuppressWarnings("ControlFlowStatementWithoutBraces")
 public final class Log4jConfigurator {
 
-  private static final Log log = LogFactory.getLog(Log4jConfigurator.class);
+  public static final String DEBUG_LOG4_CONFIG = "/debug.log4j2.xml";
+  public static final String RELEASE_LOG4_CONFIG = "/log4j2.xml";
 
-  public static final String DEBUG_LOG4_PROPERTIES = "/debug.log4j2.xml";
-  public static final String RELEASE_LOG4_PROPERTIES = "/log4j2.xml";
-
-  private static Log4jConfigurator instance = new Log4jConfigurator();
+  private static final Log4jConfigurator instance = new Log4jConfigurator();
 
 
+  /**
+   * Returns a singleton instance of the configurator.
+   *
+   * @return a singleton instance of the configurator.
+   */
   public static Log4jConfigurator getInstance() {
+
     return instance;
   }
 
@@ -44,29 +46,46 @@ public final class Log4jConfigurator {
   /**
    * Initializes logging level.
    *
-   * @param debug
-   * @throws IOException
+   * @param debug <code>true</code> if the configurator has to load a debug configuration. <code>false</code>
+   *              if the configurator has to load release configuration.
+   * @throws IOException if an error occurred.
    */
   public synchronized void initialize(final boolean debug) throws IOException {
-    InputStream is = null;
     try {
-      if (debug) {
-        if (log.isDebugEnabled()) log.debug("LOADING DEBUG PROPERTIES ");
-        is = getClass().getResourceAsStream(DEBUG_LOG4_PROPERTIES);
-      } else {
-        if (log.isDebugEnabled()) log.debug("LOADING STANDARD PROPERTIES ");
-        is = getClass().getResourceAsStream(RELEASE_LOG4_PROPERTIES);
+
+      final URL configURL = getConfigURL(debug);
+
+      if (configURL != null) {
+
+        final LoggerContext context = (LoggerContext) LogManager.getContext(false);
+
+        // this will force a reconfiguration
+        context.setConfigLocation(configURL.toURI());
       }
-      LogManager.resetConfiguration();
-      if (is != null) {
-        final Properties properties = new Properties();
-        properties.load(is);
-        final PropertyConfigurator propertyConfigurator = new PropertyConfigurator();
-        propertyConfigurator.doConfigure(properties, LogManager.getLoggerRepository());
-      }
-    } finally {
-      IoUtils.closeHard(is);
+    } catch (final URISyntaxException e) {
+
+      throw new IOException(e);
     }
   }
 
+
+  /**
+   * Calculates the config URL.
+   *
+   * @param debug <code>true</code> if looking for a debug configuration. <code>false</code>
+   *              if looking for a release configuration.
+   * @return the config URL.
+   * @see #DEBUG_LOG4_CONFIG
+   * @see #RELEASE_LOG4_CONFIG
+   */
+  private URL getConfigURL(final boolean debug) {
+
+    if (debug) {
+
+      return getClass().getResource(DEBUG_LOG4_CONFIG);
+    } else {
+
+      return getClass().getResource(RELEASE_LOG4_CONFIG);
+    }
+  }
 }

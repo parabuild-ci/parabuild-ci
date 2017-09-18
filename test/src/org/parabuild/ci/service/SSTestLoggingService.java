@@ -13,22 +13,18 @@
  */
 package org.parabuild.ci.service;
 
-import java.io.*;
-import java.util.*;
-import org.apache.commons.logging.*;
-
-import junit.framework.*;
-
+import junit.framework.TestSuite;
 import org.parabuild.ci.ServersideTestCase;
-import org.parabuild.ci.common.*;
-import org.parabuild.ci.services.*;
+import org.parabuild.ci.common.IoUtils;
+import org.parabuild.ci.services.Log4jConfigurator;
+
+import java.io.InputStream;
+import java.util.Properties;
 
 /**
  * Tests Logging service
  */
 public class SSTestLoggingService extends ServersideTestCase {
-
-  private static final Log log = LogFactory.getLog(SSTestLoggingService.class);
 
 
   public SSTestLoggingService(final String s) {
@@ -43,7 +39,26 @@ public class SSTestLoggingService extends ServersideTestCase {
     InputStream is = null;
     try {
       // accessible?
-      is = getClass().getResourceAsStream(Log4jConfigurator.DEBUG_LOG4_PROPERTIES);
+      is = getClass().getResourceAsStream(Log4jConfigurator.DEBUG_LOG4_CONFIG);
+      assertNotNull(is);
+
+      // loadable?
+      final Properties properties = new Properties();
+      properties.load(is);
+    } finally {
+      IoUtils.closeHard(is);
+    }
+  }
+
+
+  /**
+   *
+   */
+  public void test_releaseLog4JPropertiesAreAvailable() throws Exception {
+    InputStream is = null;
+    try {
+      // accessible?
+      is = getClass().getResourceAsStream(Log4jConfigurator.RELEASE_LOG4_CONFIG);
       assertNotNull(is);
 
       // loadable?

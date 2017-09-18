@@ -16,7 +16,6 @@
    -->
   <property name="test.remote.builder" value="false"/>
   <property name="test.database" value="hsqldb"/>
-  <property name="serverside.test.helper" value="runtests-helper-tomcat40.xml"/>
 
   <!-- cleans up temp test dir -->
   <target name="run.tests.serverside.init">
@@ -108,39 +107,98 @@
 
   <!-- Start test servers  -->
   <target name="start.test.server">
-    <parallel>
-      <ant antfile="${serverside.test.helper}" target="start.test.server" inheritall="true" inheritrefs="true">
-        <property name="catalina.home" value="${test.dir.manager}/lib"/>
-        <property name="catalina.base" value="${test.dir.manager}/etc"/>
-        <property name="parabuild.build.manager.ipaddress" value=""/> <!-- not a agent -->
-      </ant>
-      <ant antfile="${serverside.test.helper}" target="start.test.server" inheritall="true" inheritrefs="true">
-        <property name="catalina.home" value="${test.dir.builder}/lib"/>
-        <property name="catalina.base" value="${test.dir.builder}/etc"/>
-        <property name="parabuild.build.manager.ipaddress" value="127.0.0.1"/> <!-- accept from 127.0.0.1 -->
-      </ant>
-    </parallel>
+    <!--<parallel>-->
+      <antcall target="tomcat" inheritall="true" inheritrefs="true">
+        <param name="catalina.home" value="${test.dir.manager}"/>
+        <param name="catalina.base" value="${test.dir.manager}/etc"/>
+        <param name="parabuild.build.manager.ipaddress" value=""/> <!-- not a agent -->
+        <param name="command" value="start"/>
+      </antcall>
+      <antcall target="tomcat" inheritall="true" inheritrefs="true">
+        <param name="catalina.home" value="${test.dir.builder}"/>
+        <param name="catalina.base" value="${test.dir.builder}/etc"/>
+        <param name="parabuild.build.manager.ipaddress" value="127.0.0.1"/> <!-- accept from 127.0.0.1 -->
+        <param name="command" value="start"/>
+      </antcall>
+    <!--</parallel>-->
   </target>
 
 
   <!-- Stop test servers -->
   <target name="stop.test.server">
-    <ant antfile="${serverside.test.helper}" target="stop.test.server" inheritall="true" inheritrefs="true">
-      <property name="catalina.home" value="${test.dir.manager}/lib"/>
-      <property name="catalina.base" value="${test.dir.manager}/etc"/>
-    </ant>
+    <antcall target="tomcat" inheritall="true" inheritrefs="true">
+      <param name="catalina.home" value="${test.dir.manager}"/>
+      <param name="catalina.base" value="${test.dir.manager}/etc"/>
+      <param name="command" value="stop"/>
+    </antcall>
     <antcall target="wait.for.stop">
       <param name="port.to.wait" value="${test.manager.http.port}"/>
     </antcall>
-    <ant antfile="${serverside.test.helper}" target="stop.test.server" inheritall="true" inheritrefs="true">
-      <property name="catalina.home" value="${test.dir.builder}/lib"/>
-      <property name="catalina.base" value="${test.dir.builder}/etc"/>
-    </ant>
+    <antcall target="tomcat" inheritall="true" inheritrefs="true">
+      <param name="catalina.home" value="${test.dir.builder}"/>
+      <param name="catalina.base" value="${test.dir.builder}/etc"/>
+      <param name="command" value="stop"/>
+    </antcall>
     <antcall target="wait.for.stop">
       <param name="port.to.wait" value="${test.builder.http.port}"/>
     </antcall>
   </target>
 
+
+  <!-- Tomcat command -->
+  <target name="tomcat">
+    <echo message="      command: ${command}"/>
+    <echo message="  test.config: ${test.config}"/>
+    <echo message="catalina.base: ${catalina.base}"/>
+    <echo message="catalina.home: ${catalina.home}"/>
+    <java classname="org.apache.catalina.startup.Bootstrap" fork="yes">
+      <jvmarg value="-Xms60m"/>
+      <jvmarg value="-Xmx200m"/>
+      <!-- Tomcat related parameters -->
+      <jvmarg value="-Dcatalina.base=${catalina.base}"/>
+      <jvmarg value="-Dcatalina.home=${catalina.home}"/>
+      <!-- Logging parameters -->
+      <jvmarg value="-Djava.util.logging.config.file=${catalina.home}/conf/logging.properties"/>
+      <jvmarg value="-Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager"/>
+      <jvmarg value="-Dorg.apache.logging.log4j.simplelog.StatusLogger.level=TRACE"/>
+      <!-- Java parameters -->
+      <jvmarg value="-Djava.awt.headless=true"/>
+      <jvmarg value="-Djava.io.tmpdir=${catalina.base}/temp"/>
+      <!-- Parabuild parameters -->
+      <jvmarg value="-Dparabuild.active.build.id.validation.enabled=true"/>
+      <jvmarg value="-Dparabuild.build.manager.ipaddress=${parabuild.build.manager.ipaddress}"/>
+      <jvmarg value="-Dparabuild.cccmdd.enabled=true"/>
+      <jvmarg value="-Dparabuild.cvscmdd.enabled=true"/>
+      <jvmarg value="-Dparabuild.email.disabled=true"/>
+      <jvmarg value="-Dparabuild.notification.prefix=[test]"/>
+      <jvmarg value="-Dparabuild.p4cmdd.enabled=true"/>
+      <jvmarg value="-Dparabuild.print.stacktrace=true"/>
+      <jvmarg value="-Dparabuild.source.ip.address.check.disabled=true"/>
+      <jvmarg value="-Dparabuild.starteamcmdd.enabled=true"/>
+      <jvmarg value="-Dparabuild.svncmdd.enabled=true"/>
+      <jvmarg value="-Dparabuild.vsscmdd.enabled=true"/>
+      <!-- Test parameters -->
+      <jvmarg value="-Dtest.builder.http.port=${test.builder.http.port}"/>
+      <jvmarg value="-Dtest.cvs.exe=${cvs.exe}"/>
+      <jvmarg value="-Dtest.cvsnt.home=${cvsnt.home}"/>
+      <jvmarg value="-Dtest.data.home=${test.data}"/>
+      <jvmarg value="-Dtest.dataset=${test.dataset}"/>
+      <jvmarg value="-Dtest.dir.manager=${test.dir.manager}"/>
+      <jvmarg value="-Dtest.manager.http.port=${test.manager.http.port}"/>
+      <jvmarg value="-Dtest.remote.builder=${test.remote.builder}"/>
+      <jvmarg value="-Dtest.temp.dir=${test.temp.dir}"/>
+      <!-- Tomcat command -->
+      <arg value="${command}"/>
+      <!-- Tomcat classpath -->
+      <classpath>
+        <!--<pathelement path="${java.home}/../lib/tools.jar"/>-->
+        <pathelement path="${clover.jar}"/>
+        <pathelement path="${mysql.jar}"/>
+        <pathelement path="${catalina.home}/bin/bootstrap.jar"/>
+        <pathelement path="${catalina.home}/bin/tomcat-juli.jar"/>
+      </classpath>
+    </java>
+  </target>
 
   <!-- Helper -->
   <target name="wait.for.stop">

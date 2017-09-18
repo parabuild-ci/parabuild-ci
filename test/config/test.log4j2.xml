@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="debug">
+<Configuration status="warn">
 
   <Properties>
-    <Property name="appenderPatternLayout">[%t] %d{ABSOLUTE} %5p: %-30.30c{3}(%3L) - %m %n</Property>
+    <Property name="appenderPatternLayout">[%t] %d{yyyy-MM-dd HH:mm:ss.SSS} %5p: %-40.40c{3}(%3L) - %m %n</Property>
     <Property name="logDirectory">${sys:catalina.home}/logs</Property>
   </Properties>
 
