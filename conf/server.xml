@@ -12,7 +12,7 @@
 
     <Connector protocol="HTTP/1.1" port="@http.port@" connectionTimeout="60000"/>
 
-    <Engine name="Standalone" defaultHost="localhost">
+    <Engine name="Parabuild" defaultHost="localhost">
 
       <Realm className="org.parabuild.ci.realm.Realm"/>
 

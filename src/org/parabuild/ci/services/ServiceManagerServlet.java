@@ -23,17 +23,11 @@ import org.parabuild.ci.error.Error;
 import org.parabuild.ci.error.ErrorManager;
 import org.parabuild.ci.error.ErrorManagerFactory;
 
-import javax.management.MBeanServer;
-import javax.management.ObjectInstance;
-import javax.management.ObjectName;
 import javax.servlet.GenericServlet;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import java.lang.management.ManagementFactory;
-import java.util.Iterator;
-import java.util.Set;
 
 /**
  * ServiceManagerServlet servlet is responsible for starting
@@ -42,7 +36,7 @@ import java.util.Set;
 public final class ServiceManagerServlet extends GenericServlet {
 
   private static final long serialVersionUID = 6247201370637762943L; // NOPMD
-//  private static final Log log = LogFactory.getLog(ServiceManagerServlet.class);
+  //  private static final Log log = LogFactory.getLog(ServiceManagerServlet.class);
   private boolean destroyed = false; // NOPMD
   private final ServiceManager serviceManager = ServiceManager.getInstance();
 
@@ -67,7 +61,13 @@ public final class ServiceManagerServlet extends GenericServlet {
 
     // startup services
     try {
-      serviceManager.setListenPort(getListenPort());
+
+      // Get listen port
+      final ListenPortConfig listenPortConfig = new ListenPortConfig();
+      final int listenPort = listenPortConfig.getListenPort();
+
+      // Start services
+      serviceManager.setListenPort(listenPort);
       serviceManager.startServices();
       printServiceStartedToConsole();
     } catch (Exception e) {
@@ -104,48 +104,6 @@ public final class ServiceManagerServlet extends GenericServlet {
       destroyed = true;
     }
     super.destroy();
-  }
-
-
-  /**
-   * Retrieves HTTP listen port used by the app. It assumes there
-   * is only one HTTP connector.
-   */
-  private int getListenPort() {
-    int port = 8080;
-    try {
-      // get connectors
-      final MBeanServer mbeanServer = ManagementFactory.getPlatformMBeanServer();
-      System.out.println("mbeanServer = " + mbeanServer);
-//      if (log.isDebugEnabled()) log.debug("server: " + mbeanServer);
-      final ObjectName objectName = new ObjectName("Catalina:type=Connector,*");
-      //noinspection ControlFlowStatementWithoutBraces
-      System.out.println("objectName = " + objectName);
-      final Set mbeans = mbeanServer.queryMBeans(objectName, null);
-      System.out.println("mbeans = " + mbeans);
-      // find http connector
-      for (final Iterator i = mbeans.iterator(); i.hasNext();) {
-        final ObjectInstance mbean = (ObjectInstance) i.next();
-        System.out.println("mbean = " + mbean);
-//        if (log.isDebugEnabled()) log.debug("mbean: " + mbean);
-//        if (log.isDebugEnabled()) log.debug("mbean.getClassName(): " + mbean.getClassName());
-//        if (log.isDebugEnabled()) log.debug("mbean.getObjectName(): " + mbean.getObjectName());
-//        if (log.isDebugEnabled()) log.debug("connector className: " + mbeanServer.getAttribute(mbean.getObjectName(), "className"));
-        final String handlerClassName = (String) mbeanServer.getAttribute(mbean.getObjectName(), "className");
-        // is it HTTP connector?
-        if (handlerClassName.endsWith("HttpConnector")) {
-          port = ((Integer) mbeanServer.getAttribute(mbean.getObjectName(), "port")).intValue();
-//          if (log.isDebugEnabled()) {
-//            log.debug("port: " + port);
-//          }
-          break;
-        }
-      }
-    } catch (Exception e) {
-      // just log error, default value will be used
-//      log.error("Error while getting connector list", e);
-    }
-    return port;
   }
 
 
