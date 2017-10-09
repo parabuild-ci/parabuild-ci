@@ -1,6 +1,37 @@
-#!/bin/sh
+# parabuild     Starts/Stops Parabuild manager
+#
+# chkconfig: 345 99 10
+# description:	The Parabuild manager provides an ability to configure
+#               and run automatic and scheduled builds. Automatic builds
+#               start at every check in. Scheduled builds start at
+#               configurable time.
+# processname:	parabuild
+# pidfile:	/var/run/parabuild.pid
 
-# Parabuild daemon script
+
+# Configuration variables prequisites:
+#
+#   CATALINA_HOME          Must point at your Parabuild installation directory.
+#                          Default installation directory is /opt/parabuild.
+CATALINA_HOME=/opt/parabuild
+
+# Set CATALINA_BASE
+CATALINA_BASE="$CATALINA_HOME"/etc
+
+# Set CATALINA_OUT
+CATALINA_OUT="$CATALINA_HOME"/logs/catalina.out
+
+# Set CATALINA_PID
+CATALINA_PID=/var/run/parabuild.pid
+
+# Set CATALINA_OPTS
+CATALINA_OPTS="-Xms1024m -Xmx1024m -Dorg.apache.logging.log4j.simplelog.StatusLogger.level=TRACE -Dlog4j.configurationFile=log4j2.xml"
+
+# Set user
+TOMCAT_USER=parabuild
+
+# Set LOGGING_CONFIG
+LOGGING_CONFIG="-Djava.util.logging.config.file=$CATALINA_HOME/conf/logging.properties"
 
 # Call Tomcat daemon script with the same parameters
-. daemon.sh $@
+. "$CATALINA_HOME"/bin/daemon.sh $@
