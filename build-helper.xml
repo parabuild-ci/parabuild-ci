@@ -26,7 +26,7 @@
     <mkdir dir="${build.dir.temp}"/>
     <echo message="build.dir.database: ${build.dir.database}"/>
     <dbunit url="jdbc:hsqldb:${build.dir.database}/parabuild"
-      driver="org.hsqldb.jdbcDriver" userid="sa" password="p0a">
+            driver="org.hsqldb.jdbcDriver" userid="sa" password="p0a">
       <export dest="${build.dir.temp}/exported_autobuild.xml"/>
     </dbunit>
   </target>
@@ -68,11 +68,13 @@
   <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
   <target name="install4j">
     <!-- Prepare Install4J -->
+    <property name="param.release.version" value="SNAPSHOT"/>
     <property name="param.release.build" value="internal"/>
     <property name="param.install4j.project" value=""/>
 
     <!-- Show params -->
     <echo message="Creating installation media"/>
+    <echo message="  Release version:   ${param.release.version}"/>
     <echo message="  Release build:     ${param.release.build}"/>
     <echo message="  Install4j project: ${param.install4j.project}"/>
 
@@ -113,14 +115,10 @@
     <property name="distrib.jdk.linux.x86" value="${distrib.jdk.dir}/linux-x86-1.4.2_13.tar.gz"/>
     <property name="distrib.jdk.linux.1.5.0.x86" value="${distrib.jdk.dir}/linux-x86-1.5.0_12.tar.gz"/>
     <property name="distrib.jdk.solaris.sparc" value="${distrib.jdk.dir}/solaris-sparc-1.4.2_13.tar.gz"/>
-    <property name="distrib.jdk.windows.x86" value="${distrib.jdk.dir}/windows-x86-1.4.2_13.tar.gz"/>
+    <property name="distrib.jdk.windows.x86" value="${distrib.jdk.dir}/windows-x86-1.8.0_144.tar.gz"/>
     <!-- Check linux x86 -->
     <ant antfile="build-helper.xml" target="validate.file.exists">
       <property name="file.location" value="${distrib.jdk.linux.x86}"/>
-      <property name="file.descr" value="Linux x86 JDK"/>
-    </ant>
-    <ant antfile="build-helper.xml" target="validate.file.exists">
-      <property name="file.location" value="${distrib.jdk.linux.1.5.0.x86}"/>
       <property name="file.descr" value="Linux x86 JDK"/>
     </ant>
     <!-- Check solaris sparc -->
@@ -141,14 +139,13 @@
     <basename property="install4j.project.filename" file="${param.install4j.project}"/>
     <property name="work.install4j.project" value="${build.dir}/work.${install4j.project.filename}"/>
     <copy file="${param.install4j.project}" tofile="${work.install4j.project}" overwrite="yes">
-      <filterset begintoken="{" endtoken="}">
-        <filter token="compiler:sys.version" value="{compiler:sys.version}"/>
+      <filterset begintoken="&quot;" endtoken="&quot;" recurse="false">
+        <filter token="SNAPSHOT" value="&quot;${param.release.version}&quot;"/>
       </filterset>
     </copy>
 
     <!-- Generate installers -->
-    <taskdef name="install4j" classname="com.install4j.Install4JTask"
-      classpath="${distrib.install4j.home}/bin/ant.jar"/>
+    <taskdef name="install4j" classname="com.install4j.Install4JTask" classpath="${distrib.install4j.home}/bin/ant.jar"/>
     <install4j projectfile="${work.install4j.project}" verbose="false"/>
   </target>
 

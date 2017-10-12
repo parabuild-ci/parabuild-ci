@@ -172,7 +172,7 @@ public abstract class AbstractUnixDaemonCreator implements UnixDaemonCreator {
     final File installationDaemonScript = new File(ictx.getInstallationDirectory(), "bin/parabuild");
     final String destinationScriptPath = getDaemonScriptDestinationPath();
     final File destinationDaemonScript = new File(destinationScriptPath, "parabuild");
-    final FileOptions fileOptions = new FileOptions("755", OverwriteMode.NEVER, false);
+    final FileOptions fileOptions = new FileOptions("755", OverwriteMode.IF_NEWER, false);
 //    System.out.println("DEBUG: destinationDaemonScript: " + destinationDaemonScript);
     ictx.installFile(installationDaemonScript, destinationDaemonScript, fileOptions);
   }

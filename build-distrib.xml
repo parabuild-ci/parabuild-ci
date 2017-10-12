@@ -9,10 +9,12 @@
     </copy>
 
     <!-- NOTE: this value is overwritten by calling script when actual release build is done -->
+    <property name="release.version" value="SNAPSHOT"/>
     <property name="release.build" value="SNAPSHOT"/>
     <ant antfile="build-helper.xml" target="install4j">
-      <property name="param.release.build" value="${release.build}"/>
       <property name="param.install4j.project" value="${config}/install.install4j"/>
+      <property name="param.release.version" value="${release.version}"/>
+      <property name="param.release.build" value="${release.build}"/>
     </ant>
   </target>
 
