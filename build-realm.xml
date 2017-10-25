@@ -15,7 +15,7 @@
 
   <!-- Compile Parabuild remote build manager realm-->
   <target name="realm.compile" depends="realm.prepare, realm.resources">
-    <javac destdir="${build.dir.realm.classes}" includes="org/parabuild/ci/realm/**.java" debug="on">
+    <javac destdir="${build.dir.realm.classes}" includes="org/parabuild/ci/realm/**.java" debug="on" target="1.5">
       <classpath>
         <pathelement path="${catalina.jar}"/>
         <pathelement path="${tomcat.home}/common/lib/commons-logging-api.jar"/>

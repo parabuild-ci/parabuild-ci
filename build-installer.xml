@@ -23,7 +23,7 @@
 
   <!-- Compile Parabuild remote build manager installer-->
   <target name="installer.compile" depends="installer.resources">
-    <javac destdir="${installer.classes.dir}" includes="org/parabuild/ci/installer/**.java" debug="on">
+    <javac destdir="${installer.classes.dir}" includes="org/parabuild/ci/installer/**.java" debug="on" target="1.5">
       <classpath>
         <pathelement path="${i4jruntime.jar}"/>
         <pathelement path="${commons-logging.jar}"/>

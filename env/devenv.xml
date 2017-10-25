@@ -292,7 +292,7 @@
   <output>
     <shell variable="JAVA_HOME" path="${java.home}"/>
     <shell variable="ANT_HOME" path="${ant.home}"/>
-    <shell variable="ANT_OPTS" value="-Xmx2g -XX:MaxPermSize=512m"/>
+    <shell variable="ANT_OPTS" value="&quot;-Xmx2g -XX:MaxPermSize=512m&quot;"/>
     <shell variable="PARABUILD_HOME" path="${test.tomcat}"/>
     <shell variable="P4PORT" value="127.0.0.1:1666"/>
     <shell variable="P4USER" value="test_user"/>

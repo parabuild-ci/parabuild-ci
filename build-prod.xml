@@ -205,7 +205,7 @@ java2wsdl fails weirdly when running run.tests.all -->
     </taskdef>
 
     <!-- Create template -->
-    <javac destdir="${build.dir.classes}" includes="**/Parabuild.java" debug="on">
+    <javac destdir="${build.dir.classes}" includes="**/Parabuild.java" debug="on" target="1.5">
       <classpath>
         <path refid="compile.classpath"/>
       </classpath>
@@ -246,7 +246,7 @@ java2wsdl fails weirdly when running run.tests.all -->
   <!-- Compile Parabuild -->
   <target name="product.compile" depends="product.webservice, product.resources">
     <!-- Compile product -->
-    <javac destdir="${build.dir.classes}" includes="**/**.java" debug="on" memorymaximumsize="200m" fork="true">
+    <javac destdir="${build.dir.classes}" includes="**/**.java" debug="on" memorymaximumsize="200m" fork="true" target="1.5">
       <classpath>
         <path refid="compile.classpath"/>
       </classpath>
@@ -434,7 +434,7 @@ java2wsdl fails weirdly when running run.tests.all -->
       </filterset>
     </copy>
     <!-- compile -->
-    <javac srcdir="${jspc.output}" destdir="${war.staging.classes}" includes="**/**.java" debug="on">
+    <javac srcdir="${jspc.output}" destdir="${war.staging.classes}" includes="**/**.java" debug="on" target="1.5">
       <classpath>
         <path refid="compile.classpath"/>
         <path refid="jspc.classpath"/>
