@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <install4j version="4.2.6" transformSequenceNumber="2">
   <directoryPresets config="../temp/result/parabuild/lib/server/webapps/parabuild-manager.war"/>
-  <application name="Parabuild CI" distributionSourceDir="" applicationId="2352-6126-7734-6227" mediaDir="../temp/result_distrib" mediaFilePattern="parabuild_${compiler:sys.version}_${compiler:sys.setName}" compression="9" lzmaCompression="true" pack200Compression="false" excludeSignedFromPacking="true" keepModificationTimes="true" missingFilesStrategy="error" shortName="parabuild" publisher="Parabuild CI" publisherWeb="http://www.parabuildci.org" version="4.4.0" allPathsRelative="true" backupOnSave="true" autoSave="true" convertDotsToUnderscores="true" macSignature="????" installerName="" javaMinVersion="1.4.2" javaMaxVersion="1.6" allowBetaVM="false" jdkMode="runtimeJre" jdkName="">
+  <application name="Parabuild CI" distributionSourceDir="" applicationId="2352-6126-7734-6227" mediaDir="../temp/result_distrib" mediaFilePattern="parabuild_${compiler:sys.version}_${compiler:sys.setName}" compression="9" lzmaCompression="true" pack200Compression="false" excludeSignedFromPacking="true" keepModificationTimes="true" missingFilesStrategy="error" shortName="parabuild" publisher="Parabuild CI" publisherWeb="http://www.parabuildci.org" version="4.4.1" allPathsRelative="true" backupOnSave="true" autoSave="true" convertDotsToUnderscores="true" macSignature="????" installerName="" javaMinVersion="1.4.2" javaMaxVersion="1.6" allowBetaVM="false" jdkMode="runtimeJre" jdkName="">
     <languages skipLanguageSelection="false" languageSelectionInPrincipalLanguage="false">
       <principalLanguage id="en" customLocalizationFile=""/>
       <additionalLanguages/>
