@@ -14,6 +14,7 @@
 package org.parabuild.ci;
 
 import org.parabuild.ci.common.IoUtils;
+import org.parabuild.ci.common.StringUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -91,16 +92,16 @@ public final class Version implements Serializable {
     }
 
     // dynamic part
-    if (!releaseDate().isEmpty()) {
+    if (!StringUtils.isEmpty(releaseDate())) {
       result.append(releaseDate()).append(STR_SPACE);
     }
-    if (!releaseChange().isEmpty() && !SNAPSHOT.equals(releaseBuild())) {
+    if (!StringUtils.isEmpty(releaseChange()) && !SNAPSHOT.equals(releaseBuild())) {
       result.append(releaseChange()).append(STR_SPACE);
     }
-    if (!releaseBuild().isEmpty() && !"0".equals(releaseBuild()) && !SNAPSHOT.equals(releaseBuild())) {
+    if (!StringUtils.isEmpty(releaseBuild()) && !"0".equals(releaseBuild()) && !SNAPSHOT.equals(releaseBuild())) {
       result.append("build ").append(releaseBuild()).append(STR_SPACE);
     }
-    if (releaseDate().isEmpty() || releaseBuild().isEmpty()) {
+    if (StringUtils.isEmpty(releaseDate()) || StringUtils.isEmpty(releaseBuild())) {
       result.append("Internal release").append(STR_SPACE);
     }
     return result.toString();

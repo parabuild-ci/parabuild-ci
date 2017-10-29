@@ -558,7 +558,7 @@ public final class StringUtils implements CommonConstants {
   /**
    * @param pattern
    *
-   * @return true if pattern starts with '^' and ands wiht '$' 
+   * @return true if pattern starts with '^' and ands wiht '$'
    */
   public static boolean isRegex(final String pattern) {
     return !isBlank(pattern) && pattern.charAt(0) == '^' && pattern.endsWith("$");
@@ -744,5 +744,22 @@ public final class StringUtils implements CommonConstants {
 
   public static String diffToString(final int diff) {
     return '(' + (diff >= 0 ? "+" : "-") + Integer.toString(diff) + ')';
+  }
+
+
+  /**
+   * Returns true if the string is empty.
+   *
+   * @param s the string to check.
+   * @return true if the string is empty.
+   */
+  @SuppressWarnings("SizeReplaceableByIsEmpty")
+  public static boolean isEmpty(final String s) {
+
+    if (s == null || s.length() == 0) {
+      return true;
+    }
+
+    return s.trim().length() == 0;
   }
 }
