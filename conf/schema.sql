@@ -1394,7 +1394,7 @@ constraint COMMENT_FC1 foreign key (AUTHOR_ID) references USERS(ID)
 create index COMMENT_IX1 on COMMENT(OWNER_TYPE, OWNER_ID, COMMENT_TIME);
 
 insert into USERS (ID, NAME, FNAME, PASSWORD, IS_ADMIN, EMAIL, ROLES, ENABLED, IM_TYPE, IM_ADDRESS, LDAP_AUTH, DISABLE_ALL_EMAIL, TIMESTAMP) values(0, 'admin', '', '21232F297A57A5A743894A0E4A801FC3', 'Y', '', 'admin', 'Y', 0, '', 'N', 'N', 1);
-insert into SYSTEM_PROPERTY (ID, NAME, VALUE, TIMESTAMP) values (0, 'parabuild.schema.version', '80', 1);
+insert into SYSTEM_PROPERTY (ID, NAME, VALUE, TIMESTAMP) values (0, 'parabuild.schema.version', '81', 1);
 insert into SYSTEM_PROPERTY (ID, NAME, VALUE, TIMESTAMP) values (1, 'parabuild.date.format', 'MM/dd/yyyy', 1);
 insert into SYSTEM_PROPERTY (ID, NAME, VALUE, TIMESTAMP) values (2, 'parabuild.date.time.format', 'hh:mm a MM/dd/yyyy', 1);
 insert into SYSTEM_PROPERTY (ID, NAME, VALUE, TIMESTAMP) values (3, 'parabuild.enable.anon.builds', 'checked', 1);
