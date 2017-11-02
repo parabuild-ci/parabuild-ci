@@ -65,7 +65,9 @@
     </copy>
     -->
 
-    <copy file="${tomcat.home}/temp/README.txt" todir="${build.dir.tomcat}/etc/temp"/>
+    <!-- Initialize Tomcat's temp directory -->
+    <mkdir dir="${build.dir.tomcat}/etc/temp"/>
+    <echo file="${build.dir.tomcat}/etc/temp/README.txt" message="A placeholder to enable installing of the temp dir"/>
 
     <filter token="http.port" value="${tomcat.http.port}"/>
     <filter token="serv.port" value="${tomcat.serv.port}"/>
@@ -207,7 +209,7 @@
     </taskdef>
 
     <!-- Create template -->
-    <javac destdir="${build.dir.classes}" includes="**/Parabuild.java"  debug="on" includeantruntime="false">
+    <javac destdir="${build.dir.classes}" includes="**/Parabuild.java" debug="on" includeantruntime="false">
       <compilerarg value="-proc:none"/>
       <classpath>
         <path refid="compile.classpath"/>
@@ -249,7 +251,7 @@
   <!-- Compile Parabuild -->
   <target name="product.compile" depends="product.webservice, product.resources">
     <!-- Compile product -->
-    <javac destdir="${build.dir.classes}" includes="**/**.java" memorymaximumsize="200m" fork="true"  debug="on" includeantruntime="false">
+    <javac destdir="${build.dir.classes}" includes="**/**.java" memorymaximumsize="200m" fork="true" debug="on" includeantruntime="false">
       <compilerarg value="-proc:none"/>
       <classpath>
         <path refid="compile.classpath"/>
@@ -449,7 +451,7 @@
       </filterset>
     </copy>
     <!-- compile -->
-    <javac srcdir="${jspc.output}" destdir="${war.staging.classes}" includes="**/**.java"  debug="on" includeantruntime="false">
+    <javac srcdir="${jspc.output}" destdir="${war.staging.classes}" includes="**/**.java" debug="on" includeantruntime="false">
       <compilerarg value="-proc:none"/>
       <classpath>
         <path refid="compile.classpath"/>
