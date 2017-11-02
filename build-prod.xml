@@ -53,17 +53,6 @@
 
     <!-- Copy tomcat config files -->
     <mkdir dir="${build.dir.tomcat}/etc/conf"/>
-    <!--
-    <copy todir="${build.dir.tomcat}/etc/conf">
-      <fileset dir="${tomcat.home}/conf/">
-        <exclude name="server.xml"/>
-        <exclude name="tomcat-users.xml"/>
-        <exclude name="tomcat-users.xsd"/>
-        <exclude name="logging.properties"/>
-      </fileset>
-      <fileset file="${config}/logging.properties"/>
-    </copy>
-    -->
 
     <!-- Initialize Tomcat's temp directory -->
     <mkdir dir="${build.dir.tomcat}/etc/temp"/>
