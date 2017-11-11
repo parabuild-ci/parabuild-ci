@@ -35,6 +35,7 @@ public final class SimpleAutomaticScheduleSettingsPanel extends AbtractScheduleS
   private static final String DEFAULT_POLL_INTERVAL_STR = Integer.toString(ScheduleProperty.DEFAULT_POLL_INTERVAL);
   private static final String DEFAULT_COOLDOWN_INTERVAL_STR = Integer.toString(ScheduleProperty.DEFAULT_COOLDOWN_INTERVAL);
 
+  private static final String CAPTION_BUILD_CHANGES_ONE_BY_ONE = "Build changes one-by-one";
   private static final String CAPTION_POLL_INTERVAL = "Poll interval, seconds: ";
   private static final String CAPTION_COOLDOWN_INTERVAL = "Cool-down interval, seconds: ";
   private static final String CAPTION_RUN_IF_NO_CHANGES = "Run if no changes: ";
@@ -59,9 +60,9 @@ public final class SimpleAutomaticScheduleSettingsPanel extends AbtractScheduleS
     if (advancedSelected) {
       super.gridIterator.addPair(new CommonFieldLabel(CAPTION_COOLDOWN_INTERVAL), flCooldownInterval);
     }
+    super.gridIterator.addPair(new CommonFieldLabel(CAPTION_BUILD_CHANGES_ONE_BY_ONE), flBuildOneByOne);
     super.gridIterator.addPair(new CommonFieldLabel(CAPTION_RUN_IF_NO_CHANGES), flRunIfNoChanges);
     super.gridIterator.addPair(new CommonFieldLabel(CAPTION_SERIALIZE), flSerialize);
-//    super.gridIterator.addPair(new CommonFieldLabel("Build one-by-one"), flBuildOneByOne);
 
     // set dafaut values
     flPollInterval.setValue(DEFAULT_POLL_INTERVAL_STR);
@@ -110,11 +111,14 @@ public final class SimpleAutomaticScheduleSettingsPanel extends AbtractScheduleS
   }
 
 
+  @Override
   public String toString() {
     return "SimpleAutomaticScheduleSettingsPanel{" +
             "flPollInterval=" + flPollInterval +
             ", flCooldownInterval=" + flCooldownInterval +
             ", flBuildOneByOne=" + flBuildOneByOne +
+            ", flRunIfNoChanges=" + flRunIfNoChanges +
+            ", flSerialize=" + flSerialize +
             "} " + super.toString();
   }
 }

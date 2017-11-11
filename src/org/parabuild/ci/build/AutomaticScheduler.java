@@ -442,8 +442,8 @@ public final class AutomaticScheduler extends Thread implements BuildScheduler {
 
   /**
    * @return null because AutomaticScheduler launches a build
-   *         according to appearance of new changes in a version control
-   *         system, not according to a schedule.
+   * according to appearance of new changes in a version control
+   * system, not according to a schedule.
    */
   public Date nextBuildTime() {
     return null;
@@ -611,6 +611,16 @@ public final class AutomaticScheduler extends Thread implements BuildScheduler {
    */
   private boolean isRunIfNoChanges() {
     return cm.getScheduleSettingValue(activeBuildID, ScheduleProperty.RUN_IF_NO_CHANGES,
+            ScheduleProperty.OPTION_UNCHECKED).equals(ScheduleProperty.OPTION_CHECKED);
+  }
+
+
+  /**
+   * @return true if the build should run detected changes one-by-one.
+   * @noinspection BooleanMethodIsAlwaysInverted
+   */
+  private boolean isBuildChangesOneByOne() {
+    return cm.getScheduleSettingValue(activeBuildID, ScheduleProperty.AUTO_BUILD_ONE_BY_ONE,
             ScheduleProperty.OPTION_UNCHECKED).equals(ScheduleProperty.OPTION_CHECKED);
   }
 }
