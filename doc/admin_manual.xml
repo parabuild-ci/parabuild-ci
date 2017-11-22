@@ -6612,6 +6612,8 @@
 
             <member>Field "Cool-down interval".</member>
 
+            <member>Field "Build changes one-by-one".</member>
+
             <member>Field "Serialize this build".</member>
           </simplelist>
 
@@ -6623,6 +6625,17 @@
             <para>Field "Poll interval" defines number of seconds Parabuild
               waits before repeating check for new changes in the version
               control system.
+            </para>
+          </sect4>
+
+          <sect4>
+            <title>Building changes one-by-one</title>
+
+            <para>Sometimes it's necessary to produce build artifacts for each
+              change in the project. By default Parabuild will pick and build
+              all changes since the last build. Checking box
+              "Build changes one-by-one" will switch Parabuild CI to starting
+              the build for each change submitted to the version control system.
             </para>
           </sect4>
 
