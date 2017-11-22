@@ -1,3 +1,7 @@
+Changes in Parabuild 4.4.2
+
+PARABUILD-1667 - Add building changes one-by-one.
+
 Changes in Parabuild 4.4.1
 
 PARABUILD-1666 - Parabuild 4.0.0 has a wrong Java version in the installer
