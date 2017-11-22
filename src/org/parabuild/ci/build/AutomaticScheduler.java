@@ -207,25 +207,39 @@ public final class AutomaticScheduler extends Thread implements BuildScheduler {
 
         lastFoundChangeListID = currentChangeListID;
 
-        // Find a priority change list, if any
+        //
+        // Calculate the change list to run the build against
+        //
+        final PriorityMarkerParser priorityMarkerParser = new PriorityMarkerParser();
+        final List pendingChangeLists = cm.getPendingChangeLists(activeBuildID);
         int startChangeListID = currentChangeListID;
         List parameters = null;
 
-        final List pendingChangeLists = cm.getPendingChangeLists(activeBuildID);
-        final PriorityMarkerParser priorityMarkerParser = new PriorityMarkerParser();
-        for (int i = 0; i < pendingChangeLists.size(); i++) {
+        // REVIEWME: simeshev@parabuildci.org - 2017-11-20 - is it possible at all that the pending change list is empty?
+        if (isBuildChangesOneByOne() && !pendingChangeLists.isEmpty()) {
 
-          final ChangeList changeList = (ChangeList) pendingChangeLists.get(i);
-          final String changeListDescription = changeList.getDescription();
-          parameters = priorityMarkerParser.parseChangeListDescription(changeListDescription);
+          // There is a change list to pick from the pending change lists
+          final ChangeList changeList = (ChangeList) pendingChangeLists.get(0);
+          parameters = parseParameters(priorityMarkerParser, changeList);
           startChangeListID = changeList.getChangeListID();
 
-          if (parameters != null) {
+        } else {
 
-            // Found a priority change list
-            break;
+          // Find a priority change list if any
+          for (int i = 0; i < pendingChangeLists.size(); i++) {
+
+            final ChangeList changeList = (ChangeList) pendingChangeLists.get(i);
+            parameters = parseParameters(priorityMarkerParser, changeList);
+            startChangeListID = changeList.getChangeListID();
+
+            if (parameters != null) {
+
+              // Found a priority change list
+              break;
+            }
           }
         }
+
 
         // set status to getting changes so that it does not
         // appear that it is checking out forever if the
@@ -297,6 +311,14 @@ public final class AutomaticScheduler extends Thread implements BuildScheduler {
         runOnceRequest = null;
       }
     }
+  }
+
+
+  private List parseParameters(PriorityMarkerParser priorityMarkerParser, ChangeList changeList) {
+    final String changeListDescription = changeList.getDescription();
+    List parameters = null;
+    parameters = priorityMarkerParser.parseChangeListDescription(changeListDescription);
+    return parameters;
   }
 
 
