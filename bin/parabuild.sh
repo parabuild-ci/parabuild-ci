@@ -25,7 +25,7 @@ CATALINA_BASE="$CATALINA_HOME"/etc
 CATALINA_OUT="$CATALINA_HOME"/logs/catalina.out
 
 # Set CATALINA_OPTS
-CATALINA_OPTS="-Xms1024m -Xmx1024m -Dorg.apache.logging.log4j.simplelog.StatusLogger.level=TRACE -Dlog4j.configurationFile=log4j2.xml"
+CATALINA_OPTS="-Xms1024m -Xmx1024m -Djava.awt.headless=true -Dorg.apache.logging.log4j.simplelog.StatusLogger.level=TRACE -Dlog4j.configurationFile=log4j2.xml"
 
 
 # Set LOGGING_CONFIG
