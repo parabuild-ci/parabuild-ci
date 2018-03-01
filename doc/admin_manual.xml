@@ -1288,38 +1288,39 @@
           </para>
         </sect3>
 
-        <sect2>
-          <title>Security Settings</title>
+      </sect2>
 
-          <sect3>
-            <title>Allow Anonymous Users</title>
+      <sect2>
+        <title>Security Settings</title>
 
-            <para>Check this box to allow anonymous users accessing build
-              statuses through web user interface. Built-in security group
-              "Anonymous" allows to configure what builds can be accessed by
-              anonymous users.
+        <sect3>
+          <title>Allow Anonymous Users</title>
+
+          <para>Check this box to allow anonymous users accessing build
+            statuses through web user interface. Built-in security group
+            "Anonymous" allows to configure what builds can be accessed by
+            anonymous users.
+          </para>
+
+          <important>
+            <para>To secure your Parabuild installation, change the default
+              password immediately after completing installation and starting
+              Parabuild for the first time.
             </para>
+          </important>
 
-            <important>
-              <para>To secure your Parabuild installation, change the default
-                password immediately after completing installation and starting
-                Parabuild for the first time.
-              </para>
-            </important>
+          <para>To change the admin password, enter a new password and
+            re-type it in the "Confirm password" entry field.
+          </para>
+        </sect3>
 
-            <para>To change the admin password, enter a new password and
-              re-type it in the "Confirm password" entry field.
-            </para>
-          </sect3>
+        <sect3>
+          <title>Enabling Hiding Change List Descriptions</title>
 
-          <sect3>
-            <title>Enabling Hiding Change List Descriptions</title>
-
-            <para>Check this box to hide descriptions of change lists from
-              anonymous users.
-            </para>
-          </sect3>
-        </sect2>
+          <para>Check this box to hide descriptions of change lists from
+            anonymous users.
+          </para>
+        </sect3>
       </sect2>
 
       <sect2>
@@ -9651,7 +9652,7 @@
     </sect1>
 
     <sect1>
-      <title id="git_env_vars">Environment Variables for Subversion Builds</title>
+      <title id="subversion_env_vars">Environment Variables for Subversion Builds</title>
 
       <para>The following environment variables are available to build scripts
         running as a part of build configurations using Git as a version control
@@ -9706,7 +9707,7 @@
     </sect1>
 
     <sect1>
-      <title id="parallel_env_vars">Environment Variables for Dependent
+      <title id="dependent_env_vars">Environment Variables for Dependent
         Builds
       </title>
 
