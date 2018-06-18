@@ -63,7 +63,6 @@ final class JUnitStatisticsProcessor {
    * Creates JUnitStatisticsProcessor for the given buildRunID.
    *
    * @param buildRunID for that to create JUnitStatisticsProcessor
-   * @param runID
    */
   JUnitStatisticsProcessor(final int activeBuildID, final int buildRunID, final int stepRunID) {
     this.activeBuildID = activeBuildID;
@@ -290,7 +289,6 @@ final class JUnitStatisticsProcessor {
   /**
    * Finds previous build run that has tests.
    *
-   * @param activeBuildID
    * @return previous build run that has tests or null if not found.
    */
   private BuildRun findMostRecentBuildRunWithTests() {

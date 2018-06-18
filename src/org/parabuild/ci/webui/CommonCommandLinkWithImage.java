@@ -35,7 +35,6 @@ public class CommonCommandLinkWithImage extends Flow {
    *
    * @param caption    command caption.
    * @param url        command URL.
-   * @param annotation command annotation.
    */
   public CommonCommandLinkWithImage(final String caption, final String url) {
     commandLink = new CommonCommandLink(caption, url);

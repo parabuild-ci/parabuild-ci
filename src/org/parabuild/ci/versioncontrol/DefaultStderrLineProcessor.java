@@ -15,7 +15,7 @@ package org.parabuild.ci.versioncontrol;
 
 /**
  * This stderr line processor does nothing.  The default
- * behaviour is to just return {@link RESULT_ADD_TO_ERRORS}
+ * behaviour is to just return {@link #RESULT_ADD_TO_ERRORS}
  * from {@link #processLine(int, String)}.
  *
  * @see StderrLineProcessor

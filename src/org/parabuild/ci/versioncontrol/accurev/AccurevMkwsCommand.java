@@ -48,7 +48,6 @@ final class AccurevMkwsCommand extends AccurevCommand {
    * @param storage
    * @param agent
    * @param parameters
-   * @param transactionNumber
    * @throws IOException
    */
   AccurevMkwsCommand(final Agent agent, final AccurevCommandParameters parameters,

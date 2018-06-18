@@ -13,10 +13,14 @@
  */
 package org.parabuild.ci.statistics;
 
-import java.util.*;
+import net.sf.hibernate.HibernateException;
+import net.sf.hibernate.Query;
+import net.sf.hibernate.Session;
+import org.parabuild.ci.object.MonthlyTestStats;
+import org.parabuild.ci.object.StatisticsSample;
 
-import net.sf.hibernate.*;
-import org.parabuild.ci.object.*;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Updates per-month statistics.
@@ -32,7 +36,7 @@ final class MonthlyTestStatsUpdater extends AbstractTestStatsUpdater {
    * @return truncation lavel to be used by the updater.
    *
    * @see Calendar#DAY_OF_MONTH
-   * @see Calendar.MONTH
+   * @see Calendar#MONTH
    * @see Calendar#HOUR_OF_DAY
    * @see Calendar#YEAR
    */

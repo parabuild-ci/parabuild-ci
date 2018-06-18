@@ -49,9 +49,6 @@ final class GlobalVCSUserMapTable extends AbstractFlatTable {
   /**
    * Constructor - creates an instance of flat table with given
    * number of columns
-   *
-   * @param columnCount number of columns ih the table
-   * @param editable    true if editting is allowed
    */
   public GlobalVCSUserMapTable(final List mappingList) {
     super(4, false);

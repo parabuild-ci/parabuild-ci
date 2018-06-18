@@ -13,8 +13,6 @@
  */
 package org.parabuild.ci.merge.finder.perforce;
 
-import java.io.IOException;
-
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.common.BuildException;
 import org.parabuild.ci.common.CommandStoppedException;
@@ -25,11 +23,9 @@ import org.parabuild.ci.object.ActiveMergeConfiguration;
 import org.parabuild.ci.object.BranchMergeConfiguration;
 import org.parabuild.ci.object.MergeConfiguration;
 
+import java.io.IOException;
+
 /**
- * Perforce-specific implementation of a {@link
- * ChangeListFinder} Responsible for finding change lists
- * and placing them into the merge queue.
- * <p/>
  * This clas is instantiated, requted to perfrom its job and
  * then discarded.
  */

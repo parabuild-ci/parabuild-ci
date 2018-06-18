@@ -50,7 +50,6 @@ final class AccurevChwsCommand extends AccurevCommand {
    * @param backingStream
    * @param agent
    * @param parameters
-   * @param transactionNumber
    * @throws IOException
    */
   AccurevChwsCommand(final Agent agent, final AccurevCommandParameters parameters,

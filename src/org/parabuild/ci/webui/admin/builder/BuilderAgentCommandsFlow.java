@@ -41,7 +41,6 @@ final class BuilderAgentCommandsFlow extends Flow {
   /**
    * Sets agent ID
    *
-   * @param agent ID to set
    */
   public void setBuilderAgentID(final int builderAgent) {
     final Properties param = new Properties();

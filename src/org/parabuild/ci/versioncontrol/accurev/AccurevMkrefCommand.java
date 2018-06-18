@@ -46,7 +46,6 @@ final class AccurevMkrefCommand extends AccurevCommand {
    * @param storage
    * @param agent
    * @param parameters
-   * @param transactionNumber
    * @throws java.io.IOException
    */
   AccurevMkrefCommand(final Agent agent, final AccurevCommandParameters parameters,

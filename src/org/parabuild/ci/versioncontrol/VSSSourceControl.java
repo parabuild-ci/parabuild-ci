@@ -715,7 +715,7 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
 
   /**
    * @return true if read-only checkout is requested.
-   * @see SourceControlSetting.VSS_READONLY_CHECKOUT
+   * @see SourceControlSetting#VSS_READONLY_CHECKOUT
    */
   private boolean isReadOnlyCheckout() {
     return getSettingValue(SourceControlSetting.VSS_READONLY_CHECKOUT, SourceControlSetting.OPTION_UNCHECKED).equals(SourceControlSetting.OPTION_CHECKED);
@@ -726,7 +726,7 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
    * @return a command line option to signal if checkout files
    *         should be made read-only (-W-) or should be made writeable (-W).
    * @see #isReadOnlyCheckout()
-   * @see SourceControlSetting.VSS_READONLY_CHECKOUT
+   * @see SourceControlSetting#VSS_READONLY_CHECKOUT
    */
   private String makeReadonlyCheckoutOption() {
     return isReadOnlyCheckout() ? " -W-" : " -W";

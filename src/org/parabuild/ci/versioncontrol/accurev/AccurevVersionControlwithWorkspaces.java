@@ -256,7 +256,6 @@ public final class AccurevVersionControlwithWorkspaces extends AbstractSourceCon
    * @param transactionNumberFrom
    * @param transactionNumberTo
    * @param maxChangeLists
-   * @param ignoreChangeListNumber
    * @return new change list ID if there were changes made, or
    *         the same base change list if there were changes
    * @noinspection ControlFlowStatementWithoutBraces

@@ -192,7 +192,6 @@ public final class GeneralBuildConfigPanel extends MessagePanel implements Loada
   /**
    * Sets builder ID when validating.
    *
-   * @param agentHost agent host to use when validating.
    */
   public void setBuilderID(final int builderID) {
   }
