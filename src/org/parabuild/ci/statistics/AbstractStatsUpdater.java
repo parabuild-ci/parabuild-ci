@@ -13,15 +13,21 @@
  */
 package org.parabuild.ci.statistics;
 
-import java.util.*;
-import org.apache.commons.logging.*;
-
-import net.sf.hibernate.*;
-import org.parabuild.ci.common.*;
-import org.parabuild.ci.configuration.*;
+import net.sf.hibernate.HibernateException;
+import net.sf.hibernate.Session;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.IoUtils;
+import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.configuration.ConfigurationManager;
+import org.parabuild.ci.configuration.TransactionCallback;
 import org.parabuild.ci.error.Error;
-import org.parabuild.ci.error.*;
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.error.ErrorManagerFactory;
+import org.parabuild.ci.object.BuildRun;
+import org.parabuild.ci.object.StatisticsSample;
+
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Strategy for PersistentStatisticsUpdater. Implementers should
@@ -100,9 +106,9 @@ abstract class AbstractStatsUpdater implements PersistentStatsUpdater {
   /**
    * @return truncation lavel to be used by the updater.
    *
-   * @see Calendar.DAY_OF_MONTH
-   * @see Calendar.HOUR_OF_DAY
-   * @see Calendar.YEAR
+   * @see Calendar#DAY_OF_MONTH
+   * @see Calendar#HOUR_OF_DAY
+   * @see Calendar#YEAR
    */
   public abstract int truncateLevel();
 

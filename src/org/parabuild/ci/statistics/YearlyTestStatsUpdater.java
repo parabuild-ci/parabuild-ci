@@ -36,10 +36,10 @@ final class YearlyTestStatsUpdater extends AbstractTestStatsUpdater {
   /**
    * @return truncation lavel to be used by the updater.
    *
-   * @see Calendar.DAY_OF_MONTH
+   * @see Calendar#DAY_OF_MONTH
    * @see Calendar.MONTH
-   * @see Calendar.HOUR_OF_DAY
-   * @see Calendar.YEAR
+   * @see Calendar#HOUR_OF_DAY
+   * @see Calendar#YEAR
    */
   public int truncateLevel() {
     return Calendar.YEAR;
