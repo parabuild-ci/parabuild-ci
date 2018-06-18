@@ -67,9 +67,7 @@ public final class BuildRunConfigReportPage extends AbstractBuildRunResultPage i
 
   /**
    * Provides main handing. This is called after a common build
-   * result panel was created and added to the layout. The
-   * content panel is provided by {@link
-   * baseContentPanel().getUserPanel()} method.
+   * result panel was created and added to the layout.
    *
    * @param params that #executePage method was called with.
    *@param buildRun BuildRun to process.
