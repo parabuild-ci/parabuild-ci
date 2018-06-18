@@ -56,7 +56,7 @@ final class HourlyBuildStatsUpdater extends AbstractBuildStatsUpdater {
     query.setInteger(0, activeBuildID);
     query.setTimestamp(1, sampleDate);
     query.setCacheable(true);
-    return (HourlyStats)query.uniqueResult();
+    return (StatisticsSample) query.uniqueResult();
   }
 
 

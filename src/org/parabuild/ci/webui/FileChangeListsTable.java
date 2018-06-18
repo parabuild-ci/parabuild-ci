@@ -108,10 +108,10 @@ public final class FileChangeListsTable extends AbstractFlatTable {
     final ChangeList changeList = (ChangeList) changeLists.get(rowIndex);
     final Component[] row = getRow(rowIndex);
 
-    ((CommonLabel) row[COL_USER_NAME]).setText(changeList.getUser());
-    ((CommonLabel) row[COL_CHANGE_LIST_DESCRIPTION]).setText(changeList.getDescription());
-    ((CommonLabel) row[COL_CHANGE_LIST_NUMBER]).setText(changeList.getNumber());
-    ((CommonLabel) row[COL_CHANGE_LIST_TIME]).setText(changeList.getCreatedAt(dateTimeFormat));
+    ((Label) row[COL_USER_NAME]).setText(changeList.getUser());
+    ((Label) row[COL_CHANGE_LIST_DESCRIPTION]).setText(changeList.getDescription());
+    ((Label) row[COL_CHANGE_LIST_NUMBER]).setText(changeList.getNumber());
+    ((Label) row[COL_CHANGE_LIST_TIME]).setText(changeList.getCreatedAt(dateTimeFormat));
 
 
     return TBL_ROW_FETCHED;

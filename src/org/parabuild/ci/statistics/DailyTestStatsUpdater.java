@@ -13,12 +13,16 @@
  */
 package org.parabuild.ci.statistics;
 
-import java.util.*;
+import net.sf.hibernate.HibernateException;
+import net.sf.hibernate.Query;
+import net.sf.hibernate.Session;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.object.DailyTestStats;
+import org.parabuild.ci.object.StatisticsSample;
 
-import org.apache.commons.logging.*;
-
-import net.sf.hibernate.*;
-import org.parabuild.ci.object.*;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Updates per-day statistics.
@@ -61,7 +65,7 @@ final class DailyTestStatsUpdater extends AbstractTestStatsUpdater {
     query.setByte(1, getTestCode());
     query.setTimestamp(2, sampleDate);
     query.setCacheable(true);
-    return (DailyTestStats)query.uniqueResult();
+    return (StatisticsSample) query.uniqueResult();
   }
 
 

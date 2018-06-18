@@ -111,9 +111,9 @@ public final class VCSUserToEmailTable extends AbstractFlatTable implements Vali
       if (isRowNewAndBlank(userToEmail, row)) {
         continue;
       }
-      WebuiUtils.validateColumnNotBlank(errors, i, NAME_USER_NAME, ((Field) row[COL_USER_NAME]).getValue());
-      WebuiUtils.validateColumnNotBlank(errors, i, NAME_USER_EMAIL, ((Field) row[COL_USER_EMAIL]).getValue());
-      WebuiUtils.validateColumnValidEmail(errors, i, NAME_USER_EMAIL, ((Field) row[COL_USER_EMAIL]).getValue());
+      WebuiUtils.validateColumnNotBlank(errors, i, NAME_USER_NAME, ((AbstractInput) row[COL_USER_NAME]).getValue());
+      WebuiUtils.validateColumnNotBlank(errors, i, NAME_USER_EMAIL, ((AbstractInput) row[COL_USER_EMAIL]).getValue());
+      WebuiUtils.validateColumnValidEmail(errors, i, NAME_USER_EMAIL, ((AbstractInput) row[COL_USER_EMAIL]).getValue());
     }
 
     if (!errors.isEmpty()) {
@@ -152,8 +152,8 @@ public final class VCSUserToEmailTable extends AbstractFlatTable implements Vali
       if (userToEmail.getBuildID() == BuildConfig.UNSAVED_ID) {
         userToEmail.setBuildID(buildID);
       }
-      userToEmail.setUserEmail(((Field) row[COL_USER_EMAIL]).getValue());
-      userToEmail.setUserName(((Field) row[COL_USER_NAME]).getValue());
+      userToEmail.setUserEmail(((AbstractInput) row[COL_USER_EMAIL]).getValue());
+      userToEmail.setUserName(((AbstractInput) row[COL_USER_NAME]).getValue());
       ConfigurationManager.getInstance().save(userToEmail);
     }
     return true;
@@ -168,8 +168,8 @@ public final class VCSUserToEmailTable extends AbstractFlatTable implements Vali
    */
   private boolean isRowNewAndBlank(final VCSUserToEmailMap userToEmail, final Component[] row) {
     return userToEmail.getBuildID() == BuildConfig.UNSAVED_ID
-            && StringUtils.isBlank(((Field) row[COL_USER_EMAIL]).getValue())
-            && StringUtils.isBlank(((Field) row[COL_USER_NAME]).getValue());
+            && StringUtils.isBlank(((AbstractInput) row[COL_USER_EMAIL]).getValue())
+            && StringUtils.isBlank(((AbstractInput) row[COL_USER_NAME]).getValue());
   }
 
   // =============================================================================================
@@ -224,8 +224,8 @@ public final class VCSUserToEmailTable extends AbstractFlatTable implements Vali
       return TBL_NO_MORE_ROWS;
     }
     final Component[] row = getRow(rowIndex);
-    ((Field) row[COL_USER_NAME]).setValue(get(rowIndex).getUserName());
-    ((Field) row[COL_USER_EMAIL]).setValue(get(rowIndex).getUserEmail());
+    ((AbstractInput) row[COL_USER_NAME]).setValue(get(rowIndex).getUserName());
+    ((AbstractInput) row[COL_USER_EMAIL]).setValue(get(rowIndex).getUserEmail());
     return TBL_ROW_FETCHED;
   }
 

@@ -61,7 +61,7 @@ final class MonthlyTestStatsUpdater extends AbstractTestStatsUpdater {
     query.setByte(1, getTestCode());
     query.setTimestamp(2, sampleDate);
     query.setCacheable(true);
-    return (MonthlyTestStats)query.uniqueResult();
+    return (StatisticsSample) query.uniqueResult();
   }
 
 

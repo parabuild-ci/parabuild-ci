@@ -22,10 +22,12 @@ import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.StartParameter;
 import org.parabuild.ci.object.StartParameterType;
 import org.parabuild.ci.webui.common.AbstractFlatTable;
+import org.parabuild.ci.webui.common.CodeNameDropDown;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.TableHeaderLabel;
 import org.parabuild.ci.webui.common.Validatable;
 import org.parabuild.ci.webui.common.WebuiUtils;
+import viewtier.ui.AbstractInput;
 import viewtier.ui.CheckBox;
 import viewtier.ui.Component;
 import viewtier.ui.Field;
@@ -121,7 +123,7 @@ public final class ManualStartSettingsTable extends AbstractFlatTable implements
       final Component[] row = getRow(index);
       WebuiUtils.validateColumnNotBlank(errors, index, CAPTION_NAME, (Field) row[COL_NAME]);
       WebuiUtils.validateColumnNotBlank(errors, index, CAPTION_DESCRIPTION, (Field) row[COL_DESCRIPTION]);
-      if (((ManualStartParameterPresentationDropDown) row[COL_TYPE]).getCode() != StartParameter.PRESENTATION_SINGLE_VALUE) {
+      if (((CodeNameDropDown) row[COL_TYPE]).getCode() != StartParameter.PRESENTATION_SINGLE_VALUE) {
         WebuiUtils.validateColumnNotBlank(errors, index, CAPTION_VALUES, (Field) row[COL_VALUE]);
       }
 
@@ -165,10 +167,10 @@ public final class ManualStartSettingsTable extends AbstractFlatTable implements
         startParameter.setModifiable(true);
         startParameter.setEnabled(true);
       }
-      startParameter.setDescription(((Field) row[COL_DESCRIPTION]).getValue());
-      startParameter.setName(((Field) row[COL_NAME]).getValue());
-      startParameter.setPresentation((byte) ((ManualStartParameterPresentationDropDown) row[COL_TYPE]).getCode());
-      startParameter.setValue(((Field) row[COL_VALUE]).getValue());
+      startParameter.setDescription(((AbstractInput) row[COL_DESCRIPTION]).getValue());
+      startParameter.setName(((AbstractInput) row[COL_NAME]).getValue());
+      startParameter.setPresentation((byte) ((CodeNameDropDown) row[COL_TYPE]).getCode());
+      startParameter.setValue(((AbstractInput) row[COL_VALUE]).getValue());
       startParameter.setRequired(((CheckBox) row[COL_REQUIRED]).isChecked());
       startParameter.setOrder(index);
       ConfigurationManager.getInstance().save(startParameter);
@@ -185,9 +187,9 @@ public final class ManualStartSettingsTable extends AbstractFlatTable implements
    */
   private boolean isRowNewAndBlank(final StartParameter startParameter, final Component[] row) {
     return startParameter.getBuildID() == BuildConfig.UNSAVED_ID
-            && StringUtils.isBlank(((Field) row[COL_NAME]).getValue())
-            && StringUtils.isBlank(((Field) row[COL_DESCRIPTION]).getValue())
-            && StringUtils.isBlank(((Field) row[COL_VALUE]).getValue())
+            && StringUtils.isBlank(((AbstractInput) row[COL_NAME]).getValue())
+            && StringUtils.isBlank(((AbstractInput) row[COL_DESCRIPTION]).getValue())
+            && StringUtils.isBlank(((AbstractInput) row[COL_VALUE]).getValue())
             ;
   }
 
@@ -233,10 +235,10 @@ public final class ManualStartSettingsTable extends AbstractFlatTable implements
       return TBL_NO_MORE_ROWS;
     }
     final Component[] row = getRow(rowIndex);
-    ((Field) row[COL_NAME]).setValue(get(rowIndex).getName());
-    ((Field) row[COL_DESCRIPTION]).setValue(get(rowIndex).getDescription());
-    ((Field) row[COL_VALUE]).setValue(get(rowIndex).getValue());
-    ((ManualStartParameterPresentationDropDown) row[COL_TYPE]).setCode(get(rowIndex).getPresentation());
+    ((AbstractInput) row[COL_NAME]).setValue(get(rowIndex).getName());
+    ((AbstractInput) row[COL_DESCRIPTION]).setValue(get(rowIndex).getDescription());
+    ((AbstractInput) row[COL_VALUE]).setValue(get(rowIndex).getValue());
+    ((CodeNameDropDown) row[COL_TYPE]).setCode(get(rowIndex).getPresentation());
     ((CheckBox) row[COL_REQUIRED]).setChecked(get(rowIndex).isRequired());
     return TBL_ROW_FETCHED;
   }

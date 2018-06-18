@@ -56,7 +56,7 @@ final class MonthlyBuildStatsUpdater extends AbstractBuildStatsUpdater {
     query.setInteger(0, activeBuildID);
     query.setTimestamp(1, sampleDate);
     query.setCacheable(true);
-    return (MonthlyStats)query.uniqueResult();
+    return (StatisticsSample) query.uniqueResult();
   }
 
 

@@ -13,10 +13,14 @@
  */
 package org.parabuild.ci.statistics;
 
-import java.util.*;
+import net.sf.hibernate.HibernateException;
+import net.sf.hibernate.Query;
+import net.sf.hibernate.Session;
+import org.parabuild.ci.object.DailyStats;
+import org.parabuild.ci.object.StatisticsSample;
 
-import net.sf.hibernate.*;
-import org.parabuild.ci.object.*;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Updates per-day statistics.
@@ -51,7 +55,7 @@ final class DailyBuildStatsUpdater extends AbstractBuildStatsUpdater {
     query.setInteger(0, activeBuildID);
     query.setTimestamp(1, sampleDate);
     query.setCacheable(true);
-    return (DailyStats)query.uniqueResult();
+    return (StatisticsSample) query.uniqueResult();
   }
 
 

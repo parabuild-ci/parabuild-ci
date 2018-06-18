@@ -137,10 +137,10 @@ public final class EditManualStartParametersTable extends AbstractFlatTable {
     final StartParameter prm = (StartParameter) parameters.get(rowIndex);
     if (log.isDebugEnabled()) log.debug("prm: " + prm);
     final Component[] row = getRow(rowIndex);
-    ((CommonLabel) row[COL_NAME]).setText(prm.getName());
+    ((Label) row[COL_NAME]).setText(prm.getName());
     final VariableValueHolderFlow variableValueHolder = (VariableValueHolderFlow) row[COL_VALUE];
     variableValueHolder.setParameterDefinition(prm, useFirstParameterValueAsDefault);
-    ((CommonLabel) row[COL_DESCRIPTION]).setText(prm.getDescription());
+    ((Label) row[COL_DESCRIPTION]).setText(prm.getDescription());
     return TBL_ROW_FETCHED;
   }
 

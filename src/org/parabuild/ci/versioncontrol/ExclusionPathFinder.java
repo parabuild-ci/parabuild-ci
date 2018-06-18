@@ -13,12 +13,14 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.util.*;
-import java.util.regex.*;
-
 import org.parabuild.ci.common.StringUtils;
-import org.parabuild.ci.object.Change;
 import org.parabuild.ci.object.ChangeList;
+import org.parabuild.ci.object.SimpleChange;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.regex.Pattern;
 
 /**
  * Class to find if only exclusion paths exist
@@ -37,7 +39,7 @@ public final class ExclusionPathFinder {
     final List pathList = new ArrayList(101);
     for (final Iterator i = changeLists.iterator(); i.hasNext();) {
       for (final Iterator j = ((ChangeList)i.next()).getChanges().iterator(); j.hasNext();) {
-        pathList.add(((Change)j.next()).getFilePath());
+        pathList.add(((SimpleChange) j.next()).getFilePath());
       }
     }
 
