@@ -14,7 +14,6 @@
 package org.parabuild.ci.webui.admin;
 
 import org.parabuild.ci.object.BuildConfig;
-import org.parabuild.ci.webui.common.WebuiUtils;
 
 /**
  * AutomaticScheduleSettingsPanel holds setting for "Automatic"
@@ -29,7 +28,6 @@ public final class AutomaticScheduleSettingsPanel extends ScheduleSettingsPanel 
 
 
   public AutomaticScheduleSettingsPanel() {
-    super();
     add(simpleSettingsPanel);
 //    add(WebuiUtils.makePanelDivider());
 //    add(timedSettingsPanel);

@@ -13,17 +13,10 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.object.ScheduleProperty;
-import org.parabuild.ci.object.BuildConfig;
-import org.parabuild.ci.webui.common.CommonFieldLabel;
-import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.webui.common.WebuiUtils;
-import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.configuration.ConfigurationManager;
-import viewtier.ui.Field;
+import org.parabuild.ci.object.BuildConfig;
 
 import java.util.List;
-import java.util.ArrayList;
 
 /**
  * AutomaticScheduleSettingsPanel holds setting for "Automatic"
@@ -36,7 +29,6 @@ public final class TimedAutomaticScheduleSettingsPanel extends ScheduleSettingsP
 
 
   public TimedAutomaticScheduleSettingsPanel() {
-    super();
     tblScheduleItems.setTitle("Optional Timed Schedule");
     add(tblScheduleItems);
   }
