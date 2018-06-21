@@ -564,7 +564,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
         result.add(line);
         line = br.readLine();
       }
-    } catch (IOException e) {
+    } catch (final IOException e) {
       final Error error = new Error("Error while retrieving log window lines");
       error.setErrorLevel(Error.ERROR_LEVEL_WARNING);
       error.setStepName(stepRun.getName());

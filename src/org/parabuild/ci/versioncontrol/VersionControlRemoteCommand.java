@@ -72,7 +72,7 @@ public class VersionControlRemoteCommand extends RemoteCommand {
       if (addAutomaticSignatureToEnvironment) {
         try {
           addEnvironment("PARABUILD_CHECKOUT_DIR", agent.getCheckoutDirName());
-        } catch (IOException e) {
+        } catch (final IOException e) {
           IoUtils.ignoreExpectedException(e);
         }
       }

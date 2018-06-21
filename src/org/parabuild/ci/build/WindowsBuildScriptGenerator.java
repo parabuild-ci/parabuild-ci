@@ -82,7 +82,7 @@ public final class WindowsBuildScriptGenerator extends AbstractBuildScriptGenera
       scriptWriter.newLine();
       scriptWriter.flush();
       return result.toString();
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException(e, agent);
     } finally {
       IoUtils.closeHard(scriptWriter);

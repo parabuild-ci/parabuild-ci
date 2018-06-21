@@ -222,7 +222,7 @@ public class StepResult implements java.io.Serializable {
   }
 
 
-  public void setUrls(String[] urls) {
+  public void setUrls(final String[] urls) {
     this.urls = urls;
   }
 

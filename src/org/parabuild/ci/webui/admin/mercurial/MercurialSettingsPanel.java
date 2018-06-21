@@ -114,9 +114,9 @@ public final class MercurialSettingsPanel extends AbstractSourceControlPanel {
       try {
         WebuiUtils.validateCommandExists(super.getAgentEnv(), flPathToExe.getValue(), errors,
                 "Path to bazaar executable is invalid, or bazaar executable is not accessible");
-      } catch (NoLiveAgentsException ignore) {
+      } catch (final NoLiveAgentsException ignore) {
         IoUtils.ignoreExpectedException(ignore);
-      } catch (IOException e) {
+      } catch (final IOException e) {
         errors.add("Error while checking path for bazaar executable: " + StringUtils.toString(e));
       }
 
@@ -157,7 +157,7 @@ public final class MercurialSettingsPanel extends AbstractSourceControlPanel {
         if (be.isUnix() && be.commandIsAvailable(DEFAULT_UNIX_MERCURIAL_COMMAND)) {
           flPathToExe.setValue(DEFAULT_UNIX_MERCURIAL_COMMAND);
         }
-      } catch (Exception e) {
+      } catch (final Exception e) {
         IoUtils.ignoreExpectedException(e);
       }
     }

@@ -194,7 +194,7 @@ final class SystemVariablePanel extends MessagePanel implements Validatable, Sav
       cm.save(startParameter);
 
       return true;
-    } catch (Exception e) {
+    } catch (final Exception e) {
       final SaveErrorProcessor exceptionProcessor = new SaveErrorProcessor();
       return exceptionProcessor.process(this, e);
     }

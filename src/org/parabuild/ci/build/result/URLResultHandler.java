@@ -75,7 +75,7 @@ public final class URLResultHandler extends AbstractResultHandler {
         final URLConnection urlConnection = new URL(resolvedResultPath).openConnection();
         urlConnection.setUseCaches(false);
         testInputStream = urlConnection.getInputStream();
-      } catch (IOException e) {
+      } catch (final IOException e) {
         return; // could not create a connection
       } finally {
         IoUtils.closeHard(testInputStream);

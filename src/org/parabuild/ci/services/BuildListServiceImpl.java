@@ -89,7 +89,7 @@ public final class BuildListServiceImpl implements BuildListService {
         final Map.Entry entry = (Map.Entry) iter.next();
         build = (BuildService) entry.getValue();
         build.shutdownService();
-      } catch (Exception e) {
+      } catch (final Exception e) {
         reportShutdownException(build, e);
       }
     }
@@ -110,7 +110,7 @@ public final class BuildListServiceImpl implements BuildListService {
       final BuildService result = new ThroughBuildServiceProxy(new BuildServiceImpl(buildConfig)); // valid/OK, create through
       builds.put(new Integer(buildConfig.getActiveBuildID()), result);
       result.startupService();
-    } catch (Exception e) {
+    } catch (final Exception e) {
       reportStartupException(buildConfig, e);
     }
   }
@@ -178,7 +178,7 @@ public final class BuildListServiceImpl implements BuildListService {
           if (log.isDebugEnabled()) {
             log.debug("Deleted activeBuildConfig files");
           }
-        } catch (Exception e) {
+        } catch (final Exception e) {
           reportDeleteBuildFilesError(e);
         }
       }

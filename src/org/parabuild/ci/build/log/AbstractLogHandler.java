@@ -98,7 +98,7 @@ public abstract class AbstractLogHandler implements LogHandler {
         throw new IllegalStateException("Build configuration with ID " + buildRunConfig.getBuildID()
                 + " is not a build run configuration.");
       }
-    } catch (ValidationException e) {
+    } catch (final ValidationException e) {
       throw new IllegalArgumentException(StringUtils.toString(e));
     }
   }
@@ -158,7 +158,7 @@ public abstract class AbstractLogHandler implements LogHandler {
       if (log.isDebugEnabled()) {
         log.debug("============== end =========================");
       }
-    } catch (Exception e) {
+    } catch (final Exception e) {
       // We don't throw it firther as gathering logs is not a crticial
       // issue. We just report the problem to administrator.
       reportLogProcessingException(e);

@@ -65,7 +65,7 @@ public final class RemoteFileGetter {
       final HessianInput hin = new HessianInput(connectionIS);
       try {
         hin.startReply();
-      } catch (Throwable throwable) { // NOPMD - because startReply, thanks to caucho, declares Throwable
+      } catch (final Throwable throwable) { // NOPMD - because startReply, thanks to caucho, declares Throwable
         if (throwable instanceof IOException) throw (IOException)throwable; // NOPMD - we still have to know what is the exception
         final IOException e = new IOException(StringUtils.toString(throwable));
         e.initCause(throwable);
@@ -89,10 +89,10 @@ public final class RemoteFileGetter {
     try {
       outputTo = new BufferedOutputStream(new FileOutputStream(outputToLocalFile));
       copy(remoteFileName, outputTo);
-    } catch (IOException e) {
+    } catch (final IOException e) {
       exception = true;
       throw e;
-    } catch (RuntimeException e) {
+    } catch (final RuntimeException e) {
       exception = true;
       throw e;
     } finally {
@@ -114,7 +114,7 @@ public final class RemoteFileGetter {
       final RemoteBuilderWebService webService = webServiceLocator.getWebService();
       final RemoteFileDescriptor fileDescriptor = webService.getFileDescriptor(remoteSource);
       localDestination.setLastModified(fileDescriptor.lastModified());
-    } catch (Exception e) {
+    } catch (final Exception e) {
       IoUtils.ignoreExpectedException(e);
     }
   }

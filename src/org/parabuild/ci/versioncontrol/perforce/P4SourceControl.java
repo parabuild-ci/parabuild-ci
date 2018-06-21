@@ -128,7 +128,7 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
       command.setExeArguments("sync " + STR_SPACE + getSyncOptions() + STR_SPACE + "//" + makeClientName(agent, getP4Properties().getP4User(), getP4Properties().getClientNameTemplate()) + STR_TRIPPLE_DOTS);
       command.setDescription("sync command");
       command.execute();
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException(NAME_UNEXPECTED_SYNC_ERROR, e, getAgentHost());
     } finally {
       cleanup(command);
@@ -147,7 +147,7 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
       final Agent agent = getCheckoutDirectoryAwareAgent();
       final String clientName = makeClientName(agent, getP4Properties().getP4User(), getP4Properties().getClientNameTemplate());
       syncToChangeList(changeListID, clientName);
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException(NAME_UNEXPECTED_SYNC_ERROR, e, getAgentHost());
     }
   }
@@ -188,9 +188,9 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
       command.setExeArguments("sync " + getSyncOptions() + STR_SPACE + "//" + clientName + STR_TRIPPLE_DOTS + '@' + changeListNumber);
       command.setDescription("sync command");
       command.execute();
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException(NAME_UNEXPECTED_SYNC_ERROR, e, getAgentHost());
-    } catch (ValidationException e) {
+    } catch (final ValidationException e) {
       throw new BuildException(NAME_UNEXPECTED_SYNC_ERROR, e, getAgentHost());
     } finally {
       cleanup(command);
@@ -211,7 +211,7 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
         final P4ClientView p4ClientView = parser.parse(getEffectiveRelativeBuildDir(p4Properties), p4Properties.getP4DepotPath());
         return p4ClientView.getRelativeBuildDir(); // NOPMD
       }
-    } catch (ValidationException e) {
+    } catch (final ValidationException e) {
       throw new BuildException(e, getAgentHost());
     }
   }
@@ -249,7 +249,7 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
       // parse output and return result
       final P4CounterParser usersParser = new P4CounterParser();
       return usersParser.parse(command.getStdoutFile());
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException(NAME_UNEXPECTED_COUNTER_ERROR, e, getAgentHost());
     } finally {
       cleanup(command);
@@ -345,9 +345,9 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
 
       // return
       return changeDriver.getResultChangeListID();
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException(NAME_UNEXPECTED_SYNC_ERROR, e, getAgentHost());
-    } catch (ValidationException e) {
+    } catch (final ValidationException e) {
       throw new BuildException(NAME_UNEXPECTED_SYNC_ERROR, e, getAgentHost());
     }
   }
@@ -543,7 +543,7 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
           changeListChunkDriver.process((List) i.next());
         }
       }
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException(NAME_UNEXPECTED_SYNC_ERROR, e, getAgentHost());
     } finally {
       IoUtils.closeHard(fis);
@@ -603,7 +603,7 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
       loginIfNecessary(getCheckoutDirectoryAwareAgent());
       lazyInitDepotViewFromDepotIfNecessary();
       createOrUpdateLabel(label, null);
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException(e, getAgentHost());
     }
   }
@@ -643,7 +643,7 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
         removedCount++;
       }
       return removedCount;
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException(NAME_UNKNOWN_LABEL_ERROR, e, getAgentHost());
     } finally {
       cleanup(command);
@@ -698,9 +698,9 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
 
       // update current settings map
       replaceCurrentSettings(newSettings);
-    } catch (RuntimeException e) {
+    } catch (final RuntimeException e) {
       throw e;
-    } catch (Exception e) {
+    } catch (final Exception e) {
       final IllegalStateException ie = new IllegalStateException("Error while reloading Perforce configuration: " + StringUtils.toString(e));
       ie.initCause(e);
       throw ie;
@@ -722,9 +722,9 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
       final String checkoutDirName = agent.getCheckoutDirName();
       return createOrUpdateClient(agent, checkoutDirName, props, clientName, props.getP4DepotPath(),
               getEffectiveRelativeBuildDir(props));
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException(e, getAgentHost());
-    } catch (ValidationException e) {
+    } catch (final ValidationException e) {
       throw new BuildException(e, getAgentHost());
     }
   }
@@ -818,9 +818,9 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
       // analyze the result for errors
       cleanup(command);
 
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException(NAME_UNKNOWN_LABEL_ERROR, e, getAgentHost());
-    } catch (ValidationException e) {
+    } catch (final ValidationException e) {
       throw new BuildException(NAME_UNEXPECTED_LABEL_ERROR + ':' + e.getMessage(), e, getAgentHost());
     } finally {
       IoUtils.closeHard(is);
@@ -955,11 +955,11 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
       // return result
       return usersParser.parse();
 
-    } catch (BuildException e) {
+    } catch (final BuildException e) {
       final org.parabuild.ci.error.Error err = new org.parabuild.ci.error.Error(StringUtils.toString(e));
       err.setLogLines(e.getLogContent());
       errorManager.reportSystemError(err);
-    } catch (IOException e) {
+    } catch (final IOException e) {
       final org.parabuild.ci.error.Error err = new org.parabuild.ci.error.Error(StringUtils.toString(e));
       err.setDetails(e);
       errorManager.reportSystemError(err);
@@ -1090,7 +1090,7 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
   private String makeClientName(final Agent agent, final String p4User, final String clientNameTemplate) throws IOException, AgentFailureException {
     try {
       return clientNameGenerator.generate(activeBuildID, agent.getLocalHostName(), p4User, clientNameTemplate);
-    } catch (BuildException e) {
+    } catch (final BuildException e) {
       // REVIEWME: this is bad - generate throwing BuildException is bad,
       // converting to IOException is bad too. 
       throw IoUtils.createIOException(e);
@@ -1149,7 +1149,7 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
         command.setExeArguments(" login ");
         command.setDescription("login command");
         command.execute();
-      } catch (IOException e) {
+      } catch (final IOException e) {
         throw new BuildException(UNEXPECTED_ERROR_WHILE_LOGGIN_IN, e, getAgentHost());
       } finally {
         IoUtils.closeHard(is);
@@ -1299,7 +1299,7 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
 
       // update the current if necessary
       return updateConfigurationDepotViewSpec(depotViewSpec);
-    } catch (ValidationException e) {
+    } catch (final ValidationException e) {
       throw IoUtils.createIOException(e);
     }
   }
@@ -1347,7 +1347,7 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
 
       // update the current if necessary
       return updateConfigurationDepotViewSpec(result);
-    } catch (ValidationException e) {
+    } catch (final ValidationException e) {
       throw IoUtils.createIOException(e);
     } finally {
       cleanup(command);
@@ -1453,7 +1453,7 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
         lastChunk = (List) i.next();
       }
       return !lastChunk.isEmpty() ? new Integer(Integer.parseInt((String) lastChunk.get(lastChunk.size() - 1))) : null;
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException(NAME_UNEXPECTED_SYNC_ERROR, e, getAgentHost());
     } finally {
       IoUtils.closeHard(fis);

@@ -119,7 +119,7 @@ public abstract class AbtractScheduleSettingsPanel extends ScheduleSettingsPanel
     try {
       final NextBuildNumberResetter buildNumberResetter = new NextBuildNumberResetter(buildID);
       buildNumberResetter.validate(flResetBuildNumber.getValue());
-    } catch (ValidationException e) {
+    } catch (final ValidationException e) {
       errors.add(e.getMessage());
     }
 
@@ -149,7 +149,7 @@ public abstract class AbtractScheduleSettingsPanel extends ScheduleSettingsPanel
     try {
       final NextBuildNumberResetter buildNumberResetter = new NextBuildNumberResetter(buildID);
       buildNumberResetter.reset(flResetBuildNumber.getValue());
-    } catch (ValidationException e) {
+    } catch (final ValidationException e) {
       showErrorMessage(StringUtils.toString(e));
       return false;
     }

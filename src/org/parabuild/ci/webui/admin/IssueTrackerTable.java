@@ -286,7 +286,7 @@ public final class IssueTrackerTable extends AbstractFlatTable implements Loadab
     }
 
 
-    public void setMoveRowCommandsVisible(boolean visible) {
+    public void setMoveRowCommandsVisible(final boolean visible) {
       // do nothing, issue tracker doesn't have insert command
     }
   }

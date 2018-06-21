@@ -48,7 +48,7 @@ final class UpgraderToVersion63 implements SingleStepSchemaUpgrader {
         final ResultSet resultSet = st.executeQuery("select count(OLD_VALUE) from SOURCE_CONTROL_PROPERTY");
         IoUtils.closeHard(resultSet);
         // Column exist, do nothing
-      } catch (SQLException e) {
+      } catch (final SQLException e) {
         // Column OLD_VALUE does not exist
         PersistanceUtils.executeDDLs(st, new String[]{"alter table SOURCE_CONTROL_PROPERTY add column OLD_VALUE varchar(4097) null"}, true);
       }

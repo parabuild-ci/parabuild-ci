@@ -161,7 +161,7 @@ public abstract class BasePage extends Window {
       // get branding
       final String branding = manager.getSystemPropertyValue(SystemProperty.BRANDING, null);
       headerText = StringUtils.isBlank(branding) ? DEFAULT_HEADER_TEXT : branding;
-    } catch (Exception e) {
+    } catch (final Exception e) {
       // if any shit hapens, set to default
       headerText = DEFAULT_HEADER_TEXT;
     }
@@ -260,7 +260,7 @@ public abstract class BasePage extends Window {
       // ----------------------------------------------------------
 
       return result;
-    } catch (RuntimeException e) {
+    } catch (final RuntimeException e) {
       // report runitme exception
       final Error error = new Error("Unexpected user interface error");
       error.setDetails(e);
@@ -572,7 +572,7 @@ public abstract class BasePage extends Window {
   }
 
 
-  protected final void setDisplayGroupID(int displayGroupID) {
+  protected final void setDisplayGroupID(final int displayGroupID) {
     pnlHeader.setDisplayGroupID(displayGroupID);
   }
 

@@ -63,7 +63,7 @@ public final class ResetPasswordPage extends BasePage implements ConversationalT
           baseContentPanel().add(WebuiUtils.makePanelDivider());
           baseContentPanel().add(doneMsg);
           return Result.Done();
-        } catch (FatalConfigurationException e) {
+        } catch (final FatalConfigurationException e) {
           baseContentPanel().clear();
           baseContentPanel().showErrorMessage("There was an error resetting password: " + StringUtils.toString(e));
           return Result.Done();

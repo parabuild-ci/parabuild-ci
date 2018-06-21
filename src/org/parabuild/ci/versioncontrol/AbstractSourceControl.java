@@ -215,7 +215,7 @@ public abstract class AbstractSourceControl implements SourceControl {
         return;
       }
       command.cleanup();
-    } catch (Exception e) {
+    } catch (final Exception e) {
       final org.parabuild.ci.error.Error error = new org.parabuild.ci.error.Error("Error while cleaning up temporary version control files");
       error.setErrorLevel(org.parabuild.ci.error.Error.ERROR_LEVEL_WARNING);
       error.setSubsystemName(org.parabuild.ci.error.Error.ERROR_SUSBSYSTEM_SCM);
@@ -461,10 +461,10 @@ public abstract class AbstractSourceControl implements SourceControl {
       try {
         final Agent agent = AgentManager.getInstance().createAgent(activeBuildID, null, getBuildName(), agentHost, activeBuildID);
         agentHostName = agent.getLocalHostName();
-      } catch (RuntimeException e) {
+      } catch (final RuntimeException e) {
 
         throw e;
-      } catch (Exception e) {
+      } catch (final Exception e) {
 
         final IllegalStateException ise = new IllegalStateException(e.toString());
         ise.initCause(e);
@@ -480,7 +480,7 @@ public abstract class AbstractSourceControl implements SourceControl {
 
     // Resolve
     final Map resolvedSettings = new HashMap(rawSettings.size());
-    for (Iterator iter = rawSettings.values().iterator(); iter.hasNext(); ) {
+    for (final Iterator iter = rawSettings.values().iterator(); iter.hasNext(); ) {
       final SourceControlSetting setting = (SourceControlSetting) iter.next();
       final String name = setting.getPropertyName();
       final String value = setting.getPropertyValue();
@@ -489,7 +489,7 @@ public abstract class AbstractSourceControl implements SourceControl {
         try {
           final String resolvedValue = resolver.resolve(value);
           setting.setPropertyValue(resolvedValue);
-        } catch (ValidationException e) {
+        } catch (final ValidationException e) {
           final org.parabuild.ci.error.Error error = new Error("Problem resolving source control setting: " + name + ", value: " + value);
           error.setBuildID(activeBuildID);
           error.setSubsystemName(Error.ERROR_SUSBSYSTEM_SCM);

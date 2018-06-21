@@ -154,7 +154,7 @@ final class P4ChangeLogParser {
         addToResult(result, maxResultSize, chunk);
       }
       return result;
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException(P4ParserHelper.makeUnexpectedErrorMessage(e.toString()));
     } finally {
       IoUtils.closeHard(br);
@@ -234,7 +234,7 @@ final class P4ChangeLogParser {
             } else {
               prevLine = line.trim();
             }
-          } catch (Exception e) {
+          } catch (final Exception e) {
             throw new BuildException(P4ParserHelper.makeUnexpectedErrorMessage(e.toString() + ", p4 describe line: " + line));
           }
 
@@ -288,7 +288,7 @@ final class P4ChangeLogParser {
               Date date = null;
               try {
                 date = p4JobDateFormatter.parse(st.nextToken());
-              } catch (ParseException e) {
+              } catch (final ParseException e) {
                 // unexpected jobs definition
                 IoUtils.ignoreExpectedException(e);
               }
@@ -368,11 +368,11 @@ final class P4ChangeLogParser {
         }
         changeDriver.processChangeList(changelist);
       }
-    } catch (BuildException e) {
+    } catch (final BuildException e) {
       throw e;
-    } catch (RuntimeException e) {
+    } catch (final RuntimeException e) {
       throw e;
-    } catch (Exception e) {
+    } catch (final Exception e) {
       throw new BuildException(P4ParserHelper.makeUnexpectedErrorMessage(e.toString()));
     }
   }
@@ -479,7 +479,7 @@ final class P4ChangeLogParser {
     public void processChangeList(final ChangeList changelist) {
       changelist.setChanges(changes);
       changeListsAndIssuesAccumulator.addChangelist(changelist);
-      for (Iterator i = issues.iterator(); i.hasNext();) {
+      for (final Iterator i = issues.iterator(); i.hasNext();) {
         changeListsAndIssuesAccumulator.addBinding(new ChangeListIssueBinding(changelist, (Issue)i.next()));
       }
       changes = new HashSet(11);

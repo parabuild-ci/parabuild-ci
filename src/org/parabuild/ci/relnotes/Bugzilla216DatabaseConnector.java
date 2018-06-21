@@ -218,9 +218,9 @@ final class Bugzilla216DatabaseConnector extends AbstractBugzillaDatabaseConnect
         }
         IoUtils.closeHard(rs2);
       }
-    } catch (SQLException e) {
+    } catch (final SQLException e) {
       reportUnexpectedError(productName, e);
-    } catch (RuntimeException e) {
+    } catch (final RuntimeException e) {
       reportUnexpectedError(productName, e);
     } finally {
       // NOTE: simeshev@parabuilci.org - we use this connection in autocommit on mode.

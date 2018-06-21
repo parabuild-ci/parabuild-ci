@@ -286,10 +286,10 @@ final class BuildStepRunner {
       if (LOG.isDebugEnabled()) {
         LOG.debug("resultID: " + resultID);
       }
-    } catch (CommandStoppedException e) {
+    } catch (final CommandStoppedException e) {
       resultID = BuildRun.BUILD_RESULT_STOPPED;
       return resultID;
-    } catch (Exception e) {
+    } catch (final Exception e) {
 
       // Get host name
       final String hostName = agent == null ? (String) null : agent.getHost().getHost();

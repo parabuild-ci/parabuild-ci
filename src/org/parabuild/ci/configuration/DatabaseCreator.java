@@ -64,7 +64,7 @@ public final class DatabaseCreator implements PersistanceConstants {
       stmt.execute(schema);
       stmt.execute("SET SCRIPTFORMAT COMPRESSED");
       stmt.execute("SHUTDOWN");
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw IoUtils.makeSQLException(e);
     } finally {
       IoUtils.closeHard(stmt);

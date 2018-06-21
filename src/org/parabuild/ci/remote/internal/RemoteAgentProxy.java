@@ -91,7 +91,7 @@ public final class RemoteAgentProxy implements Agent {
   public boolean emptyCheckoutDir() throws IOException, AgentFailureException {
     try {
       return getWebService().emptyCheckoutDir(activeBuildID, checkoutDir);
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -105,7 +105,7 @@ public final class RemoteAgentProxy implements Agent {
   public boolean deleteCheckoutDir() throws IOException, AgentFailureException {
     try {
       return getWebService().deleteCheckoutDir(activeBuildID, checkoutDir);
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -117,7 +117,7 @@ public final class RemoteAgentProxy implements Agent {
   public boolean checkoutDirIsEmpty() throws IOException, AgentFailureException {
     try {
       return getWebService().checkoutDirIsEmpty(activeBuildID, checkoutDir);
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -129,7 +129,7 @@ public final class RemoteAgentProxy implements Agent {
   public boolean checkoutDirExists() throws IOException, AgentFailureException {
     try {
       return getWebService().checkoutDirExists(activeBuildID, checkoutDir);
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -154,7 +154,7 @@ public final class RemoteAgentProxy implements Agent {
   public String getCheckoutDirName() throws IOException, AgentFailureException {
     try {
       return getWebService().getCheckoutDirName(activeBuildID, checkoutDir);
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -166,7 +166,7 @@ public final class RemoteAgentProxy implements Agent {
   public boolean fileRelativeToCheckoutDirExists(final String relativePath) throws IOException, AgentFailureException {
     try {
       return getWebService().relativeFileExists(activeBuildID, checkoutDir, relativePath);
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -179,7 +179,7 @@ public final class RemoteAgentProxy implements Agent {
   public void createBuildDirs() throws IOException, AgentFailureException {
     try {
       getWebService().createBuildDirs(activeBuildID, checkoutDir);
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -191,7 +191,7 @@ public final class RemoteAgentProxy implements Agent {
   public boolean deleteFileUnderCheckoutDir(final String relativePath) throws IOException, AgentFailureException {
     try {
       return getWebService().deleteRelativeFile(activeBuildID, checkoutDir, relativePath);
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -203,7 +203,7 @@ public final class RemoteAgentProxy implements Agent {
   public boolean logDirIsEmpty() throws IOException, AgentFailureException {
     try {
       return getWebService().logDirIsEmpty(activeBuildID);
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -215,7 +215,7 @@ public final class RemoteAgentProxy implements Agent {
   public boolean passwordDirIsEmpty() throws IOException, AgentFailureException {
     try {
       return getWebService().passwordDirIsEmpty(activeBuildID);
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -229,7 +229,7 @@ public final class RemoteAgentProxy implements Agent {
   public boolean emptyLogDir() throws IOException, AgentFailureException {
     try {
       return getWebService().emptyLogDir(activeBuildID);
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -241,7 +241,7 @@ public final class RemoteAgentProxy implements Agent {
   public boolean dirRelativeToCheckoutDirIsEmpty(final String relativePath) throws IOException, AgentFailureException {
     try {
       return getWebService().relativeDirIsEmpty(activeBuildID, checkoutDir, relativePath);
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -253,7 +253,7 @@ public final class RemoteAgentProxy implements Agent {
   public boolean absolutePathExists(final String absolutePath) throws IOException, AgentFailureException {
     try {
       return getWebService().absolutePathExists(activeBuildID, absolutePath);
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -267,7 +267,7 @@ public final class RemoteAgentProxy implements Agent {
   public boolean emptyPasswordDir() throws IOException, AgentFailureException {
     try {
       return getWebService().emptyPasswordDir(activeBuildID);
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -281,7 +281,7 @@ public final class RemoteAgentProxy implements Agent {
   public boolean relativeTempPathExists(final String relativePathInTempDirectory) throws IOException, AgentFailureException {
     try {
       return getWebService().tempDirExists(activeBuildID, relativePathInTempDirectory);
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -347,7 +347,7 @@ public final class RemoteAgentProxy implements Agent {
   public String createTempFile(final String prefix, final String suffix, final String content) throws IOException, AgentFailureException {
     try {
       return getWebService().createTempFile(activeBuildID, prefix, suffix, content);
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -359,7 +359,7 @@ public final class RemoteAgentProxy implements Agent {
   public boolean deleteTempFile(final String name) throws IOException, AgentFailureException {
     try {
       return getWebService().deleteTempFile(activeBuildID, name);
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -368,7 +368,7 @@ public final class RemoteAgentProxy implements Agent {
   public boolean deleteTempFileHard(final String tempFileName) {
     try {
       return getWebService().deleteFileHard(tempFileName);
-    } catch (Exception e) {
+    } catch (final Exception e) {
       final ErrorManager em = ErrorManagerFactory.getErrorManager();
       final Error error = new Error("Could not delete temporary file");
       error.setDescription("Error while deleting temporary \"" + tempFileName + "\": " + StringUtils.toString(e));
@@ -393,7 +393,7 @@ public final class RemoteAgentProxy implements Agent {
   public String getTempDirName() throws IOException, AgentFailureException {
     try {
       return getWebService().getBuildTempDirName(activeBuildID);
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -423,7 +423,7 @@ public final class RemoteAgentProxy implements Agent {
   public String makeStepScriptPath(final int sequenceID) throws IOException, AgentFailureException {
     try {
       return getWebService().makeStepScriptPath(activeBuildID, sequenceID);
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -438,7 +438,7 @@ public final class RemoteAgentProxy implements Agent {
   public String fixCRLF(final String stringToFix) throws IOException, AgentFailureException {
     try {
       return getWebService().fixCRLF(stringToFix);
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -447,7 +447,7 @@ public final class RemoteAgentProxy implements Agent {
   public boolean deleteBuildFiles() throws IOException, AgentFailureException {
     try {
       return getWebService().deleteBuildFiles(activeBuildID, checkoutDir);
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -460,7 +460,7 @@ public final class RemoteAgentProxy implements Agent {
   public String getCheckoutDirHome() throws IOException, AgentFailureException {
     try {
       return getWebService().getCheckoutDirHome(activeBuildID, checkoutDir);
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -472,7 +472,7 @@ public final class RemoteAgentProxy implements Agent {
   public boolean pathIsFile(final String file) throws IOException, AgentFailureException {
     try {
       return getWebService().pathIsFile(activeBuildID, file);
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -484,7 +484,7 @@ public final class RemoteAgentProxy implements Agent {
   public boolean pathIsDirectory(final String path) throws IOException, AgentFailureException {
     try {
       return getWebService().pathIsDirectory(activeBuildID, path);
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -501,7 +501,7 @@ public final class RemoteAgentProxy implements Agent {
     try {
       final RemoteFileGetter fileGetter = new RemoteFileGetter(webServiceLocator);
       fileGetter.copy(path, readInTo);
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -582,7 +582,7 @@ public final class RemoteAgentProxy implements Agent {
   public String[] listFilesInDirectory(final String path, final String extension) throws IOException, AgentFailureException {
     try {
       return getWebService().listFilesInDirectory(activeBuildID, path, extension);
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -599,7 +599,7 @@ public final class RemoteAgentProxy implements Agent {
   public String getFileName(final String path) throws IOException, AgentFailureException {
     try {
       return getWebService().getFileName(path);
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -645,7 +645,7 @@ public final class RemoteAgentProxy implements Agent {
   public void createFile(final String absoluteFile, final String content) throws IOException, AgentFailureException {
     try {
       getWebService().createFile(activeBuildID, absoluteFile, content);
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -659,7 +659,7 @@ public final class RemoteAgentProxy implements Agent {
   public boolean mkdirs(final String absolutePath) throws IOException, AgentFailureException {
     try {
       return getWebService().mkdirs(activeBuildID, absolutePath);
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -709,7 +709,7 @@ public final class RemoteAgentProxy implements Agent {
   public boolean deleteFileHard(final String path) {
     try {
       return getWebService().deleteFileHard(path);
-    } catch (Exception e) {
+    } catch (final Exception e) {
       final ErrorManager em = ErrorManagerFactory.getErrorManager();
       final Error error = new Error("Could not delete path " + path);
       error.setDescription("Error while deleting temporary \"" + path + "\": " + StringUtils.toString(e));

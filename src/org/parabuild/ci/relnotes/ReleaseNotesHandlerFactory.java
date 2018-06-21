@@ -70,7 +70,7 @@ public final class ReleaseNotesHandlerFactory {
           // add bugzilla RNH
           try {
             compositeHandler.add(new BugzillaDatabaseReleaseNotesHandler(tracker));
-          } catch (SQLException e) {
+          } catch (final SQLException e) {
             final Error error = new Error();
             error.setDescription("Error while adding release notes handler: " + StringUtils.toString(e));
             error.setBuildID(currentRunConfigID);

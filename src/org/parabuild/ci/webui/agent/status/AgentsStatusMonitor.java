@@ -95,10 +95,10 @@ public final class AgentsStatusMonitor implements Runnable, Service {
       try {
         updateStatus();
         Thread.sleep(60000L);
-      } catch (InterruptedException e) {
+      } catch (final InterruptedException e) {
         // Exit
         return;
-      } catch (Exception e) {
+      } catch (final Exception e) {
         LOG.warn("Ignored exception while updating agent status: " + StringUtils.toString(e), e);
       }
     }
@@ -141,9 +141,9 @@ public final class AgentsStatusMonitor implements Runnable, Service {
             agentStatusSample = new AgentStatusSample(0, AgentStatus.ACTIVITY_VERSION_MISMATCH, remoteVersion);
             AgentManager.getInstance().upgrade(hostName, managerVersion, remoteVersion);
           }
-        } catch (IOException e) {
+        } catch (final IOException e) {
           agentStatusSample = AgentStatusSample.OFFLINE;
-        } catch (AgentFailureException e) {
+        } catch (final AgentFailureException e) {
           agentStatusSample = AgentStatusSample.OFFLINE;
         }
       } else {

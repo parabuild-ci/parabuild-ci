@@ -204,7 +204,7 @@ public final class ScheduleItem implements Serializable, CommonConstants, Object
         cronTrigger.setCronExpression(ce[i]);
       }
       return true;
-    } catch (ParseException e) {
+    } catch (final ParseException e) {
       return false;
     }
   }

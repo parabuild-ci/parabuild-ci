@@ -112,7 +112,7 @@ final class VaultSourceControl extends AbstractSourceControl {
       if (LOG.isDebugEnabled()) {
         LOG.debug("end checkoutLatest");
       }
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException("Error while checking out: " + StringUtils.toString(e), e, getAgentHost());
     }
   }
@@ -170,7 +170,7 @@ final class VaultSourceControl extends AbstractSourceControl {
           command.execute();
           new VaultOutputParser().parse(command.getStdoutFile()); // no errors
 
-        } catch (ParseException e) {
+        } catch (final ParseException e) {
           throw IoUtils.createIOException(e);
         } finally {
           cleanup(command); // cleanup this cycle
@@ -181,7 +181,7 @@ final class VaultSourceControl extends AbstractSourceControl {
       if (LOG.isDebugEnabled()) {
         LOG.debug("end syncToChangeList");
       }
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException("Error while checking out: " + StringUtils.toString(e), e, getAgentHost());
     }
   }
@@ -372,7 +372,7 @@ final class VaultSourceControl extends AbstractSourceControl {
         LOG.debug("end getChangesSince");
       }
       return configManager.saveBuildChangeLists(activeBuildID, result);
-    } catch (IOException e) {
+    } catch (final IOException e) {
       processException(e);
       throw new BuildException("Error while retrieving list of changes: " + StringUtils.toString(e), e, getAgentHost());
     }
@@ -432,9 +432,9 @@ final class VaultSourceControl extends AbstractSourceControl {
       if (LOG.isDebugEnabled()) {
         LOG.debug("end label");
       }
-    } catch (ParseException e) {
+    } catch (final ParseException e) {
       throw new BuildException("Error while labeling: " + StringUtils.toString(e), e, getAgentHost());
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException("Error while labeling: " + StringUtils.toString(e), e, getAgentHost());
     }
   }
@@ -512,7 +512,7 @@ final class VaultSourceControl extends AbstractSourceControl {
         LOG.debug("path: " + path);
       }
       return new VaultDepotPathParser().parseDepotPath(path);
-    } catch (ValidationException e) {
+    } catch (final ValidationException e) {
       throw new BuildException(e, getAgentHost());
     }
   }

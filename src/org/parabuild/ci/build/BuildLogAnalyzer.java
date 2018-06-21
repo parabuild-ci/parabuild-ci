@@ -182,7 +182,7 @@ public final class BuildLogAnalyzer {
       }
       return new Result((List) logWindow.clone(), patternFound, result, resultDescription);
 
-    } catch (Exception e) {
+    } catch (final Exception e) {
       throw new BuildException("Error while analizing build results: " + StringUtils.toString(e), e);
     } finally {
       IoUtils.closeHard(reader);

@@ -42,7 +42,7 @@ public final class PersistanceUtils implements PersistanceConstants {
   public static void rollbackHard(final Transaction transaction) {
     try {
       transaction.rollback();
-    } catch (Exception e) {
+    } catch (final Exception e) {
       // ignore
       log.warn("Exception while rolling back a TX", e);
     }
@@ -55,7 +55,7 @@ public final class PersistanceUtils implements PersistanceConstants {
   public static void closeHard(final Session session) {
     try {
       session.close();
-    } catch (Exception e) {
+    } catch (final Exception e) {
       // ignore
       log.warn("Exception while closing a session", e);
     }

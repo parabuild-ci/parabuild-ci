@@ -409,7 +409,7 @@ public final class UserPanel extends MessagePanel implements Validatable, Saveab
 
       // return
       return pnlUserGroups.save();
-    } catch (Exception e) {
+    } catch (final Exception e) {
       // show error
       final String description = "Error while saving user information: " + StringUtils.toString(e);
       showErrorMessage(description + ". Please cancel editing and try again.");
@@ -498,7 +498,7 @@ public final class UserPanel extends MessagePanel implements Validatable, Saveab
         try {
           color = new Color(Integer.parseInt(fieldWithHexadecimalColor.getValue(), 16));
           text = "0123456789";
-        } catch (NumberFormatException e) {
+        } catch (final NumberFormatException e) {
           color = Color.Black;
           text = "Invalid color";
         }

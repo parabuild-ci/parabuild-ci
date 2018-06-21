@@ -61,7 +61,7 @@ public final class XMLUtils {
       os = new FileOutputStream(file);
       final Transformer transformer = TransformerFactory.newInstance().newTransformer();
       transformer.transform(new DOMSource(document), new StreamResult(os));
-    } catch (TransformerException e) {
+    } catch (final TransformerException e) {
       final IOException ioException = new IOException(StringUtils.toString(e));
       ioException.initCause(e);
       throw ioException;

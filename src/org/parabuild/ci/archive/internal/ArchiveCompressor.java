@@ -13,14 +13,20 @@
  */
 package org.parabuild.ci.archive.internal;
 
-import java.io.*;
-import org.apache.commons.logging.*;
-
-import org.parabuild.ci.common.*;
-import org.parabuild.ci.configuration.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.ArgumentValidator;
+import org.parabuild.ci.common.IoUtils;
+import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.error.Error;
-import org.parabuild.ci.error.*;
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.error.ErrorManager;
+import org.parabuild.ci.error.ErrorManagerFactory;
+import org.parabuild.ci.object.BuildConfigAttribute;
+
+import java.io.File;
+import java.io.FileFilter;
+import java.io.IOException;
 
 /**
  * This class is reposnsible for packing (zipping) expired build
@@ -75,7 +81,7 @@ public final class ArchiveCompressor {
             if (log.isDebugEnabled()) log.debug("compressing: " + pathname);
             compress(pathname);
             IoUtils.deleteFileHard(pathname);
-          } catch (IOException e) {
+          } catch (final IOException e) {
             reportPackingError(e);
           }
         }

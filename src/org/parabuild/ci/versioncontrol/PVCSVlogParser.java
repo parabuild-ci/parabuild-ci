@@ -240,9 +240,9 @@ final class PVCSVlogParser {
         line = IoUtils.readToNotPast(reader, ARCHIVE_STRING, null, trimLine);
       }
       vlogHandler.afterHandle();
-    } catch (ParseException e) {
+    } catch (final ParseException e) {
       throw IoUtils.createIOException(e);
-    } catch (CommandStoppedException e) {
+    } catch (final CommandStoppedException e) {
       IoUtils.createIOException(e);
     }
   }

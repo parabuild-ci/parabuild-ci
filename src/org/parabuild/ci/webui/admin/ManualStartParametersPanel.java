@@ -397,7 +397,7 @@ public final class ManualStartParametersPanel extends MessagePanel implements Va
       try {
         final BuildVersionGenerator buildVersionGenerator = new BuildVersionGenerator();
         buildVersionGenerator.validateTemplate(flVersionTemplate.getValue());
-      } catch (ValidationException e) {
+      } catch (final ValidationException e) {
         errors.add(StringUtils.toString(e));
       }
     }

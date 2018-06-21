@@ -65,7 +65,7 @@ public final class StopMergePage extends BasePage implements StatelessTierlet {
         super.setTitle(makeTitle("Stopping Merge \"" + mergeConfiguration.getName() + '\"'));
         MergeManager.getInstance().stopMerge(mergeConfiguration.getID());
         return Result.Done(Pages.PAGE_MERGE_LIST);
-      } catch (Exception e) {
+      } catch (final Exception e) {
         // Show error
         super.baseContentPanel().showErrorMessage("Unxpected error while stopping merge \"" + mergeConfiguration.getName() + "\": " + StringUtils.toString(e));
       }

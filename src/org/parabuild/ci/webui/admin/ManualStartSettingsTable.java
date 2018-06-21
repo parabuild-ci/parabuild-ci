@@ -268,7 +268,7 @@ public final class ManualStartSettingsTable extends AbstractFlatTable implements
   /**
    * {@inheritDoc}
    */
-  protected final void notifyRowMoved(int selectedRow, int count) {
+  protected final void notifyRowMoved(final int selectedRow, final int count) {
 
     final Object remove = parameters.remove(selectedRow);
     parameters.add(selectedRow + count, remove);

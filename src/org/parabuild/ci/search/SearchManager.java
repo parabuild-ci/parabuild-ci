@@ -104,7 +104,7 @@ public final class SearchManager {
 
       // send index request to indexer queue
       searchService.queueIndexRequest(new DocumentIndexRequest(document));
-    } catch (Exception e) {
+    } catch (final Exception e) {
       reportIndexRequestError(e);
     }
   }
@@ -123,7 +123,7 @@ public final class SearchManager {
 
       // send index request to indexer queue
       searchService.queueIndexRequest(new DocumentIndexRequest(document));
-    } catch (Exception e) {
+    } catch (final Exception e) {
       reportIndexRequestError(e);
     }
   }
@@ -142,7 +142,7 @@ public final class SearchManager {
         // send index request to indexer queue
         searchService.queueIndexRequest(new DocumentIndexRequest(document));
       }
-    } catch (Exception e) {
+    } catch (final Exception e) {
       reportIndexRequestError(e);
     }
   }
@@ -167,7 +167,7 @@ public final class SearchManager {
         // queue
         searchService.queueIndexRequest(new DocumentIndexRequest(document));
       }
-    } catch (Exception e) {
+    } catch (final Exception e) {
       reportIndexRequestError(e);
     }
   }

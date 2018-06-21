@@ -271,7 +271,7 @@ public final class LogPage extends AbstractBuildRunResultPage implements Convers
         // file ID or file name is invalid or missing, show list of files
         showListOfFileNames(contentPanel, buildRunID, logID, fileList);
       }
-    } catch (Exception e) {
+    } catch (final Exception e) {
       // show error overview
       baseContentPanel().getUserPanel().clear();
       baseContentPanel().showErrorMessage("There was an error while retrieving log. Please contact build administrator for resolution.");

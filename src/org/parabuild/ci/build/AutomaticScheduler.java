@@ -277,11 +277,11 @@ public final class AutomaticScheduler extends Thread implements BuildScheduler {
 
         buildRunner.requestBuildStart(startRequest);
       }
-    } catch (CommandStoppedException e) {
+    } catch (final CommandStoppedException e) {
 
       currentStatus = SchedulerStatus.IDLE;
       IoUtils.ignoreExpectedException(e);
-    } catch (Exception e) {
+    } catch (final Exception e) {
 
       // Set status
       currentStatus = SchedulerStatus.IDLE;
@@ -314,7 +314,7 @@ public final class AutomaticScheduler extends Thread implements BuildScheduler {
   }
 
 
-  private List parseParameters(PriorityMarkerParser priorityMarkerParser, ChangeList changeList) {
+  private List parseParameters(final PriorityMarkerParser priorityMarkerParser, final ChangeList changeList) {
     final String changeListDescription = changeList.getDescription();
     List parameters = null;
     parameters = priorityMarkerParser.parseChangeListDescription(changeListDescription);
@@ -507,12 +507,12 @@ public final class AutomaticScheduler extends Thread implements BuildScheduler {
           runSchedulerCycle();
         }
       }
-    } catch (RuntimeException e) {
+    } catch (final RuntimeException e) {
       if (LOG.isDebugEnabled()) {
         LOG.debug("Exception at run cycle", e);
       }
       ErrorManagerFactory.getErrorManager().reportSystemError(new Error(activeBuildID, "", Error.ERROR_SUSBSYSTEM_SCHEDULING, e));
-    } catch (java.lang.Error e) {
+    } catch (final java.lang.Error e) {
       if (LOG.isDebugEnabled()) {
         LOG.debug("Error at run cycle", e);
       }
@@ -573,7 +573,7 @@ public final class AutomaticScheduler extends Thread implements BuildScheduler {
       try {
         //noinspection WaitNotInLoop
         lock.wait((long) waitIntervalSeconds * 1000L);
-      } catch (InterruptedException e) {
+      } catch (final InterruptedException e) {
         IoUtils.ignoreExpectedException(e);
       }
     }

@@ -65,7 +65,7 @@ public abstract class AbstractUnixDirectoryOwnerChanger implements DirectoryOwne
         changeOwner(user, IoUtils.getCanonicalPathHard(new File(installationDir, "etc/build")));
         changeOwner(user, IoUtils.getCanonicalPathHard(new File(installationDir, "etc/logs")));
       }
-    } catch (Exception e) {
+    } catch (final Exception e) {
       // TODO: log exceptions into install log.
       log.warn("Error while changing directory owner", e);
     }

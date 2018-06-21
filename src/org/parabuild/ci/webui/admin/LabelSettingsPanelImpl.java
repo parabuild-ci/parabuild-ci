@@ -148,7 +148,7 @@ public final class LabelSettingsPanelImpl extends LabelSettingsPanel {
           showErrorMessage("Label name may start only with a letter");
           return false;
         }
-      } catch (BuildException e) {
+      } catch (final BuildException e) {
         showErrorMessage("Custom label is invalid");
         return false;
       }
@@ -162,7 +162,7 @@ public final class LabelSettingsPanelImpl extends LabelSettingsPanel {
           showErrorMessage("This custom label conflicts with the label defined for build \"" + labelTemplateFinder.getFoundBuildName() + '\"');
           return false;
         }
-      } catch (BuildException e) {
+      } catch (final BuildException e) {
         showErrorMessage("Error has occured while validaing label: " + StringUtils.toString(e));
       }
     }

@@ -91,7 +91,7 @@ public class MercurialVersionControl extends AbstractSourceControl {
 
       command = new MercurialCloneCommand(agent, getExePath(), getURL(), getBranch());
       command.execute();
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException("Error while checking out latest: " + e, e);
     } finally {
       cleanup(command);
@@ -122,7 +122,7 @@ public class MercurialVersionControl extends AbstractSourceControl {
       command.execute();
       cleanup(command);
 
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException("Error while syncing: " + StringUtils.toString(e), e);
     } finally {
       cleanup(command);
@@ -194,12 +194,12 @@ public class MercurialVersionControl extends AbstractSourceControl {
       } else {
         return newChangeListID; // as os
       }
-    } catch (IOException e) {
+    } catch (final IOException e) {
       Agent agent = null;
       //noinspection EmptyCatchBlock
       try {
         agent = getCheckoutDirectoryAwareAgent();
-      } catch (Exception ex) {
+      } catch (final Exception ex) {
       }
       throw new BuildException("Error while looking for changes: " + StringUtils.toString(e), e, agent);
     }
@@ -271,7 +271,7 @@ public class MercurialVersionControl extends AbstractSourceControl {
 
     try {
       Thread.sleep(1000L);
-    } catch (InterruptedException e) {
+    } catch (final InterruptedException e) {
       throw new CommandStoppedException(e);
     }
 

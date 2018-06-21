@@ -138,9 +138,9 @@ public final class SurroundSettingsPanel extends AbstractSourceControlPanel {
       try {
         WebuiUtils.validateCommandExists(super.getAgentEnv(), flPathToExe.getValue(), errors,
                 "Path to sscm executable is invalid, or sscm executable is not accessible");
-      } catch (NoLiveAgentsException ignore) {
+      } catch (final NoLiveAgentsException ignore) {
         IoUtils.ignoreExpectedException(ignore);
-      } catch (IOException e) {
+      } catch (final IOException e) {
         errors.add("Error while checking path for sscm client: " + StringUtils.toString(e));
       }
 
@@ -148,7 +148,7 @@ public final class SurroundSettingsPanel extends AbstractSourceControlPanel {
       final SurroundRepositoryPathParser parser = new SurroundRepositoryPathParser();
       try {
         parser.validate(flRepository.getValue());
-      } catch (ValidationException e) {
+      } catch (final ValidationException e) {
         errors.add(StringUtils.toString(e));
       }
     }
@@ -172,7 +172,7 @@ public final class SurroundSettingsPanel extends AbstractSourceControlPanel {
         if (be.isUnix() && be.commandIsAvailable(DEFAULT_UNIX_SURROUND_COMMAND)) {
           flPathToExe.setValue(DEFAULT_UNIX_SURROUND_COMMAND);
         }
-      } catch (Exception e) {
+      } catch (final Exception e) {
         IoUtils.ignoreExpectedException(e);
       }
     }

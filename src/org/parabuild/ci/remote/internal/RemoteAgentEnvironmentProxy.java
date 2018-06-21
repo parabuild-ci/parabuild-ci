@@ -69,7 +69,7 @@ public final class RemoteAgentEnvironmentProxy implements AgentEnvironment {
   public int builderVersionHashCode() throws IOException, AgentFailureException {
     try {
       return webServiceLocator.getWebService().builderVersionHashCode();
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -81,7 +81,7 @@ public final class RemoteAgentEnvironmentProxy implements AgentEnvironment {
   public String builderVersionAsString() throws IOException, AgentFailureException {
     try {
       return webServiceLocator.getWebService().builderVersionAsString();
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -93,7 +93,7 @@ public final class RemoteAgentEnvironmentProxy implements AgentEnvironment {
   public String getEnvVariable(final String variableName) throws IOException, AgentFailureException {
     try {
       return webServiceLocator.getWebService().getEnvVariable(variableName);
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -105,7 +105,7 @@ public final class RemoteAgentEnvironmentProxy implements AgentEnvironment {
   public Map getEnv() throws IOException, AgentFailureException {
     try {
       return webServiceLocator.getWebService().getEnv();
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -117,7 +117,7 @@ public final class RemoteAgentEnvironmentProxy implements AgentEnvironment {
   public byte systemType() throws IOException, AgentFailureException {
     try {
       return webServiceLocator.getWebService().systemType();
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -132,7 +132,7 @@ public final class RemoteAgentEnvironmentProxy implements AgentEnvironment {
   public boolean commandIsAvailable(final String command) throws IOException, AgentFailureException {
     try {
       return webServiceLocator.getWebService().commandIsAvailable(command);
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -144,7 +144,7 @@ public final class RemoteAgentEnvironmentProxy implements AgentEnvironment {
   public boolean isWindows() throws IOException, AgentFailureException {
     try {
       return webServiceLocator.getWebService().isWindows();
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -156,7 +156,7 @@ public final class RemoteAgentEnvironmentProxy implements AgentEnvironment {
   public boolean isUnix() throws IOException, AgentFailureException {
     try {
       return webServiceLocator.getWebService().isUnix();
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -169,7 +169,7 @@ public final class RemoteAgentEnvironmentProxy implements AgentEnvironment {
   public String cygwinWindowsPathToUnix(final String absolutePath) throws IOException, AgentFailureException {
     try {
       return webServiceLocator.getWebService().cygwinWindowsPathToUnix(absolutePath);
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -200,7 +200,7 @@ public final class RemoteAgentEnvironmentProxy implements AgentEnvironment {
       remoteFileGetter.copy(result.getStdoutFileName(), stdout);
       remoteFileGetter.copy(result.getStderrFileName(), stderr);
 
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     } finally {
       try {
@@ -209,7 +209,7 @@ public final class RemoteAgentEnvironmentProxy implements AgentEnvironment {
           remoteService.deleteFileHard(result.getStdoutFileName());
           remoteService.deleteFileHard(result.getStderrFileName());
         }
-      } catch (Exception e) {
+      } catch (final Exception e) {
         IoUtils.ignoreExpectedException(e);
       }
     }
@@ -230,7 +230,7 @@ public final class RemoteAgentEnvironmentProxy implements AgentEnvironment {
       remoteFileGetter.copy(result.getStderrFileName(), stderrFile);
       remoteFileGetter.copy(result.getMergedFileName(), mergedFile);
       return result.getResultCode();
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     } finally {
       try {
@@ -243,7 +243,7 @@ public final class RemoteAgentEnvironmentProxy implements AgentEnvironment {
           remoteBuilderWebService.deleteFileHard(result.getStderrFileName());
           remoteBuilderWebService.deleteFileHard(result.getMergedFileName());
         }
-      } catch (Exception e) {
+      } catch (final Exception e) {
         IoUtils.ignoreExpectedException(e);
       }
     }
@@ -259,7 +259,7 @@ public final class RemoteAgentEnvironmentProxy implements AgentEnvironment {
   public String getSystemProperty(final String propertyName) throws IOException, AgentFailureException {
     try {
       return webServiceLocator.getWebService().getSystemProperty(propertyName);
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -271,7 +271,7 @@ public final class RemoteAgentEnvironmentProxy implements AgentEnvironment {
   public String pathSeparator() throws IOException, AgentFailureException {
     try {
       return webServiceLocator.getWebService().pathSeparator();
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -284,7 +284,7 @@ public final class RemoteAgentEnvironmentProxy implements AgentEnvironment {
   public String separator() throws IOException, AgentFailureException {
     try {
       return webServiceLocator.getWebService().separator();
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -299,7 +299,7 @@ public final class RemoteAgentEnvironmentProxy implements AgentEnvironment {
   public boolean isAbsoluteFile(final String path) throws IOException, AgentFailureException {
     try {
       return webServiceLocator.getWebService().isAbsoluteFile(path);
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -308,7 +308,7 @@ public final class RemoteAgentEnvironmentProxy implements AgentEnvironment {
   public boolean isProhibitedPath(final String path) throws IOException, AgentFailureException {
     try {
       return webServiceLocator.getWebService().isProhibitedPath(path);
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }
@@ -349,7 +349,7 @@ public final class RemoteAgentEnvironmentProxy implements AgentEnvironment {
   public Locale defaultLocale() throws IOException, AgentFailureException {
     try {
       return webServiceLocator.getWebService().defaultLocaleData().getLocale();
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, webServiceLocator.agentHostName());
     }
   }

@@ -74,9 +74,9 @@ public final class RepeatableScheduler implements BuildScheduler {
     try {
       if (log.isDebugEnabled()) log.debug("Creating scheduler for buildID: " + activeBuildID);
       scheduler = new StdSchedulerFactory().getScheduler();
-    } catch (Exception e) {
+    } catch (final Exception e) {
       reportInitializationError(e);
-    } catch (java.lang.Error e) {
+    } catch (final java.lang.Error e) {
       reportInitializationError(e);
       throw e;
     }
@@ -140,9 +140,9 @@ public final class RepeatableScheduler implements BuildScheduler {
       schedulerStatus = SchedulerStatus.IDLE;
       scheduleJobs();
       startedUp = true;
-    } catch (Exception e) {
+    } catch (final Exception e) {
       reportError(e, "starting");
-    } catch (java.lang.Error e) {
+    } catch (final java.lang.Error e) {
       reportError(e, "starting");
       throw e;
     }
@@ -168,9 +168,9 @@ public final class RepeatableScheduler implements BuildScheduler {
       if (log.isDebugEnabled()) log.debug("requesting scheduled build to start");
       startRequest.setCleanCheckout(cleanCheckoutCounter.increment());
       buildRunner.requestBuildStart(startRequest);
-    } catch (Exception e) {
+    } catch (final Exception e) {
       reportError(e, "starting a scheduled build by admin request");
-    } catch (java.lang.Error e) {
+    } catch (final java.lang.Error e) {
       reportError(e, "starting a scheduled build by admin request");
       throw e;
     }
@@ -193,9 +193,9 @@ public final class RepeatableScheduler implements BuildScheduler {
     try {
       pauseJobs();
       schedulerStatus = SchedulerStatus.PAUSED;
-    } catch (Exception e) {
+    } catch (final Exception e) {
       reportError(e, "pausing a scheduled build by admin request");
-    } catch (java.lang.Error e) {
+    } catch (final java.lang.Error e) {
       reportError(e, "pausing a scheduled build by admin request");
       throw e;
     }
@@ -213,9 +213,9 @@ public final class RepeatableScheduler implements BuildScheduler {
         resumeJobs();
         schedulerStatus = SchedulerStatus.IDLE;
       }
-    } catch (Exception e) {
+    } catch (final Exception e) {
       reportError(e, "resuming a scheduled build by admin request");
-    } catch (java.lang.Error e) {
+    } catch (final java.lang.Error e) {
       reportError(e, "resuming a scheduled build by admin request");
       throw e;
     }
@@ -284,9 +284,9 @@ public final class RepeatableScheduler implements BuildScheduler {
       }
 
       return nextBuildTime;
-    } catch (Exception e) {
+    } catch (final Exception e) {
       reportError(e, "computing next build time");
-    } catch (java.lang.Error e) {
+    } catch (final java.lang.Error e) {
       reportError(e, "computing next build time");
       throw e;
     }
@@ -320,9 +320,9 @@ public final class RepeatableScheduler implements BuildScheduler {
     try {
       if (log.isDebugEnabled()) log.debug("Shutting down repeatable scheduler");
       unscheduleJobs();
-    } catch (Exception e) {
+    } catch (final Exception e) {
       reportError(e, "shutting down");
-    } catch (java.lang.Error e) {
+    } catch (final java.lang.Error e) {
       reportError(e, "shutting down");
       throw e;
     }
@@ -362,9 +362,9 @@ public final class RepeatableScheduler implements BuildScheduler {
         // re-active scheduler
         scheduler.start();
       }
-    } catch (Exception e) {
+    } catch (final Exception e) {
       reportError(e, "reloading");
-    } catch (java.lang.Error e) {
+    } catch (final java.lang.Error e) {
       reportError(e, "reloading");
       throw e;
     }

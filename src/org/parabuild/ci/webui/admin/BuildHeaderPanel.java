@@ -253,7 +253,7 @@ public final class BuildHeaderPanel extends MessagePanel implements Validatable,
           // just call systemType to make sure we can access the remote host
           final AgentEnvironment agentEnvironment = AgentManager.getInstance().getFirstLiveAgentEnvironment(getBuilderID());
           agentEnvironment.systemType();
-        } catch (Exception e) {
+        } catch (final Exception e) {
           // NOTE: simeshev@parabuilci.org - 2005-01-16 - we limit the
           // error length for there can be "HTML-ed" errors coming from
           // servlet level errors.

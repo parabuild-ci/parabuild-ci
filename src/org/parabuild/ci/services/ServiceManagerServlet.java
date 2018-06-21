@@ -70,7 +70,7 @@ public final class ServiceManagerServlet extends GenericServlet {
       serviceManager.setListenPort(listenPort);
       serviceManager.startServices();
       printServiceStartedToConsole();
-    } catch (Exception e) {
+    } catch (final Exception e) {
       // We catch this exception in order to prevent init method.
       reportServiceManagerError(e, "starting", Error.ERROR_LEVEL_FATAL);
       printFailedToStartToConsole(e);
@@ -97,7 +97,7 @@ public final class ServiceManagerServlet extends GenericServlet {
     try {
       reportServiceRequestedToStop();
       serviceManager.stopServices();
-    } catch (Exception e) {
+    } catch (final Exception e) {
       // We catch this exception in order to prevent failing this method.
       reportServiceManagerError(e, "stopping", Error.ERROR_LEVEL_WARNING);
     } finally {

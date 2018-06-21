@@ -173,7 +173,7 @@ public final class ReRunBuildPanel extends MessagePanel {
         return null;
       }
       return (BuildRun)buildRunListByNumber.get(0);
-    } catch (NumberFormatException e) {
+    } catch (final NumberFormatException e) {
       log.warn("This should not happen", e);
       return null;
     }
@@ -207,7 +207,7 @@ public final class ReRunBuildPanel extends MessagePanel {
         final BuildRun buildRun = getFirstBuildRunFromEnteredRunNumber();
         final BuildVersionDuplicateValidator duplicateValidator = new BuildVersionDuplicateValidator();
         duplicateValidator.validate(activeBuildID, pnlParameters.getVersionTemplate(), buildName, pnlParameters.getVersionCounter(), buildRun.getBuildRunID());
-      } catch (ValidationException e) {
+      } catch (final ValidationException e) {
         pnlParameters.showErrorMessage(StringUtils.toString(e));
         valid = false;
       }

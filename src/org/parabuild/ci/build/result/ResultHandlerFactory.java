@@ -80,9 +80,9 @@ public final class ResultHandlerFactory {
             throw new BuildException("Unknown result type: " + resultConfig.getType(), agent);
         }
       }
-    } catch (IOException e) {
+    } catch (final IOException e) {
       reportHandlerCreationError(buildRunConfig, e);
-    } catch (BuildException e) {
+    } catch (final BuildException e) {
       reportHandlerCreationError(buildRunConfig, e);
     }
     return composite;

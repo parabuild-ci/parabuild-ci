@@ -60,7 +60,7 @@ final class EnvironmentParser {
             result.put(currName, currValue);
             prevName = currName;
           }
-        } catch (Exception e) {
+        } catch (final Exception e) {
           if (log.isWarnEnabled()) log.warn("Expected exception while parsing environment", e);
         }
       }

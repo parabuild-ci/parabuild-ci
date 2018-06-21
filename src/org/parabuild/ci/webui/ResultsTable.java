@@ -207,12 +207,12 @@ final class ResultsTable extends AbstractFlatTable {
     // delete deleted from archive and the database.
     if (!deleted.isEmpty()) {
       // schedule deleting of the given results.
-      for (Iterator i = deleted.iterator(); i.hasNext();) {
+      for (final Iterator i = deleted.iterator(); i.hasNext();) {
         final BuildRunResultVO resultVO = (BuildRunResultVO)i.next();
         try {
           final ArchiveManager am = ArchiveManagerFactory.getArchiveManager(resultVO.getActiveBuildID());
           am.deleteResult(resultVO.getStepResult());
-        } catch (IOException e) {
+        } catch (final IOException e) {
           final Error error = new Error(e.toString());
           error.setSendEmail(false);
           ErrorManagerFactory.getErrorManager().reportSystemError(error);

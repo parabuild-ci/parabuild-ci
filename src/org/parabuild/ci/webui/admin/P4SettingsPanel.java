@@ -328,7 +328,7 @@ public final class P4SettingsPanel extends AbstractSourceControlPanel {
       try {
         final P4ClientViewParser parser = new P4ClientViewParser();
         parser.parse(relativeBuildPath, depotPath);
-      } catch (ValidationException e) {
+      } catch (final ValidationException e) {
         errors.add(e.getMessage());
       }
     }
@@ -337,9 +337,9 @@ public final class P4SettingsPanel extends AbstractSourceControlPanel {
     try {
       WebuiUtils.validateCommandExists(super.getAgentEnv(), flPathToP4Client.getValue(), errors,
               "Path to p4 executable is invalid, or p4 executable is not accessible");
-    } catch (NoLiveAgentsException ignore) {
+    } catch (final NoLiveAgentsException ignore) {
       IoUtils.ignoreExpectedException(ignore);
-    } catch (IOException e) {
+    } catch (final IOException e) {
       errors.add("Error while checking path for p4 executable: " + StringUtils.toString(e));
     }
 
@@ -355,7 +355,7 @@ public final class P4SettingsPanel extends AbstractSourceControlPanel {
     if (!StringUtils.isBlank(flP4WebURL.getValue())) {
       try {
         new URL(flP4WebURL.getValue());
-      } catch (MalformedURLException e) {
+      } catch (final MalformedURLException e) {
         errors.add('\"' + NAME_P4WEB_URL + "\" is not a valid URL: " + StringUtils.toString(e));
       }
     }

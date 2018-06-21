@@ -163,7 +163,7 @@ public final class ManualStartSettingsPanel extends MessagePanel implements Vali
       try {
         final BuildVersionGenerator buildVersionGenerator = new BuildVersionGenerator();
         buildVersionGenerator.validateTemplate(fldVersionTemplate.getValue());
-      } catch (ValidationException e) {
+      } catch (final ValidationException e) {
         errors.add(StringUtils.toString(e));
         valid = false;
       }

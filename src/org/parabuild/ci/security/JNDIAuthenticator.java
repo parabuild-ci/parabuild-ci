@@ -873,7 +873,7 @@ public class JNDIAuthenticator {
         try {
 
           attrs = context.getAttributes(userDN, attrIds);
-        } catch (NameNotFoundException e) {
+        } catch (final NameNotFoundException e) {
           if (log.isDebugEnabled()) {
             log.debug("e: " + e, e);
           }
@@ -883,7 +883,7 @@ public class JNDIAuthenticator {
         return makeUser(username, userDN, attrs);
       }
       return null;
-    } catch (ValidationException e) {
+    } catch (final ValidationException e) {
       throw toNamingException(e);
     }
   }
@@ -1017,7 +1017,7 @@ public class JNDIAuthenticator {
       // Get the entry's attributes
       final Attributes attrs = result.getAttributes();
       return makeUser(username, dn, attrs);
-    } catch (ValidationException e) {
+    } catch (final ValidationException e) {
       throw toNamingException(e);
     }
   }
@@ -1097,7 +1097,7 @@ public class JNDIAuthenticator {
         }
       }
       return validated;
-    } catch (NoSuchAlgorithmException e) {
+    } catch (final NoSuchAlgorithmException e) {
       final ConfigurationException ce = new ConfigurationException(StringUtils.toString(e));
       ce.initCause(e);
       throw ce;
@@ -1170,7 +1170,7 @@ public class JNDIAuthenticator {
       //noinspection UNUSED_SYMBOL,UnusedDeclaration
       context.getAttributes("", null);
       validated = true;
-    } catch (AuthenticationException e) {
+    } catch (final AuthenticationException e) {
       if (log.isDebugEnabled()) {
         log.debug("bind attempt failed: " + e, e);
       }
@@ -1353,7 +1353,7 @@ public class JNDIAuthenticator {
     // Close our opened connection
     try {
       context.close();
-    } catch (NamingException e) {
+    } catch (final NamingException e) {
       log.error("Error while closing context", e);
     }
   }

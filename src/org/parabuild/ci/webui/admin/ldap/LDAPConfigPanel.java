@@ -175,7 +175,7 @@ final class LDAPConfigPanel extends AbstractSystemConfigPanel {
           } else {
             showTestErrorMessage("User not found");
           }
-        } catch (Exception e) {
+        } catch (final Exception e) {
           showTestErrorMessage("Cannot authenticate. Error message: " + StringUtils.toString(e));
         }
         return Tierlet.Result.Continue();
@@ -270,7 +270,7 @@ final class LDAPConfigPanel extends AbstractSystemConfigPanel {
         final JNDIUserLookupStringGenerator generator = new JNDIUserLookupStringGenerator();
         try {
           generator.validateTemplate(flUserDistinguishedNameTemplate.getValue());
-        } catch (ValidationException e) {
+        } catch (final ValidationException e) {
           errors.add(StringUtils.toString(e));
         }
       }
@@ -280,7 +280,7 @@ final class LDAPConfigPanel extends AbstractSystemConfigPanel {
         final JNDIUserLookupStringGenerator generator = new JNDIUserLookupStringGenerator();
         try {
           generator.validateTemplate(flUserSearchTemplate.getValue());
-        } catch (ValidationException e) {
+        } catch (final ValidationException e) {
           errors.add(StringUtils.toString(e));
         }
       }

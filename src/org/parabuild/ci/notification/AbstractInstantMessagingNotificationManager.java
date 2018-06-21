@@ -113,7 +113,7 @@ public abstract class AbstractInstantMessagingNotificationManager implements Not
       final boolean notFistStepStart = !cm.isFirstBuildSequence(buildRun.getBuildID(), type, buildSequence.getStepName());
       if (enabled)
         send(makeReceiverList(buildRun, serverType(), imMessageSelection, true, notFistStepStart, false, watchLevel), body);
-    } catch (Exception ex) {
+    } catch (final Exception ex) {
       NotificationUtils.reportErrorSendingStepStarted(buildRun, buildSequence, ex);
     }
   }
@@ -176,11 +176,11 @@ public abstract class AbstractInstantMessagingNotificationManager implements Not
       final boolean notLastStepResult = !cm.isLastEnabledBuildSequence(buildRun.getBuildID(), type, stepRun.getName());
       if (enabled)
         send(makeReceiverList(buildRun, serverType(), imMessageSelection, false, false, notLastStepResult, watchLevel), body);
-    } catch (RuntimeException e) {
+    } catch (final RuntimeException e) {
       NotificationUtils.reportErrorSendingStepFinished(buildRun, stepRun, e);
-    } catch (ValidationException e) {
+    } catch (final ValidationException e) {
       NotificationUtils.reportErrorSendingStepFinished(buildRun, stepRun, e);
-    } catch (AddressException e) {
+    } catch (final AddressException e) {
       NotificationUtils.reportErrorSendingStepFinished(buildRun, stepRun, e);
     }
   }
@@ -234,7 +234,7 @@ public abstract class AbstractInstantMessagingNotificationManager implements Not
       final byte watchLevel = BuildWatcher.LEVEL_SYSTEM_ERROR;
       if (enabled)
         send(makeReceiverList(buildRun, serverType(), imMessageSelection, false, false, false, watchLevel), body);
-    } catch (Exception ex) {
+    } catch (final Exception ex) {
       NotificationUtils.reportErrorSendingStepHung(buildRun, sequence, ex);
     }
   }
@@ -290,7 +290,7 @@ public abstract class AbstractInstantMessagingNotificationManager implements Not
       final byte watchLevel = BuildWatcher.LEVEL_BROKEN;
       if (enabled)
         send(makeReceiverList(buildRun, serverType(), imMessageSelection, false, false, false, watchLevel), body);
-    } catch (Exception ex) {
+    } catch (final Exception ex) {
       NotificationUtils.reportErrorSendingBuildFailure(buildRun, ex);
     }
   }
@@ -357,7 +357,7 @@ public abstract class AbstractInstantMessagingNotificationManager implements Not
         // send
         if (enabled) send(adminUser.getImAddress(), body);
       }
-    } catch (Exception e) {
+    } catch (final Exception e) {
       NotificationUtils.reportErrorSendingSystemAlert(e);
     }
   }

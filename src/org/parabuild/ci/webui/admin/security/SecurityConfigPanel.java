@@ -168,7 +168,7 @@ public final class SecurityConfigPanel extends AbstractSystemConfigPanel impleme
       scm.saveSystemProperty(sp);
 
       return true;
-    } catch (NoSuchAlgorithmException e) {
+    } catch (final NoSuchAlgorithmException e) {
       showErrorMessage("There was an error updating admin password: " + StringUtils.toString(e));
       return false;
     }

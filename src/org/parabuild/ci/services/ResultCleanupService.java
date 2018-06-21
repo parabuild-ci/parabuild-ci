@@ -53,7 +53,7 @@ public final class ResultCleanupService implements Service {
             final ArchiveManager archiveManager = ArchiveManagerFactory.getArchiveManager(config.getActiveBuildID());
             archiveManager.packExpiredBuildLogs();
             archiveManager.deleteExpiredBuildResults();
-          } catch (Exception e) {
+          } catch (final Exception e) {
             final ErrorManager errorManager = ErrorManagerFactory.getErrorManager();
             errorManager.reportSystemError(new org.parabuild.ci.error.Error("Error while cleaning up build archive: " + StringUtils.toString(e), e));
           }

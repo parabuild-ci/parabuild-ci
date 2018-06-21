@@ -66,7 +66,7 @@ public final class StepResultPanel extends Panel {
           final CommonLabel lbByteCount = new CommonLabel(FileUtils.byteCountToDisplaySize(archiveEntry.getLength()));
           add(new CommonFlow(lnkResult, new Label("  "), lbByteCount));
         }
-      } catch (IOException e) {
+      } catch (final IOException e) {
         reportArchiveReadingError(e);
       }
     } else if (pathType == StepResult.PATH_TYPE_EXTERNAL_URL) {

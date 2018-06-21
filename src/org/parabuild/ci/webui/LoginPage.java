@@ -143,7 +143,7 @@ public final class LoginPage extends BasePage implements ConversationalTierlet {
         loginPanel.setPassword("");
         return Result.Continue();
       }
-    } catch (FatalConfigurationException e) {
+    } catch (final FatalConfigurationException e) {
       loginPanel.showErrorMessage("Critical error while logging in: " + StringUtils.toString(e));
       loginPanel.setPassword("");
       return Result.Done();
@@ -175,7 +175,7 @@ public final class LoginPage extends BasePage implements ConversationalTierlet {
       }
       SecurityManager.getInstance().saveUserProperty(userProperty);
 
-    } catch (Exception e) {
+    } catch (final Exception e) {
       // NOTE: vimeshev - 2006-05-07 - catching all for
       // so that we don't affect the log in proceess.
       log.warn("Error while saving \"rememeber me\" token", e);

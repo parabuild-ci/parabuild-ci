@@ -130,7 +130,7 @@ public final class RuntimeUtils {
           // REVIEWME: consider a better way than catching exception (see #760)
           try {
             uname = execute("uname");
-          } catch (Exception e) {
+          } catch (final Exception e) {
             IoUtils.ignoreExpectedException(e);
           }
           if (!StringUtils.isBlank(uname) && uname.startsWith("CYGWIN")) {
@@ -161,15 +161,15 @@ public final class RuntimeUtils {
             }
             line = in.readLine();
           }
-        } catch (Exception e) {
+        } catch (final Exception e) {
           IoUtils.ignoreExpectedException(e);
         } finally {
           IoUtils.closeHard(in);
         }
       }
-    } catch (RuntimeException e) {
+    } catch (final RuntimeException e) {
       throw e;
-    } catch (Exception e) {
+    } catch (final Exception e) {
       throw IoUtils.makeIllegalStateException(e);
     }
   }
@@ -214,7 +214,7 @@ public final class RuntimeUtils {
         result = result.substring(0, result.length() - 1);
       }
       return result;
-    } catch (CommandStoppedException e) {
+    } catch (final CommandStoppedException e) {
       throw IoUtils.createIOException("Command was stopped", e);
     }
   }
@@ -233,7 +233,7 @@ public final class RuntimeUtils {
         result = result.substring(0, result.length() - 1);
       }
       return result;
-    } catch (CommandStoppedException e) {
+    } catch (final CommandStoppedException e) {
       throw IoUtils.createIOException("Command was stopped", e);
     }
   }
@@ -271,7 +271,7 @@ public final class RuntimeUtils {
       waitForCopier(stderrCopier);
       waitForCopier(stdoutCopier);
       return exitValue;
-    } catch (InterruptedException e) {
+    } catch (final InterruptedException e) {
       throw new CommandStoppedException(e);
     } finally {
       waitForCopier(stderrCopier);
@@ -319,7 +319,7 @@ public final class RuntimeUtils {
       waitForCopier(stderrCopier);
       waitForCopier(stdoutCopier);
       return exitValue;
-    } catch (InterruptedException e) {
+    } catch (final InterruptedException e) {
       throw new CommandStoppedException(e);
     } finally {
       waitForCopier(stderrCopier);
@@ -427,7 +427,7 @@ public final class RuntimeUtils {
       }
       if (!commmandFile.exists()) return false;
       return commmandFile.isFile();
-    } catch (CommandLineParserException e) {
+    } catch (final CommandLineParserException e) {
       return false;
     }
   }
@@ -441,7 +441,7 @@ public final class RuntimeUtils {
   private static void waitForProcess(final Process process) throws CommandStoppedException {
     try {
       process.waitFor();
-    } catch (InterruptedException e) {
+    } catch (final InterruptedException e) {
       if (log.isDebugEnabled()) log.debug("will destroy process", e);
       process.destroy();
       throw new CommandStoppedException();
@@ -564,10 +564,10 @@ public final class RuntimeUtils {
         // execute
         final int rc = execute(currentDir, cmd.toString(), null, new NullOutputStream(), new NullOutputStream());
         if (log.isDebugEnabled()) log.debug("rc: " + rc);
-      } catch (CommandStoppedException e) {
+      } catch (final CommandStoppedException e) {
 
         IoUtils.ignoreExpectedException(e);
-      } catch (IOException e) {
+      } catch (final IOException e) {
 
         IoUtils.ignoreExpectedException(e);
       }
@@ -595,10 +595,10 @@ public final class RuntimeUtils {
       final int rc = execute(currentDir, cmd.toString(), null, new NullOutputStream(), new NullOutputStream());
       if (log.isDebugEnabled()) log.debug("rc: " + rc);
 
-    } catch (CommandStoppedException e) {
+    } catch (final CommandStoppedException e) {
 
       IoUtils.ignoreExpectedException(e);
-    } catch (IOException e) {
+    } catch (final IOException e) {
 
       IoUtils.ignoreExpectedException(e);
     }
@@ -609,7 +609,7 @@ public final class RuntimeUtils {
     try {
       if (copier == null) return;
       copier.getFinishLatch().acquire();
-    } catch (InterruptedException e) {
+    } catch (final InterruptedException e) {
       IoUtils.ignoreExpectedException(e);
     }
   }

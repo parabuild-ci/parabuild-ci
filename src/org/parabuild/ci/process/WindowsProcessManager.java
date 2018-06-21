@@ -105,7 +105,7 @@ final class WindowsProcessManager implements ProcessManager {
       this.LIST_PIDS = PV + " -q -e";
       this.LIST_ENV = PV + " -q -e -g -i ";
       this.KILL = PV + " -q -e -f -k -i ";
-    } catch (AgentFailureException e) {
+    } catch (final AgentFailureException e) {
       throw ExceptionUtils.createIOException(e);
     }
   }
@@ -158,7 +158,7 @@ final class WindowsProcessManager implements ProcessManager {
         is.reset();
         tree = getTree(is);
       }
-    } catch (IOException ex) {
+    } catch (final IOException ex) {
       throw new BuildException("Unable to parse data: I/O error", ex, agentEnvironment);
     } finally {
       IoUtils.closeHard(is);
@@ -324,7 +324,7 @@ final class WindowsProcessManager implements ProcessManager {
         if (ProcessUtils.PROCESS_DEBUG_ENABLED) log.debug("Retrieved:" + p.toString());
         ret.add(p);
       }
-    } catch (IOException ex) {
+    } catch (final IOException ex) {
       throw new BuildException("I/O error while reading data", ex, agentEnvironment);
     }
   }
@@ -360,7 +360,7 @@ final class WindowsProcessManager implements ProcessManager {
         ret.put(pid, ppid);
         if (ProcessUtils.PROCESS_DEBUG_ENABLED) log.debug("Tree retrieved:" + ppid + '/' + pid);
       }
-    } catch (IOException ex) {
+    } catch (final IOException ex) {
       throw new BuildException("I/O error while reading data", ex, agentEnvironment);
     }
     return ret;
@@ -402,7 +402,7 @@ final class WindowsProcessManager implements ProcessManager {
         }
         l.add(pid);
       }
-    } catch (IOException ex) {
+    } catch (final IOException ex) {
       throw new BuildException("I/O error while reading data", ex, agentEnvironment);
     }
     return ret;
@@ -428,7 +428,7 @@ final class WindowsProcessManager implements ProcessManager {
       while ((count = r.read(c)) > 0) {
         buf.append(c, 0, count).append('\n');
       }
-    } catch (IOException ex) {
+    } catch (final IOException ex) {
       throw new BuildException("Error getting environment", ex, agentEnvironment);
     } finally {
       IoUtils.closeHard(r);
@@ -530,7 +530,7 @@ final class WindowsProcessManager implements ProcessManager {
         final Integer pid = new Integer(ProcessUtils.getPID(s_pid));
         ret.add(pid);
       }
-    } catch (IOException ex) {
+    } catch (final IOException ex) {
       throw new BuildException("I/O error while reading data", ex, agentEnvironment);
     }
     return ret;

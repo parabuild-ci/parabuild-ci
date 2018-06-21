@@ -72,7 +72,7 @@ public class InputStreamToFileCopier implements Runnable {
   public final void run() {
     try {
       copyInputStreamToFile();
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw IoUtils.makeIllegalStateException(e);
     } finally {
       finishLatch.release();

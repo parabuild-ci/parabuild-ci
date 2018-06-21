@@ -36,7 +36,7 @@ final class UpgraderToVersion17 implements SingleStepSchemaUpgrader {
   public void upgrade(final Connection conn, final int upgradeToVersion) throws SQLException {
     final boolean savedAutoCommit = conn.getAutoCommit();
     Statement st = null; // NOPMD
-    PreparedStatement pstmt = null; // NOPMD
+    final PreparedStatement pstmt = null; // NOPMD
     try {
       // create statement
       conn.setAutoCommit(true);

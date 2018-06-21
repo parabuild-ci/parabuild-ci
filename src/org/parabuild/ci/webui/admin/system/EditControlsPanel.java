@@ -135,7 +135,7 @@ final class EditControlsPanel extends Panel {
   private Tierlet.Result cancelEdit() {
     final Properties previewParameters = SystemConfigurationPageParameter.createPreviewParameters();
     final Parameters parameters = new Parameters();
-    for (Iterator iter = previewParameters.entrySet().iterator(); iter.hasNext();) {
+    for (final Iterator iter = previewParameters.entrySet().iterator(); iter.hasNext();) {
       final Map.Entry entry = (Map.Entry) iter.next();
       parameters.addParameter((String) entry.getKey(), (String) entry.getValue());
     }

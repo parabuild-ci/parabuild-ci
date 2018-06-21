@@ -52,7 +52,7 @@ public final class TailService {
 //      if (log.isDebugEnabled()) log.debug("sinceServerTime: " + sinceServerTime);
 //      if (log.isDebugEnabled()) log.debug("tailUpdate: " + tailUpdate);
       return BuildManager.getInstance().getTailUpdate(activeBuildID, sinceServerTime);
-    } catch (Exception e) {
+    } catch (final Exception e) {
       final Error error = new Error();
       error.setBuildID(activeBuildID);
       error.setErrorLevel(Error.ERROR_LEVEL_WARNING);

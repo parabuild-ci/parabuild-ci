@@ -306,7 +306,7 @@ public final class LogConfigsTable extends AbstractFlatTable implements Loadable
     }
 
 
-    public void setMoveRowCommandsVisible(boolean visible) {
+    public void setMoveRowCommandsVisible(final boolean visible) {
       // do nothing, log configs doesn't have insert command
     }
   }

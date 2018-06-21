@@ -176,7 +176,7 @@ public final class SVNSettingsPanel extends AbstractSourceControlPanel {
       final SVNDepotPathParser parser = new SVNDepotPathParser();
       try {
         parser.validate(flDepotPath.getValue());
-      } catch (ValidationException e) {
+      } catch (final ValidationException e) {
         errors.add(StringUtils.toString(e));
       }
     }
@@ -202,7 +202,7 @@ public final class SVNSettingsPanel extends AbstractSourceControlPanel {
         if (be.isUnix() && be.commandIsAvailable(DEFAULT_UNIX_SVN_COMMAND)) {
           flPathToExe.setValue(DEFAULT_UNIX_SVN_COMMAND);
         }
-      } catch (Exception e) {
+      } catch (final Exception e) {
         IoUtils.ignoreExpectedException(e);
       }
     }

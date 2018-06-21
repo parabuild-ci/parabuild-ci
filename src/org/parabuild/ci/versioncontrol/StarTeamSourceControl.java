@@ -104,7 +104,7 @@ public class StarTeamSourceControl extends AbstractSourceControl {
         }
       }
       if (log.isDebugEnabled()) log.debug("end checkoutLatest");
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException("Error while checking out: " + StringUtils.toString(e), e, getAgentHost());
     }
   }
@@ -155,7 +155,7 @@ public class StarTeamSourceControl extends AbstractSourceControl {
       }
       this.lastSyncDate = (Date) changeListDate.clone();
       if (log.isDebugEnabled()) log.debug("end syncToChangeList");
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException("Error while syncing: " + StringUtils.toString(e), e, getAgentHost());
     }
   }
@@ -254,7 +254,7 @@ public class StarTeamSourceControl extends AbstractSourceControl {
 
           // add this project changes to result
           result.addAll(changeLists);
-        } catch (ParseException e) {
+        } catch (final ParseException e) {
           throw new BuildException(e, getAgentHost());
         } finally {
           cleanup(command); // cleanup this cycle
@@ -279,7 +279,7 @@ public class StarTeamSourceControl extends AbstractSourceControl {
       // store changes
       if (log.isDebugEnabled()) log.debug("end getChangesSince");
       return configManager.saveBuildChangeLists(activeBuildID, result);
-    } catch (IOException e) {
+    } catch (final IOException e) {
       processException(e);
       throw new BuildException("Error while retrieving list of changes: " + StringUtils.toString(e), e, getAgentHost());
     }
@@ -363,7 +363,7 @@ public class StarTeamSourceControl extends AbstractSourceControl {
         }
       }
       if (log.isDebugEnabled()) log.debug("end label: " + label);
-    } catch (IOException e) {
+    } catch (final IOException e) {
       processException(e);
       throw new BuildException("Error while labeling the build: " + StringUtils.toString(e), e, getAgentHost());
     }
@@ -439,7 +439,7 @@ public class StarTeamSourceControl extends AbstractSourceControl {
   private List getProjects() throws BuildException {
     try {
       return new StarTeamProjectListParser().parseProjects(getSettingValue(SourceControlSetting.STARTEAM_PROJECT_PATH));
-    } catch (ValidationException e) {
+    } catch (final ValidationException e) {
       throw new BuildException(e, getAgentHost());
     }
   }
@@ -496,7 +496,7 @@ public class StarTeamSourceControl extends AbstractSourceControl {
       result.append(" -u"); // Unlock the file
       result.append(" -vd ").append(new StarTeamDateFormat(locale).formatInput(createdAt));
       return result.toString();
-    } catch (IOException e) {
+    } catch (final IOException e) {
       log.warn("Error while creating sync command note: " + StringUtils.toString(e), e);
       return super.getSyncCommandNote(changeListID);
     }

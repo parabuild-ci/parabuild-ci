@@ -163,7 +163,7 @@ public final class CleanupAllInactiveWorkspacesPage extends BasePage implements 
               }
             }
           }
-        } catch (Exception e) {
+        } catch (final Exception e) {
           baseContentPanel().getUserPanel().add(makeExceptionLabel(buildName, e));
         }
       }

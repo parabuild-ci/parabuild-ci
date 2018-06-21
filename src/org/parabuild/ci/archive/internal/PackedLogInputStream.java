@@ -112,7 +112,7 @@ public final class PackedLogInputStream extends InputStream {
   public synchronized void mark(final int readlimit) {
     try {
       getDelegate().mark(readlimit);
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw IoUtils.makeIllegalStateException(e);
     }
   }
@@ -126,7 +126,7 @@ public final class PackedLogInputStream extends InputStream {
   public boolean markSupported() {
     try {
       return getDelegate().markSupported();
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw IoUtils.makeIllegalStateException(e);
     }
   }

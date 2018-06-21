@@ -77,11 +77,11 @@ public final class BugzillaMySQLConnectionFactory {
       final Connection con = driver.connect("jdbc:mysql://" + databaseHost + ':' + databasePort + '/' + databaseName, props); // NOPMD
       con.setAutoCommit(true);
       return con;
-    } catch (ClassNotFoundException e) {
+    } catch (final ClassNotFoundException e) {
       throw new SQLException("MySQL driver cannot be found. To install the driver go to http://dev.mysql.com/downloads/connector/j/3.1.html, download a binary dirstibution for Connector/J and untar/unzip file mysql-connector-java-3.1.13-bin.jar to <parabuild install dir>/lib/common/lib and restart Parabuild.");
-    } catch (SQLException e) {
+    } catch (final SQLException e) {
       throw e;
-    } catch (Exception e) {
+    } catch (final Exception e) {
       final SQLException sqlException = new SQLException(StringUtils.toString(e));
       sqlException.initCause(e);
       throw sqlException;
@@ -97,7 +97,7 @@ public final class BugzillaMySQLConnectionFactory {
     Connection con = null; // NOPMD
     try {
       con = connect();
-    } catch (Exception e) {
+    } catch (final Exception e) {
       return new ConnectionTestResult(false, e);
     } finally {
       IoUtils.closeHard(con);

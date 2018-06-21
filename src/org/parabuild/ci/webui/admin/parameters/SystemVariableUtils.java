@@ -128,7 +128,7 @@ final class SystemVariableUtils {
       public void run() {
         if (variableType == StartParameter.TYPE_SYSTEM) {
           // Notify all
-          for (Iterator iter = buildListService.getBuilds().iterator(); iter.hasNext();) {
+          for (final Iterator iter = buildListService.getBuilds().iterator(); iter.hasNext();) {
             ((BuildService) iter.next()).notifyConfigurationChanged();
           }
         } else if (variableType == StartParameter.TYPE_PROJECT) {

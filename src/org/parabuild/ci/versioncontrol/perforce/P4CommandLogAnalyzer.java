@@ -84,7 +84,7 @@ public final class P4CommandLogAnalyzer {
       final BuildException e = new BuildException(StringUtils.isBlank(errors.toString()) ? unknownError : unexpectedError + ": " + errors);
       e.setLogContent(errors);
       throw e;
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException("Unknown error while analizing results of access to Perforce");
     } finally {
       IoUtils.closeHard(br);

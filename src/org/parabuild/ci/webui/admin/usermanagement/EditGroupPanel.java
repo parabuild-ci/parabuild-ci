@@ -189,7 +189,7 @@ public final class EditGroupPanel extends MessagePanel implements Validatable, S
 
       // return
       return pnlGroupBuilds.save();
-    } catch (Exception e) {
+    } catch (final Exception e) {
       // show error
       final String description = "Error while saving group information: " + StringUtils.toString(e);
       showErrorMessage(description + ". Please cancel editing and try again.");

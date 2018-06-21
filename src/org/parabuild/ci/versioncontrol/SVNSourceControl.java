@@ -103,7 +103,7 @@ final class SVNSourceControl extends AbstractSourceControl {
         }
       }
       if (LOG.isDebugEnabled()) LOG.debug("end checkoutLatest");
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException("Error while checking out: " + StringUtils.toString(e), e, agent);
     }
   }
@@ -136,7 +136,7 @@ final class SVNSourceControl extends AbstractSourceControl {
         executeUpdateCommand(agent, repositoryPath, changeListNumber);
       }
       if (LOG.isDebugEnabled()) LOG.debug("end syncToChangeList");
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException("Error while checking out: " + StringUtils.toString(e), e, agent);
     }
   }
@@ -175,7 +175,7 @@ final class SVNSourceControl extends AbstractSourceControl {
         execute(command);
         done = true;
 
-      } catch (IOException e) {
+      } catch (final IOException e) {
 
         // Store exception in case we cannot have
         // a clean execution w/in attempt count.
@@ -275,12 +275,12 @@ final class SVNSourceControl extends AbstractSourceControl {
       } else {
         return newChangeListID; // as os
       }
-    } catch (IOException e) {
+    } catch (final IOException e) {
       Agent agent = null;
       //noinspection EmptyCatchBlock
       try {
         agent = getCheckoutDirectoryAwareAgent();
-      } catch (Exception ex) {
+      } catch (final Exception ex) {
       }
       throw new BuildException("Error while checking out: " + StringUtils.toString(e), e, agent);
     }
@@ -414,7 +414,7 @@ final class SVNSourceControl extends AbstractSourceControl {
 
       result.put(PARABUILD_SVN_REPOSITORY_PATH, sb);
       return result;
-    } catch (BuildException e) {
+    } catch (final BuildException e) {
 
       final IOException ioe = new IOException();
       ioe.initCause(e);
@@ -517,7 +517,7 @@ final class SVNSourceControl extends AbstractSourceControl {
       }
       try {
         Thread.sleep(1000L);
-      } catch (InterruptedException e) {
+      } catch (final InterruptedException e) {
         throw new CommandStoppedException(e);
       }
     }
@@ -623,7 +623,7 @@ final class SVNSourceControl extends AbstractSourceControl {
   private static void execute(final SVNCommand command) throws IOException, CommandStoppedException, AgentFailureException {
     try {
       command.execute();
-    } catch (IOException e) {
+    } catch (final IOException e) {
       final String errorString = e.toString().toLowerCase();
       if (errorString.indexOf("Server certificate verification failed: issuer is not trusted".toLowerCase()) >= 0
               || errorString.indexOf("Server certificate verification failed: certificate issued for a different hostname, issuer is not trusted".toLowerCase()) >= 0) {
@@ -665,7 +665,7 @@ final class SVNSourceControl extends AbstractSourceControl {
       // Return result
       return StringUtils.putIntoDoubleQuotes(exeSettingValue);
 
-    } catch (ValidationException e) {
+    } catch (final ValidationException e) {
 
       // Wrap into an IO exception
       throw ExceptionUtils.createIOException(e);
@@ -684,7 +684,7 @@ final class SVNSourceControl extends AbstractSourceControl {
     try {
       final SVNDepotPathParser parser = new SVNDepotPathParser();
       return parser.parseDepotPath(getSettingValue(SourceControlSetting.SVN_DEPOT_PATH));
-    } catch (ValidationException e) {
+    } catch (final ValidationException e) {
       throw new BuildException(e, getAgentHost());
     }
   }

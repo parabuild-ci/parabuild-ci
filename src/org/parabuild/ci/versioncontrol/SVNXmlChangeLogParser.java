@@ -69,7 +69,7 @@ public final class SVNXmlChangeLogParser extends SVNChangeLogParser {
       final Element root = document.getRootElement();
 
       // iterate through child elements of root
-      for (Iterator i = root.elementIterator(); i.hasNext();) {
+      for (final Iterator i = root.elementIterator(); i.hasNext();) {
         final Element element = (Element) i.next();
         final String elementName = element.getName();
         if ("logentry".equals(elementName)) {
@@ -146,9 +146,9 @@ public final class SVNXmlChangeLogParser extends SVNChangeLogParser {
           }
         }
       }
-    } catch (DocumentException e) {
+    } catch (final DocumentException e) {
       throw IoUtils.createIOException(e);
-    } catch (ParseException e) {
+    } catch (final ParseException e) {
       throw IoUtils.createIOException(e);
     }
     return result;

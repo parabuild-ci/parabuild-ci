@@ -217,7 +217,7 @@ added:
           final Date timeStamp;
           try {
             timeStamp = dateFormat.parse(line.substring(TIMESTAMP_LEN));
-          } catch (ParseException e) {
+          } catch (final ParseException e) {
             throw new IOException("Invalid date format, line: " + line);
           }
 
@@ -276,7 +276,7 @@ added:
               return result;
             }
           }
-        } catch (RuntimeException e) {
+        } catch (final RuntimeException e) {
           final IOException ioe = new IOException("Unexpected error while processing Bazaar change log, line: " + line);
           ioe.initCause(e);
           throw ioe;

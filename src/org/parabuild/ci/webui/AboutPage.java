@@ -184,7 +184,7 @@ public final class AboutPage extends BasePage implements StatelessTierlet {
       final AgentEnvironment agentEnvironment = AgentManager.getInstance().getAgentEnvironment(host);
       result = new EnvironmentPanel(agentEnvironment.getEnv(), "Shell Environment Details");
       return result;
-    } catch (Exception e) {
+    } catch (final Exception e) {
       result = new MessagePanel("Shell Environment details");
       result.showContentBorder(true);
       result.getUserPanel().add(new CommonLabel("Details for host " + host.getHost() + " are not available: " + StringUtils.toString(e)));
@@ -250,7 +250,7 @@ public final class AboutPage extends BasePage implements StatelessTierlet {
       gi.add(new CommonLabel(""));
       gi.add(new CommonLabel(""));
       gi.add(new CommonLabel(Integer.toString(totalMissPercent)));
-    } catch (CacheException e) {
+    } catch (final CacheException e) {
       result.showErrorMessage("Error getting cache stats: " + e.toString());
     }
     return result;
@@ -260,7 +260,7 @@ public final class AboutPage extends BasePage implements StatelessTierlet {
   private String getIPAddress() {
     try {
       return InetAddress.getLocalHost().getHostAddress();
-    } catch (UnknownHostException e) {
+    } catch (final UnknownHostException e) {
       return "Cannot detect: " + StringUtils.toString(e);
     }
   }

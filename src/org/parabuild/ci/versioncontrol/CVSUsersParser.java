@@ -93,7 +93,7 @@ final class CVSUsersParser {
         }
         result.put(user.trim(), email);
       }
-    } catch (IOException e) {
+    } catch (final IOException e) {
       reportWarning(appendInfoAboutCVSROOT("Can not retrieve user e-mails from CVSROOT/users."), e);
       return result; // return empty result
     } finally {

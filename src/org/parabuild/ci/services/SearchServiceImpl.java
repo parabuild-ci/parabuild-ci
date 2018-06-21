@@ -76,7 +76,7 @@ public final class SearchServiceImpl implements SearchService {
               return true;
             }
           });
-        } catch (Exception e) {
+        } catch (final Exception e) {
           log.warn("Error while traversing temp dir: " + StringUtils.toString(e), e);
         }
       }
@@ -89,7 +89,7 @@ public final class SearchServiceImpl implements SearchService {
 //      if (log.isDebugEnabled()) log.debug("create: " + create);
       indexWriter = new IndexWriter(ConfigurationConstants.INDEX_HOME, makeAnalyzer(), create);
       status = SERVICE_STATUS_STARTED;
-    } catch (Exception e) {
+    } catch (final Exception e) {
       final Error error = new Error("Failed to start search service: " + StringUtils.toString(e));
       error.setSendEmail(true);
       error.setDetails(e);
@@ -128,7 +128,7 @@ public final class SearchServiceImpl implements SearchService {
     try {
       final IndexerQueueRequest queueRequest = new IndexerQueueRequest(indexRequest);
       indexerQueue.execute(queueRequest);
-    } catch (InterruptedException e) {
+    } catch (final InterruptedException e) {
       IoUtils.ignoreExpectedException(e);
     }
   }
@@ -174,7 +174,7 @@ public final class SearchServiceImpl implements SearchService {
     if (indexWriter != null) {
       try {
         indexWriter.close();
-      } catch (Exception ex) {
+      } catch (final Exception ex) {
         log.warn("Error while closing index writer: " + StringUtils.toString(ex), ex);
       }
     }
@@ -222,7 +222,7 @@ public final class SearchServiceImpl implements SearchService {
         documentToIndex = indexRequest.getDocumentToIndex();
         indexWriter.addDocument(documentToIndex);
 //        if (log.isDebugEnabled()) log.debug("Close writer");
-      } catch (Exception e) {
+      } catch (final Exception e) {
         if (log.isDebugEnabled()) log.debug(e);
         final Error error = new Error("Indexing error: " + StringUtils.toString(e));
         error.setDetails(e);

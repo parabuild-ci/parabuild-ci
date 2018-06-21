@@ -122,7 +122,7 @@ public final class ProcessListTable extends AbstractFlatTable implements CommonC
       // REVIEWME: currently shows only local host
       final AgentEnvironment agentEnv = AgentManager.getInstance().getAgentEnvironment(new AgentHost(AgentConfig.BUILD_MANAGER, ""));
       processList = ProcessManagerFactory.getProcessManager(agentEnv).getProcesses(ProcessManager.SORT_BY_PID);
-    } catch (Exception e) {
+    } catch (final Exception e) {
       super.showErrorMessage("There was a error retrieving process list");
       log.warn(STR_IGNORED_EXCEPTION, e);
     }

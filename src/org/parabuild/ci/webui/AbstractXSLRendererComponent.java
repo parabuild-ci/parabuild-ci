@@ -60,7 +60,7 @@ public abstract class AbstractXSLRendererComponent extends CustomComponent {
       final Transformer transformer = TransformerFactory.newInstance().newTransformer(xslSource);
       final PrintWriter pw = ctx.getWriter();
       transformer.transform(xmlSource, new StreamResult(pw));
-    } catch (Exception e) {
+    } catch (final Exception e) {
       showUnexpectedErrorMsg(ctx, e);
     } finally {
       closeHard(xslSource);
@@ -74,7 +74,7 @@ public abstract class AbstractXSLRendererComponent extends CustomComponent {
       final PrintWriter pw = ctx.getWriter();
       pw.println("There was an unexpected error while rendering log.  The error was reported to the build administrator.");
       log.error("Error getting log", e);
-    } catch (Exception e1) {
+    } catch (final Exception e1) {
       IoUtils.ignoreExpectedException(e1);
     }
   }
@@ -90,7 +90,7 @@ public abstract class AbstractXSLRendererComponent extends CustomComponent {
         if (source.getInputStream() != null) IoUtils.closeHard(source.getInputStream());
         if (source.getReader() != null) IoUtils.closeHard(source.getReader());
       }
-    } catch (Exception e) {
+    } catch (final Exception e) {
       IoUtils.ignoreExpectedException(e);
     }
   }

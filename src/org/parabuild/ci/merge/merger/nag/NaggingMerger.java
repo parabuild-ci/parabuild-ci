@@ -81,7 +81,7 @@ public final class NaggingMerger implements Merger {
     try {
       final Map map = getUserMapFromVCS(targetBuildID);
       nm.setVCSUserMap(map);
-    } catch (Exception e) {
+    } catch (final Exception e) {
       final ErrorManager errorManager = ErrorManagerFactory.getErrorManager();
       errorManager.reportSystemError(new org.parabuild.ci.error.Error("Error while getting user to e-mail mapping from version control system: " + StringUtils.toString(e), e));
     }

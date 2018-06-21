@@ -284,7 +284,7 @@ public final class ConfigurationManager implements Serializable {
     }
     try {
       return new Integer(Integer.parseInt(ba.getPropertyValue()));
-    } catch (NumberFormatException e) {
+    } catch (final NumberFormatException e) {
       return defaultValue;
     }
   }
@@ -1666,7 +1666,7 @@ public final class ConfigurationManager implements Serializable {
           try {
             //if (log.isDebugEnabled()) log.debug("scp = " + scp);
             saveSourceControlSetting(session, buildID, scp);
-          } catch (Exception e) {
+          } catch (final Exception e) {
             final Exception exception = new Exception("Error saving version control setting: "
                     + StringUtils.toString(e) + "\n\t " + scp);
             exception.initCause(e);
@@ -3518,13 +3518,13 @@ public final class ConfigurationManager implements Serializable {
       final Object result = callback.runInTransaction();
       HibernateTransaction.commitTransaction();
       return result;
-    } catch (RuntimeException e) {
+    } catch (final RuntimeException e) {
       if (LOG.isDebugEnabled()) {
         LOG.debug("exception while runnig in hibernate: " + e, e);
       }
       rollbackHard();
       throw e;
-    } catch (Exception e) {
+    } catch (final Exception e) {
       rollbackHard();
       throw new UnexpectedErrorException(e);
     }
@@ -3538,7 +3538,7 @@ public final class ConfigurationManager implements Serializable {
     // REVIEWME: - thing over error processing
     try {
       HibernateTransaction.rollbackTransaction();
-    } catch (HibernateException e1) {
+    } catch (final HibernateException e1) {
       throw new UnexpectedErrorException(e1);
     }
   }
@@ -4508,7 +4508,7 @@ public final class ConfigurationManager implements Serializable {
         return defaultValue;
       }
       return Integer.parseInt(stringValue);
-    } catch (NumberFormatException e) {
+    } catch (final NumberFormatException e) {
       return defaultValue;
     }
   }

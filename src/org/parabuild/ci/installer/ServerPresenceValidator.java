@@ -77,7 +77,7 @@ final class ServerPresenceValidator {
       final Socket socket = new Socket();
       try {
         socket.connect(new InetSocketAddress("localhost", Integer.parseInt(portNumber)));
-      } catch (IOException e) {
+      } catch (final IOException e) {
         // could not connect, assume the server is not running
         return false;
       } finally {
@@ -85,13 +85,13 @@ final class ServerPresenceValidator {
       }
 
       return true;
-    } catch (ParserConfigurationException e) {
+    } catch (final ParserConfigurationException e) {
       throw IoUtils.createIOException(e);
-    } catch (SAXException e) {
+    } catch (final SAXException e) {
       throw IoUtils.createIOException(e);
-    } catch (DOMException e) {
+    } catch (final DOMException e) {
       throw IoUtils.createIOException(e);
-    } catch (NumberFormatException e) {
+    } catch (final NumberFormatException e) {
       throw IoUtils.createIOException(e);
     }
   }

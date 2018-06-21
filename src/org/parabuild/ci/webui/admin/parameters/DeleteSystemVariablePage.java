@@ -105,7 +105,7 @@ public final class DeleteSystemVariablePage extends BasePage implements Conversa
         }
         return Result.Continue();
       }
-    } catch (ValidationException ve) {
+    } catch (final ValidationException ve) {
       return showPageErrorAndExit(StringUtils.toString(ve));
     }
   }

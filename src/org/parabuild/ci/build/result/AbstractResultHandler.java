@@ -103,7 +103,7 @@ public abstract class AbstractResultHandler implements ResultHandler {
         throw new IllegalStateException("Build configuration with ID " + buildRunConfig.getBuildID()
                 + " is not a build run configuration.");
       }
-    } catch (ValidationException e) {
+    } catch (final ValidationException e) {
       throw new IllegalArgumentException(StringUtils.toString(e));
     }
   }
@@ -154,7 +154,7 @@ public abstract class AbstractResultHandler implements ResultHandler {
         processResult(builderTimeStamp, fullyQualifiedResultPath, resolvedResultPath);
       }
 
-    } catch (Exception e) {
+    } catch (final Exception e) {
       // We don't throw it further as gathering results is not a critical
       // issue. We just report the problem to administrator.
       reportResultProcessingException(buildRunConfig.getBuildName(), e);

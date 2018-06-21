@@ -93,7 +93,7 @@ public abstract class AbstractArchiveAccessServlet extends HttpServlet {
       response.setHeader("Cache-control", "max-age=" + Integer.toString(60 * 60 * 24 * 30 * 12));
       final ServletOutputStream outputStream = response.getOutputStream();
       IoUtils.copyInputToOuputStream(new BufferedInputStream(is), outputStream);
-    } catch (AccessForbiddenException e) {
+    } catch (final AccessForbiddenException e) {
       response.setStatus(HttpServletResponse.SC_FORBIDDEN);
     } finally {
       IoUtils.closeHard(is);

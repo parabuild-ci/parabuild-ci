@@ -78,7 +78,7 @@ public final class ConsoleLogHandler implements LogHandler {
         }
         SearchManager.getInstance().index(stepLog, am.getArchivedLogHome(stepLog));
       }
-    } catch (Exception e) {
+    } catch (final Exception e) {
       // call resusable error reporting method
       reportLogProcessingException(e);
     }

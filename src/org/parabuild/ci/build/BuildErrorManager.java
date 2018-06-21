@@ -77,7 +77,7 @@ final class BuildErrorManager {
       error.setDetails(sb);
       error.setSendEmail(true);
       ErrorManagerFactory.getErrorManager().reportSystemError(error);
-    } catch (Exception e) { // last resort, nothing to report further.
+    } catch (final Exception e) { // last resort, nothing to report further.
       IoUtils.ignoreExpectedException(e);
     }
   }

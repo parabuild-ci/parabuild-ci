@@ -37,7 +37,7 @@ public final class PublishedResultDateAdjuster implements BuildFinishedSubscribe
         result.setPublishDate(buildFinishedEvent.getBuildFinishedAt());
         rgm.save(result);
       }
-    } catch (Exception e) {
+    } catch (final Exception e) {
       ErrorManagerFactory.getErrorManager().reportSystemError(new Error("Error while adjusting published result dates: " + StringUtils.toString(e), e));
     }
   }

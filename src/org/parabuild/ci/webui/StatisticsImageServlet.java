@@ -162,16 +162,16 @@ public final class StatisticsImageServlet extends HttpServlet {
   protected void doGet(final HttpServletRequest req, final HttpServletResponse resp) throws IOException {
     try {
       processRequest(req, resp);
-    } catch (AccessForbiddenException e) {
+    } catch (final AccessForbiddenException e) {
       resp.setStatus(HttpServletResponse.SC_FORBIDDEN);
-    } catch (BadRequestException e) {
+    } catch (final BadRequestException e) {
       resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-    } catch (IOException e) {
+    } catch (final IOException e) {
       if (e.toString().indexOf("I/O error writing PNG file") < 0) {
         reportException(e);
         throw e;
       }
-    } catch (RuntimeException e) {
+    } catch (final RuntimeException e) {
       reportException(e);
       throw e;
     }

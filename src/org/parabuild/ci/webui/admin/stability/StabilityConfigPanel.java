@@ -269,7 +269,7 @@ public final class StabilityConfigPanel extends AbstractSystemConfigPanel {
       final String pattern = (String) patterns.get(i);
       try {
         Pattern.compile(pattern);
-      } catch (Exception e) {
+      } catch (final Exception e) {
         errors.add("Pattern invalid: " + pattern);
       }
     }

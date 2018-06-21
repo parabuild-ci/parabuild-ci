@@ -111,10 +111,10 @@ public final class ParabuildPreInstallAction extends AbstractInstallAction imple
       } else {
         throw new IOException("Unknown database version: " + property);
       }
-    } catch (IOException e) {
+    } catch (final IOException e) {
       context.getProgressInterface().showFailure(StringUtils.toString(e));
       throw makeUserCancelledException(e);
-    } catch (UserCanceledException e) {
+    } catch (final UserCanceledException e) {
       context.getProgressInterface().showFailure(StringUtils.toString(e));
       throw e;
     }
@@ -167,7 +167,7 @@ public final class ParabuildPreInstallAction extends AbstractInstallAction imple
 
       // we could connect, throw an exception;
       throw new UserCanceledException("Parabuild service is running. Please stop Parabuild service before launching the installer.");
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw makeUserCancelledException(e);
     }
   }

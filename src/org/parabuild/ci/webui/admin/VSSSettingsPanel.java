@@ -154,9 +154,9 @@ public final class VSSSettingsPanel extends AbstractSourceControlPanel implement
       try {
         WebuiUtils.validateCommandExists(super.getAgentEnv(), fldPathToVSSClient.getValue(), errors,
                 "Path to VSS client is invalid, or VSS client is not accessible");
-      } catch (NoLiveAgentsException ignore) {
+      } catch (final NoLiveAgentsException ignore) {
         IoUtils.ignoreExpectedException(ignore);
-      } catch (IOException e) {
+      } catch (final IOException e) {
         errors.add("Error while checking path for VSS client: " + StringUtils.toString(e));
       }
     }

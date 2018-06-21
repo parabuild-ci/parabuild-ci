@@ -128,7 +128,7 @@ final class P4ManualScheduleStartParametersPanel extends ManualScheduleStartPara
         final P4ClientViewParser parser = new P4ClientViewParser();
         try {
           parser.parse(null, flClientView.getValue());
-        } catch (ValidationException e) {
+        } catch (final ValidationException e) {
           errors.add(StringUtils.toString(e));
         }
       }

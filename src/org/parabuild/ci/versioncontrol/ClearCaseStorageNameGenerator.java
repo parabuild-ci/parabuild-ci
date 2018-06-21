@@ -64,7 +64,7 @@ public final class ClearCaseStorageNameGenerator {
     try {
       // parse
       NamedPropertyUtils.parsePropertyString(template, fragments, properties);
-    } catch (Exception e) {
+    } catch (final Exception e) {
       return false;
     }
 

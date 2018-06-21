@@ -129,7 +129,7 @@ public final class TimeoutWatchdog implements Runnable {
 
     try {
       watchdogThreadPool.execute(this);
-    } catch (InterruptedException e) {
+    } catch (final InterruptedException e) {
       IoUtils.ignoreExpectedException(e);
     }
 //    watchdogThread = ThreadUtils.makeDaemonThread(this, "TimeoutWatchdog");
@@ -183,7 +183,7 @@ public final class TimeoutWatchdog implements Runnable {
         // preset command to time out
         command = COMMAND_TIMEOUT;
         wait(timeOutMillis);
-      } catch (InterruptedException e) {
+      } catch (final InterruptedException e) {
         IoUtils.ignoreExpectedException(e);
       }
 
@@ -196,7 +196,7 @@ public final class TimeoutWatchdog implements Runnable {
         timeoutCallback.commandTimedOut();
         try {
           killCommand();
-        } catch (BuildException e) {
+        } catch (final BuildException e) {
           reportErrorStoppingCommad(e);
         }
       }
@@ -234,7 +234,7 @@ public final class TimeoutWatchdog implements Runnable {
           // sleep doesnt work because we have to run synchronized.
           // yet, wait surrenders lock.
           wait(1000);
-        } catch (InterruptedException e) {
+        } catch (final InterruptedException e) {
           IoUtils.ignoreExpectedException(e);
         }
       }
@@ -246,7 +246,7 @@ public final class TimeoutWatchdog implements Runnable {
       if (ProcessUtils.PROCESS_DEBUG_ENABLED) log.debug("Was not able to stop");
       hung = true;
       timeoutCallback.commandHung();
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException("Error", e, agentEnvironment);
     }
   }

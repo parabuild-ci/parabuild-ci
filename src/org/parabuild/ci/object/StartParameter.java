@@ -282,7 +282,7 @@ public final class StartParameter implements Serializable, ObjectConstants {
   }
 
 
-  public void setOrder(int order) {
+  public void setOrder(final int order) {
     this.order = order;
   }
 

@@ -76,7 +76,7 @@ final class ClearCaseSetcsCommand extends ClearCaseCommand {
       final String updateLogFileName = (String) updateLogFileNames.get(i);
       try {
         agent.deleteFileUnderCheckoutDir(updateLogFileName);
-      } catch (IOException e) {
+      } catch (final IOException e) {
         log.warn("Failed to delete log file", e);
       }
     }

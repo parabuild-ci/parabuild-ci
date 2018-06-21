@@ -43,7 +43,7 @@ public final class MailUtils {
         address.validate();
       }
       return true;
-    } catch (AddressException e) {
+    } catch (final AddressException e) {
       return false;
     }
   }

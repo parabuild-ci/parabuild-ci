@@ -199,7 +199,7 @@ final class CVSChangeLogParser {
         String stateKeyword;
         try {
           stateKeyword = tokens.nextToken();
-        } catch (NoSuchElementException noStateFoundIgnore) {
+        } catch (final NoSuchElementException noStateFoundIgnore) {
           // simeshev@parabuilci.org - 2009-06-23-2009 - For some reasone it
           // looks like it is possible that the state token is missing.
           // See PARABUILD-1329 - "java.util.NoSuchElementException"
@@ -210,7 +210,7 @@ final class CVSChangeLogParser {
         boolean isAdded = false;
         try {
           tokens.nextToken();
-        } catch (NoSuchElementException noLinesFoundIgnore) {
+        } catch (final NoSuchElementException noLinesFoundIgnore) {
           isAdded = true;
         }
 
@@ -296,7 +296,7 @@ final class CVSChangeLogParser {
       // NOTE: This replace is needed for CVS version 1.12.9 and up- see bug #634.
       final String toParse = dateStamp.replace('-', '/');
       return CVS_LOG_DATE_FORMATTER.parse(toParse + ' ' + timeStamp + ' ' + timeZone);
-    } catch (ParseException pe) {
+    } catch (final ParseException pe) {
       throw new IOException("Error parsing date and time: " + StringUtils.toString(pe));
     }
   }

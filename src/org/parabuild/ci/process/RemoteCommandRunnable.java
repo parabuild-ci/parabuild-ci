@@ -70,11 +70,11 @@ final class RemoteCommandRunnable implements Runnable {
       // passed around in attempt to fix a native memory leak under Linux.
       // Switching to the current dir is done in the generated shell script.
       resultCode = builder.execute(handle, null, commandLineToExecute, null, tailBufferSize, stdoutFile, stderrFile, mergedFile);
-    } catch (IOException e) {
+    } catch (final IOException e) {
       this.ioException = e;
-    } catch (CommandStoppedException e) {
+    } catch (final CommandStoppedException e) {
       this.commandStoppedException = e;
-    } catch (AgentFailureException e) {
+    } catch (final AgentFailureException e) {
       agentFailureException = e;
     }
     resultAvailable = true;

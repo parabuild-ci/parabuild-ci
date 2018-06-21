@@ -65,7 +65,7 @@ public final class ResumeBuildPage extends BasePage implements StatelessTierlet 
       super.setTitle(makeTitle("Resuming the build \"" + buildConfig.getBuildName() + '\"'));
       BuildManager.getInstance().resumeBuild(buildConfig.getBuildID());
       return WebuiUtils.createBuildActionReturnResult(getTierletContext());
-    } catch (Exception e) {
+    } catch (final Exception e) {
       // Show error
       super.baseContentPanel().showErrorMessage("Unxpected error while starting build \"" + buildConfig.getBuildName() + "\": " + StringUtils.toString(e));
     }

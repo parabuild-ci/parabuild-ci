@@ -79,7 +79,7 @@ public abstract class AbstractIssueTrackerSetupPanel extends MessagePanel implem
       final String patternString = (String)list.get(i);
       try {
         Pattern.compile(patternString);
-      } catch (Exception e) {
+      } catch (final Exception e) {
         errors.add("Pattern \"" + patternString + "\" is not a valid regular expression.");
       }
     }

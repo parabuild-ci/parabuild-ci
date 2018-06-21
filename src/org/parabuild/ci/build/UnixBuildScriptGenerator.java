@@ -94,7 +94,7 @@ public final class UnixBuildScriptGenerator extends AbstractBuildScriptGenerator
       scriptWriter.newLine();
       scriptWriter.flush();
       return result.toString();
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException(e.toString(), e, agent);
     } finally {
       IoUtils.closeHard(scriptWriter);

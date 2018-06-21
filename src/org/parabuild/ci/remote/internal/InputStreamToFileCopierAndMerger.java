@@ -61,7 +61,7 @@ public final class InputStreamToFileCopierAndMerger extends InputStreamToFileCop
         if (copy != null) copy.println(read);
         try {
           Thread.sleep(SLEEP_MILLIS);
-        } catch (InterruptedException e) {
+        } catch (final InterruptedException e) {
           IoUtils.ignoreExpectedException(e);
         }
         read = br.readLine();

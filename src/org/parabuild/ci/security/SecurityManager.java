@@ -428,7 +428,7 @@ public final class SecurityManager {
       if (cache != null) {
         cache.put(new Element(new Integer(userID), buildRights));
       }
-    } catch (CacheException e) {
+    } catch (final CacheException e) {
       if (log.isDebugEnabled()) {
         log.debug("e: " + e);
       }
@@ -448,7 +448,7 @@ public final class SecurityManager {
       if (element != null) {
         buildRights = (BuildRights) element.getValue();
       }
-    } catch (Exception e) {
+    } catch (final Exception e) {
       if (log.isDebugEnabled()) {
         log.debug("e: " + e);
       }
@@ -774,9 +774,9 @@ public final class SecurityManager {
         }
         return user;
       }
-    } catch (NoSuchAlgorithmException e) {
+    } catch (final NoSuchAlgorithmException e) {
       throw new FatalConfigurationException(e);
-    } catch (NamingException e) {
+    } catch (final NamingException e) {
       throw new FatalConfigurationException(e);
     }
   }
@@ -1130,7 +1130,7 @@ public final class SecurityManager {
     System.setProperty(SystemConstants.SYSTEM_PROPERTY_RELOAD_PRINCIPAL, "true");
     try {
       invalidate(getBuildRightSetCache(activeBuildID));
-    } catch (Exception e) {
+    } catch (final Exception e) {
       if (log.isDebugEnabled()) {
         log.debug("e: " + e);
       }
@@ -1138,7 +1138,7 @@ public final class SecurityManager {
 
     try {
       invalidate(getGeneralAccessRightsCache());
-    } catch (Exception e) {
+    } catch (final Exception e) {
       if (log.isDebugEnabled()) {
         log.debug("e: " + e);
       }
@@ -1158,7 +1158,7 @@ public final class SecurityManager {
           invalidate(cache);
         }
       }
-    } catch (Exception e) {
+    } catch (final Exception e) {
       if (log.isDebugEnabled()) {
         log.debug("e: " + e);
       }
@@ -1166,7 +1166,7 @@ public final class SecurityManager {
     try {
       final Cache cache = getGeneralAccessRightsCache();
       invalidate(cache);
-    } catch (Exception e) {
+    } catch (final Exception e) {
       if (log.isDebugEnabled()) {
         log.debug("e: " + e);
       }
@@ -1581,7 +1581,7 @@ public final class SecurityManager {
       if (cache != null) {
         cache.put(new Element(new Integer(userID), buildRights));
       }
-    } catch (CacheException e) {
+    } catch (final CacheException e) {
       if (log.isDebugEnabled()) {
         log.debug("e: " + e);
       }
@@ -1616,7 +1616,7 @@ public final class SecurityManager {
       if (element != null) {
         resultGroupRights = (ResultGroupRights) element.getValue();
       }
-    } catch (Exception e) {
+    } catch (final Exception e) {
       if (log.isDebugEnabled()) {
         log.debug("e: " + e);
       }
@@ -1645,7 +1645,7 @@ public final class SecurityManager {
           cache = new Cache(cacheRegionName, 500, false, false, 1800L, 1800L);
           try {
             cacheManager.addCache(cache);
-          } catch (CacheException e) {
+          } catch (final CacheException e) {
             cache = cacheManager.getCache(cacheRegionName);
           }
         }
@@ -1672,7 +1672,7 @@ public final class SecurityManager {
     System.setProperty(SystemConstants.SYSTEM_PROPERTY_RELOAD_PRINCIPAL, "true");
     try {
       invalidate(getResultGroupRightSetCache(resultGroupID));
-    } catch (Exception e) {
+    } catch (final Exception e) {
       if (log.isDebugEnabled()) {
         log.debug("e: " + e);
       }
@@ -1910,7 +1910,7 @@ public final class SecurityManager {
       // Return result
       return allowedToSeeErrors;
 
-    } catch (Exception e) {
+    } catch (final Exception e) {
       if (log.isDebugEnabled()) {
         log.debug("e: " + e);
       }
@@ -1925,7 +1925,7 @@ public final class SecurityManager {
    * @param tierletContext
    * @return true if user associated with the given context is an admin user. Otherwise returns false.
    */
-  public boolean isAdmin(TierletContext tierletContext) {
+  public boolean isAdmin(final TierletContext tierletContext) {
 
     if (tierletContext == null) {
       return false;

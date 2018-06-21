@@ -94,7 +94,7 @@ final class SurroundSourceControl extends AbstractSourceControl implements Commo
         }
       }
       if (log.isDebugEnabled()) log.debug("end checkoutLatest");
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException("Error while checking out: " + StringUtils.toString(e), e, getAgentHost());
     }
   }
@@ -160,7 +160,7 @@ final class SurroundSourceControl extends AbstractSourceControl implements Commo
       }
       this.lastSyncDate = changeList.getCreatedAt();
       if (log.isDebugEnabled()) log.debug("end syncToChangeList");
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException("Error while checking out: " + StringUtils.toString(e), e, getAgentHost());
     }
   }
@@ -291,7 +291,7 @@ final class SurroundSourceControl extends AbstractSourceControl implements Commo
       if (log.isDebugEnabled()) log.debug("end getChangesSince");
 //      if (log.isDebugEnabled()) log.debug("result: " + result);
       return configManager.saveBuildChangeLists(activeBuildID, result);
-    } catch (IOException e) {
+    } catch (final IOException e) {
       processException(e);
       throw new BuildException("Error while retrieving list of changes: " + StringUtils.toString(e), e, getAgentHost());
     }
@@ -393,7 +393,7 @@ final class SurroundSourceControl extends AbstractSourceControl implements Commo
         }
       }
       if (log.isDebugEnabled()) log.debug("end label: " + label);
-    } catch (IOException e) {
+    } catch (final IOException e) {
       processException(e);
       throw new BuildException("Error while labeling the build: " + StringUtils.toString(e), e, getAgentHost());
     }
@@ -421,7 +421,7 @@ final class SurroundSourceControl extends AbstractSourceControl implements Commo
               getSettingValue(SourceControlSetting.SURROUND_PORT, 5400));
       command.execute();
       result.putAll(new SurroundUsersParser(command.getStdoutFile()).parse());
-    } catch (IOException e) {
+    } catch (final IOException e) {
       final Error err = new Error(StringUtils.toString(e));
       err.setDetails(e);
       errorManager.reportSystemError(err);
@@ -548,7 +548,7 @@ final class SurroundSourceControl extends AbstractSourceControl implements Commo
     try {
       final SurroundRepositoryPathParser parser = new SurroundRepositoryPathParser();
       return parser.parseDepotPath(getSettingValue(SourceControlSetting.SURROUND_REPOSITORY));
-    } catch (ValidationException e) {
+    } catch (final ValidationException e) {
       throw new BuildException(e, getAgentHost());
     }
   }

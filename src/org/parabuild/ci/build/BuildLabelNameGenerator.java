@@ -120,7 +120,7 @@ public final class BuildLabelNameGenerator {
     try {
       // parse
       NamedPropertyUtils.parsePropertyString(labelTemplate, fragments, properties);
-    } catch (Exception e) {
+    } catch (final Exception e) {
       return false;
     }
 
@@ -163,7 +163,7 @@ public final class BuildLabelNameGenerator {
         if (prop.equals(PROPERTY_BUILD_DATE)) return false;
         if (prop.equals(PROPERTY_CHANGELIST_NUMBER)) return false;
       }
-    } catch (Exception e) {
+    } catch (final Exception e) {
       // we return true because we have to consider
       // label static and deletable.
       return true;

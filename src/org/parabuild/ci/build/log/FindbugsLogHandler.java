@@ -108,7 +108,7 @@ public final class FindbugsLogHandler extends AbstractLogHandler {
       stepLog.setFound((byte) 1);
       cm.save(stepLog);
 
-    } catch (Exception e) {
+    } catch (final Exception e) {
       throw IoUtils.createIOException(StringUtils.toString(e), e);
     } finally {
       IoUtils.deleteFilesHard(tempFiles);

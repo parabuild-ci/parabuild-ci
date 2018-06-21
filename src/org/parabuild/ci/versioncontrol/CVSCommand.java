@@ -129,7 +129,7 @@ final class CVSCommand extends VersionControlRemoteCommand {
           line = reader.readLine();
         }
       }
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new IOException("Error while analyzing error log: " + StringUtils.toString(e));
     } finally {
       IoUtils.closeHard(reader);

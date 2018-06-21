@@ -141,10 +141,10 @@ public final class SearchPage extends BasePage implements ConversationalTierlet 
                 .add(new CommonLabel(" - did not match any build results. "));
         super.baseContentPanel().add(flEmptyResult);
       }
-    } catch (IOException e) {
+    } catch (final IOException e) {
       pnlSearch.showErrorMessage("There was an error while perforning requested search. The error has been reported. Please contact your build administrator.");
       reportErrorToAdministrator(e);
-    } catch (ParseException e) {
+    } catch (final ParseException e) {
       pnlSearch.showErrorMessage("Query is not valid. Please review it and repeat search.");
     }
   }

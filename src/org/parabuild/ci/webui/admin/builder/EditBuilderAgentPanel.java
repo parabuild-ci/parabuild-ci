@@ -148,7 +148,7 @@ final class EditBuilderAgentPanel extends MessagePanel implements Validatable, S
       // save display builderedBuilderConfiguration object
       BuilderConfigurationManager.getInstance().saveBuilderAgent(builderAgent);
       return true;
-    } catch (Exception e) {
+    } catch (final Exception e) {
       final SaveErrorProcessor exceptionProcessor = new SaveErrorProcessor();
       return exceptionProcessor.process(this, e);
     }

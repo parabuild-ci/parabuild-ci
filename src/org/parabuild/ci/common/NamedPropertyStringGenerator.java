@@ -78,7 +78,7 @@ public final class NamedPropertyStringGenerator {
       validateIsStrictResult(result);
 
       return result;
-    } catch (BuildException e) {
+    } catch (final BuildException e) {
       throw new ValidationException(StringUtils.toString(e));
     }
   }
@@ -115,7 +115,7 @@ public final class NamedPropertyStringGenerator {
     final List fragments = new ArrayList(7);
     try {
       NamedPropertyUtils.parsePropertyString(template, fragments, properties);
-    } catch (BuildException e) {
+    } catch (final BuildException e) {
       throw new ValidationException(StringUtils.toString(e));
     }
 
@@ -143,7 +143,7 @@ public final class NamedPropertyStringGenerator {
         final NamedProperty namedPropery = (NamedProperty)propertyDefinitions.get(propertyName);
         if (namedPropery.isDynamic()) return false;
       }
-    } catch (Exception e) {
+    } catch (final Exception e) {
       // return static because it is safer to assume that it is
       // static
       return true;

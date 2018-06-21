@@ -96,10 +96,10 @@ public final class JavascriptBuildStatusServlet extends HttpServlet {
       final BuildStatusURLGenerator statusURLGenerator = new BuildStatusURLGenerator();
       href = statusURLGenerator.makeBuildStatusURL(buildConfig.getActiveBuildID());
 
-    } catch (BadRequestException e) {
+    } catch (final BadRequestException e) {
       caption = "Build not found";
       imageName = IMAGE_ACCESS_FORBIDDEN;
-    } catch (AccessForbiddenException e) {
+    } catch (final AccessForbiddenException e) {
       caption = "Access forbidden";
       imageName = IMAGE_ACCESS_FORBIDDEN;
     }

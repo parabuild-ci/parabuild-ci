@@ -91,7 +91,7 @@ public class SettingResolver {
     }
 
     // Populate property definitions and value
-    for (Iterator iterator = variables.entrySet().iterator(); iterator.hasNext();) {
+    for (final Iterator iterator = variables.entrySet().iterator(); iterator.hasNext();) {
       final Map.Entry entry = (Map.Entry) iterator.next();
       namedPropertyDefinitions.add(new NamedProperty((String) entry.getKey(), false, true, true));
       namedPropertyValues.put(entry.getKey(), entry.getValue());

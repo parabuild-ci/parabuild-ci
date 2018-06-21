@@ -155,7 +155,7 @@ public final class VaultSettingsPanel extends AbstractSourceControlPanel {
       // further validate Vault repository path
       try {
         new VaultDepotPathParser().validate(flRepositoryPath.getValue());
-      } catch (ValidationException e) {
+      } catch (final ValidationException e) {
         errors.add(StringUtils.toString(e));
       }
     }

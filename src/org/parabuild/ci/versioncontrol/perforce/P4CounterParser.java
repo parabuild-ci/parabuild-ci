@@ -56,7 +56,7 @@ final class P4CounterParser {
       } else {
         throwUnexpectedError("Can not read P4 counter: \"" + line + '\"');
       }
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throwUnexpectedError(StringUtils.toString(e));
     } finally {
       IoUtils.closeHard(br);

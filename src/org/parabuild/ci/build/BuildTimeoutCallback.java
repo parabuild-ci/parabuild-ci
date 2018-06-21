@@ -115,7 +115,7 @@ public final class BuildTimeoutCallback implements TimeoutCallback, CommonConsta
   private void notifyBuildHungHard() {
     try {
       notificationManager.notifyBuildStepHung(buildRun, sequence);
-    } catch (Exception e) {
+    } catch (final Exception e) {
       if (log.isWarnEnabled()) log.warn("Ignored exception while notifying about hung build", e);
     }
   }
@@ -135,7 +135,7 @@ public final class BuildTimeoutCallback implements TimeoutCallback, CommonConsta
       error.setDescription("Build hung");
       error.setDetails("Build hung at step \"" + sequence.getStepName() + "\" after " + sequence.getTimeoutMins() + " minutes timeout. System attempted and failed to stop the build. Build won't start until the problem is fixed. System requires immediate attention of a build administrator.");
       error.setPossibleCause("Build script spawns long-running process(es) that cannot be identified as belonging to the build sequence.");
-    } catch (Exception e) {
+    } catch (final Exception e) {
       // ignore, nothing to go to from here
       log.warn(STR_IGNORED_EXCEPTION, e);
     }

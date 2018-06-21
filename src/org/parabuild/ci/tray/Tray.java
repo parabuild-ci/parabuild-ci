@@ -138,7 +138,7 @@ public final class Tray implements ActionListener, ItemListener {
     // prepare
     try {
       UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-    } catch (Exception e) {
+    } catch (final Exception e) {
       log.warn("Exception while setting up look and feel", e);
     }
     if (Integer.parseInt(System.getProperty("java.version").substring(2, 3)) >= 5) {
@@ -277,7 +277,7 @@ public final class Tray implements ActionListener, ItemListener {
             }
             isDirty = true;
           }
-        } catch (Exception e) {
+        } catch (final Exception e) {
           if (log.isDebugEnabled())
             log.debug("Error while communicating with Parabuild server: " + StringUtils.toString(e), e);
         }
@@ -300,7 +300,7 @@ public final class Tray implements ActionListener, ItemListener {
       synchronized (this) {
         try {
           wait(pollInterval * 1000);
-        } catch (InterruptedException e) {
+        } catch (final InterruptedException e) {
           break;
         }
       }
@@ -312,7 +312,7 @@ public final class Tray implements ActionListener, ItemListener {
     Properties properties;
     try {
       properties = loadPropertiesFile();
-    } catch (IOException e) {
+    } catch (final IOException e) {
       log.error("Error loading properties", e);
       properties = new Properties(); // empty
     }
@@ -324,7 +324,7 @@ public final class Tray implements ActionListener, ItemListener {
     // set logging
     try {
       Log4jConfigurator.getInstance().initialize(Boolean.valueOf(properties.getProperty(PROP_DEBUG_LOGGING, Boolean.FALSE.toString())).booleanValue());
-    } catch (IOException e) {
+    } catch (final IOException e) {
       log.warn("Error while loading log4j settings", e);
     }
   }
@@ -417,7 +417,7 @@ public final class Tray implements ActionListener, ItemListener {
     Properties properties = null;
     try {
       properties = loadPropertiesFile();
-    } catch (IOException e) {
+    } catch (final IOException e) {
       // we catch IO exception so that we still can display a dialog.
       log.error(ERROR_LOADING_TRAY_PROPERTIES, e);
       JOptionPane.showMessageDialog(null, StringUtils.toString(e),
@@ -451,7 +451,7 @@ public final class Tray implements ActionListener, ItemListener {
 
         // re-load configuration into member variables
         loadProperties();
-      } catch (IOException e) {
+      } catch (final IOException e) {
         // we catch IO exception so that we still can display a dialog.
         log.error(ERROR_STORING_TRAY_PROPERTIES, e);
         JOptionPane.showMessageDialog(null, StringUtils.toString(e),
@@ -464,7 +464,7 @@ public final class Tray implements ActionListener, ItemListener {
         //REVIEWME: curretly it is happeneing because we re-use common
         // debug log4j settings and they refer catalina.base
         Log4jConfigurator.getInstance().initialize(dialog.isDebugLogging());
-      } catch (IOException e) {
+      } catch (final IOException e) {
         log.warn("Error while saving logging settings", e);
       }
     }

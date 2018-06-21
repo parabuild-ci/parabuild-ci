@@ -76,7 +76,7 @@ public abstract class AbstractBuildScriptRunner implements BuildScriptRunner {
       command.setLogTailSize(new TailBufferSizeImpl(ConfigurationConstants.TAIL_BUFFER_SIZE, 200));
       notifyScriptStarted(command.getHandle());
       return command.execute();
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException("Error while building: " + StringUtils.toString(e), e, command);
     } finally {
       if (command != null) {

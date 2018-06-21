@@ -89,7 +89,7 @@ final class ChangeListReleaseNotesHandler implements ReleaseNotesHandler {
           }
         }
       }
-    } catch (Exception e) {
+    } catch (final Exception e) {
       final Error error = Error.newWarning(Error.ERROR_SUSBSYSTEM_INTEGRATION);
       error.setDescription("Error while processing change list issues: " + StringUtils.toString(e));
       error.setSendEmail(false);

@@ -327,7 +327,7 @@ final class StatisticsManagerImpl implements StatisticsManager {
     try {
       validateBuildRunToUpdate(newBuildRun);
       PersistentStatsUpdaterFactory.getUpdater().updateStatistics(newBuildRun);
-    } catch (Exception e) {
+    } catch (final Exception e) {
       // we are not allowing to propagate the exception,
       // instead, we report it to build admin.
       reportUpdateStatisticsError(e);

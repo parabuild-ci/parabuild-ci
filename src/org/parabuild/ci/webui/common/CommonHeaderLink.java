@@ -29,7 +29,7 @@ public final class CommonHeaderLink extends CommonLink {
   }
 
 
-  public void setDisplayGroupID(int displayGroupID) {
+  public void setDisplayGroupID(final int displayGroupID) {
     final Properties properties = new Properties();
     properties.setProperty(Pages.PARAM_GROUP_ID, Integer.toString(displayGroupID));
     setParameters(properties);

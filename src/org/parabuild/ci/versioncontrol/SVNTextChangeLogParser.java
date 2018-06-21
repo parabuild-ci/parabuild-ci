@@ -160,7 +160,7 @@ Make svn_client_info() use new svn_ra_stat() API for efficiency.
       final Date date;
       try {
         date = svnChangeLogFormatter.parse(stringDate);
-      } catch (ParseException e) {
+      } catch (final ParseException e) {
         throw new ChangeLogParserException("SVN", "Unexpected format of revision date in line: " + line + ", error: " + StringUtils.toString(e));
       }
 

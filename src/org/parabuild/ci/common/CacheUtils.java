@@ -26,7 +26,7 @@ public final class CacheUtils {
   public static void removeHard(final String cacheName) {
     try {
       CacheManager.getInstance().removeCache(cacheName);
-    } catch (Exception e) {
+    } catch (final Exception e) {
       IoUtils.ignoreExpectedException(e);
     }
   }

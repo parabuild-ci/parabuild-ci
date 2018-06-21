@@ -96,7 +96,7 @@ final class P4UsersParser {
       if (result.isEmpty()) {
         reportWarning("For unknown reason, P4 user list was empty. This may be a result of a previous infrastructure error.", null);
       }
-    } catch (Exception e) {
+    } catch (final Exception e) {
       reportWarning("Error while getting P4 users.", e);
     } finally {
       IoUtils.closeHard(br);

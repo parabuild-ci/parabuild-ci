@@ -80,7 +80,7 @@ final class CooldownWaiter {
       synchronized (lock) {
         try {
           lock.wait(cooldownIntervalMillis);
-        } catch (InterruptedException e) {
+        } catch (final InterruptedException e) {
           throw new CommandStoppedException(e);
         }
       }

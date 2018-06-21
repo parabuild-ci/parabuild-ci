@@ -69,7 +69,7 @@ public final class ConfigurationService implements Service {
   public void shutdownService() {
     try {
       shutdownQuarts();
-    } catch (Exception e) {
+    } catch (final Exception e) {
       System.err.println("Error while shutting down configuration service: " + StringUtils.toString(e)); // NOPMD
     }
   }
@@ -93,7 +93,7 @@ public final class ConfigurationService implements Service {
       initQuartz();
       status = SERVICE_STATUS_STARTED;
       runPostStartUpActions();
-    } catch (Exception e) {
+    } catch (final Exception e) {
       log.error("Error while starting configuration service", e);
     }
   }

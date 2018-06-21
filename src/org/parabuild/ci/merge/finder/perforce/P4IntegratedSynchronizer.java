@@ -165,7 +165,7 @@ final class P4IntegratedSynchronizer {
                             if (log.isDebugEnabled() && !accepts)
                               log.debug("Skipping change list number: " + changeListNumber);
                             return accepts;
-                          } catch (CacheException e) {
+                          } catch (final CacheException e) {
                             return true;
                           }
                         }
@@ -226,7 +226,7 @@ final class P4IntegratedSynchronizer {
                                 log.debug("adding revision to listed " + change.getFilePath() + ' ' + change.getRevision());
                               unintegratedRevisions.put(new Element(key, null));
                             }
-                          } catch (CacheException e) {
+                          } catch (final CacheException e) {
                             final IllegalStateException ise = new IllegalStateException("Error while accessing unintegrated revsions storage: " + StringUtils.toString(e));
                             ise.initCause(e);
                             throw ise;
@@ -239,7 +239,7 @@ final class P4IntegratedSynchronizer {
                         }
                       });
                     }
-                  } catch (CacheException e) {
+                  } catch (final CacheException e) {
                     throw IoUtils.createIOException(e);
                   }
                 }
@@ -319,9 +319,9 @@ final class P4IntegratedSynchronizer {
         }
       });
       if (log.isDebugEnabled()) log.debug("=========== end synchronising integrated ===========");
-    } catch (ObjectExistsException e) {
+    } catch (final ObjectExistsException e) {
       throw IoUtils.createIOException(e);
-    } catch (CacheException e) {
+    } catch (final CacheException e) {
       throw IoUtils.createIOException(e);
     } finally {
       CacheUtils.removeHard(changeListNumberStorageName);

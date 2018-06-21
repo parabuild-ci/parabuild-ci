@@ -95,7 +95,7 @@ public final class BazaarVersionControl extends AbstractSourceControl {
 
       command = new BazaarBranchCommand(agent, getPathToExe(), getBranchLocationSetting());
       command.execute();
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException("Error while checking out latest: " + e, e);
     } finally {
       cleanup(command);
@@ -122,7 +122,7 @@ public final class BazaarVersionControl extends AbstractSourceControl {
       command.execute();
 
       this.lastSyncRevision = changeListNumber;
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException("Error while checking out lastest: " + e, e);
     } finally {
       cleanup(command);
@@ -193,12 +193,12 @@ public final class BazaarVersionControl extends AbstractSourceControl {
       } else {
         return newChangeListID; // as os
       }
-    } catch (IOException e) {
+    } catch (final IOException e) {
       Agent agent = null;
       //noinspection EmptyCatchBlock
       try {
         agent = getCheckoutDirectoryAwareAgent();
-      } catch (Exception ex) {
+      } catch (final Exception ex) {
       }
       throw new BuildException("Error while checking out: " + StringUtils.toString(e), e, agent);
     }
@@ -258,7 +258,7 @@ public final class BazaarVersionControl extends AbstractSourceControl {
 
     try {
       Thread.sleep(1000L);
-    } catch (InterruptedException e) {
+    } catch (final InterruptedException e) {
       throw new CommandStoppedException(e);
     }
 
@@ -294,7 +294,7 @@ public final class BazaarVersionControl extends AbstractSourceControl {
     try {
       command = new BazaarTagCommand(getCheckoutDirectoryAwareAgent(), getPathToExe(), lastSyncRevision, label, getBranchLocationSetting());
       command.execute();
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException("Error while tagging: " + e.toString(), e);
     } finally {
       cleanup(command);

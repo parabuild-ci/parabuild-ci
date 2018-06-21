@@ -71,7 +71,7 @@ public final class ResultDownloadServlet extends AbstractArchiveAccessServlet {
       int activeBuildID = BuildConfig.UNSAVED_ID;
       try {
         activeBuildID = Integer.parseInt(stringBuildID);
-      } catch (NumberFormatException e) {
+      } catch (final NumberFormatException e) {
         return null;
       }
 
@@ -82,7 +82,7 @@ public final class ResultDownloadServlet extends AbstractArchiveAccessServlet {
         activeBuildConfig = cm.getActiveBuildConfig(activeBuildID);
         //if (result.isDebugEnabled()) result.debug("buildConfig: " + buildConfig);
         if (activeBuildConfig == null) return null;
-      } catch (Exception e) {
+      } catch (final Exception e) {
         return null;
       }
 
@@ -100,7 +100,7 @@ public final class ResultDownloadServlet extends AbstractArchiveAccessServlet {
       try {
         resultID = Integer.parseInt(stringResultID);
         //if (result.isDebugEnabled()) result.debug("resultID: " + resultID);
-      } catch (NumberFormatException e) {
+      } catch (final NumberFormatException e) {
         return null;
       }
       // Validate result ID and get result
@@ -109,7 +109,7 @@ public final class ResultDownloadServlet extends AbstractArchiveAccessServlet {
         stepResult = (StepResult) cm.getObject(StepResult.class, resultID);
         //if (result.isDebugEnabled()) result.debug("stepResult: " + stepResult);
         if (stepResult == null) return null;
-      } catch (Exception e) {
+      } catch (final Exception e) {
         return null;
       }
 
@@ -123,7 +123,7 @@ public final class ResultDownloadServlet extends AbstractArchiveAccessServlet {
       final String requestFileName = URLDecoder.decode(urlEncodedRequestFileName);
       return ArchiveManagerFactory.getArchiveManager(activeBuildID)
               .getArchivedResultInputStream(stepResult, requestFileName);
-    } catch (Exception e) {
+    } catch (final Exception e) {
       if (log.isDebugEnabled()) log.debug("Exception getting input stream", e);
       return null;
     }

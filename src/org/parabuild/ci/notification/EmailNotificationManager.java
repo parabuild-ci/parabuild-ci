@@ -137,7 +137,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
       final int watchLevel = (int) BuildWatcher.LEVEL_SUCCESS;
       final EmailRecipients recipients = composer.makeRecipients(buildRun, vcsUserMap, true, notFirstStepStart, false, true, watchLevel);
       sendMessage(recipients, messageSubject, messageBody, SystemProperty.MESSAGE_PRIORITY_NORMAL);
-    } catch (Exception e) {
+    } catch (final Exception e) {
       NotificationUtils.reportErrorSendingStepStarted(buildRun, buildSequence, e);
     }
   }
@@ -200,9 +200,9 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
       final EmailRecipients recipients = composer.makeRecipients(buildRun, vcsUserMap, false, false, false, true, curOffWatchLevel);
       final byte messagePriority = SystemConfigurationManagerFactory.getManager().getSystemPropertyValue(SystemProperty.MESSAGE_PRIORITY_FAILED_BUILD, SystemProperty.MESSAGE_PRIORITY_NORMAL);
       sendMessage(recipients, subject, body, messagePriority);
-    } catch (RuntimeException ex) {
+    } catch (final RuntimeException ex) {
       NotificationUtils.reportErrorSendingBuildFailure(buildRun, ex);
-    } catch (MessagingException ex) {
+    } catch (final MessagingException ex) {
       NotificationUtils.reportErrorSendingBuildFailure(buildRun, ex);
     }
   }
@@ -264,7 +264,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
       final byte messagePriority = stepRun.isSuccessful() ? SystemProperty.MESSAGE_PRIORITY_NORMAL : failedBuildMessagePriority;
 
       sendMessage(recipients, messageSubject, messageBody, messagePriority);
-    } catch (Exception e) {
+    } catch (final Exception e) {
       NotificationUtils.reportErrorSendingStepFinished(buildRun, stepRun, e);
     }
   }
@@ -322,7 +322,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
               .getSystemPropertyValue(SystemProperty.MESSAGE_PRIORITY_SYSTEM_ERROR,
                       SystemProperty.MESSAGE_PRIORITY_NORMAL);
       sendMessage(recipients, subj, body, messagePriority);
-    } catch (Exception e) {
+    } catch (final Exception e) {
       NotificationUtils.reportErrorSendingSystemAlert(e);
     }
   }
@@ -356,7 +356,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
       } else {
         log.warn("Could not send notification to user \"" + user + "\" - user does not exist");
       }
-    } catch (Exception e) {
+    } catch (final Exception e) {
       reportErrorSendingPassword(e);
     }
   }
@@ -413,9 +413,9 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
       final EmailRecipients recipients = composer.makeRecipients(buildRun, vcsUserMap, false, false, false, true, cutOffWatchLevel);
       final byte messagePriority = buildRun.getResultID() == BuildRun.BUILD_RESULT_SUCCESS ? SystemProperty.MESSAGE_PRIORITY_NORMAL : SystemConfigurationManagerFactory.getManager().getSystemPropertyValue(SystemProperty.MESSAGE_PRIORITY_FAILED_BUILD, SystemProperty.MESSAGE_PRIORITY_NORMAL);
       sendMessage(recipients, subj, body, messagePriority);
-    } catch (RuntimeException ex) {
+    } catch (final RuntimeException ex) {
       NotificationUtils.reportErrorSendingBuildFailure(buildRun, ex);
-    } catch (MessagingException ex) {
+    } catch (final MessagingException ex) {
       NotificationUtils.reportErrorSendingBuildFailure(buildRun, ex);
     }
   }
@@ -449,9 +449,9 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
       to.add(adminAddress);
       // send
       sendMessage(properties, adminAddress, new EmailRecipients(to, Collections.EMPTY_LIST), new StringBuffer(20).append("Test message from Parabuild server"), new StringBuffer(20).append("This is a test message from Parabuild server."), SystemProperty.MESSAGE_PRIORITY_NORMAL);
-    } catch (MessagingException e) {
+    } catch (final MessagingException e) {
       throw e;
-    } catch (Exception e) {
+    } catch (final Exception e) {
       throw new MessagingException(StringUtils.toString(e), e);
     }
   }
@@ -499,7 +499,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
       final List list = composer.makeRecipients(nagReport);
 
       sendMessage(new EmailRecipients(list, Collections.EMPTY_LIST), subject, body, (byte) 0);
-    } catch (Exception e) {
+    } catch (final Exception e) {
       NotificationUtils.reportErrorSendingMessage(e);
     }
   }
@@ -621,7 +621,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
                 final String resultURL = WebuiUtils.makeBuildResultURL(activeBuildID, stepResult.getID(), entryName);
                 body.append("  ").append(resultURL).append(STR_CR);
               }
-            } catch (IOException e) {
+            } catch (final IOException e) {
               final Error error = new Error("Unexpected I/O error while reading arhive: " + StringUtils.toString(e));
               error.setSendEmail(false);
               error.setErrorLevel(Error.ERROR_LEVEL_WARNING);
@@ -784,7 +784,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
         return buildManagerHost;
       }
       return getHOSTNAMEEnvVariable();
-    } catch (UnknownHostException e) {
+    } catch (final UnknownHostException e) {
       return getHOSTNAMEEnvVariable();
     }
   }

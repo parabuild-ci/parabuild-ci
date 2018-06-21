@@ -70,7 +70,7 @@ public final class SupportService implements Service {
   public void executeTask(final Runnable task) {
     try {
       executor.execute(task);
-    } catch (InterruptedException e) {
+    } catch (final InterruptedException e) {
       IoUtils.ignoreExpectedException(e);
       Thread.currentThread().interrupt();
     }
@@ -95,9 +95,9 @@ public final class SupportService implements Service {
     try {
       CacheManager.create(IoUtils.stringToInputStream(IoUtils.getResourceAsString("ehcache.xml")));
 
-    } catch (RuntimeException e) {
+    } catch (final RuntimeException e) {
       throw e;
-    } catch (Exception e) {
+    } catch (final Exception e) {
       initCacheHard();
       reportStartupError("Error starting up cache:", e);
     }
@@ -111,7 +111,7 @@ public final class SupportService implements Service {
   private void initCacheHard() {
     try {
       CacheManager.create();
-    } catch (Exception e) {
+    } catch (final Exception e) {
       log.error("Error creating cache", e);
     }
   }
@@ -124,7 +124,7 @@ public final class SupportService implements Service {
     try {
       final File f = ConfigurationManager.getSystemNewErrorsDirectory();
       if (!f.exists()) f.mkdirs();
-    } catch (Exception e) {
+    } catch (final Exception e) {
       reportStartupError("Error creating error dir:", e);
     }
   }

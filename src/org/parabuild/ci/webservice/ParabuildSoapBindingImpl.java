@@ -890,7 +890,7 @@ public final class ParabuildSoapBindingImpl implements Parabuild {
         result[i] = stepResult;
       }
       return result;
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new RemoteException(e.toString(), e);
     }
   }
@@ -1484,7 +1484,7 @@ public final class ParabuildSoapBindingImpl implements Parabuild {
   }
 
 
-  private BuildStatus toBuildStatus(BuildState o) {
+  private BuildStatus toBuildStatus(final BuildState o) {
     if (o == null) {
       return null;
     }

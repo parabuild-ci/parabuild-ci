@@ -50,7 +50,7 @@ final class CompositeReleaseNotesHandler implements ReleaseNotesHandler {
       final ReleaseNotesHandler handler = (ReleaseNotesHandler)handlers.get(i);
       try {
         addedIssues += handler.process(buildRun);
-      } catch (Exception e) {
+      } catch (final Exception e) {
         final Error error = Error.newWarning(Error.ERROR_SUSBSYSTEM_INTEGRATION);
         error.setBuildID(buildRun.getBuildID());
         error.setSendEmail(true);

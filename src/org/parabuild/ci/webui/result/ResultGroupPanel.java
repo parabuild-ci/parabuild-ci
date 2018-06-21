@@ -161,7 +161,7 @@ public final class ResultGroupPanel extends MessagePanel implements Validatable,
 
       // return
       return true;
-    } catch (Exception e) {
+    } catch (final Exception e) {
       showAndReportSaveError(e);
       return false;
     }

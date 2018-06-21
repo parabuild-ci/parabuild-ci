@@ -252,11 +252,11 @@ public abstract class AbstractSourceControlPanel extends SourceControlPanel {
               }
             }
           }
-        } catch (IOException e) {
+        } catch (final IOException e) {
           errors.add("Couldn't validate if path \"" + customCheckoutDirTemplate + "\" is an absolute path. Error: " + StringUtils.toString(e));
-        } catch (ValidationException e) {
+        } catch (final ValidationException e) {
           errors.add("Template for custom checkout directory is invalid: " + StringUtils.toString(e));
-        } catch (AgentFailureException e) {
+        } catch (final AgentFailureException e) {
           errors.add("Validation error: " + StringUtils.toString(e));
         }
       }

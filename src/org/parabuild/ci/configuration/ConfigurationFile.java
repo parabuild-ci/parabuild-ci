@@ -92,7 +92,7 @@ public final class ConfigurationFile {
         properties.load(is = new FileInputStream(LOCAL_CONFIG_FILE));
         result = properties.getProperty(propName);
       }
-    } catch (IOException e) {
+    } catch (final IOException e) {
 // REVIEWME: simeshev@parabuilci.org -> break realm
 //      org.parabuild.ci.error.Error err = new org.parabuild.ci.error.Error("There was an error reading Parabuild configuration file.");
 //      err.setErrorLevel(org.parabuild.ci.error.Error.ERROR_LEVEL_WARNING);
@@ -136,7 +136,7 @@ public final class ConfigurationFile {
       }
       os = new FileOutputStream(LOCAL_CONFIG_FILE);
       properties.store(os, "Parabuild configuration file");
-    } catch (IOException e) {
+    } catch (final IOException e) {
 // REVIEWME: simeshev@parabuilci.org -> break realm
 //      org.parabuild.ci.error.Error err = new org.parabuild.ci.error.Error("There was an error reading Parabuild configuration file.");
 //      err.setErrorLevel(org.parabuild.ci.error.Error.ERROR_LEVEL_WARNING);

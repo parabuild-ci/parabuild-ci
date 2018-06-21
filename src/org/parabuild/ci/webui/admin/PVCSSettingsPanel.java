@@ -161,9 +161,9 @@ public final class PVCSSettingsPanel extends AbstractSourceControlPanel implemen
       try {
         WebuiUtils.validateCommandExists(super.getAgentEnv(), fldPathToPVCSClient.getValue(), errors,
                 "Path to PVCS client is invalid, or PVCS client is not accessible");
-      } catch (NoLiveAgentsException ignore) {
+      } catch (final NoLiveAgentsException ignore) {
         IoUtils.ignoreExpectedException(ignore);
-      } catch (IOException e) {
+      } catch (final IOException e) {
         errors.add("Error while checking path for PVCS client: " + StringUtils.toString(e));
       }
     }

@@ -152,7 +152,7 @@ final class EditBuilderPanel extends MessagePanel implements Validatable, Saveab
         LOG.debug("builderConfiguration: " + builderConfiguration);
       }
       return true;
-    } catch (Exception e) {
+    } catch (final Exception e) {
       final SaveErrorProcessor exceptionProcessor = new SaveErrorProcessor();
       return exceptionProcessor.process(this, e);
     }

@@ -107,7 +107,7 @@ public final class ServiceManager {
       if (log.isDebugEnabled()) log.debug("Shutting down " + service.serviceName());
       try {
         service.shutdownService();
-      } catch (Throwable e) {
+      } catch (final Throwable e) {
         log.warn("Exception while shutting down service: " + StringUtils.toString(e), e);
         e.printStackTrace(System.err); // NOPMD
       }

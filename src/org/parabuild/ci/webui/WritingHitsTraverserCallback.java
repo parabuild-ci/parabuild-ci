@@ -13,16 +13,23 @@
  */
 package org.parabuild.ci.webui;
 
-import java.io.*;
-import java.net.*;
-import org.apache.commons.logging.*;
-import org.apache.lucene.document.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.lucene.document.Document;
+import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.configuration.ConfigurationManager;
+import org.parabuild.ci.object.StepLog;
+import org.parabuild.ci.object.StepResult;
+import org.parabuild.ci.search.HitsTraverserCallback;
+import org.parabuild.ci.search.LuceneDocumentFactory;
+import org.parabuild.ci.search.SearchHitsTraverser;
+import org.parabuild.ci.webui.common.Pages;
+import org.parabuild.ci.webui.common.WebuiUtils;
 
-import org.parabuild.ci.common.*;
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.search.*;
-import org.parabuild.ci.webui.common.*;
+import java.io.PrintWriter;
+import java.io.Serializable;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 
 /**
  * Writes to web's PrintWriter
@@ -117,11 +124,11 @@ public final class WritingHitsTraverserCallback implements HitsTraverserCallback
             try {
               // UTF-8
               encodedFileName = URLEncoder.encode(fileName, "UTF-8");
-            } catch (UnsupportedEncodingException e) {
+            } catch (final UnsupportedEncodingException e) {
               try {
                 // didn't work, platform encoding
                 encodedFileName = URLEncoder.encode(fileName, System.getProperty("file.encoding"));
-              } catch (UnsupportedEncodingException e1) {
+              } catch (final UnsupportedEncodingException e1) {
                 // didn't work, leave as is
                 encodedFileName = fileName;
               }

@@ -103,7 +103,7 @@ final class MKSChangeListParser {
     try {
       bis = new FileInputStream(stdoutFile);
       return parseChangeLog(bis);
-    } catch (ParseException e) {
+    } catch (final ParseException e) {
       throw IoUtils.createIOException(e);
     } finally {
       IoUtils.closeHard(bis);

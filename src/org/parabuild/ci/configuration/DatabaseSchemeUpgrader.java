@@ -176,7 +176,7 @@ public final class DatabaseSchemeUpgrader {
         // there was an upgrade, so we'll run compacting
         stmt.execute("shutdown compact");
       }
-    } catch (SQLException e) {
+    } catch (final SQLException e) {
       throw new BuildException("Error while performing upgrade of database scheme", e);
     } finally {
       IoUtils.closeHard(rs);

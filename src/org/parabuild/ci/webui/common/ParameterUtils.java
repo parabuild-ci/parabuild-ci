@@ -114,7 +114,7 @@ public final class ParameterUtils {
     }
     try {
       return new Integer(Integer.parseInt(paramValue));
-    } catch (NumberFormatException e) {
+    } catch (final NumberFormatException e) {
       return defaultValue;
     }
   }

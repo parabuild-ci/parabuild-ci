@@ -98,7 +98,7 @@ public final class TextLogComponent extends CustomComponent {
       }
       pw.println();
       pw.println("</pre>");
-    } catch (Exception e) {
+    } catch (final Exception e) {
       showUnexpectedErrorMsg(ctx, e);
     } finally {
       IoUtils.closeHard(br);
@@ -125,7 +125,7 @@ public final class TextLogComponent extends CustomComponent {
       final PrintWriter pw = ctx.getWriter();
       pw.println("There was an unexpected error while retrieving log");
       log.error("Error getting log", e);
-    } catch (Exception e1) {
+    } catch (final Exception e1) {
       if (log.isWarnEnabled()) {
         log.warn("Ignored exception, no where to go from here", e1);
       }

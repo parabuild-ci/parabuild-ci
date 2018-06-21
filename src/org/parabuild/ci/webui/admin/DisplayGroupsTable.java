@@ -189,7 +189,7 @@ public final class DisplayGroupsTable extends AbstractFlatTable implements Loada
    *
    * @param rowIndex an index of the row to load.
    */
-  private void loadRow(int rowIndex) {
+  private void loadRow(final int rowIndex) {
     final DisplayGroupBuild displayGroupBuild = (DisplayGroupBuild) displayGroups.get(rowIndex);
     final DisplayGroup displayGroup = DisplayGroupManager.getInstance().getDisplayGroup(displayGroupBuild.getDisplayGroupID());
     final String groupName = displayGroup.getName();
@@ -218,7 +218,7 @@ public final class DisplayGroupsTable extends AbstractFlatTable implements Loada
     return new DisplayGroupsEditableCommands();
   }
 
-  public void setBuildID(int buildID) {
+  public void setBuildID(final int buildID) {
     this.buildID = buildID;
   }
 
@@ -301,7 +301,7 @@ public final class DisplayGroupsTable extends AbstractFlatTable implements Loada
     }
 
 
-    public void setMoveRowCommandsVisible(boolean visible) {
+    public void setMoveRowCommandsVisible(final boolean visible) {
       // do nothing, log displayGroups doesn't have insert command
     }
   }

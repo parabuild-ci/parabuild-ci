@@ -61,7 +61,7 @@ public final class P4ClientNameGeneratorImpl implements P4ClientNameGenerator {
     try {
       // parse
       NamedPropertyUtils.parsePropertyString(template, fragments, properties);
-    } catch (Exception e) {
+    } catch (final Exception e) {
       return false;
     }
 

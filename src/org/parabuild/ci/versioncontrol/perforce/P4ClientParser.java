@@ -85,7 +85,7 @@ final class P4ClientParser {
         lineToParse = br.readLine();
       }
       return new P4Client(viewLines);
-    } catch (BuildException e) {
+    } catch (final BuildException e) {
       throw IoUtils.createIOException(e);
     } finally {
       IoUtils.closeHard(br);

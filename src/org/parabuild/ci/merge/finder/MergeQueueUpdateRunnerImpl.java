@@ -48,14 +48,14 @@ public final class MergeQueueUpdateRunnerImpl implements MergeQueueUpdateRunner 
       status = MergeStatus.GETTING_CHANGES;
       final MergeQueueCreator mergeQueueCreator = MergeQueueUpdaterFactory.getMergeQueueUpdater(activeMergeID);
       mergeQueueCreator.updateQueue();
-    } catch (CommandStoppedException e) {
+    } catch (final CommandStoppedException e) {
       if (log.isDebugEnabled()) log.debug("====================");
       if (log.isDebugEnabled()) log.debug("merge runner stopped");
       if (log.isDebugEnabled()) log.debug("====================");
       Thread.currentThread().interrupt();
-    } catch (Exception e) {
+    } catch (final Exception e) {
       reportError(e, Error.ERROR_LEVEL_ERROR);
-    } catch (java.lang.Error e) {
+    } catch (final java.lang.Error e) {
       reportError(e, Error.ERROR_LEVEL_FATAL);
       throw e;
     } finally {

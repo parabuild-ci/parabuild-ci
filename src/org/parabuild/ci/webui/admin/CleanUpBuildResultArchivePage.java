@@ -112,7 +112,7 @@ public final class CleanUpBuildResultArchivePage extends BasePage implements Con
         final ArchiveManager archiveManager = ArchiveManagerFactory.getArchiveManager(activeBuildConfig.getBuildID());
         try {
           archiveManager.deleteExpiredBuildResults(Integer.parseInt(flNumberOfDays.getValue()));
-        } catch (IOException e) {
+        } catch (final IOException e) {
           showPageErrorAndExit("Error while deleting expried logs: " + StringUtils.toString(e));
         }
 

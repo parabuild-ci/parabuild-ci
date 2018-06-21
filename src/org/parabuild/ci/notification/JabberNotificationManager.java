@@ -65,7 +65,7 @@ public final class JabberNotificationManager extends AbstractInstantMessagingNot
       for (final Iterator i = addresses.iterator(); i.hasNext();) {
         sendToAddress(conn, getRoster(conn), (String)i.next(), body);
       }
-    } catch (XMPPException e) {
+    } catch (final XMPPException e) {
       // TODELETE: when debugging is done
       if (log.isDebugEnabled()) log.debug(e);
       reportSendError(e);
@@ -90,7 +90,7 @@ public final class JabberNotificationManager extends AbstractInstantMessagingNot
       conn = connectToJabber();
       if (log.isDebugEnabled()) log.debug("conn: " + conn);
       sendToAddress(conn, getRoster(conn), address, body);
-    } catch (XMPPException e) {
+    } catch (final XMPPException e) {
       // TODELETE: when debugging is done
       if (log.isDebugEnabled()) log.debug(e);
       reportSendError(e);
@@ -235,7 +235,7 @@ public final class JabberNotificationManager extends AbstractInstantMessagingNot
     if (con != null) {
       try {
         con.close();
-      } catch (Exception e) {
+      } catch (final Exception e) {
         IoUtils.ignoreExpectedException(e);
       }
     }

@@ -110,7 +110,7 @@ final class VaultChangeLogParser {
       }
       result.addAll(changeLists.values());
       return result;
-    } catch (ParseException e) {
+    } catch (final ParseException e) {
       throw IoUtils.createIOException(e);
     }
   }

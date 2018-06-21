@@ -70,7 +70,7 @@ public final class NotificationUtils {
       }
       final String nameProp = systemCM.getSystemPropertyValue(SystemProperty.BUILD_ADMIN_NAME, emailProp);
       return new InternetAddress(emailProp, nameProp);
-    } catch (UnsupportedEncodingException e) {
+    } catch (final UnsupportedEncodingException e) {
       final AddressException ae = new AddressException(StringUtils.toString(e));
       e.initCause(e);
       throw ae;
@@ -232,7 +232,7 @@ public final class NotificationUtils {
         result.add(new InternetAddress(user.getEmail(), user.getFullName()));
       }
       return result;
-    } catch (UnsupportedEncodingException e) {
+    } catch (final UnsupportedEncodingException e) {
       final AddressException ae = new AddressException(StringUtils.toString(e));
       ae.initCause(e);
       throw ae;

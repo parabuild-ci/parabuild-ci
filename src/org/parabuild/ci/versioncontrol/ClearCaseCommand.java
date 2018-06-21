@@ -98,7 +98,7 @@ abstract class ClearCaseCommand extends VersionControlRemoteCommand {
             }
           }
         }
-      } catch (Exception e) {
+      } catch (final Exception e) {
         log.warn("Error while finalizing command execution", e);
       } finally {
         IoUtils.closeHard(br);

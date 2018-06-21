@@ -147,9 +147,9 @@ public final class GitSettingsPanel extends AbstractSourceControlPanel {
       try {
         WebuiUtils.validateCommandExists(super.getAgentEnv(), flPathToExe.getValue(), errors,
                 "Path to git executable is invalid, or git executable is not accessible");
-      } catch (NoLiveAgentsException ignore) {
+      } catch (final NoLiveAgentsException ignore) {
         IoUtils.ignoreExpectedException(ignore);
-      } catch (IOException e) {
+      } catch (final IOException e) {
         errors.add("Error while checking path for git executable: " + StringUtils.toString(e));
       }
 
@@ -172,7 +172,7 @@ public final class GitSettingsPanel extends AbstractSourceControlPanel {
       final GitDepotPathParser parser = new GitDepotPathParser();
       try {
         parser.validate(flDepotPath.getValue());
-      } catch (ValidationException e) {
+      } catch (final ValidationException e) {
         errors.add(StringUtils.toString(e));
       }
     }
@@ -198,7 +198,7 @@ public final class GitSettingsPanel extends AbstractSourceControlPanel {
         if (be.isUnix() && be.commandIsAvailable(DEFAULT_UNIX_GIT_COMMAND)) {
           flPathToExe.setValue(DEFAULT_UNIX_GIT_COMMAND);
         }
-      } catch (Exception e) {
+      } catch (final Exception e) {
         IoUtils.ignoreExpectedException(e);
       }
     }

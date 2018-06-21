@@ -86,7 +86,7 @@ public final class IoUtils {
     if (is != null) {
       try {
         is.close();
-      } catch (IOException ignore) {
+      } catch (final IOException ignore) {
         logCloseWarning(ignore);
       }
     }
@@ -100,7 +100,7 @@ public final class IoUtils {
     if (reader != null) {
       try {
         reader.close();
-      } catch (IOException ignore) {
+      } catch (final IOException ignore) {
         logCloseWarning(ignore);
       }
     }
@@ -114,7 +114,7 @@ public final class IoUtils {
     if (isr != null) {
       try {
         isr.close();
-      } catch (IOException ignore) {
+      } catch (final IOException ignore) {
         logCloseWarning(ignore);
       }
     }
@@ -128,7 +128,7 @@ public final class IoUtils {
     String result = "";
     try {
       result = inputStreamToString(new FileInputStream(file));
-    } catch (IOException e) {
+    } catch (final IOException e) {
       log.error("Error while transforming file \"" + file + "\" to string", e);
     }
     return result;
@@ -165,7 +165,7 @@ public final class IoUtils {
       try {
         w.flush();
         w.close();
-      } catch (IOException ignore) {
+      } catch (final IOException ignore) {
         logCloseWarning(ignore);
       }
     }
@@ -180,7 +180,7 @@ public final class IoUtils {
       try {
         os.flush();
         os.close();
-      } catch (IOException ignore) {
+      } catch (final IOException ignore) {
         logCloseWarning(ignore);
       }
     }
@@ -194,7 +194,7 @@ public final class IoUtils {
     if (connection != null) {
       try {
         connection.close();
-      } catch (SQLException ignore) {
+      } catch (final SQLException ignore) {
         ignoreExpectedException(ignore);
       }
     }
@@ -208,7 +208,7 @@ public final class IoUtils {
     if (stmt != null) {
       try {
         stmt.close();
-      } catch (SQLException ignore) {
+      } catch (final SQLException ignore) {
         ignoreExpectedException(ignore);
       }
     }
@@ -222,7 +222,7 @@ public final class IoUtils {
     if (rs != null) {
       try {
         rs.close();
-      } catch (SQLException ignore) {
+      } catch (final SQLException ignore) {
         ignoreExpectedException(ignore);
       }
     }
@@ -236,7 +236,7 @@ public final class IoUtils {
     if (conn != null) {
       try {
         conn.commit();
-      } catch (SQLException ignore) {
+      } catch (final SQLException ignore) {
         ignoreExpectedException(ignore);
       }
     }
@@ -408,7 +408,7 @@ public final class IoUtils {
   public static String getCanonicalPathHard(final File file) {
     try {
       return file.getCanonicalPath();
-    } catch (IOException e) {
+    } catch (final IOException e) {
       log.fatal("Can not get canonical path for " + file.toString(), e);
       throw makeIllegalStateException(e);
     }
@@ -424,7 +424,7 @@ public final class IoUtils {
   public static File getCanonicalFileHard(final File file) {
     try {
       return file.getCanonicalFile();
-    } catch (IOException e) {
+    } catch (final IOException e) {
       log.fatal("Can not get canonical file for " + file.toString(), e);
       throw makeIllegalStateException(e);
     }
@@ -647,7 +647,7 @@ public final class IoUtils {
     if (zipFile == null) return;
     try {
       zipFile.close();
-    } catch (IOException ignore) {
+    } catch (final IOException ignore) {
       logCloseWarning(ignore);
     }
   }
@@ -657,7 +657,7 @@ public final class IoUtils {
     if (socket == null) return;
     try {
       socket.close();
-    } catch (IOException e) {
+    } catch (final IOException e) {
       ignoreExpectedException(e);
     }
   }
@@ -723,7 +723,7 @@ public final class IoUtils {
   public static String getLocalHostNameHard() {
     try {
       return getLocalHostName();
-    } catch (UnknownHostException e) {
+    } catch (final UnknownHostException e) {
       log.warn("Exception while getting local host: " + StringUtils.toString(e), e);
       return "localhost";
     }

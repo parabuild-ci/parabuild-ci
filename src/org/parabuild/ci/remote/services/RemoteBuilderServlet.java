@@ -164,7 +164,7 @@ public final class RemoteBuilderServlet extends HessianServlet implements Remote
         throw new IllegalArgumentException("Unknown method: " + method);
       }
       hin.completeReply();
-    } catch (Throwable throwable) {  // NOPMD - because startReply, thanks to caucho, declares Throwable
+    } catch (final Throwable throwable) {  // NOPMD - because startReply, thanks to caucho, declares Throwable
       if (ho != null) {
         ho.writeFault("", StringUtils.toString(throwable), throwable);
       }
@@ -336,7 +336,7 @@ public final class RemoteBuilderServlet extends HessianServlet implements Remote
 
       // return result
       return new ExecuteResult(resultCode, stdoutFileName, stderrFileName, mergedFileName);
-    } catch (IOException e) {
+    } catch (final IOException e) {
       // cleanup if there was a error
       IoUtils.deleteFileHard(stdoutFile);
       IoUtils.deleteFileHard(stderrFile);

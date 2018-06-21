@@ -206,7 +206,7 @@ public final class EmailRecipientListComposer {
           if (jndiUser != null) {
             eMail = jndiUser.getEmail();
           }
-        } catch (Exception e) {
+        } catch (final Exception e) {
           reportErrorGettingUserEmailFromLDAP(user, e);
         }
       }

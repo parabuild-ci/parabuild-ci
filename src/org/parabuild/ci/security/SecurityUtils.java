@@ -49,21 +49,21 @@ public final class SecurityUtils {
       final Cipher cipher = makeCipher(Cipher.ENCRYPT_MODE, passPhrase);
       final byte[] encryptedOriginal = cipher.doFinal(original.getBytes());
       return StringUtils.encodeToHex(encryptedOriginal);
-    } catch (NoSuchAlgorithmException e) {
+    } catch (final NoSuchAlgorithmException e) {
       return "";
-    } catch (InvalidKeySpecException e) {
+    } catch (final InvalidKeySpecException e) {
       return "";
-    } catch (NoSuchPaddingException e) {
+    } catch (final NoSuchPaddingException e) {
       return "";
-    } catch (InvalidKeyException e) {
+    } catch (final InvalidKeyException e) {
       return "";
-    } catch (InvalidAlgorithmParameterException e) {
+    } catch (final InvalidAlgorithmParameterException e) {
       return "";
-    } catch (IllegalStateException e) {
+    } catch (final IllegalStateException e) {
       return "";
-    } catch (IllegalBlockSizeException e) {
+    } catch (final IllegalBlockSizeException e) {
       return "";
-    } catch (BadPaddingException e) {
+    } catch (final BadPaddingException e) {
       return "";
     }
   }
@@ -74,21 +74,21 @@ public final class SecurityUtils {
       final Cipher cipher = makeCipher(Cipher.DECRYPT_MODE, passPhrase);
       final byte[] originalBytes = cipher.doFinal(StringUtils.decodeFromHex(encryptedOriginal));
       return new String(originalBytes); // NOPMD
-    } catch (NoSuchAlgorithmException e) {
+    } catch (final NoSuchAlgorithmException e) {
       return "";
-    } catch (InvalidKeySpecException e) {
+    } catch (final InvalidKeySpecException e) {
       return "";
-    } catch (NoSuchPaddingException e) {
+    } catch (final NoSuchPaddingException e) {
       return "";
-    } catch (InvalidKeyException e) {
+    } catch (final InvalidKeyException e) {
       return "";
-    } catch (InvalidAlgorithmParameterException e) {
+    } catch (final InvalidAlgorithmParameterException e) {
       return "";
-    } catch (IllegalStateException e) {
+    } catch (final IllegalStateException e) {
       return "";
-    } catch (IllegalBlockSizeException e) {
+    } catch (final IllegalBlockSizeException e) {
       return "";
-    } catch (BadPaddingException e) {
+    } catch (final BadPaddingException e) {
       return "";
     }
   }

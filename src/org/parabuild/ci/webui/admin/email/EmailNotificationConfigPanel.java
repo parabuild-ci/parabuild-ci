@@ -174,7 +174,7 @@ public final class EmailNotificationConfigPanel extends AbstractSystemConfigPane
           try {
             final NotificationManager notificationManager = NotificationManagerFactory.makeNotificationManager();
             notificationManager.sendTestEmailMessage(getSystemProperties());
-          } catch (Exception e) {
+          } catch (final Exception e) {
             errorReport = e;
           }
           if (errorReport == null) {

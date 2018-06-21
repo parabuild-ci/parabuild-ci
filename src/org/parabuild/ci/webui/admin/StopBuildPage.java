@@ -69,7 +69,7 @@ public final class StopBuildPage extends BasePage implements StatelessTierlet {
       final int userID = SecurityManager.getInstance().getUserIDFromContext(getTierletContext());
       BuildManager.getInstance().stopBuild(buildID, userID);
       return WebuiUtils.createBuildActionReturnResult(getTierletContext());
-    } catch (Exception e) {
+    } catch (final Exception e) {
       // Show error
       super.baseContentPanel().showErrorMessage("Unxpected error while stopping the build \"" + buildConfig.getBuildName() + "\": " + StringUtils.toString(e));
     }

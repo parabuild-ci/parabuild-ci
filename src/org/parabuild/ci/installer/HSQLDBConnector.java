@@ -71,7 +71,7 @@ final class HSQLDBConnector {
     connProps.setProperty("password", PersistanceConstants.DATABASE_PASSWORD);
     try {
       return driver.connect(connURL, connProps);
-    } catch (SQLException e) {
+    } catch (final SQLException e) {
       throw IoUtils.createIOException(e);
     }
   }
@@ -90,7 +90,7 @@ final class HSQLDBConnector {
         driverJarFile = File.createTempFile("drv", ".jar");
         fos = new FileOutputStream(driverJarFile);
         IoUtils.copyInputToOuputStream(is, fos);
-      } catch (IOException e) {
+      } catch (final IOException e) {
         if (driverJarFile != null && driverJarFile.exists()) {
           driverJarFile.delete();
           driverJarFile = null;
@@ -105,9 +105,9 @@ final class HSQLDBConnector {
     try {
       final Class hsqldbDriverClass = hsqldbClassloader.loadClass(HSQLDB_DRIVER);
       return (Driver) hsqldbDriverClass.newInstance();
-    } catch (RuntimeException e) {
+    } catch (final RuntimeException e) {
       throw e;
-    } catch (Exception e) {
+    } catch (final Exception e) {
       throw IoUtils.createIOException(e);
     }
   }

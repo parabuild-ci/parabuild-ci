@@ -399,7 +399,7 @@ public abstract class AbstractBuildScriptGenerator implements BuildScriptGenerat
       stepScriptPath = agent.makeStepScriptPath(sequence.getSequenceID());
       agent.createFile(stepScriptPath, generateScript(sequence));
       return stepScriptPath;
-    } catch (BuildException e) {
+    } catch (final BuildException e) {
       throw IoUtils.createIOException(e);
     }
   }

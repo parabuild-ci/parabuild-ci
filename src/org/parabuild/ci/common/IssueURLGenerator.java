@@ -85,7 +85,7 @@ public final class IssueURLGenerator {
     try {
       // parse
       NamedPropertyUtils.parsePropertyString(urlTemplate, fragments, properties);
-    } catch (Exception e) {
+    } catch (final Exception e) {
       return false;
     }
 
@@ -119,9 +119,9 @@ public final class IssueURLGenerator {
       urlGenerator.setIssueKey("101"); // set test url
       final String urlAsString = urlGenerator.generateIssueURL();
       new URL(urlAsString);
-    } catch (MalformedURLException e) {
+    } catch (final MalformedURLException e) {
       return false;
-    } catch (BuildException e) {
+    } catch (final BuildException e) {
       return false;
     }
     return true;

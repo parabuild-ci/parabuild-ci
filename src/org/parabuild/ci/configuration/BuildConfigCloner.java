@@ -395,7 +395,7 @@ public final class BuildConfigCloner {
                 final String testValue;
                 try {
                   testValue = sourceControlSettingResolver.resolve(sourceControlSetting.getPropertyValue().trim());
-                } catch (ValidationException e) {
+                } catch (final ValidationException e) {
                   //
                   // Invalid template, report and skip
                   //

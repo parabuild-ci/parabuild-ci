@@ -163,13 +163,13 @@ public class RemoteCommand implements Cleanable {
     for (int i = 0; i <= retryTimes; i++) {
       try {
         return executeOnce();
-      } catch (CommandStoppedException e) {
+      } catch (final CommandStoppedException e) {
         if (LOG.isDebugEnabled()) LOG.debug("e: " + e, e);
         throw e;
-      } catch (RuntimeException e) {
+      } catch (final RuntimeException e) {
         if (LOG.isDebugEnabled()) LOG.debug("e: " + e, e);
         throw e;
-      } catch (IOException e) {
+      } catch (final IOException e) {
         if (LOG.isDebugEnabled()) LOG.debug("e: " + e, e);
         if (patternPresent(e) && i < retryTimes - 1) {
           delayRandomly(random);
@@ -177,7 +177,7 @@ public class RemoteCommand implements Cleanable {
         } else {
           throw e;
         }
-      } catch (AgentFailureException e) {
+      } catch (final AgentFailureException e) {
         if (LOG.isDebugEnabled()) LOG.debug("e: " + e, e);
         if (patternPresent(e) && i < retryTimes - 1) {
           delayRandomly(random);
@@ -334,7 +334,7 @@ public class RemoteCommand implements Cleanable {
           throw new IOException("Unknown command state on return from execute. Deadline " + deadlineTimeoutMillis + " ms reached: " + deadlineReached + ". It is possible that it is still running and may affect subsequent commands: " + command);
         }
       }
-    } catch (InterruptedException e) {
+    } catch (final InterruptedException e) {
       throw new CommandStoppedException(e);
     } finally {
       remoteCommandManager.unregisterBuildCommand(agent.getActiveBuildID(), this);
@@ -588,7 +588,7 @@ public class RemoteCommand implements Cleanable {
       final int delayMillis = delay >= 0 ? delay : -delay;
       if (LOG.isDebugEnabled()) LOG.debug("delaying for, millis: " + delayMillis);
       Thread.sleep(delayMillis);
-    } catch (InterruptedException e) {
+    } catch (final InterruptedException e) {
       throw new CommandStoppedException();
     }
   }

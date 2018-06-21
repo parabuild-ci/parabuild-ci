@@ -49,14 +49,14 @@ public final class MergeRunnerImpl implements MergeRunner {
       final Merger merger = MergerFactory.makeMerger(activeMergeID);
       status = MergeStatus.MERGING;
       merger.merge();
-    } catch (CommandStoppedException e) {
+    } catch (final CommandStoppedException e) {
       if (log.isDebugEnabled()) log.debug("====================");
       if (log.isDebugEnabled()) log.debug("merge runner stopped");
       if (log.isDebugEnabled()) log.debug("====================");
       Thread.currentThread().interrupt();
-    } catch (Exception e) {
+    } catch (final Exception e) {
       ErrorManagerFactory.getErrorManager().reportSystemError(new Error("Tried to escape but was caught: " + StringUtils.toString(e), e));
-    } catch (java.lang.Error e) {
+    } catch (final java.lang.Error e) {
       reportError(e, Error.ERROR_LEVEL_FATAL);
       throw e;
     } finally {

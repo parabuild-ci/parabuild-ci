@@ -28,7 +28,7 @@ public final class ThreadUtils {
   public static void sleep(final long timeMillis) {
     try {
       Thread.sleep(timeMillis);
-    } catch (InterruptedException e) {
+    } catch (final InterruptedException e) {
       IoUtils.ignoreExpectedException(e);
     }
   }

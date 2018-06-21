@@ -180,7 +180,7 @@ public final class BuildHistoryTable extends AbstractFlatTable {
     }
 
 
-    private boolean isYoungerThanHour(BuildRun buildRun) {
+    private boolean isYoungerThanHour(final BuildRun buildRun) {
       if (buildRun.getFinishedAt() == null) {
         return false;
       }

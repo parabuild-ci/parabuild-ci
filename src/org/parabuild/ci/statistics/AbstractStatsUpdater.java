@@ -71,7 +71,7 @@ abstract class AbstractStatsUpdater implements PersistentStatsUpdater {
             try {
 //              if (log.isDebugEnabled()) log.debug("pStat before save: " + pStat);
               session.save(pStat);
-            } catch (Exception e) {
+            } catch (final Exception e) {
               // REVIEWME: simeshev@parabuilci.org ->
               // we ignore it because there are weird errors at initial data seed
               // where the truncateBuildRunDate above couldn't find already
@@ -90,7 +90,7 @@ abstract class AbstractStatsUpdater implements PersistentStatsUpdater {
           return null;
         }
       });
-    } catch (Exception e) {
+    } catch (final Exception e) {
       reportUpdateError(e, buildRun);
     }
   }

@@ -106,7 +106,7 @@ public final class Realm extends RealmBase {
       String digestedPrincipal = null;
       try {
         digestedPrincipal = StringUtils.digest(credentials);
-      } catch (NoSuchAlgorithmException e) {
+      } catch (final NoSuchAlgorithmException e) {
         System.out.println("Error: " + toString(e)); // NOPMD
       }
       if (digestedPrincipal == null) return null;
@@ -207,7 +207,7 @@ public final class Realm extends RealmBase {
 //        System.out.println("DEBUG: userName: " + userName);
         addUser(userName.trim(), password.trim(), RealmConstants.PARABUILD_USER_ROLE);
       }
-    } catch (Exception e) {
+    } catch (final Exception e) {
       e.printStackTrace(); // NOPMD - nowhere to report but to stdout
     } finally {
       closeHard(rs);
@@ -265,7 +265,7 @@ public final class Realm extends RealmBase {
     if (conn1 != null) {
       try {
         conn1.close();
-      } catch (SQLException ignore) { // NOPMD EmptyCatchBlock
+      } catch (final SQLException ignore) { // NOPMD EmptyCatchBlock
       }
     }
   }
@@ -288,7 +288,7 @@ public final class Realm extends RealmBase {
     if (pstmt != null) {
       try {
         pstmt.close();
-      } catch (SQLException ignore) { // NOPMD EmptyCatchBlock
+      } catch (final SQLException ignore) { // NOPMD EmptyCatchBlock
       }
     }
   }
@@ -298,7 +298,7 @@ public final class Realm extends RealmBase {
     if (rs != null) {
       try {
         rs.close();
-      } catch (SQLException ignore) { // NOPMD EmptyCatchBlock
+      } catch (final SQLException ignore) { // NOPMD EmptyCatchBlock
       }
     }
   }

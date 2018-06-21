@@ -142,9 +142,9 @@ public final class RepeatableScheduleJob implements Job {
           activeJobs.remove(integerActiveBuildID);
         }
       }
-    } catch (Exception e) {
+    } catch (final Exception e) {
       reportErrorRunningBuild(e);
-    } catch (java.lang.Error e) {
+    } catch (final java.lang.Error e) {
       reportErrorRunningBuild(e);
       throw e;
     }
@@ -206,7 +206,7 @@ public final class RepeatableScheduleJob implements Job {
       } else {
         requestBuildStart(changeListID, cleanCheckOut, nextLiveAgentHost);
       }
-    } catch (Exception e) {
+    } catch (final Exception e) {
       reportErrorRunningBuild(e);
     }
   }

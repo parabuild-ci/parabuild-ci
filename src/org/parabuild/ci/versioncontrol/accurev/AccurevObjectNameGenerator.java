@@ -74,7 +74,7 @@ final class AccurevObjectNameGenerator {
     try {
       // parse
       NamedPropertyUtils.parsePropertyString(template, fragments, properties);
-    } catch (Exception e) {
+    } catch (final Exception e) {
       return false;
     }
 

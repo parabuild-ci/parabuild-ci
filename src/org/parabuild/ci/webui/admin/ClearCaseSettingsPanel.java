@@ -170,9 +170,9 @@ public final class ClearCaseSettingsPanel extends AbstractSourceControlPanel {
       if (errors.isEmpty() && getAgentEnv() != null && getAgentEnv().isAbsoluteFile(flRelativeBuildDir.getValue())) {
         errors.add("Content of \"" + NAME_REL_BUILD_DIR + "\" is an absolute path but it should be a relative path.");
       }
-    } catch (IOException e) {
+    } catch (final IOException e) {
       IoUtils.ignoreExpectedException(e);
-    } catch (AgentFailureException e) {
+    } catch (final AgentFailureException e) {
       errors.add("Validation error: " + StringUtils.toString(e));
     }
 
@@ -186,9 +186,9 @@ public final class ClearCaseSettingsPanel extends AbstractSourceControlPanel {
     try {
       WebuiUtils.validateCommandExists(super.getAgentEnv(), flPathToCleartool.getValue(), errors,
               "Path to cleartool executable is invalid, or cleartool executable is not accessible");
-    } catch (NoLiveAgentsException ignore) {
+    } catch (final NoLiveAgentsException ignore) {
       IoUtils.ignoreExpectedException(ignore);
-    } catch (IOException e) {
+    } catch (final IOException e) {
       errors.add("Error while checking path for ClearCase client: " + StringUtils.toString(e));
     }
 
@@ -212,7 +212,7 @@ public final class ClearCaseSettingsPanel extends AbstractSourceControlPanel {
     if (!WebuiUtils.isBlank(flStartDate)) {
       try {
         ClearCaseStartDate.parse(flStartDate.getValue());
-      } catch (Exception e) {
+      } catch (final Exception e) {
         errors.add("Field \"" + NAME_START_DATE + "\" is in an invalid format. The valid format is yyyy-MM-dd where yyyy " +
                 "is a year, MM is a month and dd is a day. Example: 2008-12-31");
       }

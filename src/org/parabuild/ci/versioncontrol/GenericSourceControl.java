@@ -120,9 +120,9 @@ public final class GenericSourceControl extends AbstractCommandBasedSourceContro
         //if (log.isDebugEnabled()) log.debug("command.getStdoutFile() = " + IoUtils.fileToString(command.getStdoutFile()));
         result = parser.parseChangeLog(command.getStdoutFile());
         if (log.isDebugEnabled()) log.debug("result: " + result);
-      } catch (IOException e) {
+      } catch (final IOException e) {
         throw processException(e);
-      } catch (CommandStoppedException e) {
+      } catch (final CommandStoppedException e) {
         throw processException(e);
       } finally {
         cleanup(command);
@@ -141,7 +141,7 @@ public final class GenericSourceControl extends AbstractCommandBasedSourceContro
       if (log.isDebugEnabled()) log.debug("end getChangesSince");
       Collections.sort(result, ChangeList.REVERSE_CHANGE_DATE_COMPARATOR);
       return configManager.saveBuildChangeLists(activeBuildID, result);
-    } catch (RuntimeException e) {
+    } catch (final RuntimeException e) {
       throw processException(e);
     }
   }

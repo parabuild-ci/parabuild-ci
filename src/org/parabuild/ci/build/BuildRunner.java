@@ -206,7 +206,7 @@ public final class BuildRunner extends Thread {
           agentFactory.checkinAgent(agent);
         }
 
-      } catch (AgentFailureException e) {
+      } catch (final AgentFailureException e) {
 
         if (LOG.isDebugEnabled()) {
           LOG.debug("Build failed with " + StringUtils.toString(e) + " will retry");
@@ -491,7 +491,7 @@ public final class BuildRunner extends Thread {
 
       // Remember SCM-provided reference attributes
       final Map buildRunAttributes = versionControl.getBuildRunAttributes();
-      for (Iterator iterator = buildRunAttributes.entrySet().iterator(); iterator.hasNext(); ) {
+      for (final Iterator iterator = buildRunAttributes.entrySet().iterator(); iterator.hasNext(); ) {
 
         final Map.Entry entry = (Map.Entry) iterator.next();
         final String attributeName = (String) entry.getKey();
@@ -890,7 +890,7 @@ public final class BuildRunner extends Thread {
         }
       }
 
-    } catch (CommandStoppedException e) {
+    } catch (final CommandStoppedException e) {
 
       // Report the problem
       if (buildRun.getBuildRunID() == BuildRun.UNSAVED_ID) {
@@ -905,10 +905,10 @@ public final class BuildRunner extends Thread {
 
       // Mark as stopped
       markBuildRunStopped(buildRun);
-    } catch (AgentFailureException e) {
+    } catch (final AgentFailureException e) {
 
       throw e;
-    } catch (Exception e) {
+    } catch (final Exception e) {
 
       final String hostName = agent == null ? (String) null : agentHostName;
 
@@ -1039,13 +1039,13 @@ public final class BuildRunner extends Thread {
           try {
             final BuildFinishedSubscriber buildFinishedSubscriber = (BuildFinishedSubscriber) buildFinishedSubscribers.get(i);
             buildFinishedSubscriber.buildFinished(new BuildFinishedEventImpl(buildRun));
-          } catch (Exception e) {
+          } catch (final Exception e) {
             errorManager.reportUnexpectedBuildFinalizationError(activeBuildID, e);
           }
         }
       }
 
-    } catch (Exception e) {
+    } catch (final Exception e) {
       errorManager.reportUnexpectedBuildFinalizationError(activeBuildID, e);
 
     } finally {
@@ -1203,7 +1203,7 @@ public final class BuildRunner extends Thread {
             try {
 
               lock.wait(1000L); // wake up every 0.5 seconds
-            } catch (InterruptedException ignored) {
+            } catch (final InterruptedException ignored) {
 
               // NOTE: simeshev@parabuilci.org - 2011-12-06 - This exception is ignored because the only way
               // it may happen is when the runner is stopped or killed. See PARABUILD-1620 for more information.
@@ -1220,7 +1220,7 @@ public final class BuildRunner extends Thread {
             if (LOG.isDebugEnabled()) {
               LOG.debug("runner status at end: " + runnerStatus);
             }
-          } catch (Exception e) {
+          } catch (final Exception e) {
 
             // catch just is case something manages to escape
             final Error error = new Error(activeBuildID, "Tried to escape but was caught: " + e.toString(), Error.ERROR_LEVEL_ERROR);
@@ -1251,18 +1251,18 @@ public final class BuildRunner extends Thread {
           throw new IllegalStateException("Unknown command: " + command);
         }
       }
-    } catch (Exception e) {
+    } catch (final Exception e) {
       if (LOG.isDebugEnabled()) {
         LOG.debug("Exception at run cycle", e);
       }
       ErrorManagerFactory.getErrorManager().reportSystemError(new org.parabuild.ci.error.Error(activeBuildID, "", org.parabuild.ci.error.Error.ERROR_SUSBSYSTEM_BUILD, e));
-    } catch (java.lang.Error e) {
+    } catch (final java.lang.Error e) {
       if (LOG.isDebugEnabled()) {
         LOG.debug("Error at run cycle", e);
       }
       ErrorManagerFactory.getErrorManager().reportSystemError(new org.parabuild.ci.error.Error(activeBuildID, "", org.parabuild.ci.error.Error.ERROR_SUSBSYSTEM_BUILD, e));
       throw e;
-    } catch (Throwable e) { // NOPMD
+    } catch (final Throwable e) { // NOPMD
       if (LOG.isDebugEnabled()) {
         LOG.debug("Error at run cycle", e);
       }

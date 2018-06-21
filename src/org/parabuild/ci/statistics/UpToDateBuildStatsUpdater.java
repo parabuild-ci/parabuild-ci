@@ -43,7 +43,7 @@ final class UpToDateBuildStatsUpdater implements PersistentStatsUpdater {
           return null;
         }
       });
-    } catch (Exception e) {
+    } catch (final Exception e) {
       // report error
       final Error error = new Error(StringUtils.toString(e));
       error.setBuildName(buildRun.getBuildName());

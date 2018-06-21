@@ -426,7 +426,7 @@ public final class LocalAgent implements Agent {
   public boolean deleteTempFileHard(final String tempFileName) {
     try {
       return deleteTempFile(tempFileName);
-    } catch (Exception e) {
+    } catch (final Exception e) {
       final ErrorManager em = ErrorManagerFactory.getErrorManager();
       final org.parabuild.ci.error.Error error = new org.parabuild.ci.error.Error("Could not delete temporary file");
       error.setDescription("Error while deleting temporary \"" + tempFileName + "\": " + StringUtils.toString(e));
@@ -606,12 +606,12 @@ public final class LocalAgent implements Agent {
   public void readFile(final String path, final File readInTo) throws IOException {
     try {
       IoUtils.copyFile(new File(path), readInTo);
-    } catch (IOException e) {
+    } catch (final IOException e) {
       // Delete destination file
       IoUtils.deleteFileHard(readInTo);
       // Re-throw the exception
       throw e;
-    } catch (RuntimeException e) {
+    } catch (final RuntimeException e) {
       // Delete destination file
       IoUtils.deleteFileHard(readInTo);
       // Re-throw the exception
@@ -624,12 +624,12 @@ public final class LocalAgent implements Agent {
     final File source = new File(path);
     try {
       IoUtils.copyDirectory(source, readInTo);
-    } catch (IOException e) {
+    } catch (final IOException e) {
       // Delete destination file
       IoUtils.deleteFileHard(readInTo);
       // Re-throw the exception
       throw e;
-    } catch (RuntimeException e) {
+    } catch (final RuntimeException e) {
       // Delete destination file
       IoUtils.deleteFileHard(readInTo);
       // Re-throw the exception

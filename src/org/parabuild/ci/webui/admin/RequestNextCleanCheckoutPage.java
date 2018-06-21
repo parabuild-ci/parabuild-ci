@@ -67,7 +67,7 @@ public final class RequestNextCleanCheckoutPage extends BasePage implements Stat
           .add(new BoldCommonLabel("Request to perform clean checkout for the next build run for build \"" + buildConfig.getBuildName() + "\" has been sent. "))
           .add(WebuiUtils.clickHereToContinue(Pages.ADMIN_BUILD_COMMANDS_LIST, buildConfig.getActiveBuildID())));
         return Result.Done();
-      } catch (Exception e) {
+      } catch (final Exception e) {
         // Show error
         super.baseContentPanel().showErrorMessage("Unxpected error while stopping the build \"" + buildConfig.getBuildName() + "\": " + StringUtils.toString(e));
       }

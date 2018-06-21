@@ -105,7 +105,7 @@ public final class AgentEnvironmentPage extends BasePage implements StatelessTie
       baseContentPanel().getUserPanel().add(WebuiUtils.makePanelDivider());
       baseContentPanel().getUserPanel().add(new EnvironmentPanel(agentEnvironment.getEnv(), "Shell Environment"));
 
-    } catch (Exception e) {
+    } catch (final Exception e) {
       baseContentPanel().getUserPanel().clear();
       baseContentPanel().showErrorMessage("Error obtaining agent environment: " + e.toString());
     }

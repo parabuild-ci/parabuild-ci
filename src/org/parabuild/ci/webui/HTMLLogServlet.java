@@ -53,7 +53,7 @@ public final class HTMLLogServlet extends AbstractArchiveAccessServlet {
       int activeBuildID = BuildConfig.UNSAVED_ID;
       try {
         activeBuildID = Integer.parseInt(stringBuildID);
-      } catch (NumberFormatException e) {
+      } catch (final NumberFormatException e) {
         return null;
       }
 
@@ -64,7 +64,7 @@ public final class HTMLLogServlet extends AbstractArchiveAccessServlet {
         activeBuildConfig = cm.getActiveBuildConfig(activeBuildID);
         //if (log.isDebugEnabled()) log.debug("buildConfig: " + buildConfig);
         if (activeBuildConfig == null) return null;
-      } catch (Exception e) {
+      } catch (final Exception e) {
         return null;
       }
 
@@ -82,7 +82,7 @@ public final class HTMLLogServlet extends AbstractArchiveAccessServlet {
       try {
         logID = Integer.parseInt(stringLogID);
         //if (log.isDebugEnabled()) log.debug("logID: " + logID);
-      } catch (NumberFormatException e) {
+      } catch (final NumberFormatException e) {
         return null;
       }
       // validate log ID and get log
@@ -91,7 +91,7 @@ public final class HTMLLogServlet extends AbstractArchiveAccessServlet {
         stepLog = (StepLog)cm.getObject(StepLog.class, logID);
         //if (log.isDebugEnabled()) log.debug("stepLog: " + stepLog);
         if (stepLog == null) return null;
-      } catch (Exception e) {
+      } catch (final Exception e) {
         return null;
       }
 
@@ -104,7 +104,7 @@ public final class HTMLLogServlet extends AbstractArchiveAccessServlet {
       // return input stream
       return ArchiveManagerFactory.getArchiveManager(activeBuildID)
         .getArchivedLogInputStream(stepLog, requestFileName);
-    } catch (Exception e) {
+    } catch (final Exception e) {
       if (log.isDebugEnabled()) log.debug("Exception getting input stream", e);
       return null;
     }

@@ -230,7 +230,7 @@ public final class MergeManager {
       final ActiveMergeConfiguration configuration = (ActiveMergeConfiguration)mergeList.get(i);
       try {
         startMergeDaemon(configuration);
-      } catch (Exception e) {
+      } catch (final Exception e) {
         // We catch an exception to let others merges to start.
         notifyErrorWhileStartingMergeDaemon(configuration, e);
       }
@@ -510,7 +510,7 @@ public final class MergeManager {
     });
     try {
       CacheUtils.resetAllCaches();
-    } catch (CacheException e) {
+    } catch (final CacheException e) {
       throw IoUtils.createIOException("Error while resetting caches", e);
     }
   }

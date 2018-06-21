@@ -180,7 +180,7 @@ File: test_mainline_branch/test/sourceline/alwaysvalid/src/readme.txt
           try {
             date = format.parse(stringDate, stringTime);
 //            if (log.isDebugEnabled()) log.debug("dateToParse: " + stringDate + " " + stringTime + ", parsed: " + date);
-          } catch (ParseException e) {
+          } catch (final ParseException e) {
             // process comment leftovers
             if (changeToSave != null) {
               changeToSave.getDescr().append(line);

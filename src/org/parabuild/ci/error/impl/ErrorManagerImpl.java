@@ -70,7 +70,7 @@ public final class ErrorManagerImpl implements ErrorManager, Serializable {
       incrementErrorCounter();
       storeError(error);
       notifyBuildAdmin(error);
-    } catch (Exception e) {
+    } catch (final Exception e) {
       logHard("Error while reporting system error", e);
     }
   }
@@ -100,7 +100,7 @@ public final class ErrorManagerImpl implements ErrorManager, Serializable {
         final String name = file.getName();
         IoUtils.moveFile(file, new File(ConfigurationManager.getSystemClearedErrorsDirectory(), name));
       }
-    } catch (Exception e) {
+    } catch (final Exception e) {
       logHard("Error while clearing active errors", e);
     }
   }
@@ -123,7 +123,7 @@ public final class ErrorManagerImpl implements ErrorManager, Serializable {
       IoUtils.moveFile(errorFile, new File(ConfigurationManager.getSystemClearedErrorsDirectory(), errorFileName));
       // descrease counter
       if (errorCounter > 0) errorCounter--;
-    } catch (IOException e) {
+    } catch (final IOException e) {
       // we ignore it as we can not do anything about it
       LOG.error("Error while clearing error", e);
     }
@@ -193,7 +193,7 @@ public final class ErrorManagerImpl implements ErrorManager, Serializable {
     final Error error = new Error();
     try {
       error.load(new File(ConfigurationManager.getSystemNewErrorsDirectory(), errorID + ERROR_FILE_EXTENSION));
-    } catch (IOException e) {
+    } catch (final IOException e) {
       LOG.error("Error while getting error object", e);
     }
     return error;
@@ -249,7 +249,7 @@ public final class ErrorManagerImpl implements ErrorManager, Serializable {
       } else {
         LOG.error(description, th);
       }
-    } catch (Exception e) {
+    } catch (final Exception e) {
       // ignore any error, last resort
       IoUtils.ignoreExpectedException(e);
     }
@@ -266,7 +266,7 @@ public final class ErrorManagerImpl implements ErrorManager, Serializable {
       final RetentionCache cache = getRetentionCache();
       final Element elem = cache.get(error.getRetentionKey());
       result = elem != null;
-    } catch (CacheException e) {
+    } catch (final CacheException e) {
       logHard("Error while checking error retention, will return false", e);
       result = false;
     }
@@ -282,7 +282,7 @@ public final class ErrorManagerImpl implements ErrorManager, Serializable {
     try {
       final RetentionCache cache = getRetentionCache();
       cache.put(new Element(retentionCode, retentionCode));
-    } catch (CacheException e) {
+    } catch (final CacheException e) {
       logHard("Error while marking error as reported", e);
     }
   }
@@ -310,7 +310,7 @@ public final class ErrorManagerImpl implements ErrorManager, Serializable {
       if (!notificationEnabled || !error.isSendEmail()) return; // don't send if not required
       final NotificationManager nm = NotificationManagerFactory.makeNotificationManager();
       nm.notifyBuildAdministrator(error);
-    } catch (Exception e) {
+    } catch (final Exception e) {
       // last resort
       LOG.error("Error while sending notification to the build administrator", e);
     }
@@ -323,7 +323,7 @@ public final class ErrorManagerImpl implements ErrorManager, Serializable {
   private String getBuildNameHard(final int ID) {
     try {
       return ConfigurationManager.getInstance().getBuildConfiguration(ID).getBuildName();
-    } catch (Exception e) {
+    } catch (final Exception e) {
       if (ID != BuildConfig.UNSAVED_ID) return "Build ID is " + ID;
       // we don' care
       return "";

@@ -78,7 +78,7 @@ public final class VaultOutputParser {
 
       // return result
       return parsed;
-    } catch (SAXException e) {
+    } catch (final SAXException e) {
       throw IoUtils.createIOException(e);
     }
   }

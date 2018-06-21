@@ -65,7 +65,7 @@ public final class ProcessUtils {
   public static int getPID(final String value) {
     try {
       return Integer.parseInt(value);
-    } catch (NumberFormatException ex) {
+    } catch (final NumberFormatException ex) {
       return -1;
     }
   }
@@ -97,9 +97,9 @@ public final class ProcessUtils {
     final ByteArrayOutputStream baos = new ByteArrayOutputStream();
     try {
       agentEnironment.execute(null, cmd, env, baos, new NullOutputStream());
-    } catch (RuntimeException ex) {
+    } catch (final RuntimeException ex) {
       throw ex;
-    } catch (Exception ex) {
+    } catch (final Exception ex) {
       final BuildException buildException = new BuildException("Failed to launch: " + cmd + ": " + ex.getMessage());
       buildException.setHostName(agentEnironment.getHost());
       throw buildException;

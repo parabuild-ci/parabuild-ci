@@ -49,11 +49,11 @@ public final class StatusFeedServlet extends HttpServlet {
       res.setContentType(MIME_TYPE);
       final SyndFeedOutput output = new SyndFeedOutput();
       output.output(feed, res.getWriter());
-    } catch (FeedException e) {
+    } catch (final FeedException e) {
       res.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, StringUtils.toString(e));
-    } catch (AccessForbiddenException e) {
+    } catch (final AccessForbiddenException e) {
       res.sendError(HttpServletResponse.SC_FORBIDDEN, StringUtils.toString(e));
-    } catch (FeedNotFoundException e) {
+    } catch (final FeedNotFoundException e) {
       res.sendError(HttpServletResponse.SC_NOT_FOUND, StringUtils.toString(e));
     }
   }

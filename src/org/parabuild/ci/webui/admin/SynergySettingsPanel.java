@@ -149,9 +149,9 @@ public final class SynergySettingsPanel extends AbstractSourceControlPanel {
       try {
         WebuiUtils.validateCommandExists(super.getAgentEnv(), flPathToExe.getValue(), errors,
                 "Path to stcmd executable is invalid, or stcmd executable is not accessible");
-      } catch (NoLiveAgentsException ignore) {
+      } catch (final NoLiveAgentsException ignore) {
         IoUtils.ignoreExpectedException(ignore);
-      } catch (IOException e) {
+      } catch (final IOException e) {
         errors.add("Error while checking path for stcmd client: " + StringUtils.toString(e));
       }
 
@@ -159,7 +159,7 @@ public final class SynergySettingsPanel extends AbstractSourceControlPanel {
       final DepotPathParser parser = new DepotPathParser("Project path", false);
       try {
         parser.validate(flProject.getValue());
-      } catch (ValidationException e) {
+      } catch (final ValidationException e) {
         errors.add(StringUtils.toString(e));
       }
     }

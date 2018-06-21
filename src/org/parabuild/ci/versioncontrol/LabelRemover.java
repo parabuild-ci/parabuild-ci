@@ -119,11 +119,11 @@ public final class LabelRemover {
           }
         });
       }
-    } catch (BuildException e) {
+    } catch (final BuildException e) {
       final Error error = new Error(activeBuildID, "", Error.ERROR_SUSBSYSTEM_SCM, e);
       error.setSendEmail(false);
       ErrorManagerFactory.getErrorManager().reportSystemError(error);
-    } catch (CommandStoppedException e) {
+    } catch (final CommandStoppedException e) {
       IoUtils.ignoreExpectedException(e);
     }
 

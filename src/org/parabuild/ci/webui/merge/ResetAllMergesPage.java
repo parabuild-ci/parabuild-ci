@@ -144,7 +144,7 @@ public final class ResetAllMergesPage extends BasePage implements Conversational
         // reset
         try {
           mm.resetMerge(state.getActiveMergeConfigurationID());
-        } catch (Exception e) {
+        } catch (final Exception e) {
           final BoldCommonLabel boldCommonLabel = new BoldCommonLabel("Error while deleting: " + StringUtils.toString(e));
           boldCommonLabel.setForeground(Color.Red);
           baseContentPanel().getUserPanel().add(boldCommonLabel);

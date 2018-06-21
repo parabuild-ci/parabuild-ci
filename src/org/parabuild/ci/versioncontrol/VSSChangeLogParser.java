@@ -267,7 +267,7 @@ final class VSSChangeLogParser {
           change.setFilePath(filePath + STR_SLASH + fileName);
           change.setRevision(version);
           accumulator.add(modified, comment, user, projectBranch, change);
-        } catch (Exception e) {
+        } catch (final Exception e) {
           reportUnexpectedItemProcessingError(changeLines, e);
         }
       } else {

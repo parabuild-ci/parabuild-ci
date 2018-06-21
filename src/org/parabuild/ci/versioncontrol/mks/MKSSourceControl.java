@@ -115,7 +115,7 @@ public class MKSSourceControl extends AbstractSourceControl {
           cleanup(command); // cleanup this cycle
         }
       }
-    } catch (IOException e) {
+    } catch (final IOException e) {
       processException(e);
       throw new BuildException("Error while retrieving list of changes: " + StringUtils.toString(e), e, getAgentHost());
     }
@@ -166,7 +166,7 @@ public class MKSSourceControl extends AbstractSourceControl {
         }
       }
       this.lastSyncDate = changeList.getCreatedAt();
-    } catch (IOException e) {
+    } catch (final IOException e) {
       processException(e);
       throw new BuildException("Error while retrieving list of changes: " + StringUtils.toString(e), e, getAgentHost());
     }
@@ -191,7 +191,7 @@ public class MKSSourceControl extends AbstractSourceControl {
             command = new MKSDropsandboxCommand(agent, dropSandboxParameters);
             command.execute();
             cleanup(command);
-          } catch (IOException e) {
+          } catch (final IOException e) {
             LOG.warn("Error while dropping sandbox", e);
           }
 
@@ -321,7 +321,7 @@ public class MKSSourceControl extends AbstractSourceControl {
       // store changes
       if (LOG.isDebugEnabled()) LOG.debug("end getChangesSince");
       return configManager.saveBuildChangeLists(activeBuildID, result);
-    } catch (IOException e) {
+    } catch (final IOException e) {
       processException(e);
       throw new BuildException("Error while retrieving list of changes: " + StringUtils.toString(e), e, getAgentHost());
     }
@@ -373,7 +373,7 @@ public class MKSSourceControl extends AbstractSourceControl {
         }
       }
       if (LOG.isDebugEnabled()) LOG.debug("end label: " + label);
-    } catch (IOException e) {
+    } catch (final IOException e) {
       processException(e);
       throw new BuildException("Error while labeling the build: " + StringUtils.toString(e), e, getAgentHost());
     }
@@ -477,7 +477,7 @@ public class MKSSourceControl extends AbstractSourceControl {
         }
       }
       if (LOG.isDebugEnabled()) LOG.debug("end label: " + label);
-    } catch (IOException e) {
+    } catch (final IOException e) {
       processException(e);
       throw new BuildException("Error while labeling the build: " + StringUtils.toString(e), e, getAgentHost());
     }
@@ -520,7 +520,7 @@ public class MKSSourceControl extends AbstractSourceControl {
       final DateFormat dateFormat = MKSCoCommand.createCoDateFormat(getSettingValue(SourceControlSetting.MKS_CO_DATE_FORMAT), agent);
       result.append("si co -r ").append(StringUtils.putIntoDoubleQuotes("time:" + changeList.getCreatedAt(dateFormat)));
       return result.toString();
-    } catch (IOException e) {
+    } catch (final IOException e) {
       if (LOG.isDebugEnabled()) LOG.debug("Error while generating sync command note", e);
       return "No information";
     }

@@ -45,7 +45,7 @@ final class UpgraderToVersion29 implements SingleStepSchemaUpgrader {
       try {
         PersistanceUtils.executeDDLs(st, update);
         conn.commit();
-      } catch (SQLException e) {
+      } catch (final SQLException e) {
         log.warn("Ignoring exception: " + StringUtils.toString(e), e);
       }
       conn.commit();

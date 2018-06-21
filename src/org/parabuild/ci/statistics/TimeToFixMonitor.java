@@ -53,7 +53,7 @@ public class TimeToFixMonitor implements BuildFinishedSubscriber {
     // load previous moving average window
     final StatisticsManager sm = StatisticsManagerFactory.getStatisticsManager(activeBuildID);
     final SortedMap movingAverages = sm.getRecentTimeToFixMovingAverage(movingAverager.getWindowSize());
-    for (Iterator i = movingAverages.values().iterator(); i.hasNext();) {
+    for (final Iterator i = movingAverages.values().iterator(); i.hasNext();) {
       movingAverager.add(((Integer) i.next()).intValue());
     }
 

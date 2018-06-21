@@ -149,7 +149,7 @@ public final class EditDisplayGroupPanel extends MessagePanel implements Validat
 
       // return
       return pnlDisplayGroupBuilds.save();
-    } catch (Exception e) {
+    } catch (final Exception e) {
       // show error
       final String description = "Error while saving display group information: " + StringUtils.toString(e);
       showErrorMessage(description + ". Please cancel editing and try again.");

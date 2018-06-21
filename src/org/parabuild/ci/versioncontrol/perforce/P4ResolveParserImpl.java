@@ -140,11 +140,11 @@ public class P4ResolveParserImpl implements P4ResolveParser {
 
         lineToParse = P4ParserHelper.readLineAndValidate(br);
       }
-    } catch (RuntimeException e) {
+    } catch (final RuntimeException e) {
       throw e;
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw e;
-    } catch (Exception e) {
+    } catch (final Exception e) {
       throw IoUtils.createIOException(e);
     } finally {
       IoUtils.closeHard(br);

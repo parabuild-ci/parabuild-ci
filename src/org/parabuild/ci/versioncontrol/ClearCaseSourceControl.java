@@ -177,7 +177,7 @@ final class ClearCaseSourceControl extends AbstractSourceControl {
       if (log.isDebugEnabled()) {
         log.debug("end checkoutLatest");
       }
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException("Error while checking out: " + StringUtils.toString(e), e, getAgentHost());
     } finally {
       cleanup(command); // cleanup this cycle
@@ -209,7 +209,7 @@ final class ClearCaseSourceControl extends AbstractSourceControl {
       command.cleanup();
       // remove dir
       return super.cleanupLocalCopy();
-    } catch (Exception e) {
+    } catch (final Exception e) {
       throw IoUtils.createIOException(e);
     } finally {
       cleanup(command);
@@ -284,7 +284,7 @@ final class ClearCaseSourceControl extends AbstractSourceControl {
       if (log.isDebugEnabled()) {
         log.debug("end createOrUpdateView");
       }
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException("Error while creating or updating view: " + StringUtils.toString(e), e, getAgentHost());
     } finally {
       cleanup(command); // cleanup this cycle
@@ -350,7 +350,7 @@ final class ClearCaseSourceControl extends AbstractSourceControl {
       if (log.isDebugEnabled()) {
         log.debug("end syncToChangeList");
       }
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException("Error while checking out: " + StringUtils.toString(e), e, getAgentHost());
     }
   }
@@ -441,7 +441,7 @@ final class ClearCaseSourceControl extends AbstractSourceControl {
         if (timeToWait > 0) {
           try {
             Thread.sleep(timeToWait);
-          } catch (InterruptedException e) {
+          } catch (final InterruptedException e) {
             throw new CommandStoppedException();
           }
         }
@@ -470,10 +470,10 @@ final class ClearCaseSourceControl extends AbstractSourceControl {
       }
       Collections.sort(result, ChangeList.REVERSE_CHANGE_DATE_COMPARATOR);
       return configManager.saveBuildChangeLists(activeBuildID, result);
-    } catch (IOException e) {
+    } catch (final IOException e) {
       processException(e);
       throw new BuildException("Error while retrieving list of changes: " + StringUtils.toString(e), e, getAgentHost());
-    } catch (ParseException e) {
+    } catch (final ParseException e) {
       throw new BuildException("Error while retrieving list of changes: " + StringUtils.toString(e), e, getAgentHost());
     } finally {
       if (log.isDebugEnabled()) {
@@ -579,7 +579,7 @@ final class ClearCaseSourceControl extends AbstractSourceControl {
           cleanup(command);
         }
       }
-    } catch (IOException e) {
+    } catch (final IOException e) {
       processException(e);
       throw new BuildException("Error while labeling the build: " + StringUtils.toString(e), e, getAgentHost());
     } finally {

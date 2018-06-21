@@ -110,7 +110,7 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
         }
       }
       if (log.isDebugEnabled()) log.debug("end sync to latest");
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException("Error while checking out: " + StringUtils.toString(e), e, getAgentHost());
     }
   }
@@ -174,7 +174,7 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
         }
       }
       if (log.isDebugEnabled()) log.debug("end sync to change list");
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException("Error while checking out: " + StringUtils.toString(e), e, getAgentHost());
     }
   }
@@ -260,7 +260,7 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
         if (timeToWait > 0) {
           try {
             Thread.sleep(timeToWait);
-          } catch (InterruptedException e) {
+          } catch (final InterruptedException e) {
             throw new CommandStoppedException();
           }
         }
@@ -285,7 +285,7 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
       // store changes
       if (log.isDebugEnabled()) log.debug("end get changes since");
       return configManager.saveBuildChangeLists(activeBuildID, result);
-    } catch (IOException e) {
+    } catch (final IOException e) {
       processException(e);
       throw new BuildException("Error while retrieving list of changes: " + StringUtils.toString(e), e, getAgentHost());
     }
@@ -414,7 +414,7 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
       }
 
       if (log.isDebugEnabled()) log.debug("end label: " + label);
-    } catch (IOException e) {
+    } catch (final IOException e) {
       processException(e);
       throw new BuildException("Error while labeling the build: " + StringUtils.toString(e), e, getAgentHost());
     }
@@ -477,7 +477,7 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
         result.append("-r").append(STR_SPACE).append(branchName);
       }
       return result.toString();
-    } catch (IOException e) {
+    } catch (final IOException e) {
       return "Infomation is not available: " + StringUtils.toString(e);
     }
   }
@@ -668,7 +668,7 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
         }
         line = reader.readLine();
       }
-    } catch (IOException e) {
+    } catch (final IOException e) {
       processException(e);
     } finally {
       IoUtils.closeHard(reader);

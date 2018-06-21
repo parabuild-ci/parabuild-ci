@@ -136,7 +136,7 @@ public final class UnitTestPpLogHandler extends AbstractLogHandler {
         // validate it is UnitTestPp - should have testsuites as root
         if ("testsuites".equals(root.getName())) {
           // go over tests and add to result
-          for (Iterator j = root.elementIterator(); j.hasNext();) {
+          for (final Iterator j = root.elementIterator(); j.hasNext();) {
             final Element element = (Element) j.next();
             resultRoot.add(element.createCopy());
           }
@@ -187,10 +187,10 @@ public final class UnitTestPpLogHandler extends AbstractLogHandler {
       if (log.isDebugEnabled()) {
         log.debug("PHPUH: saved stepLog: " + stepLog);
       }
-    } catch (Exception e) {
+    } catch (final Exception e) {
       throw IoUtils.createIOException(StringUtils.toString(e), e);
       // TODELETE: debug
-    } catch (OutOfMemoryError e) {
+    } catch (final OutOfMemoryError e) {
       throw IoUtils.createIOException(StringUtils.toString(e), e);
     } finally {
       IoUtils.deleteFilesHard(tempFiles);

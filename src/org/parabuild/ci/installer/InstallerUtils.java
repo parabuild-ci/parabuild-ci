@@ -56,7 +56,7 @@ final class InstallerUtils {
    * @param con
    * @throws SQLException
    */
-  static void shutdownDatabase(Connection con) throws SQLException {
+  static void shutdownDatabase(final Connection con) throws SQLException {
     Statement statement = null;
     try {
       statement = con.createStatement();

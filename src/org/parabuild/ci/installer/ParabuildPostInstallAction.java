@@ -39,7 +39,7 @@ public final class ParabuildPostInstallAction extends AbstractInstallAction {
     try {
       uninstallEndorsedJars(ctx);
       createUnixDaemon(ctx);
-    } catch (UserCanceledException e) {
+    } catch (final UserCanceledException e) {
       ctx.getProgressInterface().showFailure(StringUtils.toString(e));
       log.warn("Exaception while performing unattened action", e);
       throw e;
@@ -55,7 +55,7 @@ public final class ParabuildPostInstallAction extends AbstractInstallAction {
     try {
       final UnixDaemonCreator creator = UnixDaemonCreatorFactory.getCreator();
       creator.createDaemon(installerContext);
-    } catch (IOException e) {
+    } catch (final IOException e) {
       final UserCanceledException uce = new UserCanceledException(StringUtils.toString(e));
       uce.initCause(e);
       throw uce;

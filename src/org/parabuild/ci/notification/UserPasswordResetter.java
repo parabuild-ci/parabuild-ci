@@ -52,7 +52,7 @@ public final class UserPasswordResetter {
       // send notification
       final NotificationManager nm = NotificationManagerFactory.makeNotificationManager();
       nm.sendUserPassword(userName, newPassword);
-    } catch (NoSuchAlgorithmException e) {
+    } catch (final NoSuchAlgorithmException e) {
       throw new FatalConfigurationException(e);
     }
   }

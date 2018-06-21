@@ -179,7 +179,7 @@ public final class StringUtils implements CommonConstants {
     try {
       Integer.parseInt(s);
       return true;
-    } catch (Exception e) {
+    } catch (final Exception e) {
       return false;
     }
   }
@@ -208,7 +208,7 @@ public final class StringUtils implements CommonConstants {
         try {
           baos.flush();
           baos.close();
-        } catch (IOException ignore) {
+        } catch (final IOException ignore) {
           ignoreException(ignore);
         }
       }
@@ -492,7 +492,7 @@ public final class StringUtils implements CommonConstants {
         pw.println(line);
         line = br.readLine();
       }
-    } catch (Exception e) {
+    } catch (final Exception e) {
       ignoreException(e);
     } finally {
       IoUtils.closeHard(pw);

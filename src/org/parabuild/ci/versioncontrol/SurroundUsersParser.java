@@ -73,7 +73,7 @@ final class SurroundUsersParser {
       if (result.isEmpty()) {
         reportWarning("For unknown reason, Surround user list was empty", null);
       }
-    } catch (Exception e) {
+    } catch (final Exception e) {
       reportWarning("Error while getting Surround users.", e);
     } finally {
       IoUtils.closeHard(br);

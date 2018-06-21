@@ -112,7 +112,7 @@ public final class RemoteCommandManager {
           final List pids = ProcessUtils.processListToPIDList(pm.getProcesses(ProcessManager.SORT_BY_PID, sigs, true));
           pm.setDeep(false);
           pm.killProcesses(pids);
-        } catch (Exception e) {
+        } catch (final Exception e) {
           IoUtils.ignoreExpectedException(e); // we want to process as many commands as possible
         }
       }

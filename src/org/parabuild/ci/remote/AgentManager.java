@@ -206,7 +206,7 @@ public final class AgentManager {
 
           final SecureRandom random = SecureRandom.getInstance("SHA1PRNG");
           randomIndex = random.nextInt() % liveHostsSize;
-        } catch (NoSuchAlgorithmException e) {
+        } catch (final NoSuchAlgorithmException e) {
 
           final Random random = new Random(System.currentTimeMillis());
           randomIndex = random.nextInt() % liveHostsSize;
@@ -639,7 +639,7 @@ public final class AgentManager {
       // handle when the template is set
       final SourceControlSettingResolver sourceControlSettingResolver = new SourceControlSettingResolver(buildName, buildID, agentHostName);
       return sourceControlSettingResolver.resolve(customCheckoutDirTemplate);
-    } catch (ValidationException e) {
+    } catch (final ValidationException e) {
 
       final IllegalStateException ise = new IllegalStateException(StringUtils.toString(e));
       ise.initCause(e);
@@ -709,7 +709,7 @@ public final class AgentManager {
             final String agentHostName = agentHost.getHost();
             upgrade(agentHostName, buildManagerVersion, remoteAgentVersion);
           }
-        } catch (Exception e) {
+        } catch (final Exception e) {
 
           reportError(e, agentHost);
         }
@@ -768,10 +768,10 @@ public final class AgentManager {
 
             result.add(builderAgentVO);
           }
-        } catch (IOException e) {
+        } catch (final IOException e) {
 
           // Ignore - won't add
-        } catch (AgentFailureException e) {
+        } catch (final AgentFailureException e) {
 
           // Ignore - won't add
         }
@@ -846,7 +846,7 @@ public final class AgentManager {
           upgradeAgent(host, buildManagerVersion, remoteAgentVersion);
         }
       });
-    } catch (InterruptedException e) {
+    } catch (final InterruptedException e) {
       Thread.currentThread().interrupt();
     }
   }
@@ -905,7 +905,7 @@ public final class AgentManager {
           lastError = null;
           break;
 
-        } catch (IOException e) {
+        } catch (final IOException e) {
           if (e.toString().indexOf("Cannot remove document base for path") < 0) {
             throw e;
           } else {
@@ -925,7 +925,7 @@ public final class AgentManager {
         LOG.debug("Finished deploying application: " + war);
       }
       reportFinishedUpgrading(host, buildManagerVersion, remoteAgentVersion);
-    } catch (Exception e) {
+    } catch (final Exception e) {
 
       // Report failure
       reportUpgradeFailed(host, buildManagerVersion, remoteAgentVersion, e);

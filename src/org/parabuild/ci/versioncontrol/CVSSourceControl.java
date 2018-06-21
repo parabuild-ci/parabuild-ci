@@ -112,7 +112,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
       if (LOG.isDebugEnabled()) {
         LOG.debug("end checkout latest");
       }
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException("Error while checking out: " + StringUtils.toString(e), e, getAgentHost());
     } finally {
       if (LOG.isDebugEnabled()) {
@@ -171,7 +171,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
       if (LOG.isDebugEnabled()) {
         LOG.debug("end syncToChangeList");
       }
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException("Error while checking out: " + StringUtils.toString(e), e, getAgentHost());
     } finally {
       if (LOG.isDebugEnabled()) {
@@ -217,7 +217,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
       if (LOG.isDebugEnabled()) {
         LOG.debug("end syncToLatest");
       }
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException("Error while checking out: " + StringUtils.toString(e), e, getAgentHost());
     } finally {
       if (LOG.isDebugEnabled()) {
@@ -264,7 +264,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
         }
         return true;
       }
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException("Error while looking for changes: " + StringUtils.toString(e), e, getAgentHost());
     } finally {
       IoUtils.closeHard(br);
@@ -403,7 +403,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
         if (timeToWait > 0) {
           try {
             Thread.sleep(timeToWait);
-          } catch (InterruptedException e) {
+          } catch (final InterruptedException e) {
             throw new CommandStoppedException();
           }
         }
@@ -430,7 +430,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
         LOG.debug("end getChangesSince");
       }
       return configManager.saveBuildChangeLists(activeBuildID, result);
-    } catch (IOException e) {
+    } catch (final IOException e) {
       processException(e);
       throw new BuildException("Error while retrieving list of changes: " + StringUtils.toString(e), e, getAgentHost());
     } finally {
@@ -555,7 +555,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
       if (LOG.isDebugEnabled()) {
         LOG.debug("end label: " + label);
       }
-    } catch (IOException e) {
+    } catch (final IOException e) {
       processException(e);
       throw new BuildException("Error while labeling the build: " + StringUtils.toString(e), e, getAgentHost());
     }
@@ -604,9 +604,9 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
       usersParser.setUsersFile(fileToParse);
       usersParser.setBuildID(buildID);
       return usersParser.parse();
-    } catch (CommandStoppedException e) {
+    } catch (final CommandStoppedException e) {
       throw e;
-    } catch (Exception e) {
+    } catch (final Exception e) {
       final Error err;
       if (e.getMessage().indexOf("cvs server: cannot find module") >= 0 && e.getMessage().indexOf("CVSROOT/users") >= 0) {
         // Missing CVS/modules
@@ -667,7 +667,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
         variableMap.put("PARABUILD_CVS_BRANCH", cvsBranch);
       }
       return variableMap;
-    } catch (BuildException e) {
+    } catch (final BuildException e) {
       throw IoUtils.createIOException(e);
     }
   }

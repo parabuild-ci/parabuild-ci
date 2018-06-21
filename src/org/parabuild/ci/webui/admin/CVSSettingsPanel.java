@@ -191,9 +191,9 @@ public final class CVSSettingsPanel extends AbstractSourceControlPanel {
       try {
         WebuiUtils.validateCommandExists(super.getAgentEnv(), fldPathToCVSClient.getValue(), errors,
                 "Path to CVS client is invalid, or CVS client is not accessible");
-      } catch (NoLiveAgentsException ignore) {
+      } catch (final NoLiveAgentsException ignore) {
         IoUtils.ignoreExpectedException(ignore);
-      } catch (IOException e) {
+      } catch (final IOException e) {
         errors.add("Error while checking path for CVS client: " + StringUtils.toString(e));
       }
     }
@@ -205,7 +205,7 @@ public final class CVSSettingsPanel extends AbstractSourceControlPanel {
 
     try {
       Integer.parseInt(fldChangeWindow.getValue());
-    } catch (NumberFormatException e) {
+    } catch (final NumberFormatException e) {
       errors.add("Change window should be an integer. ");
     }
 
@@ -249,7 +249,7 @@ public final class CVSSettingsPanel extends AbstractSourceControlPanel {
         if (be.isUnix() && be.commandIsAvailable(DEFAULT_UNIX_CVS_COMMAND)) {
           fldPathToCVSClient.setValue(DEFAULT_UNIX_CVS_COMMAND);
         }
-      } catch (Exception e) {
+      } catch (final Exception e) {
         IoUtils.ignoreExpectedException(e);
       }
     }

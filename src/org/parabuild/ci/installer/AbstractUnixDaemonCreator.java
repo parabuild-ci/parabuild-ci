@@ -77,7 +77,7 @@ public abstract class AbstractUnixDaemonCreator implements UnixDaemonCreator {
         final OutputStream stderr = new NullOutputStream();
         RuntimeUtils.execute(null, groupAddCommand() + ' ' + InstallerConstants.PARABUILD_GROUP, null, stdout, stderr);
       }
-    } catch (CommandStoppedException e) {
+    } catch (final CommandStoppedException e) {
       throw IoUtils.createIOException("Command was stopped", e);
     }
   }
@@ -91,7 +91,7 @@ public abstract class AbstractUnixDaemonCreator implements UnixDaemonCreator {
         final OutputStream stderr = new NullOutputStream();
         RuntimeUtils.execute(null, userAddCommand() + " -p * -m -g " + InstallerConstants.PARABUILD_GROUP + ' ' + InstallerConstants.PARABUILD_USER, null, stdout, stderr);
       }
-    } catch (CommandStoppedException e) {
+    } catch (final CommandStoppedException e) {
       throw IoUtils.createIOException("Command was stopped", e);
     }
   }
@@ -190,7 +190,7 @@ public abstract class AbstractUnixDaemonCreator implements UnixDaemonCreator {
           RuntimeUtils.execute(directoryToExecuteIn, "ln -f -s " + getRelativePathToDaemonScript() + " K10parabuild", null, stdout, stderr);
         }
       }
-    } catch (CommandStoppedException e) {
+    } catch (final CommandStoppedException e) {
       throw IoUtils.createIOException("Command was stopped", e);
     }
   }

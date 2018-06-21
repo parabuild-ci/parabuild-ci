@@ -106,9 +106,9 @@ public final class P4Merger implements Merger {
     for (final Iterator i = mergeIDs.iterator(); i.hasNext();) {
       try {
         mergeQueue(((Number) i.next()).intValue());
-      } catch (CommandStoppedException e) {
+      } catch (final CommandStoppedException e) {
         throw e;
-      } catch (Exception e) {
+      } catch (final Exception e) {
         reportErrorWhileProcessingMergeQueue(e);
       }
     }

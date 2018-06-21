@@ -655,7 +655,7 @@ public final class WebuiUtils {
       if (!agentEnv.commandIsAvailable(commandPath)) {
         errors.add(message);
       }
-    } catch (Exception e) {
+    } catch (final Exception e) {
       IoUtils.ignoreExpectedException(e);
     }
   }
@@ -1038,7 +1038,7 @@ public final class WebuiUtils {
 
     // Copy page params
     final Parameters resultParams = new Parameters();
-    for (Iterator iter = returnPage.getParemeters().getParametersMap().entrySet().iterator(); iter.hasNext(); ) {
+    for (final Iterator iter = returnPage.getParemeters().getParametersMap().entrySet().iterator(); iter.hasNext(); ) {
       final Map.Entry entry = (Map.Entry) iter.next();
       final String[] value = (String[]) entry.getValue();
       for (int i = 0; i < value.length; i++) {
@@ -1047,7 +1047,7 @@ public final class WebuiUtils {
     }
 
     // Copy method params
-    for (Iterator iter = params.getParametersMap().entrySet().iterator(); iter.hasNext(); ) {
+    for (final Iterator iter = params.getParametersMap().entrySet().iterator(); iter.hasNext(); ) {
       final Map.Entry entry = (Map.Entry) iter.next();
       final String[] value = (String[]) entry.getValue();
       for (int i = 0; i < value.length; i++) {
@@ -1059,12 +1059,12 @@ public final class WebuiUtils {
   }
 
 
-  public static Tierlet.Result createBuildActionReturnResult(TierletContext tierletContext) {
+  public static Tierlet.Result createBuildActionReturnResult(final TierletContext tierletContext) {
     return createBuildActionReturnResult(tierletContext, new Parameters());
   }
 
 
-  public static void validateVariableName(List errors, final Field flName) {
+  public static void validateVariableName(final List errors, final Field flName) {
     final SystemConfigurationManager scm = SystemConfigurationManagerFactory.getManager();
     if (scm.isCustomVariableNameValidation()) {
       final String regex = scm.getCustomVariableNameRegex();

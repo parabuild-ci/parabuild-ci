@@ -65,7 +65,7 @@ public final class CommandLineClient {
     try { // NOPMD
       final CommandLineClient commandLineClient = new CommandLineClient();
       errorCode = commandLineClient.process(args);
-    } catch (Exception e) {
+    } catch (final Exception e) {
       System.err.println("Error: " + StringUtils.toString(e)); // NOPMD
       errorCode = 2;
     }
@@ -209,7 +209,7 @@ public final class CommandLineClient {
     final URL url;
     try {
       url = new URL("http://" + address + "/parabuild/integration/webservice/Parabuild");
-    } catch (MalformedURLException e) {
+    } catch (final MalformedURLException e) {
       throw new ServiceException("Parabuild port and host is invalid: \"" + address + '\"');
     }
     final Parabuild svc = parabuildServiceLocator.getParabuild(url);

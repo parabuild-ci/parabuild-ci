@@ -155,7 +155,7 @@ final class ClearCaseMkviewCommand extends ClearCaseCommand {
       sb.append(" -snapshot ");
       sb.append(isWindows ? StringUtils.putIntoDoubleQuotes(checkoutDirName) : checkoutDirName); // pathame for view
       return sb.toString();
-    } catch (BuildException e) {
+    } catch (final BuildException e) {
       throw IoUtils.createIOException(e);
     }
   }

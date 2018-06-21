@@ -120,7 +120,7 @@ final class ChangeBuildScheduleTypePanel extends MessagePanel {
       // Forward to build statuses page
       return Tierlet.Result.Done(Pages.PUBLIC_BUILDS);
 
-    } catch (ValidationException e) {
+    } catch (final ValidationException e) {
       showErrorMessage(StringUtils.toString(e));
       return Tierlet.Result.Continue();
     }

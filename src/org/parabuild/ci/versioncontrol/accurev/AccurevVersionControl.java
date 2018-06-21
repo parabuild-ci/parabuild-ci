@@ -113,7 +113,7 @@ public final class AccurevVersionControl extends AbstractSourceControl {
       // Execute pop command to pick up missing
       command = new AccurevPopCommand(agent, parameters, snapshotName);
       command.execute();
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException("Error while synching to change list:" + StringUtils.toString(e), e, getAgentHost());
     } finally {
       cleanup(command);
@@ -167,7 +167,7 @@ public final class AccurevVersionControl extends AbstractSourceControl {
         return newChangeListID; // as is
       }
 
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException(e, getAgentHost());
     }
   }
@@ -211,7 +211,7 @@ public final class AccurevVersionControl extends AbstractSourceControl {
 
       // add this path changes to result
       result.addAll(changeLists);
-    } catch (DocumentException e) {
+    } catch (final DocumentException e) {
       throw new BuildException(e, getAgentHost());
     } finally {
       cleanup(command); // cleanup this cycle
@@ -289,7 +289,7 @@ public final class AccurevVersionControl extends AbstractSourceControl {
     try {
       command = new AccurevLoginCommand(getCheckoutDirectoryAwareAgent(), getParameters());
       command.execute();
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException(e, getAgentHost());
     } finally {
       cleanup(command);

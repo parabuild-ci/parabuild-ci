@@ -73,7 +73,7 @@ final class HSQLDBUpgraderFrom17To18 {
         conn.setAutoCommit(true);
         stmt.executeUpdate("SET SCRIPTFORMAT TEXT");
         stmt.executeUpdate("SHUTDOWN SCRIPT");
-      } catch (SQLException e) {
+      } catch (final SQLException e) {
         throw IoUtils.createIOException(e);
       } finally {
         IoUtils.closeHard(stmt);
@@ -109,16 +109,16 @@ final class HSQLDBUpgraderFrom17To18 {
         conn.setAutoCommit(true);
         stmt.executeUpdate("SET SCRIPTFORMAT COMPRESSED");
         stmt.executeUpdate("SHUTDOWN");
-      } catch (SQLException e) {
+      } catch (final SQLException e) {
         throw IoUtils.createIOException(e);
       } finally {
         IoUtils.closeHard(stmt);
         IoUtils.closeHard(conn);
       }
-    } catch (IOException e) {
+    } catch (final IOException e) {
       restore(databaseDirectory);
       throw e;
-    } catch (RuntimeException e) {
+    } catch (final RuntimeException e) {
       restore(databaseDirectory);
       throw e;
     }
@@ -138,7 +138,7 @@ final class HSQLDBUpgraderFrom17To18 {
     // Backup
     try {
       IoUtils.copyDirectory(databaseDirectory, backupDir);
-    } catch (IOException e) {
+    } catch (final IOException e) {
       // Try to delete a partial backup
       IoUtils.deleteFileHard(backupDir);
       // Rethrow an exception

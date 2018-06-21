@@ -59,7 +59,7 @@ abstract class AbstractDistributionUpdater implements PersistentStatsUpdater {
             StatisticsUtils.addStatsToDistribution(runStats, pd);
             try {
               session.save(pd);
-            } catch (Exception e) {
+            } catch (final Exception e) {
               if (log.isDebugEnabled()) log.debug("e: " + e);
               if (log.isDebugEnabled()) log.debug("pd: " + pd);
             }
@@ -70,7 +70,7 @@ abstract class AbstractDistributionUpdater implements PersistentStatsUpdater {
           return null;
         }
       });
-    } catch (Exception e) {
+    } catch (final Exception e) {
       // report error
       final Error error = new Error(StringUtils.toString(e));
       error.setBuildName(buildRun.getBuildName());

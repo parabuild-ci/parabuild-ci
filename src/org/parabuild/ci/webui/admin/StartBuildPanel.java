@@ -136,7 +136,7 @@ public final class StartBuildPanel extends MessagePanel {
           // Return to build statuses
           return WebuiUtils.createBuildActionReturnResult(getTierletContext());
         }
-      } catch (Exception e) {
+      } catch (final Exception e) {
         // Show error
         showErrorMessage("Unxpected error while starting build \"" + buildName + "\": " + StringUtils.toString(e));
         return Tierlet.Result.Continue();
@@ -168,7 +168,7 @@ public final class StartBuildPanel extends MessagePanel {
       try {
         final BuildVersionDuplicateValidator duplicateValidator = new BuildVersionDuplicateValidator();
         duplicateValidator.validate(activeBuildID, pnlStartParameters.getVersionTemplate(), buildName, pnlStartParameters.getVersionCounter());
-      } catch (ValidationException e) {
+      } catch (final ValidationException e) {
         pnlStartParameters.showErrorMessage(StringUtils.toString(e));
         return false;
       }

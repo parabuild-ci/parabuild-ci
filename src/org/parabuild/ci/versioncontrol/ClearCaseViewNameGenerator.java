@@ -70,7 +70,7 @@ public final class ClearCaseViewNameGenerator {
     try {
       // parse
       NamedPropertyUtils.parsePropertyString(nameTemplate, fragments, properties);
-    } catch (Exception e) {
+    } catch (final Exception e) {
       return false;
     }
 

@@ -49,7 +49,7 @@ final class BuildStatusServiceHessianExceptionWrapper implements BuildStatusServ
   public List getBuildStatusList() throws IOException, AgentFailureException {
     try {
       return delegate.getBuildStatusList();
-    } catch (HessianRuntimeException hre) {
+    } catch (final HessianRuntimeException hre) {
       throw RemoteUtils.hessianRuntimeExeptionToIOException(hre, host);
     }
   }

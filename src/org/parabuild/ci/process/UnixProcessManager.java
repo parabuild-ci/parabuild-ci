@@ -57,7 +57,7 @@ public final class UnixProcessManager implements ProcessManager {
       } else {
         parser = new LinuxProcessParser(agentEnvironment);
       }
-    } catch (AgentFailureException e) {
+    } catch (final AgentFailureException e) {
       throw ExceptionUtils.createIOException(e);
     }
   }

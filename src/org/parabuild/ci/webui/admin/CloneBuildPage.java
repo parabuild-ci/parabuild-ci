@@ -108,7 +108,7 @@ public final class CloneBuildPage extends BasePage implements StatelessTierlet {
       olOptions.add(new CommonLink(CAPTION_BUILD_LIST, Pages.ADMIN_BUILDS));
       userPanel.add(olOptions);
       return Result.Done();
-    } catch (Exception e) {
+    } catch (final Exception e) {
       // Show error
       LOG.warn("Error while cloning the build", e);
       final Error error = new Error(buildToClone.getActiveBuildID(), StringUtils.toString(e), Error.ERROR_LEVEL_ERROR);

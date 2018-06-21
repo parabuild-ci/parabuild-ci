@@ -174,7 +174,7 @@ public final class TokenizingChangeLogParser {
         Date createdAt = null;
         try {
           createdAt = outDateFormat.parse(createdAtString);
-        } catch (ParseException e) {
+        } catch (final ParseException e) {
           if (log.isDebugEnabled()) log.debug("Error parsing change log date", e);
           continue;
         }

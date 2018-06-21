@@ -48,7 +48,7 @@ public final class ProcessManagerFactory {
         return new UnixProcessManager(agentEnv);
       }
       throw new IllegalStateException("Unknown agent operating system");
-    } catch (AgentFailureException e) {
+    } catch (final AgentFailureException e) {
       throw ExceptionUtils.createIOException(e);
     }
   }

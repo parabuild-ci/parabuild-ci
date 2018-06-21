@@ -62,7 +62,7 @@ public final class ResumeMergePage extends BaseMergePage implements StatelessTie
       super.setTitle(makeTitle(CAPTION_RESUMING_MERGE + " \"" + mergeConfiguration.getName() + '\"'));
       MergeManager.getInstance().resumeMerge(mergeConfiguration.getID());
       return Result.Done(Pages.PAGE_MERGE_LIST);
-    } catch (Exception e) {
+    } catch (final Exception e) {
       // Show error
       super.baseContentPanel().showErrorMessage("Unxpected error while resuming merge \"" + mergeConfiguration.getName() + "\": " + StringUtils.toString(e));
     }

@@ -169,7 +169,7 @@ public final class SolarisProcessParser implements ProcessParser {
         l.add(i_pid);
 
       }
-    } catch (IOException ex) {
+    } catch (final IOException ex) {
       final BuildException buildException = new BuildException("I/O error while reading data", ex);
       buildException.setHostName(agentEnvironment.getHost());
       throw buildException;
@@ -237,7 +237,7 @@ public final class SolarisProcessParser implements ProcessParser {
 
         ret.put(new Integer(pid), command);
       }
-    } catch (IOException ex) {
+    } catch (final IOException ex) {
       final BuildException buildException = new BuildException("I/O error while reading data", ex);
       buildException.setHostName(agentEnvironment.getHost());
       throw buildException;

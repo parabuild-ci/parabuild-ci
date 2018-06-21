@@ -61,7 +61,7 @@ public final class URLResultConfigPanel extends AbstractResultConfigPanel {
     if (valid) {
       try {
         new URLResultGenerator().validateTemplate(flPath.getValue());
-      } catch (ValidationException e) {
+      } catch (final ValidationException e) {
         errors.add("Invalid \"" + CAPTION_URL_TEMPLATE + "\". " + StringUtils.toString(e));
       }
     }

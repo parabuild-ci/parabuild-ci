@@ -406,7 +406,7 @@ public abstract class AbstractFlatTable extends MessagePanel {
    */
   public final void insertRow() {
 
-    int selectedRow = getSelectedRow();
+    final int selectedRow = getSelectedRow();
 
     // process insertion if there was a row selected.
     if (selectedRow < 0) {
@@ -609,9 +609,9 @@ public abstract class AbstractFlatTable extends MessagePanel {
      * Moves a selected row implementors that a row has been moved.
      * @param count number of positions the row moved.
      */
-    public void moveSelectedRow(int count) {
+    public void moveSelectedRow(final int count) {
 
-        int selectedRow = getSelectedRow();
+        final int selectedRow = getSelectedRow();
 
         // process move if there was a row selected.
         if (selectedRow < 0) {
@@ -624,7 +624,7 @@ public abstract class AbstractFlatTable extends MessagePanel {
           return;
         }
 
-        TableRow rowToMove = (TableRow) rows.remove(selectedRow);
+        final TableRow rowToMove = (TableRow) rows.remove(selectedRow);
         rows.add(newPosition, rowToMove);
 
         // notify, overriding method *must* alter it's model.
@@ -643,7 +643,7 @@ public abstract class AbstractFlatTable extends MessagePanel {
      * @param selectedRow the original row index.
      * @param count number of positions the row moved.
      */
-    protected void notifyRowMoved(int selectedRow, int count) {
+    protected void notifyRowMoved(final int selectedRow, final int count) {
 
     }
 

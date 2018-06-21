@@ -99,7 +99,7 @@ final class PVCSSourceControl extends AbstractSourceControl {
         }
       }
       if (log.isDebugEnabled()) log.debug("end checkoutLatest");
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException("Error while checking out: " + StringUtils.toString(e), e, getAgentHost());
     }
   }
@@ -132,7 +132,7 @@ final class PVCSSourceControl extends AbstractSourceControl {
       }
       if (log.isDebugEnabled()) log.debug("end syncToChangeList");
       this.lastSyncDate = (Date) changeListDate.clone();
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException("Error while checking out: " + StringUtils.toString(e), e, getAgentHost());
     }
   }
@@ -257,7 +257,7 @@ final class PVCSSourceControl extends AbstractSourceControl {
       // store changes
       if (log.isDebugEnabled()) log.debug("end getChangesSince");
       return configManager.saveBuildChangeLists(activeBuildID, result);
-    } catch (IOException e) {
+    } catch (final IOException e) {
       processException(e);
       throw new BuildException("Error while retrieving list of changes: " + StringUtils.toString(e), e, getAgentHost());
     }
@@ -320,7 +320,7 @@ final class PVCSSourceControl extends AbstractSourceControl {
       }
       if (log.isDebugEnabled()) log.debug("end label");
       this.lastSyncDate = (Date) labelDate.clone();
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException("Error while labeling: " + StringUtils.toString(e), e, getAgentHost());
     }
   }
@@ -399,7 +399,7 @@ final class PVCSSourceControl extends AbstractSourceControl {
       final ChangeList changeList = configManager.getChangeList(changeListID);
       final Agent agent = getCheckoutDirectoryAwareAgent();
       return "pcli" + PVCSGetCommand.getRunArguments(agent, makeGetParameters(rp.getPath(), changeList.getCreatedAt()), "", true);
-    } catch (Exception e) {
+    } catch (final Exception e) {
       if (log.isDebugEnabled()) log.debug("Error while creating a sync note", e);
       return super.getSyncCommandNote(changeListID);
     }
@@ -416,7 +416,7 @@ final class PVCSSourceControl extends AbstractSourceControl {
   private List getProjects() throws BuildException {
     try {
       return new PVCSProjectListParser().parseProjects(getSettingValue(SourceControlSetting.PVCS_PROJECT));
-    } catch (ValidationException e) {
+    } catch (final ValidationException e) {
       throw new BuildException(e, getAgentHost());
     }
   }

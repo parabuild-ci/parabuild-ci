@@ -42,7 +42,7 @@ final class UpgraderToVersion12 implements SingleStepSchemaUpgrader {
       st = conn.createStatement();
       try {
         PersistanceUtils.executeDDLs(st, ddls);
-      } catch (SQLException e) {
+      } catch (final SQLException e) {
         // NOTE: vimeshev - have to ignore because it looks like
         // some of the already released versions didn't drop
         // BUILD_CONFIG_FC1

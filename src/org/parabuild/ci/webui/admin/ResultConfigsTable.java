@@ -310,7 +310,7 @@ public final class ResultConfigsTable extends AbstractFlatTable implements Loada
       // do nothing, issue tracker doesn't have insert row command
     }
 
-    public void setMoveRowCommandsVisible(boolean visible) {
+    public void setMoveRowCommandsVisible(final boolean visible) {
       // do nothing, result configs doesn't have insert command
     }
   }

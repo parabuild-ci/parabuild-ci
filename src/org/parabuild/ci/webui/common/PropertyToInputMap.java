@@ -80,7 +80,7 @@ public final class PropertyToInputMap implements Serializable {
         if (StringUtils.isValidInteger(value)) {
           try {
             codeNameDropDown.setCode(Integer.parseInt(value));
-          } catch (IllegalArgumentException e) { // in case this is something we did not expect
+          } catch (final IllegalArgumentException e) { // in case this is something we did not expect
             IoUtils.ignoreExpectedException(e);
           }
         } else {

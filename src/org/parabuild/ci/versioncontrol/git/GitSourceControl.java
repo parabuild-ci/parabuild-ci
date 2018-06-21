@@ -122,7 +122,7 @@ warning: LF will be replaced by CRLF in sourceline/alwaysvalid/src/symlinked_rea
       if (LOG.isDebugEnabled()) {
         LOG.debug("end checkoutLatest");
       }
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException("Error while checking out: " + StringUtils.toString(e), e, agent);
     }
   }
@@ -164,7 +164,7 @@ warning: LF will be replaced by CRLF in sourceline/alwaysvalid/src/symlinked_rea
       if (LOG.isDebugEnabled()) {
         LOG.debug("end syncToChangeList");
       }
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException("Error while checking out: " + StringUtils.toString(e), e, agent);
     }
   }
@@ -231,12 +231,12 @@ warning: LF will be replaced by CRLF in sourceline/alwaysvalid/src/symlinked_rea
       } else {
         return newChangeListID; // as os
       }
-    } catch (IOException e) {
+    } catch (final IOException e) {
       Agent agent = null;
       //noinspection EmptyCatchBlock
       try {
         agent = getCheckoutDirectoryAwareAgent();
-      } catch (Exception ex) {
+      } catch (final Exception ex) {
       }
       throw new BuildException("Error while checking out: " + StringUtils.toString(e), e, agent);
     }
@@ -305,7 +305,7 @@ warning: LF will be replaced by CRLF in sourceline/alwaysvalid/src/symlinked_rea
       }
       try {
         Thread.sleep(1000L);
-      } catch (InterruptedException e) {
+      } catch (final InterruptedException e) {
         throw new CommandStoppedException(e);
       }
     }
@@ -417,7 +417,7 @@ warning: LF will be replaced by CRLF in sourceline/alwaysvalid/src/symlinked_rea
     try {
       final GitDepotPathParser parser = new GitDepotPathParser();
       return parser.parseDepotPath(getSettingValue(SourceControlSetting.GIT_DEPOT_PATH));
-    } catch (ValidationException e) {
+    } catch (final ValidationException e) {
       throw new BuildException(e, getAgentHost());
     }
   }

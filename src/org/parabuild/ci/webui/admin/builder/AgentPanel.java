@@ -317,7 +317,7 @@ final class AgentPanel extends MessagePanel implements Validatable, Saveable {
       }
 
       return true;
-    } catch (Exception e) {
+    } catch (final Exception e) {
       final SaveErrorProcessor exceptionProcessor = new SaveErrorProcessor();
       return exceptionProcessor.process(this, e);
     }

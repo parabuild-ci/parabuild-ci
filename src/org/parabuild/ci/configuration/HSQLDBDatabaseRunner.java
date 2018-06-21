@@ -35,7 +35,7 @@ public final class HSQLDBDatabaseRunner implements DatabaseRunner, CommonConstan
         final DatabaseCreator databaseCreator = new DatabaseCreator();
         databaseCreator.createDatabase(ConfigurationConstants.DATABASE_HOME);
       }
-    } catch (Exception e) {
+    } catch (final Exception e) {
       // NOTE: simeshev@parabuilci.org - we don't use error manager as
       // DB service in not up yet.
       log.error("Error while starting database service", e);
@@ -77,7 +77,7 @@ public final class HSQLDBDatabaseRunner implements DatabaseRunner, CommonConstan
       stmt = conn.createStatement();
       stmt.executeUpdate("SHUTDOWN");
       // if we get here, we did not get db running
-    } catch (Exception e) {
+    } catch (final Exception e) {
       log.error("Error while stopping database service", e);
     } finally {
       IoUtils.closeHard(conn);

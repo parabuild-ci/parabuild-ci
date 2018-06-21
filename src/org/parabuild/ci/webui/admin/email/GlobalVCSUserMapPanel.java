@@ -80,7 +80,7 @@ final class GlobalVCSUserMapPanel extends MessagePanel {
         map.setDescription(flNote.getValue().trim());
         mappingManager.saveMapping(map);
         return true;
-      } catch (Exception e) {
+      } catch (final Exception e) {
         showErrorMessage(StringUtils.toString(e));
         return false;
       }

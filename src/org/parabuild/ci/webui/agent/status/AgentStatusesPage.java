@@ -145,7 +145,7 @@ public final class AgentStatusesPage extends BasePage implements ConversationalT
 
     // Filter user builds
     final List result = new ArrayList(agentBuildIDs.size());
-    for (Iterator iterator = agentBuildIDs.iterator(); iterator.hasNext();) {
+    for (final Iterator iterator = agentBuildIDs.iterator(); iterator.hasNext();) {
       final Integer activeBuildID = (Integer) iterator.next();
       for (int j = 0; j < userBuildStatuses.size(); j++) {
         final BuildState buildState = (BuildState) userBuildStatuses.get(j);

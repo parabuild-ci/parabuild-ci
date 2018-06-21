@@ -117,7 +117,7 @@ final class SVNManualScheduleStartParametersPanel extends ManualScheduleStartPar
       final SVNDepotPathParser parser = new SVNDepotPathParser();
       try {
         parser.validate(flDepotPath.getValue());
-      } catch (ValidationException e) {
+      } catch (final ValidationException e) {
         errors.add(StringUtils.toString(e));
       }
     }

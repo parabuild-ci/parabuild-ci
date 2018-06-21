@@ -166,7 +166,7 @@ final class ResultsTableCommandPanel extends Panel implements AbstractFlatTable.
     // do nothing, ResultsTable doesn't have insert command
   }
 
-  public void setMoveRowCommandsVisible(boolean visible) {
+  public void setMoveRowCommandsVisible(final boolean visible) {
     // do nothing, ResultsTable doesn't have insert command
   }
 

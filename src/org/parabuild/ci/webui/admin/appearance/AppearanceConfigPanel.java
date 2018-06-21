@@ -334,9 +334,9 @@ public final class AppearanceConfigPanel extends AbstractSystemConfigPanel {
       try {
         oswTest = new OutputStreamWriter(new ByteArrayOutputStream(), fldOutputEncoding.getValue().trim());
         oswTest.write("");
-      } catch (UnsupportedEncodingException e) {
+      } catch (final UnsupportedEncodingException e) {
         errors.add("Encoding \"" + fldOutputEncoding.getValue() + "\" is not supported");
-      } catch (IOException e) {
+      } catch (final IOException e) {
         errors.add("Unexpected error while testing encoding: " + StringUtils.toString(e));
       } finally {
         IoUtils.closeHard(oswTest);
@@ -348,7 +348,7 @@ public final class AppearanceConfigPanel extends AbstractSystemConfigPanel {
       try {
         final MarkerMatcherBuilder matcherBuilder = new MarkerMatcherBuilder();
         matcherBuilder.createMarkerMatcher(flTextLogMarkers.getValue());
-      } catch (PatternSyntaxException e) {
+      } catch (final PatternSyntaxException e) {
         errors.add("Invalid text log marker: " + StringUtils.toString(e));
       }
     }
@@ -358,7 +358,7 @@ public final class AppearanceConfigPanel extends AbstractSystemConfigPanel {
     if (fldCustomBuildNameValidation.isSelected()) {
       try {
         Pattern.compile(fldCustomBuildNameRegexTemplate.getValue());
-      } catch (PatternSyntaxException e) {
+      } catch (final PatternSyntaxException e) {
         errors.add("Invalid custom build name regex: " + StringUtils.toString(e));
       }
     }
@@ -367,7 +367,7 @@ public final class AppearanceConfigPanel extends AbstractSystemConfigPanel {
     if (fldCustomVariableNameValidation.isSelected()) {
       try {
         Pattern.compile(fldCustomVariableNameRegexTemplate.getValue());
-      } catch (PatternSyntaxException e) {
+      } catch (final PatternSyntaxException e) {
         errors.add("Invalid custom variable name regex: " + StringUtils.toString(e));
       }
     }
@@ -390,7 +390,7 @@ public final class AppearanceConfigPanel extends AbstractSystemConfigPanel {
     String result = "";
     try {
       result = SystemConfigurationManagerFactory.getManager().getBuildManagerHostAndPort();
-    } catch (Exception e) {
+    } catch (final Exception e) {
       // ignore, the resulting value is empty string
       log.warn(STR_IGNORED_EXCEPTION, e);
     }

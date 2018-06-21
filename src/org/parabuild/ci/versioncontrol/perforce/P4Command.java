@@ -145,7 +145,7 @@ public class P4Command extends VersionControlRemoteCommand {
       logAnalyzer.setUnexpectedError(UNEXPECTED_ERROR_WHILE_EXECUTING + commandDescription);
       logAnalyzer.setUnknownError(UNKNOWN_ERROR_WHILE_EXECUTING + commandDescription + ". No error message was provided by p4.");
       logAnalyzer.validate(getStdoutFile(), getStderrFile());
-    } catch (BuildException e) {
+    } catch (final BuildException e) {
       throw IoUtils.createIOException(e);
     }
   }

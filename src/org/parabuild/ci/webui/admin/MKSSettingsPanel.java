@@ -166,9 +166,9 @@ public final class MKSSettingsPanel extends AbstractSourceControlPanel {
       try {
         WebuiUtils.validateCommandExists(super.getAgentEnv(), flPathToExe.getValue(), errors,
                 "Path to executable is invalid, or si executable is not accessible");
-      } catch (NoLiveAgentsException ignore) {
+      } catch (final NoLiveAgentsException ignore) {
         IoUtils.ignoreExpectedException(ignore);
-      } catch (IOException e) {
+      } catch (final IOException e) {
         errors.add("Error while checking path for MKS client: " + StringUtils.toString(e));
       }
 
@@ -176,14 +176,14 @@ public final class MKSSettingsPanel extends AbstractSourceControlPanel {
       final DepotPathParser parser = new DepotPathParser("Project path", false);
       try {
         parser.validate(flProject.getValue());
-      } catch (ValidationException e) {
+      } catch (final ValidationException e) {
         errors.add(StringUtils.toString(e));
       }
 
       // Validate rlog format
       try {
         final SimpleDateFormat dateFormat = new SimpleDateFormat(flRlogDateFormat.getValue());
-      } catch (Exception e) {
+      } catch (final Exception e) {
         errors.add("Rlog date format is invalid: " + StringUtils.toString(e));
       }
 
@@ -191,7 +191,7 @@ public final class MKSSettingsPanel extends AbstractSourceControlPanel {
       if (!WebuiUtils.isBlank(flCoDateFormat)) {
         try {
           new SimpleDateFormat(flCoDateFormat.getValue());
-        } catch (Exception e) {
+        } catch (final Exception e) {
           errors.add("Co date format is invalid: " + StringUtils.toString(e));
         }
       }

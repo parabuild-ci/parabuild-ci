@@ -109,7 +109,7 @@ niutil -appendprop / /groups/admin users username
       final OutputStream stdout = new NullOutputStream();
       final OutputStream stderr = new NullOutputStream();
       RuntimeUtils.execute(null, cmd, null, stdout, stderr);
-    } catch (CommandStoppedException e) {
+    } catch (final CommandStoppedException e) {
       throw IoUtils.createIOException("Command was stopped", e);
     }
   }

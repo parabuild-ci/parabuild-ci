@@ -98,7 +98,7 @@ final class AgentStatusChartGenerator {
 
       // Return result
       return new ImmutableImage(out.toByteArray(), width, height);
-    } catch (IOException e) {
+    } catch (final IOException e) {
       final ErrorManager errorManager = ErrorManagerFactory.getErrorManager();
       final Error error = new Error("Error generating agent status chart: " + StringUtils.toString(e), e);
       errorManager.reportSystemError(error);

@@ -97,7 +97,7 @@ public final class AccurevVersionControlwithWorkspaces extends AbstractSourceCon
       // Executine pop command to pick up missing
       command = new AccurevPopCommand(getCheckoutDirectoryAwareAgent(), getParameters(), "");
       command.execute();
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException("Error while synching to change list:" + StringUtils.toString(e), e, getAgentHost());
     } finally {
       cleanup(command);
@@ -123,7 +123,7 @@ public final class AccurevVersionControlwithWorkspaces extends AbstractSourceCon
       // Executine pop command to pick up missing
       command = new AccurevPopCommand(getCheckoutDirectoryAwareAgent(), getParameters(), "");
       command.execute();
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException("Error while synching to change list:" + StringUtils.toString(e), e, getAgentHost());
     } finally {
       cleanup(command);
@@ -186,7 +186,7 @@ public final class AccurevVersionControlwithWorkspaces extends AbstractSourceCon
       command = new AccurevMkwsCommand(agent, parameters, workspaceName,
               parameters.getKind(), parameters.getEolType(), workspaceStorage);
       command.execute();
-    } catch (DocumentException e) {
+    } catch (final DocumentException e) {
       throw new BuildException(e, getAgentHost());
     } finally {
       cleanup(command);
@@ -243,7 +243,7 @@ public final class AccurevVersionControlwithWorkspaces extends AbstractSourceCon
         return newChangeListID; // as is
       }
 
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException(e, getAgentHost());
     }
   }
@@ -288,7 +288,7 @@ public final class AccurevVersionControlwithWorkspaces extends AbstractSourceCon
 
       // add this path changes to result
       result.addAll(changeLists);
-    } catch (DocumentException e) {
+    } catch (final DocumentException e) {
       throw new BuildException(e, getAgentHost());
     } finally {
       cleanup(command); // cleanup this cycle
@@ -366,7 +366,7 @@ public final class AccurevVersionControlwithWorkspaces extends AbstractSourceCon
     AccurevLoginCommand command = null;
     try {
       command = new AccurevLoginCommand(getCheckoutDirectoryAwareAgent(), getParameters());
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw new BuildException(e, getAgentHost());
     } finally {
       cleanup(command);

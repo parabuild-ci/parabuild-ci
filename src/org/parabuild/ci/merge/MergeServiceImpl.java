@@ -29,7 +29,7 @@ public final class MergeServiceImpl implements MergeService {
     try {
       MergeManager.getInstance().startupMerges();
       status = SERVICE_STATUS_STARTED;
-    } catch (Exception e) {
+    } catch (final Exception e) {
       reportStartupError(e, serviceName(), Error.ERROR_SUSBSYSTEM_MERGE);
     }
   }
@@ -39,7 +39,7 @@ public final class MergeServiceImpl implements MergeService {
     try {
       MergeManager.getInstance().shutdownMerges();
       status = SERVICE_STATUS_NOT_STARTED;
-    } catch (Exception e) {
+    } catch (final Exception e) {
       reportShutdownService(e, serviceName(), Error.ERROR_SUSBSYSTEM_MERGE);
     }
   }

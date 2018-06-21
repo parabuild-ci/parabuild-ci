@@ -74,7 +74,7 @@ public final class SystemVariableListPage extends NavigatableSystemConfiguration
         gi.add(makeNewVariavleLink(variableType, variableOwner));
       }
       return Result.Done();
-    } catch (ValidationException ve) {
+    } catch (final ValidationException ve) {
       return showPageErrorAndExit(StringUtils.toString(ve));
     }
   }

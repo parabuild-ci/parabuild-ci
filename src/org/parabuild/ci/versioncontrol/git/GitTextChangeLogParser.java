@@ -198,7 +198,7 @@ public final class GitTextChangeLogParser {
           final Date date;
           try {
             date = svnChangeLogFormatter.parse(stringDate);
-          } catch (ParseException e) {
+          } catch (final ParseException e) {
             throw new IOException("Unexpected format of revision date in line: " + line + ", error: " + StringUtils.toString(e));
           }
 
@@ -225,7 +225,7 @@ public final class GitTextChangeLogParser {
           if (result.size() >= maxChangeLists) {
             break;
           }
-        } catch (RuntimeException e) {
+        } catch (final RuntimeException e) {
           final IOException ioe = new IOException("Unexpected error while processing Git change log, line: " + line);
           ioe.initCause(e);
           throw ioe;

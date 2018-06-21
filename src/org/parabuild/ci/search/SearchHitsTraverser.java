@@ -46,7 +46,7 @@ public final class SearchHitsTraverser {
         }
 
         // other types
-      } catch (Exception e) {
+      } catch (final Exception e) {
         // ignore any exception in a single item
         log.warn("Exception while traversing hits", e);
         IoUtils.ignoreExpectedException(e);

@@ -58,7 +58,7 @@ final class GenericTestLogPanel extends MessagePanel {
         gridIterator.add(new CommonFieldLabel(propertyName + ':'));
         gridIterator.add(new CommonLabel(propertyValue));
       }
-    } catch (Exception e) {
+    } catch (final Exception e) {
 
       // Display error instead of the log
       showErrorMessage("Unexpected error while retrieving a log: " + e.toString());

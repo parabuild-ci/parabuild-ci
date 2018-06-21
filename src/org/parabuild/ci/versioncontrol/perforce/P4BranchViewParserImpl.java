@@ -116,7 +116,7 @@ final class P4BranchViewParserImpl implements P4BranchViewParser {
         lineToParse = br.readLine();
       }
       return new P4BranchViewImpl(branch, update, access, owner, description, options, view);
-    } catch (BuildException e) {
+    } catch (final BuildException e) {
       throw IoUtils.createIOException(e);
     } finally {
       IoUtils.closeHard(br);

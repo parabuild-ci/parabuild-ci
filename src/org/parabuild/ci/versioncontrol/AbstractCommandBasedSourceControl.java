@@ -146,7 +146,7 @@ public abstract class AbstractCommandBasedSourceControl extends AbstractSourceCo
       command.addEnvironment(getCommonEnvironment());
       command.execute();
       this.lastSyncDate = (Date) changeListDate.clone();
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw processException(e);
     } finally {
       cleanup(command);
@@ -187,7 +187,7 @@ public abstract class AbstractCommandBasedSourceControl extends AbstractSourceCo
       command.addEnvironment(PARAMETER_PARABUILD_LABEL_DATETIME_TO_CREATE, new SimpleDateFormat("yyyyMMddHHss").format(lastSyncDate));
       command.addEnvironment(getCommonEnvironment());
       command.execute();
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw processException(e);
     } finally {
       cleanup(command);
@@ -231,14 +231,14 @@ public abstract class AbstractCommandBasedSourceControl extends AbstractSourceCo
         try {
           command.execute();
           deleteCount++;
-        } catch (IOException e) {
+        } catch (final IOException e) {
           throw processException(e);
         } finally {
           cleanup(command);
         }
       }
       return deleteCount;
-    } catch (IOException e) {
+    } catch (final IOException e) {
       throw processException(e);
     }
   }

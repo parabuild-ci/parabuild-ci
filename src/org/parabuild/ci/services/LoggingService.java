@@ -87,7 +87,7 @@ public final class LoggingService implements Service {
           Log4jConfigurator.getInstance().initialize(true);
         }
       }
-    } catch (Exception e) {
+    } catch (final Exception e) {
       reportException(e);
     }
   }
@@ -97,7 +97,7 @@ public final class LoggingService implements Service {
   public void reInitLog4j(final boolean debug) {
     try {
       Log4jConfigurator.getInstance().initialize(debug);
-    } catch (Exception e) {
+    } catch (final Exception e) {
       reportException(e);
     }
   }

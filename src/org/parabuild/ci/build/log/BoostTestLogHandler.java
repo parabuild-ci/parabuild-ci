@@ -183,10 +183,10 @@ public final class BoostTestLogHandler extends AbstractLogHandler {
       if (LOG.isDebugEnabled()) {
         LOG.debug("Boost Test: saved stepLog: " + stepLog);
       }
-    } catch (Exception e) {
+    } catch (final Exception e) {
       throw IoUtils.createIOException(StringUtils.toString(e), e);
       // TODELETE: debug
-    } catch (OutOfMemoryError e) {
+    } catch (final OutOfMemoryError e) {
       throw IoUtils.createIOException(StringUtils.toString(e), e);
     } finally {
       IoUtils.deleteFilesHard(tempFiles);

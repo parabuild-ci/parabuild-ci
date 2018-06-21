@@ -288,7 +288,7 @@ public final class Error implements Serializable {
   public Date getTime() {
     try {
       return dateFormatter.parse(content.getProperty(ERROR_TIME));
-    } catch (ParseException e) {
+    } catch (final ParseException e) {
       log.warn("Can not parse error time", e);
       return new Date();
     }
@@ -364,7 +364,7 @@ public final class Error implements Serializable {
     int errorLevel = (int) ERROR_LEVEL_UNKNOWN;
     try {
       errorLevel = Integer.parseInt(content.getProperty(ERROR_LEVEL));
-    } catch (NumberFormatException e) {
+    } catch (final NumberFormatException e) {
       if (log.isWarnEnabled()) {
         log.warn("Unexpected exception while parsing error level: " + StringUtils.toString(e), e);
       }

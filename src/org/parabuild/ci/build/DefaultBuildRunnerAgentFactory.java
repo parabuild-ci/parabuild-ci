@@ -57,7 +57,7 @@ final class DefaultBuildRunnerAgentFactory implements BuildRunnerAgentFactory {
 
       return agentManager.createAgent(activeBuildID, result);
 
-    } catch (IOException e) {
+    } catch (final IOException e) {
 
       return new FailedAgent(e);
     }
