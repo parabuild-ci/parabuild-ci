@@ -337,10 +337,10 @@ public class BuildsStatusesPage extends BasePage implements ConversationalTierle
       maxSize = scm.getDefaultMaxRecentBuilds();
     } else {
       final String stringMaxRecentBuilds = sm.getUserPropertyValue(userID, UserProperty.MAX_RECENT_BUILDS);
-      if (!StringUtils.isValidInteger(stringMaxRecentBuilds)) {
-        maxSize = scm.getDefaultMaxRecentBuilds();
-      } else {
+      if (StringUtils.isValidInteger(stringMaxRecentBuilds)) {
         maxSize = Integer.parseInt(stringMaxRecentBuilds);
+      } else {
+        maxSize = scm.getDefaultMaxRecentBuilds();
       }
     }
 

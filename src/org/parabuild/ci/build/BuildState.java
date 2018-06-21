@@ -340,10 +340,10 @@ public final class BuildState implements Serializable {
    * information.
    */
   public void setNextBuildTime(final Date nextBuildTime) {
-    if (!(nextBuildTime == null)) {
-      this.nextBuildTime = (Date) nextBuildTime.clone();
-    } else {
+    if (nextBuildTime == null) {
       this.nextBuildTime = null;
+    } else {
+      this.nextBuildTime = (Date) nextBuildTime.clone();
     }
   }
 
