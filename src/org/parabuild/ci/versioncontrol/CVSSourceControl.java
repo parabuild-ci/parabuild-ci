@@ -253,7 +253,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
       // check changes
       br = new BufferedReader(new FileReader(command.getStdoutFile()));
       final String firstLine = br.readLine();
-      if (!StringUtils.isBlank(firstLine) && firstLine.equalsIgnoreCase("No records selected.")) {
+      if ("No records selected.".equalsIgnoreCase(firstLine)) {
         if (LOG.isDebugEnabled()) {
           LOG.debug("no new history for: " + fromDate + ", build ID: " + buildID);
         }

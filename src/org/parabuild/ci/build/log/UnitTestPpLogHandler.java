@@ -13,13 +13,6 @@
  */
 package org.parabuild.ci.build.log;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.dom4j.Document;
@@ -28,7 +21,6 @@ import org.dom4j.Element;
 import org.dom4j.io.OutputFormat;
 import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
-
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.build.SimpleFileArchivedLogFinder;
 import org.parabuild.ci.common.IoUtils;
@@ -40,6 +32,13 @@ import org.parabuild.ci.object.LogConfig;
 import org.parabuild.ci.object.StepLog;
 import org.parabuild.ci.object.StepRunAttribute;
 import org.parabuild.ci.remote.Agent;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Handles directory with UnitTestPp logs
@@ -135,7 +134,7 @@ public final class UnitTestPpLogHandler extends AbstractLogHandler {
         final Document documentToMerge = reader.read(file);
         final Element root = documentToMerge.getRootElement();
         // validate it is UnitTestPp - should have testsuites as root
-        if (root.getName().equals("testsuites")) {
+        if ("testsuites".equals(root.getName())) {
           // go over tests and add to result
           for (Iterator j = root.elementIterator(); j.hasNext();) {
             final Element element = (Element) j.next();

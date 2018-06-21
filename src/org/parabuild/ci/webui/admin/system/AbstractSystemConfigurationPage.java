@@ -13,7 +13,6 @@
  */
 package org.parabuild.ci.webui.admin.system;
 
-import org.parabuild.ci.common.StringUtils;
 import org.parabuild.ci.webui.admin.AbstractSystemConfigPanel;
 import org.parabuild.ci.webui.common.Pages;
 import org.parabuild.ci.webui.common.WebUIConstants;
@@ -122,7 +121,7 @@ public class AbstractSystemConfigurationPage extends NavigatableSystemConfigurat
 
   private boolean isValidateOnLoad(final Parameters params) {
     final String validateOnLoadString = params.getParameterValue(Pages.PARAM_VALIDATE_ON_LOAD);
-    return !StringUtils.isBlank(validateOnLoadString) && validateOnLoadString.equalsIgnoreCase("true");
+    return "true".equalsIgnoreCase(validateOnLoadString);
   }
 
 

@@ -13,7 +13,6 @@
  */
 package org.parabuild.ci.webui.common;
 
-import org.parabuild.ci.common.StringUtils;
 import org.parabuild.ci.configuration.BuilderConfigurationManager;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.DisplayGroupManager;
@@ -148,8 +147,7 @@ public final class ParameterUtils {
 
   public static boolean getBooleanParameter(final Parameters params, final String paramName) {
     return params.isParameterPresent(paramName)
-            && !StringUtils.isBlank(params.getParameterValue(paramName))
-            && params.getParameterValue(paramName).equalsIgnoreCase("true");
+            && "true".equalsIgnoreCase(params.getParameterValue(paramName));
   }
 
 

@@ -165,7 +165,7 @@ public final class ErrorManagerImpl implements ErrorManager, Serializable {
       }
 
       // print debug error content
-      if (error.isOutputToLog() || System.getProperty(SystemConstants.SYSTEM_PROPERTY_PRINT_STACKTRACE, "false").equals("true")) {
+      if (error.isOutputToLog() || "true".equals(System.getProperty(SystemConstants.SYSTEM_PROPERTY_PRINT_STACKTRACE, "false"))) {
 
         final Set es = errorContent.entrySet();
         for (final Iterator i = es.iterator(); i.hasNext();) {

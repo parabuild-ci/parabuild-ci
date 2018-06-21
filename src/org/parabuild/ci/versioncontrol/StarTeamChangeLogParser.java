@@ -13,13 +13,23 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.io.*;
-import java.text.*;
-import java.util.*;
-import org.apache.commons.logging.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.ArgumentValidator;
+import org.parabuild.ci.common.IoUtils;
+import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.object.Change;
 
-import org.parabuild.ci.common.*;
-import org.parabuild.ci.object.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.text.ParseException;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 
 /**
  * Parses StarTeam change log
@@ -211,8 +221,8 @@ Author: Test User Date: 3/6/06 12:51:02 AM PST
             description.append(line);
             line = reader.readLine();
           }
-          final StringBuffer sbMessage = stringRevision.equals("1") ? firstRevisionDescription : description;
-          final Change change = new Change(fileName, stringRevision, stringRevision.equals("1") ? Change.TYPE_ADDED : Change.TYPE_CHECKIN);
+          final StringBuffer sbMessage = "1".equals(stringRevision) ? firstRevisionDescription : description;
+          final Change change = new Change(fileName, stringRevision, "1".equals(stringRevision) ? Change.TYPE_ADDED : Change.TYPE_CHECKIN);
           //if (log.isDebugEnabled()) log.debug("================================");
           //if (log.isDebugEnabled()) log.debug("date: " + date);
           //if (log.isDebugEnabled()) log.debug("sbMessage: " + sbMessage);

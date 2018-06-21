@@ -136,7 +136,7 @@ public final class BoostTestLogHandler extends AbstractLogHandler {
         final Document documentToMerge = reader.read(file);
         final Element root = documentToMerge.getRootElement();
         // validate it is Boost Test XML - should have TestLog as root
-        if (root.getName().equals("TestLog")) {
+        if ("TestLog".equals(root.getName())) {
           // go over tests and add to result
           resultRoot.add(root.createCopy());
         }

@@ -60,8 +60,8 @@ final class UpgraderToVersion79 implements SingleStepSchemaUpgrader {
       while (rs.next()) {
 
         final int id = rs.getInt(1);
-        final boolean allowedToStart = rs.getString(2).equalsIgnoreCase("y");
-        final boolean allowedToStop = rs.getString(3).equalsIgnoreCase("y");
+        final boolean allowedToStart = "y".equalsIgnoreCase(rs.getString(2));
+        final boolean allowedToStop = "y".equalsIgnoreCase(rs.getString(3));
         final boolean allowedToActivate = allowedToStart || allowedToStop;
         ps.setString(1, (allowedToActivate ? "Y" : "N"));
         ps.setInt(2, id);

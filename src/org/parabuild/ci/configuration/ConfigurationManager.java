@@ -96,8 +96,8 @@ public final class ConfigurationManager implements Serializable {
   public static final String STR_DIGESTED_ADMIN = "21232F297A57A5A743894A0E4A801FC3";
   public static final String STARTUP_USER = System.getProperty("user.name", "");
   public static final String PARABUILD_WORK_DIR = "build";
-  public static final boolean BLOCK_ROOT_USER = STARTUP_USER.equalsIgnoreCase("root");
-  public static final boolean BLOCK_ADMIN_USER = STARTUP_USER.equalsIgnoreCase("Administrator") && !ConfigurationFile.getInstance().isAdministratorUserAllowed();
+  public static final boolean BLOCK_ROOT_USER = "root".equalsIgnoreCase(STARTUP_USER);
+  public static final boolean BLOCK_ADMIN_USER = "Administrator".equalsIgnoreCase(STARTUP_USER) && !ConfigurationFile.getInstance().isAdministratorUserAllowed();
 
   private static final boolean builderMode = !StringUtils.isBlank(ConfigurationFile.getInstance().getBuildManagerAddress());
   private static final String HTML_LOG_URL_PREFIX = "/parabuild/build/log/html/";

@@ -13,14 +13,22 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.io.*;
-import java.util.*;
-import org.apache.commons.logging.*;
-
-import org.parabuild.ci.common.*;
-import org.parabuild.ci.error.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.IoUtils;
+import org.parabuild.ci.common.MailUtils;
+import org.parabuild.ci.common.StringUtils;
 import org.parabuild.ci.error.Error;
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.error.ErrorManager;
+import org.parabuild.ci.error.ErrorManagerFactory;
+import org.parabuild.ci.object.BuildConfig;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Helper class to return CVS user to e-mail mapping based on the content of the CVSROOT/users.
@@ -117,7 +125,7 @@ final class CVSUsersParser {
    * If set, appends information about CVSROOT to the given string.
    */
   private String appendInfoAboutCVSROOT(final String s) {
-    if (!StringUtils.isBlank(cvsRoot)) return s.concat(" CVSROOT is \"" + cvsRoot + "\".");
+    if (!StringUtils.isBlank(cvsRoot)) return s + " CVSROOT is \"" + cvsRoot + "\".";
     return s;
   }
 }

@@ -13,16 +13,24 @@
  */
 package org.parabuild.ci.webui;
 
-import java.io.*;
-import javax.servlet.http.*;
-
-import org.parabuild.ci.build.*;
-import org.parabuild.ci.common.*;
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.security.*;
+import org.parabuild.ci.build.BuildState;
+import org.parabuild.ci.common.BuildStatusURLGenerator;
+import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.configuration.SystemConfigurationManager;
+import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
+import org.parabuild.ci.object.BuildConfig;
+import org.parabuild.ci.object.BuildRun;
+import org.parabuild.ci.security.AccessForbiddenException;
+import org.parabuild.ci.security.BadRequestException;
 import org.parabuild.ci.security.SecurityManager;
-import org.parabuild.ci.services.*;
+import org.parabuild.ci.services.BuildService;
+import org.parabuild.ci.services.ServiceManager;
+
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  * This servlet is reponsible for servicing requests for build
@@ -142,8 +150,7 @@ public final class JavascriptBuildStatusServlet extends HttpServlet {
    */
   private boolean showBuildName(final HttpServletRequest req) {
     final String parameter = req.getParameter(PARAM_BUILD_NAME);
-    if (StringUtils.isBlank(parameter)) return false;
-    return parameter.equalsIgnoreCase("true");
+    return "true".equalsIgnoreCase(parameter);
   }
 
 

@@ -122,7 +122,7 @@ public final class DepotPathParser {
       final String s1 = ((RepositoryPath)result.get(i)).getPath();
       for (int j = i + 1; j < resultSize; j++) {
         final String s2 = ((RepositoryPath)result.get(j)).getPath();
-        if (s1.equals("/") && resultSize > 1) {
+        if ("/".equals(s1) && resultSize > 1) {
           throw makeSubpathException(s2, s1);
         } else if (isSubpath(s1, s2)) {
           throw makeSubpathException(s2, s1);
@@ -160,7 +160,7 @@ public final class DepotPathParser {
     final String result = removeSurroundingDoubleQuotes ? StringUtils.removeDoubleQuotes(normalizedPath.toString()) : normalizedPath.toString();
     if (result.length() == 0) {
       return new RepositoryPath("/"); // "root"
-    } else if (result.equals("$")) {
+    } else if ("$".equals(result)) {
       return new RepositoryPath("$/"); // "vault root"
     } else {
       return new RepositoryPath(result);

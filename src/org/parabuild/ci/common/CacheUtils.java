@@ -13,11 +13,11 @@
  */
 package org.parabuild.ci.common;
 
-import java.io.*;
-
 import net.sf.ehcache.Cache;
 import net.sf.ehcache.CacheException;
 import net.sf.ehcache.CacheManager;
+
+import java.io.IOException;
 
 /**
  */
@@ -47,7 +47,7 @@ public final class CacheUtils {
     final String[] cacheNames = cacheManager.getCacheNames();
     for (int i = 0; i < cacheNames.length; i++) {
       final String cacheName = cacheNames[i];
-      if (cacheName.equals("retention_cache")) continue;
+      if ("retention_cache".equals(cacheName)) continue;
       //if (log.isDebugEnabled()) log.debug("cache hits before setup: " + cacheName + "/" + cache.getHitCount());
       cacheManager.getCache(cacheName).removeAll();
     }

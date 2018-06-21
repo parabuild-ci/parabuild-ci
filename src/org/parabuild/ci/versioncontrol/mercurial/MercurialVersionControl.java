@@ -254,7 +254,7 @@ public class MercurialVersionControl extends AbstractSourceControl {
       final MercurialChangeLogParser changeLogParser = new MercurialChangeLogParser();
       changeLogParser.setMaxChangeListSize(maxChangeListSize());
       changeLogParser.setMaxChangeLists(maxChangeLists);
-      if (!changeListNumberFrom.equals("null") && !changeListNumberFrom.equals("tip")) {
+      if (!"null".equals(changeListNumberFrom) && !"tip".equals(changeListNumberFrom)) {
         changeLogParser.ignoreChangeList(changeListNumberFrom);
       }
       final List changeLists = changeLogParser.parseChangeLog(command.getStdoutFile());

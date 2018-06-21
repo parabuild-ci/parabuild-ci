@@ -224,7 +224,7 @@ public final class ScheduleItem implements Serializable, CommonConstants, Object
       weekDays = "?";
     }
 
-    if (monthDays.equals("?") || weekDays.equals("?")) {
+    if ("?".equals(monthDays) || "?".equals(weekDays)) {
       return new String[]{"0 0 " + hours + STR_SPACE + monthDays + STR_SPACE + '*' + STR_SPACE + weekDays};
     } else {
       return new String[]{

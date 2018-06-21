@@ -43,7 +43,7 @@ final class AccurevShowWspacesLogParser {
     final Iterator iter = rootElement.elementIterator();
     while (iter.hasNext()) {
       final Element element = (Element) iter.next();
-      if (!element.getName().equals("Element")) {
+      if (!"Element".equals(element.getName())) {
         continue;
       }
       final String name = element.attributeValue("Name");

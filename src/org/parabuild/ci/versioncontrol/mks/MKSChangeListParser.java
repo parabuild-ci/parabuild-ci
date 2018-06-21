@@ -257,7 +257,7 @@ Member added to project /opt/mks/integrity_server2005/mksis/projects/project.pj
             description.append(line);
             line = reader.readLine();
           }
-          final boolean firstRevision = stringRevision.equals("1.1");
+          final boolean firstRevision = "1.1".equals(stringRevision);
           final StringBuffer message = firstRevision ? firstRevisionDescription : description;
           final Change change = new Change(memberName, stringRevision, firstRevision ? Change.TYPE_ADDED : Change.TYPE_CHECKIN);
           accumulator.add(date, message, author, developmentPath, change);

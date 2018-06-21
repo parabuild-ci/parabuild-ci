@@ -13,8 +13,6 @@
  */
 package org.parabuild.ci.webui;
 
-import java.util.*;
-
 import org.parabuild.ci.object.SimpleChange;
 import org.parabuild.ci.webui.common.AbstractFlatTable;
 import org.parabuild.ci.webui.common.CommonLink;
@@ -24,6 +22,9 @@ import viewtier.ui.Component;
 import viewtier.ui.Flow;
 import viewtier.ui.Label;
 import viewtier.ui.Layout;
+
+import java.util.List;
+import java.util.StringTokenizer;
 
 /**
  * This table shows content of a change list
@@ -114,7 +115,7 @@ public final class ChangelistContentTable extends AbstractFlatTable {
     while (st.hasMoreTokens()) {
       final String s = st.nextToken();
       sb.append(s);
-      if (s.equals("/")) {
+      if ("/".equals(s)) {
         sb.append("<wbr/>");
       }
     }

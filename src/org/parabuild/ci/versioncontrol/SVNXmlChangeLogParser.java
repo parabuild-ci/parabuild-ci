@@ -72,7 +72,7 @@ public final class SVNXmlChangeLogParser extends SVNChangeLogParser {
       for (Iterator i = root.elementIterator(); i.hasNext();) {
         final Element element = (Element) i.next();
         final String elementName = element.getName();
-        if (elementName.equals("logentry")) {
+        if ("logentry".equals(elementName)) {
           final ChangeList changeList = new ChangeList();
           changeList.setChanges(new HashSet(5));
 

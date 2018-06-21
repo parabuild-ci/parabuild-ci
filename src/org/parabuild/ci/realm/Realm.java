@@ -87,7 +87,7 @@ public final class Realm extends RealmBase {
     if (username == null || credentials == null) return null;
 
     // check if we have to reload
-    if (System.getProperty(SystemConstants.SYSTEM_PROPERTY_RELOAD_PRINCIPAL, "true").equals("true")) {
+    if ("true".equals(System.getProperty(SystemConstants.SYSTEM_PROPERTY_RELOAD_PRINCIPAL, "true"))) {
       System.setProperty(SystemConstants.SYSTEM_PROPERTY_RELOAD_PRINCIPAL, "false");
       reloadPrincipals();
     }

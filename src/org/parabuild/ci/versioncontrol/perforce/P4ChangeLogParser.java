@@ -13,21 +13,35 @@
  */
 package org.parabuild.ci.versioncontrol.perforce;
 
-import java.io.*;
-import java.text.*;
-import java.util.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.parabuild.ci.common.BuildException;
 import org.parabuild.ci.common.IoUtils;
-import org.parabuild.ci.common.StringUtils;
 import org.parabuild.ci.configuration.ChangeListIssueBinding;
 import org.parabuild.ci.configuration.ChangeListsAndIssues;
 import org.parabuild.ci.object.Change;
 import org.parabuild.ci.object.ChangeList;
 import org.parabuild.ci.object.Issue;
 import org.parabuild.ci.object.SystemProperty;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Set;
+import java.util.StringTokenizer;
 
 /**
  * This class is responsible for parsing P4 change log generated as a result of
@@ -299,7 +313,7 @@ final class P4ChangeLogParser {
 //                if (log.isDebugEnabled()) log.debug("jobDescr: " + jobDescr.toString());
 
                 // keep closed job
-                if (jobsCollectionEnabled && !StringUtils.isBlank(jobStatus) && jobStatus.equals("*closed*")) {
+                if (jobsCollectionEnabled && "*closed*".equals(jobStatus)) {
                   // NOTE: vimeshev - looking up if we have already came
                   // across an issue with this name while processing this
                   // describe log. We assume that job name uniquely
@@ -398,11 +412,11 @@ final class P4ChangeLogParser {
    * @return short type code
    */
   private byte changeTypeToCode(final String type) {
-    if (type.equals("edit")) return Change.TYPE_MODIFIED;
-    if (type.equals("add")) return Change.TYPE_ADDED;
-    if (type.equals("delete")) return Change.TYPE_DELETED;
-    if (type.equals("integrate")) return Change.TYPE_INTEGRATED;
-    if (type.equals("branch")) return Change.TYPE_BRANCHED;
+    if ("edit".equals(type)) return Change.TYPE_MODIFIED;
+    if ("add".equals(type)) return Change.TYPE_ADDED;
+    if ("delete".equals(type)) return Change.TYPE_DELETED;
+    if ("integrate".equals(type)) return Change.TYPE_INTEGRATED;
+    if ("branch".equals(type)) return Change.TYPE_BRANCHED;
     return Change.TYPE_UNKNOWN;
   }
 

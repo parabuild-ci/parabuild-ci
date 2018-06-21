@@ -73,7 +73,7 @@ final class AccurevChangeLogParser {
     final Iterator iter = rootElement.elementIterator();
     while (iter.hasNext() && changeListCounter++ < maxChangeLists) {
       final Element transactionElement = (Element) iter.next();
-      if (!transactionElement.getName().equals("transaction")) {
+      if (!"transaction".equals(transactionElement.getName())) {
         continue;
       }
 //      if (LOG.isDebugEnabled()) {
@@ -115,16 +115,16 @@ final class AccurevChangeLogParser {
 
 
   private byte toChangeType(final String type) {
-    if (type.equals("add")) {
+    if ("add".equals(type)) {
       return Change.TYPE_ADDED;
     }
-    if (type.equals("keep")) {
+    if ("keep".equals(type)) {
       return Change.TYPE_KEEP;
     }
-    if (type.equals("promote")) {
+    if ("promote".equals(type)) {
       return Change.TYPE_PROMOTE;
     }
-    if (type.equals("defunct")) {
+    if ("defunct".equals(type)) {
       return Change.TYPE_DEFUNCT;
     }
     return Change.TYPE_UNKNOWN;
