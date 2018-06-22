@@ -128,7 +128,6 @@
     <file property="cglib-asm.jar" required="yes" location="${hibernate.lib}/cglib-full-2.0.2.jar" build="yes"/>
     <file property="commons-collections.jar" required="yes" location="${hibernate.lib}/commons-collections-2.1.1.jar" build="yes"/>
     <file property="commons-dbcp.jar" required="yes" location="${hibernate.lib}/commons-dbcp-1.2.1.jar" build="yes"/>
-    <file property="commons-lang.jar" required="yes" location="${hibernate.lib}/commons-lang-1.0.1.jar" build="yes"/>
     <file property="commons-pool.jar" required="yes" location="${hibernate.lib}/commons-pool-1.2.jar" build="yes"/>
     <file property="dom4j.jar" required="yes" location="${hibernate.lib}/dom4j-1.4.jar" build="yes"/>
     <file property="hibernate2.jar" required="yes" location="${hibernate.home}/hibernate2.jar" build="yes"/>
