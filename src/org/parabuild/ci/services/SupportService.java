@@ -77,21 +77,18 @@ public final class SupportService implements Service {
   }
 
 
-  private void initSystemProperties() {
+  private static void initSystemProperties() {
     // NOTE: vimeshev - 08/24/2005 - see #718 - there was some
     // reference that "it may help to do it this way" in addition
     // to "-Djava.awt.headless=true" from command line. 
     System.setProperty("java.awt.headless", "true");
-
-    // Use Saxon as a transformer
-    System.setProperty("javax.xml.transform.TransformerFactory", "net.sf.saxon.TransformerFactoryImpl");
   }
 
 
   /**
    * Initialises ehcache manager.
    */
-  private void initCache() {
+  private static void initCache() {
     try {
       CacheManager.create(IoUtils.stringToInputStream(IoUtils.getResourceAsString("ehcache.xml")));
 
@@ -108,7 +105,7 @@ public final class SupportService implements Service {
    * Attempts to init cache to default values ignoring
    * exceptions.
    */
-  private void initCacheHard() {
+  private static void initCacheHard() {
     try {
       CacheManager.create();
     } catch (final Exception e) {
@@ -118,12 +115,14 @@ public final class SupportService implements Service {
 
 
   /**
-   * Inits system error directory
+   * Initializes system error directory
    */
-  private void initErrorDir() {
+  private static void initErrorDir() {
     try {
       final File f = ConfigurationManager.getSystemNewErrorsDirectory();
-      if (!f.exists()) f.mkdirs();
+      if (!f.exists()) {
+        f.mkdirs();
+      }
     } catch (final Exception e) {
       reportStartupError("Error creating error dir:", e);
     }
@@ -150,10 +149,8 @@ public final class SupportService implements Service {
   /**
    * Helper method to report errors.
    *
-   * @param descr
-   * @param e
    */
-  private void reportStartupError(final String descr, final Exception e) {
+  private static void reportStartupError(final String descr, final Exception e) {
     final Error error = new Error(descr + ' ' + StringUtils.toString(e));
     error.setSendEmail(false);
     error.setErrorLevel(Error.ERROR_LEVEL_FATAL);
