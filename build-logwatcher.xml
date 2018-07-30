@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <project name="bt" default="logviewer.all" basedir=".">
 
   <property name="build.dir.logviewer.classes" value="${build.dir}/logviewer_classes"/>

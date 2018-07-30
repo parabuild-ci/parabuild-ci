@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <project name="bt" default="installer.all" basedir=".">
 
   <property name="installer.staging.dir" value="${build.dir}/installer_staging"/>

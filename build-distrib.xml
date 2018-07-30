@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <project name="bt" default="distrib.all" basedir=".">
 
   <target name="distrib.media">

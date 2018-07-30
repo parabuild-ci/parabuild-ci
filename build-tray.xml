@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <project name="bt" default="tray.all" basedir=".">
 
   <property name="build.dir.tray.classes" value="${build.dir}/tray_classes"/>

@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <project name="bt" default="tests.deploy" basedir=".">
 
   <!-- Helpert to create test copies of autobuild for build manager and for remote agent -->

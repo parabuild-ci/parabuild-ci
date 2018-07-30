@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <project name="bt" default="realm.all" basedir=".">
 
   <property name="build.dir.realm.classes" value="${build.dir}/realm_classes"/>

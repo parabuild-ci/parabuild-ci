@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <project name="bt" default="docs.all" basedir=".">
 
   <property name="fo.staging.dir" value="${build.dir}/fo_staging"/>

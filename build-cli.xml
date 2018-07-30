@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <project name="bt" default="cli.all" basedir=".">
 
   <property name="build.dir.cli.classes" value="${build.dir}/cli_classes"/>

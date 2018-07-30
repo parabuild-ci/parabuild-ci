@@ -143,8 +143,6 @@
       <fileset file="${ognl-3.1.12.jar}"/>
       <fileset file="${quartz.jar}"/>
       <fileset file="${rome.jar}"/>
-      <fileset file="${saxon-dom.jar}"/>
-      <fileset file="${saxon.jar}"/>
       <fileset file="${smack.jar}"/>
       <fileset file="${smackx.jar}"/>
       <fileset file="${struts2-core-2.5.16.jar}"/>

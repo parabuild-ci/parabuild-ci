@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <project name="bt" default="licenses.all" basedir=".">
   <target name="licenses.3rdparty">
     <mkdir dir="${build.dir.tomcat}/etc/system"/>

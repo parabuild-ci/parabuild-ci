@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <!--
   This is a dispatcher script. It does common work and delegates
   server-specific processing to helper scripts.

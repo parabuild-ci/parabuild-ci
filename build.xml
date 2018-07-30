@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <project name="bt" default="usage" basedir=".">
 
   <!-- set global properties for this build -->
@@ -152,8 +153,6 @@ commons-io-2.2.jar		commons-logging-1.1.3.jar	javassist-3.11.0.GA.jar		struts2-c
     <pathelement path="${quartz.jar}"/>
     <pathelement path="${rome.jar}"/>
     <pathelement path="${saaj.jar}"/>
-    <pathelement path="${saxon-dom.jar}"/>
-    <pathelement path="${saxon.jar}"/>
     <pathelement path="${servlet.jar}"/>
     <pathelement path="${smack.jar}"/>
     <pathelement path="${smtp.jar}"/>

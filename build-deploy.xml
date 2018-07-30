@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <project name="bt" default="deploy.to.website" basedir=".">
   <!-- Deploys to website -->
   <target name="deploy.to.website">
