@@ -17,7 +17,7 @@
       <Realm className="org.parabuild.ci.realm.Realm"/>
 
       <!--<Host name="localhost" appBase="app" unpackWARs="false" autoDeploy="false">-->
-      <Host name="localhost" unpackWARs="false" autoDeploy="false">
+      <Host name="localhost" unpackWARs="true" autoDeploy="false">
 
         <Context path="" docBase="../app/parabuild.war" reloadable="true" privileged="true" distributable="false" tldValidation="false">
 
