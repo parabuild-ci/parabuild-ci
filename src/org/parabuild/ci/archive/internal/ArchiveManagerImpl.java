@@ -594,7 +594,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
     final long startTimeMillis = System.currentTimeMillis();
 
     // Prepare
-    final int buildConfigurationCutOff = cm.getBuildAttributeValue(activeBuildID, BuildConfigAttribute.RESULT_RETENTION_DAYS, new Integer(SystemProperty.DEFAULT_MINIMUM_RESULTS_RETENTION)).intValue();
+    final int buildConfigurationCutOff = cm.getBuildAttributeValue(activeBuildID, BuildConfigAttribute.RESULT_RETENTION_DAYS, new Integer(SystemProperty.DEFAULT_MINIMUM_RESULTS_RETENTION));
     final int minimumSystemCutOff = SystemConfigurationManagerFactory.getManager().getSystemPropertyValue(SystemProperty.MINIMUM_RESULTS_RETENTION, SystemProperty.DEFAULT_MINIMUM_RESULTS_RETENTION);
     final int days = deleted ? 1 : Math.max(buildConfigurationCutOff, minimumSystemCutOff);
 
