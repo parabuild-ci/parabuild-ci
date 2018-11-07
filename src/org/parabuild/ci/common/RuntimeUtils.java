@@ -92,21 +92,21 @@ public final class RuntimeUtils {
       // preinit system type
       final Properties p = System.getProperties();
       final String os = p.getProperty("os.name").toLowerCase();
-      if (os.indexOf("indows") >= 0) {
-        if (os.indexOf("nt") >= 0 || os.indexOf("200") >= 0 || os.indexOf("windows xp") >= 0 || os.indexOf("windows vista") >= 0) {
+      if (os.contains("indows")) {
+        if (os.contains("nt") || os.contains("200") || os.contains("windows xp") || os.contains("windows vista")) {
           systemType = SYSTEM_TYPE_WINNT;
           executeResult = execute("cmd.exe /C set");
         } else {
           systemType = SYSTEM_TYPE_WIN95;
           executeResult = execute("command.com /C set");
         }
-      } else if (os.indexOf("sunos") >= 0 || os.indexOf("solaris") >= 0) {
+      } else if (os.contains("sunos") || os.contains("solaris")) {
         systemType = SYSTEM_TYPE_SUNOS;
         executeResult = execute("env");
-      } else if (os.indexOf("linux") >= 0) {
+      } else if (os.contains("linux")) {
         systemType = SYSTEM_TYPE_LINUX;
         executeResult = execute("env");
-      } else if (os.indexOf("hp") >= 0 && os.indexOf("ux") >= 0) {
+      } else if (os.contains("hp") && os.contains("ux")) {
         systemType = SYSTEM_TYPE_HPUX;
         executeResult = execute("env");
       } else if (!StringUtils.isBlank(p.getProperty("mrj.version"))) {
@@ -550,7 +550,7 @@ public final class RuntimeUtils {
         if (log.isDebugEnabled()) log.debug("currentDir: " + currentDir);
 
         // make rm command
-        final StringBuffer cmd = new StringBuffer(200);
+        final StringBuilder cmd = new StringBuilder(200);
         cmd.append(rm.getCanonicalPath());
         if (pathToDelete.isDirectory()) {
 
@@ -587,7 +587,7 @@ public final class RuntimeUtils {
       final File currentDir = pathToDelete.getParentFile();
 
       // Make rd command
-      final StringBuffer cmd = new StringBuffer(200);
+      final StringBuilder cmd = new StringBuilder(200);
       cmd.append("cmd.exe /c rd /s /q ");
       cmd.append(StringUtils.putIntoDoubleQuotes(pathToDelete.getCanonicalPath()));
 

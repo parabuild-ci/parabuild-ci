@@ -142,7 +142,7 @@ public final class IoUtils {
    */
   public static String inputStreamToString(final InputStream is) throws IOException {
     BufferedReader br = null;
-    final StringBuffer sb = new StringBuffer(100);
+    final StringBuilder sb = new StringBuilder(100);
     try {
       br = new BufferedReader(new InputStreamReader(is));
       String ln = br.readLine();
@@ -505,7 +505,7 @@ public final class IoUtils {
 
   public static String skipEmptyLines(final BufferedReader reader) throws IOException {
     String line = reader.readLine();
-    while (line != null && line.length() == 0) {
+    while (line != null && line.isEmpty()) {
       line = reader.readLine();
     }
     return line;

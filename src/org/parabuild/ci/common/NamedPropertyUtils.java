@@ -56,7 +56,7 @@ public final class NamedPropertyUtils {
     final List propertyRefs = new ArrayList(7);
     parsePropertyString(value, fragments, propertyRefs);
 
-    final StringBuffer sb = new StringBuffer(100);
+    final StringBuilder sb = new StringBuilder(100);
     final Iterator j = propertyRefs.iterator();
 
     for (final Iterator i = fragments.iterator(); i.hasNext();) {

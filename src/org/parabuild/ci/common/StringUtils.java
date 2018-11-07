@@ -263,7 +263,7 @@ public final class StringUtils implements CommonConstants {
    * a String
    */
   public static String intArrayToString(final int[] array) {
-    final StringBuffer result = new StringBuffer(array.length);
+    final StringBuilder result = new StringBuilder(array.length);
     for (int i = 0; i < array.length; i++) {
       result.append((char)array[i]);
     }
@@ -320,7 +320,7 @@ public final class StringUtils implements CommonConstants {
    * the list as lines separated by "\n".
    */
   public static String linesToString(final List stringList) {
-    final StringBuffer result = new StringBuffer(300);
+    final StringBuilder result = new StringBuilder(300);
     for (int i = 0, n = stringList.size(); i < n; i++) {
       result.append((String)stringList.get(i)).append('\n');
     }
@@ -525,7 +525,7 @@ public final class StringUtils implements CommonConstants {
 
   public static String formatWithTrailingZeroes(final int value, final int zeroes) {
     final String stringValue = Integer.toString(value);
-    final StringBuffer result = new StringBuffer(5);
+    final StringBuilder result = new StringBuilder(5);
     final int numberOfZeroesToAdd = zeroes - stringValue.length();
     for (int i = 0; i < numberOfZeroesToAdd; i++) {
       result.append('0');

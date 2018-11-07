@@ -119,9 +119,7 @@ public final class IssueURLGenerator {
       urlGenerator.setIssueKey("101"); // set test url
       final String urlAsString = urlGenerator.generateIssueURL();
       new URL(urlAsString);
-    } catch (final MalformedURLException e) {
-      return false;
-    } catch (final BuildException e) {
+    } catch (final MalformedURLException | BuildException e) {
       return false;
     }
     return true;

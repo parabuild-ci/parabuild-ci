@@ -73,9 +73,7 @@ public final class IssueDescriptionFilter {
     if (StringUtils.isBlank(patterns)) return;
     for (final StringTokenizer st = new StringTokenizer(patterns, ";,"); st.hasMoreTokens();) {
       final String token = st.nextToken();
-      if (pattersToRemove.get(token) == null) {
-        pattersToRemove.put(token, token);
-      }
+      pattersToRemove.putIfAbsent(token, token);
     }
   }
 
