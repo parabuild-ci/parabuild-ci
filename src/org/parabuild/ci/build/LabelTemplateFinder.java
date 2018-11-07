@@ -65,7 +65,7 @@ public final class LabelTemplateFinder {
     // but it was deleted, we will not find duplicate.
     final List builds = cm.getExistingBuildConfigurationsIDs();
     for (final Iterator i = builds.iterator(); i.hasNext();) {
-      final int id = ((Integer)i.next()).intValue();
+      final int id = (Integer) i.next();
       if (id == buildID) continue;
       final BuildConfig config = cm.getBuildConfiguration(id);
       final LabelProperty lpType = cm.getLabelSetting(config.getBuildID(), LabelProperty.LABEL_TYPE);

@@ -45,7 +45,7 @@ public abstract class AbstractBuildScriptGenerator implements BuildScriptGenerat
   private static final int UNSER_BUILD_RUN_ID = BuildRun.UNSAVED_ID;
   private static final String VAR_PARABUILD_SCRIPT = "PARABUILD_SCRIPT";
   private static final String VAR_CLASSPATH = "CLASSPATH";
-  private static final String[] VARS_TO_ERASE = new String[]{
+  private static final String[] VARS_TO_ERASE = {
           "_JAVACMD",
           "_EXECJAVA",
           "PARABUILD_BASE",
@@ -415,7 +415,7 @@ public abstract class AbstractBuildScriptGenerator implements BuildScriptGenerat
       //System.out.println("DEBUG: pathSeparator = " + pathSeparator);
       for (final StringTokenizer st = new StringTokenizer(originalPathEnvVar, pathSeparator); st.hasMoreTokens(); ) {
         final String pathElem = st.nextToken();
-        if (pathElem.startsWith(fileDescriptor.getCanonicalPath()) || pathElem.length() == 0) {
+        if (pathElem.startsWith(fileDescriptor.getCanonicalPath()) || pathElem.isEmpty()) {
           //System.out.println("DEBUG: pathElem = " + pathElem);
           continue;
         }
@@ -511,7 +511,7 @@ public abstract class AbstractBuildScriptGenerator implements BuildScriptGenerat
       return "";
     }
 
-    final StringBuffer result = new StringBuffer(100);
+    final StringBuilder result = new StringBuilder(100);
     for (int i = 0; i < previousStepRuns.size(); i++) {
 
       // Get step run attributes

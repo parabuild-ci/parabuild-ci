@@ -140,7 +140,7 @@ public final class BuildLogAnalyzer {
       String successDescription = "";
       reader = new BufferedReader(new FileReader(buildLog));
       for (String logLine = reader.readLine(); logLine != null;) {
-        if (logLine.length() != 0) {
+        if (!logLine.isEmpty()) {
           pushLineToLogWindow(logLine);
           if (errorFound) {
             // just slide down half of error window
@@ -229,7 +229,7 @@ public final class BuildLogAnalyzer {
         if (logLine.length() < linePattern.length()) {
           break;
         }
-        if (logLine.indexOf(linePattern) >= 0) {
+        if (logLine.contains(linePattern)) {
           patternsFound++;
         }
       }
@@ -267,7 +267,7 @@ public final class BuildLogAnalyzer {
   private static String[][] makeWorkingStringPatterns(final List seedPatternSet, final String customPatterns) {
     for (final StringTokenizer st = new StringTokenizer(customPatterns, "\n", false); st.hasMoreTokens();) {
       final String pattern = st.nextToken().trim();
-      if (pattern.length() > 0) {
+      if (!pattern.isEmpty()) {
         if (StringUtils.isRegex(pattern)) {
           continue;
         }

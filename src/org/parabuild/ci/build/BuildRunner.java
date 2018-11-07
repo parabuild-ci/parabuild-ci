@@ -527,7 +527,7 @@ public final class BuildRunner extends Thread {
         cm.saveObject(new BuildRunAttribute(buildRun.getBuildRunID(), BuildRunAttribute.NEW_CHANGE_LIST_IN_THIS_BUILD, 0)); // no new
       } else if (localStartRequest.isParallel()) {
         cm.copyBuildRunParticipants(localStartRequest.getBuildRunID(), buildRun.getBuildRunID());
-        cm.saveObject(new BuildRunAttribute(buildRun.getBuildRunID(), BuildRunAttribute.NEW_CHANGE_LIST_IN_THIS_BUILD, cm.getBuildRunAttributeValue(localStartRequest.getBuildRunID(), BuildRunAttribute.NEW_CHANGE_LIST_IN_THIS_BUILD, new Integer(0)).intValue())); // same as for the leader
+        cm.saveObject(new BuildRunAttribute(buildRun.getBuildRunID(), BuildRunAttribute.NEW_CHANGE_LIST_IN_THIS_BUILD, cm.getBuildRunAttributeValue(localStartRequest.getBuildRunID(), BuildRunAttribute.NEW_CHANGE_LIST_IN_THIS_BUILD, new Integer(0)))); // same as for the leader
         cm.saveObject(new BuildRunAttribute(buildRun.getBuildRunID(), BuildRunAttribute.ATTR_LEAD_BUILD_RUN_ID, localStartRequest.getBuildRunID()));
         cm.saveObject(new BuildRunDependence(localStartRequest.getBuildRunID(), buildRun.getBuildRunID()));
       } else {
@@ -542,7 +542,7 @@ public final class BuildRunner extends Thread {
         // try to get version information from the leading build run ID
         final int leadingBuildRunID = localStartRequest.getBuildRunID();
         version = cm.getBuildRunAttributeValue(leadingBuildRunID, BuildRunAttribute.GENERATED_VERSION);
-        versionCounter = cm.getBuildRunAttributeValue(leadingBuildRunID, BuildRunAttribute.GENERATED_VERSION_COUNTER, new Integer(1)).intValue();
+        versionCounter = cm.getBuildRunAttributeValue(leadingBuildRunID, BuildRunAttribute.GENERATED_VERSION_COUNTER, new Integer(1));
       } else {
         // NOTE: vimeshev - 2006-08-18 if version template is not
         // provide as a part of the build start request this could
@@ -750,7 +750,7 @@ public final class BuildRunner extends Thread {
       if (buildRun.successful() && buildRun.getDependence() == BuildRun.DEPENDENCE_LEADER) {
         // get all including self
         final List allParallelBuildRuns = cm.getAllParallelBuildRuns(buildRun);
-        final StringBuffer failedDependents = new StringBuffer(100);
+        final StringBuilder failedDependents = new StringBuilder(100);
         for (int i = 0; i < allParallelBuildRuns.size(); i++) {
           final BuildRun run = (BuildRun) allParallelBuildRuns.get(i);
           if (buildRun.getBuildRunID() == run.getBuildRunID()) {
@@ -850,9 +850,9 @@ public final class BuildRunner extends Thread {
 
       if (buildRun.isSuccessful()) {
         final Integer dependentBuildID = cm.getBuildAttributeValue(buildRun.getActiveBuildID(), BuildConfigAttribute.DEPENDENT_BUILD_ID, (Integer) null);
-        if (dependentBuildID != null && dependentBuildID.intValue() != BuildConfig.UNSAVED_ID) {
+        if (dependentBuildID != null && dependentBuildID != BuildConfig.UNSAVED_ID) {
           // Get a non-deleted build
-          final ActiveBuildConfig activeBuildConfig = cm.getExistingBuildConfig(dependentBuildID.intValue());
+          final ActiveBuildConfig activeBuildConfig = cm.getExistingBuildConfig(dependentBuildID);
           if (activeBuildConfig == null) {
             if (cm.getBuildAttributeValue(buildRun.getActiveBuildID(), BuildConfigAttribute.FAIL_IF_DEPENDENT_BUILD_CANNOT_BE_STARTED, BuildConfigAttribute.OPTION_UNCHECKED).equals(BuildConfigAttribute.OPTION_CHECKED)) {
               // Fail build
@@ -862,7 +862,7 @@ public final class BuildRunner extends Thread {
 
             // Create start request for the dependent build
             final BuildStartRequestBuilder builder = new BuildStartRequestBuilder();
-            final BuildStartRequest buildStartRequest = builder.makeStartRequest(dependentBuildID.intValue(), ChangeList.UNSAVED_ID, null);
+            final BuildStartRequest buildStartRequest = builder.makeStartRequest(dependentBuildID, ChangeList.UNSAVED_ID, null);
             buildStartRequest.setRequestType(BuildStartRequest.REQUEST_CHAINED);
             buildStartRequest.setBuildRunID(buildRun.getBuildRunID());
 
@@ -885,7 +885,7 @@ public final class BuildRunner extends Thread {
             }
 
             // Send start request
-            BuildManager.getInstance().startBuild(dependentBuildID.intValue(), buildStartRequest);
+            BuildManager.getInstance().startBuild(dependentBuildID, buildStartRequest);
           }
         }
       }

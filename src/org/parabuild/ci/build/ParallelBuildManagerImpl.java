@@ -90,7 +90,7 @@ final class ParallelBuildManagerImpl extends ParallelBuildManager {
     final List configuredParallelBuildList = cm.getDependentParallelBuildIDs(leadingActiveBuildID);
     for (final Iterator i = configuredParallelBuildList.iterator(); i.hasNext();) {
       final Integer dependentBuildID = (Integer) i.next();
-      final BuildService dependentBuildService = buildListService.getBuild(dependentBuildID.intValue());
+      final BuildService dependentBuildService = buildListService.getBuild(dependentBuildID);
       if (dependentBuildService != null) {
         final BuildState buildState = dependentBuildService.getBuildState();
         final BuildStatus status = buildState.getStatus();
@@ -134,7 +134,7 @@ final class ParallelBuildManagerImpl extends ParallelBuildManager {
       if (log.isDebugEnabled()) {
         log.debug("buildStartRequest: " + buildStartRequest);
       }
-      BuildManager.getInstance().startBuild(dependentBuildID.intValue(), buildStartRequest);
+      BuildManager.getInstance().startBuild(dependentBuildID, buildStartRequest);
       startedBuildIDList.add(dependentBuildID);
     }
     return startedBuildIDList.size();
@@ -161,7 +161,7 @@ final class ParallelBuildManagerImpl extends ParallelBuildManager {
       someAreBusy = false;
       for (int i = 0; i < startedBuildIDList.size(); i++) {
         final Integer dependentBuildID = (Integer) startedBuildIDList.get(i);
-        final BuildService build = buildListService.getBuild(dependentBuildID.intValue());
+        final BuildService build = buildListService.getBuild(dependentBuildID);
         if (build == null) {
           continue;
         }

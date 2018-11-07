@@ -133,9 +133,9 @@ public final class RepeatableScheduleJob implements Job {
       // run the build
       try {
         final CleanCheckoutCounter cleanCheckoutCounter = (CleanCheckoutCounter) dataMap.get(CLEAN_CHECKOUT_COUNTER);
-        final boolean forceCleanCheckout = ((Boolean) dataMap.get(FORCE_CLEAN_CHECKOUT)).booleanValue();
+        final boolean forceCleanCheckout = (Boolean) dataMap.get(FORCE_CLEAN_CHECKOUT);
         final boolean cleanCheckOut = cleanCheckoutCounter.increment() || forceCleanCheckout;
-        runBuild(((Boolean) dataMap.get(RUN_IF_NO_CHANGES)).booleanValue(), cleanCheckOut);
+        runBuild((Boolean) dataMap.get(RUN_IF_NO_CHANGES), cleanCheckOut);
       } finally {
         // remove build run presense flag
         synchronized (activeJobs) {
