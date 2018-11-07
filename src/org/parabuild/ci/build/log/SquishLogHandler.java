@@ -139,9 +139,7 @@ public final class SquishLogHandler extends AbstractLogHandler {
       stepLog.setPathType(StepLog.PATH_TYPE_SQUISH_XML);
       stepLog.setFound((byte) 1);
       cm.save(stepLog);
-    } catch (final Exception e) {
-      throw IoUtils.createIOException(StringUtils.toString(e), e);
-    } catch (final OutOfMemoryError e) {
+    } catch (final Exception | OutOfMemoryError e) {
       throw IoUtils.createIOException(StringUtils.toString(e), e);
     } finally {
       IoUtils.deleteFilesHard(tempFiles);

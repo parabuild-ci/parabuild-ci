@@ -187,10 +187,7 @@ public final class PHPUnitLogHandler extends AbstractLogHandler {
       if (log.isDebugEnabled()) {
         log.debug("PHPUH: saved stepLog: " + stepLog);
       }
-    } catch (final Exception e) {
-      throw IoUtils.createIOException(StringUtils.toString(e), e);
-      // TODELETE: debug
-    } catch (final OutOfMemoryError e) {
+    } catch (final Exception | OutOfMemoryError e) {
       throw IoUtils.createIOException(StringUtils.toString(e), e);
     } finally {
       IoUtils.deleteFilesHard(tempFiles);

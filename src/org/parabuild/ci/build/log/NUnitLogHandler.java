@@ -162,10 +162,7 @@ public final class NUnitLogHandler extends AbstractLogHandler {
       if (log.isDebugEnabled()) {
         log.debug("NULH: saved stepLog: " + stepLog);
       }
-    } catch (final Exception e) {
-      throw IoUtils.createIOException(StringUtils.toString(e), e);
-      // TODELETE: debug
-    } catch (final OutOfMemoryError e) {
+    } catch (final Exception | OutOfMemoryError e) {
       throw IoUtils.createIOException(StringUtils.toString(e), e);
     } finally {
       IoUtils.deleteFilesHard(tempFiles);

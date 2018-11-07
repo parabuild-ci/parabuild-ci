@@ -122,9 +122,7 @@ public final class LogHandlerFactory {
             throw new BuildException("Unknown log type: " + logConfig.getType(), agent);
         }
       }
-    } catch (final IOException e) {
-      reportHandlerCreationError(buildRunConfig, e);
-    } catch (final BuildException e) {
+    } catch (final IOException | BuildException e) {
       reportHandlerCreationError(buildRunConfig, e);
     }
     return composite;

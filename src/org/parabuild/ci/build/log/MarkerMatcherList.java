@@ -81,7 +81,7 @@ public final class MarkerMatcherList implements MarkerMatcher {
 
 
     public boolean match(final String string) {
-      return string.indexOf(stringToMatch) >= 0;
+      return string.contains(stringToMatch);
     }
 
 
