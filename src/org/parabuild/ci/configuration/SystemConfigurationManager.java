@@ -468,7 +468,7 @@ public interface SystemConfigurationManager {
 
   void createOrUpdateSystemProperty(String propertyName, String propertyValue);
 
-  public void createSystemProperty(String propertyName, String propertyValue);
+  void createSystemProperty(String propertyName, String propertyValue);
 
   void deleteSystemProperty(String name);
 

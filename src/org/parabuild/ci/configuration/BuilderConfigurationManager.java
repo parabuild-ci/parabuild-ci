@@ -121,7 +121,7 @@ public final class BuilderConfigurationManager {
           final Object[] objects = (Object[]) list.get(i);
           final Integer builderAgentID = (Integer) objects[0];
           final AgentConfig ac = (AgentConfig) objects[1];
-          final BuilderAgentVO o = new BuilderAgentVO(builderAgentID.intValue(), ac.getHost(),
+          final BuilderAgentVO o = new BuilderAgentVO(builderAgentID, ac.getHost(),
                   ac.isEnabled(), ac.isLocal(), ac.getID(), ac.getPassword());
           result.add(o);
         }
@@ -136,7 +136,7 @@ public final class BuilderConfigurationManager {
    * @param builderHost
    */
   public boolean builderMemberWithHostNameExists(final int clusterID, final String builderHost) {
-    return ((Boolean) ConfigurationManager.runInHibernate(new TransactionCallback() {
+    return (Boolean) ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         final Query q = session.createQuery("select bm.ID from BuilderAgent bm where bm.clusterID = ? and bm.builderHost = ?");
         q.setInteger(0, clusterID);
@@ -144,7 +144,7 @@ public final class BuilderConfigurationManager {
         q.setCacheable(true);
         return Boolean.valueOf(!q.list().isEmpty());
       }
-    })).booleanValue();
+    });
   }
 
 
@@ -200,7 +200,7 @@ public final class BuilderConfigurationManager {
           final int agentConfigID = agentConfig.getID();
           final Integer buildCounter = getBuildConfigCountForAgent(agentConfigID, session);
           final AgentConfigVO agentConfigVO = new AgentConfigVO();
-          agentConfigVO.setBuildConfigCount(buildCounter.intValue());
+          agentConfigVO.setBuildConfigCount(buildCounter);
           agentConfigVO.setDeleted(agentConfig.isDeleted());
           agentConfigVO.setDescription(agentConfig.getDescription());
           agentConfigVO.setCapacity(agentConfig.getCapacity());
@@ -219,11 +219,11 @@ public final class BuilderConfigurationManager {
 
 
   public int getBuildConfigCountForAgent(final int agentID) {
-    return ((Integer) ConfigurationManager.runInHibernate(new TransactionCallback() {
+    return (Integer) ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         return getBuildConfigCountForAgent(agentID, session);
       }
-    })).intValue();
+    });
   }
 
 
@@ -305,7 +305,7 @@ public final class BuilderConfigurationManager {
    * @return number of agents attached to this builder.
    */
   public int getBuilderAgentCount(final int builderID) {
-    return ((Integer) ConfigurationManager.runInHibernate(new TransactionCallback() {
+    return (Integer) ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         final Query agentCountQuesry = session.createQuery(" select count(agent.ID) " +
                 "   from BuilderAgent ba, AgentConfig agent" +
@@ -317,7 +317,7 @@ public final class BuilderConfigurationManager {
         agentCountQuesry.setCacheable(true);
         return agentCountQuesry.uniqueResult();
       }
-    })).intValue();
+    });
   }
 
 
@@ -328,7 +328,7 @@ public final class BuilderConfigurationManager {
    * @return number of builds services by this builder.
    */
   public int getBuilderBuildCount(final int builderID) {
-    return ((Integer) ConfigurationManager.runInHibernate(new TransactionCallback() {
+    return (Integer) ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         final Query buildCountQuery = session.createQuery(" select count(abc.buildID) " +
                 "   from ActiveBuildConfig abc, ActiveBuild ab" +
@@ -339,7 +339,7 @@ public final class BuilderConfigurationManager {
         buildCountQuery.setCacheable(true);
         return buildCountQuery.uniqueResult();
       }
-    })).intValue();
+    });
   }
 
 

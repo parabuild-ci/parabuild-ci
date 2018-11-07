@@ -140,7 +140,7 @@ public final class ResultGroupManager {
 
   public PublishedStepResult getPublishedStepResult(final Integer publishedResultID) {
     if (publishedResultID == null) return null;
-    return (PublishedStepResult) ConfigurationManager.getInstance().getObject(PublishedStepResult.class, publishedResultID.intValue());
+    return (PublishedStepResult) ConfigurationManager.getInstance().getObject(PublishedStepResult.class, publishedResultID);
   }
 
 

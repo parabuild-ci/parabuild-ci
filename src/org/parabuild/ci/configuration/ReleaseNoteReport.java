@@ -58,7 +58,7 @@ public final class ReleaseNoteReport {
    * @return issue ID
    */
   public int getIssueID() {
-    return issueID.intValue();
+    return issueID;
   }
 
 

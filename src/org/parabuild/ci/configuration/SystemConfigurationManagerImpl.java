@@ -610,7 +610,7 @@ final class SystemConfigurationManagerImpl implements SystemConfigurationManager
    * Creates a new sequence number for active build
    */
   public int incrementBuildSequenceNumber() {
-    return ((Integer) ConfigurationManager.runInHibernate(new TransactionCallback() {
+    return (Integer) ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         try {
           // Fix possible mismatch for active build sequence. See #1384 - "Cannot copy build" for more information.
@@ -619,7 +619,7 @@ final class SystemConfigurationManagerImpl implements SystemConfigurationManager
           if (!list.isEmpty()) {
             final Integer number = (Integer) list.get(0);
             if (number != null) {
-              final int maxSequenceNumber = number.intValue();
+              final int maxSequenceNumber = number;
               final SystemProperty systemProperty = getSystemProperty(SystemProperty.BUILD_SEQUENCE_NUMBER);
               final int currentSequenceNumber = systemProperty.getPropertyValueAsInt();
               if (maxSequenceNumber > currentSequenceNumber) {
@@ -637,7 +637,7 @@ final class SystemConfigurationManagerImpl implements SystemConfigurationManager
           CacheManager.getInstance().getCache("org.parabuild.ci.object.SystemProperty").remove(SystemProperty.BUILD_SEQUENCE_NUMBER);
         }
       }
-    })).intValue();
+    });
   }
 
 

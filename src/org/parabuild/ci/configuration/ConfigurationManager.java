@@ -92,7 +92,7 @@ public final class ConfigurationManager implements Serializable {
   private static final long serialVersionUID = 2749534373687207758L; // NOPMD
   private static final Log LOG = LogFactory.getLog(ConfigurationManager.class); // NOPMD
 
-  public static final boolean validateActiveID = Boolean.valueOf(System.getProperty("parabuild.active.build.id.validation.enabled")).booleanValue();
+  public static final boolean validateActiveID = Boolean.valueOf(System.getProperty("parabuild.active.build.id.validation.enabled"));
   public static final String STR_DIGESTED_ADMIN = "21232F297A57A5A743894A0E4A801FC3";
   public static final String STARTUP_USER = System.getProperty("user.name", "");
   public static final String PARABUILD_WORK_DIR = "build";
@@ -354,7 +354,7 @@ public final class ConfigurationManager implements Serializable {
 
 
   public boolean isLastEnabledBuildSequence(final int buildID, final BuildStepType type, final String stepName) {
-    final int lastBuildSequenceID = ((Integer) runInHibernate(new TransactionCallback() {
+    final int lastBuildSequenceID = (Integer) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         // get last sequence ID
         final Query queryLastSequenceID = session.createQuery(
@@ -368,7 +368,7 @@ public final class ConfigurationManager implements Serializable {
         queryLastSequenceID.setCacheable(true);
         return queryLastSequenceID.uniqueResult();
       }
-    })).intValue();
+    });
     final BuildSequence bs = (BuildSequence) getObject(BuildSequence.class, lastBuildSequenceID);
     return bs.getStepName().equals(stepName);
   }
@@ -571,7 +571,7 @@ public final class ConfigurationManager implements Serializable {
         return new Integer(counter);
       }
     });
-    return result.intValue();
+    return result;
   }
 
 
@@ -779,7 +779,7 @@ public final class ConfigurationManager implements Serializable {
    * pagination for the build runs table.
    */
   public int getCompletedBuildRunsCount(final int activeBuildID) {
-    return ((Integer) runInHibernate(new TransactionCallback() {
+    return (Integer) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         if (validateActiveID) {
           validateIsActiveBuildID(session, activeBuildID);
@@ -794,7 +794,7 @@ public final class ConfigurationManager implements Serializable {
         q.setCacheable(true);
         return q.uniqueResult();
       }
-    })).intValue();
+    });
   }
 
 
@@ -832,7 +832,7 @@ public final class ConfigurationManager implements Serializable {
    * Result is sorted by descending date
    */
   public int getCompletedSuccessfulBuildRunsCount(final int activeBuildID) {
-    return ((Integer) runInHibernate(new TransactionCallback() {
+    return (Integer) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         if (validateActiveID) {
           validateIsActiveBuildID(session, activeBuildID);
@@ -849,7 +849,7 @@ public final class ConfigurationManager implements Serializable {
         q.setCacheable(true);
         return q.uniqueResult();
       }
-    })).intValue();
+    });
   }
 
 
@@ -914,7 +914,7 @@ public final class ConfigurationManager implements Serializable {
    * Result is sorted by descending date
    */
   public int getCompletedUnsuccessfulBuildRunsCount(final int activeBuildID) {
-    return ((Integer) runInHibernate(new TransactionCallback() {
+    return (Integer) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         if (validateActiveID) {
           validateIsActiveBuildID(session, activeBuildID);
@@ -931,7 +931,7 @@ public final class ConfigurationManager implements Serializable {
         q.setCacheable(true);
         return q.uniqueResult();
       }
-    })).intValue();
+    });
   }
 
 
@@ -992,7 +992,7 @@ public final class ConfigurationManager implements Serializable {
   /**
    */
   public int getBuildRunAttributeValue(final int buildRunID, final String name, final int defaultValue) {
-    return getBuildRunAttributeValue(buildRunID, name, new Integer(defaultValue)).intValue();
+    return getBuildRunAttributeValue(buildRunID, name, new Integer(defaultValue));
   }
 
 
@@ -1367,7 +1367,7 @@ public final class ConfigurationManager implements Serializable {
         return new Integer(userToEmail.getMapID());
       }
     });
-    return result.intValue();
+    return result;
   }
 
 
@@ -1411,7 +1411,7 @@ public final class ConfigurationManager implements Serializable {
         return new Integer(maxBuildChangeListID);
       }
     });
-    return result.intValue();
+    return result;
   }
 
 
@@ -1460,7 +1460,7 @@ public final class ConfigurationManager implements Serializable {
         return new Integer(result);
       }
     });
-    return result.intValue();
+    return result;
   }
 
 
@@ -1490,7 +1490,7 @@ public final class ConfigurationManager implements Serializable {
         return new Integer(watcher.getWatcherID());
       }
     });
-    return result.intValue();
+    return result;
   }
 
 
@@ -1784,8 +1784,8 @@ public final class ConfigurationManager implements Serializable {
         // process parts, if any
         if (!perforceDepotPathParts.isEmpty()) {
           //if (log.isDebugEnabled()) log.debug("perforceDepotPathParts.size():" + perforceDepotPathParts.size());
-          Collections.sort(perforceDepotPathParts, SourceControlSetting.PROPERTY_NAME_COMPARATOR);
-          final StringBuffer depotPathValue = new StringBuffer(512);
+          perforceDepotPathParts.sort(SourceControlSetting.PROPERTY_NAME_COMPARATOR);
+          final StringBuilder depotPathValue = new StringBuilder(512);
           for (final Iterator j = perforceDepotPathParts.iterator(); j.hasNext(); ) {
             final SourceControlSetting peforceDeportPartSetting = (SourceControlSetting) j.next();
             depotPathValue.append(peforceDeportPartSetting.getPropertyValue());
@@ -1842,8 +1842,8 @@ public final class ConfigurationManager implements Serializable {
           }
 
           // process parts, if any
-          Collections.sort(parts, SourceControlSetting.PROPERTY_NAME_COMPARATOR);
-          final StringBuffer depotPathValue = new StringBuffer(512);
+          parts.sort(SourceControlSetting.PROPERTY_NAME_COMPARATOR);
+          final StringBuilder depotPathValue = new StringBuilder(512);
           for (final Iterator j = parts.iterator(); j.hasNext(); ) {
             final SourceControlSetting peforceDeportPartSetting = (SourceControlSetting) j.next();
             depotPathValue.append(peforceDeportPartSetting.getPropertyValue());
@@ -2044,7 +2044,7 @@ public final class ConfigurationManager implements Serializable {
    */
   public List getExistingBuildConfigsOrderedByID() {
     final List existingBuildConfigs = getExistingBuildConfigs();
-    Collections.sort(existingBuildConfigs, BuildConfig.ID_COMPARATOR);
+    existingBuildConfigs.sort(BuildConfig.ID_COMPARATOR);
     return existingBuildConfigs;
   }
 
@@ -2252,7 +2252,7 @@ public final class ConfigurationManager implements Serializable {
    * @return true if the changelist belongs to the build.
    */
   public boolean isChangeListBelongsToBuild(final int changeListID, final int activeBuildID) {
-    return ((Boolean) runInHibernate(new TransactionCallback() {
+    return (Boolean) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         if (validateActiveID) {
           validateIsActiveBuildID(session, activeBuildID);
@@ -2268,7 +2268,7 @@ public final class ConfigurationManager implements Serializable {
         q.setMaxResults(1);
         return Boolean.valueOf(!q.list().isEmpty());
       }
-    })).booleanValue();
+    });
   }
 
 
@@ -2524,7 +2524,7 @@ public final class ConfigurationManager implements Serializable {
           // We need to validate that source change list does not exist.
           buildChangeListExistsQuery.setInteger(0, destinationActiveBuildID);
           buildChangeListExistsQuery.setInteger(1, source.getChangeListID());
-          if (((Integer) buildChangeListExistsQuery.uniqueResult()).intValue() > 0) {
+          if ((Integer) buildChangeListExistsQuery.uniqueResult() > 0) {
             continue; // Record exists, go to next
           }
 
@@ -2539,7 +2539,7 @@ public final class ConfigurationManager implements Serializable {
         return new Integer(maxNewID);
       }
     });
-    return result.intValue();
+    return result;
   }
 
 
@@ -2751,7 +2751,7 @@ public final class ConfigurationManager implements Serializable {
         final Integer bchlChangeListID = (Integer) bchlQuery.uniqueResult();
 
         if (brpChangeListID != null && bchlChangeListID != null) {
-          return new Integer(Math.max(brpChangeListID.intValue(), bchlChangeListID.intValue()));
+          return new Integer(Math.max(brpChangeListID, bchlChangeListID));
         }
 
         if (brpChangeListID != null) {
@@ -2765,7 +2765,7 @@ public final class ConfigurationManager implements Serializable {
         return new Integer(ChangeList.UNSAVED_ID);
       }
     });
-    return result.intValue();
+    return result;
   }
 
 
@@ -2827,7 +2827,7 @@ public final class ConfigurationManager implements Serializable {
         return integerNewID;
       }
     });
-    return result.intValue();
+    return result;
   }
 
 
@@ -2856,7 +2856,7 @@ public final class ConfigurationManager implements Serializable {
         return new Integer(getLatestBuildRunParticipantID(lastCleanBuildRun.getBuildRunID()));
       }
     });
-    return result.intValue();
+    return result;
   }
 
 
@@ -2909,7 +2909,7 @@ public final class ConfigurationManager implements Serializable {
         return query.uniqueResult();
       }
     });
-    return id == null ? ChangeList.UNSAVED_ID : id.intValue();
+    return id == null ? ChangeList.UNSAVED_ID : id;
   }
 
 
@@ -2921,7 +2921,7 @@ public final class ConfigurationManager implements Serializable {
    * @return number of ChangeLists paticipaing in the build run.
    */
   public int getNewBuildRunParticipantsCount(final BuildRun buildRun) {
-    return ((Integer) runInHibernate(new TransactionCallback() {
+    return (Integer) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         final int buildRunID = buildRun.getBuildRunID();
         final Query query = session.createQuery("select count(brp) from BuildRunParticipant as brp " +
@@ -2931,7 +2931,7 @@ public final class ConfigurationManager implements Serializable {
                 .setCacheable(true);
         return query.uniqueResult();
       }
-    })).intValue();
+    });
   }
 
 
@@ -3029,15 +3029,15 @@ public final class ConfigurationManager implements Serializable {
 
 
   public boolean buildRunIssuesExist(final int buildRunID) {
-    return ((Boolean) runInHibernate(new TransactionCallback() {
+    return (Boolean) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         final Query query = session.createQuery("select count(rn.ID) from ReleaseNote as rn " +
                 " where rn.buildRunID = ?")
                 .setInteger(0, buildRunID);
         query.setCacheable(true);
-        return Boolean.valueOf(((Integer) query.uniqueResult()).intValue() > 0);
+        return Boolean.valueOf((Integer) query.uniqueResult() > 0);
       }
-    })).booleanValue();
+    });
   }
 
 
@@ -3082,7 +3082,7 @@ public final class ConfigurationManager implements Serializable {
    *         build run.
    */
   public int getBuildRunReleaseNotesCount(final int buildRunID) {
-    return ((Integer) runInHibernate(new TransactionCallback() {
+    return (Integer) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         final Query query = session.createQuery("select count(rn) from ReleaseNote as rn " +
                 "where rn.buildRunID = ?")
@@ -3090,7 +3090,7 @@ public final class ConfigurationManager implements Serializable {
         query.setCacheable(true);
         return query.uniqueResult();
       }
-    })).intValue();
+    });
   }
 
 
@@ -3306,7 +3306,7 @@ public final class ConfigurationManager implements Serializable {
 
 
   public boolean referringIssueTrackersExist(final int buildID, final byte trackerType) {
-    return ((Boolean) runInHibernate(new TransactionCallback() {
+    return (Boolean) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         final Query q = session.createQuery("select count(isht) from IssueTracker as isht, SourceControlSetting as scs " +
                 "where scs.propertyName = ? " +
@@ -3317,9 +3317,9 @@ public final class ConfigurationManager implements Serializable {
         q.setString(1, Integer.toString(buildID));
         q.setByte(2, trackerType);
         q.setCacheable(true);
-        return Boolean.valueOf(((Integer) q.uniqueResult()).intValue() > 0);
+        return Boolean.valueOf((Integer) q.uniqueResult() > 0);
       }
-    })).booleanValue();
+    });
   }
 
 
@@ -3363,7 +3363,7 @@ public final class ConfigurationManager implements Serializable {
 
 
   public boolean issueChangeListExists(final int changeListID, final int issueID) {
-    return ((Boolean) runInHibernate(new TransactionCallback() {
+    return (Boolean) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         final Query query = session.createQuery("select count(icl) from  IssueChangeList as icl " +
                 "where icl.changeListID = ? " +
@@ -3372,9 +3372,9 @@ public final class ConfigurationManager implements Serializable {
         query.setInteger(1, issueID);
         query.setCacheable(true);
         final Integer i = (Integer) query.uniqueResult();
-        return Boolean.valueOf(i.intValue() > 0);
+        return Boolean.valueOf(i > 0);
       }
-    })).booleanValue();
+    });
   }
 
 
@@ -3452,7 +3452,7 @@ public final class ConfigurationManager implements Serializable {
    *         empty String.
    */
   public String getNotificationPrefix(final int buildID) {
-    final StringBuffer result = new StringBuffer(20);
+    final StringBuilder result = new StringBuilder(20);
 
     // check JVM first
     final String jvmPrefix = System.getProperty(SystemProperty.NOTIFICATION_PREFIX);
@@ -3862,7 +3862,7 @@ public final class ConfigurationManager implements Serializable {
 
 
   public boolean buildRunResultsExist(final BuildRun buildRun) {
-    return ((Boolean) runInHibernate(new TransactionCallback() {
+    return (Boolean) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         final Query query = session.createQuery("select count(sres.ID) from StepResult sres, StepRun srun" +
                 " where srun.buildRunID = ? and sres.stepRunID = srun.ID " +
@@ -3870,9 +3870,9 @@ public final class ConfigurationManager implements Serializable {
         query.setInteger(0, buildRun.getBuildRunID());
         query.setCacheable(true);
         final Long o = (Long) query.uniqueResult();
-        return Boolean.valueOf(o.longValue() > 0L);
+        return Boolean.valueOf(o > 0L);
       }
-    })).booleanValue();
+    });
   }
 
 
@@ -3977,7 +3977,7 @@ public final class ConfigurationManager implements Serializable {
 
 
   public int getSequenceNumber(final int activeBuild) {
-    return ((Integer) runInHibernate(new TransactionCallback() {
+    return (Integer) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         final Query query = session.createQuery("select ab.sequenceNumber from ActiveBuild ab " +
                 " where ab.ID = ? ");
@@ -3985,12 +3985,12 @@ public final class ConfigurationManager implements Serializable {
         query.setCacheable(true);
         return query.uniqueResult();
       }
-    })).intValue();
+    });
   }
 
 
   public int getActiveBuildStartupStatus(final int id) {
-    return ((Integer) runInHibernate(new TransactionCallback() {
+    return (Integer) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         final Query query = session.createQuery("select ab.startupStatus from ActiveBuild ab " +
                 " where ab.ID = ? ");
@@ -3998,7 +3998,7 @@ public final class ConfigurationManager implements Serializable {
         query.setCacheable(true);
         return query.uniqueResult();
       }
-    })).intValue();
+    });
   }
 
 
@@ -4079,7 +4079,7 @@ public final class ConfigurationManager implements Serializable {
         return q.uniqueResult();
       }
     });
-    return result.intValue();
+    return result;
   }
 
 
@@ -4093,7 +4093,7 @@ public final class ConfigurationManager implements Serializable {
         return q.uniqueResult();
       }
     });
-    return result.intValue();
+    return result;
   }
 
 
@@ -4272,7 +4272,7 @@ public final class ConfigurationManager implements Serializable {
       throw new IllegalArgumentException("Unexpected version control code: " + referringBuildConfig.getSourceControl());
     }
     // process
-    return ((Boolean) runInHibernate(new TransactionCallback() {
+    return (Boolean) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         final int originalBuildConfigID = referringBuildConfig.getBuildID();
         BuildConfig nextBuildConfig = referredBuildConfig;
@@ -4285,7 +4285,7 @@ public final class ConfigurationManager implements Serializable {
         }
         return Boolean.FALSE;
       }
-    })).booleanValue();
+    });
   }
 
 
@@ -4593,7 +4593,7 @@ public final class ConfigurationManager implements Serializable {
 
 
   public int getRequiredStartParameterCount(final int buildConfigID, final StartParameterType type) {
-    return ((Integer) runInHibernate(new TransactionCallback() {
+    return (Integer) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         final Query q = session.createQuery(
                 "select count(mrp) from StartParameter as mrp " +
@@ -4606,7 +4606,7 @@ public final class ConfigurationManager implements Serializable {
         q.setCacheable(true);
         return q.uniqueResult();
       }
-    })).intValue();
+    });
   }
 
 
@@ -4793,7 +4793,7 @@ public final class ConfigurationManager implements Serializable {
 
 
   public boolean getBuildRunAttributeValue(final int buildRunID, final String attributeName, final boolean defaultValue) {
-    return Boolean.valueOf(getBuildRunAttributeValue(buildRunID, attributeName)).booleanValue();
+    return Boolean.valueOf(getBuildRunAttributeValue(buildRunID, attributeName));
   }
 
 
@@ -4822,7 +4822,7 @@ public final class ConfigurationManager implements Serializable {
           query.setInteger(0, buildRun.getBuildRunID());
           query.setCacheable(true);
           final Object[] objects = (Object[]) query.uniqueResult();
-          leadingBuildRunID = ((Integer) objects[0]).intValue();
+          leadingBuildRunID = (Integer) objects[0];
           result.add(new ParallelBuildRunVO(leadingBuildRunID, (String) objects[1], ((Byte) objects[2]).byteValue()));
         } else {
           throw new IllegalArgumentException("Unknown dependence type: " + dependence);
@@ -4925,7 +4925,7 @@ public final class ConfigurationManager implements Serializable {
         }
 
         // sort
-        Collections.sort(result, BuildRun.BUILD_NAME_IGNORE_CASE);
+        result.sort(BuildRun.BUILD_NAME_IGNORE_CASE);
 
         return result;
       }
@@ -4981,7 +4981,7 @@ public final class ConfigurationManager implements Serializable {
     // if a previous step was broken using plain Hibernate.
     // Or mark a step run as fixed.
 
-    return ((Boolean) runInHibernate(new TransactionCallback() {
+    return (Boolean) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         if (stepRun.isSuccessful()) {
           final BuildRun previousBuildRun = getPreviousBuildRun(getBuildRun(stepRun.getBuildRunID()));
@@ -4999,7 +4999,7 @@ public final class ConfigurationManager implements Serializable {
         }
         return Boolean.FALSE;
       }
-    })).booleanValue();
+    });
   }
 
 
@@ -5031,7 +5031,7 @@ public final class ConfigurationManager implements Serializable {
         // report the problem
         if (list.size() > 1) {
           // form the duplicate list
-          final StringBuffer warningOuput = new StringBuffer(500);
+          final StringBuilder warningOuput = new StringBuilder(500);
           for (int i = 0; i < list.size(); i++) {
             final ChangeList chList = (ChangeList) list.get(i);
             warningOuput.append(chList.toString());
@@ -5099,11 +5099,11 @@ public final class ConfigurationManager implements Serializable {
 
 
   public int saveChangeList(final ChangeList changeList) {
-    return ((Integer) runInHibernate(new TransactionCallback() {
+    return (Integer) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         return new Integer(saveChangeList(changeList, session));
       }
-    })).intValue();
+    });
   }
 
 
@@ -5288,7 +5288,7 @@ public final class ConfigurationManager implements Serializable {
 
 
   public boolean isCleanCheckoutIfBroken(final int activeBuildID) {
-    return ((Boolean) runInHibernate(new TransactionCallback() {
+    return (Boolean) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         final BuildConfig config = getBuildConfiguration(activeBuildID);
         final int buildID;
@@ -5301,7 +5301,7 @@ public final class ConfigurationManager implements Serializable {
         return Boolean.valueOf(getScheduleSettingValue(buildID, ScheduleProperty.AUTO_CLEAN_CHECKOUT_IF_BROKEN,
                 ScheduleProperty.OPTION_UNCHECKED).equals(ScheduleProperty.OPTION_CHECKED));
       }
-    })).booleanValue();
+    });
   }
 
 

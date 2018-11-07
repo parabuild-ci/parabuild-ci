@@ -40,7 +40,7 @@ public final class GlobalVCSUserMapManager {
       public Object runInTransaction() throws Exception {
         final Query q = session.createQuery("select m from GlobalVCSUserMap m where m.ID = ?");
         q.setCacheable(true);
-        q.setInteger(0, id.intValue());
+        q.setInteger(0, id);
         return q.uniqueResult();
       }
     });

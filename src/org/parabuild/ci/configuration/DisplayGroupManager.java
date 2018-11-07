@@ -70,7 +70,7 @@ public final class DisplayGroupManager {
                 .setInteger(0, displayGroupID);
         for (final Iterator i = q.iterate(); i.hasNext();) {
           final Object[] member = (Object[]) i.next();
-          final int activeBuildID = ((Integer) member[0]).intValue();
+          final int activeBuildID = (Integer) member[0];
           final String buildName = (String) member[1];
           result.add(new DisplayGroupBuildVO(true, activeBuildID, buildName));
         }
@@ -87,13 +87,13 @@ public final class DisplayGroupManager {
                 .setInteger(0, displayGroupID);
         for (final Iterator i = q.iterate(); i.hasNext();) {
           final Object[] nonmember = (Object[]) i.next();
-          final int activeBuildID = ((Integer) nonmember[0]).intValue();
+          final int activeBuildID = (Integer) nonmember[0];
           final String buildName = (String) nonmember[1];
           result.add(new DisplayGroupBuildVO(false, activeBuildID, buildName));
         }
 
         // sort and return
-        Collections.sort(result, DisplayGroupBuildVO.BUILD_NAME_ORDER);
+        result.sort(DisplayGroupBuildVO.BUILD_NAME_ORDER);
         return result;
       }
     });

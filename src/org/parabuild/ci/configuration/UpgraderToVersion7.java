@@ -112,7 +112,7 @@ final class UpgraderToVersion7 implements SingleStepSchemaUpgrader {
 
 
         psUpdateBuildRunParticipant.setInt(1, firstBuildRunID);
-        psUpdateBuildRunParticipant.setInt(2, firstBuildRunNumber.intValue());
+        psUpdateBuildRunParticipant.setInt(2, firstBuildRunNumber);
         psUpdateBuildRunParticipant.setInt(3, brpID);
         psUpdateBuildRunParticipant.executeUpdate();
       }
