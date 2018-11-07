@@ -64,7 +64,7 @@ public final class LogRetentionHandler extends AbstractArchiveRetentionHandler {
     }
 
     // Get cut-off time as a date object
-    final Date cutOffTime = new Date(getCutOffTimeMillis().longValue());
+    final Date cutOffTime = new Date(getCutOffTimeMillis());
 
     ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
