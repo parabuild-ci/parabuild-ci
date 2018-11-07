@@ -73,7 +73,7 @@ public final class ResultRetentionHandler extends AbstractArchiveRetentionHandle
     }
 
     // Get cut-off time as a date object
-    final Date cutOffTime = new Date(getCutOffTimeMillis().longValue());
+    final Date cutOffTime = new Date(getCutOffTimeMillis());
 
     ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
