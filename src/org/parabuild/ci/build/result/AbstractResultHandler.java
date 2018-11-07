@@ -268,7 +268,7 @@ public abstract class AbstractResultHandler implements ResultHandler {
   protected final void publish(final StepResult stepResult) {
     final Integer autopublishGroupID = resultConfig.getAutopublishGroupID();
     if (autopublishGroupID != null) {
-      ResultGroupManager.getInstance().publish(autopublishGroupID.intValue(), stepResult);
+      ResultGroupManager.getInstance().publish(autopublishGroupID, stepResult);
     }
   }
 
