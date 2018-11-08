@@ -288,7 +288,7 @@ public final class EmailNotificationConfigPanel extends AbstractSystemConfigPane
 
 
   public String toString() {
-    final StringBuffer sb = new StringBuffer(300);
+    final StringBuilder sb = new StringBuilder(300);
     sb.append("EmailNotificationConfigPanel");
     sb.append("{btnSendTestMessage=").append(btnSendTestMessage);
     sb.append(", buildAdminEmail=").append(buildAdminEmail);
