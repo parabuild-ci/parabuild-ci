@@ -215,7 +215,7 @@ public final class ConfigurationService implements Service {
    * Runs actions that might need to run at startup.
    */
   private void runPostStartUpActions() {
-    if (Boolean.valueOf(System.getProperty(SystemConstants.SYSTEM_PROPERTY_POPULATE_BUILD_RUN_CONFIGS, "false")).booleanValue()) {
+    if (Boolean.valueOf(System.getProperty(SystemConstants.SYSTEM_PROPERTY_POPULATE_BUILD_RUN_CONFIGS, "false"))) {
       // have to create missing build run configs.
       final List buildRunList = (List) ConfigurationManager.runInHibernate(new TransactionCallback() {
         public Object runInTransaction() throws Exception {
@@ -275,7 +275,7 @@ public final class ConfigurationService implements Service {
     }
 
     // init statistics if requested by updater
-    if (Boolean.valueOf(System.getProperty(SystemConstants.SYSTEM_PROPERTY_INIT_STATISTICS, "false")).booleanValue()) {
+    if (Boolean.valueOf(System.getProperty(SystemConstants.SYSTEM_PROPERTY_INIT_STATISTICS, "false"))) {
       final ConfigurationManager cm = ConfigurationManager.getInstance();
       for (final Iterator i = cm.getExistingBuildConfigs().iterator(); i.hasNext();) {
         final StatisticsManager statisticsManager = StatisticsManagerFactory
@@ -288,12 +288,12 @@ public final class ConfigurationService implements Service {
     // already used Parabuild when advanced seeting appeared - they should
     // have it enabled so that they don't face change of UI behaviour.
     final SystemConfigurationManager scm = SystemConfigurationManagerFactory.getManager();
-    if (Boolean.valueOf(System.getProperty(SystemConstants.SYSTEM_PROPERTY_INIT_ADVANCED_SETTINGS, "false")).booleanValue()) {
+    if (Boolean.valueOf(System.getProperty(SystemConstants.SYSTEM_PROPERTY_INIT_ADVANCED_SETTINGS, "false"))) {
       scm.createSystemPropertyIfDoesNotExist(SystemProperty.ENABLE_ADVANCED_BUILD_SETTING, SystemProperty.OPTION_CHECKED);
     }
 
     // Init retry settings
-    if (Boolean.valueOf(System.getProperty(SystemConstants.SYSTEM_PROPERTY_INIT_RETRY_SETTINGS, "false")).booleanValue()) {
+    if (Boolean.valueOf(System.getProperty(SystemConstants.SYSTEM_PROPERTY_INIT_RETRY_SETTINGS, "false"))) {
       scm.createSystemPropertyIfDoesNotExist(SystemProperty.RETRY_VCS_COMMAND_INTERVAL, SystemProperty.DEFAULT_RETRY_VCS_COMMAND_INTERVAL);
       scm.createSystemPropertyIfDoesNotExist(SystemProperty.RETRY_VCS_COMMAND_TIMES, SystemProperty.DEFAULT_RETRY_VCS_COMMAND_TIMES);
       scm.createSystemPropertyIfDoesNotExist(SystemProperty.RETRY_VCS_COMMAND_PATTERNS, SystemProperty.DEFAULT_RETRY_VCS_COMMAND_PATTERNS);

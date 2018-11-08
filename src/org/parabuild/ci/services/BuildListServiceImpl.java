@@ -207,7 +207,7 @@ public final class BuildListServiceImpl implements BuildListService {
     for (final Iterator buildIter = buildList.iterator(); buildIter.hasNext();) {
       result.add(((BuildService) buildIter.next()).getBuildState());
     }
-    Collections.sort(result, BuildState.BUILD_NAME_COMPARATOR);
+    result.sort(BuildState.BUILD_NAME_COMPARATOR);
     return result;
   }
 
@@ -227,7 +227,7 @@ public final class BuildListServiceImpl implements BuildListService {
       final Integer buildID = (Integer) entry.getKey();
       if (buildConfigsMap.get(buildID) == null) {
         if (log.isDebugEnabled()) {
-          log.debug("BuildManager will remove buildService: " + buildID.intValue());
+          log.debug("BuildManager will remove buildService: " + buildID);
         }
         deletionsPresent = true; // rise change flag
         if (log.isDebugEnabled()) {
