@@ -120,7 +120,7 @@ final class FeedGenerator {
 
       // compose description
       final String resultDescr = buildRun.getResultID() == BuildRun.BUILD_RESULT_BROKEN ? ": " + buildRun.getResultDescription() : "";
-      final StringBuffer subj = new StringBuffer(200);
+      final StringBuilder subj = new StringBuilder(200);
       subj.append(buildRun.getBuildName()).append(" # ").append(buildRun.getBuildRunNumberAsString());
       subj.append(" @ ").append(buildRun.getChangeListNumber());
       subj.append(" on ").append(new SimpleDateFormat("yyyy-MM-dd HH:ss z").format(buildRun.getFinishedAt()));

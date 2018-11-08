@@ -118,7 +118,7 @@ final class PublishedResultFeedGenerator {
 
       // compose description
       final String resultDescr = buildRun.getResultID() == BuildRun.BUILD_RESULT_BROKEN ? ": " + buildRun.getResultDescription() : "";
-      final StringBuffer subj = new StringBuffer(200);
+      final StringBuilder subj = new StringBuilder(200);
       subj.append(buildRun.getBuildName()).append(" # ").append(buildRun.getBuildRunNumberAsString());
       subj.append(' ').append(new VerbialBuildResult().getVerbialResultString(buildRun));
       subj.append(resultDescr);
