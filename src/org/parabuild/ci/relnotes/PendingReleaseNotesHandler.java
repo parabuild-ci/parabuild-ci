@@ -54,7 +54,7 @@ final class PendingReleaseNotesHandler implements ReleaseNotesHandler {
    */
   public int process(final BuildRun buildRun) {
     try {
-      return ConfigurationManager.getInstance().attachPendingIssuesToBuildRun(buildRun.getActiveBuildID(), buildRun.getBuildRunID()).intValue();
+      return ConfigurationManager.getInstance().attachPendingIssuesToBuildRun(buildRun.getActiveBuildID(), buildRun.getBuildRunID());
     } catch (final Exception e) {
       final Error error = new Error(buildRun.getActiveBuildID(), "Error while processing pending release notes: " + StringUtils.toString(e), Error.ERROR_LEVEL_WARNING);
       error.setDetails(e);

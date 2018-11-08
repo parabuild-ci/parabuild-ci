@@ -65,7 +65,7 @@ final class Bugzilla220DatabaseConnector extends AbstractBugzillaDatabaseConnect
       IoUtils.closeHard(pstmt);
 
       // request
-      final StringBuffer sql = new StringBuffer(500);
+      final StringBuilder sql = new StringBuilder(500);
       sql.append(" select ");
       sql.append("   bugs.bug_id, bugs.short_desc, products.name, bugs.version, bugs_activity.added, bugs_activity.bug_when ");
       sql.append(" from ");
@@ -135,9 +135,7 @@ final class Bugzilla220DatabaseConnector extends AbstractBugzillaDatabaseConnect
         }
         IoUtils.closeHard(rs2);
       }
-    } catch (final SQLException e) {
-      reportUnexpectedError(productName, e);
-    } catch (final RuntimeException e) {
+    } catch (final SQLException | RuntimeException e) {
       reportUnexpectedError(productName, e);
     } finally {
       // NOTE: simeshev@parabuilci.org - we use this connection in autocommit on mode.

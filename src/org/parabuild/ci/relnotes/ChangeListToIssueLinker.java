@@ -89,7 +89,7 @@ final class ChangeListToIssueLinker implements ReleaseNotesHandler {
           for (final Iterator k = issueIDs.iterator(); k.hasNext();) {
             final Integer issueID = (Integer)k.next();
             // look up in the link first
-            if (!cm.issueChangeListExists(changeList.getChangeListID(), issueID.intValue())) {
+            if (!cm.issueChangeListExists(changeList.getChangeListID(), issueID)) {
               final IssueChangeList issueChangeList = new IssueChangeList(issueID, changeList.getChangeListID());
               cm.saveObject(issueChangeList);
             }
