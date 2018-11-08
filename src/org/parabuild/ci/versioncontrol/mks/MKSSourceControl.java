@@ -304,7 +304,7 @@ public class MKSSourceControl extends AbstractSourceControl {
       }
 
       // get latest rowLimit changes if necessary
-      Collections.sort(result, ChangeList.REVERSE_CHANGE_DATE_COMPARATOR);
+      result.sort(ChangeList.REVERSE_CHANGE_DATE_COMPARATOR);
 
       // result
       final long processingTime = System.currentTimeMillis() - timeStarted;
@@ -494,7 +494,7 @@ public class MKSSourceControl extends AbstractSourceControl {
    */
   private void processException(final Exception e) throws BuildException {
     final String exceptionString = e.toString();
-    if (exceptionString.indexOf("java.io.IOException: CreateProcess:") >= 0) {
+    if (exceptionString.contains("java.io.IOException: CreateProcess:")) {
       throw new BuildException("Error while accessing MKS: executable not found.", getAgentHost());
     }
     throw new BuildException("Error while accessing MKS: " + StringUtils.toString(e), e, getAgentHost());
@@ -516,7 +516,7 @@ public class MKSSourceControl extends AbstractSourceControl {
 
       // make sync note
       final Agent agent = getCheckoutDirectoryAwareAgent();
-      final StringBuffer result = new StringBuffer(100);
+      final StringBuilder result = new StringBuilder(100);
       final DateFormat dateFormat = MKSCoCommand.createCoDateFormat(getSettingValue(SourceControlSetting.MKS_CO_DATE_FORMAT), agent);
       result.append("si co -r ").append(StringUtils.putIntoDoubleQuotes("time:" + changeList.getCreatedAt(dateFormat)));
       return result.toString();
