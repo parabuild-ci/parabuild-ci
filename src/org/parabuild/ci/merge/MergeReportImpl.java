@@ -41,7 +41,7 @@ final class MergeReportImpl implements MergeReport {
     this.date = date;
     this.description = description;
     this.number = number;
-    this.status = status.byteValue();
+    this.status = status;
     this.user = user;
   }
 
@@ -68,7 +68,7 @@ final class MergeReportImpl implements MergeReport {
 
 
   public int getBranchChangeListID() {
-    return branchChangeListID.intValue();
+    return branchChangeListID;
   }
 
 

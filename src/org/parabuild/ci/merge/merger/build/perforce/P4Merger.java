@@ -136,7 +136,7 @@ public final class P4Merger implements Merger {
 
     // for the given queue, find the validating build
     // configuration ID
-    final int targetBuildConfigurationID = MergeDAO.getInstance().getTargetBuildConfigurationIDForMergeQueue(mergeID).intValue();
+    final int targetBuildConfigurationID = MergeDAO.getInstance().getTargetBuildConfigurationIDForMergeQueue(mergeID);
     if (log.isDebugEnabled()) {
       log.debug("targetBuildConfigurationID: " + targetBuildConfigurationID);
     }

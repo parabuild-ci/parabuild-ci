@@ -316,17 +316,17 @@ public final class MergeManager {
 
 
   public int getMergeReportCount(final int activeMergeID) {
-    return ((Integer)ConfigurationManager.runInHibernate(new TransactionCallback() {
+    return (Integer) ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
-        return (Integer)session.createQuery(
-          " select count(bchl) from MergeConfiguration mc, BranchChangeList bchl" +
-            " where mc.activeMergeID = ? " +
-            "   and bchl.mergeConfigurationID = mc.ID ")
-          .setCacheable(true)
-          .setInteger(0, activeMergeID)
-          .uniqueResult();
+        return (Integer) session.createQuery(
+                " select count(bchl) from MergeConfiguration mc, BranchChangeList bchl" +
+                        " where mc.activeMergeID = ? " +
+                        "   and bchl.mergeConfigurationID = mc.ID ")
+                .setCacheable(true)
+                .setInteger(0, activeMergeID)
+                .uniqueResult();
       }
-    })).intValue();
+    });
   }
 
 
@@ -408,19 +408,19 @@ public final class MergeManager {
 //          .uniqueResult();
 //      }
 //    })).intValue();
-    return ((Integer)ConfigurationManager.runInHibernate(new TransactionCallback() {
+    return (Integer) ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         return session.createQuery(
-          " select count(mchl) from MergeConfiguration mc, Merge m, MergeChangeList mchl" +
-            " where " +
-            "   mc.activeMergeID = ? " +
-            "   and m.mergeConfigurationID = mc.ID" +
-            "   and mchl.mergeID = m.ID")
-          .setCacheable(true)
-          .setInteger(0, activeMergeID)
-          .uniqueResult();
+                " select count(mchl) from MergeConfiguration mc, Merge m, MergeChangeList mchl" +
+                        " where " +
+                        "   mc.activeMergeID = ? " +
+                        "   and m.mergeConfigurationID = mc.ID" +
+                        "   and mchl.mergeID = m.ID")
+                .setCacheable(true)
+                .setInteger(0, activeMergeID)
+                .uniqueResult();
       }
-    })).intValue();
+    });
   }
 
 

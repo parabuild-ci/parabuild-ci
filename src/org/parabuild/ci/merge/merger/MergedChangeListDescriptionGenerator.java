@@ -53,7 +53,7 @@ public final class MergedChangeListDescriptionGenerator {
     // make result description
     final MessageFormat messageFormat = new MessageFormat(" (Automerge: Integed change list # {0} by {1} using {2} branch view {3})");
     final String descriptionToAdd = messageFormat.format(new Object[]{number, user, reverseBranchView ? "reverse" : "", branchViewName});
-    final StringBuffer result = new StringBuffer((int)(description.length() * 1.2));
+    final StringBuilder result = new StringBuilder((int)(description.length() * 1.2));
     result.append(preprocessedDescription);
     result.append(descriptionToAdd);
     return result.toString();

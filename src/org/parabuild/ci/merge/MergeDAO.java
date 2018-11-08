@@ -142,12 +142,12 @@ public class MergeDAO {
 
 
   public int save(final BranchChangeList branchChangeList) {
-    return ((Integer)ConfigurationManager.runInHibernate(new TransactionCallback() {
+    return (Integer) ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         session.saveOrUpdateCopy(branchChangeList);
         return new Integer(branchChangeList.getID());
       }
-    })).intValue();
+    });
   }
 
 
