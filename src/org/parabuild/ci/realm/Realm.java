@@ -192,7 +192,7 @@ public final class Realm extends RealmBase {
     try {
       // add default agent password
       final String string = ConfigurationFile.getInstance().getBuildManagerAddress();
-      if (!(string == null || string.trim().length() == 0)) { // NOPMD
+      if (!(string == null || string.trim().isEmpty())) { // NOPMD
         addUser(RealmConstants.DEFAULT_BUILDER_USER, StringUtils.digest(RealmConstants.DEFAULT_BUILDER_PASSWORD), RealmConstants.PARABUILD_MANAGER_ROLE);
         addUser(RealmConstants.DEFAULT_AGENT_MANAGER_USER, StringUtils.digest(RealmConstants.DEFAULT_AGENT_MANAGER_PASSWORD), RealmConstants.PARABUILD_MANAGER_ROLE);
       }
