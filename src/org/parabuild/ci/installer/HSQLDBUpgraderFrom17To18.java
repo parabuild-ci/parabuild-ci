@@ -115,10 +115,7 @@ final class HSQLDBUpgraderFrom17To18 {
         IoUtils.closeHard(stmt);
         IoUtils.closeHard(conn);
       }
-    } catch (final IOException e) {
-      restore(databaseDirectory);
-      throw e;
-    } catch (final RuntimeException e) {
+    } catch (final IOException | RuntimeException e) {
       restore(databaseDirectory);
       throw e;
     }
@@ -173,7 +170,7 @@ final class HSQLDBUpgraderFrom17To18 {
   private void restore(final File databaseDir) throws IOException {
     // Delete db files
     if (!IoUtils.deleteFilesHard(databaseDir.listFiles())) {
-      final StringBuffer leftUndeleted = new StringBuffer(11);
+      final StringBuilder leftUndeleted = new StringBuilder(11);
       final File[] files = databaseDir.listFiles();
       for (int i = 0; i < files.length; i++) {
         final File file = files[i];

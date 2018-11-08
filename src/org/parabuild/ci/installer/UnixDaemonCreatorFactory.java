@@ -41,7 +41,7 @@ public final class UnixDaemonCreatorFactory {
       } else if (systemType == RuntimeUtils.SYSTEM_TYPE_LINUX) {
 
         final String machType = RuntimeUtils.getEnvVariable("MACHTYPE");
-        if (machType != null && machType.toLowerCase().indexOf("suse") >= 0) {
+        if (machType != null && machType.toLowerCase().contains("suse")) {
 
           return new SuseDaemonCreator(new UnixDirectoryOwnerChanger());
         } else {

@@ -85,13 +85,7 @@ final class ServerPresenceValidator {
       }
 
       return true;
-    } catch (final ParserConfigurationException e) {
-      throw IoUtils.createIOException(e);
-    } catch (final SAXException e) {
-      throw IoUtils.createIOException(e);
-    } catch (final DOMException e) {
-      throw IoUtils.createIOException(e);
-    } catch (final NumberFormatException e) {
+    } catch (final ParserConfigurationException | NumberFormatException | DOMException | SAXException e) {
       throw IoUtils.createIOException(e);
     }
   }
