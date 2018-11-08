@@ -3,6 +3,7 @@
   <validate>
     <!-- JDK -->
     <dir property="java.home" required="yes">
+      <location path="/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home"/>
       <location path="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home"/>
       <location path="/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home"/>
       <location path="/opt/jdk1.6.0_32"/>
