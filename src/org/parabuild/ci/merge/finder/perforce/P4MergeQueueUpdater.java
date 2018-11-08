@@ -84,7 +84,7 @@ final class P4MergeQueueUpdater {
         final String lowerCaseDescription = changeList.getDescription().toLowerCase();
         final String lowerCaseMarker = mergeConfiguration.getMarker().trim().toLowerCase();
         if (log.isDebugEnabled()) log.debug("analizing unmerged branchChangeList: " + branchChangeList);
-        if (lowerCaseDescription.indexOf(lowerCaseMarker) >= 0 || lowerCaseMarker.equals(MARKER_MERGEALL)) {
+        if (lowerCaseDescription.contains(lowerCaseMarker) || lowerCaseMarker.equals(MARKER_MERGEALL)) {
           if (log.isDebugEnabled()) log.debug("marker found");
           // find if it is already in the merge queue
           if (log.isDebugEnabled()) log.debug("find if it is already in the merge queue");
@@ -116,13 +116,13 @@ final class P4MergeQueueUpdater {
       if (log.isDebugEnabled()) log.debug("never checked, set checkBuildRunID: " + checkBuildRunID + ", checkBuildRunID: " + checkBuildRunID);
     } else {
       // checked before
-      if (lastCheckedBuildConfigID.intValue() == mergeConfiguration.getSourceBuildID()) {
+      if (lastCheckedBuildConfigID == mergeConfiguration.getSourceBuildID()) {
         // last checked build config ID was the same
         checkBuildConfigID = mergeConfiguration.getSourceBuildID();
         if (lastCheckedBuildRunID == null) {
           checkBuildRunID = BuildRun.UNSAVED_ID;
         } else {
-          checkBuildRunID = lastCheckedBuildRunID.intValue();
+          checkBuildRunID = lastCheckedBuildRunID;
         }
       } else {
         // last checked build config is different
@@ -140,7 +140,7 @@ final class P4MergeQueueUpdater {
     final List completedSuccessfulBuildRunIDs = ConfigurationManager.getInstance().getCompletedSuccessfulBuildRunIDs(checkBuildConfigID, checkBuildRunID);
     if (log.isDebugEnabled()) log.debug("completedSuccessfulBuildRunIDs.size(): " + completedSuccessfulBuildRunIDs.size());
     for (final Iterator i = completedSuccessfulBuildRunIDs.iterator(); i.hasNext();) {
-      final int buildRunID = ((Integer)i.next()).intValue();
+      final int buildRunID = (Integer) i.next();
       // get change lists in this
 
 

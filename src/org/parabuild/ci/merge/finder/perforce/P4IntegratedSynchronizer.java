@@ -302,7 +302,7 @@ final class P4IntegratedSynchronizer {
                         .uniqueResult();
 
                 // delete queue header if there are no merges in it
-                if (count.intValue() == 0) {
+                if (count == 0) {
                   session.delete(session.get(Merge.class, new Integer(mergeID)));
                 }
               }
@@ -319,8 +319,6 @@ final class P4IntegratedSynchronizer {
         }
       });
       if (log.isDebugEnabled()) log.debug("=========== end synchronising integrated ===========");
-    } catch (final ObjectExistsException e) {
-      throw IoUtils.createIOException(e);
     } catch (final CacheException e) {
       throw IoUtils.createIOException(e);
     } finally {

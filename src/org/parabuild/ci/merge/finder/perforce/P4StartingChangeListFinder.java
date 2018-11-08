@@ -76,7 +76,7 @@ public final class P4StartingChangeListFinder {
     ThreadUtils.checkIfInterrupted();
 
     if (log.isDebugEnabled()) log.debug("=========== end finding starting change list number ===========");
-    return Math.max(firstFromChangeList.intValue(), firstToChangeList.intValue());
+    return Math.max(firstFromChangeList, firstToChangeList);
   }
 
 
