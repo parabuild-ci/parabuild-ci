@@ -1372,7 +1372,7 @@ public final class ParabuildSoapBindingImpl implements Parabuild {
   private void notifyConfigurationChanged(final Set buildIDsToUpdate) {
     for (final Iterator iterator = buildIDsToUpdate.iterator(); iterator.hasNext();) {
       final Integer buildID = (Integer) iterator.next();
-      ServiceManager.getInstance().getBuildListService().getBuild(buildID.intValue()).notifyConfigurationChanged();
+      ServiceManager.getInstance().getBuildListService().getBuild(buildID).notifyConfigurationChanged();
     }
   }
 
