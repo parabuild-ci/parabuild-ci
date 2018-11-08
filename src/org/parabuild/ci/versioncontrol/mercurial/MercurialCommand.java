@@ -90,7 +90,7 @@ abstract class MercurialCommand extends VersionControlRemoteCommand {
     BufferedReader reader = null;
     try {
       if (resultCode != 0 && getStderrFile().exists() && getStderrFile().length() > 0) {
-        final StringBuffer message = new StringBuffer(100);
+        final StringBuilder message = new StringBuilder(100);
         reader = new BufferedReader(new FileReader(getStderrFile()));
         String line = reader.readLine();
         while (line != null) {
@@ -115,7 +115,7 @@ abstract class MercurialCommand extends VersionControlRemoteCommand {
     validateRemoteCurrentDir();
 
     // Compose command
-    final StringBuffer remoteCommand = new StringBuffer(100);
+    final StringBuilder remoteCommand = new StringBuilder(100);
     remoteCommand.append(exePath);
     remoteCommand.append(' ');
     remoteCommand.append(getExeArguments());

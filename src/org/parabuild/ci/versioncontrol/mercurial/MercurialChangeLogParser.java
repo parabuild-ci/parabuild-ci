@@ -191,7 +191,7 @@ files:
 
           // Optional branch
           line = reader.readLine();
-          final StringBuffer branch = new StringBuffer(100);
+          final StringBuilder branch = new StringBuilder(100);
           while (line.startsWith(BRANCH)) {
             branch.append(line.substring(BRANCH_LEN));
             branch.append(',');
@@ -232,7 +232,7 @@ files:
           }
 
           // Message
-          final StringBuffer message = new StringBuffer(100);
+          final StringBuilder message = new StringBuilder(100);
           line = reader.readLine(); // Read "description:"
           if (!line.equals(DESCRIPTION)) {
             throw new IOException("Expected " + DESCRIPTION + " but was " + line);

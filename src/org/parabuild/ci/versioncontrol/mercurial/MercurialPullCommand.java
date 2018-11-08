@@ -36,7 +36,7 @@ public class MercurialPullCommand extends MercurialCommand {
 
 
   protected String getExeArguments() throws IOException, AgentFailureException {
-    final StringBuffer sb = new StringBuffer(100);
+    final StringBuilder sb = new StringBuilder(100);
     sb.append("pull");
     sb.append(" ");
     sb.append("--noninteractive");
