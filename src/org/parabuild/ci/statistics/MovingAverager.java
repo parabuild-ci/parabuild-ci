@@ -51,7 +51,7 @@ public final class MovingAverager {
       window.add(new Long(value));
       final Long first = (Long)window.removeFirst();
       summa += value;
-      summa -= first.longValue();
+      summa -= first;
       average = (long)(summa / window.size());
     }
     return average;
@@ -67,7 +67,7 @@ public final class MovingAverager {
    */
   public long addWindow(final List window) {
     for (int i = 0; i < window.size(); i++) {
-      add(((Long)window.get(i)).longValue());
+      add((Long) window.get(i));
     }
     return average;
   }

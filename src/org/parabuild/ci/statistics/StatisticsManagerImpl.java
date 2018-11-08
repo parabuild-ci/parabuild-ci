@@ -159,7 +159,7 @@ final class StatisticsManagerImpl implements StatisticsManager {
           final Integer buildRinID = (Integer) buildRuns[0];
           final Integer buildRunNumber = (Integer) buildRuns[1];
           // execute and iterate an attr quesry for the given build run
-          buildRunAttrQuery.setInteger(0, buildRinID.intValue());
+          buildRunAttrQuery.setInteger(0, buildRinID);
           for (final Iterator buildRunAttrIter = buildRunAttrQuery.iterate(); buildRunAttrIter.hasNext();) {
             final Object[] attrs = (Object[]) buildRunAttrIter.next();
             final String attrName = (String) attrs[0];

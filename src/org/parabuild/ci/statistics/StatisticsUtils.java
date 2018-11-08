@@ -90,7 +90,7 @@ public final class StatisticsUtils {
    */
   public static final Comparator NATURAL_DATE_COMPARATOR = new Comparator() {
     public int compare(final Object o1, final Object o2) {
-      return ((Date) o1).compareTo((Date) o2);
+      return ((Comparable<Date>) o1).compareTo((Date) o2);
     }
   };
 
@@ -397,7 +397,7 @@ public final class StatisticsUtils {
     public ComparableDayOfWeek(final Integer dayOfWeek) {
       final Calendar c = Calendar.getInstance();
       c.clear();
-      c.set(Calendar.DAY_OF_WEEK, dayOfWeek.intValue());
+      c.set(Calendar.DAY_OF_WEEK, dayOfWeek);
       this.stringDayOfWeek = new SimpleDateFormat(DAY_OF_WEEK_FORMAT, Locale.getDefault()).format(c.getTime());
       this.dayOfWeek = dayOfWeek;
     }
