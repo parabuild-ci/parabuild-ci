@@ -72,7 +72,7 @@ public final class SearchManager {
     // REVIEWME: simeshev@parabuilci.org -> implement in full.
 
 //    if (log.isDebugEnabled()) log.debug("request: " + request.toString());
-    final StringBuffer searchQuery = new StringBuffer(request.getSearchQuery());
+    final StringBuilder searchQuery = new StringBuilder(request.getSearchQuery());
 
     // if buildID available, limit query to the given build.
     final String stringBuildID = request.getParameter(SearchRequestParameter.BUILD_ID);
