@@ -89,10 +89,7 @@ public final class RemoteFileGetter {
     try {
       outputTo = new BufferedOutputStream(new FileOutputStream(outputToLocalFile));
       copy(remoteFileName, outputTo);
-    } catch (final IOException e) {
-      exception = true;
-      throw e;
-    } catch (final RuntimeException e) {
+    } catch (final IOException | RuntimeException e) {
       exception = true;
       throw e;
     } finally {
