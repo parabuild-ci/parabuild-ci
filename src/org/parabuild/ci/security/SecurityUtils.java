@@ -49,21 +49,7 @@ public final class SecurityUtils {
       final Cipher cipher = makeCipher(Cipher.ENCRYPT_MODE, passPhrase);
       final byte[] encryptedOriginal = cipher.doFinal(original.getBytes());
       return StringUtils.encodeToHex(encryptedOriginal);
-    } catch (final NoSuchAlgorithmException e) {
-      return "";
-    } catch (final InvalidKeySpecException e) {
-      return "";
-    } catch (final NoSuchPaddingException e) {
-      return "";
-    } catch (final InvalidKeyException e) {
-      return "";
-    } catch (final InvalidAlgorithmParameterException e) {
-      return "";
-    } catch (final IllegalStateException e) {
-      return "";
-    } catch (final IllegalBlockSizeException e) {
-      return "";
-    } catch (final BadPaddingException e) {
+    } catch (final NoSuchAlgorithmException | BadPaddingException | IllegalBlockSizeException | IllegalStateException | InvalidAlgorithmParameterException | InvalidKeyException | NoSuchPaddingException | InvalidKeySpecException e) {
       return "";
     }
   }
@@ -74,21 +60,7 @@ public final class SecurityUtils {
       final Cipher cipher = makeCipher(Cipher.DECRYPT_MODE, passPhrase);
       final byte[] originalBytes = cipher.doFinal(StringUtils.decodeFromHex(encryptedOriginal));
       return new String(originalBytes); // NOPMD
-    } catch (final NoSuchAlgorithmException e) {
-      return "";
-    } catch (final InvalidKeySpecException e) {
-      return "";
-    } catch (final NoSuchPaddingException e) {
-      return "";
-    } catch (final InvalidKeyException e) {
-      return "";
-    } catch (final InvalidAlgorithmParameterException e) {
-      return "";
-    } catch (final IllegalStateException e) {
-      return "";
-    } catch (final IllegalBlockSizeException e) {
-      return "";
-    } catch (final BadPaddingException e) {
+    } catch (final NoSuchAlgorithmException | BadPaddingException | IllegalBlockSizeException | IllegalStateException | InvalidAlgorithmParameterException | InvalidKeyException | NoSuchPaddingException | InvalidKeySpecException e) {
       return "";
     }
   }

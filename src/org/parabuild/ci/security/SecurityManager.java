@@ -388,7 +388,7 @@ public final class SecurityManager {
 
       // Augment group-based rights with the rights of the build creator. See PARABUILD-1418 for more information.
       final Integer creatorID = cm.getBuildAttributeValue(activeBuildID, BuildConfigAttribute.BUILD_CREATOR, User.UNSAVED_INTEGER_ID);
-      if (creatorID.intValue() == user.getUserID()) {
+      if (creatorID == user.getUserID()) {
         // Creator is set
         allowedToDeleteBuild = true;
         allowedToStartBuild = true;
@@ -654,7 +654,7 @@ public final class SecurityManager {
    *         to users after installation.
    */
   public boolean onlyDefaultAdminExists() {
-    return ((Boolean) ConfigurationManager.runInHibernate(new TransactionCallback() {
+    return (Boolean) ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         // first check number of users
         final Iterator i = session.iterate("select count(*) from usr in class User");
@@ -664,7 +664,7 @@ public final class SecurityManager {
         }
         return Boolean.valueOf(count == 1 && administratorExists(User.DEFAULT_ADMIN_USER, User.DEFAULT_ADMIN_PASSW));
       }
-    })).booleanValue();
+    });
   }
 
 
@@ -918,7 +918,7 @@ public final class SecurityManager {
         }
 
         // sort and return
-        Collections.sort(result, DisplayUserGroupVO.GROUP_NAME_ORDER);
+        result.sort(DisplayUserGroupVO.GROUP_NAME_ORDER);
         return result;
       }
     });
@@ -960,7 +960,7 @@ public final class SecurityManager {
           final Object[] groupBuildAccess = (Object[]) i.next();
           final Integer activeBuildID = (Integer) groupBuildAccess[1];
           final String buildName = (String) groupBuildAccess[0];
-          result.add(new GroupMemberVO(true, activeBuildID.intValue(), buildName));
+          result.add(new GroupMemberVO(true, activeBuildID, buildName));
         }
 
         // second, add "not there" builds
@@ -978,7 +978,7 @@ public final class SecurityManager {
         }
 
         // sort and return
-        Collections.sort(result, GroupMemberVO.NAME_ORDER);
+        result.sort(GroupMemberVO.NAME_ORDER);
         return result;
       }
     });
@@ -1307,7 +1307,7 @@ public final class SecurityManager {
     });
 
     // return result
-    return access != null ? access.byteValue() : BuildConfig.ACCESS_PRIVATE;
+    return access != null ? access : BuildConfig.ACCESS_PRIVATE;
   }
 
 
@@ -1525,7 +1525,7 @@ public final class SecurityManager {
         }
 
         // sort and return
-        Collections.sort(result, GroupMemberVO.NAME_ORDER);
+        result.sort(GroupMemberVO.NAME_ORDER);
         return result;
       }
     });
@@ -1878,7 +1878,7 @@ public final class SecurityManager {
       final Element element = cache.get(userID);
       if (element != null) {
         final Boolean allowed = (Boolean) element.getValue();
-        return allowed.booleanValue();
+        return allowed;
       }
 
       // Calcualte access rights

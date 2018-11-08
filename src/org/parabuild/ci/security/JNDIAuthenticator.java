@@ -1462,7 +1462,7 @@ public class JNDIAuthenticator {
    * @return String the escaped/encoded result
    */
   private String doRFC2254Encoding(final String inString) {
-    final StringBuffer buf = new StringBuffer(inString.length());
+    final StringBuilder buf = new StringBuilder(inString.length());
     for (int i = 0; i < inString.length(); i++) {
       final char c = inString.charAt(i);
       switch (c) {
