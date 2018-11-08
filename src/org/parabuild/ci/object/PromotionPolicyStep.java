@@ -37,7 +37,7 @@ public class PromotionPolicyStep implements Serializable, ObjectConstants {
 
 
   public PromotionPolicyStep(final Integer ID, final String name, final String description) {
-    this.ID = ID.intValue();
+    this.ID = ID;
     this.name = name;
     this.description = description;
   }

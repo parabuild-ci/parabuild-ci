@@ -68,7 +68,7 @@ public final class User implements Serializable, ObjectConstants {
     this.name = name;
     this.password = password;
     // convert role list to a coma-separated list
-    final StringBuffer sb = new StringBuffer(100);
+    final StringBuilder sb = new StringBuilder(100);
     for (int i = 0, n = roles.size(); i < n; i++) {
       final String role = (String) roles.get(i);
       sb.append(role);

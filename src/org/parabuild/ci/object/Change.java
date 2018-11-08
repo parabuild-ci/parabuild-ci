@@ -50,7 +50,7 @@ public final class Change implements Serializable, SimpleChange, ObjectConstants
   public static final byte TYPE_PARING_BROKEN = 22;
   public static final byte TYPE_REMOVED = 23;
   public static final byte TYPE_KIND_CHANGED = 24;
-  public static byte TYPE_CONFLICTS = 25;
+  public static final byte TYPE_CONFLICTS = 25;
 
   private int changeID = UNSAVED_ID;
   private int changeListID = ChangeList.UNSAVED_ID;

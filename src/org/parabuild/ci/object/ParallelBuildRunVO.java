@@ -30,9 +30,9 @@ public final class ParallelBuildRunVO implements Serializable, ObjectConstants {
 
 
   public ParallelBuildRunVO(final Integer buildRunID, final String buildName, final Byte dependence) {
-    this.buildRunID = buildRunID.intValue();
+    this.buildRunID = buildRunID;
     this.buildName = buildName;
-    this.dependence = dependence.byteValue();
+    this.dependence = dependence;
   }
 
 
@@ -74,12 +74,12 @@ public final class ParallelBuildRunVO implements Serializable, ObjectConstants {
 
 
   public void setBuildRunID(final Integer buildRunID) {
-    this.buildRunID = buildRunID.intValue();
+    this.buildRunID = buildRunID;
   }
 
 
   public void setDependence(final Byte dependence) {
-    this.dependence = dependence.byteValue();
+    this.dependence = dependence;
   }
 
 
