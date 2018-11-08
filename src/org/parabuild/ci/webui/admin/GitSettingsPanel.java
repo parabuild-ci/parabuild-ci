@@ -209,7 +209,7 @@ public final class GitSettingsPanel extends AbstractSourceControlPanel {
    * Helper method to create invalid protocol message.
    */
   private static String makeInvalidProtocolMessage() {
-    final StringBuffer invalidPrefixMsg = new StringBuffer("Git URL should start with one of the following: ");
+    final StringBuilder invalidPrefixMsg = new StringBuilder("Git URL should start with one of the following: ");
     for (int i = 0; i < VALID_GIT_URL_PROTOCOLS.length; i++) {
       invalidPrefixMsg.append('\"').append(VALID_GIT_URL_PROTOCOLS[i]).append('\"');
       if (i < VALID_GIT_URL_PROTOCOLS.length - 1) {

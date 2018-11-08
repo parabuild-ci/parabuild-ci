@@ -43,7 +43,7 @@ public final class PVCSSettingsPanel extends AbstractSourceControlPanel implemen
 
   public static final String NAME_BRANCH_NAME = "Branch label: ";
   public static final String NAME_CHANGE_WINDOW = "Change window, secs: ";
-  public static final String NAME_REPOSITORY = "Repository: ";
+  public static final String NAME_REPOSITORY = "RepositoryVO: ";
   public static final String NAME_PASSWORD = "Password: ";
   public static final String NAME_PROJECTS = "Projects: ";
   public static final String NAME_USER = "User: ";

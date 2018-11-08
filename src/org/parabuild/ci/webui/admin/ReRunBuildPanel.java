@@ -108,7 +108,7 @@ public final class ReRunBuildPanel extends MessagePanel {
           pnlParameters = new ManualStartParametersPanel(buildRunConfig.getBuildID(), buildConfig.isScheduled(), parameterType, WebUIConstants.MODE_EDIT);
           final Integer versionCounter = cm.getBuildRunAttributeValue(buildRun.getBuildRunID(), BuildRunAttribute.VERSION_COUNTER, (Integer)null);
           if (versionCounter != null) {
-            pnlParameters.setVersionCounter(versionCounter.intValue());
+            pnlParameters.setVersionCounter(versionCounter);
           }
 
           // layout

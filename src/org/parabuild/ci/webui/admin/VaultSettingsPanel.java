@@ -36,7 +36,7 @@ public final class VaultSettingsPanel extends AbstractSourceControlPanel {
   private static final String CAPTION_PROXY_SERVER = "Proxy server:";
   private static final String CAPTION_PROXY_USER = "Proxy user:";
   private static final String CAPTION_REPOSITORY = "Vault repository:";
-  private static final String CAPTION_REPOSITORY_PATH = "Repository path:";
+  private static final String CAPTION_REPOSITORY_PATH = "RepositoryVO path:";
   private static final String CAPTION_USE_SSL = "Connect using SSL:";
   private static final String CAPTION_USER = "Vault username:";
 //  public static final String CAPTION_PATH_TO_EXE = "Path to Vault.exe:";

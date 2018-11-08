@@ -242,7 +242,7 @@ public final class ManualStartParametersPanel extends MessagePanel implements Va
       final Integer currentVersionCounter = cm.getActiveBuildAttributeValue(buildID, ActiveBuildAttribute.VERSION_COUNTER_SEQUENCE);
       final byte counterIncrementMode = cm.getBuildAttributeValue(buildID, BuildConfigAttribute.VERSION_COUNTER_INCREMENT_MODE, new Integer(BuildConfigAttribute.VERSION_COUNTER_INCREMENT_MODE_MANUAL)).byteValue();
       setVersionTemplate(cm.getBuildAttributeValue(buildID, BuildConfigAttribute.VERSION_TEMPLATE, ""));
-      setVersionCounterNote(currentVersionCounter.intValue(), counterIncrementMode);
+      setVersionCounterNote(currentVersionCounter, counterIncrementMode);
     }
     pnlManualScheduleStartParameters.load(buildID); // knows build ID
   }

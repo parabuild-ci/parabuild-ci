@@ -143,7 +143,7 @@ final class SystemVariableUtils {
           final List buildIDs = BuilderConfigurationManager.getInstance().getBuildConfigIDsForAgent(variableOwner);
           for (int i = 0; i < buildIDs.size(); i++) {
             final Integer buildID = (Integer) buildIDs.get(i);
-            buildListService.getBuild(buildID.intValue()).notifyConfigurationChanged();
+            buildListService.getBuild(buildID).notifyConfigurationChanged();
           }
         }
       }

@@ -41,7 +41,7 @@ public class RepositoryBrowserPanel extends SourceControlPanel {
   private static final long serialVersionUID = 575240664676879927L;
   private static final Log log = LogFactory.getLog(RepositoryBrowserPanel.class); // NOPMD
 
-  public static final String CAPTION_REPOSITORY_BROWSER = "Repository browser: ";
+  public static final String CAPTION_REPOSITORY_BROWSER = "RepositoryVO browser: ";
 
   private final CommonFieldLabel lbRepositoryBrowser = new CommonFieldLabel(CAPTION_REPOSITORY_BROWSER);
   private final RepositoryBrowserTypeDropDown ddRepositoryBrowserTypeDropDown = new RepositoryBrowserTypeDropDown();

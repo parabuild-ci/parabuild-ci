@@ -169,7 +169,7 @@ public final class StopGroupPanel extends MessagePanel {
     final BuildListService buildListService = ServiceManager.getInstance().getBuildListService();
     for (int i = 0; i < selectedBuildIDs.size(); i++) {
       final Integer buildID = (Integer) selectedBuildIDs.get(i);
-      final BuildService buildService = buildListService.getBuild(buildID.intValue());
+      final BuildService buildService = buildListService.getBuild(buildID);
       if (buildService == null) {
         continue;
       }
@@ -314,7 +314,7 @@ public final class StopGroupPanel extends MessagePanel {
     final BuildListService buildListService = ServiceManager.getInstance().getBuildListService();
     for (final Iterator iterator = result.iterator(); iterator.hasNext();) {
       final Integer buildID = (Integer) iterator.next();
-      buildListService.getBuild(buildID.intValue()).stopBuild(userID);
+      buildListService.getBuild(buildID).stopBuild(userID);
     }
 
     return createDoneResult();

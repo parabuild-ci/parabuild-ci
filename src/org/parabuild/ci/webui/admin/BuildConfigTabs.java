@@ -212,8 +212,8 @@ public final class BuildConfigTabs extends Tabs implements Saveable, Validatable
 
     // select tab to last saved or ro tabIndexGeneral
     final Integer lastSavedTab = ConfigurationManager.getInstance().getBuildAttributeValue(buildID, BuildConfigAttribute.LAST_SAVED_TAB, new Integer(tabIndexGeneral));
-    if (lastSavedTab.intValue() < getTabCount()) {
-      selectTab(lastSavedTab.intValue());
+    if (lastSavedTab < getTabCount()) {
+      selectTab(lastSavedTab);
     }
   }
 

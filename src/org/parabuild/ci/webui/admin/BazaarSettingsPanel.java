@@ -170,7 +170,7 @@ public final class BazaarSettingsPanel extends AbstractSourceControlPanel {
    * Helper method to create invalig protocol message.
    */
   private static String makeInvalidProtocolMessage() {
-    final StringBuffer invalidPrefixMsg = new StringBuffer("Bazaar branch path should start with one of the following: ");
+    final StringBuilder invalidPrefixMsg = new StringBuilder("Bazaar branch path should start with one of the following: ");
     for (int i = 0; i < VALID_BAZAAR_URL_PROTOCOLS.length; i++) {
       invalidPrefixMsg.append('\"').append(VALID_BAZAAR_URL_PROTOCOLS[i]).append('\"');
       if (i < VALID_BAZAAR_URL_PROTOCOLS.length - 1) {

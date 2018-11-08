@@ -213,7 +213,7 @@ public final class SVNSettingsPanel extends AbstractSourceControlPanel {
    * Helper method to create invalig protocol message.
    */
   private static String makeInvalidProtocolMessage() {
-    final StringBuffer invalidPrefixMsg = new StringBuffer("SVN URL should start with one of the following: ");
+    final StringBuilder invalidPrefixMsg = new StringBuilder("SVN URL should start with one of the following: ");
     for (int i = 0; i < VALID_SVN_URL_PROTOCOLS.length; i++) {
       invalidPrefixMsg.append('\"').append(VALID_SVN_URL_PROTOCOLS[i]).append('\"');
       if (i < VALID_SVN_URL_PROTOCOLS.length - 1) {

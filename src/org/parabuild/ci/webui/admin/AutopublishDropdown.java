@@ -44,10 +44,10 @@ public class AutopublishDropdown extends CodeNameDropDown {
    * @param autopublishGroupID
    */
   public void setGroupID(final Integer autopublishGroupID) {
-    if (autopublishGroupID == null || !codeExists(autopublishGroupID.intValue())) {
+    if (autopublishGroupID == null || !codeExists(autopublishGroupID)) {
       setCode(CODE_NOT_SET);
     } else {
-      setCode(autopublishGroupID.intValue());
+      setCode(autopublishGroupID);
     }
   }
 

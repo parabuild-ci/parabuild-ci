@@ -344,7 +344,7 @@ public final class BuildConfigPage extends BasePage implements ConversationalTie
         return Boolean.valueOf(valid);
       }
     });
-    if (!validationResult.booleanValue()) {
+    if (!validationResult) {
       return Result.Continue();
     }
 
@@ -374,9 +374,9 @@ public final class BuildConfigPage extends BasePage implements ConversationalTie
 
     // continue editing if there are errors
     if (log.isDebugEnabled()) {
-      log.debug("build config saved: " + saveResult.booleanValue());
+      log.debug("build config saved: " + saveResult);
     }
-    if (!saveResult.booleanValue()) {
+    if (!saveResult) {
       return Result.Continue();
     }
 
