@@ -128,7 +128,7 @@ public final class PromotionConfigurationManager {
 
 
   public int getMaxStepLineNumber(final int policyID) {
-    return ((Integer) ConfigurationManager.runInHibernate(new TransactionCallback() {
+    return (Integer) ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         final Query query = session.createQuery(" select max(prms.lineNumber) " +
                 "   from PromotionPolicyStep prms " +
@@ -136,6 +136,6 @@ public final class PromotionConfigurationManager {
         query.setInteger(0, policyID);
         return query.setCacheable(true).uniqueResult();
       }
-    })).intValue();
+    });
   }
 }

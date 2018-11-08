@@ -38,7 +38,7 @@ public final class PromotionVO implements Serializable {
   public PromotionVO(final String projectName, final String promotionName, final Integer promotionID, final String description) {
     this.projectName = projectName;
     this.promotionName = promotionName;
-    this.promotionID = promotionID.intValue();
+    this.promotionID = promotionID;
     this.description = description;
   }
 
