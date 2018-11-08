@@ -61,7 +61,7 @@ public final class VaultDepotPathParser {
     for (int i = 0, n = list.size(); i < n; i++) {
       final RepositoryPath repositoryPath = (RepositoryPath) list.get(i);
       if (!repositoryPath.getPath().startsWith(PREFIX)) {
-        throw new ValidationException("RepositoryVO path should start with \"" + PREFIX + "\": " + repositoryPath.getPath());
+        throw new ValidationException("Repository path should start with \"" + PREFIX + "\": " + repositoryPath.getPath());
       }
     }
     return list;

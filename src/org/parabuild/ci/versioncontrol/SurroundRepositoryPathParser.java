@@ -24,7 +24,7 @@ import org.parabuild.ci.common.*;
 public final class SurroundRepositoryPathParser {
 
 
-  private final DepotPathParser depotPathParser = new DepotPathParser("RepositoryVO", true);
+  private final DepotPathParser depotPathParser = new DepotPathParser("Repository", true);
 
 
   public void validate(final String originalDepotPath) throws ValidationException {

@@ -97,29 +97,29 @@ Users: All Users
 
 Branch: test_mainline_branch
 
-RepositoryVO: test_mainline_branch
+Repository: test_mainline_branch
 Administrator 7/26/2005 1:52 PM Add test_mainline_branch
 
 File: test_mainline_branch/readme.txt
 1 Administrator 7/26/2005 1:59 PM Add
 2 Administrator 7/26/2005 2:15 PM Check in  Added blank line
 
-RepositoryVO: test_mainline_branch/test
+Repository: test_mainline_branch/test
 Administrator 7/26/2005 2:46 PM Add
 Administrator 7/26/2005 2:53 PM Remove
 
-RepositoryVO: test_mainline_branch/test/sourceline
+Repository: test_mainline_branch/test/sourceline
 Administrator 7/26/2005 2:46 PM Add
 Administrator 7/26/2005 2:53 PM Remove
 
 File: test_mainline_branch/test/sourceline/gsbase-2.0.jar
 1 Administrator 8/12/2005 4:40 PM Add administrator - 8/12/2005 4:34:11 PM - jvmstat  added other jar
 
-RepositoryVO: test_mainline_branch/test/sourceline/alwaysvalid
+Repository: test_mainline_branch/test/sourceline/alwaysvalid
 Administrator 7/26/2005 2:46 PM Add
 Administrator 7/26/2005 2:53 PM Remove
 
-RepositoryVO: test_mainline_branch/test/sourceline/jvmstat30
+Repository: test_mainline_branch/test/sourceline/jvmstat30
 Administrator 8/12/2005 4:35 PM Add administrator - 8/12/2005 4:34:11 PM - jvmstat Comment for adding JVM stat
 
 File: test_mainline_branch/test/sourceline/jvmstat30/LICENSE
@@ -128,7 +128,7 @@ File: test_mainline_branch/test/sourceline/jvmstat30/LICENSE
 File: test_mainline_branch/test/sourceline/jvmstat30/README
 1 Administrator 8/12/2005 4:35 PM Add administrator - 8/12/2005 4:34:11 PM - jvmstat  Comment for adding JVM stat
 
-RepositoryVO: test_mainline_branch/test/sourceline/alwaysvalid/src
+Repository: test_mainline_branch/test/sourceline/alwaysvalid/src
 Administrator 7/26/2005 2:46 PM Add
 Administrator 7/26/2005 2:52 PM Remove
 
@@ -159,7 +159,7 @@ File: test_mainline_branch/test/sourceline/alwaysvalid/src/readme.txt
         if (st.countTokens() < 6) { // potentially parse-able?
           if (line.startsWith("Number of Repositories: ")
             || line.startsWith("Number of Files: ")
-            || line.startsWith("RepositoryVO: ")) {
+            || line.startsWith("Repository: ")) {
 //            if (log.isDebugEnabled()) log.debug("skipping: " + line);
             break; // doesn't make sense to keep rolling the cycle
           }

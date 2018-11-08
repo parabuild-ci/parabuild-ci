@@ -731,7 +731,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
     final String rbd = getRelativeBuildDir();
     if (!(agent.fileRelativeToCheckoutDirExists(rbd + '/' + "CVS")
             && agent.fileRelativeToCheckoutDirExists(rbd + '/' + "CVS/Root")
-            && agent.fileRelativeToCheckoutDirExists(rbd + '/' + "CVS/RepositoryVO")
+            && agent.fileRelativeToCheckoutDirExists(rbd + '/' + "CVS/Repository")
             && agent.fileRelativeToCheckoutDirExists(rbd + '/' + "CVS/Entries"))
             ) {
       result = false;

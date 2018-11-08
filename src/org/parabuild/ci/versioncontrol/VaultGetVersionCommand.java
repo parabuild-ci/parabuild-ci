@@ -95,7 +95,7 @@ Server and authentication information is specified by:
   -proxydomain proxydomain
       Domain for proxy authentication.
   -repository repositoryname
-      RepositoryVO to connect to
+      Repository to connect to
 
 This is a list of possible options:
   -backup [yes|no]

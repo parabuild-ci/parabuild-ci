@@ -31,7 +31,7 @@ public final class WebSVNSettingsPanel extends AbstractSourceControlPanel implem
   private static final long serialVersionUID = 7269513984227746767L; // NOPMD
 
   public static final String NAME_WEB_SVN_URL = "Base WebSVN URL:";
-  public static final String NAME_WEB_SVN_REPNAME = "RepositoryVO name (repname):";
+  public static final String NAME_WEB_SVN_REPNAME = "Repository name (repname):";
 
   private final Field flBaseUrl = new CommonField(200, 60);
   private final Field flRepname = new CommonField(200, 60);
