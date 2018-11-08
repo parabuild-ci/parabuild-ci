@@ -203,7 +203,7 @@ public class ProjectManager {
         return query.uniqueResult();
       }
     });
-    return integer.intValue();
+    return integer;
   }
 }
 
