@@ -374,12 +374,6 @@ public final class Pages {
   public static final String PARAM_PROMOTION_POLICY_ID = "prpolid";
 
   /**
-   * Access parameter.
-   */
-  public static String PARAM_ACCESS = "access";
-
-
-  /**
    * Builder ID.
    */
   public static final String PARAM_AGENT_ID = "gntd";

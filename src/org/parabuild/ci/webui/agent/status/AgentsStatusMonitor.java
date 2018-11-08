@@ -79,7 +79,7 @@ public final class AgentsStatusMonitor implements Runnable, Service {
     }
 
     // Sort
-    Collections.sort(result, AgentStatus.BY_NAME_COMPARATOR);
+    result.sort(AgentStatus.BY_NAME_COMPARATOR);
     return result;
   }
 

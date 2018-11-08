@@ -60,7 +60,7 @@ public final class ParameterUtils {
     if (buildID == null) {
       return null;
     }
-    return ConfigurationManager.getInstance().getActiveBuildConfig(buildID.intValue());
+    return ConfigurationManager.getInstance().getActiveBuildConfig(buildID);
   }
 
 
@@ -69,7 +69,7 @@ public final class ParameterUtils {
     if (buildID == null) {
       return null;
     }
-    return ConfigurationManager.getInstance().getActiveBuild(buildID.intValue());
+    return ConfigurationManager.getInstance().getActiveBuild(buildID);
   }
 
 
@@ -83,7 +83,7 @@ public final class ParameterUtils {
     if (userID == null) {
       return null;
     }
-    return SecurityManager.getInstance().getUser(userID.intValue());
+    return SecurityManager.getInstance().getUser(userID);
   }
 
 
@@ -92,7 +92,7 @@ public final class ParameterUtils {
     if (groupID == null) {
       return null;
     }
-    return SecurityManager.getInstance().getGroup(groupID.intValue());
+    return SecurityManager.getInstance().getGroup(groupID);
   }
 
 
@@ -121,7 +121,7 @@ public final class ParameterUtils {
 
 
   public static BuildRun getBuildRunFromParameters(final Parameters params) {
-    final int runID = getIntegerParameter(params, Pages.PARAM_BUILD_RUN_ID, new Integer(BuildRun.UNSAVED_ID)).intValue();
+    final int runID = getIntegerParameter(params, Pages.PARAM_BUILD_RUN_ID, new Integer(BuildRun.UNSAVED_ID));
     if (runID == BuildRun.UNSAVED_ID) {
       return null;
     }
@@ -133,7 +133,7 @@ public final class ParameterUtils {
    * Returns -1 if parameter not found
    */
   public static int getLogIDFromParameters(final Parameters params) {
-    return getIntegerParameter(params, Pages.PARAM_LOG_ID, new Integer(-1)).intValue();
+    return getIntegerParameter(params, Pages.PARAM_LOG_ID, new Integer(-1));
   }
 
 
@@ -141,7 +141,7 @@ public final class ParameterUtils {
    * Returns -1 if parameter not found
    */
   public static int getFileIDFromParameters(final Parameters params) {
-    return getIntegerParameter(params, Pages.PARAM_FILE_ID, new Integer(-1)).intValue();
+    return getIntegerParameter(params, Pages.PARAM_FILE_ID, new Integer(-1));
   }
 
 
@@ -170,7 +170,7 @@ public final class ParameterUtils {
     if (builderID == null) {
       return null;
     }
-    return BuilderConfigurationManager.getInstance().getBuilder(builderID.intValue());
+    return BuilderConfigurationManager.getInstance().getBuilder(builderID);
   }
 
 
@@ -179,7 +179,7 @@ public final class ParameterUtils {
     if (resultGroupID == null) {
       return null;
     }
-    return ResultGroupManager.getInstance().getResultGroup(resultGroupID.intValue());
+    return ResultGroupManager.getInstance().getResultGroup(resultGroupID);
   }
 
 
@@ -226,7 +226,7 @@ public final class ParameterUtils {
 
 
   public static ActiveMergeConfiguration getActiveMergeConfigurationFromParameters(final Parameters params) {
-    final int id = getIntegerParameter(params, Pages.PARAM_MERGE_ID, new Integer(MergeConfiguration.UNSAVED_ID)).intValue();
+    final int id = getIntegerParameter(params, Pages.PARAM_MERGE_ID, new Integer(MergeConfiguration.UNSAVED_ID));
     if (id == MergeConfiguration.UNSAVED_ID) {
       return null;
     }
@@ -239,7 +239,7 @@ public final class ParameterUtils {
     if (configID == null) {
       return null;
     }
-    return BuilderConfigurationManager.getInstance().getAgentConfig(configID.intValue());
+    return BuilderConfigurationManager.getInstance().getAgentConfig(configID);
   }
 
 
@@ -248,7 +248,7 @@ public final class ParameterUtils {
     if (parameterID == null) {
       return null;
     }
-    return ConfigurationManager.getInstance().getStartParameter(parameterID.intValue());
+    return ConfigurationManager.getInstance().getStartParameter(parameterID);
   }
 
 
@@ -257,6 +257,6 @@ public final class ParameterUtils {
     if (configID == null) {
       return null;
     }
-    return BuilderConfigurationManager.getInstance().getBuilderAgent(configID.intValue());
+    return BuilderConfigurationManager.getInstance().getBuilderAgent(configID);
   }
 }

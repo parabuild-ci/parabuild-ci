@@ -28,7 +28,7 @@ public final class LastCleanBuildRunFlow extends Flow {
     if (!lastCleanBuildRunIsValid(lastCleanBuildRun)) return;
 
     // create caption
-    final StringBuffer caption = new StringBuffer(30);
+    final StringBuilder caption = new StringBuilder(30);
     caption.append("Last clean build (#");
     caption.append(lastCleanBuildRun.getBuildRunNumberAsString());
     if (lastCleanBuildRun.isPhysicalChangeListNumber() && !StringUtils.isBlank(lastCleanBuildRun.getChangeListNumber())) {

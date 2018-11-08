@@ -110,7 +110,7 @@ public final class ChangelistContentTable extends AbstractFlatTable {
 
   private static String makeWrapable(final String filePath) {
     if (1 == 1) return filePath; //FIXME
-    final StringBuffer sb = new StringBuffer(300);
+    final StringBuilder sb = new StringBuilder(300);
     final StringTokenizer st = new StringTokenizer(filePath, "/", true);
     while (st.hasMoreTokens()) {
       final String s = st.nextToken();

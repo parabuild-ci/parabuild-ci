@@ -120,7 +120,7 @@ public final class FisheyeChangeURLFactory implements ChangeURLFactory {
    */
   private String makeURL(final String changeFilePath, final Properties params) {
     // compose result URL
-    final StringBuffer result = new StringBuffer(200);
+    final StringBuilder result = new StringBuilder(200);
     // REVIEWME: vimeshev - alters params, bad
     if (!StringUtils.isBlank(viewcvsRoot)) {
       params.setProperty("root", viewcvsRoot);
@@ -128,7 +128,7 @@ public final class FisheyeChangeURLFactory implements ChangeURLFactory {
     if (log.isDebugEnabled()) log.debug("changeFilePath: " + changeFilePath);
     result.append(url);
     result.append(url.endsWith("/") ? "" : "/");
-    if (changeFilePath.length() > 0) {
+    if (!changeFilePath.isEmpty()) {
       result.append(changeFilePath.charAt(0) == '/' ? changeFilePath.substring(1) : changeFilePath);
     }
     result.append(WebuiUtils.makeURLParameters(params));

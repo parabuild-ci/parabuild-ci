@@ -149,7 +149,7 @@ public final class AgentStatusesPage extends BasePage implements ConversationalT
       final Integer activeBuildID = (Integer) iterator.next();
       for (int j = 0; j < userBuildStatuses.size(); j++) {
         final BuildState buildState = (BuildState) userBuildStatuses.get(j);
-        if (buildState.getActiveBuildID() == activeBuildID.intValue()) {
+        if (buildState.getActiveBuildID() == activeBuildID) {
           result.add(buildState);
           iterator.remove();
         }

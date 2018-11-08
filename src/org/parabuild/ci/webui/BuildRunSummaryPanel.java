@@ -303,7 +303,7 @@ public final class BuildRunSummaryPanel extends MessagePanel {
       final Integer reRunID = getIntegerAttributeValue(buildRun, BuildRunAttribute.ATTR_RE_RUN_BUILD_RUN_ID);
       if (reRunID != null) {
         final BuildRun reRunBuildRun = cm.getBuildRun(reRunID.intValue());
-        final StringBuffer sb = new StringBuffer(30);
+        final StringBuilder sb = new StringBuilder(30);
         final int reRunBuildRunNumber = reRunBuildRun.getBuildRunNumber();
         final String reRunBuildRunDateTime = dateTimeToString(reRunBuildRun.getStartedAt());
         sb.append("Build #").append(reRunBuildRunNumber).append(" on ").append(reRunBuildRunDateTime);
@@ -326,7 +326,7 @@ public final class BuildRunSummaryPanel extends MessagePanel {
     User startedByUser = null;
     final Integer userID = getIntegerAttributeValue(buildRun, BuildRunAttribute.ATTR_STARTED_USER_ID);
     if (userID != null) {
-      startedByUser = SecurityManager.getInstance().getUser(userID.intValue());
+      startedByUser = SecurityManager.getInstance().getUser(userID);
     }
     WebuiUtils.setValueOrHide(lbStartedBy, lbValueStartedBy, startedByUser != null ? startedByUser.getName() : null);
 
@@ -350,7 +350,7 @@ public final class BuildRunSummaryPanel extends MessagePanel {
 
     // handle checkout time
     final Integer integerCheckoutTime = getIntegerAttributeValue(buildRun, BuildRunAttribute.SYNC_TIME);
-    final String stringCheckoutTime = integerCheckoutTime == null ? null : StringUtils.durationToString(integerCheckoutTime.intValue(), false).toString();
+    final String stringCheckoutTime = integerCheckoutTime == null ? null : StringUtils.durationToString(integerCheckoutTime, false).toString();
     WebuiUtils.setValueOrHide(lbCheckoutTime, lbValueCheckoutTime, stringCheckoutTime);
 
     // set links
@@ -385,14 +385,14 @@ public final class BuildRunSummaryPanel extends MessagePanel {
 
   private void setTestSuccesses(final BuildRun buildRun) {
     final Integer successes = getIntegerAttributeValue(buildRun, BuildRunAttribute.ATTR_JUNIT_SUCCESSES);
-    if (successes == null || successes.intValue() == 0) {
+    if (successes == null || successes == 0) {
       lbTestSuccesses.setVisible(false);
       lbValueTestSuccesses.setVisible(false);
     } else {
       final int buildRunID = buildRun.getBuildRunID();
       lbTestSuccesses.setVisible(true);
       lbValueTestSuccesses.setVisible(true);
-      lbValueTestSuccesses.setValue(buildRunID, successes.intValue(), 0);
+      lbValueTestSuccesses.setValue(buildRunID, successes, 0);
     }
   }
 
@@ -418,13 +418,13 @@ public final class BuildRunSummaryPanel extends MessagePanel {
     if (failures == null && errors == null) {
       return 0;
     } else {
-      return (failures == null ? 0 : failures.intValue()) + (errors == null ? 0 : errors.intValue());
+      return (failures == null ? 0 : failures) + (errors == null ? 0 : errors);
     }
   }
 
 
   private void setTestTotal(final Integer testTotal, final BuildRun buildRun) {
-    final int total = testTotal == null ? 0 : testTotal.intValue();
+    final int total = testTotal == null ? 0 : testTotal;
     if (total == 0) {
       lbValueTestTotal.setVisible(false);
       lbTestTotal.setVisible(false);

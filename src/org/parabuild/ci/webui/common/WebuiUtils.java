@@ -452,7 +452,7 @@ public final class WebuiUtils {
 
 
   public static String makeURLParameters(final Properties params) {
-    final StringBuffer result = new StringBuffer(100);
+    final StringBuilder result = new StringBuilder(100);
     if (!params.isEmpty()) {
       boolean first = true;
       final Set set = params.entrySet();
@@ -495,7 +495,7 @@ public final class WebuiUtils {
     // try to get from parameter
     final String parameter = httpServletRequest.getParameter(paramName);
     if (parameter != null) {
-      return Boolean.valueOf(parameter).booleanValue();
+      return Boolean.valueOf(parameter);
     }
 
     // get from cookie
@@ -510,7 +510,7 @@ public final class WebuiUtils {
       if (!StringUtils.isBlank(cookie.getName())
               && cookie.getName().equals(cookieName)
               && !StringUtils.isBlank(cookie.getValue())) {
-        result = Boolean.valueOf(cookie.getValue()).booleanValue();
+        result = Boolean.valueOf(cookie.getValue());
         break;
       }
     }
@@ -842,7 +842,7 @@ public final class WebuiUtils {
     }
     final HttpSession session = tierletContext.getHttpServletRequest().getSession();
     final Boolean currentlyShowing = (Boolean) session.getAttribute(makeCurrentlyShowingLogTailAttribute(activeBuildID));
-    return currentlyShowing != null && currentlyShowing.booleanValue();
+    return currentlyShowing != null && currentlyShowing;
   }
 
 
@@ -976,7 +976,7 @@ public final class WebuiUtils {
 
 
   public static void setValueOrHideIfZero(final Label lbLabel, final Label lbValue, final Integer value) {
-    setValueOrHide(lbLabel, lbValue, value == null || value.intValue() == 0 ? (String) null : value.toString());
+    setValueOrHide(lbLabel, lbValue, value == null || value == 0 ? (String) null : value.toString());
   }
 
 

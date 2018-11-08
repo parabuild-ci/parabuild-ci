@@ -49,7 +49,7 @@ final class BuildTimeFlow extends Flow {
       return;
     }
     final long elapsedTime = (System.currentTimeMillis() - buildRun.getStartedAt().getTime()) / 1000L;
-    final StringBuffer caption = new StringBuffer(30);
+    final StringBuilder caption = new StringBuilder(30);
     caption.append("Elapsed time: ");
     caption.append(StringUtils.durationToString(elapsedTime, false));
     add(new BuildResultLink(caption.toString(), buildRun));

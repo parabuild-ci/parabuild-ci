@@ -161,7 +161,7 @@ public final class AboutPage extends BasePage implements StatelessTierlet {
    * @return formatted list of MAC addresses.
    */
   private String getMACAddresses() {
-    final StringBuffer sb = new StringBuffer(100);
+    final StringBuilder sb = new StringBuilder(100);
     final List macAddressList = RuntimeUtils.getMacAddressList();
     for (int i = 0; i < macAddressList.size(); i++) {
       sb.append((String) macAddressList.get(i));
@@ -221,9 +221,8 @@ public final class AboutPage extends BasePage implements StatelessTierlet {
       Arrays.sort(cacheNames);
       int totalHitCount = 0;
       int totalMissCount = 0;
-      for (int i = 0; i < cacheNames.length; i++) {
+      for (final String cacheName : cacheNames) {
         // get cache
-        final String cacheName = cacheNames[i];
         final Cache cache = cacheMan.getCache(cacheName);
         final int hitCount = cache.getHitCount();
         final int missCountExpired = cache.getMissCountExpired();

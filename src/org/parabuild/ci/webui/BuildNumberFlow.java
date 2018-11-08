@@ -41,7 +41,7 @@ public final class BuildNumberFlow extends Flow {
 
 
   private void addLink(final BuildRun buildRun) {
-    final StringBuffer caption = new StringBuffer(30);
+    final StringBuilder caption = new StringBuilder(30);
     caption.append(buildRun.getBuildRunNumberAsString());
     if (buildRun.isPhysicalChangeListNumber() && !StringUtils.isBlank(buildRun.getChangeListNumber())) {
       caption.append(" @ ").append(buildRun.getChangeListNumber());

@@ -80,7 +80,7 @@ public final class WritingHitsTraverserCallback implements HitsTraverserCallback
       final String seqName = document.get(LuceneDocumentFactory.FIELD_SEQUENCE_NAME);
 
       // make caption
-      final StringBuffer caption = new StringBuffer(30);
+      final StringBuilder caption = new StringBuilder(30);
 
       // build name, if any
       if (!StringUtils.isBlank(buildName)) {
@@ -115,7 +115,7 @@ public final class WritingHitsTraverserCallback implements HitsTraverserCallback
       final String targetElement = "target=\"_blank\"";
 
       // dir/or fil log?
-      final StringBuffer fileNameParam = new StringBuffer(100);
+      final StringBuilder fileNameParam = new StringBuilder(100);
       if (StringUtils.isValidInteger(pathType)) {
         final int intPathType = Integer.parseInt(pathType);
         if (intPathType == StepLog.PATH_TYPE_TEXT_DIR) {
@@ -164,7 +164,7 @@ public final class WritingHitsTraverserCallback implements HitsTraverserCallback
       final String user = document.get(LuceneDocumentFactory.FIELD_CHANGELIST_USER);
 
       // make caption
-      final StringBuffer caption = new StringBuffer(30);
+      final StringBuilder caption = new StringBuilder(30);
 
       // build name, if any
       if (!StringUtils.isBlank(buildName)) {
@@ -218,7 +218,7 @@ public final class WritingHitsTraverserCallback implements HitsTraverserCallback
     final String fileName = document.get(LuceneDocumentFactory.FIELD_RESULT_FILE_NAME);
 
     // make caption
-    final StringBuffer caption = new StringBuffer(30);
+    final StringBuilder caption = new StringBuilder(30);
 
     // build name, if any
     if (!StringUtils.isBlank(buildName)) {

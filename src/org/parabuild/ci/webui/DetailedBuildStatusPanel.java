@@ -218,7 +218,7 @@ public final class DetailedBuildStatusPanel extends Panel {
     if (newInThisBuild == null) {
       newInThisBuildSuffix = "";
     } else {
-      if (newInThisBuild.intValue() == 0) {
+      if (newInThisBuild == 0) {
         newInThisBuildSuffix = ", No New Changes";
       } else {
         newInThisBuildSuffix = ", " + newInThisBuild.toString() + " New Change List(s)";

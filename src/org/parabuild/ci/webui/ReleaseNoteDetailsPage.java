@@ -88,7 +88,7 @@ public final class ReleaseNoteDetailsPage extends AbstractBuildRunResultPage imp
     if (log.isDebugEnabled()) log.debug("releaseNoteID: " + releaseNoteID);
     if (releaseNoteID == null) return null;
     final ConfigurationManager cm = ConfigurationManager.getInstance();
-    final ReleaseNote releaseNote = (ReleaseNote)cm.getObject(ReleaseNote.class, releaseNoteID.intValue());
+    final ReleaseNote releaseNote = (ReleaseNote)cm.getObject(ReleaseNote.class, releaseNoteID);
     if (log.isDebugEnabled()) log.debug("releaseNote: " + releaseNote);
     if (releaseNote == null) return null;
     final Issue issue = (Issue)cm.getObject(Issue.class, releaseNote.getIssueID());

@@ -62,7 +62,7 @@ public class CodeNameDropDown extends DropDown {
     final String item = getItem(getSelection());
     final Integer code = (Integer)selectionMap.get(item);
     if (code == null) throw new IllegalStateException("Unknown code selection: " + item);
-    return code.intValue();
+    return code;
   }
 
 
@@ -73,7 +73,7 @@ public class CodeNameDropDown extends DropDown {
   public final boolean codeExists(final int code) {
     for (final Iterator i = selectionMap.values().iterator(); i.hasNext();) {
       final Integer entry = (Integer)i.next();
-      if (entry.intValue() == code) {
+      if (entry == code) {
         return true;
       }
     }
@@ -87,7 +87,7 @@ public class CodeNameDropDown extends DropDown {
   public void setCode(final int code) {
     for (final Iterator i = selectionMap.entrySet().iterator(); i.hasNext();) {
       final Map.Entry entry = (Map.Entry)i.next();
-      final int mappedValue = ((Integer)entry.getValue()).intValue();
+      final int mappedValue = (Integer) entry.getValue();
       if (mappedValue == code) {
         setSelection((String)entry.getKey());
         return;
@@ -105,7 +105,7 @@ public class CodeNameDropDown extends DropDown {
   protected final void removeCode(final int code) {
     for (final Iterator i = selectionMap.entrySet().iterator(); i.hasNext();) {
       final Map.Entry entry = (Map.Entry)i.next();
-      if (((Integer)entry.getValue()).intValue() == code) {
+      if ((Integer) entry.getValue() == code) {
         removeItem((String)entry.getKey()); // delete item
         i.remove(); // delete map item
         return;

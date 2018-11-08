@@ -50,7 +50,7 @@ public final class P4WebChangeURLFactory implements ChangeURLFactory {
 
 
   private String makeFileURL(final SimpleChange change) {
-    final StringBuffer result = new StringBuffer(100);
+    final StringBuilder result = new StringBuilder(100);
     result.append(p4webURL);
     result.append("/@md=d");
     result.append("&cd=").append(change.getFilePath());
@@ -77,7 +77,7 @@ public final class P4WebChangeURLFactory implements ChangeURLFactory {
     if (StringUtils.isValidInteger(change.getRevision())) {
       final int revision = Integer.parseInt(change.getRevision());
       if (revision > 1) {
-        final StringBuffer result = new StringBuffer(100);
+        final StringBuilder result = new StringBuilder(100);
         result.append(p4webURL);
         result.append("/@md=d");
         result.append("&cd=").append(change.getFilePath());
@@ -98,7 +98,7 @@ public final class P4WebChangeURLFactory implements ChangeURLFactory {
 
 
   public ChangeURL makeChangeListNumberURL(final ChangeList changeList) {
-    final StringBuffer url = new StringBuffer(100);
+    final StringBuilder url = new StringBuilder(100);
     url.append(p4webURL);
     url.append("/@md=d");
     url.append("@/");

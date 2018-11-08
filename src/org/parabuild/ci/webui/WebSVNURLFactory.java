@@ -116,7 +116,7 @@ public final class WebSVNURLFactory implements ChangeURLFactory {
   private String makeURL(final String actionPage, final String changeFilePath, final Properties params) {
 
     // compose result URL
-    final StringBuffer result = new StringBuffer(200);
+    final StringBuilder result = new StringBuilder(200);
 
     // REVIEWME: vimeshev - alters params, bad
     if (!StringUtils.isBlank(repname)) {

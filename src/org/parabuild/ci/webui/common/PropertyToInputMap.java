@@ -200,7 +200,7 @@ public final class PropertyToInputMap implements Serializable {
    *
    * @noinspection PublicInnerClass
    */
-  public static interface PropertyHandler extends Serializable {
+  public interface PropertyHandler extends Serializable {
 
     /**
      * Creates new property using given propertyName and abstract

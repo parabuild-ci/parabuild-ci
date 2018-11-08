@@ -73,13 +73,13 @@ public final class ConsistentFileList implements Serializable {
 
   public int getFileID(final String fileName) {
     final Integer id = (Integer)nameIDMap.get(fileName);
-    if (id != null) return id.intValue(); // found
+    if (id != null) return id; // found
     // try case incensitive search
     final Set set = nameIDMap.entrySet();
     for (final Iterator i = set.iterator(); i.hasNext();) {
       final Map.Entry entry = (Map.Entry)i.next();
       final String nameKey = (String)entry.getKey();
-      if (nameKey.equalsIgnoreCase(fileName)) return ((Integer)entry.getValue()).intValue();
+      if (nameKey.equalsIgnoreCase(fileName)) return (Integer) entry.getValue();
     }
     return -1;
   }

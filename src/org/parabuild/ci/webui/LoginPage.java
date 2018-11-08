@@ -154,7 +154,7 @@ public final class LoginPage extends BasePage implements ConversationalTierlet {
   private void setRememberMeCookieAndStoreDigest(final int userID) {
     try {
       // create digest
-      final StringBuffer stringToDigest = new StringBuffer(100);
+      final StringBuilder stringToDigest = new StringBuilder(100);
       final Random random = new Random(System.currentTimeMillis());
       stringToDigest.append(Integer.toString(random.nextInt()));
       stringToDigest.append(Integer.toString(random.nextInt()));

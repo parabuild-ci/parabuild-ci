@@ -74,7 +74,7 @@ public final class ChangeListsPanel extends Panel {
         return new Integer(changeListsCount);
       }
     });
-    return result.intValue();
+    return result;
   }
 
 

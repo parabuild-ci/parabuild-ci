@@ -167,7 +167,7 @@ public final class StatisticsImageServlet extends HttpServlet {
     } catch (final BadRequestException e) {
       resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
     } catch (final IOException e) {
-      if (e.toString().indexOf("I/O error writing PNG file") < 0) {
+      if (!e.toString().contains("I/O error writing PNG file")) {
         reportException(e);
         throw e;
       }

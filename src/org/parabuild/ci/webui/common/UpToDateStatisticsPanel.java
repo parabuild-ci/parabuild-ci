@@ -88,7 +88,7 @@ public final class UpToDateStatisticsPanel extends MessagePanel {
     final Integer activeBuildAttributeValue = ConfigurationManager.getInstance().getActiveBuildAttributeValue(activeBuildID, ActiveBuildAttribute.STAT_AVERAGE_TIME_TO_FIX, (Integer) null);
     if (activeBuildAttributeValue != null) {
       final StatisticsLabel lbAverageTimeToFix = new StatisticsItemLabel(CAPTION_AVERAGE_TIME_TO_FIX);
-      final StatisticsLabel lbAverageTimeToFixValue = new StatisticsLabel(StringUtils.durationToString(activeBuildAttributeValue.intValue(), false).toString());
+      final StatisticsLabel lbAverageTimeToFixValue = new StatisticsLabel(StringUtils.durationToString(activeBuildAttributeValue, false).toString());
       gi.add(lbAverageTimeToFix).add(lbAverageTimeToFixValue, 2);
     }
   }

@@ -72,7 +72,7 @@ public abstract class BaseMergePage extends BasePage {
       return WebuiUtils.showMergeNotFound(this);
     }
 
-    final MergeConfiguration mergeConfiguration = MergeManager.getInstance().getMergeConfiguration(activeMergeConfigurationID.intValue());
+    final MergeConfiguration mergeConfiguration = MergeManager.getInstance().getMergeConfiguration(activeMergeConfigurationID);
     if (mergeConfiguration == null) return WebuiUtils.showMergeNotFound(this);
 
     return executeMergePage(parameters, mergeConfiguration);

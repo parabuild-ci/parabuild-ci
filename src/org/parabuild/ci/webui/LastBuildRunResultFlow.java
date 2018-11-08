@@ -33,7 +33,7 @@ final class LastBuildRunResultFlow extends Flow {
 
 
   public void setState(final BuildRun lastBuildRun) {
-    final StringBuffer captionPre = new StringBuffer(20);
+    final StringBuilder captionPre = new StringBuilder(20);
     captionPre.append(lastBuildRun.buildResultToString());
     add(new BuildResultLink(captionPre.toString(), lastBuildRun));
   }

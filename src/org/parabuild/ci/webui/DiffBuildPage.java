@@ -77,8 +77,8 @@ public final class DiffBuildPage extends BasePage implements ConversationalTierl
 
     // run search if params are OK
     if (startBuildNumber != null && endBuildNumber != null
-            && startBuildNumber.intValue() > 0 && endBuildNumber.intValue() > 0) {
-      pnlDiff.display(startBuildNumber.intValue(), endBuildNumber.intValue());
+            && startBuildNumber > 0 && endBuildNumber > 0) {
+      pnlDiff.display(startBuildNumber, endBuildNumber);
     }
 
     return Result.Done();

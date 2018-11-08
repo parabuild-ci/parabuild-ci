@@ -135,7 +135,7 @@ public class BuildsStatusesPage extends BasePage implements ConversationalTierle
     final int displayGroupID;
     final Integer displayGroupIDFromParameters = ParameterUtils.getDisplayGroupIDFromParameters(params);
     if (displayGroupIDFromParameters != null) {
-      displayGroupID = getValidDisplayGroupID(displayGroupIDFromParameters.intValue());
+      displayGroupID = getValidDisplayGroupID(displayGroupIDFromParameters);
       rememberDisplayGroupID(new Integer(displayGroupID));
     } else {
       displayGroupID = getRememberedDisplayGroupID(request);
@@ -236,7 +236,7 @@ public class BuildsStatusesPage extends BasePage implements ConversationalTierle
     if (integerBuildID == null) {
       integerBuildID = (Integer) session.getAttribute(WebUIConstants.SESSION_ATTR_DETAILED_BUILD_ID);
     }
-    return integerBuildID != null ? integerBuildID.intValue() : -1;
+    return integerBuildID != null ? integerBuildID : -1;
   }
 
 
@@ -325,7 +325,7 @@ public class BuildsStatusesPage extends BasePage implements ConversationalTierle
     final int userID = getUserID();
     for (int i = 0; i < configurationsIDs.size(); i++) {
       final Integer activeBuildConfigID = (Integer) configurationsIDs.get(i);
-      if (sm.userCanViewBuild(userID, activeBuildConfigID.intValue())) {
+      if (sm.userCanViewBuild(userID, activeBuildConfigID)) {
         allowedIDs.add(activeBuildConfigID);
       }
     }
@@ -413,7 +413,7 @@ public class BuildsStatusesPage extends BasePage implements ConversationalTierle
     // try to get the display group from session
     final Integer displayGroupID = (Integer) request.getSession().getAttribute(WebUIConstants.SESSION_ATTR_SELECTED_DISPLAY_GROUP_ID);
     if (displayGroupID != null) {
-      return displayGroupID.intValue();
+      return displayGroupID;
     }
 
     // try to get the display group from the cookie
@@ -434,7 +434,7 @@ public class BuildsStatusesPage extends BasePage implements ConversationalTierle
     }
 
     if (displayGroupID != null) {
-      return getValidDisplayGroupID(displayGroupID.intValue());
+      return getValidDisplayGroupID(displayGroupID);
     }
     return DisplayGroup.DISPLAY_GROUP_ID_ALL;
   }

@@ -171,7 +171,7 @@ public class MergeStatusesPage extends BasePage implements ConversationalTierlet
     // get merge ID
     Integer integerMergeID = ParameterUtils.getActiveMergeIDFromParameters(params);
     if (integerMergeID == null) integerMergeID = (Integer) session.getAttribute(ATTR_DETAILED_MERGE_ID);
-    final int activeMergeID = integerMergeID != null ? integerMergeID.intValue() : -1;
+    final int activeMergeID = integerMergeID != null ? integerMergeID : -1;
 
     // show panel
     final SecurityManager securityManager = SecurityManager.getInstance();
@@ -291,11 +291,11 @@ public class MergeStatusesPage extends BasePage implements ConversationalTierlet
   private int getDisplayGroupID(final Parameters params, final HttpServletRequest request) {
     // try to get from explicit params
     Integer displayGroupID = ParameterUtils.getDisplayGroupIDFromParameters(params);
-    if (displayGroupID != null) return getValidDisplayGroupID(displayGroupID.intValue());
+    if (displayGroupID != null) return getValidDisplayGroupID(displayGroupID);
 
     // try to get the display group from session
     displayGroupID = (Integer) request.getSession().getAttribute(ATTR_SELECTED_MERGE_DISPLAY_GROUP_ID);
-    if (displayGroupID != null) return displayGroupID.intValue();
+    if (displayGroupID != null) return displayGroupID;
 
     // try to get the display group from the cookie
     final Cookie[] cookies = request.getCookies();
@@ -314,7 +314,7 @@ public class MergeStatusesPage extends BasePage implements ConversationalTierlet
       }
     }
 
-    if (displayGroupID != null) return getValidDisplayGroupID(displayGroupID.intValue());
+    if (displayGroupID != null) return getValidDisplayGroupID(displayGroupID);
     return DisplayGroup.DISPLAY_GROUP_ID_ALL;
   }
 

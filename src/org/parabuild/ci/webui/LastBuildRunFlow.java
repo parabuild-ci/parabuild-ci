@@ -42,7 +42,7 @@ public final class LastBuildRunFlow extends Flow {
     if (lastBuildRunFinishedAt == null) return;
 
     // add pre-link text
-    final StringBuffer captionPre = new StringBuffer(30);
+    final StringBuilder captionPre = new StringBuilder(30);
     captionPre.append(useBuildName ? lastBuildRun.getBuildName() : "Last build").append(" (#");
     captionPre.append(lastBuildRun.getBuildRunNumberAsString());
     if (lastBuildRun.isPhysicalChangeListNumber() && !StringUtils.isBlank(lastBuildRun.getChangeListNumber())) {

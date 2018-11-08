@@ -141,10 +141,10 @@ public final class ViewCVSChangeURLFactory implements ChangeURLFactory {
       params.setProperty("root", viewcvsRoot);
     }
     // compose result URL
-    final StringBuffer result = new StringBuffer(200);
+    final StringBuilder result = new StringBuilder(200);
     result.append(viewcvsURL);
     result.append(viewcvsURL.endsWith("/") ? "" : "/");
-    if (changeFilePath.length() > 0) {
+    if (!changeFilePath.isEmpty()) {
       result.append(changeFilePath.charAt(0) == '/' ? changeFilePath.substring(1) : changeFilePath);
     }
     result.append(WebuiUtils.makeURLParameters(params));
