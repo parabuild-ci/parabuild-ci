@@ -310,7 +310,7 @@ public final class AgentManager {
       //
       // Sort live agent use
       //
-      Collections.sort(liveAgentUse, AgentUse.REVERSE_ORDER_USE_COMPARATOR);
+      liveAgentUse.sort(AgentUse.REVERSE_ORDER_USE_COMPARATOR);
 
       //
       // Pick first (least loaded) agent
@@ -768,10 +768,10 @@ public final class AgentManager {
 
             result.add(builderAgentVO);
           }
-        } catch (final IOException e) {
+        } catch (final IOException ignored) {
 
           // Ignore - won't add
-        } catch (final AgentFailureException e) {
+        } catch (final AgentFailureException ignored) {
 
           // Ignore - won't add
         }
@@ -906,7 +906,7 @@ public final class AgentManager {
           break;
 
         } catch (final IOException e) {
-          if (e.toString().indexOf("Cannot remove document base for path") < 0) {
+          if (!e.toString().contains("Cannot remove document base for path")) {
             throw e;
           } else {
             lastError = e;

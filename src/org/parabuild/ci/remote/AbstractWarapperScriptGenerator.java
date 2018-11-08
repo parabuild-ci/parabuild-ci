@@ -140,7 +140,7 @@ abstract class AbstractWarapperScriptGenerator implements WrapperScriptGenerator
       //System.out.println("DEBUG: pathSeparator = " + pathSeparator);
       for (final StringTokenizer st = new StringTokenizer(originalPathEnvVar, pathSeparator); st.hasMoreTokens();) {
         final String pathElem = st.nextToken();
-        if (pathElem.startsWith(fileDescriptor.getCanonicalPath()) || pathElem.length() == 0) {
+        if (pathElem.startsWith(fileDescriptor.getCanonicalPath()) || pathElem.isEmpty()) {
           //System.out.println("DEBUG: pathElem = " + pathElem);
           continue;
         }
