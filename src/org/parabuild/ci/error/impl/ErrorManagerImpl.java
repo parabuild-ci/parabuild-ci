@@ -189,7 +189,9 @@ public final class ErrorManagerImpl implements ErrorManager, Serializable {
    * @param errorID error ID
    */
   public Error loadActiveError(final String errorID) {
-    if (errorID == null) return null;
+    if (errorID == null) {
+      return null;
+    }
     final Error error = new Error();
     try {
       error.load(new File(ConfigurationManager.getSystemNewErrorsDirectory(), errorID + ERROR_FILE_EXTENSION));
@@ -214,6 +216,11 @@ public final class ErrorManagerImpl implements ErrorManager, Serializable {
         return name.endsWith(ERROR_FILE_EXTENSION);
       }
     });
+
+    // Empty check
+    if (errors == null) {
+      return result;
+    }
 
     // sort
     Arrays.sort(errors, ERROR_FILE_NAME_COMPARATOR);
@@ -356,7 +363,7 @@ public final class ErrorManagerImpl implements ErrorManager, Serializable {
 
     public int compare(final Object o1, final Object o2) {
       // we compare f2 to f1 because we need reverse order
-      return ((File) o2).compareTo((File) o1);
+      return ((Comparable<File>) o2).compareTo((File) o1);
     }
   }
 
