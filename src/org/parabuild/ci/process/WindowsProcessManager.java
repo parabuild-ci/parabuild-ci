@@ -171,7 +171,7 @@ final class WindowsProcessManager implements ProcessManager {
       final Integer iPid = new Integer(pid);
       final Integer ppid = (Integer) pids.get(iPid);
       if (ppid != null) {
-        p.setPPID(ppid.intValue());
+        p.setPPID(ppid);
       }
 
       processes.put(iPid, p);
@@ -213,7 +213,7 @@ final class WindowsProcessManager implements ProcessManager {
     ret.clear();
     ret.addAll(found);
     // Let's sort this data
-    Collections.sort(ret, new ProcessComparator(sortOrder));
+    ret.sort(new ProcessComparator(sortOrder));
     return ret;
   }
 
@@ -420,7 +420,7 @@ final class WindowsProcessManager implements ProcessManager {
   private String getEnvironment(final int pid) throws BuildException {
     // TODO: What about charsets? E.g. if command name is russian or chinese?
     final InputStream is = ProcessUtils.execute(agentEnvironment, LIST_ENV + pid);
-    final StringBuffer buf = new StringBuffer(100);
+    final StringBuilder buf = new StringBuilder(100);
     final Reader r = new InputStreamReader(is);
     try {
       final char[] c = new char[1024];
@@ -446,7 +446,7 @@ final class WindowsProcessManager implements ProcessManager {
    */
   private List kill(final List children) throws BuildException {
     // let's remove given list
-    final StringBuffer buf = new StringBuffer(100);
+    final StringBuilder buf = new StringBuilder(100);
     for (int i = 0, n = children.size(); i < n; i++) {
       buf.append(children.get(i)).append(' ');
     }

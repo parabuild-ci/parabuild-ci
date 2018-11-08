@@ -152,7 +152,7 @@ public final class UnixProcessManager implements ProcessManager {
     ret.clear();
     ret.addAll(found);
     // Let's sort this data
-    Collections.sort(ret, new ProcessComparator(sortOrder));
+    ret.sort(new ProcessComparator(sortOrder));
     return ret;
   }
 
@@ -294,7 +294,7 @@ public final class UnixProcessManager implements ProcessManager {
 
     // Looking for processes left
     ret.clear();
-    final StringBuffer buf = new StringBuffer(100);
+    final StringBuilder buf = new StringBuilder(100);
     final int n = children.size();
     for (i = 0; i < n; i++) {
       final Integer id = (Integer) children.get(i);

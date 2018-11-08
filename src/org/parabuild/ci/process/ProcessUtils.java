@@ -51,7 +51,7 @@ public final class ProcessUtils {
     if (patterns == null || patterns.length == 0) return true;
     for (int i = 0; i < patterns.length; i++) {
       ArgumentValidator.validateArgumentNotBlank(patterns[i], "pattern");
-      if (what.indexOf(patterns[i]) >= 0) return true;
+      if (what.contains(patterns[i])) return true;
     }
     return false;
   }

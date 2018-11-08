@@ -166,7 +166,7 @@ public final class OSProcess {
 
 
   public String toString() {
-    final StringBuffer ret = new StringBuffer(100);
+    final StringBuilder ret = new StringBuilder(100);
     ret.append("Name:").append(name).append(',');
     ret.append("PID:").append(pid).append(',');
     ret.append("PPID:").append(ppid).append(',');

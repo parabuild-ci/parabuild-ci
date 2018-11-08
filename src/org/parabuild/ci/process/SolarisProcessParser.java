@@ -81,7 +81,7 @@ public final class SolarisProcessParser implements ProcessParser {
 
   public InputStream killProcesses(final List processes) throws BuildException {
 
-    final StringBuffer buf = new StringBuffer(100);
+    final StringBuilder buf = new StringBuilder(100);
     for (int i = 0, n = processes.size(); i < n; i++) {
       buf.append(processes.get(i)).append(' ');
     }
