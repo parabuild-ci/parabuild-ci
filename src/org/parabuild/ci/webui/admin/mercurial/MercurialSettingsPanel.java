@@ -170,7 +170,7 @@ public final class MercurialSettingsPanel extends AbstractSourceControlPanel {
    * @return error message.
    */
   private static String makeInvalidProtocolMessage() {
-    final StringBuffer invalidPrefixMsg = new StringBuffer("Mercurial branch path should start with one of the following: ");
+    final StringBuilder invalidPrefixMsg = new StringBuilder("Mercurial branch path should start with one of the following: ");
     for (int i = 0; i < VALID_MERCURIAL_URL_PROTOCOLS.length; i++) {
       invalidPrefixMsg.append('\"').append(VALID_MERCURIAL_URL_PROTOCOLS[i]).append('\"');
       if (i < VALID_MERCURIAL_URL_PROTOCOLS.length - 1) {
