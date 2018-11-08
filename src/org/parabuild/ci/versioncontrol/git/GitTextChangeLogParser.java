@@ -192,7 +192,7 @@ public final class GitTextChangeLogParser {
 
           // Read date
           final int messageEnd = line.indexOf(FIELD_SEPARATOR, dateEnd + FIELD_SEPARATOR_LENGTH);
-          final StringBuffer description = new StringBuffer(100).append(line.substring(dateEnd + FIELD_SEPARATOR_LENGTH, messageEnd));
+          final StringBuilder description = new StringBuilder(100).append(line.substring(dateEnd + FIELD_SEPARATOR_LENGTH, messageEnd));
 //          if (LOG.isDebugEnabled()) LOG.debug("description: " + description);
 
           final Date date;
@@ -243,7 +243,7 @@ public final class GitTextChangeLogParser {
 
   private String skipEmptyLines(final BufferedReader reader) throws IOException {
     String line = reader.readLine();
-    while (line != null && line.trim().length() == 0) {
+    while (line != null && line.trim().isEmpty()) {
       line = reader.readLine();
     }
     return line;

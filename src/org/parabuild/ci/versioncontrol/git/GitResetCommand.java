@@ -53,7 +53,7 @@ final class GitResetCommand extends GitCommand {
    * command and it args.
    */
   protected final String getExeArguments() {
-    final StringBuffer result = new StringBuffer(200);
+    final StringBuilder result = new StringBuilder(200);
     result.append(' ').append("reset");
     result.append(' ').append("--hard");
     result.append(' ').append(hash);

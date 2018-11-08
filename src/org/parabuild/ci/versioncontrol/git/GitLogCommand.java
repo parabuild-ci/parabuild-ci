@@ -87,7 +87,7 @@ final class GitLogCommand extends GitCommand {
     final String indicator = agent.isWindows() ? "%%" : "%";
 
     //
-    final StringBuffer result = new StringBuffer(200);
+    final StringBuilder result = new StringBuilder(200);
     result.append(' ').append("log");
     result.append(' ').append("--name-status");
 
