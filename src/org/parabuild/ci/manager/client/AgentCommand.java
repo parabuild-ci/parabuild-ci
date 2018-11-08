@@ -198,7 +198,7 @@ public abstract class AgentCommand {
 
       // Process the response message
       reader = new InputStreamReader(hconn.getInputStream());
-      final StringBuffer buff = new StringBuffer(1000);
+      final StringBuilder buff = new StringBuilder(1000);
       String error = null;
       boolean first = true;
       while (true) {
