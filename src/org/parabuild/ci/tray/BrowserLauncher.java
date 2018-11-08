@@ -54,9 +54,7 @@ final class BrowserLauncher {
           //}
           break;
       }
-    } catch (final InterruptedException e) {
-      throw e;
-    } catch (final IOException e) {
+    } catch (final InterruptedException | IOException e) {
       throw e;
     } catch (final Exception e) {
       throw IoUtils.createIOException(e);

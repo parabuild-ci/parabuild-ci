@@ -82,7 +82,7 @@ final class SettingsDialog extends JDialog {
           owner.dispose();
         } else {
           // show errors and continue
-          final StringBuffer message = new StringBuffer(200);
+          final StringBuilder message = new StringBuilder(200);
           for (int i = 0, n = errors.size(); i < n; i++) {
             message.append("- ").append((String)errors.get(i)).append('\n');
           }

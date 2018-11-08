@@ -320,10 +320,10 @@ public final class Tray implements ActionListener, ItemListener {
     final String stringPollInterval = properties.getProperty(PROP_POLL_INTERVAL, "15");
     servers = serverListParser.parse(properties.getProperty(PROP_SERVER_LIST));
     pollInterval = StringUtils.isValidInteger(stringPollInterval) ? Integer.parseInt(stringPollInterval) : DEFAULT_POLL_INTERVAL;
-    this.showInactiveBuilds = Boolean.valueOf(properties.getProperty(PROP_SHOW_INACTIVE, Boolean.TRUE.toString())).booleanValue();
+    this.showInactiveBuilds = Boolean.valueOf(properties.getProperty(PROP_SHOW_INACTIVE, Boolean.TRUE.toString()));
     // set logging
     try {
-      Log4jConfigurator.getInstance().initialize(Boolean.valueOf(properties.getProperty(PROP_DEBUG_LOGGING, Boolean.FALSE.toString())).booleanValue());
+      Log4jConfigurator.getInstance().initialize(Boolean.valueOf(properties.getProperty(PROP_DEBUG_LOGGING, Boolean.FALSE.toString())));
     } catch (final IOException e) {
       log.warn("Error while loading log4j settings", e);
     }
@@ -430,8 +430,8 @@ public final class Tray implements ActionListener, ItemListener {
     final SettingsDialog dialog = new SettingsDialog();
     dialog.setServerList(properties.getProperty(PROP_SERVER_LIST, ""));
     dialog.setPollInterval(StringUtils.isValidInteger(stringPollInterval) ? Integer.parseInt(stringPollInterval) : DEFAULT_POLL_INTERVAL);
-    dialog.setShowInactiveBuilds(Boolean.valueOf(properties.getProperty(PROP_SHOW_INACTIVE, Boolean.TRUE.toString())).booleanValue());
-    dialog.setDebugLogging(Boolean.valueOf(properties.getProperty(PROP_DEBUG_LOGGING, Boolean.FALSE.toString())).booleanValue());
+    dialog.setShowInactiveBuilds(Boolean.valueOf(properties.getProperty(PROP_SHOW_INACTIVE, Boolean.TRUE.toString())));
+    dialog.setDebugLogging(Boolean.valueOf(properties.getProperty(PROP_DEBUG_LOGGING, Boolean.FALSE.toString())));
     dialog.pack();
     dialog.show();
     if (log.isDebugEnabled()) log.debug("dialog: " + dialog);
