@@ -82,7 +82,7 @@ abstract class SurroundCommand extends VersionControlRemoteCommand {
     validateRemoteCurrentDir();
 
     // compose command
-    final StringBuffer remoteCommand = new StringBuffer(100);
+    final StringBuilder remoteCommand = new StringBuilder(100);
     remoteCommand.append(exePath);
     remoteCommand.append(' ');
     remoteCommand.append(getSurroundCommandArguments());

@@ -417,7 +417,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
         final ChangeListWindowMerger merger = new ChangeListWindowMerger();
         merger.mergeInChangesLeft(result, secondRunResult);
         // we resort it
-        Collections.sort(result, ChangeList.REVERSE_CHANGE_DATE_COMPARATOR);
+        result.sort(ChangeList.REVERSE_CHANGE_DATE_COMPARATOR);
       }
 
       // validate that change lists contain not only exclusions
@@ -498,7 +498,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
     }
 
     // limit result size if necessary
-    Collections.sort(result, ChangeList.REVERSE_CHANGE_DATE_COMPARATOR);
+    result.sort(ChangeList.REVERSE_CHANGE_DATE_COMPARATOR);
 
     if (LOG.isDebugEnabled()) {
       LOG.debug("get changes from date took : " + (System.currentTimeMillis() - started) + " ms");
@@ -608,7 +608,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
       throw e;
     } catch (final Exception e) {
       final Error err;
-      if (e.getMessage().indexOf("cvs server: cannot find module") >= 0 && e.getMessage().indexOf("CVSROOT/users") >= 0) {
+      if (e.getMessage().contains("cvs server: cannot find module") && e.getMessage().contains("CVSROOT/users")) {
         // Missing CVS/modules
         err = new Error("Could not retrieve VCS user to e-mail map - CVSROOT/users is missing. " +
                 "To correct this warning, un-check the box \"Use version control e-mails\" under the \"Notification\" " +
@@ -641,7 +641,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
       return "No information";
     }
     // make common sync note
-    final StringBuffer result = new StringBuffer("cvs update -P -A -d -D").append(STR_SPACE)
+    final StringBuilder result = new StringBuilder("cvs update -P -A -d -D").append(STR_SPACE)
             .append('\"').append(CVS_DATE_FORMATTER.format(changeList.getCreatedAt())).append("\" ");
     // add branch if necessary
     final String branchName = changeList.getBranch();
@@ -731,7 +731,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
     final String rbd = getRelativeBuildDir();
     if (!(agent.fileRelativeToCheckoutDirExists(rbd + '/' + "CVS")
             && agent.fileRelativeToCheckoutDirExists(rbd + '/' + "CVS/Root")
-            && agent.fileRelativeToCheckoutDirExists(rbd + '/' + "CVS/Repository")
+            && agent.fileRelativeToCheckoutDirExists(rbd + '/' + "CVS/RepositoryVO")
             && agent.fileRelativeToCheckoutDirExists(rbd + '/' + "CVS/Entries"))
             ) {
       result = false;
@@ -747,7 +747,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
     if (StringUtils.isBlank(label)) {
       throw new IllegalArgumentException("Label name can not be blank");
     }
-    if (label.trim().toUpperCase().equals("HEAD") || label.trim().toUpperCase().equals("BASE")) {
+    if ("HEAD".equals(label.trim().toUpperCase()) || "BASE".equals(label.trim().toUpperCase())) {
       throw new BuildException("Label is not allowed to be \"BASE\" or \"HEAD\"", getAgentHost());
     }
   }
@@ -998,7 +998,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
    */
   private void processException(final Exception e) throws BuildException {
     final String exceptionString = e.toString();
-    if (exceptionString.indexOf("java.io.IOException: CreateProcess:") >= 0) {
+    if (exceptionString.contains("java.io.IOException: CreateProcess:")) {
       if (getCVSExePath() != null) {
         throw new BuildException("Error while checking out: CVS executable \"" + getCVSExePath() + "\" not found.", getAgentHost());
       }
@@ -1049,7 +1049,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
         br = new BufferedReader(new FileReader(versionCommand.getStdoutFile()));
         String line = br.readLine();
         while (line != null) {
-          if (line.indexOf("(CVSNT)") >= 0) {
+          if (line.contains("(CVSNT)")) {
             isCVSNT = true;
             break;
           }

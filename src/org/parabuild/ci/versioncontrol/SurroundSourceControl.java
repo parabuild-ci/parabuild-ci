@@ -233,7 +233,7 @@ final class SurroundSourceControl extends AbstractSourceControl implements Commo
       if (!result.isEmpty()) {
 
         // get latest maxChangeLists changes if necessary
-        Collections.sort(result, ChangeList.REVERSE_CHANGE_DATE_COMPARATOR);
+        result.sort(ChangeList.REVERSE_CHANGE_DATE_COMPARATOR);
 
         // map result and get max date
         Date maxDate = ((ChangeList) result.get(0)).getCreatedAt();
@@ -345,7 +345,7 @@ final class SurroundSourceControl extends AbstractSourceControl implements Commo
    */
   private void processException(final Exception e) throws BuildException {
     final String exceptionString = e.toString();
-    if (exceptionString.indexOf("java.io.IOException: CreateProcess:") >= 0) {
+    if (exceptionString.contains("java.io.IOException: CreateProcess:")) {
       final String exePath = getPathToExe();
       if (exePath != null) {
         throw new BuildException("Error while checking out: Surround executable \"" + exePath + "\" not found.", getAgentHost());
@@ -500,7 +500,7 @@ final class SurroundSourceControl extends AbstractSourceControl implements Commo
   public String getSyncCommandNote(final int changeListID) {
     final ChangeList changeList = configManager.getChangeList(changeListID);
     if (changeList == null) return STRING_NO_SYNC_NOTE_AVAILABLE;
-    final StringBuffer cmd = new StringBuffer(100);
+    final StringBuilder cmd = new StringBuilder(100);
     cmd.append("Use branch \"");
     cmd.append(branch());
     cmd.append("\" and timestamp \"");

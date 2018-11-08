@@ -95,7 +95,7 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
         try {
           final RepositoryPath projectPath = (RepositoryPath) i.next();
           final String checkoutDirName = makeCheckoutDirName(agent, projectPath);
-          final StringBuffer sb = new StringBuffer(200);
+          final StringBuilder sb = new StringBuilder(200);
           sb.append(" get ").append(STR_DBLQOUTE).append(projectPath.getPath()).append(STR_DBLQOUTE);
           sb.append(' ').append(STR_DBLQOUTE).append("-GL").append(checkoutDirName).append(STR_DBLQOUTE);
           sb.append(" -R"); // retrieve subrojects recuresively
@@ -157,7 +157,7 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
         try {
           final RepositoryPath projectPath = (RepositoryPath) i.next();
           final String checkoutDirName = makeCheckoutDirName(agent, projectPath);
-          final StringBuffer sb = new StringBuffer(200);
+          final StringBuilder sb = new StringBuilder(200);
           sb.append(" get ").append(STR_DBLQOUTE).append(projectPath.getPath()).append(STR_DBLQOUTE);
           sb.append(" -GL");
           sb.append(STR_DBLQOUTE).append(checkoutDirName).append(STR_DBLQOUTE);
@@ -274,7 +274,7 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
         // merger.mergeInChangesLeft(result, seconRunResult);
 
         // we resort it
-        Collections.sort(result, ChangeList.REVERSE_CHANGE_DATE_COMPARATOR);
+        result.sort(ChangeList.REVERSE_CHANGE_DATE_COMPARATOR);
       }
 
       // validate that change lists contain not only exclusions
@@ -306,7 +306,7 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
 
         // preExecute history command
         final Date toDate = new Date(); // VSS requires "end date" for -Vd
-        final StringBuffer sb = new StringBuffer(200);
+        final StringBuilder sb = new StringBuilder(200);
         sb.append(" history \"").append(projectPath.getPath()).append('\"');
         //sb.append(" -Vd").append(formatFactory.outputDateTimeFormatUS().format(toDate)).append("~").append(formatFactory.outputDateTimeFormatUS().format(fromDate));
         sb.append(" -Vd").append(formatFactory.outputDateTimeFormat().format(toDate)).append('~').append(formatFactory.outputDateTimeFormat().format(fromDate));
@@ -337,7 +337,7 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
     }
 
     // get latest maxChangeLists changes if necessary
-    Collections.sort(resultingChangeLists, ChangeList.REVERSE_CHANGE_DATE_COMPARATOR);
+    resultingChangeLists.sort(ChangeList.REVERSE_CHANGE_DATE_COMPARATOR);
 
     // result
     return resultingChangeLists;
@@ -395,7 +395,7 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
         try {
           final RepositoryPath repositoryPath = (RepositoryPath) i.next();
           // execute the checkout command
-          final StringBuffer sb = new StringBuffer(200);
+          final StringBuilder sb = new StringBuilder(200);
           sb.append(" Label").append(' ').append(StringUtils.putIntoDoubleQuotes(repositoryPath.getPath()));
           sb.append(" -C-"); // no note
           sb.append(" -L").append(label);
@@ -469,7 +469,7 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
       // REVIEWME: simeshev@parabuilci.org -> The problem here is that at the
       final Agent agent = getCheckoutDirectoryAwareAgent();
       final VSSDateFormatFactory formatFactory = new VSSDateFormatFactory(agent.defaultLocale());
-      final StringBuffer result = new StringBuffer("VSS update -P -A -d -D").append(STR_SPACE)
+      final StringBuilder result = new StringBuilder("VSS update -P -A -d -D").append(STR_SPACE)
               .append('\"').append(formatFactory.outputDateTimeFormatUS().format(changeList.getCreatedAt())).append("\" ");
       // add branch if necessary
       final String branchName = changeList.getBranch();
@@ -655,11 +655,11 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
           // ignore, see label() method
         } else if (bothPresent(line, "This version of ", "already has a label")) { // NOPMD
           // ignore, see label() method
-        } else if (line.indexOf("No VSS database (srcsafe.ini) found") >= 0) { // NOPMD
+        } else if (line.contains("No VSS database (srcsafe.ini) found")) { // NOPMD
           throw new BuildException("Path to VSS database \"" + getDatabasePath() + "\" is invalid", getAgentHost());
         } else if (bothPresent(line, "User \"", "\" not found")) {
           throw new BuildException("VSS user \"" + getUserName() + "\" used to configure build is invalid.", getAgentHost());
-        } else if (line.indexOf("Invalid password") >= 0) {
+        } else if (line.contains("Invalid password")) {
           throw new BuildException("Password for VSS user \"" + getUserName() + "\" used to configure build is invalid.", getAgentHost());
         } else if (line.endsWith("(Y/N)N")) {  // NOPMD EmptyIfStmt
           // ignore
@@ -680,7 +680,7 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
 
 
   public static boolean bothPresent(final String toTest, final String testString1, final String testString2) {
-    return toTest.indexOf(testString1) >= 0 && toTest.indexOf(testString2) >= 0;
+    return toTest.contains(testString1) && toTest.contains(testString2);
   }
 
 
@@ -694,7 +694,7 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
    */
   private void processException(final Exception e) throws BuildException {
     final String exceptionString = e.toString();
-    if (exceptionString.indexOf("java.io.IOException: CreateProcess:") >= 0) {
+    if (exceptionString.contains("java.io.IOException: CreateProcess:")) {
       if (getExePath() != null) {
         throw new BuildException("Error while checking out: VSS executable \"" + getExePath() + "\" not found.", getAgentHost());
       }

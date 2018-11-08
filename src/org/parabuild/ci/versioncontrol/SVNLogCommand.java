@@ -88,7 +88,7 @@ final class SVNLogCommand extends SVNCommand {
     if (log.isDebugEnabled()) {
       log.debug("applyLimitOption: " + applyLimitOption);
     }
-    final StringBuffer result = new StringBuffer(200);
+    final StringBuilder result = new StringBuilder(200);
     if (useXMLFormat) {
       result.append("--xml").append(' ');
     }

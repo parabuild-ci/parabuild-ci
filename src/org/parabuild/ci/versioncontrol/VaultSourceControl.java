@@ -349,7 +349,7 @@ final class VaultSourceControl extends AbstractSourceControl {
       }
 
       // get latest rowLimit changes if necessary
-      Collections.sort(result, ChangeList.REVERSE_CHANGE_NUMBER_COMPARATOR);
+      result.sort(ChangeList.REVERSE_CHANGE_NUMBER_COMPARATOR);
 
       // result
       final long processingTime = System.currentTimeMillis() - timeStarted;
@@ -432,9 +432,7 @@ final class VaultSourceControl extends AbstractSourceControl {
       if (LOG.isDebugEnabled()) {
         LOG.debug("end label");
       }
-    } catch (final ParseException e) {
-      throw new BuildException("Error while labeling: " + StringUtils.toString(e), e, getAgentHost());
-    } catch (final IOException e) {
+    } catch (final ParseException | IOException e) {
       throw new BuildException("Error while labeling: " + StringUtils.toString(e), e, getAgentHost());
     }
   }
@@ -538,7 +536,7 @@ final class VaultSourceControl extends AbstractSourceControl {
    */
   private void processException(final Exception e) throws BuildException {
     final String exceptionString = e.toString();
-    if (exceptionString.indexOf("java.io.IOException: CreateProcess:") >= 0) {
+    if (exceptionString.contains("java.io.IOException: CreateProcess:")) {
       throw new BuildException("Error while accessing Vault: Vault executable not found.", getAgentHost());
     }
     throw new BuildException("Error while accessing Vault: " + StringUtils.toString(e), e, getAgentHost());

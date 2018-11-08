@@ -44,7 +44,7 @@ final class PVCSVlogCommand extends PVCSCommand {
     final PVCSDateFormat format = new PVCSDateFormat(agent.defaultLocale());
 
     // compose
-    final StringBuffer args = new StringBuffer(100);
+    final StringBuilder args = new StringBuilder(100);
     args.append(" vlog ");
     args.append("-z "); // subdirs
     args.append("\"-pr").append(parameters.getRepository()).append("\" ");

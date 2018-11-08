@@ -157,9 +157,7 @@ public final class FileSystemSourceControl extends AbstractCommandBasedSourceCon
       // store changes
       if (log.isDebugEnabled()) log.debug("end getChangesSince");
       return configManager.saveBuildChangeLists(activeBuildID, result);
-    } catch (final RuntimeException e) {
-      throw processException(e);
-    } catch (final IOException e) {
+    } catch (final RuntimeException | IOException e) {
       throw processException(e);
     }
   }

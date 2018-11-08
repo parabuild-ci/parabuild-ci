@@ -262,7 +262,7 @@ public class StarTeamSourceControl extends AbstractSourceControl {
       }
 
       // get latest rowLimit changes if necessary
-      Collections.sort(result, ChangeList.REVERSE_CHANGE_DATE_COMPARATOR);
+      result.sort(ChangeList.REVERSE_CHANGE_DATE_COMPARATOR);
 
       // result
       final long processingTime = System.currentTimeMillis() - timeStarted;
@@ -471,7 +471,7 @@ public class StarTeamSourceControl extends AbstractSourceControl {
    */
   private void processException(final Exception e) throws BuildException {
     final String exceptionString = e.toString();
-    if (exceptionString.indexOf("java.io.IOException: CreateProcess:") >= 0) {
+    if (exceptionString.contains("java.io.IOException: CreateProcess:")) {
       throw new BuildException("Error while accessing StarTeam: executable not found.", getAgentHost());
     }
     throw new BuildException("Error while accessing StarTeam: " + StringUtils.toString(e), e, getAgentHost());
@@ -489,7 +489,7 @@ public class StarTeamSourceControl extends AbstractSourceControl {
     try {
       final Locale locale = getCheckoutDirectoryAwareAgent().defaultLocale();
       final Date createdAt = configManager.getChangeList(changeListID).getCreatedAt();
-      final StringBuffer result = new StringBuffer(100);
+      final StringBuilder result = new StringBuilder(100);
       result.append(" stcmd");
       result.append(" -is");
       result.append(" -ro");

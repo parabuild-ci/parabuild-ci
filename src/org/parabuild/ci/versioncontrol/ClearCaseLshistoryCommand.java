@@ -73,7 +73,7 @@ final class ClearCaseLshistoryCommand extends ClearCaseCommand {
    */
   protected String getExeArguments() throws IOException, AgentFailureException {
     final String stringSinceDate = ClearCaseConstants.getHistoryDateFormat().format(startDate);
-    final StringBuffer sb = new StringBuffer(100);
+    final StringBuilder sb = new StringBuilder(100);
     final String pcnt = agent.isWindows() ? "%%" : "%";
     sb.append(" lshistory ");
     sb.append(" -nco "); // Excludes checkout version events

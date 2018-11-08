@@ -105,7 +105,7 @@ ate | -vl label] [-f NCO] [-o | -i | -merge] [-ts] [-eol [off | on | cr | lf | c
 ate" to automatically find the nearest Cache Agent on the network.
 
     */
-    final StringBuffer checkoutOptions = new StringBuffer(100);
+    final StringBuilder checkoutOptions = new StringBuilder(100);
     checkoutOptions.append(" -is"); // Apply to all sub folders
     checkoutOptions.append(" -ro"); // Set file read-only after operation
 //    checkoutOptions.append(" -o"); // Force checkout

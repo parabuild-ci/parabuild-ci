@@ -59,7 +59,7 @@ final class ClearCaseSetcsCommand extends ClearCaseCommand {
     final String fixedSpec = agent.fixCRLF(viewSpec);
     tempSpecFile = agent.createTempFile(".parabuild", ".tmp", fixedSpec);
     if (log.isDebugEnabled()) log.debug("viewSpec:\n" + viewSpec);
-    final StringBuffer sb = new StringBuffer(100);
+    final StringBuilder sb = new StringBuilder(100);
     sb.append(" setcs ");
     sb.append(agent.isWindows() ? StringUtils.putIntoDoubleQuotes(tempSpecFile) : tempSpecFile);
     return sb.toString();

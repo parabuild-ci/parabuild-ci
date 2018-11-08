@@ -107,7 +107,7 @@ public final class DepotPathParser {
     for (final Iterator i = list.iterator(); i.hasNext();) {
       final String pathLine = (String)i.next();
       final RepositoryPath repoPath = normalizeDepotPathLine(pathLine);
-      if (repoPath.getPath().length() == 0) {
+      if (repoPath.getPath().isEmpty()) {
         throw new ValidationException(depotStringDefinition + " \"" + pathLine + "\" is not a valid non-empty depot path.");
       }
       if (!spacesAllowed && repoPath.getPath().indexOf(' ') >= 0) {
@@ -149,7 +149,7 @@ public final class DepotPathParser {
    * @return nomalized path line
    */
   private RepositoryPath normalizeDepotPathLine(final String pathLine) {
-    final StringBuffer normalizedPath = new StringBuffer(100);
+    final StringBuilder normalizedPath = new StringBuilder(100);
     for (final StringTokenizer st = new StringTokenizer(pathLine, "\\/", false); st.hasMoreTokens();) {
       final String token = st.nextToken();
       normalizedPath.append(token);
@@ -158,7 +158,7 @@ public final class DepotPathParser {
       }
     }
     final String result = removeSurroundingDoubleQuotes ? StringUtils.removeDoubleQuotes(normalizedPath.toString()) : normalizedPath.toString();
-    if (result.length() == 0) {
+    if (result.isEmpty()) {
       return new RepositoryPath("/"); // "root"
     } else if ("$".equals(result)) {
       return new RepositoryPath("$/"); // "vault root"

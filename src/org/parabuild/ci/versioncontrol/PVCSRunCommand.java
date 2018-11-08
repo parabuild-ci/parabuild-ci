@@ -45,7 +45,7 @@ final class PVCSRunCommand extends PVCSCommand {
     tempFile = agent.createTempFile("scm", ".pcli", parameters.getScriptContent());
 
     // compose
-    final StringBuffer args = new StringBuffer(100);
+    final StringBuilder args = new StringBuilder(100);
     args.append(" \"-s").append(tempFile).append('\"');
     args.append(' ').append(makeUserAndPasswordOption());
     return args.toString();

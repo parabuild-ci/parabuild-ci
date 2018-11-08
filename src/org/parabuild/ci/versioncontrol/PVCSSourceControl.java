@@ -240,7 +240,7 @@ final class PVCSSourceControl extends AbstractSourceControl {
       }
 
       // get latest rowLimit changes if necessary
-      Collections.sort(result, ChangeList.REVERSE_CHANGE_DATE_COMPARATOR);
+      result.sort(ChangeList.REVERSE_CHANGE_DATE_COMPARATOR);
 
       // result
       final long processingTime = System.currentTimeMillis() - timeStarted;
@@ -449,7 +449,7 @@ final class PVCSSourceControl extends AbstractSourceControl {
    */
   private void processException(final Exception e) throws BuildException {
     final String exceptionString = e.toString();
-    if (exceptionString.indexOf("java.io.IOException: CreateProcess:") >= 0) {
+    if (exceptionString.contains("java.io.IOException: CreateProcess:")) {
       throw new BuildException("Error while accessing PVCS: PCLI executable not found.", getAgentHost());
     }
     throw new BuildException("Error while accessing PVCS: " + StringUtils.toString(e), e, getAgentHost());

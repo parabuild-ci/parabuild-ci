@@ -54,7 +54,7 @@ final class ClearCaseCommandLineFactory {
       remoteCommand.append(' ');
       remoteCommand.append(exeArguments);
     } else {
-      final StringBuffer shSubcommand = new StringBuffer(100);
+      final StringBuilder shSubcommand = new StringBuilder(100);
       shSubcommand.append(StringUtils.removeDoubleQuotes(cleartoolExePathToUse));
       shSubcommand.append(' ');
       shSubcommand.append(exeArguments);

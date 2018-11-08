@@ -58,7 +58,7 @@ final class SVNUpdateCommand extends SVNCommand {
 
     final SVNWorkingDirPathFactory pathFactory = new SVNWorkingDirPathFactory(agent);
     final String workingDir = StringUtils.putIntoDoubleQuotes(pathFactory.makeWorkingDirPath(depotPath.getPath()));
-    final StringBuffer result = new StringBuffer(200);
+    final StringBuilder result = new StringBuilder(200);
     result.append(" update ");
     result.append(ignoreExternals ? " --ignore-externals " : "");
     result.append(getNOption(depotPath));

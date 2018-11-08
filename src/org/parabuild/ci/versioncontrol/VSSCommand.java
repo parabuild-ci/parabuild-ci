@@ -107,7 +107,7 @@ final class VSSCommand extends VersionControlRemoteCommand {
    */
   private String makeFullCommand() {
     if (StringUtils.isBlank(vssCommand)) throw new IllegalStateException("VSS command is not set");
-    final StringBuffer result = new StringBuffer(100);
+    final StringBuilder result = new StringBuilder(100);
     result.append(execPath);
     result.append(' ');
     result.append(vssCommand);

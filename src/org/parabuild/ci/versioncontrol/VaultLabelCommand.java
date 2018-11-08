@@ -44,7 +44,7 @@ final class VaultLabelCommand extends VaultCommand {
    * command and it args.
    */
   protected String getExeArguments() {
-    final StringBuffer args = new StringBuffer(100);
+    final StringBuilder args = new StringBuilder(100);
     args.append(" label");
     args.append(' ').append(StringUtils.putIntoDoubleQuotes(parameters.getRepositoryPath()));
     args.append(' ').append(parameters.getLabel());
@@ -86,7 +86,7 @@ Server and authentication information is specified by:
   -proxydomain proxydomain
       Domain for proxy authentication.
   -repository repositoryname
-      Repository to connect to
+      RepositoryVO to connect to
 
 This is a list of possible options:
   -comment commentstring

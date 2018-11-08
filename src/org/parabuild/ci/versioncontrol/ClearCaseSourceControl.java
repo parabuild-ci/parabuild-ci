@@ -456,7 +456,7 @@ final class ClearCaseSourceControl extends AbstractSourceControl {
         final ChangeListWindowMerger merger = new ChangeListWindowMerger();
         merger.mergeInChangesLeft(result, seconRunResult);
         // we resort it
-        Collections.sort(result, ChangeList.REVERSE_CHANGE_DATE_COMPARATOR);
+        result.sort(ChangeList.REVERSE_CHANGE_DATE_COMPARATOR);
       }
 
       // validate that change lists contain not only exclusions
@@ -468,7 +468,7 @@ final class ClearCaseSourceControl extends AbstractSourceControl {
       if (log.isDebugEnabled()) {
         log.debug("end getChangesSince");
       }
-      Collections.sort(result, ChangeList.REVERSE_CHANGE_DATE_COMPARATOR);
+      result.sort(ChangeList.REVERSE_CHANGE_DATE_COMPARATOR);
       return configManager.saveBuildChangeLists(activeBuildID, result);
     } catch (final IOException e) {
       processException(e);

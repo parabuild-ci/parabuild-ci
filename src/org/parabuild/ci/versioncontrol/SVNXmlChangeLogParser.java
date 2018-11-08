@@ -146,9 +146,7 @@ public final class SVNXmlChangeLogParser extends SVNChangeLogParser {
           }
         }
       }
-    } catch (final DocumentException e) {
-      throw IoUtils.createIOException(e);
-    } catch (final ParseException e) {
+    } catch (final DocumentException | ParseException e) {
       throw IoUtils.createIOException(e);
     }
     return result;

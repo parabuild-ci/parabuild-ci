@@ -128,7 +128,7 @@ abstract class SVNCommand extends VersionControlRemoteCommand {
     BufferedReader reader = null;
     try {
       if (getStderrFile().exists() && getStderrFile().length() > 0) {
-        final StringBuffer message = new StringBuffer(100);
+        final StringBuilder message = new StringBuilder(100);
         reader = new BufferedReader(new FileReader(getStderrFile()));
         String line = reader.readLine();
         while (line != null) {
@@ -164,7 +164,7 @@ abstract class SVNCommand extends VersionControlRemoteCommand {
             // See if there is any thing else
             final int start = markerIndex + marker.length();
             final String leftover = message.substring(start);
-            if (leftover.length() > 0) {
+            if (!leftover.isEmpty()) {
               throw new IOException("Errors while executing SVN command: " + leftover + ", command: " + removePasswordFromDebugString(getCommand()));
             } else {
               // No messages aside from the marker
@@ -193,7 +193,7 @@ abstract class SVNCommand extends VersionControlRemoteCommand {
     super.addEnvironment("SVNPASSWD", StringUtils.putIntoDoubleQuotes(password));
 
     // compose command
-    final StringBuffer remoteCommand = new StringBuffer(100);
+    final StringBuilder remoteCommand = new StringBuilder(100);
     remoteCommand.append(exePath);
     if (!interactive) {
       remoteCommand.append(' ');

@@ -75,7 +75,7 @@ final class SurroungHistoryReportCommand extends SurroundCommand {
    * Surround command and it args.
    */
   protected String getSurroundCommandArguments() {
-    final StringBuffer cmd = new StringBuffer(100);
+    final StringBuilder cmd = new StringBuilder(100);
     cmd.append(" rh ").append(StringUtils.putIntoDoubleQuotes(repository));
     cmd.append(' ').append(StringUtils.putIntoDoubleQuotes("-b" + branch));
     cmd.append(" -fSpaces");

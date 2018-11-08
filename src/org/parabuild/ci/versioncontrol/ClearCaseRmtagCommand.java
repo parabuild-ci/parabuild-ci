@@ -62,7 +62,7 @@ final class ClearCaseRmtagCommand extends ClearCaseCommand {
    * command and it args.
    */
   protected String getExeArguments() {
-    final StringBuffer sb = new StringBuffer(100);
+    final StringBuilder sb = new StringBuilder(100);
     sb.append(" rmtag ");
     sb.append(" -view ").append(viewTag); // Removes one or more view-tags.
     return sb.toString();

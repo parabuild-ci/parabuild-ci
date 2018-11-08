@@ -80,7 +80,7 @@ l [-vd date | -vp promotion | -vl label] [-d description] [-b | -r] [-f]
     -f : frozen
 
     */
-    final StringBuffer checkoutOptions = new StringBuffer(100);
+    final StringBuilder checkoutOptions = new StringBuilder(100);
     checkoutOptions.append(" -vd ").append(formatLabelDate(parameters.getLabelDate()));
     checkoutOptions.append(" -nl ").append(parameters.getLabel());
     return checkoutOptions.toString();

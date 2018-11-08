@@ -150,7 +150,7 @@ public class VersionControlRemoteCommand extends RemoteCommand {
     BufferedReader reader = null;
     try {
       if (getStderrFile().exists() && getStderrFile().length() > 0) {
-        final StringBuffer message = new StringBuffer(500);
+        final StringBuilder message = new StringBuilder(500);
         reader = new BufferedReader(new FileReader(getStderrFile()));
         String line = reader.readLine();
         int index = 0;

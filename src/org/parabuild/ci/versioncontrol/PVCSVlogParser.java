@@ -170,7 +170,7 @@ final class PVCSVlogParser {
         // read archive archiveDescription in case the revision is the
         // first revision so that we can use this instead of
         // "Initial revision".
-        final StringBuffer archiveDescription = new StringBuffer(100);
+        final StringBuilder archiveDescription = new StringBuilder(100);
         line = IoUtils.readToNotPast(reader, DESCRIPTION_STRING, null, trimLine);
         boolean firstLine = true;
         while (line != null && !line.equals(REVISION_DELIMITER)) {

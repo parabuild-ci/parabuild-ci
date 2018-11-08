@@ -243,7 +243,7 @@ final class VSSChangeLogParser {
               change.setChangeType(Change.TYPE_DESTROYED);
             } else if (fileNameLine.endsWith(STR_VSS_RECOVERED)) {
               change.setChangeType(Change.TYPE_RECOVERED);
-            } else if (fileNameLine.indexOf(STR_VSS_RENAMED_TO) != -1) {
+            } else if (fileNameLine.contains(STR_VSS_RENAMED_TO)) {
               fileName = fileNameLine;
               change.setChangeType(Change.TYPE_RENAMED);
             } else if (fileNameLine.endsWith(STR_VSS_SHARED)) {
@@ -252,7 +252,7 @@ final class VSSChangeLogParser {
               continue; // ignore purged, does not change source line status
             } else if (fileNameLine.endsWith(STR_VSS_UNPINNED)) {
               continue; // ignore unpinned, does not change source line status
-            } else if (fileNameLine.indexOf(STR_VSS_MOVED_FROM) > -1) {
+            } else if (fileNameLine.contains(STR_VSS_MOVED_FROM)) {
               continue; // REVIEWME: ignore moved for now, check if affect state of src line.
             } else {
               reportUnknownVSSAction(changeLines, fileNameLine);

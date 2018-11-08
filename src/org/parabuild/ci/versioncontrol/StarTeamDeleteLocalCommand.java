@@ -80,7 +80,7 @@ I for Missing, and U for Unknown.
 
 
     */
-    final StringBuffer sb = new StringBuffer(100);
+    final StringBuilder sb = new StringBuilder(100);
 //    sb.append(" -rp ").append(StringUtils.putIntoDoubleQuotes(projectToWorkingDir(agent, parameters.getProject())));
     sb.append(" -fp ").append(StringUtils.putIntoDoubleQuotes(projectToWorkingDir(agent, parameters.getProject())));
     sb.append(" -cfgd ").append(makeViewConfigDateOption(agent, parameters.getConfigDate()));

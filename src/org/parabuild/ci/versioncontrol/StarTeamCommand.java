@@ -76,7 +76,7 @@ abstract class StarTeamCommand extends VersionControlRemoteCommand {
     agent.mkdirs(projectToWorkingDirName(agent, parameters.getProject()));
 
     // compose command
-    final StringBuffer remoteCommand = new StringBuffer(100);
+    final StringBuilder remoteCommand = new StringBuilder(100);
     remoteCommand.append(parameters.getExePath());
     remoteCommand.append(' ');
     remoteCommand.append(starTeamCommand());
@@ -177,7 +177,7 @@ abstract class StarTeamCommand extends VersionControlRemoteCommand {
 
 
   private static final String parametersToProject(final StarTeamCommandParameters parameters) {
-    final StringBuffer sb = new StringBuffer(100);
+    final StringBuilder sb = new StringBuilder(100);
     sb.append(parameters.getUser());
     sb.append(':');
     sb.append(parameters.getPassword());
@@ -191,7 +191,7 @@ abstract class StarTeamCommand extends VersionControlRemoteCommand {
 
 
   private static final String encriptionToOption(final int encryption) {
-    final StringBuffer sb = new StringBuffer(100);
+    final StringBuilder sb = new StringBuilder(100);
     switch (encryption) {
       case SourceControlSetting.STARTEAM_ENCRYPTION_RSA_R2_BLOCK_CIPHER_ECB:
         sb.append(STR_ENCYPT_FLAG).append(' ').append("RC2_ECB");

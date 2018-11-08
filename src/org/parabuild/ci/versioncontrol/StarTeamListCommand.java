@@ -91,7 +91,7 @@ public final class StarTeamListCommand extends StarTeamCommand {
    * StarTeam command and it args.
    */
   protected String starTeamCommandArguments() throws IOException, AgentFailureException {
-    final StringBuffer sb = new StringBuffer(100);
+    final StringBuilder sb = new StringBuilder(100);
     sb.append(" -is"); // Apply to all sub folders
     sb.append(" -short"); // Short format
     sb.append(" -cfgd ").append(makeViewConfigDateOption(agent, parameters.getConfigDate()));

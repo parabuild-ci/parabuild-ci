@@ -72,7 +72,7 @@ final class SurroungGetCommand extends SurroundCommand {
   protected String getSurroundCommandArguments() throws IOException, AgentFailureException {
     final String workingDir = agent.getCheckoutDirName() + adjustRepositoryPath(repository);
 
-    final StringBuffer cmd = new StringBuffer(100);
+    final StringBuilder cmd = new StringBuilder(100);
     cmd.append(" get /");
     cmd.append(" \"-p").append(repository).append('\"'); // repository path
     cmd.append(" \"-d").append(workingDir).append('\"'); // working dir

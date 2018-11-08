@@ -58,7 +58,7 @@ public abstract class AbstractClearCaseStderrProcessor implements StderrLineProc
     // process ignore lines
     for (int i = 0, n = ignoreLines.size(); i < n; i++) {
       final String ignoreLine = (String)ignoreLines.get(i);
-      if (line.indexOf(ignoreLine) >= 0) {
+      if (line.contains(ignoreLine)) {
         return RESULT_IGNORE;
       }
     }

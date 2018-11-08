@@ -110,5 +110,5 @@ abstract class VaultCommand extends VersionControlRemoteCommand {
   -proxydomain proxydomain
       Domain for proxy authentication.
   -repository repositoryname
-      Repository to connect to
+      RepositoryVO to connect to
 */

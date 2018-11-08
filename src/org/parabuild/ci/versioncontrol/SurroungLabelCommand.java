@@ -69,7 +69,7 @@ final class SurroungLabelCommand extends SurroundCommand {
    * Surround command and it args.
    */
   protected String getSurroundCommandArguments() {
-    final StringBuffer cmd = new StringBuffer(100);
+    final StringBuilder cmd = new StringBuilder(100);
     cmd.append(" label /");
     cmd.append(" \"-p").append(repository).append('\"'); // repository path
     cmd.append(' ').append(StringUtils.putIntoDoubleQuotes("-b" + branch));

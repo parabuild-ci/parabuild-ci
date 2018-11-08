@@ -93,7 +93,7 @@ public final class StarTeamHistoryCommand extends StarTeamCommand {
    * StarTeam command and it args.
    */
   protected String starTeamCommandArguments() throws IOException, AgentFailureException {
-    final StringBuffer historyOptions = new StringBuffer(100);
+    final StringBuilder historyOptions = new StringBuilder(100);
     historyOptions.append(" -is"); // Apply to all sub folders
 //    historyOptions.append(" -rp ").append(StringUtils.putIntoDoubleQuotes(projectToWorkingDir(agent, parameters.getProject())));
     historyOptions.append(" -fp ").append(StringUtils.putIntoDoubleQuotes(projectToWorkingDir(agent, parameters.getProject())));

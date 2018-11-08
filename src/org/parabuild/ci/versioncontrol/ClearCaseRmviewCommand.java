@@ -54,7 +54,7 @@ final class ClearCaseRmviewCommand extends ClearCaseCommand {
    */
   protected String getExeArguments() throws IOException, AgentFailureException {
     final String checkoutDirName = agent.getCheckoutDirName();
-    final StringBuffer sb = new StringBuffer(100);
+    final StringBuilder sb = new StringBuilder(100);
     sb.append(" rmview ");
     sb.append(" -force ");
 //    sb.append(" -tag ").append(viewTag);

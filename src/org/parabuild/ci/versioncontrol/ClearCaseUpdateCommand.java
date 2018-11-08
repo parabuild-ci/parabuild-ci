@@ -40,7 +40,7 @@ final class ClearCaseUpdateCommand extends ClearCaseCommand {
   protected String getExeArguments() throws IOException, AgentFailureException {
     final String logOption = agent.isWindows() ? "nul" : "/dev/null";
 
-    final StringBuffer sb = new StringBuffer(100);
+    final StringBuilder sb = new StringBuilder(100);
     sb.append(" update ");
     sb.append(" -force "); // Suppresses the confirmation prompts
     sb.append(" -overwrite "); // Overwrites all hijacked files with the version selected by the config spec

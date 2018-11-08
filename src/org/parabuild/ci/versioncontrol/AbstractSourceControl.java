@@ -419,7 +419,7 @@ public abstract class AbstractSourceControl implements SourceControl {
       hasToCleanUp = Boolean.FALSE;
       agentHostCleanup.put(agentHost, hasToCleanUp);
     }
-    return hasToCleanUp.booleanValue();
+    return hasToCleanUp;
   }
 
 

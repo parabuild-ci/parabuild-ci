@@ -147,7 +147,7 @@ final class ClearCaseMkviewCommand extends ClearCaseCommand {
       final String checkoutDirName = agent.getCheckoutDirName();
 
       // compse command line
-      final StringBuffer sb = new StringBuffer(100);
+      final StringBuilder sb = new StringBuilder(100);
       sb.append(" mkview ");
       sb.append(textModeToAppend);
       sb.append(storageLocationArgument);

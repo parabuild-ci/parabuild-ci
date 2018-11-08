@@ -197,7 +197,7 @@ Make svn_client_info() use new svn_ra_stat() API for efficiency.
       //if (log.isDebugEnabled()) log.debug("changeList: " + changeList);
 
       // process description
-      final StringBuffer descr = new StringBuffer(100);
+      final StringBuilder descr = new StringBuilder(100);
       String descrLine = reader.readLine();
       while (descrLine != null && !descrLine.startsWith(CHANGE_LIST_DELIMITER)) {
         descr.append(descrLine).append('\n');

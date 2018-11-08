@@ -98,7 +98,7 @@ abstract class PVCSCommand extends VersionControlRemoteCommand {
     if (log.isDebugEnabled()) log.debug("analyze error log");
     if (log.isDebugEnabled()) log.debug("resultCode: " + resultCode);
     if (resultCode == 0) return; // do noting
-    final StringBuffer message = new StringBuffer(100);
+    final StringBuilder message = new StringBuilder(100);
     // traverse stderr
 //    if (log.isDebugEnabled()) log.debug("IoUtils.fileToString(getStdoutFile()): " + IoUtils.fileToString(getStdoutFile()));
 //    if (log.isDebugEnabled()) log.debug("IoUtils.fileToString(getStderrFile()): " + IoUtils.fileToString(getStderrFile()));
@@ -117,7 +117,7 @@ abstract class PVCSCommand extends VersionControlRemoteCommand {
               line = reader.readLine();
               continue;
             }
-          } else if (line.indexOf("Could not find a revision named * in the archive") >= 0) {
+          } else if (line.contains("Could not find a revision named * in the archive")) {
             // do nothing
             line = reader.readLine();
             continue;
@@ -143,10 +143,10 @@ abstract class PVCSCommand extends VersionControlRemoteCommand {
           if (addNextLineToMessage) {
             message.append('\n').append(line);
             addNextLineToMessage = false; // reset flag
-          } else if (line.indexOf("This command requires one or more projects or versioned items to get") >= 0) {
+          } else if (line.contains("This command requires one or more projects or versioned items to get")) {
             message.append('\n').append("Project path \"").append(parameters.getProject()).append("\" is invalid or doesn't exist.");
             break;
-          } else if (line.indexOf("[Error]") >= 0) {
+          } else if (line.contains("[Error]")) {
             addNextLineToMessage = true; // set flag
           }
           line = reader.readLine();
@@ -166,7 +166,7 @@ abstract class PVCSCommand extends VersionControlRemoteCommand {
 
 
   protected final String makeUserAndPasswordOption() {
-    final StringBuffer args = new StringBuffer(100);
+    final StringBuilder args = new StringBuilder(100);
     if (!StringUtils.isBlank(parameters.getUser())) {
       args.append("-id").append(parameters.getUser());
       if (!StringUtils.isBlank(parameters.getPassword())) {

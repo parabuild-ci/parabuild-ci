@@ -70,7 +70,7 @@ final class CVSPasswordGenerator {
 
   private final String mangle(final String password) {
     if (StringUtils.isBlank(password)) return "";
-    final StringBuffer buf = new StringBuffer(100);
+    final StringBuilder buf = new StringBuilder(100);
     for (int i = 0; i < password.length(); i++) {
       buf.append(shifts[password.charAt(i)]);
     }

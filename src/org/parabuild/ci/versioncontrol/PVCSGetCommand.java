@@ -64,7 +64,7 @@ final class PVCSGetCommand extends PVCSCommand {
     final RemoteFileDescriptor fileDescriptor = agent.getFileDescriptor(stringDestPath);
 
     // compose
-    final StringBuffer args = new StringBuffer(100);
+    final StringBuilder args = new StringBuilder(100);
     args.append(" get ");
     args.append("-o "); // override
     args.append("-qe "); // quiet on non-existing entities

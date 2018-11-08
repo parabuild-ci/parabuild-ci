@@ -63,7 +63,7 @@ final class ChangeListWindowMerger {
     // sort second run so that change lists are sorted by date/time. note
     // that it's natural that in the sorted list different change
     // lists will have same date.
-    Collections.sort(secondRun, ChangeList.CHANGE_DATE_COMPARATOR);
+    secondRun.sort(ChangeList.CHANGE_DATE_COMPARATOR);
 
     // iterate
     Date previousFoundLeftoverDate = null;

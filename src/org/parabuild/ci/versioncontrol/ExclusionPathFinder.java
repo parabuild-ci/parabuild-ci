@@ -70,7 +70,7 @@ public final class ExclusionPathFinder {
     for (int i = 0; i < pathList.size(); i++) {
       final String filePath = (String)pathList.get(i);
       final String normalizedPath = filePath.replace('\\', '/').trim();
-      if (normalizedPath.length() == 0) continue;
+      if (normalizedPath.isEmpty()) continue;
 
       // check string ends
       final String normalizedPathLowerCase = normalizedPath.toLowerCase();

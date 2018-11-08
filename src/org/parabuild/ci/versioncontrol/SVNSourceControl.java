@@ -182,7 +182,7 @@ final class SVNSourceControl extends AbstractSourceControl {
         commandException = e;
 
         // Check if we have to run a cleanup
-        if (e.toString().indexOf("run 'svn cleanup' to remove locks") >= 0) {
+        if (e.toString().contains("run 'svn cleanup' to remove locks")) {
           // Execute cleanup command
           SVNCommand updateCommand = null;
           try {
@@ -523,7 +523,7 @@ final class SVNSourceControl extends AbstractSourceControl {
     }
 
     // get latest maxChangeLists changes if necessary
-    Collections.sort(result, ChangeList.REVERSE_CHANGE_NUMBER_COMPARATOR);
+    result.sort(ChangeList.REVERSE_CHANGE_NUMBER_COMPARATOR);
 
     // result
     final long processingTime = System.currentTimeMillis() - timeStarted;
@@ -625,8 +625,8 @@ final class SVNSourceControl extends AbstractSourceControl {
       command.execute();
     } catch (final IOException e) {
       final String errorString = e.toString().toLowerCase();
-      if (errorString.indexOf("Server certificate verification failed: issuer is not trusted".toLowerCase()) >= 0
-              || errorString.indexOf("Server certificate verification failed: certificate issued for a different hostname, issuer is not trusted".toLowerCase()) >= 0) {
+      if (errorString.contains("Server certificate verification failed: issuer is not trusted".toLowerCase())
+              || errorString.contains("Server certificate verification failed: certificate issued for a different hostname, issuer is not trusted".toLowerCase())) {
         command.cleanup();
         // Set interactive to be able to provide "p" as a repsonse
         final boolean interactive = command.isInteractive();

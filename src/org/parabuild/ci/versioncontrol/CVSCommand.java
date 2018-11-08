@@ -79,51 +79,51 @@ final class CVSCommand extends VersionControlRemoteCommand {
         String line = reader.readLine();
         while (line != null) {
 //          if (log.isDebugEnabled()) log.debug("line: " + line);
-          if (line.indexOf("no such repository") >= 0) {
+          if (line.contains("no such repository")) {
             throw new IOException("CVS root \"" + cvsRoot + "\" is invalid");
           }
-          if (line.indexOf("cvs server: cannot find module") >= 0) {
+          if (line.contains("cvs server: cannot find module")) {
             throw new IOException(line);
           }
-          if (line.indexOf("authorization failed:") >= 0) {
+          if (line.contains("authorization failed:")) {
             throw new IOException("Authorization failed for user from CVS root \"" + cvsRoot + '\"');
           }
-          if (line.indexOf("may only specify a positive, non-zero, integer port") >= 0) {
+          if (line.contains("may only specify a positive, non-zero, integer port")) {
             throw new IOException("Invalid CVS root \"" + cvsRoot + '\"');
           }
-          if (line.indexOf("Connection refused") >= 0) {
+          if (line.contains("Connection refused")) {
             throw new IOException("Can not connect to the server for CVS root \"" + cvsRoot + "\" - connection refused");
           }
-          if (line.indexOf("Unknown host") >= 0) {
+          if (line.contains("Unknown host")) {
             throw new IOException("Can not connect to the server for CVS root \"" + cvsRoot + "\" - unknown host");
           }
-          if (line.indexOf("Unknown command:") >= 0) {
+          if (line.contains("Unknown command:")) {
             throw new IOException(CAPTION_SYSTEM_ERROR + line);
           }
-          if (line.indexOf("[update aborted]") >= 0) {
+          if (line.contains("[update aborted]")) {
             throw new IOException(CAPTION_SYSTEM_ERROR + line);
           }
-          if (line.indexOf("[log aborted]") >= 0) {
+          if (line.contains("[log aborted]")) {
             throw new IOException(CAPTION_SYSTEM_ERROR + line);
           }
           // see # 765 - suppressed "consult above messages if any" following "end of file from server" as there is never "above messages"
-          if (line.indexOf("[checkout aborted]: end of file from server") >= 0) {
+          if (line.contains("[checkout aborted]: end of file from server")) {
             throw new IOException(CAPTION_SYSTEM_ERROR + "cvs [checkout aborted]: end of file from server");
           }
           //
-          if (line.indexOf("[checkout aborted]") >= 0) {
+          if (line.contains("[checkout aborted]")) {
             throw new IOException(CAPTION_SYSTEM_ERROR + line);
           }
-          if (line.indexOf("[server aborted]: no such tag") >= 0) {
+          if (line.contains("[server aborted]: no such tag")) {
             throw new IOException("Cannot find branch \"" + cvsRoot + '\"');
           }
-          if (line.indexOf("[history aborted]") >= 0) {
+          if (line.contains("[history aborted]")) {
             throw new IOException(CAPTION_SYSTEM_ERROR + line);
           }
-          if (line.indexOf("[checkout aborted]: the :pserver: access method is not available on this system") >= 0) {
+          if (line.contains("[checkout aborted]: the :pserver: access method is not available on this system")) {
             throw new IOException(CAPTION_SYSTEM_ERROR + line);
           }
-          if (line.indexOf("[rtag aborted]") >= 0) {
+          if (line.contains("[rtag aborted]")) {
             throw new IOException(CAPTION_SYSTEM_ERROR + line);
           }
           line = reader.readLine();

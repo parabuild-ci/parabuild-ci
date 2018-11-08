@@ -54,7 +54,7 @@ final class PVCSLabelCreatorImpl implements PVCSLabelCreator {
    *                               PVCSRevision} objects to label
    */
   public void label(final List collectedRevisionBlock) throws IOException, CommandStoppedException, AgentFailureException {
-    final StringBuffer sb = new StringBuffer(2000);
+    final StringBuilder sb = new StringBuilder(2000);
     // compose the beginning
     // ...
 
