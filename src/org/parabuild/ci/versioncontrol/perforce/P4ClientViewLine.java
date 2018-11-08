@@ -81,7 +81,7 @@ public final class P4ClientViewLine implements Serializable {
     }
 
     final StringTokenizer st = new StringTokenizer(path.substring(begin), "/", true);
-    final StringBuffer sb = new StringBuffer(path.length());
+    final StringBuilder sb = new StringBuilder(path.length());
     sb.append(path.substring(0, begin));
     boolean firstSlash = true;
     while (st.hasMoreTokens()) {

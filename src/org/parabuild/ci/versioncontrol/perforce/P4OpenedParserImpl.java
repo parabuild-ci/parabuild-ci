@@ -59,9 +59,7 @@ public class P4OpenedParserImpl implements P4OpenedParser {
         }
         lineToParse = br.readLine();
       }
-    } catch (final RuntimeException e) {
-      throw e;
-    } catch (final IOException e) {
+    } catch (final RuntimeException | IOException e) {
       throw e;
     } catch (final Exception e) {
       throw IoUtils.createIOException(e);

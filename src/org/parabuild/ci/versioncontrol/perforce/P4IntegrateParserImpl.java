@@ -31,7 +31,7 @@ final class P4IntegrateParserImpl implements P4IntegrateParser {
 
   // NOTE: vimeshev note on operation codes
   // 1. can't branch from - usually comes from lines like /depot/dev/bt/src/org/parabuild/ci/versioncontrol/P4ClientViewComposer.java - can't branch from //depot/dev/bt30/src/org/parabuild/ci/versioncontrol/P4ClientViewComposer.java#2 without -d flag
-  private static final Pattern PATTERN = Pattern.compile("(.*)#?(\\d+)? - (sync/integrate|integrate|branch/sync|sync/delete|can't\\ integrate|can't\\ branch|can't delete|delete) from ([^#]+)#(\\d+),?#?(\\d+)?.*");
+  private static final Pattern PATTERN = Pattern.compile("(.*)#?(\\d+)? - (sync/integrate|integrate|branch/sync|sync/delete|can't integrate|can't branch|can't delete|delete) from ([^#]+)#(\\d+),?#?(\\d+)?.*");
 
 
   /**
@@ -49,7 +49,9 @@ final class P4IntegrateParserImpl implements P4IntegrateParser {
       String lineToParse = br.readLine();
       while (lineToParse != null) {
 //        if (log.isDebugEnabled()) log.debug("lineToParse: " + lineToParse);
-        if (lineToParse.startsWith("error: All revision(s) already integrated")) return;
+        if (lineToParse.startsWith("error: All revision(s) already integrated")) {
+          return;
+        }
         // check for errors
         P4ParserHelper.validateLine(lineToParse);
         // parse
@@ -75,9 +77,7 @@ final class P4IntegrateParserImpl implements P4IntegrateParser {
         }
         lineToParse = br.readLine();
       }
-    } catch (final RuntimeException e) {
-      throw e;
-    } catch (final IOException e) {
+    } catch (final RuntimeException | IOException e) {
       throw e;
     } catch (final Exception e) {
       throw IoUtils.createIOException(e);

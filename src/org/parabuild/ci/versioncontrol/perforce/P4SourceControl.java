@@ -188,9 +188,7 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
       command.setExeArguments("sync " + getSyncOptions() + STR_SPACE + "//" + clientName + STR_TRIPPLE_DOTS + '@' + changeListNumber);
       command.setDescription("sync command");
       command.execute();
-    } catch (final IOException e) {
-      throw new BuildException(NAME_UNEXPECTED_SYNC_ERROR, e, getAgentHost());
-    } catch (final ValidationException e) {
+    } catch (final IOException | ValidationException e) {
       throw new BuildException(NAME_UNEXPECTED_SYNC_ERROR, e, getAgentHost());
     } finally {
       cleanup(command);
@@ -345,9 +343,7 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
 
       // return
       return changeDriver.getResultChangeListID();
-    } catch (final IOException e) {
-      throw new BuildException(NAME_UNEXPECTED_SYNC_ERROR, e, getAgentHost());
-    } catch (final ValidationException e) {
+    } catch (final IOException | ValidationException e) {
       throw new BuildException(NAME_UNEXPECTED_SYNC_ERROR, e, getAgentHost());
     }
   }
@@ -722,9 +718,7 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
       final String checkoutDirName = agent.getCheckoutDirName();
       return createOrUpdateClient(agent, checkoutDirName, props, clientName, props.getP4DepotPath(),
               getEffectiveRelativeBuildDir(props));
-    } catch (final IOException e) {
-      throw new BuildException(e, getAgentHost());
-    } catch (final ValidationException e) {
+    } catch (final IOException | ValidationException e) {
       throw new BuildException(e, getAgentHost());
     }
   }
@@ -1104,7 +1098,7 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
    */
   private String getSyncOptions() throws IOException, AgentFailureException {
     final Agent agent = getCheckoutDirectoryAwareAgent();
-    final StringBuffer syncOpts = new StringBuffer(10);
+    final StringBuilder syncOpts = new StringBuilder(10);
     if (agent.checkoutDirIsEmpty()) {
       if (log.isDebugEnabled()) {
         log.debug("will use forced sync");
@@ -1133,7 +1127,7 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
       try {
 
         // create password stream
-        final StringBuffer sb = new StringBuffer(100);
+        final StringBuilder sb = new StringBuilder(100);
         sb.append(props.getP4Password()).append("\n\n");
         is = new ByteArrayInputStream(agent.fixCRLF(sb.toString()).getBytes());
 
@@ -1755,7 +1749,7 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
 
       // generate P4 submit spec
       final Collection openedPaths = driver.getOpenedPaths();
-      final StringBuffer files = new StringBuffer(openedPaths.size() * 50);
+      final StringBuilder files = new StringBuilder(openedPaths.size() * 50);
       for (final Iterator i = openedPaths.iterator(); i.hasNext(); ) {
         final Opened opened = (Opened) i.next();
         files.append('\t').append(opened.getPath()).append("\t# ").append(opened.getOperation()).append('\n');

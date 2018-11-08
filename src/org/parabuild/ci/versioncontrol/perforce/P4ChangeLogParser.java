@@ -212,7 +212,7 @@ final class P4ChangeLogParser {
 
         // skip blank line
         reader.readLine();
-        final StringBuffer description = new StringBuffer(100);
+        final StringBuilder description = new StringBuilder(100);
         // Use this since we don't want the final (empty) line
         String prevLine = null;
         line = reader.readLine();
@@ -299,7 +299,7 @@ final class P4ChangeLogParser {
                 reader.readLine(); // skip next "text:" before job description
 
                 // parse job description
-                final StringBuffer jobDescr = new StringBuffer(200);
+                final StringBuilder jobDescr = new StringBuilder(200);
                 line = reader.readLine();
                 while (line != null
                   && (line.startsWith(P4_TEXT_JOB_DESCR)
@@ -368,9 +368,7 @@ final class P4ChangeLogParser {
         }
         changeDriver.processChangeList(changelist);
       }
-    } catch (final BuildException e) {
-      throw e;
-    } catch (final RuntimeException e) {
+    } catch (final BuildException | RuntimeException e) {
       throw e;
     } catch (final Exception e) {
       throw new BuildException(P4ParserHelper.makeUnexpectedErrorMessage(e.toString()));

@@ -62,7 +62,7 @@ final class P4AccumulatingChangeListChunkDriver implements P4ChangeListChunkDriv
    * Converst list of integers to string
    */
   private static String changeNumbersToString(final List changeNumbers) {
-    final StringBuffer sb = new StringBuffer(500);
+    final StringBuilder sb = new StringBuilder(500);
     for (final Iterator i = changeNumbers.iterator(); i.hasNext();) {
       sb.append(' ').append((String) i.next());
     }

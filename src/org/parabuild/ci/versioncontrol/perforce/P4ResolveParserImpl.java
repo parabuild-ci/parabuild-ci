@@ -31,7 +31,7 @@ public class P4ResolveParserImpl implements P4ResolveParser {
   private static final String SPACED_P4_INFO = P4ParserHelper.P4_INFO + ' ';
   private static final Pattern DIFF_PATTERN = Pattern.compile("Diff chunks: (\\d+) yours \\+ (\\d+) theirs \\+ (\\d+) both \\+ (\\d+) conflicting");
   private static final Pattern MERGING_PATTERN = Pattern.compile("(.*) - (merging) ([^#]+)#(\\d+),?#?(\\d+)?");
-  private static final Pattern RESULT_PATTERN = Pattern.compile("(.*) - (ignored|merge\\ from|copy\\ from|resolve\\ skipped).*");
+  private static final Pattern RESULT_PATTERN = Pattern.compile("(.*) - (ignored|merge from|copy from|resolve skipped).*");
   private static final String DIFF_CHUNKS = "Diff chunks:";
   private static final String UNEXPECTED_LINE_FORMAT = "Unexpected line format: ";
 
@@ -140,9 +140,7 @@ public class P4ResolveParserImpl implements P4ResolveParser {
 
         lineToParse = P4ParserHelper.readLineAndValidate(br);
       }
-    } catch (final RuntimeException e) {
-      throw e;
-    } catch (final IOException e) {
+    } catch (final RuntimeException | IOException e) {
       throw e;
     } catch (final Exception e) {
       throw IoUtils.createIOException(e);

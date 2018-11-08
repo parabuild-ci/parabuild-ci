@@ -83,7 +83,7 @@ final class P4BranchViewParserImpl implements P4BranchViewParser {
           update = lineToParse.substring(P4_INFO_UPDATE.length());
 
         } else if (lineToParse.startsWith(P4_INFO_DESCRIPTION)) {
-          final StringBuffer sb = new StringBuffer(200);
+          final StringBuilder sb = new StringBuilder(200);
           String descrLine = br.readLine();
           while (descrLine != null && descrLine.startsWith(TABBED_P4_INFO)) {
             if (!descrLine.equals(TABBED_P4_INFO)) {
@@ -96,7 +96,7 @@ final class P4BranchViewParserImpl implements P4BranchViewParser {
 
         } else if (lineToParse.startsWith(P4_INFO_VIEW)) {
 
-          final StringBuffer sb = new StringBuffer(200);
+          final StringBuilder sb = new StringBuilder(200);
           String viewLine = br.readLine();
 //          if (log.isDebugEnabled()) log.debug("viewLine: " + viewLine);
           while (viewLine != null && viewLine.startsWith(TABBED_P4_INFO)) {

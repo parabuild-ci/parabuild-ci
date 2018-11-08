@@ -63,7 +63,7 @@ final class P4ClientViewComposer {
       for (final Iterator i = viewLines.iterator(); i.hasNext();) {
         final P4ClientViewLine viewLine = (P4ClientViewLine)i.next();
         // make a line and write to SB pw
-        final StringBuffer sb = new StringBuffer(100);
+        final StringBuilder sb = new StringBuilder(100);
         final String quotedDepotSide = StringUtils.putIntoDoubleQuotes(viewLine.getDepotSide());
         final String quotedClientSide = StringUtils.putIntoDoubleQuotes(viewLine.getClientSide());
         sb.append('\t').append(quotedDepotSide);
@@ -95,7 +95,7 @@ final class P4ClientViewComposer {
       final Collection viewLines = clientView.getClientViewLines();
       for (final Iterator i = viewLines.iterator(); i.hasNext();) {
         final P4ClientViewLine viewLine = (P4ClientViewLine)i.next();
-        final StringBuffer sb = new StringBuffer(100);
+        final StringBuilder sb = new StringBuilder(100);
         final String quotedDepotSide = StringUtils.putIntoDoubleQuotes(viewLine.getDepotSide());
         sb.append('\t').append(quotedDepotSide);
         pw.println(sb.toString());

@@ -152,7 +152,7 @@ public class P4Command extends VersionControlRemoteCommand {
 
 
   public final void setExeArguments(final String args) {
-    final StringBuffer command = new StringBuffer(200);
+    final StringBuilder command = new StringBuilder(200);
     command.append(p4Exe);
     command.append(' ').append(p4Options);
     command.append(" -p ").append(p4Port);
