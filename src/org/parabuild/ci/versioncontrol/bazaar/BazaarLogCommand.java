@@ -55,7 +55,7 @@ public final class BazaarLogCommand extends BazaarCommand {
 
 
   protected String getExeArguments() throws IOException, AgentFailureException {
-    final StringBuffer sb = new StringBuffer(100);
+    final StringBuilder sb = new StringBuilder(100);
     sb.append(" log ");
     sb.append(" -v ");
     sb.append(" -l ").append(Integer.toString(maxChangeLists));

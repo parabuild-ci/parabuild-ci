@@ -222,7 +222,7 @@ added:
           }
 
           // Message
-          final StringBuffer message = new StringBuffer(100);
+          final StringBuilder message = new StringBuilder(100);
           line = reader.readLine(); // Read "message:"
           line = reader.readLine();
           boolean multiline = false;

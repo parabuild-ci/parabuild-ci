@@ -48,7 +48,7 @@ public final class BazaarUpdateCommand extends BazaarCommand {
   protected String getExeArguments() throws IOException, AgentFailureException {
     final String relativeBuildDir = branchLocationToRelativeBuildDir(branchLocation);
     final String checkoutDir = agent.getCheckoutDirName() + agent.separator() + relativeBuildDir;
-    final StringBuffer sb = new StringBuffer(100);
+    final StringBuilder sb = new StringBuilder(100);
     sb.append(" update ");
     sb.append(" ").append(StringUtils.putIntoDoubleQuotes(checkoutDir));
     return sb.toString();

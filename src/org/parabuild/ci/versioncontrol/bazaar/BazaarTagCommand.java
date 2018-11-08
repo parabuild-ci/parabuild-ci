@@ -52,7 +52,7 @@ public final class BazaarTagCommand extends BazaarCommand {
   protected String getExeArguments() throws IOException, AgentFailureException {
     final String relativeBuildDir = branchLocationToRelativeBuildDir(branchLocation);
     final String checkoutDir = agent.getCheckoutDirName() + agent.separator() + relativeBuildDir;
-    final StringBuffer sb = new StringBuffer(100);
+    final StringBuilder sb = new StringBuilder(100);
     sb.append(" tag ");
     sb.append(" -r ");
     sb.append(revision);

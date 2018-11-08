@@ -263,7 +263,7 @@ public final class BazaarVersionControl extends AbstractSourceControl {
     }
 
     // get latest maxChangeLists changes if necessary
-    Collections.sort(result, ChangeList.REVERSE_CHANGE_DATE_COMPARATOR);
+    result.sort(ChangeList.REVERSE_CHANGE_DATE_COMPARATOR);
 
     // result
     final long processingTime = System.currentTimeMillis() - timeStarted;
