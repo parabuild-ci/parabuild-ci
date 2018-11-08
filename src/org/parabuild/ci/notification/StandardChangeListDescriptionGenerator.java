@@ -116,7 +116,7 @@ public final class StandardChangeListDescriptionGenerator implements ChangeListD
     if (cutPosition < 0) cutPosition = 0;
     result = result.substring(0, cutPosition);
     // return result
-    result = result.length() == 0 ? "Description was not provided" : result;
+    result = result.isEmpty() ? "Description was not provided" : result;
     //if (!result.endsWith(".")) result += ".";
     return result;
   }

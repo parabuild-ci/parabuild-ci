@@ -200,9 +200,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
       final EmailRecipients recipients = composer.makeRecipients(buildRun, vcsUserMap, false, false, false, true, curOffWatchLevel);
       final byte messagePriority = SystemConfigurationManagerFactory.getManager().getSystemPropertyValue(SystemProperty.MESSAGE_PRIORITY_FAILED_BUILD, SystemProperty.MESSAGE_PRIORITY_NORMAL);
       sendMessage(recipients, subject, body, messagePriority);
-    } catch (final RuntimeException ex) {
-      NotificationUtils.reportErrorSendingBuildFailure(buildRun, ex);
-    } catch (final MessagingException ex) {
+    } catch (final RuntimeException | MessagingException ex) {
       NotificationUtils.reportErrorSendingBuildFailure(buildRun, ex);
     }
   }
@@ -413,9 +411,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
       final EmailRecipients recipients = composer.makeRecipients(buildRun, vcsUserMap, false, false, false, true, cutOffWatchLevel);
       final byte messagePriority = buildRun.getResultID() == BuildRun.BUILD_RESULT_SUCCESS ? SystemProperty.MESSAGE_PRIORITY_NORMAL : SystemConfigurationManagerFactory.getManager().getSystemPropertyValue(SystemProperty.MESSAGE_PRIORITY_FAILED_BUILD, SystemProperty.MESSAGE_PRIORITY_NORMAL);
       sendMessage(recipients, subj, body, messagePriority);
-    } catch (final RuntimeException ex) {
-      NotificationUtils.reportErrorSendingBuildFailure(buildRun, ex);
-    } catch (final MessagingException ex) {
+    } catch (final RuntimeException | MessagingException ex) {
       NotificationUtils.reportErrorSendingBuildFailure(buildRun, ex);
     }
   }

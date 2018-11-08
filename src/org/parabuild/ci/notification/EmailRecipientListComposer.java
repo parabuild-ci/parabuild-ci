@@ -456,7 +456,7 @@ public final class EmailRecipientListComposer {
       return;
     }
 
-    final User user = SecurityManager.getInstance().getUser(userID.intValue());
+    final User user = SecurityManager.getInstance().getUser(userID);
     if (user == null) {
       return;
     }

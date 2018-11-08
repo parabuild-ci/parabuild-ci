@@ -176,11 +176,7 @@ public abstract class AbstractInstantMessagingNotificationManager implements Not
       final boolean notLastStepResult = !cm.isLastEnabledBuildSequence(buildRun.getBuildID(), type, stepRun.getName());
       if (enabled)
         send(makeReceiverList(buildRun, serverType(), imMessageSelection, false, false, notLastStepResult, watchLevel), body);
-    } catch (final RuntimeException e) {
-      NotificationUtils.reportErrorSendingStepFinished(buildRun, stepRun, e);
-    } catch (final ValidationException e) {
-      NotificationUtils.reportErrorSendingStepFinished(buildRun, stepRun, e);
-    } catch (final AddressException e) {
+    } catch (final RuntimeException | AddressException | ValidationException e) {
       NotificationUtils.reportErrorSendingStepFinished(buildRun, stepRun, e);
     }
   }
