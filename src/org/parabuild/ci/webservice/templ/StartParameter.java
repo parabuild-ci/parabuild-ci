@@ -11,12 +11,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/**
- * StartParameter.java
- *
- * This file was auto-generated from WSDL
- * by the Apache Axis 1.2.1 Jun 14, 2005 (09:15:57 EDT) WSDL2Java emitter.
- */
 
 package org.parabuild.ci.webservice.templ;
 
