@@ -130,25 +130,6 @@
     </option>
     <option name="USE_PER_PROJECT_SETTINGS" value="true" />
   </component>
-  <component name="CompilerConfiguration">
-    <resourceExtensions />
-    <wildcardResourcePatterns>
-      <entry name="!?*.java" />
-      <entry name="!?*.form" />
-      <entry name="!?*.class" />
-      <entry name="!?*.groovy" />
-      <entry name="!?*.scala" />
-      <entry name="!?*.flex" />
-      <entry name="!?*.kt" />
-      <entry name="!?*.clj" />
-      <entry name="!?*.aj" />
-    </wildcardResourcePatterns>
-    <annotationProcessing>
-      <profile default="true" name="Default" enabled="false">
-        <processorPath useClasspath="true" />
-      </profile>
-    </annotationProcessing>
-  </component>
   <component name="CopyrightManager" default="" />
   <component name="DependenciesAnalyzeManager">
     <option name="myForwardDirection" value="false" />
@@ -166,10 +147,6 @@
     <option name="NEW_SESSION_BEAN_LAST_PACKAGE" value="" />
   </component>
   <component name="EjbManager" enabled="false" />
-  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
-  <component name="EntryPointsManager">
-    <entry_points version="2.0" />
-  </component>
   <component name="ExportToHTMLSettings">
     <option name="PRINT_LINE_NUMBERS" value="false" />
     <option name="OPEN_IN_BROWSER" value="false" />
@@ -198,7 +175,6 @@
   <component name="InspectionProjectProfileManager">
     <profile version="1.0">
       <option name="myName" value="Project Default" />
-      <option name="myLocal" value="true" />
       <inspection_tool class="AccessToNonThreadSafeStaticFieldFromInstance" enabled="true" level="WARNING" enabled_by_default="true">
         <option name="nonThreadSafeClasses">
           <value />
@@ -209,6 +185,7 @@
       <inspection_tool class="AnonymousClassVariableHidesContainingMethodVariable" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="ArchaicSystemPropertyAccess" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="ArrayEquality" enabled="true" level="WARNING" enabled_by_default="true" />
+      <inspection_tool class="AssignmentOrReturnOfFieldWithMutableType" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="AssignmentToCatchBlockParameter" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="AssignmentToCollectionFieldFromParameter" enabled="true" level="WARNING" enabled_by_default="true">
         <option name="ignorePrivateMethods" value="true" />
@@ -233,7 +210,6 @@
       <inspection_tool class="BooleanMethodIsAlwaysInverted" enabled="false" level="WARNING" enabled_by_default="false" />
       <inspection_tool class="BusyWait" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="CStyleArrayDeclaration" enabled="true" level="WARNING" enabled_by_default="true" />
-      <inspection_tool class="CachedNumberConstructorCall" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="CallToNativeMethodWhileLocked" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="CallToSimpleGetterInClass" enabled="true" level="WARNING" enabled_by_default="true">
         <option name="ignoreGetterCallsOnOtherObjects" value="false" />
@@ -246,9 +222,11 @@
       <inspection_tool class="CallToStringConcatCanBeReplacedByOperator" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="CastConflictsWithInstanceof" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="CastToIncompatibleInterface" enabled="true" level="WARNING" enabled_by_default="true" />
+      <inspection_tool class="CatchMayIgnoreException" enabled="true" level="WARNING" enabled_by_default="true">
+        <option name="m_ignoreCatchBlocksWithComments" value="false" />
+      </inspection_tool>
       <inspection_tool class="ChainedEquality" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="ChainedEqualityJS" enabled="true" level="WARNING" enabled_by_default="true" />
-      <inspection_tool class="ClassEscapesItsScope" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="ClassInitializer" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="ClassNewInstance" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="CollectionContainsUrl" enabled="true" level="WARNING" enabled_by_default="true" />
@@ -257,7 +235,6 @@
       <inspection_tool class="ComparableImplementedButEqualsNotOverridden" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="ComparatorNotSerializable" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="ComparisonOfShortAndChar" enabled="true" level="WARNING" enabled_by_default="true" />
-      <inspection_tool class="ComparisonToNaN" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="ConditionSignal" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="ConfusingOctalEscape" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="ConstantAssertCondition" enabled="true" level="WARNING" enabled_by_default="true" />
@@ -297,8 +274,12 @@
       <inspection_tool class="GroovyRangeTypeCheck" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="GroovyUnresolvedAccess" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="GroovyUntypedAccess" enabled="true" level="WARNING" enabled_by_default="true" />
+      <inspection_tool class="IfCanBeSwitch" enabled="false" level="WARNING" enabled_by_default="false">
+        <option name="minimumBranches" value="3" />
+        <option name="suggestIntSwitches" value="false" />
+        <option name="suggestEnumSwitches" value="false" />
+      </inspection_tool>
       <inspection_tool class="IfStatementWithIdenticalBranchesJS" enabled="true" level="WARNING" enabled_by_default="true" />
-      <inspection_tool class="IncrementDecrementUsedAsExpression" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="InnerClassMayBeStatic" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="InnerClassVariableHidesOuterClassVariable" enabled="true" level="WARNING" enabled_by_default="true">
         <option name="m_ignoreInvisibleFields" value="true" />
@@ -349,13 +330,9 @@
         <option name="REPORT_VARIABLES" value="true" />
         <option name="REPORT_PARAMETERS" value="true" />
       </inspection_tool>
-      <inspection_tool class="LoggerInitializedWithForeignClass" enabled="false" level="WARNING" enabled_by_default="false">
-        <option name="loggerClassName" value="org.apache.log4j.Logger,org.slf4j.LoggerFactory,org.apache.commons.logging.LogFactory,java.util.logging.Logger" />
-        <option name="loggerFactoryMethodName" value="getLogger,getLogger,getLog,getLogger" />
-      </inspection_tool>
       <inspection_tool class="MapReplaceableByEnumMap" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="MethodMayBeStatic" enabled="true" level="WARNING" enabled_by_default="true">
-        <option name="m_onlyPrivateOrFinal" value="false" />
+        <option name="m_onlyPrivateOrFinal" value="true" />
         <option name="m_ignoreEmptyMethods" value="true" />
       </inspection_tool>
       <inspection_tool class="MethodMayBeSynchronized" enabled="true" level="WARNING" enabled_by_default="true" />
@@ -394,6 +371,9 @@
             <item value="forEach" />
           </value>
         </option>
+        <option name="ignoredClasses">
+          <value />
+        </option>
       </inspection_tool>
       <inspection_tool class="MisspelledCompareTo" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="MisspelledEquals" enabled="true" level="WARNING" enabled_by_default="true" />
@@ -401,16 +381,12 @@
       <inspection_tool class="MisspelledSetUp" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="MisspelledTearDown" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="MisspelledToString" enabled="true" level="WARNING" enabled_by_default="true" />
-      <inspection_tool class="MultipleDeclaration" enabled="true" level="WARNING" enabled_by_default="true">
-        <option name="ignoreForLoopDeclarations" value="true" />
-      </inspection_tool>
       <inspection_tool class="NakedNotify" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="NegatedIfElse" enabled="true" level="WARNING" enabled_by_default="true">
         <option name="m_ignoreNegatedNullComparison" value="true" />
         <option name="m_ignoreNegatedZeroComparison" value="false" />
       </inspection_tool>
       <inspection_tool class="NestedSynchronizedStatement" enabled="true" level="WARNING" enabled_by_default="true" />
-      <inspection_tool class="NonAtomicOperationOnVolatileField" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="NonSerializableFieldInSerializableClass" enabled="true" level="WARNING" enabled_by_default="true">
         <option name="ignorableAnnotations">
           <value />
@@ -502,7 +478,6 @@
       <inspection_tool class="SignalWithoutCorrespondingAwait" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="SimplifiableAnnotation" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="SimplifiableIfStatement" enabled="false" level="WARNING" enabled_by_default="false" />
-      <inspection_tool class="SimplifiableJUnitAssertion" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="SizeReplaceableByIsEmpty" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="SleepWhileHoldingLock" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="StaticGuardedByInstance" enabled="true" level="WARNING" enabled_by_default="true" />
@@ -513,9 +488,6 @@
       </inspection_tool>
       <inspection_tool class="StringBufferMustHaveInitialCapacity" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="StringBufferToStringInConcatenation" enabled="true" level="WARNING" enabled_by_default="true" />
-      <inspection_tool class="StringConcatenationInLoops" enabled="true" level="WARNING" enabled_by_default="true">
-        <option name="m_ignoreUnlessAssigned" value="true" />
-      </inspection_tool>
       <inspection_tool class="StringConcatenationInMessageFormatCall" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="StringEqualsEmptyString" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="StringReplaceableByStringBuffer" enabled="true" level="WARNING" enabled_by_default="true">
@@ -557,6 +529,7 @@
       <inspection_tool class="UnnecessaryConstantArrayCreationExpression" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="UnnecessaryFullyQualifiedName" enabled="true" level="WARNING" enabled_by_default="true">
         <option name="m_ignoreJavadoc" value="false" />
+        <option name="ignoreInModuleStatements" value="true" />
       </inspection_tool>
       <inspection_tool class="UnnecessarySuperConstructor" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="UnusedCatchParameter" enabled="true" level="WARNING" enabled_by_default="true">
@@ -577,8 +550,6 @@
         <option name="ignoreNonEmtpyLoops" value="false" />
       </inspection_tool>
     </profile>
-    <option name="PROJECT_PROFILE" value="Project Default" />
-    <option name="USE_PROJECT_PROFILE" value="true" />
     <version value="1.0" />
   </component>
   <component name="JUnitProjectSettings">
@@ -600,9 +571,6 @@
     <option name="HEAP_SIZE" />
     <option name="LOCALE" />
     <option name="OPEN_IN_BROWSER" value="false" />
-  </component>
-  <component name="KotlinCommonCompilerArguments">
-    <option name="coroutinesWarn" value="false" />
   </component>
   <component name="Palette2">
     <group name="Swing">
@@ -725,6 +693,46 @@
       </item>
     </group>
   </component>
+  <component name="ProjectCodeStyleConfiguration">
+    <option name="USE_PER_PROJECT_SETTINGS" value="true" />
+    <code_scheme name="Project" version="173">
+      <JavaCodeStyleSettings>
+        <option name="CLASS_COUNT_TO_USE_IMPORT_ON_DEMAND" value="50" />
+        <option name="NAMES_COUNT_TO_USE_IMPORT_ON_DEMAND" value="50" />
+      </JavaCodeStyleSettings>
+      <XML>
+        <option name="XML_ATTRIBUTE_WRAP" value="0" />
+        <option name="XML_TEXT_WRAP" value="0" />
+        <option name="XML_LEGACY_SETTINGS_IMPORTED" value="true" />
+      </XML>
+      <ADDITIONAL_INDENT_OPTIONS fileType="haml">
+        <option name="INDENT_SIZE" value="2" />
+      </ADDITIONAL_INDENT_OPTIONS>
+      <codeStyleSettings language="Groovy">
+        <option name="BLANK_LINES_AROUND_METHOD" value="2" />
+        <option name="BLANK_LINES_AFTER_CLASS_HEADER" value="1" />
+      </codeStyleSettings>
+      <codeStyleSettings language="JAVA">
+        <option name="BLANK_LINES_AROUND_METHOD" value="2" />
+        <option name="BLANK_LINES_AFTER_CLASS_HEADER" value="1" />
+        <indentOptions>
+          <option name="INDENT_SIZE" value="2" />
+          <option name="TAB_SIZE" value="2" />
+        </indentOptions>
+      </codeStyleSettings>
+      <codeStyleSettings language="JavaScript">
+        <indentOptions>
+          <option name="CONTINUATION_INDENT_SIZE" value="8" />
+        </indentOptions>
+      </codeStyleSettings>
+      <codeStyleSettings language="XML">
+        <indentOptions>
+          <option name="INDENT_SIZE" value="2" />
+          <option name="TAB_SIZE" value="2" />
+        </indentOptions>
+      </codeStyleSettings>
+    </code_scheme>
+  </component>
   <component name="ProjectCodeStyleSettingsManager">
     <option name="PER_PROJECT_SETTINGS">
       <value>
@@ -793,7 +801,7 @@
   <component name="ProjectResources">
     <default-html-doctype>http://www.w3.org/1999/xhtml</default-html-doctype>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" assert-keyword="true" jdk-15="true" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
   <component name="ResourceBundleManager">
     <file url="file://$PROJECT_DIR$/test/data/parabuild_license_standard_50_lic.lic" />
     <file url="file://$PROJECT_DIR$/test/data/parabuild_license_with_50_lic.lic" />
@@ -847,34 +855,34 @@
     </library>
     <library name="GWT">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/gwt-api-checker.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/gwt-codeserver.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/gwt-dev.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/gwt-elemental.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/gwt-servlet-deps.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/gwt-servlet.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/gwt-user.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/requestfactory-apt.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/requestfactory-client.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/requestfactory-client+src.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/requestfactory-server.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/requestfactory-server+src.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/validation-api-1.0.0.GA.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.2/gwt-api-checker.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.2/gwt-codeserver.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.2/gwt-dev.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.2/gwt-elemental.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.2/gwt-servlet-deps.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.2/gwt-servlet.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.2/gwt-user.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.2/requestfactory-apt.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.2/requestfactory-client.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.2/requestfactory-client+src.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.2/requestfactory-server.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.2/requestfactory-server+src.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.2/validation-api-1.0.0.GA.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="file://$PROJECT_DIR$/3rdparty/gwt-2.8.1/doc/javadoc" />
+        <root url="file://$PROJECT_DIR$/3rdparty/gwt-2.8.2/doc/javadoc" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/gwt-codeserver.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/gwt-dev.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/gwt-elemental.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/gwt-user.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/requestfactory-apt-src.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/requestfactory-client-src.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/requestfactory-client+src.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/requestfactory-server-src.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/requestfactory-server+src.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.1/validation-api-1.0.0.GA-sources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.2/gwt-codeserver.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.2/gwt-dev.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.2/gwt-elemental.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.2/gwt-user.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.2/requestfactory-apt-src.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.2/requestfactory-client-src.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.2/requestfactory-client+src.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.2/requestfactory-server-src.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.2/requestfactory-server+src.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.2/validation-api-1.0.0.GA-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Hessian">
@@ -968,6 +976,15 @@
       </CLASSES>
       <JAVADOC />
       <SOURCES />
+    </library>
+    <library name="junit">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/3rdparty/junit3.8.2/junit.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/3rdparty/junit3.8.2/src.jar!/" />
+      </SOURCES>
     </library>
     <library name="Log4j 2.8.2">
       <CLASSES>
@@ -1265,9 +1282,5 @@
         <entry key="STYLE" value="true" />
       </map>
     </option>
-  </component>
-  <component name="uidesigner-configuration">
-    <option name="INSTRUMENT_CLASSES" value="true" />
-    <option name="COPY_FORMS_RUNTIME_TO_OUTPUT" value="true" />
   </component>
 </project>

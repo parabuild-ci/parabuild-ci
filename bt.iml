@@ -11,7 +11,6 @@
           <root url="file://$MODULE_DIR$/src" relative="/" />
         </webroots>
         <sourceRoots>
-          <root url="file://$MODULE_DIR$/3rdparty/hessian308" />
           <root url="file://$MODULE_DIR$/conf" />
           <root url="file://$MODULE_DIR$/src" />
           <root url="file://$MODULE_DIR$/temp/generated_home" />
@@ -41,31 +40,22 @@
       <configuration sdkName="" />
     </facet>
   </component>
-  <component name="NewModuleRootManager" inherit-compiler-output="false">
+  <component name="NewModuleRootManager">
     <output url="file://$MODULE_DIR$/temp/classes" />
     <output-test url="file://$MODULE_DIR$/temp/classes" />
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/3rdparty/hessian308" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/conf" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/temp/generated_home" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/temp/wsdl2java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test/src" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/3rdparty" />
+      <excludeFolder url="file://$MODULE_DIR$/3rdparty/hessian308" />
       <excludeFolder url="file://$MODULE_DIR$/temp" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/3rdparty/junit37/junit.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
     <orderEntry type="module-library">
       <library>
         <CLASSES>
@@ -213,6 +203,7 @@
     <orderEntry type="library" name="GWT" level="project" />
     <orderEntry type="library" name="sitemesh-2.4.2" level="project" />
     <orderEntry type="library" name="Tomcat Juli Adapters" level="project" />
+    <orderEntry type="library" name="junit" level="project" />
   </component>
   <component name="org.twodividedbyzero.idea.findbugs">
     <option name="_basePreferences">
