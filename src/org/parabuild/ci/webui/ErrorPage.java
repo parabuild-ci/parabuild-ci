@@ -112,7 +112,7 @@ public final class ErrorPage extends BasePage implements StatelessTierlet {
    */
   private void reportError(final String viewtierStatusCode, final Parameters parameters) {
     final Error error = new Error();
-    error.setSubsystemName(Error.ERROR_SUSBSYSTEM_WEBUI);
+    error.setSubsystemName(Error.ERROR_SUBSYSTEM_WEBUI);
     error.setErrorLevel(Error.ERROR_LEVEL_WARNING);
     error.setSendEmail(false);
     error.setOutputToLog(true);

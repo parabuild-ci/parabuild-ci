@@ -269,7 +269,7 @@ public final class TimeoutWatchdog implements Runnable {
     error.setDetails(e);
     error.setErrorLevel(Error.ERROR_LEVEL_WARNING);
     error.setSendEmail(false);
-    error.setSubsystemName(Error.ERROR_SUSBSYSTEM_BUILD);
+    error.setSubsystemName(Error.ERROR_SUBSYSTEM_BUILD);
     ErrorManagerFactory.getErrorManager().reportSystemError(error);
   }
 

@@ -250,7 +250,7 @@ public final class JabberNotificationManager extends AbstractInstantMessagingNot
   private void reportSendError(final Exception e) {
     final ErrorManager errorManager = ErrorManagerFactory.getErrorManager();
     final Error error = new Error("Error sending Jabber message: " + StringUtils.toString(e));
-    error.setSubsystemName(Error.ERROR_SUSBSYSTEM_NOTIFICATION);
+    error.setSubsystemName(Error.ERROR_SUBSYSTEM_NOTIFICATION);
     error.setSendEmail(false);
     error.setDetails(e);
     errorManager.reportSystemError(error);

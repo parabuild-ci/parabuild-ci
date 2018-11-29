@@ -37,7 +37,6 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -494,7 +493,7 @@ public final class RepeatableScheduler implements BuildScheduler {
 
   private void reportError(final Throwable e, final String whileString) {
     final Error error = new Error("Unexpected scheduler error while " + whileString + " repeatable scheduler: " + StringUtils.toString(e));
-    error.setSubsystemName(Error.ERROR_SUSBSYSTEM_SCHEDULING);
+    error.setSubsystemName(Error.ERROR_SUBSYSTEM_SCHEDULING);
     error.setErrorLevel(Error.ERROR_LEVEL_ERROR);
     error.setDetails(e);
     error.setBuildID(activeBuildID);

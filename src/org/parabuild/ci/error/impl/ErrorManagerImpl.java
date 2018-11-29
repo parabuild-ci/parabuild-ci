@@ -121,7 +121,7 @@ public final class ErrorManagerImpl implements ErrorManager, Serializable {
       if (!errorFile.exists()) return;
       // move error to cleared directory
       IoUtils.moveFile(errorFile, new File(ConfigurationManager.getSystemClearedErrorsDirectory(), errorFileName));
-      // descrease counter
+      // decrease counter
       if (errorCounter > 0) errorCounter--;
     } catch (final IOException e) {
       // we ignore it as we can not do anything about it

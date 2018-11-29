@@ -110,7 +110,7 @@ final class CVSUsersParser {
     final Error err = new Error();
     err.setDescription(msg);
     err.setErrorLevel(Error.ERROR_LEVEL_WARNING);
-    err.setSubsystemName(Error.ERROR_SUSBSYSTEM_SCM);
+    err.setSubsystemName(Error.ERROR_SUBSYSTEM_SCM);
     err.setBuildID(buildID);
     if (ex != null) {
       err.setDetails(ex);

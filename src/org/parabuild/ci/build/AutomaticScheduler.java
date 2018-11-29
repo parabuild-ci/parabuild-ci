@@ -293,7 +293,7 @@ public final class AutomaticScheduler extends Thread implements BuildScheduler {
 
       // Report error
       final Error error = new Error(StringUtils.toString(e));
-      error.setSubsystemName(Error.ERROR_SUSBSYSTEM_SCHEDULING);
+      error.setSubsystemName(Error.ERROR_SUBSYSTEM_SCHEDULING);
       error.setErrorLevel(Error.ERROR_LEVEL_ERROR);
       error.setDetails(e);
       error.setBuildID(activeBuildID);
@@ -511,12 +511,12 @@ public final class AutomaticScheduler extends Thread implements BuildScheduler {
       if (LOG.isDebugEnabled()) {
         LOG.debug("Exception at run cycle", e);
       }
-      ErrorManagerFactory.getErrorManager().reportSystemError(new Error(activeBuildID, "", Error.ERROR_SUSBSYSTEM_SCHEDULING, e));
+      ErrorManagerFactory.getErrorManager().reportSystemError(new Error(activeBuildID, "", Error.ERROR_SUBSYSTEM_SCHEDULING, e));
     } catch (final java.lang.Error e) {
       if (LOG.isDebugEnabled()) {
         LOG.debug("Error at run cycle", e);
       }
-      ErrorManagerFactory.getErrorManager().reportSystemError(new Error(activeBuildID, "", Error.ERROR_SUSBSYSTEM_SCHEDULING, e));
+      ErrorManagerFactory.getErrorManager().reportSystemError(new Error(activeBuildID, "", Error.ERROR_SUBSYSTEM_SCHEDULING, e));
       //noinspection ProhibitedExceptionThrown
       throw e;
     } finally {

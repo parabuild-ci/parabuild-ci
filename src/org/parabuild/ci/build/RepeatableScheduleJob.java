@@ -240,7 +240,7 @@ public final class RepeatableScheduleJob implements Job {
     error.setDetails("Please report this error to support");
     error.setBuildID(activeBuildID);
     error.setErrorLevel(Error.ERROR_LEVEL_FATAL);
-    error.setSubsystemName(Error.ERROR_SUSBSYSTEM_SCHEDULING);
+    error.setSubsystemName(Error.ERROR_SUBSYSTEM_SCHEDULING);
     ErrorManagerFactory.getErrorManager().reportSystemError(error);
   }
 
@@ -249,7 +249,7 @@ public final class RepeatableScheduleJob implements Job {
     final Error error = new Error("Repeatable scheduler could not find build to run");
     error.setDetails("Please report this error to support");
     error.setErrorLevel(Error.ERROR_LEVEL_FATAL);
-    error.setSubsystemName(Error.ERROR_SUSBSYSTEM_SCHEDULING);
+    error.setSubsystemName(Error.ERROR_SUBSYSTEM_SCHEDULING);
     ErrorManagerFactory.getErrorManager().reportSystemError(error);
   }
 
@@ -259,7 +259,7 @@ public final class RepeatableScheduleJob implements Job {
     error.setDetails(e);
     error.setBuildID(activeBuildID);
     error.setErrorLevel(Error.ERROR_LEVEL_ERROR);
-    error.setSubsystemName(Error.ERROR_SUSBSYSTEM_SCHEDULING);
+    error.setSubsystemName(Error.ERROR_SUBSYSTEM_SCHEDULING);
     ErrorManagerFactory.getErrorManager().reportSystemError(error);
   }
 

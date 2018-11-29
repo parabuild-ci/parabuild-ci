@@ -436,7 +436,7 @@ public final class BuildServiceImpl implements BuildService {
 
   private void reportShutdownException(final Exception e) {
     final Error error = new Error("Error while shutting down a build");
-    error.setSubsystemName(Error.ERROR_SUSBSYSTEM_BUILD);
+    error.setSubsystemName(Error.ERROR_SUBSYSTEM_BUILD);
     error.setSendEmail(false);
     error.setBuildID(activeBuildID);
     error.setDetails(e);
@@ -448,7 +448,7 @@ public final class BuildServiceImpl implements BuildService {
     final Error error = new Error("Error while stopping a build");
     error.setDetails(e);
     error.setBuildID(activeBuildID);
-    error.setSubsystemName(Error.ERROR_SUSBSYSTEM_BUILD);
+    error.setSubsystemName(Error.ERROR_SUBSYSTEM_BUILD);
     error.setSendEmail(false);
     ErrorManagerFactory.getErrorManager().reportSystemError(error);
   }

@@ -210,7 +210,7 @@ public abstract class AbstractResultHandler implements ResultHandler {
     error.setSendEmail(true);
     error.setBuildName(buildName);
     error.setErrorLevel(Error.ERROR_LEVEL_WARNING);
-    error.setSubsystemName(Error.ERROR_SUSBSYSTEM_LOGGING);
+    error.setSubsystemName(Error.ERROR_SUBSYSTEM_LOGGING);
     errorManager.reportSystemError(error);
   }
 
@@ -224,7 +224,7 @@ public abstract class AbstractResultHandler implements ResultHandler {
     error.setBuildName(buildConfig.getBuildName());
     error.setPossibleCause("Custom build result configuration is invalid. Adjust result configuration.");
     error.setSendEmail(true);
-    error.setSubsystemName(Error.ERROR_SUSBSYSTEM_LOGGING);
+    error.setSubsystemName(Error.ERROR_SUBSYSTEM_LOGGING);
     error.setErrorLevel(Error.ERROR_LEVEL_WARNING);
     errorManager.reportSystemError(error);
   }
@@ -240,7 +240,7 @@ public abstract class AbstractResultHandler implements ResultHandler {
     error.setPossibleCause("Custom build result configuration is not valid. Adjust result configuration.");
     error.setBuildName(buildRunConfig.getBuildName());
     error.setSendEmail(true);
-    error.setSubsystemName(Error.ERROR_SUSBSYSTEM_LOGGING);
+    error.setSubsystemName(Error.ERROR_SUBSYSTEM_LOGGING);
     error.setErrorLevel(Error.ERROR_LEVEL_WARNING);
     errorManager.reportSystemError(error);
   }
@@ -256,7 +256,7 @@ public abstract class AbstractResultHandler implements ResultHandler {
     error.setPossibleCause("Custom build result configuration is not valid. Adjust result configuration.");
     error.setBuildName(buildRunConfig.getBuildName());
     error.setSendEmail(true);
-    error.setSubsystemName(Error.ERROR_SUSBSYSTEM_LOGGING);
+    error.setSubsystemName(Error.ERROR_SUBSYSTEM_LOGGING);
     error.setErrorLevel(Error.ERROR_LEVEL_WARNING);
     errorManager.reportSystemError(error);
   }

@@ -218,7 +218,7 @@ public abstract class AbstractSourceControl implements SourceControl {
     } catch (final Exception e) {
       final org.parabuild.ci.error.Error error = new org.parabuild.ci.error.Error("Error while cleaning up temporary version control files");
       error.setErrorLevel(org.parabuild.ci.error.Error.ERROR_LEVEL_WARNING);
-      error.setSubsystemName(org.parabuild.ci.error.Error.ERROR_SUSBSYSTEM_SCM);
+      error.setSubsystemName(org.parabuild.ci.error.Error.ERROR_SUBSYSTEM_SCM);
       error.setDetails(e);
       error.setSendEmail(false);
       error.setBuildID(buildID);
@@ -492,7 +492,7 @@ public abstract class AbstractSourceControl implements SourceControl {
         } catch (final ValidationException e) {
           final org.parabuild.ci.error.Error error = new Error("Problem resolving source control setting: " + name + ", value: " + value);
           error.setBuildID(activeBuildID);
-          error.setSubsystemName(Error.ERROR_SUSBSYSTEM_SCM);
+          error.setSubsystemName(Error.ERROR_SUBSYSTEM_SCM);
           errorManager.reportSystemError(error);
         }
       }

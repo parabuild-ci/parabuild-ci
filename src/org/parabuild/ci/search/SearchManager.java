@@ -183,7 +183,7 @@ public final class SearchManager {
     final Error error = new Error("Log indexing error: " + StringUtils.toString(e));
     error.setSendEmail(true);
     error.setDetails(e);
-    error.setSubsystemName(Error.ERROR_SUSBSYSTEM_SEARCH);
+    error.setSubsystemName(Error.ERROR_SUBSYSTEM_SEARCH);
     ErrorManagerFactory.getErrorManager().reportSystemError(error);
   }
 

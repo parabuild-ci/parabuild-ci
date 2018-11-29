@@ -28,7 +28,6 @@ import org.parabuild.ci.remote.AgentManager;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -253,7 +252,7 @@ public final class BuildListServiceImpl implements BuildListService {
     error.setSendEmail(false);
     error.setDescription("Error deleting local build files: " + StringUtils.toString(e));
     error.setDetails(e);
-    error.setSubsystemName(Error.ERROR_SUSBSYSTEM_BUILD);
+    error.setSubsystemName(Error.ERROR_SUBSYSTEM_BUILD);
     ErrorManagerFactory.getErrorManager().reportSystemError(error);
   }
 
@@ -265,7 +264,7 @@ public final class BuildListServiceImpl implements BuildListService {
     error.setErrorLevel(Error.ERROR_LEVEL_FATAL);
     error.setSendEmail(false);
     error.setDescription("Error while shutting down buildService");
-    error.setSubsystemName(Error.ERROR_SUSBSYSTEM_BUILD);
+    error.setSubsystemName(Error.ERROR_SUBSYSTEM_BUILD);
     ErrorManagerFactory.getErrorManager().reportSystemError(error);
   }
 
@@ -277,7 +276,7 @@ public final class BuildListServiceImpl implements BuildListService {
     error.setDetails(e);
     error.setErrorLevel(Error.ERROR_LEVEL_FATAL);
     error.setSendEmail(true);
-    error.setSubsystemName(Error.ERROR_SUSBSYSTEM_BUILD);
+    error.setSubsystemName(Error.ERROR_SUBSYSTEM_BUILD);
     ErrorManagerFactory.getErrorManager().reportSystemError(error);
   }
 

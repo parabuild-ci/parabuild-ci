@@ -31,7 +31,7 @@ final class BuildErrorManager {
 
   public void reportUnexpectedBuildError(final int activeBuildID, final String hostName, final Exception e) {
     final Error error = new Error("Error while running build: " + StringUtils.toString(e));
-    error.setSubsystemName(Error.ERROR_SUSBSYSTEM_BUILD);
+    error.setSubsystemName(Error.ERROR_SUBSYSTEM_BUILD);
     error.setBuildID(activeBuildID);
     error.setHostName(hostName);
     error.setDetails(e);
@@ -43,14 +43,14 @@ final class BuildErrorManager {
     final Error err = new Error("Error while finalizing build");
     err.setDetails(e);
     err.setBuildID(activeBuildID);
-    err.setSubsystemName(Error.ERROR_SUSBSYSTEM_BUILD);
+    err.setSubsystemName(Error.ERROR_SUBSYSTEM_BUILD);
     err.setErrorLevel(Error.ERROR_LEVEL_WARNING);
     ErrorManagerFactory.getErrorManager().reportSystemError(err);
   }
 
 
   public void reportUnexpectedBuildStepError(final int activeBuildID, final String hostName, final BuildSequence sequence, final Exception e) {
-    final Error error = new Error(activeBuildID, sequence.getStepName(), Error.ERROR_SUSBSYSTEM_BUILD, e);
+    final Error error = new Error(activeBuildID, sequence.getStepName(), Error.ERROR_SUBSYSTEM_BUILD, e);
     error.setHostName(hostName);
     error.setErrorLevel(Error.ERROR_LEVEL_ERROR);
     ErrorManagerFactory.getErrorManager().reportSystemError(error);
@@ -70,7 +70,7 @@ final class BuildErrorManager {
         sb.append(strings[i]).append('\n');
       }
       final Error error = new Error("Checkout directory \"" + agent.getCheckoutDirName() + "\" is not empty after clean up. Consequent server operations may fail.");
-      error.setSubsystemName(Error.ERROR_SUSBSYSTEM_BUILD);
+      error.setSubsystemName(Error.ERROR_SUBSYSTEM_BUILD);
       error.setErrorLevel(Error.ERROR_LEVEL_WARNING);
       error.setHostName(agent.getHost().getHost());
       error.setBuildID(agent.getActiveBuildID());
@@ -88,7 +88,7 @@ final class BuildErrorManager {
    */
   public static void reportCannotFindChangeList(final BuildRun previousBuildRun, final String previousChangeListNumber) {
     final Error error = new Error("Change list # " + previousChangeListNumber + " was not found for the previous build run, dump: " + previousBuildRun + ". Shell variables marking previous build run will not be set.");
-    error.setSubsystemName(Error.ERROR_SUSBSYSTEM_BUILD);
+    error.setSubsystemName(Error.ERROR_SUBSYSTEM_BUILD);
     error.setErrorLevel(Error.ERROR_LEVEL_WARNING);
     error.setBuildID(previousBuildRun.getActiveBuildID());
     error.setSendEmail(false);

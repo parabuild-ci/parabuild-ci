@@ -51,7 +51,7 @@ final class CompositeReleaseNotesHandler implements ReleaseNotesHandler {
       try {
         addedIssues += handler.process(buildRun);
       } catch (final Exception e) {
-        final Error error = Error.newWarning(Error.ERROR_SUSBSYSTEM_INTEGRATION);
+        final Error error = Error.newWarning(Error.ERROR_SUBSYSTEM_INTEGRATION);
         error.setBuildID(buildRun.getBuildID());
         error.setSendEmail(true);
         error.setDescription("Error while processing release notes: " + StringUtils.toString(e));

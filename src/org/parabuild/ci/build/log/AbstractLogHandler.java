@@ -257,7 +257,7 @@ public abstract class AbstractLogHandler implements LogHandler {
     error.setBuildID(logConfig.getBuildID());
     error.setSendEmail(true);
     error.setErrorLevel(Error.ERROR_LEVEL_WARNING);
-    error.setSubsystemName(Error.ERROR_SUSBSYSTEM_LOGGING);
+    error.setSubsystemName(Error.ERROR_SUBSYSTEM_LOGGING);
     return error;
   }
 

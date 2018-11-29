@@ -158,7 +158,7 @@ public final class NotificationUtils {
    */
   public static Error makeNotificationWarning(final String buildName) {
     final Error error = new Error();
-    error.setSubsystemName(Error.ERROR_SUSBSYSTEM_NOTIFICATION);
+    error.setSubsystemName(Error.ERROR_SUBSYSTEM_NOTIFICATION);
     error.setErrorLevel(Error.ERROR_LEVEL_WARNING);
     error.setBuildName(buildName);
     return error;
@@ -180,7 +180,7 @@ public final class NotificationUtils {
    */
   private static Error makeNotificationError(final BuildRun buildRun) {
     final Error error = new Error();
-    error.setSubsystemName(Error.ERROR_SUSBSYSTEM_NOTIFICATION);
+    error.setSubsystemName(Error.ERROR_SUBSYSTEM_NOTIFICATION);
     error.setErrorLevel(Error.ERROR_LEVEL_ERROR);
     error.setSendEmail(false);
     setBuildRun(error, buildRun);

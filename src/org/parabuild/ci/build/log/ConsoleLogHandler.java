@@ -90,7 +90,7 @@ public final class ConsoleLogHandler implements LogHandler {
     error.setBuildID(buildRunConfigID);
     error.setSendEmail(true);
     error.setErrorLevel(Error.ERROR_LEVEL_WARNING);
-    error.setSubsystemName(Error.ERROR_SUSBSYSTEM_LOGGING);
+    error.setSubsystemName(Error.ERROR_SUBSYSTEM_LOGGING);
     error.setDetails(e);
     ErrorManagerFactory.getErrorManager().reportSystemError(error);
   }

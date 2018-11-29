@@ -13,10 +13,10 @@
  */
 package org.parabuild.ci.error;
 
-import java.io.*;
-import java.util.*;
-
 import org.parabuild.ci.notification.NotificationManager;
+
+import java.io.Serializable;
+import java.util.List;
 
 /**
  * Error manager is the last resort to report errors that can not
@@ -26,7 +26,7 @@ import org.parabuild.ci.notification.NotificationManager;
  * ErrorManger's methods should not throw any exceptions.<br/>
  * <p/>
  * Implementing class should not make assumptions about
- * environment or avalablity of BT services, like database or
+ * environment or availability of BT services, like database or
  * notification.<br/>
  *
  * @see NotificationManager

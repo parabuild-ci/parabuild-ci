@@ -156,7 +156,7 @@ public final class SearchPage extends BasePage implements ConversationalTierlet 
   private void reportErrorToAdministrator(final Exception e) {
     final Error error = new Error(StringUtils.toString(e));
     error.setDetails(e);
-    error.setSubsystemName(Error.ERROR_SUSBSYSTEM_SEARCH);
+    error.setSubsystemName(Error.ERROR_SUBSYSTEM_SEARCH);
     error.setErrorLevel(Error.ERROR_LEVEL_WARNING);
     error.setSendEmail(false);
     ErrorManagerFactory.getErrorManager().reportSystemError(error);

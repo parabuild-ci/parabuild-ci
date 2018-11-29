@@ -108,7 +108,7 @@ public class SATestError extends TestCase {
 
 
   public void test_ErrorWarning() {
-    final org.parabuild.ci.error.Error objError = Error.newWarning(org.parabuild.ci.error.Error.ERROR_SUSBSYSTEM_LOGGING);
+    final org.parabuild.ci.error.Error objError = Error.newWarning(org.parabuild.ci.error.Error.ERROR_SUBSYSTEM_LOGGING);
     assertEquals(objError.getErrorLevelAsString(), "WARNING");
     assertEquals(objError.getSubsystemName(), "Logging");
   }

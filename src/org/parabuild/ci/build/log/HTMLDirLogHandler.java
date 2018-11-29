@@ -208,7 +208,7 @@ public final class HTMLDirLogHandler extends AbstractLogHandler {
     error.setPossibleCause("May be log is not configured correctly.");
     error.setBuildID(logConfig.getBuildID());
     error.setSendEmail(true);
-    error.setSubsystemName(Error.ERROR_SUSBSYSTEM_LOGGING);
+    error.setSubsystemName(Error.ERROR_SUBSYSTEM_LOGGING);
     error.setErrorLevel(Error.ERROR_LEVEL_WARNING);
     errorManager.reportSystemError(error);
   }

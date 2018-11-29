@@ -621,7 +621,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
               final Error error = new Error("Unexpected I/O error while reading arhive: " + StringUtils.toString(e));
               error.setSendEmail(false);
               error.setErrorLevel(Error.ERROR_LEVEL_WARNING);
-              error.setSubsystemName(Error.ERROR_SUSBSYSTEM_WEBUI);
+              error.setSubsystemName(Error.ERROR_SUBSYSTEM_WEBUI);
               ErrorManagerFactory.getErrorManager().reportSystemError(error);
             }
           }

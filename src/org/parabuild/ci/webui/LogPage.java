@@ -277,7 +277,7 @@ public final class LogPage extends AbstractBuildRunResultPage implements Convers
       baseContentPanel().showErrorMessage("There was an error while retrieving log. Please contact build administrator for resolution.");
       // report to error mgr.
       final Error error = new Error("Error displaying text directory log: " + StringUtils.toString(e));
-      error.setSubsystemName(Error.ERROR_SUSBSYSTEM_WEBUI);
+      error.setSubsystemName(Error.ERROR_SUBSYSTEM_WEBUI);
       error.setErrorLevel(Error.ERROR_LEVEL_WARNING);
       error.setDetails(e);
       ErrorManagerFactory.getErrorManager().reportSystemError(error);

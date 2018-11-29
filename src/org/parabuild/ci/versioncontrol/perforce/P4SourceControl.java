@@ -580,7 +580,7 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
       err.setBuildID(buildID);
       err.setErrorLevel(org.parabuild.ci.error.Error.ERROR_LEVEL_WARNING);
       err.setSendEmail(false);
-      err.setSubsystemName(org.parabuild.ci.error.Error.ERROR_SUSBSYSTEM_SCM);
+      err.setSubsystemName(org.parabuild.ci.error.Error.ERROR_SUBSYSTEM_SCM);
     }
   }
 

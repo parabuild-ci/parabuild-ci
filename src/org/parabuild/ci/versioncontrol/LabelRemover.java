@@ -120,7 +120,7 @@ public final class LabelRemover {
         });
       }
     } catch (final BuildException e) {
-      final Error error = new Error(activeBuildID, "", Error.ERROR_SUSBSYSTEM_SCM, e);
+      final Error error = new Error(activeBuildID, "", Error.ERROR_SUBSYSTEM_SCM, e);
       error.setSendEmail(false);
       ErrorManagerFactory.getErrorManager().reportSystemError(error);
     } catch (final CommandStoppedException e) {

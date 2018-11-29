@@ -84,7 +84,7 @@ final class DatabaseReleaseNotesHandler implements ReleaseNotesHandler {
       addedIssuesCounter = issues.size();
       cm.saveIssuesAndAddToPendingList(activeBuildID, issues);
     } catch (final Exception e) {
-      final Error error = new Error(buildRun.getActiveBuildID(), "", Error.ERROR_SUSBSYSTEM_INTEGRATION, e);
+      final Error error = new Error(buildRun.getActiveBuildID(), "", Error.ERROR_SUBSYSTEM_INTEGRATION, e);
       error.setSendEmail(false);
       error.setDescription("Error while processing processing change list to issue links: " + StringUtils.toString(e));
       ErrorManagerFactory.getErrorManager().reportSystemError(error);

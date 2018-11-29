@@ -1255,18 +1255,18 @@ public final class BuildRunner extends Thread {
       if (LOG.isDebugEnabled()) {
         LOG.debug("Exception at run cycle", e);
       }
-      ErrorManagerFactory.getErrorManager().reportSystemError(new org.parabuild.ci.error.Error(activeBuildID, "", org.parabuild.ci.error.Error.ERROR_SUSBSYSTEM_BUILD, e));
+      ErrorManagerFactory.getErrorManager().reportSystemError(new org.parabuild.ci.error.Error(activeBuildID, "", org.parabuild.ci.error.Error.ERROR_SUBSYSTEM_BUILD, e));
     } catch (final java.lang.Error e) {
       if (LOG.isDebugEnabled()) {
         LOG.debug("Error at run cycle", e);
       }
-      ErrorManagerFactory.getErrorManager().reportSystemError(new org.parabuild.ci.error.Error(activeBuildID, "", org.parabuild.ci.error.Error.ERROR_SUSBSYSTEM_BUILD, e));
+      ErrorManagerFactory.getErrorManager().reportSystemError(new org.parabuild.ci.error.Error(activeBuildID, "", org.parabuild.ci.error.Error.ERROR_SUBSYSTEM_BUILD, e));
       throw e;
     } catch (final Throwable e) { // NOPMD
       if (LOG.isDebugEnabled()) {
         LOG.debug("Error at run cycle", e);
       }
-      ErrorManagerFactory.getErrorManager().reportSystemError(new org.parabuild.ci.error.Error(activeBuildID, "", org.parabuild.ci.error.Error.ERROR_SUSBSYSTEM_BUILD, e));
+      ErrorManagerFactory.getErrorManager().reportSystemError(new org.parabuild.ci.error.Error(activeBuildID, "", org.parabuild.ci.error.Error.ERROR_SUBSYSTEM_BUILD, e));
     } finally {
       if (LOG.isDebugEnabled()) {
         LOG.debug("runner was shutdown");

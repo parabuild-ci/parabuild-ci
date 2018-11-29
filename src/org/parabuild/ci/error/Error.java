@@ -49,17 +49,16 @@ public final class Error implements Serializable {
   public static final byte ERROR_LEVEL_UNKNOWN = (byte) -1;
   public static final byte ERROR_LEVEL_INFO = (byte) 4;
 
-  public static final String ERROR_SUSBSYSTEM_BUILD = "Build";
-  public static final String ERROR_SUSBSYSTEM_INTEGRATION = "Integration";
-  public static final String ERROR_SUSBSYSTEM_LICENSING = "Licensing";
-  public static final String ERROR_SUSBSYSTEM_LOGGING = "Logging";
-  public static final String ERROR_SUSBSYSTEM_MERGE = "Merge";
-  public static final String ERROR_SUSBSYSTEM_NOTIFICATION = "Notification";
-  public static final String ERROR_SUSBSYSTEM_SCHEDULING = "Scheduling";
-  public static final String ERROR_SUSBSYSTEM_SCM = "Version control";
-  public static final String ERROR_SUSBSYSTEM_SEARCH = "Search";
-  public static final String ERROR_SUSBSYSTEM_STATISTICS = "Statistics";
-  public static final String ERROR_SUSBSYSTEM_WEBUI = "User interface";
+  public static final String ERROR_SUBSYSTEM_BUILD = "Build";
+  public static final String ERROR_SUBSYSTEM_INTEGRATION = "Integration";
+  public static final String ERROR_SUBSYSTEM_LOGGING = "Logging";
+  public static final String ERROR_SUBSYSTEM_MERGE = "Merge";
+  public static final String ERROR_SUBSYSTEM_NOTIFICATION = "Notification";
+  public static final String ERROR_SUBSYSTEM_SCHEDULING = "Scheduling";
+  public static final String ERROR_SUBSYSTEM_SCM = "Version control";
+  public static final String ERROR_SUBSYSTEM_SEARCH = "Search";
+  public static final String ERROR_SUBSYSTEM_STATISTICS = "Statistics";
+  public static final String ERROR_SUBSYSTEM_WEBUI = "User interface";
 
   private static final String ERROR_BUILD_NAME = "error.build.name";
   private static final String ERROR_CAUSE = "error.possible.cause";
@@ -72,7 +71,7 @@ public final class Error implements Serializable {
   private static final String ERROR_PRODUCT_VERSION = "error.product.version";
   private static final String ERROR_STACKTRACE = "error.stacktrace";
   private static final String ERROR_STEP_NAME = "error.step.name";
-  private static final String ERROR_SUSBSYSTEM = "error.subsystem";
+  private static final String ERROR_SUBSYSTEM = "error.subsystem";
   private static final String ERROR_TIME = "error.time";
   private static final String ERROR_HOST_NAME = "error.host.name";
   private static final String BUILD_ID = "build.id";
@@ -246,7 +245,7 @@ public final class Error implements Serializable {
 
 
   public void setSubsystemName(final String subsystemName) {
-    putToContent(ERROR_SUSBSYSTEM, subsystemName);
+    putToContent(ERROR_SUBSYSTEM, subsystemName);
   }
 
 
@@ -350,7 +349,7 @@ public final class Error implements Serializable {
 
 
   public String getSubsystemName() {
-    return content.getProperty(ERROR_SUSBSYSTEM);
+    return content.getProperty(ERROR_SUBSYSTEM);
   }
 
 
@@ -476,7 +475,7 @@ public final class Error implements Serializable {
 
 
   /**
-   * Sets merge configuration ID for that the error has occired.
+   * Sets merge configuration ID for that the error has occured.
    *
    * @param activeMergeConfigurationID to set.
    */

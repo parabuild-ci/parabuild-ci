@@ -502,7 +502,7 @@ public final class StatisticsImageServlet extends HttpServlet {
     final Error error = new Error("Error returning an image: " + StringUtils.toString(e));
     error.setDetails(e);
     error.setSendEmail(false);
-    error.setSubsystemName(Error.ERROR_SUSBSYSTEM_WEBUI);
+    error.setSubsystemName(Error.ERROR_SUBSYSTEM_WEBUI);
     ErrorManagerFactory.getErrorManager().reportSystemError(error);
   }
 }

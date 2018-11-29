@@ -418,7 +418,7 @@ public final class P4Merger implements Merger {
    */
   private void reportErrorWhileProcessingMergeQueue(final Exception e) {
     final Error error = new Error("Error while processing merge queue element: " + StringUtils.toString(e), e);
-    error.setSubsystemName(Error.ERROR_SUSBSYSTEM_MERGE);
+    error.setSubsystemName(Error.ERROR_SUBSYSTEM_MERGE);
     error.setSendEmail(true);
     error.setErrorLevel(Error.ERROR_LEVEL_WARNING);
     ErrorManagerFactory.getErrorManager().reportSystemError(error);

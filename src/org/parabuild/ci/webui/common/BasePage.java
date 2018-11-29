@@ -265,7 +265,7 @@ public abstract class BasePage extends Window {
       final Error error = new Error("Unexpected user interface error");
       error.setDetails(e);
       error.setErrorLevel(Error.ERROR_LEVEL_FATAL);
-      error.setSubsystemName(Error.ERROR_SUSBSYSTEM_WEBUI);
+      error.setSubsystemName(Error.ERROR_SUBSYSTEM_WEBUI);
       error.setSendEmail(false);
       ErrorManagerFactory.getErrorManager().reportSystemError(error);
       // re-throw

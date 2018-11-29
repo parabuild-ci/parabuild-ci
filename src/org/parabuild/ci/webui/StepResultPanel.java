@@ -93,7 +93,7 @@ public final class StepResultPanel extends Panel {
     final Error error = new Error("Unexcpected IO error while reading arhive: " + StringUtils.toString(e));
     error.setSendEmail(false);
     error.setErrorLevel(Error.ERROR_LEVEL_WARNING);
-    error.setSubsystemName(Error.ERROR_SUSBSYSTEM_WEBUI);
+    error.setSubsystemName(Error.ERROR_SUBSYSTEM_WEBUI);
     error.setDetails(e);
     ErrorManagerFactory.getErrorManager().reportSystemError(error);
   }
@@ -103,7 +103,7 @@ public final class StepResultPanel extends Panel {
     final Error error = new Error("Unknown result path type: " + Integer.toString(pathType));
     error.setSendEmail(false);
     error.setErrorLevel(Error.ERROR_LEVEL_WARNING);
-    error.setSubsystemName(Error.ERROR_SUSBSYSTEM_WEBUI);
+    error.setSubsystemName(Error.ERROR_SUBSYSTEM_WEBUI);
     error.setBuildID(activeBuildID);
     ErrorManagerFactory.getErrorManager().reportSystemError(error);
   }

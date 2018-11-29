@@ -93,7 +93,7 @@ public final class SearchServiceImpl implements SearchService {
       final Error error = new Error("Failed to start search service: " + StringUtils.toString(e));
       error.setSendEmail(true);
       error.setDetails(e);
-      error.setSubsystemName(Error.ERROR_SUSBSYSTEM_SEARCH);
+      error.setSubsystemName(Error.ERROR_SUBSYSTEM_SEARCH);
       error.setErrorLevel(Error.ERROR_LEVEL_FATAL);
       ErrorManagerFactory.getErrorManager().reportSystemError(error);
       status = SERVICE_STATUS_FAILED;
@@ -227,7 +227,7 @@ public final class SearchServiceImpl implements SearchService {
         final Error error = new Error("Indexing error: " + StringUtils.toString(e));
         error.setDetails(e);
         error.setErrorLevel(Error.ERROR_LEVEL_WARNING);
-        error.setSubsystemName(Error.ERROR_SUSBSYSTEM_SEARCH);
+        error.setSubsystemName(Error.ERROR_SUBSYSTEM_SEARCH);
         error.setSendEmail(true);
         ErrorManagerFactory.getErrorManager().reportSystemError(error);
       } finally {

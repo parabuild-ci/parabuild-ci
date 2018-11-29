@@ -79,7 +79,7 @@ public final class MergeQueueUpdateRunnerImpl implements MergeQueueUpdateRunner 
   private void reportError(final Throwable e, final byte errorLevelError) {
     final ErrorManager errorManager = ErrorManagerFactory.getErrorManager();
     final Error error = new Error();
-    error.setSubsystemName(Error.ERROR_SUSBSYSTEM_MERGE);
+    error.setSubsystemName(Error.ERROR_SUBSYSTEM_MERGE);
     error.setMergeID(activeMergeID);
     error.setDescription("Error while updating merge queue: " + StringUtils.toString(e));
     error.setDetails(e);

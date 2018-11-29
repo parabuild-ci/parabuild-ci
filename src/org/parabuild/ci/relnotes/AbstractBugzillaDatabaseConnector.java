@@ -57,7 +57,7 @@ abstract class AbstractBugzillaDatabaseConnector implements BugzillaDatabaseConn
     error.setDetails(e);
     error.setDescription("Error while retrieving Bugzilla bugs for product \"" + productName + "\": " + StringUtils.toString(e));
     error.setErrorLevel(Error.ERROR_LEVEL_WARNING);
-    error.setSubsystemName(Error.ERROR_SUSBSYSTEM_BUILD);
+    error.setSubsystemName(Error.ERROR_SUBSYSTEM_BUILD);
     error.setPossibleCause("Make sure that the database configured in direct Bugzilla connection is accessible and the configuration is up to date.");
     error.setSendEmail(true);
     final ErrorManager em = ErrorManagerFactory.getErrorManager();

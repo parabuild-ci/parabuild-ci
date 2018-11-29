@@ -282,11 +282,6 @@
 
     <dir property="dwr.home" location="${3rdparty}/dwr-2.0.1" build="no" path="no" required="yes"/>
     <file property="dwr.jar" required="true" location="${dwr.home}/dwr.jar" build="yes"/>
-
-    <!-- saxon -->
-    <dir property="saxon.home" location="${3rdparty}/saxon8-9j" build="no" path="no" required="yes"/>
-    <file property="saxon.jar" required="true" location="${saxon.home}/saxon8.jar" build="yes"/>
-    <file property="saxon-dom.jar" required="true" location="${saxon.home}/saxon8-dom.jar" build="yes"/>
   </validate>
 
   <output>
