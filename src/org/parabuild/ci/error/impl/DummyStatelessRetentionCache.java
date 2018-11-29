@@ -13,9 +13,9 @@
  */
 package org.parabuild.ci.error.impl;
 
-import java.io.*;
+import net.sf.ehcache.Element;
 
-import net.sf.ehcache.*;
+import java.io.Serializable;
 
 /**
  * Dummy cache
@@ -25,12 +25,12 @@ public final class DummyStatelessRetentionCache implements RetentionCache {
   /**
    * Returns all elements.
    */
-  public void removeAll() throws IllegalStateException, IOException {
+  public void removeAll() throws IllegalStateException {
     // do noting
   }
 
 
-  public Element get(final Serializable key) throws IllegalStateException, CacheException {
+  public Element get(final Serializable key) throws IllegalStateException {
     return null;  // never find anything
   }
 
