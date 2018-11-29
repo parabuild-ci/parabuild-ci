@@ -62,8 +62,7 @@ public interface ErrorManager extends Serializable {
    * Clears given error from new errors directory by moving it to
    * "cleared" directory.
    *
-   * @param errorID - error ID, i.e. file name w/o ".error"
-   * extension.
+   * @param errorID - error ID, i.e. file name w/o ".error" extension.
    */
   void clearActiveError(String errorID);
 
@@ -73,8 +72,7 @@ public interface ErrorManager extends Serializable {
    * while loading, this method will return empty error.
    *
    * @param errorID error ID
-   *
-   * @return
+   * @return an error. If error can not be found or there was an error while loading, this method will return empty error.
    */
   Error loadActiveError(String errorID);
 
@@ -83,8 +81,7 @@ public interface ErrorManager extends Serializable {
    * Returns list of IDs of active errors.
    *
    * @param maxErrors maximum number of errors to return.
-   *
-   * @return
+   * @return a list of IDs of active errors.
    */
   List getActiveErrorIDs(int maxErrors);
 }
