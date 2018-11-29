@@ -34,7 +34,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FilenameFilter;
 import java.io.IOException;
-import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -47,7 +46,7 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 
-public final class ErrorManagerImpl implements ErrorManager, Serializable {
+public final class ErrorManagerImpl implements ErrorManager {
 
   private static final long serialVersionUID = 6936940630745776656L; // NOPMD
   private static final Log LOG = LogFactory.getLog(ErrorManagerImpl.class);
