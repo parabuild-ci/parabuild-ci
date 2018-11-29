@@ -367,8 +367,6 @@ public final class Error implements Serializable {
       if (log.isWarnEnabled()) {
         log.warn("Unexpected exception while parsing error level: " + StringUtils.toString(e), e);
       }
-      // leave it as ERROR_LEVEL_UNKNOWN
-      errorLevel = (int) ERROR_LEVEL_UNKNOWN;
     }
     return errorLevel;
   }
