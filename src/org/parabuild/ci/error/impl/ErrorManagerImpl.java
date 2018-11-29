@@ -39,12 +39,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Properties;
-import java.util.Set;
 
 public final class ErrorManagerImpl implements ErrorManager {
 
@@ -94,8 +92,11 @@ public final class ErrorManagerImpl implements ErrorManager {
       errorCounter = 0;
       final File dir = ConfigurationManager.getSystemNewErrorsDirectory();
       final File[] files = dir.listFiles();
-      for (int i = 0; i < files.length; i++) {
-        final File file = files[i];
+      if (files == null) {
+        LOG.warn("List of files was null for directory: " + dir);
+        return;
+      }
+      for (final File file : files) {
         final String name = file.getName();
         IoUtils.moveFile(file, new File(ConfigurationManager.getSystemClearedErrorsDirectory(), name));
       }
@@ -166,10 +167,9 @@ public final class ErrorManagerImpl implements ErrorManager {
       // print debug error content
       if (error.isOutputToLog() || "true".equals(System.getProperty(SystemConstants.SYSTEM_PROPERTY_PRINT_STACKTRACE, "false"))) {
 
-        final Set es = errorContent.entrySet();
-        for (final Iterator i = es.iterator(); i.hasNext();) {
+        for (final Object entryObject : errorContent.entrySet()) {
 
-          final Map.Entry entry = (Map.Entry) i.next();
+          final Map.Entry entry = (Map.Entry) entryObject;
           if (LOG.isDebugEnabled()) {
             LOG.debug("error element: " + entry.getKey() + "; error value: " + entry.getValue());
           }
