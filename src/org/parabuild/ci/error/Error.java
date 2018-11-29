@@ -395,7 +395,7 @@ public final class Error implements Serializable {
 
 
   public Properties getContent() {
-    return content;
+    return new Properties(content);
   }
 
 
