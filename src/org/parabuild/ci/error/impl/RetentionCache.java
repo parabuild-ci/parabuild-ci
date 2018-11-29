@@ -13,14 +13,16 @@
  */
 package org.parabuild.ci.error.impl;
 
-import java.io.*;
+import net.sf.ehcache.CacheException;
+import net.sf.ehcache.Element;
 
-import net.sf.ehcache.*;
+import java.io.IOException;
+import java.io.Serializable;
 
 /**
  * Cache interface to use with ErrorManagerImpl.
  */
-public interface RetentionCache {
+interface RetentionCache {
 
   /**
    * Returns all elements.

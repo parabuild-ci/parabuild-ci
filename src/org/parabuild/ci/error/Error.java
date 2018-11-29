@@ -43,10 +43,10 @@ public final class Error implements Serializable {
   private static final Log log = LogFactory.getLog(Error.class);
 
 
+  private static final byte ERROR_LEVEL_UNKNOWN = (byte) -1;
   public static final byte ERROR_LEVEL_ERROR = (byte) 0;
   public static final byte ERROR_LEVEL_WARNING = (byte) 1;
   public static final byte ERROR_LEVEL_FATAL = (byte) 3;
-  public static final byte ERROR_LEVEL_UNKNOWN = (byte) -1;
   public static final byte ERROR_LEVEL_INFO = (byte) 4;
 
   public static final String ERROR_SUBSYSTEM_BUILD = "Build";

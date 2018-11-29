@@ -51,9 +51,9 @@ public final class ErrorManagerImpl implements ErrorManager {
   private static final long serialVersionUID = 6936940630745776656L; // NOPMD
   private static final Log LOG = LogFactory.getLog(ErrorManagerImpl.class);
 
-  public static final Comparator ERROR_FILE_NAME_COMPARATOR = new ErrorFileNameComparator();
-  public static final DummyStatelessRetentionCache DUMMY_STATELESS_RETENTION_CACHE = new DummyStatelessRetentionCache();
-  public static final String ERROR_FILE_EXTENSION = ".error";
+  private static final Comparator ERROR_FILE_NAME_COMPARATOR = new ErrorFileNameComparator();
+  private static final DummyStatelessRetentionCache DUMMY_STATELESS_RETENTION_CACHE = new DummyStatelessRetentionCache();
+  private static final String ERROR_FILE_EXTENSION = ".error";
 
 
   private static int errorCounter = 0;
