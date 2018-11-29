@@ -144,7 +144,7 @@ public final class ErrorManagerImpl implements ErrorManager {
   }
 
 
-  private void storeError(final Error error) throws IOException {
+  private static void storeError(final Error error) throws IOException {
 
     BufferedOutputStream bos = null;
     try {
@@ -237,7 +237,7 @@ public final class ErrorManagerImpl implements ErrorManager {
   /**
    * Increments error counter
    */
-  private void incrementErrorCounter() {
+  private static void incrementErrorCounter() {
     synchronized (ErrorManagerImpl.class) {
       errorCounter++;
       if (LOG.isDebugEnabled()) LOG.debug("Incremented error counter: " + errorCounter);
@@ -248,7 +248,7 @@ public final class ErrorManagerImpl implements ErrorManager {
   /**
    * Writes error log ignoring any exceptions
    */
-  private void logHard(final String description, final Throwable th) {
+  private static void logHard(final String description, final Throwable th) {
     try {
       if (th == null) {
         LOG.error(description);
@@ -348,7 +348,7 @@ public final class ErrorManagerImpl implements ErrorManager {
   }
 
 
-  private void validateDescription(final Error error) {
+  private static void validateDescription(final Error error) {
     if (StringUtils.isBlank(error.getDescription())) {
       error.setDetails(new Throwable("Description was not provided"));
     }

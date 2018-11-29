@@ -444,7 +444,7 @@ public final class Error implements Serializable {
   }
 
 
-  private int addToKey(final int in, final String value) {
+  private static int addToKey(final int in, final String value) {
     if (value != null) {
       return in ^ value.hashCode();
     }
