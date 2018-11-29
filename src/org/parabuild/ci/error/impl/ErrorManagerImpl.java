@@ -34,6 +34,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FilenameFilter;
 import java.io.IOException;
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -265,7 +266,7 @@ public final class ErrorManagerImpl implements ErrorManager {
   /**
    * Returns true if error was reported withing retention period
    */
-  private boolean isErrorReported(final Error error) {
+  private static boolean isErrorReported(final Error error) {
     boolean result;
     try {
       // calculate error hash
@@ -283,7 +284,7 @@ public final class ErrorManagerImpl implements ErrorManager {
   /**
    * Marks error as reported
    */
-  private void markErrorReported(final Error error) {
+  private static void markErrorReported(final Error error) {
     final Integer retentionCode = error.getRetentionKey();
     try {
       final RetentionCache cache = getRetentionCache();
@@ -297,7 +298,7 @@ public final class ErrorManagerImpl implements ErrorManager {
   /**
    * Returns reference to retention cache
    */
-  private RetentionCache getRetentionCache() throws CacheException {
+  private static RetentionCache getRetentionCache() throws CacheException {
     final CacheManager manager = CacheManager.getInstance();
     final Cache cache = manager.getCache("retention_cache");
     if (cache == null) {
@@ -326,7 +327,7 @@ public final class ErrorManagerImpl implements ErrorManager {
   /**
    * Helper methods to get a build name from ID
    */
-  private String getBuildNameHard(final int ID) {
+  private static String getBuildNameHard(final int ID) {
     try {
       return ConfigurationManager.getInstance().getBuildConfiguration(ID).getBuildName();
     } catch (final Exception e) {
@@ -340,7 +341,7 @@ public final class ErrorManagerImpl implements ErrorManager {
   /**
    * Tries to get and set back the build name if possible
    */
-  private void guessBuildName(final Error error) {
+  private static void guessBuildName(final Error error) {
     if (StringUtils.isBlank(error.getBuildName())
             && error.getBuildID() != BuildConfig.UNSAVED_ID) {
       error.setBuildName(getBuildNameHard(error.getBuildID()));
@@ -358,7 +359,10 @@ public final class ErrorManagerImpl implements ErrorManager {
   /**
    * Class to compare error file names
    */
-  private static final class ErrorFileNameComparator implements Comparator {
+  private static final class ErrorFileNameComparator implements Comparator, Serializable {
+
+    private static final long serialVersionUID = -1539837836680737900L;
+
 
     public int compare(final Object o1, final Object o2) {
       // we compare f2 to f1 because we need reverse order
