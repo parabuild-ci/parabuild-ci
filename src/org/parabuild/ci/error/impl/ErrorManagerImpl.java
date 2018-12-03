@@ -331,9 +331,7 @@ public final class ErrorManagerImpl implements ErrorManager {
     try {
       return ConfigurationManager.getInstance().getBuildConfiguration(ID).getBuildName();
     } catch (final Exception e) {
-      if (ID != BuildConfig.UNSAVED_ID) return "Build ID is " + ID;
-      // we don' care
-      return "";
+      return (ID == BuildConfig.UNSAVED_ID) ? "" : ("Build ID is " + ID);
     }
   }
 
