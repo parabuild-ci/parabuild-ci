@@ -61,7 +61,9 @@ public final class ErrorManagerImpl implements ErrorManager {
 
   public void reportSystemError(final Error error) {
     try {
-      if (isErrorReported(error)) return;
+      if (isErrorReported(error)) {
+        return;
+      }
       validateDescription(error);
       guessBuildName(error);
       markErrorReported(error);
@@ -119,11 +121,15 @@ public final class ErrorManagerImpl implements ErrorManager {
       // get error file
       final String errorFileName = errorID + ERROR_FILE_EXTENSION;
       final File errorFile = new File(ConfigurationManager.getSystemNewErrorsDirectory(), errorFileName);
-      if (!errorFile.exists()) return;
+      if (!errorFile.exists()) {
+        return;
+      }
       // move error to cleared directory
       IoUtils.moveFile(errorFile, new File(ConfigurationManager.getSystemClearedErrorsDirectory(), errorFileName));
       // decrease counter
-      if (errorCounter > 0) errorCounter--;
+      if (errorCounter > 0) {
+        errorCounter--;
+      }
     } catch (final IOException e) {
       // we ignore it as we can not do anything about it
       LOG.error("Error while clearing error", e);
@@ -238,11 +244,9 @@ public final class ErrorManagerImpl implements ErrorManager {
   /**
    * Increments error counter
    */
-  private static void incrementErrorCounter() {
-    synchronized (ErrorManagerImpl.class) {
-      errorCounter++;
-      if (LOG.isDebugEnabled()) LOG.debug("Incremented error counter: " + errorCounter);
-    }
+  private static synchronized void incrementErrorCounter() {
+    errorCounter++;
+    if (LOG.isDebugEnabled()) LOG.debug("Incremented error counter: " + errorCounter);
   }
 
 
@@ -314,7 +318,9 @@ public final class ErrorManagerImpl implements ErrorManager {
    */
   private void notifyBuildAdmin(final Error error) {
     try {
-      if (!notificationEnabled || !error.isSendEmail()) return; // don't send if not required
+      if (!notificationEnabled || !error.isSendEmail()) {
+        return; // don't send if not required
+      }
       final NotificationManager nm = NotificationManagerFactory.makeNotificationManager();
       nm.notifyBuildAdministrator(error);
     } catch (final Exception e) {
