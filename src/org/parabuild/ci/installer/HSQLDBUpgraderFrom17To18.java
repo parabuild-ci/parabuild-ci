@@ -115,7 +115,9 @@ final class HSQLDBUpgraderFrom17To18 {
         IoUtils.closeHard(stmt);
         IoUtils.closeHard(conn);
       }
-    } catch (final IOException | RuntimeException e) {
+    } catch (final IOException e) {
+      restore(databaseDirectory);
+    } catch (final RuntimeException e) {
       restore(databaseDirectory);
       throw e;
     }
