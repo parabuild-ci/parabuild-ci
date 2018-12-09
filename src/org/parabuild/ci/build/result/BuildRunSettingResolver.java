@@ -17,7 +17,6 @@ import org.parabuild.ci.build.BuildScriptGenerator;
 import org.parabuild.ci.common.NamedProperty;
 import org.parabuild.ci.common.SettingResolver;
 import org.parabuild.ci.object.BuildRun;
-import org.parabuild.ci.object.StepRun;
 
 import java.text.SimpleDateFormat;
 
@@ -43,8 +42,9 @@ public class BuildRunSettingResolver extends SettingResolver {
    * @param buildID       a build ID.
    * @param agentHostName an agent's host name.
    * @param buildRun
+   * @param stepRunName
    */
-  public BuildRunSettingResolver(final int buildID, final String agentHostName, final BuildRun buildRun, final StepRun stepRun) {
+  public BuildRunSettingResolver(final int buildID, final String agentHostName, final BuildRun buildRun, final String stepRunName) {
 
     super(buildID, agentHostName);
 
@@ -68,6 +68,6 @@ public class BuildRunSettingResolver extends SettingResolver {
     namedPropertyValues.put(PROPERTY_BUILDER_HOST, agentHostName);
     namedPropertyValues.put(PROPERTY_BUILD_TIMESTAMP, new SimpleDateFormat(BuildScriptGenerator.BUILD_TIMESTAMP_FORMAT).format(buildRun.getStartedAt()));
     namedPropertyValues.put(PROPERTY_CHANGE_LIST_NUMBER, buildRun.getChangeListNumber());
-    namedPropertyValues.put(PROPERTY_STEP_NAME, stepRun.getName());
+    namedPropertyValues.put(PROPERTY_STEP_NAME, stepRunName);
   }
 }

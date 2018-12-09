@@ -285,13 +285,16 @@ public abstract class AbstractResultHandler implements ResultHandler {
   private String[] resolveResultPath(final String agentHostName, final ResultConfig resultConfig, final int stepRunID) throws ValidationException {
 
     final StepRun stepRun = cm.getStepRun(stepRunID);
-    final BuildRun buildRun = ConfigurationManager.getInstance().getBuildRun(stepRun.getBuildRunID());
+    final int buildRunID = stepRun.getBuildRunID();
+    final BuildRun buildRun = ConfigurationManager.getInstance().getBuildRun(buildRunID);
     final String resultConfigPath = resultConfig.getPath();
     final List list = StringUtils.multilineStringToList(resultConfigPath);
     final String[] result = new String[list.size()];
     for (int i = 0; i < list.size(); i++) {
 
-      final BuildRunSettingResolver buildRunSettingResolver = new BuildRunSettingResolver(buildRun.getActiveBuildID(), agentHostName, buildRun, stepRun);
+      final int activeBuildID = buildRun.getActiveBuildID();
+      final String stepRunName = stepRun.getName();
+      final BuildRunSettingResolver buildRunSettingResolver = new BuildRunSettingResolver(activeBuildID, agentHostName, buildRun, stepRunName);
       result[i] = buildRunSettingResolver.resolve((String) list.get(i));
     }
     return result;

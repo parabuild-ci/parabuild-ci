@@ -60,6 +60,7 @@ public abstract class AbstractLogHandler implements LogHandler {
   protected final SearchManager searchManager = SearchManager.getInstance();
   protected final String fullyQualifiedResultPath;
   protected final String resolvedResultPath;
+  protected final int activeBuildID;
 
 
   /**
@@ -89,7 +90,9 @@ public abstract class AbstractLogHandler implements LogHandler {
       final StepRun stepRun = cm.getStepRun(stepRunID);
       this.buildRunID = stepRun.getBuildRunID();
       final BuildRun buildRun = ConfigurationManager.getInstance().getBuildRun(stepRun.getBuildRunID());
-      final BuildRunSettingResolver buildRunSettingResolver = new BuildRunSettingResolver(buildRun.getActiveBuildID(), agent.getHost().getHost(), buildRun, stepRun);
+      final String stepRunName = stepRun.getName();
+      activeBuildID = buildRun.getActiveBuildID();
+      final BuildRunSettingResolver buildRunSettingResolver = new BuildRunSettingResolver(activeBuildID, agent.getHost().getHost(), buildRun, stepRunName);
       this.resolvedResultPath = buildRunSettingResolver.resolve(logConfig.getPath());
       this.fullyQualifiedResultPath = projectHome + '/' + resolvedResultPath;
       // paranoid validation - custom log handler always works
@@ -254,7 +257,7 @@ public abstract class AbstractLogHandler implements LogHandler {
 
   private Error makeLogHandlerError(final String description) {
     final Error error = new Error(description);
-    error.setBuildID(logConfig.getBuildID());
+    error.setBuildID(activeBuildID);
     error.setSendEmail(true);
     error.setErrorLevel(Error.ERROR_LEVEL_WARNING);
     error.setSubsystemName(Error.ERROR_SUBSYSTEM_LOGGING);

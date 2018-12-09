@@ -809,7 +809,8 @@ public final class BuildRunner extends Thread {
             for (int j = 0; j < stepRuns.size(); j++) {
 
               final StepRun stepRun = (StepRun) stepRuns.get(j);
-              final BuildRunSettingResolver buildRunSettingResolver = new BuildRunSettingResolver(buildRun.getActiveBuildID(), agentHostName, buildRun, stepRun);
+              final String stepRunName = stepRun.getName();
+              final BuildRunSettingResolver buildRunSettingResolver = new BuildRunSettingResolver(buildRun.getActiveBuildID(), agentHostName, buildRun, stepRunName);
               final String resolvedPath = buildRunSettingResolver.resolve(resultConfig.getPath());
 
               LOG.debug("resultConfig: " + resultConfig);
