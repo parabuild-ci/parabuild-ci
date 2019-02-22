@@ -523,23 +523,6 @@ public final class ConfigurationManager implements Serializable {
   }
 
 
-  /**
-   * Get values issue properties for given issue tracker.
-   *
-   * @return Map of values contained in IssueTrackerProperties
-   *         with property name as a key.
-   */
-  public Map getIssueTrackerPropertiesAsNameValueMap(final int issueTrackerID) {
-    final Map result = new HashMap(5);
-    final List list = getIssueTrackerProperties(issueTrackerID);
-    for (final Iterator iter = list.iterator(); iter.hasNext(); ) {
-      final IssueTrackerProperty property = (IssueTrackerProperty) iter.next();
-      result.put(property.getName(), property.getValue());
-    }
-    return result;
-  }
-
-
   public List getPendingIssues(final int activeBuildID) {
     return (List) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
@@ -1508,25 +1491,6 @@ public final class ConfigurationManager implements Serializable {
 
 
   /**
-   * Saves VCS changes
-   *
-   * @param changes list of changes
-   */
-  public void saveChanges(final int changeListID, final List changes) {
-    runInHibernate(new TransactionCallback() {
-      public Object runInTransaction() throws Exception {
-        for (final Iterator iter = changes.iterator(); iter.hasNext(); ) {
-          final Change change = (Change) iter.next();
-          change.setChangeListID(changeListID);
-          session.saveOrUpdate(change);
-        }
-        return null;
-      }
-    });
-  }
-
-
-  /**
    * Saves build run participant
    *
    * @param participant
@@ -1553,25 +1517,6 @@ public final class ConfigurationManager implements Serializable {
       }
     });
     return result.getID();
-  }
-
-
-  /**
-   * Saves sequence logs
-   */
-  public void saveStepLogs(final List logs) {
-    if (logs.isEmpty()) {
-      return;
-    }
-    runInHibernate(new TransactionCallback() {
-      public Object runInTransaction() throws Exception {
-        for (final Iterator i = logs.iterator(); i.hasNext(); ) {
-          final StepLog stepLog = (StepLog) i.next();
-          session.saveOrUpdate(stepLog);
-        }
-        return null;
-      }
-    });
   }
 
 
@@ -2282,16 +2227,6 @@ public final class ConfigurationManager implements Serializable {
         return null;
       }
     });
-  }
-
-
-  /**
-   * Delete "hibernated" object in TX
-   */
-  public void deleteObjectIfNotNull(final Object object) {
-    if (object != null) {
-      deleteObject(object);
-    }
   }
 
 
@@ -3214,21 +3149,6 @@ public final class ConfigurationManager implements Serializable {
   }
 
 
-  public Integer saveIssueAndAttributes(final Issue issue, final List attributes) {
-    return (Integer) runInHibernate(new TransactionCallback() {
-      public Object runInTransaction() throws Exception {
-        saveObject(issue);
-        for (final Iterator i = attributes.iterator(); i.hasNext(); ) {
-          final IssueAttribute attribute = (IssueAttribute) i.next();
-          attribute.setIssueID(issue.getID());
-          saveObject(attribute);
-        }
-        return new Integer(issue.getID());
-      }
-    });
-  }
-
-
   /**
    * Returns last complete build run
    *
@@ -3318,19 +3238,6 @@ public final class ConfigurationManager implements Serializable {
         q.setByte(2, trackerType);
         q.setCacheable(true);
         return Boolean.valueOf((Integer) q.uniqueResult() > 0);
-      }
-    });
-  }
-
-
-  public List findActiveIssueTrackers(final byte trackerType) {
-    return (List) runInHibernate(new TransactionCallback() {
-      public Object runInTransaction() throws Exception {
-        return session.find("select isht from IssueTracker as isht, ActiveBuild ab " +
-                " where isht.buildID = ab.ID" +
-                " and isht.type = ?",
-                new Object[]{new Byte(trackerType)},
-                new Type[]{Hibernate.BYTE});
       }
     });
   }
@@ -3775,14 +3682,6 @@ public final class ConfigurationManager implements Serializable {
   /**
    * Returns all sequence statistics
    */
-  public List getStepRunAttributes(final StepRun stepRun) {
-    return getStepRunAttributes(stepRun.getID());
-  }
-
-
-  /**
-   * Returns all sequence statistics
-   */
   public Map getStepRunAttributesAsMap(final int stepRunID) {
     return (Map) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
@@ -3856,48 +3755,6 @@ public final class ConfigurationManager implements Serializable {
         query.setInteger(0, buildRunID);
         query.setCacheable(true);
         return query.list();
-      }
-    });
-  }
-
-
-  public boolean buildRunResultsExist(final BuildRun buildRun) {
-    return (Boolean) runInHibernate(new TransactionCallback() {
-      public Object runInTransaction() throws Exception {
-        final Query query = session.createQuery("select count(sres.ID) from StepResult sres, StepRun srun" +
-                " where srun.buildRunID = ? and sres.stepRunID = srun.ID " +
-                "    and sres.found = 'Y' ");
-        query.setInteger(0, buildRun.getBuildRunID());
-        query.setCacheable(true);
-        final Long o = (Long) query.uniqueResult();
-        return Boolean.valueOf(o > 0L);
-      }
-    });
-  }
-
-
-  /**
-   * Finds build step result according to the search parameters.
-   *
-   * @param activeBuildID
-   * @param archiveFileName
-   * @param pinned
-   * @return {@link StepResult} or null if not found
-   */
-  public StepResult findStepResult(final int activeBuildID, final String archiveFileName, final boolean pinned) {
-    return (StepResult) runInHibernate(new TransactionCallback() {
-      public Object runInTransaction() throws Exception {
-        final Query query = session.createQuery("select sres from BuildRun br, StepRun srun, StepResult sres" +
-                " where br.activeBuildID = ? " +
-                "   and srun.buildRunID = br.buildRunID " +
-                "   and sres.stepRunID = srun.ID  " +
-                "   and sres.pinned = ? " +
-                "   and sres.found = 'Y' " +
-                "   and sres.archiveFileName = ? ");
-        query.setInteger(0, activeBuildID);
-        query.setString(1, pinned ? "Y" : "N");
-        query.setString(2, archiveFileName);
-        return query.uniqueResult();
       }
     });
   }
@@ -4152,18 +4009,6 @@ public final class ConfigurationManager implements Serializable {
         q.setByte(2, BuildRun.TYPE_BUILD_RUN);
         q.setCacheable(true);
         return q.list();
-      }
-    });
-  }
-
-
-  public void deleteObjectList(final List objectList) {
-    runInHibernate(new TransactionCallback() {
-      public Object runInTransaction() throws Exception {
-        for (final Iterator i = objectList.iterator(); i.hasNext(); ) {
-          session.delete(i.next());
-        }
-        return null;
       }
     });
   }
@@ -4475,30 +4320,6 @@ public final class ConfigurationManager implements Serializable {
 
 
   /**
-   * Finds build step log according to the search parameters.
-   *
-   * @param activeBuildID
-   * @param archiveFileName
-   * @return {@link StepLog} or null if not found
-   */
-  public StepLog findStepLog(final int activeBuildID, final String archiveFileName) {
-    return (StepLog) runInHibernate(new TransactionCallback() {
-      public Object runInTransaction() throws Exception {
-        final Query query = session.createQuery("select slog from BuildRun br, StepLog slog, StepRun srun" +
-                " where br.activeBuildID = ? " +
-                "   and srun.buildRunID = br.buildRunID " +
-                "   and slog.stepRunID = srun.ID " +
-                "   and slog.found = 1 " +
-                "   and slog.archiveFileName = ? ");
-        query.setInteger(0, activeBuildID);
-        query.setString(1, archiveFileName);
-        return query.uniqueResult();
-      }
-    });
-  }
-
-
-  /**
    * Returns integer schedule property
    */
   public int getScheduleSettingValue(final int activeBuildID, final String propertyName, final int defaultValue) {
@@ -4575,18 +4396,6 @@ public final class ConfigurationManager implements Serializable {
         q.setString(2, name);
         q.setCacheable(true);
         return q.uniqueResult();
-      }
-    });
-  }
-
-
-  public List getAllStartParameters(final int buildConfigID) {
-    return (List) runInHibernate(new TransactionCallback() {
-      public Object runInTransaction() throws Exception {
-        final Query q = session.createQuery("from StartParameter as mrp where mrp.buildID = ?");
-        q.setInteger(0, buildConfigID);
-        q.setCacheable(true);
-        return q.list();
       }
     });
   }
@@ -5244,36 +5053,6 @@ public final class ConfigurationManager implements Serializable {
         return q.uniqueResult();
       }
     });
-  }
-
-
-  /**
-   * Returns build attribute value or 0 if not found.
-   *
-   * @param attrName
-   * @return build attribute value or 0 if not found.
-   */
-  public Integer getBuildChangeListAttributeValue(final int buildChangeListID, final String attrName, final Integer defaultValue) {
-    final BuildChangeListAttribute attribute = getBuildChangeListAttribute(buildChangeListID, attrName);
-    if (attribute == null) {
-      return defaultValue;
-    }
-    return new Integer(attribute.getPropertyValueAsInteger());
-  }
-
-
-  /**
-   * Returns build attribute value or 0 if not found.
-   *
-   * @param attrName
-   * @return build attribute value or 0 if not found.
-   */
-  public String getBuildChangeListAttributeValue(final int buildChangeListID, final String attrName, final String defaultValue) {
-    final BuildChangeListAttribute attribute = getBuildChangeListAttribute(buildChangeListID, attrName);
-    if (attribute == null) {
-      return defaultValue;
-    }
-    return attribute.getValue();
   }
 
 
