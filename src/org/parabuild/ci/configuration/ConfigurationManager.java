@@ -103,9 +103,7 @@ public final class ConfigurationManager implements Serializable {
   private static final String HTML_LOG_URL_PREFIX = "/parabuild/build/log/html/";
 
   /**
-   * Defines a nume of the working aoutbuild directory. The
-   * working directory is used to for checkout, build runs,
-   * logging etc.
+   * Singleton instance.
    */
   private static final ConfigurationManager configManager = new ConfigurationManager();
 
@@ -757,7 +755,7 @@ public final class ConfigurationManager implements Serializable {
   /**
    * Returns a count of completed build runs.
    * <p/>
-   * This eathod is used in congunction with {@link
+   * This method is used in conjunction with {@link
    * #getCompletedBuildRuns(int, int, int)} to support
    * pagination for the build runs table.
    */
@@ -1388,7 +1386,7 @@ public final class ConfigurationManager implements Serializable {
           final BuildChangeList buildChangeList = new BuildChangeList();
           buildChangeList.setBuildID(activeBuildID);
           buildChangeList.setChangeListID(chl.getChangeListID());
-          buildChangeList.setChangeListCreatedAt(chl.getCreatedAt()); // changeListCreatedAt is used for speed pusposes
+          buildChangeList.setChangeListCreatedAt(chl.getCreatedAt()); // changeListCreatedAt is used for speed purposes
           session.save(buildChangeList);
         }
         return new Integer(maxBuildChangeListID);
@@ -1423,10 +1421,10 @@ public final class ConfigurationManager implements Serializable {
    * @return max new changeList ID
    */
   public int saveChangeListsAndIssues(final int buildID, final ChangeListsAndIssues changeListsAndIssues) {
-    final Integer result = (Integer) runInHibernate(new TransactionCallback() {
+    return (Integer) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         // 1. save change lists
-        final int result = saveBuildChangeLists(buildID, changeListsAndIssues.getChangeLists());
+        final int result1 = saveBuildChangeLists(buildID, changeListsAndIssues.getChangeLists());
         // 2. save change list-fixed issue bindings
         final List bindings = changeListsAndIssues.getChangeListIssueBindings();
         for (final Iterator iter = bindings.iterator(); iter.hasNext(); ) {
@@ -1440,10 +1438,9 @@ public final class ConfigurationManager implements Serializable {
           final IssueChangeList issueChangeList = new IssueChangeList(issue.getID(), changeList.getChangeListID());
           session.saveOrUpdate(issueChangeList);
         }
-        return new Integer(result);
+        return new Integer(result1);
       }
     });
-    return result;
   }
 
 
@@ -1507,7 +1504,7 @@ public final class ConfigurationManager implements Serializable {
 
 
   /**
-   * Saves a signle sequence log
+   * Saves a single sequence log
    */
   public int save(final StepLog stepLog) {
     final StepLog result = (StepLog) runInHibernate(new TransactionCallback() {
@@ -1689,7 +1686,7 @@ public final class ConfigurationManager implements Serializable {
               continue; // we use our own
             }
             if (scs.getPropertyName().equals(SourceControlSetting.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE)) {
-              continue; // Paren't custom checkou dir cannot be effective
+              continue; // Paren't custom checkout dir cannot be effective
             }
             result.add(scs);
           }
@@ -1814,7 +1811,7 @@ public final class ConfigurationManager implements Serializable {
 
   /**
    * @param defaultValue String value to return if the
-   *                     peoprty does not exist or it is value is blank.
+   *                     property does not exist or it is value is blank.
    * @return version control setting value for the given buildID and
    *         setting name
    */
@@ -1837,7 +1834,7 @@ public final class ConfigurationManager implements Serializable {
 
   /**
    * @param defaultValue String value to return if the
-   *                     peoprty does not exist or it is value is blank or it is not an integer.
+   *                     property does not exist or it is value is blank or it is not an integer.
    * @return version control setting value for the given buildID and
    *         setting name
    */
@@ -2390,7 +2387,7 @@ public final class ConfigurationManager implements Serializable {
 
 
   /**
-   * Copies change listst from sourceBuildID to destBuildID
+   * Copies change lists from sourceBuildID to destBuildID
    * starting with startChangeListID till the last successful
    * source build run.
    */
@@ -2504,10 +2501,10 @@ public final class ConfigurationManager implements Serializable {
    * Creates and stores build run participants. Build run
    * participant list consists of:
    * <p/>
-   * 1. A set of change lists begining from changeListID and
+   * 1. A set of change lists beginning from changeListID and
    * before that haven't participated in the build yet.
    * <p/>
-   * 2. A set of participants from pervious build if the prev
+   * 2. A set of participants from previous build if the prev
    * build broken or failed.
    *
    * @param currBuildRun
@@ -2656,7 +2653,7 @@ public final class ConfigurationManager implements Serializable {
 
 
   /**
-   * Returns lates change list ID for the given build ID
+   * Returns latest change list ID for the given build ID
    *
    * @param activeBuildID to return latest change list ID
    * @return latest change list ID, or <code>zero</code> if there
@@ -2704,7 +2701,7 @@ public final class ConfigurationManager implements Serializable {
 
 
   /**
-   * Returns lates change list ID for the given build ID
+   * Returns latest change list ID for the given build ID
    *
    * @param activeBuildID to return latest change list ID
    * @return latest change list ID, or <code>zero</code> if there
@@ -2797,10 +2794,10 @@ public final class ConfigurationManager implements Serializable {
 
 
   /**
-   * Returns list of ChangeLists paticipaing in the build run
+   * Returns list of ChangeLists participating in the build run
    *
    * @param buildRun
-   * @return List of ChangeList objects paticipaing in the build
+   * @return List of ChangeList objects participating in the build
    *         run
    */
   public List getBuildRunParticipants(final BuildRun buildRun) {
@@ -2809,10 +2806,10 @@ public final class ConfigurationManager implements Serializable {
 
 
   /**
-   * Returns list of ChangeLists paticipaing in the build run
+   * Returns list of ChangeLists participating in the build run
    *
    * @param buildRunID
-   * @return List of ChangeList objects paticipaing in the build
+   * @return List of ChangeList objects participating in the build
    *         run
    */
   public List getBuildRunParticipants(final int buildRunID) {
@@ -2829,10 +2826,10 @@ public final class ConfigurationManager implements Serializable {
 
 
   /**
-   * Returns list of ChangeLists paticipaing in the build run
+   * Returns list of ChangeLists participating in the build run
    *
    * @param buildRunID
-   * @return List of ChangeList objects paticipaing in the build
+   * @return List of ChangeList objects participating in the build
    *         run
    */
   public int getLatestBuildRunParticipantID(final int buildRunID) {
@@ -2850,11 +2847,11 @@ public final class ConfigurationManager implements Serializable {
 
 
   /**
-   * Returns number new of ChangeLists paticipaing in the build
+   * Returns number new of ChangeLists participating in the build
    * run.
    *
    * @param buildRun
-   * @return number of ChangeLists paticipaing in the build run.
+   * @return number of ChangeLists participating in the build run.
    */
   public int getNewBuildRunParticipantsCount(final BuildRun buildRun) {
     return (Integer) runInHibernate(new TransactionCallback() {
@@ -3030,7 +3027,7 @@ public final class ConfigurationManager implements Serializable {
   }
 
 
-  public Integer findIssueIDByKeyAndAttributes(final String key, final List attrbutes) {
+  public Integer findIssueIDByKeyAndAttributes(final String key, final List attributes) {
 
     Integer result = null;
 
@@ -3055,8 +3052,8 @@ public final class ConfigurationManager implements Serializable {
         matchCount = 0;
       }
 
-      // match - travere param attrs
-      for (final Iterator j = attrbutes.iterator(); j.hasNext(); ) {
+      // match - traverse param attrs
+      for (final Iterator j = attributes.iterator(); j.hasNext(); ) {
         final IssueAttribute attrToMatch = (IssueAttribute) j.next();
         if (attrToMatch.getName().equals(foundAttr.getName())
                 && attrToMatch.getValue().equals(foundAttr.getValue())) {
@@ -3065,7 +3062,7 @@ public final class ConfigurationManager implements Serializable {
       }
 
       // check match count
-      if (matchCount == attrbutes.size()) {
+      if (matchCount == attributes.size()) {
         result = new Integer(currentIssueID);
         break;
       }
@@ -3355,7 +3352,7 @@ public final class ConfigurationManager implements Serializable {
 
   /**
    * @param buildID
-   * @return Preix used to append to any outgoing notification
+   * @return Prefix used to append to any outgoing notification
    *         e-mail. If prefix is not defined, return non-null,
    *         empty String.
    */
@@ -3428,7 +3425,7 @@ public final class ConfigurationManager implements Serializable {
       return result;
     } catch (final RuntimeException e) {
       if (LOG.isDebugEnabled()) {
-        LOG.debug("exception while runnig in hibernate: " + e, e);
+        LOG.debug("exception while running in hibernate: " + e, e);
       }
       rollbackHard();
       throw e;
@@ -3453,7 +3450,7 @@ public final class ConfigurationManager implements Serializable {
 
 
   /**
-   * Returns ConfigurationManager singletone instance
+   * Returns ConfigurationManager singleton instance
    */
   public static ConfigurationManager getInstance() {
     return configManager;
@@ -3612,7 +3609,7 @@ public final class ConfigurationManager implements Serializable {
    * Save sequence's statistical value. The value is saved as in
    * sequence attribute table. First a check make if there is
    * already stat saved. If yes, new value is added to the
-   * existsing value and then saved.
+   * existing value and then saved.
    *
    * @param statName
    * @param statValue
@@ -3640,7 +3637,7 @@ public final class ConfigurationManager implements Serializable {
    * Save build run's statistical value. The value is saved as in
    * sequence attribute table. First a check make if there is
    * already stat saved. If yes, new value is added to the
-   * existsing value and then saved.
+   * existing value and then saved.
    *
    * @param statName
    * @param statValue
@@ -3700,7 +3697,7 @@ public final class ConfigurationManager implements Serializable {
 
   /**
    * Returns a list of sequence runs that belongs to the same
-   * build and preceeds the given seq run.
+   * build and precedes the given seq run.
    */
   public List getPreviousStepRuns(final StepRun stepRun) {
     return (List) runInHibernate(new TransactionCallback() {
@@ -4016,7 +4013,7 @@ public final class ConfigurationManager implements Serializable {
 
 
   /**
-   * Returns list of change lists for the given acriv
+   * Returns list of change lists for the given active build ID.
    *
    * @param activeBuildID
    */
@@ -4040,7 +4037,7 @@ public final class ConfigurationManager implements Serializable {
 
 
   /**
-   * Returns list of change lists for the given acriv
+   * Returns list of change lists for the given active build ID.
    *
    * @param activeBuildID
    */
@@ -4063,7 +4060,7 @@ public final class ConfigurationManager implements Serializable {
 
 
   /**
-   * Returns build config corresponging the leaft of linked list
+   * Returns build config corresponding the left of linked list
    * of build config referred starting from the given
    * originalBuildConfig.
    *
@@ -4386,13 +4383,13 @@ public final class ConfigurationManager implements Serializable {
   }
 
 
-  public StartParameter findStartParameter(final byte variableType, final int variableOnwer, final String name) {
+  public StartParameter findStartParameter(final byte variableType, final int variableOwner, final String name) {
     return (StartParameter) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         final Query q = session.createQuery("" +
                 " from StartParameter as mrp " +
                 " where mrp.buildID = ? and mrp.type = ? and mrp.name = ?");
-        q.setInteger(0, variableOnwer);
+        q.setInteger(0, variableOwner);
         q.setByte(1, variableType);
         q.setString(2, name);
         q.setCacheable(true);
@@ -4708,7 +4705,7 @@ public final class ConfigurationManager implements Serializable {
             leaderBuildRunID = getBuildRunAttributeValue(buildRun.getBuildRunID(), BuildRunAttribute.ATTR_LEAD_BUILD_RUN_ID, BuildRun.UNSAVED_ID);
             if (leaderBuildRunID == BuildRun.UNSAVED_ID) {
               // Report an error first
-              ErrorManagerFactory.getErrorManager().reportSystemError(new Error(buildRun.getActiveBuildID(), "Cound not fing a leader build run for " + buildRun, Error.ERROR_LEVEL_ERROR));
+              ErrorManagerFactory.getErrorManager().reportSystemError(new Error(buildRun.getActiveBuildID(), "Could not find a leader build run for " + buildRun, Error.ERROR_LEVEL_ERROR));
               // Return result containing self
               return result;
             }
@@ -4833,7 +4830,7 @@ public final class ConfigurationManager implements Serializable {
         // of q.uniqueResult to cover a strange case when
         // the statement above fails with
         // net.sf.hibernate.NonUniqueResultException.
-        // Reported by Patrick Bennet.
+        // Reported by Patrick Bennett.
         final List list = q.list();
         if (list.isEmpty()) {
           return null;
@@ -4841,13 +4838,13 @@ public final class ConfigurationManager implements Serializable {
         // report the problem
         if (list.size() > 1) {
           // form the duplicate list
-          final StringBuilder warningOuput = new StringBuilder(500);
+          final StringBuilder warningOutput = new StringBuilder(500);
           for (int i = 0; i < list.size(); i++) {
             final ChangeList chList = (ChangeList) list.get(i);
-            warningOuput.append(chList.toString());
-            warningOuput.append(' ');
+            warningOutput.append(chList.toString());
+            warningOutput.append(' ');
           }
-          LOG.warn("Unexpected duplication of change lists has been encountered. Will use first change list: " + warningOuput);
+          LOG.warn("Unexpected duplication of change lists has been encountered. Will use first change list: " + warningOutput);
         }
         return list.get(0);
       }
