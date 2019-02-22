@@ -722,7 +722,7 @@ public final class ConfigurationManager implements Serializable {
   public List getCompletedBuildRuns(final List activeBuildIDs, final int maxCount) {
 
     if (activeBuildIDs == null || activeBuildIDs.isEmpty()) {
-      return Collections.EMPTY_LIST;
+      return Collections.emptyList();
     }
 
     // To list
@@ -1172,7 +1172,7 @@ public final class ConfigurationManager implements Serializable {
   public List getBuildParticipantsNames(final int buildRunID) {
     // check if it's a saved build run
     if (buildRunID == BuildRun.UNSAVED_ID) {
-      return Collections.EMPTY_LIST;
+      return Collections.emptyList();
     }
     // process
     return (List) runInHibernate(new TransactionCallback() {
