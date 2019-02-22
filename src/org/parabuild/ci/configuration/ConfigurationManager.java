@@ -4777,7 +4777,7 @@ public final class ConfigurationManager implements Serializable {
     // Or mark a step run as fixed.
 
     return (Boolean) runInHibernate(new TransactionCallback() {
-      public Object runInTransaction() throws Exception {
+      public Object runInTransaction() {
         if (stepRun.isSuccessful()) {
           final BuildRun previousBuildRun = getPreviousBuildRun(getBuildRun(stepRun.getBuildRunID()));
           if (previousBuildRun != null) {
