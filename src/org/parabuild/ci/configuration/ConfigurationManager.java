@@ -28,7 +28,6 @@ import org.parabuild.ci.object.ActiveBuild;
 import org.parabuild.ci.object.ActiveBuildAttribute;
 import org.parabuild.ci.object.ActiveBuildConfig;
 import org.parabuild.ci.object.BuildChangeList;
-import org.parabuild.ci.object.BuildChangeListAttribute;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.BuildConfigAttribute;
 import org.parabuild.ci.object.BuildRun;
@@ -5031,24 +5030,6 @@ public final class ConfigurationManager implements Serializable {
         query.setString(1, name);
         query.setCacheable(true);
         return query.uniqueResult();
-      }
-    });
-  }
-
-
-  /**
-   * @return build setting by name, <code>null</code>
-   */
-  public BuildChangeListAttribute getBuildChangeListAttribute(final int buildChangeListID, final String name) {
-    return (BuildChangeListAttribute) runInHibernate(new TransactionCallback() {
-      public Object runInTransaction() throws Exception {
-        final Query q = session.createQuery("from BuildChangeListAttribute as bcla " +
-                " where bcla.buildChangeListID = ? " +
-                "   and bcla.name = ?");
-        q.setInteger(0, buildChangeListID);
-        q.setString(1, name);
-        q.setCacheable(true);
-        return q.uniqueResult();
       }
     });
   }
