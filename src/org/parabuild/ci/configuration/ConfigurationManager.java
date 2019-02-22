@@ -537,7 +537,7 @@ public final class ConfigurationManager implements Serializable {
    * This method is used by tests.
    */
   public int getPendingIssueCountWithURLStartingWith(final int activeBuildID, final String urlStartWith) {
-    final Integer result = (Integer) runInHibernate(new TransactionCallback() {
+    return (Integer) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() {
         int counter = 0;
         final List pendingIssues = getPendingIssues(activeBuildID);
@@ -551,7 +551,6 @@ public final class ConfigurationManager implements Serializable {
         return new Integer(counter);
       }
     });
-    return result;
   }
 
 
@@ -1341,13 +1340,12 @@ public final class ConfigurationManager implements Serializable {
    * @param userToEmail
    */
   public int save(final VCSUserToEmailMap userToEmail) {
-    final Integer result = (Integer) runInHibernate(new TransactionCallback() {
+    return (Integer) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         session.saveOrUpdate(userToEmail);
         return new Integer(userToEmail.getMapID());
       }
     });
-    return result;
   }
 
 
@@ -1360,7 +1358,7 @@ public final class ConfigurationManager implements Serializable {
    * Returns max new changeList ID
    */
   public int saveBuildChangeLists(final int activeBuildID, final List changeLists) {
-    final Integer result = (Integer) runInHibernate(new TransactionCallback() {
+    return (Integer) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         if (validateActiveID) {
           validateIsActiveBuildID(session, activeBuildID);
@@ -1391,7 +1389,6 @@ public final class ConfigurationManager implements Serializable {
         return new Integer(maxBuildChangeListID);
       }
     });
-    return result;
   }
 
 
@@ -1463,13 +1460,12 @@ public final class ConfigurationManager implements Serializable {
    * Saves build watcher
    */
   public int save(final BuildWatcher watcher) {
-    final Integer result = (Integer) runInHibernate(new TransactionCallback() {
+    return (Integer) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         session.saveOrUpdate(watcher);
         return new Integer(watcher.getWatcherID());
       }
     });
-    return result;
   }
 
 
@@ -1608,9 +1604,8 @@ public final class ConfigurationManager implements Serializable {
             //if (log.isDebugEnabled()) log.debug("scp = " + scp);
             saveSourceControlSetting(session, buildID, scp);
           } catch (final Exception e) {
-            final Exception exception = new Exception("Error saving version control setting: "
+            throw new Exception("Error saving version control setting: "
                     + StringUtils.toString(e) + "\n\t " + scp, e);
-            throw exception;
           }
         }
         return null;
@@ -2391,7 +2386,7 @@ public final class ConfigurationManager implements Serializable {
    * source build run.
    */
   public int copyChangeListsToBuild(final int sourceActiveBuildID, final int destinationActiveBuildID, final int startChangeListID) {
-    final Integer result = (Integer) runInHibernate(new TransactionCallback() {
+    return (Integer) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         if (validateActiveID) {
           validateIsActiveBuildID(session, destinationActiveBuildID);
@@ -2469,7 +2464,6 @@ public final class ConfigurationManager implements Serializable {
         return new Integer(maxNewID);
       }
     });
-    return result;
   }
 
 
@@ -2659,7 +2653,7 @@ public final class ConfigurationManager implements Serializable {
    *         are no change lists for the build
    */
   public int getLatestChangeListID(final int activeBuildID) {
-    final Integer result = (Integer) runInHibernate(new TransactionCallback() {
+    return (Integer) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         if (validateActiveID) {
           validateIsActiveBuildID(session, activeBuildID);
@@ -2695,7 +2689,6 @@ public final class ConfigurationManager implements Serializable {
         return new Integer(ChangeList.UNSAVED_ID);
       }
     });
-    return result;
   }
 
 
@@ -2728,7 +2721,7 @@ public final class ConfigurationManager implements Serializable {
   /**
    */
   public int incrementActiveBuildAttribute(final int activeBuildID, final String attributeName, final boolean doStoreIncrement, final int initialValueIfNotSet) {
-    final Integer result = (Integer) runInHibernate(new TransactionCallback() {
+    return (Integer) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         if (validateActiveID) {
           validateIsActiveBuildID(session, activeBuildID);
@@ -2759,7 +2752,6 @@ public final class ConfigurationManager implements Serializable {
         return integerNewID;
       }
     });
-    return result;
   }
 
 
@@ -2771,7 +2763,7 @@ public final class ConfigurationManager implements Serializable {
    *         there are no change lists for the build.
    */
   public int getLatestCleanChangeListID(final int activeBuildID) {
-    final Integer result = (Integer) runInHibernate(new TransactionCallback() {
+    return (Integer) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         if (validateActiveID) {
           validateIsActiveBuildID(session, activeBuildID);
@@ -2788,7 +2780,6 @@ public final class ConfigurationManager implements Serializable {
         return new Integer(getLatestBuildRunParticipantID(lastCleanBuildRun.getBuildRunID()));
       }
     });
-    return result;
   }
 
 
@@ -3924,7 +3915,7 @@ public final class ConfigurationManager implements Serializable {
    *         active.
    */
   public int getActiveIDFromBuildID(final int buildID) {
-    final Integer result = (Integer) runInHibernate(new TransactionCallback() {
+    return (Integer) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         final Query q = session.createQuery("select bc.activeBuildID from BuildConfig bc " +
                 " where bc.buildID = ?");
@@ -3933,12 +3924,11 @@ public final class ConfigurationManager implements Serializable {
         return q.uniqueResult();
       }
     });
-    return result;
   }
 
 
   public int getBuildRunActiveConfigID(final int buildRunID) {
-    final Integer result = (Integer) runInHibernate(new TransactionCallback() {
+    return (Integer) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         final Query q = session.createQuery("select br.activeBuildID from BuildRun br " +
                 " where br.buildRunID = ?");
@@ -3947,7 +3937,6 @@ public final class ConfigurationManager implements Serializable {
         return q.uniqueResult();
       }
     });
-    return result;
   }
 
 
