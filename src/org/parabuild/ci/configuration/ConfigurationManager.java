@@ -1613,8 +1613,7 @@ public final class ConfigurationManager implements Serializable {
             saveSourceControlSetting(session, buildID, scp);
           } catch (final Exception e) {
             final Exception exception = new Exception("Error saving version control setting: "
-                    + StringUtils.toString(e) + "\n\t " + scp);
-            exception.initCause(e);
+                    + StringUtils.toString(e) + "\n\t " + scp, e);
             throw exception;
           }
         }
