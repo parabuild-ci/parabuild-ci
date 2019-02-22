@@ -2741,15 +2741,17 @@ public final class ConfigurationManager implements Serializable {
         ActiveBuildAttribute ba = getActiveBuildAttribute(activeBuildID, attributeName);
         // create new if needed
         if (ba == null) {
-          if (LOG.isDebugEnabled()) {
-            LOG.debug("activeBuildAttribute: " + ba);
-          }
           // first call
           ba = new ActiveBuildAttribute();
           ba.setBuildID(activeBuildID);
           ba.setPropertyName(attributeName);
           ba.setPropertyValue(Integer.toString(initialValueIfNotSet));
         }
+
+        if (LOG.isDebugEnabled()) {
+          LOG.debug("activeBuildAttribute: " + ba);
+        }
+
         // calculate next number
         final int newID = ba.getPropertyValueAsInteger() + 1;
         final Integer integerNewID = new Integer(newID);
