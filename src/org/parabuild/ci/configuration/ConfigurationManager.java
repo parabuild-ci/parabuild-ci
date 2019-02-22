@@ -541,7 +541,7 @@ public final class ConfigurationManager implements Serializable {
    */
   public int getPendingIssueCountWithURLStartingWith(final int activeBuildID, final String urlStartWith) {
     final Integer result = (Integer) runInHibernate(new TransactionCallback() {
-      public Object runInTransaction() throws Exception {
+      public Object runInTransaction() {
         int counter = 0;
         final List pendingIssues = getPendingIssues(activeBuildID);
         for (final Iterator i = pendingIssues.iterator(); i.hasNext(); ) {
@@ -1273,7 +1273,7 @@ public final class ConfigurationManager implements Serializable {
   public StepLog getFirstBokenLog(final int buildRunID) {
     // REVIEWME: vimeshev - may be it's better to do it via database?
     return (StepLog) runInHibernate(new TransactionCallback() {
-      public Object runInTransaction() throws Exception {
+      public Object runInTransaction() {
         final List stepRuns = configManager.getStepRuns(buildRunID);
         for (final Iterator stepRunIter = stepRuns.iterator(); stepRunIter.hasNext(); ) {
           // get run
@@ -1673,7 +1673,7 @@ public final class ConfigurationManager implements Serializable {
    */
   public List getEffectiveSourceControlSettings(final int buildID) {
     return (List) runInHibernate(new TransactionCallback() {
-      public Object runInTransaction() throws Exception {
+      public Object runInTransaction() {
         final List result = new ArrayList(11);
         // fist add our own
         final List ourOwnSettings = getSourceControlSettings(buildID);
@@ -3684,7 +3684,7 @@ public final class ConfigurationManager implements Serializable {
    */
   public Map getStepRunAttributesAsMap(final int stepRunID) {
     return (Map) runInHibernate(new TransactionCallback() {
-      public Object runInTransaction() throws Exception {
+      public Object runInTransaction() {
         final Map result = new HashMap(11);
         final List list = getStepRunAttributes(stepRunID);
         for (final Iterator i = list.iterator(); i.hasNext(); ) {
@@ -4080,7 +4080,7 @@ public final class ConfigurationManager implements Serializable {
     }
     // process
     return (BuildConfig) runInHibernate(new TransactionCallback() {
-      public Object runInTransaction() throws Exception {
+      public Object runInTransaction() {
         // referred SCM ID from reference build config
         final int originalBuildConfigID = originalBuildConfig.getBuildID();
         BuildConfig effectiveBuildConfig = originalBuildConfig;
@@ -4118,7 +4118,7 @@ public final class ConfigurationManager implements Serializable {
     }
     // process
     return (Boolean) runInHibernate(new TransactionCallback() {
-      public Object runInTransaction() throws Exception {
+      public Object runInTransaction() {
         final int originalBuildConfigID = referringBuildConfig.getBuildID();
         BuildConfig nextBuildConfig = referredBuildConfig;
         while (nextBuildConfig.getSourceControl() == BuildConfig.SCM_REFERENCE) {
@@ -5068,7 +5068,7 @@ public final class ConfigurationManager implements Serializable {
 
   public boolean isCleanCheckoutIfBroken(final int activeBuildID) {
     return (Boolean) runInHibernate(new TransactionCallback() {
-      public Object runInTransaction() throws Exception {
+      public Object runInTransaction() {
         final BuildConfig config = getBuildConfiguration(activeBuildID);
         final int buildID;
         if (config.getScheduleType() == BuildConfig.SCHEDULE_TYPE_PARALLEL) {
