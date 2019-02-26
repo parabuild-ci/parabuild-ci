@@ -58,7 +58,6 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -1933,7 +1932,7 @@ public final class SecurityManager {
 
     final HttpServletRequest req = tierletContext.getHttpServletRequest();
     final User user = getUserFromRequest(req);
-    return user == null ? false : user.isAdmin();
+    return user != null && user.isAdmin();
   }
 
 
