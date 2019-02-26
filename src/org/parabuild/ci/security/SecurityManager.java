@@ -77,7 +77,7 @@ public final class SecurityManager {
    * This prefix is used to form and names of build user rights cache
    * names.
    */
-  private static final String BUILD_USER_RIHGTS_CACHE_NAME_PREFIX = "build_user_rights_cache_";
+  private static final String BUILD_USER_RIGHTS_CACHE_NAME_PREFIX = "build_user_rights_cache_";
 
   /**
    * This prefix is used to form and names of result user rights cache
@@ -129,7 +129,7 @@ public final class SecurityManager {
    */
   public boolean userCanViewBuild(final int userID, final int activeBuildID) {
 //
-//    // check if build is accesseble for non-logged in users -
+//    // check if build is accessible for non-logged in users -
 //    // then it should be accessible to this user too.
 //    if (isAnonymousAccessEnabled()) {
 //      // get anon group ID
@@ -138,7 +138,7 @@ public final class SecurityManager {
 //        // check if build in the anon group
 //        GroupBuildAccess gba = cm.getGroupBuildAccess(anonGroup.getID(), activeBuildID);
 //        if (gba != null) {
-//          // build is acceisble by anon users, allow access
+//          // build is accessible by anon users, allow access
 //          // without regard to if user is logged in.
 //          return true;
 //        }
@@ -214,7 +214,7 @@ public final class SecurityManager {
    */
   public void assignBuildCreator(final int activeBuildID, final int userID) {
 
-    // Build creator can already be assingned - if so, overwrite
+    // Build creator can already be assigned - if so, overwrite
     BuildConfigAttribute bca = cm.getBuildAttribute(activeBuildID, BuildConfigAttribute.BUILD_CREATOR);
     if (bca == null) {
       bca = new BuildConfigAttribute(activeBuildID, BuildConfigAttribute.BUILD_CREATOR, userID);
@@ -310,12 +310,12 @@ public final class SecurityManager {
   /**
    * Decrypts password.
    *
-   * @param encrypedPassword encrypted hex-encoded password to
+   * @param encryptedPassword encrypted hex-encoded password to
    *                         decrypt.
    * @return encrypted hex encoded password
    */
-  public static String decryptPassword(final String encrypedPassword) {
-    return SecurityUtils.decrypt(encrypedPassword, SystemConstants.SYSTEM_PASSWORD);
+  public static String decryptPassword(final String encryptedPassword) {
+    return SecurityUtils.decrypt(encryptedPassword, SystemConstants.SYSTEM_PASSWORD);
   }
 
 
@@ -323,7 +323,7 @@ public final class SecurityManager {
 
     // if we are here, build is not accessible to anon users
     if (user == null || user.getUserID() == -1) {
-      // check if build is accesseble for non-logged in users -
+      // check if build is accessible for non-logged in users -
       BuildRights buildRights = getCachedBuildRightSet(activeBuildID, -1);
       if (buildRights != null) {
         return buildRights;
@@ -466,7 +466,7 @@ public final class SecurityManager {
 
 
   private static String makeBuildCacheRegionName(final int activeBuildID) {
-    return BUILD_USER_RIHGTS_CACHE_NAME_PREFIX + activeBuildID;
+    return BUILD_USER_RIGHTS_CACHE_NAME_PREFIX + activeBuildID;
   }
 
 
@@ -485,7 +485,7 @@ public final class SecurityManager {
       // check if build is marked as public
       final byte buildConfigAccess = getBuildConfigAccess(activeBuildID);
       if (buildConfigAccess == BuildConfig.ACCESS_PUBLIC) {
-        // build is acceisble by anon users, allow access
+        // build is accessible by anon users, allow access
         // without regard to if user is logged in.
         return BuildRights.VIEW_ONLY_RIGHTS;
       }
@@ -782,7 +782,7 @@ public final class SecurityManager {
 
 
   /**
-   * Helper method to authenticate usin LDAP/JNDI authenticator.
+   * Helper method to authenticate using LDAP/JNDI authenticator.
    *
    * @param userName
    * @param userPassword
@@ -880,8 +880,8 @@ public final class SecurityManager {
 
 
   /**
-   * @return list of displaybale user groups. The list contain
-   *         both groups user is a memeber and not. This list is
+   * @return list of displayable user groups. The list contain
+   *         both groups user is a member and not. This list is
    *         suitable for displaying editable group list.
    * @see DisplayUserGroupVO
    */
@@ -890,7 +890,7 @@ public final class SecurityManager {
       public Object runInTransaction() throws Exception {
         final List result = new ArrayList(11);
 
-        // first, get goups user belongs to
+        // first, get groups user belongs to
         Query q = session.createQuery("from UserGroup ug where ug.userID = ?")
                 .setCacheable(true)
                 .setInteger(0, userID);
@@ -946,7 +946,7 @@ public final class SecurityManager {
       public Object runInTransaction() throws Exception {
         final List result = new ArrayList(11);
 
-        // first, get builds memeber of this group
+        // first, get builds member of this group
         Query q = session.createQuery("select bc.buildName, bc.activeBuildID " +
                 " from BuildConfig bc, ActiveBuild ab, GroupBuildAccess gba " +
                 " where gba.groupID = ? " +
@@ -1151,7 +1151,7 @@ public final class SecurityManager {
       final String[] cacheNames = CacheManager.getInstance().getCacheNames();
       for (int i = 0; i < cacheNames.length; i++) {
         final String cacheName = cacheNames[i];
-        if (cacheName.startsWith(BUILD_USER_RIHGTS_CACHE_NAME_PREFIX)
+        if (cacheName.startsWith(BUILD_USER_RIGHTS_CACHE_NAME_PREFIX)
                 || cacheName.startsWith(RESULT_USER_RIGHTS_CACHE_NAME_PREFIX)) {
           final Cache cache = CacheManager.getInstance().getCache(cacheName);
           invalidate(cache);
@@ -1195,7 +1195,7 @@ public final class SecurityManager {
 
   /**
    * Gets build configuration from request according to user
-   * access rights. If user is not allowed to acces the
+   * access rights. If user is not allowed to access the
    * configuration, an {@link AccessForbiddenException} is
    * thrown.
    */
@@ -1203,7 +1203,7 @@ public final class SecurityManager {
 
     final BuildConfig buildConfig = getBuildConfiguration(req);
 
-    // validate user can acces it.
+    // validate user can access it.
     final int userID = getUserIDFromRequest(req);
     if (!userCanViewBuild(userID, buildConfig.getBuildID())) {
       throw new AccessForbiddenException("User cannot access this build. Build ID: " + Integer.toString(buildConfig.getBuildID()) + ", user ID: " + Integer.toString(userID));
@@ -1217,7 +1217,7 @@ public final class SecurityManager {
   /**
    * Gets build configuration from request according to feed
    * access preferences and to user access rights. If user
-   * is not allowed to acces the configuration, an {@link
+   * is not allowed to access the configuration, an {@link
    * AccessForbiddenException} is thrown.
    */
   public BuildConfig getFeedBuildConfigurationFromRequest(final HttpServletRequest req) throws BadRequestException, AccessForbiddenException {
@@ -1352,7 +1352,7 @@ public final class SecurityManager {
   }
 
 
-  public ResultGroupRights createResultGroupRightsFromgroup(final Group group) {
+  public ResultGroupRights createResultGroupRightsFromGroup(final Group group) {
     final ResultGroupRights result;
     if (group.getName().equals(Group.SYSTEM_ADMIN_GROUP)) {
       result = ResultGroupRights.ALL_RIGHTS;
@@ -1388,15 +1388,15 @@ public final class SecurityManager {
    * True if given user can see build results and status.
    *
    * @param userID       int user ID
-   * @param resutGroupID int build ID
+   * @param resultGroupID int build ID
    * @return true if user can view build
    */
-  public boolean userCanViewResultGroup(final int userID, final int resutGroupID) {
-    if (resutGroupID == -1) {
+  public boolean userCanViewResultGroup(final int userID, final int resultGroupID) {
+    if (resultGroupID == -1) {
       return false;
     }
     final User user = userID == -1 ? null : getUser(userID);
-    return getUserResultGroupRights(user, resutGroupID).isAllowedToViewResultGroup();
+    return getUserResultGroupRights(user, resultGroupID).isAllowedToViewResultGroup();
   }
 
 
@@ -1404,22 +1404,22 @@ public final class SecurityManager {
    * Returns user rights for the user associated with the given
    * context.
    */
-  public ResultGroupRights getUserResultGroupRights(final TierletContext tierletContext, final int resutGroupID) {
-    return getUserResultGroupRights(getUserFromContext(tierletContext), resutGroupID);
+  public ResultGroupRights getUserResultGroupRights(final TierletContext tierletContext, final int resultGroupID) {
+    return getUserResultGroupRights(getUserFromContext(tierletContext), resultGroupID);
   }
 
 
-  public ResultGroupRights getUserResultGroupRights(final User user, final int resutGroupID) {
+  public ResultGroupRights getUserResultGroupRights(final User user, final int resultGroupID) {
 
     // if we are here, build is not accessible to anon users
     if (user == null || user.getUserID() == -1) {
-      // check if build is accesseble for non-logged in users -
-      ResultGroupRights resultGroupRights = getCachedResultGroupRightSet(resutGroupID, -1);
+      // check if build is accessible for non-logged in users -
+      ResultGroupRights resultGroupRights = getCachedResultGroupRightSet(resultGroupID, -1);
       if (resultGroupRights != null) {
         return resultGroupRights;
       }
-      resultGroupRights = getAnonymousResultGroupRights(resutGroupID);
-      cacheResultGroupRightSet(resutGroupID, -1, resultGroupRights);
+      resultGroupRights = getAnonymousResultGroupRights(resultGroupID);
+      cacheResultGroupRightSet(resultGroupID, -1, resultGroupRights);
       return resultGroupRights;
     }
 
@@ -1429,13 +1429,13 @@ public final class SecurityManager {
     }
 
     // try to get from cache
-    ResultGroupRights resultGroupRights = getCachedResultGroupRightSet(resutGroupID, user.getUserID());
+    ResultGroupRights resultGroupRights = getCachedResultGroupRightSet(resultGroupID, user.getUserID());
     if (resultGroupRights != null) {
       return resultGroupRights;
     }
 
     // get rights
-//    if (log.isDebugEnabled()) log.debug("resutGroupID: " + resutGroupID);
+//    if (log.isDebugEnabled()) log.debug("resultGroupID: " + resultGroupID);
 //    if (log.isDebugEnabled()) log.debug("user: " + user);
     final List groups = (List) ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
@@ -1444,13 +1444,13 @@ public final class SecurityManager {
                 " and ug.groupID = rga.groupID and gr.ID = rga.groupID")
                 .setCacheable(true)
                 .setInteger(0, user.getUserID())
-                .setInteger(1, resutGroupID)
+                .setInteger(1, resultGroupID)
                 .list();
       }
     });
 
     if (groups.isEmpty()) {
-      resultGroupRights = getAnonymousResultGroupRights(resutGroupID);
+      resultGroupRights = getAnonymousResultGroupRights(resultGroupID);
     } else {
       // collect permissions
       boolean allowedToCreateResultGroup = false;
@@ -1473,8 +1473,8 @@ public final class SecurityManager {
     }
 
 //    if (log.isDebugEnabled()) log.debug("rightSet from SM: " + rightSet);
-//    if (log.isDebugEnabled()) log.debug("buildID from SM: " + resutGroupID);
-    return cacheResultGroupRightSet(resutGroupID, user.getUserID(), resultGroupRights);
+//    if (log.isDebugEnabled()) log.debug("buildID from SM: " + resultGroupID);
+    return cacheResultGroupRightSet(resultGroupID, user.getUserID(), resultGroupRights);
   }
 
 
@@ -1491,7 +1491,7 @@ public final class SecurityManager {
   /**
    * @param groupID, can be -1
    * @return list of GroupMemberVO objects denoting build results
-   *         that belong or can be made beloning to or removed from, a
+   *         that belong or can be made belonging to or removed from, a
    *         given security group {@link Group}.
    */
   public List getSecurityGroupResults(final int groupID) {
@@ -1499,7 +1499,7 @@ public final class SecurityManager {
       public Object runInTransaction() throws Exception {
         final List result = new ArrayList(11);
 
-        // first, get builds memeber of this group
+        // first, get builds member of this group
         Query q = session.createQuery("from ResultGroupAccess rga " +
                 "  where rga.groupID = ?")
                 .setCacheable(true)
@@ -1680,7 +1680,7 @@ public final class SecurityManager {
 
 
   /**
-   * Resturns list of projects filtered for the given user.
+   * Returns list of projects filtered for the given user.
    *
    * @param tierletContext
    * @return list of projects filtered for the given user.
@@ -1691,7 +1691,7 @@ public final class SecurityManager {
 
 
   /**
-   * Helper method to get a build configuration from reques
+   * Helper method to get a build configuration from request
    * parameters.
    *
    * @throws BadRequestException if a build configuration
@@ -1763,7 +1763,7 @@ public final class SecurityManager {
 
 
   /**
-   * Returns user's merge rights. Current impementation
+   * Returns user's merge rights. Current implementation
    * calculates access rights buy combining similar from
    * both source and target builds.
    *
@@ -1879,7 +1879,7 @@ public final class SecurityManager {
         return (Boolean) element.getValue();
       }
 
-      // Calcualte access rights
+      // Calculate access rights
       final List groups = (List) ConfigurationManager.runInHibernate(new TransactionCallback() {
         public Object runInTransaction() throws Exception {
           return session.createQuery("select gr from User u, Group as gr, UserGroup as ug, GroupBuildAccess as gba" +

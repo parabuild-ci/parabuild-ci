@@ -148,7 +148,7 @@ public final class ResultRightsPanel extends MessagePanel {
 
     // copy rights to checkboxes
 
-    final ResultGroupRights rights = SecurityManager.getInstance().createResultGroupRightsFromgroup(group);
+    final ResultGroupRights rights = SecurityManager.getInstance().createResultGroupRightsFromGroup(group);
     setCheckBox(KEY_CREATE, rights.isAllowedToCreateResultGroup());
     setCheckBox(KEY_DELETE, rights.isAllowedToDeleteResultGroup());
     setCheckBox(KEY_VIEW, rights.isAllowedToViewResultGroup());

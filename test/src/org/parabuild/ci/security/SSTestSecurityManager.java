@@ -312,14 +312,14 @@ public class SSTestSecurityManager extends ServersideTestCase {
   public void test_createResultGroupRightsFromAnonGroup() {
     final Group group = new Group();
     group.setName(Group.SYSTEM_ANONYMOUS_GROUP);
-    assertEquals(ResultGroupRights.VIEW_ONLY_RIGHTS, securityManager.createResultGroupRightsFromgroup(group));
+    assertEquals(ResultGroupRights.VIEW_ONLY_RIGHTS, securityManager.createResultGroupRightsFromGroup(group));
   }
 
 
   public void test_createResultGroupRightsFromAdminGroup() {
     final Group group = new Group();
     group.setName(Group.SYSTEM_ADMIN_GROUP);
-    assertEquals(ResultGroupRights.ALL_RIGHTS, securityManager.createResultGroupRightsFromgroup(group));
+    assertEquals(ResultGroupRights.ALL_RIGHTS, securityManager.createResultGroupRightsFromGroup(group));
   }
 
 
@@ -327,7 +327,7 @@ public class SSTestSecurityManager extends ServersideTestCase {
     final Group group = new Group();
     group.setName("some_name");
     group.setAllowedToUpdateResultGroup(true);
-    final ResultGroupRights resultGroupRightsFromgroup = securityManager.createResultGroupRightsFromgroup(group);
+    final ResultGroupRights resultGroupRightsFromgroup = securityManager.createResultGroupRightsFromGroup(group);
     assertEquals(true, resultGroupRightsFromgroup.isAllowedToUpdateResultGroup());
   }
 
