@@ -167,7 +167,7 @@ public final class SecurityManager {
     if (activeBuildID == -1) {
       return false;
     }
-    final User user = userID == -1 ? (User) null : getUser(userID);
+    final User user = userID == -1 ? null : getUser(userID);
     return getUserBuildRights(user, activeBuildID).isAllowedToViewBuild();
   }
 
@@ -1395,7 +1395,7 @@ public final class SecurityManager {
     if (resutGroupID == -1) {
       return false;
     }
-    final User user = userID == -1 ? (User) null : getUser(userID);
+    final User user = userID == -1 ? null : getUser(userID);
     return getUserResultGroupRights(user, resutGroupID).isAllowedToViewResultGroup();
   }
 
@@ -1750,7 +1750,7 @@ public final class SecurityManager {
    * @return List of {@link MergeStatus} objects
    */
   public List getUserMergeStates(final int userID) {
-    final User user = userID == -1 ? (User) null : getUser(userID);
+    final User user = userID == -1 ? null : getUser(userID);
     final List statuses = MergeManager.getInstance().getMergeStatuses();
     for (final Iterator i = statuses.iterator(); i.hasNext();) {
       final MergeState state = (MergeState) i.next();
