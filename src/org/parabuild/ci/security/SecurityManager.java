@@ -1876,8 +1876,7 @@ public final class SecurityManager {
       final Integer userID = new Integer(user.getUserID());
       final Element element = cache.get(userID);
       if (element != null) {
-        final Boolean allowed = (Boolean) element.getValue();
-        return allowed;
+        return (Boolean) element.getValue();
       }
 
       // Calcualte access rights
