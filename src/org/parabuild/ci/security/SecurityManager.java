@@ -465,7 +465,7 @@ public final class SecurityManager {
   }
 
 
-  private String makeBuildCacheRegionName(final int activeBuildID) {
+  private static String makeBuildCacheRegionName(final int activeBuildID) {
     return BUILD_USER_RIHGTS_CACHE_NAME_PREFIX + activeBuildID;
   }
 
@@ -818,7 +818,7 @@ public final class SecurityManager {
   }
 
 
-  private User getUserByNameAndPassword(final String userName, final String digestedPassword) {
+  private static User getUserByNameAndPassword(final String userName, final String digestedPassword) {
     return (User) ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         return session.createQuery("from User as a"
@@ -1289,7 +1289,7 @@ public final class SecurityManager {
    * given ID does not exist return {@link
    * BuildConfig#ACCESS_PRIVATE}.
    */
-  private byte getBuildConfigAccess(final int activeBuildID) {
+  private static byte getBuildConfigAccess(final int activeBuildID) {
     // check if it is an non-null build
     if (activeBuildID == BuildConfig.UNSAVED_ID) {
       return BuildConfig.ACCESS_PRIVATE;
@@ -1561,7 +1561,7 @@ public final class SecurityManager {
    * @param resultGroupID int result group ID
    * @return {@link ResultGroupAccess} or null if not found
    */
-  private ResultGroupAccess getResultGroupAccess(final int groupID, final int resultGroupID) {
+  private static ResultGroupAccess getResultGroupAccess(final int groupID, final int resultGroupID) {
     return (ResultGroupAccess) ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         return session.createQuery("from ResultGroupAccess rga where rga.resultGroupID = ? and rga.groupID = ?")
@@ -1594,7 +1594,7 @@ public final class SecurityManager {
   }
 
 
-  private String makeResultCacheRegionName(final int resultGroupID) {
+  private static String makeResultCacheRegionName(final int resultGroupID) {
     return RESULT_USER_RIGHTS_CACHE_NAME_PREFIX + resultGroupID;
   }
 
@@ -1940,7 +1940,7 @@ public final class SecurityManager {
   }
 
 
-  private void invalidate(final Cache cache) throws IOException {
+  private static void invalidate(final Cache cache) throws IOException {
     if (cache != null) {
       cache.removeAll();
     }
