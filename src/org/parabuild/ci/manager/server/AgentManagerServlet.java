@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.manager.server;
 
+import org.apache.catalina.manager.ManagerServlet;
 import org.parabuild.ci.common.IoUtils;
 import org.parabuild.ci.configuration.ConfigurationFile;
 import org.parabuild.ci.configuration.SystemConstants;
@@ -31,7 +32,7 @@ import java.io.IOException;
  * @author Slava Imeshev
  * @since May 22, 2009 9:51:04 PM
  */
-public final class AgentManagerServlet extends org.apache.catalina.manager.ManagerServlet {
+public final class AgentManagerServlet extends ManagerServlet {
 
   private static final long serialVersionUID = -3923303883456454357L;
 
