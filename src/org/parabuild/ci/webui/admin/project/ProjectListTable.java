@@ -63,7 +63,7 @@ public final class ProjectListTable extends AbstractFlatTable {
     setTitle("Project List");
     setWidth("100%");
     setGridColor(Pages.COLOR_PANEL_BORDER);
-    populate(SecurityManager.getInstance().getUserProjects(getTierletContext()));
+    populate(SecurityManager.getInstance().getUserProjects());
   }
 
 

@@ -64,6 +64,7 @@ import java.util.List;
 /**
  * Security manager
  */
+@SuppressWarnings("unchecked")
 public final class SecurityManager {
 
   private static final Log log = LogFactory.getLog(SecurityManager.class);
@@ -192,7 +193,6 @@ public final class SecurityManager {
   /**
    * Returns list of build statuses to be used in feeds.
    *
-   * @param userID
    * @return list of build statuses to be used in feeds.
    */
   public List getFeedBuildStatuses(final int userID) {
@@ -251,7 +251,6 @@ public final class SecurityManager {
    * Returns user associated with the session or null if user is
    * not logged in.
    *
-   * @param request
    * @return user associated with the session or null if user is
    *         not logged in.
    */
@@ -268,7 +267,6 @@ public final class SecurityManager {
    * Returns user associated with the context or null if user is
    * not logged in.
    *
-   * @param context
    * @return user associated with the session or null if user is
    *         not logged in.
    */
@@ -284,7 +282,6 @@ public final class SecurityManager {
    * Returns user ID associated with the context or
    * User.UNSAVED_ID if user is not logged in.
    *
-   * @param context
    * @return user associated with the session or null if user is
    *         not logged in.
    */
@@ -371,9 +368,8 @@ public final class SecurityManager {
       boolean allowedToDeleteResults = false;
       boolean allowedToActivateBuild = false;
       boolean allowedToViewBuild = true; // as it is a member of the group, it should be viewable
-      for (final Iterator i = groups.iterator(); i.hasNext();) {
-        final Group group = (Group) i.next();
-//        if (log.isDebugEnabled()) log.debug("group: " + group);
+      for (final Object groupObject : groups) {
+        final Group group = (Group) groupObject;
         allowedToCreateBuild |= group.isAllowedToCreateBuild();
         allowedToDeleteBuild |= group.isAllowedToDeleteBuild();
         allowedToStartBuild |= group.isAllowedToStartBuild();
@@ -544,7 +540,7 @@ public final class SecurityManager {
    * @param userPassword to check
    * @return boolean if exists
    */
-  public boolean administratorExists(final String userName, final String userPassword) throws NoSuchAlgorithmException {
+  boolean administratorExists(final String userName, final String userPassword) throws NoSuchAlgorithmException {
     final User user = getUserByNameAndPassword(userName, StringUtils.digest(userPassword));
     return user != null && user.isAdmin();
   }
@@ -674,7 +670,7 @@ public final class SecurityManager {
    * @param userPassword to login
    * @return User, null if not found
    */
-  public User loginAdministrator(final String userName, final String userPassword) throws NoSuchAlgorithmException {
+  User loginAdministrator(final String userName, final String userPassword) throws NoSuchAlgorithmException {
     final String digestedPassword = StringUtils.digest(userPassword);
     return (User) ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
@@ -773,9 +769,9 @@ public final class SecurityManager {
         }
         return user;
       }
-    } catch (final NoSuchAlgorithmException e) {
-      throw new FatalConfigurationException(e);
-    } catch (final NamingException e) {
+    } catch (final RuntimeException e) {
+      throw e;
+    } catch (final Exception e) {
       throw new FatalConfigurationException(e);
     }
   }
@@ -784,8 +780,6 @@ public final class SecurityManager {
   /**
    * Helper method to authenticate using LDAP/JNDI authenticator.
    *
-   * @param userName
-   * @param userPassword
    */
   private JNDIUser authenticateUsingLDAP(final String userName, final String userPassword) throws NamingException {
     return createJNDIAuthenticator().authenticate(userName, userPassword);
@@ -925,7 +919,6 @@ public final class SecurityManager {
 
 
   /**
-   * @param groupID
    * @return List of users who are members of the given group.
    */
   public List getGroupUsers(final int groupID) {
@@ -989,7 +982,6 @@ public final class SecurityManager {
    * } objects associated with the given active build
    * configuration.
    *
-   * @param activeBuildConfigID
    * @return {@link List} of {@link GroupBuildAccess
    *         } objects associated with the given buildID.
    */
@@ -1006,11 +998,9 @@ public final class SecurityManager {
 
 
   /**
-   * @param groupID
-   * @param activeBuildID
    * @return GroupBuildAccess by groupID and buildID
    */
-  public GroupBuildAccess getGroupBuildAccess(final int groupID, final int activeBuildID) {
+  GroupBuildAccess getGroupBuildAccess(final int groupID, final int activeBuildID) {
     return (GroupBuildAccess) ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         return session.createQuery("from GroupBuildAccess gba where gba.buildID = ? and gba.groupID = ?")
@@ -1024,15 +1014,15 @@ public final class SecurityManager {
 
 
   /**
-   * Saves list of build attributes
+   * Saves list of user properties.
    *
-   * @param settings
+   * @param userProperties user properties to save.
    */
-  public void saveUserProperties(final int userID, final List settings) {
+  public void saveUserProperties(final int userID, final List userProperties) {
     ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
-        for (final Iterator i = settings.iterator(); i.hasNext();) {
-          final UserProperty up = (UserProperty) i.next();
+        for (final Object setting : userProperties) {
+          final UserProperty up = (UserProperty) setting;
           if (up.getUserID() == User.UNSAVED_ID) {
             up.setUserID(userID);
           }
@@ -1078,7 +1068,7 @@ public final class SecurityManager {
       cm.validateIsActiveBuildID(groupBuildAccess.getBuildID());
     }
     return (GroupBuildAccess) ConfigurationManager.runInHibernate(new TransactionCallback() {
-      public Object runInTransaction() throws Exception {
+      public Object runInTransaction() {
         cm.saveObject(groupBuildAccess);
         invalidateBuildRightSetCache(groupBuildAccess.getBuildID());
         return groupBuildAccess;
@@ -1101,7 +1091,6 @@ public final class SecurityManager {
   /**
    * Saves group
    *
-   * @param group
    */
   public Group save(final Group group) {
     return (Group) ConfigurationManager.runInHibernate(new TransactionCallback() {
@@ -1116,7 +1105,7 @@ public final class SecurityManager {
 
   public UserGroup save(final UserGroup userGroup) {
     return (UserGroup) ConfigurationManager.runInHibernate(new TransactionCallback() {
-      public Object runInTransaction() throws Exception {
+      public Object runInTransaction() {
         cm.saveObject(userGroup);
         invalidateRightSetCaches();
         return userGroup;
@@ -1149,8 +1138,7 @@ public final class SecurityManager {
     System.setProperty(SystemConstants.SYSTEM_PROPERTY_RELOAD_PRINCIPAL, "true");
     try {
       final String[] cacheNames = CacheManager.getInstance().getCacheNames();
-      for (int i = 0; i < cacheNames.length; i++) {
-        final String cacheName = cacheNames[i];
+      for (final String cacheName : cacheNames) {
         if (cacheName.startsWith(BUILD_USER_RIGHTS_CACHE_NAME_PREFIX)
                 || cacheName.startsWith(RESULT_USER_RIGHTS_CACHE_NAME_PREFIX)) {
           final Cache cache = CacheManager.getInstance().getCache(cacheName);
@@ -1185,7 +1173,7 @@ public final class SecurityManager {
   }
 
 
-  public void deleteGroupBuildAccess(final GroupBuildAccess buildGroup) {
+  void deleteGroupBuildAccess(final GroupBuildAccess buildGroup) {
     if (buildGroup != null) {
       ConfigurationManager.getInstance().deleteObject(buildGroup);
       invalidateBuildRightSetCache(buildGroup.getBuildID());
@@ -1268,7 +1256,7 @@ public final class SecurityManager {
 
 
   /**
-   * @param userID
+   * @param userID the user ID tp get refresh seconds.
    * @return refresh rate for the build status page.
    */
   public int getBuildStatusRefreshSecs(final int userID) {
@@ -1325,7 +1313,6 @@ public final class SecurityManager {
 
 
   /**
-   * @param tierletContext
    * @return true if user in the context can see the change list
    *         descriptions or false if cannot.
    */
@@ -1371,7 +1358,7 @@ public final class SecurityManager {
    * @return List of ResultGroup objects filtered accordingly to
    *         user rights.
    */
-  public List getUserResultGroups(final int userID) {
+  List getUserResultGroups(final int userID) {
     final List resultGroups = ResultGroupManager.getInstance().getResultGroups();
     for (final Iterator i = resultGroups.iterator(); i.hasNext();) {
       final ResultGroup resultGroup = (ResultGroup) i.next();
@@ -1391,7 +1378,7 @@ public final class SecurityManager {
    * @param resultGroupID int build ID
    * @return true if user can view build
    */
-  public boolean userCanViewResultGroup(final int userID, final int resultGroupID) {
+  boolean userCanViewResultGroup(final int userID, final int resultGroupID) {
     if (resultGroupID == -1) {
       return false;
     }
@@ -1457,8 +1444,8 @@ public final class SecurityManager {
       boolean allowedToUpdateResultGroup = false;
       boolean allowedToDeleteResultGroup = false;
       boolean allowedToViewResultGroup = true; // as it is a member of the group, it should be viewable
-      for (final Iterator i = groups.iterator(); i.hasNext();) {
-        final Group group = (Group) i.next();
+      for (final Object groupObject : groups) {
+        final Group group = (Group) groupObject;
 //        if (log.isDebugEnabled()) log.debug("group: " + group);
         allowedToCreateResultGroup |= group.isAllowedToCreateResultGroup();
         allowedToDeleteResultGroup |= group.isAllowedToDeleteResultGroup();
@@ -1632,7 +1619,6 @@ public final class SecurityManager {
    *
    * @param cacheRegionName to assign to the cache.
    * @return exist
-   * @throws CacheException
    */
   private Cache getAccessRightsCache(final String cacheRegionName) throws CacheException {
     final CacheManager cacheManager = CacheManager.getInstance();
@@ -1667,7 +1653,7 @@ public final class SecurityManager {
   }
 
 
-  public void invalidateResultRightsCache(final int resultGroupID) {
+  void invalidateResultRightsCache(final int resultGroupID) {
     System.setProperty(SystemConstants.SYSTEM_PROPERTY_RELOAD_PRINCIPAL, "true");
     try {
       invalidate(getResultGroupRightSetCache(resultGroupID));
@@ -1682,10 +1668,9 @@ public final class SecurityManager {
   /**
    * Returns list of projects filtered for the given user.
    *
-   * @param tierletContext
    * @return list of projects filtered for the given user.
    */
-  public List getUserProjects(final TierletContext tierletContext) {
+  public List getUserProjects() {
     return ProjectManager.getInstance().getProjects();
   }
 
@@ -1718,7 +1703,6 @@ public final class SecurityManager {
 
 
   /**
-   * @param tierletContext
    * @return true if a user in the context can see files in the change list.
    */
   public boolean userCanSeeChangeListFiles(final TierletContext tierletContext) {
@@ -1746,7 +1730,6 @@ public final class SecurityManager {
   /**
    * REVIEWME: simeshev@parabuilci.org -> implement
    *
-   * @param userID
    * @return List of {@link MergeStatus} objects
    */
   public List getUserMergeStates(final int userID) {
@@ -1767,8 +1750,6 @@ public final class SecurityManager {
    * calculates access rights buy combining similar from
    * both source and target builds.
    *
-   * @param user
-   * @param activeMergeID
    */
   public MergeRights getUserMergeRights(final User user, final int activeMergeID) {
     // NOTE: vimeshev - 2006-15-01 - combine merge rights from both builds
@@ -1791,7 +1772,6 @@ public final class SecurityManager {
 
 
   /**
-   * @param userID
    */
   public int getMergeStatusRefreshSecs(final int userID) {
     return getBuildStatusRefreshSecs(userID);
@@ -1836,9 +1816,6 @@ public final class SecurityManager {
   /**
    * Creates or sets user property.
    *
-   * @param userID
-   * @param name
-   * @param value
    */
   public void setUserProperty(final int userID, final String name, final boolean value) {
     UserProperty userProperty = getUserProperty(userID, name);
@@ -1855,8 +1832,6 @@ public final class SecurityManager {
   /**
    * Returns true if a user is allowed to see errors.
    *
-   * @param user
-   * @return
    */
   public boolean isAllowedToSeeErrors(final User user) {
     try {
@@ -1920,7 +1895,6 @@ public final class SecurityManager {
   /**
    * Returns true if user associated with the given context is an admin user.
    *
-   * @param tierletContext
    * @return true if user associated with the given context is an admin user. Otherwise returns false.
    */
   public boolean isAdmin(final TierletContext tierletContext) {

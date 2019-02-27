@@ -32,7 +32,7 @@ public interface BuildListService extends Service {
   /**
    * Returns collection of builds
    *
-   * @return
+   * @return the collection of builds managed by this build list service.
    */
   Collection getBuilds();
 
