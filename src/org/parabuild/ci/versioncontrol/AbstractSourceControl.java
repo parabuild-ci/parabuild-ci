@@ -39,27 +39,24 @@ import org.parabuild.ci.remote.AgentManager;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 public abstract class AbstractSourceControl implements SourceControl {
 
   private final Log LOG = LogFactory.getLog(AbstractSourceControl.class);
 
-  public static final String STRING_NO_SYNC_NOTE_AVAILABLE = "No information provided";
-
+  static final String STRING_NO_SYNC_NOTE_AVAILABLE = "No information provided";
   protected final ErrorManager errorManager = ErrorManagerFactory.getErrorManager();
   protected final ConfigurationManager configManager = ConfigurationManager.getInstance();
+  protected final int activeBuildID;
+  protected final int buildID;
 
   /**
    * Associates an agent hosts known to this version control with a hasToCleanup flag.
    */
-  private final Map agentHostCleanup = new HashMap(11);
-
-  protected final int activeBuildID;
-  protected final int buildID;
-  protected Map currentSettings = null;
-  private String checkoutDirectoryName = null;
+  private final Map<AgentHost, Boolean> agentHostCleanup = new HashMap<>(11);
+  private final String checkoutDirectoryName;
+  protected Map<String, SourceControlSetting> currentSettings;
   private AgentHost agentHost = null;
 
 
@@ -77,17 +74,29 @@ public abstract class AbstractSourceControl implements SourceControl {
 
 
   /**
-   * Sets agent host this source control should operate on.
-   * <p/>
-   * This method should be called first before any other method is called.
-   *
-   * @param agentHost this source control should operate on.
+   * @return maxim change list size. If a change list bigger than
+   * this size it will be cut.
    */
-  public void setAgentHost(final AgentHost agentHost) {
-    if (this.agentHost != null && !agentHost.equals(this.agentHost) && isCleanCheckoutOnAgentChange()) {
-      setHasToCleanUp(agentHost, true);
-    }
-    this.agentHost = agentHost;
+  public static final int maxChangeListSize() {
+    return SystemConfigurationManagerFactory.getManager().getMaxChangeListSize();
+  }
+
+
+  /**
+   * @return initial number of change lists. It is number of
+   * change lists to retrieve when an automatic build runs
+   * first time.
+   */
+  public static final int initialNumberOfChangeLists() {
+    return SystemConfigurationManagerFactory.getManager().getInitialNumberOfChangeLists();
+  }
+
+
+  /**
+   * @return maximum number of change lists.
+   */
+  public static final int maxNumberOfChangeLists() {
+    return SystemConfigurationManagerFactory.getManager().getMaxNumberOfChangeLists();
   }
 
 
@@ -101,7 +110,7 @@ public abstract class AbstractSourceControl implements SourceControl {
    * will call checkoutLatest() to populate build dir.
    *
    * @return build directory is initialized according to build
-   *         configuration.
+   * configuration.
    * @see AbstractSourceControl#initLocalCopyIfNecessary()
    * @see SourceControl#checkoutLatest()
    */
@@ -110,8 +119,8 @@ public abstract class AbstractSourceControl implements SourceControl {
 
   /**
    * @return Map with a shell variable name as a key and variable
-   *         value as value. The shell variables will be made
-   *         available to the build commands.
+   * value as value. The shell variables will be made
+   * available to the build commands.
    * @see BuildScriptGenerator#addVariables(Map)
    */
   public abstract Map getShellVariables() throws IOException, AgentFailureException;
@@ -128,7 +137,8 @@ public abstract class AbstractSourceControl implements SourceControl {
    * customer to sync to a given changelist. This is a default
    * implementation.
    *
-   * @param changeListID
+   * @param changeListID the ID of the change list to generate text description of a command to be used by a customer
+   *                     to sync to a given changelist.
    */
   public String getSyncCommandNote(final int changeListID) throws AgentFailureException {
     return STRING_NO_SYNC_NOTE_AVAILABLE;
@@ -162,10 +172,10 @@ public abstract class AbstractSourceControl implements SourceControl {
    * @param settingName  to retrieve
    * @param defaultValue if setting is not provided
    * @return setting value, or defaultValue if not found or
-   *         blank
+   * blank
    */
   public final String getSettingValue(final String settingName, final String defaultValue) {
-    final SourceControlSetting setting = (SourceControlSetting) currentSettings.get(settingName);
+    final SourceControlSetting setting = currentSettings.get(settingName);
     if (setting == null || StringUtils.isBlank(setting.getPropertyValue())) {
       return defaultValue;
     }
@@ -180,7 +190,7 @@ public abstract class AbstractSourceControl implements SourceControl {
    * @param settingName  to retrieve
    * @param defaultValue if setting is not provided
    * @return setting value, or default value if not found or not
-   *         set.
+   * set.
    */
   public final int getSettingValue(final String settingName, final int defaultValue) {
     return Integer.parseInt(getSettingValue(settingName, Integer.toString(defaultValue)));
@@ -194,7 +204,7 @@ public abstract class AbstractSourceControl implements SourceControl {
    * @param settingName  to retrieve
    * @param defaultValue if setting is not provided
    * @return setting value, or default value if not found or not
-   *         set.
+   * set.
    */
   public final byte getSettingValue(final String settingName, final byte defaultValue) {
     return Byte.parseByte(getSettingValue(settingName, Byte.toString(defaultValue)));
@@ -244,7 +254,7 @@ public abstract class AbstractSourceControl implements SourceControl {
    * AbstractSourceControl may overwrite this method to deliver
    * specific cleanup logic.
    *
-   * @throws IOException
+   * @throws IOException if an I/O error occurred.
    * @see Agent#emptyCheckoutDir
    */
   public boolean cleanupLocalCopy() throws IOException, AgentFailureException {
@@ -280,7 +290,7 @@ public abstract class AbstractSourceControl implements SourceControl {
    * Initializes local copy if necessary.
    * <p/>
    * Certain VCS commands, expect local copy to be present to
-   * operate successfuly. This method will get the latest from
+   * operate successfully. This method will get the latest from
    * VCS thus preparing it for further operations.
    */
   protected final void initLocalCopyIfNecessary() throws BuildException, IOException, CommandStoppedException, AgentFailureException {
@@ -326,38 +336,11 @@ public abstract class AbstractSourceControl implements SourceControl {
 
 
   /**
-   * @return maxim change list size. If a change list bigger than
-   *         this size it will be cut.
-   */
-  public static final int maxChangeListSize() {
-    return SystemConfigurationManagerFactory.getManager().getMaxChangeListSize();
-  }
-
-
-  /**
-   * @return initial number of change lists. It is number of
-   *         change lists to retrieve when an automatic build runs
-   *         first time.
-   */
-  public static final int initialNumberOfChangeLists() {
-    return SystemConfigurationManagerFactory.getManager().getInitialNumberOfChangeLists();
-  }
-
-
-  /**
-   * @return maximum number of change lists.
-   */
-  public static final int maxNumberOfChangeLists() {
-    return SystemConfigurationManagerFactory.getManager().getMaxNumberOfChangeLists();
-  }
-
-
-  /**
    * Creates a agent that takes in account current
    * checkout directory setting.
    *
    * @return agent that takes in account current
-   *         checkout directory setting.
+   * checkout directory setting.
    */
   protected final Agent getCheckoutDirectoryAwareAgent() throws IOException {
     final String checkoutDirTemplate = checkoutDirectoryName == null ? getSettingValue(SourceControlSetting.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE) : checkoutDirectoryName;
@@ -378,10 +361,25 @@ public abstract class AbstractSourceControl implements SourceControl {
 
 
   /**
+   * Sets agent host this source control should operate on.
+   * <p/>
+   * This method should be called first before any other method is called.
+   *
+   * @param agentHost this source control should operate on.
+   */
+  public void setAgentHost(final AgentHost agentHost) {
+    if (this.agentHost != null && !agentHost.equals(this.agentHost) && isCleanCheckoutOnAgentChange()) {
+      setHasToCleanUp(agentHost, true);
+    }
+    this.agentHost = agentHost;
+  }
+
+
+  /**
    * {@inheritDoc}
    */
   public Map getBuildRunAttributes() throws IOException, AgentFailureException {
-    return Collections.EMPTY_MAP;
+    return Collections.emptyMap();
   }
 
 
@@ -390,8 +388,8 @@ public abstract class AbstractSourceControl implements SourceControl {
    */
   protected final void setHasToCleanUp() {
     // Set cleanup flags for each host to true
-    for (final Iterator iterator = agentHostCleanup.keySet().iterator(); iterator.hasNext(); ) {
-      setHasToCleanUp((AgentHost) iterator.next(), true);
+    for (final Object agentHost : agentHostCleanup.keySet()) {
+      setHasToCleanUp((AgentHost) agentHost, true);
     }
   }
 
@@ -399,8 +397,8 @@ public abstract class AbstractSourceControl implements SourceControl {
   /**
    * Sets a cleanup flag for a given host.
    *
-   * @param agentHost
-   * @param hasToCleanup
+   * @param agentHost    agent's host
+   * @param hasToCleanup indicates if the build workplace has to cleanup.
    */
   private void setHasToCleanUp(final AgentHost agentHost, final boolean hasToCleanup) {
     agentHostCleanup.put(agentHost, Boolean.valueOf(hasToCleanup));
@@ -414,12 +412,7 @@ public abstract class AbstractSourceControl implements SourceControl {
    * @return true if a given agent host has to clean up it's workspace.
    */
   private boolean isHasToCleanup(final AgentHost agentHost) {
-    Boolean hasToCleanUp = (Boolean) agentHostCleanup.get(agentHost);
-    if (hasToCleanUp == null) {
-      hasToCleanUp = Boolean.FALSE;
-      agentHostCleanup.put(agentHost, hasToCleanUp);
-    }
-    return hasToCleanUp;
+    return agentHostCleanup.computeIfAbsent(agentHost, k -> Boolean.FALSE);
   }
 
 
@@ -434,7 +427,7 @@ public abstract class AbstractSourceControl implements SourceControl {
   }
 
 
-  protected final String getBuildName() {
+  private final String getBuildName() {
     final BuildConfig config = configManager.getBuildConfiguration(buildID);
     if (null != config) {
       return config.getBuildName();
@@ -449,10 +442,10 @@ public abstract class AbstractSourceControl implements SourceControl {
    *
    * @return resolved source control settings.
    */
-  protected final Map getResolvedSettings() {
+  protected final Map<String, SourceControlSetting> getResolvedSettings() {
 
     // Try to determine agent host name
-    String agentHostName = null;
+    final String agentHostName;
     if (agentHost == null) {
 
       agentHostName = "null";
@@ -466,9 +459,7 @@ public abstract class AbstractSourceControl implements SourceControl {
         throw e;
       } catch (final Exception e) {
 
-        final IllegalStateException ise = new IllegalStateException(e.toString());
-        ise.initCause(e);
-        throw ise;
+        throw new IllegalStateException(e.toString(), e);
       }
     }
 
@@ -479,9 +470,9 @@ public abstract class AbstractSourceControl implements SourceControl {
     final Map rawSettings = configManager.getEffectiveSourceControlSettingsAsMap(buildID);
 
     // Resolve
-    final Map resolvedSettings = new HashMap(rawSettings.size());
-    for (final Iterator iter = rawSettings.values().iterator(); iter.hasNext(); ) {
-      final SourceControlSetting setting = (SourceControlSetting) iter.next();
+    final Map<String, SourceControlSetting> resolvedSettings = new HashMap<>(rawSettings.size());
+    for (final Object sourceControlSettingObject : rawSettings.values()) {
+      final SourceControlSetting setting = (SourceControlSetting) sourceControlSettingObject;
       final String name = setting.getPropertyName();
       final String value = setting.getPropertyValue();
       if (!StringUtils.isBlank(value)) {
@@ -490,7 +481,7 @@ public abstract class AbstractSourceControl implements SourceControl {
           final String resolvedValue = resolver.resolve(value);
           setting.setPropertyValue(resolvedValue);
         } catch (final ValidationException e) {
-          final org.parabuild.ci.error.Error error = new Error("Problem resolving source control setting: " + name + ", value: " + value);
+          final Error error = new Error("Problem resolving source control setting: " + name + ", value: " + value);
           error.setBuildID(activeBuildID);
           error.setSubsystemName(Error.ERROR_SUBSYSTEM_SCM);
           errorManager.reportSystemError(error);
@@ -505,9 +496,9 @@ public abstract class AbstractSourceControl implements SourceControl {
   /**
    * Replaces current settings with new settings.
    *
-   * @param newSettings
+   * @param newSettings the new settings to use.
    */
-  protected final void replaceCurrentSettings(final Map newSettings) {
+  protected final void replaceCurrentSettings(final Map<String, SourceControlSetting> newSettings) {
     currentSettings.clear();
     currentSettings.putAll(newSettings);
   }
