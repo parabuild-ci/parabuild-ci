@@ -53,7 +53,7 @@ public abstract class AbstractArchiveRetentionHandler {
    * @throws IllegalStateException if activeBuildID is not an
    *                               active build ID
    */
-  protected AbstractArchiveRetentionHandler(final int activeBuildID, final File buildLogDir, final String buildLogPrefix) {
+  AbstractArchiveRetentionHandler(final int activeBuildID, final File buildLogDir, final String buildLogPrefix) {
     this.buildLogDir = (File) ArgumentValidator.validateArgumentNotNull(buildLogDir, "build log archive directory");
     this.buildLogPrefix = ArgumentValidator.validateArgumentNotBlank(buildLogPrefix, "build log archive prefix");
     this.activeBuildID = ArgumentValidator.validateBuildIDInitialized(activeBuildID);
@@ -82,7 +82,7 @@ public abstract class AbstractArchiveRetentionHandler {
   }
 
 
-  protected final void reportCutOffTimeWasNotSet() {
+  final void reportCutOffTimeWasNotSet() {
     final ErrorManager em = ErrorManagerFactory.getErrorManager();
     final Error error = new Error("Archive clean up was not performed - cut off time to clean up archive was not set.");
     error.setBuildID(activeBuildID);
@@ -156,12 +156,12 @@ public abstract class AbstractArchiveRetentionHandler {
   }
 
 
-  protected File getBuildLogDir() {
+  File getBuildLogDir() {
     return buildLogDir;
   }
 
 
-  protected int getActiveBuildID() {
+  int getActiveBuildID() {
     return activeBuildID;
   }
 }
