@@ -473,8 +473,8 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * @return String List of relative file names constituting an
    *         archive dir, single level.
    */
-  private List getArchiveEntries(final File archivePath) throws IOException {
-    final List result = new ArrayList(11);
+  private List<ArchiveEntry> getArchiveEntries(final File archivePath) throws IOException {
+    final List<ArchiveEntry> result = new ArrayList<>(11);
     if (archivePath.exists()) {
       if (archivePath.isDirectory()) {
         // try file system archive dir.
@@ -544,7 +544,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * @param stepRun
    */
   public List getLogWindowLines(final StepRun stepRun) {
-    final List result = new ArrayList(200);
+    final List<String> result = new ArrayList<>(200);
     BufferedReader br = null;
     try {
       // get log
