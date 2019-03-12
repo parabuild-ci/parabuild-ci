@@ -55,7 +55,7 @@ public final class PackedLogInputStream extends InputStream {
   /**
    * Lazily initializes wrapped ZipInputStream.
    *
-   * @return
+   * @return ZipInputStream wrapped in an InputStream.
    */
   private InputStream getDelegate() throws IOException {
     checkNotClosed();

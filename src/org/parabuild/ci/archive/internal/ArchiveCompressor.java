@@ -38,7 +38,7 @@ public final class ArchiveCompressor {
   private static final Log log = LogFactory.getLog(ArchiveCompressor.class); // NOPMD
 
 
-  public static final int DEFAULT_COMPRESS_DAYS = 30;
+  private static final int DEFAULT_COMPRESS_DAYS = 30;
   public static final String ZIP_SUFFIX = ".zip";
   public static final int ZIP_SUFFIX_LENGTH = ZIP_SUFFIX.length();
 
@@ -92,7 +92,7 @@ public final class ArchiveCompressor {
       /**
        * Packs file or dir.
        *
-       * @param pathname
+       * @param pathname a name of a directory or a file to compress.
        */
       private void compress(final File pathname) throws IOException {
         final String zippedName = pathname.getName() + ZIP_SUFFIX;

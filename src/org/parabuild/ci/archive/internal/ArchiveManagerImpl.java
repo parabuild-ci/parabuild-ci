@@ -57,11 +57,6 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * @noinspection UNUSED_SYMBOL, UnusedDeclaration
    */
   private static final Log LOG = LogFactory.getLog(ArchiveManagerImpl.class); // NOPMD
-
-  private File buildLogDir = null;
-  private File buildResultDir = null;
-  private int activeBuildID = BuildConfig.UNSAVED_ID;
-
   /**
    * @noinspection StaticNonFinalField
    */
@@ -71,6 +66,9 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    */
   private static int resultFileStepSource = 0;
   private final ConfigurationManager cm = ConfigurationManager.getInstance();
+  private File buildLogDir = null;
+  private File buildResultDir = null;
+  private int activeBuildID = BuildConfig.UNSAVED_ID;
 
 
   public ArchiveManagerImpl(final int buildID) {
@@ -104,7 +102,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * given fileName.
    *
    * @return fully qualified build sequence result file from
-   *         given fileName.
+   * given fileName.
    */
   public File fileNameToResultPath(final String archiveFileName) throws IOException {
     return new File(getBuildResultDir(), archiveFileName);
@@ -115,7 +113,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * Creates a new build sequence log file name. It's guaranteed
    * the the returned file will have a distinct name.
    *
-   * @param sequence
+   * @param sequence the build step to generate the new log name for.
    */
   public String makeNewStepLogFileName(final BuildSequence sequence) {
     synchronized (ArchiveManagerImpl.class) {
@@ -243,8 +241,8 @@ public final class ArchiveManagerImpl implements ArchiveManager {
 
   /**
    * @return File main build result directory. The main result
-   *         directory is a directory where build runner stores
-   *         the build results to.
+   * directory is a directory where build runner stores
+   * the build results to.
    */
   public File getResultDir() throws IOException {
     return getBuildResultDir();
@@ -270,8 +268,8 @@ public final class ArchiveManagerImpl implements ArchiveManager {
 
   /**
    * @return File main build log directory. The main log
-   *         directory is a directory where build runner wrtites
-   *         the buin build log to.
+   * directory is a directory where build runner wrtites
+   * the buin build log to.
    */
   public File getBuildLogDir() throws IOException {
     IoUtils.createDirs(buildLogDir);
@@ -283,7 +281,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * Returns input stream for an archived log. This method is
    * valid for single-file logs.
    *
-   * @param stepLog
+   * @param stepLog the descriptor of a step log to create an input stream of the archived log for.
    * @return null if log does not exist.
    * @throws IllegalArgumentException if given log is not a
    *                                  single-file log.
@@ -331,7 +329,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * Returns input stream for an archived log. This method is
    * valid for multifile logs.
    *
-   * @param stepLog
+   * @param stepLog the descriptor of a step log to create an input stream of the archived log for.
    * @return null if log does not exist.
    * @throws IllegalArgumentException if given log is not a
    *                                  multifile log.
@@ -355,7 +353,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * Returns input stream for an archived build result. This
    * method is valid for single-file results.
    *
-   * @param stepResult
+   * @param stepResult the descriptor of a step result to create an input stream for.
    * @return null if result does not exist.
    * @throws IllegalArgumentException if given log is not a
    *                                  single-file log.
@@ -382,7 +380,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * Returns input stream for an archived build result. This
    * method is valid for multifile results.
    *
-   * @param stepResult
+   * @param stepResult the descriptor of a step result to create an input stream for.
    * @return null if result does not exist.
    * @throws IllegalArgumentException if given log is not a
    *                                  multifile log.
@@ -405,9 +403,9 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * @param archivedEntityHome fully qualified path to arhive
    *                           entity. An example of the arhive entity is build log or
    *                           build result.
-   * @param inArchiveFileName
+   * @param inArchiveFileName  the name of the archive file.
    * @return
-   * @throws FileNotFoundException
+   * @throws FileNotFoundException if the give archive entity doesn't exist.
    */
   private InputStream getArchivedEntityInputStream(final File archivedEntityHome, final String inArchiveFileName) throws IOException {
     if (archivedEntityHome.exists()) {
@@ -434,9 +432,8 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * dir. The list is one level only. Valid only for dir-type
    * logs.
    *
-   * @param stepLog
-   * @return list of {@link ArchiveEntry} constituting an
-   *         archive dir.
+   * @param stepLog the descriptor of a step log to get the list of entries for.
+   * @return list of {@link ArchiveEntry} constituting an archive dir.
    */
   public List getArchivedLogEntries(final StepLog stepLog) throws IOException {
     return getArchiveEntries(getArchivedLogHome(stepLog));
@@ -457,9 +454,9 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * dir. The list is one level only. Valid only for dir-type
    * logs.
    *
-   * @param stepResult
+   * @param stepResult for which to return the list of relative file names constituting an archive dir.
    * @return list of {@link ArchiveEntry} constituting an archive
-   *         dir, single level.
+   * dir, single level.
    */
   public List getArchivedResultEntries(final StepResult stepResult) throws IOException {
     return getArchiveEntries(getArchivedResultHome(stepResult));
@@ -469,9 +466,9 @@ public final class ArchiveManagerImpl implements ArchiveManager {
   /**
    * Lists entries for a given arichive path.
    *
-   * @param archivePath
+   * @param archivePath the path to the archive to list the entries of.
    * @return String List of relative file names constituting an
-   *         archive dir, single level.
+   * archive dir, single level.
    */
   private List<ArchiveEntry> getArchiveEntries(final File archivePath) throws IOException {
     final List<ArchiveEntry> result = new ArrayList<>(11);
@@ -515,7 +512,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
   /**
    * Returns arhived item's path, either direct or compressed.
    *
-   * @param archivedLogHome
+   * @param archivedLogHome the path to the archive home.
    * @return path or null if path doesn't exist
    * @see #deleteLog
    * @see #deleteResult
@@ -541,7 +538,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
   /**
    * Returns list of log lines
    *
-   * @param stepRun
+   * @param stepRun the step run to return the list of log lines for.
    */
   public List getLogWindowLines(final StepRun stepRun) {
     final List<String> result = new ArrayList<>(200);
