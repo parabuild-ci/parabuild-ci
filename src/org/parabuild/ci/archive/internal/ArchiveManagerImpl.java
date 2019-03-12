@@ -66,9 +66,9 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    */
   private static int resultFileStepSource = 0;
   private final ConfigurationManager cm = ConfigurationManager.getInstance();
-  private File buildLogDir = null;
-  private File buildResultDir = null;
-  private int activeBuildID = BuildConfig.UNSAVED_ID;
+  private final File buildLogDir;
+  private final File buildResultDir;
+  private int activeBuildID;
 
 
   public ArchiveManagerImpl(final int buildID) {
