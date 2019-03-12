@@ -57,6 +57,12 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * @noinspection UNUSED_SYMBOL, UnusedDeclaration
    */
   private static final Log LOG = LogFactory.getLog(ArchiveManagerImpl.class); // NOPMD
+
+  /**
+   * A class-wide semaphore.
+   */
+  private static final Object LOCK = new Object();
+
   /**
    * @noinspection StaticNonFinalField
    */
@@ -116,7 +122,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * @param sequence the build step to generate the new log name for.
    */
   public String makeNewStepLogFileName(final BuildSequence sequence) {
-    synchronized (ArchiveManagerImpl.class) {
+    synchronized (LOCK) {
       logFileStepSource++;
       return getBuildLogPrefix() + 's' + sequence.getSequenceID()
               + '_' + logFileStepSource + System.currentTimeMillis() + ".log";
@@ -132,7 +138,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * name.
    */
   public String makeNewLogFileNameOnly() {
-    synchronized (ArchiveManagerImpl.class) {
+    synchronized (LOCK) {
       logFileStepSource++;
       return getBuildLogPrefix()
               + 'c' + logFileStepSource + System.currentTimeMillis() + ".log";
@@ -148,7 +154,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * name.
    */
   public String makeNewResultFileNameOnly() {
-    synchronized (ArchiveManagerImpl.class) {
+    synchronized (LOCK) {
       resultFileStepSource++;
       return getBuildResultPrefix()
               + 'c' + resultFileStepSource + System.currentTimeMillis() + ".res";
