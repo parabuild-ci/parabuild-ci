@@ -100,7 +100,7 @@ public abstract class AbstractArchiveRetentionHandler {
     if (days == null) {
       return; // not set
     }
-    setCurrentCutOffDays(days.intValue());
+    setCurrentCutOffDays(days);
   }
 
 
