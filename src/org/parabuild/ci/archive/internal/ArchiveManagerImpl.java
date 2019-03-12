@@ -393,7 +393,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
   /**
    * Helper method.
    */
-  private InputStream throwIllegalPathType(final StepResult stepResult) {
+  private static InputStream throwIllegalPathType(final StepResult stepResult) {
     throw new IllegalArgumentException("Can not get result for type "
             + stepResult.getPathType() + ". Result path:" + stepResult.getPath());
   }
@@ -407,7 +407,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * @return
    * @throws FileNotFoundException if the give archive entity doesn't exist.
    */
-  private InputStream getArchivedEntityInputStream(final File archivedEntityHome, final String inArchiveFileName) throws IOException {
+  private static InputStream getArchivedEntityInputStream(final File archivedEntityHome, final String inArchiveFileName) throws IOException {
     if (archivedEntityHome.exists()) {
       // file exists return nomal InputStream
       final File file = new File(archivedEntityHome, inArchiveFileName);
@@ -470,7 +470,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * @return String List of relative file names constituting an
    * archive dir, single level.
    */
-  private List<ArchiveEntry> getArchiveEntries(final File archivePath) throws IOException {
+  private static List<ArchiveEntry> getArchiveEntries(final File archivePath) throws IOException {
     final List<ArchiveEntry> result = new ArrayList<>(11);
     if (archivePath.exists()) {
       if (archivePath.isDirectory()) {
@@ -517,7 +517,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * @see #deleteLog
    * @see #deleteResult
    */
-  private File getDeleteablePath(final File archivedLogHome) {
+  private static File getDeleteablePath(final File archivedLogHome) {
 
     // check if direct home exists.
     if (archivedLogHome.exists()) {
