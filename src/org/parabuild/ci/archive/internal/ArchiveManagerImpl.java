@@ -137,7 +137,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
     synchronized (ArchiveManagerImpl.class) {
       logFileStepSource++;
       return getBuildLogPrefix()
-              + 'c' + Integer.toString(logFileStepSource) + System.currentTimeMillis() + ".log";
+              + 'c' + logFileStepSource + System.currentTimeMillis() + ".log";
     }
   }
 
@@ -153,7 +153,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
     synchronized (ArchiveManagerImpl.class) {
       resultFileStepSource++;
       return getBuildResultPrefix()
-              + 'c' + Integer.toString(resultFileStepSource) + System.currentTimeMillis() + ".res";
+              + 'c' + resultFileStepSource + System.currentTimeMillis() + ".res";
     }
   }
 
