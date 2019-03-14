@@ -62,13 +62,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    */
   private static final Object LOCK = new Object();
 
-  /**
-   * @noinspection StaticNonFinalField
-   */
   private static int logFileStepSource = 0;
-  /**
-   * @noinspection StaticNonFinalField
-   */
   private static int resultFileStepSource = 0;
   private final ConfigurationManager cm = ConfigurationManager.getInstance();
   private final File buildLogDir;
@@ -584,7 +578,6 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * allow this. An expiration date is selected as a maximum of
    * build settings and system-wide minimum settings.
    *
-   * @noinspection ControlFlowStatementWithoutBraces
    */
   public void deleteExpiredBuildResults() throws IOException {
 
