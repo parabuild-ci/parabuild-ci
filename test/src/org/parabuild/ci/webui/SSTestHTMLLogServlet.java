@@ -53,7 +53,7 @@ public class SSTestHTMLLogServlet extends ServersideTestCase {
   public void test_returnsArchivedIndexForHTMLFileLog() throws Exception {
     final ArchiveCompressor packingHandler = new ArchiveCompressor(TEST_BUILD_ID, archiveManager.getBuildLogDir(), "");
     packingHandler.forceCutOffTimeMillis(System.currentTimeMillis());
-    packingHandler.compressExpiredArhiveEntities();
+    packingHandler.compressExpiredArchiveEntities();
     validate_returnsIndexForHTMLFileLog();
   }
 
@@ -66,7 +66,7 @@ public class SSTestHTMLLogServlet extends ServersideTestCase {
   public void test_returnsArchivedIndexForHTMLDir() throws Exception {
     final ArchiveCompressor packingHandler = new ArchiveCompressor(TEST_BUILD_ID, archiveManager.getBuildLogDir(), "");
     packingHandler.forceCutOffTimeMillis(System.currentTimeMillis());
-    packingHandler.compressExpiredArhiveEntities();
+    packingHandler.compressExpiredArchiveEntities();
     validate_returnsIndexForHTMLDir();
   }
 

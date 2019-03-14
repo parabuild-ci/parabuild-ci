@@ -53,7 +53,7 @@ public final class ResultRetentionHandler extends AbstractArchiveRetentionHandle
 
 
   /**
-   * @return cut off days stored in persistant build
+   * @return cut off days stored in persistent build
    * configuration or null if not configured.
    */
   protected Integer getConfiguredCutOffDays() {

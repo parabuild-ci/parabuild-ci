@@ -29,7 +29,7 @@ import java.io.FileFilter;
 import java.io.IOException;
 
 /**
- * This class is reposnsible for packing (zipping) expired build
+ * This class is responsible for packing (zipping) expired build
  * logs.
  */
 public final class ArchiveCompressor {
@@ -57,16 +57,16 @@ public final class ArchiveCompressor {
    */
   public ArchiveCompressor(final int buildID, final File archiveDir, final String archivableNamePrefix) {
     this.archiveDir = (File)ArgumentValidator.validateArgumentNotNull(archiveDir, "archive dir");
-    this.archivableNamePrefix = (String)ArgumentValidator.validateArgumentNotNull(archivableNamePrefix, "archiveable name prefix");
+    this.archivableNamePrefix = (String)ArgumentValidator.validateArgumentNotNull(archivableNamePrefix, "archivable name prefix");
     this.buildID = ArgumentValidator.validateBuildIDInitialized(buildID);
     this.recalculateCurrentCutOffTime();
   }
 
 
   /**
-   * Packs the arhive entities.
+   * Packs the archive entities.
    */
-  public void compressExpiredArhiveEntities() {
+  public void compressExpiredArchiveEntities() {
 //    if (log.isDebugEnabled()) log.debug("cutOffTime: " + cutOffTime);
     archiveDir.listFiles(new FileFilter() {
       public boolean accept(final File pathname) {
@@ -98,7 +98,7 @@ public final class ArchiveCompressor {
         final String zippedName = pathname.getName() + ZIP_SUFFIX;
         final String zippedPath = pathname.getParent();
         final File zippedFile = new File(zippedPath, zippedName);
-//        if (log.isDebugEnabled()) log.debug("paking pathname: " + pathname);
+//        if (log.isDebugEnabled()) log.debug("packing pathname: " + pathname);
 //        if (log.isDebugEnabled()) log.debug("   to          : " + zippedFile);
         if (pathname.isFile()) {
           IoUtils.zipFile(pathname, zippedFile);
@@ -133,7 +133,7 @@ public final class ArchiveCompressor {
    * This method overwrites cut of time received from database
    * with the given value.
    *
-   * @param cutOffTime time to set in millisecinds.
+   * @param cutOffTime time to set in milliseconds.
    */
   public void forceCutOffTimeMillis(final long cutOffTime) {
     this.cutOffTime = cutOffTime;

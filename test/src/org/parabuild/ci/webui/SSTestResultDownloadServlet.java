@@ -65,7 +65,7 @@ public class SSTestResultDownloadServlet extends ServersideTestCase {
     createDirectoryInArchive();
     final ArchiveCompressor compressor = new ArchiveCompressor(TEST_BUILD_ID, am.getResultDir(), "");
     compressor.forceCutOffTimeMillis(System.currentTimeMillis());
-    compressor.compressExpiredArhiveEntities();
+    compressor.compressExpiredArchiveEntities();
     validate_singleFileResultAvailable();
   }
 
@@ -79,7 +79,7 @@ public class SSTestResultDownloadServlet extends ServersideTestCase {
   public void test_compressedDirResultAvaibale() throws Exception {
     final ArchiveCompressor compressor = new ArchiveCompressor(TEST_BUILD_ID, am.getResultDir(), "");
     compressor.forceCutOffTimeMillis(System.currentTimeMillis());
-    compressor.compressExpiredArhiveEntities();
+    compressor.compressExpiredArchiveEntities();
     validate_returnsDirResultAvaibale();
   }
 

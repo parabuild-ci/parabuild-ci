@@ -58,7 +58,7 @@ public abstract class AbstractArchiveRetentionHandler {
     this.buildLogPrefix = ArgumentValidator.validateArgumentNotBlank(buildLogPrefix, "build log archive prefix");
     this.activeBuildID = ArgumentValidator.validateBuildIDInitialized(activeBuildID);
 
-    // paranoid validation - archive rentention handler always works
+    // paranoid validation - archive retention handler always works
     // using current build config
     ConfigurationManager.getInstance().validateIsActiveBuildID(activeBuildID);
   }
@@ -105,7 +105,7 @@ public abstract class AbstractArchiveRetentionHandler {
 
 
   /**
-   * @return cut off days stored in persistant build
+   * @return cut off days stored in persistent build
    *         configuration.
    */
   protected abstract Integer getConfiguredCutOffDays();

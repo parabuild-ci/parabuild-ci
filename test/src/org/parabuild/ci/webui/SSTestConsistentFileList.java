@@ -102,7 +102,7 @@ public class SSTestConsistentFileList extends ServersideTestCase {
   public void test_listsPacked() throws IOException {
     final ArchiveCompressor packingHandler = new ArchiveCompressor(TEST_BUILD_ID, archiveManager.getBuildLogDir(), TEST_PREFIX);
     packingHandler.forceCutOffTimeMillis(System.currentTimeMillis());
-    packingHandler.compressExpiredArhiveEntities();
+    packingHandler.compressExpiredArchiveEntities();
     final ConsistentFileList packedArchiveLogList = new ConsistentFileList(archiveManager, stepLog);
     assertEquals(TEST_IN_DIR_LOG_COUNT, packedArchiveLogList.getFileNames().length);
   }

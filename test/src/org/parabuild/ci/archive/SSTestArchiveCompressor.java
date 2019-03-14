@@ -75,7 +75,7 @@ public class SSTestArchiveCompressor extends ServersideTestCase {
     // call method
     // log.debug("time1 = " + time1);
     // log.debug("time2 = " + time2);
-    packingHandler.compressExpiredArhiveEntities();
+    packingHandler.compressExpiredArchiveEntities();
 
     // assert
     boolean foundCompressed = false;
@@ -116,7 +116,7 @@ public class SSTestArchiveCompressor extends ServersideTestCase {
 
     // pack
     packingHandler.forceCutOffTimeMillis(System.currentTimeMillis());
-    packingHandler.compressExpiredArhiveEntities();
+    packingHandler.compressExpiredArchiveEntities();
 
     // validate no files other then archives left
     final File[] files = archiveManager.getBuildLogDir().listFiles();
@@ -174,7 +174,7 @@ public class SSTestArchiveCompressor extends ServersideTestCase {
     }
 
     // pack
-    packingHandler.compressExpiredArhiveEntities();
+    packingHandler.compressExpiredArchiveEntities();
 
     // validate no files other then archives left
     final File[] files = archiveManager.getBuildLogDir().listFiles();

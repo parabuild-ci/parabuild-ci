@@ -20,8 +20,8 @@ import org.apache.commons.logging.*;
 import org.parabuild.ci.common.*;
 
 /**
- * Zipped log input stream is a lazily initalized input stream that
- * reads from a zippped archive file.
+ * Zipped log input stream is a lazily initialized input stream that
+ * reads from a zipped archive file.
  *
  * @see ArchiveManagerImpl#getArchivedLogInputStream
  */

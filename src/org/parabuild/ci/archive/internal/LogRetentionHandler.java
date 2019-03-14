@@ -47,7 +47,7 @@ public final class LogRetentionHandler extends AbstractArchiveRetentionHandler {
 
 
   /**
-   * @return cut off days stored in persistant build
+   * @return cut off days stored in persistent build
    *         configuration or null if not configured.
    */
   protected Integer getConfiguredCutOffDays() {

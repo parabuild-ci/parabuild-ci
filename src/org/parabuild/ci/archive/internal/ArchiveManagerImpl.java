@@ -24,7 +24,6 @@ import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.error.Error;
 import org.parabuild.ci.error.ErrorManager;
 import org.parabuild.ci.error.ErrorManagerFactory;
-import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.BuildConfigAttribute;
 import org.parabuild.ci.object.BuildSequence;
 import org.parabuild.ci.object.StepLog;
@@ -187,12 +186,12 @@ public final class ArchiveManagerImpl implements ArchiveManager {
 
 
   /**
-   * Deletes log files from the arhive.
+   * Deletes log files from the archive.
    *
    * @param stepLog StepLog to delete.
    */
   public void deleteLog(final StepLog stepLog) throws IOException {
-    IoUtils.deleteFileHard(getDeleteablePath(getArchivedLogHome(stepLog)));
+    IoUtils.deleteFileHard(getDeletablePath(getArchivedLogHome(stepLog)));
   }
 
 
@@ -203,7 +202,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * @param stepResult StepResult to delete.
    */
   public void deleteResult(final StepResult stepResult) throws IOException {
-    IoUtils.deleteFileHard(getDeleteablePath(getArchivedResultHome(stepResult)));
+    IoUtils.deleteFileHard(getDeletablePath(getArchivedResultHome(stepResult)));
     cm.deleteObject(stepResult);
   }
 
@@ -217,17 +216,17 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * b1c101098905223569.log, it will become b1c101098905223569.log.zip
    */
   public void packExpiredBuildLogs() throws IOException {
-    // delegate handling to LogPakingHandler
+    // delegate handling to LogPackingHandler
     final ArchiveCompressor logPackingHandler = new ArchiveCompressor(activeBuildID, getBuildLogDir(), getBuildLogPrefix());
-    logPackingHandler.compressExpiredArhiveEntities();
+    logPackingHandler.compressExpiredArchiveEntities();
   }
 
 
   /**
-   * Returns fully qualifed path to an archived log.
+   * Returns fully qualified path to an archived log.
    *
    * @param stepLog for which to return the path.
-   * @return fully qualifed path to an archived log.
+   * @return fully qualified path to an archived log.
    */
   public File getArchivedLogHome(final StepLog stepLog) throws IOException {
     return fileNameToLogPath(stepLog.getArchiveFileName());
@@ -235,10 +234,10 @@ public final class ArchiveManagerImpl implements ArchiveManager {
 
 
   /**
-   * Returns fully qualifed path to an archived result.
+   * Returns fully qualified path to an archived result.
    *
    * @param stepResult for which to return the path.
-   * @return fully qualifed path to an archived result.
+   * @return fully qualified path to an archived result.
    */
   public File getArchivedResultHome(final StepResult stepResult) throws IOException {
     return fileNameToResultPath(stepResult.getArchiveFileName());
@@ -267,15 +266,15 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * Returns build result prefix
    */
   public String getBuildResultPrefix() {
-    // REVIEWME:  the same methos as getBuildLogPrefix
+    // REVIEWME:  the same method as getBuildLogPrefix
     return 'b' + Integer.toString(activeBuildID);
   }
 
 
   /**
    * @return File main build log directory. The main log
-   * directory is a directory where build runner wrtites
-   * the buin build log to.
+   * directory is a directory where build runner writes
+   * the build log to.
    */
   public File getBuildLogDir() throws IOException {
     IoUtils.createDirs(buildLogDir);
@@ -310,7 +309,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
       // process
       final File archivedLogHome = getArchivedLogHome(stepLog);
       if (archivedLogHome.exists()) {
-        // file exists return nomal IS
+        // file exists return normal IS
         if (!IoUtils.isFileUnder(archivedLogHome, getBuildLogDir())) {
           return null;
         }
@@ -406,8 +405,8 @@ public final class ArchiveManagerImpl implements ArchiveManager {
 
 
   /**
-   * @param archivedEntityHome fully qualified path to arhive
-   *                           entity. An example of the arhive entity is build log or
+   * @param archivedEntityHome fully qualified path to archive
+   *                           entity. An example of the archive entity is build log or
    *                           build result.
    * @param inArchiveFileName  the name of the archive file.
    * @return
@@ -415,7 +414,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    */
   private static InputStream getArchivedEntityInputStream(final File archivedEntityHome, final String inArchiveFileName) throws IOException {
     if (archivedEntityHome.exists()) {
-      // file exists return nomal InputStream
+      // file exists return normal InputStream
       final File file = new File(archivedEntityHome, inArchiveFileName);
       if (!IoUtils.isFileUnder(file, archivedEntityHome)) {
         return null;
@@ -470,7 +469,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
 
 
   /**
-   * Lists entries for a given arichive path.
+   * Lists entries for a given archive path.
    *
    * @param archivePath the path to the archive to list the entries of.
    * @return String List of relative file names constituting an
@@ -516,14 +515,14 @@ public final class ArchiveManagerImpl implements ArchiveManager {
 
 
   /**
-   * Returns arhived item's path, either direct or compressed.
+   * Returns archived item's path, either direct or compressed.
    *
    * @param archivedLogHome the path to the archive home.
    * @return path or null if path doesn't exist
    * @see #deleteLog
    * @see #deleteResult
    */
-  private static File getDeleteablePath(final File archivedLogHome) {
+  private static File getDeletablePath(final File archivedLogHome) {
 
     // check if direct home exists.
     if (archivedLogHome.exists()) {
@@ -581,9 +580,9 @@ public final class ArchiveManagerImpl implements ArchiveManager {
 
 
   /**
-   * Deletes expired build logs it build settings explicitelly
+   * Deletes expired build logs it build settings explicitly
    * allow this. An expiration date is selected as a maximum of
-   * build settings and system-wide minumim settings.
+   * build settings and system-wide minimum settings.
    *
    * @noinspection ControlFlowStatementWithoutBraces
    */
