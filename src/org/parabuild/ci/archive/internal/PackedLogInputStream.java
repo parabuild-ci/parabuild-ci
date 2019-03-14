@@ -29,8 +29,8 @@ public final class PackedLogInputStream extends InputStream {
 
   private static final Log log = LogFactory.getLog(PackedLogInputStream.class);
 
-  private File zippedLogFile;
-  private String entryName;
+  private final File zippedLogFile;
+  private final String entryName;
   private ZipFile file = null;
   private InputStream delegate = null;
   private boolean closed = false;

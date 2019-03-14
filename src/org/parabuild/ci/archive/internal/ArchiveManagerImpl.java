@@ -73,7 +73,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
   private final ConfigurationManager cm = ConfigurationManager.getInstance();
   private final File buildLogDir;
   private final File buildResultDir;
-  private int activeBuildID;
+  private final int activeBuildID;
 
 
   public ArchiveManagerImpl(final int buildID) {
