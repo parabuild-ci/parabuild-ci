@@ -14,6 +14,7 @@
 package org.parabuild.ci.archive.internal;
 
 import java.io.*;
+import java.util.Objects;
 import java.util.zip.*;
 import org.apache.commons.logging.*;
 
@@ -138,9 +139,9 @@ public final class PackedLogInputStream extends InputStream {
 
     final PackedLogInputStream zippedLogInputStream = (PackedLogInputStream)o;
 
-    if (delegate != null ? !delegate.equals(zippedLogInputStream.delegate) : zippedLogInputStream.delegate != null) return false;
+    if (!Objects.equals(delegate, zippedLogInputStream.delegate)) return false;
     if (!entryName.equals(zippedLogInputStream.entryName)) return false;
-    if (file != null ? !file.equals(zippedLogInputStream.file) : zippedLogInputStream.file != null) return false;
+    if (!Objects.equals(file, zippedLogInputStream.file)) return false;
     return zippedLogFile.equals(zippedLogInputStream.zippedLogFile);
   }
 
