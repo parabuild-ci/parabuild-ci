@@ -403,7 +403,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    *                           entity. An example of the archive entity is build log or
    *                           build result.
    * @param inArchiveFileName  the name of the archive file.
-   * @return
+   * @return an inpust steam with the archived entity.
    * @throws FileNotFoundException if the give archive entity doesn't exist.
    */
   private static InputStream getArchivedEntityInputStream(final File archivedEntityHome, final String inArchiveFileName) throws IOException {
