@@ -33,7 +33,7 @@ import java.io.File;
 public abstract class AbstractArchiveRetentionHandler {
 
   /**
-   * @noinspection UNUSED_SYMBOL,UnusedDeclaration
+   * @noinspection UNUSED_SYMBOL, UnusedDeclaration, unused
    */
   private static final Log log = LogFactory.getLog(AbstractArchiveRetentionHandler.class); // NOPMD
 
@@ -143,16 +143,6 @@ public abstract class AbstractArchiveRetentionHandler {
             ", buildLogDir=" + buildLogDir +
             ", activeBuildID=" + activeBuildID +
             '}';
-  }
-
-
-  protected void setCutOffTimeMillis(final Long cutOffTimeMillis) {
-    this.cutOffTimeMillis = cutOffTimeMillis;
-  }
-
-
-  protected String getBuildLogPrefix() {
-    return buildLogPrefix;
   }
 
 
