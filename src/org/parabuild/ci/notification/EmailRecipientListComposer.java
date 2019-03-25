@@ -393,11 +393,10 @@ public final class EmailRecipientListComposer {
       // add participants
       if (!notifyWatchersOnly && buildRunConfig.getAccess() == BuildConfig.ACCESS_PUBLIC) {
         // get string VCS participant names
-        final int runID = buildRunID;
-        final List participantNames = cm.getBuildParticipantsNames(runID);
+        final List participantNames = cm.getBuildParticipantsNames(buildRunID);
         // if needed, filter out only new ones
         if (newSubmittersOnly) {
-          final BuildRun prevRun = cm.getPreviousBuildRun(cm.getBuildRun(runID));
+          final BuildRun prevRun = cm.getPreviousBuildRun(cm.getBuildRun(buildRunID));
           if (prevRun != null) {
             final List prevParticipantsNames = cm.getBuildParticipantsNames(prevRun.getBuildRunID());
             // dumb traversal of two lists to remove prev names from current
