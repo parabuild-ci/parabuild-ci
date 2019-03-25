@@ -359,7 +359,6 @@ public final class Error implements Serializable {
    * @return error level.
    */
   public int getErrorLevel() {
-    //noinspection UnusedAssignment
     int errorLevel = (int) ERROR_LEVEL_UNKNOWN;
     try {
       errorLevel = Integer.parseInt(content.getProperty(ERROR_LEVEL));
@@ -374,7 +373,6 @@ public final class Error implements Serializable {
 
   public String getErrorLevelAsString() {
 
-    //noinspection UnusedAssignment
     final int errorLevel = getErrorLevel();
 
     switch (errorLevel) {
