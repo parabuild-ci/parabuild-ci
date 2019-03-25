@@ -21,7 +21,7 @@ import org.parabuild.ci.error.impl.*;
  */
 public final class ErrorManagerFactory {
 
-  private static ErrorManagerImpl errorManager = new ErrorManagerImpl();
+  private static final ErrorManagerImpl errorManager = new ErrorManagerImpl();
 
 
   /**
@@ -31,16 +31,6 @@ public final class ErrorManagerFactory {
    * @see ErrorManager
    */
   public static ErrorManager getErrorManager() {
-    if (errorManager == null) {
-      initErrorManager();
-    }
     return errorManager;
-  }
-
-
-  private static synchronized void initErrorManager() {
-    if (errorManager == null) {
-      errorManager = new ErrorManagerImpl();
-    }
   }
 }
