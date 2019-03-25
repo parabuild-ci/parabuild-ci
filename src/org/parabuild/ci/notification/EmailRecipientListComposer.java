@@ -471,8 +471,7 @@ public final class EmailRecipientListComposer {
 
 
   private boolean levelAccepted(final int watchLevel, final boolean sendFailuresOnly) {
-    return watchLevel == BuildWatcher.LEVEL_SUCCESS && !sendFailuresOnly
-            || watchLevel != BuildWatcher.LEVEL_SUCCESS;
+    return watchLevel != BuildWatcher.LEVEL_SUCCESS || !sendFailuresOnly;
   }
 
 
