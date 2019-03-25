@@ -19,7 +19,7 @@ import org.parabuild.ci.object.*;
  * This class isolates caller from underlying implementation of
  * ChangeListDescriptionGenerator
  */
-public final class ChangeListDescriptionFactory {
+final class ChangeListDescriptionFactory {
 
   /**
    * Factory class constructor.

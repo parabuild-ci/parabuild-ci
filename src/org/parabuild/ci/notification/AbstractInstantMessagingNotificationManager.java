@@ -68,7 +68,7 @@ import java.util.Map;
  */
 public abstract class AbstractInstantMessagingNotificationManager implements NotificationManager, CommonConstants {
 
-  protected final ConfigurationManager cm = ConfigurationManager.getInstance();
+  private final ConfigurationManager cm = ConfigurationManager.getInstance();
 
 
   private Map vcsUserMap = null;

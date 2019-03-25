@@ -29,7 +29,7 @@ import java.util.List;
  * @author Slava Imeshev
  * @since Jan 13, 2010 9:40:27 PM
  */
-public final class DisabledEmailRemover {
+final class DisabledEmailRemover {
 
   /**
    * Logger.

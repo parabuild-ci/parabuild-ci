@@ -102,7 +102,7 @@ public final class EmailRecipientListComposer {
   /**
    * @param globalMap List of {@link GlobalVCSUserMap} objects.
    */
-  public void addGlobalVCSUserToEmailMap(final List globalMap) {
+  private void addGlobalVCSUserToEmailMap(final List globalMap) {
     for (final Iterator iter = globalMap.iterator(); iter.hasNext(); ) {
       final GlobalVCSUserMap globalUserToEmailMap = (GlobalVCSUserMap) iter.next();
       final UserToEmailMap userToEmailMap = new UserToEmailMap(globalUserToEmailMap.getVcsUserName(),

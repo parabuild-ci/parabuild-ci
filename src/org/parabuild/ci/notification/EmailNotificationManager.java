@@ -79,7 +79,7 @@ import java.util.Properties;
 final class EmailNotificationManager implements NotificationManager, CommonConstants {
 
   private static final Log log = LogFactory.getLog(EmailNotificationManager.class);
-  public static final String STR_DIVIDER = "------------------------------------------------------------";
+  private static final String STR_DIVIDER = "------------------------------------------------------------";
 
   // various service managers used by this class
   private final ConfigurationManager cm = ConfigurationManager.getInstance();

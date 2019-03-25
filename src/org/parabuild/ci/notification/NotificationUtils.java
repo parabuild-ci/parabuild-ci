@@ -41,7 +41,7 @@ import java.util.List;
 /**
  * Notification utilities.
  */
-public final class NotificationUtils {
+final class NotificationUtils {
 
   /**
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
