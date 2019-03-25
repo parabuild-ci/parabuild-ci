@@ -471,7 +471,7 @@ public final class Error implements Serializable {
 
 
   /**
-   * Sets merge configuration ID for that the error has occured.
+   * Sets merge configuration ID for that the error has occurred.
    *
    * @param activeMergeConfigurationID to set.
    */
