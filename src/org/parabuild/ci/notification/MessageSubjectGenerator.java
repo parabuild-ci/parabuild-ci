@@ -129,7 +129,7 @@ public final class MessageSubjectGenerator {
   }
 
 
-  private String makeResultDescription(final StepRun stepRun) {
+  private static String makeResultDescription(final StepRun stepRun) {
     return StringUtils.isBlank(stepRun.getResultDescription()) ? DESCRIPTION_NO_DESCRIPTION_WAS_PROVIDED : stepRun.getResultDescription();
   }
 

@@ -108,7 +108,7 @@ public final class StandardChangeListDescriptionGenerator implements ChangeListD
   }
 
 
-  private String truncate(final String description, final int length) {
+  private static String truncate(final String description, final int length) {
     // get rid of breaks
     String result = description.replace('\n', ' ').trim();
     // cut

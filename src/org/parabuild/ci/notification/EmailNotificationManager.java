@@ -206,7 +206,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
   }
 
 
-  private SimpleDateFormat createFormatter() {
+  private static SimpleDateFormat createFormatter() {
     return new SimpleDateFormat(SystemConfigurationManagerFactory.getManager().getDateTimeFormat(), Locale.US);
   }
 
@@ -501,7 +501,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
   }
 
 
-  private String changeListToString(final ChangeList changeList, final SimpleDateFormat sdf) {
+  private static String changeListToString(final ChangeList changeList, final SimpleDateFormat sdf) {
     return changeList.getNumber() + ' ' + sdf.format(changeList.getCreatedAt()) + ' ' + changeList.getDescription();
   }
 
@@ -683,7 +683,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
   /**
    * Makes line containing sequence run timing
    */
-  private StringBuffer makeStepRunTiming(final StepRun run) {
+  private static StringBuffer makeStepRunTiming(final StepRun run) {
     final StringBuffer result = new StringBuffer(30);
     result.append(run.getName()).append(" took ");
     result.append(StringUtils.durationToString((long) run.getDuration(), true));
@@ -717,7 +717,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
    *
    * @param buildRun
    */
-  private StringBuffer makeBuildStatusURLText(final BuildRun buildRun) {
+  private static StringBuffer makeBuildStatusURLText(final BuildRun buildRun) {
     final StringBuffer sb = new StringBuffer(100);
     final BuildStatusURLGenerator statusURLGenerator = new BuildStatusURLGenerator();
     sb.append("Build status:").append(STR_CR);
@@ -731,7 +731,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
    *         notification prefix if defined.
    */
   private String makePrefix() {
-    return new StringBuffer(20).append(cm.getNotificationPrefix(BuildConfig.UNSAVED_ID)).toString();
+    return cm.getNotificationPrefix(BuildConfig.UNSAVED_ID);
   }
 
 
@@ -831,7 +831,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
     final String server = emailPropertiesValues.getProperty(SystemProperty.SMTP_SERVER_NAME, "localhost");
     final String port = emailPropertiesValues.getProperty(SystemProperty.SMTP_SERVER_PORT, secureConnection ? ConfigurationConstants.DEFAULT_SMTPS_SERVER_PORT : ConfigurationConstants.DEFAULT_SMTP_SERVER_PORT);
     final String encryptedPassword = emailPropertiesValues.getProperty(SystemProperty.SMTP_SERVER_PASSWORD, null);
-    final String password = encryptedPassword == null ? (String) null : SecurityManager.decryptPassword(encryptedPassword);
+    final String password = encryptedPassword == null ? null : SecurityManager.decryptPassword(encryptedPassword);
     final String user = emailPropertiesValues.getProperty(SystemProperty.SMTP_SERVER_USER, null);
 
     // create session
@@ -862,8 +862,8 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
     final MimeMessage message = new MimeMessage(session);
     message.setFrom(adminAddress);
     message.setReplyTo(new InternetAddress[]{adminAddress});
-    message.addRecipients(Message.RecipientType.TO, (Address[]) toRecepients.toArray(new Address[toRecepients.size()]));
-    message.addRecipients(Message.RecipientType.BCC, (Address[]) bccRecepients.toArray(new Address[bccRecepients.size()]));
+    message.addRecipients(Message.RecipientType.TO, (Address[]) toRecepients.toArray(new Address[0]));
+    message.addRecipients(Message.RecipientType.BCC, (Address[]) bccRecepients.toArray(new Address[0]));
     message.setSentDate(new Date(System.currentTimeMillis()));
     message.setSubject(messageSubject.toString());
 
@@ -924,7 +924,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
   }
 
 
-  private void reportErrorSendingPassword(final Exception e) {
+  private static void reportErrorSendingPassword(final Exception e) {
     final Error err = NotificationUtils.makeNotificationError();
     err.setDescription("Error while sending user password notification");
     err.setDetails(e);

@@ -449,7 +449,7 @@ public final class EmailRecipientListComposer {
    * @param list
    * @throws AddressException
    */
-  private void addUser(final Integer userID, final List list) throws AddressException {
+  private static void addUser(final Integer userID, final List list) throws AddressException {
 
     if (userID == null) {
       return;
@@ -469,7 +469,7 @@ public final class EmailRecipientListComposer {
   }
 
 
-  private boolean levelAccepted(final int watchLevel, final boolean sendFailuresOnly) {
+  private static boolean levelAccepted(final int watchLevel, final boolean sendFailuresOnly) {
     return watchLevel != BuildWatcher.LEVEL_SUCCESS || !sendFailuresOnly;
   }
 
@@ -546,7 +546,7 @@ public final class EmailRecipientListComposer {
   /**
    * Reports invalid emails to administrative errors list
    */
-  private void reportInvalidEmails(final BuildConfig buildConfig, final List invalidEmails) {
+  private static void reportInvalidEmails(final BuildConfig buildConfig, final List invalidEmails) {
     final int emailCount = invalidEmails.size();
     if (emailCount == 0) {
       return;
@@ -572,7 +572,7 @@ public final class EmailRecipientListComposer {
   /**
    * Reports unmapped version control users
    */
-  private void reportUnmappedUsers(final BuildConfig buildConfig, final List unmappedUsers) {
+  private static void reportUnmappedUsers(final BuildConfig buildConfig, final List unmappedUsers) {
     final int userCount = unmappedUsers.size();
     if (userCount == 0) {
       return;
@@ -602,7 +602,7 @@ public final class EmailRecipientListComposer {
    * @param user user
    * @param e    exception
    */
-  private void reportErrorGettingUserEmailFromLDAP(final String user, final Exception e) {
+  private static void reportErrorGettingUserEmailFromLDAP(final String user, final Exception e) {
     final Error error = new Error("Could not map version control user " + user + " to e-mail using LDAP: " + StringUtils.toString(e));
     error.setDetails(e);
     error.setErrorLevel(Error.ERROR_LEVEL_WARNING);

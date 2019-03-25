@@ -104,7 +104,7 @@ public final class JabberNotificationManager extends AbstractInstantMessagingNot
    * Obtains roster from the XMPP connection and sets
    * subscription mode to SUBSCRIPTION_ACCEPT_ALL.
    */
-  private Roster getRoster(final XMPPConnection conn) {
+  private static Roster getRoster(final XMPPConnection conn) {
     final Roster roster = conn.getRoster();
     if (roster != null) {
       // set subscription mode to acccept all requests so
@@ -178,7 +178,7 @@ public final class JabberNotificationManager extends AbstractInstantMessagingNot
    *
    * @return true if user is present.
    */
-  private boolean userPresent(final Roster roster, final String address) {
+  private static boolean userPresent(final Roster roster, final String address) {
     final Presence presence = roster.getPresence(address);
     if (log.isDebugEnabled()) log.debug("presense: " + presence);
     if (presence == null) return false;
@@ -231,7 +231,7 @@ public final class JabberNotificationManager extends AbstractInstantMessagingNot
   /**
    * Closes XMPPConnection ignoring exceptions.
    */
-  private void closeHard(final XMPPConnection con) {
+  private static void closeHard(final XMPPConnection con) {
     if (con != null) {
       try {
         con.close();
@@ -247,7 +247,7 @@ public final class JabberNotificationManager extends AbstractInstantMessagingNot
    *
    * @param e Exception to report to administrator.
    */
-  private void reportSendError(final Exception e) {
+  private static void reportSendError(final Exception e) {
     final ErrorManager errorManager = ErrorManagerFactory.getErrorManager();
     final Error error = new Error("Error sending Jabber message: " + StringUtils.toString(e));
     error.setSubsystemName(Error.ERROR_SUBSYSTEM_NOTIFICATION);
