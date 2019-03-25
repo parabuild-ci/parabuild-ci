@@ -171,7 +171,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
 
       // Add message
       body.append(STR_DIVIDER).append(STR_CRCR);
-      body.append("Build hung at step \"").append(sequence.getStepName()).append("\" after ").append(Integer.toString(sequence.getTimeoutMins())).append(" minutes timeout.").append(STR_CR);
+      body.append("Build hung at step \"").append(sequence.getStepName()).append("\" after ").append(sequence.getTimeoutMins()).append(" minutes timeout.").append(STR_CR);
       body.append("Parabuild attempted and failed to stop the build.").append(STR_CR);
       body.append("System requires immediate attention of the build administrator.").append(STR_CR);
       body.append("Build won't start until the problem is fixed.").append(STR_CR);

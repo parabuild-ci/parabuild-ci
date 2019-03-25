@@ -32,6 +32,6 @@ public final class ChangeListURLGenerator {
    */
   public String makeBuildRunChangesURL(final int buildRunID) {
     final String hostName = SystemConfigurationManagerFactory.getManager().getBuildManagerProtocolHostAndPort();
-    return hostName + "/parabuild/build/changes.htm?buildrunid=" + Integer.toString(buildRunID);
+    return hostName + "/parabuild/build/changes.htm?buildrunid=" + buildRunID;
   }
 }
