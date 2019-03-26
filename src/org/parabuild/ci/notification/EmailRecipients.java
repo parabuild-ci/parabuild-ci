@@ -23,8 +23,8 @@ import org.parabuild.ci.common.*;
  */
 public final class EmailRecipients {
 
-  private List toList = null;
-  private List bccList = null;
+  private List toList;
+  private List bccList;
 
 
   /**
