@@ -19,7 +19,7 @@ import org.parabuild.ci.common.*;
 
 /**
  * EmailRecipients is an aggregate holding "To" and "Bcc" lists. Each list
- * contant InternetAddress objects.
+ * constant InternetAddress objects.
  */
 public final class EmailRecipients {
 
@@ -61,10 +61,10 @@ public final class EmailRecipients {
   }
 
   public List getAllAddresses() {
-    final List allRecepients = new ArrayList(23);
-    allRecepients.addAll(toList);
-    allRecepients.addAll(bccList);
-    return allRecepients;
+    final List allRecipients = new ArrayList(23);
+    allRecipients.addAll(toList);
+    allRecipients.addAll(bccList);
+    return allRecipients;
   }
 
 

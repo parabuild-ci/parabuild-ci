@@ -107,7 +107,7 @@ public final class JabberNotificationManager extends AbstractInstantMessagingNot
   private static Roster getRoster(final XMPPConnection conn) {
     final Roster roster = conn.getRoster();
     if (roster != null) {
-      // set subscription mode to acccept all requests so
+      // set subscription mode to accept all requests so
       // that a build admin should not do it manually.
       if (!(roster.getSubscriptionMode() == Roster.SUBSCRIPTION_ACCEPT_ALL)) {
         roster.setSubscriptionMode(Roster.SUBSCRIPTION_ACCEPT_ALL);
@@ -163,7 +163,7 @@ public final class JabberNotificationManager extends AbstractInstantMessagingNot
     if (log.isDebugEnabled()) log.debug("sending to: " + address);
     if (log.isDebugEnabled()) log.debug("roster: " + roster);
     // check if we should send
-    if (!userPresent(roster, address) && !allowedToSendIfNoPresense()) return;
+    if (!userPresent(roster, address) && !allowedToSendIfNoPresence()) return;
     // create chat
     final Chat chat = con.createChat(address);
     if (log.isDebugEnabled()) log.debug("chat: " + chat);
@@ -180,7 +180,7 @@ public final class JabberNotificationManager extends AbstractInstantMessagingNot
    */
   private static boolean userPresent(final Roster roster, final String address) {
     final Presence presence = roster.getPresence(address);
-    if (log.isDebugEnabled()) log.debug("presense: " + presence);
+    if (log.isDebugEnabled()) log.debug("presence: " + presence);
     if (presence == null) return false;
     final Presence.Mode mode = presence.getMode();
     if (log.isDebugEnabled()) log.debug("mode: " + mode);
@@ -207,10 +207,10 @@ public final class JabberNotificationManager extends AbstractInstantMessagingNot
 
   /**
    * @return true if server configuration permits sending a
-   *         meesage even if users's presence cannot be
+   *         message even if users's presence cannot be
    *         identified.
    */
-  private boolean allowedToSendIfNoPresense() {
+  private boolean allowedToSendIfNoPresence() {
     return systemCM.getSystemPropertyValue(SystemProperty.JABBER_SEND_NO_PRESENCE, SystemProperty.OPTION_CHECKED)
       .equals(SystemProperty.OPTION_CHECKED);
   }

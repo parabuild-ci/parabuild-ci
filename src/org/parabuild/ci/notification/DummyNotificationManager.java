@@ -20,7 +20,7 @@ import org.parabuild.ci.object.*;
 /**
  * This notification manager is a stateless, dummy notification
  * manager does not send any notifications and serves as a
- * disabled notifcation manager.
+ * disabled notification manager.
  *
  * @see NotificationManagerFactory#makeDummyNotificationManager()
  */

@@ -55,7 +55,7 @@ public final class StandardChangeListDescriptionGenerator implements ChangeListD
     // get changes
     final List changeLists = cm.getChangeListsOrderedByDate(buildRun.getBuildRunID());
     if (changeLists.isEmpty()) {
-      result.append("There are no new changes since previos build.");
+      result.append("There are no new changes since previous build.");
       return result; // empty result
     }
 
@@ -66,13 +66,13 @@ public final class StandardChangeListDescriptionGenerator implements ChangeListD
     for (final Iterator iter = changeLists.iterator(); iter.hasNext();) {
       final ChangeList changeList = (ChangeList)iter.next();
       final String currentUser = changeList.getUser();
-      final String currentDescr = changeList.getDescription();
+      final String currentDescription = changeList.getDescription();
       if (!currentUser.equals(prevUser)) {
         result.append("Change(s) by ").append(currentUser).append(" :");
         result.append(STR_CRCR);
         prevUser = currentUser;
       }
-      result.append(" - ").append(truncate(currentDescr, changeListTruncateLength)).append(';').append('\n');
+      result.append(" - ").append(truncate(currentDescription, changeListTruncateLength)).append(';').append('\n');
       result.append("   ").append(formatTimeAndNumber(changeList)).append('\n');
 
       // output change type and file if necessary

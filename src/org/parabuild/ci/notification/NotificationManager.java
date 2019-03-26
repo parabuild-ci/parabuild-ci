@@ -28,7 +28,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Norification manager is responsible for providing notification
+ * Notification manager is responsible for providing notification
  * services, including e-mail and IM
  */
 public interface NotificationManager {

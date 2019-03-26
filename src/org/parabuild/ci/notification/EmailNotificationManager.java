@@ -73,7 +73,7 @@ import java.util.Map;
 import java.util.Properties;
 
 /**
- * Norification manager is responsible for providing notification
+ * Notification manager is responsible for providing notification
  * services via e-mail.
  */
 final class EmailNotificationManager implements NotificationManager, CommonConstants {
@@ -118,7 +118,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
   public void notifyBuildStepStarted(final BuildRun buildRun, final BuildSequence buildSequence) {
     try {
 
-      // coompose subject
+      // Compose subject
 
       final StringBuffer messageSubject = new StringBuffer(200);
       messageSubject.append(makePrefix(buildRun.getBuildID()));
@@ -308,8 +308,8 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
       StringUtils.appendWithNewLineIfNotNull(body, "Trace:", error.getStacktrace());
 
       // add administrator to recipients
-      final List toRecepients = new ArrayList(1);
-      toRecepients.addAll(NotificationUtils.getAdminAddresslList(true));
+      final List toRecipients = new ArrayList(1);
+      toRecipients.addAll(NotificationUtils.getAdminAddresslList(true));
 
       // Create recipients
       final EmailRecipientListComposer composer = new EmailRecipientListComposer();
@@ -344,7 +344,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
         final StringBuffer msg = new StringBuffer(200);
         msg.append("You or someone else has requested to reset your password").append(STR_CR);
         msg.append(STR_DIVIDER).append(STR_CRCR);
-        msg.append("Your new passord is: ").append(newPassword);
+        msg.append("Your new password is: ").append(newPassword);
         msg.append("\n\n");
         msg.append("---------------");
         msg.append('\n');
@@ -440,7 +440,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
       // get admin name
       final String nameProp = emailPropertiesValues.getProperty(SystemProperty.BUILD_ADMIN_NAME, email);
       final InternetAddress adminAddress = new InternetAddress(email, nameProp);
-      // compose recepients list
+      // compose recipients list
       final List to = new ArrayList(1);
       to.add(adminAddress);
       // send
@@ -460,7 +460,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
    */
   public void notifyChangeListsWaitingForMerge(final int activeMergeID) {
     try {
-      // get chage list users, numbers and descriptions ordered by user and number
+      // get change list users, numbers and descriptions ordered by user and number
       final SimpleDateFormat sdf = new SimpleDateFormat(SystemConfigurationManagerFactory.getManager().getDateTimeFormat());
       final ActiveMergeConfiguration activeMergeConfiguration = MergeManager.getInstance().getActiveMergeConfiguration(activeMergeID);
 
@@ -517,7 +517,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
 
 
   /**
-   * Creates body of e-mail message notifing about sequence run
+   * Creates body of e-mail message notifying about sequence run
    * results.
    *
    * @param stepRun
@@ -618,7 +618,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
                 body.append("  ").append(resultURL).append(STR_CR);
               }
             } catch (final IOException e) {
-              final Error error = new Error("Unexpected I/O error while reading arhive: " + StringUtils.toString(e));
+              final Error error = new Error("Unexpected I/O error while reading archive: " + StringUtils.toString(e));
               error.setSendEmail(false);
               error.setErrorLevel(Error.ERROR_LEVEL_WARNING);
               error.setSubsystemName(Error.ERROR_SUBSYSTEM_WEBUI);
@@ -713,7 +713,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
 
 
   /**
-   * Creates a string buffer that constains build status link
+   * Creates a string buffer that contains build status link
    *
    * @param buildRun
    */
@@ -767,10 +767,10 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
 
   /**
    * Returns local host name, IP address or null string if there
-   * was an aception.
+   * was an exception.
    *
    * @return local host name, IP address or null string if there
-   *         was an aception.
+   *         was an exception.
    */
   private String getEHLOhost() {
     try {
@@ -820,9 +820,9 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
     final Properties emailPropertiesValues = systemPropertiesToValues(emailProperties);
 
     // get receive lists
-    final List toRecepients = recipients.getToList();
-    final List bccRecepients = recipients.getBccList();
-    if (toRecepients.isEmpty() && bccRecepients.isEmpty()) {
+    final List toRecipients = recipients.getToList();
+    final List bbcRecipients = recipients.getBccList();
+    if (toRecipients.isEmpty() && bbcRecipients.isEmpty()) {
       return; // nobody to send to
     }
 
@@ -862,8 +862,8 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
     final MimeMessage message = new MimeMessage(session);
     message.setFrom(adminAddress);
     message.setReplyTo(new InternetAddress[]{adminAddress});
-    message.addRecipients(Message.RecipientType.TO, (Address[]) toRecepients.toArray(new Address[0]));
-    message.addRecipients(Message.RecipientType.BCC, (Address[]) bccRecepients.toArray(new Address[0]));
+    message.addRecipients(Message.RecipientType.TO, (Address[]) toRecipients.toArray(new Address[0]));
+    message.addRecipients(Message.RecipientType.BCC, (Address[]) bbcRecipients.toArray(new Address[0]));
     message.setSentDate(new Date(System.currentTimeMillis()));
     message.setSubject(messageSubject.toString());
 

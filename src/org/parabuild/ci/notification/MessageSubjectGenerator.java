@@ -83,7 +83,7 @@ public final class MessageSubjectGenerator {
 
 
   /**
-   * Creates a subject of e-mail message notifing about sequence
+   * Creates a subject of e-mail message notifying about sequence
    * run results. The subject should have the following format:
    * <pre>
    * SEQUENCE_NAME BUILD_NAME  SUCCESSFUL|FAILED : DESCRIPTION

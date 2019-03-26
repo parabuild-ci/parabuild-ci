@@ -28,7 +28,7 @@ public final class NotificationManagerFactory implements Serializable {
 
 
   /**
-   * Factory constuctor.
+   * Factory constructor.
    */
   private NotificationManagerFactory() {
   }

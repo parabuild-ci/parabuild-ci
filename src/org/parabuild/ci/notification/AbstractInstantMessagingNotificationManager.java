@@ -400,7 +400,7 @@ public abstract class AbstractInstantMessagingNotificationManager implements Not
     // get users having imType as IM
     final Map imUsersMap = cm.getIMUsersEmailMap(imType, imMessageSelection);
 
-    // Createc composer
+    // Create composer
     final EmailRecipientListComposer composer = new EmailRecipientListComposer();
     composer.setCaseSensitiveUserName(NotificationUtils.isCaseSensitiveUserName(buildRun.getBuildID()));
 
