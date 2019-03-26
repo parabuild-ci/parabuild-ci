@@ -60,11 +60,11 @@ import java.util.Map;
  *
  * @see #serverType() - returns server type
  * @see #send(Collection, StringBuffer) -
- *      sends message to a list of recepints.
+ * sends message to a list of recepints.
  * @see #send(String, StringBuffer) - sends a
- *      message to a single recepint.
+ * message to a single recepint.
  * @see #isServerEnabled() - returns true if it's allowed to send
- *      messages.
+ * messages.
  */
 public abstract class AbstractInstantMessagingNotificationManager implements NotificationManager, CommonConstants {
 
@@ -145,7 +145,7 @@ public abstract class AbstractInstantMessagingNotificationManager implements Not
       if (logs.isEmpty()) {
         body.append("Logs are not available.").append(STR_CR);
       } else {
-        for (final Iterator logIter = logs.iterator(); logIter.hasNext();) {
+        for (final Iterator logIter = logs.iterator(); logIter.hasNext(); ) {
           final StepLog stepLog = (StepLog) logIter.next();
           final String logURL = cm.makeBuildLogURL(stepLog);
           final String logName = stepLog.getDescription();
@@ -183,12 +183,11 @@ public abstract class AbstractInstantMessagingNotificationManager implements Not
 
 
   /**
-   * Sets version control user e-mail map to be respected when
-   * generating "To:" list. If a user defined in the source
-   * control map, it will be used first.
+   * Sets version control user e-mail map to the copy of the provided parameter to be respected when
+   * generating "To:" list. If a user defined in the source control map, it will be used first.
    */
   public final void setVCSUserMap(final Map vcsUserMap) {
-    this.vcsUserMap = vcsUserMap;
+    this.vcsUserMap = new HashMap(vcsUserMap);
   }
 
 
@@ -386,7 +385,7 @@ public abstract class AbstractInstantMessagingNotificationManager implements Not
 
   /**
    * @return true if server of the serverType() is configured
-   *         and enabled.
+   * and enabled.
    */
   public abstract boolean isServerEnabled();
 
@@ -411,7 +410,7 @@ public abstract class AbstractInstantMessagingNotificationManager implements Not
 
     // filter users identified by this list of e-mail recipients to a list of IM receivers.
     final Map result = new HashMap(23);
-    for (final Iterator i = recipients.getAllAddresses().iterator(); i.hasNext();) {
+    for (final Iterator i = recipients.getAllAddresses().iterator(); i.hasNext(); ) {
       final String imAddress = (String) imUsersMap.get(((InternetAddress) i.next()).getAddress().toLowerCase());
       if (imAddress != null) {
         result.put(imAddress, Boolean.TRUE);

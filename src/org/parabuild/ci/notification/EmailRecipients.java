@@ -41,13 +41,23 @@ public final class EmailRecipients {
   }
 
 
+  /**
+   * Returns a copy of the internal "To:" list.
+   *
+   * @return a copy of the internal "To:" list.
+   */
   public List getToList() {
-    return toList;
+    return new ArrayList(toList);
   }
 
 
+  /**
+   * Returns a copy of the internal "Bcc:" list.
+   *
+   * @return a copy of the internal "Bcc:" list.
+   */
   public List getBccList() {
-    return bccList;
+    return new ArrayList(bccList);
   }
 
   public List getAllAddresses() {
