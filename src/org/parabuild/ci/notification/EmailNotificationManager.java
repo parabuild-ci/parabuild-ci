@@ -844,7 +844,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
     final String mailSmtpQuitwait = secureConnection ? "mail.smtps.quitwait" : "mail.smtp.quitwait";
 
     final Properties smtpProps = new Properties();
-    smtpProps.put("mail.transport.protocol", transportProtocol);
+    smtpProps.setProperty("mail.transport.protocol", transportProtocol);
     smtpProps.setProperty(mailSmtpQuitwait, "false");
     smtpProps.setProperty(mailSmtpHost, server);
     smtpProps.setProperty(mailSmtpPort, port);
