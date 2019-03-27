@@ -13,8 +13,6 @@
  */
 package org.parabuild.ci.notification;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.object.User;
 import org.parabuild.ci.security.SecurityManager;
 
