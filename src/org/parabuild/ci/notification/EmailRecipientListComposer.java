@@ -53,11 +53,6 @@ import java.util.Map;
  */
 public final class EmailRecipientListComposer {
 
-  /**
-   * @noinspection UNUSED_SYMBOL, UnusedDeclaration
-   */
-  private static final Log LOG = LogFactory.getLog(EmailRecipientListComposer.class); // NOPMD
-
   private final JNDIAuthenticator jndiAuthenticator;
   private boolean notifyBuildAdmin = true;
   private Map versionControlMap = null;
@@ -78,11 +73,6 @@ public final class EmailRecipientListComposer {
     } else {
       jndiAuthenticator = null;
     }
-  }
-
-
-  public void setConfiguredMap(final Map configuredMap) {
-    this.configuredMap = new HashMap(configuredMap);
   }
 
 
@@ -152,14 +142,6 @@ public final class EmailRecipientListComposer {
    */
   public List getToRecipients() {
     return Collections.unmodifiableList(toRecipients);
-  }
-
-
-  /**
-   * Returns "BCC" list of InternetAddress
-   */
-  public List getBccRecipients() {
-    return Collections.unmodifiableList(bccRecipients);
   }
 
 

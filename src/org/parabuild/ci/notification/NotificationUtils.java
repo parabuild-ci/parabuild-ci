@@ -44,12 +44,6 @@ import java.util.List;
 final class NotificationUtils {
 
   /**
-   * @noinspection UNUSED_SYMBOL,UnusedDeclaration
-   */
-  private static final Log LOG = LogFactory.getLog(NotificationUtils.class); // NOPMD
-
-
-  /**
    * Utility constructor.
    */
   private NotificationUtils() {

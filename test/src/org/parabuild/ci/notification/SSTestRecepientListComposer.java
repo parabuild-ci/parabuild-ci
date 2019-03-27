@@ -232,7 +232,6 @@ public class SSTestRecepientListComposer extends ServersideTestCase {
    * stored in CVS
    */
   public void test_bug824_addSourceControlUserMapsVSCMapFirst() throws AddressException {
-//    composer.setConfiguredMap(configuredMap);
     composer.setVersionControlMap(sourceControlMap);
     composer.addSourceControlUser("test2");
     assertEquals(1, composer.getToRecipients().size());

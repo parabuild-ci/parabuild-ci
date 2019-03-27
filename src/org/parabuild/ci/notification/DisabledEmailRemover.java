@@ -31,14 +31,6 @@ import java.util.List;
  */
 final class DisabledEmailRemover {
 
-  /**
-   * Logger.
-   *
-   * @noinspection UNUSED_SYMBOL,UnusedDeclaration
-   */
-  private static final Log LOG = LogFactory.getLog(DisabledEmailRemover.class); // NOPMD
-
-
   public void removeDisabled(final List addresses) {
     for (final Iterator i = addresses.iterator(); i.hasNext();) {
       final String email = ((InternetAddress) i.next()).getAddress().toLowerCase();
