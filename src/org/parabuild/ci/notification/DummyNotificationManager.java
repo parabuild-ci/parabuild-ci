@@ -13,16 +13,19 @@
  */
 package org.parabuild.ci.notification;
 
-import java.util.*;
+import org.parabuild.ci.object.BranchMergeConfiguration;
+import org.parabuild.ci.object.BuildRun;
+import org.parabuild.ci.object.BuildSequence;
+import org.parabuild.ci.object.ChangeList;
+import org.parabuild.ci.object.StepRun;
 
-import org.parabuild.ci.object.*;
+import java.util.List;
+import java.util.Map;
 
 /**
  * This notification manager is a stateless, dummy notification
  * manager does not send any notifications and serves as a
  * disabled notification manager.
- *
- * @see NotificationManagerFactory#makeDummyNotificationManager()
  */
 public final class DummyNotificationManager implements NotificationManager {
 
