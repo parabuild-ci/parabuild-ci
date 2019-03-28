@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.notification;
 
-import java.io.*;
+import java.io.Serializable;
 
 /**
  * NotificationManagerFactory is a factory class that delivers
@@ -24,7 +24,6 @@ import java.io.*;
 public final class NotificationManagerFactory implements Serializable {
 
   private static final long serialVersionUID = 7143257488995569178L; // NOPMD
-  private static final NotificationManager DUMMY_NOTIFICATION_MANAGER = new DummyNotificationManager();
 
 
   /**
