@@ -350,7 +350,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
         msg.append('\n');
         msg.append("Build Administrator");
         // send
-        sendMessage(new EmailRecipients(to, Collections.EMPTY_LIST), subj, msg, SystemProperty.MESSAGE_PRIORITY_NORMAL);
+        sendMessage(new EmailRecipients(to, Collections.emptyList()), subj, msg, SystemProperty.MESSAGE_PRIORITY_NORMAL);
       } else {
         log.warn("Could not send notification to user \"" + user + "\" - user does not exist");
       }
@@ -444,7 +444,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
       final List to = new ArrayList(1);
       to.add(adminAddress);
       // send
-      sendMessage(properties, adminAddress, new EmailRecipients(to, Collections.EMPTY_LIST), new StringBuffer(20).append("Test message from Parabuild server"), new StringBuffer(20).append("This is a test message from Parabuild server."), SystemProperty.MESSAGE_PRIORITY_NORMAL);
+      sendMessage(properties, adminAddress, new EmailRecipients(to, Collections.emptyList()), new StringBuffer(20).append("Test message from Parabuild server"), new StringBuffer(20).append("This is a test message from Parabuild server."), SystemProperty.MESSAGE_PRIORITY_NORMAL);
     } catch (final MessagingException e) {
       throw e;
     } catch (final Exception e) {
@@ -494,7 +494,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
       composer.setVersionControlMap(vcsUserMap);
       final List list = composer.makeRecipients(nagReport);
 
-      sendMessage(new EmailRecipients(list, Collections.EMPTY_LIST), subject, body, (byte) 0);
+      sendMessage(new EmailRecipients(list, Collections.emptyList()), subject, body, (byte) 0);
     } catch (final Exception e) {
       NotificationUtils.reportErrorSendingMessage(e);
     }

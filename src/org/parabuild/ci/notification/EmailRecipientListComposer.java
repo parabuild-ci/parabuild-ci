@@ -503,7 +503,7 @@ public final class EmailRecipientListComposer {
     disabledEmailRemover.removeDisabled(toRecipients);
 
     // Return result
-    return new EmailRecipients(toRecipients, Collections.EMPTY_LIST);
+    return new EmailRecipients(toRecipients, Collections.emptyList());
   }
 
 
