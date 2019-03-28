@@ -54,7 +54,7 @@ public final class EmailRecipientListComposer {
   private final JNDIAuthenticator jndiAuthenticator;
   private boolean notifyBuildAdmin = true;
   private Map versionControlMap = null;
-  private Map configuredMap = new HashMap(11);
+  private final Map configuredMap = new HashMap(11);
   private String defaultDomain = null;
   private final List unmappedUsers = new ArrayList(1);
   private final List invalidEmails = new ArrayList(1);
@@ -150,11 +150,6 @@ public final class EmailRecipientListComposer {
 
   public List getInvalidEmails() {
     return Collections.unmodifiableList(invalidEmails);
-  }
-
-
-  public void notifyBuildAdmin(final boolean notifyBuildAdmin) {
-    this.notifyBuildAdmin = notifyBuildAdmin;
   }
 
 

@@ -42,16 +42,6 @@ final class UserToEmailMap {
 
 
   /**
-   * Returns user name.
-   *
-   * @return user name.
-   */
-  public String getUserName() {
-    return userName;
-  }
-
-
-  /**
    * Returns email.
    *
    * @return email.

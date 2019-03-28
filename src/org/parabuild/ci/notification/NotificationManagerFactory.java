@@ -45,14 +45,4 @@ public final class NotificationManagerFactory implements Serializable {
     cnm.add(new JabberNotificationManager());
     return cnm;
   }
-
-
-  /**
-   * @return NotificationManager that does not send any
-   *         notifications.
-   */
-  public static NotificationManager makeDummyNotificationManager() {
-    // return stateless dummy notification manager.
-    return DUMMY_NOTIFICATION_MANAGER;
-  }
 }

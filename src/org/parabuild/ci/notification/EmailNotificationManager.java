@@ -751,7 +751,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
    *
    * @param buildRunID
    */
-  private StringBuffer makeChangeListText(final int buildRunID) {
+  private static StringBuffer makeChangeListText(final int buildRunID) {
     final ChangeListDescriptionGenerator descriptionGenerator = ChangeListDescriptionFactory.
             getGenerator(ConfigurationManager.getInstance().getBuildRun(buildRunID));
     final StringBuffer changeListDescription = descriptionGenerator.generateChangeListDescription();
@@ -792,7 +792,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
    *
    * @return value of "HOSTNAME" variable
    */
-  private String getHOSTNAMEEnvVariable() {
+  private static String getHOSTNAMEEnvVariable() {
     final String hostNameEnvVariable = RuntimeUtils.isWindows() ? RuntimeUtils.getEnvVariable("COMPUTERNAME") : RuntimeUtils.getEnvVariable("HOSTNAME");
     if (!StringUtils.isBlank(hostNameEnvVariable)) {
       return hostNameEnvVariable;

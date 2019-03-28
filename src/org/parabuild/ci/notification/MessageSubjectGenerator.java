@@ -139,7 +139,7 @@ public final class MessageSubjectGenerator {
    *
    * @param buildHostName
    */
-  private String makeBuildHostName(final String buildHostName) {
+  private static String makeBuildHostName(final String buildHostName) {
     try {
       return StringUtils.isBlank(buildHostName) ? SystemConfigurationManagerFactory.getManager().getBuildManagerHost() : buildHostName;
     } catch (final UnknownHostException e) {
