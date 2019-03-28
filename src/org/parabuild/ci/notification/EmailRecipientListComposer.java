@@ -514,7 +514,7 @@ public final class EmailRecipientListComposer {
     if (!notifyBuildAdmin) {
       return;
     }
-    resultTo.addAll(NotificationUtils.getAdminAddresslList(true));
+    resultTo.addAll(NotificationUtils.getAdminAddressList(true));
   }
 
 

@@ -309,7 +309,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
 
       // add administrator to recipients
       final List toRecipients = new ArrayList(1);
-      toRecipients.addAll(NotificationUtils.getAdminAddresslList(true));
+      toRecipients.addAll(NotificationUtils.getAdminAddressList(true));
 
       // Create recipients
       final EmailRecipientListComposer composer = new EmailRecipientListComposer();

@@ -210,7 +210,7 @@ final class NotificationUtils {
    * @throws AddressException
    * @throws UnsupportedEncodingException
    */
-  public static Collection getAdminAddresslList(final boolean addSystemAdminAddress) throws AddressException {
+  public static Collection getAdminAddressList(final boolean addSystemAdminAddress) throws AddressException {
     try {
       // Add system admin email
       final List result = new ArrayList(11);
