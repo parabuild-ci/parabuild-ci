@@ -19,6 +19,9 @@ package org.parabuild.ci.security;
  */
 public final class AccessForbiddenException extends Exception {
 
+  private static final long serialVersionUID = -8445618285892303312L;
+
+
   /**
    * Constructs a new exception with the specified detail
    * message.  The cause is not initialized, and may subsequently

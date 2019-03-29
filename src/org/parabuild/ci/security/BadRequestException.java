@@ -19,6 +19,9 @@ package org.parabuild.ci.security;
  */
 public final class BadRequestException extends Exception {
 
+  private static final long serialVersionUID = 403406408226285556L;
+
+
   /**
    * Constructs a new exception with the specified detail
    * message.  The cause is not initialized, and may subsequently
