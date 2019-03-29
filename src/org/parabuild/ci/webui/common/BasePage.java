@@ -57,17 +57,16 @@ public abstract class BasePage extends Window {
   private static final String DEFAULT_HEADER_TEXT = Version.versionToString(false) + " build " + Version.releaseBuild();
 
 
-  public static final byte MENU_SELECTION_NONE = 0;
-  public static final byte MENU_SELECTION_BUILDS = 1;
-  public static final byte MENU_SELECTION_AGENTS = 2;
-  public static final byte MENU_SELECTION_MERGES = 3;
-  public static final byte MENU_SELECTION_RESULTS = 4;
-  public static final byte MENU_SELECTION_ADMINISTRATION = 5;
-  public static final byte MENU_SELECTION_ERRORS = 6;
-  public static final byte MENU_SELECTION_PREFERENCES = 7;
-  public static final byte MENU_SELECTION_DOCUMENTATION = 8;
+  protected static final byte MENU_SELECTION_BUILDS = 1;
+  protected static final byte MENU_SELECTION_AGENTS = 2;
+  protected static final byte MENU_SELECTION_MERGES = 3;
+  protected static final byte MENU_SELECTION_RESULTS = 4;
+  protected static final byte MENU_SELECTION_ADMINISTRATION = 5;
+  protected static final byte MENU_SELECTION_ERRORS = 6;
+  static final byte MENU_SELECTION_PREFERENCES = 7;
+  protected static final byte MENU_SELECTION_DOCUMENTATION = 8;
   public static final byte MENU_SELECTION_SEARCH = 9;
-  public static final byte MENU_SELECTION_LOGINLOGOUT = 10;
+  protected static final byte MENU_SELECTION_LOGINLOGOUT = 10;
 
 
   /**
@@ -99,7 +98,7 @@ public abstract class BasePage extends Window {
    * When the page created with this flag, a header separator is
    * not shown.
    */
-  public static final int FLAG_NO_HEADER_AND_FOOTER = 8;
+  private static final int FLAG_NO_HEADER_AND_FOOTER = 8;
 
   /**
    * When the page created with this flag, a page header label is visible.
@@ -311,7 +310,7 @@ public abstract class BasePage extends Window {
    * @see PageHeaderPanel#MODE_PUBLIC
    * @see PageHeaderPanel#MODE_ANONYMOUS
    */
-  protected final void setTopMenuMode(final int mode, final User user) {
+  private void setTopMenuMode(final int mode, final User user) {
     pnlHeader.setMenuMode(mode, user);
   }
 
