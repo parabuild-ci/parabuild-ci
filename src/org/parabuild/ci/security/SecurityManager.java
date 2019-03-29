@@ -64,7 +64,6 @@ import java.util.List;
 /**
  * Security manager
  */
-@SuppressWarnings("unchecked")
 public final class SecurityManager {
 
   private static final Log log = LogFactory.getLog(SecurityManager.class);

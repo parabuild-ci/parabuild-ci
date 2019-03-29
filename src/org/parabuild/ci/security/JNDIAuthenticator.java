@@ -1373,7 +1373,7 @@ public class JNDIAuthenticator {
     if (log.isDebugEnabled()) {
       log.debug("environment: " + environment);
     }
-    //noinspection UnnecessaryLocalVariable
+
     final InitialDirContext initialDirContext = new InitialDirContext(environment);
     if (log.isDebugEnabled()) {
       log.debug("initialDirContext: " + initialDirContext);
