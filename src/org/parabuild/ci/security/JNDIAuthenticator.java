@@ -868,7 +868,7 @@ public class JNDIAuthenticator {
         final String userDN = jndiUserLookupStringGenerator.makeUserLookupString(template, username).toString();
 
         // Get required attributes from user entry
-        Attributes attrs;
+        final Attributes attrs;
         try {
 
           attrs = context.getAttributes(userDN, attrIds);
@@ -1039,7 +1039,7 @@ public class JNDIAuthenticator {
   private boolean checkCredentials(final DirContext context, final JNDIUser user,
                                    final String credentials) throws NamingException {
 
-    boolean validated;
+    final boolean validated;
     if (StringUtils.isBlank(userPasswordAttributeName)) {
       validated = bindAsUser(context, user, credentials);
     } else {
@@ -1082,7 +1082,7 @@ public class JNDIAuthenticator {
       if (log.isDebugEnabled()) {
         log.debug("Validate the credentials specified by the user");
       }
-      boolean validated;
+      final boolean validated;
       if (StringUtils.isBlank(digestAlgorithm)) {
         validated = digest(credentials).equals(password);
       } else {

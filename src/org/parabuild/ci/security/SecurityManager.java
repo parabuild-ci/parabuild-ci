@@ -366,7 +366,6 @@ public final class SecurityManager {
       boolean allowedToPublishResults = false;
       boolean allowedToDeleteResults = false;
       boolean allowedToActivateBuild = false;
-      boolean allowedToViewBuild = true; // as it is a member of the group, it should be viewable
       for (final Object groupObject : groups) {
         final Group group = (Group) groupObject;
         allowedToCreateBuild |= group.isAllowedToCreateBuild();
