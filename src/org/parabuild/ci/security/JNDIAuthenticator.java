@@ -195,7 +195,7 @@ public class JNDIAuthenticator {
    * Constant that holds the name of the environment property for specifying
    * the manner in which aliases should be dereferenced.
    */
-  public static final String JAVA_NAMING_DEREF_ALIASES = "java.naming.ldap.derefAliases";
+  static final String JAVA_NAMING_DEREF_ALIASES = "java.naming.ldap.derefAliases";
 
   /**
    * Constatn to hold optional LDAP version.
