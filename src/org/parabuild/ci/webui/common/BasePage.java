@@ -218,7 +218,7 @@ public abstract class BasePage extends Window {
   }
 
 
-  private Panel makeFiller() {
+  private static Panel makeFiller() {
     final Panel pnlLeftContentFiller = new Panel();
     pnlLeftContentFiller.setWidth("30%");
     return pnlLeftContentFiller;
@@ -297,7 +297,7 @@ public abstract class BasePage extends Window {
    *
    * @param title
    */
-  protected final String makeTitle(final String title) {
+  protected static String makeTitle(final String title) {
     return Version.productName() + " >> " + title;
   }
 
@@ -333,7 +333,7 @@ public abstract class BasePage extends Window {
    *
    * @return header Component
    */
-  private Component makeFooter() {
+  private static Component makeFooter() {
 
     // create footer panel
     final Panel footerPanel = new Panel();
@@ -615,9 +615,9 @@ public abstract class BasePage extends Window {
    * Returns status view selection, if any, based on
    * parameters, the session or the cookie.
    */
-  protected final String getClientParameter(final Parameters params, final HttpServletRequest request,
-                                            final String parameterName, final String sessionParameterName,
-                                            final String cookieName) {
+  protected static String getClientParameter(final Parameters params, final HttpServletRequest request,
+                                             final String parameterName, final String sessionParameterName,
+                                             final String cookieName) {
     String result = params.getParameterValue(parameterName);
     if (!StringUtils.isBlank(result)) {
       return result;

@@ -14,7 +14,6 @@
 package org.parabuild.ci.webui.admin.stability;
 
 import org.parabuild.ci.webui.admin.system.AbstractSystemConfigurationPage;
-import org.parabuild.ci.webui.admin.security.SecurityConfigPanel;
 import org.parabuild.ci.webui.common.Pages;
 import viewtier.ui.ConversationalTierlet;
 

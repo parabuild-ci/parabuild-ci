@@ -14,8 +14,6 @@
 package org.parabuild.ci.webui.admin.displaygroup;
 
 import org.parabuild.ci.webui.admin.system.NavigatableSystemConfigurationPage;
-import org.parabuild.ci.webui.common.CommonCommandLink;
-import org.parabuild.ci.webui.common.CommonLink;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.Pages;
 import org.parabuild.ci.webui.common.WebuiUtils;
