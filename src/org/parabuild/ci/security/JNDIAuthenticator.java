@@ -1419,7 +1419,6 @@ public class JNDIAuthenticator {
       // no parens here; return whole thing
       return new String[]{userPatternString};
     }
-    int startingPoint;
     while (startParenLoc > -1) {
       // weed out escaped open parens and parens enclosing the
       // whole statement (in the case of valid LDAP search
@@ -1436,7 +1435,7 @@ public class JNDIAuthenticator {
       final String nextPathPart = userPatternString.substring
               (startParenLoc + 1, endParenLoc);
       pathList.add(nextPathPart);
-      startingPoint = endParenLoc + 1;
+      int startingPoint = endParenLoc + 1;
       startParenLoc = userPatternString.indexOf('(', startingPoint);
     }
 
