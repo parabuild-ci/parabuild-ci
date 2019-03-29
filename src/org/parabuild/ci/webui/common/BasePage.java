@@ -465,8 +465,7 @@ public abstract class BasePage extends Window {
     if (cookies == null) {
       return;
     }
-    for (int i = 0; i < cookies.length; i++) {
-      final Cookie cookie = cookies[i];
+    for (final Cookie cookie : cookies) {
       if (StringUtils.isBlank(cookie.getName())) {
         continue;
       }
@@ -588,8 +587,7 @@ public abstract class BasePage extends Window {
     final HttpServletRequest httpServletRequest = tierletContext.getHttpServletRequest();
     final Cookie[] cookies = httpServletRequest.getCookies();
     if (cookies != null) {
-      for (int i = 0; i < cookies.length; i++) {
-        final Cookie cookie = cookies[i];
+      for (final Cookie cookie : cookies) {
         final String cookieName = cookie.getName();
         final String cookieValue = cookie.getValue();
         if (!StringUtils.isBlank(cookieName)
@@ -636,8 +634,7 @@ public abstract class BasePage extends Window {
 
     final Cookie[] cookies = request.getCookies();
     if (cookies != null) {
-      for (int i = 0; i < cookies.length; i++) {
-        final Cookie cookie = cookies[i];
+      for (final Cookie cookie : cookies) {
         if (!StringUtils.isBlank(cookie.getName())
                 && cookie.getName().equals(cookieName)
                 && !StringUtils.isBlank(cookie.getValue())) {
