@@ -195,7 +195,7 @@ public class JNDIAuthenticator {
    * Constant that holds the name of the environment property for specifying
    * the manner in which aliases should be dereferenced.
    */
-  static final String JAVA_NAMING_DEREF_ALIASES = "java.naming.ldap.derefAliases";
+  private static final String JAVA_NAMING_DEREF_ALIASES = "java.naming.ldap.derefAliases";
 
   /**
    * Constatn to hold optional LDAP version.
@@ -1274,7 +1274,7 @@ public class JNDIAuthenticator {
    * @param attrId Attribute name
    * @throws NamingException if a directory server error occurs
    */
-  private String getAttributeValue(final Attributes attrs, final String attrId)
+  private static String getAttributeValue(final Attributes attrs, final String attrId)
           throws NamingException {
 
     if (StringUtils.isBlank(attrId)) {
@@ -1293,7 +1293,7 @@ public class JNDIAuthenticator {
     if (value == null) {
       return null;
     }
-    String valueString = null;
+    final String valueString;
     if (value instanceof byte[]) {
       valueString = new String((byte[]) value);
     } else {
@@ -1312,7 +1312,7 @@ public class JNDIAuthenticator {
    * @param values ArrayList containing values found so far
    * @throws NamingException if a directory server error occurs
    */
-  private List addAttributeValues(final String attrId, final Attributes attrs, List values)
+  private static List addAttributeValues(final String attrId, final Attributes attrs, List values)
           throws NamingException {
 
     if (attrId == null || attrs == null) {
@@ -1339,7 +1339,7 @@ public class JNDIAuthenticator {
    *
    * @param context The directory context to be closed
    */
-  private void closeHard(final DirContext context) {
+  private static void closeHard(final DirContext context) {
 
     // Do nothing if there is no opened connection
     if (context == null) {
@@ -1407,38 +1407,40 @@ public class JNDIAuthenticator {
    * @param userPatternString - a string LDAP search paths surrounded by
    *                          parentheses
    */
-  private String[] parseUserPatternString(final String userPatternString) {
+  private static String[] parseUserPatternString(final String userPatternString) {
 
-    if (userPatternString != null) {
-      final Collection pathList = new ArrayList(5);
-      int startParenLoc = userPatternString.indexOf('(');
-      if (startParenLoc == -1) {
-        // no parens here; return whole thing
-        return new String[]{userPatternString};
-      }
-      int startingPoint = 0;
-      while (startParenLoc > -1) {
-        // weed out escaped open parens and parens enclosing the
-        // whole statement (in the case of valid LDAP search
-        // strings: (|(something)(somethingelse))
-        while (userPatternString.charAt(startParenLoc + 1) == '|' ||
-                startParenLoc != 0 && userPatternString.charAt(startParenLoc - 1) == '\\') {
-          startParenLoc = userPatternString.indexOf('(', startParenLoc + 1);
-        }
-        int endParenLoc = userPatternString.indexOf(')', startParenLoc + 1);
-        // weed out escaped end-parens
-        while (userPatternString.charAt(endParenLoc - 1) == '\\') {
-          endParenLoc = userPatternString.indexOf(')', endParenLoc + 1);
-        }
-        final String nextPathPart = userPatternString.substring
-                (startParenLoc + 1, endParenLoc);
-        pathList.add(nextPathPart);
-        startingPoint = endParenLoc + 1;
-        startParenLoc = userPatternString.indexOf('(', startingPoint);
-      }
-      return (String[]) pathList.toArray(new String[pathList.size()]);
+    if (userPatternString == null) {
+      return null;
     }
-    return null;
+
+    final Collection pathList = new ArrayList(5);
+    int startParenLoc = userPatternString.indexOf('(');
+    if (startParenLoc == -1) {
+      // no parens here; return whole thing
+      return new String[]{userPatternString};
+    }
+    int startingPoint = 0;
+    while (startParenLoc > -1) {
+      // weed out escaped open parens and parens enclosing the
+      // whole statement (in the case of valid LDAP search
+      // strings: (|(something)(somethingelse))
+      while (userPatternString.charAt(startParenLoc + 1) == '|' ||
+              startParenLoc != 0 && userPatternString.charAt(startParenLoc - 1) == '\\') {
+        startParenLoc = userPatternString.indexOf('(', startParenLoc + 1);
+      }
+      int endParenLoc = userPatternString.indexOf(')', startParenLoc + 1);
+      // weed out escaped end-parens
+      while (userPatternString.charAt(endParenLoc - 1) == '\\') {
+        endParenLoc = userPatternString.indexOf(')', endParenLoc + 1);
+      }
+      final String nextPathPart = userPatternString.substring
+              (startParenLoc + 1, endParenLoc);
+      pathList.add(nextPathPart);
+      startingPoint = endParenLoc + 1;
+      startParenLoc = userPatternString.indexOf('(', startingPoint);
+    }
+
+    return (String[]) pathList.toArray(new String[0]);
   }
 
 
@@ -1457,7 +1459,7 @@ public class JNDIAuthenticator {
    * @param inString string to escape according to RFC 2254 guidelines
    * @return String the escaped/encoded result
    */
-  private String doRFC2254Encoding(final String inString) {
+  private static String doRFC2254Encoding(final String inString) {
     final StringBuilder buf = new StringBuilder(inString.length());
     for (int i = 0; i < inString.length(); i++) {
       final char c = inString.charAt(i);
@@ -1486,7 +1488,7 @@ public class JNDIAuthenticator {
   }
 
 
-  private void putIfNotBlank(final Map map, final String key, final String value) {
+  private static void putIfNotBlank(final Map map, final String key, final String value) {
     if (!StringUtils.isBlank(value)) {
       map.put(key, value);
     }
@@ -1496,6 +1498,7 @@ public class JNDIAuthenticator {
   /**
    * Helper method.
    */
+  @SuppressWarnings("MethodMayBeStatic")
   private NamingException toNamingException(final ValidationException e) {
     final NamingException ne = new NamingException(StringUtils.toString(e));
     ne.initCause(e);
