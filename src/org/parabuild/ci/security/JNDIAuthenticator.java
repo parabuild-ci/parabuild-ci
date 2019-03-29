@@ -863,8 +863,7 @@ public class JNDIAuthenticator {
 
       // parse template
       final String[] userDistinguishedNameTemplateArray = parseUserPatternString(userDistinguishedNameTemplate);
-      for (int i = 0; i < userDistinguishedNameTemplateArray.length; i++) {
-        final String template = userDistinguishedNameTemplateArray[i];
+      for (final String template : userDistinguishedNameTemplateArray) {
         final JNDIUserLookupStringGenerator jndiUserLookupStringGenerator = new JNDIUserLookupStringGenerator();
         final String userDN = jndiUserLookupStringGenerator.makeUserLookupString(template, username).toString();
 
@@ -1259,9 +1258,6 @@ public class JNDIAuthenticator {
     if (log.isDebugEnabled()) {
       if (list != null) {
         log.debug("Returning " + list.size() + " roles");
-        for (int i = 0; i < list.size(); i++) {
-          log.debug("Found role " + list.get(i));
-        }
       } else {
         log.debug("getRoles about to return null ");
       }
