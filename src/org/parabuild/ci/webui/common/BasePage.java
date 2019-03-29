@@ -92,7 +92,7 @@ public abstract class BasePage extends Window {
    * When the page created with this flag, a header separator is
    * not shown.
    */
-  public static final int FLAG_NO_HEADER_SEPARATOR = 4;
+  protected static final int FLAG_NO_HEADER_SEPARATOR = 4;
 
   /**
    * When the page created with this flag, a header separator is
@@ -225,7 +225,7 @@ public abstract class BasePage extends Window {
   }
 
 
-  public static boolean flagSet(final int flags, final int flag) {
+  static boolean flagSet(final int flags, final int flag) {
     return (flags & flag) != 0;
   }
 
@@ -455,7 +455,7 @@ public abstract class BasePage extends Window {
    *
    * @param loginUsingRememberedUser
    */
-  public final void setLoginUsingRememberedUser(final boolean loginUsingRememberedUser) {
+  protected final void setLoginUsingRememberedUser(final boolean loginUsingRememberedUser) {
     this.loginUsingRememberedUser = loginUsingRememberedUser;
   }
 
@@ -516,7 +516,7 @@ public abstract class BasePage extends Window {
    *
    * @param visible
    */
-  public final void setRefreshSwitchVisible(final boolean visible) {
+  protected final void setRefreshSwitchVisible(final boolean visible) {
     this.pnlHeader.setRefreshSwitchVisible(visible);
   }
 
@@ -539,7 +539,7 @@ public abstract class BasePage extends Window {
    * default color {@link
    * Pages#COLOR_PAGE_HEADER_FOREGROUND} is used.
    */
-  public final void setPageHeaderForeground(final Color color) {
+  protected final void setPageHeaderForeground(final Color color) {
     if (lbHeaderLabel != null) {
       lbHeaderLabel.setForeground(color);
       lbHeaderLabel.setBorder(Border.BOTTOM, 1, color);
@@ -554,7 +554,7 @@ public abstract class BasePage extends Window {
   }
 
 
-  public MergeRights getMergeUserRights(final int activeMergeID) {
+  protected MergeRights getMergeUserRights(final int activeMergeID) {
     final SecurityManager sm = SecurityManager.getInstance();
     return sm.getUserMergeRights(getUser(), activeMergeID);
   }
