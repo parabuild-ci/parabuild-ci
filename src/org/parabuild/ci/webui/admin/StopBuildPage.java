@@ -60,7 +60,7 @@ public final class StopBuildPage extends BasePage implements StatelessTierlet {
     }
     try {
       // authorise
-      if (!super.getUserRigths(buildConfig.getActiveBuildID()).isAllowedToStopBuild()) {
+      if (!super.getUserRights(buildConfig.getActiveBuildID()).isAllowedToStopBuild()) {
         return WebuiUtils.showNotAuthorized(this);
       }
       // start build

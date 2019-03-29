@@ -70,7 +70,7 @@ public final class BuildCommandListPage extends BasePage implements StatelessTie
       return WebuiUtils.showBuildNotFound(this);
     }
     // authorise
-    final BuildRights userRights = getUserRigths(buildConfig.getActiveBuildID());
+    final BuildRights userRights = getUserRights(buildConfig.getActiveBuildID());
     if (!userRights.isAllowedToListCommands()) {
       return WebuiUtils.showNotAuthorized(this);
     }

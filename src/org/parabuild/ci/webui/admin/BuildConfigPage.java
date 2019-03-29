@@ -114,7 +114,7 @@ public final class BuildConfigPage extends BasePage implements ConversationalTie
         return Result.Continue();
       } else {
         // authorise
-        final BuildRights userRigths = super.getUserRigths(buildConfig.getActiveBuildID());
+        final BuildRights userRigths = super.getUserRights(buildConfig.getActiveBuildID());
         if (!userRigths.isAllowedToUpdateBuild()) {
           return WebuiUtils.showNotAuthorized(this);
         }

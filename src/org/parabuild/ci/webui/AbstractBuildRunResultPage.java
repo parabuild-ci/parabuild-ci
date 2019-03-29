@@ -61,7 +61,7 @@ abstract class AbstractBuildRunResultPage extends BasePage {
       return WebuiUtils.showBuildNotFound(this);
     } else {
       // authorise
-      if (!getUserRigths(buildRun.getActiveBuildID()).isAllowedToViewBuild()) {
+      if (!getUserRights(buildRun.getActiveBuildID()).isAllowedToViewBuild()) {
         baseContentPanel().getUserPanel().clear();
         return WebuiUtils.showNotAuthorized(this);
       }

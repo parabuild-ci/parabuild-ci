@@ -58,7 +58,7 @@ public final class BuildRunTestsPage extends BasePage implements StatelessTierle
       return WebuiUtils.showBuildNotFound(this);
     } else {
       // Authorise
-      if (!getUserRigths(buildRun.getActiveBuildID()).isAllowedToViewBuild()) {
+      if (!getUserRights(buildRun.getActiveBuildID()).isAllowedToViewBuild()) {
         baseContentPanel().getUserPanel().clear();
         return WebuiUtils.showNotAuthorized(this);
       }

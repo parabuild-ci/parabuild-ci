@@ -55,7 +55,7 @@ public final class StartMergePage extends BaseMergePage implements StatelessTier
     }
 
     // authorise
-    if (!super.getMergeUserRigths(mergeConfiguration.getActiveMergeID()).isAllowedToStartMerge()) {
+    if (!super.getMergeUserRights(mergeConfiguration.getActiveMergeID()).isAllowedToStartMerge()) {
       return WebuiUtils.showNotAuthorized(this);
     }
 

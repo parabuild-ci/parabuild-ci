@@ -53,7 +53,7 @@ public final class RequestNextCleanCheckoutPage extends BasePage implements Stat
     } else {
       try {
         // authorise
-        if (!super.getUserRigths(buildConfig.getActiveBuildID()).isAllowedToStartBuild()) {
+        if (!super.getUserRights(buildConfig.getActiveBuildID()).isAllowedToStartBuild()) {
           return WebuiUtils.showNotAuthorized(this);
         }
         // set title

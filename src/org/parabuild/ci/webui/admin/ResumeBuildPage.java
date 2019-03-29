@@ -58,7 +58,7 @@ public final class ResumeBuildPage extends BasePage implements StatelessTierlet 
 
     try {
       // authorize
-      if (!super.getUserRigths(buildConfig.getActiveBuildID()).isAllowedToResumeBuild()) {
+      if (!super.getUserRights(buildConfig.getActiveBuildID()).isAllowedToResumeBuild()) {
         return WebuiUtils.showNotAuthorized(this);
       }
       // start build

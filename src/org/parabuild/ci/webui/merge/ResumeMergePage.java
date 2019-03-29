@@ -55,7 +55,7 @@ public final class ResumeMergePage extends BaseMergePage implements StatelessTie
 
     try {
       // authorize
-      if (!super.getMergeUserRigths(mergeConfiguration.getActiveMergeID()).isAllowedToResumeMerge()) {
+      if (!super.getMergeUserRights(mergeConfiguration.getActiveMergeID()).isAllowedToResumeMerge()) {
         return WebuiUtils.showNotAuthorized(this);
       }
       // start merge

@@ -71,7 +71,7 @@ public abstract class BasePage extends Window {
 
   /**
    * When the page created with this flag, an empty header
-   * separator will be displayed after the top menue panel.
+   * separator will be displayed after the top menu panel.
    *
    * @see #HEADER_DIVIDER_HEIGHT
    * @see PageHeaderPanel
@@ -81,7 +81,7 @@ public abstract class BasePage extends Window {
   /**
    * When the page created with this flag, a header separator
    * with quick search panel on the right side will be displayed
-   * after the top menue panel.
+   * after the top menu panel.
    *
    * @see HeaderDividerPanel
    * @see PageHeaderPanel
@@ -260,7 +260,7 @@ public abstract class BasePage extends Window {
 
       return result;
     } catch (final RuntimeException e) {
-      // report runitme exception
+      // report runtime exception
       final Error error = new Error("Unexpected user interface error");
       error.setDetails(e);
       error.setErrorLevel(Error.ERROR_LEVEL_FATAL);
@@ -397,7 +397,7 @@ public abstract class BasePage extends Window {
    * @param activeBuildID
    * @return RightSet for the given buildID
    */
-  public final BuildRights getUserRigths(final int activeBuildID) {
+  public final BuildRights getUserRights(final int activeBuildID) {
     final SecurityManager sm = SecurityManager.getInstance();
     return sm.getUserBuildRights(getUser(), activeBuildID);
   }
@@ -501,7 +501,7 @@ public abstract class BasePage extends Window {
 
 
   /**
-   * Removes "Rememer me" cookiet
+   * Removes "Remember me" cookie.
    */
   protected final void removeRememberMeCookieAndDigest() {
     final Cookie cookie = new Cookie(WebUIConstants.COOKIE_REMEMBER_ME, "");
@@ -512,7 +512,7 @@ public abstract class BasePage extends Window {
 
 
   /**
-   * Makes refresh switch visible of the "visible" paramter is set to true.
+   * Makes refresh switch visible of the "visible" parameter is set to true.
    *
    * @param visible
    */
@@ -554,7 +554,7 @@ public abstract class BasePage extends Window {
   }
 
 
-  public MergeRights getMergeUserRigths(final int activeMergeID) {
+  public MergeRights getMergeUserRights(final int activeMergeID) {
     final SecurityManager sm = SecurityManager.getInstance();
     return sm.getUserMergeRights(getUser(), activeMergeID);
   }
@@ -576,7 +576,7 @@ public abstract class BasePage extends Window {
 
 
   /**
-   * Sets cookie to rememmer selection.
+   * Sets cookie to remember selection.
    *
    * @param name
    * @param value

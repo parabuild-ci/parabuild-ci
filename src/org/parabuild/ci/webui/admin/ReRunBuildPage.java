@@ -56,7 +56,7 @@ public final class ReRunBuildPage extends BasePage implements ConversationalTier
     } else {
 
       // authorise
-      if (!super.getUserRigths(activeBuildConfig.getActiveBuildID()).isAllowedToStartBuild()) {
+      if (!super.getUserRights(activeBuildConfig.getActiveBuildID()).isAllowedToStartBuild()) {
         return WebuiUtils.showNotAuthorized(this);
       }
 

@@ -104,7 +104,7 @@ public abstract class AbstractBuildStatisticsPage extends BasePage {
     final int activeBuildID = buildConfig.getActiveBuildID();
 
     // authorise
-    if (!getUserRigths(activeBuildID).isAllowedToViewBuild()) {
+    if (!getUserRights(activeBuildID).isAllowedToViewBuild()) {
       return WebuiUtils.showNotAuthorized(this);
     }
 

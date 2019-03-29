@@ -69,7 +69,7 @@ public final class DeleteMergePage extends BaseMergePage implements Conversation
     }
 
     // authorise
-    if (!super.getMergeUserRigths(mergeConfiguration.getActiveMergeID()).isAllowedToDeleteMerge()) {
+    if (!super.getMergeUserRights(mergeConfiguration.getActiveMergeID()).isAllowedToDeleteMerge()) {
       return WebuiUtils.showNotAuthorized(this);
     }
 

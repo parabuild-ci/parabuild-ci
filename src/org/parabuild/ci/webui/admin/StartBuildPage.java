@@ -53,7 +53,7 @@ public final class StartBuildPage extends BasePage implements ConversationalTier
     }
 
     // authorise
-    if (!super.getUserRigths(buildConfig.getActiveBuildID()).isAllowedToStartBuild()) {
+    if (!super.getUserRights(buildConfig.getActiveBuildID()).isAllowedToStartBuild()) {
       return WebuiUtils.showNotAuthorized(this);
     }
 

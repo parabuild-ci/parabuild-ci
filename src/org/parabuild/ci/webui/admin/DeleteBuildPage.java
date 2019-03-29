@@ -88,7 +88,7 @@ public final class DeleteBuildPage extends BasePage implements ConversationalTie
     }
 
     // authorise
-    if (!super.getUserRigths(activeBuild.getID()).isAllowedToDeleteBuild()) {
+    if (!super.getUserRights(activeBuild.getID()).isAllowedToDeleteBuild()) {
       return WebuiUtils.showNotAuthorized(this);
     }
 

@@ -58,7 +58,7 @@ public final class StopMergePage extends BasePage implements StatelessTierlet {
     } else {
       try {
         // authorise
-        if (!super.getMergeUserRigths(mergeConfiguration.getID()).isAllowedToStopMerge()) {
+        if (!super.getMergeUserRights(mergeConfiguration.getID()).isAllowedToStopMerge()) {
           return WebuiUtils.showNotAuthorized(this);
         }
         // start build

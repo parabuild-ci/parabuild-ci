@@ -80,7 +80,7 @@ public final class CloneBuildPage extends BasePage implements StatelessTierlet {
 
     try {
 
-      final BuildRights userRights = getUserRigths(buildToClone.getActiveBuildID());
+      final BuildRights userRights = getUserRights(buildToClone.getActiveBuildID());
       if (!super.isValidAdminUser() && !userRights.isAllowedToUpdateBuild()) {
         return WebuiUtils.showNotAuthorized(this);
       }

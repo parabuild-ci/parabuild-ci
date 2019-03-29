@@ -44,7 +44,7 @@ public final class DeactivateBuildPage extends BasePage implements StatelessTier
     final BuildConfig buildConfig = ParameterUtils.getActiveBuildConfigFromParameters(params);
     if (buildConfig != null) {
       // authorise
-      if (!super.getUserRigths(buildConfig.getActiveBuildID()).isAllowedToDeactivateBuild()) {
+      if (!super.getUserRights(buildConfig.getActiveBuildID()).isAllowedToDeactivateBuild()) {
         return WebuiUtils.showNotAuthorized(this);
       }
       setTitle(makeTitle("Deactivating build \"" + buildConfig.getBuildName() + '\"'));

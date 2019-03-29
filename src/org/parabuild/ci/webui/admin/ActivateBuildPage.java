@@ -53,7 +53,7 @@ public final class ActivateBuildPage extends BasePage implements StatelessTierle
     }
 
     // authorise
-    if (!getUserRigths(buildConfig.getActiveBuildID()).isAllowedToActivateBuild()) {
+    if (!getUserRights(buildConfig.getActiveBuildID()).isAllowedToActivateBuild()) {
       return WebuiUtils.showNotAuthorized(this);
     }
 

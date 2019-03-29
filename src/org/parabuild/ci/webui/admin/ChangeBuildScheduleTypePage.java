@@ -58,7 +58,7 @@ public final class ChangeBuildScheduleTypePage extends BasePage implements Conve
     }
 
     // authorise
-    if (!super.getUserRigths(buildConfig.getActiveBuildID()).isAllowedToUpdateBuild()) {
+    if (!super.getUserRights(buildConfig.getActiveBuildID()).isAllowedToUpdateBuild()) {
       return WebuiUtils.showNotAuthorized(this);
     }
 

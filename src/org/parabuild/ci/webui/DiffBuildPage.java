@@ -57,7 +57,7 @@ public final class DiffBuildPage extends BasePage implements ConversationalTierl
     }
 
     // authorise
-    if (!super.getUserRigths(buildConfig.getActiveBuildID()).isAllowedToViewBuild()) {
+    if (!super.getUserRights(buildConfig.getActiveBuildID()).isAllowedToViewBuild()) {
       return WebuiUtils.showNotAuthorized(this);
     }
 
