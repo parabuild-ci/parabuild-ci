@@ -22,15 +22,15 @@ public final class BuildRights implements Serializable {
 
   private static final long serialVersionUID = -4372844970766934869L; // NOPMD
 
-  private boolean allowedToCreateBuild;
-  private boolean allowedToDeleteBuild;
-  private boolean allowedToStartBuild;
-  private boolean allowedToStopBuild;
-  private boolean allowedToUpdateBuild;
-  private boolean allowedToViewBuild;
-  private boolean allowedToActivateBuild;
-  private boolean allowedToPublishResults;
-  private boolean allowedToDeleteResults;
+  private final boolean allowedToCreateBuild;
+  private final boolean allowedToDeleteBuild;
+  private final boolean allowedToStartBuild;
+  private final boolean allowedToStopBuild;
+  private final boolean allowedToUpdateBuild;
+  private final boolean allowedToViewBuild;
+  private final boolean allowedToActivateBuild;
+  private final boolean allowedToPublishResults;
+  private final boolean allowedToDeleteResults;
 
   public static final BuildRights ALL_RIGHTS = new BuildRights(true, true, true, true, true, true, true, true, true);
   public static final BuildRights NO_RIGHTS = new BuildRights(false, false, false, false, false, false, false, false, false);

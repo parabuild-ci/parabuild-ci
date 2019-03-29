@@ -22,10 +22,10 @@ public final class ResultGroupRights implements Serializable {
 
   private static final long serialVersionUID = -4372844970766934869L; // NOPMD
 
-  private boolean allowedToCreateResultGroup;
-  private boolean allowedToDeleteResultGroup;
-  private boolean allowedToUpdateResultGroup;
-  private boolean allowedToViewResultGroup;
+  private final boolean allowedToCreateResultGroup;
+  private final boolean allowedToDeleteResultGroup;
+  private final boolean allowedToUpdateResultGroup;
+  private final boolean allowedToViewResultGroup;
 
   public static final ResultGroupRights ALL_RIGHTS = new ResultGroupRights(true, true, true, true);
   public static final ResultGroupRights NO_RIGHTS = new ResultGroupRights(false, false, false, false);

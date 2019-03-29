@@ -312,13 +312,13 @@ public class JNDIAuthenticator {
    * @see ConfigurationConstants#LDAP_USER_LOOKUP_BY_DN_TEMPLATE
    * @see ConfigurationConstants#LDAP_USER_LOOKUP_BY_SEARCH
    */
-  private byte userLookupMode;
+  private final byte userLookupMode;
 
   /**
    * If set to true authentication will throw an exception if e-mail attribute
    * does not exist or not set.
    */
-  private boolean emailRequired;
+  private final boolean emailRequired;
 
   /**
    * LDAP version.
