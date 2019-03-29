@@ -376,7 +376,6 @@ public final class SecurityManager {
         allowedToUpdateBuild |= group.isAllowedToUpdateBuild();
         allowedToPublishResults |= group.isAllowedToPublishResults();
         allowedToDeleteResults |= group.isAllowedToDeleteResults();
-        allowedToViewBuild |= group.isAllowedToViewBuild();
         allowedToActivateBuild |= group.isAllowedToActivateBuild();
       }
 
@@ -395,7 +394,7 @@ public final class SecurityManager {
       // Make result
       buildRights = new BuildRights(allowedToCreateBuild, allowedToDeleteBuild,
               allowedToStartBuild, allowedToStopBuild, allowedToUpdateBuild,
-              allowedToViewBuild, allowedToActivateBuild, allowedToPublishResults,
+              true, allowedToActivateBuild, allowedToPublishResults,
               allowedToDeleteResults);
     }
 
@@ -1435,20 +1434,18 @@ public final class SecurityManager {
       boolean allowedToCreateResultGroup = false;
       boolean allowedToUpdateResultGroup = false;
       boolean allowedToDeleteResultGroup = false;
-      boolean allowedToViewResultGroup = true; // as it is a member of the group, it should be viewable
       for (final Object groupObject : groups) {
         final Group group = (Group) groupObject;
 //        if (log.isDebugEnabled()) log.debug("group: " + group);
         allowedToCreateResultGroup |= group.isAllowedToCreateResultGroup();
         allowedToDeleteResultGroup |= group.isAllowedToDeleteResultGroup();
         allowedToUpdateResultGroup |= group.isAllowedToUpdateResultGroup();
-        allowedToViewResultGroup |= group.isAllowedToViewResultGroup();
       }
 
       // make result
       resultGroupRights = new ResultGroupRights(allowedToCreateResultGroup,
               allowedToDeleteResultGroup, allowedToUpdateResultGroup,
-              allowedToViewResultGroup);
+              true);
     }
 
 //    if (log.isDebugEnabled()) log.debug("rightSet from SM: " + rightSet);
