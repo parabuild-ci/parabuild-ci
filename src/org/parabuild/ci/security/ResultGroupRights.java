@@ -14,6 +14,7 @@
 package org.parabuild.ci.security;
 
 import java.io.*;
+import java.util.Objects;
 
 /**
  * Set of rights a user has on a given result group.
@@ -81,7 +82,7 @@ public final class ResultGroupRights implements Serializable {
 
   public boolean equals(final Object o) {
     if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
+    if (!Objects.equals(getClass(), o.getClass())) return false;
     final ResultGroupRights buildRights = (ResultGroupRights)o;
     if (allowedToCreateResultGroup != buildRights.allowedToCreateResultGroup) return false;
     if (allowedToDeleteResultGroup != buildRights.allowedToDeleteResultGroup) return false;
