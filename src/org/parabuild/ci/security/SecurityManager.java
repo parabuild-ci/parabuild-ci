@@ -1323,14 +1323,7 @@ public final class SecurityManager {
     // goes to SystemConfigurationManagerFactory to get a setting
     //
 
-    // for null context show the descriptions
-    if (tierletContext == null) {
-      return true;
-    }
-    final int userIDFromRequest = getUserIDFromContext(tierletContext);
-
-    // for non-anonymous users show the descriptions
-    if (userIDFromRequest != User.UNSAVED_ID) {
+    if (isRegisteredUser(tierletContext)) {
       return true;
     }
 
@@ -1710,17 +1703,7 @@ public final class SecurityManager {
     // REVIEWME: vimeshev 2007-04-22 - performance - every time
     // goes to SystemConfigurationManagerFactory to get a setting
     //
-
-    // for null context show the descriptions
-    if (tierletContext == null) {
-      return true;
-    }
-    final int userIDFromRequest = getUserIDFromContext(tierletContext);
-
-    // for non-anonymous users show the descriptions
-    if (userIDFromRequest != User.UNSAVED_ID) {
-      return true;
-    }
+    if (isRegisteredUser(tierletContext)) return true;
 
     // return according to the setting
     return !SystemConfigurationManagerFactory.getManager().isHideChangeListFilesFromAnonymousUsers();
@@ -1912,6 +1895,19 @@ public final class SecurityManager {
   private Cache getGeneralAccessRightsCache() throws CacheException {
     return getAccessRightsCache("general.access.rights");
   }
+
+  private boolean isRegisteredUser(final TierletContext tierletContext) {
+
+    // for null context show the descriptions
+    if (tierletContext == null) {
+      return true;
+    }
+    final int userIDFromRequest = getUserIDFromContext(tierletContext);
+
+    // for non-anonymous users show the descriptions
+    return userIDFromRequest != User.UNSAVED_ID;
+  }
+
 
 
   private static void invalidate(final Cache cache) throws IOException {
