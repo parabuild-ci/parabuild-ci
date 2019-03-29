@@ -1193,7 +1193,7 @@ public final class SecurityManager {
     // validate user can access it.
     final int userID = getUserIDFromRequest(req);
     if (!userCanViewBuild(userID, buildConfig.getBuildID())) {
-      throw new AccessForbiddenException("User cannot access this build. Build ID: " + Integer.toString(buildConfig.getBuildID()) + ", user ID: " + Integer.toString(userID));
+      throw new AccessForbiddenException("User cannot access this build. Build ID: " + buildConfig.getBuildID() + ", user ID: " + userID);
     }
 
     // return result
