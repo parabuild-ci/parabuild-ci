@@ -24,7 +24,7 @@
 
   <!-- Compile Parabuild remote build manager installer-->
   <target name="installer.compile" depends="installer.resources">
-    <javac destdir="${installer.classes.dir}" includes="org/parabuild/ci/installer/**.java" debug="on" includeantruntime="false" source="1.5" target="1.5">
+    <javac destdir="${installer.classes.dir}" includes="org/parabuild/ci/installer/**.java" debug="on" includeantruntime="false">
       <compilerarg value="-proc:none"/>
       <classpath>
         <pathelement path="${i4jruntime.jar}"/>

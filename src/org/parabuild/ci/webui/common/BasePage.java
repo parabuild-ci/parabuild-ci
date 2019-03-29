@@ -116,8 +116,8 @@ public abstract class BasePage extends Window {
   public static final int HEADER_DIVIDER_HEIGHT = 25;
 
 
-  private MessagePanel pnlBaseContent = null;
-  private PageHeaderPanel pnlHeader = null;
+  private final MessagePanel pnlBaseContent;
+  private final PageHeaderPanel pnlHeader;
 
   /**
    * @see

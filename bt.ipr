@@ -147,6 +147,7 @@
     <option name="NEW_SESSION_BEAN_LAST_PACKAGE" value="" />
   </component>
   <component name="EjbManager" enabled="false" />
+  <component name="Encoding" addBOMForNewFiles="with NO BOM" />
   <component name="ExportToHTMLSettings">
     <option name="PRINT_LINE_NUMBERS" value="false" />
     <option name="OPEN_IN_BROWSER" value="false" />
@@ -208,7 +209,6 @@
       <inspection_tool class="BigDecimalEquals" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="BooleanMethodIsAlwaysInverted" enabled="false" level="WARNING" enabled_by_default="false" />
       <inspection_tool class="BusyWait" enabled="true" level="WARNING" enabled_by_default="true" />
-      <inspection_tool class="CStyleArrayDeclaration" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="CallToNativeMethodWhileLocked" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="CallToSimpleGetterInClass" enabled="true" level="WARNING" enabled_by_default="true">
         <option name="ignoreGetterCallsOnOtherObjects" value="false" />
@@ -238,7 +238,8 @@
       <inspection_tool class="ConfusingOctalEscape" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="ConstantAssertCondition" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="ConstantJUnitAssertArgument" enabled="true" level="WARNING" enabled_by_default="true" />
-      <inspection_tool class="ControlFlowStatementWithoutBraces" enabled="true" level="WARNING" enabled_by_default="true" />
+      <inspection_tool class="ControlFlowStatementWithoutBraces" enabled="false" level="WARNING" enabled_by_default="false" />
+      <inspection_tool class="Convert2Lambda" enabled="false" level="WARNING" enabled_by_default="false" />
       <inspection_tool class="CovariantCompareTo" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="CovariantEquals" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="DefaultNotLastCaseInSwitch" enabled="true" level="WARNING" enabled_by_default="true" />
@@ -457,7 +458,7 @@
         <option name="ignoreAnonymousInnerClasses" value="false" />
         <option name="superClassString" value="" />
       </inspection_tool>
-      <inspection_tool class="SerializableHasSerializationMethods" enabled="true" level="WARNING" enabled_by_default="true">
+      <inspection_tool class="SerializableHasSerializationMethods" enabled="false" level="WARNING" enabled_by_default="false">
         <option name="ignoreAnonymousInnerClasses" value="false" />
         <option name="superClassString" value="java.awt.Component,java.io.Externalizable" />
       </inspection_tool>
@@ -521,6 +522,13 @@
       <inspection_tool class="TransientFieldInNonSerializableClass" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="TransientFieldNotInitialized" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="TrivialStringConcatenation" enabled="true" level="WARNING" enabled_by_default="true" />
+      <inspection_tool class="UNCHECKED_WARNING" enabled="true" level="WARNING" enabled_by_default="true">
+        <option name="IGNORE_UNCHECKED_ASSIGNMENT" value="true" />
+        <option name="IGNORE_UNCHECKED_GENERICS_ARRAY_CREATION" value="true" />
+        <option name="IGNORE_UNCHECKED_CALL" value="true" />
+        <option name="IGNORE_UNCHECKED_CAST" value="true" />
+        <option name="IGNORE_UNCHECKED_OVERRIDING" value="true" />
+      </inspection_tool>
       <inspection_tool class="UnaryPlus" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="UnconditionalWait" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="UnnecessaryBoxing" enabled="false" level="WARNING" enabled_by_default="false" />
@@ -780,6 +788,44 @@
     <option name="projectName" value="bt" />
   </component>
   <component name="ProjectDictionaryState">
+    <dictionary name="simeshev">
+      <words>
+        <w>airius</w>
+        <w>archivable</w>
+        <w>buildrunid</w>
+        <w>cacheable</w>
+        <w>computername</w>
+        <w>deref</w>
+        <w>dereferenced</w>
+        <w>ldapadmin</w>
+        <w>ldaprealm</w>
+        <w>ldapserver</w>
+        <w>lgpl</w>
+        <w>multifile</w>
+        <w>myorg</w>
+        <w>nopmd</w>
+        <w>novell</w>
+        <w>ohost</w>
+        <w>quitwait</w>
+        <w>readlimit</w>
+        <w>resetter</w>
+        <w>reviewme</w>
+        <w>sendpartial</w>
+        <w>smpts</w>
+        <w>smtp</w>
+        <w>smtps</w>
+        <w>somethingelse</w>
+        <w>sres</w>
+        <w>srun</w>
+        <w>successfuly</w>
+        <w>todelete</w>
+        <w>uniquemember</w>
+        <w>userpassword</w>
+        <w>vimeshev</w>
+        <w>weblogic</w>
+        <w>webui</w>
+      </words>
+    </dictionary>
     <dictionary name="vimeshev">
       <words>
         <w>buildid</w>

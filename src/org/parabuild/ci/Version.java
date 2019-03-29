@@ -81,7 +81,7 @@ public final class Version implements Serializable {
 
 
   public static String versionToString(final boolean fullVersion) {
-    final StringBuffer result = new StringBuffer(30);
+    final StringBuilder result = new StringBuilder(30);
 
     // static part
     result.append(productName()).append(STR_SPACE);
