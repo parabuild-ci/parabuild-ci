@@ -145,7 +145,7 @@ public class JNDIAuthenticator {
   private static final String[] EMPTY_STRING_ARRAY = new String[0];
 
   /**
-   * Password digest agorithm for cased when a password is stored
+   * Password digest algorithm for cased when a password is stored
    * in a digested form rather than clear text.
    */
   private String digestAlgorithm = null;
@@ -187,7 +187,7 @@ public class JNDIAuthenticator {
 
 
   /**
-   * How aliases should be dereferenced during search operations.
+   * How aliases should be dereference during search operations.
    */
   private String derefAliases = null;
 
@@ -198,7 +198,7 @@ public class JNDIAuthenticator {
   private static final String JAVA_NAMING_DEREF_ALIASES = "java.naming.ldap.derefAliases";
 
   /**
-   * Constatn to hold optional LDAP version.
+   * Constant to hold optional LDAP version.
    */
   private static final String JAVA_NAMING_LDAP_VERSION = "java.naming.ldap.version";
 
@@ -933,7 +933,7 @@ public class JNDIAuthenticator {
                                    final String username, String[] attrIds) throws NamingException {
 
     if (log.isDebugEnabled()) {
-      log.debug("geting user by search, parameters:");
+      log.debug("getting user by search, parameters:");
     }
     if (log.isDebugEnabled()) {
       log.debug("   context: " + context);

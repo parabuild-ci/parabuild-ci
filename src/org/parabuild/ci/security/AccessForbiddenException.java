@@ -15,7 +15,7 @@ package org.parabuild.ci.security;
 
 /**
  * AccessForbiddenException means that a request for secured
- * unformation was forbidden.
+ * information was forbidden.
  */
 public final class AccessForbiddenException extends Exception {
 

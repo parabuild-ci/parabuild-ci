@@ -15,7 +15,7 @@ package org.parabuild.ci.security;
 
 /**
  * BadRequestException means that a request for secured
- * unformation was malformed.
+ * information was malformed.
  */
 public final class BadRequestException extends Exception {
 

@@ -96,7 +96,7 @@ public final class BuildRights implements Serializable {
 
 
   public boolean isAllowedToDeactivateBuild() {
-    return allowedToActivateBuild; // backword right
+    return allowedToActivateBuild;
   }
 
 
