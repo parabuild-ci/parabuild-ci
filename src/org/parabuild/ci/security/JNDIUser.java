@@ -22,11 +22,11 @@ import java.util.*;
  */
 public final class JNDIUser {
 
-  private String username = null;
-  private String dn = null;
-  private String password = null;
-  private List roles = null;
-  private String email = null;
+  private String username;
+  private String dn;
+  private String password;
+  private List roles;
+  private String email;
 
 
   JNDIUser(final String username, final String dn, final String password, final String email, final List roles) {

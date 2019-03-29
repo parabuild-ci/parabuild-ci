@@ -387,7 +387,6 @@ public final class SecurityManager {
         allowedToStartBuild = true;
         allowedToStopBuild = true;
         allowedToUpdateBuild = true;
-        allowedToViewBuild = true;
         allowedToActivateBuild = true;
       }
 

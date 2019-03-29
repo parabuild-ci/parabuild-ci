@@ -312,13 +312,13 @@ public class JNDIAuthenticator {
    * @see ConfigurationConstants#LDAP_USER_LOOKUP_BY_DN_TEMPLATE
    * @see ConfigurationConstants#LDAP_USER_LOOKUP_BY_SEARCH
    */
-  private byte userLookupMode = ConfigurationConstants.LDAP_USER_LOOKUP_BY_DN_TEMPLATE;
+  private byte userLookupMode;
 
   /**
    * If set to true authentication will throw an exception if e-mail attribute
    * does not exist or not set.
    */
-  private boolean emailRequired = true;
+  private boolean emailRequired;
 
   /**
    * LDAP version.
@@ -868,7 +868,7 @@ public class JNDIAuthenticator {
         final String userDN = jndiUserLookupStringGenerator.makeUserLookupString(template, username).toString();
 
         // Get required attributes from user entry
-        Attributes attrs = null;
+        Attributes attrs;
         try {
 
           attrs = context.getAttributes(userDN, attrIds);
@@ -1039,7 +1039,7 @@ public class JNDIAuthenticator {
   private boolean checkCredentials(final DirContext context, final JNDIUser user,
                                    final String credentials) throws NamingException {
 
-    boolean validated = false;
+    boolean validated;
     if (StringUtils.isBlank(userPasswordAttributeName)) {
       validated = bindAsUser(context, user, credentials);
     } else {
@@ -1082,7 +1082,7 @@ public class JNDIAuthenticator {
       if (log.isDebugEnabled()) {
         log.debug("Validate the credentials specified by the user");
       }
-      boolean validated = false;
+      boolean validated;
       if (StringUtils.isBlank(digestAlgorithm)) {
         validated = digest(credentials).equals(password);
       } else {
@@ -1419,7 +1419,7 @@ public class JNDIAuthenticator {
       // no parens here; return whole thing
       return new String[]{userPatternString};
     }
-    int startingPoint = 0;
+    int startingPoint;
     while (startParenLoc > -1) {
       // weed out escaped open parens and parens enclosing the
       // whole statement (in the case of valid LDAP search
