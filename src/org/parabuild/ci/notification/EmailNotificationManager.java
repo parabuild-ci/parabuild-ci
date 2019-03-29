@@ -307,10 +307,6 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
       StringUtils.appendWithNewLineIfNotNull(body, "Possible cause:", error.getPossibleCause());
       StringUtils.appendWithNewLineIfNotNull(body, "Trace:", error.getStacktrace());
 
-      // add administrator to recipients
-      final List toRecipients = new ArrayList(1);
-      toRecipients.addAll(NotificationUtils.getAdminAddressList(true));
-
       // Create recipients
       final EmailRecipientListComposer composer = new EmailRecipientListComposer();
       final EmailRecipients recipients = composer.makeRecipients(error.getBuildID(), BuildWatcher.LEVEL_SYSTEM_ERROR);
