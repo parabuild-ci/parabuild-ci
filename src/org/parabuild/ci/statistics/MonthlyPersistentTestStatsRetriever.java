@@ -40,11 +40,10 @@ public final class MonthlyPersistentTestStatsRetriever extends AbstractPersisten
 
   protected StatisticsRetrieverConfiguration getConfiguration() {
     final int rollerInitTrauncateTo = Calendar.MONTH;
-    final int statisticsSize = DEFAULT_STATS_MONTHS;
     final int rollerStep = Calendar.MONTH;
     final int cutOffBefore = Calendar.YEAR;
     return new StatisticsRetrieverConfiguration(rollerInitTrauncateTo,
-            statisticsSize,
+            DEFAULT_STATS_MONTHS,
             rollerStep,
             cutOffBefore);
   }

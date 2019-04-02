@@ -40,11 +40,10 @@ public final class HourlyPersistentTestStatsRetriever extends AbstractPersistent
 
   protected StatisticsRetrieverConfiguration getConfiguration() {
     final int rollerInitTrauncateTo = Calendar.HOUR_OF_DAY;
-    final int statisticsSize = DEFAULT_STATS_HOURS;
     final int rollerStep = Calendar.HOUR_OF_DAY;
     final int cutOffBefore = Calendar.DAY_OF_MONTH;
     return new StatisticsRetrieverConfiguration(rollerInitTrauncateTo,
-            statisticsSize,
+            DEFAULT_STATS_HOURS,
             rollerStep,
             cutOffBefore);
   }
