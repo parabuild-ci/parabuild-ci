@@ -28,9 +28,9 @@ public final class ImmutableImage {
   public static final ImmutableImage ZERO_SIZE_IMAGE = new ImmutableImage(new byte[]{}, 0, 0);
 
   private final byte[] bytes;
-  private int width;
-  private int height;
-  private int imageLegth;
+  private final int width;
+  private final int height;
+  private final int imageLegth;
 
 
   public ImmutableImage(final byte[] bytes, final int width, final int height) {

@@ -68,7 +68,7 @@ public final class AgentStatusesPage extends BasePage implements ConversationalT
   private static final String SESSION_AGENT_STATUS_VIEW = "session.agent.status.view";
   private static final String COOKIE_AGENT_STATUS_VIEW = "cookie.agent.status.view";
 
-  private AgentViewSwitchLink viewSwitchLink = new AgentViewSwitchLink();
+  private final AgentViewSwitchLink viewSwitchLink = new AgentViewSwitchLink();
 
 
   public AgentStatusesPage() {

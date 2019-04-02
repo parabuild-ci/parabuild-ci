@@ -59,7 +59,7 @@ final class AgentStatusesTable extends AbstractFlatTable {
   private static final int COL_BUILD_COUNT = 2;
   private static final int COL_RUNNING_BUILDS = 3;
 
-  private List statuses;
+  private final List statuses;
 
 
   /**
