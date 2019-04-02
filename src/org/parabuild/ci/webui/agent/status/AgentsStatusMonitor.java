@@ -55,6 +55,7 @@ public final class AgentsStatusMonitor implements Runnable, Service {
   private static final Log LOG = LogFactory.getLog(AgentsStatusMonitor.class); // NOPMD
 
   private final Map agentHistoryMap = new ConcurrentHashMap(11);
+  private final Object lock = new Object();
   private Thread pollThread = null;
   private byte serviceStatus = SERVICE_STATUS_NOT_STARTED;
 
@@ -66,7 +67,7 @@ public final class AgentsStatusMonitor implements Runnable, Service {
 
     // Create a copy of the history list
     final List historyList;
-    synchronized (this) {
+    synchronized (lock) {
       historyList = new ArrayList(agentHistoryMap.values());
     }
 
@@ -151,7 +152,7 @@ public final class AgentsStatusMonitor implements Runnable, Service {
       }
 
       // Add sample to the tail of the history
-      synchronized (this) {
+      synchronized (lock) {
         AgentHistory history = (AgentHistory) agentHistoryMap.get(agentConfigID);
         if (history == null) {
           history = new AgentHistory(hostName, agentConfig.getID());
@@ -162,7 +163,7 @@ public final class AgentsStatusMonitor implements Runnable, Service {
     }
 
     // Remove agents that have been deleted
-    synchronized (this) {
+    synchronized (lock) {
       for (final Iterator iterator = agentHistoryMap.entrySet().iterator(); iterator.hasNext();) {
         if (!agentIDs.contains(((Map.Entry) iterator.next()).getKey())) {
           iterator.remove();
@@ -208,7 +209,7 @@ public final class AgentsStatusMonitor implements Runnable, Service {
 
   public AgentStatus getStatus(final int agentID) {
     final AgentHistory history;
-    synchronized (this) {
+    synchronized (lock) {
       history = (AgentHistory) agentHistoryMap.get(new Integer(agentID));
       if (history == null) {
         return null;

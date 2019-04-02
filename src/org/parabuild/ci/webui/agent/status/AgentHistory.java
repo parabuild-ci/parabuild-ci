@@ -23,6 +23,8 @@ final class AgentHistory {
 
   private static final int MAX_SAMPLES = 24 * 60;
 
+  private final Object lock = new Object();
+
   private final LinkedList samples = createSamples();
 
   private final String hostName;
@@ -47,7 +49,7 @@ final class AgentHistory {
 
 
   public void addStatusSample(final AgentStatusSample agentStatusSample) {
-    synchronized (this) {
+    synchronized (lock) {
       samples.add(agentStatusSample);
       if (samples.size() > MAX_SAMPLES) {
         samples.removeFirst();
@@ -69,7 +71,7 @@ final class AgentHistory {
     }
 
     final AgentStatusSample lastSample;
-    synchronized (this) {
+    synchronized (lock) {
       lastSample = (AgentStatusSample) samples.getLast();
     }
     return new AgentStatus(hostName, lastSample.getActivity(), lastSample.getRemoteVersion(), agentID, currentChart);
@@ -89,7 +91,7 @@ final class AgentHistory {
    */
   private ImmutableImage generateChart() {
     final LinkedList samplesCopy;
-    synchronized (this) {
+    synchronized (lock) {
       samplesCopy = new LinkedList(samples);
     }
     return chartGenerator.generate(samplesCopy);
