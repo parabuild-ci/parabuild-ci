@@ -20,7 +20,7 @@ import java.util.Comparator;
 
 
 /**
- * Valu object. Contains agent status.
+ * Value object. Contains agent status.
  * <p/>
  *
  * @author Slava Imeshev

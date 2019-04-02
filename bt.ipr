@@ -808,6 +808,7 @@
         <w>computername</w>
         <w>deref</w>
         <w>dereferenced</w>
+        <w>enablement</w>
         <w>hapens</w>
         <w>ldapadmin</w>
         <w>ldaprealm</w>
@@ -831,6 +832,7 @@
         <w>sres</w>
         <w>srun</w>
         <w>successfuly</w>
+        <w>throbber</w>
         <w>tierlet</w>
         <w>todelete</w>
         <w>uniquemember</w>

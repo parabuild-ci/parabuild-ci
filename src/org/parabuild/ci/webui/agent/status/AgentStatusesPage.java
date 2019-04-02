@@ -123,7 +123,7 @@ public final class AgentStatusesPage extends BasePage implements ConversationalT
         showAgentLoads(session);
       }
 
-    // get system whide refresh period and return
+    // get system wide refresh period and return
     final int refreshRate = WebuiUtils.getRefreshRate(session, getUserID());
     return refreshRate > 0 ? Result.Done(refreshRate) : Result.Done();
   }

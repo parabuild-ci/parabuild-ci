@@ -242,7 +242,7 @@ public final class AgentsStatusMonitor implements Runnable, Service {
   public String toString() {
     return "AgentsStatusMonitor{" +
             "agentHistoryMap=" + agentHistoryMap +
-            ", pollthread=" + pollThread +
+            ", pollThread=" + pollThread +
             ", serviceStatus=" + serviceStatus +
             '}';
   }

@@ -133,7 +133,7 @@ final class AgentStatusChartGenerator {
 
 
     public String toString() {
-      // Intentionanal:
+      // Intentional:
       return emptyToString();
     }
 

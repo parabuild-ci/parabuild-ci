@@ -80,7 +80,7 @@ public final class AgentEnvironmentPage extends BasePage implements StatelessTie
     final byte activity = agentStatus.getActivityType();
     if (activity != AgentStatus.ACTIVITY_BUSY && activity != AgentStatus.ACTIVITY_IDLE) {
       baseContentPanel().getUserPanel().clear();
-      baseContentPanel().showErrorMessage("Cannot obtain environemnt for agent status: " + agentStatus.getActivityTypeAsString());
+      baseContentPanel().showErrorMessage("Cannot obtain environment for agent status: " + agentStatus.getActivityTypeAsString());
       return Result.Done();
     }
 

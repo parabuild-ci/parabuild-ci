@@ -30,7 +30,7 @@ public final class ImmutableImage {
   private final byte[] bytes;
   private final int width;
   private final int height;
-  private final int imageLegth;
+  private final int imageLength;
 
 
   public ImmutableImage(final byte[] bytes, final int width, final int height) {
@@ -38,7 +38,7 @@ public final class ImmutableImage {
     this.height = height;
     this.bytes = new byte[bytes.length];
     System.arraycopy(bytes, 0, this.bytes, 0, bytes.length);
-    this.imageLegth = bytes.length;
+    this.imageLength = bytes.length;
   }
 
 
@@ -57,8 +57,8 @@ public final class ImmutableImage {
   }
 
 
-  public int getImageLegth() {
-    return imageLegth;
+  public int getImageLength() {
+    return imageLength;
   }
 
 

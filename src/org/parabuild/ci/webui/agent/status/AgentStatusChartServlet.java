@@ -69,7 +69,7 @@ public final class AgentStatusChartServlet extends HttpServlet {
 
     // Set response content type
     resp.setContentType("image/png");
-    resp.setContentLength(immutableImage.getImageLegth());
+    resp.setContentLength(immutableImage.getImageLength());
 
 
     // Write image

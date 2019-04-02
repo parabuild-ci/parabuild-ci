@@ -156,8 +156,8 @@ final class AgentStatusesTable extends AbstractFlatTable {
       final int size = buildsStatuses.size();
       for (int i = 0; i < size; i++) {
         final BuildState buildState = (BuildState) buildsStatuses.get(i);
-        final String runnuningOnHost = buildState.getCurrentlyRunningOnBuildHost();
-        if (hostName.equalsIgnoreCase(runnuningOnHost)) {
+        final String runningOnHost = buildState.getCurrentlyRunningOnBuildHost();
+        if (hostName.equalsIgnoreCase(runningOnHost)) {
           final BuildNameLinkFlow buildNameLinkFlow = new BuildNameLinkFlow();
           buildNameLinkFlow.setBuildState(buildState);
           add(buildNameLinkFlow);
