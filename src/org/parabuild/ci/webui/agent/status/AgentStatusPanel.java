@@ -92,7 +92,7 @@ final class AgentStatusPanel extends Panel {
   }
 
 
-  private Image createThrobber(final AgentStatus status) {
+  private static Image createThrobber(final AgentStatus status) {
     final String throbberURL;
     final String throbberCaption;
     final byte activityType = status.getActivityType();

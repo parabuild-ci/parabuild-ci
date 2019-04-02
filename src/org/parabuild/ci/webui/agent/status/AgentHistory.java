@@ -96,7 +96,7 @@ final class AgentHistory {
   }
 
 
-  private LinkedList createSamples() {
+  private static LinkedList createSamples() {
     final LinkedList linkedList = new LinkedList();
     for (int i = 0; i < MAX_SAMPLES; i++) {
       linkedList.add(AgentStatusSample.OFFLINE);

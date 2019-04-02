@@ -138,7 +138,7 @@ final class AgentStatusChartGenerator {
     }
 
 
-    private String emptyToString() {
+    private static String emptyToString() {
       return "";
     }
   }
