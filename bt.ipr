@@ -156,6 +156,7 @@
       <entry_point TYPE="field" FQNAME="org.parabuild.ci.webui.agent.status.AgentStatusesPage LOG" />
       <entry_point TYPE="field" FQNAME="org.parabuild.ci.webui.agent.status.AgentStatusesTable LOG" />
       <entry_point TYPE="field" FQNAME="org.parabuild.ci.webui.agent.status.AgentStatusPanel LOG" />
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.webui.tail.TailService log" />
     </entry_points>
     <pattern value="org.parabuild.ci.webui.agent.status.AgentEnvironmentPage" />
   </component>
@@ -533,6 +534,7 @@
       <inspection_tool class="TransientFieldInNonSerializableClass" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="TransientFieldNotInitialized" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="TrivialStringConcatenation" enabled="true" level="WARNING" enabled_by_default="true" />
+      <inspection_tool class="TryWithIdenticalCatches" enabled="false" level="WARNING" enabled_by_default="false" />
       <inspection_tool class="UNCHECKED_WARNING" enabled="true" level="WARNING" enabled_by_default="true">
         <option name="IGNORE_UNCHECKED_ASSIGNMENT" value="true" />
         <option name="IGNORE_UNCHECKED_GENERICS_ARRAY_CREATION" value="true" />

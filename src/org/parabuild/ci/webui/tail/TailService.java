@@ -33,15 +33,8 @@ public final class TailService {
 
 
   /**
-   * Required default constructor.
-   */
-  public TailService() { // NOPMD
-  }
-
-
-  /**
    * 
-   * @param activeBuildID
+   * @param activeBuildID the ID of the build.
    * @param sinceServerTime long time from that get an update.
    *
    * @return TailUpdate since the given server time stamp
