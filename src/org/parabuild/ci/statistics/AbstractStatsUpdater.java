@@ -145,7 +145,7 @@ abstract class AbstractStatsUpdater implements PersistentStatsUpdater {
     return StatisticsUtils.truncateDate(buildRun.getFinishedAt(), truncateLevel());
   }
 
-  private void reportUpdateError(final Exception e, final BuildRun buildRun) {
+  private static void reportUpdateError(final Exception e, final BuildRun buildRun) {
     final Error error = new Error(StringUtils.toString(e));
     error.setBuildName(buildRun.getBuildName());
     error.setDetails(e);

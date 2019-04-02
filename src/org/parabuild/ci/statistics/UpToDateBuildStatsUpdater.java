@@ -55,7 +55,7 @@ final class UpToDateBuildStatsUpdater implements PersistentStatsUpdater {
   }
 
 
-  private void addToActtiveBuildAtribute(final int buildID, final String attrName, final int toAdd) {
+  private static void addToActtiveBuildAtribute(final int buildID, final String attrName, final int toAdd) {
     final ConfigurationManager cm = ConfigurationManager.getInstance();
     ActiveBuildAttribute succAttr = cm.getActiveBuildAttribute(buildID, attrName);
     if (succAttr == null) succAttr = new ActiveBuildAttribute(buildID, attrName, "0");

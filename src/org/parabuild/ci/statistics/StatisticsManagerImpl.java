@@ -416,7 +416,7 @@ final class StatisticsManagerImpl implements StatisticsManager {
   /**
    * Helper method to report error
    */
-  private void reportUpdateStatisticsError(final Exception e) {
+  private static void reportUpdateStatisticsError(final Exception e) {
     final Error error = new Error("Error while updating statistics: " + StringUtils.toString(e));
     error.setSubsystemName(Error.ERROR_SUBSYSTEM_STATISTICS);
     error.setErrorLevel(Error.ERROR_LEVEL_WARNING);
