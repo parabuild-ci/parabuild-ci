@@ -47,7 +47,7 @@ public final class AgentStatusChartServlet extends HttpServlet {
   private static final long serialVersionUID = -7431763551265797664L;
 
 
-  protected void doGet(final HttpServletRequest req, final HttpServletResponse resp) throws ServletException, IOException {
+  protected void doGet(final HttpServletRequest req, final HttpServletResponse resp) throws IOException {
     final String stringAgentID = req.getParameter(Pages.PARAM_AGENT_ID);
 //    if (LOG.isDebugEnabled()) LOG.debug("stringAgentID: " + stringAgentID);
 
