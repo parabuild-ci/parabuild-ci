@@ -21,7 +21,7 @@ import java.util.*;
  */
 public final class FindbugsViolationsChartGenerator {
 
-  private CodeAnalysisChartGenerator delegate = new CodeAnalysisChartGenerator("Bugs", "Bugs"); // NOPMD SingularField
+  private final CodeAnalysisChartGenerator delegate = new CodeAnalysisChartGenerator("Bugs", "Bugs"); // NOPMD SingularField
 
 
   public void createChart(final SortedMap stats, final OutputStream out) throws IOException {

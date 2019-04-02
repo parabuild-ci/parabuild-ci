@@ -21,7 +21,7 @@ import java.io.*;
  */
 public final class CheckstyleViolationsChartGenerator {
 
-  private CodeAnalysisChartGenerator delegate = new CodeAnalysisChartGenerator("Checkstyle Violations", "Violations"); // NOPMD SingulaField
+  private final CodeAnalysisChartGenerator delegate = new CodeAnalysisChartGenerator("Checkstyle Violations", "Violations"); // NOPMD SingulaField
 
 
   public void createChart(final SortedMap stats, final OutputStream out) throws IOException {
