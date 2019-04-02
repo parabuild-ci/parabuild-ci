@@ -60,7 +60,7 @@ public final class AgentStatusesPage extends BasePage implements ConversationalT
   /**
    * Logger.
    *
-   * @noinspection UNUSED_SYMBOL,UnusedDeclaration
+   * @noinspection UNUSED_SYMBOL,UnusedDeclaration,unused
    */
   private static final Log LOG = LogFactory.getLog(AgentStatusesPage.class); // NOPMD
   private static final long serialVersionUID = -6605153907643158757L;

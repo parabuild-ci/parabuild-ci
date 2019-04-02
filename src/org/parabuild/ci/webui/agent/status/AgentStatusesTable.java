@@ -48,7 +48,7 @@ final class AgentStatusesTable extends AbstractFlatTable {
   /**
    * Logger.
    *
-   * @noinspection UNUSED_SYMBOL,UnusedDeclaration
+   * @noinspection UNUSED_SYMBOL,UnusedDeclaration,unused
    */
   private static final Log LOG = LogFactory.getLog(AgentStatusesTable.class); // NOPMD
   private static final long serialVersionUID = 7057344101623709681L;

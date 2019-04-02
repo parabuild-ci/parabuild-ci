@@ -29,9 +29,6 @@ import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Parameters;
 import viewtier.ui.StatelessTierlet;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
 /**
  * AgentEnvironmentPage outputs agent's page.
  * <p/>
@@ -44,7 +41,7 @@ public final class AgentEnvironmentPage extends BasePage implements StatelessTie
   /**
    * Logger.
    *
-   * @noinspection UNUSED_SYMBOL,UnusedDeclaration
+   * @noinspection UNUSED_SYMBOL, UnusedDeclaration, unused
    */
   private static final Log LOG = LogFactory.getLog(AgentEnvironmentPage.class); // NOPMD
   private static final long serialVersionUID = 6530850640252632895L;
@@ -64,9 +61,6 @@ public final class AgentEnvironmentPage extends BasePage implements StatelessTie
     if (!isValidUser() && !org.parabuild.ci.security.SecurityManager.getInstance().isAnonymousAccessEnabled()) {
       return WebuiUtils.storeReturnPathAndForward(getTierletContext(), Pages.PUBLIC_LOGIN, Pages.PAGE_AGENT_ENVIRONMENT, parameters);
     }
-
-    final HttpServletRequest request = getTierletContext().getHttpServletRequest();
-    final HttpSession session = request.getSession();
 
     // Agent configuration ID is provided
     final AgentConfig agentConfig = ParameterUtils.getAgentFromParameters(parameters);

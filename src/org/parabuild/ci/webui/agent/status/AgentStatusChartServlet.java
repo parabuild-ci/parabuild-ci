@@ -20,7 +20,6 @@ import org.parabuild.ci.common.StringUtils;
 import org.parabuild.ci.services.ServiceManager;
 import org.parabuild.ci.webui.common.Pages;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -41,7 +40,7 @@ public final class AgentStatusChartServlet extends HttpServlet {
   /**
    * Logger.
    *
-   * @noinspection UNUSED_SYMBOL,UnusedDeclaration
+   * @noinspection UNUSED_SYMBOL,UnusedDeclaration,unused
    */
   private static final Log LOG = LogFactory.getLog(AgentStatusChartServlet.class); // NOPMD
   private static final long serialVersionUID = -7431763551265797664L;

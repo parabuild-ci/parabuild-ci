@@ -37,7 +37,7 @@ final class AgentStatusPanel extends Panel {
   /**
    * Logger.
    *
-   * @noinspection UNUSED_SYMBOL,UnusedDeclaration
+   * @noinspection UNUSED_SYMBOL,UnusedDeclaration,unused
    */
   private static final Log LOG = LogFactory.getLog(AgentStatusPanel.class); // NOPMD
   private static final long serialVersionUID = -3531504395853983857L;

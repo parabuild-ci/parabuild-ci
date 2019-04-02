@@ -54,7 +54,7 @@ public final class AgentStatus {
   /**
    * Logger.
    *
-   * @noinspection UNUSED_SYMBOL,UnusedDeclaration
+   * @noinspection UNUSED_SYMBOL,UnusedDeclaration,unused
    */
   private static final Log LOG = LogFactory.getLog(AgentStatus.class); // NOPMD
 
