@@ -151,6 +151,11 @@
   <component name="EntryPointsManager">
     <entry_points version="2.0">
       <entry_point TYPE="field" FQNAME="org.parabuild.ci.webui.agent.status.AgentEnvironmentPage LOG" />
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.webui.agent.status.AgentStatus LOG" />
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.webui.agent.status.AgentStatusChartServlet LOG" />
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.webui.agent.status.AgentStatusesPage LOG" />
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.webui.agent.status.AgentStatusesTable LOG" />
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.webui.agent.status.AgentStatusPanel LOG" />
     </entry_points>
     <pattern value="org.parabuild.ci.webui.agent.status.AgentEnvironmentPage" />
   </component>
