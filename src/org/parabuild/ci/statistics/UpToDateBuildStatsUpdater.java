@@ -34,7 +34,7 @@ final class UpToDateBuildStatsUpdater implements PersistentStatsUpdater {
     final BuildStatistics runStats = StatisticsUtils.calculateBuildStatistics(buildRun);
     try {
       ConfigurationManager.runInHibernate(new TransactionCallback() {
-        public Object runInTransaction() throws Exception {
+        public Object runInTransaction() {
           final int buildID = buildRun.getActiveBuildID();
           addToActtiveBuildAtribute(buildID, ActiveBuildAttribute.STAT_SUCC_BUILDS_TO_DATE, runStats.getSuccessfulBuilds());
           addToActtiveBuildAtribute(buildID, ActiveBuildAttribute.STAT_FAILED_BUILDS_TO_DATE, runStats.getFailedBuilds());

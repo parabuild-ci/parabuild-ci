@@ -69,7 +69,7 @@ final class StatisticsManagerImpl implements StatisticsManager {
    */
   public BuildStatistics getUpToDateBuildStatistics() {
     return (BuildStatistics) ConfigurationManager.runInHibernate(new TransactionCallback() {
-      public Object runInTransaction() throws Exception {
+      public Object runInTransaction() {
         final Integer successfulCount = cm.getActiveBuildAttributeValue(activeBuildID, ActiveBuildAttribute.STAT_SUCC_BUILDS_TO_DATE);
         final Integer brokenCount = cm.getActiveBuildAttributeValue(activeBuildID, ActiveBuildAttribute.STAT_FAILED_BUILDS_TO_DATE);
         final Integer changeListCount = cm.getActiveBuildAttributeValue(activeBuildID, ActiveBuildAttribute.STAT_CHANGE_LISTS_TO_DATE);
