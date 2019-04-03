@@ -31,13 +31,13 @@ abstract class AbstractBuildDistributionRetrievier {
   private int activeBuildID = BuildConfig.UNSAVED_ID;
 
 
-  protected AbstractBuildDistributionRetrievier(final int activeBuildID) {
+  AbstractBuildDistributionRetrievier(final int activeBuildID) {
     ArgumentValidator.validateBuildIDInitialized(activeBuildID);
     this.activeBuildID = activeBuildID;
   }
 
 
-  public final int getActiveBuildID() {
+  final int getActiveBuildID() {
     return activeBuildID;
   }
 

@@ -394,7 +394,7 @@ public final class StatisticsUtils {
     private final String stringDayOfWeek;
 
 
-    public ComparableDayOfWeek(final Integer dayOfWeek) {
+    ComparableDayOfWeek(final Integer dayOfWeek) {
       final Calendar c = Calendar.getInstance();
       c.clear();
       c.set(Calendar.DAY_OF_WEEK, dayOfWeek);
@@ -608,7 +608,7 @@ public final class StatisticsUtils {
    */
   private static final class WordedTimeTickUnit extends NumberTickUnit {
 
-    public WordedTimeTickUnit(final double size) {
+    WordedTimeTickUnit(final double size) {
       super(size);
     }
 

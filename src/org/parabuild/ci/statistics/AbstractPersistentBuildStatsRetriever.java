@@ -19,7 +19,7 @@ import org.parabuild.ci.object.*;
  */
 abstract class AbstractPersistentBuildStatsRetriever extends AbstractPersistentStatsRetriever { // NOPMD AbstractClassWithoutAbstractMethod
 
-  protected AbstractPersistentBuildStatsRetriever(final int activeBuildID) {
+  AbstractPersistentBuildStatsRetriever(final int activeBuildID) {
     super(activeBuildID);
   }
 

@@ -264,7 +264,7 @@ final class StatisticsManagerImpl implements StatisticsManager {
   }
 
 
-  public SortedMap getRecentBuildRunStatistics(final String statisticsAttrName, final int maxLastBuilds) {
+  private SortedMap getRecentBuildRunStatistics(final String statisticsAttrName, final int maxLastBuilds) {
     return (SortedMap) ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         final SortedMap result = new TreeMap();

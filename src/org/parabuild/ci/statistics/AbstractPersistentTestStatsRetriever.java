@@ -22,7 +22,7 @@ abstract class AbstractPersistentTestStatsRetriever extends AbstractPersistentSt
   private final byte testCode;
 
 
-  protected AbstractPersistentTestStatsRetriever(final int activeBuildID, final byte testToolCode) {
+  AbstractPersistentTestStatsRetriever(final int activeBuildID, final byte testToolCode) {
     super(activeBuildID);
     this.testCode = testToolCode;
   }
@@ -48,7 +48,7 @@ abstract class AbstractPersistentTestStatsRetriever extends AbstractPersistentSt
   /**
    * @return test tool code
    */
-  public byte getTestCode() {
+  byte getTestCode() {
     return testCode;
   }
 }

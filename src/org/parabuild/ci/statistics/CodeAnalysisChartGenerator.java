@@ -32,7 +32,7 @@ import org.jfree.data.category.DefaultCategoryDataset;
 /**
  * Responsible for creating a chart with PMD violations.
  */
-public final class CodeAnalysisChartGenerator {
+final class CodeAnalysisChartGenerator {
 
   private final String categoryDescription;
   private final String valueAxisLabel;

@@ -28,7 +28,7 @@ abstract class AbstractTestStatsUpdater extends AbstractStatsUpdater { // NOPMD 
   private final byte testCode;
 
 
-  protected AbstractTestStatsUpdater(final byte testCode) {
+  AbstractTestStatsUpdater(final byte testCode) {
     this.testCode = testCode;
   }
 
@@ -77,7 +77,7 @@ abstract class AbstractTestStatsUpdater extends AbstractStatsUpdater { // NOPMD 
   }
 
 
-  protected final byte getTestCode() {
+  final byte getTestCode() {
     return testCode;
   }
 }

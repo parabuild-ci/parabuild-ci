@@ -77,7 +77,7 @@ public final class BuildStatistics implements Serializable {
   }
 
 
-  public BuildStatistics(final int successfulBuilds, final int failedBuilds, final int checkins, final int isses, final int failedPercent, final int successfulBuildPercent, final int totalBuilds) {
+  private BuildStatistics(final int successfulBuilds, final int failedBuilds, final int checkins, final int isses, final int failedPercent, final int successfulBuildPercent, final int totalBuilds) {
     this.failedBuilds = failedBuilds;
     this.changeLists = checkins;
     this.successfulBuilds = successfulBuilds;

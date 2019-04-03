@@ -16,7 +16,7 @@ package org.parabuild.ci.statistics;
 
 /**
  */
-public final class PersistentStatsUpdaterFactory {
+final class PersistentStatsUpdaterFactory {
 
   private PersistentStatsUpdaterFactory() {
   }
