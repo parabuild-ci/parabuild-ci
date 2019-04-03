@@ -49,7 +49,7 @@ final class StatisticsManagerImpl implements StatisticsManager {
    */
   private static final Log log = LogFactory.getLog(StatisticsManagerImpl.class); // NOPMD
 
-  private int activeBuildID = BuildConfig.UNSAVED_ID;
+  private int activeBuildID;
   private final ConfigurationManager cm = ConfigurationManager.getInstance();
   private static final int MAX_LAST_BUILDS = 30;
 
@@ -58,9 +58,8 @@ final class StatisticsManagerImpl implements StatisticsManager {
    * Constuctor.
    */
   public StatisticsManagerImpl(final int activeBuildID) {
-    ArgumentValidator.validateBuildIDInitialized(activeBuildID);
+    this.activeBuildID = ArgumentValidator.validateBuildIDInitialized(activeBuildID);
     if (ConfigurationManager.validateActiveID) cm.validateIsActiveBuildID(activeBuildID);
-    this.activeBuildID = activeBuildID;
   }
 
 

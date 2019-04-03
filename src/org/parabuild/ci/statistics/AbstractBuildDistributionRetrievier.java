@@ -28,12 +28,11 @@ import java.util.TreeMap;
 
 abstract class AbstractBuildDistributionRetrievier {
 
-  private int activeBuildID = BuildConfig.UNSAVED_ID;
+  private int activeBuildID;
 
 
   AbstractBuildDistributionRetrievier(final int activeBuildID) {
-    ArgumentValidator.validateBuildIDInitialized(activeBuildID);
-    this.activeBuildID = activeBuildID;
+    this.activeBuildID = ArgumentValidator.validateBuildIDInitialized(activeBuildID);
   }
 
 
