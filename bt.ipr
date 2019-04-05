@@ -157,6 +157,14 @@
       <entry_point TYPE="field" FQNAME="org.parabuild.ci.webui.agent.status.AgentStatusesTable LOG" />
       <entry_point TYPE="field" FQNAME="org.parabuild.ci.webui.agent.status.AgentStatusPanel LOG" />
       <entry_point TYPE="field" FQNAME="org.parabuild.ci.webui.tail.TailService log" />
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.statistics.AbstractStatsUpdater log" />
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.statistics.AbstractTestStatsUpdater log" />
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.statistics.CompositePersistentStatsUpdater log" />
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.statistics.DailyTestStatsUpdater log" />
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.statistics.StatisticsManagerImpl log" />
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.statistics.StatisticsUtils log" />
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.statistics.YearlyBuildStatsUpdater log" />
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.statistics.YearlyTestStatsUpdater log" />
     </entry_points>
     <pattern value="org.parabuild.ci.webui.agent.status.AgentEnvironmentPage" />
   </component>
@@ -263,6 +271,9 @@
       <inspection_tool class="Duplicates" enabled="false" level="WARNING" enabled_by_default="false" />
       <inspection_tool class="DynamicRegexReplaceableByCompiledPattern" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="EmptyInitializer" enabled="true" level="WARNING" enabled_by_default="true" />
+      <inspection_tool class="EmptyStatementBody" enabled="true" level="WARNING" enabled_by_default="true">
+        <option name="m_reportEmptyBlocks" value="false" />
+      </inspection_tool>
       <inspection_tool class="EmptySynchronizedStatement" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="EqualsAndHashcode" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="EqualsHashCodeCalledOnUrl" enabled="true" level="WARNING" enabled_by_default="true" />
