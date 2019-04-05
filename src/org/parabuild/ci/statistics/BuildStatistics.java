@@ -13,9 +13,9 @@
  */
 package org.parabuild.ci.statistics;
 
-import java.io.*;
+import org.parabuild.ci.object.PersistentBuildStats;
 
-import org.parabuild.ci.object.*;
+import java.io.Serializable;
 
 
 /**
@@ -86,6 +86,22 @@ public final class BuildStatistics implements Serializable {
     this.totalBuilds = totalBuilds;
     this.successfulBuildsPercent = successfulBuildPercent;
     this.isDirty = false;
+  }
+
+
+  /**
+   * Factory method.
+   *
+   * @return
+   */
+  public static BuildStatistics newInstance(final PersistentBuildStats pStats) {
+    return new BuildStatistics(pStats.getSuccessfulBuildCount(),
+            pStats.getFailedBuildCount(),
+            pStats.getChangeListCount(),
+            pStats.getIssueCount(),
+            pStats.getFailedBuildPercent(),
+            pStats.getSuccessfulBuildPercent(),
+            pStats.getTotalBuildCount());
   }
 
 
@@ -162,12 +178,11 @@ public final class BuildStatistics implements Serializable {
     if (isDirty) {
       this.totalBuilds = successfulBuilds + failedBuilds;
       if (totalBuilds > 0) {
-        if (totalBuilds == 0) {
-          successfulBuildsPercent = 0;
-        } else {
-          successfulBuildsPercent = (successfulBuilds * 100) / totalBuilds;
-        }
-        this.failedBuildsPercent = 100 - successfulBuildsPercent; // to eliminate rounding errors so we have 100% sum
+        successfulBuildsPercent = (successfulBuilds * 100) / totalBuilds;
+        failedBuildsPercent = 100 - successfulBuildsPercent; // to eliminate rounding errors so we have 100% sum
+      } else {
+        successfulBuildsPercent = 0;
+        failedBuildsPercent = 0;
       }
       isDirty = false;
     }
@@ -176,30 +191,14 @@ public final class BuildStatistics implements Serializable {
 
   public String toString() {
     return "BuildStatistics{" +
-      "changeLists=" + changeLists +
-      ", issues=" + issues +
-      ", failedBuilds=" + failedBuilds +
-      ", failedBuildsPercent=" + failedBuildsPercent +
-      ", successfulBuilds=" + successfulBuilds +
-      ", successfulBuildsPercent=" + successfulBuildsPercent +
-      ", totalBuilds=" + totalBuilds +
-      ", isDirty=" + isDirty +
-      '}';
-  }
-
-
-  /**
-   * Factory method.
-   *
-   * @return
-   */
-  public static BuildStatistics newInstance(final PersistentBuildStats pStats) {
-    return new BuildStatistics(pStats.getSuccessfulBuildCount(),
-      pStats.getFailedBuildCount(),
-      pStats.getChangeListCount(),
-      pStats.getIssueCount(),
-      pStats.getFailedBuildPercent(),
-      pStats.getSuccessfulBuildPercent(),
-      pStats.getTotalBuildCount());
+            "changeLists=" + changeLists +
+            ", issues=" + issues +
+            ", failedBuilds=" + failedBuilds +
+            ", failedBuildsPercent=" + failedBuildsPercent +
+            ", successfulBuilds=" + successfulBuilds +
+            ", successfulBuildsPercent=" + successfulBuildsPercent +
+            ", totalBuilds=" + totalBuilds +
+            ", isDirty=" + isDirty +
+            '}';
   }
 }
