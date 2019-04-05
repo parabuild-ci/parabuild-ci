@@ -18,7 +18,6 @@ import net.sf.hibernate.Session;
 import org.parabuild.ci.common.ArgumentValidator;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.TransactionCallback;
-import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.PersistentDistribution;
 
 import java.util.Iterator;
