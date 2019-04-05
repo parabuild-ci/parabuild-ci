@@ -79,15 +79,6 @@ public final class StatisticsUtils {
   /**
    * Reversed order Comparator for for dates.
    */
-  public static final Comparator REVERSE_DATE_COMPARATOR = new Comparator() {
-    public int compare(final Object o1, final Object o2) {
-      return -1 * NATURAL_DATE_COMPARATOR.compare(o1, o2);
-    }
-  };
-
-  /**
-   * Reversed order Comparator for for dates.
-   */
   public static final Comparator NATURAL_DATE_COMPARATOR = new Comparator() {
     public int compare(final Object o1, final Object o2) {
       return ((Comparable<Date>) o1).compareTo((Date) o2);
