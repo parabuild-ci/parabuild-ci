@@ -608,6 +608,9 @@ public final class StatisticsUtils {
    */
   private static final class WordedTimeTickUnit extends NumberTickUnit {
 
+    private static final long serialVersionUID = -1186118747578562266L;
+
+
     WordedTimeTickUnit(final double size) {
       super(size);
     }
