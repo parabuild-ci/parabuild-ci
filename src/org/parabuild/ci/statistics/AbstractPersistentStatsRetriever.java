@@ -44,7 +44,7 @@ abstract class AbstractPersistentStatsRetriever {
   public static final int DEFAULT_STATS_HOURS = 24;
 
 
-  private int activeBuildID;
+  private final int activeBuildID;
 
 
   /**

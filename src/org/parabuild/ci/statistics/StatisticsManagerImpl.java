@@ -48,7 +48,7 @@ final class StatisticsManagerImpl implements StatisticsManager {
    */
   private static final Log log = LogFactory.getLog(StatisticsManagerImpl.class); // NOPMD
 
-  private int activeBuildID;
+  private final int activeBuildID;
   private final ConfigurationManager cm = ConfigurationManager.getInstance();
   private static final int MAX_LAST_BUILDS = 30;
 

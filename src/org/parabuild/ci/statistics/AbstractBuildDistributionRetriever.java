@@ -28,7 +28,7 @@ import java.util.TreeMap;
 
 abstract class AbstractBuildDistributionRetriever {
 
-  private int activeBuildID;
+  private final int activeBuildID;
 
 
   AbstractBuildDistributionRetriever(final int activeBuildID) {
