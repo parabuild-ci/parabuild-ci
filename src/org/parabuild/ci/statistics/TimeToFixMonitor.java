@@ -71,7 +71,9 @@ public class TimeToFixMonitor implements BuildFinishedSubscriber {
     if (log.isDebugEnabled()) log.debug("activeBuildID: " + activeBuildID);
 
     final BuildRun buildRun = cm.getBuildRun(currentBuildRunID);
-    if (buildRun.getStartedAt() == null || buildRun.getFinishedAt() == null) return;
+    if (buildRun == null || buildRun.getStartedAt() == null || buildRun.getFinishedAt() == null) {
+      return;
+    }
 
     if (event.getBuildResultCode() == BuildRun.BUILD_RESULT_SUCCESS) {
       if (firstBrokenTime != null) {

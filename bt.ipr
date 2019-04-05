@@ -260,6 +260,7 @@
         <option name="ignoreOnVolatileVariables" value="false" />
       </inspection_tool>
       <inspection_tool class="DuplicateConditionJS" enabled="true" level="WARNING" enabled_by_default="true" />
+      <inspection_tool class="Duplicates" enabled="false" level="WARNING" enabled_by_default="false" />
       <inspection_tool class="DynamicRegexReplaceableByCompiledPattern" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="EmptyInitializer" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="EmptySynchronizedStatement" enabled="true" level="WARNING" enabled_by_default="true" />
