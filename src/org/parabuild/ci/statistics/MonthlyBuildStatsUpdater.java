@@ -48,8 +48,6 @@ final class MonthlyBuildStatsUpdater extends AbstractBuildStatsUpdater {
    *
    * @return persistent stats corresponding the given build run or
    *         null if doesn't exist.
-   *
-   * @throws HibernateException
    */
   protected StatisticsSample findPersistedStats(final Session session, final int activeBuildID, final Date sampleDate) throws HibernateException {
     final Query query = session.createQuery("select ms from MonthlyStats ms where ms.activeBuildID = ? and ms.sampleTime = ?");

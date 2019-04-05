@@ -62,8 +62,6 @@ public final class MovingAverager {
    * Adds a window. This method is useful to initialize the
    * averager. For the moving averager adding a window
    * bigger than window size doesn't make sense.
-   *
-   * @param window
    */
   public long addWindow(final List window) {
     for (int i = 0; i < window.size(); i++) {

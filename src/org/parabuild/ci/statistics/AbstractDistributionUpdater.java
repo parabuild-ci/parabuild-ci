@@ -13,14 +13,17 @@
  */
 package org.parabuild.ci.statistics;
 
-import org.apache.commons.logging.*;
-
-import net.sf.hibernate.*;
-import org.parabuild.ci.common.*;
-import org.parabuild.ci.configuration.*;
+import net.sf.hibernate.HibernateException;
+import net.sf.hibernate.Session;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.configuration.ConfigurationManager;
+import org.parabuild.ci.configuration.TransactionCallback;
 import org.parabuild.ci.error.Error;
-import org.parabuild.ci.error.*;
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.error.ErrorManagerFactory;
+import org.parabuild.ci.object.BuildRun;
+import org.parabuild.ci.object.PersistentDistribution;
 
 /**
  * Created by IntelliJ IDEA. User: vimeshev Date: May 14, 2005
@@ -36,8 +39,6 @@ abstract class AbstractDistributionUpdater implements PersistentStatsUpdater {
    * Updates statistics corresponding this build run.  This
    * method should not throw any exceptions. Instead, it should
    * report any errors using ErrorManager.
-   *
-   * @param buildRun
    */
   public final void updateStatistics(final BuildRun buildRun) {
     final BuildStatistics runStats = StatisticsUtils.calculateBuildStatistics(buildRun);
@@ -94,11 +95,6 @@ abstract class AbstractDistributionUpdater implements PersistentStatsUpdater {
 
   /**
    * Finds existing persisted distribution.
-   *
-   * @param session
-   * @param activeBuildID
-   * @param target
-   *
    */
   protected abstract PersistentDistribution findPersistedDistribution(Session session, int activeBuildID, int target) throws HibernateException;
 
@@ -106,8 +102,6 @@ abstract class AbstractDistributionUpdater implements PersistentStatsUpdater {
   /**
    * Returns distribution target corresponding this build run.
    * An example of target is a day a week, a month.
-   *
-   * @param buildRun
    *
    * @return distribution target corresponding this build run.
    */

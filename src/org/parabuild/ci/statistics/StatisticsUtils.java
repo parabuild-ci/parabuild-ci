@@ -467,8 +467,6 @@ public final class StatisticsUtils {
 
   /**
    * Factory method.
-   *
-   * @param buildRun
    */
   public static BuildStatistics calculateBuildStatistics(final BuildRun buildRun) {
     if (!buildRun.completed()) return new BuildStatistics();
@@ -496,8 +494,6 @@ public final class StatisticsUtils {
 
 
   /**
-   * @param date
-   * @param truncateAt
    */
   public static Date truncateDate(final Date date, final int truncateAt) {
     final Calendar source = Calendar.getInstance();

@@ -57,8 +57,6 @@ final class CompositePersistentStatsUpdater implements PersistentStatsUpdater {
 
   /**
    * Updates statistics corresponding this build run.
-   *
-   * @param buildRun
    */
   public void updateStatistics(final BuildRun buildRun) {
     if (!buildRun.completed()) return;

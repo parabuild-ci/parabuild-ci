@@ -30,7 +30,6 @@ final class HourlyBuildStatsUpdater extends AbstractBuildStatsUpdater {
 
   /**
    * @return truncation level to be used by the updater.
-   *
    * @see Calendar#DAY_OF_MONTH
    * @see Calendar#MONTH
    * @see Calendar#HOUR_OF_DAY
@@ -42,14 +41,11 @@ final class HourlyBuildStatsUpdater extends AbstractBuildStatsUpdater {
 
 
   /**
-   * @param session Hibernate session
+   * @param session       Hibernate session
    * @param activeBuildID to get stats for
-   * @param sampleDate Date already truncated
-   *
+   * @param sampleDate    Date already truncated
    * @return persistent stats corresponding the given build run or
-   *         null if doesn't exist.
-   *
-   * @throws HibernateException
+   * null if doesn't exist.
    */
   protected StatisticsSample findPersistedStats(final Session session, final int activeBuildID, final Date sampleDate) throws HibernateException {
     final Query query = session.createQuery("select hs from HourlyStats hs where hs.activeBuildID = ? and hs.sampleTime = ?");

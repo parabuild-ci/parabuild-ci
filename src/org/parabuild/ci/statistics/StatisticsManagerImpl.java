@@ -246,7 +246,6 @@ final class StatisticsManagerImpl implements StatisticsManager {
 
 
   /**
-   * @param maxLastBuilds
    * @return time to fix MA
    */
   public SortedMap getRecentTimeToFixMovingAverage(final int maxLastBuilds) {
@@ -360,10 +359,6 @@ final class StatisticsManagerImpl implements StatisticsManager {
 
       /**
        * Deletes ActiveBuildAttr
-       *
-       * @param attrName
-       *
-       * @throws HibernateException
        */
       private void delete(final String attrName) throws HibernateException {
         session.delete("from ActiveBuildAttribute aba where aba.buildID = ? and aba.propertyName = ?", new Object[]{new Integer(activeBuildID), attrName}, new Type[]{Hibernate.INTEGER, Hibernate.STRING});

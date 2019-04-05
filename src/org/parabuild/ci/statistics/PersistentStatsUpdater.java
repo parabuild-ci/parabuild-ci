@@ -27,8 +27,6 @@ interface PersistentStatsUpdater {
    * Updates statistics corresponding this build run.  This
    * method should not throw any exceptions. Instead, it should
    * report any errors using ErrorManager.
-   *
-   * @param buildRun
    */
   void updateStatistics(BuildRun buildRun);
 }

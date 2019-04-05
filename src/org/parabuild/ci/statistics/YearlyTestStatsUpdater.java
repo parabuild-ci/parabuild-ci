@@ -58,8 +58,6 @@ final class YearlyTestStatsUpdater extends AbstractTestStatsUpdater {
    *
    * @return persistent stats corresponding the given build run or
    *         null if doesn't exist.
-   *
-   * @throws HibernateException
    */
   protected StatisticsSample findPersistedStats(final Session session, final int activeBuildID, final Date sampleDate) throws HibernateException {
     final Query query = session.createQuery("select yts from YearlyTestStats yts where yts.activeBuildID = ? and yts.testCode = ? and yts.sampleTime = ?");

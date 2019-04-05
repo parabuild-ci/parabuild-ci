@@ -140,7 +140,6 @@ public interface StatisticsManager {
 
   /**
    * @return time to fix MA
-   * @param maxLastBuilds
    */
   SortedMap getRecentTimeToFixMovingAverage(int maxLastBuilds);
 

@@ -29,7 +29,7 @@ public final class DailyPersistentBuildStatsRetriever extends AbstractPersistent
 
 
   /**
-   * @param activeBuildID
+   *
    */
   public DailyPersistentBuildStatsRetriever(final int activeBuildID) {
     super(activeBuildID);
@@ -50,12 +50,6 @@ public final class DailyPersistentBuildStatsRetriever extends AbstractPersistent
   /**
    * Returns list of PersistentObject corresponding the type of
    * the statistics.
-   *
-   * @param session
-   * @param buildID
-   * @param fromDate
-   * @return
-   * @throws HibernateException
    */
   protected List getStatsFromDB(final Session session, final int buildID, final Date fromDate,
                                 final Date toDate) throws HibernateException {

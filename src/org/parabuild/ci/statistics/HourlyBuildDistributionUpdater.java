@@ -13,10 +13,14 @@
  */
 package org.parabuild.ci.statistics;
 
-import java.util.*;
+import net.sf.hibernate.HibernateException;
+import net.sf.hibernate.Query;
+import net.sf.hibernate.Session;
+import org.parabuild.ci.object.BuildRun;
+import org.parabuild.ci.object.HourlyDistribution;
+import org.parabuild.ci.object.PersistentDistribution;
 
-import net.sf.hibernate.*;
-import org.parabuild.ci.object.*;
+import java.util.Calendar;
 
 /**
  * Updates hourly build results distribution.
@@ -38,25 +42,19 @@ final class HourlyBuildDistributionUpdater extends AbstractDistributionUpdater {
 
   /**
    * Finds existing persisted distribution.
-   *
-   * @param session
-   * @param activeBuildID
-   * @param target
    */
   protected PersistentDistribution findPersistedDistribution(final Session session, final int activeBuildID, final int target) throws HibernateException {
     final Query query = session.createQuery("select pd from HourlyDistribution pd where pd.activeBuildID = ? and pd.target = ?");
     query.setInteger(0, activeBuildID);
     query.setInteger(1, target);
     query.setCacheable(true);
-    return (PersistentDistribution)query.uniqueResult();
+    return (PersistentDistribution) query.uniqueResult();
   }
 
 
   /**
    * Returns distribution target corresponding this build run.
    * An example of target is a day a week, a month.
-   *
-   * @param buildRun
    *
    * @return distribution target corresponding this build run.
    */

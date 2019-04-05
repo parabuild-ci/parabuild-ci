@@ -29,8 +29,11 @@ import java.util.Date;
  */
 final class DailyTestStatsUpdater extends AbstractTestStatsUpdater {
 
-  /** @noinspection UNUSED_SYMBOL,UnusedDeclaration*/
+  /**
+   * @noinspection UNUSED_SYMBOL, UnusedDeclaration
+   */
   private static final Log log = LogFactory.getLog(DailyTestStatsUpdater.class); // NOPMD
+
 
   public DailyTestStatsUpdater(final byte testCode) {
     super(testCode);
@@ -39,7 +42,6 @@ final class DailyTestStatsUpdater extends AbstractTestStatsUpdater {
 
   /**
    * @return truncation level to be used by the updater.
-   *
    * @see Calendar#DAY_OF_MONTH
    * @see Calendar#HOUR_OF_DAY
    * @see Calendar#YEAR
@@ -50,14 +52,11 @@ final class DailyTestStatsUpdater extends AbstractTestStatsUpdater {
 
 
   /**
-   * @param session Hibernate session
+   * @param session       Hibernate session
    * @param activeBuildID to get stats for
-   * @param sampleDate Date already truncated
-   *
+   * @param sampleDate    Date already truncated
    * @return persistent stats corresponding the given build run or
-   *         null if doesn't exist.
-   *
-   * @throws HibernateException
+   * null if doesn't exist.
    */
   protected StatisticsSample findPersistedStats(final Session session, final int activeBuildID, final Date sampleDate) throws HibernateException {
     final Query query = session.createQuery("select dst from DailyTestStats dst where dst.activeBuildID = ? and dst.testCode = ? and dst.sampleTime = ?");

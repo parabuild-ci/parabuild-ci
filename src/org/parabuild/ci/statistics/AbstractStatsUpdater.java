@@ -45,8 +45,6 @@ abstract class AbstractStatsUpdater implements PersistentStatsUpdater {
 
   /**
    * Updates statistics corresponding this build run.
-   *
-   * @param buildRun
    */
   public final void updateStatistics(final BuildRun buildRun) {
 
@@ -129,8 +127,6 @@ abstract class AbstractStatsUpdater implements PersistentStatsUpdater {
    *
    * @return persistent stats corresponding the given build run or
    *         null if doesn't exist.
-   *
-   * @throws HibernateException
    */
   protected abstract StatisticsSample findPersistedStats(Session session, int activeBuildID, Date sampleDate) throws HibernateException;
 
@@ -138,8 +134,6 @@ abstract class AbstractStatsUpdater implements PersistentStatsUpdater {
   /**
    * Helper to truncate build run date according to implementor's
    * truncate level.
-   *
-   * @param buildRun
    */
   private Date truncateBuildRunDate(final BuildRun buildRun) {
     return StatisticsUtils.truncateDate(buildRun.getFinishedAt(), truncateLevel());

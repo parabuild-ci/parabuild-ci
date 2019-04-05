@@ -52,10 +52,6 @@ public final class BuildStatistics implements Serializable {
 
   /**
    * Constructor.
-   *
-   * @param successfulBuilds
-   * @param brokenBuilds
-   * @param checkins
    */
   public BuildStatistics(final Integer successfulBuilds, final Integer brokenBuilds, final Integer checkins, final Integer issues) {
     this(successfulBuilds.intValue(), brokenBuilds.intValue(), checkins.intValue(), issues.intValue());
@@ -91,8 +87,6 @@ public final class BuildStatistics implements Serializable {
 
   /**
    * Factory method.
-   *
-   * @return
    */
   public static BuildStatistics newInstance(final PersistentBuildStats pStats) {
     return new BuildStatistics(pStats.getSuccessfulBuildCount(),

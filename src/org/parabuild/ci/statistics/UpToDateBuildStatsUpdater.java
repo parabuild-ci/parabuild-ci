@@ -27,8 +27,6 @@ final class UpToDateBuildStatsUpdater implements PersistentStatsUpdater {
 
   /**
    * Updates statistics corresponding this build run.
-   *
-   * @param buildRun
    */
   public void updateStatistics(final BuildRun buildRun) {
     final BuildStatistics runStats = StatisticsUtils.calculateBuildStatistics(buildRun);

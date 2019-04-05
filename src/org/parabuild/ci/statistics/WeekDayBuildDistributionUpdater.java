@@ -38,11 +38,6 @@ final class WeekDayBuildDistributionUpdater extends AbstractDistributionUpdater 
 
   /**
    * Finds existing persisted distribution.
-   *
-   * @param session
-   * @param activeBuildID
-   * @param target
-   *
    */
   protected PersistentDistribution findPersistedDistribution(final Session session, final int activeBuildID, final int target) throws HibernateException {
     final Query query = session.createQuery("select pd from WeekDayDistribution pd where pd.activeBuildID = ? and pd.target = ?");
@@ -56,8 +51,6 @@ final class WeekDayBuildDistributionUpdater extends AbstractDistributionUpdater 
   /**
    * Returns distribution target corresponding this build run.
    * An example of target is a day a week, a month.
-   *
-   * @param buildRun
    *
    * @return distribution target corresponding this build run.
    */

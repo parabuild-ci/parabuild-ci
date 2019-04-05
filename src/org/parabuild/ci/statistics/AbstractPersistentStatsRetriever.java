@@ -37,20 +37,15 @@ import java.util.TreeMap;
  */
 abstract class AbstractPersistentStatsRetriever {
 
-  private static final Log log = LogFactory.getLog(StatisticsManagerImpl.class);
-
   public static final int DEFAULT_STATS_MONTHS = 12;
   public static final int DEFAULT_STATS_DAYS = 30;
   public static final int DEFAULT_STATS_HOURS = 24;
-
-
+  private static final Log log = LogFactory.getLog(StatisticsManagerImpl.class);
   private final int activeBuildID;
 
 
   /**
    * Strategy constructor.
-   *
-   * @param activeBuildID
    */
   AbstractPersistentStatsRetriever(final int activeBuildID) {
     this.activeBuildID = activeBuildID;
@@ -67,12 +62,6 @@ abstract class AbstractPersistentStatsRetriever {
   /**
    * Returns list of PersistentObject corresponding the type of
    * the statistics.
-   *
-   * @param session
-   * @param buildID
-   * @param fromDate
-   * @return
-   * @throws HibernateException
    */
   protected abstract List getStatsFromDB(Session session, int buildID, Date fromDate,
                                          Date toDate) throws HibernateException;
@@ -81,10 +70,6 @@ abstract class AbstractPersistentStatsRetriever {
   /**
    * Returns list of {@link org.parabuild.ci.object.PersistentBuildStats} corresponding the type of
    * the statistics.
-   *
-   * @param fromDate
-   * @return
-   * @throws HibernateException
    */
   public final List getStatistics(final Date fromDate, final Date toDate) {
     return (List) ConfigurationManager.runInHibernate(new TransactionCallback() {
@@ -140,7 +125,7 @@ abstract class AbstractPersistentStatsRetriever {
         final List list = getStatsFromDB(session, activeBuildID, cutOffDate, new Date());
 
         // travers DailyStats
-        for (final Iterator i1 = list.iterator(); i1.hasNext();) {
+        for (final Iterator i1 = list.iterator(); i1.hasNext(); ) {
           final StatisticsSample sample = (StatisticsSample) i1.next();
           if (result.get(sample.getSampleTime()) != null) {
             log.warn("statistics was unexpectedly not null for date: " + sample.getSampleTime());
@@ -157,7 +142,7 @@ abstract class AbstractPersistentStatsRetriever {
     });
 
     // fill gaps
-    for (final Iterator i = result.entrySet().iterator(); i.hasNext();) {
+    for (final Iterator i = result.entrySet().iterator(); i.hasNext(); ) {
       final Map.Entry entry = (Map.Entry) i.next();
       if (entry.getValue() == null) {
         entry.setValue(createZeroStatistics());

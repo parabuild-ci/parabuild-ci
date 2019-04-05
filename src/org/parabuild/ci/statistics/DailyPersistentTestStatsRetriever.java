@@ -26,8 +26,7 @@ public class DailyPersistentTestStatsRetriever extends AbstractPersistentTestSta
 
 
   /**
-   * @param activeBuildID
-   * @param testToolCode  a code for a test tool.
+   * @param testToolCode a code for a test tool.
    * @see PersistentTestStats#TYPE_CPPUNIT
    * @see PersistentTestStats#TYPE_JUNIT
    * @see PersistentTestStats#TYPE_NUNIT
@@ -51,12 +50,6 @@ public class DailyPersistentTestStatsRetriever extends AbstractPersistentTestSta
   /**
    * Returns list of PersistentObject corresponding the type of
    * the statistics.
-   *
-   * @param session
-   * @param buildID
-   * @param fromDate
-   * @return
-   * @throws HibernateException
    */
   protected List getStatsFromDB(final Session session, final int buildID, final Date fromDate,
                                 final Date toDate) throws HibernateException {
