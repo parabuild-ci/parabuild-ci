@@ -33,7 +33,7 @@ abstract class AbstractPersistentBuildStatsRetriever extends AbstractPersistentS
 
 
   /**
-   * @return creates a statistics obect based on (copy) of the given sample
+   * @return creates a statistics object based on (copy) of the given sample
    */
   protected Object createStatisticsFromSample(final StatisticsSample sample) {
     return BuildStatistics.newInstance((PersistentBuildStats)sample);

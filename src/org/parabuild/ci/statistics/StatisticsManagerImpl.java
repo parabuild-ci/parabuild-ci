@@ -26,7 +26,6 @@ import org.parabuild.ci.configuration.TransactionCallback;
 import org.parabuild.ci.error.Error;
 import org.parabuild.ci.error.ErrorManagerFactory;
 import org.parabuild.ci.object.ActiveBuildAttribute;
-import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.BuildRun;
 import org.parabuild.ci.object.BuildRunAttribute;
 import org.parabuild.ci.object.BuildRunConfig;
@@ -55,7 +54,7 @@ final class StatisticsManagerImpl implements StatisticsManager {
 
 
   /**
-   * Constuctor.
+   * Constructor.
    */
   public StatisticsManagerImpl(final int activeBuildID) {
     this.activeBuildID = ArgumentValidator.validateBuildIDInitialized(activeBuildID);
@@ -124,7 +123,7 @@ final class StatisticsManagerImpl implements StatisticsManager {
 
 
   /**
-   * Returns current statists for last {@link #MAX_LAST_BUILDS} builds.
+   * Returns current statistics for last {@link #MAX_LAST_BUILDS} builds.
    *
    * @return SortedMap where key is a an integer build number and value is
    *         {@link TestStatistics}
@@ -135,7 +134,7 @@ final class StatisticsManagerImpl implements StatisticsManager {
     return (SortedMap) ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         final SortedMap result = new TreeMap();
-        // prepare a query for atrributes
+        // prepare a query for attributes
         final Query buildRunAttrQuery = session.createQuery("select bra.name, bra.value from BuildRunAttribute bra " +
                 " where bra.buildRunID = ? ");
         buildRunAttrQuery.setCacheable(true);
@@ -150,14 +149,14 @@ final class StatisticsManagerImpl implements StatisticsManager {
         q3.setInteger(0, activeBuildID);
         q3.setByte(1, BuildRun.TYPE_BUILD_RUN);
         q3.setCacheable(true);
-        // itereate build runs
+        // iterate build runs
         for (final Iterator buildRunIter = q3.iterate(); buildRunIter.hasNext();) {
           final TestStatistics testStatistics = new TestStatistics();
           testStatistics.addBuildCount(1);
           final Object[] buildRuns = (Object[]) buildRunIter.next();
           final Integer buildRinID = (Integer) buildRuns[0];
           final Integer buildRunNumber = (Integer) buildRuns[1];
-          // execute and iterate an attr quesry for the given build run
+          // execute and iterate an attr query for the given build run
           buildRunAttrQuery.setInteger(0, buildRinID);
           for (final Iterator buildRunAttrIter = buildRunAttrQuery.iterate(); buildRunAttrIter.hasNext();) {
             final Object[] attrs = (Object[]) buildRunAttrIter.next();
@@ -187,7 +186,7 @@ final class StatisticsManagerImpl implements StatisticsManager {
 
 
   /**
-   * Returns current build time statists for last builds.
+   * Returns current build time statistics for last builds.
    *
    * @return SortedMap where key is a an integer build number and
    *         value is Integer number of seconds.
@@ -210,7 +209,7 @@ final class StatisticsManagerImpl implements StatisticsManager {
         query.setByte(1, BuildRun.TYPE_BUILD_RUN);
         query.setByte(2, BuildRun.BUILD_RESULT_SUCCESS);
         query.setCacheable(true);
-        // itereate build runs
+        // iterate build runs
         for (final Iterator buildRunIter = query.iterate(); buildRunIter.hasNext();) {
           final TestStatistics testStatistics = new TestStatistics();
           testStatistics.addBuildCount(1);
@@ -281,7 +280,7 @@ final class StatisticsManagerImpl implements StatisticsManager {
         if (maxLastBuilds != Integer.MAX_VALUE) {
           q.setMaxResults(maxLastBuilds);
         }
-        // itereate build runs
+        // iterate build runs
         for (final Iterator buildRunIter = q.iterate(); buildRunIter.hasNext();) {
           final Object[] buildRun = (Object[]) buildRunIter.next();
           final Integer buildNumber = (Integer) buildRun[0];
@@ -301,7 +300,7 @@ final class StatisticsManagerImpl implements StatisticsManager {
    *         BuildStatistics
    */
   public SortedMap getHourlyDistribution() {
-    return new HourlyBuildDistributionRetrievier(activeBuildID).getStatistics();
+    return new HourlyBuildDistributionRetriever(activeBuildID).getStatistics();
   }
 
 

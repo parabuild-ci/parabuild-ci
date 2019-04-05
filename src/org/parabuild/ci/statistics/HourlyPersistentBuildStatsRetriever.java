@@ -36,10 +36,10 @@ public final class HourlyPersistentBuildStatsRetriever extends AbstractPersisten
 
 
   protected StatisticsRetrieverConfiguration getConfiguration() {
-    final int rollerInitTrauncateTo = Calendar.HOUR_OF_DAY;
+    final int rollerInitTruncateTo = Calendar.HOUR_OF_DAY;
     final int rollerStep = Calendar.HOUR_OF_DAY;
     final int cutOffBefore = Calendar.DAY_OF_MONTH;
-    return new StatisticsRetrieverConfiguration(rollerInitTrauncateTo,
+    return new StatisticsRetrieverConfiguration(rollerInitTruncateTo,
             DEFAULT_STATS_HOURS,
             rollerStep,
             cutOffBefore);

@@ -43,7 +43,7 @@ import org.parabuild.ci.services.BuildStartRequestParameter;
 import org.parabuild.ci.services.ServiceManager;
 import org.parabuild.ci.statistics.DailyPersistentBuildStatsRetriever;
 import org.parabuild.ci.statistics.DailyPersistentTestStatsRetriever;
-import org.parabuild.ci.statistics.HourlyBuildDistributionRetrievier;
+import org.parabuild.ci.statistics.HourlyBuildDistributionRetriever;
 import org.parabuild.ci.statistics.HourlyPersistentBuildStatsRetriever;
 import org.parabuild.ci.statistics.HourlyPersistentTestStatsRetriever;
 import org.parabuild.ci.statistics.MonthlyPersistentBuildStatsRetriever;
@@ -1216,7 +1216,7 @@ public final class ParabuildSoapBindingImpl implements Parabuild {
 
 
   public BuildDistribution[] getHourlyBuildDistributions(final int activeBuildID) throws RemoteException {
-    final HourlyBuildDistributionRetrievier retriever = new HourlyBuildDistributionRetrievier(activeBuildID);
+    final HourlyBuildDistributionRetriever retriever = new HourlyBuildDistributionRetriever(activeBuildID);
     final List list = retriever.getDistribution();
     final BuildDistribution[] result = new BuildDistribution[list.size()];
     for (int i = 0; i < list.size(); i++) {

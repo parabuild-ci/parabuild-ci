@@ -20,7 +20,7 @@ import org.parabuild.ci.object.*;
 
 /**
  * GoF Composite implementation of the PersistentStatisticsUpdater
- * functor to update persitents statistcs according to the
+ * functor to update persistent statistics according to the
  * results of the build run.
  *
  * @see DailyBuildStatsUpdater

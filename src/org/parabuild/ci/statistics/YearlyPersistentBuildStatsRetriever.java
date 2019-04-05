@@ -37,11 +37,11 @@ public final class YearlyPersistentBuildStatsRetriever extends AbstractPersisten
 
 
   protected StatisticsRetrieverConfiguration getConfiguration() {
-    final int rollerInitTrauncateTo = Calendar.MONTH;
+    final int rollerInitTruncateTo = Calendar.MONTH;
     final int statisticsSize = 12;
     final int rollerStep = Calendar.MONTH;
     final int cutOffBefore = Calendar.YEAR;
-    return new StatisticsRetrieverConfiguration(rollerInitTrauncateTo,
+    return new StatisticsRetrieverConfiguration(rollerInitTruncateTo,
             statisticsSize,
             rollerStep,
             cutOffBefore);

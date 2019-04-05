@@ -25,7 +25,7 @@ public final class MovingAverager {
   private final int windowSize;
   private final LinkedList window = new LinkedList();
   private long average = 0;
-  private double summa = 0;
+  private double sum = 0;
 
 
   public MovingAverager(final int windowSize) {
@@ -45,14 +45,14 @@ public final class MovingAverager {
   public long add(final long value) {
     if (window.size() < windowSize) {
       window.add(new Long(value));
-      summa += value;
-      average = (long)(summa / window.size());
+      sum += value;
+      average = (long)(sum / window.size());
     } else {
       window.add(new Long(value));
       final Long first = (Long)window.removeFirst();
-      summa += value;
-      summa -= first;
-      average = (long)(summa / window.size());
+      sum += value;
+      sum -= first;
+      average = (long)(sum / window.size());
     }
     return average;
   }

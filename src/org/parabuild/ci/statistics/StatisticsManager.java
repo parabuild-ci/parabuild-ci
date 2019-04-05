@@ -106,7 +106,7 @@ public interface StatisticsManager {
 
 
   /**
-   * Returns current test statists for last builds.
+   * Returns current test statistics for last builds.
    *
    * @return SortedMap where key is a an integer build number and value is
    *         {@link TestStatistics}
@@ -115,7 +115,7 @@ public interface StatisticsManager {
 
 
   /**
-   * Returns current build time statists for last builds.
+   * Returns current build time statistics for last builds.
    *
    * @return SortedMap where key is a an integer build number and
    *  value is Integer number of seconds.
@@ -124,7 +124,7 @@ public interface StatisticsManager {
 
 
   /**
-   * Retuns build number and number of violations.
+   * Returns build number and number of violations.
    */
   SortedMap getRecentPMDViolations();
 
@@ -152,7 +152,7 @@ public interface StatisticsManager {
 
 
   /**
-   * Retuns build number and number of violations.
+   * Returns build number and number of violations.
    */
   SortedMap getRecentCheckstyleViolations();
 }

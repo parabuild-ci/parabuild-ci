@@ -83,7 +83,7 @@ public class TimeToFixMonitor implements BuildFinishedSubscriber {
           if (log.isDebugEnabled()) log.debug("timeToFixSecs: " + timeToFixSecs);
           cm.saveObject(new BuildRunAttribute(currentBuildRunID, BuildRunAttribute.ATTR_TIME_TO_FIX, timeToFixSecs));
 
-          // calcualte and store MA
+          // calculate and store MA
           final long movingAverage = movingAverager.add(timeToFixSecs);
           if (log.isDebugEnabled()) log.debug("movingAverage: " + movingAverage);
           cm.saveObject(new BuildRunAttribute(currentBuildRunID, BuildRunAttribute.ATTR_TIME_TO_FIX_MOVING_AVERAGE, movingAverage));
@@ -91,7 +91,7 @@ public class TimeToFixMonitor implements BuildFinishedSubscriber {
           // store fixed build ID
           cm.saveObject(new BuildRunAttribute(currentBuildRunID, BuildRunAttribute.ATTR_FIXES_BUILD_ID, firstBrokenBuildRunID));
 
-          // caluclate and store average
+          // calculate and store average
           final double average = averager.add(timeToFixSecs);
           if (log.isDebugEnabled()) log.debug("average: " + average);
           final Integer storedAverage = getAverageTimeToFix(activeBuildID);

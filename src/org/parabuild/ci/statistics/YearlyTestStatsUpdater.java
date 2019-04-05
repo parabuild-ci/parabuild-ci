@@ -39,7 +39,7 @@ final class YearlyTestStatsUpdater extends AbstractTestStatsUpdater {
 
 
   /**
-   * @return truncation lavel to be used by the updater.
+   * @return truncation level to be used by the updater.
    *
    * @see Calendar#DAY_OF_MONTH
    * @see Calendar#MONTH
@@ -52,11 +52,11 @@ final class YearlyTestStatsUpdater extends AbstractTestStatsUpdater {
 
 
   /**
-   * @param session Hibenrate session
+   * @param session Hibernate session
    * @param activeBuildID to get stats for
    * @param sampleDate Date already truncated
    *
-   * @return persistant stats corrsponding the given buidl run or
+   * @return persistent stats corresponding the given build run or
    *         null if doesn't exist.
    *
    * @throws HibernateException
@@ -72,7 +72,7 @@ final class YearlyTestStatsUpdater extends AbstractTestStatsUpdater {
 
 
   /**
-   * Factory method to make an objct that implements
+   * Factory method to make an object that implements
    * PersistentStats.
    *
    * @return new instance of PersistentStats.

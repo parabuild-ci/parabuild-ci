@@ -20,17 +20,17 @@ import org.parabuild.ci.object.*;
 abstract class AbstractBuildStatsUpdater extends AbstractStatsUpdater { // NOPMD AbstractClassWithoutAbstractMethod
 
   /**
-   * This method should calculate this builf run's statistics
+   * This method should calculate this build run's statistics
    * and add to the given statistics sample. Casting is required.
    */
-  public final void addRunStatsToPersistantStats(final BuildRun buildRun, final StatisticsSample stample) {
+  public final void addRunStatsToPersistentStats(final BuildRun buildRun, final StatisticsSample sample) {
     final BuildStatistics runStats = StatisticsUtils.calculateBuildStatistics(buildRun);
-    final PersistentBuildStats pStat = (PersistentBuildStats)stample;
-    addRunStatsToPersistantBuildStats(runStats, pStat);
+    final PersistentBuildStats pStat = (PersistentBuildStats)sample;
+    addRunStatsToPersistentBuildStats(runStats, pStat);
   }
 
 
-  static void addRunStatsToPersistantBuildStats(final BuildStatistics runStats, final PersistentBuildStats pStat) {// make BuildStatistics that is up to date first
+  static void addRunStatsToPersistentBuildStats(final BuildStatistics runStats, final PersistentBuildStats pStat) {// make BuildStatistics that is up to date first
     final BuildStatistics result = new BuildStatistics(runStats);
     result.addChangeLists(pStat.getChangeListCount());
     result.addFailedBuilds(pStat.getFailedBuildCount());

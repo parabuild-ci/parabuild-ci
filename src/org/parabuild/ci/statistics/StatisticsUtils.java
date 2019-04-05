@@ -72,7 +72,7 @@ public final class StatisticsUtils {
 
 
   /**
-   * Sroke used by line charts in Parabuild.
+   * Stroke used by line charts in Parabuild.
    */
   public static final Stroke DEFAULT_LINE_STROKE = new BasicStroke(2.0f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_ROUND);
 
@@ -159,7 +159,7 @@ public final class StatisticsUtils {
     bar.setSeriesPaint(1, Color.GREEN); // second bar
     //plot.setRenderer(bar);
 
-    // write to reposnce
+    // write to response
     final ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
     ChartUtilities.writeChartAsPNG(out, chart, IMG_WIDTH, IMG_HEIGHT, info);
   }
@@ -250,10 +250,10 @@ public final class StatisticsUtils {
     final StackedAreaRenderer area = (StackedAreaRenderer) plot.getRenderer();
     area.setSeriesPaint(0, Color.RED); // first area
     area.setSeriesPaint(1, Color.PINK); // second area
-    area.setSeriesPaint(2, Color.GREEN); // thirs area
+    area.setSeriesPaint(2, Color.GREEN); // third area
     //plot.setRenderer(area);
 
-    // write to reposnce
+    // write to response
     final ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
     ChartUtilities.writeChartAsPNG(out, chart, IMG_WIDTH, IMG_HEIGHT, info);
   }
@@ -304,7 +304,7 @@ public final class StatisticsUtils {
     bar.setSeriesPaint(0, Color.BLUE); // first bar
     //bar.setSeriesPaint(1, Color.GREEN); // second bar
 
-    // write to reposnce
+    // write to response
     final ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
     ChartUtilities.writeChartAsPNG(out, chart, IMG_WIDTH, IMG_HEIGHT, info);
   }
@@ -339,7 +339,7 @@ public final class StatisticsUtils {
     bar.setItemMargin(0); // reduce the width between the bars.
     bar.setSeriesPaint(0, Color.RED); // first bar
 
-    // write to reposnce
+    // write to response
     final ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
     ChartUtilities.writeChartAsPNG(out, chart, IMG_WIDTH, IMG_HEIGHT, info);
   }
@@ -380,7 +380,7 @@ public final class StatisticsUtils {
     line.setSeriesPaint(0, Color.BLUE);
     line.setStroke(DEFAULT_LINE_STROKE);
 
-    // write to reposnce
+    // write to response
     final ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
     ChartUtilities.writeChartAsPNG(out, chart, IMG_WIDTH, IMG_HEIGHT, info);
   }
@@ -468,7 +468,7 @@ public final class StatisticsUtils {
     bar.setItemMargin(0); // reduce the width between the bars.
     bar.setSeriesPaint(0, Color.RED); // first bar
 
-    // write to reposnce
+    // write to response
     final ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
     ChartUtilities.writeChartAsPNG(out, chart, IMG_WIDTH, IMG_HEIGHT, info);
   }
@@ -538,7 +538,7 @@ public final class StatisticsUtils {
 
 
   /**
-   * Helper method to add build statistis to distribution.
+   * Helper method to add build statistics to distribution.
    *
    * @param stats BuildStatistics to add to PersistentDistribution
    * @param pd    PersistentDistribution to add to.

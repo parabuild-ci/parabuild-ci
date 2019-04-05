@@ -70,7 +70,7 @@ public final class BuildTimeChartGenerator {
     line.setSeriesPaint(0, lineColor);
     line.setStroke(StatisticsUtils.DEFAULT_LINE_STROKE);
 
-    // write to reposnce
+    // write to response
 
     final ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
     ChartUtilities.writeChartAsPNG(out, chart, StatisticsUtils.IMG_WIDTH, StatisticsUtils.IMG_HEIGHT, info);

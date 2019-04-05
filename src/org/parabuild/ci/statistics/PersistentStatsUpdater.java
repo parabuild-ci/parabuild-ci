@@ -16,7 +16,7 @@ package org.parabuild.ci.statistics;
 import org.parabuild.ci.object.*;
 
 /**
- * Functor to update Persitants statistcs according to the
+ * Functor to update persistent statistics according to the
  * results of the build run.
  *
  * @see #updateStatistics(BuildRun)

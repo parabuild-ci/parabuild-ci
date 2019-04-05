@@ -34,10 +34,10 @@ abstract class AbstractTestStatsUpdater extends AbstractStatsUpdater { // NOPMD 
 
 
   /**
-   * This method should calculate this builf run's statistics
+   * This method should calculate this build run's statistics
    * and add to the given statistics sample. Casting is required.
    */
-  public final void addRunStatsToPersistantStats(final BuildRun buildRun, final StatisticsSample sampleToUpdate) {
+  public final void addRunStatsToPersistentStats(final BuildRun buildRun, final StatisticsSample sampleToUpdate) {
     if (!buildRun.completed()) return;
 
     // calculate

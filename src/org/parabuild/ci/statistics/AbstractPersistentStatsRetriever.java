@@ -19,7 +19,6 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.TransactionCallback;
-import org.parabuild.ci.object.ActiveBuild;
 import org.parabuild.ci.object.StatisticsSample;
 
 import java.util.Calendar;
@@ -49,7 +48,7 @@ abstract class AbstractPersistentStatsRetriever {
 
 
   /**
-   * Strategey constructor.
+   * Strategy constructor.
    *
    * @param activeBuildID
    */
@@ -97,7 +96,7 @@ abstract class AbstractPersistentStatsRetriever {
 
 
   /**
-   * Returns SortedMap contaning BuildStatistics objects as
+   * Returns SortedMap containing BuildStatistics objects as
    * values and dates as key sorted by dates. Size of the
    * returned map depends on the configuration.
    *
@@ -107,17 +106,17 @@ abstract class AbstractPersistentStatsRetriever {
   public final SortedMap getStatistics() {
 
     final StatisticsRetrieverConfiguration configuration = getConfiguration();
-    final int rollerInitTrauncateTo = configuration.getRollerInitTrauncateTo();
+    final int rollerInitTruncateTo = configuration.getRollerInitTruncateTo();
     final int statisticsSize = configuration.getStatisticsSize();
     final int rollerStep = configuration.getRollerStep();
     final int cutOffBefore = configuration.getCutOffBefore();
 
     // preExecute roller
     final Calendar roller = Calendar.getInstance();
-    roller.setTime(StatisticsUtils.truncateDate(new Date(), rollerInitTrauncateTo));
+    roller.setTime(StatisticsUtils.truncateDate(new Date(), rollerInitTruncateTo));
 //    if (log.isDebugEnabled()) log.debug("initialized roller: " + roller.getTime());
 
-    // create inital empty distribution rolling back for 30 days
+    // create initial empty distribution rolling back for 30 days
     final SortedMap result = new TreeMap(StatisticsUtils.NATURAL_DATE_COMPARATOR);
     for (int i = 0; i < statisticsSize; i++) {
       final Date date = roller.getTime();
@@ -177,7 +176,7 @@ abstract class AbstractPersistentStatsRetriever {
 
 
   /**
-   * @return creates a statistics obect based on (copy) of the given sample
+   * @return creates a statistics object based on (copy) of the given sample
    */
   protected abstract Object createStatisticsFromSample(final StatisticsSample sample);
 

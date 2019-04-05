@@ -37,10 +37,10 @@ public final class DailyPersistentBuildStatsRetriever extends AbstractPersistent
 
 
   protected StatisticsRetrieverConfiguration getConfiguration() {
-    final int rollerInitTrauncateTo = Calendar.DAY_OF_MONTH;
+    final int rollerInitTruncateTo = Calendar.DAY_OF_MONTH;
     final int rollerStep = Calendar.DAY_OF_MONTH;
     final int cutOffBefore = Calendar.MONTH;
-    return new StatisticsRetrieverConfiguration(rollerInitTrauncateTo,
+    return new StatisticsRetrieverConfiguration(rollerInitTruncateTo,
             DEFAULT_STATS_DAYS,
             rollerStep,
             cutOffBefore);

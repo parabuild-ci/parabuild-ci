@@ -26,12 +26,12 @@ import java.util.List;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
-abstract class AbstractBuildDistributionRetrievier {
+abstract class AbstractBuildDistributionRetriever {
 
   private int activeBuildID;
 
 
-  AbstractBuildDistributionRetrievier(final int activeBuildID) {
+  AbstractBuildDistributionRetriever(final int activeBuildID) {
     this.activeBuildID = ArgumentValidator.validateBuildIDInitialized(activeBuildID);
   }
 
@@ -42,12 +42,12 @@ abstract class AbstractBuildDistributionRetrievier {
 
 
   /**
-   * @return SortedMap conaining Integer target as a key and
+   * @return SortedMap containing Integer target as a key and
    *         build statistics as a value.
    */
   public final SortedMap getStatistics() {
 
-    // create inital empty 24 hours distribution
+    // create initial empty 24 hours distribution
     final int distStart = distributionStart();
     final int distSize = distributionSize();
     final SortedMap result = new TreeMap(StatisticsUtils.INTEGER_COMPARATOR);

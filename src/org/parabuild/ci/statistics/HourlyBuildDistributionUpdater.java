@@ -53,12 +53,12 @@ final class HourlyBuildDistributionUpdater extends AbstractDistributionUpdater {
 
 
   /**
-   * Returns distribuition target corresponging this build run.
+   * Returns distribution target corresponding this build run.
    * An example of target is a day a week, a month.
    *
    * @param buildRun
    *
-   * @return distribuition target corresponging this build run.
+   * @return distribution target corresponding this build run.
    */
   protected int getDistributionTarget(final BuildRun buildRun) {
     final Calendar c = Calendar.getInstance();

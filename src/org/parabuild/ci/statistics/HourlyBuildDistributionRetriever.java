@@ -21,12 +21,12 @@ import java.util.List;
 
 /**
  */
-public final class HourlyBuildDistributionRetrievier extends AbstractBuildDistributionRetrievier {
+public final class HourlyBuildDistributionRetriever extends AbstractBuildDistributionRetriever {
 
   public static final int DISTRIBUTION_SIZE = 24;
 
 
-  public HourlyBuildDistributionRetrievier(final int activeBuildID) {
+  public HourlyBuildDistributionRetriever(final int activeBuildID) {
     super(activeBuildID);
   }
 

@@ -32,7 +32,7 @@ public class SSTestHourlyDistributionRetrievier extends ServersideTestCase {
 
   private static final Log log = LogFactory.getLog(SSTestHourlyDistributionRetrievier.class);
 
-  private HourlyBuildDistributionRetrievier distrRetriever = null;
+  private HourlyBuildDistributionRetriever distrRetriever = null;
   private ErrorManager errorManager;
 
 
@@ -45,7 +45,7 @@ public class SSTestHourlyDistributionRetrievier extends ServersideTestCase {
     final SortedMap statistics = distrRetriever.getStatistics();
 
     // check if we got the right size
-    assertEquals(HourlyBuildDistributionRetrievier.DISTRIBUTION_SIZE, statistics.size());
+    assertEquals(HourlyBuildDistributionRetriever.DISTRIBUTION_SIZE, statistics.size());
 
     // check no null values
     for (Iterator i = statistics.entrySet().iterator(); i.hasNext();) {
@@ -77,6 +77,6 @@ public class SSTestHourlyDistributionRetrievier extends ServersideTestCase {
     super.enableErrorManagerStackTraces();
     errorManager = ErrorManagerFactory.getErrorManager();
     errorManager.clearAllActiveErrors();
-    distrRetriever = new HourlyBuildDistributionRetrievier(TestHelper.TEST_CVS_VALID_BUILD_ID);
+    distrRetriever = new HourlyBuildDistributionRetriever(TestHelper.TEST_CVS_VALID_BUILD_ID);
   }
 }

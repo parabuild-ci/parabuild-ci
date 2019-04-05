@@ -277,6 +277,10 @@
       <inspection_tool class="FinalPrivateMethod" enabled="false" level="WARNING" enabled_by_default="false" />
       <inspection_tool class="FinalStaticMethod" enabled="false" level="WARNING" enabled_by_default="false" />
       <inspection_tool class="FinalizeNotProtected" enabled="true" level="WARNING" enabled_by_default="true" />
+      <inspection_tool class="ForCanBeForeach" enabled="true" level="WARNING" enabled_by_default="true">
+        <option name="REPORT_INDEXED_LOOP" value="false" />
+        <option name="ignoreUntypedCollections" value="true" />
+      </inspection_tool>
       <inspection_tool class="ForLoopReplaceableByWhileJS" enabled="true" level="WARNING" enabled_by_default="true">
         <option name="m_ignoreLoopsWithoutConditions" value="false" />
       </inspection_tool>
@@ -805,11 +809,14 @@
       <words>
         <w>airius</w>
         <w>archivable</w>
+        <w>averager</w>
         <w>buildrunid</w>
         <w>cacheable</w>
+        <w>checkins</w>
         <w>computername</w>
         <w>deref</w>
         <w>dereferenced</w>
+        <w>distr</w>
         <w>enablement</w>
         <w>hapens</w>
         <w>ldapadmin</w>
@@ -827,12 +834,14 @@
         <w>resetter</w>
         <w>reviewme</w>
         <w>sendpartial</w>
+        <w>simeshev</w>
         <w>smpts</w>
         <w>smtp</w>
         <w>smtps</w>
         <w>somethingelse</w>
         <w>sres</w>
         <w>srun</w>
+        <w>succ</w>
         <w>successfuly</w>
         <w>throbber</w>
         <w>tierlet</w>

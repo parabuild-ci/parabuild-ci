@@ -69,19 +69,19 @@ public final class BuildStatistics implements Serializable {
   }
 
 
-  public BuildStatistics(final int successfulBuilds, final int failedBuilds, final int checkins, final int isses) {
+  public BuildStatistics(final int successfulBuilds, final int failedBuilds, final int checkins, final int issues) {
     this.failedBuilds = failedBuilds;
     this.changeLists = checkins;
     this.successfulBuilds = successfulBuilds;
-    this.issues = isses;
+    this.issues = issues;
   }
 
 
-  private BuildStatistics(final int successfulBuilds, final int failedBuilds, final int checkins, final int isses, final int failedPercent, final int successfulBuildPercent, final int totalBuilds) {
+  private BuildStatistics(final int successfulBuilds, final int failedBuilds, final int checkins, final int issues, final int failedPercent, final int successfulBuildPercent, final int totalBuilds) {
     this.failedBuilds = failedBuilds;
     this.changeLists = checkins;
     this.successfulBuilds = successfulBuilds;
-    this.issues = isses;
+    this.issues = issues;
     this.failedBuildsPercent = failedPercent;
     this.totalBuilds = totalBuilds;
     this.successfulBuildsPercent = successfulBuildPercent;
@@ -167,7 +167,7 @@ public final class BuildStatistics implements Serializable {
         } else {
           successfulBuildsPercent = (successfulBuilds * 100) / totalBuilds;
         }
-        this.failedBuildsPercent = 100 - successfulBuildsPercent; // to eliminate rounding errors so we have 100% summa
+        this.failedBuildsPercent = 100 - successfulBuildsPercent; // to eliminate rounding errors so we have 100% sum
       }
       isDirty = false;
     }

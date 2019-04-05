@@ -47,7 +47,7 @@ public class SSTestAbstractBuildStatsUpdater extends ServersideTestCase {
     final PersistentBuildStats persistentStats = new DailyStats();
 
     // add
-    AbstractBuildStatsUpdater.addRunStatsToPersistantBuildStats(buildStatistics, persistentStats);
+    AbstractBuildStatsUpdater.addRunStatsToPersistentBuildStats(buildStatistics, persistentStats);
 
     // assert
     assertEquals(TEST_SUCC_BUILD_COUNT, persistentStats.getSuccessfulBuildCount());
@@ -59,7 +59,7 @@ public class SSTestAbstractBuildStatsUpdater extends ServersideTestCase {
     assertEquals(TEST_FALIED_BUILD_PRECENT, persistentStats.getFailedBuildPercent());
 
     // add again
-    AbstractBuildStatsUpdater.addRunStatsToPersistantBuildStats(buildStatistics, persistentStats);
+    AbstractBuildStatsUpdater.addRunStatsToPersistentBuildStats(buildStatistics, persistentStats);
 
     // assert
     assertEquals(2 * TEST_SUCC_BUILD_COUNT, persistentStats.getSuccessfulBuildCount());

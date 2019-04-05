@@ -20,22 +20,22 @@ package org.parabuild.ci.statistics;
  */
 final class StatisticsRetrieverConfiguration {
 
-  private final int rollerInitTrauncateTo;
+  private final int rollerInitTruncateTo;
   private final int statisticsSize;
   private final int rollerStep;
   private final int cutOffBefore;
 
 
-  public StatisticsRetrieverConfiguration(final int rollerInitTrauncateTo, final int statisticsSize, final int rollerStep, final int cutOffBefore) {
-    this.rollerInitTrauncateTo = rollerInitTrauncateTo;
+  public StatisticsRetrieverConfiguration(final int rollerInitTruncateTo, final int statisticsSize, final int rollerStep, final int cutOffBefore) {
+    this.rollerInitTruncateTo = rollerInitTruncateTo;
     this.statisticsSize = statisticsSize;
     this.rollerStep = rollerStep;
     this.cutOffBefore = cutOffBefore;
   }
 
 
-  public int getRollerInitTrauncateTo() {
-    return rollerInitTrauncateTo;
+  public int getRollerInitTruncateTo() {
+    return rollerInitTruncateTo;
   }
 
 

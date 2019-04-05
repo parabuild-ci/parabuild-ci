@@ -21,7 +21,7 @@ import java.util.List;
 
 /**
  */
-public final class WeekDayBuildDistributionRetriever extends AbstractBuildDistributionRetrievier {
+public final class WeekDayBuildDistributionRetriever extends AbstractBuildDistributionRetriever {
 
   public static final int DISTRIBUTION_SIZE = 7;
 
@@ -48,7 +48,7 @@ public final class WeekDayBuildDistributionRetriever extends AbstractBuildDistri
 
 
   /**
-   * Week day stribution starts with day 1
+   * Week day distribution starts with day 1
    *
    * @return 1
    */

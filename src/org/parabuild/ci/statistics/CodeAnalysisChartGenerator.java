@@ -78,7 +78,7 @@ final class CodeAnalysisChartGenerator {
     line.setSeriesPaint(0, Color.RED);
     line.setStroke(StatisticsUtils.DEFAULT_LINE_STROKE);
 
-    // write to reposnce
+    // write to response
     final ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
     ChartUtilities.writeChartAsPNG(out, chart, StatisticsUtils.IMG_WIDTH, StatisticsUtils.IMG_HEIGHT, info);
   }

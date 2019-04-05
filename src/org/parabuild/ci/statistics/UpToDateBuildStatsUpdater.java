@@ -36,10 +36,10 @@ final class UpToDateBuildStatsUpdater implements PersistentStatsUpdater {
       ConfigurationManager.runInHibernate(new TransactionCallback() {
         public Object runInTransaction() {
           final int buildID = buildRun.getActiveBuildID();
-          addToActtiveBuildAtribute(buildID, ActiveBuildAttribute.STAT_SUCC_BUILDS_TO_DATE, runStats.getSuccessfulBuilds());
-          addToActtiveBuildAtribute(buildID, ActiveBuildAttribute.STAT_FAILED_BUILDS_TO_DATE, runStats.getFailedBuilds());
-          addToActtiveBuildAtribute(buildID, ActiveBuildAttribute.STAT_CHANGE_LISTS_TO_DATE, runStats.getChangeLists());
-          addToActtiveBuildAtribute(buildID, ActiveBuildAttribute.STAT_ISSUES_TO_DATE, runStats.getIssues());
+          addToActiveBuildAttribute(buildID, ActiveBuildAttribute.STAT_SUCC_BUILDS_TO_DATE, runStats.getSuccessfulBuilds());
+          addToActiveBuildAttribute(buildID, ActiveBuildAttribute.STAT_FAILED_BUILDS_TO_DATE, runStats.getFailedBuilds());
+          addToActiveBuildAttribute(buildID, ActiveBuildAttribute.STAT_CHANGE_LISTS_TO_DATE, runStats.getChangeLists());
+          addToActiveBuildAttribute(buildID, ActiveBuildAttribute.STAT_ISSUES_TO_DATE, runStats.getIssues());
           return null;
         }
       });
@@ -55,7 +55,7 @@ final class UpToDateBuildStatsUpdater implements PersistentStatsUpdater {
   }
 
 
-  private static void addToActtiveBuildAtribute(final int buildID, final String attrName, final int toAdd) {
+  private static void addToActiveBuildAttribute(final int buildID, final String attrName, final int toAdd) {
     final ConfigurationManager cm = ConfigurationManager.getInstance();
     ActiveBuildAttribute succAttr = cm.getActiveBuildAttribute(buildID, attrName);
     if (succAttr == null) succAttr = new ActiveBuildAttribute(buildID, attrName, "0");

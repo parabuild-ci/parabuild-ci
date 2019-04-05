@@ -37,7 +37,7 @@ abstract class AbstractPersistentTestStatsRetriever extends AbstractPersistentSt
 
 
   /**
-   * @return creates a statistics obect based on (copy) of the given sample
+   * @return creates a statistics object based on (copy) of the given sample
    */
   protected Object createStatisticsFromSample(final StatisticsSample sample) {
     final PersistentTestStats pst = (PersistentTestStats)sample;

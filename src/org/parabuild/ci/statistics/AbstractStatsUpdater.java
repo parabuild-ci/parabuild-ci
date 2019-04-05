@@ -67,7 +67,7 @@ abstract class AbstractStatsUpdater implements PersistentStatsUpdater {
             pStat = makePersistentStats();
             pStat.setActiveBuildID(activeBuildID);
             pStat.setSampleTime(sampleDate);
-            addRunStatsToPersistantStats(buildRun, pStat);
+            addRunStatsToPersistentStats(buildRun, pStat);
             try {
 //              if (log.isDebugEnabled()) log.debug("pStat before save: " + pStat);
               session.save(pStat);
@@ -75,8 +75,8 @@ abstract class AbstractStatsUpdater implements PersistentStatsUpdater {
               // REVIEWME: simeshev@parabuilci.org ->
               // we ignore it because there are weird errors at initial data seed
               // where the truncateBuildRunDate above couldn't find already
-              // existiong stats, the hour in particular - looking like
-              // the previous incerts didn't make it to the database.
+              // existing stats, the hour in particular - looking like
+              // the previous inserts didn't make it to the database.
               // should investigate further.
               IoUtils.ignoreExpectedException(e);
               // NOTE: simeshev@parabuildci.org ->
@@ -84,7 +84,7 @@ abstract class AbstractStatsUpdater implements PersistentStatsUpdater {
             }
           } else {
 //            if (log.isDebugEnabled()) log.debug("pStat before update: " + pStat);
-            addRunStatsToPersistantStats(buildRun, pStat);
+            addRunStatsToPersistentStats(buildRun, pStat);
             session.update(pStat);
           }
           return null;
@@ -97,14 +97,14 @@ abstract class AbstractStatsUpdater implements PersistentStatsUpdater {
 
 
   /**
-   * This method should calculate this builf run's statistics
+   * This method should calculate this build run's statistics
    * and add to the given statistics sample. Casting is required.
    */
-  protected abstract void addRunStatsToPersistantStats(BuildRun buildRun, StatisticsSample sampleToUpdate);
+  protected abstract void addRunStatsToPersistentStats(BuildRun buildRun, StatisticsSample sampleToUpdate);
 
 
   /**
-   * @return truncation lavel to be used by the updater.
+   * @return truncation level to be used by the updater.
    *
    * @see Calendar#DAY_OF_MONTH
    * @see Calendar#HOUR_OF_DAY
@@ -114,7 +114,7 @@ abstract class AbstractStatsUpdater implements PersistentStatsUpdater {
 
 
   /**
-   * Factory method to make an objct that implements
+   * Factory method to make an object that implements
    * PersistentStats.
    *
    * @return new instance of PersistentStats.
@@ -123,11 +123,11 @@ abstract class AbstractStatsUpdater implements PersistentStatsUpdater {
 
 
   /**
-   * @param session Hibenrate session
+   * @param session Hibernate session
    * @param activeBuildID to get stats for
    * @param sampleDate Date already truncated
    *
-   * @return persistant stats corrsponding the given buidl run or
+   * @return persistent stats corresponding the given build run or
    *         null if doesn't exist.
    *
    * @throws HibernateException
@@ -136,7 +136,7 @@ abstract class AbstractStatsUpdater implements PersistentStatsUpdater {
 
 
   /**
-   * Helper to runcate build run date according to implementor's
+   * Helper to truncate build run date according to implementor's
    * truncate level.
    *
    * @param buildRun
