@@ -53,13 +53,13 @@ public final class DatabaseService implements Service {
       }
 
       // Run upgrader
-      final DatabaseSchemeUpgrader chemaUpgrader = new DatabaseSchemeUpgrader();
-      chemaUpgrader.process();
+      final DatabaseSchemeUpgrader schemeUpgrader = new DatabaseSchemeUpgrader();
+      schemeUpgrader.process();
       status = SERVICE_STATUS_STARTED;
     } catch (final Exception e) {
       status = SERVICE_STATUS_FAILED;
       final ErrorManager errorManager = ErrorManagerFactory.getErrorManager();
-      final Error error = new Error("Database serivice failed to start");
+      final Error error = new Error("Database service failed to start");
       error.setDetails(e);
       error.setErrorLevel(Error.ERROR_LEVEL_FATAL);
       error.setSendEmail(false);

@@ -57,7 +57,7 @@ public final class ConfigurationService implements Service {
 
 
   /**
-   * Returns serivce status
+   * Returns service status
    *
    * @return service status
    */
@@ -226,7 +226,7 @@ public final class ConfigurationService implements Service {
           // get all build runs that are tied to active builds
           // (i.e. don't have copy versions of build configs.
           // that is, we can use build run's config id being
-          // cerain it is an active build config.
+          // certain it is an active build config.
 
           // first process automatic
           final Query qNonRef = session.createQuery(
@@ -288,7 +288,7 @@ public final class ConfigurationService implements Service {
     }
 
     // enable advanced settings if missed. this is done for customers that
-    // already used Parabuild when advanced seeting appeared - they should
+    // already used Parabuild when advanced setting appeared - they should
     // have it enabled so that they don't face change of UI behaviour.
     final SystemConfigurationManager scm = SystemConfigurationManagerFactory.getManager();
     if (Boolean.valueOf(System.getProperty(SystemConstants.SYSTEM_PROPERTY_INIT_ADVANCED_SETTINGS, "false"))) {

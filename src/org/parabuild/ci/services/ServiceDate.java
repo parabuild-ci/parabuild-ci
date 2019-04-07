@@ -16,7 +16,7 @@ package org.parabuild.ci.services;
 import java.util.*;
 
 /**
- * Purpose of this class to take out import of Date class from ServiceLiceseInformation
+ * Purpose of this class to take out import of Date class from ServiceLicenseInformation
  *
  */
 public final class ServiceDate extends Date {

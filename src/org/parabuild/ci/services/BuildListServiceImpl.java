@@ -35,7 +35,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Implemetation of BuildService interface.
+ * Implementation of BuildService interface.
  * <p/>
  * The lifecycle of build service is the following - method
  * startupService is called, other methods are called,
@@ -52,7 +52,7 @@ public final class BuildListServiceImpl implements BuildListService {
 
 
   /**
-   * Returns serivce status
+   * Returns service status
    *
    * @return int service status
    * @see #SERVICE_STATUS_FAILED
@@ -79,7 +79,7 @@ public final class BuildListServiceImpl implements BuildListService {
 
 
   /**
-   * Shutdows builds
+   * Shutdowns builds
    */
   public synchronized void shutdownService() {
     for (final Iterator iter = builds.entrySet().iterator(); iter.hasNext();) {

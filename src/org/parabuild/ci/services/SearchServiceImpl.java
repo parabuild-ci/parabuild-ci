@@ -38,7 +38,7 @@ public final class SearchServiceImpl implements SearchService {
 
 
   /**
-   * Defines Lucense write timeout.
+   * Defines Lucene write timeout.
    */
   private static final int LUCENE_WRITE_LOCK_TIMEOUT = 6000000;
 
@@ -202,7 +202,7 @@ public final class SearchServiceImpl implements SearchService {
 
     /**
      * This method must catch and report all the exceptions,
-     * otherwise a queue threa dill die.
+     * otherwise a queue thread will die.
      *
      * @see Runnable#run()
      * @see Thread#run()

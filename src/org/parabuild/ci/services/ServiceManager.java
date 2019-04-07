@@ -32,7 +32,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Service manager singletone class is responsible for BT
+ * Service manager singleton class is responsible for BT
  * services startupService and shutdownService.
  */
 public final class ServiceManager {
@@ -46,7 +46,7 @@ public final class ServiceManager {
 
 
   /**
-   * Default singletone constructor
+   * Default singleton constructor
    */
   private ServiceManager() {
     // we start services below only when we run as a build manager.
@@ -67,7 +67,7 @@ public final class ServiceManager {
 
   /**
    * Adds a service to the list of services managed by
-   * Servicemanager
+   * ServiceManager.
    *
    * @param service to add
    */

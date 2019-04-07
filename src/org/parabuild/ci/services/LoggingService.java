@@ -37,7 +37,7 @@ public final class LoggingService implements Service {
 
 
   /**
-   * Returns serivce status
+   * Returns service status
    *
    */
   public byte getServiceStatus() {
@@ -63,7 +63,7 @@ public final class LoggingService implements Service {
   /**
    * Sets up dynamic log4j configuration. Log4j configuration is
    * presented in two kinds - static log4.properties file
-   * packaged into autobuild.war file, and dinamic, defined in
+   * packaged into autobuild.war file, and dynamic, defined in
    * the database. This method is called after
    * ConfigurationManager is prepared.
    */
@@ -108,7 +108,7 @@ public final class LoggingService implements Service {
    */
   private static void reportException(final Exception e) {
     final ErrorManager errorManager = ErrorManagerFactory.getErrorManager();
-    final Error error = new Error("Unexpected condifition when starting logging service");
+    final Error error = new Error("Unexpected condition when starting logging service");
     error.setSubsystemName(Error.ERROR_SUBSYSTEM_BUILD);
     error.setErrorLevel(Error.ERROR_LEVEL_WARNING);
     error.setDetails(e);

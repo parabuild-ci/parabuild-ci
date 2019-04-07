@@ -108,7 +108,7 @@ public final class ServiceManagerServlet extends GenericServlet {
 
 
   /**
-   * Displays console messgate that the service successfully
+   * Displays console message that the service successfully
    * started.
    *
    * @noinspection UseOfSystemOutOrSystemErr
@@ -145,7 +145,7 @@ public final class ServiceManagerServlet extends GenericServlet {
 
 
   /**
-   * Displays console messgate that the service failed to start.
+   * Displays console message that the service failed to start.
    *
    * @noinspection UseOfSystemOutOrSystemErr
    */

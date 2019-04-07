@@ -40,8 +40,8 @@ public final class ThroughBuildServiceProxy implements BuildServiceProxy {
    * Semantics of the stop for a scheduler depends on a
    * scheduler:
    * <p/>
-   * o  Automatic schedulers runs in a loop constanly checking
-   * for changes spaning OS processes (via SourceControl).
+   * o  Automatic schedulers runs in a loop constantly checking
+   * for changes spanning OS processes (via SourceControl).
    * Automatic scheduler should move into "paused" state after
    * stop.
    * <p/>

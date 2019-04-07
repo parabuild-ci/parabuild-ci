@@ -31,12 +31,12 @@ public final class BuildStartRequestParameter {
 
 
   public BuildStartRequestParameter(final String variableName, final String description, final List variableValues,
-                                    final int orger) {
+                                    final int order) {
 
     this.variableName = ArgumentValidator.validateArgumentNotBlank(variableName, "variable name");
     this.variableValues = new ArrayList(ArgumentValidator.validateArgumentNotEmpty(variableValues, "variable values"));
     this.description = description;
-    this.order = orger;
+    this.order = order;
   }
 
 

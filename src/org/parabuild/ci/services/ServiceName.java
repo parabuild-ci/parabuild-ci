@@ -15,7 +15,7 @@ package org.parabuild.ci.services;
 
 public final class ServiceName {
 
-  public static final ServiceName AGENT_STATUS_MONITOR = new ServiceName("Agent satus monitor");
+  public static final ServiceName AGENT_STATUS_MONITOR = new ServiceName("Agent status monitor");
   public static final ServiceName BUILD_SERVICE = new ServiceName("Build service");
   public static final ServiceName BUILDS_SERVICE = new ServiceName("Builds service");
   public static final ServiceName CONFIGURATION_SERVICE = new ServiceName("Configuration service");
