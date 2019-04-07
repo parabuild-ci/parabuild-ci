@@ -823,6 +823,7 @@
       <words>
         <w>airius</w>
         <w>archivable</w>
+        <w>autobuild</w>
         <w>averager</w>
         <w>buildrunid</w>
         <w>cacheable</w>
@@ -832,6 +833,7 @@
         <w>dereferenced</w>
         <w>descr</w>
         <w>distr</w>
+        <w>djava</w>
         <w>enablement</w>
         <w>fchlb</w>
         <w>fchli</w>
@@ -857,12 +859,14 @@
         <w>fnsri</w>
         <w>fnss</w>
         <w>hapens</w>
+        <w>ifexists</w>
         <w>indexable</w>
         <w>ldapadmin</w>
         <w>ldaprealm</w>
         <w>ldapserver</w>
         <w>lgpl</w>
         <w>loginlogout</w>
+        <w>mbeans</w>
         <w>multifile</w>
         <w>myorg</w>
         <w>nopmd</w>
@@ -870,8 +874,10 @@
         <w>ohost</w>
         <w>quitwait</w>
         <w>readlimit</w>
+        <w>redetection</w>
         <w>resetter</w>
         <w>reviewme</w>
+        <w>sched</w>
         <w>sendpartial</w>
         <w>simeshev</w>
         <w>smpts</w>
@@ -888,6 +894,7 @@
         <w>tierlet</w>
         <w>todelete</w>
         <w>uniquemember</w>
+        <w>upgrader</w>
         <w>userpassword</w>
         <w>viewtier</w>
         <w>vimeshev</w>
