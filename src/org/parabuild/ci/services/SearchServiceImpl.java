@@ -186,8 +186,6 @@ public final class SearchServiceImpl implements SearchService {
    */
   private static final class IndexerQueueRequest implements Runnable {
 
-    private static final Log log = LogFactory.getLog(IndexerQueueRequest.class);
-
     private final IndexRequest indexRequest;
 
 
