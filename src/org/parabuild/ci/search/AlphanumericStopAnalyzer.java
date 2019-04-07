@@ -16,7 +16,7 @@ package org.parabuild.ci.search;
 import java.io.*;
 import org.apache.lucene.analysis.*;
 
-public final class AlphanumericStopAnalyzer extends Analyzer {
+final class AlphanumericStopAnalyzer extends Analyzer {
 
   public TokenStream tokenStream(final String fieldName, final Reader reader) {
     return new StopFilter(new LowerCaseFilter(new AlphanumericTokenizer(reader)),

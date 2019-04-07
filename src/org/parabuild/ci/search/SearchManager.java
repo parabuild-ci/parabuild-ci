@@ -201,7 +201,7 @@ public final class SearchManager {
      *
      * @param document
      */
-    public DocumentIndexRequest(final Document document) {
+    DocumentIndexRequest(final Document document) {
       this.document = document;
     }
 

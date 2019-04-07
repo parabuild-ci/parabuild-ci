@@ -42,7 +42,7 @@ public final class LuceneDocumentFactory {
   public static final String FIELD_CONTENT = "fncn";
   public static final String FIELD_BUILD_ID = "fnbi";
   public static final String FIELD_BUILD_STARTED = "fnbs";
-  public static final String FIELD_BUILD_FINISHED = "fnbf";
+  private static final String FIELD_BUILD_FINISHED = "fnbf";
   public static final String FIELD_BUILD_NAME = "fnbn";
   public static final String FIELD_BUILD_RUN_NUMBER = "fnbrn";
   public static final String FIELD_BUILD_RUN_ID = "fnbri";
@@ -50,8 +50,8 @@ public final class LuceneDocumentFactory {
   public static final String FIELD_STEP_FINISHED = "fnsf";
 
   // change list-specific fields
-  public static final String FIELD_CHANGELIST_ID = "fchli";
-  public static final String FIELD_CHANGELIST_BRANCH = "fchlb";
+  private static final String FIELD_CHANGELIST_ID = "fchli";
+  private static final String FIELD_CHANGELIST_BRANCH = "fchlb";
   public static final String FIELD_CHANGELIST_NUMBER = "fchln";
   public static final String FIELD_CHANGELIST_USER = "fchlu";
 
@@ -255,7 +255,7 @@ public final class LuceneDocumentFactory {
    *
    * @see #TYPE_SEQUENCE_LOG
    */
-  public static Field makeDocumentTypeField(final String type) {
+  private static Field makeDocumentTypeField(final String type) {
     return new Field(FIELD_DOCUMENT_TYPE, // name
       type, // value
       true, // store
