@@ -246,7 +246,7 @@ public final class BuildListServiceImpl implements BuildListService {
   }
 
 
-    private void reportDeleteBuildFilesError(final Exception e) {
+    private static void reportDeleteBuildFilesError(final Exception e) {
     final Error error = new Error();
     error.setErrorLevel(Error.ERROR_LEVEL_WARNING);
     error.setSendEmail(false);
@@ -257,7 +257,7 @@ public final class BuildListServiceImpl implements BuildListService {
   }
 
 
-  private void reportShutdownException(final BuildService buildService, final Exception e) {
+  private static void reportShutdownException(final BuildService buildService, final Exception e) {
     final Error error = new Error();
     error.setBuildID(buildService.getActiveBuildID());
     error.setDetails(e);
@@ -269,7 +269,7 @@ public final class BuildListServiceImpl implements BuildListService {
   }
 
 
-  private void reportStartupException(final BuildConfig buildConfig, final Exception e) {
+  private static void reportStartupException(final BuildConfig buildConfig, final Exception e) {
     final Error error = new Error();
     error.setBuildName(buildConfig.getBuildName() + ", Build ID: " + buildConfig.getBuildID());
     error.setDescription("Error while starting build service");

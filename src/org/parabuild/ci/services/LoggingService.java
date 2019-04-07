@@ -106,7 +106,7 @@ public final class LoggingService implements Service {
   /**
    * Reports logging service startup exceptions
    */
-  private void reportException(final Exception e) {
+  private static void reportException(final Exception e) {
     final ErrorManager errorManager = ErrorManagerFactory.getErrorManager();
     final Error error = new Error("Unexpected condifition when starting logging service");
     error.setSubsystemName(Error.ERROR_SUBSYSTEM_BUILD);

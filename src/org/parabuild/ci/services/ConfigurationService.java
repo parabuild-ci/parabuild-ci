@@ -19,10 +19,6 @@ import net.sf.hibernate.SessionFactory;
 import net.sf.hibernate.cfg.Configuration;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.quartz.Scheduler;
-import org.quartz.SchedulerException;
-import org.quartz.SchedulerFactory;
-import org.quartz.impl.StdSchedulerFactory;
 import org.parabuild.ci.common.IoUtils;
 import org.parabuild.ci.common.StringUtils;
 import org.parabuild.ci.configuration.BuildConfigCloner;
@@ -36,6 +32,10 @@ import org.parabuild.ci.configuration.TransactionCallback;
 import org.parabuild.ci.object.*;
 import org.parabuild.ci.statistics.StatisticsManager;
 import org.parabuild.ci.statistics.StatisticsManagerFactory;
+import org.quartz.Scheduler;
+import org.quartz.SchedulerException;
+import org.quartz.SchedulerFactory;
+import org.quartz.impl.StdSchedulerFactory;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -68,14 +68,15 @@ public final class ConfigurationService implements Service {
 
   public void shutdownService() {
     try {
-      shutdownQuarts();
+      shutdownScheduler();
     } catch (final Exception e) {
       System.err.println("Error while shutting down configuration service: " + StringUtils.toString(e)); // NOPMD
     }
   }
 
 
-  private void shutdownQuarts() throws SchedulerException {
+  @SuppressWarnings("MethodMayBeStatic")
+  private void shutdownScheduler() throws SchedulerException {
     final SchedulerFactory factory = new StdSchedulerFactory();
     final Scheduler scheduler = factory.getScheduler();
     scheduler.shutdown();
@@ -90,7 +91,7 @@ public final class ConfigurationService implements Service {
   public void startupService() {
     try {
       initConfigManager();
-      initQuartz();
+      initScheduler();
       status = SERVICE_STATUS_STARTED;
       runPostStartUpActions();
     } catch (final Exception e) {
@@ -102,7 +103,8 @@ public final class ConfigurationService implements Service {
   /**
    * Starts up Quartz scheduler.
    */
-  private void initQuartz() throws SchedulerException {
+  @SuppressWarnings("MethodMayBeStatic")
+  private void initScheduler() throws SchedulerException {
     final SchedulerFactory factory = new StdSchedulerFactory();
     final Scheduler scheduler = factory.getScheduler();
     scheduler.start();
@@ -214,6 +216,7 @@ public final class ConfigurationService implements Service {
   /**
    * Runs actions that might need to run at startup.
    */
+  @SuppressWarnings("MethodMayBeStatic")
   private void runPostStartUpActions() {
     if (Boolean.valueOf(System.getProperty(SystemConstants.SYSTEM_PROPERTY_POPULATE_BUILD_RUN_CONFIGS, "false"))) {
       // have to create missing build run configs.
@@ -249,7 +252,7 @@ public final class ConfigurationService implements Service {
       });
 
       final BuildConfigCloner cloner = new BuildConfigCloner();
-      for (final Iterator i = buildRunList.iterator(); i.hasNext();) {
+      for (final Iterator i = buildRunList.iterator(); i.hasNext(); ) {
         final BuildRun buildRun = (BuildRun) i.next();
         // have to create missing build run configs.
         ConfigurationManager.runInHibernate(new TransactionCallback() {
@@ -277,7 +280,7 @@ public final class ConfigurationService implements Service {
     // init statistics if requested by updater
     if (Boolean.valueOf(System.getProperty(SystemConstants.SYSTEM_PROPERTY_INIT_STATISTICS, "false"))) {
       final ConfigurationManager cm = ConfigurationManager.getInstance();
-      for (final Iterator i = cm.getExistingBuildConfigs().iterator(); i.hasNext();) {
+      for (final Iterator i = cm.getExistingBuildConfigs().iterator(); i.hasNext(); ) {
         final StatisticsManager statisticsManager = StatisticsManagerFactory
                 .getStatisticsManager(((BuildConfig) i.next()).getActiveBuildID());
         statisticsManager.initStatistics();
