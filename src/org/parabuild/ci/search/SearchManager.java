@@ -179,7 +179,7 @@ public final class SearchManager {
    *
    * @param e - exception
    */
-  private void reportIndexRequestError(final Exception e) {
+  private static void reportIndexRequestError(final Exception e) {
     final Error error = new Error("Log indexing error: " + StringUtils.toString(e));
     error.setSendEmail(true);
     error.setDetails(e);
