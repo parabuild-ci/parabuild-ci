@@ -17,7 +17,7 @@ import org.apache.lucene.document.*;
 
 
 /**
- * Callback inteface for SearchHitsTraverser.
+ * Callback interface for SearchHitsTraverser.
  */
 public interface HitsTraverserCallback {
 

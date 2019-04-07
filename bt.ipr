@@ -828,9 +828,34 @@
         <w>computername</w>
         <w>deref</w>
         <w>dereferenced</w>
+        <w>descr</w>
         <w>distr</w>
         <w>enablement</w>
+        <w>fchlb</w>
+        <w>fchli</w>
+        <w>fchln</w>
+        <w>fchlu</w>
+        <w>fnbf</w>
+        <w>fnbi</w>
+        <w>fnbn</w>
+        <w>fnbri</w>
+        <w>fnbrn</w>
+        <w>fnbs</w>
+        <w>fncn</w>
+        <w>fndt</w>
+        <w>fnrfn</w>
+        <w>fnsf</w>
+        <w>fnslcp</w>
+        <w>fnsld</w>
+        <w>fnslfnid</w>
+        <w>fnsli</w>
+        <w>fnslpt</w>
+        <w>fnslt</w>
+        <w>fnsn</w>
+        <w>fnsri</w>
+        <w>fnss</w>
         <w>hapens</w>
+        <w>indexable</w>
         <w>ldapadmin</w>
         <w>ldaprealm</w>
         <w>ldapserver</w>
@@ -855,6 +880,8 @@
         <w>srun</w>
         <w>succ</w>
         <w>successfuly</w>
+        <w>tbrr</w>
+        <w>tchl</w>
         <w>throbber</w>
         <w>tierlet</w>
         <w>todelete</w>
