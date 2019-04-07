@@ -23,8 +23,8 @@ public class TailUpdateImpl implements TailUpdate {
   private static final String[] EMPTY_STRING_ARRAY = new String[0];
   public static final TailUpdate EMPTY_UPDATE = new TailUpdateImpl(0, EMPTY_STRING_ARRAY);
 
-  private long timeStamp;
-  private String[] logLines;
+  private final long timeStamp;
+  private final String[] logLines;
 
 
   public TailUpdateImpl(final long timeStamp, final String[] logLines) {

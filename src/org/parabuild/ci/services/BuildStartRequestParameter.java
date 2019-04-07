@@ -27,7 +27,7 @@ public final class BuildStartRequestParameter {
   private String variableName = null;
   private List variableValues = null;
   private final String description;
-  private int order;
+  private final int order;
 
 
   public BuildStartRequestParameter(final String variableName, final String description, final List variableValues,

@@ -46,13 +46,13 @@ public final class BuildStartRequest {
   private boolean pinResult = false;
   private byte requestType;
   private int buildRunID;
-  private int changeListID;
-  private int userID;
-  private int versionCounter;
+  private final int changeListID;
+  private final int userID;
+  private final int versionCounter;
   private final List parameterList = new ArrayList(11);
-  private String label;
-  private String note;
-  private String versionTemplate;
+  private final String label;
+  private final String note;
+  private final String versionTemplate;
 
   /**
    * List of {@link SourceControlSettingVO} objects.
