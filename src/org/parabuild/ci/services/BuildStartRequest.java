@@ -91,7 +91,7 @@ public final class BuildStartRequest {
    * information about user change list id and parameters.
    */
   public BuildStartRequest() {
-    this(REQUEST_NORMAL, -1, -1, BuildRun.UNSAVED_ID, Collections.EMPTY_LIST, null, "", false, null, -1, Collections.EMPTY_LIST);
+    this(REQUEST_NORMAL, -1, -1, BuildRun.UNSAVED_ID, Collections.emptyList(), null, "", false, null, -1, Collections.emptyList());
   }
 
 
@@ -122,12 +122,12 @@ public final class BuildStartRequest {
 
 
   public BuildStartRequest(final int userID, final List parameterList, final String label) {
-    this(REQUEST_NORMAL, userID, -1, BuildRun.UNSAVED_ID, parameterList, label, "", false, null, -1, Collections.EMPTY_LIST);
+    this(REQUEST_NORMAL, userID, -1, BuildRun.UNSAVED_ID, parameterList, label, "", false, null, -1, Collections.emptyList());
   }
 
 
   public BuildStartRequest(final int userID, final int changeListID) {
-    this(REQUEST_NORMAL, userID, changeListID, BuildRun.UNSAVED_ID, Collections.EMPTY_LIST, null, "", false, null, -1, Collections.EMPTY_LIST);
+    this(REQUEST_NORMAL, userID, changeListID, BuildRun.UNSAVED_ID, Collections.emptyList(), null, "", false, null, -1, Collections.emptyList());
   }
 
 
@@ -171,7 +171,7 @@ public final class BuildStartRequest {
 
 
   public BuildStartRequest(final int userID) {
-    this(REQUEST_NORMAL, userID, -1, BuildRun.UNSAVED_ID, Collections.EMPTY_LIST, null, "", false, null, -1, Collections.EMPTY_LIST);
+    this(REQUEST_NORMAL, userID, -1, BuildRun.UNSAVED_ID, Collections.emptyList(), null, "", false, null, -1, Collections.emptyList());
   }
 
 
