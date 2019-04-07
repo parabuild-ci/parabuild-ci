@@ -46,8 +46,6 @@ public final class LuceneDocumentFactory {
   public static final String FIELD_BUILD_NAME = "fnbn";
   public static final String FIELD_BUILD_RUN_NUMBER = "fnbrn";
   public static final String FIELD_BUILD_RUN_ID = "fnbri";
-  public static final String FIELD_STEP_STARTED = "fnss";
-  public static final String FIELD_STEP_FINISHED = "fnsf";
 
   // change list-specific fields
   private static final String FIELD_CHANGELIST_ID = "fchli";

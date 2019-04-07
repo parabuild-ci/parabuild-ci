@@ -165,6 +165,8 @@
       <entry_point TYPE="field" FQNAME="org.parabuild.ci.statistics.StatisticsUtils log" />
       <entry_point TYPE="field" FQNAME="org.parabuild.ci.statistics.YearlyBuildStatsUpdater log" />
       <entry_point TYPE="field" FQNAME="org.parabuild.ci.statistics.YearlyTestStatsUpdater log" />
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.search.LuceneDocumentFactory log" />
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.search.SearchManager log" />
     </entry_points>
     <pattern value="org.parabuild.ci.webui.agent.status.AgentEnvironmentPage" />
   </component>

@@ -13,16 +13,17 @@
  */
 package org.parabuild.ci.search;
 
-import junit.framework.*;
+import junit.framework.TestCase;
+import junit.framework.TestSuite;
 
 /**
  * Test
  */
 public class SATestSearchRequest extends TestCase {
 
-  protected SearchRequest searchRequest;
-  public static final String TEST_SEARCH_QUERY = "test";
+  private static final String TEST_SEARCH_QUERY = "test";
   public static final String TEST_BUILD_ID = "-1";
+  private SearchRequest searchRequest;
 
 
   public SATestSearchRequest(final String s) {
@@ -31,9 +32,17 @@ public class SATestSearchRequest extends TestCase {
 
 
   /**
+   * Required by JUnit
+   */
+  public static TestSuite suite() {
+    return new TestSuite(SATestSearchRequest.class);
+  }
+
+
+  /**
    * Tests getSearchQuery
    */
-  public void test_getSearchQuery() throws Exception {
+  public void test_getSearchQuery() {
     assertEquals(TEST_SEARCH_QUERY, searchRequest.getSearchQuery());
   }
 
@@ -44,15 +53,12 @@ public class SATestSearchRequest extends TestCase {
   }
 
 
-  protected void setUp() throws Exception {
-    searchRequest = new SearchRequest(TEST_SEARCH_QUERY);
+  public void testToString() {
+    assertNotNull(searchRequest.toString());
   }
 
 
-  /**
-   * Required by JUnit
-   */
-  public static TestSuite suite() {
-    return new TestSuite(SATestSearchRequest.class);
+  protected void setUp() throws Exception {
+    searchRequest = new SearchRequest(TEST_SEARCH_QUERY);
   }
 }
