@@ -160,7 +160,7 @@ public final class SearchManager {
   /**
    * Indexes changes in the given build run.
    *
-   * @param buildRun
+   * @param buildRun the build run to index changes of.
    */
   public void indexChanges(final BuildRun buildRun) {
     try {
@@ -208,6 +208,7 @@ public final class SearchManager {
             '}';
   }
 
+
   /**
    * @see SearchService.IndexRequest
    */
@@ -221,7 +222,7 @@ public final class SearchManager {
     /**
      * Constructor.
      *
-     * @param document
+     * @param document the document to index.
      */
     DocumentIndexRequest(final Document document) {
       this.document = document;

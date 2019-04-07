@@ -116,7 +116,7 @@ public final class LuceneDocumentFactory {
    * Creates indexable Lucene document from a StepLog. Uses given
    * file instead one defined by stepLog.
    *
-   * @param stepLog
+   * @param stepLog the step log to create a Lucene document from.
    *
    * @return indexable Lucene document
    *
@@ -251,7 +251,7 @@ public final class LuceneDocumentFactory {
   /**
    * Create doc type field.
    *
-   * @param type
+   * @param type the type.
    *
    * @see #TYPE_SEQUENCE_LOG
    */

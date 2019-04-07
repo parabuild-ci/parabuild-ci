@@ -28,7 +28,7 @@ public final class SearchRequest {
   /**
    * Constructor.
    *
-   * @param searchQuery
+   * @param searchQuery the search query to execute.
    */
   public SearchRequest(final String searchQuery) {
     this.searchQuery = searchQuery;
