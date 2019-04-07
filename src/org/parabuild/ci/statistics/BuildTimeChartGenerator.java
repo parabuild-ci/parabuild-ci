@@ -77,7 +77,7 @@ public final class BuildTimeChartGenerator {
   }
 
 
-  private void addTimeToDataSet(final DefaultCategoryDataset dataset, final SortedMap data, final String valueKey) {
+  private static void addTimeToDataSet(final DefaultCategoryDataset dataset, final SortedMap data, final String valueKey) {
     for (final Iterator iter = data.entrySet().iterator(); iter.hasNext();) {
       final Map.Entry entry = (Map.Entry)iter.next();
       final Integer buildNumber = (Integer)entry.getKey();
