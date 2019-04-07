@@ -43,7 +43,7 @@ public final class BuildStartRequest {
 
   private boolean cleanCheckout = false;
   private boolean uniqueAgentCheckout = false;
-  private boolean pinResult = false;
+  private final boolean pinResult;
   private byte requestType;
   private int buildRunID;
   private final int changeListID;

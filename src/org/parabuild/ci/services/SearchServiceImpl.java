@@ -45,7 +45,7 @@ public final class SearchServiceImpl implements SearchService {
   private static final Log log = LogFactory.getLog(SearchServiceImpl.class);
 
   private byte status = SERVICE_STATUS_NOT_STARTED;
-  private QueuedExecutor indexerQueue = null;
+  private final QueuedExecutor indexerQueue;
 
 
   public SearchServiceImpl() {

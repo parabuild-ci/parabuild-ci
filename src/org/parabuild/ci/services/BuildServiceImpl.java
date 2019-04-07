@@ -57,9 +57,9 @@ public final class BuildServiceImpl implements BuildService {
   private final RemoteCommandManager commandManager = RemoteCommandManager.getInstance();
 
   private byte serviceStatus = SERVICE_STATUS_NOT_STARTED;
-  private int activeBuildID = BuildConfig.UNSAVED_ID;
+  private final int activeBuildID;
 
-  private BuildRunner buildRunner = null;
+  private final BuildRunner buildRunner;
   private final BuildScheduler buildScheduler;
   private final ConfigurationManager configManager = ConfigurationManager.getInstance();
   private final BuildScriptMonitor buildScriptMonitor = new BuildScriptMonitor();

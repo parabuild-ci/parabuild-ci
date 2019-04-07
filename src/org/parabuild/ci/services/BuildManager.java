@@ -53,7 +53,7 @@ public final class BuildManager implements Serializable {
   /**
    * Reference to build service.
    */
-  private BuildListService buildListService = null;
+  private final BuildListService buildListService;
 
 
   /**

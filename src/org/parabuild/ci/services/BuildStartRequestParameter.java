@@ -24,8 +24,8 @@ import java.util.List;
  */
 public final class BuildStartRequestParameter {
 
-  private String variableName = null;
-  private List variableValues = null;
+  private final String variableName;
+  private final List variableValues;
   private final String description;
   private final int order;
 
