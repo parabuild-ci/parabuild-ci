@@ -13,8 +13,6 @@
  */
 package org.parabuild.ci.services;
 
-import java.util.*;
-
 /**
  * Contains log update.
  */
