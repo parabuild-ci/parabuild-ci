@@ -44,8 +44,8 @@ public final class SearchManager {
   /**
    * Reference to search service.
    */
-  private SearchService searchService = null;
-  private ConfigurationManager cm = null;
+  private final SearchService searchService;
+  private final ConfigurationManager cm;
 
 
   /**
@@ -193,7 +193,7 @@ public final class SearchManager {
    */
   private static final class DocumentIndexRequest implements SearchService.IndexRequest {
 
-    private Document document = null;
+    private final Document document;
 
 
     /**

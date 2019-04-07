@@ -21,7 +21,7 @@ import java.util.Map;
  */
 public final class SearchRequest {
 
-  private String searchQuery = null;
+  private final String searchQuery;
   private final Map parameters = new HashMap(5);
 
 
