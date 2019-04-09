@@ -13,13 +13,12 @@
  */
 package org.parabuild.ci.build;
 
-import java.io.IOException;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.remote.AgentEnvironment;
+
+import java.io.IOException;
 
 /**
  * Unix implementation of the build script runner
@@ -64,8 +63,6 @@ public final class UnixBuildScriptRunner extends AbstractBuildScriptRunner {
 
 
   private String makeUnixCommand(final String scriptFileName) {
-    final String command = "sh " + scriptFileName;
-//    if (log.isDebugEnabled()) log.debug("command: " + command);
-    return command;
+    return "sh " + scriptFileName;
   }
 }
