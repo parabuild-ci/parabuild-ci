@@ -290,7 +290,7 @@ public final class BuildLogAnalyzer {
 
   public static final class Result {
 
-    private List errorWindowLines;
+    private final List errorWindowLines;
     private final boolean patternFound;
     private final byte result;
     private final String resultDescription;
