@@ -68,7 +68,7 @@ import java.util.Map;
 /**
  * Build runner is a specialized thread to run a build
  *
- * @noinspection FieldNotUsedInToString, FieldAccessedSynchronizedAndUnsynchronized, StringContatenationInLoop, ThrowCaughtLocally, ProhibitedExceptionThrown, ClassExplicitlyExtendsThread, OverlyComplexBooleanExpression, InstanceVariableNamingConvention, JavaDoc
+ * @noinspection FieldNotUsedInToString, FieldAccessedSynchronizedAndUnsynchronized, ThrowCaughtLocally, ProhibitedExceptionThrown, ClassExplicitlyExtendsThread, OverlyComplexBooleanExpression, JavaDoc
  */
 public final class BuildRunner extends Thread {
 

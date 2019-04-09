@@ -144,7 +144,6 @@ public final class GenericTestResultHandler extends AbstractLogHandler {
    * @param archiveFile
    * @return propertries object
    * @throws IOException
-   * @noinspection IOResourceOpenedButNotSafelyClosed
    */
   private Properties loadTestData(final File archiveFile) throws IOException {
     final Properties properties = new Properties();

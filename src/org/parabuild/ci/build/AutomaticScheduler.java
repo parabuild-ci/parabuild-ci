@@ -42,7 +42,7 @@ import java.util.List;
 /**
  * Scheduler for automatic builds
  *
- * @noinspection ClassHasNoToStringMethod, OverlyComplexBooleanExpression, InstanceVariableNamingConvention, ClassExplicitlyExtendsThread @see BuildScheduler
+ * @noinspection ClassHasNoToStringMethod, OverlyComplexBooleanExpression, ClassExplicitlyExtendsThread @see BuildScheduler
  */
 public final class AutomaticScheduler extends Thread implements BuildScheduler {
 
