@@ -168,10 +168,8 @@ final class FailedAgent implements Agent {
   }
 
 
-  private IllegalStateException wrap(final IOException exception1) {
-    final IllegalStateException ise = new IllegalStateException(StringUtils.toString(exception1));
-    ise.initCause(exception1);
-    return ise;
+  private static IllegalStateException wrap(final IOException exception) {
+    return new IllegalStateException(StringUtils.toString(exception), exception);
   }
 
 
