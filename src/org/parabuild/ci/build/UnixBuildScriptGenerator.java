@@ -13,22 +13,21 @@
  */
 package org.parabuild.ci.build;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.StringReader;
-import java.io.StringWriter;
-import java.io.Writer;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.parabuild.ci.common.BuildException;
 import org.parabuild.ci.common.IoUtils;
 import org.parabuild.ci.common.StringUtils;
 import org.parabuild.ci.object.BuildSequence;
 import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.remote.AgentEnvironment;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.StringReader;
+import java.io.StringWriter;
+import java.io.Writer;
 
 /**
  * Unix script generator
@@ -50,7 +49,6 @@ public final class UnixBuildScriptGenerator extends AbstractBuildScriptGenerator
    * Generates build sequence script for further execution.
    *
    * @param sequence fo which a script will be created
-   * @see #generateScript(BuildSequence)
    */
   protected String doGenerateScript(final BuildSequence sequence) throws BuildException, AgentFailureException {
     BufferedWriter scriptWriter = null;
