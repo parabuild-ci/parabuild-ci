@@ -372,7 +372,7 @@ public final class BuildRunner extends Thread {
       if (currentRunConfig.getSourceControlEmail()) {
         notificationManager.setVCSUserMap(versionControl.getUsersMap());
       } else {
-        notificationManager.setVCSUserMap(Collections.EMPTY_MAP);
+        notificationManager.setVCSUserMap(Collections.emptyMap());
       }
 
       // Empty CO dir if needed
