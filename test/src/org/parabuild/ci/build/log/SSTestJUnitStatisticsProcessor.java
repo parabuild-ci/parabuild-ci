@@ -17,12 +17,11 @@ import com.gargoylesoftware.base.testing.OrderedTestSuite;
 import junit.framework.TestSuite;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.jaxen.JaxenException;
-import org.w3c.dom.Document;
-import org.xml.sax.SAXException;
 import org.parabuild.ci.ServersideTestCase;
 import org.parabuild.ci.TestHelper;
 import org.parabuild.ci.common.XMLUtils;
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
@@ -49,7 +48,7 @@ public final class SSTestJUnitStatisticsProcessor extends ServersideTestCase {
   private JUnitStatisticsProcessor statisticsProcessor;
 
 
-  public void testProcessMergedLog() throws IOException, ParserConfigurationException, SAXException, JaxenException {
+  public void testProcessMergedLog() throws IOException, ParserConfigurationException, SAXException {
     final Document document = XMLUtils.parseDom(TestHelper.getTestFile("test_junit_merged_log.xml"), false);
     statisticsProcessor.processMergedLog(document);
   }

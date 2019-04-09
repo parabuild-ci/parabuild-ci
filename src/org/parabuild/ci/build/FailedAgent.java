@@ -13,7 +13,6 @@
  */
 package org.parabuild.ci.build;
 
-import org.parabuild.ci.common.CommandStoppedException;
 import org.parabuild.ci.common.StringUtils;
 import org.parabuild.ci.configuration.AgentHost;
 import org.parabuild.ci.process.TailBufferSize;
@@ -148,7 +147,7 @@ final class FailedAgent implements Agent {
   }
 
 
-  public int execute(final int executorHandle, final String relativeDirectoryToExecuteIn, final String command, final Map environment, final TailBufferSize tailBufferSize, final File stdoutFile, final File stderrFile, final File mergedFile) throws IOException, CommandStoppedException {
+  public int execute(final int executorHandle, final String relativeDirectoryToExecuteIn, final String command, final Map environment, final TailBufferSize tailBufferSize, final File stdoutFile, final File stderrFile, final File mergedFile) throws IOException {
     throw exception;
   }
 

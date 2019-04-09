@@ -16,18 +16,17 @@ package org.parabuild.ci.build.log;
 import net.sf.hibernate.Query;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.jaxen.JaxenException;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.TransactionCallback;
 import org.parabuild.ci.object.BuildRun;
 import org.parabuild.ci.object.BuildRunAttribute;
 import org.parabuild.ci.object.BuildRunTest;
 import org.parabuild.ci.object.StepRunAttribute;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 /**
  * JUnitStatisticsProcessor
@@ -74,9 +73,8 @@ final class JUnitStatisticsProcessor {
    * Proceses log in the merged JUnit log format.
    *
    * @param mergedLog log in the merged JUnit log format.
-   * @throws JaxenException
    */
-  public void processMergedLog(final Document mergedLog) throws JaxenException {
+  public void processMergedLog(final Document mergedLog) {
     if (LOG.isInfoEnabled()) {
       LOG.info("Processing test statistics");
     }
