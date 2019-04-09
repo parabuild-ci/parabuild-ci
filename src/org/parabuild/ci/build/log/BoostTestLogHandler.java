@@ -72,7 +72,7 @@ public final class BoostTestLogHandler extends AbstractLogHandler {
   /**
    * Concrete processing.
    *
-   * @throws java.io.IOException
+   * @throws IOException
    */
   protected void processLog() throws IOException {
     final List tempFiles = new LinkedList();

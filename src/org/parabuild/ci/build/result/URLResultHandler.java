@@ -105,7 +105,7 @@ public final class URLResultHandler extends AbstractResultHandler {
    * @param builderTimeStamp
    * @param fullyQualifiedResultPath
    * @return true if result was already arhived.
-   * @see org.parabuild.ci.build.result.AbstractResultHandler#isResultAlreadyArchived
+   * @see AbstractResultHandler#isResultAlreadyArchived
    */
   protected boolean isResultAlreadyArchived(final List archivedBuildRunResults, final long builderTimeStamp,
                                             final String fullyQualifiedResultPath) {
