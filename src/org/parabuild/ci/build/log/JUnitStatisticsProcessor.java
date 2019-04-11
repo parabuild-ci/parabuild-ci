@@ -76,7 +76,7 @@ final class JUnitStatisticsProcessor {
    * @param mergedLog log in the merged JUnit log format.
    * @throws JaxenException
    */
-  public void processMergedLog(final Document mergedLog) throws JaxenException {
+  public void processMergedLog(final Document mergedLog) {
     if (LOG.isInfoEnabled()) {
       LOG.info("Processing test statistics");
     }
