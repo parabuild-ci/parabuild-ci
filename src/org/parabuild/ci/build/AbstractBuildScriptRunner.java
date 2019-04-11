@@ -40,7 +40,7 @@ public abstract class AbstractBuildScriptRunner implements BuildScriptRunner {
   private File mergedFile = null;
   private final List timeoutMatches = new ArrayList(5);
   private int timeoutSecs = 60 * 60;
-  private List eventListenerList = new ArrayList(3);
+  private final List eventListenerList = new ArrayList(3);
   private TimeoutCallback timeoutCallback = null;
   protected Agent agent = null;
 

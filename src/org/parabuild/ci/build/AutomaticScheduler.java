@@ -42,7 +42,7 @@ import java.util.List;
 /**
  * Scheduler for automatic builds
  *
- * @noinspection ClassHasNoToStringMethod, OverlyComplexBooleanExpression, InstanceVariableNamingConvention, ClassExplicitlyExtendsThread @see BuildScheduler
+ * @noinspection ClassHasNoToStringMethod, OverlyComplexBooleanExpression, ClassExplicitlyExtendsThread @see BuildScheduler
  */
 public final class AutomaticScheduler extends Thread implements BuildScheduler {
 
@@ -81,7 +81,7 @@ public final class AutomaticScheduler extends Thread implements BuildScheduler {
    * @param automaticSchedule true if this is a automatic schedule. false if this is a manual schedule.
    */
   public AutomaticScheduler(final int activeBuildID, final SourceControl sourceControl, final BuildRunner buildRunner, final boolean automaticSchedule) {
-    super((automaticSchedule ? "AutomaticScheduler:" : "ManualScheduler:") + Integer.toString(activeBuildID));
+    super((automaticSchedule ? "AutomaticScheduler:" : "ManualScheduler:") + activeBuildID);
     super.setDaemon(true);
     this.activeBuildID = activeBuildID;
     this.sourceControl = sourceControl;

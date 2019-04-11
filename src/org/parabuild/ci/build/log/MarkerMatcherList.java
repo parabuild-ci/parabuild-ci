@@ -72,7 +72,7 @@ public final class MarkerMatcherList implements MarkerMatcher {
 
   private static final class SimpleMatcher implements MarkerMatcher {
 
-    private String stringToMatch;
+    private final String stringToMatch;
 
 
     SimpleMatcher(final String stringToMatch) {

@@ -31,7 +31,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Properties;
 
@@ -75,7 +74,6 @@ public final class GenericTestResultHandler extends AbstractLogHandler {
    * @noinspection ControlFlowStatementWithoutBraces,OverlyBroadCatchBlock
    */
   protected void processLog() throws IOException {
-    final List tempFiles = new LinkedList();
     try {
 
       // check if it's a directory
@@ -132,8 +130,6 @@ public final class GenericTestResultHandler extends AbstractLogHandler {
 
     } catch (final Exception e) {
       throw IoUtils.createIOException(StringUtils.toString(e), e);
-    } finally {
-      IoUtils.deleteFilesHard(tempFiles);
     }
   }
 
@@ -144,7 +140,6 @@ public final class GenericTestResultHandler extends AbstractLogHandler {
    * @param archiveFile
    * @return propertries object
    * @throws IOException
-   * @noinspection IOResourceOpenedButNotSafelyClosed
    */
   private Properties loadTestData(final File archiveFile) throws IOException {
     final Properties properties = new Properties();

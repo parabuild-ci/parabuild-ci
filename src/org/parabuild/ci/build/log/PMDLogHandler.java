@@ -13,15 +13,8 @@
  */
 package org.parabuild.ci.build.log;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.LinkedList;
-import java.util.List;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.w3c.dom.Document;
-
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.build.SimpleFileArchivedLogFinder;
 import org.parabuild.ci.common.IoUtils;
@@ -33,6 +26,11 @@ import org.parabuild.ci.object.LogConfig;
 import org.parabuild.ci.object.StepLog;
 import org.parabuild.ci.object.StepRunAttribute;
 import org.parabuild.ci.remote.Agent;
+import org.w3c.dom.Document;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
 
 /**
  * Handles PMD log handler in XML format
@@ -68,7 +66,6 @@ public final class PMDLogHandler extends AbstractLogHandler {
    * @throws IOException
    */
   protected void processLog() throws IOException {
-    final List tempFiles = new LinkedList();
     try {
 
       // check if it's a directory
@@ -110,8 +107,6 @@ public final class PMDLogHandler extends AbstractLogHandler {
 
     } catch (final Exception e) {
       throw IoUtils.createIOException(StringUtils.toString(e), e);
-    } finally {
-      IoUtils.deleteFilesHard(tempFiles);
     }
   }
 

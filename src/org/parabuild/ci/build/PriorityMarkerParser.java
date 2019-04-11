@@ -36,10 +36,10 @@ final class PriorityMarkerParser {
 
 
   /**
-   * Returns a list {@link org.parabuild.ci.services.BuildStartRequestParameter}.
+   * Returns a list {@link BuildStartRequestParameter}.
    *
    * @param changeListDescription a change list description to parse.
-   * @return a list {@link org.parabuild.ci.services.BuildStartRequestParameter}, possibly empty, if there were no
+   * @return a list {@link BuildStartRequestParameter}, possibly empty, if there were no
    *         parameters provided, or null if the priority marker wasn't found.
    */
   List parseChangeListDescription(final String changeListDescription) {

@@ -45,7 +45,7 @@ import java.util.List;
  * type processing to implementing classes. Implementing classes
  * should implement abstract processResult method.
  *
- * @noinspection ProtectedField, ParameterHidesMemberVariable, InstanceVariableNamingConvention @see #processResult
+ * @noinspection ProtectedField, ParameterHidesMemberVariable@see #processResult
  */
 public abstract class AbstractResultHandler implements ResultHandler {
 

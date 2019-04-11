@@ -27,7 +27,6 @@ import org.parabuild.ci.remote.Agent;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -65,7 +64,6 @@ public final class GoogleTestLogHandler extends AbstractLogHandler {
    * @throws IOException
    */
   protected void processLog() throws IOException {
-    final List tempFiles = new LinkedList();
     //noinspection ErrorNotRethrown
     try {
 
@@ -106,8 +104,6 @@ public final class GoogleTestLogHandler extends AbstractLogHandler {
       cm.save(stepLog);
     } catch (final Exception | OutOfMemoryError e) {
       throw IoUtils.createIOException(StringUtils.toString(e), e);
-    } finally {
-      IoUtils.deleteFilesHard(tempFiles);
     }
   }
 
