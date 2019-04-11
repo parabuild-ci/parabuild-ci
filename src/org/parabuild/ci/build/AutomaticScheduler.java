@@ -316,9 +316,7 @@ public final class AutomaticScheduler extends Thread implements BuildScheduler {
 
   private List parseParameters(final PriorityMarkerParser priorityMarkerParser, final ChangeList changeList) {
     final String changeListDescription = changeList.getDescription();
-    List parameters = null;
-    parameters = priorityMarkerParser.parseChangeListDescription(changeListDescription);
-    return parameters;
+    return priorityMarkerParser.parseChangeListDescription(changeListDescription);
   }
 
 
