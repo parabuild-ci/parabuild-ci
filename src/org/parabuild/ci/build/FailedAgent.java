@@ -13,7 +13,6 @@
  */
 package org.parabuild.ci.build;
 
-import org.parabuild.ci.common.CommandStoppedException;
 import org.parabuild.ci.common.StringUtils;
 import org.parabuild.ci.configuration.AgentHost;
 import org.parabuild.ci.process.TailBufferSize;
@@ -165,14 +164,7 @@ final class FailedAgent implements Agent {
 
 
   public boolean deleteTempFileHard(final String tempFileName) {
-    throw wrap(exception);
-  }
-
-
-  private IllegalStateException wrap(final IOException exception1) {
-    final IllegalStateException ise = new IllegalStateException(StringUtils.toString(exception1));
-    ise.initCause(exception1);
-    return ise;
+    throw new IllegalStateException(StringUtils.toString(exception), exception);
   }
 
 
@@ -182,7 +174,7 @@ final class FailedAgent implements Agent {
 
 
   public int getActiveBuildID() {
-    throw wrap(exception);
+    throw new IllegalStateException(StringUtils.toString(exception), exception);
   }
 
 
@@ -280,7 +272,7 @@ final class FailedAgent implements Agent {
 
 
   public AgentHost getHost() {
-    throw wrap(exception);
+    throw new IllegalStateException(StringUtils.toString(exception), exception);
   }
 
 
@@ -295,7 +287,7 @@ final class FailedAgent implements Agent {
 
 
   public boolean deleteFileHard(final String path) {
-    throw wrap(exception);
+    throw new IllegalStateException(StringUtils.toString(exception), exception);
   }
 
 
