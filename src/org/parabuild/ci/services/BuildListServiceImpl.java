@@ -259,12 +259,14 @@ public final class BuildListServiceImpl implements BuildListService {
 
   private static void reportShutdownException(final BuildService buildService, final Exception e) {
     final Error error = new Error();
-    error.setBuildID(buildService.getActiveBuildID());
     error.setDetails(e);
     error.setErrorLevel(Error.ERROR_LEVEL_FATAL);
     error.setSendEmail(false);
     error.setDescription("Error while shutting down buildService");
     error.setSubsystemName(Error.ERROR_SUBSYSTEM_BUILD);
+    if (buildService != null) {
+      error.setBuildID(buildService.getActiveBuildID());
+    }
     ErrorManagerFactory.getErrorManager().reportSystemError(error);
   }
 
