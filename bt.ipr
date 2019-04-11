@@ -167,6 +167,8 @@
       <entry_point TYPE="field" FQNAME="org.parabuild.ci.statistics.YearlyTestStatsUpdater log" />
       <entry_point TYPE="field" FQNAME="org.parabuild.ci.search.LuceneDocumentFactory log" />
       <entry_point TYPE="field" FQNAME="org.parabuild.ci.search.SearchManager log" />
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.archive.internal.AbstractArchiveRetentionHandler log" />
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.archive.internal.ArchiveManagerImpl LOG" />
     </entry_points>
     <pattern value="org.parabuild.ci.webui.agent.status.AgentEnvironmentPage" />
   </component>
