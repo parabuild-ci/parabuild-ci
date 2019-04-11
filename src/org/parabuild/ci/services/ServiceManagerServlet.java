@@ -111,7 +111,6 @@ public final class ServiceManagerServlet extends GenericServlet {
    * Displays console message that the service successfully
    * started.
    *
-   * @noinspection UseOfSystemOutOrSystemErr
    */
   private static void printServiceStartedToConsole() {
     if (ConfigurationManager.isBuilderMode()) { // NOPMD
@@ -128,7 +127,6 @@ public final class ServiceManagerServlet extends GenericServlet {
   /**
    * Reports service shutdown.
    *
-   * @noinspection UseOfSystemOutOrSystemErr
    */
   private static void reportServiceRequestedToStop() {
 
@@ -147,7 +145,6 @@ public final class ServiceManagerServlet extends GenericServlet {
   /**
    * Displays console message that the service failed to start.
    *
-   * @noinspection UseOfSystemOutOrSystemErr
    */
   private static void printFailedToStartToConsole(final Exception e) {
     printToStdout(Version.versionToString(true));

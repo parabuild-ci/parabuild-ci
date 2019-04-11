@@ -49,7 +49,6 @@ import java.io.IOException;
  * scheduler and build health monitor. BuildService is a child
  * service of the BuildService.
  *
- * @noinspection StaticFieldReferencedViaSubclass
  */
 public final class BuildServiceImpl implements BuildService {
 
@@ -329,7 +328,6 @@ public final class BuildServiceImpl implements BuildService {
 
     final int startupStatus = getStartupStatus();
 
-    //noinspection ControlFlowStatementWithoutBraces
     LOG.debug("Scheduler startup status: " + startupStatus + ", build: " + buildConfig.getBuildName());
 
     if (startupStatus == BuildStatus.ACTIVE_VALUE) {
