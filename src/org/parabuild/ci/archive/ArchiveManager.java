@@ -91,7 +91,6 @@ public interface ArchiveManager {
    *         directory is a directory where build runner writes
    *         the build log to.
    */
-  @SuppressWarnings("SpellCheckingInspection")
   File getBuildLogDir() throws IOException;
 
 
