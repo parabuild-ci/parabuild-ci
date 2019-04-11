@@ -22,7 +22,7 @@ import org.parabuild.ci.build.BuildScriptStartedEvent;
 
 /**
  */
-public class BuildScriptMonitor implements BuildScriptEventSubscriber {
+class BuildScriptMonitor implements BuildScriptEventSubscriber {
 
   private static final Log log = LogFactory.getLog(BuildScriptMonitor.class);
 

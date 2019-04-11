@@ -15,7 +15,7 @@ package org.parabuild.ci.services;
 
 /**
  */
-public interface BuildServiceProxy extends BuildService {
+interface BuildServiceProxy extends BuildService {
 
   BuildService getDelegate();
 }

@@ -195,7 +195,7 @@ public final class SearchServiceImpl implements SearchService {
      *
      * @param indexRequest to process.
      */
-    public IndexerQueueRequest(final IndexRequest indexRequest) {
+    IndexerQueueRequest(final IndexRequest indexRequest) {
       this.indexRequest = indexRequest;
     }
 
