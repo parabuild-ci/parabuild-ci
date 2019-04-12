@@ -77,6 +77,7 @@ public final class ResultHandlerFactory {
             composite.addHandler(new URLResultHandler(agent, buildRunConfig, projectHome, resultConfig, stepRunID));
             break;
           default:
+            //noinspection ThrowCaughtLocally
             throw new BuildException("Unknown result type: " + resultConfig.getType(), agent);
         }
       }
