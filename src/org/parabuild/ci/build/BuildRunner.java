@@ -87,7 +87,7 @@ public final class BuildRunner extends Thread {
   private StopRequest stopRequest = null;
 
   // state objects
-  private int activeBuildID = BuildConfig.UNSAVED_ID;
+  private final int activeBuildID;
 
   private boolean labelingEnabled = true;
   private boolean forceLabeling = false;
@@ -96,7 +96,7 @@ public final class BuildRunner extends Thread {
   private Agent currentAgent = null;
 
   private SourceControl versionControl = null;
-  private ValidatingRunner selfDispatcher = null;
+  private final ValidatingRunner selfDispatcher;
 
   // service objects
   private final ArchiveManager archiveManager;
@@ -141,7 +141,6 @@ public final class BuildRunner extends Thread {
    * Creates build runner providing a reference to the owner.
    * Build runner will callback it's owner to report results.
    *
-   * @noinspection ThisEscapedInObjectConstruction
    */
   public BuildRunner(final int activeBuildID, final NotificationManager notificationManager) {
     this(activeBuildID, notificationManager, new DefaultBuildRunnerVersionControlFactory(), new DefaultBuildRunnerAgentFactory());

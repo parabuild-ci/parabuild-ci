@@ -56,8 +56,8 @@ public final class RepeatableScheduler implements BuildScheduler {
   private static final Log log = LogFactory.getLog(RepeatableScheduler.class);
 
   private boolean startedUp = false;
-  private int activeBuildID = BuildConfig.UNSAVED_ID;
-  private BuildRunner buildRunner = null;
+  private final int activeBuildID;
+  private BuildRunner buildRunner;
   private Scheduler scheduler = null;
   private final List triggerKeyList = new ArrayList(11);
   private SchedulerStatus schedulerStatus = SchedulerStatus.IDLE;

@@ -44,8 +44,8 @@ public final class ConsoleLogHandler implements LogHandler {
 
   private static final Log log = LogFactory.getLog(ConsoleLogHandler.class);
 
-  private int stepRunID = StepRun.UNSAVED_ID;
-  private int buildRunConfigID = BuildConfig.UNSAVED_ID;
+  private final int stepRunID;
+  private final int buildRunConfigID;
 
 
   /**

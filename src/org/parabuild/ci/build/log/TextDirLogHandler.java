@@ -198,8 +198,8 @@ public final class TextDirLogHandler extends AbstractLogHandler {
    */
   private static final class IndexableDirectoryFile {
 
-    private File content = null;
-    private String fileNameInArchiveDir = null;
+    private final File content;
+    private final String fileNameInArchiveDir;
 
 
     IndexableDirectoryFile(final File content, final String relativePathInArchiveDir) {

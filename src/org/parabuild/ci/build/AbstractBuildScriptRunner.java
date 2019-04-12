@@ -42,7 +42,7 @@ public abstract class AbstractBuildScriptRunner implements BuildScriptRunner {
   private int timeoutSecs = 60 * 60;
   private final List eventListenerList = new ArrayList(3);
   private TimeoutCallback timeoutCallback = null;
-  protected Agent agent = null;
+  protected final Agent agent;
 
 
   protected AbstractBuildScriptRunner(final Agent agent) {

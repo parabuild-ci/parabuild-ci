@@ -50,8 +50,8 @@ public final class BuildLogAnalyzer {
   private static final String BUILD_RESULT_CANNOT_BE_IDENTIFIED = "Build result cannot be identified";
 
   private int errorWindowSize = ConfigurationConstants.DEFAULT_ERROR_LOG_QUOTE_SIZE;
-  private String[][] stringFailurePatterns = null;
-  private String[][] stringSuccessPatterns = null;
+  private final String[][] stringFailurePatterns;
+  private final String[][] stringSuccessPatterns;
   private final LinkedList logWindow = new LinkedList();
   private final Pattern[] regexFailurePatterns;
   private final Pattern[] regexSuccessPatterns;

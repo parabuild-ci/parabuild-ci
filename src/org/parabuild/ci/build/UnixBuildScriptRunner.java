@@ -42,7 +42,7 @@ public final class UnixBuildScriptRunner extends AbstractBuildScriptRunner {
    * @param scriptFileName to execute
    */
   public String makeCommand(final String scriptFileName) throws IOException, AgentFailureException {
-    String command = null;
+    final String command;
     if (agent.systemType() == AgentEnvironment.SYSTEM_TYPE_CYGWIN) {
       command = makeCYGWINCommand(scriptFileName);
     } else {
