@@ -297,7 +297,7 @@ public final class BuildLogAnalyzer {
 
 
     public Result(final List logWindowLines, final boolean patternFound, final byte result, final String resultDescription) {
-      this.errorWindowLines = logWindowLines;
+      this.errorWindowLines = new ArrayList(logWindowLines);
       this.patternFound = patternFound;
       this.result = result;
       this.resultDescription = resultDescription;

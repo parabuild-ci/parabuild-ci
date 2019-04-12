@@ -99,11 +99,11 @@ final class PriorityMarkerParser {
 
       // Check if it ends with EOL or a space
       if (changeListDescription.length() == priorityMarkerIndex + PARABUILD_PRIORITY.length()) {
-        return Collections.EMPTY_LIST;
+        return Collections.emptyList();
       }
 
       if (changeListDescription.charAt(priorityMarkerIndex + PARABUILD_PRIORITY.length()) == ' ') {
-        return Collections.EMPTY_LIST;
+        return Collections.emptyList();
       }
 
       return null;
