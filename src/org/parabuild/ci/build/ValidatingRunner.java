@@ -45,7 +45,7 @@ public final class ValidatingRunner {
 
 
   /**
-   * Reinitilizes runner
+   * Reinitializes the runner
    */
   public final void initRunner(final Runnable delegate) {
 

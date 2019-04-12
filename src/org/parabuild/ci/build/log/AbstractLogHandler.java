@@ -39,7 +39,7 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * AbstractCustomLogHandler implementes GoF Strategy patters by
+ * AbstractCustomLogHandler implements GoF Strategy patters by
  * delivering common functionality and delegating concrete log
  * type processing to implementing classes. Implementing classes
  * should implement abstract processLog method.
@@ -113,7 +113,7 @@ public abstract class AbstractLogHandler implements LogHandler {
    */
   public final void process() {
 
-    // vlaidate we are called with the correct log type
+    // validate we are called with the correct log type
     if (logConfig.getType() != logType()) {
       throw new IllegalArgumentException("Log type code is invalid for this log handler: " + logConfig.getType());
     }
@@ -141,7 +141,7 @@ public abstract class AbstractLogHandler implements LogHandler {
       }
 
       // find if we need to check if the result was already archived
-      final StepRun stepRun = cm.getStepRun(stepRunID); // REVIREWME: do we really need this operaton? may be we should just store StepRun object in AbstractResultHandler?
+      final StepRun stepRun = cm.getStepRun(stepRunID); // REVIEWME: do we really need this operation? may be we should just store StepRun object in AbstractResultHandler?
       final long builderTimeStamp = cm.getBuilderTimeStamp(stepRun);
       final List archivedLogs = getBuildRunLogs(stepRun.getBuildRunID());
 //      if (log.isDebugEnabled()) log.debug("============== begin =========================");
@@ -161,7 +161,7 @@ public abstract class AbstractLogHandler implements LogHandler {
         log.debug("============== end =========================");
       }
     } catch (final Exception e) {
-      // We don't throw it firther as gathering logs is not a crticial
+      // We don't throw it further as gathering logs is not a critical
       // issue. We just report the problem to administrator.
       reportLogProcessingException(e);
     }
@@ -182,7 +182,7 @@ public abstract class AbstractLogHandler implements LogHandler {
    * log path. Implementor of this class can override this
    * method.
    *
-   * @param buildRunID for wich perform getting logs
+   * @param buildRunID for which perform getting logs
    * @return List StepLog objects.
    * @see #isLogAlreadyArchived(List, long)
    */
@@ -202,7 +202,7 @@ public abstract class AbstractLogHandler implements LogHandler {
 
 
   /**
-   * Concrete classes should impelement this method and do
+   * Concrete classes should implement this method and do
    * concrete log type processing.
    *
    * @throws IOException

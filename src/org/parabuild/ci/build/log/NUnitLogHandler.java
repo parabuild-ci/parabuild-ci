@@ -40,7 +40,7 @@ import org.parabuild.ci.remote.Agent;
 public final class NUnitLogHandler extends AbstractLogHandler {
 
   /**
-   * This valriable defines
+   * This variable defines
    */
   public static final String ARCHIVE_XML_ROOT = "nunit-testsuites";
   private static final Log log = LogFactory.getLog(NUnitLogHandler.class);

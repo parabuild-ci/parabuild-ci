@@ -115,7 +115,7 @@ public final class HTMLDirLogHandler extends AbstractLogHandler {
     thisLogArchiveHome.mkdirs();
     agent.getDirectory(fullyQualifiedResultPath, thisLogArchiveHome);
 
-    // go over list of files in the arhchive directory
+    // go over list of files in the archive directory
     final List filesToIndex = new LinkedList();
     IoUtils.traversePath(thisLogArchiveHome, new DirectoryTraverserCallback() {
       public boolean callback(final File file) {
@@ -132,7 +132,7 @@ public final class HTMLDirLogHandler extends AbstractLogHandler {
       /**
        * @param fileAsString
        *
-       * @return true if given file has indexable exntension.
+       * @return true if given file has indexable extension.
        */
       private boolean hasIndexableSuffix(final String fileAsString) {
         final String lowerCased = fileAsString.toLowerCase();
@@ -170,10 +170,10 @@ public final class HTMLDirLogHandler extends AbstractLogHandler {
    * isLogAlreadyArchived to find if the log about to be
    * processed was already processed.
    * <p/>
-   * This impelemtation uses index path instead of log config
+   * This implementation uses index path instead of log config
    * path used by super class.
    *
-   * @param buildRunID for wich perform getting logs
+   * @param buildRunID for which perform getting logs
    * @return List StepLog objects.
    * @see AbstractLogHandler#isLogAlreadyArchived(List,long)
    */
@@ -193,7 +193,7 @@ public final class HTMLDirLogHandler extends AbstractLogHandler {
     // NOTE: vimeshev - 07/03/2005 - the fact that we have gotten
     // called means that there was this type and this path. We
     // return true - it means that any second attempt to process
-    // same just existsing dir is considered sthe same.
+    // same just existing dir is considered the same.
     return !archivedLogs.isEmpty();
   }
 

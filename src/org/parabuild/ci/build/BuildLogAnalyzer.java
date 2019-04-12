@@ -121,7 +121,7 @@ public final class BuildLogAnalyzer {
 
 
   /**
-   * Analizes build log
+   * Analyzes build log
    *
    * @param buildLog
    * @throws BuildException
@@ -183,7 +183,7 @@ public final class BuildLogAnalyzer {
       return new Result((List) logWindow.clone(), patternFound, result, resultDescription);
 
     } catch (final Exception e) {
-      throw new BuildException("Error while analizing build results: " + StringUtils.toString(e), e);
+      throw new BuildException("Error while analyzing build results: " + StringUtils.toString(e), e);
     } finally {
       IoUtils.closeHard(reader);
     }

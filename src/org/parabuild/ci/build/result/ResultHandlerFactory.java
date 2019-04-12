@@ -90,8 +90,8 @@ public final class ResultHandlerFactory {
   /**
    * Helper method.
    *
-   * @param buildRunConfig for which error occured
-   * @param e              - exception
+   * @param buildRunConfig for which error occurred.
+   * @param e              - exception.
    */
   private static void reportHandlerCreationError(final BuildRunConfig buildRunConfig, final Exception e) {
     final Error error = new Error("Error creating result handler: " + StringUtils.toString(e));

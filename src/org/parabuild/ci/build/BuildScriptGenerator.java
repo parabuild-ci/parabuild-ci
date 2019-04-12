@@ -68,7 +68,7 @@ public interface BuildScriptGenerator {
    * Generates build sequence script file for further execution.
    *
    * @param sequence fo which a script will be created
-   * @return String absolute path to created sctep script file.
+   * @return String absolute path to created step script file.
    * @throws IOException
    */
   String generateScriptFile(BuildSequence sequence) throws IOException, AgentFailureException;
@@ -94,7 +94,7 @@ public interface BuildScriptGenerator {
 
 
   /**
-   * Sets manadatory changelist number the build is built to
+   * Sets mandatory changelist number the build is built to
    *
    * @param changeListNumber
    */
@@ -120,7 +120,7 @@ public interface BuildScriptGenerator {
 
 
   /**
-   * Adds sheel variables to be present in the script.
+   * Adds shell variables to be present in the script.
    *
    * @param variables a Map with a shell variable name as a key
    *                  and variable value as value.

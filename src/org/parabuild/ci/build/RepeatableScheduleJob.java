@@ -80,7 +80,7 @@ public final class RepeatableScheduleJob implements Job {
         log.debug("======== EXECUTING SCHEDULED BUILD ====== ");
       }
 
-      // check if in the golbal schedule gap
+      // check if in the global schedule gap
       final SystemConfigurationManager systemCM = SystemConfigurationManagerFactory.getManager();
       final Date currentTime = new Date();
       if (systemCM.isTimeInScheduleGap(currentTime)) {
@@ -101,7 +101,7 @@ public final class RepeatableScheduleJob implements Job {
       // get build runner
       buildRunner = (BuildRunner) dataMap.get(BUILD_RUNNER_KEY);
       if (buildRunner == null) {
-        reportErrorBuldRunnerNotFound();
+        reportErrorBuildRunnerNotFound();
         return;
       }
 
@@ -137,7 +137,7 @@ public final class RepeatableScheduleJob implements Job {
         final boolean cleanCheckOut = cleanCheckoutCounter.increment() || forceCleanCheckout;
         runBuild((Boolean) dataMap.get(RUN_IF_NO_CHANGES), cleanCheckOut);
       } finally {
-        // remove build run presense flag
+        // remove build run presence flag
         synchronized (activeJobs) {
           activeJobs.remove(integerActiveBuildID);
         }
@@ -171,14 +171,14 @@ public final class RepeatableScheduleJob implements Job {
       final ConfigurationManager cm = ConfigurationManager.getInstance();
       final SourceControl sourceControl = VersionControlFactory.makeVersionControl(cm.getActiveBuildConfig(activeBuildID));
 
-      // If sticky, read prefered agent host from the presistent storage.
-      final AgentHost preferedAgentHost = getPreferedAgentHost();
+      // If sticky, read preferred agent host from the persistent storage.
+      final AgentHost preferredAgentHost = getPreferredAgentHost();
 
       // Get actual agent
       final AgentHost nextLiveAgentHost = AgentManager.getInstance().getNextLiveAgentHost(activeBuildID,
-              BuildManager.getInstance().getFreeAgentHosts(activeBuildID), preferedAgentHost);
+              BuildManager.getInstance().getFreeAgentHosts(activeBuildID), preferredAgentHost);
 
-      // Store last agent host for possible future use by stiky agents
+      // Store last agent host for possible future use by sticky agents
       saveLastAgentHost(nextLiveAgentHost);
 
       // Set agent
@@ -235,7 +235,7 @@ public final class RepeatableScheduleJob implements Job {
   }
 
 
-  private void reportErrorBuldRunnerNotFound() {
+  private void reportErrorBuildRunnerNotFound() {
     final Error error = new Error("Repeatable scheduler could not find build runner");
     error.setDetails("Please report this error to support");
     error.setBuildID(activeBuildID);
@@ -279,7 +279,7 @@ public final class RepeatableScheduleJob implements Job {
   }
 
 
-  private AgentHost getPreferedAgentHost() {
+  private AgentHost getPreferredAgentHost() {
     // Non-sticky don't have a preference
     if (!isStickyAgent()) {
       return null;

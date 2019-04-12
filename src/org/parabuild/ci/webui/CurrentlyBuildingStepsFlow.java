@@ -99,7 +99,7 @@ public final class CurrentlyBuildingStepsFlow extends Flow {
           final BuildSequence buildSequence = (BuildSequence)configuredSteps.get(i);
           final Label lbStepName = makeStepLabel(buildSequence.getStepName());
           add(lbStepName);
-          if (buildSequence.getSequenceID() == currentState.getCurrentlyRunnigSequenceID()) {
+          if (buildSequence.getSequenceID() == currentState.getCurrentlyRunningSequenceID()) {
             // currently building - mark black
             lbStepName.setForeground(Color.Black);
           }

@@ -910,7 +910,7 @@ public final class BuildRunner extends Thread {
       throw e;
     } catch (final Exception e) {
 
-      final String hostName = agent == null ? (String) null : agentHostName;
+      final String hostName = agent == null ? null : agentHostName;
 
       // report error
       errorManager.reportUnexpectedBuildError(activeBuildID, hostName, e);

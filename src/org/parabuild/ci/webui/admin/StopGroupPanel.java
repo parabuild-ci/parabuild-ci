@@ -134,7 +134,7 @@ public final class StopGroupPanel extends MessagePanel {
       final List list = BuildManager.getInstance().getCurrentBuildsStatuses();
       for (int i = 0; i < list.size(); i++) {
         final BuildState buildState = (BuildState) list.get(i);
-        if (buildState.isStopable() && !Integer.toString(buildState.getActiveBuildID()).equals(buildID)) {
+        if (buildState.isStoppable() && !Integer.toString(buildState.getActiveBuildID()).equals(buildID)) {
           selectionBuildIDs.add(new Integer(buildState.getActiveBuildID()));
         }
       }
@@ -174,7 +174,7 @@ public final class StopGroupPanel extends MessagePanel {
         continue;
       }
       final BuildState state = buildService.getBuildState();
-      if (!state.isStopable()) {
+      if (!state.isStoppable()) {
         continue;
       }
       listBox.addItem(state.getBuildName());
@@ -297,7 +297,7 @@ public final class StopGroupPanel extends MessagePanel {
         final List list = BuildManager.getInstance().getCurrentBuildsStatuses();
         for (int j = 0; j < list.size(); j++) {
           final BuildState buildState = (BuildState) list.get(j);
-          if (buildState.isStopable()) {
+          if (buildState.isStoppable()) {
             result.add(new Integer(buildState.getActiveBuildID()));
           }
         }

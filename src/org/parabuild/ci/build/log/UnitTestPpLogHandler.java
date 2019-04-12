@@ -46,7 +46,7 @@ import java.util.List;
 public final class UnitTestPpLogHandler extends AbstractLogHandler {
 
   /**
-   * This valriable defines
+   * This variable defines
    */
   public static final String ARCHIVE_XML_ROOT = "testsuites";
   private static final Log log = LogFactory.getLog(UnitTestPpLogHandler.class);

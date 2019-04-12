@@ -58,13 +58,13 @@ public final class BuildRunCleaner {
   /**
    * Cleans up build run in preparation for the build re-run.
    * This includes deleting build run results and logs, and
-   * deleting cirtain attributes.
+   * deleting certain attributes.
    */
   public void cleanUp() {
     ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         cleanUpBuildRunSteps(session);
-        cleanUpBuildRunAtrtributes(session);
+        cleanUpBuildRunAttributes(session);
         return null;
       }
     });
@@ -114,12 +114,12 @@ public final class BuildRunCleaner {
 
 
   /**
-   * Cleans up relevant build run attribuites.
+   * Cleans up relevant build run attributes.
    *
    * @param session
    * @throws HibernateException
    */
-  private void cleanUpBuildRunAtrtributes(final Session session) throws HibernateException {
+  private void cleanUpBuildRunAttributes(final Session session) throws HibernateException {
     deleteBuildRunAttr(session, BuildRunAttribute.ATTR_CLEAN_CHECKOUT);
     deleteBuildRunAttr(session, BuildRunAttribute.ATTR_JUNIT_FAILURES);
     deleteBuildRunAttr(session, BuildRunAttribute.ATTR_JUNIT_SUCCESSES);

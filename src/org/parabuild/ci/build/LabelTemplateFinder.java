@@ -73,7 +73,7 @@ public final class LabelTemplateFinder {
         final LabelProperty theirTemplate = cm.getLabelSetting(config.getBuildID(), LabelProperty.LABEL_CUSTOM_VALUE);
         if (!templateIsBlank(theirTemplate)) {
           nameGenerator.setLabelTemplate(theirTemplate.getPropertyValue());
-          nameGenerator.setBuildName(config.getBuildName()); // seet Bug #715 - we use "others" build name because it a "variable".
+          nameGenerator.setBuildName(config.getBuildName()); // see Bug #715 - we use "others" build name because it a "variable".
           final String theirLabel = nameGenerator.generateLabelName();
           // if (log.isDebugEnabled()) log.debug("theirLabel: " + theirLabel);
           if (theirLabel.equals(ourLabel)) {

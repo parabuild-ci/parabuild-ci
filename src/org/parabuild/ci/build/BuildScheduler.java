@@ -42,9 +42,9 @@ public interface BuildScheduler {
 
 
   /**
-   * Requests this schedule to relod it's configuration. This
+   * Requests this schedule to reload it's configuration. This
    * method is used to notify a scheduler about changes in
-   * persistant configuration.
+   * persistent configuration.
    */
   void reloadSchedule();
 
@@ -63,7 +63,7 @@ public interface BuildScheduler {
 
 
   /**
-   * Request scheduler to pause untill further notification
+   * Request scheduler to pause until further notification
    * request to activate.
    */
   void requestPause();

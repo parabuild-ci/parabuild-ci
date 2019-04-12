@@ -198,7 +198,7 @@ public abstract class AbstractResultHandler implements ResultHandler {
    * @param builderTimeStamp         long agent's time stamp at build
    *                                 run start.
    * @param fullyQualifiedResultPath
-   * @return true if result was already arhived.
+   * @return true if result was already archived.
    */
   protected abstract boolean isResultAlreadyArchived(final List archivedBuildRunResults, final long builderTimeStamp,
                                                      final String fullyQualifiedResultPath) throws IOException, AgentFailureException;

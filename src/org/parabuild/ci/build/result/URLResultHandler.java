@@ -92,7 +92,7 @@ public final class URLResultHandler extends AbstractResultHandler {
     stepResult.setFound(true);
     cm.saveObject(stepResult);
 
-    // auto-publish if neccessary
+    // auto-publish if necessary
     publish(stepResult);
   }
 
@@ -104,7 +104,7 @@ public final class URLResultHandler extends AbstractResultHandler {
    *                                 results.
    * @param builderTimeStamp
    * @param fullyQualifiedResultPath
-   * @return true if result was already arhived.
+   * @return true if result was already archived.
    * @see AbstractResultHandler#isResultAlreadyArchived
    */
   protected boolean isResultAlreadyArchived(final List archivedBuildRunResults, final long builderTimeStamp,
@@ -112,7 +112,7 @@ public final class URLResultHandler extends AbstractResultHandler {
     // NOTE: vimeshev - 06/22/2005 - the fact that we have gotten
     // called means that there was this type and this path. We
     // return true - it means that any second attempt to process
-    // same just existsing dir is considered sthe same.
+    // same just existing dir is considered the same.
     return !archivedBuildRunResults.isEmpty();
   }
 }

@@ -15,7 +15,7 @@ package org.parabuild.ci.build;
 
 /**
  * This listener is used to receive notifications about
- * start and stop events happeneing to the build script.
+ * start and stop events happening to the build script.
  */
 public interface BuildScriptEventSubscriber {
 

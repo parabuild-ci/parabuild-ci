@@ -28,7 +28,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * Responsible for handlind dependent builds running in
+ * Responsible for handling dependent builds running in
  * parallel with a leading one.
  */
 final class ParallelBuildManagerImpl extends ParallelBuildManager {
@@ -69,15 +69,15 @@ final class ParallelBuildManagerImpl extends ParallelBuildManager {
     }
 
     // REVIEWME: vimeshev - 2006-12-26 - as this is done in
-    // an asyncronuous fasion, we request builds to start
+    // an asynchronous fashion, we request builds to start
     // and exit. Ideally we would not exit until all builds
     // have left "waiting" state. Whether they start
     // building is a different story (there could be
-    // errors). There should be some synchgronous protocol,
-    // something like XA: prepare -> ready (guaraneed to
+    // errors). There should be some synchronous protocol,
+    // something like XA: prepare -> ready (guaranteed to
     // start) -> start.
     //
-    // In other words, we need a comfirmation that everyone
+    // In other words, we need a confirmation that everyone
     // has started
     //
 
@@ -152,7 +152,7 @@ final class ParallelBuildManagerImpl extends ParallelBuildManager {
     //
     // Consider replacing with latches. Each build may have
     // a latch that is closes when it starts and opens when
-    // it finilizes.
+    // it finalizes.
     final BuildListService buildListService = ServiceManager.getInstance().getBuildListService();
     boolean someAreBusy = true;
     while (someAreBusy) {

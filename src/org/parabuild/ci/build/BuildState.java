@@ -33,7 +33,7 @@ import java.util.Date;
 public final class BuildState implements Serializable {
 
   /**
-   * This comparator copares BuildStates by their build names.
+   * This comparator compares BuildStates by their build names.
    */
   public static final Comparator BUILD_NAME_COMPARATOR = new Comparator() {
     /**
@@ -60,7 +60,7 @@ public final class BuildState implements Serializable {
   private volatile BuildStatus status = null;
   private volatile int activeBuildID = BuildConfig.UNSAVED_ID;
   private volatile int currentlyRunningBuildConfigID = BuildConfig.UNSAVED_ID;
-  private volatile int currentlyRunnigBuildRunID = BuildRun.UNSAVED_ID;
+  private volatile int currentlyRunningBuildRunID = BuildRun.UNSAVED_ID;
   private volatile int currentlyRunningBuildNumber = 0;
   private volatile byte access = BuildConfig.ACCESS_PRIVATE;
   private volatile byte schedule = 0;
@@ -275,16 +275,16 @@ public final class BuildState implements Serializable {
 
 
   public int getCurrentlyRunningBuildRunID() {
-    return currentlyRunnigBuildRunID;
+    return currentlyRunningBuildRunID;
   }
 
 
-  public void setCurrentlyRunningBuildRunID(final int currentlyRunnigBuildRunID) {
-    this.currentlyRunnigBuildRunID = currentlyRunnigBuildRunID;
+  public void setCurrentlyRunningBuildRunID(final int currentlyRunningBuildRunID) {
+    this.currentlyRunningBuildRunID = currentlyRunningBuildRunID;
   }
 
 
-  public int getCurrentlyRunnigSequenceID() {
+  public int getCurrentlyRunningSequenceID() {
     if (currentlyRunningStep == null) {
       return BuildSequence.UNSAVED_ID;
     }
@@ -325,7 +325,7 @@ public final class BuildState implements Serializable {
 
 
   /**
-   * Stes time when next build will run or null if there is no
+   * Sets time when next build will run or null if there is no
    * information.
    */
   public void setNextBuildTime(final Date nextBuildTime) {
@@ -341,7 +341,7 @@ public final class BuildState implements Serializable {
    * @return true if build is running (checking out/stopping/building/etc).
    */
   public boolean isRunning() {
-    return currentlyRunnigBuildRunID != BuildRun.UNSAVED_ID;
+    return currentlyRunningBuildRunID != BuildRun.UNSAVED_ID;
   }
 
 
@@ -416,7 +416,7 @@ public final class BuildState implements Serializable {
    *
    * @return true if the build can be stopped.
    */
-  public boolean isStopable() {
+  public boolean isStoppable() {
     return !(status.equals(BuildStatus.INACTIVE) || status.equals(BuildStatus.PAUSED));
   }
 
@@ -465,7 +465,7 @@ public final class BuildState implements Serializable {
             ", status=" + status +
             ", activeBuildID=" + activeBuildID +
             ", currentlyRunningBuildConfigID=" + currentlyRunningBuildConfigID +
-            ", currentlyRunnigBuildRunID=" + currentlyRunnigBuildRunID +
+            ", currentlyRunningBuildRunID=" + currentlyRunningBuildRunID +
             ", currentlyRunningBuildNumber=" + currentlyRunningBuildNumber +
             ", access=" + access +
             ", schedule=" + schedule +

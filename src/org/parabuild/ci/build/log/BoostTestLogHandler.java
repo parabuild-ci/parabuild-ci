@@ -46,7 +46,7 @@ import java.util.List;
 public final class BoostTestLogHandler extends AbstractLogHandler {
 
   /**
-   * This valriable defines
+   * This variable defines
    */
   public static final String ARCHIVE_XML_ROOT = "testlogs";
   private static final Log LOG = LogFactory.getLog(BoostTestLogHandler.class);  // NOPMD

@@ -240,7 +240,7 @@ final class BuildStepRunner {
       // check if there was a stop request
       ThreadUtils.checkIfInterrupted();
 
-      // anailize main log
+      // analyze main log
       if (LOG.isDebugEnabled()) {
         LOG.debug("ANALYZE LOGS");
       }
@@ -292,7 +292,7 @@ final class BuildStepRunner {
     } catch (final Exception e) {
 
       // Get host name
-      final String hostName = agent == null ? (String) null : agent.getHost().getHost();
+      final String hostName = agent == null ? null : agent.getHost().getHost();
 
       // report error
       errorManager.reportUnexpectedBuildStepError(activeBuildID, hostName, sequence, e);
@@ -349,7 +349,7 @@ final class BuildStepRunner {
           }
         }
 
-        // store cusom logs if any
+        // store custom logs if any
         final LogHandler logHandler = LogHandlerFactory.makeLogHandler(agent, stepRun.getID());
         logHandler.process();
 
@@ -388,7 +388,7 @@ final class BuildStepRunner {
       final ChangeList previousChangeList = cm.getChangeList(previousBuildRun.getBuildRunID(), previousChangeListNumber);
       if (previousChangeList == null) {
         // # 1373 - Do not report the problem if the build was stopped. It is possible that it
-        //   was stopped before we could aquire the change list from VCS.
+        //   was stopped before we could acquire the change list from VCS.
         if (previousBuildRun.getResultID() != BuildRun.BUILD_RESULT_STOPPED
                 && previousBuildRun.getResultID() != BuildRun.BUILD_RESULT_SYSTEM_ERROR) {
           // NOTE: simeshev@parabuilci.org - 2007-06-17 -

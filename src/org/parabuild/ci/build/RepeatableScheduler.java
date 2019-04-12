@@ -39,7 +39,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * This class is respondible for running scheduled-style builds.
+ * This class is responsible for running scheduled-style builds.
  *
  * @see BuildScheduler
  * @see BuildServiceImpl
@@ -150,7 +150,7 @@ public final class RepeatableScheduler implements BuildScheduler {
   /**
    * Requests to run a build once.
    * <p/>
-   * As all the jobs are the same for the given schdeuler, this
+   * As all the jobs are the same for the given scheduler, this
    * method just picks up the first job in the scheduler an runs
    * it.
    */
@@ -293,7 +293,7 @@ public final class RepeatableScheduler implements BuildScheduler {
 
 
   /**
-   * Accociates build runner with this scheduler
+   * Associates build runner with this scheduler
    *
    * @param buildRunner
    */
@@ -307,7 +307,7 @@ public final class RepeatableScheduler implements BuildScheduler {
    */
   public void start() {
     // do nothing. this scheduler uses internal thread
-    // which is nadled in requestStart
+    // which is handled in requestStart
   }
 
 
@@ -328,9 +328,9 @@ public final class RepeatableScheduler implements BuildScheduler {
 
 
   /**
-   * Requests this schedule to relod it's configuration. This
+   * Requests this schedule to reload it's configuration. This
    * method is used to notify a scheduler about changes in
-   * persistant configuration.
+   * persistent configuration.
    */
   public synchronized void reloadSchedule() {
     try {
@@ -501,7 +501,7 @@ public final class RepeatableScheduler implements BuildScheduler {
 
 
   /**
-   * A composite value object to hold scheduler's trugger data.
+   * A composite value object to hold scheduler's trigger data.
    */
   private static final class TriggerKey {
 

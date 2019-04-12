@@ -116,7 +116,7 @@ public final class FileListResultHandler extends AbstractResultHandler {
    *                                 results.
    * @param builderTimeStamp
    * @param fullyQualifiedResultPath
-   * @return true if result was already arhived.
+   * @return true if result was already archived.
    * @see AbstractResultHandler#isResultAlreadyArchived
    */
   protected boolean isResultAlreadyArchived(final List archivedBuildRunResults, final long builderTimeStamp,
@@ -136,17 +136,17 @@ public final class FileListResultHandler extends AbstractResultHandler {
     for (final Iterator i = archivedBuildRunResults.iterator(); i.hasNext(); ) {
       final StepResult stepResult = (StepResult) i.next();
 
-      // for us it is the arhived file result itself
+      // for us it is the archived file result itself
       final File archivedResultHome = archiveManager.getArchivedResultHome(stepResult);
       if (!archivedResultHome.exists()) {
-        LOG.warn("Expected the arhived file \"" + archivedResultHome + "\" to exist, but it did not. " + stepResult.toString());
+        LOG.warn("Expected the archived file \"" + archivedResultHome + "\" to exist, but it did not. " + stepResult.toString());
         continue;
       }
 
-      // get relative arthived file name
+      // get relative archived file name
       final List archivedResultEntries = archiveManager.getArchivedResultEntries(stepResult);
       if (archivedResultEntries.size() != 1) {
-        LOG.warn("Expected the arhived entry list size 1 but is was" + archivedResultEntries.size());
+        LOG.warn("Expected the archived entry list size 1 but is was" + archivedResultEntries.size());
         continue;
       }
 
@@ -158,7 +158,7 @@ public final class FileListResultHandler extends AbstractResultHandler {
       //if (log.isDebugEnabled()) log.debug("archivedResultHome.lastModified() = " + archivedResult.lastModified());
       if (resultDescriptor.length() == archivedResult.length()
               && resultModified == archivedResult.lastModified()) {
-        return true; // found in arhive
+        return true; // found in archive
       }
     }
 

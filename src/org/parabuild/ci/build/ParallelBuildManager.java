@@ -67,7 +67,7 @@ abstract class ParallelBuildManager {
 
   /**
    * Does nothing. This class is used by the factory method
-   * when a build run for that constrcution of the parallel
+   * when a build run for that construction of the parallel
    * build manger is requested is not a leading build run.
    */
   private static class DummyParallelBuildManager extends ParallelBuildManager {

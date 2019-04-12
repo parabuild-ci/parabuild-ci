@@ -42,7 +42,7 @@ import java.util.TimeZone;
 public abstract class AbstractBuildScriptGenerator implements BuildScriptGenerator {
 
   private static final int UNSET_BUILD_NUMBER = -1;
-  private static final int UNSER_BUILD_RUN_ID = BuildRun.UNSAVED_ID;
+  private static final int UNSET_BUILD_RUN_ID = BuildRun.UNSAVED_ID;
   private static final String VAR_PARABUILD_SCRIPT = "PARABUILD_SCRIPT";
   private static final String VAR_CLASSPATH = "CLASSPATH";
   private static final String[] VARS_TO_ERASE = {
@@ -72,7 +72,7 @@ public abstract class AbstractBuildScriptGenerator implements BuildScriptGenerat
   private final Map addedVariables = new HashMap(11);
   private final RemoteCommandTimeStamp timeStamp;
   private int buildNumber = UNSET_BUILD_NUMBER;
-  private int buildRunID = UNSER_BUILD_RUN_ID;
+  private int buildRunID = UNSET_BUILD_RUN_ID;
   private String buildName = null;
   private String changeListNumber = null;
   private String stepName = null;
@@ -179,7 +179,7 @@ public abstract class AbstractBuildScriptGenerator implements BuildScriptGenerat
 
 
   /**
-   * Adds sheel variables to be present in the script.
+   * Adds shell variables to be present in the script.
    *
    * @param variables a Map with a shell variable name as a key
    *                  and variable value as value.
@@ -233,7 +233,7 @@ public abstract class AbstractBuildScriptGenerator implements BuildScriptGenerat
 
 
   /**
-   * Adds a sheel variable to be present in the script.
+   * Adds a shell variable to be present in the script.
    *
    * @param name  variable name
    * @param value variable value
@@ -558,7 +558,7 @@ public abstract class AbstractBuildScriptGenerator implements BuildScriptGenerat
    * @return validated build run ID
    */
   private int getValidBuildRunID() {
-    if (buildRunID == UNSER_BUILD_RUN_ID) {
+    if (buildRunID == UNSET_BUILD_RUN_ID) {
       throw new IllegalStateException("Build run ID was not set");
     }
     return buildRunID;
@@ -702,7 +702,7 @@ public abstract class AbstractBuildScriptGenerator implements BuildScriptGenerat
 
   /**
    * Generates build sequence script for further
-   * execution.Implemtation of the Template Method pattern.
+   * execution.Implementation of the Template Method pattern.
    *
    * @param sequence fo which a script will be created
    * @return String containing generated script
