@@ -219,7 +219,7 @@ public final class BuildLogAnalyzer {
    * @param logLine
    * @param patternSet
    */
-  private boolean findStringPattern(final String logLine, final String[][] patternSet) {
+  private static boolean findStringPattern(final String logLine, final String[][] patternSet) {
     // count patterns in line
     for (int j = 0; j < patternSet.length; j++) {
       int patternsFound = 0;
@@ -278,7 +278,7 @@ public final class BuildLogAnalyzer {
   }
 
 
-  private boolean findRegexPattern(final String logLine, final Pattern[] regexPatterns) {
+  private static boolean findRegexPattern(final String logLine, final Pattern[] regexPatterns) {
     for (int i = 0; i < regexPatterns.length; i++) {
       if (regexPatterns[i].matcher(logLine).matches()) {
         return true;

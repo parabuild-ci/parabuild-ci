@@ -83,7 +83,7 @@ public final class BuildRunCleaner {
   }
 
 
-  private void deleteStepRunAttributes(final StepRun stepRun, final Session session) throws HibernateException {
+  private static void deleteStepRunAttributes(final StepRun stepRun, final Session session) throws HibernateException {
     session.delete("from StepRunAttribute sra where sra.stepRunID = ?",
             new Object[]{new Integer(stepRun.getID())},
             new Type[]{Hibernate.INTEGER});
@@ -108,7 +108,7 @@ public final class BuildRunCleaner {
   }
 
 
-  private void deleteStepRun(final StepRun stepRun, final Session session) throws HibernateException {
+  private static void deleteStepRun(final StepRun stepRun, final Session session) throws HibernateException {
     session.delete(stepRun);
   }
 

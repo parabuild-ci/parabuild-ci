@@ -255,7 +255,7 @@ final class JUnitStatisticsProcessor {
     }
   }
 
-  private void ensureValidRootnode(final String nodeName) {
+  private static void ensureValidRootnode(final String nodeName) {
     if (!nodeName.equals(TESTSUITES)) {
       throw new IllegalArgumentException("Invalid document root: " + nodeName);
     }

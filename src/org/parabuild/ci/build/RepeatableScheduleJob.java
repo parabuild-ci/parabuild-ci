@@ -245,7 +245,7 @@ public final class RepeatableScheduleJob implements Job {
   }
 
 
-  private void reportErrorBuildNotFound() {
+  private static void reportErrorBuildNotFound() {
     final Error error = new Error("Repeatable scheduler could not find build to run");
     error.setDetails("Please report this error to support");
     error.setErrorLevel(Error.ERROR_LEVEL_FATAL);

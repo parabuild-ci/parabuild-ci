@@ -115,7 +115,7 @@ public final class UnixBuildScriptGenerator extends AbstractBuildScriptGenerator
   /**
    * Writes a string and a newline after the string
    */
-  private void writeln(final BufferedWriter bw, final String s) throws IOException {
+  private static void writeln(final BufferedWriter bw, final String s) throws IOException {
     bw.write(s);
     bw.newLine();
   }

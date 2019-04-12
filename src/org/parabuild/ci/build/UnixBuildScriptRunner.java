@@ -57,12 +57,12 @@ public final class UnixBuildScriptRunner extends AbstractBuildScriptRunner {
   }
 
 
-  private String makeCYGWINCommand(final String scriptFileName) {
+  private static String makeCYGWINCommand(final String scriptFileName) {
     return "sh " + scriptFileName;
   }
 
 
-  private String makeUnixCommand(final String scriptFileName) {
+  private static String makeUnixCommand(final String scriptFileName) {
     return "sh " + scriptFileName;
   }
 }

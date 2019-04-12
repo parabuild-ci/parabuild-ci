@@ -49,12 +49,12 @@ public final class MarkerMatcherList implements MarkerMatcher {
   }
 
 
-  private String stripRegex(final String marker) {
+  private static String stripRegex(final String marker) {
     return marker.substring(1, marker.length() - 1);
   }
 
 
-  private boolean isRegex(final String marker) {
+  private static boolean isRegex(final String marker) {
     return marker.startsWith(PREFIX) && marker.endsWith(SUFFIX);
   }
 

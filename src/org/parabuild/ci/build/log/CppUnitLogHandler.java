@@ -180,7 +180,7 @@ public final class CppUnitLogHandler extends AbstractLogHandler {
   }
 
 
-  private Document mergeCppUnitLogs(final List tempFiles) throws ParserConfigurationException, SAXException, IOException {
+  private static Document mergeCppUnitLogs(final List tempFiles) throws ParserConfigurationException, SAXException, IOException {
     final Document mergedDocument = XMLUtils.createDomDocument();
     final Element element = mergedDocument.createElement(ARCHIVE_XML_ROOT);
     mergedDocument.appendChild(element);
