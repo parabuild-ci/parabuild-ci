@@ -28,7 +28,6 @@ import org.parabuild.ci.error.Error;
 import org.parabuild.ci.error.ErrorManagerFactory;
 import org.parabuild.ci.object.ActiveBuild;
 import org.parabuild.ci.object.ActiveBuildAttribute;
-import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.ScheduleItem;
 import org.parabuild.ci.services.BuildServiceImpl;
 import org.parabuild.ci.services.BuildStartRequest;

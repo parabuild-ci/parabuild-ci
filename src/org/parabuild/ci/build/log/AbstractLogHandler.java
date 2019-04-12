@@ -112,14 +112,13 @@ public abstract class AbstractLogHandler implements LogHandler {
    * method should not throw any exceptions.
    */
   public final void process() {
+
+    // vlaidate we are called with the correct log type
+    if (logConfig.getType() != logType()) {
+      throw new IllegalArgumentException("Log type code is invalid for this log handler: " + logConfig.getType());
+    }
+
     try {
-      // common validation
-
-      // vlaidate we are called with the correct log type
-      if (logConfig.getType() != logType()) {
-        throw new IllegalArgumentException("Log type code is invalid for this log handler: " + logConfig.getType());
-      }
-
       // TODELETE: when fixed the problem that our PMD log doesn't show.
 //      if (log.isDebugEnabled()) log.debug("checking path: " + logPath);
 
