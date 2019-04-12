@@ -34,7 +34,7 @@ final class BuildRunnerStateImpl implements BuildRunnerState {
 
   /**
    * Constructor. Copies lastCompleteBuildRun and
-   * lastCleanBuildRun into class intenal variables.
+   * lastCleanBuildRun into class internal variables.
    *
    * @param lastCompleteBuildRun
    * @param lastCleanBuildRun
@@ -86,7 +86,7 @@ final class BuildRunnerStateImpl implements BuildRunnerState {
 
 
   /**
-   * Sets last coplete build run by copying it.
+   * Sets last complete build run by copying it.
    *
    * @param lastCompleteBuildRun
    */

@@ -53,20 +53,18 @@ public abstract class AbstractResultHandler implements ResultHandler {
    * @noinspection UNUSED_SYMBOL, UnusedDeclaration
    */
   private static final Log LOG = LogFactory.getLog(AbstractResultHandler.class); // NOPMD
-
-  protected boolean pinResult = false;
   protected final ArchiveManager archiveManager;
   protected final Agent agent;
   protected final ConfigurationManager cm = ConfigurationManager.getInstance();
   protected final int stepRunID;
   protected final ResultConfig resultConfig;
   protected final SearchManager searchManager = SearchManager.getInstance();
-
   private final boolean resultIsFilePath;
   private final BuildRunConfig buildRunConfig;
   private final ErrorManager errorManager = ErrorManagerFactory.getErrorManager();
   private final String[] fullyQualifiedResultPaths;
   private final String[] resolvedResultPaths;
+  protected boolean pinResult = false;
 
 
   /**
@@ -109,20 +107,28 @@ public abstract class AbstractResultHandler implements ResultHandler {
   }
 
 
+  private static String[] qualifyResultPath(final String projectHome, final boolean resultIsFilePath, final String[] resolvedResultPath) {
+    final String[] result = new String[resolvedResultPath.length];
+    for (int i = 0; i < resolvedResultPath.length; i++) {
+      result[i] = resultIsFilePath ? projectHome + '/' + resolvedResultPath[i] : resolvedResultPath[i];
+    }
+    return result;
+  }
+
+
   /**
    * Finds results, moves them to archive and adjusts database.
    * <p/>
    * This method should not throw any exceptions.
    */
   public final void process() throws IllegalArgumentException {
+
+    // validate we are called with the correct result type
+    if (resultConfig.getType() != resultType()) {
+      throw new IllegalArgumentException("Result type code is invalid for this result handler: " + resultConfig.getType());
+    }
+
     try {
-      // common validation
-
-      // validate we are called with the correct result type
-      if (resultConfig.getType() != resultType()) {
-        throw new IllegalArgumentException("Result type code is invalid for this result handler: " + resultConfig.getType());
-      }
-
       for (int i = 0; i < fullyQualifiedResultPaths.length; i++) {
         final String fullyQualifiedResultPath = fullyQualifiedResultPaths[i];
         final String resolvedResultPath = resolvedResultPaths[i];
@@ -192,7 +198,7 @@ public abstract class AbstractResultHandler implements ResultHandler {
    * @param builderTimeStamp         long agent's time stamp at build
    *                                 run start.
    * @param fullyQualifiedResultPath
-   * @return true if result was already arhived.
+   * @return true if result was already archived.
    */
   protected abstract boolean isResultAlreadyArchived(final List archivedBuildRunResults, final long builderTimeStamp,
                                                      final String fullyQualifiedResultPath) throws IOException, AgentFailureException;
@@ -270,15 +276,6 @@ public abstract class AbstractResultHandler implements ResultHandler {
     if (autopublishGroupID != null) {
       ResultGroupManager.getInstance().publish(autopublishGroupID, stepResult);
     }
-  }
-
-
-  private static String[] qualifyResultPath(final String projectHome, final boolean resultIsFilePath, final String[] resolvedResultPath) {
-    final String[] result = new String[resolvedResultPath.length];
-    for (int i = 0; i < resolvedResultPath.length; i++) {
-      result[i] = resultIsFilePath ? projectHome + '/' + resolvedResultPath[i] : resolvedResultPath[i];
-    }
-    return result;
   }
 
 

@@ -14,7 +14,7 @@
 package org.parabuild.ci.build.log;
 
 /**
- * LogHandler is responsible for processing cutom logs that are
+ * LogHandler is responsible for processing custom logs that are
  * defined for a given build configuration.
  */
 public interface LogHandler {

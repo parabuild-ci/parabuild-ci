@@ -83,7 +83,7 @@ public final class SystemVariableConfigurationManager {
   }
 
 
-  private void addToMap(final Map parameters, final List systemParameters) {
+  private static void addToMap(final Map parameters, final List systemParameters) {
     for (int i = 0; i < systemParameters.size(); i++) {
       final StartParameter startParameter = (StartParameter) systemParameters.get(i);
       parameters.put(startParameter.getName(), startParameter);

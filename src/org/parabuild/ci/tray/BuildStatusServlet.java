@@ -55,7 +55,7 @@ public final class BuildStatusServlet extends HessianServlet implements BuildSta
       status.setBuildStatusID(state.getStatus().byteValue());
       status.setCurrentlyRunnigBuildRunID(state.getCurrentlyRunningBuildRunID());
       status.setCurrentlyRunningBuildConfigID(state.getCurrentlyRunningBuildConfigID());
-      status.setCurrentlyRunningStepID(state.getCurrentlyRunnigSequenceID());
+      status.setCurrentlyRunningStepID(state.getCurrentlyRunningSequenceID());
       status.setCurrentlyRunningStepName(state.getCurrentlyRunningStepName());
       status.setLastBuildRunID(state.getLastBuildRunID());
       final BuildRun lastCompleteBuildRun = state.getLastCompleteBuildRun();

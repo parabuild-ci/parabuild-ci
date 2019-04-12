@@ -164,12 +164,7 @@ final class FailedAgent implements Agent {
 
 
   public boolean deleteTempFileHard(final String tempFileName) {
-    throw wrap(exception);
-  }
-
-
-  private static IllegalStateException wrap(final IOException exception) {
-    return new IllegalStateException(StringUtils.toString(exception), exception);
+    throw new IllegalStateException(StringUtils.toString(exception), exception);
   }
 
 
@@ -179,7 +174,7 @@ final class FailedAgent implements Agent {
 
 
   public int getActiveBuildID() {
-    throw wrap(exception);
+    throw new IllegalStateException(StringUtils.toString(exception), exception);
   }
 
 
@@ -277,7 +272,7 @@ final class FailedAgent implements Agent {
 
 
   public AgentHost getHost() {
-    throw wrap(exception);
+    throw new IllegalStateException(StringUtils.toString(exception), exception);
   }
 
 
@@ -292,7 +287,7 @@ final class FailedAgent implements Agent {
 
 
   public boolean deleteFileHard(final String path) {
-    throw wrap(exception);
+    throw new IllegalStateException(StringUtils.toString(exception), exception);
   }
 
 

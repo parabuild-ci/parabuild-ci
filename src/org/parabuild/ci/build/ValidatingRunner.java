@@ -45,7 +45,7 @@ public final class ValidatingRunner {
 
 
   /**
-   * Reinitilizes runner
+   * Reinitializes the runner
    */
   public final void initRunner(final Runnable delegate) {
 
@@ -76,8 +76,8 @@ public final class ValidatingRunner {
    */
   private abstract static class AbstractRunner implements Runnable {
 
-    private Runnable delegate = null;
-    private ValidatingRunner validatingRunner = null;
+    private final Runnable delegate;
+    private final ValidatingRunner validatingRunner;
     private int counter = 0;
 
 

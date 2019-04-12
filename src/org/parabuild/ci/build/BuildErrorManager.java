@@ -22,9 +22,9 @@ import org.parabuild.ci.object.BuildSequence;
 import org.parabuild.ci.remote.Agent;
 
 /**
- * This is a specialized class to use to report errors occured in
+ * This is a specialized class to use to report errors occurred in
  * the build package. The main goal is to remove clutter by
- * taking out error creating and reposting code and move it to
+ * taking out error creating and reporting code and move it to
  * here.
  */
 final class BuildErrorManager {
@@ -58,7 +58,7 @@ final class BuildErrorManager {
 
 
   /**
-   * Helper metod to report error.
+   * Helper method to report error.
    *
    * @param agent
    */

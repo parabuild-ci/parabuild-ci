@@ -79,21 +79,21 @@ public final class BuildVersionDuplicateValidator {
 
     // try to get a new would-be counter
     final ConfigurationManager cm = ConfigurationManager.getInstance();
-    int woudBeNewVersionCounter = versionCounterToTest;
-    if (woudBeNewVersionCounter == -1) {
+    int wouldBeNewVersionCounter = versionCounterToTest;
+    if (wouldBeNewVersionCounter == -1) {
       // if auto mode generate would-be version counter
       if (cm.getBuildAttributeValue(activeBuildID, BuildConfigAttribute.VERSION_COUNTER_INCREMENT_MODE, new Integer(BuildConfigAttribute.VERSION_COUNTER_INCREMENT_MODE_MANUAL)).byteValue() == BuildConfigAttribute.VERSION_COUNTER_INCREMENT_MODE_AUTOMATIC)
       {
-        woudBeNewVersionCounter = cm.getNewVersionCounter(activeBuildID, false);
+        wouldBeNewVersionCounter = cm.getNewVersionCounter(activeBuildID, false);
       }
     }
 
     // run validation if counter is ready
-    if (woudBeNewVersionCounter != -1) {
+    if (wouldBeNewVersionCounter != -1) {
 
       // create version using current parameters
       final BuildVersionGenerator buildVersionGenerator = new BuildVersionGenerator();
-      final String wouldBeVersion = buildVersionGenerator.makeBuildVersion(versionTemplateToTest, buildName, buildNumberToTest, woudBeNewVersionCounter).toString();
+      final String wouldBeVersion = buildVersionGenerator.makeBuildVersion(versionTemplateToTest, buildName, buildNumberToTest, wouldBeNewVersionCounter).toString();
       final List foundAttributes = cm.findBuildRunAttributes(activeBuildID, BuildRunAttribute.VERSION, wouldBeVersion);
 
       // check if anything found
@@ -105,7 +105,7 @@ public final class BuildVersionDuplicateValidator {
         if (attr.getBuildRunID() == ignoreBuildRunID) return;
       }
 
-      // validatation failed
+      // validation failed
       throw new ValidationException("Version \"" + wouldBeVersion + "\" already exists for this build configuration.");
     }
   }

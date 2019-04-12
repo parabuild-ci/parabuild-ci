@@ -31,7 +31,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * Makes cusom long handler.
+ * Makes custom long handler.
  */
 public final class LogHandlerFactory {
 
@@ -132,8 +132,8 @@ public final class LogHandlerFactory {
   /**
    * Helper method.
    *
-   * @param buildRunConfig for which error occured
-   * @param e              - exception
+   * @param buildRunConfig for which error occurred.
+   * @param e              - exception.
    */
   private static void reportHandlerCreationError(final BuildRunConfig buildRunConfig, final Exception e) {
     final Error error = new Error("Error creating log handler: " + StringUtils.toString(e));

@@ -52,7 +52,7 @@ final class BuildStartRequestBuilder {
       final ConfigurationManager cm = ConfigurationManager.getInstance();
       if (cm.getBuildAttributeValue(activeBuildID, BuildConfigAttribute.USE_FIRST_PARAMETER_VALUE_AS_DEFAULT,
               BuildConfigAttribute.OPTION_UNCHECKED).equals(BuildConfigAttribute.OPTION_CHECKED)) {
-        // yes, set daults parameters
+        // yes, set default parameters
         final List configurationStartParameters = cm.getStartParameters(startRequest.isPublishingRun() ? StartParameterType.PUBLISH : StartParameterType.BUILD, activeBuildID);
         for (int i = 0; i < configurationStartParameters.size(); i++) {
           final StartParameter configuredParameter = (StartParameter) configurationStartParameters.get(i);

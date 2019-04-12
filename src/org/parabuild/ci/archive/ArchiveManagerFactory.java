@@ -13,8 +13,6 @@
  */
 package org.parabuild.ci.archive;
 
-import java.io.*;
-
 import org.parabuild.ci.archive.internal.*;
 
 

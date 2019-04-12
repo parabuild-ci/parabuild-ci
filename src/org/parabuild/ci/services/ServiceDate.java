@@ -19,7 +19,7 @@ import java.util.*;
  * Purpose of this class to take out import of Date class from ServiceLicenseInformation
  *
  */
-public final class ServiceDate extends Date {
+final class ServiceDate extends Date {
 
   /**
    */

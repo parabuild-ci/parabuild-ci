@@ -50,8 +50,8 @@ public final class BuildLogAnalyzer {
   private static final String BUILD_RESULT_CANNOT_BE_IDENTIFIED = "Build result cannot be identified";
 
   private int errorWindowSize = ConfigurationConstants.DEFAULT_ERROR_LOG_QUOTE_SIZE;
-  private String[][] stringFailurePatterns = null;
-  private String[][] stringSuccessPatterns = null;
+  private final String[][] stringFailurePatterns;
+  private final String[][] stringSuccessPatterns;
   private final LinkedList logWindow = new LinkedList();
   private final Pattern[] regexFailurePatterns;
   private final Pattern[] regexSuccessPatterns;
@@ -121,7 +121,7 @@ public final class BuildLogAnalyzer {
 
 
   /**
-   * Analizes build log
+   * Analyzes build log
    *
    * @param buildLog
    * @throws BuildException
@@ -183,7 +183,7 @@ public final class BuildLogAnalyzer {
       return new Result((List) logWindow.clone(), patternFound, result, resultDescription);
 
     } catch (final Exception e) {
-      throw new BuildException("Error while analizing build results: " + StringUtils.toString(e), e);
+      throw new BuildException("Error while analyzing build results: " + StringUtils.toString(e), e);
     } finally {
       IoUtils.closeHard(reader);
     }
@@ -219,7 +219,7 @@ public final class BuildLogAnalyzer {
    * @param logLine
    * @param patternSet
    */
-  private boolean findStringPattern(final String logLine, final String[][] patternSet) {
+  private static boolean findStringPattern(final String logLine, final String[][] patternSet) {
     // count patterns in line
     for (int j = 0; j < patternSet.length; j++) {
       int patternsFound = 0;
@@ -278,7 +278,7 @@ public final class BuildLogAnalyzer {
   }
 
 
-  private boolean findRegexPattern(final String logLine, final Pattern[] regexPatterns) {
+  private static boolean findRegexPattern(final String logLine, final Pattern[] regexPatterns) {
     for (int i = 0; i < regexPatterns.length; i++) {
       if (regexPatterns[i].matcher(logLine).matches()) {
         return true;
@@ -297,7 +297,7 @@ public final class BuildLogAnalyzer {
 
 
     public Result(final List logWindowLines, final boolean patternFound, final byte result, final String resultDescription) {
-      this.errorWindowLines = logWindowLines;
+      this.errorWindowLines = new ArrayList(logWindowLines);
       this.patternFound = patternFound;
       this.result = result;
       this.resultDescription = resultDescription;

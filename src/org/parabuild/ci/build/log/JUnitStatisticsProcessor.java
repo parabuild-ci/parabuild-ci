@@ -70,7 +70,7 @@ final class JUnitStatisticsProcessor {
   }
 
   /**
-   * Proceses log in the merged JUnit log format.
+   * Processes log in the merged JUnit log format.
    *
    * @param mergedLog log in the merged JUnit log format.
    */
@@ -81,7 +81,7 @@ final class JUnitStatisticsProcessor {
 
     // Validate input
     final Element documentElement = mergedLog.getDocumentElement();
-    ensureValidRootnode(documentElement.getNodeName());
+    ensureValidRootNode(documentElement.getNodeName());
 
     // An attribute to set for the build run if tests are present.
     boolean hasTests = false;
@@ -109,10 +109,10 @@ final class JUnitStatisticsProcessor {
       // Save or create test suite
       final int testSuiteNameID = cm.findOrCreateTestSuiteName(testSuiteNode.getAttributes().getNamedItem(NAME).getNodeValue());
       // Iterate test cases
-      final NodeList testSuitechildNodes = testSuiteNode.getChildNodes();
-      final int testSuiteChildeNodesLength = testSuitechildNodes.getLength();
-      for (int i = 0; i < testSuiteChildeNodesLength; i++) {
-        final Node testCaseNode = testSuitechildNodes.item(i);
+      final NodeList testSuiteChildNodes = testSuiteNode.getChildNodes();
+      final int testSuiteChildNodesLength = testSuiteChildNodes.getLength();
+      for (int i = 0; i < testSuiteChildNodesLength; i++) {
+        final Node testCaseNode = testSuiteChildNodes.item(i);
         if (!testCaseNode.getNodeName().equals(TESTCASE)) {
           continue;
         }
@@ -130,8 +130,8 @@ final class JUnitStatisticsProcessor {
         String message = "";
         byte resultCode = BuildRunTest.RESULT_SUCCESS;
         final NodeList testCaseChildNodes = testCaseNode.getChildNodes();
-        final int testCaseChildeNodesLength = testCaseChildNodes.getLength();
-        for (int j = 0; j < testCaseChildeNodesLength; j++) {
+        final int testCaseChildNodesLength = testCaseChildNodes.getLength();
+        for (int j = 0; j < testCaseChildNodesLength; j++) {
           final Node node = testCaseChildNodes.item(j);
           if (node.getNodeName().equals(FAILURE)) {
             // This test case is a failure
@@ -234,13 +234,13 @@ final class JUnitStatisticsProcessor {
       cm.saveObject(bra);
     }
 
-    // Add step run statisttics
+    // Add step run statistics
     cm.addStepStatistics(stepRunID, StepRunAttribute.ATTR_JUNIT_ERRORS, errors);
     cm.addStepStatistics(stepRunID, StepRunAttribute.ATTR_JUNIT_FAILURES, failures);
     cm.addStepStatistics(stepRunID, StepRunAttribute.ATTR_JUNIT_SUCCESSES, successes);
     cm.addStepStatistics(stepRunID, StepRunAttribute.ATTR_JUNIT_TESTS, tests);
 
-    // Add build run statisttics
+    // Add build run statistics
     cm.addRunStatistics(buildRunID, BuildRunAttribute.ATTR_JUNIT_ERRORS, errors);
     cm.addRunStatistics(buildRunID, BuildRunAttribute.ATTR_JUNIT_FAILURES, failures);
     cm.addRunStatistics(buildRunID, BuildRunAttribute.ATTR_JUNIT_SUCCESSES, successes);
@@ -253,7 +253,7 @@ final class JUnitStatisticsProcessor {
     }
   }
 
-  private void ensureValidRootnode(final String nodeName) {
+  private static void ensureValidRootNode(final String nodeName) {
     if (!nodeName.equals(TESTSUITES)) {
       throw new IllegalArgumentException("Invalid document root: " + nodeName);
     }
@@ -279,7 +279,7 @@ final class JUnitStatisticsProcessor {
         q.setInteger(0, testCaseNameID);
         q.setInteger(1, activeBuildID);
         q.setInteger(2, buildRunID);
-        return (BuildRunTest) q.uniqueResult();
+        return q.uniqueResult();
       }
     });
   }
@@ -311,7 +311,7 @@ final class JUnitStatisticsProcessor {
         q.setString(4, BuildRunAttribute.HAS_TESTS);
         q.setString(5, BuildRunAttribute.VALUE_YES);
         q.setCacheable(true);
-        return (BuildRun) q.uniqueResult();
+        return q.uniqueResult();
       }
     });
   }

@@ -29,8 +29,8 @@ import org.parabuild.ci.remote.services.RemoteFileDescriptor;
 import org.parabuild.ci.remote.services.ModifiedFileList;
 
 /**
- * Resusable helper class to find if a given log path is already
- * arhived.
+ * Reusable helper class to find if a given log path is already
+ * archived.
  */
 public final class SimpleFileArchivedLogFinder {
 
@@ -76,7 +76,7 @@ public final class SimpleFileArchivedLogFinder {
    * @param targetPath         file for which to find if it is already in
    *                           the archive.
    * @param ignoreTargetLength if true, length of the object in
-   *                           the arhive won't be compared. ignoreTargetLength is useful
+   *                           the archive won't be compared. ignoreTargetLength is useful
    *                           if a target is a directory and the only thing we care it's
    *                           modification time.
    * @param builderTimeStamp
@@ -84,7 +84,7 @@ public final class SimpleFileArchivedLogFinder {
    */
   public boolean isAlreadyArchived(final List archivedLogs, final String targetPath, final boolean ignoreTargetLength, final long builderTimeStamp) throws IOException, AgentFailureException {
 
-    // gest descriptor
+    // get descriptor
     final RemoteFileDescriptor targetDescriptor = agent.getFileDescriptor(targetPath);
     //if (log.isDebugEnabled()) log.debug("resultFileDescriptor: " + resultFileDescriptor);
     final long targetModified = targetDescriptor.lastModified();
@@ -111,20 +111,20 @@ public final class SimpleFileArchivedLogFinder {
     for (final Iterator i = archivedLogs.iterator(); i.hasNext();) {
       final StepLog stepLog = (StepLog) i.next();
 
-      // for us it is the arhived file result itself
+      // for us it is the archived file result itself
       final File archivedLogHome = archiveManager.getArchivedLogHome(stepLog);
       if (!archivedLogHome.exists()) {
-        log.warn("Expected the arhived file \"" + archivedLogHome + "\" to exist, but it did not. " + stepLog.toString());
+        log.warn("Expected the archived file \"" + archivedLogHome + "\" to exist, but it did not. " + stepLog.toString());
         continue;
       }
 
-      // get relative arthived file name
+      // get relative archived file name
       if (log.isDebugEnabled()) log.debug("stepLog: " + stepLog);
       if (log.isDebugEnabled()) log.debug("archivedLogHome: " + archivedLogHome);
       if (log.isDebugEnabled()) log.debug("archivedLogHome.length(): " + archivedLogHome.length());
       final List archivedLogEntries = archiveManager.getArchivedLogEntries(stepLog);
       if (archivedLogEntries.size() != 1) {
-        log.warn("Expected the arhived entry list size 1 but is was" + archivedLogEntries.size());
+        log.warn("Expected the archived entry list size 1 but is was" + archivedLogEntries.size());
         continue;
       }
 
@@ -139,7 +139,7 @@ public final class SimpleFileArchivedLogFinder {
       differs |= targetModified != archivedLog.lastModified();
       if (!differs) {
         if (log.isDebugEnabled()) log.debug("found");
-        return true; // found in arhive
+        return true; // found in archive
       }
     }
 

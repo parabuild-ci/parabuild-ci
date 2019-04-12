@@ -151,7 +151,7 @@ public final class TextDirLogHandler extends AbstractLogHandler {
 
     // REVIEWME: consider extracting this code to arch/source dir comparer
 
-    // gest descriptor
+    // get descriptor
     final RemoteFileDescriptor targetDescriptor = agent.getFileDescriptor(fullyQualifiedResultPath);
     if (log.isDebugEnabled()) {
       log.debug("logPath: " + fullyQualifiedResultPath);
@@ -164,10 +164,10 @@ public final class TextDirLogHandler extends AbstractLogHandler {
     for (final Iterator i = archivedLogs.iterator(); i.hasNext();) {
       final StepLog stepLog = (StepLog) i.next();
 
-      // for us it is the arhived file result itself
+      // for us it is the archived file result itself
       final File archivedLogHome = archiveManager.getArchivedLogHome(stepLog);
       if (!archivedLogHome.exists()) {
-        log.warn("Expected the arhived file \"" + archivedLogHome + "\" to exist, but it did not. " + stepLog.toString());
+        log.warn("Expected the archived file \"" + archivedLogHome + "\" to exist, but it did not. " + stepLog.toString());
         continue;
       }
 
@@ -178,13 +178,13 @@ public final class TextDirLogHandler extends AbstractLogHandler {
         log.debug("archivedLogHome.lastModified(): " + archivedLogHome.lastModified());
       }
       if (log.isDebugEnabled()) {
-        log.debug("targetDescriptr.lastModified(): " + targetDescriptor.lastModified());
+        log.debug("targetDescriptor.lastModified(): " + targetDescriptor.lastModified());
       }
       if (targetDescriptor.lastModified() == archivedLogHome.lastModified()) {
         if (log.isDebugEnabled()) {
           log.debug("found");
         }
-        return true; // found in arhive
+        return true; // found in archive
       }
     }
 
@@ -198,8 +198,8 @@ public final class TextDirLogHandler extends AbstractLogHandler {
    */
   private static final class IndexableDirectoryFile {
 
-    private File content = null;
-    private String fileNameInArchiveDir = null;
+    private final File content;
+    private final String fileNameInArchiveDir;
 
 
     IndexableDirectoryFile(final File content, final String relativePathInArchiveDir) {

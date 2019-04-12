@@ -232,7 +232,6 @@ public final class ServiceManager {
   /**
    * Reports service startup.
    *
-   * @noinspection UseOfSystemOutOrSystemErr
    */
   private static void reportServiceStarted() {
 

@@ -24,7 +24,7 @@ import org.parabuild.ci.object.User;
  */
 public final class StopRequestImpl implements StopRequest {
 
-  private int userID = User.UNSAVED_ID;
+  private final int userID;
 
   public StopRequestImpl(final int userID) {
     this.userID = userID;

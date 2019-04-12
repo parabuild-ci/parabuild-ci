@@ -51,12 +51,12 @@ public final class WindowsBuildScriptRunner extends AbstractBuildScriptRunner {
   }
 
 
-  private String makeWin95Command(final String scriptFileName) {
+  private static String makeWin95Command(final String scriptFileName) {
     return "command /C " + StringUtils.putIntoDoubleQuotes(scriptFileName);
   }
 
 
-  private String makeNTCommand(final String scriptFileName) {
+  private static String makeNTCommand(final String scriptFileName) {
     return "cmd /C " + StringUtils.putIntoDoubleQuotes(scriptFileName);
   }
 }

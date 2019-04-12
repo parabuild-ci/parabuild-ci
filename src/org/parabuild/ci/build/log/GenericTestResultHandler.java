@@ -138,10 +138,10 @@ public final class GenericTestResultHandler extends AbstractLogHandler {
    * Helper method to load test data,
    *
    * @param archiveFile
-   * @return propertries object
+   * @return properties object
    * @throws IOException
    */
-  private Properties loadTestData(final File archiveFile) throws IOException {
+  private static Properties loadTestData(final File archiveFile) throws IOException {
     final Properties properties = new Properties();
     InputStream is = null;
     try {

@@ -28,7 +28,6 @@ final class ListenPortConfig {
    * Retrieves HTTP listen port used by the app. It assumes there
    * is only one HTTP connector.
    */
-  @SuppressWarnings("MethodMayBeStatic")
   public int getListenPort() throws ConfigurationException {
 
     try {

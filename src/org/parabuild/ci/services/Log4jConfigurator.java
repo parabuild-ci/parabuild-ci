@@ -23,7 +23,6 @@ import java.net.URL;
 /**
  * Singleton to manage logging level (debug/release)
  */
-@SuppressWarnings("ControlFlowStatementWithoutBraces")
 public final class Log4jConfigurator {
 
   public static final String DEBUG_LOG4_CONFIG = "/debug.log4j2.xml";

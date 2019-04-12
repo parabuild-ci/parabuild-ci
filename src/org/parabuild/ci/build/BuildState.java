@@ -32,15 +32,8 @@ import java.util.Date;
  */
 public final class BuildState implements Serializable {
 
-  private static final long serialVersionUID = 2601650602009236539L; // NOPMD
   /**
-   * @noinspection UNUSED_SYMBOL,UnusedDeclaration
-   */
-  private static final Log log = LogFactory.getLog(BuildState.class); // NOPMD
-
-
-  /**
-   * This comparator copares BuildStates by their build names.
+   * This comparator compares BuildStates by their build names.
    */
   public static final Comparator BUILD_NAME_COMPARATOR = new Comparator() {
     /**
@@ -54,17 +47,20 @@ public final class BuildState implements Serializable {
       return ((BuildState) o1).buildName.compareToIgnoreCase(((BuildState) o2).buildName);
     }
   };
-
   public static final String STRING_NOT_RUN_YET = "Not Run Yet";
   public static final String STRING_NOT_AVAILABLE = "Not Available";
-
+  private static final long serialVersionUID = 2601650602009236539L; // NOPMD
+  /**
+   * @noinspection UNUSED_SYMBOL, UnusedDeclaration
+   */
+  private static final Log log = LogFactory.getLog(BuildState.class); // NOPMD
   private volatile BuildRun lastCleanBuildRun = null;
   private volatile BuildRun lastCompleteBuildRun = null;
   private volatile BuildSequence currentlyRunningStep = null;
   private volatile BuildStatus status = null;
   private volatile int activeBuildID = BuildConfig.UNSAVED_ID;
   private volatile int currentlyRunningBuildConfigID = BuildConfig.UNSAVED_ID;
-  private volatile int currentlyRunnigBuildRunID = BuildRun.UNSAVED_ID;
+  private volatile int currentlyRunningBuildRunID = BuildRun.UNSAVED_ID;
   private volatile int currentlyRunningBuildNumber = 0;
   private volatile byte access = BuildConfig.ACCESS_PRIVATE;
   private volatile byte schedule = 0;
@@ -73,6 +69,7 @@ public final class BuildState implements Serializable {
   private volatile Date nextBuildTime = null;
   private volatile String currentlyRunningOnBuildHost = null;
   private volatile String currentlyRunningChangeListNumber = null;
+
 
 
   /**
@@ -96,26 +93,10 @@ public final class BuildState implements Serializable {
 
   /**
    * @return build ID. Each build has as unique ID associated
-   *         with it
+   * with it
    */
   public int getActiveBuildID() {
     return activeBuildID;
-  }
-
-
-  /**
-   * @return build ID as String.
-   */
-  public String getBuildIDAsString() {
-    return Integer.toString(activeBuildID);
-  }
-
-
-  /**
-   * Sets version control code
-   */
-  public void setSourceControl(final byte sourceControl) {
-    this.sourceControl = sourceControl;
   }
 
 
@@ -126,6 +107,14 @@ public final class BuildState implements Serializable {
   public void setActiveBuildID(final int activeBuildID) {
     ArgumentValidator.validateBuildIDInitialized(activeBuildID);
     this.activeBuildID = activeBuildID;
+  }
+
+
+  /**
+   * @return build ID as String.
+   */
+  public String getBuildIDAsString() {
+    return Integer.toString(activeBuildID);
   }
 
 
@@ -285,17 +274,17 @@ public final class BuildState implements Serializable {
   }
 
 
-  public void setCurrentlyRunningBuildRunID(final int currentlyRunnigBuildRunID) {
-    this.currentlyRunnigBuildRunID = currentlyRunnigBuildRunID;
-  }
-
-
   public int getCurrentlyRunningBuildRunID() {
-    return currentlyRunnigBuildRunID;
+    return currentlyRunningBuildRunID;
   }
 
 
-  public int getCurrentlyRunnigSequenceID() {
+  public void setCurrentlyRunningBuildRunID(final int currentlyRunningBuildRunID) {
+    this.currentlyRunningBuildRunID = currentlyRunningBuildRunID;
+  }
+
+
+  public int getCurrentlyRunningSequenceID() {
     if (currentlyRunningStep == null) {
       return BuildSequence.UNSAVED_ID;
     }
@@ -328,22 +317,22 @@ public final class BuildState implements Serializable {
 
   /**
    * @return time when next build will run or null if there is no
-   *         information.
+   * information.
    */
   public Date getNextBuildTime() {
-    return nextBuildTime;
+    return cloneDate(nextBuildTime);
   }
 
 
   /**
-   * Stes time when next build will run or null if there is no
+   * Sets time when next build will run or null if there is no
    * information.
    */
   public void setNextBuildTime(final Date nextBuildTime) {
     if (nextBuildTime == null) {
       this.nextBuildTime = null;
     } else {
-      this.nextBuildTime = (Date) nextBuildTime.clone();
+      this.nextBuildTime = cloneDate(nextBuildTime);
     }
   }
 
@@ -352,12 +341,20 @@ public final class BuildState implements Serializable {
    * @return true if build is running (checking out/stopping/building/etc).
    */
   public boolean isRunning() {
-    return currentlyRunnigBuildRunID != BuildRun.UNSAVED_ID;
+    return currentlyRunningBuildRunID != BuildRun.UNSAVED_ID;
   }
 
 
   public int getSourceControl() {
     return sourceControl;
+  }
+
+
+  /**
+   * Sets version control code
+   */
+  public void setSourceControl(final byte sourceControl) {
+    this.sourceControl = sourceControl;
   }
 
 
@@ -372,20 +369,20 @@ public final class BuildState implements Serializable {
 
 
   /**
-   * Sets build host the build is currently running on or null
-   * if not running or host is not set.
-   */
-  public void setCurrentlyRunningOnBuildHost(final String currentlyRunningOnBuildHost) {
-    this.currentlyRunningOnBuildHost = currentlyRunningOnBuildHost;
-  }
-
-
-  /**
    * Returns build host the build is currently running on or null
    * if not running or host is not set.
    */
   public String getCurrentlyRunningOnBuildHost() {
     return currentlyRunningOnBuildHost;
+  }
+
+
+  /**
+   * Sets build host the build is currently running on or null
+   * if not running or host is not set.
+   */
+  public void setCurrentlyRunningOnBuildHost(final String currentlyRunningOnBuildHost) {
+    this.currentlyRunningOnBuildHost = currentlyRunningOnBuildHost;
   }
 
 
@@ -419,7 +416,7 @@ public final class BuildState implements Serializable {
    *
    * @return true if the build can be stopped.
    */
-  public boolean isStopable() {
+  public boolean isStoppable() {
     return !(status.equals(BuildStatus.INACTIVE) || status.equals(BuildStatus.PAUSED));
   }
 
@@ -453,6 +450,12 @@ public final class BuildState implements Serializable {
     return nextBuildTime != null;
   }
 
+  private static Date cloneDate(final Date date) {
+    if (date == null) {
+      return null;
+    }
+    return (Date) date.clone();
+  }
 
   public String toString() {
     return "BuildState{" +
@@ -462,7 +465,7 @@ public final class BuildState implements Serializable {
             ", status=" + status +
             ", activeBuildID=" + activeBuildID +
             ", currentlyRunningBuildConfigID=" + currentlyRunningBuildConfigID +
-            ", currentlyRunnigBuildRunID=" + currentlyRunnigBuildRunID +
+            ", currentlyRunningBuildRunID=" + currentlyRunningBuildRunID +
             ", currentlyRunningBuildNumber=" + currentlyRunningBuildNumber +
             ", access=" + access +
             ", schedule=" + schedule +

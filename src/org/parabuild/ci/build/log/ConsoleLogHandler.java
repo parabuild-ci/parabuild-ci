@@ -20,9 +20,7 @@ import org.parabuild.ci.archive.ArchiveManagerFactory;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.error.Error;
 import org.parabuild.ci.error.ErrorManagerFactory;
-import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.StepLog;
-import org.parabuild.ci.object.StepRun;
 import org.parabuild.ci.search.SearchManager;
 
 import java.util.Iterator;
@@ -44,8 +42,8 @@ public final class ConsoleLogHandler implements LogHandler {
 
   private static final Log log = LogFactory.getLog(ConsoleLogHandler.class);
 
-  private int stepRunID = StepRun.UNSAVED_ID;
-  private int buildRunConfigID = BuildConfig.UNSAVED_ID;
+  private final int stepRunID;
+  private final int buildRunConfigID;
 
 
   /**
@@ -79,7 +77,7 @@ public final class ConsoleLogHandler implements LogHandler {
         SearchManager.getInstance().index(stepLog, am.getArchivedLogHome(stepLog));
       }
     } catch (final Exception e) {
-      // call resusable error reporting method
+      // call reusable error reporting method
       reportLogProcessingException(e);
     }
   }

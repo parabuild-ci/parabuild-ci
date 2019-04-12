@@ -28,7 +28,6 @@ import org.parabuild.ci.error.Error;
 import org.parabuild.ci.error.ErrorManagerFactory;
 import org.parabuild.ci.object.ActiveBuild;
 import org.parabuild.ci.object.ActiveBuildAttribute;
-import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.ScheduleItem;
 import org.parabuild.ci.services.BuildServiceImpl;
 import org.parabuild.ci.services.BuildStartRequest;
@@ -40,7 +39,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * This class is respondible for running scheduled-style builds.
+ * This class is responsible for running scheduled-style builds.
  *
  * @see BuildScheduler
  * @see BuildServiceImpl
@@ -56,8 +55,8 @@ public final class RepeatableScheduler implements BuildScheduler {
   private static final Log log = LogFactory.getLog(RepeatableScheduler.class);
 
   private boolean startedUp = false;
-  private int activeBuildID = BuildConfig.UNSAVED_ID;
-  private BuildRunner buildRunner = null;
+  private final int activeBuildID;
+  private BuildRunner buildRunner;
   private Scheduler scheduler = null;
   private final List triggerKeyList = new ArrayList(11);
   private SchedulerStatus schedulerStatus = SchedulerStatus.IDLE;
@@ -151,7 +150,7 @@ public final class RepeatableScheduler implements BuildScheduler {
   /**
    * Requests to run a build once.
    * <p/>
-   * As all the jobs are the same for the given schdeuler, this
+   * As all the jobs are the same for the given scheduler, this
    * method just picks up the first job in the scheduler an runs
    * it.
    */
@@ -294,7 +293,7 @@ public final class RepeatableScheduler implements BuildScheduler {
 
 
   /**
-   * Accociates build runner with this scheduler
+   * Associates build runner with this scheduler
    *
    * @param buildRunner
    */
@@ -308,7 +307,7 @@ public final class RepeatableScheduler implements BuildScheduler {
    */
   public void start() {
     // do nothing. this scheduler uses internal thread
-    // which is nadled in requestStart
+    // which is handled in requestStart
   }
 
 
@@ -329,9 +328,9 @@ public final class RepeatableScheduler implements BuildScheduler {
 
 
   /**
-   * Requests this schedule to relod it's configuration. This
+   * Requests this schedule to reload it's configuration. This
    * method is used to notify a scheduler about changes in
-   * persistant configuration.
+   * persistent configuration.
    */
   public synchronized void reloadSchedule() {
     try {
@@ -502,7 +501,7 @@ public final class RepeatableScheduler implements BuildScheduler {
 
 
   /**
-   * A composite value object to hold scheduler's trugger data.
+   * A composite value object to hold scheduler's trigger data.
    */
   private static final class TriggerKey {
 

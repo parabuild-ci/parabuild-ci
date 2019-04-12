@@ -30,9 +30,9 @@ import org.parabuild.ci.process.TimeoutCallback;
 import org.parabuild.ci.remote.Agent;
 
 /**
- * Abstract build runner implements Stategy pattern.
+ * Abstract build runner implements Strategy pattern.
  * <p/>
- * Concerete classes should implement makeCommand method.
+ * Concrete classes should implement makeCommand method.
  */
 public abstract class AbstractBuildScriptRunner implements BuildScriptRunner {
 
@@ -42,7 +42,7 @@ public abstract class AbstractBuildScriptRunner implements BuildScriptRunner {
   private int timeoutSecs = 60 * 60;
   private final List eventListenerList = new ArrayList(3);
   private TimeoutCallback timeoutCallback = null;
-  protected Agent agent = null;
+  protected final Agent agent;
 
 
   protected AbstractBuildScriptRunner(final Agent agent) {
@@ -64,7 +64,7 @@ public abstract class AbstractBuildScriptRunner implements BuildScriptRunner {
     try {
       final String commandString = makeCommand(scriptFileName);
       // NOTE: we do not add PARABUILD_TIMESTAMP here so that we inherit
-      // execution environemnt instead of overwriting it. 
+      // execution environment instead of overwriting it.
       command = new RemoteCommand(agent, false);
       command.setCommand(commandString);
       command.setMergedFile(mergedFile);
@@ -99,7 +99,7 @@ public abstract class AbstractBuildScriptRunner implements BuildScriptRunner {
 
 
   /**
-   * Adds single timeout matche
+   * Adds single timeout match.
    */
   public final void addTimeoutMatch(final String match) {
     this.timeoutMatches.add(match);

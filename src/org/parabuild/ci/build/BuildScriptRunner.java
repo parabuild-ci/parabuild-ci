@@ -67,7 +67,7 @@ public interface BuildScriptRunner {
 
 
   /**
-   * Adds single timeout matche
+   * Adds single timeout match.
    */
   void addTimeoutMatch(String match);
 

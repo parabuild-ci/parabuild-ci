@@ -88,8 +88,8 @@ public interface ArchiveManager {
 
   /**
    * @return File main build log directory. The main log
-   *         directory is a directory where build runner wrtites
-   *         the buin build log to.
+   *         directory is a directory where build runner writes
+   *         the build log to.
    */
   File getBuildLogDir() throws IOException;
 
@@ -102,13 +102,13 @@ public interface ArchiveManager {
 
 
   /**
-   * Returns fully qualifed path to an archived log storage.
+   * Returns fully qualified path to an archived log storage.
    * <p/>
    * Whether is a file or a directory depends on log path type.
    *
    * @param stepLog for which to return the path.
    *
-   * @return fully qualifed path to an archived log.
+   * @return fully qualified path to an archived log.
    *
    * @see StepLog#PATH_TYPE_HTML_DIR - stored as dir
    * @see StepLog#PATH_TYPE_HTML_FILE - stored as dir
@@ -222,11 +222,11 @@ public interface ArchiveManager {
 
 
   /**
-   * Returns fully qualifed path to an archived build result.
+   * Returns fully qualified path to an archived build result.
    *
    * @param stepResult for which to return the path.
    *
-   * @return fully qualifed path to an archived result.
+   * @return fully qualified path to an archived result.
    *
    * @see StepResult#PATH_TYPE_DIR - stored as dir
    * @see StepResult#PATH_TYPE_SINGLE_FILE - stored as dir
@@ -273,9 +273,9 @@ public interface ArchiveManager {
 
 
   /**
-   * Deletes expired build logs it build settings explicitelly
+   * Deletes expired build logs it build settings explicitly
    * allow this. An expiration date is selected as a maximum of
-   * build settings and system-wide minumim settings.
+   * build settings and system-wide minimum settings.
    */
   void deleteExpiredBuildResults() throws IOException;
 }

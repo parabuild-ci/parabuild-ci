@@ -88,7 +88,7 @@ public final class DirResultHandler extends AbstractResultHandler {
     }
 
     // NOTE: vimeshev - 2007-01-25 - any file newer than a
-    // time stamp will trigger an archivation attempt
+    // time stamp will trigger an activation attempt
     final List descriptorsPossiblyNeededArchiving = new ArrayList(11);
     final String[] resultDirectoryFiles = agent.listFilesInDirectory(fullyQualifiedResultPath, getExtensions());
     if (LOG.isDebugEnabled()) {
@@ -128,7 +128,7 @@ public final class DirResultHandler extends AbstractResultHandler {
     //
 
     final Map archivedFilesMap = new HashMap(11);
-    final StepRun stepRun = cm.getStepRun(stepRunID); // REVIREWME: do we really need this operation? may be we should just store StepRun object in AbstractResultHandler?
+    final StepRun stepRun = cm.getStepRun(stepRunID); // REVIEWME: do we really need this operation? may be we should just store StepRun object in AbstractResultHandler?
     final List archivedResults = cm.findBuildRunResults(stepRun.getBuildRunID(), resultType(), resolvedResultPath);
     for (final Iterator i = archivedResults.iterator(); i.hasNext(); ) {
       final StepResult stepResult = (StepResult) i.next();
@@ -235,7 +235,7 @@ public final class DirResultHandler extends AbstractResultHandler {
    *                                 results. It is guaranteed that the list is non-zero size.
    * @param builderTimeStamp
    * @param fullyQualifiedResultPath
-   * @return true if result was already arhived.
+   * @return true if result was already archived.
    * @see AbstractResultHandler#isResultAlreadyArchived
    */
   protected boolean isResultAlreadyArchived(final List archivedBuildRunResults, final long builderTimeStamp,

@@ -29,7 +29,7 @@ public interface BuildRunnerVersionControlFactory {
    * @param buildConfig - build config to use to create a
    * SourceControl for. BuildConfig can be either BuildRunConfig
    * or ActiveBuildConfig. ActiveBuildConfig is passed by
-   * automatic schedulers that whatch source line for changes.
+   * automatic schedulers that watch source line for changes.
    * BuildRunConfig is passed by build runners to run a build
    * against the given build configuration.
    */
