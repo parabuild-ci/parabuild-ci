@@ -58,7 +58,7 @@ public final class BazaarLogCommand extends BazaarCommand {
     final StringBuilder sb = new StringBuilder(100);
     sb.append(" log ");
     sb.append(" -v ");
-    sb.append(" -l ").append(Integer.toString(maxChangeLists));
+    sb.append(" -l ").append(maxChangeLists);
     if (!StringUtils.isBlank(changeListNumberFrom) || !StringUtils.isBlank(changeListNumberTo)) {
       sb.append(" -r").append(changeListNumberFrom).append("..").append(changeListNumberTo);
     }

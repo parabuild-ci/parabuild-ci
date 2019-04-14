@@ -100,7 +100,7 @@ public final class StepResultPanel extends Panel {
 
 
   private void reportUnknownPathType(final byte pathType, final int activeBuildID) {
-    final Error error = new Error("Unknown result path type: " + Integer.toString(pathType));
+    final Error error = new Error("Unknown result path type: " + pathType);
     error.setSendEmail(false);
     error.setErrorLevel(Error.ERROR_LEVEL_WARNING);
     error.setSubsystemName(Error.ERROR_SUBSYSTEM_WEBUI);

@@ -3335,7 +3335,7 @@ public final class ConfigurationManager implements Serializable {
 
 
   public String makeHTMLLogURLPathInfo(final StepLog stepLog) {
-    return HTML_LOG_URL_PREFIX + Integer.toString(getBuildRunConfig(stepLog).getActiveBuildID())
+    return HTML_LOG_URL_PREFIX + getBuildRunConfig(stepLog).getActiveBuildID()
             + '/' + stepLog.getID() + '/' + stepLog.getPath();
   }
 

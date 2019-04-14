@@ -92,7 +92,7 @@ final class SVNLogCommand extends SVNCommand {
     if (useXMLFormat) {
       result.append("--xml").append(' ');
     }
-    result.append(applyLimitOption ? " --limit " + Integer.toString(maxChangeLists) : "");
+    result.append(applyLimitOption ? " --limit " + maxChangeLists : "");
     result.append(" --stop-on-copy --verbose log ").append(makeRevisionRange());
     result.append(' ').append(StringUtils.putIntoDoubleQuotes(getUrl() + '/' + depotPath.getPath()));
     return result.toString();

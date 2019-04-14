@@ -183,7 +183,7 @@ public final class LocalBuilderFiles implements Serializable {
    * @return Version control log prefix
    */
   public String getSourceControlLogPrefix() {
-    return "scm_" + Integer.toString(buildID);
+    return "scm_" + buildID;
   }
 
 

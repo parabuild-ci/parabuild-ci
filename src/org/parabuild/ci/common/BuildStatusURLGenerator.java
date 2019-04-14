@@ -56,7 +56,7 @@ public final class BuildStatusURLGenerator {
 
 
   public String makeBuildStatusURL(final String protocolHostNameAndPort, final int buildID) {
-    return protocolHostNameAndPort + "/parabuild/index.htm?view=detailed&buildid=" + Integer.toString(buildID);
+    return protocolHostNameAndPort + "/parabuild/index.htm?view=detailed&buildid=" + buildID;
   }
 
 

@@ -48,7 +48,7 @@ final class VaultLabelCommand extends VaultCommand {
     args.append(" label");
     args.append(' ').append(StringUtils.putIntoDoubleQuotes(parameters.getRepositoryPath()));
     args.append(' ').append(parameters.getLabel());
-    args.append(' ').append(Integer.toString(parameters.getVersion()));
+    args.append(' ').append(parameters.getVersion());
     return args.toString();
   }
 }

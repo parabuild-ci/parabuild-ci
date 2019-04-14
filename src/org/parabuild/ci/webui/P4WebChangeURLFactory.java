@@ -85,8 +85,8 @@ public final class P4WebChangeURLFactory implements ChangeURLFactory {
         result.append("&ra=s");
         result.append("&c=iyK@").append(change.getFilePath());
         result.append("?ac=19");
-        result.append("&rev1=").append(Integer.toString(revision - 1)); // NOPMD
-        result.append("&rev2=").append(Integer.toString(revision));
+        result.append("&rev1=").append((revision - 1)); // NOPMD
+        result.append("&rev2=").append(revision);
         return new ChangeURLImpl(result.toString(), change.getRevision());
       } else {
         return new ChangeURLImpl(makeFileURL(change), change.getRevision());

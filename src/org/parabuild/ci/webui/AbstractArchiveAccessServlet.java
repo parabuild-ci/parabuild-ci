@@ -95,7 +95,7 @@ public abstract class AbstractArchiveAccessServlet extends HttpServlet {
 
       // output file
       response.setHeader("Content-Type", getMimeType(pathInfo));
-      response.setHeader("Cache-control", "max-age=" + Integer.toString(60 * 60 * 24 * 30 * 12));
+      response.setHeader("Cache-control", "max-age=" + 60 * 60 * 24 * 30 * 12);
       final ServletOutputStream outputStream = response.getOutputStream();
       IoUtils.copyInputToOuputStream(new BufferedInputStream(is), outputStream);
     } finally {

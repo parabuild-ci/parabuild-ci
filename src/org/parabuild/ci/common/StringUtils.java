@@ -128,26 +128,26 @@ public final class StringUtils implements CommonConstants {
     long secondsLeft = seconds;
     final long durationDays = secondsLeft / 86400L;
     if (durationDays > 0) {
-      result.append(Long.toString(durationDays)).append(fullWords ? " days " : "d ");
+      result.append(durationDays).append(fullWords ? " days " : "d ");
       secondsLeft %= 86400L;
     }
 
     final long durationHours = secondsLeft / 3600L;
     if (durationHours > 0) {
-      result.append(durationHours < 10 ? "0" : "").append(Long.toString(durationHours)).append(fullWords ? " hours " : "h ");
+      result.append(durationHours < 10 ? "0" : "").append(durationHours).append(fullWords ? " hours " : "h ");
       secondsLeft %= 3600L;
     }
     if (durationDays > 0) return result;
 
     final long durationMinutes = secondsLeft / 60L;
     if (durationMinutes > 0) {
-      result.append(durationMinutes < 10 ? "0" : "").append(Long.toString(durationMinutes)).append(fullWords ? " minutes " : "m ");
+      result.append(durationMinutes < 10 ? "0" : "").append(durationMinutes).append(fullWords ? " minutes " : "m ");
       secondsLeft %= 60L;
     }
     if (durationHours > 0) return result;
 
     if (secondsLeft < 10) result.append('0');
-    return result.append(Long.toString(secondsLeft)).append(fullWords ? " seconds " : "s ");
+    return result.append(secondsLeft).append(fullWords ? " seconds " : "s ");
   }
 
 
@@ -736,6 +736,6 @@ public final class StringUtils implements CommonConstants {
   }
 
   public static String diffToString(final int diff) {
-    return '(' + (diff >= 0 ? "+" : "-") + Integer.toString(diff) + ')';
+    return '(' + (diff >= 0 ? "+" : "-") + diff + ')';
   }
 }

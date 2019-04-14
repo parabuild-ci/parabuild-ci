@@ -266,7 +266,7 @@ public final class CVSSettingsPanel extends AbstractSourceControlPanel {
      */
     CompressionDropDown() {
       for (int i = 0; i < 10; i++) {
-        addItem(Integer.toString(i) + "  ");
+        addItem(i + "  ");
       }
       setSelection(0);
     }

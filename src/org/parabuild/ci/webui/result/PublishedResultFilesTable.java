@@ -126,7 +126,7 @@ final class PublishedResultFilesTable extends AbstractFlatTable {
 
     // build
 
-    final String caption = psr.getBuildName() + " #" + Integer.toString(psr.getBuildRunNumber());
+    final String caption = psr.getBuildName() + " #" + psr.getBuildRunNumber();
     final PublishedResultLinkFlow resultLinkFlow = (PublishedResultLinkFlow)row[COL_BUILD_LINK];
     resultLinkFlow.setBuildRun(caption, psr.getBuildRunID(), currentUserCanSeeBuild(psr.getActiveBuildID()));
 
