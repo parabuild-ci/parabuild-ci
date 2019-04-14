@@ -164,11 +164,11 @@ abstract class SVNCommand extends VersionControlRemoteCommand {
             // See if there is any thing else
             final int start = markerIndex + marker.length();
             final String leftover = message.substring(start);
-            if (!leftover.isEmpty()) {
-              throw new IOException("Errors while executing SVN command: " + leftover + ", command: " + removePasswordFromDebugString(getCommand()));
-            } else {
+            if (leftover.isEmpty()) {
               // No messages aside from the marker
               return;
+            } else {
+              throw new IOException("Errors while executing SVN command: " + leftover + ", command: " + removePasswordFromDebugString(getCommand()));
             }
           }
         }
