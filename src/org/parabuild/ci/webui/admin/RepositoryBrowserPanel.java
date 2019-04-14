@@ -33,8 +33,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Hold a selector of a repository type and selected
- * repository type panel.
+ * A panel to show a configuration for a given repository browser such as Fisheye.
  */
 public class RepositoryBrowserPanel extends SourceControlPanel {
 
