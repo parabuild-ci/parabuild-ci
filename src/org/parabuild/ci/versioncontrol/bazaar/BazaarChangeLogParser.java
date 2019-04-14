@@ -100,7 +100,7 @@ public final class BazaarChangeLogParser {
    *
    * @param changeLogFile the change log file produced by the command.
    * @return a list of <code>ChangeList</code> objects.
-   * @throws java.io.IOException if I/O error occurs.
+   * @throws IOException if I/O error occurs.
    * @noinspection ReuseOfLocalVariable,HardcodedLineSeparator
    */
   public List parseChangeLog(final File changeLogFile) throws IOException {
