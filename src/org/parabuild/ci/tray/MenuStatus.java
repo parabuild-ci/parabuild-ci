@@ -38,6 +38,7 @@ final class MenuStatus {
   }
 
 
+  @SuppressWarnings("RedundantIfStatement")
   public boolean equals(final Object obj) {
     if (this == obj) return true;
     if (obj == null || getClass() != obj.getClass()) return false;

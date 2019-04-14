@@ -95,8 +95,6 @@ public final class P4ClientNameGeneratorImpl implements P4ClientNameGenerator {
         break;
       }
     }
-    if (!buildIDFound) return false;
-
-    return true;
+    return buildIDFound;
   }
 }

@@ -48,11 +48,8 @@ public final class SourceControlSettingChangeDetector {
     if (newSetting == null && currentSetting != null) return true;
     if (newSetting == null && currentSetting == null) return false;
     if (newSetting != null && currentSetting == null) return true;
-    if (newSetting != null && currentSetting != null
+    return newSetting != null && currentSetting != null
             && newSetting.getPropertyTimeStamp() != currentSetting.getPropertyTimeStamp()
-            && !newSetting.getPropertyValue().equals(currentSetting.getPropertyValue())) {
-      return true;
-    }
-    return false;
+            && !newSetting.getPropertyValue().equals(currentSetting.getPropertyValue());
   }
 }

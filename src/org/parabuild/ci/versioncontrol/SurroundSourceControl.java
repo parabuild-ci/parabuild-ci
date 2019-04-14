@@ -574,6 +574,7 @@ final class SurroundSourceControl extends AbstractSourceControl implements Commo
     }
 
 
+    @SuppressWarnings("RedundantIfStatement")
     public boolean equals(final Object o) {
       if (this == o) return true;
       if (!(o instanceof SurroundChangeListKey)) return false;
