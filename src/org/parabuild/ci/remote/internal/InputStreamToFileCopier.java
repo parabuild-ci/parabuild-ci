@@ -50,7 +50,7 @@ public class InputStreamToFileCopier implements Runnable {
    * @param outputFile
    */
   public InputStreamToFileCopier(final InputStream is, final File outputFile) throws FileNotFoundException {
-    this(is, outputFile != null ? (OutputStream)new FileOutputStream(outputFile) : (OutputStream)new NullOutputStream());
+    this(is, outputFile != null ? new FileOutputStream(outputFile) : new NullOutputStream());
   }
 
 

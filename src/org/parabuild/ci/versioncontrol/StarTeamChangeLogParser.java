@@ -65,7 +65,7 @@ final class StarTeamChangeLogParser {
     final String validatedWorkingDir = ArgumentValidator.validateArgumentNotBlank(workingDir, "working directory");
     this.workingDirLength = validatedWorkingDir.length();
     this.workingDirLowerCase = workingDir.toLowerCase();
-    this.startingFrom = startingFrom != null ? (Date)startingFrom.clone() : (Date)null;
+    this.startingFrom = startingFrom != null ? (Date)startingFrom.clone() : null;
   }
 
 

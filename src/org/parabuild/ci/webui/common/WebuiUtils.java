@@ -976,7 +976,7 @@ public final class WebuiUtils {
 
 
   public static void setValueOrHideIfZero(final Label lbLabel, final Label lbValue, final Integer value) {
-    setValueOrHide(lbLabel, lbValue, value == null || value == 0 ? (String) null : value.toString());
+    setValueOrHide(lbLabel, lbValue, value == null || value == 0 ? null : value.toString());
   }
 
 

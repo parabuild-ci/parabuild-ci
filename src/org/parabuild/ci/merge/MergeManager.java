@@ -13,14 +13,11 @@
  */
 package org.parabuild.ci.merge;
 
-import java.io.*;
-import java.util.*;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import net.sf.ehcache.CacheException;
 import net.sf.hibernate.Hibernate;
 import net.sf.hibernate.Query;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.common.CacheUtils;
 import org.parabuild.ci.common.IoUtils;
 import org.parabuild.ci.common.StringUtils;
@@ -34,6 +31,15 @@ import org.parabuild.ci.object.Merge;
 import org.parabuild.ci.object.MergeChangeList;
 import org.parabuild.ci.object.MergeConfiguration;
 import org.parabuild.ci.object.MergeServiceConfiguration;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 /**
  */
@@ -318,7 +324,7 @@ public final class MergeManager {
   public int getMergeReportCount(final int activeMergeID) {
     return (Integer) ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
-        return (Integer) session.createQuery(
+        return session.createQuery(
                 " select count(bchl) from MergeConfiguration mc, BranchChangeList bchl" +
                         " where mc.activeMergeID = ? " +
                         "   and bchl.mergeConfigurationID = mc.ID ")
