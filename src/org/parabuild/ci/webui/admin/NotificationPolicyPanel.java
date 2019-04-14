@@ -137,8 +137,7 @@ final class NotificationPolicyPanel extends MessagePanel implements Validatable,
     // save header attributes
     final List attrs = inputMap.getUpdatedProperties();
     cm.saveBuildAttributes(buildID, attrs);
-    final boolean saved = true;
-    return saved;
+    return true;
   }
 
 

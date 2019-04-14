@@ -13,9 +13,6 @@
  */
 package org.parabuild.ci.webui;
 
-import java.text.*;
-import java.util.*;
-
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.configuration.TransactionCallback;
@@ -25,6 +22,11 @@ import org.parabuild.ci.webui.common.Pages;
 import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Border;
 import viewtier.ui.Panel;
+
+import java.text.SimpleDateFormat;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
 
 /**
  * This panel display changes participating in the build.
@@ -52,7 +54,7 @@ public final class ChangeListsPanel extends Panel {
   public int showChangeLists(final int activeBuildID, final List changeLists) {
 
     clear();
-    final Integer result = (Integer) ConfigurationManager.runInHibernate(new TransactionCallback() {
+    return (Integer) ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
 
         final SecurityManager sm = SecurityManager.getInstance();
@@ -70,11 +72,10 @@ public final class ChangeListsPanel extends Panel {
           add(pnlDetails);
           changeListsCount++;
         }
-        
+
         return new Integer(changeListsCount);
       }
     });
-    return result;
   }
 
 

@@ -13,9 +13,10 @@
  */
 package org.parabuild.ci.process;
 
-import java.util.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+
+import java.util.List;
 
 /**
  * Tails log.
@@ -56,9 +57,7 @@ final class TailerImpl implements Tailer {
    * @return a copy of the lines stored in the cyclic buffer.
    */
   public synchronized List getLines() {
-    final List all = cyclicBuffer.getAll();
-//    if (log.isDebugEnabled()) log.debug("all: " + all);
-    return all;
+    return cyclicBuffer.getAll();
   }
 
 

@@ -184,7 +184,7 @@ public class ProjectManager {
    */
   public int getBuildCount(final int projectID) {
 
-    final Integer integer = (Integer) ConfigurationManager.runInHibernate(new TransactionCallback() {
+    return (Integer) ConfigurationManager.runInHibernate(new TransactionCallback() {
 
       public Object runInTransaction() throws Exception {
 
@@ -203,7 +203,6 @@ public class ProjectManager {
         return query.uniqueResult();
       }
     });
-    return integer;
   }
 }
 
