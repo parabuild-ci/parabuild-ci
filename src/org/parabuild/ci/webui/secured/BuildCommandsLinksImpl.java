@@ -114,7 +114,7 @@ final class BuildCommandsLinksImpl extends BuildCommandsLinks {
 //    if (log.isDebugEnabled()) log.debug("tierletContext: " + tierletContext);
     if (tierletContext != null) {
       final SecurityManager sm = SecurityManager.getInstance();
-      User user = sm.getUserFromRequest(tierletContext.getHttpServletRequest());
+      final User user = sm.getUserFromRequest(tierletContext.getHttpServletRequest());
       rights = sm.getUserBuildRights(user, buildID);
 //      if (log.isDebugEnabled()) log.debug("========================================");
 //      if (log.isDebugEnabled()) log.debug("activeBuild ID: " + activeBuild.getID());

@@ -64,7 +64,7 @@ public final class HTMLLogServlet extends AbstractArchiveAccessServlet {
       // validate build ID and get build config
       final ConfigurationManager cm = ConfigurationManager.getInstance();
       try {
-        ActiveBuildConfig activeBuildConfig = cm.getActiveBuildConfig(activeBuildID);
+        final ActiveBuildConfig activeBuildConfig = cm.getActiveBuildConfig(activeBuildID);
         //if (log.isDebugEnabled()) log.debug("buildConfig: " + buildConfig);
         if (activeBuildConfig == null) return null;
       } catch (final Exception e) {

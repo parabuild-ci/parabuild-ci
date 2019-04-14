@@ -82,7 +82,7 @@ final class UpgraderToVersion4 implements SingleStepSchemaUpgrader {
       rs = ps.executeQuery();
       if (rs.next()) {
         // record exists
-        int anonBuildsEnabledPropID = rs.getInt(1);
+        final int anonBuildsEnabledPropID = rs.getInt(1);
         final PreparedStatement ps1 = conn.prepareStatement("update SYSTEM_PROPERTY set VALUE = ? where ID = ?");
         ps1.setString(1, SystemProperty.OPTION_CHECKED);
         ps1.setInt(2, anonBuildsEnabledPropID);
