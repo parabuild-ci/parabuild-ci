@@ -1125,7 +1125,7 @@ public class JNDIAuthenticator {
    *                    authenticating this username
    */
   private String digest(final String credentials) throws NoSuchAlgorithmException {
-    if (!!StringUtils.isBlank(digestAlgorithm)) {
+    if (StringUtils.isBlank(digestAlgorithm)) {
       return credentials;
     }
     final MessageDigest md = MessageDigest.getInstance(digestAlgorithm);
