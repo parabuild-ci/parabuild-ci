@@ -13,10 +13,11 @@
  */
 package org.parabuild.ci.tray;
 
-import java.io.*;
-import java.lang.reflect.*;
+import org.parabuild.ci.common.IoUtils;
+import org.parabuild.ci.common.RuntimeUtils;
 
-import org.parabuild.ci.common.*;
+import java.io.IOException;
+import java.lang.reflect.Method;
 
 /**
  * This class is responcible for launching a default Web browser
