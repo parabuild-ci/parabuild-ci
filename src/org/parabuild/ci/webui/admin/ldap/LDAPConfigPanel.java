@@ -13,18 +13,47 @@
  */
 package org.parabuild.ci.webui.admin.ldap;
 
-import java.util.*;
-import org.apache.commons.logging.*;
-
-import org.parabuild.ci.common.*;
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.security.*;
-import org.parabuild.ci.webui.common.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.common.ValidationException;
+import org.parabuild.ci.configuration.ConfigurationConstants;
+import org.parabuild.ci.configuration.LDAPReferralCodeToValueConverter;
+import org.parabuild.ci.configuration.LDAPVersionCodeToValueConverter;
+import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
+import org.parabuild.ci.object.Group;
+import org.parabuild.ci.object.SystemProperty;
+import org.parabuild.ci.security.JNDIAuthenticator;
+import org.parabuild.ci.security.JNDIUserLookupStringGenerator;
 import org.parabuild.ci.webui.admin.AbstractSystemConfigPanel;
-import org.parabuild.ci.webui.admin.ldap.ConnectionSecurityLevelDropDown;
 import org.parabuild.ci.webui.admin.GroupDropDown;
-import viewtier.ui.*;
+import org.parabuild.ci.webui.common.BoldCommonLabel;
+import org.parabuild.ci.webui.common.CodeNameDropDown;
+import org.parabuild.ci.webui.common.CommonButton;
+import org.parabuild.ci.webui.common.CommonField;
+import org.parabuild.ci.webui.common.CommonFieldLabel;
+import org.parabuild.ci.webui.common.CommonFlow;
+import org.parabuild.ci.webui.common.CommonLabel;
+import org.parabuild.ci.webui.common.EmailField;
+import org.parabuild.ci.webui.common.EncryptingPassword;
+import org.parabuild.ci.webui.common.GridIterator;
+import org.parabuild.ci.webui.common.Pages;
+import org.parabuild.ci.webui.common.RequiredFieldMarker;
+import org.parabuild.ci.webui.common.WebUIConstants;
+import org.parabuild.ci.webui.common.WebuiUtils;
+import viewtier.ui.Button;
+import viewtier.ui.ButtonPressedEvent;
+import viewtier.ui.ButtonPressedListener;
+import viewtier.ui.CheckBox;
+import viewtier.ui.Color;
+import viewtier.ui.Field;
+import viewtier.ui.Label;
+import viewtier.ui.Panel;
+import viewtier.ui.RadioButton;
+import viewtier.ui.Tierlet;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * LDAP config panel

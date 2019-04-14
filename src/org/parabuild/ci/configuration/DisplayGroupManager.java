@@ -24,7 +24,6 @@ import org.parabuild.ci.object.DisplayGroup;
 import org.parabuild.ci.object.DisplayGroupBuild;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;

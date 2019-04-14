@@ -32,7 +32,6 @@ import org.parabuild.ci.security.SecurityManager;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;

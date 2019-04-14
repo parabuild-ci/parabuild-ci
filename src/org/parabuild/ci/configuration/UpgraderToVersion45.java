@@ -18,7 +18,6 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import org.parabuild.ci.common.IoUtils;
-import org.parabuild.ci.common.StringUtils;
 import org.parabuild.ci.object.ActiveBuildAttribute;
 import org.parabuild.ci.object.BuildRun;
 import org.parabuild.ci.object.BuildRunAttribute;

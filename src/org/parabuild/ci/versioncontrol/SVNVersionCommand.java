@@ -14,7 +14,6 @@
 package org.parabuild.ci.versioncontrol;
 
 import org.parabuild.ci.common.*;
-import org.parabuild.ci.process.*;
 import org.parabuild.ci.remote.*;
 
 import java.io.IOException;

@@ -13,8 +13,6 @@
  */
 package org.parabuild.ci.webui.secured;
 
-import viewtier.ui.*;
-
 /**
  * This class makes components that are subject to security
  * control.

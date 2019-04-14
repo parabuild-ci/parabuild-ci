@@ -15,7 +15,6 @@ package org.parabuild.ci.webui.admin;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.common.CommonConstants;
 import org.parabuild.ci.configuration.AgentHost;
 import org.parabuild.ci.object.AgentConfig;
 import org.parabuild.ci.process.OSProcess;

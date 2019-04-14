@@ -14,7 +14,6 @@
 package org.parabuild.ci.webui;
 
 import org.parabuild.ci.webui.common.BasePage;
-import org.parabuild.ci.webui.common.MessagePanel;
 import org.parabuild.ci.webui.common.Pages;
 import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Parameters;
