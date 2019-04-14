@@ -41,7 +41,7 @@ public final class ReturnPage implements Serializable {
   public static final String PARABUILD_RETURN_PAGE = "parabuild.return.page";
 
   private String page = null;
-  private Properties params = new Properties();
+  private final Properties params = new Properties();
 
 
   public void setPage(final String page) {

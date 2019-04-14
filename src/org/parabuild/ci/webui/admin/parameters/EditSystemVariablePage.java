@@ -155,8 +155,8 @@ public final class EditSystemVariablePage extends BasePage implements Conversati
   private static class SaveButtonPressedListener implements ButtonPressedListener {
 
     private final SystemVariablePanel pnlVariable;
-    private byte variableType;
-    private int variableOwner;
+    private final byte variableType;
+    private final int variableOwner;
 
 
     public SaveButtonPressedListener(final byte variableType, final int variableOwner, final SystemVariablePanel pnlVariable) {

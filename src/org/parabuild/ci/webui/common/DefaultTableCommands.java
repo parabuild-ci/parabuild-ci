@@ -32,15 +32,15 @@ public final class DefaultTableCommands extends Flow implements AbstractFlatTabl
   private static final String CAPTION_MOVE_ROW_UP = "Move Row Up";
   private static final String CAPTION_MOVE_ROW_DOWN = "Move Row Down";
 
-  private Menu addRowCommand = new CommonMenu(CAPTION_ADD_ROW);
-  private Menu insertRowCommand = new CommonMenu(CAPTION_INSERT_ROW);
-  private Menu deleteRowCommand = new DeleteSelectedMenu();
-  private Menu moveRowUpCommand = new CommonMenu(CAPTION_MOVE_ROW_UP);
-  private Menu moveRowDownCommand = new CommonMenu(CAPTION_MOVE_ROW_DOWN);
-  private MenuDividerLabel lbAddRowSeparator = new MenuDividerLabel();
-  private MenuDividerLabel lbInsertRowSeparator = new MenuDividerLabel();
-  private MenuDividerLabel lbDeleteRowSeparator = new MenuDividerLabel();
-  private MenuDividerLabel lbMoveRowUpSeparator = new MenuDividerLabel();
+  private final Menu addRowCommand = new CommonMenu(CAPTION_ADD_ROW);
+  private final Menu insertRowCommand = new CommonMenu(CAPTION_INSERT_ROW);
+  private final Menu deleteRowCommand = new DeleteSelectedMenu();
+  private final Menu moveRowUpCommand = new CommonMenu(CAPTION_MOVE_ROW_UP);
+  private final Menu moveRowDownCommand = new CommonMenu(CAPTION_MOVE_ROW_DOWN);
+  private final MenuDividerLabel lbAddRowSeparator = new MenuDividerLabel();
+  private final MenuDividerLabel lbInsertRowSeparator = new MenuDividerLabel();
+  private final MenuDividerLabel lbDeleteRowSeparator = new MenuDividerLabel();
+  private final MenuDividerLabel lbMoveRowUpSeparator = new MenuDividerLabel();
 
 
   public DefaultTableCommands(final AbstractFlatTable table) {

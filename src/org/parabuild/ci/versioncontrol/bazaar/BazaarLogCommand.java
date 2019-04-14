@@ -40,7 +40,7 @@ public final class BazaarLogCommand extends BazaarCommand {
   private final String changeListNumberFrom;
   private final String changeListNumberTo;
   private final int maxChangeLists;
-  private String branchPath;
+  private final String branchPath;
 
 
   protected BazaarLogCommand(final Agent agent, final String exePath, final String branchPath,

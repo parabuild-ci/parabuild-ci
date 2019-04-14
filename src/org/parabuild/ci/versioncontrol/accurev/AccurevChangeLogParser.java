@@ -46,7 +46,7 @@ final class AccurevChangeLogParser {
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
   private static final Log LOG = LogFactory.getLog(AccurevChangeLogParser.class); // NOPMD
-  private int maxChangeListSize;
+  private final int maxChangeListSize;
   private int maxChangeLists = 1;
 
 

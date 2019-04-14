@@ -57,7 +57,7 @@ public final class StartBuildPanel extends MessagePanel {
 
   private ManualStartParametersPanel pnlStartParameters = null;
   private final int activeBuildID;
-  private String buildName;
+  private final String buildName;
   private final boolean publishingRun;
 
 

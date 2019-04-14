@@ -1435,7 +1435,7 @@ public class JNDIAuthenticator {
       final String nextPathPart = userPatternString.substring
               (startParenLoc + 1, endParenLoc);
       pathList.add(nextPathPart);
-      int startingPoint = endParenLoc + 1;
+      final int startingPoint = endParenLoc + 1;
       startParenLoc = userPatternString.indexOf('(', startingPoint);
     }
 

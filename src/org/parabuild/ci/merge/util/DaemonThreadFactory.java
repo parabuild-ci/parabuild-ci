@@ -24,7 +24,7 @@ public final class DaemonThreadFactory implements ThreadFactory {
 
   private static final Log log = LogFactory.getLog(DaemonThreadFactory.class);
 
-  private String daemonName;
+  private final String daemonName;
 
 
   public DaemonThreadFactory(final String name) {

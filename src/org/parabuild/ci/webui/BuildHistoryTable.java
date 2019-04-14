@@ -64,7 +64,7 @@ public final class BuildHistoryTable extends AbstractFlatTable {
   private final SystemConfigurationManager systemCM = SystemConfigurationManagerFactory.getManager(); // NOPMD
   private final ConfigurationManager cm = ConfigurationManager.getInstance();
   private List buildRunList = null;
-  private String buildNameColumnName;
+  private final String buildNameColumnName;
 
 
   /**

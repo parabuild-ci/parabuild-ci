@@ -23,7 +23,7 @@ import org.parabuild.ci.remote.Agent;
  */
 final class PVCSRunCommand extends PVCSCommand {
 
-  private PVCSRunCommandParameters parameters;
+  private final PVCSRunCommandParameters parameters;
   private String tempFile = null;
 
 

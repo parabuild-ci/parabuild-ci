@@ -100,7 +100,7 @@ final class EditMergePanel extends MessagePanel {
   private final Label lbSourceValueSeparator = new Label();  // NOPMD
   private final Label lbTarget = new CommonFieldLabel(CAPTION_TARGET); // NOPMD
   private final Label lbTargetValueSeparator = new Label();  // NOPMD
-  private Label lbCommandsSeparator = new Label();
+  private final Label lbCommandsSeparator = new Label();
 
   private final BranchViewSourceDropdown ddBranchViewSource = new BranchViewSourceDropdown(); // NOPMD
   private final Button btnCancel = new CancelButton(); // NOPMD
@@ -125,7 +125,7 @@ final class EditMergePanel extends MessagePanel {
 
   private int mergeID = MergeConfiguration.UNSAVED_ID; // NOPMD
   private int projectID = Project.UNSAVED_ID;
-  private byte mode;
+  private final byte mode;
 
 
   public EditMergePanel(final byte mode) {

@@ -25,11 +25,11 @@ public final class RemoteFileDescriptor implements Serializable {
 
   private static final long serialVersionUID = -7779662857257415860L; // NOPMD
 
-  private String canonicalPath;
-  private boolean directory;
-  private boolean file;
-  private long lastModified;
-  private long length;
+  private final String canonicalPath;
+  private final boolean directory;
+  private final boolean file;
+  private final long lastModified;
+  private final long length;
 
 
   /**

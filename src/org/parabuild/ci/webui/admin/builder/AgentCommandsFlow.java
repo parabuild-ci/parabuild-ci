@@ -30,7 +30,7 @@ final class AgentCommandsFlow extends Flow {
 
   private Link lnkEdit = null;
   private Link lnkDelete = null;
-  private CommonLink lnkVariables;
+  private final CommonLink lnkVariables;
 
 
   /**

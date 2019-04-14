@@ -211,8 +211,8 @@ final class VariableValueHolderFlow extends Flow {
   static final class CheckListValueSource implements ValueSource {
 
     private static final int INITIAL_LIST_CAPACITY = 5;
-    private List checkBoxes = new ArrayList(INITIAL_LIST_CAPACITY);
-    private List checkValues = new ArrayList(INITIAL_LIST_CAPACITY);
+    private final List checkBoxes = new ArrayList(INITIAL_LIST_CAPACITY);
+    private final List checkValues = new ArrayList(INITIAL_LIST_CAPACITY);
 
 
     public List getValues() {
@@ -252,8 +252,8 @@ final class VariableValueHolderFlow extends Flow {
   static final class RadioListValueSource implements ValueSource {
 
     private static final int INITIAL_LIST_CAPACITY = 5;
-    private List radioButtons = new ArrayList(INITIAL_LIST_CAPACITY);
-    private List radioValues = new ArrayList(INITIAL_LIST_CAPACITY);
+    private final List radioButtons = new ArrayList(INITIAL_LIST_CAPACITY);
+    private final List radioValues = new ArrayList(INITIAL_LIST_CAPACITY);
 
 
     public List getValues() {

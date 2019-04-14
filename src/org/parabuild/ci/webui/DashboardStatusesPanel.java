@@ -48,9 +48,9 @@ public class DashboardStatusesPanel extends Panel {
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
   private static final Log LOG = LogFactory.getLog(BuildStatusesTable.class); // NOPMD
-  private DashboardOverviewPanel dashboardOverviewPanel = new DashboardOverviewPanel();
-  private DashboardRecentEventsPanel dashboardRecentEventsPanel = new DashboardRecentEventsPanel();
-  private DashboardImagesPanel dashboardImagesPanel = new DashboardImagesPanel();
+  private final DashboardOverviewPanel dashboardOverviewPanel = new DashboardOverviewPanel();
+  private final DashboardRecentEventsPanel dashboardRecentEventsPanel = new DashboardRecentEventsPanel();
+  private final DashboardImagesPanel dashboardImagesPanel = new DashboardImagesPanel();
   private static final long serialVersionUID = -2324061501016615774L;
 
 

@@ -23,8 +23,8 @@ public final class AutomaticScheduleSettingsPanel extends ScheduleSettingsPanel 
 
   private static final long serialVersionUID = -8801504979595049851L; // NOPMD
 
-  private SimpleAutomaticScheduleSettingsPanel simpleSettingsPanel = new SimpleAutomaticScheduleSettingsPanel();
-  private TimedAutomaticScheduleSettingsPanel timedSettingsPanel = new TimedAutomaticScheduleSettingsPanel();
+  private final SimpleAutomaticScheduleSettingsPanel simpleSettingsPanel = new SimpleAutomaticScheduleSettingsPanel();
+  private final TimedAutomaticScheduleSettingsPanel timedSettingsPanel = new TimedAutomaticScheduleSettingsPanel();
 
 
   public AutomaticScheduleSettingsPanel() {

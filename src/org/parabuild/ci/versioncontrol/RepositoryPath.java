@@ -26,7 +26,7 @@ public final class RepositoryPath implements Serializable {
   private static final long serialVersionUID = -8336982435392528570L; // NOPMD
 
   private String path = null;
-  private List options;
+  private final List options;
 
 
   /**

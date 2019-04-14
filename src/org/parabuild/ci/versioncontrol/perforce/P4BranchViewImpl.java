@@ -18,13 +18,13 @@ package org.parabuild.ci.versioncontrol.perforce;
  */
 final class P4BranchViewImpl implements P4BranchView {
 
-  private String branch;
-  private String update;
-  private String access;
-  private String owner;
-  private String description;
-  private String options;
-  private String view;
+  private final String branch;
+  private final String update;
+  private final String access;
+  private final String owner;
+  private final String description;
+  private final String options;
+  private final String view;
 
 
   /**

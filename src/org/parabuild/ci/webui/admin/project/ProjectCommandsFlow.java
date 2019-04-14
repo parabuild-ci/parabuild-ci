@@ -30,7 +30,7 @@ public final class ProjectCommandsFlow extends Flow {
 
   private Link lnkEdit = null;
   private Link lnkDelete = null;
-  private Link lnkVariables;
+  private final Link lnkVariables;
 
 
   /**

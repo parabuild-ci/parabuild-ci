@@ -47,7 +47,7 @@ public final class EditGroupPanel extends MessagePanel implements Validatable, S
   private final CommonFieldLabel lbAllowedBuild = new CommonFieldLabel(CAPTION_ALLOWED_BUILDS); // NOPMD
   private final CommonFieldLabel lbRights = new CommonFieldLabel(CAPTION_RIGHTS);  // NOPMD
 
-  private Panel pnlBuildRightsHolder = new Panel();   // NOPMD
+  private final Panel pnlBuildRightsHolder = new Panel();   // NOPMD
 
   private int groupID = Group.UNSAVED_ID;
 

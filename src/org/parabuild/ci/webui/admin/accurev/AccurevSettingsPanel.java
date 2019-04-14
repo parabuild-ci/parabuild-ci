@@ -48,25 +48,25 @@ public final class AccurevSettingsPanel extends AbstractSourceControlPanel {
   private static final String USER = "User: ";
   private static final String WORKSPACE_KIND = "File Locking: ";
 
-  private CommonFieldLabel lbDepot = new CommonFieldLabel(DEPOT);
-  private CommonFieldLabel lbHost = new CommonFieldLabel(HOST);
-  private CommonFieldLabel lbLineTerminator = new CommonFieldLabel(LINE_TERMINATOR);
-  private CommonFieldLabel lbPassword = new CommonFieldLabel(PASSWORD);
-  private CommonFieldLabel lbPathToExe = new CommonFieldLabel(EXE_PATH);
-  private CommonFieldLabel lbPort = new CommonFieldLabel(PORT);
-  private CommonFieldLabel lbStream = new CommonFieldLabel(STREAM);
-  private CommonFieldLabel lbUser = new CommonFieldLabel(USER);
-  private CommonFieldLabel lbLock = new CommonFieldLabel(WORKSPACE_KIND);
+  private final CommonFieldLabel lbDepot = new CommonFieldLabel(DEPOT);
+  private final CommonFieldLabel lbHost = new CommonFieldLabel(HOST);
+  private final CommonFieldLabel lbLineTerminator = new CommonFieldLabel(LINE_TERMINATOR);
+  private final CommonFieldLabel lbPassword = new CommonFieldLabel(PASSWORD);
+  private final CommonFieldLabel lbPathToExe = new CommonFieldLabel(EXE_PATH);
+  private final CommonFieldLabel lbPort = new CommonFieldLabel(PORT);
+  private final CommonFieldLabel lbStream = new CommonFieldLabel(STREAM);
+  private final CommonFieldLabel lbUser = new CommonFieldLabel(USER);
+  private final CommonFieldLabel lbLock = new CommonFieldLabel(WORKSPACE_KIND);
 
-  private CommonField flDepot = new CommonField("accurev-depot", 75, 80);
-  private CommonField flHost = new CommonField("accurev-host", 50, 50);
-  private CommonField flPathToExe = new CommonField("path-to-accurev-exe", 100, 70);
-  private CommonField flPort = new CommonField("accurev-port", 5, 5);
-  private CommonField flStream = new CommonField("accurev-stream", 150, 90);
-  private CommonField flUser = new CommonField("accurev-user", 30, 30);
-  private DropDown flLock = new AccurevFileLockingDropDown();
-  private DropDown flLineTerminator = new AccurevEOLTypeDropDown();
-  private Password flPassword = new EncryptingPassword(25, 25, "accurev-password");
+  private final CommonField flDepot = new CommonField("accurev-depot", 75, 80);
+  private final CommonField flHost = new CommonField("accurev-host", 50, 50);
+  private final CommonField flPathToExe = new CommonField("path-to-accurev-exe", 100, 70);
+  private final CommonField flPort = new CommonField("accurev-port", 5, 5);
+  private final CommonField flStream = new CommonField("accurev-stream", 150, 90);
+  private final CommonField flUser = new CommonField("accurev-user", 30, 30);
+  private final DropDown flLock = new AccurevFileLockingDropDown();
+  private final DropDown flLineTerminator = new AccurevEOLTypeDropDown();
+  private final Password flPassword = new EncryptingPassword(25, 25, "accurev-password");
 
 
   /**

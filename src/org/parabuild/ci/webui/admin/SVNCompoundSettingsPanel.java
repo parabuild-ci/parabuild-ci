@@ -25,8 +25,8 @@ import java.util.List;
  */
 public final class SVNCompoundSettingsPanel extends SourceControlPanel {
 
-  private SVNSettingsPanel pnlSVNSettings = new SVNSettingsPanel();
-  private RepositoryBrowserPanel pnlRepositoryBrowser = new RepositoryBrowserPanel(true);
+  private final SVNSettingsPanel pnlSVNSettings = new SVNSettingsPanel();
+  private final RepositoryBrowserPanel pnlRepositoryBrowser = new RepositoryBrowserPanel(true);
 
 
   public SVNCompoundSettingsPanel() {

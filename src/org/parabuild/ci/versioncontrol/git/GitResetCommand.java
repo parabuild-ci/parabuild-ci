@@ -35,7 +35,7 @@ final class GitResetCommand extends GitCommand {
   private final String password;
   private final String pathToGitExe;
   private final String user;
-  private String hash;
+  private final String hash;
 
 
   GitResetCommand(final Agent agent, final String pathToGitExe, final String repository,

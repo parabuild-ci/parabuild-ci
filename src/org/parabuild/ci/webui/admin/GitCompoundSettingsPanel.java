@@ -25,8 +25,8 @@ import java.util.List;
  */
 public final class GitCompoundSettingsPanel extends SourceControlPanel {
 
-  private GitSettingsPanel pnlGitSettings = new GitSettingsPanel();
-  private RepositoryBrowserPanel pnlRepositoryBrowser = new RepositoryBrowserPanel(true);
+  private final GitSettingsPanel pnlGitSettings = new GitSettingsPanel();
+  private final RepositoryBrowserPanel pnlRepositoryBrowser = new RepositoryBrowserPanel(true);
 
 
   public GitCompoundSettingsPanel() {

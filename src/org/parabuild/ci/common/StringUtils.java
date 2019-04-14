@@ -54,8 +54,8 @@ public final class StringUtils implements CommonConstants {
   private static final int FOURBYTE = 4;
   private static final int SIGN = -128;
   private static final byte PAD = (byte)'=';
-  private static byte [] base64Alphabet = new byte[BASELENGTH];
-  private static byte [] lookUpBase64Alphabet = new byte[LOOKUPLENGTH];
+  private static final byte [] base64Alphabet = new byte[BASELENGTH];
+  private static final byte [] lookUpBase64Alphabet = new byte[LOOKUPLENGTH];
 
   private static final byte[] EMPY_BYTE_ARRAY = new byte[0];
 

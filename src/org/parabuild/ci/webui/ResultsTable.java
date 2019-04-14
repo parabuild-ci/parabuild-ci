@@ -58,7 +58,7 @@ final class ResultsTable extends AbstractFlatTable {
   private static final String CAPTION_BUILD_NAME = "Build Name";
   private static final String CAPTION_PINNED = "";
 
-  private List resultVOs = new ArrayList(0);
+  private final List resultVOs = new ArrayList(0);
   private final List deleted = new ArrayList(0);
   private final int buildID;
 

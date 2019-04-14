@@ -31,7 +31,7 @@ public final class AgentConfigVO implements ObjectConstants {
   private boolean enabled = true;
   private boolean deleted = false;
   private String description = "";
-  private String password = null;
+  private final String password = null;
   private int buildConfigCount = 0;
   private boolean serialize = false;
 

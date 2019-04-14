@@ -43,8 +43,8 @@ final class SVNManualScheduleStartParametersPanel extends ManualScheduleStartPar
   private static final String CAPTION_DEPOT_PATH = "Subversion repository path:";
   private static final String CAPTION_CHANGE_LIST_NUMBER = "Change list number:";
 
-  private CommonFieldLabel lbDepotPath = new CommonFieldLabel(CAPTION_DEPOT_PATH); // NOPMD
-  private CommonFieldLabel lbChangeListNumber = new CommonFieldLabel(CAPTION_CHANGE_LIST_NUMBER); // NOPMD
+  private final CommonFieldLabel lbDepotPath = new CommonFieldLabel(CAPTION_DEPOT_PATH); // NOPMD
+  private final CommonFieldLabel lbChangeListNumber = new CommonFieldLabel(CAPTION_CHANGE_LIST_NUMBER); // NOPMD
 
   private final Text flDepotPath = new Text(100, 5);
   private final Field flChangeListNumber = new CommonField(7, 7);

@@ -20,8 +20,8 @@ public final class TailBufferSizeImpl implements TailBufferSize {
   private static final int DEFAULT_MAX_LINE_COUNT = 100;
   private static final int DEFAULT_MAX_LINE_LENGTH = 200;
 
-  private int maxLineCount; // required by Hessian to staty non-final
-  private int maxLineLength;  // required by Hessian to staty non-final
+  private final int maxLineCount; // required by Hessian to staty non-final
+  private final int maxLineLength;  // required by Hessian to staty non-final
 
 
   public TailBufferSizeImpl() {

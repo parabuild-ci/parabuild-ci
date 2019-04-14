@@ -68,7 +68,7 @@ public abstract class AbstractResultConfigPanel extends MessagePanel implements 
   protected int buildID = BuildConfig.UNSAVED_ID;
 
   // Captions
-  private CommonFieldLabel lbShellVariable = new CommonFieldLabel(CAPTION_SHELL_VARIABLE);
+  private final CommonFieldLabel lbShellVariable = new CommonFieldLabel(CAPTION_SHELL_VARIABLE);
 
 
   // fields

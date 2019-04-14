@@ -25,8 +25,8 @@ import java.util.List;
  */
 public final class CVSCompoundSettingsPanel extends SourceControlPanel {
 
-  private CVSSettingsPanel pnlCVSSettings = new CVSSettingsPanel();
-  private RepositoryBrowserPanel pnlRepositoryBrowser = new RepositoryBrowserPanel(true);
+  private final CVSSettingsPanel pnlCVSSettings = new CVSSettingsPanel();
+  private final RepositoryBrowserPanel pnlRepositoryBrowser = new RepositoryBrowserPanel(true);
 
 
   public CVSCompoundSettingsPanel() {

@@ -45,7 +45,7 @@ public final class MergeManager {
   /**
    * Holds a set of {@link MergeDaemon} objects.
    */
-  private Map mergeDaemons = new HashMap(33);
+  private final Map mergeDaemons = new HashMap(33);
 
 
   /**

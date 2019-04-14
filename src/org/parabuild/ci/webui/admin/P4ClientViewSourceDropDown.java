@@ -35,7 +35,7 @@ final class P4ClientViewSourceDropDown extends CodeNameDropDown {
   public static final byte SOURCE_DEPOT_PATH = SourceControlSetting.P4_CLIENT_VIEW_SOURCE_VALUE_DEPOT_PATH;
   public static final byte SOURCE_CLIENT_NAME = SourceControlSetting.P4_CLIENT_VIEW_SOURCE_VALUE_CLIENT_NAME;
 
-  private Map showOnSelectMap = new HashMap(3);
+  private final Map showOnSelectMap = new HashMap(3);
 
 
   P4ClientViewSourceDropDown() {

@@ -39,7 +39,7 @@ final class AccurevMkwsCommand extends AccurevCommand {
   private final String workspaceName;
   private final byte kind;
   private final byte eolType;
-  private String storage;
+  private final String storage;
 
 
   /**

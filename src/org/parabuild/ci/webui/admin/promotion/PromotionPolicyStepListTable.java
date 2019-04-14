@@ -154,8 +154,8 @@ final class PromotionPolicyStepListTable extends AbstractFlatTable {
 
   private static final class OrderCommands extends Flow {
 
-    private Link lnkUp;
-    private Link lnkDown;
+    private final Link lnkUp;
+    private final Link lnkDown;
     private static final long serialVersionUID = 7439593171207381690L;
 
 

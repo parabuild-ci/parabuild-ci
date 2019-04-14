@@ -32,8 +32,8 @@ final class AccurevCommandParameters {
   private final String path;
   private final String stream;
   private final String user;
-  private byte kind;
-  private byte eolType;
+  private final byte kind;
+  private final byte eolType;
 
 
   AccurevCommandParameters(final String exePath, final String host, final String password,

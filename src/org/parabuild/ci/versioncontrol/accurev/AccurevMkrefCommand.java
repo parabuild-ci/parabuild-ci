@@ -37,7 +37,7 @@ final class AccurevMkrefCommand extends AccurevCommand {
   private static final Log LOG = LogFactory.getLog(AccurevMkrefCommand.class); // NOPMD
   private final String referenceTreeName;
   private final byte eolType;
-  private String storage;
+  private final String storage;
 
 
   /**

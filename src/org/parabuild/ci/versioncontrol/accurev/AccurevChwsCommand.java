@@ -40,7 +40,7 @@ final class AccurevChwsCommand extends AccurevCommand {
   private final String backingStream;
   private final byte kind;
   private final byte eolType;
-  private String storage;
+  private final String storage;
 
 
   /**

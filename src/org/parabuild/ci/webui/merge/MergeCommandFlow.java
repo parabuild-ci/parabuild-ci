@@ -36,12 +36,12 @@ final class MergeCommandFlow extends Flow {
   private static final String CAPTION_QUEUE = "Queue";
 
 
-  private CommandLinkWithSeparator lnkMergeReport = new CommandLinkWithSeparator(new CommonCommandLink(CAPTION_MERGE_REPORT, Pages.PAGE_MERGE_REPORT));
-  private CommandLinkWithSeparator lnkQueueReport = new CommandLinkWithSeparator(new CommonCommandLink(CAPTION_QUEUE, Pages.PAGE_MERGE_QUEUE_REPORT));
-  private CommandLinkWithSeparator lnkEdit = new CommandLinkWithSeparator(new CommonCommandLink(CAPTION_EDIT, Pages.PAGE_MERGE_EDIT));
-  private CommandLinkWithSeparator lnkStop = new CommandLinkWithSeparator(new CommonCommandLink(CAPTION_STOP, Pages.PAGE_MERGE_STOP));
-  private CommandLinkWithSeparator lnkResume = new CommandLinkWithSeparator(new CommonCommandLink(CAPTION_RESUME, Pages.PAGE_MERGE_RESUME));
-  private CommandLinkWithSeparator lnkCommands = new CommandLinkWithSeparator(new CommonCommandLink(CAPTION_COMMANDS, Pages.PAGE_MERGE_COMMANDS));
+  private final CommandLinkWithSeparator lnkMergeReport = new CommandLinkWithSeparator(new CommonCommandLink(CAPTION_MERGE_REPORT, Pages.PAGE_MERGE_REPORT));
+  private final CommandLinkWithSeparator lnkQueueReport = new CommandLinkWithSeparator(new CommonCommandLink(CAPTION_QUEUE, Pages.PAGE_MERGE_QUEUE_REPORT));
+  private final CommandLinkWithSeparator lnkEdit = new CommandLinkWithSeparator(new CommonCommandLink(CAPTION_EDIT, Pages.PAGE_MERGE_EDIT));
+  private final CommandLinkWithSeparator lnkStop = new CommandLinkWithSeparator(new CommonCommandLink(CAPTION_STOP, Pages.PAGE_MERGE_STOP));
+  private final CommandLinkWithSeparator lnkResume = new CommandLinkWithSeparator(new CommonCommandLink(CAPTION_RESUME, Pages.PAGE_MERGE_RESUME));
+  private final CommandLinkWithSeparator lnkCommands = new CommandLinkWithSeparator(new CommonCommandLink(CAPTION_COMMANDS, Pages.PAGE_MERGE_COMMANDS));
 
 
   public MergeCommandFlow() {

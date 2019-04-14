@@ -25,8 +25,8 @@ import org.parabuild.ci.remote.Agent;
  */
 final class P4BranchViewRetriever {
 
-  private P4Properties properties;
-  private Agent agent;
+  private final P4Properties properties;
+  private final Agent agent;
 
 
   public P4BranchViewRetriever(final Agent agent, final P4Properties properties) {

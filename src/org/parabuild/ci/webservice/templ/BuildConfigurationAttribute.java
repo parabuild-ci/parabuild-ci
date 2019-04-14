@@ -194,7 +194,7 @@ public class BuildConfigurationAttribute implements java.io.Serializable {
 
 
   // Type metadata
-  private static org.apache.axis.description.TypeDesc typeDesc =
+  private static final org.apache.axis.description.TypeDesc typeDesc =
           new org.apache.axis.description.TypeDesc(BuildConfigurationAttribute.class, true);
 
 

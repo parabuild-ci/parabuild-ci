@@ -47,7 +47,7 @@ public final class BuildStartRequest implements Serializable {
   private int versionCounter;
   private String label = null;
   private String note = null;
-  private String versionTemplate = null;
+  private final String versionTemplate = null;
 
   /**
    * List of {@link SourceControlSettingOverride} objects.
