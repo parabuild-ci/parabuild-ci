@@ -13,11 +13,16 @@
  */
 package org.parabuild.ci.configuration;
 
-import java.sql.*;
-import java.util.*;
-import org.apache.commons.logging.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.IoUtils;
 
-import org.parabuild.ci.common.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.HashMap;
 
 /**
  * Upgrades to version 7
@@ -37,7 +42,6 @@ final class UpgraderToVersion7 implements SingleStepSchemaUpgrader {
     PreparedStatement psFindFirstBuildRun = null; // NOPMD
     PreparedStatement psGetBuildRun = null; // NOPMD
     ResultSet rs = null; // NOPMD
-    final HashMap buildNumberLookup = new HashMap(1111);
     try {
       conn.setAutoCommit(false);
       final String[] ddlsPre = {
@@ -80,6 +84,7 @@ final class UpgraderToVersion7 implements SingleStepSchemaUpgrader {
         "   where BRP.BUILD_RUN_ID = BR.ID ");
 
       // traverse participants
+      final HashMap buildNumberLookup = new HashMap(1111);
       while (rs.next()) {
         final int brpID = rs.getInt(1);
         final int brpChangeListID = rs.getInt(2);

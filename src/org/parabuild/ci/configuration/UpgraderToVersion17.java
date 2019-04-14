@@ -18,7 +18,6 @@ import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.common.IoUtils;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -36,7 +35,6 @@ final class UpgraderToVersion17 implements SingleStepSchemaUpgrader {
   public void upgrade(final Connection conn, final int upgradeToVersion) throws SQLException {
     final boolean savedAutoCommit = conn.getAutoCommit();
     Statement st = null; // NOPMD
-    final PreparedStatement pstmt = null; // NOPMD
     try {
       // create statement
       conn.setAutoCommit(true);
@@ -51,7 +49,7 @@ final class UpgraderToVersion17 implements SingleStepSchemaUpgrader {
       // request post-startup config manager action
       System.setProperty(SystemConstants.SYSTEM_PROPERTY_INIT_ADVANCED_SETTINGS, "true");
     } finally {
-      IoUtils.closeHard(pstmt);
+      // NOPMD
       IoUtils.closeHard(st);
       conn.setAutoCommit(savedAutoCommit);
     }

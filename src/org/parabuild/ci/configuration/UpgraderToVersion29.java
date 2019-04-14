@@ -13,10 +13,14 @@
  */
 package org.parabuild.ci.configuration;
 
-import java.sql.*;
-import org.apache.commons.logging.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.IoUtils;
+import org.parabuild.ci.common.StringUtils;
 
-import org.parabuild.ci.common.*;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  * Upgrades to version 29. Adds manual label field to build run.
@@ -38,11 +42,11 @@ final class UpgraderToVersion29 implements SingleStepSchemaUpgrader {
       st = conn.createStatement();
 
       log.debug("Altering table");
-      final String [] update = {" alter table SCHEDULE_ITEM add column CLEAN_CHECKOUT char(1)  default 'N' not null ",
-        " update SCHEDULE_ITEM set CLEAN_CHECKOUT='N' ",
-        " alter table SCHEDULE_ITEM alter column CLEAN_CHECKOUT drop default ",
-      };
       try {
+        final String[] update = {" alter table SCHEDULE_ITEM add column CLEAN_CHECKOUT char(1)  default 'N' not null ",
+                " update SCHEDULE_ITEM set CLEAN_CHECKOUT='N' ",
+                " alter table SCHEDULE_ITEM alter column CLEAN_CHECKOUT drop default ",
+        };
         PersistanceUtils.executeDDLs(st, update);
         conn.commit();
       } catch (final SQLException e) {

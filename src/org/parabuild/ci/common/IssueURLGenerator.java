@@ -81,9 +81,9 @@ public final class IssueURLGenerator {
 
   public boolean isTemplateValid() {
     final List properties = new ArrayList(7);
-    final List fragments = new ArrayList(7);
     try {
       // parse
+      final List fragments = new ArrayList(7);
       NamedPropertyUtils.parsePropertyString(urlTemplate, fragments, properties);
     } catch (final Exception e) {
       return false;

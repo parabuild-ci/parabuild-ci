@@ -13,29 +13,27 @@
  */
 package org.parabuild.ci.process;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.StringTokenizer;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.common.BuildException;
 import org.parabuild.ci.common.ExceptionUtils;
 import org.parabuild.ci.common.IoUtils;
 import org.parabuild.ci.common.StringUtils;
 import org.parabuild.ci.remote.AgentEnvironment;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.StringTokenizer;
 
 /**
  * Concrete (Windows) implementation of ProcessManager interface.
@@ -96,9 +94,8 @@ final class WindowsProcessManager implements ProcessManager {
    */
   WindowsProcessManager(final AgentEnvironment agentEnvironment) throws IOException {
     this.agentEnvironment = agentEnvironment;
-    final String separator;
     try {
-      separator = agentEnvironment.separator();
+      final String separator = agentEnvironment.separator();
       this.PV = agentEnvironment.getSystemProperty("catalina.home") + separator + ".." + separator + "bin" + separator + "win" + separator + "p6.exe";
       this.LIST_PROCESSES = PV + " -q -e -l";
       this.LIST_PPIDS = PV + " -q -e -t";
@@ -297,8 +294,8 @@ final class WindowsProcessManager implements ProcessManager {
     // TODO: What about charsets? E.g. if command name is russian or chinese?
     final String ownCmd = normalizePath(PV);
     final BufferedReader rdr = new BufferedReader(new InputStreamReader(in));
-    String line;
     try {
+      String line;
       while ((line = rdr.readLine()) != null) {
         final StringTokenizer st = new StringTokenizer(line, "\t");
         if (StringUtils.isBlank(line)) {
@@ -343,8 +340,8 @@ final class WindowsProcessManager implements ProcessManager {
     final Map ret = new HashMap();
     // TODO: What about charsets? E.g. if command name is russian or chinese?
     final BufferedReader rdr = new BufferedReader(new InputStreamReader(in));
-    String line;
     try {
+      String line;
       while ((line = rdr.readLine()) != null) {
         if (StringUtils.isBlank(line)) {
           continue;
@@ -380,8 +377,8 @@ final class WindowsProcessManager implements ProcessManager {
     final Map ret = new HashMap();
     // TODO: What about charsets? E.g. if command name is russian or chinese?
     final BufferedReader rdr = new BufferedReader(new InputStreamReader(in));
-    String line;
     try {
+      String line;
       while ((line = rdr.readLine()) != null) {
         if (StringUtils.isBlank(line)) {
           continue;
@@ -515,8 +512,8 @@ final class WindowsProcessManager implements ProcessManager {
   private Set getPIDs(final InputStream in) throws BuildException {
     final Set ret = new HashSet();
     final BufferedReader rdr = new BufferedReader(new InputStreamReader(in));
-    String line;
     try {
+      String line;
       while ((line = rdr.readLine()) != null) {
         if (StringUtils.isBlank(line)) {
           continue;

@@ -13,10 +13,14 @@
  */
 package org.parabuild.ci.configuration;
 
-import java.sql.*;
-import org.apache.commons.logging.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.IoUtils;
+import org.parabuild.ci.common.StringUtils;
 
-import org.parabuild.ci.common.*;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  * Upgrades to version 12
@@ -34,13 +38,13 @@ final class UpgraderToVersion12 implements SingleStepSchemaUpgrader {
     Statement st = null; // NOPMD
     try {
       conn.setAutoCommit(true);
-      final String[] ddls = {
-        "alter table BUILD_CONFIG drop constraint BUILD_CONFIG_FC1 "
-      };
 
       log.debug("Alter structure");
       st = conn.createStatement();
       try {
+        final String[] ddls = {
+                "alter table BUILD_CONFIG drop constraint BUILD_CONFIG_FC1 "
+        };
         PersistanceUtils.executeDDLs(st, ddls);
       } catch (final SQLException e) {
         // NOTE: vimeshev - have to ignore because it looks like

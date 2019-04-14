@@ -13,11 +13,17 @@
  */
 package org.parabuild.ci.configuration;
 
-import java.sql.*;
-import org.apache.commons.logging.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.IoUtils;
+import org.parabuild.ci.object.Group;
+import org.parabuild.ci.object.SystemProperty;
 
-import org.parabuild.ci.common.*;
-import org.parabuild.ci.object.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  * Upgrades to version 4
@@ -71,13 +77,12 @@ final class UpgraderToVersion4 implements SingleStepSchemaUpgrader {
 
       // enable system Anonymous access
       log.debug("Enabling system Anonymous access");
-      int anonBuildsEnabledPropID = SystemProperty.UNSAVED_ID;
       ps = conn.prepareStatement("select ID from SYSTEM_PROPERTY where NAME = ?");
       ps.setString(1, SystemProperty.ENABLE_ANONYMOUS_BUILDS);
       rs = ps.executeQuery();
       if (rs.next()) {
         // record exists
-        anonBuildsEnabledPropID = rs.getInt(1);
+        int anonBuildsEnabledPropID = rs.getInt(1);
         final PreparedStatement ps1 = conn.prepareStatement("update SYSTEM_PROPERTY set VALUE = ? where ID = ?");
         ps1.setString(1, SystemProperty.OPTION_CHECKED);
         ps1.setInt(2, anonBuildsEnabledPropID);

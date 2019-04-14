@@ -77,9 +77,8 @@ public final class ResultDownloadServlet extends AbstractArchiveAccessServlet {
 
       // Validate build ID and get build config
       final ConfigurationManager cm = ConfigurationManager.getInstance();
-      ActiveBuildConfig activeBuildConfig = null;
       try {
-        activeBuildConfig = cm.getActiveBuildConfig(activeBuildID);
+        ActiveBuildConfig activeBuildConfig = cm.getActiveBuildConfig(activeBuildID);
         //if (result.isDebugEnabled()) result.debug("buildConfig: " + buildConfig);
         if (activeBuildConfig == null) return null;
       } catch (final Exception e) {

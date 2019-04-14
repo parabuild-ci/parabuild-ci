@@ -38,11 +38,9 @@ public final class ProcessManagerFactory {
    * Supported platforms now are generic Windows and Unix platforms.
    */
   public static ProcessManager getProcessManager(final AgentEnvironment agentEnv) throws IOException {
-    final int system_type;
     try {
-      system_type = agentEnv.systemType();
-      if (agentEnv.isWindows() ||
-              system_type == AgentEnvironment.SYSTEM_TYPE_CYGWIN) {
+      final int system_type = agentEnv.systemType();
+      if (agentEnv.isWindows() || system_type == AgentEnvironment.SYSTEM_TYPE_CYGWIN) {
         return new WindowsProcessManager(agentEnv);
       } else if (agentEnv.isUnix()) {
         return new UnixProcessManager(agentEnv);

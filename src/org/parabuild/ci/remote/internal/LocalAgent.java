@@ -13,23 +13,8 @@
  */
 package org.parabuild.ci.remote.internal;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Set;
-import java.util.StringTokenizer;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.parabuild.ci.common.CommandStoppedException;
 import org.parabuild.ci.common.DirectoryTraverserCallback;
 import org.parabuild.ci.common.IoUtils;
@@ -47,6 +32,20 @@ import org.parabuild.ci.remote.AgentEnvironment;
 import org.parabuild.ci.remote.services.ModifiedFileList;
 import org.parabuild.ci.remote.services.RemoteFileDescriptor;
 import org.parabuild.ci.services.TailUpdate;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Set;
+import java.util.StringTokenizer;
 
 /**
  * @noinspection ProhibitedExceptionThrown
@@ -621,8 +620,8 @@ public final class LocalAgent implements Agent {
 
 
   public void getDirectory(final String path, final File readInTo) throws IOException {
-    final File source = new File(path);
     try {
+      final File source = new File(path);
       IoUtils.copyDirectory(source, readInTo);
     } catch (final IOException e) {
       // Delete destination file

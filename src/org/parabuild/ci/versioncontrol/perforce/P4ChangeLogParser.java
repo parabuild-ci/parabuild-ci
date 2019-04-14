@@ -119,7 +119,6 @@ final class P4ChangeLogParser {
 
   public Collection parseChangesLog(final InputStream changesIS, final int maxResultSize) throws BuildException {
     BufferedReader br = null;
-    final LinkedList result = new LinkedList();
 
     try {
       // get line reader and read first line
@@ -127,6 +126,7 @@ final class P4ChangeLogParser {
       String lineToParse = br.readLine();
       validateChangeListIsNotEmpty(lineToParse);
       List chunk = makeNewChunk(); // init, will be overwritten in the cycle
+      final LinkedList result = new LinkedList();
       while (lineToParse != null) {
         // check for errors
         P4ParserHelper.validateLine(lineToParse);

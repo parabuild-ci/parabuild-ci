@@ -61,7 +61,6 @@ public final class SVNXmlChangeLogParser extends SVNChangeLogParser {
 
 
   public List parseChangeLog(final InputStream is) throws IOException {
-    int changeListCounter = 0;
     final List result = new ArrayList(11);
     final SAXReader saxReader = new SAXReader();
     try {
@@ -69,6 +68,7 @@ public final class SVNXmlChangeLogParser extends SVNChangeLogParser {
       final Element root = document.getRootElement();
 
       // iterate through child elements of root
+      int changeListCounter = 0;
       for (final Iterator i = root.elementIterator(); i.hasNext();) {
         final Element element = (Element) i.next();
         final String elementName = element.getName();

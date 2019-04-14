@@ -93,8 +93,8 @@ public final class LinuxProcessParser implements ProcessParser {
     final BufferedReader rdr = new BufferedReader(new InputStreamReader(is));
     
     // fill process list and mapping PID->OSProcess
-    String line;
     try {
+      String line;
       while ((line = rdr.readLine()) != null) {
         if (StringUtils.isBlank(line)) {
           continue;
@@ -163,8 +163,8 @@ public final class LinuxProcessParser implements ProcessParser {
   public void parseEnvironment(final InputStream is, final Map ret) throws BuildException {
     final BufferedReader rdr = new BufferedReader(new InputStreamReader(is));
 
-    String line;
     try {
+      String line;
       while ((line = rdr.readLine()) != null) {
         if (StringUtils.isBlank(line)) {
           continue;

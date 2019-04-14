@@ -1309,7 +1309,6 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
     }
 
     // create client for retrieval of the spec
-    final String rawClientView;
     P4Command command = null;
     try {
       command = new P4Command(agent);
@@ -1324,8 +1323,7 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
       // Get raw view
       final P4ClientParser clientParser = new P4ClientParser();
       final P4Client client = clientParser.parse(command.getStdoutFile());
-      rawClientView = client.getViewLines();
-
+      final String rawClientView = client.getViewLines();
 
       // Normalize
       final P4ClientViewParser clientViewParser = new P4ClientViewParser(true);

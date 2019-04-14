@@ -13,12 +13,20 @@
  */
 package org.parabuild.ci.process;
 
-import java.io.*;
-import java.util.*;
-import org.apache.commons.logging.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.BuildException;
+import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.remote.AgentEnvironment;
 
-import org.parabuild.ci.common.*;
-import org.parabuild.ci.remote.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
 /**
@@ -97,9 +105,9 @@ public final class SolarisProcessParser implements ProcessParser {
     final BufferedReader rdr = new BufferedReader(new InputStreamReader(is));
 
     // fill process list and mapping PID->OSProcess
-    boolean first_line = true;
-    String line;
     try {
+      boolean first_line = true;
+      String line;
       while ((line = rdr.readLine()) != null) {
 
         // skip headers line
@@ -182,9 +190,9 @@ public final class SolarisProcessParser implements ProcessParser {
     final BufferedReader rdr = new BufferedReader(new InputStreamReader(is));
 
     // fill process list and mapping PID->OSProcess
-    String line;
-    boolean first_line = true;
     try {
+      String line;
+      boolean first_line = true;
       while ((line = rdr.readLine()) != null) {
 
         // skip headers line

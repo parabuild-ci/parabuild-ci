@@ -13,16 +13,24 @@
  */
 package org.parabuild.ci.webui.secured;
 
-import java.util.*;
-import org.apache.commons.logging.*;
-
-import org.parabuild.ci.build.*;
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.security.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.build.BuildState;
+import org.parabuild.ci.build.BuildStatus;
+import org.parabuild.ci.configuration.ConfigurationManager;
+import org.parabuild.ci.object.ActiveBuild;
+import org.parabuild.ci.object.BuildConfig;
+import org.parabuild.ci.object.User;
+import org.parabuild.ci.security.BuildRights;
 import org.parabuild.ci.security.SecurityManager;
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import org.parabuild.ci.webui.common.CommandLinkWithSeparator;
+import org.parabuild.ci.webui.common.CommonCommandLink;
+import org.parabuild.ci.webui.common.Pages;
+import viewtier.ui.TierletContext;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Properties;
 
 
 /**
@@ -102,12 +110,11 @@ final class BuildCommandsLinksImpl extends BuildCommandsLinks {
 
     // get user's rights
     BuildRights rights = null;
-    User user = null;
     final TierletContext tierletContext = getTierletContext();
 //    if (log.isDebugEnabled()) log.debug("tierletContext: " + tierletContext);
     if (tierletContext != null) {
       final SecurityManager sm = SecurityManager.getInstance();
-      user = sm.getUserFromRequest(tierletContext.getHttpServletRequest());
+      User user = sm.getUserFromRequest(tierletContext.getHttpServletRequest());
       rights = sm.getUserBuildRights(user, buildID);
 //      if (log.isDebugEnabled()) log.debug("========================================");
 //      if (log.isDebugEnabled()) log.debug("activeBuild ID: " + activeBuild.getID());

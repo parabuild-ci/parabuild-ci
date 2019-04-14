@@ -13,15 +13,19 @@
  */
 package org.parabuild.ci.webui;
 
-import java.io.*;
-import org.apache.commons.logging.*;
-
-import org.parabuild.ci.archive.*;
-import org.parabuild.ci.common.*;
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.security.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.archive.ArchiveManagerFactory;
+import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.configuration.ConfigurationManager;
+import org.parabuild.ci.object.ActiveBuildConfig;
+import org.parabuild.ci.object.BuildConfig;
+import org.parabuild.ci.object.StepLog;
+import org.parabuild.ci.security.AccessForbiddenException;
+import org.parabuild.ci.security.BuildRights;
 import org.parabuild.ci.security.SecurityManager;
+
+import java.io.InputStream;
 
 /**
  * This servlet serves requests to view HTML logs.
@@ -59,9 +63,8 @@ public final class HTMLLogServlet extends AbstractArchiveAccessServlet {
 
       // validate build ID and get build config
       final ConfigurationManager cm = ConfigurationManager.getInstance();
-      ActiveBuildConfig activeBuildConfig = null;
       try {
-        activeBuildConfig = cm.getActiveBuildConfig(activeBuildID);
+        ActiveBuildConfig activeBuildConfig = cm.getActiveBuildConfig(activeBuildID);
         //if (log.isDebugEnabled()) log.debug("buildConfig: " + buildConfig);
         if (activeBuildConfig == null) return null;
       } catch (final Exception e) {

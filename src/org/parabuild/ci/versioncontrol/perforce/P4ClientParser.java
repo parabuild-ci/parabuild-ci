@@ -47,12 +47,12 @@ final class P4ClientParser {
   public P4Client parse(final File file) throws IOException {
 
     BufferedReader br = null;
-    String viewLines = null;
     try {
       // get line reader and read first line
       br = new BufferedReader(new FileReader(file), 1024);
 
       String lineToParse = br.readLine();
+      String viewLines = null;
       while (lineToParse != null) {
 //        if (log.isDebugEnabled()) log.debug("lineToParse: " + lineToParse);
 

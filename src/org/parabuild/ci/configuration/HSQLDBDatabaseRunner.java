@@ -13,11 +13,14 @@
  */
 package org.parabuild.ci.configuration;
 
-import java.io.*;
-import java.sql.*;
-import org.apache.commons.logging.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.CommonConstants;
+import org.parabuild.ci.common.IoUtils;
 
-import org.parabuild.ci.common.*;
+import java.io.File;
+import java.sql.Connection;
+import java.sql.Statement;
 
 public final class HSQLDBDatabaseRunner implements DatabaseRunner, CommonConstants, PersistanceConstants {
 
@@ -66,7 +69,6 @@ public final class HSQLDBDatabaseRunner implements DatabaseRunner, CommonConstan
   public void stopDatabase() {
     Connection conn = null; // NOPMD
     Statement stmt = null; // NOPMD
-    final InputStream is = null;
     try {
       conn = HSQLDBUtils.createHSQLConnection(
         ConfigurationConstants.DATABASE_HOME,
@@ -82,7 +84,6 @@ public final class HSQLDBDatabaseRunner implements DatabaseRunner, CommonConstan
     } finally {
       IoUtils.closeHard(conn);
       IoUtils.closeHard(stmt);
-      IoUtils.closeHard(is);
     }
   }
 }

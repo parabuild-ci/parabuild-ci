@@ -13,12 +13,15 @@
  */
 package org.parabuild.ci.versioncontrol.perforce;
 
-import java.io.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.parabuild.ci.common.BuildException;
 import org.parabuild.ci.common.IoUtils;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 
 /**
  * Perforce branch view parser.
@@ -48,17 +51,17 @@ final class P4BranchViewParserImpl implements P4BranchViewParser {
   public P4BranchView parse(final File file) throws IOException {
 
     BufferedReader br = null;
-    String branch = null;
-    String access = null;
-    String options = null;
-    String owner = null;
-    String update = null;
-    String view = null;
-    String description = null;
     try {
       // get line reader and read first line
       br = new BufferedReader(new FileReader(file), 1024);
 
+      String branch = null;
+      String access = null;
+      String options = null;
+      String owner = null;
+      String update = null;
+      String view = null;
+      String description = null;
       String lineToParse = br.readLine();
       while (lineToParse != null) {
 //        if (log.isDebugEnabled()) log.debug("lineToParse: " + lineToParse);

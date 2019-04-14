@@ -70,6 +70,7 @@ public final class DatabaseCreator implements PersistanceConstants {
       IoUtils.closeHard(stmt);
       IoUtils.closeHard(conn);
       IoUtils.closeHard(out);
+      IoUtils.closeHard(fw);
     }
   }
 }

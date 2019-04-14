@@ -155,10 +155,9 @@ Make svn_client_info() use new svn_ra_stat() API for efficiency.
       }
 
 
-      final String stringDate = stringDateToken.substring(0, firstVerbalDateBracket - 1);
-      //if (log.isDebugEnabled()) log.debug("stringDate: " + stringDate);
       final Date date;
       try {
+        final String stringDate = stringDateToken.substring(0, firstVerbalDateBracket - 1);
         date = svnChangeLogFormatter.parse(stringDate);
       } catch (final ParseException e) {
         throw new ChangeLogParserException("SVN", "Unexpected format of revision date in line: " + line + ", error: " + StringUtils.toString(e));
