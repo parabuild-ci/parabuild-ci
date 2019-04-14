@@ -26,7 +26,7 @@ import java.util.ArrayList;
 /**
  *
  */
-public final class WebSVNSettingsPanel extends AbstractSourceControlPanel implements Validatable, Saveable {
+public final class WebSVNSettingsPanel extends AbstractSourceControlPanel {
 
   private static final long serialVersionUID = 7269513984227746767L; // NOPMD
 

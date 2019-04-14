@@ -37,7 +37,7 @@ import java.util.List;
 /**
  * PVCS setting panel
  */
-public final class PVCSSettingsPanel extends AbstractSourceControlPanel implements Validatable, Saveable {
+public final class PVCSSettingsPanel extends AbstractSourceControlPanel {
 
   private static final long serialVersionUID = 7269513984227746767L; // NOPMD
 

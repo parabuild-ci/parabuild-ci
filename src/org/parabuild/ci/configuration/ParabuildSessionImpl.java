@@ -22,7 +22,7 @@ import net.sf.hibernate.type.*;
 
 /**
  */
-public final class ParabuildSessionImpl implements Session, Serializable {
+public final class ParabuildSessionImpl implements Session {
 
   private static final long serialVersionUID = -121279693054868421L; // NOPMD
 

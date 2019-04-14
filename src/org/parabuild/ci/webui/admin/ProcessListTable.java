@@ -37,7 +37,7 @@ import java.util.List;
 /**
  * ErrorTable list active errors
  */
-public final class ProcessListTable extends AbstractFlatTable implements CommonConstants {
+public final class ProcessListTable extends AbstractFlatTable {
 
   private static final long serialVersionUID = 4964283596313349866L; // NOPMD
 

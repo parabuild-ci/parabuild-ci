@@ -454,7 +454,7 @@
   <target name="product.gwtc"
           depends="product.compile,product.war.prepare,product.war.jspc"
           description="GWT compile to JavaScript (production mode)">
-    <java failonerror="true" fork="true" classname="com.google.gwt.dev.Compiler" maxmemory="512m">
+    <java failonerror="true" fork="true" classname="com.google.gwt.dev.Compiler" maxmemory="1G">
       <classpath>
         <pathelement location="${src}"/>
         <pathelement location="${gwt-dev.jar}"/>

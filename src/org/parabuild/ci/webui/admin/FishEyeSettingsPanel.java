@@ -22,7 +22,7 @@ import viewtier.ui.*;
 /**
  *
  */
-public final class FishEyeSettingsPanel extends AbstractSourceControlPanel implements Validatable, Saveable {
+public final class FishEyeSettingsPanel extends AbstractSourceControlPanel {
 
   private static final long serialVersionUID = 7269513984227746767L; // NOPMD
 

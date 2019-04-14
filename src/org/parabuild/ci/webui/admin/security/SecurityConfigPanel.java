@@ -23,7 +23,6 @@ import org.parabuild.ci.webui.admin.AbstractSystemConfigPanel;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.webui.common.Saveable;
 import org.parabuild.ci.webui.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.CheckBox;
@@ -38,7 +37,7 @@ import java.util.List;
 /**
  * System build panel
  */
-public final class SecurityConfigPanel extends AbstractSystemConfigPanel implements Saveable {
+public final class SecurityConfigPanel extends AbstractSystemConfigPanel {
 
   private static final long serialVersionUID = -6521251722629803915L; // NOPMD
 
