@@ -22,7 +22,7 @@ public final class DateFormatDropdown extends DropDown {
 
   private static final long serialVersionUID = -3638947672551947334L; // NOPMD
 
-  private static final String[] FORMATS = new String[]{
+  private static final String[] FORMATS = {
     "dd/MM/yyyy",
     "MM/dd/yyyy",
     "dd-MM-yyyy",

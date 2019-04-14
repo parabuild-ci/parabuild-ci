@@ -22,7 +22,7 @@ public final class HTTPProtocolDropdown extends DropDown {
 
   private static final long serialVersionUID = -3638947672551947334L; // NOPMD
 
-  private static final String[] PROTOCOLS = new String[]{
+  private static final String[] PROTOCOLS = {
     "http://",
     "https://",
   };

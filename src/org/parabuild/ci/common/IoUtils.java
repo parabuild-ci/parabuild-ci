@@ -816,7 +816,7 @@ public final class IoUtils {
    * @see DirectoryTraverserCallback
    */
   public static int traversePath(final File dir, final DirectoryTraverserCallback callback) throws IOException {
-    final int[] counter = new int[]{0};
+    final int[] counter = {0};
     traversePath(dir, callback, counter, true);
     return counter[0];
   }

@@ -13,6 +13,11 @@
  */
 package org.parabuild.ci.remote;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.remote.services.RemoteFileDescriptor;
+
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.StringWriter;
@@ -20,12 +25,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.StringTokenizer;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
-import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.remote.services.RemoteFileDescriptor;
 
 /**
  *
@@ -39,7 +38,7 @@ abstract class AbstractWarapperScriptGenerator implements WrapperScriptGenerator
 
   private static final String VAR_PARABUILD_SCRIPT = "PARABUILD_SCRIPT";
   private static final String VAR_CLASSPATH = "CLASSPATH";
-  private static final String[] VARS_TO_ERASE = new String[]{
+  private static final String[] VARS_TO_ERASE = {
           "_JAVACMD",
           "_EXECJAVA",
           "PARABUILD_BASE",

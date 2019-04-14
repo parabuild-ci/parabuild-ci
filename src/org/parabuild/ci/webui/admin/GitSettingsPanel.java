@@ -41,7 +41,7 @@ public final class GitSettingsPanel extends AbstractSourceControlPanel {
 
   private static final long serialVersionUID = 0L; // NOPMD
 
-  private static final String[] VALID_GIT_URL_PROTOCOLS = new String[]{"ssh://", "git://", "http://", "https://", "file://"};
+  private static final String[] VALID_GIT_URL_PROTOCOLS = {"ssh://", "git://", "http://", "https://", "file://"};
   private static final String INVALID_PROTOCOL_MSG = makeInvalidProtocolMessage();
   public static final String DEFAULT_UNIX_GIT_COMMAND = "/usr/bin/git";
 

@@ -887,7 +887,7 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
     }
 
     // format template w/given params
-    final Object[] arguments = new Object[]{
+    final Object[] arguments = {
             clientName, date, p4User, new Integer(buildID), root,
             clientView, modtimeOption, clobberOption,
             agent.getLocalHostName(), lineEnd

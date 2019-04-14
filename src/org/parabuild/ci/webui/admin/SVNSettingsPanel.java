@@ -40,7 +40,7 @@ public final class SVNSettingsPanel extends AbstractSourceControlPanel {
 
   private static final long serialVersionUID = 4467119862820193870L; // NOPMD
 
-  private static final String[] VALID_SVN_URL_PROTOCOLS = new String[]{"svn://", "svn+ssh://", "http://", "https://", "file://"};
+  private static final String[] VALID_SVN_URL_PROTOCOLS = {"svn://", "svn+ssh://", "http://", "https://", "file://"};
   private static final String INVALID_PROTOCOL_MSG = makeInvalidProtocolMessage();
   public static final String DEFAULT_UNIX_SVN_COMMAND = "/usr/bin/svn";
 

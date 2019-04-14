@@ -21,12 +21,12 @@ import java.util.*;
  */
 final class ClearCaseChangeLogParser {
 
-  private static final String[] ADD_TYPES = new String[]{};
-  private static final String[] CHECKIN_TYPES = new String[]{"checkin"};
-  private static final String[] DELETE_TYPES = new String[]{};
-  private static final String[] IGNORE_TYPES = new String[]{"mkbranch", "rmbranch"};
-  private static final String[] MAKE_TYPES = new String[]{"mkelem"};
-  private static final String[] NULL_TYPES = new String[]{"**null operation kind**"};
+  private static final String[] ADD_TYPES = {};
+  private static final String[] CHECKIN_TYPES = {"checkin"};
+  private static final String[] DELETE_TYPES = {};
+  private static final String[] IGNORE_TYPES = {"mkbranch", "rmbranch"};
+  private static final String[] MAKE_TYPES = {"mkelem"};
+  private static final String[] NULL_TYPES = {"**null operation kind**"};
   private static final long TIME_WINDOW_MILLIS = 60000L;
   public static final String DATE_PATTERN = "yyyyMMdd.HHmmss";
 

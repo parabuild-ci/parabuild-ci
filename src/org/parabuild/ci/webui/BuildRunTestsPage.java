@@ -394,7 +394,7 @@ public final class BuildRunTestsPage extends BasePage implements StatelessTierle
 
   final static class TestCaseVO {
 
-    private static final String [] RESULT_AS_STRING = new String[]{"Unknown", "Success", "Failure", "Error", "Skipped"};
+    private static final String [] RESULT_AS_STRING = {"Unknown", "Success", "Failure", "Error", "Skipped"};
 
     private String name = null;
     private short resultCode = 0;

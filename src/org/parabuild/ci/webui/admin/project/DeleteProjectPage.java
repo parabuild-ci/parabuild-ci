@@ -81,7 +81,7 @@ public final class DeleteProjectPage extends BasePage implements ConversationalT
     }
 
     // check if it's deletable project
-    final String[] protectedProjects = new String[]{"admin", "jira"};
+    final String[] protectedProjects = {"admin", "jira"};
     for (int i = 0; i < protectedProjects.length; i++) {
       final String protectedProject = protectedProjects[i];
       if (project.getName().equalsIgnoreCase(protectedProject)) {

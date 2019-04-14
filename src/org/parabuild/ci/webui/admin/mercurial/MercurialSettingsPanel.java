@@ -37,7 +37,7 @@ public final class MercurialSettingsPanel extends AbstractSourceControlPanel {
 
   private static final long serialVersionUID = 0L; // NOPMD
 
-  private static final String[] VALID_MERCURIAL_URL_PROTOCOLS = new String[]{"file://", "http://", "https://", "ssh://" };
+  private static final String[] VALID_MERCURIAL_URL_PROTOCOLS = {"file://", "http://", "https://", "ssh://" };
   private static final String INVALID_PROTOCOL_MSG = makeInvalidProtocolMessage();
   public static final String DEFAULT_UNIX_MERCURIAL_COMMAND = "/usr/local/bin/hg";
 

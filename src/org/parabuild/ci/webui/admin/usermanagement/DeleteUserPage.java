@@ -79,7 +79,7 @@ public final class DeleteUserPage extends BasePage implements ConversationalTier
     }
 
     // check if it's deletable user
-    final String[] protectedUsers = new String[]{"admin", "jira"};
+    final String[] protectedUsers = {"admin", "jira"};
     for (int i = 0; i < protectedUsers.length; i++) {
       final String protectedUser = protectedUsers[i];
       if (user.getName().equalsIgnoreCase(protectedUser)) {

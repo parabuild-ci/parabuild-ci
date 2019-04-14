@@ -34,7 +34,7 @@ public final class DeleteGroupPage extends BasePage implements ConversationalTie
   /**
    * List of group names that can not be deleted.
    */
-  private static final String[] NONDELETEABLE_GROUPS = new String[]{
+  private static final String[] NONDELETEABLE_GROUPS = {
     Group.SYSTEM_ADMIN_GROUP, Group.SYSTEM_ANONYMOUS_GROUP};
 
   private int action = ACTION_CANCEL;

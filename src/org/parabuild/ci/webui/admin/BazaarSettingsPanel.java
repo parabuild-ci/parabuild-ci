@@ -37,7 +37,7 @@ public final class BazaarSettingsPanel extends AbstractSourceControlPanel {
 
   private static final long serialVersionUID = 0L; // NOPMD
 
-  private static final String[] VALID_BAZAAR_URL_PROTOCOLS = new String[]{"bzr://", "bzr+ssh://", "ssh://", "http://", "https://"};
+  private static final String[] VALID_BAZAAR_URL_PROTOCOLS = {"bzr://", "bzr+ssh://", "ssh://", "http://", "https://"};
   private static final String INVALID_PROTOCOL_MSG = makeInvalidProtocolMessage();
   public static final String DEFAULT_UNIX_BAZAAR_COMMAND = "/usr/bin/bzr";
 
