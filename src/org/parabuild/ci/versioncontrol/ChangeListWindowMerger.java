@@ -13,10 +13,15 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.util.*;
-import org.apache.commons.logging.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.object.ChangeList;
 
-import org.parabuild.ci.object.*;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Partially merges two change lists obtained in certain time.
@@ -90,7 +95,7 @@ final class ChangeListWindowMerger {
         // list not found is the same as the previous found one.
         // in this case we still can continue processing because
         // we don jump over time stamps in "future" change lists.
-        if (previousFoundLeftoverDate == null || !secondRunChangeList.getCreatedAt().equals(previousFoundLeftoverDate)) {
+        if (!secondRunChangeList.getCreatedAt().equals(previousFoundLeftoverDate)) {
           // looks like we reached next date - stop processing change
           // lists from the second run.
           break;

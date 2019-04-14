@@ -310,7 +310,7 @@ final class ResultsTable extends AbstractFlatTable {
    */
   public void setPublisingControlsVisible(final boolean visible) {
     final TableCommands commands = getTableCommands();
-    if (commands != null && commands instanceof ResultsTableCommandPanel) { // NOPMD SimplifyConditional
+    if (commands instanceof ResultsTableCommandPanel) { // NOPMD SimplifyConditional
       final ResultsTableCommandPanel commandPanel = (ResultsTableCommandPanel)getTableCommands();
       commandPanel.setPublisingControlsVisible(visible);
     }
