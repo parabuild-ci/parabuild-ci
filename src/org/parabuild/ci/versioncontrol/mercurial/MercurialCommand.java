@@ -152,7 +152,7 @@ abstract class MercurialCommand extends VersionControlRemoteCommand {
     if (StringUtils.isBlank(path)) {
       return ".";
     }
-    final int i = path.lastIndexOf("/");
+    final int i = path.lastIndexOf('/');
     if (i < 0) {
       return path;
     } else {
