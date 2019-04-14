@@ -55,7 +55,7 @@ public class SynergySourceControl extends AbstractSourceControl {
    * @see AbstractSourceControl#initLocalCopyIfNecessary()
    * @see SourceControl#checkoutLatest()
    */
-  public boolean isBuildDirInitialized() throws IOException, BuildException {
+  public boolean isBuildDirInitialized() {
     return false;  //To change body of implemented methods use File | Settings | File Templates.
   }
 
@@ -63,7 +63,7 @@ public class SynergySourceControl extends AbstractSourceControl {
   /**
    * Checks out latest state of the source line
    */
-  public void checkoutLatest() throws BuildException, CommandStoppedException {
+  public void checkoutLatest() {
     //To change body of implemented methods use File | Settings | File Templates.
   }
 
@@ -71,7 +71,7 @@ public class SynergySourceControl extends AbstractSourceControl {
   /**
    * Syncs to a given change list number
    */
-  public void syncToChangeList(final int changeListID) throws BuildException, CommandStoppedException {
+  public void syncToChangeList(final int changeListID) {
     //To change body of implemented methods use File | Settings | File Templates.
   }
 
@@ -79,7 +79,7 @@ public class SynergySourceControl extends AbstractSourceControl {
   /**
    * Returns relative project path
    */
-  public String getRelativeBuildDir() throws BuildException {
+  public String getRelativeBuildDir() {
     return null;  //To change body of implemented methods use File | Settings | File Templates.
   }
 
@@ -106,7 +106,7 @@ public class SynergySourceControl extends AbstractSourceControl {
    *
    * @throws BuildException
    */
-  public int getChangesSince(final int changeListID) throws BuildException, CommandStoppedException {
+  public int getChangesSince(final int changeListID) {
     return 0;  //To change body of implemented methods use File | Settings | File Templates.
   }
 
@@ -120,7 +120,7 @@ public class SynergySourceControl extends AbstractSourceControl {
    *
    * @param label
    */
-  public void label(final String label) throws BuildException, CommandStoppedException {
+  public void label(final String label) {
     //To change body of implemented methods use File | Settings | File Templates.
   }
 
@@ -134,7 +134,7 @@ public class SynergySourceControl extends AbstractSourceControl {
    * @see ErrorManagerFactory
    * @see ErrorManager
    */
-  public Map getUsersMap() throws CommandStoppedException {
+  public Map getUsersMap() {
     return null;  //To change body of implemented methods use File | Settings | File Templates.
   }
 
@@ -164,7 +164,7 @@ public class SynergySourceControl extends AbstractSourceControl {
    *
    * @see BuildScriptGenerator#addVariables(Map)
    */
-  public Map getShellVariables() throws IOException {
+  public Map getShellVariables() {
     return null;  //To change body of implemented methods use File | Settings | File Templates.
   }
 }

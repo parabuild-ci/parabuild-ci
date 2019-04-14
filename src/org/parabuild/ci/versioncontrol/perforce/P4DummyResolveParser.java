@@ -20,6 +20,6 @@ import java.io.*;
  */
 public class P4DummyResolveParser implements P4ResolveParser {
 
-  public void parse(final File stdoutFile, final P4ResolveDriver driver) throws IOException {
+  public void parse(final File stdoutFile, final P4ResolveDriver driver) {
   }
 }

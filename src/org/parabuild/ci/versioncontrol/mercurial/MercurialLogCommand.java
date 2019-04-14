@@ -42,7 +42,7 @@ public class MercurialLogCommand extends MercurialCommand {
   }
 
 
-  protected String getExeArguments() throws IOException, AgentFailureException {
+  protected String getExeArguments() {
     final StringBuilder sb = new StringBuilder(100);
     sb.append("log");
     sb.append(' ');

@@ -130,7 +130,7 @@ public final class BazaarVersionControl extends AbstractSourceControl {
   }
 
 
-  public String getRelativeBuildDir() throws BuildException, AgentFailureException {
+  public String getRelativeBuildDir() {
     return BazaarCommand.branchLocationToRelativeBuildDir(getBranchLocationSetting());
   }
 
@@ -217,7 +217,7 @@ public final class BazaarVersionControl extends AbstractSourceControl {
    * @noinspection ControlFlowStatementWithoutBraces,ReuseOfLocalVariable,TooBroadScope
    */
   private int getChangesSince(final String changeListNumberFrom, final String changeListNumberTo, final int maxChangeLists)
-          throws BuildException, IOException, CommandStoppedException, AgentFailureException {
+          throws IOException, CommandStoppedException, AgentFailureException {
 
     final long timeStarted = System.currentTimeMillis();
     final Agent agent = getCheckoutDirectoryAwareAgent();
@@ -302,7 +302,7 @@ public final class BazaarVersionControl extends AbstractSourceControl {
   }
 
 
-  public Map getUsersMap() throws CommandStoppedException, AgentFailureException {
+  public Map getUsersMap() {
     return Collections.EMPTY_MAP;
   }
 
@@ -330,7 +330,7 @@ public final class BazaarVersionControl extends AbstractSourceControl {
    * <p/>
    * This implementation returns an empty map.
    */
-  public Map getShellVariables() throws IOException, AgentFailureException {
+  public Map getShellVariables() {
     return Collections.EMPTY_MAP;
   }
 

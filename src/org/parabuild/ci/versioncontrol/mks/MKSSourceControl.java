@@ -77,7 +77,7 @@ public class MKSSourceControl extends AbstractSourceControl {
    * @see AbstractSourceControl#initLocalCopyIfNecessary()
    * @see org.parabuild.ci.versioncontrol.SourceControl#checkoutLatest()
    */
-  public boolean isBuildDirInitialized() throws IOException, BuildException, AgentFailureException {
+  public boolean isBuildDirInitialized() throws IOException, AgentFailureException {
     //noinspection UnnecessaryLocalVariable
     final boolean result = !getCheckoutDirectoryAwareAgent().checkoutDirIsEmpty();
     if (LOG.isDebugEnabled()) LOG.debug("isBuildDirInitialized: " + result);
@@ -214,7 +214,7 @@ public class MKSSourceControl extends AbstractSourceControl {
   /**
    * Returns relative project path
    */
-  public String getRelativeBuildDir() throws BuildException {
+  public String getRelativeBuildDir() {
 //    final List depotPaths = getProjects();
 //    final RepositoryPath rp = (RepositoryPath)depotPaths.get(0);
 //    return rp.getPath();
@@ -389,7 +389,7 @@ public class MKSSourceControl extends AbstractSourceControl {
    * @see ErrorManagerFactory
    * @see ErrorManager
    */
-  public Map getUsersMap() throws CommandStoppedException {
+  public Map getUsersMap() {
     return Collections.EMPTY_MAP;
   }
 
@@ -439,7 +439,7 @@ public class MKSSourceControl extends AbstractSourceControl {
    *         avaiable to the build commands.
    * @see BuildScriptGenerator#addVariables(Map)
    */
-  public Map getShellVariables() throws IOException {
+  public Map getShellVariables() {
     return Collections.EMPTY_MAP;
   }
 

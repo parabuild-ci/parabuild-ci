@@ -77,7 +77,7 @@ public final class AccurevVersionControl extends AbstractSourceControl {
   // REVIEWME: simeshev@parabuilci.org - 2009-02-13 - Do we really need it given the syncToChangeList does the same thing?
 
 
-  public void checkoutLatest() throws BuildException, CommandStoppedException, AgentFailureException {
+  public void checkoutLatest() throws BuildException {
     throw new BuildException("Check out latest should not be called", getAgentHost());
   }
 
@@ -121,7 +121,7 @@ public final class AccurevVersionControl extends AbstractSourceControl {
   }
 
 
-  public String getRelativeBuildDir() throws BuildException, AgentFailureException {
+  public String getRelativeBuildDir() {
     // Current, i.e. the root of the checkout dir.
     return ".";
   }
@@ -241,12 +241,12 @@ public final class AccurevVersionControl extends AbstractSourceControl {
   }
 
 
-  public void label(final String label) throws BuildException, CommandStoppedException {
+  public void label(final String label) {
     throw new IllegalStateException("Label is not supported for AccuRev");
   }
 
 
-  public Map getUsersMap() throws CommandStoppedException {
+  public Map getUsersMap() {
     return Collections.EMPTY_MAP;
   }
 
@@ -279,7 +279,7 @@ public final class AccurevVersionControl extends AbstractSourceControl {
   /**
    * {@inheritDoc}
    */
-  public Map getShellVariables() throws IOException {
+  public Map getShellVariables() {
     return Collections.EMPTY_MAP;
   }
 

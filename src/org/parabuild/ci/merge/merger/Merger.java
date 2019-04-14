@@ -24,5 +24,5 @@ import org.parabuild.ci.common.ValidationException;
  */
 public interface Merger {
 
-  void merge() throws CommandStoppedException, IOException, BuildException, ValidationException;
+  void merge() throws CommandStoppedException;
 }

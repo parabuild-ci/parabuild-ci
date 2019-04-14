@@ -35,7 +35,7 @@ public interface RemoteBuilderWebService extends Serializable {
   /**
    * @return agent version hash code
    */
-  String builderVersionAsString() throws IOException;
+  String builderVersionAsString();
 
 
   /**

@@ -55,7 +55,7 @@ public final class ChangeListsPanel extends Panel {
 
     clear();
     return (Integer) ConfigurationManager.runInHibernate(new TransactionCallback() {
-      public Object runInTransaction() throws Exception {
+      public Object runInTransaction() {
 
         final SecurityManager sm = SecurityManager.getInstance();
         final boolean userCanSeeChangeListDescriptions = sm.userCanSeeChangeListDescriptions(getTierletContext());

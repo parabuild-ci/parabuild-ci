@@ -297,7 +297,7 @@ public final class SystemProperty implements Externalizable, ObjectConstants {
   /**
    * {@inheritDoc}
    */
-  public void readExternal(final ObjectInput in) throws IOException, ClassNotFoundException {
+  public void readExternal(final ObjectInput in) throws IOException {
     propertyID = in.readInt();
     propertyTimeStamp = in.readLong();
     propertyName = SerializationUtils.readNullableUTF(in);

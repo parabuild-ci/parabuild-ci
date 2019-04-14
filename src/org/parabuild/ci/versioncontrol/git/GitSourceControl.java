@@ -170,7 +170,7 @@ warning: LF will be replaced by CRLF in sourceline/alwaysvalid/src/symlinked_rea
   }
 
 
-  public String getRelativeBuildDir() throws BuildException, AgentFailureException {
+  public String getRelativeBuildDir() throws BuildException {
     return ((RepositoryPath) getDepotPaths().get(0)).getPath();
   }
 
@@ -365,12 +365,12 @@ warning: LF will be replaced by CRLF in sourceline/alwaysvalid/src/symlinked_rea
   }
 
 
-  public void label(final String label) throws BuildException, CommandStoppedException, AgentFailureException {
+  public void label(final String label) {
     //To change body of implemented methods use File | Settings | File Templates.
   }
 
 
-  public Map getUsersMap() throws CommandStoppedException, AgentFailureException {
+  public Map getUsersMap() {
     return Collections.EMPTY_MAP;
   }
 
@@ -397,7 +397,7 @@ warning: LF will be replaced by CRLF in sourceline/alwaysvalid/src/symlinked_rea
   /**
    * {@inheritDoc}
    */
-  public Map getShellVariables() throws IOException, AgentFailureException {
+  public Map getShellVariables() {
 
     final Map result = new HashMap(1);
     result.put(BuildScriptGenerator.VAR_PARABUILD_GIT_BRANCH, getSettingValue(SourceControlSetting.GIT_BRANCH));

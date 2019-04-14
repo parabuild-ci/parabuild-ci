@@ -30,5 +30,5 @@ interface FogbugzConnectionFactory {
    * @return new connection according to the IssueTracker
    *         configuration.
    */
-  Connection makeConnection() throws SQLException;
+  Connection makeConnection();
 }

@@ -312,7 +312,7 @@ public final class BuildConfigPage extends BasePage implements ConversationalTie
     // validate
     //
     final Boolean validationResult = (Boolean) ConfigurationManager.runInHibernate(new TransactionCallback() {
-      public Object runInTransaction() throws Exception {
+      public Object runInTransaction() {
         if (log.isDebugEnabled()) {
           log.debug("Validating");
         }

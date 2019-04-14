@@ -44,7 +44,7 @@ class MKSRlogCommand extends MKSCommand {
   }
 
 
-  protected String mksCommandArguments() throws IOException {
+  protected String mksCommandArguments() {
     final StringBuffer result = new StringBuffer(100);
     appendCommand(result, "-P", StringUtils.putIntoDoubleQuotes(parameters.getProject()));
     appendCommand(result, "-R");

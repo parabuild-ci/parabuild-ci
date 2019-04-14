@@ -72,7 +72,7 @@ public class StarTeamSourceControl extends AbstractSourceControl {
    * @see AbstractSourceControl#initLocalCopyIfNecessary()
    * @see SourceControl#checkoutLatest()
    */
-  public boolean isBuildDirInitialized() throws IOException, BuildException, AgentFailureException {
+  public boolean isBuildDirInitialized() throws IOException, AgentFailureException {
     return !getCheckoutDirectoryAwareAgent().checkoutDirIsEmpty();
   }
 
@@ -379,7 +379,7 @@ public class StarTeamSourceControl extends AbstractSourceControl {
    * @see ErrorManagerFactory
    * @see ErrorManager
    */
-  public Map getUsersMap() throws CommandStoppedException {
+  public Map getUsersMap() {
     return Collections.EMPTY_MAP;
   }
 
@@ -424,7 +424,7 @@ public class StarTeamSourceControl extends AbstractSourceControl {
    *         avaiable to the build commands.
    * @see BuildScriptGenerator#addVariables(Map)
    */
-  public Map getShellVariables() throws IOException {
+  public Map getShellVariables() {
     return Collections.EMPTY_MAP;
   }
 

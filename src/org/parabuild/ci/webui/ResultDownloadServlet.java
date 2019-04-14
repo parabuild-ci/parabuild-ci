@@ -58,7 +58,7 @@ public final class ResultDownloadServlet extends AbstractArchiveAccessServlet {
    * @param userID
    * @param pathInfo
    */
-  protected InputStream getArchiveInputStream(final int userID, final String pathInfo) throws AccessForbiddenException {
+  protected InputStream getArchiveInputStream(final int userID, final String pathInfo) {
     try {
       // Get build ID
       int beginIndex = 1;

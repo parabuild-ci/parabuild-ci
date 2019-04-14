@@ -59,7 +59,7 @@ final class FailedWithVersionMismatchRemoteBuilderWebService implements RemoteBu
   }
 
 
-  public String builderVersionAsString() throws IOException {
+  public String builderVersionAsString() {
     return builderVersionAsString;
   }
 
@@ -114,7 +114,7 @@ final class FailedWithVersionMismatchRemoteBuilderWebService implements RemoteBu
   }
 
 
-  public ExecuteResult execute(final int handle, final String directoryToExecuteIn, final String cmd, final Map environment, final TailBufferSize tailBufferSize, final boolean mergeStdoutAndStdErr) throws IOException, CommandStoppedException {
+  public ExecuteResult execute(final int handle, final String directoryToExecuteIn, final String cmd, final Map environment, final TailBufferSize tailBufferSize, final boolean mergeStdoutAndStdErr) throws IOException {
     throw createVersionMismatchException();
   }
 

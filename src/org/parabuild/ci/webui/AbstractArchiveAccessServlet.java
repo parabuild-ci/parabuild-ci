@@ -13,14 +13,19 @@
  */
 package org.parabuild.ci.webui;
 
-import java.io.*;
-import javax.servlet.*;
-import javax.servlet.http.*;
-import org.apache.commons.logging.*;
-
-import org.parabuild.ci.common.*;
-import org.parabuild.ci.security.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.IoUtils;
+import org.parabuild.ci.common.StringUtils;
 import org.parabuild.ci.security.SecurityManager;
+
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * This servlet implements GoF Strategy pattern. It provides
@@ -93,15 +98,13 @@ public abstract class AbstractArchiveAccessServlet extends HttpServlet {
       response.setHeader("Cache-control", "max-age=" + Integer.toString(60 * 60 * 24 * 30 * 12));
       final ServletOutputStream outputStream = response.getOutputStream();
       IoUtils.copyInputToOuputStream(new BufferedInputStream(is), outputStream);
-    } catch (final AccessForbiddenException e) {
-      response.setStatus(HttpServletResponse.SC_FORBIDDEN);
     } finally {
       IoUtils.closeHard(is);
     }
   }
 
 
-  protected abstract InputStream getArchiveInputStream(final int userID, String pathInfo) throws AccessForbiddenException;
+  protected abstract InputStream getArchiveInputStream(final int userID, String pathInfo);
 
 
   /**

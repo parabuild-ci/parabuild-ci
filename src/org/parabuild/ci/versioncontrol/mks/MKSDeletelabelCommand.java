@@ -46,7 +46,7 @@ final class MKSDeletelabelCommand extends MKSCommand {
   }
 
 
-  protected String mksCommandArguments() throws IOException {
+  protected String mksCommandArguments() {
     final StringBuffer result = new StringBuffer(100);
     appendCommand(result, "--quiet");
     appendCommand(result, "-R");

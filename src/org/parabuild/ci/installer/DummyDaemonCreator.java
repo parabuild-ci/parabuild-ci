@@ -24,7 +24,7 @@ import java.io.IOException;
  */
 public final class DummyDaemonCreator implements UnixDaemonCreator {
 
-  public void createDaemon(final InstallerContext installerContext) throws IOException, UserCanceledException {
+  public void createDaemon(final InstallerContext installerContext) {
     // do nothing
   }
 }

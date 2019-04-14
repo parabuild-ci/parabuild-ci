@@ -737,7 +737,7 @@ public final class RemoteBuilderServlet extends HessianServlet implements Remote
   }
 
 
-  public Map getSystemProperties() throws IOException {
+  public Map getSystemProperties() {
     return getLocalBuilderEnvironmnent().getSystemProperties();
   }
 

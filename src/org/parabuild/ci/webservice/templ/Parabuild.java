@@ -29,7 +29,7 @@ public interface Parabuild {
    *
    * @param activeBuildID ID of the build to start.
    */
-  void startBuild(int activeBuildID) throws IOException;
+  void startBuild(int activeBuildID);
 
 
   /**
@@ -38,7 +38,7 @@ public interface Parabuild {
    * @param activeBuildID     ID of the build to start.
    * @param buildStartRequest an object containing a detailed build start request.
    */
-  void startBuild(int activeBuildID, BuildStartRequest buildStartRequest) throws IOException;
+  void startBuild(int activeBuildID, BuildStartRequest buildStartRequest);
 
 
   /**

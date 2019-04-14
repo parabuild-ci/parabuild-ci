@@ -320,12 +320,12 @@ public final class AccurevVersionControlwithWorkspaces extends AbstractSourceCon
   }
 
 
-  public void label(final String label) throws BuildException, CommandStoppedException {
+  public void label(final String label) {
     throw new IllegalStateException("Label is not supported for AccuRev");
   }
 
 
-  public Map getUsersMap() throws CommandStoppedException {
+  public Map getUsersMap() {
     return Collections.EMPTY_MAP;
   }
 
@@ -357,7 +357,7 @@ public final class AccurevVersionControlwithWorkspaces extends AbstractSourceCon
   /**
    * {@inheritDoc}
    */
-  public Map getShellVariables() throws IOException {
+  public Map getShellVariables() {
     return Collections.EMPTY_MAP;
   }
 
