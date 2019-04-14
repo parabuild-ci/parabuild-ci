@@ -173,14 +173,9 @@
 
     <!-- GWT -->
     <servlet>
-        <servlet-name>greetServlet</servlet-name>
+        <servlet-name>RepositoryService</servlet-name>
         <servlet-class>org.parabuild.ci.webui.repository.server.RepositoryServiceImpl</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>org.parabuild.ci.webui.repository.Repository RepositoryService</servlet-name>
-        <servlet-class>org.parabuild.ci.webui.repository.server.RepositoryServiceImpl</servlet-class>
-    </servlet>
-
 
     <!-- Begin test configuration @start.test.config@
   <servlet>
@@ -211,11 +206,6 @@
     </servlet>
     -->
     <!-- Precompiled JSP Servlets -->
-
-    <servlet-mapping>
-        <servlet-name>greetServlet</servlet-name>
-        <url-pattern>/gwt/greet</url-pattern>
-    </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>sitemesh-freemarker</servlet-name>
@@ -284,10 +274,11 @@
         <servlet-name>dwr-invoker</servlet-name>
         <url-pattern>/parabuild/dwr/*</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>org.parabuild.ci.webui.repository.Repository RepositoryService</servlet-name>
-        <url-pattern>/repository/calendar</url-pattern>
-    </servlet-mapping>
+
+   <servlet-mapping>
+     <servlet-name>RepositoryService</servlet-name>
+     <url-pattern>/repository/repository</url-pattern>
+   </servlet-mapping>
 
     <!-- Begin test configuration @start.test.config@
   <servlet-mapping>
