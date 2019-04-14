@@ -264,12 +264,11 @@ public final class IoUtils {
   /**
    * Deletes given list of files
    */
-  public static boolean deleteFilesHard(final List fileList) {
+  public static void deleteFilesHard(final List fileList) {
     boolean result = true;
     for (final Iterator i = fileList.iterator(); i.hasNext(); ) {
       result = deleteFileHard((File) i.next()) && result;
     }
-    return result;
   }
 
 

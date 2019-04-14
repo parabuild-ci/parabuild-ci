@@ -246,18 +246,17 @@ public final class MergeManager {
    *
    * @return created {@link MergeDaemon}
    */
-  private MergeDaemon startMergeDaemon(final ActiveMergeConfiguration configuration) {
+  private void startMergeDaemon(final ActiveMergeConfiguration configuration) {
     final Integer configurationID = new Integer(configuration.getID());
     if (mergeDaemons.containsKey(configurationID)) {
       // issue a warning
       notifyMergeDaemonAlreadyStarted(configuration);
-      return (MergeDaemon)mergeDaemons.get(configurationID);
+      mergeDaemons.get(configurationID);
     } else {
       if (log.isDebugEnabled()) log.debug("starting merge daemon configuration: " + configuration);
       final MergeDaemon mergeDaemon = new MergeDaemon(configuration);
       mergeDaemons.put(configurationID, mergeDaemon);
       if (log.isDebugEnabled()) log.debug("started mergeDaemon: " + mergeDaemon);
-      return mergeDaemon;
     }
   }
 

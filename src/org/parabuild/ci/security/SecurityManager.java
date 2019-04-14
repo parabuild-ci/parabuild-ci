@@ -1073,8 +1073,8 @@ public final class SecurityManager {
   }
 
 
-  public User save(final User user) {
-    return (User) ConfigurationManager.runInHibernate(new TransactionCallback() {
+  public void save(final User user) {
+    ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         session.saveOrUpdate(user);
         invalidateRightSetCaches();
@@ -1088,8 +1088,8 @@ public final class SecurityManager {
    * Saves group
    *
    */
-  public Group save(final Group group) {
-    return (Group) ConfigurationManager.runInHibernate(new TransactionCallback() {
+  public void save(final Group group) {
+    ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         session.saveOrUpdate(group);
         invalidateRightSetCaches();
@@ -1099,8 +1099,8 @@ public final class SecurityManager {
   }
 
 
-  public UserGroup save(final UserGroup userGroup) {
-    return (UserGroup) ConfigurationManager.runInHibernate(new TransactionCallback() {
+  public void save(final UserGroup userGroup) {
+    ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() {
         cm.saveObject(userGroup);
         invalidateRightSetCaches();

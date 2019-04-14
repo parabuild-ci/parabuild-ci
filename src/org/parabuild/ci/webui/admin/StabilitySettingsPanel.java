@@ -16,7 +16,6 @@ package org.parabuild.ci.webui.admin;
 import viewtier.ui.*;
 import org.parabuild.ci.webui.common.TableHeaderLabel;
 import org.parabuild.ci.webui.common.GridIterator;
-import org.parabuild.ci.webui.common.Pages;
 import org.parabuild.ci.webui.common.WebuiUtils;
 import org.parabuild.ci.common.StringUtils;
 
@@ -219,7 +218,7 @@ final class StabilitySettingsPanel extends Panel {
    *
    * @return true if valid
    */
-  public boolean validate(final List errors) {
-    return WebuiUtils.validateFieldNotBlank(errors, CAPTION_TIMEOUT, flTimeOut);
+  public void validate(final List errors) {
+    WebuiUtils.validateFieldNotBlank(errors, CAPTION_TIMEOUT, flTimeOut);
   }
 }
