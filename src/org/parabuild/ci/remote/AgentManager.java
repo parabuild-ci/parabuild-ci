@@ -641,9 +641,7 @@ public final class AgentManager {
       return sourceControlSettingResolver.resolve(customCheckoutDirTemplate);
     } catch (final ValidationException e) {
 
-      final IllegalStateException ise = new IllegalStateException(StringUtils.toString(e));
-      ise.initCause(e);
-      throw ise;
+      throw new IllegalStateException(StringUtils.toString(e), e);
     }
   }
 

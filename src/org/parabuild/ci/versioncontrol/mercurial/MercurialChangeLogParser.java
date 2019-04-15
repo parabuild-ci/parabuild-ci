@@ -293,9 +293,7 @@ files:
             }
           }
         } catch (final RuntimeException e) {
-          final IOException ioe = new IOException("Unexpected error while processing Bazaar change log, line: " + line);
-          ioe.initCause(e);
-          throw ioe;
+          throw new IOException("Unexpected error while processing Bazaar change log, line: " + line, e);
         }
       }
       if (LOG.isDebugEnabled()) {

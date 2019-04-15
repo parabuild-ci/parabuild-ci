@@ -67,9 +67,7 @@ public final class RemoteFileGetter {
         hin.startReply();
       } catch (final Throwable throwable) { // NOPMD - because startReply, thanks to caucho, declares Throwable
         if (throwable instanceof IOException) throw (IOException)throwable; // NOPMD - we still have to know what is the exception
-        final IOException e = new IOException(StringUtils.toString(throwable));
-        e.initCause(throwable);
-        throw e;
+        throw new IOException(StringUtils.toString(throwable), throwable);
       }
       responceIS = hin.readInputStream();
       IoUtils.copyInputToOuputStream(responceIS, outputTo);

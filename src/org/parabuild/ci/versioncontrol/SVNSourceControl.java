@@ -416,9 +416,7 @@ final class SVNSourceControl extends AbstractSourceControl {
       return result;
     } catch (final BuildException e) {
 
-      final IOException ioe = new IOException();
-      ioe.initCause(e);
-      throw ioe;
+      throw new IOException(e);
     }
   }
 

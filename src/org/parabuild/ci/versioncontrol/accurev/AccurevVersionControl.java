@@ -61,7 +61,7 @@ public final class AccurevVersionControl extends AbstractSourceControl {
   /**
    * {@inheritDoc}
    */
-  public boolean isBuildDirInitialized() throws IOException, BuildException, AgentFailureException {
+  public boolean isBuildDirInitialized() throws IOException, AgentFailureException {
     boolean result = true;
 
     // Basic check

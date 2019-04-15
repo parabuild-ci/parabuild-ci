@@ -226,9 +226,7 @@ public final class GitTextChangeLogParser {
             break;
           }
         } catch (final RuntimeException e) {
-          final IOException ioe = new IOException("Unexpected error while processing Git change log, line: " + line);
-          ioe.initCause(e);
-          throw ioe;
+          throw new IOException("Unexpected error while processing Git change log, line: " + line, e);
         }
       }
       if (LOG.isDebugEnabled()) {

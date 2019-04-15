@@ -29,8 +29,7 @@ public final class ExceptionUtils {
 
 
   public static IOException createIOException(final Exception e) {
-    final IOException ioException = new IOException(StringUtils.toString(e));
-    ioException.initCause(e);
+    final IOException ioException = new IOException(StringUtils.toString(e), e);
     return ioException;
   }
 }

@@ -697,9 +697,7 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
     } catch (final RuntimeException e) {
       throw e;
     } catch (final Exception e) {
-      final IllegalStateException ie = new IllegalStateException("Error while reloading Perforce configuration: " + StringUtils.toString(e));
-      ie.initCause(e);
-      throw ie;
+      throw  new IllegalStateException("Error while reloading Perforce configuration: " + StringUtils.toString(e), e);
     }
   }
 

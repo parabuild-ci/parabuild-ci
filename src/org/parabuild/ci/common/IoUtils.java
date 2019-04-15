@@ -530,9 +530,7 @@ public final class IoUtils {
    * @return Created IOException with initialized cause.
    */
   public static IOException createIOException(final String descr, final Throwable cause) {
-    final IOException ex = new IOException(descr);
-    ex.initCause(cause);
-    return ex;
+    return new IOException(descr, cause);
   }
 
 
@@ -704,9 +702,7 @@ public final class IoUtils {
 
 
   public static SQLException makeSQLException(final Exception e) {
-    final SQLException se = new SQLException(StringUtils.toString(e));
-    se.initCause(e);
-    return se;
+    return new SQLException(StringUtils.toString(e), e);;
   }
 
 
@@ -852,9 +848,7 @@ public final class IoUtils {
 
 
   public static IllegalStateException makeIllegalStateException(final Exception e) {
-    final IllegalStateException ise = new IllegalStateException(StringUtils.toString(e));
-    ise.initCause(e);
-    return ise;
+    return new IllegalStateException(StringUtils.toString(e), e);
   }
 
 

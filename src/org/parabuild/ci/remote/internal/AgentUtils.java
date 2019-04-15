@@ -41,13 +41,9 @@ public final class AgentUtils {
       if (cause instanceof HessianProtocolException) {
         if (StringUtils.isBlank(StringUtils.toString(cause))) {
           final String possibleErrorMessage = StringUtils.toString(hre);
-          final IOException result = new IOException("Parabuild agent host " + host + " is not available or is not accessible" + StringUtils.isBlank(possibleErrorMessage) + ": " + possibleErrorMessage);
-          result.initCause(cause);
-          return result;
+          return new IOException("Parabuild agent host " + host + " is not available or is not accessible" + StringUtils.isBlank(possibleErrorMessage) + ": " + possibleErrorMessage, cause);
         } else {
-          final IOException result = new IOException("Parabuild agent host " + host + " is not available: " + StringUtils.toString(cause));
-          result.initCause(cause);
-          return result;
+          return new IOException("Parabuild agent host " + host + " is not available: " + StringUtils.toString(cause), cause);
         }
       } else if (cause instanceof ConnectException) {
         return new IOException("Can not connect to remote agent host at " + host + ". Remote agent is not up or is not accessible: " + StringUtils.toString(cause));
@@ -55,9 +51,7 @@ public final class AgentUtils {
         return (IOException)cause;
       }
     } else {
-      final IOException e = new IOException("Unexpected I/O error: " + StringUtils.toString(cause));
-      e.initCause(cause);
-      return e;
+      return new IOException("Unexpected I/O error: " + StringUtils.toString(cause), cause);
     }
   }
 }
