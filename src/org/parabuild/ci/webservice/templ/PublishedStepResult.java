@@ -14,17 +14,28 @@
 
 package org.parabuild.ci.webservice.templ;
 
-public class PublishedStepResult implements java.io.Serializable {
+import org.apache.axis.description.ElementDesc;
+import org.apache.axis.description.TypeDesc;
+import org.apache.axis.encoding.Deserializer;
+import org.apache.axis.encoding.Serializer;
+import org.apache.axis.encoding.ser.BeanDeserializer;
+import org.apache.axis.encoding.ser.BeanSerializer;
+
+import javax.xml.namespace.QName;
+import java.io.Serializable;
+import java.util.Calendar;
+
+public class PublishedStepResult implements Serializable {
 
   private static final long serialVersionUID = 8882013964337740303L;
   private int ID;
   private int activeBuildID;
-  private java.lang.String buildName;
-  private java.util.Calendar buildRunDate;
+  private String buildName;
+  private Calendar buildRunDate;
   private int buildRunID;
   private int buildRunNumber;
-  private java.lang.String description;
-  private java.util.Calendar publishDate;
+  private String description;
+  private Calendar publishDate;
   private int publisherBuildRunID;
   private int resultGroupID;
   private int stepResultID;
@@ -37,12 +48,12 @@ public class PublishedStepResult implements java.io.Serializable {
   public PublishedStepResult(
           final int ID,
           final int activeBuildID,
-          final java.lang.String buildName,
-          final java.util.Calendar buildRunDate,
+          final String buildName,
+          final Calendar buildRunDate,
           final int buildRunID,
           final int buildRunNumber,
-          final java.lang.String description,
-          final java.util.Calendar publishDate,
+          final String description,
+          final Calendar publishDate,
           final int publisherBuildRunID,
           final int resultGroupID,
           final int stepResultID) {
@@ -105,7 +116,7 @@ public class PublishedStepResult implements java.io.Serializable {
    *
    * @return buildName
    */
-  public java.lang.String getBuildName() {
+  public String getBuildName() {
     return buildName;
   }
 
@@ -115,7 +126,7 @@ public class PublishedStepResult implements java.io.Serializable {
    *
    * @param buildName
    */
-  public void setBuildName(final java.lang.String buildName) {
+  public void setBuildName(final String buildName) {
     this.buildName = buildName;
   }
 
@@ -125,7 +136,7 @@ public class PublishedStepResult implements java.io.Serializable {
    *
    * @return buildRunDate
    */
-  public java.util.Calendar getBuildRunDate() {
+  public Calendar getBuildRunDate() {
     return buildRunDate;
   }
 
@@ -135,7 +146,7 @@ public class PublishedStepResult implements java.io.Serializable {
    *
    * @param buildRunDate
    */
-  public void setBuildRunDate(final java.util.Calendar buildRunDate) {
+  public void setBuildRunDate(final Calendar buildRunDate) {
     this.buildRunDate = buildRunDate;
   }
 
@@ -185,7 +196,7 @@ public class PublishedStepResult implements java.io.Serializable {
    *
    * @return description
    */
-  public java.lang.String getDescription() {
+  public String getDescription() {
     return description;
   }
 
@@ -195,7 +206,7 @@ public class PublishedStepResult implements java.io.Serializable {
    *
    * @param description
    */
-  public void setDescription(final java.lang.String description) {
+  public void setDescription(final String description) {
     this.description = description;
   }
 
@@ -205,7 +216,7 @@ public class PublishedStepResult implements java.io.Serializable {
    *
    * @return publishDate
    */
-  public java.util.Calendar getPublishDate() {
+  public Calendar getPublishDate() {
     return publishDate;
   }
 
@@ -215,7 +226,7 @@ public class PublishedStepResult implements java.io.Serializable {
    *
    * @param publishDate
    */
-  public void setPublishDate(final java.util.Calendar publishDate) {
+  public void setPublishDate(final Calendar publishDate) {
     this.publishDate = publishDate;
   }
 
@@ -280,10 +291,10 @@ public class PublishedStepResult implements java.io.Serializable {
   }
 
 
-  private java.lang.Object __equalsCalc = null;
+  private Object __equalsCalc = null;
 
 
-  public synchronized boolean equals(final java.lang.Object obj) {
+  public synchronized boolean equals(final Object obj) {
     if (!(obj instanceof PublishedStepResult)) return false;
     final PublishedStepResult other = (PublishedStepResult) obj;
     if (obj == null) return false;
@@ -352,76 +363,76 @@ public class PublishedStepResult implements java.io.Serializable {
 
 
   // Type metadata
-  private static final org.apache.axis.description.TypeDesc typeDesc =
-          new org.apache.axis.description.TypeDesc(PublishedStepResult.class, true);
+  private static final TypeDesc typeDesc =
+          new TypeDesc(PublishedStepResult.class, true);
 
 
   static {
-    typeDesc.setXmlType(new javax.xml.namespace.QName("http://org.parabuild.ci", "PublishedStepResult"));
-    org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+    typeDesc.setXmlType(new QName("http://org.parabuild.ci", "PublishedStepResult"));
+    ElementDesc elemField = new ElementDesc();
     elemField.setFieldName("ID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "ID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "ID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("activeBuildID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "activeBuildID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "activeBuildID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("buildName");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "buildName"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "buildName"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("buildRunDate");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "buildRunDate"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "buildRunDate"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("buildRunID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "buildRunID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "buildRunID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("buildRunNumber");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "buildRunNumber"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "buildRunNumber"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("description");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "description"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "description"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("publishDate");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "publishDate"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "publishDate"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("publisherBuildRunID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "publisherBuildRunID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "publisherBuildRunID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("resultGroupID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "resultGroupID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "resultGroupID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("stepResultID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "stepResultID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "stepResultID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
   }
@@ -430,7 +441,7 @@ public class PublishedStepResult implements java.io.Serializable {
   /**
    * Return type metadata object
    */
-  public static org.apache.axis.description.TypeDesc getTypeDesc() {
+  public static TypeDesc getTypeDesc() {
     return typeDesc;
   }
 
@@ -438,12 +449,12 @@ public class PublishedStepResult implements java.io.Serializable {
   /**
    * Get Custom Serializer
    */
-  public static org.apache.axis.encoding.Serializer getSerializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Serializer getSerializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanSerializer(
+            new BeanSerializer(
                     _javaType, _xmlType, typeDesc);
   }
 
@@ -451,12 +462,12 @@ public class PublishedStepResult implements java.io.Serializable {
   /**
    * Get Custom Deserializer
    */
-  public static org.apache.axis.encoding.Deserializer getDeserializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Deserializer getDeserializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanDeserializer(
+            new BeanDeserializer(
                     _javaType, _xmlType, typeDesc);
   }
 

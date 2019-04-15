@@ -14,22 +14,33 @@
 
 package org.parabuild.ci.webservice.templ;
 
-public class Issue implements java.io.Serializable {
+import org.apache.axis.description.ElementDesc;
+import org.apache.axis.description.TypeDesc;
+import org.apache.axis.encoding.Deserializer;
+import org.apache.axis.encoding.Serializer;
+import org.apache.axis.encoding.ser.BeanDeserializer;
+import org.apache.axis.encoding.ser.BeanSerializer;
+
+import javax.xml.namespace.QName;
+import java.io.Serializable;
+import java.util.Calendar;
+
+public class Issue implements Serializable {
 
   private static final long serialVersionUID = 427589672332767104L;
   private int ID;
-  private java.util.Calendar closed;
-  private java.lang.String closedBy;
-  private java.lang.String description;
-  private java.lang.String key;
-  private java.lang.String priority;
-  private java.lang.String product;
-  private java.lang.String project;
-  private java.util.Calendar received;
-  private java.lang.String status;
+  private Calendar closed;
+  private String closedBy;
+  private String description;
+  private String key;
+  private String priority;
+  private String product;
+  private String project;
+  private Calendar received;
+  private String status;
   private byte trackerType;
-  private java.lang.String url;
-  private java.lang.String version;
+  private String url;
+  private String version;
 
 
   public Issue() {
@@ -38,18 +49,18 @@ public class Issue implements java.io.Serializable {
 
   public Issue(
           final int ID,
-          final java.util.Calendar closed,
-          final java.lang.String closedBy,
-          final java.lang.String description,
-          final java.lang.String key,
-          final java.lang.String priority,
-          final java.lang.String product,
-          final java.lang.String project,
-          final java.util.Calendar received,
-          final java.lang.String status,
+          final Calendar closed,
+          final String closedBy,
+          final String description,
+          final String key,
+          final String priority,
+          final String product,
+          final String project,
+          final Calendar received,
+          final String status,
           final byte trackerType,
-          final java.lang.String url,
-          final java.lang.String version) {
+          final String url,
+          final String version) {
     this.ID = ID;
     this.closed = closed;
     this.closedBy = closedBy;
@@ -91,7 +102,7 @@ public class Issue implements java.io.Serializable {
    *
    * @return closed
    */
-  public java.util.Calendar getClosed() {
+  public Calendar getClosed() {
     return closed;
   }
 
@@ -101,7 +112,7 @@ public class Issue implements java.io.Serializable {
    *
    * @param closed
    */
-  public void setClosed(final java.util.Calendar closed) {
+  public void setClosed(final Calendar closed) {
     this.closed = closed;
   }
 
@@ -111,7 +122,7 @@ public class Issue implements java.io.Serializable {
    *
    * @return closedBy
    */
-  public java.lang.String getClosedBy() {
+  public String getClosedBy() {
     return closedBy;
   }
 
@@ -121,7 +132,7 @@ public class Issue implements java.io.Serializable {
    *
    * @param closedBy
    */
-  public void setClosedBy(final java.lang.String closedBy) {
+  public void setClosedBy(final String closedBy) {
     this.closedBy = closedBy;
   }
 
@@ -131,7 +142,7 @@ public class Issue implements java.io.Serializable {
    *
    * @return description
    */
-  public java.lang.String getDescription() {
+  public String getDescription() {
     return description;
   }
 
@@ -141,7 +152,7 @@ public class Issue implements java.io.Serializable {
    *
    * @param description
    */
-  public void setDescription(final java.lang.String description) {
+  public void setDescription(final String description) {
     this.description = description;
   }
 
@@ -151,7 +162,7 @@ public class Issue implements java.io.Serializable {
    *
    * @return key
    */
-  public java.lang.String getKey() {
+  public String getKey() {
     return key;
   }
 
@@ -161,7 +172,7 @@ public class Issue implements java.io.Serializable {
    *
    * @param key
    */
-  public void setKey(final java.lang.String key) {
+  public void setKey(final String key) {
     this.key = key;
   }
 
@@ -171,7 +182,7 @@ public class Issue implements java.io.Serializable {
    *
    * @return priority
    */
-  public java.lang.String getPriority() {
+  public String getPriority() {
     return priority;
   }
 
@@ -181,7 +192,7 @@ public class Issue implements java.io.Serializable {
    *
    * @param priority
    */
-  public void setPriority(final java.lang.String priority) {
+  public void setPriority(final String priority) {
     this.priority = priority;
   }
 
@@ -191,7 +202,7 @@ public class Issue implements java.io.Serializable {
    *
    * @return product
    */
-  public java.lang.String getProduct() {
+  public String getProduct() {
     return product;
   }
 
@@ -201,7 +212,7 @@ public class Issue implements java.io.Serializable {
    *
    * @param product
    */
-  public void setProduct(final java.lang.String product) {
+  public void setProduct(final String product) {
     this.product = product;
   }
 
@@ -211,7 +222,7 @@ public class Issue implements java.io.Serializable {
    *
    * @return project
    */
-  public java.lang.String getProject() {
+  public String getProject() {
     return project;
   }
 
@@ -221,7 +232,7 @@ public class Issue implements java.io.Serializable {
    *
    * @param project
    */
-  public void setProject(final java.lang.String project) {
+  public void setProject(final String project) {
     this.project = project;
   }
 
@@ -231,7 +242,7 @@ public class Issue implements java.io.Serializable {
    *
    * @return received
    */
-  public java.util.Calendar getReceived() {
+  public Calendar getReceived() {
     return received;
   }
 
@@ -241,7 +252,7 @@ public class Issue implements java.io.Serializable {
    *
    * @param received
    */
-  public void setReceived(final java.util.Calendar received) {
+  public void setReceived(final Calendar received) {
     this.received = received;
   }
 
@@ -251,7 +262,7 @@ public class Issue implements java.io.Serializable {
    *
    * @return status
    */
-  public java.lang.String getStatus() {
+  public String getStatus() {
     return status;
   }
 
@@ -261,7 +272,7 @@ public class Issue implements java.io.Serializable {
    *
    * @param status
    */
-  public void setStatus(final java.lang.String status) {
+  public void setStatus(final String status) {
     this.status = status;
   }
 
@@ -291,7 +302,7 @@ public class Issue implements java.io.Serializable {
    *
    * @return url
    */
-  public java.lang.String getUrl() {
+  public String getUrl() {
     return url;
   }
 
@@ -301,7 +312,7 @@ public class Issue implements java.io.Serializable {
    *
    * @param url
    */
-  public void setUrl(final java.lang.String url) {
+  public void setUrl(final String url) {
     this.url = url;
   }
 
@@ -311,7 +322,7 @@ public class Issue implements java.io.Serializable {
    *
    * @return version
    */
-  public java.lang.String getVersion() {
+  public String getVersion() {
     return version;
   }
 
@@ -321,15 +332,15 @@ public class Issue implements java.io.Serializable {
    *
    * @param version
    */
-  public void setVersion(final java.lang.String version) {
+  public void setVersion(final String version) {
     this.version = version;
   }
 
 
-  private java.lang.Object __equalsCalc = null;
+  private Object __equalsCalc = null;
 
 
-  public synchronized boolean equals(final java.lang.Object obj) {
+  public synchronized boolean equals(final Object obj) {
     if (!(obj instanceof Issue)) return false;
     final Issue other = (Issue) obj;
     if (obj == null) return false;
@@ -430,88 +441,88 @@ public class Issue implements java.io.Serializable {
 
 
   // Type metadata
-  private static final org.apache.axis.description.TypeDesc typeDesc =
-          new org.apache.axis.description.TypeDesc(Issue.class, true);
+  private static final TypeDesc typeDesc =
+          new TypeDesc(Issue.class, true);
 
 
   static {
-    typeDesc.setXmlType(new javax.xml.namespace.QName("http://org.parabuild.ci", "Issue"));
-    org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+    typeDesc.setXmlType(new QName("http://org.parabuild.ci", "Issue"));
+    ElementDesc elemField = new ElementDesc();
     elemField.setFieldName("ID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "ID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "ID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("closed");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "closed"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "closed"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("closedBy");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "closedBy"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "closedBy"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("description");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "description"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "description"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("key");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "key"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "key"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("priority");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "priority"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "priority"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("product");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "product"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "product"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("project");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "project"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "project"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("received");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "received"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "received"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("status");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "status"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "status"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("trackerType");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "trackerType"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "byte"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "trackerType"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "byte"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("url");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "url"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "url"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("version");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "version"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "version"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
   }
@@ -520,7 +531,7 @@ public class Issue implements java.io.Serializable {
   /**
    * Return type metadata object
    */
-  public static org.apache.axis.description.TypeDesc getTypeDesc() {
+  public static TypeDesc getTypeDesc() {
     return typeDesc;
   }
 
@@ -528,12 +539,12 @@ public class Issue implements java.io.Serializable {
   /**
    * Get Custom Serializer
    */
-  public static org.apache.axis.encoding.Serializer getSerializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Serializer getSerializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanSerializer(
+            new BeanSerializer(
                     _javaType, _xmlType, typeDesc);
   }
 
@@ -541,12 +552,12 @@ public class Issue implements java.io.Serializable {
   /**
    * Get Custom Deserializer
    */
-  public static org.apache.axis.encoding.Deserializer getDeserializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Deserializer getDeserializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanDeserializer(
+            new BeanDeserializer(
                     _javaType, _xmlType, typeDesc);
   }
 

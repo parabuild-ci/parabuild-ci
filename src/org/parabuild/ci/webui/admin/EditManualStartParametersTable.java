@@ -57,7 +57,7 @@ public final class EditManualStartParametersTable extends AbstractFlatTable {
 
 
   /**
-   * @param parameters List of {@link org.parabuild.ci.object.StartParameter} objects.
+   * @param parameters List of {@link StartParameter} objects.
    */
   public EditManualStartParametersTable(final List parameters, final boolean useFirstParameterValueAsDefault, final int mode) {
     this(useFirstParameterValueAsDefault, mode);

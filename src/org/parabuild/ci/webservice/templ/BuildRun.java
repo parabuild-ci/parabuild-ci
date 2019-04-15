@@ -14,29 +14,40 @@
 
 package org.parabuild.ci.webservice.templ;
 
-public class BuildRun implements java.io.Serializable {
+import org.apache.axis.description.ElementDesc;
+import org.apache.axis.description.TypeDesc;
+import org.apache.axis.encoding.Deserializer;
+import org.apache.axis.encoding.Serializer;
+import org.apache.axis.encoding.ser.BeanDeserializer;
+import org.apache.axis.encoding.ser.BeanSerializer;
+
+import javax.xml.namespace.QName;
+import java.io.Serializable;
+import java.util.Calendar;
+
+public class BuildRun implements Serializable {
 
   private static final long serialVersionUID = 2287075166088276601L;
   private int activeBuildID;
   private int buildID;
-  private java.lang.String buildName;
+  private String buildName;
   private int buildRunID;
   private int buildRunNumber;
-  private java.lang.String changeListNumber;
+  private String changeListNumber;
   private byte complete;
   private byte dependence;
-  private java.util.Calendar finishedAt;
-  private java.lang.String label;
-  private java.lang.String labelNote;
+  private Calendar finishedAt;
+  private String label;
+  private String labelNote;
   private byte labelStatus;
-  private java.lang.String lastStepRunName;
-  private java.lang.String manualLabel;
+  private String lastStepRunName;
+  private String manualLabel;
   private boolean physicalChangeListNumber;
   private boolean reRun;
-  private java.lang.String resultDescription;
+  private String resultDescription;
   private byte resultID;
-  private java.util.Calendar startedAt;
-  private java.lang.String syncNote;
+  private Calendar startedAt;
+  private String syncNote;
   private long timeStamp;
   private byte type;
 
@@ -48,27 +59,27 @@ public class BuildRun implements java.io.Serializable {
   public BuildRun(
           final int activeBuildID,
           final int buildID,
-          final java.lang.String buildName,
-          final java.lang.String buildNameAndNumberAsString,
+          final String buildName,
+          final String buildNameAndNumberAsString,
           final int buildRunID,
-          final java.lang.String buildRunIDAsString,
+          final String buildRunIDAsString,
           final int buildRunNumber,
-          final java.lang.String buildRunNumberAsString,
-          final java.lang.String changeListNumber,
+          final String buildRunNumberAsString,
+          final String changeListNumber,
           final byte complete,
           final byte dependence,
-          final java.util.Calendar finishedAt,
-          final java.lang.String label,
-          final java.lang.String labelNote,
+          final Calendar finishedAt,
+          final String label,
+          final String labelNote,
           final byte labelStatus,
-          final java.lang.String lastStepRunName,
-          final java.lang.String manualLabel,
+          final String lastStepRunName,
+          final String manualLabel,
           final boolean physicalChangeListNumber,
           final boolean reRun,
-          final java.lang.String resultDescription,
+          final String resultDescription,
           final byte resultID,
-          final java.util.Calendar startedAt,
-          final java.lang.String syncNote,
+          final Calendar startedAt,
+          final String syncNote,
           final long timeStamp,
           final byte type) {
     this.activeBuildID = activeBuildID;
@@ -141,7 +152,7 @@ public class BuildRun implements java.io.Serializable {
    *
    * @return buildName
    */
-  public java.lang.String getBuildName() {
+  public String getBuildName() {
     return buildName;
   }
 
@@ -151,7 +162,7 @@ public class BuildRun implements java.io.Serializable {
    *
    * @param buildName
    */
-  public void setBuildName(final java.lang.String buildName) {
+  public void setBuildName(final String buildName) {
     this.buildName = buildName;
   }
 
@@ -201,7 +212,7 @@ public class BuildRun implements java.io.Serializable {
    *
    * @return changeListNumber
    */
-  public java.lang.String getChangeListNumber() {
+  public String getChangeListNumber() {
     return changeListNumber;
   }
 
@@ -211,7 +222,7 @@ public class BuildRun implements java.io.Serializable {
    *
    * @param changeListNumber
    */
-  public void setChangeListNumber(final java.lang.String changeListNumber) {
+  public void setChangeListNumber(final String changeListNumber) {
     this.changeListNumber = changeListNumber;
   }
 
@@ -261,7 +272,7 @@ public class BuildRun implements java.io.Serializable {
    *
    * @return finishedAt
    */
-  public java.util.Calendar getFinishedAt() {
+  public Calendar getFinishedAt() {
     return finishedAt;
   }
 
@@ -271,7 +282,7 @@ public class BuildRun implements java.io.Serializable {
    *
    * @param finishedAt
    */
-  public void setFinishedAt(final java.util.Calendar finishedAt) {
+  public void setFinishedAt(final Calendar finishedAt) {
     this.finishedAt = finishedAt;
   }
 
@@ -281,7 +292,7 @@ public class BuildRun implements java.io.Serializable {
    *
    * @return label
    */
-  public java.lang.String getLabel() {
+  public String getLabel() {
     return label;
   }
 
@@ -291,7 +302,7 @@ public class BuildRun implements java.io.Serializable {
    *
    * @param label
    */
-  public void setLabel(final java.lang.String label) {
+  public void setLabel(final String label) {
     this.label = label;
   }
 
@@ -301,7 +312,7 @@ public class BuildRun implements java.io.Serializable {
    *
    * @return labelNote
    */
-  public java.lang.String getLabelNote() {
+  public String getLabelNote() {
     return labelNote;
   }
 
@@ -311,7 +322,7 @@ public class BuildRun implements java.io.Serializable {
    *
    * @param labelNote
    */
-  public void setLabelNote(final java.lang.String labelNote) {
+  public void setLabelNote(final String labelNote) {
     this.labelNote = labelNote;
   }
 
@@ -341,7 +352,7 @@ public class BuildRun implements java.io.Serializable {
    *
    * @return lastStepRunName
    */
-  public java.lang.String getLastStepRunName() {
+  public String getLastStepRunName() {
     return lastStepRunName;
   }
 
@@ -351,7 +362,7 @@ public class BuildRun implements java.io.Serializable {
    *
    * @param lastStepRunName
    */
-  public void setLastStepRunName(final java.lang.String lastStepRunName) {
+  public void setLastStepRunName(final String lastStepRunName) {
     this.lastStepRunName = lastStepRunName;
   }
 
@@ -361,7 +372,7 @@ public class BuildRun implements java.io.Serializable {
    *
    * @return manualLabel
    */
-  public java.lang.String getManualLabel() {
+  public String getManualLabel() {
     return manualLabel;
   }
 
@@ -371,7 +382,7 @@ public class BuildRun implements java.io.Serializable {
    *
    * @param manualLabel
    */
-  public void setManualLabel(final java.lang.String manualLabel) {
+  public void setManualLabel(final String manualLabel) {
     this.manualLabel = manualLabel;
   }
 
@@ -421,7 +432,7 @@ public class BuildRun implements java.io.Serializable {
    *
    * @return resultDescription
    */
-  public java.lang.String getResultDescription() {
+  public String getResultDescription() {
     return resultDescription;
   }
 
@@ -431,7 +442,7 @@ public class BuildRun implements java.io.Serializable {
    *
    * @param resultDescription
    */
-  public void setResultDescription(final java.lang.String resultDescription) {
+  public void setResultDescription(final String resultDescription) {
     this.resultDescription = resultDescription;
   }
 
@@ -461,7 +472,7 @@ public class BuildRun implements java.io.Serializable {
    *
    * @return startedAt
    */
-  public java.util.Calendar getStartedAt() {
+  public Calendar getStartedAt() {
     return startedAt;
   }
 
@@ -471,7 +482,7 @@ public class BuildRun implements java.io.Serializable {
    *
    * @param startedAt
    */
-  public void setStartedAt(final java.util.Calendar startedAt) {
+  public void setStartedAt(final Calendar startedAt) {
     this.startedAt = startedAt;
   }
 
@@ -481,7 +492,7 @@ public class BuildRun implements java.io.Serializable {
    *
    * @return syncNote
    */
-  public java.lang.String getSyncNote() {
+  public String getSyncNote() {
     return syncNote;
   }
 
@@ -491,7 +502,7 @@ public class BuildRun implements java.io.Serializable {
    *
    * @param syncNote
    */
-  public void setSyncNote(final java.lang.String syncNote) {
+  public void setSyncNote(final String syncNote) {
     this.syncNote = syncNote;
   }
 
@@ -536,10 +547,10 @@ public class BuildRun implements java.io.Serializable {
   }
 
 
-  private java.lang.Object __equalsCalc = null;
+  private Object __equalsCalc = null;
 
 
-  public synchronized boolean equals(final java.lang.Object obj) {
+  public synchronized boolean equals(final Object obj) {
     if (!(obj instanceof BuildRun)) return false;
     final BuildRun other = (BuildRun) obj;
     if (obj == null) return false;
@@ -652,160 +663,160 @@ public class BuildRun implements java.io.Serializable {
 
 
   // Type metadata
-  private static final org.apache.axis.description.TypeDesc typeDesc =
-          new org.apache.axis.description.TypeDesc(BuildRun.class, true);
+  private static final TypeDesc typeDesc =
+          new TypeDesc(BuildRun.class, true);
 
 
   static {
-    typeDesc.setXmlType(new javax.xml.namespace.QName("http://org.parabuild.ci", "BuildRun"));
-    org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+    typeDesc.setXmlType(new QName("http://org.parabuild.ci", "BuildRun"));
+    ElementDesc elemField = new ElementDesc();
     elemField.setFieldName("activeBuildID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "activeBuildID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "activeBuildID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("buildID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "buildID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "buildID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("buildName");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "buildName"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "buildName"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("buildNameAndNumberAsString");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "buildNameAndNumberAsString"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "buildNameAndNumberAsString"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("buildRunID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "buildRunID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "buildRunID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("buildRunIDAsString");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "buildRunIDAsString"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "buildRunIDAsString"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("buildRunNumber");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "buildRunNumber"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "buildRunNumber"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("buildRunNumberAsString");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "buildRunNumberAsString"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "buildRunNumberAsString"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("changeListNumber");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "changeListNumber"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "changeListNumber"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("complete");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "complete"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "byte"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "complete"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "byte"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("dependence");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "dependence"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "byte"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "dependence"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "byte"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("finishedAt");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "finishedAt"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "finishedAt"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("label");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "label"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "label"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("labelNote");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "labelNote"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "labelNote"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("labelStatus");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "labelStatus"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "byte"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "labelStatus"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "byte"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("lastStepRunName");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "lastStepRunName"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "lastStepRunName"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("manualLabel");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "manualLabel"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "manualLabel"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("physicalChangeListNumber");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "physicalChangeListNumber"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "physicalChangeListNumber"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "boolean"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("reRun");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "reRun"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "reRun"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "boolean"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("resultDescription");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "resultDescription"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "resultDescription"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("resultID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "resultID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "byte"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "resultID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "byte"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("startedAt");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "startedAt"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "startedAt"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("syncNote");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "syncNote"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "syncNote"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("timeStamp");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "timeStamp"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "timeStamp"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "long"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("type");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "type"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "byte"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "type"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "byte"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
   }
@@ -814,7 +825,7 @@ public class BuildRun implements java.io.Serializable {
   /**
    * Return type metadata object
    */
-  public static org.apache.axis.description.TypeDesc getTypeDesc() {
+  public static TypeDesc getTypeDesc() {
     return typeDesc;
   }
 
@@ -822,12 +833,12 @@ public class BuildRun implements java.io.Serializable {
   /**
    * Get Custom Serializer
    */
-  public static org.apache.axis.encoding.Serializer getSerializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Serializer getSerializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanSerializer(
+            new BeanSerializer(
                     _javaType, _xmlType, typeDesc);
   }
 
@@ -835,12 +846,12 @@ public class BuildRun implements java.io.Serializable {
   /**
    * Get Custom Deserializer
    */
-  public static org.apache.axis.encoding.Deserializer getDeserializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Deserializer getDeserializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanDeserializer(
+            new BeanDeserializer(
                     _javaType, _xmlType, typeDesc);
   }
 

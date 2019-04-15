@@ -18,8 +18,8 @@ import java.util.Date;
 /**
  * Parameters for MKS's rlog command.
  *
- * @see org.parabuild.ci.versioncontrol.mks.MKSCommandParameters
- * @see org.parabuild.ci.versioncontrol.mks.MKSRlogCommand
+ * @see MKSCommandParameters
+ * @see MKSRlogCommand
  */
 public class MKSRlogCommandParameters extends MKSCommandParameters {
 

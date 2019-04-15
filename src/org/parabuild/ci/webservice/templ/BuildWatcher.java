@@ -14,13 +14,23 @@
 
 package org.parabuild.ci.webservice.templ;
 
-public class BuildWatcher implements java.io.Serializable {
+import org.apache.axis.description.ElementDesc;
+import org.apache.axis.description.TypeDesc;
+import org.apache.axis.encoding.Deserializer;
+import org.apache.axis.encoding.Serializer;
+import org.apache.axis.encoding.ser.BeanDeserializer;
+import org.apache.axis.encoding.ser.BeanSerializer;
+
+import javax.xml.namespace.QName;
+import java.io.Serializable;
+
+public class BuildWatcher implements Serializable {
 
   private static final long serialVersionUID = -3159543946243929534L;
   private int buildID;
   private boolean disabled;
-  private java.lang.String email;
-  private java.lang.String instantMessengerAddress;
+  private String email;
+  private String instantMessengerAddress;
   private byte instantMessengerType;
   private byte level;
   private long timeStamp;
@@ -34,8 +44,8 @@ public class BuildWatcher implements java.io.Serializable {
   public BuildWatcher(
           final int buildID,
           final boolean disabled,
-          final java.lang.String email,
-          final java.lang.String instantMessengerAddress,
+          final String email,
+          final String instantMessengerAddress,
           final byte instantMessengerType,
           final byte level,
           final long timeStamp,
@@ -96,7 +106,7 @@ public class BuildWatcher implements java.io.Serializable {
    *
    * @return email
    */
-  public java.lang.String getEmail() {
+  public String getEmail() {
     return email;
   }
 
@@ -106,7 +116,7 @@ public class BuildWatcher implements java.io.Serializable {
    *
    * @param email
    */
-  public void setEmail(final java.lang.String email) {
+  public void setEmail(final String email) {
     this.email = email;
   }
 
@@ -116,7 +126,7 @@ public class BuildWatcher implements java.io.Serializable {
    *
    * @return instantMessengerAddress
    */
-  public java.lang.String getInstantMessengerAddress() {
+  public String getInstantMessengerAddress() {
     return instantMessengerAddress;
   }
 
@@ -126,7 +136,7 @@ public class BuildWatcher implements java.io.Serializable {
    *
    * @param instantMessengerAddress
    */
-  public void setInstantMessengerAddress(final java.lang.String instantMessengerAddress) {
+  public void setInstantMessengerAddress(final String instantMessengerAddress) {
     this.instantMessengerAddress = instantMessengerAddress;
   }
 
@@ -211,10 +221,10 @@ public class BuildWatcher implements java.io.Serializable {
   }
 
 
-  private java.lang.Object __equalsCalc = null;
+  private Object __equalsCalc = null;
 
 
-  public synchronized boolean equals(final java.lang.Object obj) {
+  public synchronized boolean equals(final Object obj) {
     if (!(obj instanceof BuildWatcher)) return false;
     final BuildWatcher other = (BuildWatcher) obj;
     if (obj == null) return false;
@@ -269,58 +279,58 @@ public class BuildWatcher implements java.io.Serializable {
 
 
   // Type metadata
-  private static final org.apache.axis.description.TypeDesc typeDesc =
-          new org.apache.axis.description.TypeDesc(BuildWatcher.class, true);
+  private static final TypeDesc typeDesc =
+          new TypeDesc(BuildWatcher.class, true);
 
 
   static {
-    typeDesc.setXmlType(new javax.xml.namespace.QName("http://org.parabuild.ci", "BuildWatcher"));
-    org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+    typeDesc.setXmlType(new QName("http://org.parabuild.ci", "BuildWatcher"));
+    ElementDesc elemField = new ElementDesc();
     elemField.setFieldName("buildID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "buildID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "buildID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("disabled");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "disabled"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "disabled"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "boolean"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("email");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "email"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "email"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("instantMessengerAddress");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "instantMessengerAddress"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "instantMessengerAddress"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("instantMessengerType");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "instantMessengerType"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "byte"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "instantMessengerType"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "byte"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("level");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "level"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "byte"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "level"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "byte"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("timeStamp");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "timeStamp"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "timeStamp"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "long"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("watcherID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "watcherID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "watcherID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
   }
@@ -329,7 +339,7 @@ public class BuildWatcher implements java.io.Serializable {
   /**
    * Return type metadata object
    */
-  public static org.apache.axis.description.TypeDesc getTypeDesc() {
+  public static TypeDesc getTypeDesc() {
     return typeDesc;
   }
 
@@ -337,12 +347,12 @@ public class BuildWatcher implements java.io.Serializable {
   /**
    * Get Custom Serializer
    */
-  public static org.apache.axis.encoding.Serializer getSerializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Serializer getSerializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanSerializer(
+            new BeanSerializer(
                     _javaType, _xmlType, typeDesc);
   }
 
@@ -350,12 +360,12 @@ public class BuildWatcher implements java.io.Serializable {
   /**
    * Get Custom Deserializer
    */
-  public static org.apache.axis.encoding.Deserializer getDeserializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Deserializer getDeserializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanDeserializer(
+            new BeanDeserializer(
                     _javaType, _xmlType, typeDesc);
   }
 

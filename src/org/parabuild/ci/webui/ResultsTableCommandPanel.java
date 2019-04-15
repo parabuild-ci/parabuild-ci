@@ -49,7 +49,7 @@ import java.util.List;
 /**
  * Class to hold table commands specific to the results table.
  *
- * @see org.parabuild.ci.webui.common.AbstractFlatTable.TableCommands
+ * @see AbstractFlatTable.TableCommands
  */
 final class ResultsTableCommandPanel extends Panel implements AbstractFlatTable.TableCommands {
 

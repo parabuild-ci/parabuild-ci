@@ -215,12 +215,12 @@ public class MercurialVersionControl extends AbstractSourceControl {
    * @param maxChangeLists       a maximum number of change lists.
    * @return new change list ID if there were changes made, or
    *         the same base change list if there were changes
-   * @throws java.io.IOException if I/O error occurs.
-   * @throws org.parabuild.ci.build.AgentFailureException
+   * @throws IOException if I/O error occurs.
+   * @throws AgentFailureException
    *                             if agent fails.
-   * @throws org.parabuild.ci.common.BuildException
+   * @throws BuildException
    *                             if a general build error occurs.
-   * @throws org.parabuild.ci.common.CommandStoppedException
+   * @throws CommandStoppedException
    *                             if the command was stopped.
    * @noinspection ControlFlowStatementWithoutBraces, TooBroadScope
    */

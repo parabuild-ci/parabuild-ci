@@ -17,7 +17,7 @@ package org.parabuild.ci.versioncontrol.mks;
  * Parameters for MKS's resync command.
  *
  * @see MKSCommandParameters
- * @see org.parabuild.ci.versioncontrol.mks.MKSResyncCommand
+ * @see MKSResyncCommand
  */
 public final class MKSResyncCommandParameters extends MKSCommandParameters {
 

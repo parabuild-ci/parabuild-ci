@@ -61,7 +61,7 @@ public final class PromotionConfigurationManager {
 
 
   /**
-   * @return list of {@link org.parabuild.ci.object.PromotionPolicyStep} ordered by order line numbers.
+   * @return list of {@link PromotionPolicyStep} ordered by order line numbers.
    */
   public List getPromotionStepsList(final int promotionID) {
     return (List) ConfigurationManager.runInHibernate(new TransactionCallback() {
@@ -107,8 +107,8 @@ public final class PromotionConfigurationManager {
   }
 
 
-  public org.parabuild.ci.object.PromotionPolicyStep getPromotionPolicyStep(final int id) {
-    return (org.parabuild.ci.object.PromotionPolicyStep) ConfigurationManager.getInstance().getObject(org.parabuild.ci.object.PromotionPolicyStep.class, id);
+  public PromotionPolicyStep getPromotionPolicyStep(final int id) {
+    return (PromotionPolicyStep) ConfigurationManager.getInstance().getObject(PromotionPolicyStep.class, id);
   }
 
 

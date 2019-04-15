@@ -14,14 +14,24 @@
 
 package org.parabuild.ci.webservice.templ;
 
-public class ScheduleProperty implements java.io.Serializable {
+import org.apache.axis.description.ElementDesc;
+import org.apache.axis.description.TypeDesc;
+import org.apache.axis.encoding.Deserializer;
+import org.apache.axis.encoding.Serializer;
+import org.apache.axis.encoding.ser.BeanDeserializer;
+import org.apache.axis.encoding.ser.BeanSerializer;
+
+import javax.xml.namespace.QName;
+import java.io.Serializable;
+
+public class ScheduleProperty implements Serializable {
 
   private static final long serialVersionUID = -1478098593687618458L;
   private int buildID;
   private int propertyID;
-  private java.lang.String propertyName;
+  private String propertyName;
   private long propertyTimeStamp;
-  private java.lang.String propertyValue;
+  private String propertyValue;
 
 
   public ScheduleProperty() {
@@ -31,9 +41,9 @@ public class ScheduleProperty implements java.io.Serializable {
   public ScheduleProperty(
           final int buildID,
           final int propertyID,
-          final java.lang.String propertyName,
+          final String propertyName,
           final long propertyTimeStamp,
-          final java.lang.String propertyValue,
+          final String propertyValue,
           final int propertyValueAsInteger) {
     this.buildID = buildID;
     this.propertyID = propertyID;
@@ -88,7 +98,7 @@ public class ScheduleProperty implements java.io.Serializable {
    *
    * @return propertyName
    */
-  public java.lang.String getPropertyName() {
+  public String getPropertyName() {
     return propertyName;
   }
 
@@ -98,7 +108,7 @@ public class ScheduleProperty implements java.io.Serializable {
    *
    * @param propertyName
    */
-  public void setPropertyName(final java.lang.String propertyName) {
+  public void setPropertyName(final String propertyName) {
     this.propertyName = propertyName;
   }
 
@@ -128,7 +138,7 @@ public class ScheduleProperty implements java.io.Serializable {
    *
    * @return propertyValue
    */
-  public java.lang.String getPropertyValue() {
+  public String getPropertyValue() {
     return propertyValue;
   }
 
@@ -138,15 +148,15 @@ public class ScheduleProperty implements java.io.Serializable {
    *
    * @param propertyValue
    */
-  public void setPropertyValue(final java.lang.String propertyValue) {
+  public void setPropertyValue(final String propertyValue) {
     this.propertyValue = propertyValue;
   }
 
 
-  private java.lang.Object __equalsCalc = null;
+  private Object __equalsCalc = null;
 
 
-  public synchronized boolean equals(final java.lang.Object obj) {
+  public synchronized boolean equals(final Object obj) {
     if (!(obj instanceof ScheduleProperty)) return false;
     final ScheduleProperty other = (ScheduleProperty) obj;
     if (obj == null) return false;
@@ -195,46 +205,46 @@ public class ScheduleProperty implements java.io.Serializable {
 
 
   // Type metadata
-  private static final org.apache.axis.description.TypeDesc typeDesc =
-          new org.apache.axis.description.TypeDesc(ScheduleProperty.class, true);
+  private static final TypeDesc typeDesc =
+          new TypeDesc(ScheduleProperty.class, true);
 
 
   static {
-    typeDesc.setXmlType(new javax.xml.namespace.QName("http://org.parabuild.ci", "ScheduleProperty"));
-    org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+    typeDesc.setXmlType(new QName("http://org.parabuild.ci", "ScheduleProperty"));
+    ElementDesc elemField = new ElementDesc();
     elemField.setFieldName("buildID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "buildID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "buildID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("propertyID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "propertyID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "propertyID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("propertyName");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "propertyName"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "propertyName"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("propertyTimeStamp");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "propertyTimeStamp"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "propertyTimeStamp"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "long"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("propertyValue");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "propertyValue"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "propertyValue"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("propertyValueAsInteger");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "propertyValueAsInteger"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "propertyValueAsInteger"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
   }
@@ -243,7 +253,7 @@ public class ScheduleProperty implements java.io.Serializable {
   /**
    * Return type metadata object
    */
-  public static org.apache.axis.description.TypeDesc getTypeDesc() {
+  public static TypeDesc getTypeDesc() {
     return typeDesc;
   }
 
@@ -251,12 +261,12 @@ public class ScheduleProperty implements java.io.Serializable {
   /**
    * Get Custom Serializer
    */
-  public static org.apache.axis.encoding.Serializer getSerializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Serializer getSerializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanSerializer(
+            new BeanSerializer(
                     _javaType, _xmlType, typeDesc);
   }
 
@@ -264,12 +274,12 @@ public class ScheduleProperty implements java.io.Serializable {
   /**
    * Get Custom Deserializer
    */
-  public static org.apache.axis.encoding.Deserializer getDeserializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Deserializer getDeserializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanDeserializer(
+            new BeanDeserializer(
                     _javaType, _xmlType, typeDesc);
   }
 

@@ -487,7 +487,7 @@ public final class BuildRunTestsPage extends BasePage implements StatelessTierle
     /**
      * Creates TestSuiteTable.
      *
-     * @param testCases List of {@link org.parabuild.ci.webui.BuildRunTestsPage.TestCaseVO} objects.
+     * @param testCases List of {@link BuildRunTestsPage.TestCaseVO} objects.
      * @param filter
      */
     public TestSuiteTable(final int buildRunID, final List testCases, final String filter) {
@@ -560,8 +560,8 @@ public final class BuildRunTestsPage extends BasePage implements StatelessTierle
      * @return this method should return either TBL_ROW_FETCHED or
      *         TBL_NO_MORE_ROWS if the requested row is out of
      *         range.
-     * @see org.parabuild.ci.webui.common.AbstractFlatTable#TBL_ROW_FETCHED
-     * @see org.parabuild.ci.webui.common.AbstractFlatTable#TBL_NO_MORE_ROWS
+     * @see AbstractFlatTable#TBL_ROW_FETCHED
+     * @see AbstractFlatTable#TBL_NO_MORE_ROWS
      */
     protected int fetchRow(final int rowIndex, final int rowFlags) {
       if (rowIndex >= testCases.size()) return TBL_NO_MORE_ROWS;

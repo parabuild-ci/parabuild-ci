@@ -196,7 +196,7 @@ public class RemoteCommand implements Cleanable {
    * Executes the command once.
    *
    * @return result code.
-   * @throws org.parabuild.ci.common.CommandStoppedException
+   * @throws CommandStoppedException
    * @throws IOException
    * @throws AgentFailureException
    */

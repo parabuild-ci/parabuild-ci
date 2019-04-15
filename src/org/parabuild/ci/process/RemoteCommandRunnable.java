@@ -86,7 +86,7 @@ final class RemoteCommandRunnable implements Runnable {
    *
    * @return result code.
    * @throws IOException
-   * @throws org.parabuild.ci.common.CommandStoppedException
+   * @throws CommandStoppedException
    */
   public int getResultCode() throws IOException, CommandStoppedException, AgentFailureException {
     if (ioException != null) {

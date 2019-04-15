@@ -14,7 +14,17 @@
 
 package org.parabuild.ci.webservice.templ;
 
-public class BuildRunTest implements java.io.Serializable {
+import org.apache.axis.description.ElementDesc;
+import org.apache.axis.description.TypeDesc;
+import org.apache.axis.encoding.Deserializer;
+import org.apache.axis.encoding.Serializer;
+import org.apache.axis.encoding.ser.BeanDeserializer;
+import org.apache.axis.encoding.ser.BeanSerializer;
+
+import javax.xml.namespace.QName;
+import java.io.Serializable;
+
+public class BuildRunTest implements Serializable {
 
   private static final long serialVersionUID = 8002528979715615091L;
   private int ID;
@@ -24,7 +34,7 @@ public class BuildRunTest implements java.io.Serializable {
   private int buildRunID;
   private long durationMillis;
   private boolean fix;
-  private java.lang.String message;
+  private String message;
   private boolean newFailure;
   private boolean newTest;
   private short resultCode;
@@ -43,7 +53,7 @@ public class BuildRunTest implements java.io.Serializable {
           final int buildRunID,
           final long durationMillis,
           final boolean fix,
-          final java.lang.String message,
+          final String message,
           final boolean newFailure,
           final boolean newTest,
           final short resultCode,
@@ -208,7 +218,7 @@ public class BuildRunTest implements java.io.Serializable {
    *
    * @return message
    */
-  public java.lang.String getMessage() {
+  public String getMessage() {
     return message;
   }
 
@@ -218,7 +228,7 @@ public class BuildRunTest implements java.io.Serializable {
    *
    * @param message
    */
-  public void setMessage(final java.lang.String message) {
+  public void setMessage(final String message) {
     this.message = message;
   }
 
@@ -303,10 +313,10 @@ public class BuildRunTest implements java.io.Serializable {
   }
 
 
-  private java.lang.Object __equalsCalc = null;
+  private Object __equalsCalc = null;
 
 
-  public synchronized boolean equals(final java.lang.Object obj) {
+  public synchronized boolean equals(final Object obj) {
     if (!(obj instanceof BuildRunTest)) return false;
     final BuildRunTest other = (BuildRunTest) obj;
     if (obj == null) return false;
@@ -365,82 +375,82 @@ public class BuildRunTest implements java.io.Serializable {
 
 
   // Type metadata
-  private static final org.apache.axis.description.TypeDesc typeDesc =
-          new org.apache.axis.description.TypeDesc(BuildRunTest.class, true);
+  private static final TypeDesc typeDesc =
+          new TypeDesc(BuildRunTest.class, true);
 
 
   static {
-    typeDesc.setXmlType(new javax.xml.namespace.QName("http://org.parabuild.ci", "BuildRunTest"));
-    org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+    typeDesc.setXmlType(new QName("http://org.parabuild.ci", "BuildRunTest"));
+    ElementDesc elemField = new ElementDesc();
     elemField.setFieldName("ID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "ID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "ID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("broken");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "broken"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "broken"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "boolean"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("brokenBuildRunCount");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "brokenBuildRunCount"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "brokenBuildRunCount"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("brokenSinceBuildRunID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "brokenSinceBuildRunID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "brokenSinceBuildRunID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("buildRunID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "buildRunID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "buildRunID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("durationMillis");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "durationMillis"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "durationMillis"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "long"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("fix");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "fix"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "fix"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "boolean"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("message");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "message"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "message"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("newFailure");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "newFailure"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "newFailure"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "boolean"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("newTest");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "newTest"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "newTest"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "boolean"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("resultCode");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "resultCode"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "short"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "resultCode"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "short"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("testCaseNameID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "testCaseNameID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "testCaseNameID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
   }
@@ -449,7 +459,7 @@ public class BuildRunTest implements java.io.Serializable {
   /**
    * Return type metadata object
    */
-  public static org.apache.axis.description.TypeDesc getTypeDesc() {
+  public static TypeDesc getTypeDesc() {
     return typeDesc;
   }
 
@@ -457,12 +467,12 @@ public class BuildRunTest implements java.io.Serializable {
   /**
    * Get Custom Serializer
    */
-  public static org.apache.axis.encoding.Serializer getSerializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Serializer getSerializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanSerializer(
+            new BeanSerializer(
                     _javaType, _xmlType, typeDesc);
   }
 
@@ -470,12 +480,12 @@ public class BuildRunTest implements java.io.Serializable {
   /**
    * Get Custom Deserializer
    */
-  public static org.apache.axis.encoding.Deserializer getDeserializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Deserializer getDeserializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanDeserializer(
+            new BeanDeserializer(
                     _javaType, _xmlType, typeDesc);
   }
 

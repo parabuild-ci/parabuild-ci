@@ -14,14 +14,24 @@
 
 package org.parabuild.ci.webservice.templ;
 
-public class ScheduleItem implements java.io.Serializable {
+import org.apache.axis.description.ElementDesc;
+import org.apache.axis.description.TypeDesc;
+import org.apache.axis.encoding.Deserializer;
+import org.apache.axis.encoding.Serializer;
+import org.apache.axis.encoding.ser.BeanDeserializer;
+import org.apache.axis.encoding.ser.BeanSerializer;
+
+import javax.xml.namespace.QName;
+import java.io.Serializable;
+
+public class ScheduleItem implements Serializable {
 
   private static final long serialVersionUID = 5609252511898990737L;
   private int buildID;
   private boolean cleanCheckout;
-  private java.lang.String dayOfMonth;
-  private java.lang.String dayOfWeek;
-  private java.lang.String hour;
+  private String dayOfMonth;
+  private String dayOfWeek;
+  private String hour;
   private boolean runIfNoChanges;
   private int scheduleItemID;
   private long timeStamp;
@@ -34,9 +44,9 @@ public class ScheduleItem implements java.io.Serializable {
   public ScheduleItem(
           final int buildID,
           final boolean cleanCheckout,
-          final java.lang.String dayOfMonth,
-          final java.lang.String dayOfWeek,
-          final java.lang.String hour,
+          final String dayOfMonth,
+          final String dayOfWeek,
+          final String hour,
           final boolean runIfNoChanges,
           final int scheduleItemID,
           final long timeStamp) {
@@ -96,7 +106,7 @@ public class ScheduleItem implements java.io.Serializable {
    *
    * @return dayOfMonth
    */
-  public java.lang.String getDayOfMonth() {
+  public String getDayOfMonth() {
     return dayOfMonth;
   }
 
@@ -106,7 +116,7 @@ public class ScheduleItem implements java.io.Serializable {
    *
    * @param dayOfMonth
    */
-  public void setDayOfMonth(final java.lang.String dayOfMonth) {
+  public void setDayOfMonth(final String dayOfMonth) {
     this.dayOfMonth = dayOfMonth;
   }
 
@@ -116,7 +126,7 @@ public class ScheduleItem implements java.io.Serializable {
    *
    * @return dayOfWeek
    */
-  public java.lang.String getDayOfWeek() {
+  public String getDayOfWeek() {
     return dayOfWeek;
   }
 
@@ -126,7 +136,7 @@ public class ScheduleItem implements java.io.Serializable {
    *
    * @param dayOfWeek
    */
-  public void setDayOfWeek(final java.lang.String dayOfWeek) {
+  public void setDayOfWeek(final String dayOfWeek) {
     this.dayOfWeek = dayOfWeek;
   }
 
@@ -136,7 +146,7 @@ public class ScheduleItem implements java.io.Serializable {
    *
    * @return hour
    */
-  public java.lang.String getHour() {
+  public String getHour() {
     return hour;
   }
 
@@ -146,7 +156,7 @@ public class ScheduleItem implements java.io.Serializable {
    *
    * @param hour
    */
-  public void setHour(final java.lang.String hour) {
+  public void setHour(final String hour) {
     this.hour = hour;
   }
 
@@ -211,10 +221,10 @@ public class ScheduleItem implements java.io.Serializable {
   }
 
 
-  private java.lang.Object __equalsCalc = null;
+  private Object __equalsCalc = null;
 
 
-  public synchronized boolean equals(final java.lang.Object obj) {
+  public synchronized boolean equals(final Object obj) {
     if (!(obj instanceof ScheduleItem)) return false;
     final ScheduleItem other = (ScheduleItem) obj;
     if (obj == null) return false;
@@ -273,58 +283,58 @@ public class ScheduleItem implements java.io.Serializable {
 
 
   // Type metadata
-  private static final org.apache.axis.description.TypeDesc typeDesc =
-          new org.apache.axis.description.TypeDesc(ScheduleItem.class, true);
+  private static final TypeDesc typeDesc =
+          new TypeDesc(ScheduleItem.class, true);
 
 
   static {
-    typeDesc.setXmlType(new javax.xml.namespace.QName("http://org.parabuild.ci", "ScheduleItem"));
-    org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+    typeDesc.setXmlType(new QName("http://org.parabuild.ci", "ScheduleItem"));
+    ElementDesc elemField = new ElementDesc();
     elemField.setFieldName("buildID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "buildID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "buildID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("cleanCheckout");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "cleanCheckout"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "cleanCheckout"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "boolean"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("dayOfMonth");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "dayOfMonth"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "dayOfMonth"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("dayOfWeek");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "dayOfWeek"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "dayOfWeek"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("hour");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "hour"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "hour"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("runIfNoChanges");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "runIfNoChanges"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "runIfNoChanges"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "boolean"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("scheduleItemID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "scheduleItemID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "scheduleItemID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("timeStamp");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "timeStamp"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "timeStamp"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "long"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
   }
@@ -333,7 +343,7 @@ public class ScheduleItem implements java.io.Serializable {
   /**
    * Return type metadata object
    */
-  public static org.apache.axis.description.TypeDesc getTypeDesc() {
+  public static TypeDesc getTypeDesc() {
     return typeDesc;
   }
 
@@ -341,12 +351,12 @@ public class ScheduleItem implements java.io.Serializable {
   /**
    * Get Custom Serializer
    */
-  public static org.apache.axis.encoding.Serializer getSerializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Serializer getSerializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanSerializer(
+            new BeanSerializer(
                     _javaType, _xmlType, typeDesc);
   }
 
@@ -354,12 +364,12 @@ public class ScheduleItem implements java.io.Serializable {
   /**
    * Get Custom Deserializer
    */
-  public static org.apache.axis.encoding.Deserializer getDeserializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Deserializer getDeserializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanDeserializer(
+            new BeanDeserializer(
                     _javaType, _xmlType, typeDesc);
   }
 

@@ -14,17 +14,27 @@
 
 package org.parabuild.ci.webservice.templ;
 
-public class VCSUserToEmailMap implements java.io.Serializable {
+import org.apache.axis.description.ElementDesc;
+import org.apache.axis.description.TypeDesc;
+import org.apache.axis.encoding.Deserializer;
+import org.apache.axis.encoding.Serializer;
+import org.apache.axis.encoding.ser.BeanDeserializer;
+import org.apache.axis.encoding.ser.BeanSerializer;
+
+import javax.xml.namespace.QName;
+import java.io.Serializable;
+
+public class VCSUserToEmailMap implements Serializable {
 
   private static final long serialVersionUID = -7867541996618296028L;
   private int buildID;
   private boolean disabled;
-  private java.lang.String instantMessengerAddress;
+  private String instantMessengerAddress;
   private byte instantMessengerType;
   private int mapID;
   private long timeStamp;
-  private java.lang.String userEmail;
-  private java.lang.String userName;
+  private String userEmail;
+  private String userName;
 
 
   public VCSUserToEmailMap() {
@@ -34,12 +44,12 @@ public class VCSUserToEmailMap implements java.io.Serializable {
   public VCSUserToEmailMap(
           final int buildID,
           final boolean disabled,
-          final java.lang.String instantMessengerAddress,
+          final String instantMessengerAddress,
           final byte instantMessengerType,
           final int mapID,
           final long timeStamp,
-          final java.lang.String userEmail,
-          final java.lang.String userName) {
+          final String userEmail,
+          final String userName) {
     this.buildID = buildID;
     this.disabled = disabled;
     this.instantMessengerAddress = instantMessengerAddress;
@@ -96,7 +106,7 @@ public class VCSUserToEmailMap implements java.io.Serializable {
    *
    * @return instantMessengerAddress
    */
-  public java.lang.String getInstantMessengerAddress() {
+  public String getInstantMessengerAddress() {
     return instantMessengerAddress;
   }
 
@@ -106,7 +116,7 @@ public class VCSUserToEmailMap implements java.io.Serializable {
    *
    * @param instantMessengerAddress
    */
-  public void setInstantMessengerAddress(final java.lang.String instantMessengerAddress) {
+  public void setInstantMessengerAddress(final String instantMessengerAddress) {
     this.instantMessengerAddress = instantMessengerAddress;
   }
 
@@ -176,7 +186,7 @@ public class VCSUserToEmailMap implements java.io.Serializable {
    *
    * @return userEmail
    */
-  public java.lang.String getUserEmail() {
+  public String getUserEmail() {
     return userEmail;
   }
 
@@ -186,7 +196,7 @@ public class VCSUserToEmailMap implements java.io.Serializable {
    *
    * @param userEmail
    */
-  public void setUserEmail(final java.lang.String userEmail) {
+  public void setUserEmail(final String userEmail) {
     this.userEmail = userEmail;
   }
 
@@ -196,7 +206,7 @@ public class VCSUserToEmailMap implements java.io.Serializable {
    *
    * @return userName
    */
-  public java.lang.String getUserName() {
+  public String getUserName() {
     return userName;
   }
 
@@ -206,15 +216,15 @@ public class VCSUserToEmailMap implements java.io.Serializable {
    *
    * @param userName
    */
-  public void setUserName(final java.lang.String userName) {
+  public void setUserName(final String userName) {
     this.userName = userName;
   }
 
 
-  private java.lang.Object __equalsCalc = null;
+  private Object __equalsCalc = null;
 
 
-  public synchronized boolean equals(final java.lang.Object obj) {
+  public synchronized boolean equals(final Object obj) {
     if (!(obj instanceof VCSUserToEmailMap)) return false;
     final VCSUserToEmailMap other = (VCSUserToEmailMap) obj;
     if (obj == null) return false;
@@ -273,58 +283,58 @@ public class VCSUserToEmailMap implements java.io.Serializable {
 
 
   // Type metadata
-  private static final org.apache.axis.description.TypeDesc typeDesc =
-          new org.apache.axis.description.TypeDesc(VCSUserToEmailMap.class, true);
+  private static final TypeDesc typeDesc =
+          new TypeDesc(VCSUserToEmailMap.class, true);
 
 
   static {
-    typeDesc.setXmlType(new javax.xml.namespace.QName("http://org.parabuild.ci", "VCSUserToEmailMap"));
-    org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+    typeDesc.setXmlType(new QName("http://org.parabuild.ci", "VCSUserToEmailMap"));
+    ElementDesc elemField = new ElementDesc();
     elemField.setFieldName("buildID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "buildID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "buildID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("disabled");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "disabled"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "disabled"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "boolean"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("instantMessengerAddress");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "instantMessengerAddress"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "instantMessengerAddress"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("instantMessengerType");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "instantMessengerType"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "byte"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "instantMessengerType"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "byte"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("mapID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "mapID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "mapID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("timeStamp");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "timeStamp"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "timeStamp"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "long"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("userEmail");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "userEmail"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "userEmail"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("userName");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "userName"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "userName"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
   }
@@ -333,7 +343,7 @@ public class VCSUserToEmailMap implements java.io.Serializable {
   /**
    * Return type metadata object
    */
-  public static org.apache.axis.description.TypeDesc getTypeDesc() {
+  public static TypeDesc getTypeDesc() {
     return typeDesc;
   }
 
@@ -341,12 +351,12 @@ public class VCSUserToEmailMap implements java.io.Serializable {
   /**
    * Get Custom Serializer
    */
-  public static org.apache.axis.encoding.Serializer getSerializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Serializer getSerializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanSerializer(
+            new BeanSerializer(
                     _javaType, _xmlType, typeDesc);
   }
 
@@ -354,12 +364,12 @@ public class VCSUserToEmailMap implements java.io.Serializable {
   /**
    * Get Custom Deserializer
    */
-  public static org.apache.axis.encoding.Deserializer getDeserializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Deserializer getDeserializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanDeserializer(
+            new BeanDeserializer(
                     _javaType, _xmlType, typeDesc);
   }
 

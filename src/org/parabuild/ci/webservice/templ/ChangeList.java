@@ -14,19 +14,30 @@
 
 package org.parabuild.ci.webservice.templ;
 
-public class ChangeList implements java.io.Serializable {
+import org.apache.axis.description.ElementDesc;
+import org.apache.axis.description.TypeDesc;
+import org.apache.axis.encoding.Deserializer;
+import org.apache.axis.encoding.Serializer;
+import org.apache.axis.encoding.ser.BeanDeserializer;
+import org.apache.axis.encoding.ser.BeanSerializer;
+
+import javax.xml.namespace.QName;
+import java.io.Serializable;
+import java.util.Calendar;
+
+public class ChangeList implements Serializable {
 
   private static final long serialVersionUID = -4691458159225612825L;
-  private java.lang.String branch;
+  private String branch;
   private int changeListID;
-  private java.lang.String client;
-  private java.util.Calendar createdAt;
-  private java.lang.String description;
-  private java.lang.String email;
-  private java.lang.String number;
+  private String client;
+  private Calendar createdAt;
+  private String description;
+  private String email;
+  private String number;
   private int originalSize;
   private boolean truncated;
-  private java.lang.String user;
+  private String user;
 
 
   public ChangeList() {
@@ -34,16 +45,16 @@ public class ChangeList implements java.io.Serializable {
 
 
   public ChangeList(
-          final java.lang.String branch,
+          final String branch,
           final int changeListID,
-          final java.lang.String client,
-          final java.util.Calendar createdAt,
-          final java.lang.String description,
-          final java.lang.String email,
-          final java.lang.String number,
+          final String client,
+          final Calendar createdAt,
+          final String description,
+          final String email,
+          final String number,
           final int originalSize,
           final boolean truncated,
-          final java.lang.String user) {
+          final String user) {
     this.branch = branch;
     this.changeListID = changeListID;
     this.client = client;
@@ -62,7 +73,7 @@ public class ChangeList implements java.io.Serializable {
    *
    * @return branch
    */
-  public java.lang.String getBranch() {
+  public String getBranch() {
     return branch;
   }
 
@@ -72,7 +83,7 @@ public class ChangeList implements java.io.Serializable {
    *
    * @param branch
    */
-  public void setBranch(final java.lang.String branch) {
+  public void setBranch(final String branch) {
     this.branch = branch;
   }
 
@@ -102,7 +113,7 @@ public class ChangeList implements java.io.Serializable {
    *
    * @return client
    */
-  public java.lang.String getClient() {
+  public String getClient() {
     return client;
   }
 
@@ -112,7 +123,7 @@ public class ChangeList implements java.io.Serializable {
    *
    * @param client
    */
-  public void setClient(final java.lang.String client) {
+  public void setClient(final String client) {
     this.client = client;
   }
 
@@ -122,7 +133,7 @@ public class ChangeList implements java.io.Serializable {
    *
    * @return createdAt
    */
-  public java.util.Calendar getCreatedAt() {
+  public Calendar getCreatedAt() {
     return createdAt;
   }
 
@@ -132,7 +143,7 @@ public class ChangeList implements java.io.Serializable {
    *
    * @param createdAt
    */
-  public void setCreatedAt(final java.util.Calendar createdAt) {
+  public void setCreatedAt(final Calendar createdAt) {
     this.createdAt = createdAt;
   }
 
@@ -142,7 +153,7 @@ public class ChangeList implements java.io.Serializable {
    *
    * @return description
    */
-  public java.lang.String getDescription() {
+  public String getDescription() {
     return description;
   }
 
@@ -152,7 +163,7 @@ public class ChangeList implements java.io.Serializable {
    *
    * @param description
    */
-  public void setDescription(final java.lang.String description) {
+  public void setDescription(final String description) {
     this.description = description;
   }
 
@@ -162,7 +173,7 @@ public class ChangeList implements java.io.Serializable {
    *
    * @return email
    */
-  public java.lang.String getEmail() {
+  public String getEmail() {
     return email;
   }
 
@@ -172,7 +183,7 @@ public class ChangeList implements java.io.Serializable {
    *
    * @param email
    */
-  public void setEmail(final java.lang.String email) {
+  public void setEmail(final String email) {
     this.email = email;
   }
 
@@ -182,7 +193,7 @@ public class ChangeList implements java.io.Serializable {
    *
    * @return number
    */
-  public java.lang.String getNumber() {
+  public String getNumber() {
     return number;
   }
 
@@ -192,7 +203,7 @@ public class ChangeList implements java.io.Serializable {
    *
    * @param number
    */
-  public void setNumber(final java.lang.String number) {
+  public void setNumber(final String number) {
     this.number = number;
   }
 
@@ -242,7 +253,7 @@ public class ChangeList implements java.io.Serializable {
    *
    * @return user
    */
-  public java.lang.String getUser() {
+  public String getUser() {
     return user;
   }
 
@@ -252,15 +263,15 @@ public class ChangeList implements java.io.Serializable {
    *
    * @param user
    */
-  public void setUser(final java.lang.String user) {
+  public void setUser(final String user) {
     this.user = user;
   }
 
 
-  private java.lang.Object __equalsCalc = null;
+  private Object __equalsCalc = null;
 
 
-  public synchronized boolean equals(final java.lang.Object obj) {
+  public synchronized boolean equals(final Object obj) {
     if (!(obj instanceof ChangeList)) return false;
     final ChangeList other = (ChangeList) obj;
     if (obj == null) return false;
@@ -339,70 +350,70 @@ public class ChangeList implements java.io.Serializable {
 
 
   // Type metadata
-  private static final org.apache.axis.description.TypeDesc typeDesc =
-          new org.apache.axis.description.TypeDesc(ChangeList.class, true);
+  private static final TypeDesc typeDesc =
+          new TypeDesc(ChangeList.class, true);
 
 
   static {
-    typeDesc.setXmlType(new javax.xml.namespace.QName("http://webservice.ci.parabuild.org", "ChangeList"));
-    org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+    typeDesc.setXmlType(new QName("http://webservice.ci.parabuild.org", "ChangeList"));
+    ElementDesc elemField = new ElementDesc();
     elemField.setFieldName("branch");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://webservice.ci.parabuild.org", "branch"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://webservice.ci.parabuild.org", "branch"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("changeListID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://webservice.ci.parabuild.org", "changeListID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://webservice.ci.parabuild.org", "changeListID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("client");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://webservice.ci.parabuild.org", "client"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://webservice.ci.parabuild.org", "client"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("createdAt");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://webservice.ci.parabuild.org", "createdAt"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+    elemField.setXmlName(new QName("http://webservice.ci.parabuild.org", "createdAt"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("description");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://webservice.ci.parabuild.org", "description"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://webservice.ci.parabuild.org", "description"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("email");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://webservice.ci.parabuild.org", "email"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://webservice.ci.parabuild.org", "email"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("number");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://webservice.ci.parabuild.org", "number"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://webservice.ci.parabuild.org", "number"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("originalSize");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://webservice.ci.parabuild.org", "originalSize"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://webservice.ci.parabuild.org", "originalSize"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("truncated");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://webservice.ci.parabuild.org", "truncated"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+    elemField.setXmlName(new QName("http://webservice.ci.parabuild.org", "truncated"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "boolean"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("user");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://webservice.ci.parabuild.org", "user"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://webservice.ci.parabuild.org", "user"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
   }
@@ -411,7 +422,7 @@ public class ChangeList implements java.io.Serializable {
   /**
    * Return type metadata object
    */
-  public static org.apache.axis.description.TypeDesc getTypeDesc() {
+  public static TypeDesc getTypeDesc() {
     return typeDesc;
   }
 
@@ -419,12 +430,12 @@ public class ChangeList implements java.io.Serializable {
   /**
    * Get Custom Serializer
    */
-  public static org.apache.axis.encoding.Serializer getSerializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Serializer getSerializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanSerializer(
+            new BeanSerializer(
                     _javaType, _xmlType, typeDesc);
   }
 
@@ -432,12 +443,12 @@ public class ChangeList implements java.io.Serializable {
   /**
    * Get Custom Deserializer
    */
-  public static org.apache.axis.encoding.Deserializer getDeserializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Deserializer getDeserializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanDeserializer(
+            new BeanDeserializer(
                     _javaType, _xmlType, typeDesc);
   }
 
