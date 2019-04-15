@@ -24,6 +24,9 @@ import viewtier.ui.*;
  */
 public final class FooterLink extends CommonLink {
 
+  private static final long serialVersionUID = -3002705558202646104L;
+
+
   public FooterLink(final String s, final String s1) {
     super(s, s1);
     setFont(new Font(Font.SansSerif, Font.Plain, 11));

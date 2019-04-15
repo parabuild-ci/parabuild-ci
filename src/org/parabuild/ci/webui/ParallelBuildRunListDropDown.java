@@ -25,6 +25,9 @@ import org.parabuild.ci.configuration.*;
  */
 final class ParallelBuildRunListDropDown extends CodeNameDropDown {
 
+  private static final long serialVersionUID = -467728395828454585L;
+
+
   public ParallelBuildRunListDropDown(final BuildRun buildRun) {
     final List dependentParallelBuildRuns = ConfigurationManager.getInstance().getAllParallelBuildRunVOs(buildRun);
     for (final Iterator i = dependentParallelBuildRuns.iterator(); i.hasNext();) {

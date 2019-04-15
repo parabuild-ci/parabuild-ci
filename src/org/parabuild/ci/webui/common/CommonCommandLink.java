@@ -22,6 +22,9 @@ import viewtier.ui.*;
  */
 public class CommonCommandLink extends CommonLink {
 
+  private static final long serialVersionUID = 1083133912281979260L;
+
+
   public CommonCommandLink(final String s, final String s1) {
     this(s, s1, false);
   }

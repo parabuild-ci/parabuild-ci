@@ -27,6 +27,7 @@ import java.util.Properties;
  */
 final class SystemVariableCommandsFlow extends Flow {
 
+  private static final long serialVersionUID = 6445311608524358286L;
   private Link lnkEdit = null;
   private Link lnkDelete = null;
 

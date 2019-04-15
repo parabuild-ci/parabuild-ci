@@ -111,6 +111,9 @@ public final class EditBuilderAgentPage extends BasePage implements Conversation
 
           // Add cancel button listener
           btnCancel.addListener(new ButtonPressedListener() {
+            private static final long serialVersionUID = -492831846932995216L;
+
+
             public Result buttonPressed(final ButtonPressedEvent event) {
               return createDoneResult(builderConfiguration);
             }
@@ -118,6 +121,9 @@ public final class EditBuilderAgentPage extends BasePage implements Conversation
 
           // Add save button listener
           btnSave.addListener(new ButtonPressedListener() {
+            private static final long serialVersionUID = -5044933409329292882L;
+
+
             public Result buttonPressed(final ButtonPressedEvent event) {
               if (pnlBuilderAgent.save()) {
                 return createDoneResult(builderConfiguration);

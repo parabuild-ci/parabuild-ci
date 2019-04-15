@@ -59,6 +59,9 @@ public final class DisplayGroupListPage extends NavigatableSystemConfigurationPa
 
   private static final class AddDisplayGroupLink extends CommonCommandLinkWithImage {
 
+    private static final long serialVersionUID = -3469444188818738936L;
+
+
     AddDisplayGroupLink() {
       super("Add Display Group", Pages.ADMIN_EDIT_DISPLAY_GROUP);
     }

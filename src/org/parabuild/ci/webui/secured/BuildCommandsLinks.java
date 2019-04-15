@@ -18,6 +18,9 @@ import org.parabuild.ci.build.*;
 
 public abstract class BuildCommandsLinks extends Flow {
 
+  private static final long serialVersionUID = -3860312233624990997L;
+
+
   protected BuildCommandsLinks() {
   }
 

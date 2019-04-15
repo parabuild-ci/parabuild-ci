@@ -16,6 +16,7 @@ package org.parabuild.ci.webservice.templ;
 
 public class IssueTracker implements java.io.Serializable {
 
+  private static final long serialVersionUID = 440266473587617198L;
   private int ID;
   private int buildID;
   private long timeStamp;

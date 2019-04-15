@@ -42,6 +42,7 @@ final class GlobalVCSUserMapTable extends AbstractFlatTable {
   private static final int COL_EMAIL = 1;
   private static final int COL_NOTE = 2;
   private static final int COL_ACTION = 3;
+  private static final long serialVersionUID = 5277501838742122726L;
 
   private final List mappingList;
 
@@ -114,6 +115,7 @@ final class GlobalVCSUserMapTable extends AbstractFlatTable {
    */
   private static final class ActionMenuList extends Flow {
 
+    private static final long serialVersionUID = 8355008394389263301L;
     private final Link lnkEdit;
     private final Link lnkDelete;
 

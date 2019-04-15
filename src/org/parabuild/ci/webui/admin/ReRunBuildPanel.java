@@ -92,6 +92,9 @@ public final class ReRunBuildPanel extends MessagePanel {
 
     // add listeners
     btnLoadParameters.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = 6060412049318564500L;
+
+
       public Tierlet.Result buttonPressed(final ButtonPressedEvent buttonPressedEvent) {
         if (validateBuildNumber()) {
           // get manual parameters from that build run we are going to run
@@ -269,6 +272,9 @@ public final class ReRunBuildPanel extends MessagePanel {
 
   private class StartPressedListener implements ButtonPressedListener {
 
+    private static final long serialVersionUID = 3280813523690821544L;
+
+
     public Tierlet.Result buttonPressed(final ButtonPressedEvent event) {
       if (validateInput()) {
         requestReRun();
@@ -280,6 +286,9 @@ public final class ReRunBuildPanel extends MessagePanel {
   }
 
   private class CancelPressedListener implements ButtonPressedListener {
+
+    private static final long serialVersionUID = -8168586729726967124L;
+
 
     public Tierlet.Result buttonPressed(final ButtonPressedEvent event) {
       return Tierlet.Result.Done(Pages.ADMIN_BUILD_COMMANDS_LIST, makeDoneResultParams());

@@ -22,6 +22,9 @@ import viewtier.ui.*;
 public final class PreviousNextLinks extends Flow {
 
 
+  private static final long serialVersionUID = -8089625805683015212L;
+
+
   public PreviousNextLinks(final Component cmpPrevious, final Component cmpCurrent, final Component cmpNext) {
     final Component cmpNext1 = cmpNext == null ? new CommonLabel("Next") : cmpNext;
     final Component cmpPrevious1 = cmpPrevious == null ? new CommonLabel("Previous") : cmpPrevious;

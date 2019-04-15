@@ -22,6 +22,7 @@ import java.util.*;
 public class ResultsLink extends CommonLink {
 
   private static final String CAPTION_RESULTS = "Results";
+  private static final long serialVersionUID = 4385320878213270242L;
 
 
   /**

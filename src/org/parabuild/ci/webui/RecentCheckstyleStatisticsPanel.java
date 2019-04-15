@@ -25,6 +25,9 @@ import viewtier.ui.Image;
  */
 public final class RecentCheckstyleStatisticsPanel extends MessagePanel {
 
+  private static final long serialVersionUID = -6540063662660515069L;
+
+
   /**
    * Constructor.
    */

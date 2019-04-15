@@ -23,6 +23,7 @@ import java.io.PrintWriter;
 
 final class FieldWithButtonPanel extends Panel {
 
+  private static final long serialVersionUID = 4672297517260568835L;
   private final ExpandButton expandButton;
   private final Text field;
 
@@ -44,6 +45,7 @@ final class FieldWithButtonPanel extends Panel {
 
   private static final class ExpandButton extends CustomComponent {
 
+    private static final long serialVersionUID = 851732188437491195L;
     private final String caption;
     private final String fieldName;
 

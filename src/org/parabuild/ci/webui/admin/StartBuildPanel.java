@@ -94,6 +94,9 @@ public final class StartBuildPanel extends MessagePanel {
    */
   private final class StartPressedListener implements ButtonPressedListener {
 
+    private static final long serialVersionUID = -4735396899994177361L;
+
+
     public Tierlet.Result buttonPressed(final ButtonPressedEvent buttonPressedEvent) {
       // validate
       if (!validateInput()) return Tierlet.Result.Continue();
@@ -181,6 +184,9 @@ public final class StartBuildPanel extends MessagePanel {
    * This listener is called when "Cancel" burron is pressed.
    */
   private class CancelPressedListener implements ButtonPressedListener {
+
+    private static final long serialVersionUID = -2069975221805082365L;
+
 
     public Tierlet.Result buttonPressed(final ButtonPressedEvent buttonPressedEvent) {
       return WebuiUtils.createBuildActionReturnResult(getTierletContext());

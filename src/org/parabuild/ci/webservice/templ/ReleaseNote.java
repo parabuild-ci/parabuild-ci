@@ -16,6 +16,7 @@ package org.parabuild.ci.webservice.templ;
 
 public class ReleaseNote implements java.io.Serializable {
 
+  private static final long serialVersionUID = -7786094168212162780L;
   private int ID;
   private int buildRunID;
   private int issueID;

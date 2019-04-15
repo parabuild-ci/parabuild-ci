@@ -383,6 +383,7 @@ public final class PageHeaderPanel extends Panel {
   private static final class PageHeaderMenuDividerLabel extends Label {
 
     private static final Font FONT_DIVIDER = new Font(Font.SansSerif, Font.Plain, 16);
+    private static final long serialVersionUID = 5514441726876361065L;
 
 
     /**

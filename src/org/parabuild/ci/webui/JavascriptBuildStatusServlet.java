@@ -56,6 +56,7 @@ public final class JavascriptBuildStatusServlet extends HttpServlet {
   public static final String PARAM_BUILD_NAME = "showbuildname";
   public static final String PARAM_BORDER_COLOR = "bordercolor";
   public static final String PARAM_BORDER_WIDTH = "borderwidth";
+  private static final long serialVersionUID = -3749588503227917675L;
 
 
   protected void doGet(final HttpServletRequest req, final HttpServletResponse resp) throws IOException {

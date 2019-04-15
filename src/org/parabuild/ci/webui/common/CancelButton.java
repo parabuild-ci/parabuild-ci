@@ -19,6 +19,9 @@ package org.parabuild.ci.webui.common;
  */
 public final class CancelButton extends CommonButton {
 
+  private static final long serialVersionUID = 5380055067720072274L;
+
+
   public CancelButton() {
     super("  Cancel  ");
   }

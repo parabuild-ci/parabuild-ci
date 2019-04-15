@@ -32,6 +32,9 @@ import viewtier.ui.*;
  */
 public final class LastBuildRunFlow extends Flow {
 
+  private static final long serialVersionUID = 6471975830201426357L;
+
+
   public LastBuildRunFlow(final BuildRun lastBuildRun, final String dateTimeFormat) {
     this(lastBuildRun, false, dateTimeFormat);
   }

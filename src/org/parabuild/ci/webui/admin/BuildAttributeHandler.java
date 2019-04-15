@@ -19,6 +19,9 @@ import org.parabuild.ci.webui.common.*;
 
 public final class BuildAttributeHandler implements PropertyToInputMap.PropertyHandler {
 
+  private static final long serialVersionUID = 8137627325321368045L;
+
+
   public Object makeProperty(final String propertyName) {
     final BuildConfigAttribute prop = new BuildConfigAttribute();
     prop.setPropertyName(propertyName);

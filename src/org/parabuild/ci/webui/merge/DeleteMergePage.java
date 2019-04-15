@@ -112,12 +112,18 @@ public final class DeleteMergePage extends BaseMergePage implements Conversation
 
     // messaging
     confimDeleteButton.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = 4604141680355176606L;
+
+
       public Result buttonPressed(final ButtonPressedEvent event) {
         action = DeleteMergePage.ACTION_DELETE;
         return null;
       }
     });
     cancelDeleteButton.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = 5563607204635118716L;
+
+
       public Result buttonPressed(final ButtonPressedEvent event) {
         action = DeleteMergePage.ACTION_CANCEL;
         return null;

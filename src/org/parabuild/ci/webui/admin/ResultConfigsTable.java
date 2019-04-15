@@ -207,6 +207,9 @@ public final class ResultConfigsTable extends AbstractFlatTable implements Loada
       // empty tracker setup panel.
       return new Component[]{
               new AbstractResultConfigPanel(false) {
+                private static final long serialVersionUID = -7518981629039789490L;
+
+
                 public boolean validateProperties() {
                   return true;
                 }
@@ -249,6 +252,9 @@ public final class ResultConfigsTable extends AbstractFlatTable implements Loada
 
       // create delete selected rows command
       deleteRowCommand.addListener(new MenuSelectedListener() {
+        private static final long serialVersionUID = -4459363179908636336L;
+
+
         public Tierlet.Result menuSelected(final MenuSelectedEvent event) {
           deleteSelectedRows();
           return Tierlet.Result.Continue();
@@ -258,6 +264,9 @@ public final class ResultConfigsTable extends AbstractFlatTable implements Loada
       // create add row command
       btnAddRow.setAlignX(Layout.LEFT);
       btnAddRow.addListener(new ButtonPressedListener() {
+        private static final long serialVersionUID = 2748684754682533009L;
+
+
         public Tierlet.Result buttonPressed(final ButtonPressedEvent event) {
           // first place a config into the list so that it's available to makeRow
           final int expectedRowIndex = getRowCount();

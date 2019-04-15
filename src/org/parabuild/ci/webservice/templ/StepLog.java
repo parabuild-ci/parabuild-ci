@@ -16,6 +16,7 @@ package org.parabuild.ci.webservice.templ;
 
 public class StepLog implements java.io.Serializable {
 
+  private static final long serialVersionUID = -1186497643505525154L;
   private int ID;
   private java.lang.String archiveFileName;
   private java.lang.String description;

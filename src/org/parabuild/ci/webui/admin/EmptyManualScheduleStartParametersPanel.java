@@ -19,6 +19,9 @@ package org.parabuild.ci.webui.admin;
  */
 final class EmptyManualScheduleStartParametersPanel extends ManualScheduleStartParametersPanel {
 
+  private static final long serialVersionUID = 7851723097775528556L;
+
+
   public EmptyManualScheduleStartParametersPanel() {
     super("");
   }

@@ -16,6 +16,7 @@ package org.parabuild.ci.webservice.templ;
 
 public class ChangeList implements java.io.Serializable {
 
+  private static final long serialVersionUID = -4691458159225612825L;
   private java.lang.String branch;
   private int changeListID;
   private java.lang.String client;

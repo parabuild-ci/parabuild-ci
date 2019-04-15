@@ -26,6 +26,9 @@ import viewtier.ui.Parameters;
  */
 public abstract class AuthenticatedSystemConfigurationPage extends BasePage {
 
+  private static final long serialVersionUID = 4375245896177329143L;
+
+
   protected AuthenticatedSystemConfigurationPage(final int flags) {
     super(flags);
     super.markTopMenuItemSelected(MENU_SELECTION_ADMINISTRATION);

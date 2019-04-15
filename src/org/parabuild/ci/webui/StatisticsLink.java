@@ -22,6 +22,7 @@ import org.parabuild.ci.webui.common.Pages;
 final class StatisticsLink extends CommonLink {
 
   public static final String PARAM_STAT_CODE = "sttscd";
+  private static final long serialVersionUID = -7303561038581358644L;
 
 
   public StatisticsLink(final String caption) {

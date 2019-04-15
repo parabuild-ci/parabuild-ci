@@ -22,6 +22,9 @@ import viewtier.cdk.*;
  */
 public final class BreakLabel extends CustomComponent {
 
+  private static final long serialVersionUID = 6650937549979443281L;
+
+
   /**
    * Oveloaded CustomComponent's render
    */

@@ -18,6 +18,7 @@ package org.parabuild.ci.webui.common;
 public class StartButton extends CommonButton {
 
   private static final String CAPTION_START = "   Start   ";
+  private static final long serialVersionUID = 3781870264341350113L;
 
 
   public StartButton() {

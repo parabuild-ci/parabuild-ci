@@ -27,6 +27,9 @@ import org.parabuild.ci.webui.common.*;
  */
 public final class ReleaseNoteDetailsPanel extends MessagePanel {
 
+  private static final long serialVersionUID = -5231129495596445937L;
+
+
   public ReleaseNoteDetailsPanel(final Issue issue) {
     super(false);
     final ConfigurationManager cm = ConfigurationManager.getInstance();

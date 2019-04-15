@@ -46,6 +46,9 @@ public final class DefaultTableCommands extends Flow implements AbstractFlatTabl
   public DefaultTableCommands(final AbstractFlatTable table) {
     // add row command
     addRowCommand.addListener(new MenuSelectedListener() {
+      private static final long serialVersionUID = 1669246308345214020L;
+
+
       public Tierlet.Result menuSelected(final MenuSelectedEvent event) {
         // add row
         table.addRow();
@@ -55,6 +58,9 @@ public final class DefaultTableCommands extends Flow implements AbstractFlatTabl
 
     // insert row command
     insertRowCommand.addListener(new MenuSelectedListener() {
+      private static final long serialVersionUID = -5666994492624015456L;
+
+
       public Tierlet.Result menuSelected(final MenuSelectedEvent event) {
         // add row
         table.insertRow();
@@ -64,6 +70,9 @@ public final class DefaultTableCommands extends Flow implements AbstractFlatTabl
 
     // delete selected rows command
     deleteRowCommand.addListener(new MenuSelectedListener() {
+      private static final long serialVersionUID = 7039982511331489244L;
+
+
       public Tierlet.Result menuSelected(final MenuSelectedEvent event) {
         table.deleteSelectedRows();
         return Tierlet.Result.Continue();
@@ -72,6 +81,9 @@ public final class DefaultTableCommands extends Flow implements AbstractFlatTabl
 
     // Move selected rows up command
     moveRowUpCommand.addListener(new MenuSelectedListener() {
+      private static final long serialVersionUID = -2694255264025504471L;
+
+
       public Tierlet.Result menuSelected(final MenuSelectedEvent event) {
         table.moveSelectedRow(-1);
         return Tierlet.Result.Continue();
@@ -80,6 +92,9 @@ public final class DefaultTableCommands extends Flow implements AbstractFlatTabl
 
     // Move selected rows up ommand
     moveRowDownCommand.addListener(new MenuSelectedListener() {
+      private static final long serialVersionUID = -4494775596314515435L;
+
+
       public Tierlet.Result menuSelected(final MenuSelectedEvent event) {
         table.moveSelectedRow(1);
         return Tierlet.Result.Continue();

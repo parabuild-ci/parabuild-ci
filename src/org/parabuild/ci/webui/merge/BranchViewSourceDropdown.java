@@ -25,6 +25,7 @@ final class BranchViewSourceDropdown extends CodeNameDropDown {
 
   public static final byte BRANCH_VIEW_SOURCE_BRANCH_NAME = MergeConfiguration.BRANCH_VIEW_SOURCE_BRANCH_NAME;
   public static final byte BRANCH_VIEW_SOURCE_DIRECT = MergeConfiguration.BRANCH_VIEW_SOURCE_DIRECT;
+  private static final long serialVersionUID = -1808561960684803358L;
 
 
   /**

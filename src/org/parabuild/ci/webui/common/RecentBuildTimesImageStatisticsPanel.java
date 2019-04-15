@@ -23,6 +23,9 @@ import viewtier.ui.*;
  */
 public final class RecentBuildTimesImageStatisticsPanel extends MessagePanel {
 
+  private static final long serialVersionUID = -8883098200696126467L;
+
+
   public RecentBuildTimesImageStatisticsPanel() {
     setTitle("Recent Build Time");
   }

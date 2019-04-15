@@ -119,6 +119,9 @@ final class DiffPanel extends MessagePanel {
 
     // listeners
     btnCancel.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = -5673542014022161441L;
+
+
       public Tierlet.Result buttonPressed(final ButtonPressedEvent buttonPressedEvent) {
         final Parameters parameters = new Parameters();
         parameters.addParameter(Pages.PARAM_BUILD_ID, getActiveBuildIDFromTierletContext());
@@ -126,6 +129,9 @@ final class DiffPanel extends MessagePanel {
       }
     });
     btnOK.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = -6355653309943112413L;
+
+
       public Tierlet.Result buttonPressed(final ButtonPressedEvent buttonPressedEvent) {
 //        if (log.isDebugEnabled()) log.debug("ok button was pressed ");
         if (StringUtils.isBlank(flStartBuildNumber.getValue())) {

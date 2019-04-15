@@ -33,6 +33,9 @@ import java.util.Set;
  */
 public final class BuildNameLinkFlow extends Flow {
 
+  private static final long serialVersionUID = -2081033420095831281L;
+
+
   public void setBuildState(final BuildState buildState, final Set leaderIDs) {
     clear();
 
@@ -73,6 +76,7 @@ public final class BuildNameLinkFlow extends Flow {
   private static final class BuildNameLink extends CommonLink {
 
     public static final Font FONT_BUILD_NAME_LINK = new Font(Pages.COMMON_FONT_FAMILY, Font.Bold | Font.None, Pages.COMMMON_FONT_SIZE);
+    private static final long serialVersionUID = -7373968932717137028L;
 
 
     /**

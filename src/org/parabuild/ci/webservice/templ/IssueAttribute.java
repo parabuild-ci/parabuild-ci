@@ -16,6 +16,7 @@ package org.parabuild.ci.webservice.templ;
 
 public class IssueAttribute implements java.io.Serializable {
 
+  private static final long serialVersionUID = -7117524437953047435L;
   private int ID;
   private int issueID;
   private java.lang.String name;

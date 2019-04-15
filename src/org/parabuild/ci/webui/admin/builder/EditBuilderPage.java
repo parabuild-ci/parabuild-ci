@@ -64,6 +64,9 @@ public final class EditBuilderPage extends BasePage implements ConversationalTie
 
     // add cancel button listener
     btnCancel.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = -6834290870824499927L;
+
+
       public Result buttonPressed(final ButtonPressedEvent event) {
         if (log.isDebugEnabled()) {
           log.debug("Canceled - returning to build farm list");
@@ -74,6 +77,9 @@ public final class EditBuilderPage extends BasePage implements ConversationalTie
 
     // add save button listener
     btnSave.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = -6195997265181534909L;
+
+
       public Result buttonPressed(final ButtonPressedEvent event) {
         if (pnlBuilder.save()) {
           if (log.isDebugEnabled()) {

@@ -61,6 +61,7 @@ public abstract class AbstractSourceControlPanel extends SourceControlPanel {
 
   private static final String CAPTION_CUSTOM_CHECKOUT_DIR = "Custom checkout dir: ";
   private static final String CAPTION_EXCLUSION = "Ignore list: ";
+  private static final long serialVersionUID = -7238128879188326596L;
 
   protected final PropertyToInputMap propertyToInputMap = new PropertyToInputMap(false, makePropertyHandler()); // strict map
   protected int buildID = BuildConfig.UNSAVED_ID;

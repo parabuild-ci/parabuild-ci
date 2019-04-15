@@ -25,6 +25,9 @@ import org.parabuild.ci.webui.common.*;
 public final class GroupDropDown extends CodeNameDropDown {
 
 
+  private static final long serialVersionUID = 8843311203011317650L;
+
+
   /**
    * Constructor. Populates the dropdown with a list of build
    * groups from database.

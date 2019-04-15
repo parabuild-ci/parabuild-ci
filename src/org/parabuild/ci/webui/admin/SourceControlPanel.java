@@ -31,6 +31,9 @@ import java.util.List;
  */
 public abstract class SourceControlPanel extends MessagePanel implements Loadable, Validatable, Saveable {
 
+  private static final long serialVersionUID = -5452732745407065229L;
+
+
   protected SourceControlPanel(final String title) {
     super(title);
   }
@@ -78,6 +81,9 @@ public abstract class SourceControlPanel extends MessagePanel implements Loadabl
    */
   public static PropertyToInputMap.PropertyHandler makePropertyHandler() {
     return new PropertyToInputMap.PropertyHandler() {
+      private static final long serialVersionUID = 2234980884942861815L;
+
+
       public Object makeProperty(final String propertyName) {
         final SourceControlSetting prop = new SourceControlSetting();
         prop.setPropertyName(propertyName);

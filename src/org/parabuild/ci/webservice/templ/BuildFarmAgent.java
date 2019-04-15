@@ -16,6 +16,7 @@ package org.parabuild.ci.webservice.templ;
 
 public class BuildFarmAgent implements java.io.Serializable {
 
+  private static final long serialVersionUID = 406835902308121900L;
   private int ID;
   private int agentID;
   private int farmID;

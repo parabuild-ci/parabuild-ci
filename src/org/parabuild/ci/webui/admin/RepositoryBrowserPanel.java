@@ -88,6 +88,9 @@ public class RepositoryBrowserPanel extends SourceControlPanel {
 
     // set up listener for drop down selection
     ddRepositoryBrowserTypeDropDown.addListener(new DropDownSelectedListener() {
+      private static final long serialVersionUID = -109167926654968507L;
+
+
       public Tierlet.Result dropDownSelected(final DropDownSelectedEvent dropDownSelectedEvent) {
         final RepositoryBrowserTypeDropDown dropDown = (RepositoryBrowserTypeDropDown) dropDownSelectedEvent.getDropDown();
         setVisibilityOfSelectedPanel(dropDown.getCode());

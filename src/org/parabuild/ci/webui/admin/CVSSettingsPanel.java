@@ -261,6 +261,9 @@ public final class CVSSettingsPanel extends AbstractSourceControlPanel {
    */
   private static final class CompressionDropDown extends DropDown {
 
+    private static final long serialVersionUID = 6506902131545832419L;
+
+
     /**
      * Default constructor.
      */

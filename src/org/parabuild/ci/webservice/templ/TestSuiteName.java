@@ -16,6 +16,7 @@ package org.parabuild.ci.webservice.templ;
 
 public class TestSuiteName implements java.io.Serializable {
 
+  private static final long serialVersionUID = 1154151397392253545L;
   private int ID;
   private java.lang.String name;
 

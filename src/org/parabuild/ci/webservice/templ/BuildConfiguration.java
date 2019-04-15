@@ -16,6 +16,7 @@ package org.parabuild.ci.webservice.templ;
 
 public class BuildConfiguration implements java.io.Serializable {
 
+  private static final long serialVersionUID = -8504746824236764604L;
   private byte access;
   private int activeBuildID;
   private int buildID;

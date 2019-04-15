@@ -16,6 +16,7 @@ package org.parabuild.ci.webservice.templ;
 
 public class ScheduleProperty implements java.io.Serializable {
 
+  private static final long serialVersionUID = -1478098593687618458L;
   private int buildID;
   private int propertyID;
   private java.lang.String propertyName;

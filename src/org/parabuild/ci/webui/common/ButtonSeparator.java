@@ -20,6 +20,9 @@ import viewtier.ui.*;
  */
 public final class ButtonSeparator extends Label {
 
+  private static final long serialVersionUID = 7712311873801235873L;
+
+
   public ButtonSeparator() {
     super("  ");
   }

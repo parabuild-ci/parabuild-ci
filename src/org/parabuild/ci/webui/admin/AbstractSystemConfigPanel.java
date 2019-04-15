@@ -68,6 +68,9 @@ public abstract class AbstractSystemConfigPanel extends MessagePanel implements 
    */
   private static PropertyToInputMap.PropertyHandler makePropertyHandler() {
     return new PropertyToInputMap.PropertyHandler() {
+      private static final long serialVersionUID = 4389392135587742283L;
+
+
       public Object makeProperty(final String propertyName) {
         final SystemProperty prop = new SystemProperty();
         prop.setPropertyName(propertyName);

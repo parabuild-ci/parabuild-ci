@@ -16,6 +16,7 @@ package org.parabuild.ci.webservice.templ;
 
 public class BuildRunTest implements java.io.Serializable {
 
+  private static final long serialVersionUID = 8002528979715615091L;
   private int ID;
   private boolean broken;
   private int brokenBuildRunCount;

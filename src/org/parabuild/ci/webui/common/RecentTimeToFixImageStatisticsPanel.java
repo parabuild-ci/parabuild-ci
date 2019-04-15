@@ -24,6 +24,9 @@ import viewtier.ui.Panel;
  */
 public final class RecentTimeToFixImageStatisticsPanel extends MessagePanel {
 
+  private static final long serialVersionUID = -5981145369171920208L;
+
+
   public RecentTimeToFixImageStatisticsPanel() {
     setTitle("Recent Time To Fix");
   }

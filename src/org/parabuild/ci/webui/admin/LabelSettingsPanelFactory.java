@@ -48,6 +48,9 @@ public final class LabelSettingsPanelFactory {
    */
   private static class DummyLabelSettingsPanel extends LabelSettingsPanel {
 
+    private static final long serialVersionUID = 8940511271181583304L;
+
+
     public DummyLabelSettingsPanel() {
       super("");
       setVisible(false);

@@ -24,6 +24,9 @@ import viewtier.ui.*;
  */
 public final class MonthToDateImageChangeListsStatisticsPanel extends MessagePanel {
 
+  private static final long serialVersionUID = 8893358503251668244L;
+
+
   /**
    * Constructor.
    */

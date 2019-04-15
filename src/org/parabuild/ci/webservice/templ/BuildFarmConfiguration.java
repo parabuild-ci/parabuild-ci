@@ -16,6 +16,7 @@ package org.parabuild.ci.webservice.templ;
 
 public class BuildFarmConfiguration implements java.io.Serializable {
 
+  private static final long serialVersionUID = -2653619204334099949L;
   private int ID;
   private java.lang.String description;
   private boolean enabled;

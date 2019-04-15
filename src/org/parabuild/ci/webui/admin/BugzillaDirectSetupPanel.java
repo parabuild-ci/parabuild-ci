@@ -121,6 +121,9 @@ public final class BugzillaDirectSetupPanel extends AbstractIssueTrackerSetupPan
    */
   private final class TestBugzillaConnectionButtonListener implements ButtonPressedListener {
 
+    private static final long serialVersionUID = 5175238890335844927L;
+
+
     public Tierlet.Result buttonPressed(final ButtonPressedEvent event) {
       if (validate()) {
         // create connector

@@ -27,6 +27,9 @@ import viewtier.ui.Parameters;
  */
 public abstract class BaseMergePage extends BasePage {
 
+  private static final long serialVersionUID = 340519478143786119L;
+
+
   protected BaseMergePage() {
   }
 

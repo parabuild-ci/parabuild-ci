@@ -21,6 +21,9 @@ import org.parabuild.ci.webui.common.*;
  */
 public final class BuildRunDiffLink extends CommonLink {
 
+  private static final long serialVersionUID = -5440935824288919529L;
+
+
   /**
    * Constructor.
    *

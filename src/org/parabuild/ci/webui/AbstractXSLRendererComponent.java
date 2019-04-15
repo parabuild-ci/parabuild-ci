@@ -34,6 +34,7 @@ import java.io.PrintWriter;
 public abstract class AbstractXSLRendererComponent extends CustomComponent {
 
   private static final Log log = LogFactory.getLog(AbstractXSLRendererComponent.class);
+  private static final long serialVersionUID = -2922882432106201431L;
 
 
   /**

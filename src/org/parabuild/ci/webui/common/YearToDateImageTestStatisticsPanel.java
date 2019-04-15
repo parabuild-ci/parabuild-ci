@@ -24,6 +24,9 @@ import viewtier.ui.*;
  */
 public final class YearToDateImageTestStatisticsPanel extends MessagePanel {
 
+  private static final long serialVersionUID = 4679690050956318118L;
+
+
   /**
    * Constructor.
    */

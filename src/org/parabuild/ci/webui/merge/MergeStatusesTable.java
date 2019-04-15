@@ -152,6 +152,7 @@ final class MergeStatusesTable extends AbstractFlatTable {
   private static final class MergeNameLink extends CommonLink {
 
     public static final Font FONT_MERGE_NAME_LINK = new Font(Pages.COMMON_FONT_FAMILY, Font.Bold, Pages.COMMMON_FONT_SIZE);
+    private static final long serialVersionUID = 6400243169737437393L;
 
 
     /**

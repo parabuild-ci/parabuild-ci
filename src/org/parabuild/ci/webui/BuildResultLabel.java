@@ -25,6 +25,9 @@ import viewtier.ui.Layout;
  */
 final class BuildResultLabel extends CommonSummaryLabel {
 
+  private static final long serialVersionUID = -184100169612518191L;
+
+
   /**
    * Constructor
    */

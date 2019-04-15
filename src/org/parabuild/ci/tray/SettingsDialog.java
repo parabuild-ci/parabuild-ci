@@ -34,6 +34,7 @@ final class SettingsDialog extends JDialog {
   private static final String CAPTION_DEBUG_LOGGING = "Debug logging:";
   private static final String CAPTION_SAVE = "Save";
   private static final String CAPTION_CANCEL = "Cancel";
+  private static final long serialVersionUID = 1897465782576832897L;
 
   private final JTextField flServerList = new JTextField(30); // NOPMD
   private final JTextField flPollInterval = new JTextField(3); // NOPMD

@@ -30,6 +30,7 @@ import java.util.Locale;
  */
 public final class FileChangeListsTable extends AbstractFlatTable {
 
+  private static final long serialVersionUID = -4042223366773378958L;
   private final SimpleDateFormat dateTimeFormat = new SimpleDateFormat(SystemConfigurationManagerFactory.getManager().getDateTimeFormat(), Locale.US); // NOPMD
 
   private static final int COLUMN_COUNT = 4;

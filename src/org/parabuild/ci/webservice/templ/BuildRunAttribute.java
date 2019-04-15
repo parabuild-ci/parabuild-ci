@@ -16,6 +16,7 @@ package org.parabuild.ci.webservice.templ;
 
 public class BuildRunAttribute implements java.io.Serializable {
 
+  private static final long serialVersionUID = 7971469207994301013L;
   private int ID;
   private int buildRunID;
   private java.lang.String name;

@@ -23,6 +23,9 @@ import org.parabuild.ci.object.*;
  */
 public final class LogLink extends CommonLink {
 
+  private static final long serialVersionUID = 1277802515718797292L;
+
+
   public LogLink(final int buildRunID, final StepLog stepLog) {
     super(stepLog.getDescription(), Pages.BUILD_LOG, makeParameters(buildRunID, stepLog));
   }

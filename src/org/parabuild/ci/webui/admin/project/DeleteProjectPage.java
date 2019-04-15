@@ -153,12 +153,18 @@ public final class DeleteProjectPage extends BasePage implements ConversationalT
 
     // messaging
     confimDeleteButton.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = 1186950362217771745L;
+
+
       public Result buttonPressed(final ButtonPressedEvent event) {
         action = DeleteProjectPage.ACTION_DELETE;
         return null;
       }
     });
     cancelDeleteButton.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = -966994516475619208L;
+
+
       public Result buttonPressed(final ButtonPressedEvent event) {
         action = DeleteProjectPage.ACTION_CANCEL;
         return null;

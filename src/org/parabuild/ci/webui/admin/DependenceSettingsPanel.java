@@ -32,6 +32,7 @@ public final class DependenceSettingsPanel extends MessagePanel implements Loada
 
   private static final String CAPTION_START_THIS_BUILD_UPON_SUCCESS = "Start build on success: ";
   private static final String CAPTION_FAIL_IF_CANNOT_BE_STARTED = "Fail if cannot be started: ";
+  private static final long serialVersionUID = 696419954639548040L;
 
   private int buildID = BuildConfig.UNSAVED_ID;
   private final ReferenceableBuildNameDropdown flSelectedBuild = new ReferenceableBuildNameDropdown(CodeNameDropDown.ALLOW_NONEXISTING_CODES);

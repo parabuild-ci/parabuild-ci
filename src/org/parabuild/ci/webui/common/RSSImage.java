@@ -22,6 +22,7 @@ import viewtier.cdk.*;
  */
 public final class RSSImage extends CustomComponent {
 
+  private static final long serialVersionUID = -1439600642491719000L;
   private final int buildID;
 
 

@@ -22,6 +22,9 @@ import org.parabuild.ci.object.*;
 final class P4ModtimeDropDown extends CodeNameDropDown {
 
 
+  private static final long serialVersionUID = 235603253184066860L;
+
+
   P4ModtimeDropDown() {
     addCodeNamePair(SourceControlSetting.P4_OPTION_VALUE_NOMODTIME, "nomodtime");
     addCodeNamePair(SourceControlSetting.P4_OPTION_VALUE_MODTIME, "modtime");

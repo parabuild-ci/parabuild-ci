@@ -54,6 +54,7 @@ final class MergeReportTable extends AbstractFlatTable {
   private static final String CAPTION_DATE = "Date";
   private static final String CAPTION_USER = "User";
   private static final String CAPTION_DESCRIPTION = "Description";
+  private static final long serialVersionUID = 1924869166916763407L;
 
   private List report = Collections.EMPTY_LIST;
   private final SimpleDateFormat simpleDateFormat;

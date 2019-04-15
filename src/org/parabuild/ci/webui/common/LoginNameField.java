@@ -16,6 +16,7 @@ package org.parabuild.ci.webui.common;
 public final class LoginNameField extends CommonField {
 
   public static final int COLUMN_WIDTH = 175;
+  private static final long serialVersionUID = 1909824177317330446L;
 
 
   public LoginNameField() {

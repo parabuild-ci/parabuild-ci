@@ -21,6 +21,9 @@ import java.util.*;
  */
 final class ServiceDate extends Date {
 
+  private static final long serialVersionUID = -5054915987091849836L;
+
+
   /**
    */
   public ServiceDate() {

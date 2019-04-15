@@ -16,6 +16,7 @@ package org.parabuild.ci.webservice.templ;
 
 public class DisplayGroupBuild implements java.io.Serializable {
 
+  private static final long serialVersionUID = -4947265389445053812L;
   private int ID;
   private int buildID;
   private int displayGroupID;

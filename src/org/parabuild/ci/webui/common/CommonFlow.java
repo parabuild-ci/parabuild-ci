@@ -20,6 +20,9 @@ import viewtier.ui.*;
  */
 public final class CommonFlow extends Flow {
 
+  private static final long serialVersionUID = 4441588577571839955L;
+
+
   public CommonFlow(final Component c1, final Component c2) {
     add(c1).add(c2);
   }

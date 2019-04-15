@@ -23,6 +23,7 @@ import viewtier.cdk.*;
  */
 public final class AppletComponent extends CustomComponent {
 
+  private static final long serialVersionUID = 372357917563237405L;
   private final String name;
   private final String codebase;
   private final String code;

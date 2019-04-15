@@ -16,6 +16,7 @@ package org.parabuild.ci.webservice.templ;
 
 public class ProjectAttribute implements java.io.Serializable {
 
+  private static final long serialVersionUID = 7291714883008140790L;
   private int ID;
   private java.lang.String name;
   private int projectID;

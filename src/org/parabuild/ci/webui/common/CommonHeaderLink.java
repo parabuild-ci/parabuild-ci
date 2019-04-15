@@ -22,6 +22,9 @@ import java.util.Properties;
 public final class CommonHeaderLink extends CommonLink {
 
 
+  private static final long serialVersionUID = 6154052712344065955L;
+
+
   public CommonHeaderLink(final String s, final String s1) {
     super(s, s1);
     setForeground(Color.White);

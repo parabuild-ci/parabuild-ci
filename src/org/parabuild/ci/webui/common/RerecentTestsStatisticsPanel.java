@@ -24,6 +24,9 @@ import viewtier.ui.*;
  */
 public final class RerecentTestsStatisticsPanel extends MessagePanel {
 
+  private static final long serialVersionUID = -3287221319850166440L;
+
+
   /**
    * Constructor.
    */

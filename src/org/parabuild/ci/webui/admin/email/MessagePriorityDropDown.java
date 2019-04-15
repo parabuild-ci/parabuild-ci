@@ -23,6 +23,7 @@ final class MessagePriorityDropDown extends CodeNameDropDown {
 
   private static final String CAPTION_NORMAL = "Normal";
   private static final String CAPTION_HIGH = "High";
+  private static final long serialVersionUID = 2965790897195380273L;
 
 
   /**

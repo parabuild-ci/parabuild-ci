@@ -21,6 +21,9 @@ import viewtier.ui.*;
  */
 public class CommonButton extends Button {
 
+  private static final long serialVersionUID = -1809252732083713325L;
+
+
   public CommonButton(final String s) {
     super(s);
     setPadding(4);

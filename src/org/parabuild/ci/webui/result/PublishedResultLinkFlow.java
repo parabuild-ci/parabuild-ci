@@ -23,6 +23,9 @@ import viewtier.ui.*;
  */
 final class PublishedResultLinkFlow extends Flow {
 
+  private static final long serialVersionUID = 7002017071229968282L;
+
+
   public PublishedResultLinkFlow() {
   }
 

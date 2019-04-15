@@ -22,6 +22,9 @@ import viewtier.ui.*;
  */
 public class CommonMenu extends Menu {
 
+  private static final long serialVersionUID = 323168199332179670L;
+
+
   /**
    * Constructor
    */

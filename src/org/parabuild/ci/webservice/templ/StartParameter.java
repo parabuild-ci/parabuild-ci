@@ -16,6 +16,7 @@ package org.parabuild.ci.webservice.templ;
 
 public class StartParameter implements java.io.Serializable {
 
+  private static final long serialVersionUID = -5206409257451301526L;
   private int ID;
   private int buildID;
   private java.lang.String description;

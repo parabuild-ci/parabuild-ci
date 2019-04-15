@@ -28,6 +28,7 @@ final class AccurevEOLTypeDropDown extends CodeNameDropDown {
   private static final String CAPTION_PLATFORM_SPECIFIC = "Platform-specific";
   private static final String CAPTION_UNIX = "Unix";
   private static final String CAPTION_WINDOWS = "Windows";
+  private static final long serialVersionUID = -6364193342135120087L;
 
 
   AccurevEOLTypeDropDown() {

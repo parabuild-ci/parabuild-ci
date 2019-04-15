@@ -16,6 +16,7 @@ package org.parabuild.ci.webservice.templ;
 
 public class IssueChangeList implements java.io.Serializable {
 
+  private static final long serialVersionUID = 642028237802848736L;
   private int ID;
   private int changeListID;
   private int issueID;

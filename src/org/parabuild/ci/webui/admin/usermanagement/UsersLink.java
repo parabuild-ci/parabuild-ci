@@ -22,6 +22,7 @@ import org.parabuild.ci.webui.common.*;
 public final class UsersLink extends CommonLink {
 
   private static final String CAPTION_GROUPS = "Users";
+  private static final long serialVersionUID = -6278327115489575721L;
 
 
   public UsersLink() {

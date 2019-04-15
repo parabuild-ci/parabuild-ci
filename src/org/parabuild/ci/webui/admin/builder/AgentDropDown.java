@@ -28,6 +28,9 @@ import java.util.List;
  */
 final class AgentDropDown extends CodeNameDropDown {
 
+  private static final long serialVersionUID = 360661441141709634L;
+
+
   AgentDropDown() {
     super(ALLOW_NONEXISTING_CODES);
     final List agentList = BuilderConfigurationManager.getInstance().getAgentList();

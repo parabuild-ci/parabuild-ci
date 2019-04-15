@@ -126,6 +126,7 @@ public final class UserGroupsPanel extends MessagePanel implements Saveable {
 
   public static final class UserGroupCheckBox extends CheckBox {
 
+    private static final long serialVersionUID = -200509072546996518L;
     private DisplayUserGroupVO displayUG = null;
 
 

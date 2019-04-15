@@ -64,6 +64,9 @@ public final class ResetPasswordPanel extends MessagePanel implements Validatabl
 
     // set handler for cancel button
     cancelButton.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = 6534937229867560680L;
+
+
       public Tierlet.Result buttonPressed(final ButtonPressedEvent event) {
         return Tierlet.Result.Done(Pages.PUBLIC_LOGIN);
       }

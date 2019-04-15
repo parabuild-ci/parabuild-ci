@@ -133,12 +133,18 @@ public final class DeleteUserPage extends BasePage implements ConversationalTier
 
     // messaging
     confimDeleteButton.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = -224157615888519042L;
+
+
       public Result buttonPressed(final ButtonPressedEvent event) {
         action = ACTION_DELETE;
         return null;
       }
     });
     cancelDeleteButton.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = 3367839542500747914L;
+
+
       public Result buttonPressed(final ButtonPressedEvent event) {
         action = ACTION_CANCEL;
         return null;

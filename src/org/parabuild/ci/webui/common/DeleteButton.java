@@ -19,6 +19,9 @@ package org.parabuild.ci.webui.common;
  */
 public final class DeleteButton extends CommonButton {
 
+  private static final long serialVersionUID = -4876673227013255697L;
+
+
   public DeleteButton() {
     super("    Delete    ");
   }

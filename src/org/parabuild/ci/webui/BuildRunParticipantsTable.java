@@ -137,6 +137,7 @@ public final class BuildRunParticipantsTable extends AbstractFlatTable {
    */
   static final class ChangelistNumberFlow extends Flow {
 
+    private static final long serialVersionUID = -9015113759891995974L;
     private final ChangeURLFactory changeURLFactory;
 
 

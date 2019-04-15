@@ -22,6 +22,9 @@ import viewtier.ui.*;
  */
 public abstract class MaintenanceCommandsPanel extends Panel {
 
+  private static final long serialVersionUID = 8847002358862257794L;
+
+
   protected MaintenanceCommandsPanel() {
   }
 

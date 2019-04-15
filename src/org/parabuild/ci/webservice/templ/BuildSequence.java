@@ -16,6 +16,7 @@ package org.parabuild.ci.webservice.templ;
 
 public class BuildSequence implements java.io.Serializable {
 
+  private static final long serialVersionUID = 3406308589212150164L;
   private int buildID;
   private boolean continueOnFailure;
   private boolean disabled;

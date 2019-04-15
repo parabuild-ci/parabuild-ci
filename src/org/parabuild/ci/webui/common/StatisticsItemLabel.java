@@ -22,6 +22,9 @@ import viewtier.ui.*;
  */
 public final class StatisticsItemLabel extends StatisticsLabel {
 
+  private static final long serialVersionUID = -5696395929698283309L;
+
+
   /**
    * Constructor.
    */

@@ -16,6 +16,7 @@ package org.parabuild.ci.webservice.templ;
 
 public class LogConfiguration implements java.io.Serializable {
 
+  private static final long serialVersionUID = 6964262225933079800L;
   private int ID;
   private int buildID;
   private java.lang.String description;

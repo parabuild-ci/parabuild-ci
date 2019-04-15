@@ -18,6 +18,9 @@ package org.parabuild.ci.webui.common;
  */
 public final class IssueFilterField extends CommonField {
 
+  private static final long serialVersionUID = -6715555697911980221L;
+
+
   public IssueFilterField() {
     super(50, 50);
   }

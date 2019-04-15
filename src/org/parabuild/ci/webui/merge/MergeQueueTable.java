@@ -63,6 +63,7 @@ final class MergeQueueTable extends AbstractFlatTable {
   private static final String CAPTION_DESCRIPTION = "Description";
   private static final String CAPTION_GROUP_VERIFIED = "Group Verified";
   private static final String CAPTION_GROUP_RESULT = "Group Result";
+  private static final long serialVersionUID = -4634051626335212061L;
 
   private List report = Collections.EMPTY_LIST;
   private final SimpleDateFormat simpleDateFormat;
@@ -181,6 +182,7 @@ final class MergeQueueTable extends AbstractFlatTable {
   private static class ResultFlow extends Flow {
 
     private static final String CAPTION_VALIDATION_FAILED = "Validation failed";
+    private static final long serialVersionUID = 6645665753810980862L;
 
 
     /**

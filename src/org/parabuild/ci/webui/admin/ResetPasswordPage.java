@@ -47,6 +47,9 @@ public final class ResetPasswordPage extends BasePage implements ConversationalT
 
     // set submit button listener
     resetPanel.setSubmitButtonListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = 4936275192428369008L;
+
+
       public Result buttonPressed(final ButtonPressedEvent event) {
         try {
           // validate

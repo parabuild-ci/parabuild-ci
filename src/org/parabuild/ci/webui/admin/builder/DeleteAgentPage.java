@@ -141,12 +141,18 @@ public final class DeleteAgentPage extends BasePage implements ConversationalTie
 
     // messaging
     confimDeleteButton.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = -4198648988809994773L;
+
+
       public Result buttonPressed(final ButtonPressedEvent event) {
         action = ACTION_DELETE;
         return null;
       }
     });
     cancelDeleteButton.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = 1498603785427244389L;
+
+
       public Result buttonPressed(final ButtonPressedEvent event) {
         action = ACTION_CANCEL;
         return null;

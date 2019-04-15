@@ -22,6 +22,7 @@ import org.parabuild.ci.webui.common.*;
 public final class GroupsLink extends CommonLink {
 
   private static final String CAPTION_GROUPS = "Groups";
+  private static final long serialVersionUID = -5485603753431792114L;
 
 
   public GroupsLink() {

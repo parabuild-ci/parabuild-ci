@@ -85,6 +85,9 @@ public class MergeStatusesPage extends BasePage implements ConversationalTierlet
     // add selection change listener
     ddDisplayGroup.setName("dropdown_select_merge_display_group");
     ddDisplayGroup.addListener(new DropDownSelectedListener() {
+      private static final long serialVersionUID = -1762636673576520811L;
+
+
       public Result dropDownSelected(final DropDownSelectedEvent dropDownSelectedEvent) {
         final MergeDisplayGroupDropDown dropDown = (MergeDisplayGroupDropDown) dropDownSelectedEvent.getDropDown();
         final int groupID = dropDown.getCode();

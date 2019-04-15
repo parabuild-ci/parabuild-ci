@@ -19,6 +19,9 @@ package org.parabuild.ci.common;
  */
 public final class ValidationException extends Exception {
 
+  private static final long serialVersionUID = -1902405301116098561L;
+
+
   /**
    * Constructs a new exception with the specified user friendly message.
    */

@@ -16,6 +16,7 @@ package org.parabuild.ci.webservice.templ;
 
 public class AgentConfiguration implements java.io.Serializable {
 
+  private static final long serialVersionUID = 3909159474735955447L;
   private int ID;
   private java.lang.String description;
   private boolean enabled;

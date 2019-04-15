@@ -16,6 +16,7 @@ package org.parabuild.ci.webservice.templ;
 
 public class SystemProperty implements java.io.Serializable {
 
+  private static final long serialVersionUID = -1181973163188363710L;
   private int propertyID;
   private java.lang.String propertyName;
   private long propertyTimeStamp;

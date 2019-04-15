@@ -23,6 +23,9 @@ import org.parabuild.ci.webui.common.*;
  */
 public final class IssueURLTemplateField extends CommonField {
 
+  private static final long serialVersionUID = -7448734923520648780L;
+
+
   public IssueURLTemplateField() {
     super(80, 80);
   }

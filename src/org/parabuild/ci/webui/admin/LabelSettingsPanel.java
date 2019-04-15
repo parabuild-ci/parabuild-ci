@@ -21,6 +21,9 @@ import org.parabuild.ci.object.*;
  */
 public abstract class LabelSettingsPanel extends MessagePanel implements Loadable, Validatable, Saveable {
 
+  private static final long serialVersionUID = 8756851553363124008L;
+
+
   public LabelSettingsPanel(final String title) {
     super(title);
   }

@@ -16,6 +16,7 @@ package org.parabuild.ci.webservice.templ;
 
 public class StepRunAttribute implements java.io.Serializable {
 
+  private static final long serialVersionUID = -809293694454601562L;
   private int ID;
   private java.lang.String name;
   private int stepRunID;

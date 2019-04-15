@@ -51,6 +51,9 @@ public final class SelectProjectPanel extends MessagePanel {
     gi.add(btnContinue).add(new CommonFlow(new Label("  "), btnCancel));
 
     btnContinue.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = 1106461642690316094L;
+
+
       public Tierlet.Result buttonPressed(final ButtonPressedEvent buttonPressedEvent) {
         // validate
         if (projectDropDown.getCode() == ProjectDropDown.NOT_SELECTED_ID) {
@@ -67,6 +70,9 @@ public final class SelectProjectPanel extends MessagePanel {
     });
 
     btnCancel.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = 8808149473350493528L;
+
+
       public Tierlet.Result buttonPressed(final ButtonPressedEvent buttonPressedEvent) {
         return Tierlet.Result.Done(gotoPageWhenSelectionCanceled);
       }

@@ -25,6 +25,7 @@ import java.util.List;
  */
 public final class GitCompoundSettingsPanel extends SourceControlPanel {
 
+  private static final long serialVersionUID = 1028867987158176236L;
   private final GitSettingsPanel pnlGitSettings = new GitSettingsPanel();
   private final RepositoryBrowserPanel pnlRepositoryBrowser = new RepositoryBrowserPanel(true);
 

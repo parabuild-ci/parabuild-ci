@@ -33,6 +33,7 @@ final class StabilitySettingsPanel extends Panel {
   private static final String CAPTION_FINALIZER = "Finalizer:";
   private static final String CAPTION_CONTINUE_IF_FAILED = "Continue if failed:";
   private static final String CAPTION_INITIALIZER = "Initializer:";
+  private static final long serialVersionUID = -5340837624268649351L;
 
   private final Field flTimeOut = new Field(6, 6, "30"); // NOPMD SingularField
   private final CheckBox cbRespectErrorCode = new CheckBox(); // NOPMD SingularField

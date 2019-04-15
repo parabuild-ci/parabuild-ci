@@ -22,6 +22,9 @@ import org.parabuild.ci.webui.common.CodeNameDropDown;
 public class MercurialRepositoryPathDropDown extends CodeNameDropDown {
 
 
+  private static final long serialVersionUID = -3431016032527981184L;
+
+
   public MercurialRepositoryPathDropDown() {
     super(false);
     addCodeNamePair(SourceControlSetting.MERCURIAL_PATH_TYPE_FILE, "File path");

@@ -195,6 +195,9 @@ public final class ProjectPanel extends MessagePanel implements Validatable, Sav
    */
   private static PropertyToInputMap.PropertyHandler makePropertyHandler() {
     return new PropertyToInputMap.PropertyHandler() {
+      private static final long serialVersionUID = -8036995290299804238L;
+
+
       public Object makeProperty(final String propertyName) {
         final ProjectAttribute prop = new ProjectAttribute();
         prop.setName(propertyName);

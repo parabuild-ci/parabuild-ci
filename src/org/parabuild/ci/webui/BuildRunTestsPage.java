@@ -40,6 +40,8 @@ public final class BuildRunTestsPage extends BasePage implements StatelessTierle
   private static final Log LOG = LogFactory.getLog(BuildRunSummaryPanel.class); // NOPMD
 
   private static final Font SMALL_FOUNT = new Font(Font.Monospace, Font.Plain, Pages.COMMMON_FONT_SIZE - 1);
+  private static final long serialVersionUID = -7535921681585450884L;
+
 
   public BuildRunTestsPage() {
     super(FLAG_FLOATING_WIDTH | FLAG_SHOW_QUICK_SEARCH | FLAG_SHOW_PAGE_HEADER_LABEL | FLAG_SHOW_QUICK_SEARCH);
@@ -478,6 +480,7 @@ public final class BuildRunTestsPage extends BasePage implements StatelessTierle
     private static final Color GRID_COLOR = new Color(0xE3E3E3);
 
     private static final int COLUMN_COUNT = 9;
+    private static final long serialVersionUID = 7844687858177899246L;
     private final int buildRunID;
     private final List testCases;
 
@@ -601,6 +604,8 @@ public final class BuildRunTestsPage extends BasePage implements StatelessTierle
   }
 
   private static final class NewInThisBuildLabel extends Flow {
+
+    private static final long serialVersionUID = 2637614206955007248L;
     private final int buildRunID;
 
     public NewInThisBuildLabel(final int buildRunID) {
@@ -619,6 +624,10 @@ public final class BuildRunTestsPage extends BasePage implements StatelessTierle
   }
 
   private static final class BrokenBuildCountLabel extends BoldCommonLabel {
+
+    private static final long serialVersionUID = 1206585148817994519L;
+
+
     public BrokenBuildCountLabel() {
       this.setAlignX(Layout.CENTER);
     }
@@ -631,6 +640,10 @@ public final class BuildRunTestsPage extends BasePage implements StatelessTierle
   }
 
   private static final class FixLabel extends BoldCommonLabel {
+
+    private static final long serialVersionUID = 5390302039450586073L;
+
+
     public FixLabel() {
       this.setAlignX(Layout.CENTER);
       this.setForeground(Color.DarkGreen);
@@ -644,6 +657,10 @@ public final class BuildRunTestsPage extends BasePage implements StatelessTierle
   }
 
   private static final class NewTestLabel extends CommonLabel {
+
+    private static final long serialVersionUID = -2983470331055804680L;
+
+
     public NewTestLabel() {
       this.setAlignX(Layout.CENTER);
     }
@@ -661,6 +678,8 @@ public final class BuildRunTestsPage extends BasePage implements StatelessTierle
   }
 
   private static final class BrokenSinceBuildLabel extends Flow {
+
+    private static final long serialVersionUID = -566385374168421616L;
     private final int buildRunID;
 
     public BrokenSinceBuildLabel(final int buildRunID) {
@@ -680,6 +699,10 @@ public final class BuildRunTestsPage extends BasePage implements StatelessTierle
   }
 
   private static final class SmallMessageLabel extends CommonLabel {
+
+    private static final long serialVersionUID = -2009867503452318045L;
+
+
     public SmallMessageLabel() {
       setPreserveFormatting(Integer.MAX_VALUE);
       setFont(SMALL_FOUNT);
@@ -689,6 +712,10 @@ public final class BuildRunTestsPage extends BasePage implements StatelessTierle
 
 
   private static final class SmallLabel extends CommonLabel {
+
+    private static final long serialVersionUID = 2651628309473025774L;
+
+
     public SmallLabel() {
       setFont(SMALL_FOUNT);
       setAlignY(Layout.TOP);

@@ -21,6 +21,9 @@ package org.parabuild.ci.webui.common;
  */
 public final class StatisticsPercentBarImage extends StatisticsQuantityBarImage {
 
+  private static final long serialVersionUID = -7610379131929860445L;
+
+
   /**
    * Constructor.
    *

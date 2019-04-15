@@ -20,6 +20,7 @@ public final class ExtensionListField extends CommonField {
 
   private static final int DATA_LENGTH = 200;
   private static final int VISIBLE_LENGTH = 30;
+  private static final long serialVersionUID = 7683353734969190943L;
 
 
   public ExtensionListField() {

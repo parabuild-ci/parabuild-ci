@@ -111,12 +111,18 @@ public final class DeleteResultGroupPage extends BasePage implements Conversatio
 
     // messaging
     confimDeleteButton.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = 3130242747185368044L;
+
+
       public Result buttonPressed(final ButtonPressedEvent event) {
         action = ACTION_DELETE;
         return null;
       }
     });
     cancelDeleteButton.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = -2434247036778540815L;
+
+
       public Result buttonPressed(final ButtonPressedEvent event) {
         action = ACTION_CANCEL;
         return null;

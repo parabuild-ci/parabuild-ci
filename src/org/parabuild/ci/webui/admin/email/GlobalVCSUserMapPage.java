@@ -113,6 +113,9 @@ public final class GlobalVCSUserMapPage extends BasePage implements Conversation
 
   private ButtonPressedListener createSaveListener() {
     return new ButtonPressedListener() {
+      private static final long serialVersionUID = -3311229452527885804L;
+
+
       public Result buttonPressed(final ButtonPressedEvent event) {
         if (pnlMapping.save()) {
           return Result.Done(Pages.ADMIN_EMAIL_GLOBAL_VCS_USER_MAP);
@@ -126,6 +129,9 @@ public final class GlobalVCSUserMapPage extends BasePage implements Conversation
 
   private ButtonPressedListener createCancelListener() {
     return new ButtonPressedListener() {
+      private static final long serialVersionUID = 3344092526377787414L;
+
+
       public Result buttonPressed(final ButtonPressedEvent event) {
         return Result.Done(Pages.ADMIN_EMAIL_GLOBAL_VCS_USER_MAP);
       }

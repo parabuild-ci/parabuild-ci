@@ -24,6 +24,9 @@ import viewtier.ui.*;
  */
 public final class LastCleanBuildRunFlow extends Flow {
 
+  private static final long serialVersionUID = -7990154614217584287L;
+
+
   public LastCleanBuildRunFlow(final BuildRun lastCleanBuildRun, final String dateTimeFormat) {
     if (!lastCleanBuildRunIsValid(lastCleanBuildRun)) return;
 

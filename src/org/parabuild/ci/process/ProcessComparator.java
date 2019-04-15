@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.process;
 
+import java.io.Serializable;
 import java.util.*;
 
 /**
@@ -20,7 +21,7 @@ import java.util.*;
  * <code>Process</code> objects.
  *
  */
-public final class ProcessComparator implements Comparator {
+public final class ProcessComparator implements Comparator, Serializable {
 
   private final int order;
   

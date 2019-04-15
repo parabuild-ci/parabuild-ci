@@ -20,6 +20,9 @@ import java.io.*;
  */
 public final class CommandLineParserException extends IOException {
 
+  private static final long serialVersionUID = -4087753082694376962L;
+
+
   /**
    * Constructs an <code>CommandLineInvalidException</code> with
    * the specified detail message. The error message string

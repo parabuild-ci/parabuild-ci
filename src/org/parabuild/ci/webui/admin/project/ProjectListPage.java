@@ -65,6 +65,7 @@ public final class ProjectListPage extends NavigatableSystemConfigurationPage im
   private static final class AddProjectLink extends CommonCommandLinkWithImage {
 
     private static final String CAPTION_ADD_NEW_PROJECT = "Add Project";
+    private static final long serialVersionUID = -2749673611823544077L;
 
 
     AddProjectLink() {

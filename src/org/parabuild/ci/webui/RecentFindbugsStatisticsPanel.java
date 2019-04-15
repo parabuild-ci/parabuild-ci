@@ -25,6 +25,9 @@ import viewtier.ui.Image;
  */
 public final class RecentFindbugsStatisticsPanel extends MessagePanel {
 
+  private static final long serialVersionUID = -5890417757443631872L;
+
+
   /**
    * Constructor.
    */

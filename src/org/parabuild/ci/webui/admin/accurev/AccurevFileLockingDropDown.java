@@ -28,6 +28,7 @@ final class AccurevFileLockingDropDown extends CodeNameDropDown {
   private static final String CAPTION_NONE = "None";
   private static final String CAPTION_ANCHOR = "Anchor";
   private static final String CAPTION_EXCLUSIVE = "Exclusive";
+  private static final long serialVersionUID = -686484582661521606L;
 
 
   AccurevFileLockingDropDown() {

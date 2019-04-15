@@ -41,6 +41,7 @@ final class FailedWithVersionMismatchRemoteBuilderWebService implements RemoteBu
    * @noinspection UNUSED_SYMBOL
    */
   private static final Log LOG = LogFactory.getLog(FailedWithVersionMismatchRemoteBuilderWebService.class); // NOPMD
+  private static final long serialVersionUID = 7092952785807552253L;
   private final String builderVersionAsString;
   private final String url;
   private final String managerVersion;

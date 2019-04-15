@@ -102,6 +102,7 @@ public final class ResultGroupTable extends AbstractFlatTable {
 
   private static final class NameActionHolderFlow extends Flow {
 
+    private static final long serialVersionUID = -1865380003770128625L;
     private final CommonLink lnkGroupName = new CommonLink("", "");
     private final ActionMenuList actionMenuList = new ActionMenuList();
     private final BreakLabel lbBreak = new BreakLabel();
@@ -143,6 +144,7 @@ public final class ResultGroupTable extends AbstractFlatTable {
    */
   private static final class ActionMenuList extends Flow {
 
+    private static final long serialVersionUID = -5623572818915657857L;
     private final Link lnkEdit;
     private final Link lnkDelete;
     private final Label lbDeleteSeparator = new Label(" | ");

@@ -401,6 +401,9 @@ public final class ResumeGroupPanel extends MessagePanel {
 
   private class CancelButtonPressedListener implements ButtonPressedListener {
 
+    private static final long serialVersionUID = -5627934470713278224L;
+
+
     public Tierlet.Result buttonPressed(final ButtonPressedEvent buttonPressedEvent) {
       return processCancel();
     }

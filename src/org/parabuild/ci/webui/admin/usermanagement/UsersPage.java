@@ -65,6 +65,9 @@ public final class UsersPage extends NavigatableSystemConfigurationPage implemen
 
   private static final class AddUserLink extends CommonCommandLinkWithImage {
 
+    private static final long serialVersionUID = -4740013610744281425L;
+
+
     AddUserLink() {
       super("Add New User", Pages.ADMIN_EDIT_USER);
     }

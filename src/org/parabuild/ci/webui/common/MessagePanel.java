@@ -300,6 +300,7 @@ public class MessagePanel extends Panel implements CommonConstants {
   private static final class Style extends Enum {
 
     public static final Collection VALUES = getInstances(Style.class);
+    private static final long serialVersionUID = -7520836370776254554L;
 
 
     /**

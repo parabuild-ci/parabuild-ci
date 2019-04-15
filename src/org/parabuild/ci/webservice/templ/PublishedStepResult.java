@@ -16,6 +16,7 @@ package org.parabuild.ci.webservice.templ;
 
 public class PublishedStepResult implements java.io.Serializable {
 
+  private static final long serialVersionUID = 8882013964337740303L;
   private int ID;
   private int activeBuildID;
   private java.lang.String buildName;

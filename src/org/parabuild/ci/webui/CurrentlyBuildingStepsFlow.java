@@ -132,6 +132,7 @@ public final class CurrentlyBuildingStepsFlow extends Flow {
   private static final class StepNameSeparatorLabel extends Label {
 
     public static final String STEP_NAME_SEPARATOR = " &gt; ";
+    private static final long serialVersionUID = -9107788882956405865L;
 
 
     /**

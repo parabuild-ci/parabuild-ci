@@ -16,6 +16,7 @@ package org.parabuild.ci.webservice.templ;
 
 public class GlobalVCSUserMap implements java.io.Serializable {
 
+  private static final long serialVersionUID = -2771061619820069326L;
   private int ID;
   private java.lang.String description;
   private java.lang.String email;

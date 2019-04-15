@@ -23,6 +23,9 @@ import org.parabuild.ci.webui.common.Validatable;
  */
 public class SecuritySettingsPanel extends MessagePanel implements Loadable, Validatable, Saveable {
 
+  private static final long serialVersionUID = -136056053329469432L;
+
+
   public SecuritySettingsPanel() {
     super(false);
     showHeaderDivider(true);

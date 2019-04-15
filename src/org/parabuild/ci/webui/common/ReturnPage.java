@@ -39,6 +39,7 @@ public final class ReturnPage implements Serializable {
   private static final Log LOG = LogFactory.getLog(ReturnPage.class); // NOPMD
 
   public static final String PARABUILD_RETURN_PAGE = "parabuild.return.page";
+  private static final long serialVersionUID = -3425480618880861131L;
 
   private String page = null;
   private final Properties params = new Properties();

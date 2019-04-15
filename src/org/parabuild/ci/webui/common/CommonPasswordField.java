@@ -20,6 +20,9 @@ import viewtier.ui.Password;
  */
 public final class CommonPasswordField extends Password {
 
+  private static final long serialVersionUID = -827753172250904539L;
+
+
   public CommonPasswordField() {
     super(30, 20);
   }

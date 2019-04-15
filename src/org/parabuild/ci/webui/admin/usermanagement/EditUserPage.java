@@ -52,6 +52,9 @@ public final class EditUserPage extends BasePage implements ConversationalTierle
 
     // add cancel button listener
     btnCancel.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = -6248992039617372586L;
+
+
       public Result buttonPressed(final ButtonPressedEvent event) {
         return Result.Done(Pages.ADMIN_USERS);
       }
@@ -59,6 +62,9 @@ public final class EditUserPage extends BasePage implements ConversationalTierle
 
     // add save button listener
     btnSave.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = -768734137330802100L;
+
+
       public Result buttonPressed(final ButtonPressedEvent event) {
         if (save()) {
           refreshUserInSession(getUserID() != User.UNSAVED_ID && getUserID() == pnlUser.getUserID());

@@ -103,6 +103,9 @@ public final class LoginPanel extends MessagePanel {
 
     // set handler for cancel button
     cancelButton.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = 2265999592345221796L;
+
+
       public Tierlet.Result buttonPressed(final ButtonPressedEvent event) {
         return Tierlet.Result.Done(Pages.PUBLIC_BUILDS);
       }
@@ -110,6 +113,9 @@ public final class LoginPanel extends MessagePanel {
 
     // set handler for "forgot password" menu
     forgotPassword.addListener(new MenuSelectedListener() {
+      private static final long serialVersionUID = -5690593220907534121L;
+
+
       public Tierlet.Result menuSelected(final MenuSelectedEvent event) {
         return Tierlet.Result.Done(Pages.ADMIN_RESET_PASSWORD);
       }

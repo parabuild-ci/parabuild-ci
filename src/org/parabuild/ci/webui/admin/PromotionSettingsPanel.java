@@ -38,6 +38,7 @@ public class PromotionSettingsPanel extends MessagePanel implements Loadable, Va
 
   private static final String PROMOTION_POLICY = "Promotion policy: ";
   private static final int GRID_ITERATOR_SIZE_X = 2;
+  private static final long serialVersionUID = 5481316773260642618L;
 
   private int buildID = BuildConfig.UNSAVED_ID;
 

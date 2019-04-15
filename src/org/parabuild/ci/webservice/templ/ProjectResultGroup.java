@@ -16,6 +16,7 @@ package org.parabuild.ci.webservice.templ;
 
 public class ProjectResultGroup implements java.io.Serializable {
 
+  private static final long serialVersionUID = -2465851505161540064L;
   private int ID;
   private int projectID;
   private int resultGroupID;

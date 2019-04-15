@@ -16,6 +16,7 @@ package org.parabuild.ci.webservice.templ;
 
 public class ScheduleItem implements java.io.Serializable {
 
+  private static final long serialVersionUID = 5609252511898990737L;
   private int buildID;
   private boolean cleanCheckout;
   private java.lang.String dayOfMonth;

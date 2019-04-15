@@ -16,6 +16,7 @@ package org.parabuild.ci.webservice.templ;
 
 public class BuildWatcher implements java.io.Serializable {
 
+  private static final long serialVersionUID = -3159543946243929534L;
   private int buildID;
   private boolean disabled;
   private java.lang.String email;

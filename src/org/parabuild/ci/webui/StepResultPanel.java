@@ -36,6 +36,9 @@ import java.util.List;
  */
 public final class StepResultPanel extends Panel {
 
+  private static final long serialVersionUID = -1830058759949441267L;
+
+
   /**
    * Sets panel's content. If content has been set already it is discarded.
    *

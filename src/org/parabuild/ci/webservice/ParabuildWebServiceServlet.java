@@ -27,6 +27,9 @@ import java.security.Principal;
  */
 public final class ParabuildWebServiceServlet extends AxisServlet {
 
+  private static final long serialVersionUID = -3100366203394036650L;
+
+
   public void doGet(final HttpServletRequest httpServletRequest, final HttpServletResponse httpServletResponse) throws ServletException, IOException {
     final SecurityManager sm = SecurityManager.getInstance();
     final Principal userPrincipal = httpServletRequest.getUserPrincipal();

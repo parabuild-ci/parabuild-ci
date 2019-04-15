@@ -20,6 +20,9 @@ import viewtier.ui.Font;
  */
 public final class CommonHeaderSmallLink extends CommonLink {
 
+  private static final long serialVersionUID = -5734728391348277181L;
+
+
   public CommonHeaderSmallLink(final String s, final String s1) {
     super(s, s1);
     setForeground(Color.White);

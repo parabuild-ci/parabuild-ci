@@ -16,6 +16,7 @@ package org.parabuild.ci.webservice.templ;
 
 public class VCSUserToEmailMap implements java.io.Serializable {
 
+  private static final long serialVersionUID = -7867541996618296028L;
   private int buildID;
   private boolean disabled;
   private java.lang.String instantMessengerAddress;

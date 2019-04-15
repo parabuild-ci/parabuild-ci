@@ -415,6 +415,9 @@ public final class StopGroupPanel extends MessagePanel {
 
   private class CancelButtonPressedListener implements ButtonPressedListener {
 
+    private static final long serialVersionUID = 8540358842076116331L;
+
+
     public Tierlet.Result buttonPressed(final ButtonPressedEvent buttonPressedEvent) {
       return processCancel();
     }

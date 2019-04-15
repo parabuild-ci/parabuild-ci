@@ -21,6 +21,9 @@ package org.parabuild.ci.common;
  */
 public final class FatalConfigurationException extends Exception {
 
+  private static final long serialVersionUID = 5147709992364635613L;
+
+
   /**
    */
   public FatalConfigurationException(final String message) {

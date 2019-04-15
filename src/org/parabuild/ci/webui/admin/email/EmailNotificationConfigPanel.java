@@ -166,6 +166,9 @@ public final class EmailNotificationConfigPanel extends AbstractSystemConfigPane
     // set up test message button listener
     btnSendTestMessage.addListener(new ButtonPressedListener() {
 
+      private static final long serialVersionUID = -7436577993698619126L;
+
+
       /** @noinspection OverlyBroadCatchBlock*/
       public Tierlet.Result buttonPressed(final ButtonPressedEvent event) {
         lbTestMessage.setText(""); // clear up

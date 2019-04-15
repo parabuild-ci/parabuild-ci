@@ -50,6 +50,7 @@ public final class DisplayGroupDropDown extends CodeNameDropDown {
    * System-wide group to show scheduled builds only.
    */
   private static final String GROUP_SCHEDULED = "SCHEDULED";
+  private static final long serialVersionUID = 6566360631387031578L;
 
 
   public DisplayGroupDropDown() {

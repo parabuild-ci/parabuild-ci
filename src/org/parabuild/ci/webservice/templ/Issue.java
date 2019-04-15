@@ -16,6 +16,7 @@ package org.parabuild.ci.webservice.templ;
 
 public class Issue implements java.io.Serializable {
 
+  private static final long serialVersionUID = 427589672332767104L;
   private int ID;
   private java.util.Calendar closed;
   private java.lang.String closedBy;

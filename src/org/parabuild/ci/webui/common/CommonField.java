@@ -21,6 +21,7 @@ import viewtier.ui.*;
 public class CommonField extends Field {
 
   public static final int PADDING = 1;
+  private static final long serialVersionUID = 7847999774032242963L;
 
 
   public CommonField(final int i, final int i1) {

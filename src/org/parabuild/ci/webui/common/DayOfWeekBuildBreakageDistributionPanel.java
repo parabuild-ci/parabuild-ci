@@ -24,6 +24,9 @@ import viewtier.ui.*;
  */
 public final class DayOfWeekBuildBreakageDistributionPanel extends MessagePanel {
 
+  private static final long serialVersionUID = -3065782878534710887L;
+
+
   /**
    * Constructor.
    */

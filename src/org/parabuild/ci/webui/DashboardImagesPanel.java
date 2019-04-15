@@ -29,6 +29,9 @@ import java.util.List;
 
 final class DashboardImagesPanel extends Panel {
 
+  private static final long serialVersionUID = -4011599156437564500L;
+
+
   /**
    * Populates with current build statruses.
    *

@@ -23,6 +23,9 @@ import viewtier.ui.Flow;
  */
 public final class PermanentLatestSuccessfulBuildFlow extends Flow {
 
+  private static final long serialVersionUID = 2722782667287585604L;
+
+
   /**
    * Constructor.
    *

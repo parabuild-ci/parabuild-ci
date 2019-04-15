@@ -25,6 +25,7 @@ import java.util.List;
  */
 public final class SVNCompoundSettingsPanel extends SourceControlPanel {
 
+  private static final long serialVersionUID = -4425972813337862164L;
   private final SVNSettingsPanel pnlSVNSettings = new SVNSettingsPanel();
   private final RepositoryBrowserPanel pnlRepositoryBrowser = new RepositoryBrowserPanel(true);
 

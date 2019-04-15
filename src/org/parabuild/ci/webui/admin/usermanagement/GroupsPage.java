@@ -54,6 +54,9 @@ public final class GroupsPage extends NavigatableSystemConfigurationPage impleme
 
   private static final class AddGroupLink extends CommonCommandLinkWithImage {
 
+    private static final long serialVersionUID = -6314335766142783156L;
+
+
     AddGroupLink() {
       super("Add Group", Pages.ADMIN_EDIT_GROUP);
     }

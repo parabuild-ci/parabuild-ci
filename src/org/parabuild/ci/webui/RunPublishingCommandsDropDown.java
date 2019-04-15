@@ -32,6 +32,7 @@ public class RunPublishingCommandsDropDown extends CodeNameDropDown {
    * User selected to run commands
    */
   public static final int CODE_RUN_COMMANDS = 0;
+  private static final long serialVersionUID = 8980698868294246384L;
 
 
   /**

@@ -163,12 +163,18 @@ public final class CleanUpBuildResultArchivePage extends BasePage implements Con
 
     // messaging
     btnConfirm.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = -3367579708741282903L;
+
+
       public Result buttonPressed(final ButtonPressedEvent event) {
         action = ACTION_DELETE;
         return null;
       }
     });
     btnCancel.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = -6102113788428200490L;
+
+
       public Result buttonPressed(final ButtonPressedEvent event) {
         action = ACTION_CANCEL;
         return null;

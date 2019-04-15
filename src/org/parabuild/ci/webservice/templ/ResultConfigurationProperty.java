@@ -16,6 +16,7 @@ package org.parabuild.ci.webservice.templ;
 
 public class ResultConfigurationProperty implements java.io.Serializable {
 
+  private static final long serialVersionUID = -9036456347619644163L;
   private int ID;
   private java.lang.String name;
   private int resultConfigID;

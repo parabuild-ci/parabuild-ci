@@ -16,6 +16,7 @@ package org.parabuild.ci.webservice.templ;
 
 public class LabelProperty implements java.io.Serializable {
 
+  private static final long serialVersionUID = 2136309694853351173L;
   private int buildID;
   private int propertyID;
   private java.lang.String propertyName;
