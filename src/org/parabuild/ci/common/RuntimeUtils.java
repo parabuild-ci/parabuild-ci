@@ -467,8 +467,7 @@ public final class RuntimeUtils {
       return null;
     }
 
-    final Map executeMap = new TreeMap();
-    executeMap.putAll(startupEnv); // copy in startup env
+    final Map executeMap = new TreeMap(startupEnv); // copy in startup env
 
     for (final Iterator i = environment.entrySet().iterator(); i.hasNext(); ) {
       final Map.Entry entry = (Map.Entry) i.next();

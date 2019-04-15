@@ -385,29 +385,29 @@ public class BuildSequence implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.buildID == other.getBuildID() &&
-            this.continueOnFailure == other.isContinueOnFailure() &&
-            this.disabled == other.isDisabled() &&
-            ((this.failurePatterns == null && other.getFailurePatterns() == null) ||
+            this.buildID == other.buildID &&
+            this.continueOnFailure == other.continueOnFailure &&
+            this.disabled == other.disabled &&
+            ((this.failurePatterns == null && other.failurePatterns == null) ||
                     (this.failurePatterns != null &&
-                            this.failurePatterns.equals(other.getFailurePatterns()))) &&
-            this.finalizer == other.isFinalizer() &&
-            this.initializer == other.isInitializer() &&
-            this.lineNumber == other.getLineNumber() &&
-            this.respectErrorCode == other.isRespectErrorCode() &&
-            ((this.scriptText == null && other.getScriptText() == null) ||
+                            this.failurePatterns.equals(other.failurePatterns))) &&
+            this.finalizer == other.finalizer &&
+            this.initializer == other.initializer &&
+            this.lineNumber == other.lineNumber &&
+            this.respectErrorCode == other.respectErrorCode &&
+            ((this.scriptText == null && other.scriptText == null) ||
                     (this.scriptText != null &&
-                            this.scriptText.equals(other.getScriptText()))) &&
-            this.sequenceID == other.getSequenceID() &&
-            ((this.stepName == null && other.getStepName() == null) ||
+                            this.scriptText.equals(other.scriptText))) &&
+            this.sequenceID == other.sequenceID &&
+            ((this.stepName == null && other.stepName == null) ||
                     (this.stepName != null &&
-                            this.stepName.equals(other.getStepName()))) &&
-            ((this.successPatterns == null && other.getSuccessPatterns() == null) ||
+                            this.stepName.equals(other.stepName))) &&
+            ((this.successPatterns == null && other.successPatterns == null) ||
                     (this.successPatterns != null &&
-                            this.successPatterns.equals(other.getSuccessPatterns()))) &&
-            this.timeStamp == other.getTimeStamp() &&
-            this.timeoutMins == other.getTimeoutMins() &&
-            this.type == other.getType();
+                            this.successPatterns.equals(other.successPatterns))) &&
+            this.timeStamp == other.timeStamp &&
+            this.timeoutMins == other.timeoutMins &&
+            this.type == other.type;
     __equalsCalc = null;
     return _equals;
   }
@@ -422,29 +422,29 @@ public class BuildSequence implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getBuildID();
-    _hashCode += (isContinueOnFailure() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    _hashCode += (isDisabled() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    if (getFailurePatterns() != null) {
-      _hashCode += getFailurePatterns().hashCode();
+    _hashCode += buildID;
+    _hashCode += (continueOnFailure ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    _hashCode += (disabled ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    if (failurePatterns != null) {
+      _hashCode += failurePatterns.hashCode();
     }
-    _hashCode += (isFinalizer() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    _hashCode += (isInitializer() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    _hashCode += getLineNumber();
-    _hashCode += (isRespectErrorCode() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    if (getScriptText() != null) {
-      _hashCode += getScriptText().hashCode();
+    _hashCode += (finalizer ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    _hashCode += (initializer ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    _hashCode += lineNumber;
+    _hashCode += (respectErrorCode ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    if (scriptText != null) {
+      _hashCode += scriptText.hashCode();
     }
-    _hashCode += getSequenceID();
-    if (getStepName() != null) {
-      _hashCode += getStepName().hashCode();
+    _hashCode += sequenceID;
+    if (stepName != null) {
+      _hashCode += stepName.hashCode();
     }
-    if (getSuccessPatterns() != null) {
-      _hashCode += getSuccessPatterns().hashCode();
+    if (successPatterns != null) {
+      _hashCode += successPatterns.hashCode();
     }
-    _hashCode += new Long(getTimeStamp()).hashCode();
-    _hashCode += getTimeoutMins();
-    _hashCode += getType();
+    _hashCode += new Long(timeStamp).hashCode();
+    _hashCode += timeoutMins;
+    _hashCode += type;
     __hashCodeCalc = false;
     return _hashCode;
   }

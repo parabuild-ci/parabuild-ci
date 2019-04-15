@@ -50,7 +50,7 @@ public final class BazaarUpdateCommand extends BazaarCommand {
     final String checkoutDir = agent.getCheckoutDirName() + agent.separator() + relativeBuildDir;
     final StringBuilder sb = new StringBuilder(100);
     sb.append(" update ");
-    sb.append(" ").append(StringUtils.putIntoDoubleQuotes(checkoutDir));
+    sb.append(' ').append(StringUtils.putIntoDoubleQuotes(checkoutDir));
     return sb.toString();
   }
 }

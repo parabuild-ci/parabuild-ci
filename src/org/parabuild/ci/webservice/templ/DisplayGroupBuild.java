@@ -132,10 +132,10 @@ public class DisplayGroupBuild implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.ID == other.getID() &&
-            this.buildID == other.getBuildID() &&
-            this.displayGroupID == other.getDisplayGroupID() &&
-            this.timeStamp == other.getTimeStamp();
+            this.ID == other.ID &&
+            this.buildID == other.buildID &&
+            this.displayGroupID == other.displayGroupID &&
+            this.timeStamp == other.timeStamp;
     __equalsCalc = null;
     return _equals;
   }
@@ -150,10 +150,10 @@ public class DisplayGroupBuild implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getID();
-    _hashCode += getBuildID();
-    _hashCode += getDisplayGroupID();
-    _hashCode += new Long(getTimeStamp()).hashCode();
+    _hashCode += ID;
+    _hashCode += buildID;
+    _hashCode += displayGroupID;
+    _hashCode += new Long(timeStamp).hashCode();
     __hashCodeCalc = false;
     return _hashCode;
   }

@@ -329,7 +329,7 @@ public final class StringUtils implements CommonConstants {
 
 
   public static String[] toStringArray(final List stringList) {
-    return (String[])stringList.toArray(new String[stringList.size()]);
+    return (String[])stringList.toArray(new String[0]);
   }
 
 
@@ -544,7 +544,7 @@ public final class StringUtils implements CommonConstants {
       final String pattern = st.nextToken().trim();
       if (isRegex(pattern)) result.add(Pattern.compile(pattern));
     }
-    return (Pattern[])result.toArray(new Pattern[result.size()]);
+    return (Pattern[])result.toArray(new Pattern[0]);
   }
 
 

@@ -224,20 +224,20 @@ public class VCSUserToEmailMap implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.buildID == other.getBuildID() &&
-            this.disabled == other.isDisabled() &&
-            ((this.instantMessengerAddress == null && other.getInstantMessengerAddress() == null) ||
+            this.buildID == other.buildID &&
+            this.disabled == other.disabled &&
+            ((this.instantMessengerAddress == null && other.instantMessengerAddress == null) ||
                     (this.instantMessengerAddress != null &&
-                            this.instantMessengerAddress.equals(other.getInstantMessengerAddress()))) &&
-            this.instantMessengerType == other.getInstantMessengerType() &&
-            this.mapID == other.getMapID() &&
-            this.timeStamp == other.getTimeStamp() &&
-            ((this.userEmail == null && other.getUserEmail() == null) ||
+                            this.instantMessengerAddress.equals(other.instantMessengerAddress))) &&
+            this.instantMessengerType == other.instantMessengerType &&
+            this.mapID == other.mapID &&
+            this.timeStamp == other.timeStamp &&
+            ((this.userEmail == null && other.userEmail == null) ||
                     (this.userEmail != null &&
-                            this.userEmail.equals(other.getUserEmail()))) &&
-            ((this.userName == null && other.getUserName() == null) ||
+                            this.userEmail.equals(other.userEmail))) &&
+            ((this.userName == null && other.userName == null) ||
                     (this.userName != null &&
-                            this.userName.equals(other.getUserName())));
+                            this.userName.equals(other.userName)));
     __equalsCalc = null;
     return _equals;
   }
@@ -252,19 +252,19 @@ public class VCSUserToEmailMap implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getBuildID();
-    _hashCode += (isDisabled() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    if (getInstantMessengerAddress() != null) {
-      _hashCode += getInstantMessengerAddress().hashCode();
+    _hashCode += buildID;
+    _hashCode += (disabled ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    if (instantMessengerAddress != null) {
+      _hashCode += instantMessengerAddress.hashCode();
     }
-    _hashCode += getInstantMessengerType();
-    _hashCode += getMapID();
-    _hashCode += new Long(getTimeStamp()).hashCode();
-    if (getUserEmail() != null) {
-      _hashCode += getUserEmail().hashCode();
+    _hashCode += instantMessengerType;
+    _hashCode += mapID;
+    _hashCode += new Long(timeStamp).hashCode();
+    if (userEmail != null) {
+      _hashCode += userEmail.hashCode();
     }
-    if (getUserName() != null) {
-      _hashCode += getUserName().hashCode();
+    if (userName != null) {
+      _hashCode += userName.hashCode();
     }
     __hashCodeCalc = false;
     return _hashCode;

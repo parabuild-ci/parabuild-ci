@@ -38,18 +38,18 @@ public class MercurialCloneCommand extends MercurialCommand {
   protected String getExeArguments() throws IOException, AgentFailureException {
     final StringBuilder sb = new StringBuilder(100);
     sb.append("clone");
-    sb.append(" ");
+    sb.append(' ');
     sb.append("--noninteractive");
-    sb.append(" ");
+    sb.append(' ');
     if (!StringUtils.isBlank(branch)) {
-      sb.append(" ");
+      sb.append(' ');
       sb.append("--branch");
-      sb.append(" ");
+      sb.append(' ');
       sb.append(StringUtils.putIntoDoubleQuotes(branch));
     }
-    sb.append(" ");
+    sb.append(' ');
     sb.append(StringUtils.putIntoDoubleQuotes(url));
-    sb.append(" ");
+    sb.append(' ');
     sb.append(StringUtils.putIntoDoubleQuotes(agent.getCheckoutDirName()));
     return sb.toString();
   }

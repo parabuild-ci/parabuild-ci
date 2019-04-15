@@ -270,24 +270,24 @@ public class ResultConfiguration implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.ID == other.getID() &&
-            ((this.autopublishGroupID == null && other.getAutopublishGroupID() == null) ||
+            this.ID == other.ID &&
+            ((this.autopublishGroupID == null && other.autopublishGroupID == null) ||
                     (this.autopublishGroupID != null &&
-                            this.autopublishGroupID.equals(other.getAutopublishGroupID()))) &&
-            this.buildID == other.getBuildID() &&
-            ((this.description == null && other.getDescription() == null) ||
+                            this.autopublishGroupID.equals(other.autopublishGroupID))) &&
+            this.buildID == other.buildID &&
+            ((this.description == null && other.description == null) ||
                     (this.description != null &&
-                            this.description.equals(other.getDescription()))) &&
-            this.failIfNotFound == other.isFailIfNotFound() &&
-            this.ignoreTimestamp == other.isIgnoreTimestamp() &&
-            ((this.path == null && other.getPath() == null) ||
+                            this.description.equals(other.description))) &&
+            this.failIfNotFound == other.failIfNotFound &&
+            this.ignoreTimestamp == other.ignoreTimestamp &&
+            ((this.path == null && other.path == null) ||
                     (this.path != null &&
-                            this.path.equals(other.getPath()))) &&
-            ((this.shellVariable == null && other.getShellVariable() == null) ||
+                            this.path.equals(other.path))) &&
+            ((this.shellVariable == null && other.shellVariable == null) ||
                     (this.shellVariable != null &&
-                            this.shellVariable.equals(other.getShellVariable()))) &&
-            this.timeStamp == other.getTimeStamp() &&
-            this.type == other.getType();
+                            this.shellVariable.equals(other.shellVariable))) &&
+            this.timeStamp == other.timeStamp &&
+            this.type == other.type;
     __equalsCalc = null;
     return _equals;
   }
@@ -302,24 +302,24 @@ public class ResultConfiguration implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getID();
-    if (getAutopublishGroupID() != null) {
-      _hashCode += getAutopublishGroupID().hashCode();
+    _hashCode += ID;
+    if (autopublishGroupID != null) {
+      _hashCode += autopublishGroupID.hashCode();
     }
-    _hashCode += getBuildID();
-    if (getDescription() != null) {
-      _hashCode += getDescription().hashCode();
+    _hashCode += buildID;
+    if (description != null) {
+      _hashCode += description.hashCode();
     }
-    _hashCode += (isFailIfNotFound() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    _hashCode += (isIgnoreTimestamp() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    if (getPath() != null) {
-      _hashCode += getPath().hashCode();
+    _hashCode += (failIfNotFound ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    _hashCode += (ignoreTimestamp ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    if (path != null) {
+      _hashCode += path.hashCode();
     }
-    if (getShellVariable() != null) {
-      _hashCode += getShellVariable().hashCode();
+    if (shellVariable != null) {
+      _hashCode += shellVariable.hashCode();
     }
-    _hashCode += new Long(getTimeStamp()).hashCode();
-    _hashCode += getType();
+    _hashCode += new Long(timeStamp).hashCode();
+    _hashCode += type;
     __hashCodeCalc = false;
     return _hashCode;
   }

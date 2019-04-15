@@ -23,7 +23,7 @@ final class MercurialUtil {
 
 
   final static String getHash(final String revnoWithHash) {
-    final int index = revnoWithHash.indexOf(":");
+    final int index = revnoWithHash.indexOf(':');
     if (index < 0) {
       throw new IllegalArgumentException("Invalid revision number with hash: " + revnoWithHash);
     }

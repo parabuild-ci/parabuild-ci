@@ -261,9 +261,7 @@ public class MercurialVersionControl extends AbstractSourceControl {
       if (LOG.isDebugEnabled()) LOG.debug("changelist size: " + changeLists.size());
 
       // Add to result but skip the first change list
-      for (int i = 0; i < changeLists.size(); i++) {
-        result.add(changeLists.get(i));
-      }
+      result.addAll(changeLists);
     } finally {
       cleanup(command); // Cleanup
       agent.deleteTempFileHard(stylePath);

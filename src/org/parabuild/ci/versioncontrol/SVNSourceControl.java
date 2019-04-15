@@ -409,7 +409,7 @@ final class SVNSourceControl extends AbstractSourceControl {
       for (int i = 0; i < depotPaths.size(); i++) {
 
         final String path = (String) depotPaths.get(i);
-        sb.append(path).append(";");
+        sb.append(path).append(';');
       }
 
       result.put(PARABUILD_SVN_REPOSITORY_PATH, sb);

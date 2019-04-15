@@ -109,9 +109,9 @@ public class ProjectResultGroup implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.ID == other.getID() &&
-            this.projectID == other.getProjectID() &&
-            this.resultGroupID == other.getResultGroupID();
+            this.ID == other.ID &&
+            this.projectID == other.projectID &&
+            this.resultGroupID == other.resultGroupID;
     __equalsCalc = null;
     return _equals;
   }
@@ -126,9 +126,9 @@ public class ProjectResultGroup implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getID();
-    _hashCode += getProjectID();
-    _hashCode += getResultGroupID();
+    _hashCode += ID;
+    _hashCode += projectID;
+    _hashCode += resultGroupID;
     __hashCodeCalc = false;
     return _hashCode;
   }

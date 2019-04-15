@@ -86,10 +86,10 @@ public class TestSuiteName implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.ID == other.getID() &&
-            ((this.name == null && other.getName() == null) ||
+            this.ID == other.ID &&
+            ((this.name == null && other.name == null) ||
                     (this.name != null &&
-                            this.name.equals(other.getName())));
+                            this.name.equals(other.name)));
     __equalsCalc = null;
     return _equals;
   }
@@ -104,9 +104,9 @@ public class TestSuiteName implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getID();
-    if (getName() != null) {
-      _hashCode += getName().hashCode();
+    _hashCode += ID;
+    if (name != null) {
+      _hashCode += name.hashCode();
     }
     __hashCodeCalc = false;
     return _hashCode;

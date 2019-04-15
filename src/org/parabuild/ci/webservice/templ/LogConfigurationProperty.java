@@ -156,15 +156,15 @@ public class LogConfigurationProperty implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.ID == other.getID() &&
-            this.logConfigID == other.getLogConfigID() &&
-            ((this.name == null && other.getName() == null) ||
+            this.ID == other.ID &&
+            this.logConfigID == other.logConfigID &&
+            ((this.name == null && other.name == null) ||
                     (this.name != null &&
-                            this.name.equals(other.getName()))) &&
-            this.timeStamp == other.getTimeStamp() &&
-            ((this.value == null && other.getValue() == null) ||
+                            this.name.equals(other.name))) &&
+            this.timeStamp == other.timeStamp &&
+            ((this.value == null && other.value == null) ||
                     (this.value != null &&
-                            this.value.equals(other.getValue())));
+                            this.value.equals(other.value)));
     __equalsCalc = null;
     return _equals;
   }
@@ -179,14 +179,14 @@ public class LogConfigurationProperty implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getID();
-    _hashCode += getLogConfigID();
-    if (getName() != null) {
-      _hashCode += getName().hashCode();
+    _hashCode += ID;
+    _hashCode += logConfigID;
+    if (name != null) {
+      _hashCode += name.hashCode();
     }
-    _hashCode += new Long(getTimeStamp()).hashCode();
-    if (getValue() != null) {
-      _hashCode += getValue().hashCode();
+    _hashCode += new Long(timeStamp).hashCode();
+    if (value != null) {
+      _hashCode += value.hashCode();
     }
     __hashCodeCalc = false;
     return _hashCode;

@@ -201,19 +201,19 @@ public class ResultGroup implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.ID == other.getID() &&
-            this.deleted == other.isDeleted() &&
-            ((this.description == null && other.getDescription() == null) ||
+            this.ID == other.ID &&
+            this.deleted == other.deleted &&
+            ((this.description == null && other.description == null) ||
                     (this.description != null &&
-                            this.description.equals(other.getDescription()))) &&
-            this.enabled == other.isEnabled() &&
-            ((this.lastPublished == null && other.getLastPublished() == null) ||
+                            this.description.equals(other.description))) &&
+            this.enabled == other.enabled &&
+            ((this.lastPublished == null && other.lastPublished == null) ||
                     (this.lastPublished != null &&
-                            this.lastPublished.equals(other.getLastPublished()))) &&
-            ((this.name == null && other.getName() == null) ||
+                            this.lastPublished.equals(other.lastPublished))) &&
+            ((this.name == null && other.name == null) ||
                     (this.name != null &&
-                            this.name.equals(other.getName()))) &&
-            this.timeStamp == other.getTimeStamp();
+                            this.name.equals(other.name))) &&
+            this.timeStamp == other.timeStamp;
     __equalsCalc = null;
     return _equals;
   }
@@ -228,19 +228,19 @@ public class ResultGroup implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getID();
-    _hashCode += (isDeleted() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    if (getDescription() != null) {
-      _hashCode += getDescription().hashCode();
+    _hashCode += ID;
+    _hashCode += (deleted ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    if (description != null) {
+      _hashCode += description.hashCode();
     }
-    _hashCode += (isEnabled() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    if (getLastPublished() != null) {
-      _hashCode += getLastPublished().hashCode();
+    _hashCode += (enabled ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    if (lastPublished != null) {
+      _hashCode += lastPublished.hashCode();
     }
-    if (getName() != null) {
-      _hashCode += getName().hashCode();
+    if (name != null) {
+      _hashCode += name.hashCode();
     }
-    _hashCode += new Long(getTimeStamp()).hashCode();
+    _hashCode += new Long(timeStamp).hashCode();
     __hashCodeCalc = false;
     return _hashCode;
   }

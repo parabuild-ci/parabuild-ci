@@ -132,10 +132,10 @@ public class IssueTracker implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.ID == other.getID() &&
-            this.buildID == other.getBuildID() &&
-            this.timeStamp == other.getTimeStamp() &&
-            this.type == other.getType();
+            this.ID == other.ID &&
+            this.buildID == other.buildID &&
+            this.timeStamp == other.timeStamp &&
+            this.type == other.type;
     __equalsCalc = null;
     return _equals;
   }
@@ -150,10 +150,10 @@ public class IssueTracker implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getID();
-    _hashCode += getBuildID();
-    _hashCode += new Long(getTimeStamp()).hashCode();
-    _hashCode += getType();
+    _hashCode += ID;
+    _hashCode += buildID;
+    _hashCode += new Long(timeStamp).hashCode();
+    _hashCode += type;
     __hashCodeCalc = false;
     return _hashCode;
   }

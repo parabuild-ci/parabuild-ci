@@ -132,10 +132,10 @@ public class BuildFarmAgent implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.ID == other.getID() &&
-            this.agentID == other.getAgentID() &&
-            this.farmID == other.getFarmID() &&
-            this.timeStamp == other.getTimeStamp();
+            this.ID == other.ID &&
+            this.agentID == other.agentID &&
+            this.farmID == other.farmID &&
+            this.timeStamp == other.timeStamp;
     __equalsCalc = null;
     return _equals;
   }
@@ -150,10 +150,10 @@ public class BuildFarmAgent implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getID();
-    _hashCode += getAgentID();
-    _hashCode += getFarmID();
-    _hashCode += new Long(getTimeStamp()).hashCode();
+    _hashCode += ID;
+    _hashCode += agentID;
+    _hashCode += farmID;
+    _hashCode += new Long(timeStamp).hashCode();
     __hashCodeCalc = false;
     return _hashCode;
   }

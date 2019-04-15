@@ -63,6 +63,6 @@ public final class ServletUtils {
     for (int i = 16; i <= 32; i++) {
       result.add(PREFIX_172 + i + '.');
     }
-    return (String[])result.toArray(new String[result.size()]);
+    return (String[])result.toArray(new String[0]);
   }
 }

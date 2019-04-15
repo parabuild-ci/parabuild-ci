@@ -655,8 +655,8 @@ public final class BuildRun implements Serializable, ObjectConstants {
     }
 
     // set values
-    setResultID(resultID);
-    setResultDescription(resultDescription);
+    this.resultID = resultID;
+    this.resultDescription = resultDescription;
   }
 
 

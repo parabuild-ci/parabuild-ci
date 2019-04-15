@@ -293,25 +293,25 @@ public class PublishedStepResult implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.ID == other.getID() &&
-            this.activeBuildID == other.getActiveBuildID() &&
-            ((this.buildName == null && other.getBuildName() == null) ||
+            this.ID == other.ID &&
+            this.activeBuildID == other.activeBuildID &&
+            ((this.buildName == null && other.buildName == null) ||
                     (this.buildName != null &&
-                            this.buildName.equals(other.getBuildName()))) &&
-            ((this.buildRunDate == null && other.getBuildRunDate() == null) ||
+                            this.buildName.equals(other.buildName))) &&
+            ((this.buildRunDate == null && other.buildRunDate == null) ||
                     (this.buildRunDate != null &&
-                            this.buildRunDate.equals(other.getBuildRunDate()))) &&
-            this.buildRunID == other.getBuildRunID() &&
-            this.buildRunNumber == other.getBuildRunNumber() &&
-            ((this.description == null && other.getDescription() == null) ||
+                            this.buildRunDate.equals(other.buildRunDate))) &&
+            this.buildRunID == other.buildRunID &&
+            this.buildRunNumber == other.buildRunNumber &&
+            ((this.description == null && other.description == null) ||
                     (this.description != null &&
-                            this.description.equals(other.getDescription()))) &&
-            ((this.publishDate == null && other.getPublishDate() == null) ||
+                            this.description.equals(other.description))) &&
+            ((this.publishDate == null && other.publishDate == null) ||
                     (this.publishDate != null &&
-                            this.publishDate.equals(other.getPublishDate()))) &&
-            this.publisherBuildRunID == other.getPublisherBuildRunID() &&
-            this.resultGroupID == other.getResultGroupID() &&
-            this.stepResultID == other.getStepResultID();
+                            this.publishDate.equals(other.publishDate))) &&
+            this.publisherBuildRunID == other.publisherBuildRunID &&
+            this.resultGroupID == other.resultGroupID &&
+            this.stepResultID == other.stepResultID;
     __equalsCalc = null;
     return _equals;
   }
@@ -326,25 +326,25 @@ public class PublishedStepResult implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getID();
-    _hashCode += getActiveBuildID();
-    if (getBuildName() != null) {
-      _hashCode += getBuildName().hashCode();
+    _hashCode += ID;
+    _hashCode += activeBuildID;
+    if (buildName != null) {
+      _hashCode += buildName.hashCode();
     }
-    if (getBuildRunDate() != null) {
-      _hashCode += getBuildRunDate().hashCode();
+    if (buildRunDate != null) {
+      _hashCode += buildRunDate.hashCode();
     }
-    _hashCode += getBuildRunID();
-    _hashCode += getBuildRunNumber();
-    if (getDescription() != null) {
-      _hashCode += getDescription().hashCode();
+    _hashCode += buildRunID;
+    _hashCode += buildRunNumber;
+    if (description != null) {
+      _hashCode += description.hashCode();
     }
-    if (getPublishDate() != null) {
-      _hashCode += getPublishDate().hashCode();
+    if (publishDate != null) {
+      _hashCode += publishDate.hashCode();
     }
-    _hashCode += getPublisherBuildRunID();
-    _hashCode += getResultGroupID();
-    _hashCode += getStepResultID();
+    _hashCode += publisherBuildRunID;
+    _hashCode += resultGroupID;
+    _hashCode += stepResultID;
     __hashCodeCalc = false;
     return _hashCode;
   }

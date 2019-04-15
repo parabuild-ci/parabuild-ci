@@ -178,16 +178,16 @@ public class ProjectAttribute implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.ID == other.getID() &&
-            ((this.name == null && other.getName() == null) ||
+            this.ID == other.ID &&
+            ((this.name == null && other.name == null) ||
                     (this.name != null &&
-                            this.name.equals(other.getName()))) &&
-            this.projectID == other.getProjectID() &&
-            this.timestamp == other.getTimestamp() &&
-            ((this.value == null && other.getValue() == null) ||
+                            this.name.equals(other.name))) &&
+            this.projectID == other.projectID &&
+            this.timestamp == other.timestamp &&
+            ((this.value == null && other.value == null) ||
                     (this.value != null &&
-                            this.value.equals(other.getValue()))) &&
-            this.valueAsInteger == other.getValueAsInteger();
+                            this.value.equals(other.value))) &&
+            this.valueAsInteger == other.valueAsInteger;
     __equalsCalc = null;
     return _equals;
   }
@@ -202,16 +202,16 @@ public class ProjectAttribute implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getID();
-    if (getName() != null) {
-      _hashCode += getName().hashCode();
+    _hashCode += ID;
+    if (name != null) {
+      _hashCode += name.hashCode();
     }
-    _hashCode += getProjectID();
-    _hashCode += new Long(getTimestamp()).hashCode();
-    if (getValue() != null) {
-      _hashCode += getValue().hashCode();
+    _hashCode += projectID;
+    _hashCode += new Long(timestamp).hashCode();
+    if (value != null) {
+      _hashCode += value.hashCode();
     }
-    _hashCode += getValueAsInteger();
+    _hashCode += valueAsInteger;
     __hashCodeCalc = false;
     return _hashCode;
   }

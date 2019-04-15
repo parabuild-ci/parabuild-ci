@@ -109,9 +109,9 @@ public class ProjectBuild implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.ID == other.getID() &&
-            this.activeBuildID == other.getActiveBuildID() &&
-            this.projectID == other.getProjectID();
+            this.ID == other.ID &&
+            this.activeBuildID == other.activeBuildID &&
+            this.projectID == other.projectID;
     __equalsCalc = null;
     return _equals;
   }
@@ -126,9 +126,9 @@ public class ProjectBuild implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getID();
-    _hashCode += getActiveBuildID();
-    _hashCode += getProjectID();
+    _hashCode += ID;
+    _hashCode += activeBuildID;
+    _hashCode += projectID;
     __hashCodeCalc = false;
     return _hashCode;
   }

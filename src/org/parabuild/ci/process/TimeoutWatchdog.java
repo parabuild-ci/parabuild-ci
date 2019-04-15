@@ -258,7 +258,7 @@ public final class TimeoutWatchdog implements Runnable {
   private List getPIDs(final ProcessManager pm) throws BuildException {
     final long start = System.currentTimeMillis();
     if (ProcessUtils.PROCESS_DEBUG_ENABLED) log.debug("Get list");
-    final List processes = pm.getProcesses(ProcessManager.SORT_BY_PID, (String[])this.timeoutMatches.toArray(new String[this.timeoutMatches.size()]), false);
+    final List processes = pm.getProcesses(ProcessManager.SORT_BY_PID, (String[])this.timeoutMatches.toArray(new String[0]), false);
     if (ProcessUtils.PROCESS_DEBUG_ENABLED) log.debug("Getting list took " + (System.currentTimeMillis() - start));
     return ProcessUtils.processListToPIDList(processes);
   }

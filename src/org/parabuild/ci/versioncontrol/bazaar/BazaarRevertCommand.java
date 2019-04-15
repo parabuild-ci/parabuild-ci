@@ -54,7 +54,7 @@ public final class BazaarRevertCommand extends BazaarCommand {
     sb.append(" revert ");
     sb.append(" --no-backup ");
     sb.append(" -r ").append(changeListNumber);
-    sb.append(" ").append(StringUtils.putIntoDoubleQuotes(checkoutDir));
+    sb.append(' ').append(StringUtils.putIntoDoubleQuotes(checkoutDir));
     return sb.toString();
   }
 }

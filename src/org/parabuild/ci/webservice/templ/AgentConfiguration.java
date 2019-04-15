@@ -181,16 +181,16 @@ public class AgentConfiguration implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.ID == other.getID() &&
-            ((this.description == null && other.getDescription() == null) ||
+            this.ID == other.ID &&
+            ((this.description == null && other.description == null) ||
                     (this.description != null &&
-                            this.description.equals(other.getDescription()))) &&
-            this.enabled == other.isEnabled() &&
-            ((this.host == null && other.getHost() == null) ||
+                            this.description.equals(other.description))) &&
+            this.enabled == other.enabled &&
+            ((this.host == null && other.host == null) ||
                     (this.host != null &&
-                            this.host.equals(other.getHost()))) &&
-            this.local == other.isLocal() &&
-            this.timeStamp == other.getTimeStamp();
+                            this.host.equals(other.host))) &&
+            this.local == other.local &&
+            this.timeStamp == other.timeStamp;
     __equalsCalc = null;
     return _equals;
   }
@@ -205,16 +205,16 @@ public class AgentConfiguration implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getID();
-    if (getDescription() != null) {
-      _hashCode += getDescription().hashCode();
+    _hashCode += ID;
+    if (description != null) {
+      _hashCode += description.hashCode();
     }
-    _hashCode += (isEnabled() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    if (getHost() != null) {
-      _hashCode += getHost().hashCode();
+    _hashCode += (enabled ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    if (host != null) {
+      _hashCode += host.hashCode();
     }
-    _hashCode += (isLocal() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    _hashCode += new Long(getTimeStamp()).hashCode();
+    _hashCode += (local ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    _hashCode += new Long(timeStamp).hashCode();
     __hashCodeCalc = false;
     return _hashCode;
   }

@@ -109,9 +109,9 @@ public class ReleaseNote implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.ID == other.getID() &&
-            this.buildRunID == other.getBuildRunID() &&
-            this.issueID == other.getIssueID();
+            this.ID == other.ID &&
+            this.buildRunID == other.buildRunID &&
+            this.issueID == other.issueID;
     __equalsCalc = null;
     return _equals;
   }
@@ -126,9 +126,9 @@ public class ReleaseNote implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getID();
-    _hashCode += getBuildRunID();
-    _hashCode += getIssueID();
+    _hashCode += ID;
+    _hashCode += buildRunID;
+    _hashCode += issueID;
     __hashCodeCalc = false;
     return _hashCode;
   }

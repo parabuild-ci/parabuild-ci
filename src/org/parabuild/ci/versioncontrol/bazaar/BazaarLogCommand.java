@@ -62,7 +62,7 @@ public final class BazaarLogCommand extends BazaarCommand {
     if (!StringUtils.isBlank(changeListNumberFrom) || !StringUtils.isBlank(changeListNumberTo)) {
       sb.append(" -r").append(changeListNumberFrom).append("..").append(changeListNumberTo);
     }
-    sb.append(" ");
+    sb.append(' ');
     sb.append(branchPath);
     return sb.toString();
   }

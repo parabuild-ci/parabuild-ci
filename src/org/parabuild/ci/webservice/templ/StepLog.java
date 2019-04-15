@@ -248,21 +248,21 @@ public class StepLog implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.ID == other.getID() &&
-            ((this.archiveFileName == null && other.getArchiveFileName() == null) ||
+            this.ID == other.ID &&
+            ((this.archiveFileName == null && other.archiveFileName == null) ||
                     (this.archiveFileName != null &&
-                            this.archiveFileName.equals(other.getArchiveFileName()))) &&
-            ((this.description == null && other.getDescription() == null) ||
+                            this.archiveFileName.equals(other.archiveFileName))) &&
+            ((this.description == null && other.description == null) ||
                     (this.description != null &&
-                            this.description.equals(other.getDescription()))) &&
-            this.found == other.getFound() &&
-            ((this.path == null && other.getPath() == null) ||
+                            this.description.equals(other.description))) &&
+            this.found == other.found &&
+            ((this.path == null && other.path == null) ||
                     (this.path != null &&
-                            this.path.equals(other.getPath()))) &&
-            this.pathType == other.getPathType() &&
-            this.stepRunID == other.getStepRunID() &&
-            this.timeStamp == other.getTimeStamp() &&
-            this.type == other.getType();
+                            this.path.equals(other.path))) &&
+            this.pathType == other.pathType &&
+            this.stepRunID == other.stepRunID &&
+            this.timeStamp == other.timeStamp &&
+            this.type == other.type;
     __equalsCalc = null;
     return _equals;
   }
@@ -277,21 +277,21 @@ public class StepLog implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getID();
-    if (getArchiveFileName() != null) {
-      _hashCode += getArchiveFileName().hashCode();
+    _hashCode += ID;
+    if (archiveFileName != null) {
+      _hashCode += archiveFileName.hashCode();
     }
-    if (getDescription() != null) {
-      _hashCode += getDescription().hashCode();
+    if (description != null) {
+      _hashCode += description.hashCode();
     }
-    _hashCode += getFound();
-    if (getPath() != null) {
-      _hashCode += getPath().hashCode();
+    _hashCode += found;
+    if (path != null) {
+      _hashCode += path.hashCode();
     }
-    _hashCode += getPathType();
-    _hashCode += getStepRunID();
-    _hashCode += new Long(getTimeStamp()).hashCode();
-    _hashCode += getType();
+    _hashCode += pathType;
+    _hashCode += stepRunID;
+    _hashCode += new Long(timeStamp).hashCode();
+    _hashCode += type;
     __hashCodeCalc = false;
     return _hashCode;
   }

@@ -270,30 +270,30 @@ public class ChangeList implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            ((this.branch == null && other.getBranch() == null) ||
+            ((this.branch == null && other.branch == null) ||
                     (this.branch != null &&
-                            this.branch.equals(other.getBranch()))) &&
-            this.changeListID == other.getChangeListID() &&
-            ((this.client == null && other.getClient() == null) ||
+                            this.branch.equals(other.branch))) &&
+            this.changeListID == other.changeListID &&
+            ((this.client == null && other.client == null) ||
                     (this.client != null &&
-                            this.client.equals(other.getClient()))) &&
-            ((this.createdAt == null && other.getCreatedAt() == null) ||
+                            this.client.equals(other.client))) &&
+            ((this.createdAt == null && other.createdAt == null) ||
                     (this.createdAt != null &&
-                            this.createdAt.equals(other.getCreatedAt()))) &&
-            ((this.description == null && other.getDescription() == null) ||
+                            this.createdAt.equals(other.createdAt))) &&
+            ((this.description == null && other.description == null) ||
                     (this.description != null &&
-                            this.description.equals(other.getDescription()))) &&
-            ((this.email == null && other.getEmail() == null) ||
+                            this.description.equals(other.description))) &&
+            ((this.email == null && other.email == null) ||
                     (this.email != null &&
-                            this.email.equals(other.getEmail()))) &&
-            ((this.number == null && other.getNumber() == null) ||
+                            this.email.equals(other.email))) &&
+            ((this.number == null && other.number == null) ||
                     (this.number != null &&
-                            this.number.equals(other.getNumber()))) &&
-            this.originalSize == other.getOriginalSize() &&
-            this.truncated == other.isTruncated() &&
-            ((this.user == null && other.getUser() == null) ||
+                            this.number.equals(other.number))) &&
+            this.originalSize == other.originalSize &&
+            this.truncated == other.truncated &&
+            ((this.user == null && other.user == null) ||
                     (this.user != null &&
-                            this.user.equals(other.getUser())));
+                            this.user.equals(other.user)));
     __equalsCalc = null;
     return _equals;
   }
@@ -308,29 +308,29 @@ public class ChangeList implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    if (getBranch() != null) {
-      _hashCode += getBranch().hashCode();
+    if (branch != null) {
+      _hashCode += branch.hashCode();
     }
-    _hashCode += getChangeListID();
-    if (getClient() != null) {
-      _hashCode += getClient().hashCode();
+    _hashCode += changeListID;
+    if (client != null) {
+      _hashCode += client.hashCode();
     }
-    if (getCreatedAt() != null) {
-      _hashCode += getCreatedAt().hashCode();
+    if (createdAt != null) {
+      _hashCode += createdAt.hashCode();
     }
-    if (getDescription() != null) {
-      _hashCode += getDescription().hashCode();
+    if (description != null) {
+      _hashCode += description.hashCode();
     }
-    if (getEmail() != null) {
-      _hashCode += getEmail().hashCode();
+    if (email != null) {
+      _hashCode += email.hashCode();
     }
-    if (getNumber() != null) {
-      _hashCode += getNumber().hashCode();
+    if (number != null) {
+      _hashCode += number.hashCode();
     }
-    _hashCode += getOriginalSize();
-    _hashCode += (isTruncated() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    if (getUser() != null) {
-      _hashCode += getUser().hashCode();
+    _hashCode += originalSize;
+    _hashCode += (truncated ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    if (user != null) {
+      _hashCode += user.hashCode();
     }
     __hashCodeCalc = false;
     return _hashCode;

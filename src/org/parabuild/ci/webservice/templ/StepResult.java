@@ -235,20 +235,20 @@ public class StepResult implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.ID == other.getID() &&
-            ((this.archiveFileName == null && other.getArchiveFileName() == null) ||
+            this.ID == other.ID &&
+            ((this.archiveFileName == null && other.archiveFileName == null) ||
                     (this.archiveFileName != null &&
-                            this.archiveFileName.equals(other.getArchiveFileName()))) &&
-            ((this.description == null && other.getDescription() == null) ||
+                            this.archiveFileName.equals(other.archiveFileName))) &&
+            ((this.description == null && other.description == null) ||
                     (this.description != null &&
-                            this.description.equals(other.getDescription()))) &&
-            this.found == other.isFound() &&
-            ((this.path == null && other.getPath() == null) ||
+                            this.description.equals(other.description))) &&
+            this.found == other.found &&
+            ((this.path == null && other.path == null) ||
                     (this.path != null &&
-                            this.path.equals(other.getPath()))) &&
-            this.pathType == other.getPathType() &&
-            this.pinned == other.isPinned() &&
-            this.stepRunID == other.getStepRunID();
+                            this.path.equals(other.path))) &&
+            this.pathType == other.pathType &&
+            this.pinned == other.pinned &&
+            this.stepRunID == other.stepRunID;
     __equalsCalc = null;
     return _equals;
   }
@@ -263,20 +263,20 @@ public class StepResult implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getID();
-    if (getArchiveFileName() != null) {
-      _hashCode += getArchiveFileName().hashCode();
+    _hashCode += ID;
+    if (archiveFileName != null) {
+      _hashCode += archiveFileName.hashCode();
     }
-    if (getDescription() != null) {
-      _hashCode += getDescription().hashCode();
+    if (description != null) {
+      _hashCode += description.hashCode();
     }
-    _hashCode += (isFound() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    if (getPath() != null) {
-      _hashCode += getPath().hashCode();
+    _hashCode += (found ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    if (path != null) {
+      _hashCode += path.hashCode();
     }
-    _hashCode += getPathType();
-    _hashCode += (isPinned() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    _hashCode += getStepRunID();
+    _hashCode += pathType;
+    _hashCode += (pinned ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    _hashCode += stepRunID;
     __hashCodeCalc = false;
     return _hashCode;
   }

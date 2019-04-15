@@ -108,7 +108,7 @@ public class SettingResolver {
    */
   public String resolve(final String template) throws ValidationException {
 
-    final NamedProperty[] definitionsAsArray = (NamedProperty[]) namedPropertyDefinitions.toArray(new NamedProperty[namedPropertyDefinitions.size()]);
+    final NamedProperty[] definitionsAsArray = (NamedProperty[]) namedPropertyDefinitions.toArray(new NamedProperty[0]);
     final NamedPropertyStringGenerator generator = new NamedPropertyStringGenerator(definitionsAsArray, template, false);
     for (final Iterator iterator = namedPropertyValues.entrySet().iterator(); iterator.hasNext();) {
 

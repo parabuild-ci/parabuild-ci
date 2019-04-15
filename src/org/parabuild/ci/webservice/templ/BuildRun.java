@@ -549,48 +549,48 @@ public class BuildRun implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.activeBuildID == other.getActiveBuildID() &&
-            this.buildID == other.getBuildID() &&
-            ((this.buildName == null && other.getBuildName() == null) ||
+            this.activeBuildID == other.activeBuildID &&
+            this.buildID == other.buildID &&
+            ((this.buildName == null && other.buildName == null) ||
                     (this.buildName != null &&
-                            this.buildName.equals(other.getBuildName()))) &&
-            this.buildRunID == other.getBuildRunID() &&
-            this.buildRunNumber == other.getBuildRunNumber() &&
-            ((this.changeListNumber == null && other.getChangeListNumber() == null) ||
+                            this.buildName.equals(other.buildName))) &&
+            this.buildRunID == other.buildRunID &&
+            this.buildRunNumber == other.buildRunNumber &&
+            ((this.changeListNumber == null && other.changeListNumber == null) ||
                     (this.changeListNumber != null &&
-                            this.changeListNumber.equals(other.getChangeListNumber()))) &&
-            this.complete == other.getComplete() &&
-            this.dependence == other.getDependence() &&
-            ((this.finishedAt == null && other.getFinishedAt() == null) ||
+                            this.changeListNumber.equals(other.changeListNumber))) &&
+            this.complete == other.complete &&
+            this.dependence == other.dependence &&
+            ((this.finishedAt == null && other.finishedAt == null) ||
                     (this.finishedAt != null &&
-                            this.finishedAt.equals(other.getFinishedAt()))) &&
-            ((this.label == null && other.getLabel() == null) ||
+                            this.finishedAt.equals(other.finishedAt))) &&
+            ((this.label == null && other.label == null) ||
                     (this.label != null &&
-                            this.label.equals(other.getLabel()))) &&
-            ((this.labelNote == null && other.getLabelNote() == null) ||
+                            this.label.equals(other.label))) &&
+            ((this.labelNote == null && other.labelNote == null) ||
                     (this.labelNote != null &&
-                            this.labelNote.equals(other.getLabelNote()))) &&
-            this.labelStatus == other.getLabelStatus() &&
-            ((this.lastStepRunName == null && other.getLastStepRunName() == null) ||
+                            this.labelNote.equals(other.labelNote))) &&
+            this.labelStatus == other.labelStatus &&
+            ((this.lastStepRunName == null && other.lastStepRunName == null) ||
                     (this.lastStepRunName != null &&
-                            this.lastStepRunName.equals(other.getLastStepRunName()))) &&
-            ((this.manualLabel == null && other.getManualLabel() == null) ||
+                            this.lastStepRunName.equals(other.lastStepRunName))) &&
+            ((this.manualLabel == null && other.manualLabel == null) ||
                     (this.manualLabel != null &&
-                            this.manualLabel.equals(other.getManualLabel()))) &&
-            this.physicalChangeListNumber == other.isPhysicalChangeListNumber() &&
-            this.reRun == other.isReRun() &&
-            ((this.resultDescription == null && other.getResultDescription() == null) ||
+                            this.manualLabel.equals(other.manualLabel))) &&
+            this.physicalChangeListNumber == other.physicalChangeListNumber &&
+            this.reRun == other.reRun &&
+            ((this.resultDescription == null && other.resultDescription == null) ||
                     (this.resultDescription != null &&
-                            this.resultDescription.equals(other.getResultDescription()))) &&
-            this.resultID == other.getResultID() &&
-            ((this.startedAt == null && other.getStartedAt() == null) ||
+                            this.resultDescription.equals(other.resultDescription))) &&
+            this.resultID == other.resultID &&
+            ((this.startedAt == null && other.startedAt == null) ||
                     (this.startedAt != null &&
-                            this.startedAt.equals(other.getStartedAt()))) &&
-            ((this.syncNote == null && other.getSyncNote() == null) ||
+                            this.startedAt.equals(other.startedAt))) &&
+            ((this.syncNote == null && other.syncNote == null) ||
                     (this.syncNote != null &&
-                            this.syncNote.equals(other.getSyncNote()))) &&
-            this.timeStamp == other.getTimeStamp() &&
-            this.type == other.getType();
+                            this.syncNote.equals(other.syncNote))) &&
+            this.timeStamp == other.timeStamp &&
+            this.type == other.type;
     __equalsCalc = null;
     return _equals;
   }
@@ -605,46 +605,46 @@ public class BuildRun implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getActiveBuildID();
-    _hashCode += getBuildID();
-    if (getBuildName() != null) {
-      _hashCode += getBuildName().hashCode();
+    _hashCode += activeBuildID;
+    _hashCode += buildID;
+    if (buildName != null) {
+      _hashCode += buildName.hashCode();
     }
-    if (getChangeListNumber() != null) {
-      _hashCode += getChangeListNumber().hashCode();
+    if (changeListNumber != null) {
+      _hashCode += changeListNumber.hashCode();
     }
-    _hashCode += getComplete();
-    _hashCode += getDependence();
-    if (getFinishedAt() != null) {
-      _hashCode += getFinishedAt().hashCode();
+    _hashCode += complete;
+    _hashCode += dependence;
+    if (finishedAt != null) {
+      _hashCode += finishedAt.hashCode();
     }
-    if (getLabel() != null) {
-      _hashCode += getLabel().hashCode();
+    if (label != null) {
+      _hashCode += label.hashCode();
     }
-    if (getLabelNote() != null) {
-      _hashCode += getLabelNote().hashCode();
+    if (labelNote != null) {
+      _hashCode += labelNote.hashCode();
     }
-    _hashCode += getLabelStatus();
-    if (getLastStepRunName() != null) {
-      _hashCode += getLastStepRunName().hashCode();
+    _hashCode += labelStatus;
+    if (lastStepRunName != null) {
+      _hashCode += lastStepRunName.hashCode();
     }
-    if (getManualLabel() != null) {
-      _hashCode += getManualLabel().hashCode();
+    if (manualLabel != null) {
+      _hashCode += manualLabel.hashCode();
     }
-    _hashCode += (isPhysicalChangeListNumber() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    _hashCode += (isReRun() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    if (getResultDescription() != null) {
-      _hashCode += getResultDescription().hashCode();
+    _hashCode += (physicalChangeListNumber ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    _hashCode += (reRun ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    if (resultDescription != null) {
+      _hashCode += resultDescription.hashCode();
     }
-    _hashCode += getResultID();
-    if (getStartedAt() != null) {
-      _hashCode += getStartedAt().hashCode();
+    _hashCode += resultID;
+    if (startedAt != null) {
+      _hashCode += startedAt.hashCode();
     }
-    if (getSyncNote() != null) {
-      _hashCode += getSyncNote().hashCode();
+    if (syncNote != null) {
+      _hashCode += syncNote.hashCode();
     }
-    _hashCode += new Long(getTimeStamp()).hashCode();
-    _hashCode += getType();
+    _hashCode += new Long(timeStamp).hashCode();
+    _hashCode += type;
     __hashCodeCalc = false;
     return _hashCode;
   }

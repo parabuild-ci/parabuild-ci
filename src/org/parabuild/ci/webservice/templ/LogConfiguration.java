@@ -178,16 +178,16 @@ public class LogConfiguration implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.ID == other.getID() &&
-            this.buildID == other.getBuildID() &&
-            ((this.description == null && other.getDescription() == null) ||
+            this.ID == other.ID &&
+            this.buildID == other.buildID &&
+            ((this.description == null && other.description == null) ||
                     (this.description != null &&
-                            this.description.equals(other.getDescription()))) &&
-            ((this.path == null && other.getPath() == null) ||
+                            this.description.equals(other.description))) &&
+            ((this.path == null && other.path == null) ||
                     (this.path != null &&
-                            this.path.equals(other.getPath()))) &&
-            this.timeStamp == other.getTimeStamp() &&
-            this.type == other.getType();
+                            this.path.equals(other.path))) &&
+            this.timeStamp == other.timeStamp &&
+            this.type == other.type;
     __equalsCalc = null;
     return _equals;
   }
@@ -202,16 +202,16 @@ public class LogConfiguration implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getID();
-    _hashCode += getBuildID();
-    if (getDescription() != null) {
-      _hashCode += getDescription().hashCode();
+    _hashCode += ID;
+    _hashCode += buildID;
+    if (description != null) {
+      _hashCode += description.hashCode();
     }
-    if (getPath() != null) {
-      _hashCode += getPath().hashCode();
+    if (path != null) {
+      _hashCode += path.hashCode();
     }
-    _hashCode += new Long(getTimeStamp()).hashCode();
-    _hashCode += getType();
+    _hashCode += new Long(timeStamp).hashCode();
+    _hashCode += type;
     __hashCodeCalc = false;
     return _hashCode;
   }

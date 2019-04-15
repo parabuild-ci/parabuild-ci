@@ -270,20 +270,20 @@ public class BuildConfiguration implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.access == other.getAccess() &&
-            this.activeBuildID == other.getActiveBuildID() &&
-            this.buildID == other.getBuildID() &&
-            ((this.buildName == null && other.getBuildName() == null) ||
+            this.access == other.access &&
+            this.activeBuildID == other.activeBuildID &&
+            this.buildID == other.buildID &&
+            ((this.buildName == null && other.buildName == null) ||
                     (this.buildName != null &&
-                            this.buildName.equals(other.getBuildName()))) &&
-            this.farmID == other.getFarmID() &&
-            ((this.emailDomain == null && other.getEmailDomain() == null) ||
+                            this.buildName.equals(other.buildName))) &&
+            this.farmID == other.farmID &&
+            ((this.emailDomain == null && other.emailDomain == null) ||
                     (this.emailDomain != null &&
-                            this.emailDomain.equals(other.getEmailDomain()))) &&
-            this.scheduleType == other.getScheduleType() &&
-            this.sourceControl == other.getSourceControl() &&
-            this.sourceControlEmail == other.isSourceControlEmail() &&
-            this.subordinate == other.isSubordinate();
+                            this.emailDomain.equals(other.emailDomain))) &&
+            this.scheduleType == other.scheduleType &&
+            this.sourceControl == other.sourceControl &&
+            this.sourceControlEmail == other.sourceControlEmail &&
+            this.subordinate == other.subordinate;
     __equalsCalc = null;
     return _equals;
   }
@@ -298,20 +298,20 @@ public class BuildConfiguration implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getAccess();
-    _hashCode += getActiveBuildID();
-    _hashCode += getBuildID();
-    if (getBuildName() != null) {
-      _hashCode += getBuildName().hashCode();
+    _hashCode += access;
+    _hashCode += activeBuildID;
+    _hashCode += buildID;
+    if (buildName != null) {
+      _hashCode += buildName.hashCode();
     }
-    _hashCode += getFarmID();
-    if (getEmailDomain() != null) {
-      _hashCode += getEmailDomain().hashCode();
+    _hashCode += farmID;
+    if (emailDomain != null) {
+      _hashCode += emailDomain.hashCode();
     }
-    _hashCode += getScheduleType();
-    _hashCode += getSourceControl();
-    _hashCode += (isSourceControlEmail() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    _hashCode += (isSubordinate() ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    _hashCode += scheduleType;
+    _hashCode += sourceControl;
+    _hashCode += (sourceControlEmail ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    _hashCode += (subordinate ? Boolean.TRUE : Boolean.FALSE).hashCode();
     __hashCodeCalc = false;
     return _hashCode;
   }

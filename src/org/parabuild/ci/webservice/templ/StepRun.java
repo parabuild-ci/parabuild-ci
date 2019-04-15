@@ -293,25 +293,25 @@ public class StepRun implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.ID == other.getID() &&
-            this.buildRunID == other.getBuildRunID() &&
-            this.complete == other.isComplete() &&
-            this.duration == other.getDuration() &&
-            ((this.finishedAt == null && other.getFinishedAt() == null) ||
+            this.ID == other.ID &&
+            this.buildRunID == other.buildRunID &&
+            this.complete == other.complete &&
+            this.duration == other.duration &&
+            ((this.finishedAt == null && other.finishedAt == null) ||
                     (this.finishedAt != null &&
-                            this.finishedAt.equals(other.getFinishedAt()))) &&
-            ((this.name == null && other.getName() == null) ||
+                            this.finishedAt.equals(other.finishedAt))) &&
+            ((this.name == null && other.name == null) ||
                     (this.name != null &&
-                            this.name.equals(other.getName()))) &&
-            ((this.resultDescription == null && other.getResultDescription() == null) ||
+                            this.name.equals(other.name))) &&
+            ((this.resultDescription == null && other.resultDescription == null) ||
                     (this.resultDescription != null &&
-                            this.resultDescription.equals(other.getResultDescription()))) &&
-            this.resultID == other.getResultID() &&
-            ((this.startedAt == null && other.getStartedAt() == null) ||
+                            this.resultDescription.equals(other.resultDescription))) &&
+            this.resultID == other.resultID &&
+            ((this.startedAt == null && other.startedAt == null) ||
                     (this.startedAt != null &&
-                            this.startedAt.equals(other.getStartedAt()))) &&
-            this.successful == other.isSuccessful() &&
-            this.timeStamp == other.getTimeStamp();
+                            this.startedAt.equals(other.startedAt))) &&
+            this.successful == other.successful &&
+            this.timeStamp == other.timeStamp;
     __equalsCalc = null;
     return _equals;
   }
@@ -326,25 +326,25 @@ public class StepRun implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getID();
-    _hashCode += getBuildRunID();
-    _hashCode += (isComplete() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    _hashCode += getDuration();
-    if (getFinishedAt() != null) {
-      _hashCode += getFinishedAt().hashCode();
+    _hashCode += ID;
+    _hashCode += buildRunID;
+    _hashCode += (complete ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    _hashCode += duration;
+    if (finishedAt != null) {
+      _hashCode += finishedAt.hashCode();
     }
-    if (getName() != null) {
-      _hashCode += getName().hashCode();
+    if (name != null) {
+      _hashCode += name.hashCode();
     }
-    if (getResultDescription() != null) {
-      _hashCode += getResultDescription().hashCode();
+    if (resultDescription != null) {
+      _hashCode += resultDescription.hashCode();
     }
-    _hashCode += getResultID();
-    if (getStartedAt() != null) {
-      _hashCode += getStartedAt().hashCode();
+    _hashCode += resultID;
+    if (startedAt != null) {
+      _hashCode += startedAt.hashCode();
     }
-    _hashCode += (isSuccessful() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    _hashCode += new Long(getTimeStamp()).hashCode();
+    _hashCode += (successful ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    _hashCode += new Long(timeStamp).hashCode();
     __hashCodeCalc = false;
     return _hashCode;
   }

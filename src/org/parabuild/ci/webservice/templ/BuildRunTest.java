@@ -316,20 +316,20 @@ public class BuildRunTest implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.ID == other.getID() &&
-            this.broken == other.isBroken() &&
-            this.brokenBuildRunCount == other.getBrokenBuildRunCount() &&
-            this.brokenSinceBuildRunID == other.getBrokenSinceBuildRunID() &&
-            this.buildRunID == other.getBuildRunID() &&
-            this.durationMillis == other.getDurationMillis() &&
-            this.fix == other.isFix() &&
-            ((this.message == null && other.getMessage() == null) ||
+            this.ID == other.ID &&
+            this.broken == other.broken &&
+            this.brokenBuildRunCount == other.brokenBuildRunCount &&
+            this.brokenSinceBuildRunID == other.brokenSinceBuildRunID &&
+            this.buildRunID == other.buildRunID &&
+            this.durationMillis == other.durationMillis &&
+            this.fix == other.fix &&
+            ((this.message == null && other.message == null) ||
                     (this.message != null &&
-                            this.message.equals(other.getMessage()))) &&
-            this.newFailure == other.isNewFailure() &&
-            this.newTest == other.isNewTest() &&
-            this.resultCode == other.getResultCode() &&
-            this.testCaseNameID == other.getTestCaseNameID();
+                            this.message.equals(other.message))) &&
+            this.newFailure == other.newFailure &&
+            this.newTest == other.newTest &&
+            this.resultCode == other.resultCode &&
+            this.testCaseNameID == other.testCaseNameID;
     __equalsCalc = null;
     return _equals;
   }
@@ -344,20 +344,20 @@ public class BuildRunTest implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getID();
-    _hashCode += (isBroken() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    _hashCode += getBrokenBuildRunCount();
-    _hashCode += getBrokenSinceBuildRunID();
-    _hashCode += getBuildRunID();
-    _hashCode += new Long(getDurationMillis()).hashCode();
-    _hashCode += (isFix() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    if (getMessage() != null) {
-      _hashCode += getMessage().hashCode();
+    _hashCode += ID;
+    _hashCode += (broken ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    _hashCode += brokenBuildRunCount;
+    _hashCode += brokenSinceBuildRunID;
+    _hashCode += buildRunID;
+    _hashCode += new Long(durationMillis).hashCode();
+    _hashCode += (fix ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    if (message != null) {
+      _hashCode += message.hashCode();
     }
-    _hashCode += (isNewFailure() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    _hashCode += (isNewTest() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    _hashCode += getResultCode();
-    _hashCode += getTestCaseNameID();
+    _hashCode += (newFailure ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    _hashCode += (newTest ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    _hashCode += resultCode;
+    _hashCode += testCaseNameID;
     __hashCodeCalc = false;
     return _hashCode;
   }

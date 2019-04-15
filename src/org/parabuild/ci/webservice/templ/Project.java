@@ -179,18 +179,18 @@ public class Project implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.ID == other.getID() &&
-            ((this.description == null && other.getDescription() == null) ||
+            this.ID == other.ID &&
+            ((this.description == null && other.description == null) ||
                     (this.description != null &&
-                            this.description.equals(other.getDescription()))) &&
-            ((this.key == null && other.getKey() == null) ||
+                            this.description.equals(other.description))) &&
+            ((this.key == null && other.key == null) ||
                     (this.key != null &&
-                            this.key.equals(other.getKey()))) &&
-            ((this.name == null && other.getName() == null) ||
+                            this.key.equals(other.key))) &&
+            ((this.name == null && other.name == null) ||
                     (this.name != null &&
-                            this.name.equals(other.getName()))) &&
-            this.timeStamp == other.getTimeStamp() &&
-            this.type == other.getType();
+                            this.name.equals(other.name))) &&
+            this.timeStamp == other.timeStamp &&
+            this.type == other.type;
     __equalsCalc = null;
     return _equals;
   }
@@ -205,18 +205,18 @@ public class Project implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getID();
-    if (getDescription() != null) {
-      _hashCode += getDescription().hashCode();
+    _hashCode += ID;
+    if (description != null) {
+      _hashCode += description.hashCode();
     }
-    if (getKey() != null) {
-      _hashCode += getKey().hashCode();
+    if (key != null) {
+      _hashCode += key.hashCode();
     }
-    if (getName() != null) {
-      _hashCode += getName().hashCode();
+    if (name != null) {
+      _hashCode += name.hashCode();
     }
-    _hashCode += new Long(getTimeStamp()).hashCode();
-    _hashCode += getType();
+    _hashCode += new Long(timeStamp).hashCode();
+    _hashCode += type;
     __hashCodeCalc = false;
     return _hashCode;
   }

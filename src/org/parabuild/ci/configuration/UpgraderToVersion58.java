@@ -51,7 +51,7 @@ final class UpgraderToVersion58 implements SingleStepSchemaUpgrader {
           "  constraint PROMOTION_POLICY_UC1 unique (ID),\n" +
           "  constraint PROMOTION_POLICY_UC2 unique (ID, DELETED),\n" +
           "  constraint PROMOTION_POLICY_FC1 foreign key (PROJECT_ID) references PROJECT(ID) ON DELETE CASCADE\n" +
-          ")",
+                ')',
 
         "create cached table PROMOTION_STEP (\n" +
           "  ID integer not null identity,\n" +
@@ -63,7 +63,7 @@ final class UpgraderToVersion58 implements SingleStepSchemaUpgrader {
           "  constraint PROMOTION_STEP_UC1 unique (ID),\n" +
           "  constraint PROMOTION_STEP_UC2 unique (ID, DELETED),\n" +
           "  constraint PROMOTION_STEP_FC1 foreign key (PROMOTION_POLICY_ID) references PROMOTION_POLICY(ID) ON DELETE CASCADE\n" +
-          ")",
+                ')',
 
         "create cached table PROMOTION_STEP_DEPENDENCY (\n" +
           "  ID integer not null identity,\n" +
@@ -73,7 +73,7 @@ final class UpgraderToVersion58 implements SingleStepSchemaUpgrader {
           "  constraint PROMOTION_STEP_DEPENDENCY_UC2 unique (PROMOTION_STEP_ID, DEPENDENCY_PROMOTION_STEP_ID),\n" +
           "  constraint PROMOTION_STEP_DEPENDENCY_FC1 foreign key (PROMOTION_STEP_ID) references PROMOTION_STEP(ID) ON DELETE CASCADE,\n" +
           "  constraint PROMOTION_STEP_DEPENDENCY_FC2 foreign key (DEPENDENCY_PROMOTION_STEP_ID) references PROMOTION_STEP(ID) ON DELETE CASCADE\n" +
-          ")",
+                ')',
       });
 
       log.debug("Updating version");

@@ -155,15 +155,15 @@ public class Change implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.changeID == other.getChangeID() &&
-            this.changeListID == other.getChangeListID() &&
-            this.changeType == other.getChangeType() &&
-            ((this.filePath == null && other.getFilePath() == null) ||
+            this.changeID == other.changeID &&
+            this.changeListID == other.changeListID &&
+            this.changeType == other.changeType &&
+            ((this.filePath == null && other.filePath == null) ||
                     (this.filePath != null &&
-                            this.filePath.equals(other.getFilePath()))) &&
-            ((this.revision == null && other.getRevision() == null) ||
+                            this.filePath.equals(other.filePath))) &&
+            ((this.revision == null && other.revision == null) ||
                     (this.revision != null &&
-                            this.revision.equals(other.getRevision())));
+                            this.revision.equals(other.revision)));
     __equalsCalc = null;
     return _equals;
   }
@@ -178,14 +178,14 @@ public class Change implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getChangeID();
-    _hashCode += getChangeListID();
-    _hashCode += getChangeType();
-    if (getFilePath() != null) {
-      _hashCode += getFilePath().hashCode();
+    _hashCode += changeID;
+    _hashCode += changeListID;
+    _hashCode += changeType;
+    if (filePath != null) {
+      _hashCode += filePath.hashCode();
     }
-    if (getRevision() != null) {
-      _hashCode += getRevision().hashCode();
+    if (revision != null) {
+      _hashCode += revision.hashCode();
     }
     __hashCodeCalc = false;
     return _hashCode;

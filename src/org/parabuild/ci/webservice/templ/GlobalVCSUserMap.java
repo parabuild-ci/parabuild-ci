@@ -132,16 +132,16 @@ public class GlobalVCSUserMap implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.ID == other.getID() &&
-            ((this.description == null && other.getDescription() == null) ||
+            this.ID == other.ID &&
+            ((this.description == null && other.description == null) ||
                     (this.description != null &&
-                            this.description.equals(other.getDescription()))) &&
-            ((this.email == null && other.getEmail() == null) ||
+                            this.description.equals(other.description))) &&
+            ((this.email == null && other.email == null) ||
                     (this.email != null &&
-                            this.email.equals(other.getEmail()))) &&
-            ((this.vcsUserName == null && other.getVcsUserName() == null) ||
+                            this.email.equals(other.email))) &&
+            ((this.vcsUserName == null && other.vcsUserName == null) ||
                     (this.vcsUserName != null &&
-                            this.vcsUserName.equals(other.getVcsUserName())));
+                            this.vcsUserName.equals(other.vcsUserName)));
     __equalsCalc = null;
     return _equals;
   }
@@ -156,15 +156,15 @@ public class GlobalVCSUserMap implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getID();
-    if (getDescription() != null) {
-      _hashCode += getDescription().hashCode();
+    _hashCode += ID;
+    if (description != null) {
+      _hashCode += description.hashCode();
     }
-    if (getEmail() != null) {
-      _hashCode += getEmail().hashCode();
+    if (email != null) {
+      _hashCode += email.hashCode();
     }
-    if (getVcsUserName() != null) {
-      _hashCode += getVcsUserName().hashCode();
+    if (vcsUserName != null) {
+      _hashCode += vcsUserName.hashCode();
     }
     __hashCodeCalc = false;
     return _hashCode;

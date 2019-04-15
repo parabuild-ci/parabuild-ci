@@ -201,19 +201,19 @@ public class BuildRunAction implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.ID == other.getID() &&
-            ((this.action == null && other.getAction() == null) ||
+            this.ID == other.ID &&
+            ((this.action == null && other.action == null) ||
                     (this.action != null &&
-                            this.action.equals(other.getAction()))) &&
-            this.buildRunID == other.getBuildRunID() &&
-            this.code == other.getCode() &&
-            ((this.date == null && other.getDate() == null) ||
+                            this.action.equals(other.action))) &&
+            this.buildRunID == other.buildRunID &&
+            this.code == other.code &&
+            ((this.date == null && other.date == null) ||
                     (this.date != null &&
-                            this.date.equals(other.getDate()))) &&
-            ((this.description == null && other.getDescription() == null) ||
+                            this.date.equals(other.date))) &&
+            ((this.description == null && other.description == null) ||
                     (this.description != null &&
-                            this.description.equals(other.getDescription()))) &&
-            this.userID == other.getUserID();
+                            this.description.equals(other.description))) &&
+            this.userID == other.userID;
     __equalsCalc = null;
     return _equals;
   }
@@ -228,19 +228,19 @@ public class BuildRunAction implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getID();
-    if (getAction() != null) {
-      _hashCode += getAction().hashCode();
+    _hashCode += ID;
+    if (action != null) {
+      _hashCode += action.hashCode();
     }
-    _hashCode += getBuildRunID();
-    _hashCode += getCode();
-    if (getDate() != null) {
-      _hashCode += getDate().hashCode();
+    _hashCode += buildRunID;
+    _hashCode += code;
+    if (date != null) {
+      _hashCode += date.hashCode();
     }
-    if (getDescription() != null) {
-      _hashCode += getDescription().hashCode();
+    if (description != null) {
+      _hashCode += description.hashCode();
     }
-    _hashCode += getUserID();
+    _hashCode += userID;
     __hashCodeCalc = false;
     return _hashCode;
   }

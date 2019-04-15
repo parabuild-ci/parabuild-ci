@@ -339,41 +339,41 @@ public class Issue implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.ID == other.getID() &&
-            ((this.closed == null && other.getClosed() == null) ||
+            this.ID == other.ID &&
+            ((this.closed == null && other.closed == null) ||
                     (this.closed != null &&
-                            this.closed.equals(other.getClosed()))) &&
-            ((this.closedBy == null && other.getClosedBy() == null) ||
+                            this.closed.equals(other.closed))) &&
+            ((this.closedBy == null && other.closedBy == null) ||
                     (this.closedBy != null &&
-                            this.closedBy.equals(other.getClosedBy()))) &&
-            ((this.description == null && other.getDescription() == null) ||
+                            this.closedBy.equals(other.closedBy))) &&
+            ((this.description == null && other.description == null) ||
                     (this.description != null &&
-                            this.description.equals(other.getDescription()))) &&
-            ((this.key == null && other.getKey() == null) ||
+                            this.description.equals(other.description))) &&
+            ((this.key == null && other.key == null) ||
                     (this.key != null &&
-                            this.key.equals(other.getKey()))) &&
-            ((this.priority == null && other.getPriority() == null) ||
+                            this.key.equals(other.key))) &&
+            ((this.priority == null && other.priority == null) ||
                     (this.priority != null &&
-                            this.priority.equals(other.getPriority()))) &&
-            ((this.product == null && other.getProduct() == null) ||
+                            this.priority.equals(other.priority))) &&
+            ((this.product == null && other.product == null) ||
                     (this.product != null &&
-                            this.product.equals(other.getProduct()))) &&
-            ((this.project == null && other.getProject() == null) ||
+                            this.product.equals(other.product))) &&
+            ((this.project == null && other.project == null) ||
                     (this.project != null &&
-                            this.project.equals(other.getProject()))) &&
-            ((this.received == null && other.getReceived() == null) ||
+                            this.project.equals(other.project))) &&
+            ((this.received == null && other.received == null) ||
                     (this.received != null &&
-                            this.received.equals(other.getReceived()))) &&
-            ((this.status == null && other.getStatus() == null) ||
+                            this.received.equals(other.received))) &&
+            ((this.status == null && other.status == null) ||
                     (this.status != null &&
-                            this.status.equals(other.getStatus()))) &&
-            this.trackerType == other.getTrackerType() &&
-            ((this.url == null && other.getUrl() == null) ||
+                            this.status.equals(other.status))) &&
+            this.trackerType == other.trackerType &&
+            ((this.url == null && other.url == null) ||
                     (this.url != null &&
-                            this.url.equals(other.getUrl()))) &&
-            ((this.version == null && other.getVersion() == null) ||
+                            this.url.equals(other.url))) &&
+            ((this.version == null && other.version == null) ||
                     (this.version != null &&
-                            this.version.equals(other.getVersion())));
+                            this.version.equals(other.version)));
     __equalsCalc = null;
     return _equals;
   }
@@ -388,40 +388,40 @@ public class Issue implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getID();
-    if (getClosed() != null) {
-      _hashCode += getClosed().hashCode();
+    _hashCode += ID;
+    if (closed != null) {
+      _hashCode += closed.hashCode();
     }
-    if (getClosedBy() != null) {
-      _hashCode += getClosedBy().hashCode();
+    if (closedBy != null) {
+      _hashCode += closedBy.hashCode();
     }
-    if (getDescription() != null) {
-      _hashCode += getDescription().hashCode();
+    if (description != null) {
+      _hashCode += description.hashCode();
     }
-    if (getKey() != null) {
-      _hashCode += getKey().hashCode();
+    if (key != null) {
+      _hashCode += key.hashCode();
     }
-    if (getPriority() != null) {
-      _hashCode += getPriority().hashCode();
+    if (priority != null) {
+      _hashCode += priority.hashCode();
     }
-    if (getProduct() != null) {
-      _hashCode += getProduct().hashCode();
+    if (product != null) {
+      _hashCode += product.hashCode();
     }
-    if (getProject() != null) {
-      _hashCode += getProject().hashCode();
+    if (project != null) {
+      _hashCode += project.hashCode();
     }
-    if (getReceived() != null) {
-      _hashCode += getReceived().hashCode();
+    if (received != null) {
+      _hashCode += received.hashCode();
     }
-    if (getStatus() != null) {
-      _hashCode += getStatus().hashCode();
+    if (status != null) {
+      _hashCode += status.hashCode();
     }
-    _hashCode += getTrackerType();
-    if (getUrl() != null) {
-      _hashCode += getUrl().hashCode();
+    _hashCode += trackerType;
+    if (url != null) {
+      _hashCode += url.hashCode();
     }
-    if (getVersion() != null) {
-      _hashCode += getVersion().hashCode();
+    if (version != null) {
+      _hashCode += version.hashCode();
     }
     __hashCodeCalc = false;
     return _hashCode;

@@ -224,18 +224,18 @@ public class BuildWatcher implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.buildID == other.getBuildID() &&
-            this.disabled == other.isDisabled() &&
-            ((this.email == null && other.getEmail() == null) ||
+            this.buildID == other.buildID &&
+            this.disabled == other.disabled &&
+            ((this.email == null && other.email == null) ||
                     (this.email != null &&
-                            this.email.equals(other.getEmail()))) &&
-            ((this.instantMessengerAddress == null && other.getInstantMessengerAddress() == null) ||
+                            this.email.equals(other.email))) &&
+            ((this.instantMessengerAddress == null && other.instantMessengerAddress == null) ||
                     (this.instantMessengerAddress != null &&
-                            this.instantMessengerAddress.equals(other.getInstantMessengerAddress()))) &&
-            this.instantMessengerType == other.getInstantMessengerType() &&
-            this.level == other.getLevel() &&
-            this.timeStamp == other.getTimeStamp() &&
-            this.watcherID == other.getWatcherID();
+                            this.instantMessengerAddress.equals(other.instantMessengerAddress))) &&
+            this.instantMessengerType == other.instantMessengerType &&
+            this.level == other.level &&
+            this.timeStamp == other.timeStamp &&
+            this.watcherID == other.watcherID;
     __equalsCalc = null;
     return _equals;
   }
@@ -250,18 +250,18 @@ public class BuildWatcher implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getBuildID();
-    _hashCode += (isDisabled() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    if (getEmail() != null) {
-      _hashCode += getEmail().hashCode();
+    _hashCode += buildID;
+    _hashCode += (disabled ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    if (email != null) {
+      _hashCode += email.hashCode();
     }
-    if (getInstantMessengerAddress() != null) {
-      _hashCode += getInstantMessengerAddress().hashCode();
+    if (instantMessengerAddress != null) {
+      _hashCode += instantMessengerAddress.hashCode();
     }
-    _hashCode += getInstantMessengerType();
-    _hashCode += getLevel();
-    _hashCode += new Long(getTimeStamp()).hashCode();
-    _hashCode += getWatcherID();
+    _hashCode += instantMessengerType;
+    _hashCode += level;
+    _hashCode += new Long(timeStamp).hashCode();
+    _hashCode += watcherID;
     __hashCodeCalc = false;
     return _hashCode;
   }

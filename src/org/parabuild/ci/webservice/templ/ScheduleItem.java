@@ -224,20 +224,20 @@ public class ScheduleItem implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.buildID == other.getBuildID() &&
-            this.cleanCheckout == other.isCleanCheckout() &&
-            ((this.dayOfMonth == null && other.getDayOfMonth() == null) ||
+            this.buildID == other.buildID &&
+            this.cleanCheckout == other.cleanCheckout &&
+            ((this.dayOfMonth == null && other.dayOfMonth == null) ||
                     (this.dayOfMonth != null &&
-                            this.dayOfMonth.equals(other.getDayOfMonth()))) &&
-            ((this.dayOfWeek == null && other.getDayOfWeek() == null) ||
+                            this.dayOfMonth.equals(other.dayOfMonth))) &&
+            ((this.dayOfWeek == null && other.dayOfWeek == null) ||
                     (this.dayOfWeek != null &&
-                            this.dayOfWeek.equals(other.getDayOfWeek()))) &&
-            ((this.hour == null && other.getHour() == null) ||
+                            this.dayOfWeek.equals(other.dayOfWeek))) &&
+            ((this.hour == null && other.hour == null) ||
                     (this.hour != null &&
-                            this.hour.equals(other.getHour()))) &&
-            this.runIfNoChanges == other.isRunIfNoChanges() &&
-            this.scheduleItemID == other.getScheduleItemID() &&
-            this.timeStamp == other.getTimeStamp();
+                            this.hour.equals(other.hour))) &&
+            this.runIfNoChanges == other.runIfNoChanges &&
+            this.scheduleItemID == other.scheduleItemID &&
+            this.timeStamp == other.timeStamp;
     __equalsCalc = null;
     return _equals;
   }
@@ -252,20 +252,20 @@ public class ScheduleItem implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getBuildID();
-    _hashCode += (isCleanCheckout() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    if (getDayOfMonth() != null) {
-      _hashCode += getDayOfMonth().hashCode();
+    _hashCode += buildID;
+    _hashCode += (cleanCheckout ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    if (dayOfMonth != null) {
+      _hashCode += dayOfMonth.hashCode();
     }
-    if (getDayOfWeek() != null) {
-      _hashCode += getDayOfWeek().hashCode();
+    if (dayOfWeek != null) {
+      _hashCode += dayOfWeek.hashCode();
     }
-    if (getHour() != null) {
-      _hashCode += getHour().hashCode();
+    if (hour != null) {
+      _hashCode += hour.hashCode();
     }
-    _hashCode += (isRunIfNoChanges() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    _hashCode += getScheduleItemID();
-    _hashCode += new Long(getTimeStamp()).hashCode();
+    _hashCode += (runIfNoChanges ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    _hashCode += scheduleItemID;
+    _hashCode += new Long(timeStamp).hashCode();
     __hashCodeCalc = false;
     return _hashCode;
   }

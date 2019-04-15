@@ -155,15 +155,15 @@ public class SystemProperty implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.propertyID == other.getPropertyID() &&
-            ((this.propertyName == null && other.getPropertyName() == null) ||
+            this.propertyID == other.propertyID &&
+            ((this.propertyName == null && other.propertyName == null) ||
                     (this.propertyName != null &&
-                            this.propertyName.equals(other.getPropertyName()))) &&
-            this.propertyTimeStamp == other.getPropertyTimeStamp() &&
-            ((this.propertyValue == null && other.getPropertyValue() == null) ||
+                            this.propertyName.equals(other.propertyName))) &&
+            this.propertyTimeStamp == other.propertyTimeStamp &&
+            ((this.propertyValue == null && other.propertyValue == null) ||
                     (this.propertyValue != null &&
-                            this.propertyValue.equals(other.getPropertyValue()))) &&
-            this.propertyValueAsInt == other.getPropertyValueAsInt();
+                            this.propertyValue.equals(other.propertyValue))) &&
+            this.propertyValueAsInt == other.propertyValueAsInt;
     __equalsCalc = null;
     return _equals;
   }
@@ -178,15 +178,15 @@ public class SystemProperty implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getPropertyID();
-    if (getPropertyName() != null) {
-      _hashCode += getPropertyName().hashCode();
+    _hashCode += propertyID;
+    if (propertyName != null) {
+      _hashCode += propertyName.hashCode();
     }
-    _hashCode += new Long(getPropertyTimeStamp()).hashCode();
-    if (getPropertyValue() != null) {
-      _hashCode += getPropertyValue().hashCode();
+    _hashCode += new Long(propertyTimeStamp).hashCode();
+    if (propertyValue != null) {
+      _hashCode += propertyValue.hashCode();
     }
-    _hashCode += getPropertyValueAsInt();
+    _hashCode += propertyValueAsInt;
     __hashCodeCalc = false;
     return _hashCode;
   }

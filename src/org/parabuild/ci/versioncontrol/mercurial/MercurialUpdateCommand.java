@@ -38,20 +38,20 @@ final class MercurialUpdateCommand extends MercurialCommand {
   protected String getExeArguments() {
     final StringBuilder sb = new StringBuilder(100);
     sb.append("update");
-    sb.append(" ");
+    sb.append(' ');
     sb.append("--noninteractive");
-    sb.append(" ");
+    sb.append(' ');
     if (!StringUtils.isBlank(branch)) {
-      sb.append(" ");
+      sb.append(' ');
       sb.append("--branch");
-      sb.append(" ");
+      sb.append(' ');
       sb.append(StringUtils.putIntoDoubleQuotes(branch));
     }
-    sb.append(" ");
+    sb.append(' ');
     sb.append("--clean");
-    sb.append(" ");
+    sb.append(' ');
     sb.append("--rev");
-    sb.append(" ");
+    sb.append(' ');
     sb.append(rev);
     return sb.toString();
   }

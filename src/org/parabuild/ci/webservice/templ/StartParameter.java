@@ -339,29 +339,29 @@ public class StartParameter implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.ID == other.getID() &&
-            this.buildID == other.getBuildID() &&
-            ((this.description == null && other.getDescription() == null) ||
+            this.ID == other.ID &&
+            this.buildID == other.buildID &&
+            ((this.description == null && other.description == null) ||
                     (this.description != null &&
-                            this.description.equals(other.getDescription()))) &&
-            this.enabled == other.isEnabled() &&
-            ((this.firstValue == null && other.getFirstValue() == null) ||
+                            this.description.equals(other.description))) &&
+            this.enabled == other.enabled &&
+            ((this.firstValue == null && other.firstValue == null) ||
                     (this.firstValue != null &&
-                            this.firstValue.equals(other.getFirstValue()))) &&
-            this.modifiable == other.isModifiable() &&
-            ((this.name == null && other.getName() == null) ||
+                            this.firstValue.equals(other.firstValue))) &&
+            this.modifiable == other.modifiable &&
+            ((this.name == null && other.name == null) ||
                     (this.name != null &&
-                            this.name.equals(other.getName()))) &&
-            this.presentation == other.getPresentation() &&
-            this.required == other.isRequired() &&
-            ((this.runtimeValue == null && other.getRuntimeValue() == null) ||
+                            this.name.equals(other.name))) &&
+            this.presentation == other.presentation &&
+            this.required == other.required &&
+            ((this.runtimeValue == null && other.runtimeValue == null) ||
                     (this.runtimeValue != null &&
-                            this.runtimeValue.equals(other.getRuntimeValue()))) &&
-            this.timeStamp == other.getTimeStamp() &&
-            this.type == other.getType() &&
-            ((this.value == null && other.getValue() == null) ||
+                            this.runtimeValue.equals(other.runtimeValue))) &&
+            this.timeStamp == other.timeStamp &&
+            this.type == other.type &&
+            ((this.value == null && other.value == null) ||
                     (this.value != null &&
-                            this.value.equals(other.getValue())));
+                            this.value.equals(other.value)));
     __equalsCalc = null;
     return _equals;
   }
@@ -376,28 +376,28 @@ public class StartParameter implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getID();
-    _hashCode += getBuildID();
-    if (getDescription() != null) {
-      _hashCode += getDescription().hashCode();
+    _hashCode += ID;
+    _hashCode += buildID;
+    if (description != null) {
+      _hashCode += description.hashCode();
     }
-    _hashCode += (isEnabled() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    if (getFirstValue() != null) {
-      _hashCode += getFirstValue().hashCode();
+    _hashCode += (enabled ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    if (firstValue != null) {
+      _hashCode += firstValue.hashCode();
     }
-    _hashCode += (isModifiable() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    if (getName() != null) {
-      _hashCode += getName().hashCode();
+    _hashCode += (modifiable ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    if (name != null) {
+      _hashCode += name.hashCode();
     }
-    _hashCode += getPresentation();
-    _hashCode += (isRequired() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    if (getRuntimeValue() != null) {
-      _hashCode += getRuntimeValue().hashCode();
+    _hashCode += presentation;
+    _hashCode += (required ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    if (runtimeValue != null) {
+      _hashCode += runtimeValue.hashCode();
     }
-    _hashCode += new Long(getTimeStamp()).hashCode();
-    _hashCode += getType();
-    if (getValue() != null) {
-      _hashCode += getValue().hashCode();
+    _hashCode += new Long(timeStamp).hashCode();
+    _hashCode += type;
+    if (value != null) {
+      _hashCode += value.hashCode();
     }
     __hashCodeCalc = false;
     return _hashCode;
