@@ -702,7 +702,7 @@ public final class IoUtils {
 
 
   public static SQLException makeSQLException(final Exception e) {
-    return new SQLException(StringUtils.toString(e), e);;
+    return new SQLException(StringUtils.toString(e), e);
   }
 
 
