@@ -14,8 +14,6 @@
 package org.parabuild.ci.object;
 
 import java.io.*;
-import java.util.*;
-import java.text.*;
 
 /**
  * Holds essintial information about parallel builds.

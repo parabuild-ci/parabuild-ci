@@ -18,7 +18,6 @@ import org.apache.commons.logging.*;
 
 import org.parabuild.ci.object.*;
 import org.parabuild.ci.webui.common.*;
-import org.parabuild.ci.security.*;
 import org.parabuild.ci.security.SecurityManager;
 import org.parabuild.ci.build.BuildState;
 import viewtier.ui.*;

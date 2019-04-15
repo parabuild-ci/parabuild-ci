@@ -15,7 +15,6 @@ package org.parabuild.ci.webui.admin;
 
 import org.parabuild.ci.webui.common.*;
 import org.parabuild.ci.object.*;
-import viewtier.ui.*;
 
 /**
  * A dropdown to show view location options.

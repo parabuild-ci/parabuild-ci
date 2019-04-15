@@ -13,8 +13,6 @@
  */
 package org.parabuild.ci.webui.common;
 
-import viewtier.ui.*;
-
 /**
  * Drop down to display hours
  */

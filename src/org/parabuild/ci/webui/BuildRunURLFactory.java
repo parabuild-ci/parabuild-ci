@@ -13,7 +13,6 @@
  */
 package org.parabuild.ci.webui;
 
-import viewtier.ui.*;
 import org.parabuild.ci.object.*;
 
 /**

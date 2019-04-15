@@ -13,8 +13,6 @@
  */
 package org.parabuild.ci.configuration;
 
-import java.util.*;
-
 import org.parabuild.ci.object.ChangeList;
 
 /**

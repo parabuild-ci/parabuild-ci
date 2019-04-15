@@ -16,7 +16,6 @@ package org.parabuild.ci.tray;
 import java.awt.event.*;
 import java.io.*;
 import java.util.*;
-import java.util.List;
 import javax.swing.*;
 import org.apache.commons.logging.*;
 import org.jdesktop.jdic.tray.*;

@@ -15,7 +15,6 @@ package org.parabuild.ci.remote.internal;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.common.CommandStoppedException;
 import org.parabuild.ci.process.TailBufferSize;
 import org.parabuild.ci.remote.services.ExecuteResult;
 import org.parabuild.ci.remote.services.ModifiedFileList;

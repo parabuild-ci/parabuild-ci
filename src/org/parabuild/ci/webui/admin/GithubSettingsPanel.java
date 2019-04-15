@@ -16,8 +16,6 @@ package org.parabuild.ci.webui.admin;
 import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
-import org.parabuild.ci.webui.common.Saveable;
-import org.parabuild.ci.webui.common.Validatable;
 import org.parabuild.ci.webui.common.WebUIConstants;
 import viewtier.ui.Field;
 

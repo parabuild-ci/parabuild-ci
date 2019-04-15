@@ -19,7 +19,6 @@ import org.apache.commons.logging.*;
 import org.parabuild.ci.configuration.*;
 import org.parabuild.ci.object.*;
 import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
 
 /**
  */

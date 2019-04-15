@@ -16,8 +16,6 @@ package org.parabuild.ci.webui.common;
 import viewtier.ui.Color;
 import viewtier.ui.Font;
 
-import java.util.Properties;
-
 /**
  */
 public final class CommonHeaderSmallLink extends CommonLink {

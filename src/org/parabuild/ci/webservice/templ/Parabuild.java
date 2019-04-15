@@ -13,7 +13,6 @@
  */
 package org.parabuild.ci.webservice.templ;
 
-import java.io.IOException;
 import java.util.Calendar;
 
 /**
