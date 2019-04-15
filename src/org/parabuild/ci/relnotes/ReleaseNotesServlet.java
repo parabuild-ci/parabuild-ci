@@ -35,7 +35,8 @@ public final class ReleaseNotesServlet extends HttpServlet {
   protected void doPost(final HttpServletRequest request, final HttpServletResponse response) {
 
     // additional check - don't server release notes requests if in the agent mode.
-    if (ConfigurationManager.isBuilderMode()) return;
-
+    if (ConfigurationManager.isBuilderMode()) {
+      return;
+    }
   }
 }

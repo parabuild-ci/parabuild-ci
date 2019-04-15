@@ -125,7 +125,6 @@ public final class GeneralLogSettingsPanel extends MessagePanel implements Loada
     final int value = Integer.parseInt(field.getValue());
     if (value <= 0) {
       errors.add("Number of " + descr + " too small. It should be a positive integer value.");
-      return;
     }
   }
 }

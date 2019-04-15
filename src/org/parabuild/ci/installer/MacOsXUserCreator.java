@@ -41,7 +41,6 @@ public final class MacOsXUserCreator implements InstallerUserCreator {
    */
   public final void createGroup(final String group) throws IOException {
     if (isGroupExists(group)) {
-      return;
     }
     // REVIEWME: Do we need a group?
   }

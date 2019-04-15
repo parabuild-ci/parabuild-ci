@@ -145,7 +145,6 @@ public final class LogRetentionPanel extends MessagePanel implements Loadable, V
     final int value = Integer.parseInt(field.getValue());
     if (value <= 0) {
       errors.add("Number of " + descr + " too small. It should be a positive integer value.");
-      return;
     }
   }
 }

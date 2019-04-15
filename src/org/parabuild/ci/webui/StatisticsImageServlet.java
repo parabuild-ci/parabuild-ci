@@ -323,7 +323,7 @@ public final class StatisticsImageServlet extends HttpServlet {
         // we don't know how to process, return
         log.warn("Unknown stats code: " + statsCode);
         resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-        return;
+        break;
     }
   }
 

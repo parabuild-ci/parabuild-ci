@@ -48,7 +48,6 @@ final class BuildStatusMenuItemActionListener implements ActionListener {
         final BrowserLauncher browserLauncher = new BrowserLauncher();
         browserLauncher.launchBrowser(url);
       } catch (final InterruptedException e) {
-        return;
       } catch (final Exception e) {
         log.warn("Error while launching a browser", e);
       }
