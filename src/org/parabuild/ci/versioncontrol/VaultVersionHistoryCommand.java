@@ -45,8 +45,8 @@ final class VaultVersionHistoryCommand extends VaultCommand {
    */
   protected String getExeArguments() throws IOException, AgentFailureException {
     final VaultDateFormat format = new VaultDateFormat(agent.defaultLocale());
-    final String beginDateString = historyParams.getBeginDate() != null ? StringUtils.putIntoDoubleQuotes(format.formatInput(historyParams.getBeginDate())) : (String) null;
-    final String endDateString = historyParams.getEndDate() != null ? StringUtils.putIntoDoubleQuotes(format.formatInput(historyParams.getEndDate())) : (String) null;
+    final String beginDateString = historyParams.getBeginDate() != null ? StringUtils.putIntoDoubleQuotes(format.formatInput(historyParams.getBeginDate())) : null;
+    final String endDateString = historyParams.getEndDate() != null ? StringUtils.putIntoDoubleQuotes(format.formatInput(historyParams.getEndDate())) : null;
     final StringBuffer args = new StringBuffer(100);
     args.append(" versionhistory");
     appendCommand(args, "-rowlimit", historyParams.getRowLimit());

@@ -47,12 +47,12 @@ final class VaultHistoryCommand extends VaultCommand {
    */
   protected String getExeArguments() throws IOException, AgentFailureException {
     final DateFormat format = SimpleDateFormat.getDateTimeInstance(SimpleDateFormat.SHORT, SimpleDateFormat.MEDIUM, agent.defaultLocale());
-    final String beginDateString = historyParams.getBeginDate() != null ? format.format(historyParams.getBeginDate()) : (String) null;
-    final String endDateString = historyParams.getEndDate() != null ? format.format(historyParams.getEndDate()) : (String) null;
+    final String beginDateString = historyParams.getBeginDate() != null ? format.format(historyParams.getBeginDate()) : null;
+    final String endDateString = historyParams.getEndDate() != null ? format.format(historyParams.getEndDate()) : null;
     final StringBuffer args = new StringBuffer(100);
     args.append(" history");
     appendCommand(args, "-excludeactions", "label,snapshot,branch");
-    appendCommandIfNotBlank(args, "-begindate", beginDateString == null ? (String) null : StringUtils.putIntoDoubleQuotes(beginDateString));
+    appendCommandIfNotBlank(args, "-begindate", beginDateString == null ? null : StringUtils.putIntoDoubleQuotes(beginDateString));
     appendCommandIfNotBlank(args, "-rowlimit", historyParams.getRowLimit() == Integer.MAX_VALUE ? "" : Integer.toString(historyParams.getRowLimit()));
     appendCommandIfNotBlank(args, "-enddate", endDateString);
     args.append(' ').append(historyParams.getRepositoryPath());

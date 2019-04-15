@@ -317,7 +317,7 @@ public final class MergeManager {
   public int getMergeReportCount(final int activeMergeID) {
     return (Integer) ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
-        return (Integer) session.createQuery(
+        return session.createQuery(
                 " select count(bchl) from MergeConfiguration mc, BranchChangeList bchl" +
                         " where mc.activeMergeID = ? " +
                         "   and bchl.mergeConfigurationID = mc.ID ")

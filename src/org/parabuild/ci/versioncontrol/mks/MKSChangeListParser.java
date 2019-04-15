@@ -86,7 +86,7 @@ final class MKSChangeListParser {
     this.path = path;
     this.maxChangeLists = maxChangeLists;
     this.developmentPath = developmentPath;
-    this.startingFrom = startingFrom != null ? (Date) startingFrom.clone() : (Date) null;
+    this.startingFrom = startingFrom != null ? (Date) startingFrom.clone() : null;
     this.dateFormat = new SimpleDateFormat(dateFormat);
     this.maxChangeListSize = maxChangeListSize;
   }

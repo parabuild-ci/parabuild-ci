@@ -496,7 +496,7 @@ final class SVNSourceControl extends AbstractSourceControl {
         // analyze change LOG
         final boolean watchNonRecursive = getSettingValue(SourceControlSetting.SVN_WATCH_NON_RECURSIVE_PATHS,
                 SourceControlSetting.OPTION_UNCHECKED).equals(SourceControlSetting.OPTION_CHECKED);
-        final SVNChangeLogParser changeLogParser = xmlFormat ? (SVNChangeLogParser) new SVNXmlChangeLogParser(maxChangeListSize()) : (SVNChangeLogParser) new SVNTextChangeLogParser(maxChangeListSize());
+        final SVNChangeLogParser changeLogParser = xmlFormat ? new SVNXmlChangeLogParser(maxChangeListSize()) : new SVNTextChangeLogParser(maxChangeListSize());
         changeLogParser.setMaxChangeLists(maxChangeLists);
         changeLogParser.setIgnoreChangeListNumber(ignoreChangeListNumber);
         if (!repositoryPath.getOptions().isEmpty()) {

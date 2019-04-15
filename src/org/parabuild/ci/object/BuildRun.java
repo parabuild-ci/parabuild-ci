@@ -112,8 +112,8 @@ public final class BuildRun implements Serializable, ObjectConstants {
     this.buildRunNumber = source.buildRunNumber;
     this.resultID = source.resultID;
     this.complete = source.complete;
-    this.startedAt = source.startedAt != null ? new Date(source.startedAt.getTime()) : (Date) null;
-    this.finishedAt = source.finishedAt != null ? new Date(source.finishedAt.getTime()) : (Date) null;
+    this.startedAt = source.startedAt != null ? new Date(source.startedAt.getTime()) : null;
+    this.finishedAt = source.finishedAt != null ? new Date(source.finishedAt.getTime()) : null;
     this.timeStamp = source.timeStamp;
     this.resultDescription = source.resultDescription;
     this.label = source.label;
