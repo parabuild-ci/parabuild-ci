@@ -157,14 +157,6 @@ public final class DisplayGroupsTable extends AbstractFlatTable implements Loada
 
 
   /**
-   * This notification method is called when a new row is added.
-   * Implementing class can use it to keep track of deleted rows
-   */
-  public void notifyRowAdded(final int addedRowIndex) {
-  }
-
-
-  /**
    */
   public Component[] makeHeader() {
     final Component[] header = new Component[1];

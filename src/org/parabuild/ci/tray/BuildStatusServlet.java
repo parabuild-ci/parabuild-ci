@@ -33,11 +33,6 @@ public final class BuildStatusServlet extends HessianServlet implements BuildSta
   private static final Log log = LogFactory.getLog(BuildStatusServlet.class); //NOPMD
 
 
-  public void service(final ServletRequest servletRequest, final ServletResponse servletResponse) throws IOException, ServletException {
-    super.service(servletRequest, servletResponse);
-  }
-
-
   /**
    * @return List of {@link BuildStatus} objects.
    */
