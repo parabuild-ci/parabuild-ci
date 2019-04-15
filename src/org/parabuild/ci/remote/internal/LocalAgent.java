@@ -777,33 +777,6 @@ public final class LocalAgent implements Agent {
     return StringUtils.toStringArray(result);
   }
 
-  /**
-   * Returns a diff for a log tail for running build.
-   *
-   * @param lastTailEndLineNumber to start the diff from.
-   *
-   * For instance, if a requester has a tail that started a build
-   * log line number Ns1 and the length of the tail was Nl1, and
-   * the log moved to Ns2 with the same length, the diff
-   * requesting lines starting Ns1+Nl1 will return the number of
-   */
-//  public BuildLogTail getBuildLogTailDiff(final int lastTailEndLineNumber) {
-//    final BuildLogTail currentTail = BuildLogTailManager.getInstance().getLogTail(activeBuildID);
-//    final int currentTailBeginLineNumber = currentTail.getTailBegintLineNumber();
-//    final int currentTailEndLineNumber = currentTail.getTailEndLineNumber();
-//    // check if there was movement
-//    if (lastTailEndLineNumber == currentTailEndLineNumber) {
-//      // no changes, return zero diff
-//      return new BuildLogTail(lastTailEndLineNumber);
-//    } else if (lastTailEndLineNumber  > currentTailBeginLineNumber) {
-//      // the top of the tail has moved but it hasn't crossed the bottom of the last requested.
-//      final List lines = currentTail.getLines();
-//      for (int i = lastTailEndLineNumber; i < currentTailEndLineNumber; i++) {
-//
-//      }
-//    }
-//  }
-
 
   /**
    * Helper method. Returns true if a file is under a system or a
