@@ -23,6 +23,8 @@ import java.util.*;
  */
 public final class ProcessComparator implements Comparator, Serializable {
 
+  private static final long serialVersionUID = -380334459107228390L;
+
   private final int order;
   
   public ProcessComparator(final byte order) {
