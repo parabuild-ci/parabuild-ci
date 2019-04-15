@@ -32,7 +32,6 @@ import java.util.List;
 /**
  * Shows list of start parameters.
  *
- * @noinspection MethodOverloadsMethodOfSuperclass
  */
 final class SystemVariableListTable extends AbstractFlatTable {
 

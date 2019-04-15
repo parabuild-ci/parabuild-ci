@@ -54,7 +54,6 @@ final class AgentPanel extends MessagePanel implements Validatable, Saveable {
   private static final Log LOG = LogFactory.getLog(AgentPanel.class);  // NOPMD
 
   /**
-   * @noinspection NumericCastThatLosesPrecision
    */
   public static final byte EDIT_MODE_ADMIN = (byte) 0;
 

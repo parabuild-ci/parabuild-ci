@@ -44,7 +44,7 @@ import java.util.regex.Pattern;
  * This class is responsible for executing commands outside of
  * JVM.
  *
- * @noinspection CaughtExceptionImmediatelyRethrown, TryWithIdenticalCatches
+ * @noinspection TryWithIdenticalCatches
  */
 public class RemoteCommand implements Cleanable {
 

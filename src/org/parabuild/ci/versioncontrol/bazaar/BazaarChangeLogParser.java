@@ -36,7 +36,7 @@ import java.util.Locale;
  * <p/>
  *
  * @author Slava Imeshev
- * @noinspection ThrowInsideCatchBlockWhichIgnoresCaughtException,StringBufferReplaceableByString
+ * @noinspection ThrowInsideCatchBlockWhichIgnoresCaughtException
  */
 public final class BazaarChangeLogParser {
 
@@ -101,7 +101,7 @@ public final class BazaarChangeLogParser {
    * @param changeLogFile the change log file produced by the command.
    * @return a list of <code>ChangeList</code> objects.
    * @throws IOException if I/O error occurs.
-   * @noinspection ReuseOfLocalVariable,HardcodedLineSeparator
+   * @noinspection HardcodedLineSeparator
    */
   public List parseChangeLog(final File changeLogFile) throws IOException {
 

@@ -37,8 +37,7 @@ import java.util.Locale;
  * <p/>
  *
  * @author Slava Imeshev
- * @noinspection ThrowInsideCatchBlockWhichIgnoresCaughtException, StringBufferReplaceableByString
- * @since Jan 24, 2010 2:31:10 PM
+ * @noinspection StringBufferReplaceableByString @since Jan 24, 2010 2:31:10 PM
  */
 public final class GitTextChangeLogParser {
 

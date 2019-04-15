@@ -49,7 +49,6 @@ public final class EditGroupPage extends BasePage implements ConversationalTierl
   private final SaveButton btnSave = new SaveButton();  // NOPMD
   private final CancelButton btnCancel = new CancelButton();  // NOPMD
   /**
-   * @noinspection FieldCanBeLocal
    */
   private final Flow flwSaveCancel = new Flow().add(btnSave).add(new ButtonSeparator()).add(btnCancel);  // NOPMD
 

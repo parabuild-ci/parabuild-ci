@@ -222,7 +222,7 @@ public class MercurialVersionControl extends AbstractSourceControl {
    *                             if a general build error occurs.
    * @throws org.parabuild.ci.common.CommandStoppedException
    *                             if the command was stopped.
-   * @noinspection ControlFlowStatementWithoutBraces,ReuseOfLocalVariable,TooBroadScope
+   * @noinspection ControlFlowStatementWithoutBraces, TooBroadScope
    */
   private int getChangesSince(final String changeListNumberFrom, final String changeListNumberTo, final int maxChangeLists)
           throws IOException, CommandStoppedException, AgentFailureException {

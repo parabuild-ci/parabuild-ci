@@ -48,7 +48,6 @@ final class VariableValueHolderFlow extends Flow {
   private static final Log log = LogFactory.getLog(VariableValueHolderFlow.class); // NOPMD
 
   /**
-   * @noinspection FieldCanBeLocal
    */
   private byte presentation = -1;
   private ValueSource valueSource = null;

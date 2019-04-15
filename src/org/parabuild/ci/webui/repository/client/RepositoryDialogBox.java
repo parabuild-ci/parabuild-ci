@@ -98,7 +98,6 @@ public final class RepositoryDialogBox extends DialogBox {
 
       // (3) Make the call. Control flow will continue immediately and later
       // 'callback' will be invoked when the RPC completes.
-      //noinspection unchecked
       repositoryService.saveRepository(getRepositoryVO(), callback);
     }
   }

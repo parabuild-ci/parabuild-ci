@@ -84,7 +84,6 @@ import java.util.Map;
 /**
  * This is a class responsible for build management
  *
- * @noinspection ClassHasNoToStringMethod
  */
 public final class ConfigurationManager implements Serializable {
 

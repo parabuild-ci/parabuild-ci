@@ -40,7 +40,6 @@ final class SystemVariablePanel extends MessagePanel implements Validatable, Sav
   private static final Log LOG = LogFactory.getLog(SystemVariablePanel.class); // NOPMD
 
   /**
-   * @noinspection NumericCastThatLosesPrecision
    */
   public static final byte EDIT_MODE_ADMIN = (byte) 0;
 
@@ -146,7 +145,6 @@ final class SystemVariablePanel extends MessagePanel implements Validatable, Sav
    * Saves variable data.
    *
    * @return if saved successfuly.
-   * @noinspection ReuseOfLocalVariable
    */
   public boolean save() {
     if (LOG.isDebugEnabled()) {

@@ -30,7 +30,6 @@ import java.util.Arrays;
  * This class is responsible for automatic upgrading database
  * schema
  *
- * @noinspection ClassHasNoToStringMethod
  */
 public final class DatabaseSchemeUpgrader {
 

@@ -24,7 +24,7 @@ import java.sql.Statement;
 /**
  * Upgrades to version 76.
  *
- * @noinspection JDBCResourceOpenedButNotSafelyClosed,JDBCExecuteWithNonConstantString
+ * @noinspection JDBCExecuteWithNonConstantString
  */
 final class UpgraderToVersion76 implements SingleStepSchemaUpgrader {
 

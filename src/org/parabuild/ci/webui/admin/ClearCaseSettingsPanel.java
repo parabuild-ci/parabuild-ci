@@ -155,7 +155,6 @@ public final class ClearCaseSettingsPanel extends AbstractSourceControlPanel {
    * a component should dispaly a error message in it's area.
    *
    * @return true if valid
-   * @noinspection UnusedCatchParameter
    */
   protected boolean doValidate() {
     clearMessage();

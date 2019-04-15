@@ -51,8 +51,7 @@ import java.util.Set;
  * StopManyBuildsPanel
  *
  * @author Slava Imeshev
- * @noinspection FieldCanBeLocal,MethodOnlyUsedFromInnerClass
- * @since Apr 30, 2009 10:53:51 AM
+ * @noinspection MethodOnlyUsedFromInnerClass @since Apr 30, 2009 10:53:51 AM
  */
 public final class ResumeGroupPanel extends MessagePanel {
 
