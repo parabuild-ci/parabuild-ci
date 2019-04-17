@@ -82,7 +82,7 @@ public final class FishEyeSettingsPanel extends AbstractSourceControlPanel {
    */
   protected final boolean doValidate() {
     clearMessage();
-    final ArrayList errors = new ArrayList();
+    final ArrayList errors = new ArrayList(11);
 
     // show error if there are any
     if (errors.isEmpty()) return true;

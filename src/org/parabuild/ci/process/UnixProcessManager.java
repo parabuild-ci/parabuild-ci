@@ -13,6 +13,14 @@
  */
 package org.parabuild.ci.process;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.common.BuildException;
+import org.parabuild.ci.common.ExceptionUtils;
+import org.parabuild.ci.common.IoUtils;
+import org.parabuild.ci.remote.AgentEnvironment;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -21,15 +29,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
-import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.BuildException;
-import org.parabuild.ci.common.ExceptionUtils;
-import org.parabuild.ci.common.IoUtils;
-import org.parabuild.ci.remote.AgentEnvironment;
 
 
 /**
@@ -79,13 +78,13 @@ public final class UnixProcessManager implements ProcessManager {
    */
   public List getProcesses(final byte sortOrder, final String[] searchPatterns, final boolean returnChildren) throws BuildException {
     // list of OSProcess object      
-    final List ret = new ArrayList();
+    final List ret = new ArrayList(11);
     // mapping PPID->list of children PID
-    final Map tree = new HashMap();
+    final Map tree = new HashMap(11);
     // mapping PID->OSProcess
-    final Map processes = new HashMap();
+    final Map processes = new HashMap(11);
     // set of found processes
-    final Set found = new HashSet();
+    final Set found = new HashSet(11);
 
     InputStream is = parser.getProcesses();
     // Collect processes list and tree
@@ -96,7 +95,7 @@ public final class UnixProcessManager implements ProcessManager {
     }
 
     // mapping PID->OSProcess
-    final Map processes_env = new HashMap();
+    final Map processes_env = new HashMap(11);
 
     // If we need to perform deep scan list processes
     // with environment
@@ -164,21 +163,21 @@ public final class UnixProcessManager implements ProcessManager {
   public List killProcess(final int pid) throws BuildException {
     // list of OSProcess object      
     // mapping PPID->list of children PID
-    final Map tree = new HashMap();
+    final Map tree = new HashMap(11);
     // mapping PID->OSProcess
 
     // Collect processes list and tree
     final InputStream is = parser.getProcesses();
     try {
-      final List ret = new ArrayList();
-      final Map processes = new HashMap();
+      final List ret = new ArrayList(11);
+      final Map processes = new HashMap(11);
       parser.parse(is, ret, processes, tree);
     } finally {
       IoUtils.closeHard(is);
     }
 
     // collect all children processes
-    final List childrens = new ArrayList();
+    final List childrens = new ArrayList(11);
     ProcessUtils.getChildren(new Integer(pid), tree, childrens);
 
     return kill(childrens);
@@ -194,11 +193,11 @@ public final class UnixProcessManager implements ProcessManager {
     // Collect all processes that should be killed
     // stage 0: retrieve list of processes
     // list of OSProcess object      
-    final List ret = new ArrayList();
+    final List ret = new ArrayList(11);
     // mapping PPID->list of children PID
-    final Map tree = new HashMap();
+    final Map tree = new HashMap(11);
     // mapping PID->OSProcess
-    final Map procList = new HashMap();
+    final Map procList = new HashMap(11);
 
     final InputStream is = parser.getProcesses();
     // Collect processes list and tree
@@ -208,7 +207,7 @@ public final class UnixProcessManager implements ProcessManager {
       IoUtils.closeHard(is);
     }
     // collect ALL children processes
-    final List children = new ArrayList();
+    final List children = new ArrayList(11);
     for (int i = 0, n = processes.size(); i < n; i++) {
       ProcessUtils.getChildren((Integer) processes.get(i), tree, children);
     }
@@ -243,11 +242,11 @@ public final class UnixProcessManager implements ProcessManager {
       IoUtils.closeHard(is);
     }
     // re-retrieve list of children
-    final List ret = new ArrayList();
+    final List ret = new ArrayList(11);
     // mapping PPID->list of children PID
-    final Map tree = new HashMap();
+    final Map tree = new HashMap(11);
     // mapping PID->OSProcess
-    final Map procList = new HashMap();
+    final Map procList = new HashMap(11);
 
     is = parser.getProcesses();
     try {
@@ -269,7 +268,7 @@ public final class UnixProcessManager implements ProcessManager {
     }
 
     if (children.isEmpty()) {
-      return new ArrayList();
+      return new ArrayList(11);
     }
 
     try {

@@ -44,7 +44,7 @@ final class PublishedResultFilesTable extends AbstractFlatTable {
   private static final int COL_COMMANDS = 4;
   private static final long serialVersionUID = -6718910702342503196L;
 
-  private List results = new ArrayList();
+  private List results = new ArrayList(11);
 
 
   /**

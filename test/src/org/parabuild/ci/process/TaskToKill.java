@@ -63,7 +63,7 @@ public class TaskToKill extends Thread {
   public void run() {
     try {
       // execute command
-      final Map env = new HashMap();
+      final Map env = new HashMap(11);
       env.put("TEST_SIGNATURE", TEST_SIGNATURE_VALUE);
       agentEnv.execute(dir.toString(), command, env, new NullOutputStream(), new NullOutputStream());
     } catch (IOException e) {

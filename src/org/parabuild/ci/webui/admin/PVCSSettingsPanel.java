@@ -137,7 +137,7 @@ public final class PVCSSettingsPanel extends AbstractSourceControlPanel {
    */
   protected final boolean doValidate() {
     clearMessage();
-    final ArrayList errors = new ArrayList();
+    final ArrayList errors = new ArrayList(11);
 
     // validate fields are not blank
     WebuiUtils.validateFieldNotBlank(errors, NAME_PCLI_EXE_PATH, fldPathToPVCSClient);

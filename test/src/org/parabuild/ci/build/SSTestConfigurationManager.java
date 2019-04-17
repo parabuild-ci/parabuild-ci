@@ -1067,7 +1067,7 @@ public final class SSTestConfigurationManager extends ServersideTestCase {
   public void test_saveResultConfigProperties() {
     final ResultConfig rc = createAndSaveResultConfig();
     final ResultConfigProperty rcp = new ResultConfigProperty(rc.getID(), ResultConfigProperty.ATTR_FILE_EXTENSIONS, ".zip");
-    final List list = new ArrayList();
+    final List list = new ArrayList(11);
     list.add(rcp);
     configManager.saveResultConfigProperties(rc.getID(), list);
   }

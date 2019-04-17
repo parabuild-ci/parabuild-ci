@@ -123,7 +123,7 @@ public final class SATestP4ClientViewParser extends TestCase {
     final Pattern pattern = Pattern.compile("(?:^|\\s)(?:-//|//)", Pattern.CASE_INSENSITIVE);
     final Matcher matcher = pattern.matcher(viewLine);
 
-    final List paths = new ArrayList();
+    final List paths = new ArrayList(11);
     int prevStart = -1;
     int start = -1;
     while (matcher.find()) {

@@ -38,7 +38,7 @@ public class SATestManualStartParameter extends TestCase {
 
 
   public void test_encrypt() throws Exception {
-    final List list = new ArrayList();
+    final List list = new ArrayList(11);
     list.add(TEST_VALUE1);
     list.add(TEST_VALUE2);
     parameter.setRuntimeValue(list);

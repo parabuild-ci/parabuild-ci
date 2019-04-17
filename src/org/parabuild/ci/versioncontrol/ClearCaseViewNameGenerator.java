@@ -65,8 +65,8 @@ public final class ClearCaseViewNameGenerator {
 
 
   public boolean isTemplateValid() {
-    final ArrayList properties = new ArrayList();
-    final ArrayList fragments = new ArrayList();
+    final ArrayList properties = new ArrayList(11);
+    final ArrayList fragments = new ArrayList(11);
     try {
       // parse
       NamedPropertyUtils.parsePropertyString(nameTemplate, fragments, properties);

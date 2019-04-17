@@ -81,7 +81,7 @@ public final class GeneralLogSettingsPanel extends MessagePanel implements Loada
    */
   public boolean validate() {
     clearMessage();
-    final List errors = new ArrayList();
+    final List errors = new ArrayList(11);
     validateNumberField(errors, flPackDays, " days ");
     // show errors if any
     if (!errors.isEmpty()) {

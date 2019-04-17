@@ -127,7 +127,7 @@ public final class SSTestSurroundSourceControl extends AbstractSourceControlTest
   public void test_checkOutLatestBranch() throws Exception {
     TestHelper.emptyCheckoutDir(agent);
     // alter config to be branched
-    final List settings = new ArrayList();
+    final List settings = new ArrayList(11);
     settings.add(makeSetting(SourceControlSetting.SURROUND_REPOSITORY, "test/sourceline"));
     settings.add(makeSetting(SourceControlSetting.SURROUND_PATH_TO_EXE, "sscm"));
     settings.add(makeSetting(SourceControlSetting.SURROUND_BRANCH, TEST_BRANCH));
@@ -155,7 +155,7 @@ public final class SSTestSurroundSourceControl extends AbstractSourceControlTest
     // REVIEWME: simeshev@parabuilci.org -> returning - cannot adde changes to branch
     if (true) return;
     // alter config to be branched
-    final List settings = new ArrayList();
+    final List settings = new ArrayList(11);
     settings.add(makeSetting(SourceControlSetting.SURROUND_REPOSITORY, "test/sourceline"));
     settings.add(makeSetting(SourceControlSetting.SURROUND_PATH_TO_EXE, "sscm"));
     settings.add(makeSetting(SourceControlSetting.SURROUND_BRANCH, TEST_BRANCH));
@@ -215,7 +215,7 @@ public final class SSTestSurroundSourceControl extends AbstractSourceControlTest
    */
   public void test_checkOutLatestCantProcessUnexistingSourceLine() throws Exception {
     try {
-      final List settings = new ArrayList();
+      final List settings = new ArrayList(11);
       settings.add(makeSetting(SourceControlSetting.SURROUND_REPOSITORY, "test/sourceline/never_existed"));
       settings.add(makeSetting(SourceControlSetting.SURROUND_PATH_TO_EXE, "sscm"));
       settings.add(makeSetting(SourceControlSetting.SURROUND_BRANCH, "test"));
@@ -238,7 +238,7 @@ public final class SSTestSurroundSourceControl extends AbstractSourceControlTest
    */
   public void test_checkOutLatestCantProcessInavalidUser() throws Exception {
     try {
-      final List settings = new ArrayList();
+      final List settings = new ArrayList(11);
       settings.add(makeSetting(SourceControlSetting.SURROUND_REPOSITORY, "test/sourceline/alwaysvalid"));
       settings.add(makeSetting(SourceControlSetting.SURROUND_PATH_TO_EXE, "sscm"));
       settings.add(makeSetting(SourceControlSetting.SURROUND_BRANCH, "test"));
@@ -311,7 +311,7 @@ public final class SSTestSurroundSourceControl extends AbstractSourceControlTest
    */
   public void test_canNotAccessWithWrongPassword() throws Exception {
     try {
-      final List settings = new ArrayList();
+      final List settings = new ArrayList(11);
       settings.add(makeSetting(SourceControlSetting.SURROUND_REPOSITORY, "test/sourceline/alwaysvalid"));
       settings.add(makeSetting(SourceControlSetting.SURROUND_PATH_TO_EXE, "sscm"));
       settings.add(makeSetting(SourceControlSetting.SURROUND_BRANCH, "test"));

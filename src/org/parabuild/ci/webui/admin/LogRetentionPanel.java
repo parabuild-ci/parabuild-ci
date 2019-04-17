@@ -100,7 +100,7 @@ public final class LogRetentionPanel extends MessagePanel implements Loadable, V
    */
   public boolean validate() {
     clearMessage();
-    final List errors = new ArrayList();
+    final List errors = new ArrayList(11);
     validateNumberField(errors, flRetentionDays, " days ");
     // show errors if any
     if (!errors.isEmpty()) {

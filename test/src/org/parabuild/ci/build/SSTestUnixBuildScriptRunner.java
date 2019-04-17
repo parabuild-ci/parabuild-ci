@@ -148,7 +148,7 @@ public class SSTestUnixBuildScriptRunner extends ServersideTestCase {
     script = makeTempTestFile("-script.sh");
 
     // timeout matches
-    final List timeoutMatches = new ArrayList();
+    final List timeoutMatches = new ArrayList(11);
     timeoutMatches.add(script.getAbsolutePath());
 
     // runner

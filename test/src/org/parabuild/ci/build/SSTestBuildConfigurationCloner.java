@@ -115,7 +115,7 @@ public class SSTestBuildConfigurationCloner extends ServersideTestCase {
 
   public void test_createBuildRunConfigTakesInAccountOwerwrites() throws Exception {
     // prepare
-    final List overwriteList = new ArrayList();
+    final List overwriteList = new ArrayList(11);
     overwriteList.add(new SourceControlSettingVO(SourceControlSetting.CVS_BRANCH_NAME, TEST_SOME_NEW_BRANCH));
     // run
     final BuildConfigCloner clonerWithOverwrites = new BuildConfigCloner(overwriteList);

@@ -129,7 +129,7 @@ final class WindowsProcessManager implements ProcessManager {
     InputStream is = ProcessUtils.execute(agentEnvironment, LIST_PROCESSES);
 
     if (ProcessUtils.PROCESS_DEBUG_ENABLED) log.debug("Retrieving list");
-    final ArrayList ret = new ArrayList();
+    final ArrayList ret = new ArrayList(11);
     try {
       getProcesses(is, ret);
     } finally {
@@ -145,9 +145,9 @@ final class WindowsProcessManager implements ProcessManager {
     // Mapping PPID->list of PIDs
     Map tree = null;
     // Result set
-    final Set found = new HashSet();
+    final Set found = new HashSet(11);
     // Mappin PID->OSProcess
-    final Map processes = new HashMap();
+    final Map processes = new HashMap(11);
 
     try {
       pids = getPPIDs(is);
@@ -234,7 +234,7 @@ final class WindowsProcessManager implements ProcessManager {
     }
 
     // collect all children processes
-    final List childrens = new ArrayList();
+    final List childrens = new ArrayList(11);
     ProcessUtils.getChildren(new Integer(pid), tree, childrens);
 
     return kill(childrens);
@@ -261,7 +261,7 @@ final class WindowsProcessManager implements ProcessManager {
     }
 
     // collect ALL children processes
-    final List childrens = new ArrayList();
+    final List childrens = new ArrayList(11);
     for (int i = 0, n = processes.size(); i < n; i++) {
       ProcessUtils.getChildren((Integer) processes.get(i), tree, childrens);
     }
@@ -337,7 +337,7 @@ final class WindowsProcessManager implements ProcessManager {
    *                        I/O error or if data supplied by PV is in unknown format
    */
   private Map getPPIDs(final InputStream in) throws BuildException {
-    final Map ret = new HashMap();
+    final Map ret = new HashMap(11);
     // TODO: What about charsets? E.g. if command name is russian or chinese?
     final BufferedReader rdr = new BufferedReader(new InputStreamReader(in));
     try {
@@ -374,7 +374,7 @@ final class WindowsProcessManager implements ProcessManager {
    *                        I/O error or if data supplied by PV is in unknown format
    */
   private Map getTree(final InputStream in) throws BuildException {
-    final Map ret = new HashMap();
+    final Map ret = new HashMap(11);
     // TODO: What about charsets? E.g. if command name is russian or chinese?
     final BufferedReader rdr = new BufferedReader(new InputStreamReader(in));
     try {
@@ -394,7 +394,7 @@ final class WindowsProcessManager implements ProcessManager {
         // retrieve list of alread known childrens
         List l = (List) ret.get(ppid);
         if (l == null) {
-          l = new ArrayList();
+          l = new ArrayList(11);
           ret.put(ppid, l);
         }
         l.add(pid);
@@ -470,7 +470,7 @@ final class WindowsProcessManager implements ProcessManager {
       }
     }
     if (buf.length() == 0) {
-      return new ArrayList();
+      return new ArrayList(11);
     }
     // call system command
     if (ProcessUtils.PROCESS_DEBUG_ENABLED) log.debug("Left: " + buf);
@@ -486,7 +486,7 @@ final class WindowsProcessManager implements ProcessManager {
     }
 
     // Looking for processes left
-    final List ret = new ArrayList();
+    final List ret = new ArrayList(11);
     buf.setLength(0);
     for (int i = 0, n = children.size(); i < n; i++) {
       final Integer id = (Integer) children.get(i);
@@ -510,7 +510,7 @@ final class WindowsProcessManager implements ProcessManager {
    *                        I/O error or if data supplied by PV is in unknown format
    */
   private Set getPIDs(final InputStream in) throws BuildException {
-    final Set ret = new HashSet();
+    final Set ret = new HashSet(11);
     final BufferedReader rdr = new BufferedReader(new InputStreamReader(in));
     try {
       String line;

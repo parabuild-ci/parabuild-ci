@@ -52,8 +52,8 @@ public final class IssueTrackerTable extends AbstractFlatTable implements Loadab
 
   private static final long serialVersionUID = -536487757842715466L; // NOPMD
 
-  private List trackers = new ArrayList(); // empty list
-  private final List deleted = new ArrayList();
+  private List trackers = new ArrayList(11); // empty list
+  private final List deleted = new ArrayList(11);
   private int buildID = BuildConfig.UNSAVED_ID;
 
 

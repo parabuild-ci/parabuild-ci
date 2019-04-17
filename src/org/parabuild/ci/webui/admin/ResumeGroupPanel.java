@@ -121,12 +121,12 @@ public final class ResumeGroupPanel extends MessagePanel {
     final List selectionBuildIDs;
     if (Pages.RESUME_GROUP_SOURCE_BUILD_COMMANDS.equals(source)) {
       // Prepare selected
-      selectedBuildIDs = new ArrayList();
+      selectedBuildIDs = new ArrayList(11);
       if (StringUtils.isValidInteger(buildID)) {
         selectedBuildIDs.add(new Integer(buildID));
       }
       // Prepare selection
-      selectionBuildIDs = new ArrayList();
+      selectionBuildIDs = new ArrayList(11);
       final List list = BuildManager.getInstance().getCurrentBuildsStatuses();
       for (int i = 0; i < list.size(); i++) {
         final BuildState buildState = (BuildState) list.get(i);

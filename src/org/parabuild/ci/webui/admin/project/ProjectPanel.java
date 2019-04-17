@@ -84,7 +84,7 @@ public final class ProjectPanel extends MessagePanel implements Validatable, Sav
   public boolean validate() {
     if (log.isDebugEnabled()) log.debug("validating project");
     // general validation
-    final List errors = new ArrayList();
+    final List errors = new ArrayList(11);
     WebuiUtils.validateFieldNotBlank(errors, CAPTION_PROJECT_NAME, flName);
     WebuiUtils.validateFieldNotBlank(errors, CAPTION_KEY, flKey);
     WebuiUtils.validateFieldNotBlank(errors, CAPTION_DESCRIPTION, flDescription);

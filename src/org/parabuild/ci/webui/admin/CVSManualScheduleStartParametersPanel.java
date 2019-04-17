@@ -84,7 +84,7 @@ final class CVSManualScheduleStartParametersPanel extends ManualScheduleStartPar
    */
   public boolean validate() {
     clearMessage();
-    final ArrayList errors = new ArrayList();
+    final ArrayList errors = new ArrayList(11);
 
     // branch name is valid
     if (!StringUtils.isBlank(flBranch.getValue())) {

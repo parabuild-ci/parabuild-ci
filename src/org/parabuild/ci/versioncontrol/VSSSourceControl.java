@@ -431,7 +431,7 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
    * @see ErrorManager
    */
   public Map getUsersMap() {
-    return new HashMap(); // VSS does not support user e-mails, return empty map
+    return new HashMap(11); // VSS does not support user e-mails, return empty map
   }
 
 

@@ -72,7 +72,7 @@ public final class SolarisProcessParser implements ProcessParser {
 
 
   static {
-    ENV = new HashMap();
+    ENV = new HashMap(11);
     ENV.put(COLUMNS, LARGE_COLUMNS);
   }
 
@@ -171,7 +171,7 @@ public final class SolarisProcessParser implements ProcessParser {
 
         List l = (List)tree.get(i_ppid);
         if (l == null) {
-          l = new ArrayList();
+          l = new ArrayList(11);
           tree.put(i_ppid, l);
         }
         l.add(i_pid);

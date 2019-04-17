@@ -83,7 +83,7 @@ public class SATestCVSChangeLogParser extends TestCase {
     InputStream changeLogInputStream = null;
     try {
       changeLogInputStream = makeTestChangeLogInputStream();
-      final Map excludes = new HashMap();
+      final Map excludes = new HashMap(11);
       excludes.put(new Integer("/opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/Build.java,v".hashCode()), Boolean.TRUE);
       changeLogParser.setRCSNamesHashesToExclude(excludes);
       final List result = changeLogParser.parseChangeLog(changeLogInputStream);

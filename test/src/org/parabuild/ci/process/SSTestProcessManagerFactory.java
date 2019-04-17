@@ -191,7 +191,7 @@ public class SSTestProcessManagerFactory extends TestCase {
             !procList.isEmpty());
 
     // kill
-    final List pids = new ArrayList();
+    final List pids = new ArrayList(11);
     for (int i = 0; i < procList.size(); i++) {
       final OSProcess p = (OSProcess) procList.get(i);
       pids.add(new Integer(p.getPID()));
@@ -433,7 +433,7 @@ public class SSTestProcessManagerFactory extends TestCase {
 
     Collections.sort(procList, new TestComparator(true));
 
-    final List toKill = new ArrayList();
+    final List toKill = new ArrayList(11);
 
     for (int i = 0; i < procList.size(); i++) {
       final OSProcess p = (OSProcess) procList.get(i);
@@ -497,7 +497,7 @@ public class SSTestProcessManagerFactory extends TestCase {
 
     Collections.sort(procList, new TestComparator(false));
 
-    final List toKill = new ArrayList();
+    final List toKill = new ArrayList(11);
     for (int i = 0; i < procList.size(); i++) {
       final OSProcess p = (OSProcess) procList.get(i);
       toKill.add(new Integer(p.getPID()));

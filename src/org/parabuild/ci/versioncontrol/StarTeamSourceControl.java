@@ -289,7 +289,7 @@ public class StarTeamSourceControl extends AbstractSourceControl {
   private List findDeleted(final String project, final Agent agent, final Date sinceDate) throws IOException, CommandStoppedException, AgentFailureException {
     // check if there is time to check since
     if (sinceDate == null) {
-      return new ArrayList();
+      return new ArrayList(11);
     }
 
     StarTeamCommand oldListCommand = null;

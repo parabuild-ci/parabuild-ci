@@ -94,7 +94,7 @@ public class SSTestWindowsBuildScriptRunner extends ServersideTestCase {
     script = makeTempTestFile("-script.bat");
 
     // timeout matches
-    final List timeoutMatches = new ArrayList();
+    final List timeoutMatches = new ArrayList(11);
     timeoutMatches.add(script.getAbsolutePath());
 
     // runner

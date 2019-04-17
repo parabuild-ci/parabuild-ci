@@ -101,7 +101,7 @@ public final class LabelSettingsPanelImpl extends LabelSettingsPanel {
    */
   public boolean validate() {
     super.clearMessage();
-    final List errors = new ArrayList();
+    final List errors = new ArrayList(11);
 
     if (rbNoLabel.isSelected()) return true;
 

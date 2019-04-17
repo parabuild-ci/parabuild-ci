@@ -13,9 +13,6 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import java.io.*;
-import java.util.*;
-
 import org.parabuild.ci.archive.ArchiveManager;
 import org.parabuild.ci.archive.ArchiveManagerFactory;
 import org.parabuild.ci.common.StringUtils;
@@ -39,6 +36,10 @@ import viewtier.ui.Flow;
 import viewtier.ui.Label;
 import viewtier.ui.Layout;
 import viewtier.ui.Parameters;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This page is repsonsible for removing build logs that are
@@ -99,7 +100,7 @@ public final class CleanUpBuildResultArchivePage extends BasePage implements Con
       if (action == ACTION_DELETE) {
 
         // validate input
-        final List errors = new ArrayList();
+        final List errors = new ArrayList(11);
         WebuiUtils.validateFieldValidPositiveInteger(errors, "Number of days", flNumberOfDays);
         if (!errors.isEmpty()) {
           pnlDeleteBuild.showErrorMessage(errors);

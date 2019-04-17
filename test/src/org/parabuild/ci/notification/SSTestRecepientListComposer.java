@@ -126,7 +126,7 @@ public class SSTestRecepientListComposer extends ServersideTestCase {
     final BuildWatcher bw = new BuildWatcher();
     bw.setEmail(TEST_WATCHER_EMAIL);
     bw.setLevel(BuildWatcher.LEVEL_BROKEN);
-    final List list = new ArrayList();
+    final List list = new ArrayList(11);
     list.add(bw);
     composer.addWatchers(BuildWatcher.LEVEL_BROKEN, list);
     assertEquals(1, composer.getToRecipients().size());
@@ -242,7 +242,7 @@ public class SSTestRecepientListComposer extends ServersideTestCase {
   /**
    */
   public void test_makeRecipients() throws AddressException {
-    final ArrayList nagReport = new ArrayList();
+    final ArrayList nagReport = new ArrayList(11);
     nagReport.add(new MergeNag() {
       public String getUserName() {
         return "test_user";
