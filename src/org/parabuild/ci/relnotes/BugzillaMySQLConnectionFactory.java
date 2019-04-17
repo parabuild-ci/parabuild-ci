@@ -13,10 +13,14 @@
  */
 package org.parabuild.ci.relnotes;
 
-import java.sql.*;
-import java.util.*;
+import org.parabuild.ci.common.ArgumentValidator;
+import org.parabuild.ci.common.IoUtils;
+import org.parabuild.ci.common.StringUtils;
 
-import org.parabuild.ci.common.*;
+import java.sql.Connection;
+import java.sql.Driver;
+import java.sql.SQLException;
+import java.util.Properties;
 
 /**
  * This class provides Connection object for MySQL Bugzilla
@@ -66,7 +70,7 @@ public final class BugzillaMySQLConnectionFactory {
 
     try {
       // load driver
-      final Driver driver = (Driver)Class.forName(STR_MYSQL_DRIVER).newInstance();
+      final Driver driver = (Driver) Class.forName(STR_MYSQL_DRIVER).getConstructor().newInstance();
       // connect
       final Properties props = new Properties();
       props.setProperty(STR_USER, databaseUser);

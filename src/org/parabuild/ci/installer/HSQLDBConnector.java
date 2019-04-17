@@ -104,7 +104,7 @@ final class HSQLDBConnector {
     final ClassLoader hsqldbClassloader = new URLClassLoader(new URL[]{hsqldbJarURL});
     try {
       final Class hsqldbDriverClass = hsqldbClassloader.loadClass(HSQLDB_DRIVER);
-      return (Driver) hsqldbDriverClass.newInstance();
+      return (Driver) hsqldbDriverClass.getConstructor().newInstance();
     } catch (final RuntimeException e) {
       throw e;
     } catch (final Exception e) {

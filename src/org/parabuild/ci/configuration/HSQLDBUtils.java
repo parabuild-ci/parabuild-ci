@@ -58,7 +58,7 @@ public final class HSQLDBUtils {
       final Properties info = new Properties();
       info.setProperty("user", userName);
       info.setProperty("password", password);
-      return ((Driver)Class.forName(driverName).newInstance()).connect(url, info);
+      return ((Driver) Class.forName(driverName).getConstructor().newInstance()).connect(url, info);
     } catch (final SQLException e) {
       throw e;
     } catch (final Exception e) {
