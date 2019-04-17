@@ -119,7 +119,7 @@ public final class CurrentlyBuildingStepsFlow extends Flow {
    *
    * @return created Label
    */
-  private Label makeStepLabel(final String stepName) {
+  private static Label makeStepLabel(final String stepName) {
     final Label result = new BoldCommonLabel(stepName);
     result.setForeground(Color.Gray);
     return result;

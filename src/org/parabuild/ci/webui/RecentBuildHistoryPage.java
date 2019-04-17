@@ -143,7 +143,7 @@ public final class RecentBuildHistoryPage extends AbstractBuildStatisticsPage im
   /**
    * Helper method.
    */
-  private PaginatorFlow makePaginatorFlow(final int activeBuildID, final int code, final int count, final Parameters parameters) {
+  private static PaginatorFlow makePaginatorFlow(final int activeBuildID, final int code, final int count, final Parameters parameters) {
     final Properties p = new Properties();
     p.setProperty(Pages.PARAM_BUILD_ID, Integer.toString(activeBuildID));
     p.setProperty(Pages.PARAM_FILTER, Integer.toString(code));

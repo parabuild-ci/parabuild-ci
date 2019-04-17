@@ -127,7 +127,7 @@ public final class GlobalVCSUserMapPage extends BasePage implements Conversation
   }
 
 
-  private ButtonPressedListener createCancelListener() {
+  private static ButtonPressedListener createCancelListener() {
     return new ButtonPressedListener() {
       private static final long serialVersionUID = 3344092526377787414L;
 

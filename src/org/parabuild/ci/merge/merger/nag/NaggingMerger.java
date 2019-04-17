@@ -89,7 +89,7 @@ public final class NaggingMerger implements Merger {
   }
 
 
-  private Map getUserMapFromVCS(final int targetBuildID) throws IOException, CommandStoppedException, AgentFailureException {
+  private static Map getUserMapFromVCS(final int targetBuildID) throws IOException, CommandStoppedException, AgentFailureException {
     final SourceControl targetSourceControl = VersionControlFactory.makeVersionControl(ConfigurationManager.getInstance().getBuildConfiguration(targetBuildID));
     // NOTE: simeshev@parabuilci.org - 2009-02-23 - it is OK to use next because we need only user map
     final AgentHost agentHost = AgentManager.getInstance().getNextLiveAgentHost(targetBuildID);

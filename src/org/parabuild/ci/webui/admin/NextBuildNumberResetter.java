@@ -114,7 +114,7 @@ public final class NextBuildNumberResetter {
   /**
    * Helper
    */
-  private int calculateNumberToStore(final String number) {
+  private static int calculateNumberToStore(final String number) {
     return Integer.parseInt(number) - 1;
   }
 }

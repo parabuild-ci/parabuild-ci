@@ -131,7 +131,7 @@ public final class JavascriptBuildStatusServlet extends HttpServlet {
    * @param imageNameTrue returned if selector is true
    * @param imageNameFalse returned if selector is false
    */
-  private String imageNameSwitch(final boolean selector, final String imageNameTrue, final String imageNameFalse) {
+  private static String imageNameSwitch(final boolean selector, final String imageNameTrue, final String imageNameFalse) {
     if (selector) {
       return imageNameTrue;
     } else {
@@ -149,7 +149,7 @@ public final class JavascriptBuildStatusServlet extends HttpServlet {
    * @return true if "showbuildname" parameter is present and
    *         equals "true".
    */
-  private boolean showBuildName(final HttpServletRequest req) {
+  private static boolean showBuildName(final HttpServletRequest req) {
     final String parameter = req.getParameter(PARAM_BUILD_NAME);
     return "true".equalsIgnoreCase(parameter);
   }
@@ -158,7 +158,7 @@ public final class JavascriptBuildStatusServlet extends HttpServlet {
   /**
    * Helper method to create span style.
    */
-  private String makeSpanStyle(final HttpServletRequest req) {
+  private static String makeSpanStyle(final HttpServletRequest req) {
     // border color
     String borderColor = req.getParameter(PARAM_BORDER_COLOR);
     if (StringUtils.isBlank(borderColor)) borderColor = "C0C0C0";
@@ -175,7 +175,7 @@ public final class JavascriptBuildStatusServlet extends HttpServlet {
   /**
    * Helper method to create caption prefix.
    */
-  private String makeCaptionPrefix(final BuildRun lastCompleteBuildRun, final boolean showBuildName) {
+  private static String makeCaptionPrefix(final BuildRun lastCompleteBuildRun, final boolean showBuildName) {
     if (showBuildName) {
       return lastCompleteBuildRun.getBuildName() + '#' + lastCompleteBuildRun.getBuildRunNumberAsString();
     } else {

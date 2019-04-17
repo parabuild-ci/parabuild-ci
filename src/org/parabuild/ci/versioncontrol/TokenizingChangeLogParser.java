@@ -194,7 +194,7 @@ public final class TokenizingChangeLogParser {
   }
 
 
-  private boolean isInType(final String type, final String[] typeList) {
+  private static boolean isInType(final String type, final String[] typeList) {
     final String lowerCaseType = type.toLowerCase();
     if (typeList.length == 1) {
       return typeList[0].equals(lowerCaseType);

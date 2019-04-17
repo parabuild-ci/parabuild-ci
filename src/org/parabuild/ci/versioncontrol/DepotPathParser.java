@@ -136,7 +136,7 @@ public final class DepotPathParser {
   }
 
 
-  private boolean isSubpath(final String s1, final String s2) {
+  private static boolean isSubpath(final String s1, final String s2) {
     return s1.startsWith(s2) && s1.charAt(s2.length()) == '/';
   }
 
@@ -168,7 +168,7 @@ public final class DepotPathParser {
   }
 
 
-  private ValidationException makeSubpathException(final String s2, final String s1) {
+  private static ValidationException makeSubpathException(final String s2, final String s1) {
     return new ValidationException("Path \"" + s2 + "\" is a subpath of \"" + s1 + "\" that is not allowed.");
   }
 

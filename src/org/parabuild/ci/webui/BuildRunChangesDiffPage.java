@@ -90,7 +90,7 @@ public final class BuildRunChangesDiffPage extends AbstractBuildRunResultPage im
   }
 
 
-  private String makeOtherBuildString(final Integer endBuildNumber) {
+  private static String makeOtherBuildString(final Integer endBuildNumber) {
     if (endBuildNumber == null) {
       return " and other build";
     }

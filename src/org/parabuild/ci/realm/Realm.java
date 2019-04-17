@@ -261,7 +261,7 @@ public final class Realm extends RealmBase {
 //  }
 
 
-  private void closeHard(final Connection conn1) {
+  private static void closeHard(final Connection conn1) {
     if (conn1 != null) {
       try {
         conn1.close();
@@ -271,7 +271,7 @@ public final class Realm extends RealmBase {
   }
 
 
-  private String toString(final Exception e) {
+  private static String toString(final Exception e) {
     final String result;
     final String message = e.toString();
     final int i = message.indexOf("ion: ");
@@ -284,7 +284,7 @@ public final class Realm extends RealmBase {
   }
 
 
-  private void closeHard(final PreparedStatement pstmt) {
+  private static void closeHard(final PreparedStatement pstmt) {
     if (pstmt != null) {
       try {
         pstmt.close();
@@ -294,7 +294,7 @@ public final class Realm extends RealmBase {
   }
 
 
-  private void closeHard(final ResultSet rs) {
+  private static void closeHard(final ResultSet rs) {
     if (rs != null) {
       try {
         rs.close();

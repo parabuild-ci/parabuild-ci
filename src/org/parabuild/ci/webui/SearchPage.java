@@ -153,7 +153,7 @@ public final class SearchPage extends BasePage implements ConversationalTierlet 
   /**
    * Helper method.
    */
-  private void reportErrorToAdministrator(final Exception e) {
+  private static void reportErrorToAdministrator(final Exception e) {
     final Error error = new Error(StringUtils.toString(e));
     error.setDetails(e);
     error.setSubsystemName(Error.ERROR_SUBSYSTEM_SEARCH);

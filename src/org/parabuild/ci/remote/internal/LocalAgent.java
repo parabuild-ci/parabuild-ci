@@ -566,7 +566,7 @@ public final class LocalAgent implements Agent {
   }
 
 
-  private boolean deleteBuildDirHard(final File dir) {
+  private static boolean deleteBuildDirHard(final File dir) {
     if (IoUtils.deleteFileHard(dir)) {
       return true;
     }

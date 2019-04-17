@@ -184,7 +184,7 @@ final class EditPromotionPolicyPanel extends MessagePanel {
   }
 
 
-  private Tierlet.Result promotionPolicyListHome() {
+  private static Tierlet.Result promotionPolicyListHome() {
     return Tierlet.Result.Done(Pages.PAGE_PROMOTION_POLICY_LIST);
   }
 

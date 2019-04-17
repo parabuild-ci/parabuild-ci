@@ -119,7 +119,7 @@ public class AbstractSystemConfigurationPage extends NavigatableSystemConfigurat
   }
 
 
-  private boolean isValidateOnLoad(final Parameters params) {
+  private static boolean isValidateOnLoad(final Parameters params) {
     final String validateOnLoadString = params.getParameterValue(Pages.PARAM_VALIDATE_ON_LOAD);
     return "true".equalsIgnoreCase(validateOnLoadString);
   }

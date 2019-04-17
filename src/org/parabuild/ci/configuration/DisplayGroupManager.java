@@ -249,7 +249,7 @@ public final class DisplayGroupManager {
   /**
    * Helpert method to add the state to the list while filtering based on it is status.
    */
-  private void add(final List result, final BuildState state, final boolean showInactiveWithAll) {
+  private static void add(final List result, final BuildState state, final boolean showInactiveWithAll) {
     if (BuildStatus.INACTIVE.equals(state.getStatus())) {
       if (showInactiveWithAll) {
         result.add(state);

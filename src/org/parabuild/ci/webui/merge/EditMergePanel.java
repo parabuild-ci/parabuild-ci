@@ -266,7 +266,7 @@ final class EditMergePanel extends MessagePanel {
   }
 
 
-  private void processBuildSelection(final int activeBuildID, final Label lbValueSeparator, final DepotViewPanel pnlValue) {
+  private static void processBuildSelection(final int activeBuildID, final Label lbValueSeparator, final DepotViewPanel pnlValue) {
     if (activeBuildID == BuildConfig.UNSAVED_ID) {
       lbValueSeparator.setVisible(false);
       pnlValue.setVisible(false);
@@ -413,12 +413,12 @@ final class EditMergePanel extends MessagePanel {
   }
 
 
-  private Tierlet.Result mergeListHome() {
+  private static Tierlet.Result mergeListHome() {
     return Tierlet.Result.Done(Pages.PAGE_MERGE_LIST);
   }
 
 
-  private void setVisible(final Label label, final Component input, final boolean visible) {
+  private static void setVisible(final Label label, final Component input, final boolean visible) {
     label.setVisible(visible);
     input.setVisible(visible);
   }

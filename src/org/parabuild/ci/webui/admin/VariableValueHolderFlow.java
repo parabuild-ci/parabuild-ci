@@ -154,7 +154,7 @@ final class VariableValueHolderFlow extends Flow {
   }
 
 
-  private Map makeRuntimeValueMap(final StartParameter parameter) {
+  private static Map makeRuntimeValueMap(final StartParameter parameter) {
     final Map runtimeValueMap = new HashMap(11);
     if (StringUtils.isBlank(parameter.getRuntimeValue())) return runtimeValueMap;
     final StringTokenizer stRuntimeValues = StartParameter.makeTokenizer(parameter.getRuntimeValue());

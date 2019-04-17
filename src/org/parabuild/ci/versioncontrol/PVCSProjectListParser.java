@@ -56,7 +56,7 @@ final class PVCSProjectListParser {
   }
 
 
-  private List parseAndValidate(final String originalProject) throws ValidationException {
+  private static List parseAndValidate(final String originalProject) throws ValidationException {
     final DepotPathParser depotPathParser = new DepotPathParser("Project");
     final List list = depotPathParser.parseDepotPath(originalProject);
     for (int i = 0, n = list.size(); i < n; i++) {

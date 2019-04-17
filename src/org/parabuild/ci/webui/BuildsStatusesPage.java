@@ -231,7 +231,7 @@ public class BuildsStatusesPage extends BasePage implements ConversationalTierle
   }
 
 
-  private int getBuildID(final Parameters params, final HttpSession session) {
+  private static int getBuildID(final Parameters params, final HttpSession session) {
     Integer integerBuildID = ParameterUtils.getActiveBuildIDFromParameters(params);
     if (integerBuildID == null) {
       integerBuildID = (Integer) session.getAttribute(WebUIConstants.SESSION_ATTR_DETAILED_BUILD_ID);
@@ -388,7 +388,7 @@ public class BuildsStatusesPage extends BasePage implements ConversationalTierle
   /**
    * REVIEWME: simeshev@parabuilci.org -> replace with
    */
-  private int getValidDisplayGroupID(final int groupID) {
+  private static int getValidDisplayGroupID(final int groupID) {
     // System?
     if (groupID == DisplayGroup.DISPLAY_GROUP_ID_ALL
             || groupID == DisplayGroup.DISPLAY_GROUP_ID_BROKEN
@@ -453,7 +453,7 @@ public class BuildsStatusesPage extends BasePage implements ConversationalTierle
   /**
    * Marks session that user views build statuses as a list.
    */
-  private void markSessionAsListView(final HttpSession sessn) {
+  private static void markSessionAsListView(final HttpSession sessn) {
     sessn.setAttribute(WebUIConstants.SESSION_ATTR_STATUS_VIEW, Pages.STATUS_VIEW_LIST);
   }
 
@@ -462,18 +462,18 @@ public class BuildsStatusesPage extends BasePage implements ConversationalTierle
    * Marks session that user views build statuses as a single
    * build.
    */
-  private void markSessionDetailedView(final HttpSession sessn, final int buildID) {
+  private static void markSessionDetailedView(final HttpSession sessn, final int buildID) {
     sessn.setAttribute(WebUIConstants.SESSION_ATTR_DETAILED_BUILD_ID, new Integer(buildID));
     sessn.setAttribute(WebUIConstants.SESSION_ATTR_STATUS_VIEW, Pages.STATUS_VIEW_DETAILED);
   }
 
 
-  private void markSessionAsDashboard(final HttpSession session) {
+  private static void markSessionAsDashboard(final HttpSession session) {
     session.setAttribute(WebUIConstants.SESSION_ATTR_STATUS_VIEW, Pages.STATUS_VIEW_DASHBOARD);
   }
 
 
-  private void markSessionAsRecent(final HttpSession session) {
+  private static void markSessionAsRecent(final HttpSession session) {
     session.setAttribute(WebUIConstants.SESSION_ATTR_STATUS_VIEW, Pages.STATUS_VIEW_RECENT);
   }
 

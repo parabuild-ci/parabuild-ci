@@ -144,7 +144,7 @@ public final class BuildRunResultsLinksFlow extends Flow {
   /**
    * Sets all link's fonts to bold
    */
-  private void setBoldLinkFont(final Flow flow) {
+  private static void setBoldLinkFont(final Flow flow) {
     final List components = flow.getComponents();
     for (int i = 0; i < components.size(); i++) {
       final Component comp = (Component)components.get(i);

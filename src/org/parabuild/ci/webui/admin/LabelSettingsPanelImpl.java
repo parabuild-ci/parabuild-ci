@@ -245,7 +245,7 @@ public final class LabelSettingsPanelImpl extends LabelSettingsPanel {
    *
    * @return null if undefined
    */
-  private LabelProperty getLabelTypeFromList(final List settings) {
+  private static LabelProperty getLabelTypeFromList(final List settings) {
     for (final Iterator iter = settings.iterator(); iter.hasNext();) {
       final LabelProperty lp = (LabelProperty)iter.next();
       if (lp.getPropertyName().equals(LabelProperty.LABEL_TYPE)) {

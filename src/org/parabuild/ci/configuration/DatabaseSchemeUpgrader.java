@@ -185,7 +185,7 @@ public final class DatabaseSchemeUpgrader {
   }
 
 
-  private void validateVersion(final int targetVersion, final int upgraderVersion) throws SQLException {
+  private static void validateVersion(final int targetVersion, final int upgraderVersion) throws SQLException {
     if (targetVersion != upgraderVersion) {
       throw new SQLException("Upgrader version mismatch. Expected "
               + targetVersion + " but it was " + upgraderVersion);

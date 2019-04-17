@@ -872,7 +872,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
    * @param cvsRoot
    * @return common CVS command beginning
    */
-  private StringBuffer makeCommandPrefix(final String cvsExePath, final String cvsRoot) {
+  private static StringBuffer makeCommandPrefix(final String cvsExePath, final String cvsRoot) {
     final StringBuffer result = new StringBuffer(200);
     result.append(cvsExePath).append(STR_SPACE);
     result.append("-q -d ").append(cvsRoot).append(STR_SPACE);
@@ -1017,7 +1017,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
   /**
    * Validates that correct CVS build configuration was passed
    */
-  private void validateIsCVSConfiguration(final BuildConfig buildConfig) {
+  private static void validateIsCVSConfiguration(final BuildConfig buildConfig) {
     if (buildConfig.getSourceControl() != BuildConfig.SCM_REFERENCE && buildConfig.getSourceControl() != BuildConfig.SCM_CVS) {
       throw new IllegalArgumentException("Non-CVS build configuration");
     }

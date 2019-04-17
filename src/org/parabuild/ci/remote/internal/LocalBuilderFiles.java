@@ -202,7 +202,7 @@ public final class LocalBuilderFiles implements Serializable {
    *
    * @return String with script exension
    */
-  private String makeStepScriptExtension() {
+  private static String makeStepScriptExtension() {
     String extension = null;
     if (RuntimeUtils.isUnix()) {
       extension = ".sh";

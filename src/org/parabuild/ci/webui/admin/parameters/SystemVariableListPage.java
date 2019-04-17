@@ -87,7 +87,7 @@ public final class SystemVariableListPage extends NavigatableSystemConfiguration
    * @param variableOwner
    * @return table title.
    */
-  private String createTableTitle(final byte variableType, final int variableOwner) {
+  private static String createTableTitle(final byte variableType, final int variableOwner) {
     final String tableTitle;
     if (variableType == StartParameter.TYPE_AGENT) {
       tableTitle = "AGENT " + CAPTION_VARIABLES + ": " + BuilderConfigurationManager.getInstance().getAgentConfig(variableOwner).getHost();
@@ -100,7 +100,7 @@ public final class SystemVariableListPage extends NavigatableSystemConfiguration
   }
 
 
-  private CommonCommandLinkWithImage makeNewVariavleLink(final byte variableType, final int variableOwner) {
+  private static CommonCommandLinkWithImage makeNewVariavleLink(final byte variableType, final int variableOwner) {
     final CommonCommandLinkWithImage lnkAddNewBuilder = new CommonCommandLinkWithImage(CAPTION_ADD_VARIABLE, Pages.PAGE_VARIABLE_EDIT);
     lnkAddNewBuilder.setAlignX(Layout.LEFT);
     lnkAddNewBuilder.setAlignY(Layout.TOP);

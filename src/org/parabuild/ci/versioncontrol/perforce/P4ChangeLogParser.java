@@ -162,7 +162,7 @@ final class P4ChangeLogParser {
   }
 
 
-  private void addToResult(final LinkedList result, final int maxResultSize, final List chunk) {
+  private static void addToResult(final LinkedList result, final int maxResultSize, final List chunk) {
     if (result.size() >= maxResultSize) {
       // delete topmost, if necessary
       result.removeFirst();
@@ -409,7 +409,7 @@ final class P4ChangeLogParser {
    *
    * @return short type code
    */
-  private byte changeTypeToCode(final String type) {
+  private static byte changeTypeToCode(final String type) {
     if ("edit".equals(type)) return Change.TYPE_MODIFIED;
     if ("add".equals(type)) return Change.TYPE_ADDED;
     if ("delete".equals(type)) return Change.TYPE_DELETED;
@@ -424,7 +424,7 @@ final class P4ChangeLogParser {
    *
    * @throws BuildException
    */
-  private void validateChangeListIsNotEmpty(final String firstLineToParse) throws BuildException {
+  private static void validateChangeListIsNotEmpty(final String firstLineToParse) throws BuildException {
     if (firstLineToParse == null)
       throw new BuildException(P4ParserHelper.makeUnexpectedErrorMessage("Cannot process empty change list."));
   }

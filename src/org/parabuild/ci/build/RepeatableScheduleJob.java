@@ -226,7 +226,7 @@ public final class RepeatableScheduleJob implements Job {
 
   /**
    */
-  private boolean isValidDataMap(final JobDataMap dataMap) {
+  private static boolean isValidDataMap(final JobDataMap dataMap) {
     if (dataMap.containsKey(BUILD_ID_KEY)) {
       return true;
     }

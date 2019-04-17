@@ -326,7 +326,7 @@ public final class BuildHeaderPanel extends MessagePanel implements Validatable,
   }
 
 
-  private boolean isBuildRunConfig(final BuildConfig buildConfig) {
+  private static boolean isBuildRunConfig(final BuildConfig buildConfig) {
     if (buildConfig.getActiveBuildID() == BuildConfig.UNSAVED_ID) {
       return false;
     }

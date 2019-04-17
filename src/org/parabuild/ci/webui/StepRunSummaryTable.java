@@ -111,7 +111,7 @@ public final class StepRunSummaryTable extends AbstractFlatTable {
    * Helper methods to convert sequence duration to a String with
    * minutes and seconds.
    */
-  private String getDurationAsString(final StepRun stepRun) {
+  private static String getDurationAsString(final StepRun stepRun) {
     return StringUtils.durationToString(stepRun.getDuration(), false).toString();
   }
 

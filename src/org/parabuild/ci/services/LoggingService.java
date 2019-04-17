@@ -67,7 +67,7 @@ public final class LoggingService implements Service {
    * the database. This method is called after
    * ConfigurationManager is prepared.
    */
-  private void initLog4j() {
+  private static void initLog4j() {
     try {
 
       // check if it is a test environment

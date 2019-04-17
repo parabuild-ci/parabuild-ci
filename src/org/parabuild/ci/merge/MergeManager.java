@@ -267,7 +267,7 @@ public final class MergeManager {
   }
 
 
-  private List getActiveMergeList() {
+  private static List getActiveMergeList() {
     return (List)ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         final Query q = session.createQuery(
@@ -479,7 +479,7 @@ public final class MergeManager {
    *
    * @param mergeConfiguration
    */
-  private void notifyMergeDaemonAlreadyStarted(final ActiveMergeConfiguration mergeConfiguration) {
+  private static void notifyMergeDaemonAlreadyStarted(final ActiveMergeConfiguration mergeConfiguration) {
     ErrorManagerFactory.getErrorManager().reportSystemError(new Error("Automerge \"" + mergeConfiguration.getName() + "\" has already been started", Error.ERROR_LEVEL_WARNING));
   }
 
@@ -489,7 +489,7 @@ public final class MergeManager {
    *
    * @param mergeConfiguration
    */
-  private void notifyErrorWhileStartingMergeDaemon(final ActiveMergeConfiguration mergeConfiguration, final Exception e) {
+  private static void notifyErrorWhileStartingMergeDaemon(final ActiveMergeConfiguration mergeConfiguration, final Exception e) {
     ErrorManagerFactory.getErrorManager().reportSystemError(new Error("Error while starting automerge \"" + mergeConfiguration.getName() + "\": " + StringUtils.toString(e), Error.ERROR_LEVEL_WARNING));
   }
 

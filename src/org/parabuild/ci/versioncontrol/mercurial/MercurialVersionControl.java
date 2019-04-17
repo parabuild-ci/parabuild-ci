@@ -355,7 +355,7 @@ public class MercurialVersionControl extends AbstractSourceControl {
   }
 
 
-  private String getHash(final ChangeList latest) {
+  private static String getHash(final ChangeList latest) {
     final String description = latest.getDescription();
     final int hashIndex = description.lastIndexOf(MercurialChangeLogParser.HASH);
     return description.substring(hashIndex + MercurialChangeLogParser.HASH.length(), description.length() - 1);

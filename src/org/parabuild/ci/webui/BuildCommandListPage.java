@@ -206,13 +206,13 @@ public final class BuildCommandListPage extends BasePage implements StatelessTie
    * @param buildConfig true if build schedule can be changed.
    * @return true if build schedule can be changed.
    */
-  private boolean isCanChangeBuildType(final BuildConfig buildConfig) {
+  private static boolean isCanChangeBuildType(final BuildConfig buildConfig) {
     return buildConfig.getScheduleType() == BuildConfig.SCHEDULE_TYPE_AUTOMATIC
             || buildConfig.getScheduleType() == BuildConfig.SCHEDULE_TYPE_MANUAL;
   }
 
 
-  private Properties createStopGroupParameters(final int buildID) {
+  private static Properties createStopGroupParameters(final int buildID) {
     final Properties param = new Properties();
     param.setProperty(Pages.PARAM_BUILD_ID, Integer.toString(buildID));
     param.setProperty(Pages.PARAM_STOP_GROUP_SOURCE, Pages.STOP_GROUP_SOURCE_BUILD_COMMANDS);
@@ -220,7 +220,7 @@ public final class BuildCommandListPage extends BasePage implements StatelessTie
   }
 
 
-  private Properties createResumeGroupParameters(final int buildID) {
+  private static Properties createResumeGroupParameters(final int buildID) {
     final Properties param = new Properties();
     param.setProperty(Pages.PARAM_BUILD_ID, Integer.toString(buildID));
     param.setProperty(Pages.PARAM_RESUME_GROUP_SOURCE, Pages.RESUME_GROUP_SOURCE_BUILD_COMMANDS);
@@ -228,7 +228,7 @@ public final class BuildCommandListPage extends BasePage implements StatelessTie
   }
 
 
-  private boolean isParallel(final BuildConfig buildConfig) {
+  private static boolean isParallel(final BuildConfig buildConfig) {
     return buildConfig.getScheduleType() == BuildConfig.SCHEDULE_TYPE_PARALLEL;
   }
 }

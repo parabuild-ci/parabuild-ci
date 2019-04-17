@@ -84,7 +84,7 @@ public final class LogLinks extends Flow {
   /**
    * Helper method to return step logs for the given step run.
    */
-  private List getStepLogs(final StepRun stepRun, final boolean showAllLogs) {
+  private static List getStepLogs(final StepRun stepRun, final boolean showAllLogs) {
     if (showAllLogs) {
       return ConfigurationManager.getInstance().getAllStepLogs(stepRun.getID());
     } else {
@@ -93,7 +93,7 @@ public final class LogLinks extends Flow {
   }
 
 
-  private CommonLink makeLogLink(final int buildRunID, final StepLog stepLog) {
+  private static CommonLink makeLogLink(final int buildRunID, final StepLog stepLog) {
     final CommonLink logLink = new LogLink(buildRunID, stepLog);
     if (stepLog.getPathType() == StepLog.PATH_TYPE_HTML_DIR
             || stepLog.getPathType() == StepLog.PATH_TYPE_HTML_FILE) {

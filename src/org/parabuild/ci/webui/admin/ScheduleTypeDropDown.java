@@ -50,7 +50,7 @@ public final class ScheduleTypeDropDown extends DropDown {
    *
    * @param scheduleCode
    */
-  private String scheduleCodeToString(final int scheduleCode) {
+  private static String scheduleCodeToString(final int scheduleCode) {
     if (scheduleCode == BuildConfig.SCHEDULE_TYPE_AUTOMATIC) return STRING_AUTOMATIC;
     if (scheduleCode == BuildConfig.SCHEDULE_TYPE_MANUAL) return STRING_MANUAL;
     if (scheduleCode == BuildConfig.SCHEDULE_TYPE_RECURRENT) return STRING_SCHEDULED;

@@ -123,7 +123,7 @@ final class VaultChangeLogParser {
    *
    * @return change list desciption.
    */
-  private String getDescriptionFromItem(final Vault.Item item) {
+  private static String getDescriptionFromItem(final Vault.Item item) {
     return item.getComment() == null ? "No comment was provided" : StringUtils.truncate(item.getComment(), 1023);
   }
 
@@ -135,7 +135,7 @@ final class VaultChangeLogParser {
    *
    * @return type according to {@link Change}
    */
-  private byte getChangeTypeFromItem(final Vault.Item item) {
+  private static byte getChangeTypeFromItem(final Vault.Item item) {
     byte result = Change.TYPE_UNKNOWN;
     final int itemType = item.getType();
     switch (itemType) {

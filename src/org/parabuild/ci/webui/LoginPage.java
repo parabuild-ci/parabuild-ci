@@ -186,7 +186,7 @@ public final class LoginPage extends BasePage implements ConversationalTierlet {
   /**
    * @param user
    */
-  private Result makeResultForLoggedInUser(final User user) {
+  private static Result makeResultForLoggedInUser(final User user) {
     final String defauildDisplayGroup = SecurityManager.getInstance().getUserPropertyValue(user.getUserID(), UserProperty.DEFAULT_DISPLAY_GROUP);
     final Parameters parameters = new Parameters();
     parameters.addParameter(Pages.PARAM_DISPLAY_GROUP_ID, StringUtils.isValidInteger(defauildDisplayGroup) ? Integer.parseInt(defauildDisplayGroup) : DisplayGroup.DISPLAY_GROUP_ID_ALL);

@@ -13,10 +13,15 @@
  */
 package org.parabuild.ci.configuration;
 
-import java.sql.*;
-import org.apache.commons.logging.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.IoUtils;
 
-import org.parabuild.ci.common.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  * Upgrades to version 41.
@@ -114,7 +119,7 @@ final class UpgraderToVersion41 implements SingleStepSchemaUpgrader {
   }
 
 
-  private void attachBuildsToInitialProject(final Connection conn) throws SQLException {
+  private static void attachBuildsToInitialProject(final Connection conn) throws SQLException {
     PreparedStatement psActiveBuilds = null;
     PreparedStatement psInsertProjectBuild = null;
     ResultSet rsActiveBuilds = null; // NOPMD CloseResource
@@ -135,7 +140,7 @@ final class UpgraderToVersion41 implements SingleStepSchemaUpgrader {
   }
 
 
-  private void attachResultGroupsToInitialProject(final Connection conn) throws SQLException {
+  private static void attachResultGroupsToInitialProject(final Connection conn) throws SQLException {
     PreparedStatement psResultGroups = null; // NOPMD CloseResource
     PreparedStatement psInsertProjectResultGroup = null; // NOPMD CloseResource
     ResultSet rsResultGroups = null; // NOPMD CloseResource

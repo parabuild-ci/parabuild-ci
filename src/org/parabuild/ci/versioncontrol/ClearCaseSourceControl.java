@@ -107,7 +107,7 @@ final class ClearCaseSourceControl extends AbstractSourceControl {
   }
 
 
-  private boolean viewDatExists(final Agent agent) throws IOException, AgentFailureException {
+  private static boolean viewDatExists(final Agent agent) throws IOException, AgentFailureException {
     return agent.fileRelativeToCheckoutDirExists("view.dat")
             || agent.fileRelativeToCheckoutDirExists(".view.dat");
   }
@@ -681,7 +681,7 @@ final class ClearCaseSourceControl extends AbstractSourceControl {
    * Validates that correct ClearCase build configuration was
    * passesed
    */
-  private void validateIsClearCaseConfiguration(final BuildConfig buildConfig) {
+  private static void validateIsClearCaseConfiguration(final BuildConfig buildConfig) {
     if (buildConfig.getSourceControl() != BuildConfig.SCM_REFERENCE
             && buildConfig.getSourceControl() != BuildConfig.SCM_CLEARCASE) {
       throw new IllegalArgumentException("Non-ClearCase build configuration");

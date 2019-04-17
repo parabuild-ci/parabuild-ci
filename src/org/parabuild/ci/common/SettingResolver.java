@@ -119,7 +119,7 @@ public class SettingResolver {
   }
 
 
-  private boolean isUseFirstParameterValueAsDefault(final int buildID) {
+  private static boolean isUseFirstParameterValueAsDefault(final int buildID) {
 
     return ConfigurationManager.getInstance().getBuildAttributeValue(buildID,
             BuildConfigAttribute.USE_FIRST_PARAMETER_VALUE_AS_DEFAULT, BuildConfigAttribute.OPTION_UNCHECKED)

@@ -101,14 +101,14 @@ public final class PromotionPolicyDetailsPage extends NavigatableSystemConfigura
   }
 
 
-  private Label createSpacer() {
+  private static Label createSpacer() {
     final Label spacer = new Label(" ");
     spacer.setWidth("3%");
     return spacer;
   }
 
 
-  private Component createNewPromotionPolicyStepLink(final int policyID) {
+  private static Component createNewPromotionPolicyStepLink(final int policyID) {
     final AddPromotionPolicyStepLink lnkAddNewPromotionPolicyStep = new AddPromotionPolicyStepLink(policyID);
     lnkAddNewPromotionPolicyStep.setAlignX(Layout.LEFT);
     lnkAddNewPromotionPolicyStep.setAlignY(Layout.TOP);

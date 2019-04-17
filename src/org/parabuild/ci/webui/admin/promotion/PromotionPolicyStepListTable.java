@@ -138,7 +138,7 @@ final class PromotionPolicyStepListTable extends AbstractFlatTable {
   }
 
 
-  private Properties makeParameters(final int stepID) {
+  private static Properties makeParameters(final int stepID) {
     final Properties params = new Properties();
     params.setProperty(Pages.PARAM_PROMOTION_POLICY_STEP_ID, Integer.toString(stepID));
     return params;
@@ -180,7 +180,7 @@ final class PromotionPolicyStepListTable extends AbstractFlatTable {
     }
 
 
-    private Properties createProperties(final PromotionPolicyStep step) {
+    private static Properties createProperties(final PromotionPolicyStep step) {
       final Properties upProps = new Properties();
       upProps.setProperty(Pages.PARAM_PROMOTION_POLICY_STEP_ID, Integer.toString(step.getID()));
       upProps.setProperty(Pages.PARAM_PROMOTION_POLICY_ID, Integer.toString(step.getPromotionID()));

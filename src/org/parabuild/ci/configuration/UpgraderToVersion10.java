@@ -198,7 +198,7 @@ final class UpgraderToVersion10 implements SingleStepSchemaUpgrader {
    * Moves build configuration attribute from build config attr
    * to active build attr.
    */
-  private void moveAttributesFromBuildConfigToActiveBuild(final Connection conn, final String[] names) throws SQLException {
+  private static void moveAttributesFromBuildConfigToActiveBuild(final Connection conn, final String[] names) throws SQLException {
 
     PreparedStatement psSelect = null;
     PreparedStatement psInsert = null;

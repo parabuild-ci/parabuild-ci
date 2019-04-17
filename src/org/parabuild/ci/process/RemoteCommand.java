@@ -347,7 +347,7 @@ public class RemoteCommand implements Cleanable {
   }
 
 
-  private void stop(final TimeoutWatchdog watchdog) {
+  private static void stop(final TimeoutWatchdog watchdog) {
     if (watchdog != null) {
       watchdog.stop();
     }
@@ -542,7 +542,7 @@ public class RemoteCommand implements Cleanable {
   }
 
 
-  private int validRetryInterval(final int retryItervalSecs) {
+  private static int validRetryInterval(final int retryItervalSecs) {
     if (retryItervalSecs <= 0) {
       throw new IllegalArgumentException("Retry inteval should be a positive integer: " + retryItervalSecs);
     }
@@ -550,7 +550,7 @@ public class RemoteCommand implements Cleanable {
   }
 
 
-  private int validRetryTimes(final int retryTimes) {
+  private static int validRetryTimes(final int retryTimes) {
     if (retryTimes < 0) {
       throw new IllegalArgumentException("Retry times should be a non-negative integer: " + retryTimes);
     }

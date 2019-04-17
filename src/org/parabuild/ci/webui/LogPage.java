@@ -288,7 +288,7 @@ public final class LogPage extends AbstractBuildRunResultPage implements Convers
   /**
    * Shows JUnit XML log.
    */
-  private void addJUnitXMLLog(final Panel contentPanel, final ArchiveManager archiveManager, final StepLog stepLog) {
+  private static void addJUnitXMLLog(final Panel contentPanel, final ArchiveManager archiveManager, final StepLog stepLog) {
     final JUnitLogComponent logComponent = new JUnitLogComponent(archiveManager, stepLog);
     logComponent.setWidth(Pages.PAGE_WIDTH);
     logComponent.setAlignX(Layout.LEFT);
@@ -300,7 +300,7 @@ public final class LogPage extends AbstractBuildRunResultPage implements Convers
   /**
    * Shows JUnit XML log.
    */
-  private void addPHPUnitXMLLog(final Panel contentPanel, final ArchiveManager archiveManager, final StepLog stepLog) {
+  private static void addPHPUnitXMLLog(final Panel contentPanel, final ArchiveManager archiveManager, final StepLog stepLog) {
     final PHPUnitLogComponent logComponent = new PHPUnitLogComponent(archiveManager, stepLog);
     logComponent.setWidth(Pages.PAGE_WIDTH);
     logComponent.setAlignX(Layout.LEFT);
@@ -312,7 +312,7 @@ public final class LogPage extends AbstractBuildRunResultPage implements Convers
   /**
    * Shows CppUnit XML log.
    */
-  private void addCppUnitXMLLog(final Panel contentPanel, final ArchiveManager archiveManager, final StepLog stepLog) {
+  private static void addCppUnitXMLLog(final Panel contentPanel, final ArchiveManager archiveManager, final StepLog stepLog) {
     final CppUnitLogComponent logComponent = new CppUnitLogComponent(archiveManager, stepLog);
     logComponent.setWidth(Pages.PAGE_WIDTH);
     logComponent.setAlignX(Layout.LEFT);
@@ -324,7 +324,7 @@ public final class LogPage extends AbstractBuildRunResultPage implements Convers
   /**
    * Shows NUnit XML log.
    */
-  private void addNUnitXMLLog(final Panel contentPanel, final ArchiveManager archiveManager, final StepLog stepLog) {
+  private static void addNUnitXMLLog(final Panel contentPanel, final ArchiveManager archiveManager, final StepLog stepLog) {
     final NUnitLogComponent logComponent = new NUnitLogComponent(archiveManager, stepLog);
     logComponent.setWidth("100%");
     logComponent.setAlignX(Layout.LEFT);
@@ -336,7 +336,7 @@ public final class LogPage extends AbstractBuildRunResultPage implements Convers
   /**
    * Shows Boost XML log.
    */
-  private void addBoostTestXMLLog(final Panel contentPanel, final ArchiveManager archiveManager, final StepLog stepLog) {
+  private static void addBoostTestXMLLog(final Panel contentPanel, final ArchiveManager archiveManager, final StepLog stepLog) {
     final BoostTestLogComponent logComponent = new BoostTestLogComponent(archiveManager, stepLog);
     logComponent.setWidth("100%");
     logComponent.setAlignX(Layout.LEFT);
@@ -345,7 +345,7 @@ public final class LogPage extends AbstractBuildRunResultPage implements Convers
   }
 
 
-  private void addUnittestPPXMLLog(final Panel contentPanel, final ArchiveManager archiveManager, final StepLog stepLog) {
+  private static void addUnittestPPXMLLog(final Panel contentPanel, final ArchiveManager archiveManager, final StepLog stepLog) {
     final UnitTestPPLogComponent logComponent = new UnitTestPPLogComponent(archiveManager, stepLog);
     logComponent.setWidth("100%");
     logComponent.setAlignX(Layout.LEFT);
@@ -357,7 +357,7 @@ public final class LogPage extends AbstractBuildRunResultPage implements Convers
   /**
    * Shows PMD XML log.
    */
-  private void addPMDXMLLog(final Panel contentPanel, final ArchiveManager archiveManager, final StepLog stepLog) {
+  private static void addPMDXMLLog(final Panel contentPanel, final ArchiveManager archiveManager, final StepLog stepLog) {
     final PMDLogComponent logComponent = new PMDLogComponent(archiveManager, stepLog);
     logComponent.setWidth("100%");
     logComponent.setAlignX(Layout.LEFT);
@@ -369,7 +369,7 @@ public final class LogPage extends AbstractBuildRunResultPage implements Convers
   /**
    * Shows Checkstyle XML log.
    */
-  private void addCheckstyleXMLLog(final Panel contentPanel, final ArchiveManager archiveManager, final StepLog stepLog) {
+  private static void addCheckstyleXMLLog(final Panel contentPanel, final ArchiveManager archiveManager, final StepLog stepLog) {
     final CheckstyleLogComponent logComponent = new CheckstyleLogComponent(archiveManager, stepLog);
     logComponent.setWidth("100");
     logComponent.setAlignX(Layout.LEFT);
@@ -407,7 +407,7 @@ public final class LogPage extends AbstractBuildRunResultPage implements Convers
   /**
    * @noinspection HardcodedLineSeparator
    */
-  private TextLogLineRenderer createTextLogLineRenderer(final StepLog stepLog) {
+  private static TextLogLineRenderer createTextLogLineRenderer(final StepLog stepLog) {
     // Get system-wide markers
     final SystemConfigurationManager scm = SystemConfigurationManagerFactory.getManager();
     final String systemWideMarkers = scm.getSystemPropertyValue(SystemProperty.TEXT_LOG_MARKERS, "");
@@ -428,7 +428,7 @@ public final class LogPage extends AbstractBuildRunResultPage implements Convers
    * Shows given list of files. This method expects that all
    * files belong the same dir.
    */
-  private void showListOfFileNames(final Panel contentPanel, final int buildRunID, final int stepLogID, final ConsistentFileList fileList) {
+  private static void showListOfFileNames(final Panel contentPanel, final int buildRunID, final int stepLogID, final ConsistentFileList fileList) {
     final String[] fileNames = fileList.getFileNames();
     for (int i = 0; i < fileNames.length; i++) {
       final String fileName = fileNames[i];

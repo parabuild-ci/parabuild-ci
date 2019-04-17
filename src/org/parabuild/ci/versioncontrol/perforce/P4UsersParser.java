@@ -121,7 +121,7 @@ final class P4UsersParser {
    * @param error to process
    * @return resulting message
    */
-  private String makeUnexpectedErrorMessage(final String error) {
+  private static String makeUnexpectedErrorMessage(final String error) {
     return "Error while getting P4 users: " + error;
   }
 
@@ -131,7 +131,7 @@ final class P4UsersParser {
    *
    * @return true - always returns true
    */
-  private boolean reportInvalidEmail(final String user, final String email) {
+  private static boolean reportInvalidEmail(final String user, final String email) {
     reportWarning("Invalid e-mail found in P4 users." + " User name: " + user + ", email: " + email, null);
     return true;
   }

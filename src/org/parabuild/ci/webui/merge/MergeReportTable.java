@@ -142,7 +142,7 @@ final class MergeReportTable extends AbstractFlatTable {
   }
 
 
-  private String makeImageURL(final MergeReport item) {
+  private static String makeImageURL(final MergeReport item) {
     final String imageURL;
     if (item.getStatus() == BranchChangeList.MERGE_STATUS_MERGED) {
       imageURL = "/parabuild/images/3232/bullet_ball_glass_green.gif";
@@ -158,7 +158,7 @@ final class MergeReportTable extends AbstractFlatTable {
   /**
    * Helper method.
    */
-  private Properties makeChangeListNumberParameters(final MergeReport item) {
+  private static Properties makeChangeListNumberParameters(final MergeReport item) {
     final Properties properties = new Properties();
     properties.setProperty(Pages.PARAM_BRANCH_CHANGE_LIST_ID, Integer.toString(item.getBranchChangeListID()));
     properties.setProperty(Pages.PARAM_CHANGE_LIST_ID, Integer.toString(item.getChangeListID()));

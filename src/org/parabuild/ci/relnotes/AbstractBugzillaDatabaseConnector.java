@@ -52,7 +52,7 @@ abstract class AbstractBugzillaDatabaseConnector implements BugzillaDatabaseConn
   /**
    * Helper method to report unexpected error to administrator
    */
-  protected final void reportUnexpectedError(final String productName, final Exception e) {
+  protected static void reportUnexpectedError(final String productName, final Exception e) {
     final Error error = new Error();
     error.setDetails(e);
     error.setDescription("Error while retrieving Bugzilla bugs for product \"" + productName + "\": " + StringUtils.toString(e));

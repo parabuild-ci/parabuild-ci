@@ -166,7 +166,7 @@ public final class ResetAllMergesPage extends BasePage implements Conversational
   }
 
 
-  private Result processCancel() {
+  private static Result processCancel() {
     // return to the coomand list
     return Result.Done(Pages.PAGE_UNDOCUMENTED_COMMANDS);
   }

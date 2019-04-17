@@ -227,7 +227,7 @@ public final class BuilderConfigurationManager {
   }
 
 
-  private Integer getBuildConfigCountForAgent(final int agentConfigID, final Session session) throws HibernateException {
+  private static Integer getBuildConfigCountForAgent(final int agentConfigID, final Session session) throws HibernateException {
     final Query buildConfCountQuery = session.createQuery(" select count(abc.activeBuildID) " +
             "   from BuilderAgent ba, ActiveBuildConfig abc, ActiveBuild ab" +
             "   where ba.agentID = ? and ba.builderID = abc.builderID and abc.buildID = ab.ID and ab.deleted=no");
@@ -246,7 +246,7 @@ public final class BuilderConfigurationManager {
   }
 
 
-  private List getBuildConfigIDsForAgent(final int agentConfigID, final Session session) throws HibernateException {
+  private static List getBuildConfigIDsForAgent(final int agentConfigID, final Session session) throws HibernateException {
     final Query query = session.createQuery(" select abc.activeBuildID " +
             "   from BuilderAgent ba, ActiveBuildConfig abc, ActiveBuild ab" +
             "   where ba.agentID = ? and ba.builderID = abc.builderID and abc.buildID = ab.ID and ab.deleted=no");

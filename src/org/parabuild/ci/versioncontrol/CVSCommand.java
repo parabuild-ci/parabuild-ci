@@ -201,7 +201,7 @@ final class CVSCommand extends VersionControlRemoteCommand {
    *
    * @param command
    */
-  private void validateCommand(final String command) {
+  private static void validateCommand(final String command) {
     if (StringUtils.isBlank(command)) {
       throw new IllegalArgumentException("CVS command is blank");
     }

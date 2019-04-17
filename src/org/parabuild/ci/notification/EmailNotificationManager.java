@@ -687,7 +687,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
   }
 
 
-  private StringBuffer makeStartedBody(final BuildRun buildRun, final BuildSequence buildSequence) throws ValidationException {
+  private static StringBuffer makeStartedBody(final BuildRun buildRun, final BuildSequence buildSequence) throws ValidationException {
     final StringBuffer result = new StringBuffer(1000);
 
     // repeat subject here
@@ -768,7 +768,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
    * @return local host name, IP address or null string if there
    *         was an exception.
    */
-  private String getEHLOhost() {
+  private static String getEHLOhost() {
     try {
       // try network address
       final String buildManagerHost = SystemConfigurationManagerFactory.getManager().getBuildManagerHost();

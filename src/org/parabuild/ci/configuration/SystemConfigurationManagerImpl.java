@@ -63,7 +63,7 @@ final class SystemConfigurationManagerImpl implements SystemConfigurationManager
   }
 
 
-  private Cache getSystemPropertyCache() throws CacheException {
+  private static Cache getSystemPropertyCache() throws CacheException {
     return CacheManager.getInstance().getCache("system_configuration_cache");
   }
 
@@ -951,7 +951,7 @@ final class SystemConfigurationManagerImpl implements SystemConfigurationManager
    * @return system property by name or default value if not
    *         found.
    */
-  private String getSystemPropertyValueFromDB(final String propertyName, final String defaultValue) {
+  private static String getSystemPropertyValueFromDB(final String propertyName, final String defaultValue) {
     return (String) ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         final Query q = session.createQuery("select sp.propertyValue from SystemProperty as sp " +

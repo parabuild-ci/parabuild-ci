@@ -122,7 +122,7 @@ public final class GeneralLogSettingsPanel extends MessagePanel implements Loada
   /**
    * Genereric check if field is a positive integer
    */
-  private void validateNumberField(final List errors, final Field field, final String descr) {
+  private static void validateNumberField(final List errors, final Field field, final String descr) {
     // check for blank
     WebuiUtils.validateFieldNotBlank(errors, "Number of " + descr, field);
 

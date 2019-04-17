@@ -185,7 +185,7 @@ public final class ManualStartSettingsTable extends AbstractFlatTable implements
    * @param startParameter
    * @param row
    */
-  private boolean isRowNewAndBlank(final StartParameter startParameter, final Component[] row) {
+  private static boolean isRowNewAndBlank(final StartParameter startParameter, final Component[] row) {
     return startParameter.getBuildID() == BuildConfig.UNSAVED_ID
             && StringUtils.isBlank(((AbstractInput) row[COL_NAME]).getValue())
             && StringUtils.isBlank(((AbstractInput) row[COL_DESCRIPTION]).getValue())

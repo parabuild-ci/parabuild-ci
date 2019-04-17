@@ -51,7 +51,7 @@ public final class HSQLDBDatabaseRunner implements DatabaseRunner, CommonConstan
    *
    * @return false if our HSQL database files are not present.
    */
-  private boolean databaseExists() {
+  private static boolean databaseExists() {
     // general checks
     if (!ConfigurationConstants.DATABASE_HOME.getParentFile().exists()) return false;
     if (ConfigurationConstants.DATABASE_HOME.getParentFile().listFiles().length == 0) return false;

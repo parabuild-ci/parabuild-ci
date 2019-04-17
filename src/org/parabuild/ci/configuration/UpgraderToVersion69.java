@@ -141,7 +141,7 @@ final class UpgraderToVersion69 implements SingleStepSchemaUpgrader {
   }
 
 
-  private void setBuilder(final Connection conn, final int builderID, final String builderHost) throws SQLException {
+  private static void setBuilder(final Connection conn, final int builderID, final String builderHost) throws SQLException {
     final PreparedStatement psUpdateBuildConfig = conn.prepareStatement("update BUILD_CONFIG set BUILDER_ID = ? where BUILDER_HOST=?");
     psUpdateBuildConfig.setInt(1, builderID);
     psUpdateBuildConfig.setString(2, builderHost);

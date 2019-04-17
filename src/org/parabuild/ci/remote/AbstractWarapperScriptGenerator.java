@@ -195,7 +195,7 @@ abstract class AbstractWarapperScriptGenerator implements WrapperScriptGenerator
   /**
    * Writes a string and a newline after the string
    */
-  protected final void writeln(final BufferedWriter bw, final String s) throws IOException {
+  protected static void writeln(final BufferedWriter bw, final String s) throws IOException {
     bw.write(s);
     bw.newLine();
   }

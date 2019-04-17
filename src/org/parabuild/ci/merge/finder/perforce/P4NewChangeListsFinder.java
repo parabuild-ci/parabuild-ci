@@ -182,7 +182,7 @@ final class P4NewChangeListsFinder {
     /**
      * Helper method.
      */
-    private int getNumberAsInteger(final ChangeList first) {
+    private static int getNumberAsInteger(final ChangeList first) {
       return Integer.parseInt(first.getNumber());
     }
 

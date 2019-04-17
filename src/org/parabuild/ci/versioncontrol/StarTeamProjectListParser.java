@@ -56,7 +56,7 @@ public final class StarTeamProjectListParser {
   }
 
 
-  private List parseAndValidate(final String originalProject) throws ValidationException {
+  private static List parseAndValidate(final String originalProject) throws ValidationException {
     final List list = new DepotPathParser("Project", true).parseDepotPath(originalProject);
     for (int i = 0, n = list.size(); i < n; i++) {
       final RepositoryPath repositoryPath = (RepositoryPath)list.get(i);

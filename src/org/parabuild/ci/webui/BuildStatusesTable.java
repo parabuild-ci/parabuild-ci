@@ -261,7 +261,7 @@ public class BuildStatusesTable extends AbstractFlatTable {
    * @param state state
    * @return IP address.
    */
-  private String getIPAddress(final BuildState state) {
+  private static String getIPAddress(final BuildState state) {
     return state.getCurrentlyRunningOnBuildHost();
   }
 

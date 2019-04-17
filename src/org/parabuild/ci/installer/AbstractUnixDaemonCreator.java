@@ -100,7 +100,7 @@ public abstract class AbstractUnixDaemonCreator implements UnixDaemonCreator {
   /**
    * @return command to add user
    */
-  private String userAddCommand() {
+  private static String userAddCommand() {
     return "/usr/sbin/useradd";
   }
 
@@ -108,7 +108,7 @@ public abstract class AbstractUnixDaemonCreator implements UnixDaemonCreator {
   /**
    * @return command to add group
    */
-  private String groupAddCommand() {
+  private static String groupAddCommand() {
     return "/usr/sbin/groupadd";
   }
 
@@ -116,7 +116,7 @@ public abstract class AbstractUnixDaemonCreator implements UnixDaemonCreator {
   /**
    * @return true if our user exists
    */
-  public final boolean isUserExists() throws IOException {
+  public static boolean isUserExists() throws IOException {
     boolean userFound = false;
     BufferedReader br = null;
     try {
@@ -138,7 +138,7 @@ public abstract class AbstractUnixDaemonCreator implements UnixDaemonCreator {
   /**
    * @return true if our group exists
    */
-  public final boolean isGroupExists() throws IOException {
+  public static boolean isGroupExists() throws IOException {
     boolean groupFound = false;
     BufferedReader br = null;
     try {

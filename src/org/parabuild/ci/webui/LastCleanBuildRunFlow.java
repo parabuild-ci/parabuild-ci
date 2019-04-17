@@ -55,7 +55,7 @@ public final class LastCleanBuildRunFlow extends Flow {
    *
    * @param buildRun
    */
-  private boolean lastCleanBuildRunIsValid(final BuildRun buildRun) {
+  private static boolean lastCleanBuildRunIsValid(final BuildRun buildRun) {
     return WebuiUtils.isBuildRunNotNullAndComplete(buildRun)
       && buildRun.getResultID() == BuildRun.BUILD_RESULT_SUCCESS;
   }

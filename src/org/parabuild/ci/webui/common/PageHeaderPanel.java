@@ -322,7 +322,7 @@ public final class PageHeaderPanel extends Panel {
    *
    * @param user
    */
-  private void validateUserNotNull(final User user) {
+  private static void validateUserNotNull(final User user) {
     if (user == null) throw new IllegalArgumentException("User can not be null");
   }
 
@@ -330,7 +330,7 @@ public final class PageHeaderPanel extends Panel {
   /**
    * Creates logout link caption.
    */
-  private String makeLogoutCaption(final User user) {
+  private static String makeLogoutCaption(final User user) {
     return "Logout " + (user == null ? "" : user.getName());
   }
 

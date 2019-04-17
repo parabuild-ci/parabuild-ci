@@ -306,7 +306,7 @@ final class VSSChangeLogParser {
   /**
    * Helper method
    */
-  private void reportError(final Error error) {
+  private static void reportError(final Error error) {
     final ErrorManager errorManager = ErrorManagerFactory.getErrorManager();
     errorManager.reportSystemError(error);
   }

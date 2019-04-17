@@ -100,7 +100,7 @@ public final class RemoteBuilderServlet extends HessianServlet implements Remote
    *
    * @return true if request is valid.
    */
-  private SecurityValidationResult validateRequestSecurity(final HttpServletRequest httpServletRequest) {
+  private static SecurityValidationResult validateRequestSecurity(final HttpServletRequest httpServletRequest) {
 
     // validate IP
 
@@ -134,7 +134,7 @@ public final class RemoteBuilderServlet extends HessianServlet implements Remote
   }
 
 
-  private void serviceCustomCall(final ServletRequest request, final ServletResponse response) throws IOException {
+  private static void serviceCustomCall(final ServletRequest request, final ServletResponse response) throws IOException {
     // manual handling
     ServletInputStream inputStream = null;
     ServletOutputStream outputStream = null;
@@ -745,12 +745,12 @@ public final class RemoteBuilderServlet extends HessianServlet implements Remote
   /**
    * Helper method
    */
-  private LocalAgent getLocalBuilder(final int buildID, final String checkoutDir) throws IOException {
+  private static LocalAgent getLocalBuilder(final int buildID, final String checkoutDir) throws IOException {
     return new LocalAgent(buildID, checkoutDir);
   }
 
 
-  private LocalAgentEnvironment getLocalBuilderEnvironmnent() {
+  private static LocalAgentEnvironment getLocalBuilderEnvironmnent() {
     return new LocalAgentEnvironment();
   }
 
@@ -759,7 +759,7 @@ public final class RemoteBuilderServlet extends HessianServlet implements Remote
    * Validates that the given path is under builds home dir or
    * under temp dir.
    */
-  private void validatePathIsAllowed(final String fileName) throws IOException {
+  private static void validatePathIsAllowed(final String fileName) throws IOException {
     final File file = new File(fileName);
     final String filePath = file.getCanonicalPath();
     final String systemPath = new File(ConfigurationManager.getSystemWorkDirectoryName()).getCanonicalPath();

@@ -332,7 +332,7 @@ public final class StatisticsImageServlet extends HttpServlet {
   }
 
 
-  private void createAndOutputRecentTimeToFixChart(final HttpServletResponse resp, final StatisticsManager stm) throws IOException {
+  private static void createAndOutputRecentTimeToFixChart(final HttpServletResponse resp, final StatisticsManager stm) throws IOException {
     OutputStream out = null;
     try {
       out = new BufferedOutputStream(resp.getOutputStream());
@@ -343,7 +343,7 @@ public final class StatisticsImageServlet extends HttpServlet {
   }
 
 
-  private void createAndOutputRecentTimeToFixTrendChart(final HttpServletResponse resp, final StatisticsManager stm) throws IOException {
+  private static void createAndOutputRecentTimeToFixTrendChart(final HttpServletResponse resp, final StatisticsManager stm) throws IOException {
     OutputStream out = null;
     try {
       out = new BufferedOutputStream(resp.getOutputStream());
@@ -354,7 +354,7 @@ public final class StatisticsImageServlet extends HttpServlet {
   }
 
 
-  private void createAndOutputPMDViolatiosChart(final HttpServletResponse resp, final StatisticsManager stm) throws IOException {
+  private static void createAndOutputPMDViolatiosChart(final HttpServletResponse resp, final StatisticsManager stm) throws IOException {
     OutputStream out = null;
     try {
       out = new BufferedOutputStream(resp.getOutputStream());
@@ -365,7 +365,7 @@ public final class StatisticsImageServlet extends HttpServlet {
   }
 
 
-  private void createAndOutputCheckstyleViolatiosChart(final HttpServletResponse resp, final StatisticsManager stm) throws IOException {
+  private static void createAndOutputCheckstyleViolatiosChart(final HttpServletResponse resp, final StatisticsManager stm) throws IOException {
     OutputStream out = null;
     try {
       out = new BufferedOutputStream(resp.getOutputStream());
@@ -376,7 +376,7 @@ public final class StatisticsImageServlet extends HttpServlet {
   }
 
 
-  private void createAndOutputFindbugsViolatiosChart(final HttpServletResponse resp, final StatisticsManager stm) throws IOException {
+  private static void createAndOutputFindbugsViolatiosChart(final HttpServletResponse resp, final StatisticsManager stm) throws IOException {
     OutputStream out = null;
     try {
       out = new BufferedOutputStream(resp.getOutputStream());
@@ -487,12 +487,12 @@ public final class StatisticsImageServlet extends HttpServlet {
   }
 
 
-  private void validateStats(final SortedMap stats) {
+  private static void validateStats(final SortedMap stats) {
     if (stats == null) throw new IllegalStateException("Statistics was not defined");
   }
 
 
-  private void validateDateFormat(final String dateFormat) {
+  private static void validateDateFormat(final String dateFormat) {
     if (StringUtils.isBlank(dateFormat)) throw new IllegalStateException("Date format was not defined");
   }
 
@@ -502,7 +502,7 @@ public final class StatisticsImageServlet extends HttpServlet {
    *
    * @param e
    */
-  private void reportException(final Exception e) {
+  private static void reportException(final Exception e) {
     final Error error = new Error("Error returning an image: " + StringUtils.toString(e));
     error.setDetails(e);
     error.setSendEmail(false);

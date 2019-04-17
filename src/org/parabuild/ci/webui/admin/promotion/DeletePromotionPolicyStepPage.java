@@ -164,7 +164,7 @@ public final class DeletePromotionPolicyStepPage extends AuthenticatedSystemConf
   }
 
 
-  private Result processCancel(final Parameters params) {
+  private static Result processCancel(final Parameters params) {
     // return to the coomand list
     return Result.Done(Pages.PAGE_VIEW_PROMOTION_POLICY_DETAILS, params);
   }

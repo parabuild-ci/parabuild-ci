@@ -225,7 +225,7 @@ public final class P4Properties implements Serializable {
   }
 
 
-  private String p4SettingNameToUserFriendlyString(final String name) {
+  private static String p4SettingNameToUserFriendlyString(final String name) {
     if (name.equals(SourceControlSetting.P4_CLIENT)) {
       return "P4CLIENT";
     }

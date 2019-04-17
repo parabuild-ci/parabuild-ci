@@ -98,7 +98,7 @@ public final class BuildStatisticsPage extends AbstractBuildStatisticsPage imple
   }
 
 
-  private void addTestStatistics(final Panel userPanel, final ActiveBuildConfig buildConfig) {
+  private static void addTestStatistics(final Panel userPanel, final ActiveBuildConfig buildConfig) {
     userPanel.add(new RerecentTestsStatisticsPanel(buildConfig));
     userPanel.add(WebuiUtils.makePanelDivider());
     userPanel.add(new MonthToDateImageTestStatisticsPanel(buildConfig));
@@ -108,7 +108,7 @@ public final class BuildStatisticsPage extends AbstractBuildStatisticsPage imple
   }
 
 
-  private void addBuildBreakageDistribution(final Panel userPanel, final ActiveBuildConfig buildConfig) {
+  private static void addBuildBreakageDistribution(final Panel userPanel, final ActiveBuildConfig buildConfig) {
     userPanel.add(new HourlyBuildBreakageDistributionPanel(buildConfig));
     userPanel.add(WebuiUtils.makePanelDivider());
     userPanel.add(new DayOfWeekBuildBreakageDistributionPanel(buildConfig));
@@ -116,19 +116,19 @@ public final class BuildStatisticsPage extends AbstractBuildStatisticsPage imple
   }
 
 
-  private void addYearToDateStatistics(final Panel userPanel, final ActiveBuildConfig buildConfig) {
+  private static void addYearToDateStatistics(final Panel userPanel, final ActiveBuildConfig buildConfig) {
     userPanel.add(new YearToDateImageBuildStatisticsPanel(buildConfig));
     userPanel.add(WebuiUtils.makePanelDivider());
   }
 
 
-  private void addRecentBuildTimesStatistics(final Panel userPanel, final ActiveBuildConfig buildConfig) {
+  private static void addRecentBuildTimesStatistics(final Panel userPanel, final ActiveBuildConfig buildConfig) {
     userPanel.add(new RecentBuildTimesImageStatisticsPanel(buildConfig));
     userPanel.add(WebuiUtils.makePanelDivider());
   }
 
 
-  private void addMonthToDateStatistics(final Panel userPanel, final ActiveBuildConfig buildConfig) {
+  private static void addMonthToDateStatistics(final Panel userPanel, final ActiveBuildConfig buildConfig) {
     userPanel.add(new MonthToDateImageBuildStatisticsPanel(buildConfig));
     userPanel.add(WebuiUtils.makePanelDivider());
     userPanel.add(new MonthToDateImageChangeListsStatisticsPanel(buildConfig));
@@ -152,7 +152,7 @@ public final class BuildStatisticsPage extends AbstractBuildStatisticsPage imple
   }
 
 
-  private void addTimeToFixStatistics(final Panel userPanel, final ActiveBuildConfig buildConfig) {
+  private static void addTimeToFixStatistics(final Panel userPanel, final ActiveBuildConfig buildConfig) {
     // REVIEWME: simeshev@parabuilci.org -> add visibility check
     userPanel.add(new RecentTimeToFixImageStatisticsPanel(buildConfig));
     userPanel.add(WebuiUtils.makePanelDivider());
@@ -167,7 +167,7 @@ public final class BuildStatisticsPage extends AbstractBuildStatisticsPage imple
   }
 
 
-  private String getStatsCodeFromParams(final Parameters params) {
+  private static String getStatsCodeFromParams(final Parameters params) {
     String code = null;
     if (params.isParameterPresent(StatisticsLink.PARAM_STAT_CODE)) {
       code = params.getParameterValue(StatisticsLink.PARAM_STAT_CODE);

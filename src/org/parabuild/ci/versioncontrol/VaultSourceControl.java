@@ -516,7 +516,7 @@ final class VaultSourceControl extends AbstractSourceControl {
   }
 
 
-  private String getPathToVaultExe(final Agent agent) throws IOException, AgentFailureException {
+  private static String getPathToVaultExe(final Agent agent) throws IOException, AgentFailureException {
     // NOTE: simeshev@parabuilci.org - 2005-12-09 - we get Vault path
     // from our own directory instead of path setting for as of this
     // writing only EA version of vault client supports VERSIONHISTORY

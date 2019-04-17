@@ -158,7 +158,7 @@ final class MergeQueueTable extends AbstractFlatTable {
   }
 
 
-  private String makeImageURL(final MergeQueueReport item) {
+  private static String makeImageURL(final MergeQueueReport item) {
     final String imageURL;
     if (item.getMergeChangeListResultID() == MergeChangeList.RESULT_SUCCESS) {
       imageURL = WebUIConstants.IMAGE_3232_BULLET_BALL_GLASS_GREEN_GIF;

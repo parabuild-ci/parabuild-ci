@@ -108,7 +108,7 @@ final class PublishedResultFeedGenerator {
   }
 
 
-  private List getBuildEntries(final ConfigurationManager cm, final int activeBuildID, final BuildStatusURLGenerator urlGenerator) {
+  private static List getBuildEntries(final ConfigurationManager cm, final int activeBuildID, final BuildStatusURLGenerator urlGenerator) {
     final List result = new ArrayList(11);
 
     // traverse cmplete build runs for the given build

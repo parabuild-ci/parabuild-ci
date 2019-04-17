@@ -165,7 +165,7 @@ public final class VCSUserToEmailTable extends AbstractFlatTable implements Vali
    * @param userToEmail
    * @param row
    */
-  private boolean isRowNewAndBlank(final VCSUserToEmailMap userToEmail, final Component[] row) {
+  private static boolean isRowNewAndBlank(final VCSUserToEmailMap userToEmail, final Component[] row) {
     return userToEmail.getBuildID() == BuildConfig.UNSAVED_ID
             && StringUtils.isBlank(((AbstractInput) row[COL_USER_EMAIL]).getValue())
             && StringUtils.isBlank(((AbstractInput) row[COL_USER_NAME]).getValue());

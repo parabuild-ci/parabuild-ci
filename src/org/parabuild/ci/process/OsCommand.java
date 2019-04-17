@@ -68,7 +68,7 @@ public final class OsCommand {
   }
 
 
-  private Tailer makeLogTail(final TailBufferSize tailBufferSize) {
+  private static Tailer makeLogTail(final TailBufferSize tailBufferSize) {
     if (tailBufferSize.getMaxLineCount() <= 0 || tailBufferSize.getMaxLineLength() <= 0) {
       return new ZeroLengthTailer();
     } else {
@@ -116,7 +116,7 @@ public final class OsCommand {
    * Unregisters command from the list of currently runnint
    * commands.
    */
-  private void unregister(final OsCommand command) {
+  private static void unregister(final OsCommand command) {
     synchronized (commands) {
       commands.remove(new Integer(command.handle));
     }

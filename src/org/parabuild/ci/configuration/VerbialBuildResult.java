@@ -53,7 +53,7 @@ public final class VerbialBuildResult {
   }
 
 
-  private String getVerbialResult(final int buildRunID, final byte resultID) {
+  private static String getVerbialResult(final int buildRunID, final byte resultID) {
     final ConfigurationManager cm = ConfigurationManager.getInstance();
     if (resultID == BuildRun.BUILD_RESULT_STOPPED) {
       final int userStoppedBuildID = cm.getBuildRunAttributeValue(buildRunID, BuildRunAttribute.STOPPED_BY_USER_ID, User.UNSAVED_ID);

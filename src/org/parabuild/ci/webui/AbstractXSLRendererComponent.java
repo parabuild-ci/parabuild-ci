@@ -70,7 +70,7 @@ public abstract class AbstractXSLRendererComponent extends CustomComponent {
   }
 
 
-  private void showUnexpectedErrorMsg(final RenderContext ctx, final Exception e) {
+  private static void showUnexpectedErrorMsg(final RenderContext ctx, final Exception e) {
     try {
       final PrintWriter pw = ctx.getWriter();
       pw.println("There was an unexpected error while rendering log.  The error was reported to the build administrator.");
@@ -85,7 +85,7 @@ public abstract class AbstractXSLRendererComponent extends CustomComponent {
    * Helper method to close StreamSource
    * @param source
    */
-  private void closeHard(final StreamSource source) {
+  private static void closeHard(final StreamSource source) {
     try {
       if (source != null) {
         if (source.getInputStream() != null) IoUtils.closeHard(source.getInputStream());

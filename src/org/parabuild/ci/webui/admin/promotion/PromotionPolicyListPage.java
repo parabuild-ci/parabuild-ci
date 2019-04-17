@@ -52,7 +52,7 @@ public final class PromotionPolicyListPage extends NavigatableSystemConfiguratio
   }
 
 
-  private AddPromotionPolicyLink makeNewPromotionPolicyLink() {
+  private static AddPromotionPolicyLink makeNewPromotionPolicyLink() {
     final AddPromotionPolicyLink lnkAddNewPromotionPolicy = new AddPromotionPolicyLink();
     lnkAddNewPromotionPolicy.setAlignX(Layout.LEFT);
     lnkAddNewPromotionPolicy.setAlignY(Layout.TOP);

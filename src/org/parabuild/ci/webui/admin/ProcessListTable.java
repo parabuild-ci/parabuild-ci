@@ -106,7 +106,7 @@ public final class ProcessListTable extends AbstractFlatTable {
   }
 
 
-  private CommonLabel makeCell() {
+  private static CommonLabel makeCell() {
     final CommonLabel c = new CommonLabel("");
     c.setAlignY(Layout.TOP);
     return c;

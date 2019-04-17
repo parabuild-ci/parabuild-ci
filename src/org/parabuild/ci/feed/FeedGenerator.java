@@ -110,7 +110,7 @@ final class FeedGenerator {
   }
 
 
-  private List getBuildEntries(final ConfigurationManager cm, final int activeBuildID, final BuildStatusURLGenerator urlGenerator) {
+  private static List getBuildEntries(final ConfigurationManager cm, final int activeBuildID, final BuildStatusURLGenerator urlGenerator) {
     final List result = new ArrayList(1);
 
     // traverse cmplete build runs for the given build

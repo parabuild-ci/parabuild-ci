@@ -56,7 +56,7 @@ public final class VaultDepotPathParser {
   }
 
 
-  private List parseAndValidate(final String originalDepotPath) throws ValidationException {
+  private static List parseAndValidate(final String originalDepotPath) throws ValidationException {
     final List list = new DepotPathParser("Depot path").parseDepotPath(originalDepotPath);
     for (int i = 0, n = list.size(); i < n; i++) {
       final RepositoryPath repositoryPath = (RepositoryPath) list.get(i);

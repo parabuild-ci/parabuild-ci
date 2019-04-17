@@ -266,7 +266,7 @@ public final class DeleteBuildPage extends BasePage implements ConversationalTie
   }
 
 
-  private Result processCancel(final Parameters params) {
+  private static Result processCancel(final Parameters params) {
     // return to the coomand list
     return Result.Done(Pages.ADMIN_BUILD_COMMANDS_LIST, params);
   }

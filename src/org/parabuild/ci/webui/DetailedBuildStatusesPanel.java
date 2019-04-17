@@ -172,7 +172,7 @@ public final class DetailedBuildStatusesPanel extends Panel {
   }
 
 
-  private Color makeBuildNameBackground(final BuildState buildState, final int selectedBuildID) {
+  private static Color makeBuildNameBackground(final BuildState buildState, final int selectedBuildID) {
     return buildState.getActiveBuildID() == selectedBuildID ? COLOR_LEFTNAV_SELECTED_BG : COLOR_LEFTNAV_DEFAULT_BG;
   }
 }

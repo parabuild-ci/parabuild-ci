@@ -82,9 +82,9 @@ final class UpgraderToVersion8 implements SingleStepSchemaUpgrader {
   }
 
 
-  private void encryptPasswordProperty(final Connection conn,
-    final String tableName, final String idFieldName, final String nameFieldName,
-    final String valueFieldName, final String passwordPropertyName) throws SQLException {
+  private static void encryptPasswordProperty(final Connection conn,
+                                              final String tableName, final String idFieldName, final String nameFieldName,
+                                              final String valueFieldName, final String passwordPropertyName) throws SQLException {
 
     PreparedStatement psSelect = null; // NOPMD
     PreparedStatement psUpdate = null; // NOPMD

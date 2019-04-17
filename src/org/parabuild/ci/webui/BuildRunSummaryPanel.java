@@ -458,7 +458,7 @@ public final class BuildRunSummaryPanel extends MessagePanel {
    * @param date Date to convert
    * @return String result of conversion
    */
-  private String dateTimeToString(final Date date) {
+  private static String dateTimeToString(final Date date) {
     if (date == null) {
       return "";
     }

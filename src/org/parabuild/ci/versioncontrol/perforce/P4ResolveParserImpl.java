@@ -150,7 +150,7 @@ public class P4ResolveParserImpl implements P4ResolveParser {
   }
 
 
-  private IOException makeUnexpectedLineFormatException(final String lineToParse) {
+  private static IOException makeUnexpectedLineFormatException(final String lineToParse) {
     return new IOException(UNEXPECTED_LINE_FORMAT + lineToParse);
   }
 }

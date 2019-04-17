@@ -192,7 +192,7 @@ final class EditPromotionPolicyStepPanel extends MessagePanel {
   }
 
 
-  private Tierlet.Result promotionPolicyDetailHome(final int policyID) {
+  private static Tierlet.Result promotionPolicyDetailHome(final int policyID) {
     final Parameters params = new Parameters();
     params.addParameter(Pages.PARAM_PROMOTION_POLICY_ID, policyID);
     return Tierlet.Result.Done(Pages.PAGE_VIEW_PROMOTION_POLICY_DETAILS, params);
