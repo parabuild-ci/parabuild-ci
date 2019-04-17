@@ -94,9 +94,9 @@ final class P4ClientViewSourceDropDown extends CodeNameDropDown {
   /**
    * Sets selected code
    */
-  public void setCode(final byte code) {
+  public void setCode(final int code) {
     super.setCode(code);
-    processCodeSelection(code);
+    processCodeSelection((byte)code);
   }
 
 

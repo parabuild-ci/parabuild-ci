@@ -542,14 +542,14 @@ public final class LocalAgent implements Agent {
     final List descriptorList = new ArrayList(101);
 
     // check if file exists
-    final File file = new File(path);
-    if (!file.exists()) {
+    final File pathToCheck = new File(path);
+    if (!pathToCheck.exists()) {
       throw new FileNotFoundException("File not found: \"" + path + '\"');
     }
 
     // process file
     final long[] maxTimeStamp = new long[1];
-    IoUtils.traversePath(file, new DirectoryTraverserCallback() {
+    IoUtils.traversePath(pathToCheck, new DirectoryTraverserCallback() {
       public boolean callback(final File file) throws IOException {
 //        if (log.isDebugEnabled()) log.debug("file: " + file);
         // REVIEWME: will traverse further even if
