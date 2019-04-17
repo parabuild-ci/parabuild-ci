@@ -23,6 +23,7 @@ import viewtier.ui.Parameters;
  */
 public abstract class NavigatableSystemConfigurationPage extends AuthenticatedSystemConfigurationPage {
 
+  private static final long serialVersionUID = -3496974032912031015L;
   private final Panel pnlRight = new Panel();
   private final LeftNavigationPanel pnlLeftNavigation = new LeftNavigationPanel();
 

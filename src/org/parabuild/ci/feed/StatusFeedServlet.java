@@ -41,6 +41,7 @@ public final class StatusFeedServlet extends HttpServlet {
   private static final String MIME_TYPE = "application/xml; charset=UTF-8";
   private static final String DEFAULT_FEED_TYPE = "rss_2.0";
   private static final Map VALID_FEED_TYPES = createValidFeedTypes();
+  private static final long serialVersionUID = -6042171890401737448L;
 
 
   public void doGet(final HttpServletRequest req, final HttpServletResponse res) throws IOException {

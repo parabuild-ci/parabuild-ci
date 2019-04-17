@@ -52,7 +52,7 @@ public final class BazaarBranchCommand extends BazaarCommand {
     sb.append(" branch ");
     sb.append(" --use-existing-dir ");
     sb.append(branchLocation);
-    sb.append(" ").append(StringUtils.putIntoDoubleQuotes(checkoutDir));
+    sb.append(' ').append(StringUtils.putIntoDoubleQuotes(checkoutDir));
     return sb.toString();
   }
 }

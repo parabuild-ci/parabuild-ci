@@ -163,15 +163,15 @@ public final class UnixProcessManager implements ProcessManager {
    */
   public List killProcess(final int pid) throws BuildException {
     // list of OSProcess object      
-    final List ret = new ArrayList();
     // mapping PPID->list of children PID
     final Map tree = new HashMap();
     // mapping PID->OSProcess
-    final Map processes = new HashMap();
 
     // Collect processes list and tree
     final InputStream is = parser.getProcesses();
     try {
+      final List ret = new ArrayList();
+      final Map processes = new HashMap();
       parser.parse(is, ret, processes, tree);
     } finally {
       IoUtils.closeHard(is);

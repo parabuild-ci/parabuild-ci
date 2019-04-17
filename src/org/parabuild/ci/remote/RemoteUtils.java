@@ -46,9 +46,7 @@ public final class RemoteUtils {
         return (IOException) cause;
       }
     } else {
-      final IOException e = new IOException("Unexpected I/O error: " + StringUtils.toString(cause));
-      e.initCause(cause);
-      return e;
+      return new IOException("Unexpected I/O error: " + StringUtils.toString(cause), cause);
     }
   }
 

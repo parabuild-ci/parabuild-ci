@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.versioncontrol.mks;
 
-import java.util.*;
+import java.util.Date;
 
 /**
  * Parameters for MKS's rlog command.

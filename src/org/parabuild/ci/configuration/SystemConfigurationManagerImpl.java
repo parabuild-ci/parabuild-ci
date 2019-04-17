@@ -345,9 +345,7 @@ final class SystemConfigurationManagerImpl implements SystemConfigurationManager
       if (hourOfDay >= from && hourOfDay <= 23) {
         return true;
       }
-      if (hourOfDay >= 0 && hourOfDay <= to) {
-        return true;
-      }
+      return hourOfDay >= 0 && hourOfDay <= to;
     }
     return false;
   }

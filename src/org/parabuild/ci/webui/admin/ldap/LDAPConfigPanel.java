@@ -170,6 +170,9 @@ final class LDAPConfigPanel extends AbstractSystemConfigPanel {
 
     // set button handlers
     btnTest.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = 3478042393305054632L;
+
+
       public Tierlet.Result buttonPressed(final ButtonPressedEvent buttonPressedEvent) {
 
         // general validation

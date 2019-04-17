@@ -33,6 +33,9 @@ import java.util.Properties;
  */
 final class GenericTestLogPanel extends MessagePanel {
 
+  private static final long serialVersionUID = -4213722365233896310L;
+
+
   public GenericTestLogPanel(final ArchiveManager archiveManager, final StepLog stepLog) {
 
     InputStream archivedLogInputStream = null;

@@ -155,7 +155,7 @@ abstract class StarTeamCommand extends VersionControlRemoteCommand {
       String line = reader.readLine();
       if (line != null) {
         if (line.startsWith("A connection to the StarTeam server could not be established.")) {
-          errorMessage.append("Could not connect to StarTeam server using address \"").append(parameters.getAddress()).append("\" and port \"").append(Integer.toString(parameters.getPort())).append("\".");
+          errorMessage.append("Could not connect to StarTeam server using address \"").append(parameters.getAddress()).append("\" and port \"").append(parameters.getPort()).append("\".");
         } else {
           if (line.startsWith("Either the username or password you entered is not valid")) {
             errorMessage.append("Could not connect to StarTeam server using configured user name and password");
@@ -184,7 +184,7 @@ abstract class StarTeamCommand extends VersionControlRemoteCommand {
     sb.append('@');
     sb.append(parameters.getAddress());
     sb.append(':');
-    sb.append(Integer.toString(parameters.getPort()));
+    sb.append(parameters.getPort());
     sb.append(parameters.getProject());
     return StringUtils.putIntoDoubleQuotes(sb.toString());
   }

@@ -24,7 +24,6 @@ import org.parabuild.ci.webui.admin.mercurial.MercurialManualScheduleStartParame
  * ManualScheduleStartParametersPanel} according to the build
  * configuration.
  *
- * @noinspection ConstantNamingConvention
  */
 final class ManualScheduleStartParametersPanelFactory {
 

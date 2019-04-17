@@ -42,6 +42,7 @@ final class PublishedResultFilesTable extends AbstractFlatTable {
   private static final int COL_BUILD_LINK = 2;
   private static final int COL_PINNED = 3;
   private static final int COL_COMMANDS = 4;
+  private static final long serialVersionUID = -6718910702342503196L;
 
   private List results = new ArrayList();
 
@@ -126,7 +127,7 @@ final class PublishedResultFilesTable extends AbstractFlatTable {
 
     // build
 
-    final String caption = psr.getBuildName() + " #" + Integer.toString(psr.getBuildRunNumber());
+    final String caption = psr.getBuildName() + " #" + psr.getBuildRunNumber();
     final PublishedResultLinkFlow resultLinkFlow = (PublishedResultLinkFlow)row[COL_BUILD_LINK];
     resultLinkFlow.setBuildRun(caption, psr.getBuildRunID(), currentUserCanSeeBuild(psr.getActiveBuildID()));
 
@@ -175,6 +176,9 @@ final class PublishedResultFilesTable extends AbstractFlatTable {
 
 
   private static final class RowCommandsFlow extends Flow {
+
+    private static final long serialVersionUID = 1993675506315167837L;
+
 
     public void setResult(final int publishedResultID, final int resultGroupID, final boolean showUnpublishCommand) {
       reset();

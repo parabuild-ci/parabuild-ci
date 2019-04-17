@@ -25,6 +25,7 @@ public class AutopublishDropdown extends CodeNameDropDown {
 
   private static final String CAPTION_SELECT_RESULT_GROUP = "Select result group";
   public static final int CODE_NOT_SET = -1;
+  private static final long serialVersionUID = -4724891970469118657L;
 
 
   public AutopublishDropdown() {

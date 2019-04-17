@@ -19,6 +19,9 @@ package org.parabuild.ci.common;
  */
 public final class CommandStoppedException extends InterruptedException {
 
+  private static final long serialVersionUID = 100500849509673469L;
+
+
   /**
    */
   public CommandStoppedException() {

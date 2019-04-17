@@ -22,6 +22,9 @@ import java.util.Properties;
  */
 public class CommonLink extends Link {
 
+  private static final long serialVersionUID = -8400861127430651405L;
+
+
   /**
    * Constructor.
    *

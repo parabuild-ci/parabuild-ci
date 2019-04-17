@@ -21,7 +21,7 @@ import org.parabuild.ci.object.LogConfig;
  * This panel does not present any additional controls because all we
  * need for JUnit is path to a directory with JUnit XML logs.
  *
- * @see org.parabuild.ci.webui.admin.AbstractLogConfigPanel
+ * @see AbstractLogConfigPanel
  */
 public final class GenericTestResultConfigPanel extends AbstractLogConfigPanel {
 

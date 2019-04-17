@@ -14,21 +14,32 @@
 
 package org.parabuild.ci.webservice.templ;
 
-public class StartParameter implements java.io.Serializable {
+import org.apache.axis.description.ElementDesc;
+import org.apache.axis.description.TypeDesc;
+import org.apache.axis.encoding.Deserializer;
+import org.apache.axis.encoding.Serializer;
+import org.apache.axis.encoding.ser.BeanDeserializer;
+import org.apache.axis.encoding.ser.BeanSerializer;
 
+import javax.xml.namespace.QName;
+import java.io.Serializable;
+
+public class StartParameter implements Serializable {
+
+  private static final long serialVersionUID = -5206409257451301526L;
   private int ID;
   private int buildID;
-  private java.lang.String description;
+  private String description;
   private boolean enabled;
-  private java.lang.String firstValue;
+  private String firstValue;
   private boolean modifiable;
-  private java.lang.String name;
+  private String name;
   private byte presentation;
   private boolean required;
-  private java.lang.String runtimeValue;
+  private String runtimeValue;
   private long timeStamp;
   private byte type;
-  private java.lang.String value;
+  private String value;
 
 
   public StartParameter() {
@@ -38,17 +49,17 @@ public class StartParameter implements java.io.Serializable {
   public StartParameter(
           final int ID,
           final int buildID,
-          final java.lang.String description,
+          final String description,
           final boolean enabled,
-          final java.lang.String firstValue,
+          final String firstValue,
           final boolean modifiable,
-          final java.lang.String name,
+          final String name,
           final byte presentation,
           final boolean required,
-          final java.lang.String runtimeValue,
+          final String runtimeValue,
           final long timeStamp,
           final byte type,
-          final java.lang.String value) {
+          final String value) {
     this.ID = ID;
     this.buildID = buildID;
     this.description = description;
@@ -110,7 +121,7 @@ public class StartParameter implements java.io.Serializable {
    *
    * @return description
    */
-  public java.lang.String getDescription() {
+  public String getDescription() {
     return description;
   }
 
@@ -120,7 +131,7 @@ public class StartParameter implements java.io.Serializable {
    *
    * @param description
    */
-  public void setDescription(final java.lang.String description) {
+  public void setDescription(final String description) {
     this.description = description;
   }
 
@@ -150,7 +161,7 @@ public class StartParameter implements java.io.Serializable {
    *
    * @return firstValue
    */
-  public java.lang.String getFirstValue() {
+  public String getFirstValue() {
     return firstValue;
   }
 
@@ -160,7 +171,7 @@ public class StartParameter implements java.io.Serializable {
    *
    * @param firstValue
    */
-  public void setFirstValue(final java.lang.String firstValue) {
+  public void setFirstValue(final String firstValue) {
     this.firstValue = firstValue;
   }
 
@@ -190,7 +201,7 @@ public class StartParameter implements java.io.Serializable {
    *
    * @return name
    */
-  public java.lang.String getName() {
+  public String getName() {
     return name;
   }
 
@@ -200,7 +211,7 @@ public class StartParameter implements java.io.Serializable {
    *
    * @param name
    */
-  public void setName(final java.lang.String name) {
+  public void setName(final String name) {
     this.name = name;
   }
 
@@ -250,7 +261,7 @@ public class StartParameter implements java.io.Serializable {
    *
    * @return runtimeValue
    */
-  public java.lang.String getRuntimeValue() {
+  public String getRuntimeValue() {
     return runtimeValue;
   }
 
@@ -260,7 +271,7 @@ public class StartParameter implements java.io.Serializable {
    *
    * @param runtimeValue
    */
-  public void setRuntimeValue(final java.lang.String runtimeValue) {
+  public void setRuntimeValue(final String runtimeValue) {
     this.runtimeValue = runtimeValue;
   }
 
@@ -310,7 +321,7 @@ public class StartParameter implements java.io.Serializable {
    *
    * @return value
    */
-  public java.lang.String getValue() {
+  public String getValue() {
     return value;
   }
 
@@ -320,15 +331,15 @@ public class StartParameter implements java.io.Serializable {
    *
    * @param value
    */
-  public void setValue(final java.lang.String value) {
+  public void setValue(final String value) {
     this.value = value;
   }
 
 
-  private java.lang.Object __equalsCalc = null;
+  private Object __equalsCalc = null;
 
 
-  public synchronized boolean equals(final java.lang.Object obj) {
+  public synchronized boolean equals(final Object obj) {
     if (!(obj instanceof StartParameter)) return false;
     final StartParameter other = (StartParameter) obj;
     if (obj == null) return false;
@@ -339,29 +350,29 @@ public class StartParameter implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.ID == other.getID() &&
-            this.buildID == other.getBuildID() &&
-            ((this.description == null && other.getDescription() == null) ||
+            this.ID == other.ID &&
+            this.buildID == other.buildID &&
+            ((this.description == null && other.description == null) ||
                     (this.description != null &&
-                            this.description.equals(other.getDescription()))) &&
-            this.enabled == other.isEnabled() &&
-            ((this.firstValue == null && other.getFirstValue() == null) ||
+                            this.description.equals(other.description))) &&
+            this.enabled == other.enabled &&
+            ((this.firstValue == null && other.firstValue == null) ||
                     (this.firstValue != null &&
-                            this.firstValue.equals(other.getFirstValue()))) &&
-            this.modifiable == other.isModifiable() &&
-            ((this.name == null && other.getName() == null) ||
+                            this.firstValue.equals(other.firstValue))) &&
+            this.modifiable == other.modifiable &&
+            ((this.name == null && other.name == null) ||
                     (this.name != null &&
-                            this.name.equals(other.getName()))) &&
-            this.presentation == other.getPresentation() &&
-            this.required == other.isRequired() &&
-            ((this.runtimeValue == null && other.getRuntimeValue() == null) ||
+                            this.name.equals(other.name))) &&
+            this.presentation == other.presentation &&
+            this.required == other.required &&
+            ((this.runtimeValue == null && other.runtimeValue == null) ||
                     (this.runtimeValue != null &&
-                            this.runtimeValue.equals(other.getRuntimeValue()))) &&
-            this.timeStamp == other.getTimeStamp() &&
-            this.type == other.getType() &&
-            ((this.value == null && other.getValue() == null) ||
+                            this.runtimeValue.equals(other.runtimeValue))) &&
+            this.timeStamp == other.timeStamp &&
+            this.type == other.type &&
+            ((this.value == null && other.value == null) ||
                     (this.value != null &&
-                            this.value.equals(other.getValue())));
+                            this.value.equals(other.value)));
     __equalsCalc = null;
     return _equals;
   }
@@ -376,28 +387,28 @@ public class StartParameter implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getID();
-    _hashCode += getBuildID();
-    if (getDescription() != null) {
-      _hashCode += getDescription().hashCode();
+    _hashCode += ID;
+    _hashCode += buildID;
+    if (description != null) {
+      _hashCode += description.hashCode();
     }
-    _hashCode += (isEnabled() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    if (getFirstValue() != null) {
-      _hashCode += getFirstValue().hashCode();
+    _hashCode += (enabled ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    if (firstValue != null) {
+      _hashCode += firstValue.hashCode();
     }
-    _hashCode += (isModifiable() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    if (getName() != null) {
-      _hashCode += getName().hashCode();
+    _hashCode += (modifiable ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    if (name != null) {
+      _hashCode += name.hashCode();
     }
-    _hashCode += getPresentation();
-    _hashCode += (isRequired() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    if (getRuntimeValue() != null) {
-      _hashCode += getRuntimeValue().hashCode();
+    _hashCode += presentation;
+    _hashCode += (required ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    if (runtimeValue != null) {
+      _hashCode += runtimeValue.hashCode();
     }
-    _hashCode += new Long(getTimeStamp()).hashCode();
-    _hashCode += getType();
-    if (getValue() != null) {
-      _hashCode += getValue().hashCode();
+    _hashCode += new Long(timeStamp).hashCode();
+    _hashCode += type;
+    if (value != null) {
+      _hashCode += value.hashCode();
     }
     __hashCodeCalc = false;
     return _hashCode;
@@ -405,88 +416,88 @@ public class StartParameter implements java.io.Serializable {
 
 
   // Type metadata
-  private static final org.apache.axis.description.TypeDesc typeDesc =
-          new org.apache.axis.description.TypeDesc(StartParameter.class, true);
+  private static final TypeDesc typeDesc =
+          new TypeDesc(StartParameter.class, true);
 
 
   static {
-    typeDesc.setXmlType(new javax.xml.namespace.QName("http://org.parabuild.ci", "StartParameter"));
-    org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+    typeDesc.setXmlType(new QName("http://org.parabuild.ci", "StartParameter"));
+    ElementDesc elemField = new ElementDesc();
     elemField.setFieldName("ID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "ID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "ID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("buildID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "buildID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "buildID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("description");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "description"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "description"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("enabled");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "enabled"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "enabled"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "boolean"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("firstValue");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "firstValue"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "firstValue"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("modifiable");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "modifiable"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "modifiable"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "boolean"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("name");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "name"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "name"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("presentation");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "presentation"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "byte"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "presentation"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "byte"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("required");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "required"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "required"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "boolean"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("runtimeValue");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "runtimeValue"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "runtimeValue"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("timeStamp");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "timeStamp"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "timeStamp"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "long"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("type");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "type"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "byte"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "type"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "byte"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("value");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "value"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "value"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
   }
@@ -495,7 +506,7 @@ public class StartParameter implements java.io.Serializable {
   /**
    * Return type metadata object
    */
-  public static org.apache.axis.description.TypeDesc getTypeDesc() {
+  public static TypeDesc getTypeDesc() {
     return typeDesc;
   }
 
@@ -503,12 +514,12 @@ public class StartParameter implements java.io.Serializable {
   /**
    * Get Custom Serializer
    */
-  public static org.apache.axis.encoding.Serializer getSerializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Serializer getSerializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanSerializer(
+            new BeanSerializer(
                     _javaType, _xmlType, typeDesc);
   }
 
@@ -516,12 +527,12 @@ public class StartParameter implements java.io.Serializable {
   /**
    * Get Custom Deserializer
    */
-  public static org.apache.axis.encoding.Deserializer getDeserializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Deserializer getDeserializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanDeserializer(
+            new BeanDeserializer(
                     _javaType, _xmlType, typeDesc);
   }
 

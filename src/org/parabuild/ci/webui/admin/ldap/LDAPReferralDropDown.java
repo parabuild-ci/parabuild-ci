@@ -22,6 +22,9 @@ import org.parabuild.ci.configuration.*;
 final class LDAPReferralDropDown extends CodeNameDropDown {
 
 
+  private static final long serialVersionUID = -343152435802726242L;
+
+
   public LDAPReferralDropDown() {
     addCodeNamePair(ConfigurationConstants.LDAP_REFERRAL_DEFAULT, "Default");
     addCodeNamePair(ConfigurationConstants.LDAP_REFERRAL_FOLLOW, "follow");

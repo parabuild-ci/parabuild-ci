@@ -58,6 +58,9 @@ final class SelectMergeProjectPanel extends MessagePanel {
     gi.add(btnCancel).add(new CommonFlow(new Label("  "), btnContinue));
 
     btnContinue.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = 6041790793082587405L;
+
+
       public Tierlet.Result buttonPressed(final ButtonPressedEvent buttonPressedEvent) {
         // validate
         if (projectDropDown.getCode() == ProjectDropDown.NOT_SELECTED_ID) {
@@ -74,6 +77,9 @@ final class SelectMergeProjectPanel extends MessagePanel {
     });
 
     btnCancel.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = -6710624587102682370L;
+
+
       public Tierlet.Result buttonPressed(final ButtonPressedEvent buttonPressedEvent) {
         return Tierlet.Result.Done(Pages.PAGE_MERGE_LIST);
       }

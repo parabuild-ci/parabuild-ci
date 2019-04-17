@@ -65,6 +65,9 @@ public final class EditAgentPage extends BasePage implements ConversationalTierl
 
     // add cancel button listener
     btnCancel.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = -1780813357326862971L;
+
+
       public Result buttonPressed(final ButtonPressedEvent event) {
         return Result.Done(Pages.PAGE_AGENT_LIST);
       }
@@ -72,6 +75,9 @@ public final class EditAgentPage extends BasePage implements ConversationalTierl
 
     // add save button listener
     btnSave.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = -3612529047981728480L;
+
+
       public Result buttonPressed(final ButtonPressedEvent event) {
         if (pnlAgent.save()) {
           return Result.Done(Pages.PAGE_AGENT_LIST);

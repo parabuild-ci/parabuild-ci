@@ -15,11 +15,9 @@ package org.parabuild.ci.relnotes;
 
 import org.parabuild.ci.configuration.ConfigurationManager;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 /**
  * This sevlet works as an integration front for incoming release

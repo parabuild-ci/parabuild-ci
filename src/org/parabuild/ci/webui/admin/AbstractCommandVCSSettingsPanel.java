@@ -29,6 +29,7 @@ public abstract class AbstractCommandVCSSettingsPanel extends AbstractSourceCont
   private static final String CAPTION_LABEL_TAG_A_BUILD = "Command to label/tag a build: ";
   private static final String CAPTION_REMOVE_TABEL_TAG = "Command to remove tabel/tag: ";
   private static final String CAPTION_SYNC_TO_CHANGE_LIST = "Command to sync to change list: ";
+  private static final long serialVersionUID = -1342054234743631119L;
 
   private final Field flLabelCommand = new CommonField(200, 80);
   private final Field flRemoveLabelCommand = new CommonField(200, 80);

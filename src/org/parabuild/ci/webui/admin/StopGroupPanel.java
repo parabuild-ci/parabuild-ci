@@ -54,8 +54,7 @@ import java.util.Set;
  * StopManyBuildsPanel
  *
  * @author Slava Imeshev
- * @noinspection FieldCanBeLocal,MethodOnlyUsedFromInnerClass
- * @since Apr 30, 2009 10:53:51 AM
+ * @noinspection MethodOnlyUsedFromInnerClass @since Apr 30, 2009 10:53:51 AM
  */
 public final class StopGroupPanel extends MessagePanel {
 
@@ -414,6 +413,9 @@ public final class StopGroupPanel extends MessagePanel {
 
 
   private class CancelButtonPressedListener implements ButtonPressedListener {
+
+    private static final long serialVersionUID = 8540358842076116331L;
+
 
     public Tierlet.Result buttonPressed(final ButtonPressedEvent buttonPressedEvent) {
       return processCancel();

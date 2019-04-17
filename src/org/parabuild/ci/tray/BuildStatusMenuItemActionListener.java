@@ -41,7 +41,7 @@ final class BuildStatusMenuItemActionListener implements ActionListener {
     if (log.isDebugEnabled()) log.debug("menuItem: " + menuItem);
     if (source == menuItem) { // NOPMD - same object refrence check
       // compose a URL
-      final String url = "http://" + RemoteUtils.normalizeHostPort(hostPort) + "/parabuild/index.htm?detview=true&buildid=" + Integer.toString(activeBuildID);
+      final String url = "http://" + RemoteUtils.normalizeHostPort(hostPort) + "/parabuild/index.htm?detview=true&buildid=" + activeBuildID;
       // launch a browser
       try {
         if (log.isDebugEnabled()) log.debug("url: " + url);

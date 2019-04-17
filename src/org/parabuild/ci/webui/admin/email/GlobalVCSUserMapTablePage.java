@@ -64,6 +64,7 @@ public final class GlobalVCSUserMapTablePage extends NavigatableSystemConfigurat
   private static final class AddMapLink extends CommonCommandLinkWithImage {
 
     private static final String CAPTION_ADD_NEW_MAPPING = "Add New Mapping";
+    private static final long serialVersionUID = -6484705000953935623L;
 
 
     AddMapLink() {

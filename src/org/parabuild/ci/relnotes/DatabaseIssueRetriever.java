@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.relnotes;
 
+import java.sql.Date;
 import java.util.*;
 
 import org.parabuild.ci.common.*;
@@ -33,6 +34,6 @@ interface DatabaseIssueRetriever {
    *
    * @throws BuildException if errors happen.
    */
-  List retrieveBugs(java.sql.Date fromDate, java.sql.Date toDate) throws BuildException;
+  List retrieveBugs(Date fromDate, Date toDate) throws BuildException;
 }
 

@@ -25,6 +25,9 @@ import viewtier.ui.Image;
  */
 public final class RecentPMDStatisticsPanel extends MessagePanel {
 
+  private static final long serialVersionUID = 2623517185228497333L;
+
+
   /**
    * Constructor.
    */

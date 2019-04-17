@@ -25,6 +25,7 @@ import java.util.List;
  */
 public final class CVSCompoundSettingsPanel extends SourceControlPanel {
 
+  private static final long serialVersionUID = 1328637194058841510L;
   private final CVSSettingsPanel pnlCVSSettings = new CVSSettingsPanel();
   private final RepositoryBrowserPanel pnlRepositoryBrowser = new RepositoryBrowserPanel(true);
 

@@ -14,8 +14,19 @@
 
 package org.parabuild.ci.webservice.templ;
 
-public class IssueChangeList implements java.io.Serializable {
+import org.apache.axis.description.ElementDesc;
+import org.apache.axis.description.TypeDesc;
+import org.apache.axis.encoding.Deserializer;
+import org.apache.axis.encoding.Serializer;
+import org.apache.axis.encoding.ser.BeanDeserializer;
+import org.apache.axis.encoding.ser.BeanSerializer;
 
+import javax.xml.namespace.QName;
+import java.io.Serializable;
+
+public class IssueChangeList implements Serializable {
+
+  private static final long serialVersionUID = 642028237802848736L;
   private int ID;
   private int changeListID;
   private int issueID;
@@ -95,10 +106,10 @@ public class IssueChangeList implements java.io.Serializable {
   }
 
 
-  private java.lang.Object __equalsCalc = null;
+  private Object __equalsCalc = null;
 
 
-  public synchronized boolean equals(final java.lang.Object obj) {
+  public synchronized boolean equals(final Object obj) {
     if (!(obj instanceof IssueChangeList)) return false;
     final IssueChangeList other = (IssueChangeList) obj;
     if (obj == null) return false;
@@ -109,9 +120,9 @@ public class IssueChangeList implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.ID == other.getID() &&
-            this.changeListID == other.getChangeListID() &&
-            this.issueID == other.getIssueID();
+            this.ID == other.ID &&
+            this.changeListID == other.changeListID &&
+            this.issueID == other.issueID;
     __equalsCalc = null;
     return _equals;
   }
@@ -126,37 +137,37 @@ public class IssueChangeList implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getID();
-    _hashCode += getChangeListID();
-    _hashCode += getIssueID();
+    _hashCode += ID;
+    _hashCode += changeListID;
+    _hashCode += issueID;
     __hashCodeCalc = false;
     return _hashCode;
   }
 
 
   // Type metadata
-  private static final org.apache.axis.description.TypeDesc typeDesc =
-          new org.apache.axis.description.TypeDesc(IssueChangeList.class, true);
+  private static final TypeDesc typeDesc =
+          new TypeDesc(IssueChangeList.class, true);
 
 
   static {
-    typeDesc.setXmlType(new javax.xml.namespace.QName("http://org.parabuild.ci", "IssueChangeList"));
-    org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+    typeDesc.setXmlType(new QName("http://org.parabuild.ci", "IssueChangeList"));
+    ElementDesc elemField = new ElementDesc();
     elemField.setFieldName("ID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "ID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "ID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("changeListID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "changeListID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "changeListID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("issueID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "issueID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "issueID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
   }
@@ -165,7 +176,7 @@ public class IssueChangeList implements java.io.Serializable {
   /**
    * Return type metadata object
    */
-  public static org.apache.axis.description.TypeDesc getTypeDesc() {
+  public static TypeDesc getTypeDesc() {
     return typeDesc;
   }
 
@@ -173,12 +184,12 @@ public class IssueChangeList implements java.io.Serializable {
   /**
    * Get Custom Serializer
    */
-  public static org.apache.axis.encoding.Serializer getSerializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Serializer getSerializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanSerializer(
+            new BeanSerializer(
                     _javaType, _xmlType, typeDesc);
   }
 
@@ -186,12 +197,12 @@ public class IssueChangeList implements java.io.Serializable {
   /**
    * Get Custom Deserializer
    */
-  public static org.apache.axis.encoding.Deserializer getDeserializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Deserializer getDeserializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanDeserializer(
+            new BeanDeserializer(
                     _javaType, _xmlType, typeDesc);
   }
 

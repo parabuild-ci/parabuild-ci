@@ -24,6 +24,7 @@ import viewtier.ui.Layout;
  */
 final class BuildTimeFlow extends Flow {
 
+  private static final long serialVersionUID = 1321249943398819863L;
   private final String dateTimeFormat;
 
 

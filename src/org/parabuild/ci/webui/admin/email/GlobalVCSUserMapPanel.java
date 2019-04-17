@@ -38,6 +38,7 @@ final class GlobalVCSUserMapPanel extends MessagePanel {
   private static final String CAPTION_NOTE = "Note: ";
   private static final String CAPTION_EMAIL = "Email: ";
   private static final String CAPTION_VERSION_CONTROL_USER = "Version Control User: ";
+  private static final long serialVersionUID = 3752662451054888519L;
 
   // Labels
   private final CommonFieldLabel lbNote = new CommonFieldLabel(CAPTION_NOTE);

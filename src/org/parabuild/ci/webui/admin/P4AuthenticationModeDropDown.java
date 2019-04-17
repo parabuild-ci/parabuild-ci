@@ -22,6 +22,9 @@ import org.parabuild.ci.webui.common.*;
 final class P4AuthenticationModeDropDown extends CodeNameDropDown {
 
 
+  private static final long serialVersionUID = -8575525267961841913L;
+
+
   P4AuthenticationModeDropDown() {
     addCodeNamePair(SourceControlSetting.P4_AUTHENTICATION_MODE_VALUE_P4PASSWD, "P4PASSWD");
     addCodeNamePair(SourceControlSetting.P4_AUTHENTICATION_MODE_VALUE_P4LOGIN, "p4 login");

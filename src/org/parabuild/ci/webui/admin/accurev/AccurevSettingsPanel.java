@@ -47,6 +47,7 @@ public final class AccurevSettingsPanel extends AbstractSourceControlPanel {
   private static final String STREAM = "Stream: ";
   private static final String USER = "User: ";
   private static final String WORKSPACE_KIND = "File Locking: ";
+  private static final long serialVersionUID = -2268327593466070570L;
 
   private final CommonFieldLabel lbDepot = new CommonFieldLabel(DEPOT);
   private final CommonFieldLabel lbHost = new CommonFieldLabel(HOST);

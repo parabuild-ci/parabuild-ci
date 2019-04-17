@@ -193,7 +193,7 @@ final class VaultSourceControl extends AbstractSourceControl {
    * @param changeListDate
    * @return
    * @throws IOException
-   * @throws org.parabuild.ci.common.CommandStoppedException
+   * @throws CommandStoppedException
    * @throws ParseException
    */
   private int getRepositoryPathVersion(final Agent agent, final String path, final Date changeListDate) throws IOException, CommandStoppedException, ParseException, AgentFailureException {

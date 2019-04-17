@@ -24,6 +24,9 @@ import java.util.List;
  */
 final class BuildFarmAgentDropDown extends CodeNameDropDown {
 
+  private static final long serialVersionUID = -1750498728741907179L;
+
+
   BuildFarmAgentDropDown(final int buildFarmID) {
 
     super(ALLOW_NONEXISTING_CODES);

@@ -29,6 +29,7 @@ import java.util.List;
  */
 public final class LogLinks extends Flow {
 
+  private static final long serialVersionUID = 6938297746986578098L;
   private final int logCount;
 
 

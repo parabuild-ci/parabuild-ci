@@ -69,6 +69,7 @@ public final class ResultGroupListPage extends BasePage implements StatelessTier
   private static final class AddResultGroupLink extends CommonCommandLinkWithImage {
 
     protected static final String CAPTION_ADD_RESULT_GROUP = "Add Result Group";
+    private static final long serialVersionUID = 2260830912987923218L;
 
 
     public AddResultGroupLink() {

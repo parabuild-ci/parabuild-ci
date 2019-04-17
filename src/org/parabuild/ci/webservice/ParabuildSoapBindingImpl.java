@@ -885,7 +885,7 @@ public final class ParabuildSoapBindingImpl implements Parabuild {
         } else if (pathType == org.parabuild.ci.object.StepResult.PATH_TYPE_EXTERNAL_URL) {
           urlList.add(stepResult.getPath());
         }
-        stepResult.setUrls((String[]) urlList.toArray(new String[urlList.size()]));
+        stepResult.setUrls((String[]) urlList.toArray(new String[0]));
 
         result[i] = stepResult;
       }

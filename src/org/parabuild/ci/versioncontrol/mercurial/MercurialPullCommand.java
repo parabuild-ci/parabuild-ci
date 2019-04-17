@@ -38,16 +38,16 @@ public class MercurialPullCommand extends MercurialCommand {
   protected String getExeArguments() {
     final StringBuilder sb = new StringBuilder(100);
     sb.append("pull");
-    sb.append(" ");
+    sb.append(' ');
     sb.append("--noninteractive");
-    sb.append(" ");
+    sb.append(' ');
     if (!StringUtils.isBlank(branch)) {
-      sb.append(" ");
+      sb.append(' ');
       sb.append("--branch");
-      sb.append(" ");
+      sb.append(' ');
       sb.append(StringUtils.putIntoDoubleQuotes(branch));
     }
-    sb.append(" ");
+    sb.append(' ');
     sb.append(StringUtils.putIntoDoubleQuotes(url));
     return sb.toString();
   }

@@ -22,6 +22,9 @@ import org.parabuild.ci.webui.common.CodeNameDropDown;
 final class LDAPVersionDropDown extends CodeNameDropDown {
 
 
+  private static final long serialVersionUID = -4762084454386418090L;
+
+
   public LDAPVersionDropDown() {
     addCodeNamePair(ConfigurationConstants.LDAP_VERSION_DEFAULT, "Default");
     addCodeNamePair(ConfigurationConstants.LDAP_VERSION_TWO, "2");

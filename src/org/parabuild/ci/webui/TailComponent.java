@@ -26,6 +26,7 @@ import viewtier.util.XMLEncoder;
  */
 final class TailComponent extends CustomComponent {
 
+  private static final long serialVersionUID = 4063304545140683894L;
   private TailUpdate update = null;
   private int tailBufferSize = 0;
 

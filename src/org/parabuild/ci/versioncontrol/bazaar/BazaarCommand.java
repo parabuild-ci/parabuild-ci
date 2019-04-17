@@ -79,7 +79,7 @@ abstract class BazaarCommand extends VersionControlRemoteCommand {
    *
    * @param resultCode - execute command result code. /**
    *                   Analyzes log for known errors
-   * @throws java.io.IOException if there are errors
+   * @throws IOException if there are errors
    * @noinspection HardcodedLineSeparator
    */
   protected final void postExecute(final int resultCode) throws IOException {

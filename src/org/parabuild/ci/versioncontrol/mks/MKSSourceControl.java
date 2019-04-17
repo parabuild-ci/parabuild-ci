@@ -78,7 +78,6 @@ public class MKSSourceControl extends AbstractSourceControl {
    * @see org.parabuild.ci.versioncontrol.SourceControl#checkoutLatest()
    */
   public boolean isBuildDirInitialized() throws IOException, AgentFailureException {
-    //noinspection UnnecessaryLocalVariable
     final boolean result = !getCheckoutDirectoryAwareAgent().checkoutDirIsEmpty();
     if (LOG.isDebugEnabled()) LOG.debug("isBuildDirInitialized: " + result);
     return result;

@@ -64,6 +64,7 @@ public final class DetailedBuildStatusPanel extends Panel {
 
   public static final String BUILD_RUN_INFO_WIDTH = "49%";
   private static final String PARTICIPANTS_WIDTH = "98%";
+  private static final long serialVersionUID = -6828964126697955637L;
 
 
   public DetailedBuildStatusPanel(final BuildState currentBuildState, final boolean showBuildControls, final TailWindowActivator tailWindowActivator) {
@@ -372,6 +373,9 @@ public final class DetailedBuildStatusPanel extends Panel {
    * Composite to show elapsed time.
    */
   private static final class ElapsedTimeFlow extends Flow {
+
+    private static final long serialVersionUID = 1707110416253923843L;
+
 
     /**
      * Constructor.

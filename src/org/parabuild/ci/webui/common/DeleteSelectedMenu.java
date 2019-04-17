@@ -19,6 +19,9 @@ package org.parabuild.ci.webui.common;
  */
 public final class DeleteSelectedMenu extends CommonMenu {
 
+  private static final long serialVersionUID = -6934272816249603095L;
+
+
   public DeleteSelectedMenu() {
     super("Delete Selected");
   }

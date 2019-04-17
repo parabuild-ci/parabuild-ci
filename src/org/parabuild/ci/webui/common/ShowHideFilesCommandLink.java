@@ -22,9 +22,10 @@ public class ShowHideFilesCommandLink extends CommonCommandLink {
 
     public static final String CAPTION_HIDE_FILES = "Hide Files";
     public static final String CAPTION_SHOW_FILES = "Show Files";
+  private static final long serialVersionUID = -8270762573591200991L;
 
 
-    public ShowHideFilesCommandLink(final boolean show, final String targetPage, final Properties parameters) {
+  public ShowHideFilesCommandLink(final boolean show, final String targetPage, final Properties parameters) {
       super(makeCaption(show), targetPage, makeParamters(show, parameters));
     }
 

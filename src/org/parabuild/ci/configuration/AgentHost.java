@@ -28,7 +28,6 @@ public final class AgentHost {
   private final String password;
 
   /**
-   * @noinspection FieldMayBeStatic
    */
   private final String user = RealmConstants.DEFAULT_BUILDER_USER;
 
@@ -65,6 +64,7 @@ public final class AgentHost {
   }
 
 
+  @SuppressWarnings("RedundantIfStatement")
   public boolean equals(final Object o) {
     if (this == o) {
       return true;

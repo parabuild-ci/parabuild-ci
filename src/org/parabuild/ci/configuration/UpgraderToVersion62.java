@@ -69,7 +69,7 @@ final class UpgraderToVersion62 implements SingleStepSchemaUpgrader {
           "  constraint BUILD_RUN_TEST_FC1 foreign key (TEST_CASE_ID) references TEST_CASE(ID) on delete cascade," +
           "  constraint BUILD_RUN_TEST_FC2 foreign key (BUILD_RUN_ID) references BUILD_RUN(ID) on delete cascade," +
           "  constraint BUILD_RUN_TEST_FC3 foreign key (BROKEN_SINCE_BUILD_RUN_ID) references  BUILD_RUN(ID) on delete cascade" +
-          ")",
+                ')',
         "create index BUILD_RUN_TEST_IX1 on BUILD_RUN_TEST(BUILD_RUN_ID, NEW, BROKEN)",
         "create index BUILD_RUN_TEST_IX2 on BUILD_RUN_TEST(BUILD_RUN_ID, BROKEN)",
       };

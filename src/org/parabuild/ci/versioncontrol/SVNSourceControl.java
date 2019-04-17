@@ -112,7 +112,7 @@ final class SVNSourceControl extends AbstractSourceControl {
   /**
    * Syncs to a given change list number
    *
-   * @noinspection NestedTryStatement, ControlFlowStatementWithoutBraces, ThrowCaughtLocally
+   * @noinspection ControlFlowStatementWithoutBraces, ThrowCaughtLocally
    */
   public void syncToChangeList(final int changeListID) throws BuildException, CommandStoppedException, AgentFailureException {
     if (LOG.isDebugEnabled()) LOG.debug("begin syncToChangeList changeListID: " + changeListID);
@@ -409,16 +409,14 @@ final class SVNSourceControl extends AbstractSourceControl {
       for (int i = 0; i < depotPaths.size(); i++) {
 
         final String path = (String) depotPaths.get(i);
-        sb.append(path).append(";");
+        sb.append(path).append(';');
       }
 
       result.put(PARABUILD_SVN_REPOSITORY_PATH, sb);
       return result;
     } catch (final BuildException e) {
 
-      final IOException ioe = new IOException();
-      ioe.initCause(e);
-      throw ioe;
+      throw new IOException(e);
     }
   }
 
@@ -560,7 +558,7 @@ final class SVNSourceControl extends AbstractSourceControl {
   /**
    * Helper mehtod.
    *
-   * @noinspection IOResourceOpenedButNotSafelyClosed, ControlFlowStatementWithoutBraces
+   * @noinspection IOResourceOpenedButNotSafelyClosed
    */
   private boolean isAcceptsLimitOption(final Agent agent) throws IOException, CommandStoppedException, AgentFailureException {
     RemoteCommand versionCommand = null;

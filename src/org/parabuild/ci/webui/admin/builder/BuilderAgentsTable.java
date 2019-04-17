@@ -38,6 +38,7 @@ class BuilderAgentsTable extends AbstractFlatTable {
 
   private static final String CAPTION_COMMANDS = "Commands";
   private static final String CAPTION_AGENT_HOST = "Host and Port";
+  private static final long serialVersionUID = 7021820734893711835L;
 
   private List builderAgents = new ArrayList(5);
 

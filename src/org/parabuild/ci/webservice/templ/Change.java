@@ -14,13 +14,24 @@
 
 package org.parabuild.ci.webservice.templ;
 
-public class Change implements java.io.Serializable {
+import org.apache.axis.description.ElementDesc;
+import org.apache.axis.description.TypeDesc;
+import org.apache.axis.encoding.Deserializer;
+import org.apache.axis.encoding.Serializer;
+import org.apache.axis.encoding.ser.BeanDeserializer;
+import org.apache.axis.encoding.ser.BeanSerializer;
 
+import javax.xml.namespace.QName;
+import java.io.Serializable;
+
+public class Change implements Serializable {
+
+  private static final long serialVersionUID = 8880093469929434161L;
   private int changeID;
   private int changeListID;
   private byte changeType;
-  private java.lang.String filePath;
-  private java.lang.String revision;
+  private String filePath;
+  private String revision;
 
 
   public Change() {
@@ -31,8 +42,8 @@ public class Change implements java.io.Serializable {
           final int changeID,
           final int changeListID,
           final byte changeType,
-          final java.lang.String filePath,
-          final java.lang.String revision) {
+          final String filePath,
+          final String revision) {
     this.changeID = changeID;
     this.changeListID = changeListID;
     this.changeType = changeType;
@@ -106,7 +117,7 @@ public class Change implements java.io.Serializable {
    *
    * @return filePath
    */
-  public java.lang.String getFilePath() {
+  public String getFilePath() {
     return filePath;
   }
 
@@ -116,7 +127,7 @@ public class Change implements java.io.Serializable {
    *
    * @param filePath
    */
-  public void setFilePath(final java.lang.String filePath) {
+  public void setFilePath(final String filePath) {
     this.filePath = filePath;
   }
 
@@ -126,7 +137,7 @@ public class Change implements java.io.Serializable {
    *
    * @return revision
    */
-  public java.lang.String getRevision() {
+  public String getRevision() {
     return revision;
   }
 
@@ -136,15 +147,15 @@ public class Change implements java.io.Serializable {
    *
    * @param revision
    */
-  public void setRevision(final java.lang.String revision) {
+  public void setRevision(final String revision) {
     this.revision = revision;
   }
 
 
-  private java.lang.Object __equalsCalc = null;
+  private Object __equalsCalc = null;
 
 
-  public synchronized boolean equals(final java.lang.Object obj) {
+  public synchronized boolean equals(final Object obj) {
     if (!(obj instanceof Change)) return false;
     final Change other = (Change) obj;
     if (obj == null) return false;
@@ -155,15 +166,15 @@ public class Change implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.changeID == other.getChangeID() &&
-            this.changeListID == other.getChangeListID() &&
-            this.changeType == other.getChangeType() &&
-            ((this.filePath == null && other.getFilePath() == null) ||
+            this.changeID == other.changeID &&
+            this.changeListID == other.changeListID &&
+            this.changeType == other.changeType &&
+            ((this.filePath == null && other.filePath == null) ||
                     (this.filePath != null &&
-                            this.filePath.equals(other.getFilePath()))) &&
-            ((this.revision == null && other.getRevision() == null) ||
+                            this.filePath.equals(other.filePath))) &&
+            ((this.revision == null && other.revision == null) ||
                     (this.revision != null &&
-                            this.revision.equals(other.getRevision())));
+                            this.revision.equals(other.revision)));
     __equalsCalc = null;
     return _equals;
   }
@@ -178,14 +189,14 @@ public class Change implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getChangeID();
-    _hashCode += getChangeListID();
-    _hashCode += getChangeType();
-    if (getFilePath() != null) {
-      _hashCode += getFilePath().hashCode();
+    _hashCode += changeID;
+    _hashCode += changeListID;
+    _hashCode += changeType;
+    if (filePath != null) {
+      _hashCode += filePath.hashCode();
     }
-    if (getRevision() != null) {
-      _hashCode += getRevision().hashCode();
+    if (revision != null) {
+      _hashCode += revision.hashCode();
     }
     __hashCodeCalc = false;
     return _hashCode;
@@ -193,40 +204,40 @@ public class Change implements java.io.Serializable {
 
 
   // Type metadata
-  private static final org.apache.axis.description.TypeDesc typeDesc =
-          new org.apache.axis.description.TypeDesc(Change.class, true);
+  private static final TypeDesc typeDesc =
+          new TypeDesc(Change.class, true);
 
 
   static {
-    typeDesc.setXmlType(new javax.xml.namespace.QName("http://webservice.ci.parabuild.org", "Change"));
-    org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+    typeDesc.setXmlType(new QName("http://webservice.ci.parabuild.org", "Change"));
+    ElementDesc elemField = new ElementDesc();
     elemField.setFieldName("changeID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://webservice.ci.parabuild.org", "changeID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://webservice.ci.parabuild.org", "changeID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("changeListID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://webservice.ci.parabuild.org", "changeListID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://webservice.ci.parabuild.org", "changeListID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("changeType");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://webservice.ci.parabuild.org", "changeType"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "byte"));
+    elemField.setXmlName(new QName("http://webservice.ci.parabuild.org", "changeType"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "byte"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("filePath");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://webservice.ci.parabuild.org", "filePath"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://webservice.ci.parabuild.org", "filePath"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("revision");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://webservice.ci.parabuild.org", "revision"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://webservice.ci.parabuild.org", "revision"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
   }
@@ -235,7 +246,7 @@ public class Change implements java.io.Serializable {
   /**
    * Return type metadata object
    */
-  public static org.apache.axis.description.TypeDesc getTypeDesc() {
+  public static TypeDesc getTypeDesc() {
     return typeDesc;
   }
 
@@ -243,12 +254,12 @@ public class Change implements java.io.Serializable {
   /**
    * Get Custom Serializer
    */
-  public static org.apache.axis.encoding.Serializer getSerializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Serializer getSerializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanSerializer(
+            new BeanSerializer(
                     _javaType, _xmlType, typeDesc);
   }
 
@@ -256,12 +267,12 @@ public class Change implements java.io.Serializable {
   /**
    * Get Custom Deserializer
    */
-  public static org.apache.axis.encoding.Deserializer getDeserializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Deserializer getDeserializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanDeserializer(
+            new BeanDeserializer(
                     _javaType, _xmlType, typeDesc);
   }
 

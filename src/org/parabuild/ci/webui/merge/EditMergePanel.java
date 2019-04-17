@@ -226,6 +226,9 @@ final class EditMergePanel extends MessagePanel {
 
   private DropDownSelectedListener makeBranchViewSelected() {
     return new DropDownSelectedListener() {
+      private static final long serialVersionUID = 8455176902878515503L;
+
+
       public Tierlet.Result dropDownSelected(final DropDownSelectedEvent event) {
         final BranchViewSourceDropdown dropdown = (BranchViewSourceDropdown)event.getDropDown();
         processBranchViewSelection(dropdown.getCode());
@@ -250,6 +253,9 @@ final class EditMergePanel extends MessagePanel {
 
   private DropDownSelectedListener makeDepotSelectedListener(final Label lbValueSeparator, final DepotViewPanel pnlValue) {
     return new DropDownSelectedListener() {
+      private static final long serialVersionUID = 7990622070558849619L;
+
+
       public Tierlet.Result dropDownSelected(final DropDownSelectedEvent event) {
         final MergeBuildNameDropdown dropDown = (MergeBuildNameDropdown)event.getDropDown();
         final int activeBuildID = dropDown.getCode();
@@ -274,6 +280,9 @@ final class EditMergePanel extends MessagePanel {
 
   private ButtonPressedListener makeCancelButtonListener() {
     return new ButtonPressedListener() {
+      private static final long serialVersionUID = 8442531338170420817L;
+
+
       public Tierlet.Result buttonPressed(final ButtonPressedEvent buttonPressedEvent) {
         return mergeListHome();
       }
@@ -283,6 +292,9 @@ final class EditMergePanel extends MessagePanel {
 
   private ButtonPressedListener makeSaveButtonListener() {
     return new ButtonPressedListener() {
+      private static final long serialVersionUID = -4767172291877393616L;
+
+
       public Tierlet.Result buttonPressed(final ButtonPressedEvent buttonPressedEvent) {
         if (!validate()) return Tierlet.Result.Continue();
         if (save()) return mergeListHome();

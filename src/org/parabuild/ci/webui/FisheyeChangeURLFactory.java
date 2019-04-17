@@ -23,7 +23,7 @@ import org.parabuild.ci.webui.common.WebuiUtils;
 import java.util.Properties;
 
 /**
- * ViewVC SVN-specific implementation of {@link org.parabuild.ci.webui.ChangeURLFactory}.
+ * ViewVC SVN-specific implementation of {@link ChangeURLFactory}.
  */
 public final class FisheyeChangeURLFactory implements ChangeURLFactory {
 
@@ -55,10 +55,10 @@ public final class FisheyeChangeURLFactory implements ChangeURLFactory {
 
 
   /**
-   * Produces {@link org.parabuild.ci.webui.ChangeURL} from the given change.
+   * Produces {@link ChangeURL} from the given change.
    *
    * @param change
-   * @return created {@link org.parabuild.ci.webui.ChangeURL} object.
+   * @return created {@link ChangeURL} object.
    */
   public ChangeURL makeChangeFileURL(final SimpleChange change) {
     return new ChangeURLImpl(makeFileURL(change), change.getFilePath());
@@ -71,10 +71,10 @@ public final class FisheyeChangeURLFactory implements ChangeURLFactory {
 
 
   /**
-   * Produces {@link org.parabuild.ci.webui.ChangeURL} from the given change.
+   * Produces {@link ChangeURL} from the given change.
    *
    * @param changeList
-   * @return created {@link org.parabuild.ci.webui.ChangeURL} object or null if URL
+   * @return created {@link ChangeURL} object or null if URL
    *         creation for change lists is not supported.
    */
   public ChangeURL makeChangeListNumberURL(final ChangeList changeList) {

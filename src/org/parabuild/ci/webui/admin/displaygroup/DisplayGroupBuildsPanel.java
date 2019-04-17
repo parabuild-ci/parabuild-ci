@@ -110,6 +110,7 @@ public final class DisplayGroupBuildsPanel extends MessagePanel implements Savea
 
   public static final class GroupBuildCheckBox extends CheckBox {
 
+    private static final long serialVersionUID = -8266092027320538754L;
     private DisplayGroupBuildVO displayUG = null;
 
 

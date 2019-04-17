@@ -17,7 +17,7 @@ package org.parabuild.ci.versioncontrol.mks;
  * Parameters for MKS's rlog command.
  *
  * @see MKSCommandParameters
- * @see org.parabuild.ci.versioncontrol.mks.MKSAddlabelCommand
+ * @see MKSAddlabelCommand
  */
 public class MKSAddlabelCommandParameters extends MKSCommandParameters {
 

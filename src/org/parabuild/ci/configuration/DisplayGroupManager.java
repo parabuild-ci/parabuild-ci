@@ -176,7 +176,7 @@ public final class DisplayGroupManager {
 
   /**
    * @param buildStatusList     List of {@link
-   *                            org.parabuild.ci.build.BuildState} objects.
+   *                            BuildState} objects.
    * @param displayGroupID      to filter according to
    * @param showInactiveWithAll
    */

@@ -322,7 +322,7 @@ public final class P4Merger implements Merger {
    * @param agent
    * @param changeListToSync
    * @throws IOException
-   * @throws org.parabuild.ci.common.CommandStoppedException
+   * @throws CommandStoppedException
    * @throws BuildException
    * @throws ValidationException
    */

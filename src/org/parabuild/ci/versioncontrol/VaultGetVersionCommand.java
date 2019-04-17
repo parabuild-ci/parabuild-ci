@@ -56,7 +56,7 @@ final class VaultGetVersionCommand extends VaultCommand {
     appendCommand(args, "-merge", "overwrite");
     appendCommand(args, "-performdeletions", "removeworkingcopy");
     appendCommand(args, "-setfiletime", "checkin");
-    args.append(' ').append(Integer.toString(parameters.getVersion()));
+    args.append(' ').append(parameters.getVersion());
     args.append(' ').append(StringUtils.putIntoDoubleQuotes(repositoryPath));
     args.append(' ').append(StringUtils.putIntoDoubleQuotes(fileDescriptor.getCanonicalPath()));
     return args.toString();

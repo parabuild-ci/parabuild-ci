@@ -119,12 +119,18 @@ public final class CleanupAllInactiveWorkspacesPage extends BasePage implements 
 
     // messaging
     btnConfirm.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = 7239736155439848694L;
+
+
       public Result buttonPressed(final ButtonPressedEvent event) {
         action = ACTION_DELETE;
         return null;
       }
     });
     btnCancel.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = 9197966016133314562L;
+
+
       public Result buttonPressed(final ButtonPressedEvent event) {
         action = ACTION_CANCEL;
         return null;

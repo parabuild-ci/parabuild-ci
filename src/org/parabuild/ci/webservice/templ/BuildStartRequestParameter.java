@@ -20,7 +20,7 @@ import java.util.Arrays;
  * This value object holds information about shell variable
  * build parameters to be passed to build scripts.
  *
- * @noinspection UnusedDeclaration,AssignmentToCollectionOrArrayFieldFromParameter,ReturnOfCollectionOrArrayField
+ * @noinspection UnusedDeclaration, ReturnOfCollectionOrArrayField
  */
 public final class BuildStartRequestParameter implements Serializable {
 

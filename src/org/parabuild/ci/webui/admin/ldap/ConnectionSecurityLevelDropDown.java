@@ -22,6 +22,9 @@ import org.parabuild.ci.webui.common.*;
 final class ConnectionSecurityLevelDropDown extends CodeNameDropDown {
 
 
+  private static final long serialVersionUID = -4096495440891993457L;
+
+
   public ConnectionSecurityLevelDropDown() {
     addCodeNamePair(ConfigurationConstants.LDAP_CONNECTION_SECURITY_LEVEL_DEFAULT, ConfigurationConstants.LDAP_CONNECTION_SECURITY_LEVEL_DEFAULT_VALUE);
     addCodeNamePair(ConfigurationConstants.LDAP_CONNECTION_SECURITY_LEVEL_NONE, ConfigurationConstants.LDAP_CONNECTION_SECURITY_LEVEL_NONE_VALUE);

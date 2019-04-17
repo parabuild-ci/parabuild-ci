@@ -109,12 +109,18 @@ public final class ResetAllMergesPage extends BasePage implements Conversational
 
     // messaging
     confimButton.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = 4776484113326682559L;
+
+
       public Result buttonPressed(final ButtonPressedEvent event) {
         action = ResetAllMergesPage.ACTION_DELETE;
         return null;
       }
     });
     cancelButton.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = -1704744827788079412L;
+
+
       public Result buttonPressed(final ButtonPressedEvent event) {
         action = ResetAllMergesPage.ACTION_CANCEL;
         return null;

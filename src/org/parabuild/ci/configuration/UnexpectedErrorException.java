@@ -17,6 +17,9 @@ import org.parabuild.ci.common.*;
 
 public final class UnexpectedErrorException extends RuntimeException {
 
+  private static final long serialVersionUID = -631404622399738707L;
+
+
   public UnexpectedErrorException(final Exception e) {
     super(StringUtils.toString(e), e);
   }

@@ -35,7 +35,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @noinspection FieldCanBeLocal
  */
 public final class GitSettingsPanel extends AbstractSourceControlPanel {
 

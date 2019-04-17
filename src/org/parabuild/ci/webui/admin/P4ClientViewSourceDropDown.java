@@ -34,6 +34,7 @@ final class P4ClientViewSourceDropDown extends CodeNameDropDown {
   public static final byte SOURCE_FIELD = SourceControlSetting.P4_CLIENT_VIEW_SOURCE_VALUE_FIELD;
   public static final byte SOURCE_DEPOT_PATH = SourceControlSetting.P4_CLIENT_VIEW_SOURCE_VALUE_DEPOT_PATH;
   public static final byte SOURCE_CLIENT_NAME = SourceControlSetting.P4_CLIENT_VIEW_SOURCE_VALUE_CLIENT_NAME;
+  private static final long serialVersionUID = -2919065417438126822L;
 
   private final Map showOnSelectMap = new HashMap(3);
 
@@ -45,6 +46,9 @@ final class P4ClientViewSourceDropDown extends CodeNameDropDown {
     setSelection(0);
 
     addListener(new DropDownSelectedListener() {
+      private static final long serialVersionUID = 6127527079861178045L;
+
+
       public Tierlet.Result dropDownSelected(final DropDownSelectedEvent dropDownSelectedEvent) {
         final P4ClientViewSourceDropDown dropDown = (P4ClientViewSourceDropDown) dropDownSelectedEvent.getDropDown();
         processCodeSelection((byte) dropDown.getCode());

@@ -191,7 +191,7 @@ final class SurroundSourceControl extends AbstractSourceControl implements Commo
    * @param startChangeListID base change list ID
    * @return new change list ID if there were changes made, or
    *         the same base change list if there were changes
-   * @throws org.parabuild.ci.common.BuildException
+   * @throws BuildException
    *
    */
   public int getChangesSince(final int startChangeListID) throws BuildException, CommandStoppedException, AgentFailureException {
@@ -338,7 +338,7 @@ final class SurroundSourceControl extends AbstractSourceControl implements Commo
    * BuildException saying that there what a error.
    *
    * @param e Exception to process
-   * @throws org.parabuild.ci.common.BuildException
+   * @throws BuildException
    *          with
    *          processed information
    */
@@ -516,7 +516,7 @@ final class SurroundSourceControl extends AbstractSourceControl implements Commo
    *         <p/>
    *         This is a default implementation that returns an
    *         empty map.
-   * @see org.parabuild.ci.build.BuildScriptGenerator#addVariables(java.util.Map)
+   * @see org.parabuild.ci.build.BuildScriptGenerator#addVariables(Map)
    */
   public Map getShellVariables() {
     return new HashMap();
@@ -540,7 +540,7 @@ final class SurroundSourceControl extends AbstractSourceControl implements Commo
    *
    * @return List of Surround repository paths composing a
    *         project
-   * @throws org.parabuild.ci.common.BuildException
+   * @throws BuildException
    *
    */
   private List getDepotPaths() throws BuildException {
@@ -557,8 +557,8 @@ final class SurroundSourceControl extends AbstractSourceControl implements Commo
    * Class to use as a map key whe processing parsed change
    * lists.
    *
-   * @see SurroundSourceControl#getChangesFromDate(java.util.Date,
-   *      java.util.Date, int)
+   * @see SurroundSourceControl#getChangesFromDate(Date,
+   *      Date, int)
    */
   private static final class SurroundChangeListKey {
 
@@ -573,6 +573,7 @@ final class SurroundSourceControl extends AbstractSourceControl implements Commo
     }
 
 
+    @SuppressWarnings("RedundantIfStatement")
     public boolean equals(final Object o) {
       if (this == o) return true;
       if (!(o instanceof SurroundChangeListKey)) return false;

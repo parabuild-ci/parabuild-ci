@@ -185,10 +185,7 @@ public final class BuildHistoryTable extends AbstractFlatTable {
         return false;
       }
 
-      if ((System.currentTimeMillis() - buildRun.getFinishedAt().getTime()) <= HOUR) {
-        return true;
-      }
-      return false;
+      return (System.currentTimeMillis() - buildRun.getFinishedAt().getTime()) <= HOUR;
     }
 
 

@@ -23,6 +23,9 @@ import java.io.*;
  */
 final class ChangeLogParserException extends IOException {
 
+  private static final long serialVersionUID = -2724434141133152654L;
+
+
   /**
    * @param message the detail message.
    */

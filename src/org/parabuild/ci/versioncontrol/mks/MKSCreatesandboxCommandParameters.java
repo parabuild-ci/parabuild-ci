@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.versioncontrol.mks;
 
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.object.SourceControlSetting;
 
 /**
  * Parameters for MKS's rlog command.

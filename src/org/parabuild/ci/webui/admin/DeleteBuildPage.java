@@ -153,18 +153,27 @@ public final class DeleteBuildPage extends BasePage implements ConversationalTie
 
     // messaging
     confimDeleteButton.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = -7031821838283365348L;
+
+
       public Result buttonPressed(final ButtonPressedEvent event) {
         action = ACTION_DELETE;
         return null;
       }
     });
     confimDeactivateButton.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = -7586339173184091630L;
+
+
       public Result buttonPressed(final ButtonPressedEvent event) {
         action = ACTION_DEACTIVATE;
         return null;
       }
     });
     cancelDeleteButton.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = -6480124054967599612L;
+
+
       public Result buttonPressed(final ButtonPressedEvent event) {
         action = ACTION_CANCEL;
         return null;

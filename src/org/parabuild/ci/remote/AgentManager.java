@@ -641,9 +641,7 @@ public final class AgentManager {
       return sourceControlSettingResolver.resolve(customCheckoutDirTemplate);
     } catch (final ValidationException e) {
 
-      final IllegalStateException ise = new IllegalStateException(StringUtils.toString(e));
-      ise.initCause(e);
-      throw ise;
+      throw new IllegalStateException(StringUtils.toString(e), e);
     }
   }
 
@@ -906,11 +904,11 @@ public final class AgentManager {
           break;
 
         } catch (final IOException e) {
-          if (!e.toString().contains("Cannot remove document base for path")) {
-            throw e;
-          } else {
+          if (e.toString().contains("Cannot remove document base for path")) {
             lastError = e;
             Thread.sleep(1000L);
+          } else {
+            throw e;
           }
         }
       }

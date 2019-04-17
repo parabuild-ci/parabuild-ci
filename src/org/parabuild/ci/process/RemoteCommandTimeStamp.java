@@ -26,7 +26,7 @@ public final class RemoteCommandTimeStamp implements Serializable {
 
   public RemoteCommandTimeStamp() {
     this.timestampName = "PARABUILD_TIMESTAMP";
-    this.timestampVaue = timestampName + '_' + Long.toString(System.currentTimeMillis());
+    this.timestampVaue = timestampName + '_' + System.currentTimeMillis();
   }
 
 

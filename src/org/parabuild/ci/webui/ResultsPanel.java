@@ -94,6 +94,9 @@ final class ResultsPanel extends MessagePanel {
     final SaveButton saveButton = new SaveButton();
     saveButton.addListener(new ButtonPressedListener() {
 
+      private static final long serialVersionUID = 6270184025342277512L;
+
+
       public Tierlet.Result buttonPressed(final ButtonPressedEvent buttonPressedEvent) {
         if (tblResults.validate()) {
           if (LOG.isDebugEnabled()) LOG.debug("Results table is valid");
@@ -121,6 +124,9 @@ final class ResultsPanel extends MessagePanel {
   private CancelButton makeCancelButton() {
     final CancelButton cancelButton = new CancelButton();
     cancelButton.addListener(new ButtonPressedListener() {
+
+      private static final long serialVersionUID = -666893377266757013L;
+
 
       public Tierlet.Result buttonPressed(final ButtonPressedEvent buttonPressedEvent) {
         return createDoneGotoResultsPage();

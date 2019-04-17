@@ -325,7 +325,7 @@ public final class StartParameter implements Serializable, ObjectConstants {
    * @return first value or null if not exists.
    */
   public String getFirstValue() {
-    final StringTokenizer st = makeTokenizer(getValue());
+    final StringTokenizer st = makeTokenizer(value);
     if (st.hasMoreElements()) {
       return st.nextToken();
     } else {

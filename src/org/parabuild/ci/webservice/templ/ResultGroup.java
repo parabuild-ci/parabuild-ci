@@ -14,14 +14,26 @@
 
 package org.parabuild.ci.webservice.templ;
 
-public class ResultGroup implements java.io.Serializable {
+import org.apache.axis.description.ElementDesc;
+import org.apache.axis.description.TypeDesc;
+import org.apache.axis.encoding.Deserializer;
+import org.apache.axis.encoding.Serializer;
+import org.apache.axis.encoding.ser.BeanDeserializer;
+import org.apache.axis.encoding.ser.BeanSerializer;
 
+import javax.xml.namespace.QName;
+import java.io.Serializable;
+import java.util.Calendar;
+
+public class ResultGroup implements Serializable {
+
+  private static final long serialVersionUID = 3297209264174749997L;
   private int ID;
   private boolean deleted;
-  private java.lang.String description;
+  private String description;
   private boolean enabled;
-  private java.util.Calendar lastPublished;
-  private java.lang.String name;
+  private Calendar lastPublished;
+  private String name;
   private long timeStamp;
 
 
@@ -32,10 +44,10 @@ public class ResultGroup implements java.io.Serializable {
   public ResultGroup(
           final int ID,
           final boolean deleted,
-          final java.lang.String description,
+          final String description,
           final boolean enabled,
-          final java.util.Calendar lastPublished,
-          final java.lang.String name,
+          final Calendar lastPublished,
+          final String name,
           final long timeStamp) {
     this.ID = ID;
     this.deleted = deleted;
@@ -92,7 +104,7 @@ public class ResultGroup implements java.io.Serializable {
    *
    * @return description
    */
-  public java.lang.String getDescription() {
+  public String getDescription() {
     return description;
   }
 
@@ -102,7 +114,7 @@ public class ResultGroup implements java.io.Serializable {
    *
    * @param description
    */
-  public void setDescription(final java.lang.String description) {
+  public void setDescription(final String description) {
     this.description = description;
   }
 
@@ -132,7 +144,7 @@ public class ResultGroup implements java.io.Serializable {
    *
    * @return lastPublished
    */
-  public java.util.Calendar getLastPublished() {
+  public Calendar getLastPublished() {
     return lastPublished;
   }
 
@@ -142,7 +154,7 @@ public class ResultGroup implements java.io.Serializable {
    *
    * @param lastPublished
    */
-  public void setLastPublished(final java.util.Calendar lastPublished) {
+  public void setLastPublished(final Calendar lastPublished) {
     this.lastPublished = lastPublished;
   }
 
@@ -152,7 +164,7 @@ public class ResultGroup implements java.io.Serializable {
    *
    * @return name
    */
-  public java.lang.String getName() {
+  public String getName() {
     return name;
   }
 
@@ -162,7 +174,7 @@ public class ResultGroup implements java.io.Serializable {
    *
    * @param name
    */
-  public void setName(final java.lang.String name) {
+  public void setName(final String name) {
     this.name = name;
   }
 
@@ -187,10 +199,10 @@ public class ResultGroup implements java.io.Serializable {
   }
 
 
-  private java.lang.Object __equalsCalc = null;
+  private Object __equalsCalc = null;
 
 
-  public synchronized boolean equals(final java.lang.Object obj) {
+  public synchronized boolean equals(final Object obj) {
     if (!(obj instanceof ResultGroup)) return false;
     final ResultGroup other = (ResultGroup) obj;
     if (obj == null) return false;
@@ -201,19 +213,19 @@ public class ResultGroup implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.ID == other.getID() &&
-            this.deleted == other.isDeleted() &&
-            ((this.description == null && other.getDescription() == null) ||
+            this.ID == other.ID &&
+            this.deleted == other.deleted &&
+            ((this.description == null && other.description == null) ||
                     (this.description != null &&
-                            this.description.equals(other.getDescription()))) &&
-            this.enabled == other.isEnabled() &&
-            ((this.lastPublished == null && other.getLastPublished() == null) ||
+                            this.description.equals(other.description))) &&
+            this.enabled == other.enabled &&
+            ((this.lastPublished == null && other.lastPublished == null) ||
                     (this.lastPublished != null &&
-                            this.lastPublished.equals(other.getLastPublished()))) &&
-            ((this.name == null && other.getName() == null) ||
+                            this.lastPublished.equals(other.lastPublished))) &&
+            ((this.name == null && other.name == null) ||
                     (this.name != null &&
-                            this.name.equals(other.getName()))) &&
-            this.timeStamp == other.getTimeStamp();
+                            this.name.equals(other.name))) &&
+            this.timeStamp == other.timeStamp;
     __equalsCalc = null;
     return _equals;
   }
@@ -228,71 +240,71 @@ public class ResultGroup implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getID();
-    _hashCode += (isDeleted() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    if (getDescription() != null) {
-      _hashCode += getDescription().hashCode();
+    _hashCode += ID;
+    _hashCode += (deleted ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    if (description != null) {
+      _hashCode += description.hashCode();
     }
-    _hashCode += (isEnabled() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    if (getLastPublished() != null) {
-      _hashCode += getLastPublished().hashCode();
+    _hashCode += (enabled ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    if (lastPublished != null) {
+      _hashCode += lastPublished.hashCode();
     }
-    if (getName() != null) {
-      _hashCode += getName().hashCode();
+    if (name != null) {
+      _hashCode += name.hashCode();
     }
-    _hashCode += new Long(getTimeStamp()).hashCode();
+    _hashCode += new Long(timeStamp).hashCode();
     __hashCodeCalc = false;
     return _hashCode;
   }
 
 
   // Type metadata
-  private static final org.apache.axis.description.TypeDesc typeDesc =
-          new org.apache.axis.description.TypeDesc(ResultGroup.class, true);
+  private static final TypeDesc typeDesc =
+          new TypeDesc(ResultGroup.class, true);
 
 
   static {
-    typeDesc.setXmlType(new javax.xml.namespace.QName("http://org.parabuild.ci", "ResultGroup"));
-    org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+    typeDesc.setXmlType(new QName("http://org.parabuild.ci", "ResultGroup"));
+    ElementDesc elemField = new ElementDesc();
     elemField.setFieldName("ID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "ID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "ID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("deleted");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "deleted"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "deleted"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "boolean"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("description");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "description"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "description"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("enabled");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "enabled"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "enabled"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "boolean"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("lastPublished");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "lastPublished"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "lastPublished"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("name");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "name"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "name"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("timeStamp");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "timeStamp"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "timeStamp"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "long"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
   }
@@ -301,7 +313,7 @@ public class ResultGroup implements java.io.Serializable {
   /**
    * Return type metadata object
    */
-  public static org.apache.axis.description.TypeDesc getTypeDesc() {
+  public static TypeDesc getTypeDesc() {
     return typeDesc;
   }
 
@@ -309,12 +321,12 @@ public class ResultGroup implements java.io.Serializable {
   /**
    * Get Custom Serializer
    */
-  public static org.apache.axis.encoding.Serializer getSerializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Serializer getSerializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanSerializer(
+            new BeanSerializer(
                     _javaType, _xmlType, typeDesc);
   }
 
@@ -322,12 +334,12 @@ public class ResultGroup implements java.io.Serializable {
   /**
    * Get Custom Deserializer
    */
-  public static org.apache.axis.encoding.Deserializer getDeserializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Deserializer getDeserializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanDeserializer(
+            new BeanDeserializer(
                     _javaType, _xmlType, typeDesc);
   }
 

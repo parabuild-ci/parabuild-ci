@@ -125,6 +125,9 @@ public abstract class AbstractIssueTrackerSetupPanel extends MessagePanel implem
    */
   private static PropertyToInputMap.PropertyHandler makePropertyHandler() {
     return new PropertyToInputMap.PropertyHandler() {
+      private static final long serialVersionUID = -356895114891038404L;
+
+
       public Object makeProperty(final String propertyName) {
         final IssueTrackerProperty prop = new IssueTrackerProperty();
         prop.setName(propertyName);

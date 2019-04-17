@@ -13,11 +13,7 @@
  */
 package org.parabuild.ci.merge.merger;
 
-import java.io.*;
-
 import org.parabuild.ci.common.CommandStoppedException;
-import org.parabuild.ci.common.BuildException;
-import org.parabuild.ci.common.ValidationException;
 
 /**
  * Peformes merge.

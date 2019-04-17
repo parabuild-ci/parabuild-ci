@@ -61,7 +61,7 @@ public final class AccurevVersionControl extends AbstractSourceControl {
   /**
    * {@inheritDoc}
    */
-  public boolean isBuildDirInitialized() throws IOException, BuildException, AgentFailureException {
+  public boolean isBuildDirInitialized() throws IOException, AgentFailureException {
     boolean result = true;
 
     // Basic check
@@ -100,8 +100,8 @@ public final class AccurevVersionControl extends AbstractSourceControl {
 
       // Create a snapshot if not exists
       if (StringUtils.isBlank(snapshotName)) {
-        snapshotName = "parabuild_snap_" + agent.getLocalHostName() + "_" + parameters.getBackingStream()
-                + "_" + activeBuildID + "_" + changeList.getNumber() + "_" + parameters.getUser();
+        snapshotName = "parabuild_snap_" + agent.getLocalHostName() + '_' + parameters.getBackingStream()
+                + '_' + activeBuildID + '_' + changeList.getNumber() + '_' + parameters.getUser();
         command = new AccurevMksnapCommand(agent, parameters, snapshotName, changeList.getNumber());
         command.execute();
         command.cleanup();

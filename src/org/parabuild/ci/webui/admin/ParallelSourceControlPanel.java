@@ -20,6 +20,9 @@ package org.parabuild.ci.webui.admin;
 public final class ParallelSourceControlPanel extends InheritedSourceControlPanel {
 
 
+  private static final long serialVersionUID = 3820951698505488634L;
+
+
   public ParallelSourceControlPanel() {
     super("Run this build in parallel with: ");
   }

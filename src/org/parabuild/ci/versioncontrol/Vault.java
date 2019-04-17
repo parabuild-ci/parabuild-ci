@@ -152,7 +152,7 @@ public class Vault {
      */
     public static final Comparator TX_ID_COMPARATOR = new Comparator() {
       public int compare(final Object o1, final Object o2) {
-        if (!(o1 instanceof Item) || !(o1 instanceof Item)) return 0;
+        if (!(o1 instanceof Item)) return 0;
         final Item brp1 = (Item)o1;
         final Item brp2 = (Item)o2;
         if (brp1.getTxid() > brp2.getTxid()) return 1;

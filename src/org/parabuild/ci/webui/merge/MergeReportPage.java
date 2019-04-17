@@ -33,6 +33,7 @@ import viewtier.ui.StatelessTierlet;
 public final class MergeReportPage extends BaseMergePage implements StatelessTierlet {
 
   public static final int PAGE_LENGTH = 50;
+  private static final long serialVersionUID = -7271478200243383493L;
 
 
   public MergeReportPage() {

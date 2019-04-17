@@ -20,6 +20,9 @@ import java.util.*;
  */
 public final class CommonBoldLink extends CommonLink {
 
+  private static final long serialVersionUID = 4334793031791932617L;
+
+
   public CommonBoldLink(final String caption, final String url) {
     super(caption, url);
     this.setStyle();

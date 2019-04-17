@@ -19,7 +19,7 @@ import java.util.Arrays;
 /**
  * Request to start a build.
  *
- * @noinspection UnusedDeclaration,AssignmentToCollectionOrArrayFieldFromParameter,ReturnOfCollectionOrArrayField
+ * @noinspection UnusedDeclaration, ReturnOfCollectionOrArrayField
  */
 public final class BuildStartRequest implements Serializable {
 

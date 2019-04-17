@@ -26,6 +26,9 @@ import org.parabuild.ci.object.*;
 public final class ParallelScheduleSettingsPanel extends ScheduleSettingsPanel {
 
 
+  private static final long serialVersionUID = -1008083120085660850L;
+
+
   /**
    * Creates message panel with title displayed
    */

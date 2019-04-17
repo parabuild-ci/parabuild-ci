@@ -49,7 +49,7 @@ import java.util.List;
 /**
  * Class to hold table commands specific to the results table.
  *
- * @see org.parabuild.ci.webui.common.AbstractFlatTable.TableCommands
+ * @see AbstractFlatTable.TableCommands
  */
 final class ResultsTableCommandPanel extends Panel implements AbstractFlatTable.TableCommands {
 
@@ -57,6 +57,7 @@ final class ResultsTableCommandPanel extends Panel implements AbstractFlatTable.
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
   private static final Log log = LogFactory.getLog(ResultsTableCommandPanel.class); // NOPMD
+  private static final long serialVersionUID = 4559198266842642844L;
 
   private final Label lbGroupsCaption = new CommonFieldLabel("Publish selected to: "); // NOPMD
   private final CodeNameDropDown ddResultGroups = new UserResultGroupsDropDown(); // NOPMD
@@ -114,6 +115,9 @@ final class ResultsTableCommandPanel extends Panel implements AbstractFlatTable.
 
     // Add selection handler for running publishing commands
     flRunPublishCommands.addListener(new DropDownSelectedListener() {
+      private static final long serialVersionUID = 1293468376344732029L;
+
+
       public Tierlet.Result dropDownSelected(final DropDownSelectedEvent event) {
         final RunPublishingCommandsDropDown dropDown = (RunPublishingCommandsDropDown) event.getDropDown();
         if (dropDown.getCode() == RunPublishingCommandsDropDown.CODE_RUN_COMMANDS) {
@@ -250,6 +254,9 @@ final class ResultsTableCommandPanel extends Panel implements AbstractFlatTable.
    * the context user.
    */
   private static final class UserResultGroupsDropDown extends CodeNameDropDown {
+
+    private static final long serialVersionUID = -8908299689870282286L;
+
 
     UserResultGroupsDropDown() {
 

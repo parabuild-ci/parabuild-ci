@@ -26,6 +26,7 @@ import viewtier.ui.*;
  */
 public final class BuildResultLink extends Flow {
 
+  private static final long serialVersionUID = -8378386076913980253L;
   private String caption = null;
   private ColoredResultLink delegate = null;
 
@@ -119,6 +120,9 @@ public final class BuildResultLink extends Flow {
    * result.
    */
   private static final class ColoredResultLink extends CommonLink {
+
+
+    private static final long serialVersionUID = -5964393683958399383L;
 
 
     public ColoredResultLink(final String caption, final BuildRun buildRun, final String tierlet, final String paramName, final String paramValue) {

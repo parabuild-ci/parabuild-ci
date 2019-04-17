@@ -81,7 +81,7 @@ public final class OsCommand {
    * Executes command
    * @return
    * @throws IOException
-   * @throws org.parabuild.ci.common.CommandStoppedException
+   * @throws CommandStoppedException
    */
   public int execute() throws IOException, CommandStoppedException {
     try {

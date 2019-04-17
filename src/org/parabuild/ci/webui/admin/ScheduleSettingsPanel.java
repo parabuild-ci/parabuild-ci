@@ -23,6 +23,9 @@ import org.parabuild.ci.webui.common.Validatable;
  */
 public abstract class ScheduleSettingsPanel extends MessagePanel implements Loadable, Validatable, Saveable {
 
+  private static final long serialVersionUID = 4982891204575933256L;
+
+
   public ScheduleSettingsPanel(final String title) {
     super(title);
   }

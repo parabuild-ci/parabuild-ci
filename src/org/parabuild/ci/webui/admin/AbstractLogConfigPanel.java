@@ -51,6 +51,7 @@ import java.util.List;
 public abstract class AbstractLogConfigPanel extends MessagePanel implements Validatable, Saveable {
 
   private static final Log log = LogFactory.getLog(AbstractLogConfigPanel.class);
+  private static final long serialVersionUID = -8826234013978092186L;
   //
   protected final ConfigurationManager cm = ConfigurationManager.getInstance();
   protected int logConfigID = LogConfig.UNSAVED_ID;
@@ -278,6 +279,9 @@ public abstract class AbstractLogConfigPanel extends MessagePanel implements Val
    */
   private static PropertyToInputMap.PropertyHandler makePropertyHandler() {
     return new PropertyToInputMap.PropertyHandler() {
+      private static final long serialVersionUID = -7559077787808194605L;
+
+
       public Object makeProperty(final String propertyName) {
         final LogConfigProperty prop = new LogConfigProperty();
         prop.setName(propertyName);

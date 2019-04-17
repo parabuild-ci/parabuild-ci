@@ -27,6 +27,7 @@ import viewtier.ui.*;
  */
 final class ParallelBuildRunListPanel extends Panel {
 
+  private static final long serialVersionUID = 8536640419875224273L;
   /**
    * Factory to generate page-specific build run links.
    */

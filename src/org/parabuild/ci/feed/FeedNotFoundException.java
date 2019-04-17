@@ -18,6 +18,9 @@ package org.parabuild.ci.feed;
  */
 public final class FeedNotFoundException extends Exception {
 
+  private static final long serialVersionUID = 4727452199091188433L;
+
+
   /**
    * Constructs an <code>FeedNotFoundException</code> with the specified detail
    * message. The error message string <code>s</code> can later be

@@ -31,7 +31,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @noinspection FieldCanBeLocal,UnusedDeclaration
+ * @noinspection UnusedDeclaration
  */
 public final class BazaarSettingsPanel extends AbstractSourceControlPanel {
 

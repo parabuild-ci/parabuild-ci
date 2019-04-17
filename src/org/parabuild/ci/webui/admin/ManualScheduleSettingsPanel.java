@@ -18,6 +18,9 @@ package org.parabuild.ci.webui.admin;
  */
 public final class ManualScheduleSettingsPanel extends AbtractScheduleSettingsPanel {
 
+  private static final long serialVersionUID = 3561210519826594013L;
+
+
   /**
    * Creates message panel with title displayed
    */

@@ -27,6 +27,9 @@ import viewtier.ui.Flow;
  */
 final class LastBuildRunResultFlow extends Flow {
 
+  private static final long serialVersionUID = -1849673741270318353L;
+
+
   LastBuildRunResultFlow(final BuildRun lastBuildRun) {
     setState(lastBuildRun);
   }

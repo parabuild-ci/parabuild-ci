@@ -62,7 +62,7 @@ public final class ConsistentFileList implements Serializable {
    */
   public String[] getFileNames() {
     final Collection files = idMap.values();
-    return (String[])files.toArray(new String[files.size()]);
+    return (String[])files.toArray(new String[0]);
   }
 
 

@@ -20,6 +20,7 @@ public class StatisticsLabel extends CommonLabel {
 
   public static final int PADDING = 0;
   public static final int HEIGHT = 6;
+  private static final long serialVersionUID = -195418186729952832L;
 
 
   /**

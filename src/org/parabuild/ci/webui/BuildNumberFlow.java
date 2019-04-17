@@ -24,6 +24,9 @@ import viewtier.ui.Layout;
  */
 public final class BuildNumberFlow extends Flow {
 
+  private static final long serialVersionUID = 7941891662074372944L;
+
+
   BuildNumberFlow() {
     setAlignX(Layout.CENTER);
   }

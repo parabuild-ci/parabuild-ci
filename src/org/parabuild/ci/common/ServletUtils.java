@@ -61,8 +61,8 @@ public final class ServletUtils {
   private static String[] createAddressesIn172() {
     final List result = new ArrayList(30);
     for (int i = 16; i <= 32; i++) {
-      result.add(PREFIX_172 + Integer.toString(i) + '.');
+      result.add(PREFIX_172 + i + '.');
     }
-    return (String[])result.toArray(new String[result.size()]);
+    return (String[])result.toArray(new String[0]);
   }
 }

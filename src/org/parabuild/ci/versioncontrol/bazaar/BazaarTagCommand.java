@@ -56,9 +56,9 @@ public final class BazaarTagCommand extends BazaarCommand {
     sb.append(" tag ");
     sb.append(" -r ");
     sb.append(revision);
-    sb.append(" ");
+    sb.append(' ');
     sb.append(StringUtils.putIntoDoubleQuotes(tag));
-    sb.append(" ");
+    sb.append(' ');
     sb.append(" -d ");
     sb.append(StringUtils.putIntoDoubleQuotes(checkoutDir));
     return sb.toString();

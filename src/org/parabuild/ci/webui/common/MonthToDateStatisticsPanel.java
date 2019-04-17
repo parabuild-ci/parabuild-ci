@@ -27,6 +27,7 @@ public final class MonthToDateStatisticsPanel extends MessagePanel {
 
   public static final String GREEN_DOT_IMAGE_URL = StatisticsPercentBarImage.GREEN_DOT_IMAGE_URL;
   public static final String RED_DOT_IMAGE_URL = StatisticsPercentBarImage.RED_DOT_IMAGE_URL;
+  private static final long serialVersionUID = -4810626415714290792L;
 
 
   /**

@@ -22,6 +22,9 @@ import org.parabuild.ci.webui.common.CodeNameDropDown;
 final class P4LineEndDropDown extends CodeNameDropDown {
 
 
+  private static final long serialVersionUID = 6719152948150965062L;
+
+
   P4LineEndDropDown() {
     addCodeNamePair(SourceControlSetting.P4_LINE_END_LOCAL, SourceControlSetting.P4_LINE_END_VALUE_LOCAL);
     addCodeNamePair(SourceControlSetting.P4_LINE_END_UNIX, SourceControlSetting.P4_LINE_END_VALUE_UNIX);

@@ -14,14 +14,25 @@
 
 package org.parabuild.ci.webservice.templ;
 
-public class IssueAttribute implements java.io.Serializable {
+import org.apache.axis.description.ElementDesc;
+import org.apache.axis.description.TypeDesc;
+import org.apache.axis.encoding.Deserializer;
+import org.apache.axis.encoding.Serializer;
+import org.apache.axis.encoding.ser.BeanDeserializer;
+import org.apache.axis.encoding.ser.BeanSerializer;
 
+import javax.xml.namespace.QName;
+import java.io.Serializable;
+
+public class IssueAttribute implements Serializable {
+
+  private static final long serialVersionUID = -7117524437953047435L;
   private int ID;
   private int issueID;
-  private java.lang.String name;
+  private String name;
   private int propertyValue;
   private int propertyValueAsInteger;
-  private java.lang.String value;
+  private String value;
 
 
   public IssueAttribute() {
@@ -31,10 +42,10 @@ public class IssueAttribute implements java.io.Serializable {
   public IssueAttribute(
           final int ID,
           final int issueID,
-          final java.lang.String name,
+          final String name,
           final int propertyValue,
           final int propertyValueAsInteger,
-          final java.lang.String value) {
+          final String value) {
     this.ID = ID;
     this.issueID = issueID;
     this.name = name;
@@ -89,7 +100,7 @@ public class IssueAttribute implements java.io.Serializable {
    *
    * @return name
    */
-  public java.lang.String getName() {
+  public String getName() {
     return name;
   }
 
@@ -99,7 +110,7 @@ public class IssueAttribute implements java.io.Serializable {
    *
    * @param name
    */
-  public void setName(final java.lang.String name) {
+  public void setName(final String name) {
     this.name = name;
   }
 
@@ -149,7 +160,7 @@ public class IssueAttribute implements java.io.Serializable {
    *
    * @return value
    */
-  public java.lang.String getValue() {
+  public String getValue() {
     return value;
   }
 
@@ -159,15 +170,15 @@ public class IssueAttribute implements java.io.Serializable {
    *
    * @param value
    */
-  public void setValue(final java.lang.String value) {
+  public void setValue(final String value) {
     this.value = value;
   }
 
 
-  private java.lang.Object __equalsCalc = null;
+  private Object __equalsCalc = null;
 
 
-  public synchronized boolean equals(final java.lang.Object obj) {
+  public synchronized boolean equals(final Object obj) {
     if (!(obj instanceof IssueAttribute)) return false;
     final IssueAttribute other = (IssueAttribute) obj;
     if (obj == null) return false;
@@ -178,16 +189,16 @@ public class IssueAttribute implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.ID == other.getID() &&
-            this.issueID == other.getIssueID() &&
-            ((this.name == null && other.getName() == null) ||
+            this.ID == other.ID &&
+            this.issueID == other.issueID &&
+            ((this.name == null && other.name == null) ||
                     (this.name != null &&
-                            this.name.equals(other.getName()))) &&
-            this.propertyValue == other.getPropertyValue() &&
-            this.propertyValueAsInteger == other.getPropertyValueAsInteger() &&
-            ((this.value == null && other.getValue() == null) ||
+                            this.name.equals(other.name))) &&
+            this.propertyValue == other.propertyValue &&
+            this.propertyValueAsInteger == other.propertyValueAsInteger &&
+            ((this.value == null && other.value == null) ||
                     (this.value != null &&
-                            this.value.equals(other.getValue())));
+                            this.value.equals(other.value)));
     __equalsCalc = null;
     return _equals;
   }
@@ -202,15 +213,15 @@ public class IssueAttribute implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getID();
-    _hashCode += getIssueID();
-    if (getName() != null) {
-      _hashCode += getName().hashCode();
+    _hashCode += ID;
+    _hashCode += issueID;
+    if (name != null) {
+      _hashCode += name.hashCode();
     }
-    _hashCode += getPropertyValue();
-    _hashCode += getPropertyValueAsInteger();
-    if (getValue() != null) {
-      _hashCode += getValue().hashCode();
+    _hashCode += propertyValue;
+    _hashCode += propertyValueAsInteger;
+    if (value != null) {
+      _hashCode += value.hashCode();
     }
     __hashCodeCalc = false;
     return _hashCode;
@@ -218,46 +229,46 @@ public class IssueAttribute implements java.io.Serializable {
 
 
   // Type metadata
-  private static final org.apache.axis.description.TypeDesc typeDesc =
-          new org.apache.axis.description.TypeDesc(IssueAttribute.class, true);
+  private static final TypeDesc typeDesc =
+          new TypeDesc(IssueAttribute.class, true);
 
 
   static {
-    typeDesc.setXmlType(new javax.xml.namespace.QName("http://org.parabuild.ci", "IssueAttribute"));
-    org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+    typeDesc.setXmlType(new QName("http://org.parabuild.ci", "IssueAttribute"));
+    ElementDesc elemField = new ElementDesc();
     elemField.setFieldName("ID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "ID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "ID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("issueID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "issueID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "issueID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("name");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "name"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "name"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("propertyValue");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "propertyValue"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "propertyValue"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("propertyValueAsInteger");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "propertyValueAsInteger"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "propertyValueAsInteger"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("value");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "value"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "value"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
   }
@@ -266,7 +277,7 @@ public class IssueAttribute implements java.io.Serializable {
   /**
    * Return type metadata object
    */
-  public static org.apache.axis.description.TypeDesc getTypeDesc() {
+  public static TypeDesc getTypeDesc() {
     return typeDesc;
   }
 
@@ -274,12 +285,12 @@ public class IssueAttribute implements java.io.Serializable {
   /**
    * Get Custom Serializer
    */
-  public static org.apache.axis.encoding.Serializer getSerializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Serializer getSerializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanSerializer(
+            new BeanSerializer(
                     _javaType, _xmlType, typeDesc);
   }
 
@@ -287,12 +298,12 @@ public class IssueAttribute implements java.io.Serializable {
   /**
    * Get Custom Deserializer
    */
-  public static org.apache.axis.encoding.Deserializer getDeserializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Deserializer getDeserializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanDeserializer(
+            new BeanDeserializer(
                     _javaType, _xmlType, typeDesc);
   }
 

@@ -23,6 +23,9 @@ import org.parabuild.ci.webui.common.CodeNameDropDown;
 final class RepositoryBrowserTypeDropDown extends CodeNameDropDown {
 
 
+  private static final long serialVersionUID = -6302772628325060562L;
+
+
   /**
    * Default constructor.
    */

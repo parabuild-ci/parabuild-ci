@@ -18,6 +18,9 @@ package org.parabuild.ci.webui.common;
  */
 public final class HourDropDown extends CodeNameDropDown {
 
+  private static final long serialVersionUID = -8063285652926671411L;
+
+
   public HourDropDown() {
     addCodeNamePair(0, "00");
     addCodeNamePair(1, "01");

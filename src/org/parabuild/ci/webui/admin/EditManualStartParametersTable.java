@@ -50,14 +50,14 @@ public final class EditManualStartParametersTable extends AbstractFlatTable {
   private int mode = WebUIConstants.MODE_EDIT;
 
   /**
-   * @noinspection UNUSED_SYMBOL,UnusedDeclaration,FieldCanBeLocal
+   * @noinspection UNUSED_SYMBOL, UnusedDeclaration
    */
   private List parameters;
   private static final boolean USE_FIRST_PARAMETER_VALUE_AS_DEFAULT = true;
 
 
   /**
-   * @param parameters List of {@link org.parabuild.ci.object.StartParameter} objects.
+   * @param parameters List of {@link StartParameter} objects.
    */
   public EditManualStartParametersTable(final List parameters, final boolean useFirstParameterValueAsDefault, final int mode) {
     this(useFirstParameterValueAsDefault, mode);

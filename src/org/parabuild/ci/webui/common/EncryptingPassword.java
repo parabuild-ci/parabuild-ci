@@ -23,6 +23,9 @@ import viewtier.ui.*;
 public final class EncryptingPassword extends Password {
 
 
+  private static final long serialVersionUID = 1464451197975039573L;
+
+
   /**
    * Constructor
    *

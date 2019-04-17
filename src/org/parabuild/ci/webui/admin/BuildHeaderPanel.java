@@ -333,9 +333,6 @@ public final class BuildHeaderPanel extends MessagePanel implements Validatable,
     if (buildConfig.getBuildID() == BuildConfig.UNSAVED_ID) {
       return false;
     }
-    if (buildConfig.getActiveBuildID() != buildConfig.getBuildID()) {
-      return true;
-    }
-    return false;
+    return buildConfig.getActiveBuildID() != buildConfig.getBuildID();
   }
 }

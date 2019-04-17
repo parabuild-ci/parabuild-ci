@@ -20,6 +20,9 @@ import viewtier.ui.*;
  */
 public final class BuildNumberField extends Field {
 
+  private static final long serialVersionUID = 8896506533235448672L;
+
+
   public BuildNumberField() {
     super(5, 5);
   }

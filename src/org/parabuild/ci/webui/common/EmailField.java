@@ -16,6 +16,7 @@ package org.parabuild.ci.webui.common;
 public final class EmailField extends CommonField {
 
   public static final int COLUMN_WIDTH = 175;
+  private static final long serialVersionUID = -2302618325587802683L;
 
 
   public EmailField() {

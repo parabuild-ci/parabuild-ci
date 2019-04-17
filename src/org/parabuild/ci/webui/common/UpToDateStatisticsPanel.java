@@ -36,6 +36,7 @@ public final class UpToDateStatisticsPanel extends MessagePanel {
   private static final String CAPTION_AVERAGE_TIME_TO_FIX = "Average time to fix:  ";
 
   public static final int STATS_VALUE_COLUMN_WIDTH = 30;
+  private static final long serialVersionUID = -6443066153290324413L;
 
 
   /**

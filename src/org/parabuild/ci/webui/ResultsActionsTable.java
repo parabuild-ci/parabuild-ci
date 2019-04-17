@@ -36,6 +36,7 @@ final class ResultsActionsTable extends AbstractFlatTable {
   private static final String CAPTION_DATE = "Date";
   private static final String CAPTION_USER = "User";
   private static final String CAPTION_DESCRIPTION = "Description";
+  private static final long serialVersionUID = -6333056828222856518L;
 
   private final List buildRunActionVOs;
   private final SimpleDateFormat dateTimeFormat;

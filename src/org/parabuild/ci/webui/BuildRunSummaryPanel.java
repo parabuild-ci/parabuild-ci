@@ -51,7 +51,7 @@ import java.util.Properties;
 /**
  * Buil run summary pnael
  *
- * @noinspection FieldCanBeLocal,InstanceVariableNamingConvention
+ * @noinspection InstanceVariableNamingConvention
  */
 public final class BuildRunSummaryPanel extends MessagePanel {
 

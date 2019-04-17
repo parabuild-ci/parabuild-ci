@@ -214,7 +214,7 @@ public final class BazaarVersionControl extends AbstractSourceControl {
    * @param maxChangeLists
    * @return new change list ID if there were changes made, or
    *         the same base change list if there were changes
-   * @noinspection ControlFlowStatementWithoutBraces,ReuseOfLocalVariable,TooBroadScope
+   * @noinspection ControlFlowStatementWithoutBraces, TooBroadScope
    */
   private int getChangesSince(final String changeListNumberFrom, final String changeListNumberTo, final int maxChangeLists)
           throws IOException, CommandStoppedException, AgentFailureException {

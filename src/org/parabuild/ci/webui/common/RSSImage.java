@@ -22,6 +22,7 @@ import viewtier.cdk.*;
  */
 public final class RSSImage extends CustomComponent {
 
+  private static final long serialVersionUID = -1439600642491719000L;
   private final int buildID;
 
 
@@ -39,7 +40,7 @@ public final class RSSImage extends CustomComponent {
    * Oveloaded CustomComponent's render
    */
   public void render(final RenderContext ctx) {
-    final String url = "/parabuild/build/status/feed.xml" + (buildID == -1 ? "" : '?' + Pages.PARAM_BUILD_ID + '=' + Integer.toString(buildID));
+    final String url = "/parabuild/build/status/feed.xml" + (buildID == -1 ? "" : '?' + Pages.PARAM_BUILD_ID + '=' + buildID);
     ctx.getWriter().print("<a href=\"" + url + "\"><img src=\"/parabuild/images/RSS.gif\" border=\"0\" hspace=\"0\" vspace=\"0\"/></a>");
   }
 }

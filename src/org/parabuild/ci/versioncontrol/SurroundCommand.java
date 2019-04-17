@@ -97,7 +97,7 @@ abstract class SurroundCommand extends VersionControlRemoteCommand {
     remoteCommand.append(" -z");
     remoteCommand.append(address);
     remoteCommand.append(':');
-    remoteCommand.append(Integer.toString(port));
+    remoteCommand.append(port);
     remoteCommand.append(' ');
 
 
@@ -140,7 +140,7 @@ abstract class SurroundCommand extends VersionControlRemoteCommand {
       String line = reader.readLine();
       if (line != null) {
         if (line.startsWith("A connection to the Surround SCM server could not be established.")) {
-          errorMessage.append("Could not connect to Surround SCM server using address \"").append(address).append("\" and port \"").append(Integer.toString(port)).append("\".");
+          errorMessage.append("Could not connect to Surround SCM server using address \"").append(address).append("\" and port \"").append(port).append("\".");
         } else if (line.startsWith("Either the username or password you entered is not valid")) {
           errorMessage.append("Could not connect to Surround SCM server using configured user name and password");
         } else {

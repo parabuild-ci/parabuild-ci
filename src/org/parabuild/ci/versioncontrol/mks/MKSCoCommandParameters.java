@@ -19,7 +19,7 @@ import java.util.Date;
  * Parameters for MKS's co command.
  *
  * @see MKSCommandParameters
- * @see org.parabuild.ci.versioncontrol.mks.MKSCoCommand
+ * @see MKSCoCommand
  */
 public final class MKSCoCommandParameters extends MKSCommandParameters {
 

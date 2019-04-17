@@ -84,6 +84,9 @@ public final class IssueTrackerTable extends AbstractFlatTable implements Loadab
       // empty tracker setup panel.
       return new Component[]{
         new AbstractIssueTrackerSetupPanel("") {
+          private static final long serialVersionUID = 5197407401586582739L;
+
+
           protected void doValidate(final List errors) { // do nothing
           }
         }
@@ -228,6 +231,9 @@ public final class IssueTrackerTable extends AbstractFlatTable implements Loadab
     public IssueTrackerTableCommands() {
       // create delete selected rows command
       deleteRowCommand.addListener(new MenuSelectedListener() {
+        private static final long serialVersionUID = 7315475736270079081L;
+
+
         public Tierlet.Result menuSelected(final MenuSelectedEvent event) {
           deleteSelectedRows();
           return Tierlet.Result.Continue();
@@ -237,6 +243,9 @@ public final class IssueTrackerTable extends AbstractFlatTable implements Loadab
       // create add row command
       addRowCommand.setAlignX(Layout.LEFT);
       addRowCommand.addListener(new ButtonPressedListener() {
+        private static final long serialVersionUID = -1899865884045862782L;
+
+
         public Tierlet.Result buttonPressed(final ButtonPressedEvent event) {
           // first place a tracker into the list so that it's available to makeRow
           final int expectedRowIndex = getRowCount();

@@ -29,7 +29,6 @@ import java.io.OutputStream;
  * Created by IntelliJ IDEA. User: vimeshev Date: Dec 17, 2005
  * Time: 1:19:14 AM To change this template use File | Settings |
  * File Templates.
- * @noinspection ConstantNamingConvention
  */
 public abstract class AbstractUnixDirectoryOwnerChanger implements DirectoryOwnerChanger {
 

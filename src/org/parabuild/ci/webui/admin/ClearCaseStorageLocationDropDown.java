@@ -22,6 +22,9 @@ import org.parabuild.ci.object.*;
 final class ClearCaseStorageLocationDropDown extends CodeNameDropDown {
 
 
+  private static final long serialVersionUID = -6918556059515000613L;
+
+
   /**
    * Constructor.
    */

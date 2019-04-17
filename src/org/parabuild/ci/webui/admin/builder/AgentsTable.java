@@ -32,7 +32,6 @@ import java.util.List;
 /**
  * Shows list of agents in the system.
  *
- * @noinspection MethodOverloadsMethodOfSuperclass
  */
 final class AgentsTable extends AbstractFlatTable {
 

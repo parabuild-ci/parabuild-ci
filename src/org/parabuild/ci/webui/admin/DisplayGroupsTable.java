@@ -157,14 +157,6 @@ public final class DisplayGroupsTable extends AbstractFlatTable implements Loada
 
 
   /**
-   * This notification method is called when a new row is added.
-   * Implementing class can use it to keep track of deleted rows
-   */
-  public void notifyRowAdded(final int addedRowIndex) {
-  }
-
-
-  /**
    */
   public Component[] makeHeader() {
     final Component[] header = new Component[1];
@@ -238,6 +230,9 @@ public final class DisplayGroupsTable extends AbstractFlatTable implements Loada
 
       // create delete selected rows command
       deleteRowCommand.addListener(new MenuSelectedListener() {
+        private static final long serialVersionUID = 6168831060379313199L;
+
+
         public Tierlet.Result menuSelected(final MenuSelectedEvent event) {
           deleteSelectedRows();
           return Tierlet.Result.Continue();
@@ -247,6 +242,9 @@ public final class DisplayGroupsTable extends AbstractFlatTable implements Loada
       // create add row command
       addRowCommand.setAlignX(Layout.LEFT);
       addRowCommand.addListener(new ButtonPressedListener() {
+        private static final long serialVersionUID = 9182753660814734988L;
+
+
         public Tierlet.Result buttonPressed(final ButtonPressedEvent event) {
           // first place a config into the list so that it's available to makeRow
           final int expectedRowIndex = getRowCount();

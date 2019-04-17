@@ -174,7 +174,6 @@ public final class CVSSettingsPanel extends AbstractSourceControlPanel {
    * a component should dispaly a error message in it's area.
    *
    * @return true if valid
-   * @noinspection UnusedCatchParameter
    */
   protected boolean doValidate() {
     clearMessage();
@@ -261,12 +260,15 @@ public final class CVSSettingsPanel extends AbstractSourceControlPanel {
    */
   private static final class CompressionDropDown extends DropDown {
 
+    private static final long serialVersionUID = 6506902131545832419L;
+
+
     /**
      * Default constructor.
      */
     CompressionDropDown() {
       for (int i = 0; i < 10; i++) {
-        addItem(Integer.toString(i) + "  ");
+        addItem(i + "  ");
       }
       setSelection(0);
     }

@@ -62,6 +62,7 @@ public abstract class AbstractResultConfigPanel extends MessagePanel implements 
   private static final String CAPTION_RESULT_PATH = "Result  path: ";
   private static final String CAPTION_SHELL_VARIABLE = "Shell variable: ";
   private static final String CAPTION_TYPE = "Result  type:";
+  private static final long serialVersionUID = -4770511697994028153L;
 
   protected final ConfigurationManager cm = ConfigurationManager.getInstance();
   protected int resultConfigID = ResultConfig.UNSAVED_ID;
@@ -340,6 +341,9 @@ public abstract class AbstractResultConfigPanel extends MessagePanel implements 
    */
   private static PropertyToInputMap.PropertyHandler makePropertyHandler() {
     return new PropertyToInputMap.PropertyHandler() {
+      private static final long serialVersionUID = -8287032735096311211L;
+
+
       public Object makeProperty(final String propertyName) {
         final ResultConfigProperty prop = new ResultConfigProperty();
         prop.setName(propertyName);

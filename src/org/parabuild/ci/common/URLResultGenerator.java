@@ -29,9 +29,9 @@ public final class URLResultGenerator {
   /**
    * Makes build version using provided parameters.
    */
-  public StringBuffer makeURL(final String template, final String buildName,
-    final int buildNumber, final String changeListNumber, final int buildID,
-    final int buildRunID) throws ValidationException {
+  public void makeURL(final String template, final String buildName,
+                      final int buildNumber, final String changeListNumber, final int buildID,
+                      final int buildRunID) throws ValidationException {
 
     // generate
     final NamedPropertyStringGenerator generator = new NamedPropertyStringGenerator(new NamedProperty[]{
@@ -47,7 +47,7 @@ public final class URLResultGenerator {
     generator.setPropertyValue(PROPERTY_CHANGE_LIST_NUMBER, changeListNumber);
     generator.setPropertyValue(PROPERTY_BUILD_ID, Integer.toString(buildID));
     generator.setPropertyValue(PROPERTY_BUILD_RUN_ID, Integer.toString(buildRunID));
-    return new StringBuffer(generator.generate());
+    generator.generate();
   }
 
 

@@ -25,7 +25,8 @@ final class MaintenanceCommandsPanelImpl extends MaintenanceCommandsPanel {
   private static final String CAPTION_MAINTENANCE_COMMANDS = "Maintenance Commands:";
   private static final String CAPTION_CLEANUP_LOGS = "Cleanup Logs";
   private static final String CAPTION_CLEANUP_RESULTS = "Cleanup Results";
-  
+  private static final long serialVersionUID = 3100109744407635585L;
+
   private final AnnotatedCommandLink flwCleanupLogs = new AnnotatedCommandLink(CAPTION_CLEANUP_LOGS, Pages.ADMIN_CLEANUP_LOGS, "deletes old build logs from archive.", true);
   private final AnnotatedCommandLink flwCleanupResults = new AnnotatedCommandLink(CAPTION_CLEANUP_RESULTS, Pages.ADMIN_CLEANUP_RESULTS, "deletes old build results from archive.", true);
 

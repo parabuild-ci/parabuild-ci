@@ -37,6 +37,7 @@ public final class BrancheChangeListPage extends BaseMergePage implements Statel
   public static final int PAGE_LENGTH = 50;
 
   private static final String CHANGE_LIST = "Change List";
+  private static final long serialVersionUID = 10916833063338286L;
 
 
   public BrancheChangeListPage() {

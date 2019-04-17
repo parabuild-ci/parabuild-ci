@@ -66,6 +66,9 @@ public final class EditResultGroupPage extends BasePage implements Conversationa
 
     // add cancel button listener
     btnCancel.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = -2094946202675012233L;
+
+
       public Result buttonPressed(final ButtonPressedEvent event) {
         if (log.isDebugEnabled()) log.debug("canceled - returning to result group list");
         return Result.Done(Pages.RESULT_GROUPS);
@@ -74,6 +77,9 @@ public final class EditResultGroupPage extends BasePage implements Conversationa
 
     // add save button listener
     btnSave.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = 5395817615082159432L;
+
+
       public Result buttonPressed(final ButtonPressedEvent event) {
         if (pnlResultGroup.save()) {
           if (log.isDebugEnabled()) log.debug("saved - returning to result group list");

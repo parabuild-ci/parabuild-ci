@@ -24,6 +24,9 @@ import viewtier.ui.Layout;
  */
 final class BoldSummaryLabel extends BoldCommonLabel {
 
+  private static final long serialVersionUID = -7699263132924700120L;
+
+
   public BoldSummaryLabel() {
     this("");
   }

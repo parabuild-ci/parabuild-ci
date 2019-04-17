@@ -158,6 +158,9 @@ public final class FogBugzSetupPanel extends AbstractIssueTrackerSetupPanel {
    */
   private static final class TestFogBugzConnectionButtonListener implements ButtonPressedListener {
 
+    private static final long serialVersionUID = -5276600478048898080L;
+
+
     public Tierlet.Result buttonPressed(final ButtonPressedEvent event) {
 //      if (validate()) { // NOPMD
 //        // create connector
@@ -190,6 +193,7 @@ public final class FogBugzSetupPanel extends AbstractIssueTrackerSetupPanel {
     public static final int CODE_UNSET = 0;
     public static final int CODE_MS_SQL = 1;
     public static final int CODE_MYSQL = 2;
+    private static final long serialVersionUID = 8219260151575265174L;
 
 
     public FogBugzDatabaseDropDown() {

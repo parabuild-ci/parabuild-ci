@@ -63,6 +63,9 @@ public final class EditProjectPage extends BasePage implements ConversationalTie
 
     // add cancel button listener
     btnCancel.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = 1696172704055910799L;
+
+
       public Result buttonPressed(final ButtonPressedEvent event) {
         return Result.Done(Pages.PAGE_PROJECTS);
       }
@@ -70,6 +73,9 @@ public final class EditProjectPage extends BasePage implements ConversationalTie
 
     // add save button listener
     btnSave.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = 3177176257449233188L;
+
+
       public Result buttonPressed(final ButtonPressedEvent event) {
         if (save()) {
           return Result.Done(Pages.PAGE_PROJECTS);

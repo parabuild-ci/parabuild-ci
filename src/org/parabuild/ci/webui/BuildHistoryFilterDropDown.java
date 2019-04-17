@@ -23,6 +23,7 @@ final class BuildHistoryFilterDropDown extends CodeNameDropDown {
   public static final byte CODE_ALL = 0;
   public static final byte CODE_SUCCESSFUL = 1;
   public static final byte CODE_FAILED = 2;
+  private static final long serialVersionUID = -6275345863285573686L;
 
 
   public BuildHistoryFilterDropDown() {

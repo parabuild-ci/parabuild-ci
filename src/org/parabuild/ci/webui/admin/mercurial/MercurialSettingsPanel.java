@@ -75,7 +75,7 @@ public final class MercurialSettingsPanel extends AbstractSourceControlPanel {
    * Sets edit mode
    *
    * @param mode edit mode
-   * @see org.parabuild.ci.webui.admin.AbstractSourceControlPanel#setMode(int)
+   * @see AbstractSourceControlPanel#setMode(int)
    */
   protected void doSetMode(final int mode) {
     if (mode == (int) WebUIConstants.MODE_VIEW) {

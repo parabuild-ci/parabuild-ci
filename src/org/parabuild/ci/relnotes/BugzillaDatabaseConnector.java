@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.relnotes;
 
+import java.sql.Date;
 import java.util.*;
 
 /**
@@ -24,5 +25,5 @@ import java.util.*;
  */
 public interface BugzillaDatabaseConnector {
 
-  Collection requestBugsFromBugzilla(String productName, String productVersion, java.sql.Date fromDate, java.sql.Date toDate);
+  Collection requestBugsFromBugzilla(String productName, String productVersion, Date fromDate, Date toDate);
 }

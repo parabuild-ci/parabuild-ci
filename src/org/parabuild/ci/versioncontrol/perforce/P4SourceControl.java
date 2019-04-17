@@ -697,9 +697,7 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
     } catch (final RuntimeException e) {
       throw e;
     } catch (final Exception e) {
-      final IllegalStateException ie = new IllegalStateException("Error while reloading Perforce configuration: " + StringUtils.toString(e));
-      ie.initCause(e);
-      throw ie;
+      throw  new IllegalStateException("Error while reloading Perforce configuration: " + StringUtils.toString(e), e);
     }
   }
 
@@ -1210,7 +1208,7 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
   }
 
 
-  private boolean updateDepotViewFromDepot(final String clientViewByDepotPath) throws IOException, CommandStoppedException, AgentFailureException {
+  private void updateDepotViewFromDepot(final String clientViewByDepotPath) throws IOException, CommandStoppedException, AgentFailureException {
     try {
       final P4Properties props = getP4Properties();
       final Agent agent = getCheckoutDirectoryAwareAgent();
@@ -1292,14 +1290,14 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
       }
 
       // update the current if necessary
-      return updateConfigurationDepotViewSpec(depotViewSpec);
+      updateConfigurationDepotViewSpec(depotViewSpec);
     } catch (final ValidationException e) {
       throw IoUtils.createIOException(e);
     }
   }
 
 
-  private boolean updateDepotViewFromNamedWorkspace(final String clientName) throws IOException, CommandStoppedException, AgentFailureException {
+  private void updateDepotViewFromNamedWorkspace(final String clientName) throws IOException, CommandStoppedException, AgentFailureException {
     final P4Properties props = getP4Properties();
     final Agent agent = getCheckoutDirectoryAwareAgent();
     final String checkoutDirName = agent.getTempDirName(); // checkout to temp
@@ -1338,7 +1336,7 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
       }
 
       // update the current if necessary
-      return updateConfigurationDepotViewSpec(result);
+      updateConfigurationDepotViewSpec(result);
     } catch (final ValidationException e) {
       throw IoUtils.createIOException(e);
     } finally {

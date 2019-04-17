@@ -24,6 +24,7 @@ public class CommonSummaryLabel extends CommonLabel {
 
   public static final int SUMMARY_LABEL_HEIGHT = 19;
   public static final int SUMMARY_LABEL_PADDING = 2;
+  private static final long serialVersionUID = -1151514772677606372L;
 
 
   /**

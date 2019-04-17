@@ -28,6 +28,9 @@ import viewtier.ui.StatelessTierlet;
  */
 public final class MergeQueuePage extends BaseMergePage implements StatelessTierlet {
 
+  private static final long serialVersionUID = 8743372351109384370L;
+
+
   public MergeQueuePage() {
     super(FLAG_FLOATING_WIDTH | FLAG_SHOW_HEADER_SEPARATOR | FLAG_SHOW_PAGE_HEADER_LABEL);
   }

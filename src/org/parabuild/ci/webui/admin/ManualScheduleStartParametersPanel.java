@@ -36,6 +36,7 @@ import org.parabuild.ci.webui.common.*;
  */
 public abstract class ManualScheduleStartParametersPanel extends MessagePanel {
 
+  private static final long serialVersionUID = 690555130643315824L;
   protected final PropertyToInputMap sourceControlSettingsPropertyToInputMap = new PropertyToInputMap(true, makePropertyHandler()); // strict map
   protected GridIterator gridIterator = null;
 
@@ -62,6 +63,9 @@ public abstract class ManualScheduleStartParametersPanel extends MessagePanel {
    */
   private static PropertyToInputMap.PropertyHandler makePropertyHandler() {
     return new PropertyToInputMap.PropertyHandler() {
+      private static final long serialVersionUID = 2305689496035138069L;
+
+
       public Object makeProperty(final String propertyName) {
         final SourceControlSettingVO setting = new SourceControlSettingVO();
         setting.setName(propertyName);

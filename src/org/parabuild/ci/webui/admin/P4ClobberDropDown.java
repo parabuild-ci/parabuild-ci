@@ -22,6 +22,9 @@ import org.parabuild.ci.object.*;
 final class P4ClobberDropDown extends CodeNameDropDown {
 
 
+  private static final long serialVersionUID = 6574778055454965936L;
+
+
   P4ClobberDropDown() {
     addCodeNamePair(SourceControlSetting.P4_OPTION_VALUE_NOCLOBBER, "noclobber");
     addCodeNamePair(SourceControlSetting.P4_OPTION_VALUE_CLOBBER, "clobber");

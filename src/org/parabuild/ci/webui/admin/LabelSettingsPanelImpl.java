@@ -279,6 +279,9 @@ public final class LabelSettingsPanelImpl extends LabelSettingsPanel {
    */
   private static PropertyToInputMap.PropertyHandler makePropertyHandler() {
     return new PropertyToInputMap.PropertyHandler() {
+      private static final long serialVersionUID = 1617182798604100495L;
+
+
       public Object makeProperty(final String propertyName) {
         final LabelProperty prop = new LabelProperty();
         prop.setPropertyName(propertyName);

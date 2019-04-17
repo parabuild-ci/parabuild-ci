@@ -14,20 +14,31 @@
 
 package org.parabuild.ci.webservice.templ;
 
-public class BuildSequence implements java.io.Serializable {
+import org.apache.axis.description.ElementDesc;
+import org.apache.axis.description.TypeDesc;
+import org.apache.axis.encoding.Deserializer;
+import org.apache.axis.encoding.Serializer;
+import org.apache.axis.encoding.ser.BeanDeserializer;
+import org.apache.axis.encoding.ser.BeanSerializer;
 
+import javax.xml.namespace.QName;
+import java.io.Serializable;
+
+public class BuildSequence implements Serializable {
+
+  private static final long serialVersionUID = 3406308589212150164L;
   private int buildID;
   private boolean continueOnFailure;
   private boolean disabled;
-  private java.lang.String failurePatterns;
+  private String failurePatterns;
   private boolean finalizer;
   private boolean initializer;
   private int lineNumber;
   private boolean respectErrorCode;
-  private java.lang.String scriptText;
+  private String scriptText;
   private int sequenceID;
-  private java.lang.String stepName;
-  private java.lang.String successPatterns;
+  private String stepName;
+  private String successPatterns;
   private long timeStamp;
   private int timeoutMins;
   private byte type;
@@ -41,15 +52,15 @@ public class BuildSequence implements java.io.Serializable {
           final int buildID,
           final boolean continueOnFailure,
           final boolean disabled,
-          final java.lang.String failurePatterns,
+          final String failurePatterns,
           final boolean finalizer,
           final boolean initializer,
           final int lineNumber,
           final boolean respectErrorCode,
-          final java.lang.String scriptText,
+          final String scriptText,
           final int sequenceID,
-          final java.lang.String stepName,
-          final java.lang.String successPatterns,
+          final String stepName,
+          final String successPatterns,
           final long timeStamp,
           final int timeoutMins,
           final byte type) {
@@ -136,7 +147,7 @@ public class BuildSequence implements java.io.Serializable {
    *
    * @return failurePatterns
    */
-  public java.lang.String getFailurePatterns() {
+  public String getFailurePatterns() {
     return failurePatterns;
   }
 
@@ -146,7 +157,7 @@ public class BuildSequence implements java.io.Serializable {
    *
    * @param failurePatterns
    */
-  public void setFailurePatterns(final java.lang.String failurePatterns) {
+  public void setFailurePatterns(final String failurePatterns) {
     this.failurePatterns = failurePatterns;
   }
 
@@ -236,7 +247,7 @@ public class BuildSequence implements java.io.Serializable {
    *
    * @return scriptText
    */
-  public java.lang.String getScriptText() {
+  public String getScriptText() {
     return scriptText;
   }
 
@@ -246,7 +257,7 @@ public class BuildSequence implements java.io.Serializable {
    *
    * @param scriptText
    */
-  public void setScriptText(final java.lang.String scriptText) {
+  public void setScriptText(final String scriptText) {
     this.scriptText = scriptText;
   }
 
@@ -276,7 +287,7 @@ public class BuildSequence implements java.io.Serializable {
    *
    * @return stepName
    */
-  public java.lang.String getStepName() {
+  public String getStepName() {
     return stepName;
   }
 
@@ -286,7 +297,7 @@ public class BuildSequence implements java.io.Serializable {
    *
    * @param stepName
    */
-  public void setStepName(final java.lang.String stepName) {
+  public void setStepName(final String stepName) {
     this.stepName = stepName;
   }
 
@@ -296,7 +307,7 @@ public class BuildSequence implements java.io.Serializable {
    *
    * @return successPatterns
    */
-  public java.lang.String getSuccessPatterns() {
+  public String getSuccessPatterns() {
     return successPatterns;
   }
 
@@ -306,7 +317,7 @@ public class BuildSequence implements java.io.Serializable {
    *
    * @param successPatterns
    */
-  public void setSuccessPatterns(final java.lang.String successPatterns) {
+  public void setSuccessPatterns(final String successPatterns) {
     this.successPatterns = successPatterns;
   }
 
@@ -371,10 +382,10 @@ public class BuildSequence implements java.io.Serializable {
   }
 
 
-  private java.lang.Object __equalsCalc = null;
+  private Object __equalsCalc = null;
 
 
-  public synchronized boolean equals(final java.lang.Object obj) {
+  public synchronized boolean equals(final Object obj) {
     if (!(obj instanceof BuildSequence)) return false;
     final BuildSequence other = (BuildSequence) obj;
     if (obj == null) return false;
@@ -385,29 +396,29 @@ public class BuildSequence implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.buildID == other.getBuildID() &&
-            this.continueOnFailure == other.isContinueOnFailure() &&
-            this.disabled == other.isDisabled() &&
-            ((this.failurePatterns == null && other.getFailurePatterns() == null) ||
+            this.buildID == other.buildID &&
+            this.continueOnFailure == other.continueOnFailure &&
+            this.disabled == other.disabled &&
+            ((this.failurePatterns == null && other.failurePatterns == null) ||
                     (this.failurePatterns != null &&
-                            this.failurePatterns.equals(other.getFailurePatterns()))) &&
-            this.finalizer == other.isFinalizer() &&
-            this.initializer == other.isInitializer() &&
-            this.lineNumber == other.getLineNumber() &&
-            this.respectErrorCode == other.isRespectErrorCode() &&
-            ((this.scriptText == null && other.getScriptText() == null) ||
+                            this.failurePatterns.equals(other.failurePatterns))) &&
+            this.finalizer == other.finalizer &&
+            this.initializer == other.initializer &&
+            this.lineNumber == other.lineNumber &&
+            this.respectErrorCode == other.respectErrorCode &&
+            ((this.scriptText == null && other.scriptText == null) ||
                     (this.scriptText != null &&
-                            this.scriptText.equals(other.getScriptText()))) &&
-            this.sequenceID == other.getSequenceID() &&
-            ((this.stepName == null && other.getStepName() == null) ||
+                            this.scriptText.equals(other.scriptText))) &&
+            this.sequenceID == other.sequenceID &&
+            ((this.stepName == null && other.stepName == null) ||
                     (this.stepName != null &&
-                            this.stepName.equals(other.getStepName()))) &&
-            ((this.successPatterns == null && other.getSuccessPatterns() == null) ||
+                            this.stepName.equals(other.stepName))) &&
+            ((this.successPatterns == null && other.successPatterns == null) ||
                     (this.successPatterns != null &&
-                            this.successPatterns.equals(other.getSuccessPatterns()))) &&
-            this.timeStamp == other.getTimeStamp() &&
-            this.timeoutMins == other.getTimeoutMins() &&
-            this.type == other.getType();
+                            this.successPatterns.equals(other.successPatterns))) &&
+            this.timeStamp == other.timeStamp &&
+            this.timeoutMins == other.timeoutMins &&
+            this.type == other.type;
     __equalsCalc = null;
     return _equals;
   }
@@ -422,129 +433,129 @@ public class BuildSequence implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getBuildID();
-    _hashCode += (isContinueOnFailure() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    _hashCode += (isDisabled() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    if (getFailurePatterns() != null) {
-      _hashCode += getFailurePatterns().hashCode();
+    _hashCode += buildID;
+    _hashCode += (continueOnFailure ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    _hashCode += (disabled ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    if (failurePatterns != null) {
+      _hashCode += failurePatterns.hashCode();
     }
-    _hashCode += (isFinalizer() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    _hashCode += (isInitializer() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    _hashCode += getLineNumber();
-    _hashCode += (isRespectErrorCode() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    if (getScriptText() != null) {
-      _hashCode += getScriptText().hashCode();
+    _hashCode += (finalizer ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    _hashCode += (initializer ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    _hashCode += lineNumber;
+    _hashCode += (respectErrorCode ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    if (scriptText != null) {
+      _hashCode += scriptText.hashCode();
     }
-    _hashCode += getSequenceID();
-    if (getStepName() != null) {
-      _hashCode += getStepName().hashCode();
+    _hashCode += sequenceID;
+    if (stepName != null) {
+      _hashCode += stepName.hashCode();
     }
-    if (getSuccessPatterns() != null) {
-      _hashCode += getSuccessPatterns().hashCode();
+    if (successPatterns != null) {
+      _hashCode += successPatterns.hashCode();
     }
-    _hashCode += new Long(getTimeStamp()).hashCode();
-    _hashCode += getTimeoutMins();
-    _hashCode += getType();
+    _hashCode += new Long(timeStamp).hashCode();
+    _hashCode += timeoutMins;
+    _hashCode += type;
     __hashCodeCalc = false;
     return _hashCode;
   }
 
 
   // Type metadata
-  private static final org.apache.axis.description.TypeDesc typeDesc =
-          new org.apache.axis.description.TypeDesc(BuildSequence.class, true);
+  private static final TypeDesc typeDesc =
+          new TypeDesc(BuildSequence.class, true);
 
 
   static {
-    typeDesc.setXmlType(new javax.xml.namespace.QName("http://org.parabuild.ci", "BuildSequence"));
-    org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+    typeDesc.setXmlType(new QName("http://org.parabuild.ci", "BuildSequence"));
+    ElementDesc elemField = new ElementDesc();
     elemField.setFieldName("buildID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "buildID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "buildID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("continueOnFailure");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "continueOnFailure"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "continueOnFailure"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "boolean"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("disabled");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "disabled"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "disabled"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "boolean"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("failurePatterns");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "failurePatterns"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "failurePatterns"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("finalizer");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "finalizer"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "finalizer"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "boolean"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("initializer");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "initializer"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "initializer"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "boolean"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("lineNumber");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "lineNumber"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "lineNumber"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("respectErrorCode");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "respectErrorCode"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "respectErrorCode"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "boolean"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("scriptText");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "scriptText"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "scriptText"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("sequenceID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "sequenceID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "sequenceID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("stepName");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "stepName"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "stepName"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("successPatterns");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "successPatterns"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "successPatterns"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("timeStamp");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "timeStamp"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "timeStamp"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "long"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("timeoutMins");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "timeoutMins"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "timeoutMins"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("type");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "type"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "byte"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "type"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "byte"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
   }
@@ -553,7 +564,7 @@ public class BuildSequence implements java.io.Serializable {
   /**
    * Return type metadata object
    */
-  public static org.apache.axis.description.TypeDesc getTypeDesc() {
+  public static TypeDesc getTypeDesc() {
     return typeDesc;
   }
 
@@ -561,12 +572,12 @@ public class BuildSequence implements java.io.Serializable {
   /**
    * Get Custom Serializer
    */
-  public static org.apache.axis.encoding.Serializer getSerializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Serializer getSerializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanSerializer(
+            new BeanSerializer(
                     _javaType, _xmlType, typeDesc);
   }
 
@@ -574,12 +585,12 @@ public class BuildSequence implements java.io.Serializable {
   /**
    * Get Custom Deserializer
    */
-  public static org.apache.axis.encoding.Deserializer getDeserializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Deserializer getDeserializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanDeserializer(
+            new BeanDeserializer(
                     _javaType, _xmlType, typeDesc);
   }
 

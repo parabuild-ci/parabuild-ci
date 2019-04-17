@@ -197,7 +197,7 @@ public interface SourceControl {
    *         <p/>
    *         This is a default implementation that returns an
    *         empty map.
-   * @see org.parabuild.ci.build.BuildScriptGenerator#addVariables(java.util.Map)
+   * @see BuildScriptGenerator#addVariables(Map)
    */
   Map getBuildRunAttributes() throws IOException, AgentFailureException;
 }

@@ -37,8 +37,7 @@ import java.util.Locale;
  * <p/>
  *
  * @author Slava Imeshev
- * @noinspection ThrowInsideCatchBlockWhichIgnoresCaughtException, StringBufferReplaceableByString
- * @since Jan 24, 2010 2:31:10 PM
+ * @noinspection StringBufferReplaceableByString @since Jan 24, 2010 2:31:10 PM
  */
 public final class GitTextChangeLogParser {
 
@@ -226,9 +225,7 @@ public final class GitTextChangeLogParser {
             break;
           }
         } catch (final RuntimeException e) {
-          final IOException ioe = new IOException("Unexpected error while processing Git change log, line: " + line);
-          ioe.initCause(e);
-          throw ioe;
+          throw new IOException("Unexpected error while processing Git change log, line: " + line, e);
         }
       }
       if (LOG.isDebugEnabled()) {

@@ -103,8 +103,6 @@ public final class ClearCaseViewNameGenerator {
         break;
       }
     }
-    if (!buildIDFound) return false;
-
-    return true;
+    return buildIDFound;
   }
 }

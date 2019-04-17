@@ -33,6 +33,7 @@ public final class AgentStatus implements Serializable {
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
   private static final Log LOG = LogFactory.getLog(AgentStatus.class); // NOPMD
+  private static final long serialVersionUID = -3072995874488002720L;
 
   private String hostName;
   private String remoteVersion;

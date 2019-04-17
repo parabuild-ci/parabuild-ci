@@ -22,6 +22,9 @@ import org.parabuild.ci.webui.common.*;
 public final class CredentialDigestDropDown extends CodeNameDropDown {
 
 
+  private static final long serialVersionUID = 6114223502110362682L;
+
+
   public CredentialDigestDropDown() {
     addCodeNamePair(ConfigurationConstants.LDAP_CREDENTIAL_DIGEST_NOT_SELECTED, ConfigurationConstants.LDAP_CREDENTIAL_DIGEST_NOT_SELECTED_VALUE);
     addCodeNamePair(ConfigurationConstants.LDAP_CREDENTIAL_DIGEST_MD2, ConfigurationConstants.LDAP_CREDENTIAL_DIGEST_MD2_VALUE);

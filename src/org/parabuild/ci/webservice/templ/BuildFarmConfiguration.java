@@ -14,12 +14,23 @@
 
 package org.parabuild.ci.webservice.templ;
 
-public class BuildFarmConfiguration implements java.io.Serializable {
+import org.apache.axis.description.ElementDesc;
+import org.apache.axis.description.TypeDesc;
+import org.apache.axis.encoding.Deserializer;
+import org.apache.axis.encoding.Serializer;
+import org.apache.axis.encoding.ser.BeanDeserializer;
+import org.apache.axis.encoding.ser.BeanSerializer;
 
+import javax.xml.namespace.QName;
+import java.io.Serializable;
+
+public class BuildFarmConfiguration implements Serializable {
+
+  private static final long serialVersionUID = -2653619204334099949L;
   private int ID;
-  private java.lang.String description;
+  private String description;
   private boolean enabled;
-  private java.lang.String name;
+  private String name;
   private long timeStamp;
 
 
@@ -30,9 +41,9 @@ public class BuildFarmConfiguration implements java.io.Serializable {
   public BuildFarmConfiguration(
           final int ID,
           final boolean deleted,
-          final java.lang.String description,
+          final String description,
           final boolean enabled,
-          final java.lang.String name,
+          final String name,
           final long timeStamp) {
     this.ID = ID;
     this.description = description;
@@ -67,7 +78,7 @@ public class BuildFarmConfiguration implements java.io.Serializable {
    *
    * @return description
    */
-  public java.lang.String getDescription() {
+  public String getDescription() {
     return description;
   }
 
@@ -77,7 +88,7 @@ public class BuildFarmConfiguration implements java.io.Serializable {
    *
    * @param description
    */
-  public void setDescription(final java.lang.String description) {
+  public void setDescription(final String description) {
     this.description = description;
   }
 
@@ -107,7 +118,7 @@ public class BuildFarmConfiguration implements java.io.Serializable {
    *
    * @return name
    */
-  public java.lang.String getName() {
+  public String getName() {
     return name;
   }
 
@@ -117,7 +128,7 @@ public class BuildFarmConfiguration implements java.io.Serializable {
    *
    * @param name
    */
-  public void setName(final java.lang.String name) {
+  public void setName(final String name) {
     this.name = name;
   }
 
@@ -142,10 +153,10 @@ public class BuildFarmConfiguration implements java.io.Serializable {
   }
 
 
-  private java.lang.Object __equalsCalc = null;
+  private Object __equalsCalc = null;
 
 
-  public synchronized boolean equals(final java.lang.Object obj) {
+  public synchronized boolean equals(final Object obj) {
     if (!(obj instanceof BuildFarmConfiguration)) return false;
     final BuildFarmConfiguration other = (BuildFarmConfiguration) obj;
     if (obj == null) return false;
@@ -156,15 +167,15 @@ public class BuildFarmConfiguration implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.ID == other.getID() &&
-            ((this.description == null && other.getDescription() == null) ||
+            this.ID == other.ID &&
+            ((this.description == null && other.description == null) ||
                     (this.description != null &&
-                            this.description.equals(other.getDescription()))) &&
-            this.enabled == other.isEnabled() &&
-            ((this.name == null && other.getName() == null) ||
+                            this.description.equals(other.description))) &&
+            this.enabled == other.enabled &&
+            ((this.name == null && other.name == null) ||
                     (this.name != null &&
-                            this.name.equals(other.getName()))) &&
-            this.timeStamp == other.getTimeStamp();
+                            this.name.equals(other.name))) &&
+            this.timeStamp == other.timeStamp;
     __equalsCalc = null;
     return _equals;
   }
@@ -179,61 +190,61 @@ public class BuildFarmConfiguration implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getID();
-    if (getDescription() != null) {
-      _hashCode += getDescription().hashCode();
+    _hashCode += ID;
+    if (description != null) {
+      _hashCode += description.hashCode();
     }
-    _hashCode += (isEnabled() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    if (getName() != null) {
-      _hashCode += getName().hashCode();
+    _hashCode += (enabled ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    if (name != null) {
+      _hashCode += name.hashCode();
     }
-    _hashCode += new Long(getTimeStamp()).hashCode();
+    _hashCode += new Long(timeStamp).hashCode();
     __hashCodeCalc = false;
     return _hashCode;
   }
 
 
   // Type metadata
-  private static final org.apache.axis.description.TypeDesc typeDesc =
-          new org.apache.axis.description.TypeDesc(BuildFarmConfiguration.class, true);
+  private static final TypeDesc typeDesc =
+          new TypeDesc(BuildFarmConfiguration.class, true);
 
 
   static {
-    typeDesc.setXmlType(new javax.xml.namespace.QName("http://org.parabuild.ci", "BuilderConfiguration"));
-    org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+    typeDesc.setXmlType(new QName("http://org.parabuild.ci", "BuilderConfiguration"));
+    ElementDesc elemField = new ElementDesc();
     elemField.setFieldName("ID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "ID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "ID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("deleted");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "deleted"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "deleted"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "boolean"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("description");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "description"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "description"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("enabled");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "enabled"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "enabled"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "boolean"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("name");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "name"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "name"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("timeStamp");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "timeStamp"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "timeStamp"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "long"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
   }
@@ -242,7 +253,7 @@ public class BuildFarmConfiguration implements java.io.Serializable {
   /**
    * Return type metadata object
    */
-  public static org.apache.axis.description.TypeDesc getTypeDesc() {
+  public static TypeDesc getTypeDesc() {
     return typeDesc;
   }
 
@@ -250,12 +261,12 @@ public class BuildFarmConfiguration implements java.io.Serializable {
   /**
    * Get Custom Serializer
    */
-  public static org.apache.axis.encoding.Serializer getSerializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Serializer getSerializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanSerializer(
+            new BeanSerializer(
                     _javaType, _xmlType, typeDesc);
   }
 
@@ -263,12 +274,12 @@ public class BuildFarmConfiguration implements java.io.Serializable {
   /**
    * Get Custom Deserializer
    */
-  public static org.apache.axis.encoding.Deserializer getDeserializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Deserializer getDeserializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanDeserializer(
+            new BeanDeserializer(
                     _javaType, _xmlType, typeDesc);
   }
 

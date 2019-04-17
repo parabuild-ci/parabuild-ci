@@ -18,6 +18,7 @@ package org.parabuild.ci.webui.common;
 public final class OKButton extends CommonButton {
 
   private static final String CAPTION_OK = " OK ";
+  private static final long serialVersionUID = 359966727418535312L;
 
 
   public OKButton() {

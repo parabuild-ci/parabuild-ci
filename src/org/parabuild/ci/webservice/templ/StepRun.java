@@ -14,17 +14,29 @@
 
 package org.parabuild.ci.webservice.templ;
 
-public class StepRun implements java.io.Serializable {
+import org.apache.axis.description.ElementDesc;
+import org.apache.axis.description.TypeDesc;
+import org.apache.axis.encoding.Deserializer;
+import org.apache.axis.encoding.Serializer;
+import org.apache.axis.encoding.ser.BeanDeserializer;
+import org.apache.axis.encoding.ser.BeanSerializer;
 
+import javax.xml.namespace.QName;
+import java.io.Serializable;
+import java.util.Calendar;
+
+public class StepRun implements Serializable {
+
+  private static final long serialVersionUID = -96466360594291777L;
   private int ID;
   private int buildRunID;
   private boolean complete;
   private int duration;
-  private java.util.Calendar finishedAt;
-  private java.lang.String name;
-  private java.lang.String resultDescription;
+  private Calendar finishedAt;
+  private String name;
+  private String resultDescription;
   private byte resultID;
-  private java.util.Calendar startedAt;
+  private Calendar startedAt;
   private boolean successful;
   private long timeStamp;
 
@@ -38,11 +50,11 @@ public class StepRun implements java.io.Serializable {
           final int buildRunID,
           final boolean complete,
           final int duration,
-          final java.util.Calendar finishedAt,
-          final java.lang.String name,
-          final java.lang.String resultDescription,
+          final Calendar finishedAt,
+          final String name,
+          final String resultDescription,
           final byte resultID,
-          final java.util.Calendar startedAt,
+          final Calendar startedAt,
           final boolean successful,
           final long timeStamp) {
     this.ID = ID;
@@ -144,7 +156,7 @@ public class StepRun implements java.io.Serializable {
    *
    * @return finishedAt
    */
-  public java.util.Calendar getFinishedAt() {
+  public Calendar getFinishedAt() {
     return finishedAt;
   }
 
@@ -154,7 +166,7 @@ public class StepRun implements java.io.Serializable {
    *
    * @param finishedAt
    */
-  public void setFinishedAt(final java.util.Calendar finishedAt) {
+  public void setFinishedAt(final Calendar finishedAt) {
     this.finishedAt = finishedAt;
   }
 
@@ -164,7 +176,7 @@ public class StepRun implements java.io.Serializable {
    *
    * @return name
    */
-  public java.lang.String getName() {
+  public String getName() {
     return name;
   }
 
@@ -174,7 +186,7 @@ public class StepRun implements java.io.Serializable {
    *
    * @param name
    */
-  public void setName(final java.lang.String name) {
+  public void setName(final String name) {
     this.name = name;
   }
 
@@ -184,7 +196,7 @@ public class StepRun implements java.io.Serializable {
    *
    * @return resultDescription
    */
-  public java.lang.String getResultDescription() {
+  public String getResultDescription() {
     return resultDescription;
   }
 
@@ -194,7 +206,7 @@ public class StepRun implements java.io.Serializable {
    *
    * @param resultDescription
    */
-  public void setResultDescription(final java.lang.String resultDescription) {
+  public void setResultDescription(final String resultDescription) {
     this.resultDescription = resultDescription;
   }
 
@@ -224,7 +236,7 @@ public class StepRun implements java.io.Serializable {
    *
    * @return startedAt
    */
-  public java.util.Calendar getStartedAt() {
+  public Calendar getStartedAt() {
     return startedAt;
   }
 
@@ -234,7 +246,7 @@ public class StepRun implements java.io.Serializable {
    *
    * @param startedAt
    */
-  public void setStartedAt(final java.util.Calendar startedAt) {
+  public void setStartedAt(final Calendar startedAt) {
     this.startedAt = startedAt;
   }
 
@@ -279,10 +291,10 @@ public class StepRun implements java.io.Serializable {
   }
 
 
-  private java.lang.Object __equalsCalc = null;
+  private Object __equalsCalc = null;
 
 
-  public synchronized boolean equals(final java.lang.Object obj) {
+  public synchronized boolean equals(final Object obj) {
     if (!(obj instanceof StepRun)) return false;
     final StepRun other = (StepRun) obj;
     if (obj == null) return false;
@@ -293,25 +305,25 @@ public class StepRun implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.ID == other.getID() &&
-            this.buildRunID == other.getBuildRunID() &&
-            this.complete == other.isComplete() &&
-            this.duration == other.getDuration() &&
-            ((this.finishedAt == null && other.getFinishedAt() == null) ||
+            this.ID == other.ID &&
+            this.buildRunID == other.buildRunID &&
+            this.complete == other.complete &&
+            this.duration == other.duration &&
+            ((this.finishedAt == null && other.finishedAt == null) ||
                     (this.finishedAt != null &&
-                            this.finishedAt.equals(other.getFinishedAt()))) &&
-            ((this.name == null && other.getName() == null) ||
+                            this.finishedAt.equals(other.finishedAt))) &&
+            ((this.name == null && other.name == null) ||
                     (this.name != null &&
-                            this.name.equals(other.getName()))) &&
-            ((this.resultDescription == null && other.getResultDescription() == null) ||
+                            this.name.equals(other.name))) &&
+            ((this.resultDescription == null && other.resultDescription == null) ||
                     (this.resultDescription != null &&
-                            this.resultDescription.equals(other.getResultDescription()))) &&
-            this.resultID == other.getResultID() &&
-            ((this.startedAt == null && other.getStartedAt() == null) ||
+                            this.resultDescription.equals(other.resultDescription))) &&
+            this.resultID == other.resultID &&
+            ((this.startedAt == null && other.startedAt == null) ||
                     (this.startedAt != null &&
-                            this.startedAt.equals(other.getStartedAt()))) &&
-            this.successful == other.isSuccessful() &&
-            this.timeStamp == other.getTimeStamp();
+                            this.startedAt.equals(other.startedAt))) &&
+            this.successful == other.successful &&
+            this.timeStamp == other.timeStamp;
     __equalsCalc = null;
     return _equals;
   }
@@ -326,101 +338,101 @@ public class StepRun implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getID();
-    _hashCode += getBuildRunID();
-    _hashCode += (isComplete() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    _hashCode += getDuration();
-    if (getFinishedAt() != null) {
-      _hashCode += getFinishedAt().hashCode();
+    _hashCode += ID;
+    _hashCode += buildRunID;
+    _hashCode += (complete ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    _hashCode += duration;
+    if (finishedAt != null) {
+      _hashCode += finishedAt.hashCode();
     }
-    if (getName() != null) {
-      _hashCode += getName().hashCode();
+    if (name != null) {
+      _hashCode += name.hashCode();
     }
-    if (getResultDescription() != null) {
-      _hashCode += getResultDescription().hashCode();
+    if (resultDescription != null) {
+      _hashCode += resultDescription.hashCode();
     }
-    _hashCode += getResultID();
-    if (getStartedAt() != null) {
-      _hashCode += getStartedAt().hashCode();
+    _hashCode += resultID;
+    if (startedAt != null) {
+      _hashCode += startedAt.hashCode();
     }
-    _hashCode += (isSuccessful() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    _hashCode += new Long(getTimeStamp()).hashCode();
+    _hashCode += (successful ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    _hashCode += new Long(timeStamp).hashCode();
     __hashCodeCalc = false;
     return _hashCode;
   }
 
 
   // Type metadata
-  private static final org.apache.axis.description.TypeDesc typeDesc =
-          new org.apache.axis.description.TypeDesc(StepRun.class, true);
+  private static final TypeDesc typeDesc =
+          new TypeDesc(StepRun.class, true);
 
 
   static {
-    typeDesc.setXmlType(new javax.xml.namespace.QName("http://org.parabuild.ci", "StepRun"));
-    org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+    typeDesc.setXmlType(new QName("http://org.parabuild.ci", "StepRun"));
+    ElementDesc elemField = new ElementDesc();
     elemField.setFieldName("ID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "ID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "ID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("buildRunID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "buildRunID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "buildRunID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("complete");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "complete"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "complete"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "boolean"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("duration");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "duration"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "duration"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("finishedAt");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "finishedAt"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "finishedAt"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("name");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "name"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "name"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("resultDescription");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "resultDescription"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "resultDescription"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("resultID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "resultID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "byte"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "resultID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "byte"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("startedAt");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "startedAt"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "startedAt"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("successful");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "successful"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "successful"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "boolean"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("timeStamp");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "timeStamp"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "timeStamp"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "long"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
   }
@@ -429,7 +441,7 @@ public class StepRun implements java.io.Serializable {
   /**
    * Return type metadata object
    */
-  public static org.apache.axis.description.TypeDesc getTypeDesc() {
+  public static TypeDesc getTypeDesc() {
     return typeDesc;
   }
 
@@ -437,12 +449,12 @@ public class StepRun implements java.io.Serializable {
   /**
    * Get Custom Serializer
    */
-  public static org.apache.axis.encoding.Serializer getSerializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Serializer getSerializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanSerializer(
+            new BeanSerializer(
                     _javaType, _xmlType, typeDesc);
   }
 
@@ -450,12 +462,12 @@ public class StepRun implements java.io.Serializable {
   /**
    * Get Custom Deserializer
    */
-  public static org.apache.axis.encoding.Deserializer getDeserializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Deserializer getDeserializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanDeserializer(
+            new BeanDeserializer(
                     _javaType, _xmlType, typeDesc);
   }
 

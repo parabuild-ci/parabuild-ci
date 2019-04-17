@@ -181,7 +181,7 @@ public final class ResultGroupManager {
     } else {
       publisherBuildRunID = buildRun.getBuildRunID();
     }
-    final ResultGroupManager rgm = getInstance();
+    final ResultGroupManager rgm = instance;
     final ResultGroup rg = rgm.getResultGroup(resultGroupID);
     final BuildRunResultVO resultVO = new BuildRunResultVO();
     resultVO.setActiveBuildID(buildRun.getActiveBuildID());

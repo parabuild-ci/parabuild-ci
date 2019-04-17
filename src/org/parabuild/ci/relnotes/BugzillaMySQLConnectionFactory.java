@@ -82,9 +82,7 @@ public final class BugzillaMySQLConnectionFactory {
     } catch (final SQLException e) {
       throw e;
     } catch (final Exception e) {
-      final SQLException sqlException = new SQLException(StringUtils.toString(e));
-      sqlException.initCause(e);
-      throw sqlException;
+      throw new SQLException(StringUtils.toString(e), e);
     }
   }
 

@@ -13,30 +13,39 @@
  */
 package org.parabuild.ci.webui;
 
-import org.parabuild.ci.common.*;
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.webui.common.BoldCommonLabel;
+import org.parabuild.ci.webui.common.BuildNameDropDown;
+import org.parabuild.ci.webui.common.CommonButton;
+import org.parabuild.ci.webui.common.CommonField;
+import org.parabuild.ci.webui.common.DaysAgoDropDown;
+import org.parabuild.ci.webui.common.GridIterator;
+import org.parabuild.ci.webui.common.MessagePanel;
+import org.parabuild.ci.webui.common.WebuiUtils;
+import viewtier.ui.ButtonPressedEvent;
+import viewtier.ui.ButtonPressedListener;
+import viewtier.ui.Layout;
+import viewtier.ui.Tierlet;
 
 /**
  * Shows advanced search controls.
  */
 public final class AdvancedSearchPanel extends MessagePanel {
 
-  private static final long serialVersionUID = 3185882169076162293L; // NOPMD
-
   public static final String FIELD_NAME_QUERY = "query";
   public static final String FIELD_NAME_DAYS = "days";
   public static final String FIELD_NAME_SEARCH = "search";
   public static final String FIELD_NAME_BUILD = "build";
-
   public static final String CAPTION_DATE = "Date:";
   public static final String CAPTION_FIND_RESULTS = "Find results:";
   public static final String CAPTION_SEARCH = "         Search         ";
   public static final String CAPTION_BUILD = "Build:";
-
+  private static final long serialVersionUID = 3185882169076162293L; // NOPMD
   private CommonField flQuery = null;
   private CommonButton btSearch = null;
-  /** @noinspection FieldCanBeLocal*/
+  /**
+   * @noinspection FieldCanBeLocal
+   */
   private DaysAgoDropDown ddDays = null; // NOPMD
   private BuildNameDropDown ddBuild = null;
   private boolean searchRequested = false;
@@ -69,6 +78,9 @@ public final class AdvancedSearchPanel extends MessagePanel {
 
     // set up handler
     btSearch.addListener(new ButtonPressedListener() {
+      private static final long serialVersionUID = -4205036064910357297L;
+
+
       public Tierlet.Result buttonPressed(final ButtonPressedEvent event) {
         searchRequested = StringUtils.isBlank(getQuery());
 //        // redirect to advanced search page
@@ -84,20 +96,20 @@ public final class AdvancedSearchPanel extends MessagePanel {
 
 
   /**
+   * @return the query string.
+   */
+  public String getQuery() {
+    return flQuery.getValue();
+  }
+
+
+  /**
    * Sets query string.
    *
    * @param query
    */
   public void setQuery(final String query) {
     flQuery.setValue(query);
-  }
-
-
-  /**
-   * @return the query string.
-   */
-  public String getQuery() {
-    return flQuery.getValue();
   }
 
 
@@ -108,7 +120,7 @@ public final class AdvancedSearchPanel extends MessagePanel {
 
   /**
    * @return selected buildID or BuildConfig.UNSAVED_ID if "Any"
-   *         selected.
+   * selected.
    */
   public int getBuildID() {
     return ddBuild.getCode();

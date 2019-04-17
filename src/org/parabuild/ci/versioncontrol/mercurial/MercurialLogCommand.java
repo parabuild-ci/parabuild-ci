@@ -62,7 +62,7 @@ public class MercurialLogCommand extends MercurialCommand {
     sb.append(' ');
     sb.append("--limit");
     sb.append(' ');
-    sb.append(Integer.toString(maxChangeLists));
+    sb.append(maxChangeLists);
     if (!StringUtils.isBlank(branch)) {
       sb.append(' ');
       sb.append("--only-branch");

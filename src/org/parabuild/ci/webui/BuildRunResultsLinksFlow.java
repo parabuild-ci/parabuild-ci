@@ -32,6 +32,9 @@ import viewtier.ui.Link;
  */
 public final class BuildRunResultsLinksFlow extends Flow {
 
+  private static final long serialVersionUID = 3956858657850044811L;
+
+
   /**
    * Default constructor.
    */

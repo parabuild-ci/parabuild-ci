@@ -41,6 +41,7 @@ public final class StepConfigurationPanel extends MessagePanel {
   private static final String NAME_FAILURE_PATTERNS = "Failure Patterns";
   private static final String NAME_BUILD_COMMANDS = "Shell Commands";
   private static final String NAME_SUCCESS_PATTERNS = "Success Patterns";
+  private static final long serialVersionUID = 3852527281976616334L;
 
   private final Text scriptText = new Text(110, 5);
   private final Text failurePatternText = new Text(20, 3);

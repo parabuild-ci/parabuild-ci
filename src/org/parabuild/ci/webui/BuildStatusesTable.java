@@ -102,7 +102,7 @@ public class BuildStatusesTable extends AbstractFlatTable {
     result.add(new TableHeaderLabel(STR_RESULT, "40%"));
     addIfFlagSet(new TableHeaderLabel(STR_COMMANDS, "17%"), SHOW_COMMANDS, result);
     //noinspection SuspiciousToArrayCall
-    return (Component[]) result.toArray(new TableHeaderLabel[result.size()]);
+    return (Component[]) result.toArray(new TableHeaderLabel[0]);
   }
 
 
@@ -119,7 +119,7 @@ public class BuildStatusesTable extends AbstractFlatTable {
     result.add(new BuildTimeFlow(dateTimeFormat));
     result.add(new BuildResultFlow(dateTimeFormat));
     addIfFlagSet(SecuredComponentFactory.getInstance().makeBuildCommandsLinks(), SHOW_COMMANDS, result);
-    return (Component[]) result.toArray(new Component[result.size()]);
+    return (Component[]) result.toArray(new Component[0]);
   }
 
 

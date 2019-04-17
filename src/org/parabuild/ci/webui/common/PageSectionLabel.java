@@ -21,6 +21,9 @@ import viewtier.ui.*;
  */
 public final class PageSectionLabel extends Label {
 
+  private static final long serialVersionUID = 3070057858943247983L;
+
+
   public PageSectionLabel() {
     this("");
   }

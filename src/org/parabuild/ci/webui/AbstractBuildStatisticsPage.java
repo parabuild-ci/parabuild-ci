@@ -38,6 +38,7 @@ public abstract class AbstractBuildStatisticsPage extends BasePage {
   private static final Log log = LogFactory.getLog(AbstractBuildStatisticsPage.class); // NOPMD
 
   protected static final String TITLE = "Statistics And Metrics";
+  private static final long serialVersionUID = -1368751070420362282L;
 
   private final UpToDateStatisticsPanel upToDateStatisticsPanel = new UpToDateStatisticsPanel();
   private final StatisticsLink lnkSelectAll = new StatisticsLink("All");

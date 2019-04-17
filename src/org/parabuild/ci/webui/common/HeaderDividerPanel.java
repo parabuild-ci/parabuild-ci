@@ -92,6 +92,9 @@ public final class HeaderDividerPanel extends Panel {
 
   private class SearchButtonPressedListener implements ButtonPressedListener {
 
+    private static final long serialVersionUID = -4948672157490873173L;
+
+
     public Tierlet.Result buttonPressed(final ButtonPressedEvent event) {
       if (log.isDebugEnabled()) log.debug("search button pressed on quick search");
       // get query

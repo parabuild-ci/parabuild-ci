@@ -14,9 +14,6 @@
 package org.parabuild.ci.installer;
 
 import com.install4j.api.context.InstallerContext;
-import com.install4j.api.context.UserCanceledException;
-
-import java.io.IOException;
 
 /**
  * This daemon creator is used when running under non-unix

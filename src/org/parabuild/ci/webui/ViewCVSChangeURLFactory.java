@@ -121,7 +121,7 @@ public final class ViewCVSChangeURLFactory implements ChangeURLFactory {
 
     // make and return URL
     final int prevTailRevisionNumber = tailRevisionNumber - 1;
-    final String value = revision.substring(0, lastDotIndex + 1) + Integer.toString(prevTailRevisionNumber);
+    final String value = revision.substring(0, lastDotIndex + 1) + prevTailRevisionNumber;
     params.setProperty("r1", value);
     params.setProperty("r2", revision);
     return makeURL(change.getFilePath(), params);

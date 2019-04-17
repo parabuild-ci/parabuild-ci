@@ -84,7 +84,6 @@ import java.util.Map;
 /**
  * This is a class responsible for build management
  *
- * @noinspection ClassHasNoToStringMethod
  */
 public final class ConfigurationManager implements Serializable {
 
@@ -1339,8 +1338,8 @@ public final class ConfigurationManager implements Serializable {
    *
    * @param userToEmail
    */
-  public int save(final VCSUserToEmailMap userToEmail) {
-    return (Integer) runInHibernate(new TransactionCallback() {
+  public void save(final VCSUserToEmailMap userToEmail) {
+    runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         session.saveOrUpdate(userToEmail);
         return new Integer(userToEmail.getMapID());
@@ -1459,8 +1458,8 @@ public final class ConfigurationManager implements Serializable {
   /**
    * Saves build watcher
    */
-  public int save(final BuildWatcher watcher) {
-    return (Integer) runInHibernate(new TransactionCallback() {
+  public void save(final BuildWatcher watcher) {
+    runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         session.saveOrUpdate(watcher);
         return new Integer(watcher.getWatcherID());
@@ -3335,7 +3334,7 @@ public final class ConfigurationManager implements Serializable {
 
 
   public String makeHTMLLogURLPathInfo(final StepLog stepLog) {
-    return HTML_LOG_URL_PREFIX + Integer.toString(getBuildRunConfig(stepLog).getActiveBuildID())
+    return HTML_LOG_URL_PREFIX + getBuildRunConfig(stepLog).getActiveBuildID()
             + '/' + stepLog.getID() + '/' + stepLog.getPath();
   }
 
@@ -3847,8 +3846,8 @@ public final class ConfigurationManager implements Serializable {
   }
 
 
-  public ActiveBuild saveNew(final ActiveBuild activeBuild) {
-    return (ActiveBuild) runInHibernate(new TransactionCallback() {
+  public void saveNew(final ActiveBuild activeBuild) {
+    runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         session.save(activeBuild);
         return activeBuild;
@@ -4353,8 +4352,8 @@ public final class ConfigurationManager implements Serializable {
   }
 
 
-  public StartParameter save(final StartParameter startParameter) {
-    return (StartParameter) saveObject(startParameter);
+  public void save(final StartParameter startParameter) {
+    saveObject(startParameter);
   }
 
 

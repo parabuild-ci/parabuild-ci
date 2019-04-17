@@ -15,7 +15,6 @@ package org.parabuild.ci.remote.internal;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.common.CommandStoppedException;
 import org.parabuild.ci.process.TailBufferSize;
 import org.parabuild.ci.remote.services.ExecuteResult;
 import org.parabuild.ci.remote.services.ModifiedFileList;
@@ -42,6 +41,7 @@ final class FailedWithVersionMismatchRemoteBuilderWebService implements RemoteBu
    * @noinspection UNUSED_SYMBOL
    */
   private static final Log LOG = LogFactory.getLog(FailedWithVersionMismatchRemoteBuilderWebService.class); // NOPMD
+  private static final long serialVersionUID = 7092952785807552253L;
   private final String builderVersionAsString;
   private final String url;
   private final String managerVersion;

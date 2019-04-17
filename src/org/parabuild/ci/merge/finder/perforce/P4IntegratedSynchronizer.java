@@ -226,9 +226,7 @@ final class P4IntegratedSynchronizer {
                               unintegratedRevisions.put(new Element(key, null));
                             }
                           } catch (final CacheException e) {
-                            final IllegalStateException ise = new IllegalStateException("Error while accessing unintegrated revsions storage: " + StringUtils.toString(e));
-                            ise.initCause(e);
-                            throw ise;
+                            throw new IllegalStateException("Error while accessing unintegrated revsions storage: " + StringUtils.toString(e), e);
                           }
                         }
 

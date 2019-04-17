@@ -24,8 +24,8 @@ public class PromotionStepDependency implements Serializable, ObjectConstants {
   private static final long serialVersionUID = 216142447373206391L; // NOPMD
 
   private int ID = UNSAVED_ID;
-  private int promotionStepID = org.parabuild.ci.object.PromotionPolicyStep.UNSAVED_ID;
-  private int dependencyPromotionStepID = org.parabuild.ci.object.PromotionPolicyStep.UNSAVED_ID;
+  private int promotionStepID = PromotionPolicyStep.UNSAVED_ID;
+  private int dependencyPromotionStepID = PromotionPolicyStep.UNSAVED_ID;
 
 
   /**

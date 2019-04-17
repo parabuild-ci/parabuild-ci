@@ -54,7 +54,7 @@ final class PublishedResultsPanel extends MessagePanel {
       // add header
       final PublishedStepResult psr = (PublishedStepResult)list.get(0);
       final BuildRun publisherBuildRun = cm.getBuildRun(psr.getPublisherBuildRunID());
-      final String caption = publisherBuildRun.getBuildName() + " #" + Integer.toString(publisherBuildRun.getBuildRunNumber()) + '@' + publisherBuildRun.getChangeListNumber();
+      final String caption = publisherBuildRun.getBuildName() + " #" + publisherBuildRun.getBuildRunNumber() + '@' + publisherBuildRun.getChangeListNumber();
       final Flow flHeader = new Flow();
       flHeader.add(new BoldCommonLabel(psr.getDescription()))
         .add(new CommonLabel(" published on " + dateFomat.format(psr.getPublishDate()) + " from "))
@@ -112,6 +112,7 @@ final class PublishedResultsPanel extends MessagePanel {
     }
 
 
+    @SuppressWarnings("RedundantIfStatement")
     public boolean equals(final Object o) {
       if (this == o) return true;
       if (o == null || getClass() != o.getClass()) return false;

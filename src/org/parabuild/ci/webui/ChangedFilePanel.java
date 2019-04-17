@@ -24,6 +24,7 @@ import java.util.List;
  */
 public class ChangedFilePanel extends Panel {
 
+  private static final long serialVersionUID = -1802105575690644856L;
   /**
    * An active build ID.
    */

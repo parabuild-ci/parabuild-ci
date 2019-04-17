@@ -23,6 +23,7 @@ import viewtier.ui.Parameters;
  */
 public final class PaginatorFlow extends Flow {
 
+  private static final long serialVersionUID = 5709845224353856193L;
   private final int pageCount;
   private int selectedPage;
 

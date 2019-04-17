@@ -128,6 +128,7 @@ public final class EditSystemVariablePage extends BasePage implements Conversati
 
   private static class CancelButtonPressedListener implements ButtonPressedListener {
 
+    private static final long serialVersionUID = 5613240370784651038L;
     private final byte variableType;
     private final int variableOwner;
 
@@ -154,6 +155,7 @@ public final class EditSystemVariablePage extends BasePage implements Conversati
 
   private static class SaveButtonPressedListener implements ButtonPressedListener {
 
+    private static final long serialVersionUID = -2410477871592751728L;
     private final SystemVariablePanel pnlVariable;
     private final byte variableType;
     private final int variableOwner;

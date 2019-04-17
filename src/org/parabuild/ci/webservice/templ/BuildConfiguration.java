@@ -14,14 +14,25 @@
 
 package org.parabuild.ci.webservice.templ;
 
-public class BuildConfiguration implements java.io.Serializable {
+import org.apache.axis.description.ElementDesc;
+import org.apache.axis.description.TypeDesc;
+import org.apache.axis.encoding.Deserializer;
+import org.apache.axis.encoding.Serializer;
+import org.apache.axis.encoding.ser.BeanDeserializer;
+import org.apache.axis.encoding.ser.BeanSerializer;
 
+import javax.xml.namespace.QName;
+import java.io.Serializable;
+
+public class BuildConfiguration implements Serializable {
+
+  private static final long serialVersionUID = -8504746824236764604L;
   private byte access;
   private int activeBuildID;
   private int buildID;
-  private java.lang.String buildName;
+  private String buildName;
   private int farmID;
-  private java.lang.String emailDomain;
+  private String emailDomain;
   private byte scheduleType;
   private byte sourceControl;
   private boolean sourceControlEmail;
@@ -36,9 +47,9 @@ public class BuildConfiguration implements java.io.Serializable {
           final byte access,
           final int activeBuildID,
           final int buildID,
-          final java.lang.String buildName,
+          final String buildName,
           final int farmID,
-          final java.lang.String emailDomain,
+          final String emailDomain,
           final byte scheduleType,
           final byte sourceControl,
           final boolean sourceControlEmail,
@@ -121,7 +132,7 @@ public class BuildConfiguration implements java.io.Serializable {
    *
    * @return buildName
    */
-  public java.lang.String getBuildName() {
+  public String getBuildName() {
     return buildName;
   }
 
@@ -131,7 +142,7 @@ public class BuildConfiguration implements java.io.Serializable {
    *
    * @param buildName
    */
-  public void setBuildName(final java.lang.String buildName) {
+  public void setBuildName(final String buildName) {
     this.buildName = buildName;
   }
 
@@ -161,7 +172,7 @@ public class BuildConfiguration implements java.io.Serializable {
    *
    * @return emailDomain
    */
-  public java.lang.String getEmailDomain() {
+  public String getEmailDomain() {
     return emailDomain;
   }
 
@@ -171,7 +182,7 @@ public class BuildConfiguration implements java.io.Serializable {
    *
    * @param emailDomain
    */
-  public void setEmailDomain(final java.lang.String emailDomain) {
+  public void setEmailDomain(final String emailDomain) {
     this.emailDomain = emailDomain;
   }
 
@@ -256,10 +267,10 @@ public class BuildConfiguration implements java.io.Serializable {
   }
 
 
-  private java.lang.Object __equalsCalc = null;
+  private Object __equalsCalc = null;
 
 
-  public synchronized boolean equals(final java.lang.Object obj) {
+  public synchronized boolean equals(final Object obj) {
     if (!(obj instanceof BuildConfiguration)) return false;
     final BuildConfiguration other = (BuildConfiguration) obj;
     if (obj == null) return false;
@@ -270,20 +281,20 @@ public class BuildConfiguration implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.access == other.getAccess() &&
-            this.activeBuildID == other.getActiveBuildID() &&
-            this.buildID == other.getBuildID() &&
-            ((this.buildName == null && other.getBuildName() == null) ||
+            this.access == other.access &&
+            this.activeBuildID == other.activeBuildID &&
+            this.buildID == other.buildID &&
+            ((this.buildName == null && other.buildName == null) ||
                     (this.buildName != null &&
-                            this.buildName.equals(other.getBuildName()))) &&
-            this.farmID == other.getFarmID() &&
-            ((this.emailDomain == null && other.getEmailDomain() == null) ||
+                            this.buildName.equals(other.buildName))) &&
+            this.farmID == other.farmID &&
+            ((this.emailDomain == null && other.emailDomain == null) ||
                     (this.emailDomain != null &&
-                            this.emailDomain.equals(other.getEmailDomain()))) &&
-            this.scheduleType == other.getScheduleType() &&
-            this.sourceControl == other.getSourceControl() &&
-            this.sourceControlEmail == other.isSourceControlEmail() &&
-            this.subordinate == other.isSubordinate();
+                            this.emailDomain.equals(other.emailDomain))) &&
+            this.scheduleType == other.scheduleType &&
+            this.sourceControl == other.sourceControl &&
+            this.sourceControlEmail == other.sourceControlEmail &&
+            this.subordinate == other.subordinate;
     __equalsCalc = null;
     return _equals;
   }
@@ -298,90 +309,90 @@ public class BuildConfiguration implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getAccess();
-    _hashCode += getActiveBuildID();
-    _hashCode += getBuildID();
-    if (getBuildName() != null) {
-      _hashCode += getBuildName().hashCode();
+    _hashCode += access;
+    _hashCode += activeBuildID;
+    _hashCode += buildID;
+    if (buildName != null) {
+      _hashCode += buildName.hashCode();
     }
-    _hashCode += getFarmID();
-    if (getEmailDomain() != null) {
-      _hashCode += getEmailDomain().hashCode();
+    _hashCode += farmID;
+    if (emailDomain != null) {
+      _hashCode += emailDomain.hashCode();
     }
-    _hashCode += getScheduleType();
-    _hashCode += getSourceControl();
-    _hashCode += (isSourceControlEmail() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    _hashCode += (isSubordinate() ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    _hashCode += scheduleType;
+    _hashCode += sourceControl;
+    _hashCode += (sourceControlEmail ? Boolean.TRUE : Boolean.FALSE).hashCode();
+    _hashCode += (subordinate ? Boolean.TRUE : Boolean.FALSE).hashCode();
     __hashCodeCalc = false;
     return _hashCode;
   }
 
 
   // Type metadata
-  private static final org.apache.axis.description.TypeDesc typeDesc =
-          new org.apache.axis.description.TypeDesc(BuildConfiguration.class, true);
+  private static final TypeDesc typeDesc =
+          new TypeDesc(BuildConfiguration.class, true);
 
 
   static {
-    typeDesc.setXmlType(new javax.xml.namespace.QName("http://webservice.ci.parabuild.org", "BuildConfiguration"));
-    org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+    typeDesc.setXmlType(new QName("http://webservice.ci.parabuild.org", "BuildConfiguration"));
+    ElementDesc elemField = new ElementDesc();
     elemField.setFieldName("access");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://webservice.ci.parabuild.org", "access"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "byte"));
+    elemField.setXmlName(new QName("http://webservice.ci.parabuild.org", "access"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "byte"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("activeBuildID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://webservice.ci.parabuild.org", "activeBuildID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://webservice.ci.parabuild.org", "activeBuildID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("buildID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://webservice.ci.parabuild.org", "buildID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://webservice.ci.parabuild.org", "buildID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("buildName");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://webservice.ci.parabuild.org", "buildName"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://webservice.ci.parabuild.org", "buildName"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("builderID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://webservice.ci.parabuild.org", "builderID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://webservice.ci.parabuild.org", "builderID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("emailDomain");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://webservice.ci.parabuild.org", "emailDomain"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://webservice.ci.parabuild.org", "emailDomain"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("scheduleType");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://webservice.ci.parabuild.org", "scheduleType"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "byte"));
+    elemField.setXmlName(new QName("http://webservice.ci.parabuild.org", "scheduleType"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "byte"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("sourceControl");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://webservice.ci.parabuild.org", "sourceControl"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "byte"));
+    elemField.setXmlName(new QName("http://webservice.ci.parabuild.org", "sourceControl"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "byte"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("sourceControlEmail");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://webservice.ci.parabuild.org", "sourceControlEmail"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+    elemField.setXmlName(new QName("http://webservice.ci.parabuild.org", "sourceControlEmail"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "boolean"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("subordinate");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://webservice.ci.parabuild.org", "subordinate"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+    elemField.setXmlName(new QName("http://webservice.ci.parabuild.org", "subordinate"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "boolean"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
   }
@@ -390,7 +401,7 @@ public class BuildConfiguration implements java.io.Serializable {
   /**
    * Return type metadata object
    */
-  public static org.apache.axis.description.TypeDesc getTypeDesc() {
+  public static TypeDesc getTypeDesc() {
     return typeDesc;
   }
 
@@ -398,12 +409,12 @@ public class BuildConfiguration implements java.io.Serializable {
   /**
    * Get Custom Serializer
    */
-  public static org.apache.axis.encoding.Serializer getSerializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Serializer getSerializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanSerializer(
+            new BeanSerializer(
                     _javaType, _xmlType, typeDesc);
   }
 
@@ -411,12 +422,12 @@ public class BuildConfiguration implements java.io.Serializable {
   /**
    * Get Custom Deserializer
    */
-  public static org.apache.axis.encoding.Deserializer getDeserializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Deserializer getDeserializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanDeserializer(
+            new BeanDeserializer(
                     _javaType, _xmlType, typeDesc);
   }
 

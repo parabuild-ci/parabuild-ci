@@ -14,13 +14,24 @@
 
 package org.parabuild.ci.webservice.templ;
 
-public class StepLog implements java.io.Serializable {
+import org.apache.axis.description.ElementDesc;
+import org.apache.axis.description.TypeDesc;
+import org.apache.axis.encoding.Deserializer;
+import org.apache.axis.encoding.Serializer;
+import org.apache.axis.encoding.ser.BeanDeserializer;
+import org.apache.axis.encoding.ser.BeanSerializer;
 
+import javax.xml.namespace.QName;
+import java.io.Serializable;
+
+public class StepLog implements Serializable {
+
+  private static final long serialVersionUID = -1186497643505525154L;
   private int ID;
-  private java.lang.String archiveFileName;
-  private java.lang.String description;
+  private String archiveFileName;
+  private String description;
   private byte found;
-  private java.lang.String path;
+  private String path;
   private byte pathType;
   private int stepRunID;
   private long timeStamp;
@@ -33,11 +44,11 @@ public class StepLog implements java.io.Serializable {
 
   public StepLog(
           final int ID,
-          final java.lang.String IDAsString,
-          final java.lang.String archiveFileName,
-          final java.lang.String description,
+          final String IDAsString,
+          final String archiveFileName,
+          final String description,
           final byte found,
-          final java.lang.String path,
+          final String path,
           final byte pathType,
           final int stepRunID,
           final long timeStamp,
@@ -79,7 +90,7 @@ public class StepLog implements java.io.Serializable {
    *
    * @return archiveFileName
    */
-  public java.lang.String getArchiveFileName() {
+  public String getArchiveFileName() {
     return archiveFileName;
   }
 
@@ -89,7 +100,7 @@ public class StepLog implements java.io.Serializable {
    *
    * @param archiveFileName
    */
-  public void setArchiveFileName(final java.lang.String archiveFileName) {
+  public void setArchiveFileName(final String archiveFileName) {
     this.archiveFileName = archiveFileName;
   }
 
@@ -99,7 +110,7 @@ public class StepLog implements java.io.Serializable {
    *
    * @return description
    */
-  public java.lang.String getDescription() {
+  public String getDescription() {
     return description;
   }
 
@@ -109,7 +120,7 @@ public class StepLog implements java.io.Serializable {
    *
    * @param description
    */
-  public void setDescription(final java.lang.String description) {
+  public void setDescription(final String description) {
     this.description = description;
   }
 
@@ -139,7 +150,7 @@ public class StepLog implements java.io.Serializable {
    *
    * @return path
    */
-  public java.lang.String getPath() {
+  public String getPath() {
     return path;
   }
 
@@ -149,7 +160,7 @@ public class StepLog implements java.io.Serializable {
    *
    * @param path
    */
-  public void setPath(final java.lang.String path) {
+  public void setPath(final String path) {
     this.path = path;
   }
 
@@ -234,10 +245,10 @@ public class StepLog implements java.io.Serializable {
   }
 
 
-  private java.lang.Object __equalsCalc = null;
+  private Object __equalsCalc = null;
 
 
-  public synchronized boolean equals(final java.lang.Object obj) {
+  public synchronized boolean equals(final Object obj) {
     if (!(obj instanceof StepLog)) return false;
     final StepLog other = (StepLog) obj;
     if (obj == null) return false;
@@ -248,21 +259,21 @@ public class StepLog implements java.io.Serializable {
     __equalsCalc = obj;
     final boolean _equals;
     _equals = true &&
-            this.ID == other.getID() &&
-            ((this.archiveFileName == null && other.getArchiveFileName() == null) ||
+            this.ID == other.ID &&
+            ((this.archiveFileName == null && other.archiveFileName == null) ||
                     (this.archiveFileName != null &&
-                            this.archiveFileName.equals(other.getArchiveFileName()))) &&
-            ((this.description == null && other.getDescription() == null) ||
+                            this.archiveFileName.equals(other.archiveFileName))) &&
+            ((this.description == null && other.description == null) ||
                     (this.description != null &&
-                            this.description.equals(other.getDescription()))) &&
-            this.found == other.getFound() &&
-            ((this.path == null && other.getPath() == null) ||
+                            this.description.equals(other.description))) &&
+            this.found == other.found &&
+            ((this.path == null && other.path == null) ||
                     (this.path != null &&
-                            this.path.equals(other.getPath()))) &&
-            this.pathType == other.getPathType() &&
-            this.stepRunID == other.getStepRunID() &&
-            this.timeStamp == other.getTimeStamp() &&
-            this.type == other.getType();
+                            this.path.equals(other.path))) &&
+            this.pathType == other.pathType &&
+            this.stepRunID == other.stepRunID &&
+            this.timeStamp == other.timeStamp &&
+            this.type == other.type;
     __equalsCalc = null;
     return _equals;
   }
@@ -277,91 +288,91 @@ public class StepLog implements java.io.Serializable {
     }
     __hashCodeCalc = true;
     int _hashCode = 1;
-    _hashCode += getID();
-    if (getArchiveFileName() != null) {
-      _hashCode += getArchiveFileName().hashCode();
+    _hashCode += ID;
+    if (archiveFileName != null) {
+      _hashCode += archiveFileName.hashCode();
     }
-    if (getDescription() != null) {
-      _hashCode += getDescription().hashCode();
+    if (description != null) {
+      _hashCode += description.hashCode();
     }
-    _hashCode += getFound();
-    if (getPath() != null) {
-      _hashCode += getPath().hashCode();
+    _hashCode += found;
+    if (path != null) {
+      _hashCode += path.hashCode();
     }
-    _hashCode += getPathType();
-    _hashCode += getStepRunID();
-    _hashCode += new Long(getTimeStamp()).hashCode();
-    _hashCode += getType();
+    _hashCode += pathType;
+    _hashCode += stepRunID;
+    _hashCode += new Long(timeStamp).hashCode();
+    _hashCode += type;
     __hashCodeCalc = false;
     return _hashCode;
   }
 
 
   // Type metadata
-  private static final org.apache.axis.description.TypeDesc typeDesc =
-          new org.apache.axis.description.TypeDesc(StepLog.class, true);
+  private static final TypeDesc typeDesc =
+          new TypeDesc(StepLog.class, true);
 
 
   static {
-    typeDesc.setXmlType(new javax.xml.namespace.QName("http://org.parabuild.ci", "StepLog"));
-    org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+    typeDesc.setXmlType(new QName("http://org.parabuild.ci", "StepLog"));
+    ElementDesc elemField = new ElementDesc();
     elemField.setFieldName("ID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "ID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "ID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("IDAsString");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "IDAsString"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "IDAsString"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("archiveFileName");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "archiveFileName"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "archiveFileName"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("description");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "description"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "description"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("found");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "found"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "byte"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "found"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "byte"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("path");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "path"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "path"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "string"));
     elemField.setNillable(true);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("pathType");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "pathType"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "byte"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "pathType"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "byte"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("stepRunID");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "stepRunID"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "stepRunID"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("timeStamp");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "timeStamp"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "timeStamp"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "long"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
-    elemField = new org.apache.axis.description.ElementDesc();
+    elemField = new ElementDesc();
     elemField.setFieldName("type");
-    elemField.setXmlName(new javax.xml.namespace.QName("http://org.parabuild.ci", "type"));
-    elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "byte"));
+    elemField.setXmlName(new QName("http://org.parabuild.ci", "type"));
+    elemField.setXmlType(new QName("http://www.w3.org/2001/XMLSchema", "byte"));
     elemField.setNillable(false);
     typeDesc.addFieldDesc(elemField);
   }
@@ -370,7 +381,7 @@ public class StepLog implements java.io.Serializable {
   /**
    * Return type metadata object
    */
-  public static org.apache.axis.description.TypeDesc getTypeDesc() {
+  public static TypeDesc getTypeDesc() {
     return typeDesc;
   }
 
@@ -378,12 +389,12 @@ public class StepLog implements java.io.Serializable {
   /**
    * Get Custom Serializer
    */
-  public static org.apache.axis.encoding.Serializer getSerializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Serializer getSerializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanSerializer(
+            new BeanSerializer(
                     _javaType, _xmlType, typeDesc);
   }
 
@@ -391,12 +402,12 @@ public class StepLog implements java.io.Serializable {
   /**
    * Get Custom Deserializer
    */
-  public static org.apache.axis.encoding.Deserializer getDeserializer(
-          final java.lang.String mechType,
-          final java.lang.Class _javaType,
-          final javax.xml.namespace.QName _xmlType) {
+  public static Deserializer getDeserializer(
+          final String mechType,
+          final Class _javaType,
+          final QName _xmlType) {
     return
-            new org.apache.axis.encoding.ser.BeanDeserializer(
+            new BeanDeserializer(
                     _javaType, _xmlType, typeDesc);
   }
 

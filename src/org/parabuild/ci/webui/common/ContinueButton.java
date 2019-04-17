@@ -19,6 +19,9 @@ package org.parabuild.ci.webui.common;
  */
 public final class ContinueButton extends CommonButton {
 
+  private static final long serialVersionUID = -3034363654809656016L;
+
+
   public ContinueButton() {
     super(" Continue ");
   }

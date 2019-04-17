@@ -21,6 +21,9 @@ import viewtier.ui.Link;
  */
 public final class PermanentLatestSuccessfulBuildLink extends Link {
 
+  private static final long serialVersionUID = 8291089703337429379L;
+
+
   public PermanentLatestSuccessfulBuildLink(final int activeBuildID) {
     super("Latest Successful Build", Pages.PAGE_LATEST_SUCCESSFUL_BUILD, Pages.PARAM_BUILD_ID, Integer.toString(activeBuildID));
     setForeground(Pages.COLOR_BUILD_SUCCESSFUL);

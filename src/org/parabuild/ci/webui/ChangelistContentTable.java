@@ -154,12 +154,18 @@ public final class ChangelistContentTable extends AbstractFlatTable {
    */
   private static final class DetailLabel extends Label {
 
+    private static final long serialVersionUID = -1986259029237192181L;
+
+
     public DetailLabel() {
       setPadding(2);
     }
   }
 
   private static final class DetailFlow extends Flow {
+
+
+    private static final long serialVersionUID = 3843198256913517506L;
 
 
     public DetailFlow() {

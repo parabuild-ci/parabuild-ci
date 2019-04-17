@@ -26,6 +26,9 @@ import viewtier.ui.*;
  */
 public final class HourlyBuildBreakageDistributionPanel extends MessagePanel {
 
+  private static final long serialVersionUID = 774935014925674200L;
+
+
   /**
    * Constructor.
    */

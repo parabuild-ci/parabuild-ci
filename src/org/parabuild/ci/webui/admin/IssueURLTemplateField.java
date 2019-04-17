@@ -23,18 +23,19 @@ import org.parabuild.ci.webui.common.*;
  */
 public final class IssueURLTemplateField extends CommonField {
 
+  private static final long serialVersionUID = -7448734923520648780L;
+
+
   public IssueURLTemplateField() {
     super(80, 80);
   }
 
 
-  public boolean validate(final List errors) {
-    if (StringUtils.isBlank(getValue())) return true;
+  public void validate(final List errors) {
+    if (StringUtils.isBlank(getValue())) return;
     final IssueURLGenerator issueURLGenerator = new IssueURLGenerator(getValue());
     if (!issueURLGenerator.isTemplateValid()) {
       errors.add("Issue URL template is invalid. It should be a valid URL containing a required template parameter ${issue.key}");
-      return false;
     }
-    return true;
   }
 }

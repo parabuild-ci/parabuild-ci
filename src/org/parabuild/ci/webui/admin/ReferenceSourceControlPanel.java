@@ -19,6 +19,9 @@ package org.parabuild.ci.webui.admin;
  */
 public final class ReferenceSourceControlPanel extends InheritedSourceControlPanel {
 
+  private static final long serialVersionUID = -4695473400794146984L;
+
+
   public ReferenceSourceControlPanel() {
     super("Sync to latest clean build: ");
   }

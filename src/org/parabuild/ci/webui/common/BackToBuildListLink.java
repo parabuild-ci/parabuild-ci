@@ -18,6 +18,9 @@ package org.parabuild.ci.webui.common;
  */
 public final class BackToBuildListLink extends CommonLink {
 
+  private static final long serialVersionUID = 4475973138258314369L;
+
+
   public BackToBuildListLink() {
     super("Back to Build List", Pages.PUBLIC_BUILDS);
   }

@@ -207,6 +207,9 @@ public final class LogConfigsTable extends AbstractFlatTable implements Loadable
       // empty tracker setup panel.
       return new Component[]{
               new AbstractLogConfigPanel(false) {
+                private static final long serialVersionUID = 8088962231289806909L;
+
+
                 public boolean validateProperties() {
                   return true;
                 }
@@ -243,6 +246,9 @@ public final class LogConfigsTable extends AbstractFlatTable implements Loadable
 
       // create delete selected rows command
       deleteRowCommand.addListener(new MenuSelectedListener() {
+        private static final long serialVersionUID = -1278476122520385066L;
+
+
         public Tierlet.Result menuSelected(final MenuSelectedEvent event) {
           deleteSelectedRows();
           return Tierlet.Result.Continue();
@@ -254,6 +260,9 @@ public final class LogConfigsTable extends AbstractFlatTable implements Loadable
       // create add row command
       addRowCommand.setAlignX(Layout.LEFT);
       addRowCommand.addListener(new ButtonPressedListener() {
+        private static final long serialVersionUID = 501178325912112976L;
+
+
         public Tierlet.Result buttonPressed(final ButtonPressedEvent event) {
           // first place a config into the list so that it's available to makeRow
           final int expectedRowIndex = getRowCount();

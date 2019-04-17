@@ -30,6 +30,7 @@ import java.util.Locale;
  */
 public final class FileChangeListsTable extends AbstractFlatTable {
 
+  private static final long serialVersionUID = -4042223366773378958L;
   private final SimpleDateFormat dateTimeFormat = new SimpleDateFormat(SystemConfigurationManagerFactory.getManager().getDateTimeFormat(), Locale.US); // NOPMD
 
   private static final int COLUMN_COUNT = 4;
@@ -51,7 +52,7 @@ public final class FileChangeListsTable extends AbstractFlatTable {
 
 
   /**
-   * Sets a list of {@link org.parabuild.ci.object.ChangeList} object to display.
+   * Sets a list of {@link ChangeList} object to display.
    *
    * @param changeLists
    */
@@ -96,8 +97,8 @@ public final class FileChangeListsTable extends AbstractFlatTable {
    * @return this method should return either TBL_ROW_FETCHED or
    *         TBL_NO_MORE_ROWS if the requested row is out of
    *         range.
-   * @see org.parabuild.ci.webui.common.AbstractFlatTable#TBL_ROW_FETCHED
-   * @see org.parabuild.ci.webui.common.AbstractFlatTable#TBL_NO_MORE_ROWS
+   * @see AbstractFlatTable#TBL_ROW_FETCHED
+   * @see AbstractFlatTable#TBL_NO_MORE_ROWS
    */
   protected int fetchRow(final int rowIndex, final int rowFlags) {
 

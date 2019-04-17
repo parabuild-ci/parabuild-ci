@@ -41,6 +41,7 @@ public abstract class AbtractScheduleSettingsPanel extends ScheduleSettingsPanel
   private static final String CAPTION_RESET_BUILD_NUMBER = "Set next build number: ";
   private static final String CAPTION_REBUILD_IF_BROKEN = "Rebuild if broken: ";
   private static final String CAPTION_STICKY_AGENT = "Sticky agent: ";
+  private static final long serialVersionUID = -538200368430972999L;
 
   protected int buildID = BuildConfig.UNSAVED_ID;
   protected final PropertyToInputMap propertyToInputMap = new PropertyToInputMap(false, makeSchedulePropertyHandler());

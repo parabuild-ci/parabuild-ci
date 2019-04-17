@@ -37,7 +37,7 @@ import java.util.Locale;
  * <p/>
  *
  * @author Slava Imeshev
- * @noinspection ThrowInsideCatchBlockWhichIgnoresCaughtException,StringBufferReplaceableByString
+ * @noinspection ThrowInsideCatchBlockWhichIgnoresCaughtException
  */
 public final class MercurialChangeLogParser {
 
@@ -121,7 +121,7 @@ public final class MercurialChangeLogParser {
    * @param changeLogFile the change log file produced by the command.
    * @return a list of <code>ChangeList</code> objects.
    * @throws IOException if I/O error occurs.
-   * @noinspection ReuseOfLocalVariable,HardcodedLineSeparator
+   * @noinspection HardcodedLineSeparator
    */
   public List parseChangeLog(final File changeLogFile) throws IOException {
 
@@ -293,9 +293,7 @@ files:
             }
           }
         } catch (final RuntimeException e) {
-          final IOException ioe = new IOException("Unexpected error while processing Bazaar change log, line: " + line);
-          ioe.initCause(e);
-          throw ioe;
+          throw new IOException("Unexpected error while processing Bazaar change log, line: " + line, e);
         }
       }
       if (LOG.isDebugEnabled()) {
