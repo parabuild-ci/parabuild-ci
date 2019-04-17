@@ -18,8 +18,8 @@ import org.parabuild.ci.object.SourceControlSetting;
 /**
  * Parameters for MKS's rlog command.
  *
- * @see org.parabuild.ci.versioncontrol.mks.MKSCommandParameters
- * @see org.parabuild.ci.versioncontrol.mks.MKSCreatesandboxCommand
+ * @see MKSCommandParameters
+ * @see MKSCreatesandboxCommand
  */
 public class MKSCreatesandboxCommandParameters extends MKSCommandParameters {
 
