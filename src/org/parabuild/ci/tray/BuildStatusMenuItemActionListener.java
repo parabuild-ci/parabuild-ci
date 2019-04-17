@@ -13,11 +13,13 @@
  */
 package org.parabuild.ci.tray;
 
-import java.awt.event.*;
-import javax.swing.*;
-import org.apache.commons.logging.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.remote.RemoteUtils;
 
-import org.parabuild.ci.remote.*;
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 final class BuildStatusMenuItemActionListener implements ActionListener {
 
@@ -48,7 +50,6 @@ final class BuildStatusMenuItemActionListener implements ActionListener {
         final BrowserLauncher browserLauncher = new BrowserLauncher();
         browserLauncher.launchBrowser(url);
       } catch (final InterruptedException e) {
-        return;
       } catch (final Exception e) {
         log.warn("Error while launching a browser", e);
       }

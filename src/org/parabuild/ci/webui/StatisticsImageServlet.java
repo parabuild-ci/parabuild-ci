@@ -13,13 +13,8 @@
  */
 package org.parabuild.ci.webui;
 
-import java.awt.*;
-import java.io.*;
-import java.util.*;
-import javax.servlet.http.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.parabuild.ci.common.IoUtils;
 import org.parabuild.ci.common.StringUtils;
 import org.parabuild.ci.configuration.SystemConfigurationManager;
@@ -32,13 +27,22 @@ import org.parabuild.ci.security.AccessForbiddenException;
 import org.parabuild.ci.security.BadRequestException;
 import org.parabuild.ci.security.SecurityManager;
 import org.parabuild.ci.statistics.BuildTimeChartGenerator;
+import org.parabuild.ci.statistics.CheckstyleViolationsChartGenerator;
 import org.parabuild.ci.statistics.FindbugsViolationsChartGenerator;
 import org.parabuild.ci.statistics.PMDViolationsChartGenerator;
 import org.parabuild.ci.statistics.StatisticsManager;
 import org.parabuild.ci.statistics.StatisticsManagerFactory;
 import org.parabuild.ci.statistics.StatisticsUtils;
-import org.parabuild.ci.statistics.CheckstyleViolationsChartGenerator;
 import org.parabuild.ci.webui.common.Pages;
+
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.awt.*;
+import java.io.BufferedOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.SortedMap;
 
 /**
  * This servlet serves requests for build statistics presented as
@@ -323,7 +327,7 @@ public final class StatisticsImageServlet extends HttpServlet {
         // we don't know how to process, return
         log.warn("Unknown stats code: " + statsCode);
         resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-        return;
+        break;
     }
   }
 
