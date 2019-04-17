@@ -13,14 +13,26 @@
  */
 package org.parabuild.ci.webui.admin.usermanagement;
 
-import java.util.*;
-
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.security.*;
+import org.parabuild.ci.configuration.GroupMemberVO;
+import org.parabuild.ci.object.Group;
+import org.parabuild.ci.object.ResultGroupAccess;
+import org.parabuild.ci.security.ResultGroupRights;
 import org.parabuild.ci.security.SecurityManager;
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import org.parabuild.ci.webui.common.CommonFieldLabel;
+import org.parabuild.ci.webui.common.CommonFlow;
+import org.parabuild.ci.webui.common.CommonLabel;
+import org.parabuild.ci.webui.common.GridIterator;
+import org.parabuild.ci.webui.common.MessagePanel;
+import viewtier.ui.CheckBox;
+import viewtier.ui.Label;
+import viewtier.ui.Layout;
+import viewtier.ui.Panel;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 /**
  * GroupResultRightsPanel displays a list of group rights check boxes.
@@ -156,7 +168,7 @@ public final class ResultRightsPanel extends MessagePanel {
 
     // disable check boxes for anonimous group
 
-    if (group.getName() == Group.SYSTEM_ANONYMOUS_GROUP) {
+    if (Group.SYSTEM_ANONYMOUS_GROUP.equals(group.getName())) {
       getCheckBox(KEY_CREATE).setEditable(false);
       getCheckBox(KEY_DELETE).setEditable(false);
       getCheckBox(KEY_UPDATE).setEditable(false);
