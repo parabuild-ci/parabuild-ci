@@ -13,13 +13,15 @@
  */
 package org.parabuild.ci.relnotes;
 
-import java.sql.*;
-import java.sql.Date;
-import java.util.*;
-
-import org.parabuild.ci.common.*;
-import org.parabuild.ci.error.*;
+import org.parabuild.ci.common.StringUtils;
 import org.parabuild.ci.error.Error;
+import org.parabuild.ci.error.ErrorManager;
+import org.parabuild.ci.error.ErrorManagerFactory;
+
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.SQLException;
+import java.util.Collection;
 
 /**
  * Strategy for BugzillaDatabaseConnector
@@ -33,7 +35,7 @@ abstract class AbstractBugzillaDatabaseConnector implements BugzillaDatabaseConn
    * Constructor
    *
    */
-  protected AbstractBugzillaDatabaseConnector(final BugzillaMySQLConnectionFactory connectionFactory) {
+  AbstractBugzillaDatabaseConnector(final BugzillaMySQLConnectionFactory connectionFactory) {
     this.connectionFactory = connectionFactory;
   }
 
@@ -52,7 +54,7 @@ abstract class AbstractBugzillaDatabaseConnector implements BugzillaDatabaseConn
   /**
    * Helper method to report unexpected error to administrator
    */
-  protected static void reportUnexpectedError(final String productName, final Exception e) {
+  static void reportUnexpectedError(final String productName, final Exception e) {
     final Error error = new Error();
     error.setDetails(e);
     error.setDescription("Error while retrieving Bugzilla bugs for product \"" + productName + "\": " + StringUtils.toString(e));
