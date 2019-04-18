@@ -100,7 +100,7 @@ final class HSQLDBConnector {
         IoUtils.closeHard(fos);
       }
     }
-    final URL hsqldbJarURL = driverJarFile.toURL();
+    final URL hsqldbJarURL = driverJarFile.toURI().toURL();
     final ClassLoader hsqldbClassloader = new URLClassLoader(new URL[]{hsqldbJarURL});
     try {
       final Class hsqldbDriverClass = hsqldbClassloader.loadClass(HSQLDB_DRIVER);

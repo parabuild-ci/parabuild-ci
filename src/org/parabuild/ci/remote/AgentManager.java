@@ -868,7 +868,7 @@ public final class AgentManager {
 
       final String url = "http://" + host;
       final String catalinaBase = System.getProperty("catalina.base");
-      final String war = new File(catalinaBase, "app/parabuild.war").toURL().toExternalForm();
+      final String war = new File(catalinaBase, "app/parabuild.war").toURI().toURL().toExternalForm();
 
       IOException lastError = null;
       final int attemptCount = 3;

@@ -147,7 +147,6 @@
     <option name="NEW_SESSION_BEAN_LAST_PACKAGE" value="" />
   </component>
   <component name="EjbManager" enabled="false" />
-  <component name="Encoding" addBOMForNewFiles="with NO BOM" />
   <component name="EntryPointsManager">
     <entry_points version="2.0">
       <entry_point TYPE="field" FQNAME="org.parabuild.ci.webui.agent.status.AgentEnvironmentPage LOG" />
@@ -932,6 +931,7 @@
     </dictionary>
     <dictionary name="vimeshev">
       <words>
+        <w>bugzilla</w>
         <w>buildid</w>
         <w>github</w>
         <w>hmmss</w>

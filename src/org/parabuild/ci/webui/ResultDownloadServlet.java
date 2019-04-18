@@ -119,7 +119,7 @@ public final class ResultDownloadServlet extends AbstractArchiveAccessServlet {
       if (StringUtils.isBlank(urlEncodedRequestFileName)) return null;
 
       // Return input stream
-      final String requestFileName = URLDecoder.decode(urlEncodedRequestFileName);
+      final String requestFileName = URLDecoder.decode(urlEncodedRequestFileName, "UTF-8");
       return ArchiveManagerFactory.getArchiveManager(activeBuildID)
               .getArchivedResultInputStream(stepResult, requestFileName);
     } catch (final Exception e) {
