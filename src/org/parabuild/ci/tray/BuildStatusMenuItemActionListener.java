@@ -13,11 +13,13 @@
  */
 package org.parabuild.ci.tray;
 
-import java.awt.event.*;
-import javax.swing.*;
-import org.apache.commons.logging.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.remote.RemoteUtils;
 
-import org.parabuild.ci.remote.*;
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 final class BuildStatusMenuItemActionListener implements ActionListener {
 

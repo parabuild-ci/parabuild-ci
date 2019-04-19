@@ -264,7 +264,7 @@ public final class TimeoutWatchdog implements Runnable {
   }
 
 
-  private void reportErrorStoppingCommad(final BuildException e) {
+  private static void reportErrorStoppingCommad(final BuildException e) {
     final Error error = new Error("Error while stopping a command");
     error.setDetails(e);
     error.setErrorLevel(Error.ERROR_LEVEL_WARNING);

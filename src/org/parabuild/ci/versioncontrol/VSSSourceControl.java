@@ -124,7 +124,7 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
    * and project path is $/my/project then the result will be
    * C:\autobuild\etc\build\b6co\my\project.
    */
-  private String makeCheckoutDirName(final Agent agent, final RepositoryPath repositoryPath) throws IOException, AgentFailureException {
+  private static String makeCheckoutDirName(final Agent agent, final RepositoryPath repositoryPath) throws IOException, AgentFailureException {
     final String pathToAppend = repositoryPath.getPath().substring(1).replace('/', '\\');
 //    if (log.isDebugEnabled()) log.debug("pathToAppend: " + pathToAppend);
     return agent.getCheckoutDirName() + (pathToAppend.endsWith("\\") ? pathToAppend.substring(0, pathToAppend.length() - 1) : pathToAppend);
@@ -431,7 +431,7 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
    * @see ErrorManager
    */
   public Map getUsersMap() {
-    return new HashMap(); // VSS does not support user e-mails, return empty map
+    return new HashMap(11); // VSS does not support user e-mails, return empty map
   }
 
 
@@ -706,7 +706,7 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
   /**
    * Validates that correct VSS build configuration was passesed
    */
-  private void validateIsVSSConfiguration(final BuildConfig buildConfig) {
+  private static void validateIsVSSConfiguration(final BuildConfig buildConfig) {
     if (buildConfig.getSourceControl() != BuildConfig.SCM_REFERENCE && buildConfig.getSourceControl() != BuildConfig.SCM_VSS) {
       throw new IllegalArgumentException("Non-VSS build configuration");
     }

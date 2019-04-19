@@ -78,7 +78,7 @@ final class TailComponent extends CustomComponent {
   }
 
 
-  private void writeLine(final PrintWriter writer, final String logLine) {
+  private static void writeLine(final PrintWriter writer, final String logLine) {
     writer.print("<tr><td class=\"logLine\">");
     writer.print(XMLEncoder.encode(logLine));
     writer.print("</td></tr>");

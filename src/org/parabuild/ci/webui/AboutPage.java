@@ -113,7 +113,7 @@ public final class AboutPage extends BasePage implements StatelessTierlet {
   /**
    * Makes product information detail panel
    */
-  private MessagePanel makeProdInfoPanel() {
+  private static MessagePanel makeProdInfoPanel() {
     final MessagePanel pnlProdInfo = new MessagePanel("Product Information");
 
     final GridIterator prodInfoGI = new GridIterator(pnlProdInfo.getUserPanel(), 2);
@@ -160,7 +160,7 @@ public final class AboutPage extends BasePage implements StatelessTierlet {
   /**
    * @return formatted list of MAC addresses.
    */
-  private String getMACAddresses() {
+  private static String getMACAddresses() {
     final StringBuilder sb = new StringBuilder(100);
     final List macAddressList = RuntimeUtils.getMacAddressList();
     for (int i = 0; i < macAddressList.size(); i++) {
@@ -176,7 +176,7 @@ public final class AboutPage extends BasePage implements StatelessTierlet {
   /**
    * Creates shell details panel
    */
-  private MessagePanel makeShellEnvPanel() {
+  private static MessagePanel makeShellEnvPanel() {
     final AgentHost host = new AgentHost(AgentConfig.BUILD_MANAGER);
     MessagePanel result;
     try {
@@ -198,7 +198,7 @@ public final class AboutPage extends BasePage implements StatelessTierlet {
    *
    * @return true if showing cache stats is enabled.
    */
-  private boolean isShowCacheStatsEnabled(final Parameters parameters) {
+  private static boolean isShowCacheStatsEnabled(final Parameters parameters) {
     return ParameterUtils.getBooleanParameter(parameters, Pages.PARAM_SHOW_CACHE_STATS);
   }
 
@@ -206,7 +206,7 @@ public final class AboutPage extends BasePage implements StatelessTierlet {
   /**
    * Creates cache stats panel.
    */
-  private Panel makeCacheStatsPanel() {
+  private static Panel makeCacheStatsPanel() {
     final MessagePanel result = new MessagePanel("Cache statistis");
     try {
       final GridIterator gi = new GridIterator(result.getUserPanel(), 5);
@@ -256,7 +256,7 @@ public final class AboutPage extends BasePage implements StatelessTierlet {
   }
 
 
-  private String getIPAddress() {
+  private static String getIPAddress() {
     try {
       return InetAddress.getLocalHost().getHostAddress();
     } catch (final UnknownHostException e) {

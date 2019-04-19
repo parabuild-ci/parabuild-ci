@@ -106,7 +106,7 @@ final class MergeStatusesViewSwitchLink extends Flow {
   }
 
 
-  private CommonLabel makeDisabledLink(final String strListView) {
+  private static CommonLabel makeDisabledLink(final String strListView) {
     final CommonLabel disabledLink = new CommonLabel(strListView);
     disabledLink.setFont(Pages.FONT_COMMON_MENU);
     return disabledLink;

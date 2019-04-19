@@ -304,7 +304,7 @@ public final class SSTestVSSSourceControl extends AbstractSourceControlTest {
    * @throws Exception
    */
   public void test_checkOutLatestCantProcessUnexistingSourceLine() throws Exception {
-    final List settings = new ArrayList();
+    final List settings = new ArrayList(11);
     settings.add(makeSetting(SourceControlSetting.VSS_DATABASE_PATH, TEST_VALID_DATABASE_PATH));
     settings.add(makeSetting(SourceControlSetting.VSS_EXE_PATH, TEST_VALID_EXE_PATH));
     settings.add(makeSetting(SourceControlSetting.VSS_PROJECT_PATH, TEST_INVALID_PROJECT_PATH));
@@ -329,7 +329,7 @@ public final class SSTestVSSSourceControl extends AbstractSourceControlTest {
    * @throws Exception
    */
   public void test_checkOutLatestCantProcessInavalidUser() throws Exception {
-    final List settings = new ArrayList();
+    final List settings = new ArrayList(11);
     settings.add(makeSetting(SourceControlSetting.VSS_DATABASE_PATH, TEST_VALID_DATABASE_PATH));
     settings.add(makeSetting(SourceControlSetting.VSS_EXE_PATH, TEST_VALID_EXE_PATH));
     settings.add(makeSetting(SourceControlSetting.VSS_PROJECT_PATH, TEST_INVALID_PROJECT_PATH));
@@ -421,7 +421,7 @@ public final class SSTestVSSSourceControl extends AbstractSourceControlTest {
    */
   public void test_getChangesSinceDoesntFailOnBlankSourceline() throws Exception {
 // REVIEWME: simeshev@parabuilci.org -> uncomment when in CVS there a path define by TEST_EMPTY_PROJECT_PATH
-//    List settings = new ArrayList();
+//    List settings = new ArrayList(11);
 //    settings.add(makeSetting(SourceControlSetting.VSS_DATABASE_PATH, TEST_VALID_DATABASE_PATH));
 //    settings.add(makeSetting(SourceControlSetting.VSS_EXE_PATH, TEST_VALID_EXE_PATH));
 //    settings.add(makeSetting(SourceControlSetting.VSS_PROJECT_PATH, TEST_EMPTY_PROJECT_PATH));
@@ -438,7 +438,7 @@ public final class SSTestVSSSourceControl extends AbstractSourceControlTest {
    * password
    */
   public void test_canNotAccessWithWrongPassword() throws Exception {
-    final List settings = new ArrayList();
+    final List settings = new ArrayList(11);
     settings.add(makeSetting(SourceControlSetting.VSS_DATABASE_PATH, TEST_VALID_DATABASE_PATH));
     settings.add(makeSetting(SourceControlSetting.VSS_EXE_PATH, TEST_VALID_EXE_PATH));
     settings.add(makeSetting(SourceControlSetting.VSS_PROJECT_PATH, TEST_INVALID_PROJECT_PATH));

@@ -120,12 +120,12 @@ public final class ModifyPromotionPolicyStepOrderPage extends AuthenticatedSyste
   }
 
 
-  private boolean isMoveUp(final Parameters params) {
+  private static boolean isMoveUp(final Parameters params) {
     return params.getParameterValue(Pages.PARAM_PROMOTION_STEP_OPERATION_CODE).equalsIgnoreCase(Pages.PARAM_PROMOTION_STEP_OPERATION_UP);
   }
 
 
-  private boolean isMoveDown(final Parameters params) {
+  private static boolean isMoveDown(final Parameters params) {
     return params.getParameterValue(Pages.PARAM_PROMOTION_STEP_OPERATION_CODE).equalsIgnoreCase(Pages.PARAM_PROMOTION_STEP_OPERATION_DOWN);
   }
 }

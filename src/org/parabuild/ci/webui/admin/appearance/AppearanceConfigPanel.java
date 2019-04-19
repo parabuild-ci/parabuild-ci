@@ -386,7 +386,7 @@ public final class AppearanceConfigPanel extends AbstractSystemConfigPanel {
    * @return build manager host, or blank string if there are
    *         errors or host name is blank.
    */
-  private String getBuildManagerHost() {
+  private static String getBuildManagerHost() {
     String result = "";
     try {
       result = SystemConfigurationManagerFactory.getManager().getBuildManagerHostAndPort();
@@ -398,7 +398,7 @@ public final class AppearanceConfigPanel extends AbstractSystemConfigPanel {
   }
 
 
-  private RadioButton createRadioButton(final String groupName) {
+  private static RadioButton createRadioButton(final String groupName) {
     final RadioButton radioButton = new RadioButton();
     radioButton.setGroupName(groupName);
     return radioButton;

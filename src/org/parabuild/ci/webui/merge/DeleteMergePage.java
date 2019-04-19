@@ -155,7 +155,7 @@ public final class DeleteMergePage extends BaseMergePage implements Conversation
   }
 
 
-  private Result processCancel(final Parameters params) {
+  private static Result processCancel(final Parameters params) {
     // return to the coomand list
     return Result.Done(Pages.PAGE_MERGE_COMMANDS, params);
   }

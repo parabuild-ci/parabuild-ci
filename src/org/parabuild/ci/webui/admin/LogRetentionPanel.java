@@ -13,13 +13,23 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import java.util.*;
+import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.configuration.ConfigurationManager;
+import org.parabuild.ci.object.BuildConfig;
+import org.parabuild.ci.object.BuildConfigAttribute;
+import org.parabuild.ci.webui.common.CommonField;
+import org.parabuild.ci.webui.common.GridIterator;
+import org.parabuild.ci.webui.common.MessagePanel;
+import org.parabuild.ci.webui.common.PropertyToInputMap;
+import org.parabuild.ci.webui.common.Saveable;
+import org.parabuild.ci.webui.common.Validatable;
+import org.parabuild.ci.webui.common.WebuiUtils;
+import viewtier.ui.Field;
+import viewtier.ui.Flow;
+import viewtier.ui.Label;
 
-import org.parabuild.ci.common.*;
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Log retention setting panel
@@ -90,7 +100,7 @@ public final class LogRetentionPanel extends MessagePanel implements Loadable, V
    */
   public boolean validate() {
     clearMessage();
-    final List errors = new ArrayList();
+    final List errors = new ArrayList(11);
     validateNumberField(errors, flRetentionDays, " days ");
     // show errors if any
     if (!errors.isEmpty()) {
@@ -131,7 +141,7 @@ public final class LogRetentionPanel extends MessagePanel implements Loadable, V
   /**
    * Genereric check if field is a positive integer
    */
-  private void validateNumberField(final List errors, final Field field, final String descr) {
+  private static void validateNumberField(final List errors, final Field field, final String descr) {
     // check for blank
     WebuiUtils.validateFieldNotBlank(errors, "Number of " + descr, field);
 

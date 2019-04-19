@@ -55,7 +55,7 @@ public final class StepLogsPanel extends Panel {
   /**
    * Returns true is this error window should be skipped
    */
-  private boolean skipThisErrorWindow(final StepRun stepRun, final StepLog stepLog) {
+  private static boolean skipThisErrorWindow(final StepRun stepRun, final StepLog stepLog) {
     return stepRun.getResultID() == BuildRun.BUILD_RESULT_SUCCESS
             && stepLog.getType() == StepLog.TYPE_WINDOW;
   }

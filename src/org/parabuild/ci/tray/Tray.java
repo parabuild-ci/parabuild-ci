@@ -13,16 +13,32 @@
  */
 package org.parabuild.ci.tray;
 
-import java.awt.event.*;
-import java.io.*;
-import java.util.*;
-import javax.swing.*;
-import org.apache.commons.logging.*;
-import org.jdesktop.jdic.tray.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.jdesktop.jdic.tray.SystemTray;
+import org.jdesktop.jdic.tray.TrayIcon;
+import org.parabuild.ci.Version;
+import org.parabuild.ci.common.IoUtils;
+import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.services.Log4jConfigurator;
 
-import org.parabuild.ci.*;
-import org.parabuild.ci.common.*;
-import org.parabuild.ci.services.*;
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Properties;
 
 /**
  * Tray is a main class that perform polling of Parabuild
@@ -432,7 +448,7 @@ public final class Tray implements ActionListener, ItemListener {
     dialog.setShowInactiveBuilds(Boolean.valueOf(properties.getProperty(PROP_SHOW_INACTIVE, Boolean.TRUE.toString())));
     dialog.setDebugLogging(Boolean.valueOf(properties.getProperty(PROP_DEBUG_LOGGING, Boolean.FALSE.toString())));
     dialog.pack();
-    dialog.show();
+    dialog.setVisible(true);
     if (log.isDebugEnabled()) log.debug("dialog: " + dialog);
 
     if (dialog.isOK()) {

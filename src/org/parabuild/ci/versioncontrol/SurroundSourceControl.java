@@ -408,7 +408,7 @@ final class SurroundSourceControl extends AbstractSourceControl implements Commo
    * @see SurroundUsersParser
    */
   public Map getUsersMap() throws CommandStoppedException, AgentFailureException {
-    final HashMap result = new HashMap();
+    final HashMap result = new HashMap(11);
     SurroundCommand command = null;
     try {
       final Agent agent = getCheckoutDirectoryAwareAgent();
@@ -519,7 +519,7 @@ final class SurroundSourceControl extends AbstractSourceControl implements Commo
    * @see org.parabuild.ci.build.BuildScriptGenerator#addVariables(Map)
    */
   public Map getShellVariables() {
-    return new HashMap();
+    return new HashMap(11);
   }
 
 

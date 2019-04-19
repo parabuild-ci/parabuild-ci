@@ -74,7 +74,7 @@ public final class EditDisplayGroupPanel extends MessagePanel implements Validat
    */
   public boolean validate() {
     // general validation
-    final List errors = new ArrayList();
+    final List errors = new ArrayList(11);
     WebuiUtils.validateFieldNotBlank(errors, CAPTION_NAME, flName);
     WebuiUtils.validateFieldNotBlank(errors, CAPTION_DESCRIPTION, flDescr);
 

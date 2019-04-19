@@ -85,7 +85,7 @@ public final class ParabuildSoapBindingImpl implements Parabuild {
   }
 
 
-  private BuildStartRequest toBuildStartRequest(final org.parabuild.ci.webservice.BuildStartRequest buildStartRequest) {
+  private static BuildStartRequest toBuildStartRequest(final org.parabuild.ci.webservice.BuildStartRequest buildStartRequest) {
     final AgentHost agentHost = buildStartRequest.getAgentHost();
     final int buildRunID = buildStartRequest.getBuildRunID();
     final int changeListID = buildStartRequest.getChangeListID();
@@ -153,7 +153,7 @@ public final class ParabuildSoapBindingImpl implements Parabuild {
    * @param buildID
    * @return return build service.
    */
-  private BuildService getBuildService(final int buildID) throws ServerException {
+  private static BuildService getBuildService(final int buildID) throws ServerException {
     final BuildListService buildListService = ServiceManager.getInstance().getBuildListService();
     final BuildService build = buildListService.getBuild(buildID);
     if (build == null) {
@@ -1369,7 +1369,7 @@ public final class ParabuildSoapBindingImpl implements Parabuild {
   }
 
 
-  private void notifyConfigurationChanged(final Set buildIDsToUpdate) {
+  private static void notifyConfigurationChanged(final Set buildIDsToUpdate) {
     for (final Iterator iterator = buildIDsToUpdate.iterator(); iterator.hasNext();) {
       final Integer buildID = (Integer) iterator.next();
       ServiceManager.getInstance().getBuildListService().getBuild(buildID).notifyConfigurationChanged();
@@ -1377,7 +1377,7 @@ public final class ParabuildSoapBindingImpl implements Parabuild {
   }
 
 
-  private BuildDistribution toDistribution(final PersistentDistribution o) {
+  private static BuildDistribution toDistribution(final PersistentDistribution o) {
     final BuildDistribution distribution = new BuildDistribution();
     distribution.setActiveBuildID(o.getActiveBuildID());
     distribution.setID(o.getID());
@@ -1474,7 +1474,7 @@ public final class ParabuildSoapBindingImpl implements Parabuild {
   }
 
 
-  private Calendar dateToCalendar(final Date date) {
+  private static Calendar dateToCalendar(final Date date) {
     if (date == null) {
       return null;
     }

@@ -143,7 +143,7 @@ final class UpgraderToVersion32 implements SingleStepSchemaUpgrader {
   }
 
 
-  private void addBooleanColumnToGroup(final Statement st, final String colName) throws SQLException {
+  private static void addBooleanColumnToGroup(final Statement st, final String colName) throws SQLException {
     final String [] update = {" alter table GROUPS add column " + colName + " char(1)  default 'N' not null ",
       " update GROUPS set " + colName + "='N' ",
       " alter table GROUPS alter column " + colName + " drop default ",

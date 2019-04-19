@@ -37,7 +37,7 @@ public final class AccessDropDown extends DropDown {
    * @param access
    * @return
    */
-  private String accessToString(final int access) {
+  private static String accessToString(final int access) {
     if (access == BuildConfig.ACCESS_PRIVATE) return "Private";
     if (access == BuildConfig.ACCESS_PUBLIC) return "Public";
     return "Public";

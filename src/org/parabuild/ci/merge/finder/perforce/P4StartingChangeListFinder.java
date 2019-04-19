@@ -83,7 +83,7 @@ public final class P4StartingChangeListFinder {
   /**
    * Validates that the change list number is not null.
    */
-  private void validateChangeListNumber(final Integer firstFromChangeList, final String description) throws ValidationException {
+  private static void validateChangeListNumber(final Integer firstFromChangeList, final String description) throws ValidationException {
     if (firstFromChangeList == null) {
       throw new ValidationException("Cannot find first change list for \"" + description + "\" part of the branch view");
     }

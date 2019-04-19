@@ -27,7 +27,7 @@ public class SATestMergeNagImpl extends TestCase {
 
 
   public void test_create() {
-    final ArrayList pendingChangeLists = new ArrayList();
+    final ArrayList pendingChangeLists = new ArrayList(11);
     ChangeList chl = new ChangeList();
     pendingChangeLists.add(chl);
     MergeNagImpl mergeNag = new MergeNagImpl(TEST_NAME, pendingChangeLists);

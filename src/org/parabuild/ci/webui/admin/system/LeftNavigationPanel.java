@@ -137,7 +137,7 @@ final class LeftNavigationPanel extends Panel {
   }
 
 
-  private Properties createVariableListParameters() {
+  private static Properties createVariableListParameters() {
     final Properties properties = new Properties();
     properties.setProperty(Pages.PARAM_VARIABLE_TYPE, Integer.toString(StartParameter.TYPE_SYSTEM));
     properties.setProperty(Pages.PARAM_VARIABLE_OWNER, Integer.toString(-1));

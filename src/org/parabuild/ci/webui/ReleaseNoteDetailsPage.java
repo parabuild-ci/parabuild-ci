@@ -83,7 +83,7 @@ public final class ReleaseNoteDetailsPage extends AbstractBuildRunResultPage imp
   }
 
 
-  private Issue getIssueFromParameters(final Parameters params) {
+  private static Issue getIssueFromParameters(final Parameters params) {
     final Integer releaseNoteID = ParameterUtils.getIntegerParameter(params, Pages.PARAM_RELEASE_NOTE_ID, null);
     if (log.isDebugEnabled()) log.debug("releaseNoteID: " + releaseNoteID);
     if (releaseNoteID == null) return null;

@@ -63,7 +63,7 @@ public final class AgentListPage extends NavigatableSystemConfigurationPage impl
   }
 
 
-  private CommonCommandLinkWithImage makeNewBuilderLink() {
+  private static CommonCommandLinkWithImage makeNewBuilderLink() {
     final CommonCommandLinkWithImage lnkAddNewBuilder = new CommonCommandLinkWithImage(CAPTION_ADD_NEW_AGENT, Pages.PAGE_EDIT_AGENT);
     lnkAddNewBuilder.setAlignX(Layout.LEFT);
     lnkAddNewBuilder.setAlignY(Layout.TOP);

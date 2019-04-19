@@ -172,7 +172,7 @@ public class DashboardBuildStatusComponent extends CustomComponent {
   }
 
 
-  private void writeContent(final boolean busy, final PrintWriter writer, final String throbberImageSource, final String idleText) {
+  private static void writeContent(final boolean busy, final PrintWriter writer, final String throbberImageSource, final String idleText) {
     if (busy) {
       writer.print("<img border=\"0\" src=\"" + throbberImageSource + "\"/>");
     } else {

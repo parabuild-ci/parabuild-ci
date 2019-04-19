@@ -103,7 +103,7 @@ class BuilderAgentsTable extends AbstractFlatTable {
   }
 
 
-  private Properties createParameters(final int agentID) {
+  private static Properties createParameters(final int agentID) {
     final Properties properties = new Properties();
     properties.setProperty(Pages.PARAM_AGENT_ID, Integer.toString(agentID));
     return properties;

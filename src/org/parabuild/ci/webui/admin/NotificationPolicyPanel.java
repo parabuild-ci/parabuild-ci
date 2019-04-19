@@ -184,7 +184,7 @@ final class NotificationPolicyPanel extends MessagePanel implements Validatable,
   }
 
 
-  private byte getEffectiveVCSID(final BuildConfig buildConfig) {
+  private static byte getEffectiveVCSID(final BuildConfig buildConfig) {
     if (buildConfig.getSourceControl() == BuildConfig.SCM_REFERENCE) {
       final BuildConfig effectiveBuildConfig = ConfigurationManager.getInstance().getEffectiveBuildConfig(buildConfig);
       // cover-ass validation

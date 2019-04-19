@@ -63,7 +63,7 @@ public final class RepositoryDialogBox extends DialogBox {
    *
    * @return the VO representing the repository being edited.
    */
-  private RepositoryVO getRepositoryVO() {
+  private static RepositoryVO getRepositoryVO() {
     return null;
   }
 

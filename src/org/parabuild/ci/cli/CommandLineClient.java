@@ -222,7 +222,7 @@ public final class CommandLineClient {
   }
 
 
-  private void validateServerVersion(final Parabuild svc) throws RemoteException, ServiceException {
+  private static void validateServerVersion(final Parabuild svc) throws RemoteException, ServiceException {
     final String serverVersion = svc.serverVersion();
     final String clientVersion = Version.versionToString(true);
     if (!serverVersion.equals(clientVersion)) {
@@ -242,12 +242,12 @@ public final class CommandLineClient {
   }
 
 
-  private void printRequiredOptionsMissing() {
+  private static void printRequiredOptionsMissing() {
     printlnToStderr("Reqired options are missing. Try 'paracmd --help' for info.");
   }
 
 
-  private void printRequiredOptionValueMissing(final String optionName) {
+  private static void printRequiredOptionValueMissing(final String optionName) {
     printlnToStderr("Reqired \"" + optionName + "\" is missing. Try 'paracmd --help' for info.");
   }
 
@@ -255,7 +255,7 @@ public final class CommandLineClient {
   /**
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
-  private void printHelp(final String lineSyntax, final String header, final Options options, final String footer) {
+  private static void printHelp(final String lineSyntax, final String header, final Options options, final String footer) {
     final PrintWriter pw = new PrintWriter(System.out);
     final HelpFormatter helpFormatter = new HelpFormatter();
     helpFormatter.printHelp(pw, 30, lineSyntax, header, options, 4, 4, footer);

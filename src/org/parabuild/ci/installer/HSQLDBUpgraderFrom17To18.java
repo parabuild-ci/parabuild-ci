@@ -153,7 +153,7 @@ final class HSQLDBUpgraderFrom17To18 {
    * @return fully-qualified path to the backup directory. If the directory doesn't exist, it is created.
    * @throws IOException if I/O error occurs.
    */
-  private File getBackupDir(final File databaseDirectory) throws IOException {
+  private static File getBackupDir(final File databaseDirectory) throws IOException {
     final File backupDir = new File(databaseDirectory.getParentFile(), "backup/before_engine_upgrade");
     if (!backupDir.exists()) {
       if (!backupDir.mkdirs()) {

@@ -54,7 +54,7 @@ public final class ProjectListPage extends NavigatableSystemConfigurationPage im
   }
 
 
-  private CommonCommandLinkWithImage makeNewProjectLink() {
+  private static CommonCommandLinkWithImage makeNewProjectLink() {
     final CommonCommandLinkWithImage lnkAddNewProject = new AddProjectLink();
     lnkAddNewProject.setAlignX(Layout.LEFT);
     lnkAddNewProject.setAlignY(Layout.TOP);

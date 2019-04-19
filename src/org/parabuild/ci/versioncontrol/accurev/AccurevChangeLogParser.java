@@ -114,7 +114,7 @@ final class AccurevChangeLogParser {
   }
 
 
-  private byte toChangeType(final String type) {
+  private static byte toChangeType(final String type) {
     if ("add".equals(type)) {
       return Change.TYPE_ADDED;
     }

@@ -59,7 +59,7 @@ final class UpgraderToVersion27 implements SingleStepSchemaUpgrader {
   }
 
 
-  private void addBuildCountToTestStatsTable(final String tableName, final Statement st) throws SQLException {
+  private static void addBuildCountToTestStatsTable(final String tableName, final Statement st) throws SQLException {
     final String [] update = {" delete from " + tableName,
       " alter table " + tableName + " add column BUILD_COUNT integer default 0 not null ",
       " alter table " + tableName + " alter column BUILD_COUNT drop default ",

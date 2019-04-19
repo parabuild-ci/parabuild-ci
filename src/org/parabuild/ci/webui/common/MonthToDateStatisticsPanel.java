@@ -93,13 +93,13 @@ public final class MonthToDateStatisticsPanel extends MessagePanel {
   }
 
 
-  private String failedBuildstoString(final BuildStatistics bst) {
+  private static String failedBuildstoString(final BuildStatistics bst) {
     if (bst.getFailedBuilds() == 0) return "";
     return " " + bst.getFailedBuilds();
   }
 
 
-  private String successfulBuilsToString(final BuildStatistics bst) {
+  private static String successfulBuilsToString(final BuildStatistics bst) {
     if (bst.getSuccessfulBuilds() == 0) return "";
     return " " + bst.getSuccessfulBuilds();
   }

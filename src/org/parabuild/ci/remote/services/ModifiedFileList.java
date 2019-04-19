@@ -24,7 +24,7 @@ public class ModifiedFileList implements Serializable {
   private static final long serialVersionUID = -7779662857257415860L; // NOPMD
 
   private long maxTimeStamp = 0L;
-  private List files = new ArrayList();
+  private List files = new ArrayList(11);
 
 
   public ModifiedFileList() {

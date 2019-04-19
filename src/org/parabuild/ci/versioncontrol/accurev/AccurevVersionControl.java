@@ -313,7 +313,7 @@ public final class AccurevVersionControl extends AbstractSourceControl {
   }
 
 
-  private String decrypt(final String value) {
+  private static String decrypt(final String value) {
     return org.parabuild.ci.security.SecurityManager.decryptPassword(value);
   }
 }

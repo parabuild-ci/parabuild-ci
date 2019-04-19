@@ -50,7 +50,7 @@ public final class DisplayGroupListPage extends NavigatableSystemConfigurationPa
   }
 
 
-  private CommonCommandLinkWithImage makeNewDisplayGroupLink() {
+  private static CommonCommandLinkWithImage makeNewDisplayGroupLink() {
     final CommonCommandLinkWithImage lnkAddNewDisplayGroup = new AddDisplayGroupLink();
     lnkAddNewDisplayGroup.setAlignY(Layout.TOP);
     return lnkAddNewDisplayGroup;

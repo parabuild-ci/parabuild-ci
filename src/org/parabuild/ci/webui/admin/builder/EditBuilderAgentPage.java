@@ -143,7 +143,7 @@ public final class EditBuilderAgentPage extends BasePage implements Conversation
   }
 
 
-  private Result createDoneResult(final BuilderConfiguration builderConfiguration) {
+  private static Result createDoneResult(final BuilderConfiguration builderConfiguration) {
     return Result.Done(Pages.PAGE_BUILDER_DETAILS, BuilderUtils.createBuilderResultParameters(builderConfiguration.getID()));
   }
 

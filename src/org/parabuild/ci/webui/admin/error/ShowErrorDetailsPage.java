@@ -79,7 +79,7 @@ public final class ShowErrorDetailsPage extends BasePage implements StatelessTie
    *
    * @param params
    */
-  private Error getErrorFromParameters(final Parameters params) {
+  private static Error getErrorFromParameters(final Parameters params) {
     final String errorID = params.getParameterValue(Pages.PARAM_ERROR_ID);
     if (errorID == null) {
       return null;

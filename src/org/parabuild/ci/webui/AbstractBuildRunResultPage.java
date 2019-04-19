@@ -116,7 +116,7 @@ abstract class AbstractBuildRunResultPage extends BasePage {
    * @return either plain Done or Done with cache set to a year if build
    * run is complete.
    */
-  protected final Result makeDoneResult(final BuildRun buildRun) {
+  protected static Result makeDoneResult(final BuildRun buildRun) {
     final Result done = Result.Done();
     if (buildRun.completed()) {
       done.setClientCacheSeconds(Result.CACHE_SECONDS_YEAR);

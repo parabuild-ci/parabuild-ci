@@ -55,7 +55,7 @@ public final class UsersPage extends NavigatableSystemConfigurationPage implemen
   }
 
 
-  private CommonCommandLinkWithImage makeNewUserLink() {
+  private static CommonCommandLinkWithImage makeNewUserLink() {
     final CommonCommandLinkWithImage lnkAddNewUser = new AddUserLink();
     lnkAddNewUser.setAlignX(Layout.LEFT);
     lnkAddNewUser.setAlignY(Layout.TOP);

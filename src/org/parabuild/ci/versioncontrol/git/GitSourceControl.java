@@ -345,7 +345,7 @@ warning: LF will be replaced by CRLF in sourceline/alwaysvalid/src/symlinked_rea
   }
 
 
-  private boolean useUserEmailAsUserName() {
+  private static boolean useUserEmailAsUserName() {
     return SystemConfigurationManagerFactory.getManager().isUseGitUserEmail();
   }
 

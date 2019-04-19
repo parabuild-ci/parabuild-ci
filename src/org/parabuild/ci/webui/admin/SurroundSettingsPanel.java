@@ -125,7 +125,7 @@ public final class SurroundSettingsPanel extends AbstractSourceControlPanel {
    */
   protected final boolean doValidate() {
     clearMessage();
-    final ArrayList errors = new ArrayList();
+    final ArrayList errors = new ArrayList(11);
     WebuiUtils.validateFieldNotBlank(errors, NAME_SURROUND_PATH_TO_EXE, flPathToExe);
     WebuiUtils.validateFieldNotBlank(errors, NAME_SURROUND_BRANCH, flBranch);
     WebuiUtils.validateFieldNotBlank(errors, NAME_SURROUND_REPOSITORY, flRepository);

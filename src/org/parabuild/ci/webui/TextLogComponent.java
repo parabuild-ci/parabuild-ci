@@ -115,12 +115,12 @@ public final class TextLogComponent extends CustomComponent {
   }
 
 
-  private void showLogDoesNotExistMsg(final RenderContext ctx) {
+  private static void showLogDoesNotExistMsg(final RenderContext ctx) {
     ctx.getWriter().println("Requested log not found");
   }
 
 
-  private void showUnexpectedErrorMsg(final RenderContext ctx, final Exception e) {
+  private static void showUnexpectedErrorMsg(final RenderContext ctx, final Exception e) {
     try {
       final PrintWriter pw = ctx.getWriter();
       pw.println("There was an unexpected error while retrieving log");

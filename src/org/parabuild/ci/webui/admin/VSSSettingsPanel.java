@@ -136,7 +136,7 @@ public final class VSSSettingsPanel extends AbstractSourceControlPanel {
    */
   protected final boolean doValidate() {
     clearMessage();
-    final ArrayList errors = new ArrayList();
+    final ArrayList errors = new ArrayList(11);
 
     // validate fields are not blank
     WebuiUtils.validateFieldNotBlank(errors, NAME_VSS_EXE_PATH, fldPathToVSSClient);

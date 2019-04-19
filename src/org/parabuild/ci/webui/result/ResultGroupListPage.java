@@ -59,7 +59,7 @@ public final class ResultGroupListPage extends BasePage implements StatelessTier
   }
 
 
-  private CommonCommandLinkWithImage makeNewResultGroupLink() {
+  private static CommonCommandLinkWithImage makeNewResultGroupLink() {
     final CommonCommandLinkWithImage lnkAddNewResultGroup = new AddResultGroupLink();
     lnkAddNewResultGroup.setAlignY(Layout.TOP);
     return lnkAddNewResultGroup;

@@ -82,7 +82,7 @@ public final class BuildStatusesViewSwitchLink extends Flow {
   }
 
 
-  private Component makeSelector(final String caption, final String statusView, final int displayGroupID, final int activeBuildID, final boolean selected) {
+  private static Component makeSelector(final String caption, final String statusView, final int displayGroupID, final int activeBuildID, final boolean selected) {
     if (selected) {
       final CommonLabel disabledLink = new CommonLabel(caption);
       disabledLink.setFont(Pages.FONT_COMMON_MENU);

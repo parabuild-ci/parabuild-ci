@@ -616,7 +616,7 @@ public final class WebuiUtils {
 
   public static String makeResultURLPathInfo(final int buildID, final int stepResultID, final String entryName) {
     return RESULT_URL_PREFIX + buildID
-            + '/' + stepResultID + '/' + URLEncoder.encode(entryName);
+            + '/' + stepResultID + '/' + URLEncoder.encode(entryName, "UTF-8");
   }
 
 

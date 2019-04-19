@@ -1391,7 +1391,7 @@ public final class ConfigurationManager implements Serializable {
   }
 
 
-  private int saveChangeList(final ChangeList chl, final Session session) throws HibernateException {
+  private static int saveChangeList(final ChangeList chl, final Session session) throws HibernateException {
     session.saveOrUpdate(chl);
     // set synthetic change list number if necessary
     final int changeListID = chl.getChangeListID();
@@ -1613,7 +1613,7 @@ public final class ConfigurationManager implements Serializable {
   }
 
 
-  private void saveSourceControlSetting(final Session session, final int buildID, final SourceControlSetting scp) throws HibernateException {
+  private static void saveSourceControlSetting(final Session session, final int buildID, final SourceControlSetting scp) throws HibernateException {
     if (scp.getPropertyName().equals(SourceControlSetting.P4_DEPOT_PATH)) {
       // split
       final List parts = StringUtils.split(scp.getPropertyValue(), 4095);
@@ -3939,7 +3939,7 @@ public final class ConfigurationManager implements Serializable {
   }
 
 
-  private void validateIsActiveBuildID(final Session session, final int id) throws HibernateException {
+  private static void validateIsActiveBuildID(final Session session, final int id) throws HibernateException {
     final Object o = session.get(ActiveBuildConfig.class, new Integer(id));
     if (!(o instanceof ActiveBuildConfig)) {
       throw new IllegalArgumentException("Build ID '" + id + "' is not an active build");
@@ -3967,7 +3967,7 @@ public final class ConfigurationManager implements Serializable {
   }
 
 
-  private void validateIsBuildRunBuildID(final Session session, final int id) throws HibernateException {
+  private static void validateIsBuildRunBuildID(final Session session, final int id) throws HibernateException {
     final Query q = session.createQuery("select brc from BuildRunConfig brc where brc.buildID = ?");
     q.setInteger(0, id);
     if (q.uniqueResult() == null) {
@@ -4643,7 +4643,7 @@ public final class ConfigurationManager implements Serializable {
    * @return
    * @throws HibernateException
    */
-  private List getDependentParallelBuildRuns(final Session session, final int buildRunID) throws HibernateException {
+  private static List getDependentParallelBuildRuns(final Session session, final int buildRunID) throws HibernateException {
     final Query query = session.createQuery(" select br.buildRunID, br.buildName, br.dependence " +
             " from BuildRunDependence brd, BuildRun br " +
             " where brd.leadingBuildRunID = ? " +

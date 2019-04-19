@@ -105,7 +105,7 @@ public abstract class SVNChangeLogParser {
   }
 
 
-  protected final void setChangeType(final Change change, final String operation) {
+  protected static void setChangeType(final Change change, final String operation) {
     if ("M".equals(operation)) {
       change.setChangeType(Change.TYPE_MODIFIED);
     } else if ("A".equals(operation)) {

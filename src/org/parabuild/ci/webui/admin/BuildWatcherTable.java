@@ -182,7 +182,7 @@ public final class BuildWatcherTable extends AbstractFlatTable implements Valida
    * @param watcher
    * @param row
    */
-  private boolean isRowNewAndBlank(final BuildWatcher watcher, final Component[] row) {
+  private static boolean isRowNewAndBlank(final BuildWatcher watcher, final Component[] row) {
     return watcher.getBuildID() == BuildConfig.UNSAVED_ID
             && StringUtils.isBlank(((AbstractInput) row[COL_WATCH_EMAIL]).getValue());
   }

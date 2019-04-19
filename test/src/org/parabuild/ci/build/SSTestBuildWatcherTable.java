@@ -39,7 +39,7 @@ public class SSTestBuildWatcherTable extends ServersideTestCase {
    * Tests the table component constructor
    */
   public void test_populateFromEmptyList() throws Exception {
-    final List emptyList = new ArrayList();
+    final List emptyList = new ArrayList(11);
     watcherTable.populate(emptyList);
     assertEquals(watcherTable.getRowCount(), watcherTable.getWatchers().size());
   }

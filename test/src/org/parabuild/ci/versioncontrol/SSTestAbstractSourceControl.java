@@ -161,7 +161,7 @@ class MockAbstractSourceControl extends AbstractSourceControl {
    * @see org.parabuild.ci.build.BuildScriptGenerator#addVariables(java.util.Map)
    */
   public Map getShellVariables() {
-    return new HashMap();
+    return new HashMap(11);
   }
 
 

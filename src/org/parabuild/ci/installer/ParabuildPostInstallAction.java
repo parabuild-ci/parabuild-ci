@@ -72,7 +72,7 @@ public final class ParabuildPostInstallAction extends AbstractInstallAction {
   }
 
 
-  private void deleteIfExists(final File file) {
+  private static void deleteIfExists(final File file) {
     if (file.exists()) {
       file.delete();
     }

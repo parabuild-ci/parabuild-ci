@@ -121,12 +121,12 @@ public final class ResumeGroupPanel extends MessagePanel {
     final List selectionBuildIDs;
     if (Pages.RESUME_GROUP_SOURCE_BUILD_COMMANDS.equals(source)) {
       // Prepare selected
-      selectedBuildIDs = new ArrayList();
+      selectedBuildIDs = new ArrayList(11);
       if (StringUtils.isValidInteger(buildID)) {
         selectedBuildIDs.add(new Integer(buildID));
       }
       // Prepare selection
-      selectionBuildIDs = new ArrayList();
+      selectionBuildIDs = new ArrayList(11);
       final List list = BuildManager.getInstance().getCurrentBuildsStatuses();
       for (int i = 0; i < list.size(); i++) {
         final BuildState buildState = (BuildState) list.get(i);
@@ -156,12 +156,12 @@ public final class ResumeGroupPanel extends MessagePanel {
   }
 
 
-  private String getSource(final Parameters parameters) {
+  private static String getSource(final Parameters parameters) {
     return parameters.getParameterValue(Pages.PARAM_RESUME_GROUP_SOURCE);
   }
 
 
-  private void addBuildsToListBox(final List selectedBuildIDs, final ListBox listBox) {
+  private static void addBuildsToListBox(final List selectedBuildIDs, final ListBox listBox) {
     final BuildListService buildListService = ServiceManager.getInstance().getBuildListService();
     for (int i = 0; i < selectedBuildIDs.size(); i++) {
       final Integer buildID = (Integer) selectedBuildIDs.get(i);
@@ -178,12 +178,12 @@ public final class ResumeGroupPanel extends MessagePanel {
   }
 
 
-  private String getBuildID(final Parameters parameters) {
+  private static String getBuildID(final Parameters parameters) {
     return parameters.getParameterValue(Pages.PARAM_BUILD_ID);
   }
 
 
-  private String getAgentID(final Parameters parameters) {
+  private static String getAgentID(final Parameters parameters) {
     return parameters.getParameterValue(Pages.PARAM_AGENT_ID);
   }
 
@@ -328,7 +328,7 @@ public final class ResumeGroupPanel extends MessagePanel {
   /**
    * Ensures that a list is not empty.
    */
-  private void ensureNotEmpty(final ListBox lb) {
+  private static void ensureNotEmpty(final ListBox lb) {
     lb.removeItem(EMPTY);
     if (lb.isEmpty()) {
       lb.addItem(EMPTY);

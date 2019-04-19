@@ -81,7 +81,7 @@ public final class StatusFeedServlet extends HttpServlet {
   }
 
 
-  private String getFeedType(final HttpServletRequest req) {
+  private static String getFeedType(final HttpServletRequest req) {
     final String feedType = req.getParameter(FEED_TYPE);
     if (StringUtils.isBlank(feedType)) {
       return DEFAULT_FEED_TYPE;

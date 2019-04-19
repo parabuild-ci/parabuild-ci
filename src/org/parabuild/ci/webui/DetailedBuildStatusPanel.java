@@ -287,7 +287,7 @@ public final class DetailedBuildStatusPanel extends Panel {
   }
 
 
-  private Component makeLogTailOnOffSwitchLink(final int activeBuildID, final boolean currentlyShowingValue) {
+  private static Component makeLogTailOnOffSwitchLink(final int activeBuildID, final boolean currentlyShowingValue) {
 
     // make props
     final Properties props = new Properties();
@@ -309,14 +309,14 @@ public final class DetailedBuildStatusPanel extends Panel {
    * @param currentBuildState current build state.
    * @return build name and status caption.
    */
-  private String makeBuildNameAndStatusCaption(final BuildState currentBuildState) {
+  private static String makeBuildNameAndStatusCaption(final BuildState currentBuildState) {
     final String currentlyRunningOnBuildHost = currentBuildState.getCurrentlyRunningOnBuildHost();
     final String currentStatus = currentBuildState.getStatusAsString().toLowerCase() + (StringUtils.isBlank(currentlyRunningOnBuildHost) ? "" : " on " + currentlyRunningOnBuildHost);
     return WebuiUtils.getBuildName(currentBuildState) + " (" + currentStatus + ')';
   }
 
 
-  private RSSImage makeRSSImage(final BuildState currentBuildState) {
+  private static RSSImage makeRSSImage(final BuildState currentBuildState) {
     final RSSImage rssImage = new RSSImage(currentBuildState.getActiveBuildID());
     rssImage.setAlignX(Layout.RIGHT);
     return rssImage;
@@ -330,7 +330,7 @@ public final class DetailedBuildStatusPanel extends Panel {
    * @return BuildCommandsLinks
    * @see BuildCommandsLinks
    */
-  private BuildCommandsLinks makeCommandLinks(final BuildState currentBuildState) {
+  private static BuildCommandsLinks makeCommandLinks(final BuildState currentBuildState) {
     final SecuredComponentFactory scf = SecuredComponentFactory.getInstance();
     final BuildCommandsLinks result = scf.makeBuildCommandsLinks();
     result.setBuildStatus(currentBuildState);
@@ -341,7 +341,7 @@ public final class DetailedBuildStatusPanel extends Panel {
   }
 
 
-  private BuildRunResultsLinksFlow makeResultsLinks(final BuildRun buildRun) {
+  private static BuildRunResultsLinksFlow makeResultsLinks(final BuildRun buildRun) {
     final BuildRunResultsLinksFlow result = new BuildRunResultsLinksFlow();
     result.setBuildRun(buildRun, false);
     result.setPadding(4);

@@ -108,7 +108,7 @@ public final class ResetPasswordPanel extends MessagePanel implements Validatabl
    * @return true if valid
    */
   public boolean validate() {
-    final List errors = new ArrayList();
+    final List errors = new ArrayList(11);
     // preliminary checks
     WebuiUtils.validateFieldNotBlank(errors, NAME_LOGIN_NAME, nameField);
     WebuiUtils.validateFieldNotBlank(errors, NAME_EMAIL, emailField);

@@ -146,7 +146,7 @@ public final class LinuxProcessParser implements ProcessParser {
 
         List l = (List)tree.get(i_ppid);
         if (l == null) {
-          l = new ArrayList();
+          l = new ArrayList(11);
           tree.put(i_ppid, l);
         }
         l.add(i_pid);

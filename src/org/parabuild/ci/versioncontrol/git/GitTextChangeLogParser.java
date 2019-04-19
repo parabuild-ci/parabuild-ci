@@ -238,7 +238,7 @@ public final class GitTextChangeLogParser {
   }
 
 
-  private String skipEmptyLines(final BufferedReader reader) throws IOException {
+  private static String skipEmptyLines(final BufferedReader reader) throws IOException {
     String line = reader.readLine();
     while (line != null && line.trim().isEmpty()) {
       line = reader.readLine();
@@ -252,7 +252,7 @@ public final class GitTextChangeLogParser {
    *
    * @param line
    */
-  private Change parsePathLine(final String line) {
+  private static Change parsePathLine(final String line) {
     final int operationEnd = line.indexOf('\t');
     final String operation = line.substring(0, operationEnd);
     final String path = line.substring(operationEnd + 1);

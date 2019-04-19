@@ -45,7 +45,7 @@ public final class GroupsPage extends NavigatableSystemConfigurationPage impleme
   }
 
 
-  private CommonCommandLinkWithImage makeNewGroupLink() {
+  private static CommonCommandLinkWithImage makeNewGroupLink() {
     final CommonCommandLinkWithImage lnkAddNewGroup = new AddGroupLink();
     lnkAddNewGroup.setAlignY(Layout.TOP);
     return lnkAddNewGroup;

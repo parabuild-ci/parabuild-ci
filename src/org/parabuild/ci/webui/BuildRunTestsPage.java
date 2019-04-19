@@ -99,7 +99,7 @@ public final class BuildRunTestsPage extends BasePage implements StatelessTierle
     return Result.Done();
   }
 
-  private Color createHeaderForeground(final String filterString) {
+  private static Color createHeaderForeground(final String filterString) {
     if (filterString.equals(Pages.FILTER_ALL_FAILED_TESTS)) {
       return Color.DarkRed;
     } else if (filterString.equals(Pages.FILTER_NEW_FAILED_TESTS)) {
@@ -111,7 +111,7 @@ public final class BuildRunTestsPage extends BasePage implements StatelessTierle
     }
   }
 
-  private String getFilterFromParameters(final Parameters parameters) {
+  private static String getFilterFromParameters(final Parameters parameters) {
     String filter = parameters.getParameterValue(Pages.PARAM_FILTER);
     if (StringUtils.isBlank(filter)) {
       filter = Pages.FILTER_ALL_TESTS;
@@ -119,7 +119,7 @@ public final class BuildRunTestsPage extends BasePage implements StatelessTierle
     return filter;
   }
 
-  private String createTitle(final String filterString, final BuildRun buildRun) {
+  private static String createTitle(final String filterString, final BuildRun buildRun) {
     final String prefix;
     if (filterString.equals(Pages.FILTER_ALL_FAILED_TESTS)) {
       prefix = "Failed";
@@ -521,14 +521,14 @@ public final class BuildRunTestsPage extends BasePage implements StatelessTierle
 
     /**
      */
-    private Component makeNormalHeader(final String caption, final String width) {
+    private static Component makeNormalHeader(final String caption, final String width) {
       return new TableHeaderLabel(caption, width);
     }
 
 
     /**
      */
-    private TableHeaderLabel makeCenteredHeader(final String caption, final String width) {
+    private static TableHeaderLabel makeCenteredHeader(final String caption, final String width) {
       final TableHeaderLabel tableHeaderLabel = new TableHeaderLabel(caption, width);
       tableHeaderLabel.setAlignX(Layout.CENTER);
       return tableHeaderLabel;
@@ -596,7 +596,7 @@ public final class BuildRunTestsPage extends BasePage implements StatelessTierle
       }
     }
 
-    private void setRowBackground(final Component[] row, final Color colorFailure) {
+    private static void setRowBackground(final Component[] row, final Color colorFailure) {
       for (int i = 0; i < row.length; i++) {
         row[i].setBackground(colorFailure);
       }

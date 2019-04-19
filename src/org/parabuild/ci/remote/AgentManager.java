@@ -327,8 +327,8 @@ public final class AgentManager {
   }
 
 
-  private AgentHost checkoutNonUnique(final AgentHost agentHost, final List liveAgentUse,
-                                      final boolean agentHostRequired) {
+  private static AgentHost checkoutNonUnique(final AgentHost agentHost, final List liveAgentUse,
+                                             final boolean agentHostRequired) {
 
     final BuilderConfigurationManager bcm = BuilderConfigurationManager.getInstance();
 
@@ -402,8 +402,8 @@ public final class AgentManager {
   }
 
 
-  private AgentHost checkoutUnique(final AgentHost agentHost, final List liveAgentUse,
-                                   final boolean agentHostRequired) {
+  private static AgentHost checkoutUnique(final AgentHost agentHost, final List liveAgentUse,
+                                          final boolean agentHostRequired) {
 
     // Find desired
     AgentUse found = null;
@@ -868,7 +868,7 @@ public final class AgentManager {
 
       final String url = "http://" + host;
       final String catalinaBase = System.getProperty("catalina.base");
-      final String war = new File(catalinaBase, "app/parabuild.war").toURL().toExternalForm();
+      final String war = new File(catalinaBase, "app/parabuild.war").toURI().toURL().toExternalForm();
 
       IOException lastError = null;
       final int attemptCount = 3;

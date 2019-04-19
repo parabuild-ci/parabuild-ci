@@ -103,7 +103,7 @@ niutil -appendprop / /groups/admin users username
   }
 
 
-  private void execCmd(final String cmd) throws IOException {
+  private static void execCmd(final String cmd) throws IOException {
     try {
       final OutputStream stdout = new NullOutputStream();
       final OutputStream stderr = new NullOutputStream();
@@ -117,7 +117,7 @@ niutil -appendprop / /groups/admin users username
   /**
    * @return true if our user exists
    */
-  private boolean isUserExists(final String user) throws IOException {
+  private static boolean isUserExists(final String user) throws IOException {
     boolean userFound = false;
     BufferedReader br = null;
     try {
@@ -139,7 +139,7 @@ niutil -appendprop / /groups/admin users username
   /**
    * @return true if our group exists
    */
-  private boolean isGroupExists(final String group) throws IOException {
+  private static boolean isGroupExists(final String group) throws IOException {
     boolean groupFound = false;
     BufferedReader br = null;
     try {

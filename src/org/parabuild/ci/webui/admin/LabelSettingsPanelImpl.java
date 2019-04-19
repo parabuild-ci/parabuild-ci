@@ -101,7 +101,7 @@ public final class LabelSettingsPanelImpl extends LabelSettingsPanel {
    */
   public boolean validate() {
     super.clearMessage();
-    final List errors = new ArrayList();
+    final List errors = new ArrayList(11);
 
     if (rbNoLabel.isSelected()) return true;
 
@@ -245,7 +245,7 @@ public final class LabelSettingsPanelImpl extends LabelSettingsPanel {
    *
    * @return null if undefined
    */
-  private LabelProperty getLabelTypeFromList(final List settings) {
+  private static LabelProperty getLabelTypeFromList(final List settings) {
     for (final Iterator iter = settings.iterator(); iter.hasNext();) {
       final LabelProperty lp = (LabelProperty)iter.next();
       if (lp.getPropertyName().equals(LabelProperty.LABEL_TYPE)) {

@@ -130,7 +130,7 @@ public final class StarTeamSettingsPanel extends AbstractSourceControlPanel {
    */
   protected final boolean doValidate() {
     clearMessage();
-    final ArrayList errors = new ArrayList();
+    final ArrayList errors = new ArrayList(11);
     WebuiUtils.validateFieldNotBlank(errors, CAPTION_PATH_TO_EXE, flPathToExe);
     WebuiUtils.validateFieldNotBlank(errors, CAPTION_PROJECT_PATH, flProjectPath);
     WebuiUtils.validateFieldNotBlank(errors, CAPTION_USER, flUser);

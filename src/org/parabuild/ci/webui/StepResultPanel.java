@@ -92,7 +92,7 @@ public final class StepResultPanel extends Panel {
   }
 
 
-  private void reportArchiveReadingError(final IOException e) {
+  private static void reportArchiveReadingError(final IOException e) {
     final Error error = new Error("Unexcpected IO error while reading arhive: " + StringUtils.toString(e));
     error.setSendEmail(false);
     error.setErrorLevel(Error.ERROR_LEVEL_WARNING);
@@ -102,7 +102,7 @@ public final class StepResultPanel extends Panel {
   }
 
 
-  private void reportUnknownPathType(final byte pathType, final int activeBuildID) {
+  private static void reportUnknownPathType(final byte pathType, final int activeBuildID) {
     final Error error = new Error("Unknown result path type: " + pathType);
     error.setSendEmail(false);
     error.setErrorLevel(Error.ERROR_LEVEL_WARNING);

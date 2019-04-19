@@ -64,7 +64,7 @@ public final class P4ClientViewLine implements Serializable {
    * @param path
    * @return path without redundant double slashes.
    */
-  private String removeUneededDoubleSlashes(final String path) {
+  private static String removeUneededDoubleSlashes(final String path) {
     final int begin;
     if (path.startsWith(DOUBLE_SLASH)) {
       begin = DOUBLE_SLASH_LENGTH;

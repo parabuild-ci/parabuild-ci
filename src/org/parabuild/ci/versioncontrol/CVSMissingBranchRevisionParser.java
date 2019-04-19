@@ -13,11 +13,19 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.io.*;
-import java.util.*;
-import org.apache.commons.logging.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.IoUtils;
+import org.parabuild.ci.common.StringUtils;
 
-import org.parabuild.ci.common.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Parses CVS stderr to find revisions missing in the branch.
@@ -52,7 +60,7 @@ final class CVSMissingBranchRevisionParser {
       // pre-check
       if (StringUtils.isBlank(branchName) || cvsStderrFile == null
         || !cvsStderrFile.exists() || cvsStderrFile.length() == 0) {
-        return new HashMap();
+        return new HashMap(11);
       }
 
       // parse
@@ -76,7 +84,7 @@ final class CVSMissingBranchRevisionParser {
 
     // check if processing is needed
     if (StringUtils.isBlank(branchName) || cvsStderr == null) {
-      return new HashMap(); // return empty result
+      return new HashMap(11); // return empty result
     }
 
     // preExecute

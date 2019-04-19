@@ -326,15 +326,15 @@ public final class P4Merger implements Merger {
    * @throws BuildException
    * @throws ValidationException
    */
-  private void syncToChangeListCleanly(final P4SourceControl perforce, final String clientName, final Agent agent, final ChangeList changeListToSync) throws IOException, CommandStoppedException, BuildException, ValidationException, AgentFailureException {// revert, just to be on the safe side
+  private static void syncToChangeListCleanly(final P4SourceControl perforce, final String clientName, final Agent agent, final ChangeList changeListToSync) throws IOException, CommandStoppedException, BuildException, ValidationException, AgentFailureException {// revert, just to be on the safe side
     perforce.revert(clientName);
     agent.deleteCheckoutDir();
     perforce.syncToChangeList(changeListToSync.getChangeListID(), clientName);
   }
 
 
-  private ChangeListMergeResult mergeChangeList(final ChangeList changeList, final P4SourceControl perforce,
-                                                final String clientName, final BranchMergeConfiguration mergeConfiguration)
+  private static ChangeListMergeResult mergeChangeList(final ChangeList changeList, final P4SourceControl perforce,
+                                                       final String clientName, final BranchMergeConfiguration mergeConfiguration)
           throws IOException, CommandStoppedException, BuildException, ValidationException, AgentFailureException {
 
     final String changeListNumberToIntegrate = changeList.getNumber();
@@ -380,7 +380,7 @@ public final class P4Merger implements Merger {
   }
 
 
-  private int runValidationBuild(final int targetBuildConfigurationID, final BuildRun lastCleanBuildRun, final P4SourceControl perforce, final Agent agent) {
+  private static int runValidationBuild(final int targetBuildConfigurationID, final BuildRun lastCleanBuildRun, final P4SourceControl perforce, final Agent agent) {
     final BuildRunner buildRunner = new BuildRunner(targetBuildConfigurationID, new DummyNotificationManager(), new MergerBuildRunnerVersionControlFactory(perforce), new MergerAgentFactory(agent));
     final BuildStartRequest buildStartRequest = new BuildStartRequest();
     buildStartRequest.setCleanCheckout(false);
@@ -390,7 +390,7 @@ public final class P4Merger implements Merger {
   }
 
 
-  private void setMergeChangeListResult(final MergeChangeList mergeChangeList, final byte resultCode, final String description) {
+  private static void setMergeChangeListResult(final MergeChangeList mergeChangeList, final byte resultCode, final String description) {
     mergeChangeList.setResultCode(resultCode);
     mergeChangeList.setMergeResultDescription(description);
     MergeDAO.getInstance().save(mergeChangeList);
@@ -416,7 +416,7 @@ public final class P4Merger implements Merger {
   /**
    * Helper method.
    */
-  private void reportErrorWhileProcessingMergeQueue(final Exception e) {
+  private static void reportErrorWhileProcessingMergeQueue(final Exception e) {
     final Error error = new Error("Error while processing merge queue element: " + StringUtils.toString(e), e);
     error.setSubsystemName(Error.ERROR_SUBSYSTEM_MERGE);
     error.setSendEmail(true);

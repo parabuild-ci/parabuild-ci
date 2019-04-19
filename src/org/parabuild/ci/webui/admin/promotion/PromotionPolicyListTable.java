@@ -107,7 +107,7 @@ final class PromotionPolicyListTable extends AbstractFlatTable {
   }
 
 
-  private Properties makeParameters(final int promotionID) {
+  private static Properties makeParameters(final int promotionID) {
     final Properties params = new Properties();
     params.setProperty(Pages.PARAM_PROMOTION_POLICY_ID, Integer.toString(promotionID));
     return params;

@@ -180,7 +180,7 @@ public final class BuildHistoryTable extends AbstractFlatTable {
     }
 
 
-    private boolean isYoungerThanHour(final BuildRun buildRun) {
+    private static boolean isYoungerThanHour(final BuildRun buildRun) {
       if (buildRun.getFinishedAt() == null) {
         return false;
       }
@@ -189,7 +189,7 @@ public final class BuildHistoryTable extends AbstractFlatTable {
     }
 
 
-    private Properties createParameters(final String buildRunIDAsString) {
+    private static Properties createParameters(final String buildRunIDAsString) {
       final Properties result = new Properties();
       result.setProperty(Pages.PARAM_BUILD_RUN_ID, buildRunIDAsString);
       return result;

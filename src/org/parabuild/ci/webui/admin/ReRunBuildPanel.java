@@ -235,7 +235,7 @@ public final class ReRunBuildPanel extends MessagePanel {
    */
   private List getStartParamterList() {
     if (pnlParameters == null) {
-      return new ArrayList();
+      return new ArrayList(11);
     }
     return pnlParameters.getStartParameterList();
   }

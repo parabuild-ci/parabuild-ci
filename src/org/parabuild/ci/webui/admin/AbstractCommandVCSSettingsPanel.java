@@ -13,12 +13,16 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import java.util.*;
-import org.apache.commons.logging.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.object.SourceControlSetting;
+import org.parabuild.ci.webui.common.CommonField;
+import org.parabuild.ci.webui.common.CommonFieldLabel;
+import org.parabuild.ci.webui.common.GridIterator;
+import org.parabuild.ci.webui.common.WebUIConstants;
+import viewtier.ui.Field;
 
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import java.util.ArrayList;
 
 /**
  */
@@ -108,7 +112,7 @@ public abstract class AbstractCommandVCSSettingsPanel extends AbstractSourceCont
    */
   protected final boolean doValidate() {
     clearMessage();
-    final ArrayList errors = new ArrayList();
+    final ArrayList errors = new ArrayList(11);
     validateHeader(errors);
 
     // TODO: add validating path(s)

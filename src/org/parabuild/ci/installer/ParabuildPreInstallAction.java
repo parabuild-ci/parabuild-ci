@@ -121,7 +121,7 @@ public final class ParabuildPreInstallAction extends AbstractInstallAction imple
   }
 
 
-  private void upgradeDatabaseVersion(final InstallerContext ctx, final File databaseDirectory) throws IOException {
+  private static void upgradeDatabaseVersion(final InstallerContext ctx, final File databaseDirectory) throws IOException {
     ctx.getProgressInterface().setStatusMessage("Upgrading Database Engine...");
     final HSQLDBUpgraderFrom17To18 hsqldbUpgraderFrom17To18 = new HSQLDBUpgraderFrom17To18();
     hsqldbUpgraderFrom17To18.upgrade(databaseDirectory);
@@ -173,7 +173,7 @@ public final class ParabuildPreInstallAction extends AbstractInstallAction imple
   }
 
 
-  private UserCanceledException makeUserCancelledException(final Exception e) {
+  private static UserCanceledException makeUserCancelledException(final Exception e) {
     // Get the stack trace
     final ByteArrayOutputStream baos = new ByteArrayOutputStream();
     final PrintStream pos = new PrintStream(baos);
@@ -198,7 +198,7 @@ public final class ParabuildPreInstallAction extends AbstractInstallAction imple
   }
 
 
-  private File makeDatabaseDirectoryPath(final File installationDirectory) {
+  private static File makeDatabaseDirectoryPath(final File installationDirectory) {
     return new File(installationDirectory, "etc/data");
   }
 

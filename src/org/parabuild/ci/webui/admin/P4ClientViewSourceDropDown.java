@@ -73,7 +73,7 @@ final class P4ClientViewSourceDropDown extends CodeNameDropDown {
   }
 
 
-  private void setVisible(final Set components, final boolean visible) {
+  private static void setVisible(final Set components, final boolean visible) {
     for (final Iterator j = components.iterator(); j.hasNext();) {
       ((Component) j.next()).setVisible(visible);
     }
@@ -94,9 +94,9 @@ final class P4ClientViewSourceDropDown extends CodeNameDropDown {
   /**
    * Sets selected code
    */
-  public void setCode(final byte code) {
+  public void setCode(final int code) {
     super.setCode(code);
-    processCodeSelection(code);
+    processCodeSelection((byte)code);
   }
 
 

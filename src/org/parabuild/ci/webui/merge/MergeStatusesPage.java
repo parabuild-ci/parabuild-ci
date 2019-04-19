@@ -263,7 +263,7 @@ public class MergeStatusesPage extends BasePage implements ConversationalTierlet
   /**
    * REVIEWME: simeshev@parabuilci.org -> replace with
    */
-  private int getValidDisplayGroupID(final int groupID) {
+  private static int getValidDisplayGroupID(final int groupID) {
     // System?
     if (groupID == DisplayGroup.DISPLAY_GROUP_ID_ALL
             || groupID == DisplayGroup.DISPLAY_GROUP_ID_BROKEN
@@ -336,7 +336,7 @@ public class MergeStatusesPage extends BasePage implements ConversationalTierlet
   /**
    * Marks session that user views merge statuses as a list.
    */
-  private void markSessionAsListView(final HttpSession sessn) {
+  private static void markSessionAsListView(final HttpSession sessn) {
     sessn.setAttribute(ATTR_MERGE_STATUS_VIEW, Pages.STATUS_VIEW_LIST);
   }
 
@@ -345,13 +345,13 @@ public class MergeStatusesPage extends BasePage implements ConversationalTierlet
    * Marks session that user views merge statuses as a single
    * merge.
    */
-  private void markSessionDetailedView(final HttpSession sessn, final int mergeID) {
+  private static void markSessionDetailedView(final HttpSession sessn, final int mergeID) {
     sessn.setAttribute(ATTR_DETAILED_MERGE_ID, new Integer(mergeID));
     sessn.setAttribute(ATTR_MERGE_STATUS_VIEW, Pages.STATUS_VIEW_DETAILED);
   }
 
 
-  private void markSessionAsDashboard(final HttpSession session) {
+  private static void markSessionAsDashboard(final HttpSession session) {
     session.setAttribute(ATTR_MERGE_STATUS_VIEW, Pages.STATUS_VIEW_DASHBOARD);
   }
 
@@ -394,7 +394,7 @@ public class MergeStatusesPage extends BasePage implements ConversationalTierlet
    * Returns status view selection, if any, based on
    * parameters, the session or the cookie.
    */
-  private String getStatusView(final Parameters params, final HttpServletRequest request) {
+  private static String getStatusView(final Parameters params, final HttpServletRequest request) {
     final HttpSession session = request.getSession();
     String statusView = params.getParameterValue(Pages.PARAM_STATUS_VIEW);
 

@@ -1345,7 +1345,7 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
   }
 
 
-  private boolean updateConfigurationDepotViewSpec(final StringBuffer depotViewSpec) {
+  private void updateConfigurationDepotViewSpec(final StringBuffer depotViewSpec) {
     final ConfigurationManager cm = ConfigurationManager.getInstance();
     SourceControlSetting scs = cm.getSourceControlSetting(activeBuildID, SourceControlSetting.P4_DEPOT_PATH);
     if (scs == null) {
@@ -1354,20 +1354,17 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
       }
       scs = new SourceControlSetting(activeBuildID, SourceControlSetting.P4_DEPOT_PATH, depotViewSpec.toString());
       cm.save(scs);
-      return true;
     } else {
       if (scs.getPropertyValue().equals(depotViewSpec.toString())) {
         if (log.isDebugEnabled()) {
           log.debug("no update is needed from depot path obtained from perforce location ");
         }
-        return false;
       } else {
         if (log.isDebugEnabled()) {
           log.debug("updating depot path obtained from perforce location ");
         }
         scs.setPropertyValue(depotViewSpec.toString());
         cm.save(scs);
-        return true;
       }
     }
   }

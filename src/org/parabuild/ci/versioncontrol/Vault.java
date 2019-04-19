@@ -70,7 +70,7 @@ public class Vault {
    */
   public static class History {
 
-    private List items = new ArrayList();
+    private List items = new ArrayList(11);
 
 
     public void addItem(final Item item) {

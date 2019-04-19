@@ -183,21 +183,21 @@ public final class CleanupAllInactiveWorkspacesPage extends BasePage implements 
   }
 
 
-  private Component makeSuccessLabel(final String buildName, final String checkoutDirName) {
+  private static Component makeSuccessLabel(final String buildName, final String checkoutDirName) {
     final BoldCommonLabel label = new BoldCommonLabel("Build " + buildName + ": Successfuly deleted directory " + checkoutDirName);
     label.setForeground(Color.Green);
     return label;
   }
 
 
-  private Component makeFailureLabel(final String buildName, final String checkoutDirName) {
+  private static Component makeFailureLabel(final String buildName, final String checkoutDirName) {
     final BoldCommonLabel label = new BoldCommonLabel("Build " + buildName + ": Could not delete directory " + checkoutDirName);
     label.setForeground(Color.Red);
     return label;
   }
 
 
-  private BoldCommonLabel makeExceptionLabel(final String buildName, final Exception e) {
+  private static BoldCommonLabel makeExceptionLabel(final String buildName, final Exception e) {
     final BoldCommonLabel lbError = new BoldCommonLabel("Build " + buildName + ": Error while deleting: " + StringUtils.toString(e));
     lbError.setForeground(Color.Red);
     return lbError;

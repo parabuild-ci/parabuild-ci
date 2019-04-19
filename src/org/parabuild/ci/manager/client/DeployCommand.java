@@ -87,7 +87,7 @@ public final class DeployCommand extends AgentCommand {
     final URLConnection conn = url.openConnection();
     final int contentLength = conn.getContentLength();
     final BufferedInputStream stream = new BufferedInputStream(conn.getInputStream(), 1024);
-    execute("/deploy?path=" + URLEncoder.encode(this.path), stream, "application/octet-stream", contentLength);
+    execute("/deploy?path=" + URLEncoder.encode(this.path, "UTF-8"), stream, "application/octet-stream", contentLength);
   }
 
 

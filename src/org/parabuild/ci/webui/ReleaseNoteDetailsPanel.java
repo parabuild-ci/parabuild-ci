@@ -61,13 +61,13 @@ public final class ReleaseNoteDetailsPanel extends MessagePanel {
   }
 
 
-  private String formatIfNotNull(final Date date, final String dateFormat) {
+  private static String formatIfNotNull(final Date date, final String dateFormat) {
     if (date == null) return "";
     return StringUtils.formatDate(date, dateFormat);
   }
 
 
-  private void addIfValueNotBlank(final GridIterator gi, final String caption, final String value) {
+  private static void addIfValueNotBlank(final GridIterator gi, final String caption, final String value) {
     if (StringUtils.isBlank(value)) return;
     gi.addPair(new CommonSummaryLabel(caption), new BoldCommonLabel(value));
   }

@@ -153,7 +153,7 @@ public final class BuildConfigCloner {
   /**
    * Starts new build service.
    */
-  private void startNewBuildService() {
+  private static void startNewBuildService() {
     final BuildListService buildListService = ServiceManager.getInstance().getBuildListService();
     buildListService.notifyConfigurationsChanged();
   }

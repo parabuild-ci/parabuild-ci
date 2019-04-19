@@ -227,8 +227,8 @@ public class DashboardStatusesPanel extends Panel {
     }
 
 
-    private void addCaptionAndBuild(final BuildState state, final GridIterator gi,
-                                    final String dateTimeFormat, final String caption, final Color bgColor, final Color borderColor) {
+    private static void addCaptionAndBuild(final BuildState state, final GridIterator gi,
+                                           final String dateTimeFormat, final String caption, final Color bgColor, final Color borderColor) {
       final BoldCommonLabel label = new BoldCommonLabel(caption);
       label.setWidth(35);
       label.setHeight(35);

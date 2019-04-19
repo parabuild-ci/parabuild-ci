@@ -113,7 +113,7 @@ public class P4BranchViewToClientViewTransformer {
   }
 
 
-  private String normalize(final StringBuffer view) throws ValidationException {
+  private static String normalize(final StringBuffer view) throws ValidationException {
     final StringBuilder result = new StringBuilder(500);
     final P4ClientViewParser clientViewParser = new P4ClientViewParser(true);
     final P4ClientView p4ClientView = clientViewParser.parse(DUMMY_RELATIVE_DIR, view.toString());

@@ -91,7 +91,7 @@ public final class BuilderDetailsPage extends NavigatableSystemConfigurationPage
   }
 
 
-  private Label createFiller() {
+  private static Label createFiller() {
     final Label resut = new Label();
     resut.setWidth("3%");
     return resut;
