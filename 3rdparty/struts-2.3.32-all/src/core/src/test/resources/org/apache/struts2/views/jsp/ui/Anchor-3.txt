@@ -1,5 +1,0 @@
-<a
- id="mylink"
- href="a"
- placeholder="bar">
-</a>
