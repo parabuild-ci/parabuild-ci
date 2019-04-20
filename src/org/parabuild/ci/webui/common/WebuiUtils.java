@@ -54,6 +54,7 @@ import viewtier.ui.TierletContext;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Date;
@@ -615,8 +616,12 @@ public final class WebuiUtils {
 
 
   public static String makeResultURLPathInfo(final int buildID, final int stepResultID, final String entryName) {
-    return RESULT_URL_PREFIX + buildID
-            + '/' + stepResultID + '/' + URLEncoder.encode(entryName, "UTF-8");
+    try {
+      return RESULT_URL_PREFIX + buildID
+              + '/' + stepResultID + '/' + URLEncoder.encode(entryName, "UTF-8");
+    } catch (final UnsupportedEncodingException e) {
+      throw new IllegalStateException("Shouldn't happen, but did: " + e, e);
+    }
   }
 
 
@@ -624,7 +629,7 @@ public final class WebuiUtils {
    * Composes a URL to build result used to send build results
    * notifications.
    */
-  public static String makeBuildResultURL(final int buildID, final int stepResultID, final String entryName) {
+  public static String makeBuildResultURL(final int buildID, final int stepResultID, final String entryName)  {
     final String hostName = SystemConfigurationManagerFactory.getManager().getBuildManagerProtocolHostAndPort();
     final String pathInfo = makeResultURLPathInfo(buildID, stepResultID, entryName);
     return hostName + pathInfo;

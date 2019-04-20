@@ -75,7 +75,7 @@ public class MercurialVersionControl extends AbstractSourceControl {
     currentSettings = ConfigurationManager.settingsListToMap(settings);
   }
 
-  public boolean isBuildDirInitialized() throws IOException, BuildException, AgentFailureException {
+  public boolean isBuildDirInitialized() throws IOException, AgentFailureException {
 
     final Agent agent = getCheckoutDirectoryAwareAgent();
     return agent.fileRelativeToCheckoutDirExists(getRelativeBuildDir());

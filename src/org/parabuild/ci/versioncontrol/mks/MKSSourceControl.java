@@ -172,7 +172,7 @@ public class MKSSourceControl extends AbstractSourceControl {
   }
 
 
-  private void createSandboxIfNecessary() throws IOException, BuildException, CommandStoppedException, AgentFailureException {
+  private void createSandboxIfNecessary() throws IOException, CommandStoppedException, AgentFailureException {
     if (!isBuildDirInitialized()) {
       final Agent agent = getCheckoutDirectoryAwareAgent();
       for (final Iterator i = getProjects().iterator(); i.hasNext();) {
