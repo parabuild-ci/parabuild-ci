@@ -493,7 +493,7 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
    * @see BuildScriptGenerator#addVariables(Map)
    */
   public Map getShellVariables() {
-    return Collections.EMPTY_MAP;
+    return Collections.emptyMap();
   }
 
 

@@ -308,7 +308,7 @@ public class MercurialVersionControl extends AbstractSourceControl {
 
 
   public Map getUsersMap() {
-    return Collections.EMPTY_MAP;
+    return Collections.emptyMap();
   }
 
 
@@ -341,7 +341,7 @@ public class MercurialVersionControl extends AbstractSourceControl {
    * This implementation returns an empty map.
    */
   public Map getShellVariables() {
-    return Collections.EMPTY_MAP;
+    return Collections.emptyMap();
   }
 
 

@@ -336,7 +336,7 @@ final class PVCSSourceControl extends AbstractSourceControl {
    * @see ErrorManager
    */
   public Map getUsersMap() {
-    return Collections.EMPTY_MAP;
+    return Collections.emptyMap();
   }
 
 
@@ -381,7 +381,7 @@ final class PVCSSourceControl extends AbstractSourceControl {
    * @see BuildScriptGenerator#addVariables(Map)
    */
   public Map getShellVariables() {
-    return Collections.EMPTY_MAP;
+    return Collections.emptyMap();
   }
 
 

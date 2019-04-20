@@ -115,4 +115,10 @@ public final class ResultRetentionHandler extends AbstractArchiveRetentionHandle
       }
     });
   }
+
+
+  @Override
+  public String toString() {
+    return "ResultRetentionHandler{} " + super.toString();
+  }
 }

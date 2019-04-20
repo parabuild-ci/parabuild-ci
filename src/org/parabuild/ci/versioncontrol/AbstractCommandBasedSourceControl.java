@@ -13,16 +13,8 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Collections;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.build.BuildScriptGenerator;
 import org.parabuild.ci.common.BuildException;
@@ -35,6 +27,13 @@ import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.ChangeList;
 import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.remote.Agent;
+
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Collections;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by simeshev on May 3, 2006 at 3:54:01 PM
@@ -254,7 +253,7 @@ public abstract class AbstractCommandBasedSourceControl extends AbstractSourceCo
    * @see ErrorManager
    */
   public final Map getUsersMap() {
-    return Collections.EMPTY_MAP;
+    return Collections.emptyMap();
   }
 
 
@@ -267,7 +266,7 @@ public abstract class AbstractCommandBasedSourceControl extends AbstractSourceCo
    * @see BuildScriptGenerator#addVariables(Map)
    */
   public final Map getShellVariables() {
-    return Collections.EMPTY_MAP;
+    return Collections.emptyMap();
   }
 
 

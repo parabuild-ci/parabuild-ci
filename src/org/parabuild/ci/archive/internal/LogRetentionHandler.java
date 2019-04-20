@@ -104,4 +104,12 @@ public final class LogRetentionHandler extends AbstractArchiveRetentionHandler {
       }
     });
   }
+
+
+  @Override
+  public String toString() {
+    return "LogRetentionHandler{" +
+            "cm=" + cm +
+            "} " + super.toString();
+  }
 }

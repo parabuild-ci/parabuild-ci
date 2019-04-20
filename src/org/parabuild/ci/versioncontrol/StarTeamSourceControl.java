@@ -380,7 +380,7 @@ public class StarTeamSourceControl extends AbstractSourceControl {
    * @see ErrorManager
    */
   public Map getUsersMap() {
-    return Collections.EMPTY_MAP;
+    return Collections.emptyMap();
   }
 
 
@@ -425,7 +425,7 @@ public class StarTeamSourceControl extends AbstractSourceControl {
    * @see BuildScriptGenerator#addVariables(Map)
    */
   public Map getShellVariables() {
-    return Collections.EMPTY_MAP;
+    return Collections.emptyMap();
   }
 
 

@@ -606,7 +606,7 @@ final class ClearCaseSourceControl extends AbstractSourceControl {
    * @see ErrorManager
    */
   public Map getUsersMap() {
-    return Collections.EMPTY_MAP; // no user details are provided by ClearCase
+    return Collections.emptyMap(); // no user details are provided by ClearCase
   }
 
 
@@ -655,7 +655,7 @@ final class ClearCaseSourceControl extends AbstractSourceControl {
    * @see BuildScriptGenerator#addVariables(Map)
    */
   public Map getShellVariables() {
-    return Collections.EMPTY_MAP;
+    return Collections.emptyMap();
   }
 
 

@@ -958,7 +958,7 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
     } finally {
       cleanup(command);
     }
-    return Collections.EMPTY_MAP; // return empty hashmap
+    return Collections.emptyMap(); // return empty hashmap
   }
 
 

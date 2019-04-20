@@ -35,6 +35,6 @@ public final class SATestNamedPropertyUtils extends TestCase {
 
 
   public void testReplaceProperties() throws Exception {
-    assertEquals(SHOULD_NOT_CHANGE, NamedPropertyUtils.replaceProperties(SHOULD_NOT_CHANGE, Collections.EMPTY_MAP));
+    assertEquals(SHOULD_NOT_CHANGE, NamedPropertyUtils.replaceProperties(SHOULD_NOT_CHANGE, Collections.emptyMap()));
   }
 }
