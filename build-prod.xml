@@ -51,8 +51,12 @@
       <fileset file="${project.home}/conf/log4j2.xml"/>
     </copy>
 
-    <!-- Copy tomcat config files -->
+    <!-- Copy tomcat config file -->
     <mkdir dir="${build.dir.tomcat}/etc/conf"/>
+    <copy file="${config}/server.xml" todir="${build.dir.tomcat}/etc/conf" filtering="on"/>
+
+    <!-- Copy tomcat global web.xml because Parabuild changes catalina.base to /etc -->
+    <copy file="${tomcat.home}/conf/web.xml" todir="${build.dir.tomcat}/etc/conf" filtering="on"/>
 
     <!-- Initialize Tomcat's temp directory -->
     <mkdir dir="${build.dir.tomcat}/etc/temp"/>
@@ -464,6 +468,7 @@
       <arg value="${war.staging}"/>
       <!-- Additional arguments like -style PRETTY or -logLevel DEBUG -->
       <arg line="-style PRETTY"/>
+      <arg line="-localWorkers 10"/>
       <arg value="org.parabuild.ci.webui.repository.Repository"/>
     </java>
   </target>
