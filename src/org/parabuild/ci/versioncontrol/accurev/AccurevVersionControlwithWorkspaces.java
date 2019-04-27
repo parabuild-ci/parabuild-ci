@@ -326,7 +326,7 @@ public final class AccurevVersionControlwithWorkspaces extends AbstractSourceCon
 
 
   public Map getUsersMap() {
-    return Collections.EMPTY_MAP;
+    return Collections.emptyMap();
   }
 
 
@@ -358,7 +358,7 @@ public final class AccurevVersionControlwithWorkspaces extends AbstractSourceCon
    * {@inheritDoc}
    */
   public Map getShellVariables() {
-    return Collections.EMPTY_MAP;
+    return Collections.emptyMap();
   }
 
 

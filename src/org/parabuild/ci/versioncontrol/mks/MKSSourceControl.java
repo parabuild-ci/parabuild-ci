@@ -172,7 +172,7 @@ public class MKSSourceControl extends AbstractSourceControl {
   }
 
 
-  private void createSandboxIfNecessary() throws IOException, BuildException, CommandStoppedException, AgentFailureException {
+  private void createSandboxIfNecessary() throws IOException, CommandStoppedException, AgentFailureException {
     if (!isBuildDirInitialized()) {
       final Agent agent = getCheckoutDirectoryAwareAgent();
       for (final Iterator i = getProjects().iterator(); i.hasNext();) {
@@ -389,7 +389,7 @@ public class MKSSourceControl extends AbstractSourceControl {
    * @see ErrorManager
    */
   public Map getUsersMap() {
-    return Collections.EMPTY_MAP;
+    return Collections.emptyMap();
   }
 
 
@@ -439,7 +439,7 @@ public class MKSSourceControl extends AbstractSourceControl {
    * @see BuildScriptGenerator#addVariables(Map)
    */
   public Map getShellVariables() {
-    return Collections.EMPTY_MAP;
+    return Collections.emptyMap();
   }
 
 

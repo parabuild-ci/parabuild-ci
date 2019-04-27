@@ -307,7 +307,7 @@ public class SSTestVaultSourceControl extends AbstractSourceControlTest {
 
 
   public void test_getUsersMap() throws Exception {
-    assertEquals(Collections.EMPTY_MAP, vault.getUsersMap());
+    assertEquals(Collections.emptyMap(), vault.getUsersMap());
   }
 
 

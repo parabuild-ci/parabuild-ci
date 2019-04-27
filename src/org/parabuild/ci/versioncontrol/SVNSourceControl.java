@@ -312,7 +312,7 @@ final class SVNSourceControl extends AbstractSourceControl {
    * @see ErrorManager
    */
   public Map getUsersMap() {
-    return Collections.EMPTY_MAP; // we currently don't support e-mails for SVN.
+    return Collections.emptyMap(); // we currently don't support e-mails for SVN.
   }
 
 

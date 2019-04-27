@@ -73,7 +73,7 @@ public final class BazaarVersionControl extends AbstractSourceControl {
   /**
    * {@inheritDoc}
    */
-  public boolean isBuildDirInitialized() throws IOException, BuildException, AgentFailureException {
+  public boolean isBuildDirInitialized() throws IOException, AgentFailureException {
     boolean result = true;
 
     // Basic check
@@ -303,7 +303,7 @@ public final class BazaarVersionControl extends AbstractSourceControl {
 
 
   public Map getUsersMap() {
-    return Collections.EMPTY_MAP;
+    return Collections.emptyMap();
   }
 
 
@@ -331,7 +331,7 @@ public final class BazaarVersionControl extends AbstractSourceControl {
    * This implementation returns an empty map.
    */
   public Map getShellVariables() {
-    return Collections.EMPTY_MAP;
+    return Collections.emptyMap();
   }
 
 

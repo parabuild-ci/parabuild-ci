@@ -263,7 +263,7 @@ public class SSTestRecepientListComposer extends ServersideTestCase {
     final BuildRun buildRun = cm.getBuildRun(3);
     final BuildRunAttribute bra = new BuildRunAttribute(buildRun.getBuildRunID(), BuildRunAttribute.ATTR_STARTED_USER_ID, "3");
     cm.saveObject(bra);
-    final EmailRecipients emailRecipients = composer.makeRecipients(buildRun, Collections.EMPTY_MAP, false, true, false, true, BuildWatcher.LEVEL_BROKEN);
+    final EmailRecipients emailRecipients = composer.makeRecipients(buildRun, Collections.emptyMap(), false, true, false, true, BuildWatcher.LEVEL_BROKEN);
     assertEquals(3, emailRecipients.getAllAddresses().size());
     // NOTE: vimeshev - 2006-02-22 - this may break if returned list is ordered differently
     assertEquals("test@email", ((InternetAddress) emailRecipients.getAllAddresses().get(1)).getAddress());
@@ -281,11 +281,11 @@ public class SSTestRecepientListComposer extends ServersideTestCase {
     composer.addSourceControlUser("test2");
 
     // says filter is ignored
-    EmailRecipients emailRecipients = composer.makeRecipients(buildRun, Collections.EMPTY_MAP, false, false, false, true, BuildWatcher.LEVEL_BROKEN);
+    EmailRecipients emailRecipients = composer.makeRecipients(buildRun, Collections.emptyMap(), false, false, false, true, BuildWatcher.LEVEL_BROKEN);
     assertEquals(3, emailRecipients.getAllAddresses().size());
 
     // says filter is considered
-    emailRecipients = composer.makeRecipients(buildRun, Collections.EMPTY_MAP, false, true, false, true, BuildWatcher.LEVEL_BROKEN);
+    emailRecipients = composer.makeRecipients(buildRun, Collections.emptyMap(), false, true, false, true, BuildWatcher.LEVEL_BROKEN);
     assertEquals(0, emailRecipients.getAllAddresses().size());
   }
 

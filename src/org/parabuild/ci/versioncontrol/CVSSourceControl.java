@@ -624,7 +624,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
       IoUtils.deleteFileHard(fileToParse);
       cleanup(command);
     }
-    return Collections.EMPTY_MAP;
+    return Collections.emptyMap();
   }
 
 

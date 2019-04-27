@@ -247,7 +247,7 @@ public final class AccurevVersionControl extends AbstractSourceControl {
 
 
   public Map getUsersMap() {
-    return Collections.EMPTY_MAP;
+    return Collections.emptyMap();
   }
 
 
@@ -280,7 +280,7 @@ public final class AccurevVersionControl extends AbstractSourceControl {
    * {@inheritDoc}
    */
   public Map getShellVariables() {
-    return Collections.EMPTY_MAP;
+    return Collections.emptyMap();
   }
 
 
