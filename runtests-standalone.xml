@@ -19,7 +19,8 @@
 
   <!-- Run standalone tests -->
   <target name="run.tests.standalone" depends="run.tests.standalone.init">
-    <junit fork="yes" printsummary="on" haltonfailure="${fail.fast}" haltonerror="${fail.fast}" errorproperty="test.errors" failureproperty="test.failures" maxmemory="100000000">
+    <junit fork="yes" printsummary="on" haltonfailure="${fail.fast}" haltonerror="${fail.fast}"
+           errorproperty="test.errors" failureproperty="test.failures" maxmemory="100000000">
       <sysproperty key="test.data.home" value="${test.data}"/>
       <sysproperty key="test.prod.home" value="${build.dir.prod}"/>
       <classpath>
@@ -46,7 +47,8 @@
       this property normally set via -D option of ant command line
       and holds prefix name of the class(es) with test case
       -->
-      <batchtest fork="yes" todir="${test.log.dir}" haltonfailure="${fail.fast}" haltonerror="${fail.fast}" errorproperty="test.errors" failureproperty="test.failures" if="test.single">
+      <batchtest fork="yes" todir="${test.log.dir}" haltonfailure="${fail.fast}" haltonerror="${fail.fast}"
+                 errorproperty="test.errors" failureproperty="test.failures" if="test.single">
         <fileset dir="${build.dir.test.classes}">
           <include name="**/${test.single}*.class"/>
           <exclude name="**/*$*.class"/>
@@ -56,7 +58,8 @@
       <!--
       Run all standlalone tests as a batch
       -->
-      <batchtest fork="yes" todir="${test.log.dir}" haltonfailure="${fail.fast}" haltonerror="${fail.fast}" errorproperty="test.errors" failureproperty="test.failures" unless="test.single">
+      <batchtest fork="yes" todir="${test.log.dir}" haltonfailure="${fail.fast}" haltonerror="${fail.fast}"
+                 errorproperty="test.errors" failureproperty="test.failures" unless="test.single">
         <fileset dir="${build.dir.test.classes}">
           <include name="**/SATest*.class"/>
           <exclude name="**/*$*.class"/>
@@ -66,7 +69,8 @@
       <!--
       Run windows-only tests as a batch.
       -->
-      <batchtest fork="yes" todir="${test.log.dir}" haltonfailure="${fail.fast}" haltonerror="${fail.fast}" errorproperty="test.errors" failureproperty="test.failures" unless="test.single" if="is.windows">
+      <batchtest fork="yes" todir="${test.log.dir}" haltonfailure="${fail.fast}" haltonerror="${fail.fast}"
+                 errorproperty="test.errors" failureproperty="test.failures" unless="test.single" if="is.windows">
         <fileset dir="${build.dir.test.classes}">
           <include name="**/WindowsOnlySATest*.class"/>
           <exclude name="**/*$*.class"/>
