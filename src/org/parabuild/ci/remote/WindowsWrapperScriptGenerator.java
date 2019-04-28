@@ -24,9 +24,9 @@ import org.parabuild.ci.common.StringUtils;
 /**
  * Generates wrapper scripts for windows.
  */
-final class WindowsWrapperScriptGenerator extends AbstractWarapperScriptGenerator {
+final class WindowsWrapperScriptGenerator extends AbstractWrapperScriptGenerator {
 
-  public WindowsWrapperScriptGenerator(final Agent agent) {
+  WindowsWrapperScriptGenerator(final Agent agent) {
     super(agent);
   }
 
@@ -54,8 +54,8 @@ final class WindowsWrapperScriptGenerator extends AbstractWarapperScriptGenerato
 
 
   /**
-   * This method must be overtritten to contain a platform-specific
-   * commmand to CD to a current directory.
+   * This method must be overwritten to contain a platform-specific
+   * command to CD to a current directory.
    *
    * @param scriptWriter created in {@link #makeWriter} method
    */
@@ -78,8 +78,8 @@ final class WindowsWrapperScriptGenerator extends AbstractWarapperScriptGenerato
 
 
   /**
-   * This method may be overtritten to contain a optional
-   * script prolog lines. An implementot should use this chance
+   * This method may be overwritten to contain a optional
+   * script prolog lines. An implementation should use this chance
    * to write at the very beginning of the script.
    *
    * @param scriptWriter created in {@link #makeWriter} method
@@ -90,7 +90,7 @@ final class WindowsWrapperScriptGenerator extends AbstractWarapperScriptGenerato
 
 
   /**
-   * This method by be overtritten to contain a optional
+   * This method by be overwritten to contain a optional
    * script epilog lines. An implementor should use this chance
    * to write at the very end of the script.
    *
@@ -102,11 +102,12 @@ final class WindowsWrapperScriptGenerator extends AbstractWarapperScriptGenerato
 
 
   /**
-   * Should create a platform-specific buffered writer. The writer
-   * will be closed by caller.
+   * {@inheritDoc}
    *
-   * @param stringWriter
-   * @return platform-specific {@link BufferedWriter}
+   * This implementation writes a Windows-specific new line.
+   *
+   * @param stringWriter the string writer to wrap.
+   * @return Windows-specific {@link BufferedWriter}
    */
   protected BufferedWriter makeWriter(final StringWriter stringWriter) {
     return new WinWriter(stringWriter);
@@ -119,13 +120,8 @@ final class WindowsWrapperScriptGenerator extends AbstractWarapperScriptGenerato
    */
   private static final class WinWriter extends BufferedWriter {
 
-    public WinWriter(final Writer out) {
+    WinWriter(final Writer out) {
       super(out);
-    }
-
-
-    public WinWriter(final Writer out, final int sz) {
-      super(out, sz);
     }
 
 

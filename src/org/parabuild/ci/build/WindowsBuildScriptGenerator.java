@@ -13,16 +13,16 @@
  */
 package org.parabuild.ci.build;
 
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.StringWriter;
-import java.io.Writer;
-
 import org.parabuild.ci.common.BuildException;
 import org.parabuild.ci.common.IoUtils;
 import org.parabuild.ci.common.StringUtils;
 import org.parabuild.ci.object.BuildSequence;
 import org.parabuild.ci.remote.Agent;
+
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.StringWriter;
+import java.io.Writer;
 
 /**
  * Windows build script generator
@@ -113,11 +113,6 @@ public final class WindowsBuildScriptGenerator extends AbstractBuildScriptGenera
 
     WinWriter(final Writer out) {
       super(out);
-    }
-
-
-    WinWriter(final Writer out, final int sz) {
-      super(out, sz);
     }
 
 

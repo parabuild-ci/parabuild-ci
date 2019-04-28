@@ -29,12 +29,12 @@ import java.util.StringTokenizer;
 /**
  *
  */
-abstract class AbstractWarapperScriptGenerator implements WrapperScriptGenerator {
+abstract class AbstractWrapperScriptGenerator implements WrapperScriptGenerator {
 
   /**
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
-  private static final Log log = LogFactory.getLog(AbstractWarapperScriptGenerator.class); // NOPMD
+  private static final Log log = LogFactory.getLog(AbstractWrapperScriptGenerator.class); // NOPMD
 
   private static final String VAR_PARABUILD_SCRIPT = "PARABUILD_SCRIPT";
   private static final String VAR_CLASSPATH = "CLASSPATH";
@@ -56,14 +56,14 @@ abstract class AbstractWarapperScriptGenerator implements WrapperScriptGenerator
           "SECURITY_POLICY_FILE"
   };
 
-  protected String currentDir = null;
+  String currentDir = null;
   protected final Agent agent;
 
   private final Map addedVariables = new HashMap(11);
   private String stepScriptPath = null;
 
 
-  protected AbstractWarapperScriptGenerator(final Agent agent) {
+  AbstractWrapperScriptGenerator(final Agent agent) {
     this.agent = agent;
   }
 
@@ -93,7 +93,7 @@ abstract class AbstractWarapperScriptGenerator implements WrapperScriptGenerator
    *
    * @param command that will be wrapped
    * @return String absolute path to created sctep script file.
-   * @throws IOException
+   * @throws IOException if an IO error occurred.
    */
   public String generateScript(final String command) throws IOException, AgentFailureException {
     final String prefix = agent.isWindows() ? "cmd" : ".cmd";
@@ -122,7 +122,7 @@ abstract class AbstractWarapperScriptGenerator implements WrapperScriptGenerator
   }
 
 
-  protected final StringBuffer cleanupPathLikeEnvVariable(final String varName) throws IOException, AgentFailureException {
+  private final StringBuffer cleanupPathLikeEnvVariable(final String varName) throws IOException, AgentFailureException {
 //    if (log.isDebugEnabled()) log.debug("Cleanup variables");
     final String catalinaHome = agent.getSystemProperty("catalina.base");
     final RemoteFileDescriptor fileDescriptor = agent.getFileDescriptor(catalinaHome + "//..");
@@ -150,19 +150,19 @@ abstract class AbstractWarapperScriptGenerator implements WrapperScriptGenerator
   }
 
 
-  protected final void writeCleanupVarsCommands(final BufferedWriter writer) throws IOException, AgentFailureException {
+  private final void writeCleanupVarsCommands(final BufferedWriter writer) throws IOException, AgentFailureException {
     // cleanup paths
     writeSetCommand(writer, pathVarName(), cleanupPathLikeEnvVariable(pathVarName()).toString());
     writeSetCommand(writer, VAR_CLASSPATH, cleanupPathLikeEnvVariable(VAR_CLASSPATH).toString());
 
     // reset wars
-    for (int i = 0; i < VARS_TO_ERASE.length; i++) {
-      writeSetCommand(writer, VARS_TO_ERASE[i], "");
+    for (final String var : VARS_TO_ERASE) {
+      writeSetCommand(writer, var, "");
     }
   }
 
 
-  protected final void writeCommonCommands(final BufferedWriter writer) throws IOException {
+  private final void writeCommonCommands(final BufferedWriter writer) throws IOException {
     // process "signature" env vars
     writeSetCommand(writer, VAR_PARABUILD_SCRIPT, stepScriptPath);
   }
@@ -173,22 +173,11 @@ abstract class AbstractWarapperScriptGenerator implements WrapperScriptGenerator
    *
    * @see #addVariables(Map)
    */
-  protected final void writeAddedVariables(final BufferedWriter writer) throws IOException {
+  private final void writeAddedVariables(final BufferedWriter writer) throws IOException {
     for (final Iterator i = addedVariables.entrySet().iterator(); i.hasNext();) {
       final Map.Entry nameValuePair = (Map.Entry) i.next();
       writeSetCommand(writer, (String) nameValuePair.getKey(), (String) nameValuePair.getValue());
     }
-  }
-
-
-  /**
-   * Returns a list of variables to erase
-   */
-  public static final String[] getVarsToErase() {
-    final String[] src = VARS_TO_ERASE;
-    final String[] result = new String[src.length];
-    System.arraycopy(src, 0, result, 0, src.length);
-    return result;
   }
 
 
@@ -214,8 +203,8 @@ abstract class AbstractWarapperScriptGenerator implements WrapperScriptGenerator
 
 
   /**
-   * This method must be overtritten to contain a platform-specific
-   * commmand to CD to a current directory.
+   * This method must be overwritten to contain a platform-specific
+   * command to CD to a current directory.
    *
    * @param writer created in {@link #makeWriter} method
    */
@@ -223,8 +212,8 @@ abstract class AbstractWarapperScriptGenerator implements WrapperScriptGenerator
 
 
   /**
-   * This method may be overtritten to contain a optional
-   * script prolog lines. An implementot should use this chance
+   * This method may be overwritten to contain a optional
+   * script prolog lines. An implementor should use this chance
    * to write at the very beginning of the script.
    *
    * @param writer created in {@link #makeWriter} method
@@ -233,7 +222,7 @@ abstract class AbstractWarapperScriptGenerator implements WrapperScriptGenerator
 
 
   /**
-   * This method by be overtritten to contain a optional
+   * This method by be overwritten to contain a optional
    * script epilog lines. An implementor should use this chance
    * to write at the very end of the script.
    *
@@ -246,14 +235,14 @@ abstract class AbstractWarapperScriptGenerator implements WrapperScriptGenerator
    * Should create a platform-specific buffered writer. The writer
    * will be closed by caller.
    *
-   * @param result
+   * @param stringWriter the string write to wrap.
    * @return platform-specific {@link BufferedWriter}
    */
-  protected abstract BufferedWriter makeWriter(StringWriter result);
+  protected abstract BufferedWriter makeWriter(StringWriter stringWriter);
 
 
   public String toString() {
-    return "AbstractWarapperScriptGenerator{" +
+    return "AbstractWrapperScriptGenerator{" +
             "currentDir='" + currentDir + '\'' +
             ", agent=" + agent +
             ", addedVariables=" + addedVariables +

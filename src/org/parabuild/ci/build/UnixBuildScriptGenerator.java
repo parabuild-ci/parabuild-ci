@@ -35,13 +35,22 @@ import java.io.Writer;
 public final class UnixBuildScriptGenerator extends AbstractBuildScriptGenerator {
 
   /**
-   * @noinspection UNUSED_SYMBOL,UnusedDeclaration
+   * @noinspection UNUSED_SYMBOL, UnusedDeclaration
    */
   private static final Log log = LogFactory.getLog(UnixBuildScriptGenerator.class); // NOPMD
 
 
   public UnixBuildScriptGenerator(final Agent agent) {
     super(agent);
+  }
+
+
+  /**
+   * Writes a string and a newline after the string
+   */
+  private static void writeln(final BufferedWriter bw, final String s) throws IOException {
+    bw.write(s);
+    bw.newLine();
   }
 
 
@@ -85,7 +94,7 @@ public final class UnixBuildScriptGenerator extends AbstractBuildScriptGenerator
 
       // write script
       final BufferedReader br = new BufferedReader(new StringReader(scriptText));
-      for (String line = br.readLine(); line != null;) {
+      for (String line = br.readLine(); line != null; ) {
         writeln(scriptWriter, line);
         line = br.readLine();
       }
@@ -112,15 +121,6 @@ public final class UnixBuildScriptGenerator extends AbstractBuildScriptGenerator
   }
 
 
-  /**
-   * Writes a string and a newline after the string
-   */
-  private static void writeln(final BufferedWriter bw, final String s) throws IOException {
-    bw.write(s);
-    bw.newLine();
-  }
-
-
   protected String pathVarName() {
     return "PATH";
   }
@@ -134,11 +134,6 @@ public final class UnixBuildScriptGenerator extends AbstractBuildScriptGenerator
 
     UnixWriter(final Writer out) {
       super(out);
-    }
-
-
-    UnixWriter(final Writer out, final int sz) {
-      super(out, sz);
     }
 
 

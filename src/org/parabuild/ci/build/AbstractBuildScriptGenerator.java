@@ -63,14 +63,12 @@ public abstract class AbstractBuildScriptGenerator implements BuildScriptGenerat
           "SECURITY_POLICY_FILE"
   };
 
-  public static final String DEFAULT_BUILD_STARTED_BY_USER = "system";
-
-  protected String relativeBuildDir = null;
+  private static final String DEFAULT_BUILD_STARTED_BY_USER = "system";
   protected final Agent agent;
-
-  private Date buildStartedAt = null;
   private final Map addedVariables = new HashMap(11);
   private final RemoteCommandTimeStamp timeStamp;
+  protected String relativeBuildDir = null;
+  private Date buildStartedAt = null;
   private int buildNumber = UNSET_BUILD_NUMBER;
   private int buildRunID = UNSET_BUILD_RUN_ID;
   private String buildName = null;
@@ -109,6 +107,27 @@ public abstract class AbstractBuildScriptGenerator implements BuildScriptGenerat
 
 
   /**
+   * Creates a SimpleDateFormat for formatting time stamps.
+   *
+   * @return the SimpleDateFormat for formatting time stamps.
+   * @see #BUILD_TIMESTAMP_FORMAT
+   */
+  private static SimpleDateFormat createTimestampFormat() {
+    return new SimpleDateFormat(BUILD_TIMESTAMP_FORMAT, Locale.US);
+  }
+
+
+  /**
+   * Returns a list of variables to erase
+   */
+  static String[] getVarsToErase() {
+    final String[] result = new String[VARS_TO_ERASE.length];
+    System.arraycopy(VARS_TO_ERASE, 0, result, 0, VARS_TO_ERASE.length);
+    return result;
+  }
+
+
+  /**
    * Sets build, or source line home directory. Build directory
    * is the directory where the build script is running from, and
    * from all uses-specified directories and files, like logs,
@@ -132,9 +151,9 @@ public abstract class AbstractBuildScriptGenerator implements BuildScriptGenerat
 
 
   /**
-   * Sets changelist number the build is built to
+   * Sets changelist number the build is built to.
    *
-   * @param changeListNumber
+   * @param changeListNumber the change list number to set.
    */
   public final void setChangeListNumber(final String changeListNumber) {
     this.changeListNumber = changeListNumber;
@@ -144,7 +163,7 @@ public abstract class AbstractBuildScriptGenerator implements BuildScriptGenerat
   /**
    * Change list date.
    *
-   * @param changeListDate
+   * @param changeListDate the change list date to set.
    */
   public void setChangeListDate(final Date changeListDate) {
     if (changeListDate == null) {
@@ -207,7 +226,7 @@ public abstract class AbstractBuildScriptGenerator implements BuildScriptGenerat
   /**
    * Sets optional version if it was generated
    *
-   * @param version
+   * @param version the version to set to.
    */
   public void setVersion(final String version) {
     this.version = version;
@@ -217,7 +236,7 @@ public abstract class AbstractBuildScriptGenerator implements BuildScriptGenerat
   /**
    * Sets optional version counter if it was generated
    *
-   * @param versionCounter
+   * @param versionCounter the version counter to set to.
    */
   public void setVersionCounter(final int versionCounter) {
     this.versionCounter = versionCounter;
@@ -292,7 +311,7 @@ public abstract class AbstractBuildScriptGenerator implements BuildScriptGenerat
   /**
    * Sets leading build run ID if any
    *
-   * @param leadingBuildRunID
+   * @param leadingBuildRunID the leading build run to set to.
    */
   public void setLeadingBuildRunID(final int leadingBuildRunID) {
     this.leadingBuildRunID = leadingBuildRunID;
@@ -302,7 +321,7 @@ public abstract class AbstractBuildScriptGenerator implements BuildScriptGenerat
   /**
    * Sets leading build name if any.
    *
-   * @param leadingBuildName
+   * @param leadingBuildName the leading build name to set to.
    */
   public void setLeadingBuildName(final String leadingBuildName) {
     this.leadingBuildName = leadingBuildName;
@@ -312,7 +331,7 @@ public abstract class AbstractBuildScriptGenerator implements BuildScriptGenerat
   /**
    * Sets leading build ID if any.
    *
-   * @param leadingBuildID
+   * @param leadingBuildID the leading build ID to set to.
    */
   public void setLeadingBuildID(final int leadingBuildID) {
     this.leadingBuildID = leadingBuildID;
@@ -322,7 +341,7 @@ public abstract class AbstractBuildScriptGenerator implements BuildScriptGenerat
   /**
    * Sets an ID of the build run that started the build.
    *
-   * @param upstreamBuildRunID
+   * @param upstreamBuildRunID the ID of the build run that started the build.
    */
   public void setUpstreamBuildRunID(final int upstreamBuildRunID) {
     this.upstreamBuildRunID = upstreamBuildRunID;
@@ -332,7 +351,7 @@ public abstract class AbstractBuildScriptGenerator implements BuildScriptGenerat
   /**
    * Sets a name of the build that started the build.
    *
-   * @param upstreamBuildName
+   * @param upstreamBuildName the name of the build that started the build.
    */
   public void setUpstreamBuildName(final String upstreamBuildName) {
     this.upstreamBuildName = upstreamBuildName;
@@ -342,7 +361,7 @@ public abstract class AbstractBuildScriptGenerator implements BuildScriptGenerat
   /**
    * Sets an ID of the build that started the build.
    *
-   * @param upstreamBuildID
+   * @param upstreamBuildID the ID of the build that started the build.
    */
   public void setUpstreamBuildID(final int upstreamBuildID) {
     this.upstreamBuildID = upstreamBuildID;
@@ -355,6 +374,7 @@ public abstract class AbstractBuildScriptGenerator implements BuildScriptGenerat
   public void setGitBranchName(final String branchName) {
     this.getBranchName = branchName;
   }
+
 
   public void setPreviousStepRuns(final List previousStepRuns) {
     this.previousStepRuns = new ArrayList(previousStepRuns);
@@ -372,14 +392,6 @@ public abstract class AbstractBuildScriptGenerator implements BuildScriptGenerat
 
   public void setPreviousChangeListNumber(final String previousChangeListNumber) {
     this.previousChangeListNumber = previousChangeListNumber;
-  }
-
-
-  public void setPreviousChangeListDate(final Date previousChangeListDate) {
-    if (previousChangeListDate == null) {
-      return;
-    }
-    this.previousChangeListDate = (Date) previousChangeListDate.clone();
   }
 
 
@@ -405,7 +417,7 @@ public abstract class AbstractBuildScriptGenerator implements BuildScriptGenerat
   }
 
 
-  protected final StringBuffer cleanupPathLikeEnvVariable(final String varName) throws IOException, AgentFailureException {
+  private final StringBuffer cleanupPathLikeEnvVariable(final String varName) throws IOException, AgentFailureException {
     final String catalinaHome = agent.getSystemProperty("catalina.base");
     final RemoteFileDescriptor fileDescriptor = agent.getFileDescriptor(catalinaHome + "//..");
     final String originalPathEnvVar = agent.getEnvVariable(varName);
@@ -426,19 +438,19 @@ public abstract class AbstractBuildScriptGenerator implements BuildScriptGenerat
   }
 
 
-  protected final void writeCleanupVarsCommands(final BufferedWriter writer) throws IOException, AgentFailureException {
+  final void writeCleanupVarsCommands(final BufferedWriter writer) throws IOException, AgentFailureException {
     // cleanup paths
     writeSetCommand(writer, pathVarName(), cleanupPathLikeEnvVariable(pathVarName()).toString());
     writeSetCommand(writer, VAR_CLASSPATH, cleanupPathLikeEnvVariable(VAR_CLASSPATH).toString());
 
     // reset wars
-    for (int i = 0; i < VARS_TO_ERASE.length; i++) {
-      writeSetCommand(writer, VARS_TO_ERASE[i], "");
+    for (final String var : VARS_TO_ERASE) {
+      writeSetCommand(writer, var, "");
     }
   }
 
 
-  protected final void writeCommonCommands(final BufferedWriter writer) throws IOException {
+  final void writeCommonCommands(final BufferedWriter writer) throws IOException {
     // Prepare
     final SimpleDateFormat timestampFormat = createTimestampFormat();
 
@@ -544,17 +556,6 @@ public abstract class AbstractBuildScriptGenerator implements BuildScriptGenerat
 
 
   /**
-   * Creates a SimpleDateFormat for formatting time stamps.
-   *
-   * @return the SimpleDateFormat for formatting time stamps.
-   * @see #BUILD_TIMESTAMP_FORMAT
-   */
-  private static SimpleDateFormat createTimestampFormat() {
-    return new SimpleDateFormat(BUILD_TIMESTAMP_FORMAT, Locale.US);
-  }
-
-
-  /**
    * @return validated build run ID
    */
   private int getValidBuildRunID() {
@@ -568,7 +569,7 @@ public abstract class AbstractBuildScriptGenerator implements BuildScriptGenerat
   /**
    * @return validated change list number
    */
-  public final String getValidChangeListNumber() {
+  final String getValidChangeListNumber() {
     if (StringUtils.isBlank(changeListNumber)) {
       throw new IllegalStateException("Build change list number was not set");
     }
@@ -592,10 +593,18 @@ public abstract class AbstractBuildScriptGenerator implements BuildScriptGenerat
   }
 
 
+  public void setPreviousChangeListDate(final Date previousChangeListDate) {
+    if (previousChangeListDate == null) {
+      return;
+    }
+    this.previousChangeListDate = (Date) previousChangeListDate.clone();
+  }
+
+
   /**
    * @return validated build number
    */
-  public final int getValidBuildNumber() {
+  final int getValidBuildNumber() {
     if (buildNumber == UNSET_BUILD_NUMBER) {
       throw new IllegalStateException("Build number was not set");
     }
@@ -608,7 +617,7 @@ public abstract class AbstractBuildScriptGenerator implements BuildScriptGenerat
    *
    * @return build name
    */
-  protected final String getValidBuildName() {
+  private final String getValidBuildName() {
     if (StringUtils.isBlank(buildName)) {
       throw new IllegalStateException("Build name was not set");
     }
@@ -621,7 +630,7 @@ public abstract class AbstractBuildScriptGenerator implements BuildScriptGenerat
    *
    * @return step name
    */
-  protected final String getValidStepName() {
+  private final String getValidStepName() {
     if (StringUtils.isBlank(stepName)) {
       throw new IllegalStateException("Step name was not set");
     }
@@ -634,21 +643,11 @@ public abstract class AbstractBuildScriptGenerator implements BuildScriptGenerat
    *
    * @see #addVariables(Map)
    */
-  protected final void writeAddedVariables(final BufferedWriter writer) throws IOException {
+  final void writeAddedVariables(final BufferedWriter writer) throws IOException {
     for (final Iterator i = addedVariables.entrySet().iterator(); i.hasNext(); ) {
       final Map.Entry nameValuePair = (Map.Entry) i.next();
       writeSetCommand(writer, (String) nameValuePair.getKey(), (String) nameValuePair.getValue());
     }
-  }
-
-
-  /**
-   * Returns a list of variables to erase
-   */
-  public static String[] getVarsToErase() {
-    final String[] result = new String[VARS_TO_ERASE.length];
-    System.arraycopy(VARS_TO_ERASE, 0, result, 0, VARS_TO_ERASE.length);
-    return result;
   }
 
 
@@ -682,7 +681,7 @@ public abstract class AbstractBuildScriptGenerator implements BuildScriptGenerat
    * @param writer to use to write the set command
    * @param name   of the shell variable.
    * @param value  value of the shell variable.
-   * @throws IOException
+   * @throws IOException if an IO error occurred.
    */
   private void writeSetCommand(final BufferedWriter writer, final String name, final int value) throws IOException {
     writeSetCommand(writer, name, Integer.toString(value));

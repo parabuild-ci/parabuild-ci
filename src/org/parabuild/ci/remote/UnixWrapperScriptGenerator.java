@@ -13,20 +13,20 @@
  */
 package org.parabuild.ci.remote;
 
+import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.common.StringUtils;
+
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.io.Writer;
 
-import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.StringUtils;
-
 /**
  * Generates wrapper scripts for unix.
  */
-final class UnixWrapperScriptGenerator extends AbstractWarapperScriptGenerator {
+final class UnixWrapperScriptGenerator extends AbstractWrapperScriptGenerator {
 
-  public UnixWrapperScriptGenerator(final Agent agent) {
+  UnixWrapperScriptGenerator(final Agent agent) {
     super(agent);
   }
 
@@ -57,22 +57,22 @@ final class UnixWrapperScriptGenerator extends AbstractWarapperScriptGenerator {
 
 
   /**
-   * This method must be overtritten to contain a platform-specific
-   * commmand to CD to a current directory.
+   * This method must be overwritten to contain a platform-specific
+   * command to CD to a current directory.
    *
    * @param writer created in {@link #makeWriter} method
    */
   protected void writeChangeDir(final BufferedWriter writer) throws IOException, AgentFailureException {
     if (!StringUtils.isBlank(currentDir)) {
-      // TODO: add safeguard for dir existance
+      // TODO: add safeguard for dir existence
       writeln(writer, "cd " + StringUtils.putIntoDoubleQuotes(agent.getFileDescriptor(currentDir).getCanonicalPath()));
     }
   }
 
 
   /**
-   * This method may be overtritten to contain a optional
-   * script prolog lines. An implementot should use this chance
+   * This method may be overwritten to contain a optional
+   * script prolog lines. An implementor should use this chance
    * to write at the very beginning of the script.
    *
    * @param scriptWriter created in {@link #makeWriter} method
@@ -83,7 +83,7 @@ final class UnixWrapperScriptGenerator extends AbstractWarapperScriptGenerator {
 
 
   /**
-   * This method by be overtritten to contain a optional
+   * This method by be overwritten to contain a optional
    * script epilog lines. An implementor should use this chance
    * to write at the very end of the script.
    *
@@ -95,11 +95,12 @@ final class UnixWrapperScriptGenerator extends AbstractWarapperScriptGenerator {
 
 
   /**
-   * Should create a platform-specific buffered writer. The writer
-   * will be closed by caller.
+   * {@inheritDoc}
+   * <p>
+   * This implementation writes a Unix-specific new line.
    *
-   * @param stringWriter
-   * @return platform-specific {@link BufferedWriter}
+   * @param stringWriter the string writer to wrap.
+   * @return Unix-specific {@link BufferedWriter}
    */
   protected BufferedWriter makeWriter(final StringWriter stringWriter) {
     return new UnixWriter(stringWriter);
@@ -112,13 +113,8 @@ final class UnixWrapperScriptGenerator extends AbstractWarapperScriptGenerator {
    */
   private static final class UnixWriter extends BufferedWriter {
 
-    public UnixWriter(final Writer out) {
+    UnixWriter(final Writer out) {
       super(out);
-    }
-
-
-    public UnixWriter(final Writer out, final int sz) {
-      super(out, sz);
     }
 
 
