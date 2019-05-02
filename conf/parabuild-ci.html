@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
     <!-- Properties can be specified to influence deferred binding -->
     <meta name='gwt:property' content='locale=en_US'>
 
@@ -10,14 +12,14 @@
 
     <!-- Titles are optional, but useful -->
     <title>Parabuild CI</title>
+
+    <!-- This script tag is what actually loads the GWT module.  The -->
+    <!-- 'nocache.js' file (also called a "selection script") is     -->
+    <!-- produced by the GWT compiler in the module output directory -->
+    <!-- or generated automatically in development mode.             -->
+    <script language="javascript" src="repository/repository.nocache.js" type="text/javascript"></script>
 </head>
 <body>
-
-<!-- This script tag is what actually loads the GWT module.  The -->
-<!-- 'nocache.js' file (also called a "selection script") is     -->
-<!-- produced by the GWT compiler in the module output directory -->
-<!-- or generated automatically in development mode.             -->
-<script language="javascript" src="repository/repository.nocache.js" type="text/javascript"></script>
 
 <!-- Include a history iframe to enable full GWT history support -->
 <!-- (the id must be exactly as shown)                           -->

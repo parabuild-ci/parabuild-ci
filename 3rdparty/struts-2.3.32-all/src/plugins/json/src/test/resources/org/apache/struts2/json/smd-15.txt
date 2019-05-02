@@ -1,5 +1,0 @@
-{
-    "params": [],
-    "method": "doSomethingElse",
-    "id":1
-}

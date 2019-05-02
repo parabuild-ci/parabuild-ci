@@ -1,3 +1,0 @@
-<tr>
-    <td colspan="2"><div align="left"><input type="submit" value="bar" id="myname" name="myname" disabled="disabled" tabindex="1"/></div></td>
-</tr>
