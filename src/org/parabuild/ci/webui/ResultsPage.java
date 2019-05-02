@@ -106,7 +106,7 @@ public final class ResultsPage extends AbstractBuildRunResultPage implements Con
    *
    * @param parameters that the page was executed with.
    * @return Flow, typically {@link PreviousNextLinks} that
-   *  contant Prev/Next nav links that will be inserted into the
+   *  constant Prev/Next nav links that will be inserted into the
    *  right side header divider.
    */
   protected Flow makePreviousNextNavigationLinks(final BuildRun buildRun, final Parameters parameters) {

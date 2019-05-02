@@ -312,7 +312,7 @@ public final class StartParameter implements Serializable, ObjectConstants {
 
 
   /**
-   * @return StringTokenizer for the give "values" paramter.
+   * @return StringTokenizer for the give "values" parameter.
    */
   public static StringTokenizer makeTokenizer(final String values) {
     return new StringTokenizer(values, ",");

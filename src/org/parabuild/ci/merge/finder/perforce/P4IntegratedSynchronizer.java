@@ -182,7 +182,7 @@ final class P4IntegratedSynchronizer {
                           // branch status where an "not-integrated"
                           // change list may be followed by
                           // "unknown". The merger should take this
-                          // in account at not group untill there is
+                          // in account at not group until there is
                           // no a gap.
                           //
                           // Consider locking while state is gathered.

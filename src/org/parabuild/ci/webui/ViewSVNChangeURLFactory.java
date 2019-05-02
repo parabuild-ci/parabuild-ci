@@ -100,7 +100,7 @@ public final class ViewSVNChangeURLFactory implements ChangeURLFactory {
   private String makeFileURL(final SimpleChange change) {
     // a typical Subversion file URL looks like this:
     // http://svn.apache.org/viewvc/jakarta/poi/trunk/src/scratchpad/src/org/apache/poi/hwpf/model/FIBFieldHandler.java?diff_format=h&view=markup&pathrev=480585
-    // compose paramter list
+    // compose parameter list
     final Properties params = new Properties();
     if (showRevision) {
       //  NOTE: vimeshev - 2005-01-15 - see #815 "Remove version

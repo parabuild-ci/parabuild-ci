@@ -395,7 +395,7 @@ public final class Pages {
 
 
   /**
-   * Paramter that tells a form to validate on load.
+   * parameter that tells a form to validate on load.
    */
   public static final String PARAM_VALIDATE_ON_LOAD = "vldtnld";
 

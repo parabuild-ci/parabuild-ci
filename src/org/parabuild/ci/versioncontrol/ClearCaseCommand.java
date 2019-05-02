@@ -39,7 +39,7 @@ abstract class ClearCaseCommand extends VersionControlRemoteCommand {
 
 
   public ClearCaseCommand(final Agent agent, final String exePath) throws IOException, AgentFailureException {
-    // REVIEWME: simeshev@parabuilci.org -> Temporarely turned off the process signature to work on #740
+    // REVIEWME: simeshev@parabuilci.org -> temporarily turned off the process signature to work on #740
     super(agent, false);
 
     // set env

@@ -688,7 +688,7 @@ public final class LocalAgent implements Agent {
     FileWriter fw = null;
     try {
 
-      // REVIEWME: simeshev@parabuilci.org -> temporarely changed to creating dirs
+      // REVIEWME: simeshev@parabuilci.org -> temporarily changed to creating dirs
       // automatically - change back and make sure callers
       // are calling mkdirs from Agent interface.
 

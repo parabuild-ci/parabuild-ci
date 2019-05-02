@@ -48,7 +48,7 @@ public class SSTestMenuStatusBuilder extends ServersideTestCase {
         break;
       }
     }
-    assertTrue("At least one menu status wiht inactive image should be generated", inactiveImageFound);
+    assertTrue("At least one menu status with inactive image should be generated", inactiveImageFound);
   }
 
 

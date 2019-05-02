@@ -16,7 +16,7 @@ package org.parabuild.ci.webui.merge;
 import org.parabuild.ci.webui.common.CodeNameDropDown;
 
 /**
- * This class lists avialable build groups.
+ * This class lists available build groups.
  */
 final class MergeDisplayGroupDropDown extends CodeNameDropDown {
 

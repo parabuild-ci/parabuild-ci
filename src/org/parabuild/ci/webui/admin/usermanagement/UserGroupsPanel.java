@@ -68,7 +68,7 @@ public final class UserGroupsPanel extends MessagePanel implements Saveable {
   /**
    * When called, component should save it's content. This method should
    * return <code>true</code> when content of a component is saved successfully.
-   * If not, a component should dispaly a error message in it's area and return
+   * If not, a component should display a error message in it's area and return
    * <code>false</code>
    *
    * @return true if saved successfuly
@@ -81,7 +81,7 @@ public final class UserGroupsPanel extends MessagePanel implements Saveable {
       final UserGroupCheckBox cbUG = (UserGroupCheckBox)i.next();
 
       // NOTE: vimeshev - fix for bug # - This is a
-      // temporarely workaround. Apparently, the framework
+      // temporarily workaround. Apparently, the framework
       // submit "unchecked" as a value of a check box if it
       // is not visble while it should leave it unchanged.
       if (!this.isVisible()) continue;

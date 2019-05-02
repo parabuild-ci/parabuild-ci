@@ -551,7 +551,7 @@ public final class StringUtils implements CommonConstants {
   /**
    * @param pattern
    *
-   * @return true if pattern starts with '^' and ands wiht '$' 
+   * @return true if pattern starts with '^' and ands with '$'
    */
   public static boolean isRegex(final String pattern) {
     return !isBlank(pattern) && pattern.charAt(0) == '^' && pattern.endsWith("$");

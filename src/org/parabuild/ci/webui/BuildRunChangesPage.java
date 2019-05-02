@@ -83,7 +83,7 @@ public final class BuildRunChangesPage extends AbstractBuildRunResultPage implem
 
 
   /**
-   * @return Flow that contant Prev/Next nav links that will be
+   * @return Flow that constant Prev/Next nav links that will be
    *  inserted into the right side header divider.
    *
    * @param buildRun the thapge was executed with.

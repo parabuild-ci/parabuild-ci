@@ -50,7 +50,7 @@ See samples/index.html for more details and go on my web page : http://prototype
             - remove addClass that automatically tries to include default.css
             - add wired move/resize
             - fix recenterAuto
-            - add show to WindowStore to be able to open a window the first time, wihtout any cookie (check samples/window_store/html)
+            - add show to WindowStore to be able to open a window the first time, without any cookie (check samples/window_store/html)
 
 - 11/06/06  V 0.98
             - new optional behavior for multi-level modal window.

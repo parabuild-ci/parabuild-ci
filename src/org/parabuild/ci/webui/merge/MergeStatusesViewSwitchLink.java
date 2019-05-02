@@ -47,7 +47,7 @@ final class MergeStatusesViewSwitchLink extends Flow {
 
   public void setDetailedViewSelected() {
     clear();
-// REVIEWME: simeshev@parabuilci.org -> enable when views other than table are avialable
+// REVIEWME: simeshev@parabuilci.org -> enable when views other than table are available
 //    add(makeDashboardViewSelector(false));
 //    add(new MenuDividerLabel()); // divider
     add(makeListViewSelector(false));

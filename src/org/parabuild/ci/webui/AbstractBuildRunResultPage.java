@@ -33,7 +33,7 @@ abstract class AbstractBuildRunResultPage extends BasePage {
   private static final Log log = LogFactory.getLog(AbstractBuildRunResultPage.class); // NOPMD
 
   /**
-   * headerPanel holds a panel wiht an overview of the build
+   * headerPanel holds a panel with an overview of the build
    * run and a panel with an overview of build steps.
    */
   protected final BuildRunHeaderPanel headerPanel = new BuildRunHeaderPanel();
@@ -49,7 +49,7 @@ abstract class AbstractBuildRunResultPage extends BasePage {
 
 
   /**
-   * In this class this is a trategy method that adds a header
+   * In this class this is a strategy method that adds a header
    * and than delegates detailed layout to concrete classes.
    *
    * @see #executeBuildRunResultPage(Parameters, BuildRun)
@@ -81,7 +81,7 @@ abstract class AbstractBuildRunResultPage extends BasePage {
       setNavigationLinks(makePreviousNextNavigationLinks(buildRun, params));
 
       //
-      // set build run to header peanl
+      // set build run to header panel
       headerPanel.setBuildRunLinkFactory(makeBuildRunURLFactory());
       headerPanel.showBuildRun(buildRun);
       headerPanel.setDescription(description(params));
@@ -98,7 +98,7 @@ abstract class AbstractBuildRunResultPage extends BasePage {
    * Should return a build run from the given Parameter list.
    *
    * Typically this is done by checking Pages.PARAM_BUILD_RUN_ID
-   * paramter. If build run ID is not avialable an implementtor
+   * parameter. If build run ID is not available an implementor
    * may chose finding build run using indirect ways. Example:
    * traversing back from log ID: log ID -> step run ID -> build
    * run ID -> build run.
@@ -157,7 +157,7 @@ abstract class AbstractBuildRunResultPage extends BasePage {
    *
    * @param parameters that the page was executed with.
    * @return Flow, typically {@link PreviousNextLinks} that
-   *  contant Prev/Next nav links that will be inserted into the
+   *  constant Prev/Next nav links that will be inserted into the
    *  right side header divider.
    */
   protected Flow makePreviousNextNavigationLinks(final BuildRun buildRun, final Parameters parameters) {

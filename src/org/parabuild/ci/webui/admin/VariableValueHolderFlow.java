@@ -174,7 +174,7 @@ final class VariableValueHolderFlow extends Flow {
 
 
   /**
-   * @return paramter type
+   * @return parameter type
    */
   public byte getPresentation() {
     return presentation;

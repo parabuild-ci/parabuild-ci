@@ -22,7 +22,7 @@ public interface Saveable {
   /**
    * When called, component should save it's content. This method should
    * return <code>true</code> when content of a component is saved successfully.
-   * If not, a component should dispaly a error message in it's area and return
+   * If not, a component should display a error message in it's area and return
    * <code>false</code>
    *  
    * @return true if saved successfuly

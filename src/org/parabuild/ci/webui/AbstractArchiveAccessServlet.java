@@ -30,7 +30,7 @@ import java.io.InputStream;
 /**
  * This servlet implements GoF Strategy pattern. It provides
  * access to content of the Parabuild archive, like logs or build
- * results. AbstractArchiveAccessServlet incoreporates common
+ * results. AbstractArchiveAccessServlet incorporates common
  * functionality and security.
  * <p/>
  * Concrete implementations should implement method

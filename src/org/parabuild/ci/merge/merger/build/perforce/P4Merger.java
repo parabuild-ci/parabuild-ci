@@ -156,8 +156,8 @@ public final class P4Merger implements Merger {
 
     // create workspace directory name
     final AgentHost agentHost = AgentManager.getInstance().getNextLiveAgentHost(targetBuildConfigurationID);
-    final Agent temporarelyAgent = AgentManager.getInstance().createAgent(targetBuildConfigurationID, agentHost);
-    final String mergeClientHomeDirName = temporarelyAgent.getSystemWorkingDirName() + temporarelyAgent.separator() + "mr" + activeMergeConfigurationID;
+    final Agent temporarilyAgent = AgentManager.getInstance().createAgent(targetBuildConfigurationID, agentHost);
+    final String mergeClientHomeDirName = temporarilyAgent.getSystemWorkingDirName() + temporarilyAgent.separator() + "mr" + activeMergeConfigurationID;
     if (log.isDebugEnabled()) {
       log.debug("mergeClientHomeDirName: " + mergeClientHomeDirName);
     }

@@ -41,7 +41,7 @@ public abstract class ScheduleSettingsPanel extends MessagePanel implements Load
   /**
    * When called, this method should return <code>true</code>
    * when content of a component is valid for save. If not valid,
-   * a component should dispaly a error message in it's area.
+   * a component should display a error message in it's area.
    *
    * @return true if valid
    */
@@ -51,7 +51,7 @@ public abstract class ScheduleSettingsPanel extends MessagePanel implements Load
   /**
    * When called, component should save it's content. This method
    * should return <code>true</code> when content of a component
-   * is saved successfully. If not, a component should dispaly a
+   * is saved successfully. If not, a component should display a
    * error message in it's area and return <code>false</code>
    *
    * @return true if saved successfuly

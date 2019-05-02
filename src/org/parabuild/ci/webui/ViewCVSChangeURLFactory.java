@@ -80,7 +80,7 @@ public final class ViewCVSChangeURLFactory implements ChangeURLFactory {
    * @return String base URL
    */
   private String makeFileURL(final SimpleChange change) {
-    // compose paramter list
+    // compose parameter list
     final Properties params = new Properties();
     if (showRevision) {
       //  NOTE: vimeshev - 2005-01-15 - see #815 "Remove version

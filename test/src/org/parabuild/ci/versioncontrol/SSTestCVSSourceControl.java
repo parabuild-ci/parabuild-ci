@@ -620,7 +620,7 @@ public class SSTestCVSSourceControl extends AbstractSourceControlTest {
       cvs.checkoutLatest();
       TestHelper.failNoExceptionThrown();
     } catch (BuildException e) {
-      // REVIEWME: simeshev@parabuilci.org -> currently CVSNT throws an exception that pserver protocol is not avialable
+      // REVIEWME: simeshev@parabuilci.org -> currently CVSNT throws an exception that pserver protocol is not available
       // assertTrue(e.toString().indexOf("test/sourceline/alwaysvalid/spaced name is not an existing filename or project") >=0);
     }
   }
@@ -642,7 +642,7 @@ public class SSTestCVSSourceControl extends AbstractSourceControlTest {
       assertTrue(lastChangeListID != 1);
       newChangeListID = cvs.getChangesSince(lastChangeListID);
     } catch (BuildException e) {
-      // REVIEWME: simeshev@parabuilci.org -> currently CVSNT throws an exception that pserver protocol is not avialable
+      // REVIEWME: simeshev@parabuilci.org -> currently CVSNT throws an exception that pserver protocol is not available
       // assertTrue(e.toString().indexOf("test/sourceline/alwaysvalid/spaced name is not an existing filename or project") >=0);
 //      assertEquals(lastChangeListID, newChangeListID);
     }

@@ -41,7 +41,7 @@ public final class BugzillaDirectSetupPanel extends AbstractIssueTrackerSetupPan
   private static final String STR_BZ_MYSQL_PASSWD = "Bugzilla MySQL password:";
   private static final String CAPTION_DIRECT_CONNECTION_TO_BUGZILLA_DATABASE = "Direct connection to Bugzilla database";
 
-// NOTE: vimeshev - 05/18/2004 - commented out untill it's clear what to do with statuses
+// NOTE: vimeshev - 05/18/2004 - commented out until it's clear what to do with statuses
 //  private Label lbStatuses = new BoldCommonLabel(STR_BZ_STATUSES);
 
   private final Field flMySQLHost = new CommonField(30, 30); // NOPMD
@@ -51,7 +51,7 @@ public final class BugzillaDirectSetupPanel extends AbstractIssueTrackerSetupPan
   private final EncryptingPassword flMySQLPasswd = new EncryptingPassword(30, 30, "mysql_password"); // NOPMD
   private final Field flProduct = new CommonField(15, 15); // NOPMD
   private final Field flVersion = new CommonField(15, 15); // NOPMD
-// NOTE: vimeshev - 05/18/2004 - commented out untill it's clear what to do with statuses
+// NOTE: vimeshev - 05/18/2004 - commented out until it's clear what to do with statuses
 //  private Field flStatuses = new CommonField(40, 40); // NOPMD
   private final Button btnTestConnection = new CommonButton("Test connection"); // NOPMD
   private final Label lbConnTestResult = new CommonLabel(); // NOPMD
@@ -69,7 +69,7 @@ public final class BugzillaDirectSetupPanel extends AbstractIssueTrackerSetupPan
     gridIter.addPair(new CommonFieldLabel(STR_BZ_MYSQL_USER), new RequiredFieldMarker(flMySQLUSer));
     gridIter.addPair(new CommonFieldLabel(STR_BZ_MYSQL_PASSWD), new RequiredFieldMarker(flMySQLPasswd));
     gridIter.add(WebuiUtils.makeHorizontalDivider(10), 2);
-// NOTE: vimeshev - 05/18/2004 - commented out untill it's clear what to do with statuses
+// NOTE: vimeshev - 05/18/2004 - commented out until it's clear what to do with statuses
 //    gridIter.addPair(lbStatuses, flStatuses);
     gridIter.addPair(new Label(), new CommonFlow(btnTestConnection, lbConnTestResult));
 
@@ -81,7 +81,7 @@ public final class BugzillaDirectSetupPanel extends AbstractIssueTrackerSetupPan
     propertyToInputMap.bindPropertyNameToInput(IssueTrackerProperty.BUGZILLA_MYSQL_PASSWORD, flMySQLPasswd);
     propertyToInputMap.bindPropertyNameToInput(IssueTrackerProperty.BUGZILLA_PRODUCT, flProduct);
     propertyToInputMap.bindPropertyNameToInput(IssueTrackerProperty.BUGZILLA_VERSION, flVersion);
-// NOTE: vimeshev - 05/18/2004 - commented out untill it's clear what to do with statuses
+// NOTE: vimeshev - 05/18/2004 - commented out until it's clear what to do with statuses
 //    propertyToInputMap.bindPropertyNameToInput(IssueTrackerProperty.BUGZILLA_STATUSES, flStatuses);
 
     // appearance

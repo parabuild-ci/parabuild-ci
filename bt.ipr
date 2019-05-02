@@ -1162,6 +1162,15 @@
       </JAVADOC>
       <SOURCES />
     </library>
+    <library name="mockito-all-1.8.5">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/3rdparty/mockito-1.8.5/mockito-all-1.8.5.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/3rdparty/mockito-1.8.5/sources/mockito-all-1.8.5-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="Rome">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/3rdparty/rome08/rome-0.8.jar!/" />

@@ -54,7 +54,7 @@ public final class DisplayGroupsTable extends AbstractFlatTable implements Loada
   private static final long serialVersionUID = -538632644979850575L; // NOPMD
 
 
-  private static final int COL_DISPALY_GROUP = 0;
+  private static final int COL_display_GROUP = 0;
   private static final String DISPLAY_GROUP = "Display Group";
 
   private final DisplayGroupManager dgm = DisplayGroupManager.getInstance();
@@ -186,7 +186,7 @@ public final class DisplayGroupsTable extends AbstractFlatTable implements Loada
     final DisplayGroup displayGroup = DisplayGroupManager.getInstance().getDisplayGroup(displayGroupBuild.getDisplayGroupID());
     final String groupName = displayGroup.getName();
     final Component[] row = getRow(rowIndex);
-    ((Label) row[COL_DISPALY_GROUP]).setText(groupName);
+    ((Label) row[COL_display_GROUP]).setText(groupName);
   }
 
 

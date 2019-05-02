@@ -90,8 +90,8 @@ public final class AboutPage extends BasePage implements StatelessTierlet {
       cp.add(WebuiUtils.makePanelDivider());
       cp.add(pnlEnvInfo);
 
-      // REVIEWME: vimeshev - 03/29/2004 - temporarely disabled process list (changed to home)
-      // untill we are ready with provisioning application re PM.
+      // REVIEWME: vimeshev - 03/29/2004 - temporarily disabled process list (changed to home)
+      // until we are ready with provisioning application re PM.
       // CommonLink lnkProcessList = new CommonLink("Process list", Pages.ADMIN_PROCESS_LIST);
 
       // shell details
@@ -207,7 +207,7 @@ public final class AboutPage extends BasePage implements StatelessTierlet {
    * Creates cache stats panel.
    */
   private static Panel makeCacheStatsPanel() {
-    final MessagePanel result = new MessagePanel("Cache statistis");
+    final MessagePanel result = new MessagePanel("Cache statistics");
     try {
       final GridIterator gi = new GridIterator(result.getUserPanel(), 5);
       gi.add(new BoldCommonLabel("Name"))

@@ -20,7 +20,7 @@ import org.parabuild.ci.object.DisplayGroup;
 import org.parabuild.ci.webui.common.CodeNameDropDown;
 
 /**
- * This class lists avialable build groups.
+ * This class lists available build groups.
  */
 public final class DisplayGroupDropDown extends CodeNameDropDown {
 
