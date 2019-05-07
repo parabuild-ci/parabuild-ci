@@ -70,7 +70,7 @@ public class ProjectManager {
         query.setCacheable(true);
         final List list = query.list();
         for (int i = 0, n = list.size(); i < n; i++) {
-          final int activeBuildID = ((Integer) list.get(i)).intValue();
+          final int activeBuildID = (Integer) list.get(i);
           BuildManager.getInstance().deactivateBuild(activeBuildID, -1);
         }
         // delete project
