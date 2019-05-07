@@ -57,7 +57,7 @@ public final class GitDepotPathParser {
         options.add(OPTION_N);
         result.add(new RepositoryPath(path.substring(0, path.length() - OPTION_N_LENGTH).trim(), options));
       } else {
-        result.add(new RepositoryPath(path, Collections.EMPTY_LIST));
+        result.add(new RepositoryPath(path, Collections.emptyList()));
       }
     }
     return result;

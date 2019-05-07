@@ -28,6 +28,6 @@ public final class ZeroLengthTailer implements Tailer {
 
 
   public List getLines() {
-    return Collections.EMPTY_LIST;
+    return Collections.emptyList();
   }
 }

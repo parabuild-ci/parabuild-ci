@@ -234,7 +234,7 @@ public final class AgentManager {
    */
   public AgentHost getNextLiveAgentHost(final int activeBuildID) throws IOException {
 
-    return getNextLiveAgentHost(activeBuildID, Collections.EMPTY_LIST, null);
+    return getNextLiveAgentHost(activeBuildID, Collections.emptyList(), null);
   }
 
 

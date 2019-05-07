@@ -141,14 +141,14 @@ public final class StopGroupPanel extends MessagePanel {
       final String agentID = getAgentID(parameters);
       if (StringUtils.isValidInteger(agentID)) {
         selectedBuildIDs = BuilderConfigurationManager.getInstance().getBuildConfigIDsForAgent(Integer.parseInt(agentID));
-        selectionBuildIDs = Collections.EMPTY_LIST;
+        selectionBuildIDs = Collections.emptyList();
       } else {
-        selectedBuildIDs = Collections.EMPTY_LIST;
-        selectionBuildIDs = Collections.EMPTY_LIST;
+        selectedBuildIDs = Collections.emptyList();
+        selectionBuildIDs = Collections.emptyList();
       }
     } else {
-      selectedBuildIDs = Collections.EMPTY_LIST;
-      selectionBuildIDs = Collections.EMPTY_LIST;
+      selectedBuildIDs = Collections.emptyList();
+      selectionBuildIDs = Collections.emptyList();
     }
 
     addBuildsToListBox(selectedBuildIDs, lbSelectedList);

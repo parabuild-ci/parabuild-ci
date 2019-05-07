@@ -33,7 +33,7 @@ public final class RepositoryPath implements Serializable {
    * Default constructor
    */
   public RepositoryPath() {
-    this(null, Collections.EMPTY_LIST);
+    this(null, Collections.emptyList());
   }
 
 
@@ -47,7 +47,7 @@ public final class RepositoryPath implements Serializable {
    * Constructor
    */
   public RepositoryPath(final String path) {
-    this(path, Collections.EMPTY_LIST);
+    this(path, Collections.emptyList());
   }
 
 

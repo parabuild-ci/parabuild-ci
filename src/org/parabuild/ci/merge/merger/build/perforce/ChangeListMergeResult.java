@@ -36,7 +36,7 @@ final class ChangeListMergeResult {
   ChangeListMergeResult(final byte resultCode, final String description) {
     this.code = resultCode;
     this.description = description;
-    this.conflicts = Collections.EMPTY_LIST;
+    this.conflicts = Collections.emptyList();
   }
 
 

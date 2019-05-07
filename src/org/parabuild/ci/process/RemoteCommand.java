@@ -87,7 +87,7 @@ public class RemoteCommand implements Cleanable {
 
 
   public RemoteCommand(final Agent agent, final boolean addAutomaticSignatureToEnvironment) {
-    this(agent, addAutomaticSignatureToEnvironment, 0, 10, Collections.EMPTY_LIST);
+    this(agent, addAutomaticSignatureToEnvironment, 0, 10, Collections.emptyList());
   }
 
 

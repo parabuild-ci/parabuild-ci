@@ -284,7 +284,7 @@ final class ResultsTable extends AbstractFlatTable {
         false,
         "",
         0,
-        Collections.EMPTY_LIST);
+              Collections.emptyList());
       // Important: to make sure it will pick up the
       // publishing commands.
       startRequest.setPublishingRun(true);

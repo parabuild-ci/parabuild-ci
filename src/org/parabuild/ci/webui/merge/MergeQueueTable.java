@@ -65,7 +65,7 @@ final class MergeQueueTable extends AbstractFlatTable {
   private static final String CAPTION_GROUP_RESULT = "Group Result";
   private static final long serialVersionUID = -4634051626335212061L;
 
-  private List report = Collections.EMPTY_LIST;
+  private List report = Collections.emptyList();
   private final SimpleDateFormat simpleDateFormat;
 
 

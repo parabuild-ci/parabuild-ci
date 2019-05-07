@@ -442,7 +442,7 @@ public final class MergeManager {
         final List result = new ArrayList(111);
 
         String currentUser = "";
-        List currentChangeLists = Collections.EMPTY_LIST;
+        List currentChangeLists = Collections.emptyList();
 
         final Iterator iterator = session.createQuery(
           " select chl from MergeConfiguration mc, BranchChangeList bchl, ChangeList chl, MergeChangeList mqm" +

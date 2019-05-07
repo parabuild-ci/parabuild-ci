@@ -41,7 +41,7 @@ public final class ResultGroupTable extends AbstractFlatTable {
   public static final String CAPTION_DESCRIPTION = "Description";
 //  public static final String CAPTION_ACTION = "Action";
 
-  private List resultGroupList = Collections.EMPTY_LIST;
+  private List resultGroupList = Collections.emptyList();
 
 
   /**
