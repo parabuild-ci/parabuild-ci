@@ -134,12 +134,10 @@ final class ChangeBuildScheduleTypePanel extends MessagePanel {
     final int destinationScheduleType = ddTargetSchedule.getCode();
     switch (sourceScheduleType) {
       case BuildConfig.SCHEDULE_TYPE_MANUAL:
-        switch (destinationScheduleType) {
-          case BuildConfig.SCHEDULE_TYPE_AUTOMATIC:
-            return new ManualToAutomaticConverter();
-          default:
-            throw new ValidationException("This combination is not supported: " + sourceScheduleType + '/' + destinationScheduleType);
+        if (destinationScheduleType == BuildConfig.SCHEDULE_TYPE_AUTOMATIC) {
+          return new ManualToAutomaticConverter();
         }
+        throw new ValidationException("This combination is not supported: " + sourceScheduleType + '/' + destinationScheduleType);
       case BuildConfig.SCHEDULE_TYPE_AUTOMATIC:
         switch (destinationScheduleType) {
           case BuildConfig.SCHEDULE_TYPE_MANUAL:

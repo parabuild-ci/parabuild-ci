@@ -159,14 +159,9 @@ final class BuildCommandsLinksImpl extends BuildCommandsLinks {
     }
 
     // show "Resume"
-    switch (buildState.getStatus().intValue()) {
-      case BuildStatus.PAUSED_VALUE:
-        // show "Resume"
-        flwResume.setVisible(rights.isAllowedToResumeBuild());
-        flwResume.setParameters(param);
-        break;
-      default:
-        break;
+    if (buildState.getStatus().intValue() == BuildStatus.PAUSED_VALUE) {// show "Resume"
+      flwResume.setVisible(rights.isAllowedToResumeBuild());
+      flwResume.setParameters(param);
     }
 
     // show commands
