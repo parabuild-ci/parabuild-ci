@@ -112,7 +112,7 @@ final class SVNSourceControl extends AbstractSourceControl {
   /**
    * Syncs to a given change list number
    *
-   * @noinspection ControlFlowStatementWithoutBraces, ThrowCaughtLocally
+   * @noinspection ControlFlowStatementWithoutBraces
    */
   public void syncToChangeList(final int changeListID) throws BuildException, CommandStoppedException, AgentFailureException {
     if (LOG.isDebugEnabled()) LOG.debug("begin syncToChangeList changeListID: " + changeListID);
