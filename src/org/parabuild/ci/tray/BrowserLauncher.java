@@ -38,8 +38,8 @@ final class BrowserLauncher {
           break;
         case RuntimeUtils.SYSTEM_TYPE_MACOSX:
           final Class fileMgr = Class.forName("com.apple.eio.FileManager");
-          final Method openURL = fileMgr.getDeclaredMethod("openURL", new Class[]{String.class});
-          openURL.invoke(null, new Object[]{url});
+          final Method openURL = fileMgr.getDeclaredMethod("openURL", String.class);
+          openURL.invoke(null, url);
           break;
         default: // *nix
           //String browser = null;

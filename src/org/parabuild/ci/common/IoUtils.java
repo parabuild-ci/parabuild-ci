@@ -436,6 +436,7 @@ public final class IoUtils {
    * code validation tools like PMD ir Findbugs.
    */
   public static void ignoreExpectedException(final Exception e) {
+    log.debug("Ignored: " + e, e);
   }
 
 
