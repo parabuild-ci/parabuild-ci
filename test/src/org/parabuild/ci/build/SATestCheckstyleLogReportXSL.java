@@ -36,7 +36,7 @@ import java.io.StringWriter;
 public class SATestCheckstyleLogReportXSL extends TestCase {
 
   /** @noinspection UNUSED_SYMBOL*/
-  private static final Log log = LogFactory.getLog(SATestCheckstyleLogReportXSL.class);
+  private static final Log LOG = LogFactory.getLog(SATestCheckstyleLogReportXSL.class);
 
   private static final File TEST_CHECKSTYLE_ERRORS_FILE = new File(TestHelper.getTestDataDir(), "test_checkstyle_errors.xml");
 
