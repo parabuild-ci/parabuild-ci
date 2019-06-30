@@ -17,11 +17,9 @@ import junit.framework.TestCase;
 import junit.framework.TestSuite;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.xml.sax.SAXException;
 import org.parabuild.ci.TestHelper;
 import org.parabuild.ci.common.IoUtils;
 
-import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
@@ -46,7 +44,7 @@ public class SATestCheckstyleLogReportXSL extends TestCase {
   /**
    * Tests that makeStringBuffer returns usable XSL.
    */
-  public void test_makeStringBuffer() throws ParserConfigurationException, IOException, SAXException, TransformerException {
+  public void test_makeStringBuffer() throws IOException, TransformerException {
     StringReader stringReader = null;
     try {
 
@@ -60,7 +58,7 @@ public class SATestCheckstyleLogReportXSL extends TestCase {
       transformer.transform(streamSource, new StreamResult(stringWriter));
       final String output = stringWriter.toString().trim();
       writeResultForReview(output);
-      assertTrue(output.length() > 0);
+      assertTrue(!output.isEmpty());
       assertTrue(output.indexOf("C:\\WORK\\mor2\\dev\\bt\\src\\viewtier\\autobuild\\object\\PublishedStepResult.java") > 0);
       assertTrue("Substring should be present", output.indexOf("145") > 0);
       assertTrue("Substring should be present", output.indexOf("42") > 0);
@@ -70,8 +68,8 @@ public class SATestCheckstyleLogReportXSL extends TestCase {
   }
 
 
-  private void writeResultForReview(final String result) throws IOException {
-    FileWriter fw = new FileWriter(TestHelper.getTestTempDir() + "/" + SATestCheckstyleLogReportXSL.class.getName() + ".html");
+  private static void writeResultForReview(final String result) throws IOException {
+    final FileWriter fw = new FileWriter(TestHelper.getTestTempDir() + "/" + SATestCheckstyleLogReportXSL.class.getName() + ".html");
     fw.write(result);
     IoUtils.closeHard(fw);
   }
@@ -94,7 +92,7 @@ public class SATestCheckstyleLogReportXSL extends TestCase {
 
 
   /**
-   * @see junit.framework.TestCase#setUp()
+   * @see TestCase#setUp()
    */
   protected void setUp() throws Exception {
     super.setUp();
