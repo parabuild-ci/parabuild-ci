@@ -31,12 +31,14 @@
   <property name="docs.result.dir" value="${build.dir}/docs_result"/>
   <property name="webservice.staging" value="${build.dir}/wsdl2java"/>
 
+  <!-- Test properties-->
   <property name="test.war.staging" value="${build.dir}/test_war_staging"/>
   <property name="test.quality.logs" value="${build.dir}/logs_code_quality"/>
-
-  <!-- Test directories -->
   <property name="test.temp.dir" value="${build.dir}/test_temp"/>
   <property name="test.log.dir" value="${build.dir}/test_logs"/>
+  <property name="test.dir.manager" value="${build.dir}/test_run_manager"/>
+  <property name="test.dir.builder" value="${build.dir}/test_run_builder"/>
+  <property name="mockito.home" value="${3rdparty}/mockito-1.8.5"/>
 
   <!-- Product configuration -->
   <property name="tomcat.http.port" value="8080"/>
@@ -44,10 +46,6 @@
 
   <!-- Automated website deployment -->
   <property name="deploy.to.downloads" value="${env.DEPLOY_TO_DONWLOADS}"/>
-
-  <!-- Test runtime configuration -->
-  <property name="test.dir.manager" value="${build.dir}/test_run_manager"/>
-  <property name="test.dir.builder" value="${build.dir}/test_run_builder"/>
 
   <target name="usage">
     <echo>
@@ -179,6 +177,10 @@ commons-io-2.2.jar		commons-logging-1.1.3.jar	javassist-3.11.0.GA.jar		struts2-c
     <pathelement path="${jdic.jar}"/>
   </path>
 
+  <path id="mockito.classpath">
+    <pathelement path="${mockito.home}/mockito-all-1.8.5.jar"/>
+  </path>
+
 
   <path id="test.classpath">
     <pathelement path="${junit.jar}"/>
@@ -191,7 +193,7 @@ commons-io-2.2.jar		commons-logging-1.1.3.jar	javassist-3.11.0.GA.jar		struts2-c
     <pathelement path="${jade.jar}"/>
     <pathelement path="${httpunit.jar}"/>
     <pathelement path="${tidy.jar}"/>
-    <pathelement path="${3rdparty}/mockito-1.8.5/mockito-all-1.8.5.jar"/>
+    <path refid="mockito.classpath"/>
     <path refid="common.classpath"/>
     <!-- Should we have separate cp for installer tests? -->
     <pathelement path="${i4jruntime.jar}"/>
