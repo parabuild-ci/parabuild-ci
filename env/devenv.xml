@@ -51,7 +51,7 @@
     <dir property="test.config" location="${test.home}/config" required="yes" build="yes"/>
     <dir property="test.data" location="${test.home}/data" required="yes" build="yes"/>
     <dir property="tomcat.home" location="${3rdparty}/apache-tomcat-8.5.15" required="yes" build="yes"/>
-    <dir property="junit.home" location="${3rdparty}/junit37" required="yes"/>
+    <dir property="junit.home" location="${3rdparty}/junit3.8.2" required="yes"/>
     <dir property="cactus.home" location="${3rdparty}/cactus141j2ee13" required="yes" build="yes"/>
     <dir property="wincvs.home" location="${3rdparty}/wincvs12" required="yes" path="yes"/>
     <dir property="project.bin" location="${project.home}/bin" required="yes" build="yes"/>
