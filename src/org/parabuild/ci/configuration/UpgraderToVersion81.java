@@ -22,7 +22,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- * Upgrades to version 80.
+ * Upgrades to version 81.
  *
  * @noinspection JDBCExecuteWithNonConstantString
  */
