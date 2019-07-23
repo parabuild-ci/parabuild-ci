@@ -23,6 +23,8 @@
 
         <Context path="" docBase="../app/parabuild.war" reloadable="true" privileged="true" distributable="false" tldValidation="false">
 
+          <Manager pathname=""/>
+
           <JarScanner scanAllDirectories="false" scanAllFiles="false" scanClassPath="false"
                       scanBootstrapClassPath="false" scanManifest="false">
             <JarScanFilter defaultPluggabilityScan="false" defaultTldScan="false"/>
