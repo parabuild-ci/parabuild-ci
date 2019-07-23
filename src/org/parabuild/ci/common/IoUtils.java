@@ -756,6 +756,16 @@ public final class IoUtils {
   }
 
 
+  public static void printToStdout(final String message) {
+    System.out.println(message); // NOPMD
+  }
+
+
+  public static void printToStdout(final Throwable th) {
+    th.printStackTrace(System.out);  // NOPMD
+  }
+
+
   /**
    * Tests if a specified file has given extension.
    */
