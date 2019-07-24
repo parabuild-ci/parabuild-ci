@@ -147,7 +147,6 @@
     <option name="NEW_SESSION_BEAN_LAST_PACKAGE" value="" />
   </component>
   <component name="EjbManager" enabled="false" />
-  <component name="Encoding" addBOMForNewFiles="with NO BOM" />
   <component name="EntryPointsManager">
     <entry_points version="2.0">
       <entry_point TYPE="field" FQNAME="org.parabuild.ci.webui.agent.status.AgentEnvironmentPage LOG" />
@@ -505,6 +504,7 @@
         <option name="superClassString" value="" />
       </inspection_tool>
       <inspection_tool class="SerializableWithUnconstructableAncestor" enabled="true" level="WARNING" enabled_by_default="true" />
+      <inspection_tool class="ServletWithoutMappingInspection" enabled="false" level="ERROR" enabled_by_default="false" />
       <inspection_tool class="SetReplaceableByEnumSet" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="SetupCallsSuperSetup" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="SetupIsPublicVoidNoArg" enabled="true" level="WARNING" enabled_by_default="true" />
@@ -953,11 +953,6 @@
     <default-html-doctype>http://www.w3.org/1999/xhtml</default-html-doctype>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
-  <component name="ResourceBundleManager">
-    <file url="file://$PROJECT_DIR$/test/data/parabuild_license_standard_50_lic.lic" />
-    <file url="file://$PROJECT_DIR$/test/data/parabuild_license_with_50_lic.lic" />
-    <file url="file://$PROJECT_DIR$/test/data/parabuild_license_with_5_lic.lic" />
-  </component>
   <component name="ResourceManagerContainer">
     <option name="myResourceBundles">
       <value>
@@ -993,6 +988,19 @@
         <root url="file://$PROJECT_DIR$/3rdparty/concurrent134/src" />
       </SOURCES>
     </library>
+    <library name="dwr">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/3rdparty/dwr-2.0.1/dwr.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="file://$PROJECT_DIR$/3rdparty/dwr-2.0.1/src/javadoc" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="file://$PROJECT_DIR$/3rdparty/dwr-2.0.1/src/demo" />
+        <root url="file://$PROJECT_DIR$/3rdparty/dwr-2.0.1/src/java" />
+        <root url="file://$PROJECT_DIR$/3rdparty/dwr-2.0.1/src/java5" />
+      </SOURCES>
+    </library>
     <library name="Ehcahe">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/3rdparty/ehcache10/ehcache-1.0.jar!/" />
@@ -1003,6 +1011,13 @@
       <SOURCES>
         <root url="jar://$PROJECT_DIR$/3rdparty/ehcache10/ehcache-1.0-src.zip!/" />
       </SOURCES>
+    </library>
+    <library name="Freemarker">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.5.16/lib/freemarker-2.3.26-incubating.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
     </library>
     <library name="GWT">
       <CLASSES>
@@ -1186,6 +1201,7 @@
     <library name="sitemesh-2.4.2">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/3rdparty/sitemesh/sitemesh-2.4.2.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.5.16/lib/struts2-sitemesh-plugin-2.5.16.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
@@ -1201,9 +1217,7 @@
     </library>
     <library name="Struts 2">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.5.10.1/lib/struts2-core-2.5.10.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.5.10.1/lib/commons-fileupload-1.3.2.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.5.10.1/lib/commons-logging-1.1.3.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.5.16/lib/struts2-core-2.5.16.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
