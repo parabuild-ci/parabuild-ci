@@ -33,8 +33,8 @@ final class AccurevEOLTypeDropDown extends CodeNameDropDown {
 
   AccurevEOLTypeDropDown() {
     setName("accurev-eol-type");
-    addCodeNamePair((int) SourceControlSetting.ACCUREV_EOL_PLATFORM, CAPTION_PLATFORM_SPECIFIC);
-    addCodeNamePair((int) SourceControlSetting.ACCUREV_EOL_UNIX, CAPTION_UNIX);
-    addCodeNamePair((int) SourceControlSetting.ACCUREV_EOL_WINDOWS, CAPTION_WINDOWS);
+    addCodeNamePair(SourceControlSetting.ACCUREV_EOL_PLATFORM, CAPTION_PLATFORM_SPECIFIC);
+    addCodeNamePair(SourceControlSetting.ACCUREV_EOL_UNIX, CAPTION_UNIX);
+    addCodeNamePair(SourceControlSetting.ACCUREV_EOL_WINDOWS, CAPTION_WINDOWS);
   }
 }
