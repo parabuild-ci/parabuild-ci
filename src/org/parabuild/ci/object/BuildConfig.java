@@ -37,13 +37,7 @@ public class BuildConfig implements Serializable, ObjectConstants, Lifecycle {
     public int compare(final Object o1, final Object o2) {
       final BuildConfig bc1 = (BuildConfig) o1;
       final BuildConfig bc2 = (BuildConfig) o2;
-      if (bc1.activeBuildID > bc2.activeBuildID) {
-        return 1;
-      }
-      if (bc1.activeBuildID < bc2.activeBuildID) {
-        return -1;
-      }
-      return 0;
+      return Integer.compare(bc1.activeBuildID, bc2.activeBuildID);
     }
   };
 
