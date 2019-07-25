@@ -25,6 +25,6 @@ import org.parabuild.ci.versioncontrol.StderrLineProcessor;
 final class AccurevStderrLineProcessor implements StderrLineProcessor {
 
   public int processLine(final int index, final String line) {
-    return (int) RESULT_ADD_TO_ERRORS;
+    return RESULT_ADD_TO_ERRORS;
   }
 }
