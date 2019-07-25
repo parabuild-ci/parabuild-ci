@@ -33,9 +33,7 @@ public final class Tail {
     public int compare(final Object o1, final Object o2) {
       final TailLine line1 = (TailLine)o1;
       final TailLine line2 = (TailLine)o2;
-      if (line1.getTimeStamp() < line2.getTimeStamp()) return -1;
-      if (line1.getTimeStamp() == line2.getTimeStamp()) return 0;
-      return 1;
+      return Long.compare(line1.getTimeStamp(), line2.getTimeStamp());
     }
   };
 
