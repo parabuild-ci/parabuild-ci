@@ -115,7 +115,7 @@ final class CyclicBuffer {
 
     final Object[] temp = new Object[newSize];
 
-    final int loopLen = newSize < size ? newSize : size;
+    final int loopLen = Math.min(newSize, size);
 
     for (int i = 0; i < loopLen; i++) {
       temp[i] = buffer[first];
