@@ -95,7 +95,7 @@ public abstract class AbstractLogConfigPanel extends MessagePanel implements Val
    * @param type log type to set.
    */
   public final void setLogType(final byte type) {
-    flLogType.setCode((int) type);
+    flLogType.setCode(type);
   }
 
 
