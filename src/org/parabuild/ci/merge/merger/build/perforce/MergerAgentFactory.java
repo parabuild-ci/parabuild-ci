@@ -33,7 +33,7 @@ final class MergerAgentFactory implements BuildRunnerAgentFactory {
 
 
   /**
-   * @see P4Merger#runValidationBuild
+   * @see P4Merger
    */
   public MergerAgentFactory(final Agent agent) {
 
@@ -44,7 +44,7 @@ final class MergerAgentFactory implements BuildRunnerAgentFactory {
   /**
    * Returns a instance of the a Agent passed by  Merger.
    *
-   * @see P4Merger#runValidationBuild
+   * @see P4Merger
    */
   public Agent checkoutAgent(final int activeBuildID, final BuildStartRequest buildConfigID) {
     return agent;
