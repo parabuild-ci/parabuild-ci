@@ -24,8 +24,6 @@ import java.io.StringReader;
 /**
  * UnitTestPPLogComponent is a custom leaf component responsible for
  * displaying build logs presented as unaltered readers.
- *
- * @see org.parabuild.ci.webui.common.BasePage#executePage
  */
 public final class UnitTestPPLogComponent extends AbstractXSLRendererComponent {
 
