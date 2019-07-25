@@ -243,7 +243,7 @@ final class PVCSVlogParser {
     } catch (final ParseException e) {
       throw IoUtils.createIOException(e);
     } catch (final CommandStoppedException e) {
-      IoUtils.createIOException(e);
+      throw IoUtils.createIOException(e);
     }
   }
 }
