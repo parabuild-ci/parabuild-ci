@@ -25,8 +25,6 @@ import java.io.StringReader;
 /**
  * CppUnitLogComponent is a custom leaf component responsible for
  * displaying build logs presented as unaltered readers.
- *
- * @see BasePage#executePage
  */
 public final class CppUnitLogComponent extends AbstractXSLRendererComponent {
 
