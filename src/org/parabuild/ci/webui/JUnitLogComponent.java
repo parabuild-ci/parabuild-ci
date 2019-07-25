@@ -25,8 +25,6 @@ import java.io.StringReader;
 /**
  * JUnitLogComponent is a custom leaf component responsible for
  * displaying build logs presented as unaltered readers.
- *
- * @see BasePage#executePage
  */
 public final class JUnitLogComponent extends AbstractXSLRendererComponent {
 
