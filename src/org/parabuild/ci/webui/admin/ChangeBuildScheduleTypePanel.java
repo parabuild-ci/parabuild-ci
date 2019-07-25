@@ -169,7 +169,7 @@ final class ChangeBuildScheduleTypePanel extends MessagePanel {
    * @param scheduleType
    */
   private void addTypeToDropDown(final byte scheduleType) {
-    ddTargetSchedule.addCodeNamePair((int) scheduleType, BuildConfig.getScheduleTypeAsString(scheduleType));
+    ddTargetSchedule.addCodeNamePair(scheduleType, BuildConfig.getScheduleTypeAsString(scheduleType));
   }
 
 
