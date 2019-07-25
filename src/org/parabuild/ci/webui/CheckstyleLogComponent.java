@@ -26,7 +26,6 @@ import java.io.StringReader;
  * CheckstyleLogComponent is a custom leaf component responsible for
  * displaying build logs presented as Checkstyle XML.
  *
- * @see BasePage#executePage
  * @see AbstractXSLRendererComponent
  * @see ArchiveManager#getArchivedLogInputStream
  */
