@@ -126,9 +126,8 @@ final class AgentStatusChartGenerator {
 
 
     public int compareTo(final Object o) {
-      final int thisVal = this.value;
       final int anotherVal = ((ColumnKey) o).value;
-      return thisVal < anotherVal ? -1 : thisVal == anotherVal ? 0 : 1;
+      return Integer.compare(this.value, anotherVal);
     }
 
 
