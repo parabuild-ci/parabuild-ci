@@ -134,7 +134,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
       composer.setCaseSensitiveUserName(NotificationUtils.isCaseSensitiveUserName(buildRun.getBuildID()));
       final BuildStepType type = buildRun.getType() == BuildRun.TYPE_PUBLISHING_RUN ? BuildStepType.PUBLISH : BuildStepType.BUILD;
       final boolean notFirstStepStart = !cm.isFirstBuildSequence(buildRun.getBuildID(), type, buildSequence.getStepName());
-      final int watchLevel = (int) BuildWatcher.LEVEL_SUCCESS;
+      final int watchLevel = BuildWatcher.LEVEL_SUCCESS;
       final EmailRecipients recipients = composer.makeRecipients(buildRun, vcsUserMap, true, notFirstStepStart, false, true, watchLevel);
       sendMessage(recipients, messageSubject, messageBody, SystemProperty.MESSAGE_PRIORITY_NORMAL);
     } catch (final Exception e) {
@@ -196,7 +196,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
       // send message
       final EmailRecipientListComposer composer = new EmailRecipientListComposer();
       composer.setCaseSensitiveUserName(NotificationUtils.isCaseSensitiveUserName(buildRun.getBuildID()));
-      final int curOffWatchLevel = (int) BuildWatcher.LEVEL_SYSTEM_ERROR;
+      final int curOffWatchLevel = BuildWatcher.LEVEL_SYSTEM_ERROR;
       final EmailRecipients recipients = composer.makeRecipients(buildRun, vcsUserMap, false, false, false, true, curOffWatchLevel);
       final byte messagePriority = SystemConfigurationManagerFactory.getManager().getSystemPropertyValue(SystemProperty.MESSAGE_PRIORITY_FAILED_BUILD, SystemProperty.MESSAGE_PRIORITY_NORMAL);
       sendMessage(recipients, subject, body, messagePriority);
@@ -403,7 +403,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
       // send message
       final EmailRecipientListComposer composer = new EmailRecipientListComposer();
       composer.setCaseSensitiveUserName(NotificationUtils.isCaseSensitiveUserName(buildRun.getBuildID()));
-      final int cutOffWatchLevel = (int) BuildWatcher.LEVEL_BROKEN;
+      final int cutOffWatchLevel = BuildWatcher.LEVEL_BROKEN;
       final EmailRecipients recipients = composer.makeRecipients(buildRun, vcsUserMap, false, false, false, true, cutOffWatchLevel);
       final byte messagePriority = buildRun.getResultID() == BuildRun.BUILD_RESULT_SUCCESS ? SystemProperty.MESSAGE_PRIORITY_NORMAL : SystemConfigurationManagerFactory.getManager().getSystemPropertyValue(SystemProperty.MESSAGE_PRIORITY_FAILED_BUILD, SystemProperty.MESSAGE_PRIORITY_NORMAL);
       sendMessage(recipients, subj, body, messagePriority);
@@ -682,7 +682,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
   private static StringBuffer makeStepRunTiming(final StepRun run) {
     final StringBuffer result = new StringBuffer(30);
     result.append(run.getName()).append(" took ");
-    result.append(StringUtils.durationToString((long) run.getDuration(), true));
+    result.append(StringUtils.durationToString(run.getDuration(), true));
     return result;
   }
 

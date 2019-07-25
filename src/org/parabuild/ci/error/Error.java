@@ -359,7 +359,7 @@ public final class Error implements Serializable {
    * @return error level.
    */
   public int getErrorLevel() {
-    int errorLevel = (int) ERROR_LEVEL_UNKNOWN;
+    int errorLevel = ERROR_LEVEL_UNKNOWN;
     try {
       errorLevel = Integer.parseInt(content.getProperty(ERROR_LEVEL));
     } catch (final NumberFormatException e) {

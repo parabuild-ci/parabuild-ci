@@ -30,7 +30,7 @@ final class MessagePriorityDropDown extends CodeNameDropDown {
    * Constructor
    */
   MessagePriorityDropDown() {
-    addCodeNamePair((int) SystemProperty.MESSAGE_PRIORITY_NORMAL, CAPTION_NORMAL);
-    addCodeNamePair((int) SystemProperty.MESSAGE_PRIORITY_HIGH, CAPTION_HIGH);
+    addCodeNamePair(SystemProperty.MESSAGE_PRIORITY_NORMAL, CAPTION_NORMAL);
+    addCodeNamePair(SystemProperty.MESSAGE_PRIORITY_HIGH, CAPTION_HIGH);
   }
 }

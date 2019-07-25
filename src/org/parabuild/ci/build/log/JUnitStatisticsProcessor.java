@@ -212,7 +212,7 @@ final class JUnitStatisticsProcessor {
         buildRunTest.setMessage(message);
         buildRunTest.setNewFailure(newInThisBuildRun);
         buildRunTest.setNewTest(newTest);
-        buildRunTest.setResultCode((short) resultCode);
+        buildRunTest.setResultCode(resultCode);
         buildRunTest.setTestCaseNameID(testCaseNameID);
         //          if (LOG.isDebugEnabled()) LOG.debug("buildRunTest: " + buildRunTest);
         cm.saveObject(buildRunTest);

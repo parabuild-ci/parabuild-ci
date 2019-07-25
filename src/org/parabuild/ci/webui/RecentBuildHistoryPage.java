@@ -84,7 +84,7 @@ public final class RecentBuildHistoryPage extends AbstractBuildStatisticsPage im
       if (StringUtils.isValidInteger(filterValue)) {
         filterCode = Integer.parseInt(filterValue);
       } else {
-        filterCode = (int) BuildHistoryFilterDropDown.CODE_ALL;
+        filterCode = BuildHistoryFilterDropDown.CODE_ALL;
       }
       ddBuildHistoryFilter.setCode(filterCode);
     }
