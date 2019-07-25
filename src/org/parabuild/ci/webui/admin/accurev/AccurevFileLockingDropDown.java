@@ -33,8 +33,8 @@ final class AccurevFileLockingDropDown extends CodeNameDropDown {
 
   AccurevFileLockingDropDown() {
     setName("accurev-worskpace-type");
-    addCodeNamePair((int) SourceControlSetting.ACCUREV_WORKSPACE_LOKING_NONE, CAPTION_NONE);
-    addCodeNamePair((int) SourceControlSetting.ACCUREV_WORKSPACE_LOKING_ANCHOR, CAPTION_ANCHOR);
-    addCodeNamePair((int) SourceControlSetting.ACCUREV_WORKSPACE_LOKING_EXCLUSIVE, CAPTION_EXCLUSIVE);
+    addCodeNamePair(SourceControlSetting.ACCUREV_WORKSPACE_LOKING_NONE, CAPTION_NONE);
+    addCodeNamePair(SourceControlSetting.ACCUREV_WORKSPACE_LOKING_ANCHOR, CAPTION_ANCHOR);
+    addCodeNamePair(SourceControlSetting.ACCUREV_WORKSPACE_LOKING_EXCLUSIVE, CAPTION_EXCLUSIVE);
   }
 }
