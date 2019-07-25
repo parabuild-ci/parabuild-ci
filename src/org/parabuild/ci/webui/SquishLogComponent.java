@@ -25,8 +25,6 @@ import java.io.StringReader;
 /**
  * SquishTesterLogComponent is a custom leaf component responsible for
  * displaying build logs presented as unaltered readers.
- *
- * @see BasePage#executePage
  */
 public final class SquishLogComponent extends AbstractXSLRendererComponent {
 
