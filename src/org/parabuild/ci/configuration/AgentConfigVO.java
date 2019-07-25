@@ -17,7 +17,7 @@ import org.parabuild.ci.object.AgentConfig;
 import org.parabuild.ci.object.ObjectConstants;
 
 /**
- * @noinspection StaticInheritance
+ * @noinspection StaticInheritance, FieldMayBeStatic
  */
 public final class AgentConfigVO implements ObjectConstants {
 
