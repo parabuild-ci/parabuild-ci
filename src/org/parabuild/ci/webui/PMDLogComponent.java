@@ -26,7 +26,6 @@ import java.io.StringReader;
  * PMDLogComponent is a custom leaf component responsible for
  * displaying build logs presented as PMD XML.
  *
- * @see BasePage#executePage
  * @see AbstractXSLRendererComponent
  * @see ArchiveManager#getArchivedLogInputStream
  */
