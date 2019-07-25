@@ -700,7 +700,7 @@ public final class ConfigurationManager implements Serializable {
         q.setFirstResult(firstResult);
         q.setMaxResults(maxCount);
         q.setInteger(0, activeBuildID);
-        q.setInteger(1, (int) BuildRun.RUN_COMPLETE);
+        q.setInteger(1, BuildRun.RUN_COMPLETE);
         q.setByte(2, BuildRun.TYPE_BUILD_RUN);
         q.setCacheable(true);
         return q.list();
@@ -767,7 +767,7 @@ public final class ConfigurationManager implements Serializable {
                 "   and br.complete = ? " +
                 "   and br.type = ? ");
         q.setInteger(0, activeBuildID);
-        q.setInteger(1, (int) BuildRun.RUN_COMPLETE);
+        q.setInteger(1, BuildRun.RUN_COMPLETE);
         q.setByte(2, BuildRun.TYPE_BUILD_RUN);
         q.setCacheable(true);
         return q.uniqueResult();
@@ -795,7 +795,7 @@ public final class ConfigurationManager implements Serializable {
         q.setFirstResult(firstResult);
         q.setMaxResults(maxCount);
         q.setInteger(0, activeBuildID);
-        q.setInteger(1, (int) BuildRun.RUN_COMPLETE);
+        q.setInteger(1, BuildRun.RUN_COMPLETE);
         q.setByte(2, BuildRun.TYPE_BUILD_RUN);
         q.setByte(3, BuildRun.BUILD_RESULT_SUCCESS);
         q.setCacheable(true);
@@ -821,7 +821,7 @@ public final class ConfigurationManager implements Serializable {
                 "   and br.type = ? " +
                 "   and br.resultID = ? ");
         q.setInteger(0, activeBuildID);
-        q.setInteger(1, (int) BuildRun.RUN_COMPLETE);
+        q.setInteger(1, BuildRun.RUN_COMPLETE);
         q.setByte(2, BuildRun.TYPE_BUILD_RUN);
         q.setByte(3, BuildRun.BUILD_RESULT_SUCCESS);
         q.setCacheable(true);
@@ -847,7 +847,7 @@ public final class ConfigurationManager implements Serializable {
                 "   and br.reRun = no " +
                 " order by br.startedAt");
         q.setInteger(0, activeBuildID);
-        q.setInteger(1, (int) BuildRun.RUN_COMPLETE);
+        q.setInteger(1, BuildRun.RUN_COMPLETE);
         q.setByte(2, BuildRun.TYPE_BUILD_RUN);
         q.setByte(3, BuildRun.BUILD_RESULT_SUCCESS);
         q.setInteger(4, sinceBuildRunID);
@@ -877,7 +877,7 @@ public final class ConfigurationManager implements Serializable {
         q.setFirstResult(firstResult);
         q.setMaxResults(maxCount);
         q.setInteger(0, activeBuildID);
-        q.setInteger(1, (int) BuildRun.RUN_COMPLETE);
+        q.setInteger(1, BuildRun.RUN_COMPLETE);
         q.setByte(2, BuildRun.TYPE_BUILD_RUN);
         q.setByte(3, BuildRun.BUILD_RESULT_SUCCESS);
         q.setCacheable(true);
@@ -903,7 +903,7 @@ public final class ConfigurationManager implements Serializable {
                 "   and br.type = ? " +
                 "   and br.resultID <> ? ");
         q.setInteger(0, activeBuildID);
-        q.setInteger(1, (int) BuildRun.RUN_COMPLETE);
+        q.setInteger(1, BuildRun.RUN_COMPLETE);
         q.setByte(2, BuildRun.TYPE_BUILD_RUN);
         q.setByte(3, BuildRun.BUILD_RESULT_SUCCESS);
         q.setCacheable(true);
@@ -1251,8 +1251,8 @@ public final class ConfigurationManager implements Serializable {
                 " where sl.stepRunID = ? and (sl.type = ? or sl.type = ?)" +
                 " order by sl.ID");
         query.setInteger(0, stepRun.getID());
-        query.setInteger(1, (int) StepLog.TYPE_MAIN);
-        query.setInteger(2, (int) StepLog.TYPE_WINDOW);
+        query.setInteger(1, StepLog.TYPE_MAIN);
+        query.setInteger(2, StepLog.TYPE_WINDOW);
         query.setCacheable(true);
         return query.list();
       }
@@ -1277,12 +1277,12 @@ public final class ConfigurationManager implements Serializable {
             continue;
           }
           // try error window
-          List stepLogs = configManager.getStepLogs(stepRun, (int) StepLog.TYPE_WINDOW);
+          List stepLogs = configManager.getStepLogs(stepRun, StepLog.TYPE_WINDOW);
           if (!stepLogs.isEmpty()) {
             return stepLogs.get(0);
           }
           // try main seq log
-          stepLogs = configManager.getStepLogs(stepRun, (int) StepLog.TYPE_MAIN);
+          stepLogs = configManager.getStepLogs(stepRun, StepLog.TYPE_MAIN);
           if (!stepLogs.isEmpty()) {
             return stepLogs.get(0);
           }
@@ -3154,7 +3154,7 @@ public final class ConfigurationManager implements Serializable {
                 "                             and bra.type = ?" +
                 "                             and bra.reRun = no)");
         q.setInteger(0, activeBuildID);
-        q.setInteger(1, (int) BuildRun.RUN_COMPLETE);
+        q.setInteger(1, BuildRun.RUN_COMPLETE);
         q.setByte(2, BuildRun.TYPE_BUILD_RUN);
         q.setCacheable(true);
         return q.uniqueResult();
