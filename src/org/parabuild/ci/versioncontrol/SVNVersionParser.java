@@ -22,7 +22,6 @@ import org.parabuild.ci.common.*;
 /**
  * Functor responsible for parsing Subversion version string.
  *
- * @see SVNSourceControl#getChangesSince(String, String, int, String)
  * @see SVNVersionCommand
  */
 final class SVNVersionParser {
