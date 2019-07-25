@@ -1201,7 +1201,6 @@
     <library name="sitemesh-2.4.2">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/3rdparty/sitemesh/sitemesh-2.4.2.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.5.16/lib/struts2-sitemesh-plugin-2.5.16.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
@@ -1218,6 +1217,9 @@
     <library name="Struts 2">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.5.16/lib/struts2-core-2.5.16.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.5.16/lib/struts2-sitemesh-plugin-2.5.16.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.5.16/lib/struts2-junit-plugin-2.5.16.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.5.16/lib/struts2-json-plugin-2.5.16.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
