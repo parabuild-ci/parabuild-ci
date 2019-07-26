@@ -23,6 +23,7 @@ public final class VersionControlSystem {
   public static final String NAME_SCM_SVN = "Subversion";
   public static final String NAME_SCM_VAULT = "Vault";
   public static final String NAME_SCM_VSS = "Visual SourceSafe";
+  public static final String NAME_SCM_UNDEFINED = "Undefined";
 
   public static final byte SCM_UNDEFINED = 0;
   public static final byte SCM_PERFORCE = 1;
@@ -43,7 +44,6 @@ public final class VersionControlSystem {
   public static final byte SCM_GIT = 16;
   public static final byte SCM_BAZAAR = 17;
   public static final byte SCM_MERCURIAL = 18;
-  public static final String NAME_UNDEFINED = "Undefined";
 
   /**
    * String lookup table.
@@ -61,7 +61,7 @@ public final class VersionControlSystem {
     final String[] result = new String[19];
 
     // Populate the lookup table.
-    result[SCM_UNDEFINED] = NAME_UNDEFINED;
+    result[SCM_UNDEFINED] = NAME_SCM_UNDEFINED;
     result[SCM_ACCUREV] = NAME_SCM_ACCUREV;
     result[SCM_CLEARCASE] = NAME_SCM_CLEARCASE;
     result[SCM_BAZAAR] = NAME_BAZAAR;
@@ -91,7 +91,7 @@ public final class VersionControlSystem {
    * @param code the code to convert.
    * @return human-readable VCS name.
    */
-  public static final String vcsToString(final int code) {
+  public static final String vcsToString(final int code) throws IllegalArgumentException {
 
     if (code < 0 || code >= STRING_VCS_NAME.length) {
       throw new IllegalArgumentException("VCS code " + code + " is invalid");
