@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.object.BuildConfig;
+import org.parabuild.ci.versioncontrol.VersionControlSystem;
 import org.parabuild.ci.webui.common.CodeNameDropDown;
 
 /**
@@ -23,46 +23,30 @@ public final class VersionControlDropDown extends CodeNameDropDown {
 
   private static final long serialVersionUID = 6932472851129032468L; // NOPMD
 
-  public static final String NAME_SCM_ACCUREV = "AccuRev";
-  private static final String NAME_BAZAAR = "Bazaar";
-  public static final String NAME_SCM_CLEARCASE = "ClearCase";
-  public static final String NAME_SCM_CVS = "CVS";
-  public static final String NAME_SCM_FILESYSTEM = "File system VCS";
-  public static final String NAME_SCM_GENERIC = "Generic VCS";
-  public static final String NAME_SCM_GIT = "Git";
-  public static final String NAME_SCM_MERCURIAL = "Mercurial";
-  public static final String NAME_SCM_MKS = "MKS Source Integrity";
-  public static final String NAME_SCM_PERFORCE = "Perforce";
-  public static final String NAME_SCM_PVCS = "PVCS";
-  public static final String NAME_SCM_REFERENCE = "Build reference";
-  public static final String NAME_SCM_STARTEAM = "StarTeam";
-  public static final String NAME_SCM_SURROUND = "Surround SCM";
-  public static final String NAME_SCM_SVN = "Subversion";
-  public static final String NAME_SCM_VAULT = "Vault";
-  public static final String NAME_SCM_VSS = "Visual SourceSafe";
-
 
   /**
    * Constructor
    */
   public VersionControlDropDown() {
-    super.addCodeNamePair(BuildConfig.SCM_ACCUREV, NAME_SCM_ACCUREV);
-    super.addCodeNamePair(BuildConfig.SCM_CLEARCASE, NAME_SCM_CLEARCASE);
-    super.addCodeNamePair(BuildConfig.SCM_BAZAAR, NAME_BAZAAR);
-    super.addCodeNamePair(BuildConfig.SCM_CVS, NAME_SCM_CVS);
-    super.addCodeNamePair(BuildConfig.SCM_FILESYSTEM, NAME_SCM_FILESYSTEM);
-    super.addCodeNamePair(BuildConfig.SCM_GENERIC, NAME_SCM_GENERIC);
-    super.addCodeNamePair(BuildConfig.SCM_GIT, NAME_SCM_GIT);
-    super.addCodeNamePair(BuildConfig.SCM_MERCURIAL, NAME_SCM_MERCURIAL);
-    super.addCodeNamePair(BuildConfig.SCM_MKS, NAME_SCM_MKS);
-    super.addCodeNamePair(BuildConfig.SCM_PERFORCE, NAME_SCM_PERFORCE);
-    super.addCodeNamePair(BuildConfig.SCM_PVCS, NAME_SCM_PVCS);
-    super.addCodeNamePair(BuildConfig.SCM_REFERENCE, NAME_SCM_REFERENCE);
-    super.addCodeNamePair(BuildConfig.SCM_STARTEAM, NAME_SCM_STARTEAM);
-    super.addCodeNamePair(BuildConfig.SCM_SURROUND, NAME_SCM_SURROUND);
-    super.addCodeNamePair(BuildConfig.SCM_SVN, NAME_SCM_SVN);
-    super.addCodeNamePair(BuildConfig.SCM_VAULT, NAME_SCM_VAULT);
-    super.addCodeNamePair(BuildConfig.SCM_VSS, NAME_SCM_VSS);
-    super.setCode(BuildConfig.SCM_CLEARCASE);
+
+    super.addCodeNamePair(VersionControlSystem.SCM_ACCUREV, VersionControlSystem.NAME_SCM_ACCUREV);
+    super.addCodeNamePair(VersionControlSystem.SCM_CLEARCASE, VersionControlSystem.NAME_SCM_CLEARCASE);
+    super.addCodeNamePair(VersionControlSystem.SCM_BAZAAR, VersionControlSystem.NAME_BAZAAR);
+    super.addCodeNamePair(VersionControlSystem.SCM_CVS, VersionControlSystem.NAME_SCM_CVS);
+    super.addCodeNamePair(VersionControlSystem.SCM_FILESYSTEM, VersionControlSystem.NAME_SCM_FILESYSTEM);
+    super.addCodeNamePair(VersionControlSystem.SCM_GENERIC, VersionControlSystem.NAME_SCM_GENERIC);
+    super.addCodeNamePair(VersionControlSystem.SCM_GIT, VersionControlSystem.NAME_SCM_GIT);
+    super.addCodeNamePair(VersionControlSystem.SCM_MERCURIAL, VersionControlSystem.NAME_SCM_MERCURIAL);
+    super.addCodeNamePair(VersionControlSystem.SCM_MKS, VersionControlSystem.NAME_SCM_MKS);
+    super.addCodeNamePair(VersionControlSystem.SCM_PERFORCE, VersionControlSystem.NAME_SCM_PERFORCE);
+    super.addCodeNamePair(VersionControlSystem.SCM_PVCS, VersionControlSystem.NAME_SCM_PVCS);
+    super.addCodeNamePair(VersionControlSystem.SCM_REFERENCE, VersionControlSystem.NAME_SCM_REFERENCE);
+    super.addCodeNamePair(VersionControlSystem.SCM_STARTEAM, VersionControlSystem.NAME_SCM_STARTEAM);
+    super.addCodeNamePair(VersionControlSystem.SCM_SURROUND, VersionControlSystem.NAME_SCM_SURROUND);
+    super.addCodeNamePair(VersionControlSystem.SCM_SVN, VersionControlSystem.NAME_SCM_SVN);
+    super.addCodeNamePair(VersionControlSystem.SCM_VAULT, VersionControlSystem.NAME_SCM_VAULT);
+    super.addCodeNamePair(VersionControlSystem.SCM_VSS, VersionControlSystem.NAME_SCM_VSS);
+
+    super.setCode(VersionControlSystem.SCM_CLEARCASE);
   }
 }

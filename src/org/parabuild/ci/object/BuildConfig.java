@@ -17,6 +17,7 @@ import net.sf.hibernate.CallbackException;
 import net.sf.hibernate.Lifecycle;
 import net.sf.hibernate.Session;
 import org.parabuild.ci.common.ArgumentValidator;
+import org.parabuild.ci.versioncontrol.VersionControlSystem;
 
 import java.io.Serializable;
 import java.util.Comparator;
@@ -48,29 +49,9 @@ public class BuildConfig implements Serializable, ObjectConstants, Lifecycle {
   /**
    * Parallel builds run when their leading builds run.
    * <p/>
-   * Parallel builds are limited to {@link #SCM_REFERENCE} SCM.
+   * Parallel builds are limited to {@link VersionControlSystem#SCM_REFERENCE} SCM.
    */
   public static final byte SCHEDULE_TYPE_PARALLEL = 4;
-
-  public static final byte SCM_UNDEFINED = 0;
-  public static final byte SCM_PERFORCE = 1;
-  public static final byte SCM_CVS = 2;
-  public static final byte SCM_REFERENCE = 3;
-  public static final byte SCM_VSS = 4;
-  public static final byte SCM_CLEARCASE = 5;
-  public static final byte SCM_SVN = 6;
-  public static final byte SCM_SURROUND = 7;
-  public static final byte SCM_STARTEAM = 8;
-  public static final byte SCM_VAULT = 9;
-  public static final byte SCM_PVCS = 10;
-  public static final byte SCM_MKS = 11;
-  public static final byte SCM_FILESYSTEM = 12;
-  public static final byte SCM_GENERIC = 13;
-  public static final byte SCM_SYNERGY = 14;
-  public static final byte SCM_ACCUREV = 15;
-  public static final byte SCM_GIT = 16;
-  public static final byte SCM_BAZAAR = 17;
-  public static final byte SCM_MERCURIAL = 18;
 
   public static final byte ACCESS_PUBLIC = 1;
   public static final byte ACCESS_PRIVATE = 2;
@@ -81,7 +62,7 @@ public class BuildConfig implements Serializable, ObjectConstants, Lifecycle {
   private boolean sourceControlEmail = false;
   private byte access = ACCESS_PUBLIC;
   private byte scheduleType = SCHEDULE_TYPE_AUTOMATIC;
-  private byte sourceControl = SCM_UNDEFINED;
+  private byte sourceControl = VersionControlSystem.SCM_UNDEFINED;
   private long timeStamp = 0;
   private String buildName = null;
   private String emailDomain = "";
@@ -372,16 +353,16 @@ public class BuildConfig implements Serializable, ObjectConstants, Lifecycle {
    * @return the source control type in a human readable format.
    */
   public final String getChangeManagerAsString() {
-    if (this.sourceControl == SCM_PERFORCE) {
+    if (this.sourceControl == VersionControlSystem.SCM_PERFORCE) {
       return "P4";
     }
-    if (this.sourceControl == SCM_CVS) {
+    if (this.sourceControl == VersionControlSystem.SCM_CVS) {
       return "CVS";
     }
-    if (this.sourceControl == SCM_VSS) {
+    if (this.sourceControl == VersionControlSystem.SCM_VSS) {
       return "VSS";
     }
-    if (this.sourceControl == SCM_SVN) {
+    if (this.sourceControl == VersionControlSystem.SCM_SVN) {
       return "SVN";
     }
     return "Undefined";
@@ -401,7 +382,7 @@ public class BuildConfig implements Serializable, ObjectConstants, Lifecycle {
     if (scheduleType < 0) {
       throw new CallbackException("Schedule type is not set");
     }
-    if (scheduleType == SCHEDULE_TYPE_PARALLEL && sourceControl != SCM_REFERENCE) {
+    if (scheduleType == SCHEDULE_TYPE_PARALLEL && sourceControl != VersionControlSystem.SCM_REFERENCE) {
       throw new CallbackException("Parallel build support only reference source control");
     }
     return NO_VETO;

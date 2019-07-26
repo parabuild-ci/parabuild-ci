@@ -18,6 +18,7 @@ import org.apache.cactus.ServletTestCase;
 import org.parabuild.ci.TestHelper;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
+import org.parabuild.ci.versioncontrol.VersionControlSystem;
 
 /**
  * Tests ManualStartSettingsPanel
@@ -65,7 +66,7 @@ public final class SSTestManualStartSettingsPanel extends ServletTestCase {
 
   protected void setUp() throws Exception {
     super.setUp();
-    testPanel = new ManualStartSettingsPanel(BuildConfig.SCM_PERFORCE, BuildConfig.SCHEDULE_TYPE_MANUAL);
+    testPanel = new ManualStartSettingsPanel(VersionControlSystem.SCM_PERFORCE, BuildConfig.SCHEDULE_TYPE_MANUAL);
   }
 
 

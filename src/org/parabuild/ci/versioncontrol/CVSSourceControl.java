@@ -1018,7 +1018,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
    * Validates that correct CVS build configuration was passed
    */
   private static void validateIsCVSConfiguration(final BuildConfig buildConfig) {
-    if (buildConfig.getSourceControl() != BuildConfig.SCM_REFERENCE && buildConfig.getSourceControl() != BuildConfig.SCM_CVS) {
+    if (buildConfig.getSourceControl() != VersionControlSystem.SCM_REFERENCE && buildConfig.getSourceControl() != VersionControlSystem.SCM_CVS) {
       throw new IllegalArgumentException("Non-CVS build configuration");
     }
   }

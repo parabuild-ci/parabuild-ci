@@ -17,6 +17,7 @@ import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.BuildConfigAttribute;
 import org.parabuild.ci.object.SourceControlSetting;
+import org.parabuild.ci.versioncontrol.VersionControlSystem;
 import org.parabuild.ci.webui.admin.mercurial.MercurialManualScheduleStartParametersPanel;
 
 /**
@@ -46,27 +47,27 @@ final class ManualScheduleStartParametersPanelFactory {
 
     if (buildConfiguration.getScheduleType() == BuildConfig.SCHEDULE_TYPE_MANUAL) {
       final byte sourceControl = buildConfiguration.getSourceControl();
-      if (sourceControl == BuildConfig.SCM_SVN) {
+      if (sourceControl == VersionControlSystem.SCM_SVN) {
 
         return new SVNManualScheduleStartParametersPanel();
 
-      } else if (sourceControl == BuildConfig.SCM_CVS) {
+      } else if (sourceControl == VersionControlSystem.SCM_CVS) {
 
         return new CVSManualScheduleStartParametersPanel();
 
-      } else if (sourceControl == BuildConfig.SCM_PERFORCE) {
+      } else if (sourceControl == VersionControlSystem.SCM_PERFORCE) {
 
         // Check if this build is configured to use Perforce client name as a view source
         final boolean showParameters = showPerforceParameters(buildID);
         final boolean showDepotPathOverride = showPerforceView(buildID) && showParameters;
         return new P4ManualScheduleStartParametersPanel(showDepotPathOverride, showParameters);
 
-      } else if (sourceControl == BuildConfig.SCM_BAZAAR) {
+      } else if (sourceControl == VersionControlSystem.SCM_BAZAAR) {
 
         final boolean showParameters = showBazaarParameters(buildID);
         return new BazaarManualScheduleStartParametersPanel(false, showParameters);
 
-      } else if (sourceControl == BuildConfig.SCM_MERCURIAL) {
+      } else if (sourceControl == VersionControlSystem.SCM_MERCURIAL) {
 
         final boolean showParameters = showMercurialParameters(buildID);
         return new MercurialManualScheduleStartParametersPanel(false, showParameters);

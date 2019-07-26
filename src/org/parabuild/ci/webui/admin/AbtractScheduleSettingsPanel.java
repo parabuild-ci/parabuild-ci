@@ -19,6 +19,7 @@ import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.ScheduleProperty;
+import org.parabuild.ci.versioncontrol.VersionControlSystem;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.PropertyToInputMap;
@@ -168,7 +169,7 @@ public abstract class AbtractScheduleSettingsPanel extends ScheduleSettingsPanel
     propertyToInputMap.setProperties(ConfigurationManager.getInstance().getScheduleSettings(buildConfig.getBuildID()));
 
     // REVIEWME: simeshev@parabuilci.org - This is a hack - Right now Accurev does not support clean up (rather, cleans up every time).
-    if (buildConfig.getSourceControl() == BuildConfig.SCM_ACCUREV) {
+    if (buildConfig.getSourceControl() == VersionControlSystem.SCM_ACCUREV) {
       flCleanCheckout.setValue("1");
       flCleanCheckoutIfBroken.setChecked(true);
       flCleanCheckoutOnAgentChange.setChecked(true);

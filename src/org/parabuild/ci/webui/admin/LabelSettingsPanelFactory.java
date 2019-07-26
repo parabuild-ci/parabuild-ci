@@ -16,6 +16,7 @@ package org.parabuild.ci.webui.admin;
 import org.apache.commons.logging.*;
 
 import org.parabuild.ci.object.*;
+import org.parabuild.ci.versioncontrol.VersionControlSystem;
 
 /**
  *
@@ -31,7 +32,7 @@ public final class LabelSettingsPanelFactory {
 
 
   public static LabelSettingsPanel getPanel(final BuildConfig buildConfig) {
-    if (buildConfig.getSourceControl() == BuildConfig.SCM_PERFORCE) {
+    if (buildConfig.getSourceControl() == VersionControlSystem.SCM_PERFORCE) {
       return new LabelSettingsPanelImpl(true);
     } else {
       if (buildConfig.getScheduleType() == BuildConfig.SCHEDULE_TYPE_PARALLEL) {

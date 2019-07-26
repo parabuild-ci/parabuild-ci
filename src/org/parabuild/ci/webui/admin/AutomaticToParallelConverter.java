@@ -16,6 +16,7 @@ package org.parabuild.ci.webui.admin;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.ActiveBuildConfig;
 import org.parabuild.ci.object.SourceControlSetting;
+import org.parabuild.ci.versioncontrol.VersionControlSystem;
 
 import java.util.List;
 
@@ -38,7 +39,7 @@ final class AutomaticToParallelConverter extends BuildScheduleConverter {
     // Change source control to reference
     final ConfigurationManager cm = ConfigurationManager.getInstance();
     final ActiveBuildConfig activeBuildConfig = cm.getActiveBuildConfig(activeBuildID);
-    activeBuildConfig.setSourceControl(ActiveBuildConfig.SCM_REFERENCE);
+    activeBuildConfig.setSourceControl(VersionControlSystem.SCM_REFERENCE);
     cm.saveObject(activeBuildConfig);
 
     // Remove all source control settings

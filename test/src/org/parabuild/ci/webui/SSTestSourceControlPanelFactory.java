@@ -22,6 +22,7 @@ import org.parabuild.ci.object.AgentConfig;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.remote.AgentEnvironment;
 import org.parabuild.ci.remote.AgentManager;
+import org.parabuild.ci.versioncontrol.VersionControlSystem;
 import org.parabuild.ci.webui.admin.CVSCompoundSettingsPanel;
 import org.parabuild.ci.webui.admin.CVSSettingsPanel;
 import org.parabuild.ci.webui.admin.MKSSettingsPanel;
@@ -50,7 +51,7 @@ public class SSTestSourceControlPanelFactory extends ServletTestCase {
   public void test_setsDefaultCVSClientPath() throws Exception {
     // general check
     final BuildConfig buildConfig = new BuildConfig();
-    buildConfig.setSourceControl(BuildConfig.SCM_CVS);
+    buildConfig.setSourceControl(VersionControlSystem.SCM_CVS);
     final SourceControlPanel scp = SourceControlPanelFactory.getPanel(buildConfig);
     assertTrue(scp instanceof CVSCompoundSettingsPanel);
 
@@ -64,7 +65,7 @@ public class SSTestSourceControlPanelFactory extends ServletTestCase {
   public void test_setsDefaultSVNClientPath() throws Exception {
     // general check
     final BuildConfig buildConfig = new BuildConfig();
-    buildConfig.setSourceControl(BuildConfig.SCM_SVN);
+    buildConfig.setSourceControl(VersionControlSystem.SCM_SVN);
     final SourceControlPanel scp = SourceControlPanelFactory.getPanel(buildConfig);
     assertTrue(scp instanceof SVNCompoundSettingsPanel);
 
@@ -92,7 +93,7 @@ public class SSTestSourceControlPanelFactory extends ServletTestCase {
 
   public void test_createsVSSPanel() throws Exception {
     final BuildConfig buildConfig = new BuildConfig();
-    buildConfig.setSourceControl(BuildConfig.SCM_VSS);
+    buildConfig.setSourceControl(VersionControlSystem.SCM_VSS);
     final SourceControlPanel scp = SourceControlPanelFactory.getPanel(buildConfig);
     assertTrue(scp instanceof VSSSettingsPanel);
   }
@@ -100,7 +101,7 @@ public class SSTestSourceControlPanelFactory extends ServletTestCase {
 
   public void test_createsPVCSPanel() throws Exception {
     final BuildConfig buildConfig = new BuildConfig();
-    buildConfig.setSourceControl(BuildConfig.SCM_PVCS);
+    buildConfig.setSourceControl(VersionControlSystem.SCM_PVCS);
     final SourceControlPanel scp = SourceControlPanelFactory.getPanel(buildConfig);
     assertTrue(scp instanceof PVCSSettingsPanel);
   }
@@ -108,7 +109,7 @@ public class SSTestSourceControlPanelFactory extends ServletTestCase {
 
   public void test_createsMKSPanel() throws Exception {
     final BuildConfig buildConfig = new BuildConfig();
-    buildConfig.setSourceControl(BuildConfig.SCM_MKS);
+    buildConfig.setSourceControl(VersionControlSystem.SCM_MKS);
     final SourceControlPanel scp = SourceControlPanelFactory.getPanel(buildConfig);
     assertTrue(scp instanceof MKSSettingsPanel);
   }

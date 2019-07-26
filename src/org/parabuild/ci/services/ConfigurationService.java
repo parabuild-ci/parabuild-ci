@@ -32,6 +32,7 @@ import org.parabuild.ci.configuration.TransactionCallback;
 import org.parabuild.ci.object.*;
 import org.parabuild.ci.statistics.StatisticsManager;
 import org.parabuild.ci.statistics.StatisticsManagerFactory;
+import org.parabuild.ci.versioncontrol.VersionControlSystem;
 import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
 import org.quartz.SchedulerFactory;
@@ -234,7 +235,7 @@ public final class ConfigurationService implements Service {
                           "   where br.buildID = bc.buildID " +
                           "     and bc.buildID = ab.ID" +
                           "     and bc.sourceControl != ?");
-          qNonRef.setInteger(0, BuildConfig.SCM_REFERENCE);
+          qNonRef.setInteger(0, VersionControlSystem.SCM_REFERENCE);
           result.addAll(qNonRef.list());
 
           // than process sched/ref
@@ -243,7 +244,7 @@ public final class ConfigurationService implements Service {
                           "   where br.buildID = bc.buildID " +
                           "     and bc.buildID = ab.ID" +
                           "     and bc.sourceControl = ?");
-          qRef.setInteger(0, BuildConfig.SCM_REFERENCE);
+          qRef.setInteger(0, VersionControlSystem.SCM_REFERENCE);
           result.addAll(qRef.list());
 
           // traverse result

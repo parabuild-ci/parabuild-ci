@@ -55,6 +55,7 @@ import org.parabuild.ci.object.VCSUserToEmailMap;
 import org.parabuild.ci.project.ProjectManager;
 import org.parabuild.ci.services.BuildListService;
 import org.parabuild.ci.services.ServiceManager;
+import org.parabuild.ci.versioncontrol.VersionControlSystem;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -364,7 +365,7 @@ public final class BuildConfigCloner {
         final SourceControlSettingResolver sourceControlSettingResolver = new SourceControlSettingResolver(
                 sourceBuildConfig.getBuildName(), sourceBuildConfig.getActiveBuildID(), agentHostName);
         final Map overwrittenSourceControlSettings = new HashMap(3);
-        final boolean isReferenceSourceControl = sourceBuildConfig.getSourceControl() == BuildConfig.SCM_REFERENCE;
+        final boolean isReferenceSourceControl = sourceBuildConfig.getSourceControl() == VersionControlSystem.SCM_REFERENCE;
         final Query sourceControlSettingsQuery = session.createQuery("from SourceControlSetting as vcs where vcs.buildID = ?");
         sourceControlSettingsQuery.setInteger(0, sourceBuildID);
         sourceControlSettingsQuery.setCacheable(true);

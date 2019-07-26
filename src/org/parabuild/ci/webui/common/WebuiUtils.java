@@ -31,6 +31,7 @@ import org.parabuild.ci.object.User;
 import org.parabuild.ci.object.UserProperty;
 import org.parabuild.ci.remote.AgentEnvironment;
 import org.parabuild.ci.security.SecurityManager;
+import org.parabuild.ci.versioncontrol.VersionControlSystem;
 import org.parabuild.ci.webui.ChangeURLFactory;
 import org.parabuild.ci.webui.FisheyeChangeURLFactory;
 import org.parabuild.ci.webui.GithubChangeURLFactory;
@@ -856,13 +857,13 @@ public final class WebuiUtils {
     // get effective build config to use to make chage url factory
     final ConfigurationManager cm = ConfigurationManager.getInstance();
     BuildConfig effectiveBuildConfig = cm.getBuildConfiguration(activeBuildID);
-    if (effectiveBuildConfig.getSourceControl() == BuildConfig.SCM_REFERENCE) {
+    if (effectiveBuildConfig.getSourceControl() == VersionControlSystem.SCM_REFERENCE) {
       effectiveBuildConfig = cm.getEffectiveBuildConfig(effectiveBuildConfig);
     }
     final byte effectiveSourceControl = effectiveBuildConfig.getSourceControl();
 
     // make factory
-    if (effectiveSourceControl == BuildConfig.SCM_CVS) {
+    if (effectiveSourceControl == VersionControlSystem.SCM_CVS) {
 
       // get browser type
       final int browserType = getSourceBrowserType(cm, effectiveBuildConfig);
@@ -891,7 +892,7 @@ public final class WebuiUtils {
 
         return null;
       }
-    } else if (effectiveSourceControl == BuildConfig.SCM_SVN) {
+    } else if (effectiveSourceControl == VersionControlSystem.SCM_SVN) {
 
       // get browser type
       final int browserType = getSourceBrowserType(cm, effectiveBuildConfig);
@@ -926,13 +927,13 @@ public final class WebuiUtils {
 
         return null;
       }
-    } else if (effectiveSourceControl == BuildConfig.SCM_PERFORCE) {
+    } else if (effectiveSourceControl == VersionControlSystem.SCM_PERFORCE) {
       final SourceControlSetting p4webURL = cm.getSourceControlSetting(effectiveBuildConfig.getActiveBuildID(), SourceControlSetting.P4_P4WEB_URL);
       if (p4webURL == null || StringUtils.isBlank(p4webURL.getPropertyValue())) {
         return null;
       }
       return new P4WebChangeURLFactory(p4webURL.getPropertyValue());
-    } else if (effectiveSourceControl == BuildConfig.SCM_GIT) {
+    } else if (effectiveSourceControl == VersionControlSystem.SCM_GIT) {
 
       final String githubURL = cm.getSourceControlSettingValue(effectiveBuildConfig.getActiveBuildID(), SourceControlSetting.GITHUB_URL, null);
       if (StringUtils.isBlank(githubURL)) {

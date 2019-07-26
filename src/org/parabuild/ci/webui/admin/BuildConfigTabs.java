@@ -20,6 +20,7 @@ import org.parabuild.ci.configuration.SystemConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.BuildConfigAttribute;
+import org.parabuild.ci.versioncontrol.VersionControlSystem;
 import org.parabuild.ci.webui.common.Pages;
 import org.parabuild.ci.webui.common.Saveable;
 import org.parabuild.ci.webui.common.Validatable;
@@ -147,7 +148,7 @@ public final class BuildConfigTabs extends Tabs implements Saveable, Validatable
     // add tab only if it's a scheduled build
     final byte sourceControl = buildConfig.getSourceControl();
     final byte scheduleType = buildConfig.getScheduleType();
-    if (scheduleType == BuildConfig.SCHEDULE_TYPE_RECURRENT || sourceControl == BuildConfig.SCM_PERFORCE) {
+    if (scheduleType == BuildConfig.SCHEDULE_TYPE_RECURRENT || sourceControl == VersionControlSystem.SCM_PERFORCE) {
       tabIndexIssueTrackers = addConfigTab(CAPTION_RELEASE_NOTES, tblIssueTrackers);
     }
 

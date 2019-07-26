@@ -50,7 +50,7 @@ public final class VersionControlFactory {
    */
   public static SourceControl makeVersionControl(final BuildConfig buildConfig) {
     final byte scmCode = buildConfig.getSourceControl();
-    if (scmCode == BuildConfig.SCM_REFERENCE) {
+    if (scmCode == VersionControlSystem.SCM_REFERENCE) {
       return makeReferenceSourceControl(buildConfig);
     } else {
       return makeDirectSourceControl(scmCode, buildConfig);
@@ -81,55 +81,55 @@ public final class VersionControlFactory {
    *                    buildConfig can be vendor and reference.
    */
   private static SourceControl makeDirectSourceControl(final byte scmID, final BuildConfig buildConfig) {
-    if (scmID == BuildConfig.SCM_CVS) {
+    if (scmID == VersionControlSystem.SCM_CVS) {
       return new CVSSourceControl(buildConfig);
     }
-    if (scmID == BuildConfig.SCM_ACCUREV) {
+    if (scmID == VersionControlSystem.SCM_ACCUREV) {
       return new AccurevVersionControl(buildConfig);
     }
-    if (scmID == BuildConfig.SCM_BAZAAR) {
+    if (scmID == VersionControlSystem.SCM_BAZAAR) {
       return new BazaarVersionControl(buildConfig);
     }
-    if (scmID == BuildConfig.SCM_MERCURIAL) {
+    if (scmID == VersionControlSystem.SCM_MERCURIAL) {
       return new MercurialVersionControl(buildConfig);
     }
-    if (scmID == BuildConfig.SCM_PERFORCE) {
+    if (scmID == VersionControlSystem.SCM_PERFORCE) {
       return new P4SourceControl(buildConfig);
     }
-    if (scmID == BuildConfig.SCM_VSS) {
+    if (scmID == VersionControlSystem.SCM_VSS) {
       return new VSSSourceControl(buildConfig);
     }
-    if (scmID == BuildConfig.SCM_SVN) {
+    if (scmID == VersionControlSystem.SCM_SVN) {
       return new SVNSourceControl(buildConfig);
     }
-    if (scmID == BuildConfig.SCM_CLEARCASE) {
+    if (scmID == VersionControlSystem.SCM_CLEARCASE) {
       return new ClearCaseSourceControl(buildConfig);
     }
-    if (scmID == BuildConfig.SCM_SURROUND) {
+    if (scmID == VersionControlSystem.SCM_SURROUND) {
       return new SurroundSourceControl(buildConfig);
     }
-    if (scmID == BuildConfig.SCM_VAULT) {
+    if (scmID == VersionControlSystem.SCM_VAULT) {
       return new VaultSourceControl(buildConfig);
     }
-    if (scmID == BuildConfig.SCM_PVCS) {
+    if (scmID == VersionControlSystem.SCM_PVCS) {
       return new PVCSSourceControl(buildConfig);
     }
-    if (scmID == BuildConfig.SCM_STARTEAM) {
+    if (scmID == VersionControlSystem.SCM_STARTEAM) {
       return new StarTeamSourceControl(buildConfig);
     }
-    if (scmID == BuildConfig.SCM_MKS) {
+    if (scmID == VersionControlSystem.SCM_MKS) {
       return new MKSSourceControl(buildConfig);
     }
-    if (scmID == BuildConfig.SCM_FILESYSTEM) {
+    if (scmID == VersionControlSystem.SCM_FILESYSTEM) {
       return new FileSystemSourceControl(buildConfig);
     }
-    if (scmID == BuildConfig.SCM_GENERIC) {
+    if (scmID == VersionControlSystem.SCM_GENERIC) {
       return new GenericSourceControl(buildConfig);
     }
-    if (scmID == BuildConfig.SCM_GIT) {
+    if (scmID == VersionControlSystem.SCM_GIT) {
       return new GitSourceControl(buildConfig);
     }
-    if (scmID == BuildConfig.SCM_SYNERGY) {
+    if (scmID == VersionControlSystem.SCM_SYNERGY) {
       return new SynergySourceControl(buildConfig);
     }
     throw new IllegalArgumentException("Unexpected version control ID: " + scmID);

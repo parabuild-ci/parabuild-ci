@@ -16,9 +16,9 @@ package org.parabuild.ci.webui.common;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
-import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.User;
 import org.parabuild.ci.security.SecurityManager;
+import org.parabuild.ci.versioncontrol.VersionControlSystem;
 import viewtier.ui.Border;
 import viewtier.ui.Color;
 import viewtier.ui.Flow;
@@ -150,7 +150,7 @@ public final class PageHeaderPanel extends Panel {
     if (scm.isShowingMergesEnabled()) {
       final ConfigurationManager cm = ConfigurationManager.getInstance();
       // REVIEWME: vimeshev - 2007-06-02 - cm.findBuildConfigsByVCS can be slow.
-      if (!cm.findBuildConfigsByVCS(BuildConfig.SCM_PERFORCE).isEmpty()) {
+      if (!cm.findBuildConfigsByVCS(VersionControlSystem.SCM_PERFORCE).isEmpty()) {
         menuFlow.add(lbMergeDivider);
         menuFlow.add(lnkMerges);
       }

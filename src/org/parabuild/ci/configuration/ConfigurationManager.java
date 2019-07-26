@@ -68,6 +68,7 @@ import org.parabuild.ci.object.User;
 import org.parabuild.ci.object.UserProperty;
 import org.parabuild.ci.object.VCSUserToEmailMap;
 import org.parabuild.ci.services.ServiceManager;
+import org.parabuild.ci.versioncontrol.VersionControlSystem;
 
 import java.io.File;
 import java.io.Serializable;
@@ -1670,7 +1671,7 @@ public final class ConfigurationManager implements Serializable {
         // if necessary add effective
         final Map map = settingsListToMap(ourOwnSettings);
         final BuildConfig buildConfig = getBuildConfiguration(buildID);
-        if (buildConfig.getSourceControl() == BuildConfig.SCM_REFERENCE) {
+        if (buildConfig.getSourceControl() == VersionControlSystem.SCM_REFERENCE) {
           final BuildConfig effectiveBuildConfig = getEffectiveBuildConfig(buildConfig);
           final List settings = getSourceControlSettings(effectiveBuildConfig.getBuildID());
           for (final Iterator i = settings.iterator(); i.hasNext(); ) {
@@ -4060,7 +4061,7 @@ public final class ConfigurationManager implements Serializable {
    */
   public BuildConfig getEffectiveBuildConfig(final BuildConfig originalBuildConfig) {
     // validate
-    if (originalBuildConfig.getSourceControl() != BuildConfig.SCM_REFERENCE) {
+    if (originalBuildConfig.getSourceControl() != VersionControlSystem.SCM_REFERENCE) {
       throw new IllegalArgumentException("Unexpected version control code: " + originalBuildConfig.getSourceControl());
     }
     // process
@@ -4069,7 +4070,7 @@ public final class ConfigurationManager implements Serializable {
         // referred SCM ID from reference build config
         final int originalBuildConfigID = originalBuildConfig.getBuildID();
         BuildConfig effectiveBuildConfig = originalBuildConfig;
-        while (effectiveBuildConfig.getSourceControl() == BuildConfig.SCM_REFERENCE) {
+        while (effectiveBuildConfig.getSourceControl() == VersionControlSystem.SCM_REFERENCE) {
           final SourceControlSetting setting = getSourceControlSetting(effectiveBuildConfig.getBuildID(), SourceControlSetting.REFERENCE_BUILD_ID);
           effectiveBuildConfig = getBuildConfiguration(setting.getPropertyValueAsInt());
           if (effectiveBuildConfig == null) {
@@ -4098,7 +4099,7 @@ public final class ConfigurationManager implements Serializable {
    */
   public boolean isCircularReference(final BuildConfig referringBuildConfig, final BuildConfig referredBuildConfig) {
     // validate
-    if (referringBuildConfig.getSourceControl() != BuildConfig.SCM_REFERENCE) {
+    if (referringBuildConfig.getSourceControl() != VersionControlSystem.SCM_REFERENCE) {
       throw new IllegalArgumentException("Unexpected version control code: " + referringBuildConfig.getSourceControl());
     }
     // process
@@ -4106,7 +4107,7 @@ public final class ConfigurationManager implements Serializable {
       public Object runInTransaction() {
         final int originalBuildConfigID = referringBuildConfig.getBuildID();
         BuildConfig nextBuildConfig = referredBuildConfig;
-        while (nextBuildConfig.getSourceControl() == BuildConfig.SCM_REFERENCE) {
+        while (nextBuildConfig.getSourceControl() == VersionControlSystem.SCM_REFERENCE) {
           final SourceControlSetting setting = getSourceControlSetting(nextBuildConfig.getBuildID(), SourceControlSetting.REFERENCE_BUILD_ID);
           nextBuildConfig = getBuildConfiguration(setting.getPropertyValueAsInt());
           if (nextBuildConfig.getBuildID() == originalBuildConfigID) {

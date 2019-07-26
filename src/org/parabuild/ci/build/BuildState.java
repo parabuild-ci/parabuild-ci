@@ -20,6 +20,7 @@ import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.BuildRun;
 import org.parabuild.ci.object.BuildSequence;
+import org.parabuild.ci.versioncontrol.VersionControlSystem;
 
 import java.io.Serializable;
 import java.util.Comparator;
@@ -199,16 +200,16 @@ public final class BuildState implements Serializable {
       return "Stopping";
     }
     if (status.equals(BuildStatus.CHECKING_OUT)) {
-      if (sourceControl == BuildConfig.SCM_CVS) {
+      if (sourceControl == VersionControlSystem.SCM_CVS) {
         return "Checking out";
       }
-      if (sourceControl == BuildConfig.SCM_SVN) {
+      if (sourceControl == VersionControlSystem.SCM_SVN) {
         return "Checking out";
       }
-      if (sourceControl == BuildConfig.SCM_CLEARCASE) {
+      if (sourceControl == VersionControlSystem.SCM_CLEARCASE) {
         return "Updating view";
       }
-      if (sourceControl == BuildConfig.SCM_PERFORCE) {
+      if (sourceControl == VersionControlSystem.SCM_PERFORCE) {
         return "Syncing";
       }
       return "Checking out";

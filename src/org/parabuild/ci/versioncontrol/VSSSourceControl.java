@@ -707,7 +707,7 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
    * Validates that correct VSS build configuration was passesed
    */
   private static void validateIsVSSConfiguration(final BuildConfig buildConfig) {
-    if (buildConfig.getSourceControl() != BuildConfig.SCM_REFERENCE && buildConfig.getSourceControl() != BuildConfig.SCM_VSS) {
+    if (buildConfig.getSourceControl() != VersionControlSystem.SCM_REFERENCE && buildConfig.getSourceControl() != VersionControlSystem.SCM_VSS) {
       throw new IllegalArgumentException("Non-VSS build configuration");
     }
   }

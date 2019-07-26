@@ -682,8 +682,8 @@ final class ClearCaseSourceControl extends AbstractSourceControl {
    * passesed
    */
   private static void validateIsClearCaseConfiguration(final BuildConfig buildConfig) {
-    if (buildConfig.getSourceControl() != BuildConfig.SCM_REFERENCE
-            && buildConfig.getSourceControl() != BuildConfig.SCM_CLEARCASE) {
+    if (buildConfig.getSourceControl() != VersionControlSystem.SCM_REFERENCE
+            && buildConfig.getSourceControl() != VersionControlSystem.SCM_CLEARCASE) {
       throw new IllegalArgumentException("Non-ClearCase build configuration");
     }
   }

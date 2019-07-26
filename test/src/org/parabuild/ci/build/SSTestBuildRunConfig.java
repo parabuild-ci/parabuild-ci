@@ -23,6 +23,7 @@ import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.TransactionCallback;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.BuildRunConfig;
+import org.parabuild.ci.versioncontrol.VersionControlSystem;
 
 /**
  *
@@ -46,7 +47,7 @@ public class SSTestBuildRunConfig extends ServersideTestCase {
       public Object runInTransaction() throws Exception {
         final BuildRunConfig brc = new BuildRunConfig();
         brc.setBuildName("test_name");
-        brc.setSourceControl(BuildConfig.SCM_CVS);
+        brc.setSourceControl(VersionControlSystem.SCM_CVS);
         brc.setScheduleType(BuildConfig.SCHEDULE_TYPE_AUTOMATIC);
         brc.setBuilderID(0);
         ConfigurationManager.getInstance().saveObject(brc);

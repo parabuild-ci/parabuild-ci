@@ -323,7 +323,7 @@ public abstract class AbstractSourceControl implements SourceControl {
   public final void validateChangeListID(final int changeListID) throws BuildException {
     final BuildConfig buildConfig = configManager.getBuildConfiguration(buildID);
     // REVIEWME: here we just skip validation - deliver normal validation
-    if (buildConfig.getSourceControl() == BuildConfig.SCM_REFERENCE) {
+    if (buildConfig.getSourceControl() == VersionControlSystem.SCM_REFERENCE) {
       return;
     }
 

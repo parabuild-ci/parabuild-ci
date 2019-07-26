@@ -19,6 +19,7 @@ import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.BuildStepType;
+import org.parabuild.ci.versioncontrol.VersionControlSystem;
 import org.parabuild.ci.webui.common.MessagePanel;
 import org.parabuild.ci.webui.common.Pages;
 import org.parabuild.ci.webui.common.Saveable;
@@ -167,12 +168,12 @@ public final class GeneralBuildConfigPanel extends MessagePanel implements Loada
    */
   private static boolean supportsLabeling(final BuildConfig bc) {
     // SVN doesn't support labeling
-    if (bc.getSourceControl() == BuildConfig.SCM_SVN) {
+    if (bc.getSourceControl() == VersionControlSystem.SCM_SVN) {
       return false;
     }
 
     // others support
-    if (bc.getSourceControl() != BuildConfig.SCM_REFERENCE) {
+    if (bc.getSourceControl() != VersionControlSystem.SCM_REFERENCE) {
       return true;
     }
 
@@ -185,7 +186,7 @@ public final class GeneralBuildConfigPanel extends MessagePanel implements Loada
     // check reference
     final ConfigurationManager cm = ConfigurationManager.getInstance();
     final BuildConfig effectiveBuildConfig = cm.getEffectiveBuildConfig(bc);
-    return effectiveBuildConfig.getSourceControl() != BuildConfig.SCM_SVN;
+    return effectiveBuildConfig.getSourceControl() != VersionControlSystem.SCM_SVN;
   }
 
 

@@ -29,6 +29,7 @@ import org.parabuild.ci.project.ProjectManager;
 import org.parabuild.ci.remote.AgentEnvironment;
 import org.parabuild.ci.remote.AgentManager;
 import org.parabuild.ci.security.SecurityManager;
+import org.parabuild.ci.versioncontrol.VersionControlSystem;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.MessagePanel;
@@ -220,13 +221,13 @@ public final class BuildHeaderPanel extends MessagePanel implements Validatable,
     // if scheduled build selected, make sure it is a refrence version control
     if (ddScheduleType.getScheduleType() == BuildConfig.SCHEDULE_TYPE_RECURRENT
             || ddScheduleType.getScheduleType() == BuildConfig.SCHEDULE_TYPE_PARALLEL) {
-      if (ddSCM.getCode() != BuildConfig.SCM_REFERENCE) {
-        showErrorMessage("Please select \"" + VersionControlDropDown.NAME_SCM_REFERENCE + "\" as " + CAPTION_VCS + ". Selection of a reference build will be offered on the next step.");
+      if (ddSCM.getCode() != VersionControlSystem.SCM_REFERENCE) {
+        showErrorMessage("Please select \"" + VersionControlSystem.NAME_SCM_REFERENCE + "\" as " + CAPTION_VCS + ". Selection of a reference build will be offered on the next step.");
         return false;
       }
     }
 
-    if (ddSCM.getCode() == BuildConfig.SCM_REFERENCE) {
+    if (ddSCM.getCode() == VersionControlSystem.SCM_REFERENCE) {
       if (ddScheduleType.getScheduleType() != BuildConfig.SCHEDULE_TYPE_RECURRENT
               && ddScheduleType.getScheduleType() != BuildConfig.SCHEDULE_TYPE_PARALLEL) {
         showErrorMessage("Only \"" + ScheduleTypeDropDown.STRING_SCHEDULED + "\" and \"" + ScheduleTypeDropDown.STRING_PARALLEL + "\" " + CAPTION_SCHEDULE_TYPE + " can be used for the reference " + CAPTION_VCS);
