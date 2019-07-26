@@ -3,7 +3,6 @@ package org.parabuild.ci.versioncontrol;
 /**
  * A container for the list of supported version control systems.
  */
-@SuppressWarnings("WeakerAccess")
 public final class VersionControlSystem {
 
   public static final String NAME_SCM_ACCUREV = "AccuRev";
@@ -23,7 +22,7 @@ public final class VersionControlSystem {
   public static final String NAME_SCM_SVN = "Subversion";
   public static final String NAME_SCM_VAULT = "Vault";
   public static final String NAME_SCM_VSS = "Visual SourceSafe";
-  public static final String NAME_SCM_UNDEFINED = "Undefined";
+  static final String NAME_SCM_UNDEFINED = "Undefined";
 
   public static final byte SCM_UNDEFINED = 0;
   public static final byte SCM_PERFORCE = 1;
