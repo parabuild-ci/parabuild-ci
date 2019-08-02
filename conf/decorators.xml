@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <decorators>
-  <excludes>
+  <decorator name="parabuild-theme" page="/org/parabuild/ci/webui/parabuild-theme.ftl">
     <pattern>/*</pattern>
-  </excludes>
+  </decorator>
 </decorators>
