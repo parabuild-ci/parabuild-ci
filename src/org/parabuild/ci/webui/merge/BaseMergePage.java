@@ -22,7 +22,7 @@ import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Parameters;
 
 /**
- * BaseMergPage encapsulates functionality commen for pages
+ * BaseMergePage encapsulates functionality common for pages
  * dealing with a single merge configuration.
  */
 public abstract class BaseMergePage extends BasePage {

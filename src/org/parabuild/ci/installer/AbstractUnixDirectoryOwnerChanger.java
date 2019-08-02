@@ -49,7 +49,7 @@ public abstract class AbstractUnixDirectoryOwnerChanger implements DirectoryOwne
 
 
   /**
-   * Changes ownership of parabuild dirercories.
+   * Changes ownership of parabuild directories.
    */
   public final void changeOwner(final File installationDir, final String user) {
     try {

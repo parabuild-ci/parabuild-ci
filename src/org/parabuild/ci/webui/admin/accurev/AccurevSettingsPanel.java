@@ -13,9 +13,6 @@
  */
 package org.parabuild.ci.webui.admin.accurev;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.webui.admin.AbstractSourceControlPanel;
 import org.parabuild.ci.webui.common.CommonField;
@@ -27,6 +24,9 @@ import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.DropDown;
 import viewtier.ui.Password;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * AccurevSettingsPanel
  * <p/>
@@ -36,7 +36,7 @@ import viewtier.ui.Password;
  */
 public final class AccurevSettingsPanel extends AbstractSourceControlPanel {
 
-  private static final String ACCU_REV_SETTINGS = "AccuRev Settings";
+  private static final String ACCUREV_SETTINGS = "AccuRev Settings";
 
   private static final String DEPOT = "Depot: ";
   private static final String HOST = "Host: ";
@@ -74,7 +74,7 @@ public final class AccurevSettingsPanel extends AbstractSourceControlPanel {
    * Creates message panel with title displayed
    */
   public AccurevSettingsPanel() {
-    super(ACCU_REV_SETTINGS);
+    super(ACCUREV_SETTINGS);
 
     // Layout
     gridIterator.addPair(lbPathToExe, new RequiredFieldMarker(flPathToExe));
@@ -113,7 +113,7 @@ public final class AccurevSettingsPanel extends AbstractSourceControlPanel {
     } else if (mode == (int) WebUIConstants.MODE_EDIT) {
       setEditable(true);
     } else if (mode == (int) WebUIConstants.MODE_INHERITED) {
-      // first, diable everything
+      // first, disable everything
       setEditable(false);
       // enable those editable for parallel mode
       flPathToExe.setEditable(true);

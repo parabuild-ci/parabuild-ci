@@ -70,7 +70,7 @@ public abstract class AbstractCommandBasedSourceControl extends AbstractSourceCo
    * zero. It means that caller expects that there are no change
    * lists in the database. Version control should retrieve all
    * the past changes, and pick fixed number of the latest
-   * changes. This number is adentified by SourceControl.DEFAULT_FIRST_RUN_SIZE
+   * changes. This number is identified by SourceControl.DEFAULT_FIRST_RUN_SIZE
    * constant.
    *
    * @param changeListID base change list ID
@@ -260,7 +260,7 @@ public abstract class AbstractCommandBasedSourceControl extends AbstractSourceCo
   /**
    * @return Map with a shell variable name as a key and variable
    *         value as value. The shell variables will be made
-   *         avaiable to the build commands.
+   *         available to the build commands.
    *         <p/>
    *         If not variables available, returns an empty map.
    * @see BuildScriptGenerator#addVariables(Map)

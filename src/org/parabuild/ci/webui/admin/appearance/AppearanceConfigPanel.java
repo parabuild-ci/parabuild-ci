@@ -112,7 +112,7 @@ public final class AppearanceConfigPanel extends AbstractSystemConfigPanel {
   private final DropDown fldDateFormat = new DateFormatDropdown(); // NOPMD
   private final DropDown fldDateTimeFormat = new DateTimeFormatDropdown(); // NOPMD
   private final DropDown fldURLProtocol = new HTTPProtocolDropdown(); // NOPMD
-  private final Field flAgentStatusCahrtHeightPix = new CommonField(3, 3); // NOPMD
+  private final Field flAgentStatusChartHeightPix = new CommonField(3, 3); // NOPMD
   private final Field flAgentStatusChartWidthPix = new CommonField(3, 3); // NOPMD
   private final Field flAgentStatusColumns = new CommonField(3, 3); // NOPMD
   private final Field flDashboardRowSize = new CommonField(2, 2);
@@ -180,11 +180,11 @@ public final class AppearanceConfigPanel extends AbstractSystemConfigPanel {
     gridIterator.addPair(lbTextLogMarkers, flTextLogMarkers);
     gridIterator.addPair(new CommonFieldLabel(CAPTION_AGENT_STATUS_PAGE), new CommonFlow(flAgentStatusColumns, new CommonLabel(" columns")));
     gridIterator.addPair(new CommonFieldLabel(CAPTION_AGENT_STATUS_CHART_WIDTH), new CommonFlow(flAgentStatusChartWidthPix, new CommonLabel(" pixels")));
-    gridIterator.addPair(new CommonFieldLabel(CAPTION_AGENT_STATUS_CHART_HEIGHT), new CommonFlow(flAgentStatusCahrtHeightPix, new CommonLabel(" pixels")));
+    gridIterator.addPair(new CommonFieldLabel(CAPTION_AGENT_STATUS_CHART_HEIGHT), new CommonFlow(flAgentStatusChartHeightPix, new CommonLabel(" pixels")));
 
     // init property to input map
     super.inputMap.bindPropertyNameToInput(SystemProperty.AGENT_STATUS_COLUMNS, flAgentStatusColumns);
-    super.inputMap.bindPropertyNameToInput(SystemProperty.AGENT_STATUS_HEIGHT_PIXELS, flAgentStatusCahrtHeightPix);
+    super.inputMap.bindPropertyNameToInput(SystemProperty.AGENT_STATUS_HEIGHT_PIXELS, flAgentStatusChartHeightPix);
     super.inputMap.bindPropertyNameToInput(SystemProperty.AGENT_STATUS_WIDTH_PIXELS, flAgentStatusChartWidthPix);
     super.inputMap.bindPropertyNameToInput(SystemProperty.BRANDING, fldBranding);
     super.inputMap.bindPropertyNameToInput(SystemProperty.BUILD_MANAGER_HOST_NAME, fldManagerHost);
@@ -218,7 +218,7 @@ public final class AppearanceConfigPanel extends AbstractSystemConfigPanel {
     super.inputMap.bindPropertyNameToInput(SystemProperty.TEXT_LOG_MARKERS, flTextLogMarkers);
 
     // set defaults
-    flAgentStatusCahrtHeightPix.setValue("250");
+    flAgentStatusChartHeightPix.setValue("250");
     flAgentStatusChartWidthPix.setValue("400");
     flAgentStatusColumns.setValue("3");
     flDashboardRowSize.setValue(Integer.toString(ConfigurationConstants.DEFAULT_DASHBOARD_ROW_SIZE));
@@ -252,7 +252,7 @@ public final class AppearanceConfigPanel extends AbstractSystemConfigPanel {
    */
   public void setMode(final byte modeView) {
     final boolean editable = modeView == WebUIConstants.MODE_EDIT;
-    flAgentStatusCahrtHeightPix.setEditable(editable);
+    flAgentStatusChartHeightPix.setEditable(editable);
     flAgentStatusChartWidthPix.setEditable(editable);
     flAgentStatusColumns.setEditable(editable);
     flDashboardRowSize.setEditable(editable);
@@ -325,7 +325,7 @@ public final class AppearanceConfigPanel extends AbstractSystemConfigPanel {
     WebuiUtils.validateFieldValidPositiveInteger(errors, CAPTION_DASHBOARD_ROW_SIZE, flDashboardRowSize);
     WebuiUtils.validateFieldValidPositiveInteger(errors, CAPTION_LOG_TAIL_BUFFER_SIZE, flTailWindowSize);
     WebuiUtils.validateFieldValidPositiveInteger(errors, CAPTION_AGENT_STATUS_PAGE, flAgentStatusColumns);
-    WebuiUtils.validateFieldValidPositiveInteger(errors, CAPTION_AGENT_STATUS_CHART_HEIGHT, flAgentStatusCahrtHeightPix);
+    WebuiUtils.validateFieldValidPositiveInteger(errors, CAPTION_AGENT_STATUS_CHART_HEIGHT, flAgentStatusChartHeightPix);
     WebuiUtils.validateFieldValidPositiveInteger(errors, CAPTION_AGENT_STATUS_CHART_WIDTH, flAgentStatusChartWidthPix);
 
     // validate encoding
@@ -363,7 +363,7 @@ public final class AppearanceConfigPanel extends AbstractSystemConfigPanel {
       }
     }
 
-    // Variavle build name template
+    // Variable build name template
     if (fldCustomVariableNameValidation.isSelected()) {
       try {
         Pattern.compile(fldCustomVariableNameRegexTemplate.getValue());

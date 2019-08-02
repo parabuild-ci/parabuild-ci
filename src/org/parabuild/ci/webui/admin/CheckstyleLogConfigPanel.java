@@ -34,7 +34,7 @@ public final class CheckstyleLogConfigPanel extends AbstractLogConfigPanel {
   public CheckstyleLogConfigPanel() {
     super(false); // no conent border
     super.setLogType(LogConfig.LOG_TYPE_CHECKSTYLE_XML_FILE);
-    super.setLogDecription("Checkstyle Report");
+    super.setLogDescription("Checkstyle Report");
   }
 
 

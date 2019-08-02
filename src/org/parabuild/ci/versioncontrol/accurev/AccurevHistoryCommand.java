@@ -36,16 +36,16 @@ final class AccurevHistoryCommand extends AccurevCommand {
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
   private static final Log LOG = LogFactory.getLog(AccurevHistoryCommand.class); // NOPMD
-  private final String transcationNumberFrom;
+  private final String transactionNumberFrom;
   private final String transactionNumberTo;
   private final int maxChangeLists;
 
 
   AccurevHistoryCommand(final Agent agent, final AccurevCommandParameters parameters,
-                        final String transcationNumberFrom, final String transactionNumberTo,
+                        final String transactionNumberFrom, final String transactionNumberTo,
                         final int maxChangeLists) throws IOException, AgentFailureException {
     super(agent, parameters);
-    this.transcationNumberFrom = transcationNumberFrom;
+    this.transactionNumberFrom = transactionNumberFrom;
     this.transactionNumberTo = transactionNumberTo;
     this.maxChangeLists = maxChangeLists;
   }
@@ -64,7 +64,7 @@ final class AccurevHistoryCommand extends AccurevCommand {
     appendCommand(cmd, "-s", StringUtils.putIntoDoubleQuotes(getParameters().getStream()));
     appendCommand(cmd, "-a");
 //    }
-    appendCommand(cmd, "-t", StringUtils.putIntoDoubleQuotes(transactionNumberTo + '-' + transcationNumberFrom + '.' + maxChangeLists));
+    appendCommand(cmd, "-t", StringUtils.putIntoDoubleQuotes(transactionNumberTo + '-' + transactionNumberFrom + '.' + maxChangeLists));
     appendCommand(cmd, "-fx");
     setCommand(cmd.toString());
     if (LOG.isDebugEnabled()) {
@@ -75,7 +75,7 @@ final class AccurevHistoryCommand extends AccurevCommand {
 
   public String toString() {
     return "AccurevHistoryCommand{" +
-            "transcationNumberFrom='" + transcationNumberFrom + '\'' +
+            "transactionNumberFrom='" + transactionNumberFrom + '\'' +
             ", transactionNumberTo='" + transactionNumberTo + '\'' +
             ", maxChangeLists=" + maxChangeLists +
             '}';

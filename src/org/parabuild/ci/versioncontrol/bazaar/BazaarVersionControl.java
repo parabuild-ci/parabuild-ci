@@ -123,7 +123,7 @@ public final class BazaarVersionControl extends AbstractSourceControl {
 
       this.lastSyncRevision = changeListNumber;
     } catch (final IOException e) {
-      throw new BuildException("Error while checking out lastest: " + e, e);
+      throw new BuildException("Error while checking out latest: " + e, e);
     } finally {
       cleanup(command);
     }

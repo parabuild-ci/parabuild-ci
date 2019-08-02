@@ -18,7 +18,7 @@ import org.parabuild.ci.webui.common.Pages;
 import viewtier.ui.ConversationalTierlet;
 
 /**
- * This page is repsonsible for editing Parabuild's e-mail system
+ * This page is responsible for editing Parabuild's e-mail system
  * properties.
  */
 public final class AppearanceConfigurationPage extends AbstractSystemConfigurationPage implements ConversationalTierlet {

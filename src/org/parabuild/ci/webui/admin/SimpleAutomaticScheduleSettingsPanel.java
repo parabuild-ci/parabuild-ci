@@ -28,7 +28,7 @@ import java.util.List;
  * AutomaticScheduleSettingsPanel holds setting for "Automatic"
  * build type.
  */
-public final class SimpleAutomaticScheduleSettingsPanel extends AbtractScheduleSettingsPanel {
+public final class SimpleAutomaticScheduleSettingsPanel extends AbstractScheduleSettingsPanel {
 
   private static final long serialVersionUID = -8801504979595049851L; // NOPMD
 

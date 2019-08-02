@@ -34,7 +34,7 @@ public final class GenericTestResultConfigPanel extends AbstractLogConfigPanel {
   public GenericTestResultConfigPanel() {
     super(false); // no conent border
     super.setLogType(LogConfig.LOG_TYPE_GENERIC_TEST_RESULT);
-    super.setLogDecription("Generic Test Result");
+    super.setLogDescription("Generic Test Result");
   }
 
 

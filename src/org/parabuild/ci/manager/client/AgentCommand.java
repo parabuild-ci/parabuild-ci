@@ -152,37 +152,37 @@ public abstract class AgentCommand {
 
       // Create a connection for this command
       final URLConnection conn = new URL(url + "/manager" + command).openConnection();
-      final HttpURLConnection hconn = (HttpURLConnection) conn;
+      final HttpURLConnection httpURLConnection = (HttpURLConnection) conn;
 
       // Set up standard connection characteristics
-      hconn.setAllowUserInteraction(false);
-      hconn.setDoInput(true);
-      hconn.setUseCaches(false);
+      httpURLConnection.setAllowUserInteraction(false);
+      httpURLConnection.setDoInput(true);
+      httpURLConnection.setUseCaches(false);
       if (istream != null) {
-        hconn.setDoOutput(true);
-        hconn.setRequestMethod("PUT");
+        httpURLConnection.setDoOutput(true);
+        httpURLConnection.setRequestMethod("PUT");
         if (contentType != null) {
-          hconn.setRequestProperty("Content-Type", contentType);
+          httpURLConnection.setRequestProperty("Content-Type", contentType);
         }
         if (contentLength >= 0) {
-          hconn.setRequestProperty("Content-Length", String.valueOf(contentLength));
+          httpURLConnection.setRequestProperty("Content-Length", String.valueOf(contentLength));
         }
       } else {
-        hconn.setDoOutput(false);
-        hconn.setRequestMethod("GET");
+        httpURLConnection.setDoOutput(false);
+        httpURLConnection.setRequestMethod("GET");
       }
-      hconn.setRequestProperty("User-Agent", "Parabuild-Agent-Command/1.0");
+      httpURLConnection.setRequestProperty("User-Agent", "Parabuild-Agent-Command/1.0");
 
       // Set up an authorization header with our credentials
       final String input = username + ':' + password;
-      hconn.setRequestProperty("Authorization", "Basic " + new String(StringUtils.encode(input.getBytes())));
+      httpURLConnection.setRequestProperty("Authorization", "Basic " + new String(StringUtils.encode(input.getBytes())));
 
       // Establish the connection with the server
-      hconn.connect();
+      httpURLConnection.connect();
 
       // Send the request data (if any)
       if (istream != null) {
-        final BufferedOutputStream ostream = new BufferedOutputStream(hconn.getOutputStream(), 1024);
+        final BufferedOutputStream ostream = new BufferedOutputStream(httpURLConnection.getOutputStream(), 1024);
         final byte[] buffer = new byte[1024];
         while (true) {
           final int n = istream.read(buffer);
@@ -197,7 +197,7 @@ public abstract class AgentCommand {
       }
 
       // Process the response message
-      reader = new InputStreamReader(hconn.getInputStream());
+      reader = new InputStreamReader(httpURLConnection.getInputStream());
       final StringBuilder buff = new StringBuilder(1000);
       String error = null;
       boolean first = true;

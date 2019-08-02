@@ -34,7 +34,7 @@ public final class CppUnitLogConfigPanel extends AbstractLogConfigPanel {
   public CppUnitLogConfigPanel() {
     super(false); // no conent border
     super.setLogType(LogConfig.LOG_TYPE_CPPUNIT_XML_DIR);
-    super.setLogDecription("CPPUnit Log");
+    super.setLogDescription("CPPUnit Log");
   }
 
 

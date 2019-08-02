@@ -45,7 +45,7 @@ import java.util.Map;
 public final class AccurevVersionControl extends AbstractSourceControl {
 
   private static final Log LOG = LogFactory.getLog(AccurevVersionControl.class); // NOPMD
-  private static final int INITIAL_CANGE_LIST_CAPACITY = 11;
+  private static final int INITIAL_CHANGE_LIST_CAPACITY = 11;
 
 
   public AccurevVersionControl(final BuildConfig buildConfig) {
@@ -114,7 +114,7 @@ public final class AccurevVersionControl extends AbstractSourceControl {
       command = new AccurevPopCommand(agent, parameters, snapshotName);
       command.execute();
     } catch (final IOException e) {
-      throw new BuildException("Error while synching to change list:" + StringUtils.toString(e), e, getAgentHost());
+      throw new BuildException("Error while syncing to change list:" + StringUtils.toString(e), e, getAgentHost());
     } finally {
       cleanup(command);
     }
@@ -162,7 +162,7 @@ public final class AccurevVersionControl extends AbstractSourceControl {
       // requests changes from SVN server
       final int newChangeListID = getChangesSince(transactionNumberFrom, "highest", maxChangeLists);
       if (newChangeListID == ChangeList.UNSAVED_ID && startChangeListID != ChangeList.UNSAVED_ID) {
-        return startChangeListID; // i.e. no changes since the exsiting one
+        return startChangeListID; // i.e. no changes since the existing one
       } else {
         return newChangeListID; // as is
       }
@@ -192,7 +192,7 @@ public final class AccurevVersionControl extends AbstractSourceControl {
     final Agent agent = getCheckoutDirectoryAwareAgent();
 
     // get actual changes
-    final List result = new ArrayList(INITIAL_CANGE_LIST_CAPACITY);
+    final List result = new ArrayList(INITIAL_CHANGE_LIST_CAPACITY);
     AccurevCommand command = null;
     try {
       // Create Accurev history command

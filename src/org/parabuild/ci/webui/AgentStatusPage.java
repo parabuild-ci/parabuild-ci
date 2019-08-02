@@ -73,7 +73,7 @@ public final class AgentStatusPage extends Window implements StatelessTierlet {
       headerLabel.setWidth(Pages.PAGE_WIDTH);
       getContentPanel().add(headerLabel);
 
-      // add labes to show attached IP
+      // add labels to show attached IP
       if (ConfigurationManager.BLOCK_ADMIN_USER || ConfigurationManager.BLOCK_ROOT_USER) {
         final BoldCommonLabel lbError = new BoldCommonLabel("This remote agent was started under root user. This is not allowed. The agent was disabled. Please restart it under non-root user.");
         lbError.setForeground(Color.DarkRed);
@@ -90,7 +90,7 @@ public final class AgentStatusPage extends Window implements StatelessTierlet {
       getContentPanel().add(lbVersion);
       return Result.Done();
     } else {
-      // we are running in a normal build manager mode, refirect to index page
+      // we are running in a normal build manager mode, redirect to index page
       return Result.Done(Pages.PUBLIC_BUILDS);
     }
   }

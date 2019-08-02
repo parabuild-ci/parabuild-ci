@@ -167,7 +167,7 @@ public final class BazaarSettingsPanel extends AbstractSourceControlPanel {
 
 
   /**
-   * Helper method to create invalig protocol message.
+   * Helper method to create invalid protocol message.
    */
   private static String makeInvalidProtocolMessage() {
     final StringBuilder invalidPrefixMsg = new StringBuilder("Bazaar branch path should start with one of the following: ");

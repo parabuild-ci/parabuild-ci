@@ -43,7 +43,7 @@ public abstract class AbstractSystemConfigPanel extends MessagePanel implements 
 
   /**
    * Sets system properties supplied as a map.
-   * Keys are defined by SystepProperty class.
+   * Keys are defined by SystemProperty class.
    *
    * @param properties
    */

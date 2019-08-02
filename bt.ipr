@@ -932,12 +932,41 @@
     </dictionary>
     <dictionary name="vimeshev">
       <words>
+        <w>accu</w>
+        <w>alwaysvalid</w>
+        <w>autocreating</w>
         <w>bugzilla</w>
         <w>buildid</w>
+        <w>buildman</w>
+        <w>bzrcmdd</w>
+        <w>chown</w>
+        <w>chws</w>
+        <w>cleartool</w>
+        <w>codeline</w>
+        <w>dataset</w>
         <w>github</w>
+        <w>groupadd</w>
         <w>hmmss</w>
+        <w>hpux</w>
+        <w>istream</w>
+        <w>logd</w>
         <w>loglines</w>
+        <w>mech</w>
+        <w>mkref</w>
+        <w>mksnap</w>
+        <w>mkws</w>
+        <w>noname</w>
+        <w>ostream</w>
         <w>parabuild</w>
+        <w>passwd</w>
+        <w>prolog</w>
+        <w>revno</w>
+        <w>runlevel</w>
+        <w>sunos</w>
+        <w>useradd</w>
+        <w>vlti</w>
+        <w>winnt</w>
+        <w>wspaces</w>
       </words>
     </dictionary>
   </component>

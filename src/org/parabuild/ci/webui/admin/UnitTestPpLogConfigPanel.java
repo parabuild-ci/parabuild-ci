@@ -34,7 +34,7 @@ public final class UnitTestPpLogConfigPanel extends AbstractLogConfigPanel {
   public UnitTestPpLogConfigPanel() {
     super(false); // no conent border
     super.setLogType(LogConfig.LOG_TYPE_UNITTESTPP_XML_DIR);
-    super.setLogDecription("UnitTest++ Log");
+    super.setLogDescription("UnitTest++ Log");
   }
 
 

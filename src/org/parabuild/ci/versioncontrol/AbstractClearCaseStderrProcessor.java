@@ -13,9 +13,9 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.util.*;
+import org.parabuild.ci.common.StringUtils;
 
-import org.parabuild.ci.common.*;
+import java.util.List;
 
 /**
  * Strategy class - delivers required-for-all pre-processing.
@@ -50,7 +50,7 @@ public abstract class AbstractClearCaseStderrProcessor implements StderrLineProc
       return RESULT_IGNORE;
     } else if (line.startsWith("cleartool: Error: Unable to access \"lost+found")) {
       // NOTE: vimeshev - 2006-02-06 - See bug #825. Though we
-      // ignore it, it's still a mistrery why they get this
+      // ignore it, it's still a mystery why they get this
       // error.
       return RESULT_IGNORE;
     }

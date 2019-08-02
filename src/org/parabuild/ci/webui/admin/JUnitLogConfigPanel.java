@@ -34,7 +34,7 @@ public final class JUnitLogConfigPanel extends AbstractLogConfigPanel {
   public JUnitLogConfigPanel() {
     super(false); // no conent border
     super.setLogType(LogConfig.LOG_TYPE_JNUIT_XML_DIR);
-    super.setLogDecription("JUnit Log");
+    super.setLogDescription("JUnit Log");
   }
 
 

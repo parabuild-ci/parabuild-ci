@@ -34,7 +34,7 @@ public final class BoostTestConfigPanel extends AbstractLogConfigPanel {
   public BoostTestConfigPanel() {
     super(false);
     super.setLogType(LogConfig.LOG_TYPE_BOOST_TEST_XML_DIR);
-    super.setLogDecription("Boost Test XML Log Dir");
+    super.setLogDescription("Boost Test XML Log Dir");
   }
 
 

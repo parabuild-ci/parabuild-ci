@@ -22,7 +22,7 @@ import org.parabuild.ci.webui.common.*;
 
 /**
  */
-public final class RecurrentScheduleSettingsPanel extends AbtractScheduleSettingsPanel {
+public final class RecurrentScheduleSettingsPanel extends AbstractScheduleSettingsPanel {
 
   private static final long serialVersionUID = 1301336121355637905L; // NOPMD
   /** @noinspection UNUSED_SYMBOL,UnusedDeclaration*/

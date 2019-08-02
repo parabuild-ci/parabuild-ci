@@ -46,8 +46,8 @@ import java.util.List;
  * including name of the result and path. Implementors may add there
  * own properties in their constructors.
  * <p/>
- * Implementing classes should take care about impelementing
- * needed mathods and addidng there own functionality.
+ * Implementing classes should take care about implementing
+ * needed methods and adding there own functionality.
  *
  * @see ResultConfigProperty
  */
@@ -90,7 +90,7 @@ public abstract class AbstractResultConfigPanel extends MessagePanel implements 
 
 
   /**
-   * Creates panel. Caption for path field is set to defaulr {@link #CAPTION_RESULT_PATH}
+   * Creates panel. Caption for path field is set to default {@link #CAPTION_RESULT_PATH}
    *
    * @param enableContentBorder
    */

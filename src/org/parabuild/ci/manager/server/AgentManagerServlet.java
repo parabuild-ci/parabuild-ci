@@ -49,8 +49,8 @@ public final class AgentManagerServlet extends ManagerServlet {
     final HttpServletRequest httpServletRequest = (HttpServletRequest) request;
     final String remoteAddr = httpServletRequest.getRemoteAddr();
     if (!DISABLE_SOURCE_IP_ADDRESS_CHECK && !remoteAddr.equals(BUILD_MANAGER_ADDRESS)) {
-      final HttpServletResponse httpServletResponce = (HttpServletResponse) response;
-      httpServletResponce.setStatus(HttpServletResponse.SC_FORBIDDEN);
+      final HttpServletResponse httpServletResponse = (HttpServletResponse) response;
+      httpServletResponse.setStatus(HttpServletResponse.SC_FORBIDDEN);
       IoUtils.closeHard(request.getInputStream());
       IoUtils.closeHard(response.getOutputStream());
       return;

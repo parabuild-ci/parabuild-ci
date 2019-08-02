@@ -151,7 +151,7 @@ committer: root <root@baybridge.cacheonix.com>
 branch nick: bazaar
 timestamp: Sun 2010-04-04 17:50:51 -0700
 message:
-  Initialized repozitory
+  Initialized repository
 added:
   test/
   test/second_sourceline/

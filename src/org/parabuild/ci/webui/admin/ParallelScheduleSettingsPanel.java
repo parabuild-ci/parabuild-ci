@@ -17,7 +17,7 @@ import org.parabuild.ci.object.*;
 
 /**
  * Parallel schedule allow for basic settings defined by the
- * {@link AbtractScheduleSettingsPanel}.
+ * {@link AbstractScheduleSettingsPanel}.
  *
  * As parallel build have the same build numvber as their
  * lad, setting build number for parallel builds is

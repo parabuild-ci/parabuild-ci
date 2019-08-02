@@ -34,7 +34,7 @@ public final class NUnitLogConfigPanel extends AbstractLogConfigPanel {
   public NUnitLogConfigPanel() {
     super(false); // no conent border
     super.setLogType(LogConfig.LOG_TYPE_NUNIT_XML_DIR);
-    super.setLogDecription("NUnit log");
+    super.setLogDescription("NUnit log");
   }
 
 

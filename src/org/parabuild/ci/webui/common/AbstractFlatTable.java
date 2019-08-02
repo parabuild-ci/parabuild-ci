@@ -86,7 +86,7 @@ public abstract class AbstractFlatTable extends MessagePanel {
    * number of columns
    *
    * @param columnCount number of columns ih the table
-   * @param editable    true if editting is allowed
+   * @param editable    true if editing is allowed
    */
   public AbstractFlatTable(final int columnCount, final boolean editable) {
     this(columnCount, editable, true);
@@ -98,7 +98,7 @@ public abstract class AbstractFlatTable extends MessagePanel {
    * number of columns
    *
    * @param columnCount number of columns ih the table
-   * @param editable    true if editting is allowed
+   * @param editable    true if editing is allowed
    */
   public AbstractFlatTable(final int columnCount, final boolean editable, final boolean createHeaderOnStartup) {
 
@@ -187,7 +187,7 @@ public abstract class AbstractFlatTable extends MessagePanel {
 
 
   /**
-   * Sets grid width for both horisontal an vertical grids.
+   * Sets grid width for both horizontal an vertical grids.
    *
    * @param gridWidth
    */
@@ -350,7 +350,7 @@ public abstract class AbstractFlatTable extends MessagePanel {
       return false;
     }
 
-    // add check box, if ncesessary
+    // add check box, if necessary
     if (editable) {
       final CheckBox rowCheckBox = new CheckBox();
       row.setRowSelectCheckBox(rowCheckBox);
@@ -362,7 +362,7 @@ public abstract class AbstractFlatTable extends MessagePanel {
       final Component cell = rowComponents[colIndex];
       final TableColumn column = columns[colIndex];
       if (column.isWidthRelative()) {
-        cell.setWidth(column.getRealtiveWidth());
+        cell.setWidth(column.getRelativeWidth());
       } else {
         cell.setWidth(column.getWidth());
       }
@@ -533,7 +533,7 @@ public abstract class AbstractFlatTable extends MessagePanel {
 
 
   /**
-   * Sets cell's bacground
+   * Sets cell's background
    *
    * @param cell
    */
@@ -549,7 +549,7 @@ public abstract class AbstractFlatTable extends MessagePanel {
 
 
   /**
-   * Helper mathod to add header cell
+   * Helper method to add header cell
    *
    * @param headerComponent
    */
@@ -584,7 +584,7 @@ public abstract class AbstractFlatTable extends MessagePanel {
 
   /**
    * Adds footer with editable commands. This method provides
-   * default implementation. It can be overriden by successors to
+   * default implementation. It can be overridden by successors to
    * provide specialized commands
    */
   protected TableCommands makeEditableCommands() {
@@ -659,7 +659,7 @@ public abstract class AbstractFlatTable extends MessagePanel {
     for (int i = 0; i < rows.size(); i++) {
       final TableRow tableRow = (TableRow) rows.get(i);
 
-      // add check box, if ncesessary
+      // add check box, if necessary
       final CheckBox rowSelectCheckBox = tableRow.getRowSelectCheckBox();
       if (rowSelectCheckBox != null) {
         rowSelectCheckBox.setChecked(false);
@@ -672,7 +672,7 @@ public abstract class AbstractFlatTable extends MessagePanel {
         final Component cell = rowComponents[colIndex];
         final TableColumn column = columns[colIndex];
         if (column.isWidthRelative()) {
-          cell.setWidth(column.getRealtiveWidth());
+          cell.setWidth(column.getRelativeWidth());
         } else {
           cell.setWidth(column.getWidth());
         }
@@ -712,7 +712,7 @@ public abstract class AbstractFlatTable extends MessagePanel {
   public interface TableCommands {
 
     /**
-     * @return a component contaning controls.
+     * @return a component containing controls.
      */
     Component getComponent();
 
@@ -793,7 +793,7 @@ public abstract class AbstractFlatTable extends MessagePanel {
     private String header = null;
     private boolean visible = true;
     private int width = 50;
-    private String realtiveWidth = null;
+    private String relativeWidth = null;
 
 
     public String getHeader() {
@@ -827,17 +827,17 @@ public abstract class AbstractFlatTable extends MessagePanel {
 
 
     public void setRelativeWidth(final String width) {
-      this.realtiveWidth = width;
+      this.relativeWidth = width;
     }
 
 
-    public String getRealtiveWidth() {
-      return realtiveWidth;
+    public String getRelativeWidth() {
+      return relativeWidth;
     }
 
 
     public boolean isWidthRelative() {
-      return realtiveWidth != null;
+      return relativeWidth != null;
     }
   }
 }

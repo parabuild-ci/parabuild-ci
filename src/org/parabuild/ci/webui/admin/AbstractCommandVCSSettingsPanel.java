@@ -31,7 +31,7 @@ public abstract class AbstractCommandVCSSettingsPanel extends AbstractSourceCont
   private static final Log log = LogFactory.getLog(AbstractCommandVCSSettingsPanel.class);
 
   private static final String CAPTION_LABEL_TAG_A_BUILD = "Command to label/tag a build: ";
-  private static final String CAPTION_REMOVE_TABEL_TAG = "Command to remove tabel/tag: ";
+  private static final String CAPTION_REMOVE_LABEL_TAG = "Command to remove label/tag: ";
   private static final String CAPTION_SYNC_TO_CHANGE_LIST = "Command to sync to change list: ";
   private static final long serialVersionUID = -1342054234743631119L;
 
@@ -49,7 +49,7 @@ public abstract class AbstractCommandVCSSettingsPanel extends AbstractSourceCont
     addHeaderFields(gridIterator); // NOPMD
     gridIterator.addPair(new CommonFieldLabel(CAPTION_SYNC_TO_CHANGE_LIST), flSyncToChangeListCommand);
     gridIterator.addPair(new CommonFieldLabel(CAPTION_LABEL_TAG_A_BUILD), flLabelCommand);
-    gridIterator.addPair(new CommonFieldLabel(CAPTION_REMOVE_TABEL_TAG), flRemoveLabelCommand);
+    gridIterator.addPair(new CommonFieldLabel(CAPTION_REMOVE_LABEL_TAG), flRemoveLabelCommand);
 
     // init property to input map
     //noinspection OverriddenMethodCallInConstructor,AbstractMethodCallInConstructor,OverridableMethodCallInConstructor

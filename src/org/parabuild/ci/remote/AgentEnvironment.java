@@ -13,14 +13,14 @@
  */
 package org.parabuild.ci.remote;
 
+import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.common.CommandStoppedException;
+import org.parabuild.ci.process.TailBufferSize;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Map;
-
-import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.CommandStoppedException;
-import org.parabuild.ci.process.TailBufferSize;
 
 /**
  * Native environment view of a agent box.
@@ -84,7 +84,7 @@ public interface AgentEnvironment {
 
 
   /**
-   * Retuns true if agent runs under Unix
+   * Returns true if agent runs under Unix
    */
   boolean isUnix() throws IOException, AgentFailureException;
 
@@ -152,7 +152,7 @@ public interface AgentEnvironment {
 
   /**
    * @return a new executor handle that can be used to
-   *         access a remote command's environement.
+   *         access a remote command's environment.
    */
   int createExecutorHandle() throws IOException;
 

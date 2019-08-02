@@ -42,8 +42,8 @@ import java.util.List;
  * including name of the log and path. Implementors may add there
  * own properties in their constructors.
  * <p/>
- * Implementing classes should take care about impelementing
- * needed mathods and addidng there own functionality.
+ * Implementing classes should take care about implementing
+ * needed methods and adding there own functionality.
  *
  * @noinspection FieldCanBeLocal
  * @see LogConfigProperty
@@ -104,7 +104,7 @@ public abstract class AbstractLogConfigPanel extends MessagePanel implements Val
    *
    * @param descr description
    */
-  protected final void setLogDecription(final String descr) {
+  protected final void setLogDescription(final String descr) {
     flDescr.setValue(descr);
   }
 

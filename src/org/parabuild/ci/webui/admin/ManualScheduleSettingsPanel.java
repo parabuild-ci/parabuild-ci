@@ -16,7 +16,7 @@ package org.parabuild.ci.webui.admin;
 /**
  * Schedule setting for manual buil
  */
-public final class ManualScheduleSettingsPanel extends AbtractScheduleSettingsPanel {
+public final class ManualScheduleSettingsPanel extends AbstractScheduleSettingsPanel {
 
   private static final long serialVersionUID = 3561210519826594013L;
 

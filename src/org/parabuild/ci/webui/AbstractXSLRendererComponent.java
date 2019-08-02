@@ -29,7 +29,7 @@ import java.io.PrintWriter;
 /**
  * This component implements GoF Strategy pattern.
  *
- * Inhereting classes shouls implement
+ * Inheriting classes should implement
  */
 public abstract class AbstractXSLRendererComponent extends CustomComponent {
 
@@ -50,7 +50,7 @@ public abstract class AbstractXSLRendererComponent extends CustomComponent {
 
 
   /**
-   * Oveloaded CustomComponent's render
+   * Overloaded CustomComponent's render
    */
   public final void render(final RenderContext ctx) {
     StreamSource xslSource = null;

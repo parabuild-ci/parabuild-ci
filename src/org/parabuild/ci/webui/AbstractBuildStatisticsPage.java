@@ -46,7 +46,7 @@ public abstract class AbstractBuildStatisticsPage extends BasePage {
   private final StatisticsLink lnkSelectMTD = new StatisticsLink("This Month");
   private final StatisticsLink lnkSelectYTD = new StatisticsLink("This Year");
   private final StatisticsLink lnkSelectBreakage = new StatisticsLink("Build Breakage Distribution");
-  private final StatisticsLink lnkSelectTestsStatists = new StatisticsLink("Tests");
+  private final StatisticsLink lnkSelectTestsStatistics = new StatisticsLink("Tests");
   private final StatisticsLink lnkTimeToFix = new StatisticsLink("Time To Fix");  // NOPMD
   // PMD
   private final StatisticsLink lnkPMDViolations = new StatisticsLink("PMD");
@@ -88,7 +88,7 @@ public abstract class AbstractBuildStatisticsPage extends BasePage {
     flNavBar.add(new MenuDividerLabel(true)).add(lnkSelectMTD);
     flNavBar.add(new MenuDividerLabel(true)).add(lnkSelectYTD);
     flNavBar.add(new MenuDividerLabel(true)).add(lnkSelectBreakage);
-    flNavBar.add(new MenuDividerLabel(true)).add(lnkSelectTestsStatists);
+    flNavBar.add(new MenuDividerLabel(true)).add(lnkSelectTestsStatistics);
     flNavBar.add(lbTimeToFix).add(lnkTimeToFix);
     userPanel.add(flNavBar);
     userPanel.add(WebuiUtils.makePanelDivider());
@@ -121,7 +121,7 @@ public abstract class AbstractBuildStatisticsPage extends BasePage {
     lnkSelectMTD.setParameters(BuildStatisticsPage.STAT_CODE_MONTHLY, buildConfig);
     lnkSelectYTD.setParameters(BuildStatisticsPage.STAT_CODE_YEARLY, buildConfig);
     lnkSelectBreakage.setParameters(BuildStatisticsPage.STAT_CODE_BREAKAGE_DISTRIBUTION, buildConfig);
-    lnkSelectTestsStatists.setParameters(BuildStatisticsPage.STAT_CODE_TESTS, buildConfig);
+    lnkSelectTestsStatistics.setParameters(BuildStatisticsPage.STAT_CODE_TESTS, buildConfig);
     lnkSelectAll.setParameters(BuildStatisticsPage.STAT_CODE_ALL, buildConfig);
     lnkSelectBuildHistory.setParameters(BuildStatisticsPage.STAT_CODE_RECENT_BUILD_TIME, buildConfig);
     lnkPMDViolations.setParameters(BuildStatisticsPage.STAT_CODE_PMD, buildConfig);
@@ -134,7 +134,7 @@ public abstract class AbstractBuildStatisticsPage extends BasePage {
     //  1. The current build configuration contains PMD XML log.
     //  2. The current build run attribute has PMD statistics
     final ConfigurationManager cm = ConfigurationManager.getInstance();
-    final boolean pmdConifured = !cm.getLogConfigs(activeBuildID, LogConfig.LOG_TYPE_PMD_XML_FILE).isEmpty();
+    final boolean pmdConfigured = !cm.getLogConfigs(activeBuildID, LogConfig.LOG_TYPE_PMD_XML_FILE).isEmpty();
     final boolean pmdPresent;
     final BuildRun lastCleanBuildRun = cm.getLastCleanBuildRun(activeBuildID);
     final BuildRun lastCompleteBuildRun = cm.getLastCompleteBuildRun(activeBuildID);
@@ -143,7 +143,7 @@ public abstract class AbstractBuildStatisticsPage extends BasePage {
     } else {
       pmdPresent = cm.getBuildRunAttribute(lastCleanBuildRun.getBuildRunID(), BuildRunAttribute.ATTR_PMD_PROBLEMS) != null;
     }
-    if (!pmdConifured && !pmdPresent) {
+    if (!pmdConfigured && !pmdPresent) {
       lbPMDViolationsDivider.setVisible(false);
       lnkPMDViolations.setVisible(false);
       pmdViolationsVisible = false;
@@ -153,14 +153,14 @@ public abstract class AbstractBuildStatisticsPage extends BasePage {
     // To decide if we have to show the Findbugs link, we should check if any of this is valid:
     //  1. The current build configuration contains Findbugs XML log.
     //  2. The current build run attribute has Findbugs statistics
-    final boolean findbugsConifured = !cm.getLogConfigs(activeBuildID, LogConfig.LOG_TYPE_FINDBUGS_XML_FILE).isEmpty();
+    final boolean findbugsConfigured = !cm.getLogConfigs(activeBuildID, LogConfig.LOG_TYPE_FINDBUGS_XML_FILE).isEmpty();
     final boolean findbugsPresent;
     if (lastCleanBuildRun == null) {
       findbugsPresent = false;
     } else {
       findbugsPresent = cm.getBuildRunAttribute(lastCleanBuildRun.getBuildRunID(), BuildRunAttribute.ATTR_FINDBUGS_PROBLEMS) != null;
     }
-    if (!findbugsConifured && !findbugsPresent) {
+    if (!findbugsConfigured && !findbugsPresent) {
       lbFindbugsViolationsDivider.setVisible(false);
       lnkFindbugsViolations.setVisible(false);
       findbugsViolationsVisible = false;
@@ -170,23 +170,23 @@ public abstract class AbstractBuildStatisticsPage extends BasePage {
     // To decide if we have to show the Checkstyle link, we should check if any of this is valid:
     //  1. The current build configuration contains Checkstyle XML log.
     //  2. The current build run attribute has Checkstyle statistics
-    final boolean checkstyleConifured = !cm.getLogConfigs(activeBuildID, LogConfig.LOG_TYPE_CHECKSTYLE_XML_FILE).isEmpty();
+    final boolean checkstyleConfigured = !cm.getLogConfigs(activeBuildID, LogConfig.LOG_TYPE_CHECKSTYLE_XML_FILE).isEmpty();
     if (log.isDebugEnabled()) {
-      log.debug("checkstyleConifured: " + checkstyleConifured);
+      log.debug("checkstyleConfigured: " + checkstyleConfigured);
     }
     final boolean checkstylePresent;
     if (lastCleanBuildRun == null) {
       checkstylePresent = false;
       if (log.isDebugEnabled()) {
-        log.debug("checkstylePresent baseed on build run: " + checkstylePresent);
+        log.debug("checkstylePresent based on build run: " + checkstylePresent);
       }
     } else {
       checkstylePresent = lastCompleteBuildRun != null && cm.getBuildRunAttribute(lastCompleteBuildRun.getBuildRunID(), BuildRunAttribute.ATTR_CHECKSTYLE_FILES) != null;
       if (log.isDebugEnabled()) {
-        log.debug("checkstylePresent baseed on files: " + checkstylePresent);
+        log.debug("checkstylePresent based on files: " + checkstylePresent);
       }
     }
-    if (!checkstyleConifured && !checkstylePresent) {
+    if (!checkstyleConfigured && !checkstylePresent) {
       lbCheckstyleViolationsDivider.setVisible(false);
       lnkCheckstyleViolations.setVisible(false);
       checkstyleViolationsVisible = false;
@@ -207,7 +207,7 @@ public abstract class AbstractBuildStatisticsPage extends BasePage {
             ", lnkSelectMTD=" + lnkSelectMTD +
             ", lnkSelectYTD=" + lnkSelectYTD +
             ", lnkSelectBreakage=" + lnkSelectBreakage +
-            ", lnkSelectTestsStatists=" + lnkSelectTestsStatists +
+            ", lnkSelectTestsStatistics=" + lnkSelectTestsStatistics +
             ", lnkTimeToFix=" + lnkTimeToFix +
             ", lnkPMDViolations=" + lnkPMDViolations +
             ", lbPMDViolationsDivider=" + lbPMDViolationsDivider +

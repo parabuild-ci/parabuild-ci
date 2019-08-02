@@ -153,7 +153,7 @@ abstract class AbstractBuildRunResultPage extends BasePage {
 
 
   /**
-   * @param buildRun the thapge was executed with.
+   * @param buildRun the the page was executed with.
    *
    * @param parameters that the page was executed with.
    * @return Flow, typically {@link PreviousNextLinks} that

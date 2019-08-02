@@ -34,7 +34,7 @@ public final class FindbugsLogConfigPanel extends AbstractLogConfigPanel {
   public FindbugsLogConfigPanel() {
     super(false); // no conent border
     super.setLogType(LogConfig.LOG_TYPE_FINDBUGS_XML_FILE);
-    super.setLogDecription("Findbugs XML report");
+    super.setLogDescription("Findbugs XML report");
   }
 
 

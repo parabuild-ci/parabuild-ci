@@ -113,11 +113,6 @@ public final class AdvancedSearchPanel extends MessagePanel {
   }
 
 
-  public boolean isSeachRequested() {
-    return btSearch.isButtonPressed();
-  }
-
-
   /**
    * @return selected buildID or BuildConfig.UNSAVED_ID if "Any"
    * selected.
@@ -134,13 +129,5 @@ public final class AdvancedSearchPanel extends MessagePanel {
    */
   public void setBuildID(final int buildID) {
     ddBuild.setCode(buildID);
-  }
-
-
-  /**
-   * @return true if search button was explicetely pressed.
-   */
-  public boolean isSearchRequested() {
-    return searchRequested;
   }
 }

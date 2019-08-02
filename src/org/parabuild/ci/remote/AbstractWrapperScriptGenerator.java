@@ -78,7 +78,7 @@ abstract class AbstractWrapperScriptGenerator implements WrapperScriptGenerator 
 
 
   /**
-   * Adds sheel variables to be present in the script.
+   * Adds shell variables to be present in the script.
    *
    * @param variables a Map with a shell variable name as a key
    *                  and variable value as value.
@@ -92,7 +92,7 @@ abstract class AbstractWrapperScriptGenerator implements WrapperScriptGenerator 
    * Generates wrapper sequence script file for further execution.
    *
    * @param command that will be wrapped
-   * @return String absolute path to created sctep script file.
+   * @return String absolute path to created step script file.
    * @throws IOException if an IO error occurred.
    */
   public String generateScript(final String command) throws IOException, AgentFailureException {

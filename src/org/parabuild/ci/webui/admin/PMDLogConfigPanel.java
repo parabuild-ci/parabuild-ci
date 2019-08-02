@@ -34,7 +34,7 @@ public final class PMDLogConfigPanel extends AbstractLogConfigPanel {
   public PMDLogConfigPanel() {
     super(false); // no conent border
     super.setLogType(LogConfig.LOG_TYPE_PMD_XML_FILE);
-    super.setLogDecription("PMD Report");
+    super.setLogDescription("PMD Report");
   }
 
 

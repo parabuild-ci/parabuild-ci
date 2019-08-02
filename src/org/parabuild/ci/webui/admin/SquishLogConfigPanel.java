@@ -34,7 +34,7 @@ public final class SquishLogConfigPanel extends AbstractLogConfigPanel {
   public SquishLogConfigPanel() {
     super(false); // no content border
     super.setLogType(LogConfig.LOG_TYPE_SQUISH_TESTER_XML_FILE);
-    super.setLogDecription("Squish Log");
+    super.setLogDescription("Squish Log");
   }
 
 

@@ -34,7 +34,7 @@ public final class GoogleTestLogConfigPanel extends AbstractLogConfigPanel {
   public GoogleTestLogConfigPanel() {
     super(false); // no content border
     super.setLogType(LogConfig.LOG_TYPE_GOOGLETEST_XML_FILE);
-    super.setLogDecription("GoogleTest Log");
+    super.setLogDescription("GoogleTest Log");
   }
 
 

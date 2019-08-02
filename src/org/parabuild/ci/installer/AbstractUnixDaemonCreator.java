@@ -42,7 +42,7 @@ public abstract class AbstractUnixDaemonCreator implements UnixDaemonCreator {
   private static final Log log = LogFactory.getLog(AbstractUnixDaemonCreator.class); // NOPMD
 
 
-  private InstallerContext ictx = null;
+  private InstallerContext installerContext = null;
   private DirectoryOwnerChanger directoryOwnerChanger = null;
 
 
@@ -52,7 +52,7 @@ public abstract class AbstractUnixDaemonCreator implements UnixDaemonCreator {
 
 
   public final void createDaemon(final InstallerContext installerContext) throws IOException, UserCanceledException {
-    this.ictx = installerContext;
+    this.installerContext = installerContext;
     createGroup();
     createUser();
     installDaemon();
@@ -65,7 +65,7 @@ public abstract class AbstractUnixDaemonCreator implements UnixDaemonCreator {
    * Changes ownership of install dirs.
    */
   private void chownDirs() {
-    directoryOwnerChanger.changeOwner(ictx.getInstallationDirectory(), InstallerConstants.PARABUILD_USER);
+    directoryOwnerChanger.changeOwner(installerContext.getInstallationDirectory(), InstallerConstants.PARABUILD_USER);
   }
 
 
@@ -169,12 +169,12 @@ public abstract class AbstractUnixDaemonCreator implements UnixDaemonCreator {
 
 
   public final void installDaemon() throws UserCanceledException {
-    final File installationDaemonScript = new File(ictx.getInstallationDirectory(), "bin/parabuild");
+    final File installationDaemonScript = new File(installerContext.getInstallationDirectory(), "bin/parabuild");
     final String destinationScriptPath = getDaemonScriptDestinationPath();
     final File destinationDaemonScript = new File(destinationScriptPath, "parabuild");
     final FileOptions fileOptions = new FileOptions("755", OverwriteMode.IF_NEWER, false);
 //    System.out.println("DEBUG: destinationDaemonScript: " + destinationDaemonScript);
-    ictx.installFile(installationDaemonScript, destinationDaemonScript, fileOptions);
+    installerContext.installFile(installationDaemonScript, destinationDaemonScript, fileOptions);
   }
 
 
@@ -197,10 +197,10 @@ public abstract class AbstractUnixDaemonCreator implements UnixDaemonCreator {
 
 
   /**
-   * Returns os-spefic path to that daemon script will be
+   * Returns os-specific path to that daemon script will be
    * installed.
    *
-   * @return s-spefic path to that daemon script will be
+   * @return s-specific path to that daemon script will be
    *         installed
    */
   public abstract String getDaemonScriptDestinationPath();
@@ -227,7 +227,7 @@ public abstract class AbstractUnixDaemonCreator implements UnixDaemonCreator {
 
   public final String toString() {
     return "AbstractUnixDaemonCreator{" +
-            "ictx=" + ictx +
+            "installerContext=" + installerContext +
             ", directoryOwnerChanger=" + directoryOwnerChanger +
             '}';
   }

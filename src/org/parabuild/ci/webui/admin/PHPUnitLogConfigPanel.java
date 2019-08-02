@@ -34,7 +34,7 @@ public final class PHPUnitLogConfigPanel extends AbstractLogConfigPanel {
   public PHPUnitLogConfigPanel() {
     super(false); // no conent border
     super.setLogType(LogConfig.LOG_TYPE_PHPUNIT_XML_DIR);
-    super.setLogDecription("PHPUnit Log");
+    super.setLogDescription("PHPUnit Log");
   }
 
 

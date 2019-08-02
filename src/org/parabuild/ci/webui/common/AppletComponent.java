@@ -13,10 +13,13 @@
  */
 package org.parabuild.ci.webui.common;
 
-import java.util.*;
-import java.io.*;
+import viewtier.cdk.CustomComponent;
+import viewtier.cdk.RenderContext;
 
-import viewtier.cdk.*;
+import java.io.PrintWriter;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Properties;
 
 /**
  * This component presents a Java applet
@@ -45,7 +48,7 @@ public final class AppletComponent extends CustomComponent {
 
 
   /**
-   * Oveloaded CustomComponent's render
+   * Overloaded CustomComponent's render
    */
   public void render(final RenderContext ctx) {
     final PrintWriter writer = ctx.getWriter();

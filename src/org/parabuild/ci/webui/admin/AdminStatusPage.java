@@ -26,7 +26,7 @@ public final class AdminStatusPage extends BuildsStatusesPage {
 
 
   public AdminStatusPage() {
-    setTitle(makeTitle("Administative build statuses"));
+    setTitle(makeTitle("Administrative build statuses"));
   }
 
 

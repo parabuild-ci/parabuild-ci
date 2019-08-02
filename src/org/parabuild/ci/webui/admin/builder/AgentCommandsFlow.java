@@ -23,7 +23,7 @@ import viewtier.ui.Link;
 import java.util.Properties;
 
 /**
- * List of commands available for a parcticular builderConfiguration in a builderConfigurations
+ * List of commands available for a particular builderConfiguration in a builderConfigurations
  * table.
  */
 final class AgentCommandsFlow extends Flow {

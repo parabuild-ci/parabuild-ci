@@ -13,16 +13,17 @@
  */
 package org.parabuild.ci.remote.internal;
 
-import java.io.*;
-import java.net.*;
-import org.apache.commons.logging.*;
+import com.caucho.hessian.client.HessianRuntimeException;
+import com.caucho.hessian.io.HessianProtocolException;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.StringUtils;
 
-import com.caucho.hessian.client.*;
-import com.caucho.hessian.io.*;
-import org.parabuild.ci.common.*;
+import java.io.IOException;
+import java.net.ConnectException;
 
 /**
- * Collection of initernal Agent utilities
+ * Collection of internal Agent utilities
  */
 public final class AgentUtils {
 
@@ -34,7 +35,7 @@ public final class AgentUtils {
   }
 
 
-  public static IOException hessianRuntimeExeptionToIOException(final HessianRuntimeException hre, final String host) {
+  public static IOException hessianRuntimeExceptionToIOException(final HessianRuntimeException hre, final String host) {
 
     final Throwable cause = hre.getRootCause() != null ? hre.getRootCause() : hre;
     if (IOException.class.isAssignableFrom(cause.getClass())) {

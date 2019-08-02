@@ -13,12 +13,6 @@
  */
 package org.parabuild.ci.remote;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Locale;
-import java.util.Map;
-
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.common.CommandStoppedException;
 import org.parabuild.ci.configuration.AgentHost;
@@ -27,6 +21,12 @@ import org.parabuild.ci.remote.internal.LocalBuilderFiles;
 import org.parabuild.ci.remote.services.ModifiedFileList;
 import org.parabuild.ci.remote.services.RemoteFileDescriptor;
 import org.parabuild.ci.services.TailUpdate;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Locale;
+import java.util.Map;
 
 /**
  * Presents remote build host
@@ -85,7 +85,7 @@ public interface Agent {
 
 
   /**
-   * Explicitely requests build host to create needed build
+   * Explicitly requests build host to create needed build
    * directories.
    */
   void createBuildDirs() throws IOException, AgentFailureException;
@@ -306,7 +306,7 @@ public interface Agent {
    * Creates a file with given context. File should reside under
    * build's checkout dir or agent/tomcat temp dir.
    *
-   * @param absoluteFile ubsolute file path
+   * @param absoluteFile absolute file path
    * @param content
    */
   void createFile(String absoluteFile, String content) throws IOException, AgentFailureException;
@@ -423,7 +423,7 @@ public interface Agent {
 
   /**
    * @return a new executor handle that can be used to
-   *         access a remote command's environement.
+   *         access a remote command's environment.
    */
   int createCommandHandle() throws IOException, AgentFailureException;
 
