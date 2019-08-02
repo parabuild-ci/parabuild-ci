@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <decorators>
+
+  <excludes>
+      <pattern>/*.swf</pattern>
+      <pattern>/*.css</pattern>
+      <pattern>/*.js</pattern>
+      <pattern>/*.png</pattern>
+      <pattern>/*.gif</pattern>
+      <pattern>/*.ico</pattern>
+      <pattern>/*.wsdl</pattern>
+      <pattern>/*.wsdd</pattern>
+  </excludes>
+
   <decorator name="parabuild-theme" page="/org/parabuild/ci/webui/parabuild-theme.ftl">
     <pattern>/*</pattern>
   </decorator>
