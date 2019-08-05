@@ -425,8 +425,6 @@
     <copy file="${config}/parabuild.wsdd" tofile="${war.staging}/WEB-INF/server-config.wsdd"/>
     <copy file="${config}/decorators.xml" todir="${war.staging}/WEB-INF"/>
 
-    <!-- Copy sitemesh config -->
-
   </target>
 
 
