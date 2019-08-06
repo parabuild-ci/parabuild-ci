@@ -1,17 +1,17 @@
 .dash_box_green {
-   background: #00ff00 url(/parabuild/images/dash_green_grad.gif) repeat-x top left;
+   background: #00ff00 url(/images/dash_green_grad.gif) repeat-x top left;
 }
 .dash_top_green div {
-   background: url(/parabuild/images/dash_green_tl.gif) no-repeat top left;
+   background: url(/images/dash_green_tl.gif) no-repeat top left;
 }
 .dash_top_green {
-   background: transparent url(/parabuild/images/dash_green_tr.gif) no-repeat top right;
+   background: transparent url(/images/dash_green_tr.gif) no-repeat top right;
 }
 .dash_bottom_green div {
-   background: url(/parabuild/images/dash_green_bl.gif) no-repeat bottom left;
+   background: url(/images/dash_green_bl.gif) no-repeat bottom left;
 }
 .dash_bottom_green {
-   background: transparent url(/parabuild/images/dash_green_br.gif) no-repeat bottom right;
+   background: transparent url(/images/dash_green_br.gif) no-repeat bottom right;
 }
 
 .dash_top_green div, .dash_top_green,
@@ -25,19 +25,19 @@
 
 
 .dash_box_red {
-   background: #ff0000 url(/parabuild/images/dash_red_grad.gif) repeat-x top left;
+   background: #ff0000 url(/images/dash_red_grad.gif) repeat-x top left;
 }
 .dash_top_red div {
-   background: url(/parabuild/images/dash_red_tl.gif) no-repeat top left;
+   background: url(/images/dash_red_tl.gif) no-repeat top left;
 }
 .dash_top_red {
-   background: transparent url(/parabuild/images/dash_red_tr.gif) no-repeat top right;
+   background: transparent url(/images/dash_red_tr.gif) no-repeat top right;
 }
 .dash_bottom_red div {
-   background: url(/parabuild/images/dash_red_bl.gif) no-repeat bottom left;
+   background: url(/images/dash_red_bl.gif) no-repeat bottom left;
 }
 .dash_bottom_red {
-   background: transparent url(/parabuild/images/dash_red_br.gif) no-repeat bottom right;
+   background: transparent url(/images/dash_red_br.gif) no-repeat bottom right;
 }
 
 .dash_top_red div, .dash_top_red,
@@ -50,19 +50,19 @@
 
 
 .dash_box_gray {
-   background: #dadada url(/parabuild/images/dash_gray_grad.gif) repeat-x top left;
+   background: #dadada url(/images/dash_gray_grad.gif) repeat-x top left;
 }
 .dash_top_gray div {
-   background: url(/parabuild/images/dash_gray_tl.gif) no-repeat top left;
+   background: url(/images/dash_gray_tl.gif) no-repeat top left;
 }
 .dash_top_gray {
-   background: transparent url(/parabuild/images/dash_gray_tr.gif) no-repeat top right;
+   background: transparent url(/images/dash_gray_tr.gif) no-repeat top right;
 }
 .dash_bottom_gray div {
-   background: url(/parabuild/images/dash_gray_bl.gif) no-repeat bottom left;
+   background: url(/images/dash_gray_bl.gif) no-repeat bottom left;
 }
 .dash_bottom_gray {
-   background: transparent url(/parabuild/images/dash_gray_br.gif) no-repeat bottom right;
+   background: transparent url(/images/dash_gray_br.gif) no-repeat bottom right;
 }
 
 .dash_top_gray div, .dash_top_gray,

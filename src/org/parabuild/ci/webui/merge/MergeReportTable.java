@@ -145,11 +145,11 @@ final class MergeReportTable extends AbstractFlatTable {
   private static String makeImageURL(final MergeReport item) {
     final String imageURL;
     if (item.getStatus() == BranchChangeList.MERGE_STATUS_MERGED) {
-      imageURL = "/parabuild/images/3232/bullet_ball_glass_green.gif";
+      imageURL = "/images/3232/bullet_ball_glass_green.gif";
     } else if (item.getStatus() == BranchChangeList.MERGE_STATUS_NOT_MERGED) {
-      imageURL = "/parabuild/images/3232/bullet_ball_glass_blue.gif";
+      imageURL = "/images/3232/bullet_ball_glass_blue.gif";
     } else {
-      imageURL = "/parabuild/images/3232/bullet_ball_glass_gray.gif";
+      imageURL = "/images/3232/bullet_ball_glass_gray.gif";
     }
     return imageURL;
   }

@@ -818,22 +818,22 @@ public final class WebuiUtils {
 
 
   public static Image makeBlueBulletSquareImage16x16() {
-    return new Image("/parabuild/images/1616/bullet_square_blue.gif", "", 16, 16);
+    return new Image("/images/1616/bullet_square_blue.gif", "", 16, 16);
   }
 
 
   public static Image makeGreenBulletSquareImage16x16() {
-    return new Image("/parabuild/images/1616/bullet_square_green.gif", "", 16, 16);
+    return new Image("/images/1616/bullet_square_green.gif", "", 16, 16);
   }
 
 
   public static Image makeRedBulletTriangleRedUp16x16() {
-    return new Image("/parabuild/images/1616/bullet_triangle_red_up.gif", "", 16, 16);
+    return new Image("/images/1616/bullet_triangle_red_up.gif", "", 16, 16);
   }
 
 
   public static Image makeRedBulletTriangleGreenUp16x16() {
-    return new Image("/parabuild/images/1616/bullet_triangle_green_up.gif", "", 16, 16);
+    return new Image("/images/1616/bullet_triangle_green_up.gif", "", 16, 16);
   }
 
 

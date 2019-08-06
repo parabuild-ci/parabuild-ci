@@ -24,8 +24,8 @@ public class StatisticsQuantityBarImage extends Image {
   public static final int MAX_IMAGE_BAR_WIDTH = 300;
   public static final int IMAGE_BAR_HEIGTH = 10;
   // image URLs
-  public static final String GREEN_DOT_IMAGE_URL = "/parabuild/images/green_dot.gif";
-  public static final String RED_DOT_IMAGE_URL = "/parabuild/images/red_dot.gif";
+  public static final String GREEN_DOT_IMAGE_URL = "/images/green_dot.gif";
+  public static final String RED_DOT_IMAGE_URL = "/images/red_dot.gif";
   private static final long serialVersionUID = -580341226584440245L;
 
 
