@@ -1,11 +1,15 @@
-<!DOCTYPE struts PUBLIC
-        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
-        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
 
-  <package name="Parabuild CI" extends="struts-default">
-    <action name="repositories" class="org.parabuild.ci.webui.repository.RepositoryListAction">
-      <result type="freemarker">org/parabuild/ci/webui/repository/repositoryList.ftl</result>
+  <constant name="struts.enable.SlashesInActionNames" value="true"/>
+  <constant name="struts.action.excludePattern" value=".*\.css, .*\.png, .*\.js, .*\.ico, .*\.jpg"/>
+  <constant name="struts.action.extension" value=""/>
+  <constant name="struts.devMode" value="true"/>
+
+  <package name="Repository" extends="struts-default" namespace="/repository">
+    <action name="list" class="org.parabuild.ci.webui.repository.VCSRepositoryListAction" method="execute">
+      <result type="freemarker">/org/parabuild/ci/webui/repository/repositoryList.ftl</result>
     </action>
   </package>
 </struts>

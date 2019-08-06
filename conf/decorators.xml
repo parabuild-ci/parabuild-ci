@@ -10,6 +10,7 @@
       <pattern>/*.ico</pattern>
       <pattern>/*.wsdl</pattern>
       <pattern>/*.wsdd</pattern>
+      <pattern>/*.jpg</pattern>
   </excludes>
 
   <decorator name="parabuild-theme" page="/org/parabuild/ci/webui/parabuild-theme.ftl">
