@@ -2,7 +2,7 @@
 
   <property name="war.staging.lib" value="${war.staging}/WEB-INF/lib"/>
   <property name="war.staging.classes" value="${war.staging}/WEB-INF/classes"/>
-  <property name="war.staging.images" value="${war.staging}/parabuild/images"/>
+  <property name="war.staging.images" value="${war.staging}/images"/>
   <property name="war.staging.styles" value="${war.staging}/parabuild/styles"/>
   <property name="war.staging.scripts" value="${war.staging}/parabuild/scripts"/>
   <property name="war.staging.applets" value="${war.staging}/parabuild/applets"/>
@@ -350,48 +350,19 @@
     </copy>
 
     <!-- copy images -->
-    <copy file="${config}/green_dot.gif" todir="${war.staging.images}"/>
-    <copy file="${config}/white_dot.gif" todir="${war.staging.images}"/>
-    <copy file="${config}/red_dot.gif" todir="${war.staging.images}"/>
-    <copy file="${config}/xml.gif" todir="${war.staging.images}"/>
-    <copy file="${config}/RSS.gif" todir="${war.staging.images}"/>
-    <!-- Throbbers -->
-    <copy file="${config}/throbber-green.gif" todir="${war.staging.images}"/>
-    <copy file="${config}/throbber-red.gif" todir="${war.staging.images}"/>
-    <copy file="${config}/throbber-black.gif" todir="${war.staging.images}"/>
-    <!-- Green dashboard -->
-    <copy file="${config}/dash_green_bl.gif" todir="${war.staging.images}"/>
-    <copy file="${config}/dash_green_br.gif" todir="${war.staging.images}"/>
-    <copy file="${config}/dash_green_grad.gif" todir="${war.staging.images}"/>
-    <copy file="${config}/dash_green_tl.gif" todir="${war.staging.images}"/>
-    <copy file="${config}/dash_green_tr.gif" todir="${war.staging.images}"/>
-    <copy file="${config}/throbber-dash-green.gif" todir="${war.staging.images}"/>
-    <!-- Red dashboard -->
-    <copy file="${config}/dash_red_bl.gif" todir="${war.staging.images}"/>
-    <copy file="${config}/dash_red_br.gif" todir="${war.staging.images}"/>
-    <copy file="${config}/dash_red_grad.gif" todir="${war.staging.images}"/>
-    <copy file="${config}/dash_red_tl.gif" todir="${war.staging.images}"/>
-    <copy file="${config}/dash_red_tr.gif" todir="${war.staging.images}"/>
-    <copy file="${config}/throbber-dash-red.gif" todir="${war.staging.images}"/>
+    <copy todir="${war.staging.images}">
+      <fileset dir="${config}/images"/>
+    </copy>
 
-    <!-- gray dashboard -->
-    <copy file="${config}/dash_gray_bl.gif" todir="${war.staging.images}"/>
-    <copy file="${config}/dash_gray_br.gif" todir="${war.staging.images}"/>
-    <copy file="${config}/dash_gray_grad.gif" todir="${war.staging.images}"/>
-    <copy file="${config}/dash_gray_tl.gif" todir="${war.staging.images}"/>
-    <copy file="${config}/dash_gray_tr.gif" todir="${war.staging.images}"/>
-    <copy file="${config}/throbber-dash-gray.gif" todir="${war.staging.images}"/>
-
-    <!-- Dashboard style -->
+    <!-- Styles -->
     <copy file="${config}/dashboard.css" todir="${war.staging.styles}"/>
+    <copy file="${config}/tail.js" todir="${war.staging.scripts}"/>
+    <copy file="${config}/tail.css" todir="${war.staging.styles}"/>
 
 
     <!-- DWR -->
     <copy file="${config}/dwr.xml" todir="${war.staging}/WEB-INF"/>
 
-    <!-- Tail script -->
-    <copy file="${config}/tail.js" todir="${war.staging.scripts}"/>
-    <copy file="${config}/tail.css" todir="${war.staging.styles}"/>
 
     <!-- Modal dialog scripts -->
     <mkdir dir="${war.staging.scripts}/windows-js"/>
