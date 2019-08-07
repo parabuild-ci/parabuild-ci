@@ -36,10 +36,10 @@ public final class WebUIConstants {
   public static final int TWO_WEEKS_IN_SECONDS = 14 * 60 * 60 * 24 * 7;
   public static final int YEAR_IN_SECONDS = 365 * 60 * 60 * 24 * 7;
 
-  public static final String IMAGE_3232_BULLET_BALL_GLASS_GREEN_GIF = "/images/3232/bullet_ball_glass_green.gif";
-  public static final String IMAGE_3232_BULLET_BALL_GLASS_BLUE_GIF = "/images/3232/bullet_ball_glass_blue.gif";
-  public static final String IMAGE_3232_BULLET_BALL_GLASS_RED_GIF = "/images/3232/bullet_ball_glass_red.gif";
-  public static final String IMAGE_3232_BULLET_BALL_GLASS_GRAY_GIF = "/images/3232/bullet_ball_glass_gray.gif";
+  public static final String IMAGE_32x32_BULLET_BALL_GLASS_GREEN_GIF = "/images/32x32/bullet_ball_glass_green.gif";
+  public static final String IMAGE_32x32_BULLET_BALL_GLASS_BLUE_GIF = "/images/32x32/bullet_ball_glass_blue.gif";
+  public static final String IMAGE_32x32_BULLET_BALL_GLASS_RED_GIF = "/images/32x32/bullet_ball_glass_red.gif";
+  public static final String IMAGE_32x32_BULLET_BALL_GLASS_GRAY_GIF = "/images/32x32/bullet_ball_glass_gray.gif";
   public static final String IMAGE_GREEN_THROBBER_GIF = "/images/throbber-green.gif";
   public static final String IMAGE_RED_THROBBER_GIF = "/images/throbber-red.gif";
   public static final String IMAGE_BLACK_THROBBER_GIF = "/images/throbber-black.gif";

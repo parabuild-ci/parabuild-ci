@@ -370,24 +370,17 @@
       <fileset dir="${config}/windows-js"/>
     </copy>
 
-    <property name="war.staging.images.3232" value="${war.staging.images}/3232"/>
-    <property name="war.staging.images.1616" value="${war.staging.images}/1616"/>
-    <mkdir dir="${war.staging.images.3232}"/>
-    <mkdir dir="${war.staging.images.1616}"/>
-    <copy file="${iconexperience.32x32.plain}/bullet_ball_glass_blue.gif" todir="${war.staging.images.3232}"/>
-    <copy file="${iconexperience.32x32.plain}/bullet_ball_glass_green.gif" todir="${war.staging.images.3232}"/>
-    <copy file="${iconexperience.32x32.plain}/bullet_ball_glass_red.gif" todir="${war.staging.images.3232}"/>
-    <copy file="${iconexperience.32x32.plain}/bullet_ball_glass_yellow.gif" todir="${war.staging.images.3232}"/>
-    <copy file="${iconexperience.32x32.plain}/bullet_ball_glass_gray.gif" todir="${war.staging.images.3232}"/>
-    <copy file="${iconexperience.32x32.plain}/bullet_triangle_blue.gif" todir="${war.staging.images.3232}"/>
-    <copy file="${iconexperience.32x32.plain}/bullet_triangle_green.gif" todir="${war.staging.images.3232}"/>
-    <copy file="${iconexperience.32x32.plain}/bullet_triangle_red.gif" todir="${war.staging.images.3232}"/>
-    <copy file="${iconexperience.32x32.plain}/bullet_triangle_red_up.gif" todir="${war.staging.images.3232}"/>
-    <copy file="${iconexperience.32x32.plain}/bullet_triangle_yellow.gif" todir="${war.staging.images.3232}"/>
-    <copy file="${iconexperience.16x16.plain}/bullet_square_blue.gif" todir="${war.staging.images.1616}"/>
-    <copy file="${iconexperience.16x16.plain}/bullet_square_green.gif" todir="${war.staging.images.1616}"/>
-    <copy file="${iconexperience.16x16.plain}/bullet_triangle_red_up.gif" todir="${war.staging.images.1616}"/>
-    <copy file="${iconexperience.16x16.plain}/bullet_triangle_green_up.gif" todir="${war.staging.images.1616}"/>
+    <!-- Icons -->
+    <property name="war.staging.images.32x32" value="${war.staging.images}/32x32"/>
+    <mkdir dir="${war.staging.images.32x32}"/>
+    <copy todir="${war.staging.images.32x32}" >
+      <fileset dir="${iconexperience.32x32.plain}"/>
+    </copy>
+    <property name="war.staging.images.16x16" value="${war.staging.images}/16x16"/>
+    <mkdir dir="${war.staging.images.16x16}"/>
+    <copy todir="${war.staging.images.16x16}" >
+      <fileset dir="${iconexperience.16x16.plain}"/>
+    </copy>
 
     <!-- copy applets -->
     <copy file="${build.dir.logviewer.staging}/parabuild-logviewer.jar" todir="${war.staging.applets}"/>

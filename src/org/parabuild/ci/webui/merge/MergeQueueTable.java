@@ -161,15 +161,15 @@ final class MergeQueueTable extends AbstractFlatTable {
   private static String makeImageURL(final MergeQueueReport item) {
     final String imageURL;
     if (item.getMergeChangeListResultID() == MergeChangeList.RESULT_SUCCESS) {
-      imageURL = WebUIConstants.IMAGE_3232_BULLET_BALL_GLASS_GREEN_GIF;
+      imageURL = WebUIConstants.IMAGE_32x32_BULLET_BALL_GLASS_GREEN_GIF;
     } else if (item.getMergeChangeListResultID() == MergeChangeList.RESULT_NOT_MERGED) {
-      imageURL = WebUIConstants.IMAGE_3232_BULLET_BALL_GLASS_BLUE_GIF;
+      imageURL = WebUIConstants.IMAGE_32x32_BULLET_BALL_GLASS_BLUE_GIF;
     } else if (item.getMergeChangeListResultID() == MergeChangeList.RESULT_CONFLICTS) {
-      imageURL = WebUIConstants.IMAGE_3232_BULLET_BALL_GLASS_RED_GIF;
+      imageURL = WebUIConstants.IMAGE_32x32_BULLET_BALL_GLASS_RED_GIF;
     } else if (item.getMergeChangeListResultID() == MergeChangeList.RESULT_NOTHING_TO_MERGE) {
-      imageURL = WebUIConstants.IMAGE_3232_BULLET_BALL_GLASS_RED_GIF;
+      imageURL = WebUIConstants.IMAGE_32x32_BULLET_BALL_GLASS_RED_GIF;
     } else {
-      imageURL = WebUIConstants.IMAGE_3232_BULLET_BALL_GLASS_GRAY_GIF;
+      imageURL = WebUIConstants.IMAGE_32x32_BULLET_BALL_GLASS_GRAY_GIF;
     }
     return imageURL;
   }

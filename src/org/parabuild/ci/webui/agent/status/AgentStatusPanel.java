@@ -102,19 +102,19 @@ final class AgentStatusPanel extends Panel {
         throbberCaption = "Busy";
         break;
       case AgentStatus.ACTIVITY_DISABLED:
-        throbberURL = WebUIConstants.IMAGE_3232_BULLET_BALL_GLASS_GRAY_GIF;
+        throbberURL = WebUIConstants.IMAGE_32x32_BULLET_BALL_GLASS_GRAY_GIF;
         throbberCaption = "Disabled";
         break;
       case AgentStatus.ACTIVITY_IDLE:
-        throbberURL = WebUIConstants.IMAGE_3232_BULLET_BALL_GLASS_GREEN_GIF;
+        throbberURL = WebUIConstants.IMAGE_32x32_BULLET_BALL_GLASS_GREEN_GIF;
         throbberCaption = "Idle";
         break;
       case AgentStatus.ACTIVITY_OFFLINE:
-        throbberURL = WebUIConstants.IMAGE_3232_BULLET_BALL_GLASS_RED_GIF;
+        throbberURL = WebUIConstants.IMAGE_32x32_BULLET_BALL_GLASS_RED_GIF;
         throbberCaption = "Offline";
         break;
       default:
-        throbberURL = WebUIConstants.IMAGE_3232_BULLET_BALL_GLASS_BLUE_GIF;
+        throbberURL = WebUIConstants.IMAGE_32x32_BULLET_BALL_GLASS_BLUE_GIF;
         throbberCaption = "Unknown";
         break;
     }

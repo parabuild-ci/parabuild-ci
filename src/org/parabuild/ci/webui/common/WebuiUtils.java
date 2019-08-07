@@ -706,9 +706,9 @@ public final class WebuiUtils {
       calculatedSizePixels = activeThrobberSizePixels;
     } else {
       // Not building
-      greenThrobberGif = WebUIConstants.IMAGE_3232_BULLET_BALL_GLASS_GREEN_GIF;
-      redThrobberGif = WebUIConstants.IMAGE_3232_BULLET_BALL_GLASS_RED_GIF;
-      blackThrobberGif = WebUIConstants.IMAGE_3232_BULLET_BALL_GLASS_BLUE_GIF;
+      greenThrobberGif = WebUIConstants.IMAGE_32x32_BULLET_BALL_GLASS_GREEN_GIF;
+      redThrobberGif = WebUIConstants.IMAGE_32x32_BULLET_BALL_GLASS_RED_GIF;
+      blackThrobberGif = WebUIConstants.IMAGE_32x32_BULLET_BALL_GLASS_BLUE_GIF;
       calculatedSizePixels = 22;
     }
 
@@ -818,22 +818,22 @@ public final class WebuiUtils {
 
 
   public static Image makeBlueBulletSquareImage16x16() {
-    return new Image("/images/1616/bullet_square_blue.gif", "", 16, 16);
+    return new Image("/images/16x16/bullet_square_blue.gif", "", 16, 16);
   }
 
 
   public static Image makeGreenBulletSquareImage16x16() {
-    return new Image("/images/1616/bullet_square_green.gif", "", 16, 16);
+    return new Image("/images/16x16/bullet_square_green.gif", "", 16, 16);
   }
 
 
   public static Image makeRedBulletTriangleRedUp16x16() {
-    return new Image("/images/1616/bullet_triangle_red_up.gif", "", 16, 16);
+    return new Image("/images/16x16/bullet_triangle_red_up.gif", "", 16, 16);
   }
 
 
   public static Image makeRedBulletTriangleGreenUp16x16() {
-    return new Image("/images/1616/bullet_triangle_green_up.gif", "", 16, 16);
+    return new Image("/images/16x16/bullet_triangle_green_up.gif", "", 16, 16);
   }
 
 

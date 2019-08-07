@@ -37,9 +37,9 @@ public class DashboardBuildStatusComponent extends CustomComponent {
    */
   private static final Log log = LogFactory.getLog(DashboardBuildStatusComponent.class); // NOPMD
 
-  private static final String PARABUILD_THROBBER_GREEN = "/parabuild/images/throbber-dash-green.gif";
-  private static final String PARABUILD_THROBBER_RED = "/parabuild/images/throbber-dash-red.gif";
-  private static final String PARABUILD_THROBBER_GRAY = "/parabuild/images/throbber-dash-gray.gif";
+  private static final String PARABUILD_THROBBER_GREEN = "/images/throbber-dash-green.gif";
+  private static final String PARABUILD_THROBBER_RED = "/images/throbber-dash-red.gif";
+  private static final String PARABUILD_THROBBER_GRAY = "/images/throbber-dash-gray.gif";
 
   private BuildState buildState = null;
   private boolean setShowDetails = false;

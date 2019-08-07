@@ -108,7 +108,7 @@ public final class JavascriptBuildStatusServlet extends HttpServlet {
     // make image source
     final SystemConfigurationManager manager = SystemConfigurationManagerFactory.getManager();
     final String hostNameAndPort = manager.getBuildManagerProtocolHostAndPort();
-    final String imageSource = hostNameAndPort + "/parabuild/images/3232/" + imageName;
+    final String imageSource = hostNameAndPort + "/images/32x32/" + imageName;
 
     // write script
     resp.setContentType("text/javascript");
