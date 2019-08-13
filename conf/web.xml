@@ -38,7 +38,7 @@
 
     <filter-mapping>
         <filter-name>struts-execute</filter-name>
-        <url-pattern>/repositoryList</url-pattern>
+        <url-pattern>/*</url-pattern>
     </filter-mapping>
 
     <listener>
@@ -326,15 +326,15 @@
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
-    <error-page>
-        <error-code>404</error-code>
-        <location>/parabuild/error.htm</location>
-    </error-page>
+<!--    <error-page>-->
+<!--        <error-code>404</error-code>-->
+<!--        <location>/parabuild/error.htm</location>-->
+<!--    </error-page>-->
 
-    <error-page>
-        <exception-type>java.lang.Throwable</exception-type>
-        <location>/parabuild/error.htm</location>
-    </error-page>
+<!--    <error-page>-->
+<!--        <exception-type>java.lang.Throwable</exception-type>-->
+<!--        <location>/parabuild/error.htm</location>-->
+<!--    </error-page>-->
 
     <security-constraint>
         <web-resource-collection>
