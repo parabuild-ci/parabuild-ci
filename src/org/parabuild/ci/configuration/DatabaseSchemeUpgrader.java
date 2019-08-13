@@ -33,7 +33,7 @@ import java.util.Arrays;
  */
 public final class DatabaseSchemeUpgrader {
 
-  public static final int CURRENT_DB_SCHEMA_VERSION = 81;
+  public static final int CURRENT_DB_SCHEMA_VERSION = 82;
 
   private static final Log LOG = LogFactory.getLog(DatabaseSchemeUpgrader.class); // NOPMD
 
@@ -119,6 +119,7 @@ public final class DatabaseSchemeUpgrader {
           new UpgraderToVersion79(),
           new UpgraderToVersion80(),
           new UpgraderToVersion81(),
+          new UpgraderToVersion82(),
   };
 
 

@@ -9,14 +9,14 @@
     <meta name="robots" content="index, follow, noarchive">
     <meta name='gwt:property' content='locale=en_US'>
 
-    <#-- Link -->
-    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Lato:400,700'/>
-    <link rel="stylesheet" type="text/css" href="${base}/parabuild-ci.css">
-
     <#-- This script tag is what actually loads the GWT module.  The 'nocache.js' file
     (also called a "selection script") is produced by the GWT compiler in the module output
     directory or generated automatically in development mode. -->
     <script src="${base}/repository/repository.nocache.js" type="text/javascript"></script>
+
+    <#-- Link -->
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Lato:400,700'/>
+    <link rel="stylesheet" type="text/css" href="${base}/parabuild-ci.css">
 
     ${head}
 </head>
@@ -33,12 +33,15 @@
 
         <#-- Top user menu -->
         <div id="user">
-            <#if Session.loggedInUser??>
-                |
-                <@s.a action="editUserProfile" namespace="/" title="%{getText('edit.profile.for.user')} '${Session.loggedInUser.name?html}'">${Session.loggedInUser.name?html}</@s.a>
-            <#else>
-                | <@s.a href="%{welcome}" title="%{getText('Register.with.Joglet')}"><@s.text name="Join.for.FREE"/></@s.a>
-            </#if>
+
+                <#-- Login / Logout -->
+                <#if Session.loggedInUser??>
+                    <@s.a action="preferences" namespace="/user" title="Edit user preferences for ${Session.loggedInUser.name?html} ">${Session.loggedInUser.name?html}</@s.a>
+                    |
+                    <@s.a action="logout" namespace="/user" title="Logout from Parabuild">Logout</@s.a>
+                <#else>
+                    <@s.a action="login" namespace="/" title="Login to Parabuild" >Login</@s.a>
+                </#if>
         </div>
 
         <ul id="nav">
@@ -97,7 +100,7 @@
             </li>
 
             <#-- Help -->
-            <li class="tab normal <#if contextMenu?? && contextMenu = "help">selected</#if>">
+            <li class="tab last <#if contextMenu?? && contextMenu = "help">selected</#if>">
                 <@s.a action="help" namespace="/" title="Get help with Parabuild">Help</@s.a>
                 <ul>
                     <li><@s.a action="documentation" namespace="/" title="Parabuld CI Documentation">Documentation</@s.a></li>
@@ -105,28 +108,6 @@
                 </ul>
             </li>
 
-            <#-- Preferences -->
-            <#if Session.loggedInUser??>
-                <li class="tab normal <#if contextMenu?? && contextMenu = "preferences">selected</#if>">
-                    <@s.a action="preferences" namespace="/" title="Preferences">Preferences</@s.a>
-                    <ul>
-                        <li><@s.a action="videos" namespace="/" title="%{getText('Send.and.receive.video.messages')}">
-                                <span><@s.text name="Video.Messages"/></span> </@s.a></li>
-                        <li><@s.a action="contacts" namespace="/" title="%{getText('Invite.and.edit.contacts')}"><@s.text name="Contacts"/></@s.a></li>
-                        <li><@s.a action="groups" namespace="/" title="%{getText('Manage.my.groups')}"><@s.text name="Groups"/></@s.a></li>
-                        <li><@s.a action="editUserProfile" namespace="/" title="%{getText('manage.my.profile')}"><@s.text name="My.Profile"/></@s.a></li>
-                    </ul>
-                </li>
-            </#if>
-
-            <#-- Login / Logout -->
-            <li class="tab last">
-                <#if Session.loggedInUser??>
-                    <@s.a action="logout" namespace="/" title="Logout from Parabuild">Logout</@s.a>
-                <#else>
-                    <@s.a action="login" namespace="/" title="Login to Parabuild" >Login</@s.a>
-                </#if>
-            </li>
         </ul>
         <#--
         <ul id="breadcrumb">
