@@ -97,6 +97,12 @@ public final class AutomaticScheduler extends Thread implements BuildScheduler {
   }
 
 
+  private static List parseParameters(final PriorityMarkerParser priorityMarkerParser, final ChangeList changeList) {
+    final String changeListDescription = changeList.getDescription();
+    return priorityMarkerParser.parseChangeListDescription(changeListDescription);
+  }
+
+
   /**
    * Runs single scheduler cycle
    */
@@ -311,12 +317,6 @@ public final class AutomaticScheduler extends Thread implements BuildScheduler {
         runOnceRequest = null;
       }
     }
-  }
-
-
-  private static List parseParameters(final PriorityMarkerParser priorityMarkerParser, final ChangeList changeList) {
-    final String changeListDescription = changeList.getDescription();
-    return priorityMarkerParser.parseChangeListDescription(changeListDescription);
   }
 
 
@@ -572,7 +572,9 @@ public final class AutomaticScheduler extends Thread implements BuildScheduler {
         //noinspection WaitNotInLoop
         lock.wait((long) waitIntervalSeconds * 1000L);
       } catch (final InterruptedException e) {
-        IoUtils.ignoreExpectedException(e);
+        if (!shutdown) {
+          IoUtils.ignoreExpectedException(e);
+        }
       }
     }
   }
