@@ -31,19 +31,19 @@ body {
 /* Page layout */
 
 #wrap {
-    background: transparent url(/images/theme/header-bg.png) top center repeat-x;
+    background: transparent url(/images/theme/header-bg-new.png) top center repeat-x;
     min-width: 1020px;
 }
 
 #header, #content, #footer {
     margin: 0 auto;
-    width: 1020px;
+    /*width: 1020px;*/
 }
 
 /* Header */
 
 #header .logo {
-    height: 44px;
+    height: 70px;
     padding-top: 6px;
     float: left;
 }
@@ -81,7 +81,7 @@ body {
     font-size: 14px;
     font-weight: bold;
     height: 40px;
-    background: #699 url(/images/theme/tab-bg5.png) top center no-repeat;
+    background: #699 url(/images/theme/tab-bg5-new.png) top center no-repeat;
 /*    background: #3f5765 url(/images/theme/tab-bg-2.7.2c.png) top center no-repeat; */
     list-style: none;
     clear: both;
@@ -100,7 +100,7 @@ body {
 
 #header #nav .tab a {
     color: #144f4f;
-    background: url(/images/theme/tab-bg5.png) top center no-repeat;
+    background: url(/images/theme/tab-bg5-new.png) top center no-repeat;
     height: 30px;
 }
 
@@ -211,7 +211,7 @@ body {
 /* Preserve tab highlight when dropdown shown */
 
 #header #nav li.tab {
-    background: url(/images/theme/tab-bg5.png) top center no-repeat;
+    background: url(/images/theme/tab-bg5-new.png) top center no-repeat;
 /*    background: url(/images/theme/tab-bg-2.7.2c.png) top center no-repeat; */
     height: 40px;
 }

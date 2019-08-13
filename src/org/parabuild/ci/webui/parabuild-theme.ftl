@@ -26,8 +26,8 @@
     <div id="header">
         <div class="logo">
             <@s.a action="index" namespace="/" title="Go to Parabuild CI home">
-                <img src="/images/theme/parabuildci_logo.jpg" alt="Build and Deploy with Pleasure!" height="70"/>
-                <img src="/images/theme/parabuildci_byline.jpg" alt="Build and Deploy with Pleasure!" height="70"/>
+                <img src="/images/theme/parabuildci_logo.png" alt="Build and Deploy with Pleasure!" height="70"/>
+                <img src="/images/theme/parabuildci_byline.png" alt="Build and Deploy with Pleasure!" height="70"/>
             </@s.a>
         </div>
 
