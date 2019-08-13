@@ -206,7 +206,9 @@ public final class ConfigurationService implements Service {
             .addClass(BuildRunTest.class)
             .addClass(GlobalVCSUserMap.class)
             .addClass(BuildChangeListAttribute.class)
-            .addClass(BuildSequence.class);
+            .addClass(BuildSequence.class)
+            .addClass(VCSRepository.class)
+            .addClass(VCSServer.class);
     if (log.isDebugEnabled()) {
       log.debug("creating session factory");
     }
