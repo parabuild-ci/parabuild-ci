@@ -13,7 +13,7 @@
 
 <form class="form">
 
-    <input type="submit" title="${addRepositoryTitle}" value="${addRepositoryValue}"/>
+    <input type="submit" id="add-repository-top" title="${addRepositoryTitle}" value="${addRepositoryValue}"/>
 
     <table class="standard">
 
@@ -52,7 +52,7 @@
         </#if>
     </table>
 
-    <input type="submit" title="${addRepositoryTitle}" value="${addRepositoryValue}"/>
+    <input type="submit" id="add-repository-bottom" title="${addRepositoryTitle}" value="${addRepositoryValue}"/>
 </form>
 </body>
 </html>
