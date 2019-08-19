@@ -688,7 +688,7 @@ table.grey.form td {
     width: 20px;
 }
 
-.form input[type="submit"] {
+.form input[type="submit"], [type="button"] {
     font-size: 11pt;
     font-weight: bold;
     padding: 4px 18px;
@@ -701,11 +701,12 @@ table.grey.form td {
     outline: none;
 }
 
-.form input:hover[type="submit"] {
+.form input:hover[type="submit"], [type="button"] {
     color: #fff;
     background-position: 0 -64px;
 }
 
+.form input:focus[type="button"],
 .form input:focus[type="submit"],
 .form input:active[type="submit"] {
     color: #fff;
