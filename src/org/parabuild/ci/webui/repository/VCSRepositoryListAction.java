@@ -1,6 +1,5 @@
 package org.parabuild.ci.webui.repository;
 
-import com.opensymphony.xwork2.ActionSupport;
 import net.sf.hibernate.Query;
 import org.apache.struts2.interceptor.SessionAware;
 import org.parabuild.ci.configuration.ConfigurationManager;
@@ -14,7 +13,7 @@ import java.util.Map;
 /**
  * Shows a list of repositories.
  */
-public final class VCSRepositoryListAction extends ActionSupport implements SessionAware {
+public final class VCSRepositoryListAction extends ParabuildActionSupport implements SessionAware {
 
   private static final long serialVersionUID = -7476321456269017100L;
   private static final String REPOSITORY_LIST = "Repository List";
@@ -23,7 +22,6 @@ public final class VCSRepositoryListAction extends ActionSupport implements Sess
   private final List<VCSRepositoryVO> repositoryList = new LinkedList<>();
   private Map<String, Object> session;
   private String mode = MODE_USER;
-  private String title;
 
 
   public VCSRepositoryListAction() {
@@ -44,16 +42,6 @@ public final class VCSRepositoryListAction extends ActionSupport implements Sess
   @Override
   public void setSession(final Map<String, Object> session) {
     this.session = session;
-  }
-
-
-  public String getTitle() {
-    return title;
-  }
-
-
-  public void setTitle(final String title) {
-    this.title = title;
   }
 
 
