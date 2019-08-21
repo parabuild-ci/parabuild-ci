@@ -13,7 +13,7 @@
 
 <form class="form">
 
-    <input type="submit" id="add-repository-top" title="${addRepositoryTitle}" value="${addRepositoryValue}"/>
+    <input type="button" id="add-repository-top" title="${addRepositoryTitle}" value="${addRepositoryValue}"/>
 
     <table class="standard">
 
