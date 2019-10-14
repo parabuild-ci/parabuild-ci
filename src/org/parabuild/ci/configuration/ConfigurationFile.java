@@ -161,7 +161,7 @@ public final class ConfigurationFile {
     // REVIEWME: This handling of the erroneuous dot at the
     // end will work only if there is one dot. We might try
     // to make it more stable by using regex if needed.
-    if (propertyValue.endsWith(".")) return propertyValue.substring(0, propertyValue.length());
+    if (propertyValue.endsWith(".")) return propertyValue;
     return propertyValue;
   }
 
