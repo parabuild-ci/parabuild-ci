@@ -13,15 +13,15 @@
  */
 package org.parabuild.ci.merge.finder.perforce;
 
-import java.util.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.parabuild.ci.common.ArgumentValidator;
 import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.versioncontrol.perforce.P4ClientView;
 import org.parabuild.ci.versioncontrol.perforce.P4ClientViewLine;
 import org.parabuild.ci.versioncontrol.perforce.P4ClientViewParser;
+
+import java.util.List;
 
 /**
  *
@@ -105,7 +105,7 @@ public class P4BranchViewToClientViewTransformer {
       final String fromSide = line.getDepotSide();
       final int doubleSlashIndex = fromSide.indexOf("//");
       final String toSide = line.getClientSide();
-      targetClientView.append(fromSide.substring(0, doubleSlashIndex)).append(toSide).append(' ').append(toSide).append('\n');
+      targetClientView.append(fromSide, 0, doubleSlashIndex).append(toSide).append(' ').append(toSide).append('\n');
     }
 
     // normalize
