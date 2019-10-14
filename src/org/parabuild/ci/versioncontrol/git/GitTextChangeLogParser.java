@@ -191,7 +191,7 @@ public final class GitTextChangeLogParser {
 
           // Read date
           final int messageEnd = line.indexOf(FIELD_SEPARATOR, dateEnd + FIELD_SEPARATOR_LENGTH);
-          final StringBuilder description = new StringBuilder(100).append(line.substring(dateEnd + FIELD_SEPARATOR_LENGTH, messageEnd));
+          final StringBuilder description = new StringBuilder(100).append(line, dateEnd + FIELD_SEPARATOR_LENGTH, messageEnd);
 //          if (LOG.isDebugEnabled()) LOG.debug("description: " + description);
 
           final Date date;
