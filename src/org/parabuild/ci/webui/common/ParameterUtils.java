@@ -52,7 +52,7 @@ public final class ParameterUtils {
   /**
    * Parses build ID
    *
-   * @return build ID. If build id is missing, or misformed,
+   * @return build ID. If build id is missing, or malformed,
    *         returns 0.
    */
   public static ActiveBuildConfig getActiveBuildConfigFromParameters(final Parameters params) {
@@ -152,11 +152,11 @@ public final class ParameterUtils {
 
 
   public static DisplayGroup getDisplayGroupFromParameters(final Parameters params) {
-    final Integer dispayGroupID = getDisplayGroupIDFromParameters(params);
-    if (dispayGroupID == null) {
+    final Integer displayGroupID = getDisplayGroupIDFromParameters(params);
+    if (displayGroupID == null) {
       return null;
     }
-    return DisplayGroupManager.getInstance().getDisplayGroup(dispayGroupID.intValue());
+    return DisplayGroupManager.getInstance().getDisplayGroup(displayGroupID.intValue());
   }
 
 
