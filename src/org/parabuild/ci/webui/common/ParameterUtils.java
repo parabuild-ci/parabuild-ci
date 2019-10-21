@@ -36,7 +36,6 @@ import org.parabuild.ci.project.ProjectManager;
 import org.parabuild.ci.security.SecurityManager;
 import viewtier.ui.Parameters;
 
-import java.util.Iterator;
 import java.util.Map;
 import java.util.Properties;
 
@@ -198,8 +197,7 @@ public final class ParameterUtils {
 
   public static Parameters propertiesToParameters(final Properties props) {
     final Parameters result = new Parameters();
-    for (final Iterator i = props.entrySet().iterator(); i.hasNext();) {
-      final Map.Entry entry = (Map.Entry) i.next();
+    for (final Map.Entry<Object, Object> entry : props.entrySet()) {
       result.addParameter(entry.getKey().toString(), entry.getValue().toString());
     }
     return result;
