@@ -52,7 +52,7 @@ public final class ParameterUtils {
    * Parses build ID
    *
    * @return build ID. If build id is missing, or malformed,
-   *         returns 0.
+   * returns 0.
    */
   public static ActiveBuildConfig getActiveBuildConfigFromParameters(final Parameters params) {
     final Integer buildID = getActiveBuildIDFromParameters(params);
@@ -101,9 +101,11 @@ public final class ParameterUtils {
 
 
   /**
-   * @param params
-   * @param paramName
-   * @param defaultValue
+   * Returns a value of a named Integer parameter.
+   *
+   * @param params       parameters.
+   * @param paramName    the parameter name
+   * @param defaultValue the default value.
    * @return Integer build parameter value
    */
   public static Integer getIntegerParameter(final Parameters params, final String paramName, final Integer defaultValue) {
