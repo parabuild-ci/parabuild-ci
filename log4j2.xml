@@ -2,7 +2,7 @@
 <Configuration status="warn">
 
   <Properties>
-    <Property name="appenderPatternLayout">[%t] %d{yyyy-MM-dd HH:mm:ss.SSS} %5p: %-40.40c{3}(%3L) - %m %n</Property>
+    <Property name="appenderPatternLayout">%d{yyyy-MM-dd HH:mm:ss.SSS} %5p [%t]  %-40.40c{3}(%3L) - %m %n</Property>
   </Properties>
 
   <Appenders>
