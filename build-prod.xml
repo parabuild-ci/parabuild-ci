@@ -341,7 +341,6 @@
     <copy file="${config}/images/favicon.ico" todir="${war.staging}/parabuild"/>
 
     <!-- copy GWT pieces -->
-    <copy file="${config}/parabuild-ci.html" todir="${war.staging}"/>
     <copy file="${config}/parabuild-ci.css" todir="${war.staging}"/>
 
     <!-- copy admin docs -->
