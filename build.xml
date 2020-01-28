@@ -302,11 +302,6 @@ commons-io-2.2.jar		commons-logging-1.1.3.jar	javassist-3.11.0.GA.jar		struts2-c
     <ant antfile="build-clean.xml" inheritall="true"/>
   </target>
 
-  <target name="database" depends="init">
-    <ant antfile="build-database.xml" inheritall="true" inheritrefs="true"/>
-  </target>
-
-
   <target name="realm" depends="init">
     <antfetch antfile="build-realm.xml" inheritall="true" inheritrefs="true"/>
   </target>
@@ -474,4 +469,41 @@ commons-io-2.2.jar		commons-logging-1.1.3.jar	javassist-3.11.0.GA.jar		struts2-c
   <target name="export.database">
     <ant antfile="build-helper.xml" target="export.database" inheritall="true" inheritrefs="true"/>
   </target>
+
+  <!--
+  **********************************************************************************************************************
+  *** Database support                                                                                               ***
+  **********************************************************************************************************************
+  -->
+
+  <target name="database" depends="init, database.uptodate, database.init"/>
+
+  <target name="database.uptodate">
+    <uptodate property="database.needs.update" targetfile="${schema.sql}">
+      <srcfiles dir="${build.dir.database}"/>
+    </uptodate>
+    <echo message="Datebase needs updating: ${database.needs.update}"/>
+    <echo message="                 schema: ${schema.sql}"/>
+    <echo message="           database dir: ${build.dir.database}"/>
+  </target>
+
+
+  <!-- initialize database -->
+  <target name="database.init" if="database.needs.update">
+    <property name="database.url" value="jdbc:hsqldb:${build.dir.database}/parabuild"/>
+    <copy file="${config}/hsqldb-database.properties" tofile="${build.dir.database}/parabuild.properties"/>
+    <copy file="${config}/hsqldb-database.script" tofile="${build.dir.database}/parabuild.script"/>
+    <!-- run schema sql -->
+    <sql autocommit="false" driver="org.hsqldb.jdbcDriver" url="${database.url}" userid="sa" password="p0a">
+      <transaction src="${schema.sql}"/>
+    </sql>
+    <!-- NOTE: vimeshev - 09/07/2004 - call shutdown - HSQL 1.7.2 doesnt't stop automatically when last
+         connection is closed -->
+    <sql autocommit="true" driver="org.hsqldb.jdbcDriver" url="${database.url}" userid="sa" password="p0a">
+      SET SCRIPTFORMAT COMPRESSED
+      SHUTDOWN COMPACT
+    </sql>
+  </target>
+
+
 </project>
