@@ -290,6 +290,8 @@ body {
 
 #content {
     color: #333;
+    margin-left: 8px;
+    margin-right: 8px;
 }
 
 #content p {
@@ -354,6 +356,7 @@ body {
     border-collapse: collapse;
     font-size: 10pt;
     margin-top: 6px;
+    margin-bottom: 6px;
 }
 
 #content table.standard caption {
@@ -707,6 +710,7 @@ table.grey.form td {
 }
 
 .form input:focus[type="button"],
+.form input:active[type="button"],
 .form input:focus[type="submit"],
 .form input:active[type="submit"] {
     color: #fff;
