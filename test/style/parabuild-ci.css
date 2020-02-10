@@ -24,14 +24,14 @@ html * {
 body {
     font-family: 'Lato', Arial, Verdana, sans-serif;
     font-size: 11pt;
-    background: #fdfdfd url(/images/theme/tile-bg.png) top left repeat;
+    background: #fdfdfd url(images/theme/tile-bg.png) top left repeat;
     width: 99.9%;
 }
 
 /* Page layout */
 
 #wrap {
-    background: transparent url(/images/theme/header-bg-new.png) top center repeat-x;
+    background: transparent url(images/theme/header-bg-new.png) top center repeat-x;
     min-width: 1020px;
 }
 
@@ -81,8 +81,8 @@ body {
     font-size: 14px;
     font-weight: bold;
     height: 40px;
-    background: #699 url(/images/theme/tab-bg5-new.png) top center no-repeat;
-/*    background: #3f5765 url(/images/theme/tab-bg-2.7.2c.png) top center no-repeat; */
+    background: #699 url(images/theme/tab-bg5-new.png) top center no-repeat;
+    /*    background: #3f5765 url(images/theme/tab-bg-2.7.2c.png) top center no-repeat; */
     list-style: none;
     clear: both;
 }
@@ -100,7 +100,7 @@ body {
 
 #header #nav .tab a {
     color: #144f4f;
-    background: url(/images/theme/tab-bg5-new.png) top center no-repeat;
+    background: url(images/theme/tab-bg5-new.png) top center no-repeat;
     height: 30px;
 }
 
@@ -211,8 +211,8 @@ body {
 /* Preserve tab highlight when dropdown shown */
 
 #header #nav li.tab {
-    background: url(/images/theme/tab-bg5-new.png) top center no-repeat;
-/*    background: url(/images/theme/tab-bg-2.7.2c.png) top center no-repeat; */
+    background: url(images/theme/tab-bg5-new.png) top center no-repeat;
+    /*    background: url(images/theme/tab-bg-2.7.2c.png) top center no-repeat; */
     height: 40px;
 }
 
@@ -265,7 +265,7 @@ body {
     font-weight: bold;
     text-transform: uppercase;
     display: block;
-    background: #fdfdfd url(/images/theme/bread.png) 0 1px no-repeat;
+    background: #fdfdfd url(images/theme/bread.png) 0 1px no-repeat;
     padding: 0 10px 0 12px;
     line-height: 11px;
 }
@@ -286,7 +286,9 @@ body {
     color: #c83400;
 }
 
-/* General content styles */
+/* ***************************************************************************************************************** *
+ * General content styles
+ * ***************************************************************************************************************** */
 
 #content {
     color: #333;
@@ -424,39 +426,39 @@ body {
 }
 
 .box.one-third-width .box-top {
-    background: transparent url(/images/theme/third-width-top.png) no-repeat;
+    background: transparent url(images/theme/third-width-top.png) no-repeat;
 }
 
 .box.one-third-width .box-content {
-    background: transparent url(/images/theme/third-width-mid.png) repeat-y;
+    background: transparent url(images/theme/third-width-mid.png) repeat-y;
 }
 
 .box.one-third-width .box-bottom {
-    background: transparent url(/images/theme/third-width-bot.png) no-repeat;
+    background: transparent url(images/theme/third-width-bot.png) no-repeat;
 }
 
 .red.box.one-third-width .box-top {
-    background: transparent url(/images/theme/third-width-top_r.png) no-repeat;
+    background: transparent url(images/theme/third-width-top_r.png) no-repeat;
 }
 
 .red.box.one-third-width .box-content {
-    background: transparent url(/images/theme/third-width-mid_r.png) repeat-y;
+    background: transparent url(images/theme/third-width-mid_r.png) repeat-y;
 }
 
 .red.box.one-third-width .box-bottom {
-    background: transparent url(/images/theme/third-width-bot_r.png) no-repeat;
+    background: transparent url(images/theme/third-width-bot_r.png) no-repeat;
 }
 
 .blue.box.one-third-width .box-top {
-    background: transparent url(/images/theme/third-width-top_b.png) no-repeat;
+    background: transparent url(images/theme/third-width-top_b.png) no-repeat;
 }
 
 .blue.box.one-third-width .box-content {
-    background: transparent url(/images/theme/third-width-mid_b.png) repeat-y;
+    background: transparent url(images/theme/third-width-mid_b.png) repeat-y;
 }
 
 .blue.box.one-third-width .box-bottom {
-    background: transparent url(/images/theme/third-width-bot_b.png) no-repeat;
+    background: transparent url(images/theme/third-width-bot_b.png) no-repeat;
 }
 
 .box.two-thirds-width {
@@ -464,39 +466,39 @@ body {
 }
 
 .box.two-thirds-width .box-top {
-    background: transparent url(/images/theme/two-thirds-width-top.png) no-repeat;
+    background: transparent url(images/theme/two-thirds-width-top.png) no-repeat;
 }
 
 .box.two-thirds-width .box-content {
-    background: transparent url(/images/theme/two-thirds-width-mid.png) repeat-y;
+    background: transparent url(images/theme/two-thirds-width-mid.png) repeat-y;
 }
 
 .box.two-thirds-width .box-bottom {
-    background: transparent url(/images/theme/two-thirds-width-bot.png) no-repeat;
+    background: transparent url(images/theme/two-thirds-width-bot.png) no-repeat;
 }
 
 .red.box.two-thirds-width .box-top {
-    background: transparent url(/images/theme/two-thirds-width-top_r.png) no-repeat;
+    background: transparent url(images/theme/two-thirds-width-top_r.png) no-repeat;
 }
 
 .red.box.two-thirds-width .box-content {
-    background: transparent url(/images/theme/two-thirds-width-mid_r.png) repeat-y;
+    background: transparent url(images/theme/two-thirds-width-mid_r.png) repeat-y;
 }
 
 .red.box.two-thirds-width .box-bottom {
-    background: transparent url(/images/theme/two-thirds-width-bot_r.png) no-repeat;
+    background: transparent url(images/theme/two-thirds-width-bot_r.png) no-repeat;
 }
 
 .blue.box.two-thirds-width .box-top {
-    background: transparent url(/images/theme/two-thirds-width-top_b.png) no-repeat;
+    background: transparent url(images/theme/two-thirds-width-top_b.png) no-repeat;
 }
 
 .blue.box.two-thirds-width .box-content {
-    background: transparent url(/images/theme/two-thirds-width-mid_b.png) repeat-y;
+    background: transparent url(images/theme/two-thirds-width-mid_b.png) repeat-y;
 }
 
 .blue.box.two-thirds-width .box-bottom {
-    background: transparent url(/images/theme/two-thirds-width-bot_b.png) no-repeat;
+    background: transparent url(images/theme/two-thirds-width-bot_b.png) no-repeat;
 }
 
 .box.half-width {
@@ -504,39 +506,39 @@ body {
 }
 
 .box.half-width .box-top {
-    background: transparent url(/images/theme/half-width-top.png) no-repeat;
+    background: transparent url(images/theme/half-width-top.png) no-repeat;
 }
 
 .box.half-width .box-content {
-    background: transparent url(/images/theme/half-width-mid.png) repeat-y;
+    background: transparent url(images/theme/half-width-mid.png) repeat-y;
 }
 
 .box.half-width .box-bottom {
-    background: transparent url(/images/theme/half-width-bot.png) no-repeat;
+    background: transparent url(images/theme/half-width-bot.png) no-repeat;
 }
 
 .red.box.half-width .box-top {
-    background: transparent url(/images/theme/half-width-top_r.png) no-repeat;
+    background: transparent url(images/theme/half-width-top_r.png) no-repeat;
 }
 
 .red.box.half-width .box-content {
-    background: transparent url(/images/theme/half-width-mid_r.png) repeat-y;
+    background: transparent url(images/theme/half-width-mid_r.png) repeat-y;
 }
 
 .red.box.half-width .box-bottom {
-    background: transparent url(/images/theme/half-width-bot_r.png) no-repeat;
+    background: transparent url(images/theme/half-width-bot_r.png) no-repeat;
 }
 
 .blue.box.half-width .box-top {
-    background: transparent url(/images/theme/half-width-top_b.png) no-repeat;
+    background: transparent url(images/theme/half-width-top_b.png) no-repeat;
 }
 
 .blue.box.half-width .box-content {
-    background: transparent url(/images/theme/half-width-mid_b.png) repeat-y;
+    background: transparent url(images/theme/half-width-mid_b.png) repeat-y;
 }
 
 .blue.box.half-width .box-bottom {
-    background: transparent url(/images/theme/half-width-bot_b.png) no-repeat;
+    background: transparent url(images/theme/half-width-bot_b.png) no-repeat;
 }
 
 .box.full-width {
@@ -544,39 +546,39 @@ body {
 }
 
 .box.full-width .box-top {
-    background: transparent url(/images/theme/full-width-top.png) no-repeat;
+    background: transparent url(images/theme/full-width-top.png) no-repeat;
 }
 
 .box.full-width .box-content {
-    background: transparent url(/images/theme/full-width-mid.png) repeat-y;
+    background: transparent url(images/theme/full-width-mid.png) repeat-y;
 }
 
 .box.full-width .box-bottom {
-    background: transparent url(/images/theme/full-width-bot.png) no-repeat;
+    background: transparent url(images/theme/full-width-bot.png) no-repeat;
 }
 
 .red.box.full-width .box-top {
-    background: transparent url(/images/theme/full-width-top_r.png) no-repeat;
+    background: transparent url(images/theme/full-width-top_r.png) no-repeat;
 }
 
 .red.box.full-width .box-content {
-    background: transparent url(/images/theme/full-width-mid_r.png) repeat-y;
+    background: transparent url(images/theme/full-width-mid_r.png) repeat-y;
 }
 
 .red.box.full-width .box-bottom {
-    background: transparent url(/images/theme/full-width-bot_r.png) no-repeat;
+    background: transparent url(images/theme/full-width-bot_r.png) no-repeat;
 }
 
 .blue.box.full-width .box-top {
-    background: transparent url(/images/theme/full-width-top_b.png) no-repeat;
+    background: transparent url(images/theme/full-width-top_b.png) no-repeat;
 }
 
 .blue.box.full-width .box-content {
-    background: transparent url(/images/theme/full-width-mid_b.png) repeat-y;
+    background: transparent url(images/theme/full-width-mid_b.png) repeat-y;
 }
 
 .blue.box.full-width .box-bottom {
-    background: transparent url(/images/theme/full-width-bot_b.png) no-repeat;
+    background: transparent url(images/theme/full-width-bot_b.png) no-repeat;
 }
 
 .box.live {
@@ -584,15 +586,15 @@ body {
 }
 
 .box.live .box-top {
-    background: transparent url(/images/theme/livetop.png) no-repeat;
+    background: transparent url(images/theme/livetop.png) no-repeat;
 }
 
 .box.live .box-content {
-    background: transparent url(/images/theme/livemid.png) repeat-y;
+    background: transparent url(images/theme/livemid.png) repeat-y;
 }
 
 .box.live .box-bottom {
-    background: transparent url(/images/theme/livebot.png) no-repeat;
+    background: transparent url(images/theme/livebot.png) no-repeat;
 }
 
 #content .box.live .box-top {
@@ -694,9 +696,8 @@ table.grey.form td {
 .form input[type="submit"], [type="button"] {
     font-size: 11pt;
     font-weight: bold;
-    padding: 4px 18px;
     margin: 0 6px;
-    background: #ccc url(/images/theme/submit.png) top left no-repeat;
+    background: #ccc url(images/theme/submit.png) top left no-repeat;
     padding: 0 0 2px 0;
     width: 120px;
     height: 32px;
@@ -801,7 +802,7 @@ table.form td.required input[type="text"]:focus {
 }
 
 #content a.button {
-    background: transparent url(/images/theme/button2.png) no-repeat top left;
+    background: transparent url(images/theme/button2.png) no-repeat top left;
     display: block;
     line-height: 14px;
     padding: 7px 0 9px 0;
@@ -831,30 +832,30 @@ table.form td.required input[type="text"]:focus {
 }
 
 .landing img.large-logo {
-	float: left;
+    float: left;
 }
 
 .landing .easiest-way {
-	float: left;
-	padding-left: 20px;
-	padding-top: 56px;
-	width: 500px;
+    float: left;
+    padding-left: 20px;
+    padding-top: 56px;
+    width: 500px;
 }
 
 .landing .login {
-	border: 1px solid #f0f0f0;
-	margin-right: 24px;
-	margin-top: 24px;
-	padding-bottom: 24px;
-	text-align: center;
+    border: 1px solid #f0f0f0;
+    margin-right: 24px;
+    margin-top: 24px;
+    padding-bottom: 24px;
+    text-align: center;
 }
 
 #content .landing .login h2 {
-	padding-top: 30px;
+    padding-top: 30px;
 }
 
 .landing .login table.form {
-	width: 100%;
+    width: 100%;
 }
 
 .landing .login table.form td {
@@ -862,18 +863,18 @@ table.form td.required input[type="text"]:focus {
 }
 
 .landing .ios7-images {
-	float: left;
-	text-align: center;
-	padding-top: 20px;
+    float: left;
+    text-align: center;
+    padding-top: 20px;
 }
 
 .landing img.ios7-phone {
-	width: 220px;
+    width: 220px;
 }
 
 .landing img.app-store {
-	width: 192px;
-	padding-top: 10px;
+    width: 192px;
+    padding-top: 10px;
 }
 
 /* Helper classes */
@@ -891,5 +892,5 @@ table.form td.required input[type="text"]:focus {
 }
 
 .clear {
-	clear: both;
+    clear: both;
 }
