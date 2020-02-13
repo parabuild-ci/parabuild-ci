@@ -82,7 +82,7 @@ body {
     font-weight: bold;
     height: 40px;
     background: #699 url(/images/theme/tab-bg5-new.png) top center no-repeat;
-/*    background: #3f5765 url(/images/theme/tab-bg-2.7.2c.png) top center no-repeat; */
+    /*    background: #3f5765 url(/images/theme/tab-bg-2.7.2c.png) top center no-repeat; */
     list-style: none;
     clear: both;
 }
@@ -212,7 +212,7 @@ body {
 
 #header #nav li.tab {
     background: url(/images/theme/tab-bg5-new.png) top center no-repeat;
-/*    background: url(/images/theme/tab-bg-2.7.2c.png) top center no-repeat; */
+    /*    background: url(/images/theme/tab-bg-2.7.2c.png) top center no-repeat; */
     height: 40px;
 }
 
@@ -286,7 +286,9 @@ body {
     color: #c83400;
 }
 
-/* General content styles */
+/* ***************************************************************************************************************** *
+ * General content styles
+ * ***************************************************************************************************************** */
 
 #content {
     color: #333;
@@ -694,7 +696,6 @@ table.grey.form td {
 .form input[type="submit"], [type="button"] {
     font-size: 11pt;
     font-weight: bold;
-    padding: 4px 18px;
     margin: 0 6px;
     background: #ccc url(/images/theme/submit.png) top left no-repeat;
     padding: 0 0 2px 0;
@@ -717,6 +718,7 @@ table.grey.form td {
     background-position: 0 -32px;
 }
 
+.form select,
 .form textarea,
 .form input[type="text"],
 .form input[type="password"] {
@@ -831,30 +833,30 @@ table.form td.required input[type="text"]:focus {
 }
 
 .landing img.large-logo {
-	float: left;
+    float: left;
 }
 
 .landing .easiest-way {
-	float: left;
-	padding-left: 20px;
-	padding-top: 56px;
-	width: 500px;
+    float: left;
+    padding-left: 20px;
+    padding-top: 56px;
+    width: 500px;
 }
 
 .landing .login {
-	border: 1px solid #f0f0f0;
-	margin-right: 24px;
-	margin-top: 24px;
-	padding-bottom: 24px;
-	text-align: center;
+    border: 1px solid #f0f0f0;
+    margin-right: 24px;
+    margin-top: 24px;
+    padding-bottom: 24px;
+    text-align: center;
 }
 
 #content .landing .login h2 {
-	padding-top: 30px;
+    padding-top: 30px;
 }
 
 .landing .login table.form {
-	width: 100%;
+    width: 100%;
 }
 
 .landing .login table.form td {
@@ -862,18 +864,18 @@ table.form td.required input[type="text"]:focus {
 }
 
 .landing .ios7-images {
-	float: left;
-	text-align: center;
-	padding-top: 20px;
+    float: left;
+    text-align: center;
+    padding-top: 20px;
 }
 
 .landing img.ios7-phone {
-	width: 220px;
+    width: 220px;
 }
 
 .landing img.app-store {
-	width: 192px;
-	padding-top: 10px;
+    width: 192px;
+    padding-top: 10px;
 }
 
 /* Helper classes */
@@ -891,5 +893,66 @@ table.form td.required input[type="text"]:focus {
 }
 
 .clear {
-	clear: both;
+    clear: both;
+}
+
+
+/* ****************************************************************************************************************** *
+ * GWT styles
+ * ****************************************************************************************************************** */
+
+/* Dialog box */
+
+/* Box left */
+.gwt-DialogBox .dialogTopLeft {
+    width: 20px;
+    background: transparent url(/images/theme/full-width-top-left-vertical_g.png) no-repeat top left ;
+}
+
+.gwt-DialogBox .dialogMiddleLeft {
+    width: 20px;
+    background: transparent url(/images/theme/full-width-mid-left_g.png) repeat-y;
+}
+
+/* Box top */
+.gwt-DialogBox .dialogTopCenter {
+    background: transparent url(/images/theme/full-width-top-mid_g.png) repeat-x top left;
+    padding-top: 20px;
+}
+
+/* Box right */
+.gwt-DialogBox .dialogTopRight {
+    width: 20px;
+    background: transparent url(/images/theme/full-width-top-right-vertical_g.png) no-repeat top left;
+}
+
+.gwt-DialogBox .dialogMiddleRight {
+    width: 20px;
+    background: transparent url(/images/theme/full-width-mid-right_g.png) repeat-y;
+}
+
+/* Box bottom */
+.gwt-DialogBox .dialogBottomLeft {
+    width: 20px;
+    height: 20px;
+    background: transparent url(/images/theme/full-width-bot-left_g.png) no-repeat bottom left ;
+}
+
+.gwt-DialogBox .dialogBottomCenter {
+    height: 20px;
+    background: transparent url(/images/theme/full-width-bot-mid_g.png) repeat-x top left;
+}
+
+.gwt-DialogBox .dialogBottomRight {
+    width: 20px;
+    height: 20px;
+    background: transparent url(/images/theme/full-width-bot-right_g.png) no-repeat bottom right;
+}
+
+div.dialogTopCenterInner div.Caption {
+    background-color: #999;
+    text-align: left;
+    font-weight: bold;
+    font-size: 11pt;
+    padding: 4px;
 }
