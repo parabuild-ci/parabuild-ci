@@ -9,11 +9,6 @@
     <meta name="robots" content="index, follow, noarchive">
     <meta name='gwt:property' content='locale=en_US'>
 
-    <#-- This script tag is what actually loads the GWT module.  The 'nocache.js' file
-    (also called a "selection script") is produced by the GWT compiler in the module output
-    directory or generated automatically in development mode. -->
-    <script src="${base}/repository/repository.nocache.js" type="text/javascript"></script>
-
     <#-- Link -->
     <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Lato:400,700'/>
     <link rel="stylesheet" type="text/css" href="${base}/parabuild-ci.css">
@@ -50,6 +45,15 @@
                 <@s.a action="index" namespace="/" title="Home">Home</@s.a>
             </li>
 
+            <#-- Repositories -->
+            <li class="tab normal <#if contextMenu?? && contextMenu = "repositories">selected</#if>">
+                <@s.a action="repositories" namespace="/" title="Version Control Repositories">Repositories</@s.a>
+                <ul>
+                    <li><@s.a action="servers" namespace="/repository" title="Version Control Servers">Servers</@s.a></li>
+                    <li><@s.a action="list" namespace="/repository" title="Version Control Repositories">Repositories</@s.a></li>
+                </ul>
+            </li>
+
             <#-- Projects -->
             <li class="tab normal <#if contextMenu?? && contextMenu = "projects">selected</#if>">
                 <@s.a action="projects" namespace="/" title="Projects">Projects</@s.a>
@@ -72,13 +76,13 @@
                     <ul>
                         <li><@s.a action="showSystemParameters" namespace="/" title="%{getText('manage.system.parameters')}">
                                 <@s.text name="System.Parameters"/></@s.a></li>
-                        <li><@s.a action="listMediaServers" namespace="/" title="%{getText('manage.wowza.servers')}">
-                                <@s.text name="Wowza.Servers"/></@s.a></li>
+                        <li><@s.a action="listParabuildServers" namespace="/" title="%{getText('manage.parabuild.servers')}">
+                                <@s.text name="Parabuild.Servers"/></@s.a></li>
                         <li>
                             <@s.url id="userList" namespace="/" action="userList">
                                 <@s.param name="search"></@s.param>
                             </@s.url>
-                            <@s.a href="%{userList}" title="%{getText('Manage.Joglet.users')}"><@s.text name="Users"/></@s.a>
+                            <@s.a href="%{userList}" title="%{getText('Manage.Parabuild.users')}"><@s.text name="Users"/></@s.a>
                         </li>
                         <li><@s.a action="reports" namespace="/" title="%{getText('View.Reports')}"><@s.text name="Reports"/></@s.a></li>
                         <li><@s.a action="sendEmailToAllUsers" namespace="/" title="%{getText('Send.Email.to.All.Users')}"><@s.text name="Send.Email.to.All.Users"/></@s.a></li>
@@ -131,7 +135,7 @@
             <li><@s.a action="about" namespace="/" title="About">About</@s.a></li>
         </ul>
         <div class="legal">
-            <div class="copyright">Copyright 2004-2019 Parabuild CI. All rights reserved.</div>
+            <div class="copyright">Copyright 2004-2020 Parabuild CI. All rights reserved.</div>
         </div>
     </div>
 </div>
