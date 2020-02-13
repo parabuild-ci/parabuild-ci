@@ -895,3 +895,72 @@ table.form td.required input[type="text"]:focus {
 .clear {
     clear: both;
 }
+
+
+/* ****************************************************************************************************************** *
+ * GWT styles
+ * ****************************************************************************************************************** */
+
+
+/* Box top */
+.gwt-DialogBox div.dialogTopLeftInner {
+    display: block;
+    height: 20px;
+    width: 20px;
+    background: transparent url(images/theme/full-width-top-left_g.png) no-repeat top left ;
+}
+
+.gwt-DialogBox div.dialogTopCenterInner {
+    display: block;
+    height: 20px;
+    background: transparent url(images/theme/full-width-top-mid_g.png) repeat-x top left;
+}
+
+.gwt-DialogBox .dialogTopRightInner {
+    display: block;
+    height: 20px;
+    width: 20px;
+    background: transparent url(images/theme/full-width-top-right_g.png) no-repeat top right;
+}
+
+
+/* Box bottom */
+.gwt-DialogBox .dialogBottomLeftInner {
+    display: block;
+    height: 20px;
+    width: 20px;
+    background: transparent url(images/theme/full-width-bot-left_g.png) no-repeat top left ;
+}
+
+.gwt-DialogBox .dialogBottomCenterInner {
+    display: block;
+    height: 20px;
+    background: transparent url(images/theme/full-width-bot-mid_g.png) repeat-x top left;
+}
+
+.gwt-DialogBox .dialogBottomRightInner {
+    display: block;
+    height: 20px;
+    width: 20px;
+    background: transparent url(images/theme/full-width-bot-right_g.png) no-repeat top right;
+}
+
+/**
+ * Box left
+ */
+.gwt-DialogBox .dialogMiddleLeftInner {
+    display: block;
+    height: 100%;
+    width: 20px;
+    background: transparent url(images/theme/full-width-mid-left_g.png) repeat-y top left;
+}
+
+/**
+ * Box right
+ */
+.gwt-DialogBox .dialogMiddleRightInner {
+    display: block;
+    height: 100%;
+    width: 20px;
+    background: transparent url(images/theme/full-width-mid-right_g.png) repeat-y top right;
+}

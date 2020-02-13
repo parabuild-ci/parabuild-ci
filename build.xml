@@ -620,4 +620,20 @@ commons-io-2.2.jar		commons-logging-1.1.3.jar	javassist-3.11.0.GA.jar		struts2-c
       <fileset dir="${build.dir.hessian.classes}"/>
     </jar>
   </target>
+
+
+
+  <target name="test.css" description="Packages test css html with parabuild-ci.css and stores under temp" depends="init">
+    <property name="test.css.dir" value="${build.dir}/test/css"/>
+    <mkdir dir="${test.css.dir}"/>
+    <!--    <copy file="${config}/parabuild-ci.css" todir="${test.css.dir}"/>-->
+    <!--    <copy file="${test.home}/style/parabuild-ci.html" todir="${test.css.dir}"/>-->
+    <copy todir="${test.css.dir}">
+      <fileset dir="${test.home}/style"/>
+    </copy>
+    <copy todir="${test.css.dir}">
+      <fileset dir="${config}" includes="images/**"/>
+    </copy>
+  </target>
+
 </project>
