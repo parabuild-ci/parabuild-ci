@@ -901,66 +901,58 @@ table.form td.required input[type="text"]:focus {
  * GWT styles
  * ****************************************************************************************************************** */
 
+/* Dialog box */
+
+/* Box left */
+.gwt-DialogBox .dialogTopLeft {
+    width: 20px;
+    background: transparent url(images/theme/full-width-top-left-vertical_g.png) no-repeat top left ;
+}
+
+.gwt-DialogBox .dialogMiddleLeft {
+    width: 20px;
+    background: transparent url(images/theme/full-width-mid-left_g.png) repeat-y;
+}
 
 /* Box top */
-.gwt-DialogBox div.dialogTopLeftInner {
-    display: block;
-    height: 20px;
-    width: 20px;
-    background: transparent url(images/theme/full-width-top-left_g.png) no-repeat top left ;
-}
-
-.gwt-DialogBox div.dialogTopCenterInner {
-    display: block;
-    height: 20px;
+.gwt-DialogBox .dialogTopCenter {
     background: transparent url(images/theme/full-width-top-mid_g.png) repeat-x top left;
+    padding-top: 20px;
 }
 
-.gwt-DialogBox .dialogTopRightInner {
-    display: block;
-    height: 20px;
+/* Box right */
+.gwt-DialogBox .dialogTopRight {
     width: 20px;
-    background: transparent url(images/theme/full-width-top-right_g.png) no-repeat top right;
+    background: transparent url(images/theme/full-width-top-right-vertical_g.png) no-repeat top left;
 }
 
+.gwt-DialogBox .dialogMiddleRight {
+    width: 20px;
+    background: transparent url(images/theme/full-width-mid-right_g.png) repeat-y;
+}
 
 /* Box bottom */
-.gwt-DialogBox .dialogBottomLeftInner {
-    display: block;
-    height: 20px;
+.gwt-DialogBox .dialogBottomLeft {
     width: 20px;
-    background: transparent url(images/theme/full-width-bot-left_g.png) no-repeat top left ;
+    height: 20px;
+    background: transparent url(images/theme/full-width-bot-left_g.png) no-repeat bottom left ;
 }
 
-.gwt-DialogBox .dialogBottomCenterInner {
-    display: block;
+.gwt-DialogBox .dialogBottomCenter {
     height: 20px;
     background: transparent url(images/theme/full-width-bot-mid_g.png) repeat-x top left;
 }
 
-.gwt-DialogBox .dialogBottomRightInner {
-    display: block;
+.gwt-DialogBox .dialogBottomRight {
+    width: 20px;
     height: 20px;
-    width: 20px;
-    background: transparent url(images/theme/full-width-bot-right_g.png) no-repeat top right;
+    background: transparent url(images/theme/full-width-bot-right_g.png) no-repeat bottom right;
 }
 
-/**
- * Box left
- */
-.gwt-DialogBox .dialogMiddleLeftInner {
-    display: block;
-    height: 100%;
-    width: 20px;
-    background: transparent url(images/theme/full-width-mid-left_g.png) repeat-y top left;
-}
-
-/**
- * Box right
- */
-.gwt-DialogBox .dialogMiddleRightInner {
-    display: block;
-    height: 100%;
-    width: 20px;
-    background: transparent url(images/theme/full-width-mid-right_g.png) repeat-y top right;
+div.dialogTopCenterInner div.Caption {
+    background-color: #999;
+    text-align: left;
+    font-weight: bold;
+    font-size: 11pt;
+    padding: 4px;
 }
