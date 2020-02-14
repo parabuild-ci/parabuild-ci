@@ -654,7 +654,7 @@ table.form th {
     text-align: right;
 }
 
-table.form td {
+table.form td, .dialogContent td {
     font-size: 11pt;
     margin: 0;
     padding: 4px;
@@ -906,7 +906,7 @@ table.form td.required input[type="text"]:focus {
 /* Box left */
 .gwt-DialogBox .dialogTopLeft {
     width: 20px;
-    background: transparent url(/images/theme/full-width-top-left-vertical_g.png) no-repeat top left ;
+    background: transparent url(/images/theme/full-width-top-left-vertical_g.png) no-repeat top left;
 }
 
 .gwt-DialogBox .dialogMiddleLeft {
@@ -935,7 +935,7 @@ table.form td.required input[type="text"]:focus {
 .gwt-DialogBox .dialogBottomLeft {
     width: 20px;
     height: 20px;
-    background: transparent url(/images/theme/full-width-bot-left_g.png) no-repeat bottom left ;
+    background: transparent url(/images/theme/full-width-bot-left_g.png) no-repeat bottom left;
 }
 
 .gwt-DialogBox .dialogBottomCenter {
@@ -955,4 +955,8 @@ div.dialogTopCenterInner div.Caption {
     font-weight: bold;
     font-size: 11pt;
     padding: 4px;
+}
+
+.gwt-DialogBox {
+    background: #fdfdfd;
 }
