@@ -1393,8 +1393,53 @@ constraint COMMENT_FC1 foreign key (AUTHOR_ID) references USERS(ID)
 );
 create index COMMENT_IX1 on COMMENT(OWNER_TYPE, OWNER_ID, COMMENT_TIME);
 
+
+create cached table VCS_SERVER (
+          ID integer not null identity,
+          NAME varchar(512) not null,
+          DESCRIPTION varchar(512) not null,
+          TYPE integer not null,
+          DELETED char(1) not null,
+          TIMESTAMP bigint not null,
+          constraint VCS_SERVER_UC1 unique (ID)
+);
+
+create cached table VCS_SERVER_ATTRIBUTE (
+          VCS_SERVER_ID integer not null,
+          ID integer not null identity,
+          NAME varchar(80) not null,
+          VALUE varchar(1024),
+          TIMESTAMP bigint not null,
+          constraint VCS_SERVER_ATTRIBUTE_UC1 unique (ID),
+          constraint VCS_SERVER_ATTRIBUTE_UC2 unique (VCS_SERVER_ID, NAME),
+          constraint VCS_SERVER_ATTRIBUTE_FC1 foreign key (VCS_SERVER_ID) references VCS_SERVER(ID) ON DELETE CASCADE
+);
+
+create cached table VCS_REPOSITORY (
+          VCS_SERVER_ID integer not null,
+          ID integer not null identity,
+          NAME varchar(512) not null,
+          DESCRIPTION varchar(512) not null,
+          TYPE integer not null,
+          DELETED char(1) not null,
+          TIMESTAMP bigint not null,
+          constraint VCS_REPOSITORY_UC1 unique (ID),
+          constraint VCS_REPOSITORY_FC1 foreign key (VCS_SERVER_ID) references VCS_SERVER(ID) ON DELETE CASCADE
+);
+
+create cached table VCS_REPOSITORY_ATTRIBUTE (
+          VCS_REPOSITORY_ID integer not null,
+          ID integer not null identity,
+          NAME varchar(80) not null,
+          VALUE varchar(1024),
+          TIMESTAMP bigint not null,
+          constraint VCS_REPOSITORY_ATTRIBUTE_UC1 unique (ID),
+          constraint VCS_REPOSITORY_ATTRIBUTE_UC2 unique (VCS_REPOSITORY_ID, NAME),
+          constraint VCS_REPOSITORY_ATTRIBUTE_FC1 foreign key (VCS_REPOSITORY_ID) references VCS_REPOSITORY(ID) ON DELETE CASCADE
+);
+
 insert into USERS (ID, NAME, FNAME, PASSWORD, IS_ADMIN, EMAIL, ROLES, ENABLED, IM_TYPE, IM_ADDRESS, LDAP_AUTH, DISABLE_ALL_EMAIL, TIMESTAMP) values(0, 'admin', '', '21232F297A57A5A743894A0E4A801FC3', 'Y', '', 'admin', 'Y', 0, '', 'N', 'N', 1);
-insert into SYSTEM_PROPERTY (ID, NAME, VALUE, TIMESTAMP) values (0, 'parabuild.schema.version', '80', 1);
+insert into SYSTEM_PROPERTY (ID, NAME, VALUE, TIMESTAMP) values (0, 'parabuild.schema.version', '82', 1);
 insert into SYSTEM_PROPERTY (ID, NAME, VALUE, TIMESTAMP) values (1, 'parabuild.date.format', 'MM/dd/yyyy', 1);
 insert into SYSTEM_PROPERTY (ID, NAME, VALUE, TIMESTAMP) values (2, 'parabuild.date.time.format', 'hh:mm a MM/dd/yyyy', 1);
 insert into SYSTEM_PROPERTY (ID, NAME, VALUE, TIMESTAMP) values (3, 'parabuild.enable.anon.builds', 'checked', 1);

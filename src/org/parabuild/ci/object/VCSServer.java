@@ -1,17 +1,20 @@
 package org.parabuild.ci.object;
 
+import java.io.Serializable;
+
 /**
  * Stored build configuration
  *
  * @hibernate.class table="VCS_SERVER" dynamic-update="true"
  * @hibernate.cache usage="read-write"
  */
-public final class VCSServer {
+public final class VCSServer implements Serializable, ObjectConstants {
 
+  private static final long serialVersionUID = 2348840872918917362L;
   private Integer id;
   private String name;
+  private String description;
   private int type;
-  private String url;
   private boolean deleted;
   private long timeStamp;
 
@@ -20,7 +23,7 @@ public final class VCSServer {
    * Returns unique ID.
    *
    * @return int
-   * @hibernate.id generator-class="identity" column="ID" unsaved-value="-1"
+   * @hibernate.id generator-class="identity" column="ID" unsaved-value="null"
    */
   public Integer getId() {
     return id;
@@ -51,7 +54,7 @@ public final class VCSServer {
   /**
    * Returns repository name.
    *
-   * @return int
+   * @return repository name.
    * @hibernate.property column="NAME" unique="false" null="false"
    */
   public String getName() {
@@ -65,18 +68,18 @@ public final class VCSServer {
 
 
   /**
-   * Returns DNS name.
+   * Returns repository name.
    *
-   * @return DNS name.
-   * @hibernate.property column="URL" unique="false" null="false"
+   * @return repository name.
+   * @hibernate.property column="DESCRIPTION" unique="false" null="false"
    */
-  public String getUrl() {
-    return url;
+  public String getDescription() {
+    return description;
   }
 
 
-  public void setUrl(final String url) {
-    this.url = url;
+  public void setDescription(final String description) {
+    this.description = description;
   }
 
 
@@ -114,11 +117,11 @@ public final class VCSServer {
 
   @Override
   public String toString() {
-    return "VCSRepository{" +
+    return "VCSServer{" +
             "id=" + id +
             ", name='" + name + '\'' +
+            ", description='" + description + '\'' +
             ", type=" + type +
-            ", path='" + url + '\'' +
             ", deleted=" + deleted +
             ", timeStamp=" + timeStamp +
             '}';

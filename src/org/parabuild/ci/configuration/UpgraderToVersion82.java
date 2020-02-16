@@ -62,8 +62,8 @@ final class UpgraderToVersion82 implements SingleStepSchemaUpgrader {
               "create cached table VCS_SERVER (\n" +
                       "  ID integer not null identity,\n" +
                       "  NAME varchar(512) not null,\n" +
+                      "  DESCRIPTION varchar(512) not null,\n" +
                       "  TYPE integer not null,\n" +
-                      "  URL varchar(512) not null,\n" +
                       "  DELETED char(1) not null,\n" +
                       "  TIMESTAMP bigint not null,\n" +
                       "  constraint VCS_SERVER_UC1 unique (ID)\n" +
@@ -77,15 +77,15 @@ final class UpgraderToVersion82 implements SingleStepSchemaUpgrader {
                       "  TIMESTAMP bigint not null,\n" +
                       "  constraint VCS_SERVER_ATTRIBUTE_UC1 unique (ID),\n" +
                       "  constraint VCS_SERVER_ATTRIBUTE_UC2 unique (VCS_SERVER_ID, NAME),\n" +
-                      "  constraint VCS_SERVER_ATTRIBUTE_FC1 foreign key (VCS_SERVER_ID) references MERGE_CONFIGURATION(ID) ON DELETE CASCADE\n" +
+                      "  constraint VCS_SERVER_ATTRIBUTE_FC1 foreign key (VCS_SERVER_ID) references VCS_SERVER(ID) ON DELETE CASCADE\n" +
                       ')',
 
               "create cached table VCS_REPOSITORY (\n" +
                       "  VCS_SERVER_ID integer not null,\n" +
                       "  ID integer not null identity,\n" +
                       "  NAME varchar(512) not null,\n" +
+                      "  DESCRIPTION varchar(512) not null,\n" +
                       "  TYPE integer not null,\n" +
-                      "  PATH varchar(512) not null,\n" +
                       "  DELETED char(1) not null,\n" +
                       "  TIMESTAMP bigint not null,\n" +
                       "  constraint VCS_REPOSITORY_UC1 unique (ID),\n" +

@@ -5,13 +5,12 @@ import junit.framework.TestCase;
 /**
  * A tester for {@link VCSRepository}.
  */
-public final class VCSRepositoryTest extends TestCase {
+public final class SATestVCSRepository extends TestCase {
 
   private static final Integer ID = 777;
   private static final int TYPE = 888;
   private static final int SERVER_ID = 999;
   private static final String NAME = "Test name";
-  private static final String PATH = "/test/path";
   private static final boolean DELETED = true;
   private static final int TIME_STAMP = 666;
 
@@ -42,7 +41,7 @@ public final class VCSRepositoryTest extends TestCase {
 
 
   /**
-   * Tests {@link VCSRepository#setServerId(long)} and {@link VCSRepository#getServerId()} .
+   * Tests {@link VCSRepository#setServerId(int)} and {@link VCSRepository#getServerId()} .
    */
   public void testSetGetServerId() {
 
@@ -58,16 +57,6 @@ public final class VCSRepositoryTest extends TestCase {
 
     vcsRepository.setName(NAME);
     assertEquals(NAME, vcsRepository.getName());
-  }
-
-
-  /**
-   * Tests {@link VCSRepository#setPath(String)} and {@link VCSRepository#getPath()}.
-   */
-  public void testSetGetPath() {
-
-    vcsRepository.setPath(PATH);
-    assertEquals(PATH, vcsRepository.getPath());
   }
 
 

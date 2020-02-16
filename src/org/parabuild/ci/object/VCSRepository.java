@@ -12,11 +12,11 @@ public final class VCSRepository implements Serializable {
 
   private static final long serialVersionUID = -2861819645004736188L;
 
-  private long serverId;
+  private int serverId;
   private Integer id;
-  private String name;
   private int type;
-  private String path;
+  private String name;
+  private String description;
   private boolean deleted;
   private long timeStamp;
 
@@ -25,7 +25,7 @@ public final class VCSRepository implements Serializable {
    * Returns unique ID.
    *
    * @return int
-   * @hibernate.id generator-class="identity" column="ID" unsaved-value="-1"
+   * @hibernate.id generator-class="identity" column="ID" unsaved-value="null"
    */
   public Integer getId() {
     return id;
@@ -59,12 +59,12 @@ public final class VCSRepository implements Serializable {
    * @return repository type.
    * @hibernate.property column="VCS_SERVER_ID" unique="false" null="false"
    */
-  public long getServerId() {
+  public int getServerId() {
     return serverId;
   }
 
 
-  public void setServerId(final long serverId) {
+  public void setServerId(final int serverId) {
     this.serverId = serverId;
   }
 
@@ -86,18 +86,18 @@ public final class VCSRepository implements Serializable {
 
 
   /**
-   * Returns DNS name.
+   * Returns repository description.
    *
-   * @return DNS name.
-   * @hibernate.property column="PATH" unique="false" null="false"
+   * @return int
+   * @hibernate.property column="DESCRIPTION" unique="false" null="false"
    */
-  public String getPath() {
-    return path;
+  public String getDescription() {
+    return description;
   }
 
 
-  public void setPath(final String path) {
-    this.path = path;
+  public void setDescription(final String description) {
+    this.description = description;
   }
 
 
@@ -136,11 +136,11 @@ public final class VCSRepository implements Serializable {
   @Override
   public String toString() {
     return "VCSRepository{" +
-            "id=" + id +
-            ", serverId=" + serverId +
+            "serverId=" + serverId +
+            ", id=" + id +
             ", name='" + name + '\'' +
+            ", description='" + description + '\'' +
             ", type=" + type +
-            ", path='" + path + '\'' +
             ", deleted=" + deleted +
             ", timeStamp=" + timeStamp +
             '}';
