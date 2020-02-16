@@ -20,7 +20,6 @@ public final class SSTestVCSRepositoryAttribute extends ServersideTestCase {
   private static final int TYPE = 888;
   private Integer attributeId;
   private int repositoryId;
-  private int serverId;
 
   /**
    * Object under test.
