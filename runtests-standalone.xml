@@ -40,7 +40,7 @@
       <jvmarg value="-Dcatalina.home=${build.dir.tomcat}/lib"/>
       <jvmarg value="-Dcatalina.base=${build.dir.tomcat}/etc"/>
       <jvmarg value="-Djava.io.tmpdir=${build.dir}"/>
-      <jvmarg value="-Djavax.xml.transform.TransformerFactory=net.sf.saxon.TransformerFactoryImpl"/>
+<!--      <jvmarg value="-Djavax.xml.transform.TransformerFactory=net.sf.saxon.TransformerFactoryImpl"/>-->
 
       <!--
       Run only test defined by test.single property

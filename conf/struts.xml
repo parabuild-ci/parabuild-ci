@@ -3,13 +3,28 @@
 <struts>
 
   <constant name="struts.enable.SlashesInActionNames" value="true"/>
-  <constant name="struts.action.excludePattern" value=".*\.css, .*\.png, .*\.js, .*\.ico, .*\.jpg"/>
+  <constant name="struts.action.excludePattern" value=".*\.css, .*\.png, .*\.js, .*\.ico, .*\.jpg, /parabuild/.*\.htm, .*ServletRedirector.*, /server/service/.*, /repository/service/.*"/>
   <constant name="struts.action.extension" value=""/>
   <constant name="struts.devMode" value="true"/>
+  <constant name="exception.logEnabled" value="true"/>
+
+  <!--
+
+  <param name="exception.logEnabled">true</param>
+       <param name="exception.logLevel">ERROR</param>
+
+
+  -->
 
   <package name="Repository" extends="struts-default" namespace="/repository">
-    <action name="list" class="org.parabuild.ci.webui.repository.VCSRepositoryListAction" method="execute">
-      <result type="freemarker">/org/parabuild/ci/webui/repository/repositoryList.ftl</result>
+
+    <action name="list" class="org.parabuild.ci.webui.vcs.repository.VCSRepositoryListAction" method="execute">
+      <result type="freemarker">/org/parabuild/ci/webui/vcs/repository/repositoryList.ftl</result>
+    </action>
+
+    <action name="servers" class="org.parabuild.ci.webui.vcs.repository.VCSServerListAction" method="execute">
+      <result type="freemarker">/org/parabuild/ci/webui/vcs/repository/repositoryServerList.ftl</result>
     </action>
   </package>
+
 </struts>

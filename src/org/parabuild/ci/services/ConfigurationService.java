@@ -208,7 +208,9 @@ public final class ConfigurationService implements Service {
             .addClass(BuildChangeListAttribute.class)
             .addClass(BuildSequence.class)
             .addClass(VCSRepository.class)
-            .addClass(VCSServer.class);
+            .addClass(VCSRepositoryAttribute.class)
+            .addClass(VCSServer.class)
+            .addClass(VCSServerAttribute.class);
     if (log.isDebugEnabled()) {
       log.debug("creating session factory");
     }

@@ -82,6 +82,10 @@
   <cache name="org.parabuild.ci.object.GlobalVCSUserMap" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
   <cache name="org.parabuild.ci.object.BuilderAgent" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
   <cache name="org.parabuild.ci.object.StartParameter" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.VCSRepository" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.VCSRepositoryAttribute" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.VCSServer" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
+  <cache name="org.parabuild.ci.object.VCSServerAttribute" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
   <!-- Test stats -->
   <cache name="org.parabuild.ci.object.TestSuiteName" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>
   <cache name="org.parabuild.ci.object.TestCaseName" maxElementsInMemory="1000" eternal="true" timeToIdleSeconds="86400" timeToLiveSeconds="86400" overflowToDisk="false"/>

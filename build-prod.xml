@@ -419,6 +419,9 @@
   <target name="product.gwtc"
           depends="product.compile,product.war.prepare,product.war.jspc"
           description="GWT compile to JavaScript (production mode)">
+
+<!--    <mkdir dir="${war.staging}/modules"/>-->
+
     <java failonerror="true" fork="true" classname="com.google.gwt.dev.Compiler" maxmemory="1G">
       <classpath>
         <pathelement location="${src}"/>
@@ -430,7 +433,8 @@
       <!-- Additional arguments like -style PRETTY or -logLevel DEBUG -->
       <arg line="-style PRETTY"/>
       <arg line="-localWorkers 10"/>
-      <arg value="org.parabuild.ci.webui.repository.Repository"/>
+      <arg value="org.parabuild.ci.webui.vcs.repository.VCSRepository"/>
+      <arg value="org.parabuild.ci.webui.vcs.repository.VCSServer"/>
     </java>
   </target>
 

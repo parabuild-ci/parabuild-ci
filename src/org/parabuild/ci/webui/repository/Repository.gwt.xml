@@ -1,5 +1,0 @@
-<module rename-to="repository">
-  <inherits name='com.google.gwt.user.User'/>
-  <entry-point class='org.parabuild.ci.webui.repository.client.RepositoryClient'/>
-  <servlet path='/repository' class='org.parabuild.ci.webui.repository.server.RepositoryServiceImpl'/>
-</module>

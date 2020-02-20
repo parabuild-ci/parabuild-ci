@@ -105,7 +105,7 @@ public final class VCSRepository implements Serializable {
    * Returns <code>true</code> if the repository was deleted.
    *
    * @return <code>true</code> if the repository was deleted.
-   * @hibernate.property column="DELETED" unique="false" null="false"
+   * @hibernate.property column="DELETED" unique="false" null="false" type="yes_no"
    */
   public boolean isDeleted() {
     return deleted;

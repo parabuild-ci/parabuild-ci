@@ -59,7 +59,6 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
 
-
     <servlet>
         <servlet-name>ServiceManagerServlet</servlet-name>
         <servlet-class>org.parabuild.ci.services.ServiceManagerServlet</servlet-class>
@@ -169,16 +168,21 @@
 
     <!-- GWT -->
     <servlet>
-        <servlet-name>RepositoryService</servlet-name>
-        <servlet-class>org.parabuild.ci.webui.repository.server.RepositoryServiceImpl</servlet-class>
+        <servlet-name>VCSRepositoryService</servlet-name>
+        <servlet-class>org.parabuild.ci.webui.vcs.repository.server.RepositoryServiceImpl</servlet-class>
     </servlet>
 
-    <!-- Begin test configuration @start.test.config@
-  <servlet>
-    <servlet-name>ServletRedirector</servlet-name>
-    <servlet-class>org.apache.cactus.server.ServletTestRedirector</servlet-class>
-    <load-on-startup>5</load-on-startup>
-  </servlet>
+    <servlet>
+        <servlet-name>VCSServerService</servlet-name>
+        <servlet-class>org.parabuild.ci.webui.vcs.repository.server.ServerServiceImpl</servlet-class>
+     </servlet>
+
+  <!-- Begin test configuration @start.test.config@
+<servlet>
+  <servlet-name>ServletRedirector</servlet-name>
+  <servlet-class>org.apache.cactus.server.ServletTestRedirector</servlet-class>
+  <load-on-startup>5</load-on-startup>
+</servlet>
 
 @end.test.config@ end test configuration -->
 
@@ -202,7 +206,6 @@
     </servlet>
     -->
     <!-- Precompiled JSP Servlets -->
-
     <servlet-mapping>
         <servlet-name>sitemesh-freemarker</servlet-name>
         <url-pattern>*.ftl</url-pattern>
@@ -272,25 +275,30 @@
     </servlet-mapping>
 
    <servlet-mapping>
-     <servlet-name>RepositoryService</servlet-name>
-     <url-pattern>/repository/repository</url-pattern>
+     <servlet-name>VCSRepositoryService</servlet-name>
+     <url-pattern>/repository/service/repository</url-pattern>
    </servlet-mapping>
 
-    <!-- Begin test configuration @start.test.config@
   <servlet-mapping>
-    <servlet-name>ServletRedirector</servlet-name>
-    <url-pattern>/ServletRedirector</url-pattern>
+    <servlet-name>VCSServerService</servlet-name>
+    <url-pattern>/server/service/server</url-pattern>
   </servlet-mapping>
 
-   <servlet-mapping>
-     <servlet-name>AxisServlet</servlet-name>
-     <url-pattern>/servlet/AxisServlet</url-pattern>
-   </servlet-mapping>
+  <!-- Begin test configuration @start.test.config@
+<servlet-mapping>
+  <servlet-name>ServletRedirector</servlet-name>
+  <url-pattern>/ServletRedirector</url-pattern>
+</servlet-mapping>
 
-   <servlet-mapping>
-     <servlet-name>AxisServlet</servlet-name>
-     <url-pattern>*.jws</url-pattern>
-   </servlet-mapping>
+ <servlet-mapping>
+   <servlet-name>AxisServlet</servlet-name>
+   <url-pattern>/servlet/AxisServlet</url-pattern>
+ </servlet-mapping>
+
+ <servlet-mapping>
+   <servlet-name>AxisServlet</servlet-name>
+   <url-pattern>*.jws</url-pattern>
+ </servlet-mapping>
 
 @end.test.config@ End test configuration -->
 
