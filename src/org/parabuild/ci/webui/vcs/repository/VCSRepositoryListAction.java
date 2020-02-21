@@ -6,9 +6,12 @@ import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.TransactionCallback;
 import org.parabuild.ci.object.VCSRepository;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+
+import static java.util.Collections.unmodifiableList;
 
 /**
  * Shows a list of repositories.
@@ -25,12 +28,14 @@ public final class VCSRepositoryListAction extends ParabuildActionSupport implem
 
 
   public VCSRepositoryListAction() {
+
     setTitle(REPOSITORY_LIST);
   }
 
 
   public Map<String, Object> getSession() {
-    return session;
+
+    return Collections.unmodifiableMap(session);
   }
 
 
@@ -41,22 +46,26 @@ public final class VCSRepositoryListAction extends ParabuildActionSupport implem
    */
   @Override
   public void setSession(final Map<String, Object> session) {
-    this.session = session;
+
+    this.session = Collections.unmodifiableMap(session);
   }
 
 
   public String getMode() {
+
     return mode;
   }
 
 
   public void setMode(final String mode) {
+
     this.mode = mode;
   }
 
 
   public List<VCSRepositoryVO> getRepositoryList() {
-    return repositoryList;
+
+    return unmodifiableList(repositoryList);
   }
 
 
