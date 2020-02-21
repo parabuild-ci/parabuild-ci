@@ -4,10 +4,10 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.TransactionCallback;
 import org.parabuild.ci.object.VCSServer;
-import org.parabuild.ci.webui.vcs.repository.client.ServerService;
+import org.parabuild.ci.webui.vcs.repository.client.VCSServerService;
 import org.parabuild.ci.webui.vcs.repository.client.VCSServerClientVO;
 
-public class ServerServiceImpl extends RemoteServiceServlet implements ServerService {
+public class VCSServerServiceImpl extends RemoteServiceServlet implements VCSServerService {
 
   private static final long serialVersionUID = 2497764302106094743L;
 

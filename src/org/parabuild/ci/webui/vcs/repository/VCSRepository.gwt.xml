@@ -17,5 +17,5 @@
   <entry-point class="org.parabuild.ci.webui.vcs.repository.client.RepositoryEntryPoint"/>
 
   <!-- RPC Service -->
-  <servlet path="/service/repository" class="org.parabuild.ci.webui.vcs.repository.server.RepositoryServiceImpl"/>
+  <servlet path="/service/repository" class="org.parabuild.ci.webui.vcs.repository.server.VCSRepositoryServiceImpl"/>
 </module>

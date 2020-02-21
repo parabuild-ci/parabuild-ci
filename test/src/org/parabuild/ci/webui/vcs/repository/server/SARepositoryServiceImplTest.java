@@ -3,12 +3,12 @@ package org.parabuild.ci.webui.vcs.repository.server;
 import junit.framework.TestCase;
 
 /**
- * Tester for {@link RepositoryServiceImpl}.
+ * Tester for {@link VCSRepositoryServiceImpl}.
  */
 public final class SARepositoryServiceImplTest extends TestCase {
 
 
-  private RepositoryServiceImpl repositoryService;
+  private VCSRepositoryServiceImpl repositoryService;
 
 
   public SARepositoryServiceImplTest(final String name) {
@@ -26,7 +26,7 @@ public final class SARepositoryServiceImplTest extends TestCase {
 
     super.setUp();
 
-    repositoryService = new RepositoryServiceImpl();
+    repositoryService = new VCSRepositoryServiceImpl();
   }
 
 

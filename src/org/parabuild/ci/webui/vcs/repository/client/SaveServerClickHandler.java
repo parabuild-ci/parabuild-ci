@@ -33,7 +33,7 @@ final class SaveServerClickHandler implements ClickHandler {
   public void onClick(final ClickEvent event) {
 
     // (1) Create the client proxy.
-    final ServerServiceAsync serverServiceAsync = GWT.create(ServerService.class);
+    final VCSServerServiceAsync serverServiceAsync = GWT.create(VCSServerService.class);
 
     // (2) Create an asynchronous callback to handle the result.
     final AsyncCallback callback = new SaveServerAsyncCallback();

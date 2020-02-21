@@ -7,7 +7,7 @@ import org.parabuild.ci.object.VCSRepository;
 import org.parabuild.ci.webui.vcs.repository.client.VCSRepositoryClientVO;
 import org.parabuild.ci.webui.vcs.repository.client.RepositoryService;
 
-public class RepositoryServiceImpl extends RemoteServiceServlet implements RepositoryService {
+public class VCSRepositoryServiceImpl extends RemoteServiceServlet implements RepositoryService {
 
   private static final long serialVersionUID = 2497764302106094743L;
 

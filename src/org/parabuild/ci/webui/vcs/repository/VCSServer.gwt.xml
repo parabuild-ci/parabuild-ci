@@ -16,5 +16,5 @@
   <!-- Parabuild client application -->
   <entry-point class='org.parabuild.ci.webui.vcs.repository.client.ServerEntryPoint'/>
 
-  <servlet path="/service/server" class="org.parabuild.ci.webui.vcs.repository.server.ServerServiceImpl"/>
+  <servlet path="/service/server" class="org.parabuild.ci.webui.vcs.repository.server.VCSServerServiceImpl"/>
 </module>
