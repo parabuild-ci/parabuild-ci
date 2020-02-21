@@ -19,7 +19,6 @@ import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.object.SystemProperty;
 import org.parabuild.ci.object.User;
 import org.parabuild.ci.security.SecurityManager;
-import org.parabuild.ci.webui.admin.AbstractSystemConfigPanel;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;

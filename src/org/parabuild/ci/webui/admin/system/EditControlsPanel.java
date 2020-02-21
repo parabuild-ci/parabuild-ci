@@ -13,7 +13,6 @@
  */
 package org.parabuild.ci.webui.admin.system;
 
-import org.parabuild.ci.webui.admin.AbstractSystemConfigPanel;
 import org.parabuild.ci.webui.common.CancelButton;
 import org.parabuild.ci.webui.common.CommonButton;
 import org.parabuild.ci.webui.common.CommonFlow;

@@ -23,7 +23,6 @@ import org.parabuild.ci.configuration.SystemConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.object.SystemProperty;
 import org.parabuild.ci.services.ServiceManager;
-import org.parabuild.ci.webui.admin.AbstractSystemConfigPanel;
 import org.parabuild.ci.webui.admin.DateFormatDropdown;
 import org.parabuild.ci.webui.admin.DateTimeFormatDropdown;
 import org.parabuild.ci.webui.admin.HTTPProtocolDropdown;

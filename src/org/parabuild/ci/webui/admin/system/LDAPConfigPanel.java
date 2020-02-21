@@ -25,7 +25,6 @@ import org.parabuild.ci.object.Group;
 import org.parabuild.ci.object.SystemProperty;
 import org.parabuild.ci.security.JNDIAuthenticator;
 import org.parabuild.ci.security.JNDIUserLookupStringGenerator;
-import org.parabuild.ci.webui.admin.AbstractSystemConfigPanel;
 import org.parabuild.ci.webui.admin.GroupDropDown;
 import org.parabuild.ci.webui.common.BoldCommonLabel;
 import org.parabuild.ci.webui.common.CodeNameDropDown;

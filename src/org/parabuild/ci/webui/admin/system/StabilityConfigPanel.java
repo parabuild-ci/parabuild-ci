@@ -22,7 +22,6 @@ import org.parabuild.ci.object.SystemProperty;
 import org.parabuild.ci.remote.AgentManager;
 import org.parabuild.ci.services.LoggingService;
 import org.parabuild.ci.services.ServiceManager;
-import org.parabuild.ci.webui.admin.AbstractSystemConfigPanel;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.CommonFlow;

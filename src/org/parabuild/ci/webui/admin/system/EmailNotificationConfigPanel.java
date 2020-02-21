@@ -23,7 +23,6 @@ import org.parabuild.ci.notification.NotificationManagerFactory;
 import org.parabuild.ci.object.SystemProperty;
 import org.parabuild.ci.object.User;
 import org.parabuild.ci.security.SecurityManager;
-import org.parabuild.ci.webui.admin.AbstractSystemConfigPanel;
 import org.parabuild.ci.webui.common.CommonButton;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
