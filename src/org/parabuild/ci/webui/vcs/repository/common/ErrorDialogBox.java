@@ -1,18 +1,18 @@
 package org.parabuild.ci.webui.vcs.repository.common;
 
 import com.google.gwt.user.client.ui.Button;
-import com.google.gwt.user.client.ui.DialogBox;
-import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.Label;
 
 /**
  * A dialog box responsible for displaying error messages.
  */
 @SuppressWarnings("WeakerAccess")
-public final class ErrorDialogBox extends DialogBox {
+public final class ErrorDialogBox extends ParabuildDialogBox {
 
-  private final FlowPanel layoutPanel = new FlowPanel();
-  private final Label lbError = new Label("Unexpected error occurred");
+  private final Label lbErrorCaption = new Label("Error:");
+  private final FlexTable layoutPanel = new FlexTable();
+  private final Label lbErrorText = new Label();
 
 
   /**
@@ -20,31 +20,38 @@ public final class ErrorDialogBox extends DialogBox {
    */
   public ErrorDialogBox() {
 
+    super("Error", false, true);
 
-    super(false, true);
-    super.center();
+    // Create flex table iterator
+    final FlexTableIterator flexTableIterator = new FlexTableIterator(layoutPanel, 2);
 
-    // Set the dialog box's caption.
-    setText("Error");
-
-    // Disable animation.
-    setAnimationEnabled(false);
-
-    // Enable glass background.
-    setGlassEnabled(true);
-
-    // Create a container for fields
-    layoutPanel.add(lbError);
-
-    // Add "Save" button
-    layoutPanel.add(new Button("OK", new OkButtonClickHandler(this)));
+    // Fill the container
+    flexTableIterator.add(lbErrorCaption).add(lbErrorText);
+    flexTableIterator.add(new Button("OK", new OkButtonClickHandler(this)));
 
     // Add layout panel
     setWidget(layoutPanel);
   }
 
 
+  /**
+   * Set error message.
+   *
+   * @param message error message.
+   */
   public void setErrorMessage(final String message) {
-    lbError.setText(message);
+
+    lbErrorText.setText(message);
+  }
+
+
+  @Override
+  public String toString() {
+
+    return "ErrorDialogBox{" +
+            "lbErrorCaption=" + lbErrorCaption +
+            ", layoutPanel=" + layoutPanel +
+            ", lbErrorText=" + lbErrorText +
+            '}';
   }
 }
