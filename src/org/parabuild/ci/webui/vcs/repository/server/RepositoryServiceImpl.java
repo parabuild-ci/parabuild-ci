@@ -22,7 +22,7 @@ public class RepositoryServiceImpl extends RemoteServiceServlet implements Repos
 
     ConfigurationManager.runInHibernate(new TransactionCallback() {
       @Override
-      public Object runInTransaction() throws Exception {
+      public Object runInTransaction() {
 
         // ...
         final VCSRepository vcsRepository = new VCSRepository();
