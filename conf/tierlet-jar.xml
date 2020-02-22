@@ -115,43 +115,43 @@
     <!-- Security configuration -->
     <tierlet-map>
         <name>tierlet:parabuild/admin/system/security</name>
-        <class>org.parabuild.ci.webui.admin.security.SecurityConfigurationPage</class>
+        <class>org.parabuild.ci.webui.admin.system.SecurityConfigurationPage</class>
     </tierlet-map>
 
     <!-- Email configuration -->
     <tierlet-map>
         <name>tierlet:parabuild/admin/system/email</name>
-        <class>org.parabuild.ci.webui.admin.email.EmailConfigurationPage</class>
+        <class>org.parabuild.ci.webui.admin.system.EmailConfigurationPage</class>
     </tierlet-map>
 
     <!-- Global VCS user to email map list page -->
     <tierlet-map>
         <name>tierlet:parabuild/admin/system/email/global/vcs/map</name>
-        <class>org.parabuild.ci.webui.admin.email.GlobalVCSUserMapTablePage</class>
+        <class>org.parabuild.ci.webui.admin.system.GlobalVCSUserMapTablePage</class>
     </tierlet-map>
 
     <!-- Global VCS user to email map edit page -->
     <tierlet-map>
         <name>tierlet:parabuild/admin/system/email/global/vcs/map/edit</name>
-        <class>org.parabuild.ci.webui.admin.email.GlobalVCSUserMapPage</class>
+        <class>org.parabuild.ci.webui.admin.system.GlobalVCSUserMapPage</class>
     </tierlet-map>
 
     <!-- Global VCS user to email map delete page -->
     <tierlet-map>
         <name>tierlet:parabuild/admin/system/email/global/vcs/map/delete</name>
-        <class>org.parabuild.ci.webui.admin.email.GlobalVCSUserMapDeletePage</class>
+        <class>org.parabuild.ci.webui.admin.system.GlobalVCSUserMapDeletePage</class>
     </tierlet-map>
 
     <!-- Appearance configuration -->
     <tierlet-map>
         <name>tierlet:parabuild/admin/system/appearance</name>
-        <class>org.parabuild.ci.webui.admin.appearance.AppearanceConfigurationPage</class>
+        <class>org.parabuild.ci.webui.admin.system.AppearanceConfigurationPage</class>
     </tierlet-map>
 
     <!-- Stability configuration -->
     <tierlet-map>
         <name>tierlet:parabuild/admin/system/stability</name>
-        <class>org.parabuild.ci.webui.admin.stability.StabilityConfigurationPage</class>
+        <class>org.parabuild.ci.webui.admin.system.StabilityConfigurationPage</class>
     </tierlet-map>
 
     <!-- Admin home -->
@@ -188,13 +188,13 @@
     <!-- Admin general system configuration -->
     <tierlet-map>
         <name>tierlet:parabuild/admin/system/imconfig</name>
-        <class>org.parabuild.ci.webui.admin.messaging.InstantMessagingConfigPage</class>
+        <class>org.parabuild.ci.webui.admin.system.InstantMessagingConfigPage</class>
     </tierlet-map>
 
     <!-- Admin LDAP authentication -->
     <tierlet-map>
         <name>tierlet:parabuild/admin/system/ldapconfig</name>
-        <class>org.parabuild.ci.webui.admin.ldap.LDAPConfigurationPage</class>
+        <class>org.parabuild.ci.webui.admin.system.LDAPConfigurationPage</class>
     </tierlet-map>
 
     <!-- Admin system configuration links -->
