@@ -169,12 +169,12 @@
     <!-- GWT -->
     <servlet>
         <servlet-name>VCSRepositoryService</servlet-name>
-        <servlet-class>org.parabuild.ci.webui.vcs.repository.server.RepositoryServiceImpl</servlet-class>
+        <servlet-class>org.parabuild.ci.webui.vcs.repository.server.VCSRepositoryServiceImpl</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>VCSServerService</servlet-name>
-        <servlet-class>org.parabuild.ci.webui.vcs.repository.server.ServerServiceImpl</servlet-class>
+        <servlet-class>org.parabuild.ci.webui.vcs.repository.server.VCSServerServiceImpl</servlet-class>
      </servlet>
 
   <!-- Begin test configuration @start.test.config@
