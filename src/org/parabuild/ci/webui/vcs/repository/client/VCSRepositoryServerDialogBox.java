@@ -15,40 +15,40 @@ import org.parabuild.ci.webui.vcs.repository.common.ParabuildTextBox;
  * Repository dialog box is responsible for editing and displaying Repository information.
  */
 @SuppressWarnings("WeakerAccess")
-public final class RepositoryDialogBox extends ParabuildDialogBox {
+public final class VCSRepositoryServerDialogBox extends ParabuildDialogBox {
 
   private final FlexTable flexTable = new FlexTable();
-  private final Label lbType = new Label("Repository type:");
-  private final Label lbDescription = new Label("Repository description:");
-  private final Label lbName = new Label("Repository name:");
+  private final Label lbType = new Label("Server type:");
+  private final Label lbDescription = new Label("Server description:");
+  private final Label lbName = new Label("Server name:");
   private final TextBox tbDescription = new ParabuildTextBox(100, 70);
   private final TextBox tbName = new ParabuildTextBox(50, 50);
-  private final ListBox lbxType = new ListBox();
+  private final ListBox listBoxType = new ListBox();
 
 
   /**
-   * Creates this {@link RepositoryDialogBox}.
+   * Creates this {@link VCSRepositoryServerDialogBox}.
    *
    * @param captionText the text inside the caption widget.
    */
-  public RepositoryDialogBox(final String captionText) {
+  public VCSRepositoryServerDialogBox(final String captionText) {
 
 
     super(captionText, false, true);
     super.center();
 
     // Create repository type listbox
-    lbxType.addItem("GitHub", "1");
+    listBoxType.addItem("GitHub", "1");
 
 
     // Add fields
     final FlexTableIterator flexTableIterator = new FlexTableIterator(flexTable, 2);
-    flexTableIterator.add(lbType).add(lbxType);
+    flexTableIterator.add(lbType).add(listBoxType);
     flexTableIterator.add(lbName).add(tbName);
     flexTableIterator.add(lbDescription).add(tbDescription);
 
     // Add "Save" button
-    final Button btnSave = new Button("Save", new SaveRepositoryClickHandler(this));
+    final Button btnSave = new Button("Save", new SaveVCSServerClickHandler(this));
     flexTableIterator.add(btnSave);
 
     // Add "Cancel" button
@@ -61,17 +61,19 @@ public final class RepositoryDialogBox extends ParabuildDialogBox {
 
 
   /**
-   * Returns the VO representing the repository being edited.
+   * Returns the VO representing the repository server being edited.
    *
-   * @return the VO representing the repository being edited.
+   * @return the VO representing the repository server being edited.
    */
-  VCSRepositoryClientVO getRepositoryVO() {
+  public VCSServerClientVO getServerVO() {
 
-    final VCSRepositoryClientVO repositoryClientVO = new VCSRepositoryClientVO();
-    repositoryClientVO.setType(Integer.parseInt(lbxType.getSelectedValue()));
-    repositoryClientVO.setDescription(tbDescription.getValue());
-    repositoryClientVO.setName(tbName.getValue());
+    // Create the VO
+    final VCSServerClientVO result = new VCSServerClientVO();
+    result.setType(Integer.parseInt(listBoxType.getSelectedValue()));
+    result.setDescription(tbDescription.getValue());
+    result.setName(tbName.getValue());
 
-    return repositoryClientVO;
+    // Return result
+    return result;
   }
 }

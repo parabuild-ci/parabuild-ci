@@ -6,19 +6,19 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.RootPanel;
 
 /**
- * A click handler to launch the {@link RepositoryDialogBox}.
+ * A click handler to launch the {@link VCSRepositoryDialogBox}.
  */
-final class AddRepositoryClickHandler implements ClickHandler {
+final class AddVCSRepositoryClickHandler implements ClickHandler {
 
   /**
-   * Launches the {@link RepositoryDialogBox}.
+   * Launches the {@link VCSRepositoryDialogBox}.
    *
    * @param event the click event.
    */
   @Override
   public void onClick(final ClickEvent event) {
 
-    final RepositoryDialogBox repositoryDialogBox = new RepositoryDialogBox("Add Repository");
+    final VCSRepositoryDialogBox repositoryDialogBox = new VCSRepositoryDialogBox("Add Repository");
     RootPanel.get().add(repositoryDialogBox);
     repositoryDialogBox.center();
     repositoryDialogBox.show();

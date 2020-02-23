@@ -5,9 +5,9 @@ import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.TransactionCallback;
 import org.parabuild.ci.object.VCSRepository;
 import org.parabuild.ci.webui.vcs.repository.client.VCSRepositoryClientVO;
-import org.parabuild.ci.webui.vcs.repository.client.RepositoryService;
+import org.parabuild.ci.webui.vcs.repository.client.VCSRepositoryService;
 
-public class VCSRepositoryServiceImpl extends RemoteServiceServlet implements RepositoryService {
+public class VCSRepositoryServiceImpl extends RemoteServiceServlet implements VCSRepositoryService {
 
   private static final long serialVersionUID = 2497764302106094743L;
 

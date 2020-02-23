@@ -9,17 +9,17 @@ import org.parabuild.ci.webui.vcs.repository.common.ErrorDialogBox;
 /**
  * A click handler for "Save" button.
  */
-final class SaveServerClickHandler implements ClickHandler {
+final class SaveVCSServerClickHandler implements ClickHandler {
 
-  private final RepositoryServerDialogBox repositoryServerDialogBox;
+  private final VCSRepositoryServerDialogBox repositoryServerDialogBox;
 
 
   /**
-   * Creates {@link SaveServerClickHandler}.
+   * Creates {@link SaveVCSServerClickHandler}.
    *
    * @param repositoryServerDialogBox the dialog box for editing repository information.
    */
-  SaveServerClickHandler(final RepositoryServerDialogBox repositoryServerDialogBox) {
+  SaveVCSServerClickHandler(final VCSRepositoryServerDialogBox repositoryServerDialogBox) {
     this.repositoryServerDialogBox = repositoryServerDialogBox;
   }
 

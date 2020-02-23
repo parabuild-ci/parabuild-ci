@@ -7,7 +7,7 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
  * An RPC service interface.
  */
 @RemoteServiceRelativePath("service/repository")
-public interface RepositoryService extends RemoteService {
+public interface VCSRepositoryService extends RemoteService {
 
   /**
    * Returns a repository by its ID.

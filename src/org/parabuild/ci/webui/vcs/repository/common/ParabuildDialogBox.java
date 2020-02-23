@@ -1,7 +1,7 @@
 package org.parabuild.ci.webui.vcs.repository.common;
 
 import com.google.gwt.user.client.ui.DialogBox;
-import org.parabuild.ci.webui.vcs.repository.client.RepositoryDialogBox;
+import org.parabuild.ci.webui.vcs.repository.client.VCSRepositoryDialogBox;
 
 /**
  * Reusable DialogBox. It has Parabuild "form" style.
@@ -10,7 +10,7 @@ import org.parabuild.ci.webui.vcs.repository.client.RepositoryDialogBox;
 public abstract class ParabuildDialogBox extends DialogBox {
 
   /**
-   * Creates this {@link RepositoryDialogBox}.
+   * Creates this {@link VCSRepositoryDialogBox}.
    *
    * @param captionText the text inside the caption widget.
    * @param autoHide    <code>true</code> if the dialog should be automatically

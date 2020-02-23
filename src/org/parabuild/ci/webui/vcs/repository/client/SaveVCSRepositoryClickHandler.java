@@ -9,17 +9,17 @@ import org.parabuild.ci.webui.vcs.repository.common.ErrorDialogBox;
 /**
  * A click handler for "Save" button.
  */
-final class SaveRepositoryClickHandler implements ClickHandler {
+final class SaveVCSRepositoryClickHandler implements ClickHandler {
 
-  private final RepositoryDialogBox repositoryDialogBox;
+  private final VCSRepositoryDialogBox repositoryDialogBox;
 
 
   /**
-   * Creates {@link SaveRepositoryClickHandler}.
+   * Creates {@link SaveVCSRepositoryClickHandler}.
    *
    * @param repositoryDialogBox the dialog box for editing repository information.
    */
-  SaveRepositoryClickHandler(final RepositoryDialogBox repositoryDialogBox) {
+  SaveVCSRepositoryClickHandler(final VCSRepositoryDialogBox repositoryDialogBox) {
     this.repositoryDialogBox = repositoryDialogBox;
   }
 
@@ -33,7 +33,7 @@ final class SaveRepositoryClickHandler implements ClickHandler {
   public void onClick(final ClickEvent event) {
 
     // (1) Create the client proxy.
-    final RepositoryServiceAsync repositoryService = GWT.create(RepositoryService.class);
+    final VCSRepositoryServiceAsync repositoryService = GWT.create(VCSRepositoryService.class);
 
     // (2) Create an asynchronous callback to handle the result.
     final AsyncCallback callback = new AsyncCallback() {
