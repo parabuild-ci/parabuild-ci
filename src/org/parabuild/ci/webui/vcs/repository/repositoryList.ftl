@@ -38,7 +38,7 @@
             <tr>
                 <td>${repository.name}</td>
                 <td>${repository.typeAsString}</td>
-                <td>${repository.path}</td>
+                <td></td>
                 <#if mode == "admin">
                     <td><@s.action name="Edit"/> | <@s.action name="Delete"/></td>
                 </#if>
