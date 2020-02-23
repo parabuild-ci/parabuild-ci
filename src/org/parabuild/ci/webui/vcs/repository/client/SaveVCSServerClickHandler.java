@@ -52,6 +52,7 @@ final class SaveVCSServerClickHandler implements ClickHandler {
       // Show error dialog
       final ErrorDialogBox errorDialogBox = new ErrorDialogBox();
       errorDialogBox.setErrorMessage(caught.getMessage());
+      errorDialogBox.center();
       errorDialogBox.show();
     }
 

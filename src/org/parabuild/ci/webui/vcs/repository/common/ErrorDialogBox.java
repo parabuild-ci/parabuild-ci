@@ -22,6 +22,9 @@ public final class ErrorDialogBox extends ParabuildDialogBox {
 
     super("Error", false, true);
 
+    // Appearance
+    lbErrorCaption.addStyleName("error");
+
     // Create flex table iterator
     final FlexTableIterator flexTableIterator = new FlexTableIterator(layoutPanel, 2);
 
