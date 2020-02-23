@@ -2,14 +2,19 @@ package org.parabuild.ci.webui.vcs.repository.common;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.ui.DialogBox;
 
+/**
+ * A {@link ClickHandler} for a "OK" button. Just closes the dialog the button belongs to.
+ */
 public final class OkButtonClickHandler implements ClickHandler {
 
-  private final ErrorDialogBox errorDialogBox;
+  private final DialogBox dialogBox;
 
 
-  public OkButtonClickHandler(final ErrorDialogBox errorDialogBox) {
-    this.errorDialogBox = errorDialogBox;
+  public OkButtonClickHandler(final DialogBox dialogBox) {
+
+    this.dialogBox = dialogBox;
   }
 
 
@@ -20,6 +25,7 @@ public final class OkButtonClickHandler implements ClickHandler {
    */
   @Override
   public void onClick(final ClickEvent event) {
-    errorDialogBox.hide(true);
+
+    dialogBox.hide(true);
   }
 }
