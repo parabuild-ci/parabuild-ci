@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: 'Lato';
-    font-style: bold;
+    font-style: normal;
     font-weight: 700;
     src: url('http://themes.googleusercontent.com/static/fonts/lato/v5/sBtfDPlEIwvKKU53nAG7AQ.eot');
     src: local('Lato Bold'), local('Lato-Bold'), url('http://themes.googleusercontent.com/static/fonts/lato/v5/sBtfDPlEIwvKKU53nAG7AQ.eot') format('embedded-opentype'), url('http://themes.googleusercontent.com/static/fonts/lato/v5/wkfQbvfT_02e2IWO3yYueQ.woff') format('woff');
@@ -960,3 +960,12 @@ div.dialogTopCenterInner div.Caption {
 .gwt-DialogBox {
     background: #fdfdfd;
 }
+
+/* Caption in error dialog */
+.gwt-Label .error {
+    background-color: #f0f0f0;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
