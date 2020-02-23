@@ -23,7 +23,7 @@ public final class VCSRepositoryDialogBox extends ParabuildDialogBox {
   private final Label lbName = new Label("Repository name:");
   private final TextBox tbDescription = new ParabuildTextBox(100, 70);
   private final TextBox tbName = new ParabuildTextBox(50, 50);
-  private final ListBox lbxType = new ListBox();
+  private final ListBox lboxType = new ListBox();
 
 
   /**
@@ -38,12 +38,12 @@ public final class VCSRepositoryDialogBox extends ParabuildDialogBox {
     super.center();
 
     // Create repository type listbox
-    lbxType.addItem("GitHub", "1");
+    lboxType.addItem("GitHub", "1");
 
 
     // Add fields
     final FlexTableIterator flexTableIterator = new FlexTableIterator(flexTable, 2);
-    flexTableIterator.add(lbType).add(lbxType);
+    flexTableIterator.add(lbType).add(lboxType);
     flexTableIterator.add(lbName).add(tbName);
     flexTableIterator.add(lbDescription).add(tbDescription);
 
@@ -68,7 +68,7 @@ public final class VCSRepositoryDialogBox extends ParabuildDialogBox {
   VCSRepositoryClientVO getRepositoryVO() {
 
     final VCSRepositoryClientVO repositoryClientVO = new VCSRepositoryClientVO();
-    repositoryClientVO.setType(Integer.parseInt(lbxType.getSelectedValue()));
+    repositoryClientVO.setType(Integer.parseInt(lboxType.getSelectedValue()));
     repositoryClientVO.setDescription(tbDescription.getValue());
     repositoryClientVO.setName(tbName.getValue());
 
