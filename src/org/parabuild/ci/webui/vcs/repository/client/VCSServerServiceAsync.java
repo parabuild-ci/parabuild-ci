@@ -10,4 +10,13 @@ public interface VCSServerServiceAsync {
    * @param serverClientVO the VO representation of a server to save to the database.
    */
   void saveServer(VCSServerClientVO serverClientVO, AsyncCallback<Void> async);
+
+  /**
+   * Returns a list of VCSServers.
+   *
+   * @return a list of VCSServers.
+   */
+  void getVCSServers(AsyncCallback<VCSServerClientVO[]> async);
+
+  void getVCSServerTypes(AsyncCallback<VCSServerType[]> async);
 }

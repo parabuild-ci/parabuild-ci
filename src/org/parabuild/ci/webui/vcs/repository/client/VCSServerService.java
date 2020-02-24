@@ -15,4 +15,13 @@ public interface VCSServerService extends RemoteService {
    * @param serverClientVO the VO representation of a repository to save to the database.
    */
   void saveServer(VCSServerClientVO serverClientVO);
+
+  /**
+   * Returns a list of VCSServers.
+   *
+   * @return a list of VCSServers.
+   */
+  VCSServerClientVO[] getVCSServers();
+
+  VCSServerType[] getVCSServerTypes();
 }

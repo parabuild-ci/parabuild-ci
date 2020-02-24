@@ -29,6 +29,7 @@ public class VCSRepositoryVO implements IsSerializable {
    * Repository description.
    */
   private String description;
+  private String serverName;
 
 
   /**
@@ -96,10 +97,24 @@ public class VCSRepositoryVO implements IsSerializable {
   }
 
 
+  public void setServerName(final String serverName) {
+    this.serverName = serverName;
+  }
+
+
+  public String getServerName() {
+    return serverName;
+  }
+
+
+  @Override
   public String toString() {
-    return "RepositoryVO{" +
+    return "VCSRepositoryVO{" +
             "id=" + id +
+            ", type=" + type +
             ", name='" + name + '\'' +
+            ", description='" + description + '\'' +
+            ", serverName='" + serverName + '\'' +
             '}';
   }
 }

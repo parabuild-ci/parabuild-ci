@@ -17,14 +17,6 @@ public final class CancelButtonClickHandlerTest extends TestCase {
 
 
   /**
-   * No-arg constructor to enable serialization. This method
-   * is not intended to be used by mere mortals without calling setName().
-   */
-  public CancelButtonClickHandlerTest() {
-  }
-
-
-  /**
    * Constructs a test case with the given name.
    */
   public CancelButtonClickHandlerTest(final String name) {

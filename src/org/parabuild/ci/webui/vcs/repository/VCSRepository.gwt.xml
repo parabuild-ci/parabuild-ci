@@ -18,4 +18,6 @@
 
   <!-- RPC Service -->
   <servlet path="/service/repository" class="org.parabuild.ci.webui.vcs.repository.server.VCSRepositoryServiceImpl"/>
+
+  <servlet path="/service/server" class="org.parabuild.ci.webui.vcs.repository.server.VCSServerServiceImpl"/>
 </module>

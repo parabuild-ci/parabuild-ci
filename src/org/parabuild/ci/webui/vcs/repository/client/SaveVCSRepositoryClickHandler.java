@@ -3,6 +3,7 @@ package org.parabuild.ci.webui.vcs.repository.client;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.DialogBox;
 import org.parabuild.ci.webui.vcs.repository.common.ErrorDialogBox;
@@ -78,6 +79,9 @@ final class SaveVCSRepositoryClickHandler implements ClickHandler {
 
       // Close the dialog
       dialogBox.hide();
+
+      // Refresh
+      Window.Location.reload();
     }
   }
 }

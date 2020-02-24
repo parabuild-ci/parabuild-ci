@@ -1,4 +1,4 @@
-package org.parabuild.ci.webui.vcs.repository;
+package org.parabuild.ci.repository;
 
 import static org.parabuild.ci.versioncontrol.VersionControlSystem.vcsToString;
 

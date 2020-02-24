@@ -5,6 +5,7 @@ import org.apache.struts2.interceptor.SessionAware;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.TransactionCallback;
 import org.parabuild.ci.object.VCSRepository;
+import org.parabuild.ci.object.VCSServer;
 
 import java.util.Collections;
 import java.util.LinkedList;
@@ -79,20 +80,25 @@ public final class VCSRepositoryListAction extends ParabuildActionSupport implem
       @Override
       public Object runInTransaction() throws Exception {
 
-        final Query q = session.createQuery("select repo from VCSRepository repo where repo.deleted = no");
+        final Query q = session.createQuery("select srv, repo from VCSServer srv, VCSRepository repo where srv.id = repo.serverId and repo.deleted = no and srv.deleted = no");
         q.setCacheable(true);
 
         final List list = q.list();
         for (int i = 0; i < list.size(); i++) {
 
           // Get the record
-          final VCSRepository repository = (VCSRepository) list.get(i);
+          final Object[] o = (Object[]) list.get(i);
+
+          // Get objects
+          final VCSServer server = (VCSServer) o[0];
+          final VCSRepository repository = (VCSRepository) o[1];
 
           // Create VOs
           final VCSRepositoryVO repositoryVO = new VCSRepositoryVO();
           repositoryVO.setDescription(repository.getDescription());
+          repositoryVO.setServerName(server.getName());
           repositoryVO.setName(repository.getName());
-          repositoryVO.setType(repository.getType());
+          repositoryVO.setType(server.getType());
           repositoryVO.setId(repository.getId());
 
           // Add to the list

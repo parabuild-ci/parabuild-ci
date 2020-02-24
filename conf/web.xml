@@ -282,6 +282,7 @@
   <servlet-mapping>
     <servlet-name>VCSServerService</servlet-name>
     <url-pattern>/server/service/server</url-pattern>
+    <url-pattern>/repository/service/server</url-pattern>
   </servlet-mapping>
 
   <!-- Begin test configuration @start.test.config@

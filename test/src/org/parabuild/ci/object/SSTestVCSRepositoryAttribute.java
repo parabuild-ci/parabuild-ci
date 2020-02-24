@@ -2,7 +2,7 @@ package org.parabuild.ci.object;
 
 import org.parabuild.ci.ServersideTestCase;
 import org.parabuild.ci.configuration.TransactionCallback;
-import org.parabuild.ci.repository.RepositoryManager;
+import org.parabuild.ci.repository.VCSRepositoryManager;
 
 import static org.parabuild.ci.configuration.ConfigurationManager.runInHibernate;
 
@@ -71,7 +71,7 @@ public final class SSTestVCSRepositoryAttribute extends ServersideTestCase {
   public void setUp() throws Exception {
     super.setUp();
 
-    final RepositoryManager repositoryManager = RepositoryManager.getInstance();
+    final VCSRepositoryManager repositoryManager = VCSRepositoryManager.getInstance();
 
     // Stores a new object in the the DB
     final Integer[] txResults = (Integer[]) runInHibernate(new TransactionCallback() {

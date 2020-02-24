@@ -2,7 +2,10 @@ package org.parabuild.ci.webui.vcs.repository.client;
 
 import com.google.gwt.user.client.rpc.IsSerializable;
 
-public class VCSServerClientVO implements IsSerializable {
+/**
+ * A client VO representing a VCS server.
+ */
+public final class VCSServerClientVO implements IsSerializable {
 
   /**
    * Repository ID.
@@ -18,6 +21,11 @@ public class VCSServerClientVO implements IsSerializable {
    * Repository type.
    */
   private int type;
+
+  /**
+   * Repo type as a String.
+   */
+  private String typeAsString;
 
   /**
    * Repository description.
@@ -65,12 +73,23 @@ public class VCSServerClientVO implements IsSerializable {
   }
 
 
+  public String getTypeAsString() {
+    return typeAsString;
+  }
+
+
+  public void setTypeAsString(final String typeAsString) {
+    this.typeAsString = typeAsString;
+  }
+
+
   @Override
   public String toString() {
     return "VCSServerClientVO{" +
             "id=" + id +
             ", name='" + name + '\'' +
             ", type=" + type +
+            ", typeAsString='" + typeAsString + '\'' +
             ", description='" + description + '\'' +
             '}';
   }

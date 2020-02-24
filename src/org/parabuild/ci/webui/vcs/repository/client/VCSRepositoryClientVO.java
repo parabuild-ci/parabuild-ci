@@ -7,10 +7,16 @@ import com.google.gwt.user.client.rpc.IsSerializable;
  */
 public class VCSRepositoryClientVO implements IsSerializable {
 
+
   /**
    * Repository ID.
    */
   private Integer id;
+
+  /**
+   * Server ID.
+   */
+  private Integer serverId;
 
   /**
    * Repository name.
@@ -22,10 +28,27 @@ public class VCSRepositoryClientVO implements IsSerializable {
    */
   private String description;
 
+
   /**
-   * Repository type.
+   * Sets a parent server ID.
+   *
+   * @param serverId the server ID to set.
    */
-  private int type;
+  public void setServerId(final Integer serverId) {
+
+    this.serverId = serverId;
+  }
+
+
+  /**
+   * Returns a parent server ID.
+   *
+   * @return the parent server ID.
+   */
+  public Integer getServerId() {
+
+    return serverId;
+  }
 
 
   /**
@@ -72,18 +95,6 @@ public class VCSRepositoryClientVO implements IsSerializable {
   }
 
 
-  public int getType() {
-
-    return type;
-  }
-
-
-  public void setType(final int type) {
-
-    this.type = type;
-  }
-
-
   public String getDescription() {
 
     return description;
@@ -98,12 +109,11 @@ public class VCSRepositoryClientVO implements IsSerializable {
 
   @Override
   public String toString() {
-
     return "VCSRepositoryClientVO{" +
             "id=" + id +
+            ", serverId=" + serverId +
             ", name='" + name + '\'' +
             ", description='" + description + '\'' +
-            ", type=" + type +
             '}';
   }
 }

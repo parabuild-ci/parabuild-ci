@@ -1,6 +1,7 @@
 package org.parabuild.ci.repository;
 
 import net.sf.hibernate.HibernateException;
+import net.sf.hibernate.Query;
 import net.sf.hibernate.Session;
 import org.parabuild.ci.configuration.TransactionCallback;
 import org.parabuild.ci.object.VCSRepository;
@@ -9,22 +10,23 @@ import org.parabuild.ci.object.VCSServer;
 import org.parabuild.ci.object.VCSServerAttribute;
 
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 import static org.parabuild.ci.configuration.ConfigurationManager.runInHibernate;
 
 /**
  * Persistence manager for repository management functionality.
  */
-public final class RepositoryManager {
+public final class VCSRepositoryManager {
 
-  final static RepositoryManager repositoryManager = new RepositoryManager();
+  final static VCSRepositoryManager instance = new VCSRepositoryManager();
 
 
   /**
    * Returns the singleton.
    */
-  public static RepositoryManager getInstance() {
-    return repositoryManager;
+  public static VCSRepositoryManager getInstance() {
+    return instance;
   }
 
 
@@ -120,8 +122,42 @@ public final class RepositoryManager {
     return (VCSRepositoryAttribute) runInHibernate(new TransactionCallback() {
       @Override
       public Object runInTransaction() throws Exception {
+
         // Load
         return session.load(VCSServerAttribute.class, id);
+      }
+    });
+  }
+
+
+  public VCSServerVO[] getVCSServers() {
+
+    return (VCSServerVO[]) runInHibernate(new TransactionCallback() {
+
+      @Override
+      public Object runInTransaction() throws Exception {
+
+        // Query servers
+        final Query query = session.createQuery("select srv from VCSServer srv order by srv.name");
+        query.setCacheable(true);
+
+        // List
+        final List<VCSServer> list = query.list();
+
+        // Convert to VO array
+        final VCSServerVO[] result = new VCSServerVO[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+
+          final VCSServer vcsServer = list.get(i);
+          final VCSServerVO vcsServerVO = new VCSServerVO();
+          vcsServerVO.setName(vcsServer.getName());
+          vcsServerVO.setType(vcsServer.getType());
+          vcsServerVO.setId(vcsServer.getId());
+          result[i] = vcsServerVO;
+        }
+
+        //
+        return result;
       }
     });
   }

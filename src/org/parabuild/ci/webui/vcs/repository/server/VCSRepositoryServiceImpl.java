@@ -7,6 +7,8 @@ import org.parabuild.ci.object.VCSRepository;
 import org.parabuild.ci.webui.vcs.repository.client.VCSRepositoryClientVO;
 import org.parabuild.ci.webui.vcs.repository.client.VCSRepositoryService;
 
+import static org.parabuild.ci.configuration.ConfigurationManager.runInHibernate;
+
 public class VCSRepositoryServiceImpl extends RemoteServiceServlet implements VCSRepositoryService {
 
   private static final long serialVersionUID = 2497764302106094743L;
@@ -18,17 +20,15 @@ public class VCSRepositoryServiceImpl extends RemoteServiceServlet implements VC
   @Override
   public void saveRepository(final VCSRepositoryClientVO repositoryVO) {
 
-    // ... Implement
+    runInHibernate(new TransactionCallback() {
 
-    ConfigurationManager.runInHibernate(new TransactionCallback() {
       @Override
       public Object runInTransaction() {
 
-        // ...
         final VCSRepository vcsRepository = new VCSRepository();
-        vcsRepository.setName(repositoryVO.getName());
-        vcsRepository.setType(repositoryVO.getType());
         vcsRepository.setDescription(repositoryVO.getDescription());
+        vcsRepository.setServerId(repositoryVO.getServerId());
+        vcsRepository.setName(repositoryVO.getName());
 
         ConfigurationManager.getInstance().saveObject(vcsRepository);
 

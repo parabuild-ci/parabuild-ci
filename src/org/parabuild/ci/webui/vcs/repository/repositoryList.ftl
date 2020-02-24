@@ -27,7 +27,8 @@
         <tr>
             <th>Repository Server</th>
             <th>Repository Type</th>
-            <th>Repository Details</th>
+            <th>Repository Name</th>
+            <th>Repository Description</th>
             <#if mode == "admin">
                 <th>Commands</th>
             </#if>
@@ -36,9 +37,10 @@
 
         <#list repositoryList as repository>
             <tr>
-                <td>${repository.name}</td>
+                <td>${repository.serverName}</td>
                 <td>${repository.typeAsString}</td>
-                <td></td>
+                <td>${repository.name}</td>
+                <td>${repository.description}</td>
                 <#if mode == "admin">
                     <td><@s.action name="Edit"/> | <@s.action name="Delete"/></td>
                 </#if>
@@ -48,6 +50,7 @@
         <#-- Add empty row if the table is empty -->
         <#if !repositoryList?has_content>
             <tr>
+                <td>&nbsp</td>
                 <td>&nbsp</td>
                 <td>&nbsp</td>
                 <td>&nbsp</td>
