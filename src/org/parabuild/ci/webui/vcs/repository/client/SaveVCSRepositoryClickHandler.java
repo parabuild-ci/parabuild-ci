@@ -47,7 +47,7 @@ final class SaveVCSRepositoryClickHandler implements ClickHandler {
   }
 
 
-  private static class SaveDialogAsyncCallback implements AsyncCallback {
+  private static class SaveDialogAsyncCallback<Void> implements AsyncCallback<Void> {
 
 
     private final DialogBox dialogBox;
