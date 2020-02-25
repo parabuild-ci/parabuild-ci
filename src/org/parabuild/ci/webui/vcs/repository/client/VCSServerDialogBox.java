@@ -19,7 +19,7 @@ import org.parabuild.ci.webui.vcs.repository.common.SaveButton;
  * Repository dialog box is responsible for editing and displaying Repository information.
  */
 @SuppressWarnings("WeakerAccess")
-public final class VCSRepositoryServerDialogBox extends ParabuildDialogBox {
+public final class VCSServerDialogBox extends ParabuildDialogBox {
 
   private final FlexTable flexTable = new FlexTable();
   private final Label lbType = new Label("Server type:");
@@ -31,11 +31,11 @@ public final class VCSRepositoryServerDialogBox extends ParabuildDialogBox {
 
 
   /**
-   * Creates this {@link VCSRepositoryServerDialogBox}.
+   * Creates this {@link VCSServerDialogBox}.
    *
    * @param captionText the text inside the caption widget.
    */
-  public VCSRepositoryServerDialogBox(final String captionText) {
+  public VCSServerDialogBox(final String captionText) {
 
 
     super(captionText, false, true);

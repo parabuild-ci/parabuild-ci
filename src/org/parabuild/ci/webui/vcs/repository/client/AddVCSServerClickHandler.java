@@ -6,19 +6,19 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.RootPanel;
 
 /**
- * A click handler to launch the {@link VCSRepositoryServerDialogBox}.
+ * A click handler to launch the {@link VCSServerDialogBox}.
  */
 final class AddVCSServerClickHandler implements ClickHandler {
 
   /**
-   * Launches the {@link VCSRepositoryServerDialogBox}.
+   * Launches the {@link VCSServerDialogBox}.
    *
    * @param event the click event.
    */
   @Override
   public void onClick(final ClickEvent event) {
 
-    final VCSRepositoryServerDialogBox repositoryServerDialogBox = new VCSRepositoryServerDialogBox("Add Server");
+    final VCSServerDialogBox repositoryServerDialogBox = new VCSServerDialogBox("Add Server");
     RootPanel.get().add(repositoryServerDialogBox);
     repositoryServerDialogBox.center();
     repositoryServerDialogBox.show();

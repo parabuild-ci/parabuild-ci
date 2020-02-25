@@ -12,7 +12,7 @@ import org.parabuild.ci.webui.vcs.repository.common.ErrorDialogBox;
  */
 final class SaveVCSServerClickHandler implements ClickHandler {
 
-  private final VCSRepositoryServerDialogBox repositoryServerDialogBox;
+  private final VCSServerDialogBox repositoryServerDialogBox;
 
 
   /**
@@ -20,7 +20,7 @@ final class SaveVCSServerClickHandler implements ClickHandler {
    *
    * @param repositoryServerDialogBox the dialog box for editing repository information.
    */
-  SaveVCSServerClickHandler(final VCSRepositoryServerDialogBox repositoryServerDialogBox) {
+  SaveVCSServerClickHandler(final VCSServerDialogBox repositoryServerDialogBox) {
     this.repositoryServerDialogBox = repositoryServerDialogBox;
   }
 
