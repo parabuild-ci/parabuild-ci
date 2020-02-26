@@ -6,9 +6,9 @@ package org.parabuild.ci.common;
 public final class VersionControlUtil {
 
   /**
-   * String lookup table.
+   * String lookup table indexed by the actual VCS
    */
-  private static final String[] STRING_VCS_NAME = createStringVCSNames();
+  private static final String[] VCS_NAMES = createStringVCSNames();
 
 
   private VersionControlUtil() {
@@ -53,10 +53,10 @@ public final class VersionControlUtil {
    */
   public static final String vcsToString(final int code) throws IllegalArgumentException {
 
-    if (code < 0 || code >= STRING_VCS_NAME.length) {
+    if (code < 0 || code >= VCS_NAMES.length) {
       throw new IllegalArgumentException("VCS code " + code + " is invalid");
     }
 
-    return STRING_VCS_NAME[code];
+    return VCS_NAMES[code];
   }
 }
