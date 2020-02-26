@@ -15,11 +15,11 @@ package org.parabuild.ci.installer;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.common.CommandStoppedException;
-import org.parabuild.ci.common.IoUtils;
-import org.parabuild.ci.common.NullOutputStream;
-import org.parabuild.ci.common.RuntimeUtils;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.NullOutputStream;
+import org.parabuild.ci.util.RuntimeUtils;
+import org.parabuild.ci.util.StringUtils;
 
 import java.io.File;
 import java.io.IOException;

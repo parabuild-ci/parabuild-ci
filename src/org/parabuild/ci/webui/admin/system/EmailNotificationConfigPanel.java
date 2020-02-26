@@ -13,8 +13,8 @@
  */
 package org.parabuild.ci.webui.admin.system;
 
-import org.parabuild.ci.common.MailUtils;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.MailUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.ConfigurationConstants;
 import org.parabuild.ci.configuration.SystemConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;

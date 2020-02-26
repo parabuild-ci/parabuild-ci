@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.object;
 
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.StringUtils;
 
 import java.io.Serializable;
 

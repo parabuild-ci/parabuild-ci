@@ -16,7 +16,7 @@ package org.parabuild.ci.versioncontrol;
 import java.util.*;
 import java.util.regex.*;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 
 /**
  * Responsible for creating ClearCase storage names from templates.

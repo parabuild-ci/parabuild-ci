@@ -20,7 +20,7 @@ import javax.servlet.http.*;
 import com.sun.syndication.feed.synd.SyndFeed;
 import com.sun.syndication.io.FeedException;
 import com.sun.syndication.io.SyndFeedOutput;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.object.User;
 import org.parabuild.ci.security.AccessForbiddenException;
 import org.parabuild.ci.webui.common.Pages;

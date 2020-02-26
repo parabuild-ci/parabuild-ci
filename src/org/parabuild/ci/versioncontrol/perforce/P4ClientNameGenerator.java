@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.versioncontrol.perforce;
 
-import org.parabuild.ci.common.BuildException;
+import org.parabuild.ci.util.BuildException;
 
 /**
  * Created by IntelliJ IDEA.

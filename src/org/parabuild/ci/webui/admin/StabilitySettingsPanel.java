@@ -17,7 +17,7 @@ import viewtier.ui.*;
 import org.parabuild.ci.webui.common.TableHeaderLabel;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.WebuiUtils;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.StringUtils;
 
 import java.util.List;
 

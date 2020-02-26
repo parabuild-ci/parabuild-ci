@@ -16,7 +16,7 @@ package org.parabuild.ci.versioncontrol;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.BuildScriptGenerator;
-import org.parabuild.ci.common.BuildException;
+import org.parabuild.ci.util.BuildException;
 import org.parabuild.ci.error.ErrorManager;
 import org.parabuild.ci.error.ErrorManagerFactory;
 import org.parabuild.ci.object.BuildConfig;

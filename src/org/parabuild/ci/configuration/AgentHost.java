@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.configuration;
 
-import org.parabuild.ci.common.ArgumentValidator;
+import org.parabuild.ci.util.ArgumentValidator;
 import org.parabuild.ci.object.AgentConfig;
 import org.parabuild.ci.realm.RealmConstants;
 

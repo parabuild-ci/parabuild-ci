@@ -19,7 +19,7 @@ import net.sf.hibernate.Session;
 import net.sf.hibernate.type.Type;
 import org.parabuild.ci.archive.ArchiveManager;
 import org.parabuild.ci.archive.ArchiveManagerFactory;
-import org.parabuild.ci.common.ArgumentValidator;
+import org.parabuild.ci.util.ArgumentValidator;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.TransactionCallback;
 import org.parabuild.ci.object.BuildRunAttribute;

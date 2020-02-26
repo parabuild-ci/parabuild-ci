@@ -19,7 +19,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.ServersideTestCase;
 import org.parabuild.ci.TestHelper;
-import org.parabuild.ci.common.XMLUtils;
+import org.parabuild.ci.util.XMLUtils;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 

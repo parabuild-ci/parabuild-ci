@@ -14,8 +14,8 @@
 package org.parabuild.ci.build.result;
 
 import org.parabuild.ci.build.BuildScriptGenerator;
-import org.parabuild.ci.common.NamedProperty;
-import org.parabuild.ci.common.SettingResolver;
+import org.parabuild.ci.util.NamedProperty;
+import org.parabuild.ci.util.SettingResolver;
 import org.parabuild.ci.object.BuildRun;
 
 import java.text.SimpleDateFormat;

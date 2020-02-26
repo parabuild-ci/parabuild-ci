@@ -14,7 +14,7 @@
 package org.parabuild.ci.remote;
 
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.StringUtils;
 
 import java.io.BufferedWriter;
 import java.io.IOException;

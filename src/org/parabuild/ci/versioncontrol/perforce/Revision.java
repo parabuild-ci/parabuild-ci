@@ -13,8 +13,8 @@
  */
 package org.parabuild.ci.versioncontrol.perforce;
 
-import org.parabuild.ci.common.ArgumentValidator;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.ArgumentValidator;
+import org.parabuild.ci.util.StringUtils;
 
 /**
  */

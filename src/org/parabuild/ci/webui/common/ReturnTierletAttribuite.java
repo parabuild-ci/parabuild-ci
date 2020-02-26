@@ -15,7 +15,7 @@ package org.parabuild.ci.webui.common;
 
 import java.io.*;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 import viewtier.ui.*;
 
 /**

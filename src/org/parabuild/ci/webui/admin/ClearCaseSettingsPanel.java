@@ -14,8 +14,8 @@
 package org.parabuild.ci.webui.admin;
 
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.IoUtils;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.remote.NoLiveAgentsException;

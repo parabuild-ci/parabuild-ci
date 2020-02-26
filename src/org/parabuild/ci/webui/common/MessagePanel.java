@@ -14,8 +14,8 @@
 package org.parabuild.ci.webui.common;
 
 import com.dautelle.util.Enum;
-import org.parabuild.ci.common.CommonConstants;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.CommonConstants;
+import org.parabuild.ci.util.StringUtils;
 import viewtier.ui.Border;
 import viewtier.ui.Color;
 import viewtier.ui.Component;

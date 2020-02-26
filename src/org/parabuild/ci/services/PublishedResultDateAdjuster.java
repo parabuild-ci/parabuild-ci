@@ -15,7 +15,7 @@ package org.parabuild.ci.services;
 
 import java.util.*;
 
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.ResultGroupManager;
 import org.parabuild.ci.error.*;
 import org.parabuild.ci.error.Error;

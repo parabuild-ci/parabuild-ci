@@ -20,9 +20,9 @@ import java.io.Serializable;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import org.parabuild.ci.common.IoUtils;
-import org.parabuild.ci.common.RuntimeUtils;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.RuntimeUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.ConfigurationConstants;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;

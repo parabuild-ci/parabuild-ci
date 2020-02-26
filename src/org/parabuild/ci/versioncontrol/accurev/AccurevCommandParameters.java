@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.versioncontrol.accurev;
 
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.StringUtils;
 
 /**
  * Immutable Accurev command parameters.

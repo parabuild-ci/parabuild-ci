@@ -19,7 +19,7 @@ import org.xml.sax.*;
 import com.dautelle.xml.sax.*;
 import com.dautelle.xml.sax.Attributes;
 import com.dautelle.xml.sax.ContentHandler;
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 
 /**
  * Repsonsible for parsing Vault XML output.

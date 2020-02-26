@@ -18,7 +18,7 @@ import java.util.*;
 import org.parabuild.ci.webui.common.CommonLabel;
 import org.parabuild.ci.webui.common.CommonLink;
 import org.parabuild.ci.webui.common.WebuiUtils;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.StringUtils;
 import viewtier.ui.Flow;
 
 

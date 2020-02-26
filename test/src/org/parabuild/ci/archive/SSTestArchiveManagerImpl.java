@@ -19,7 +19,7 @@ import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.ServersideTestCase;
 import org.parabuild.ci.TestHelper;
 import org.parabuild.ci.archive.internal.ArchiveManagerImpl;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.object.BuildConfig;

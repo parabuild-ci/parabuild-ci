@@ -16,7 +16,7 @@ package org.parabuild.ci.remote.internal;
 import java.io.*;
 import java.util.*;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 
 /**
  * This object holds Locale data to pass via Hessian

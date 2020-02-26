@@ -15,7 +15,7 @@ package org.parabuild.ci.process;
 
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-import org.parabuild.ci.common.IoUtils;
+import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.configuration.AgentHost;
 import org.parabuild.ci.object.AgentConfig;
 import org.parabuild.ci.remote.AgentEnvironment;

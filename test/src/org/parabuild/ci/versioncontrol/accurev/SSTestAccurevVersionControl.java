@@ -15,8 +15,8 @@ package org.parabuild.ci.versioncontrol.accurev;
 
 import org.parabuild.ci.TestHelper;
 
-import org.parabuild.ci.common.BuildException;
-import org.parabuild.ci.common.CommandStoppedException;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.CommandStoppedException;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.ChangeList;
 import org.parabuild.ci.object.SourceControlSetting;

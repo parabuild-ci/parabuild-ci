@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.util.List;
 
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.CommandStoppedException;
+import org.parabuild.ci.util.CommandStoppedException;
 
 /**
  * This integface defines PVCS label creator that is

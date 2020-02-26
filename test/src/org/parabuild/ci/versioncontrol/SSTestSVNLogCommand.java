@@ -21,9 +21,9 @@ import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.ServersideTestCase;
 
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.BuildException;
-import org.parabuild.ci.common.CommandStoppedException;
-import org.parabuild.ci.common.RuntimeUtils;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.RuntimeUtils;
 import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.remote.AgentManager;
 
@@ -55,9 +55,9 @@ public class SSTestSVNLogCommand extends ServersideTestCase {
    * Tests that log fails on deleted paths.
    *
    * @throws java.io.IOException
-   * @throws org.parabuild.ci.common.CommandStoppedException
+   * @throws org.parabuild.ci.util.CommandStoppedException
    *
-   * @throws org.parabuild.ci.common.BuildException
+   * @throws org.parabuild.ci.util.BuildException
    *
    */
   public void test_bug734() throws IOException, CommandStoppedException, BuildException, AgentFailureException {

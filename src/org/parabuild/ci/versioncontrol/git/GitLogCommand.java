@@ -16,7 +16,7 @@ package org.parabuild.ci.versioncontrol.git;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.versioncontrol.RepositoryPath;
 

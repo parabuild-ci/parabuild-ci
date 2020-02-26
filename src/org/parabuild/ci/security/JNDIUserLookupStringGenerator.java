@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.security;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 
 /**
  * This class is responsible for generation of user DN used when authenticating a JNDI user.

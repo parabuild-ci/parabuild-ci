@@ -18,7 +18,7 @@ import java.sql.Date;
 import java.util.*;
 import org.apache.commons.logging.*;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 
 /**
  * Bugzilla connector for bugzilla 2.20

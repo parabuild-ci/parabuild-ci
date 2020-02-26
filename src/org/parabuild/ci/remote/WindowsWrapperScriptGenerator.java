@@ -19,7 +19,7 @@ import java.io.StringWriter;
 import java.io.Writer;
 
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.StringUtils;
 
 /**
  * Generates wrapper scripts for windows.

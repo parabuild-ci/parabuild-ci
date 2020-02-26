@@ -15,8 +15,8 @@ package org.parabuild.ci.webui;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.common.FatalConfigurationException;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.FatalConfigurationException;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.object.DisplayGroup;
 import org.parabuild.ci.object.User;
 import org.parabuild.ci.object.UserProperty;

@@ -15,7 +15,7 @@ package org.parabuild.ci.webui.admin.promotion;
 
 import java.util.List;
 
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.object.PromotionPolicy;
 import org.parabuild.ci.promotion.PromotionConfigurationManager;
 import org.parabuild.ci.webui.CommonCommandLinkWithImage;

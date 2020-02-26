@@ -15,7 +15,7 @@ package org.parabuild.ci.statistics;
 
 import org.parabuild.ci.services.BuildFinishedSubscriber;
 import org.parabuild.ci.services.BuildFinishedEvent;
-import org.parabuild.ci.common.ArgumentValidator;
+import org.parabuild.ci.util.ArgumentValidator;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildRun;
 

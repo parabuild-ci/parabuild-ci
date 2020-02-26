@@ -19,10 +19,10 @@ import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.ServersideTestCase;
 import org.parabuild.ci.TestHelper;
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.BuildException;
-import org.parabuild.ci.common.CommandStoppedException;
-import org.parabuild.ci.common.IoUtils;
-import org.parabuild.ci.common.RuntimeUtils;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.RuntimeUtils;
 import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.remote.AgentManager;
 
@@ -58,7 +58,7 @@ public class SSTestSVNUpdateCommand extends ServersideTestCase {
    * checkout path.
    *
    * @throws IOException
-   * @throws org.parabuild.ci.common.CommandStoppedException
+   * @throws org.parabuild.ci.util.CommandStoppedException
    * @throws BuildException
    */
   public void test_bug699() throws IOException, CommandStoppedException, BuildException, AgentFailureException {

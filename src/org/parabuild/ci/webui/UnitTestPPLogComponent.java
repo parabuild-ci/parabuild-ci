@@ -14,7 +14,7 @@
 package org.parabuild.ci.webui;
 
 import org.parabuild.ci.archive.ArchiveManager;
-import org.parabuild.ci.common.IoUtils;
+import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.object.StepLog;
 
 import javax.xml.transform.stream.StreamSource;

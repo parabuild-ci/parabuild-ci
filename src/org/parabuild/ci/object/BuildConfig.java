@@ -16,7 +16,7 @@ package org.parabuild.ci.object;
 import net.sf.hibernate.CallbackException;
 import net.sf.hibernate.Lifecycle;
 import net.sf.hibernate.Session;
-import org.parabuild.ci.common.ArgumentValidator;
+import org.parabuild.ci.util.ArgumentValidator;
 import org.parabuild.ci.versioncontrol.VersionControlSystem;
 
 import java.io.Serializable;

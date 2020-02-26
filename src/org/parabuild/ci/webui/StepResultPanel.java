@@ -16,7 +16,7 @@ package org.parabuild.ci.webui;
 import org.apache.commons.io.FileUtils;
 import org.parabuild.ci.archive.ArchiveEntry;
 import org.parabuild.ci.archive.ArchiveManager;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.error.Error;
 import org.parabuild.ci.error.ErrorManagerFactory;
 import org.parabuild.ci.object.StepResult;

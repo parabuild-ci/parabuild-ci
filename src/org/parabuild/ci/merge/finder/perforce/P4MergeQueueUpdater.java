@@ -17,8 +17,8 @@ import java.util.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import org.parabuild.ci.common.CommandStoppedException;
-import org.parabuild.ci.common.ThreadUtils;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.ThreadUtils;
 import org.parabuild.ci.configuration.BuildRunParticipantVO;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.merge.MergeDAO;

@@ -17,7 +17,7 @@ import java.util.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.merge.MergeManager;
 import org.parabuild.ci.merge.MergeState;
 import org.parabuild.ci.merge.MergeStatus;

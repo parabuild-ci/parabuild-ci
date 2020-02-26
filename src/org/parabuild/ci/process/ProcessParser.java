@@ -16,7 +16,7 @@ package org.parabuild.ci.process;
 import java.io.*;
 import java.util.*;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 
 
 /**

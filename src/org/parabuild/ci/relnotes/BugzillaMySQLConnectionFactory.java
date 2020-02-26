@@ -13,9 +13,9 @@
  */
 package org.parabuild.ci.relnotes;
 
-import org.parabuild.ci.common.ArgumentValidator;
-import org.parabuild.ci.common.IoUtils;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.ArgumentValidator;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
 
 import java.sql.Connection;
 import java.sql.Driver;

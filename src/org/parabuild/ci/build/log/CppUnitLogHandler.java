@@ -30,9 +30,9 @@ import org.xml.sax.SAXException;
 
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.build.SimpleFileArchivedLogFinder;
-import org.parabuild.ci.common.IoUtils;
-import org.parabuild.ci.common.StringUtils;
-import org.parabuild.ci.common.XMLUtils;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.util.XMLUtils;
 import org.parabuild.ci.object.BuildRunAttribute;
 import org.parabuild.ci.object.BuildRunConfig;
 import org.parabuild.ci.object.LogConfig;

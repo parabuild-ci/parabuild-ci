@@ -20,7 +20,7 @@ import org.apache.commons.logging.LogFactory;
 import net.sf.hibernate.HibernateException;
 import net.sf.hibernate.Session;
 import net.sf.hibernate.Transaction;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.StringUtils;
 
 public final class PersistanceUtils implements PersistanceConstants {
 

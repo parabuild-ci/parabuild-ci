@@ -17,7 +17,7 @@ import com.caucho.hessian.client.HessianRuntimeException;
 import com.caucho.hessian.io.HessianProtocolException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.StringUtils;
 
 import java.io.IOException;
 import java.net.ConnectException;

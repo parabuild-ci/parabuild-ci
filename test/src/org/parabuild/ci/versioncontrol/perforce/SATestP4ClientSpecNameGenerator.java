@@ -20,7 +20,7 @@ import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
 import org.parabuild.ci.TestHelper;
-import org.parabuild.ci.common.BuildException;
+import org.parabuild.ci.util.BuildException;
 
 /**
  *

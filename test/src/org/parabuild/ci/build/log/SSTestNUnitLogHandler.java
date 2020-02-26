@@ -22,7 +22,7 @@ import junit.framework.*;
 import org.parabuild.ci.TestHelper;
 import org.parabuild.ci.build.*;
 import org.parabuild.ci.object.*;
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 import com.gargoylesoftware.base.testing.*;
 
 /**

@@ -15,7 +15,7 @@ package org.parabuild.ci.webui.common;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.common.ArgumentValidator;
+import org.parabuild.ci.util.ArgumentValidator;
 import viewtier.ui.Component;
 import viewtier.ui.Label;
 import viewtier.ui.Layout;

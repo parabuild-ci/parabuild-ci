@@ -15,9 +15,9 @@ package org.parabuild.ci.versioncontrol;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.common.ArgumentValidator;
-import org.parabuild.ci.common.StringUtils;
-import org.parabuild.ci.common.ValidationException;
+import org.parabuild.ci.util.ArgumentValidator;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.util.ValidationException;
 
 import java.util.ArrayList;
 import java.util.Iterator;

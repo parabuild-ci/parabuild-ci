@@ -22,9 +22,9 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import org.parabuild.ci.Version;
-import org.parabuild.ci.common.CommandStoppedException;
-import org.parabuild.ci.common.IoUtils;
-import org.parabuild.ci.common.RuntimeUtils;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.RuntimeUtils;
 import org.parabuild.ci.process.OsCommand;
 import org.parabuild.ci.process.TailBufferSize;
 import org.parabuild.ci.remote.AgentEnvironment;

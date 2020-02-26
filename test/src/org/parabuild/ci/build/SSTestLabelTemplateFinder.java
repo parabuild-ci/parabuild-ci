@@ -16,7 +16,7 @@ package org.parabuild.ci.build;
 import junit.framework.*;
 
 import org.parabuild.ci.ServersideTestCase;
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 import org.parabuild.ci.object.*;
 
 /**

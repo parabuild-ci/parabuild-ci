@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.webui.merge;
 
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.merge.MergeManager;
 import org.parabuild.ci.object.MergeConfiguration;
 import org.parabuild.ci.object.Project;

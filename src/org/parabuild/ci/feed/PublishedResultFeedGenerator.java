@@ -22,7 +22,7 @@ import com.sun.syndication.feed.synd.SyndEntryImpl;
 import com.sun.syndication.feed.synd.SyndFeed;
 import com.sun.syndication.feed.synd.SyndFeedImpl;
 import org.parabuild.ci.build.BuildState;
-import org.parabuild.ci.common.BuildStatusURLGenerator;
+import org.parabuild.ci.util.BuildStatusURLGenerator;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.configuration.VerbialBuildResult;

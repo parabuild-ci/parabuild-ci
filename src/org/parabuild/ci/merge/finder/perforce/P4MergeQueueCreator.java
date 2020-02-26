@@ -14,9 +14,9 @@
 package org.parabuild.ci.merge.finder.perforce;
 
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.BuildException;
-import org.parabuild.ci.common.CommandStoppedException;
-import org.parabuild.ci.common.ValidationException;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.ValidationException;
 import org.parabuild.ci.merge.MergeManager;
 import org.parabuild.ci.merge.finder.MergeQueueCreator;
 import org.parabuild.ci.object.ActiveMergeConfiguration;

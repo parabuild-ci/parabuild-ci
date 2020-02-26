@@ -16,8 +16,8 @@ package org.parabuild.ci.process;
 import java.io.*;
 import java.util.*;
 
-import org.parabuild.ci.common.CommandStoppedException;
-import org.parabuild.ci.common.RuntimeUtils;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.RuntimeUtils;
 
 /**
  */

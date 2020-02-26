@@ -19,7 +19,7 @@ import com.install4j.api.context.OverwriteMode;
 import com.install4j.api.context.UserCanceledException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.common.IoUtils;
+import org.parabuild.ci.util.IoUtils;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

@@ -15,8 +15,8 @@ package org.parabuild.ci.webui.admin.system;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.common.StringUtils;
-import org.parabuild.ci.common.ValidationException;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.util.ValidationException;
 import org.parabuild.ci.configuration.ConfigurationConstants;
 import org.parabuild.ci.configuration.LDAPReferralCodeToValueConverter;
 import org.parabuild.ci.configuration.LDAPVersionCodeToValueConverter;

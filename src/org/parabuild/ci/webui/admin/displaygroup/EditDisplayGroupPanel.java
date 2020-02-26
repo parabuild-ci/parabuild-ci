@@ -18,7 +18,7 @@ import org.apache.commons.logging.*;
 
 import org.parabuild.ci.webui.common.*;
 import org.parabuild.ci.object.*;
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 import org.parabuild.ci.error.*;
 import org.parabuild.ci.error.Error;
 import org.parabuild.ci.configuration.*;

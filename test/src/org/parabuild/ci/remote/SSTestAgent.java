@@ -29,8 +29,8 @@ import org.parabuild.ci.ServersideTestCase;
 import org.parabuild.ci.TestHelper;
 
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.IoUtils;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.AgentHost;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.process.TailBufferSize;

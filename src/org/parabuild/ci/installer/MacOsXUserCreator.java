@@ -13,10 +13,10 @@
  */
 package org.parabuild.ci.installer;
 
-import org.parabuild.ci.common.CommandStoppedException;
-import org.parabuild.ci.common.IoUtils;
-import org.parabuild.ci.common.NullOutputStream;
-import org.parabuild.ci.common.RuntimeUtils;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.NullOutputStream;
+import org.parabuild.ci.util.RuntimeUtils;
 
 import java.io.BufferedReader;
 import java.io.File;

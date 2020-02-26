@@ -20,7 +20,7 @@ import java.util.List;
 import javax.swing.*;
 import org.apache.commons.logging.*;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 
 /**
  * Modal dialog to enter tray settings.

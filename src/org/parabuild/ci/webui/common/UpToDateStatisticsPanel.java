@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.webui.common;
 
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.ActiveBuildAttribute;
 import org.parabuild.ci.statistics.BuildStatistics;

@@ -15,7 +15,7 @@ package org.parabuild.ci.notification;
 
 import java.util.*;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 
 /**
  * EmailRecipients is an aggregate holding "To" and "Bcc" lists. Each list

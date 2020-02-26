@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.installer;
 
-import org.parabuild.ci.common.RuntimeUtils;
+import org.parabuild.ci.util.RuntimeUtils;
 
 /**
  *

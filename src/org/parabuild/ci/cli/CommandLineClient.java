@@ -22,7 +22,7 @@ import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.PosixParser;
 import org.parabuild.ci.Version;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webservice.Parabuild;
 import org.parabuild.ci.webservice.ParabuildService;
 import org.parabuild.ci.webservice.ParabuildServiceLocator;

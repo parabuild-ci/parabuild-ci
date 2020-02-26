@@ -23,7 +23,7 @@ import junit.framework.TestSuite;
 import com.gargoylesoftware.base.testing.OrderedTestSuite;
 import org.parabuild.ci.TestHelper;
 import org.parabuild.ci.build.AbstractCustomLogTest;
-import org.parabuild.ci.common.IoUtils;
+import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.object.LogConfig;
 import org.parabuild.ci.object.StepRunAttribute;
 

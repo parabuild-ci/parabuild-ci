@@ -15,7 +15,7 @@ package org.parabuild.ci.webui;
 
 import java.util.*;
 
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.object.ChangeList;
 import org.parabuild.ci.object.SimpleChange;
 import org.parabuild.ci.webui.common.WebuiUtils;

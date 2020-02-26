@@ -15,7 +15,7 @@ package org.parabuild.ci.build.result;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.common.IoUtils;
+import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.object.BuildRunConfig;
 import org.parabuild.ci.object.ResultConfig;
 import org.parabuild.ci.object.ResultConfigProperty;

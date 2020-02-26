@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.build.log;
 
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.StringUtils;
 
 import java.util.List;
 import java.util.regex.PatternSyntaxException;

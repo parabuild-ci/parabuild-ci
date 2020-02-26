@@ -13,8 +13,8 @@
  */
 package org.parabuild.ci.tray;
 
-import org.parabuild.ci.common.IoUtils;
-import org.parabuild.ci.common.RuntimeUtils;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.RuntimeUtils;
 
 import java.io.IOException;
 import java.lang.reflect.Method;

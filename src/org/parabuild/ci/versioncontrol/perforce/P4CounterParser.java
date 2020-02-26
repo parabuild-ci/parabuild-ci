@@ -16,9 +16,9 @@ package org.parabuild.ci.versioncontrol.perforce;
 import java.io.*;
 import java.util.*;
 
-import org.parabuild.ci.common.BuildException;
-import org.parabuild.ci.common.IoUtils;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
 
 /**
  * Helper to parse parse P4 counter log output.

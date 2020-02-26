@@ -15,7 +15,7 @@ package org.parabuild.ci.relnotes;
 
 import java.io.*;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 
 
 /**

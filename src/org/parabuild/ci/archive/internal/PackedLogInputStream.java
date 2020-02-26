@@ -18,7 +18,7 @@ import java.util.Objects;
 import java.util.zip.*;
 import org.apache.commons.logging.*;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 
 /**
  * Zipped log input stream is a lazily initialized input stream that

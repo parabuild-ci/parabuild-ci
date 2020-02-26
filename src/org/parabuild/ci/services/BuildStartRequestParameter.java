@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.services;
 
-import org.parabuild.ci.common.ArgumentValidator;
+import org.parabuild.ci.util.ArgumentValidator;
 
 import java.util.ArrayList;
 import java.util.List;

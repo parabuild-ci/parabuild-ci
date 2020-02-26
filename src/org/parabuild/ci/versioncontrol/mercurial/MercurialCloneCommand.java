@@ -14,7 +14,7 @@
 package org.parabuild.ci.versioncontrol.mercurial;
 
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.remote.Agent;
 
 import java.io.IOException;

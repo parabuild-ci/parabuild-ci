@@ -14,9 +14,9 @@
 package org.parabuild.ci.services;
 
 import org.parabuild.ci.Version;
-import org.parabuild.ci.common.IoUtils;
-import org.parabuild.ci.common.StringUtils;
-import org.parabuild.ci.common.ThreadUtils;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.util.ThreadUtils;
 import org.parabuild.ci.configuration.ConfigurationFile;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;

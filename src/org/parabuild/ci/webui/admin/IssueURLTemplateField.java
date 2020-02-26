@@ -15,7 +15,7 @@ package org.parabuild.ci.webui.admin;
 
 import java.util.*;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 import org.parabuild.ci.webui.common.*;
 
 /**

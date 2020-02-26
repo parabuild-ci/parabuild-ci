@@ -20,7 +20,7 @@ import org.apache.commons.logging.LogFactory;
 
 import org.parabuild.ci.build.BuildState;
 import org.parabuild.ci.build.BuildStatus;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.AgentHost;
 import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.remote.AgentManager;

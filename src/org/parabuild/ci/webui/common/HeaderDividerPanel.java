@@ -15,7 +15,7 @@ package org.parabuild.ci.webui.common;
 
 import org.apache.commons.logging.*;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 import org.parabuild.ci.webui.SearchPage;
 import viewtier.ui.*;
 

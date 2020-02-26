@@ -19,10 +19,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import org.parabuild.ci.common.ArgumentValidator;
-import org.parabuild.ci.common.BuildException;
-import org.parabuild.ci.common.CommandStoppedException;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.ArgumentValidator;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.ConfigurationConstants;
 import org.parabuild.ci.process.RemoteCommand;
 import org.parabuild.ci.process.TailBufferSizeImpl;

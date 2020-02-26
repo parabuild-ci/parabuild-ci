@@ -23,9 +23,9 @@ import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.TestHelper;
 
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.BuildException;
-import org.parabuild.ci.common.CommandStoppedException;
-import org.parabuild.ci.common.IoUtils;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.ChangeList;

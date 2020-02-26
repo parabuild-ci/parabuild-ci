@@ -28,9 +28,9 @@ import org.parabuild.ci.TestHelper;
 
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.build.BuildLabelNameGenerator;
-import org.parabuild.ci.common.BuildException;
-import org.parabuild.ci.common.CommandStoppedException;
-import org.parabuild.ci.common.IoUtils;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.error.ErrorManagerFactory;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.ChangeList;
@@ -482,7 +482,7 @@ public final class SSTestVSSSourceControl extends AbstractSourceControlTest {
   /**
    * Tests that r/o checkout works.
    *
-   * @throws org.parabuild.ci.common.CommandStoppedException
+   * @throws org.parabuild.ci.util.CommandStoppedException
    * @throws BuildException
    * @throws IOException
    */

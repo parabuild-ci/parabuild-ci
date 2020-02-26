@@ -17,7 +17,7 @@ import java.sql.*;
 import java.sql.Date;
 import java.util.*;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 import org.parabuild.ci.configuration.*;
 import org.parabuild.ci.object.*;
 

@@ -15,7 +15,7 @@ package org.parabuild.ci.build;
 
 import junit.framework.*;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 
 
 public class SATestIssueDescriptionFilter extends TestCase {

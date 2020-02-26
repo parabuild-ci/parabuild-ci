@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.webui;
 
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.BoldCommonLabel;
 import org.parabuild.ci.webui.common.BuildNameDropDown;
 import org.parabuild.ci.webui.common.CommonButton;

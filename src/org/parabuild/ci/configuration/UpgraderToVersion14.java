@@ -16,7 +16,7 @@ package org.parabuild.ci.configuration;
 import java.sql.*;
 import org.apache.commons.logging.*;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 
 /**
  * Upgrades to version 14. Alters source control properties to

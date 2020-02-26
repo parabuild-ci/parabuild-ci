@@ -19,8 +19,8 @@ import java.util.Locale;
 import java.util.Map;
 
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.CommandStoppedException;
-import org.parabuild.ci.common.IoUtils;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.configuration.AgentHost;
 import org.parabuild.ci.process.TailBufferSize;
 import org.parabuild.ci.remote.Agent;

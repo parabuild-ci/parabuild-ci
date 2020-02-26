@@ -20,9 +20,9 @@ import com.install4j.api.context.InstallerContext;
 import com.install4j.api.context.UserCanceledException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.common.IoUtils;
-import org.parabuild.ci.common.RuntimeUtils;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.RuntimeUtils;
+import org.parabuild.ci.util.StringUtils;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;

@@ -20,8 +20,8 @@ import org.apache.commons.logging.LogFactory;
 
 import com.caucho.hessian.io.HessianInput;
 import com.caucho.hessian.io.HessianOutput;
-import org.parabuild.ci.common.IoUtils;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.remote.services.RemoteBuilderWebService;
 import org.parabuild.ci.remote.services.RemoteFileDescriptor;
 import org.parabuild.ci.remote.services.WebServiceConstants;

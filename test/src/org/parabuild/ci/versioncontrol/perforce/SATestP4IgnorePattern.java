@@ -16,7 +16,7 @@ package org.parabuild.ci.versioncontrol.perforce;
 import junit.framework.TestCase;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.object.SystemProperty;
 
 import java.util.List;

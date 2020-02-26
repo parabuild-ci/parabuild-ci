@@ -16,7 +16,7 @@ package org.parabuild.ci.build;
 import java.util.*;
 import org.apache.commons.logging.*;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 import org.parabuild.ci.configuration.*;
 import org.parabuild.ci.object.*;
 

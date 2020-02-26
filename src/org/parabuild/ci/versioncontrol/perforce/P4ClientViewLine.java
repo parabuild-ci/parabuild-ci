@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.versioncontrol.perforce;
 
-import org.parabuild.ci.common.ArgumentValidator;
+import org.parabuild.ci.util.ArgumentValidator;
 
 import java.io.Serializable;
 import java.util.StringTokenizer;

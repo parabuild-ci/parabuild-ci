@@ -15,7 +15,7 @@ package org.parabuild.ci.process;
 
 import java.util.*;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 
 /**
  * This class is a registry for process signatures.

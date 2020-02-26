@@ -16,7 +16,7 @@ package org.parabuild.ci.error.impl;
 import java.io.*;
 
 import net.sf.ehcache.*;
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 
 
 /**

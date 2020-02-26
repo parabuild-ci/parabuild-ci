@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.webui.admin.promotion;
 
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.object.PromotionPolicy;
 import org.parabuild.ci.object.PromotionPolicyStep;
 import org.parabuild.ci.promotion.PromotionConfigurationManager;

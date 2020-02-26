@@ -19,7 +19,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.versioncontrol.StderrLineProcessor;
 

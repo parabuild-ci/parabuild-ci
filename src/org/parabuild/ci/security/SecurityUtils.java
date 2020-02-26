@@ -18,7 +18,7 @@ import java.security.spec.*;
 import javax.crypto.*;
 import javax.crypto.spec.*;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 
 /**
  * Security utility class

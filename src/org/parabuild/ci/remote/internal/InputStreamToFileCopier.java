@@ -16,7 +16,7 @@ package org.parabuild.ci.remote.internal;
 import java.io.*;
 import org.apache.commons.logging.*;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 import EDU.oswego.cs.dl.util.concurrent.*;
 
 /**

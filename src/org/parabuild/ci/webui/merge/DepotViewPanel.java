@@ -15,7 +15,7 @@ package org.parabuild.ci.webui.merge;
 
 import java.util.*;
 
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.SourceControlSetting;
 import viewtier.ui.Border;

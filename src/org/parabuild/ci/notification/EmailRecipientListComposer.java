@@ -13,8 +13,8 @@
  */
 package org.parabuild.ci.notification;
 
-import org.parabuild.ci.common.MailUtils;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.MailUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.GlobalVCSUserMapManager;
 import org.parabuild.ci.configuration.SystemConfigurationManager;

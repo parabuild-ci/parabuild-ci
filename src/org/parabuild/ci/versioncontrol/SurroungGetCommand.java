@@ -17,8 +17,8 @@ import java.io.IOException;
 import java.util.Date;
 
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.ArgumentValidator;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.ArgumentValidator;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.remote.Agent;
 
 /**

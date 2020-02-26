@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 import org.parabuild.ci.object.*;
 
 /**

@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.installer;
 
-import org.parabuild.ci.common.IoUtils;
+import org.parabuild.ci.util.IoUtils;
 
 import java.io.File;
 import java.io.FileInputStream;

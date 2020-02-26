@@ -14,7 +14,7 @@
 package org.parabuild.ci.process;
 
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.CommandStoppedException;
+import org.parabuild.ci.util.CommandStoppedException;
 import org.parabuild.ci.remote.Agent;
 
 import java.io.File;

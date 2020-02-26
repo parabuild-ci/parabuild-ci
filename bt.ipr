@@ -949,6 +949,7 @@
         <w>hmmss</w>
         <w>hpux</w>
         <w>istream</w>
+        <w>lbox</w>
         <w>logd</w>
         <w>loglines</w>
         <w>mech</w>
@@ -1251,7 +1252,10 @@
         <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.5.16/lib/struts2-json-plugin-2.5.16.jar!/" />
       </CLASSES>
       <JAVADOC />
-      <SOURCES />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.ideaLibSources/struts2-sitemesh-plugin-2.5.16-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.ideaLibSources/struts2-core-2.5.16-sources.jar!/" />
+      </SOURCES>
     </library>
     <library name="Tomcat">
       <CLASSES>

@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.webui;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 import org.parabuild.ci.object.*;
 import org.parabuild.ci.webui.common.*;
 import viewtier.ui.*;

@@ -27,8 +27,8 @@ import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
 import org.parabuild.ci.TestHelper;
-import org.parabuild.ci.common.IoUtils;
-import org.parabuild.ci.common.XMLUtils;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.XMLUtils;
 
 /**
  * @author Kostya

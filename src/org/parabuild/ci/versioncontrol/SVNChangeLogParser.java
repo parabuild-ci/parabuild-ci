@@ -14,8 +14,8 @@
 package org.parabuild.ci.versioncontrol;
 
 
-import org.parabuild.ci.common.IoUtils;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.object.Change;
 
 import java.io.File;

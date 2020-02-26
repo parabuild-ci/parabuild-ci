@@ -16,7 +16,7 @@ package org.parabuild.ci.relnotes;
 import java.sql.Date;
 import java.util.*;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 
 /**
  * Responsible for getting issues from external issue databases

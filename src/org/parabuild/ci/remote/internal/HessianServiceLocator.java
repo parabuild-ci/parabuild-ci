@@ -15,7 +15,7 @@ package org.parabuild.ci.remote.internal;
 
 import java.io.IOException;
 
-import org.parabuild.ci.common.ArgumentValidator;
+import org.parabuild.ci.util.ArgumentValidator;
 import org.parabuild.ci.remote.RemoteUtils;
 
 

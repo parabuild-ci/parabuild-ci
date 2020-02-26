@@ -16,7 +16,7 @@ package org.parabuild.ci.webui;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.archive.ArchiveManager;
-import org.parabuild.ci.common.IoUtils;
+import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.object.StepLog;
 import viewtier.cdk.CustomComponent;
 import viewtier.cdk.RenderContext;

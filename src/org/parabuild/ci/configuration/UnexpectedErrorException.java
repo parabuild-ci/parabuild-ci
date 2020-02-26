@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.configuration;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 
 public final class UnexpectedErrorException extends RuntimeException {
 

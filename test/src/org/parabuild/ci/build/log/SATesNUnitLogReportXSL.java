@@ -20,8 +20,8 @@ import org.apache.commons.logging.LogFactory;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 import org.parabuild.ci.TestHelper;
-import org.parabuild.ci.common.IoUtils;
-import org.parabuild.ci.common.XMLUtils;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.XMLUtils;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.Transformer;

@@ -16,7 +16,7 @@ package org.parabuild.ci.relnotes;
 import java.util.*;
 import java.util.regex.*;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 import org.parabuild.ci.configuration.*;
 import org.parabuild.ci.error.Error;
 import org.parabuild.ci.error.*;

@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.object.ChangeList;
 import org.parabuild.ci.object.SimpleChange;
 

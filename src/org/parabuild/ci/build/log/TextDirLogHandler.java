@@ -16,7 +16,7 @@ package org.parabuild.ci.build.log;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.IoUtils;
+import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.object.BuildRunConfig;
 import org.parabuild.ci.object.LogConfig;
 import org.parabuild.ci.object.LogConfigProperty;

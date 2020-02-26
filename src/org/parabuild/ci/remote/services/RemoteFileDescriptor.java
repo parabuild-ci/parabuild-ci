@@ -15,7 +15,7 @@ package org.parabuild.ci.remote.services;
 
 import java.io.*;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 
 /**
  * A value object to hold information about a file in a remote

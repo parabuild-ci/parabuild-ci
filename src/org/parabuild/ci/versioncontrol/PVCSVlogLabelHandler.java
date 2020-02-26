@@ -22,7 +22,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.CommandStoppedException;
+import org.parabuild.ci.util.CommandStoppedException;
 import org.parabuild.ci.object.Change;
 
 /**

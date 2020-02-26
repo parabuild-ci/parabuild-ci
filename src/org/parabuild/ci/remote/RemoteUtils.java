@@ -16,7 +16,7 @@ package org.parabuild.ci.remote;
 import com.caucho.hessian.client.HessianRuntimeException;
 import com.caucho.hessian.io.HessianProtocolException;
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.StringUtils;
 
 import java.io.IOException;
 import java.net.ConnectException;

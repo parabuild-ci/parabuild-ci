@@ -15,7 +15,7 @@ package org.parabuild.ci.remote.internal;
 
 import java.io.*;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 
 /**
  * This class performs copying of a character InputStream to a file.

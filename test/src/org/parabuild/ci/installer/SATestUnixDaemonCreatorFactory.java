@@ -15,7 +15,7 @@ package org.parabuild.ci.installer;
 
 import junit.framework.*;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 
 public final class SATestUnixDaemonCreatorFactory extends TestCase {
 

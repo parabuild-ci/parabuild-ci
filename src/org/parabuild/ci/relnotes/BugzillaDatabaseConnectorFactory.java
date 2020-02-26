@@ -16,7 +16,7 @@ package org.parabuild.ci.relnotes;
 import java.sql.*;
 import org.apache.commons.logging.*;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 
 /**
  * This class creates instances of BugzillaDatabaseConnector

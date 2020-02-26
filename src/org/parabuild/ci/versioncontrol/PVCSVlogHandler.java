@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.util.Date;
 
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.CommandStoppedException;
+import org.parabuild.ci.util.CommandStoppedException;
 
 /**
  * PVCSChangeLogHandler is a call-back interfaces that is

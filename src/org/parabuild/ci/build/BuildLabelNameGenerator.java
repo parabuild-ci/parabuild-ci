@@ -17,7 +17,7 @@ import java.text.*;
 import java.util.*;
 import java.util.regex.*;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 
 /**
  * Responsible for handling build label names.

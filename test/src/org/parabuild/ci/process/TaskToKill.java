@@ -22,7 +22,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.TestHelper;
 
-import org.parabuild.ci.common.NullOutputStream;
+import org.parabuild.ci.util.NullOutputStream;
 import org.parabuild.ci.remote.AgentEnvironment;
 
 /**

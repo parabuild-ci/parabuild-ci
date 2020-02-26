@@ -18,7 +18,7 @@ import com.install4j.api.context.InstallerContext;
 import com.install4j.api.context.UserCanceledException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.StringUtils;
 
 import java.io.File;
 import java.io.IOException;

@@ -18,7 +18,7 @@ import java.text.*;
 import java.util.*;
 import org.apache.commons.logging.*;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 import org.parabuild.ci.object.*;
 
 /**

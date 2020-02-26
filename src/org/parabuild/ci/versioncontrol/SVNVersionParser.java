@@ -17,7 +17,7 @@ import java.util.regex.*;
 
 import org.apache.commons.logging.*;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 
 /**
  * Functor responsible for parsing Subversion version string.

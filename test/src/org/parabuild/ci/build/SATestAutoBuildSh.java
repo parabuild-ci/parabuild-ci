@@ -16,7 +16,7 @@ package org.parabuild.ci.build;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 import org.parabuild.ci.TestHelper;
-import org.parabuild.ci.common.IoUtils;
+import org.parabuild.ci.util.IoUtils;
 
 import java.io.BufferedReader;
 import java.io.File;

@@ -17,8 +17,8 @@ import java.io.IOException;
 import java.util.List;
 
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.BuildException;
-import org.parabuild.ci.common.CommandStoppedException;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.CommandStoppedException;
 
 /**
  * A driver for new chages found.

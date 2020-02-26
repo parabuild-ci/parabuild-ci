@@ -5,7 +5,7 @@ import org.parabuild.ci.Version;
 import javax.servlet.Servlet;
 import javax.servlet.ServletConfig;
 
-import static org.parabuild.ci.common.IoUtils.printToStdout;
+import static org.parabuild.ci.util.IoUtils.printToStdout;
 
 /**
  * A hook to run on JVM shutdown.

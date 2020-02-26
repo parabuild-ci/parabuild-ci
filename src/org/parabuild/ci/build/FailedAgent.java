@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.build;
 
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.AgentHost;
 import org.parabuild.ci.process.TailBufferSize;
 import org.parabuild.ci.remote.Agent;

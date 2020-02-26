@@ -15,7 +15,7 @@ package org.parabuild.ci.webui.admin;
 
 import org.apache.commons.logging.*;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 import org.parabuild.ci.notification.*;
 import org.parabuild.ci.webui.*;
 import org.parabuild.ci.webui.common.*;

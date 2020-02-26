@@ -13,10 +13,10 @@
  */
 package org.parabuild.ci.versioncontrol.perforce;
 
-import org.parabuild.ci.common.BuildException;
-import org.parabuild.ci.common.IoUtils;
-import org.parabuild.ci.common.MailUtils;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.MailUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.error.ErrorManager;
 import org.parabuild.ci.error.ErrorManagerFactory;
 

@@ -22,7 +22,7 @@ import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.ServersideTestCase;
 import org.parabuild.ci.TestHelper;
 
-import org.parabuild.ci.common.BuildException;
+import org.parabuild.ci.util.BuildException;
 import org.parabuild.ci.configuration.AgentHost;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildChangeList;

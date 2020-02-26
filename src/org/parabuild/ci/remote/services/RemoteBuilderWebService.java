@@ -16,7 +16,7 @@ package org.parabuild.ci.remote.services;
 import java.io.*;
 import java.util.*;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 import org.parabuild.ci.remote.internal.*;
 import org.parabuild.ci.services.TailUpdate;
 import org.parabuild.ci.process.TailBufferSize;

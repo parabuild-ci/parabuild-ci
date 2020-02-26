@@ -26,9 +26,9 @@ import junit.framework.TestSuite;
 import org.parabuild.ci.ServersideTestCase;
 import org.parabuild.ci.TestHelper;
 
-import org.parabuild.ci.common.BuildException;
-import org.parabuild.ci.common.CommandStoppedException;
-import org.parabuild.ci.common.IoUtils;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildSequence;
 import org.parabuild.ci.object.BuildStepType;

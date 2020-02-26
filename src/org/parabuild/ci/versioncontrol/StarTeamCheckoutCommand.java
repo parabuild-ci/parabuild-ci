@@ -14,7 +14,7 @@
 package org.parabuild.ci.versioncontrol;
 
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.remote.Agent;
 

@@ -23,8 +23,8 @@ import com.meterware.httpunit.HttpException;
 import com.meterware.httpunit.WebResponse;
 import org.parabuild.ci.ServersideTestCase;
 import org.parabuild.ci.TestHelper;
-import org.parabuild.ci.common.IoUtils;
-import org.parabuild.ci.common.NullOutputStream;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.NullOutputStream;
 import org.parabuild.ci.webui.common.WebuiUtils;
 
 /**

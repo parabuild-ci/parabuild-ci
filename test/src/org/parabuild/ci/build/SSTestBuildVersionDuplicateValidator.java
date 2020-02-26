@@ -19,7 +19,7 @@ import junit.framework.*;
 
 import org.parabuild.ci.ServersideTestCase;
 import org.parabuild.ci.TestHelper;
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 import org.parabuild.ci.configuration.*;
 import org.parabuild.ci.object.*;
 

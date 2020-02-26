@@ -22,7 +22,7 @@ import org.parabuild.ci.ServersideTestCase;
 import org.parabuild.ci.TestHelper;
 
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.CommandStoppedException;
+import org.parabuild.ci.util.CommandStoppedException;
 import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.remote.AgentManager;
 

@@ -14,7 +14,7 @@
 package org.parabuild.ci.webui;
 
 import org.parabuild.ci.build.BuildState;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.BuilderConfigurationManager;
 import org.parabuild.ci.configuration.ConfigurationConstants;
 import org.parabuild.ci.configuration.ConfigurationManager;

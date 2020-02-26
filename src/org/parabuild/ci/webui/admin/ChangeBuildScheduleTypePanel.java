@@ -13,8 +13,8 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.common.StringUtils;
-import org.parabuild.ci.common.ValidationException;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.util.ValidationException;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.services.BuildManager;
 import org.parabuild.ci.webui.common.CancelButton;

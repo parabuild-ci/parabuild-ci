@@ -19,7 +19,7 @@ import java.util.*;
 import junit.framework.*;
 
 import org.parabuild.ci.TestHelper;
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 import org.parabuild.ci.error.Error;
 
 /**

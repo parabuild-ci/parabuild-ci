@@ -14,7 +14,7 @@
 package org.parabuild.ci.manager.server;
 
 import org.apache.catalina.manager.ManagerServlet;
-import org.parabuild.ci.common.IoUtils;
+import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.configuration.ConfigurationFile;
 import org.parabuild.ci.configuration.SystemConstants;
 

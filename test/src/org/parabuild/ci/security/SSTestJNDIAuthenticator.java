@@ -21,7 +21,7 @@ import junit.framework.*;
 import com.gargoylesoftware.base.testing.*;
 import org.parabuild.ci.ServersideTestCase;
 import org.parabuild.ci.TestHelper;
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 import org.parabuild.ci.configuration.*;
 
 /**

@@ -16,7 +16,7 @@ package org.parabuild.ci.versioncontrol;
 import java.io.*;
 import org.apache.commons.logging.*;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 
 /**
  * Writes CVS password to a file

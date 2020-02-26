@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.webui.admin.system;
 
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.GlobalVCSUserMapManager;
 import org.parabuild.ci.object.GlobalVCSUserMap;
 import org.parabuild.ci.webui.common.CommonField;

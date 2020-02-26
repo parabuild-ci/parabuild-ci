@@ -25,7 +25,7 @@ import junit.framework.TestSuite;
 import org.parabuild.ci.ServersideTestCase;
 import org.parabuild.ci.TestHelper;
 
-import org.parabuild.ci.common.IoUtils;
+import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.remote.AgentManager;
 

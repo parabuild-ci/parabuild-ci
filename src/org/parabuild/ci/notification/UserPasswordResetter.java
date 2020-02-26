@@ -16,7 +16,7 @@ package org.parabuild.ci.notification;
 import java.security.*;
 import java.util.*;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 import org.parabuild.ci.object.*;
 import org.parabuild.ci.security.SecurityManager;
 

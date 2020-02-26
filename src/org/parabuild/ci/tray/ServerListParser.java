@@ -15,7 +15,7 @@ package org.parabuild.ci.tray;
 
 import java.util.*;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 
 /**
  * Parses server list

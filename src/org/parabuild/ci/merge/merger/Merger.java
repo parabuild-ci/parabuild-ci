@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.merge.merger;
 
-import org.parabuild.ci.common.CommandStoppedException;
+import org.parabuild.ci.util.CommandStoppedException;
 
 /**
  * Peformes merge.

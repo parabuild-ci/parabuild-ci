@@ -24,7 +24,7 @@ import org.parabuild.ci.ServersideTestCase;
 import org.parabuild.ci.TestHelper;
 import org.parabuild.ci.error.ErrorManager;
 import org.parabuild.ci.error.ErrorManagerFactory;
-import org.parabuild.ci.common.IoUtils;
+import org.parabuild.ci.util.IoUtils;
 import com.gargoylesoftware.base.testing.OrderedTestSuite;
 
 /**

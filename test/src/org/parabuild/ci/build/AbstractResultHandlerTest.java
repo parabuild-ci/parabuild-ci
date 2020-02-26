@@ -20,7 +20,7 @@ import org.apache.lucene.search.Hits;
 import org.parabuild.ci.ServersideTestCase;
 import org.parabuild.ci.archive.ArchiveManager;
 import org.parabuild.ci.archive.ArchiveManagerFactory;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.error.ErrorManager;
 import org.parabuild.ci.error.ErrorManagerFactory;

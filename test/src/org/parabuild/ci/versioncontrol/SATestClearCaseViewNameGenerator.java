@@ -18,7 +18,7 @@ import org.apache.commons.logging.*;
 import junit.framework.*;
 
 import org.parabuild.ci.TestHelper;
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 
 /**
  *

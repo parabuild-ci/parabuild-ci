@@ -23,10 +23,10 @@ import org.apache.commons.logging.LogFactory;
 
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.build.BuildRunner;
-import org.parabuild.ci.common.BuildException;
-import org.parabuild.ci.common.CommandStoppedException;
-import org.parabuild.ci.common.StringUtils;
-import org.parabuild.ci.common.ValidationException;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.util.ValidationException;
 import org.parabuild.ci.configuration.AgentHost;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.error.Error;

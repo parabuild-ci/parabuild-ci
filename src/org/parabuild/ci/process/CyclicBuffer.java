@@ -15,7 +15,7 @@ package org.parabuild.ci.process;
 
 import java.util.*;
 
-import org.parabuild.ci.common.ArgumentValidator;
+import org.parabuild.ci.util.ArgumentValidator;
 
 /**
  * Cyclic buffer.

@@ -16,7 +16,7 @@ package org.parabuild.ci.notification;
 import java.text.*;
 import java.util.*;
 
-import org.parabuild.ci.common.*;
+import org.parabuild.ci.util.*;
 import org.parabuild.ci.configuration.*;
 import org.parabuild.ci.object.*;
 

@@ -15,7 +15,7 @@ package org.parabuild.ci.webui.admin;
 
 import org.parabuild.ci.archive.ArchiveManager;
 import org.parabuild.ci.archive.ArchiveManagerFactory;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.object.ActiveBuildConfig;
 import org.parabuild.ci.webui.common.*;
 import viewtier.ui.*;

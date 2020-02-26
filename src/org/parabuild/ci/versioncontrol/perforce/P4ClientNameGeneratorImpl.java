@@ -16,10 +16,10 @@ package org.parabuild.ci.versioncontrol.perforce;
 import java.util.*;
 import java.util.regex.*;
 
-import org.parabuild.ci.common.ArgumentValidator;
-import org.parabuild.ci.common.BuildException;
-import org.parabuild.ci.common.NamedPropertyUtils;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.ArgumentValidator;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.NamedPropertyUtils;
+import org.parabuild.ci.util.StringUtils;
 
 /**
  * Responsible for creating P4 client spec names from templates.

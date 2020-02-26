@@ -17,7 +17,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import EDU.oswego.cs.dl.util.concurrent.ThreadFactory;
-import org.parabuild.ci.common.ThreadUtils;
+import org.parabuild.ci.util.ThreadUtils;
 
 
 public final class DaemonThreadFactory implements ThreadFactory {

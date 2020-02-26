@@ -15,8 +15,8 @@ package org.parabuild.ci.versioncontrol.perforce;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.common.BuildException;
-import org.parabuild.ci.common.IoUtils;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.IoUtils;
 
 import java.io.BufferedReader;
 import java.io.File;

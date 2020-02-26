@@ -15,11 +15,11 @@ package org.parabuild.ci.remote.internal;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.common.CommandStoppedException;
-import org.parabuild.ci.common.DirectoryTraverserCallback;
-import org.parabuild.ci.common.IoUtils;
-import org.parabuild.ci.common.RuntimeUtils;
-import org.parabuild.ci.common.StringUtils;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.DirectoryTraverserCallback;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.RuntimeUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.AgentHost;
 import org.parabuild.ci.error.ErrorManager;
 import org.parabuild.ci.error.ErrorManagerFactory;
