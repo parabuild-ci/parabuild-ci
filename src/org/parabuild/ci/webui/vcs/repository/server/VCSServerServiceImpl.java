@@ -11,7 +11,7 @@ import org.parabuild.ci.webui.vcs.repository.client.VCSServerClientVO;
 import org.parabuild.ci.webui.vcs.repository.client.VCSServerService;
 import org.parabuild.ci.webui.vcs.repository.client.VCSServerType;
 
-import static org.parabuild.ci.common.VersionControlSystem.vcsToString;
+import static org.parabuild.ci.common.VersionControlUtil.vcsToString;
 
 public class VCSServerServiceImpl extends RemoteServiceServlet implements VCSServerService {
 

@@ -3,7 +3,7 @@ package org.parabuild.ci.common;
 /**
  * A container for the list of supported version control systems.
  */
-public final class VersionControlSystem {
+public final class VersionControlUtil {
 
   /**
    * String lookup table.
@@ -11,7 +11,7 @@ public final class VersionControlSystem {
   private static final String[] STRING_VCS_NAME = createStringVCSNames();
 
 
-  private VersionControlSystem() {
+  private VersionControlUtil() {
   }
 
 

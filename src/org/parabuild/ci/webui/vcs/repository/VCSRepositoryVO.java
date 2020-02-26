@@ -2,7 +2,7 @@ package org.parabuild.ci.webui.vcs.repository;
 
 import com.google.gwt.user.client.rpc.IsSerializable;
 
-import static org.parabuild.ci.common.VersionControlSystem.vcsToString;
+import static org.parabuild.ci.common.VersionControlUtil.vcsToString;
 
 /**
  * A repository value object used to pass data around.
