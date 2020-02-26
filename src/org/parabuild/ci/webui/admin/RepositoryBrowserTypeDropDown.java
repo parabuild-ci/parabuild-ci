@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.common.VCSAttribute;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.webui.common.CodeNameDropDown;
 
 /**
@@ -30,11 +30,11 @@ final class RepositoryBrowserTypeDropDown extends CodeNameDropDown {
    * Default constructor.
    */
   public RepositoryBrowserTypeDropDown() {
-    addCodeNamePair(VCSAttribute.CODE_NOT_SELECTED, "Select:");
-    addCodeNamePair(VCSAttribute.CODE_VIEWVC, "ViewVC/ViewCVS");
-    addCodeNamePair(VCSAttribute.CODE_FISHEYE, "FishEye");
-    addCodeNamePair(VCSAttribute.CODE_WEB_SVN, "WebSVN");
-    addCodeNamePair(VCSAttribute.CODE_GITHUB, "Github");
-    setCode(VCSAttribute.CODE_NOT_SELECTED);
+    addCodeNamePair(VersionControlSystem.CODE_NOT_SELECTED, "Select:");
+    addCodeNamePair(VersionControlSystem.CODE_VIEWVC, "ViewVC/ViewCVS");
+    addCodeNamePair(VersionControlSystem.CODE_FISHEYE, "FishEye");
+    addCodeNamePair(VersionControlSystem.CODE_WEB_SVN, "WebSVN");
+    addCodeNamePair(VersionControlSystem.CODE_GITHUB, "Github");
+    setCode(VersionControlSystem.CODE_NOT_SELECTED);
   }
 }

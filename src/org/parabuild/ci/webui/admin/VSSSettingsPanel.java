@@ -13,10 +13,10 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.common.VCSAttribute;
+import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.remote.NoLiveAgentsException;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.remote.NoLiveAgentsException;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.EncryptingPassword;
@@ -78,14 +78,14 @@ public final class VSSSettingsPanel extends AbstractSourceControlPanel {
     lbProjectPath.setAlignY(Layout.TOP);
 
     // init property to input map
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.VSS_PASSWORD, fldPassword);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.VSS_USER, fldUser);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.VSS_DATABASE_PATH, fldDatabasePath);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.VSS_PROJECT_PATH, fldProjectPath);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.VSS_EXE_PATH, fldPathToVSSClient);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.VSS_PASSWORD, fldPassword);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.VSS_USER, fldUser);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.VSS_DATABASE_PATH, fldDatabasePath);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.VSS_PROJECT_PATH, fldProjectPath);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.VSS_EXE_PATH, fldPathToVSSClient);
 //    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.VSS_BRANCH_NAME, fldBranch);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.VSS_CHANGE_WINDOW, fldChangeWindow);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.VSS_READONLY_CHECKOUT, fldReadOnlyCheckout);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.VSS_CHANGE_WINDOW, fldChangeWindow);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.VSS_READONLY_CHECKOUT, fldReadOnlyCheckout);
 
     // defaults
     fldChangeWindow.setValue(Integer.toString(30));

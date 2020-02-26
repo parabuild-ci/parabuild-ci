@@ -19,7 +19,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.ServersideTestCase;
 import org.parabuild.ci.TestHelper;
-import org.parabuild.ci.common.VCSAttribute;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.AgentHost;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.AgentConfig;
@@ -114,7 +114,7 @@ public class SSTestBuildConfigTabs extends ServersideTestCase {
     final BuildConfig buildConfig = cm.getBuildConfiguration(TEST_BUILD_ID);
     // alter path to CVS according to OS
     final AgentEnvironment agentEnvironment = AgentManager.getInstance().getAgentEnvironment(new AgentHost(AgentConfig.BUILD_MANAGER, ""));
-    final SourceControlSetting cvsPath = cm.getSourceControlSetting(TEST_BUILD_ID, VCSAttribute.CVS_PATH_TO_CLIENT);
+    final SourceControlSetting cvsPath = cm.getSourceControlSetting(TEST_BUILD_ID, VersionControlSystem.CVS_PATH_TO_CLIENT);
     if (agentEnvironment.isWindows() || agentEnvironment.systemType() == AgentEnvironment.SYSTEM_TYPE_CYGWIN) {
       final String cvsExePath = agentEnvironment.getSystemProperty("test.cvs.exe");
       cvsPath.setPropertyValue(cvsExePath);

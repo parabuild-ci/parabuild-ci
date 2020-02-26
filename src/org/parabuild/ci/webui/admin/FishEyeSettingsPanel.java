@@ -13,11 +13,13 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import java.util.*;
+import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.webui.common.CommonField;
+import org.parabuild.ci.webui.common.CommonFieldLabel;
+import org.parabuild.ci.webui.common.WebUIConstants;
+import viewtier.ui.Field;
 
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import java.util.ArrayList;
 
 /**
  *
@@ -43,8 +45,8 @@ public final class FishEyeSettingsPanel extends AbstractSourceControlPanel {
     if (showViewVCRoot) {
       gridIterator.addPair(new CommonFieldLabel(NAME_FISHEYE_ROOT), flFishEyeRoot);
     }
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.FISHEYE_URL, flFishEyeURL);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.FISHEYE_ROOT, flFishEyeRoot);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.FISHEYE_URL, flFishEyeURL);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.FISHEYE_ROOT, flFishEyeRoot);
 
   }
 

@@ -18,13 +18,13 @@ import junit.framework.TestSuite;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.TestHelper;
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.util.BuildException;
-import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.ChangeList;
 import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.object.SystemProperty;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.IoUtils;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -85,8 +85,8 @@ public final class SSTestSVNVersionControl extends AbstractSourceControlTest {
    */
   public void test_getChangesSinceHandlesURLWithSpaces() throws Exception {
     // test that we get changes
-    TestHelper.setSourceControlProperty(getTestBuildID(), VCSAttribute.SVN_URL, TEST_SPACED_URL);
-    TestHelper.setSourceControlProperty(getTestBuildID(), VCSAttribute.SVN_DEPOT_PATH, "alwaysvalid");
+    TestHelper.setSourceControlProperty(getTestBuildID(), VersionControlSystem.SVN_URL, TEST_SPACED_URL);
+    TestHelper.setSourceControlProperty(getTestBuildID(), VersionControlSystem.SVN_DEPOT_PATH, "alwaysvalid");
     svn.reloadConfiguration();
     final int lastChangeListID = svn.getChangesSince(TEST_CHANGE_LIST_ID);
     assertTrue(lastChangeListID != TEST_CHANGE_LIST_ID);
@@ -104,8 +104,8 @@ public final class SSTestSVNVersionControl extends AbstractSourceControlTest {
    */
   public void test_getChangesSinceHandlesURLWithSpacesAndDepotPathWithSpaces() throws Exception {
     // test that we get changes
-    TestHelper.setSourceControlProperty(getTestBuildID(), VCSAttribute.SVN_URL, TEST_SPACED_URL);
-    TestHelper.setSourceControlProperty(getTestBuildID(), VCSAttribute.SVN_DEPOT_PATH, "alwaysvalid/spaced src");
+    TestHelper.setSourceControlProperty(getTestBuildID(), VersionControlSystem.SVN_URL, TEST_SPACED_URL);
+    TestHelper.setSourceControlProperty(getTestBuildID(), VersionControlSystem.SVN_DEPOT_PATH, "alwaysvalid/spaced src");
     svn.reloadConfiguration();
     final int lastChangeListID = svn.getChangesSince(TEST_CHANGE_LIST_ID);
     assertTrue(lastChangeListID != TEST_CHANGE_LIST_ID);
@@ -155,8 +155,8 @@ public final class SSTestSVNVersionControl extends AbstractSourceControlTest {
    * See bug #1189 -  Suversion cannot handle URLs with spaces
    */
   public void test_checkoutLatestHandlesURLAndPathWithSpaces() throws Exception {
-    TestHelper.setSourceControlProperty(getTestBuildID(), VCSAttribute.SVN_URL, TEST_SPACED_URL);
-    TestHelper.setSourceControlProperty(getTestBuildID(), VCSAttribute.SVN_DEPOT_PATH, "alwaysvalid/spaced src");
+    TestHelper.setSourceControlProperty(getTestBuildID(), VersionControlSystem.SVN_URL, TEST_SPACED_URL);
+    TestHelper.setSourceControlProperty(getTestBuildID(), VersionControlSystem.SVN_DEPOT_PATH, "alwaysvalid/spaced src");
     svn.reloadConfiguration();
     assertTrue("Build logs home dir is not empty", agent.emptyLogDir());
     svn.checkoutLatest();
@@ -208,7 +208,7 @@ public final class SSTestSVNVersionControl extends AbstractSourceControlTest {
 
     // alter
     final String multilineSourceLine = new StringBuffer(100).append(STRING_SOURCE_LINE_ONE).append('\n').append(STRING_SOURCE_LINE_TWO).toString();
-    final SourceControlSetting path = cm.getSourceControlSetting(svn.getBuildID(), VCSAttribute.SVN_DEPOT_PATH);
+    final SourceControlSetting path = cm.getSourceControlSetting(svn.getBuildID(), VersionControlSystem.SVN_DEPOT_PATH);
     path.setPropertyValue(multilineSourceLine);
     cm.saveObject(path);
 
@@ -228,7 +228,7 @@ public final class SSTestSVNVersionControl extends AbstractSourceControlTest {
 
 
   private void alterSVNPathToSecondSourceLine() {
-    final SourceControlSetting path = cm.getSourceControlSetting(svn.getBuildID(), VCSAttribute.SVN_DEPOT_PATH);
+    final SourceControlSetting path = cm.getSourceControlSetting(svn.getBuildID(), VersionControlSystem.SVN_DEPOT_PATH);
     path.setPropertyValue(STRING_SOURCE_LINE_TWO);
     cm.saveObject(path);
   }
@@ -243,9 +243,9 @@ public final class SSTestSVNVersionControl extends AbstractSourceControlTest {
   public void test_checkOutLatestCantProcessUnexistingSourceLine() throws Exception {
 
     final List settings = new ArrayList(1);
-    settings.add(makeSetting(VCSAttribute.SVN_PATH_TO_EXE, "svn"));
-    settings.add(makeSetting(VCSAttribute.SVN_URL, TestHelper.SVN_VALID_URL));
-    settings.add(makeSetting(VCSAttribute.SVN_DEPOT_PATH, TestHelper.SVN_INVALID_DEPOT_PATH));
+    settings.add(makeSetting(VersionControlSystem.SVN_PATH_TO_EXE, "svn"));
+    settings.add(makeSetting(VersionControlSystem.SVN_URL, TestHelper.SVN_VALID_URL));
+    settings.add(makeSetting(VersionControlSystem.SVN_DEPOT_PATH, TestHelper.SVN_INVALID_DEPOT_PATH));
     final SVNSourceControl svn = makeSVNSourceControlWithAlteredSettings(settings);
     svn.setAgentHost(agentHost);
     try {
@@ -265,10 +265,10 @@ public final class SSTestSVNVersionControl extends AbstractSourceControlTest {
   public void test_checkOutLatestCantProcessInavalidUser() throws Exception {
 
     final List settings = new ArrayList(1);
-    settings.add(makeSetting(VCSAttribute.SVN_PATH_TO_EXE, "svn"));
-    settings.add(makeSetting(VCSAttribute.SVN_URL, TestHelper.SVN_VALID_URL));
-    settings.add(makeSetting(VCSAttribute.SVN_DEPOT_PATH, TestHelper.SVN_INVALID_DEPOT_PATH));
-    settings.add(makeSetting(VCSAttribute.SVN_USER, TestHelper.SVN_INVALID_USER));
+    settings.add(makeSetting(VersionControlSystem.SVN_PATH_TO_EXE, "svn"));
+    settings.add(makeSetting(VersionControlSystem.SVN_URL, TestHelper.SVN_VALID_URL));
+    settings.add(makeSetting(VersionControlSystem.SVN_DEPOT_PATH, TestHelper.SVN_INVALID_DEPOT_PATH));
+    settings.add(makeSetting(VersionControlSystem.SVN_USER, TestHelper.SVN_INVALID_USER));
     final SVNSourceControl svn = makeSVNSourceControlWithAlteredSettings(settings);
     svn.setAgentHost(agentHost);
     try {
@@ -287,9 +287,9 @@ public final class SSTestSVNVersionControl extends AbstractSourceControlTest {
    */
   public void test_checkOutLatestCantProcessUnknownHost() throws Exception {
     final List settings = new ArrayList(1);
-    settings.add(makeSetting(VCSAttribute.SVN_PATH_TO_EXE, "svn"));
-    settings.add(makeSetting(VCSAttribute.SVN_URL, TestHelper.SVN_INVALID_HOST_URL));
-    settings.add(makeSetting(VCSAttribute.SVN_DEPOT_PATH, TestHelper.SVN_VALID_DEPOT_PATH));
+    settings.add(makeSetting(VersionControlSystem.SVN_PATH_TO_EXE, "svn"));
+    settings.add(makeSetting(VersionControlSystem.SVN_URL, TestHelper.SVN_INVALID_HOST_URL));
+    settings.add(makeSetting(VersionControlSystem.SVN_DEPOT_PATH, TestHelper.SVN_VALID_DEPOT_PATH));
     final SVNSourceControl svn = makeSVNSourceControlWithAlteredSettings(settings);
     svn.setAgentHost(agentHost);
     try {
@@ -308,9 +308,9 @@ public final class SSTestSVNVersionControl extends AbstractSourceControlTest {
    */
   public void test_checkOutLatestCantProcessUnknownPort() throws Exception {
     final List settings = new ArrayList(1);
-    settings.add(makeSetting(VCSAttribute.SVN_PATH_TO_EXE, "svn"));
-    settings.add(makeSetting(VCSAttribute.SVN_URL, TestHelper.SVN_INVALID_PORT_URL));
-    settings.add(makeSetting(VCSAttribute.SVN_DEPOT_PATH, TestHelper.SVN_VALID_DEPOT_PATH));
+    settings.add(makeSetting(VersionControlSystem.SVN_PATH_TO_EXE, "svn"));
+    settings.add(makeSetting(VersionControlSystem.SVN_URL, TestHelper.SVN_INVALID_PORT_URL));
+    settings.add(makeSetting(VersionControlSystem.SVN_DEPOT_PATH, TestHelper.SVN_VALID_DEPOT_PATH));
     final SVNSourceControl svn = makeSVNSourceControlWithAlteredSettings(settings);
     svn.setAgentHost(agentHost);
     try {
@@ -403,11 +403,11 @@ public final class SSTestSVNVersionControl extends AbstractSourceControlTest {
    */
   public void test_canNotAccessWithWrongPassword() throws Exception {
     final List settings = new ArrayList(1);
-    settings.add(makeSetting(VCSAttribute.SVN_PATH_TO_EXE, "svn"));
-    settings.add(makeSetting(VCSAttribute.SVN_URL, TestHelper.SVN_VALID_URL));
-    settings.add(makeSetting(VCSAttribute.SVN_DEPOT_PATH, TestHelper.SVN_VALID_DEPOT_PATH));
-    settings.add(makeSetting(VCSAttribute.SVN_USER, TestHelper.SVN_VALID_USER));
-    settings.add(makeSetting(VCSAttribute.SVN_PASSWORD, TestHelper.SVN_INVALID_PASSWORD));
+    settings.add(makeSetting(VersionControlSystem.SVN_PATH_TO_EXE, "svn"));
+    settings.add(makeSetting(VersionControlSystem.SVN_URL, TestHelper.SVN_VALID_URL));
+    settings.add(makeSetting(VersionControlSystem.SVN_DEPOT_PATH, TestHelper.SVN_VALID_DEPOT_PATH));
+    settings.add(makeSetting(VersionControlSystem.SVN_USER, TestHelper.SVN_VALID_USER));
+    settings.add(makeSetting(VersionControlSystem.SVN_PASSWORD, TestHelper.SVN_INVALID_PASSWORD));
     final SVNSourceControl svnWithInvalidPassword = makeSVNSourceControlWithAlteredSettings(settings);
     svnWithInvalidPassword.setAgentHost(agentHost);
     try {

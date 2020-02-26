@@ -16,7 +16,7 @@ package org.parabuild.ci.webui;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 import org.parabuild.ci.TestHelper;
-import org.parabuild.ci.common.VCSAttribute;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.webui.admin.VersionControlDropDown;
 
 /**
@@ -45,24 +45,24 @@ public class SATestVersionControlDropDown extends TestCase {
   /**
    */
   public void test_acceptsReferenceType() throws Exception {
-    vcdd.setCode(VCSAttribute.SCM_REFERENCE);
-    assertEquals(vcdd.getCode(), VCSAttribute.SCM_REFERENCE);
+    vcdd.setCode(VersionControlSystem.SCM_REFERENCE);
+    assertEquals(vcdd.getCode(), VersionControlSystem.SCM_REFERENCE);
   }
 
 
   /**
    */
   public void test_acceptsVSSType() throws Exception {
-    vcdd.setCode(VCSAttribute.SCM_VSS);
-    assertEquals(vcdd.getCode(), VCSAttribute.SCM_VSS);
+    vcdd.setCode(VersionControlSystem.SCM_VSS);
+    assertEquals(vcdd.getCode(), VersionControlSystem.SCM_VSS);
   }
 
 
   /**
    */
   public void test_acceptsSVNType() throws Exception {
-    vcdd.setCode(VCSAttribute.SCM_SVN);
-    assertEquals(vcdd.getCode(), VCSAttribute.SCM_SVN);
+    vcdd.setCode(VersionControlSystem.SCM_SVN);
+    assertEquals(vcdd.getCode(), VersionControlSystem.SCM_SVN);
   }
 
 

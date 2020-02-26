@@ -19,7 +19,7 @@ import net.sf.hibernate.Query;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.ServersideTestCase;
-import org.parabuild.ci.common.VCSAttribute;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.TransactionCallback;
 import org.parabuild.ci.object.BuildConfig;
@@ -47,7 +47,7 @@ public class SSTestBuildRunConfig extends ServersideTestCase {
       public Object runInTransaction() throws Exception {
         final BuildRunConfig brc = new BuildRunConfig();
         brc.setBuildName("test_name");
-        brc.setSourceControl(VCSAttribute.SCM_CVS);
+        brc.setSourceControl(VersionControlSystem.SCM_CVS);
         brc.setScheduleType(BuildConfig.SCHEDULE_TYPE_AUTOMATIC);
         brc.setBuilderID(0);
         ConfigurationManager.getInstance().saveObject(brc);

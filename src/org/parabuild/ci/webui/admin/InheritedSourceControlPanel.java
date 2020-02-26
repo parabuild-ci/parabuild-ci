@@ -15,7 +15,7 @@ package org.parabuild.ci.webui.admin;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.common.VCSAttribute;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.SourceControlSetting;
@@ -54,7 +54,7 @@ public class InheritedSourceControlPanel extends SourceControlPanel {
     pnlWrapper.setVisible(false);
 
     // bind
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.REFERENCE_BUILD_ID, ddParentBuildName);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.REFERENCE_BUILD_ID, ddParentBuildName);
 
     // set listener to show the configurations online
     ddParentBuildName.addListener(new DropDownSelectedListener() {
@@ -163,7 +163,7 @@ public class InheritedSourceControlPanel extends SourceControlPanel {
 
 
     final ConfigurationManager cm = ConfigurationManager.getInstance();
-    final BuildConfig parentToLoad = parent.getSourceControl() == VCSAttribute.SCM_REFERENCE ? cm.getEffectiveBuildConfig(parent) : parent;
+    final BuildConfig parentToLoad = parent.getSourceControl() == VersionControlSystem.SCM_REFERENCE ? cm.getEffectiveBuildConfig(parent) : parent;
     pnlParentSourceControl = SourceControlPanelFactory.getPanel(parentToLoad);
     pnlParentSourceControl.load(parentToLoad);
     // NOTE: vimeshev - 2006-12-29 - override with our settings,
@@ -239,7 +239,7 @@ public class InheritedSourceControlPanel extends SourceControlPanel {
         if (log.isDebugEnabled()) {
           log.debug("selectedBuildConfig: " + selectedBuildConfig);
         }
-        if (selectedBuildConfig.getSourceControl() == VCSAttribute.SCM_REFERENCE) {
+        if (selectedBuildConfig.getSourceControl() == VersionControlSystem.SCM_REFERENCE) {
           final BuildConfig thisBuildConfig = cm.getBuildConfiguration(buildID);
           if (log.isDebugEnabled()) {
             log.debug("thisBuildConfig: " + thisBuildConfig);

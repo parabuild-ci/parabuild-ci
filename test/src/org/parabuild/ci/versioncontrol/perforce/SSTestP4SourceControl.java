@@ -13,24 +13,14 @@
  */
 package org.parabuild.ci.versioncontrol.perforce;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-
 import com.gargoylesoftware.base.testing.OrderedTestSuite;
 import junit.framework.TestSuite;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.ServersideTestCase;
 import org.parabuild.ci.TestHelper;
-
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.util.BuildException;
-import org.parabuild.ci.util.CommandStoppedException;
-import org.parabuild.ci.util.ValidationException;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.AgentHost;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
@@ -43,6 +33,15 @@ import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.object.SystemProperty;
 import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.remote.AgentManager;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.ValidationException;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Tests P4SourceControl
@@ -99,7 +98,7 @@ public class SSTestP4SourceControl extends ServersideTestCase {
 
 
   public void test_createClientNoUNC() throws Exception {
-    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.P4_USE_UNC_PATHS, SourceControlSetting.OPTION_UNCHECKED);
+    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VersionControlSystem.P4_USE_UNC_PATHS, SourceControlSetting.OPTION_UNCHECKED);
     this.perforce.reloadConfiguration();
     final String clientSpec = this.perforce.createOrUpdateClient();
     assertEquals(-1, clientSpec.indexOf("\\\\"));
@@ -119,7 +118,7 @@ public class SSTestP4SourceControl extends ServersideTestCase {
    * @throws Exception
    */
   public void test_syncToChangeListWithClobber() throws Exception {
-    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.P4_CLOBBER_OPTION, Byte.toString(VCSAttribute.P4_OPTION_VALUE_CLOBBER));
+    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VersionControlSystem.P4_CLOBBER_OPTION, Byte.toString(VersionControlSystem.P4_OPTION_VALUE_CLOBBER));
     perforce.reloadConfiguration();
     perforce.syncToChangeList(TEST_CHANGE_LIST_ID_10);
     TestHelper.assertCheckoutDirNotEmpty(agent);
@@ -133,8 +132,8 @@ public class SSTestP4SourceControl extends ServersideTestCase {
    */
   public void test_syncToChangeListWithDepotSourcePath() throws Exception {
     TestHelper.emptyCheckoutDir(agent);
-    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.P4_CLIENT_VIEW_SOURCE, Byte.toString(VCSAttribute.P4_CLIENT_VIEW_SOURCE_VALUE_DEPOT_PATH));
-    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.P4_CLIENT_VIEW_BY_DEPOT_PATH, DEPOT_PATH_SOURCE);
+    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VersionControlSystem.P4_CLIENT_VIEW_SOURCE, Byte.toString(VersionControlSystem.P4_CLIENT_VIEW_SOURCE_VALUE_DEPOT_PATH));
+    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VersionControlSystem.P4_CLIENT_VIEW_BY_DEPOT_PATH, DEPOT_PATH_SOURCE);
     perforce.reloadConfiguration();
     perforce.syncToChangeList(TEST_CHANGE_LIST_ID_10);
     TestHelper.assertCheckoutDirNotEmpty(agent);
@@ -144,10 +143,10 @@ public class SSTestP4SourceControl extends ServersideTestCase {
 
   public void test_syncsToChangeListWithDepotSourcePathBug1375() throws Exception {
     TestHelper.emptyCheckoutDir(agent);
-    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.P4_CLIENT_VIEW_SOURCE, Byte.toString(VCSAttribute.P4_CLIENT_VIEW_SOURCE_VALUE_DEPOT_PATH));
-    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.P4_CLIENT_VIEW_BY_DEPOT_PATH, DEPOT_PATH_SOURCE_3);
-    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.P4_ADVANCED_VIEW_MODE, SourceControlSetting.OPTION_CHECKED);
-    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.P4_RELATIVE_BUILD_DIR, "test");
+    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VersionControlSystem.P4_CLIENT_VIEW_SOURCE, Byte.toString(VersionControlSystem.P4_CLIENT_VIEW_SOURCE_VALUE_DEPOT_PATH));
+    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VersionControlSystem.P4_CLIENT_VIEW_BY_DEPOT_PATH, DEPOT_PATH_SOURCE_3);
+    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VersionControlSystem.P4_ADVANCED_VIEW_MODE, SourceControlSetting.OPTION_CHECKED);
+    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VersionControlSystem.P4_RELATIVE_BUILD_DIR, "test");
     perforce.reloadConfiguration();
     perforce.syncToChangeList(TEST_CHANGE_LIST_ID_10);
     assertEquals(0, ErrorManagerFactory.getErrorManager().errorCount());
@@ -161,8 +160,8 @@ public class SSTestP4SourceControl extends ServersideTestCase {
     if (log.isDebugEnabled())
       log.debug("==================================== step 1 ================================= ");
     TestHelper.emptyCheckoutDir(agent);
-    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.P4_CLIENT_VIEW_SOURCE, Byte.toString(VCSAttribute.P4_CLIENT_VIEW_SOURCE_VALUE_DEPOT_PATH));
-    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.P4_CLIENT_VIEW_BY_DEPOT_PATH, DEPOT_PATH_SOURCE);
+    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VersionControlSystem.P4_CLIENT_VIEW_SOURCE, Byte.toString(VersionControlSystem.P4_CLIENT_VIEW_SOURCE_VALUE_DEPOT_PATH));
+    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VersionControlSystem.P4_CLIENT_VIEW_BY_DEPOT_PATH, DEPOT_PATH_SOURCE);
     perforce.reloadConfiguration();
     perforce.syncToChangeList(TEST_CHANGE_LIST_ID_10);
     TestHelper.assertCheckoutDirNotEmpty(agent);
@@ -173,7 +172,7 @@ public class SSTestP4SourceControl extends ServersideTestCase {
     if (log.isDebugEnabled())
       log.debug("==================================== step 2 ================================= ");
     // change
-    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.P4_CLIENT_VIEW_BY_DEPOT_PATH, DEPOT_PATH_SOURCE_2);
+    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VersionControlSystem.P4_CLIENT_VIEW_BY_DEPOT_PATH, DEPOT_PATH_SOURCE_2);
     perforce.reloadConfiguration();
     perforce.syncToChangeList(TEST_CHANGE_LIST_ID_10);
     TestHelper.assertCheckoutDirNotEmpty(agent);
@@ -194,8 +193,8 @@ public class SSTestP4SourceControl extends ServersideTestCase {
   public void test_syncToChangeListWithDepotSourcePathFailsOnNonExistingPath() throws CommandStoppedException {
     try {
       TestHelper.emptyCheckoutDir(agent);
-      TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.P4_CLIENT_VIEW_SOURCE, Byte.toString(VCSAttribute.P4_CLIENT_VIEW_SOURCE_VALUE_DEPOT_PATH));
-      TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.P4_CLIENT_VIEW_BY_DEPOT_PATH, DEPOT_PATH_NONEXISTING_SOURCE);
+      TestHelper.setSourceControlProperty(TEST_BUILD_ID, VersionControlSystem.P4_CLIENT_VIEW_SOURCE, Byte.toString(VersionControlSystem.P4_CLIENT_VIEW_SOURCE_VALUE_DEPOT_PATH));
+      TestHelper.setSourceControlProperty(TEST_BUILD_ID, VersionControlSystem.P4_CLIENT_VIEW_BY_DEPOT_PATH, DEPOT_PATH_NONEXISTING_SOURCE);
       perforce.reloadConfiguration();
       perforce.syncToChangeList(TEST_CHANGE_LIST_ID_10);
       TestHelper.failNoExceptionThrown();
@@ -210,8 +209,8 @@ public class SSTestP4SourceControl extends ServersideTestCase {
     perforce.getChangesSince(TEST_CHANGE_LIST_ID_4);
 
     // alter
-    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.P4_CLIENT_VIEW_SOURCE, Byte.toString(VCSAttribute.P4_CLIENT_VIEW_SOURCE_VALUE_DEPOT_PATH));
-    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.P4_CLIENT_VIEW_BY_DEPOT_PATH, DEPOT_PATH_SOURCE);
+    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VersionControlSystem.P4_CLIENT_VIEW_SOURCE, Byte.toString(VersionControlSystem.P4_CLIENT_VIEW_SOURCE_VALUE_DEPOT_PATH));
+    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VersionControlSystem.P4_CLIENT_VIEW_BY_DEPOT_PATH, DEPOT_PATH_SOURCE);
     perforce.reloadConfiguration();
     final int newChangeListID = perforce.getChangesSince(TEST_CHANGE_LIST_ID_4);
     assertTrue(newChangeListID != TEST_CHANGE_LIST_ID_4);
@@ -223,13 +222,13 @@ public class SSTestP4SourceControl extends ServersideTestCase {
 
 
   public void test_syncToChangeListMultiline() throws Exception {
-    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.P4_DEPOT_PATH, STRING_SOURCE_LINE_MULTY_1);
+    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VersionControlSystem.P4_DEPOT_PATH, STRING_SOURCE_LINE_MULTY_1);
     perforce.reloadConfiguration();
     perforce.syncToChangeList(TEST_CHANGE_LIST_ID_10);
     TestHelper.assertCheckoutDirNotEmpty(agent);
     TestHelper.assertCurrentBuildPathExists(perforce, agent);
 
-    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.P4_DEPOT_PATH, STRING_SOURCE_LINE_MULTY_2);
+    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VersionControlSystem.P4_DEPOT_PATH, STRING_SOURCE_LINE_MULTY_2);
     perforce.reloadConfiguration();
     perforce.syncToChangeList(TEST_CHANGE_LIST_ID_10);
     TestHelper.assertCheckoutDirNotEmpty(agent);
@@ -243,7 +242,7 @@ public class SSTestP4SourceControl extends ServersideTestCase {
     //    2nd - //test/sourceline/alwaysvalid/...
     // 2nd has the latest change list #1072.
     TestHelper.emptyCheckoutDir(agent);
-    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.P4_DEPOT_PATH, STRING_SOURCE_LINE_MULTY_2);
+    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VersionControlSystem.P4_DEPOT_PATH, STRING_SOURCE_LINE_MULTY_2);
     perforce.reloadConfiguration();
     perforce.syncToChangeList(TEST_CHANGE_LIST_ID_18);
     TestHelper.assertCheckoutDirNotEmpty(agent);
@@ -293,7 +292,7 @@ public class SSTestP4SourceControl extends ServersideTestCase {
     assertTrue("Build logs home should be empty", agent.logDirIsEmpty());
 
     // main multiline
-    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.P4_DEPOT_PATH, STRING_SOURCE_LINE_MULTY_1);
+    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VersionControlSystem.P4_DEPOT_PATH, STRING_SOURCE_LINE_MULTY_1);
     perforce.reloadConfiguration();
     perforce.checkoutLatest();
     assertTrue("Checkout dir should be reported as inited", perforce.isBuildDirInitialized());
@@ -311,7 +310,7 @@ public class SSTestP4SourceControl extends ServersideTestCase {
    */
   public void test_bug630syncToLatestScrewedWindowsPath() throws CommandStoppedException, BuildException, IOException, AgentFailureException {
     errorManager.clearAllActiveErrors();
-    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.P4_DEPOT_PATH, "//test/abbdleclient/...");
+    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VersionControlSystem.P4_DEPOT_PATH, "//test/abbdleclient/...");
     perforce.reloadConfiguration();
     perforce.checkoutLatest();
     TestHelper.assertCheckoutDirNotEmpty(agent);
@@ -324,7 +323,7 @@ public class SSTestP4SourceControl extends ServersideTestCase {
    */
   public void test_bug737syncToLatestWorksWithSpacedPath() throws CommandStoppedException, BuildException, IOException, AgentFailureException {
     errorManager.clearAllActiveErrors();
-    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.P4_DEPOT_PATH, "//test/sourceline with spaces/...");
+    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VersionControlSystem.P4_DEPOT_PATH, "//test/sourceline with spaces/...");
     perforce.reloadConfiguration();
     perforce.checkoutLatest();
     TestHelper.assertCheckoutDirNotEmpty(agent);
@@ -337,7 +336,7 @@ public class SSTestP4SourceControl extends ServersideTestCase {
    * are checked out under Windows.
    */
   public void test_bug630syncToLatestReservedMSDOSPath() throws CommandStoppedException, BuildException, IOException, AgentFailureException {
-    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.P4_DEPOT_PATH, "//test/aux/...");
+    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VersionControlSystem.P4_DEPOT_PATH, "//test/aux/...");
     perforce.reloadConfiguration();
     perforce.checkoutLatest();
     TestHelper.assertCheckoutDirNotEmpty(agent);
@@ -362,7 +361,7 @@ public class SSTestP4SourceControl extends ServersideTestCase {
 
   public void test_createLabel() throws Exception {
     final String label = "test_label_" + System.currentTimeMillis();
-    perforce.createOrUpdateLabel(label, cm.getSourceControlSettingValue(TEST_BUILD_ID, VCSAttribute.P4_DEPOT_PATH, null));
+    perforce.createOrUpdateLabel(label, cm.getSourceControlSettingValue(TEST_BUILD_ID, VersionControlSystem.P4_DEPOT_PATH, null));
   }
 
 
@@ -423,7 +422,7 @@ public class SSTestP4SourceControl extends ServersideTestCase {
 
 
   public void test_getChangesSincePicksUpIntegOnlyBranches() throws Exception {
-    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.P4_DEPOT_PATH, "//test/sourceline_with_branch_integ_only/...");
+    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VersionControlSystem.P4_DEPOT_PATH, "//test/sourceline_with_branch_integ_only/...");
     perforce.reloadConfiguration();
     assertTrue(perforce.getChangesSince(ChangeList.UNSAVED_ID) != ChangeList.UNSAVED_ID);
   }
@@ -439,7 +438,7 @@ public class SSTestP4SourceControl extends ServersideTestCase {
 
 
   public void test_getChangesSinceFailsOnWrongPassword() throws Exception {
-    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.P4_PASSWORD, TestHelper.P4_INVALID_PASSWORD);
+    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VersionControlSystem.P4_PASSWORD, TestHelper.P4_INVALID_PASSWORD);
     try {
       perforce.reloadConfiguration();
       perforce.getChangesSince(TEST_CHANGE_LIST_ID_4);
@@ -451,7 +450,7 @@ public class SSTestP4SourceControl extends ServersideTestCase {
 
 
   public void test_getChangesSinceFailsOnWrongExecutable() throws Exception {
-    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.P4_PATH_TO_CLIENT, "there_is_no_such_executable");
+    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VersionControlSystem.P4_PATH_TO_CLIENT, "there_is_no_such_executable");
     try {
       perforce.reloadConfiguration();
       perforce.getChangesSince(TEST_CHANGE_LIST_ID_4);
@@ -463,7 +462,7 @@ public class SSTestP4SourceControl extends ServersideTestCase {
 
 
   public void test_getChangesSinceFailsOnWrongPort() throws Exception {
-    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.P4_PORT, "there_is_no_such_host:555");
+    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VersionControlSystem.P4_PORT, "there_is_no_such_host:555");
     try {
       perforce.reloadConfiguration();
       perforce.getChangesSince(TEST_CHANGE_LIST_ID_4);
@@ -488,7 +487,7 @@ public class SSTestP4SourceControl extends ServersideTestCase {
 
 
   public void test_syncToLatestFailsOnWrongPassword() throws Exception {
-    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.P4_PASSWORD, TestHelper.P4_INVALID_PASSWORD);
+    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VersionControlSystem.P4_PASSWORD, TestHelper.P4_INVALID_PASSWORD);
     try {
       perforce.reloadConfiguration();
       perforce.checkoutLatest();
@@ -500,7 +499,7 @@ public class SSTestP4SourceControl extends ServersideTestCase {
 
 
   public void test_syncToLatestFailsOnWrongExecutable() throws Exception {
-    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.P4_PATH_TO_CLIENT, "there_is_no_such_executable");
+    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VersionControlSystem.P4_PATH_TO_CLIENT, "there_is_no_such_executable");
     try {
       perforce.reloadConfiguration();
       perforce.checkoutLatest();
@@ -512,7 +511,7 @@ public class SSTestP4SourceControl extends ServersideTestCase {
 
 
   public void test_syncToLatestFailsOnWrongPort() throws Exception {
-    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.P4_PORT, "there_is_no_such_host:555");
+    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VersionControlSystem.P4_PORT, "there_is_no_such_host:555");
     try {
       perforce.reloadConfiguration();
       perforce.checkoutLatest();
@@ -524,7 +523,7 @@ public class SSTestP4SourceControl extends ServersideTestCase {
 
 
   public void test_syncToLatestFailsOnNonExistingDepotPath() throws Exception {
-    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.P4_DEPOT_PATH, "//test/there_is_no_such_depot_path");
+    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VersionControlSystem.P4_DEPOT_PATH, "//test/there_is_no_such_depot_path");
     try {
       perforce.reloadConfiguration();
       perforce.checkoutLatest();
@@ -536,7 +535,7 @@ public class SSTestP4SourceControl extends ServersideTestCase {
 
 
   public void test_syncToChangeListFailsOnWrongPassword() throws Exception {
-    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.P4_PASSWORD, TestHelper.P4_INVALID_PASSWORD);
+    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VersionControlSystem.P4_PASSWORD, TestHelper.P4_INVALID_PASSWORD);
     try {
       perforce.reloadConfiguration();
       perforce.syncToChangeList(TEST_CHANGE_LIST_ID_4);
@@ -548,7 +547,7 @@ public class SSTestP4SourceControl extends ServersideTestCase {
 
 
   public void test_syncToChangeListFailsOnWrongExecutable() throws Exception {
-    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.P4_PATH_TO_CLIENT, "there_is_no_such_executable");
+    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VersionControlSystem.P4_PATH_TO_CLIENT, "there_is_no_such_executable");
     try {
       perforce.reloadConfiguration();
       perforce.syncToChangeList(TEST_CHANGE_LIST_ID_4);
@@ -560,7 +559,7 @@ public class SSTestP4SourceControl extends ServersideTestCase {
 
 
   public void test_syncToChangeListFailsOnWrongPort() throws Exception {
-    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.P4_PORT, "there_is_no_such_host:555");
+    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VersionControlSystem.P4_PORT, "there_is_no_such_host:555");
     try {
       perforce.reloadConfiguration();
       perforce.syncToChangeList(TEST_CHANGE_LIST_ID_4);
@@ -578,7 +577,7 @@ public class SSTestP4SourceControl extends ServersideTestCase {
 
 
   public void test_getUserMapFailsOnWrongP4Port() throws Exception {
-    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.P4_PORT, "there_is_no_such_host:555");
+    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VersionControlSystem.P4_PORT, "there_is_no_such_host:555");
     perforce.reloadConfiguration();
     final Map result = perforce.getUsersMap();
     assertTrue(result.isEmpty());
@@ -592,7 +591,7 @@ public class SSTestP4SourceControl extends ServersideTestCase {
     final String oldRelativeBuildDir = TestHelper.assertCurrentBuildPathExists(perforce, agent);
 
     // update property
-    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.P4_DEPOT_PATH, STRING_SOURCE_LINE_TWO);
+    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VersionControlSystem.P4_DEPOT_PATH, STRING_SOURCE_LINE_TWO);
 
     // call sync
     perforce.reloadConfiguration();
@@ -603,7 +602,7 @@ public class SSTestP4SourceControl extends ServersideTestCase {
 
 
   public void test_getChangeListCounter() throws Exception {
-    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.P4_COUNTER, "change");
+    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VersionControlSystem.P4_COUNTER, "change");
     perforce.reloadConfiguration();
     final int counter = perforce.getChangeListCounter(true);
     if (log.isDebugEnabled()) log.debug("counter = " + counter);

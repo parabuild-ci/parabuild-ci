@@ -13,23 +13,22 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.io.File;
-
 import com.gargoylesoftware.base.testing.OrderedTestSuite;
 import junit.framework.TestSuite;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.TestHelper;
-
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.util.BuildException;
-import org.parabuild.ci.util.CommandStoppedException;
-import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.ChangeList;
 import org.parabuild.ci.object.SystemProperty;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.versioncontrol.mks.SSTestMKSSourceControl;
+
+import java.io.File;
 
 /**
  * Test for FileSystemSourceControl
@@ -108,7 +107,7 @@ public class SSTestFileSystemSourceControl extends AbstractSourceControlTest {
     final String url = "http://www.parabuildci.org";
     TestHelper.setSourceControlProperty(
             getTestBuildID(),
-            VCSAttribute.FILESYSTEM_VCS_PATH,
+            VersionControlSystem.FILESYSTEM_VCS_PATH,
             canonicalPath + '\n' + url);
 
     // sync w/reload - make sure nothing happens
@@ -190,7 +189,7 @@ public class SSTestFileSystemSourceControl extends AbstractSourceControlTest {
   public void test_getChangesSinceFailsOnNonExistingPath() throws Exception {
     TestHelper.setSourceControlProperty(
             getTestBuildID(),
-            VCSAttribute.FILESYSTEM_VCS_PATH,
+            VersionControlSystem.FILESYSTEM_VCS_PATH,
             "some_never_existed_path");
 
     // sync w/reload - make sure nothing happens
@@ -255,7 +254,7 @@ public class SSTestFileSystemSourceControl extends AbstractSourceControlTest {
     super.errorManager.clearAllActiveErrors();
 
     // prepare test file directory
-    TestHelper.setSourceControlProperty(getTestBuildID(), VCSAttribute.FILESYSTEM_VCS_PATH, new File(TestHelper.getTestDataDir(), "nunit_xml_logs").getCanonicalPath());
+    TestHelper.setSourceControlProperty(getTestBuildID(), VersionControlSystem.FILESYSTEM_VCS_PATH, new File(TestHelper.getTestDataDir(), "nunit_xml_logs").getCanonicalPath());
 
     final BuildConfig buildConfig = cm.getBuildConfiguration(getTestBuildID());
     this.fsvcs = new FileSystemSourceControl(buildConfig);

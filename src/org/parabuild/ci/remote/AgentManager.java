@@ -19,12 +19,7 @@ import EDU.oswego.cs.dl.util.concurrent.ThreadFactory;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.util.IoUtils;
-import org.parabuild.ci.util.SourceControlSettingResolver;
-import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.util.ThreadUtils;
-import org.parabuild.ci.util.ValidationException;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.AgentHost;
 import org.parabuild.ci.configuration.BuilderAgentVO;
 import org.parabuild.ci.configuration.BuilderConfigurationManager;
@@ -43,6 +38,11 @@ import org.parabuild.ci.remote.internal.LocalAgentEnvironment;
 import org.parabuild.ci.remote.internal.RemoteAgentEnvironmentProxy;
 import org.parabuild.ci.remote.internal.RemoteAgentProxy;
 import org.parabuild.ci.remote.internal.WebServiceLocator;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.SourceControlSettingResolver;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.util.ThreadUtils;
+import org.parabuild.ci.util.ValidationException;
 
 import java.io.File;
 import java.io.IOException;
@@ -597,7 +597,7 @@ public final class AgentManager {
   public Agent createAgent(final int buildConfigID, final AgentHost agentHost) throws IOException {
 
     final ConfigurationManager cm = ConfigurationManager.getInstance();
-    final String checkoutDirTemplate = cm.getSourceControlSettingValue(buildConfigID, VCSAttribute.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE, null);
+    final String checkoutDirTemplate = cm.getSourceControlSettingValue(buildConfigID, VersionControlSystem.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE, null);
     return createAgent(buildConfigID, checkoutDirTemplate, cm.getBuildConfiguration(buildConfigID).getBuildName(), agentHost, buildConfigID);
   }
 

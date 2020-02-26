@@ -13,23 +13,22 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.util.Iterator;
-import java.util.List;
-
 import com.gargoylesoftware.base.testing.OrderedTestSuite;
 import junit.framework.TestSuite;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.TestHelper;
-
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.util.BuildException;
-import org.parabuild.ci.util.CommandStoppedException;
-import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.ChangeList;
 import org.parabuild.ci.object.SystemProperty;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.IoUtils;
+
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * Tests PVCSSourceControl
@@ -95,8 +94,8 @@ public class SSTestPVCSSourceControl extends AbstractSourceControlTest {
 
 
   public void test_checkoutLatestCanBeAcessesWithNameAndPassword() throws Exception {
-    TestHelper.setSourceControlProperty(pvcs.getBuildID(), VCSAttribute.PVCS_USER, "test_user");
-    TestHelper.setSourceControlProperty(pvcs.getBuildID(), VCSAttribute.PVCS_PASSWORD, org.parabuild.ci.security.SecurityManager.encryptPassword("test_password"));
+    TestHelper.setSourceControlProperty(pvcs.getBuildID(), VersionControlSystem.PVCS_USER, "test_user");
+    TestHelper.setSourceControlProperty(pvcs.getBuildID(), VersionControlSystem.PVCS_PASSWORD, org.parabuild.ci.security.SecurityManager.encryptPassword("test_password"));
     TestHelper.emptyCheckoutDir(agent);
     pvcs.checkoutLatest();
     pvcs.checkoutLatest(); // make sure nothing happens at second run
@@ -108,7 +107,7 @@ public class SSTestPVCSSourceControl extends AbstractSourceControlTest {
 
   public void test_checkOutLatestBranch() throws Exception {
     TestHelper.emptyCheckoutDir(agent);
-    TestHelper.setSourceControlProperty(getTestBuildID(), VCSAttribute.PVCS_BRANCH_NAME, TEST_BRANCH);
+    TestHelper.setSourceControlProperty(getTestBuildID(), VersionControlSystem.PVCS_BRANCH_NAME, TEST_BRANCH);
     pvcs.reloadConfiguration();
     pvcs.checkoutLatest();
     TestHelper.assertCheckoutDirNotEmpty(agent);
@@ -118,7 +117,7 @@ public class SSTestPVCSSourceControl extends AbstractSourceControlTest {
   public void test_syncToChangeListBranch() throws Exception {
     TestHelper.emptyCheckoutDir(agent);
     TestHelper.assertCheckoutDirExistsAndEmpty(agent);
-    TestHelper.setSourceControlProperty(getTestBuildID(), VCSAttribute.PVCS_BRANCH_NAME, TEST_BRANCH);
+    TestHelper.setSourceControlProperty(getTestBuildID(), VersionControlSystem.PVCS_BRANCH_NAME, TEST_BRANCH);
     pvcs.reloadConfiguration();
     final int changeListID = pvcs.getChangesSince(ChangeList.UNSAVED_ID);
     if (log.isDebugEnabled()) log.debug("changeListID: " + changeListID);
@@ -133,7 +132,7 @@ public class SSTestPVCSSourceControl extends AbstractSourceControlTest {
    * @throws Exception
    */
   public void test_getChangesSinceInBranch() throws Exception {
-    TestHelper.setSourceControlProperty(getTestBuildID(), VCSAttribute.PVCS_BRANCH_NAME, TEST_BRANCH);
+    TestHelper.setSourceControlProperty(getTestBuildID(), VersionControlSystem.PVCS_BRANCH_NAME, TEST_BRANCH);
     pvcs.reloadConfiguration();
     final int changeListID = pvcs.getChangesSince(ChangeList.UNSAVED_ID);
     assertTrue(changeListID != ChangeList.UNSAVED_ID);
@@ -149,7 +148,7 @@ public class SSTestPVCSSourceControl extends AbstractSourceControlTest {
     final String oldRelativeBuildDir = TestHelper.assertCurrentBuildPathExists(pvcs, agent);
 
     // update property
-    TestHelper.setSourceControlProperty(getTestBuildID(), VCSAttribute.PVCS_PROJECT, STRING_SOURCE_LINE_TWO);
+    TestHelper.setSourceControlProperty(getTestBuildID(), VersionControlSystem.PVCS_PROJECT, STRING_SOURCE_LINE_TWO);
     pvcs.reloadConfiguration();
 
     // call sync
@@ -164,7 +163,7 @@ public class SSTestPVCSSourceControl extends AbstractSourceControlTest {
     assertTrue(agent.emptyLogDir());
     // alter
     final String multilineSourceLine = STRING_SOURCE_LINE_ONE + '\n' + STRING_SOURCE_LINE_TWO;
-    TestHelper.setSourceControlProperty(pvcs.getBuildID(), VCSAttribute.PVCS_PROJECT, multilineSourceLine);
+    TestHelper.setSourceControlProperty(pvcs.getBuildID(), VersionControlSystem.PVCS_PROJECT, multilineSourceLine);
 
     // sync w/reload
     pvcs.reloadConfiguration();
@@ -188,7 +187,7 @@ public class SSTestPVCSSourceControl extends AbstractSourceControlTest {
    */
   public void test_checkOutLatestCantProcessUnexistingSourceLine() throws Exception {
     // alter
-    TestHelper.setSourceControlProperty(pvcs.getBuildID(), VCSAttribute.PVCS_PROJECT, "test/never/existed");
+    TestHelper.setSourceControlProperty(pvcs.getBuildID(), VersionControlSystem.PVCS_PROJECT, "test/never/existed");
     pvcs.reloadConfiguration();
 
     // test
@@ -260,13 +259,13 @@ public class SSTestPVCSSourceControl extends AbstractSourceControlTest {
     TestHelper.assertCheckoutDirExistsAndEmpty(agent);
 
     // alter
-    TestHelper.setSourceControlProperty(pvcs.getBuildID(), VCSAttribute.PVCS_PROJECT, STRING_SOURCE_LINE_TWO);
+    TestHelper.setSourceControlProperty(pvcs.getBuildID(), VersionControlSystem.PVCS_PROJECT, STRING_SOURCE_LINE_TWO);
     pvcs.reloadConfiguration();
     pvcs.syncToChangeList(pvcs.getChangesSince(-1));
     final String oldRelativeBuildDir = TestHelper.assertCurrentBuildPathExists(pvcs, agent);
 
     // update property
-    TestHelper.setSourceControlProperty(pvcs.getBuildID(), VCSAttribute.PVCS_PROJECT, STRING_SOURCE_LINE_ONE);
+    TestHelper.setSourceControlProperty(pvcs.getBuildID(), VersionControlSystem.PVCS_PROJECT, STRING_SOURCE_LINE_ONE);
     pvcs.reloadConfiguration();
 
     // we expect that there is change list in the test/config/dataset.xml
@@ -294,8 +293,8 @@ public class SSTestPVCSSourceControl extends AbstractSourceControlTest {
    */
   public void test_canNotAccessWithWrongPassword() throws Exception {
     // alter
-    TestHelper.setSourceControlProperty(pvcs.getBuildID(), VCSAttribute.PVCS_USER, "test_user");
-    TestHelper.setSourceControlProperty(pvcs.getBuildID(), VCSAttribute.PVCS_PASSWORD, org.parabuild.ci.security.SecurityManager.encryptPassword("wrong_passord"));
+    TestHelper.setSourceControlProperty(pvcs.getBuildID(), VersionControlSystem.PVCS_USER, "test_user");
+    TestHelper.setSourceControlProperty(pvcs.getBuildID(), VersionControlSystem.PVCS_PASSWORD, org.parabuild.ci.security.SecurityManager.encryptPassword("wrong_passord"));
     pvcs.reloadConfiguration();
 
     // test

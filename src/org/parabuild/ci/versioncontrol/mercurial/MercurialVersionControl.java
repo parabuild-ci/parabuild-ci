@@ -16,15 +16,15 @@ package org.parabuild.ci.versioncontrol.mercurial;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.util.BuildException;
-import org.parabuild.ci.util.CommandStoppedException;
-import org.parabuild.ci.util.IoUtils;
-import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.ChangeList;
 import org.parabuild.ci.remote.Agent;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.versioncontrol.AbstractSourceControl;
 import org.parabuild.ci.versioncontrol.ExclusionPathFinder;
 import org.parabuild.ci.versioncontrol.SourceControlSettingChangeDetector;
@@ -286,7 +286,7 @@ public class MercurialVersionControl extends AbstractSourceControl {
     }
 
     // validate that change lists contain not only exclusions
-    if (new ExclusionPathFinder().onlyExclusionPathsPresentInChangeLists(result, getSettingValue(VCSAttribute.VCS_EXCLUSION_PATHS))) {
+    if (new ExclusionPathFinder().onlyExclusionPathsPresentInChangeLists(result, getSettingValue(VersionControlSystem.VCS_EXCLUSION_PATHS))) {
       return ChangeList.UNSAVED_ID;
     }
 
@@ -298,7 +298,7 @@ public class MercurialVersionControl extends AbstractSourceControl {
 
 
   private String getBranch() {
-    return getSettingValue(VCSAttribute.MERCURIAL_BRANCH);
+    return getSettingValue(VersionControlSystem.MERCURIAL_BRANCH);
   }
 
 
@@ -323,9 +323,9 @@ public class MercurialVersionControl extends AbstractSourceControl {
     // check if critical settings has changed
     final SourceControlSettingChangeDetector scd = new SourceControlSettingChangeDetector(currentSettings, newSettings);
     boolean hasToCleanUp = false;
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.MERCURIAL_URL);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.MERCURIAL_BRANCH);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.MERCURIAL_URL);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.MERCURIAL_BRANCH);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE);
     if (hasToCleanUp) {
       setHasToCleanUp();
     }
@@ -346,12 +346,12 @@ public class MercurialVersionControl extends AbstractSourceControl {
 
 
   private String getURL() {
-    return getSettingValue(VCSAttribute.MERCURIAL_URL);
+    return getSettingValue(VersionControlSystem.MERCURIAL_URL);
   }
 
 
   private String getExePath() {
-    return getSettingValue(VCSAttribute.MERCURIAL_EXE_PATH);
+    return getSettingValue(VersionControlSystem.MERCURIAL_EXE_PATH);
   }
 
 

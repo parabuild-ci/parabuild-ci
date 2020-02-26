@@ -13,8 +13,8 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.webui.common.*;
+import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.webui.common.CodeNameDropDown;
 
 /**
  * Perforce clobber option dropdown.
@@ -26,8 +26,8 @@ final class P4ClobberDropDown extends CodeNameDropDown {
 
 
   P4ClobberDropDown() {
-    addCodeNamePair(VCSAttribute.P4_OPTION_VALUE_NOCLOBBER, "noclobber");
-    addCodeNamePair(VCSAttribute.P4_OPTION_VALUE_CLOBBER, "clobber");
+    addCodeNamePair(VersionControlSystem.P4_OPTION_VALUE_NOCLOBBER, "noclobber");
+    addCodeNamePair(VersionControlSystem.P4_OPTION_VALUE_CLOBBER, "clobber");
     setSelection(0);
   }
 }

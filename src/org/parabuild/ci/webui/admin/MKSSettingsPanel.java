@@ -13,11 +13,11 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.common.VCSAttribute;
+import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.remote.NoLiveAgentsException;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.util.ValidationException;
-import org.parabuild.ci.remote.NoLiveAgentsException;
 import org.parabuild.ci.versioncontrol.DepotPathParser;
 import org.parabuild.ci.versioncontrol.mks.MKSDateFormat;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
@@ -85,17 +85,17 @@ public final class MKSSettingsPanel extends AbstractSourceControlPanel {
     gridIterator.addBlankLine();
 
     // init property to input map
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.MKS_HOST, flHost);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.MKS_PASSWORD, flPassword);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.MKS_PATH_TO_EXE, flPathToExe);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.MKS_PORT, flPort);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.MKS_PROJECT, flProject);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.MKS_USER, flUser);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.MKS_LINE_TERMINATOR, flLineTerminator);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.MKS_DEVELOPMENT_PATH, flDevPath);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.MKS_PROJECT_REVISION, flProjectRevision);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.MKS_RLOG_DATE_FORMAT, flRlogDateFormat);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.MKS_CO_DATE_FORMAT, flCoDateFormat);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.MKS_HOST, flHost);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.MKS_PASSWORD, flPassword);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.MKS_PATH_TO_EXE, flPathToExe);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.MKS_PORT, flPort);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.MKS_PROJECT, flProject);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.MKS_USER, flUser);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.MKS_LINE_TERMINATOR, flLineTerminator);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.MKS_DEVELOPMENT_PATH, flDevPath);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.MKS_PROJECT_REVISION, flProjectRevision);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.MKS_RLOG_DATE_FORMAT, flRlogDateFormat);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.MKS_CO_DATE_FORMAT, flCoDateFormat);
 
     // add footer
     addCommonAttributes();

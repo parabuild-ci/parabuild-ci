@@ -13,13 +13,13 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.util.IoUtils;
-import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.remote.AgentEnvironment;
 import org.parabuild.ci.remote.NoLiveAgentsException;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.EncryptingPassword;
@@ -97,17 +97,17 @@ public final class CVSSettingsPanel extends AbstractSourceControlPanel {
     lbRepository.setAlignY(Layout.TOP);
 
     // init property to input map
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.CVS_PASSWORD, fldPassword);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.CVS_PATH_TO_RSH, fldPathToExternalRsh);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.CVS_ROOT, fldRoot);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.CVS_REPOSITORY_PATH, fldCVSPath);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.CVS_PATH_TO_CLIENT, fldPathToCVSClient);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.CVS_BRANCH_NAME, fldBranch);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.CVS_CHANGE_WINDOW, fldChangeWindow);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.CVS_CHANGE_PRECHECK, fldChangePreCheck);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.CVS_COMPRESSION, fldCompression);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.CVS_CUSTOM_RELATIVE_BUILD_DIR, flRelativeBuildDir);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.CVS_SUPPRESS_LOG_OUTPUT_IF_NO_CHANGES, flFastChangeDetection);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.CVS_PASSWORD, fldPassword);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.CVS_PATH_TO_RSH, fldPathToExternalRsh);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.CVS_ROOT, fldRoot);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.CVS_REPOSITORY_PATH, fldCVSPath);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.CVS_PATH_TO_CLIENT, fldPathToCVSClient);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.CVS_BRANCH_NAME, fldBranch);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.CVS_CHANGE_WINDOW, fldChangeWindow);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.CVS_CHANGE_PRECHECK, fldChangePreCheck);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.CVS_COMPRESSION, fldCompression);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.CVS_CUSTOM_RELATIVE_BUILD_DIR, flRelativeBuildDir);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.CVS_SUPPRESS_LOG_OUTPUT_IF_NO_CHANGES, flFastChangeDetection);
 
     // add footer
     addCommonAttributes();

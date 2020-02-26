@@ -15,11 +15,7 @@ package org.parabuild.ci.build;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.util.CommandStoppedException;
-import org.parabuild.ci.util.IoUtils;
-import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.util.ThreadUtils;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.AgentHost;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManager;
@@ -34,6 +30,10 @@ import org.parabuild.ci.object.ScheduleProperty;
 import org.parabuild.ci.remote.AgentManager;
 import org.parabuild.ci.services.BuildManager;
 import org.parabuild.ci.services.BuildStartRequest;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.util.ThreadUtils;
 import org.parabuild.ci.versioncontrol.SourceControl;
 
 import java.util.Date;
@@ -341,7 +341,7 @@ public final class AutomaticScheduler extends Thread implements BuildScheduler {
     if (config.getScheduleType() == BuildConfig.SCHEDULE_TYPE_PARALLEL) {
       // Get leader build ID
       final int leaderBuildID = cm.getSourceControlSettingValue(activeBuildID,
-              VCSAttribute.REFERENCE_BUILD_ID, BuildConfig.UNSAVED_ID);
+              VersionControlSystem.REFERENCE_BUILD_ID, BuildConfig.UNSAVED_ID);
       // Return leader's setting
       return cm.getScheduleSettingValue(leaderBuildID, ScheduleProperty.SERIALIZE,
               ScheduleProperty.OPTION_UNCHECKED).equals(ScheduleProperty.OPTION_CHECKED);

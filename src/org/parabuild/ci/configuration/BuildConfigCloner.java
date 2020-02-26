@@ -20,7 +20,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.BuildStatus;
 import org.parabuild.ci.build.SystemVariableConfigurationManager;
-import org.parabuild.ci.common.VCSAttribute;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.error.Error;
 import org.parabuild.ci.error.ErrorManager;
 import org.parabuild.ci.error.ErrorManagerFactory;
@@ -365,7 +365,7 @@ public final class BuildConfigCloner {
         final SourceControlSettingResolver sourceControlSettingResolver = new SourceControlSettingResolver(
                 sourceBuildConfig.getBuildName(), sourceBuildConfig.getActiveBuildID(), agentHostName);
         final Map overwrittenSourceControlSettings = new HashMap(3);
-        final boolean isReferenceSourceControl = sourceBuildConfig.getSourceControl() == VCSAttribute.SCM_REFERENCE;
+        final boolean isReferenceSourceControl = sourceBuildConfig.getSourceControl() == VersionControlSystem.SCM_REFERENCE;
         final Query sourceControlSettingsQuery = session.createQuery("from SourceControlSetting as vcs where vcs.buildID = ?");
         sourceControlSettingsQuery.setInteger(0, sourceBuildID);
         sourceControlSettingsQuery.setCacheable(true);
@@ -379,13 +379,13 @@ public final class BuildConfigCloner {
           if (copyActiveBuild) {
 
             // for ClearCase storage location code is switched to "Auto"
-            if (sourceControlSetting.getPropertyName().equals(VCSAttribute.CLEARCASE_VIEW_STORAGE_LOCATION_CODE)) {
+            if (sourceControlSetting.getPropertyName().equals(VersionControlSystem.CLEARCASE_VIEW_STORAGE_LOCATION_CODE)) {
               storageLocationCode = sourceControlSetting;
               continue; // process out of the cycle
-            } else if (sourceControlSetting.getPropertyName().equals(VCSAttribute.CLEARCASE_VIEW_STORAGE_LOCATION)) {
+            } else if (sourceControlSetting.getPropertyName().equals(VersionControlSystem.CLEARCASE_VIEW_STORAGE_LOCATION)) {
               storageLocation = sourceControlSetting;
               continue; // process out of the cycle
-            } else if (sourceControlSetting.getPropertyName().equals(VCSAttribute.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE)) {
+            } else if (sourceControlSetting.getPropertyName().equals(VersionControlSystem.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE)) {
               // check if it is a template.
               //
               // REVIEWME: vimeshev - 2007-01-21 - we assume
@@ -420,7 +420,7 @@ public final class BuildConfigCloner {
             // advanced handling for reference builds.
             //if (log.isDebugEnabled()) log.debug("isReferenceSourceControl: " + isReferenceSourceControl);
             //if (log.isDebugEnabled()) log.debug("copyActiveBuild: " + copyActiveBuild);
-            if (isReferenceSourceControl && sourceControlSetting.getPropertyName().equals(VCSAttribute.REFERENCE_BUILD_ID)) {
+            if (isReferenceSourceControl && sourceControlSetting.getPropertyName().equals(VersionControlSystem.REFERENCE_BUILD_ID)) {
 
               // scheduled and parallel builds handle reference IDs differently
               if (sourceBuildConfig.getScheduleType() == BuildConfig.SCHEDULE_TYPE_RECURRENT) {
@@ -455,7 +455,7 @@ public final class BuildConfigCloner {
             } else {
 
               // Resolve path to Subversion exe
-              if (sourceControlSetting.getPropertyName().equals(VCSAttribute.SVN_PATH_TO_EXE)) {
+              if (sourceControlSetting.getPropertyName().equals(VersionControlSystem.SVN_PATH_TO_EXE)) {
                 sourceControlSetting.setPropertyValue(sourceControlSettingResolver.resolve(sourceControlSetting.getPropertyValue()));
               }
             }
@@ -466,8 +466,8 @@ public final class BuildConfigCloner {
         // finish handling CC storage to avoid duplication of VWS path created by cloning
         if (copyActiveBuild) { // NOPMD
           if (storageLocationCode != null) {
-            if (storageLocationCode.getPropertyValueAsInt() != VCSAttribute.CLEARCASE_STORAGE_CODE_VWS) {
-              if (storageLocationCode.getPropertyValueAsInt() == VCSAttribute.CLEARCASE_STORAGE_CODE_STGLOC) {
+            if (storageLocationCode.getPropertyValueAsInt() != VersionControlSystem.CLEARCASE_STORAGE_CODE_VWS) {
+              if (storageLocationCode.getPropertyValueAsInt() == VersionControlSystem.CLEARCASE_STORAGE_CODE_STGLOC) {
                 saveNewSourceControlSetting(session, storageLocationCode, resultBuildID, overwrittenSourceControlSettings);
                 if (storageLocation != null) {
                   saveNewSourceControlSetting(session, storageLocation, resultBuildID, overwrittenSourceControlSettings);

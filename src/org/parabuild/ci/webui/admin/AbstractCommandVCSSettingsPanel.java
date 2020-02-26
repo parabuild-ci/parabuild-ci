@@ -15,7 +15,7 @@ package org.parabuild.ci.webui.admin;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.common.VCSAttribute;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.GridIterator;
@@ -54,9 +54,9 @@ public abstract class AbstractCommandVCSSettingsPanel extends AbstractSourceCont
     // init property to input map
     //noinspection OverriddenMethodCallInConstructor,AbstractMethodCallInConstructor,OverridableMethodCallInConstructor
     bindHeaderFields(); // NOPMD
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.COMMAND_VCS_LABEL_COMMAND, flLabelCommand);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.COMMAND_VCS_REMOVE_LABEL_COMMAND, flRemoveLabelCommand);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.COMMAND_VCS_SYNC_TO_CHANGE_LIST_COMMAND, flSyncToChangeListCommand);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.COMMAND_VCS_LABEL_COMMAND, flLabelCommand);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.COMMAND_VCS_REMOVE_LABEL_COMMAND, flRemoveLabelCommand);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.COMMAND_VCS_SYNC_TO_CHANGE_LIST_COMMAND, flSyncToChangeListCommand);
     addCommonAttributes();
   }
 

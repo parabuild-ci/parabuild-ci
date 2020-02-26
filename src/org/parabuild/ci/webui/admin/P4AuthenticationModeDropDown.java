@@ -13,8 +13,8 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.webui.common.*;
+import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.webui.common.CodeNameDropDown;
 
 /**
  * Perforce autentication modes.
@@ -26,8 +26,8 @@ final class P4AuthenticationModeDropDown extends CodeNameDropDown {
 
 
   P4AuthenticationModeDropDown() {
-    addCodeNamePair(VCSAttribute.P4_AUTHENTICATION_MODE_VALUE_P4PASSWD, "P4PASSWD");
-    addCodeNamePair(VCSAttribute.P4_AUTHENTICATION_MODE_VALUE_P4LOGIN, "p4 login");
+    addCodeNamePair(VersionControlSystem.P4_AUTHENTICATION_MODE_VALUE_P4PASSWD, "P4PASSWD");
+    addCodeNamePair(VersionControlSystem.P4_AUTHENTICATION_MODE_VALUE_P4LOGIN, "p4 login");
     setSelection(0);
   }
 }

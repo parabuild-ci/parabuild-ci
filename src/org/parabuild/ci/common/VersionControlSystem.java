@@ -3,7 +3,7 @@ package org.parabuild.ci.common;
 import org.parabuild.ci.webui.admin.FishEyeSettingsPanel;
 import org.parabuild.ci.webui.admin.WebSVNSettingsPanel;
 
-public interface VCSAttribute {
+public interface VersionControlSystem {
 
   // VCS names
   String NAME_SCM_ACCUREV = "AccuRev";

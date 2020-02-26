@@ -13,16 +13,16 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.util.*;
+import org.parabuild.ci.common.VersionControlSystem;
 
-import org.parabuild.ci.common.VCSAttribute;
+import java.util.Date;
 
 /**
  *
  */
 final class StarTeamCheckoutCommandParameters extends StarTeamCommandParameters {
 
-  private byte eolConversion = VCSAttribute.STARTEAM_EOL_ON;
+  private byte eolConversion = VersionControlSystem.STARTEAM_EOL_ON;
   private Date date = null;
 
 

@@ -16,7 +16,7 @@ package org.parabuild.ci.webui.admin;
 import junit.framework.TestSuite;
 import org.apache.cactus.ServletTestCase;
 import org.parabuild.ci.TestHelper;
-import org.parabuild.ci.common.VCSAttribute;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
 
@@ -66,7 +66,7 @@ public final class SSTestManualStartSettingsPanel extends ServletTestCase {
 
   protected void setUp() throws Exception {
     super.setUp();
-    testPanel = new ManualStartSettingsPanel(VCSAttribute.SCM_PERFORCE, BuildConfig.SCHEDULE_TYPE_MANUAL);
+    testPanel = new ManualStartSettingsPanel(VersionControlSystem.SCM_PERFORCE, BuildConfig.SCHEDULE_TYPE_MANUAL);
   }
 
 

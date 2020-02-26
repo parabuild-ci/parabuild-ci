@@ -16,7 +16,7 @@ package org.parabuild.ci.webui.admin;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.common.VCSAttribute;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.object.BuildConfig;
@@ -93,13 +93,13 @@ public final class ManualStartSettingsPanel extends MessagePanel implements Vali
     gridIterator.add(new CommonFieldLabel("Increment if broken: ")).add(cbIncrementIfBroken, 2);
     gridIterator.add(WebuiUtils.makePanelDivider(), 3);
     if (scheduleType == BuildConfig.SCHEDULE_TYPE_MANUAL) {
-      if (sourceControl == VCSAttribute.SCM_PERFORCE) {
+      if (sourceControl == VersionControlSystem.SCM_PERFORCE) {
         gridIterator.add(new CommonFieldLabel("Show Perforce parameters: ")).add(cbShowPerforceParameters, 2);
         gridIterator.add(WebuiUtils.makePanelDivider(), 3);
-      } else if (sourceControl == VCSAttribute.SCM_BAZAAR) {
+      } else if (sourceControl == VersionControlSystem.SCM_BAZAAR) {
         gridIterator.add(new CommonFieldLabel("Show Bazaar parameters: ")).add(cbShowBazaarParameters, 2);
         gridIterator.add(WebuiUtils.makePanelDivider(), 3);
-      } else if (sourceControl == VCSAttribute.SCM_MERCURIAL) {
+      } else if (sourceControl == VersionControlSystem.SCM_MERCURIAL) {
         gridIterator.add(new CommonFieldLabel("Show Mercurial parameters: ")).add(cbShowMercurialParameters, 2);
         gridIterator.add(WebuiUtils.makePanelDivider(), 3);
       }

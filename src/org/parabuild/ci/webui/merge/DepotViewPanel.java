@@ -13,16 +13,16 @@
  */
 package org.parabuild.ci.webui.merge;
 
-import java.util.*;
-
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.SourceControlSetting;
+import org.parabuild.ci.util.StringUtils;
 import viewtier.ui.Border;
 import viewtier.ui.Color;
 import viewtier.ui.Panel;
 import viewtier.ui.Text;
+
+import java.util.Map;
 
 /**
  * Panel to show depot View
@@ -52,7 +52,7 @@ public class DepotViewPanel extends Panel {
 
   public void load(final int activeBuildID) {
     final Map effectiveSourceControlSettingsAsMap = ConfigurationManager.getInstance().getEffectiveSourceControlSettingsAsMap(activeBuildID);
-    final String depotView = SourceControlSetting.getValue((SourceControlSetting)effectiveSourceControlSettingsAsMap.get(VCSAttribute.P4_DEPOT_PATH), null);
+    final String depotView = SourceControlSetting.getValue((SourceControlSetting)effectiveSourceControlSettingsAsMap.get(VersionControlSystem.P4_DEPOT_PATH), null);
     if (StringUtils.isBlank(depotView)) {
       flDepotView.setValue(TEXT_UNDEFINED + ", build ID: " + activeBuildID);
     } else {

@@ -16,7 +16,7 @@ package org.parabuild.ci.webui.admin;
 import junit.framework.TestSuite;
 import org.apache.cactus.ServletTestCase;
 import org.parabuild.ci.TestHelper;
-import org.parabuild.ci.common.VCSAttribute;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.webui.common.WebUIConstants;
@@ -60,9 +60,9 @@ public class SSTestRepositoryBrowserPanel extends ServletTestCase {
    * @throws Exception if an error occured while executing the test.
    */
   public void test_loadFishEye() throws Exception {
-    TestHelper.setSourceControlProperty(TEST_CVS_VALID_BUILD_ID, VCSAttribute.REPOSITORY_BROWSER_TYPE, Integer.toString(VCSAttribute.CODE_FISHEYE));
-    TestHelper.setSourceControlProperty(TEST_CVS_VALID_BUILD_ID, VCSAttribute.FISHEYE_ROOT, "fish_eye_root");
-    TestHelper.setSourceControlProperty(TEST_CVS_VALID_BUILD_ID, VCSAttribute.FISHEYE_URL, "http://fish_eye_url");
+    TestHelper.setSourceControlProperty(TEST_CVS_VALID_BUILD_ID, VersionControlSystem.REPOSITORY_BROWSER_TYPE, Integer.toString(VersionControlSystem.CODE_FISHEYE));
+    TestHelper.setSourceControlProperty(TEST_CVS_VALID_BUILD_ID, VersionControlSystem.FISHEYE_ROOT, "fish_eye_root");
+    TestHelper.setSourceControlProperty(TEST_CVS_VALID_BUILD_ID, VersionControlSystem.FISHEYE_URL, "http://fish_eye_url");
     final BuildConfig buildConfig = ConfigurationManager.getInstance().getActiveBuildConfig(TEST_CVS_VALID_BUILD_ID);
     panel.load(buildConfig);
     assertEquals(TEST_CVS_VALID_BUILD_ID, panel.getBuildID());
@@ -73,9 +73,9 @@ public class SSTestRepositoryBrowserPanel extends ServletTestCase {
    * @throws Exception if an error occured while executing the test.
    */
   public void test_loadWebSVN() throws Exception {
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.REPOSITORY_BROWSER_TYPE, Integer.toString(VCSAttribute.CODE_WEB_SVN));
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.WEB_SVN_URL, "https://host.net/websvn/mycompany/");
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.WEB_SVN_REPNAME, "mycompany");
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VersionControlSystem.REPOSITORY_BROWSER_TYPE, Integer.toString(VersionControlSystem.CODE_WEB_SVN));
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VersionControlSystem.WEB_SVN_URL, "https://host.net/websvn/mycompany/");
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VersionControlSystem.WEB_SVN_REPNAME, "mycompany");
     final BuildConfig buildConfig = ConfigurationManager.getInstance().getActiveBuildConfig(TestHelper.TEST_CVS_VALID_BUILD_ID);
     panel.load(buildConfig);
     assertEquals(TestHelper.TEST_CVS_VALID_BUILD_ID, panel.getBuildID());
@@ -86,9 +86,9 @@ public class SSTestRepositoryBrowserPanel extends ServletTestCase {
    * @throws Exception if an error occured while executing the test.
    */
   public void test_loadViewVC() throws Exception {
-    TestHelper.setSourceControlProperty(TEST_CVS_VALID_BUILD_ID, VCSAttribute.REPOSITORY_BROWSER_TYPE, Integer.toString(VCSAttribute.CODE_VIEWVC));
-    TestHelper.setSourceControlProperty(TEST_CVS_VALID_BUILD_ID, VCSAttribute.VIEWCVS_ROOT, "viewvc_root");
-    TestHelper.setSourceControlProperty(TEST_CVS_VALID_BUILD_ID, VCSAttribute.VIEWCVS_URL, "http://viewvc_url");
+    TestHelper.setSourceControlProperty(TEST_CVS_VALID_BUILD_ID, VersionControlSystem.REPOSITORY_BROWSER_TYPE, Integer.toString(VersionControlSystem.CODE_VIEWVC));
+    TestHelper.setSourceControlProperty(TEST_CVS_VALID_BUILD_ID, VersionControlSystem.VIEWCVS_ROOT, "viewvc_root");
+    TestHelper.setSourceControlProperty(TEST_CVS_VALID_BUILD_ID, VersionControlSystem.VIEWCVS_URL, "http://viewvc_url");
     final BuildConfig buildConfig = ConfigurationManager.getInstance().getActiveBuildConfig(TEST_CVS_VALID_BUILD_ID);
     panel.load(buildConfig);
     assertEquals(TEST_CVS_VALID_BUILD_ID, panel.getBuildID());
@@ -99,7 +99,7 @@ public class SSTestRepositoryBrowserPanel extends ServletTestCase {
    * @throws Exception if an error occured while executing the test.
    */
   public void test_loadNotSelected() throws Exception {
-    TestHelper.setSourceControlProperty(TEST_CVS_VALID_BUILD_ID, VCSAttribute.REPOSITORY_BROWSER_TYPE, Integer.toString(VCSAttribute.CODE_NOT_SELECTED));
+    TestHelper.setSourceControlProperty(TEST_CVS_VALID_BUILD_ID, VersionControlSystem.REPOSITORY_BROWSER_TYPE, Integer.toString(VersionControlSystem.CODE_NOT_SELECTED));
     final BuildConfig buildConfig = ConfigurationManager.getInstance().getActiveBuildConfig(TEST_CVS_VALID_BUILD_ID);
     panel.load(buildConfig);
     assertEquals(TEST_CVS_VALID_BUILD_ID, panel.getBuildID());

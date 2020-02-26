@@ -13,11 +13,11 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.common.VCSAttribute;
+import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.remote.NoLiveAgentsException;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.util.ValidationException;
-import org.parabuild.ci.remote.NoLiveAgentsException;
 import org.parabuild.ci.versioncontrol.DepotPathParser;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.EncryptingPassword;
@@ -75,15 +75,15 @@ public final class SynergySettingsPanel extends AbstractSourceControlPanel {
     gridIterator.addPair(new CommonFieldLabel(CAPTION_LINE_TERMINATOR), flLineTerminator);
 
     // init property to input map
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.SYNGERGY_HOST, flHost);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.SYNGERGY_PASSWORD, flPassword);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.SYNGERGY_PATH_TO_EXE, flPathToExe);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.MKS_PORT, flPort);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.MKS_PROJECT, flProject);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.SYNGERGY_USER, flUser);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.MKS_LINE_TERMINATOR, flLineTerminator);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.MKS_DEVELOPMENT_PATH, flDevPath);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.MKS_PROJECT_REVISION, flProjectRevision);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.SYNGERGY_HOST, flHost);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.SYNGERGY_PASSWORD, flPassword);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.SYNGERGY_PATH_TO_EXE, flPathToExe);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.MKS_PORT, flPort);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.MKS_PROJECT, flProject);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.SYNGERGY_USER, flUser);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.MKS_LINE_TERMINATOR, flLineTerminator);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.MKS_DEVELOPMENT_PATH, flDevPath);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.MKS_PROJECT_REVISION, flProjectRevision);
 
     // add footer
     addCommonAttributes();

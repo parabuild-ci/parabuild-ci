@@ -13,15 +13,16 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import java.util.*;
-import org.apache.cactus.*;
-
-import junit.framework.*;
-
+import junit.framework.TestSuite;
+import org.apache.cactus.ServletTestCase;
 import org.parabuild.ci.TestHelper;
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.configuration.ConfigurationManager;
+import org.parabuild.ci.object.ActiveBuildConfig;
+import org.parabuild.ci.object.SourceControlSetting;
+import org.parabuild.ci.object.SourceControlSettingVO;
+
+import java.util.List;
 
 /**
  * Tests P4ManualScheduleStartParametersPanel page
@@ -45,7 +46,7 @@ public class SSTestP4ManualScheduleStartParametersPanel extends ServletTestCase 
   public void test_load() throws Exception {
 
     final ConfigurationManager cm = ConfigurationManager.getInstance();
-    final SourceControlSetting setting = cm.getSourceControlSetting(TEST_BUILD_ID, VCSAttribute.P4_DEPOT_PATH);
+    final SourceControlSetting setting = cm.getSourceControlSetting(TEST_BUILD_ID, VersionControlSystem.P4_DEPOT_PATH);
     setting.setPropertyValue(TEST_DEPOT_PATH);
     cm.saveObject(setting);
     panel.load(TEST_BUILD_ID);

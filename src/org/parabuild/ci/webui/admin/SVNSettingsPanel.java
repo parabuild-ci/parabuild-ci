@@ -13,12 +13,12 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.common.VCSAttribute;
+import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.object.BuildConfig;
+import org.parabuild.ci.remote.AgentEnvironment;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.util.ValidationException;
-import org.parabuild.ci.object.BuildConfig;
-import org.parabuild.ci.remote.AgentEnvironment;
 import org.parabuild.ci.versioncontrol.SVNDepotPathParser;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.EncryptingPassword;
@@ -83,14 +83,14 @@ public final class SVNSettingsPanel extends AbstractSourceControlPanel {
     gridIterator.addPair(new CommonFieldLabel(NAME_WATCH_NON_RECURSIVE_PATHS), flWatchNonRecursivePaths);
 
     // init property to input map
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.SVN_PASSWORD, flPassword);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.SVN_USER, flUser);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.SVN_DEPOT_PATH, flDepotPath);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.SVN_PATH_TO_EXE, flPathToExe);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.SVN_URL, flURL);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.SVN_WATCH_NON_RECURSIVE_PATHS, flWatchNonRecursivePaths);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.SVN_ADD_OPTION_TRUST_SERVER_CERT, flAddTrustServerCert);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.SVN_IGNORE_EXTERNALS, flIgnoreExternals);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.SVN_PASSWORD, flPassword);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.SVN_USER, flUser);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.SVN_DEPOT_PATH, flDepotPath);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.SVN_PATH_TO_EXE, flPathToExe);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.SVN_URL, flURL);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.SVN_WATCH_NON_RECURSIVE_PATHS, flWatchNonRecursivePaths);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.SVN_ADD_OPTION_TRUST_SERVER_CERT, flAddTrustServerCert);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.SVN_IGNORE_EXTERNALS, flIgnoreExternals);
 
     // add footer
     addCommonAttributes();

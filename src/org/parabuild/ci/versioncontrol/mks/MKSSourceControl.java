@@ -17,15 +17,15 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.build.BuildScriptGenerator;
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.util.BuildException;
-import org.parabuild.ci.util.CommandStoppedException;
-import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.error.ErrorManager;
 import org.parabuild.ci.error.ErrorManagerFactory;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.ChangeList;
 import org.parabuild.ci.remote.Agent;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.versioncontrol.AbstractSourceControl;
 import org.parabuild.ci.versioncontrol.ExclusionPathFinder;
 import org.parabuild.ci.versioncontrol.RepositoryPath;
@@ -156,7 +156,7 @@ public class MKSSourceControl extends AbstractSourceControl {
           setCommonParameters(parameters);
           parameters.setProject(path);
           parameters.setDate(syncDate);
-          parameters.setInputDateFormat(getSettingValue(VCSAttribute.MKS_CO_DATE_FORMAT));
+          parameters.setInputDateFormat(getSettingValue(VersionControlSystem.MKS_CO_DATE_FORMAT));
           command = new MKSCoCommand(agent, parameters);
           command.execute();
 
@@ -198,8 +198,8 @@ public class MKSSourceControl extends AbstractSourceControl {
           final MKSCreatesandboxCommandParameters createSandboxParameters = new MKSCreatesandboxCommandParameters();
           setCommonParameters(createSandboxParameters);
           createSandboxParameters.setProject(path);
-          createSandboxParameters.setLineTerminator(getSettingValue(VCSAttribute.MKS_LINE_TERMINATOR, VCSAttribute.MKS_LINE_TERMINATOR_NATIVE));
-          createSandboxParameters.setProjectRevision(getSettingValue(VCSAttribute.MKS_PROJECT_REVISION, null));
+          createSandboxParameters.setLineTerminator(getSettingValue(VersionControlSystem.MKS_LINE_TERMINATOR, VersionControlSystem.MKS_LINE_TERMINATOR_NATIVE));
+          createSandboxParameters.setProjectRevision(getSettingValue(VersionControlSystem.MKS_PROJECT_REVISION, null));
           command = new MKSCreatesandboxCommand(agent, createSandboxParameters);
           command.execute();
         } finally {
@@ -287,7 +287,7 @@ public class MKSSourceControl extends AbstractSourceControl {
           command.execute();
 
           // analyze change LOG
-          final String outputDateFormat = getSettingValue(VCSAttribute.MKS_RLOG_DATE_FORMAT, MKSDateFormat.DEFAULT_OUTPUT_FORMAT);
+          final String outputDateFormat = getSettingValue(VersionControlSystem.MKS_RLOG_DATE_FORMAT, MKSDateFormat.DEFAULT_OUTPUT_FORMAT);
           final MKSChangeListParser changeListParser = new MKSChangeListParser(parameters.getProject(),
                   path, rowLimit, parameters.getDevelopmentPath(), beginDate, maxChangeListSize(), outputDateFormat);
           final List changeLists = changeListParser.parseChangeLog(command.getStdoutFile());
@@ -313,7 +313,7 @@ public class MKSSourceControl extends AbstractSourceControl {
       if (result.isEmpty()) return startChangeListID;
 
       // validate that change lists contain not only exclusions
-      if (new ExclusionPathFinder().onlyExclusionPathsPresentInChangeLists(result, getSettingValue(VCSAttribute.VCS_EXCLUSION_PATHS))) {
+      if (new ExclusionPathFinder().onlyExclusionPathsPresentInChangeLists(result, getSettingValue(VersionControlSystem.VCS_EXCLUSION_PATHS))) {
         return startChangeListID;
       }
 
@@ -329,7 +329,7 @@ public class MKSSourceControl extends AbstractSourceControl {
 
   private List getProjects() {
     final List result = new ArrayList(3);
-    final String settingValue = getSettingValue(VCSAttribute.MKS_PROJECT);
+    final String settingValue = getSettingValue(VersionControlSystem.MKS_PROJECT);
     final RepositoryPath projectPath = new RepositoryPath(settingValue);
     result.add(projectPath);
     return result;
@@ -413,17 +413,17 @@ public class MKSSourceControl extends AbstractSourceControl {
     // check if critical settings has changed
     final SourceControlSettingChangeDetector scd = new SourceControlSettingChangeDetector(currentSettings, newSettings);
     boolean hasToCleanUp = false;
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.MKS_HOST);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.MKS_PORT);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.MKS_USER);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.MKS_PASSWORD);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.MKS_DEVELOPMENT_PATH);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.MKS_PROJECT);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.MKS_LINE_TERMINATOR);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.MKS_PROJECT_REVISION);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.MKS_CO_DATE_FORMAT);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.MKS_RLOG_DATE_FORMAT);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.MKS_HOST);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.MKS_PORT);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.MKS_USER);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.MKS_PASSWORD);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.MKS_DEVELOPMENT_PATH);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.MKS_PROJECT);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.MKS_LINE_TERMINATOR);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.MKS_PROJECT_REVISION);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.MKS_CO_DATE_FORMAT);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.MKS_RLOG_DATE_FORMAT);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE);
     if (hasToCleanUp) {
       setHasToCleanUp();
     }
@@ -516,7 +516,7 @@ public class MKSSourceControl extends AbstractSourceControl {
       // make sync note
       final Agent agent = getCheckoutDirectoryAwareAgent();
       final StringBuilder result = new StringBuilder(100);
-      final DateFormat dateFormat = MKSCoCommand.createCoDateFormat(getSettingValue(VCSAttribute.MKS_CO_DATE_FORMAT), agent);
+      final DateFormat dateFormat = MKSCoCommand.createCoDateFormat(getSettingValue(VersionControlSystem.MKS_CO_DATE_FORMAT), agent);
       result.append("si co -r ").append(StringUtils.putIntoDoubleQuotes("time:" + changeList.getCreatedAt(dateFormat)));
       return result.toString();
     } catch (final IOException e) {
@@ -533,11 +533,11 @@ public class MKSSourceControl extends AbstractSourceControl {
    * @param parameters
    */
   private void setCommonParameters(final MKSCommandParameters parameters) {
-    parameters.setHost(getSettingValue(VCSAttribute.MKS_HOST));
-    parameters.setExePath(getSettingValue(VCSAttribute.MKS_PATH_TO_EXE));
-    parameters.setPassword(StringUtils.isBlank(getSettingValue(VCSAttribute.MKS_PASSWORD)) ? "" : org.parabuild.ci.security.SecurityManager.decryptPassword(getSettingValue(VCSAttribute.MKS_PASSWORD)));
-    parameters.setPort(getSettingValue(VCSAttribute.MKS_PORT, 7001));
-    parameters.setUser(getSettingValue(VCSAttribute.MKS_USER));
-    parameters.setDevelopmentPath(getSettingValue(VCSAttribute.MKS_DEVELOPMENT_PATH));
+    parameters.setHost(getSettingValue(VersionControlSystem.MKS_HOST));
+    parameters.setExePath(getSettingValue(VersionControlSystem.MKS_PATH_TO_EXE));
+    parameters.setPassword(StringUtils.isBlank(getSettingValue(VersionControlSystem.MKS_PASSWORD)) ? "" : org.parabuild.ci.security.SecurityManager.decryptPassword(getSettingValue(VersionControlSystem.MKS_PASSWORD)));
+    parameters.setPort(getSettingValue(VersionControlSystem.MKS_PORT, 7001));
+    parameters.setUser(getSettingValue(VersionControlSystem.MKS_USER));
+    parameters.setDevelopmentPath(getSettingValue(VersionControlSystem.MKS_DEVELOPMENT_PATH));
   }
 }

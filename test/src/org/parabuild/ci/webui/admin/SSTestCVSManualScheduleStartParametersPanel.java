@@ -13,15 +13,16 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import java.util.*;
-import org.apache.cactus.*;
-
-import junit.framework.*;
-
+import junit.framework.TestSuite;
+import org.apache.cactus.ServletTestCase;
 import org.parabuild.ci.TestHelper;
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.configuration.ConfigurationManager;
+import org.parabuild.ci.object.ActiveBuildConfig;
+import org.parabuild.ci.object.SourceControlSetting;
+import org.parabuild.ci.object.SourceControlSettingVO;
+
+import java.util.List;
 
 /**
  * Tests CVSManualScheduleStartParametersPanel
@@ -44,7 +45,7 @@ public class SSTestCVSManualScheduleStartParametersPanel extends ServletTestCase
    */
   public void test_load() throws Exception {
 
-    ConfigurationManager.getInstance().saveObject(new SourceControlSetting(TEST_BUILD_ID, VCSAttribute.CVS_BRANCH_NAME, TEST_BRANCH_NAME));
+    ConfigurationManager.getInstance().saveObject(new SourceControlSetting(TEST_BUILD_ID, VersionControlSystem.CVS_BRANCH_NAME, TEST_BRANCH_NAME));
     panel.load(TEST_BUILD_ID);
 
     boolean found = false;

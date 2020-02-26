@@ -13,12 +13,12 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.util.IoUtils;
-import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.remote.AgentEnvironment;
 import org.parabuild.ci.remote.NoLiveAgentsException;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
 import org.parabuild.ci.webui.common.WebUIConstants;
@@ -61,8 +61,8 @@ public final class BazaarSettingsPanel extends AbstractSourceControlPanel {
     gridIterator.addPair(lbBranchLocation, new RequiredFieldMarker(flBranchLocation));
 
     // init property to input map
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.BAZAAR_BRANCH_LOCATION, flBranchLocation);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.BAZAAR_EXE_PATH, flPathToExe);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.BAZAAR_BRANCH_LOCATION, flBranchLocation);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.BAZAAR_EXE_PATH, flPathToExe);
 
     // add footer
     addCommonAttributes();

@@ -13,23 +13,22 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.io.File;
-
 import com.gargoylesoftware.base.testing.OrderedTestSuite;
 import junit.framework.TestSuite;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.TestHelper;
-
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.util.BuildException;
-import org.parabuild.ci.util.CommandStoppedException;
-import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.ChangeList;
 import org.parabuild.ci.object.SystemProperty;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.versioncontrol.mks.SSTestMKSSourceControl;
+
+import java.io.File;
 
 /**
  * Test for GenericSourceControl
@@ -58,7 +57,7 @@ public class SSTestGenericSourceControl extends AbstractSourceControlTest {
 
     // no new changes ?
     // alter the command to show nothing.
-    TestHelper.setSourceControlProperty(getTestBuildID(), VCSAttribute.GENERIC_VCS_GET_CHANGES_COMMAND, "echo");
+    TestHelper.setSourceControlProperty(getTestBuildID(), VersionControlSystem.GENERIC_VCS_GET_CHANGES_COMMAND, "echo");
     gvcs.reloadConfiguration();
     final int newChangeListID = gvcs.getChangesSince(lastChangeListID);
 
@@ -236,7 +235,7 @@ public class SSTestGenericSourceControl extends AbstractSourceControlTest {
     super.errorManager.clearAllActiveErrors();
 
     // prepare test file directory
-    TestHelper.setSourceControlProperty(getTestBuildID(), VCSAttribute.FILESYSTEM_VCS_PATH, new File(TestHelper.getTestDataDir(), "nunit_xml_logs").getCanonicalPath());
+    TestHelper.setSourceControlProperty(getTestBuildID(), VersionControlSystem.FILESYSTEM_VCS_PATH, new File(TestHelper.getTestDataDir(), "nunit_xml_logs").getCanonicalPath());
 
     final BuildConfig buildConfig = cm.getBuildConfiguration(getTestBuildID());
     this.gvcs = new GenericSourceControl(buildConfig);

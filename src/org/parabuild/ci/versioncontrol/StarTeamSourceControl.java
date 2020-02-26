@@ -17,17 +17,17 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.build.BuildScriptGenerator;
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.util.BuildException;
-import org.parabuild.ci.util.CommandStoppedException;
-import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.util.ValidationException;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.error.ErrorManager;
 import org.parabuild.ci.error.ErrorManagerFactory;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.ChangeList;
 import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.security.SecurityManager;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.util.ValidationException;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -96,7 +96,7 @@ public class StarTeamSourceControl extends AbstractSourceControl {
           final StarTeamCheckoutCommandParameters parameters = new StarTeamCheckoutCommandParameters();
           setCommonParameters(parameters);
           parameters.setProject(project);
-          parameters.setEolConversion(getSettingValue(VCSAttribute.STARTEAM_EOL_CONVERSION, VCSAttribute.STARTEAM_EOL_ON));
+          parameters.setEolConversion(getSettingValue(VersionControlSystem.STARTEAM_EOL_CONVERSION, VersionControlSystem.STARTEAM_EOL_ON));
           command = new StarTeamCheckoutCommand(agent, parameters);
           command.execute();
         } finally {
@@ -132,7 +132,7 @@ public class StarTeamSourceControl extends AbstractSourceControl {
           final StarTeamCheckoutCommandParameters checkOutParams = new StarTeamCheckoutCommandParameters();
           setCommonParameters(checkOutParams);
           checkOutParams.setProject(project);
-          checkOutParams.setEolConversion(getSettingValue(VCSAttribute.STARTEAM_EOL_CONVERSION, VCSAttribute.STARTEAM_EOL_ON));
+          checkOutParams.setEolConversion(getSettingValue(VersionControlSystem.STARTEAM_EOL_CONVERSION, VersionControlSystem.STARTEAM_EOL_ON));
           checkOutParams.setDate(changeListDate);
           command = new StarTeamCheckoutCommand(agent, checkOutParams);
           command.execute();
@@ -272,7 +272,7 @@ public class StarTeamSourceControl extends AbstractSourceControl {
       if (result.isEmpty()) return startChangeListID;
 
       // validate that change lists contain not only exclusions
-      if (new ExclusionPathFinder().onlyExclusionPathsPresentInChangeLists(result, getSettingValue(VCSAttribute.VCS_EXCLUSION_PATHS))) {
+      if (new ExclusionPathFinder().onlyExclusionPathsPresentInChangeLists(result, getSettingValue(VersionControlSystem.VCS_EXCLUSION_PATHS))) {
         return startChangeListID;
       }
 
@@ -404,12 +404,12 @@ public class StarTeamSourceControl extends AbstractSourceControl {
     // check if critical settings has changed
     final SourceControlSettingChangeDetector scd = new SourceControlSettingChangeDetector(currentSettings, newSettings);
     boolean hasToCleanUp = false;
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.STARTEAM_EOL_CONVERSION);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.STARTEAM_HOST);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.STARTEAM_PORT);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.STARTEAM_PROJECT_PATH);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.STARTEAM_USER);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.STARTEAM_EOL_CONVERSION);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.STARTEAM_HOST);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.STARTEAM_PORT);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.STARTEAM_PROJECT_PATH);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.STARTEAM_USER);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE);
     if (hasToCleanUp) {
       setHasToCleanUp();
     }
@@ -438,7 +438,7 @@ public class StarTeamSourceControl extends AbstractSourceControl {
    */
   private List getProjects() throws BuildException {
     try {
-      return new StarTeamProjectListParser().parseProjects(getSettingValue(VCSAttribute.STARTEAM_PROJECT_PATH));
+      return new StarTeamProjectListParser().parseProjects(getSettingValue(VersionControlSystem.STARTEAM_PROJECT_PATH));
     } catch (final ValidationException e) {
       throw new BuildException(e, getAgentHost());
     }
@@ -452,12 +452,12 @@ public class StarTeamSourceControl extends AbstractSourceControl {
    * @param parameters
    */
   private void setCommonParameters(final StarTeamCommandParameters parameters) {
-    parameters.setAddress(getSettingValue(VCSAttribute.STARTEAM_HOST));
-    parameters.setEncryption(getSettingValue(VCSAttribute.STARTEAM_ENCRIPTION, VCSAttribute.STARTEAM_ENCRYPTION_NO_ENCRYPTION));
-    parameters.setExePath(getSettingValue(VCSAttribute.STARTEAM_PATH_TO_EXE));
-    parameters.setPassword(StringUtils.isBlank(getSettingValue(VCSAttribute.STARTEAM_PASSWORD)) ? "" : SecurityManager.decryptPassword(getSettingValue(VCSAttribute.STARTEAM_PASSWORD)));
-    parameters.setPort(getSettingValue(VCSAttribute.STARTEAM_PORT, 49201));
-    parameters.setUser(getSettingValue(VCSAttribute.STARTEAM_USER));
+    parameters.setAddress(getSettingValue(VersionControlSystem.STARTEAM_HOST));
+    parameters.setEncryption(getSettingValue(VersionControlSystem.STARTEAM_ENCRIPTION, VersionControlSystem.STARTEAM_ENCRYPTION_NO_ENCRYPTION));
+    parameters.setExePath(getSettingValue(VersionControlSystem.STARTEAM_PATH_TO_EXE));
+    parameters.setPassword(StringUtils.isBlank(getSettingValue(VersionControlSystem.STARTEAM_PASSWORD)) ? "" : SecurityManager.decryptPassword(getSettingValue(VersionControlSystem.STARTEAM_PASSWORD)));
+    parameters.setPort(getSettingValue(VersionControlSystem.STARTEAM_PORT, 49201));
+    parameters.setUser(getSettingValue(VersionControlSystem.STARTEAM_USER));
   }
 
 

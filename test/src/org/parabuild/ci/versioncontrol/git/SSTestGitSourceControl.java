@@ -17,12 +17,12 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.TestHelper;
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.VCSAttribute;
+import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.util.BuildException;
 import org.parabuild.ci.util.CommandStoppedException;
 import org.parabuild.ci.util.IoUtils;
-import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.versioncontrol.AbstractSourceControlTest;
 
 import java.util.ArrayList;
@@ -116,8 +116,8 @@ public final class SSTestGitSourceControl extends AbstractSourceControlTest {
 
   public void test_checkOutLatestCantProcessUnexistigRepository() throws Exception {
     final List settings = new ArrayList(1);
-    settings.add(makeSetting(VCSAttribute.GIT_DEPOT_PATH, "/"));
-    settings.add(makeSetting(VCSAttribute.GIT_REPOSITORY, "never-existed"));
+    settings.add(makeSetting(VersionControlSystem.GIT_DEPOT_PATH, "/"));
+    settings.add(makeSetting(VersionControlSystem.GIT_REPOSITORY, "never-existed"));
     final GitSourceControl svn = makeGitSourceControlWithAlteredSettings(settings);
     svn.setAgentHost(agentHost);
     try {

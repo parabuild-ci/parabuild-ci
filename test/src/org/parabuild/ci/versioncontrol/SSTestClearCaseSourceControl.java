@@ -19,15 +19,15 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.TestHelper;
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.util.BuildException;
-import org.parabuild.ci.util.CommandStoppedException;
-import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.ChangeList;
 import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.object.SystemProperty;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.IoUtils;
 
 import java.io.IOException;
 import java.util.Map;
@@ -113,10 +113,10 @@ public final class SSTestClearCaseSourceControl extends AbstractSourceControlTes
     final String oldRelativeBuildDir = TestHelper.assertCurrentBuildPathExists(clearCase, agent);
 
     // alter view config spec to use diferent path
-    final SourceControlSetting viewSpec = cm.getSourceControlSetting(TEST_CLEARCASE_BUILD_ID, VCSAttribute.CLEARCASE_VIEW_CONFIG_SPEC);
+    final SourceControlSetting viewSpec = cm.getSourceControlSetting(TEST_CLEARCASE_BUILD_ID, VersionControlSystem.CLEARCASE_VIEW_CONFIG_SPEC);
     viewSpec.setPropertyValue("element * CHECKEDOUT\nelement * /main/LATEST\nload \\test_parabuild_vob\\test\\second_sourceline");
     cm.saveObject(viewSpec);
-    final SourceControlSetting buildDir = cm.getSourceControlSetting(TEST_CLEARCASE_BUILD_ID, VCSAttribute.CLEARCASE_RELATIVE_BUILD_DIR);
+    final SourceControlSetting buildDir = cm.getSourceControlSetting(TEST_CLEARCASE_BUILD_ID, VersionControlSystem.CLEARCASE_RELATIVE_BUILD_DIR);
     buildDir.setPropertyValue("test_parabuild_vob\\test\\second_sourceline");
     cm.saveObject(buildDir);
 
@@ -141,7 +141,7 @@ public final class SSTestClearCaseSourceControl extends AbstractSourceControlTes
    */
   public void test_checkOutLatestCantProcessUnexistingSourceLine() throws Exception {
     // alter view config spec to use never existing path
-    final SourceControlSetting setting = cm.getSourceControlSetting(TEST_CLEARCASE_BUILD_ID, VCSAttribute.CLEARCASE_VIEW_CONFIG_SPEC);
+    final SourceControlSetting setting = cm.getSourceControlSetting(TEST_CLEARCASE_BUILD_ID, VersionControlSystem.CLEARCASE_VIEW_CONFIG_SPEC);
     setting.setPropertyValue("element * CHECKEDOUT\nelement * /main/LATEST\nload \\test_parabuild_vob\\test_never_existed");
     cm.saveObject(setting);
 
@@ -218,7 +218,7 @@ public final class SSTestClearCaseSourceControl extends AbstractSourceControlTes
    */
   public void test_getChangesSinceDoesntFailOnBlankSourceline() throws Exception {
     final int changeListID = clearCase.getChangesSince(ChangeList.UNSAVED_ID); // old spec path
-    final SourceControlSetting setting = cm.getSourceControlSetting(TEST_CLEARCASE_BUILD_ID, VCSAttribute.CLEARCASE_VIEW_CONFIG_SPEC);
+    final SourceControlSetting setting = cm.getSourceControlSetting(TEST_CLEARCASE_BUILD_ID, VersionControlSystem.CLEARCASE_VIEW_CONFIG_SPEC);
     setting.setPropertyValue("element * CHECKEDOUT\nelement * /main/LATEST\nload \\test_parabuild_vob\\test\\empty");
     cm.saveObject(setting);
     clearCase.reloadConfiguration();
@@ -312,7 +312,7 @@ public final class SSTestClearCaseSourceControl extends AbstractSourceControlTes
    */
   public void test_getChangesSinceWithStorageLocation() throws Exception {
     // alter storage location
-    final SourceControlSetting setting = new SourceControlSetting(TEST_CLEARCASE_BUILD_ID, VCSAttribute.CLEARCASE_VIEW_STORAGE_LOCATION, "Views");
+    final SourceControlSetting setting = new SourceControlSetting(TEST_CLEARCASE_BUILD_ID, VersionControlSystem.CLEARCASE_VIEW_STORAGE_LOCATION, "Views");
     cm.saveObject(setting);
 
     clearCase.reloadConfiguration();

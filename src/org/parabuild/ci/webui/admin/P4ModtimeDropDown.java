@@ -13,8 +13,8 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.webui.common.*;
+import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.webui.common.CodeNameDropDown;
 
 /**
  * Perforce modtime option dropdown.
@@ -26,8 +26,8 @@ final class P4ModtimeDropDown extends CodeNameDropDown {
 
 
   P4ModtimeDropDown() {
-    addCodeNamePair(VCSAttribute.P4_OPTION_VALUE_NOMODTIME, "nomodtime");
-    addCodeNamePair(VCSAttribute.P4_OPTION_VALUE_MODTIME, "modtime");
+    addCodeNamePair(VersionControlSystem.P4_OPTION_VALUE_NOMODTIME, "nomodtime");
+    addCodeNamePair(VersionControlSystem.P4_OPTION_VALUE_MODTIME, "modtime");
     setSelection(0);
   }
 }

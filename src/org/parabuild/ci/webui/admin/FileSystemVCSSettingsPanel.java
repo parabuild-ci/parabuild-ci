@@ -13,12 +13,18 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import java.util.*;
+import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.versioncontrol.FileSystemSourceControl;
+import org.parabuild.ci.webui.common.CommonFieldLabel;
+import org.parabuild.ci.webui.common.GridIterator;
+import org.parabuild.ci.webui.common.RequiredFieldMarker;
+import org.parabuild.ci.webui.common.WebUIConstants;
+import org.parabuild.ci.webui.common.WebuiUtils;
+import viewtier.ui.Field;
+import viewtier.ui.Layout;
+import viewtier.ui.Text;
 
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.versioncontrol.*;
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import java.util.ArrayList;
 
 /**
  * Settings panel for {@link FileSystemSourceControl}
@@ -59,8 +65,8 @@ public final class FileSystemVCSSettingsPanel extends AbstractCommandVCSSettings
 
 
   protected void bindHeaderFields() {
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.FILESYSTEM_VCS_PATH, flPath);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.FILESYSTEM_VCS_USER, flUser);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.FILESYSTEM_VCS_PATH, flPath);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.FILESYSTEM_VCS_USER, flUser);
   }
 
 

@@ -13,8 +13,8 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.webui.common.*;
+import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.webui.common.CodeNameDropDown;
 
 /**
  * Shows selection of clear case text modes (-tmode) used to
@@ -26,12 +26,12 @@ public final class StarTeamEncriptionDropDown extends CodeNameDropDown {
 
 
   public StarTeamEncriptionDropDown() {
-    addCodeNamePair(VCSAttribute.STARTEAM_ENCRYPTION_NO_ENCRYPTION, "No encryption");
-    addCodeNamePair(VCSAttribute.STARTEAM_ENCRYPTION_RSA_R4_STREAM_CIPHER, "RSA R4 stream cipher");
-    addCodeNamePair(VCSAttribute.STARTEAM_ENCRYPTION_RSA_R2_BLOCK_CIPHER_ECB, "RSA R2 block cipher (Electronic Codebook)");
-    addCodeNamePair(VCSAttribute.STARTEAM_ENCRYPTION_RSA_R2_BLOCK_CIPHER_CF, "RSA R2 block cipher (Cipher Block Chaining)");
-    addCodeNamePair(VCSAttribute.STARTEAM_ENCRYPTION_RSA_R2_BLOCK_CIPHER_CF, "RSA R2 block cipher (Cipher Feedback)");
-    setCode(VCSAttribute.STARTEAM_ENCRYPTION_NO_ENCRYPTION);
+    addCodeNamePair(VersionControlSystem.STARTEAM_ENCRYPTION_NO_ENCRYPTION, "No encryption");
+    addCodeNamePair(VersionControlSystem.STARTEAM_ENCRYPTION_RSA_R4_STREAM_CIPHER, "RSA R4 stream cipher");
+    addCodeNamePair(VersionControlSystem.STARTEAM_ENCRYPTION_RSA_R2_BLOCK_CIPHER_ECB, "RSA R2 block cipher (Electronic Codebook)");
+    addCodeNamePair(VersionControlSystem.STARTEAM_ENCRYPTION_RSA_R2_BLOCK_CIPHER_CF, "RSA R2 block cipher (Cipher Block Chaining)");
+    addCodeNamePair(VersionControlSystem.STARTEAM_ENCRYPTION_RSA_R2_BLOCK_CIPHER_CF, "RSA R2 block cipher (Cipher Feedback)");
+    setCode(VersionControlSystem.STARTEAM_ENCRYPTION_NO_ENCRYPTION);
   }
 }
 

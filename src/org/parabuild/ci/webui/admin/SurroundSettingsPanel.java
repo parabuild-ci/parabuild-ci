@@ -13,13 +13,13 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.util.IoUtils;
-import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.util.ValidationException;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.remote.AgentEnvironment;
 import org.parabuild.ci.remote.NoLiveAgentsException;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.util.ValidationException;
 import org.parabuild.ci.versioncontrol.SurroundRepositoryPathParser;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.EncryptingPassword;
@@ -70,13 +70,13 @@ public final class SurroundSettingsPanel extends AbstractSourceControlPanel {
     gridIterator.addPair(new CommonFieldLabel(NAME_SURROUND_REPOSITORY), new RequiredFieldMarker(flRepository));
 
     // init property to input map
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.SURROUND_PASSWORD, flPassword);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.SURROUND_USER, flUser);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.SURROUND_BRANCH, flBranch);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.SURROUND_PATH_TO_EXE, flPathToExe);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.SURROUND_HOST, flHost);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.SURROUND_PORT, flPort);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.SURROUND_REPOSITORY, flRepository);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.SURROUND_PASSWORD, flPassword);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.SURROUND_USER, flUser);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.SURROUND_BRANCH, flBranch);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.SURROUND_PATH_TO_EXE, flPathToExe);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.SURROUND_HOST, flHost);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.SURROUND_PORT, flPort);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.SURROUND_REPOSITORY, flRepository);
 
     // add footer
     addCommonAttributes();

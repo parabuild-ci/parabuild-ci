@@ -13,17 +13,18 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.util.*;
+import junit.framework.TestCase;
+import junit.framework.TestSuite;
+import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.object.SourceControlSetting;
 
-import junit.framework.*;
-
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.object.*;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class SATestSourceControlSettingChangeDetector extends TestCase {
 
-  private static final String TEST_NAME = VCSAttribute.CVS_REPOSITORY_PATH;
+  private static final String TEST_NAME = VersionControlSystem.CVS_REPOSITORY_PATH;
   private static final String TEST_VALUE = "test";
 
   private SourceControlSettingChangeDetector changeDetector = null;

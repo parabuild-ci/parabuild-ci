@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.common.VCSAttribute;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.WebUIConstants;
@@ -45,8 +45,8 @@ public final class WebSVNSettingsPanel extends AbstractSourceControlPanel {
     if (showViewVCRoot) {
       gridIterator.addPair(new CommonFieldLabel(NAME_WEB_SVN_REPNAME), flRepname);
     }
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.WEB_SVN_URL, flBaseUrl);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.WEB_SVN_REPNAME, flRepname);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.WEB_SVN_URL, flBaseUrl);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.WEB_SVN_REPNAME, flRepname);
 
   }
 

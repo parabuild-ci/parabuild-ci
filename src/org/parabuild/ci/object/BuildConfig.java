@@ -16,7 +16,7 @@ package org.parabuild.ci.object;
 import net.sf.hibernate.CallbackException;
 import net.sf.hibernate.Lifecycle;
 import net.sf.hibernate.Session;
-import org.parabuild.ci.common.VCSAttribute;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.util.ArgumentValidator;
 
 import java.io.Serializable;
@@ -49,7 +49,7 @@ public class BuildConfig implements Serializable, ObjectConstants, Lifecycle {
   /**
    * Parallel builds run when their leading builds run.
    * <p/>
-   * Parallel builds are limited to {@link VCSAttribute#SCM_REFERENCE} SCM.
+   * Parallel builds are limited to {@link VersionControlSystem#SCM_REFERENCE} SCM.
    */
   public static final byte SCHEDULE_TYPE_PARALLEL = 4;
 
@@ -62,7 +62,7 @@ public class BuildConfig implements Serializable, ObjectConstants, Lifecycle {
   private boolean sourceControlEmail = false;
   private byte access = ACCESS_PUBLIC;
   private byte scheduleType = SCHEDULE_TYPE_AUTOMATIC;
-  private byte sourceControl = VCSAttribute.SCM_UNDEFINED;
+  private byte sourceControl = VersionControlSystem.SCM_UNDEFINED;
   private long timeStamp = 0;
   private String buildName = null;
   private String emailDomain = "";
@@ -353,16 +353,16 @@ public class BuildConfig implements Serializable, ObjectConstants, Lifecycle {
    * @return the source control type in a human readable format.
    */
   public final String getChangeManagerAsString() {
-    if (this.sourceControl == VCSAttribute.SCM_PERFORCE) {
+    if (this.sourceControl == VersionControlSystem.SCM_PERFORCE) {
       return "P4";
     }
-    if (this.sourceControl == VCSAttribute.SCM_CVS) {
+    if (this.sourceControl == VersionControlSystem.SCM_CVS) {
       return "CVS";
     }
-    if (this.sourceControl == VCSAttribute.SCM_VSS) {
+    if (this.sourceControl == VersionControlSystem.SCM_VSS) {
       return "VSS";
     }
-    if (this.sourceControl == VCSAttribute.SCM_SVN) {
+    if (this.sourceControl == VersionControlSystem.SCM_SVN) {
       return "SVN";
     }
     return "Undefined";
@@ -382,7 +382,7 @@ public class BuildConfig implements Serializable, ObjectConstants, Lifecycle {
     if (scheduleType < 0) {
       throw new CallbackException("Schedule type is not set");
     }
-    if (scheduleType == SCHEDULE_TYPE_PARALLEL && sourceControl != VCSAttribute.SCM_REFERENCE) {
+    if (scheduleType == SCHEDULE_TYPE_PARALLEL && sourceControl != VersionControlSystem.SCM_REFERENCE) {
       throw new CallbackException("Parallel build support only reference source control");
     }
     return NO_VETO;

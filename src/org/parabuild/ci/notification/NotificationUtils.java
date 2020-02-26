@@ -13,8 +13,7 @@
  */
 package org.parabuild.ci.notification;
 
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
@@ -24,11 +23,12 @@ import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.BuildRun;
 import org.parabuild.ci.object.BuildSequence;
 import org.parabuild.ci.object.BuildWatcher;
+import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.object.StepRun;
 import org.parabuild.ci.object.SystemProperty;
 import org.parabuild.ci.object.User;
-import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.security.SecurityManager;
+import org.parabuild.ci.util.StringUtils;
 
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
@@ -236,7 +236,7 @@ final class NotificationUtils {
   public static boolean isCaseSensitiveUserName(final int buildID) {
     final ConfigurationManager cm = ConfigurationManager.getInstance();
     final SystemConfigurationManager scm = SystemConfigurationManagerFactory.getManager();
-    final String value = cm.getSourceControlSettingValue(buildID, VCSAttribute.P4_CASE_SENSITIVE_USER_NAMES,
+    final String value = cm.getSourceControlSettingValue(buildID, VersionControlSystem.P4_CASE_SENSITIVE_USER_NAMES,
             scm.isCaseSensitiveVCSNames() ? SourceControlSetting.OPTION_CHECKED : SourceControlSetting.OPTION_UNCHECKED);
     return value.equals(SourceControlSetting.OPTION_CHECKED);
   }

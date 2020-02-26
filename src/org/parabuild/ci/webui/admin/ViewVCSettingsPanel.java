@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.common.VCSAttribute;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.WebUIConstants;
@@ -45,8 +45,8 @@ public final class ViewVCSettingsPanel extends AbstractSourceControlPanel {
     if (showViewVCRoot) {
       gridIterator.addPair(new CommonFieldLabel(NAME_VIEWCVS_ROOT), flViewVCRoot);
     }
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.VIEWCVS_URL, flViewVCURL);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.VIEWCVS_ROOT, flViewVCRoot);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.VIEWCVS_URL, flViewVCURL);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.VIEWCVS_ROOT, flViewVCRoot);
   }
 
 

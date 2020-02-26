@@ -13,13 +13,19 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import java.util.*;
-import org.apache.commons.logging.*;
-
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.webui.common.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.versioncontrol.FileSystemSourceControl;
-import viewtier.ui.*;
+import org.parabuild.ci.webui.common.CommonField;
+import org.parabuild.ci.webui.common.CommonFieldLabel;
+import org.parabuild.ci.webui.common.GridIterator;
+import org.parabuild.ci.webui.common.RequiredFieldMarker;
+import org.parabuild.ci.webui.common.WebUIConstants;
+import org.parabuild.ci.webui.common.WebuiUtils;
+import viewtier.ui.Field;
+
+import java.util.ArrayList;
 
 /**
  * Settings panel for {@link FileSystemSourceControl}
@@ -83,11 +89,11 @@ public final class GenericVCSSettingsPanel extends AbstractCommandVCSSettingsPan
 
   protected void bindHeaderFields() {
     if (log.isDebugEnabled()) log.debug("binding header");
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.GENERIC_VCS_GET_CHANGES_COMMAND, flGetChangesCommand);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.COMMAND_VCS_COLUMN_DIVIDER, flColumnDivider);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.COMMAND_VCS_END_OF_RECORD, flEndOfRecord);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.COMMAND_VCS_CHANGE_DATE_FORMAT, flChangeDateFormat);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.COMMAND_VCS_CHANGE_WINDOW, flChangeWindow);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.GENERIC_VCS_GET_CHANGES_COMMAND, flGetChangesCommand);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.COMMAND_VCS_COLUMN_DIVIDER, flColumnDivider);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.COMMAND_VCS_END_OF_RECORD, flEndOfRecord);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.COMMAND_VCS_CHANGE_DATE_FORMAT, flChangeDateFormat);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.COMMAND_VCS_CHANGE_WINDOW, flChangeWindow);
   }
 
 

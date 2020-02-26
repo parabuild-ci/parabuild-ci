@@ -14,7 +14,7 @@
 package org.parabuild.ci.versioncontrol.accurev;
 
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.VCSAttribute;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.versioncontrol.VersionControlRemoteCommand;
 
@@ -48,11 +48,11 @@ abstract class AccurevCommand extends VersionControlRemoteCommand {
 
   protected static String toStringEolType(final byte eolType) {
     switch (eolType) {
-      case VCSAttribute.ACCUREV_EOL_PLATFORM:
+      case VersionControlSystem.ACCUREV_EOL_PLATFORM:
         return "";
-      case VCSAttribute.ACCUREV_EOL_UNIX:
+      case VersionControlSystem.ACCUREV_EOL_UNIX:
         return "-eu";
-      case VCSAttribute.ACCUREV_EOL_WINDOWS:
+      case VersionControlSystem.ACCUREV_EOL_WINDOWS:
         return "-ew";
       default:
         throw new IllegalStateException("Unknown EOL type");
@@ -62,11 +62,11 @@ abstract class AccurevCommand extends VersionControlRemoteCommand {
 
   protected static String toStringKind(final byte kind) {
     switch (kind) {
-      case VCSAttribute.ACCUREV_WORKSPACE_LOKING_NONE:
+      case VersionControlSystem.ACCUREV_WORKSPACE_LOKING_NONE:
         return "";
-      case VCSAttribute.ACCUREV_WORKSPACE_LOKING_EXCLUSIVE:
+      case VersionControlSystem.ACCUREV_WORKSPACE_LOKING_EXCLUSIVE:
         return "-ke";
-      case VCSAttribute.ACCUREV_WORKSPACE_LOKING_ANCHOR:
+      case VersionControlSystem.ACCUREV_WORKSPACE_LOKING_ANCHOR:
         return "-ka";
       default:
         throw new IllegalStateException("Unknown kind type");

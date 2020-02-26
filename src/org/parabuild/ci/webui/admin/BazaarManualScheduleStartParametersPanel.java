@@ -13,11 +13,11 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.object.SourceControlSettingVO;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
@@ -95,7 +95,7 @@ final class BazaarManualScheduleStartParametersPanel extends ManualScheduleStart
     final List sourceControlSettings = ConfigurationManager.getInstance().getSourceControlSettings(buildID);
     for (final Iterator i = sourceControlSettings.iterator(); i.hasNext();) {
       final SourceControlSetting setting = (SourceControlSetting) i.next();
-      if (setting.getPropertyName().equals(VCSAttribute.BAZAAR_BRANCH_LOCATION) && !showBranchPathOverride) {
+      if (setting.getPropertyName().equals(VersionControlSystem.BAZAAR_BRANCH_LOCATION) && !showBranchPathOverride) {
         continue;
       }
       if (SourceControlSettingVO.scmSettingIsSupported(setting.getPropertyName())) {

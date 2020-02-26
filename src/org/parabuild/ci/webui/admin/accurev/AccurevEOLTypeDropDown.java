@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.webui.admin.accurev;
 
-import org.parabuild.ci.common.VCSAttribute;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.webui.common.CodeNameDropDown;
 
 /**
@@ -33,8 +33,8 @@ final class AccurevEOLTypeDropDown extends CodeNameDropDown {
 
   AccurevEOLTypeDropDown() {
     setName("accurev-eol-type");
-    addCodeNamePair(VCSAttribute.ACCUREV_EOL_PLATFORM, CAPTION_PLATFORM_SPECIFIC);
-    addCodeNamePair(VCSAttribute.ACCUREV_EOL_UNIX, CAPTION_UNIX);
-    addCodeNamePair(VCSAttribute.ACCUREV_EOL_WINDOWS, CAPTION_WINDOWS);
+    addCodeNamePair(VersionControlSystem.ACCUREV_EOL_PLATFORM, CAPTION_PLATFORM_SPECIFIC);
+    addCodeNamePair(VersionControlSystem.ACCUREV_EOL_UNIX, CAPTION_UNIX);
+    addCodeNamePair(VersionControlSystem.ACCUREV_EOL_WINDOWS, CAPTION_WINDOWS);
   }
 }

@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.webui.admin.accurev;
 
-import org.parabuild.ci.common.VCSAttribute;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.webui.common.CodeNameDropDown;
 
 /**
@@ -33,8 +33,8 @@ final class AccurevFileLockingDropDown extends CodeNameDropDown {
 
   AccurevFileLockingDropDown() {
     setName("accurev-worskpace-type");
-    addCodeNamePair(VCSAttribute.ACCUREV_WORKSPACE_LOKING_NONE, CAPTION_NONE);
-    addCodeNamePair(VCSAttribute.ACCUREV_WORKSPACE_LOKING_ANCHOR, CAPTION_ANCHOR);
-    addCodeNamePair(VCSAttribute.ACCUREV_WORKSPACE_LOKING_EXCLUSIVE, CAPTION_EXCLUSIVE);
+    addCodeNamePair(VersionControlSystem.ACCUREV_WORKSPACE_LOKING_NONE, CAPTION_NONE);
+    addCodeNamePair(VersionControlSystem.ACCUREV_WORKSPACE_LOKING_ANCHOR, CAPTION_ANCHOR);
+    addCodeNamePair(VersionControlSystem.ACCUREV_WORKSPACE_LOKING_EXCLUSIVE, CAPTION_EXCLUSIVE);
   }
 }

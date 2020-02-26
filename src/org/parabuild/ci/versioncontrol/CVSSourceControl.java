@@ -17,7 +17,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.build.BuildScriptGenerator;
-import org.parabuild.ci.common.VCSAttribute;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.SystemConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.error.Error;
@@ -288,7 +288,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
     final SystemConfigurationManager manager = SystemConfigurationManagerFactory.getManager();
     if (manager.isAdvancedConfigurationMode()) {
       // is custom build dir set?
-      final String customBuildDirSetting = getSettingValue(VCSAttribute.CVS_CUSTOM_RELATIVE_BUILD_DIR, null);
+      final String customBuildDirSetting = getSettingValue(VersionControlSystem.CVS_CUSTOM_RELATIVE_BUILD_DIR, null);
       if (StringUtils.isBlank(customBuildDirSetting)) {
         return firstRepositoryPath();
       } else {
@@ -361,7 +361,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
         fromDate = startChangeList.getCreatedAt();
         maxChangeLists = maxNumberOfChangeLists();
         // do pre-check with cvs history command
-        final String preCheck = getSettingValue(VCSAttribute.CVS_CHANGE_PRECHECK, SourceControlSetting.OPTION_UNCHECKED);
+        final String preCheck = getSettingValue(VersionControlSystem.CVS_CHANGE_PRECHECK, SourceControlSetting.OPTION_UNCHECKED);
         if (preCheck.equalsIgnoreCase(SourceControlSetting.OPTION_CHECKED)) {
           // REVIEWME: simeshev@parabuilci.org - 11/28/2004 - cvs history
           // works on the whole repository. This can cause false
@@ -395,7 +395,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
       }
 
       // check if we should run check-in window check
-      final int changeWindow = getSettingValue(VCSAttribute.CVS_CHANGE_WINDOW, 0) * 1000;
+      final int changeWindow = getSettingValue(VersionControlSystem.CVS_CHANGE_WINDOW, 0) * 1000;
       if (changeWindow > 0) {
 
         // wait for change window if necessary.
@@ -422,7 +422,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
       }
 
       // validate that change lists contain not only exclusions
-      if (new ExclusionPathFinder().onlyExclusionPathsPresentInChangeLists(result, getSettingValue(VCSAttribute.VCS_EXCLUSION_PATHS))) {
+      if (new ExclusionPathFinder().onlyExclusionPathsPresentInChangeLists(result, getSettingValue(VersionControlSystem.VCS_EXCLUSION_PATHS))) {
         return startChangeListID;
       }
 
@@ -694,10 +694,10 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
     // check if critical settings has changed
     final SourceControlSettingChangeDetector scd = new SourceControlSettingChangeDetector(currentSettings, newSettings);
     boolean hasToCleanUp = false;
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.CVS_REPOSITORY_PATH);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.CVS_ROOT);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.CVS_BRANCH_NAME);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.CVS_REPOSITORY_PATH);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.CVS_ROOT);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.CVS_BRANCH_NAME);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE);
     if (hasToCleanUp) {
       setHasToCleanUp();
     }
@@ -803,7 +803,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
    *         is enabled.
    */
   private boolean getSuppressLogOutput() {
-    return getSettingValue(VCSAttribute.CVS_SUPPRESS_LOG_OUTPUT_IF_NO_CHANGES, SourceControlSetting.OPTION_UNCHECKED).equals(SourceControlSetting.OPTION_CHECKED);
+    return getSettingValue(VersionControlSystem.CVS_SUPPRESS_LOG_OUTPUT_IF_NO_CHANGES, SourceControlSetting.OPTION_UNCHECKED).equals(SourceControlSetting.OPTION_CHECKED);
   }
 
 
@@ -887,7 +887,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
    * @return String path to CVS executable
    */
   private String getCVSExePath() {
-    return StringUtils.putIntoDoubleQuotes(getSettingValue(VCSAttribute.CVS_PATH_TO_CLIENT, "cvs"));
+    return StringUtils.putIntoDoubleQuotes(getSettingValue(VersionControlSystem.CVS_PATH_TO_CLIENT, "cvs"));
   }
 
 
@@ -898,7 +898,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
    * @return String CVS root
    */
   private String getCVSRoot() throws BuildException {
-    final String cvsRoot = getSettingValue(VCSAttribute.CVS_ROOT);
+    final String cvsRoot = getSettingValue(VersionControlSystem.CVS_ROOT);
     validateCVSRoot(cvsRoot);
     return cvsRoot;
   }
@@ -911,7 +911,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
    * @return String CVS root
    */
   private String getCVSBranch() {
-    return getSettingValue(VCSAttribute.CVS_BRANCH_NAME);
+    return getSettingValue(VersionControlSystem.CVS_BRANCH_NAME);
   }
 
 
@@ -924,7 +924,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
    */
   private List getDepotPaths() throws BuildException {
     // get lines
-    final List lines = StringUtils.multilineStringToList(getSettingValue(VCSAttribute.CVS_REPOSITORY_PATH));
+    final List lines = StringUtils.multilineStringToList(getSettingValue(VersionControlSystem.CVS_REPOSITORY_PATH));
     if (lines.size() <= 0) {
       throw new BuildException("Build configuration does not contain non-empty repository path", getAgentHost());
     }
@@ -959,7 +959,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
    * @return CVS password, or null if not defined
    */
   private String getCVSPassword() {
-    final String encryptedPassword = getSettingValue(VCSAttribute.CVS_PASSWORD);
+    final String encryptedPassword = getSettingValue(VersionControlSystem.CVS_PASSWORD);
     if (encryptedPassword == null) {
       return null;
     }
@@ -971,7 +971,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
    * @return CVS password, or null if not defined
    */
   private String getCVSRshPath() {
-    return getSettingValue(VCSAttribute.CVS_PATH_TO_RSH);
+    return getSettingValue(VersionControlSystem.CVS_PATH_TO_RSH);
   }
 
 
@@ -980,7 +980,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
    */
   private String getCompression() {
     final String defaultCompression = "0";
-    final String s = getSettingValue(VCSAttribute.CVS_COMPRESSION, defaultCompression);
+    final String s = getSettingValue(VersionControlSystem.CVS_COMPRESSION, defaultCompression);
     if (StringUtils.isBlank(s) || !StringUtils.isValidInteger(s.trim())) {
       return defaultCompression;
     }
@@ -1019,7 +1019,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
    * Validates that correct CVS build configuration was passed
    */
   private static void validateIsCVSConfiguration(final BuildConfig buildConfig) {
-    if (buildConfig.getSourceControl() != VCSAttribute.SCM_REFERENCE && buildConfig.getSourceControl() != VCSAttribute.SCM_CVS) {
+    if (buildConfig.getSourceControl() != VersionControlSystem.SCM_REFERENCE && buildConfig.getSourceControl() != VersionControlSystem.SCM_CVS) {
       throw new IllegalArgumentException("Non-CVS build configuration");
     }
   }

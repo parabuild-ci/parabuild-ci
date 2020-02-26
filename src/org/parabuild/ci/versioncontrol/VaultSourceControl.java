@@ -17,13 +17,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.build.BuildScriptGenerator;
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.util.ArgumentValidator;
-import org.parabuild.ci.util.BuildException;
-import org.parabuild.ci.util.CommandStoppedException;
-import org.parabuild.ci.util.IoUtils;
-import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.util.ValidationException;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.error.Error;
 import org.parabuild.ci.error.ErrorManager;
 import org.parabuild.ci.error.ErrorManagerFactory;
@@ -32,6 +26,12 @@ import org.parabuild.ci.object.ChangeList;
 import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.security.SecurityManager;
+import org.parabuild.ci.util.ArgumentValidator;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.util.ValidationException;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -364,7 +364,7 @@ final class VaultSourceControl extends AbstractSourceControl {
       }
 
       // validate that change lists contain not only exclusions
-      if (new ExclusionPathFinder().onlyExclusionPathsPresentInChangeLists(result, getSettingValue(VCSAttribute.VCS_EXCLUSION_PATHS))) {
+      if (new ExclusionPathFinder().onlyExclusionPathsPresentInChangeLists(result, getSettingValue(VersionControlSystem.VCS_EXCLUSION_PATHS))) {
         return startChangeListID;
       }
 
@@ -473,11 +473,11 @@ final class VaultSourceControl extends AbstractSourceControl {
     // check if critical settings has changed
     final SourceControlSettingChangeDetector scd = new SourceControlSettingChangeDetector(currentSettings, newSettings);
     boolean hasToCleanUp = false;
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.VAULT_HOST);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.VAULT_PROXY_SERVER);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.VAULT_REPOSITORY);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.VAULT_REPOSITORY_PATH);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.VAULT_HOST);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.VAULT_PROXY_SERVER);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.VAULT_REPOSITORY);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.VAULT_REPOSITORY_PATH);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE);
     if (hasToCleanUp) {
       setHasToCleanUp();
     }
@@ -506,7 +506,7 @@ final class VaultSourceControl extends AbstractSourceControl {
    */
   private List getDepotPaths() throws BuildException {
     try {
-      final String path = getSettingValue(VCSAttribute.VAULT_REPOSITORY_PATH);
+      final String path = getSettingValue(VersionControlSystem.VAULT_REPOSITORY_PATH);
       if (LOG.isDebugEnabled()) {
         LOG.debug("path: " + path);
       }
@@ -551,16 +551,16 @@ final class VaultSourceControl extends AbstractSourceControl {
    * @param parameters
    */
   private void setCommonParameters(final VaultCommandParameters parameters) {
-    parameters.setHost(getSettingValue(VCSAttribute.VAULT_HOST));
-    parameters.setProxyDomain(getSettingValue(VCSAttribute.VAULT_PROXY_DOMAIN));
-    parameters.setProxyPort(getSettingValue(VCSAttribute.VAULT_PROXY_PORT));
-    parameters.setProxyServer(getSettingValue(VCSAttribute.VAULT_PROXY_SERVER));
-    parameters.setProxyUser(getSettingValue(VCSAttribute.VAULT_PROXY_USER));
-    parameters.setRepository(getSettingValue(VCSAttribute.VAULT_REPOSITORY));
-    parameters.setUser(getSettingValue(VCSAttribute.VAULT_USER));
-    parameters.setUseSSL(SourceControlSetting.OPTION_CHECKED.equals(getSettingValue(VCSAttribute.VAULT_USE_SSL)));
-    parameters.setPassword(StringUtils.isBlank(getSettingValue(VCSAttribute.VAULT_PASSWORD)) ? "" : SecurityManager.decryptPassword(getSettingValue(VCSAttribute.VAULT_PASSWORD)));
-    parameters.setProxyPassword(StringUtils.isBlank(getSettingValue(VCSAttribute.VAULT_PROXY_PASSWORD)) ? "" : SecurityManager.decryptPassword(getSettingValue(VCSAttribute.VAULT_PROXY_PASSWORD)));
+    parameters.setHost(getSettingValue(VersionControlSystem.VAULT_HOST));
+    parameters.setProxyDomain(getSettingValue(VersionControlSystem.VAULT_PROXY_DOMAIN));
+    parameters.setProxyPort(getSettingValue(VersionControlSystem.VAULT_PROXY_PORT));
+    parameters.setProxyServer(getSettingValue(VersionControlSystem.VAULT_PROXY_SERVER));
+    parameters.setProxyUser(getSettingValue(VersionControlSystem.VAULT_PROXY_USER));
+    parameters.setRepository(getSettingValue(VersionControlSystem.VAULT_REPOSITORY));
+    parameters.setUser(getSettingValue(VersionControlSystem.VAULT_USER));
+    parameters.setUseSSL(SourceControlSetting.OPTION_CHECKED.equals(getSettingValue(VersionControlSystem.VAULT_USE_SSL)));
+    parameters.setPassword(StringUtils.isBlank(getSettingValue(VersionControlSystem.VAULT_PASSWORD)) ? "" : SecurityManager.decryptPassword(getSettingValue(VersionControlSystem.VAULT_PASSWORD)));
+    parameters.setProxyPassword(StringUtils.isBlank(getSettingValue(VersionControlSystem.VAULT_PROXY_PASSWORD)) ? "" : SecurityManager.decryptPassword(getSettingValue(VersionControlSystem.VAULT_PROXY_PASSWORD)));
   }
 
 
@@ -569,7 +569,7 @@ final class VaultSourceControl extends AbstractSourceControl {
     final Error error = new Error();
     error.setBuildID(activeBuildID);
     error.setDescription("Could not find a version for Vault directory");
-    error.setDetails("Vault repository: " + getSettingValue(VCSAttribute.VAULT_REPOSITORY)
+    error.setDetails("Vault repository: " + getSettingValue(VersionControlSystem.VAULT_REPOSITORY)
             + ", directory: " + path
             + (lastSyncDate != null ? ", last sync date: " + format.formatInput(lastSyncDate) : "")
             + (changeListDate != null ? ", change list date: " + format.formatInput(changeListDate) : ""));

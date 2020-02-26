@@ -17,14 +17,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.build.BuildScriptGenerator;
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.util.ArgumentValidator;
-import org.parabuild.ci.util.BuildException;
-import org.parabuild.ci.util.CommandStoppedException;
-import org.parabuild.ci.util.CommonConstants;
-import org.parabuild.ci.util.IoUtils;
-import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.util.ValidationException;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ChangeListsAndIssues;
 import org.parabuild.ci.configuration.ChangeListsAndIssuesImpl;
 import org.parabuild.ci.configuration.ConfigurationManager;
@@ -35,6 +28,13 @@ import org.parabuild.ci.object.IssueTracker;
 import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.object.SystemProperty;
 import org.parabuild.ci.remote.Agent;
+import org.parabuild.ci.util.ArgumentValidator;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.CommonConstants;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.util.ValidationException;
 import org.parabuild.ci.versioncontrol.AbstractSourceControl;
 import org.parabuild.ci.versioncontrol.SourceControl;
 import org.parabuild.ci.versioncontrol.SourceControlSettingChangeDetector;
@@ -666,13 +666,13 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
       final ConfigurationManager cm = ConfigurationManager.getInstance();
 
       // update depot view if necessary
-      final int depotViewSourceCode = cm.getSourceControlSettingValue(buildID, VCSAttribute.P4_CLIENT_VIEW_SOURCE, VCSAttribute.P4_CLIENT_VIEW_SOURCE_VALUE_FIELD);
-      if (depotViewSourceCode == VCSAttribute.P4_CLIENT_VIEW_SOURCE_VALUE_DEPOT_PATH) {
+      final int depotViewSourceCode = cm.getSourceControlSettingValue(buildID, VersionControlSystem.P4_CLIENT_VIEW_SOURCE, VersionControlSystem.P4_CLIENT_VIEW_SOURCE_VALUE_FIELD);
+      if (depotViewSourceCode == VersionControlSystem.P4_CLIENT_VIEW_SOURCE_VALUE_DEPOT_PATH) {
         loginIfNecessary(getCheckoutDirectoryAwareAgent());
-        updateDepotViewFromDepot(cm.getSourceControlSettingValue(buildID, VCSAttribute.P4_CLIENT_VIEW_BY_DEPOT_PATH, null));
-      } else if (depotViewSourceCode == VCSAttribute.P4_CLIENT_VIEW_SOURCE_VALUE_CLIENT_NAME) {
+        updateDepotViewFromDepot(cm.getSourceControlSettingValue(buildID, VersionControlSystem.P4_CLIENT_VIEW_BY_DEPOT_PATH, null));
+      } else if (depotViewSourceCode == VersionControlSystem.P4_CLIENT_VIEW_SOURCE_VALUE_CLIENT_NAME) {
         loginIfNecessary(getCheckoutDirectoryAwareAgent());
-        updateDepotViewFromNamedWorkspace(cm.getSourceControlSettingValue(buildID, VCSAttribute.P4_CLIENT_VIEW_BY_CLIENT_NAME, null));
+        updateDepotViewFromNamedWorkspace(cm.getSourceControlSettingValue(buildID, VersionControlSystem.P4_CLIENT_VIEW_BY_CLIENT_NAME, null));
       }
 
       // Get resolved settings
@@ -681,11 +681,11 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
       // check if critical settings has changed
       final SourceControlSettingChangeDetector scd = new SourceControlSettingChangeDetector(currentSettings, newSettings);
       boolean hasToCleanUp = false;
-      hasToCleanUp |= scd.settingHasChanged(VCSAttribute.P4_DEPOT_PATH);
-      hasToCleanUp |= scd.settingHasChanged(VCSAttribute.P4_CLIENT_VIEW_BY_DEPOT_PATH);
-      hasToCleanUp |= scd.settingHasChanged(VCSAttribute.P4_CLIENT_VIEW_SOURCE);
-      hasToCleanUp |= scd.settingHasChanged(VCSAttribute.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE);
-      hasToCleanUp |= scd.settingHasChanged(VCSAttribute.DO_NOT_CHECKOUT);
+      hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.P4_DEPOT_PATH);
+      hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.P4_CLIENT_VIEW_BY_DEPOT_PATH);
+      hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.P4_CLIENT_VIEW_SOURCE);
+      hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE);
+      hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.DO_NOT_CHECKOUT);
       if (hasToCleanUp) {
         setHasToCleanUp();
       }
@@ -1120,7 +1120,7 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
    */
   private void loginIfNecessary(final Agent agent) throws CommandStoppedException, BuildException, AgentFailureException {
     final P4Properties props = getP4Properties();
-    if (props.getAuthenticationMode() == VCSAttribute.P4_AUTHENTICATION_MODE_VALUE_P4LOGIN) {
+    if (props.getAuthenticationMode() == VersionControlSystem.P4_AUTHENTICATION_MODE_VALUE_P4LOGIN) {
       InputStream is = null;
       P4Command command = null;
       try {
@@ -1179,7 +1179,7 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
 
     final P4Properties props = getP4Properties();
 
-    if (props.getClientViewSource() == VCSAttribute.P4_CLIENT_VIEW_SOURCE_VALUE_FIELD) {
+    if (props.getClientViewSource() == VersionControlSystem.P4_CLIENT_VIEW_SOURCE_VALUE_FIELD) {
 
       // Case # 1: Current build configuration as it is
       // known since last configuration load/reload is a
@@ -1187,7 +1187,7 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
       // We don't have to do anything.
 
       lazyDepotInitCalled = true;
-    } else if (props.getClientViewSource() == VCSAttribute.P4_CLIENT_VIEW_SOURCE_VALUE_DEPOT_PATH) {
+    } else if (props.getClientViewSource() == VersionControlSystem.P4_CLIENT_VIEW_SOURCE_VALUE_DEPOT_PATH) {
 
       // Case # 2: Current build configuration as it is
       // known since last configuration load/reload is to
@@ -1196,7 +1196,7 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
       updateDepotViewFromDepot(props.getClientViewByDepotPath());
 
       lazyDepotInitCalled = true;
-    } else if (props.getClientViewSource() == VCSAttribute.P4_CLIENT_VIEW_SOURCE_VALUE_CLIENT_NAME) {
+    } else if (props.getClientViewSource() == VersionControlSystem.P4_CLIENT_VIEW_SOURCE_VALUE_CLIENT_NAME) {
 
       // Case # 3: Current build configuration as it is
       // known since last configuration load/reload is to
@@ -1235,7 +1235,7 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
       final String depotSourceClientViewClientSpec = makeClientSpec(agent, activeBuildID,
               checkoutDirName, ".", clientName, depotPath, props.getP4User(),
               props.isUseUNCPaths(), props.getModtimeOption(), props.getClobberOption(),
-              VCSAttribute.P4_LINE_END_VALUE_LOCAL);
+              VersionControlSystem.P4_LINE_END_VALUE_LOCAL);
 //      if (log.isDebugEnabled()) log.debug("depotSourceClientViewClientSpec: " + depotSourceClientViewClientSpec);
 
       // create client for retrieval of the spec
@@ -1348,12 +1348,12 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
 
   private void updateConfigurationDepotViewSpec(final StringBuffer depotViewSpec) {
     final ConfigurationManager cm = ConfigurationManager.getInstance();
-    SourceControlSetting scs = cm.getSourceControlSetting(activeBuildID, VCSAttribute.P4_DEPOT_PATH);
+    SourceControlSetting scs = cm.getSourceControlSetting(activeBuildID, VersionControlSystem.P4_DEPOT_PATH);
     if (scs == null) {
       if (log.isDebugEnabled()) {
         log.debug("saving new depot path obtained from perforce location ");
       }
-      scs = new SourceControlSetting(activeBuildID, VCSAttribute.P4_DEPOT_PATH, depotViewSpec.toString());
+      scs = new SourceControlSetting(activeBuildID, VersionControlSystem.P4_DEPOT_PATH, depotViewSpec.toString());
       cm.save(scs);
     } else {
       if (scs.getPropertyValue().equals(depotViewSpec.toString())) {
@@ -1787,7 +1787,7 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
    * Adds password to the environmant variable map given that the authentication mode is not p4 login.
    */
   private static void addPassword(final P4Properties props, final Map result, final String environmentName) {
-    if (props.getAuthenticationMode() != VCSAttribute.P4_AUTHENTICATION_MODE_VALUE_P4LOGIN) {
+    if (props.getAuthenticationMode() != VersionControlSystem.P4_AUTHENTICATION_MODE_VALUE_P4LOGIN) {
       result.put(environmentName, props.getP4Password());
     }
   }

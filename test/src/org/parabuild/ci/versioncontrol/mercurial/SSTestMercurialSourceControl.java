@@ -17,12 +17,12 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.TestHelper;
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.VCSAttribute;
+import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.util.BuildException;
 import org.parabuild.ci.util.CommandStoppedException;
 import org.parabuild.ci.util.IoUtils;
-import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.versioncontrol.AbstractSourceControlTest;
 
 import java.util.ArrayList;
@@ -96,8 +96,8 @@ public final class SSTestMercurialSourceControl extends AbstractSourceControlTes
 
   public void test_checkOutLatestCantProcessUnexistingRepository() throws Exception {
     final List settings = new ArrayList(1);
-    settings.add(makeSetting(VCSAttribute.MERCURIAL_URL, "http://127.0.0.1/blah"));
-    settings.add(makeSetting(VCSAttribute.MERCURIAL_EXE_PATH, "hg"));
+    settings.add(makeSetting(VersionControlSystem.MERCURIAL_URL, "http://127.0.0.1/blah"));
+    settings.add(makeSetting(VersionControlSystem.MERCURIAL_EXE_PATH, "hg"));
     final MercurialVersionControl mercurialVersionControl = makeMercurialSourceControlWithAlteredSettings(settings);
     mercurialVersionControl.setAgentHost(agentHost);
     try {

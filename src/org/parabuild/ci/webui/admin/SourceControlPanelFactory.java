@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.common.VCSAttribute;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.UnexpectedErrorException;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.webui.admin.accurev.AccurevSettingsPanel;
@@ -35,45 +35,45 @@ public final class SourceControlPanelFactory {
   public static SourceControlPanel getPanel(final BuildConfig buildConfig) {
     final SourceControlPanel result;
     final byte sourceControl = buildConfig.getSourceControl();
-    if (sourceControl == VCSAttribute.SCM_CVS) {
+    if (sourceControl == VersionControlSystem.SCM_CVS) {
       result = new CVSCompoundSettingsPanel();
-    } else if (sourceControl == VCSAttribute.SCM_BAZAAR) {
+    } else if (sourceControl == VersionControlSystem.SCM_BAZAAR) {
       result = new BazaarSettingsPanel();
-    } else if (sourceControl == VCSAttribute.SCM_MERCURIAL) {
+    } else if (sourceControl == VersionControlSystem.SCM_MERCURIAL) {
       result = new MercurialSettingsPanel();
-    } else if (sourceControl == VCSAttribute.SCM_PERFORCE) {
+    } else if (sourceControl == VersionControlSystem.SCM_PERFORCE) {
       result = new P4SettingsPanel();
-    } else if (sourceControl == VCSAttribute.SCM_VSS) {
+    } else if (sourceControl == VersionControlSystem.SCM_VSS) {
       result = new VSSSettingsPanel();
-    } else if (sourceControl == VCSAttribute.SCM_SVN) {
+    } else if (sourceControl == VersionControlSystem.SCM_SVN) {
       result = new SVNCompoundSettingsPanel();
-    } else if (sourceControl == VCSAttribute.SCM_SURROUND) {
+    } else if (sourceControl == VersionControlSystem.SCM_SURROUND) {
       result = new SurroundSettingsPanel();
-    } else if (sourceControl == VCSAttribute.SCM_CLEARCASE) {
+    } else if (sourceControl == VersionControlSystem.SCM_CLEARCASE) {
       result = new ClearCaseSettingsPanel();
-    } else if (sourceControl == VCSAttribute.SCM_ACCUREV) {
+    } else if (sourceControl == VersionControlSystem.SCM_ACCUREV) {
       result = new AccurevSettingsPanel();
-    } else if (sourceControl == VCSAttribute.SCM_STARTEAM) {
+    } else if (sourceControl == VersionControlSystem.SCM_STARTEAM) {
       result = new StarTeamSettingsPanel();
-    } else if (sourceControl == VCSAttribute.SCM_VAULT) {
+    } else if (sourceControl == VersionControlSystem.SCM_VAULT) {
       result = new VaultSettingsPanel();
-    } else if (sourceControl == VCSAttribute.SCM_PVCS) {
+    } else if (sourceControl == VersionControlSystem.SCM_PVCS) {
       result = new PVCSSettingsPanel();
-    } else if (sourceControl == VCSAttribute.SCM_MKS) {
+    } else if (sourceControl == VersionControlSystem.SCM_MKS) {
       result = new MKSSettingsPanel();
-    } else if (sourceControl == VCSAttribute.SCM_FILESYSTEM) {
+    } else if (sourceControl == VersionControlSystem.SCM_FILESYSTEM) {
       result = new FileSystemVCSSettingsPanel();
-    } else if (sourceControl == VCSAttribute.SCM_GENERIC) {
+    } else if (sourceControl == VersionControlSystem.SCM_GENERIC) {
       result = new GenericVCSSettingsPanel();
-    } else if (sourceControl == VCSAttribute.SCM_GIT) {
+    } else if (sourceControl == VersionControlSystem.SCM_GIT) {
       result = new GitSettingsPanel();
-    } else if (sourceControl == VCSAttribute.SCM_REFERENCE) {
+    } else if (sourceControl == VersionControlSystem.SCM_REFERENCE) {
       if (buildConfig.getScheduleType() == BuildConfig.SCHEDULE_TYPE_PARALLEL) {
         result = new ParallelSourceControlPanel();
       } else {
         result = new ReferenceSourceControlPanel();
       }
-    } else if (sourceControl == VCSAttribute.SCM_SYNERGY) {
+    } else if (sourceControl == VersionControlSystem.SCM_SYNERGY) {
       result = new SynergySettingsPanel();
     } else {
       throw new UnexpectedErrorException("Unknown version control type");

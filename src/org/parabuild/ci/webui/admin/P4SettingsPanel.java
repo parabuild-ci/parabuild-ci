@@ -13,16 +13,16 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.util.IoUtils;
-import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.util.ValidationException;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.remote.NoLiveAgentsException;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.util.ValidationException;
 import org.parabuild.ci.versioncontrol.perforce.P4ClientNameGeneratorImpl;
 import org.parabuild.ci.versioncontrol.perforce.P4ClientViewParser;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
@@ -155,7 +155,7 @@ public final class P4SettingsPanel extends AbstractSourceControlPanel {
     gridIterator.addPair(lbLineEnd, flLineEnd);
 
     final ConfigurationManager cm = ConfigurationManager.getInstance();
-    final SourceControlSetting setting = cm.getSourceControlSetting(buildID, VCSAttribute.DO_NOT_CHECKOUT);
+    final SourceControlSetting setting = cm.getSourceControlSetting(buildID, VersionControlSystem.DO_NOT_CHECKOUT);
     if (scm.isNoCheckoutBuildEnabled() || (setting != null && setting.getPropertyValue().equals(SourceControlSetting.OPTION_CHECKED))) {
       gridIterator.addPair(lbDoNotSync, cbDoNotSync);
     }
@@ -175,28 +175,28 @@ public final class P4SettingsPanel extends AbstractSourceControlPanel {
     gridIterator.addPair(lbCaseSensitiveUserNames, cbCaseSensitiveUserNames);
 
     // init property to input map
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_PASSWORD, flPassword);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_USER, flUser);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_PORT, flPort);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_DEPOT_PATH, flClientView);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_PATH_TO_CLIENT, flPathToP4Client);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_COUNTER, flCounter);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_RELATIVE_BUILD_DIR, flRelativeBuildDir);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_ADVANCED_VIEW_MODE, flAdvancedViewMode);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_USE_UNC_PATHS, flUseUNCPaths);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_VARS_OVERRIDE, flShellVariablesOverride);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_CLIENT_NAME_TEMPLATE, flClientNameTemplate);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_MODTIME_OPTION, flOptionModtime);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_CLOBBER_OPTION, flOptionClobber);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_P4WEB_URL, flP4WebURL);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_AUTHENTICATION_MODE, flAuthenticationMode);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_CLIENT_VIEW_SOURCE, flClientViewSource);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_CLIENT_VIEW_BY_DEPOT_PATH, flClientViewByDepotPath);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_CLIENT_VIEW_BY_CLIENT_NAME, flClientViewByClientName);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_UPDATE_HAVE_LIST, cbUpdateHaveList);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_CASE_SENSITIVE_USER_NAMES, cbCaseSensitiveUserNames);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.DO_NOT_CHECKOUT, cbDoNotSync);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_LINE_END, flLineEnd);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.P4_PASSWORD, flPassword);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.P4_USER, flUser);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.P4_PORT, flPort);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.P4_DEPOT_PATH, flClientView);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.P4_PATH_TO_CLIENT, flPathToP4Client);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.P4_COUNTER, flCounter);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.P4_RELATIVE_BUILD_DIR, flRelativeBuildDir);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.P4_ADVANCED_VIEW_MODE, flAdvancedViewMode);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.P4_USE_UNC_PATHS, flUseUNCPaths);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.P4_VARS_OVERRIDE, flShellVariablesOverride);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.P4_CLIENT_NAME_TEMPLATE, flClientNameTemplate);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.P4_MODTIME_OPTION, flOptionModtime);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.P4_CLOBBER_OPTION, flOptionClobber);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.P4_P4WEB_URL, flP4WebURL);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.P4_AUTHENTICATION_MODE, flAuthenticationMode);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.P4_CLIENT_VIEW_SOURCE, flClientViewSource);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.P4_CLIENT_VIEW_BY_DEPOT_PATH, flClientViewByDepotPath);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.P4_CLIENT_VIEW_BY_CLIENT_NAME, flClientViewByClientName);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.P4_UPDATE_HAVE_LIST, cbUpdateHaveList);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.P4_CASE_SENSITIVE_USER_NAMES, cbCaseSensitiveUserNames);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.DO_NOT_CHECKOUT, cbDoNotSync);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.P4_LINE_END, flLineEnd);
 
     // add footer
     addCommonAttributes();

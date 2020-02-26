@@ -17,14 +17,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.build.BuildScriptGenerator;
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.util.BuildException;
-import org.parabuild.ci.util.CommandStoppedException;
-import org.parabuild.ci.util.ExceptionUtils;
-import org.parabuild.ci.util.IoUtils;
-import org.parabuild.ci.util.SettingResolver;
-import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.util.ValidationException;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.error.ErrorManager;
@@ -35,6 +28,13 @@ import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.process.RemoteCommand;
 import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.security.SecurityManager;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.ExceptionUtils;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.SettingResolver;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.util.ValidationException;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
@@ -337,10 +337,10 @@ final class SVNSourceControl extends AbstractSourceControl {
     // check if critical settings has changed
     final SourceControlSettingChangeDetector scd = new SourceControlSettingChangeDetector(currentSettings, newSettings);
     boolean hasToCleanUp = false;
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.SVN_IGNORE_EXTERNALS);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.SVN_DEPOT_PATH);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.SVN_URL);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.SVN_IGNORE_EXTERNALS);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.SVN_DEPOT_PATH);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.SVN_URL);
     if (hasToCleanUp) {
       setHasToCleanUp();
     }
@@ -495,7 +495,7 @@ final class SVNSourceControl extends AbstractSourceControl {
         }
 
         // analyze change LOG
-        final boolean watchNonRecursive = getSettingValue(VCSAttribute.SVN_WATCH_NON_RECURSIVE_PATHS,
+        final boolean watchNonRecursive = getSettingValue(VersionControlSystem.SVN_WATCH_NON_RECURSIVE_PATHS,
                 SourceControlSetting.OPTION_UNCHECKED).equals(SourceControlSetting.OPTION_CHECKED);
         final SVNChangeLogParser changeLogParser = xmlFormat ? new SVNXmlChangeLogParser(maxChangeListSize()) : new SVNTextChangeLogParser(maxChangeListSize());
         changeLogParser.setMaxChangeLists(maxChangeLists);
@@ -534,7 +534,7 @@ final class SVNSourceControl extends AbstractSourceControl {
     }
 
     // validate that change lists contain not only exclusions
-    if (new ExclusionPathFinder().onlyExclusionPathsPresentInChangeLists(result, getSettingValue(VCSAttribute.VCS_EXCLUSION_PATHS))) {
+    if (new ExclusionPathFinder().onlyExclusionPathsPresentInChangeLists(result, getSettingValue(VersionControlSystem.VCS_EXCLUSION_PATHS))) {
       return ChangeList.UNSAVED_ID;
     }
 
@@ -582,7 +582,7 @@ final class SVNSourceControl extends AbstractSourceControl {
    * @noinspection ControlFlowStatementWithoutBraces
    */
   private String getPasswordSetting() {
-    final String encrypedPassword = getSettingValue(VCSAttribute.SVN_PASSWORD);
+    final String encrypedPassword = getSettingValue(VersionControlSystem.SVN_PASSWORD);
     if (encrypedPassword == null) return null;
     return SecurityManager.decryptPassword(encrypedPassword);
   }
@@ -595,7 +595,7 @@ final class SVNSourceControl extends AbstractSourceControl {
    */
   private boolean getAddTrustServerCertSetting() {
 
-    final String stringSettingValue = getSettingValue(VCSAttribute.SVN_USER, SourceControlSetting.OPTION_UNCHECKED);
+    final String stringSettingValue = getSettingValue(VersionControlSystem.SVN_USER, SourceControlSetting.OPTION_UNCHECKED);
     return stringSettingValue.equals(SourceControlSetting.OPTION_CHECKED);
   }
 
@@ -606,7 +606,7 @@ final class SVNSourceControl extends AbstractSourceControl {
    * @return true if externals should be ignored.
    */
   private boolean getIgnoreExternals() {
-    final String stringSettingValue = getSettingValue(VCSAttribute.SVN_IGNORE_EXTERNALS, SourceControlSetting.OPTION_UNCHECKED);
+    final String stringSettingValue = getSettingValue(VersionControlSystem.SVN_IGNORE_EXTERNALS, SourceControlSetting.OPTION_UNCHECKED);
     return stringSettingValue.equals(SourceControlSetting.OPTION_CHECKED);
   }
 
@@ -655,7 +655,7 @@ final class SVNSourceControl extends AbstractSourceControl {
     try {
 
       // Get setting as defined in the build configuration
-      final String exeSettingValue = getSettingValue(VCSAttribute.SVN_PATH_TO_EXE);
+      final String exeSettingValue = getSettingValue(VersionControlSystem.SVN_PATH_TO_EXE);
 
       // Resolve against the build configuration
       final SettingResolver settingResolver = new SettingResolver(buildID, getAgentHost().getHost());
@@ -682,7 +682,7 @@ final class SVNSourceControl extends AbstractSourceControl {
   private List getDepotPaths() throws BuildException {
     try {
       final SVNDepotPathParser parser = new SVNDepotPathParser();
-      return parser.parseDepotPath(getSettingValue(VCSAttribute.SVN_DEPOT_PATH));
+      return parser.parseDepotPath(getSettingValue(VersionControlSystem.SVN_DEPOT_PATH));
     } catch (final ValidationException e) {
       throw new BuildException(e, getAgentHost());
     }
@@ -695,7 +695,7 @@ final class SVNSourceControl extends AbstractSourceControl {
    * @return a setting for Subversion URL.
    */
   private String getURL() {
-    return getSettingValue(VCSAttribute.SVN_URL);
+    return getSettingValue(VersionControlSystem.SVN_URL);
   }
 
 
@@ -705,7 +705,7 @@ final class SVNSourceControl extends AbstractSourceControl {
    * @return user setting.
    */
   private String getUser() {
-    return getSettingValue(VCSAttribute.SVN_USER);
+    return getSettingValue(VersionControlSystem.SVN_USER);
   }
 
 

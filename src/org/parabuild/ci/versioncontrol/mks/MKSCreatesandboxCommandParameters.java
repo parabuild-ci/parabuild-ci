@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.versioncontrol.mks;
 
-import org.parabuild.ci.common.VCSAttribute;
+import org.parabuild.ci.common.VersionControlSystem;
 
 /**
  * Parameters for MKS's rlog command.
@@ -23,7 +23,7 @@ import org.parabuild.ci.common.VCSAttribute;
  */
 public class MKSCreatesandboxCommandParameters extends MKSCommandParameters {
 
-  private int lineTerminator = VCSAttribute.MKS_LINE_TERMINATOR_NATIVE;
+  private int lineTerminator = VersionControlSystem.MKS_LINE_TERMINATOR_NATIVE;
   private String projectRevision = null;
 
   public int getLineTerminator() {
@@ -32,11 +32,11 @@ public class MKSCreatesandboxCommandParameters extends MKSCommandParameters {
 
 
   public String getFormattedLineTerminator() {
-    if (lineTerminator == VCSAttribute.MKS_LINE_TERMINATOR_NATIVE) {
+    if (lineTerminator == VersionControlSystem.MKS_LINE_TERMINATOR_NATIVE) {
       return "native";
-    } else if (lineTerminator == VCSAttribute.MKS_LINE_TERMINATOR_CRLF) {
+    } else if (lineTerminator == VersionControlSystem.MKS_LINE_TERMINATOR_CRLF) {
       return "crlf";
-    } else if (lineTerminator == VCSAttribute.MKS_LINE_TERMINATOR_LF) {
+    } else if (lineTerminator == VersionControlSystem.MKS_LINE_TERMINATOR_LF) {
       return "lf";
     } else {
       throw new IllegalStateException("Unknown line terminator code: " + lineTerminator);

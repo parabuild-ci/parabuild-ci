@@ -16,14 +16,14 @@ package org.parabuild.ci.versioncontrol.bazaar;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.util.BuildException;
-import org.parabuild.ci.util.CommandStoppedException;
-import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.ChangeList;
 import org.parabuild.ci.remote.Agent;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.versioncontrol.AbstractSourceControl;
 import org.parabuild.ci.versioncontrol.ExclusionPathFinder;
 import org.parabuild.ci.versioncontrol.SourceControlSettingChangeDetector;
@@ -275,7 +275,7 @@ public final class BazaarVersionControl extends AbstractSourceControl {
     }
 
     // validate that change lists contain not only exclusions
-    if (new ExclusionPathFinder().onlyExclusionPathsPresentInChangeLists(result, getSettingValue(VCSAttribute.VCS_EXCLUSION_PATHS))) {
+    if (new ExclusionPathFinder().onlyExclusionPathsPresentInChangeLists(result, getSettingValue(VersionControlSystem.VCS_EXCLUSION_PATHS))) {
       return ChangeList.UNSAVED_ID;
     }
 
@@ -314,8 +314,8 @@ public final class BazaarVersionControl extends AbstractSourceControl {
     // check if critical settings has changed
     final SourceControlSettingChangeDetector scd = new SourceControlSettingChangeDetector(currentSettings, newSettings);
     boolean hasToCleanUp = false;
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.BAZAAR_BRANCH_LOCATION);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.BAZAAR_BRANCH_LOCATION);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE);
     if (hasToCleanUp) {
       lastSyncRevision = null;
       setHasToCleanUp();
@@ -339,7 +339,7 @@ public final class BazaarVersionControl extends AbstractSourceControl {
    * Returns path to Bazaar client executable.
    */
   private String getPathToExe() {
-    return StringUtils.putIntoDoubleQuotes(getSettingValue(VCSAttribute.BAZAAR_EXE_PATH));
+    return StringUtils.putIntoDoubleQuotes(getSettingValue(VersionControlSystem.BAZAAR_EXE_PATH));
   }
 
 
@@ -347,6 +347,6 @@ public final class BazaarVersionControl extends AbstractSourceControl {
    * Returns Bazaar branch location.
    */
   private String getBranchLocationSetting() {
-    return getSettingValue(VCSAttribute.BAZAAR_BRANCH_LOCATION);
+    return getSettingValue(VersionControlSystem.BAZAAR_BRANCH_LOCATION);
   }
 }

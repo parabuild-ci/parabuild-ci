@@ -13,8 +13,8 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.webui.common.*;
+import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.webui.common.CodeNameDropDown;
 
 /**
  * Shows selection of MKS line terminator options used to create a sandbox.
@@ -25,9 +25,9 @@ public final class MKSLineTerminatorDropDown extends CodeNameDropDown {
 
 
   public MKSLineTerminatorDropDown() {
-    addCodeNamePair(VCSAttribute.MKS_LINE_TERMINATOR_LF, "lf");
-    addCodeNamePair(VCSAttribute.MKS_LINE_TERMINATOR_CRLF, "crlf");
-    addCodeNamePair(VCSAttribute.MKS_LINE_TERMINATOR_NATIVE, "native");
-    setCode(VCSAttribute.MKS_LINE_TERMINATOR_NATIVE);
+    addCodeNamePair(VersionControlSystem.MKS_LINE_TERMINATOR_LF, "lf");
+    addCodeNamePair(VersionControlSystem.MKS_LINE_TERMINATOR_CRLF, "crlf");
+    addCodeNamePair(VersionControlSystem.MKS_LINE_TERMINATOR_NATIVE, "native");
+    setCode(VersionControlSystem.MKS_LINE_TERMINATOR_NATIVE);
   }
 }

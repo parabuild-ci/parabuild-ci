@@ -16,10 +16,10 @@ package org.parabuild.ci.versioncontrol;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.VCSAttribute;
+import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.remote.Agent;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -193,16 +193,16 @@ abstract class StarTeamCommand extends VersionControlRemoteCommand {
   private static final String encriptionToOption(final int encryption) {
     final StringBuilder sb = new StringBuilder(100);
     switch (encryption) {
-      case VCSAttribute.STARTEAM_ENCRYPTION_RSA_R2_BLOCK_CIPHER_ECB:
+      case VersionControlSystem.STARTEAM_ENCRYPTION_RSA_R2_BLOCK_CIPHER_ECB:
         sb.append(STR_ENCYPT_FLAG).append(' ').append("RC2_ECB");
         break;
-      case VCSAttribute.STARTEAM_ENCRYPTION_RSA_R2_BLOCK_CIPHER_CF:
+      case VersionControlSystem.STARTEAM_ENCRYPTION_RSA_R2_BLOCK_CIPHER_CF:
         sb.append(STR_ENCYPT_FLAG).append(' ').append("RC2_CFB");
         break;
-      case VCSAttribute.STARTEAM_ENCRYPTION_RSA_R2_BLOCK_CIPHER_CBC:
+      case VersionControlSystem.STARTEAM_ENCRYPTION_RSA_R2_BLOCK_CIPHER_CBC:
         sb.append(STR_ENCYPT_FLAG).append(' ').append("RC2_CBC");
         break;
-      case VCSAttribute.STARTEAM_ENCRYPTION_RSA_R4_STREAM_CIPHER:
+      case VersionControlSystem.STARTEAM_ENCRYPTION_RSA_R4_STREAM_CIPHER:
         sb.append(STR_ENCYPT_FLAG).append(' ').append("RC4");
         break;
       default:

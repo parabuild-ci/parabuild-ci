@@ -13,13 +13,13 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.util.IoUtils;
-import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.util.ValidationException;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.remote.AgentEnvironment;
 import org.parabuild.ci.remote.NoLiveAgentsException;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.util.ValidationException;
 import org.parabuild.ci.versioncontrol.GitDepotPathParser;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.EncryptingPassword;
@@ -74,12 +74,12 @@ public final class GitSettingsPanel extends AbstractSourceControlPanel {
     gridIterator.addPair(lbDepotPath, new RequiredFieldMarker(flDepotPath));
 
     // init property to input map
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.GIT_PASSWORD, flPassword);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.GIT_USER, flUser);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.GIT_DEPOT_PATH, flDepotPath);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.GIT_PATH_TO_EXE, flPathToExe);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.GIT_REPOSITORY, flRepository);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.GIT_BRANCH, flBranch);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.GIT_PASSWORD, flPassword);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.GIT_USER, flUser);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.GIT_DEPOT_PATH, flDepotPath);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.GIT_PATH_TO_EXE, flPathToExe);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.GIT_REPOSITORY, flRepository);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.GIT_BRANCH, flBranch);
 
     // add footer
     addCommonAttributes();

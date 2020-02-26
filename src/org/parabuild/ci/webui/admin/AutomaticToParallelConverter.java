@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.common.VCSAttribute;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.ActiveBuildConfig;
 import org.parabuild.ci.object.SourceControlSetting;
@@ -39,7 +39,7 @@ final class AutomaticToParallelConverter extends BuildScheduleConverter {
     // Change source control to reference
     final ConfigurationManager cm = ConfigurationManager.getInstance();
     final ActiveBuildConfig activeBuildConfig = cm.getActiveBuildConfig(activeBuildID);
-    activeBuildConfig.setSourceControl(VCSAttribute.SCM_REFERENCE);
+    activeBuildConfig.setSourceControl(VersionControlSystem.SCM_REFERENCE);
     cm.saveObject(activeBuildConfig);
 
     // Remove all source control settings
@@ -55,11 +55,11 @@ final class AutomaticToParallelConverter extends BuildScheduleConverter {
     }
 
     // Set reference build id
-    SourceControlSetting setting = cm.getSourceControlSetting(activeBuildID, VCSAttribute.REFERENCE_BUILD_ID);
+    SourceControlSetting setting = cm.getSourceControlSetting(activeBuildID, VersionControlSystem.REFERENCE_BUILD_ID);
     if (setting == null) {
       setting = new SourceControlSetting();
       setting.setBuildID(activeBuildID);
-      setting.setPropertyName(VCSAttribute.REFERENCE_BUILD_ID);
+      setting.setPropertyName(VersionControlSystem.REFERENCE_BUILD_ID);
     }
     setting.setPropertyValue(parentBuildID);
     cm.saveObject(setting);

@@ -15,7 +15,7 @@ package org.parabuild.ci.build;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.common.VCSAttribute;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.BuildRun;
@@ -200,16 +200,16 @@ public final class BuildState implements Serializable {
       return "Stopping";
     }
     if (status.equals(BuildStatus.CHECKING_OUT)) {
-      if (sourceControl == VCSAttribute.SCM_CVS) {
+      if (sourceControl == VersionControlSystem.SCM_CVS) {
         return "Checking out";
       }
-      if (sourceControl == VCSAttribute.SCM_SVN) {
+      if (sourceControl == VersionControlSystem.SCM_SVN) {
         return "Checking out";
       }
-      if (sourceControl == VCSAttribute.SCM_CLEARCASE) {
+      if (sourceControl == VersionControlSystem.SCM_CLEARCASE) {
         return "Updating view";
       }
-      if (sourceControl == VCSAttribute.SCM_PERFORCE) {
+      if (sourceControl == VersionControlSystem.SCM_PERFORCE) {
         return "Syncing";
       }
       return "Checking out";

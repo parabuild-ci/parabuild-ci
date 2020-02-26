@@ -13,11 +13,11 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.common.VCSAttribute;
+import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.remote.NoLiveAgentsException;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.util.ValidationException;
-import org.parabuild.ci.remote.NoLiveAgentsException;
 import org.parabuild.ci.versioncontrol.StarTeamProjectListParser;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.EncryptingPassword;
@@ -71,14 +71,14 @@ public final class StarTeamSettingsPanel extends AbstractSourceControlPanel {
     gridIterator.addPair(new CommonFieldLabel(CAPTION_PROJECT_PATH), new RequiredFieldMarker(flProjectPath));
 
     // init property to input map
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.STARTEAM_ENCRIPTION, flEncryption);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.STARTEAM_HOST, flHost);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.STARTEAM_PASSWORD, flPassword);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.STARTEAM_PATH_TO_EXE, flPathToExe);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.STARTEAM_PORT, flPort);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.STARTEAM_PROJECT_PATH, flProjectPath);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.STARTEAM_USER, flUser);
-    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.STARTEAM_EOL_CONVERSION, flEOLConversion);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.STARTEAM_ENCRIPTION, flEncryption);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.STARTEAM_HOST, flHost);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.STARTEAM_PASSWORD, flPassword);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.STARTEAM_PATH_TO_EXE, flPathToExe);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.STARTEAM_PORT, flPort);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.STARTEAM_PROJECT_PATH, flProjectPath);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.STARTEAM_USER, flUser);
+    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.STARTEAM_EOL_CONVERSION, flEOLConversion);
 
     // add footer
     addCommonAttributes();

@@ -13,20 +13,19 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.io.IOException;
-
 import junit.framework.TestSuite;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.ServersideTestCase;
 import org.parabuild.ci.TestHelper;
-
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.remote.AgentManager;
+import org.parabuild.ci.util.CommandStoppedException;
+
+import java.io.IOException;
 
 
 /**
@@ -65,7 +64,7 @@ public class SSTestClearCaseRmtagCommand extends ServersideTestCase {
   protected void setUp() throws Exception {
     super.setUp();
     cm = ConfigurationManager.getInstance();
-    exePath = cm.getSourceControlSetting(TestHelper.TEST_CLEARCASE_VALID_BUILD_ID, VCSAttribute.CLEARCASE_PATH_TO_EXE).getPropertyValue();
+    exePath = cm.getSourceControlSetting(TestHelper.TEST_CLEARCASE_VALID_BUILD_ID, VersionControlSystem.CLEARCASE_PATH_TO_EXE).getPropertyValue();
   }
 
 

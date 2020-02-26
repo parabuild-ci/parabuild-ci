@@ -17,14 +17,14 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.dom4j.DocumentException;
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.util.BuildException;
-import org.parabuild.ci.util.CommandStoppedException;
-import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.ChangeList;
 import org.parabuild.ci.remote.Agent;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.versioncontrol.AbstractSourceControl;
 import org.parabuild.ci.versioncontrol.ExclusionPathFinder;
 import org.parabuild.ci.versioncontrol.SourceControlSettingChangeDetector;
@@ -229,7 +229,7 @@ public final class AccurevVersionControl extends AbstractSourceControl {
     }
 
     // Validate that change lists contain not only exclusions
-    final String exclusionPaths = getSettingValue(VCSAttribute.VCS_EXCLUSION_PATHS);
+    final String exclusionPaths = getSettingValue(VersionControlSystem.VCS_EXCLUSION_PATHS);
     final ExclusionPathFinder exclusionPathFinder = new ExclusionPathFinder();
     if (exclusionPathFinder.onlyExclusionPathsPresentInChangeLists(result, exclusionPaths)) {
       return ChangeList.UNSAVED_ID;
@@ -258,15 +258,15 @@ public final class AccurevVersionControl extends AbstractSourceControl {
     // Check if critical settings has changed
     final SourceControlSettingChangeDetector scd = new SourceControlSettingChangeDetector(currentSettings, newSettings);
     boolean hasToCleanUp = false;
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.ACCUREV_DEPOT);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.ACCUREV_EOL_TYPE);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.ACCUREV_HOST);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.ACCUREV_PASSWORD);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.ACCUREV_PATH);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.ACCUREV_PORT);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.ACCUREV_STREAM);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.ACCUREV_USER);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.ACCUREV_WORKSPACE_LOCK);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.ACCUREV_DEPOT);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.ACCUREV_EOL_TYPE);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.ACCUREV_HOST);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.ACCUREV_PASSWORD);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.ACCUREV_PATH);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.ACCUREV_PORT);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.ACCUREV_STREAM);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.ACCUREV_USER);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.ACCUREV_WORKSPACE_LOCK);
     if (hasToCleanUp) {
       setHasToCleanUp();
     }
@@ -298,16 +298,16 @@ public final class AccurevVersionControl extends AbstractSourceControl {
 
 
   private AccurevCommandParameters getParameters() {
-    final String depot = getSettingValue(VCSAttribute.ACCUREV_DEPOT);
-    final String eolType = getSettingValue(VCSAttribute.ACCUREV_EOL_TYPE);
-    final String exePath = getSettingValue(VCSAttribute.ACCUREV_EXE_PATH);
-    final String host = getSettingValue(VCSAttribute.ACCUREV_HOST);
-    final String kind = getSettingValue(VCSAttribute.ACCUREV_WORKSPACE_LOCK);
-    final String password = decrypt(getSettingValue(VCSAttribute.ACCUREV_PASSWORD));
-    final String path = getSettingValue(VCSAttribute.ACCUREV_PATH);
-    final String port = getSettingValue(VCSAttribute.ACCUREV_PORT);
-    final String stream = getSettingValue(VCSAttribute.ACCUREV_STREAM);
-    final String user = getSettingValue(VCSAttribute.ACCUREV_USER);
+    final String depot = getSettingValue(VersionControlSystem.ACCUREV_DEPOT);
+    final String eolType = getSettingValue(VersionControlSystem.ACCUREV_EOL_TYPE);
+    final String exePath = getSettingValue(VersionControlSystem.ACCUREV_EXE_PATH);
+    final String host = getSettingValue(VersionControlSystem.ACCUREV_HOST);
+    final String kind = getSettingValue(VersionControlSystem.ACCUREV_WORKSPACE_LOCK);
+    final String password = decrypt(getSettingValue(VersionControlSystem.ACCUREV_PASSWORD));
+    final String path = getSettingValue(VersionControlSystem.ACCUREV_PATH);
+    final String port = getSettingValue(VersionControlSystem.ACCUREV_PORT);
+    final String stream = getSettingValue(VersionControlSystem.ACCUREV_STREAM);
+    final String user = getSettingValue(VersionControlSystem.ACCUREV_USER);
     return new AccurevCommandParameters(exePath, host, password, Integer.parseInt(port), stream, user, path, depot,
             Byte.parseByte(kind), Byte.parseByte(eolType));
   }

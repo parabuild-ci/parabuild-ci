@@ -16,7 +16,7 @@ package org.parabuild.ci.webui.admin;
 import junit.framework.TestSuite;
 import org.apache.cactus.ServletTestCase;
 import org.parabuild.ci.TestHelper;
-import org.parabuild.ci.common.VCSAttribute;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.webui.common.WebUIConstants;
@@ -58,9 +58,9 @@ public class SSTestWebSVNSettingsPanel extends ServletTestCase {
    * @throws Exception if an error occured.
    */
   public void test_load() throws Exception {
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.REPOSITORY_BROWSER_TYPE, Integer.toString(VCSAttribute.CODE_WEB_SVN));
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.WEB_SVN_URL, "https://host.net/websvn/mycompany/");
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.WEB_SVN_REPNAME, "mycompany");
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VersionControlSystem.REPOSITORY_BROWSER_TYPE, Integer.toString(VersionControlSystem.CODE_WEB_SVN));
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VersionControlSystem.WEB_SVN_URL, "https://host.net/websvn/mycompany/");
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VersionControlSystem.WEB_SVN_REPNAME, "mycompany");
     final BuildConfig buildConfig = ConfigurationManager.getInstance().getActiveBuildConfig(TestHelper.TEST_CVS_VALID_BUILD_ID);
     panel.load(buildConfig);
     assertEquals(TestHelper.TEST_CVS_VALID_BUILD_ID, panel.getBuildID());

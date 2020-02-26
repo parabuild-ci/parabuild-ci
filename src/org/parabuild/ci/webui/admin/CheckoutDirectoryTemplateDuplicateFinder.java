@@ -15,15 +15,15 @@ package org.parabuild.ci.webui.admin;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.util.ArgumentValidator;
-import org.parabuild.ci.util.SourceControlSettingResolver;
-import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.util.ValidationException;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.AgentHost;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.remote.AgentManager;
+import org.parabuild.ci.util.ArgumentValidator;
+import org.parabuild.ci.util.SourceControlSettingResolver;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.util.ValidationException;
 
 import java.util.Iterator;
 import java.util.List;
@@ -71,7 +71,7 @@ public final class CheckoutDirectoryTemplateDuplicateFinder {
         continue; // skip self
       }
       final BuildConfig theirBuildConfig = cm.getBuildConfiguration(id);
-      final String theirTemplate = cm.getSourceControlSettingValue(theirBuildConfig.getBuildID(), VCSAttribute.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE, null);
+      final String theirTemplate = cm.getSourceControlSettingValue(theirBuildConfig.getBuildID(), VersionControlSystem.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE, null);
       if (StringUtils.isBlank(theirTemplate)) {
         continue; // skip empty
       }

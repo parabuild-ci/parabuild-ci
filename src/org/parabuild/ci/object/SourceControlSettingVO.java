@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.object;
 
-import org.parabuild.ci.common.VCSAttribute;
+import org.parabuild.ci.common.VersionControlSystem;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -24,21 +24,21 @@ import java.util.Map;
  */
 public final class SourceControlSettingVO {
 
-  public static final String SVN_DEPOT_PATH = VCSAttribute.SVN_DEPOT_PATH;
-  public static final String SVN_CHANGE_LIST_NUMBER = VCSAttribute.SVN_CHANGE_LIST_NUMBER;
+  public static final String SVN_DEPOT_PATH = VersionControlSystem.SVN_DEPOT_PATH;
+  public static final String SVN_CHANGE_LIST_NUMBER = VersionControlSystem.SVN_CHANGE_LIST_NUMBER;
 
-  public static final String CVS_BRANCH_NAME = VCSAttribute.CVS_BRANCH_NAME;
+  public static final String CVS_BRANCH_NAME = VersionControlSystem.CVS_BRANCH_NAME;
 
-  public static final String P4_DEPOT_PATH = VCSAttribute.P4_DEPOT_PATH;
-  public static final String P4_CHANGE_LIST_NUMBER = VCSAttribute.P4_CHANGE_LIST_NUMBER;
+  public static final String P4_DEPOT_PATH = VersionControlSystem.P4_DEPOT_PATH;
+  public static final String P4_CHANGE_LIST_NUMBER = VersionControlSystem.P4_CHANGE_LIST_NUMBER;
 
 
-  public static final String BAZAAR_BRANCH_LOCATION = VCSAttribute.BAZAAR_BRANCH_LOCATION;
-  public static final String BAZAAR_REVISION_NUMBER = VCSAttribute.BAZAAR_REVISION_NUMBER;
+  public static final String BAZAAR_BRANCH_LOCATION = VersionControlSystem.BAZAAR_BRANCH_LOCATION;
+  public static final String BAZAAR_REVISION_NUMBER = VersionControlSystem.BAZAAR_REVISION_NUMBER;
 
-  public static final String MERCURIAL_BRANCH = VCSAttribute.MERCURIAL_BRANCH;
-  public static final String MERCURIAL_REVISION_NUMBER = VCSAttribute.MERCURIAL_REVISION_NUMBER;
-  public static final String MERCURIAL_URL_PATH = VCSAttribute.MERCURIAL_URL;
+  public static final String MERCURIAL_BRANCH = VersionControlSystem.MERCURIAL_BRANCH;
+  public static final String MERCURIAL_REVISION_NUMBER = VersionControlSystem.MERCURIAL_REVISION_NUMBER;
+  public static final String MERCURIAL_URL_PATH = VersionControlSystem.MERCURIAL_URL;
 
   /**
    * A quick lookup map.

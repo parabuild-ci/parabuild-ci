@@ -17,7 +17,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.build.BuildScriptGenerator;
-import org.parabuild.ci.common.VCSAttribute;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.error.ErrorManager;
 import org.parabuild.ci.error.ErrorManagerFactory;
@@ -250,7 +250,7 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
       if (result.isEmpty()) return startChangeListID;
 
       // get value of VSS change window
-      final String changeWindowString = getSettingValue(VCSAttribute.VSS_CHANGE_WINDOW);
+      final String changeWindowString = getSettingValue(VersionControlSystem.VSS_CHANGE_WINDOW);
       final int changeWindow = StringUtils.isValidInteger(changeWindowString) ? Integer.parseInt(changeWindowString) * 1000 : 0;
 
       // check if we should run checkin window check
@@ -279,7 +279,7 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
       }
 
       // validate that change lists contain not only exclusions
-      if (new ExclusionPathFinder().onlyExclusionPathsPresentInChangeLists(result, getSettingValue(VCSAttribute.VCS_EXCLUSION_PATHS))) {
+      if (new ExclusionPathFinder().onlyExclusionPathsPresentInChangeLists(result, getSettingValue(VersionControlSystem.VCS_EXCLUSION_PATHS))) {
         return startChangeListID;
       }
 
@@ -518,11 +518,11 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
     // check if critical settings has changed
     final SourceControlSettingChangeDetector scd = new SourceControlSettingChangeDetector(currentSettings, newSettings);
     boolean hasToCleanUp = false;
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.VSS_BRANCH_NAME);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.VSS_DATABASE_PATH);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.VSS_PROJECT_PATH);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.VSS_READONLY_CHECKOUT);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.VSS_BRANCH_NAME);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.VSS_DATABASE_PATH);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.VSS_PROJECT_PATH);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.VSS_READONLY_CHECKOUT);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE);
     if (hasToCleanUp) {
       setHasToCleanUp();
     }
@@ -537,7 +537,7 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
    * @return String path to VSS executable
    */
   private String getExePath() {
-    String exePath = getSettingValue(VCSAttribute.VSS_EXE_PATH);
+    String exePath = getSettingValue(VersionControlSystem.VSS_EXE_PATH);
     // REVIEWME: vimeshev - 08/17/2003 - this's a temporary placeholder.
     // Need to decide whether we can let use default path.
     if (StringUtils.isBlank(exePath)) exePath = "VSS";
@@ -552,7 +552,7 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
    * @return String VSS root
    */
   private String getUserName() throws BuildException {
-    final String userName = getSettingValue(VCSAttribute.VSS_USER);
+    final String userName = getSettingValue(VersionControlSystem.VSS_USER);
     if (userName == null) {
       throw new BuildException("Build configuration does not define VSS user name.", getAgentHost());
     }
@@ -567,7 +567,7 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
    * @return String VSS root
    */
   private String getDatabasePath() throws BuildException {
-    final String databasePath = getSettingValue(VCSAttribute.VSS_DATABASE_PATH);
+    final String databasePath = getSettingValue(VersionControlSystem.VSS_DATABASE_PATH);
     if (databasePath == null)
       throw new BuildException("Build configuration does not define path to VSS database.", getAgentHost());
     return databasePath;
@@ -581,7 +581,7 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
    * @return String VSS root
    */
   private String getVSSBranch() {
-    return getSettingValue(VCSAttribute.VSS_BRANCH_NAME);
+    return getSettingValue(VersionControlSystem.VSS_BRANCH_NAME);
   }
 
 
@@ -594,7 +594,7 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
    */
   private List getVSSPaths() throws BuildException {
     // get lines
-    final List lines = StringUtils.multilineStringToList(getSettingValue(VCSAttribute.VSS_PROJECT_PATH));
+    final List lines = StringUtils.multilineStringToList(getSettingValue(VersionControlSystem.VSS_PROJECT_PATH));
     if (lines.size() <= 0) {
       throw new BuildException("Build configuration does not contain non-empty repository path", getAgentHost());
     }
@@ -629,7 +629,7 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
    * @return VSS password, or null if not defined
    */
   private String getPassword() {
-    final String encrypedPassword = getSettingValue(VCSAttribute.VSS_PASSWORD);
+    final String encrypedPassword = getSettingValue(VersionControlSystem.VSS_PASSWORD);
     if (encrypedPassword == null) return null;
     return SecurityManager.decryptPassword(encrypedPassword);
   }
@@ -708,7 +708,7 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
    * Validates that correct VSS build configuration was passesed
    */
   private static void validateIsVSSConfiguration(final BuildConfig buildConfig) {
-    if (buildConfig.getSourceControl() != VCSAttribute.SCM_REFERENCE && buildConfig.getSourceControl() != VCSAttribute.SCM_VSS) {
+    if (buildConfig.getSourceControl() != VersionControlSystem.SCM_REFERENCE && buildConfig.getSourceControl() != VersionControlSystem.SCM_VSS) {
       throw new IllegalArgumentException("Non-VSS build configuration");
     }
   }
@@ -719,7 +719,7 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
    * @see SourceControlSetting#VSS_READONLY_CHECKOUT
    */
   private boolean isReadOnlyCheckout() {
-    return getSettingValue(VCSAttribute.VSS_READONLY_CHECKOUT, SourceControlSetting.OPTION_UNCHECKED).equals(SourceControlSetting.OPTION_CHECKED);
+    return getSettingValue(VersionControlSystem.VSS_READONLY_CHECKOUT, SourceControlSetting.OPTION_UNCHECKED).equals(SourceControlSetting.OPTION_CHECKED);
   }
 
 

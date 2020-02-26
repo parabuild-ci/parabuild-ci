@@ -13,24 +13,23 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.Map;
-
 import com.gargoylesoftware.base.testing.OrderedTestSuite;
 import junit.framework.TestSuite;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.TestHelper;
-
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.util.BuildException;
-import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.ChangeList;
 import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.object.SystemProperty;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.IoUtils;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Map;
 
 
 /**
@@ -104,11 +103,11 @@ public class SSTestCVSSourceControl extends AbstractSourceControlTest {
   public void test_getChangesSinceCanUseHistory() throws Exception {
     // NOTE: simeshev@parabuildci.org -> hangs on non-english locales
     // alter pre-check setting
-    SourceControlSetting precheck = cm.getSourceControlSetting(cvs.getBuildID(), VCSAttribute.CVS_CHANGE_PRECHECK);
+    SourceControlSetting precheck = cm.getSourceControlSetting(cvs.getBuildID(), VersionControlSystem.CVS_CHANGE_PRECHECK);
     if (precheck == null) {
       precheck = new SourceControlSetting();
       precheck.setBuildID(TestHelper.TEST_CVS_VALID_BUILD_ID);
-      precheck.setPropertyName(VCSAttribute.CVS_CHANGE_PRECHECK);
+      precheck.setPropertyName(VersionControlSystem.CVS_CHANGE_PRECHECK);
     }
     precheck.setPropertyValue(SourceControlSetting.OPTION_CHECKED);
     cm.saveObject(precheck);
@@ -137,7 +136,7 @@ public class SSTestCVSSourceControl extends AbstractSourceControlTest {
    */
   public void test_getChangesSinceWithCheckinWindowOn() throws Exception {
 
-    final SourceControlSetting changeWindow = cm.getSourceControlSetting(cvs.getBuildID(), VCSAttribute.CVS_CHANGE_WINDOW);
+    final SourceControlSetting changeWindow = cm.getSourceControlSetting(cvs.getBuildID(), VersionControlSystem.CVS_CHANGE_WINDOW);
     changeWindow.setPropertyValue("10"); // 10 secs
     cm.saveObject(changeWindow);
 
@@ -196,7 +195,7 @@ public class SSTestCVSSourceControl extends AbstractSourceControlTest {
     final String fileInBranch = STRING_SOURCE_LINE_ONE + "/src/readme.txt";
 
     // alter branch setting
-    TestHelper.setSourceControlProperty(cvs.getBuildID(), VCSAttribute.CVS_BRANCH_NAME, "HEAD");
+    TestHelper.setSourceControlProperty(cvs.getBuildID(), VersionControlSystem.CVS_BRANCH_NAME, "HEAD");
     cvs.reloadConfiguration();
 
     // re-sync and assert
@@ -234,7 +233,7 @@ public class SSTestCVSSourceControl extends AbstractSourceControlTest {
   private void addBranchSettingToCVSConfiguration() {
     final SourceControlSetting branch = new SourceControlSetting();
     branch.setBuildID(cvs.getBuildID());
-    branch.setPropertyName(VCSAttribute.CVS_BRANCH_NAME);
+    branch.setPropertyName(VersionControlSystem.CVS_BRANCH_NAME);
     branch.setPropertyValue(TEST_BRANCH_NAME);
     cm.saveObject(branch);
   }
@@ -249,7 +248,7 @@ public class SSTestCVSSourceControl extends AbstractSourceControlTest {
 
     // alter
     final String multilineSourceLine = STRING_SOURCE_LINE_ONE + '\n' + STRING_SOURCE_LINE_TWO;
-    TestHelper.setSourceControlProperty(cvs.getBuildID(), VCSAttribute.CVS_REPOSITORY_PATH, multilineSourceLine);
+    TestHelper.setSourceControlProperty(cvs.getBuildID(), VersionControlSystem.CVS_REPOSITORY_PATH, multilineSourceLine);
 
     // sync w/reload
     cvs.reloadConfiguration();
@@ -269,7 +268,7 @@ public class SSTestCVSSourceControl extends AbstractSourceControlTest {
   public void test_picksRelativeBuildDir() throws Exception {
     // alter
     final String multilineSourceLine = STRING_SOURCE_LINE_ONE + '\n' + STRING_SOURCE_LINE_TWO;
-    TestHelper.setSourceControlProperty(cvs.getBuildID(), VCSAttribute.CVS_REPOSITORY_PATH, multilineSourceLine);
+    TestHelper.setSourceControlProperty(cvs.getBuildID(), VersionControlSystem.CVS_REPOSITORY_PATH, multilineSourceLine);
 
     // sync w/reload
     cvs.reloadConfiguration();
@@ -277,14 +276,14 @@ public class SSTestCVSSourceControl extends AbstractSourceControlTest {
     TestHelper.assertPathsEqual(STRING_SOURCE_LINE_ONE, cvs.getRelativeBuildDir());
 
     // change to advanced mode
-    TestHelper.setSourceControlProperty(cvs.getBuildID(), VCSAttribute.CVS_CUSTOM_RELATIVE_BUILD_DIR, STRING_SOURCE_LINE_TWO);
+    TestHelper.setSourceControlProperty(cvs.getBuildID(), VersionControlSystem.CVS_CUSTOM_RELATIVE_BUILD_DIR, STRING_SOURCE_LINE_TWO);
     cvs.reloadConfiguration();
     assertEquals("Relative build dir should change", STRING_SOURCE_LINE_TWO, cvs.getRelativeBuildDir());
   }
 
 
   private void alterCVSPathToSecondSourceLine() {
-    final SourceControlSetting path = cm.getSourceControlSetting(cvs.getBuildID(), VCSAttribute.CVS_REPOSITORY_PATH);
+    final SourceControlSetting path = cm.getSourceControlSetting(cvs.getBuildID(), VersionControlSystem.CVS_REPOSITORY_PATH);
     path.setPropertyValue(STRING_SOURCE_LINE_TWO);
     cm.saveObject(path);
   }
@@ -297,9 +296,9 @@ public class SSTestCVSSourceControl extends AbstractSourceControlTest {
    * @throws Exception
    */
   public void test_checkOutLatestCantProcessUnexistingSourceLine() throws Exception {
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.CVS_PATH_TO_CLIENT, "cvs");
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.CVS_ROOT, TestHelper.CVS_VALID_ROOT);
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.CVS_REPOSITORY_PATH, TestHelper.CVS_INVALID_SOURCE_LINE_PATH);
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VersionControlSystem.CVS_PATH_TO_CLIENT, "cvs");
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VersionControlSystem.CVS_ROOT, TestHelper.CVS_VALID_ROOT);
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VersionControlSystem.CVS_REPOSITORY_PATH, TestHelper.CVS_INVALID_SOURCE_LINE_PATH);
     cvs.reloadConfiguration();
 
     boolean thrown = false;
@@ -320,9 +319,9 @@ public class SSTestCVSSourceControl extends AbstractSourceControlTest {
    */
   public void test_checkOutLatestCantProcessInavalidUser() throws Exception {
 
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.CVS_PATH_TO_CLIENT, "cvs");
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.CVS_ROOT, TestHelper.CVS_ROOT_WITH_WRONG_USER);
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.CVS_REPOSITORY_PATH, TestHelper.CVS_VALID_SOURCE_LINE_PATH);
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VersionControlSystem.CVS_PATH_TO_CLIENT, "cvs");
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VersionControlSystem.CVS_ROOT, TestHelper.CVS_ROOT_WITH_WRONG_USER);
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VersionControlSystem.CVS_REPOSITORY_PATH, TestHelper.CVS_VALID_SOURCE_LINE_PATH);
 
     cvs.reloadConfiguration();
 
@@ -344,9 +343,9 @@ public class SSTestCVSSourceControl extends AbstractSourceControlTest {
    */
   public void test_checkOutLatestCantProcessUnknownHost() throws Exception {
 
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.CVS_PATH_TO_CLIENT, "cvs");
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.CVS_ROOT, TestHelper.CVS_ROOT_WITH_UNKNOWN_HOST);
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.CVS_REPOSITORY_PATH, TestHelper.CVS_VALID_SOURCE_LINE_PATH);
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VersionControlSystem.CVS_PATH_TO_CLIENT, "cvs");
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VersionControlSystem.CVS_ROOT, TestHelper.CVS_ROOT_WITH_UNKNOWN_HOST);
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VersionControlSystem.CVS_REPOSITORY_PATH, TestHelper.CVS_VALID_SOURCE_LINE_PATH);
 
     cvs.reloadConfiguration();
 
@@ -368,9 +367,9 @@ public class SSTestCVSSourceControl extends AbstractSourceControlTest {
    */
   public void test_checkOutLatestCantProcessUnknownPort() throws Exception {
 
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.CVS_PATH_TO_CLIENT, "cvs");
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.CVS_ROOT, TestHelper.CVS_ROOT_WITH_UNKNOWN_PORT);
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.CVS_REPOSITORY_PATH, TestHelper.CVS_VALID_SOURCE_LINE_PATH);
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VersionControlSystem.CVS_PATH_TO_CLIENT, "cvs");
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VersionControlSystem.CVS_ROOT, TestHelper.CVS_ROOT_WITH_UNKNOWN_PORT);
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VersionControlSystem.CVS_REPOSITORY_PATH, TestHelper.CVS_VALID_SOURCE_LINE_PATH);
 
     cvs.reloadConfiguration();
 
@@ -446,10 +445,10 @@ public class SSTestCVSSourceControl extends AbstractSourceControlTest {
    */
   public void test_passwordAccess() throws Exception {
 
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.CVS_PATH_TO_CLIENT, "cvs");
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.CVS_ROOT, TestHelper.CVS_VALID_PASSWORD_ROOT);
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.CVS_PASSWORD, TestHelper.CVS_VALID_PASSWORD);
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.CVS_REPOSITORY_PATH, TestHelper.CVS_VALID_SOURCE_LINE_PATH);
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VersionControlSystem.CVS_PATH_TO_CLIENT, "cvs");
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VersionControlSystem.CVS_ROOT, TestHelper.CVS_VALID_PASSWORD_ROOT);
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VersionControlSystem.CVS_PASSWORD, TestHelper.CVS_VALID_PASSWORD);
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VersionControlSystem.CVS_REPOSITORY_PATH, TestHelper.CVS_VALID_SOURCE_LINE_PATH);
 
     cvs.reloadConfiguration();
     cvs.checkoutLatest();
@@ -462,10 +461,10 @@ public class SSTestCVSSourceControl extends AbstractSourceControlTest {
    */
   public void test_canNotAccessWithWrongPassword() throws Exception {
 
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.CVS_PATH_TO_CLIENT, "cvs");
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.CVS_ROOT, TestHelper.CVS_VALID_PASSWORD_ROOT);
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.CVS_PASSWORD, TestHelper.CVS_INVALID_PASSWORD);
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.CVS_REPOSITORY_PATH, TestHelper.CVS_VALID_SOURCE_LINE_PATH);
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VersionControlSystem.CVS_PATH_TO_CLIENT, "cvs");
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VersionControlSystem.CVS_ROOT, TestHelper.CVS_VALID_PASSWORD_ROOT);
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VersionControlSystem.CVS_PASSWORD, TestHelper.CVS_INVALID_PASSWORD);
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VersionControlSystem.CVS_REPOSITORY_PATH, TestHelper.CVS_VALID_SOURCE_LINE_PATH);
 
 
     cvs.reloadConfiguration();
@@ -484,10 +483,10 @@ public class SSTestCVSSourceControl extends AbstractSourceControlTest {
   public void test_bug892_passwordAccessCVSNT() throws Exception {
     if (!agent.isWindows()) return;
 
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.CVS_PATH_TO_CLIENT, makeCVSNTExePath());
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.CVS_ROOT, TestHelper.CVS_VALID_PASSWORD_ROOT);
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.CVS_PASSWORD, TestHelper.CVS_VALID_PASSWORD);
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.CVS_REPOSITORY_PATH, TestHelper.CVS_VALID_SOURCE_LINE_PATH);
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VersionControlSystem.CVS_PATH_TO_CLIENT, makeCVSNTExePath());
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VersionControlSystem.CVS_ROOT, TestHelper.CVS_VALID_PASSWORD_ROOT);
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VersionControlSystem.CVS_PASSWORD, TestHelper.CVS_VALID_PASSWORD);
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VersionControlSystem.CVS_REPOSITORY_PATH, TestHelper.CVS_VALID_SOURCE_LINE_PATH);
 
     cvs.reloadConfiguration();
     cvs.checkoutLatest();
@@ -501,10 +500,10 @@ public class SSTestCVSSourceControl extends AbstractSourceControlTest {
   public void test_bug892_canNotAccessWithWrongPasswordCVSNT() throws Exception {
     if (!agent.isWindows()) return;
 
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.CVS_PATH_TO_CLIENT, makeCVSNTExePath());
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.CVS_ROOT, TestHelper.CVS_VALID_PASSWORD_ROOT);
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.CVS_PASSWORD, TestHelper.CVS_INVALID_PASSWORD);
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.CVS_REPOSITORY_PATH, TestHelper.CVS_VALID_SOURCE_LINE_PATH);
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VersionControlSystem.CVS_PATH_TO_CLIENT, makeCVSNTExePath());
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VersionControlSystem.CVS_ROOT, TestHelper.CVS_VALID_PASSWORD_ROOT);
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VersionControlSystem.CVS_PASSWORD, TestHelper.CVS_INVALID_PASSWORD);
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VersionControlSystem.CVS_REPOSITORY_PATH, TestHelper.CVS_VALID_SOURCE_LINE_PATH);
 
 
     cvs.reloadConfiguration();
@@ -524,10 +523,10 @@ public class SSTestCVSSourceControl extends AbstractSourceControlTest {
     // first let CVSNT "log in" w/wrong password
     test_bug892_canNotAccessWithWrongPasswordCVSNT();
 
-    TestHelper.setSourceControlProperty(getTestBuildID(), VCSAttribute.CVS_ROOT, TestHelper.CVS_VALID_PASSWORD_ROOT);
-    TestHelper.setSourceControlProperty(getTestBuildID(), VCSAttribute.CVS_PATH_TO_CLIENT, makeCVSNTExePath());
+    TestHelper.setSourceControlProperty(getTestBuildID(), VersionControlSystem.CVS_ROOT, TestHelper.CVS_VALID_PASSWORD_ROOT);
+    TestHelper.setSourceControlProperty(getTestBuildID(), VersionControlSystem.CVS_PATH_TO_CLIENT, makeCVSNTExePath());
     final ConfigurationManager cm = ConfigurationManager.getInstance();
-    cm.deleteObject(cm.getSourceControlSetting(getTestBuildID(), VCSAttribute.CVS_PASSWORD));
+    cm.deleteObject(cm.getSourceControlSetting(getTestBuildID(), VersionControlSystem.CVS_PASSWORD));
     cvs.reloadConfiguration();
 
     try {
@@ -653,9 +652,9 @@ public class SSTestCVSSourceControl extends AbstractSourceControlTest {
   /**
    */
   public void test_bug897_doesNotHangOnNoPassword() throws Exception {
-    TestHelper.setSourceControlProperty(getTestBuildID(), VCSAttribute.CVS_ROOT, TestHelper.CVS_VALID_PASSWORD_ROOT);
+    TestHelper.setSourceControlProperty(getTestBuildID(), VersionControlSystem.CVS_ROOT, TestHelper.CVS_VALID_PASSWORD_ROOT);
     final ConfigurationManager cm = ConfigurationManager.getInstance();
-    cm.deleteObject(cm.getSourceControlSetting(getTestBuildID(), VCSAttribute.CVS_PASSWORD));
+    cm.deleteObject(cm.getSourceControlSetting(getTestBuildID(), VersionControlSystem.CVS_PASSWORD));
     cvs.reloadConfiguration();
 
     try {
@@ -669,8 +668,8 @@ public class SSTestCVSSourceControl extends AbstractSourceControlTest {
 
   private void switchToSVSNTAndProjectWithSpaces() throws IOException {
     IoUtils.copyDirectory(new File(System.getProperty("test.cvsnt.home")), testDirWithSpaces());
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.CVS_PATH_TO_CLIENT, testDirWithSpaces().getCanonicalPath() + '\\' + "cvs.exe");
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.CVS_REPOSITORY_PATH, STRING_SOURCE_LINE_ONE + "/spaced name");
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VersionControlSystem.CVS_PATH_TO_CLIENT, testDirWithSpaces().getCanonicalPath() + '\\' + "cvs.exe");
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VersionControlSystem.CVS_REPOSITORY_PATH, STRING_SOURCE_LINE_ONE + "/spaced name");
   }
 
 

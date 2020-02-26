@@ -17,16 +17,16 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.build.BuildScriptGenerator;
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.util.BuildException;
-import org.parabuild.ci.util.CommandStoppedException;
-import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.util.ValidationException;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.ChangeList;
 import org.parabuild.ci.remote.Agent;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.util.ValidationException;
 import org.parabuild.ci.versioncontrol.AbstractSourceControl;
 import org.parabuild.ci.versioncontrol.ExclusionPathFinder;
 import org.parabuild.ci.versioncontrol.GitDepotPathParser;
@@ -323,7 +323,7 @@ warning: LF will be replaced by CRLF in sourceline/alwaysvalid/src/symlinked_rea
     }
 
     // validate that change lists contain not only exclusions
-    if (new ExclusionPathFinder().onlyExclusionPathsPresentInChangeLists(result, getSettingValue(VCSAttribute.VCS_EXCLUSION_PATHS))) {
+    if (new ExclusionPathFinder().onlyExclusionPathsPresentInChangeLists(result, getSettingValue(VersionControlSystem.VCS_EXCLUSION_PATHS))) {
       return ChangeList.UNSAVED_ID;
     }
 
@@ -351,17 +351,17 @@ warning: LF will be replaced by CRLF in sourceline/alwaysvalid/src/symlinked_rea
 
 
   private String getUserSetting() {
-    return getSettingValue(VCSAttribute.GIT_USER, "");
+    return getSettingValue(VersionControlSystem.GIT_USER, "");
   }
 
 
   private String getRepositorySetting() {
-    return getSettingValue(VCSAttribute.GIT_REPOSITORY);
+    return getSettingValue(VersionControlSystem.GIT_REPOSITORY);
   }
 
 
   private String getBranchSetting() {
-    return getSettingValue(VCSAttribute.GIT_BRANCH);
+    return getSettingValue(VersionControlSystem.GIT_BRANCH);
   }
 
 
@@ -382,10 +382,10 @@ warning: LF will be replaced by CRLF in sourceline/alwaysvalid/src/symlinked_rea
     // check if critical settings has changed
     final SourceControlSettingChangeDetector scd = new SourceControlSettingChangeDetector(currentSettings, newSettings);
     boolean hasToCleanUp = false;
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.GIT_DEPOT_PATH);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.GIT_REPOSITORY);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.GIT_BRANCH);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.GIT_DEPOT_PATH);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.GIT_REPOSITORY);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.GIT_BRANCH);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE);
     if (hasToCleanUp) {
       setHasToCleanUp();
     }
@@ -400,7 +400,7 @@ warning: LF will be replaced by CRLF in sourceline/alwaysvalid/src/symlinked_rea
   public Map getShellVariables() {
 
     final Map result = new HashMap(1);
-    result.put(BuildScriptGenerator.VAR_PARABUILD_GIT_BRANCH, getSettingValue(VCSAttribute.GIT_BRANCH));
+    result.put(BuildScriptGenerator.VAR_PARABUILD_GIT_BRANCH, getSettingValue(VersionControlSystem.GIT_BRANCH));
 
     return result;
   }
@@ -416,7 +416,7 @@ warning: LF will be replaced by CRLF in sourceline/alwaysvalid/src/symlinked_rea
   private List getDepotPaths() throws BuildException {
     try {
       final GitDepotPathParser parser = new GitDepotPathParser();
-      return parser.parseDepotPath(getSettingValue(VCSAttribute.GIT_DEPOT_PATH));
+      return parser.parseDepotPath(getSettingValue(VersionControlSystem.GIT_DEPOT_PATH));
     } catch (final ValidationException e) {
       throw new BuildException(e, getAgentHost());
     }
@@ -424,7 +424,7 @@ warning: LF will be replaced by CRLF in sourceline/alwaysvalid/src/symlinked_rea
 
 
   private String getPathToGitExe() {
-    return StringUtils.putIntoDoubleQuotes(getSettingValue(VCSAttribute.GIT_PATH_TO_EXE));
+    return StringUtils.putIntoDoubleQuotes(getSettingValue(VersionControlSystem.GIT_PATH_TO_EXE));
   }
 
 
@@ -433,7 +433,7 @@ warning: LF will be replaced by CRLF in sourceline/alwaysvalid/src/symlinked_rea
    * @noinspection ControlFlowStatementWithoutBraces
    */
   private String getPasswordSetting() {
-    final String encryptedPassword = getSettingValue(VCSAttribute.GIT_PASSWORD);
+    final String encryptedPassword = getSettingValue(VersionControlSystem.GIT_PASSWORD);
     if (encryptedPassword == null) return null;
     return org.parabuild.ci.security.SecurityManager.decryptPassword(encryptedPassword);
   }

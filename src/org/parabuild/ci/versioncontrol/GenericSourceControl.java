@@ -16,12 +16,12 @@ package org.parabuild.ci.versioncontrol;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.util.BuildException;
-import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.ChangeList;
 import org.parabuild.ci.remote.Agent;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.CommandStoppedException;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -86,7 +86,7 @@ public final class GenericSourceControl extends AbstractCommandBasedSourceContro
       final long changeListTimestamp = changeListDate == null ? 0L : changeListDate.getTime();
 
       // check if we have a command
-      final String getChangesCommand = getSettingValue(VCSAttribute.GENERIC_VCS_GET_CHANGES_COMMAND);
+      final String getChangesCommand = getSettingValue(VersionControlSystem.GENERIC_VCS_GET_CHANGES_COMMAND);
       //if (log.isDebugEnabled()) log.debug("getChangesCommand = " + getChangesCommand);
 
       // execute
@@ -104,11 +104,11 @@ public final class GenericSourceControl extends AbstractCommandBasedSourceContro
         // parse output
         final TokenizingChangeLogParser parser = new TokenizingChangeLogParser(
                 rowLimit,
-                getSettingValue(VCSAttribute.COMMAND_VCS_CHANGE_WINDOW, 60) * 1000L,
+                getSettingValue(VersionControlSystem.COMMAND_VCS_CHANGE_WINDOW, 60) * 1000L,
                 "no_branch",
-                getSettingValue(VCSAttribute.COMMAND_VCS_COLUMN_DIVIDER),
-                getSettingValue(VCSAttribute.COMMAND_VCS_END_OF_RECORD),
-                getSettingValue(VCSAttribute.COMMAND_VCS_CHANGE_DATE_FORMAT, "yyyyMMdd.HHmmss"),
+                getSettingValue(VersionControlSystem.COMMAND_VCS_COLUMN_DIVIDER),
+                getSettingValue(VersionControlSystem.COMMAND_VCS_END_OF_RECORD),
+                getSettingValue(VersionControlSystem.COMMAND_VCS_CHANGE_DATE_FORMAT, "yyyyMMdd.HHmmss"),
                 new String[]{"checkin"},
                 new String[]{"mkelem"},
                 new String[]{"**null operation kind**"},
@@ -130,7 +130,7 @@ public final class GenericSourceControl extends AbstractCommandBasedSourceContro
       }
 
       // validate that change lists contain not only exclusions
-      if (new ExclusionPathFinder().onlyExclusionPathsPresentInChangeLists(result, getSettingValue(VCSAttribute.VCS_EXCLUSION_PATHS))) {
+      if (new ExclusionPathFinder().onlyExclusionPathsPresentInChangeLists(result, getSettingValue(VersionControlSystem.VCS_EXCLUSION_PATHS))) {
         return startChangeListID;
       }
 
@@ -164,8 +164,8 @@ public final class GenericSourceControl extends AbstractCommandBasedSourceContro
     // check if critical settings has changed
     final SourceControlSettingChangeDetector scd = new SourceControlSettingChangeDetector(currentSettings, newSettings);
     boolean hasToCleanUp = false;
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.GENERIC_VCS_GET_CHANGES_COMMAND);
-    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.GENERIC_VCS_GET_CHANGES_COMMAND);
+    hasToCleanUp |= scd.settingHasChanged(VersionControlSystem.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE);
     if (hasToCleanUp) {
       setHasToCleanUp();
     }

@@ -15,7 +15,7 @@ package org.parabuild.ci.webui.admin;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.common.VCSAttribute;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.BuildConfigAttribute;
@@ -180,8 +180,8 @@ final class NotificationPolicyPanel extends MessagePanel implements Validatable,
 
     // should we display "Use VCS e-mails"?
     final byte effectiveVCSID = getEffectiveVCSID(buildConfig);
-    if (effectiveVCSID != VCSAttribute.SCM_PERFORCE
-            && effectiveVCSID != VCSAttribute.SCM_CVS) {
+    if (effectiveVCSID != VersionControlSystem.SCM_PERFORCE
+            && effectiveVCSID != VersionControlSystem.SCM_CVS) {
       // no, hide it.
       flUseVCSEmails.setVisible(false);
       lbUseVCSEmails.setVisible(false);
@@ -193,12 +193,12 @@ final class NotificationPolicyPanel extends MessagePanel implements Validatable,
 
 
   private static byte getEffectiveVCSID(final BuildConfig buildConfig) {
-    if (buildConfig.getSourceControl() == VCSAttribute.SCM_REFERENCE) {
+    if (buildConfig.getSourceControl() == VersionControlSystem.SCM_REFERENCE) {
       final BuildConfig effectiveBuildConfig = ConfigurationManager.getInstance().getEffectiveBuildConfig(buildConfig);
       // cover-ass validation
       if (effectiveBuildConfig == null) {
         log.warn("Effective build config was null, returning undefined source control");
-        return VCSAttribute.SCM_UNDEFINED;
+        return VersionControlSystem.SCM_UNDEFINED;
       }
       return effectiveBuildConfig.getSourceControl();
     } else {
