@@ -11,7 +11,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.parabuild.ci.util;
+package org.parabuild.ci.relnotes;
+
+import org.parabuild.ci.util.StringUtils;
 
 import java.util.*;
 

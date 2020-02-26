@@ -13,13 +13,20 @@
  */
 package org.parabuild.ci.relnotes;
 
-import java.sql.*;
-import java.sql.Date;
-import java.util.*;
+import org.parabuild.ci.configuration.ConfigurationManager;
+import org.parabuild.ci.object.Issue;
+import org.parabuild.ci.object.IssueTracker;
+import org.parabuild.ci.object.IssueTrackerProperty;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.IssueURLGenerator;
 
-import org.parabuild.ci.util.*;
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.object.*;
+import java.sql.Date;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Responsible for getting issues from bugzilla db acording to

@@ -13,14 +13,22 @@
  */
 package org.parabuild.ci.relnotes;
 
-import java.util.*;
-import org.apache.commons.logging.*;
-
-import org.parabuild.ci.util.*;
-import org.parabuild.ci.configuration.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.error.Error;
-import org.parabuild.ci.error.*;
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.error.ErrorManagerFactory;
+import org.parabuild.ci.object.BuildRun;
+import org.parabuild.ci.object.ChangeList;
+import org.parabuild.ci.object.Issue;
+import org.parabuild.ci.object.IssueTracker;
+import org.parabuild.ci.object.IssueTrackerProperty;
+import org.parabuild.ci.object.PendingIssue;
+import org.parabuild.ci.util.StringUtils;
+
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 /**
  * This implmenetation of ReleaseNotesHandler handles issues

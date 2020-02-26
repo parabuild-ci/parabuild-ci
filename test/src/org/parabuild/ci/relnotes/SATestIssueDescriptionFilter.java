@@ -11,11 +11,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.parabuild.ci.build;
+package org.parabuild.ci.relnotes;
 
-import junit.framework.*;
-
-import org.parabuild.ci.util.*;
+import junit.framework.TestCase;
+import junit.framework.TestSuite;
 
 
 public class SATestIssueDescriptionFilter extends TestCase {
