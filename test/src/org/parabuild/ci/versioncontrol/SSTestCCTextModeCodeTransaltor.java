@@ -19,7 +19,7 @@ import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.ServersideTestCase;
 import org.parabuild.ci.TestHelper;
 
-import org.parabuild.ci.object.SourceControlSetting;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.remote.AgentManager;
 
@@ -39,25 +39,25 @@ public class SSTestCCTextModeCodeTransaltor extends ServersideTestCase {
 
 
   public void test_translate() throws Exception {
-    assertEquals("", tr.translateTextModeCode(SourceControlSetting.CLEARCASE_TEXT_MODE_NOT_SET));
-    assertEquals("msdos", tr.translateTextModeCode(SourceControlSetting.CLEARCASE_TEXT_MODE_MSDOS));
-    assertEquals("unix", tr.translateTextModeCode(SourceControlSetting.CLEARCASE_TEXT_MODE_UNIX));
-    assertEquals("transparent", tr.translateTextModeCode(SourceControlSetting.CLEARCASE_TEXT_MODE_TRANSPARENT));
-    assertEquals("strip_cr", tr.translateTextModeCode(SourceControlSetting.CLEARCASE_TEXT_MODE_STRIP_CR));
-    assertEquals("insert_cr", tr.translateTextModeCode(SourceControlSetting.CLEARCASE_TEXT_MODE_INSERT_CR));
+    assertEquals("", tr.translateTextModeCode(VCSAttribute.CLEARCASE_TEXT_MODE_NOT_SET));
+    assertEquals("msdos", tr.translateTextModeCode(VCSAttribute.CLEARCASE_TEXT_MODE_MSDOS));
+    assertEquals("unix", tr.translateTextModeCode(VCSAttribute.CLEARCASE_TEXT_MODE_UNIX));
+    assertEquals("transparent", tr.translateTextModeCode(VCSAttribute.CLEARCASE_TEXT_MODE_TRANSPARENT));
+    assertEquals("strip_cr", tr.translateTextModeCode(VCSAttribute.CLEARCASE_TEXT_MODE_STRIP_CR));
+    assertEquals("insert_cr", tr.translateTextModeCode(VCSAttribute.CLEARCASE_TEXT_MODE_INSERT_CR));
   }
 
 
   public void test_translateWindows() throws Exception {
     if (agent.isWindows()) {
-      assertEquals("msdos", tr.translateTextModeCode(SourceControlSetting.CLEARCASE_TEXT_MODE_AUTO));
+      assertEquals("msdos", tr.translateTextModeCode(VCSAttribute.CLEARCASE_TEXT_MODE_AUTO));
     }
   }
 
 
   public void test_translateUnix() throws Exception {
     if (!agent.isWindows()) {
-      assertEquals("unix", tr.translateTextModeCode(SourceControlSetting.CLEARCASE_TEXT_MODE_AUTO));
+      assertEquals("unix", tr.translateTextModeCode(VCSAttribute.CLEARCASE_TEXT_MODE_AUTO));
     }
   }
 

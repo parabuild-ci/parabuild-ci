@@ -13,24 +13,24 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.gargoylesoftware.base.testing.OrderedTestSuite;
 import junit.framework.TestSuite;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.TestHelper;
-
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.util.BuildException;
-import org.parabuild.ci.util.CommandStoppedException;
-import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.ChangeList;
 import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.object.SystemProperty;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.IoUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -86,8 +86,8 @@ public final class SSTestSurroundSourceControl extends AbstractSourceControlTest
    */
   public void test_bug997_getChangesSinceForRepositoryAndBranchWithSpacesAndQuotes() throws Exception {
     // alter config
-    TestHelper.setSourceControlProperty(getTestBuildID(), SourceControlSetting.SURROUND_REPOSITORY, "\"test repository with spaces/Main\"");
-    TestHelper.setSourceControlProperty(getTestBuildID(), SourceControlSetting.SURROUND_BRANCH, "\"test branch with spaces\"");
+    TestHelper.setSourceControlProperty(getTestBuildID(), VCSAttribute.SURROUND_REPOSITORY, "\"test repository with spaces/Main\"");
+    TestHelper.setSourceControlProperty(getTestBuildID(), VCSAttribute.SURROUND_BRANCH, "\"test branch with spaces\"");
     surround.reloadConfiguration();
 
     // test that we get changes
@@ -128,13 +128,13 @@ public final class SSTestSurroundSourceControl extends AbstractSourceControlTest
     TestHelper.emptyCheckoutDir(agent);
     // alter config to be branched
     final List settings = new ArrayList(11);
-    settings.add(makeSetting(SourceControlSetting.SURROUND_REPOSITORY, "test/sourceline"));
-    settings.add(makeSetting(SourceControlSetting.SURROUND_PATH_TO_EXE, "sscm"));
-    settings.add(makeSetting(SourceControlSetting.SURROUND_BRANCH, TEST_BRANCH));
-    settings.add(makeSetting(SourceControlSetting.SURROUND_USER, "test_user"));
-    settings.add(makeSetting(SourceControlSetting.SURROUND_PORT, "4900"));
-    settings.add(makeSetting(SourceControlSetting.SURROUND_HOST, "localhost"));
-    settings.add(makeSetting(SourceControlSetting.SURROUND_PASSWORD, "973908CD78928E660B047F5DE5130BE0")); // no password
+    settings.add(makeSetting(VCSAttribute.SURROUND_REPOSITORY, "test/sourceline"));
+    settings.add(makeSetting(VCSAttribute.SURROUND_PATH_TO_EXE, "sscm"));
+    settings.add(makeSetting(VCSAttribute.SURROUND_BRANCH, TEST_BRANCH));
+    settings.add(makeSetting(VCSAttribute.SURROUND_USER, "test_user"));
+    settings.add(makeSetting(VCSAttribute.SURROUND_PORT, "4900"));
+    settings.add(makeSetting(VCSAttribute.SURROUND_HOST, "localhost"));
+    settings.add(makeSetting(VCSAttribute.SURROUND_PASSWORD, "973908CD78928E660B047F5DE5130BE0")); // no password
     final SurroundSourceControl otherBranch = makeSurroundSourceControlWithAlteredSettings(settings);
     otherBranch.checkoutLatest();
     TestHelper.assertCheckoutDirNotEmpty(agent);
@@ -156,13 +156,13 @@ public final class SSTestSurroundSourceControl extends AbstractSourceControlTest
     if (true) return;
     // alter config to be branched
     final List settings = new ArrayList(11);
-    settings.add(makeSetting(SourceControlSetting.SURROUND_REPOSITORY, "test/sourceline"));
-    settings.add(makeSetting(SourceControlSetting.SURROUND_PATH_TO_EXE, "sscm"));
-    settings.add(makeSetting(SourceControlSetting.SURROUND_BRANCH, TEST_BRANCH));
-    settings.add(makeSetting(SourceControlSetting.SURROUND_USER, "test_user"));
-    settings.add(makeSetting(SourceControlSetting.SURROUND_PORT, "4900"));
-    settings.add(makeSetting(SourceControlSetting.SURROUND_HOST, "localhost"));
-    settings.add(makeSetting(SourceControlSetting.SURROUND_PASSWORD, "973908CD78928E660B047F5DE5130BE0")); // no password
+    settings.add(makeSetting(VCSAttribute.SURROUND_REPOSITORY, "test/sourceline"));
+    settings.add(makeSetting(VCSAttribute.SURROUND_PATH_TO_EXE, "sscm"));
+    settings.add(makeSetting(VCSAttribute.SURROUND_BRANCH, TEST_BRANCH));
+    settings.add(makeSetting(VCSAttribute.SURROUND_USER, "test_user"));
+    settings.add(makeSetting(VCSAttribute.SURROUND_PORT, "4900"));
+    settings.add(makeSetting(VCSAttribute.SURROUND_HOST, "localhost"));
+    settings.add(makeSetting(VCSAttribute.SURROUND_PASSWORD, "973908CD78928E660B047F5DE5130BE0")); // no password
     final SurroundSourceControl otherBranch = makeSurroundSourceControlWithAlteredSettings(settings);
     // get changes
     final int changeListID = otherBranch.getChangesSince(ChangeList.UNSAVED_ID);
@@ -189,7 +189,7 @@ public final class SSTestSurroundSourceControl extends AbstractSourceControlTest
 
     // alter
     final String multilineSourceLine = STRING_SOURCE_LINE_ONE + '\n' + STRING_SOURCE_LINE_TWO;
-    final SourceControlSetting path = cm.getSourceControlSetting(surround.getBuildID(), SourceControlSetting.SURROUND_REPOSITORY);
+    final SourceControlSetting path = cm.getSourceControlSetting(surround.getBuildID(), VCSAttribute.SURROUND_REPOSITORY);
     path.setPropertyValue(multilineSourceLine);
     cm.saveObject(path);
 
@@ -216,13 +216,13 @@ public final class SSTestSurroundSourceControl extends AbstractSourceControlTest
   public void test_checkOutLatestCantProcessUnexistingSourceLine() throws Exception {
     try {
       final List settings = new ArrayList(11);
-      settings.add(makeSetting(SourceControlSetting.SURROUND_REPOSITORY, "test/sourceline/never_existed"));
-      settings.add(makeSetting(SourceControlSetting.SURROUND_PATH_TO_EXE, "sscm"));
-      settings.add(makeSetting(SourceControlSetting.SURROUND_BRANCH, "test"));
-      settings.add(makeSetting(SourceControlSetting.SURROUND_USER, "test_user"));
-      settings.add(makeSetting(SourceControlSetting.SURROUND_PORT, "4900"));
-      settings.add(makeSetting(SourceControlSetting.SURROUND_HOST, "localhost"));
-      settings.add(makeSetting(SourceControlSetting.SURROUND_PASSWORD, "973908CD78928E660B047F5DE5130BE0")); // no password
+      settings.add(makeSetting(VCSAttribute.SURROUND_REPOSITORY, "test/sourceline/never_existed"));
+      settings.add(makeSetting(VCSAttribute.SURROUND_PATH_TO_EXE, "sscm"));
+      settings.add(makeSetting(VCSAttribute.SURROUND_BRANCH, "test"));
+      settings.add(makeSetting(VCSAttribute.SURROUND_USER, "test_user"));
+      settings.add(makeSetting(VCSAttribute.SURROUND_PORT, "4900"));
+      settings.add(makeSetting(VCSAttribute.SURROUND_HOST, "localhost"));
+      settings.add(makeSetting(VCSAttribute.SURROUND_PASSWORD, "973908CD78928E660B047F5DE5130BE0")); // no password
       makeSurroundSourceControlWithAlteredSettings(settings).getChangesSince(1);
       TestHelper.failNoExceptionThrown();
     } catch (BuildException e) {
@@ -239,13 +239,13 @@ public final class SSTestSurroundSourceControl extends AbstractSourceControlTest
   public void test_checkOutLatestCantProcessInavalidUser() throws Exception {
     try {
       final List settings = new ArrayList(11);
-      settings.add(makeSetting(SourceControlSetting.SURROUND_REPOSITORY, "test/sourceline/alwaysvalid"));
-      settings.add(makeSetting(SourceControlSetting.SURROUND_PATH_TO_EXE, "sscm"));
-      settings.add(makeSetting(SourceControlSetting.SURROUND_BRANCH, "test"));
-      settings.add(makeSetting(SourceControlSetting.SURROUND_USER, "test_user_never_existed"));
-      settings.add(makeSetting(SourceControlSetting.SURROUND_PORT, "4900"));
-      settings.add(makeSetting(SourceControlSetting.SURROUND_HOST, "localhost"));
-      settings.add(makeSetting(SourceControlSetting.SURROUND_PASSWORD, "973908CD78928E660B047F5DE5130BE0")); // no password
+      settings.add(makeSetting(VCSAttribute.SURROUND_REPOSITORY, "test/sourceline/alwaysvalid"));
+      settings.add(makeSetting(VCSAttribute.SURROUND_PATH_TO_EXE, "sscm"));
+      settings.add(makeSetting(VCSAttribute.SURROUND_BRANCH, "test"));
+      settings.add(makeSetting(VCSAttribute.SURROUND_USER, "test_user_never_existed"));
+      settings.add(makeSetting(VCSAttribute.SURROUND_PORT, "4900"));
+      settings.add(makeSetting(VCSAttribute.SURROUND_HOST, "localhost"));
+      settings.add(makeSetting(VCSAttribute.SURROUND_PASSWORD, "973908CD78928E660B047F5DE5130BE0")); // no password
       makeSurroundSourceControlWithAlteredSettings(settings).getChangesSince(1);
       TestHelper.failNoExceptionThrown();
     } catch (BuildException e) {
@@ -312,13 +312,13 @@ public final class SSTestSurroundSourceControl extends AbstractSourceControlTest
   public void test_canNotAccessWithWrongPassword() throws Exception {
     try {
       final List settings = new ArrayList(11);
-      settings.add(makeSetting(SourceControlSetting.SURROUND_REPOSITORY, "test/sourceline/alwaysvalid"));
-      settings.add(makeSetting(SourceControlSetting.SURROUND_PATH_TO_EXE, "sscm"));
-      settings.add(makeSetting(SourceControlSetting.SURROUND_BRANCH, "test"));
-      settings.add(makeSetting(SourceControlSetting.SURROUND_USER, "test_user"));
-      settings.add(makeSetting(SourceControlSetting.SURROUND_PORT, "4900"));
-      settings.add(makeSetting(SourceControlSetting.SURROUND_HOST, "localhost"));
-      settings.add(makeSetting(SourceControlSetting.SURROUND_PASSWORD, "")); // no password
+      settings.add(makeSetting(VCSAttribute.SURROUND_REPOSITORY, "test/sourceline/alwaysvalid"));
+      settings.add(makeSetting(VCSAttribute.SURROUND_PATH_TO_EXE, "sscm"));
+      settings.add(makeSetting(VCSAttribute.SURROUND_BRANCH, "test"));
+      settings.add(makeSetting(VCSAttribute.SURROUND_USER, "test_user"));
+      settings.add(makeSetting(VCSAttribute.SURROUND_PORT, "4900"));
+      settings.add(makeSetting(VCSAttribute.SURROUND_HOST, "localhost"));
+      settings.add(makeSetting(VCSAttribute.SURROUND_PASSWORD, "")); // no password
       final SurroundSourceControl surroundSourceControlWithAlteredSettings = makeSurroundSourceControlWithAlteredSettings(settings);
       surroundSourceControlWithAlteredSettings.getChangesSince(1);
 

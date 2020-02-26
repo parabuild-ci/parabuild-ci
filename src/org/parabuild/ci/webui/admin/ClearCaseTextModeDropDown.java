@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.webui.common.*;
 import org.parabuild.ci.versioncontrol.*;
 
@@ -27,14 +27,14 @@ public final class ClearCaseTextModeDropDown extends CodeNameDropDown {
 
 
   public ClearCaseTextModeDropDown() {
-    addCodeNamePair(SourceControlSetting.CLEARCASE_TEXT_MODE_NOT_SET, ClearCaseTextModeCodeTranslator.NAME_NOT_SET);
-    addCodeNamePair(SourceControlSetting.CLEARCASE_TEXT_MODE_AUTO, ClearCaseTextModeCodeTranslator.NAME_AUTOMATIC);
-    addCodeNamePair(SourceControlSetting.CLEARCASE_TEXT_MODE_MSDOS, ClearCaseTextModeCodeTranslator.NAME_MSDOS);
-    addCodeNamePair(SourceControlSetting.CLEARCASE_TEXT_MODE_INSERT_CR, ClearCaseTextModeCodeTranslator.NAME_INSERT_CR);
-    addCodeNamePair(SourceControlSetting.CLEARCASE_TEXT_MODE_UNIX, ClearCaseTextModeCodeTranslator.NAME_UNIX);
-    addCodeNamePair(SourceControlSetting.CLEARCASE_TEXT_MODE_STRIP_CR, ClearCaseTextModeCodeTranslator.NAME_STRIP_CR);
-    addCodeNamePair(SourceControlSetting.CLEARCASE_TEXT_MODE_TRANSPARENT, ClearCaseTextModeCodeTranslator.NAME_TRANSPARENT);
-    setCode(SourceControlSetting.CLEARCASE_TEXT_MODE_NOT_SET);
+    addCodeNamePair(VCSAttribute.CLEARCASE_TEXT_MODE_NOT_SET, ClearCaseTextModeCodeTranslator.NAME_NOT_SET);
+    addCodeNamePair(VCSAttribute.CLEARCASE_TEXT_MODE_AUTO, ClearCaseTextModeCodeTranslator.NAME_AUTOMATIC);
+    addCodeNamePair(VCSAttribute.CLEARCASE_TEXT_MODE_MSDOS, ClearCaseTextModeCodeTranslator.NAME_MSDOS);
+    addCodeNamePair(VCSAttribute.CLEARCASE_TEXT_MODE_INSERT_CR, ClearCaseTextModeCodeTranslator.NAME_INSERT_CR);
+    addCodeNamePair(VCSAttribute.CLEARCASE_TEXT_MODE_UNIX, ClearCaseTextModeCodeTranslator.NAME_UNIX);
+    addCodeNamePair(VCSAttribute.CLEARCASE_TEXT_MODE_STRIP_CR, ClearCaseTextModeCodeTranslator.NAME_STRIP_CR);
+    addCodeNamePair(VCSAttribute.CLEARCASE_TEXT_MODE_TRANSPARENT, ClearCaseTextModeCodeTranslator.NAME_TRANSPARENT);
+    setCode(VCSAttribute.CLEARCASE_TEXT_MODE_NOT_SET);
   }
 }
 

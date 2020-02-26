@@ -19,6 +19,7 @@ import EDU.oswego.cs.dl.util.concurrent.ThreadFactory;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.SourceControlSettingResolver;
 import org.parabuild.ci.util.StringUtils;
@@ -36,7 +37,6 @@ import org.parabuild.ci.manager.client.UndeployCommand;
 import org.parabuild.ci.object.AgentConfig;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.BuilderConfiguration;
-import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.realm.RealmConstants;
 import org.parabuild.ci.remote.internal.LocalAgent;
 import org.parabuild.ci.remote.internal.LocalAgentEnvironment;
@@ -597,7 +597,7 @@ public final class AgentManager {
   public Agent createAgent(final int buildConfigID, final AgentHost agentHost) throws IOException {
 
     final ConfigurationManager cm = ConfigurationManager.getInstance();
-    final String checkoutDirTemplate = cm.getSourceControlSettingValue(buildConfigID, SourceControlSetting.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE, null);
+    final String checkoutDirTemplate = cm.getSourceControlSettingValue(buildConfigID, VCSAttribute.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE, null);
     return createAgent(buildConfigID, checkoutDirTemplate, cm.getBuildConfiguration(buildConfigID).getBuildName(), agentHost, buildConfigID);
   }
 

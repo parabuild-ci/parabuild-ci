@@ -16,6 +16,7 @@ package org.parabuild.ci.configuration;
 import java.sql.*;
 import org.apache.commons.logging.*;
 
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.util.*;
 import org.parabuild.ci.object.*;
 import org.parabuild.ci.security.SecurityManager;
@@ -43,19 +44,19 @@ final class UpgraderToVersion8 implements SingleStepSchemaUpgrader {
 
       // encrypt CVS passwords
       encryptPasswordProperty(conn, "SOURCE_CONTROL_PROPERTY", "ID", "NAME", "VALUE",
-        SourceControlSetting.CVS_PASSWORD);
+              VCSAttribute.CVS_PASSWORD);
 
       // encrypt P4 passwords
       encryptPasswordProperty(conn, "SOURCE_CONTROL_PROPERTY", "ID", "NAME", "VALUE",
-        SourceControlSetting.P4_PASSWORD);
+              VCSAttribute.P4_PASSWORD);
 
       // encrypt VSS passwords
       encryptPasswordProperty(conn, "SOURCE_CONTROL_PROPERTY", "ID", "NAME", "VALUE",
-        SourceControlSetting.VSS_PASSWORD);
+              VCSAttribute.VSS_PASSWORD);
 
       // encrypt SVN passwords
       encryptPasswordProperty(conn, "SOURCE_CONTROL_PROPERTY", "ID", "NAME", "VALUE",
-        SourceControlSetting.SVN_PASSWORD);
+              VCSAttribute.SVN_PASSWORD);
 
 
       // encrypt SMTP SERVER PASSWORD passwords

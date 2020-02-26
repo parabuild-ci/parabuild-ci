@@ -19,6 +19,7 @@ import org.apache.cactus.*;
 import junit.framework.*;
 
 import org.parabuild.ci.TestHelper;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.configuration.*;
 import org.parabuild.ci.object.*;
 
@@ -43,7 +44,7 @@ public class SSTestCVSManualScheduleStartParametersPanel extends ServletTestCase
    */
   public void test_load() throws Exception {
 
-    ConfigurationManager.getInstance().saveObject(new SourceControlSetting(TEST_BUILD_ID, SourceControlSetting.CVS_BRANCH_NAME, TEST_BRANCH_NAME));
+    ConfigurationManager.getInstance().saveObject(new SourceControlSetting(TEST_BUILD_ID, VCSAttribute.CVS_BRANCH_NAME, TEST_BRANCH_NAME));
     panel.load(TEST_BUILD_ID);
 
     boolean found = false;

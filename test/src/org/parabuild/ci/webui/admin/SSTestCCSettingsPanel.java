@@ -18,6 +18,7 @@ import junit.framework.*;
 import org.apache.cactus.*;
 
 import org.parabuild.ci.TestHelper;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.util.*;
 import org.parabuild.ci.configuration.*;
 import org.parabuild.ci.object.*;
@@ -49,15 +50,15 @@ public class SSTestCCSettingsPanel extends ServletTestCase {
    */
   public void test_setGetSettings_Bug777() throws Exception {
     // process current content of dataset.xml
-    assertEquals(SourceControlSetting.CLEARCASE_TEXT_MODE_NOT_SET, loadAndReturnCode());
+    assertEquals(VCSAttribute.CLEARCASE_TEXT_MODE_NOT_SET, loadAndReturnCode());
 
     // alter to contan "left" text value
     alterTextMode(ClearCaseTextModeCodeTranslator.NAME_NOT_SET);
-    assertEquals(SourceControlSetting.CLEARCASE_TEXT_MODE_NOT_SET, loadAndReturnCode());
+    assertEquals(VCSAttribute.CLEARCASE_TEXT_MODE_NOT_SET, loadAndReturnCode());
 
     // alter to contan "left" text value
     alterTextMode(ClearCaseTextModeCodeTranslator.NAME_MSDOS);
-    assertEquals(SourceControlSetting.CLEARCASE_TEXT_MODE_MSDOS, loadAndReturnCode());
+    assertEquals(VCSAttribute.CLEARCASE_TEXT_MODE_MSDOS, loadAndReturnCode());
   }
 
 
@@ -66,7 +67,7 @@ public class SSTestCCSettingsPanel extends ServletTestCase {
   public void test_setGetSettingsHandlesTotallyInvalidValue_Bug777() throws Exception {
     // alter to contan non-existent text value
     alterTextMode("blah");
-    assertEquals(SourceControlSetting.CLEARCASE_TEXT_MODE_NOT_SET, loadAndReturnCode());
+    assertEquals(VCSAttribute.CLEARCASE_TEXT_MODE_NOT_SET, loadAndReturnCode());
   }
 
 
@@ -75,17 +76,17 @@ public class SSTestCCSettingsPanel extends ServletTestCase {
   public void test_setGetSettingsHandlesUnexistingValue_Bug777() throws Exception {
     // alter to contan non-existent number value
     alterTextMode("999999");
-    assertEquals(SourceControlSetting.CLEARCASE_TEXT_MODE_NOT_SET, loadAndReturnCode());
+    assertEquals(VCSAttribute.CLEARCASE_TEXT_MODE_NOT_SET, loadAndReturnCode());
   }
 
 
   private void alterTextMode(final String value) {
     final ConfigurationManager cm = ConfigurationManager.getInstance();
-    SourceControlSetting sourceControlSetting = cm.getSourceControlSetting(TestHelper.TEST_CLEARCASE_VALID_BUILD_ID, SourceControlSetting.CLEARCASE_TEXT_MODE);
+    SourceControlSetting sourceControlSetting = cm.getSourceControlSetting(TestHelper.TEST_CLEARCASE_VALID_BUILD_ID, VCSAttribute.CLEARCASE_TEXT_MODE);
     if (sourceControlSetting == null) {
       sourceControlSetting = new SourceControlSetting();
       sourceControlSetting.setBuildID(TestHelper.TEST_CLEARCASE_VALID_BUILD_ID);
-      sourceControlSetting.setPropertyName(SourceControlSetting.CLEARCASE_TEXT_MODE);
+      sourceControlSetting.setPropertyName(VCSAttribute.CLEARCASE_TEXT_MODE);
     }
     sourceControlSetting.setPropertyValue(value);
     cm.saveObject(sourceControlSetting);
@@ -99,7 +100,7 @@ public class SSTestCCSettingsPanel extends ServletTestCase {
     int code = -1;
     for (int i = 0; i < updatedSettings.size(); i++) {
       final SourceControlSetting setting = (SourceControlSetting)updatedSettings.get(i);
-      if (setting.getPropertyName().equals(SourceControlSetting.CLEARCASE_TEXT_MODE)) {
+      if (setting.getPropertyName().equals(VCSAttribute.CLEARCASE_TEXT_MODE)) {
         final String value = setting.getPropertyValue();
         assertTrue(StringUtils.isValidInteger(value));
         code = Integer.parseInt(value);

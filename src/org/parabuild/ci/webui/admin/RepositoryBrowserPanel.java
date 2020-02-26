@@ -15,9 +15,9 @@ package org.parabuild.ci.webui.admin;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
-import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.CommonFlow;
 import org.parabuild.ci.webui.common.GridIterator;
@@ -83,7 +83,7 @@ public class RepositoryBrowserPanel extends SourceControlPanel {
     pnlGithubSettings.setWidth(Pages.PAGE_WIDTH - 5);
 
     // bind browser type selection
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.REPOSITORY_BROWSER_TYPE, ddRepositoryBrowserTypeDropDown);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.REPOSITORY_BROWSER_TYPE, ddRepositoryBrowserTypeDropDown);
 
     // set up listener for drop down selection
     ddRepositoryBrowserTypeDropDown.addListener(new DropDownSelectedListener() {
@@ -116,7 +116,7 @@ public class RepositoryBrowserPanel extends SourceControlPanel {
       ddRepositoryBrowserTypeDropDown.setVisible(false);
     } else if (mode == WebUIConstants.MODE_INHERITED) {
 
-      if (ddRepositoryBrowserTypeDropDown.getCode() == SourceControlSetting.CODE_NOT_SELECTED) {
+      if (ddRepositoryBrowserTypeDropDown.getCode() == VCSAttribute.CODE_NOT_SELECTED) {
         lbRepositoryBrowser.setVisible(false);
         ddRepositoryBrowserTypeDropDown.setVisible(false);
       } else {
@@ -159,16 +159,16 @@ public class RepositoryBrowserPanel extends SourceControlPanel {
    *         selected.
    */
   private SourceControlPanel getSelectedBrowserPanel() {
-    if (ddRepositoryBrowserTypeDropDown.getCode() == SourceControlSetting.CODE_FISHEYE) {
+    if (ddRepositoryBrowserTypeDropDown.getCode() == VCSAttribute.CODE_FISHEYE) {
       return pnlFishEyeSettings;
     }
-    if (ddRepositoryBrowserTypeDropDown.getCode() == SourceControlSetting.CODE_WEB_SVN) {
+    if (ddRepositoryBrowserTypeDropDown.getCode() == VCSAttribute.CODE_WEB_SVN) {
       return pnlWebSVNSettings;
     }
-    if (ddRepositoryBrowserTypeDropDown.getCode() == SourceControlSetting.CODE_VIEWVC) {
+    if (ddRepositoryBrowserTypeDropDown.getCode() == VCSAttribute.CODE_VIEWVC) {
       return pnlViewVCSettings;
     }
-    if (ddRepositoryBrowserTypeDropDown.getCode() == SourceControlSetting.CODE_GITHUB) {
+    if (ddRepositoryBrowserTypeDropDown.getCode() == VCSAttribute.CODE_GITHUB) {
       return pnlGithubSettings;
     }
     return null;
@@ -248,22 +248,22 @@ public class RepositoryBrowserPanel extends SourceControlPanel {
    */
   private void setVisibilityOfSelectedPanel(final int code) {
 
-    if (code == SourceControlSetting.CODE_FISHEYE) {
+    if (code == VCSAttribute.CODE_FISHEYE) {
       pnlFishEyeSettings.setVisible(true);
       pnlViewVCSettings.setVisible(false);
       pnlWebSVNSettings.setVisible(false);
       pnlGithubSettings.setVisible(false);
-    } else if (code == SourceControlSetting.CODE_VIEWVC) {
+    } else if (code == VCSAttribute.CODE_VIEWVC) {
       pnlFishEyeSettings.setVisible(false);
       pnlViewVCSettings.setVisible(true);
       pnlWebSVNSettings.setVisible(false);
       pnlGithubSettings.setVisible(false);
-    } else if (code == SourceControlSetting.CODE_WEB_SVN) {
+    } else if (code == VCSAttribute.CODE_WEB_SVN) {
       pnlFishEyeSettings.setVisible(false);
       pnlViewVCSettings.setVisible(false);
       pnlWebSVNSettings.setVisible(true);
       pnlGithubSettings.setVisible(false);
-    } else if (code == SourceControlSetting.CODE_GITHUB) {
+    } else if (code == VCSAttribute.CODE_GITHUB) {
       pnlFishEyeSettings.setVisible(false);
       pnlViewVCSettings.setVisible(false);
       pnlWebSVNSettings.setVisible(false);

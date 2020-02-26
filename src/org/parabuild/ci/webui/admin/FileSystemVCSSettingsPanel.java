@@ -15,7 +15,7 @@ package org.parabuild.ci.webui.admin;
 
 import java.util.*;
 
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.versioncontrol.*;
 import org.parabuild.ci.webui.common.*;
 import viewtier.ui.*;
@@ -59,8 +59,8 @@ public final class FileSystemVCSSettingsPanel extends AbstractCommandVCSSettings
 
 
   protected void bindHeaderFields() {
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.FILESYSTEM_VCS_PATH, flPath);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.FILESYSTEM_VCS_USER, flUser);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.FILESYSTEM_VCS_PATH, flPath);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.FILESYSTEM_VCS_USER, flUser);
   }
 
 

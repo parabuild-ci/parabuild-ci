@@ -13,19 +13,23 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.util.*;
-import junit.framework.*;
-
+import junit.framework.TestCase;
+import junit.framework.TestSuite;
 import org.parabuild.ci.TestHelper;
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.common.VCSAttribute;
+import org.parabuild.ci.object.SourceControlSetting;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 
 public final class SATestSourceControlSetting extends TestCase {
 
   public void test_nameComparator() {
-    final String name1 = SourceControlSetting.P4_DEPOT_PATH;
-    final String name2 = SourceControlSetting.P4_DEPOT_PATH_PART_PREFIX + ".0001";
-    final String name3 = SourceControlSetting.P4_DEPOT_PATH_PART_PREFIX + ".0050";
+    final String name1 = VCSAttribute.P4_DEPOT_PATH;
+    final String name2 = VCSAttribute.P4_DEPOT_PATH_PART_PREFIX + ".0001";
+    final String name3 = VCSAttribute.P4_DEPOT_PATH_PART_PREFIX + ".0050";
     final SourceControlSetting scs1 = makeSourceControlSetting(name1, "//test/path/...");
     final SourceControlSetting scs2 = makeSourceControlSetting(name2, "//test/path/...");
     final SourceControlSetting scs3 = makeSourceControlSetting(name3, "//test/path/...");

@@ -21,6 +21,7 @@ import junit.framework.TestSuite;
 
 import org.parabuild.ci.ServersideTestCase;
 import org.parabuild.ci.TestHelper;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.SourceControlSetting;
 
@@ -52,7 +53,7 @@ public class SSTestP4Properties extends ServersideTestCase {
 
   public void test_getUnsetProperty() throws Exception {
     final Map map = getPropertyMap();
-    map.remove(SourceControlSetting.P4_PORT);
+    map.remove(VCSAttribute.P4_PORT);
     props.load(map);
     try {
       props.getP4Port();
@@ -65,8 +66,8 @@ public class SSTestP4Properties extends ServersideTestCase {
 
   public void test_isAdvancedViewMode() throws Exception {
     final Map map = getPropertyMap();
-    map.put(SourceControlSetting.P4_ADVANCED_VIEW_MODE, new SourceControlSetting(TEST_P_4_VALID_BUILD_ID, SourceControlSetting.P4_ADVANCED_VIEW_MODE, SourceControlSetting.OPTION_CHECKED));
-    map.put(SourceControlSetting.P4_RELATIVE_BUILD_DIR, new SourceControlSetting(TEST_P_4_VALID_BUILD_ID, SourceControlSetting.P4_RELATIVE_BUILD_DIR, "test/test"));
+    map.put(VCSAttribute.P4_ADVANCED_VIEW_MODE, new SourceControlSetting(TEST_P_4_VALID_BUILD_ID, VCSAttribute.P4_ADVANCED_VIEW_MODE, SourceControlSetting.OPTION_CHECKED));
+    map.put(VCSAttribute.P4_RELATIVE_BUILD_DIR, new SourceControlSetting(TEST_P_4_VALID_BUILD_ID, VCSAttribute.P4_RELATIVE_BUILD_DIR, "test/test"));
     props.load(map);
     assertNotNull(props.getRelativeBuildDir());
     assertTrue(props.isAdvancedViewMode());
@@ -80,7 +81,7 @@ public class SSTestP4Properties extends ServersideTestCase {
 
   public void test_getP4VariablesOverride() throws Exception {
     final Map map = getPropertyMap();
-    map.put(SourceControlSetting.P4_VARS_OVERRIDE, new SourceControlSetting(TEST_P_4_VALID_BUILD_ID, SourceControlSetting.P4_VARS_OVERRIDE, SourceControlSetting.OPTION_CHECKED));
+    map.put(VCSAttribute.P4_VARS_OVERRIDE, new SourceControlSetting(TEST_P_4_VALID_BUILD_ID, VCSAttribute.P4_VARS_OVERRIDE, SourceControlSetting.OPTION_CHECKED));
     props.load(map);
     assertTrue(props.getP4VariablesOverride());
   }
@@ -88,8 +89,8 @@ public class SSTestP4Properties extends ServersideTestCase {
 
   public void test_getModtimeOptionReturnsModtime() {
     final Map map = getPropertyMap();
-    map.put(SourceControlSetting.P4_MODTIME_OPTION, new SourceControlSetting(TEST_P_4_VALID_BUILD_ID,
-      SourceControlSetting.P4_MODTIME_OPTION, String.valueOf(SourceControlSetting.P4_OPTION_VALUE_MODTIME)));
+    map.put(VCSAttribute.P4_MODTIME_OPTION, new SourceControlSetting(TEST_P_4_VALID_BUILD_ID,
+            VCSAttribute.P4_MODTIME_OPTION, String.valueOf(VCSAttribute.P4_OPTION_VALUE_MODTIME)));
     props.load(map);
     assertEquals("modtime", props.getModtimeOption());
   }
@@ -97,8 +98,8 @@ public class SSTestP4Properties extends ServersideTestCase {
 
   public void test_getModtimeOptionReturnsNomodtime() {
     final Map map = getPropertyMap();
-    map.put(SourceControlSetting.P4_MODTIME_OPTION, new SourceControlSetting(TEST_P_4_VALID_BUILD_ID,
-      SourceControlSetting.P4_MODTIME_OPTION, String.valueOf(SourceControlSetting.P4_OPTION_VALUE_NOMODTIME)));
+    map.put(VCSAttribute.P4_MODTIME_OPTION, new SourceControlSetting(TEST_P_4_VALID_BUILD_ID,
+            VCSAttribute.P4_MODTIME_OPTION, String.valueOf(VCSAttribute.P4_OPTION_VALUE_NOMODTIME)));
     props.load(map);
     assertEquals("nomodtime", props.getModtimeOption());
   }
@@ -106,8 +107,8 @@ public class SSTestP4Properties extends ServersideTestCase {
 
   public void test_getClobberOptionReturnsClobber() {
     final Map map = getPropertyMap();
-    map.put(SourceControlSetting.P4_CLOBBER_OPTION, new SourceControlSetting(TEST_P_4_VALID_BUILD_ID,
-      SourceControlSetting.P4_CLOBBER_OPTION, String.valueOf(SourceControlSetting.P4_OPTION_VALUE_CLOBBER)));
+    map.put(VCSAttribute.P4_CLOBBER_OPTION, new SourceControlSetting(TEST_P_4_VALID_BUILD_ID,
+            VCSAttribute.P4_CLOBBER_OPTION, String.valueOf(VCSAttribute.P4_OPTION_VALUE_CLOBBER)));
     props.load(map);
     assertEquals("clobber", props.getClobberOption());
   }
@@ -115,8 +116,8 @@ public class SSTestP4Properties extends ServersideTestCase {
 
   public void test_getClobberOptionReturnsNoclobber() {
     final Map map = getPropertyMap();
-    map.put(SourceControlSetting.P4_CLOBBER_OPTION, new SourceControlSetting(TEST_P_4_VALID_BUILD_ID,
-      SourceControlSetting.P4_CLOBBER_OPTION, String.valueOf(SourceControlSetting.P4_OPTION_VALUE_NOCLOBBER)));
+    map.put(VCSAttribute.P4_CLOBBER_OPTION, new SourceControlSetting(TEST_P_4_VALID_BUILD_ID,
+            VCSAttribute.P4_CLOBBER_OPTION, String.valueOf(VCSAttribute.P4_OPTION_VALUE_NOCLOBBER)));
     props.load(map);
     assertEquals("noclobber", props.getClobberOption());
   }

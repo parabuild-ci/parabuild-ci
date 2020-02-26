@@ -17,6 +17,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.build.BuildScriptGenerator;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.util.BuildException;
 import org.parabuild.ci.util.CommandStoppedException;
 import org.parabuild.ci.util.SourceControlSettingResolver;
@@ -343,7 +344,7 @@ public abstract class AbstractSourceControl implements SourceControl {
    * checkout directory setting.
    */
   protected final Agent getCheckoutDirectoryAwareAgent() throws IOException {
-    final String checkoutDirTemplate = checkoutDirectoryName == null ? getSettingValue(SourceControlSetting.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE) : checkoutDirectoryName;
+    final String checkoutDirTemplate = checkoutDirectoryName == null ? getSettingValue(VCSAttribute.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE) : checkoutDirectoryName;
     final BuildConfig config = ConfigurationManager.getInstance().getBuildConfiguration(activeBuildID);
 //    if (LOG.isDebugEnabled()) LOG.debug("agentHost: " + agentHost);
     return AgentManager.getInstance().createAgent(activeBuildID, checkoutDirTemplate, config.getBuildName(), agentHost, activeBuildID);

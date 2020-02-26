@@ -15,6 +15,7 @@ package org.parabuild.ci.webui.admin;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.SourceControlSetting;
@@ -54,7 +55,7 @@ public class InheritedSourceControlPanel extends SourceControlPanel {
     pnlWrapper.setVisible(false);
 
     // bind
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.REFERENCE_BUILD_ID, ddParentBuildName);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.REFERENCE_BUILD_ID, ddParentBuildName);
 
     // set listener to show the configurations online
     ddParentBuildName.addListener(new DropDownSelectedListener() {

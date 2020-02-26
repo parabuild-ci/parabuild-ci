@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.webui.admin.mercurial;
 
-import org.parabuild.ci.object.SourceControlSetting;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.webui.common.CodeNameDropDown;
 
 /**
@@ -27,9 +27,9 @@ public class MercurialRepositoryPathDropDown extends CodeNameDropDown {
 
   public MercurialRepositoryPathDropDown() {
     super(false);
-    addCodeNamePair(SourceControlSetting.MERCURIAL_PATH_TYPE_FILE, "File path");
-    addCodeNamePair(SourceControlSetting.MERCURIAL_PATH_TYPE_SSH, "SSH");
-    addCodeNamePair(SourceControlSetting.MERCURIAL_PATH_TYPE_URL, "URL");
-    setCode(SourceControlSetting.MERCURIAL_PATH_TYPE_URL);
+    addCodeNamePair(VCSAttribute.MERCURIAL_PATH_TYPE_FILE, "File path");
+    addCodeNamePair(VCSAttribute.MERCURIAL_PATH_TYPE_SSH, "SSH");
+    addCodeNamePair(VCSAttribute.MERCURIAL_PATH_TYPE_URL, "URL");
+    setCode(VCSAttribute.MERCURIAL_PATH_TYPE_URL);
   }
 }

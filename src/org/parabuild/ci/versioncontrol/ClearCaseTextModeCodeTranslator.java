@@ -16,7 +16,7 @@ package org.parabuild.ci.versioncontrol;
 import java.io.IOException;
 
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.object.SourceControlSetting;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.remote.Agent;
 
 /**
@@ -43,25 +43,25 @@ public final class ClearCaseTextModeCodeTranslator {
   public String translateTextModeCode(final byte textModeCode) {
     String textMode = null;
     switch (textModeCode) {
-      case SourceControlSetting.CLEARCASE_TEXT_MODE_NOT_SET:
+      case VCSAttribute.CLEARCASE_TEXT_MODE_NOT_SET:
         textMode = "";
         break;
-      case SourceControlSetting.CLEARCASE_TEXT_MODE_AUTO:
+      case VCSAttribute.CLEARCASE_TEXT_MODE_AUTO:
         textMode = isWindows ? "msdos" : "unix";
         break;
-      case SourceControlSetting.CLEARCASE_TEXT_MODE_MSDOS:
+      case VCSAttribute.CLEARCASE_TEXT_MODE_MSDOS:
         textMode = "msdos";
         break;
-      case SourceControlSetting.CLEARCASE_TEXT_MODE_INSERT_CR:
+      case VCSAttribute.CLEARCASE_TEXT_MODE_INSERT_CR:
         textMode = "insert_cr";
         break;
-      case SourceControlSetting.CLEARCASE_TEXT_MODE_UNIX:
+      case VCSAttribute.CLEARCASE_TEXT_MODE_UNIX:
         textMode = "unix";
         break;
-      case SourceControlSetting.CLEARCASE_TEXT_MODE_STRIP_CR:
+      case VCSAttribute.CLEARCASE_TEXT_MODE_STRIP_CR:
         textMode = "strip_cr";
         break;
-      case SourceControlSetting.CLEARCASE_TEXT_MODE_TRANSPARENT:
+      case VCSAttribute.CLEARCASE_TEXT_MODE_TRANSPARENT:
         textMode = "transparent";
         break;
       default:
@@ -79,13 +79,13 @@ public final class ClearCaseTextModeCodeTranslator {
    * @return
    */
   public byte translateTextModeName(final String textModeName) {
-    if (textModeName.equals(NAME_AUTOMATIC)) return SourceControlSetting.CLEARCASE_TEXT_MODE_AUTO;
-    if (textModeName.equals(NAME_INSERT_CR)) return SourceControlSetting.CLEARCASE_TEXT_MODE_INSERT_CR;
-    if (textModeName.equals(NAME_MSDOS)) return SourceControlSetting.CLEARCASE_TEXT_MODE_MSDOS;
-    if (textModeName.equals(NAME_NOT_SET)) return SourceControlSetting.CLEARCASE_TEXT_MODE_NOT_SET;
-    if (textModeName.equals(NAME_STRIP_CR)) return SourceControlSetting.CLEARCASE_TEXT_MODE_STRIP_CR;
-    if (textModeName.equals(NAME_UNIX)) return SourceControlSetting.CLEARCASE_TEXT_MODE_UNIX;
-    if (textModeName.equals(NAME_TRANSPARENT)) return SourceControlSetting.CLEARCASE_TEXT_MODE_TRANSPARENT;
-    return SourceControlSetting.CLEARCASE_TEXT_MODE_NOT_SET;
+    if (textModeName.equals(NAME_AUTOMATIC)) return VCSAttribute.CLEARCASE_TEXT_MODE_AUTO;
+    if (textModeName.equals(NAME_INSERT_CR)) return VCSAttribute.CLEARCASE_TEXT_MODE_INSERT_CR;
+    if (textModeName.equals(NAME_MSDOS)) return VCSAttribute.CLEARCASE_TEXT_MODE_MSDOS;
+    if (textModeName.equals(NAME_NOT_SET)) return VCSAttribute.CLEARCASE_TEXT_MODE_NOT_SET;
+    if (textModeName.equals(NAME_STRIP_CR)) return VCSAttribute.CLEARCASE_TEXT_MODE_STRIP_CR;
+    if (textModeName.equals(NAME_UNIX)) return VCSAttribute.CLEARCASE_TEXT_MODE_UNIX;
+    if (textModeName.equals(NAME_TRANSPARENT)) return VCSAttribute.CLEARCASE_TEXT_MODE_TRANSPARENT;
+    return VCSAttribute.CLEARCASE_TEXT_MODE_NOT_SET;
   }
 }

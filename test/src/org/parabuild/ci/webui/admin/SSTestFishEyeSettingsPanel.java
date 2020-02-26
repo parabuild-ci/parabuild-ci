@@ -18,6 +18,7 @@ import org.apache.cactus.*;
 import junit.framework.*;
 
 import org.parabuild.ci.TestHelper;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.webui.common.*;
 import org.parabuild.ci.configuration.*;
 import org.parabuild.ci.object.*;
@@ -54,9 +55,9 @@ public class SSTestFishEyeSettingsPanel extends ServletTestCase {
   /**
    */
   public void test_load() throws Exception {
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, SourceControlSetting.REPOSITORY_BROWSER_TYPE, Integer.toString(SourceControlSetting.CODE_FISHEYE));
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, SourceControlSetting.FISHEYE_ROOT, "fish_eye_root");
-    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, SourceControlSetting.FISHEYE_URL, "http://fish_eye_url");
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.REPOSITORY_BROWSER_TYPE, Integer.toString(VCSAttribute.CODE_FISHEYE));
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.FISHEYE_ROOT, "fish_eye_root");
+    TestHelper.setSourceControlProperty(TestHelper.TEST_CVS_VALID_BUILD_ID, VCSAttribute.FISHEYE_URL, "http://fish_eye_url");
     final BuildConfig buildConfig = ConfigurationManager.getInstance().getActiveBuildConfig(TestHelper.TEST_CVS_VALID_BUILD_ID);
     panel.load(buildConfig);
     assertEquals(TestHelper.TEST_CVS_VALID_BUILD_ID, panel.getBuildID());

@@ -15,8 +15,8 @@ package org.parabuild.ci.webui.admin;
 
 import java.util.*;
 
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.util.*;
-import org.parabuild.ci.object.*;
 import org.parabuild.ci.versioncontrol.*;
 import org.parabuild.ci.webui.common.*;
 import viewtier.ui.*;
@@ -80,18 +80,18 @@ public final class VaultSettingsPanel extends AbstractSourceControlPanel {
     gridIterator.addPair(new CommonFieldLabel(CAPTION_REPOSITORY_PATH), flRepositoryPath);
 
     // init property to input map
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.VAULT_PASSWORD, flPassword);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.VAULT_USER, flUser);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.VAULT_PASSWORD, flPassword);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.VAULT_USER, flUser);
 //    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.VAULT_EXE, flPathToExe);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.VAULT_HOST, flHost);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.VAULT_REPOSITORY, flRepository);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.VAULT_USE_SSL, flUseSSL);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.VAULT_PROXY_DOMAIN, flProxyDomain);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.VAULT_PROXY_PASSWORD, flProxyPassword);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.VAULT_PROXY_PORT, flProxyPort);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.VAULT_PROXY_SERVER, flProxyServer);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.VAULT_PROXY_USER, flProxyUser);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.VAULT_REPOSITORY_PATH, flRepositoryPath);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.VAULT_HOST, flHost);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.VAULT_REPOSITORY, flRepository);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.VAULT_USE_SSL, flUseSSL);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.VAULT_PROXY_DOMAIN, flProxyDomain);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.VAULT_PROXY_PASSWORD, flProxyPassword);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.VAULT_PROXY_PORT, flProxyPort);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.VAULT_PROXY_SERVER, flProxyServer);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.VAULT_PROXY_USER, flProxyUser);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.VAULT_REPOSITORY_PATH, flRepositoryPath);
 
     // add footer
     addCommonAttributes();

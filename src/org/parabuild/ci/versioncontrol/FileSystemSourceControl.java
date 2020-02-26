@@ -16,13 +16,13 @@ package org.parabuild.ci.versioncontrol;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.util.BuildException;
 import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.Change;
 import org.parabuild.ci.object.ChangeList;
-import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.remote.services.ModifiedFileList;
 import org.parabuild.ci.remote.services.RemoteFileDescriptor;
@@ -133,7 +133,7 @@ public final class FileSystemSourceControl extends AbstractCommandBasedSourceCon
       if (!files.isEmpty()) {
         final ChangeList changeList = new ChangeList();
         changeList.setCreatedAt(new Date(maxTimeStamp));
-        changeList.setUser(getSettingValue(SourceControlSetting.FILESYSTEM_VCS_USER, "system"));
+        changeList.setUser(getSettingValue(VCSAttribute.FILESYSTEM_VCS_USER, "system"));
         changeList.setDescription(FILES_CHANGED_SINCE + SystemConfigurationManagerFactory.getManager().formatDateTime(new Date(changeListTimestamp)));
         final Set changes = new HashSet(files.size());
         for (int i = 0, n = files.size(); i < n; i++) {
@@ -150,7 +150,7 @@ public final class FileSystemSourceControl extends AbstractCommandBasedSourceCon
       }
 
       // validate that change lists contain not only exclusions
-      if (new ExclusionPathFinder().onlyExclusionPathsPresentInChangeLists(result, getSettingValue(SourceControlSetting.VCS_EXCLUSION_PATHS))) {
+      if (new ExclusionPathFinder().onlyExclusionPathsPresentInChangeLists(result, getSettingValue(VCSAttribute.VCS_EXCLUSION_PATHS))) {
         return startChangeListID;
       }
 
@@ -183,8 +183,8 @@ public final class FileSystemSourceControl extends AbstractCommandBasedSourceCon
     // check if critical settings has changed
     final SourceControlSettingChangeDetector scd = new SourceControlSettingChangeDetector(currentSettings, newSettings);
     boolean hasToCleanUp = false;
-    hasToCleanUp |= scd.settingHasChanged(SourceControlSetting.FILESYSTEM_VCS_PATH);
-    hasToCleanUp |= scd.settingHasChanged(SourceControlSetting.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE);
+    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.FILESYSTEM_VCS_PATH);
+    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE);
     if (hasToCleanUp) {
       setHasToCleanUp();
     }
@@ -197,6 +197,6 @@ public final class FileSystemSourceControl extends AbstractCommandBasedSourceCon
    *
    */
   private List getPaths() {
-    return StringUtils.multilineStringToList(getSettingValue(SourceControlSetting.FILESYSTEM_VCS_PATH));
+    return StringUtils.multilineStringToList(getSettingValue(VCSAttribute.FILESYSTEM_VCS_PATH));
   }
 }

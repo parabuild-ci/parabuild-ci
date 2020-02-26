@@ -22,6 +22,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.ServersideTestCase;
 import org.parabuild.ci.TestHelper;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.BuildConfigCloner;
 import org.parabuild.ci.configuration.BuildRunParticipantVO;
@@ -720,8 +721,8 @@ public final class SSTestConfigurationManager extends ServersideTestCase {
     final int testBuild = TestHelper.TEST_DEPENDENT_PARALLEL_BUILD_ID_1;
     assertTrue(configManager.getEffectiveSourceControlSettings(testBuild).size() > 1);
     // test that it does not return custom directory
-    TestHelper.setSourceControlProperty(TestHelper.TEST_LEADER_PARALLEL_BUILD_ID, SourceControlSetting.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE, "/test/dir");
-    assertNull(configManager.getEffectiveSourceControlSettingsAsMap(testBuild).get(SourceControlSetting.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE));
+    TestHelper.setSourceControlProperty(TestHelper.TEST_LEADER_PARALLEL_BUILD_ID, VCSAttribute.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE, "/test/dir");
+    assertNull(configManager.getEffectiveSourceControlSettingsAsMap(testBuild).get(VCSAttribute.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE));
   }
 
 
@@ -731,7 +732,7 @@ public final class SSTestConfigurationManager extends ServersideTestCase {
     boolean found = false;
     for (int i = 0; i < settings.size(); i++) {
       final SourceControlSetting scs = (SourceControlSetting) settings.get(i);
-      if (scs.getPropertyName().equals(SourceControlSetting.P4_DEPOT_PATH)) {
+      if (scs.getPropertyName().equals(VCSAttribute.P4_DEPOT_PATH)) {
         found = true;
         assertEquals("//test/sourceline/alwaysvalid/...", scs.getPropertyValue());
       }
@@ -743,7 +744,7 @@ public final class SSTestConfigurationManager extends ServersideTestCase {
   public void test_saveSourceControlSettings() throws Exception {
     // get setting
     final Map effectiveSourceControlSettingsAsMap = configManager.getEffectiveSourceControlSettingsAsMap(TestHelper.TEST_P4_VALID_BUILD_ID);
-    final SourceControlSetting scs = (SourceControlSetting) effectiveSourceControlSettingsAsMap.get(SourceControlSetting.P4_DEPOT_PATH);
+    final SourceControlSetting scs = (SourceControlSetting) effectiveSourceControlSettingsAsMap.get(VCSAttribute.P4_DEPOT_PATH);
 
     // prepare test value
     final StringBuffer sb = new StringBuffer(10000);
@@ -755,7 +756,7 @@ public final class SSTestConfigurationManager extends ServersideTestCase {
 
     // assert got saved correctly
     final Map newEffectiveSourceControlSettingsAsMap = configManager.getEffectiveSourceControlSettingsAsMap(TestHelper.TEST_P4_VALID_BUILD_ID);
-    final SourceControlSetting newScs = (SourceControlSetting) newEffectiveSourceControlSettingsAsMap.get(SourceControlSetting.P4_DEPOT_PATH);
+    final SourceControlSetting newScs = (SourceControlSetting) newEffectiveSourceControlSettingsAsMap.get(VCSAttribute.P4_DEPOT_PATH);
     assertEquals(sb.toString(), newScs.getPropertyValue());
   }
 

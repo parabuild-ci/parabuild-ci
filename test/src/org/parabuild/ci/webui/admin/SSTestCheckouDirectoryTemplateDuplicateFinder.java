@@ -17,9 +17,9 @@ import com.gargoylesoftware.base.testing.OrderedTestSuite;
 import junit.framework.TestSuite;
 import org.parabuild.ci.ServersideTestCase;
 import org.parabuild.ci.TestHelper;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.util.BuildException;
 import org.parabuild.ci.util.ValidationException;
-import org.parabuild.ci.object.SourceControlSetting;
 
 /**
  */
@@ -46,7 +46,7 @@ public class SSTestCheckouDirectoryTemplateDuplicateFinder extends ServersideTes
    */
   public void test_notFound() throws BuildException, ValidationException {
     final String staticCheckoutDirTemplate = TestHelper.getTestTempDir().toString() + '/' + getClass().getName();
-    TestHelper.setSourceControlProperty(TestHelper.TEST_P4_VALID_BUILD_ID, SourceControlSetting.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE, staticCheckoutDirTemplate);
+    TestHelper.setSourceControlProperty(TestHelper.TEST_P4_VALID_BUILD_ID, VCSAttribute.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE, staticCheckoutDirTemplate);
     final CheckoutDirectoryTemplateDuplicateFinder templateFinder = new CheckoutDirectoryTemplateDuplicateFinder(TestHelper.TEST_CVS_VALID_BUILD_ID, "", staticCheckoutDirTemplate + "other_path");
     assertNull(templateFinder.find());
   }
@@ -55,7 +55,7 @@ public class SSTestCheckouDirectoryTemplateDuplicateFinder extends ServersideTes
   public void test_found() throws BuildException, ValidationException {
     // existing
     final String staticCheckoutDirTemplate = TestHelper.getTestTempDir().toString() + '/' + getClass().getName();
-    TestHelper.setSourceControlProperty(TestHelper.TEST_P4_VALID_BUILD_ID, SourceControlSetting.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE, staticCheckoutDirTemplate);
+    TestHelper.setSourceControlProperty(TestHelper.TEST_P4_VALID_BUILD_ID, VCSAttribute.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE, staticCheckoutDirTemplate);
     final CheckoutDirectoryTemplateDuplicateFinder templateFinder = new CheckoutDirectoryTemplateDuplicateFinder(TestHelper.TEST_CVS_VALID_BUILD_ID, "", staticCheckoutDirTemplate);
     assertNotNull(templateFinder.find());
   }
@@ -63,7 +63,7 @@ public class SSTestCheckouDirectoryTemplateDuplicateFinder extends ServersideTes
 
   public void test_doesNotFindDynamic() throws BuildException, ValidationException {
     final String staticCheckoutDirTemplate = TestHelper.getTestTempDir().toString() + '/' + getClass().getName() + "${build.id}";
-    TestHelper.setSourceControlProperty(TestHelper.TEST_P4_VALID_BUILD_ID, SourceControlSetting.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE, staticCheckoutDirTemplate);
+    TestHelper.setSourceControlProperty(TestHelper.TEST_P4_VALID_BUILD_ID, VCSAttribute.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE, staticCheckoutDirTemplate);
     final CheckoutDirectoryTemplateDuplicateFinder templateFinder = new CheckoutDirectoryTemplateDuplicateFinder(TestHelper.TEST_CVS_VALID_BUILD_ID, "", staticCheckoutDirTemplate);
     assertNull(templateFinder.find());
   }

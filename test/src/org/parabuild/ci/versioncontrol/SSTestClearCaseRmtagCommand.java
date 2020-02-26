@@ -22,9 +22,9 @@ import org.parabuild.ci.ServersideTestCase;
 import org.parabuild.ci.TestHelper;
 
 import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.util.CommandStoppedException;
 import org.parabuild.ci.configuration.ConfigurationManager;
-import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.remote.AgentManager;
 
@@ -65,7 +65,7 @@ public class SSTestClearCaseRmtagCommand extends ServersideTestCase {
   protected void setUp() throws Exception {
     super.setUp();
     cm = ConfigurationManager.getInstance();
-    exePath = cm.getSourceControlSetting(TestHelper.TEST_CLEARCASE_VALID_BUILD_ID, SourceControlSetting.CLEARCASE_PATH_TO_EXE).getPropertyValue();
+    exePath = cm.getSourceControlSetting(TestHelper.TEST_CLEARCASE_VALID_BUILD_ID, VCSAttribute.CLEARCASE_PATH_TO_EXE).getPropertyValue();
   }
 
 

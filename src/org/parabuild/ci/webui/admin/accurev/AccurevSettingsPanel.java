@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.webui.admin.accurev;
 
-import org.parabuild.ci.object.SourceControlSetting;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.webui.admin.AbstractSourceControlPanel;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
@@ -89,12 +89,12 @@ public final class AccurevSettingsPanel extends AbstractSourceControlPanel {
 
     // Register
 //    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.ACCUREV_DEPOT, flDepot);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.ACCUREV_EXE_PATH, flPathToExe);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.ACCUREV_HOST, flHost);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.ACCUREV_PASSWORD, flPassword);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.ACCUREV_PORT, flPort);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.ACCUREV_STREAM, flStream);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.ACCUREV_USER, flUser);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.ACCUREV_EXE_PATH, flPathToExe);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.ACCUREV_HOST, flHost);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.ACCUREV_PASSWORD, flPassword);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.ACCUREV_PORT, flPort);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.ACCUREV_STREAM, flStream);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.ACCUREV_USER, flUser);
 //    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.ACCUREV_EOL_TYPE, flLineTerminator);
 //    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.ACCUREV_WORKSPACE_LOCK, flLock);
 

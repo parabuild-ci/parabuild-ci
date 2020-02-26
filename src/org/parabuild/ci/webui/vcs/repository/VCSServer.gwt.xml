@@ -3,6 +3,7 @@
   <!-- Inherit GWT core -->
 
   <inherits name='com.google.gwt.user.User'/>
+  <inherits name='org.parabuild.ci.Common'/>
 <!--  <inherits name='com.google.gwt.user.theme.clean.Clean'/>-->
 
   <!-- Enable debug ID. -->

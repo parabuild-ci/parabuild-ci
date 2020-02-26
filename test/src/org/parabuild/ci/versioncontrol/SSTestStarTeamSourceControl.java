@@ -20,12 +20,12 @@ import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.TestHelper;
 
 import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.util.BuildException;
 import org.parabuild.ci.util.CommandStoppedException;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.ChangeList;
-import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.object.SystemProperty;
 
 /**
@@ -98,7 +98,7 @@ public final class SSTestStarTeamSourceControl extends AbstractSourceControlTest
    */
   public void test_getChangesSinceInBranch() throws Exception {
     // update property
-    TestHelper.setSourceControlProperty(getTestBuildID(), SourceControlSetting.STARTEAM_PROJECT_PATH, "test_project/Release 1 release-prep codeline");
+    TestHelper.setSourceControlProperty(getTestBuildID(), VCSAttribute.STARTEAM_PROJECT_PATH, "test_project/Release 1 release-prep codeline");
     starTeam.reloadConfiguration();
 
     // test that we get changes
@@ -117,7 +117,7 @@ public final class SSTestStarTeamSourceControl extends AbstractSourceControlTest
     final String oldRelativeBuildDir = TestHelper.assertCurrentBuildPathExists(starTeam, agent);
 
     // update property
-    TestHelper.setSourceControlProperty(getTestBuildID(), SourceControlSetting.STARTEAM_PROJECT_PATH, STRING_SOURCE_LINE_TWO);
+    TestHelper.setSourceControlProperty(getTestBuildID(), VCSAttribute.STARTEAM_PROJECT_PATH, STRING_SOURCE_LINE_TWO);
     starTeam.reloadConfiguration();
 
     // call sync
@@ -132,7 +132,7 @@ public final class SSTestStarTeamSourceControl extends AbstractSourceControlTest
     assertTrue(agent.emptyLogDir());
     // alter
     final String multilineSourceLine = STRING_SOURCE_LINE_ONE + '\n' + STRING_SOURCE_LINE_TWO;
-    TestHelper.setSourceControlProperty(starTeam.getBuildID(), SourceControlSetting.STARTEAM_PROJECT_PATH, multilineSourceLine);
+    TestHelper.setSourceControlProperty(starTeam.getBuildID(), VCSAttribute.STARTEAM_PROJECT_PATH, multilineSourceLine);
 
     // sync w/reload
     starTeam.reloadConfiguration();
@@ -155,7 +155,7 @@ public final class SSTestStarTeamSourceControl extends AbstractSourceControlTest
    */
   public void test_checkOutLatestCantProcessUnexistingSourceLine() throws Exception {
     // alter
-    TestHelper.setSourceControlProperty(starTeam.getBuildID(), SourceControlSetting.STARTEAM_PROJECT_PATH, "/test/never/existed");
+    TestHelper.setSourceControlProperty(starTeam.getBuildID(), VCSAttribute.STARTEAM_PROJECT_PATH, "/test/never/existed");
     starTeam.reloadConfiguration();
 
     // test
@@ -175,7 +175,7 @@ public final class SSTestStarTeamSourceControl extends AbstractSourceControlTest
    */
   public void test_checkOutLatestCantProcessInavalidUser() throws Exception {
     // alter
-    TestHelper.setSourceControlProperty(starTeam.getBuildID(), SourceControlSetting.STARTEAM_USER, "never_existed_user");
+    TestHelper.setSourceControlProperty(starTeam.getBuildID(), VCSAttribute.STARTEAM_USER, "never_existed_user");
     starTeam.reloadConfiguration();
 
     // test
@@ -240,13 +240,13 @@ public final class SSTestStarTeamSourceControl extends AbstractSourceControlTest
     TestHelper.assertCheckoutDirExistsAndEmpty(agent);
 
     // alter
-    TestHelper.setSourceControlProperty(starTeam.getBuildID(), SourceControlSetting.STARTEAM_PROJECT_PATH, STRING_SOURCE_LINE_TWO);
+    TestHelper.setSourceControlProperty(starTeam.getBuildID(), VCSAttribute.STARTEAM_PROJECT_PATH, STRING_SOURCE_LINE_TWO);
     starTeam.reloadConfiguration();
     starTeam.syncToChangeList(starTeam.getChangesSince(-1));
     final String oldRelativeBuildDir = TestHelper.assertCurrentBuildPathExists(starTeam, agent);
 
     // update property
-    TestHelper.setSourceControlProperty(starTeam.getBuildID(), SourceControlSetting.STARTEAM_PROJECT_PATH, STRING_SOURCE_LINE_ONE);
+    TestHelper.setSourceControlProperty(starTeam.getBuildID(), VCSAttribute.STARTEAM_PROJECT_PATH, STRING_SOURCE_LINE_ONE);
     starTeam.reloadConfiguration();
 
     // we expect that there is change list in the test/config/dataset.xml
@@ -273,7 +273,7 @@ public final class SSTestStarTeamSourceControl extends AbstractSourceControlTest
    */
   public void test_canNotAccessWithWrongPassword() throws Exception {
     // alter
-    TestHelper.setSourceControlProperty(starTeam.getBuildID(), SourceControlSetting.STARTEAM_PASSWORD, org.parabuild.ci.security.SecurityManager.encryptPassword("wrong_passord"));
+    TestHelper.setSourceControlProperty(starTeam.getBuildID(), VCSAttribute.STARTEAM_PASSWORD, org.parabuild.ci.security.SecurityManager.encryptPassword("wrong_passord"));
     starTeam.reloadConfiguration();
 
     // test

@@ -13,8 +13,8 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.webui.common.*;
-import org.parabuild.ci.object.*;
 
 /**
  * Shows selection of clear case text modes (-tmode) used to
@@ -25,11 +25,11 @@ public final class StarTeamEndOfLineDropDown extends CodeNameDropDown {
   private static final long serialVersionUID = 4662209824080566402L; // NOPMD
 
   public StarTeamEndOfLineDropDown() {
-    addCodeNamePair(SourceControlSetting.STARTEAM_EOL_OFF, "off");
-    addCodeNamePair(SourceControlSetting.STARTEAM_EOL_ON, "on");
-    addCodeNamePair(SourceControlSetting.STARTEAM_EOL_CR, "cr");
-    addCodeNamePair(SourceControlSetting.STARTEAM_EOL_LF, "lf");
-    addCodeNamePair(SourceControlSetting.STARTEAM_EOL_CRLF, "crlf");
-    setCode(SourceControlSetting.STARTEAM_EOL_ON);
+    addCodeNamePair(VCSAttribute.STARTEAM_EOL_OFF, "off");
+    addCodeNamePair(VCSAttribute.STARTEAM_EOL_ON, "on");
+    addCodeNamePair(VCSAttribute.STARTEAM_EOL_CR, "cr");
+    addCodeNamePair(VCSAttribute.STARTEAM_EOL_LF, "lf");
+    addCodeNamePair(VCSAttribute.STARTEAM_EOL_CRLF, "crlf");
+    setCode(VCSAttribute.STARTEAM_EOL_ON);
   }
 }

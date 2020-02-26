@@ -16,6 +16,7 @@ package org.parabuild.ci.webui.common;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.BuildState;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.MailUtils;
 import org.parabuild.ci.util.StringUtils;
@@ -767,7 +768,7 @@ public final class WebuiUtils {
     for (int i = 0; i < statuses.size(); i++) {
       final BuildState buildState = (BuildState) statuses.get(i);
       if (buildState.isParallel()) {
-        final Integer leaderBuildID = new Integer(cm.getSourceControlSettingValue(buildState.getActiveBuildID(), SourceControlSetting.REFERENCE_BUILD_ID, BuildConfig.UNSAVED_ID));
+        final Integer leaderBuildID = new Integer(cm.getSourceControlSettingValue(buildState.getActiveBuildID(), VCSAttribute.REFERENCE_BUILD_ID, BuildConfig.UNSAVED_ID));
         // Lasy init
         if (leaderBuildIDs == null) {
           leaderBuildIDs = getLeaderBuildIDs(statuses);
@@ -869,24 +870,24 @@ public final class WebuiUtils {
       final int browserType = getSourceBrowserType(cm, effectiveBuildConfig);
 
       // handle browser types
-      if (browserType == SourceControlSetting.CODE_NOT_SELECTED) {
+      if (browserType == VCSAttribute.CODE_NOT_SELECTED) {
 
         return null;
-      } else if (browserType == SourceControlSetting.CODE_VIEWVC) {
+      } else if (browserType == VCSAttribute.CODE_VIEWVC) {
 
-        final String viewcvsURL = cm.getSourceControlSettingValue(effectiveBuildConfig.getActiveBuildID(), SourceControlSetting.VIEWCVS_URL, null);
+        final String viewcvsURL = cm.getSourceControlSettingValue(effectiveBuildConfig.getActiveBuildID(), VCSAttribute.VIEWCVS_URL, null);
         if (StringUtils.isBlank(viewcvsURL)) {
           return null;
         }
-        final String viewcvsRoot = cm.getSourceControlSettingValue(effectiveBuildConfig.getActiveBuildID(), SourceControlSetting.VIEWCVS_ROOT, "");
+        final String viewcvsRoot = cm.getSourceControlSettingValue(effectiveBuildConfig.getActiveBuildID(), VCSAttribute.VIEWCVS_ROOT, "");
         return new ViewCVSChangeURLFactory(viewcvsURL, viewcvsRoot);
-      } else if (browserType == SourceControlSetting.CODE_FISHEYE) {
+      } else if (browserType == VCSAttribute.CODE_FISHEYE) {
 
-        final String fishEyeURL = cm.getSourceControlSettingValue(effectiveBuildConfig.getActiveBuildID(), SourceControlSetting.FISHEYE_URL, null);
+        final String fishEyeURL = cm.getSourceControlSettingValue(effectiveBuildConfig.getActiveBuildID(), VCSAttribute.FISHEYE_URL, null);
         if (StringUtils.isBlank(fishEyeURL)) {
           return null;
         }
-        final String fishEyeRoot = cm.getSourceControlSettingValue(effectiveBuildConfig.getActiveBuildID(), SourceControlSetting.FISHEYE_ROOT, "");
+        final String fishEyeRoot = cm.getSourceControlSettingValue(effectiveBuildConfig.getActiveBuildID(), VCSAttribute.FISHEYE_ROOT, "");
         return new FisheyeChangeURLFactory(fishEyeURL, fishEyeRoot);
       } else {
 
@@ -897,45 +898,45 @@ public final class WebuiUtils {
       // get browser type
       final int browserType = getSourceBrowserType(cm, effectiveBuildConfig);
       // handle browser types
-      if (browserType == SourceControlSetting.CODE_NOT_SELECTED) {
+      if (browserType == VCSAttribute.CODE_NOT_SELECTED) {
 
         return null;
-      } else if (browserType == SourceControlSetting.CODE_VIEWVC) {
+      } else if (browserType == VCSAttribute.CODE_VIEWVC) {
 
-        final String viewcvsURL = cm.getSourceControlSettingValue(effectiveBuildConfig.getActiveBuildID(), SourceControlSetting.VIEWCVS_URL, null);
+        final String viewcvsURL = cm.getSourceControlSettingValue(effectiveBuildConfig.getActiveBuildID(), VCSAttribute.VIEWCVS_URL, null);
         if (StringUtils.isBlank(viewcvsURL)) {
           return null;
         }
-        final String viewcvsRoot = cm.getSourceControlSettingValue(effectiveBuildConfig.getActiveBuildID(), SourceControlSetting.VIEWCVS_ROOT, "");
+        final String viewcvsRoot = cm.getSourceControlSettingValue(effectiveBuildConfig.getActiveBuildID(), VCSAttribute.VIEWCVS_ROOT, "");
         return new ViewSVNChangeURLFactory(viewcvsURL, viewcvsRoot);
-      } else if (browserType == SourceControlSetting.CODE_FISHEYE) {
+      } else if (browserType == VCSAttribute.CODE_FISHEYE) {
 
-        final String fishEyeURL = cm.getSourceControlSettingValue(effectiveBuildConfig.getActiveBuildID(), SourceControlSetting.FISHEYE_URL, null);
+        final String fishEyeURL = cm.getSourceControlSettingValue(effectiveBuildConfig.getActiveBuildID(), VCSAttribute.FISHEYE_URL, null);
         if (StringUtils.isBlank(fishEyeURL)) {
           return null;
         }
         return new FisheyeChangeURLFactory(fishEyeURL);
-      } else if (browserType == SourceControlSetting.CODE_WEB_SVN) {
+      } else if (browserType == VCSAttribute.CODE_WEB_SVN) {
 
-        final String webSvnURL = cm.getSourceControlSettingValue(effectiveBuildConfig.getActiveBuildID(), SourceControlSetting.WEB_SVN_URL, null);
+        final String webSvnURL = cm.getSourceControlSettingValue(effectiveBuildConfig.getActiveBuildID(), VCSAttribute.WEB_SVN_URL, null);
         if (StringUtils.isBlank(webSvnURL)) {
           return null;
         }
-        final String webSvnRepname = cm.getSourceControlSettingValue(effectiveBuildConfig.getActiveBuildID(), SourceControlSetting.WEB_SVN_REPNAME, "");
+        final String webSvnRepname = cm.getSourceControlSettingValue(effectiveBuildConfig.getActiveBuildID(), VCSAttribute.WEB_SVN_REPNAME, "");
         return new WebSVNURLFactory(webSvnURL, webSvnRepname);
       } else {
 
         return null;
       }
     } else if (effectiveSourceControl == VersionControlSystem.SCM_PERFORCE) {
-      final SourceControlSetting p4webURL = cm.getSourceControlSetting(effectiveBuildConfig.getActiveBuildID(), SourceControlSetting.P4_P4WEB_URL);
+      final SourceControlSetting p4webURL = cm.getSourceControlSetting(effectiveBuildConfig.getActiveBuildID(), VCSAttribute.P4_P4WEB_URL);
       if (p4webURL == null || StringUtils.isBlank(p4webURL.getPropertyValue())) {
         return null;
       }
       return new P4WebChangeURLFactory(p4webURL.getPropertyValue());
     } else if (effectiveSourceControl == VersionControlSystem.SCM_GIT) {
 
-      final String githubURL = cm.getSourceControlSettingValue(effectiveBuildConfig.getActiveBuildID(), SourceControlSetting.GITHUB_URL, null);
+      final String githubURL = cm.getSourceControlSettingValue(effectiveBuildConfig.getActiveBuildID(), VCSAttribute.GITHUB_URL, null);
       if (StringUtils.isBlank(githubURL)) {
         return null;
       }
@@ -951,9 +952,9 @@ public final class WebuiUtils {
    */
   private static int getSourceBrowserType(final ConfigurationManager cm, final BuildConfig effectiveBuildConfig) {
     final int browserType;
-    final SourceControlSetting browserTypeSetting = cm.getSourceControlSetting(effectiveBuildConfig.getActiveBuildID(), SourceControlSetting.REPOSITORY_BROWSER_TYPE);
+    final SourceControlSetting browserTypeSetting = cm.getSourceControlSetting(effectiveBuildConfig.getActiveBuildID(), VCSAttribute.REPOSITORY_BROWSER_TYPE);
     if (browserTypeSetting == null) {
-      browserType = SourceControlSetting.CODE_VIEWVC; // this covers cases when
+      browserType = VCSAttribute.CODE_VIEWVC; // this covers cases when
     } else {
       browserType = browserTypeSetting.getPropertyValueAsInt();
     }

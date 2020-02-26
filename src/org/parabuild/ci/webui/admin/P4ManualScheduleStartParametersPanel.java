@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.util.ValidationException;
 import org.parabuild.ci.configuration.ConfigurationManager;
@@ -97,7 +98,7 @@ final class P4ManualScheduleStartParametersPanel extends ManualScheduleStartPara
     final List sourceControlSettings = ConfigurationManager.getInstance().getSourceControlSettings(buildID);
     for (final Iterator i = sourceControlSettings.iterator(); i.hasNext();) {
       final SourceControlSetting setting = (SourceControlSetting) i.next();
-      if (setting.getPropertyName().equals(SourceControlSetting.P4_DEPOT_PATH) && !showDepotPathOverride) {
+      if (setting.getPropertyName().equals(VCSAttribute.P4_DEPOT_PATH) && !showDepotPathOverride) {
         continue;
       }
       if (SourceControlSettingVO.scmSettingIsSupported(setting.getPropertyName())) {

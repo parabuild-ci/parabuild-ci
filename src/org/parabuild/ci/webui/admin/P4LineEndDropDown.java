@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.object.SourceControlSetting;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.webui.common.CodeNameDropDown;
 
 /**
@@ -26,10 +26,10 @@ final class P4LineEndDropDown extends CodeNameDropDown {
 
 
   P4LineEndDropDown() {
-    addCodeNamePair(SourceControlSetting.P4_LINE_END_LOCAL, SourceControlSetting.P4_LINE_END_VALUE_LOCAL);
-    addCodeNamePair(SourceControlSetting.P4_LINE_END_UNIX, SourceControlSetting.P4_LINE_END_VALUE_UNIX);
-    addCodeNamePair(SourceControlSetting.P4_LINE_END_MAC, SourceControlSetting.P4_LINE_END_VALUE_MAC);
-    addCodeNamePair(SourceControlSetting.P4_LINE_END_SHARE, SourceControlSetting.P4_LINE_END_VALUE_SHARE);
+    addCodeNamePair(VCSAttribute.P4_LINE_END_LOCAL, VCSAttribute.P4_LINE_END_VALUE_LOCAL);
+    addCodeNamePair(VCSAttribute.P4_LINE_END_UNIX, VCSAttribute.P4_LINE_END_VALUE_UNIX);
+    addCodeNamePair(VCSAttribute.P4_LINE_END_MAC, VCSAttribute.P4_LINE_END_VALUE_MAC);
+    addCodeNamePair(VCSAttribute.P4_LINE_END_SHARE, VCSAttribute.P4_LINE_END_VALUE_SHARE);
     setSelection(0);
   }
 }

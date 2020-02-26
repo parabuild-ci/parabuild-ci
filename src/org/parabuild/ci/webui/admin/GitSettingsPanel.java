@@ -13,11 +13,11 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.util.ValidationException;
 import org.parabuild.ci.object.BuildConfig;
-import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.remote.AgentEnvironment;
 import org.parabuild.ci.remote.NoLiveAgentsException;
 import org.parabuild.ci.versioncontrol.GitDepotPathParser;
@@ -74,12 +74,12 @@ public final class GitSettingsPanel extends AbstractSourceControlPanel {
     gridIterator.addPair(lbDepotPath, new RequiredFieldMarker(flDepotPath));
 
     // init property to input map
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.GIT_PASSWORD, flPassword);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.GIT_USER, flUser);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.GIT_DEPOT_PATH, flDepotPath);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.GIT_PATH_TO_EXE, flPathToExe);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.GIT_REPOSITORY, flRepository);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.GIT_BRANCH, flBranch);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.GIT_PASSWORD, flPassword);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.GIT_USER, flUser);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.GIT_DEPOT_PATH, flDepotPath);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.GIT_PATH_TO_EXE, flPathToExe);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.GIT_REPOSITORY, flRepository);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.GIT_BRANCH, flBranch);
 
     // add footer
     addCommonAttributes();

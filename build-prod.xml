@@ -433,6 +433,7 @@
       <!-- Additional arguments like -style PRETTY or -logLevel DEBUG -->
       <arg line="-style PRETTY"/>
       <arg line="-localWorkers 10"/>
+<!--      <arg value="org.parabuild.ci.Common"/>-->
       <arg value="org.parabuild.ci.webui.vcs.repository.VCSRepository"/>
       <arg value="org.parabuild.ci.webui.vcs.repository.VCSServer"/>
     </java>

@@ -16,13 +16,13 @@ package org.parabuild.ci.webui.admin;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.util.SourceControlSettingResolver;
 import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.util.ValidationException;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.object.BuildConfig;
-import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.remote.AgentEnvironment;
 import org.parabuild.ci.remote.AgentManager;
 import org.parabuild.ci.versioncontrol.ExclusionPathFinder;
@@ -127,8 +127,8 @@ public abstract class AbstractSourceControlPanel extends SourceControlPanel {
     this.gridIterator.addPair(lbTestResultAligner, lbTestResult);
 
     // bind
-    this.propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE, flCustomCheckoutDir);
-    this.propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.VCS_EXCLUSION_PATHS, flExclusionPaths);
+    this.propertyToInputMap.bindPropertyNameToInput(VCSAttribute.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE, flCustomCheckoutDir);
+    this.propertyToInputMap.bindPropertyNameToInput(VCSAttribute.VCS_EXCLUSION_PATHS, flExclusionPaths);
 
     // make test handler
     btnTestExclusionPaths.addListener(new ButtonPressedListener() {

@@ -1,0 +1,6 @@
+<!-- A module containing classes shared across client and server -->
+<module>
+
+  <!-- Source path -->
+  <source path="common"/>
+</module>

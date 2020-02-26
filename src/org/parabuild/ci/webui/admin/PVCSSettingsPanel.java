@@ -13,9 +13,9 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.remote.NoLiveAgentsException;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
@@ -78,15 +78,15 @@ public final class PVCSSettingsPanel extends AbstractSourceControlPanel {
     new CommonFieldLabel(NAME_PROJECTS).setAlignY(Layout.TOP);
 
     // init property to input map
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.PVCS_PASSWORD, fldPassword);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.PVCS_USER, fldUser);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.PVCS_REPOSITORY, fldRepository);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.PVCS_PROJECT, fldProject);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.PVCS_EXE_PATH, fldPathToPVCSClient);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.PVCS_BRANCH_NAME, fldBranch);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.PVCS_PASSWORD, fldPassword);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.PVCS_USER, fldUser);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.PVCS_REPOSITORY, fldRepository);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.PVCS_PROJECT, fldProject);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.PVCS_EXE_PATH, fldPathToPVCSClient);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.PVCS_BRANCH_NAME, fldBranch);
 //    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.PVCS_LABEL, fldLabel);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.PVCS_PROMOTION_GROUP, fldLabel);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.PVCS_CHANGE_WINDOW, fldChangeWindow);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.PVCS_PROMOTION_GROUP, fldLabel);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.PVCS_CHANGE_WINDOW, fldChangeWindow);
 
     // add footer
     addCommonAttributes();

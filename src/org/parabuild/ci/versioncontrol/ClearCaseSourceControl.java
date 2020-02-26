@@ -17,6 +17,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.build.BuildScriptGenerator;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.util.BuildException;
 import org.parabuild.ci.util.CommandStoppedException;
 import org.parabuild.ci.util.IoUtils;
@@ -27,7 +28,6 @@ import org.parabuild.ci.error.ErrorManager;
 import org.parabuild.ci.error.ErrorManagerFactory;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.ChangeList;
-import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.remote.services.RemoteFileDescriptor;
 import org.parabuild.ci.versioncontrol.clearcase.ClearCaseStartDate;
@@ -124,7 +124,7 @@ final class ClearCaseSourceControl extends AbstractSourceControl {
     // parse "load" rules to determine directories
     final List result = new ArrayList(11);
     final String checkoutDirName = agent.getCheckoutDirName();
-    final String configSpec = getSettingValue(SourceControlSetting.CLEARCASE_VIEW_CONFIG_SPEC);
+    final String configSpec = getSettingValue(VCSAttribute.CLEARCASE_VIEW_CONFIG_SPEC);
     final List configSpecLines = StringUtils.multilineStringToList(configSpec);
     for (int i = 0, n = configSpecLines.size(); i < n; i++) {
       final String configSpecLine = (String) configSpecLines.get(i);
@@ -264,16 +264,16 @@ final class ClearCaseSourceControl extends AbstractSourceControl {
 
       // update
       if (!viewExists) { // create view
-        final String textModeCode = getSettingValue(SourceControlSetting.CLEARCASE_TEXT_MODE, Integer.toString(SourceControlSetting.CLEARCASE_TEXT_MODE_NOT_SET));
-        final byte storageLocationCode = getSettingValue(SourceControlSetting.CLEARCASE_VIEW_STORAGE_LOCATION_CODE, SourceControlSetting.CLEARCASE_STORAGE_CODE_AUTOMATIC);
-        final String storageLocation = getSettingValue(SourceControlSetting.CLEARCASE_VIEW_STORAGE_LOCATION);
+        final String textModeCode = getSettingValue(VCSAttribute.CLEARCASE_TEXT_MODE, Integer.toString(VCSAttribute.CLEARCASE_TEXT_MODE_NOT_SET));
+        final byte storageLocationCode = getSettingValue(VCSAttribute.CLEARCASE_VIEW_STORAGE_LOCATION_CODE, VCSAttribute.CLEARCASE_STORAGE_CODE_AUTOMATIC);
+        final String storageLocation = getSettingValue(VCSAttribute.CLEARCASE_VIEW_STORAGE_LOCATION);
         command = new ClearCaseMkviewCommand(agent, exePath(), textModeCode, storageLocationCode, storageLocation, viewTag, ignoreLines());
         command.execute();
         command.cleanup();
       }
 
       // set/update spec
-      final String viewSpec = getSettingValue(SourceControlSetting.CLEARCASE_VIEW_CONFIG_SPEC);
+      final String viewSpec = getSettingValue(VCSAttribute.CLEARCASE_VIEW_CONFIG_SPEC);
       command = new ClearCaseSetcsCommand(agent, exePath(), viewSpec, ignoreLines());
       command.execute();
       command.cleanup();
@@ -294,7 +294,7 @@ final class ClearCaseSourceControl extends AbstractSourceControl {
 
   private String makeCurrentViewName(final Agent agent) throws IOException, BuildException, AgentFailureException {
     final String userName = agent.getSystemProperty("user.name");
-    final String template = getSettingValue(SourceControlSetting.CLEARCASE_VIEW_NAME_TEMPLATE, DEFAULT_VIEW_NAME_TEMPLATE);
+    final String template = getSettingValue(VCSAttribute.CLEARCASE_VIEW_NAME_TEMPLATE, DEFAULT_VIEW_NAME_TEMPLATE);
     final ClearCaseViewNameGenerator viewNameGenerator = new ClearCaseViewNameGenerator(userName, buildID, template);
     return viewNameGenerator.generate(); // NOPMD
   }
@@ -326,7 +326,7 @@ final class ClearCaseSourceControl extends AbstractSourceControl {
         sw = new StringWriter(500);
         pw = new PrintWriter(sw);
         pw.println("time " + historyDateFormat.format(changeList.getCreatedAt()));
-        br = new BufferedReader(new StringReader(getSettingValue(SourceControlSetting.CLEARCASE_VIEW_CONFIG_SPEC)));
+        br = new BufferedReader(new StringReader(getSettingValue(VCSAttribute.CLEARCASE_VIEW_CONFIG_SPEC)));
         String line = br.readLine();
         while (line != null) {
           pw.println(line);
@@ -360,7 +360,7 @@ final class ClearCaseSourceControl extends AbstractSourceControl {
    * Returns relative project path
    */
   public String getRelativeBuildDir() {
-    return getSettingValue(SourceControlSetting.CLEARCASE_RELATIVE_BUILD_DIR);
+    return getSettingValue(VCSAttribute.CLEARCASE_RELATIVE_BUILD_DIR);
   }
 
 
@@ -404,7 +404,7 @@ final class ClearCaseSourceControl extends AbstractSourceControl {
         //
         // set up from date to the begining of century
         final String defaultStartDate = new ClearCaseStartDate().getValue();
-        final String stringStartDate = getSettingValue(SourceControlSetting.CLEARCASE_START_DATE, defaultStartDate);
+        final String stringStartDate = getSettingValue(VCSAttribute.CLEARCASE_START_DATE, defaultStartDate);
         final Date startDate = ClearCaseStartDate.parse(stringStartDate);
         fromDate = Calendar.getInstance();
         fromDate.setTime(startDate);
@@ -433,7 +433,7 @@ final class ClearCaseSourceControl extends AbstractSourceControl {
       }
 
       // run checkin window check if required
-      final int changeWindow = getSettingValue(SourceControlSetting.CLEARCASE_CHANGE_WINDOW, 0) * 1000;
+      final int changeWindow = getSettingValue(VCSAttribute.CLEARCASE_CHANGE_WINDOW, 0) * 1000;
       if (changeWindow > 0) {
         // wait for change window if necessary.
         ThreadUtils.checkIfInterrupted();
@@ -460,7 +460,7 @@ final class ClearCaseSourceControl extends AbstractSourceControl {
       }
 
       // validate that change lists contain not only exclusions
-      if (new ExclusionPathFinder().onlyExclusionPathsPresentInChangeLists(result, getSettingValue(SourceControlSetting.VCS_EXCLUSION_PATHS))) {
+      if (new ExclusionPathFinder().onlyExclusionPathsPresentInChangeLists(result, getSettingValue(VCSAttribute.VCS_EXCLUSION_PATHS))) {
         return startChangeListID;
       }
 
@@ -489,12 +489,12 @@ final class ClearCaseSourceControl extends AbstractSourceControl {
     ClearCaseCommand command = null;
     try {
       if (log.isDebugEnabled()) {
-        log.debug("getting changes for: " + getSettingValue(SourceControlSetting.CLEARCASE_VIEW_CONFIG_SPEC));
+        log.debug("getting changes for: " + getSettingValue(VCSAttribute.CLEARCASE_VIEW_CONFIG_SPEC));
       }
 
       // create a branchSetting list
       final List branchList = new ArrayList(11);
-      final String branchSetting = getSettingValue(SourceControlSetting.CLEARCASE_BRANCH);
+      final String branchSetting = getSettingValue(VCSAttribute.CLEARCASE_BRANCH);
       if (StringUtils.isBlank(branchSetting)) {
         branchList.add(branchSetting);
       } else {
@@ -592,7 +592,7 @@ final class ClearCaseSourceControl extends AbstractSourceControl {
    * @return lines to ignore
    */
   private String ignoreLines() {
-    return getSettingValue(SourceControlSetting.CLEARCASE_IGNORE_LINES);
+    return getSettingValue(VCSAttribute.CLEARCASE_IGNORE_LINES);
   }
 
 
@@ -630,13 +630,13 @@ final class ClearCaseSourceControl extends AbstractSourceControl {
     // check if critical settings has changed
     final SourceControlSettingChangeDetector scd = new SourceControlSettingChangeDetector(currentSettings, newSettings);
     boolean hasToCleanUp = false;
-    hasToCleanUp |= scd.settingHasChanged(SourceControlSetting.CLEARCASE_BRANCH);
-    hasToCleanUp |= scd.settingHasChanged(SourceControlSetting.CLEARCASE_VIEW_CONFIG_SPEC);
-    hasToCleanUp |= scd.settingHasChanged(SourceControlSetting.CLEARCASE_VIEW_NAME_TEMPLATE);
-    hasToCleanUp |= scd.settingHasChanged(SourceControlSetting.CLEARCASE_TEXT_MODE);
-    hasToCleanUp |= scd.settingHasChanged(SourceControlSetting.CLEARCASE_VIEW_STORAGE_LOCATION);
-    hasToCleanUp |= scd.settingHasChanged(SourceControlSetting.CLEARCASE_IGNORE_LINES);
-    hasToCleanUp |= scd.settingHasChanged(SourceControlSetting.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE);
+    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.CLEARCASE_BRANCH);
+    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.CLEARCASE_VIEW_CONFIG_SPEC);
+    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.CLEARCASE_VIEW_NAME_TEMPLATE);
+    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.CLEARCASE_TEXT_MODE);
+    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.CLEARCASE_VIEW_STORAGE_LOCATION);
+    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.CLEARCASE_IGNORE_LINES);
+    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE);
     if (hasToCleanUp) {
       setHasToCleanUp();
     }
@@ -703,7 +703,7 @@ final class ClearCaseSourceControl extends AbstractSourceControl {
 
 
   private String exePath() {
-    return StringUtils.putIntoDoubleQuotes(getSettingValue(SourceControlSetting.CLEARCASE_PATH_TO_EXE));
+    return StringUtils.putIntoDoubleQuotes(getSettingValue(VCSAttribute.CLEARCASE_PATH_TO_EXE));
   }
 
 

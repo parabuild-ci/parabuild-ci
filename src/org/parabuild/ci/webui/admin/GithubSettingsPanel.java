@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.object.SourceControlSetting;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.WebUIConstants;
@@ -41,7 +41,7 @@ public final class GithubSettingsPanel extends AbstractSourceControlPanel {
     super("Github Integration");
     gridIterator.moveToNextLine();
     gridIterator.addPair(new CommonFieldLabel(NAME_GITHUB_URL), flGithubURL);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.GITHUB_URL, flGithubURL);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.GITHUB_URL, flGithubURL);
   }
 
 

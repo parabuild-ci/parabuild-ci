@@ -15,8 +15,8 @@ package org.parabuild.ci.webui.admin;
 
 import java.util.*;
 
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.webui.common.*;
-import org.parabuild.ci.object.*;
 import viewtier.ui.*;
 
 /**
@@ -43,8 +43,8 @@ public final class FishEyeSettingsPanel extends AbstractSourceControlPanel {
     if (showViewVCRoot) {
       gridIterator.addPair(new CommonFieldLabel(NAME_FISHEYE_ROOT), flFishEyeRoot);
     }
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.FISHEYE_URL, flFishEyeURL);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.FISHEYE_ROOT, flFishEyeRoot);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.FISHEYE_URL, flFishEyeURL);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.FISHEYE_ROOT, flFishEyeRoot);
 
   }
 

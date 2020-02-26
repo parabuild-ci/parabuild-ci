@@ -15,6 +15,7 @@ package org.parabuild.ci.versioncontrol;
 
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.build.BuildScriptGenerator;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.util.BuildException;
 import org.parabuild.ci.util.CommandStoppedException;
 import org.parabuild.ci.configuration.AgentHost;
@@ -63,7 +64,7 @@ final class ReferenceSourceControl implements SourceControl {
     // this change list to the last clean referred build
 
     // REVIEWME: consider doing it at one shot
-    final SourceControlSetting setting = cm.getSourceControlSetting(buildID, SourceControlSetting.REFERENCE_BUILD_ID);
+    final SourceControlSetting setting = cm.getSourceControlSetting(buildID, VCSAttribute.REFERENCE_BUILD_ID);
     final int referredActiveBuildID = cm.getActiveIDFromBuildID(setting.getPropertyValueAsInt());
     final int activeBuildID = cm.getActiveIDFromBuildID(buildID);
     return cm.copyChangeListsToBuild(referredActiveBuildID, activeBuildID, startChangeListID);

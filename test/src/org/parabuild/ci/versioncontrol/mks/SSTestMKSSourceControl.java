@@ -20,12 +20,12 @@ import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.TestHelper;
 
 import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.util.BuildException;
 import org.parabuild.ci.util.CommandStoppedException;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.ChangeList;
-import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.object.SystemProperty;
 import org.parabuild.ci.versioncontrol.AbstractSourceControlTest;
 
@@ -168,7 +168,7 @@ public class SSTestMKSSourceControl extends AbstractSourceControlTest {
    */
   public void test_checkOutLatestCantProcessUnexistingSourceLine() throws Exception {
     // alter
-    TestHelper.setSourceControlProperty(mks.getBuildID(), SourceControlSetting.MKS_PROJECT, "/opt/mks/integrity_server2005/mksis/projects/never_existed_project.pj");
+    TestHelper.setSourceControlProperty(mks.getBuildID(), VCSAttribute.MKS_PROJECT, "/opt/mks/integrity_server2005/mksis/projects/never_existed_project.pj");
     mks.reloadConfiguration();
 
     // test
@@ -188,7 +188,7 @@ public class SSTestMKSSourceControl extends AbstractSourceControlTest {
    */
   public void test_checkOutLatestCantProcessInavalidUser() throws Exception {
     // alter
-    TestHelper.setSourceControlProperty(mks.getBuildID(), SourceControlSetting.MKS_USER, NEVER_EXISTED_USER);
+    TestHelper.setSourceControlProperty(mks.getBuildID(), VCSAttribute.MKS_USER, NEVER_EXISTED_USER);
     mks.reloadConfiguration();
 
     // test

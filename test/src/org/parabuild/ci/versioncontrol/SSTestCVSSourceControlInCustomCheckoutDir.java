@@ -18,7 +18,7 @@ import junit.framework.TestSuite;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.TestHelper;
-import org.parabuild.ci.object.SourceControlSetting;
+import org.parabuild.ci.common.VCSAttribute;
 
 /**
  * Tests CVSSourceControl in a custom checkout dir.
@@ -37,7 +37,7 @@ public final class SSTestCVSSourceControlInCustomCheckoutDir extends SSTestCVSSo
 
 
   protected void afterSuperSetUp() {
-    TestHelper.setSourceControlProperty(getTestBuildID(), SourceControlSetting.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE, getCheckoutDir());
+    TestHelper.setSourceControlProperty(getTestBuildID(), VCSAttribute.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE, getCheckoutDir());
   }
 
 

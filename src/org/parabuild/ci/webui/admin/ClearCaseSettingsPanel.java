@@ -14,10 +14,10 @@
 package org.parabuild.ci.webui.admin;
 
 import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
-import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.remote.NoLiveAgentsException;
 import org.parabuild.ci.versioncontrol.ClearCaseStorageNameGenerator;
 import org.parabuild.ci.versioncontrol.ClearCaseViewNameGenerator;
@@ -94,17 +94,17 @@ public final class ClearCaseSettingsPanel extends AbstractSourceControlPanel {
     }
 
     // init property to input map
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.CLEARCASE_VIEW_CONFIG_SPEC, flViewConfigSpec);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.CLEARCASE_PATH_TO_EXE, flPathToCleartool);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.CLEARCASE_RELATIVE_BUILD_DIR, flRelativeBuildDir);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.CLEARCASE_VIEW_NAME_TEMPLATE, flViewNameTemplate);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.CLEARCASE_CHANGE_WINDOW, flChangeWindow);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.CLEARCASE_START_DATE, flStartDate);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.CLEARCASE_TEXT_MODE, ddTextMode);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.CLEARCASE_BRANCH, flBranch);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.CLEARCASE_VIEW_STORAGE_LOCATION_CODE, ddStorage);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.CLEARCASE_VIEW_STORAGE_LOCATION, flViewStorageLocation);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.CLEARCASE_IGNORE_LINES, flIgnoreErrorLines);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.CLEARCASE_VIEW_CONFIG_SPEC, flViewConfigSpec);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.CLEARCASE_PATH_TO_EXE, flPathToCleartool);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.CLEARCASE_RELATIVE_BUILD_DIR, flRelativeBuildDir);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.CLEARCASE_VIEW_NAME_TEMPLATE, flViewNameTemplate);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.CLEARCASE_CHANGE_WINDOW, flChangeWindow);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.CLEARCASE_START_DATE, flStartDate);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.CLEARCASE_TEXT_MODE, ddTextMode);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.CLEARCASE_BRANCH, flBranch);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.CLEARCASE_VIEW_STORAGE_LOCATION_CODE, ddStorage);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.CLEARCASE_VIEW_STORAGE_LOCATION, flViewStorageLocation);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.CLEARCASE_IGNORE_LINES, flIgnoreErrorLines);
 
     // add footer
     addCommonAttributes();

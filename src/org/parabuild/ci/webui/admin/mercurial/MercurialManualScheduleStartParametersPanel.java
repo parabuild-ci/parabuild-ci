@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.webui.admin.mercurial;
 
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.object.SourceControlSettingVO;
@@ -102,7 +103,7 @@ public final class MercurialManualScheduleStartParametersPanel extends ManualSch
     final List sourceControlSettings = ConfigurationManager.getInstance().getSourceControlSettings(buildID);
     for (final Iterator i = sourceControlSettings.iterator(); i.hasNext();) {
       final SourceControlSetting setting = (SourceControlSetting) i.next();
-      if ((setting.getPropertyName().equals(SourceControlSetting.MERCURIAL_BRANCH) || setting.getPropertyName().equals(SourceControlSetting.MERCURIAL_URL)) && !showURLOverride) {
+      if ((setting.getPropertyName().equals(VCSAttribute.MERCURIAL_BRANCH) || setting.getPropertyName().equals(VCSAttribute.MERCURIAL_URL)) && !showURLOverride) {
         continue;
       }
       if (SourceControlSettingVO.scmSettingIsSupported(setting.getPropertyName())) {

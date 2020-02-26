@@ -13,30 +13,30 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-
 import com.gargoylesoftware.base.testing.OrderedTestSuite;
 import junit.framework.TestSuite;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.TestHelper;
-
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.build.BuildLabelNameGenerator;
-import org.parabuild.ci.util.BuildException;
-import org.parabuild.ci.util.CommandStoppedException;
-import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.error.ErrorManagerFactory;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.ChangeList;
 import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.object.SystemProperty;
 import org.parabuild.ci.remote.internal.LocalAgentEnvironment;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.IoUtils;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 
 /**
@@ -83,9 +83,9 @@ public final class SSTestVSSSourceControl extends AbstractSourceControlTest {
    * and project path have spaces.
    */
   public void test_checkoutLatestWithRootProject() throws Exception {
-    TestHelper.setSourceControlProperty(TestHelper.TEST_VSS_VALID_BUILD_ID, SourceControlSetting.VSS_PROJECT_PATH, STR_VSS_ROOT);
-    TestHelper.setSourceControlProperty(TestHelper.TEST_VSS_VALID_BUILD_ID, SourceControlSetting.VSS_USER, "test");
-    TestHelper.setSourceControlProperty(TestHelper.TEST_VSS_VALID_BUILD_ID, SourceControlSetting.VSS_PASSWORD, org.parabuild.ci.security.SecurityManager.encryptPassword("test_password"));
+    TestHelper.setSourceControlProperty(TestHelper.TEST_VSS_VALID_BUILD_ID, VCSAttribute.VSS_PROJECT_PATH, STR_VSS_ROOT);
+    TestHelper.setSourceControlProperty(TestHelper.TEST_VSS_VALID_BUILD_ID, VCSAttribute.VSS_USER, "test");
+    TestHelper.setSourceControlProperty(TestHelper.TEST_VSS_VALID_BUILD_ID, VCSAttribute.VSS_PASSWORD, org.parabuild.ci.security.SecurityManager.encryptPassword("test_password"));
     vss.reloadConfiguration();
     vss.checkoutLatest();
     TestHelper.assertCheckoutDirNotEmpty(agent);
@@ -99,7 +99,7 @@ public final class SSTestVSSSourceControl extends AbstractSourceControlTest {
   public void test_832_checkoutLatest() throws Exception {
     assertTrue("Build logs home dir is not empty", agent.emptyLogDir());
     IoUtils.copyDirectory(new File(TestHelper.getTestDataDir(), "vss_bin"), testDirWithSpaces());
-    TestHelper.setSourceControlProperty(TestHelper.TEST_VSS_VALID_BUILD_ID, SourceControlSetting.VSS_EXE_PATH, testDirWithSpaces().getCanonicalPath() + '\\' + "SS.EXE");
+    TestHelper.setSourceControlProperty(TestHelper.TEST_VSS_VALID_BUILD_ID, VCSAttribute.VSS_EXE_PATH, testDirWithSpaces().getCanonicalPath() + '\\' + "SS.EXE");
     vss.reloadConfiguration();
     vss.checkoutLatest();
     TestHelper.assertCheckoutDirNotEmpty(agent);
@@ -113,8 +113,8 @@ public final class SSTestVSSSourceControl extends AbstractSourceControlTest {
    */
   public void test_832_checkoutLatestBothWithSpaces() throws Exception {
     IoUtils.copyDirectory(new File(TestHelper.getTestDataDir(), "vss_bin"), testDirWithSpaces());
-    TestHelper.setSourceControlProperty(TestHelper.TEST_VSS_VALID_BUILD_ID, SourceControlSetting.VSS_EXE_PATH, testDirWithSpaces().getCanonicalPath() + '\\' + "SS.EXE");
-    TestHelper.setSourceControlProperty(TestHelper.TEST_VSS_VALID_BUILD_ID, SourceControlSetting.VSS_PROJECT_PATH, TEST_SOURCE_LINE_ONE + "/spaced name");
+    TestHelper.setSourceControlProperty(TestHelper.TEST_VSS_VALID_BUILD_ID, VCSAttribute.VSS_EXE_PATH, testDirWithSpaces().getCanonicalPath() + '\\' + "SS.EXE");
+    TestHelper.setSourceControlProperty(TestHelper.TEST_VSS_VALID_BUILD_ID, VCSAttribute.VSS_PROJECT_PATH, TEST_SOURCE_LINE_ONE + "/spaced name");
     vss.reloadConfiguration();
     try {
       vss.checkoutLatest();
@@ -157,7 +157,7 @@ public final class SSTestVSSSourceControl extends AbstractSourceControlTest {
    * @throws Exception
    */
   public void test_getChangesSinceHandlesRootPath() throws Exception {
-    TestHelper.setSourceControlProperty(TestHelper.TEST_VSS_VALID_BUILD_ID, SourceControlSetting.VSS_PROJECT_PATH, STR_VSS_ROOT);
+    TestHelper.setSourceControlProperty(TestHelper.TEST_VSS_VALID_BUILD_ID, VCSAttribute.VSS_PROJECT_PATH, STR_VSS_ROOT);
     vss.reloadConfiguration();
     final int changeListID = vss.getChangesSince(TEST_CHANGELIST_ID);
     assertTrue(changeListID != TEST_CHANGELIST_ID);
@@ -171,7 +171,7 @@ public final class SSTestVSSSourceControl extends AbstractSourceControlTest {
    */
   public void test_getChangesSinceWithCheckinWindowOn() throws Exception {
     final SourceControlSetting changeWindow = cm.getSourceControlSetting(vss.getBuildID(),
-            SourceControlSetting.VSS_CHANGE_WINDOW);
+            VCSAttribute.VSS_CHANGE_WINDOW);
     changeWindow.setPropertyValue("10"); // 10 secs
     cm.saveObject(changeWindow);
 
@@ -268,7 +268,7 @@ public final class SSTestVSSSourceControl extends AbstractSourceControlTest {
 
     // alter
     final String multilineSourceLine = STR_VSS_ROOT + TEST_SOURCE_LINE_ONE + '\n' + STR_VSS_ROOT + TEST_SOURCE_LINE_TWO;
-    final SourceControlSetting path = cm.getSourceControlSetting(vss.getBuildID(), SourceControlSetting.VSS_PROJECT_PATH);
+    final SourceControlSetting path = cm.getSourceControlSetting(vss.getBuildID(), VCSAttribute.VSS_PROJECT_PATH);
     path.setPropertyValue(multilineSourceLine);
     cm.saveObject(path);
 
@@ -293,7 +293,7 @@ public final class SSTestVSSSourceControl extends AbstractSourceControlTest {
 
 
   private void alterVSSPathToSecondSourceLine() {
-    TestHelper.setSourceControlProperty(TestHelper.TEST_VSS_VALID_BUILD_ID, SourceControlSetting.VSS_PROJECT_PATH, STR_VSS_ROOT + TEST_SOURCE_LINE_TWO);
+    TestHelper.setSourceControlProperty(TestHelper.TEST_VSS_VALID_BUILD_ID, VCSAttribute.VSS_PROJECT_PATH, STR_VSS_ROOT + TEST_SOURCE_LINE_TWO);
   }
 
 
@@ -305,11 +305,11 @@ public final class SSTestVSSSourceControl extends AbstractSourceControlTest {
    */
   public void test_checkOutLatestCantProcessUnexistingSourceLine() throws Exception {
     final List settings = new ArrayList(11);
-    settings.add(makeSetting(SourceControlSetting.VSS_DATABASE_PATH, TEST_VALID_DATABASE_PATH));
-    settings.add(makeSetting(SourceControlSetting.VSS_EXE_PATH, TEST_VALID_EXE_PATH));
-    settings.add(makeSetting(SourceControlSetting.VSS_PROJECT_PATH, TEST_INVALID_PROJECT_PATH));
-    settings.add(makeSetting(SourceControlSetting.VSS_PASSWORD, TestHelper.VSS_VALID_PASSWORD));
-    settings.add(makeSetting(SourceControlSetting.VSS_USER, TEST_VALID_USER));
+    settings.add(makeSetting(VCSAttribute.VSS_DATABASE_PATH, TEST_VALID_DATABASE_PATH));
+    settings.add(makeSetting(VCSAttribute.VSS_EXE_PATH, TEST_VALID_EXE_PATH));
+    settings.add(makeSetting(VCSAttribute.VSS_PROJECT_PATH, TEST_INVALID_PROJECT_PATH));
+    settings.add(makeSetting(VCSAttribute.VSS_PASSWORD, TestHelper.VSS_VALID_PASSWORD));
+    settings.add(makeSetting(VCSAttribute.VSS_USER, TEST_VALID_USER));
     final VSSSourceControl vss = makeVSSSourceControlWithAlteredSettings(settings);
     boolean thrown = false;
     try {
@@ -330,11 +330,11 @@ public final class SSTestVSSSourceControl extends AbstractSourceControlTest {
    */
   public void test_checkOutLatestCantProcessInavalidUser() throws Exception {
     final List settings = new ArrayList(11);
-    settings.add(makeSetting(SourceControlSetting.VSS_DATABASE_PATH, TEST_VALID_DATABASE_PATH));
-    settings.add(makeSetting(SourceControlSetting.VSS_EXE_PATH, TEST_VALID_EXE_PATH));
-    settings.add(makeSetting(SourceControlSetting.VSS_PROJECT_PATH, TEST_INVALID_PROJECT_PATH));
-    settings.add(makeSetting(SourceControlSetting.VSS_PASSWORD, TestHelper.VSS_VALID_PASSWORD));
-    settings.add(makeSetting(SourceControlSetting.VSS_USER, TEST_INVALID_USER));
+    settings.add(makeSetting(VCSAttribute.VSS_DATABASE_PATH, TEST_VALID_DATABASE_PATH));
+    settings.add(makeSetting(VCSAttribute.VSS_EXE_PATH, TEST_VALID_EXE_PATH));
+    settings.add(makeSetting(VCSAttribute.VSS_PROJECT_PATH, TEST_INVALID_PROJECT_PATH));
+    settings.add(makeSetting(VCSAttribute.VSS_PASSWORD, TestHelper.VSS_VALID_PASSWORD));
+    settings.add(makeSetting(VCSAttribute.VSS_USER, TEST_INVALID_USER));
     final VSSSourceControl vss = makeVSSSourceControlWithAlteredSettings(settings);
     try {
       vss.checkoutLatest();
@@ -439,11 +439,11 @@ public final class SSTestVSSSourceControl extends AbstractSourceControlTest {
    */
   public void test_canNotAccessWithWrongPassword() throws Exception {
     final List settings = new ArrayList(11);
-    settings.add(makeSetting(SourceControlSetting.VSS_DATABASE_PATH, TEST_VALID_DATABASE_PATH));
-    settings.add(makeSetting(SourceControlSetting.VSS_EXE_PATH, TEST_VALID_EXE_PATH));
-    settings.add(makeSetting(SourceControlSetting.VSS_PROJECT_PATH, TEST_INVALID_PROJECT_PATH));
-    settings.add(makeSetting(SourceControlSetting.VSS_PASSWORD, TestHelper.VSS_INVALID_PASSWORD));
-    settings.add(makeSetting(SourceControlSetting.VSS_USER, TEST_VALID_USER));
+    settings.add(makeSetting(VCSAttribute.VSS_DATABASE_PATH, TEST_VALID_DATABASE_PATH));
+    settings.add(makeSetting(VCSAttribute.VSS_EXE_PATH, TEST_VALID_EXE_PATH));
+    settings.add(makeSetting(VCSAttribute.VSS_PROJECT_PATH, TEST_INVALID_PROJECT_PATH));
+    settings.add(makeSetting(VCSAttribute.VSS_PASSWORD, TestHelper.VSS_INVALID_PASSWORD));
+    settings.add(makeSetting(VCSAttribute.VSS_USER, TEST_VALID_USER));
     final VSSSourceControl vss = makeVSSSourceControlWithAlteredSettings(settings);
     try {
       vss.checkoutLatest();
@@ -472,7 +472,7 @@ public final class SSTestVSSSourceControl extends AbstractSourceControlTest {
 
 
   public void test_getRelativeBuildDir() throws BuildException {
-    TestHelper.setSourceControlProperty(TestHelper.TEST_VSS_VALID_BUILD_ID, SourceControlSetting.VSS_PROJECT_PATH, STR_VSS_ROOT);
+    TestHelper.setSourceControlProperty(TestHelper.TEST_VSS_VALID_BUILD_ID, VCSAttribute.VSS_PROJECT_PATH, STR_VSS_ROOT);
     vss.reloadConfiguration();
     assertEquals("Relative build dire for root project should be empty",
             "", vss.getRelativeBuildDir());
@@ -492,7 +492,7 @@ public final class SSTestVSSSourceControl extends AbstractSourceControlTest {
     final File file = new File(path);
     assertTrue(file.canWrite());
     TestHelper.setSourceControlProperty(TestHelper.TEST_VSS_VALID_BUILD_ID,
-            SourceControlSetting.VSS_READONLY_CHECKOUT, SourceControlSetting.OPTION_CHECKED);
+            VCSAttribute.VSS_READONLY_CHECKOUT, SourceControlSetting.OPTION_CHECKED);
     vss.reloadConfiguration();
     vss.checkoutLatest();
     assertTrue(!file.canWrite());

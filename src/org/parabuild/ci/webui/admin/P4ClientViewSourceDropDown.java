@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.object.SourceControlSetting;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.webui.common.CodeNameDropDown;
 import viewtier.ui.Component;
 import viewtier.ui.DropDownSelectedEvent;
@@ -31,9 +31,9 @@ import java.util.Set;
  */
 final class P4ClientViewSourceDropDown extends CodeNameDropDown {
 
-  public static final byte SOURCE_FIELD = SourceControlSetting.P4_CLIENT_VIEW_SOURCE_VALUE_FIELD;
-  public static final byte SOURCE_DEPOT_PATH = SourceControlSetting.P4_CLIENT_VIEW_SOURCE_VALUE_DEPOT_PATH;
-  public static final byte SOURCE_CLIENT_NAME = SourceControlSetting.P4_CLIENT_VIEW_SOURCE_VALUE_CLIENT_NAME;
+  public static final byte SOURCE_FIELD = VCSAttribute.P4_CLIENT_VIEW_SOURCE_VALUE_FIELD;
+  public static final byte SOURCE_DEPOT_PATH = VCSAttribute.P4_CLIENT_VIEW_SOURCE_VALUE_DEPOT_PATH;
+  public static final byte SOURCE_CLIENT_NAME = VCSAttribute.P4_CLIENT_VIEW_SOURCE_VALUE_CLIENT_NAME;
   private static final long serialVersionUID = -2919065417438126822L;
 
   private final Map showOnSelectMap = new HashMap(3);

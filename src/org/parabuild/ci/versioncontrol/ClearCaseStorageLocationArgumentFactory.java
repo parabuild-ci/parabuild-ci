@@ -13,8 +13,8 @@
  */
 package org.parabuild.ci.versioncontrol;
 
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.util.*;
-import org.parabuild.ci.object.*;
 
 /**
  * This clas is repsonsible for creating a command line argument
@@ -37,11 +37,11 @@ final class ClearCaseStorageLocationArgumentFactory {
 
   public final String makeStorageLocationArgument(final byte storageLocationMode, final String storageLocation) throws BuildException {
     switch (storageLocationMode) {
-      case SourceControlSetting.CLEARCASE_STORAGE_CODE_STGLOC:
+      case VCSAttribute.CLEARCASE_STORAGE_CODE_STGLOC:
         if (StringUtils.isBlank(storageLocation)) return ""; // let ClearCase decide
         return " -stgloc " + normalizeStorageLocation(storageLocation);
         //break;
-      case SourceControlSetting.CLEARCASE_STORAGE_CODE_VWS:
+      case VCSAttribute.CLEARCASE_STORAGE_CODE_VWS:
         if (StringUtils.isBlank(storageLocation)) return ""; // nothing, same as -stgloc auto
         return " -vws " + normalizeStorageLocation(storageLocation);
         //break;

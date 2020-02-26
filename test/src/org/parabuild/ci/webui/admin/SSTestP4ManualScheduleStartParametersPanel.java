@@ -19,6 +19,7 @@ import org.apache.cactus.*;
 import junit.framework.*;
 
 import org.parabuild.ci.TestHelper;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.configuration.*;
 import org.parabuild.ci.object.*;
 
@@ -44,7 +45,7 @@ public class SSTestP4ManualScheduleStartParametersPanel extends ServletTestCase 
   public void test_load() throws Exception {
 
     final ConfigurationManager cm = ConfigurationManager.getInstance();
-    final SourceControlSetting setting = cm.getSourceControlSetting(TEST_BUILD_ID, SourceControlSetting.P4_DEPOT_PATH);
+    final SourceControlSetting setting = cm.getSourceControlSetting(TEST_BUILD_ID, VCSAttribute.P4_DEPOT_PATH);
     setting.setPropertyValue(TEST_DEPOT_PATH);
     cm.saveObject(setting);
     panel.load(TEST_BUILD_ID);

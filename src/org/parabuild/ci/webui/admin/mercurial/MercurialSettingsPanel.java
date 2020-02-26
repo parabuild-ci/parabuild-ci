@@ -13,10 +13,10 @@
  */
 package org.parabuild.ci.webui.admin.mercurial;
 
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.object.BuildConfig;
-import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.remote.AgentEnvironment;
 import org.parabuild.ci.remote.NoLiveAgentsException;
 import org.parabuild.ci.webui.admin.AbstractSourceControlPanel;
@@ -61,9 +61,9 @@ public final class MercurialSettingsPanel extends AbstractSourceControlPanel {
     gridIterator.addPair(new CommonFieldLabel(CAPTION_BRANCH), flBranch);
 
     // init property to input map
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.MERCURIAL_EXE_PATH, flPathToExe);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.MERCURIAL_URL, flURL);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.MERCURIAL_BRANCH, flBranch);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.MERCURIAL_EXE_PATH, flPathToExe);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.MERCURIAL_URL, flURL);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.MERCURIAL_BRANCH, flBranch);
 
     // add footer
     addCommonAttributes();

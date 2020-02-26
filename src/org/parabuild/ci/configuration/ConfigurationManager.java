@@ -21,6 +21,7 @@ import net.sf.hibernate.SessionFactory;
 import net.sf.hibernate.type.Type;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.error.Error;
 import org.parabuild.ci.error.ErrorManagerFactory;
@@ -1615,7 +1616,7 @@ public final class ConfigurationManager implements Serializable {
 
 
   private static void saveSourceControlSetting(final Session session, final int buildID, final SourceControlSetting scp) throws HibernateException {
-    if (scp.getPropertyName().equals(SourceControlSetting.P4_DEPOT_PATH)) {
+    if (scp.getPropertyName().equals(VCSAttribute.P4_DEPOT_PATH)) {
       // split
       final List parts = StringUtils.split(scp.getPropertyValue(), 4095);
       if (LOG.isDebugEnabled()) {
@@ -1625,7 +1626,7 @@ public final class ConfigurationManager implements Serializable {
       if (LOG.isDebugEnabled()) {
         LOG.debug("delete parts ");
       }
-      final int deleted = session.delete("select scs from SourceControlSetting scs where scs.buildID = ? and scs.propertyName like '" + SourceControlSetting.P4_DEPOT_PATH + "%'", new Object[]{new Integer(buildID)}, new Type[]{Hibernate.INTEGER});
+      final int deleted = session.delete("select scs from SourceControlSetting scs where scs.buildID = ? and scs.propertyName like '" + VCSAttribute.P4_DEPOT_PATH + "%'", new Object[]{new Integer(buildID)}, new Type[]{Hibernate.INTEGER});
       session.flush();
       if (LOG.isDebugEnabled()) {
         LOG.debug("deleted: " + deleted);
@@ -1638,9 +1639,9 @@ public final class ConfigurationManager implements Serializable {
         //if (log.isDebugEnabled()) log.debug("i = " + i);
         final String partName;
         if (i == 0) {
-          partName = SourceControlSetting.P4_DEPOT_PATH;
+          partName = VCSAttribute.P4_DEPOT_PATH;
         } else {
-          partName = SourceControlSetting.P4_DEPOT_PATH_PART_PREFIX + '.' + StringUtils.formatWithTrailingZeroes(i, 4);
+          partName = VCSAttribute.P4_DEPOT_PATH_PART_PREFIX + '.' + StringUtils.formatWithTrailingZeroes(i, 4);
         }
         //if (log.isDebugEnabled()) log.debug("saving partSCP + " + partSCP);
         session.saveOrUpdateCopy(new SourceControlSetting(buildID, partName, (String) parts.get(i)));
@@ -1679,7 +1680,7 @@ public final class ConfigurationManager implements Serializable {
             if (map.containsKey(scs.getPropertyName())) {
               continue; // we use our own
             }
-            if (scs.getPropertyName().equals(SourceControlSetting.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE)) {
+            if (scs.getPropertyName().equals(VCSAttribute.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE)) {
               continue; // Paren't custom checkout dir cannot be effective
             }
             result.add(scs);
@@ -1709,7 +1710,7 @@ public final class ConfigurationManager implements Serializable {
         final List list = q.list();
         for (final Iterator i = list.iterator(); i.hasNext(); ) {
           final SourceControlSetting scs = (SourceControlSetting) i.next();
-          if (scs.getPropertyName().startsWith(SourceControlSetting.P4_DEPOT_PATH)) {
+          if (scs.getPropertyName().startsWith(VCSAttribute.P4_DEPOT_PATH)) {
             perforceDepotPathParts.add(scs);
             session.evict(scs);
             i.remove();
@@ -1753,10 +1754,10 @@ public final class ConfigurationManager implements Serializable {
    *         setting name
    */
   public SourceControlSetting getSourceControlSetting(final int buildID, final String settingName) {
-    if (settingName.equals(SourceControlSetting.P4_DEPOT_PATH)) {
+    if (settingName.equals(VCSAttribute.P4_DEPOT_PATH)) {
       return (SourceControlSetting) runInHibernate(new TransactionCallback() {
         public Object runInTransaction() throws Exception {
-          final Query q = session.createQuery("from SourceControlSetting as vcs where vcs.buildID = ? and vcs.propertyName  like '" + SourceControlSetting.P4_DEPOT_PATH + "%'");
+          final Query q = session.createQuery("from SourceControlSetting as vcs where vcs.buildID = ? and vcs.propertyName  like '" + VCSAttribute.P4_DEPOT_PATH + "%'");
           q.setInteger(0, buildID);
           q.setCacheable(true);
 
@@ -1766,7 +1767,7 @@ public final class ConfigurationManager implements Serializable {
           // execute query
           final List list = q.list();
           for (final Iterator i = list.iterator(); i.hasNext(); ) {
-            final SourceControlSetting scs = (SourceControlSetting) i.next();
+            final VCSAttribute scs = (VCSAttribute) i.next();
             parts.add(scs);
             session.evict(scs);
             i.remove();
@@ -3221,7 +3222,7 @@ public final class ConfigurationManager implements Serializable {
                 " and scs.propertyValue = ? " +
                 " and scs.buildID = isht.buildID " +
                 " and isht.type = ?");
-        q.setString(0, SourceControlSetting.REFERENCE_BUILD_ID);
+        q.setString(0, VCSAttribute.REFERENCE_BUILD_ID);
         q.setString(1, Integer.toString(buildID));
         q.setByte(2, trackerType);
         q.setCacheable(true);
@@ -3493,7 +3494,7 @@ public final class ConfigurationManager implements Serializable {
    *         build.
    */
   public List getReferencingBuildConfigs(final int buildID) {
-    return findBuildConfigsByVersionControlSettingValue(SourceControlSetting.REFERENCE_BUILD_ID, Integer.toString(buildID));
+    return findBuildConfigsByVersionControlSettingValue(VCSAttribute.REFERENCE_BUILD_ID, Integer.toString(buildID));
   }
 
 
@@ -4071,7 +4072,7 @@ public final class ConfigurationManager implements Serializable {
         final int originalBuildConfigID = originalBuildConfig.getBuildID();
         BuildConfig effectiveBuildConfig = originalBuildConfig;
         while (effectiveBuildConfig.getSourceControl() == VersionControlSystem.SCM_REFERENCE) {
-          final SourceControlSetting setting = getSourceControlSetting(effectiveBuildConfig.getBuildID(), SourceControlSetting.REFERENCE_BUILD_ID);
+          final SourceControlSetting setting = getSourceControlSetting(effectiveBuildConfig.getBuildID(), VCSAttribute.REFERENCE_BUILD_ID);
           effectiveBuildConfig = getBuildConfiguration(setting.getPropertyValueAsInt());
           if (effectiveBuildConfig == null) {
             // see build #674 - we provide more verbose information - normally it should not happen
@@ -4108,7 +4109,7 @@ public final class ConfigurationManager implements Serializable {
         final int originalBuildConfigID = referringBuildConfig.getBuildID();
         BuildConfig nextBuildConfig = referredBuildConfig;
         while (nextBuildConfig.getSourceControl() == VersionControlSystem.SCM_REFERENCE) {
-          final SourceControlSetting setting = getSourceControlSetting(nextBuildConfig.getBuildID(), SourceControlSetting.REFERENCE_BUILD_ID);
+          final SourceControlSetting setting = getSourceControlSetting(nextBuildConfig.getBuildID(), VCSAttribute.REFERENCE_BUILD_ID);
           nextBuildConfig = getBuildConfiguration(setting.getPropertyValueAsInt());
           if (nextBuildConfig.getBuildID() == originalBuildConfigID) {
             return Boolean.TRUE;
@@ -4333,8 +4334,8 @@ public final class ConfigurationManager implements Serializable {
   }
 
 
-  public SourceControlSetting save(final SourceControlSetting scs) {
-    return (SourceControlSetting) runInHibernate(new TransactionCallback() {
+  public VCSAttribute save(final SourceControlSetting scs) {
+    return (VCSAttribute) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         saveSourceControlSetting(session, scs.getBuildID(), scs);
         return scs;
@@ -4743,7 +4744,7 @@ public final class ConfigurationManager implements Serializable {
                 "   and scs.propertyValue = ? "
         ).setCacheable(true)
                 .setByte(0, BuildConfig.SCHEDULE_TYPE_PARALLEL)
-                .setString(1, SourceControlSetting.REFERENCE_BUILD_ID)
+                .setString(1, VCSAttribute.REFERENCE_BUILD_ID)
                 .setString(2, Integer.toString(activeBuildID));
         return q.list();
       }
@@ -5040,7 +5041,7 @@ public final class ConfigurationManager implements Serializable {
         final BuildConfig config = getBuildConfiguration(activeBuildID);
         final int buildID;
         if (config.getScheduleType() == BuildConfig.SCHEDULE_TYPE_PARALLEL) {
-          buildID = getSourceControlSettingValue(activeBuildID, SourceControlSetting.REFERENCE_BUILD_ID,
+          buildID = getSourceControlSettingValue(activeBuildID, VCSAttribute.REFERENCE_BUILD_ID,
                   BuildConfig.UNSAVED_ID);
         } else {
           buildID = activeBuildID;

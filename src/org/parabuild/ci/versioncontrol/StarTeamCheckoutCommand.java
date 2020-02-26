@@ -14,8 +14,8 @@
 package org.parabuild.ci.versioncontrol;
 
 import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.remote.Agent;
 
 import java.io.IOException;
@@ -141,11 +141,11 @@ ate" to automatically find the nearest Cache Agent on the network.
    *         StarTeam command line.
    */
   private static String eolToOption(final StarTeamCheckoutCommandParameters parameters) {
-    if (parameters.getEolConversion() == SourceControlSetting.STARTEAM_EOL_CR) return "cr";
-    if (parameters.getEolConversion() == SourceControlSetting.STARTEAM_EOL_CRLF) return "crlf";
-    if (parameters.getEolConversion() == SourceControlSetting.STARTEAM_EOL_LF) return "lf";
-    if (parameters.getEolConversion() == SourceControlSetting.STARTEAM_EOL_OFF) return "off";
-    if (parameters.getEolConversion() == SourceControlSetting.STARTEAM_EOL_ON) return "on";
+    if (parameters.getEolConversion() == VCSAttribute.STARTEAM_EOL_CR) return "cr";
+    if (parameters.getEolConversion() == VCSAttribute.STARTEAM_EOL_CRLF) return "crlf";
+    if (parameters.getEolConversion() == VCSAttribute.STARTEAM_EOL_LF) return "lf";
+    if (parameters.getEolConversion() == VCSAttribute.STARTEAM_EOL_OFF) return "off";
+    if (parameters.getEolConversion() == VCSAttribute.STARTEAM_EOL_ON) return "on";
     return "on";
   }
 

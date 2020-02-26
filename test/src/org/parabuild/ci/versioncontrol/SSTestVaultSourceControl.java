@@ -22,6 +22,7 @@ import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.TestHelper;
 
 import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.util.BuildException;
 import org.parabuild.ci.util.CommandStoppedException;
 import org.parabuild.ci.util.IoUtils;
@@ -85,7 +86,7 @@ public class SSTestVaultSourceControl extends AbstractSourceControlTest {
 
   public void test_checkOutLatestBranch() throws Exception {
     // alter
-    final SourceControlSetting branchProperty = cm.getSourceControlSetting(getTestBuildID(), SourceControlSetting.VAULT_REPOSITORY_PATH);
+    final SourceControlSetting branchProperty = cm.getSourceControlSetting(getTestBuildID(), VCSAttribute.VAULT_REPOSITORY_PATH);
     branchProperty.setPropertyValue("$/test_branch");
     cm.saveObject(branchProperty);
     // run
@@ -108,7 +109,7 @@ public class SSTestVaultSourceControl extends AbstractSourceControlTest {
    */
   public void test_getChangesSinceInBranch() throws Exception {
     // alter
-    TestHelper.setSourceControlProperty(vault.getBuildID(), SourceControlSetting.VAULT_REPOSITORY_PATH, "$/test_branch");
+    TestHelper.setSourceControlProperty(vault.getBuildID(), VCSAttribute.VAULT_REPOSITORY_PATH, "$/test_branch");
 
     // reload
     vault.reloadConfiguration();
@@ -125,7 +126,7 @@ public class SSTestVaultSourceControl extends AbstractSourceControlTest {
     final String oldRelativeBuildDir = TestHelper.assertCurrentBuildPathExists(vault, agent);
 
     // update property
-    TestHelper.setSourceControlProperty(vault.getBuildID(), SourceControlSetting.VAULT_REPOSITORY_PATH, VAULT_ROOT + STRING_SOURCE_LINE_TWO);
+    TestHelper.setSourceControlProperty(vault.getBuildID(), VCSAttribute.VAULT_REPOSITORY_PATH, VAULT_ROOT + STRING_SOURCE_LINE_TWO);
     vault.reloadConfiguration();
 
     // call sync
@@ -140,7 +141,7 @@ public class SSTestVaultSourceControl extends AbstractSourceControlTest {
     assertTrue(agent.emptyLogDir());
     // alter
     final String multilineSourceLine = VAULT_ROOT + STRING_SOURCE_LINE_ONE + '\n' + VAULT_ROOT + STRING_SOURCE_LINE_TWO;
-    TestHelper.setSourceControlProperty(vault.getBuildID(), SourceControlSetting.VAULT_REPOSITORY_PATH, multilineSourceLine);
+    TestHelper.setSourceControlProperty(vault.getBuildID(), VCSAttribute.VAULT_REPOSITORY_PATH, multilineSourceLine);
 
     // sync w/reload
     vault.reloadConfiguration();
@@ -164,7 +165,7 @@ public class SSTestVaultSourceControl extends AbstractSourceControlTest {
    */
   public void test_checkOutLatestCantProcessUnexistingSourceLine() throws Exception {
     // alter
-    TestHelper.setSourceControlProperty(vault.getBuildID(), SourceControlSetting.VAULT_REPOSITORY_PATH, VAULT_ROOT + "test/never/existed");
+    TestHelper.setSourceControlProperty(vault.getBuildID(), VCSAttribute.VAULT_REPOSITORY_PATH, VAULT_ROOT + "test/never/existed");
     vault.reloadConfiguration();
 
     // test
@@ -184,7 +185,7 @@ public class SSTestVaultSourceControl extends AbstractSourceControlTest {
    */
   public void test_checkOutLatestCantProcessInavalidUser() throws Exception {
     // alter
-    TestHelper.setSourceControlProperty(vault.getBuildID(), SourceControlSetting.VAULT_USER, "never_existed_user");
+    TestHelper.setSourceControlProperty(vault.getBuildID(), VCSAttribute.VAULT_USER, "never_existed_user");
     vault.reloadConfiguration();
 
     // test
@@ -232,7 +233,7 @@ public class SSTestVaultSourceControl extends AbstractSourceControlTest {
     TestHelper.assertCheckoutDirExistsAndEmpty(agent);
 
     // alter
-    TestHelper.setSourceControlProperty(vault.getBuildID(), SourceControlSetting.VAULT_REPOSITORY_PATH, VAULT_ROOT + STRING_SOURCE_LINE_ONE);
+    TestHelper.setSourceControlProperty(vault.getBuildID(), VCSAttribute.VAULT_REPOSITORY_PATH, VAULT_ROOT + STRING_SOURCE_LINE_ONE);
     vault.reloadConfiguration();
 
     // we expect that there is change list in the test/config/dataset.xml
@@ -240,7 +241,7 @@ public class SSTestVaultSourceControl extends AbstractSourceControlTest {
     final String oldRelativeBuildDir = TestHelper.assertCurrentBuildPathExists(vault, agent);
 
     // update property
-    TestHelper.setSourceControlProperty(vault.getBuildID(), SourceControlSetting.VAULT_REPOSITORY_PATH, VAULT_ROOT + STRING_SOURCE_LINE_TWO);
+    TestHelper.setSourceControlProperty(vault.getBuildID(), VCSAttribute.VAULT_REPOSITORY_PATH, VAULT_ROOT + STRING_SOURCE_LINE_TWO);
     vault.reloadConfiguration();
 
     // NOTE: vimeshev - 03/06/2005 - this changelist id translates
@@ -260,7 +261,7 @@ public class SSTestVaultSourceControl extends AbstractSourceControlTest {
     TestHelper.assertCheckoutDirExistsAndEmpty(agent);
 
     // alter
-    TestHelper.setSourceControlProperty(vault.getBuildID(), SourceControlSetting.VAULT_REPOSITORY_PATH, VAULT_ROOT + "test"); // home of both
+    TestHelper.setSourceControlProperty(vault.getBuildID(), VCSAttribute.VAULT_REPOSITORY_PATH, VAULT_ROOT + "test"); // home of both
     vault.reloadConfiguration();
 
     vault.syncToChangeList(20); // this one has first and send path
@@ -294,7 +295,7 @@ public class SSTestVaultSourceControl extends AbstractSourceControlTest {
    */
   public void test_canNotAccessWithWrongPassword() throws Exception {
     // alter
-    TestHelper.setSourceControlProperty(vault.getBuildID(), SourceControlSetting.VAULT_PASSWORD, SecurityManager.encryptPassword("wrong_passord"));
+    TestHelper.setSourceControlProperty(vault.getBuildID(), VCSAttribute.VAULT_PASSWORD, SecurityManager.encryptPassword("wrong_passord"));
     vault.reloadConfiguration();
 
     // test

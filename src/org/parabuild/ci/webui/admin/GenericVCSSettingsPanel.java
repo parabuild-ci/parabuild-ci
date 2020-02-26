@@ -16,7 +16,7 @@ package org.parabuild.ci.webui.admin;
 import java.util.*;
 import org.apache.commons.logging.*;
 
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.webui.common.*;
 import org.parabuild.ci.versioncontrol.FileSystemSourceControl;
 import viewtier.ui.*;
@@ -83,11 +83,11 @@ public final class GenericVCSSettingsPanel extends AbstractCommandVCSSettingsPan
 
   protected void bindHeaderFields() {
     if (log.isDebugEnabled()) log.debug("binding header");
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.GENERIC_VCS_GET_CHANGES_COMMAND, flGetChangesCommand);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.COMMAND_VCS_COLUMN_DIVIDER, flColumnDivider);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.COMMAND_VCS_END_OF_RECORD, flEndOfRecord);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.COMMAND_VCS_CHANGE_DATE_FORMAT, flChangeDateFormat);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.COMMAND_VCS_CHANGE_WINDOW, flChangeWindow);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.GENERIC_VCS_GET_CHANGES_COMMAND, flGetChangesCommand);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.COMMAND_VCS_COLUMN_DIVIDER, flColumnDivider);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.COMMAND_VCS_END_OF_RECORD, flEndOfRecord);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.COMMAND_VCS_CHANGE_DATE_FORMAT, flChangeDateFormat);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.COMMAND_VCS_CHANGE_WINDOW, flChangeWindow);
   }
 
 

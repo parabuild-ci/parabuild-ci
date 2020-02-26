@@ -19,6 +19,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.ServersideTestCase;
 import org.parabuild.ci.TestHelper;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.configuration.BuildConfigCloner;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.error.ErrorManager;
@@ -116,12 +117,12 @@ public class SSTestBuildConfigurationCloner extends ServersideTestCase {
   public void test_createBuildRunConfigTakesInAccountOwerwrites() throws Exception {
     // prepare
     final List overwriteList = new ArrayList(11);
-    overwriteList.add(new SourceControlSettingVO(SourceControlSetting.CVS_BRANCH_NAME, TEST_SOME_NEW_BRANCH));
+    overwriteList.add(new SourceControlSettingVO(VCSAttribute.CVS_BRANCH_NAME, TEST_SOME_NEW_BRANCH));
     // run
     final BuildConfigCloner clonerWithOverwrites = new BuildConfigCloner(overwriteList);
     final BuildConfig newBuildConfig = clonerWithOverwrites.createBuildRunConfig(TEST_BUILD_ID_TO_CLONE, null);
     // assert
-    final SourceControlSetting sourceControlSetting = cm.getSourceControlSetting(newBuildConfig.getBuildID(), SourceControlSetting.CVS_BRANCH_NAME);
+    final SourceControlSetting sourceControlSetting = cm.getSourceControlSetting(newBuildConfig.getBuildID(), VCSAttribute.CVS_BRANCH_NAME);
     assertEquals(TEST_SOME_NEW_BRANCH, sourceControlSetting.getPropertyValue());
   }
 
@@ -135,7 +136,7 @@ public class SSTestBuildConfigurationCloner extends ServersideTestCase {
     // set big p4 setting
     final int testP4ValidBuildId = TestHelper.TEST_P4_VALID_BUILD_ID;
     final Map effectiveSourceControlSettingsAsMap = cm.getEffectiveSourceControlSettingsAsMap(testP4ValidBuildId);
-    final SourceControlSetting scs = (SourceControlSetting) effectiveSourceControlSettingsAsMap.get(SourceControlSetting.P4_DEPOT_PATH);
+    final SourceControlSetting scs = (SourceControlSetting) effectiveSourceControlSettingsAsMap.get(VCSAttribute.P4_DEPOT_PATH);
     final StringBuffer sb = new StringBuffer(10000);
     for (int i = 0; i < 1000; i++) sb.append("0123456789");
     scs.setPropertyValue(sb.toString());
@@ -149,7 +150,7 @@ public class SSTestBuildConfigurationCloner extends ServersideTestCase {
 
     // assert got saved correctly
     final Map newEffectiveSourceControlSettingsAsMap = cm.getEffectiveSourceControlSettingsAsMap(newBuildConfig.getBuildID());
-    final SourceControlSetting newScs = (SourceControlSetting) newEffectiveSourceControlSettingsAsMap.get(SourceControlSetting.P4_DEPOT_PATH);
+    final SourceControlSetting newScs = (SourceControlSetting) newEffectiveSourceControlSettingsAsMap.get(VCSAttribute.P4_DEPOT_PATH);
     assertEquals(sb.toString(), newScs.getPropertyValue());
   }
 
@@ -181,12 +182,12 @@ public class SSTestBuildConfigurationCloner extends ServersideTestCase {
 
   public void test_createReferenceBuildRunConfig() throws Exception {
     final BuildConfig newBuildConfig = cloner.createBuildRunConfig(TEST_REFERENCE_BUILD_ID_TO_CLONE, null);
-    final SourceControlSetting sourceControlSetting = cm.getSourceControlSetting(newBuildConfig.getBuildID(), SourceControlSetting.REFERENCE_BUILD_ID);
+    final SourceControlSetting sourceControlSetting = cm.getSourceControlSetting(newBuildConfig.getBuildID(), VCSAttribute.REFERENCE_BUILD_ID);
     assertNotNull(sourceControlSetting);
     final int backingCleanBuildRunConfigID = sourceControlSetting.getPropertyValueAsInt();
     // get current
     final int activeBackingBuildConfigID = cm.getSourceControlSetting(TEST_REFERENCE_BUILD_ID_TO_CLONE,
-            SourceControlSetting.REFERENCE_BUILD_ID).getPropertyValueAsInt();
+            VCSAttribute.REFERENCE_BUILD_ID).getPropertyValueAsInt();
     // assert
     assertTrue(backingCleanBuildRunConfigID != activeBackingBuildConfigID);
 
@@ -205,7 +206,7 @@ public class SSTestBuildConfigurationCloner extends ServersideTestCase {
       newBuildConfig = cloner.createActiveBuildConfig(TEST_REFERENCE_BUILD_ID_TO_CLONE);
       newBuildID = newBuildConfig.getBuildID();
       final int backingActiveBuildConfigID = cm.getSourceControlSetting(newBuildID,
-              SourceControlSetting.REFERENCE_BUILD_ID).getPropertyValueAsInt();
+              VCSAttribute.REFERENCE_BUILD_ID).getPropertyValueAsInt();
       assertNotNull(cm.getActiveBuildConfig(backingActiveBuildConfigID));
     } finally {
       // cleanup - setUp will remove all the builds but this will
@@ -221,11 +222,11 @@ public class SSTestBuildConfigurationCloner extends ServersideTestCase {
     BuildConfig newBuildConfig = null;
     try {
       final int testClearcaseBuildId = TestHelper.TEST_CLEARCASE_VALID_BUILD_ID;
-      cm.save(new SourceControlSetting(testClearcaseBuildId, SourceControlSetting.CLEARCASE_VIEW_STORAGE_LOCATION_CODE, SourceControlSetting.CLEARCASE_STORAGE_CODE_VWS));
-      cm.save(new SourceControlSetting(testClearcaseBuildId, SourceControlSetting.CLEARCASE_VIEW_STORAGE_LOCATION, "test_view_storage_path"));
+      cm.save(new SourceControlSetting(testClearcaseBuildId, VCSAttribute.CLEARCASE_VIEW_STORAGE_LOCATION_CODE, VCSAttribute.CLEARCASE_STORAGE_CODE_VWS));
+      cm.save(new SourceControlSetting(testClearcaseBuildId, VCSAttribute.CLEARCASE_VIEW_STORAGE_LOCATION, "test_view_storage_path"));
       newBuildConfig = cloner.createActiveBuildConfig(testClearcaseBuildId);
-      assertNull(cm.getSourceControlSetting(newBuildConfig.getActiveBuildID(), SourceControlSetting.CLEARCASE_VIEW_STORAGE_LOCATION_CODE));
-      assertNull(cm.getSourceControlSetting(newBuildConfig.getActiveBuildID(), SourceControlSetting.CLEARCASE_VIEW_STORAGE_LOCATION));
+      assertNull(cm.getSourceControlSetting(newBuildConfig.getActiveBuildID(), VCSAttribute.CLEARCASE_VIEW_STORAGE_LOCATION_CODE));
+      assertNull(cm.getSourceControlSetting(newBuildConfig.getActiveBuildID(), VCSAttribute.CLEARCASE_VIEW_STORAGE_LOCATION));
     } finally {
       if (newBuildConfig != null) {
         buildListService.removeBuild(newBuildConfig.getBuildID());
@@ -238,11 +239,11 @@ public class SSTestBuildConfigurationCloner extends ServersideTestCase {
     BuildConfig newBuildConfig = null;
     try {
       final int testClearcaseBuildId = TestHelper.TEST_CLEARCASE_VALID_BUILD_ID;
-      cm.save(new SourceControlSetting(testClearcaseBuildId, SourceControlSetting.CLEARCASE_VIEW_STORAGE_LOCATION_CODE, SourceControlSetting.CLEARCASE_STORAGE_CODE_STGLOC));
-      cm.save(new SourceControlSetting(testClearcaseBuildId, SourceControlSetting.CLEARCASE_VIEW_STORAGE_LOCATION, "test_view_storage_name"));
+      cm.save(new SourceControlSetting(testClearcaseBuildId, VCSAttribute.CLEARCASE_VIEW_STORAGE_LOCATION_CODE, VCSAttribute.CLEARCASE_STORAGE_CODE_STGLOC));
+      cm.save(new SourceControlSetting(testClearcaseBuildId, VCSAttribute.CLEARCASE_VIEW_STORAGE_LOCATION, "test_view_storage_name"));
       newBuildConfig = cloner.createActiveBuildConfig(testClearcaseBuildId);
-      assertNotNull(cm.getSourceControlSetting(newBuildConfig.getActiveBuildID(), SourceControlSetting.CLEARCASE_VIEW_STORAGE_LOCATION_CODE));
-      assertNotNull(cm.getSourceControlSetting(newBuildConfig.getActiveBuildID(), SourceControlSetting.CLEARCASE_VIEW_STORAGE_LOCATION));
+      assertNotNull(cm.getSourceControlSetting(newBuildConfig.getActiveBuildID(), VCSAttribute.CLEARCASE_VIEW_STORAGE_LOCATION_CODE));
+      assertNotNull(cm.getSourceControlSetting(newBuildConfig.getActiveBuildID(), VCSAttribute.CLEARCASE_VIEW_STORAGE_LOCATION));
     } finally {
       if (newBuildConfig != null) {
         buildListService.removeBuild(newBuildConfig.getBuildID());
@@ -254,26 +255,26 @@ public class SSTestBuildConfigurationCloner extends ServersideTestCase {
   public void test_createBuildRunConfigClearCaseVWSStorageIsNotCopied() throws Exception {
     BuildConfig newBuildConfig = null;
     final int testClearcaseBuildId = TestHelper.TEST_CLEARCASE_VALID_BUILD_ID;
-    cm.save(new SourceControlSetting(testClearcaseBuildId, SourceControlSetting.CLEARCASE_VIEW_STORAGE_LOCATION_CODE, SourceControlSetting.CLEARCASE_STORAGE_CODE_VWS));
-    cm.save(new SourceControlSetting(testClearcaseBuildId, SourceControlSetting.CLEARCASE_VIEW_STORAGE_LOCATION, "test_view_storage_path"));
+    cm.save(new SourceControlSetting(testClearcaseBuildId, VCSAttribute.CLEARCASE_VIEW_STORAGE_LOCATION_CODE, VCSAttribute.CLEARCASE_STORAGE_CODE_VWS));
+    cm.save(new SourceControlSetting(testClearcaseBuildId, VCSAttribute.CLEARCASE_VIEW_STORAGE_LOCATION, "test_view_storage_path"));
 
     newBuildConfig = cloner.createBuildRunConfig(testClearcaseBuildId, null);
 
-    assertNotNull(cm.getSourceControlSetting(newBuildConfig.getActiveBuildID(), SourceControlSetting.CLEARCASE_VIEW_STORAGE_LOCATION_CODE));
-    assertNotNull(cm.getSourceControlSetting(newBuildConfig.getActiveBuildID(), SourceControlSetting.CLEARCASE_VIEW_STORAGE_LOCATION));
+    assertNotNull(cm.getSourceControlSetting(newBuildConfig.getActiveBuildID(), VCSAttribute.CLEARCASE_VIEW_STORAGE_LOCATION_CODE));
+    assertNotNull(cm.getSourceControlSetting(newBuildConfig.getActiveBuildID(), VCSAttribute.CLEARCASE_VIEW_STORAGE_LOCATION));
   }
 
 
   public void test_createBuildRunConfigClearCaseStglocStorageIsCopied() throws Exception {
     BuildConfig newBuildConfig = null;
     final int testClearcaseBuildId = TestHelper.TEST_CLEARCASE_VALID_BUILD_ID;
-    cm.save(new SourceControlSetting(testClearcaseBuildId, SourceControlSetting.CLEARCASE_VIEW_STORAGE_LOCATION_CODE, SourceControlSetting.CLEARCASE_STORAGE_CODE_STGLOC));
-    cm.save(new SourceControlSetting(testClearcaseBuildId, SourceControlSetting.CLEARCASE_VIEW_STORAGE_LOCATION, "test_view_storage_name"));
+    cm.save(new SourceControlSetting(testClearcaseBuildId, VCSAttribute.CLEARCASE_VIEW_STORAGE_LOCATION_CODE, VCSAttribute.CLEARCASE_STORAGE_CODE_STGLOC));
+    cm.save(new SourceControlSetting(testClearcaseBuildId, VCSAttribute.CLEARCASE_VIEW_STORAGE_LOCATION, "test_view_storage_name"));
 
     newBuildConfig = cloner.createBuildRunConfig(testClearcaseBuildId, null);
 
-    assertNotNull(cm.getSourceControlSetting(newBuildConfig.getActiveBuildID(), SourceControlSetting.CLEARCASE_VIEW_STORAGE_LOCATION_CODE));
-    assertNotNull(cm.getSourceControlSetting(newBuildConfig.getActiveBuildID(), SourceControlSetting.CLEARCASE_VIEW_STORAGE_LOCATION));
+    assertNotNull(cm.getSourceControlSetting(newBuildConfig.getActiveBuildID(), VCSAttribute.CLEARCASE_VIEW_STORAGE_LOCATION_CODE));
+    assertNotNull(cm.getSourceControlSetting(newBuildConfig.getActiveBuildID(), VCSAttribute.CLEARCASE_VIEW_STORAGE_LOCATION));
   }
 
 

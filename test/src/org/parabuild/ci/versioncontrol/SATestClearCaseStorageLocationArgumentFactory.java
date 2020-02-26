@@ -15,7 +15,7 @@ package org.parabuild.ci.versioncontrol;
 
 import junit.framework.*;
 
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.common.VCSAttribute;
 
 /**
  *
@@ -33,21 +33,21 @@ public class SATestClearCaseStorageLocationArgumentFactory extends TestCase {
 
 
   public void test_generatesEmptyIfNoCode() throws Exception {
-    assertEquals("", new ClearCaseStorageLocationArgumentFactory(TEST_ACTIVE_BUILD_ID, false).makeStorageLocationArgument(SourceControlSetting.CLEARCASE_STORAGE_CODE_AUTOMATIC, ""));
-    assertEquals("", new ClearCaseStorageLocationArgumentFactory(TEST_ACTIVE_BUILD_ID, false).makeStorageLocationArgument(SourceControlSetting.CLEARCASE_STORAGE_CODE_STGLOC, ""));
-    assertEquals("", new ClearCaseStorageLocationArgumentFactory(TEST_ACTIVE_BUILD_ID, false).makeStorageLocationArgument(SourceControlSetting.CLEARCASE_STORAGE_CODE_VWS, ""));
+    assertEquals("", new ClearCaseStorageLocationArgumentFactory(TEST_ACTIVE_BUILD_ID, false).makeStorageLocationArgument(VCSAttribute.CLEARCASE_STORAGE_CODE_AUTOMATIC, ""));
+    assertEquals("", new ClearCaseStorageLocationArgumentFactory(TEST_ACTIVE_BUILD_ID, false).makeStorageLocationArgument(VCSAttribute.CLEARCASE_STORAGE_CODE_STGLOC, ""));
+    assertEquals("", new ClearCaseStorageLocationArgumentFactory(TEST_ACTIVE_BUILD_ID, false).makeStorageLocationArgument(VCSAttribute.CLEARCASE_STORAGE_CODE_VWS, ""));
   }
 
 
   public void test_generatesStgloc() throws Exception {
-    assertEquals(" -stgloc " + STORAGE_LOCATION, new ClearCaseStorageLocationArgumentFactory(TEST_ACTIVE_BUILD_ID, false).makeStorageLocationArgument(SourceControlSetting.CLEARCASE_STORAGE_CODE_STGLOC, STORAGE_LOCATION));
-    assertEquals(" -stgloc \"" +STORAGE_LOCATION + '\"', new ClearCaseStorageLocationArgumentFactory(TEST_ACTIVE_BUILD_ID, true).makeStorageLocationArgument(SourceControlSetting.CLEARCASE_STORAGE_CODE_STGLOC, STORAGE_LOCATION));
+    assertEquals(" -stgloc " + STORAGE_LOCATION, new ClearCaseStorageLocationArgumentFactory(TEST_ACTIVE_BUILD_ID, false).makeStorageLocationArgument(VCSAttribute.CLEARCASE_STORAGE_CODE_STGLOC, STORAGE_LOCATION));
+    assertEquals(" -stgloc \"" +STORAGE_LOCATION + '\"', new ClearCaseStorageLocationArgumentFactory(TEST_ACTIVE_BUILD_ID, true).makeStorageLocationArgument(VCSAttribute.CLEARCASE_STORAGE_CODE_STGLOC, STORAGE_LOCATION));
   }
 
 
   public void test_generatesVws() throws Exception {
-    assertEquals(" -vws " + STORAGE_PATH, new ClearCaseStorageLocationArgumentFactory(TEST_ACTIVE_BUILD_ID, false).makeStorageLocationArgument(SourceControlSetting.CLEARCASE_STORAGE_CODE_VWS, STORAGE_PATH));
-    assertEquals(" -vws \"" + STORAGE_PATH + '\"', new ClearCaseStorageLocationArgumentFactory(TEST_ACTIVE_BUILD_ID, true).makeStorageLocationArgument(SourceControlSetting.CLEARCASE_STORAGE_CODE_VWS, STORAGE_PATH));
+    assertEquals(" -vws " + STORAGE_PATH, new ClearCaseStorageLocationArgumentFactory(TEST_ACTIVE_BUILD_ID, false).makeStorageLocationArgument(VCSAttribute.CLEARCASE_STORAGE_CODE_VWS, STORAGE_PATH));
+    assertEquals(" -vws \"" + STORAGE_PATH + '\"', new ClearCaseStorageLocationArgumentFactory(TEST_ACTIVE_BUILD_ID, true).makeStorageLocationArgument(VCSAttribute.CLEARCASE_STORAGE_CODE_VWS, STORAGE_PATH));
   }
 
 

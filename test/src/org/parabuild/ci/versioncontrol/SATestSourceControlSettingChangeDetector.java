@@ -17,12 +17,13 @@ import java.util.*;
 
 import junit.framework.*;
 
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.object.*;
 
 
 public class SATestSourceControlSettingChangeDetector extends TestCase {
 
-  private static final String TEST_NAME = SourceControlSetting.CVS_REPOSITORY_PATH;
+  private static final String TEST_NAME = VCSAttribute.CVS_REPOSITORY_PATH;
   private static final String TEST_VALUE = "test";
 
   private SourceControlSettingChangeDetector changeDetector = null;

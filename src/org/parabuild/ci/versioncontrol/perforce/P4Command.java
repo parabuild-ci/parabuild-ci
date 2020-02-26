@@ -16,11 +16,11 @@ package org.parabuild.ci.versioncontrol.perforce;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.util.ArgumentValidator;
 import org.parabuild.ci.util.BuildException;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.versioncontrol.VersionControlRemoteCommand;
 
@@ -89,7 +89,7 @@ public class P4Command extends VersionControlRemoteCommand {
     p4User = props.getP4User();
     p4Password = props.getP4Password();
     p4Exe = props.getP4Exe();
-    addPasswordEnvironemntVariable = !(props.getAuthenticationMode() == SourceControlSetting.P4_AUTHENTICATION_MODE_VALUE_P4LOGIN);
+    addPasswordEnvironemntVariable = !(props.getAuthenticationMode() == VCSAttribute.P4_AUTHENTICATION_MODE_VALUE_P4LOGIN);
   }
 
 

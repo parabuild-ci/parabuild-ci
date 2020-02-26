@@ -15,11 +15,11 @@ package org.parabuild.ci.versioncontrol.accurev;
 
 import org.parabuild.ci.TestHelper;
 
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.util.BuildException;
 import org.parabuild.ci.util.CommandStoppedException;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.ChangeList;
-import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.versioncontrol.AbstractSourceControlTest;
 
 /**
@@ -96,7 +96,7 @@ public final class SSTestAccurevVersionControl extends AbstractSourceControlTest
     TestHelper.assertDirIsNotEmpty(agent, "directory1");
 
     // update property
-    TestHelper.setSourceControlProperty(getTestBuildID(), SourceControlSetting.ACCUREV_DEPOT, "test_other_project");
+    TestHelper.setSourceControlProperty(getTestBuildID(), VCSAttribute.ACCUREV_DEPOT, "test_other_project");
 
     // reload
     accurev.reloadConfiguration();
@@ -115,7 +115,7 @@ public final class SSTestAccurevVersionControl extends AbstractSourceControlTest
 
 
   public void test_canNotAccessWithWrongPassword() throws Exception {
-    TestHelper.setSourceControlProperty(getTestBuildID(), SourceControlSetting.ACCUREV_PASSWORD, "FED13585645B0EE34267AAAED4697000");
+    TestHelper.setSourceControlProperty(getTestBuildID(), VCSAttribute.ACCUREV_PASSWORD, "FED13585645B0EE34267AAAED4697000");
     accurev.reloadConfiguration();
     try {
       accurev.checkoutLatest();

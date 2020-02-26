@@ -14,10 +14,10 @@
 package org.parabuild.ci.webui;
 
 import org.parabuild.ci.build.BuildState;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.BuildRun;
-import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.webui.common.CommonLink;
 import org.parabuild.ci.webui.common.Pages;
 import org.parabuild.ci.webui.common.WebuiUtils;
@@ -48,7 +48,7 @@ public final class BuildNameLinkFlow extends Flow {
     lnkBuildName.setParameters(params);
     if (buildState.isParallel() && leaderIDs != null && !leaderIDs.isEmpty()) {
       final ConfigurationManager cm = ConfigurationManager.getInstance();
-      final Integer leaderBuildID = new Integer(cm.getSourceControlSettingValue(buildState.getActiveBuildID(), SourceControlSetting.REFERENCE_BUILD_ID, BuildConfig.UNSAVED_ID));
+      final Integer leaderBuildID = new Integer(cm.getSourceControlSettingValue(buildState.getActiveBuildID(), VCSAttribute.REFERENCE_BUILD_ID, BuildConfig.UNSAVED_ID));
       if (leaderIDs.contains(leaderBuildID)) {
         add(new Label("&nbsp;&nbsp;&nbsp;")).add(lnkBuildName);
       } else {

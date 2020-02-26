@@ -20,7 +20,7 @@ import junit.framework.TestSuite;
 
 import com.gargoylesoftware.base.testing.OrderedTestSuite;
 import org.parabuild.ci.TestHelper;
-import org.parabuild.ci.object.SourceControlSetting;
+import org.parabuild.ci.common.VCSAttribute;
 
 /**
  * Tests P4SourceControl in a custom checkout dir.
@@ -37,7 +37,7 @@ public final class SSTestP4SourceControlInCustomCheckoutDir extends SSTestP4Sour
 
 
   protected void afterSuperSetUp() {
-    TestHelper.setSourceControlProperty(TEST_BUILD_ID, SourceControlSetting.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE, TestHelper.getTestTempDir() + "/custom_" + TEST_BUILD_ID);
+    TestHelper.setSourceControlProperty(TEST_BUILD_ID, VCSAttribute.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE, TestHelper.getTestTempDir() + "/custom_" + TEST_BUILD_ID);
   }
 
 

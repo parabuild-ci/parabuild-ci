@@ -15,6 +15,7 @@ package org.parabuild.ci.webui.merge;
 
 import java.util.*;
 
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.SourceControlSetting;
@@ -51,7 +52,7 @@ public class DepotViewPanel extends Panel {
 
   public void load(final int activeBuildID) {
     final Map effectiveSourceControlSettingsAsMap = ConfigurationManager.getInstance().getEffectiveSourceControlSettingsAsMap(activeBuildID);
-    final String depotView = SourceControlSetting.getValue((SourceControlSetting)effectiveSourceControlSettingsAsMap.get(SourceControlSetting.P4_DEPOT_PATH), null);
+    final String depotView = SourceControlSetting.getValue((SourceControlSetting)effectiveSourceControlSettingsAsMap.get(VCSAttribute.P4_DEPOT_PATH), null);
     if (StringUtils.isBlank(depotView)) {
       flDepotView.setValue(TEXT_UNDEFINED + ", build ID: " + activeBuildID);
     } else {

@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.util.ValidationException;
@@ -154,7 +155,7 @@ public final class P4SettingsPanel extends AbstractSourceControlPanel {
     gridIterator.addPair(lbLineEnd, flLineEnd);
 
     final ConfigurationManager cm = ConfigurationManager.getInstance();
-    final SourceControlSetting setting = cm.getSourceControlSetting(buildID, SourceControlSetting.DO_NOT_CHECKOUT);
+    final SourceControlSetting setting = cm.getSourceControlSetting(buildID, VCSAttribute.DO_NOT_CHECKOUT);
     if (scm.isNoCheckoutBuildEnabled() || (setting != null && setting.getPropertyValue().equals(SourceControlSetting.OPTION_CHECKED))) {
       gridIterator.addPair(lbDoNotSync, cbDoNotSync);
     }
@@ -174,28 +175,28 @@ public final class P4SettingsPanel extends AbstractSourceControlPanel {
     gridIterator.addPair(lbCaseSensitiveUserNames, cbCaseSensitiveUserNames);
 
     // init property to input map
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.P4_PASSWORD, flPassword);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.P4_USER, flUser);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.P4_PORT, flPort);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.P4_DEPOT_PATH, flClientView);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.P4_PATH_TO_CLIENT, flPathToP4Client);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.P4_COUNTER, flCounter);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.P4_RELATIVE_BUILD_DIR, flRelativeBuildDir);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.P4_ADVANCED_VIEW_MODE, flAdvancedViewMode);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.P4_USE_UNC_PATHS, flUseUNCPaths);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.P4_VARS_OVERRIDE, flShellVariablesOverride);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.P4_CLIENT_NAME_TEMPLATE, flClientNameTemplate);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.P4_MODTIME_OPTION, flOptionModtime);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.P4_CLOBBER_OPTION, flOptionClobber);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.P4_P4WEB_URL, flP4WebURL);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.P4_AUTHENTICATION_MODE, flAuthenticationMode);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.P4_CLIENT_VIEW_SOURCE, flClientViewSource);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.P4_CLIENT_VIEW_BY_DEPOT_PATH, flClientViewByDepotPath);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.P4_CLIENT_VIEW_BY_CLIENT_NAME, flClientViewByClientName);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.P4_UPDATE_HAVE_LIST, cbUpdateHaveList);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.P4_CASE_SENSITIVE_USER_NAMES, cbCaseSensitiveUserNames);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.DO_NOT_CHECKOUT, cbDoNotSync);
-    propertyToInputMap.bindPropertyNameToInput(SourceControlSetting.P4_LINE_END, flLineEnd);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_PASSWORD, flPassword);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_USER, flUser);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_PORT, flPort);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_DEPOT_PATH, flClientView);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_PATH_TO_CLIENT, flPathToP4Client);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_COUNTER, flCounter);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_RELATIVE_BUILD_DIR, flRelativeBuildDir);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_ADVANCED_VIEW_MODE, flAdvancedViewMode);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_USE_UNC_PATHS, flUseUNCPaths);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_VARS_OVERRIDE, flShellVariablesOverride);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_CLIENT_NAME_TEMPLATE, flClientNameTemplate);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_MODTIME_OPTION, flOptionModtime);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_CLOBBER_OPTION, flOptionClobber);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_P4WEB_URL, flP4WebURL);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_AUTHENTICATION_MODE, flAuthenticationMode);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_CLIENT_VIEW_SOURCE, flClientViewSource);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_CLIENT_VIEW_BY_DEPOT_PATH, flClientViewByDepotPath);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_CLIENT_VIEW_BY_CLIENT_NAME, flClientViewByClientName);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_UPDATE_HAVE_LIST, cbUpdateHaveList);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_CASE_SENSITIVE_USER_NAMES, cbCaseSensitiveUserNames);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.DO_NOT_CHECKOUT, cbDoNotSync);
+    propertyToInputMap.bindPropertyNameToInput(VCSAttribute.P4_LINE_END, flLineEnd);
 
     // add footer
     addCommonAttributes();

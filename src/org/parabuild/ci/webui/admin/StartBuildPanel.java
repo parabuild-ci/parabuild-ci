@@ -16,6 +16,7 @@ package org.parabuild.ci.webui.admin;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.BuildVersionDuplicateValidator;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.util.ValidationException;
 import org.parabuild.ci.configuration.ConfigurationManager;
@@ -24,7 +25,6 @@ import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.BuildRun;
 import org.parabuild.ci.object.ChangeList;
-import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.object.StartParameterType;
 import org.parabuild.ci.services.BuildManager;
 import org.parabuild.ci.services.BuildStartRequest;
@@ -157,7 +157,7 @@ public final class StartBuildPanel extends MessagePanel {
       // successful backing build
       final ConfigurationManager cm = ConfigurationManager.getInstance();
       if (cm.getActiveBuildConfig(activeBuildID).getScheduleType() == BuildConfig.SCHEDULE_TYPE_RECURRENT) {
-        final int backingBuildID = cm.getSourceControlSettingValue(activeBuildID, SourceControlSetting.REFERENCE_BUILD_ID, BuildConfig.UNSAVED_ID);
+        final int backingBuildID = cm.getSourceControlSettingValue(activeBuildID, VCSAttribute.REFERENCE_BUILD_ID, BuildConfig.UNSAVED_ID);
         if (cm.getLastCleanBuildRun(backingBuildID) == null) {
           pnlStartParameters.showErrorMessage("Please run the backing build cleanly before starting this build");
           return false;

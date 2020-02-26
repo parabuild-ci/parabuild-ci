@@ -16,6 +16,7 @@ package org.parabuild.ci.versioncontrol;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.util.BuildException;
 import org.parabuild.ci.util.CommandStoppedException;
 import org.parabuild.ci.util.CommonConstants;
@@ -25,7 +26,6 @@ import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.error.Error;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.ChangeList;
-import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.security.SecurityManager;
 
@@ -78,10 +78,10 @@ final class SurroundSourceControl extends AbstractSourceControl implements Commo
           // create Surround checkout command
           command = new SurroungGetCommand(agent,
                   getPathToExe(),
-                  getSettingValue(SourceControlSetting.SURROUND_USER),
+                  getSettingValue(VCSAttribute.SURROUND_USER),
                   getPasswordSetting(),
-                  getSettingValue(SourceControlSetting.SURROUND_HOST),
-                  getSettingValue(SourceControlSetting.SURROUND_PORT, 5400),
+                  getSettingValue(VCSAttribute.SURROUND_HOST),
+                  getSettingValue(VCSAttribute.SURROUND_PORT, 5400),
                   branch(),
                   repositoryPath.getPath(),
                   null);
@@ -104,12 +104,12 @@ final class SurroundSourceControl extends AbstractSourceControl implements Commo
    */
   private String branch() {
     // we remove double quotes to address #997
-    return StringUtils.removeDoubleQuotes(getSettingValue(SourceControlSetting.SURROUND_BRANCH));
+    return StringUtils.removeDoubleQuotes(getSettingValue(VCSAttribute.SURROUND_BRANCH));
   }
 
 
   private String getPathToExe() {
-    return StringUtils.putIntoDoubleQuotes(getSettingValue(SourceControlSetting.SURROUND_PATH_TO_EXE));
+    return StringUtils.putIntoDoubleQuotes(getSettingValue(VCSAttribute.SURROUND_PATH_TO_EXE));
   }
 
 
@@ -143,10 +143,10 @@ final class SurroundSourceControl extends AbstractSourceControl implements Commo
           // create Surround checkout command
           command = new SurroungGetCommand(agent,
                   getPathToExe(),
-                  getSettingValue(SourceControlSetting.SURROUND_USER),
+                  getSettingValue(VCSAttribute.SURROUND_USER),
                   getPasswordSetting(),
-                  getSettingValue(SourceControlSetting.SURROUND_HOST),
-                  getSettingValue(SourceControlSetting.SURROUND_PORT, 5400),
+                  getSettingValue(VCSAttribute.SURROUND_HOST),
+                  getSettingValue(VCSAttribute.SURROUND_PORT, 5400),
                   branch(),
                   repositoryPath.getPath(),
                   changeList.getCreatedAt());
@@ -282,7 +282,7 @@ final class SurroundSourceControl extends AbstractSourceControl implements Commo
       if (result.isEmpty()) return startChangeListID;
 
       // validate that change lists contain not only exclusions
-      if (new ExclusionPathFinder().onlyExclusionPathsPresentInChangeLists(result, getSettingValue(SourceControlSetting.VCS_EXCLUSION_PATHS))) {
+      if (new ExclusionPathFinder().onlyExclusionPathsPresentInChangeLists(result, getSettingValue(VCSAttribute.VCS_EXCLUSION_PATHS))) {
         return startChangeListID;
       }
 
@@ -310,10 +310,10 @@ final class SurroundSourceControl extends AbstractSourceControl implements Commo
         // create and execute Surround history command
         command = new SurroungHistoryReportCommand(agent,
                 getPathToExe(),
-                getSettingValue(SourceControlSetting.SURROUND_USER),
+                getSettingValue(VCSAttribute.SURROUND_USER),
                 getPasswordSetting(),
-                getSettingValue(SourceControlSetting.SURROUND_HOST),
-                getSettingValue(SourceControlSetting.SURROUND_PORT, 5400),
+                getSettingValue(VCSAttribute.SURROUND_HOST),
+                getSettingValue(VCSAttribute.SURROUND_PORT, 5400),
                 branch(),
                 repositoryPath.getPath(),
                 startDate, endDate);
@@ -379,10 +379,10 @@ final class SurroundSourceControl extends AbstractSourceControl implements Commo
           // create Surround label command
           command = new SurroungLabelCommand(agent,
                   getPathToExe(),
-                  getSettingValue(SourceControlSetting.SURROUND_USER),
+                  getSettingValue(VCSAttribute.SURROUND_USER),
                   getPasswordSetting(),
-                  getSettingValue(SourceControlSetting.SURROUND_HOST),
-                  getSettingValue(SourceControlSetting.SURROUND_PORT, 5400),
+                  getSettingValue(VCSAttribute.SURROUND_HOST),
+                  getSettingValue(VCSAttribute.SURROUND_PORT, 5400),
                   branch(),
                   repositoryPath.getPath(),
                   label);
@@ -414,10 +414,10 @@ final class SurroundSourceControl extends AbstractSourceControl implements Commo
       final Agent agent = getCheckoutDirectoryAwareAgent();
       command = new SurroundUserListCommand(agent,
               getPathToExe(),
-              getSettingValue(SourceControlSetting.SURROUND_USER),
+              getSettingValue(VCSAttribute.SURROUND_USER),
               getPasswordSetting(),
-              getSettingValue(SourceControlSetting.SURROUND_HOST),
-              getSettingValue(SourceControlSetting.SURROUND_PORT, 5400));
+              getSettingValue(VCSAttribute.SURROUND_HOST),
+              getSettingValue(VCSAttribute.SURROUND_PORT, 5400));
       command.execute();
       result.putAll(new SurroundUsersParser(command.getStdoutFile()).parse());
     } catch (final IOException e) {
@@ -451,10 +451,10 @@ final class SurroundSourceControl extends AbstractSourceControl implements Commo
     // check if critical settings has changed
     final SourceControlSettingChangeDetector scd = new SourceControlSettingChangeDetector(currentSettings, newSettings);
     boolean hasToCleanUp = false;
-    hasToCleanUp |= scd.settingHasChanged(SourceControlSetting.SURROUND_REPOSITORY);
-    hasToCleanUp |= scd.settingHasChanged(SourceControlSetting.SURROUND_BRANCH);
-    hasToCleanUp |= scd.settingHasChanged(SourceControlSetting.SURROUND_HOST);
-    hasToCleanUp |= scd.settingHasChanged(SourceControlSetting.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE);
+    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.SURROUND_REPOSITORY);
+    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.SURROUND_BRANCH);
+    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.SURROUND_HOST);
+    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE);
     if (hasToCleanUp) {
       setHasToCleanUp();
     }
@@ -527,7 +527,7 @@ final class SurroundSourceControl extends AbstractSourceControl implements Commo
    * @return decryped password or null if not defined.
    */
   private String getPasswordSetting() {
-    final String encrypedPassword = getSettingValue(SourceControlSetting.SURROUND_PASSWORD);
+    final String encrypedPassword = getSettingValue(VCSAttribute.SURROUND_PASSWORD);
     if (encrypedPassword == null) return null;
     return SecurityManager.decryptPassword(encrypedPassword);
   }
@@ -546,7 +546,7 @@ final class SurroundSourceControl extends AbstractSourceControl implements Commo
   private List getDepotPaths() throws BuildException {
     try {
       final SurroundRepositoryPathParser parser = new SurroundRepositoryPathParser();
-      return parser.parseDepotPath(getSettingValue(SourceControlSetting.SURROUND_REPOSITORY));
+      return parser.parseDepotPath(getSettingValue(VCSAttribute.SURROUND_REPOSITORY));
     } catch (final ValidationException e) {
       throw new BuildException(e, getAgentHost());
     }

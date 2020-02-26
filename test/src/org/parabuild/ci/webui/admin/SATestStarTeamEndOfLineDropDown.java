@@ -15,7 +15,7 @@ package org.parabuild.ci.webui.admin;
 
 import junit.framework.*;
 
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.common.VCSAttribute;
 
 /**
  *
@@ -26,7 +26,7 @@ public final class SATestStarTeamEndOfLineDropDown extends TestCase {
 
 
   public void test_defaultValue() {
-    assertEquals(SourceControlSetting.STARTEAM_EOL_ON, dropDown.getCode());
+    assertEquals(VCSAttribute.STARTEAM_EOL_ON, dropDown.getCode());
   }
 
 

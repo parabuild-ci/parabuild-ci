@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.notification;
 
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManager;
@@ -235,7 +236,7 @@ final class NotificationUtils {
   public static boolean isCaseSensitiveUserName(final int buildID) {
     final ConfigurationManager cm = ConfigurationManager.getInstance();
     final SystemConfigurationManager scm = SystemConfigurationManagerFactory.getManager();
-    final String value = cm.getSourceControlSettingValue(buildID, SourceControlSetting.P4_CASE_SENSITIVE_USER_NAMES,
+    final String value = cm.getSourceControlSettingValue(buildID, VCSAttribute.P4_CASE_SENSITIVE_USER_NAMES,
             scm.isCaseSensitiveVCSNames() ? SourceControlSetting.OPTION_CHECKED : SourceControlSetting.OPTION_UNCHECKED);
     return value.equals(SourceControlSetting.OPTION_CHECKED);
   }

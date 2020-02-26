@@ -17,6 +17,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.build.BuildScriptGenerator;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.util.BuildException;
 import org.parabuild.ci.util.CommandStoppedException;
 import org.parabuild.ci.util.StringUtils;
@@ -25,7 +26,6 @@ import org.parabuild.ci.error.ErrorManagerFactory;
 import org.parabuild.ci.object.ActiveBuildConfig;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.ChangeList;
-import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.remote.Agent;
 
 import java.io.IOException;
@@ -129,7 +129,7 @@ public abstract class AbstractCommandBasedSourceControl extends AbstractSourceCo
    */
   public final void syncToChangeList(final int changeListID) throws BuildException, CommandStoppedException, AgentFailureException {
     // check if we have a command
-    final String syncToChangeListCommand = getSettingValue(SourceControlSetting.COMMAND_VCS_SYNC_TO_CHANGE_LIST_COMMAND, null);
+    final String syncToChangeListCommand = getSettingValue(VCSAttribute.COMMAND_VCS_SYNC_TO_CHANGE_LIST_COMMAND, null);
     if (StringUtils.isBlank(syncToChangeListCommand)) return;
 
     // execute
@@ -172,7 +172,7 @@ public abstract class AbstractCommandBasedSourceControl extends AbstractSourceCo
    */
   public final void label(final String label) throws BuildException, CommandStoppedException, AgentFailureException {
     // check if we have a command
-    final String labelCommand = getSettingValue(SourceControlSetting.COMMAND_VCS_LABEL_COMMAND, null);
+    final String labelCommand = getSettingValue(VCSAttribute.COMMAND_VCS_LABEL_COMMAND, null);
     if (StringUtils.isBlank(labelCommand)) return;
 
     // execute
@@ -216,7 +216,7 @@ public abstract class AbstractCommandBasedSourceControl extends AbstractSourceCo
   public final int removeLabels(final String[] labels) throws BuildException, CommandStoppedException, AgentFailureException {
     try {
       // check if we have a command
-      final String removeLabelCommand = getSettingValue(SourceControlSetting.COMMAND_VCS_REMOVE_LABEL_COMMAND, null);
+      final String removeLabelCommand = getSettingValue(VCSAttribute.COMMAND_VCS_REMOVE_LABEL_COMMAND, null);
       if (StringUtils.isBlank(removeLabelCommand)) return 0;
 
       // execute

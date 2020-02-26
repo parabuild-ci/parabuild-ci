@@ -17,6 +17,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.build.BuildScriptGenerator;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.util.BuildException;
 import org.parabuild.ci.util.CommandStoppedException;
 import org.parabuild.ci.util.StringUtils;
@@ -25,7 +26,6 @@ import org.parabuild.ci.error.ErrorManager;
 import org.parabuild.ci.error.ErrorManagerFactory;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.ChangeList;
-import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.security.SecurityManager;
 
@@ -250,7 +250,7 @@ final class PVCSSourceControl extends AbstractSourceControl {
       if (result.isEmpty()) return startChangeListID;
 
       // validate that change lists contain not only exclusions
-      if (new ExclusionPathFinder().onlyExclusionPathsPresentInChangeLists(result, getSettingValue(SourceControlSetting.VCS_EXCLUSION_PATHS))) {
+      if (new ExclusionPathFinder().onlyExclusionPathsPresentInChangeLists(result, getSettingValue(VCSAttribute.VCS_EXCLUSION_PATHS))) {
         return startChangeListID;
       }
 
@@ -360,12 +360,12 @@ final class PVCSSourceControl extends AbstractSourceControl {
     // check if critical settings has changed
     final SourceControlSettingChangeDetector scd = new SourceControlSettingChangeDetector(currentSettings, newSettings);
     boolean hasToCleanUp = false;
-    hasToCleanUp |= scd.settingHasChanged(SourceControlSetting.PVCS_BRANCH_NAME);
+    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.PVCS_BRANCH_NAME);
 //    hasToCleanUp = hasToCleanUp || scd.settingHasChanged(SourceControlSetting.PVCS_LABEL);
-    hasToCleanUp |= scd.settingHasChanged(SourceControlSetting.PVCS_PROJECT);
-    hasToCleanUp |= scd.settingHasChanged(SourceControlSetting.PVCS_PROMOTION_GROUP);
-    hasToCleanUp |= scd.settingHasChanged(SourceControlSetting.PVCS_REPOSITORY);
-    hasToCleanUp |= scd.settingHasChanged(SourceControlSetting.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE);
+    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.PVCS_PROJECT);
+    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.PVCS_PROMOTION_GROUP);
+    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.PVCS_REPOSITORY);
+    hasToCleanUp |= scd.settingHasChanged(VCSAttribute.VCS_CUSTOM_CHECKOUT_DIR_TEMPLATE);
     if (hasToCleanUp) {
       setHasToCleanUp();
     }
@@ -415,7 +415,7 @@ final class PVCSSourceControl extends AbstractSourceControl {
    */
   private List getProjects() throws BuildException {
     try {
-      return new PVCSProjectListParser().parseProjects(getSettingValue(SourceControlSetting.PVCS_PROJECT));
+      return new PVCSProjectListParser().parseProjects(getSettingValue(VCSAttribute.PVCS_PROJECT));
     } catch (final ValidationException e) {
       throw new BuildException(e, getAgentHost());
     }
@@ -429,13 +429,13 @@ final class PVCSSourceControl extends AbstractSourceControl {
    * @param parameters
    */
   private void setCommonParameters(final PVCSCommandParameters parameters) {
-    parameters.setBranch(getSettingValue(SourceControlSetting.PVCS_BRANCH_NAME));
-    parameters.setPathToClient(getSettingValue(SourceControlSetting.PVCS_EXE_PATH));
-    parameters.setRepository(getSettingValue(SourceControlSetting.PVCS_REPOSITORY));
-    parameters.setPassword(StringUtils.isBlank(getSettingValue(SourceControlSetting.PVCS_PASSWORD)) ? "" : SecurityManager.decryptPassword(getSettingValue(SourceControlSetting.PVCS_PASSWORD)));
-    parameters.setUser(getSettingValue(SourceControlSetting.PVCS_USER));
-    parameters.setLabel(getSettingValue(SourceControlSetting.PVCS_LABEL));
-    parameters.setPromotionGroup(getSettingValue(SourceControlSetting.PVCS_PROMOTION_GROUP));
+    parameters.setBranch(getSettingValue(VCSAttribute.PVCS_BRANCH_NAME));
+    parameters.setPathToClient(getSettingValue(VCSAttribute.PVCS_EXE_PATH));
+    parameters.setRepository(getSettingValue(VCSAttribute.PVCS_REPOSITORY));
+    parameters.setPassword(StringUtils.isBlank(getSettingValue(VCSAttribute.PVCS_PASSWORD)) ? "" : SecurityManager.decryptPassword(getSettingValue(VCSAttribute.PVCS_PASSWORD)));
+    parameters.setUser(getSettingValue(VCSAttribute.PVCS_USER));
+    parameters.setLabel(getSettingValue(VCSAttribute.PVCS_LABEL));
+    parameters.setPromotionGroup(getSettingValue(VCSAttribute.PVCS_PROMOTION_GROUP));
   }
 
 

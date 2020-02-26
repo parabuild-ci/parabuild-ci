@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.webui.common.*;
 
 /**
@@ -25,9 +25,9 @@ public final class MKSLineTerminatorDropDown extends CodeNameDropDown {
 
 
   public MKSLineTerminatorDropDown() {
-    addCodeNamePair(SourceControlSetting.MKS_LINE_TERMINATOR_LF, "lf");
-    addCodeNamePair(SourceControlSetting.MKS_LINE_TERMINATOR_CRLF, "crlf");
-    addCodeNamePair(SourceControlSetting.MKS_LINE_TERMINATOR_NATIVE, "native");
-    setCode(SourceControlSetting.MKS_LINE_TERMINATOR_NATIVE);
+    addCodeNamePair(VCSAttribute.MKS_LINE_TERMINATOR_LF, "lf");
+    addCodeNamePair(VCSAttribute.MKS_LINE_TERMINATOR_CRLF, "crlf");
+    addCodeNamePair(VCSAttribute.MKS_LINE_TERMINATOR_NATIVE, "native");
+    setCode(VCSAttribute.MKS_LINE_TERMINATOR_NATIVE);
   }
 }

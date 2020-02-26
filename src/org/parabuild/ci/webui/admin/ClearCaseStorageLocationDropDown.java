@@ -13,8 +13,8 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.webui.common.*;
-import org.parabuild.ci.object.*;
 
 /**
  * A dropdown to show view location options.
@@ -29,9 +29,9 @@ final class ClearCaseStorageLocationDropDown extends CodeNameDropDown {
    * Constructor.
    */
   public ClearCaseStorageLocationDropDown() {
-    super.addCodeNamePair(SourceControlSetting.CLEARCASE_STORAGE_CODE_STGLOC, "location name (-stgloc):");
-    super.addCodeNamePair(SourceControlSetting.CLEARCASE_STORAGE_CODE_VWS, "location path (-vws):");
-    setCode(SourceControlSetting.CLEARCASE_STORAGE_CODE_STGLOC);
+    super.addCodeNamePair(VCSAttribute.CLEARCASE_STORAGE_CODE_STGLOC, "location name (-stgloc):");
+    super.addCodeNamePair(VCSAttribute.CLEARCASE_STORAGE_CODE_VWS, "location path (-vws):");
+    setCode(VCSAttribute.CLEARCASE_STORAGE_CODE_STGLOC);
     setFont(Pages.FONT_COMMON_BOLD_LABEL);
   }
 }

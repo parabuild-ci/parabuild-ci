@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.BuildConfigAttribute;
@@ -28,9 +29,9 @@ import org.parabuild.ci.webui.admin.mercurial.MercurialManualScheduleStartParame
  */
 final class ManualScheduleStartParametersPanelFactory {
 
-  private static final String P4_CLIENT_VIEW_SOURCE = SourceControlSetting.P4_CLIENT_VIEW_SOURCE;
-  private static final byte P4_CLIENT_VIEW_SOURCE_VALUE_CLIENT_NAME = SourceControlSetting.P4_CLIENT_VIEW_SOURCE_VALUE_CLIENT_NAME;
-  private static final byte P4_CLIENT_VIEW_SOURCE_VALUE_DEPOT_PATH = SourceControlSetting.P4_CLIENT_VIEW_SOURCE_VALUE_DEPOT_PATH;
+  private static final String P4_CLIENT_VIEW_SOURCE = VCSAttribute.P4_CLIENT_VIEW_SOURCE;
+  private static final byte P4_CLIENT_VIEW_SOURCE_VALUE_CLIENT_NAME = VCSAttribute.P4_CLIENT_VIEW_SOURCE_VALUE_CLIENT_NAME;
+  private static final byte P4_CLIENT_VIEW_SOURCE_VALUE_DEPOT_PATH = VCSAttribute.P4_CLIENT_VIEW_SOURCE_VALUE_DEPOT_PATH;
 
 
   /**

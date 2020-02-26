@@ -22,9 +22,9 @@ import org.parabuild.ci.ServersideTestCase;
 import org.parabuild.ci.TestHelper;
 
 import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.util.CommandStoppedException;
 import org.parabuild.ci.util.IoUtils;
-import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.remote.AgentManager;
 
@@ -60,8 +60,8 @@ public class SSTestClearCaseCommand extends ServersideTestCase {
     final ClearCaseMkviewCommand mkviewCommand = new ClearCaseMkviewCommand(
             agent,
             clearToolExe,
-            SourceControlSetting.CLEARCASE_TEXT_MODE_UNIX,
-            SourceControlSetting.CLEARCASE_STORAGE_CODE_AUTOMATIC,
+            VCSAttribute.CLEARCASE_TEXT_MODE_UNIX,
+            VCSAttribute.CLEARCASE_STORAGE_CODE_AUTOMATIC,
             "",
             TEST_TAG, EMPTY_IGNORE_LINES);
     mkviewCommand.execute();
