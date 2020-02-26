@@ -14,11 +14,11 @@
 package org.parabuild.ci.webui.admin;
 
 import org.parabuild.ci.common.VCSAttribute;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.BuildConfigAttribute;
 import org.parabuild.ci.object.SourceControlSetting;
-import org.parabuild.ci.versioncontrol.VersionControlSystem;
 import org.parabuild.ci.webui.admin.mercurial.MercurialManualScheduleStartParametersPanel;
 
 /**

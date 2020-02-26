@@ -13,15 +13,15 @@
  */
 package org.parabuild.ci.webui.merge;
 
-import java.util.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.ActiveBuildConfig;
 import org.parabuild.ci.object.BuildConfig;
-import org.parabuild.ci.versioncontrol.VersionControlSystem;
 import org.parabuild.ci.webui.common.CodeNameDropDown;
+
+import java.util.Iterator;
 
 /**
  * Dropdown to show builds that can be used as sources and desitnations in merges.

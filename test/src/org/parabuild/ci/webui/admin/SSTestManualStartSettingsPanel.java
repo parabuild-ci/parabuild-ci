@@ -16,9 +16,9 @@ package org.parabuild.ci.webui.admin;
 import junit.framework.TestSuite;
 import org.apache.cactus.ServletTestCase;
 import org.parabuild.ci.TestHelper;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
-import org.parabuild.ci.versioncontrol.VersionControlSystem;
 
 /**
  * Tests ManualStartSettingsPanel

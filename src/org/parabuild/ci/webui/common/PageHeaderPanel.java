@@ -13,12 +13,12 @@
  */
 package org.parabuild.ci.webui.common;
 
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.object.User;
 import org.parabuild.ci.security.SecurityManager;
-import org.parabuild.ci.versioncontrol.VersionControlSystem;
 import viewtier.ui.Border;
 import viewtier.ui.Color;
 import viewtier.ui.Flow;

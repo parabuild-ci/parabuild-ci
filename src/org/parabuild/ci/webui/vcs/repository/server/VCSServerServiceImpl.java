@@ -1,17 +1,17 @@
 package org.parabuild.ci.webui.vcs.repository.server;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.TransactionCallback;
 import org.parabuild.ci.object.VCSServer;
 import org.parabuild.ci.repository.VCSRepositoryManager;
 import org.parabuild.ci.repository.VCSServerVO;
-import org.parabuild.ci.versioncontrol.VersionControlSystem;
 import org.parabuild.ci.webui.vcs.repository.client.VCSServerClientVO;
 import org.parabuild.ci.webui.vcs.repository.client.VCSServerService;
 import org.parabuild.ci.webui.vcs.repository.client.VCSServerType;
 
-import static org.parabuild.ci.versioncontrol.VersionControlSystem.vcsToString;
+import static org.parabuild.ci.common.VersionControlSystem.vcsToString;
 
 public class VCSServerServiceImpl extends RemoteServiceServlet implements VCSServerService {
 

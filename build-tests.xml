@@ -151,7 +151,7 @@
 
   <!-- Deploy war -->
   <target name="tests.deploy" depends="tests.war">
-    <copy file="${build.dir}/test_war_result/parabuild.war" todir="${test.dir.manager}/etc/app"/>
+    <copy file="${build.dir}/test_war_result/parabuild.war" todir="${test.dir.manager}/etc/app" overwrite="true"/>
   </target>
 
 </project>

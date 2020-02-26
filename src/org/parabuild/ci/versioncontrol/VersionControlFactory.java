@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.versioncontrol;
 
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.versioncontrol.accurev.AccurevVersionControl;

@@ -1,6 +1,6 @@
 package org.parabuild.ci.repository;
 
-import static org.parabuild.ci.versioncontrol.VersionControlSystem.vcsToString;
+import static org.parabuild.ci.common.VersionControlSystem.vcsToString;
 
 /**
  * A VO representing a VCS server.

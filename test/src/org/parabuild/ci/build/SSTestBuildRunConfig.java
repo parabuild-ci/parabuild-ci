@@ -19,11 +19,11 @@ import net.sf.hibernate.Query;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.ServersideTestCase;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.TransactionCallback;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.BuildRunConfig;
-import org.parabuild.ci.versioncontrol.VersionControlSystem;
 
 /**
  *

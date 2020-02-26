@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.versioncontrol.VersionControlSystem;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.webui.common.CodeNameDropDown;
 
 /**

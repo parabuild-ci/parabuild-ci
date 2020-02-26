@@ -22,7 +22,7 @@ import net.sf.hibernate.type.Type;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.error.Error;
 import org.parabuild.ci.error.ErrorManagerFactory;
 import org.parabuild.ci.object.ActiveBuild;
@@ -69,7 +69,7 @@ import org.parabuild.ci.object.User;
 import org.parabuild.ci.object.UserProperty;
 import org.parabuild.ci.object.VCSUserToEmailMap;
 import org.parabuild.ci.services.ServiceManager;
-import org.parabuild.ci.versioncontrol.VersionControlSystem;
+import org.parabuild.ci.util.StringUtils;
 
 import java.io.File;
 import java.io.Serializable;

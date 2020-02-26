@@ -13,9 +13,9 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.UnexpectedErrorException;
 import org.parabuild.ci.object.BuildConfig;
-import org.parabuild.ci.versioncontrol.VersionControlSystem;
 import org.parabuild.ci.webui.admin.accurev.AccurevSettingsPanel;
 import org.parabuild.ci.webui.admin.mercurial.MercurialSettingsPanel;
 

@@ -13,11 +13,11 @@
  */
 package org.parabuild.ci.webui;
 
-import junit.framework.*;
-
+import junit.framework.TestCase;
+import junit.framework.TestSuite;
 import org.parabuild.ci.TestHelper;
-import org.parabuild.ci.versioncontrol.VersionControlSystem;
-import org.parabuild.ci.webui.admin.*;
+import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.webui.admin.VersionControlDropDown;
 
 /**
  */

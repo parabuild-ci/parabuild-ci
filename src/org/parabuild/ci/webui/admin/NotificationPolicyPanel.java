@@ -15,14 +15,21 @@ package org.parabuild.ci.webui.admin;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.util.ArgumentValidator;
-import org.parabuild.ci.util.MailUtils;
-import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.BuildConfigAttribute;
-import org.parabuild.ci.versioncontrol.VersionControlSystem;
-import org.parabuild.ci.webui.common.*;
+import org.parabuild.ci.util.ArgumentValidator;
+import org.parabuild.ci.util.MailUtils;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.webui.common.CommonField;
+import org.parabuild.ci.webui.common.CommonFieldLabel;
+import org.parabuild.ci.webui.common.GridIterator;
+import org.parabuild.ci.webui.common.MessagePanel;
+import org.parabuild.ci.webui.common.PropertyToInputMap;
+import org.parabuild.ci.webui.common.Saveable;
+import org.parabuild.ci.webui.common.Validatable;
+import org.parabuild.ci.webui.common.WebUIConstants;
 import viewtier.ui.CheckBox;
 
 import java.util.List;

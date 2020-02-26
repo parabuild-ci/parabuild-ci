@@ -16,6 +16,8 @@
 
     <Engine name="Parabuild" defaultHost="localhost">
 
+      <Valve className="org.apache.catalina.valves.AccessLogValve" directory="../logs" suffix=".log"/>
+
       <Realm className="org.parabuild.ci.realm.Realm"/>
 
       <!--<Host name="localhost" appBase="app" unpackWARs="false" autoDeploy="false">-->

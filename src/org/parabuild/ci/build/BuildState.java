@@ -15,12 +15,12 @@ package org.parabuild.ci.build;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.util.ArgumentValidator;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.BuildRun;
 import org.parabuild.ci.object.BuildSequence;
-import org.parabuild.ci.versioncontrol.VersionControlSystem;
+import org.parabuild.ci.util.ArgumentValidator;
 
 import java.io.Serializable;
 import java.util.Comparator;

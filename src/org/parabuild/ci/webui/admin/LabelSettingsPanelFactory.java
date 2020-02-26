@@ -13,10 +13,10 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.apache.commons.logging.*;
-
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.versioncontrol.VersionControlSystem;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.object.BuildConfig;
 
 /**
  *

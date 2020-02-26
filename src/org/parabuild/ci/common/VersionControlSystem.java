@@ -1,4 +1,4 @@
-package org.parabuild.ci.versioncontrol;
+package org.parabuild.ci.common;
 
 /**
  * A container for the list of supported version control systems.
@@ -22,7 +22,7 @@ public final class VersionControlSystem {
   public static final String NAME_SCM_SVN = "Subversion";
   public static final String NAME_SCM_VAULT = "Vault";
   public static final String NAME_SCM_VSS = "Visual SourceSafe";
-  static final String NAME_SCM_UNDEFINED = "Undefined";
+  public static final String NAME_SCM_UNDEFINED = "Undefined";
 
   public static final byte SCM_UNDEFINED = 0;
   public static final byte SCM_PERFORCE = 1;
