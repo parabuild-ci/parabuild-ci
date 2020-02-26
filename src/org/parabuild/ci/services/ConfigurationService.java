@@ -19,7 +19,7 @@ import net.sf.hibernate.SessionFactory;
 import net.sf.hibernate.cfg.Configuration;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.configuration.BuildConfigCloner;
 import org.parabuild.ci.configuration.ConfigurationConstants;
 import org.parabuild.ci.configuration.ConfigurationManager;
@@ -239,7 +239,7 @@ public final class ConfigurationService implements Service {
                           "   where br.buildID = bc.buildID " +
                           "     and bc.buildID = ab.ID" +
                           "     and bc.sourceControl != ?");
-          qNonRef.setInteger(0, VersionControlSystem.SCM_REFERENCE);
+          qNonRef.setInteger(0, VCSAttribute.SCM_REFERENCE);
           result.addAll(qNonRef.list());
 
           // than process sched/ref
@@ -248,7 +248,7 @@ public final class ConfigurationService implements Service {
                           "   where br.buildID = bc.buildID " +
                           "     and bc.buildID = ab.ID" +
                           "     and bc.sourceControl = ?");
-          qRef.setInteger(0, VersionControlSystem.SCM_REFERENCE);
+          qRef.setInteger(0, VCSAttribute.SCM_REFERENCE);
           result.addAll(qRef.list());
 
           // traverse result

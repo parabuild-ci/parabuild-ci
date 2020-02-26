@@ -15,7 +15,7 @@ package org.parabuild.ci.webui.merge;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.ActiveBuildConfig;
 import org.parabuild.ci.object.BuildConfig;
@@ -50,7 +50,7 @@ final class MergeBuildNameDropdown extends CodeNameDropDown {
 
     // populate dropdown with builds
     final ConfigurationManager cm = ConfigurationManager.getInstance();
-    for (final Iterator i = cm.findBuildConfigsByVCS(projectID, VersionControlSystem.SCM_PERFORCE).iterator(); i.hasNext();) {
+    for (final Iterator i = cm.findBuildConfigsByVCS(projectID, VCSAttribute.SCM_PERFORCE).iterator(); i.hasNext();) {
       final ActiveBuildConfig abc = (ActiveBuildConfig)i.next();
       if (abc.getScheduleType() != ActiveBuildConfig.SCHEDULE_TYPE_PARALLEL) {
         addCodeNamePair(abc.getBuildID(), abc.getBuildName());

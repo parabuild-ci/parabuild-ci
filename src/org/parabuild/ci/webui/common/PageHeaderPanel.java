@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.webui.common;
 
-import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
@@ -150,7 +150,7 @@ public final class PageHeaderPanel extends Panel {
     if (scm.isShowingMergesEnabled()) {
       final ConfigurationManager cm = ConfigurationManager.getInstance();
       // REVIEWME: vimeshev - 2007-06-02 - cm.findBuildConfigsByVCS can be slow.
-      if (!cm.findBuildConfigsByVCS(VersionControlSystem.SCM_PERFORCE).isEmpty()) {
+      if (!cm.findBuildConfigsByVCS(VCSAttribute.SCM_PERFORCE).isEmpty()) {
         menuFlow.add(lbMergeDivider);
         menuFlow.add(lnkMerges);
       }

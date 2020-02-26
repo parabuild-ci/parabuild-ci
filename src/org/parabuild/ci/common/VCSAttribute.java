@@ -5,6 +5,47 @@ import org.parabuild.ci.webui.admin.WebSVNSettingsPanel;
 
 public interface VCSAttribute {
 
+  // VCS names
+  String NAME_SCM_ACCUREV = "AccuRev";
+  String NAME_BAZAAR = "Bazaar";
+  String NAME_SCM_CLEARCASE = "ClearCase";
+  String NAME_SCM_CVS = "CVS";
+  String NAME_SCM_FILESYSTEM = "File system VCS";
+  String NAME_SCM_GENERIC = "Generic VCS";
+  String NAME_SCM_GIT = "Git";
+  String NAME_SCM_MERCURIAL = "Mercurial";
+  String NAME_SCM_MKS = "MKS Source Integrity";
+  String NAME_SCM_PERFORCE = "Perforce";
+  String NAME_SCM_PVCS = "PVCS";
+  String NAME_SCM_REFERENCE = "Build reference";
+  String NAME_SCM_STARTEAM = "StarTeam";
+  String NAME_SCM_SURROUND = "Surround SCM";
+  String NAME_SCM_SVN = "Subversion";
+  String NAME_SCM_VAULT = "Vault";
+  String NAME_SCM_VSS = "Visual SourceSafe";
+  String NAME_SCM_UNDEFINED = "Undefined";
+
+  // VCS Codes
+  byte SCM_UNDEFINED = 0;
+  byte SCM_PERFORCE = 1;
+  byte SCM_CVS = 2;
+  byte SCM_REFERENCE = 3;
+  byte SCM_VSS = 4;
+  byte SCM_CLEARCASE = 5;
+  byte SCM_SVN = 6;
+  byte SCM_SURROUND = 7;
+  byte SCM_STARTEAM = 8;
+  byte SCM_VAULT = 9;
+  byte SCM_PVCS = 10;
+  byte SCM_MKS = 11;
+  byte SCM_FILESYSTEM = 12;
+  byte SCM_GENERIC = 13;
+  byte SCM_SYNERGY = 14;
+  byte SCM_ACCUREV = 15;
+  byte SCM_GIT = 16;
+  byte SCM_BAZAAR = 17;
+  byte SCM_MERCURIAL = 18;
+
   // CVS
   String CVS_ROOT = "cvs.root";
   String CVS_PASSWORD = "cvs.password";

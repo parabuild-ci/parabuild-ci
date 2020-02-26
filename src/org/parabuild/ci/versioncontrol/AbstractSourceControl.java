@@ -18,7 +18,6 @@ import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.build.BuildScriptGenerator;
 import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.AgentHost;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
@@ -325,7 +324,7 @@ public abstract class AbstractSourceControl implements SourceControl {
   public final void validateChangeListID(final int changeListID) throws BuildException {
     final BuildConfig buildConfig = configManager.getBuildConfiguration(buildID);
     // REVIEWME: here we just skip validation - deliver normal validation
-    if (buildConfig.getSourceControl() == VersionControlSystem.SCM_REFERENCE) {
+    if (buildConfig.getSourceControl() == VCSAttribute.SCM_REFERENCE) {
       return;
     }
 

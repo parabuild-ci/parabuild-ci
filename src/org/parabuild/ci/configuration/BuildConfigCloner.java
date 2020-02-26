@@ -21,7 +21,6 @@ import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.BuildStatus;
 import org.parabuild.ci.build.SystemVariableConfigurationManager;
 import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.error.Error;
 import org.parabuild.ci.error.ErrorManager;
 import org.parabuild.ci.error.ErrorManagerFactory;
@@ -366,7 +365,7 @@ public final class BuildConfigCloner {
         final SourceControlSettingResolver sourceControlSettingResolver = new SourceControlSettingResolver(
                 sourceBuildConfig.getBuildName(), sourceBuildConfig.getActiveBuildID(), agentHostName);
         final Map overwrittenSourceControlSettings = new HashMap(3);
-        final boolean isReferenceSourceControl = sourceBuildConfig.getSourceControl() == VersionControlSystem.SCM_REFERENCE;
+        final boolean isReferenceSourceControl = sourceBuildConfig.getSourceControl() == VCSAttribute.SCM_REFERENCE;
         final Query sourceControlSettingsQuery = session.createQuery("from SourceControlSetting as vcs where vcs.buildID = ?");
         sourceControlSettingsQuery.setInteger(0, sourceBuildID);
         sourceControlSettingsQuery.setCacheable(true);

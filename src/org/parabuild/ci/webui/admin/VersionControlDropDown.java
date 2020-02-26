@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.webui.common.CodeNameDropDown;
 
 /**
@@ -29,24 +29,24 @@ public final class VersionControlDropDown extends CodeNameDropDown {
    */
   public VersionControlDropDown() {
 
-    super.addCodeNamePair(VersionControlSystem.SCM_ACCUREV, VersionControlSystem.NAME_SCM_ACCUREV);
-    super.addCodeNamePair(VersionControlSystem.SCM_CLEARCASE, VersionControlSystem.NAME_SCM_CLEARCASE);
-    super.addCodeNamePair(VersionControlSystem.SCM_BAZAAR, VersionControlSystem.NAME_BAZAAR);
-    super.addCodeNamePair(VersionControlSystem.SCM_CVS, VersionControlSystem.NAME_SCM_CVS);
-    super.addCodeNamePair(VersionControlSystem.SCM_FILESYSTEM, VersionControlSystem.NAME_SCM_FILESYSTEM);
-    super.addCodeNamePair(VersionControlSystem.SCM_GENERIC, VersionControlSystem.NAME_SCM_GENERIC);
-    super.addCodeNamePair(VersionControlSystem.SCM_GIT, VersionControlSystem.NAME_SCM_GIT);
-    super.addCodeNamePair(VersionControlSystem.SCM_MERCURIAL, VersionControlSystem.NAME_SCM_MERCURIAL);
-    super.addCodeNamePair(VersionControlSystem.SCM_MKS, VersionControlSystem.NAME_SCM_MKS);
-    super.addCodeNamePair(VersionControlSystem.SCM_PERFORCE, VersionControlSystem.NAME_SCM_PERFORCE);
-    super.addCodeNamePair(VersionControlSystem.SCM_PVCS, VersionControlSystem.NAME_SCM_PVCS);
-    super.addCodeNamePair(VersionControlSystem.SCM_REFERENCE, VersionControlSystem.NAME_SCM_REFERENCE);
-    super.addCodeNamePair(VersionControlSystem.SCM_STARTEAM, VersionControlSystem.NAME_SCM_STARTEAM);
-    super.addCodeNamePair(VersionControlSystem.SCM_SURROUND, VersionControlSystem.NAME_SCM_SURROUND);
-    super.addCodeNamePair(VersionControlSystem.SCM_SVN, VersionControlSystem.NAME_SCM_SVN);
-    super.addCodeNamePair(VersionControlSystem.SCM_VAULT, VersionControlSystem.NAME_SCM_VAULT);
-    super.addCodeNamePair(VersionControlSystem.SCM_VSS, VersionControlSystem.NAME_SCM_VSS);
+    super.addCodeNamePair(VCSAttribute.SCM_ACCUREV, VCSAttribute.NAME_SCM_ACCUREV);
+    super.addCodeNamePair(VCSAttribute.SCM_CLEARCASE, VCSAttribute.NAME_SCM_CLEARCASE);
+    super.addCodeNamePair(VCSAttribute.SCM_BAZAAR, VCSAttribute.NAME_BAZAAR);
+    super.addCodeNamePair(VCSAttribute.SCM_CVS, VCSAttribute.NAME_SCM_CVS);
+    super.addCodeNamePair(VCSAttribute.SCM_FILESYSTEM, VCSAttribute.NAME_SCM_FILESYSTEM);
+    super.addCodeNamePair(VCSAttribute.SCM_GENERIC, VCSAttribute.NAME_SCM_GENERIC);
+    super.addCodeNamePair(VCSAttribute.SCM_GIT, VCSAttribute.NAME_SCM_GIT);
+    super.addCodeNamePair(VCSAttribute.SCM_MERCURIAL, VCSAttribute.NAME_SCM_MERCURIAL);
+    super.addCodeNamePair(VCSAttribute.SCM_MKS, VCSAttribute.NAME_SCM_MKS);
+    super.addCodeNamePair(VCSAttribute.SCM_PERFORCE, VCSAttribute.NAME_SCM_PERFORCE);
+    super.addCodeNamePair(VCSAttribute.SCM_PVCS, VCSAttribute.NAME_SCM_PVCS);
+    super.addCodeNamePair(VCSAttribute.SCM_REFERENCE, VCSAttribute.NAME_SCM_REFERENCE);
+    super.addCodeNamePair(VCSAttribute.SCM_STARTEAM, VCSAttribute.NAME_SCM_STARTEAM);
+    super.addCodeNamePair(VCSAttribute.SCM_SURROUND, VCSAttribute.NAME_SCM_SURROUND);
+    super.addCodeNamePair(VCSAttribute.SCM_SVN, VCSAttribute.NAME_SCM_SVN);
+    super.addCodeNamePair(VCSAttribute.SCM_VAULT, VCSAttribute.NAME_SCM_VAULT);
+    super.addCodeNamePair(VCSAttribute.SCM_VSS, VCSAttribute.NAME_SCM_VSS);
 
-    super.setCode(VersionControlSystem.SCM_CLEARCASE);
+    super.setCode(VCSAttribute.SCM_CLEARCASE);
   }
 }

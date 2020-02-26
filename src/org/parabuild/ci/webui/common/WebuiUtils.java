@@ -17,7 +17,6 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.BuildState;
 import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.DisplayGroupManager;
 import org.parabuild.ci.configuration.SystemConfigurationManager;
@@ -858,13 +857,13 @@ public final class WebuiUtils {
     // get effective build config to use to make chage url factory
     final ConfigurationManager cm = ConfigurationManager.getInstance();
     BuildConfig effectiveBuildConfig = cm.getBuildConfiguration(activeBuildID);
-    if (effectiveBuildConfig.getSourceControl() == VersionControlSystem.SCM_REFERENCE) {
+    if (effectiveBuildConfig.getSourceControl() == VCSAttribute.SCM_REFERENCE) {
       effectiveBuildConfig = cm.getEffectiveBuildConfig(effectiveBuildConfig);
     }
     final byte effectiveSourceControl = effectiveBuildConfig.getSourceControl();
 
     // make factory
-    if (effectiveSourceControl == VersionControlSystem.SCM_CVS) {
+    if (effectiveSourceControl == VCSAttribute.SCM_CVS) {
 
       // get browser type
       final int browserType = getSourceBrowserType(cm, effectiveBuildConfig);
@@ -893,7 +892,7 @@ public final class WebuiUtils {
 
         return null;
       }
-    } else if (effectiveSourceControl == VersionControlSystem.SCM_SVN) {
+    } else if (effectiveSourceControl == VCSAttribute.SCM_SVN) {
 
       // get browser type
       final int browserType = getSourceBrowserType(cm, effectiveBuildConfig);
@@ -928,13 +927,13 @@ public final class WebuiUtils {
 
         return null;
       }
-    } else if (effectiveSourceControl == VersionControlSystem.SCM_PERFORCE) {
+    } else if (effectiveSourceControl == VCSAttribute.SCM_PERFORCE) {
       final SourceControlSetting p4webURL = cm.getSourceControlSetting(effectiveBuildConfig.getActiveBuildID(), VCSAttribute.P4_P4WEB_URL);
       if (p4webURL == null || StringUtils.isBlank(p4webURL.getPropertyValue())) {
         return null;
       }
       return new P4WebChangeURLFactory(p4webURL.getPropertyValue());
-    } else if (effectiveSourceControl == VersionControlSystem.SCM_GIT) {
+    } else if (effectiveSourceControl == VCSAttribute.SCM_GIT) {
 
       final String githubURL = cm.getSourceControlSettingValue(effectiveBuildConfig.getActiveBuildID(), VCSAttribute.GITHUB_URL, null);
       if (StringUtils.isBlank(githubURL)) {

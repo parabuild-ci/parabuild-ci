@@ -18,7 +18,6 @@ import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.build.BuildScriptGenerator;
 import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.error.ErrorManager;
 import org.parabuild.ci.error.ErrorManagerFactory;
@@ -709,7 +708,7 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
    * Validates that correct VSS build configuration was passesed
    */
   private static void validateIsVSSConfiguration(final BuildConfig buildConfig) {
-    if (buildConfig.getSourceControl() != VersionControlSystem.SCM_REFERENCE && buildConfig.getSourceControl() != VersionControlSystem.SCM_VSS) {
+    if (buildConfig.getSourceControl() != VCSAttribute.SCM_REFERENCE && buildConfig.getSourceControl() != VCSAttribute.SCM_VSS) {
       throw new IllegalArgumentException("Non-VSS build configuration");
     }
   }

@@ -18,7 +18,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.ServersideTestCase;
 import org.parabuild.ci.TestHelper;
-import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.webui.admin.GeneralBuildConfigPanel;
@@ -45,7 +45,7 @@ public class SSTestGeneralBuildConfigPanel extends ServersideTestCase {
     buildConfig.setBuildID(BuildConfig.UNSAVED_ID);
     buildConfig.setBuildName("test");
     buildConfig.setScheduleType(BuildConfig.SCHEDULE_TYPE_AUTOMATIC);
-    buildConfig.setSourceControl(VersionControlSystem.SCM_CVS);
+    buildConfig.setSourceControl(VCSAttribute.SCM_CVS);
     buildConfig.setBuilderID(TestHelper.FAILED_BUILDER_ID);
     final GeneralBuildConfigPanel generalBuildConfigPanel = new GeneralBuildConfigPanel(buildConfig);
   }

@@ -18,7 +18,6 @@ import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.build.BuildScriptGenerator;
 import org.parabuild.ci.common.VCSAttribute;
-import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.SystemConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.error.Error;
@@ -1020,7 +1019,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
    * Validates that correct CVS build configuration was passed
    */
   private static void validateIsCVSConfiguration(final BuildConfig buildConfig) {
-    if (buildConfig.getSourceControl() != VersionControlSystem.SCM_REFERENCE && buildConfig.getSourceControl() != VersionControlSystem.SCM_CVS) {
+    if (buildConfig.getSourceControl() != VCSAttribute.SCM_REFERENCE && buildConfig.getSourceControl() != VCSAttribute.SCM_CVS) {
       throw new IllegalArgumentException("Non-CVS build configuration");
     }
   }

@@ -1,7 +1,7 @@
 package org.parabuild.ci.webui.vcs.repository.server;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
-import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.common.VCSAttribute;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.TransactionCallback;
 import org.parabuild.ci.object.VCSServer;
@@ -22,23 +22,23 @@ public class VCSServerServiceImpl extends RemoteServiceServlet implements VCSSer
    */
   private static final VCSServerType[] VCS_SERVER_TYPES = {
 
-          new VCSServerType(VersionControlSystem.SCM_ACCUREV, VersionControlSystem.NAME_SCM_ACCUREV),
-          new VCSServerType(VersionControlSystem.SCM_CLEARCASE, VersionControlSystem.NAME_SCM_CLEARCASE),
-          new VCSServerType(VersionControlSystem.SCM_BAZAAR, VersionControlSystem.NAME_BAZAAR),
-          new VCSServerType(VersionControlSystem.SCM_CVS, VersionControlSystem.NAME_SCM_CVS),
-          new VCSServerType(VersionControlSystem.SCM_FILESYSTEM, VersionControlSystem.NAME_SCM_FILESYSTEM),
-          new VCSServerType(VersionControlSystem.SCM_GENERIC, VersionControlSystem.NAME_SCM_GENERIC),
-          new VCSServerType(VersionControlSystem.SCM_GIT, VersionControlSystem.NAME_SCM_GIT),
-          new VCSServerType(VersionControlSystem.SCM_MERCURIAL, VersionControlSystem.NAME_SCM_MERCURIAL),
-          new VCSServerType(VersionControlSystem.SCM_MKS, VersionControlSystem.NAME_SCM_MKS),
-          new VCSServerType(VersionControlSystem.SCM_PERFORCE, VersionControlSystem.NAME_SCM_PERFORCE),
-          new VCSServerType(VersionControlSystem.SCM_PVCS, VersionControlSystem.NAME_SCM_PVCS),
-          new VCSServerType(VersionControlSystem.SCM_REFERENCE, VersionControlSystem.NAME_SCM_REFERENCE),
-          new VCSServerType(VersionControlSystem.SCM_STARTEAM, VersionControlSystem.NAME_SCM_STARTEAM),
-          new VCSServerType(VersionControlSystem.SCM_SURROUND, VersionControlSystem.NAME_SCM_SURROUND),
-          new VCSServerType(VersionControlSystem.SCM_SVN, VersionControlSystem.NAME_SCM_SVN),
-          new VCSServerType(VersionControlSystem.SCM_VAULT, VersionControlSystem.NAME_SCM_VAULT),
-          new VCSServerType(VersionControlSystem.SCM_VSS, VersionControlSystem.NAME_SCM_VSS),
+          new VCSServerType(VCSAttribute.SCM_ACCUREV, VCSAttribute.NAME_SCM_ACCUREV),
+          new VCSServerType(VCSAttribute.SCM_CLEARCASE, VCSAttribute.NAME_SCM_CLEARCASE),
+          new VCSServerType(VCSAttribute.SCM_BAZAAR, VCSAttribute.NAME_BAZAAR),
+          new VCSServerType(VCSAttribute.SCM_CVS, VCSAttribute.NAME_SCM_CVS),
+          new VCSServerType(VCSAttribute.SCM_FILESYSTEM, VCSAttribute.NAME_SCM_FILESYSTEM),
+          new VCSServerType(VCSAttribute.SCM_GENERIC, VCSAttribute.NAME_SCM_GENERIC),
+          new VCSServerType(VCSAttribute.SCM_GIT, VCSAttribute.NAME_SCM_GIT),
+          new VCSServerType(VCSAttribute.SCM_MERCURIAL, VCSAttribute.NAME_SCM_MERCURIAL),
+          new VCSServerType(VCSAttribute.SCM_MKS, VCSAttribute.NAME_SCM_MKS),
+          new VCSServerType(VCSAttribute.SCM_PERFORCE, VCSAttribute.NAME_SCM_PERFORCE),
+          new VCSServerType(VCSAttribute.SCM_PVCS, VCSAttribute.NAME_SCM_PVCS),
+          new VCSServerType(VCSAttribute.SCM_REFERENCE, VCSAttribute.NAME_SCM_REFERENCE),
+          new VCSServerType(VCSAttribute.SCM_STARTEAM, VCSAttribute.NAME_SCM_STARTEAM),
+          new VCSServerType(VCSAttribute.SCM_SURROUND, VCSAttribute.NAME_SCM_SURROUND),
+          new VCSServerType(VCSAttribute.SCM_SVN, VCSAttribute.NAME_SCM_SVN),
+          new VCSServerType(VCSAttribute.SCM_VAULT, VCSAttribute.NAME_SCM_VAULT),
+          new VCSServerType(VCSAttribute.SCM_VSS, VCSAttribute.NAME_SCM_VSS),
   };
 
 
