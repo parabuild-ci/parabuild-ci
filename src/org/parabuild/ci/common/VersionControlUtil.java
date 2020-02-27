@@ -6,7 +6,7 @@ package org.parabuild.ci.common;
 public final class VersionControlUtil {
 
   /**
-   * String lookup table indexed by the actual VCS
+   * String lookup table indexed by the actual VCS code.
    */
   private static final String[] VCS_NAMES = createStringVCSNames();
 

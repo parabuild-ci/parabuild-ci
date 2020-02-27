@@ -17,6 +17,4 @@ public interface VCSServerServiceAsync {
    * @return a list of VCSServers.
    */
   void getVCSServers(AsyncCallback<VCSServerClientVO[]> async);
-
-  void getVCSServerTypes(AsyncCallback<VCSServerType[]> async);
 }

@@ -1,15 +1,13 @@
 package org.parabuild.ci.webui.vcs.repository.client;
 
-import com.google.gwt.core.client.GWT;
-import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.webui.vcs.repository.common.CancelButton;
 import org.parabuild.ci.webui.vcs.repository.common.CancelButtonClickHandler;
-import org.parabuild.ci.webui.vcs.repository.common.ErrorDialogBox;
 import org.parabuild.ci.webui.vcs.repository.common.FlexTableIterator;
 import org.parabuild.ci.webui.vcs.repository.common.ParabuildDialogBox;
 import org.parabuild.ci.webui.vcs.repository.common.ParabuildTextBox;
@@ -42,33 +40,23 @@ public final class VCSServerDialogBox extends ParabuildDialogBox {
     super.center();
 
     // Populate type dropdown
-    flTypes.setEnabled(false);
-    final VCSServerServiceAsync vcsServerService = GWT.create(VCSServerService.class);
-    vcsServerService.getVCSServerTypes(new AsyncCallback<VCSServerType[]>() {
-
-      @Override
-      public void onFailure(final Throwable caught) {
-
-        final ErrorDialogBox errorDialogBox = new ErrorDialogBox();
-        errorDialogBox.setErrorMessage(caught.getMessage());
-        errorDialogBox.center();
-        errorDialogBox.show();
-      }
-
-
-      @Override
-      public void onSuccess(final VCSServerType[] result) {
-
-        for (final VCSServerType vcsServerType : result) {
-
-          final String typeName = vcsServerType.getName();
-          final String typeValue = Integer.toString(vcsServerType.getType());
-          flTypes.addItem(typeName, typeValue);
-        }
-
-        flTypes.setEnabled(true);
-      }
-    });
+    flTypes.addItem(VersionControlSystem.NAME_SCM_GIT, Integer.toString(VersionControlSystem.SCM_GIT));
+    flTypes.addItem(VersionControlSystem.NAME_SCM_PERFORCE, Integer.toString(VersionControlSystem.SCM_PERFORCE));
+    flTypes.addItem(VersionControlSystem.NAME_SCM_SVN, Integer.toString(VersionControlSystem.SCM_SVN));
+    flTypes.addItem(VersionControlSystem.NAME_SCM_ACCUREV, Integer.toString(VersionControlSystem.SCM_ACCUREV));
+    flTypes.addItem(VersionControlSystem.NAME_SCM_CLEARCASE, Integer.toString(VersionControlSystem.SCM_CLEARCASE));
+    flTypes.addItem(VersionControlSystem.NAME_BAZAAR, Integer.toString(VersionControlSystem.SCM_BAZAAR));
+    flTypes.addItem(VersionControlSystem.NAME_SCM_CVS, Integer.toString(VersionControlSystem.SCM_CVS));
+    flTypes.addItem(VersionControlSystem.NAME_SCM_FILESYSTEM, Integer.toString(VersionControlSystem.SCM_FILESYSTEM));
+    flTypes.addItem(VersionControlSystem.NAME_SCM_GENERIC, Integer.toString(VersionControlSystem.SCM_GENERIC));
+    flTypes.addItem(VersionControlSystem.NAME_SCM_MERCURIAL, Integer.toString(VersionControlSystem.SCM_MERCURIAL));
+    flTypes.addItem(VersionControlSystem.NAME_SCM_MKS, Integer.toString(VersionControlSystem.SCM_MKS));
+    flTypes.addItem(VersionControlSystem.NAME_SCM_PVCS, Integer.toString(VersionControlSystem.SCM_PVCS));
+    flTypes.addItem(VersionControlSystem.NAME_SCM_REFERENCE, Integer.toString(VersionControlSystem.SCM_REFERENCE));
+    flTypes.addItem(VersionControlSystem.NAME_SCM_STARTEAM, Integer.toString(VersionControlSystem.SCM_STARTEAM));
+    flTypes.addItem(VersionControlSystem.NAME_SCM_SURROUND, Integer.toString(VersionControlSystem.SCM_SURROUND));
+    flTypes.addItem(VersionControlSystem.NAME_SCM_VAULT, Integer.toString(VersionControlSystem.SCM_VAULT));
+    flTypes.addItem(VersionControlSystem.NAME_SCM_VSS, Integer.toString(VersionControlSystem.SCM_VSS));
 
     // Layout fields
     final FlexTableIterator flexTableIterator = new FlexTableIterator(flexTable, 2);

@@ -21,9 +21,9 @@ import org.parabuild.ci.webui.vcs.repository.common.ParabuildTextBox;
 public final class VCSRepositoryDialogBox extends ParabuildDialogBox {
 
   private final FlexTable flexTable = new FlexTable();
-  private final Label lbType = new Label("Repository type:");
   private final Label lbDescription = new Label("Repository description:");
   private final Label lbName = new Label("Repository name:");
+  private final Label lbType = new Label("Server:");
   private final TextBox tbDescription = new ParabuildTextBox(100, 70);
   private final TextBox tbName = new ParabuildTextBox(50, 50);
   private final ListBox lbServer = new ListBox();

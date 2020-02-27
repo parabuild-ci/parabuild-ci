@@ -22,6 +22,4 @@ public interface VCSServerService extends RemoteService {
    * @return a list of VCSServers.
    */
   VCSServerClientVO[] getVCSServers();
-
-  VCSServerType[] getVCSServerTypes();
 }
