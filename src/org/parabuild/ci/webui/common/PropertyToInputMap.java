@@ -13,13 +13,16 @@
  */
 package org.parabuild.ci.webui.common;
 
-import java.io.*;
-import java.util.*;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
+import viewtier.ui.AbstractInput;
 
-import org.apache.commons.logging.*;
-
-import org.parabuild.ci.util.*;
-import viewtier.ui.*;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 /**
  * This map is used to simplify access to fields via their
@@ -28,8 +31,6 @@ import viewtier.ui.*;
 public final class PropertyToInputMap implements Serializable {
 
   private static final long serialVersionUID = 2416070308102742329L; // NOPMD
-  /** @noinspection UNUSED_SYMBOL,UnusedDeclaration*/
-  private static final Log log = LogFactory.getLog(PropertyToInputMap.class); // NOPMD
 
   private final Map propertyNameToInputMap = new HashMap(5);
   private final Map propertyNameToPropertyObjectMap = new HashMap(5);
