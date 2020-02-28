@@ -16,7 +16,7 @@ package org.parabuild.ci.notification;
 import org.parabuild.ci.util.NamedProperty;
 import org.parabuild.ci.util.NamedPropertyStringGenerator;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.util.ValidationException;
+import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.configuration.ConfigurationConstants;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManager;

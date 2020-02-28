@@ -16,7 +16,7 @@ package org.parabuild.ci.versioncontrol;
 import java.util.*;
 import org.apache.commons.logging.*;
 
-import org.parabuild.ci.util.*;
+import org.parabuild.ci.common.ValidationException;
 
 /**
  * This class is responsible for validating and cleaning

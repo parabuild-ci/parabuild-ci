@@ -24,7 +24,7 @@ import org.parabuild.ci.remote.AgentEnvironment;
 import org.parabuild.ci.remote.AgentManager;
 import org.parabuild.ci.util.SourceControlSettingResolver;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.util.ValidationException;
+import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.versioncontrol.ExclusionPathFinder;
 import org.parabuild.ci.webui.common.BoldCommonLabel;
 import org.parabuild.ci.webui.common.CommonButton;

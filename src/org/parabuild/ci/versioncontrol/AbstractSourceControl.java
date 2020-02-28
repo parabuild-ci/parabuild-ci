@@ -35,7 +35,7 @@ import org.parabuild.ci.util.BuildException;
 import org.parabuild.ci.util.CommandStoppedException;
 import org.parabuild.ci.util.SourceControlSettingResolver;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.util.ValidationException;
+import org.parabuild.ci.common.ValidationException;
 
 import java.io.IOException;
 import java.util.Collections;

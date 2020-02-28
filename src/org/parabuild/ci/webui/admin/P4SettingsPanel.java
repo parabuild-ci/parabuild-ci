@@ -22,7 +22,7 @@ import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.remote.NoLiveAgentsException;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.util.ValidationException;
+import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.versioncontrol.perforce.P4ClientNameGeneratorImpl;
 import org.parabuild.ci.versioncontrol.perforce.P4ClientViewParser;
 import org.parabuild.ci.webui.common.CommonFieldLabel;

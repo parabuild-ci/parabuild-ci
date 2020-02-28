@@ -35,7 +35,7 @@ import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.remote.AgentManager;
 import org.parabuild.ci.util.BuildException;
 import org.parabuild.ci.util.CommandStoppedException;
-import org.parabuild.ci.util.ValidationException;
+import org.parabuild.ci.common.ValidationException;
 
 import java.io.File;
 import java.io.IOException;

@@ -23,7 +23,7 @@ import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.util.BuildException;
 import org.parabuild.ci.util.CommandStoppedException;
 import org.parabuild.ci.util.ThreadUtils;
-import org.parabuild.ci.util.ValidationException;
+import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.configuration.AgentHost;
 import org.parabuild.ci.configuration.ChangeListsAndIssues;
 import org.parabuild.ci.configuration.ConfigurationManager;

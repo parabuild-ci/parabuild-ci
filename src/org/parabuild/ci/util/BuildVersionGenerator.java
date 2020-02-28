@@ -13,6 +13,8 @@
  */
 package org.parabuild.ci.util;
 
+import org.parabuild.ci.common.ValidationException;
+
 /**
  * This class is responsible for generation of build version field. 
  */

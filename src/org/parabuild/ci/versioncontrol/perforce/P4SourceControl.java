@@ -34,7 +34,7 @@ import org.parabuild.ci.util.CommandStoppedException;
 import org.parabuild.ci.util.CommonConstants;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.util.ValidationException;
+import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.versioncontrol.AbstractSourceControl;
 import org.parabuild.ci.versioncontrol.SourceControl;
 import org.parabuild.ci.versioncontrol.SourceControlSettingChangeDetector;

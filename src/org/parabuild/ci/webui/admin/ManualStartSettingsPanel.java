@@ -24,7 +24,7 @@ import org.parabuild.ci.object.BuildConfigAttribute;
 import org.parabuild.ci.object.StartParameterType;
 import org.parabuild.ci.util.BuildVersionGenerator;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.util.ValidationException;
+import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.GridIterator;

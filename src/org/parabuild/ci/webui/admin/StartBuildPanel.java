@@ -27,7 +27,7 @@ import org.parabuild.ci.object.StartParameterType;
 import org.parabuild.ci.services.BuildManager;
 import org.parabuild.ci.services.BuildStartRequest;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.util.ValidationException;
+import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.webui.common.CancelButton;
 import org.parabuild.ci.webui.common.CommonFlow;
 import org.parabuild.ci.webui.common.CommonLabel;

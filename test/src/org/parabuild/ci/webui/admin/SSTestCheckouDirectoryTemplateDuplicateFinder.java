@@ -19,7 +19,7 @@ import org.parabuild.ci.ServersideTestCase;
 import org.parabuild.ci.TestHelper;
 import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.util.BuildException;
-import org.parabuild.ci.util.ValidationException;
+import org.parabuild.ci.common.ValidationException;
 
 /**
  */

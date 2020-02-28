@@ -14,7 +14,7 @@
 package org.parabuild.ci.webui.admin;
 
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.util.ValidationException;
+import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.object.SourceControlSettingVO;

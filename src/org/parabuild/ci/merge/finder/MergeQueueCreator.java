@@ -18,7 +18,7 @@ import java.io.IOException;
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.util.BuildException;
 import org.parabuild.ci.util.CommandStoppedException;
-import org.parabuild.ci.util.ValidationException;
+import org.parabuild.ci.common.ValidationException;
 
 /**
  * Responsible for finding change lists and placing them

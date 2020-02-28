@@ -16,7 +16,7 @@ package org.parabuild.ci.webui.admin.parameters;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.util.ValidationException;
+import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.object.StartParameter;
 import org.parabuild.ci.webui.common.BasePage;
 import org.parabuild.ci.webui.common.ButtonSeparator;

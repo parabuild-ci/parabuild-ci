@@ -18,7 +18,7 @@ import java.util.*;
 
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.util.ValidationException;
+import org.parabuild.ci.common.ValidationException;
 
 /**
  * Creates a client view lines ready for including into spec. It

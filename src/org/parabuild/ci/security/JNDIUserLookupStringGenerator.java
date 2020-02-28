@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.security;
 
+import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.util.*;
 
 /**

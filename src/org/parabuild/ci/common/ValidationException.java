@@ -11,7 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.parabuild.ci.util;
+package org.parabuild.ci.common;
 
 
 /**
@@ -20,6 +20,15 @@ package org.parabuild.ci.util;
 public final class ValidationException extends Exception {
 
   private static final long serialVersionUID = -1902405301116098561L;
+
+
+  /**
+   * Constructs a new exception with {@code null} as its detail message.
+   * The cause is not initialized, and may subsequently be initialized by a
+   * call to {@link #initCause}.
+   */
+  public ValidationException() {
+  }
 
 
   /**

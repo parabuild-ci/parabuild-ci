@@ -16,6 +16,7 @@ package org.parabuild.ci.util;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.SystemVariableConfigurationManager;
+import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfigAttribute;
 import org.parabuild.ci.object.StartParameter;

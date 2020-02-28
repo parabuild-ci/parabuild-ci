@@ -15,7 +15,7 @@ package org.parabuild.ci.versioncontrol;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.util.ValidationException;
+import org.parabuild.ci.common.ValidationException;
 
 import java.util.List;
 

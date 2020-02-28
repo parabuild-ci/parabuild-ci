@@ -15,7 +15,7 @@ package org.parabuild.ci.webui.admin;
 
 import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.util.ValidationException;
+import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.versioncontrol.VaultDepotPathParser;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;

@@ -16,6 +16,7 @@ package org.parabuild.ci.util;
 import java.text.*;
 import java.util.*;
 import org.apache.commons.logging.*;
+import org.parabuild.ci.common.ValidationException;
 
 /**
  * NamedPropertyStringGenerator is responsible for generating

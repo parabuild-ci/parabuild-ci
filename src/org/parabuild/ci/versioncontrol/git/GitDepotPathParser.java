@@ -15,7 +15,7 @@ package org.parabuild.ci.versioncontrol.git;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.util.ValidationException;
+import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.versioncontrol.DepotPathParser;
 import org.parabuild.ci.versioncontrol.RepositoryPath;
 

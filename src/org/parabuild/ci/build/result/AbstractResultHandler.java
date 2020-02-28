@@ -21,7 +21,7 @@ import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.util.ArgumentValidator;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.util.ValidationException;
+import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.ResultGroupManager;
 import org.parabuild.ci.error.Error;

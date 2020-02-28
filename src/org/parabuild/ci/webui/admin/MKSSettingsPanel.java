@@ -17,7 +17,7 @@ import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.remote.NoLiveAgentsException;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.util.ValidationException;
+import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.versioncontrol.DepotPathParser;
 import org.parabuild.ci.versioncontrol.mks.MKSDateFormat;
 import org.parabuild.ci.webui.common.CommonFieldLabel;

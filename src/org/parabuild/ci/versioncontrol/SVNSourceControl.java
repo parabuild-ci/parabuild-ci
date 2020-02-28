@@ -34,7 +34,7 @@ import org.parabuild.ci.util.ExceptionUtils;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.SettingResolver;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.util.ValidationException;
+import org.parabuild.ci.common.ValidationException;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;

@@ -55,7 +55,7 @@ import org.parabuild.ci.services.BuildListService;
 import org.parabuild.ci.services.ServiceManager;
 import org.parabuild.ci.util.SourceControlSettingResolver;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.util.ValidationException;
+import org.parabuild.ci.common.ValidationException;
 
 import java.util.ArrayList;
 import java.util.Collection;

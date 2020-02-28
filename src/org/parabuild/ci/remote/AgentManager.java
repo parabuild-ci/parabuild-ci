@@ -42,7 +42,7 @@ import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.SourceControlSettingResolver;
 import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.util.ThreadUtils;
-import org.parabuild.ci.util.ValidationException;
+import org.parabuild.ci.common.ValidationException;
 
 import java.io.File;
 import java.io.IOException;
