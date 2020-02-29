@@ -24,7 +24,7 @@ import org.parabuild.ci.security.SecurityManager;
 import org.parabuild.ci.webui.common.BasePage;
 import org.parabuild.ci.webui.common.Pages;
 import org.parabuild.ci.webui.common.ReturnTierletAttribuite;
-import org.parabuild.ci.webui.common.WebUIConstants;
+import org.parabuild.ci.common.WebUIConstants;
 import viewtier.ui.*;
 
 import javax.servlet.http.Cookie;

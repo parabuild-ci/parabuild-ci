@@ -22,7 +22,7 @@ import org.parabuild.ci.versioncontrol.SVNDepotPathParser;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.webui.common.WebUIConstants;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Field;
 import viewtier.ui.Layout;

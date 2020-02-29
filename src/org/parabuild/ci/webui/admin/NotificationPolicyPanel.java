@@ -29,7 +29,7 @@ import org.parabuild.ci.webui.common.MessagePanel;
 import org.parabuild.ci.webui.common.PropertyToInputMap;
 import org.parabuild.ci.webui.common.Saveable;
 import org.parabuild.ci.webui.common.Validatable;
-import org.parabuild.ci.webui.common.WebUIConstants;
+import org.parabuild.ci.common.WebUIConstants;
 import viewtier.ui.CheckBox;
 
 import java.util.List;

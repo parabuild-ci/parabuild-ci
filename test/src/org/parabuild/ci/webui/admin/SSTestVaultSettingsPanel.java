@@ -18,9 +18,9 @@ import org.apache.cactus.*;
 import junit.framework.*;
 
 import org.parabuild.ci.TestHelper;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.*;
 import org.parabuild.ci.object.*;
-import org.parabuild.ci.webui.common.*;
 
 /**
  * Tests VaultSettingsPanel

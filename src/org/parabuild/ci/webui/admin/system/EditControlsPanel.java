@@ -18,7 +18,7 @@ import org.parabuild.ci.webui.common.CommonButton;
 import org.parabuild.ci.webui.common.CommonFlow;
 import org.parabuild.ci.webui.common.Pages;
 import org.parabuild.ci.webui.common.SaveButton;
-import org.parabuild.ci.webui.common.WebUIConstants;
+import org.parabuild.ci.common.WebUIConstants;
 import viewtier.ui.ButtonPressedEvent;
 import viewtier.ui.ButtonPressedListener;
 import viewtier.ui.Label;

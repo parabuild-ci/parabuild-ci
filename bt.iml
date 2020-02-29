@@ -206,6 +206,7 @@
     <orderEntry type="library" name="mockito-all-1.8.5" level="project" />
     <orderEntry type="library" name="Freemarker" level="project" />
     <orderEntry type="library" name="dwr" level="project" />
+    <orderEntry type="library" name="gwt-user" level="project" />
   </component>
   <component name="org.twodividedbyzero.idea.findbugs">
     <option name="_basePreferences">

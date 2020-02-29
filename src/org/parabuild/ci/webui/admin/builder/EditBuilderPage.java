@@ -22,7 +22,7 @@ import org.parabuild.ci.webui.common.CancelButton;
 import org.parabuild.ci.webui.common.Pages;
 import org.parabuild.ci.webui.common.ParameterUtils;
 import org.parabuild.ci.webui.common.SaveButton;
-import org.parabuild.ci.webui.common.WebUIConstants;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.ButtonPressedEvent;
 import viewtier.ui.ButtonPressedListener;

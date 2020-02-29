@@ -17,7 +17,7 @@ import junit.framework.TestSuite;
 import org.apache.cactus.ServletTestCase;
 import org.parabuild.ci.TestHelper;
 import org.parabuild.ci.object.StartParameter;
-import org.parabuild.ci.webui.common.WebUIConstants;
+import org.parabuild.ci.common.WebUIConstants;
 
 import java.util.ArrayList;
 import java.util.List;

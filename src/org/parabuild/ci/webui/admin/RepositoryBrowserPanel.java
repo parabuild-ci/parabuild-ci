@@ -23,7 +23,7 @@ import org.parabuild.ci.webui.common.CommonFlow;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.Pages;
 import org.parabuild.ci.webui.common.PropertyToInputMap;
-import org.parabuild.ci.webui.common.WebUIConstants;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.DropDownSelectedEvent;
 import viewtier.ui.DropDownSelectedListener;

@@ -15,7 +15,7 @@ package org.parabuild.ci.webui.admin;
 
 import org.parabuild.ci.webui.common.MessagePanel;
 import org.parabuild.ci.webui.common.TableHeaderLabel;
-import org.parabuild.ci.webui.common.WebUIConstants;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Layout;
 import viewtier.ui.Text;

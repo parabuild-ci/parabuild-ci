@@ -31,7 +31,7 @@ import org.parabuild.ci.webui.common.CommonLabel;
 import org.parabuild.ci.webui.common.DefaultTableCommands;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.Pages;
-import org.parabuild.ci.webui.common.WebUIConstants;
+import org.parabuild.ci.common.WebUIConstants;
 import viewtier.ui.CheckBox;
 import viewtier.ui.Component;
 import viewtier.ui.DropDownSelectedEvent;

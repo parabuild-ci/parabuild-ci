@@ -26,7 +26,7 @@ import org.parabuild.ci.webui.common.Pages;
 import org.parabuild.ci.webui.common.Saveable;
 import org.parabuild.ci.webui.common.TableHeaderLabel;
 import org.parabuild.ci.webui.common.Validatable;
-import org.parabuild.ci.webui.common.WebUIConstants;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Component;
 import viewtier.ui.Field;

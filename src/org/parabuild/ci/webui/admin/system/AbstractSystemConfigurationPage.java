@@ -14,7 +14,7 @@
 package org.parabuild.ci.webui.admin.system;
 
 import org.parabuild.ci.webui.common.Pages;
-import org.parabuild.ci.webui.common.WebUIConstants;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Panel;
 import viewtier.ui.Parameters;

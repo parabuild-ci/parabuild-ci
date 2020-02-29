@@ -15,6 +15,7 @@ package org.parabuild.ci.webui.admin;
 
 import java.util.*;
 
+import org.parabuild.ci.common.WebUIConstants;
 import viewtier.ui.*;
 import org.parabuild.ci.webui.common.*;
 import org.parabuild.ci.object.*;

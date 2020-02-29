@@ -18,7 +18,7 @@ import org.apache.cactus.*;
 import junit.framework.*;
 
 import org.parabuild.ci.TestHelper;
-import org.parabuild.ci.webui.common.*;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.object.StartParameterType;
 
 /**

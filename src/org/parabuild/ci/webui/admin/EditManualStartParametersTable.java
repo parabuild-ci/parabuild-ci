@@ -20,7 +20,7 @@ import org.parabuild.ci.services.BuildStartRequestParameter;
 import org.parabuild.ci.webui.common.AbstractFlatTable;
 import org.parabuild.ci.webui.common.CommonLabel;
 import org.parabuild.ci.webui.common.TableHeaderLabel;
-import org.parabuild.ci.webui.common.WebUIConstants;
+import org.parabuild.ci.common.WebUIConstants;
 import viewtier.ui.Component;
 import viewtier.ui.Label;
 

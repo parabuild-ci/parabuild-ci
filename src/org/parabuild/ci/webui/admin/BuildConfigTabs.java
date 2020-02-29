@@ -24,7 +24,7 @@ import org.parabuild.ci.object.BuildConfigAttribute;
 import org.parabuild.ci.webui.common.Pages;
 import org.parabuild.ci.webui.common.Saveable;
 import org.parabuild.ci.webui.common.Validatable;
-import org.parabuild.ci.webui.common.WebUIConstants;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Panel;
 import viewtier.ui.Tabs;

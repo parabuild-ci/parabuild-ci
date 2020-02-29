@@ -23,7 +23,7 @@ import org.parabuild.ci.webui.common.EmailField;
 import org.parabuild.ci.webui.common.TableHeaderLabel;
 import org.parabuild.ci.webui.common.Validatable;
 import org.parabuild.ci.webui.common.WebuiUtils;
-import org.parabuild.ci.webui.common.WebUIConstants;
+import org.parabuild.ci.common.WebUIConstants;
 import viewtier.ui.Component;
 import viewtier.ui.AbstractInput;
 

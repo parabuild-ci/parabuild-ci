@@ -32,7 +32,7 @@ import org.parabuild.ci.webui.common.PageHeaderPanel;
 import org.parabuild.ci.webui.common.Pages;
 import org.parabuild.ci.webui.common.ParameterUtils;
 import org.parabuild.ci.webui.common.RSSImage;
-import org.parabuild.ci.webui.common.WebUIConstants;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.ConversationalTierlet;
 import viewtier.ui.DropDownSelectedEvent;

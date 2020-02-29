@@ -17,7 +17,7 @@ import junit.framework.*;
 
 import org.parabuild.ci.ServersideTestCase;
 import org.parabuild.ci.object.*;
-import org.parabuild.ci.webui.common.WebUIConstants;
+import org.parabuild.ci.common.WebUIConstants;
 
 /**
  * Tests VCSUserToEmailTable

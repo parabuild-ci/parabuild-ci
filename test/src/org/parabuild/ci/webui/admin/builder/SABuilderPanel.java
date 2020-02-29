@@ -15,7 +15,7 @@ package org.parabuild.ci.webui.admin.builder;
 
 import junit.framework.TestCase;
 import org.parabuild.ci.object.AgentConfig;
-import org.parabuild.ci.webui.common.WebUIConstants;
+import org.parabuild.ci.common.WebUIConstants;
 
 /**
  * BuilderPanel Tester.

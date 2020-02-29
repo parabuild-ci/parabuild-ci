@@ -22,7 +22,7 @@ import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.webui.common.BoldCommonLabel;
 import org.parabuild.ci.webui.common.CommonFlow;
 import org.parabuild.ci.webui.common.PropertyToInputMap;
-import org.parabuild.ci.webui.common.WebUIConstants;
+import org.parabuild.ci.common.WebUIConstants;
 import viewtier.ui.DropDownSelectedEvent;
 import viewtier.ui.DropDownSelectedListener;
 import viewtier.ui.Panel;

@@ -19,7 +19,7 @@ import org.parabuild.ci.TestHelper;
 import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
-import org.parabuild.ci.webui.common.WebUIConstants;
+import org.parabuild.ci.common.WebUIConstants;
 
 /**
  * Tests WebSVNSettingsPanel
