@@ -2,7 +2,6 @@ package org.parabuild.ci.webui.vcs.repository.client;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
-import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.ListBox;
@@ -12,6 +11,7 @@ import org.parabuild.ci.webui.vcs.repository.common.CancelButtonClickHandler;
 import org.parabuild.ci.webui.vcs.repository.common.FlexTableIterator;
 import org.parabuild.ci.webui.vcs.repository.common.ParabuildDialogBox;
 import org.parabuild.ci.webui.vcs.repository.common.ParabuildTextBox;
+import org.parabuild.ci.webui.vcs.repository.common.SaveButton;
 
 /**
  * Repository dialog box is responsible for editing and displaying Repository information.
@@ -49,7 +49,7 @@ public final class VCSRepositoryDialogBox extends ParabuildDialogBox {
     flexTableIterator.add(lbDescription).add(tbDescription);
 
     // Add "Save" button
-    flexTableIterator.add(new Button("Save", new SaveVCSRepositoryClickHandler(this)));
+    flexTableIterator.add(new SaveButton(new SaveVCSRepositoryClickHandler(this)));
 
     // Add "Cancel" button
     flexTableIterator.add(new CancelButton(new CancelButtonClickHandler(this)));
