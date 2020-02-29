@@ -48,6 +48,8 @@ public final class GitSettingsPanel extends AbstractSourceControlPanel {
   private static final String NAME_GIT_PASSWORD = "Git password:";
   private static final String NAME_GIT_PATH_TO_EXE = "Path to git executable:";
   private static final String NAME_GIT_REPOSITORY = "Git repository:";
+  private static final String NAME_GIT_BRANCH = "Git branch:";
+  private static final String NAME_GIT_SETTINGS = "Git Settings";
 
 
   // captions
@@ -64,11 +66,11 @@ public final class GitSettingsPanel extends AbstractSourceControlPanel {
 
 
   public GitSettingsPanel() {
-    super("Git Settings");
+    super(NAME_GIT_SETTINGS);
     // layout
     gridIterator.addPair(new CommonFieldLabel(NAME_GIT_PATH_TO_EXE), new RequiredFieldMarker(flPathToExe));
     gridIterator.addPair(new CommonFieldLabel(NAME_GIT_REPOSITORY), new RequiredFieldMarker(flRepository));
-    gridIterator.addPair(new CommonFieldLabel("Git branch:"), new RequiredFieldMarker(flBranch));
+    gridIterator.addPair(new CommonFieldLabel(NAME_GIT_BRANCH), new RequiredFieldMarker(flBranch));
 //    gridIterator.addPair(new CommonFieldLabel(NAME_GIT_USER), new RequiredFieldMarker(flUser));
 //    gridIterator.addPair(lbPassword, flPassword);
     gridIterator.addPair(lbDepotPath, new RequiredFieldMarker(flDepotPath));
