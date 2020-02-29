@@ -9,7 +9,6 @@ import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
 import org.parabuild.ci.webui.vcs.repository.common.CancelButton;
 import org.parabuild.ci.webui.vcs.repository.common.CancelButtonClickHandler;
-import org.parabuild.ci.webui.vcs.repository.common.ErrorDialogBox;
 import org.parabuild.ci.webui.vcs.repository.common.FlexTableIterator;
 import org.parabuild.ci.webui.vcs.repository.common.ParabuildDialogBox;
 import org.parabuild.ci.webui.vcs.repository.common.ParabuildTextBox;
@@ -40,23 +39,36 @@ public final class VCSRepositoryDialogBox extends ParabuildDialogBox {
     super(captionText, false, true);
     super.center();
 
+    // Populate server names list box
+    populateServers();
+
+    // Add fields
+    final FlexTableIterator flexTableIterator = new FlexTableIterator(flexTable, 2);
+    flexTableIterator.add(lbType).add(lbServer);
+    flexTableIterator.add(lbName).add(tbName);
+    flexTableIterator.add(lbDescription).add(tbDescription);
+
+    // Add "Save" button
+    flexTableIterator.add(new Button("Save", new SaveVCSRepositoryClickHandler(this)));
+
+    // Add "Cancel" button
+    flexTableIterator.add(new CancelButton(new CancelButtonClickHandler(this)));
+
+    // Add layout panel
+    setWidget(flexTable);
+  }
+
+
+  /**
+   * Populates {@link #lbServer} drop down.
+   */
+  private void populateServers() {
+
     // Disable lbServer until it's loaded
     lbServer.setEnabled(false);
 
-    // Populate server names list box
     final VCSServerServiceAsync serverServiceAsync = GWT.create(VCSServerService.class);
-    final AsyncCallback<VCSServerClientVO[]> callback = new AsyncCallback<VCSServerClientVO[]>() {
-
-      @Override
-      public void onFailure(final Throwable caught) {
-
-        // Show error dialog
-        final ErrorDialogBox errorDialogBox = new ErrorDialogBox();
-        errorDialogBox.setErrorMessage(caught.getMessage());
-        errorDialogBox.center();
-        errorDialogBox.show();
-      }
-
+    final AsyncCallback<VCSServerClientVO[]> callback = new ParabuildAsyncCallback<VCSServerClientVO[]>() {
 
       /**
        * Called when an asynchronous call completes successfully.
@@ -73,25 +85,11 @@ public final class VCSRepositoryDialogBox extends ParabuildDialogBox {
           lbServer.addItem(item, value);
         }
 
+        // Enable
         lbServer.setEnabled(true);
       }
     };
     serverServiceAsync.getVCSServers(callback);
-
-    // Add fields
-    final FlexTableIterator flexTableIterator = new FlexTableIterator(flexTable, 2);
-    flexTableIterator.add(lbType).add(lbServer);
-    flexTableIterator.add(lbName).add(tbName);
-    flexTableIterator.add(lbDescription).add(tbDescription);
-
-    // Add "Save" button
-    flexTableIterator.add(new Button("Save", new SaveVCSRepositoryClickHandler(this)));
-
-    // Add "Cancel" button
-    flexTableIterator.add(new CancelButton(new CancelButtonClickHandler(this)));
-
-    // Add layout panel
-    setWidget(flexTable);
   }
 
 

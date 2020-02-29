@@ -5,7 +5,6 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
-import org.parabuild.ci.webui.vcs.repository.common.ErrorDialogBox;
 
 /**
  * A click handler for "Save" button.
@@ -46,16 +45,7 @@ final class SaveVCSServerClickHandler implements ClickHandler {
   }
 
 
-  private class SaveServerAsyncCallback implements AsyncCallback {
-
-    public void onFailure(final Throwable caught) {
-
-      // Show error dialog
-      final ErrorDialogBox errorDialogBox = new ErrorDialogBox();
-      errorDialogBox.setErrorMessage(caught.getMessage());
-      errorDialogBox.center();
-      errorDialogBox.show();
-    }
+  private class SaveServerAsyncCallback<Void> extends ParabuildAsyncCallback<Void> {
 
 
     @Override
