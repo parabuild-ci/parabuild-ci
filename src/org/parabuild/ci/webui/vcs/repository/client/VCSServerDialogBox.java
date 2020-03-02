@@ -8,8 +8,8 @@ import com.google.gwt.user.client.ui.TextBox;
 import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.webui.vcs.repository.common.CancelButton;
 import org.parabuild.ci.webui.vcs.repository.common.CancelButtonClickHandler;
+import org.parabuild.ci.webui.vcs.repository.common.EditDialogBox;
 import org.parabuild.ci.webui.vcs.repository.common.FlexTableIterator;
-import org.parabuild.ci.webui.vcs.repository.common.ParabuildDialogBox;
 import org.parabuild.ci.webui.vcs.repository.common.ParabuildTextBox;
 import org.parabuild.ci.webui.vcs.repository.common.SaveButton;
 
@@ -17,7 +17,7 @@ import org.parabuild.ci.webui.vcs.repository.common.SaveButton;
  * Repository dialog box is responsible for editing and displaying Repository information.
  */
 @SuppressWarnings("WeakerAccess")
-public final class VCSServerDialogBox extends ParabuildDialogBox {
+public final class VCSServerDialogBox extends EditDialogBox {
 
   private final FlexTable flexTable = new FlexTable();
   private final Label lbType = new Label("Server type:");
@@ -37,7 +37,6 @@ public final class VCSServerDialogBox extends ParabuildDialogBox {
 
 
     super(captionText, false, true);
-    super.center();
 
     // Populate type dropdown
     flTypes.addItem(VersionControlSystem.NAME_SCM_GIT, Integer.toString(VersionControlSystem.SCM_GIT));

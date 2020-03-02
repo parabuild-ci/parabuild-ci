@@ -32,5 +32,7 @@ public abstract class ParabuildDialogBox extends DialogBox {
 
     // Enable glass background.
     setGlassEnabled(true);
+
+    super.center();
   }
 }

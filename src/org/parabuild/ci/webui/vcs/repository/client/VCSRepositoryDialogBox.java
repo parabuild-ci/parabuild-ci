@@ -8,8 +8,8 @@ import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
 import org.parabuild.ci.webui.vcs.repository.common.CancelButton;
 import org.parabuild.ci.webui.vcs.repository.common.CancelButtonClickHandler;
+import org.parabuild.ci.webui.vcs.repository.common.EditDialogBox;
 import org.parabuild.ci.webui.vcs.repository.common.FlexTableIterator;
-import org.parabuild.ci.webui.vcs.repository.common.ParabuildDialogBox;
 import org.parabuild.ci.webui.vcs.repository.common.ParabuildTextBox;
 import org.parabuild.ci.webui.vcs.repository.common.SaveButton;
 
@@ -17,7 +17,7 @@ import org.parabuild.ci.webui.vcs.repository.common.SaveButton;
  * Repository dialog box is responsible for editing and displaying Repository information.
  */
 @SuppressWarnings("WeakerAccess")
-public final class VCSRepositoryDialogBox extends ParabuildDialogBox {
+public final class VCSRepositoryDialogBox extends EditDialogBox {
 
   private final FlexTable flexTable = new FlexTable();
   private final Label lbDescription = new Label("Repository description:");

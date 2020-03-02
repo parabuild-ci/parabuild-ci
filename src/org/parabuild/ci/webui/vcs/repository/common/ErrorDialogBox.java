@@ -22,6 +22,8 @@ public final class ErrorDialogBox extends ParabuildDialogBox {
 
     super("Unexpected Error", false, true);
 
+    addStyleName("error");
+
     // Appearance
     lbErrorCaption.addStyleName("error");
 

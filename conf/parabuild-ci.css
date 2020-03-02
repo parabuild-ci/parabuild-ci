@@ -903,51 +903,100 @@ table.form td.required input[type="text"]:focus {
 
 /* Grey border dialog box */
 
-.gwt-DialogBox .dialogTopLeft {
+.gwt-DialogBox.form.edit .dialogTopLeft {
     width: 20px;
     background: transparent url(/images/theme/full-width-top-left-vertical_g.png) no-repeat top left;
 }
 
-.gwt-DialogBox .dialogMiddleLeft {
+.gwt-DialogBox.form.edit .dialogMiddleLeft {
     width: 20px;
     background: transparent url(/images/theme/full-width-mid-left_g.png) repeat-y;
 }
 
 /* Box top */
-.gwt-DialogBox .dialogTopCenter {
+.gwt-DialogBox.form.edit .dialogTopCenter {
     background: transparent url(/images/theme/full-width-top-mid_g.png) repeat-x top left;
     padding-top: 20px;
 }
 
 /* Box right */
-.gwt-DialogBox .dialogTopRight {
+.gwt-DialogBox.form.edit .dialogTopRight {
     width: 20px;
     background: transparent url(/images/theme/full-width-top-right-vertical_g.png) no-repeat top left;
 }
 
-.gwt-DialogBox .dialogMiddleRight {
+.gwt-DialogBox.form.edit .dialogMiddleRight {
     width: 20px;
     background: transparent url(/images/theme/full-width-mid-right_g.png) repeat-y;
 }
 
 /* Box bottom */
-.gwt-DialogBox .dialogBottomLeft {
+.gwt-DialogBox.form.edit .dialogBottomLeft {
     width: 20px;
     height: 20px;
     background: transparent url(/images/theme/full-width-bot-left_g.png) no-repeat bottom left;
 }
 
-.gwt-DialogBox .dialogBottomCenter {
+.gwt-DialogBox.form.edit .dialogBottomCenter {
     height: 20px;
     background: transparent url(/images/theme/full-width-bot-mid_g.png) repeat-x top left;
 }
 
-.gwt-DialogBox .dialogBottomRight {
+.gwt-DialogBox.form.edit .dialogBottomRight {
     width: 20px;
     height: 20px;
     background: transparent url(/images/theme/full-width-bot-right_g.png) no-repeat bottom right;
 }
 
+/* Red border dialog box */
+
+.gwt-DialogBox.form.error .dialogTopLeft {
+    width: 20px;
+    background: transparent url(/images/theme/full-width-top-left-vertical_r.png) no-repeat top left;
+}
+
+.gwt-DialogBox.form.error .dialogMiddleLeft {
+    width: 20px;
+    background: transparent url(/images/theme/full-width-mid-left_r.png) repeat-y;
+}
+
+/* Box top */
+.gwt-DialogBox.form.error .dialogTopCenter {
+    background: transparent url(/images/theme/full-width-top-mid_r.png) repeat-x top left;
+    padding-top: 20px;
+}
+
+/* Box right */
+.gwt-DialogBox.form.error .dialogTopRight {
+    width: 20px;
+    background: transparent url(/images/theme/full-width-top-right-vertical_r.png) no-repeat top left;
+}
+
+.gwt-DialogBox.form.error .dialogMiddleRight {
+    width: 20px;
+    background: transparent url(/images/theme/full-width-mid-right_r.png) repeat-y;
+}
+
+/* Box bottom */
+.gwt-DialogBox.form.error .dialogBottomLeft {
+    width: 20px;
+    height: 20px;
+    background: transparent url(/images/theme/full-width-bot-left_r.png) no-repeat bottom left;
+}
+
+.gwt-DialogBox.form.error .dialogBottomCenter {
+    height: 20px;
+    background: transparent url(/images/theme/full-width-bot-mid_r.png) repeat-x top left;
+}
+
+.gwt-DialogBox.form.error .dialogBottomRight {
+    width: 20px;
+    height: 20px;
+    background: transparent url(/images/theme/full-width-bot-right_r.png) no-repeat bottom right;
+}
+
+
+/* Dialog caption */
 div.dialogTopCenterInner div.Caption {
     background-color: #999;
     text-align: left;
@@ -962,7 +1011,7 @@ div.dialogTopCenterInner div.Caption {
 
 /* Caption in error dialog */
 .gwt-Label .error {
-    background-color: #f0f0f0;
+    background-color: #c83400;
     display: block;
     width: 100%;
     height: 100%;
