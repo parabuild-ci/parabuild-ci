@@ -901,9 +901,8 @@ table.form td.required input[type="text"]:focus {
  * GWT styles
  * ****************************************************************************************************************** */
 
-/* Dialog box */
+/* Grey border dialog box */
 
-/* Box left */
 .gwt-DialogBox .dialogTopLeft {
     width: 20px;
     background: transparent url(/images/theme/full-width-top-left-vertical_g.png) no-repeat top left;
