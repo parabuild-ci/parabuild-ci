@@ -5,7 +5,6 @@ import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
-import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.webui.vcs.repository.common.CancelButton;
 import org.parabuild.ci.webui.vcs.repository.common.CancelButtonClickHandler;
 import org.parabuild.ci.webui.vcs.repository.common.EditDialogBox;
@@ -25,7 +24,7 @@ public final class VCSServerDialogBox extends EditDialogBox {
   private final Label lbName = new Label("Server name:");
   private final TextBox flDescription = new ParabuildTextBox(100, 70);
   private final TextBox flName = new ParabuildTextBox(50, 50);
-  private final ListBox flTypes = new ListBox();
+  private final ListBox flTypes = new VCSServerTypeListBox();
 
 
   /**
@@ -37,25 +36,6 @@ public final class VCSServerDialogBox extends EditDialogBox {
 
 
     super(captionText, false, true);
-
-    // Populate type dropdown
-    flTypes.addItem(VersionControlSystem.NAME_SCM_GIT, Integer.toString(VersionControlSystem.SCM_GIT));
-    flTypes.addItem(VersionControlSystem.NAME_SCM_PERFORCE, Integer.toString(VersionControlSystem.SCM_PERFORCE));
-    flTypes.addItem(VersionControlSystem.NAME_SCM_SVN, Integer.toString(VersionControlSystem.SCM_SVN));
-    flTypes.addItem(VersionControlSystem.NAME_SCM_ACCUREV, Integer.toString(VersionControlSystem.SCM_ACCUREV));
-    flTypes.addItem(VersionControlSystem.NAME_SCM_CLEARCASE, Integer.toString(VersionControlSystem.SCM_CLEARCASE));
-    flTypes.addItem(VersionControlSystem.NAME_BAZAAR, Integer.toString(VersionControlSystem.SCM_BAZAAR));
-    flTypes.addItem(VersionControlSystem.NAME_SCM_CVS, Integer.toString(VersionControlSystem.SCM_CVS));
-    flTypes.addItem(VersionControlSystem.NAME_SCM_FILESYSTEM, Integer.toString(VersionControlSystem.SCM_FILESYSTEM));
-    flTypes.addItem(VersionControlSystem.NAME_SCM_GENERIC, Integer.toString(VersionControlSystem.SCM_GENERIC));
-    flTypes.addItem(VersionControlSystem.NAME_SCM_MERCURIAL, Integer.toString(VersionControlSystem.SCM_MERCURIAL));
-    flTypes.addItem(VersionControlSystem.NAME_SCM_MKS, Integer.toString(VersionControlSystem.SCM_MKS));
-    flTypes.addItem(VersionControlSystem.NAME_SCM_PVCS, Integer.toString(VersionControlSystem.SCM_PVCS));
-    flTypes.addItem(VersionControlSystem.NAME_SCM_REFERENCE, Integer.toString(VersionControlSystem.SCM_REFERENCE));
-    flTypes.addItem(VersionControlSystem.NAME_SCM_STARTEAM, Integer.toString(VersionControlSystem.SCM_STARTEAM));
-    flTypes.addItem(VersionControlSystem.NAME_SCM_SURROUND, Integer.toString(VersionControlSystem.SCM_SURROUND));
-    flTypes.addItem(VersionControlSystem.NAME_SCM_VAULT, Integer.toString(VersionControlSystem.SCM_VAULT));
-    flTypes.addItem(VersionControlSystem.NAME_SCM_VSS, Integer.toString(VersionControlSystem.SCM_VSS));
 
     // Layout fields
     final FlexTableIterator flexTableIterator = new FlexTableIterator(flexTable, 2);
