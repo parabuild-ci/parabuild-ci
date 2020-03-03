@@ -1,7 +1,6 @@
-package org.parabuild.ci.webui.vcs.repository.client;
+package org.parabuild.ci.webui.vcs.repository.common;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
-import org.parabuild.ci.webui.vcs.repository.common.ErrorDialogBox;
 
 /**
  * An async callback that displays a error dialog box if a failure occured.

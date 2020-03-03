@@ -6,8 +6,8 @@ import org.parabuild.ci.configuration.TransactionCallback;
 import org.parabuild.ci.object.VCSServer;
 import org.parabuild.ci.repository.VCSRepositoryManager;
 import org.parabuild.ci.repository.VCSServerVO;
-import org.parabuild.ci.webui.vcs.repository.client.VCSServerClientVO;
-import org.parabuild.ci.webui.vcs.repository.client.VCSServerService;
+import org.parabuild.ci.webui.vcs.repository.client.server.VCSServerClientVO;
+import org.parabuild.ci.webui.vcs.repository.client.server.VCSServerService;
 
 import static org.parabuild.ci.common.VersionControlUtil.vcsToString;
 

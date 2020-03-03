@@ -1,4 +1,4 @@
-package org.parabuild.ci.webui.vcs.repository.client;
+package org.parabuild.ci.webui.vcs.repository.client.server;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
@@ -13,8 +13,6 @@ public interface VCSServerServiceAsync {
 
   /**
    * Returns a list of VCSServers.
-   *
-   * @return a list of VCSServers.
    */
   void getVCSServers(AsyncCallback<VCSServerClientVO[]> async);
 }

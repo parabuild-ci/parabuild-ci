@@ -1,4 +1,4 @@
-package org.parabuild.ci.webui.vcs.repository.client;
+package org.parabuild.ci.webui.vcs.repository.client.repository;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -6,10 +6,14 @@ import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
+import org.parabuild.ci.webui.vcs.repository.client.server.VCSServerClientVO;
+import org.parabuild.ci.webui.vcs.repository.client.server.VCSServerService;
+import org.parabuild.ci.webui.vcs.repository.client.server.VCSServerServiceAsync;
 import org.parabuild.ci.webui.vcs.repository.common.CancelButton;
 import org.parabuild.ci.webui.vcs.repository.common.CancelButtonClickHandler;
 import org.parabuild.ci.webui.vcs.repository.common.EditDialogBox;
 import org.parabuild.ci.webui.vcs.repository.common.FlexTableIterator;
+import org.parabuild.ci.webui.vcs.repository.common.ParabuildAsyncCallback;
 import org.parabuild.ci.webui.vcs.repository.common.ParabuildTextBox;
 import org.parabuild.ci.webui.vcs.repository.common.SaveButton;
 

@@ -1,4 +1,4 @@
-package org.parabuild.ci.webui.vcs.repository.client;
+package org.parabuild.ci.webui.vcs.repository.client.repository;
 
 import com.google.gwt.core.client.EntryPoint;
 import org.parabuild.ci.webui.vcs.repository.common.RepositoryUtils;
