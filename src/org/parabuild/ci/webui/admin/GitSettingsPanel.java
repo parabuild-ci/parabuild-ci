@@ -13,18 +13,18 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.common.ValidationException;
+import org.parabuild.ci.common.VersionControlUIConstants;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.remote.AgentEnvironment;
 import org.parabuild.ci.remote.NoLiveAgentsException;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.versioncontrol.GitDepotPathParser;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.EncryptingPassword;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Field;
 import viewtier.ui.Layout;
@@ -34,7 +34,19 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.parabuild.ci.common.VersionControlSystem.GIT_BRANCH;
+import static org.parabuild.ci.common.VersionControlSystem.GIT_DEPOT_PATH;
+import static org.parabuild.ci.common.VersionControlSystem.GIT_PASSWORD;
+import static org.parabuild.ci.common.VersionControlSystem.GIT_PATH_TO_EXE;
+import static org.parabuild.ci.common.VersionControlSystem.GIT_REPOSITORY;
+import static org.parabuild.ci.common.VersionControlSystem.GIT_USER;
+import static org.parabuild.ci.common.VersionControlUIConstants.CAPTION_GIT_BRANCH;
+import static org.parabuild.ci.common.VersionControlUIConstants.CAPTION_GIT_DEPOT_PATH;
+import static org.parabuild.ci.common.VersionControlUIConstants.CAPTION_GIT_PATH_TO_EXE;
+import static org.parabuild.ci.common.VersionControlUIConstants.CAPTION_GIT_REPOSITORY;
+
 /**
+ *
  */
 public final class GitSettingsPanel extends AbstractSourceControlPanel {
 
@@ -44,17 +56,10 @@ public final class GitSettingsPanel extends AbstractSourceControlPanel {
   private static final String INVALID_PROTOCOL_MSG = makeInvalidProtocolMessage();
   public static final String DEFAULT_UNIX_GIT_COMMAND = "/usr/bin/git";
 
-  private static final String NAME_GIT_DEPOT_PATH = "Git repository path:";
-  private static final String NAME_GIT_PASSWORD = "Git password:";
-  private static final String NAME_GIT_PATH_TO_EXE = "Path to git executable:";
-  private static final String NAME_GIT_REPOSITORY = "Git repository:";
-  private static final String NAME_GIT_BRANCH = "Git branch:";
-  private static final String NAME_GIT_SETTINGS = "Git Settings";
-
 
   // captions
-  private final CommonFieldLabel lbDepotPath = new CommonFieldLabel(NAME_GIT_DEPOT_PATH); // NOPMD
-  private final CommonFieldLabel lbPassword = new CommonFieldLabel(NAME_GIT_PASSWORD);
+  private final CommonFieldLabel lbDepotPath = new CommonFieldLabel(CAPTION_GIT_DEPOT_PATH); // NOPMD
+  private final CommonFieldLabel lbPassword = new CommonFieldLabel(VersionControlUIConstants.CAPTION_GIT_PASSWORD);
 
   // fields
   private final Field flPathToExe = new Field(200, 80);
@@ -66,22 +71,22 @@ public final class GitSettingsPanel extends AbstractSourceControlPanel {
 
 
   public GitSettingsPanel() {
-    super(NAME_GIT_SETTINGS);
+    super(VersionControlUIConstants.CAPTION_GIT_SETTINGS);
     // layout
-    gridIterator.addPair(new CommonFieldLabel(NAME_GIT_PATH_TO_EXE), new RequiredFieldMarker(flPathToExe));
-    gridIterator.addPair(new CommonFieldLabel(NAME_GIT_REPOSITORY), new RequiredFieldMarker(flRepository));
-    gridIterator.addPair(new CommonFieldLabel(NAME_GIT_BRANCH), new RequiredFieldMarker(flBranch));
+    gridIterator.addPair(new CommonFieldLabel(CAPTION_GIT_PATH_TO_EXE), new RequiredFieldMarker(flPathToExe));
+    gridIterator.addPair(new CommonFieldLabel(CAPTION_GIT_REPOSITORY), new RequiredFieldMarker(flRepository));
+    gridIterator.addPair(new CommonFieldLabel(CAPTION_GIT_BRANCH), new RequiredFieldMarker(flBranch));
 //    gridIterator.addPair(new CommonFieldLabel(NAME_GIT_USER), new RequiredFieldMarker(flUser));
 //    gridIterator.addPair(lbPassword, flPassword);
     gridIterator.addPair(lbDepotPath, new RequiredFieldMarker(flDepotPath));
 
     // init property to input map
-    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.GIT_PASSWORD, flPassword);
-    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.GIT_USER, flUser);
-    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.GIT_DEPOT_PATH, flDepotPath);
-    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.GIT_PATH_TO_EXE, flPathToExe);
-    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.GIT_REPOSITORY, flRepository);
-    propertyToInputMap.bindPropertyNameToInput(VersionControlSystem.GIT_BRANCH, flBranch);
+    propertyToInputMap.bindPropertyNameToInput(GIT_PASSWORD, flPassword);
+    propertyToInputMap.bindPropertyNameToInput(GIT_USER, flUser);
+    propertyToInputMap.bindPropertyNameToInput(GIT_DEPOT_PATH, flDepotPath);
+    propertyToInputMap.bindPropertyNameToInput(GIT_PATH_TO_EXE, flPathToExe);
+    propertyToInputMap.bindPropertyNameToInput(GIT_REPOSITORY, flRepository);
+    propertyToInputMap.bindPropertyNameToInput(GIT_BRANCH, flBranch);
 
     // add footer
     addCommonAttributes();
@@ -133,9 +138,9 @@ public final class GitSettingsPanel extends AbstractSourceControlPanel {
   protected boolean doValidate() {
     clearMessage();
     final List errors = new ArrayList(1);
-    WebuiUtils.validateFieldNotBlank(errors, NAME_GIT_PATH_TO_EXE, flPathToExe);
-    WebuiUtils.validateFieldNotBlank(errors, NAME_GIT_DEPOT_PATH, flDepotPath);
-    WebuiUtils.validateFieldNotBlank(errors, NAME_GIT_REPOSITORY, flRepository);
+    WebuiUtils.validateFieldNotBlank(errors, CAPTION_GIT_PATH_TO_EXE, flPathToExe);
+    WebuiUtils.validateFieldNotBlank(errors, CAPTION_GIT_DEPOT_PATH, flDepotPath);
+    WebuiUtils.validateFieldNotBlank(errors, CAPTION_GIT_REPOSITORY, flRepository);
 
     // counter name is valid
     if (!StringUtils.isBlank(flPassword.getValue())
