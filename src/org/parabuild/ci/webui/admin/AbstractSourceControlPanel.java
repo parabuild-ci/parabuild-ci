@@ -16,7 +16,9 @@ package org.parabuild.ci.webui.admin;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.object.BuildConfig;
@@ -24,7 +26,6 @@ import org.parabuild.ci.remote.AgentEnvironment;
 import org.parabuild.ci.remote.AgentManager;
 import org.parabuild.ci.util.SourceControlSettingResolver;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.versioncontrol.ExclusionPathFinder;
 import org.parabuild.ci.webui.common.BoldCommonLabel;
 import org.parabuild.ci.webui.common.CommonButton;
@@ -34,7 +35,6 @@ import org.parabuild.ci.webui.common.CommonFlow;
 import org.parabuild.ci.webui.common.CommonLabel;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.PropertyToInputMap;
-import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.ButtonPressedEvent;
 import viewtier.ui.ButtonPressedListener;
@@ -54,14 +54,16 @@ import java.util.List;
  */
 public abstract class AbstractSourceControlPanel extends SourceControlPanel {
 
+  private static final long serialVersionUID = -7238128879188326596L;
+
   /**
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
   private static final Log log = LogFactory.getLog(AbstractSourceControlPanel.class);
 
   private static final String CAPTION_CUSTOM_CHECKOUT_DIR = "Custom checkout dir: ";
+  private static final String CAPTION_TEST_EXCLUSION = "Test Exclusion";
   private static final String CAPTION_EXCLUSION = "Ignore list: ";
-  private static final long serialVersionUID = -7238128879188326596L;
 
   protected final PropertyToInputMap propertyToInputMap = new PropertyToInputMap(false, makePropertyHandler()); // strict map
   protected int buildID = BuildConfig.UNSAVED_ID;
@@ -91,7 +93,7 @@ public abstract class AbstractSourceControlPanel extends SourceControlPanel {
    */
   private final Text flExclusionPaths = new Text(65, 3);
   private final Field flTestExclusionPaths = new CommonField(100, 65);
-  private final CommonButton btnTestExclusionPaths = new CommonButton("Test Exclusion");
+  private final CommonButton btnTestExclusionPaths = new CommonButton(CAPTION_TEST_EXCLUSION);
   private final CommonLabel lbTestResult = new BoldCommonLabel();
   private final Label lbTestPathAligner = new Label("");
   private final Label lbTestResultAligner = new Label("");
