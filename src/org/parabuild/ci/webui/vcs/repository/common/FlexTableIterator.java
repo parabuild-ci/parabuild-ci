@@ -15,7 +15,6 @@ public class FlexTableIterator {
     this.maxCells = maxCells;
   }
 
-
   public FlexTableIterator add(final Widget widget) {
 
     // Calculate next row and column
@@ -38,6 +37,21 @@ public class FlexTableIterator {
     // Set widget
     flexTable.setWidget(row, column, widget);
 
+    return this;
+  }
+
+
+  /**
+   * Adds a pair of widgets.
+   *
+   * @param widget0 the first widget.
+   * @param widget1 the second widget.
+   *
+   * @return this iterator to support chaining.
+   */
+  public FlexTableIterator addPair(final Widget widget0, final Widget widget1) {
+    add(widget0);
+    add(widget1);
     return this;
   }
 }

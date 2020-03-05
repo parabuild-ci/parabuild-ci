@@ -2,10 +2,10 @@ package org.parabuild.ci.webui.vcs.repository.client.repository;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
-import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
+import org.parabuild.ci.webui.vcs.repository.client.server.ParabuildFlexTable;
 import org.parabuild.ci.webui.vcs.repository.client.server.VCSServerClientVO;
 import org.parabuild.ci.webui.vcs.repository.client.server.VCSServerService;
 import org.parabuild.ci.webui.vcs.repository.client.server.VCSServerServiceAsync;
@@ -23,7 +23,7 @@ import org.parabuild.ci.webui.vcs.repository.common.SaveButton;
 @SuppressWarnings("WeakerAccess")
 public final class VCSRepositoryDialogBox extends EditDialogBox {
 
-  private final FlexTable flexTable = new FlexTable();
+  private final ParabuildFlexTable flexTable = new ParabuildFlexTable(2);
   private final Label lbDescription = new Label("Repository description:");
   private final Label lbName = new Label("Repository name:");
   private final Label lbType = new Label("Server:");
@@ -47,16 +47,16 @@ public final class VCSRepositoryDialogBox extends EditDialogBox {
     populateServers();
 
     // Add fields
-    final FlexTableIterator flexTableIterator = new FlexTableIterator(flexTable, 2);
-    flexTableIterator.add(lbType).add(lbServer);
-    flexTableIterator.add(lbName).add(tbName);
-    flexTableIterator.add(lbDescription).add(tbDescription);
+    final FlexTableIterator tableIterator = flexTable.flexTableIterator();
+    tableIterator.addPair(lbType, lbServer);
+    tableIterator.addPair(lbName, tbName);
+    tableIterator.addPair(lbDescription, tbDescription);
 
     // Add "Save" button
-    flexTableIterator.add(new SaveButton(new SaveVCSRepositoryClickHandler(this)));
+    tableIterator.add(new SaveButton(new SaveVCSRepositoryClickHandler(this)));
 
     // Add "Cancel" button
-    flexTableIterator.add(new CancelButton(new CancelButtonClickHandler(this)));
+    tableIterator.add(new CancelButton(new CancelButtonClickHandler(this)));
 
     // Add layout panel
     setWidget(flexTable);

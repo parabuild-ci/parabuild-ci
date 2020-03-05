@@ -1,7 +1,6 @@
 package org.parabuild.ci.webui.vcs.repository.client.server;
 
 import com.google.gwt.user.client.ui.Button;
-import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
@@ -18,7 +17,7 @@ import org.parabuild.ci.webui.vcs.repository.common.SaveButton;
 @SuppressWarnings("WeakerAccess")
 public final class VCSServerDialogBox extends EditDialogBox {
 
-  private final FlexTable flexTable = new FlexTable();
+  private final ParabuildFlexTable flexTable = new ParabuildFlexTable(2);
   private final Label lbType = new Label("Server type:");
   private final Label lbDescription = new Label("Server description:");
   private final Label lbName = new Label("Server name:");
@@ -38,7 +37,7 @@ public final class VCSServerDialogBox extends EditDialogBox {
     super(captionText, false, true);
 
     // Layout fields
-    final FlexTableIterator flexTableIterator = new FlexTableIterator(flexTable, 2);
+    final FlexTableIterator flexTableIterator = flexTable.flexTableIterator();
     flexTableIterator.add(lbType).add(flTypes);
     flexTableIterator.add(lbName).add(flName);
     flexTableIterator.add(lbDescription).add(flDescription);
