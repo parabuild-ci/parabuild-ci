@@ -915,18 +915,6 @@
       <JAVADOC />
       <SOURCES />
     </library>
-    <library name="JFreeChart">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/3rdparty/jfreechart0921/jfreechart-0.9.21.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/jfreechart0921/lib/jcommon-0.9.6.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="file://$PROJECT_DIR$/3rdparty/jfreechart0921/javadoc" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="file://$PROJECT_DIR$/3rdparty/jfreechart0921/source" />
-      </SOURCES>
-    </library>
     <library name="JFreeChart1.0.5">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/3rdparty/jfreechart-1.0.5/lib/jcommon-1.0.9.jar!/" />
