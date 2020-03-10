@@ -32,8 +32,8 @@ public final class PropertyToInputMap implements Serializable {
 
   private static final long serialVersionUID = 2416070308102742329L; // NOPMD
 
-  private final Map propertyNameToInputMap = new HashMap(5);
-  private final Map propertyNameToPropertyObjectMap = new HashMap(5);
+  private final HashMap<String, AbstractInput> propertyNameToInputMap = new HashMap<String, AbstractInput>(5);
+  private final HashMap<String, Object> propertyNameToPropertyObjectMap = new HashMap<String, Object>(5);
   private boolean loadUnmappedProperties = true;
   private PropertyHandler propertyHandler = null;
   private boolean updateOnlyFromEditableFields = false;
@@ -62,7 +62,7 @@ public final class PropertyToInputMap implements Serializable {
    * Binds property name to input
    *
    * @param propertyName to assoicate with input
-   * @param input propertyName will be associated with
+   * @param input        propertyName will be associated with
    */
   public void bindPropertyNameToInput(final String propertyName, final AbstractInput input) {
     propertyNameToInputMap.put(propertyName, input);
@@ -74,10 +74,10 @@ public final class PropertyToInputMap implements Serializable {
     if (input != null) {
       if (input instanceof EncryptingPassword) {
         // value contains encrypted password
-        final EncryptingPassword ep = (EncryptingPassword)input;
+        final EncryptingPassword ep = (EncryptingPassword) input;
         ep.setEncryptedValue(value);
       } else if (input instanceof CodeNameDropDown) { // see #777
-        final CodeNameDropDown codeNameDropDown = (CodeNameDropDown)input;
+        final CodeNameDropDown codeNameDropDown = (CodeNameDropDown) input;
         if (StringUtils.isValidInteger(value)) {
           try {
             codeNameDropDown.setCode(Integer.parseInt(value));
@@ -106,13 +106,14 @@ public final class PropertyToInputMap implements Serializable {
    * @see PropertyHandler
    */
   public List getUpdatedProperties() {
+
     final List result = new ArrayList(11);
     // traverse propery name to input map
-    for (final Iterator i = propertyNameToInputMap.entrySet().iterator(); i.hasNext();) {
+    for (final Iterator i = propertyNameToInputMap.entrySet().iterator(); i.hasNext(); ) {
       // get prop name and associated input
-      final Map.Entry entry = (Map.Entry)i.next();
-      final String propName = (String)entry.getKey();
-      final AbstractInput input = (AbstractInput)entry.getValue();
+      final Map.Entry entry = (Map.Entry) i.next();
+      final String propName = (String) entry.getKey();
+      final AbstractInput input = (AbstractInput) entry.getValue();
       if (updateOnlyFromEditableFields && !input.isEditable()) {
         continue;
       }
@@ -126,10 +127,10 @@ public final class PropertyToInputMap implements Serializable {
       // set value
       final String value;
       if (input instanceof EncryptingPassword) {
-        final EncryptingPassword ep = (EncryptingPassword)input;
+        final EncryptingPassword ep = (EncryptingPassword) input;
         value = ep.getEncryptedValue();
       } else if (input instanceof CodeNameDropDown) { // see #777
-        final CodeNameDropDown codeNameDropDown = (CodeNameDropDown)input;
+        final CodeNameDropDown codeNameDropDown = (CodeNameDropDown) input;
         value = Integer.toString(codeNameDropDown.getCode());
       } else {
         value = input.getValue();
@@ -139,8 +140,8 @@ public final class PropertyToInputMap implements Serializable {
     }
 
     // add properties that were listed but weren't bound/mapped
-    for (final Iterator i = propertyNameToPropertyObjectMap.entrySet().iterator(); i.hasNext();) {
-      final Map.Entry entry = (Map.Entry)i.next();
+    for (final Iterator i = propertyNameToPropertyObjectMap.entrySet().iterator(); i.hasNext(); ) {
+      final Map.Entry entry = (Map.Entry) i.next();
       if (!propertyNameToInputMap.containsKey(entry.getKey())) {
         result.add(entry.getValue());
       }
@@ -155,7 +156,7 @@ public final class PropertyToInputMap implements Serializable {
    * @param props
    */
   public void setProperties(final List props) {
-    for (final Iterator iter = props.iterator(); iter.hasNext();) {
+    for (final Iterator iter = props.iterator(); iter.hasNext(); ) {
       final Object property = iter.next();
       final String propertyName = propertyHandler.getPropertyName(property);
       // don't load if it's unmapped
@@ -180,7 +181,7 @@ public final class PropertyToInputMap implements Serializable {
 
 
   private AbstractInput getInputFromMap(final String propertyName) {
-    return (AbstractInput)propertyNameToInputMap.get(propertyName);
+    return (AbstractInput) propertyNameToInputMap.get(propertyName);
   }
 
 
@@ -189,7 +190,7 @@ public final class PropertyToInputMap implements Serializable {
    * properties.
    *
    * @param updateOnlyFromEditableFields If true {@link #getUpdatedProperties()}
-   * will return values only for editable fields.
+   *                                     will return values only for editable fields.
    */
   public void setUpdateOnlyFromEditableFields(final boolean updateOnlyFromEditableFields) {
     this.updateOnlyFromEditableFields = updateOnlyFromEditableFields;
@@ -197,8 +198,6 @@ public final class PropertyToInputMap implements Serializable {
 
 
   /**
-   *
-   *
    * @noinspection PublicInnerClass
    */
   public interface PropertyHandler extends Serializable {
@@ -210,7 +209,7 @@ public final class PropertyToInputMap implements Serializable {
      * property.
      *
      * @return new property instance created using given propertyName and
-     *  abstract input as value source.
+     * abstract input as value source.
      */
     Object makeProperty(String propertyName);
 
