@@ -16,14 +16,13 @@ package org.parabuild.ci.webui.admin;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.versioncontrol.FileSystemSourceControl;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
-import viewtier.ui.Field;
 
 import java.util.ArrayList;
 
@@ -42,15 +41,15 @@ public final class GenericVCSSettingsPanel extends AbstractCommandVCSSettingsPan
   private static final String CAPTION_CHANGE_WINDOW = "Change window, seconds: ";
 
   /** @noinspection InstanceVariableMayNotBeInitialized*/
-  private Field flColumnDivider;
+  private CommonField flColumnDivider;
   /** @noinspection InstanceVariableMayNotBeInitialized*/
-  private Field flEndOfRecord;
+  private CommonField flEndOfRecord;
   /** @noinspection InstanceVariableMayNotBeInitialized*/
-  private Field flChangeDateFormat;
+  private CommonField flChangeDateFormat;
   /** @noinspection InstanceVariableMayNotBeInitialized*/
-  private Field flChangeWindow;
+  private CommonField flChangeWindow;
   /** @noinspection InstanceVariableMayNotBeInitialized*/
-  private Field flGetChangesCommand;
+  private CommonField flGetChangesCommand;
 
 
   public GenericVCSSettingsPanel() {

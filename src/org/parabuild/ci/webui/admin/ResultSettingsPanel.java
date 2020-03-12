@@ -14,12 +14,28 @@
 package org.parabuild.ci.webui.admin;
 
 
-import java.util.*;
+import org.parabuild.ci.configuration.ConfigurationManager;
+import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
+import org.parabuild.ci.object.BuildConfig;
+import org.parabuild.ci.object.BuildConfigAttribute;
+import org.parabuild.ci.object.SystemProperty;
+import org.parabuild.ci.webui.common.CommonCheckBox;
+import org.parabuild.ci.webui.common.CommonField;
+import org.parabuild.ci.webui.common.CommonFieldLabel;
+import org.parabuild.ci.webui.common.CommonFlow;
+import org.parabuild.ci.webui.common.GridIterator;
+import org.parabuild.ci.webui.common.MessagePanel;
+import org.parabuild.ci.webui.common.Pages;
+import org.parabuild.ci.webui.common.PropertyToInputMap;
+import org.parabuild.ci.webui.common.Saveable;
+import org.parabuild.ci.webui.common.Validatable;
+import org.parabuild.ci.webui.common.WebuiUtils;
+import viewtier.ui.Component;
+import viewtier.ui.Label;
+import viewtier.ui.Panel;
 
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This panel holds build result configuration settings.
@@ -38,12 +54,12 @@ public final class ResultSettingsPanel extends MessagePanel implements Validatab
 
   private int buildID = BuildConfig.UNSAVED_ID;
 
-  private final CheckBox flEnabledeleteBuildResults = new CheckBox(); // NOPMD SingularField
-  private final Field flRetentionDays = new Field(4, 4); // NOPMD SingularField
+  private final CommonCheckBox flEnabledeleteBuildResults = new CommonCheckBox(); // NOPMD SingularField
+  private final CommonField flRetentionDays = new CommonField(4, 4); // NOPMD SingularField
   private final Label lbEnableDeletes = new CommonFieldLabel(CAPTION_PERMANENTLY_DELETE_BUILD_RESULTS_OLDER_THAN); // NOPMD SingularField
   private final Label lbDays = new CommonFieldLabel(CAPTION_DAYS); // NOPMD SingularField
   private final Label lbShowResultsOnLeaderPage = new CommonFieldLabel(CAPTION_SHOW_RESULTS_ON_LEADER_S_PAGE); // NOPMD SingularField
-  private final CheckBox flShowResultsOnLeaderPage = new CheckBox(); // NOPMD SingularField
+  private final CommonCheckBox flShowResultsOnLeaderPage = new CommonCheckBox(); // NOPMD SingularField
   private final CommonFlow flwShowResultsOnLeaderPage = new CommonFlow(lbShowResultsOnLeaderPage, flShowResultsOnLeaderPage);
   private final Component dividerForShowResultsOnLeaderPage = WebuiUtils.makePanelDivider();
   private final ResultConfigsTable tblResultConfigs = new ResultConfigsTable(); // NOPMD SingularField

@@ -13,20 +13,26 @@
  */
 package org.parabuild.ci.webui.common;
 
-import java.util.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
 import viewtier.ui.DropDown;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 /**
  * A an inheritable dropdown that allows to display and select
  * names and get and set associated codes (IDs).
  */
-public class CodeNameDropDown extends DropDown {
+public class CodeNameDropDown extends DropDown implements HasInputValue {
 
   private static final long serialVersionUID = -1542677966376614768L;
-  /** @noinspection UNUSED_SYMBOL,UnusedDeclaration*/
+  /**
+   * @noinspection UNUSED_SYMBOL, UnusedDeclaration
+   */
   private static final Log log = LogFactory.getLog(CodeNameDropDown.class); // NOPMD
 
   public static final boolean ALLOW_NONEXISTING_CODES = true;
@@ -60,7 +66,7 @@ public class CodeNameDropDown extends DropDown {
    */
   public final int getCode() {
     final String item = getItem(getSelection());
-    final Integer code = (Integer)selectionMap.get(item);
+    final Integer code = (Integer) selectionMap.get(item);
     if (code == null) throw new IllegalStateException("Unknown code selection: " + item);
     return code;
   }
@@ -68,11 +74,11 @@ public class CodeNameDropDown extends DropDown {
 
   /**
    * @return true if code exists and is accepted. Otherwise
-   *  returns false.
+   * returns false.
    */
   public final boolean codeExists(final int code) {
-    for (final Iterator i = selectionMap.values().iterator(); i.hasNext();) {
-      final Integer entry = (Integer)i.next();
+    for (final Iterator i = selectionMap.values().iterator(); i.hasNext(); ) {
+      final Integer entry = (Integer) i.next();
       if (entry == code) {
         return true;
       }
@@ -85,15 +91,42 @@ public class CodeNameDropDown extends DropDown {
    * Sets selected code
    */
   public void setCode(final int code) {
-    for (final Iterator i = selectionMap.entrySet().iterator(); i.hasNext();) {
-      final Map.Entry entry = (Map.Entry)i.next();
+    for (final Iterator i = selectionMap.entrySet().iterator(); i.hasNext(); ) {
+      final Map.Entry entry = (Map.Entry) i.next();
       final int mappedValue = (Integer) entry.getValue();
       if (mappedValue == code) {
-        setSelection((String)entry.getKey());
+        setSelection((String) entry.getKey());
         return;
       }
     }
     if (!allowNonexistingCodes) throw new IllegalArgumentException("Unknown code: " + code);
+  }
+
+
+  @Override
+  public void setInputValue(final String value) {
+
+    if (StringUtils.isValidInteger(value)) {
+      try {
+        setCode(Integer.parseInt(value));
+      } catch (final IllegalArgumentException e) { // in case this is something we did not expect
+        IoUtils.ignoreExpectedException(e);
+      }
+    } else {
+      setSelection(value);
+    }
+  }
+
+
+  @Override
+  public boolean isInputEditable() {
+    return isEditable();
+  }
+
+
+  @Override
+  public String getInputValue() {
+    return getValue();
   }
 
 
@@ -103,10 +136,10 @@ public class CodeNameDropDown extends DropDown {
    * @param code
    */
   protected final void removeCode(final int code) {
-    for (final Iterator i = selectionMap.entrySet().iterator(); i.hasNext();) {
-      final Map.Entry entry = (Map.Entry)i.next();
+    for (final Iterator i = selectionMap.entrySet().iterator(); i.hasNext(); ) {
+      final Map.Entry entry = (Map.Entry) i.next();
       if ((Integer) entry.getValue() == code) {
-        removeItem((String)entry.getKey()); // delete item
+        removeItem((String) entry.getKey()); // delete item
         i.remove(); // delete map item
         return;
       }

@@ -15,11 +15,11 @@ package org.parabuild.ci.webui.admin;
 
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.object.ScheduleProperty;
+import org.parabuild.ci.webui.common.CommonCheckBox;
+import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
 import org.parabuild.ci.webui.common.WebuiUtils;
-import viewtier.ui.CheckBox;
-import viewtier.ui.Field;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,11 +41,11 @@ public final class SimpleAutomaticScheduleSettingsPanel extends AbstractSchedule
   private static final String CAPTION_RUN_IF_NO_CHANGES = "Run if no changes: ";
   private static final String CAPTION_SERIALIZE = "Serialize this build: ";
 
-  private final Field flPollInterval = new Field(6, 7);
-  private final Field flCooldownInterval = new Field(6, 7);
-  private final CheckBox flBuildOneByOne = new CheckBox("build-one-by-one");
-  private final CheckBox flRunIfNoChanges = new CheckBox("run-if-no-changes");
-  private final CheckBox flSerialize = new CheckBox("serialize-this-build");
+  private final CommonField flPollInterval = new CommonField(6, 7);
+  private final CommonField flCooldownInterval = new CommonField(6, 7);
+  private final CommonCheckBox flBuildOneByOne = new CommonCheckBox("build-one-by-one");
+  private final CommonCheckBox flRunIfNoChanges = new CommonCheckBox("run-if-no-changes");
+  private final CommonCheckBox flSerialize = new CommonCheckBox("serialize-this-build");
 
 
   /**

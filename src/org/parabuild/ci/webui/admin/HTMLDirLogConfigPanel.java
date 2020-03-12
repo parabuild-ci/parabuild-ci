@@ -15,18 +15,18 @@ package org.parabuild.ci.webui.admin;
 
 import org.parabuild.ci.object.LogConfig;
 import org.parabuild.ci.object.LogConfigProperty;
+import org.parabuild.ci.webui.common.CommonCheckBox;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
 import org.parabuild.ci.webui.common.WebuiUtils;
-import viewtier.ui.CheckBox;
 
 /**
  * Panel to configure a directory with HTML files as a customer
  * build log
  *
  * @see AbstractLogConfigPanel
- * @noinspection FieldCanBeLocal
+ * @noinspection CommonFieldCanBeLocal
  */
 public final class HTMLDirLogConfigPanel extends AbstractLogConfigPanel {
 
@@ -37,7 +37,7 @@ public final class HTMLDirLogConfigPanel extends AbstractLogConfigPanel {
   private static final String CAPTION_NOTIFY_IF_MISSING = "Notify if index is missing:";
 
   private final CommonField flIndexFile = new CommonField(60, 60); // NOPMD
-  private final CheckBox flNotifyAboutMissingIndex = new CheckBox(); // NOPMD
+  private final CommonCheckBox flNotifyAboutMissingIndex = new CommonCheckBox(); // NOPMD
 
 
   /**

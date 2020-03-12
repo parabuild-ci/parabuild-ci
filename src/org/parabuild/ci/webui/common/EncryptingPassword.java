@@ -14,13 +14,13 @@
 package org.parabuild.ci.webui.common;
 
 import org.parabuild.ci.security.SecurityManager;
-import viewtier.ui.*;
+import viewtier.ui.Password;
 
 /**
  * Specialised Password field that operates on encrtpted
  * passwords. Input and output are encrypted.
  */
-public final class EncryptingPassword extends Password {
+public final class EncryptingPassword extends Password implements HasInputValue {
 
 
   private static final long serialVersionUID = 1464451197975039573L;
@@ -53,6 +53,24 @@ public final class EncryptingPassword extends Password {
    */
   public String getEncryptedValue() {
     return SecurityManager.encryptPassword(getValue());
+  }
+
+
+  @Override
+  public void setInputValue(final String value) {
+    setEncryptedValue(value);
+  }
+
+
+  @Override
+  public boolean isInputEditable() {
+    return isEditable();
+  }
+
+
+  @Override
+  public String getInputValue() {
+    return getValue();
   }
 
 

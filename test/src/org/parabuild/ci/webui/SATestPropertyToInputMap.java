@@ -15,9 +15,9 @@ package org.parabuild.ci.webui;
 
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.EncryptingPassword;
 import org.parabuild.ci.webui.common.PropertyToInputMap;
-import viewtier.ui.Field;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -32,8 +32,8 @@ public class SATestPropertyToInputMap extends TestCase {
   static final String TEST_PROPERTY_NAME2 = "test.property.name.two";
   static final String TEST_PROPERTY_VALUE1 = "test.property.value.one";
   static final String TEST_PROPERTY_VALUE2 = "test.property.value.two";
-  final Field FIELD1 = new Field(100, 100);
-  final Field FIELD2 = new Field(100, 100);
+  final CommonField FIELD1 = new CommonField(100, 100);
+  final CommonField FIELD2 = new CommonField(100, 100);
 
   PropertyToInputMap.PropertyHandler propertyHandler = null;
   PropertyToInputMap propertyToInputMap = null;

@@ -13,11 +13,14 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import java.util.*;
+import org.parabuild.ci.object.IssueTrackerProperty;
+import org.parabuild.ci.webui.common.BoldCommonLabel;
+import org.parabuild.ci.webui.common.CommonField;
+import org.parabuild.ci.webui.common.CommonFieldLabel;
+import org.parabuild.ci.webui.common.RequiredFieldMarker;
+import org.parabuild.ci.webui.common.WebuiUtils;
 
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import java.util.List;
 
 /**
  * This panel is used by build set up panel to set up release
@@ -37,10 +40,10 @@ public final class JiraListenerSetupPanel extends AbstractIssueTrackerSetupPanel
 // NOTE: vimeshev 05/21/2004 - commented out till it's clear what to do with Jira "fix in" versions
 //  private Label lbFixVersions = new CommonFieldLabel(STR_JIRA_FIX_VERSION);
 
-  private final Field flProject = new CommonField(15, 15); // NOPMD
-  private final Field flVersions = new CommonField(10, 10); // NOPMD
+  private final CommonField flProject = new CommonField(15, 15); // NOPMD
+  private final CommonField flVersions = new CommonField(10, 10); // NOPMD
 // NOTE: vimeshev 05/21/2004 - commented out till it's clear what to do with Jira "fix in" versions
-//  private Field flFixVersions = new CommonField(10, 10);
+//  private CommonField flFixVersions = new CommonField(10, 10);
 
 
   public JiraListenerSetupPanel() {

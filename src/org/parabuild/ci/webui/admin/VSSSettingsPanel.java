@@ -14,19 +14,18 @@
 package org.parabuild.ci.webui.admin;
 
 import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.remote.NoLiveAgentsException;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.webui.common.CommonCheckBox;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
+import org.parabuild.ci.webui.common.CommonText;
 import org.parabuild.ci.webui.common.EncryptingPassword;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
-import viewtier.ui.CheckBox;
-import viewtier.ui.Field;
 import viewtier.ui.Layout;
-import viewtier.ui.Text;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -49,14 +48,14 @@ public final class VSSSettingsPanel extends AbstractSourceControlPanel {
   private static final String NAME_USER = "User: ";
   private static final String NAME_VSS_EXE_PATH = "Path to VSS client (SS.EXE): ";
 
-  private final Field fldPathToVSSClient = new CommonField(200, 60);
-  private final Field fldDatabasePath = new CommonField(200, 60);
-  private final Text fldProjectPath = new Text(52, 3);
-  private final Field fldBranch = new CommonField(60, 60);
+  private final CommonField fldPathToVSSClient = new CommonField(200, 60);
+  private final CommonField fldDatabasePath = new CommonField(200, 60);
+  private final CommonText fldProjectPath = new CommonText(52, 3);
+  private final CommonField fldBranch = new CommonField(60, 60);
   private final EncryptingPassword fldPassword = new EncryptingPassword(30, 20, "vss_password");
-  private final Field fldUser = new Field(15, 15);
-  private final Field fldChangeWindow = new Field(2, 3);
-  private final CheckBox fldReadOnlyCheckout = new CheckBox();
+  private final CommonField fldUser = new CommonField(15, 15);
+  private final CommonField fldChangeWindow = new CommonField(2, 3);
+  private final CommonCheckBox fldReadOnlyCheckout = new CommonCheckBox();
 
 //  private final Label lbBranch = new CommonFieldLabel(NAME_BRANCH_NAME);
   //  private final Label lbChangeWindow = new CommonFieldLabel(NAME_CHANGE_WINDOW);

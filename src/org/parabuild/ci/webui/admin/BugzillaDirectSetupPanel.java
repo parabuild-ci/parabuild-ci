@@ -13,13 +13,28 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import java.util.*;
-import org.apache.commons.logging.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.object.IssueTrackerProperty;
+import org.parabuild.ci.relnotes.BugzillaMySQLConnectionFactory;
+import org.parabuild.ci.relnotes.ConnectionTestResult;
+import org.parabuild.ci.webui.common.BoldCommonLabel;
+import org.parabuild.ci.webui.common.CommonButton;
+import org.parabuild.ci.webui.common.CommonField;
+import org.parabuild.ci.webui.common.CommonFieldLabel;
+import org.parabuild.ci.webui.common.CommonFlow;
+import org.parabuild.ci.webui.common.CommonLabel;
+import org.parabuild.ci.webui.common.EncryptingPassword;
+import org.parabuild.ci.webui.common.RequiredFieldMarker;
+import org.parabuild.ci.webui.common.WebuiUtils;
+import viewtier.ui.Button;
+import viewtier.ui.ButtonPressedEvent;
+import viewtier.ui.ButtonPressedListener;
+import viewtier.ui.Color;
+import viewtier.ui.Label;
+import viewtier.ui.Tierlet;
 
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.relnotes.*;
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import java.util.List;
 
 /**
  * This panel is used by build set up panel to set up release
@@ -44,13 +59,13 @@ public final class BugzillaDirectSetupPanel extends AbstractIssueTrackerSetupPan
 // NOTE: vimeshev - 05/18/2004 - commented out until it's clear what to do with statuses
 //  private Label lbStatuses = new BoldCommonLabel(STR_BZ_STATUSES);
 
-  private final Field flMySQLHost = new CommonField(30, 30); // NOPMD
-  private final Field flMySQLPort = new CommonField(5, 5); // NOPMD
-  private final Field flMySQLDB = new CommonField(10, 10); // NOPMD
-  private final Field flMySQLUSer = new CommonField(30, 30); // NOPMD
+  private final CommonField flMySQLHost = new CommonField(30, 30); // NOPMD
+  private final CommonField flMySQLPort = new CommonField(5, 5); // NOPMD
+  private final CommonField flMySQLDB = new CommonField(10, 10); // NOPMD
+  private final CommonField flMySQLUSer = new CommonField(30, 30); // NOPMD
   private final EncryptingPassword flMySQLPasswd = new EncryptingPassword(30, 30, "mysql_password"); // NOPMD
-  private final Field flProduct = new CommonField(15, 15); // NOPMD
-  private final Field flVersion = new CommonField(15, 15); // NOPMD
+  private final CommonField flProduct = new CommonField(15, 15); // NOPMD
+  private final CommonField flVersion = new CommonField(15, 15); // NOPMD
 // NOTE: vimeshev - 05/18/2004 - commented out until it's clear what to do with statuses
 //  private Field flStatuses = new CommonField(40, 40); // NOPMD
   private final Button btnTestConnection = new CommonButton("Test connection"); // NOPMD

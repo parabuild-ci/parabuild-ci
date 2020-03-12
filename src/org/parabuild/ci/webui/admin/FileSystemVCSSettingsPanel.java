@@ -14,15 +14,15 @@
 package org.parabuild.ci.webui.admin;
 
 import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.versioncontrol.FileSystemSourceControl;
+import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
+import org.parabuild.ci.webui.common.CommonText;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
-import viewtier.ui.Field;
 import viewtier.ui.Layout;
-import viewtier.ui.Text;
 
 import java.util.ArrayList;
 
@@ -37,9 +37,9 @@ public final class FileSystemVCSSettingsPanel extends AbstractCommandVCSSettings
   public static final String CAPTION_USER = "User:";
 
   /** @noinspection InstanceVariableMayNotBeInitialized*/
-  private Field flUser;
+  private CommonField flUser;
   /** @noinspection InstanceVariableMayNotBeInitialized*/
-  private Text flPath;
+  private CommonText flPath;
 
 
   public FileSystemVCSSettingsPanel() {
@@ -49,8 +49,8 @@ public final class FileSystemVCSSettingsPanel extends AbstractCommandVCSSettings
 
 
   protected void createHeaderFields() {
-    this.flUser = new Field(20, 20);
-    this.flPath = new Text(80, 4);
+    this.flUser = new CommonField(20, 20);
+    this.flPath = new CommonText(80, 4);
     this.flPath.setAlignY(Layout.TOP);
   }
 

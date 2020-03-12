@@ -13,12 +13,12 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import viewtier.ui.*;
+import org.parabuild.ci.webui.common.CommonDropDown;
 
 /**
  * Dropdown to show available http protocols (http/https)
  */
-public final class HTTPProtocolDropdown extends DropDown {
+public final class HTTPProtocolDropdown extends CommonDropDown {
 
   private static final long serialVersionUID = -3638947672551947334L; // NOPMD
 

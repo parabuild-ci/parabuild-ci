@@ -13,20 +13,19 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.common.ValidationException;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.object.SourceControlSettingVO;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.versioncontrol.SVNDepotPathParser;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
+import org.parabuild.ci.webui.common.CommonText;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
-import viewtier.ui.Field;
 import viewtier.ui.Layout;
-import viewtier.ui.Text;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -34,7 +33,7 @@ import java.util.List;
 
 /**
  * Parameters for a Subversion-based build on manual schedule.
- * @noinspection FieldCanBeLocal
+ * @noinspection CommonFieldCanBeLocal
  */
 final class SVNManualScheduleStartParametersPanel extends ManualScheduleStartParametersPanel {
 
@@ -46,8 +45,8 @@ final class SVNManualScheduleStartParametersPanel extends ManualScheduleStartPar
   private final CommonFieldLabel lbDepotPath = new CommonFieldLabel(CAPTION_DEPOT_PATH); // NOPMD
   private final CommonFieldLabel lbChangeListNumber = new CommonFieldLabel(CAPTION_CHANGE_LIST_NUMBER); // NOPMD
 
-  private final Text flDepotPath = new Text(100, 5);
-  private final Field flChangeListNumber = new CommonField(7, 7);
+  private final CommonText flDepotPath = new CommonText(100, 5);
+  private final CommonField flChangeListNumber = new CommonField(7, 7);
 
 
   /**

@@ -14,16 +14,16 @@
 package org.parabuild.ci.webui.admin;
 
 import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.remote.AgentEnvironment;
 import org.parabuild.ci.remote.NoLiveAgentsException;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
-import viewtier.ui.Field;
 import viewtier.ui.Layout;
 
 import java.io.IOException;
@@ -49,8 +49,8 @@ public final class BazaarSettingsPanel extends AbstractSourceControlPanel {
   private final CommonFieldLabel lbBranchLocation = new CommonFieldLabel(NAME_BAZAAR_BRANCH_LOCATION); // NOPMD
 
   // fields
-  private final Field flPathToExe = new Field(200, 80);
-  private final Field flBranchLocation = new Field(100, 100);
+  private final CommonField flPathToExe = new CommonField(200, 80);
+  private final CommonField flBranchLocation = new CommonField(100, 100);
 
 
   public BazaarSettingsPanel() {

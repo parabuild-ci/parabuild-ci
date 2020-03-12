@@ -13,10 +13,10 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.BuildConfigAttribute;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.MessagePanel;
@@ -44,7 +44,7 @@ public final class LogRetentionPanel extends MessagePanel implements Loadable, V
   private final PropertyToInputMap propertyToInputMap = new PropertyToInputMap(false, new BuildConfigAttributePropertyHandler()); // strict map
 
 
-  private final Field flRetentionDays = new CommonField(4, 4);
+  private final CommonField flRetentionDays = new CommonField(4, 4);
   private int buildID = BuildConfig.UNSAVED_ID;
 
 

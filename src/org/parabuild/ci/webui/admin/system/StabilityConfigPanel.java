@@ -15,28 +15,27 @@ package org.parabuild.ci.webui.admin.system;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.SystemConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.object.SystemProperty;
 import org.parabuild.ci.remote.AgentManager;
 import org.parabuild.ci.services.LoggingService;
 import org.parabuild.ci.services.ServiceManager;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.webui.common.CodeNameDropDown;
+import org.parabuild.ci.webui.common.CommonCheckBox;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.CommonFlow;
 import org.parabuild.ci.webui.common.CommonLabel;
+import org.parabuild.ci.webui.common.CommonText;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.HourDropDown;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
-import viewtier.ui.CheckBox;
-import viewtier.ui.DropDown;
-import viewtier.ui.Field;
 import viewtier.ui.Label;
 import viewtier.ui.Panel;
-import viewtier.ui.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -91,32 +90,32 @@ public final class StabilityConfigPanel extends AbstractSystemConfigPanel {
   private static final String CAPTION_USE_CHANGE_LIST_NUMBERS_AS_BUILD_NUMBERS = "Use change list number as build number: ";
   private static final String CAPTION_USE_XML_LOG_FORMAT_FOR_SUBVERSION = "Use XML log format for Subversion: ";
 
-  private final CheckBox cbAllowDeletingProjects = new CheckBox(); // NOPMD
-  private final CheckBox cbAutomaticAgentUpgrade = new CheckBox(); // NOPMD
-  private final CheckBox cbChangeListNumbersAsBuildNumbers = new CheckBox(); // NOPMD
-  private final CheckBox cbCheckCustomCheckoutDirsForDuplicates = new CheckBox(); // NOPMD
-  private final CheckBox cbEnableDebugging = new CheckBox(); // NOPMD
-  private final CheckBox cbEnableLoggingArchiveCleanupTiming = new CheckBox(); // NOPMD
-  private final CheckBox cbEnabledNoCheckoutBuilds = new CheckBox();
-  private final CheckBox cbEnableScheduleGap = new CheckBox(); // NOPMD
-  private final CheckBox cbQueueSerializedBuilds = new CheckBox(); // NOPMD
-  private final CheckBox cbRespectIntermediateStepFailure = new CheckBox(); // NOPMD
-  private final CheckBox cbRoundRobin = new CheckBox(); // NOPMD
-  private final CheckBox cbSerializedBuilds = new CheckBox(); // NOPMD
-  private final CheckBox cbUseXMLLogFormatForSubversion = new CheckBox();
-  private final DropDown flScheduleGapFrom = new HourDropDown(); // NOPMD
-  private final DropDown flScheduleGapTo = new HourDropDown(); // NOPMD
-  private final Field fldDefaultBuildStepTimeout = new CommonField("default-build-step-timeout", 6, 6); // NOPMD
-  private final Field fldDefaultMaxCooldownTries = new CommonField("max-cooldown-tries", 2, 3); // NOPMD
-  private final Field fldInitialNumberOfChangeLists = new CommonField("initial-number-of-changelists", 6, 6); // NOPMD
-  private final Field fldMaxChangeListSize = new CommonField("max-changelist-size", 3, 3); // NOPMD
-  private final Field fldMaxNumberOfChangeLists = new CommonField("max-number-of-changelists", 6, 6); // NOPMD
-  private final Field fldMaxParallelAgentUpgrades = new CommonField("max-parallel-agen-upgrades", 3, 3); // NOPMD
-  private final Field fldMinResultsRetention = new CommonField("min-result-retention", 4, 4); // NOPMD
-  private final Field fldVCSTimeout = new CommonField("vcs-timeout", 6, 6); // NOPMD
-  private final Field flRetryVCSCommandInterval = new CommonField("retry-vcs-cmd-interval", 4, 4);  // NOPMD
-  private final Field flRetryVCSCommandTimes = new CommonField("retry-vcs-cmd-times", 4, 4);  // NOPMD
-  private final Text flRetryVCSCommandPatterns = new Text(50, 6);  // NOPMD
+  private final CommonCheckBox cbAllowDeletingProjects = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox cbAutomaticAgentUpgrade = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox cbChangeListNumbersAsBuildNumbers = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox cbCheckCustomCheckoutDirsForDuplicates = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox cbEnableDebugging = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox cbEnableLoggingArchiveCleanupTiming = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox cbEnabledNoCheckoutBuilds = new CommonCheckBox();
+  private final CommonCheckBox cbEnableScheduleGap = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox cbQueueSerializedBuilds = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox cbRespectIntermediateStepFailure = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox cbRoundRobin = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox cbSerializedBuilds = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox cbUseXMLLogFormatForSubversion = new CommonCheckBox();
+  private final CodeNameDropDown flScheduleGapFrom = new HourDropDown(); // NOPMD
+  private final CodeNameDropDown flScheduleGapTo = new HourDropDown(); // NOPMD
+  private final CommonField fldDefaultBuildStepTimeout = new CommonField("default-build-step-timeout", 6, 6); // NOPMD
+  private final CommonField fldDefaultMaxCooldownTries = new CommonField("max-cooldown-tries", 2, 3); // NOPMD
+  private final CommonField fldInitialNumberOfChangeLists = new CommonField("initial-number-of-changelists", 6, 6); // NOPMD
+  private final CommonField fldMaxChangeListSize = new CommonField("max-changelist-size", 3, 3); // NOPMD
+  private final CommonField fldMaxNumberOfChangeLists = new CommonField("max-number-of-changelists", 6, 6); // NOPMD
+  private final CommonField fldMaxParallelAgentUpgrades = new CommonField("max-parallel-agen-upgrades", 3, 3); // NOPMD
+  private final CommonField fldMinResultsRetention = new CommonField("min-result-retention", 4, 4); // NOPMD
+  private final CommonField fldVCSTimeout = new CommonField("vcs-timeout", 6, 6); // NOPMD
+  private final CommonField flRetryVCSCommandInterval = new CommonField("retry-vcs-cmd-interval", 4, 4);  // NOPMD
+  private final CommonField flRetryVCSCommandTimes = new CommonField("retry-vcs-cmd-times", 4, 4);  // NOPMD
+  private final CommonText flRetryVCSCommandPatterns = new CommonText(50, 6);  // NOPMD
 
 
   public StabilityConfigPanel() {
@@ -305,7 +304,7 @@ public final class StabilityConfigPanel extends AbstractSystemConfigPanel {
   }
 
 
-  private static void validateValueGreaterThan(final List errors, final String what, final int minimum, final Field fld) {
+  private static void validateValueGreaterThan(final List errors, final String what, final int minimum, final CommonField fld) {
     final String value = fld.getValue();
     if (Integer.parseInt(value) < minimum) {
       errors.add('\"' + what + "\"  cannot be less than " + minimum + " minutes");

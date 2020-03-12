@@ -13,15 +13,31 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import java.util.*;
-import org.apache.commons.logging.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.build.BuildLabelNameGenerator;
+import org.parabuild.ci.build.LabelTemplateFinder;
+import org.parabuild.ci.configuration.ConfigurationManager;
+import org.parabuild.ci.object.BuildConfig;
+import org.parabuild.ci.object.LabelProperty;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.webui.common.BoldCommonLabel;
+import org.parabuild.ci.webui.common.CommonCheckBox;
+import org.parabuild.ci.webui.common.CommonField;
+import org.parabuild.ci.webui.common.CommonFlow;
+import org.parabuild.ci.webui.common.CommonLabel;
+import org.parabuild.ci.webui.common.GridIterator;
+import org.parabuild.ci.webui.common.PropertyToInputMap;
+import org.parabuild.ci.webui.common.WebuiUtils;
+import viewtier.ui.Flow;
+import viewtier.ui.Label;
+import viewtier.ui.RadioButton;
 
-import org.parabuild.ci.build.*;
-import org.parabuild.ci.util.*;
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * LabelSettingsPanel holds setting for build labeling.
@@ -40,11 +56,11 @@ public final class LabelSettingsPanelImpl extends LabelSettingsPanel {
   private static final String CAPTION_CUSTOM = "Custom: ";
 
   private final PropertyToInputMap propertyToInputMap = new PropertyToInputMap(true, makePropertyHandler()); // strict map
-  private final Field flCustomLabel = new CommonField(80, 80);
+  private final CommonField flCustomLabel = new CommonField(80, 80);
   private final RadioButton rbCustom = new RadioButton();
   private final RadioButton rbNoLabel = new RadioButton();
-  private final CheckBox cbDeleteOld = new CheckBox();
-  private final Field flDaysOld = new CommonField(3, 3);
+  private final CommonCheckBox cbDeleteOld = new CommonCheckBox();
+  private final CommonField flDaysOld = new CommonField(3, 3);
 
   private int buildID = BuildConfig.UNSAVED_ID;
   private final boolean labelDeletingEnabled;

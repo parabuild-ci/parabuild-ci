@@ -14,10 +14,9 @@
 package org.parabuild.ci.webui.admin;
 
 import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
-import org.parabuild.ci.common.WebUIConstants;
-import viewtier.ui.Field;
 
 import java.util.ArrayList;
 
@@ -31,8 +30,8 @@ public final class FishEyeSettingsPanel extends AbstractSourceControlPanel {
   public static final String NAME_FISHEYE_URL = "FishEye URL:";
   public static final String NAME_FISHEYE_ROOT = "FishEye root:";
 
-  private final Field flFishEyeURL = new CommonField(200, 60);
-  private final Field flFishEyeRoot = new CommonField(200, 60);
+  private final CommonField flFishEyeURL = new CommonField(200, 60);
+  private final CommonField flFishEyeRoot = new CommonField(200, 60);
 
 
   /**

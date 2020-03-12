@@ -13,8 +13,7 @@
  */
 package org.parabuild.ci.webui.admin.system;
 
-import org.parabuild.ci.util.MailUtils;
-import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.ConfigurationConstants;
 import org.parabuild.ci.configuration.SystemConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
@@ -23,7 +22,10 @@ import org.parabuild.ci.notification.NotificationManagerFactory;
 import org.parabuild.ci.object.SystemProperty;
 import org.parabuild.ci.object.User;
 import org.parabuild.ci.security.SecurityManager;
+import org.parabuild.ci.util.MailUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.CommonButton;
+import org.parabuild.ci.webui.common.CommonCheckBox;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.CommonFlow;
@@ -32,14 +34,11 @@ import org.parabuild.ci.webui.common.EmailField;
 import org.parabuild.ci.webui.common.EncryptingPassword;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Button;
 import viewtier.ui.ButtonPressedEvent;
 import viewtier.ui.ButtonPressedListener;
-import viewtier.ui.CheckBox;
 import viewtier.ui.Color;
-import viewtier.ui.Field;
 import viewtier.ui.Label;
 import viewtier.ui.Panel;
 import viewtier.ui.Tierlet;
@@ -79,12 +78,12 @@ public final class EmailNotificationConfigPanel extends AbstractSystemConfigPane
   private static final String CAPTION_USE_GIT_E_MAIL_AS_USER_NAME = "Use Git user's e-mail: ";
 
   private final Button btnSendTestMessage = new CommonButton("Send test message");  // NOPMD
-  private final CheckBox fldAdvancedStopNotification = new CheckBox();  // NOPMD
-  private final CheckBox fldCaseSensitiveVCSUserNames = new CheckBox();  // NOPMD
-  private final CheckBox fldIncludeResultsInMessages = new CheckBox(); // NOPMD
-  private final CheckBox fldNotifyBuildAdminsAboutSystemErrors = new CheckBox(); // NOPMD
-  private final CheckBox fldServerRequiresEncryptedConnection = new CheckBox(); // NOPMD
-  private final CheckBox fldUseGitEmailAsUserName  = new CheckBox();  // NOPMD
+  private final CommonCheckBox fldAdvancedStopNotification = new CommonCheckBox();  // NOPMD
+  private final CommonCheckBox fldCaseSensitiveVCSUserNames = new CommonCheckBox();  // NOPMD
+  private final CommonCheckBox fldIncludeResultsInMessages = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox fldNotifyBuildAdminsAboutSystemErrors = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox fldServerRequiresEncryptedConnection = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox fldUseGitEmailAsUserName  = new CommonCheckBox();  // NOPMD
   private final CommonField buildAdminEmail = new EmailField("build_admin_email", 60);  // NOPMD
   private final CommonField buildAdminName = new CommonField("build_admin_name", 60, 60);  // NOPMD
   private final CommonField defaultEmailDomain = new CommonField("default_email_domain", 60, 60);  // NOPMD
@@ -92,9 +91,9 @@ public final class EmailNotificationConfigPanel extends AbstractSystemConfigPane
   private final CommonField smtpServerPort = new CommonField("smtp_server_port", 5, 5);  // NOPMD
   private final CommonField smtpServerUser = new CommonField("smtp_server_user", 30, 30);  // NOPMD
   private final EncryptingPassword smtpServerPassword = new EncryptingPassword(30, 30, "smtp_server_password");  // NOPMD
-  private final Field fldStepFinishedTemplate = new CommonField(TEMPLATE_DATA_LENGTH, 80); // NOPMD
-  private final Field fldStepStartedTemplate = new CommonField(TEMPLATE_DATA_LENGTH, 80); // NOPMD
-  private final Field fldSystemMessagePrefix = new CommonField(30, 30); // NOPMD
+  private final CommonField fldStepFinishedTemplate = new CommonField(TEMPLATE_DATA_LENGTH, 80); // NOPMD
+  private final CommonField fldStepStartedTemplate = new CommonField(TEMPLATE_DATA_LENGTH, 80); // NOPMD
+  private final CommonField fldSystemMessagePrefix = new CommonField(30, 30); // NOPMD
   private final Label lbTestMessage = new CommonLabel();  // NOPMD
   private final MessagePriorityDropDown fldMessagePriorityFailedBuild = new MessagePriorityDropDown(); // NOPMD
   private final MessagePriorityDropDown fldMessagePrioritySystemError = new MessagePriorityDropDown(); // NOPMD

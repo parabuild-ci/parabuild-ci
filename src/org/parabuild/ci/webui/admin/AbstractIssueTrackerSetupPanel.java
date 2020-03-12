@@ -13,14 +13,22 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import java.util.*;
-import java.util.regex.*;
+import org.parabuild.ci.configuration.ConfigurationManager;
+import org.parabuild.ci.object.IssueTracker;
+import org.parabuild.ci.object.IssueTrackerProperty;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.webui.common.CommonField;
+import org.parabuild.ci.webui.common.CommonFieldLabel;
+import org.parabuild.ci.webui.common.CommonText;
+import org.parabuild.ci.webui.common.GridIterator;
+import org.parabuild.ci.webui.common.IssueFilterField;
+import org.parabuild.ci.webui.common.MessagePanel;
+import org.parabuild.ci.webui.common.PropertyToInputMap;
+import org.parabuild.ci.webui.common.Validatable;
 
-import org.parabuild.ci.util.*;
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Pattern;
 
 /**
  * Abstract issue tracker set up panel implementing Template GoF.
@@ -34,8 +42,8 @@ public abstract class AbstractIssueTrackerSetupPanel extends MessagePanel implem
   private static final String STR_ISSUE_FILTER = "Issue filter:";
   private static final String STR_ISSUE_LINK_PATTERN = "Change to issue link patterns:";
 
-  private final Text flLinkPattern = new Text(50, 4); // NOPMD
-  private final Field flIssueFilter = new IssueFilterField(); // NOPMD
+  private final CommonText flLinkPattern = new CommonText(50, 4); // NOPMD
+  private final CommonField flIssueFilter = new IssueFilterField(); // NOPMD
   private final IssueURLTemplateField flURLTemplate = new IssueURLTemplateField(); // NOPMD
 
   protected final PropertyToInputMap propertyToInputMap = new PropertyToInputMap(false, makePropertyHandler());

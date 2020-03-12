@@ -14,6 +14,7 @@
 package org.parabuild.ci.webui.admin.mercurial;
 
 import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.object.SourceControlSettingVO;
@@ -21,9 +22,7 @@ import org.parabuild.ci.webui.admin.ManualScheduleStartParametersPanel;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
-import viewtier.ui.Field;
 import viewtier.ui.Layout;
 
 import java.util.ArrayList;
@@ -45,9 +44,9 @@ public final class MercurialManualScheduleStartParametersPanel extends ManualSch
   private final CommonFieldLabel lbBranch = new CommonFieldLabel(CAPTION_BRANCH); // NOPMD
   private final CommonFieldLabel lbRevisionNumber = new CommonFieldLabel(CAPTION_REVISION_NUMBER); // NOPMD
 
-  private final Field flURL = new CommonField(200, 60); // NOPMD
-  private final Field flBranch = new CommonField(60, 60); // NOPMD
-  private final Field flRevisionNumber = new CommonField(100, 50);
+  private final CommonField flURL = new CommonField(200, 60); // NOPMD
+  private final CommonField flBranch = new CommonField(60, 60); // NOPMD
+  private final CommonField flRevisionNumber = new CommonField(100, 50);
   private final boolean showURLOverride;
 
 

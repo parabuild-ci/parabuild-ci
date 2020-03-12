@@ -19,6 +19,7 @@ import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.LogConfig;
 import org.parabuild.ci.object.LogConfigProperty;
+import org.parabuild.ci.webui.common.CommonCheckBox;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.GridIterator;
@@ -29,7 +30,6 @@ import org.parabuild.ci.webui.common.RequiredFieldMarker;
 import org.parabuild.ci.webui.common.Saveable;
 import org.parabuild.ci.webui.common.Validatable;
 import org.parabuild.ci.webui.common.WebuiUtils;
-import viewtier.ui.CheckBox;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,7 +66,7 @@ public abstract class AbstractLogConfigPanel extends MessagePanel implements Val
   private final CommonField flDescr = new CommonField(60, 20);
   private final CommonField flPath = new CommonField(250, 45);
   private final LogTypeDropDown flLogType = new LogTypeDropDown();
-  private final CheckBox flIgnoreTimestamp = new CheckBox();
+  private final CommonCheckBox flIgnoreTimestamp = new CommonCheckBox();
 
   // GI
   private final GridIterator gridIter = new GridIterator(super.getUserPanel(), 4);

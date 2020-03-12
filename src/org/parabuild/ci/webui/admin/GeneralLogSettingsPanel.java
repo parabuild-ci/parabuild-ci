@@ -13,10 +13,10 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.BuildConfigAttribute;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.GridIterator;
@@ -43,7 +43,7 @@ public final class GeneralLogSettingsPanel extends MessagePanel implements Loada
   private static final String CAPTION_DAYS = " days";
 
   private final PropertyToInputMap inputMap = new PropertyToInputMap(false, new BuildAttributeHandler()); // strict map
-  private final Field flPackDays = new CommonField(3, 3);
+  private final CommonField flPackDays = new CommonField(3, 3);
   private int buildID = BuildConfig.UNSAVED_ID;
 
 

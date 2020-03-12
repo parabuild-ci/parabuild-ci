@@ -13,14 +13,18 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import java.util.*;
-
 import org.parabuild.ci.common.WebUIConstants;
-import viewtier.ui.*;
-import org.parabuild.ci.webui.common.*;
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.util.*;
+import org.parabuild.ci.configuration.ConfigurationManager;
+import org.parabuild.ci.object.SourceControlSetting;
+import org.parabuild.ci.object.SourceControlSettingVO;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.webui.common.CommonField;
+import org.parabuild.ci.webui.common.CommonFieldLabel;
+import org.parabuild.ci.webui.common.WebuiUtils;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * Parameters for a Subversion-based build on manual schedule.
@@ -31,7 +35,7 @@ final class CVSManualScheduleStartParametersPanel extends ManualScheduleStartPar
 
   public static final String NAME_BRANCH = "Branch name:";
 
-  private final Field flBranch = new CommonField(60, 60);
+  private final CommonField flBranch = new CommonField(60, 60);
 
 
   /**

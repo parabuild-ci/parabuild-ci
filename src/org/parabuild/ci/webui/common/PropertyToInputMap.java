@@ -13,10 +13,6 @@
  */
 package org.parabuild.ci.webui.common;
 
-import org.parabuild.ci.util.IoUtils;
-import org.parabuild.ci.util.StringUtils;
-import viewtier.ui.AbstractInput;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,7 +28,7 @@ public final class PropertyToInputMap implements Serializable {
 
   private static final long serialVersionUID = 2416070308102742329L; // NOPMD
 
-  private final HashMap<String, AbstractInput> propertyNameToInputMap = new HashMap<String, AbstractInput>(5);
+  private final HashMap<String, HasInputValue> propertyNameToInputMap = new HashMap<String, HasInputValue>(5);
   private final HashMap<String, Object> propertyNameToPropertyObjectMap = new HashMap<String, Object>(5);
   private boolean loadUnmappedProperties = true;
   private final PropertyHandler propertyHandler;
@@ -64,32 +60,16 @@ public final class PropertyToInputMap implements Serializable {
    * @param propertyName to associate with input
    * @param input        propertyName will be associated with
    */
-  public void bindPropertyNameToInput(final String propertyName, final AbstractInput input) {
+  public void bindPropertyNameToInput(final String propertyName, final HasInputValue input) {
     propertyNameToInputMap.put(propertyName, input);
   }
 
 
   private void setInputValue(final String propertyName, final String value) {
-    final AbstractInput input = getInputFromMap(propertyName);
+
+    final HasInputValue input = propertyNameToInputMap.get(propertyName);
     if (input != null) {
-      if (input instanceof EncryptingPassword) {
-        // value contains encrypted password
-        final EncryptingPassword ep = (EncryptingPassword) input;
-        ep.setEncryptedValue(value);
-      } else if (input instanceof CodeNameDropDown) { // see #777
-        final CodeNameDropDown codeNameDropDown = (CodeNameDropDown) input;
-        if (StringUtils.isValidInteger(value)) {
-          try {
-            codeNameDropDown.setCode(Integer.parseInt(value));
-          } catch (final IllegalArgumentException e) { // in case this is something we did not expect
-            IoUtils.ignoreExpectedException(e);
-          }
-        } else {
-          codeNameDropDown.setSelection(value);
-        }
-      } else {
-        input.setValue(value);
-      }
+      input.setInputValue(value);
     }
   }
 
@@ -109,12 +89,11 @@ public final class PropertyToInputMap implements Serializable {
 
     final List result = new ArrayList(11);
     // traverse property name to input map
-    for (final Iterator i = propertyNameToInputMap.entrySet().iterator(); i.hasNext(); ) {
+    for (Map.Entry<String, HasInputValue> stringHasInputValueEntry : propertyNameToInputMap.entrySet()) {
       // get prop name and associated input
-      final Map.Entry entry = (Map.Entry) i.next();
-      final String propName = (String) entry.getKey();
-      final AbstractInput input = (AbstractInput) entry.getValue();
-      if (updateOnlyFromEditableFields && !input.isEditable()) {
+      final String propName = stringHasInputValueEntry.getKey();
+      final HasInputValue input = stringHasInputValueEntry.getValue();
+      if (updateOnlyFromEditableFields && !input.isInputEditable()) {
         continue;
       }
       // lookup property value, if any
@@ -133,7 +112,7 @@ public final class PropertyToInputMap implements Serializable {
         final CodeNameDropDown codeNameDropDown = (CodeNameDropDown) input;
         value = Integer.toString(codeNameDropDown.getCode());
       } else {
-        value = input.getValue();
+        value = input.getInputValue();
       }
       propertyHandler.setPropertyValue(property, value);
       result.add(property);
@@ -160,18 +139,13 @@ public final class PropertyToInputMap implements Serializable {
       final Object property = iter.next();
       final String propertyName = propertyHandler.getPropertyName(property);
       // don't load if it's unmapped
-      if (!loadUnmappedProperties && getInputFromMap(propertyName) == null) {
+      if (!loadUnmappedProperties && propertyNameToInputMap.get(propertyName) == null) {
         continue;
       }
       final String propertyValue = propertyHandler.getPropertyValue(property);
       propertyNameToPropertyObjectMap.put(propertyName, property);
       setInputValue(propertyName, propertyValue);
     }
-  }
-
-
-  private AbstractInput getInputFromMap(final String propertyName) {
-    return propertyNameToInputMap.get(propertyName);
   }
 
 

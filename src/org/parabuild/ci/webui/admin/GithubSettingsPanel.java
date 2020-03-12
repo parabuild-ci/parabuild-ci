@@ -14,10 +14,9 @@
 package org.parabuild.ci.webui.admin;
 
 import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
-import org.parabuild.ci.common.WebUIConstants;
-import viewtier.ui.Field;
 
 import java.util.ArrayList;
 
@@ -30,7 +29,7 @@ public final class GithubSettingsPanel extends AbstractSourceControlPanel {
 
   public static final String NAME_GITHUB_URL = "Github URL:";
 
-  private final Field flGithubURL = new CommonField(200, 60);
+  private final CommonField flGithubURL = new CommonField(200, 60);
 
 
   /**

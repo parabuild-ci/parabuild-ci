@@ -13,21 +13,21 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.remote.NoLiveAgentsException;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.versioncontrol.StarTeamProjectListParser;
+import org.parabuild.ci.webui.common.CodeNameDropDown;
+import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
+import org.parabuild.ci.webui.common.CommonText;
 import org.parabuild.ci.webui.common.EncryptingPassword;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
-import viewtier.ui.DropDown;
-import viewtier.ui.Field;
 import viewtier.ui.Layout;
-import viewtier.ui.Text;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -49,13 +49,13 @@ public final class StarTeamSettingsPanel extends AbstractSourceControlPanel {
   public static final String CAPTION_EOL_CONVERSION = "End-of-line conversion";
 
   private final EncryptingPassword flPassword = new EncryptingPassword(30, 20, "starteam_password");
-  private final Field flHost = new Field(100, 50);
-  private final Field flPathToExe = new Field(200, 50);
-  private final Field flPort = new Field(5, 5);
-  private final Field flUser = new Field(20, 20);
-  private final DropDown flEncryption = new StarTeamEncriptionDropDown();
-  private final DropDown flEOLConversion = new StarTeamEndOfLineDropDown();
-  private final Text flProjectPath = new Text(100, 5);
+  private final CommonField flHost = new CommonField(100, 50);
+  private final CommonField flPathToExe = new CommonField(200, 50);
+  private final CommonField flPort = new CommonField(5, 5);
+  private final CommonField flUser = new CommonField(20, 20);
+  private final CodeNameDropDown flEncryption = new StarTeamEncriptionDropDown();
+  private final CodeNameDropDown flEOLConversion = new StarTeamEndOfLineDropDown();
+  private final CommonText flProjectPath = new CommonText(100, 5);
 
 
   public StarTeamSettingsPanel() {

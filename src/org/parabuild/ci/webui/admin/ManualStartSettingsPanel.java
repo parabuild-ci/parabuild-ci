@@ -16,6 +16,7 @@ package org.parabuild.ci.webui.admin;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
@@ -24,20 +25,18 @@ import org.parabuild.ci.object.BuildConfigAttribute;
 import org.parabuild.ci.object.StartParameterType;
 import org.parabuild.ci.util.BuildVersionGenerator;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.common.ValidationException;
+import org.parabuild.ci.webui.common.CodeNameDropDown;
+import org.parabuild.ci.webui.common.CommonCheckBox;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
+import org.parabuild.ci.webui.common.CommonText;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.MessagePanel;
 import org.parabuild.ci.webui.common.PropertyToInputMap;
 import org.parabuild.ci.webui.common.Saveable;
 import org.parabuild.ci.webui.common.Validatable;
 import org.parabuild.ci.webui.common.WebuiUtils;
-import viewtier.ui.CheckBox;
-import viewtier.ui.DropDown;
-import viewtier.ui.Field;
 import viewtier.ui.Layout;
-import viewtier.ui.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,18 +60,18 @@ public final class ManualStartSettingsPanel extends MessagePanel implements Vali
    */
   private int buildID = BuildConfig.UNSAVED_ID;
 
-  private final CheckBox cbEnableBuildVersion = new CheckBox(); // NOPMD SingularField
-  private final CheckBox cbIncrementIfBroken = new CheckBox(); // NOPMD SingularField
-  private final CheckBox cbShowPerforceParameters = new CheckBox(); // NOPMD SingularField
-  private final CheckBox cbShowBazaarParameters = new CheckBox(); // NOPMD SingularField
-  private final CheckBox cbShowMercurialParameters = new CheckBox(); // NOPMD SingularField
-  private final CheckBox cbUserFirstValueAsDefault = new CheckBox(); // NOPMD SingularField
-  private final DropDown fldVersionCounterIncrementMode = new VersionCounterIncrementModeDropdown(); // NOPMD SingularField
-  private final Field fldBuildInstructionsURL = new CommonField(300, 100); // NOPMD SingularField
-  private final Field fldVersionTemplate = new CommonField(100, 60); // NOPMD SingularField
+  private final CommonCheckBox cbEnableBuildVersion = new CommonCheckBox(); // NOPMD SingularField
+  private final CommonCheckBox cbIncrementIfBroken = new CommonCheckBox(); // NOPMD SingularField
+  private final CommonCheckBox cbShowPerforceParameters = new CommonCheckBox(); // NOPMD SingularField
+  private final CommonCheckBox cbShowBazaarParameters = new CommonCheckBox(); // NOPMD SingularField
+  private final CommonCheckBox cbShowMercurialParameters = new CommonCheckBox(); // NOPMD SingularField
+  private final CommonCheckBox cbUserFirstValueAsDefault = new CommonCheckBox(); // NOPMD SingularField
+  private final CodeNameDropDown fldVersionCounterIncrementMode = new VersionCounterIncrementModeDropdown(); // NOPMD SingularField
+  private final CommonField fldBuildInstructionsURL = new CommonField(300, 100); // NOPMD SingularField
+  private final CommonField fldVersionTemplate = new CommonField(100, 60); // NOPMD SingularField
   private final ManualStartSettingsTable tblParameters = new ManualStartSettingsTable("Parameters", StartParameterType.BUILD); // NOPMD SingularField
   private final PropertyToInputMap inputMap = new PropertyToInputMap(false, new BuildAttributeHandler()); // strict map  // NOPMD SingularField
-  private final Text fldBuildInstructions = new Text(100, 5); // NOPMD SingularField
+  private final CommonText fldBuildInstructions = new CommonText(100, 5); // NOPMD SingularField
 
 
   /**

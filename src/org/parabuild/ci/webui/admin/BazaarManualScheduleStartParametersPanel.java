@@ -14,6 +14,7 @@
 package org.parabuild.ci.webui.admin;
 
 import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.object.SourceControlSettingVO;
@@ -21,9 +22,7 @@ import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
-import viewtier.ui.Field;
 import viewtier.ui.Layout;
 
 import java.util.ArrayList;
@@ -43,8 +42,8 @@ final class BazaarManualScheduleStartParametersPanel extends ManualScheduleStart
   private final CommonFieldLabel lbBranchLocation = new CommonFieldLabel(CAPTION_BRANCH_LOCATION); // NOPMD
   private final CommonFieldLabel lbChangeListNumber = new CommonFieldLabel(CAPTION_CHANGE_LIST_NUMBER); // NOPMD
 
-  private final Field flBranchLocation = new CommonField(100, 100); // NOPMD
-  private final Field flRevisionNumber = new CommonField(100, 50);
+  private final CommonField flBranchLocation = new CommonField(100, 100); // NOPMD
+  private final CommonField flRevisionNumber = new CommonField(100, 50);
   private final boolean showBranchPathOverride;
 
 

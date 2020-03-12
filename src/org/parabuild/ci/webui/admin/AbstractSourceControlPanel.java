@@ -33,6 +33,7 @@ import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.CommonFlow;
 import org.parabuild.ci.webui.common.CommonLabel;
+import org.parabuild.ci.webui.common.CommonText;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.PropertyToInputMap;
 import org.parabuild.ci.webui.common.WebuiUtils;
@@ -42,7 +43,6 @@ import viewtier.ui.Color;
 import viewtier.ui.Field;
 import viewtier.ui.Label;
 import viewtier.ui.Layout;
-import viewtier.ui.Text;
 import viewtier.ui.Tierlet;
 
 import java.io.IOException;
@@ -86,12 +86,12 @@ public abstract class AbstractSourceControlPanel extends SourceControlPanel {
    * for the inherited configuration it should be either
    * empty or own.
    */
-  private final Field flCustomCheckoutDir = new CommonField(100, 60);
+  private final CommonField flCustomCheckoutDir = new CommonField(100, 60);
 
   /**
    * Exclusion paths.
    */
-  private final Text flExclusionPaths = new Text(65, 3);
+  private final CommonText flExclusionPaths = new CommonText(65, 3);
   private final Field flTestExclusionPaths = new CommonField(100, 65);
   private final CommonButton btnTestExclusionPaths = new CommonButton(CAPTION_TEST_EXCLUSION);
   private final CommonLabel lbTestResult = new BoldCommonLabel();

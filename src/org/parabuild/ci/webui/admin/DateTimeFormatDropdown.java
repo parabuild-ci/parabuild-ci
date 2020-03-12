@@ -13,12 +13,12 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import viewtier.ui.*;
+import org.parabuild.ci.webui.common.CommonDropDown;
 
 /**
  * Dropdown to show available date formats
  */
-public final class DateTimeFormatDropdown extends DropDown {
+public final class DateTimeFormatDropdown extends CommonDropDown {
 
   private static final long serialVersionUID = 1952654625580207797L; // NOPMD
 

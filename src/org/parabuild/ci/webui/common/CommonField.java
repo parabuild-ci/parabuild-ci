@@ -13,12 +13,12 @@
  */
 package org.parabuild.ci.webui.common;
 
-import viewtier.ui.*;
+import viewtier.ui.Field;
 
 /**
  * Field to be reused in Parabuild
  */
-public class CommonField extends Field {
+public class CommonField extends Field implements HasInputValue {
 
   public static final int PADDING = 1;
   private static final long serialVersionUID = 7847999774032242963L;
@@ -34,6 +34,29 @@ public class CommonField extends Field {
     super(i, i1);
     setName(fieldName);
     setPadding(PADDING);
+  }
+
+
+  public CommonField(final int i, final int i1, final String s) {
+    this(s, i, i1);
+  }
+
+
+  @Override
+  public void setInputValue(final String value) {
+    setValue(value);
+  }
+
+
+  @Override
+  public boolean isInputEditable() {
+    return isEditable();
+  }
+
+
+  @Override
+  public String getInputValue() {
+    return getValue();
   }
 
 

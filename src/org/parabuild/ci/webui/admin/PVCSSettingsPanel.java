@@ -14,18 +14,17 @@
 package org.parabuild.ci.webui.admin;
 
 import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.remote.NoLiveAgentsException;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
+import org.parabuild.ci.webui.common.CommonText;
 import org.parabuild.ci.webui.common.EncryptingPassword;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
-import viewtier.ui.Field;
 import viewtier.ui.Layout;
-import viewtier.ui.Text;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -49,15 +48,15 @@ public final class PVCSSettingsPanel extends AbstractSourceControlPanel {
   public static final String NAME_LABEL = "Label: ";
   public static final String NAME_PROMOTION_GROUP = "Promotion group: ";
 
-  private final Field fldPathToPVCSClient = new CommonField(200, 60);
-  private final Field fldRepository = new CommonField(200, 60);
-  private final Text fldProject = new Text(60, 3);
-  private final Field fldBranch = new CommonField(60, 60);
+  private final CommonField fldPathToPVCSClient = new CommonField(200, 60);
+  private final CommonField fldRepository = new CommonField(200, 60);
+  private final CommonText fldProject = new CommonText(60, 3);
+  private final CommonField fldBranch = new CommonField(60, 60);
   private final EncryptingPassword fldPassword = new EncryptingPassword(30, 30, "pvcs_password");
-  private final Field fldUser = new Field(30, 30);
-  private final Field fldChangeWindow = new Field(2, 3);
-  private final Field fldLabel = new Field(60, 60);
-  private final Field fldPromotionGroup = new Field(60, 60);
+  private final CommonField fldUser = new CommonField(30, 30);
+  private final CommonField fldChangeWindow = new CommonField(2, 3);
+  private final CommonField fldLabel = new CommonField(60, 60);
+  private final CommonField fldPromotionGroup = new CommonField(60, 60);
 
 //  private final Label lbLabel = new CommonFieldLabel(NAME_LABEL);
 

@@ -14,10 +14,9 @@
 package org.parabuild.ci.webui.admin;
 
 import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
-import org.parabuild.ci.common.WebUIConstants;
-import viewtier.ui.Field;
 
 import java.util.ArrayList;
 
@@ -31,8 +30,8 @@ public final class ViewVCSettingsPanel extends AbstractSourceControlPanel {
   public static final String NAME_VIEWCVS_URL = "ViewVC URL:";
   public static final String NAME_VIEWCVS_ROOT = "ViewVC root:";
 
-  private final Field flViewVCURL = new CommonField(200, 60);
-  private final Field flViewVCRoot = new CommonField(200, 60);
+  private final CommonField flViewVCURL = new CommonField(200, 60);
+  private final CommonField flViewVCRoot = new CommonField(200, 60);
 
 
   /**

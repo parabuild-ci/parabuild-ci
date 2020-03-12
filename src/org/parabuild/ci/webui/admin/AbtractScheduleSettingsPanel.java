@@ -13,19 +13,20 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.ScheduleProperty;
 import org.parabuild.ci.util.ArgumentValidator;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.common.ValidationException;
+import org.parabuild.ci.webui.common.CommonCheckBox;
+import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.PropertyToInputMap;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
 import org.parabuild.ci.webui.common.WebuiUtils;
-import viewtier.ui.CheckBox;
 import viewtier.ui.Field;
 
 import java.util.ArrayList;
@@ -47,11 +48,11 @@ public abstract class AbtractScheduleSettingsPanel extends ScheduleSettingsPanel
   protected int buildID = BuildConfig.UNSAVED_ID;
   protected final PropertyToInputMap propertyToInputMap = new PropertyToInputMap(false, makeSchedulePropertyHandler());
 
-  private final CheckBox flCleanCheckoutIfBroken = new CheckBox(); // NOPMD
-  private final CheckBox flCleanCheckoutOnAgentChange = new CheckBox(); // NOPMD
-  private final CheckBox flRebuildIfBroken = new CheckBox(); // NOPMD
-  private final CheckBox flStickyAgent = new CheckBox(); // NOPMD
-  private final Field flCleanCheckout = new Field(4, 5); // NOPMD
+  private final CommonCheckBox flCleanCheckoutIfBroken = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox flCleanCheckoutOnAgentChange = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox flRebuildIfBroken = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox flStickyAgent = new CommonCheckBox(); // NOPMD
+  private final CommonField flCleanCheckout = new CommonField(4, 5); // NOPMD
   private final Field flResetBuildNumber = new BuildNumberField(); // NOPMD
 
   private final CommonFieldLabel lbCleanCheckoutIfBroken = new CommonFieldLabel(CAPTION_CLEAN_CHECKOUT_IF_BROKEN);  // NOPMD

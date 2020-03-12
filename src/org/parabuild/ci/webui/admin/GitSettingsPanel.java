@@ -22,13 +22,13 @@ import org.parabuild.ci.remote.NoLiveAgentsException;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.versioncontrol.GitDepotPathParser;
+import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
+import org.parabuild.ci.webui.common.CommonText;
 import org.parabuild.ci.webui.common.EncryptingPassword;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
 import org.parabuild.ci.webui.common.WebuiUtils;
-import viewtier.ui.Field;
 import viewtier.ui.Layout;
-import viewtier.ui.Text;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -62,12 +62,12 @@ public final class GitSettingsPanel extends AbstractSourceControlPanel {
   private final CommonFieldLabel lbPassword = new CommonFieldLabel(VersionControlUIConstants.CAPTION_GIT_PASSWORD);
 
   // fields
-  private final Field flPathToExe = new Field(200, 80);
-  private final Field flRepository = new Field(80, 80);
-  private final Field flBranch = new Field(75, 75);
-  private final Field flUser = new Field(30, 30);
+  private final CommonField flPathToExe = new CommonField(200, 80);
+  private final CommonField flRepository = new CommonField(80, 80);
+  private final CommonField flBranch = new CommonField(75, 75);
+  private final CommonField flUser = new CommonField(30, 30);
   private final EncryptingPassword flPassword = new EncryptingPassword(30, 20, "git_password");
-  private final Text flDepotPath = new Text(60, 5);
+  private final CommonText flDepotPath = new CommonText(60, 5);
 
 
   public GitSettingsPanel() {

@@ -13,7 +13,9 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
@@ -22,21 +24,19 @@ import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.remote.NoLiveAgentsException;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.versioncontrol.perforce.P4ClientNameGeneratorImpl;
 import org.parabuild.ci.versioncontrol.perforce.P4ClientViewParser;
+import org.parabuild.ci.webui.common.CodeNameDropDown;
+import org.parabuild.ci.webui.common.CommonCheckBox;
+import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.CommonFlow;
+import org.parabuild.ci.webui.common.CommonText;
 import org.parabuild.ci.webui.common.EncryptingPassword;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
-import viewtier.ui.CheckBox;
-import viewtier.ui.DropDown;
-import viewtier.ui.Field;
 import viewtier.ui.Label;
 import viewtier.ui.Layout;
-import viewtier.ui.Text;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -46,7 +46,7 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 /**
- * @noinspection FieldCanBeLocal
+ * @noinspection CommonFieldCanBeLocal
  */
 public final class P4SettingsPanel extends AbstractSourceControlPanel {
 
@@ -89,30 +89,30 @@ public final class P4SettingsPanel extends AbstractSourceControlPanel {
   private final Label lbClientViewByDepotPathAligner = new Label();
   private final Label lbClientViewByClientNameAligner = new Label();
 
-  private final CheckBox flAdvancedViewMode = new CheckBox(); // NOPMD
-  private final CheckBox flShellVariablesOverride = new CheckBox(); // NOPMD
-  private final CheckBox flUseUNCPaths = new CheckBox(); // NOPMD
-  private final CheckBox cbDoNotSync = new CheckBox(); // NOPMD
+  private final CommonCheckBox flAdvancedViewMode = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox flShellVariablesOverride = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox flUseUNCPaths = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox cbDoNotSync = new CommonCheckBox(); // NOPMD
   private final EncryptingPassword flPassword = new EncryptingPassword(60, 20, "perforce_password"); // NOPMD
-  private final Field flClientNameTemplate = new Field(70, 65); // NOPMD
-  private final Field flCounter = new Field(20, 20); // NOPMD
-  private final Field flPathToP4Client = new Field(200, 65); // NOPMD
-  private final Field flPort = new Field(80, 65); // NOPMD
-  private final Field flRelativeBuildDir = new Field(70, 65); // NOPMD
-  private final Field flUser = new Field(50, 70); // NOPMD
-  private final Text flClientView = new Text(70, 5); // NOPMD
-  private final Field flP4WebURL = new Field(100, 65); // NOPMD
-  private final Field flClientViewByDepotPath = new Field(200, 65); // NOPMD
-  private final Field flClientViewByClientName = new Field(200, 65); // NOPMD
-  private final DropDown flOptionModtime = new P4ModtimeDropDown(); // NOPMD
-  private final DropDown flOptionClobber = new P4ClobberDropDown(); // NOPMD
-  private final DropDown flLineEnd = new P4LineEndDropDown(); // NOPMD
-  private final DropDown flAuthenticationMode = new P4AuthenticationModeDropDown(); // NOPMD
+  private final CommonField flClientNameTemplate = new CommonField(70, 65); // NOPMD
+  private final CommonField flCounter = new CommonField(20, 20); // NOPMD
+  private final CommonField flPathToP4Client = new CommonField(200, 65); // NOPMD
+  private final CommonField flPort = new CommonField(80, 65); // NOPMD
+  private final CommonField flRelativeBuildDir = new CommonField(70, 65); // NOPMD
+  private final CommonField flUser = new CommonField(50, 70); // NOPMD
+  private final CommonText flClientView = new CommonText(70, 5); // NOPMD
+  private final CommonField flP4WebURL = new CommonField(100, 65); // NOPMD
+  private final CommonField flClientViewByDepotPath = new CommonField(200, 65); // NOPMD
+  private final CommonField flClientViewByClientName = new CommonField(200, 65); // NOPMD
+  private final CodeNameDropDown flOptionModtime = new P4ModtimeDropDown(); // NOPMD
+  private final CodeNameDropDown flOptionClobber = new P4ClobberDropDown(); // NOPMD
+  private final CodeNameDropDown flLineEnd = new P4LineEndDropDown(); // NOPMD
+  private final CodeNameDropDown flAuthenticationMode = new P4AuthenticationModeDropDown(); // NOPMD
   private final P4ClientViewSourceDropDown flClientViewSource = new P4ClientViewSourceDropDown(); // NOPMD
   private final RequiredFieldMarker flwClientViewByDepotPathMarker = new RequiredFieldMarker(flClientViewByDepotPath);
   private final RequiredFieldMarker flwClientViewByClientNameMarker = new RequiredFieldMarker(flClientViewByClientName);
-  private final CheckBox cbUpdateHaveList = new CheckBox();
-  private final CheckBox cbCaseSensitiveUserNames = new CheckBox();  // NOPMD
+  private final CommonCheckBox cbUpdateHaveList = new CommonCheckBox();
+  private final CommonCheckBox cbCaseSensitiveUserNames = new CommonCheckBox();  // NOPMD
   private final FieldWithButtonPanel pnlClientView = new FieldWithButtonPanel(NAME_CLIENT_VIEW, flClientView);
 
 

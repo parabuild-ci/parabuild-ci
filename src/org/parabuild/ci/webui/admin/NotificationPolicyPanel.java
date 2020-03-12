@@ -16,12 +16,14 @@ package org.parabuild.ci.webui.admin;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.BuildConfigAttribute;
 import org.parabuild.ci.util.ArgumentValidator;
 import org.parabuild.ci.util.MailUtils;
 import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.webui.common.CommonCheckBox;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.GridIterator;
@@ -29,8 +31,6 @@ import org.parabuild.ci.webui.common.MessagePanel;
 import org.parabuild.ci.webui.common.PropertyToInputMap;
 import org.parabuild.ci.webui.common.Saveable;
 import org.parabuild.ci.webui.common.Validatable;
-import org.parabuild.ci.common.WebUIConstants;
-import viewtier.ui.CheckBox;
 
 import java.util.List;
 
@@ -51,15 +51,15 @@ final class NotificationPolicyPanel extends MessagePanel implements Validatable,
 
   private final CommonFieldLabel lbUseVCSEmails = new CommonFieldLabel(TEXT_USE_EMAIL);
 
-  private final CheckBox flUseVCSEmails = new CheckBox(); // NOPMD
-  private final CheckBox flFailuresOnlyOnce = new CheckBox(); // NOPMD
-  private final CheckBox flSendFailuresOnly = new CheckBox(); // NOPMD
-  private final CheckBox flSendFileNames = new CheckBox(); // NOPMD
-  private final CheckBox flSendStartNotice = new CheckBox(); // NOPMD
-  private final CheckBox flSendLastBuildOnly = new CheckBox(); // NOPMD
-  private final CheckBox flSendStartNoticeFirstStep = new CheckBox(); // NOPMD
-  private final CheckBox flNotifyWatchersOnly = new CheckBox(); // NOPMD
-  private final CheckBox flNotifyBuildAdmin = new CheckBox(); // NOPMD
+  private final CommonCheckBox flUseVCSEmails = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox flFailuresOnlyOnce = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox flSendFailuresOnly = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox flSendFileNames = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox flSendStartNotice = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox flSendLastBuildOnly = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox flSendStartNoticeFirstStep = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox flNotifyWatchersOnly = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox flNotifyBuildAdmin = new CommonCheckBox(); // NOPMD
   private final CommonField flEmailDomain = new CommonField(30, 30); // NOPMD
   private final CommonField flSubjectPrefix = new CommonField(30, 25); // NOPMD
 

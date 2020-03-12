@@ -13,22 +13,22 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.remote.AgentEnvironment;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.versioncontrol.SVNDepotPathParser;
+import org.parabuild.ci.webui.common.CommonCheckBox;
+import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
+import org.parabuild.ci.webui.common.CommonText;
 import org.parabuild.ci.webui.common.EncryptingPassword;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
-import viewtier.ui.CheckBox;
-import viewtier.ui.Field;
 import viewtier.ui.Layout;
-import viewtier.ui.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,14 +58,14 @@ public final class SVNSettingsPanel extends AbstractSourceControlPanel {
 
   private final CommonFieldLabel lbPassword = new CommonFieldLabel(NAME_SVN_PASSWORD);
   // fields
-  private final Field flPathToExe = new Field(200, 50);
-  private final Field flURL = new Field(500, 50);
-  private final Field flUser = new Field(20, 20);
+  private final CommonField flPathToExe = new CommonField(200, 50);
+  private final CommonField flURL = new CommonField(500, 50);
+  private final CommonField flUser = new CommonField(20, 20);
   private final EncryptingPassword flPassword = new EncryptingPassword(30, 20, "svn_password");
-  private final Text flDepotPath = new Text(100, 5);
-  private final CheckBox flWatchNonRecursivePaths = new CheckBox();
-  private final CheckBox flAddTrustServerCert = new CheckBox();
-  private final CheckBox flIgnoreExternals = new CheckBox();
+  private final CommonText flDepotPath = new CommonText(100, 5);
+  private final CommonCheckBox flWatchNonRecursivePaths = new CommonCheckBox();
+  private final CommonCheckBox flAddTrustServerCert = new CommonCheckBox();
+  private final CommonCheckBox flIgnoreExternals = new CommonCheckBox();
 
 
   public SVNSettingsPanel() {

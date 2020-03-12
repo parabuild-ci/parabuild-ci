@@ -16,33 +16,31 @@ package org.parabuild.ci.webui.admin.system;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.log.MarkerMatcherBuilder;
-import org.parabuild.ci.util.IoUtils;
-import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.ConfigurationConstants;
 import org.parabuild.ci.configuration.SystemConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.object.SystemProperty;
 import org.parabuild.ci.services.ServiceManager;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.admin.DateFormatDropdown;
 import org.parabuild.ci.webui.admin.DateTimeFormatDropdown;
 import org.parabuild.ci.webui.admin.HTTPProtocolDropdown;
 import org.parabuild.ci.webui.agent.status.AgentsStatusMonitor;
 import org.parabuild.ci.webui.common.BoldCommonLabel;
+import org.parabuild.ci.webui.common.CommonCheckBox;
+import org.parabuild.ci.webui.common.CommonDropDown;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.CommonFlow;
 import org.parabuild.ci.webui.common.CommonLabel;
+import org.parabuild.ci.webui.common.CommonText;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
-import viewtier.ui.CheckBox;
-import viewtier.ui.DropDown;
-import viewtier.ui.Field;
 import viewtier.ui.Flow;
 import viewtier.ui.Layout;
-import viewtier.ui.RadioButton;
-import viewtier.ui.Text;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -57,7 +55,7 @@ import java.util.regex.PatternSyntaxException;
 /**
  * System build panel
  *
- * @noinspection FieldCanBeLocal
+ * @noinspection CommonFieldCanBeLocal
  */
 public final class AppearanceConfigPanel extends AbstractSystemConfigPanel {
 
@@ -96,40 +94,40 @@ public final class AppearanceConfigPanel extends AbstractSystemConfigPanel {
   private static final String CAPTION_USER_INTERFACE_SETTINGS = "User Interface Settings";
   private static final String CAPTION_VARIABLE_NAME_VALIDATION = "Variable name validation: ";
 
-  private final CheckBox fldEnableAdvancedSettings = new CheckBox(); // NOPMD
-  private final CheckBox fldEnableBuildPromotion = new CheckBox(); // NOPMD
-  private final CheckBox fldEnablePublishingCommands = new CheckBox(); // NOPMD
-  private final CheckBox fldShowBuildInstructions = new CheckBox(); // NOPMD
-  private final CheckBox fldShowProjectLink = new CheckBox(); // NOPMD
-  private final CheckBox fldShowRSSLinks = new CheckBox(); // NOPMD
-  private final CheckBox flShowBuildAndChangeNumber = new CheckBox(); // NOPMD
-  private final CheckBox flShowIPAddress = new CheckBox(); // NOPMD
-  private final CheckBox flShowMergeStatuses = new CheckBox(); // NOPMD
-  private final CheckBox flShowNextBuildTime = new CheckBox(); // NOPMD
-  private final CheckBox flShowParallelInListView = new CheckBox(); // NOPMD
+  private final CommonCheckBox fldEnableAdvancedSettings = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox fldEnableBuildPromotion = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox fldEnablePublishingCommands = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox fldShowBuildInstructions = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox fldShowProjectLink = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox fldShowRSSLinks = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox flShowBuildAndChangeNumber = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox flShowIPAddress = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox flShowMergeStatuses = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox flShowNextBuildTime = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox flShowParallelInListView = new CommonCheckBox(); // NOPMD
   private final CommonFieldLabel lbTextLogMarkers = new CommonFieldLabel(CAPTION_TEXT_LOG_MARKERS);  // NOPMD
-  private final DropDown fldDateFormat = new DateFormatDropdown(); // NOPMD
-  private final DropDown fldDateTimeFormat = new DateTimeFormatDropdown(); // NOPMD
-  private final DropDown fldURLProtocol = new HTTPProtocolDropdown(); // NOPMD
-  private final Field flAgentStatusChartHeightPix = new CommonField(3, 3); // NOPMD
-  private final Field flAgentStatusChartWidthPix = new CommonField(3, 3); // NOPMD
-  private final Field flAgentStatusColumns = new CommonField(3, 3); // NOPMD
-  private final Field flDashboardRowSize = new CommonField(2, 2);
-  private final Field fldBranding = new CommonField(50, 50); // NOPMD
-  private final Field fldChangeListDescrQuoteLength = new CommonField(3, 3); // NOPMD
-  private final Field fldCustomBuildNameRegexTemplate = new CommonField("custom-build-name-template", 50, 50);  // NOPMD
-  private final Field fldCustomVariableNameRegexTemplate = new CommonField("custom-variable-name-template", 50, 50);  // NOPMD
-  private final Field fldErrorLineQuoteLength = new CommonField(3, 3); // NOPMD
-  private final Field fldErrorWindowSize = new CommonField(3, 3); // NOPMD
-  private final Field fldManagerHost = new CommonField(100, 50); // NOPMD
-  private final Field fldOutputEncoding = new CommonField(30, 30); // NOPMD
-  private final Field fldRefreshRate = new CommonField(3, 3); // NOPMD
-  private final Field flTailWindowSize = new CommonField(3, 3); // NOPMD
-  private final RadioButton fldCustomBuildNameValidation = createRadioButton("build-name-validation");  // NOPMD
-  private final RadioButton fldCustomVariableNameValidation = createRadioButton("variable-name-validation");  // NOPMD
-  private final RadioButton fldDefaultBuildNameValidation = createRadioButton("build-name-validation"); // NOPMD
-  private final RadioButton fldDefaultVariableNameValidation = createRadioButton("variable-name-validation"); // NOPMD
-  private final Text flTextLogMarkers = new Text(50, 10);
+  private final CommonDropDown fldDateFormat = new DateFormatDropdown(); // NOPMD
+  private final CommonDropDown fldDateTimeFormat = new DateTimeFormatDropdown(); // NOPMD
+  private final CommonDropDown fldURLProtocol = new HTTPProtocolDropdown(); // NOPMD
+  private final CommonField flAgentStatusChartHeightPix = new CommonField(3, 3); // NOPMD
+  private final CommonField flAgentStatusChartWidthPix = new CommonField(3, 3); // NOPMD
+  private final CommonField flAgentStatusColumns = new CommonField(3, 3); // NOPMD
+  private final CommonField flDashboardRowSize = new CommonField(2, 2);
+  private final CommonField fldBranding = new CommonField(50, 50); // NOPMD
+  private final CommonField fldChangeListDescrQuoteLength = new CommonField(3, 3); // NOPMD
+  private final CommonField fldCustomBuildNameRegexTemplate = new CommonField("custom-build-name-template", 50, 50);  // NOPMD
+  private final CommonField fldCustomVariableNameRegexTemplate = new CommonField("custom-variable-name-template", 50, 50);  // NOPMD
+  private final CommonField fldErrorLineQuoteLength = new CommonField(3, 3); // NOPMD
+  private final CommonField fldErrorWindowSize = new CommonField(3, 3); // NOPMD
+  private final CommonField fldManagerHost = new CommonField(100, 50); // NOPMD
+  private final CommonField fldOutputEncoding = new CommonField(30, 30); // NOPMD
+  private final CommonField fldRefreshRate = new CommonField(3, 3); // NOPMD
+  private final CommonField flTailWindowSize = new CommonField(3, 3); // NOPMD
+  private final CommonRadioButton fldCustomBuildNameValidation = createRadioButton("build-name-validation");  // NOPMD
+  private final CommonRadioButton fldCustomVariableNameValidation = createRadioButton("variable-name-validation");  // NOPMD
+  private final CommonRadioButton fldDefaultBuildNameValidation = createRadioButton("build-name-validation"); // NOPMD
+  private final CommonRadioButton fldDefaultVariableNameValidation = createRadioButton("variable-name-validation"); // NOPMD
+  private final CommonText flTextLogMarkers = new CommonText(50, 10);
 
 
   public AppearanceConfigPanel() {
@@ -397,8 +395,8 @@ public final class AppearanceConfigPanel extends AbstractSystemConfigPanel {
   }
 
 
-  private static RadioButton createRadioButton(final String groupName) {
-    final RadioButton radioButton = new RadioButton();
+  private static CommonRadioButton createRadioButton(final String groupName) {
+    final CommonRadioButton radioButton = new CommonRadioButton();
     radioButton.setGroupName(groupName);
     return radioButton;
   }

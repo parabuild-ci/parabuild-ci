@@ -16,11 +16,10 @@ package org.parabuild.ci.webui.admin;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.GridIterator;
-import org.parabuild.ci.common.WebUIConstants;
-import viewtier.ui.Field;
 
 import java.util.ArrayList;
 
@@ -35,9 +34,9 @@ public abstract class AbstractCommandVCSSettingsPanel extends AbstractSourceCont
   private static final String CAPTION_SYNC_TO_CHANGE_LIST = "Command to sync to change list: ";
   private static final long serialVersionUID = -1342054234743631119L;
 
-  private final Field flLabelCommand = new CommonField(200, 80);
-  private final Field flRemoveLabelCommand = new CommonField(200, 80);
-  private final Field flSyncToChangeListCommand = new CommonField(200, 80);
+  private final CommonField flLabelCommand = new CommonField(200, 80);
+  private final CommonField flRemoveLabelCommand = new CommonField(200, 80);
+  private final CommonField flSyncToChangeListCommand = new CommonField(200, 80);
 
 
   public AbstractCommandVCSSettingsPanel(final String title) {

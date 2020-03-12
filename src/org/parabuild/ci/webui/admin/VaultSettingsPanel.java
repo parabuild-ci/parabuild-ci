@@ -13,19 +13,18 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.common.VersionControlSystem;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.common.ValidationException;
+import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.common.WebUIConstants;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.versioncontrol.VaultDepotPathParser;
+import org.parabuild.ci.webui.common.CommonCheckBox;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
+import org.parabuild.ci.webui.common.CommonText;
 import org.parabuild.ci.webui.common.EncryptingPassword;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
-import viewtier.ui.CheckBox;
-import viewtier.ui.Field;
-import viewtier.ui.Text;
 
 import java.util.ArrayList;
 
@@ -52,18 +51,18 @@ public final class VaultSettingsPanel extends AbstractSourceControlPanel {
 
 //  private final Label lbPathToExe = new CommonFieldLabel(CAPTION_PATH_TO_EXE);
 
-  private final Field flProxyDomain = new CommonField(100, 50);
+  private final CommonField flProxyDomain = new CommonField(100, 50);
   private final EncryptingPassword flProxyPassword = new EncryptingPassword(30, 20, "vault_proxy_password");
-  private final Field flProxyPort = new CommonField(5, 5);
-  private final Field flProxyServer = new CommonField(100, 50);
-  private final Field flProxyUser = new CommonField(30, 30);
-//  private final Field flPathToExe = new Field(200, 50);
-  private final Field flHost = new Field(100, 50);
-  private final Field flUser = new Field(30, 30);
+  private final CommonField flProxyPort = new CommonField(5, 5);
+  private final CommonField flProxyServer = new CommonField(100, 50);
+  private final CommonField flProxyUser = new CommonField(30, 30);
+//  private final CommonField flPathToExe = new CommonField(200, 50);
+  private final CommonField flHost = new CommonField(100, 50);
+  private final CommonField flUser = new CommonField(30, 30);
   private final EncryptingPassword flPassword = new EncryptingPassword(30, 20, "vault_password");
-  private final Field flRepository = new Field(100, 50);
-  private final CheckBox flUseSSL = new CheckBox();
-  private final Text flRepositoryPath = new Text(100, 5);
+  private final CommonField flRepository = new CommonField(100, 50);
+  private final CommonCheckBox flUseSSL = new CommonCheckBox();
+  private final CommonText flRepositoryPath = new CommonText(100, 5);
 
 
   /**

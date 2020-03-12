@@ -14,24 +14,24 @@
 package org.parabuild.ci.webui.admin;
 
 import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.remote.AgentEnvironment;
 import org.parabuild.ci.remote.NoLiveAgentsException;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.webui.common.CommonCheckBox;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
+import org.parabuild.ci.webui.common.CommonText;
 import org.parabuild.ci.webui.common.EncryptingPassword;
+import org.parabuild.ci.webui.common.HasInputValue;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
-import viewtier.ui.CheckBox;
 import viewtier.ui.DropDown;
-import viewtier.ui.Field;
 import viewtier.ui.Label;
 import viewtier.ui.Layout;
-import viewtier.ui.Text;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -57,17 +57,17 @@ public final class CVSSettingsPanel extends AbstractSourceControlPanel {
   public static final String NAME_REL_BUILD_DIR = "Custom relative build dir: ";
   private static final String CAPTION_FAST_CHANGE_DETECTION = "Fast change detection: ";
 
-  private final CheckBox fldChangePreCheck = new CheckBox();
-  private final CheckBox flFastChangeDetection = new CheckBox(); // NOPMD
-  private final DropDown fldCompression = new CompressionDropDown();
-  private final Field fldBranch = new CommonField("cvs-barnch", 60, 60);
-  private final Field fldChangeWindow = new Field(2, 3, "cvs-change-window");
-  private final Field fldPathToCVSClient = new CommonField("cvs-path-to-client", 200, 60);
-  private final Field fldPathToExternalRsh = new CommonField("cvs-path-to-external-rsh", 200, 60);
-  private final Field fldRoot = new CommonField("cvs-root", 200, 80);
+  private final CommonCheckBox fldChangePreCheck = new CommonCheckBox();
+  private final CommonCheckBox flFastChangeDetection = new CommonCheckBox(); // NOPMD
+  private final CompressionDropDown fldCompression = new CompressionDropDown();
+  private final CommonField fldBranch = new CommonField("cvs-barnch", 60, 60);
+  private final CommonField fldChangeWindow = new CommonField(2, 3, "cvs-change-window");
+  private final CommonField fldPathToCVSClient = new CommonField("cvs-path-to-client", 200, 60);
+  private final CommonField fldPathToExternalRsh = new CommonField("cvs-path-to-external-rsh", 200, 60);
+  private final CommonField fldRoot = new CommonField("cvs-root", 200, 80);
   private final EncryptingPassword fldPassword = new EncryptingPassword(30, 20, "cvs-password");
-  private final Text fldCVSPath = new Text(52, 3);
-  private final Field flRelativeBuildDir = new Field(120, 60, "cvs-relative-build-dir");
+  private final CommonText fldCVSPath = new CommonText(52, 3);
+  private final CommonField flRelativeBuildDir = new CommonField(120, 60, "cvs-relative-build-dir");
   private final Label lbRepository = new CommonFieldLabel(NAME_REPOSITORY); // NOPMD
   private final CommonFieldLabel lbRelativeBuildDir = new CommonFieldLabel(NAME_REL_BUILD_DIR);
   private final CommonFieldLabel lbPassword = new CommonFieldLabel(NAME_PASSWORD);
@@ -258,7 +258,7 @@ public final class CVSSettingsPanel extends AbstractSourceControlPanel {
   /**
    * A dropdown to display CVS compression levels.
    */
-  private static final class CompressionDropDown extends DropDown {
+  private static final class CompressionDropDown extends DropDown implements HasInputValue {
 
     private static final long serialVersionUID = 6506902131545832419L;
 
@@ -271,6 +271,24 @@ public final class CVSSettingsPanel extends AbstractSourceControlPanel {
         addItem(i + "  ");
       }
       setSelection(0);
+    }
+
+
+    @Override
+    public void setInputValue(final String value) {
+      setValue(value);
+    }
+
+
+    @Override
+    public boolean isInputEditable() {
+      return isEditable();
+    }
+
+
+    @Override
+    public String getInputValue() {
+      return getValue();
     }
   }
 

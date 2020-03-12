@@ -13,18 +13,18 @@
  */
 package org.parabuild.ci.webui.admin.system;
 
-import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.SystemConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.object.SystemProperty;
 import org.parabuild.ci.object.User;
 import org.parabuild.ci.security.SecurityManager;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.webui.common.CommonCheckBox;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
-import viewtier.ui.CheckBox;
 import viewtier.ui.Label;
 import viewtier.ui.Password;
 
@@ -49,10 +49,10 @@ public final class SecurityConfigPanel extends AbstractSystemConfigPanel {
   private static final String CAPTION_ALLOW_ACCESS_TO_PROTECTED_FEEDS = "Allow access to protected feeds: ";
   private static final String CAPTION_HIDE_CHANGE_LIST_FILES = "Hide change list files:";
 
-  private final CheckBox fldAnonUsersAllowed = new CheckBox();  // NOPMD
-  private final CheckBox fldHideChangeDescriptions = new CheckBox();  // NOPMD
-  private final CheckBox fldHideChangeFiles = new CheckBox();  // NOPMD
-  private final CheckBox fldAllowAccessToProtectedFeeds = new CheckBox();  // NOPMD
+  private final CommonCheckBox fldAnonUsersAllowed = new CommonCheckBox();  // NOPMD
+  private final CommonCheckBox fldHideChangeDescriptions = new CommonCheckBox();  // NOPMD
+  private final CommonCheckBox fldHideChangeFiles = new CommonCheckBox();  // NOPMD
+  private final CommonCheckBox fldAllowAccessToProtectedFeeds = new CommonCheckBox();  // NOPMD
   private final Password fldAdminPasswd = new Password(30, 30);  // NOPMD
   private final Password fldConfirmPasswd = new Password(30, 30);  // NOPMD
 

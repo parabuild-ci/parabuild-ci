@@ -15,8 +15,8 @@ package org.parabuild.ci.webui.admin.system;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.common.ValidationException;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.ConfigurationConstants;
 import org.parabuild.ci.configuration.LDAPReferralCodeToValueConverter;
 import org.parabuild.ci.configuration.LDAPVersionCodeToValueConverter;
@@ -25,10 +25,12 @@ import org.parabuild.ci.object.Group;
 import org.parabuild.ci.object.SystemProperty;
 import org.parabuild.ci.security.JNDIAuthenticator;
 import org.parabuild.ci.security.JNDIUserLookupStringGenerator;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.admin.GroupDropDown;
 import org.parabuild.ci.webui.common.BoldCommonLabel;
 import org.parabuild.ci.webui.common.CodeNameDropDown;
 import org.parabuild.ci.webui.common.CommonButton;
+import org.parabuild.ci.webui.common.CommonCheckBox;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.CommonFlow;
@@ -38,17 +40,13 @@ import org.parabuild.ci.webui.common.EncryptingPassword;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.Pages;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Button;
 import viewtier.ui.ButtonPressedEvent;
 import viewtier.ui.ButtonPressedListener;
-import viewtier.ui.CheckBox;
 import viewtier.ui.Color;
-import viewtier.ui.Field;
 import viewtier.ui.Label;
 import viewtier.ui.Panel;
-import viewtier.ui.RadioButton;
 import viewtier.ui.Tierlet;
 
 import java.util.ArrayList;
@@ -82,30 +80,30 @@ final class LDAPConfigPanel extends AbstractSystemConfigPanel {
   private static final String CAPTION_PROCESSING_REFERRALS = "Processing referrals:";
   private static final String CAPTION_USE_LDAP_TO_LOOK_UP_VCS_USER_E_MAIL = "Use LDAP to look up VCS user e-mail: ";
 
-  private final CheckBox flEnableLDAPAuthentication = new CheckBox(); // NOPMD SingularField
-  private final CheckBox flSearchEntireSubtree = new CheckBox(); // NOPMD SingularField
-  private final CheckBox flUseCredentialDigest = new CheckBox(); // NOPMD SingularField
+  private final CommonCheckBox flEnableLDAPAuthentication = new CommonCheckBox(); // NOPMD SingularField
+  private final CommonCheckBox flSearchEntireSubtree = new CommonCheckBox(); // NOPMD SingularField
+  private final CommonCheckBox flUseCredentialDigest = new CommonCheckBox(); // NOPMD SingularField
   private final CodeNameDropDown flConnectionSecurityLevel = new ConnectionSecurityLevelDropDown(); // NOPMD SingularField
   private final CodeNameDropDown flCredentialDigest = new CredentialDigestDropDown(); // NOPMD SingularField
   private final CodeNameDropDown flAddToGroup = new GroupDropDown(); // NOPMD SingularField
-  private final Field flConnectionURL = new CommonField(200, 80); // NOPMD SingularField
-  private final Field flConnectionUserName = new CommonField(200, 60); // NOPMD SingularField
-  private final Field flUserBase = new CommonField(200, 80); // NOPMD SingularField
-  private final Field flUserDistinguishedNameTemplate = new CommonField(200, 80); // NOPMD SingularField
-  private final Field flUserPasswordAttributeName = new CommonField(200, 60); // NOPMD SingularField
-  private final Field flUserSearchTemplate = new CommonField(200, 80); // NOPMD SingularField
+  private final CommonField flConnectionURL = new CommonField(200, 80); // NOPMD SingularField
+  private final CommonField flConnectionUserName = new CommonField(200, 60); // NOPMD SingularField
+  private final CommonField flUserBase = new CommonField(200, 80); // NOPMD SingularField
+  private final CommonField flUserDistinguishedNameTemplate = new CommonField(200, 80); // NOPMD SingularField
+  private final CommonField flUserPasswordAttributeName = new CommonField(200, 60); // NOPMD SingularField
+  private final CommonField flUserSearchTemplate = new CommonField(200, 80); // NOPMD SingularField
   private final EncryptingPassword flConnectionPassword = new EncryptingPassword(30, 30, "ldap_connection_password"); // NOPMD SingularField
-  private final RadioButton flLookupUsingDN = new RadioButton("lookup_mode"); // NOPMD SingularField
-  private final RadioButton flLookupUsingSearch = new RadioButton("lookup_mode"); // NOPMD SingularField
-  private final Field flUserEmailAttributeName = new EmailField(); // NOPMD SingularField
+  private final CommonRadioButton flLookupUsingDN = new CommonRadioButton("lookup_mode"); // NOPMD SingularField
+  private final CommonRadioButton flLookupUsingSearch = new CommonRadioButton("lookup_mode"); // NOPMD SingularField
+  private final CommonField flUserEmailAttributeName = new EmailField(); // NOPMD SingularField
   private final LDAPVersionDropDown flLDAPVersion = new LDAPVersionDropDown(); // NOPMD SingularField
   private final LDAPReferralDropDown flLDAPReferral = new LDAPReferralDropDown(); // NOPMD SingularField
 
-  private final Field flTestUser = new CommonField(200, 30); // NOPMD SingularField
-  private final Field flTestPassword = new CommonField(200, 20); // NOPMD SingularField
+  private final CommonField flTestUser = new CommonField(200, 30); // NOPMD SingularField
+  private final CommonField flTestPassword = new CommonField(200, 20); // NOPMD SingularField
   private final Button btnTest = new CommonButton(" Test "); // NOPMD SingularField
   private final Label lbTestResult = new BoldCommonLabel(); // NOPMD SingularField
-  private final CheckBox cbUseLDAPToLookupVCSUserEmails = new CheckBox(); // NOPMD SingularField
+  private final CommonCheckBox cbUseLDAPToLookupVCSUserEmails = new CommonCheckBox(); // NOPMD SingularField
 
 
   /**

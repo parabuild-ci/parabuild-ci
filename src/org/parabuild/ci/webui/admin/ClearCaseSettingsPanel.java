@@ -15,6 +15,7 @@ package org.parabuild.ci.webui.admin;
 
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.remote.NoLiveAgentsException;
 import org.parabuild.ci.util.IoUtils;
@@ -22,15 +23,14 @@ import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.versioncontrol.ClearCaseStorageNameGenerator;
 import org.parabuild.ci.versioncontrol.ClearCaseViewNameGenerator;
 import org.parabuild.ci.versioncontrol.clearcase.ClearCaseStartDate;
+import org.parabuild.ci.webui.common.CodeNameDropDown;
+import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.CommonFlow;
+import org.parabuild.ci.webui.common.CommonText;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
-import viewtier.ui.DropDown;
-import viewtier.ui.Field;
 import viewtier.ui.Layout;
-import viewtier.ui.Text;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -57,17 +57,17 @@ public final class ClearCaseSettingsPanel extends AbstractSourceControlPanel {
   private static final String NAME_IGNORE_LINES = "Ignore error lines:";
   private static final String NAME_START_DATE = "Detect changes from:";
 
-  private final Field flViewNameTemplate = new Field(60, 60); // NOPMD
-  private final Field flPathToCleartool = new Field(200, 60); // NOPMD
-  private final Field flViewStorageLocation = new Field(200, 60); // NOPMD
-  private final Field flRelativeBuildDir = new Field(60, 60); // NOPMD
-  private final Field flBranch = new Field(200, 60); // NOPMD
-  private final Text flViewConfigSpec = new Text(100, 5); // NOPMD
-  private final Text flIgnoreErrorLines = new Text(60, 3); // NOPMD
-  private final Field flChangeWindow = new Field(2, 3); // NOPMD
-  private final Field flStartDate = new Field(10, 10); // NOPMD
-  private final DropDown ddTextMode = new ClearCaseTextModeDropDown(); // NOPMD
-  private final DropDown ddStorage = new ClearCaseStorageLocationDropDown(); // NOPMD
+  private final CommonField flViewNameTemplate = new CommonField(60, 60); // NOPMD
+  private final CommonField flPathToCleartool = new CommonField(200, 60); // NOPMD
+  private final CommonField flViewStorageLocation = new CommonField(200, 60); // NOPMD
+  private final CommonField flRelativeBuildDir = new CommonField(60, 60); // NOPMD
+  private final CommonField flBranch = new CommonField(200, 60); // NOPMD
+  private final CommonText flViewConfigSpec = new CommonText(100, 5); // NOPMD
+  private final CommonText flIgnoreErrorLines = new CommonText(60, 3); // NOPMD
+  private final CommonField flChangeWindow = new CommonField(2, 3); // NOPMD
+  private final CommonField flStartDate = new CommonField(10, 10); // NOPMD
+  private final CodeNameDropDown ddTextMode = new ClearCaseTextModeDropDown(); // NOPMD
+  private final CodeNameDropDown ddStorage = new ClearCaseStorageLocationDropDown(); // NOPMD
 
 
   public ClearCaseSettingsPanel() {

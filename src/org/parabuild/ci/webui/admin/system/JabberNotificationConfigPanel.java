@@ -15,17 +15,17 @@ package org.parabuild.ci.webui.admin.system;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.ConfigurationConstants;
 import org.parabuild.ci.configuration.SystemConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.object.SystemProperty;
+import org.parabuild.ci.webui.common.CommonCheckBox;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.EncryptingPassword;
 import org.parabuild.ci.webui.common.GridIterator;
-import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
-import viewtier.ui.CheckBox;
 import viewtier.ui.Panel;
 
 import java.util.ArrayList;
@@ -49,13 +49,13 @@ public final class JabberNotificationConfigPanel extends AbstractSystemConfigPan
   public static final String NAME_SERVER_ADDRESS = "Jabber server address: ";
   public static final String NAME_SERVER_PORT = "Jabber server port: ";
 
-  private final CheckBox cbDisabled = new CheckBox();
+  private final CommonCheckBox cbDisabled = new CommonCheckBox();
   private final CommonField flLoginName = new CommonField("jabber_login_name", 60, 60);
   private final CommonField flServerAddress = new CommonField("jabber_sever_address", 65, 65);
   private final CommonField flServerPort = new CommonField("jabber_sever_port", 4, 4);
   private final EncryptingPassword flLoginPassword = new EncryptingPassword(30, 20, "jabber_login_password");
 
-  private final CheckBox cbSendIfNoPresense = new CheckBox();
+  private final CommonCheckBox cbSendIfNoPresense = new CommonCheckBox();
   private final SystemConfigurationManager systemCM = SystemConfigurationManagerFactory.getManager();
 
 

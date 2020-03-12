@@ -17,13 +17,13 @@ import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.BuildConfigAttribute;
 import org.parabuild.ci.webui.common.CodeNameDropDown;
+import org.parabuild.ci.webui.common.CommonCheckBox;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.MessagePanel;
 import org.parabuild.ci.webui.common.PropertyToInputMap;
 import org.parabuild.ci.webui.common.Saveable;
 import org.parabuild.ci.webui.common.Validatable;
-import viewtier.ui.CheckBox;
 
 /**
  * Used to set what other build to launch after a successful build.
@@ -36,7 +36,7 @@ public final class DependenceSettingsPanel extends MessagePanel implements Loada
 
   private int buildID = BuildConfig.UNSAVED_ID;
   private final ReferenceableBuildNameDropdown flSelectedBuild = new ReferenceableBuildNameDropdown(CodeNameDropDown.ALLOW_NONEXISTING_CODES);
-  private final CheckBox flFailIfCannotBeStarted = new CheckBox();
+  private final CommonCheckBox flFailIfCannotBeStarted = new CommonCheckBox();
   private final PropertyToInputMap inputMap = new PropertyToInputMap(false, new BuildAttributeHandler());
 
 

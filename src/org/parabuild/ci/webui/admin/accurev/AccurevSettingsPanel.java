@@ -14,15 +14,14 @@
 package org.parabuild.ci.webui.admin.accurev;
 
 import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.admin.AbstractSourceControlPanel;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.EncryptingPassword;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.DropDown;
-import viewtier.ui.Password;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,7 +66,7 @@ public final class AccurevSettingsPanel extends AbstractSourceControlPanel {
   private final CommonField flUser = new CommonField("accurev-user", 30, 30);
   private final DropDown flLock = new AccurevFileLockingDropDown();
   private final DropDown flLineTerminator = new AccurevEOLTypeDropDown();
-  private final Password flPassword = new EncryptingPassword(25, 25, "accurev-password");
+  private final EncryptingPassword flPassword = new EncryptingPassword(25, 25, "accurev-password");
 
 
   /**

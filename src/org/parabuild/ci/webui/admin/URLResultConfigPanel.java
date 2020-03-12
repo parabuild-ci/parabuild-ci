@@ -13,13 +13,19 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import java.util.*;
-
 import org.parabuild.ci.common.ValidationException;
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.webui.common.*;
-import org.parabuild.ci.util.*;
-import viewtier.ui.*;
+import org.parabuild.ci.object.ResultConfig;
+import org.parabuild.ci.object.ResultConfigProperty;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.util.URLResultGenerator;
+import org.parabuild.ci.webui.common.CommonCheckBox;
+import org.parabuild.ci.webui.common.CommonField;
+import org.parabuild.ci.webui.common.CommonFieldLabel;
+import org.parabuild.ci.webui.common.WebuiUtils;
+import viewtier.ui.AbstractInput;
+import viewtier.ui.Label;
+
+import java.util.List;
 
 /**
  * Panel to configure URL build result
@@ -34,7 +40,7 @@ public final class URLResultConfigPanel extends AbstractResultConfigPanel {
   private static final String CAPTION_URL_TEMPLATE = "URL template ";
 
   private final Label lbTestURL = new CommonFieldLabel(CAPTION_TEST_URL_FOR_AVAILABILITY); // NOPMD
-  private final CheckBox cbTestURL = new CheckBox(); // NOPMD
+  private final CommonCheckBox cbTestURL = new CommonCheckBox(); // NOPMD
 
 
   /**

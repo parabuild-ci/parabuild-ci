@@ -13,20 +13,20 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.remote.AgentEnvironment;
 import org.parabuild.ci.remote.NoLiveAgentsException;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.versioncontrol.SurroundRepositoryPathParser;
+import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.EncryptingPassword;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
-import viewtier.ui.Field;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -49,13 +49,13 @@ public final class SurroundSettingsPanel extends AbstractSourceControlPanel {
   public static final String NAME_SURROUND_REPOSITORY = "Surround repository:";
 
 
-  private final Field flPathToExe = new Field(200, 50);
-  private final Field flHost = new Field(100, 50);
-  private final Field flPort = new Field(5, 5);
-  private final Field flUser = new Field(20, 20);
+  private final CommonField flPathToExe = new CommonField(200, 50);
+  private final CommonField flHost = new CommonField(100, 50);
+  private final CommonField flPort = new CommonField(5, 5);
+  private final CommonField flUser = new CommonField(20, 20);
   private final EncryptingPassword flPassword = new EncryptingPassword(30, 20, "surround_password");
-  private final Field flBranch = new Field(100, 50);
-  private final Field flRepository = new Field(100, 50);
+  private final CommonField flBranch = new CommonField(100, 50);
+  private final CommonField flRepository = new CommonField(100, 50);
 
 
   public SurroundSettingsPanel() {

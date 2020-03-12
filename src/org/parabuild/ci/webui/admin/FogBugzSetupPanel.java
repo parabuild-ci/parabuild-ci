@@ -13,13 +13,28 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import java.util.*;
-import org.apache.commons.logging.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.object.IssueTrackerProperty;
+import org.parabuild.ci.webui.common.CodeNameDropDown;
+import org.parabuild.ci.webui.common.CommonButton;
+import org.parabuild.ci.webui.common.CommonCheckBox;
+import org.parabuild.ci.webui.common.CommonField;
+import org.parabuild.ci.webui.common.CommonFieldLabel;
+import org.parabuild.ci.webui.common.CommonFlow;
+import org.parabuild.ci.webui.common.CommonLabel;
+import org.parabuild.ci.webui.common.EncryptingPassword;
+import org.parabuild.ci.webui.common.RequiredFieldMarker;
+import org.parabuild.ci.webui.common.WebuiUtils;
+import viewtier.ui.Button;
+import viewtier.ui.ButtonPressedEvent;
+import viewtier.ui.ButtonPressedListener;
+import viewtier.ui.Label;
+import viewtier.ui.Tierlet;
 
-import org.parabuild.ci.object.*;
+import java.util.List;
+
 //import org.parabuild.ci.relnotes.*;
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
 
 /**
  * This panel is used by build set up panel to set up release
@@ -43,16 +58,16 @@ public final class FogBugzSetupPanel extends AbstractIssueTrackerSetupPanel {
 
   // fields
   private final Button btnTestConnection = new CommonButton("Test connection"); // NOPMD
-  private final CheckBox cbClosed = new CheckBox(); // NOPMD
-  private final CheckBox cbFixed = new CheckBox(); // NOPMD
+  private final CommonCheckBox cbClosed = new CommonCheckBox(); // NOPMD
+  private final CommonCheckBox cbFixed = new CommonCheckBox(); // NOPMD
   private final CodeNameDropDown ddDatabase = new FogBugzDatabaseDropDown(); // NOPMD
   private final EncryptingPassword flDbPasswd = new EncryptingPassword(30, 30, "fogz_db_password"); // NOPMD
-  private final Field flDbDB = new CommonField(10, 10); // NOPMD
-  private final Field flDbHost = new CommonField(30, 30); // NOPMD
-  private final Field flDbPort = new CommonField(5, 5); // NOPMD
-  private final Field flDbUSer = new CommonField(30, 30); // NOPMD
-  private final Field flProject = new CommonField(15, 15); // NOPMD
-//  private final Field flVersion = new CommonField(10, 10); // NOPMD
+  private final CommonField flDbDB = new CommonField(10, 10); // NOPMD
+  private final CommonField flDbHost = new CommonField(30, 30); // NOPMD
+  private final CommonField flDbPort = new CommonField(5, 5); // NOPMD
+  private final CommonField flDbUSer = new CommonField(30, 30); // NOPMD
+  private final CommonField flProject = new CommonField(15, 15); // NOPMD
+//  private final CommonField flVersion = new CommonField(10, 10); // NOPMD
   private final Label lbConnTestResult = new CommonLabel(); // NOPMD
   private final Label lbProjectValue = new CommonFieldLabel(); // NOPMD // value (r/o) labels
 

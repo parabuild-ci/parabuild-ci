@@ -14,10 +14,9 @@
 package org.parabuild.ci.webui.admin;
 
 import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
-import org.parabuild.ci.common.WebUIConstants;
-import viewtier.ui.Field;
 
 import java.util.ArrayList;
 
@@ -31,8 +30,8 @@ public final class WebSVNSettingsPanel extends AbstractSourceControlPanel {
   public static final String NAME_WEB_SVN_URL = "Base WebSVN URL:";
   public static final String NAME_WEB_SVN_REPNAME = "Repository name (repname):";
 
-  private final Field flBaseUrl = new CommonField(200, 60);
-  private final Field flRepname = new CommonField(200, 60);
+  private final CommonField flBaseUrl = new CommonField(200, 60);
+  private final CommonField flRepname = new CommonField(200, 60);
 
 
   /**

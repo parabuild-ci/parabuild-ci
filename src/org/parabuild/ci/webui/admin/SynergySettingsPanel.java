@@ -13,19 +13,19 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.remote.NoLiveAgentsException;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.versioncontrol.DepotPathParser;
+import org.parabuild.ci.webui.common.CodeNameDropDown;
+import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.EncryptingPassword;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
-import viewtier.ui.DropDown;
-import viewtier.ui.Field;
 import viewtier.ui.Layout;
 
 import java.io.IOException;
@@ -49,15 +49,15 @@ public final class SynergySettingsPanel extends AbstractSourceControlPanel {
   private static final String CAPTION_USER = "User name: ";
 
 
-  private final DropDown flLineTerminator = new MKSLineTerminatorDropDown(); // NOPMD SingularField
+  private final CodeNameDropDown flLineTerminator = new MKSLineTerminatorDropDown(); // NOPMD SingularField
   private final EncryptingPassword flPassword = new EncryptingPassword(30, 20, "synergy_password"); // NOPMD SingularField
-  private final Field flDevPath = new Field(200, 50); // NOPMD SingularField
-  private final Field flHost = new Field(100, 50); // NOPMD SingularField
-  private final Field flPathToExe = new Field(200, 80); // NOPMD SingularField
-  private final Field flPort = new Field(5, 5); // NOPMD SingularField
-  private final Field flProject = new Field(200, 80); // NOPMD SingularField
-  private final Field flProjectRevision = new Field(20, 20); // NOPMD SingularField
-  private final Field flUser = new Field(20, 20); // NOPMD SingularField
+  private final CommonField flDevPath = new CommonField(200, 50); // NOPMD SingularField
+  private final CommonField flHost = new CommonField(100, 50); // NOPMD SingularField
+  private final CommonField flPathToExe = new CommonField(200, 80); // NOPMD SingularField
+  private final CommonField flPort = new CommonField(5, 5); // NOPMD SingularField
+  private final CommonField flProject = new CommonField(200, 80); // NOPMD SingularField
+  private final CommonField flProjectRevision = new CommonField(20, 20); // NOPMD SingularField
+  private final CommonField flUser = new CommonField(20, 20); // NOPMD SingularField
 
 
   public SynergySettingsPanel() {

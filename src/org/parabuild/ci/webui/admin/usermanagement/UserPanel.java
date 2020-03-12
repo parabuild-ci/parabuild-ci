@@ -15,7 +15,6 @@ package org.parabuild.ci.webui.admin.usermanagement;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.ConfigurationConstants;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.error.Error;
@@ -23,11 +22,13 @@ import org.parabuild.ci.error.ErrorManagerFactory;
 import org.parabuild.ci.object.User;
 import org.parabuild.ci.object.UserProperty;
 import org.parabuild.ci.security.SecurityManager;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.DisplayGroupDropDown;
 import org.parabuild.ci.webui.admin.InstantMessagingTypeDropdown;
 import org.parabuild.ci.webui.common.BoldCommonLabel;
 import org.parabuild.ci.webui.common.CodeNameDropDown;
 import org.parabuild.ci.webui.common.CommonButton;
+import org.parabuild.ci.webui.common.CommonCheckBox;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.CommonFlow;
@@ -45,7 +46,6 @@ import org.parabuild.ci.webui.common.Validatable;
 import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.ButtonPressedEvent;
 import viewtier.ui.ButtonPressedListener;
-import viewtier.ui.CheckBox;
 import viewtier.ui.Color;
 import viewtier.ui.Field;
 import viewtier.ui.Label;
@@ -108,24 +108,24 @@ public final class UserPanel extends MessagePanel implements Validatable, Saveab
   private static final String FNAME_RED_COLOR = "redcolor";
 
   // inputs
-  private final CheckBox cbAuthenticateUsingLDAP = new CheckBox();  // NOPMD
-  private final CheckBox cbDisableAllEmail = new CheckBox();  // NOPMD
-  private final CheckBox cbIMSendFailures = new CheckBox();  // NOPMD
-  private final CheckBox cbIMSendSuccesses = new CheckBox();  // NOPMD
-  private final CheckBox cbIMSendSystemErrors = new CheckBox();  // NOPMD
-  private final CheckBox cbAdmin = new CheckBox();  // NOPMD
-  private final CheckBox cbShowInactiveBuilds = new CheckBox();  // NOPMD
+  private final CommonCheckBox cbAuthenticateUsingLDAP = new CommonCheckBox();  // NOPMD
+  private final CommonCheckBox cbDisableAllEmail = new CommonCheckBox();  // NOPMD
+  private final CommonCheckBox cbIMSendFailures = new CommonCheckBox();  // NOPMD
+  private final CommonCheckBox cbIMSendSuccesses = new CommonCheckBox();  // NOPMD
+  private final CommonCheckBox cbIMSendSystemErrors = new CommonCheckBox();  // NOPMD
+  private final CommonCheckBox cbAdmin = new CommonCheckBox();  // NOPMD
+  private final CommonCheckBox cbShowInactiveBuilds = new CommonCheckBox();  // NOPMD
   private final CodeNameDropDown flIMType = new InstantMessagingTypeDropdown(FNAME_IM_TYPE);  // NOPMD
   private final CodeNameDropDown flDefaultDisplayGroup = new DisplayGroupDropDown(CodeNameDropDown.ALLOW_NONEXISTING_CODES);
   private final Field flEmail = new EmailField(FNAME_EMAIL, 60);  // NOPMD
-  private final Field flFullName = new CommonField(FNAME_FULLNAME, 60, 60);  // NOPMD
-  private final Field flSuccessfulBuildColor = new CommonField(FNAME_SUCCESSFUL_BUILD_COLOR, 6, 8);  // NOPMD
-  private final Field flIMAddress = new CommonField(FNAME_IM_ADDRESS, 60, 60);  // NOPMD
-  private final Field flLoginName = new LoginNameField(FNAME_LOGINNAME, 30);  // NOPMD
-  private final Field flFailedBuildColor = new CommonField(FNAME_RED_COLOR, 6, 8);  // NOPMD
-  private final Field flRefreshRate = new CommonField(3, 3); // NOPMD
-  private final Field flDashboardRowSize = new CommonField(2, 2);
-  private final Field flMaxRecentBuilds = new CommonField(3, 3);
+  private final CommonField flFullName = new CommonField(FNAME_FULLNAME, 60, 60);  // NOPMD
+  private final CommonField flSuccessfulBuildColor = new CommonField(FNAME_SUCCESSFUL_BUILD_COLOR, 6, 8);  // NOPMD
+  private final CommonField flIMAddress = new CommonField(FNAME_IM_ADDRESS, 60, 60);  // NOPMD
+  private final CommonField flLoginName = new LoginNameField(FNAME_LOGINNAME, 30);  // NOPMD
+  private final CommonField flFailedBuildColor = new CommonField(FNAME_RED_COLOR, 6, 8);  // NOPMD
+  private final CommonField flRefreshRate = new CommonField(3, 3); // NOPMD
+  private final CommonField flDashboardRowSize = new CommonField(2, 2);
+  private final CommonField flMaxRecentBuilds = new CommonField(3, 3);
   private final Password flPassword = new CommonPasswordField(FNAME_PASSWD);  // NOPMD
   private final Password flRetypePassword = new CommonPasswordField(FNAME_CONFIRMPASSWD);  // NOPMD
   private final UserGroupsPanel pnlUserGroups = new UserGroupsPanel();  // NOPMD
