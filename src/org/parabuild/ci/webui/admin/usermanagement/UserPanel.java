@@ -15,6 +15,7 @@ package org.parabuild.ci.webui.admin.usermanagement;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.PropertyToInputMap;
 import org.parabuild.ci.configuration.ConfigurationConstants;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.error.Error;
@@ -39,7 +40,6 @@ import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.LoginNameField;
 import org.parabuild.ci.webui.common.MessagePanel;
 import org.parabuild.ci.webui.common.Pages;
-import org.parabuild.ci.webui.common.PropertyToInputMap;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
 import org.parabuild.ci.webui.common.Saveable;
 import org.parabuild.ci.webui.common.Validatable;

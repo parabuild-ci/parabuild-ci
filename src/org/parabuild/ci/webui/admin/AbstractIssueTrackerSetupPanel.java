@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.PropertyToInputMap;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.IssueTracker;
 import org.parabuild.ci.object.IssueTrackerProperty;
@@ -23,7 +24,6 @@ import org.parabuild.ci.webui.common.CommonText;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.IssueFilterField;
 import org.parabuild.ci.webui.common.MessagePanel;
-import org.parabuild.ci.webui.common.PropertyToInputMap;
 import org.parabuild.ci.webui.common.Validatable;
 
 import java.util.ArrayList;

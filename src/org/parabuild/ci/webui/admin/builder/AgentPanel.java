@@ -15,6 +15,7 @@ package org.parabuild.ci.webui.admin.builder;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.PropertyToInputMap;
 import org.parabuild.ci.configuration.BuilderConfigurationManager;
 import org.parabuild.ci.object.AgentConfig;
 import org.parabuild.ci.object.BuilderAgent;
@@ -29,7 +30,6 @@ import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.MessagePanel;
 import org.parabuild.ci.webui.common.Pages;
-import org.parabuild.ci.webui.common.PropertyToInputMap;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
 import org.parabuild.ci.webui.common.SaveErrorProcessor;
 import org.parabuild.ci.webui.common.Saveable;

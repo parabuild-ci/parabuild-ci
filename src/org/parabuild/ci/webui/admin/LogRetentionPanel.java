@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.PropertyToInputMap;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.BuildConfigAttribute;
@@ -20,7 +21,6 @@ import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.MessagePanel;
-import org.parabuild.ci.webui.common.PropertyToInputMap;
 import org.parabuild.ci.webui.common.Saveable;
 import org.parabuild.ci.webui.common.Validatable;
 import org.parabuild.ci.webui.common.WebuiUtils;

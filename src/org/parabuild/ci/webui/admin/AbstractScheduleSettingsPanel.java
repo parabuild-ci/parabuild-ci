@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.PropertyToInputMap;
 import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ConfigurationManager;
@@ -24,7 +25,6 @@ import org.parabuild.ci.webui.common.CommonCheckBox;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.GridIterator;
-import org.parabuild.ci.webui.common.PropertyToInputMap;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
 import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Field;

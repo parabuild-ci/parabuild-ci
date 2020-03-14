@@ -13,10 +13,10 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.PropertyToInputMap;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.webui.common.MessagePanel;
-import org.parabuild.ci.webui.common.PropertyToInputMap;
 import org.parabuild.ci.webui.common.Saveable;
 import org.parabuild.ci.webui.common.Validatable;
 

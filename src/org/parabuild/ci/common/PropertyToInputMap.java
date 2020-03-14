@@ -11,7 +11,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.parabuild.ci.webui.common;
+package org.parabuild.ci.common;
+
+import org.parabuild.ci.webui.common.CodeNameDropDown;
+import org.parabuild.ci.webui.common.EncryptingPassword;
+import org.parabuild.ci.webui.common.HasInputValue;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -29,9 +33,9 @@ public final class PropertyToInputMap<T> implements Serializable {
 
   private final HashMap<String, HasInputValue> propertyNameToInputMap = new HashMap<String, HasInputValue>(5);
   private final HashMap<String, T> propertyNameToPropertyObjectMap = new HashMap<String, T>(5);
-  private final PropertyHandler<T> propertyHandler;
-  private boolean loadUnmappedProperties = true;
   private boolean updateOnlyFromEditableFields = false;
+  private boolean loadUnmappedProperties = true;
+  private PropertyHandler<T> propertyHandler;
 
 
   /**
@@ -50,6 +54,10 @@ public final class PropertyToInputMap<T> implements Serializable {
   public PropertyToInputMap(final boolean loadUnmappedProperties, final PropertyHandler<T> propertyHandler) {
     this.propertyHandler = propertyHandler;
     this.loadUnmappedProperties = loadUnmappedProperties;
+  }
+
+
+  public PropertyToInputMap() {
   }
 
 

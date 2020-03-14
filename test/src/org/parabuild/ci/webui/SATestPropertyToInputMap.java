@@ -15,9 +15,9 @@ package org.parabuild.ci.webui;
 
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import org.parabuild.ci.common.PropertyToInputMap;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.EncryptingPassword;
-import org.parabuild.ci.webui.common.PropertyToInputMap;
 
 import java.util.ArrayList;
 import java.util.Iterator;

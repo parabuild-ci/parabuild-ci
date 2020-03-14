@@ -15,14 +15,14 @@ package org.parabuild.ci.webui.admin;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.PropertyToInputMap;
 import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.SourceControlSetting;
 import org.parabuild.ci.webui.common.BoldCommonLabel;
 import org.parabuild.ci.webui.common.CommonFlow;
-import org.parabuild.ci.webui.common.PropertyToInputMap;
-import org.parabuild.ci.common.WebUIConstants;
 import viewtier.ui.DropDownSelectedEvent;
 import viewtier.ui.DropDownSelectedListener;
 import viewtier.ui.Panel;
