@@ -66,30 +66,30 @@ public abstract class AbstractSystemConfigPanel extends MessagePanel implements 
    * @return implementation of PropertyToInputMap.PropertyHandler
    * @see PropertyToInputMap.PropertyHandler
    */
-  private static PropertyToInputMap.PropertyHandler makePropertyHandler() {
-    return new PropertyToInputMap.PropertyHandler() {
+  private static PropertyToInputMap.PropertyHandler<SystemProperty> makePropertyHandler() {
+    return new PropertyToInputMap.PropertyHandler<SystemProperty>() {
       private static final long serialVersionUID = 4389392135587742283L;
 
 
-      public Object makeProperty(final String propertyName) {
+      public SystemProperty makeProperty(final String propertyName) {
         final SystemProperty prop = new SystemProperty();
         prop.setPropertyName(propertyName);
         return prop;
       }
 
 
-      public void setPropertyValue(final Object property, final String propertyValue) {
-        ((SystemProperty) property).setPropertyValue(propertyValue);
+      public void setPropertyValue(final SystemProperty property, final String propertyValue) {
+        property.setPropertyValue(propertyValue);
       }
 
 
-      public String getPropertyValue(final Object property) {
-        return ((SystemProperty) property).getPropertyValue();
+      public String getPropertyValue(final SystemProperty property) {
+        return property.getPropertyValue();
       }
 
 
-      public String getPropertyName(final Object property) {
-        return ((SystemProperty) property).getPropertyName();
+      public String getPropertyName(final SystemProperty property) {
+        return property.getPropertyName();
       }
     };
   }

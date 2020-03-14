@@ -13,33 +13,45 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.webui.common.*;
+import org.parabuild.ci.object.BuildConfigAttribute;
+import org.parabuild.ci.webui.common.PropertyToInputMap;
 
 
-public final class BuildAttributeHandler implements PropertyToInputMap.PropertyHandler {
+public final class BuildAttributeHandler implements PropertyToInputMap.PropertyHandler<BuildConfigAttribute> {
 
   private static final long serialVersionUID = 8137627325321368045L;
 
 
-  public Object makeProperty(final String propertyName) {
+  public BuildConfigAttribute makeProperty(final String propertyName) {
     final BuildConfigAttribute prop = new BuildConfigAttribute();
     prop.setPropertyName(propertyName);
     return prop;
   }
 
 
-  public void setPropertyValue(final Object property, final String propertyValue) {
-    ((BuildConfigAttribute)property).setPropertyValue(propertyValue);
+  /**
+   * Sets the value of the property from the given String.
+   */
+  @Override
+  public void setPropertyValue(final BuildConfigAttribute property, final String propertyValue) {
+    property.setPropertyValue(propertyValue);
   }
 
 
-  public String getPropertyValue(final Object property) {
-    return ((BuildConfigAttribute)property).getPropertyValue();
+  /**
+   * Returns string value from the given property.
+   */
+  @Override
+  public String getPropertyValue(final BuildConfigAttribute property) {
+    return property.getPropertyValue();
   }
 
 
-  public String getPropertyName(final Object property) {
-    return ((BuildConfigAttribute)property).getPropertyName();
+  /**
+   * Returns string name from the given property.
+   */
+  @Override
+  public String getPropertyName(final BuildConfigAttribute property) {
+    return property.getPropertyName();
   }
 }

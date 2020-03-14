@@ -46,7 +46,7 @@ public abstract class AbstractIssueTrackerSetupPanel extends MessagePanel implem
   private final CommonField flIssueFilter = new IssueFilterField(); // NOPMD
   private final IssueURLTemplateField flURLTemplate = new IssueURLTemplateField(); // NOPMD
 
-  protected final PropertyToInputMap propertyToInputMap = new PropertyToInputMap(false, makePropertyHandler());
+  protected final PropertyToInputMap<IssueTrackerProperty> propertyToInputMap = new PropertyToInputMap<IssueTrackerProperty>(false, makePropertyHandler());
   protected final GridIterator gridIter = new GridIterator(super.getUserPanel(), 2);
 
 
@@ -84,7 +84,7 @@ public abstract class AbstractIssueTrackerSetupPanel extends MessagePanel implem
     final String value = flLinkPattern.getValue();
     final List list = StringUtils.multilineStringToList(value);
     for (int i = 0, n = list.size(); i < n; i++) {
-      final String patternString = (String)list.get(i);
+      final String patternString = (String) list.get(i);
       try {
         Pattern.compile(patternString);
       } catch (final Exception e) {
@@ -131,30 +131,31 @@ public abstract class AbstractIssueTrackerSetupPanel extends MessagePanel implem
    *
    * @see PropertyToInputMap.PropertyHandler
    */
-  private static PropertyToInputMap.PropertyHandler makePropertyHandler() {
-    return new PropertyToInputMap.PropertyHandler() {
+  private static PropertyToInputMap.PropertyHandler<IssueTrackerProperty> makePropertyHandler() {
+
+    return new PropertyToInputMap.PropertyHandler<IssueTrackerProperty>() {
       private static final long serialVersionUID = -356895114891038404L;
 
 
-      public Object makeProperty(final String propertyName) {
+      public IssueTrackerProperty makeProperty(final String propertyName) {
         final IssueTrackerProperty prop = new IssueTrackerProperty();
         prop.setName(propertyName);
         return prop;
       }
 
 
-      public void setPropertyValue(final Object property, final String propertyValue) {
-        ((IssueTrackerProperty)property).setValue(propertyValue);
+      public void setPropertyValue(final IssueTrackerProperty property, final String propertyValue) {
+        property.setValue(propertyValue);
       }
 
 
-      public String getPropertyValue(final Object property) {
-        return ((IssueTrackerProperty)property).getValue();
+      public String getPropertyValue(final IssueTrackerProperty property) {
+        return property.getValue();
       }
 
 
-      public String getPropertyName(final Object property) {
-        return ((IssueTrackerProperty)property).getName();
+      public String getPropertyName(final IssueTrackerProperty property) {
+        return property.getName();
       }
     };
   }

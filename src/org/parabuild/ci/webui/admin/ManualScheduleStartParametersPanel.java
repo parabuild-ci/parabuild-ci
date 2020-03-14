@@ -13,10 +13,13 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import java.util.*;
+import org.parabuild.ci.object.SourceControlSettingVO;
+import org.parabuild.ci.webui.common.GridIterator;
+import org.parabuild.ci.webui.common.MessagePanel;
+import org.parabuild.ci.webui.common.Pages;
+import org.parabuild.ci.webui.common.PropertyToInputMap;
 
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.webui.common.*;
+import java.util.List;
 
 /**
  * This abstract class defines a common interface and a strategy
@@ -61,30 +64,30 @@ public abstract class ManualScheduleStartParametersPanel extends MessagePanel {
    * @return implementation of PropertyToInputMap.PropertyHandler
    * @see PropertyToInputMap.PropertyHandler
    */
-  private static PropertyToInputMap.PropertyHandler makePropertyHandler() {
-    return new PropertyToInputMap.PropertyHandler() {
+  private static PropertyToInputMap.PropertyHandler<SourceControlSettingVO> makePropertyHandler() {
+    return new PropertyToInputMap.PropertyHandler<SourceControlSettingVO>() {
       private static final long serialVersionUID = 2305689496035138069L;
 
 
-      public Object makeProperty(final String propertyName) {
+      public SourceControlSettingVO makeProperty(final String propertyName) {
         final SourceControlSettingVO setting = new SourceControlSettingVO();
         setting.setName(propertyName);
         return setting;
       }
 
 
-      public void setPropertyValue(final Object parameter, final String value) {
-        ((SourceControlSettingVO) parameter).setValue(value);
+      public void setPropertyValue(final SourceControlSettingVO parameter, final String value) {
+        parameter.setValue(value);
       }
 
 
-      public String getPropertyValue(final Object setting) {
-        return ((SourceControlSettingVO) setting).getValue();
+      public String getPropertyValue(final SourceControlSettingVO setting) {
+        return setting.getValue();
       }
 
 
-      public String getPropertyName(final Object setting) {
-        return ((SourceControlSettingVO) setting).getName();
+      public String getPropertyName(final SourceControlSettingVO setting) {
+        return setting.getName();
       }
     };
   }

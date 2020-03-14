@@ -293,30 +293,30 @@ public final class LabelSettingsPanelImpl extends LabelSettingsPanel {
    *
    * @see PropertyToInputMap.PropertyHandler
    */
-  private static PropertyToInputMap.PropertyHandler makePropertyHandler() {
-    return new PropertyToInputMap.PropertyHandler() {
+  private static PropertyToInputMap.PropertyHandler<LabelProperty> makePropertyHandler() {
+    return new PropertyToInputMap.PropertyHandler<LabelProperty>() {
       private static final long serialVersionUID = 1617182798604100495L;
 
 
-      public Object makeProperty(final String propertyName) {
+      public LabelProperty makeProperty(final String propertyName) {
         final LabelProperty prop = new LabelProperty();
         prop.setPropertyName(propertyName);
         return prop;
       }
 
 
-      public void setPropertyValue(final Object property, final String propertyValue) {
-        ((LabelProperty)property).setPropertyValue(propertyValue);
+      public void setPropertyValue(final LabelProperty property, final String propertyValue) {
+        property.setPropertyValue(propertyValue);
       }
 
 
-      public String getPropertyValue(final Object property) {
-        return ((LabelProperty)property).getPropertyValue();
+      public String getPropertyValue(final LabelProperty property) {
+        return property.getPropertyValue();
       }
 
 
-      public String getPropertyName(final Object property) {
-        return ((LabelProperty)property).getPropertyName();
+      public String getPropertyName(final LabelProperty property) {
+        return property.getPropertyName();
       }
     };
   }

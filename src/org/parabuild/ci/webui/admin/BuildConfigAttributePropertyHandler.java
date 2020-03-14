@@ -13,33 +13,33 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.webui.common.*;
+import org.parabuild.ci.object.BuildConfigAttribute;
+import org.parabuild.ci.webui.common.PropertyToInputMap;
 
 
-final class BuildConfigAttributePropertyHandler implements PropertyToInputMap.PropertyHandler {
+final class BuildConfigAttributePropertyHandler implements PropertyToInputMap.PropertyHandler<BuildConfigAttribute> {
 
   private static final long serialVersionUID = 999666865186383972L;
 
 
-  public Object makeProperty(final String propertyName) {
+  public BuildConfigAttribute makeProperty(final String propertyName) {
     final BuildConfigAttribute prop = new BuildConfigAttribute();
     prop.setPropertyName(propertyName);
     return prop;
   }
 
 
-  public void setPropertyValue(final Object property, final String propertyValue) {
-    ((BuildConfigAttribute)property).setPropertyValue(propertyValue);
+  public void setPropertyValue(final BuildConfigAttribute property, final String propertyValue) {
+    property.setPropertyValue(propertyValue);
   }
 
 
-  public String getPropertyValue(final Object property) {
-    return ((BuildConfigAttribute)property).getPropertyValue();
+  public String getPropertyValue(final BuildConfigAttribute property) {
+    return property.getPropertyValue();
   }
 
 
-  public String getPropertyName(final Object property) {
-    return ((BuildConfigAttribute)property).getPropertyName();
+  public String getPropertyName(final BuildConfigAttribute property) {
+    return property.getPropertyName();
   }
 }

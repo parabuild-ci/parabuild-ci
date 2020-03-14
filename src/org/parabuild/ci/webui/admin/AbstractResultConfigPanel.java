@@ -339,30 +339,30 @@ public abstract class AbstractResultConfigPanel extends MessagePanel implements 
    * @return implementation of PropertyToInputMap.PropertyHandler
    * @see PropertyToInputMap.PropertyHandler
    */
-  private static PropertyToInputMap.PropertyHandler makePropertyHandler() {
-    return new PropertyToInputMap.PropertyHandler() {
+  private static PropertyToInputMap.PropertyHandler<ResultConfigProperty> makePropertyHandler() {
+    return new PropertyToInputMap.PropertyHandler<ResultConfigProperty>() {
       private static final long serialVersionUID = -8287032735096311211L;
 
 
-      public Object makeProperty(final String propertyName) {
+      public ResultConfigProperty makeProperty(final String propertyName) {
         final ResultConfigProperty prop = new ResultConfigProperty();
         prop.setName(propertyName);
         return prop;
       }
 
 
-      public void setPropertyValue(final Object property, final String propertyValue) {
-        ((ResultConfigProperty) property).setValue(propertyValue);
+      public void setPropertyValue(final ResultConfigProperty property, final String propertyValue) {
+        property.setValue(propertyValue);
       }
 
 
-      public String getPropertyValue(final Object property) {
-        return ((ResultConfigProperty) property).getValue();
+      public String getPropertyValue(final ResultConfigProperty property) {
+        return property.getValue();
       }
 
 
-      public String getPropertyName(final Object property) {
-        return ((ResultConfigProperty) property).getName();
+      public String getPropertyName(final ResultConfigProperty property) {
+        return property.getName();
       }
     };
   }

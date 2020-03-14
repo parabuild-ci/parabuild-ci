@@ -16,7 +16,6 @@ package org.parabuild.ci.webui.common;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -24,14 +23,14 @@ import java.util.Map;
  * This map is used to simplify access to fields via their
  * corresponding property names
  */
-public final class PropertyToInputMap implements Serializable {
+public final class PropertyToInputMap<T> implements Serializable {
 
   private static final long serialVersionUID = 2416070308102742329L; // NOPMD
 
   private final HashMap<String, HasInputValue> propertyNameToInputMap = new HashMap<String, HasInputValue>(5);
-  private final HashMap<String, Object> propertyNameToPropertyObjectMap = new HashMap<String, Object>(5);
+  private final HashMap<String, T> propertyNameToPropertyObjectMap = new HashMap<String, T>(5);
+  private final PropertyHandler<T> propertyHandler;
   private boolean loadUnmappedProperties = true;
-  private final PropertyHandler propertyHandler;
   private boolean updateOnlyFromEditableFields = false;
 
 
@@ -39,7 +38,7 @@ public final class PropertyToInputMap implements Serializable {
    * Creates PropertyToInput map. Validation for acceptability of
    * the property name will not be done.
    */
-  public PropertyToInputMap(final PropertyHandler propertyHandler) {
+  public PropertyToInputMap(final PropertyHandler<T> propertyHandler) {
     this.propertyHandler = propertyHandler;
   }
 
@@ -48,7 +47,7 @@ public final class PropertyToInputMap implements Serializable {
    * Creates PropertyToInput map. If strict == true, property
    * names will be validated that are accepted by the map.
    */
-  public PropertyToInputMap(final boolean loadUnmappedProperties, final PropertyHandler propertyHandler) {
+  public PropertyToInputMap(final boolean loadUnmappedProperties, final PropertyHandler<T> propertyHandler) {
     this.propertyHandler = propertyHandler;
     this.loadUnmappedProperties = loadUnmappedProperties;
   }
@@ -85,11 +84,11 @@ public final class PropertyToInputMap implements Serializable {
    *
    * @see PropertyHandler
    */
-  public List getUpdatedProperties() {
+  public List<T> getUpdatedProperties() {
 
-    final List result = new ArrayList(11);
+    final List<T> result = new ArrayList<T>(11);
     // traverse property name to input map
-    for (Map.Entry<String, HasInputValue> stringHasInputValueEntry : propertyNameToInputMap.entrySet()) {
+    for (final Map.Entry<String, HasInputValue> stringHasInputValueEntry : propertyNameToInputMap.entrySet()) {
       // get prop name and associated input
       final String propName = stringHasInputValueEntry.getKey();
       final HasInputValue input = stringHasInputValueEntry.getValue();
@@ -97,7 +96,7 @@ public final class PropertyToInputMap implements Serializable {
         continue;
       }
       // lookup property value, if any
-      Object property = propertyNameToPropertyObjectMap.get(propName);
+      T property = propertyNameToPropertyObjectMap.get(propName);
       if (property == null) {
         // there is no property in the resulting list,
         // create new one and set values
@@ -119,10 +118,9 @@ public final class PropertyToInputMap implements Serializable {
     }
 
     // add properties that were listed but weren't bound/mapped
-    for (final Iterator i = propertyNameToPropertyObjectMap.entrySet().iterator(); i.hasNext(); ) {
-      final Map.Entry entry = (Map.Entry) i.next();
-      if (!propertyNameToInputMap.containsKey(entry.getKey())) {
-        result.add(entry.getValue());
+    for (final Map.Entry<String, T> stringTEntry : propertyNameToPropertyObjectMap.entrySet()) {
+      if (!propertyNameToInputMap.containsKey(stringTEntry.getKey())) {
+        result.add( stringTEntry.getValue());
       }
     }
     return result;
@@ -134,9 +132,8 @@ public final class PropertyToInputMap implements Serializable {
    *
    * @param props the properties list.
    */
-  public void setProperties(final List props) {
-    for (final Iterator iter = props.iterator(); iter.hasNext(); ) {
-      final Object property = iter.next();
+  public void setProperties(final List<T> props) {
+    for (final T property : props) {
       final String propertyName = propertyHandler.getPropertyName(property);
       // don't load if it's unmapped
       if (!loadUnmappedProperties && propertyNameToInputMap.get(propertyName) == null) {
@@ -164,7 +161,7 @@ public final class PropertyToInputMap implements Serializable {
   /**
    * @noinspection PublicInnerClass
    */
-  public interface PropertyHandler extends Serializable {
+  public interface PropertyHandler<T> extends Serializable {
 
     /**
      * Creates new property using given propertyName and abstract
@@ -175,28 +172,28 @@ public final class PropertyToInputMap implements Serializable {
      * @return new property instance created using given propertyName and
      * abstract input as value source.
      */
-    Object makeProperty(String propertyName);
+    T makeProperty(String propertyName);
 
 
     /**
      * Implementing class should set value of the property from
      * given String
      */
-    void setPropertyValue(Object property, String propertyValue);
+    void setPropertyValue(T property, String propertyValue);
 
 
     /**
      * Implementing class should return string value from the
      * given property.
      */
-    String getPropertyValue(Object property);
+    String getPropertyValue(T property);
 
 
     /**
      * Implementing class should return string name from the
      * given property.
      */
-    String getPropertyName(Object property);
+    String getPropertyName(T property);
   }
 
 

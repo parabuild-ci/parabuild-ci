@@ -203,29 +203,29 @@ public abstract class AbstractScheduleSettingsPanel extends ScheduleSettingsPane
    *
    * @see PropertyToInputMap.PropertyHandler
    */
-  private static PropertyToInputMap.PropertyHandler makeSchedulePropertyHandler() {
-    return new PropertyToInputMap.PropertyHandler() {
+  private static PropertyToInputMap.PropertyHandler<ScheduleProperty> makeSchedulePropertyHandler() {
+    return new PropertyToInputMap.PropertyHandler<ScheduleProperty>() {
       private static final long serialVersionUID = -2836566826434463672L;
 
 
-      public Object makeProperty(final String propertyName) {
+      public ScheduleProperty makeProperty(final String propertyName) {
         final ScheduleProperty prop = new ScheduleProperty();
         prop.setPropertyName(propertyName);
         return prop;
       }
 
 
-      public void setPropertyValue(final Object property, final String propertyValue) {
+      public void setPropertyValue(final ScheduleProperty property, final String propertyValue) {
         ((ScheduleProperty) property).setPropertyValue(propertyValue);
       }
 
 
-      public String getPropertyValue(final Object property) {
+      public String getPropertyValue(final ScheduleProperty property) {
         return ((ScheduleProperty) property).getPropertyValue();
       }
 
 
-      public String getPropertyName(final Object property) {
+      public String getPropertyName(final ScheduleProperty property) {
         return ((ScheduleProperty) property).getPropertyName();
       }
     };

@@ -79,30 +79,30 @@ public abstract class SourceControlPanel extends MessagePanel implements Loadabl
    * @return implementation of PropertyToInputMap.PropertyHandler
    * @see PropertyToInputMap.PropertyHandler
    */
-  public static PropertyToInputMap.PropertyHandler makePropertyHandler() {
-    return new PropertyToInputMap.PropertyHandler() {
+  public static PropertyToInputMap.PropertyHandler<SourceControlSetting> makePropertyHandler() {
+    return new PropertyToInputMap.PropertyHandler<SourceControlSetting>() {
       private static final long serialVersionUID = 2234980884942861815L;
 
 
-      public Object makeProperty(final String propertyName) {
+      public SourceControlSetting makeProperty(final String propertyName) {
         final SourceControlSetting prop = new SourceControlSetting();
         prop.setPropertyName(propertyName);
         return prop;
       }
 
 
-      public void setPropertyValue(final Object property, final String propertyValue) {
-        ((SourceControlSetting) property).setPropertyValue(propertyValue);
+      public void setPropertyValue(final SourceControlSetting property, final String propertyValue) {
+        property.setPropertyValue(propertyValue);
       }
 
 
-      public String getPropertyValue(final Object property) {
-        return ((SourceControlSetting) property).getPropertyValue();
+      public String getPropertyValue(final SourceControlSetting property) {
+        return property.getPropertyValue();
       }
 
 
-      public String getPropertyName(final Object property) {
-        return ((SourceControlSetting) property).getPropertyName();
+      public String getPropertyName(final SourceControlSetting property) {
+        return property.getPropertyName();
       }
     };
   }

@@ -15,12 +15,12 @@ package org.parabuild.ci.webui.admin.project;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.error.Error;
 import org.parabuild.ci.error.ErrorManagerFactory;
 import org.parabuild.ci.object.Project;
 import org.parabuild.ci.object.ProjectAttribute;
 import org.parabuild.ci.project.ProjectManager;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.MessagePanel;
@@ -193,29 +193,29 @@ public final class ProjectPanel extends MessagePanel implements Validatable, Sav
    *
    * @see PropertyToInputMap.PropertyHandler
    */
-  private static PropertyToInputMap.PropertyHandler makePropertyHandler() {
-    return new PropertyToInputMap.PropertyHandler() {
+  private static PropertyToInputMap.PropertyHandler<ProjectAttribute> makePropertyHandler() {
+    return new PropertyToInputMap.PropertyHandler<ProjectAttribute>() {
       private static final long serialVersionUID = -8036995290299804238L;
 
 
-      public Object makeProperty(final String propertyName) {
+      public ProjectAttribute makeProperty(final String propertyName) {
         final ProjectAttribute prop = new ProjectAttribute();
         prop.setName(propertyName);
         return prop;
       }
 
 
-      public void setPropertyValue(final Object property, final String propertyValue) {
+      public void setPropertyValue(final ProjectAttribute property, final String propertyValue) {
         ((ProjectAttribute)property).setValue(propertyValue);
       }
 
 
-      public String getPropertyValue(final Object property) {
+      public String getPropertyValue(final ProjectAttribute property) {
         return ((ProjectAttribute)property).getValue();
       }
 
 
-      public String getPropertyName(final Object property) {
+      public String getPropertyName(final ProjectAttribute property) {
         return ((ProjectAttribute)property).getName();
       }
     };

@@ -35,7 +35,7 @@ public class SATestPropertyToInputMap extends TestCase {
   final CommonField FIELD1 = new CommonField(100, 100);
   final CommonField FIELD2 = new CommonField(100, 100);
 
-  PropertyToInputMap.PropertyHandler propertyHandler = null;
+  PropertyToInputMap.PropertyHandler<MockProperty> propertyHandler = null;
   PropertyToInputMap propertyToInputMap = null;
 
 
@@ -135,26 +135,29 @@ public class SATestPropertyToInputMap extends TestCase {
   }
 }
 
-class MockPropertyHandler implements PropertyToInputMap.PropertyHandler {
+class MockPropertyHandler implements PropertyToInputMap.PropertyHandler<MockProperty> {
 
-  public Object makeProperty(final String propertyName) {
+  private static final long serialVersionUID = 6769137886617012782L;
+
+
+  public MockProperty makeProperty(final String propertyName) {
     final MockProperty property = new MockProperty();
     property.setPropertyName(propertyName);
     return property;
   }
 
 
-  public void setPropertyValue(final Object property, final String propertyValue) {
-    ((MockProperty) property).setPropertyValue(propertyValue);
+  public void setPropertyValue(final MockProperty property, final String propertyValue) {
+    property.setPropertyValue(propertyValue);
   }
 
 
-  public String getPropertyValue(final Object property) {
-    return ((MockProperty) property).getPropertyValue();
+  public String getPropertyValue(final MockProperty property) {
+    return property.getPropertyValue();
   }
 
 
-  public String getPropertyName(final Object property) {
-    return ((MockProperty) property).getPropertyName();
+  public String getPropertyName(final MockProperty property) {
+    return property.getPropertyName();
   }
 }

@@ -277,30 +277,30 @@ public abstract class AbstractLogConfigPanel extends MessagePanel implements Val
    * @return implementation of PropertyToInputMap.PropertyHandler
    * @see PropertyToInputMap.PropertyHandler
    */
-  private static PropertyToInputMap.PropertyHandler makePropertyHandler() {
-    return new PropertyToInputMap.PropertyHandler() {
+  private static PropertyToInputMap.PropertyHandler<LogConfigProperty> makePropertyHandler() {
+    return new PropertyToInputMap.PropertyHandler<LogConfigProperty>() {
       private static final long serialVersionUID = -7559077787808194605L;
 
 
-      public Object makeProperty(final String propertyName) {
+      public LogConfigProperty makeProperty(final String propertyName) {
         final LogConfigProperty prop = new LogConfigProperty();
         prop.setName(propertyName);
         return prop;
       }
 
 
-      public void setPropertyValue(final Object property, final String propertyValue) {
-        ((LogConfigProperty) property).setValue(propertyValue);
+      public void setPropertyValue(final LogConfigProperty property, final String propertyValue) {
+        property.setValue(propertyValue);
       }
 
 
-      public String getPropertyValue(final Object property) {
-        return ((LogConfigProperty) property).getValue();
+      public String getPropertyValue(final LogConfigProperty property) {
+        return property.getValue();
       }
 
 
-      public String getPropertyName(final Object property) {
-        return ((LogConfigProperty) property).getName();
+      public String getPropertyName(final LogConfigProperty property) {
+        return property.getName();
       }
     };
   }

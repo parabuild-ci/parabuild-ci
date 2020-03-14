@@ -438,29 +438,29 @@ public final class UserPanel extends MessagePanel implements Validatable, Saveab
    * @return implementation of PropertyToInputMap.PropertyHandler
    * @see PropertyToInputMap.PropertyHandler
    */
-  private static PropertyToInputMap.PropertyHandler makePropertyHandler() {
-    return new PropertyToInputMap.PropertyHandler() {
+  private static PropertyToInputMap.PropertyHandler<UserProperty> makePropertyHandler() {
+    return new PropertyToInputMap.PropertyHandler<UserProperty>() {
       private static final long serialVersionUID = 3464763434111433003L;
 
 
-      public Object makeProperty(final String propertyName) {
+      public UserProperty makeProperty(final String propertyName) {
         final UserProperty prop = new UserProperty();
         prop.setName(propertyName);
         return prop;
       }
 
 
-      public void setPropertyValue(final Object property, final String propertyValue) {
-        ((UserProperty) property).setValue(propertyValue);
+      public void setPropertyValue(final UserProperty property, final String propertyValue) {
+        property.setValue(propertyValue);
       }
 
 
-      public String getPropertyValue(final Object property) {
-        return ((UserProperty) property).getValue();
+      public String getPropertyValue(final UserProperty property) {
+        return property.getValue();
       }
 
 
-      public String getPropertyName(final Object property) {
+      public String getPropertyName(final UserProperty property) {
         return ((UserProperty) property).getName();
       }
     };

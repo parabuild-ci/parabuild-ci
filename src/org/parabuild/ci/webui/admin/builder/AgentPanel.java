@@ -15,7 +15,6 @@ package org.parabuild.ci.webui.admin.builder;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.BuilderConfigurationManager;
 import org.parabuild.ci.object.AgentConfig;
 import org.parabuild.ci.object.BuilderAgent;
@@ -24,6 +23,7 @@ import org.parabuild.ci.object.BuilderConfigurationAttribute;
 import org.parabuild.ci.object.User;
 import org.parabuild.ci.object.UserProperty;
 import org.parabuild.ci.security.SecurityManager;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.GridIterator;
@@ -344,30 +344,30 @@ final class AgentPanel extends MessagePanel implements Validatable, Saveable {
    * @noinspection UnusedDeclaration
    * @see PropertyToInputMap.PropertyHandler
    */
-  private static PropertyToInputMap.PropertyHandler makePropertyHandler() {
-    return new PropertyToInputMap.PropertyHandler() {
+  private static PropertyToInputMap.PropertyHandler<BuilderConfigurationAttribute> makePropertyHandler() {
+    return new PropertyToInputMap.PropertyHandler<BuilderConfigurationAttribute>() {
       private static final long serialVersionUID = 0L;
 
 
-      public Object makeProperty(final String propertyName) {
+      public BuilderConfigurationAttribute makeProperty(final String propertyName) {
         final BuilderConfigurationAttribute prop = new BuilderConfigurationAttribute();
         prop.setName(propertyName);
         return prop;
       }
 
 
-      public void setPropertyValue(final Object property, final String propertyValue) {
-        ((BuilderConfigurationAttribute) property).setValue(propertyValue);
+      public void setPropertyValue(final BuilderConfigurationAttribute property, final String propertyValue) {
+        property.setValue(propertyValue);
       }
 
 
-      public String getPropertyValue(final Object property) {
-        return ((BuilderConfigurationAttribute) property).getValue();
+      public String getPropertyValue(final BuilderConfigurationAttribute property) {
+        return property.getValue();
       }
 
 
-      public String getPropertyName(final Object property) {
-        return ((BuilderConfigurationAttribute) property).getName();
+      public String getPropertyName(final BuilderConfigurationAttribute property) {
+        return property.getName();
       }
     };
   }
