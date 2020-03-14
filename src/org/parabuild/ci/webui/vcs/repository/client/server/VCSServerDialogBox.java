@@ -1,6 +1,5 @@
 package org.parabuild.ci.webui.vcs.repository.client.server;
 
-import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
@@ -36,19 +35,13 @@ public final class VCSServerDialogBox extends EditDialogBox {
 
     super(captionText, false, true);
 
-    // Layout fields
+    // Layout
     final FlexTableIterator flexTableIterator = flexTable.flexTableIterator();
     flexTableIterator.add(lbType).add(flTypes);
     flexTableIterator.add(lbName).add(flName);
     flexTableIterator.add(lbDescription).add(flDescription);
-
-    // Layout"Save" button
-    final Button btnSave = new SaveButton(new SaveVCSServerClickHandler(this));
-    flexTableIterator.add(btnSave);
-
-    // Add "Cancel" button
-    final Button btnCancel = new CancelButton(new CancelButtonClickHandler(this));
-    flexTableIterator.add(btnCancel);
+    flexTableIterator.add(new SaveButton(new SaveVCSServerClickHandler(this)));
+    flexTableIterator.add(new CancelButton(new CancelButtonClickHandler(this)));
 
     // Add layout panel
     setWidget(flexTable);
