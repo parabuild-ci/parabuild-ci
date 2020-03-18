@@ -1,6 +1,6 @@
 package org.parabuild.ci.webui.admin.system;
 
-import org.parabuild.ci.webui.common.HasInputValue;
+import org.parabuild.ci.common.HasInputValue;
 import viewtier.ui.RadioButton;
 
 public class CommonRadioButton extends RadioButton implements HasInputValue {

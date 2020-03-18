@@ -13,9 +13,6 @@
  */
 package org.parabuild.ci.common;
 
-import org.parabuild.ci.webui.common.CodeNameDropDown;
-import org.parabuild.ci.webui.common.EncryptingPassword;
-import org.parabuild.ci.webui.common.HasInputValue;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -111,16 +108,7 @@ public final class PropertyToInputMap<T> implements Serializable {
         property = propertyHandler.makeProperty(propName);
       }
       // set value
-      final String value;
-      if (input instanceof EncryptingPassword) {
-        final EncryptingPassword ep = (EncryptingPassword) input;
-        value = ep.getEncryptedValue();
-      } else if (input instanceof CodeNameDropDown) { // see #777
-        final CodeNameDropDown codeNameDropDown = (CodeNameDropDown) input;
-        value = Integer.toString(codeNameDropDown.getCode());
-      } else {
-        value = input.getInputValue();
-      }
+      final String value = input.getInputValue();
       propertyHandler.setPropertyValue(property, value);
       result.add(property);
     }
@@ -128,7 +116,7 @@ public final class PropertyToInputMap<T> implements Serializable {
     // add properties that were listed but weren't bound/mapped
     for (final Map.Entry<String, T> stringTEntry : propertyNameToPropertyObjectMap.entrySet()) {
       if (!propertyNameToInputMap.containsKey(stringTEntry.getKey())) {
-        result.add( stringTEntry.getValue());
+        result.add(stringTEntry.getValue());
       }
     }
     return result;

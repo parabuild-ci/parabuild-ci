@@ -1,5 +1,6 @@
 package org.parabuild.ci.webui.common;
 
+import org.parabuild.ci.common.HasInputValue;
 import viewtier.ui.DropDown;
 
 public class CommonDropDown extends DropDown implements HasInputValue {

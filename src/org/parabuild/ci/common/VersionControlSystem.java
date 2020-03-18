@@ -46,6 +46,9 @@ public interface VersionControlSystem {
   byte SCM_BAZAAR = 17;
   byte SCM_MERCURIAL = 18;
 
+  // Number of supported VCS'. If the above grows, this counter MUST be adjusted.
+  byte SCM_COUNT = 19;
+
   // CVS
   String CVS_ROOT = "cvs.root";
   String CVS_PASSWORD = "cvs.password";

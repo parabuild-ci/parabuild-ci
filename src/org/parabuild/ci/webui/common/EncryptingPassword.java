@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.webui.common;
 
+import org.parabuild.ci.common.HasInputValue;
 import org.parabuild.ci.security.SecurityManager;
 import viewtier.ui.Password;
 

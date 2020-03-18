@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.webui.common;
 
+import org.parabuild.ci.common.HasInputValue;
 import viewtier.ui.Field;
 
 /**

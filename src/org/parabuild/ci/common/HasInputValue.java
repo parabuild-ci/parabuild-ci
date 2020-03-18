@@ -1,4 +1,4 @@
-package org.parabuild.ci.webui.common;
+package org.parabuild.ci.common;
 
 public interface HasInputValue {
 

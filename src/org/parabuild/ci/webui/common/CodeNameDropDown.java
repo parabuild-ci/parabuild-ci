@@ -15,6 +15,7 @@ package org.parabuild.ci.webui.common;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.HasInputValue;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
 import viewtier.ui.DropDown;
