@@ -7,6 +7,7 @@ import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.Panel;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.TextBox;
+import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.webui.vcs.repository.common.CancelButton;
 import org.parabuild.ci.webui.vcs.repository.common.CancelButtonClickHandler;
 import org.parabuild.ci.webui.vcs.repository.common.EditDialogBox;
@@ -31,14 +32,20 @@ public final class VCSServerDialogBox extends EditDialogBox {
 
   // Layout widgets
   private final ParabuildFlexTable flexTable = new ParabuildFlexTable(2);
+
   private final Panel attributeContainerPanel = new SimplePanel();
 
   // UI widgets
   private final Label lbType = new Label("Server type:");
+
   private final Label lbDescription = new Label("Server description:");
+
   private final Label lbName = new Label("Server name:");
+
   private final TextBox flDescription = new ParabuildTextBox(100, 70);
+
   private final ParabuildTextBox flName = new ParabuildTextBox(50, 50);
+
   private final ListBox flTypes = new VCSServerTypeListBox();
 
   // Current attribute panel
@@ -83,9 +90,14 @@ public final class VCSServerDialogBox extends EditDialogBox {
   }
 
 
-  private void showAttributePanel(final ListBox flTypes) {
+  /**
+   * Shows a selected server attribute panel per the list box selection.
+   *
+   * @param flServerTypes the VCS server types dropdown
+   */
+  private void showAttributePanel(final ListBox flServerTypes) {
 
-    final int selectedCode = getSelectedCode(flTypes);
+    final int selectedCode = getSelectedCode(flServerTypes);
 
     // Clear the container
     if (currentAttributePanel != null) {
@@ -103,6 +115,13 @@ public final class VCSServerDialogBox extends EditDialogBox {
   }
 
 
+  /**
+   * Creates a VCS server attribute panel.
+   *
+   * @param code the VCS code per {@link VersionControlSystem}
+   * @return a new {@link VCSServerAttributePanel}.
+   * @see VersionControlSystem
+   */
   private VCSServerAttributePanel createAttributePanel(final int code) {
 
     if (code == SCM_GIT) {
@@ -113,9 +132,15 @@ public final class VCSServerDialogBox extends EditDialogBox {
   }
 
 
-  private int getSelectedCode(final ListBox flTypes) {
+  /**
+   * Returns a selected VCS type.
+   *
+   * @param flServerTypes the VCS server types dropdown
+   * @return selected type code.
+   */
+  private int getSelectedCode(final ListBox flServerTypes) {
 
-    final String selectedValue = flTypes.getSelectedValue();
+    final String selectedValue = flServerTypes.getSelectedValue();
     return Integer.parseInt(selectedValue);
   }
 
