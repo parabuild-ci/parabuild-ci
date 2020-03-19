@@ -6,6 +6,7 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import org.parabuild.ci.webui.vcs.repository.common.ParabuildAsyncCallback;
+import org.parabuild.ci.webui.vcs.repository.common.VCSServerVO;
 
 /**
  * A click handler for "Save" button.
@@ -41,7 +42,7 @@ final class SaveVCSServerClickHandler implements ClickHandler {
 
     // (3) Make the call. Control flow will continue immediately and later
     // 'callback' will be invoked when the RPC completes.
-    final VCSServerClientVO serverVO = repositoryServerDialogBox.getServerVO();
+    final VCSServerVO serverVO = repositoryServerDialogBox.getServerVO();
     serverServiceAsync.saveServer(serverVO, callback);
   }
 

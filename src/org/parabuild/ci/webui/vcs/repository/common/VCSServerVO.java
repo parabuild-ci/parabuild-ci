@@ -1,36 +1,26 @@
-package org.parabuild.ci.webui.vcs.repository.client.server;
+package org.parabuild.ci.webui.vcs.repository.common;
 
 import com.google.gwt.user.client.rpc.IsSerializable;
+import org.parabuild.ci.webui.vcs.repository.client.server.VCSServerAttributeVO;
+
+import java.util.List;
+
+import static org.parabuild.ci.common.VersionControlUtil.vcsToString;
 
 /**
- * A client VO representing a VCS server.
+ * A VO representing a VCS server.
  */
-public final class VCSServerClientVO implements IsSerializable {
+public final class VCSServerVO implements IsSerializable {
 
-  /**
-   * Repository ID.
-   */
   private Integer id;
 
-  /**
-   * Repository name.
-   */
   private String name;
 
-  /**
-   * Repository type.
-   */
+  private String description;
+
   private int type;
 
-  /**
-   * Repo type as a String.
-   */
-  private String typeAsString;
-
-  /**
-   * Repository description.
-   */
-  private String description;
+  private List<VCSServerAttributeVO> attributes;
 
 
   public Integer getId() {
@@ -74,23 +64,27 @@ public final class VCSServerClientVO implements IsSerializable {
 
 
   public String getTypeAsString() {
-    return typeAsString;
+    return vcsToString(type);
   }
 
 
-  public void setTypeAsString(final String typeAsString) {
-    this.typeAsString = typeAsString;
+  public List<VCSServerAttributeVO> getAttributes() {
+    return attributes;
+  }
+
+
+  public void setAttributes(final List<VCSServerAttributeVO> attributes) {
+    this.attributes = attributes;
   }
 
 
   @Override
   public String toString() {
-    return "VCSServerClientVO{" +
+    return "VCSServerVO{" +
             "id=" + id +
             ", name='" + name + '\'' +
-            ", type=" + type +
-            ", typeAsString='" + typeAsString + '\'' +
             ", description='" + description + '\'' +
+            ", type=" + type +
             '}';
   }
 }

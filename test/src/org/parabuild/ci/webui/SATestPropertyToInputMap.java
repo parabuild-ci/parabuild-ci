@@ -39,8 +39,7 @@ public class SATestPropertyToInputMap extends TestCase {
   PropertyToInputMap propertyToInputMap = null;
 
 
-  public SATestPropertyToInputMap(final String s) {
-    super(s);
+  public SATestPropertyToInputMap() {
   }
 
 

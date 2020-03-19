@@ -4,7 +4,7 @@ import net.sf.hibernate.Query;
 import org.apache.struts2.interceptor.SessionAware;
 import org.parabuild.ci.configuration.TransactionCallback;
 import org.parabuild.ci.object.VCSServer;
-import org.parabuild.ci.repository.VCSServerVO;
+import org.parabuild.ci.webui.vcs.repository.common.VCSServerVO;
 
 import java.util.LinkedList;
 import java.util.List;

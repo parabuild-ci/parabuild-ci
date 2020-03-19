@@ -9,7 +9,6 @@ import org.parabuild.ci.object.VCSRepositoryAttribute;
 import org.parabuild.ci.object.VCSServer;
 import org.parabuild.ci.object.VCSServerAttribute;
 
-import javax.validation.constraints.NotNull;
 import java.util.List;
 
 import static org.parabuild.ci.configuration.ConfigurationManager.runInHibernate;
@@ -17,6 +16,7 @@ import static org.parabuild.ci.configuration.ConfigurationManager.runInHibernate
 /**
  * Persistence manager for repository management functionality.
  */
+@SuppressWarnings("unchecked")
 public final class VCSRepositoryManager {
 
   final static VCSRepositoryManager instance = new VCSRepositoryManager();
@@ -92,8 +92,8 @@ public final class VCSRepositoryManager {
   }
 
 
-  public VCSServerAttribute createServerAttribute(@NotNull final Session session, @NotNull final Integer serverId,
-                                                  @NotNull final String name, @NotNull final String value)
+  public VCSServerAttribute createServerAttribute(final Session session, final Integer serverId, final String name,
+                                                  final String value)
           throws HibernateException {
 
     final VCSServerAttribute serverAttribute = new VCSServerAttribute();
@@ -130,35 +130,36 @@ public final class VCSRepositoryManager {
   }
 
 
-  public VCSServerVO[] getVCSServers() {
+  public List<VCSServer> getVCSServers(final Session session) throws HibernateException {
 
-    return (VCSServerVO[]) runInHibernate(new TransactionCallback() {
+    // Query servers
+    final Query query = session.createQuery("select srv from VCSServer srv order by srv.name");
+    query.setCacheable(true);
+
+    // List
+    return query.list();
+  }
+
+
+  private List<VCSServer> getVCSServers() {
+    return (List<VCSServer>) runInHibernate(new TransactionCallback() {
 
       @Override
       public Object runInTransaction() throws Exception {
 
-        // Query servers
-        final Query query = session.createQuery("select srv from VCSServer srv order by srv.name");
-        query.setCacheable(true);
-
-        // List
-        final List<VCSServer> list = query.list();
-
-        // Convert to VO array
-        final VCSServerVO[] result = new VCSServerVO[list.size()];
-        for (int i = 0; i < list.size(); i++) {
-
-          final VCSServer vcsServer = list.get(i);
-          final VCSServerVO vcsServerVO = new VCSServerVO();
-          vcsServerVO.setName(vcsServer.getName());
-          vcsServerVO.setType(vcsServer.getType());
-          vcsServerVO.setId(vcsServer.getId());
-          result[i] = vcsServerVO;
-        }
-
-        //
-        return result;
+        return getVCSServers(session);
       }
     });
+  }
+
+
+  public List<VCSServerAttribute> getVCSServerAttributes(final Session session) throws HibernateException {
+
+    // Query servers
+    final Query query = session.createQuery("select srvAttr from VCSServerAttribute srvAttr");
+    query.setCacheable(true);
+
+    // List
+    return query.list();
   }
 }

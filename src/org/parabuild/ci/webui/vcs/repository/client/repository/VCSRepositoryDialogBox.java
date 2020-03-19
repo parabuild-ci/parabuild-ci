@@ -6,7 +6,6 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
 import org.parabuild.ci.webui.vcs.repository.client.server.ParabuildFlexTable;
-import org.parabuild.ci.webui.vcs.repository.client.server.VCSServerClientVO;
 import org.parabuild.ci.webui.vcs.repository.client.server.VCSServerService;
 import org.parabuild.ci.webui.vcs.repository.client.server.VCSServerServiceAsync;
 import org.parabuild.ci.webui.vcs.repository.common.CancelButton;
@@ -16,6 +15,7 @@ import org.parabuild.ci.webui.vcs.repository.common.FlexTableIterator;
 import org.parabuild.ci.webui.vcs.repository.common.ParabuildAsyncCallback;
 import org.parabuild.ci.webui.vcs.repository.common.ParabuildTextBox;
 import org.parabuild.ci.webui.vcs.repository.common.SaveButton;
+import org.parabuild.ci.webui.vcs.repository.common.VCSServerVO;
 
 /**
  * Repository dialog box is responsible for editing and displaying Repository information.
@@ -72,7 +72,7 @@ public final class VCSRepositoryDialogBox extends EditDialogBox {
     lbServer.setEnabled(false);
 
     final VCSServerServiceAsync serverServiceAsync = GWT.create(VCSServerService.class);
-    final AsyncCallback<VCSServerClientVO[]> callback = new ParabuildAsyncCallback<VCSServerClientVO[]>() {
+    final AsyncCallback<VCSServerVO[]> callback = new ParabuildAsyncCallback<VCSServerVO[]>() {
 
       /**
        * Called when an asynchronous call completes successfully.
@@ -80,9 +80,9 @@ public final class VCSRepositoryDialogBox extends EditDialogBox {
        * @param result the return value of the remote produced call
        */
       @Override
-      public void onSuccess(final VCSServerClientVO[] result) {
+      public void onSuccess(final VCSServerVO[] result) {
 
-        for (final VCSServerClientVO vcsServerClientVO : result) {
+        for (final VCSServerVO vcsServerClientVO : result) {
 
           final String item = vcsServerClientVO.getName() + " (" + vcsServerClientVO.getTypeAsString() + ')';
           final String value = Integer.toString(vcsServerClientVO.getId());

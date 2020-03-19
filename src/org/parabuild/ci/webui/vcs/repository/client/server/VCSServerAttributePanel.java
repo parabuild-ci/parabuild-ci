@@ -1,9 +1,16 @@
 package org.parabuild.ci.webui.vcs.repository.client.server;
 
+import org.parabuild.ci.common.PropertyToInputMap;
+
+import java.util.List;
+
 /**
- * VCS server attribute panel serves as a contrainer for entering captions, fields
+ * VCS server attribute panel serves as a container for entering captions, fields
  */
-public class VCSServerAttributePanel extends ParabuildFlexTable {
+public abstract class VCSServerAttributePanel extends ParabuildFlexTable {
+
+  private final PropertyToInputMap<VCSServerAttributeVO> propertyToInputMap = new PropertyToInputMap<VCSServerAttributeVO>(new VCSServerAttributePropertyHandler());
+
 
   /**
    * Creates {@link ParabuildFlexTable}.
@@ -12,5 +19,15 @@ public class VCSServerAttributePanel extends ParabuildFlexTable {
    */
   public VCSServerAttributePanel(final int columnCount) {
     super(columnCount);
+  }
+
+
+  protected final PropertyToInputMap<VCSServerAttributeVO> propertyToInputMap() {
+    return propertyToInputMap;
+  }
+
+
+  private List<VCSServerAttributeVO> getUpdatedProperties() {
+    return propertyToInputMap.getUpdatedProperties();
   }
 }
