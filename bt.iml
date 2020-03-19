@@ -207,6 +207,7 @@
     <orderEntry type="library" name="Freemarker" level="project" />
     <orderEntry type="library" name="dwr" level="project" />
     <orderEntry type="library" name="gwt-user" level="project" />
+    <orderEntry type="library" name="sources" level="project" />
   </component>
   <component name="org.twodividedbyzero.idea.findbugs">
     <option name="_basePreferences">
