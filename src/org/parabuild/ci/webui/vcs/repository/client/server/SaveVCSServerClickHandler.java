@@ -34,6 +34,9 @@ final class SaveVCSServerClickHandler implements ClickHandler {
   @SuppressWarnings("rawtypes")
   public void onClick(final ClickEvent event) {
 
+    // Get updated dialog data
+    final VCSServerVO serverVO = repositoryServerDialogBox.getServerVO();
+
     // (1) Create the client proxy.
     final VCSServerServiceAsync serverServiceAsync = GWT.create(VCSServerService.class);
 
@@ -42,7 +45,6 @@ final class SaveVCSServerClickHandler implements ClickHandler {
 
     // (3) Make the call. Control flow will continue immediately and later
     // 'callback' will be invoked when the RPC completes.
-    final VCSServerVO serverVO = repositoryServerDialogBox.getServerVO();
     serverServiceAsync.saveServer(serverVO, callback);
   }
 
