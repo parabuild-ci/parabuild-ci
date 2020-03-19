@@ -121,27 +121,8 @@ public final class WebuiUtils {
   }
 
 
-  public static void validatePatternNotBlank(final List errors, final int rowIndex, final String name, final String value) {
-    if (StringUtils.patternIsEmpty(value)) {
-      errors.add("Column \"" + name + "\" at row number " + (rowIndex + 1) + " is blank. This column can not be blank.");
-    }
-  }
-
-
   public static void validateColumnNotBlank(final List errors, final int rowIndex, final String name, final Field field) {
     validateColumnNotBlank(errors, rowIndex, name, field.getValue());
-  }
-
-
-  public static boolean validateColumnPositiveInteger(final List errors, final int rowIndex, final String name, final Field field) {
-    final boolean result;
-    if (!StringUtils.isValidInteger(field.getValue()) || Integer.parseInt(field.getValue()) <= 0) {
-      errors.add("Column \"" + name + "\" at row number " + (rowIndex + 1) + " should be a positive integer.");
-      result = false;
-    } else {
-      result = true;
-    }
-    return result;
   }
 
 
@@ -205,20 +186,6 @@ public final class WebuiUtils {
   }
 
 
-  /**
-   * Validates that a given field contains valid string.
-   *
-   * @param errors    will add error msg to this list if not valid.
-   * @param fieldName field caption.
-   * @param field     to validate
-   */
-  public static void validateColumnIsStrict(final List errors, final int index, final String fieldName, final Field field) {
-    if (!StringUtils.isValidStrictName(field.getValue())) {
-      errors.add("Column \"" + fieldName + "\" at row \"" + index + "\" can contain only alphanumeric characters, \"-\" and \"_\".");
-    }
-  }
-
-
   public static boolean validateFieldNotBlank(final List errors, final String fieldName, final AbstractInput field) {
     boolean valid = true;
     if (StringUtils.isBlank(field.getValue())) {
@@ -248,19 +215,6 @@ public final class WebuiUtils {
    */
   public static boolean isBlank(final Password field) {
     return StringUtils.isBlank(field.getValue());
-  }
-
-
-  /**
-   * Helper method to alter component width
-   *
-   * @param comp  to change width
-   * @param width to set
-   * @return the same component
-   */
-  public static Component alterWidth(final Component comp, final int width) {
-    comp.setWidth(width);
-    return comp;
   }
 
 
@@ -420,15 +374,6 @@ public final class WebuiUtils {
   }
 
 
-  public static Tierlet.Result sshowNotAuthorized(final BasePage basePage) {
-    basePage.baseContentPanel().getUserPanel().clear();
-    basePage.baseContentPanel().getUserPanel().add(new Flow()
-            .add(new BoldCommonLabel("You are not authorized to access this page "))
-            .add(clickHereToContinue(Pages.PUBLIC_BUILDS)));
-    return Tierlet.Result.Done();
-  }
-
-
   public static Tierlet.Result showNotSupported(final BasePage basePage) {
     basePage.baseContentPanel().getUserPanel().clear();
     basePage.baseContentPanel().getUserPanel().add(new Flow()
@@ -473,13 +418,6 @@ public final class WebuiUtils {
       }
     }
     return result.toString();
-  }
-
-
-  public static void validateFieldStrict(final List errors, final String fieldName, final EncryptingPassword field) {
-    if (!StringUtils.isValidStrictName(field.getValue())) {
-      errors.add("Field \"" + fieldName + "\" can contain only alphanumeric characters, \"-\" and \"_\".");
-    }
   }
 
 
@@ -635,20 +573,6 @@ public final class WebuiUtils {
     final String hostName = SystemConfigurationManagerFactory.getManager().getBuildManagerProtocolHostAndPort();
     final String pathInfo = makeResultURLPathInfo(buildID, stepResultID, entryName);
     return hostName + pathInfo;
-  }
-
-
-  public static void printCookiesFromRequest(final String description, final HttpServletRequest request) {
-    final Cookie[] cookies = request.getCookies();
-    if (cookies == null) {
-      return;
-    }
-    for (int i = 0; i < cookies.length; i++) {
-      final Cookie cookie = cookies[i];
-      if (log.isDebugEnabled()) {
-        log.debug(description + ": cookie name: " + cookie.getName() + ", value: " + cookie.getValue());
-      }
-    }
   }
 
 
