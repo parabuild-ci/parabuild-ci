@@ -16,6 +16,7 @@ package org.parabuild.ci.webui.admin.displaygroup;
 import java.util.*;
 import org.apache.commons.logging.*;
 
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.webui.common.*;
 import org.parabuild.ci.object.*;
 import org.parabuild.ci.util.*;
@@ -75,8 +76,8 @@ public final class EditDisplayGroupPanel extends MessagePanel implements Validat
   public boolean validate() {
     // general validation
     final List errors = new ArrayList(11);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_NAME, flName);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_DESCRIPTION, flDescr);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_NAME, flName);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_DESCRIPTION, flDescr);
 
     // check if new group with this name already exists
     if (errors.isEmpty()) {

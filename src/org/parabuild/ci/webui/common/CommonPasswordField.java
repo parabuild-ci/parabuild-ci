@@ -13,12 +13,13 @@
  */
 package org.parabuild.ci.webui.common;
 
+import org.parabuild.ci.common.HasInputValue;
 import viewtier.ui.Password;
 
 /**
  * Reusable Password.
  */
-public final class CommonPasswordField extends Password {
+public final class CommonPasswordField extends Password implements HasInputValue {
 
   private static final long serialVersionUID = -827753172250904539L;
 
@@ -30,5 +31,25 @@ public final class CommonPasswordField extends Password {
   public CommonPasswordField(final String fieldName) {
     this();
     setName(fieldName);
+  }
+
+
+  @Override
+  public void setInputValue(final String value) {
+    setValue(value);
+  }
+
+
+  @Override
+  public boolean isInputEditable() {
+
+    return isEditable();
+  }
+
+
+  @Override
+  public String getInputValue() {
+
+    return getValue();
   }
 }

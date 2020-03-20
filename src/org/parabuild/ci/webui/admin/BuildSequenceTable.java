@@ -27,7 +27,6 @@ import org.parabuild.ci.webui.common.Saveable;
 import org.parabuild.ci.webui.common.TableHeaderLabel;
 import org.parabuild.ci.webui.common.Validatable;
 import org.parabuild.ci.common.WebUIConstants;
-import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Component;
 import viewtier.ui.Field;
 import viewtier.ui.Layout;
@@ -160,7 +159,7 @@ public final class BuildSequenceTable extends AbstractFlatTable implements Loada
       final StepConfigurationPanel stepConfigurationPanel = (StepConfigurationPanel) row[COL_STEP_CONFIGURATION];
       final String stepName = ((Field) row[COL_STEP_NAME]).getValue();
 
-      if (WebuiUtils.validateColumnNotBlank(errors, index, NAME_STEP_NAME, stepName)) {
+      if (AbstractFlatTable.validateColumnNotBlank(errors, index, NAME_STEP_NAME, stepName)) {
         if (!stepNames.add(stepName.toLowerCase())) {
           errors.add("Duplicate step name found: \"" + stepName + '\"');
         }

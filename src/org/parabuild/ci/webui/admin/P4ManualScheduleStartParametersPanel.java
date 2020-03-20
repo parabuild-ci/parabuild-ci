@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.common.WebUIConstants;
@@ -25,7 +26,6 @@ import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.CommonText;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Layout;
 
 import java.util.ArrayList;
@@ -120,7 +120,7 @@ final class P4ManualScheduleStartParametersPanel extends ManualScheduleStartPara
     final List errors = new ArrayList(1);
 
     if (showDepotPathOverride) {
-      WebuiUtils.validateFieldNotBlank(errors, CAPTION_DEPOT_PATH, flClientView);
+      InputValidator.validateFieldNotBlank(errors, CAPTION_DEPOT_PATH, flClientView);
 
       if (errors.isEmpty()) {
 
@@ -134,7 +134,7 @@ final class P4ManualScheduleStartParametersPanel extends ManualScheduleStartPara
       }
     }
 
-    if (!WebuiUtils.isBlank(flChangeListNumber)) {
+    if (!InputValidator.isBlank(flChangeListNumber)) {
       final String value = flChangeListNumber.getValue();
       if (!StringUtils.isValidInteger(value) && !StringUtils.isValidStrictName(value)) {
         errors.add("Field \"" + CAPTION_CHANGE_LIST_NUMBER + "\" may contain only valid positive integers or alphanumeric characters, \"-\" and \"_\".");

@@ -16,6 +16,7 @@ package org.parabuild.ci.webui.admin;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.PropertyToInputMap;
 import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.common.VersionControlSystem;
@@ -219,7 +220,7 @@ public abstract class AbstractSourceControlPanel extends SourceControlPanel {
     if (childValid) {
 
       // validate custom checkout dir
-      if (!WebuiUtils.isBlank(flCustomCheckoutDir)) {
+      if (!InputValidator.isBlank(flCustomCheckoutDir)) {
         final String customCheckoutDirTemplate = flCustomCheckoutDir.getValue().trim();
         try {
 

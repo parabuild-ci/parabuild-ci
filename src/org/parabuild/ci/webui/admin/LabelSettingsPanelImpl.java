@@ -17,6 +17,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.BuildLabelNameGenerator;
 import org.parabuild.ci.build.LabelTemplateFinder;
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.PropertyToInputMap;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
@@ -29,7 +30,6 @@ import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFlow;
 import org.parabuild.ci.webui.common.CommonLabel;
 import org.parabuild.ci.webui.common.GridIterator;
-import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Flow;
 import viewtier.ui.Label;
 import viewtier.ui.RadioButton;
@@ -128,14 +128,14 @@ public final class LabelSettingsPanelImpl extends LabelSettingsPanel {
     }
 
     // validate custom not blank
-    if (WebuiUtils.isBlank(flCustomLabel)) {
+    if (InputValidator.isBlank(flCustomLabel)) {
       showErrorMessage("Custom label can not be blank.");
       return false;
     }
 
     // label delete days
     if (cbDeleteOld.isChecked()) {
-      WebuiUtils.validateFieldValidNonNegativeInteger(errors, "Number of days", flDaysOld);
+      InputValidator.validateFieldValidNonNegativeInteger(errors, "Number of days", flDaysOld);
     }
 
     // template is valid - parse custom

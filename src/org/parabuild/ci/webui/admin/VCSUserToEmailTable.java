@@ -22,7 +22,6 @@ import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.EmailField;
 import org.parabuild.ci.webui.common.TableHeaderLabel;
 import org.parabuild.ci.webui.common.Validatable;
-import org.parabuild.ci.webui.common.WebuiUtils;
 import org.parabuild.ci.common.WebUIConstants;
 import viewtier.ui.Component;
 import viewtier.ui.AbstractInput;
@@ -110,9 +109,9 @@ public final class VCSUserToEmailTable extends AbstractFlatTable implements Vali
       if (isRowNewAndBlank(userToEmail, row)) {
         continue;
       }
-      WebuiUtils.validateColumnNotBlank(errors, i, NAME_USER_NAME, ((AbstractInput) row[COL_USER_NAME]).getValue());
-      WebuiUtils.validateColumnNotBlank(errors, i, NAME_USER_EMAIL, ((AbstractInput) row[COL_USER_EMAIL]).getValue());
-      WebuiUtils.validateColumnValidEmail(errors, i, NAME_USER_EMAIL, ((AbstractInput) row[COL_USER_EMAIL]).getValue());
+      AbstractFlatTable.validateColumnNotBlank(errors, i, NAME_USER_NAME, ((AbstractInput) row[COL_USER_NAME]).getValue());
+      AbstractFlatTable.validateColumnNotBlank(errors, i, NAME_USER_EMAIL, ((AbstractInput) row[COL_USER_EMAIL]).getValue());
+      AbstractFlatTable.validateColumnValidEmail(errors, i, NAME_USER_EMAIL, ((AbstractInput) row[COL_USER_EMAIL]).getValue());
     }
 
     if (!errors.isEmpty()) {

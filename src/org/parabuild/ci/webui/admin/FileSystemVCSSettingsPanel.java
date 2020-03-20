@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.versioncontrol.FileSystemSourceControl;
@@ -21,7 +22,6 @@ import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.CommonText;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Layout;
 
 import java.util.ArrayList;
@@ -90,7 +90,7 @@ public final class FileSystemVCSSettingsPanel extends AbstractCommandVCSSettings
 
 
   protected void validateHeader(final ArrayList errors) {
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_USER, flUser);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_PATH, flPath);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_USER, flUser);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_PATH, flPath);
   }
 }

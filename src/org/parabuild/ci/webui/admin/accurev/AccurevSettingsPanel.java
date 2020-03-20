@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.webui.admin.accurev;
 
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.admin.AbstractSourceControlPanel;
@@ -20,7 +21,6 @@ import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.EncryptingPassword;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.DropDown;
 
 import java.util.ArrayList;
@@ -138,16 +138,16 @@ public final class AccurevSettingsPanel extends AbstractSourceControlPanel {
 
     // Basic validation
 //    WebuiUtils.validateFieldNotBlank(errors, DEPOT, flDepot);
-    WebuiUtils.validateFieldNotBlank(errors, STREAM, flStream);
-    WebuiUtils.validateFieldNotBlank(errors, HOST, flHost);
-    WebuiUtils.validateFieldNotBlank(errors, PASSWORD, flPassword);
-    WebuiUtils.validateFieldNotBlank(errors, EXE_PATH, flPathToExe);
-    WebuiUtils.validateFieldNotBlank(errors, PORT, flPort);
-    WebuiUtils.validateFieldNotBlank(errors, USER, flUser);
+    InputValidator.validateFieldNotBlank(errors, STREAM, flStream);
+    InputValidator.validateFieldNotBlank(errors, HOST, flHost);
+    InputValidator.validateFieldNotBlank(errors, PASSWORD, flPassword);
+    InputValidator.validateFieldNotBlank(errors, EXE_PATH, flPathToExe);
+    InputValidator.validateFieldNotBlank(errors, PORT, flPort);
+    InputValidator.validateFieldNotBlank(errors, USER, flUser);
 
     // Continue validating
     if (errors.isEmpty()) {
-      WebuiUtils.validateFieldValidPositiveInteger(errors, PORT, flPort);
+      InputValidator.validateFieldValidPositiveInteger(errors, PORT, flPort);
     }
 
     // Return

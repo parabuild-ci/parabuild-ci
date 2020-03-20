@@ -15,6 +15,7 @@ package org.parabuild.ci.webui.admin.system;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.ConfigurationConstants;
@@ -40,7 +41,6 @@ import org.parabuild.ci.webui.common.EncryptingPassword;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.Pages;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Button;
 import viewtier.ui.ButtonPressedEvent;
 import viewtier.ui.ButtonPressedListener;
@@ -178,7 +178,7 @@ final class LDAPConfigPanel extends AbstractSystemConfigPanel {
         }
 
         // validate test data
-        if (WebuiUtils.isBlank(flTestPassword) || WebuiUtils.isBlank(flTestUser)) {
+        if (InputValidator.isBlank(flTestPassword) || InputValidator.isBlank(flTestUser)) {
           showTestErrorMessage("Enter test user name and password");
           return Tierlet.Result.Continue();
         }
@@ -284,7 +284,7 @@ final class LDAPConfigPanel extends AbstractSystemConfigPanel {
 
     // validate fields are valid
     if (flEnableLDAPAuthentication.isChecked()) {
-      WebuiUtils.validateFieldNotBlank(errors, CAPTION_CONNECTION_URL, flConnectionURL);
+      InputValidator.validateFieldNotBlank(errors, CAPTION_CONNECTION_URL, flConnectionURL);
     }
 
     if (flUseCredentialDigest.isChecked()) {
@@ -295,7 +295,7 @@ final class LDAPConfigPanel extends AbstractSystemConfigPanel {
 
 
     if (flLookupUsingDN.isSelected()) {
-      if (WebuiUtils.validateFieldNotBlank(errors, CAPTION_USER_DISTINGUISHED_NAME_TEMPLATE, flUserDistinguishedNameTemplate)) {
+      if (InputValidator.validateFieldNotBlank(errors, CAPTION_USER_DISTINGUISHED_NAME_TEMPLATE, flUserDistinguishedNameTemplate)) {
         final JNDIUserLookupStringGenerator generator = new JNDIUserLookupStringGenerator();
         try {
           generator.validateTemplate(flUserDistinguishedNameTemplate.getValue());
@@ -304,8 +304,8 @@ final class LDAPConfigPanel extends AbstractSystemConfigPanel {
         }
       }
     } else if (flLookupUsingSearch.isSelected()) {
-      if (WebuiUtils.validateFieldNotBlank(errors, CAPTION_USER_SEARCH_TEMPLATE, flUserSearchTemplate)
-        && WebuiUtils.validateFieldNotBlank(errors, CAPTION_BASE_ELEMENT_FOR_USER_SEARCHES, flUserBase)) {
+      if (InputValidator.validateFieldNotBlank(errors, CAPTION_USER_SEARCH_TEMPLATE, flUserSearchTemplate)
+        && InputValidator.validateFieldNotBlank(errors, CAPTION_BASE_ELEMENT_FOR_USER_SEARCHES, flUserBase)) {
         final JNDIUserLookupStringGenerator generator = new JNDIUserLookupStringGenerator();
         try {
           generator.validateTemplate(flUserSearchTemplate.getValue());
@@ -319,7 +319,7 @@ final class LDAPConfigPanel extends AbstractSystemConfigPanel {
     }
 
     //
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_USER_E_MAIL_ATTRIBUTE_NAME, flUserEmailAttributeName);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_USER_E_MAIL_ATTRIBUTE_NAME, flUserEmailAttributeName);
 
     // group should be selected
     final int groupID = flAddToGroup.getCode();

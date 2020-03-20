@@ -14,6 +14,7 @@
 package org.parabuild.ci.webui.admin;
 
 
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.PropertyToInputMap;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
@@ -130,7 +131,7 @@ public final class ResultSettingsPanel extends MessagePanel implements Validatab
     // validate retention
     if (flEnabledeleteBuildResults.isChecked()) {
       // validate retention
-      WebuiUtils.validateFieldValidPositiveInteger(errors, CAPTION_RETENTION, flRetentionDays);
+      InputValidator.validateFieldValidPositiveInteger(errors, CAPTION_RETENTION, flRetentionDays);
       if (errors.isEmpty()) {
         final int minimumValue = SystemConfigurationManagerFactory.getManager().getSystemPropertyValue(SystemProperty.MINIMUM_RESULTS_RETENTION, SystemProperty.DEFAULT_MINIMUM_RESULTS_RETENTION);
         if (Integer.parseInt(flRetentionDays.getValue()) < minimumValue) {

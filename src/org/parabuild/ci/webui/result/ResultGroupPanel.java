@@ -16,6 +16,7 @@ package org.parabuild.ci.webui.result;
 import java.util.*;
 import org.apache.commons.logging.*;
 
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.util.*;
 import org.parabuild.ci.configuration.*;
 import org.parabuild.ci.error.*;
@@ -73,8 +74,8 @@ public final class ResultGroupPanel extends MessagePanel implements Validatable,
   public boolean validate() {
     // general validation
     final List errors = new ArrayList(11);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_NAME, flName);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_DESCRIPTION, flDescr);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_NAME, flName);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_DESCRIPTION, flDescr);
 
     // continue validation
     if (errors.isEmpty()) {

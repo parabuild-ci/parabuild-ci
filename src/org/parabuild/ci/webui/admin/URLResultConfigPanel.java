@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.object.ResultConfig;
 import org.parabuild.ci.object.ResultConfigProperty;
@@ -21,7 +22,6 @@ import org.parabuild.ci.util.URLResultGenerator;
 import org.parabuild.ci.webui.common.CommonCheckBox;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
-import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.AbstractInput;
 import viewtier.ui.Label;
 
@@ -63,7 +63,7 @@ public final class URLResultConfigPanel extends AbstractResultConfigPanel {
    */
   protected final void validatePath(final List errors, final AbstractInput flPath) {
     // not blank
-    final boolean valid = WebuiUtils.validateFieldNotBlank(errors, CAPTION_URL_TEMPLATE, flPath);
+    final boolean valid = InputValidator.validateFieldNotBlank(errors, CAPTION_URL_TEMPLATE, flPath.getValue());
     // validate template
     if (valid) {
       try {

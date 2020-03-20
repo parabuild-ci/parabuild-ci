@@ -15,18 +15,17 @@ package org.parabuild.ci.webui.admin;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.util.ArgumentValidator;
-import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.BuildWatcher;
+import org.parabuild.ci.util.ArgumentValidator;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.AbstractFlatTable;
+import org.parabuild.ci.webui.common.CodeNameDropDown;
 import org.parabuild.ci.webui.common.EmailField;
 import org.parabuild.ci.webui.common.TableHeaderLabel;
 import org.parabuild.ci.webui.common.Validatable;
-import org.parabuild.ci.common.WebUIConstants;
-import org.parabuild.ci.webui.common.WebuiUtils;
-import org.parabuild.ci.webui.common.CodeNameDropDown;
 import viewtier.ui.AbstractInput;
 import viewtier.ui.Component;
 import viewtier.ui.Field;
@@ -127,9 +126,10 @@ public final class BuildWatcherTable extends AbstractFlatTable implements Valida
       }
       final Field email = (Field) row[COL_WATCH_EMAIL];
       email.setValue(email.getValue().trim().toLowerCase());
-      WebuiUtils.validateColumnNotBlank(errors, index, NAME_WATCH_EMAIL, email.getValue());
-      WebuiUtils.validateColumnNotBlank(errors, index, NAME_WATCH_LEVEL, ((AbstractInput) row[COL_WATCH_LEVEL]).getValue());
-      if (!WebuiUtils.isBlank(email) && !duplcateFinder.add(email)) {
+      AbstractFlatTable.validateColumnNotBlank(errors, index, NAME_WATCH_EMAIL, email.getValue());
+      AbstractFlatTable.validateColumnNotBlank(errors, index, NAME_WATCH_LEVEL, ((AbstractInput) row[COL_WATCH_LEVEL]).getValue());
+
+      if (!StringUtils.isBlank(email.getValue()) && !duplcateFinder.add(email)) {
         errors.add("Duplicate e-mail: " + email.getValue());
       }
     }

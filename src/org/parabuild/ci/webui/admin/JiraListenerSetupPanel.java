@@ -13,12 +13,12 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.object.IssueTrackerProperty;
 import org.parabuild.ci.webui.common.BoldCommonLabel;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.webui.common.WebuiUtils;
 
 import java.util.List;
 
@@ -75,6 +75,6 @@ public final class JiraListenerSetupPanel extends AbstractIssueTrackerSetupPanel
    * @see AbstractIssueTrackerSetupPanel#doValidate(List)
    */
   protected void doValidate(final List errors) {
-    WebuiUtils.validateFieldNotBlank(errors, STR_JIRA_PROJECT, flProject);
+    InputValidator.validateFieldNotBlank(errors, STR_JIRA_PROJECT, flProject);
   }
 }

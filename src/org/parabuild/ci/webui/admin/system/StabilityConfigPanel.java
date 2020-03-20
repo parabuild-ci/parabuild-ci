@@ -15,6 +15,7 @@ package org.parabuild.ci.webui.admin.system;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.SystemConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
@@ -33,7 +34,6 @@ import org.parabuild.ci.webui.common.CommonText;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.HourDropDown;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Label;
 import viewtier.ui.Panel;
 
@@ -251,14 +251,14 @@ public final class StabilityConfigPanel extends AbstractSystemConfigPanel {
    */
   public boolean validate() {
     final List errors = new ArrayList(3);
-    WebuiUtils.validateFieldValidPositiveInteger(errors, CAPTION_DEFAULT_BUILD_STEP_TIMEOUT, fldDefaultBuildStepTimeout);
-    WebuiUtils.validateFieldValidPositiveInteger(errors, CAPTION_DEFAULT_VCS_TIMEOUT, fldVCSTimeout);
-    WebuiUtils.validateFieldValidPositiveInteger(errors, CAPTION_MAX_CHANGELIST_SIZE, fldMaxChangeListSize);
-    WebuiUtils.validateFieldValidPositiveInteger(errors, CAPTION_INITIAL_NUMBER_OF_CHANGELISTS, fldInitialNumberOfChangeLists);
-    WebuiUtils.validateFieldValidNonNegativeInteger(errors, CAPTION_DEFAULT_MAX_COOLDOWN_TRIES, fldDefaultMaxCooldownTries);
-    WebuiUtils.validateFieldValidNonNegativeInteger(errors, CAPTION_RETRY_VERSION_CONTROL_COMMANDS + " times", flRetryVCSCommandTimes);
-    WebuiUtils.validateFieldValidPositiveInteger(errors, CAPTION_RETRY_VERSION_CONTROL_COMMANDS + " interval", flRetryVCSCommandInterval);
-    WebuiUtils.validateFieldValidPositiveInteger(errors, CAPTION_MAX_PARALLEL_UPGRADES, fldMaxParallelAgentUpgrades);
+    InputValidator.validateFieldValidPositiveInteger(errors, CAPTION_DEFAULT_BUILD_STEP_TIMEOUT, fldDefaultBuildStepTimeout);
+    InputValidator.validateFieldValidPositiveInteger(errors, CAPTION_DEFAULT_VCS_TIMEOUT, fldVCSTimeout);
+    InputValidator.validateFieldValidPositiveInteger(errors, CAPTION_MAX_CHANGELIST_SIZE, fldMaxChangeListSize);
+    InputValidator.validateFieldValidPositiveInteger(errors, CAPTION_INITIAL_NUMBER_OF_CHANGELISTS, fldInitialNumberOfChangeLists);
+    InputValidator.validateFieldValidNonNegativeInteger(errors, CAPTION_DEFAULT_MAX_COOLDOWN_TRIES, fldDefaultMaxCooldownTries);
+    InputValidator.validateFieldValidNonNegativeInteger(errors, CAPTION_RETRY_VERSION_CONTROL_COMMANDS + " times", flRetryVCSCommandTimes);
+    InputValidator.validateFieldValidPositiveInteger(errors, CAPTION_RETRY_VERSION_CONTROL_COMMANDS + " interval", flRetryVCSCommandInterval);
+    InputValidator.validateFieldValidPositiveInteger(errors, CAPTION_MAX_PARALLEL_UPGRADES, fldMaxParallelAgentUpgrades);
 
     // Validate command retry patterns
     final String value = flRetryVCSCommandPatterns.getValue();
@@ -277,8 +277,8 @@ public final class StabilityConfigPanel extends AbstractSystemConfigPanel {
       validateValueGreaterThan(errors, CAPTION_DEFAULT_VCS_TIMEOUT, MINIMUM_VCS_TIMEOUT, fldVCSTimeout);
     }
 
-    if (!WebuiUtils.isBlank(fldMaxNumberOfChangeLists)) {
-      WebuiUtils.validateFieldValidPositiveInteger(errors, CAPTION_MAX_CHANGELIST_SIZE, fldMaxChangeListSize);
+    if (!InputValidator.isBlank(fldMaxNumberOfChangeLists)) {
+      InputValidator.validateFieldValidPositiveInteger(errors, CAPTION_MAX_CHANGELIST_SIZE, fldMaxChangeListSize);
     }
 
     //

@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.webui.admin.mercurial;
 
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.remote.AgentEnvironment;
@@ -107,7 +108,7 @@ public final class MercurialSettingsPanel extends AbstractSourceControlPanel {
   protected boolean doValidate() {
     clearMessage();
     final List errors = new ArrayList(1);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_MERCURIAL_PATH_TO_EXE, flPathToExe);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_MERCURIAL_PATH_TO_EXE, flPathToExe);
 
     if (errors.isEmpty()) {
       // validate svn executable exists if there were no other errors

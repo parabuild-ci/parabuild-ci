@@ -15,6 +15,7 @@ package org.parabuild.ci.webui.admin;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.versioncontrol.FileSystemSourceControl;
@@ -22,7 +23,6 @@ import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.webui.common.WebuiUtils;
 
 import java.util.ArrayList;
 
@@ -120,10 +120,10 @@ public final class GenericVCSSettingsPanel extends AbstractCommandVCSSettingsPan
 
 
   protected void validateHeader(final ArrayList errors) {
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_CHANGE_DATE_FORMAT, flChangeDateFormat);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_COLUM_DIVIDER, flColumnDivider);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_END_OF_RECORD, flEndOfRecord);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_GET_CHANGES, flGetChangesCommand);
-    WebuiUtils.validateFieldValidNonNegativeInteger(errors, CAPTION_CHANGE_WINDOW, flChangeWindow);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_CHANGE_DATE_FORMAT, flChangeDateFormat);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_COLUM_DIVIDER, flColumnDivider);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_END_OF_RECORD, flEndOfRecord);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_GET_CHANGES, flGetChangesCommand);
+    InputValidator.validateFieldValidNonNegativeInteger(errors, CAPTION_CHANGE_WINDOW, flChangeWindow);
   }
 }

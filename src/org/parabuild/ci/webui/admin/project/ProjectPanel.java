@@ -15,6 +15,7 @@ package org.parabuild.ci.webui.admin.project;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.PropertyToInputMap;
 import org.parabuild.ci.error.Error;
 import org.parabuild.ci.error.ErrorManagerFactory;
@@ -22,6 +23,7 @@ import org.parabuild.ci.object.Project;
 import org.parabuild.ci.object.ProjectAttribute;
 import org.parabuild.ci.project.ProjectManager;
 import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.MessagePanel;
@@ -29,8 +31,6 @@ import org.parabuild.ci.webui.common.Pages;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
 import org.parabuild.ci.webui.common.Saveable;
 import org.parabuild.ci.webui.common.Validatable;
-import org.parabuild.ci.webui.common.WebuiUtils;
-import viewtier.ui.Field;
 import viewtier.ui.Label;
 import viewtier.ui.Panel;
 
@@ -52,9 +52,9 @@ public final class ProjectPanel extends MessagePanel implements Validatable, Sav
   private final Label lbName = new CommonFieldLabel(CAPTION_PROJECT_NAME); // NOPMD
   private final Label lbDescription = new CommonFieldLabel(CAPTION_DESCRIPTION); // NOPMD
   private final Label lbKey = new CommonFieldLabel(CAPTION_KEY); // NOPMD
-  private final Field flName = new Field(60, 60); // NOPMD
-  private final Field flDescription = new Field(100, 80); // NOPMD
-  private final Field flKey = new Field(15, 15); // NOPMD
+  private final CommonField flName = new CommonField(60, 60); // NOPMD
+  private final CommonField flDescription = new CommonField(100, 80); // NOPMD
+  private final CommonField flKey = new CommonField(15, 15); // NOPMD
 
 
   private int projectID = Project.UNSAVED_ID;
@@ -85,13 +85,13 @@ public final class ProjectPanel extends MessagePanel implements Validatable, Sav
     if (log.isDebugEnabled()) log.debug("validating project");
     // general validation
     final List errors = new ArrayList(11);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_PROJECT_NAME, flName);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_KEY, flKey);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_DESCRIPTION, flDescription);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_PROJECT_NAME, flName);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_KEY, flKey);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_DESCRIPTION, flDescription);
 
     // further validation
     if (errors.isEmpty()) {
-      WebuiUtils.validateFieldStrict(errors, CAPTION_KEY, flKey);
+      InputValidator.validateFieldStrict(errors, CAPTION_KEY, flKey);
       // validate that this key does not exist
       final ProjectManager pm = ProjectManager.getInstance();
       pm.getProjectByKey(normalizedKeyValue());

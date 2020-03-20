@@ -14,6 +14,7 @@
 package org.parabuild.ci.webui.admin;
 
 import org.parabuild.ci.common.HasInputValue;
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
@@ -180,10 +181,10 @@ public final class CVSSettingsPanel extends AbstractSourceControlPanel {
     final List errors = new ArrayList(1);
 
     // validate fields are not blank
-    WebuiUtils.validateFieldNotBlank(errors, "CVS root", fldRoot);
-    WebuiUtils.validateFieldNotBlank(errors, "CVS path", fldCVSPath);
-    WebuiUtils.validateFieldNotBlank(errors, "Path to CVS client", fldPathToCVSClient);
-    WebuiUtils.validateFieldNotBlank(errors, NAME_CHANGE_WINDOW, fldChangeWindow);
+    InputValidator.validateFieldNotBlank(errors, "CVS root", fldRoot);
+    InputValidator.validateFieldNotBlank(errors, "CVS path", fldCVSPath);
+    InputValidator.validateFieldNotBlank(errors, "Path to CVS client", fldPathToCVSClient);
+    InputValidator.validateFieldNotBlank(errors, NAME_CHANGE_WINDOW, fldChangeWindow);
 
     // validate CVS client exists if there were no other errors
     if (errors.isEmpty()) {
@@ -199,7 +200,7 @@ public final class CVSSettingsPanel extends AbstractSourceControlPanel {
 
     // branch name is valid
     if (!StringUtils.isBlank(fldBranch.getValue())) {
-      WebuiUtils.validateFieldStrict(errors, NAME_BRANCH, fldBranch);
+      InputValidator.validateFieldStrict(errors, NAME_BRANCH, fldBranch);
     }
 
     try {

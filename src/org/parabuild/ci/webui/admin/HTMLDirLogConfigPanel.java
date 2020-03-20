@@ -13,13 +13,13 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.object.LogConfig;
 import org.parabuild.ci.object.LogConfigProperty;
 import org.parabuild.ci.webui.common.CommonCheckBox;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.webui.common.WebuiUtils;
 
 /**
  * Panel to configure a directory with HTML files as a customer
@@ -58,7 +58,7 @@ public final class HTMLDirLogConfigPanel extends AbstractLogConfigPanel {
 
 
   public boolean validateProperties() {
-    WebuiUtils.validateFieldNotBlank(getErrors(), NAME_INDEX_FILE_PATH, flIndexFile);
+    InputValidator.validateFieldNotBlank(getErrors(), NAME_INDEX_FILE_PATH, flIndexFile);
     return getErrors().isEmpty();
   }
 

@@ -15,16 +15,22 @@ package org.parabuild.ci.webui.common;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.configuration.SystemConfigurationManager;
+import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
+import org.parabuild.ci.util.MailUtils;
+import org.parabuild.ci.util.StringUtils;
 import viewtier.ui.Border;
 import viewtier.ui.CheckBox;
 import viewtier.ui.Color;
 import viewtier.ui.Component;
+import viewtier.ui.Field;
 import viewtier.ui.Label;
 import viewtier.ui.Layout;
 import viewtier.ui.Panel;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 /**
  * This class implements a simple flat table to be reused in the
@@ -120,6 +126,47 @@ public abstract class AbstractFlatTable extends MessagePanel {
     gridIter = new GridIterator(super.getUserPanel(), gridSize);
     if (createHeaderOnStartup) {
       populate(0);
+    }
+  }
+
+
+  public static boolean validateColumnNotBlank(final List errors, final int rowIndex, final String name, final String value) {
+
+    if (StringUtils.isBlank(value)) {
+      errors.add("Column \"" + name + "\" at row number " + (rowIndex + 1) + " is blank. This column can not be blank.");
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+
+  public static void validateColumnValidEmail(final List errors, final int rowIndex, final String name, final String value) {
+
+    if (!MailUtils.isValidEmail(value)) {
+      errors.add("Column \"" + name + "\" at row number " + (rowIndex + 1) + " is not a valid e-mail.");
+    }
+  }
+
+
+  public static void validateColumnNotBlank(final List errors, final int rowIndex, final String name, final Field field) {
+    validateColumnNotBlank(errors, rowIndex, name, field.getValue());
+  }
+
+
+  public static void validateVariableName(final List errors, final Field field) {
+
+    final SystemConfigurationManager scm = SystemConfigurationManagerFactory.getManager();
+    if (scm.isCustomVariableNameValidation()) {
+      final String regex = scm.getCustomVariableNameRegex();
+      if (!Pattern.compile(regex).matcher(field.getValue()).matches()) {
+        errors.add("Variable name \"" + field.getValue() + "\" does not match a custom regex defined in the system user interface properties: " + regex);
+      }
+    } else {
+      // Default build name format validation
+      if (!StringUtils.isValidStrictName(field.getValue())) {
+        errors.add("Variable name can contain only alphanumeric characters, \"-\" and \"_\".");
+      }
     }
   }
 

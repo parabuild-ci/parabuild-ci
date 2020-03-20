@@ -13,11 +13,16 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import viewtier.ui.*;
-import org.parabuild.ci.webui.common.TableHeaderLabel;
-import org.parabuild.ci.webui.common.GridIterator;
-import org.parabuild.ci.webui.common.WebuiUtils;
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.webui.common.CommonField;
+import org.parabuild.ci.webui.common.GridIterator;
+import org.parabuild.ci.webui.common.TableHeaderLabel;
+import viewtier.ui.CheckBox;
+import viewtier.ui.Color;
+import viewtier.ui.Label;
+import viewtier.ui.Layout;
+import viewtier.ui.Panel;
 
 import java.util.List;
 
@@ -35,7 +40,7 @@ final class StabilitySettingsPanel extends Panel {
   private static final String CAPTION_INITIALIZER = "Initializer:";
   private static final long serialVersionUID = -5340837624268649351L;
 
-  private final Field flTimeOut = new Field(6, 6, "30"); // NOPMD SingularField
+  private final CommonField flTimeOut = new CommonField(6, 6, "30"); // NOPMD SingularField
   private final CheckBox cbRespectErrorCode = new CheckBox(); // NOPMD SingularField
   private final CheckBox cbDisabled = new CheckBox(); // NOPMD SingularField
   private final CheckBox cbContinueOnFailure = new CheckBox(); // NOPMD SingularField
@@ -220,6 +225,6 @@ final class StabilitySettingsPanel extends Panel {
    * @return true if valid
    */
   public void validate(final List errors) {
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_TIMEOUT, flTimeOut);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_TIMEOUT, flTimeOut);
   }
 }

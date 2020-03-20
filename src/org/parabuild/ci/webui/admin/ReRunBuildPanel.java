@@ -16,9 +16,9 @@ package org.parabuild.ci.webui.admin;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.BuildVersionDuplicateValidator;
-import org.parabuild.ci.util.ArgumentValidator;
-import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.ValidationException;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.ActiveBuildConfig;
 import org.parabuild.ci.object.BuildConfig;
@@ -29,6 +29,8 @@ import org.parabuild.ci.object.StartParameterType;
 import org.parabuild.ci.security.SecurityManager;
 import org.parabuild.ci.services.BuildManager;
 import org.parabuild.ci.services.BuildStartRequest;
+import org.parabuild.ci.util.ArgumentValidator;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.CancelButton;
 import org.parabuild.ci.webui.common.CommonButton;
 import org.parabuild.ci.webui.common.CommonField;
@@ -38,12 +40,10 @@ import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.MessagePanel;
 import org.parabuild.ci.webui.common.Pages;
 import org.parabuild.ci.webui.common.StartButton;
-import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Button;
 import viewtier.ui.ButtonPressedEvent;
 import viewtier.ui.ButtonPressedListener;
-import viewtier.ui.Field;
 import viewtier.ui.Label;
 import viewtier.ui.Layout;
 import viewtier.ui.Panel;
@@ -64,7 +64,7 @@ public final class ReRunBuildPanel extends MessagePanel {
   private static final Log log = LogFactory.getLog(ReRunBuildPanel.class); // NOPMD
   private static final String CAPTION_BUILD_NUMBER = "Build run number: ";
 
-  private final Field flBuildNumber = new CommonField(10, 10);
+  private final CommonField flBuildNumber = new CommonField(10, 10);
   private final Button btnStart = new StartButton();
   private final Button btnCancel = new CancelButton();
   private final Button btnLoadParameters = new CommonButton("Load parameters");
@@ -243,7 +243,7 @@ public final class ReRunBuildPanel extends MessagePanel {
 
   private boolean validateBuildNumber() {
     final List errorList = new ArrayList(5);
-    WebuiUtils.validateFieldValidPositiveInteger(errorList, CAPTION_BUILD_NUMBER, flBuildNumber);
+    InputValidator.validateFieldValidPositiveInteger(errorList, CAPTION_BUILD_NUMBER, flBuildNumber);
     if (errorList.isEmpty()) {
       // check if the build run exists
       if (getFirstBuildRunFromEnteredRunNumber() == null) {

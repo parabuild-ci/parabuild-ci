@@ -13,12 +13,34 @@
  */
 package org.parabuild.ci.webui;
 
-import java.util.*;
-import org.apache.commons.logging.*;
-
-import org.parabuild.ci.webui.common.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.security.SecurityManager;
-import viewtier.ui.*;
+import org.parabuild.ci.webui.common.BoldCommonLabel;
+import org.parabuild.ci.webui.common.CommonButton;
+import org.parabuild.ci.webui.common.CommonField;
+import org.parabuild.ci.webui.common.CommonFieldLabel;
+import org.parabuild.ci.webui.common.CommonLabel;
+import org.parabuild.ci.webui.common.EmailField;
+import org.parabuild.ci.webui.common.GridIterator;
+import org.parabuild.ci.webui.common.LoginNameField;
+import org.parabuild.ci.webui.common.MessagePanel;
+import org.parabuild.ci.webui.common.Pages;
+import org.parabuild.ci.webui.common.Validatable;
+import org.parabuild.ci.webui.common.WebuiUtils;
+import viewtier.ui.Border;
+import viewtier.ui.Button;
+import viewtier.ui.ButtonPressedEvent;
+import viewtier.ui.ButtonPressedListener;
+import viewtier.ui.Flow;
+import viewtier.ui.Label;
+import viewtier.ui.Layout;
+import viewtier.ui.Panel;
+import viewtier.ui.Tierlet;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This panel holds components used to reset password screen.
@@ -32,8 +54,8 @@ public final class ResetPasswordPanel extends MessagePanel implements Validatabl
   public static final String NAME_LOGIN_NAME = "Login name:";
   public static final String NAME_EMAIL = "E-mail:";
 
-  private final Field nameField = new LoginNameField(15);  // NOPMD
-  private final Field emailField = new EmailField();  // NOPMD
+  private final CommonField nameField = new LoginNameField(15);  // NOPMD
+  private final CommonField emailField = new EmailField();  // NOPMD
   private final Button submitButton = new CommonButton(" Submit ");  // NOPMD
   private final Button cancelButton = new CommonButton(" Cancel ");  // NOPMD
   private final Flow buttonsFlow = new Flow().add(submitButton).add(new Label("   ")).add(cancelButton);  // NOPMD
@@ -110,8 +132,8 @@ public final class ResetPasswordPanel extends MessagePanel implements Validatabl
   public boolean validate() {
     final List errors = new ArrayList(11);
     // preliminary checks
-    WebuiUtils.validateFieldNotBlank(errors, NAME_LOGIN_NAME, nameField);
-    WebuiUtils.validateFieldNotBlank(errors, NAME_EMAIL, emailField);
+    InputValidator.validateFieldNotBlank(errors, NAME_LOGIN_NAME, nameField);
+    InputValidator.validateFieldNotBlank(errors, NAME_EMAIL, emailField);
     if (errors.isEmpty()) {
       WebuiUtils.validateFieldValidEmail(errors, NAME_EMAIL, emailField);
     }

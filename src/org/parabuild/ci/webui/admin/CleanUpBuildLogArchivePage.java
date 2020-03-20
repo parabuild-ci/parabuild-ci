@@ -15,6 +15,7 @@ package org.parabuild.ci.webui.admin;
 
 import org.parabuild.ci.archive.ArchiveManager;
 import org.parabuild.ci.archive.ArchiveManagerFactory;
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.object.ActiveBuildConfig;
 import org.parabuild.ci.webui.common.*;
@@ -37,7 +38,7 @@ public final class CleanUpBuildLogArchivePage extends BasePage implements Conver
   public static final int ACTION_NONE = 3;
 
   private int action = ACTION_CANCEL;
-  private final Field flNumberOfDays = new Field(4, 4);
+  private final CommonField flNumberOfDays = new CommonField(4, 4);
   private MessagePanel pnlDeleteBuild = null; // NOPMD
 
 
@@ -85,7 +86,7 @@ public final class CleanUpBuildLogArchivePage extends BasePage implements Conver
 
         // validate input
         final List errors = new ArrayList(1);
-        WebuiUtils.validateFieldValidPositiveInteger(errors, "Number of days", flNumberOfDays);
+        InputValidator.validateFieldValidPositiveInteger(errors, "Number of days", flNumberOfDays);
         if (!errors.isEmpty()) {
           pnlDeleteBuild.showErrorMessage(errors);
           return Result.Continue();

@@ -16,6 +16,7 @@ package org.parabuild.ci.webui.admin.usermanagement;
 import java.util.*;
 import org.apache.commons.logging.*;
 
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.util.*;
 import org.parabuild.ci.error.Error;
 import org.parabuild.ci.error.*;
@@ -94,8 +95,8 @@ public final class EditGroupPanel extends MessagePanel implements Validatable, S
   public boolean validate() {
     // general validation
     final List errors = new ArrayList(11);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_NAME, flName);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_DESCRIPTION, flDescr);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_NAME, flName);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_DESCRIPTION, flDescr);
 
     // check if new group with this name already exists
     if (errors.isEmpty()) {

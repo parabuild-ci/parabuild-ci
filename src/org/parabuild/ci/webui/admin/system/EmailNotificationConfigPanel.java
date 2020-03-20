@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.webui.admin.system;
 
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.ConfigurationConstants;
 import org.parabuild.ci.configuration.SystemConfigurationManager;
@@ -262,10 +263,10 @@ public final class EmailNotificationConfigPanel extends AbstractSystemConfigPane
     final List errors = new ArrayList(1);
 
     // validate fields are not blank
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_BUILD_ADMIN_NAME, buildAdminName);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_BUILD_ADMIN_EMAIL, buildAdminEmail);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_SMTP_SERVER, smtpServer);
-    WebuiUtils.validateFieldValidPositiveInteger(errors, CAPTION_SMTP_SERVER_PORT, smtpServerPort);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_BUILD_ADMIN_NAME, buildAdminName);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_BUILD_ADMIN_EMAIL, buildAdminEmail);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_SMTP_SERVER, smtpServer);
+    InputValidator.validateFieldValidPositiveInteger(errors, CAPTION_SMTP_SERVER_PORT, smtpServerPort);
 
     // validate admin email
     if (errors.isEmpty()) {

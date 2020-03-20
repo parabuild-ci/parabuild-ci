@@ -15,6 +15,7 @@ package org.parabuild.ci.webui.admin;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.object.IssueTrackerProperty;
 import org.parabuild.ci.webui.common.CodeNameDropDown;
 import org.parabuild.ci.webui.common.CommonButton;
@@ -116,13 +117,13 @@ public final class FogBugzSetupPanel extends AbstractIssueTrackerSetupPanel {
   protected void doValidate(final List errors) {
     setDatabaseDefaults();
     validateDatabaseSelection(errors);
-    WebuiUtils.validateFieldNotBlank(errors, STR_FBZ_DB_HOST, flDbHost);
-    WebuiUtils.validateFieldNotBlank(errors, STR_FBZ_DB_PORT, flDbPort);
-    WebuiUtils.validateFieldNotBlank(errors, STR_FBZ_DB_DB, flDbDB);
-    WebuiUtils.validateFieldNotBlank(errors, STR_FBZ_DB_USER, flDbUSer);
-    WebuiUtils.validateFieldNotBlank(errors, STR_FBZ_DB_PASSWD, flDbPasswd);
-    WebuiUtils.validateFieldNotBlank(errors, STR_FBZ_PROJECT, flProject);
-    WebuiUtils.validateFieldValidPositiveInteger(errors, STR_FBZ_DB_PORT, flDbPort);
+    InputValidator.validateFieldNotBlank(errors, STR_FBZ_DB_HOST, flDbHost);
+    InputValidator.validateFieldNotBlank(errors, STR_FBZ_DB_PORT, flDbPort);
+    InputValidator.validateFieldNotBlank(errors, STR_FBZ_DB_DB, flDbDB);
+    InputValidator.validateFieldNotBlank(errors, STR_FBZ_DB_USER, flDbUSer);
+    InputValidator.validateFieldNotBlank(errors, STR_FBZ_DB_PASSWD, flDbPasswd);
+    InputValidator.validateFieldNotBlank(errors, STR_FBZ_PROJECT, flProject);
+    InputValidator.validateFieldValidPositiveInteger(errors, STR_FBZ_DB_PORT, flDbPort);
     validateIssueStatus(errors);
   }
 

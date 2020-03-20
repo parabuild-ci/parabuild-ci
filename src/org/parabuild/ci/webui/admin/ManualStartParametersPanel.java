@@ -15,9 +15,9 @@ package org.parabuild.ci.webui.admin;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.util.BuildVersionGenerator;
-import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.ValidationException;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.AgentHost;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManager;
@@ -32,6 +32,8 @@ import org.parabuild.ci.object.StartParameter;
 import org.parabuild.ci.object.StartParameterType;
 import org.parabuild.ci.services.BuildManager;
 import org.parabuild.ci.services.BuildStartRequestParameter;
+import org.parabuild.ci.util.BuildVersionGenerator;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.CommonFlow;
@@ -41,12 +43,10 @@ import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.MessagePanel;
 import org.parabuild.ci.webui.common.Pages;
 import org.parabuild.ci.webui.common.Validatable;
-import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Border;
 import viewtier.ui.CheckBox;
 import viewtier.ui.Color;
-import viewtier.ui.Field;
 import viewtier.ui.Label;
 import viewtier.ui.Text;
 
@@ -88,10 +88,10 @@ public final class ManualStartParametersPanel extends MessagePanel implements Va
   private final Label lbPreferredBuildServer = new CommonFieldLabel(CAPTION_PREFERRED_BUILD_SERVER); // NOPMD SingularField
 
   private final EditManualStartParametersTable parametersTable;  // NOPMD SingularField
-  private final Field flLabel = new CommonField(100, 50); // NOPMD SingularField
-  private final Field flNote = new CommonField(100, 70); // NOPMD SingularField
-  private final Field flVersionCounter = new CommonField(6, 6); // NOPMD SingularField
-  private final Field flVersionTemplate = new CommonField(100, 60); // NOPMD SingularField
+  private final CommonField flLabel = new CommonField(100, 50); // NOPMD SingularField
+  private final CommonField flNote = new CommonField(100, 70); // NOPMD SingularField
+  private final CommonField flVersionCounter = new CommonField(6, 6); // NOPMD SingularField
+  private final CommonField flVersionTemplate = new CommonField(100, 60); // NOPMD SingularField
   private final CheckBox cbClearWorkspace = new CheckBox(); // NOPMD SingularField
   private final CheckBox cbPinResult = new CheckBox(); // NOPMD SingularField
   private final CheckBox cbStartIfBuilding = new CheckBox(); // NOPMD SingularField
@@ -225,11 +225,11 @@ public final class ManualStartParametersPanel extends MessagePanel implements Va
       ddPreferredAgent.setEditable(false);
       ddPreferredAgent.setVisible(false);
       lbPreferredBuildServer.setVisible(false);
-      if (WebuiUtils.isBlank(flLabel)) {
+      if (InputValidator.isBlank(flLabel)) {
         lbLabel.setVisible(false);
         flLabel.setVisible(false);
       }
-      if (WebuiUtils.isBlank(flNote)) {
+      if (InputValidator.isBlank(flNote)) {
         lbNote.setVisible(false);
         flNote.setVisible(false);
       }
@@ -388,12 +388,12 @@ public final class ManualStartParametersPanel extends MessagePanel implements Va
     }
 
     // validate counter integer format
-    if (!WebuiUtils.isBlank(flVersionCounter)) {
-      WebuiUtils.validateFieldValidNonNegativeInteger(errors, CAPTION_BUILD_COUNTER, flVersionCounter);
+    if (!InputValidator.isBlank(flVersionCounter)) {
+      InputValidator.validateFieldValidNonNegativeInteger(errors, CAPTION_BUILD_COUNTER, flVersionCounter);
     }
 
     // validate template
-    if (!WebuiUtils.isBlank(flVersionTemplate)) {
+    if (!InputValidator.isBlank(flVersionTemplate)) {
       try {
         final BuildVersionGenerator buildVersionGenerator = new BuildVersionGenerator();
         buildVersionGenerator.validateTemplate(flVersionTemplate.getValue());
@@ -421,7 +421,7 @@ public final class ManualStartParametersPanel extends MessagePanel implements Va
    * @return value of the build counter field. If not set returns -1
    */
   public int getVersionCounter() {
-    if (WebuiUtils.isBlank(flVersionCounter)) {
+    if (InputValidator.isBlank(flVersionCounter)) {
       return -1;
     }
     return Integer.parseInt(flVersionCounter.getValue());

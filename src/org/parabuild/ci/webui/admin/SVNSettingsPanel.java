@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.common.WebUIConstants;
@@ -144,9 +145,9 @@ public final class SVNSettingsPanel extends AbstractSourceControlPanel {
   protected boolean doValidate() {
     clearMessage();
     final List errors = new ArrayList(1);
-    WebuiUtils.validateFieldNotBlank(errors, NAME_SVN_PATH_TO_EXE, flPathToExe);
-    WebuiUtils.validateFieldNotBlank(errors, NAME_SVN_DEPOT_PATH, flDepotPath);
-    WebuiUtils.validateFieldNotBlank(errors, NAME_SVN_URL, flURL);
+    InputValidator.validateFieldNotBlank(errors, NAME_SVN_PATH_TO_EXE, flPathToExe);
+    InputValidator.validateFieldNotBlank(errors, NAME_SVN_DEPOT_PATH, flDepotPath);
+    InputValidator.validateFieldNotBlank(errors, NAME_SVN_URL, flURL);
 
     // counter name is valid
     if (!StringUtils.isBlank(flPassword.getValue())

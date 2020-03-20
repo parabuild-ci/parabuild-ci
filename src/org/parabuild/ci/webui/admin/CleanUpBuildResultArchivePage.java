@@ -15,12 +15,14 @@ package org.parabuild.ci.webui.admin;
 
 import org.parabuild.ci.archive.ArchiveManager;
 import org.parabuild.ci.archive.ArchiveManagerFactory;
-import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.object.ActiveBuildConfig;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.BasePage;
 import org.parabuild.ci.webui.common.BoldCommonLabel;
 import org.parabuild.ci.webui.common.CancelButton;
 import org.parabuild.ci.webui.common.CommonButton;
+import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.CommonFlow;
 import org.parabuild.ci.webui.common.DeleteButton;
@@ -31,7 +33,6 @@ import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.ButtonPressedEvent;
 import viewtier.ui.ButtonPressedListener;
 import viewtier.ui.ConversationalTierlet;
-import viewtier.ui.Field;
 import viewtier.ui.Flow;
 import viewtier.ui.Label;
 import viewtier.ui.Layout;
@@ -54,7 +55,7 @@ public final class CleanUpBuildResultArchivePage extends BasePage implements Con
   public static final int ACTION_NONE = 3;
 
   private int action = ACTION_CANCEL;
-  private final Field flNumberOfDays = new Field(4, 4);
+  private final CommonField flNumberOfDays = new CommonField(4, 4);
   private MessagePanel pnlDeleteBuild = null; // NOPMD
 
 
@@ -101,7 +102,7 @@ public final class CleanUpBuildResultArchivePage extends BasePage implements Con
 
         // validate input
         final List errors = new ArrayList(11);
-        WebuiUtils.validateFieldValidPositiveInteger(errors, "Number of days", flNumberOfDays);
+        InputValidator.validateFieldValidPositiveInteger(errors, "Number of days", flNumberOfDays);
         if (!errors.isEmpty()) {
           pnlDeleteBuild.showErrorMessage(errors);
           return Result.Continue();

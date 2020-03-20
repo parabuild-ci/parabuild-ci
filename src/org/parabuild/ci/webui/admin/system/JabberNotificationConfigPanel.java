@@ -15,6 +15,7 @@ package org.parabuild.ci.webui.admin.system;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.ConfigurationConstants;
 import org.parabuild.ci.configuration.SystemConfigurationManager;
@@ -25,7 +26,6 @@ import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.EncryptingPassword;
 import org.parabuild.ci.webui.common.GridIterator;
-import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Panel;
 
 import java.util.ArrayList;
@@ -118,11 +118,11 @@ public final class JabberNotificationConfigPanel extends AbstractSystemConfigPan
 
     // validate fields are valid
     if (cbDisabled.isChecked()) {
-      WebuiUtils.validateFieldNotBlank(errors, NAME_SERVER_ADDRESS, flServerAddress);
-      WebuiUtils.validateFieldNotBlank(errors, NAME_LOGIN_NAME, flLoginName);
-      WebuiUtils.validateFieldNotBlank(errors, NAME_PASSWORD, flLoginPassword);
-      if (!WebuiUtils.isBlank(flServerPort)) {
-        WebuiUtils.validateFieldValidPositiveInteger(errors, NAME_SERVER_PORT, flServerPort);
+      InputValidator.validateFieldNotBlank(errors, NAME_SERVER_ADDRESS, flServerAddress);
+      InputValidator.validateFieldNotBlank(errors, NAME_LOGIN_NAME, flLoginName);
+      InputValidator.validateFieldNotBlank(errors, NAME_PASSWORD, flLoginPassword);
+      if (!InputValidator.isBlank(flServerPort)) {
+        InputValidator.validateFieldValidPositiveInteger(errors, NAME_SERVER_PORT, flServerPort);
       }
     }
 

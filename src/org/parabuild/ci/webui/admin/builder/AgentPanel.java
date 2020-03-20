@@ -15,6 +15,7 @@ package org.parabuild.ci.webui.admin.builder;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.PropertyToInputMap;
 import org.parabuild.ci.configuration.BuilderConfigurationManager;
 import org.parabuild.ci.object.AgentConfig;
@@ -34,9 +35,7 @@ import org.parabuild.ci.webui.common.RequiredFieldMarker;
 import org.parabuild.ci.webui.common.SaveErrorProcessor;
 import org.parabuild.ci.webui.common.Saveable;
 import org.parabuild.ci.webui.common.Validatable;
-import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.CheckBox;
-import viewtier.ui.Field;
 import viewtier.ui.Label;
 import viewtier.ui.Panel;
 import viewtier.ui.TierletContext;
@@ -76,10 +75,10 @@ final class AgentPanel extends MessagePanel implements Validatable, Saveable {
   private final CheckBox flCreateBuilder = new CheckBox();
   private final CheckBox flEnabled = new CheckBox();
   private final CheckBox flSerialize = new CheckBox();
-  private final Field flDescription = new CommonField("agent-description", 100, 80); // NOPMD
-  private final Field flHost = new CommonField("agent-host", 60, 60); // NOPMD
-  private final Field flCapacity = new CommonField("agent-capacity", 2, 3); // NOPMD
-  private final Field flMaxConcurrentBuilds = new CommonField("agent-max-concurrent-builds", 2, 3); // NOPMD
+  private final CommonField flDescription = new CommonField("agent-description", 100, 80); // NOPMD
+  private final CommonField flHost = new CommonField("agent-host", 60, 60); // NOPMD
+  private final CommonField flCapacity = new CommonField("agent-capacity", 2, 3); // NOPMD
+  private final CommonField flMaxConcurrentBuilds = new CommonField("agent-max-concurrent-builds", 2, 3); // NOPMD
 
   private int agentID = AgentConfig.UNSAVED_ID;
   private boolean originallyEnabled = false;
@@ -155,10 +154,10 @@ final class AgentPanel extends MessagePanel implements Validatable, Saveable {
 
     // general validation
     final List errors = new ArrayList(1);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_HOST_NAME, flHost);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_DESCRIPTION, flDescription);
-    WebuiUtils.validateFieldValidPositiveInteger(errors, CAPTION_CAPACITY, flCapacity);
-    WebuiUtils.validateFieldValidNonNegativeInteger(errors, CAPTION_MAXIMUM_CONCURRENT_BUILDS, flMaxConcurrentBuilds);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_HOST_NAME, flHost);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_DESCRIPTION, flDescription);
+    InputValidator.validateFieldValidPositiveInteger(errors, CAPTION_CAPACITY, flCapacity);
+    InputValidator.validateFieldValidNonNegativeInteger(errors, CAPTION_MAXIMUM_CONCURRENT_BUILDS, flMaxConcurrentBuilds);
 
     // further validation
     if (errors.isEmpty()) {

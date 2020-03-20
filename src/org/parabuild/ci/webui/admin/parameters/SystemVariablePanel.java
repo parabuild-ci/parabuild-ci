@@ -15,8 +15,10 @@ package org.parabuild.ci.webui.admin.parameters;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.StartParameter;
+import org.parabuild.ci.webui.common.AbstractFlatTable;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.GridIterator;
@@ -26,8 +28,6 @@ import org.parabuild.ci.webui.common.RequiredFieldMarker;
 import org.parabuild.ci.webui.common.SaveErrorProcessor;
 import org.parabuild.ci.webui.common.Saveable;
 import org.parabuild.ci.webui.common.Validatable;
-import org.parabuild.ci.webui.common.WebuiUtils;
-import viewtier.ui.Field;
 import viewtier.ui.Label;
 import viewtier.ui.Panel;
 
@@ -52,9 +52,9 @@ final class SystemVariablePanel extends MessagePanel implements Validatable, Sav
   private final Label lbDescription = new CommonFieldLabel(CAPTION_DESCRIPTION); // NOPMD
   private final Label lbValue = new CommonFieldLabel(CAPTION_VALUE); // NOPMD
 
-  private final Field flName = new CommonField("shell-var-name", 80, 75); // NOPMD
-  private final Field flDescription = new CommonField("shell-var-description", 100, 80); // NOPMD
-  private final Field flValue = new CommonField("shell-var-value", 120, 90); // NOPMD
+  private final CommonField flName = new CommonField("shell-var-name", 80, 75); // NOPMD
+  private final CommonField flDescription = new CommonField("shell-var-description", 100, 80); // NOPMD
+  private final CommonField flValue = new CommonField("shell-var-value", 120, 90); // NOPMD
 
 
   private int variableID = StartParameter.UNSAVED_ID;
@@ -97,12 +97,12 @@ final class SystemVariablePanel extends MessagePanel implements Validatable, Sav
     }
     // general validation
     final List errors = new ArrayList(1);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_SHELL_VARIABLE_NAME, flName);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_DESCRIPTION, flDescription);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_SHELL_VARIABLE_NAME, flName);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_DESCRIPTION, flDescription);
 
 
     // Validate variable name
-    WebuiUtils.validateVariableName(errors, flName);
+    AbstractFlatTable.validateVariableName(errors, flName);
 
 
     flName.setValue(flName.getValue().trim().toUpperCase());

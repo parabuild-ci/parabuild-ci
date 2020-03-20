@@ -15,6 +15,7 @@ package org.parabuild.ci.webui.admin;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.PropertyToInputMap;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
@@ -29,7 +30,6 @@ import org.parabuild.ci.webui.common.Pages;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
 import org.parabuild.ci.webui.common.Saveable;
 import org.parabuild.ci.webui.common.Validatable;
-import org.parabuild.ci.webui.common.WebuiUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -215,10 +215,10 @@ public abstract class AbstractLogConfigPanel extends MessagePanel implements Val
     if (getLogType() <= (byte) 0) {
       errors.add("Log type is not defined for this log");
     }
-    if (WebuiUtils.isBlank(flDescr)) {
+    if (InputValidator.isBlank(flDescr)) {
       errors.add("Please provide log description");
     }
-    if (WebuiUtils.isBlank(flPath)) {
+    if (InputValidator.isBlank(flPath)) {
       errors.add("Please provide path to log file(s) relative to source line root");
     }
 

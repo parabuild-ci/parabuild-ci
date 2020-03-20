@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.common.WebUIConstants;
@@ -24,7 +25,6 @@ import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.CommonText;
 import org.parabuild.ci.webui.common.EncryptingPassword;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.webui.common.WebuiUtils;
 
 import java.util.ArrayList;
 
@@ -149,10 +149,10 @@ public final class VaultSettingsPanel extends AbstractSourceControlPanel {
     clearMessage();
     final ArrayList errors = new ArrayList(11);
 //    WebuiUtils.validateFieldNotBlank(errors, CAPTION_PATH_TO_EXE, flPathToExe);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_REPOSITORY, flRepository);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_HOST, flHost);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_USER, flUser);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_REPOSITORY_PATH, flRepositoryPath);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_REPOSITORY, flRepository);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_HOST, flHost);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_USER, flUser);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_REPOSITORY_PATH, flRepositoryPath);
 
     if (errors.isEmpty()) {
       // validate svn executable exists if there were no other errors

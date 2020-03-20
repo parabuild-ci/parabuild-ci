@@ -26,7 +26,6 @@ import org.parabuild.ci.webui.common.CodeNameDropDown;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.TableHeaderLabel;
 import org.parabuild.ci.webui.common.Validatable;
-import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.AbstractInput;
 import viewtier.ui.CheckBox;
 import viewtier.ui.Component;
@@ -121,13 +120,13 @@ public final class ManualStartSettingsTable extends AbstractFlatTable implements
     final ArrayList errors = new ArrayList(5);
     for (int index = 0, n = getRowCount(); index < n; index++) {
       final Component[] row = getRow(index);
-      WebuiUtils.validateColumnNotBlank(errors, index, CAPTION_NAME, (Field) row[COL_NAME]);
-      WebuiUtils.validateColumnNotBlank(errors, index, CAPTION_DESCRIPTION, (Field) row[COL_DESCRIPTION]);
+      AbstractFlatTable.validateColumnNotBlank(errors, index, CAPTION_NAME, (Field) row[COL_NAME]);
+      AbstractFlatTable.validateColumnNotBlank(errors, index, CAPTION_DESCRIPTION, (Field) row[COL_DESCRIPTION]);
       if (((CodeNameDropDown) row[COL_TYPE]).getCode() != StartParameter.PRESENTATION_SINGLE_VALUE) {
-        WebuiUtils.validateColumnNotBlank(errors, index, CAPTION_VALUES, (Field) row[COL_VALUE]);
+        validateColumnNotBlank(errors, index, CAPTION_VALUES, (Field) row[COL_VALUE]);
       }
 
-      WebuiUtils.validateVariableName(errors, (Field) row[COL_NAME]);
+      validateVariableName(errors, (Field) row[COL_NAME]);
     }
 
     if (!errors.isEmpty()) {

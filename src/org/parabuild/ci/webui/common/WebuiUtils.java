@@ -16,11 +16,11 @@ package org.parabuild.ci.webui.common;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.BuildState;
+import org.parabuild.ci.common.HasInputValue;
 import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.DisplayGroupManager;
-import org.parabuild.ci.configuration.SystemConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.BuildRun;
@@ -44,7 +44,6 @@ import viewtier.ui.AbstractInput;
 import viewtier.ui.CheckBox;
 import viewtier.ui.Color;
 import viewtier.ui.Component;
-import viewtier.ui.Field;
 import viewtier.ui.Flow;
 import viewtier.ui.Image;
 import viewtier.ui.Label;
@@ -79,11 +78,14 @@ public final class WebuiUtils {
    * @noinspection UNUSED_SYMBOL, UnusedDeclaration
    */
   private static final Log log = LogFactory.getLog(WebuiUtils.class); // NOPMD
+
   private static final String RESULT_URL_PREFIX = "/parabuild/build/result/";
+
   private static final int DEFAULT_THROBBER_SIZE = 16;
 
 
   private WebuiUtils() {
+
   }
 
 
@@ -93,6 +95,7 @@ public final class WebuiUtils {
    * @return main content Panel
    */
   public static Component makeHorizontalDivider(final int height) {
+
     final Component divider = new Label();
     divider.setHeight(height);
     return divider;
@@ -100,121 +103,8 @@ public final class WebuiUtils {
 
 
   public static Component makePanelDivider() {
+
     return makeHorizontalDivider(Pages.PANEL_DIVIDER);
-  }
-
-
-  public static boolean validateColumnNotBlank(final List errors, final int rowIndex, final String name, final String value) {
-    if (StringUtils.isBlank(value)) {
-      errors.add("Column \"" + name + "\" at row number " + (rowIndex + 1) + " is blank. This column can not be blank.");
-      return false;
-    } else {
-      return true;
-    }
-  }
-
-
-  public static void validateColumnValidEmail(final List errors, final int rowIndex, final String name, final String value) {
-    if (!MailUtils.isValidEmail(value)) {
-      errors.add("Column \"" + name + "\" at row number " + (rowIndex + 1) + " is not a valid e-mail.");
-    }
-  }
-
-
-  public static void validateColumnNotBlank(final List errors, final int rowIndex, final String name, final Field field) {
-    validateColumnNotBlank(errors, rowIndex, name, field.getValue());
-  }
-
-
-  public static void validateFieldNotBlank(final List errors, final String fieldName, final String fieldValue) {
-    if (StringUtils.isBlank(fieldValue)) {
-      errors.add("Field \"" + fieldName + "\" can not be blank.");
-    }
-  }
-
-
-  public static void validateFieldIsRGBColor(final List errors, final String fieldName, final Field field) {
-    final Pattern pattern = Pattern.compile("[0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F]");
-    final Matcher matcher = pattern.matcher(field.getValue());
-    if (!matcher.matches()) {
-      errors.add("Field \"" + fieldName + "\" should contain a valid RGB value. Example: FF0000");
-    }
-  }
-
-
-  public static void validateFieldValidNonNegativeInteger(final List errors, final String fieldName, final Field field) {
-    final String value = field.getValue();
-    if (!StringUtils.isValidInteger(value) || Integer.parseInt(field.getValue()) < 0) {
-      errors.add("Field \"" + fieldName + "\" should be a valid non-negative integer.");
-    }
-  }
-
-
-  public static void validateFieldValidPositiveInteger(final List errors, final String fieldName, final Field field) {
-    final String value = field.getValue();
-    if (!StringUtils.isValidInteger(value) || Integer.parseInt(field.getValue()) <= 0) {
-      errors.add("Field \"" + fieldName + "\" should be a valid positive integer.");
-    }
-  }
-
-
-  /**
-   * Validates that a given field contains valid e-mail.
-   *
-   * @param errors    will add error msg to this list if not valid.
-   * @param fieldName field caption.
-   * @param field     to validate
-   */
-  public static void validateFieldValidEmail(final List errors, final String fieldName, final Field field) {
-    if (!MailUtils.isValidEmail(field.getValue())) {
-      errors.add("Field \"" + fieldName + "\" is not a valid e-mail address.");
-    }
-  }
-
-
-  /**
-   * Validates that a given field contains valid string.
-   *
-   * @param errors    will add error msg to this list if not valid.
-   * @param fieldName field caption.
-   * @param field     to validate
-   */
-  public static void validateFieldStrict(final List errors, final String fieldName, final Field field) {
-    if (!StringUtils.isValidStrictName(field.getValue())) {
-      errors.add("Field \"" + fieldName + "\" can contain only alphanumeric characters, \"-\" and \"_\".");
-    }
-  }
-
-
-  public static boolean validateFieldNotBlank(final List errors, final String fieldName, final AbstractInput field) {
-    boolean valid = true;
-    if (StringUtils.isBlank(field.getValue())) {
-      errors.add("Field \"" + fieldName + "\" can not be blank.");
-      valid = false;
-    }
-    return valid;
-  }
-
-
-  /**
-   * Returns true if Field is blank
-   *
-   * @param field
-   * @return true if Field is blank
-   */
-  public static boolean isBlank(final AbstractInput field) {
-    return StringUtils.isBlank(field.getValue());
-  }
-
-
-  /**
-   * Returns true if Password is blank
-   *
-   * @param field
-   * @return true if Password is blank
-   */
-  public static boolean isBlank(final Password field) {
-    return StringUtils.isBlank(field.getValue());
   }
 
 
@@ -222,6 +112,7 @@ public final class WebuiUtils {
    * Adds "Click here to continue" flow component
    */
   public static Flow clickHereToContinue(final String tierletURL) {
+
     return clickHereToContinue(tierletURL, new Properties());
   }
 
@@ -230,6 +121,7 @@ public final class WebuiUtils {
    * Adds "Click here to continue" flow component
    */
   public static Flow clickHereToContinue(final String tierletURL, final Properties params) {
+
     return new Flow()
             .add(new CommonLabel(" Click "))
             .add(new CommonLink("here", tierletURL, params))
@@ -242,6 +134,7 @@ public final class WebuiUtils {
    * build ID parameter to the tierlet URL.
    */
   public static Flow clickHereToContinue(final String tierletURL, final int buildID) {
+
     final Properties props = new Properties();
     props.setProperty(Pages.PARAM_BUILD_ID, Integer.toString(buildID));
     return new Flow()
@@ -271,6 +164,7 @@ public final class WebuiUtils {
 
 
   public static Color getBuildResultColor(final TierletContext tierletContext, final BuildRun buildRun) {
+
     final boolean buildRunNotNullAndComplete = isBuildRunNotNullAndComplete(buildRun);
     if (!buildRunNotNullAndComplete) {
       return Color.Black;
@@ -280,6 +174,7 @@ public final class WebuiUtils {
 
 
   public static Color getBuildResultColor(final TierletContext tierletContext, final StepRun stepRun) {
+
     return getBuildResultColor(tierletContext, stepRun.isComplete(), stepRun.getResultID());
   }
 
@@ -304,9 +199,10 @@ public final class WebuiUtils {
    *
    * @param buildRun
    * @return empty StringBuffer is buildRun is null, it's not
-   *         complete or the duration is negative.
+   * complete or the duration is negative.
    */
   public static StringBuffer makeAgoAsString(final BuildRun buildRun, final boolean wrap) {
+
     final StringBuffer result = new StringBuffer(30);
     if (buildRun == null || buildRun.getFinishedAt() == null) {
       return result;
@@ -332,9 +228,10 @@ public final class WebuiUtils {
    *
    * @param buildRun
    * @return empty StringBuffer is buildRun is null, it's not
-   *         complete or the duration is negative.
+   * complete or the duration is negative.
    */
   public static StringBuffer makeAgoAsString(final BuildRun buildRun) {
+
     return makeAgoAsString(buildRun, true);
   }
 
@@ -345,6 +242,7 @@ public final class WebuiUtils {
    * If not, adds a error to the list.
    */
   public static void validatePasswordFields(final List errors, final String caption, final Password fldAdminPasswd, final String retypeCaption, final Password fldConfirmPasswd) {
+
     if (!fldAdminPasswd.getValue().trim().equals(fldConfirmPasswd.getValue().trim())) {
       errors.add("Field \"" + caption + "\" and \"" + retypeCaption + "\" should be the same");
     }
@@ -353,19 +251,22 @@ public final class WebuiUtils {
 
   /**
    * @return true if the given build run is not null and
-   *         complete.
+   * complete.
    */
   public static boolean isBuildRunNotNullAndComplete(final BuildRun buildRun) {
+
     return buildRun != null && buildRun.completed();
   }
 
 
   public static String makeStatisticsChartURL(final int buildID, final int statsCode) {
+
     return "/parabuild/build/statistics/image/?buildid=" + buildID + "&statscode=" + statsCode;
   }
 
 
   public static Tierlet.Result showNotAuthorized(final BasePage basePage) {
+
     basePage.baseContentPanel().getUserPanel().clear();
     basePage.baseContentPanel().getUserPanel().add(new Flow()
             .add(new BoldCommonLabel("You are not authorized to access this page "))
@@ -375,6 +276,7 @@ public final class WebuiUtils {
 
 
   public static Tierlet.Result showNotSupported(final BasePage basePage) {
+
     basePage.baseContentPanel().getUserPanel().clear();
     basePage.baseContentPanel().getUserPanel().add(new Flow()
             .add(new BoldCommonLabel("This operation is not supported "))
@@ -384,6 +286,7 @@ public final class WebuiUtils {
 
 
   public static Tierlet.Result showNotFound(final BasePage basePage) {
+
     basePage.baseContentPanel().getUserPanel().clear();
     basePage.baseContentPanel().getUserPanel().add(new Flow()
             .add(new BoldCommonLabel("Requested page not found")));
@@ -392,6 +295,7 @@ public final class WebuiUtils {
 
 
   public static Tierlet.Result showBuildNotFound(final BasePage basePage) {
+
     basePage.baseContentPanel().getUserPanel().clear();
     basePage.baseContentPanel().showErrorMessage("Requested build can not be found.");
     basePage.baseContentPanel().getUserPanel().add(clickHereToContinue(Pages.ADMIN_BUILDS));
@@ -400,6 +304,7 @@ public final class WebuiUtils {
 
 
   public static String makeURLParameters(final Properties params) {
+
     final StringBuilder result = new StringBuilder(100);
     if (!params.isEmpty()) {
       boolean first = true;
@@ -504,6 +409,7 @@ public final class WebuiUtils {
    * @return {@link Properties}
    */
   public static Properties parametersToProperties(final Parameters parameters) {
+
     final Properties properties = new Properties();
     for (final Iterator i = parameters.getParametersMap().entrySet().iterator(); i.hasNext(); ) {
       final Map.Entry entry = (Map.Entry) i.next();
@@ -544,9 +450,10 @@ public final class WebuiUtils {
    *
    * @param state
    * @return a build name based on actual build name and access
-   *         field.
+   * field.
    */
   public static String getBuildName(final BuildState state) {
+
     if (state.getAccess() == BuildConfig.ACCESS_PRIVATE) {
       return state.getBuildName() + " (p)";
     } else {
@@ -556,6 +463,7 @@ public final class WebuiUtils {
 
 
   public static String makeResultURLPathInfo(final int buildID, final int stepResultID, final String entryName) {
+
     try {
       return RESULT_URL_PREFIX + buildID
               + '/' + stepResultID + '/' + URLEncoder.encode(entryName, "UTF-8");
@@ -569,7 +477,8 @@ public final class WebuiUtils {
    * Composes a URL to build result used to send build results
    * notifications.
    */
-  public static String makeBuildResultURL(final int buildID, final int stepResultID, final String entryName)  {
+  public static String makeBuildResultURL(final int buildID, final int stepResultID, final String entryName) {
+
     final String hostName = SystemConfigurationManagerFactory.getManager().getBuildManagerProtocolHostAndPort();
     final String pathInfo = makeResultURLPathInfo(buildID, stepResultID, entryName);
     return hostName + pathInfo;
@@ -582,6 +491,7 @@ public final class WebuiUtils {
    * validate command even if it's not available.
    */
   public static void validateCommandExists(final AgentEnvironment agentEnv, final String commandPath, final List errors, final String message) {
+
     try {
       if (!agentEnv.commandIsAvailable(commandPath)) {
         errors.add(message);
@@ -593,7 +503,8 @@ public final class WebuiUtils {
 
 
   public static void hideCaptionAndFieldIfBlank(final Label lbCaption, final AbstractInput flField) {
-    if (isBlank(flField) || flField instanceof CheckBox && !((CheckBox) flField).isChecked()) {
+
+    if (StringUtils.isBlank(flField.getValue()) || flField instanceof CheckBox && !((CheckBox) flField).isChecked()) {
       hideCaptionAndField(lbCaption, flField);
     }
   }
@@ -606,12 +517,14 @@ public final class WebuiUtils {
    * @param flField   field to hide
    */
   public static void hideCaptionAndField(final Label lbCaption, final AbstractInput flField) {
+
     lbCaption.setVisible(false);
     flField.setVisible(false);
   }
 
 
   public static Image makeThrobber(final BuildState currentBuildState, final String buildNameAndStatusCaption) {
+
     return makeThrobber(currentBuildState, buildNameAndStatusCaption, DEFAULT_THROBBER_SIZE);
   }
 
@@ -654,6 +567,7 @@ public final class WebuiUtils {
 
 
   public static void validateDropDownSelected(final List errors, final String caption, final CodeNameDropDown dropDown, final int notSelected) {
+
     if (dropDown.getItemCount() == 0) {
       errors.add('\"' + caption + "\" cannot be blank");
       return;
@@ -666,6 +580,7 @@ public final class WebuiUtils {
 
 
   public static Tierlet.Result showMergeNotFound(final BasePage basePage) {
+
     basePage.baseContentPanel().getUserPanel().clear();
     basePage.baseContentPanel().showErrorMessage("Requested merge configuration can not be found.");
     basePage.baseContentPanel().getUserPanel().add(clickHereToContinue(Pages.ADMIN_BUILDS));
@@ -674,6 +589,7 @@ public final class WebuiUtils {
 
 
   public static Properties makeMergeIDParameters(final int mergeID) {
+
     final Properties props = new Properties();
     props.setProperty(Pages.PARAM_MERGE_ID, Integer.toString(mergeID));
     return props;
@@ -731,6 +647,7 @@ public final class WebuiUtils {
 
 
   public static Set getLeaderBuildIDs(final List statuses) {
+
     final Set leaderBuildIDs = new HashSet(statuses.size());
     for (int i = 0; i < statuses.size(); i++) {
       final BuildState buildState = (BuildState) statuses.get(i);
@@ -743,26 +660,31 @@ public final class WebuiUtils {
 
 
   public static Image makeBlueBulletSquareImage16x16() {
+
     return new Image("/images/16x16/bullet_square_blue.gif", "", 16, 16);
   }
 
 
   public static Image makeGreenBulletSquareImage16x16() {
+
     return new Image("/images/16x16/bullet_square_green.gif", "", 16, 16);
   }
 
 
   public static Image makeRedBulletTriangleRedUp16x16() {
+
     return new Image("/images/16x16/bullet_triangle_red_up.gif", "", 16, 16);
   }
 
 
   public static Image makeRedBulletTriangleGreenUp16x16() {
+
     return new Image("/images/16x16/bullet_triangle_green_up.gif", "", 16, 16);
   }
 
 
   public static String makeCurrentlyShowingLogTailAttribute(final int activeBuildID) {
+
     return "currently-showing-log-tail" + activeBuildID;
   }
 
@@ -875,6 +797,7 @@ public final class WebuiUtils {
    * Helper method.
    */
   private static int getSourceBrowserType(final ConfigurationManager cm, final BuildConfig effectiveBuildConfig) {
+
     final int browserType;
     final SourceControlSetting browserTypeSetting = cm.getSourceControlSetting(effectiveBuildConfig.getActiveBuildID(), VersionControlSystem.REPOSITORY_BROWSER_TYPE);
     if (browserTypeSetting == null) {
@@ -895,6 +818,7 @@ public final class WebuiUtils {
    * @param value
    */
   public static void setValueOrHide(final Label lbLabel, final Label lbValue, final String value) {
+
     if (StringUtils.isBlank(value)) {
       lbValue.setVisible(false);
       lbLabel.setVisible(false);
@@ -907,6 +831,7 @@ public final class WebuiUtils {
 
 
   public static void setValueOrHideIfZero(final Label lbLabel, final Label lbValue, final Integer value) {
+
     setValueOrHide(lbLabel, lbValue, value == null || value == 0 ? null : value.toString());
   }
 
@@ -914,7 +839,7 @@ public final class WebuiUtils {
   /**
    * @param displayGroupID
    * @return List of BuildState objects filtered accordingly to
-   *         user rights.
+   * user rights.
    */
   public static List getUserBuildStatuses(final int displayGroupID, final int userID) {
 
@@ -927,7 +852,7 @@ public final class WebuiUtils {
   /**
    * @param displayGroupID
    * @return List of BuildState objects filtered accordingly to
-   *         user rights.
+   * user rights.
    */
   public static List getUserBuildStatuses(final int displayGroupID, final int userID, final boolean showInactiveWithAll) {
 
@@ -952,6 +877,7 @@ public final class WebuiUtils {
 
 
   public static Tierlet.Result createBuildActionReturnResult(final TierletContext context, final Parameters params) {
+
     if (context == null) {
       return Tierlet.Result.Done(Pages.ADMIN_BUILDS); // just return
     }
@@ -991,23 +917,8 @@ public final class WebuiUtils {
 
 
   public static Tierlet.Result createBuildActionReturnResult(final TierletContext tierletContext) {
+
     return createBuildActionReturnResult(tierletContext, new Parameters());
-  }
-
-
-  public static void validateVariableName(final List errors, final Field flName) {
-    final SystemConfigurationManager scm = SystemConfigurationManagerFactory.getManager();
-    if (scm.isCustomVariableNameValidation()) {
-      final String regex = scm.getCustomVariableNameRegex();
-      if (!Pattern.compile(regex).matcher(flName.getValue()).matches()) {
-        errors.add("Variable name \"" + flName.getValue() + "\" does not match a custom regex defined in the system user interface properties: " + regex);
-      }
-    } else {
-      // Default build name format validation
-      if (!StringUtils.isValidStrictName(flName.getValue())) {
-        errors.add("Variable name can contain only alphanumeric characters, \"-\" and \"_\".");
-      }
-    }
   }
 
 
@@ -1031,5 +942,30 @@ public final class WebuiUtils {
       result.setProperty(paramName, paramValues[0]);
     }
     return result;
+  }
+
+
+  public static void validateFieldIsRGBColor(final List errors, final String fieldName, final HasInputValue field) {
+
+    final Pattern pattern = Pattern.compile("[0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F]");
+    final Matcher matcher = pattern.matcher(field.getInputValue());
+    if (!matcher.matches()) {
+      errors.add("Field \"" + fieldName + "\" should contain a valid RGB value. Example: FF0000");
+    }
+  }
+
+
+  /**
+   * Validates that a given field contains valid e-mail.
+   *
+   * @param errors    will add error msg to this list if not valid.
+   * @param fieldName field caption.
+   * @param field     to validate
+   */
+  public static void validateFieldValidEmail(final List<String> errors, final String fieldName, final HasInputValue field) {
+
+    if (!MailUtils.isValidEmail(field.getInputValue())) {
+      errors.add("Field \"" + fieldName + "\" is not a valid e-mail address.");
+    }
   }
 }

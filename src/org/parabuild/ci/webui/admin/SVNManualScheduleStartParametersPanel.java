@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.ConfigurationManager;
@@ -24,7 +25,6 @@ import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.CommonText;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Layout;
 
 import java.util.ArrayList;
@@ -109,7 +109,7 @@ final class SVNManualScheduleStartParametersPanel extends ManualScheduleStartPar
   public boolean validate() {
     clearMessage();
     final ArrayList errors = new ArrayList(1);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_DEPOT_PATH, flDepotPath);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_DEPOT_PATH, flDepotPath);
 
     if (errors.isEmpty()) {
       // further validate SVN depot path
@@ -121,8 +121,8 @@ final class SVNManualScheduleStartParametersPanel extends ManualScheduleStartPar
       }
     }
 
-    if (!WebuiUtils.isBlank(flChangeListNumber)) {
-      WebuiUtils.validateFieldValidPositiveInteger(errors, CAPTION_CHANGE_LIST_NUMBER, flChangeListNumber);
+    if (!InputValidator.isBlank(flChangeListNumber)) {
+      InputValidator.validateFieldValidPositiveInteger(errors, CAPTION_CHANGE_LIST_NUMBER, flChangeListNumber);
     }
 
     // show errors

@@ -19,6 +19,7 @@ import org.apache.commons.logging.*;
 
 import junit.framework.*;
 
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.util.*;
 import org.parabuild.ci.services.*;
 import org.parabuild.ci.webui.common.*;
@@ -119,15 +120,7 @@ public class SATestUtils extends TestCase {
   public void test_ValidateColumnNotBlank() {
     final List errors = new ArrayList(11);
     assertTrue(errors.isEmpty());
-    WebuiUtils.validateColumnNotBlank(errors, 0, "test column name", "");
-    assertTrue(errors.size() == 1);
-  }
-
-
-  public void test_ValidateFieldsNotBlank() {
-    final List errors = new ArrayList(11);
-    assertTrue(errors.isEmpty());
-    WebuiUtils.validateFieldNotBlank(errors, "test field name", "");
+    AbstractFlatTable.validateColumnNotBlank(errors, 0, "test column name", "");
     assertTrue(errors.size() == 1);
   }
 
@@ -172,9 +165,9 @@ public class SATestUtils extends TestCase {
 
   public void test_validateFieldStrict() {
     final ArrayList errors = new ArrayList(11);
-    final Field testField = new Field();
+    final CommonField testField = new CommonField(10, 10);
     testField.setValue("VALID_CONTENT_01");
-    WebuiUtils.validateFieldStrict(errors, "test_field_name", testField);
+    InputValidator.validateFieldStrict(errors, "test_field_name", testField);
     assertEquals(0, errors.size());
   }
 

@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.remote.NoLiveAgentsException;
@@ -138,13 +139,13 @@ public final class VSSSettingsPanel extends AbstractSourceControlPanel {
     final ArrayList errors = new ArrayList(11);
 
     // validate fields are not blank
-    WebuiUtils.validateFieldNotBlank(errors, NAME_VSS_EXE_PATH, fldPathToVSSClient);
-    WebuiUtils.validateFieldNotBlank(errors, NAME_DATABASE_PATH, fldDatabasePath);
-    WebuiUtils.validateFieldNotBlank(errors, NAME_PROJECT_PATH, fldProjectPath);
-    WebuiUtils.validateFieldNotBlank(errors, NAME_CHANGE_WINDOW, fldChangeWindow);
-    WebuiUtils.validateFieldNotBlank(errors, NAME_USER, fldUser);
-    WebuiUtils.validateFieldNotBlank(errors, NAME_PASSWORD, fldPassword);
-    WebuiUtils.validateFieldValidNonNegativeInteger(errors, NAME_CHANGE_WINDOW, fldChangeWindow);
+    InputValidator.validateFieldNotBlank(errors, NAME_VSS_EXE_PATH, fldPathToVSSClient);
+    InputValidator.validateFieldNotBlank(errors, NAME_DATABASE_PATH, fldDatabasePath);
+    InputValidator.validateFieldNotBlank(errors, NAME_PROJECT_PATH, fldProjectPath);
+    InputValidator.validateFieldNotBlank(errors, NAME_CHANGE_WINDOW, fldChangeWindow);
+    InputValidator.validateFieldNotBlank(errors, NAME_USER, fldUser);
+    InputValidator.validateFieldNotBlank(errors, NAME_PASSWORD, fldPassword);
+    InputValidator.validateFieldValidNonNegativeInteger(errors, NAME_CHANGE_WINDOW, fldChangeWindow);
 
     // validate VSS client exists if there were no other errors
     if (errors.isEmpty()) {
@@ -173,7 +174,7 @@ public final class VSSSettingsPanel extends AbstractSourceControlPanel {
 
     // branch name is valid
     if (!StringUtils.isBlank(fldBranch.getValue())) {
-      WebuiUtils.validateFieldStrict(errors, NAME_BRANCH_NAME, fldBranch);
+      InputValidator.validateFieldStrict(errors, NAME_BRANCH_NAME, fldBranch);
     }
 
     // show error if there are any

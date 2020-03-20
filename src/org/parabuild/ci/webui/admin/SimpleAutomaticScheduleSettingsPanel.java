@@ -13,13 +13,13 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.object.ScheduleProperty;
 import org.parabuild.ci.webui.common.CommonCheckBox;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.webui.common.WebuiUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -94,10 +94,10 @@ public final class SimpleAutomaticScheduleSettingsPanel extends AbstractSchedule
 
     // validate ours
     final List errors = new ArrayList(1);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_POLL_INTERVAL, flPollInterval);
-    WebuiUtils.validateFieldValidNonNegativeInteger(errors, CAPTION_POLL_INTERVAL, flPollInterval);
-    if (!WebuiUtils.isBlank(flCooldownInterval)) {
-      WebuiUtils.validateFieldValidNonNegativeInteger(errors, SimpleAutomaticScheduleSettingsPanel.CAPTION_COOLDOWN_INTERVAL, flCooldownInterval);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_POLL_INTERVAL, flPollInterval);
+    InputValidator.validateFieldValidNonNegativeInteger(errors, CAPTION_POLL_INTERVAL, flPollInterval);
+    if (!InputValidator.isBlank(flCooldownInterval)) {
+      InputValidator.validateFieldValidNonNegativeInteger(errors, SimpleAutomaticScheduleSettingsPanel.CAPTION_COOLDOWN_INTERVAL, flCooldownInterval);
     }
 
     // check if any errors

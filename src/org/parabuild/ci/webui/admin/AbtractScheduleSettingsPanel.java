@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.PropertyToInputMap;
 import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.common.VersionControlSystem;
@@ -26,7 +27,6 @@ import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Field;
 
 import java.util.ArrayList;
@@ -116,8 +116,8 @@ public abstract class AbtractScheduleSettingsPanel extends ScheduleSettingsPanel
   public boolean validate() {
     clearMessage();
     final ArrayList errors = new ArrayList(1);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_CLEAN_CHECKOUT_INTERVAL, flCleanCheckout);
-    WebuiUtils.validateFieldValidNonNegativeInteger(errors, CAPTION_CLEAN_CHECKOUT_INTERVAL, flCleanCheckout);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_CLEAN_CHECKOUT_INTERVAL, flCleanCheckout);
+    InputValidator.validateFieldValidNonNegativeInteger(errors, CAPTION_CLEAN_CHECKOUT_INTERVAL, flCleanCheckout);
 
     try {
       final NextBuildNumberResetter buildNumberResetter = new NextBuildNumberResetter(buildID);

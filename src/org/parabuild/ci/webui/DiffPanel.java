@@ -15,11 +15,12 @@ package org.parabuild.ci.webui;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.BuildRun;
 import org.parabuild.ci.security.SecurityManager;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.BasePage;
 import org.parabuild.ci.webui.common.BoldCommonLabel;
 import org.parabuild.ci.webui.common.CancelButton;
@@ -39,7 +40,6 @@ import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Button;
 import viewtier.ui.ButtonPressedEvent;
 import viewtier.ui.ButtonPressedListener;
-import viewtier.ui.Field;
 import viewtier.ui.Flow;
 import viewtier.ui.Label;
 import viewtier.ui.Layout;
@@ -71,8 +71,8 @@ final class DiffPanel extends MessagePanel {
   private static final String VIEW_BY_CHANGE = "View by Change";
   private static final String VIEW_BY_FILE = "View by File";
 
-  private final Field flStartBuildNumber = new CommonField(6, 6);
-  private final Field flEndBuildNumber = new CommonField(6, 6);
+  private final CommonField flStartBuildNumber = new CommonField(6, 6);
+  private final CommonField flEndBuildNumber = new CommonField(6, 6);
 
   private final MessagePanel pnlSearchRequest = new MessagePanel(false); // NOPMD SingularField
   private final Panel pnlChangesHolder = new Panel(); // NOPMD SingularField
@@ -158,8 +158,8 @@ final class DiffPanel extends MessagePanel {
    */
   private boolean valid() {
     final List errors = new ArrayList(3);
-    WebuiUtils.validateFieldValidPositiveInteger(errors, CAPTION_FROM_BUILD, flStartBuildNumber);
-    WebuiUtils.validateFieldValidPositiveInteger(errors, CAPTION_TO_BUILD, flEndBuildNumber);
+    InputValidator.validateFieldValidPositiveInteger(errors, CAPTION_FROM_BUILD, flStartBuildNumber);
+    InputValidator.validateFieldValidPositiveInteger(errors, CAPTION_TO_BUILD, flEndBuildNumber);
     if (!errors.isEmpty()) {
       showErrorMessage(errors);
       return false;

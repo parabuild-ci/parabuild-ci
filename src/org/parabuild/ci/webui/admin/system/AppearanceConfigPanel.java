@@ -16,6 +16,7 @@ package org.parabuild.ci.webui.admin.system;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.log.MarkerMatcherBuilder;
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.ConfigurationConstants;
 import org.parabuild.ci.configuration.SystemConfigurationManager;
@@ -38,7 +39,6 @@ import org.parabuild.ci.webui.common.CommonLabel;
 import org.parabuild.ci.webui.common.CommonText;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Flow;
 import viewtier.ui.Layout;
 
@@ -315,18 +315,18 @@ public final class AppearanceConfigPanel extends AbstractSystemConfigPanel {
    */
   public boolean validate() {
     final List errors = new ArrayList(3);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_BUILDMAN_HOST, fldManagerHost);
-    WebuiUtils.validateFieldValidNonNegativeInteger(errors, CAPTION_ERROR_LINE_QUOTE_LENGTH, fldErrorLineQuoteLength);
-    WebuiUtils.validateFieldValidNonNegativeInteger(errors, CAPTION_ERROR_LOG_QUOTE_SIZE, fldErrorWindowSize);
-    WebuiUtils.validateFieldValidPositiveInteger(errors, CAPTION_REFRESH_RATE, fldRefreshRate);
-    WebuiUtils.validateFieldValidPositiveInteger(errors, CAPTION_DASHBOARD_ROW_SIZE, flDashboardRowSize);
-    WebuiUtils.validateFieldValidPositiveInteger(errors, CAPTION_LOG_TAIL_BUFFER_SIZE, flTailWindowSize);
-    WebuiUtils.validateFieldValidPositiveInteger(errors, CAPTION_AGENT_STATUS_PAGE, flAgentStatusColumns);
-    WebuiUtils.validateFieldValidPositiveInteger(errors, CAPTION_AGENT_STATUS_CHART_HEIGHT, flAgentStatusChartHeightPix);
-    WebuiUtils.validateFieldValidPositiveInteger(errors, CAPTION_AGENT_STATUS_CHART_WIDTH, flAgentStatusChartWidthPix);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_BUILDMAN_HOST, fldManagerHost);
+    InputValidator.validateFieldValidNonNegativeInteger(errors, CAPTION_ERROR_LINE_QUOTE_LENGTH, fldErrorLineQuoteLength);
+    InputValidator.validateFieldValidNonNegativeInteger(errors, CAPTION_ERROR_LOG_QUOTE_SIZE, fldErrorWindowSize);
+    InputValidator.validateFieldValidPositiveInteger(errors, CAPTION_REFRESH_RATE, fldRefreshRate);
+    InputValidator.validateFieldValidPositiveInteger(errors, CAPTION_DASHBOARD_ROW_SIZE, flDashboardRowSize);
+    InputValidator.validateFieldValidPositiveInteger(errors, CAPTION_LOG_TAIL_BUFFER_SIZE, flTailWindowSize);
+    InputValidator.validateFieldValidPositiveInteger(errors, CAPTION_AGENT_STATUS_PAGE, flAgentStatusColumns);
+    InputValidator.validateFieldValidPositiveInteger(errors, CAPTION_AGENT_STATUS_CHART_HEIGHT, flAgentStatusChartHeightPix);
+    InputValidator.validateFieldValidPositiveInteger(errors, CAPTION_AGENT_STATUS_CHART_WIDTH, flAgentStatusChartWidthPix);
 
     // validate encoding
-    if (!WebuiUtils.isBlank(fldOutputEncoding)) {
+    if (!InputValidator.isBlank(fldOutputEncoding)) {
       OutputStreamWriter oswTest = null;
       try {
         oswTest = new OutputStreamWriter(new ByteArrayOutputStream(), fldOutputEncoding.getValue().trim());
@@ -341,7 +341,7 @@ public final class AppearanceConfigPanel extends AbstractSystemConfigPanel {
     }
 
     // Validate markers
-    if (!WebuiUtils.isBlank(flTextLogMarkers)) {
+    if (!InputValidator.isBlank(flTextLogMarkers)) {
       try {
         final MarkerMatcherBuilder matcherBuilder = new MarkerMatcherBuilder();
         matcherBuilder.createMarkerMatcher(flTextLogMarkers.getValue());

@@ -13,10 +13,10 @@
  */
 package org.parabuild.ci.webui.merge;
 
-import java.util.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
+import org.parabuild.ci.common.InputValidator;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.merge.MergeManager;
 import org.parabuild.ci.object.ActiveMergeConfiguration;
 import org.parabuild.ci.object.BuildConfig;
@@ -39,7 +39,6 @@ import org.parabuild.ci.webui.common.MessagePanel;
 import org.parabuild.ci.webui.common.Pages;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
 import org.parabuild.ci.webui.common.SaveButton;
-import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Button;
 import viewtier.ui.ButtonPressedEvent;
@@ -49,11 +48,13 @@ import viewtier.ui.Color;
 import viewtier.ui.Component;
 import viewtier.ui.DropDownSelectedEvent;
 import viewtier.ui.DropDownSelectedListener;
-import viewtier.ui.Field;
 import viewtier.ui.Label;
 import viewtier.ui.Layout;
 import viewtier.ui.Text;
 import viewtier.ui.Tierlet;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  */
@@ -111,10 +112,10 @@ final class EditMergePanel extends MessagePanel {
   private final CodeNameDropDown flConflictResolutionMode = new ConflictResolutionModeDropDown();  // NOPMD
   private final DepotViewPanel pnlSourceValue = new DepotViewPanel();  // NOPMD
   private final DepotViewPanel pnlTargetValue = new DepotViewPanel();  // NOPMD
-  private final Field flDescription = new CommonField(100, 60); // NOPMD
-  private final Field flMarker = new CommonField(30, 30); // NOPMD
-  private final Field flName = new CommonField(100, 60); // NOPMD
-  private final Field flBranchViewName = new CommonField(256, 60); // NOPMD
+  private final CommonField flDescription = new CommonField(100, 60); // NOPMD
+  private final CommonField flMarker = new CommonField(30, 30); // NOPMD
+  private final CommonField flName = new CommonField(100, 60); // NOPMD
+  private final CommonField flBranchViewName = new CommonField(256, 60); // NOPMD
   private final MergeBuildNameDropdown ddSource = new MergeBuildNameDropdown(); // NOPMD
   private final MergeBuildNameDropdown ddTarget = new MergeBuildNameDropdown(); // NOPMD
   private final MergeModeDropDown ddMode = new MergeModeDropDown(); // NOPMD
@@ -341,9 +342,9 @@ final class EditMergePanel extends MessagePanel {
 
   private boolean validate() {
     final List errors = new ArrayList(11);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_DESCRIPTION, flDescription);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_MARKER, flMarker);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_MERGE_NAME, flName);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_DESCRIPTION, flDescription);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_MARKER, flMarker);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_MERGE_NAME, flName);
     WebuiUtils.validateDropDownSelected(errors, CAPTION_SOURCE, ddSource, MergeBuildNameDropdown.NOT_SELECTED);
     WebuiUtils.validateDropDownSelected(errors, CAPTION_TARGET, ddTarget, MergeBuildNameDropdown.NOT_SELECTED);
     if (ddSource.getCode() == ddTarget.getCode()) errors.add("Source and target cannot be the same. Please select different target.");

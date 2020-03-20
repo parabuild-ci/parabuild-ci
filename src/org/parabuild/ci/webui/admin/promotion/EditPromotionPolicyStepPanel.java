@@ -13,12 +13,10 @@
  */
 package org.parabuild.ci.webui.admin.promotion;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
+import org.parabuild.ci.common.InputValidator;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.object.PromotionPolicy;
 import org.parabuild.ci.object.PromotionPolicyStep;
 import org.parabuild.ci.promotion.PromotionConfigurationManager;
@@ -32,17 +30,17 @@ import org.parabuild.ci.webui.common.MessagePanel;
 import org.parabuild.ci.webui.common.Pages;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
 import org.parabuild.ci.webui.common.SaveButton;
-import org.parabuild.ci.common.WebUIConstants;
-import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Button;
 import viewtier.ui.ButtonPressedEvent;
 import viewtier.ui.ButtonPressedListener;
 import viewtier.ui.Color;
-import viewtier.ui.Field;
 import viewtier.ui.Label;
 import viewtier.ui.Layout;
 import viewtier.ui.Parameters;
 import viewtier.ui.Tierlet;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  */
@@ -66,8 +64,8 @@ final class EditPromotionPolicyStepPanel extends MessagePanel {
   private final Label lbPolicyNameValue = new CommonLabel(); // NOPMD
   private final Button btnCancel = new CancelButton(); // NOPMD
   private final Button btnSave = new SaveButton(); // NOPMD
-  private final Field flDescription = new CommonField(100, 60); // NOPMD
-  private final Field flName = new CommonField(100, 60); // NOPMD
+  private final CommonField flDescription = new CommonField(100, 60); // NOPMD
+  private final CommonField flName = new CommonField(100, 60); // NOPMD
 
   private int policyID = PromotionPolicy.UNSAVED_ID; // NOPMD
   private int policyStepID = PromotionPolicyStep.UNSAVED_ID;
@@ -158,8 +156,8 @@ final class EditPromotionPolicyStepPanel extends MessagePanel {
 
   private boolean validate() {
     final List errors = new ArrayList(11);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_DESCRIPTION, flDescription);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_POLICY_STEP_NAME, flName);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_DESCRIPTION, flDescription);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_POLICY_STEP_NAME, flName);
     if (!errors.isEmpty()) {
       showErrorMessage(errors);
     }

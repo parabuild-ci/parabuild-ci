@@ -14,6 +14,7 @@
 package org.parabuild.ci.webui.admin;
 
 import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
@@ -159,10 +160,10 @@ public final class ClearCaseSettingsPanel extends AbstractSourceControlPanel {
   protected boolean doValidate() {
     clearMessage();
     final List errors = new ArrayList(1);
-    WebuiUtils.validateFieldNotBlank(errors, NAME_PATH_TO_CLEARTOOL, flPathToCleartool);
-    WebuiUtils.validateFieldNotBlank(errors, NAME_VIEW_CONFIG_SPEC, flViewConfigSpec);
-    WebuiUtils.validateFieldNotBlank(errors, NAME_REL_BUILD_DIR, flRelativeBuildDir);
-    WebuiUtils.validateFieldValidNonNegativeInteger(errors, NAME_CHANGE_WINDOW, flChangeWindow);
+    InputValidator.validateFieldNotBlank(errors, NAME_PATH_TO_CLEARTOOL, flPathToCleartool);
+    InputValidator.validateFieldNotBlank(errors, NAME_VIEW_CONFIG_SPEC, flViewConfigSpec);
+    InputValidator.validateFieldNotBlank(errors, NAME_REL_BUILD_DIR, flRelativeBuildDir);
+    InputValidator.validateFieldValidNonNegativeInteger(errors, NAME_CHANGE_WINDOW, flChangeWindow);
 
     // realive build dir is a valid relative dir name
     try {
@@ -192,7 +193,7 @@ public final class ClearCaseSettingsPanel extends AbstractSourceControlPanel {
     }
 
     // validate client name template
-    if (!WebuiUtils.isBlank(flViewNameTemplate)) {
+    if (!InputValidator.isBlank(flViewNameTemplate)) {
       final ClearCaseViewNameGenerator viewNameGenerator = new ClearCaseViewNameGenerator("test_name", 1, flViewNameTemplate.getValue());
       if (!viewNameGenerator.isTemplateValid()) {
         errors.add("Client name template is not valid. Client name template should contain ${build.id} and may contain ${cc.user}.");
@@ -200,7 +201,7 @@ public final class ClearCaseSettingsPanel extends AbstractSourceControlPanel {
     }
 
     // validate storage path
-    if (!WebuiUtils.isBlank(flViewStorageLocation)) {
+    if (!InputValidator.isBlank(flViewStorageLocation)) {
       final ClearCaseStorageNameGenerator storageNameGenerator = new ClearCaseStorageNameGenerator(1, flViewStorageLocation.getValue());
       if (!storageNameGenerator.isTemplateValid()) {
         errors.add("View storage is not valid. View storage should contain a UNC path and an optional template parameter ${build.id}.");
@@ -208,7 +209,7 @@ public final class ClearCaseSettingsPanel extends AbstractSourceControlPanel {
     }
 
     // Validate start date
-    if (!WebuiUtils.isBlank(flStartDate)) {
+    if (!InputValidator.isBlank(flStartDate)) {
       try {
         ClearCaseStartDate.parse(flStartDate.getValue());
       } catch (final Exception e) {

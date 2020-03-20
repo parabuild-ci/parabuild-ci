@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.remote.NoLiveAgentsException;
@@ -139,9 +140,9 @@ public final class PVCSSettingsPanel extends AbstractSourceControlPanel {
     final ArrayList errors = new ArrayList(11);
 
     // validate fields are not blank
-    WebuiUtils.validateFieldNotBlank(errors, NAME_PCLI_EXE_PATH, fldPathToPVCSClient);
-    WebuiUtils.validateFieldNotBlank(errors, NAME_REPOSITORY, fldRepository);
-    WebuiUtils.validateFieldNotBlank(errors, NAME_PROJECTS, fldProject);
+    InputValidator.validateFieldNotBlank(errors, NAME_PCLI_EXE_PATH, fldPathToPVCSClient);
+    InputValidator.validateFieldNotBlank(errors, NAME_REPOSITORY, fldRepository);
+    InputValidator.validateFieldNotBlank(errors, NAME_PROJECTS, fldProject);
 //    WebuiUtils.validateFieldNotBlank(errors, NAME_CHANGE_WINDOW, fldChangeWindow);
 //    WebuiUtils.validateFieldNotBlank(errors, NAME_USER, fldUser);
 //    WebuiUtils.validateFieldNotBlank(errors, NAME_PASSWORD, fldPassword);

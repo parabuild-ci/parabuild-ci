@@ -16,6 +16,7 @@ package org.parabuild.ci.webui.admin;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.PropertyToInputMap;
 import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.common.VersionControlSystem;
@@ -159,7 +160,7 @@ public final class ManualStartSettingsPanel extends MessagePanel implements Vali
     boolean valid = true;
 
     // validate template
-    if (!WebuiUtils.isBlank(fldVersionTemplate)) {
+    if (!InputValidator.isBlank(fldVersionTemplate)) {
       try {
         final BuildVersionGenerator buildVersionGenerator = new BuildVersionGenerator();
         buildVersionGenerator.validateTemplate(fldVersionTemplate.getValue());

@@ -15,12 +15,14 @@ package org.parabuild.ci.webui.admin;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.PropertyToInputMap;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.ResultConfig;
 import org.parabuild.ci.object.ResultConfigProperty;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.CommonFlow;
@@ -30,7 +32,6 @@ import org.parabuild.ci.webui.common.Pages;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
 import org.parabuild.ci.webui.common.Saveable;
 import org.parabuild.ci.webui.common.Validatable;
-import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.AbstractInput;
 import viewtier.ui.CheckBox;
 import viewtier.ui.Layout;
@@ -261,13 +262,13 @@ public abstract class AbstractResultConfigPanel extends MessagePanel implements 
     if (getResultType() <= 0) {
       errors.add("Result type is not defined for this result");
     }
-    if (WebuiUtils.isBlank(flDescr)) {
+    if (InputValidator.isBlank(flDescr)) {
       errors.add("Please provide result description");
     }
     validatePath(errors, flPath);
 
-    if (!WebuiUtils.isBlank(flShellVariable)) {
-      WebuiUtils.validateFieldStrict(errors, CAPTION_SHELL_VARIABLE, flShellVariable);
+    if (!InputValidator.isBlank(flShellVariable)) {
+      InputValidator.validateFieldStrict(errors, CAPTION_SHELL_VARIABLE, flShellVariable);
     }
 
     // call implementor's validateProperties first
@@ -287,7 +288,7 @@ public abstract class AbstractResultConfigPanel extends MessagePanel implements 
    * @see URLResultConfigPanel
    */
   protected void validatePath(final List errors, final AbstractInput flPath) {
-    if (WebuiUtils.isBlank(flPath)) {
+    if (StringUtils.isBlank(flPath.getValue())) {
       this.errors.add("Please provide path to result file(s) relative to source line root");
     }
   }

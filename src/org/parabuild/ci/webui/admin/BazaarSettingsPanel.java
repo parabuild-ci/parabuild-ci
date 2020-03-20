@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.object.BuildConfig;
@@ -107,8 +108,8 @@ public final class BazaarSettingsPanel extends AbstractSourceControlPanel {
   protected boolean doValidate() {
     clearMessage();
     final List errors = new ArrayList(1);
-    WebuiUtils.validateFieldNotBlank(errors, NAME_BAZAAR_PATH_TO_EXE, flPathToExe);
-    WebuiUtils.validateFieldNotBlank(errors, NAME_BAZAAR_BRANCH_LOCATION, flBranchLocation);
+    InputValidator.validateFieldNotBlank(errors, NAME_BAZAAR_PATH_TO_EXE, flPathToExe);
+    InputValidator.validateFieldNotBlank(errors, NAME_BAZAAR_BRANCH_LOCATION, flBranchLocation);
 
     if (errors.isEmpty()) {
       // validate svn executable exists if there were no other errors

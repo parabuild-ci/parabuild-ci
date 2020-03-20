@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.common.WebUIConstants;
@@ -126,12 +127,12 @@ public final class SurroundSettingsPanel extends AbstractSourceControlPanel {
   protected final boolean doValidate() {
     clearMessage();
     final ArrayList errors = new ArrayList(11);
-    WebuiUtils.validateFieldNotBlank(errors, NAME_SURROUND_PATH_TO_EXE, flPathToExe);
-    WebuiUtils.validateFieldNotBlank(errors, NAME_SURROUND_BRANCH, flBranch);
-    WebuiUtils.validateFieldNotBlank(errors, NAME_SURROUND_REPOSITORY, flRepository);
-    WebuiUtils.validateFieldNotBlank(errors, NAME_SURROUND_HOST, flHost);
-    WebuiUtils.validateFieldNotBlank(errors, NAME_SURROUND_PORT, flPort);
-    WebuiUtils.validateFieldNotBlank(errors, NAME_SURROUND_USER, flUser);
+    InputValidator.validateFieldNotBlank(errors, NAME_SURROUND_PATH_TO_EXE, flPathToExe);
+    InputValidator.validateFieldNotBlank(errors, NAME_SURROUND_BRANCH, flBranch);
+    InputValidator.validateFieldNotBlank(errors, NAME_SURROUND_REPOSITORY, flRepository);
+    InputValidator.validateFieldNotBlank(errors, NAME_SURROUND_HOST, flHost);
+    InputValidator.validateFieldNotBlank(errors, NAME_SURROUND_PORT, flPort);
+    InputValidator.validateFieldNotBlank(errors, NAME_SURROUND_USER, flUser);
 
     if (errors.isEmpty()) {
       // validate svn executable exists if there were no other errors

@@ -13,12 +13,22 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import java.util.*;
+import org.parabuild.ci.configuration.ConfigurationManager;
+import org.parabuild.ci.object.BuildConfig;
+import org.parabuild.ci.object.ScheduleItem;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.webui.common.AbstractFlatTable;
+import org.parabuild.ci.webui.common.CommonField;
+import org.parabuild.ci.webui.common.Saveable;
+import org.parabuild.ci.webui.common.TableHeaderLabel;
+import org.parabuild.ci.webui.common.Validatable;
+import viewtier.ui.AbstractInput;
+import viewtier.ui.CheckBox;
+import viewtier.ui.Component;
+import viewtier.ui.Field;
 
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This table holds a list of schedule items
@@ -231,8 +241,9 @@ public final class ScheduleItemsTable extends AbstractFlatTable implements Savea
       final Field flHour = (Field)row[COL_HOUR];
       final Field flWeekDays = (Field)row[COL_WEEK_DAY];
       final Field flMonthDays = (Field)row[COL_MONTH_DAY];
-      WebuiUtils.validateColumnNotBlank(errors, i, NAME_HOUR, flHour);
-      if (WebuiUtils.isBlank(flWeekDays) && WebuiUtils.isBlank(flMonthDays)) {
+      AbstractFlatTable.validateColumnNotBlank(errors, i, NAME_HOUR, flHour);
+
+      if (StringUtils.isBlank(flWeekDays.getValue()) && StringUtils.isBlank(flMonthDays.getValue())) {
         errors.add("Schedule at row \"" + (i + 1) + "\" is not valid. It should have at least week or month days set.");
       }
     }

@@ -15,6 +15,7 @@ package org.parabuild.ci.webui.admin;
 
 import org.parabuild.ci.object.ResultConfig;
 import org.parabuild.ci.object.ResultConfigProperty;
+import org.parabuild.ci.webui.common.CommonText;
 import viewtier.ui.Text;
 
 /**
@@ -31,7 +32,7 @@ public final class FileListResultConfigPanel extends AbstractResultConfigPanel {
    * Creates message panel without title.
    */
   public FileListResultConfigPanel() {
-    super(false, "Result path(s):", new Text(40, 4)); // no content border
+    super(false, "Result path(s):", new CommonText(40, 4)); // no content border
     setResultType(ResultConfig.RESULT_TYPE_FILE_LIST);
   }
 

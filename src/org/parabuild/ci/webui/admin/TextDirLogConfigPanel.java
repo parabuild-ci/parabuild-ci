@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.object.*;
 import org.parabuild.ci.webui.common.*;
 
@@ -49,7 +50,7 @@ public final class TextDirLogConfigPanel extends AbstractLogConfigPanel {
 
 
   public boolean validateProperties() {
-    WebuiUtils.validateFieldNotBlank(getErrors(), NAME_EXTENSIONS, flExtensions);
+    InputValidator.validateFieldNotBlank(getErrors(), NAME_EXTENSIONS, flExtensions);
     return getErrors().isEmpty();
   }
 }

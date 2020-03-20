@@ -13,12 +13,12 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.InputValidator;
+import org.parabuild.ci.common.WebUIConstants;
+import org.parabuild.ci.webui.common.CommonText;
 import org.parabuild.ci.webui.common.MessagePanel;
 import org.parabuild.ci.webui.common.TableHeaderLabel;
-import org.parabuild.ci.common.WebUIConstants;
-import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Layout;
-import viewtier.ui.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,9 +43,9 @@ public final class StepConfigurationPanel extends MessagePanel {
   private static final String NAME_SUCCESS_PATTERNS = "Success Patterns";
   private static final long serialVersionUID = 3852527281976616334L;
 
-  private final Text scriptText = new Text(110, 5);
-  private final Text failurePatternText = new Text(20, 3);
-  private final Text successPatternText = new Text(20, 3);
+  private final CommonText scriptText = new CommonText(110, 5);
+  private final CommonText failurePatternText = new CommonText(20, 3);
+  private final CommonText successPatternText = new CommonText(20, 3);
   private final StabilitySettingsPanel pnlStabilitySettings = new StabilitySettingsPanel();
   private final FieldWithButtonPanel pnlBuildCommands = new FieldWithButtonPanel(NAME_BUILD_COMMANDS, scriptText);
   private final FieldWithButtonPanel pnlFailurePattern = new FieldWithButtonPanel(NAME_FAILURE_PATTERNS, failurePatternText);
@@ -133,10 +133,10 @@ public final class StepConfigurationPanel extends MessagePanel {
     final boolean respectErrorsCode = pnlStabilitySettings.isRespectErrorCode();
     if (!respectErrorsCode) {
       // don't allow blanks if error code should not be respected
-      WebuiUtils.validateFieldNotBlank(errors, NAME_FAILURE_PATTERNS, failurePatternText);
-      WebuiUtils.validateFieldNotBlank(errors, NAME_SUCCESS_PATTERNS, successPatternText);
+      InputValidator.validateFieldNotBlank(errors, NAME_FAILURE_PATTERNS, failurePatternText);
+      InputValidator.validateFieldNotBlank(errors, NAME_SUCCESS_PATTERNS, successPatternText);
     }
-    WebuiUtils.validateFieldNotBlank(errors, NAME_BUILD_COMMANDS, scriptText);
+    InputValidator.validateFieldNotBlank(errors, NAME_BUILD_COMMANDS, scriptText);
 
     // commans length
     if (scriptText.getValue().length() >= MAX_COMMANDS_LENGTH) {

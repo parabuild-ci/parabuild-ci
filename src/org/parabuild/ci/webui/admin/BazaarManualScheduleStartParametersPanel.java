@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.ConfigurationManager;
@@ -22,7 +23,6 @@ import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Layout;
 
 import java.util.ArrayList;
@@ -117,10 +117,10 @@ final class BazaarManualScheduleStartParametersPanel extends ManualScheduleStart
     final List errors = new ArrayList(1);
 
     if (showBranchPathOverride) {
-      WebuiUtils.validateFieldNotBlank(errors, CAPTION_BRANCH_LOCATION, flBranchLocation);
+      InputValidator.validateFieldNotBlank(errors, CAPTION_BRANCH_LOCATION, flBranchLocation);
     }
 
-    if (!WebuiUtils.isBlank(flRevisionNumber)) {
+    if (!InputValidator.isBlank(flRevisionNumber)) {
       final String value = flRevisionNumber.getValue();
       if (!StringUtils.isValidInteger(value) && !StringUtils.isValidStrictName(value)) {
         errors.add("Field \"" + CAPTION_CHANGE_LIST_NUMBER + "\" may contain only valid positive integers or alphanumeric characters, \"-\" and \"_\".");

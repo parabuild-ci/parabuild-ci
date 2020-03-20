@@ -15,6 +15,7 @@ package org.parabuild.ci.webui.admin.usermanagement;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.PropertyToInputMap;
 import org.parabuild.ci.configuration.ConfigurationConstants;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
@@ -47,11 +48,9 @@ import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.ButtonPressedEvent;
 import viewtier.ui.ButtonPressedListener;
 import viewtier.ui.Color;
-import viewtier.ui.Field;
 import viewtier.ui.Label;
 import viewtier.ui.Layout;
 import viewtier.ui.Panel;
-import viewtier.ui.Password;
 import viewtier.ui.Tierlet;
 
 import java.util.ArrayList;
@@ -117,7 +116,7 @@ public final class UserPanel extends MessagePanel implements Validatable, Saveab
   private final CommonCheckBox cbShowInactiveBuilds = new CommonCheckBox();  // NOPMD
   private final CodeNameDropDown flIMType = new InstantMessagingTypeDropdown(FNAME_IM_TYPE);  // NOPMD
   private final CodeNameDropDown flDefaultDisplayGroup = new DisplayGroupDropDown(CodeNameDropDown.ALLOW_NONEXISTING_CODES);
-  private final Field flEmail = new EmailField(FNAME_EMAIL, 60);  // NOPMD
+  private final CommonField flEmail = new EmailField(FNAME_EMAIL, 60);  // NOPMD
   private final CommonField flFullName = new CommonField(FNAME_FULLNAME, 60, 60);  // NOPMD
   private final CommonField flSuccessfulBuildColor = new CommonField(FNAME_SUCCESSFUL_BUILD_COLOR, 6, 8);  // NOPMD
   private final CommonField flIMAddress = new CommonField(FNAME_IM_ADDRESS, 60, 60);  // NOPMD
@@ -126,8 +125,8 @@ public final class UserPanel extends MessagePanel implements Validatable, Saveab
   private final CommonField flRefreshRate = new CommonField(3, 3); // NOPMD
   private final CommonField flDashboardRowSize = new CommonField(2, 2);
   private final CommonField flMaxRecentBuilds = new CommonField(3, 3);
-  private final Password flPassword = new CommonPasswordField(FNAME_PASSWD);  // NOPMD
-  private final Password flRetypePassword = new CommonPasswordField(FNAME_CONFIRMPASSWD);  // NOPMD
+  private final CommonPasswordField flPassword = new CommonPasswordField(FNAME_PASSWD);  // NOPMD
+  private final CommonPasswordField flRetypePassword = new CommonPasswordField(FNAME_CONFIRMPASSWD);  // NOPMD
   private final UserGroupsPanel pnlUserGroups = new UserGroupsPanel();  // NOPMD
 
   // hide-able components
@@ -252,29 +251,29 @@ public final class UserPanel extends MessagePanel implements Validatable, Saveab
     // general validation
     final List errors = new ArrayList(11);
     flEmail.setValue(flEmail.getValue().toLowerCase());
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_EMAIL, flEmail);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_FULL_NAME, flFullName);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_LOGIN_NAME, flLoginName);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_EMAIL, flEmail);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_FULL_NAME, flFullName);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_LOGIN_NAME, flLoginName);
     WebuiUtils.validatePasswordFields(errors, CAPTION_PASSWORD, flPassword, CAPTION_RETYPE_PASSWORD, flRetypePassword);
-    WebuiUtils.validateFieldValidPositiveInteger(errors, CAPTION_DASHBOARD_ROW_SIZE, flDashboardRowSize);
-    WebuiUtils.validateFieldValidPositiveInteger(errors, CAPTION_LOG_TAIL_BUFFER_SIZE, flTailWindowSize);
-    WebuiUtils.validateFieldValidPositiveInteger(errors, CAPTION_MAX_BUILDS_ON_RECENT_HISTORY_VIEW, flMaxRecentBuilds);
+    InputValidator.validateFieldValidPositiveInteger(errors, CAPTION_DASHBOARD_ROW_SIZE, flDashboardRowSize);
+    InputValidator.validateFieldValidPositiveInteger(errors, CAPTION_LOG_TAIL_BUFFER_SIZE, flTailWindowSize);
+    InputValidator.validateFieldValidPositiveInteger(errors, CAPTION_MAX_BUILDS_ON_RECENT_HISTORY_VIEW, flMaxRecentBuilds);
 
     // validate e-mail is correct
-    if (!WebuiUtils.isBlank(flEmail)) {
+    if (!InputValidator.isBlank(flEmail)) {
       WebuiUtils.validateFieldValidEmail(errors, CAPTION_EMAIL, flEmail);
     }
 
     // validate colors
-    if (!WebuiUtils.isBlank(flSuccessfulBuildColor)) {
+    if (!InputValidator.isBlank(flSuccessfulBuildColor)) {
       WebuiUtils.validateFieldIsRGBColor(errors, CAPTION_SUCCESSFUL_BUILD_COLOR, flSuccessfulBuildColor);
     }
-    if (!WebuiUtils.isBlank(flFailedBuildColor)) {
+    if (!InputValidator.isBlank(flFailedBuildColor)) {
       WebuiUtils.validateFieldIsRGBColor(errors, CAPTION_FAILED_BUILD_COLOR, flFailedBuildColor);
     }
 
     // IM entry validation
-    if (flIMType.getCode() != User.IM_TYPE_NONE && WebuiUtils.isBlank(flIMAddress)) {
+    if (flIMType.getCode() != User.IM_TYPE_NONE && InputValidator.isBlank(flIMAddress)) {
       errors.add('\"' + CAPTION_IM_ADDRESS + "\" cannot be blank for instant messaging type \"" + flIMType.getValue() + "\". To disable instant messaging select \"" + InstantMessagingTypeDropdown.NAME_NONE + '\"');
     }
 
@@ -393,7 +392,7 @@ public final class UserPanel extends MessagePanel implements Validatable, Saveab
       if (LOG.isDebugEnabled()) {
         LOG.debug("user.getImType(): " + user.getImType());
       }
-      if (!WebuiUtils.isBlank(flPassword)) {
+      if (!InputValidator.isBlank(flPassword)) {
         user.setPassword(StringUtils.digest(flPassword.getValue()));
       }
 
@@ -473,13 +472,13 @@ public final class UserPanel extends MessagePanel implements Validatable, Saveab
    */
   private static class TestColorButtonPressedListener implements ButtonPressedListener {
 
-    private final Field fieldWithHexadecimalColor;
+    private final CommonField fieldWithHexadecimalColor;
     private final CommonLabel labelWithTestColor;
     private final Color defaultColor;
     private static final long serialVersionUID = 0L;
 
 
-    TestColorButtonPressedListener(final Field fieldWithHexadecimalColor,
+    TestColorButtonPressedListener(final CommonField fieldWithHexadecimalColor,
                                    final CommonLabel labelWithTestColor, final Color defaultColor) {
 
       this.fieldWithHexadecimalColor = fieldWithHexadecimalColor;
@@ -491,7 +490,7 @@ public final class UserPanel extends MessagePanel implements Validatable, Saveab
     public Tierlet.Result buttonPressed(final ButtonPressedEvent buttonPressedEvent) {
       Color color;
       String text;
-      if (WebuiUtils.isBlank(fieldWithHexadecimalColor)) {
+      if (InputValidator.isBlank(fieldWithHexadecimalColor)) {
         color = defaultColor;
         text = "Default color";
       } else {

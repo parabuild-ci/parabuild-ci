@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.webui.admin.system;
 
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.GlobalVCSUserMapManager;
 import org.parabuild.ci.object.GlobalVCSUserMap;
@@ -105,8 +106,8 @@ final class GlobalVCSUserMapPanel extends MessagePanel {
    */
   private boolean isValid() {
     final List errors = new ArrayList(1);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_EMAIL, flEmail);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_VERSION_CONTROL_USER, flVCSUser);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_EMAIL, flEmail);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_VERSION_CONTROL_USER, flVCSUser);
     WebuiUtils.validateFieldValidEmail(errors, CAPTION_EMAIL, flEmail);
     return errors.isEmpty();
   }

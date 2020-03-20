@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.webui.admin.system;
 
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.SystemConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
@@ -22,11 +23,11 @@ import org.parabuild.ci.security.SecurityManager;
 import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.CommonCheckBox;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
+import org.parabuild.ci.webui.common.CommonPasswordField;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
 import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Label;
-import viewtier.ui.Password;
 
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
@@ -53,8 +54,8 @@ public final class SecurityConfigPanel extends AbstractSystemConfigPanel {
   private final CommonCheckBox fldHideChangeDescriptions = new CommonCheckBox();  // NOPMD
   private final CommonCheckBox fldHideChangeFiles = new CommonCheckBox();  // NOPMD
   private final CommonCheckBox fldAllowAccessToProtectedFeeds = new CommonCheckBox();  // NOPMD
-  private final Password fldAdminPasswd = new Password(30, 30);  // NOPMD
-  private final Password fldConfirmPasswd = new Password(30, 30);  // NOPMD
+  private final CommonPasswordField fldAdminPasswd = new CommonPasswordField();  // NOPMD
+  private final CommonPasswordField fldConfirmPasswd = new CommonPasswordField();  // NOPMD
 
   private String adminEmail = null;
 
@@ -145,7 +146,7 @@ public final class SecurityConfigPanel extends AbstractSystemConfigPanel {
       if (StringUtils.isBlank(adminEmail)) {
         throw new IllegalStateException("Can not save admin settings without admin e-mail set. Please contact customer support.");
       }
-      if (!WebuiUtils.isBlank(fldAdminPasswd)) {
+      if (!InputValidator.isBlank(fldAdminPasswd)) {
         // load admin user
         final SecurityManager sm = SecurityManager.getInstance();
         User adm = sm.getUserByName(User.DEFAULT_ADMIN_USER);

@@ -15,6 +15,7 @@ package org.parabuild.ci.webui.admin.builder;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.configuration.BuilderConfigurationManager;
 import org.parabuild.ci.object.BuilderConfiguration;
 import org.parabuild.ci.webui.common.CommonField;
@@ -27,7 +28,6 @@ import org.parabuild.ci.webui.common.SaveErrorProcessor;
 import org.parabuild.ci.webui.common.Saveable;
 import org.parabuild.ci.webui.common.Validatable;
 import org.parabuild.ci.common.WebUIConstants;
-import org.parabuild.ci.webui.common.WebuiUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -81,8 +81,8 @@ final class EditBuilderPanel extends MessagePanel implements Validatable, Saveab
   public boolean validate() {
     // general validation
     final List errors = new ArrayList(1);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_NAME, flName);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_DESCRIPTION, flDescr);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_NAME, flName);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_DESCRIPTION, flDescr);
 
     // check if new builder with this name already exists
     if (errors.isEmpty()) {

@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.common.WebUIConstants;
@@ -289,24 +290,24 @@ public final class P4SettingsPanel extends AbstractSourceControlPanel {
   protected boolean doValidate() {
     clearMessage();
     final List errors = new ArrayList(5);
-    WebuiUtils.validateFieldNotBlank(errors, NAME_PATH_TO_CLIENT, flPathToP4Client);
-    WebuiUtils.validateFieldNotBlank(errors, NAME_PORT, flPort);
-    WebuiUtils.validateFieldNotBlank(errors, NAME_USER, flUser);
+    InputValidator.validateFieldNotBlank(errors, NAME_PATH_TO_CLIENT, flPathToP4Client);
+    InputValidator.validateFieldNotBlank(errors, NAME_PORT, flPort);
+    InputValidator.validateFieldNotBlank(errors, NAME_USER, flUser);
 
     if (flClientViewSource.getCode() == (int) P4ClientViewSourceDropDown.SOURCE_FIELD) {
-      WebuiUtils.validateFieldNotBlank(errors, NAME_CLIENT_VIEW, flClientView);
+      InputValidator.validateFieldNotBlank(errors, NAME_CLIENT_VIEW, flClientView);
     } else if (flClientViewSource.getCode() == (int) P4ClientViewSourceDropDown.SOURCE_DEPOT_PATH) {
-      WebuiUtils.validateFieldNotBlank(errors, NAME_CLIENT_VIEW, flClientViewByDepotPath);
+      InputValidator.validateFieldNotBlank(errors, NAME_CLIENT_VIEW, flClientViewByDepotPath);
       if (!flClientViewByDepotPath.getValue().startsWith("//") || flClientViewByDepotPath.getValue().endsWith("...")) {
         errors.add('\"' + NAME_CLIENT_VIEW + "\" is not a valid Perforce depot path");
       }
     } else if (flClientViewSource.getCode() == (int) P4ClientViewSourceDropDown.SOURCE_CLIENT_NAME) {
-      WebuiUtils.validateFieldNotBlank(errors, NAME_CLIENT_VIEW, flClientViewByClientName);
+      InputValidator.validateFieldNotBlank(errors, NAME_CLIENT_VIEW, flClientViewByClientName);
     }
 
     // counter name is valid
     if (!StringUtils.isBlank(flCounter.getValue())) {
-      WebuiUtils.validateFieldStrict(errors, NAME_COUNTER, flCounter);
+      InputValidator.validateFieldStrict(errors, NAME_COUNTER, flCounter);
     }
 
     // relative build path not null

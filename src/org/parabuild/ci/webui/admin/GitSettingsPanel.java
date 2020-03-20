@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.common.VersionControlUIConstants;
 import org.parabuild.ci.common.WebUIConstants;
@@ -138,9 +139,9 @@ public final class GitSettingsPanel extends AbstractSourceControlPanel {
   protected boolean doValidate() {
     clearMessage();
     final List errors = new ArrayList(1);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_GIT_PATH_TO_EXE, flPathToExe);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_GIT_DEPOT_PATH, flDepotPath);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_GIT_REPOSITORY, flRepository);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_GIT_PATH_TO_EXE, flPathToExe);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_GIT_DEPOT_PATH, flDepotPath);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_GIT_REPOSITORY, flRepository);
 
     // counter name is valid
     if (!StringUtils.isBlank(flPassword.getValue())

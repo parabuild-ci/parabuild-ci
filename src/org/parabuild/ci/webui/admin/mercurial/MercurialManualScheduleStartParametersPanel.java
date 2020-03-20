@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.webui.admin.mercurial;
 
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.ConfigurationManager;
@@ -22,7 +23,6 @@ import org.parabuild.ci.webui.admin.ManualScheduleStartParametersPanel;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Layout;
 
 import java.util.ArrayList;
@@ -125,7 +125,7 @@ public final class MercurialManualScheduleStartParametersPanel extends ManualSch
     final List errors = new ArrayList(1);
 
     if (showURLOverride) {
-      WebuiUtils.validateFieldNotBlank(errors, CAPTION_URL, flURL);
+      InputValidator.validateFieldNotBlank(errors, CAPTION_URL, flURL);
     }
 
     // show errors

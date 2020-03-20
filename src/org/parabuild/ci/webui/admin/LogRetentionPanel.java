@@ -13,6 +13,8 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.HasInputValue;
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.PropertyToInputMap;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
@@ -23,8 +25,6 @@ import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.MessagePanel;
 import org.parabuild.ci.webui.common.Saveable;
 import org.parabuild.ci.webui.common.Validatable;
-import org.parabuild.ci.webui.common.WebuiUtils;
-import viewtier.ui.Field;
 import viewtier.ui.Flow;
 import viewtier.ui.Label;
 
@@ -141,18 +141,18 @@ public final class LogRetentionPanel extends MessagePanel implements Loadable, V
   /**
    * Genereric check if field is a positive integer
    */
-  private static void validateNumberField(final List errors, final Field field, final String descr) {
+  private static void validateNumberField(final List errors, final HasInputValue field, final String descr) {
     // check for blank
-    WebuiUtils.validateFieldNotBlank(errors, "Number of " + descr, field);
+    InputValidator.validateFieldNotBlank(errors, "Number of " + descr, field);
 
     // check for format.
-    if (!StringUtils.isValidInteger(field.getValue())) {
+    if (!StringUtils.isValidInteger(field.getInputValue())) {
       errors.add("Number of " + descr + " is invalid. It should be a positive integer value.");
       return;
     }
 
     // check value
-    final int value = Integer.parseInt(field.getValue());
+    final int value = Integer.parseInt(field.getInputValue());
     if (value <= 0) {
       errors.add("Number of " + descr + " too small. It should be a positive integer value.");
     }

@@ -15,6 +15,7 @@ package org.parabuild.ci.webui.admin;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.object.IssueTrackerProperty;
 import org.parabuild.ci.relnotes.BugzillaMySQLConnectionFactory;
 import org.parabuild.ci.relnotes.ConnectionTestResult;
@@ -120,13 +121,13 @@ public final class BugzillaDirectSetupPanel extends AbstractIssueTrackerSetupPan
    * @see AbstractIssueTrackerSetupPanel#doValidate(List)
    */
   protected void doValidate(final List errors) {
-    WebuiUtils.validateFieldNotBlank(errors, STR_BZ_MYSQL_HOST, flMySQLHost);
-    WebuiUtils.validateFieldNotBlank(errors, STR_BZ_MYSQL_PORT, flMySQLPort);
-    WebuiUtils.validateFieldNotBlank(errors, STR_BZ_MYSQL_DB, flMySQLDB);
-    WebuiUtils.validateFieldNotBlank(errors, STR_BZ_MYSQL_USER, flMySQLUSer);
-    WebuiUtils.validateFieldNotBlank(errors, STR_BZ_MYSQL_PASSWD, flMySQLPasswd);
-    WebuiUtils.validateFieldNotBlank(errors, STR_BZ_PRODUCT, flProduct);
-    WebuiUtils.validateFieldValidPositiveInteger(errors, STR_BZ_MYSQL_PORT, flMySQLPort);
+    InputValidator.validateFieldNotBlank(errors, STR_BZ_MYSQL_HOST, flMySQLHost);
+    InputValidator.validateFieldNotBlank(errors, STR_BZ_MYSQL_PORT, flMySQLPort);
+    InputValidator.validateFieldNotBlank(errors, STR_BZ_MYSQL_DB, flMySQLDB);
+    InputValidator.validateFieldNotBlank(errors, STR_BZ_MYSQL_USER, flMySQLUSer);
+    InputValidator.validateFieldNotBlank(errors, STR_BZ_MYSQL_PASSWD, flMySQLPasswd);
+    InputValidator.validateFieldNotBlank(errors, STR_BZ_PRODUCT, flProduct);
+    InputValidator.validateFieldValidPositiveInteger(errors, STR_BZ_MYSQL_PORT, flMySQLPort);
   }
 
 

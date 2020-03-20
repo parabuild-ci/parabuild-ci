@@ -13,6 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.common.WebUIConstants;
@@ -150,17 +151,17 @@ public final class MKSSettingsPanel extends AbstractSourceControlPanel {
   protected final boolean doValidate() {
     clearMessage();
     final ArrayList errors = new ArrayList(1);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_PATH_TO_EXE, flPathToExe);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_PROJECT_PATH, flProject);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_USER, flUser);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_PASSWORD, flPassword);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_HOST, flHost);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_PORT, flPort);
-    WebuiUtils.validateFieldNotBlank(errors, CAPTION_RLOG_DATE_FORMAT, flRlogDateFormat);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_PATH_TO_EXE, flPathToExe);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_PROJECT_PATH, flProject);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_USER, flUser);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_PASSWORD, flPassword);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_HOST, flHost);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_PORT, flPort);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_RLOG_DATE_FORMAT, flRlogDateFormat);
 
     if (errors.isEmpty()) {
       // port
-      WebuiUtils.validateFieldValidPositiveInteger(errors, CAPTION_PORT, flPort);
+      InputValidator.validateFieldValidPositiveInteger(errors, CAPTION_PORT, flPort);
 
       // validate stcmd executable exists if there were no other errors
       try {
@@ -188,7 +189,7 @@ public final class MKSSettingsPanel extends AbstractSourceControlPanel {
       }
 
       // Validate co format
-      if (!WebuiUtils.isBlank(flCoDateFormat)) {
+      if (!InputValidator.isBlank(flCoDateFormat)) {
         try {
           new SimpleDateFormat(flCoDateFormat.getValue());
         } catch (final Exception e) {
