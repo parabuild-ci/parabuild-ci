@@ -1,6 +1,6 @@
 package org.parabuild.ci.webui.vcs.repository.client.server;
 
-import com.google.gwt.user.client.ui.ListBox;
+import org.parabuild.ci.webui.vcs.repository.client.repository.ParabuildListBox;
 
 import static org.parabuild.ci.common.VersionControlSystem.NAME_BAZAAR;
 import static org.parabuild.ci.common.VersionControlSystem.NAME_SCM_ACCUREV;
@@ -40,7 +40,7 @@ import static org.parabuild.ci.common.VersionControlSystem.SCM_VSS;
 /**
  * A drop-down list box containing VCS server types.
  */
-public final class VCSServerTypeListBox extends ListBox {
+public final class VCSServerTypeListBox extends ParabuildListBox {
 
   /**
    * Creates {@link VCSServerTypeListBox} and populates it with a maps of names to codes.

@@ -13,16 +13,17 @@ import org.parabuild.ci.webui.vcs.repository.common.VCSServerVO;
  */
 final class SaveVCSServerClickHandler implements ClickHandler {
 
-  private final VCSServerDialogBox repositoryServerDialogBox;
+  private final VCSServerDialogBox vcsServerDialogBox;
 
 
   /**
    * Creates {@link SaveVCSServerClickHandler}.
    *
-   * @param repositoryServerDialogBox the dialog box for editing repository information.
+   * @param vcsServerDialogBox the dialog box for editing repository information.
    */
-  SaveVCSServerClickHandler(final VCSServerDialogBox repositoryServerDialogBox) {
-    this.repositoryServerDialogBox = repositoryServerDialogBox;
+  SaveVCSServerClickHandler(final VCSServerDialogBox vcsServerDialogBox) {
+
+    this.vcsServerDialogBox = vcsServerDialogBox;
   }
 
 
@@ -34,8 +35,12 @@ final class SaveVCSServerClickHandler implements ClickHandler {
   @SuppressWarnings("rawtypes")
   public void onClick(final ClickEvent event) {
 
+    if (!vcsServerDialogBox.validate()) {
+      return;
+    }
+
     // Get updated dialog data
-    final VCSServerVO serverVO = repositoryServerDialogBox.getServerVO();
+    final VCSServerVO serverVO = vcsServerDialogBox.getServerVO();
 
     // (1) Create the client proxy.
     final VCSServerServiceAsync serverServiceAsync = GWT.create(VCSServerService.class);
@@ -56,7 +61,7 @@ final class SaveVCSServerClickHandler implements ClickHandler {
     public void onSuccess(final Object result) {
 
       // Close the dialog
-      repositoryServerDialogBox.hide();
+      vcsServerDialogBox.hide();
 
       // Refresh
       Window.Location.reload();

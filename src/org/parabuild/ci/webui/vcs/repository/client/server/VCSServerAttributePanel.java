@@ -2,6 +2,7 @@ package org.parabuild.ci.webui.vcs.repository.client.server;
 
 import org.parabuild.ci.common.PropertyToInputMap;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,16 +19,28 @@ public abstract class VCSServerAttributePanel extends ParabuildFlexTable {
    * @param columnCount number of columns managed by {@link #flexTableIterator()}.
    */
   public VCSServerAttributePanel(final int columnCount) {
+
     super(columnCount);
   }
 
 
   protected final PropertyToInputMap<VCSServerAttributeVO> propertyToInputMap() {
+
     return propertyToInputMap;
   }
 
 
   private List<VCSServerAttributeVO> getUpdatedProperties() {
+
     return propertyToInputMap.getUpdatedProperties();
   }
+
+
+  /**
+   * Validates attributes.
+   *
+   * @param errors errors list to add if there are errors.
+   * @return true if valid.
+   */
+  public abstract boolean validate(ArrayList<String> errors);
 }

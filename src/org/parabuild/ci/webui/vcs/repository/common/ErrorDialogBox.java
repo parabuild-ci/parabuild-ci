@@ -10,6 +10,8 @@ import com.google.gwt.user.client.ui.Label;
 @SuppressWarnings("WeakerAccess")
 public final class ErrorDialogBox extends ParabuildDialogBox {
 
+  private static final String ERROR_STYLE_NAME = "error";
+
   private final Label lbErrorCaption = new Label("Error:");
   private final FlexTable layoutPanel = new FlexTable();
   private final Label lbErrorText = new Label();
@@ -22,10 +24,10 @@ public final class ErrorDialogBox extends ParabuildDialogBox {
 
     super("Unexpected Error", false, true);
 
-    addStyleName("error");
+    addStyleName(ERROR_STYLE_NAME);
 
     // Appearance
-    lbErrorCaption.addStyleName("error");
+    lbErrorCaption.addStyleName(ERROR_STYLE_NAME);
 
     // Create flex table iterator
     final FlexTableIterator flexTableIterator = new FlexTableIterator(layoutPanel, 2);

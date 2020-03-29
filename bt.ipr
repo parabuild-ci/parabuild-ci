@@ -233,6 +233,7 @@
       <inspection_tool class="ConstantAssertCondition" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="ConstantJUnitAssertArgument" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="ControlFlowStatementWithoutBraces" enabled="true" level="WARNING" enabled_by_default="true" />
+      <inspection_tool class="Convert2Lambda" enabled="false" level="WARNING" enabled_by_default="false" />
       <inspection_tool class="CovariantCompareTo" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="CovariantEquals" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="DefaultNotLastCaseInSwitch" enabled="true" level="WARNING" enabled_by_default="true" />
@@ -319,10 +320,6 @@
         <option name="REPORT_PARAMETERS" value="true" />
       </inspection_tool>
       <inspection_tool class="MapReplaceableByEnumMap" enabled="true" level="WARNING" enabled_by_default="true" />
-      <inspection_tool class="MethodMayBeStatic" enabled="true" level="WARNING" enabled_by_default="true">
-        <option name="m_onlyPrivateOrFinal" value="false" />
-        <option name="m_ignoreEmptyMethods" value="true" />
-      </inspection_tool>
       <inspection_tool class="MethodMayBeSynchronized" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="MethodOverloadsParentMethod" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="MethodOverridesPackageLocalMethod" enabled="true" level="WARNING" enabled_by_default="true" />
@@ -544,20 +541,13 @@
     <option name="TEST_RUNNER" value="UI" />
   </component>
   <component name="JavadocGenerationManager">
-    <option name="OUTPUT_DIRECTORY" />
     <option name="OPTION_SCOPE" />
     <option name="OPTION_HIERARCHY" value="false" />
     <option name="OPTION_NAVIGATOR" value="false" />
     <option name="OPTION_INDEX" value="false" />
     <option name="OPTION_SEPARATE_INDEX" value="false" />
-    <option name="OPTION_DOCUMENT_TAG_USE" value="false" />
-    <option name="OPTION_DOCUMENT_TAG_AUTHOR" value="false" />
-    <option name="OPTION_DOCUMENT_TAG_VERSION" value="false" />
     <option name="OPTION_DOCUMENT_TAG_DEPRECATED" value="false" />
     <option name="OPTION_DEPRECATED_LIST" value="false" />
-    <option name="OTHER_OPTIONS" />
-    <option name="HEAP_SIZE" />
-    <option name="LOCALE" />
     <option name="OPEN_IN_BROWSER" value="false" />
   </component>
   <component name="Palette2">
@@ -701,7 +691,9 @@
         <option name="BLANK_LINES_AFTER_CLASS_HEADER" value="1" />
       </codeStyleSettings>
       <codeStyleSettings language="JAVA">
+        <option name="BLANK_LINES_AROUND_FIELD" value="1" />
         <option name="BLANK_LINES_AROUND_METHOD" value="2" />
+        <option name="BLANK_LINES_BEFORE_METHOD_BODY" value="1" />
         <option name="BLANK_LINES_AFTER_CLASS_HEADER" value="1" />
         <indentOptions>
           <option name="INDENT_SIZE" value="2" />
@@ -788,7 +780,7 @@
   <component name="ProjectResources">
     <default-html-doctype>http://www.w3.org/1999/xhtml</default-html-doctype>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
   <component name="ResourceManagerContainer">
     <option name="myResourceBundles">
       <value>
@@ -963,6 +955,27 @@
         <root url="file://$PROJECT_DIR$/3rdparty/smack141/javadoc" />
       </JAVADOC>
       <SOURCES />
+    </library>
+    <library name="sources">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/3rdparty/mockito-1.8.5/mockito-all-1.8.5.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="file://$PROJECT_DIR$/3rdparty/mockito-1.8.5/javadoc" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="file://$PROJECT_DIR$/3rdparty/mockito-1.8.5/sources" />
+      </SOURCES>
+      <jarDirectory url="file://$PROJECT_DIR$/3rdparty/mockito-1.8.5/sources" recursive="false" type="SOURCES" />
+    </library>
+    <library name="Struts 2">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.5.16/lib/struts2-core-2.5.16.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="file://$PROJECT_DIR$/3rdparty/struts-2.5.16/src/core/src/main/java" />
+      </SOURCES>
     </library>
     <library name="Tomcat">
       <CLASSES>

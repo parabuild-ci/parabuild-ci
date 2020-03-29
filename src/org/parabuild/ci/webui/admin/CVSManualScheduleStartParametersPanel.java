@@ -13,7 +13,6 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.SourceControlSetting;
@@ -21,6 +20,7 @@ import org.parabuild.ci.object.SourceControlSettingVO;
 import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
+import org.parabuild.ci.webui.common.WebuiUtils;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -93,7 +93,7 @@ final class CVSManualScheduleStartParametersPanel extends ManualScheduleStartPar
 
     // branch name is valid
     if (!StringUtils.isBlank(flBranch.getValue())) {
-      InputValidator.validateFieldStrict(errors, NAME_BRANCH, flBranch);
+      WebuiUtils.validateFieldStrict(errors, NAME_BRANCH, flBranch);
     }
 
     // show errors

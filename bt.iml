@@ -33,6 +33,9 @@
         <setting name="gwtScriptOutputStyle" value="DETAILED" />
         <setting name="gwtSdkUrl" value="file://$MODULE_DIR$/3rdparty/gwt-2.8.2" />
         <setting name="webFacet" value="Web" />
+        <packaging>
+          <module name="org.parabuild.ci.Common" enabled="false" />
+        </packaging>
       </configuration>
     </facet>
     <facet type="Python" name="Python">
@@ -208,6 +211,7 @@
     <orderEntry type="library" name="dwr" level="project" />
     <orderEntry type="library" name="gwt-user" level="project" />
     <orderEntry type="library" name="sources" level="project" />
+    <orderEntry type="library" name="Struts 2" level="project" />
   </component>
   <component name="org.twodividedbyzero.idea.findbugs">
     <option name="_basePreferences">

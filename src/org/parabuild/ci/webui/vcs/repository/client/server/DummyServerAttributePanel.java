@@ -1,5 +1,7 @@
 package org.parabuild.ci.webui.vcs.repository.client.server;
 
+import java.util.ArrayList;
+
 /**
  * An empty panel to show when VCS configuration is not supported yet.
  */
@@ -13,5 +15,12 @@ public final class DummyServerAttributePanel extends VCSServerAttributePanel {
   public DummyServerAttributePanel(final int columnCount) {
 
     super(columnCount);
+  }
+
+
+  @Override
+  public boolean validate(final ArrayList<String> errors) {
+
+    return true;
   }
 }

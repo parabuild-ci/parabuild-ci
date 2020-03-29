@@ -32,6 +32,7 @@ import org.parabuild.ci.webui.common.Pages;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
 import org.parabuild.ci.webui.common.Saveable;
 import org.parabuild.ci.webui.common.Validatable;
+import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.AbstractInput;
 import viewtier.ui.CheckBox;
 import viewtier.ui.Layout;
@@ -268,7 +269,7 @@ public abstract class AbstractResultConfigPanel extends MessagePanel implements 
     validatePath(errors, flPath);
 
     if (!InputValidator.isBlank(flShellVariable)) {
-      InputValidator.validateFieldStrict(errors, CAPTION_SHELL_VARIABLE, flShellVariable);
+      WebuiUtils.validateFieldStrict(errors, CAPTION_SHELL_VARIABLE, flShellVariable);
     }
 
     // call implementor's validateProperties first

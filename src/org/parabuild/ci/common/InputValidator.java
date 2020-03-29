@@ -1,7 +1,5 @@
 package org.parabuild.ci.common;
 
-import org.parabuild.ci.util.StringUtils;
-
 import java.util.List;
 
 public class InputValidator {
@@ -10,8 +8,8 @@ public class InputValidator {
   public static void validateFieldValidNonNegativeInteger(final List<String> errors, final String fieldName, final HasInputValue field) {
 
     final String value = field.getInputValue();
-    if (!StringUtils.isValidInteger(value) || Integer.parseInt(field.getInputValue()) < 0) {
-      errors.add("Field \"" + fieldName + "\" should be a valid non-negative integer.");
+    if (!isValidInteger(value) || Integer.parseInt(field.getInputValue()) < 0) {
+      errors.add('"' + fieldName + "\" should be a valid non-negative integer.");
     }
   }
 
@@ -19,23 +17,8 @@ public class InputValidator {
   public static void validateFieldValidPositiveInteger(final List<String> errors, final String fieldName, final HasInputValue field) {
 
     final String value = field.getInputValue();
-    if (!StringUtils.isValidInteger(value) || Integer.parseInt(field.getInputValue()) <= 0) {
-      errors.add("Field \"" + fieldName + "\" should be a valid positive integer.");
-    }
-  }
-
-
-  /**
-   * Validates that a given field contains valid string.
-   *
-   * @param errors    will add error msg to this list if not valid.
-   * @param fieldName field caption.
-   * @param field     to validate
-   */
-  public static void validateFieldStrict(final List<String> errors, final String fieldName, final HasInputValue field) {
-
-    if (!StringUtils.isValidStrictName(field.getInputValue())) {
-      errors.add("Field \"" + fieldName + "\" can contain only alphanumeric characters, \"-\" and \"_\".");
+    if (!isValidInteger(value) || Integer.parseInt(field.getInputValue()) <= 0) {
+      errors.add('"' + fieldName + "\" should be a valid positive integer.");
     }
   }
 
@@ -43,8 +26,8 @@ public class InputValidator {
   public static boolean validateFieldNotBlank(final List<String> errors, final String fieldName, final HasInputValue field) {
 
     boolean valid = true;
-    if (StringUtils.isBlank(field.getInputValue())) {
-      errors.add("Field \"" + fieldName + "\" can not be blank.");
+    if (isBlank(field.getInputValue())) {
+      errors.add('"' + fieldName + "\" can not be blank.");
       valid = false;
     }
     return valid;
@@ -55,20 +38,62 @@ public class InputValidator {
    * Returns true if field is blank.
    *
    * @param field to check
-   * @return true if Field is blank
+   * @return true if is blank
    */
   public static boolean isBlank(final HasInputValue field) {
 
-    return StringUtils.isBlank(field.getInputValue());
+    return isBlank(field.getInputValue());
   }
 
 
   public static boolean validateFieldNotBlank(final List<String> errors, final String fieldName, final String fieldValue) {
 
-    if (StringUtils.isBlank(fieldValue)) {
-      errors.add("Field \"" + fieldName + "\" can not be blank.");
+    if (isBlank(fieldValue)) {
+      errors.add('"' + fieldName + "\" can not be blank.");
       return false;
     }
     return true;
+  }
+
+
+  private static boolean isValidInteger(final String value) {
+
+    if (isBlank(value)) {
+      return false;
+    }
+
+    try {
+      Integer.parseInt(value);
+      return true;
+    } catch (final Exception e) {
+      return false;
+    }
+  }
+
+
+  private static boolean isBlank(final String value) {
+
+    if (isNull(value)) {
+      return true;
+    }
+
+    final int length = value.length();
+    if (length == 0) {
+      return true;
+    }
+
+    for (int i = 0; i < length; i++) {
+      if (value.charAt(i) > ' ') {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+
+  private static boolean isNull(final String value) {
+
+    return value == null;
   }
 }

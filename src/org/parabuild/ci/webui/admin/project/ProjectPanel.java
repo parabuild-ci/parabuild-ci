@@ -31,6 +31,7 @@ import org.parabuild.ci.webui.common.Pages;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
 import org.parabuild.ci.webui.common.Saveable;
 import org.parabuild.ci.webui.common.Validatable;
+import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Label;
 import viewtier.ui.Panel;
 
@@ -91,7 +92,7 @@ public final class ProjectPanel extends MessagePanel implements Validatable, Sav
 
     // further validation
     if (errors.isEmpty()) {
-      InputValidator.validateFieldStrict(errors, CAPTION_KEY, flKey);
+      WebuiUtils.validateFieldStrict(errors, CAPTION_KEY, flKey);
       // validate that this key does not exist
       final ProjectManager pm = ProjectManager.getInstance();
       pm.getProjectByKey(normalizedKeyValue());

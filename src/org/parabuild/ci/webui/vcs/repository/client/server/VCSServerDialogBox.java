@@ -4,9 +4,9 @@ import com.google.gwt.event.dom.client.ChangeEvent;
 import com.google.gwt.event.dom.client.ChangeHandler;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.ListBox;
-import com.google.gwt.user.client.ui.Panel;
 import com.google.gwt.user.client.ui.SimplePanel;
-import com.google.gwt.user.client.ui.TextBox;
+import org.parabuild.ci.common.InputValidator;
+import org.parabuild.ci.common.PropertyToInputMap;
 import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.webui.vcs.repository.common.CancelButton;
 import org.parabuild.ci.webui.vcs.repository.common.CancelButtonClickHandler;
@@ -16,6 +16,7 @@ import org.parabuild.ci.webui.vcs.repository.common.ParabuildTextBox;
 import org.parabuild.ci.webui.vcs.repository.common.SaveButton;
 import org.parabuild.ci.webui.vcs.repository.common.VCSServerVO;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.parabuild.ci.common.VersionControlSystem.SCM_COUNT;
@@ -27,26 +28,30 @@ import static org.parabuild.ci.common.VersionControlSystem.SCM_GIT;
 @SuppressWarnings("WeakerAccess")
 public final class VCSServerDialogBox extends EditDialogBox {
 
+  private static final String CAPTION_SERVER_TYPE = "Server type:";
+
+  private static final String CAPTION_SERVER_DESCRIPTION = "Server description:";
+
+  private static final String CAPTION_SERVER_NAME = "Server name:";
+
   // Lookup table for attribute panels
   private final VCSServerAttributePanel[] attributePanels = new VCSServerAttributePanel[SCM_COUNT];
 
-  // Layout widgets
-  private final ParabuildFlexTable flexTable = new ParabuildFlexTable(2);
 
-  private final Panel attributeContainerPanel = new SimplePanel();
+  private final SimplePanel attributeContainerPanel = new SimplePanel();
 
   // UI widgets
-  private final Label lbType = new Label("Server type:");
+  private final Label lbType = new Label(CAPTION_SERVER_TYPE);
 
-  private final Label lbDescription = new Label("Server description:");
+  private final Label lbDescription = new Label(CAPTION_SERVER_DESCRIPTION);
 
-  private final Label lbName = new Label("Server name:");
+  private final Label lbName = new Label(CAPTION_SERVER_NAME);
 
-  private final TextBox flDescription = new ParabuildTextBox(100, 70);
+  private final ParabuildTextBox flDescription = new ParabuildTextBox(100, 70);
 
-  private final ParabuildTextBox flName = new ParabuildTextBox(50, 50);
+  private final ParabuildTextBox flServerName = new ParabuildTextBox(50, 50);
 
-  private final ListBox flTypes = new VCSServerTypeListBox();
+  private final VCSServerTypeListBox flTypes = new VCSServerTypeListBox();
 
   // Current attribute panel
   private VCSServerAttributePanel currentAttributePanel;
@@ -59,17 +64,20 @@ public final class VCSServerDialogBox extends EditDialogBox {
    */
   public VCSServerDialogBox(final String captionText) {
 
-
     super(captionText, false, true);
 
-    // Layout
-    final FlexTableIterator flexTableIterator = flexTable.flexTableIterator();
+    // Add inputs
+    final ParabuildFlexTable inputsTable = new ParabuildFlexTable(2);
+    final FlexTableIterator flexTableIterator = inputsTable.flexTableIterator();
     flexTableIterator.add(lbType).add(flTypes);
-    flexTableIterator.add(lbName).add(flName);
+    flexTableIterator.add(lbName).add(flServerName);
     flexTableIterator.add(lbDescription).add(flDescription);
     flexTableIterator.add(attributeContainerPanel, 2);
-    flexTableIterator.add(new SaveButton(new SaveVCSServerClickHandler(this)));
-    flexTableIterator.add(new CancelButton(new CancelButtonClickHandler(this)));
+    inputsPanel().add(inputsTable);
+
+    // Add controls
+    controlsPanel().add(new SaveButton(new SaveVCSServerClickHandler(this)));
+    controlsPanel().add(new CancelButton(new CancelButtonClickHandler(this)));
 
 
     // Set up switching of the panels
@@ -84,9 +92,50 @@ public final class VCSServerDialogBox extends EditDialogBox {
 
     // Do initial selection
     showAttributePanel(flTypes);
+  }
 
-    // Add layout panel
-    setWidget(flexTable);
+
+  @Override
+  public boolean validate() {
+
+    // Validate this dialog's fields
+    final ArrayList<String> errors = new ArrayList<>(1);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_SERVER_NAME, flServerName);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_SERVER_DESCRIPTION, flDescription);
+    InputValidator.validateFieldNotBlank(errors, CAPTION_SERVER_DESCRIPTION, flTypes);
+
+    // Validate attributes
+    currentAttributePanel.validate(errors);
+
+    // Display errors if any
+    for (final String error : errors) {
+      errorPanel().addError(error);
+    }
+
+    // Return result
+    return errors.isEmpty();
+  }
+
+
+  /**
+   * Returns the VO representing the repository server being edited.
+   *
+   * @return the VO representing the repository server being edited.
+   */
+  public VCSServerVO getServerVO() {
+
+    // Create the VO
+    final VCSServerVO result = new VCSServerVO();
+    result.setType(Integer.parseInt(flTypes.getSelectedValue()));
+    result.setDescription(flDescription.getValue());
+    result.setName(flServerName.getValue());
+
+    final PropertyToInputMap<VCSServerAttributeVO> propertyToInputMap = currentAttributePanel.propertyToInputMap();
+    final List<VCSServerAttributeVO> updatedProperties = propertyToInputMap.getUpdatedProperties();
+    result.setAttributes(updatedProperties);
+
+    // Return result
+    return result;
   }
 
 
@@ -97,14 +146,13 @@ public final class VCSServerDialogBox extends EditDialogBox {
    */
   private void showAttributePanel(final ListBox flServerTypes) {
 
-    final int selectedCode = getSelectedCode(flServerTypes);
-
     // Clear the container
     if (currentAttributePanel != null) {
       attributeContainerPanel.remove(currentAttributePanel);
     }
 
     // Get the matching panel
+    final int selectedCode = getSelectedCode(flServerTypes);
     if (attributePanels[selectedCode] == null) {
       attributePanels[selectedCode] = createAttributePanel(selectedCode);
     }
@@ -142,26 +190,5 @@ public final class VCSServerDialogBox extends EditDialogBox {
 
     final String selectedValue = flServerTypes.getSelectedValue();
     return Integer.parseInt(selectedValue);
-  }
-
-
-  /**
-   * Returns the VO representing the repository server being edited.
-   *
-   * @return the VO representing the repository server being edited.
-   */
-  public VCSServerVO getServerVO() {
-
-    // Create the VO
-    final VCSServerVO result = new VCSServerVO();
-    result.setType(Integer.parseInt(flTypes.getSelectedValue()));
-    result.setDescription(flDescription.getValue());
-    result.setName(flName.getValue());
-
-    final List<VCSServerAttributeVO> updatedProperties = currentAttributePanel.propertyToInputMap().getUpdatedProperties();
-    result.setAttributes(updatedProperties);
-
-    // Return result
-    return result;
   }
 }

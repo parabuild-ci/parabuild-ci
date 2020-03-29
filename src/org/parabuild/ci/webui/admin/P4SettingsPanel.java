@@ -307,7 +307,7 @@ public final class P4SettingsPanel extends AbstractSourceControlPanel {
 
     // counter name is valid
     if (!StringUtils.isBlank(flCounter.getValue())) {
-      InputValidator.validateFieldStrict(errors, NAME_COUNTER, flCounter);
+      WebuiUtils.validateFieldStrict(errors, NAME_COUNTER, flCounter);
     }
 
     // relative build path not null

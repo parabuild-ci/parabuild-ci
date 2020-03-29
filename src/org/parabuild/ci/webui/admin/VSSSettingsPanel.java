@@ -174,7 +174,7 @@ public final class VSSSettingsPanel extends AbstractSourceControlPanel {
 
     // branch name is valid
     if (!StringUtils.isBlank(fldBranch.getValue())) {
-      InputValidator.validateFieldStrict(errors, NAME_BRANCH_NAME, fldBranch);
+      WebuiUtils.validateFieldStrict(errors, NAME_BRANCH_NAME, fldBranch);
     }
 
     // show error if there are any

@@ -19,7 +19,6 @@ import org.apache.commons.logging.*;
 
 import junit.framework.*;
 
-import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.util.*;
 import org.parabuild.ci.services.*;
 import org.parabuild.ci.webui.common.*;
@@ -167,7 +166,7 @@ public class SATestUtils extends TestCase {
     final ArrayList errors = new ArrayList(11);
     final CommonField testField = new CommonField(10, 10);
     testField.setValue("VALID_CONTENT_01");
-    InputValidator.validateFieldStrict(errors, "test_field_name", testField);
+    WebuiUtils.validateFieldStrict(errors, "test_field_name", testField);
     assertEquals(0, errors.size());
   }
 

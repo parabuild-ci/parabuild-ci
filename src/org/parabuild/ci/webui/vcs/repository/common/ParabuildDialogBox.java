@@ -19,6 +19,7 @@ public abstract class ParabuildDialogBox extends DialogBox {
    *                    contained by the dialog should be ignored
    */
   public ParabuildDialogBox(final String captionText, final boolean autoHide, final boolean modal) {
+
     super(autoHide, modal);
 
     // Add form style

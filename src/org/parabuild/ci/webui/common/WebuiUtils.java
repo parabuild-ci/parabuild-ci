@@ -968,4 +968,19 @@ public final class WebuiUtils {
       errors.add("Field \"" + fieldName + "\" is not a valid e-mail address.");
     }
   }
+
+
+  /**
+   * Validates that a given field contains valid string.
+   *
+   * @param errors    will add error msg to this list if not valid.
+   * @param fieldName field caption.
+   * @param field     to validate
+   */
+  public static void validateFieldStrict(final List<String> errors, final String fieldName, final HasInputValue field) {
+
+    if (!StringUtils.isValidStrictName(field.getInputValue())) {
+      errors.add("Field \"" + fieldName + "\" can contain only alphanumeric characters, \"-\" and \"_\".");
+    }
+  }
 }

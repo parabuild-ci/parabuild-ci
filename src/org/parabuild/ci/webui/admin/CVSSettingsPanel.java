@@ -200,7 +200,7 @@ public final class CVSSettingsPanel extends AbstractSourceControlPanel {
 
     // branch name is valid
     if (!StringUtils.isBlank(fldBranch.getValue())) {
-      InputValidator.validateFieldStrict(errors, NAME_BRANCH, fldBranch);
+      WebuiUtils.validateFieldStrict(errors, NAME_BRANCH, fldBranch);
     }
 
     try {
