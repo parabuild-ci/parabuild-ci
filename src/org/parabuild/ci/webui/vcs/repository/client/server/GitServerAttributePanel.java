@@ -2,6 +2,7 @@ package org.parabuild.ci.webui.vcs.repository.client.server;
 
 import com.google.gwt.user.client.ui.Label;
 import org.parabuild.ci.common.InputValidator;
+import org.parabuild.ci.webui.vcs.repository.common.ParabuildLabel;
 import org.parabuild.ci.webui.vcs.repository.common.ParabuildTextBox;
 
 import java.util.ArrayList;

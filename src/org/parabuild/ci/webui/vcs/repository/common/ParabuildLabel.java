@@ -1,4 +1,4 @@
-package org.parabuild.ci.webui.vcs.repository.client.server;
+package org.parabuild.ci.webui.vcs.repository.common;
 
 import com.google.gwt.user.client.ui.Label;
 

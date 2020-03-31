@@ -1,6 +1,7 @@
 package org.parabuild.ci.webui.vcs.repository.client.server;
 
 import org.parabuild.ci.common.PropertyToInputMap;
+import org.parabuild.ci.webui.vcs.repository.common.ParabuildFlexTable;
 
 import java.util.ArrayList;
 import java.util.List;

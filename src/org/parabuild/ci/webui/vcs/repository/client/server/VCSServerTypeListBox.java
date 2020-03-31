@@ -1,6 +1,6 @@
 package org.parabuild.ci.webui.vcs.repository.client.server;
 
-import org.parabuild.ci.webui.vcs.repository.client.repository.ParabuildListBox;
+import org.parabuild.ci.webui.vcs.repository.common.ParabuildListBox;
 
 import static org.parabuild.ci.common.VersionControlSystem.NAME_BAZAAR;
 import static org.parabuild.ci.common.VersionControlSystem.NAME_SCM_ACCUREV;

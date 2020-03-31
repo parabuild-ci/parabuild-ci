@@ -12,6 +12,7 @@ import org.parabuild.ci.webui.vcs.repository.common.CancelButton;
 import org.parabuild.ci.webui.vcs.repository.common.CancelButtonClickHandler;
 import org.parabuild.ci.webui.vcs.repository.common.EditDialogBox;
 import org.parabuild.ci.webui.vcs.repository.common.FlexTableIterator;
+import org.parabuild.ci.webui.vcs.repository.common.ParabuildFlexTable;
 import org.parabuild.ci.webui.vcs.repository.common.ParabuildTextBox;
 import org.parabuild.ci.webui.vcs.repository.common.SaveButton;
 import org.parabuild.ci.webui.vcs.repository.common.VCSServerVO;

@@ -1,7 +1,6 @@
-package org.parabuild.ci.webui.vcs.repository.client.server;
+package org.parabuild.ci.webui.vcs.repository.common;
 
 import com.google.gwt.user.client.ui.FlexTable;
-import org.parabuild.ci.webui.vcs.repository.common.FlexTableIterator;
 
 /**
  * A flex table that allows adding Widgets as a sequence of add() calls while automatically moving column and row forward.
