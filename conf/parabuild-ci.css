@@ -1017,3 +1017,12 @@ div.dialogTopCenterInner div.Caption {
     height: 100%;
 }
 
+/* Error message panel */
+.error-message-panel .gwt-Label {
+    display: block;
+    margin: 5px;
+    padding: 2px 5px;
+    border-radius: 5px;
+    border: 1px solid #c83400;
+    background: #fff5f5;
+}
