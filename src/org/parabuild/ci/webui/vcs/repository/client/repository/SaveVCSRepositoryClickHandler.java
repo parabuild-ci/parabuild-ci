@@ -35,6 +35,11 @@ final class SaveVCSRepositoryClickHandler implements ClickHandler {
   @SuppressWarnings("rawtypes")
   public void onClick(final ClickEvent event) {
 
+    if (!vcsRepositoryDialogBox.validate()) {
+      return;
+    }
+
+
     // (1) Create the client proxy.
     final VCSRepositoryServiceAsync repositoryService = GWT.create(VCSRepositoryService.class);
 
@@ -55,6 +60,7 @@ final class SaveVCSRepositoryClickHandler implements ClickHandler {
 
 
     public SaveDialogAsyncCallback(final DialogBox dialogBox) {
+
       this.dialogBox = dialogBox;
     }
 
