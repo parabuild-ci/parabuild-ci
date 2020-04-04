@@ -62,11 +62,11 @@ public class GitServerAttributePanel extends VCSServerAttributePanel {
   @Override
   public boolean validate(final InputValidator inputValidator) {
 
-    final int initialErrorSize = inputValidator.errorCount();
+    final int initialErrorCount = inputValidator.errorCount();
     inputValidator.validateFieldNotBlank(CAPTION_GIT_SERVER_URL, flServerURL);
     inputValidator.validateFieldNotBlank(CAPTION_GIT_USER, flServerUser);
     inputValidator.validateFieldNotBlank(CAPTION_PASSWORD, flServerPassword);
-    return inputValidator.errorCount() > initialErrorSize;
+    return inputValidator.errorCount() > initialErrorCount;
   }
 
 
