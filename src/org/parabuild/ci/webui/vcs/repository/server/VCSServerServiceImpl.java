@@ -13,6 +13,8 @@ import org.parabuild.ci.webui.vcs.repository.common.VCSServerVO;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.parabuild.ci.configuration.ConfigurationManager.runInHibernate;
+
 /**
  * Remote GWT service.
  */
@@ -29,7 +31,7 @@ public final class VCSServerServiceImpl extends RemoteServiceServlet implements 
   @Override
   public void saveServer(final VCSServerVO vcsServerVO) {
 
-    ConfigurationManager.runInHibernate(new TransactionCallback() {
+    runInHibernate(new TransactionCallback() {
 
       @Override
       public Object runInTransaction() {
@@ -69,7 +71,7 @@ public final class VCSServerServiceImpl extends RemoteServiceServlet implements 
   @Override
   public VCSServerVO[] getVCSServers() {
 
-    return (VCSServerVO[]) ConfigurationManager.runInHibernate(new TransactionCallback() {
+    return (VCSServerVO[]) runInHibernate(new TransactionCallback() {
 
       @Override
       public Object runInTransaction() throws Exception {
