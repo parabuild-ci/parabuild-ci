@@ -1,9 +1,9 @@
 package org.parabuild.ci.webui.vcs.repository.client.server;
 
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.PropertyToInputMap;
 import org.parabuild.ci.webui.vcs.repository.common.ParabuildFlexTable;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -40,8 +40,8 @@ public abstract class VCSServerAttributePanel extends ParabuildFlexTable {
   /**
    * Validates attributes.
    *
-   * @param errors errors list to add if there are errors.
+   * @param inputValidator errors list to add if there are errors.
    * @return true if valid.
    */
-  public abstract boolean validate(ArrayList<String> errors);
+  public abstract boolean validate(InputValidator inputValidator);
 }

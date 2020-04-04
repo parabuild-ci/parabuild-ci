@@ -2,11 +2,12 @@ package org.parabuild.ci.webui.vcs.repository.common;
 
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Label;
+import org.parabuild.ci.common.ErrorDisplay;
 
 /**
  * A error panel is used by Pa to display field validation errors in forms.
  */
-public class ErrorMessagePanel extends FlowPanel {
+public class ErrorMessagePanel extends FlowPanel implements ErrorDisplay {
 
 
   /**
@@ -22,8 +23,22 @@ public class ErrorMessagePanel extends FlowPanel {
   }
 
 
+  /**
+   * {@inheritDoc}.
+   */
+  @Override
   public void addError(final String error) {
 
     add(new Label(error));
+  }
+
+
+  /**
+   * Clears all errors.
+   */
+  @Override
+  public void clearErrors() {
+
+    clear();
   }
 }

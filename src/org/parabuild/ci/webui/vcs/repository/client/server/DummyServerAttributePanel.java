@@ -1,8 +1,7 @@
 package org.parabuild.ci.webui.vcs.repository.client.server;
 
+import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.webui.vcs.repository.common.ParabuildFlexTable;
-
-import java.util.ArrayList;
 
 /**
  * An empty panel to show when VCS configuration is not supported yet.
@@ -21,7 +20,7 @@ public final class DummyServerAttributePanel extends VCSServerAttributePanel {
 
 
   @Override
-  public boolean validate(final ArrayList<String> errors) {
+  public boolean validate(final InputValidator inputValidator) {
 
     return true;
   }

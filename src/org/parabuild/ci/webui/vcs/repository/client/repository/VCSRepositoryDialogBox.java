@@ -3,7 +3,6 @@ package org.parabuild.ci.webui.vcs.repository.client.repository;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Label;
-import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.webui.vcs.repository.client.server.VCSServerService;
 import org.parabuild.ci.webui.vcs.repository.client.server.VCSServerServiceAsync;
 import org.parabuild.ci.webui.vcs.repository.common.CancelButton;
@@ -16,8 +15,6 @@ import org.parabuild.ci.webui.vcs.repository.common.ParabuildListBox;
 import org.parabuild.ci.webui.vcs.repository.common.ParabuildTextBox;
 import org.parabuild.ci.webui.vcs.repository.common.SaveButton;
 import org.parabuild.ci.webui.vcs.repository.common.VCSServerVO;
-
-import java.util.ArrayList;
 
 /**
  * Repository dialog box is responsible for editing and displaying Repository information.
@@ -138,17 +135,13 @@ public final class VCSRepositoryDialogBox extends EditDialogBox {
 
 
     // Validate this dialog's fields
-    final ArrayList<String> errors = new ArrayList<>(1);
-    InputValidator.validateFieldNotBlank(errors, CAPTION_SERVER, flServer);
-    InputValidator.validateFieldNotBlank(errors, CAPTION_REPOSITORY_DESCRIPTION, flDescription);
-    InputValidator.validateFieldNotBlank(errors, CAPTION_REPOSITORY_NAME, flName);
-
-    // Display errors if any
-    for (final String error : errors) {
-      errorPanel().addError(error);
-    }
+    inputValidator().clear();
+    inputValidator().validateFieldNotBlank(CAPTION_SERVER, flServer);
+    inputValidator().validateFieldNotBlank(CAPTION_REPOSITORY_DESCRIPTION, flDescription);
+    inputValidator().validateFieldNotBlank(CAPTION_REPOSITORY_NAME, flName);
+    inputValidator().showErrors();
 
     // Return result
-    return errors.isEmpty();
+    return inputValidator().errorCount() == 0;
   }
 }

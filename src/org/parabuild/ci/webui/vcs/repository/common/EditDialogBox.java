@@ -1,6 +1,7 @@
 package org.parabuild.ci.webui.vcs.repository.common;
 
 import com.google.gwt.user.client.ui.FlowPanel;
+import org.parabuild.ci.common.InputValidator;
 
 public abstract class EditDialogBox extends ParabuildDialogBox {
 
@@ -28,6 +29,11 @@ public abstract class EditDialogBox extends ParabuildDialogBox {
    * A panel to display controls such as Save and cancel buttons.
    */
   private final FlowPanel controlPanel = new FlowPanel();
+
+  /**
+   * Input validator.
+   */
+  private final InputValidator inputValidator = new InputValidator(errorMessagePanel);
 
 
   /**
@@ -80,13 +86,13 @@ public abstract class EditDialogBox extends ParabuildDialogBox {
 
 
   /**
-   * Returns the panel for displaying errors.
+   * Returns an input validator associated with this <code>EditDialogBox</code>.
    *
-   * @return the panel for displaying errors.
+   * @return input validator associated with this <code>EditDialogBox</code>.
    */
-  protected final ErrorMessagePanel errorPanel() {
+  public InputValidator inputValidator() {
 
-    return errorMessagePanel;
+    return inputValidator;
   }
 
 

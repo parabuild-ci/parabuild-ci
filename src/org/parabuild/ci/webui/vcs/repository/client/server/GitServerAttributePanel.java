@@ -5,8 +5,6 @@ import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.webui.vcs.repository.common.ParabuildLabel;
 import org.parabuild.ci.webui.vcs.repository.common.ParabuildTextBox;
 
-import java.util.ArrayList;
-
 public class GitServerAttributePanel extends VCSServerAttributePanel {
 
 
@@ -55,14 +53,20 @@ public class GitServerAttributePanel extends VCSServerAttributePanel {
   }
 
 
+  /**
+   * Validates Git attribute properties.
+   *
+   * @param inputValidator errors list to add if there are errors.
+   * @return true if input is valid.
+   */
   @Override
-  public boolean validate(final ArrayList<String> errors) {
+  public boolean validate(final InputValidator inputValidator) {
 
-    final int initialErrorSize = errors.size();
-    InputValidator.validateFieldNotBlank(errors, CAPTION_GIT_SERVER_URL, flServerPassword);
-    InputValidator.validateFieldNotBlank(errors, CAPTION_GIT_USER, flServerUser);
-    InputValidator.validateFieldNotBlank(errors, CAPTION_PASSWORD, flServerPassword);
-    return errors.size() > initialErrorSize;
+    final int initialErrorSize = inputValidator.errorCount();
+    inputValidator.validateFieldNotBlank(CAPTION_GIT_SERVER_URL, flServerURL);
+    inputValidator.validateFieldNotBlank(CAPTION_GIT_USER, flServerUser);
+    inputValidator.validateFieldNotBlank(CAPTION_PASSWORD, flServerPassword);
+    return inputValidator.errorCount() > initialErrorSize;
   }
 
 

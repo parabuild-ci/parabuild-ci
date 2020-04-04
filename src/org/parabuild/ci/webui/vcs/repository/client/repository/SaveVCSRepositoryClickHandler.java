@@ -39,7 +39,6 @@ final class SaveVCSRepositoryClickHandler implements ClickHandler {
       return;
     }
 
-
     // (1) Create the client proxy.
     final VCSRepositoryServiceAsync repositoryService = GWT.create(VCSRepositoryService.class);
 

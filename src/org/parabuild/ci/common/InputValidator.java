@@ -1,8 +1,26 @@
 package org.parabuild.ci.common;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class InputValidator {
+/**
+ * Input validator. Used to validate fields and display accumulated validation errors.
+ */
+public final class InputValidator {
+
+  /**
+   * Error accumulator
+   */
+  private final List<String> errors = new ArrayList<>(5);
+
+
+  final ErrorDisplay errorDisplay;
+
+
+  public InputValidator(final ErrorDisplay errorDisplay) {
+
+    this.errorDisplay = errorDisplay;
+  }
 
 
   public static void validateFieldValidNonNegativeInteger(final List<String> errors, final String fieldName, final HasInputValue field) {
@@ -53,6 +71,78 @@ public class InputValidator {
       return false;
     }
     return true;
+  }
+
+
+  public void validateFieldValidNonNegativeInteger(final String fieldName, final HasInputValue field) {
+
+    final String value = field.getInputValue();
+    if (!isValidInteger(value) || Integer.parseInt(field.getInputValue()) < 0) {
+      errors.add('"' + fieldName + "\" should be a valid non-negative integer.");
+    }
+  }
+
+
+  public void validateFieldValidPositiveInteger(final String fieldName, final HasInputValue field) {
+
+    final String value = field.getInputValue();
+    if (!isValidInteger(value) || Integer.parseInt(field.getInputValue()) <= 0) {
+      errors.add('"' + fieldName + "\" should be a valid positive integer.");
+    }
+  }
+
+
+  public boolean validateFieldNotBlank(final String fieldName, final HasInputValue field) {
+
+    boolean valid = true;
+    if (isBlank(field.getInputValue())) {
+      errors.add('"' + fieldName + "\" can not be blank.");
+      valid = false;
+    }
+    return valid;
+  }
+
+
+  public boolean validateFieldNotBlank(final String fieldName, final String fieldValue) {
+
+    if (isBlank(fieldValue)) {
+      errors.add('"' + fieldName + "\" can not be blank.");
+      return false;
+    }
+    return true;
+  }
+
+
+  /**
+   * Clears internal error accumulator.
+   */
+  public void clear() {
+
+    errorDisplay.clearErrors();
+
+    errors.clear();
+  }
+
+
+  /**
+   * Returns the number of accumulated errors.
+   *
+   * @return the number of accumulated errors.
+   */
+  public int errorCount() {
+
+    return errors.size();
+  }
+
+
+  /**
+   * Show errors using the given {@link #errorDisplay}.
+   */
+  public void showErrors() {
+
+    for (final String error : errors) {
+      errorDisplay.addError(error);
+    }
   }
 
 

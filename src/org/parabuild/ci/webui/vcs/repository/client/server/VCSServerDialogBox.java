@@ -5,7 +5,6 @@ import com.google.gwt.event.dom.client.ChangeHandler;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.SimplePanel;
-import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.PropertyToInputMap;
 import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.webui.vcs.repository.common.CancelButton;
@@ -17,7 +16,6 @@ import org.parabuild.ci.webui.vcs.repository.common.ParabuildTextBox;
 import org.parabuild.ci.webui.vcs.repository.common.SaveButton;
 import org.parabuild.ci.webui.vcs.repository.common.VCSServerVO;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.parabuild.ci.common.VersionControlSystem.SCM_COUNT;
@@ -100,21 +98,19 @@ public final class VCSServerDialogBox extends EditDialogBox {
   public boolean validate() {
 
     // Validate this dialog's fields
-    final ArrayList<String> errors = new ArrayList<>(1);
-    InputValidator.validateFieldNotBlank(errors, CAPTION_SERVER_NAME, flServerName);
-    InputValidator.validateFieldNotBlank(errors, CAPTION_SERVER_DESCRIPTION, flDescription);
-    InputValidator.validateFieldNotBlank(errors, CAPTION_SERVER_DESCRIPTION, flTypes);
+    inputValidator().clear();
+    inputValidator().validateFieldNotBlank(CAPTION_SERVER_NAME, flServerName);
+    inputValidator().validateFieldNotBlank(CAPTION_SERVER_DESCRIPTION, flDescription);
+    inputValidator().validateFieldNotBlank(CAPTION_SERVER_DESCRIPTION, flTypes);
 
     // Validate attributes
-    currentAttributePanel.validate(errors);
+    currentAttributePanel.validate(inputValidator());
 
     // Display errors if any
-    for (final String error : errors) {
-      errorPanel().addError(error);
-    }
+    inputValidator().showErrors();
 
     // Return result
-    return errors.isEmpty();
+    return inputValidator().errorCount() == 0;
   }
 
 
