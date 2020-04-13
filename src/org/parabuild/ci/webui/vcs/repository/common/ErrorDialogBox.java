@@ -34,7 +34,7 @@ public final class ErrorDialogBox extends ParabuildDialogBox {
 
     // Fill the container
     flexTableIterator.add(lbErrorCaption).add(lbErrorText);
-    flexTableIterator.add(new Button("OK", new OkButtonClickHandler(this)));
+    flexTableIterator.add(new Button("OK", new ConfirmButtonClickHandler(this)));
 
     // Add layout panel
     setWidget(layoutPanel);

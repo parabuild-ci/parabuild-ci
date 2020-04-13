@@ -7,12 +7,12 @@ import com.google.gwt.user.client.ui.DialogBox;
 /**
  * A {@link ClickHandler} for a "OK" button. Just closes the dialog the button belongs to.
  */
-public final class OkButtonClickHandler implements ClickHandler {
+public final class ConfirmButtonClickHandler implements ClickHandler {
 
   private final DialogBox dialogBox;
 
 
-  public OkButtonClickHandler(final DialogBox dialogBox) {
+  public ConfirmButtonClickHandler(final DialogBox dialogBox) {
 
     this.dialogBox = dialogBox;
   }
