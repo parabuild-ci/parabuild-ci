@@ -3,6 +3,9 @@ package org.parabuild.ci.webui.vcs.repository.common;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Button;
 
+/**
+ * A button with a caption Save".
+ */
 public class SaveButton extends Button {
 
 
@@ -10,7 +13,7 @@ public class SaveButton extends Button {
 
 
   /**
-   * Creates a cancel button with caption "Cancel" and the given click listener.
+   * Creates a button with a caption "Save" and the given click listener.
    *
    * @param handler the click handler
    */
