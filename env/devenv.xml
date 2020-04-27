@@ -61,7 +61,7 @@
     <dir property="fop.home" location="${3rdparty}/fop0205" required="yes" build="yes"/>
     <dir property="docbook.home" location="${3rdparty}/docbookxsl1641" required="yes" build="yes"/>
     <dir property="docbookdtd.home" location="${3rdparty}/docbookxml42" required="yes" build="yes"/>
-    <dir property="pmd.home" location="${3rdparty}/pmd38" required="yes" build="yes"/>
+    <dir property="pmd.home" location="${3rdparty}/pmd-6.23.0" required="yes" build="yes"/>
     <dir property="findbugs.home" location="${3rdparty}/findbugs086" required="yes" build="yes"/>
     <dir property="jade.home" location="${3rdparty}/jade600/jade-6.0" required="yes" build="no"/>
     <dir property="subversion.home" location="${3rdparty}/subversion113" required="yes" path="yes"/>

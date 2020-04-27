@@ -1,34 +1,37 @@
 <?xml version="1.0"?>
-<ruleset name="parabuild">
+
+<ruleset name="Custom Rules"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+
   <description>Parabuild PMD rule set</description>
 
-  <rule ref="rulesets/basic.xml">
-    <exclude name="UnnecessaryFinalModifier"/>
+  <rule ref="rulesets/java/basic.xml">
     <exclude name="CollapsibleIfStatements"/>
   </rule>
 
-  <rule ref="rulesets/braces.xml">
+  <rule ref="rulesets/java/braces.xml">
     <exclude name="IfStmtsMustUseBraces"/>
   </rule>
 
-  <rule ref="rulesets/clone.xml">
+  <rule ref="rulesets/java/clone.xml">
   </rule>
 
-  <rule ref="rulesets/controversial.xml">
+  <rule ref="rulesets/java/controversial.xml">
     <exclude name="NullAssignment"/>
     <exclude name="OnlyOneReturn"/>
-    <exclude name="UnusedModifier"/>
     <exclude name="AtLeastOneConstructor"/>
     <exclude name="CallSuperInConstructor"/>
     <exclude name="AssignmentInOperand"/>
   </rule>
 
-  <rule ref="rulesets/coupling.xml">
+  <rule ref="rulesets/java/coupling.xml">
     <exclude name="CouplingBetweenObjects"/>
   </rule>
 
-  <rule ref="rulesets/design.xml">
-    <exclude name="UseSingleton"/>
+  <rule ref="rulesets/java/design.xml">
+    <exclude name="UseUtilityClass"/>
     <exclude name="AvoidDeeplyNestedIfStmts"/>
     <exclude name="ImmutableField"/>
     <exclude name="SimpleDateFormatNeedsLocale"/>
@@ -40,42 +43,29 @@
     <!-- PMD does not recognize enumberation classes -->
     <exclude name="MissingStaticMethodInNonInstantiatableClass"/>
     <!-- PMD does not find closing method outside of the class -->
-    <exclude name="CloseConnection"/>
     <exclude name="UncommentedEmptyConstructor"/>
-    <exclude name="UncommentedEmptyMethod"/>
-    <exclude name="AvoidConstantsInterface"/>
+    <exclude name="UncommentedEmptyMethodBody"/>
+    <exclude name="ConstantsInInterface"/>
     <exclude name="PositionLiteralsFirstInComparisons"/> <!-- REVIEWME -->
   </rule>
 
-  <rule ref="rulesets/finalizers.xml"/>
+  <rule ref="rulesets/java/finalizers.xml"/>
 
-  <rule ref="rulesets/imports.xml">
+  <rule ref="rulesets/java/imports.xml">
     <exclude name="DuplicateImports"/>
-    <exclude name="ExcessiveImports"/>
   </rule>
 
-  <rule ref="rulesets/javabeans.xml">
+  <rule ref="rulesets/java/javabeans.xml">
     <exclude name="BeanMembersShouldSerialize"/>
   </rule>
 
-  <rule ref="rulesets/logging-java.xml"/>
+  <rule ref="rulesets/java/logging-java.xml"/>
 
-  <rule ref="rulesets/logging-jakarta-commons.xml">
-    <exclude name="ProperLogger"/>
-  </rule>
-
-  <!--<rule ref="rulesets/logging-jakarta-commons.xml/ProperLogger">-->
-     <!--<properties>-->
-         <!--<property name="staticLoggerName" value="log"/>-->
-     <!--</properties>-->
-   <!--</rule>-->
-
-
-  <rule ref="rulesets/migrating.xml">
+  <rule ref="rulesets/java/migrating.xml">
     <exclude name="IntegerInstantiation"/>
   </rule>
 
-  <rule ref="rulesets/naming.xml">
+  <rule ref="rulesets/java/naming.xml">
     <exclude name="LongVariable"/>
     <exclude name="ShortVariable"/>
     <exclude name="VariableNamingConventions"/>
@@ -86,31 +76,30 @@
     <exclude name="AvoidFieldNameMatchingMethodName"/>
   </rule>
 
-  <rule ref="rulesets/optimizations.xml">
+  <rule ref="rulesets/java/optimizations.xml">
     <exclude name="AvoidInstantiatingObjectsInLoops"/>
   </rule>
 
-  <!--<rule ref="rulesets/newrules.xml"/>-->
+  <!--<rule ref="rulesets/java/newrules.xml"/>-->
 
-  <rule ref="rulesets/scratchpad.xml"/>
+  <!--  <rule ref="rulesets/java/scratchpad.xml"/>-->
 
-  <rule ref="rulesets/strictexception.xml">
+  <rule ref="rulesets/java/strictexception.xml">
     <exclude name="SignatureDeclareThrowsException"/>
     <exclude name="ExceptionAsFlowControl"/>
-    <exclude name="AvoidThrowingCertainExceptionTypes"/>
     <exclude name="AvoidThrowingRawExceptionTypes"/>
   </rule>
 
-  <rule ref="rulesets/strings.xml">
+  <rule ref="rulesets/java/strings.xml">
     <exclude name="AvoidDuplicateLiterals"/>
     <exclude name="ConsecutiveLiteralAppends"/>
   </rule>
 
-  <rule ref="rulesets/sunsecure.xml">
+  <rule ref="rulesets/java/sunsecure.xml">
   </rule>
 
-  <rule ref="rulesets/unusedcode.xml">
-<!--    <exclude name="UnusedPrivateField"/>-->
+  <rule ref="rulesets/java/unusedcode.xml">
+    <!--    <exclude name="UnusedPrivateField"/>-->
     <!-- PMD complains on actually used method BuildConfigTabs.validate -->
     <exclude name="UnusedPrivateMethod"/>
   </rule>

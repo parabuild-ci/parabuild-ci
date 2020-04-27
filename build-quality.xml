@@ -3,19 +3,23 @@
 
   <!-- Taskdefs -->
   <target name="quality.prepare">
+
     <!-- PMD -->
     <path id="pmd.classpath">
-      <path refid="common.classpath"/>
-      <fileset dir="${pmd.home}/lib">
-        <include name="**/*.jar"/>
+<!--      <path refid="common.classpath"/>-->
+      <fileset dir="${pmd.home}/bin/lib">
+        <include name="*.jar"/>
       </fileset>
     </path>
+
     <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask">
       <classpath refid="pmd.classpath"/>
     </taskdef>
+
     <taskdef name="cpd" classname="net.sourceforge.pmd.cpd.CPDTask">
       <classpath refid="pmd.classpath"/>
     </taskdef>
+
     <!-- finbugs -->
     <taskdef name="findbugs" classname="edu.umd.cs.findbugs.anttask.FindBugsTask">
       <classpath>
@@ -24,28 +28,35 @@
         </fileset>
       </classpath>
     </taskdef>
+
   </target>
 
 
   <!-- Runs pmd -->
   <target name="quality.pmd.product" depends="quality.prepare">
-    <pmd rulesetfiles="${config}/parabuild-pmd.xml">
+
+    <mkdir dir="${build.dir}/pmd"/>
+    <touch file="${build.dir}/pmd/cache"/>
+
+    <pmd rulesetfiles="${config}/parabuild-pmd.xml" cacheLocation="${build.dir}/pmd/cache">
       <formatter type="html" toFile="${test.quality.logs}/pmd_report.html"/>
       <formatter type="xml" toFile="${test.quality.logs}/pmd_report.xml"/>
       <fileset dir="${src}" includes="**/*.java"/>
     </pmd>
+
     <cpd minimumTokenCount="50" outputFile="${test.quality.logs}/cpd_report.txt">
       <fileset dir="${src}" includes="**/*.java"/>
     </cpd>
+
   </target>
 
 
   <!-- Runs findbugs on src -->
   <target name="quality.findbugs.product">
     <findbugs home="${findbugs.home}"
-      output="text" outputFile="${test.quality.logs}/findbug-result.txt"
-      excludeFilter="${config}/parabuild-findbugs.xml"
-      reportLevel="medium" quietErrors="true" workHard="true">
+              output="text" outputFile="${test.quality.logs}/findbug-result.txt"
+              excludeFilter="${config}/parabuild-findbugs.xml"
+              reportLevel="medium" quietErrors="true" workHard="true">
       <auxClasspath>
         <path refid="compile.classpath"/>
       </auxClasspath>
@@ -53,7 +64,6 @@
       <sourcePath path="${src}"/>
     </findbugs>
   </target>
-
 
 
   <!-- Runs checkstyle on src -->
@@ -79,8 +89,8 @@
 
   <target name="quality.findbugs.hessian" if="hessian.quality.enabled">
     <findbugs home="${findbugs.home}"
-      output="text" outputFile="${test.quality.logs}/findbug-hessian-result.txt"
-      reportLevel="low" quietErrors="false" workHard="true">
+              output="text" outputFile="${test.quality.logs}/findbug-hessian-result.txt"
+              reportLevel="low" quietErrors="false" workHard="true">
       <auxClasspath>
         <path refid="compile.classpath"/>
       </auxClasspath>
@@ -90,7 +100,7 @@
   </target>
 
   <target name="quality.all" depends=
-    "quality.checkstyle.product,
+          "quality.checkstyle.product,
      quality.pmd.hessian,
      quality.findbugs.hessian,
      quality.pmd.product,
