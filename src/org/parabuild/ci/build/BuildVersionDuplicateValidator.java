@@ -13,13 +13,16 @@
  */
 package org.parabuild.ci.build;
 
-import java.util.*;
-import org.apache.commons.logging.*;
-
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.common.ValidationException;
-import org.parabuild.ci.util.*;
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.configuration.ConfigurationManager;
+import org.parabuild.ci.object.BuildConfigAttribute;
+import org.parabuild.ci.object.BuildRunAttribute;
+import org.parabuild.ci.util.BuildVersionGenerator;
+import org.parabuild.ci.util.StringUtils;
+
+import java.util.List;
 
 /**
  * This functor is responsible for validating that there are no
