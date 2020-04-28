@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.build;
 
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.object.BuildRun;
+import org.parabuild.ci.object.BuildSequence;
 
 /**
  * Created by IntelliJ IDEA. User: vimeshev Date: Aug 3, 2005
