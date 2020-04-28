@@ -13,12 +13,21 @@
  */
 package org.parabuild.ci.notification;
 
-import java.text.*;
-import java.util.*;
+import org.parabuild.ci.configuration.ConfigurationConstants;
+import org.parabuild.ci.configuration.ConfigurationManager;
+import org.parabuild.ci.configuration.SystemConfigurationManager;
+import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
+import org.parabuild.ci.object.BuildConfigAttribute;
+import org.parabuild.ci.object.BuildRun;
+import org.parabuild.ci.object.Change;
+import org.parabuild.ci.object.ChangeList;
+import org.parabuild.ci.object.SystemProperty;
+import org.parabuild.ci.util.CommonConstants;
 
-import org.parabuild.ci.util.*;
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.object.*;
+import java.text.SimpleDateFormat;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
 
 /**
  * @see ChangeListDescriptionGenerator

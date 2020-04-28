@@ -13,17 +13,21 @@
  */
 package org.parabuild.ci.feed;
 
-import java.io.*;
-import java.util.*;
-import javax.servlet.http.*;
-
 import com.sun.syndication.feed.synd.SyndFeed;
 import com.sun.syndication.io.FeedException;
 import com.sun.syndication.io.SyndFeedOutput;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.object.User;
 import org.parabuild.ci.security.AccessForbiddenException;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.Pages;
+
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This servlet is responsible for presenting syndicated build

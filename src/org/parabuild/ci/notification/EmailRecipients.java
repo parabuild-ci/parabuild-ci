@@ -13,9 +13,10 @@
  */
 package org.parabuild.ci.notification;
 
-import java.util.*;
+import org.parabuild.ci.util.ArgumentValidator;
 
-import org.parabuild.ci.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * EmailRecipients is an aggregate holding "To" and "Bcc" lists. Each list

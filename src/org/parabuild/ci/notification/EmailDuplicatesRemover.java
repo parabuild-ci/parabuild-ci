@@ -13,8 +13,11 @@
  */
 package org.parabuild.ci.notification;
 
-import java.util.*;
-import javax.mail.internet.*;
+import javax.mail.internet.InternetAddress;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Utility class to remove duplicates from a list of

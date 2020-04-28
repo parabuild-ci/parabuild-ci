@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.notification;
 
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.object.BuildRun;
 
 /**
  * This class isolates caller from underlying implementation of

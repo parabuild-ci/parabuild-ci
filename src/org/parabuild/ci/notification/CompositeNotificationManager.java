@@ -13,10 +13,6 @@
  */
 package org.parabuild.ci.notification;
 
-import java.io.*;
-import java.util.*;
-import javax.mail.*;
-
 import org.parabuild.ci.error.Error;
 import org.parabuild.ci.error.ErrorManager;
 import org.parabuild.ci.object.BranchMergeConfiguration;
@@ -24,6 +20,13 @@ import org.parabuild.ci.object.BuildRun;
 import org.parabuild.ci.object.BuildSequence;
 import org.parabuild.ci.object.ChangeList;
 import org.parabuild.ci.object.StepRun;
+
+import javax.mail.MessagingException;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Composite notification manager is a composition of multiple

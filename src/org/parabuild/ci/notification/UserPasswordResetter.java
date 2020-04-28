@@ -13,12 +13,13 @@
  */
 package org.parabuild.ci.notification;
 
-import java.security.*;
-import java.util.*;
-
-import org.parabuild.ci.util.*;
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.object.User;
 import org.parabuild.ci.security.SecurityManager;
+import org.parabuild.ci.util.FatalConfigurationException;
+import org.parabuild.ci.util.StringUtils;
+
+import java.security.NoSuchAlgorithmException;
+import java.util.Random;
 
 /**
  * Resets user password and sends notification.

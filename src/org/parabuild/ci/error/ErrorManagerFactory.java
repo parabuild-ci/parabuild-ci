@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.error;
 
-import org.parabuild.ci.error.impl.*;
+import org.parabuild.ci.error.impl.ErrorManagerImpl;
 
 /**
  * This class separates client of ErrorManager interface from its

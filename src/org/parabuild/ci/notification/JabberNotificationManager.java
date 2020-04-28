@@ -13,17 +13,27 @@
  */
 package org.parabuild.ci.notification;
 
-import java.util.*;
-import org.apache.commons.logging.*;
-import org.jivesoftware.smack.*;
-import org.jivesoftware.smack.packet.*;
-
-import org.parabuild.ci.util.*;
-import org.parabuild.ci.configuration.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.jivesoftware.smack.Chat;
+import org.jivesoftware.smack.Roster;
+import org.jivesoftware.smack.XMPPConnection;
+import org.jivesoftware.smack.XMPPException;
+import org.jivesoftware.smack.packet.Presence;
+import org.parabuild.ci.configuration.ConfigurationConstants;
+import org.parabuild.ci.configuration.SystemConfigurationManager;
+import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.error.Error;
-import org.parabuild.ci.error.*;
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.error.ErrorManager;
+import org.parabuild.ci.error.ErrorManagerFactory;
+import org.parabuild.ci.object.SystemProperty;
+import org.parabuild.ci.object.User;
 import org.parabuild.ci.security.SecurityManager;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
+
+import java.util.Collection;
+import java.util.Iterator;
 
 /**
  * This notification manager responsible for providing

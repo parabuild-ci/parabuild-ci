@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.notification;
 
-import org.parabuild.ci.configuration.*;
+import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 
 /**
  * Makes URL pointing to build run changes page to be sent by a
