@@ -13,10 +13,12 @@
  */
 package org.parabuild.ci.configuration;
 
-import java.sql.*;
-import org.apache.commons.logging.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.object.SystemProperty;
 
-import org.parabuild.ci.object.*;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 /**
  * Increments build sequence number.
