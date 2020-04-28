@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.configuration;
 
-import net.sf.hibernate.*;
+import net.sf.hibernate.Session;
 
 
 /**
