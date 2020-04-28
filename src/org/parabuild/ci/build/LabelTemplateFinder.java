@@ -13,12 +13,17 @@
  */
 package org.parabuild.ci.build;
 
-import java.util.*;
-import org.apache.commons.logging.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.configuration.ConfigurationManager;
+import org.parabuild.ci.object.BuildConfig;
+import org.parabuild.ci.object.LabelProperty;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.StringUtils;
 
-import org.parabuild.ci.util.*;
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.object.*;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * Find duplicate label templates
