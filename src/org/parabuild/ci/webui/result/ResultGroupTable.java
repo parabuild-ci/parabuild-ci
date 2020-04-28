@@ -13,14 +13,25 @@
  */
 package org.parabuild.ci.webui.result;
 
-import java.util.*;
-import org.apache.commons.logging.*;
-
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.security.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.object.ResultGroup;
+import org.parabuild.ci.security.ResultGroupRights;
 import org.parabuild.ci.security.SecurityManager;
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import org.parabuild.ci.webui.common.AbstractFlatTable;
+import org.parabuild.ci.webui.common.BreakLabel;
+import org.parabuild.ci.webui.common.CommonLabel;
+import org.parabuild.ci.webui.common.CommonLink;
+import org.parabuild.ci.webui.common.Pages;
+import org.parabuild.ci.webui.common.TableHeaderLabel;
+import viewtier.ui.Component;
+import viewtier.ui.Flow;
+import viewtier.ui.Label;
+import viewtier.ui.Link;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Properties;
 
 /**
  * This table displays list of result groups.

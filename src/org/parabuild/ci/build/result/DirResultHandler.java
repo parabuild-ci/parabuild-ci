@@ -17,7 +17,6 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.archive.ArchiveEntry;
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.object.BuildRunConfig;
 import org.parabuild.ci.object.ResultConfig;
 import org.parabuild.ci.object.ResultConfigProperty;
@@ -25,6 +24,7 @@ import org.parabuild.ci.object.StepResult;
 import org.parabuild.ci.object.StepRun;
 import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.remote.services.RemoteFileDescriptor;
+import org.parabuild.ci.util.StringUtils;
 
 import java.io.File;
 import java.io.IOException;

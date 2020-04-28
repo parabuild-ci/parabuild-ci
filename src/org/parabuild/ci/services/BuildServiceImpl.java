@@ -27,8 +27,6 @@ import org.parabuild.ci.build.RepeatableScheduler;
 import org.parabuild.ci.build.RunnerStatus;
 import org.parabuild.ci.build.SchedulerStatus;
 import org.parabuild.ci.build.StopRequestImpl;
-import org.parabuild.ci.util.ExceptionUtils;
-import org.parabuild.ci.util.ThreadUtils;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.error.Error;
 import org.parabuild.ci.error.ErrorManagerFactory;
@@ -39,6 +37,8 @@ import org.parabuild.ci.process.RemoteCommandManager;
 import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.statistics.StatisticsMonitor;
 import org.parabuild.ci.statistics.TimeToFixMonitor;
+import org.parabuild.ci.util.ExceptionUtils;
+import org.parabuild.ci.util.ThreadUtils;
 import org.parabuild.ci.versioncontrol.SourceControl;
 import org.parabuild.ci.versioncontrol.VersionControlFactory;
 

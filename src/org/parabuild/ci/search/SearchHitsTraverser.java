@@ -13,11 +13,11 @@
  */
 package org.parabuild.ci.search;
 
-import org.apache.commons.logging.*;
-import org.apache.lucene.document.*;
-import org.apache.lucene.search.*;
-
-import org.parabuild.ci.util.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.lucene.document.Document;
+import org.apache.lucene.search.Hits;
+import org.parabuild.ci.util.IoUtils;
 
 /**
  * Traverses hits.

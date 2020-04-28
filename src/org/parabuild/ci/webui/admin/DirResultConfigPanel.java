@@ -14,8 +14,12 @@
 package org.parabuild.ci.webui.admin;
 
 import org.parabuild.ci.common.InputValidator;
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.webui.common.*;
+import org.parabuild.ci.object.ResultConfig;
+import org.parabuild.ci.object.ResultConfigProperty;
+import org.parabuild.ci.webui.common.CommonField;
+import org.parabuild.ci.webui.common.CommonFieldLabel;
+import org.parabuild.ci.webui.common.ExtensionListField;
+import org.parabuild.ci.webui.common.RequiredFieldMarker;
 
 /**
  * Panel to configure a list of files (directory) as build result

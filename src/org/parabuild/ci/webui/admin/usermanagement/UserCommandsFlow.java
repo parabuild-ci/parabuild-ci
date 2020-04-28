@@ -13,10 +13,13 @@
  */
 package org.parabuild.ci.webui.admin.usermanagement;
 
-import java.util.*;
+import org.parabuild.ci.webui.common.CommonLink;
+import org.parabuild.ci.webui.common.Pages;
+import viewtier.ui.Flow;
+import viewtier.ui.Label;
+import viewtier.ui.Link;
 
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import java.util.Properties;
 
 /**
  * List of commands available for a parcticular user in a users

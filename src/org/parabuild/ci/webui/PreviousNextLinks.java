@@ -13,8 +13,10 @@
  */
 package org.parabuild.ci.webui;
 
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import org.parabuild.ci.webui.common.CommonLabel;
+import viewtier.ui.Component;
+import viewtier.ui.Flow;
+import viewtier.ui.Label;
 
 /**
  *

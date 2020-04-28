@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.merge.merger;
 
-import java.text.*;
+import java.text.MessageFormat;
 
 /**
  * Generates a description for a chage list that is a result

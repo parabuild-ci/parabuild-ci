@@ -15,17 +15,22 @@ package org.parabuild.ci.webui;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.util.FatalConfigurationException;
-import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.object.DisplayGroup;
 import org.parabuild.ci.object.User;
 import org.parabuild.ci.object.UserProperty;
 import org.parabuild.ci.security.SecurityManager;
+import org.parabuild.ci.util.FatalConfigurationException;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.BasePage;
 import org.parabuild.ci.webui.common.Pages;
 import org.parabuild.ci.webui.common.ReturnTierletAttribuite;
-import org.parabuild.ci.common.WebUIConstants;
-import viewtier.ui.*;
+import viewtier.ui.ConversationalTierlet;
+import viewtier.ui.Label;
+import viewtier.ui.Layout;
+import viewtier.ui.Panel;
+import viewtier.ui.Parameters;
+import viewtier.ui.Tierlet;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;

@@ -13,9 +13,9 @@
  */
 package org.parabuild.ci.build;
 
-import java.io.IOException;
-
 import org.parabuild.ci.remote.Agent;
+
+import java.io.IOException;
 
 /**
  * Create build script runner

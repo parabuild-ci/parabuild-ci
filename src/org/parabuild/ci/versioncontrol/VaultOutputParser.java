@@ -13,13 +13,19 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.io.*;
-import org.xml.sax.*;
-
-import com.dautelle.xml.sax.*;
 import com.dautelle.xml.sax.Attributes;
 import com.dautelle.xml.sax.ContentHandler;
-import org.parabuild.ci.util.*;
+import com.dautelle.xml.sax.RealtimeParser;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
+import org.xml.sax.InputSource;
+import org.xml.sax.Locator;
+import org.xml.sax.SAXException;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * Repsonsible for parsing Vault XML output.

@@ -13,9 +13,11 @@
  */
 package org.parabuild.ci.remote.services;
 
-import java.io.*;
+import org.parabuild.ci.util.ArgumentValidator;
 
-import org.parabuild.ci.util.*;
+import java.io.File;
+import java.io.IOException;
+import java.io.Serializable;
 
 /**
  * A value object to hold information about a file in a remote

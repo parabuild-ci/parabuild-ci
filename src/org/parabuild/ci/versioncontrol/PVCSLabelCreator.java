@@ -13,11 +13,11 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.io.IOException;
-import java.util.List;
-
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.util.CommandStoppedException;
+
+import java.io.IOException;
+import java.util.List;
 
 /**
  * This integface defines PVCS label creator that is

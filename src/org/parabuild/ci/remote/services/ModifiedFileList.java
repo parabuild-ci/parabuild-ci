@@ -13,8 +13,9 @@
  */
 package org.parabuild.ci.remote.services;
 
-import java.io.*;
-import java.util.*;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * List of modified files

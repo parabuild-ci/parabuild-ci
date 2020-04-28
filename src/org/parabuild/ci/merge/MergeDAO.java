@@ -13,8 +13,6 @@
  */
 package org.parabuild.ci.merge;
 
-import java.util.*;
-
 import net.sf.hibernate.Hibernate;
 import net.sf.hibernate.Query;
 import org.parabuild.ci.configuration.ConfigurationManager;
@@ -31,6 +29,10 @@ import org.parabuild.ci.object.MergeConfigurationAttribute;
 import org.parabuild.ci.object.MergeServiceConfiguration;
 import org.parabuild.ci.object.MergeSourceBuildRun;
 import org.parabuild.ci.object.MergeTargetBuildRun;
+
+import java.util.Collection;
+import java.util.Date;
+import java.util.List;
 
 /**
  * Data access object for merge subsystem.

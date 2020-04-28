@@ -13,9 +13,9 @@
  */
 package org.parabuild.ci.webui;
 
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.object.ChangeList;
 import org.parabuild.ci.object.SimpleChange;
+import org.parabuild.ci.util.StringUtils;
 
 /**
  */

@@ -13,16 +13,15 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.io.IOException;
-import java.util.List;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.util.CommandStoppedException;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.remote.Agent;
+
+import java.io.IOException;
+import java.util.List;
 
 /**
  * This class is responsible for creating PCLI labeing

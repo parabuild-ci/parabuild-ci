@@ -13,11 +13,18 @@
  */
 package org.parabuild.ci.webui.common;
 
-import org.apache.commons.logging.*;
-
-import org.parabuild.ci.util.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.SearchPage;
-import viewtier.ui.*;
+import viewtier.ui.ButtonPressedEvent;
+import viewtier.ui.ButtonPressedListener;
+import viewtier.ui.Flow;
+import viewtier.ui.Label;
+import viewtier.ui.Layout;
+import viewtier.ui.Panel;
+import viewtier.ui.Parameters;
+import viewtier.ui.Tierlet;
 
 /**
  * Shows a low-profile panel that contains optional Previous/Next

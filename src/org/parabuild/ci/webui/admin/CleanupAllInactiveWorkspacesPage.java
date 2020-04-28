@@ -13,18 +13,15 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import java.util.List;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.parabuild.ci.build.BuildState;
 import org.parabuild.ci.build.BuildStatus;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.AgentHost;
 import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.remote.AgentManager;
 import org.parabuild.ci.services.BuildManager;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.BasePage;
 import org.parabuild.ci.webui.common.BoldCommonLabel;
 import org.parabuild.ci.webui.common.CancelButton;
@@ -41,6 +38,8 @@ import viewtier.ui.Flow;
 import viewtier.ui.Label;
 import viewtier.ui.Layout;
 import viewtier.ui.Parameters;
+
+import java.util.List;
 
 /**
  * This page is repsonsible for cleaning up directories for all inactive workspaces.

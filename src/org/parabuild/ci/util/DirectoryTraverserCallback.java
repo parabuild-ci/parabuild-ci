@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.util;
 
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
 
 /**
  * This interface defines a callback method used when traversing a

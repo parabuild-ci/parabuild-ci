@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.webui;
 
-import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.BuildRun;
@@ -21,17 +21,17 @@ import org.parabuild.ci.object.BuildRunAttribute;
 import org.parabuild.ci.object.BuildRunConfig;
 import org.parabuild.ci.object.BuildStepType;
 import org.parabuild.ci.object.StartParameterType;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.admin.BuildSequenceTable;
 import org.parabuild.ci.webui.admin.ManualStartParametersPanel;
+import org.parabuild.ci.webui.admin.NotificationSettingsPanel;
 import org.parabuild.ci.webui.admin.SourceControlPanel;
 import org.parabuild.ci.webui.admin.SourceControlPanelFactory;
-import org.parabuild.ci.webui.admin.NotificationSettingsPanel;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.CommonLabel;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.MessagePanel;
 import org.parabuild.ci.webui.common.Pages;
-import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.ConversationalTierlet;
 import viewtier.ui.Flow;

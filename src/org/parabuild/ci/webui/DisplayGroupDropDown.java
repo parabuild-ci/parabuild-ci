@@ -13,11 +13,11 @@
  */
 package org.parabuild.ci.webui;
 
-import java.util.*;
-
 import org.parabuild.ci.configuration.DisplayGroupManager;
 import org.parabuild.ci.object.DisplayGroup;
 import org.parabuild.ci.webui.common.CodeNameDropDown;
+
+import java.util.Iterator;
 
 /**
  * This class lists available build groups.

@@ -13,7 +13,9 @@
  */
 package org.parabuild.ci.webui.common;
 
-import viewtier.ui.*;
+import viewtier.ui.Border;
+import viewtier.ui.Label;
+import viewtier.ui.Layout;
 
 /**
  * This label carries a style for page section header - smaller than

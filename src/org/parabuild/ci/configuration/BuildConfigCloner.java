@@ -20,6 +20,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.BuildStatus;
 import org.parabuild.ci.build.SystemVariableConfigurationManager;
+import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.error.Error;
 import org.parabuild.ci.error.ErrorManager;
@@ -55,7 +56,6 @@ import org.parabuild.ci.services.BuildListService;
 import org.parabuild.ci.services.ServiceManager;
 import org.parabuild.ci.util.SourceControlSettingResolver;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.common.ValidationException;
 
 import java.util.ArrayList;
 import java.util.Collection;

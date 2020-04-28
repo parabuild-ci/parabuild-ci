@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.text.*;
+import java.text.SimpleDateFormat;
 
 /**
  * ClearCase constants holder.

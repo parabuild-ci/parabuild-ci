@@ -13,10 +13,10 @@
  */
 package org.parabuild.ci.webui.common;
 
-import java.io.*;
+import org.parabuild.ci.util.StringUtils;
+import viewtier.ui.Parameters;
 
-import org.parabuild.ci.util.*;
-import viewtier.ui.*;
+import java.io.Serializable;
 
 /**
  * Attribute to keep return tierlet path and params. This class is used to keep

@@ -14,9 +14,10 @@
 package org.parabuild.ci.webui.admin;
 
 import org.parabuild.ci.common.ValidationException;
-import org.parabuild.ci.util.*;
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.configuration.ConfigurationManager;
+import org.parabuild.ci.object.ActiveBuildAttribute;
+import org.parabuild.ci.object.BuildConfig;
+import org.parabuild.ci.util.StringUtils;
 
 /**
  *

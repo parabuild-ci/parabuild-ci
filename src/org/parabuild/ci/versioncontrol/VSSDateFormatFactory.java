@@ -13,8 +13,8 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.text.*;
-import java.util.*;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 /**
  * Provides date formats according to Locale

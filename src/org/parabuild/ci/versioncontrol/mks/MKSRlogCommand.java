@@ -13,11 +13,11 @@
  */
 package org.parabuild.ci.versioncontrol.mks;
 
-import java.io.IOException;
-
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.remote.Agent;
+import org.parabuild.ci.util.StringUtils;
+
+import java.io.IOException;
 
 /**
  * Created by simeshev on Apr 18, 2006 at 3:42:16 PM

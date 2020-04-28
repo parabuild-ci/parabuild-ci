@@ -13,12 +13,14 @@
  */
 package org.parabuild.ci.versioncontrol.perforce;
 
-import java.io.*;
-import java.util.*;
-
+import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.common.ValidationException;
+
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.util.Collection;
+import java.util.Iterator;
 
 /**
  * Creates a client view lines ready for including into spec. It

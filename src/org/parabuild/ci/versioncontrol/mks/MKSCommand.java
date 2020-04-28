@@ -13,16 +13,15 @@
  */
 package org.parabuild.ci.versioncontrol.mks;
 
-import java.io.IOException;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.remote.Agent;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.versioncontrol.StderrLineProcessor;
 import org.parabuild.ci.versioncontrol.VersionControlRemoteCommand;
+
+import java.io.IOException;
 
 /**
  * Base command for all MKS commands

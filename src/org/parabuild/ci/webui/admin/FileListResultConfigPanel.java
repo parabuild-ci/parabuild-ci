@@ -16,7 +16,6 @@ package org.parabuild.ci.webui.admin;
 import org.parabuild.ci.object.ResultConfig;
 import org.parabuild.ci.object.ResultConfigProperty;
 import org.parabuild.ci.webui.common.CommonText;
-import viewtier.ui.Text;
 
 /**
  * Panel to configure single file customer build result

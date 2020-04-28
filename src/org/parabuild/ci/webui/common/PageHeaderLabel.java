@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.webui.common;
 
-import viewtier.ui.*;
+import viewtier.ui.Border;
+import viewtier.ui.Label;
 
 /**
  * This label carries a style for page header - big, blue and with a border at

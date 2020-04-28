@@ -13,16 +13,21 @@
  */
 package org.parabuild.ci.configuration;
 
-import java.sql.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
-import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.object.ActiveBuildAttribute;
 import org.parabuild.ci.object.BuildRun;
 import org.parabuild.ci.object.BuildRunAttribute;
 import org.parabuild.ci.statistics.Averager;
 import org.parabuild.ci.statistics.MovingAverager;
+import org.parabuild.ci.util.IoUtils;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.Timestamp;
 
 /**
  * This upgrader calculates time to fix.

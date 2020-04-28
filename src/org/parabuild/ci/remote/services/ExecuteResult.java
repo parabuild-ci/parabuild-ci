@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.remote.services;
 
-import java.io.*;
+import java.io.Serializable;
 
 /**
  * Returned by execute commands of BuilderEnvironmentWebService. Holds

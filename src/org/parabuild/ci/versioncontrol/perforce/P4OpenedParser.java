@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.versioncontrol.perforce;
 
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
 
 /**
  * Parser to parse content of the p4 opened

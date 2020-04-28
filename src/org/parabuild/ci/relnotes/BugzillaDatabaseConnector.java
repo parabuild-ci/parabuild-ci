@@ -14,7 +14,7 @@
 package org.parabuild.ci.relnotes;
 
 import java.sql.Date;
-import java.util.*;
+import java.util.Collection;
 
 /**
  * Created by IntelliJ IDEA.

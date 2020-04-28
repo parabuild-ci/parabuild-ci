@@ -13,12 +13,16 @@
  */
 package org.parabuild.ci.webui;
 
-import java.util.*;
+import org.parabuild.ci.configuration.ConfigurationManager;
+import org.parabuild.ci.object.BuildRun;
+import org.parabuild.ci.webui.common.BoldCommonLabel;
+import org.parabuild.ci.webui.common.CommonLink;
+import org.parabuild.ci.webui.common.WebuiUtils;
+import viewtier.ui.Component;
+import viewtier.ui.Panel;
 
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * This panel holds links with names and IDs of a leading

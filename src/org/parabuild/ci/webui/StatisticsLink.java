@@ -13,11 +13,11 @@
  */
 package org.parabuild.ci.webui;
 
-import java.util.*;
-
 import org.parabuild.ci.object.ActiveBuildConfig;
 import org.parabuild.ci.webui.common.CommonLink;
 import org.parabuild.ci.webui.common.Pages;
+
+import java.util.Properties;
 
 final class StatisticsLink extends CommonLink {
 

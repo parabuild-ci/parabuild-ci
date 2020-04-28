@@ -15,10 +15,9 @@ package org.parabuild.ci.webui.admin.promotion;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.object.PromotionPolicyStep;
 import org.parabuild.ci.promotion.PromotionConfigurationManager;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.admin.system.AuthenticatedSystemConfigurationPage;
 import org.parabuild.ci.webui.common.BoldCommonLabel;
 import org.parabuild.ci.webui.common.CancelButton;

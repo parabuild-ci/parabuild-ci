@@ -13,18 +13,16 @@
  */
 package org.parabuild.ci.webui.admin.promotion;
 
-import java.util.List;
-
-import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.object.PromotionPolicy;
 import org.parabuild.ci.promotion.PromotionConfigurationManager;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.CommonCommandLinkWithImage;
 import org.parabuild.ci.webui.admin.system.NavigatableSystemConfigurationPage;
 import org.parabuild.ci.webui.common.CommonBoldLink;
 import org.parabuild.ci.webui.common.CommonFlow;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.Pages;
-import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Component;
 import viewtier.ui.Label;
@@ -32,6 +30,8 @@ import viewtier.ui.Layout;
 import viewtier.ui.Link;
 import viewtier.ui.Parameters;
 import viewtier.ui.StatelessTierlet;
+
+import java.util.List;
 
 /**
  * Edits given promotion policy configuration. If the promotion policy

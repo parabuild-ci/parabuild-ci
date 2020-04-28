@@ -13,9 +13,13 @@
  */
 package org.parabuild.ci.process;
 
-import java.util.*;
+import org.parabuild.ci.util.StringUtils;
 
-import org.parabuild.ci.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 /**
  * This class is a registry for process signatures.

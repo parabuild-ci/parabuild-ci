@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.object.BuildConfig;
 
 /**
  * Parallel schedule allow for basic settings defined by the

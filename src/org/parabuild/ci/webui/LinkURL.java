@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.webui;
 
-import java.util.*;
+import java.util.Properties;
 
 /**
  * Value object to hold a URL and parameters. This allows

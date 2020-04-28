@@ -13,16 +13,15 @@
  */
 package org.parabuild.ci.promotion;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import net.sf.hibernate.Hibernate;
 import net.sf.hibernate.Query;
-
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.TransactionCallback;
 import org.parabuild.ci.object.PromotionPolicy;
 import org.parabuild.ci.object.PromotionPolicyStep;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public final class PromotionConfigurationManager {
 

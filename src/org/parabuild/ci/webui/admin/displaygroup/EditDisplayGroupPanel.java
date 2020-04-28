@@ -13,17 +13,27 @@
  */
 package org.parabuild.ci.webui.admin.displaygroup;
 
-import java.util.*;
-import org.apache.commons.logging.*;
-
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.common.InputValidator;
-import org.parabuild.ci.webui.common.*;
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.util.*;
-import org.parabuild.ci.error.*;
+import org.parabuild.ci.configuration.DisplayGroupManager;
 import org.parabuild.ci.error.Error;
-import org.parabuild.ci.configuration.*;
-import viewtier.ui.*;
+import org.parabuild.ci.error.ErrorManagerFactory;
+import org.parabuild.ci.object.DisplayGroup;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.webui.common.CommonField;
+import org.parabuild.ci.webui.common.CommonFieldLabel;
+import org.parabuild.ci.webui.common.GridIterator;
+import org.parabuild.ci.webui.common.MessagePanel;
+import org.parabuild.ci.webui.common.Pages;
+import org.parabuild.ci.webui.common.RequiredFieldMarker;
+import org.parabuild.ci.webui.common.Saveable;
+import org.parabuild.ci.webui.common.Validatable;
+import viewtier.ui.Layout;
+import viewtier.ui.Panel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Panel to edit display group.

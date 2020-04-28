@@ -13,9 +13,10 @@
  */
 package org.parabuild.ci.configuration;
 
-import java.io.*;
+import org.parabuild.ci.object.ChangeList;
+import org.parabuild.ci.object.Issue;
 
-import org.parabuild.ci.object.*;
+import java.io.Serializable;
 
 /**
  * This value object contains a pair of a change list and

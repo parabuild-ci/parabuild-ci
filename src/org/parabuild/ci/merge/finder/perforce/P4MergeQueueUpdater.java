@@ -13,12 +13,8 @@
  */
 package org.parabuild.ci.merge.finder.perforce;
 
-import java.util.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
-import org.parabuild.ci.util.CommandStoppedException;
-import org.parabuild.ci.util.ThreadUtils;
 import org.parabuild.ci.configuration.BuildRunParticipantVO;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.merge.MergeDAO;
@@ -27,10 +23,17 @@ import org.parabuild.ci.object.BranchChangeList;
 import org.parabuild.ci.object.BranchMergeConfiguration;
 import org.parabuild.ci.object.BuildRun;
 import org.parabuild.ci.object.ChangeList;
-import org.parabuild.ci.object.MergeConfigurationAttribute;
 import org.parabuild.ci.object.Merge;
-import org.parabuild.ci.object.MergeSourceBuildRun;
 import org.parabuild.ci.object.MergeChangeList;
+import org.parabuild.ci.object.MergeConfigurationAttribute;
+import org.parabuild.ci.object.MergeSourceBuildRun;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.ThreadUtils;
+
+import java.util.Collection;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * Responsible for updating merge queue.

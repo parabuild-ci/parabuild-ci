@@ -15,13 +15,13 @@ package org.parabuild.ci.versioncontrol;
 
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.build.BuildScriptGenerator;
-import org.parabuild.ci.util.BuildException;
-import org.parabuild.ci.util.CommandStoppedException;
 import org.parabuild.ci.configuration.AgentHost;
 import org.parabuild.ci.error.ErrorManager;
 import org.parabuild.ci.error.ErrorManagerFactory;
 import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.remote.internal.LocalBuilderFiles;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.CommandStoppedException;
 
 import java.io.IOException;
 import java.util.Map;

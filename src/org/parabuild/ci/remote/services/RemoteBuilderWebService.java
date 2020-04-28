@@ -13,13 +13,16 @@
  */
 package org.parabuild.ci.remote.services;
 
-import java.io.*;
-import java.util.*;
-
-import org.parabuild.ci.util.*;
-import org.parabuild.ci.remote.internal.*;
-import org.parabuild.ci.services.TailUpdate;
 import org.parabuild.ci.process.TailBufferSize;
+import org.parabuild.ci.remote.internal.LocalBuilderFiles;
+import org.parabuild.ci.remote.internal.LocaleData;
+import org.parabuild.ci.services.TailUpdate;
+import org.parabuild.ci.util.CommandStoppedException;
+
+import java.io.IOException;
+import java.io.Serializable;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Native environment of a agent box.

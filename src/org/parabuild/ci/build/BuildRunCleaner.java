@@ -19,13 +19,13 @@ import net.sf.hibernate.Session;
 import net.sf.hibernate.type.Type;
 import org.parabuild.ci.archive.ArchiveManager;
 import org.parabuild.ci.archive.ArchiveManagerFactory;
-import org.parabuild.ci.util.ArgumentValidator;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.TransactionCallback;
 import org.parabuild.ci.object.BuildRunAttribute;
 import org.parabuild.ci.object.StepLog;
 import org.parabuild.ci.object.StepResult;
 import org.parabuild.ci.object.StepRun;
+import org.parabuild.ci.util.ArgumentValidator;
 
 import java.io.IOException;
 import java.util.Iterator;

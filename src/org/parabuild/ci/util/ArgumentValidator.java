@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.util;
 
-import java.util.*;
+import java.util.List;
 
 /**
  * Method attribute utils.

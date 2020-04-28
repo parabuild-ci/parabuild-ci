@@ -13,9 +13,9 @@
  */
 package org.parabuild.ci.statistics;
 
-import java.util.*;
+import org.parabuild.ci.object.BuildRun;
 
-import org.parabuild.ci.object.*;
+import java.util.SortedMap;
 
 /**
  * Created by simeshev on Jan 18, 2005 at 11:16:53 AM

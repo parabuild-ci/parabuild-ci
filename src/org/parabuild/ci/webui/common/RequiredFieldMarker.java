@@ -13,7 +13,11 @@
  */
 package org.parabuild.ci.webui.common;
 
-import viewtier.ui.*;
+import viewtier.ui.Color;
+import viewtier.ui.Component;
+import viewtier.ui.Flow;
+import viewtier.ui.Label;
+import viewtier.ui.Layout;
 
 /**
  */

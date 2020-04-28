@@ -15,10 +15,6 @@ package org.parabuild.ci.build;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.quartz.Job;
-import org.quartz.JobDataMap;
-import org.quartz.JobExecutionContext;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.AgentHost;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManager;
@@ -31,8 +27,12 @@ import org.parabuild.ci.object.ScheduleProperty;
 import org.parabuild.ci.remote.AgentManager;
 import org.parabuild.ci.services.BuildManager;
 import org.parabuild.ci.services.BuildStartRequest;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.versioncontrol.SourceControl;
 import org.parabuild.ci.versioncontrol.VersionControlFactory;
+import org.quartz.Job;
+import org.quartz.JobDataMap;
+import org.quartz.JobExecutionContext;
 
 import java.util.Date;
 import java.util.HashSet;

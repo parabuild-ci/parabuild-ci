@@ -13,9 +13,14 @@
  */
 package org.parabuild.ci.util;
 
-import java.io.*;
-import java.util.*;
-import org.apache.commons.logging.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.StringReader;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This class is repsonsible for parsing input stream containing

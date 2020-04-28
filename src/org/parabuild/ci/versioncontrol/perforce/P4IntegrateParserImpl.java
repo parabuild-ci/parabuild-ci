@@ -13,13 +13,19 @@
  */
 package org.parabuild.ci.versioncontrol.perforce;
 
-import java.io.*;
-import java.util.*;
-import java.util.regex.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.parabuild.ci.util.IoUtils;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Collection;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Perforce integrate parser.

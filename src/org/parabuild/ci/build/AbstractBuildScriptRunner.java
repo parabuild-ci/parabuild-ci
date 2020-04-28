@@ -13,21 +13,21 @@
  */
 package org.parabuild.ci.build;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
-import org.parabuild.ci.util.ArgumentValidator;
-import org.parabuild.ci.util.BuildException;
-import org.parabuild.ci.util.CommandStoppedException;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.ConfigurationConstants;
 import org.parabuild.ci.process.RemoteCommand;
 import org.parabuild.ci.process.TailBufferSizeImpl;
 import org.parabuild.ci.process.TimeoutCallback;
 import org.parabuild.ci.remote.Agent;
+import org.parabuild.ci.util.ArgumentValidator;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.StringUtils;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 /**
  * Abstract build runner implements Strategy pattern.

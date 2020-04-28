@@ -13,8 +13,8 @@
  */
 package org.parabuild.ci.object;
 
-import java.io.*;
-import java.util.*;
+import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Received issue. Currently it accomodates BZ and Jira

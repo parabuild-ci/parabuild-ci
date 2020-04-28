@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.relnotes;
 
-import java.sql.*;
+import java.sql.Connection;
 
 /**
  * This interface defines a Connection factory to access Fogbugz

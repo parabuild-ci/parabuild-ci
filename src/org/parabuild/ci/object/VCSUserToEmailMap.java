@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.object;
 
-import java.io.*;
+import java.io.Serializable;
 
 /**
  * Version control system user to e-mail mapping

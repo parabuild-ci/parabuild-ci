@@ -13,12 +13,21 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.io.*;
-import java.text.*;
-import java.util.*;
+import org.parabuild.ci.object.Change;
+import org.parabuild.ci.object.ChangeList;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
 
-import org.parabuild.ci.util.*;
-import org.parabuild.ci.object.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 
 /**
  *

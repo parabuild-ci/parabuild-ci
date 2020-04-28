@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.webui.admin.usermanagement;
 
-import org.parabuild.ci.webui.common.*;
+import org.parabuild.ci.webui.common.CommonLink;
+import org.parabuild.ci.webui.common.Pages;
 
 /**
  * Shows "Groups" link pointing to the administrative list of

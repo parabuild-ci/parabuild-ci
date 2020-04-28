@@ -13,9 +13,7 @@
  */
 package org.parabuild.ci.webui.merge;
 
-import java.text.*;
-import java.util.*;
-
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.merge.MergeQueueReport;
@@ -25,12 +23,15 @@ import org.parabuild.ci.webui.BuildResultLink;
 import org.parabuild.ci.webui.common.AbstractFlatTable;
 import org.parabuild.ci.webui.common.CommonLabel;
 import org.parabuild.ci.webui.common.TableHeaderLabel;
-import org.parabuild.ci.common.WebUIConstants;
 import viewtier.ui.Component;
 import viewtier.ui.Flow;
 import viewtier.ui.Image;
 import viewtier.ui.Label;
 import viewtier.ui.Layout;
+
+import java.text.SimpleDateFormat;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Shows merge report. The minila coumns are:

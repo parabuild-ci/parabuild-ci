@@ -15,8 +15,6 @@ package org.parabuild.ci.webui;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.util.IoUtils;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.SystemConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.error.Error;
@@ -33,6 +31,8 @@ import org.parabuild.ci.statistics.PMDViolationsChartGenerator;
 import org.parabuild.ci.statistics.StatisticsManager;
 import org.parabuild.ci.statistics.StatisticsManagerFactory;
 import org.parabuild.ci.statistics.StatisticsUtils;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.Pages;
 
 import javax.servlet.http.HttpServlet;

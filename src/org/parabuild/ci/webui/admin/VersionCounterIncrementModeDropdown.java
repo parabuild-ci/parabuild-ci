@@ -13,8 +13,8 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.webui.common.*;
+import org.parabuild.ci.object.BuildConfigAttribute;
+import org.parabuild.ci.webui.common.CodeNameDropDown;
 
 /**
  * Version counter increment mode drop down

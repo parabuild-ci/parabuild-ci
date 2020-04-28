@@ -13,11 +13,12 @@
  */
 package org.parabuild.ci.relnotes;
 
-import java.util.*;
-
-import org.parabuild.ci.util.*;
 import org.parabuild.ci.error.Error;
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.object.BuildRun;
+import org.parabuild.ci.util.StringUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * CompositeReleaseNotesHandler implements Composite pattern and

@@ -13,11 +13,6 @@
  */
 package org.parabuild.ci.webui.agent.status;
 
-import java.awt.*;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.util.List;
-
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartRenderingInfo;
 import org.jfree.chart.ChartUtilities;
@@ -30,12 +25,16 @@ import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.renderer.category.LineAndShapeRenderer;
 import org.jfree.data.category.DefaultCategoryDataset;
-
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.error.Error;
 import org.parabuild.ci.error.ErrorManager;
 import org.parabuild.ci.error.ErrorManagerFactory;
 import org.parabuild.ci.statistics.StatisticsUtils;
+import org.parabuild.ci.util.StringUtils;
+
+import java.awt.*;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.util.List;
 
 /**
  * AgentStatusChartGenerator

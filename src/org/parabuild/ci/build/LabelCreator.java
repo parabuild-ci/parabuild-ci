@@ -15,14 +15,13 @@ package org.parabuild.ci.build;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
-import org.parabuild.ci.util.BuildException;
-import org.parabuild.ci.util.CommandStoppedException;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.BuildRun;
 import org.parabuild.ci.object.LabelProperty;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.versioncontrol.SourceControl;
 
 /**

@@ -13,9 +13,6 @@
  */
 package org.parabuild.ci.merge.finder.perforce;
 
-import java.io.IOException;
-import java.util.Iterator;
-
 import net.sf.ehcache.Cache;
 import net.sf.ehcache.CacheException;
 import net.sf.ehcache.CacheManager;
@@ -23,14 +20,7 @@ import net.sf.ehcache.Element;
 import net.sf.hibernate.Query;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.util.BuildException;
-import org.parabuild.ci.util.CacheUtils;
-import org.parabuild.ci.util.CommandStoppedException;
-import org.parabuild.ci.util.IoUtils;
-import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.util.ThreadUtils;
 import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.TransactionCallback;
@@ -45,6 +35,12 @@ import org.parabuild.ci.object.Merge;
 import org.parabuild.ci.object.MergeChangeList;
 import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.remote.AgentManager;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.CacheUtils;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.util.ThreadUtils;
 import org.parabuild.ci.versioncontrol.perforce.ClientNameImpl;
 import org.parabuild.ci.versioncontrol.perforce.DepotViewImpl;
 import org.parabuild.ci.versioncontrol.perforce.Integration;
@@ -52,6 +48,9 @@ import org.parabuild.ci.versioncontrol.perforce.P4ChangeDriver;
 import org.parabuild.ci.versioncontrol.perforce.P4IntegrateParserDriver;
 import org.parabuild.ci.versioncontrol.perforce.P4SourceControl;
 import org.parabuild.ci.versioncontrol.perforce.Revision;
+
+import java.io.IOException;
+import java.util.Iterator;
 
 /**
  * Updates the content of the branch with infromation about

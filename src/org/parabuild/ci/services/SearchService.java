@@ -13,10 +13,12 @@
  */
 package org.parabuild.ci.services;
 
-import java.io.*;
-import org.apache.lucene.document.*;
-import org.apache.lucene.queryParser.*;
-import org.apache.lucene.search.*;
+import org.apache.lucene.document.Document;
+import org.apache.lucene.queryParser.ParseException;
+import org.apache.lucene.search.Hits;
+
+import java.io.IOException;
+import java.io.Serializable;
 
 /**
  * Created by simeshev on Oct 14, 2004 at 4:42:54 PM

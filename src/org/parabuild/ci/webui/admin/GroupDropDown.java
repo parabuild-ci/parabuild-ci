@@ -13,11 +13,12 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import java.util.*;
-
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.object.Group;
 import org.parabuild.ci.security.SecurityManager;
-import org.parabuild.ci.webui.common.*;
+import org.parabuild.ci.webui.common.CodeNameDropDown;
+
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * Lists connection security levels

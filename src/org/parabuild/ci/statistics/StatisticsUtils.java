@@ -33,10 +33,10 @@ import org.jfree.chart.renderer.category.BarRenderer;
 import org.jfree.chart.renderer.category.LineAndShapeRenderer;
 import org.jfree.chart.renderer.category.StackedAreaRenderer;
 import org.jfree.data.category.DefaultCategoryDataset;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildRun;
 import org.parabuild.ci.object.PersistentDistribution;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.Pages;
 
 import java.awt.*;

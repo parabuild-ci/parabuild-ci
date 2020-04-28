@@ -13,10 +13,10 @@
  */
 package org.parabuild.ci.merge;
 
-import java.util.*;
-
-import org.parabuild.ci.object.MergeChangeList;
 import org.parabuild.ci.object.Merge;
+import org.parabuild.ci.object.MergeChangeList;
+
+import java.util.Date;
 
 /**
  * Merge queue report.

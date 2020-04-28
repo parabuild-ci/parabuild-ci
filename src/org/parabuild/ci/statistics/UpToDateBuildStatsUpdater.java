@@ -13,11 +13,13 @@
  */
 package org.parabuild.ci.statistics;
 
-import org.parabuild.ci.util.*;
-import org.parabuild.ci.configuration.*;
+import org.parabuild.ci.configuration.ConfigurationManager;
+import org.parabuild.ci.configuration.TransactionCallback;
 import org.parabuild.ci.error.Error;
-import org.parabuild.ci.error.*;
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.error.ErrorManagerFactory;
+import org.parabuild.ci.object.ActiveBuildAttribute;
+import org.parabuild.ci.object.BuildRun;
+import org.parabuild.ci.util.StringUtils;
 
 /**
  * Updater that updates current up-to-date build statistics.

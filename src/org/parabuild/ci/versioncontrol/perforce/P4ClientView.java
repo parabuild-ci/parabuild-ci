@@ -13,7 +13,9 @@
  */
 package org.parabuild.ci.versioncontrol.perforce;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Parsed P4 client view.

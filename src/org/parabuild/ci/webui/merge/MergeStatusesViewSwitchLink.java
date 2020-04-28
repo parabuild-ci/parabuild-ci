@@ -13,10 +13,10 @@
  */
 package org.parabuild.ci.webui.merge;
 
+import org.parabuild.ci.webui.BuildsStatusesPage;
 import org.parabuild.ci.webui.common.CommonCommandLink;
 import org.parabuild.ci.webui.common.CommonLabel;
 import org.parabuild.ci.webui.common.Pages;
-import org.parabuild.ci.webui.BuildsStatusesPage;
 import viewtier.ui.Component;
 import viewtier.ui.Flow;
 import viewtier.ui.Layout;

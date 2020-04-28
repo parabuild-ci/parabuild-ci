@@ -15,9 +15,9 @@ package org.parabuild.ci.configuration;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.object.Group;
 import org.parabuild.ci.object.SystemProperty;
+import org.parabuild.ci.util.IoUtils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

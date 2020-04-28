@@ -13,13 +13,17 @@
  */
 package org.parabuild.ci.configuration;
 
-import java.sql.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
-import org.parabuild.ci.util.IoUtils;
-import org.parabuild.ci.object.StepRunAttribute;
 import org.parabuild.ci.object.BuildRunAttribute;
+import org.parabuild.ci.object.StepRunAttribute;
+import org.parabuild.ci.util.IoUtils;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  * This upgrader just adds step statistics on PMD to build run statistics on PMD.

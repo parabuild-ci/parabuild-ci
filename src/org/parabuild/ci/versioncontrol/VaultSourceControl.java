@@ -17,6 +17,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.build.BuildScriptGenerator;
+import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.error.Error;
 import org.parabuild.ci.error.ErrorManager;
@@ -31,7 +32,6 @@ import org.parabuild.ci.util.BuildException;
 import org.parabuild.ci.util.CommandStoppedException;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.common.ValidationException;
 
 import java.io.IOException;
 import java.text.ParseException;

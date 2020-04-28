@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.util.*;
+import java.util.Date;
 
 /**
  * Parameters for PVCS's vlog command.

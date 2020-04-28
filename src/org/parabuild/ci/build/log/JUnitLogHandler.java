@@ -15,16 +15,16 @@ package org.parabuild.ci.build.log;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.w3c.dom.Document;
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.build.SimpleFileArchivedLogFinder;
-import org.parabuild.ci.util.IoUtils;
-import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.util.XMLUtils;
 import org.parabuild.ci.object.BuildRunConfig;
 import org.parabuild.ci.object.LogConfig;
 import org.parabuild.ci.object.StepLog;
 import org.parabuild.ci.remote.Agent;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.util.XMLUtils;
+import org.w3c.dom.Document;
 
 import java.io.File;
 import java.io.IOException;

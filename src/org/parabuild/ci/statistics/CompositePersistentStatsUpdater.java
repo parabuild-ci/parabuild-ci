@@ -13,10 +13,14 @@
  */
 package org.parabuild.ci.statistics;
 
-import java.util.*;
-import org.apache.commons.logging.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.object.BuildRun;
+import org.parabuild.ci.object.PersistentTestStats;
 
-import org.parabuild.ci.object.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * GoF Composite implementation of the PersistentStatisticsUpdater

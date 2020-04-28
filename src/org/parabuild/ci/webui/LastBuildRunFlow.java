@@ -13,13 +13,13 @@
  */
 package org.parabuild.ci.webui;
 
-import java.util.*;
-
-import org.parabuild.ci.util.*;
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.webui.common.*;
 import org.parabuild.ci.configuration.VerbialBuildResult;
-import viewtier.ui.*;
+import org.parabuild.ci.object.BuildRun;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.webui.common.WebuiUtils;
+import viewtier.ui.Flow;
+
+import java.util.Date;
 
 /**
  * Shows colored last build run result in textual form. For

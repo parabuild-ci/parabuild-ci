@@ -16,11 +16,11 @@ package org.parabuild.ci.realm;
 import org.apache.catalina.LifecycleException;
 import org.apache.catalina.realm.GenericPrincipal;
 import org.apache.catalina.realm.RealmBase;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.ConfigurationConstants;
 import org.parabuild.ci.configuration.ConfigurationFile;
 import org.parabuild.ci.configuration.HSQLDBUtils;
 import org.parabuild.ci.configuration.SystemConstants;
+import org.parabuild.ci.util.StringUtils;
 
 import java.security.NoSuchAlgorithmException;
 import java.security.Principal;

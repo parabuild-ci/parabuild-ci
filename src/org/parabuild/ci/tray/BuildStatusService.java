@@ -13,10 +13,10 @@
  */
 package org.parabuild.ci.tray;
 
+import org.parabuild.ci.build.AgentFailureException;
+
 import java.io.IOException;
 import java.util.List;
-
-import org.parabuild.ci.build.AgentFailureException;
 
 /**
  * Defines a remote build status service.

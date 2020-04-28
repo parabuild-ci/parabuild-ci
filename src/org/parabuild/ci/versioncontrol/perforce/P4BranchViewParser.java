@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.versioncontrol.perforce;
 
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
 
 /**
  * Perforce branch view parser.

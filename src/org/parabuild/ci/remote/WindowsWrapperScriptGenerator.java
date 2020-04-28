@@ -13,13 +13,13 @@
  */
 package org.parabuild.ci.remote;
 
+import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.util.StringUtils;
+
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.io.Writer;
-
-import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.util.StringUtils;
 
 /**
  * Generates wrapper scripts for windows.

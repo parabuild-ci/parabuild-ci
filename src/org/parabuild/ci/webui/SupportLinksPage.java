@@ -13,8 +13,14 @@
  */
 package org.parabuild.ci.webui;
 
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import org.parabuild.ci.webui.common.BasePage;
+import org.parabuild.ci.webui.common.BoldCommonLabel;
+import org.parabuild.ci.webui.common.CommonFlow;
+import org.parabuild.ci.webui.common.CommonLabel;
+import org.parabuild.ci.webui.common.CommonLink;
+import viewtier.ui.OrderedList;
+import viewtier.ui.Parameters;
+import viewtier.ui.StatelessTierlet;
 
 /**
  * This class is a admin support resources.

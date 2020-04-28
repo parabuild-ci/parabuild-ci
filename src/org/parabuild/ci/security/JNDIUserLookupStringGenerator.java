@@ -14,7 +14,8 @@
 package org.parabuild.ci.security;
 
 import org.parabuild.ci.common.ValidationException;
-import org.parabuild.ci.util.*;
+import org.parabuild.ci.util.NamedProperty;
+import org.parabuild.ci.util.NamedPropertyStringGenerator;
 
 /**
  * This class is responsible for generation of user DN used when authenticating a JNDI user.

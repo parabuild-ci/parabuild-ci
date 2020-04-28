@@ -18,9 +18,9 @@ import org.apache.commons.logging.LogFactory;
 import org.jdesktop.jdic.tray.SystemTray;
 import org.jdesktop.jdic.tray.TrayIcon;
 import org.parabuild.ci.Version;
+import org.parabuild.ci.services.Log4jConfigurator;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.services.Log4jConfigurator;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

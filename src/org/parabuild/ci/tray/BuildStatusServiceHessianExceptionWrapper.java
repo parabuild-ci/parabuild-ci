@@ -13,13 +13,12 @@
  */
 package org.parabuild.ci.tray;
 
-import java.io.IOException;
-import java.util.List;
-
 import com.caucho.hessian.client.HessianRuntimeException;
-
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.remote.RemoteUtils;
+
+import java.io.IOException;
+import java.util.List;
 
 /**
  * The main goal of this class is to wrap calls the remote

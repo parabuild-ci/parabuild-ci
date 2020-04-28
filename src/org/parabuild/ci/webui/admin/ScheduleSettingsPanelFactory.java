@@ -13,8 +13,8 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.configuration.UnexpectedErrorException;
+import org.parabuild.ci.object.BuildConfig;
 
 /**
  *

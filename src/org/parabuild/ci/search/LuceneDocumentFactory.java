@@ -13,16 +13,30 @@
  */
 package org.parabuild.ci.search;
 
-import java.io.*;
-import java.util.*;
-import org.apache.commons.logging.*;
-import org.apache.lucene.document.*;
-
-import org.parabuild.ci.util.*;
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.webui.SearchPage;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.lucene.document.Document;
+import org.apache.lucene.document.Field;
+import org.parabuild.ci.configuration.ConfigurationManager;
+import org.parabuild.ci.object.BuildRun;
+import org.parabuild.ci.object.BuildRunConfig;
+import org.parabuild.ci.object.Change;
+import org.parabuild.ci.object.ChangeList;
+import org.parabuild.ci.object.StepLog;
+import org.parabuild.ci.object.StepResult;
+import org.parabuild.ci.object.StepRun;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.LogPage;
+import org.parabuild.ci.webui.SearchPage;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.Reader;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * Utility class.

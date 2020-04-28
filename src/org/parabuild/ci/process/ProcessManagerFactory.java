@@ -14,8 +14,8 @@
 package org.parabuild.ci.process;
 
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.util.ExceptionUtils;
 import org.parabuild.ci.remote.AgentEnvironment;
+import org.parabuild.ci.util.ExceptionUtils;
 
 import java.io.IOException;
 

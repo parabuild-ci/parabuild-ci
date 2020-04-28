@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.configuration;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 /**
  * Single step upgrader upgrades database schema one single version up.

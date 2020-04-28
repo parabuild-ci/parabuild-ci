@@ -15,9 +15,9 @@ package org.parabuild.ci.webui;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.error.Error;
 import org.parabuild.ci.error.ErrorManagerFactory;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.BasePage;
 import org.parabuild.ci.webui.common.BoldCommonLabel;
 import org.parabuild.ci.webui.common.CommonLabel;

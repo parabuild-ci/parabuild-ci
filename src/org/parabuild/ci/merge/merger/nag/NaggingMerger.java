@@ -14,8 +14,6 @@
 package org.parabuild.ci.merge.merger.nag;
 
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.util.CommandStoppedException;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.AgentHost;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.error.ErrorManager;
@@ -28,6 +26,8 @@ import org.parabuild.ci.notification.NotificationManagerFactory;
 import org.parabuild.ci.object.ActiveMergeConfiguration;
 import org.parabuild.ci.object.MergeConfigurationAttribute;
 import org.parabuild.ci.remote.AgentManager;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.versioncontrol.SourceControl;
 import org.parabuild.ci.versioncontrol.VersionControlFactory;
 

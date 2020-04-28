@@ -13,14 +13,16 @@
  */
 package org.parabuild.ci.tray;
 
-import java.awt.*;
-import java.awt.event.*;
-import java.util.*;
-import java.util.List;
-import javax.swing.*;
-import org.apache.commons.logging.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.util.StringUtils;
 
-import org.parabuild.ci.util.*;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Modal dialog to enter tray settings.

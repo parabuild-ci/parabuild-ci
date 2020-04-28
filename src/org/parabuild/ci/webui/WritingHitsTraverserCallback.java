@@ -16,13 +16,13 @@ package org.parabuild.ci.webui;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.lucene.document.Document;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.StepLog;
 import org.parabuild.ci.object.StepResult;
 import org.parabuild.ci.search.HitsTraverserCallback;
 import org.parabuild.ci.search.LuceneDocumentFactory;
 import org.parabuild.ci.search.SearchHitsTraverser;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.Pages;
 import org.parabuild.ci.webui.common.WebuiUtils;
 

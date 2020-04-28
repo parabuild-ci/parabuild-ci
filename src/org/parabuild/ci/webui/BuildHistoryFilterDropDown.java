@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.webui;
 
-import org.parabuild.ci.webui.common.*;
+import org.parabuild.ci.webui.common.CodeNameDropDown;
 
 /**
  * Drop down to show list of filtering for build history options.

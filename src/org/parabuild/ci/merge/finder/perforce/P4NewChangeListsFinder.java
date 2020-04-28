@@ -13,16 +13,9 @@
  */
 package org.parabuild.ci.merge.finder.perforce;
 
-import java.io.IOException;
-import java.util.List;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.util.BuildException;
-import org.parabuild.ci.util.CommandStoppedException;
-import org.parabuild.ci.util.ThreadUtils;
 import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.configuration.AgentHost;
 import org.parabuild.ci.configuration.ChangeListsAndIssues;
@@ -35,8 +28,14 @@ import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.ChangeList;
 import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.remote.AgentManager;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.ThreadUtils;
 import org.parabuild.ci.versioncontrol.perforce.P4ChangeListDriver;
 import org.parabuild.ci.versioncontrol.perforce.P4SourceControl;
+
+import java.io.IOException;
+import java.util.List;
 
 /**
  * NewChangeListsFinder is responsible for finding all new

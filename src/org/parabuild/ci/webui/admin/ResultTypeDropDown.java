@@ -13,8 +13,8 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.webui.common.*;
+import org.parabuild.ci.object.ResultConfig;
+import org.parabuild.ci.webui.common.CodeNameDropDown;
 
 /**
  * ResultTypeDropDown shows a list of result content types

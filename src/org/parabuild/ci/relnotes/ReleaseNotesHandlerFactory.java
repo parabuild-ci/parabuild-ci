@@ -13,14 +13,18 @@
  */
 package org.parabuild.ci.relnotes;
 
-import java.sql.*;
-import java.util.*;
-
-import org.parabuild.ci.util.*;
-import org.parabuild.ci.configuration.*;
+import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.error.Error;
-import org.parabuild.ci.error.*;
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.error.ErrorManagerFactory;
+import org.parabuild.ci.object.BuildRun;
+import org.parabuild.ci.object.IssueTracker;
+import org.parabuild.ci.object.IssueTrackerProperty;
+import org.parabuild.ci.util.StringUtils;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * ReleaseNotesHandlerFactory is used by BuildRunner to create

@@ -15,13 +15,12 @@ package org.parabuild.ci.merge.merger;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
-import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.util.CommandStoppedException;
 import org.parabuild.ci.error.Error;
-import org.parabuild.ci.error.ErrorManagerFactory;
 import org.parabuild.ci.error.ErrorManager;
+import org.parabuild.ci.error.ErrorManagerFactory;
 import org.parabuild.ci.merge.MergeStatus;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.StringUtils;
 
 /**
  * A runnable object that is responsible for running a

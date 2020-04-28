@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.versioncontrol.perforce;
 
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
 
 /**
  * Defines a parser for output of the P4 resolve command.

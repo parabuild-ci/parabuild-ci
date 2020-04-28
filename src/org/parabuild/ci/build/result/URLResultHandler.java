@@ -15,12 +15,12 @@ package org.parabuild.ci.build.result;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.object.BuildRunConfig;
 import org.parabuild.ci.object.ResultConfig;
 import org.parabuild.ci.object.ResultConfigProperty;
 import org.parabuild.ci.object.StepResult;
 import org.parabuild.ci.remote.Agent;
+import org.parabuild.ci.util.IoUtils;
 
 import java.io.IOException;
 import java.io.InputStream;

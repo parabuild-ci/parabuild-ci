@@ -16,7 +16,6 @@ package org.parabuild.ci.services;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.BuildState;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.AgentHost;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.error.Error;
@@ -25,6 +24,7 @@ import org.parabuild.ci.object.ActiveBuildConfig;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.remote.AgentManager;
+import org.parabuild.ci.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.Collection;

@@ -15,7 +15,9 @@ package org.parabuild.ci.relnotes;
 
 import org.parabuild.ci.util.StringUtils;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.StringTokenizer;
 
 /**
  * Filters issue description based on String pattern.

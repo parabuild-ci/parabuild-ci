@@ -15,9 +15,9 @@ package org.parabuild.ci.webui;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.security.SecurityManager;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.security.SecurityManager;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServlet;

@@ -13,15 +13,14 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.io.IOException;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.util.ArgumentValidator;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.remote.Agent;
+
+import java.io.IOException;
 
 /**
  * Base class for all vault commands.

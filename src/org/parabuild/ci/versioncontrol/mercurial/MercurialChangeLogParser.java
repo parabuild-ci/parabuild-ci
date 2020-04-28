@@ -15,10 +15,10 @@ package org.parabuild.ci.versioncontrol.mercurial;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.util.IoUtils;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.object.Change;
 import org.parabuild.ci.object.ChangeList;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
 
 import java.io.BufferedReader;
 import java.io.File;

@@ -13,8 +13,13 @@
  */
 package org.parabuild.ci.util;
 
-import java.net.*;
-import java.util.*;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Responsible for handling generation of issue URLs for displaying on release notes page.

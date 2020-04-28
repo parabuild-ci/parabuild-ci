@@ -13,10 +13,14 @@
  */
 package org.parabuild.ci.statistics;
 
-import java.util.*;
+import net.sf.hibernate.HibernateException;
+import net.sf.hibernate.Query;
+import net.sf.hibernate.Session;
+import org.parabuild.ci.object.BuildRun;
+import org.parabuild.ci.object.PersistentDistribution;
+import org.parabuild.ci.object.WeekDayDistribution;
 
-import net.sf.hibernate.*;
-import org.parabuild.ci.object.*;
+import java.util.Calendar;
 
 /**
  * Updates day-of-the-week build results distribution.

@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.object;
 
-import java.io.*;
+import java.io.Serializable;
 
 /**
  * Many-to-many relationship between a build and a project.

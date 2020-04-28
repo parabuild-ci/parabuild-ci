@@ -13,17 +13,16 @@
  */
 package org.parabuild.ci.versioncontrol;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.object.Change;
+import org.parabuild.ci.util.CommandStoppedException;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
-import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.util.CommandStoppedException;
-import org.parabuild.ci.object.Change;
 
 /**
  * This state machine is responsible for collecting PVCS

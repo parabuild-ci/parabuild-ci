@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.webui;
 
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.object.ChangeList;
+import org.parabuild.ci.object.SimpleChange;
 
 /**
  * ChangeURLFactory defines an interaface that is capable of

@@ -13,11 +13,13 @@
  */
 package org.parabuild.ci.configuration;
 
-import java.sql.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.parabuild.ci.util.IoUtils;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  * Upgrades to version 61.

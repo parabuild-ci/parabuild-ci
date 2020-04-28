@@ -13,13 +13,8 @@
  */
 package org.parabuild.ci.webui.admin.promotion;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Properties;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.parabuild.ci.build.BuildState;
 import org.parabuild.ci.promotion.PromotionConfigurationManager;
 import org.parabuild.ci.promotion.PromotionVO;
@@ -31,6 +26,10 @@ import org.parabuild.ci.webui.common.TableHeaderLabel;
 import viewtier.ui.Component;
 import viewtier.ui.Label;
 import viewtier.ui.Link;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Properties;
 
 /**
  * Shows list of promotion policies in the system.

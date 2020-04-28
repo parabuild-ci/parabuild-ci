@@ -14,12 +14,12 @@
 package org.parabuild.ci.webui;
 
 import org.parabuild.ci.build.BuildState;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.SystemConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.object.User;
 import org.parabuild.ci.object.UserProperty;
 import org.parabuild.ci.security.SecurityManager;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.GridIterator;
 import viewtier.ui.Panel;
 import viewtier.ui.TierletContext;

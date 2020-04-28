@@ -13,10 +13,11 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import java.util.*;
+import org.parabuild.ci.util.IssueURLGenerator;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.webui.common.CommonField;
 
-import org.parabuild.ci.util.*;
-import org.parabuild.ci.webui.common.*;
+import java.util.List;
 
 /**
  * Field specific to entering Issue URL template.

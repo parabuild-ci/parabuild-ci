@@ -17,8 +17,6 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.archive.ArchiveEntry;
 import org.parabuild.ci.archive.ArchiveManager;
-import org.parabuild.ci.util.DirectoryTraverserCallback;
-import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.error.Error;
@@ -31,6 +29,8 @@ import org.parabuild.ci.object.StepResult;
 import org.parabuild.ci.object.StepRun;
 import org.parabuild.ci.object.SystemProperty;
 import org.parabuild.ci.remote.internal.LocalBuilderFiles;
+import org.parabuild.ci.util.DirectoryTraverserCallback;
+import org.parabuild.ci.util.IoUtils;
 
 import java.io.BufferedReader;
 import java.io.File;

@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.process;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.List;
 
 /**
  */

@@ -13,13 +13,13 @@
  */
 package org.parabuild.ci.versioncontrol;
 
+import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.remote.Agent;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.versioncontrol.clearcase.ClearCaseLshistoryCommandStderrProcessor;
+
 import java.io.IOException;
 import java.util.Date;
-
-import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.remote.Agent;
-import org.parabuild.ci.versioncontrol.clearcase.ClearCaseLshistoryCommandStderrProcessor;
 
 /**
  * Executes ClearCase lshistory command.

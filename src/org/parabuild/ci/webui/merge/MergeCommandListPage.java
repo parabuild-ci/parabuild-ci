@@ -13,8 +13,6 @@
  */
 package org.parabuild.ci.webui.merge;
 
-import java.util.*;
-
 import org.parabuild.ci.object.MergeConfiguration;
 import org.parabuild.ci.webui.AnnotatedCommandLink;
 import org.parabuild.ci.webui.common.MessagePanel;
@@ -22,6 +20,8 @@ import org.parabuild.ci.webui.common.Pages;
 import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Parameters;
 import viewtier.ui.StatelessTierlet;
+
+import java.util.Properties;
 
 /**
  * Lists merge commands

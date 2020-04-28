@@ -13,11 +13,12 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.util.regex.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.util.StringUtils;
 
-import org.apache.commons.logging.*;
-
-import org.parabuild.ci.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Functor responsible for parsing Subversion version string.

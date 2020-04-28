@@ -13,12 +13,12 @@
  */
 package org.parabuild.ci.versioncontrol.mks;
 
-import java.io.IOException;
-
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.remote.Agent;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.versioncontrol.StderrLineProcessor;
+
+import java.io.IOException;
 
 /**
  * MKS dropsandpox command

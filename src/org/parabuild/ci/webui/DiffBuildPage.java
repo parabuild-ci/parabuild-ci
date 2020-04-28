@@ -13,11 +13,15 @@
  */
 package org.parabuild.ci.webui;
 
-import org.apache.commons.logging.*;
-
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.object.BuildConfig;
+import org.parabuild.ci.webui.common.BasePage;
+import org.parabuild.ci.webui.common.Pages;
+import org.parabuild.ci.webui.common.ParameterUtils;
+import org.parabuild.ci.webui.common.WebuiUtils;
+import viewtier.ui.ConversationalTierlet;
+import viewtier.ui.Parameters;
 
 /**
  * This page is responsible for displaying a diff of changes between two builds.

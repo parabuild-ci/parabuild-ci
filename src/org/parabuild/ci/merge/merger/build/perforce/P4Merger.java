@@ -13,19 +13,10 @@
  */
 package org.parabuild.ci.merge.merger.build.perforce;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.build.BuildRunner;
-import org.parabuild.ci.util.BuildException;
-import org.parabuild.ci.util.CommandStoppedException;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.configuration.AgentHost;
 import org.parabuild.ci.configuration.ConfigurationManager;
@@ -48,6 +39,9 @@ import org.parabuild.ci.object.MergeTargetBuildRun;
 import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.remote.AgentManager;
 import org.parabuild.ci.services.BuildStartRequest;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.versioncontrol.perforce.Integration;
 import org.parabuild.ci.versioncontrol.perforce.P4DummyResolveDriver;
 import org.parabuild.ci.versioncontrol.perforce.P4DummyResolveParser;
@@ -57,6 +51,11 @@ import org.parabuild.ci.versioncontrol.perforce.P4ResolveParserImpl;
 import org.parabuild.ci.versioncontrol.perforce.P4SourceControl;
 import org.parabuild.ci.versioncontrol.perforce.Resolve;
 import org.parabuild.ci.versioncontrol.perforce.ResolveMode;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * Validating merger is a merger that uses a build to

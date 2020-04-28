@@ -13,11 +13,11 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.io.IOException;
-import java.util.Date;
-
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.util.CommandStoppedException;
+
+import java.io.IOException;
+import java.util.Date;
 
 /**
  * PVCSChangeLogHandler is a call-back interfaces that is

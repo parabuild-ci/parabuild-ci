@@ -13,15 +13,14 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.remote.Agent;
+import org.parabuild.ci.util.StringUtils;
+
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
 
 /**
  * VSSCommand is a helper class to execute VSS commands and to

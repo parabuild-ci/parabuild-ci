@@ -18,7 +18,6 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.build.BuildState;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.AgentHost;
 import org.parabuild.ci.configuration.BuilderConfigurationManager;
 import org.parabuild.ci.object.AgentConfig;
@@ -29,6 +28,7 @@ import org.parabuild.ci.services.BuildListService;
 import org.parabuild.ci.services.Service;
 import org.parabuild.ci.services.ServiceManager;
 import org.parabuild.ci.services.ServiceName;
+import org.parabuild.ci.util.StringUtils;
 
 import java.io.IOException;
 import java.util.ArrayList;

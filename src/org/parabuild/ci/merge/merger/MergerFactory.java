@@ -14,10 +14,10 @@
 package org.parabuild.ci.merge.merger;
 
 import org.parabuild.ci.merge.MergeManager;
-import org.parabuild.ci.merge.merger.nag.NaggingMerger;
 import org.parabuild.ci.merge.merger.build.perforce.P4Merger;
-import org.parabuild.ci.object.MergeConfiguration;
+import org.parabuild.ci.merge.merger.nag.NaggingMerger;
 import org.parabuild.ci.notification.NotificationManagerFactory;
+import org.parabuild.ci.object.MergeConfiguration;
 
 /**
  * Produces merger suitable for this configuration.

@@ -13,13 +13,20 @@
  */
 package org.parabuild.ci.webui;
 
-import java.util.*;
-import javax.servlet.http.*;
+import org.parabuild.ci.configuration.ConfigurationManager;
+import org.parabuild.ci.object.BuildRun;
+import org.parabuild.ci.webui.common.CommonLink;
+import org.parabuild.ci.webui.common.Pages;
+import org.parabuild.ci.webui.common.ShowHideFilesCommandLink;
+import org.parabuild.ci.webui.common.WebuiUtils;
+import viewtier.ui.ConversationalTierlet;
+import viewtier.ui.Flow;
+import viewtier.ui.Layout;
+import viewtier.ui.Panel;
+import viewtier.ui.Parameters;
 
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import javax.servlet.http.Cookie;
+import java.util.Properties;
 
 /**
  * This class shows a page with a list of changes in the given

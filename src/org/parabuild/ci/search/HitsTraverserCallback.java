@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.search;
 
-import org.apache.lucene.document.*;
+import org.apache.lucene.document.Document;
 
 
 /**

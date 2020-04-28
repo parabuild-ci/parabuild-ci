@@ -13,16 +13,16 @@
  */
 package org.parabuild.ci.versioncontrol.accurev;
 
-import org.dom4j.io.SAXReader;
 import org.dom4j.Document;
-import org.dom4j.Element;
 import org.dom4j.DocumentException;
+import org.dom4j.Element;
+import org.dom4j.io.SAXReader;
 
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.io.File;
 import java.net.MalformedURLException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * AccurevShowWspacesLogParser

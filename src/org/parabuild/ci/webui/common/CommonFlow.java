@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.webui.common;
 
-import viewtier.ui.*;
+import viewtier.ui.Component;
+import viewtier.ui.Flow;
 
 /**
  * Convenience class with constructors adding components to Flow.

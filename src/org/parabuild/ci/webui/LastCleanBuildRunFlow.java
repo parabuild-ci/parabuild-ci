@@ -13,10 +13,10 @@
  */
 package org.parabuild.ci.webui;
 
-import org.parabuild.ci.util.*;
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import org.parabuild.ci.object.BuildRun;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.webui.common.WebuiUtils;
+import viewtier.ui.Flow;
 
 /**
  * Shows last clean buld link or nothing, based given

@@ -13,15 +13,24 @@
  */
 package org.parabuild.ci.webui.admin.usermanagement;
 
-import java.util.*;
-
-import org.apache.commons.logging.*;
-
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.object.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.configuration.DisplayUserGroupVO;
+import org.parabuild.ci.object.User;
+import org.parabuild.ci.object.UserGroup;
 import org.parabuild.ci.security.SecurityManager;
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import org.parabuild.ci.webui.common.BasePage;
+import org.parabuild.ci.webui.common.CommonLabel;
+import org.parabuild.ci.webui.common.MessagePanel;
+import org.parabuild.ci.webui.common.Saveable;
+import viewtier.ui.CheckBox;
+import viewtier.ui.Flow;
+import viewtier.ui.Label;
+import viewtier.ui.Panel;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * UserGroupsPanel displays a list of group check boxes. Groups

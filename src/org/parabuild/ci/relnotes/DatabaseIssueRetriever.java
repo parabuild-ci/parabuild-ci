@@ -13,10 +13,10 @@
  */
 package org.parabuild.ci.relnotes;
 
-import java.sql.Date;
-import java.util.*;
+import org.parabuild.ci.util.BuildException;
 
-import org.parabuild.ci.util.*;
+import java.sql.Date;
+import java.util.List;
 
 /**
  * Responsible for getting issues from external issue databases

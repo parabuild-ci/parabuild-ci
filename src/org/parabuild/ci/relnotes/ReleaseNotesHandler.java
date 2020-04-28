@@ -13,7 +13,11 @@
  */
 package org.parabuild.ci.relnotes;
 
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.object.BuildRun;
+import org.parabuild.ci.object.Issue;
+import org.parabuild.ci.object.IssueAttribute;
+import org.parabuild.ci.object.IssueTracker;
+import org.parabuild.ci.object.IssueTrackerProperty;
 
 /**
  * ReleaseNotesHandler is responsible for finding issues and

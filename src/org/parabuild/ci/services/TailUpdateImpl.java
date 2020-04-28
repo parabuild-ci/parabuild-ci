@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.services;
 
-import java.util.*;
+import java.util.Arrays;
 
 /**
  *  Implementation of TailUpdate interface.

@@ -13,11 +13,11 @@
  */
 package org.parabuild.ci.webui.admin.displaygroup;
 
+import org.parabuild.ci.webui.CommonCommandLinkWithImage;
 import org.parabuild.ci.webui.admin.system.NavigatableSystemConfigurationPage;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.Pages;
 import org.parabuild.ci.webui.common.WebuiUtils;
-import org.parabuild.ci.webui.CommonCommandLinkWithImage;
 import viewtier.ui.Layout;
 import viewtier.ui.Parameters;
 import viewtier.ui.StatelessTierlet;

@@ -14,9 +14,9 @@
 package org.parabuild.ci.versioncontrol;
 
 import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.util.ArgumentValidator;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.remote.Agent;
 
 import java.io.IOException;
 

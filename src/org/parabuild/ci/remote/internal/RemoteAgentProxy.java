@@ -17,8 +17,6 @@ import com.caucho.hessian.client.HessianRuntimeException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.util.CommandStoppedException;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.AgentHost;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.error.Error;
@@ -32,6 +30,8 @@ import org.parabuild.ci.remote.services.ModifiedFileList;
 import org.parabuild.ci.remote.services.RemoteBuilderWebService;
 import org.parabuild.ci.remote.services.RemoteFileDescriptor;
 import org.parabuild.ci.services.TailUpdate;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.StringUtils;
 
 import java.io.File;
 import java.io.FileNotFoundException;

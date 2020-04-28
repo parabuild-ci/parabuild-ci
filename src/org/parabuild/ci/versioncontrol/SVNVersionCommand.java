@@ -13,11 +13,11 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import org.parabuild.ci.util.*;
-import org.parabuild.ci.remote.*;
+import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.remote.Agent;
+import org.parabuild.ci.util.StringUtils;
 
 import java.io.IOException;
-import org.parabuild.ci.build.AgentFailureException;
 
 /**
  * Subversion command to get version infromation in stdout.

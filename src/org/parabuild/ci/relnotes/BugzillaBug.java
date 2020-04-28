@@ -13,10 +13,10 @@
  */
 package org.parabuild.ci.relnotes;
 
-import java.io.*;
-import java.sql.*;
+import org.parabuild.ci.object.Issue;
 
-import org.parabuild.ci.object.*;
+import java.io.Serializable;
+import java.sql.Date;
 
 /**
  * This class is returned by BugzillaJDBCConnector

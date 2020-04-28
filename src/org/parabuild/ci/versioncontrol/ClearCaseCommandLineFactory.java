@@ -13,15 +13,14 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.io.IOException;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.process.RemoteCommand;
 import org.parabuild.ci.remote.Agent;
+import org.parabuild.ci.util.StringUtils;
+
+import java.io.IOException;
 
 /**
  * Composes ClearCase commands line.

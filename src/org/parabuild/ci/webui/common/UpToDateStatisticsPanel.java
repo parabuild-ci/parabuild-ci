@@ -13,12 +13,12 @@
  */
 package org.parabuild.ci.webui.common;
 
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.ActiveBuildAttribute;
 import org.parabuild.ci.statistics.BuildStatistics;
 import org.parabuild.ci.statistics.StatisticsManager;
 import org.parabuild.ci.statistics.StatisticsManagerFactory;
+import org.parabuild.ci.util.StringUtils;
 import viewtier.ui.Flow;
 import viewtier.ui.Image;
 import viewtier.ui.Panel;

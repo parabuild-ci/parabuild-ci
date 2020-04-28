@@ -13,12 +13,22 @@
  */
 package org.parabuild.ci.webui.common;
 
-import java.util.*;
+import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
+import org.parabuild.ci.statistics.BuildStatistics;
+import org.parabuild.ci.statistics.StatisticsManager;
+import org.parabuild.ci.statistics.StatisticsManagerFactory;
+import org.parabuild.ci.util.StringUtils;
+import viewtier.ui.Border;
+import viewtier.ui.Flow;
+import viewtier.ui.Image;
+import viewtier.ui.Layout;
+import viewtier.ui.Panel;
 
-import org.parabuild.ci.util.*;
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.statistics.*;
-import viewtier.ui.*;
+import java.util.Collection;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.SortedMap;
 
 /**
  * Panel to display cumulative up-to-date build statistics.

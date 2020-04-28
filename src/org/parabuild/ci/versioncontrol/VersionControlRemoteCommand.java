@@ -16,8 +16,6 @@ package org.parabuild.ci.versioncontrol;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.util.IoUtils;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.error.Error;
 import org.parabuild.ci.error.ErrorManagerFactory;
@@ -25,6 +23,8 @@ import org.parabuild.ci.object.SystemProperty;
 import org.parabuild.ci.process.RemoteCommand;
 import org.parabuild.ci.process.TimeoutCallback;
 import org.parabuild.ci.remote.Agent;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

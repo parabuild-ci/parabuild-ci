@@ -13,12 +13,13 @@
  */
 package org.parabuild.ci.webui;
 
-import java.io.*;
-import javax.servlet.*;
-import javax.servlet.http.*;
+import org.parabuild.ci.configuration.ConfigurationManager;
+import viewtier.dispatch.DispatcherServlet;
 
-import org.parabuild.ci.configuration.*;
-import viewtier.dispatch.*;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 public final class UIServlet extends DispatcherServlet {
 

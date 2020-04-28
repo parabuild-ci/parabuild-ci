@@ -13,7 +13,9 @@
  */
 package org.parabuild.ci.configuration;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * An aggregate that contains information about a release note

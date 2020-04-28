@@ -15,7 +15,6 @@ package org.parabuild.ci.webui;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.parabuild.ci.object.BuildRun;
 import org.parabuild.ci.webui.common.BasePage;
 import org.parabuild.ci.webui.common.ParameterUtils;

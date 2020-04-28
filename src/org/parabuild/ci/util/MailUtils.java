@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.util;
 
-import javax.mail.internet.*;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
 
 /**
  * Holds mail-related utility methods.

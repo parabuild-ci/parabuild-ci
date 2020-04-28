@@ -13,13 +13,23 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.apache.commons.logging.*;
-
-import org.parabuild.ci.util.*;
-import org.parabuild.ci.notification.*;
-import org.parabuild.ci.webui.*;
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.notification.UserPasswordResetter;
+import org.parabuild.ci.util.FatalConfigurationException;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.webui.ResetPasswordPanel;
+import org.parabuild.ci.webui.common.BasePage;
+import org.parabuild.ci.webui.common.CommonLabel;
+import org.parabuild.ci.webui.common.Pages;
+import org.parabuild.ci.webui.common.WebuiUtils;
+import viewtier.ui.ButtonPressedEvent;
+import viewtier.ui.ButtonPressedListener;
+import viewtier.ui.ConversationalTierlet;
+import viewtier.ui.Flow;
+import viewtier.ui.Layout;
+import viewtier.ui.Panel;
+import viewtier.ui.Parameters;
 
 /**
  * This page is for resetting password.

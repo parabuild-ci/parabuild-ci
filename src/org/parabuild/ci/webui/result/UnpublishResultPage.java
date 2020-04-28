@@ -13,13 +13,16 @@
  */
 package org.parabuild.ci.webui.result;
 
-import org.parabuild.ci.util.*;
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.security.*;
+import org.parabuild.ci.configuration.ResultGroupManager;
+import org.parabuild.ci.object.PublishedStepResult;
+import org.parabuild.ci.security.BuildRights;
 import org.parabuild.ci.security.SecurityManager;
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.webui.common.BasePage;
+import org.parabuild.ci.webui.common.Pages;
+import org.parabuild.ci.webui.common.ParameterUtils;
+import viewtier.ui.Parameters;
+import viewtier.ui.StatelessTierlet;
 
 /**
  * This page shows list of result groups

@@ -15,10 +15,10 @@ package org.parabuild.ci.process;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.util.IoUtils;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.remote.AgentEnvironment;
 import org.parabuild.ci.remote.AgentManager;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;

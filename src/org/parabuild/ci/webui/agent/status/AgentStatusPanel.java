@@ -16,10 +16,10 @@ package org.parabuild.ci.webui.agent.status;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.CommonLabel;
 import org.parabuild.ci.webui.common.GridIterator;
 import org.parabuild.ci.webui.common.Pages;
-import org.parabuild.ci.common.WebUIConstants;
 import viewtier.ui.Border;
 import viewtier.ui.Color;
 import viewtier.ui.Image;

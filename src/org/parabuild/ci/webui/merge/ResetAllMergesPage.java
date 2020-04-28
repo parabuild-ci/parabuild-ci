@@ -13,14 +13,12 @@
  */
 package org.parabuild.ci.webui.merge;
 
-import java.util.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.merge.MergeManager;
 import org.parabuild.ci.merge.MergeState;
 import org.parabuild.ci.merge.MergeStatus;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.BasePage;
 import org.parabuild.ci.webui.common.BoldCommonLabel;
 import org.parabuild.ci.webui.common.CancelButton;
@@ -36,6 +34,8 @@ import viewtier.ui.Flow;
 import viewtier.ui.Label;
 import viewtier.ui.Layout;
 import viewtier.ui.Parameters;
+
+import java.util.List;
 
 /**
  * This page is repsonsible for resetting data for all

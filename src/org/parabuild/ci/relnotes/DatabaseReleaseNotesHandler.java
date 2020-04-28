@@ -13,15 +13,16 @@
  */
 package org.parabuild.ci.relnotes;
 
-import java.sql.Date;
-import java.util.*;
-import org.apache.commons.logging.*;
-
-import org.parabuild.ci.util.*;
-import org.parabuild.ci.configuration.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.error.Error;
-import org.parabuild.ci.error.*;
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.error.ErrorManagerFactory;
+import org.parabuild.ci.object.BuildRun;
+import org.parabuild.ci.util.StringUtils;
+
+import java.sql.Date;
+import java.util.List;
 
 /**
  * This release notes handler processes release notes stored in

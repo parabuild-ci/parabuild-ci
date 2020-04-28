@@ -13,10 +13,13 @@
  */
 package org.parabuild.ci.relnotes;
 
-import java.util.*;
+import org.parabuild.ci.configuration.ConfigurationManager;
+import org.parabuild.ci.configuration.TransactionCallback;
+import org.parabuild.ci.object.BuildRun;
+import org.parabuild.ci.object.ReleaseNote;
 
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.object.*;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * Copies over release notes from a previous build

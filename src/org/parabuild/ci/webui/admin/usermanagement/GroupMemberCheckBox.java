@@ -13,8 +13,8 @@
  */
 package org.parabuild.ci.webui.admin.usermanagement;
 
-import org.parabuild.ci.configuration.*;
-import viewtier.ui.*;
+import org.parabuild.ci.configuration.GroupMemberVO;
+import viewtier.ui.CheckBox;
 
 final class GroupMemberCheckBox extends CheckBox {
 

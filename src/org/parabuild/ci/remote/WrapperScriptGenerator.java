@@ -13,10 +13,10 @@
  */
 package org.parabuild.ci.remote;
 
+import org.parabuild.ci.build.AgentFailureException;
+
 import java.io.IOException;
 import java.util.Map;
-
-import org.parabuild.ci.build.AgentFailureException;
 
 /**
  * WrapperScriptGenerator is responsible for

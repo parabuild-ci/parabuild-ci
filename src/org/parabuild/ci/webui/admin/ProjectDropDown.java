@@ -13,11 +13,12 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import java.util.*;
+import org.parabuild.ci.object.Project;
+import org.parabuild.ci.project.ProjectManager;
+import org.parabuild.ci.webui.common.CodeNameDropDown;
 
-import org.parabuild.ci.webui.common.*;
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.project.*;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * A drop-down to show project names.

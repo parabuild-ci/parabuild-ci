@@ -13,13 +13,13 @@
  */
 package org.parabuild.ci.webui.admin.promotion;
 
-import java.util.Properties;
-
 import org.parabuild.ci.webui.common.CommonLink;
 import org.parabuild.ci.webui.common.Pages;
 import viewtier.ui.Flow;
 import viewtier.ui.Label;
 import viewtier.ui.Link;
+
+import java.util.Properties;
 
 /**
  * List of commands available for a parcticular promotion

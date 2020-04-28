@@ -13,14 +13,14 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import java.util.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.ActiveBuildConfig;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.webui.common.CodeNameDropDown;
+
+import java.util.Iterator;
 
 
 /**

@@ -13,14 +13,16 @@
  */
 package org.parabuild.ci.remote.internal;
 
-import java.util.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
-import org.parabuild.ci.process.TailLine;
 import org.parabuild.ci.process.OsCommand;
+import org.parabuild.ci.process.TailLine;
 import org.parabuild.ci.services.TailUpdate;
 import org.parabuild.ci.services.TailUpdateImpl;
+
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 /**
  */

@@ -13,8 +13,8 @@
  */
 package org.parabuild.ci.object;
 
-import java.io.*;
-import java.util.*;
+import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Merge is a header of a group of a branch

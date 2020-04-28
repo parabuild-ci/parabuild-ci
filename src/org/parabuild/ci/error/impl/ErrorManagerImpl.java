@@ -19,8 +19,6 @@ import net.sf.ehcache.CacheManager;
 import net.sf.ehcache.Element;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.util.IoUtils;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.SystemConstants;
 import org.parabuild.ci.error.Error;
@@ -28,6 +26,8 @@ import org.parabuild.ci.error.ErrorManager;
 import org.parabuild.ci.notification.NotificationManager;
 import org.parabuild.ci.notification.NotificationManagerFactory;
 import org.parabuild.ci.object.BuildConfig;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
 
 import java.io.BufferedOutputStream;
 import java.io.File;

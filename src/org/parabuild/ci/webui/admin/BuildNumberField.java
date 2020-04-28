@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import viewtier.ui.*;
+import viewtier.ui.Field;
 
 /**
  * Field to hold build number

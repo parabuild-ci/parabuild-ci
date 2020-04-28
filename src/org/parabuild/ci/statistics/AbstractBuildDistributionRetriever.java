@@ -15,10 +15,10 @@ package org.parabuild.ci.statistics;
 
 import net.sf.hibernate.HibernateException;
 import net.sf.hibernate.Session;
-import org.parabuild.ci.util.ArgumentValidator;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.TransactionCallback;
 import org.parabuild.ci.object.PersistentDistribution;
+import org.parabuild.ci.util.ArgumentValidator;
 
 import java.util.Iterator;
 import java.util.List;

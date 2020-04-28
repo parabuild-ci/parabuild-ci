@@ -13,12 +13,15 @@
  */
 package org.parabuild.ci.webui.merge;
 
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.merge.MergeManager;
 import org.parabuild.ci.object.MergeConfiguration;
 import org.parabuild.ci.object.Project;
 import org.parabuild.ci.project.ProjectManager;
-import org.parabuild.ci.webui.common.*;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.webui.common.BasePage;
+import org.parabuild.ci.webui.common.Pages;
+import org.parabuild.ci.webui.common.SelectProjectPanel;
+import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.ConversationalTierlet;
 import viewtier.ui.Parameters;
 

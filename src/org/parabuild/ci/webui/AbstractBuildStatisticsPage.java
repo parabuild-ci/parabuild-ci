@@ -20,8 +20,18 @@ import org.parabuild.ci.object.ActiveBuildConfig;
 import org.parabuild.ci.object.BuildRun;
 import org.parabuild.ci.object.BuildRunAttribute;
 import org.parabuild.ci.object.LogConfig;
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import org.parabuild.ci.webui.common.BasePage;
+import org.parabuild.ci.webui.common.MenuDividerLabel;
+import org.parabuild.ci.webui.common.Pages;
+import org.parabuild.ci.webui.common.ParameterUtils;
+import org.parabuild.ci.webui.common.UpToDateStatisticsPanel;
+import org.parabuild.ci.webui.common.WebuiUtils;
+import viewtier.ui.Border;
+import viewtier.ui.Color;
+import viewtier.ui.Flow;
+import viewtier.ui.Layout;
+import viewtier.ui.Panel;
+import viewtier.ui.Parameters;
 
 /**
  * Created by IntelliJ IDEA.

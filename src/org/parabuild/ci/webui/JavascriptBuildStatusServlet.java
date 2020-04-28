@@ -14,8 +14,6 @@
 package org.parabuild.ci.webui;
 
 import org.parabuild.ci.build.BuildState;
-import org.parabuild.ci.util.BuildStatusURLGenerator;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.SystemConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.object.BuildConfig;
@@ -25,6 +23,8 @@ import org.parabuild.ci.security.BadRequestException;
 import org.parabuild.ci.security.SecurityManager;
 import org.parabuild.ci.services.BuildService;
 import org.parabuild.ci.services.ServiceManager;
+import org.parabuild.ci.util.BuildStatusURLGenerator;
+import org.parabuild.ci.util.StringUtils;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;

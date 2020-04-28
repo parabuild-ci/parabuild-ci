@@ -13,10 +13,10 @@
  */
 package org.parabuild.ci.webui.common;
 
-import java.util.*;
-
 import viewtier.ui.Flow;
 import viewtier.ui.Link;
+
+import java.util.Properties;
 
 
 /**

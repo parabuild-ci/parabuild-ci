@@ -13,13 +13,13 @@
  */
 package org.parabuild.ci.versioncontrol;
 
+import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.remote.Agent;
+import org.parabuild.ci.util.StringUtils;
+
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-
-import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.remote.Agent;
 
 /**
  * Vault history command

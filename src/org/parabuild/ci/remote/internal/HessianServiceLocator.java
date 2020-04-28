@@ -13,10 +13,10 @@
  */
 package org.parabuild.ci.remote.internal;
 
-import java.io.IOException;
-
-import org.parabuild.ci.util.ArgumentValidator;
 import org.parabuild.ci.remote.RemoteUtils;
+import org.parabuild.ci.util.ArgumentValidator;
+
+import java.io.IOException;
 
 
 /**

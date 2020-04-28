@@ -13,10 +13,10 @@
  */
 package org.parabuild.ci.tray;
 
-import java.io.*;
-
-import org.parabuild.ci.remote.internal.*;
+import org.parabuild.ci.remote.internal.HessianServiceLocator;
 import org.parabuild.ci.remote.services.RemoteBuilderWebService;
+
+import java.io.IOException;
 
 
 /**

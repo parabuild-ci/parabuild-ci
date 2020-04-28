@@ -13,10 +13,10 @@
  */
 package org.parabuild.ci.webui.admin.promotion;
 
-import java.util.Properties;
-
 import org.parabuild.ci.webui.common.Pages;
 import viewtier.ui.Parameters;
+
+import java.util.Properties;
 
 /**
  * PromotionUtils

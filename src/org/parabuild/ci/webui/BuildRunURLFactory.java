@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.webui;
 
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.object.BuildRun;
 
 /**
  * This interface is used by {@link BuildRunHeaderPanel} to

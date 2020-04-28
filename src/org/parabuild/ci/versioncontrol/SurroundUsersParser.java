@@ -13,12 +13,17 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.io.*;
-import java.util.*;
-
-import org.parabuild.ci.util.*;
 import org.parabuild.ci.error.Error;
-import org.parabuild.ci.error.*;
+import org.parabuild.ci.error.ErrorManagerFactory;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.MailUtils;
+import org.parabuild.ci.util.StringUtils;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Parses Surround log generated as a result of <p>sscm.exe

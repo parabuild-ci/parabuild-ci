@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.webui.common;
 
-import java.util.*;
+import java.util.Properties;
 
 /**
  * Class to show "Show/hide files link"

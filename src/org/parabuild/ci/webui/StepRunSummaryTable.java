@@ -13,10 +13,10 @@
  */
 package org.parabuild.ci.webui;
 
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildRun;
 import org.parabuild.ci.object.StepRun;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.AbstractFlatTable;
 import org.parabuild.ci.webui.common.CommonLabel;
 import org.parabuild.ci.webui.common.TableHeaderLabel;

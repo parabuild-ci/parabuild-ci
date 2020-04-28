@@ -13,18 +13,17 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.io.IOException;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.object.SourceControlSetting;
+import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.util.ArgumentValidator;
 import org.parabuild.ci.util.BuildException;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.object.SourceControlSetting;
-import org.parabuild.ci.remote.Agent;
+
+import java.io.IOException;
 
 /**
  * Executes ClearCase mkvew command. Minimally this should call

@@ -20,7 +20,6 @@ import com.sun.syndication.feed.synd.SyndEntryImpl;
 import com.sun.syndication.feed.synd.SyndFeed;
 import com.sun.syndication.feed.synd.SyndFeedImpl;
 import org.parabuild.ci.build.BuildState;
-import org.parabuild.ci.util.BuildStatusURLGenerator;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.configuration.VerbialBuildResult;
@@ -28,6 +27,7 @@ import org.parabuild.ci.object.ActiveBuildConfig;
 import org.parabuild.ci.object.BuildRun;
 import org.parabuild.ci.security.AccessForbiddenException;
 import org.parabuild.ci.security.SecurityManager;
+import org.parabuild.ci.util.BuildStatusURLGenerator;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

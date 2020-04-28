@@ -13,9 +13,11 @@
  */
 package org.parabuild.ci.webui;
 
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import org.parabuild.ci.object.BuildRun;
+import org.parabuild.ci.webui.common.Pages;
+import viewtier.ui.ConversationalTierlet;
+import viewtier.ui.Panel;
+import viewtier.ui.Parameters;
 
 /**
  * This class is a build run release notes list page front page.

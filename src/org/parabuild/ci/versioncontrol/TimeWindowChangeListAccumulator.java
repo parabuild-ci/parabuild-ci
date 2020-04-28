@@ -13,10 +13,16 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.util.*;
+import org.parabuild.ci.object.Change;
+import org.parabuild.ci.object.ChangeList;
+import org.parabuild.ci.util.StringUtils;
 
-import org.parabuild.ci.util.*;
-import org.parabuild.ci.object.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.List;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 
 /**

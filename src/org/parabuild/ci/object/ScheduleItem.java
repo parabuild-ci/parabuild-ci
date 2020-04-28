@@ -13,9 +13,9 @@
  */
 package org.parabuild.ci.object;
 
-import org.quartz.CronTrigger;
 import org.parabuild.ci.util.CommonConstants;
 import org.parabuild.ci.util.StringUtils;
+import org.quartz.CronTrigger;
 
 import java.io.Serializable;
 import java.text.ParseException;

@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.webui.common;
 
-import java.util.*;
+import java.util.Properties;
 
 /**
  * Reusable class to show a link to the page contaning a build

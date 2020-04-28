@@ -13,9 +13,9 @@
  */
 package org.parabuild.ci.webui;
 
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.ActiveBuildConfig;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.BoldCommonLabel;
 import org.parabuild.ci.webui.common.CommonFlow;
 import org.parabuild.ci.webui.common.Pages;

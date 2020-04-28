@@ -13,12 +13,8 @@
  */
 package org.parabuild.ci.webui.admin.displaygroup;
 
-import java.util.List;
-import java.util.Properties;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.parabuild.ci.build.BuildState;
 import org.parabuild.ci.configuration.DisplayGroupManager;
 import org.parabuild.ci.object.DisplayGroup;
@@ -31,6 +27,9 @@ import viewtier.ui.Component;
 import viewtier.ui.Flow;
 import viewtier.ui.Label;
 import viewtier.ui.Link;
+
+import java.util.List;
+import java.util.Properties;
 
 /**
  * This table displays list of build groups.

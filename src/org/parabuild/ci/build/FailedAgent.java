@@ -13,13 +13,13 @@
  */
 package org.parabuild.ci.build;
 
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.AgentHost;
 import org.parabuild.ci.process.TailBufferSize;
 import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.remote.services.ModifiedFileList;
 import org.parabuild.ci.remote.services.RemoteFileDescriptor;
 import org.parabuild.ci.services.TailUpdate;
+import org.parabuild.ci.util.StringUtils;
 
 import java.io.File;
 import java.io.IOException;

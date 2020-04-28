@@ -13,14 +13,14 @@
  */
 package org.parabuild.ci.webui.merge;
 
-import java.util.*;
-
 import org.parabuild.ci.merge.MergeStatus;
 import org.parabuild.ci.webui.common.CommandLinkWithSeparator;
 import org.parabuild.ci.webui.common.CommonCommandLink;
 import org.parabuild.ci.webui.common.Pages;
 import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Flow;
+
+import java.util.Properties;
 
 /**
  */

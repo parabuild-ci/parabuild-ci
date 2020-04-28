@@ -19,11 +19,11 @@ import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
-import org.parabuild.ci.util.IoUtils;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.object.Change;
 import org.parabuild.ci.object.ChangeList;
 import org.parabuild.ci.object.SimpleChange;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
 
 import java.io.IOException;
 import java.io.InputStream;

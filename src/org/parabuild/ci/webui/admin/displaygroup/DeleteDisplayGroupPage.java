@@ -13,10 +13,24 @@
  */
 package org.parabuild.ci.webui.admin.displaygroup;
 
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import org.parabuild.ci.configuration.DisplayGroupManager;
+import org.parabuild.ci.object.DisplayGroup;
+import org.parabuild.ci.webui.common.BasePage;
+import org.parabuild.ci.webui.common.BoldCommonLabel;
+import org.parabuild.ci.webui.common.CancelButton;
+import org.parabuild.ci.webui.common.CommonButton;
+import org.parabuild.ci.webui.common.DeleteButton;
+import org.parabuild.ci.webui.common.MessagePanel;
+import org.parabuild.ci.webui.common.Pages;
+import org.parabuild.ci.webui.common.ParameterUtils;
+import org.parabuild.ci.webui.common.WebuiUtils;
+import viewtier.ui.ButtonPressedEvent;
+import viewtier.ui.ButtonPressedListener;
+import viewtier.ui.ConversationalTierlet;
+import viewtier.ui.Flow;
+import viewtier.ui.Label;
+import viewtier.ui.Layout;
+import viewtier.ui.Parameters;
 
 /**
  * This page is repsonsible for editing Parabuild system

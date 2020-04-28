@@ -16,11 +16,11 @@ package org.parabuild.ci.error;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.Version;
+import org.parabuild.ci.object.BuildConfig;
+import org.parabuild.ci.object.MergeConfiguration;
 import org.parabuild.ci.util.BuildException;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.object.BuildConfig;
-import org.parabuild.ci.object.MergeConfiguration;
 
 import java.io.BufferedInputStream;
 import java.io.File;

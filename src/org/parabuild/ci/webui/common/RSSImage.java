@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.webui.common;
 
-import viewtier.cdk.*;
+import viewtier.cdk.CustomComponent;
+import viewtier.cdk.RenderContext;
 
 /**
  * This component implements GoF Strategy pattern.

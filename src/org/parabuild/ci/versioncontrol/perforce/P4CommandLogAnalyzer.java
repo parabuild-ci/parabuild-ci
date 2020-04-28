@@ -13,13 +13,17 @@
  */
 package org.parabuild.ci.versioncontrol.perforce;
 
-import java.io.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.parabuild.ci.util.BuildException;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
  * Analyzes results of execution of p4 command

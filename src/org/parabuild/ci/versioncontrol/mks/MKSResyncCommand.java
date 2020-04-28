@@ -13,15 +13,15 @@
  */
 package org.parabuild.ci.versioncontrol.mks;
 
+import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.remote.Agent;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.versioncontrol.StderrLineProcessor;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
-import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.remote.Agent;
-import org.parabuild.ci.versioncontrol.StderrLineProcessor;
 
 /**
  * MKS resync command

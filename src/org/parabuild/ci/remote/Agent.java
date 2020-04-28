@@ -14,13 +14,13 @@
 package org.parabuild.ci.remote;
 
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.util.CommandStoppedException;
 import org.parabuild.ci.configuration.AgentHost;
 import org.parabuild.ci.process.TailBufferSize;
 import org.parabuild.ci.remote.internal.LocalBuilderFiles;
 import org.parabuild.ci.remote.services.ModifiedFileList;
 import org.parabuild.ci.remote.services.RemoteFileDescriptor;
 import org.parabuild.ci.services.TailUpdate;
+import org.parabuild.ci.util.CommandStoppedException;
 
 import java.io.File;
 import java.io.FileNotFoundException;

@@ -13,11 +13,11 @@
  */
 package org.parabuild.ci.versioncontrol.perforce;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.remote.Agent;
+
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
 
 
 final class P4ClientCommand extends P4Command {

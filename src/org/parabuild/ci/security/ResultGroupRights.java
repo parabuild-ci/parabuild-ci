@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.security;
 
-import java.io.*;
+import java.io.Serializable;
 import java.util.Objects;
 
 /**

@@ -13,19 +13,30 @@
  */
 package org.parabuild.ci.webui.result;
 
-import java.util.*;
-import org.apache.commons.logging.*;
-
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.common.InputValidator;
-import org.parabuild.ci.util.*;
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.error.*;
+import org.parabuild.ci.configuration.ResultGroupManager;
 import org.parabuild.ci.error.Error;
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.webui.common.*;
-import org.parabuild.ci.webui.admin.*;
-import org.parabuild.ci.project.*;
-import viewtier.ui.*;
+import org.parabuild.ci.error.ErrorManagerFactory;
+import org.parabuild.ci.object.Project;
+import org.parabuild.ci.object.ProjectResultGroup;
+import org.parabuild.ci.object.ResultGroup;
+import org.parabuild.ci.project.ProjectManager;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.webui.admin.ProjectDropDown;
+import org.parabuild.ci.webui.common.CommonField;
+import org.parabuild.ci.webui.common.CommonFieldLabel;
+import org.parabuild.ci.webui.common.GridIterator;
+import org.parabuild.ci.webui.common.MessagePanel;
+import org.parabuild.ci.webui.common.Pages;
+import org.parabuild.ci.webui.common.RequiredFieldMarker;
+import org.parabuild.ci.webui.common.Saveable;
+import org.parabuild.ci.webui.common.Validatable;
+import viewtier.ui.Panel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Panel to edit display result group.

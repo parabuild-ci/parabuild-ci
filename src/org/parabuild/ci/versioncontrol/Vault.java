@@ -13,7 +13,9 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 /**
  * Vault history

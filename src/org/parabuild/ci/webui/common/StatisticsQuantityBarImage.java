@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.webui.common;
 
-import viewtier.ui.*;
+import viewtier.ui.Image;
 
 /**
  * Image class to display horisontal bar to shown quantity of

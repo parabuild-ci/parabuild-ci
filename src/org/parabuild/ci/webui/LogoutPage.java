@@ -15,7 +15,11 @@ package org.parabuild.ci.webui;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.webui.common.*;
+import org.parabuild.ci.webui.common.BasePage;
+import org.parabuild.ci.webui.common.BoldCommonLabel;
+import org.parabuild.ci.webui.common.PageHeaderPanel;
+import org.parabuild.ci.webui.common.Pages;
+import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Flow;
 import viewtier.ui.Layout;
 import viewtier.ui.Parameters;

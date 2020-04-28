@@ -13,8 +13,8 @@
  */
 package org.parabuild.ci.installer;
 
-import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.configuration.PersistanceConstants;
+import org.parabuild.ci.util.IoUtils;
 
 import java.io.File;
 import java.io.FileOutputStream;

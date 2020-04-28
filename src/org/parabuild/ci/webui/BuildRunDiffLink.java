@@ -13,8 +13,9 @@
  */
 package org.parabuild.ci.webui;
 
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.webui.common.*;
+import org.parabuild.ci.object.BuildRun;
+import org.parabuild.ci.webui.common.CommonLink;
+import org.parabuild.ci.webui.common.Pages;
 
 /**
  * This class shows build run diff link

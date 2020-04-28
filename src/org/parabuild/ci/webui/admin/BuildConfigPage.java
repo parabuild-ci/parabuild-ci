@@ -15,6 +15,7 @@ package org.parabuild.ci.webui.admin;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.configuration.TransactionCallback;
@@ -33,7 +34,6 @@ import org.parabuild.ci.webui.common.ContinueButton;
 import org.parabuild.ci.webui.common.Pages;
 import org.parabuild.ci.webui.common.ParameterUtils;
 import org.parabuild.ci.webui.common.SaveButton;
-import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Button;
 import viewtier.ui.ButtonPressedEvent;

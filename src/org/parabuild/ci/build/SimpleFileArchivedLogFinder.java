@@ -13,20 +13,19 @@
  */
 package org.parabuild.ci.build;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.Iterator;
-import java.util.List;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.parabuild.ci.archive.ArchiveEntry;
 import org.parabuild.ci.archive.ArchiveManager;
 import org.parabuild.ci.object.StepLog;
 import org.parabuild.ci.remote.Agent;
-import org.parabuild.ci.remote.services.RemoteFileDescriptor;
 import org.parabuild.ci.remote.services.ModifiedFileList;
+import org.parabuild.ci.remote.services.RemoteFileDescriptor;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * Reusable helper class to find if a given log path is already

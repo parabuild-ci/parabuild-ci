@@ -13,8 +13,8 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.webui.common.*;
+import org.parabuild.ci.object.User;
+import org.parabuild.ci.webui.common.CodeNameDropDown;
 
 /**
  * InstantMessagingTypeDropdown shows a list of user IM types

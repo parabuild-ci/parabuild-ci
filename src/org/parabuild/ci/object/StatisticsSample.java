@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.object;
 
-import java.util.*;
+import java.util.Date;
 
 /**
  * Created by IntelliJ IDEA.

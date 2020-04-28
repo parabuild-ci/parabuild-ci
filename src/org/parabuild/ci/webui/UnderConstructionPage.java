@@ -13,8 +13,10 @@
  */
 package org.parabuild.ci.webui;
 
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import org.parabuild.ci.webui.common.BasePage;
+import org.parabuild.ci.webui.common.BoldCommonLabel;
+import viewtier.ui.Parameters;
+import viewtier.ui.StatelessTierlet;
 
 /**
  * This class is a generic error page

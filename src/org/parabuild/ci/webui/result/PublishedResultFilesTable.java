@@ -13,15 +13,26 @@
  */
 package org.parabuild.ci.webui.result;
 
-import java.util.*;
-
-import org.parabuild.ci.archive.*;
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.archive.ArchiveManager;
+import org.parabuild.ci.archive.ArchiveManagerFactory;
+import org.parabuild.ci.configuration.ConfigurationManager;
+import org.parabuild.ci.object.PublishedStepResult;
+import org.parabuild.ci.object.StepResult;
 import org.parabuild.ci.security.SecurityManager;
-import org.parabuild.ci.webui.*;
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import org.parabuild.ci.webui.StepResultPanel;
+import org.parabuild.ci.webui.common.AbstractFlatTable;
+import org.parabuild.ci.webui.common.CommonCommandLink;
+import org.parabuild.ci.webui.common.CommonLabel;
+import org.parabuild.ci.webui.common.Pages;
+import org.parabuild.ci.webui.common.TableHeaderLabel;
+import viewtier.ui.Component;
+import viewtier.ui.Flow;
+import viewtier.ui.Label;
+import viewtier.ui.Layout;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Properties;
 
 /**
  * This table contains published build run results. Published

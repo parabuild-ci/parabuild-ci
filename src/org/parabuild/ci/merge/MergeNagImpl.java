@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.merge;
 
-import java.util.*;
+import java.util.List;
 
 /**
  * A reminder to an owner of a pending merge.

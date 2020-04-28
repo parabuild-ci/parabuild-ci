@@ -13,10 +13,12 @@
  */
 package org.parabuild.ci.webui.result;
 
-import java.io.*;
-import java.util.*;
+import org.parabuild.ci.object.BuildConfig;
+import org.parabuild.ci.object.BuildRun;
+import org.parabuild.ci.object.StepResult;
 
-import org.parabuild.ci.object.*;
+import java.io.Serializable;
+import java.util.Date;
 
 /**
  * This value object holds build run's result in a format

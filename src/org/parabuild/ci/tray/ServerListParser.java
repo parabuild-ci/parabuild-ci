@@ -13,9 +13,11 @@
  */
 package org.parabuild.ci.tray;
 
-import java.util.*;
+import org.parabuild.ci.util.StringUtils;
 
-import org.parabuild.ci.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringTokenizer;
 
 /**
  * Parses server list

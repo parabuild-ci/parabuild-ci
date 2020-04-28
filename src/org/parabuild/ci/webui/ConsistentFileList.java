@@ -13,11 +13,19 @@
  */
 package org.parabuild.ci.webui;
 
-import java.io.*;
-import java.util.*;
+import org.parabuild.ci.archive.ArchiveEntry;
+import org.parabuild.ci.archive.ArchiveManager;
+import org.parabuild.ci.object.LogConfig;
+import org.parabuild.ci.object.StepLog;
 
-import org.parabuild.ci.archive.*;
-import org.parabuild.ci.object.*;
+import java.io.IOException;
+import java.io.Serializable;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * This class holds a list of files addressable by name and by

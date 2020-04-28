@@ -14,7 +14,7 @@
 package org.parabuild.ci.process;
 
 import java.io.Serializable;
-import java.util.*;
+import java.util.Comparator;
 
 /**
  * Implementation of Comparator interface to compare

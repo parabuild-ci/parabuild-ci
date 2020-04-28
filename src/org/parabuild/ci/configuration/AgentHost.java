@@ -13,9 +13,9 @@
  */
 package org.parabuild.ci.configuration;
 
-import org.parabuild.ci.util.ArgumentValidator;
 import org.parabuild.ci.object.AgentConfig;
 import org.parabuild.ci.realm.RealmConstants;
+import org.parabuild.ci.util.ArgumentValidator;
 
 /**
  * Value object to hold build host name and credentials.

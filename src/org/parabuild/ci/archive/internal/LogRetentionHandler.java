@@ -14,11 +14,11 @@
 package org.parabuild.ci.archive.internal;
 
 import net.sf.hibernate.Query;
-import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.TransactionCallback;
 import org.parabuild.ci.object.BuildConfigAttribute;
 import org.parabuild.ci.object.StepLog;
+import org.parabuild.ci.util.IoUtils;
 
 import java.io.File;
 import java.util.Date;

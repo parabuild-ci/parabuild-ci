@@ -13,14 +13,22 @@
  */
 package org.parabuild.ci.relnotes;
 
-import java.util.*;
-import java.util.regex.*;
-
-import org.parabuild.ci.util.*;
-import org.parabuild.ci.configuration.*;
+import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.error.Error;
-import org.parabuild.ci.error.*;
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.error.ErrorManagerFactory;
+import org.parabuild.ci.object.BuildRun;
+import org.parabuild.ci.object.ChangeList;
+import org.parabuild.ci.object.IssueChangeList;
+import org.parabuild.ci.object.IssueTrackerProperty;
+import org.parabuild.ci.util.StringUtils;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * This class is responsible for linking issues that are already

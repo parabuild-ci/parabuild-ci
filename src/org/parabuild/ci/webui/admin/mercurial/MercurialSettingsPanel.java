@@ -15,6 +15,7 @@ package org.parabuild.ci.webui.admin.mercurial;
 
 import org.parabuild.ci.common.InputValidator;
 import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.remote.AgentEnvironment;
 import org.parabuild.ci.remote.NoLiveAgentsException;
@@ -24,7 +25,6 @@ import org.parabuild.ci.webui.admin.AbstractSourceControlPanel;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.CommonFieldLabel;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
-import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.webui.common.WebuiUtils;
 
 import java.io.IOException;

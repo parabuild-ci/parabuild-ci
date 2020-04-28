@@ -13,9 +13,6 @@
  */
 package org.parabuild.ci.statistics;
 
-import java.awt.*;
-import java.io.*;
-import java.util.*;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartRenderingInfo;
 import org.jfree.chart.ChartUtilities;
@@ -28,6 +25,13 @@ import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.renderer.category.LineAndShapeRenderer;
 import org.jfree.data.category.DefaultCategoryDataset;
+
+import java.awt.*;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.SortedMap;
 
 /**
  * Responsible for creating a chart for recent time to fix.

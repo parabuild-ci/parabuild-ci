@@ -13,10 +13,10 @@
  */
 package org.parabuild.ci.webui;
 
-import org.apache.lucene.search.*;
-
-import org.parabuild.ci.search.*;
-import viewtier.cdk.*;
+import org.apache.lucene.search.Hits;
+import org.parabuild.ci.search.SearchHitsTraverser;
+import viewtier.cdk.CustomComponent;
+import viewtier.cdk.RenderContext;
 
 public final class SearchResultComponent extends CustomComponent {
 

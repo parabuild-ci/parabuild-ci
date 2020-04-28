@@ -13,19 +13,10 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.util.Calendar;
-import java.util.Iterator;
-import java.util.List;
-
 import net.sf.hibernate.Query;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.util.BuildException;
-import org.parabuild.ci.util.CommandStoppedException;
-import org.parabuild.ci.util.IoUtils;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.TransactionCallback;
 import org.parabuild.ci.error.Error;
@@ -33,6 +24,14 @@ import org.parabuild.ci.error.ErrorManager;
 import org.parabuild.ci.error.ErrorManagerFactory;
 import org.parabuild.ci.object.BuildRun;
 import org.parabuild.ci.object.LabelProperty;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
+
+import java.util.Calendar;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * LabelRemover class removes label using given source control.

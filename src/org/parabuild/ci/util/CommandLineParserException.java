@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.util;
 
-import java.io.*;
+import java.io.IOException;
 
 /**
  *

@@ -13,9 +13,9 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.util.*;
-
 import org.parabuild.ci.remote.Agent;
+
+import java.util.List;
 
 
 /**

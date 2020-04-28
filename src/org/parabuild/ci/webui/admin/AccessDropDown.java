@@ -13,8 +13,8 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.object.*;
-import viewtier.ui.*;
+import org.parabuild.ci.object.BuildConfig;
+import viewtier.ui.DropDown;
 
 /**
  * Access dropdown contains a list of build access types

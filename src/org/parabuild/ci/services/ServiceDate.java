@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.services;
 
-import java.util.*;
+import java.util.Date;
 
 /**
  * Purpose of this class to take out import of Date class from ServiceLicenseInformation

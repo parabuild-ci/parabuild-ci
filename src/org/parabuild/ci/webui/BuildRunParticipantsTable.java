@@ -13,11 +13,8 @@
  */
 package org.parabuild.ci.webui;
 
-import java.text.*;
-import java.util.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.parabuild.ci.configuration.BuildRunParticipantVO;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
@@ -32,6 +29,10 @@ import viewtier.ui.Component;
 import viewtier.ui.Flow;
 import viewtier.ui.Label;
 import viewtier.ui.Layout;
+
+import java.text.SimpleDateFormat;
+import java.util.List;
+import java.util.Locale;
 
 /**
  * Shows change lists headers ONLY.

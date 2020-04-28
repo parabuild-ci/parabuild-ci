@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.versioncontrol.perforce;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.LinkedList;
 
 /**
  * Implementation of {@link P4OpenedDriver}.

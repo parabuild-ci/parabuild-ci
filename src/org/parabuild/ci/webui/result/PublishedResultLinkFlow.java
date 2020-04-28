@@ -13,8 +13,9 @@
  */
 package org.parabuild.ci.webui.result;
 
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import org.parabuild.ci.webui.common.CommonLabel;
+import org.parabuild.ci.webui.common.ResultsLink;
+import viewtier.ui.Flow;
 
 
 /**

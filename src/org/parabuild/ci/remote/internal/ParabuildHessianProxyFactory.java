@@ -13,10 +13,11 @@
  */
 package org.parabuild.ci.remote.internal;
 
-import java.io.*;
-import java.net.*;
+import com.caucho.hessian.client.HessianProxyFactory;
 
-import com.caucho.hessian.client.*;
+import java.io.IOException;
+import java.net.URL;
+import java.net.URLConnection;
 
 
 /**

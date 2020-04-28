@@ -13,21 +13,20 @@
  */
 package org.parabuild.ci.remote.internal;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.Version;
+import org.parabuild.ci.process.OsCommand;
+import org.parabuild.ci.process.TailBufferSize;
+import org.parabuild.ci.remote.AgentEnvironment;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.RuntimeUtils;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Map;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
-import org.parabuild.ci.Version;
-import org.parabuild.ci.util.CommandStoppedException;
-import org.parabuild.ci.util.IoUtils;
-import org.parabuild.ci.util.RuntimeUtils;
-import org.parabuild.ci.process.OsCommand;
-import org.parabuild.ci.process.TailBufferSize;
-import org.parabuild.ci.remote.AgentEnvironment;
 
 /**
  * This is class represents a local environment.

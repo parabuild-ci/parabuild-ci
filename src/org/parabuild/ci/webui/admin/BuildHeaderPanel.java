@@ -17,6 +17,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.BuildStatus;
 import org.parabuild.ci.common.VersionControlSystem;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
@@ -37,7 +38,6 @@ import org.parabuild.ci.webui.common.Pages;
 import org.parabuild.ci.webui.common.RequiredFieldMarker;
 import org.parabuild.ci.webui.common.Saveable;
 import org.parabuild.ci.webui.common.Validatable;
-import org.parabuild.ci.common.WebUIConstants;
 import viewtier.ui.Field;
 
 import java.util.regex.Pattern;

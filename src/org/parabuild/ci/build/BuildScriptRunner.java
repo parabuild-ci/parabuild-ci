@@ -13,13 +13,13 @@
  */
 package org.parabuild.ci.build;
 
+import org.parabuild.ci.process.TimeoutCallback;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.CommandStoppedException;
+
 import java.io.File;
 import java.util.Collection;
 import java.util.List;
-
-import org.parabuild.ci.util.BuildException;
-import org.parabuild.ci.util.CommandStoppedException;
-import org.parabuild.ci.process.TimeoutCallback;
 
 /**
  * Runs build script

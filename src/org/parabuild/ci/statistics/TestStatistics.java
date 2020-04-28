@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.statistics;
 
-import java.io.*;
+import java.io.Serializable;
 
 /**
  * This class holds build up-to-date stats

@@ -13,18 +13,18 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.common.WebUIConstants;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
 import org.parabuild.ci.object.VCSUserToEmailMap;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.AbstractFlatTable;
 import org.parabuild.ci.webui.common.CommonField;
 import org.parabuild.ci.webui.common.EmailField;
 import org.parabuild.ci.webui.common.TableHeaderLabel;
 import org.parabuild.ci.webui.common.Validatable;
-import org.parabuild.ci.common.WebUIConstants;
-import viewtier.ui.Component;
 import viewtier.ui.AbstractInput;
+import viewtier.ui.Component;
 
 import java.util.ArrayList;
 import java.util.Iterator;

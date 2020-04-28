@@ -13,10 +13,10 @@
  */
 package org.parabuild.ci.build;
 
-import java.util.*;
-
 import org.parabuild.ci.object.BuildRun;
 import org.parabuild.ci.services.BuildFinishedEvent;
+
+import java.util.Date;
 
 final class BuildFinishedEventImpl implements BuildFinishedEvent {
 

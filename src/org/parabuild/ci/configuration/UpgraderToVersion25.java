@@ -13,10 +13,13 @@
  */
 package org.parabuild.ci.configuration;
 
-import java.sql.*;
-import org.apache.commons.logging.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.util.IoUtils;
 
-import org.parabuild.ci.util.*;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  * Upgrades to version 25. Adds manual label field to build run.

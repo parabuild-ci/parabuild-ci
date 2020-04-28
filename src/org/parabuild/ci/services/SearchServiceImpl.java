@@ -13,22 +13,34 @@
  */
 package org.parabuild.ci.services;
 
-import java.io.*;
-import java.util.*;
-import org.apache.commons.logging.*;
-import org.apache.lucene.analysis.*;
-import org.apache.lucene.analysis.standard.*;
-import org.apache.lucene.index.*;
+import EDU.oswego.cs.dl.util.concurrent.BoundedLinkedQueue;
+import EDU.oswego.cs.dl.util.concurrent.QueuedExecutor;
+import EDU.oswego.cs.dl.util.concurrent.ThreadFactory;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.lucene.analysis.Analyzer;
+import org.apache.lucene.analysis.standard.StandardAnalyzer;
+import org.apache.lucene.document.Document;
+import org.apache.lucene.document.Field;
+import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.queryParser.ParseException;
-import org.apache.lucene.queryParser.*;
-import org.apache.lucene.search.*;
-import org.apache.lucene.document.*;
-
-import EDU.oswego.cs.dl.util.concurrent.*;
-import org.parabuild.ci.util.*;
-import org.parabuild.ci.configuration.*;
+import org.apache.lucene.queryParser.QueryParser;
+import org.apache.lucene.search.Hits;
+import org.apache.lucene.search.IndexSearcher;
+import org.apache.lucene.search.Query;
+import org.apache.lucene.search.Searcher;
+import org.parabuild.ci.configuration.ConfigurationConstants;
 import org.parabuild.ci.error.Error;
-import org.parabuild.ci.error.*;
+import org.parabuild.ci.error.ErrorManagerFactory;
+import org.parabuild.ci.util.DirectoryTraverserCallback;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.util.ThreadUtils;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.Reader;
+import java.util.Enumeration;
 
 /**
  * Search service - provides access to build results search and

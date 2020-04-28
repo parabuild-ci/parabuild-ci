@@ -13,10 +13,17 @@
  */
 package org.parabuild.ci.util;
 
-import java.text.*;
-import java.util.*;
-import org.apache.commons.logging.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.common.ValidationException;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 
 /**
  * NamedPropertyStringGenerator is responsible for generating

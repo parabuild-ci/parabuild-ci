@@ -13,14 +13,15 @@
  */
 package org.parabuild.ci.configuration;
 
-import java.sql.*;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import net.sf.hibernate.HibernateException;
 import net.sf.hibernate.Session;
 import net.sf.hibernate.Transaction;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.util.StringUtils;
+
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public final class PersistanceUtils implements PersistanceConstants {
 

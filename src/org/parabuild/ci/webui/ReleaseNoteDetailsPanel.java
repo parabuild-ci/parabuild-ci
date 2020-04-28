@@ -13,14 +13,23 @@
  */
 package org.parabuild.ci.webui;
 
-import java.text.*;
-import java.util.*;
-
-import org.parabuild.ci.util.*;
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.configuration.ConfigurationManager;
+import org.parabuild.ci.configuration.SystemConfigurationManager;
+import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
+import org.parabuild.ci.object.ChangeList;
+import org.parabuild.ci.object.Issue;
 import org.parabuild.ci.security.SecurityManager;
-import org.parabuild.ci.webui.common.*;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.webui.common.BoldCommonLabel;
+import org.parabuild.ci.webui.common.CommonSummaryLabel;
+import org.parabuild.ci.webui.common.GridIterator;
+import org.parabuild.ci.webui.common.MessagePanel;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
 
 /**
  * Shows the details of a given change lists.

@@ -16,7 +16,6 @@ package org.parabuild.ci.webui;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.archive.ArchiveManagerFactory;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.ActiveBuildConfig;
 import org.parabuild.ci.object.BuildConfig;
@@ -24,6 +23,7 @@ import org.parabuild.ci.object.StepResult;
 import org.parabuild.ci.security.AccessForbiddenException;
 import org.parabuild.ci.security.BuildRights;
 import org.parabuild.ci.security.SecurityManager;
+import org.parabuild.ci.util.StringUtils;
 
 import java.io.InputStream;
 import java.net.URLDecoder;

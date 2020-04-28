@@ -13,11 +13,11 @@
  */
 package org.parabuild.ci.object;
 
-import java.io.*;
-
 import net.sf.hibernate.CallbackException;
 import net.sf.hibernate.Lifecycle;
 import net.sf.hibernate.Session;
+
+import java.io.Serializable;
 
 /**
  * Build result header

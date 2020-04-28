@@ -13,9 +13,10 @@
  */
 package org.parabuild.ci.versioncontrol.perforce;
 
-import java.io.*;
-
 import org.parabuild.ci.util.BuildException;
+
+import java.io.BufferedReader;
+import java.io.IOException;
 
 
 public final class P4ParserHelper {

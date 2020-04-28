@@ -13,10 +13,9 @@
  */
 package org.parabuild.ci.merge.util;
 
+import EDU.oswego.cs.dl.util.concurrent.ThreadFactory;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
-import EDU.oswego.cs.dl.util.concurrent.ThreadFactory;
 import org.parabuild.ci.util.ThreadUtils;
 
 

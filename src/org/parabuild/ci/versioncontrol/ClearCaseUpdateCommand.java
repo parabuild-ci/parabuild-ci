@@ -13,10 +13,10 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.io.IOException;
-
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.remote.Agent;
+
+import java.io.IOException;
 
 /**
  * Executes ClearCase update command.

@@ -13,13 +13,18 @@
  */
 package org.parabuild.ci.webui;
 
-import java.util.*;
+import org.parabuild.ci.configuration.ConfigurationManager;
+import org.parabuild.ci.configuration.VerbialBuildResult;
+import org.parabuild.ci.object.BuildRun;
+import org.parabuild.ci.object.StepLog;
+import org.parabuild.ci.object.UserProperty;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.webui.common.CommonLink;
+import org.parabuild.ci.webui.common.Pages;
+import org.parabuild.ci.webui.common.WebuiUtils;
+import viewtier.ui.Flow;
 
-import org.parabuild.ci.util.*;
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import java.util.Properties;
 
 /**
  * Displays link to build result details

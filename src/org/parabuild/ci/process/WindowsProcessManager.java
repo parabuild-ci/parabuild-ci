@@ -16,11 +16,11 @@ package org.parabuild.ci.process;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.remote.AgentEnvironment;
 import org.parabuild.ci.util.BuildException;
 import org.parabuild.ci.util.ExceptionUtils;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.remote.AgentEnvironment;
 
 import java.io.BufferedReader;
 import java.io.IOException;

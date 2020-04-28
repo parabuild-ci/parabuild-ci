@@ -13,8 +13,9 @@
  */
 package org.parabuild.ci.util;
 
-import java.util.*;
-import javax.servlet.http.*;
+import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Servlet utility class.

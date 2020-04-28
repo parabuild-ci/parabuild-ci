@@ -13,9 +13,9 @@
  */
 package org.parabuild.ci.webui.common;
 
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.error.Error;
 import org.parabuild.ci.error.ErrorManagerFactory;
+import org.parabuild.ci.util.StringUtils;
 
 /**
  * SaveErrorProcessor

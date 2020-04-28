@@ -13,17 +13,17 @@
  */
 package org.parabuild.ci.versioncontrol.perforce;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.Iterator;
-import java.util.List;
-
 import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.configuration.ChangeListsAndIssues;
 import org.parabuild.ci.util.BuildException;
 import org.parabuild.ci.util.CommandStoppedException;
 import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.util.ThreadUtils;
-import org.parabuild.ci.configuration.ChangeListsAndIssues;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  */

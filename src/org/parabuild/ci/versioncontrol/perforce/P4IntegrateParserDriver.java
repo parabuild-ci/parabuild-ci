@@ -13,13 +13,13 @@
  */
 package org.parabuild.ci.versioncontrol.perforce;
 
-import java.io.File;
-import java.io.IOException;
-
 import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.util.BuildException;
 import org.parabuild.ci.util.CommandStoppedException;
-import org.parabuild.ci.common.ValidationException;
+
+import java.io.File;
+import java.io.IOException;
 
 /**
  * @see P4IntegrateParser#parse(File)

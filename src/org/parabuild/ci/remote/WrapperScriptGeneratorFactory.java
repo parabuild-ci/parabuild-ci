@@ -13,9 +13,9 @@
  */
 package org.parabuild.ci.remote;
 
-import java.io.IOException;
-
 import org.parabuild.ci.build.AgentFailureException;
+
+import java.io.IOException;
 
 /**
  *

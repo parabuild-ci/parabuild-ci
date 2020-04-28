@@ -13,10 +13,8 @@
  */
 package org.parabuild.ci.webui.merge;
 
-import java.util.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.parabuild.ci.merge.MergeState;
 import org.parabuild.ci.object.User;
 import org.parabuild.ci.security.SecurityManager;
@@ -29,6 +27,9 @@ import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Component;
 import viewtier.ui.Font;
 import viewtier.ui.Label;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Table to show merge statuses.

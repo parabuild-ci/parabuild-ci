@@ -13,18 +13,17 @@
  */
 package org.parabuild.ci.versioncontrol;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.remote.Agent;
+import org.parabuild.ci.util.ArgumentValidator;
+import org.parabuild.ci.util.StringUtils;
+
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
-import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.util.ArgumentValidator;
-import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.remote.Agent;
 
 /**
  * Executes Surround's history report command.

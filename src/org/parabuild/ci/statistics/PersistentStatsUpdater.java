@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.statistics;
 
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.object.BuildRun;
 
 /**
  * Functor to update persistent statistics according to the

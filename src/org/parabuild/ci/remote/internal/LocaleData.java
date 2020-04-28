@@ -13,10 +13,10 @@
  */
 package org.parabuild.ci.remote.internal;
 
-import java.io.*;
-import java.util.*;
+import org.parabuild.ci.util.ArgumentValidator;
 
-import org.parabuild.ci.util.*;
+import java.io.Serializable;
+import java.util.Locale;
 
 /**
  * This object holds Locale data to pass via Hessian

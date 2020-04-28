@@ -13,20 +13,10 @@
  */
 package org.parabuild.ci.remote.internal;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.net.MalformedURLException;
-import java.util.Locale;
-import java.util.Map;
-
 import com.caucho.hessian.client.HessianRuntimeException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.util.CommandStoppedException;
-import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.configuration.AgentHost;
 import org.parabuild.ci.process.TailBufferSize;
 import org.parabuild.ci.process.TailBufferSizeImpl;
@@ -34,6 +24,15 @@ import org.parabuild.ci.remote.AgentEnvironment;
 import org.parabuild.ci.remote.RemoteUtils;
 import org.parabuild.ci.remote.services.ExecuteResult;
 import org.parabuild.ci.remote.services.RemoteBuilderWebService;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.IoUtils;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.net.MalformedURLException;
+import java.util.Locale;
+import java.util.Map;
 
 /**
  *

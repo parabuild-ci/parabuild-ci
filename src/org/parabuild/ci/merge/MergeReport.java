@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.merge;
 
-import java.util.*;
+import java.util.Date;
 
 /**
  * Value object containing a status report for a merge.

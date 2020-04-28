@@ -13,9 +13,9 @@
  */
 package org.parabuild.ci.merge;
 
-import java.util.*;
-
 import org.parabuild.ci.object.BranchChangeList;
+
+import java.util.Date;
 
 /**
  * Implementation of {@link MergeReport}

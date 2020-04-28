@@ -13,9 +13,6 @@
  */
 package org.parabuild.ci.notification;
 
-import org.parabuild.ci.util.BuildStatusURLGenerator;
-import org.parabuild.ci.util.CommonConstants;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
@@ -33,6 +30,9 @@ import org.parabuild.ci.object.StepRun;
 import org.parabuild.ci.object.User;
 import org.parabuild.ci.object.UserProperty;
 import org.parabuild.ci.security.SecurityManager;
+import org.parabuild.ci.util.BuildStatusURLGenerator;
+import org.parabuild.ci.util.CommonConstants;
+import org.parabuild.ci.util.StringUtils;
 
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;

@@ -13,8 +13,10 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.io.*;
-import java.util.*;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.List;
 
 /**
  * Log parser for ClearCase

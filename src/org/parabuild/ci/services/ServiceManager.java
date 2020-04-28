@@ -15,7 +15,6 @@ package org.parabuild.ci.services;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.ConfigurationFile;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.error.Error;
@@ -23,6 +22,7 @@ import org.parabuild.ci.error.ErrorManager;
 import org.parabuild.ci.error.ErrorManagerFactory;
 import org.parabuild.ci.merge.MergeService;
 import org.parabuild.ci.merge.MergeServiceImpl;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.UIServlet;
 import org.parabuild.ci.webui.agent.status.AgentsStatusMonitor;
 

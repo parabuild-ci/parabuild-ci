@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.merge.merger.build.perforce;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * This value object is returned after an attempt to merge a

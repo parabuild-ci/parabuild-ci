@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.versioncontrol.perforce;
 
-import java.io.*;
+import java.io.File;
 
 /**
  * Does nothing

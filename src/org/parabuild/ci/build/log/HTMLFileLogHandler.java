@@ -13,19 +13,18 @@
  */
 package org.parabuild.ci.build.log;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.List;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.build.SimpleFileArchivedLogFinder;
 import org.parabuild.ci.object.BuildRunConfig;
 import org.parabuild.ci.object.LogConfig;
 import org.parabuild.ci.object.StepLog;
 import org.parabuild.ci.remote.Agent;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
 
 /**
  * Handles single-HTML-file customer log.

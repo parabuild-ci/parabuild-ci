@@ -13,8 +13,6 @@
  */
 package org.parabuild.ci.notification;
 
-import org.parabuild.ci.util.MailUtils;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.GlobalVCSUserMapManager;
 import org.parabuild.ci.configuration.SystemConfigurationManager;
@@ -36,6 +34,8 @@ import org.parabuild.ci.object.VCSUserToEmailMap;
 import org.parabuild.ci.security.JNDIAuthenticator;
 import org.parabuild.ci.security.JNDIUser;
 import org.parabuild.ci.security.SecurityManager;
+import org.parabuild.ci.util.MailUtils;
+import org.parabuild.ci.util.StringUtils;
 
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;

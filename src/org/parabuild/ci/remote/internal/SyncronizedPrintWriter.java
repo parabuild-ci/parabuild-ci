@@ -13,10 +13,11 @@
  */
 package org.parabuild.ci.remote.internal;
 
-import java.io.*;
-
 import org.parabuild.ci.process.Tailer;
 import org.parabuild.ci.process.ZeroLengthTailer;
+
+import java.io.OutputStream;
+import java.io.PrintWriter;
 
 /**
  */

@@ -13,11 +13,12 @@
  */
 package org.parabuild.ci.webui.common;
 
-import java.util.*;
-import org.apache.commons.logging.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.configuration.ConfigurationManager;
+import org.parabuild.ci.object.BuildConfig;
 
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.object.*;
+import java.util.Iterator;
 
 /**
  * Dropdown to show builds.

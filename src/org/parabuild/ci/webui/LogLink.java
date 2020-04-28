@@ -13,10 +13,11 @@
  */
 package org.parabuild.ci.webui;
 
-import java.util.*;
+import org.parabuild.ci.object.StepLog;
+import org.parabuild.ci.webui.common.CommonLink;
+import org.parabuild.ci.webui.common.Pages;
 
-import org.parabuild.ci.webui.common.*;
-import org.parabuild.ci.object.*;
+import java.util.Properties;
 
 /**
  * Link to a log

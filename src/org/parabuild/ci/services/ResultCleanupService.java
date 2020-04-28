@@ -15,11 +15,11 @@ package org.parabuild.ci.services;
 
 import org.parabuild.ci.archive.ArchiveManager;
 import org.parabuild.ci.archive.ArchiveManagerFactory;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.error.ErrorManager;
 import org.parabuild.ci.error.ErrorManagerFactory;
 import org.parabuild.ci.object.BuildConfig;
+import org.parabuild.ci.util.StringUtils;
 
 import java.util.Calendar;
 import java.util.Iterator;

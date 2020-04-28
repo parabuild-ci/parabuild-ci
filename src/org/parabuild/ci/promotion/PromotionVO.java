@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.promotion;
 
-import java.io.*;
+import java.io.Serializable;
 
 /**
  * A value object to display list of promotion objects.

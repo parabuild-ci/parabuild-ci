@@ -13,19 +13,18 @@
  */
 package org.parabuild.ci.remote.internal;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.Serializable;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
-import org.parabuild.ci.util.IoUtils;
-import org.parabuild.ci.util.RuntimeUtils;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.ConfigurationConstants;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.RuntimeUtils;
+import org.parabuild.ci.util.StringUtils;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.Serializable;
 
 /**
  */

@@ -16,7 +16,6 @@ package org.parabuild.ci.build;
 import net.sf.hibernate.Query;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.BuilderConfigurationManager;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.TransactionCallback;
@@ -25,6 +24,7 @@ import org.parabuild.ci.object.ProjectBuild;
 import org.parabuild.ci.object.StartParameter;
 import org.parabuild.ci.object.StartParameterType;
 import org.parabuild.ci.project.ProjectManager;
+import org.parabuild.ci.util.StringUtils;
 
 import java.util.LinkedHashMap;
 import java.util.List;

@@ -14,8 +14,8 @@
 package org.parabuild.ci.remote;
 
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.util.CommandStoppedException;
 import org.parabuild.ci.process.TailBufferSize;
+import org.parabuild.ci.util.CommandStoppedException;
 
 import java.io.File;
 import java.io.IOException;

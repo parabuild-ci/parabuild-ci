@@ -13,21 +13,20 @@
  */
 package org.parabuild.ci.versioncontrol;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.remote.Agent;
+import org.parabuild.ci.util.ArgumentValidator;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
-import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.util.ArgumentValidator;
-import org.parabuild.ci.util.IoUtils;
-import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.remote.Agent;
 
 /**
  * SurroundCommand class is responsible for executing Surround

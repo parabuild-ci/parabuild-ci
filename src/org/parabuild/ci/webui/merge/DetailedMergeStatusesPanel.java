@@ -13,9 +13,9 @@
  */
 package org.parabuild.ci.webui.merge;
 
-import java.util.*;
-
 import viewtier.ui.Panel;
+
+import java.util.List;
 
 /**
  * REVIEWME: simeshev@parabuilci.org -> implement

@@ -13,13 +13,23 @@
  */
 package org.parabuild.ci.webui;
 
-import java.util.*;
-import org.apache.commons.logging.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.configuration.ConfigurationManager;
+import org.parabuild.ci.configuration.ReleaseNoteChangeList;
+import org.parabuild.ci.configuration.ReleaseNoteReport;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.webui.common.AbstractFlatTable;
+import org.parabuild.ci.webui.common.BreakLabel;
+import org.parabuild.ci.webui.common.CommonLabel;
+import org.parabuild.ci.webui.common.CommonLink;
+import org.parabuild.ci.webui.common.Pages;
+import org.parabuild.ci.webui.common.TableHeaderLabel;
+import viewtier.ui.Component;
+import viewtier.ui.Flow;
 
-import org.parabuild.ci.util.*;
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import java.util.List;
+import java.util.Properties;
 
 /**
  * Displays release notes associated with a given build run

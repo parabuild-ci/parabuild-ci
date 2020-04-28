@@ -13,10 +13,14 @@
  */
 package org.parabuild.ci.relnotes;
 
-import java.sql.*;
-import org.apache.commons.logging.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.util.IoUtils;
 
-import org.parabuild.ci.util.*;
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  * This class creates instances of BugzillaDatabaseConnector

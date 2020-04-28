@@ -17,14 +17,14 @@ import net.sf.hibernate.HibernateException;
 import net.sf.hibernate.Session;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.util.IoUtils;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.TransactionCallback;
 import org.parabuild.ci.error.Error;
 import org.parabuild.ci.error.ErrorManagerFactory;
 import org.parabuild.ci.object.BuildRun;
 import org.parabuild.ci.object.StatisticsSample;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
 
 import java.util.Calendar;
 import java.util.Date;

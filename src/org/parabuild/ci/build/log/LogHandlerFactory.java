@@ -14,8 +14,6 @@
 package org.parabuild.ci.build.log;
 
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.util.BuildException;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.error.Error;
 import org.parabuild.ci.error.ErrorManagerFactory;
@@ -23,6 +21,8 @@ import org.parabuild.ci.object.BuildRunConfig;
 import org.parabuild.ci.object.LogConfig;
 import org.parabuild.ci.object.StepRun;
 import org.parabuild.ci.remote.Agent;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.versioncontrol.SourceControl;
 import org.parabuild.ci.versioncontrol.VersionControlFactory;
 

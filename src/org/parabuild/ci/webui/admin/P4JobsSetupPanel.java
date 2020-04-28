@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import java.util.*;
+import java.util.List;
 
 /**
  * This panel is used by build set up panel to set up release

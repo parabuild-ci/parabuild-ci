@@ -13,9 +13,11 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.util.*;
+import org.parabuild.ci.object.Change;
+import org.parabuild.ci.object.ChangeList;
 
-import org.parabuild.ci.object.*;
+import java.util.Date;
+import java.util.List;
 
 /**
  * PVCSChangeListHandler is used to retrive change lists

@@ -13,8 +13,6 @@
  */
 package org.parabuild.ci.webui;
 
-import java.util.*;
-
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildRun;
 import org.parabuild.ci.webui.common.BackToBuildListLink;
@@ -25,6 +23,8 @@ import org.parabuild.ci.webui.common.ResultsLink;
 import viewtier.ui.Component;
 import viewtier.ui.Flow;
 import viewtier.ui.Link;
+
+import java.util.List;
 
 /**
  * BuildHistoryLinks incapsulates a change list link and log

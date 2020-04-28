@@ -16,6 +16,7 @@ package org.parabuild.ci.versioncontrol;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.error.Error;
@@ -27,7 +28,6 @@ import org.parabuild.ci.util.BuildException;
 import org.parabuild.ci.util.CommandStoppedException;
 import org.parabuild.ci.util.CommonConstants;
 import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.common.ValidationException;
 
 import java.io.IOException;
 import java.util.ArrayList;

@@ -13,9 +13,9 @@
  */
 package org.parabuild.ci.webui.merge;
 
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.merge.MergeManager;
 import org.parabuild.ci.object.ActiveMergeConfiguration;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.BasePage;
 import org.parabuild.ci.webui.common.Pages;
 import org.parabuild.ci.webui.common.ParameterUtils;

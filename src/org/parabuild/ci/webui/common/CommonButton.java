@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.webui.common;
 
-import viewtier.ui.*;
+import viewtier.ui.Button;
 
 /**
  * Common button is a button to be used with Parabuild. It has

@@ -13,8 +13,9 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.io.*;
-import java.util.*;
+import java.io.Serializable;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * This class defines a version control repository path.

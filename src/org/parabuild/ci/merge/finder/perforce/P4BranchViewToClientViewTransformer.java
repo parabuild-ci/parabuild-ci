@@ -15,8 +15,8 @@ package org.parabuild.ci.merge.finder.perforce;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.util.ArgumentValidator;
 import org.parabuild.ci.common.ValidationException;
+import org.parabuild.ci.util.ArgumentValidator;
 import org.parabuild.ci.versioncontrol.perforce.P4ClientView;
 import org.parabuild.ci.versioncontrol.perforce.P4ClientViewLine;
 import org.parabuild.ci.versioncontrol.perforce.P4ClientViewParser;

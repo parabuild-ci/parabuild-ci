@@ -19,8 +19,6 @@ import net.sf.hibernate.Query;
 import net.sf.hibernate.type.Type;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.util.ArgumentValidator;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.TransactionCallback;
 import org.parabuild.ci.error.Error;
@@ -30,6 +28,8 @@ import org.parabuild.ci.object.BuildRun;
 import org.parabuild.ci.object.BuildRunAttribute;
 import org.parabuild.ci.object.BuildRunConfig;
 import org.parabuild.ci.object.PersistentTestStats;
+import org.parabuild.ci.util.ArgumentValidator;
+import org.parabuild.ci.util.StringUtils;
 
 import java.util.Date;
 import java.util.Iterator;

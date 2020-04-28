@@ -13,10 +13,6 @@
  */
 package org.parabuild.ci.webui.admin.builder;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
 import org.parabuild.ci.configuration.BuilderConfigurationManager;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.object.BuildConfig;
@@ -37,6 +33,10 @@ import viewtier.ui.Flow;
 import viewtier.ui.Label;
 import viewtier.ui.Layout;
 import viewtier.ui.Parameters;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * This page is repsonsible for editing Parabuild system

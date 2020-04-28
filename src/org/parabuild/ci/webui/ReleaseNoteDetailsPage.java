@@ -13,12 +13,18 @@
  */
 package org.parabuild.ci.webui;
 
-import org.apache.commons.logging.*;
-
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.configuration.ConfigurationManager;
+import org.parabuild.ci.object.BuildRun;
+import org.parabuild.ci.object.Issue;
+import org.parabuild.ci.object.ReleaseNote;
+import org.parabuild.ci.webui.common.Pages;
+import org.parabuild.ci.webui.common.ParameterUtils;
+import org.parabuild.ci.webui.common.WebuiUtils;
+import viewtier.ui.ConversationalTierlet;
+import viewtier.ui.Panel;
+import viewtier.ui.Parameters;
 
 /**
  * This class shows a page with build run release note details.

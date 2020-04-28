@@ -13,10 +13,10 @@
  */
 package org.parabuild.ci.configuration;
 
-import java.io.*;
-import java.util.*;
-
 import org.parabuild.ci.object.ChangeList;
+
+import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.

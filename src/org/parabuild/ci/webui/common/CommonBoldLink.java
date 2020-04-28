@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.webui.common;
 
-import java.util.*;
+import java.util.Properties;
 
 /**
  * Bolded common link to be reused in Parabuild application

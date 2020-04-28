@@ -13,11 +13,11 @@
  */
 package org.parabuild.ci.webui.admin.promotion;
 
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.object.Project;
 import org.parabuild.ci.object.PromotionPolicy;
 import org.parabuild.ci.project.ProjectManager;
 import org.parabuild.ci.promotion.PromotionConfigurationManager;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.admin.system.AuthenticatedSystemConfigurationPage;
 import org.parabuild.ci.webui.common.Pages;
 import org.parabuild.ci.webui.common.SelectProjectPanel;

@@ -13,12 +13,12 @@
  */
 package org.parabuild.ci.versioncontrol.perforce;
 
-import java.io.IOException;
-import java.util.List;
-
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.util.BuildException;
 import org.parabuild.ci.util.CommandStoppedException;
+
+import java.io.IOException;
+import java.util.List;
 
 /**
  * A driver for new chages found.

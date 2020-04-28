@@ -13,18 +13,24 @@
  */
 package org.parabuild.ci.remote.internal;
 
-import java.io.*;
-import java.net.*;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.caucho.hessian.io.HessianInput;
 import com.caucho.hessian.io.HessianOutput;
-import org.parabuild.ci.util.IoUtils;
-import org.parabuild.ci.util.StringUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.remote.services.RemoteBuilderWebService;
 import org.parabuild.ci.remote.services.RemoteFileDescriptor;
 import org.parabuild.ci.remote.services.WebServiceConstants;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
+
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.URL;
+import java.net.URLConnection;
 
 /**
  * Gets a file from remote agent

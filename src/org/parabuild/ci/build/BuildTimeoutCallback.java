@@ -15,7 +15,6 @@ package org.parabuild.ci.build;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.util.CommonConstants;
 import org.parabuild.ci.error.Error;
 import org.parabuild.ci.error.ErrorManagerFactory;
 import org.parabuild.ci.notification.NotificationManager;
@@ -24,6 +23,7 @@ import org.parabuild.ci.object.BuildRun;
 import org.parabuild.ci.object.BuildSequence;
 import org.parabuild.ci.process.TimeoutCallback;
 import org.parabuild.ci.process.TimeoutWatchdog;
+import org.parabuild.ci.util.CommonConstants;
 
 /**
  * This handler is responsible for handling timed out builds.

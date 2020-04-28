@@ -13,14 +13,14 @@
  */
 package org.parabuild.ci.webui;
 
-import java.util.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.object.ChangeList;
 import org.parabuild.ci.object.SimpleChange;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.WebuiUtils;
+
+import java.util.Properties;
 
 /**
  * ViewVC SVN-specific implementation of {@link ChangeURLFactory}.

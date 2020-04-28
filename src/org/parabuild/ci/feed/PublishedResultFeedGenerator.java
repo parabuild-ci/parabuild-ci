@@ -13,8 +13,6 @@
  */
 package org.parabuild.ci.feed;
 
-import java.util.*;
-
 import com.sun.syndication.feed.synd.SyndContent;
 import com.sun.syndication.feed.synd.SyndContentImpl;
 import com.sun.syndication.feed.synd.SyndEntry;
@@ -22,7 +20,6 @@ import com.sun.syndication.feed.synd.SyndEntryImpl;
 import com.sun.syndication.feed.synd.SyndFeed;
 import com.sun.syndication.feed.synd.SyndFeedImpl;
 import org.parabuild.ci.build.BuildState;
-import org.parabuild.ci.util.BuildStatusURLGenerator;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.configuration.VerbialBuildResult;
@@ -30,6 +27,11 @@ import org.parabuild.ci.object.ActiveBuildConfig;
 import org.parabuild.ci.object.BuildRun;
 import org.parabuild.ci.security.AccessForbiddenException;
 import org.parabuild.ci.security.SecurityManager;
+import org.parabuild.ci.util.BuildStatusURLGenerator;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * This class is responsible for generating feeds for published results.

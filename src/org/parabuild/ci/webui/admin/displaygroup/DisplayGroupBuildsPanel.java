@@ -13,12 +13,22 @@
  */
 package org.parabuild.ci.webui.admin.displaygroup;
 
-import java.util.*;
+import org.parabuild.ci.configuration.ConfigurationManager;
+import org.parabuild.ci.configuration.DisplayGroupBuildVO;
+import org.parabuild.ci.configuration.DisplayGroupManager;
+import org.parabuild.ci.object.DisplayGroup;
+import org.parabuild.ci.object.DisplayGroupBuild;
+import org.parabuild.ci.webui.common.CommonLabel;
+import org.parabuild.ci.webui.common.MessagePanel;
+import org.parabuild.ci.webui.common.Saveable;
+import viewtier.ui.CheckBox;
+import viewtier.ui.Flow;
+import viewtier.ui.Label;
+import viewtier.ui.Panel;
 
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * DisplayGroupBuildsPanel displays a list of build check boxes. Builds

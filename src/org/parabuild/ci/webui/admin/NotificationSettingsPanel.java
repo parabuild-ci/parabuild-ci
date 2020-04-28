@@ -13,11 +13,16 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.util.*;
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import org.parabuild.ci.configuration.ConfigurationManager;
+import org.parabuild.ci.object.BuildConfig;
+import org.parabuild.ci.util.ArgumentValidator;
+import org.parabuild.ci.webui.common.GridIterator;
+import org.parabuild.ci.webui.common.MessagePanel;
+import org.parabuild.ci.webui.common.Pages;
+import org.parabuild.ci.webui.common.Saveable;
+import org.parabuild.ci.webui.common.Validatable;
+import org.parabuild.ci.webui.common.WebuiUtils;
+import viewtier.ui.Panel;
 
 /**
  * This panel holds build setting related to e-mail build results

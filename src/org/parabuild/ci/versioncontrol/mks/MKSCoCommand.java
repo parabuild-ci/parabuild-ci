@@ -13,18 +13,18 @@
  */
 package org.parabuild.ci.versioncontrol.mks;
 
+import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.remote.Agent;
+import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.versioncontrol.StderrLineProcessor;
+import org.parabuild.ci.versioncontrol.VersionControlRemoteCommand;
+
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
-import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.util.StringUtils;
-import org.parabuild.ci.remote.Agent;
-import org.parabuild.ci.versioncontrol.StderrLineProcessor;
-import org.parabuild.ci.versioncontrol.VersionControlRemoteCommand;
 
 /**
  * MKS co command

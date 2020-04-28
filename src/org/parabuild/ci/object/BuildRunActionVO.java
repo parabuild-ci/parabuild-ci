@@ -13,9 +13,9 @@
  */
 package org.parabuild.ci.object;
 
-import java.io.*;
-import java.util.*;
-import java.text.*;
+import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Build run action log useable for reporting.

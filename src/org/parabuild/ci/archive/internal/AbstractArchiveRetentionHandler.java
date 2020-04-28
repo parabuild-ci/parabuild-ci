@@ -15,12 +15,12 @@ package org.parabuild.ci.archive.internal;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.parabuild.ci.util.ArgumentValidator;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.error.Error;
 import org.parabuild.ci.error.ErrorManager;
 import org.parabuild.ci.error.ErrorManagerFactory;
+import org.parabuild.ci.util.ArgumentValidator;
+import org.parabuild.ci.util.StringUtils;
 
 import java.io.File;
 

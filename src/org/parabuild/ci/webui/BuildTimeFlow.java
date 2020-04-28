@@ -13,8 +13,8 @@
  */
 package org.parabuild.ci.webui;
 
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.object.BuildRun;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.WebuiUtils;
 import viewtier.ui.Flow;
 import viewtier.ui.Layout;

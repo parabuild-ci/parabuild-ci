@@ -23,8 +23,6 @@ import net.sf.hibernate.type.Type;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.build.BuildState;
-import org.parabuild.ci.util.FatalConfigurationException;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.DisplayUserGroupVO;
 import org.parabuild.ci.configuration.GroupMemberVO;
@@ -49,6 +47,8 @@ import org.parabuild.ci.object.UserGroup;
 import org.parabuild.ci.object.UserProperty;
 import org.parabuild.ci.project.ProjectManager;
 import org.parabuild.ci.services.BuildManager;
+import org.parabuild.ci.util.FatalConfigurationException;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.Pages;
 import viewtier.ui.TierletContext;
 

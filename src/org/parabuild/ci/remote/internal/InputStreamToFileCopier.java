@@ -13,11 +13,19 @@
  */
 package org.parabuild.ci.remote.internal;
 
-import java.io.*;
-import org.apache.commons.logging.*;
+import EDU.oswego.cs.dl.util.concurrent.Latch;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.NullOutputStream;
 
-import org.parabuild.ci.util.*;
-import EDU.oswego.cs.dl.util.concurrent.*;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 /**
  * This class performs copying of a character InputStream to a

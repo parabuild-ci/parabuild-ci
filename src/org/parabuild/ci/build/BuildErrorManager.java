@@ -13,13 +13,13 @@
  */
 package org.parabuild.ci.build;
 
-import org.parabuild.ci.util.IoUtils;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.error.Error;
 import org.parabuild.ci.error.ErrorManagerFactory;
 import org.parabuild.ci.object.BuildRun;
 import org.parabuild.ci.object.BuildSequence;
 import org.parabuild.ci.remote.Agent;
+import org.parabuild.ci.util.IoUtils;
+import org.parabuild.ci.util.StringUtils;
 
 /**
  * This is a specialized class to use to report errors occurred in

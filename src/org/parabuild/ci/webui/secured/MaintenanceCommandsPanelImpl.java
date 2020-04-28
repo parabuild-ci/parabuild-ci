@@ -13,10 +13,11 @@
  */
 package org.parabuild.ci.webui.secured;
 
-import java.util.*;
+import org.parabuild.ci.webui.AnnotatedCommandLink;
+import org.parabuild.ci.webui.common.BoldCommonLabel;
+import org.parabuild.ci.webui.common.Pages;
 
-import org.parabuild.ci.webui.*;
-import org.parabuild.ci.webui.common.*;
+import java.util.Properties;
 
 /**
  */

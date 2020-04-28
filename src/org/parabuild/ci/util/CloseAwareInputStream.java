@@ -13,7 +13,9 @@
  */
 package org.parabuild.ci.util;
 
-import java.io.*;
+import java.io.FilterInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * This input stream will not call it's delegate close() method

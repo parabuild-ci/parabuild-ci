@@ -13,14 +13,21 @@
  */
 package org.parabuild.ci.webui;
 
-import java.text.*;
-import java.util.*;
-import org.apache.commons.logging.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
+import org.parabuild.ci.object.BuildRun;
+import org.parabuild.ci.object.ChangeList;
+import org.parabuild.ci.webui.common.AbstractFlatTable;
+import org.parabuild.ci.webui.common.Pages;
+import org.parabuild.ci.webui.common.TableHeaderLabel;
+import viewtier.ui.Component;
+import viewtier.ui.Label;
+import viewtier.ui.Layout;
 
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import java.text.SimpleDateFormat;
+import java.util.List;
+import java.util.Locale;
 
 /**
  * Shows pending change lists for the given active build.

@@ -13,8 +13,9 @@
  */
 package org.parabuild.ci.search;
 
-import java.io.*;
-import org.apache.lucene.analysis.*;
+import org.apache.lucene.analysis.LetterTokenizer;
+
+import java.io.Reader;
 
 final class AlphanumericTokenizer extends LetterTokenizer {
 

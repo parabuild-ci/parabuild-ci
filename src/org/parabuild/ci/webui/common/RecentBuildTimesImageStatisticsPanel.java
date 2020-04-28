@@ -13,10 +13,11 @@
  */
 package org.parabuild.ci.webui.common;
 
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.webui.*;
-import org.parabuild.ci.statistics.*;
-import viewtier.ui.*;
+import org.parabuild.ci.object.ActiveBuildConfig;
+import org.parabuild.ci.statistics.StatisticsUtils;
+import org.parabuild.ci.webui.StatisticsImageServlet;
+import viewtier.ui.Image;
+import viewtier.ui.Panel;
 
 /**
  * Panel to display recent build times

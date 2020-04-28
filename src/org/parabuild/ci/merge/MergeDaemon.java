@@ -13,10 +13,9 @@
  */
 package org.parabuild.ci.merge;
 
+import EDU.oswego.cs.dl.util.concurrent.ClockDaemon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
-import EDU.oswego.cs.dl.util.concurrent.ClockDaemon;
 import org.parabuild.ci.merge.finder.MergeQueueUpdateRunner;
 import org.parabuild.ci.merge.finder.MergeQueueUpdateRunnerImpl;
 import org.parabuild.ci.merge.merger.MergeRunner;

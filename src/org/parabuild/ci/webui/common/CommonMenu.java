@@ -13,9 +13,9 @@
  */
 package org.parabuild.ci.webui.common;
 
-import java.util.*;
+import viewtier.ui.Menu;
 
-import viewtier.ui.*;
+import java.util.Properties;
 
 /**
  * Common Parabuild Menu

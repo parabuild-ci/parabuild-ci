@@ -13,10 +13,15 @@
  */
 package org.parabuild.ci.webui.admin;
 
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.statistics.*;
-import org.parabuild.ci.webui.common.*;
-import viewtier.ui.*;
+import org.parabuild.ci.object.BuildConfig;
+import org.parabuild.ci.statistics.StatisticsManager;
+import org.parabuild.ci.statistics.StatisticsManagerFactory;
+import org.parabuild.ci.webui.common.BasePage;
+import org.parabuild.ci.webui.common.Pages;
+import org.parabuild.ci.webui.common.ParameterUtils;
+import org.parabuild.ci.webui.common.WebuiUtils;
+import viewtier.ui.Parameters;
+import viewtier.ui.StatelessTierlet;
 
 /**
  * This page is repsonsible for resetting build statistics

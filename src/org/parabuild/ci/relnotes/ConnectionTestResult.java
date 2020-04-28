@@ -13,9 +13,9 @@
  */
 package org.parabuild.ci.relnotes;
 
-import java.io.*;
+import org.parabuild.ci.util.StringUtils;
 
-import org.parabuild.ci.util.*;
+import java.io.Serializable;
 
 
 /**

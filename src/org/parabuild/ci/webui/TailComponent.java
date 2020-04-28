@@ -13,12 +13,12 @@
  */
 package org.parabuild.ci.webui;
 
-import java.io.*;
-
 import org.parabuild.ci.services.TailUpdate;
 import viewtier.cdk.CustomComponent;
 import viewtier.cdk.RenderContext;
 import viewtier.util.XMLEncoder;
+
+import java.io.PrintWriter;
 
 /**
  * The component to hold a log tail. This is pretty much a

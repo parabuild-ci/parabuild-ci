@@ -13,9 +13,6 @@
  */
 package org.parabuild.ci.notification;
 
-import org.parabuild.ci.util.NamedProperty;
-import org.parabuild.ci.util.NamedPropertyStringGenerator;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.configuration.ConfigurationConstants;
 import org.parabuild.ci.configuration.ConfigurationManager;
@@ -27,6 +24,9 @@ import org.parabuild.ci.object.BuildRunAttribute;
 import org.parabuild.ci.object.BuildSequence;
 import org.parabuild.ci.object.StepRun;
 import org.parabuild.ci.object.SystemProperty;
+import org.parabuild.ci.util.NamedProperty;
+import org.parabuild.ci.util.NamedPropertyStringGenerator;
+import org.parabuild.ci.util.StringUtils;
 
 import java.net.UnknownHostException;
 

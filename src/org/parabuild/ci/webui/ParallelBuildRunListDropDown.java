@@ -13,11 +13,13 @@
  */
 package org.parabuild.ci.webui;
 
-import java.util.*;
+import org.parabuild.ci.configuration.ConfigurationManager;
+import org.parabuild.ci.object.BuildRun;
+import org.parabuild.ci.object.ParallelBuildRunVO;
+import org.parabuild.ci.webui.common.CodeNameDropDown;
 
-import org.parabuild.ci.webui.common.*;
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.configuration.*;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * This dropdown holds names and IDs of a leading and dependant build runs

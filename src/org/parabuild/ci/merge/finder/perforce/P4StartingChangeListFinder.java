@@ -15,17 +15,16 @@ package org.parabuild.ci.merge.finder.perforce;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.parabuild.ci.build.AgentFailureException;
-import org.parabuild.ci.util.BuildException;
-import org.parabuild.ci.util.CommandStoppedException;
-import org.parabuild.ci.util.ThreadUtils;
 import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.merge.MergeClientNameGenerator;
 import org.parabuild.ci.merge.MergeDAO;
 import org.parabuild.ci.object.BranchMergeConfiguration;
 import org.parabuild.ci.object.ChangeList;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.CommandStoppedException;
+import org.parabuild.ci.util.ThreadUtils;
 import org.parabuild.ci.versioncontrol.perforce.P4SourceControl;
 
 /**

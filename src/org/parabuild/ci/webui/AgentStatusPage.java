@@ -15,15 +15,14 @@ package org.parabuild.ci.webui;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
-import org.parabuild.ci.util.StringUtils;
+import org.parabuild.ci.Version;
 import org.parabuild.ci.configuration.ConfigurationFile;
 import org.parabuild.ci.configuration.ConfigurationManager;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.BoldCommonLabel;
 import org.parabuild.ci.webui.common.CommonLabel;
 import org.parabuild.ci.webui.common.Pages;
 import org.parabuild.ci.webui.common.WebuiUtils;
-import org.parabuild.ci.Version;
 import viewtier.ui.Border;
 import viewtier.ui.Color;
 import viewtier.ui.Flow;

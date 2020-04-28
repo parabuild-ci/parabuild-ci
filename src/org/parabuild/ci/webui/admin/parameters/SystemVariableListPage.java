@@ -13,11 +13,11 @@
  */
 package org.parabuild.ci.webui.admin.parameters;
 
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.configuration.BuilderConfigurationManager;
 import org.parabuild.ci.object.StartParameter;
 import org.parabuild.ci.project.ProjectManager;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.CommonCommandLinkWithImage;
 import org.parabuild.ci.webui.admin.system.NavigatableSystemConfigurationPage;
 import org.parabuild.ci.webui.common.BreakLabel;

@@ -14,9 +14,9 @@
 package org.parabuild.ci.util;
 
 import org.parabuild.ci.configuration.AgentHost;
+import org.parabuild.ci.process.RemoteCommand;
 import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.remote.AgentEnvironment;
-import org.parabuild.ci.process.RemoteCommand;
 
 import java.io.IOException;
 

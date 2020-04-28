@@ -13,8 +13,13 @@
  */
 package org.parabuild.ci.search;
 
-import java.io.*;
-import org.apache.lucene.analysis.*;
+import org.apache.lucene.analysis.Analyzer;
+import org.apache.lucene.analysis.LowerCaseFilter;
+import org.apache.lucene.analysis.StopAnalyzer;
+import org.apache.lucene.analysis.StopFilter;
+import org.apache.lucene.analysis.TokenStream;
+
+import java.io.Reader;
 
 final class AlphanumericStopAnalyzer extends Analyzer {
 

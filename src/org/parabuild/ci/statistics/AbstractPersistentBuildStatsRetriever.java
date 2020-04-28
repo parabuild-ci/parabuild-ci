@@ -13,7 +13,8 @@
  */
 package org.parabuild.ci.statistics;
 
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.object.PersistentBuildStats;
+import org.parabuild.ci.object.StatisticsSample;
 
 /**
  */

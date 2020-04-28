@@ -13,9 +13,9 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.util.*;
-
 import org.parabuild.ci.common.ValidationException;
+
+import java.util.List;
 
 /**
  * This class is responsible for validating and cleaning Surround

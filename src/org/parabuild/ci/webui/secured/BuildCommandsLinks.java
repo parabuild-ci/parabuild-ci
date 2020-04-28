@@ -13,8 +13,8 @@
  */
 package org.parabuild.ci.webui.secured;
 
-import viewtier.ui.*;
-import org.parabuild.ci.build.*;
+import org.parabuild.ci.build.BuildState;
+import viewtier.ui.Flow;
 
 public abstract class BuildCommandsLinks extends Flow {
 

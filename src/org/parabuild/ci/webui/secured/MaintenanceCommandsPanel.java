@@ -13,9 +13,9 @@
  */
 package org.parabuild.ci.webui.secured;
 
-import java.util.*;
+import viewtier.ui.Panel;
 
-import viewtier.ui.*;
+import java.util.Properties;
 
 /**
  * Shows panel containinig maintenance commands.

@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.security;
 
-import java.util.*;
+import java.util.List;
 
 /**
  * A class representing a JNDI user.

@@ -13,16 +13,12 @@
  */
 package org.parabuild.ci.webui.admin.usermanagement;
 
-import java.util.Collections;
-import java.util.List;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.parabuild.ci.build.BuildState;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.object.User;
 import org.parabuild.ci.security.SecurityManager;
+import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.webui.common.AbstractFlatTable;
 import org.parabuild.ci.webui.common.CommonLabel;
 import org.parabuild.ci.webui.common.CommonLink;
@@ -31,6 +27,9 @@ import org.parabuild.ci.webui.common.TableHeaderLabel;
 import viewtier.ui.Component;
 import viewtier.ui.Flow;
 import viewtier.ui.Label;
+
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Shows list of users in the system.

@@ -13,10 +13,10 @@
  */
 package org.parabuild.ci.relnotes;
 
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.error.Error;
 import org.parabuild.ci.error.ErrorManager;
 import org.parabuild.ci.error.ErrorManagerFactory;
+import org.parabuild.ci.util.StringUtils;
 
 import java.sql.Connection;
 import java.sql.Date;

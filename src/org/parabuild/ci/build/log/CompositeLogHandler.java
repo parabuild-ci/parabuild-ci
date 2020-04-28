@@ -13,7 +13,10 @@
  */
 package org.parabuild.ci.build.log;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * This composite calls process() on each handler in the list of

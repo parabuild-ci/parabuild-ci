@@ -13,16 +13,15 @@
  */
 package org.parabuild.ci.versioncontrol;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.build.AgentFailureException;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Locale;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
-import org.parabuild.ci.build.AgentFailureException;
 
 /**
  *

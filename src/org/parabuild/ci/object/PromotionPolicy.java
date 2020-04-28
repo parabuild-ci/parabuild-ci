@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.object;
 
-import java.io.*;
+import java.io.Serializable;
 
 /**
  * @hibernate.class table="PROMOTION_POLICY" dynamic-update="true"
