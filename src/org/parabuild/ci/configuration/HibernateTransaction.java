@@ -13,10 +13,13 @@
  */
 package org.parabuild.ci.configuration;
 
-import org.apache.commons.logging.*;
-
-import net.sf.hibernate.*;
-import org.parabuild.ci.services.*;
+import net.sf.hibernate.HibernateException;
+import net.sf.hibernate.Session;
+import net.sf.hibernate.SessionFactory;
+import net.sf.hibernate.Transaction;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.services.ServiceManager;
 
 /**
  * ThreadLocal hibernate transaction
