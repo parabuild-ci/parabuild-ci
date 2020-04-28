@@ -13,9 +13,10 @@
  */
 package org.parabuild.ci.build;
 
-import org.parabuild.ci.configuration.*;
-import org.parabuild.ci.object.*;
-import org.parabuild.ci.services.*;
+import org.parabuild.ci.configuration.ConfigurationManager;
+import org.parabuild.ci.object.ActiveBuildConfig;
+import org.parabuild.ci.object.BuildRun;
+import org.parabuild.ci.services.BuildStartRequest;
 
 /**
  * Manages starting and stopping of parallel builds
