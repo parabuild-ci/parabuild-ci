@@ -13,7 +13,7 @@
  */
 package org.parabuild.ci.archive;
 
-import org.parabuild.ci.archive.internal.*;
+import org.parabuild.ci.archive.internal.ArchiveManagerImpl;
 
 
 /**
