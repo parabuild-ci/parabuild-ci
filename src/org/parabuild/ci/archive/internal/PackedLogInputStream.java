@@ -13,12 +13,17 @@
  */
 package org.parabuild.ci.archive.internal;
 
-import java.io.*;
-import java.util.Objects;
-import java.util.zip.*;
-import org.apache.commons.logging.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.util.ArgumentValidator;
+import org.parabuild.ci.util.IoUtils;
 
-import org.parabuild.ci.util.*;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Objects;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
 
 /**
  * Zipped log input stream is a lazily initialized input stream that
