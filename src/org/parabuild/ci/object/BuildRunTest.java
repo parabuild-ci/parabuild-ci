@@ -35,15 +35,15 @@ public class BuildRunTest implements Serializable, ObjectConstants {
   private int ID = UNSAVED_ID;
   private int testCaseNameID = TestCaseName.UNSAVED_ID;
   private int buildRunID = BuildRun.UNSAVED_ID;
-  private short resultCode = 0;
-  private long durationMillis = 0L;
-  private boolean newFailure = false;
-  private boolean newTest = false;
-  private boolean broken = false;
-  private boolean fix = false;
-  private int brokenBuildRunCount = 0;
+  private short resultCode;
+  private long durationMillis;
+  private boolean newFailure;
+  private boolean newTest;
+  private boolean broken;
+  private boolean fix;
+  private int brokenBuildRunCount;
   private int brokenSinceBuildRunID = BuildRun.UNSAVED_ID;
-  private String message = null;
+  private String message;
 
   /**
    * @hibernate.id generator-class="identity" column="ID"

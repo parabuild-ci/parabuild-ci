@@ -41,7 +41,7 @@ public class InheritedSourceControlPanel extends SourceControlPanel {
   private final ReferenceableBuildNameDropdown ddParentBuildName = new ReferenceableBuildNameDropdown();
   private final Panel pnlWrapper = new Panel();
   private final PropertyToInputMap propertyToInputMap = new PropertyToInputMap(false, makePropertyHandler()); // strict map
-  private SourceControlPanel pnlParentSourceControl = null;
+  private SourceControlPanel pnlParentSourceControl;
   private int buildID = BuildConfig.UNSAVED_ID;
 
 

@@ -21,14 +21,14 @@ public final class BuildStatistics {
 
   private int ID;
   private int activeBuildID;
-  private Calendar sampleTime = null;
-  private int successfulBuildCount = 0;
-  private int failedBuildCount = 0;
-  private int totalBuildCount = 0;
-  private int changeListCount = 0;
-  private int issueCount = 0;
-  private int failedBuildPercent = 0;
-  private int successfulBuildPercent = 0;
+  private Calendar sampleTime;
+  private int successfulBuildCount;
+  private int failedBuildCount;
+  private int totalBuildCount;
+  private int changeListCount;
+  private int issueCount;
+  private int failedBuildPercent;
+  private int successfulBuildPercent;
 
 
   public int getID() {

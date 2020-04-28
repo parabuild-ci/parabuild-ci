@@ -53,7 +53,7 @@ final class MergeStatusesTable extends AbstractFlatTable {
   private static final int INDEX_COMMANDS = 4;
 
   private final transient User user;
-  private List statuses = null;
+  private List statuses;
 
 
   public MergeStatusesTable(final boolean adminMode) {

@@ -56,7 +56,7 @@ public final class LocalAgent implements Agent {
 
   private int activeBuildID = BuildConfig.UNSAVED_ID;
   private final LocalBuilderFiles bf;
-  private LocalAgentEnvironment localBuilderEnvironment = null;
+  private LocalAgentEnvironment localBuilderEnvironment;
 
 
   /**

@@ -29,7 +29,7 @@ import java.util.Properties;
 public final class AnnotatedCommandLink extends Flow {
 
   private static final long serialVersionUID = -2140340277225295856L;
-  private CommonLink commandLink = null;
+  private CommonLink commandLink;
 
 
   /**

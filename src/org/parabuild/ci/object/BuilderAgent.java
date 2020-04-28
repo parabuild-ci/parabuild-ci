@@ -28,7 +28,7 @@ public final class BuilderAgent implements Serializable, ObjectConstants {
   private int ID = UNSAVED_ID;
   private int builderID = BuilderConfiguration.UNSAVED_ID;
   private int agentID = AgentConfig.UNSAVED_ID;
-  private long timeStamp = 0;
+  private long timeStamp;
 
 
   public BuilderAgent() {

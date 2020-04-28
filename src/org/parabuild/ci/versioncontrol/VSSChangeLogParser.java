@@ -65,7 +65,7 @@ final class VSSChangeLogParser {
   private static final String STR_VSS_UNPINNED = "unpinned";
   private static final String STR_VSS_MOVED_FROM = " moved from ";
 
-  private String projectPath = null;
+  private String projectPath;
   private String projectBranch = "";
   private final int maxChangeLists;
   private final VSSDateFormatFactory formatFactory;

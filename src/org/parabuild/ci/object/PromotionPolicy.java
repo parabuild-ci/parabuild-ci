@@ -25,10 +25,10 @@ public class PromotionPolicy implements Serializable, ObjectConstants {
 
   private int ID = UNSAVED_ID;
   private int projectID = Project.UNSAVED_ID;
-  private String name = null;
-  private String description = null;
-  private boolean deleted = false;
-  private long timeStamp = 0;
+  private String name;
+  private String description;
+  private boolean deleted;
+  private long timeStamp;
 
 
   /**

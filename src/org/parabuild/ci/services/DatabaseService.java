@@ -29,7 +29,7 @@ public final class DatabaseService implements Service {
   /** @noinspection UNUSED_SYMBOL,UnusedDeclaration*/
   private static final Log log = LogFactory.getLog(DatabaseService.class); // NOPMD
 
-  private DatabaseRunner databaseRunner = null;
+  private DatabaseRunner databaseRunner;
   private byte status = SERVICE_STATUS_NOT_STARTED;
 
 

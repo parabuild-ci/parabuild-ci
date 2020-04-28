@@ -71,8 +71,8 @@ public final class IssueTrackerProperty implements Serializable, ObjectConstants
 
   private int trackerID = IssueTracker.UNSAVED_ID;
   private int ID = UNSAVED_ID;
-  private String name = null;
-  private String value = null;
+  private String name;
+  private String value;
   private long timeStamp = 1;
 
 

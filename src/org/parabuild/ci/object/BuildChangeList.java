@@ -29,7 +29,7 @@ public final class BuildChangeList implements Serializable, ObjectConstants {
   private int ID = UNSAVED_ID;
   private int changeListID = ChangeList.UNSAVED_ID;
   private int buildID = BuildConfig.UNSAVED_ID;
-  private Date changeListCreatedAt = null;
+  private Date changeListCreatedAt;
   private String isNew = "Y";
 
 

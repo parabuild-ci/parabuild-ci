@@ -29,7 +29,7 @@ public abstract class TransactionCallback {
 
   // NOTE: vimeshev - 09/06/2003 - fields made protected for access
   // convinience for implementing runInTransaction method
-  protected Session session = null;
+  protected Session session;
 
 
   /**

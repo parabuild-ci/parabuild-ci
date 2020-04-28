@@ -20,8 +20,8 @@ import java.util.Date;
  */
 final class StarTeamListCommandParameters extends StarTeamCommandParameters {
 
-  private Date configDate = null;
-  private String filter = null;
+  private Date configDate;
+  private String filter;
 
   public Date getConfigDate() {
     return configDate;

@@ -24,16 +24,16 @@ public final class AgentConfigVO implements ObjectConstants {
   private static final String BUILD_MANAGER = AgentConfig.BUILD_MANAGER;
 
   private int ID = UNSAVED_ID;
-  private int capacity = 0;
-  private int maxConcurrentBuilds = 0;
-  private String host = null;
-  private long timeStamp = 0L;
+  private int capacity;
+  private int maxConcurrentBuilds;
+  private String host;
+  private long timeStamp;
   private boolean enabled = true;
-  private boolean deleted = false;
+  private boolean deleted;
   private String description = "";
   private final String password = null;
-  private int buildConfigCount = 0;
-  private boolean serialize = false;
+  private int buildConfigCount;
+  private boolean serialize;
 
 
   /**

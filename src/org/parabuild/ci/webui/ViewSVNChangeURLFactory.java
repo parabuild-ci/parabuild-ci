@@ -30,8 +30,8 @@ public final class ViewSVNChangeURLFactory implements ChangeURLFactory {
   /** @noinspection UNUSED_SYMBOL,UnusedDeclaration*/
   private static final Log log = LogFactory.getLog(ViewSVNChangeURLFactory.class); // NOPMD
 
-  private String url = null;
-  private boolean showRevision = false;
+  private String url;
+  private boolean showRevision;
   private final String viewcvsRoot;
 
 

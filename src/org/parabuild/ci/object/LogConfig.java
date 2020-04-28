@@ -49,10 +49,10 @@ public final class LogConfig implements Serializable, ObjectConstants, Lifecycle
 
   private int ID = -1;
   private int buildID = BuildConfig.UNSAVED_ID;
-  private String description = null;
+  private String description;
   private String path = "";
-  private long timeStamp = 0;
-  private byte type = 0;
+  private long timeStamp;
+  private byte type;
 
 
   /**

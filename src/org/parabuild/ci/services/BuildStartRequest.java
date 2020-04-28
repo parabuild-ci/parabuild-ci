@@ -41,8 +41,8 @@ public final class BuildStartRequest {
    */
   public static final byte REQUEST_CHAINED = 4;
 
-  private boolean cleanCheckout = false;
-  private boolean uniqueAgentCheckout = false;
+  private boolean cleanCheckout;
+  private boolean uniqueAgentCheckout;
   private final boolean pinResult;
   private byte requestType;
   private int buildRunID;
@@ -64,26 +64,26 @@ public final class BuildStartRequest {
    */
   private final List publishedResults = new ArrayList(5);
 
-  private boolean publishingRun = false;
+  private boolean publishingRun;
 
   /**
    * Agent host.
    */
-  private AgentHost agentHost = null;
+  private AgentHost agentHost;
 
   /**
    * A flag indicating that the agent host required.
    *
    * @see #agentHost
    */
-  private boolean agentHostRequired = false;
+  private boolean agentHostRequired;
 
-  private boolean ignoreSerialization = false;
+  private boolean ignoreSerialization;
 
   /**
    * A flag indicating that a next scheduled build should be skipped if this build start request proceeds.
    */
-  private boolean skipNextScheduledBuild = false;
+  private boolean skipNextScheduledBuild;
 
 
   /**

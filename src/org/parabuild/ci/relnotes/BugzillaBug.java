@@ -28,11 +28,11 @@ final class BugzillaBug implements Serializable {
   private static final long serialVersionUID = -8771878086172241969L; // NOPMD
 
   private int bugID = Issue.UNSAVED_ID;
-  private String shortDescr = null;
-  private String product = null;
-  private String version = null;
-  private String status = null;
-  private Date date = null;
+  private String shortDescr;
+  private String product;
+  private String version;
+  private String status;
+  private Date date;
 
 
   public BugzillaBug(final int bugID, final String product, final String shortDescr, final String status, final String version, final Date date) {

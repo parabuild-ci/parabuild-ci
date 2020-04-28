@@ -71,7 +71,7 @@ public abstract class AbstractInstantMessagingNotificationManager implements Not
   private final ConfigurationManager cm = ConfigurationManager.getInstance();
 
 
-  private Map vcsUserMap = null;
+  private Map vcsUserMap;
   private boolean enabled = true;
 
 

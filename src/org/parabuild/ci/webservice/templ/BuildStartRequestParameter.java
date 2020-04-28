@@ -26,9 +26,9 @@ public final class BuildStartRequestParameter implements Serializable {
 
   private static final long serialVersionUID = 0L;
 
-  private String variableName = null;
-  private String[] variableValues = null;
-  private String description = null;
+  private String variableName;
+  private String[] variableValues;
+  private String description;
 
 
   public String getVariableName() {

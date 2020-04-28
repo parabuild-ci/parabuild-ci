@@ -106,7 +106,7 @@ public final class ConfigurationManager implements Serializable {
    */
   private static final ConfigurationManager configManager = new ConfigurationManager();
 
-  private SessionFactory sessionFactory = null; // NOPMD
+  private SessionFactory sessionFactory; // NOPMD
 
 
   /**

@@ -67,36 +67,36 @@ public abstract class AbstractBuildScriptGenerator implements BuildScriptGenerat
   protected final Agent agent;
   private final Map addedVariables = new HashMap(11);
   private final RemoteCommandTimeStamp timeStamp;
-  protected String relativeBuildDir = null;
-  private Date buildStartedAt = null;
+  protected String relativeBuildDir;
+  private Date buildStartedAt;
   private int buildNumber = UNSET_BUILD_NUMBER;
   private int buildRunID = UNSET_BUILD_RUN_ID;
-  private String buildName = null;
-  private String changeListNumber = null;
-  private String stepName = null;
-  private String stepScriptPath = null;
-  private Date changeListDate = null;
+  private String buildName;
+  private String changeListNumber;
+  private String stepName;
+  private String stepScriptPath;
+  private Date changeListDate;
   private String buildStartedByUser = DEFAULT_BUILD_STARTED_BY_USER;
-  private String version = null; // optional, not set by default
+  private String version; // optional, not set by default
   private int versionCounter = -1; // optional, not set by default
-  private boolean cleanCheckout = false;
+  private boolean cleanCheckout;
   private int leadingBuildRunID = -1;
-  private String leadingBuildName = null;
+  private String leadingBuildName;
   private int leadingBuildID = -1;
-  private int sequenceNumber = 0;
-  private String previousChangeListNumber = null;
-  private Date previousChangeListDate = null;
-  private Date lastGoodBuildDate = null;
-  private Date lastGoodChangeListDate = null;
-  private String lastGoodChangeListNumber = null;
+  private int sequenceNumber;
+  private String previousChangeListNumber;
+  private Date previousChangeListDate;
+  private Date lastGoodBuildDate;
+  private Date lastGoodChangeListDate;
+  private String lastGoodChangeListNumber;
   private int lastGoodBuildNumber = -1;
   private int buildID = -1;
   private int projectID = -1;
-  private String projectName = null;
+  private String projectName;
   private int upstreamBuildRunID = -1;
-  private String upstreamBuildName = null;
+  private String upstreamBuildName;
   private int upstreamBuildID = -1;
-  private String getBranchName = null;
+  private String getBranchName;
   private List previousStepRuns;
 
 

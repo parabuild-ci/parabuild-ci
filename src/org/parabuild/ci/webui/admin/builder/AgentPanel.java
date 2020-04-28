@@ -81,7 +81,7 @@ final class AgentPanel extends MessagePanel implements Validatable, Saveable {
   private final CommonField flMaxConcurrentBuilds = new CommonField("agent-max-concurrent-builds", 2, 3); // NOPMD
 
   private int agentID = AgentConfig.UNSAVED_ID;
-  private boolean originallyEnabled = false;
+  private boolean originallyEnabled;
 
 
   /**

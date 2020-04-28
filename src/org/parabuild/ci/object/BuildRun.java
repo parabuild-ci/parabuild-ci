@@ -76,22 +76,22 @@ public final class BuildRun implements Serializable, ObjectConstants {
   private int buildRunID = UNSAVED_ID;
 
   private boolean physicalChangeListNumber = true;
-  private boolean reRun = false;
+  private boolean reRun;
   private byte complete = RUN_INCOMPLETE;
   private byte dependence = DEPENDENCE_STANDALONE;
   private byte labelStatus = LABEL_NOT_SET;
   private byte resultID = BUILD_RESULT_UNKNOWN;
   private byte type = TYPE_BUILD_RUN;
-  private Date finishedAt = null;
-  private Date startedAt = null;
+  private Date finishedAt;
+  private Date startedAt;
   private int activeBuildID = BuildConfig.UNSAVED_ID;
-  private int buildRunNumber = 0;
-  private long timeStamp = 0;
+  private int buildRunNumber;
+  private long timeStamp;
   private String buildName = "";
-  private String changeListNumber = null;
-  private String label = null;
-  private String lastStepRunName = null;
-  private String manualLabel = null;
+  private String changeListNumber;
+  private String label;
+  private String lastStepRunName;
+  private String manualLabel;
   private String resultDescription = "";
   private String syncNote = "No information provided";
 

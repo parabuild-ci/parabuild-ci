@@ -53,7 +53,7 @@ final class VSSSourceControl extends AbstractSourceControl implements CommonCons
   private static final Log log = LogFactory.getLog(VSSSourceControl.class);
 
 
-  private Date lastSyncDate = null;
+  private Date lastSyncDate;
 
 
   /**

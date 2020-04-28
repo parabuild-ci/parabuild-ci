@@ -193,8 +193,8 @@ public final class SystemProperty implements Externalizable, ObjectConstants {
   public static final String DEFAULT_VARIABLE_NAME_VALIDATION = "default.variable.name.validation";
 
   private int propertyID = UNSAVED_ID;
-  private String propertyName = null;
-  private String propertyValue = null;
+  private String propertyName;
+  private String propertyValue;
   private long propertyTimeStamp = 1L;
 
 

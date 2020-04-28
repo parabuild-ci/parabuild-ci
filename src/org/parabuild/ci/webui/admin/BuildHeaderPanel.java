@@ -71,7 +71,7 @@ public final class BuildHeaderPanel extends MessagePanel implements Validatable,
 
 
   private int buildID = BuildConfig.UNSAVED_ID;
-  private BuildConfig buildConfig = null;
+  private BuildConfig buildConfig;
 
 
   public BuildHeaderPanel() {

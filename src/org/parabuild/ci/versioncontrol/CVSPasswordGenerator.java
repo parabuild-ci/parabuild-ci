@@ -29,8 +29,8 @@ final class CVSPasswordGenerator {
   /** @noinspection UNUSED_SYMBOL,UnusedDeclaration*/
   private static final Log log = LogFactory.getLog(CVSPasswordGenerator.class); // NOPMD
 
-  private String cvsRoot = null;
-  private String cvsPassword = null;
+  private String cvsRoot;
+  private String cvsPassword;
 
   private final char[] shifts = { // NOPMD
     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,

@@ -64,7 +64,7 @@ public final class ThreadUtils {
     final PooledExecutor result = new PooledExecutor();
     result.setThreadFactory(new ThreadFactory() {
 
-      private int createdThreadCount = 0;
+      private int createdThreadCount;
 
 
       /**

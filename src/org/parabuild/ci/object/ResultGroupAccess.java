@@ -28,7 +28,7 @@ public final class ResultGroupAccess implements Serializable, ObjectConstants {
   private int ID = UNSAVED_ID;
   private int resultGroupID = ResultGroup.UNSAVED_ID;
   private int groupID = Group.UNSAVED_ID;
-  private long timeStamp = 0;
+  private long timeStamp;
 
 
   public ResultGroupAccess() {

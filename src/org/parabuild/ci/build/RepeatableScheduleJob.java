@@ -65,7 +65,7 @@ public final class RepeatableScheduleJob implements Job {
   private static final Set activeJobs = new HashSet(5);
 
   private int activeBuildID = BuildConfig.UNSAVED_ID;
-  private BuildRunner buildRunner = null;
+  private BuildRunner buildRunner;
 
 
   /**

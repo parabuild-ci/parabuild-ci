@@ -25,11 +25,11 @@ public class PromotionPolicyStep implements Serializable, ObjectConstants {
 
   private int ID = UNSAVED_ID;
   private int promotionID = PromotionPolicy.UNSAVED_ID;
-  private String name = null;
-  private String description = null;
-  private int lineNumber = 0;
-  private boolean deleted = false;
-  private long timeStamp = 0;
+  private String name;
+  private String description;
+  private int lineNumber;
+  private boolean deleted;
+  private long timeStamp;
 
 
   public PromotionPolicyStep() {

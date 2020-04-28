@@ -45,8 +45,8 @@ public class InputStreamToFileCopier implements Runnable {
   public static final int OUTPUT_BUFFER_SIZE = 512;
   public static final long SLEEP_MILLIS = 5;
 
-  private InputStream is = null;
-  protected OutputStream os = null;
+  private InputStream is;
+  protected OutputStream os;
 
   private final Latch finishLatch = new Latch();
 

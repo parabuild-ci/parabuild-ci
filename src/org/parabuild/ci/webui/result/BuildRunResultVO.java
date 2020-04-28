@@ -31,10 +31,10 @@ public final class BuildRunResultVO implements Serializable {
   private int activeBuildID = BuildConfig.UNSAVED_ID;
   private int buildRunID = BuildRun.UNSAVED_ID;
   private int publisherBuildRunID = BuildRun.UNSAVED_ID;
-  private int buildRunNumber = 0;
-  private Date buildDate = null;
-  private String buildName = null;
-  private StepResult stepResult = null;
+  private int buildRunNumber;
+  private Date buildDate;
+  private String buildName;
+  private StepResult stepResult;
 
 
   public int getActiveBuildID() {

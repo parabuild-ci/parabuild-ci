@@ -61,12 +61,12 @@ public final class AutomaticScheduler extends Thread implements BuildScheduler {
 
   private volatile boolean automaticSchedule;
   private volatile boolean firstTimeCycle = true; // NOPMD SingularField
-  private volatile boolean paused = false;
-  private volatile boolean runContinuously = false;
-  private volatile boolean shutdown = false;
+  private volatile boolean paused;
+  private volatile boolean runContinuously;
+  private volatile boolean shutdown;
 
   private volatile SchedulerStatus currentStatus = SchedulerStatus.IDLE;
-  private volatile BuildStartRequest runOnceRequest = null;
+  private volatile BuildStartRequest runOnceRequest;
 
 
   private int lastFoundChangeListID = ChangeList.UNSAVED_ID;

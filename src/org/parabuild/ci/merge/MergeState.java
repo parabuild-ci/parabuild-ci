@@ -22,10 +22,10 @@ public final class MergeState {
 
 
   private int activeMergeConfigurationID = MergeConfiguration.UNSAVED_ID;
-  private String name = null;
-  private String description = null;
-  private String marker = null;
-  private MergeStatus status = null;
+  private String name;
+  private String description;
+  private String marker;
+  private MergeStatus status;
 
 
   public void setActiveMergeConfigurationID(final int activeMergeConfigurationID) {

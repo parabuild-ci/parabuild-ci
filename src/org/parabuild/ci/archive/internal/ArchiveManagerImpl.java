@@ -62,8 +62,8 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    */
   private static final Object LOCK = new Object();
 
-  private static int logFileStepSource = 0;
-  private static int resultFileStepSource = 0;
+  private static int logFileStepSource;
+  private static int resultFileStepSource;
   private final ConfigurationManager cm = ConfigurationManager.getInstance();
   private final File buildLogDir;
   private final File buildResultDir;

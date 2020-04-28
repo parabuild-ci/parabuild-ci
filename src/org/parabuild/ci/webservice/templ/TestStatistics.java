@@ -20,16 +20,16 @@ import java.util.Calendar;
 public final class TestStatistics {
 
   private int activeBuildID;
-  private Calendar sampleTime = null;
-  private byte testCode = 0;
-  private int successfulTestCount = 0;
-  private int failedTestCount = 0;
-  private int totalTestCount = 0;
-  private int errorTestCount = 0;
-  private int failedTestPercent = 0;
-  private int successfulTestPercent = 0;
-  private int errorTestPercent = 0;
-  private int buildCount = 0;
+  private Calendar sampleTime;
+  private byte testCode;
+  private int successfulTestCount;
+  private int failedTestCount;
+  private int totalTestCount;
+  private int errorTestCount;
+  private int failedTestPercent;
+  private int successfulTestPercent;
+  private int errorTestPercent;
+  private int buildCount;
 
 
   public int getActiveBuildID() {

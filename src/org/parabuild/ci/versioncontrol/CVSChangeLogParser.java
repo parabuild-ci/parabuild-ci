@@ -57,10 +57,10 @@ final class CVSChangeLogParser {
   private final SimpleDateFormat CVS_LOG_DATE_FORMATTER = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss z", Locale.US); // NOPMD
 
   private final String tag = null; // NOPMD
-  private String repositoryPath = null;
-  private String branch = null;
-  private int repositoryPathLenth = 0;
-  private Map missingRevisionsHashes = null;
+  private String repositoryPath;
+  private String branch;
+  private int repositoryPathLenth;
+  private Map missingRevisionsHashes;
   private final int maxChangeLogs;
   private final int maxChangeListSize;
 

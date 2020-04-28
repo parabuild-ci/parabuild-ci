@@ -27,7 +27,7 @@ public final class ConnectionTestResult implements Serializable {
 
   private static final long serialVersionUID = 4222487032907742314L; // NOPMD
 
-  private boolean succ = false;
+  private boolean succ;
   private String message = "";
 
   public static final ConnectionTestResult SUCCESS = new ConnectionTestResult(true, "");

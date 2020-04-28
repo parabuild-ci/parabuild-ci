@@ -22,12 +22,12 @@ final class MergeRightsImpl implements MergeRights, Serializable {
 
   private static final long serialVersionUID = -4478940540320970936L;
 
-  private boolean allowedToListCommands = false;
-  private boolean allowedToDeleteMerge = false;
-  private boolean allowedToResumeMerge = false;
-  private boolean allowedToStopMerge = false;
-  private boolean allowedToStartMerge = false;
-  private boolean allowedToViewMerge = false;
+  private boolean allowedToListCommands;
+  private boolean allowedToDeleteMerge;
+  private boolean allowedToResumeMerge;
+  private boolean allowedToStopMerge;
+  private boolean allowedToStartMerge;
+  private boolean allowedToViewMerge;
 
 
   public boolean isAllowedToViewMerge() {

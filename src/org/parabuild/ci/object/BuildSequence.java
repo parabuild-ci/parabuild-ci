@@ -28,20 +28,20 @@ public final class BuildSequence implements Serializable, ObjectConstants {
 
   private static final long serialVersionUID = -8936184017787430177L; // NOPMD
 
-  private boolean continueOnFailure = false;
-  private boolean disabled = false;
-  private boolean finalizer = false;
-  private boolean initializer = false;
-  private boolean respectErrorCode = false;
+  private boolean continueOnFailure;
+  private boolean disabled;
+  private boolean finalizer;
+  private boolean initializer;
+  private boolean respectErrorCode;
   private byte type = BuildStepType.BUILD.byteValue();
   private int buildID = BuildConfig.UNSAVED_ID;
-  private int lineNumber = 0;
+  private int lineNumber;
   private int sequenceID = UNSAVED_ID;
   private int timeoutMins = 5;
   private long timeStamp = 1L;
   private String failurePatterns = "";
-  private String scriptText = null;
-  private String stepName = null;
+  private String scriptText;
+  private String stepName;
   private String successPatterns = "";
 
 

@@ -56,7 +56,7 @@ public final class AgentsStatusMonitor implements Runnable, Service {
 
   private final Map agentHistoryMap = new ConcurrentHashMap(11);
   private final Object lock = new Object();
-  private Thread pollThread = null;
+  private Thread pollThread;
   private byte serviceStatus = SERVICE_STATUS_NOT_STARTED;
 
 

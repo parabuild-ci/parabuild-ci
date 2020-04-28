@@ -30,7 +30,7 @@ public final class PropertyToInputMap<T> implements Serializable {
 
   private final HashMap<String, HasInputValue> propertyNameToInputMap = new HashMap<String, HasInputValue>(5);
   private final HashMap<String, T> propertyNameToPropertyObjectMap = new HashMap<String, T>(5);
-  private boolean updateOnlyFromEditableFields = false;
+  private boolean updateOnlyFromEditableFields;
   private boolean loadUnmappedProperties = true;
   private PropertyHandler<T> propertyHandler;
 

@@ -24,10 +24,10 @@ public final class BuildRunActionVO implements Serializable, ObjectConstants {
 
   private static final long serialVersionUID = -4591276259024162394L; // NOPMD
 
-  private String action = null;
-  private Date date = null;
-  private String description = null;
-  private String user = null;
+  private String action;
+  private Date date;
+  private String description;
+  private String user;
 
 
   /**

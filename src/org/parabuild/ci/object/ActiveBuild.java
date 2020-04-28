@@ -26,10 +26,10 @@ public final class ActiveBuild implements Serializable, ObjectConstants {
   private static final long serialVersionUID = 2749534373687207758L; // NOPMD
 
   private int ID = UNSAVED_ID;
-  private boolean deleted = false;
+  private boolean deleted;
   private int startupStatus = UNSAVED_ID;
-  private int sequenceNumber = 0;
-  private long timeStamp = 0;
+  private int sequenceNumber;
+  private long timeStamp;
 
 
   /**

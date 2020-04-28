@@ -57,7 +57,7 @@ public final class SecurityConfigPanel extends AbstractSystemConfigPanel {
   private final CommonPasswordField fldAdminPasswd = new CommonPasswordField();  // NOPMD
   private final CommonPasswordField fldConfirmPasswd = new CommonPasswordField();  // NOPMD
 
-  private String adminEmail = null;
+  private String adminEmail;
 
 
   public SecurityConfigPanel() {

@@ -50,7 +50,7 @@ final class VariableValueHolderFlow extends Flow {
   /**
    */
   private byte presentation = -1;
-  private ValueSource valueSource = null;
+  private ValueSource valueSource;
   private final boolean editable;
 
 
@@ -291,7 +291,7 @@ final class VariableValueHolderFlow extends Flow {
 
   static final class DropdownValueSource implements ValueSource {
 
-    private DropDown dd = null;
+    private DropDown dd;
 
 
     public List getValues() {
@@ -318,7 +318,7 @@ final class VariableValueHolderFlow extends Flow {
 
   static final class FieldValueSource implements ValueSource {
 
-    private Field field = null;
+    private Field field;
 
 
     public List getValues() {

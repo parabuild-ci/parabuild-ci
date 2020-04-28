@@ -27,12 +27,12 @@ public final class ResultGroup implements Serializable, ObjectConstants {
   private static final long serialVersionUID = -5237501290837750448L; // NOPMD
 
   private int ID = UNSAVED_ID;
-  private boolean deleted = false;
+  private boolean deleted;
   private boolean enabled = true;
-  private Date lastPublished = null;
-  private long timeStamp = 0;
+  private Date lastPublished;
+  private long timeStamp;
   private String description = "";
-  private String name = null;
+  private String name;
 
 
   /**

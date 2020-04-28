@@ -50,7 +50,7 @@ public final class DisplayGroupTable extends AbstractFlatTable {
   public static final String STR_GROUP_DESCRIPTION = "Description";
   public static final String STR_ACTION = "Action";
 
-  private List displayGroupList = null;
+  private List displayGroupList;
 
 
   public DisplayGroupTable() {

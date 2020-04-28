@@ -50,7 +50,7 @@ public class StarTeamSourceControl extends AbstractSourceControl {
   /**
    * Contains date when we did sync last time.
    */
-  private Date lastSyncDate = null;
+  private Date lastSyncDate;
 
 
   public StarTeamSourceControl(final BuildConfig buildConfig) {

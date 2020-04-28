@@ -40,12 +40,12 @@ public abstract class SVNChangeLogParser {
   /**
    *
    */
-  protected String ignoreChangeListNumber = null;
+  protected String ignoreChangeListNumber;
   protected final int maxChangeListSize;
   /**
    * If set contains a path that should be ignored.
    */
-  protected String subSubdirectory = null;
+  protected String subSubdirectory;
 
 
   public SVNChangeLogParser(final int maxChangeListSize) {

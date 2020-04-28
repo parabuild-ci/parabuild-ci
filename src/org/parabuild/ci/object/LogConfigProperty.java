@@ -33,8 +33,8 @@ public final class LogConfigProperty implements Serializable, ObjectConstants {
 
   private int logConfigID = UNSAVED_ID;
   private int ID = -1;
-  private String name = null;
-  private String value = null;
+  private String name;
+  private String value;
   private long timeStamp = 1;
 
 

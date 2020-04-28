@@ -39,7 +39,7 @@ final class HSQLDBConnector {
   private static final String HSQLDB_DRIVER = "org.hsqldb.jdbcDriver";
 
   private final String driverJarResourcePath;
-  private File driverJarFile = null;
+  private File driverJarFile;
 
 
   /**

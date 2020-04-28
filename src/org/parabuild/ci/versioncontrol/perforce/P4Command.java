@@ -43,11 +43,11 @@ public class P4Command extends VersionControlRemoteCommand {
   public static final String P4PASSWD = "P4PASSWD";
   private static final String P4CONFIG = "P4CONFIG";
 
-  private String p4Port = null;
-  private String p4Password = null;
-  private String p4User = null;
-  private String p4Client = null;
-  private String p4Exe = null;
+  private String p4Port;
+  private String p4Password;
+  private String p4User;
+  private String p4Client;
+  private String p4Exe;
   private String p4Options = "";
   private boolean clientRequired = true;
   private String commandDescription = DEFAULT_COMMAND_DESCRIPTION;

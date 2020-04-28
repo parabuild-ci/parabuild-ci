@@ -36,7 +36,7 @@ public final class IssueURLGenerator {
   public static final String PROPERTY_ISSUE_KEY = "issue.key";
 
   private final Map keys = new HashMap(3);
-  private String urlTemplate = null;
+  private String urlTemplate;
 
 
   /**

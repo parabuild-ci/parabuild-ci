@@ -48,14 +48,14 @@ public final class TimeoutWatchdog implements Runnable {
    */
   public static final int COOL_DOWN_SECONDS = 10;
 
-  private boolean timedOut = false;
-  private boolean hung = false;
+  private boolean timedOut;
+  private boolean hung;
   private byte command = COMMAND_START;
   private long timeOutMillis = 60 * 1000; // default is 60 seconds
   private final List timeoutMatches = new ArrayList(11);
-  private TimeoutCallback timeoutCallback = null;
-  private AgentEnvironment agentEnvironment = null;
-  private boolean active = false;
+  private TimeoutCallback timeoutCallback;
+  private AgentEnvironment agentEnvironment;
+  private boolean active;
 
 
   /**

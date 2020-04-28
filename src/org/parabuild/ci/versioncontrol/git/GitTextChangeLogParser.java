@@ -67,7 +67,7 @@ public final class GitTextChangeLogParser {
   /**
    * Tells the parser to use e-mail as a user name.
    */
-  private boolean useUserEmailAsUserName = false;
+  private boolean useUserEmailAsUserName;
 
 
   /**

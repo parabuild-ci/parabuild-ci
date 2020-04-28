@@ -20,8 +20,8 @@ import java.util.Date;
  */
 final class PVCSVlogCommandParameters extends PVCSCommandParameters {
 
-  private Date startDate = null;
-  private Date endDate = null;
+  private Date startDate;
+  private Date endDate;
 
 
   public Date getStartDate() {

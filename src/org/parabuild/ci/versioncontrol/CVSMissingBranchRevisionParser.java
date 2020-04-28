@@ -34,7 +34,7 @@ final class CVSMissingBranchRevisionParser {
 
   private static final Log log = LogFactory.getLog(CVSMissingBranchRevisionParser.class);
 
-  private String branchName = null;
+  private String branchName;
 
 
   /**

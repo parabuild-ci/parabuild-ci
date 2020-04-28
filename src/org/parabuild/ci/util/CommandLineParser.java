@@ -34,9 +34,9 @@ public final class CommandLineParser {
   private static final int IS_DOUBLE_QUOTED = 2;
 
   private int state = IS_NORMAL;
-  private boolean lastIsQuoted = false;
-  private StringBuffer current = null;
-  private List parsed = null;
+  private boolean lastIsQuoted;
+  private StringBuffer current;
+  private List parsed;
 
 
   public String[] parse(final String cmd) throws CommandLineParserException {

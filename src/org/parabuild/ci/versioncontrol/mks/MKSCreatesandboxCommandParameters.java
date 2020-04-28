@@ -24,7 +24,7 @@ import org.parabuild.ci.common.VersionControlSystem;
 public class MKSCreatesandboxCommandParameters extends MKSCommandParameters {
 
   private int lineTerminator = VersionControlSystem.MKS_LINE_TERMINATOR_NATIVE;
-  private String projectRevision = null;
+  private String projectRevision;
 
   public int getLineTerminator() {
     return lineTerminator;

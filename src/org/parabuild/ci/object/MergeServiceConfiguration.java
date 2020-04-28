@@ -28,7 +28,7 @@ public class MergeServiceConfiguration implements Serializable, ObjectConstants 
   public static final byte STARTUP_MODE_ACTIVE = 0;
   public static final byte STARTUP_MODE_DISABLED = 1;
 
-  private boolean deleted = false;
+  private boolean deleted;
   private byte startupMode = STARTUP_MODE_ACTIVE;
   private int ID = MergeConfiguration.UNSAVED_ID;
   private int projectID = Project.UNSAVED_ID;

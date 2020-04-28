@@ -51,7 +51,7 @@ import java.util.Map;
 final class VaultSourceControl extends AbstractSourceControl {
 
   private static final Log LOG = LogFactory.getLog(VaultSourceControl.class); // NOPMD
-  private Date lastSyncDate = null; // holds last sync date
+  private Date lastSyncDate; // holds last sync date
 
 
   VaultSourceControl(final BuildConfig buildConfig) {

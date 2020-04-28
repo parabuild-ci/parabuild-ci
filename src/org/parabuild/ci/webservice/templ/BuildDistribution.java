@@ -20,11 +20,11 @@ public final class BuildDistribution {
   private int ID;
   private int activeBuildID;
   private int target = 1;
-  private int successfulBuildCount = 0;
-  private int failedBuildCount = 0;
-  private int totalBuildCount = 0;
-  private int changeListCount = 0;
-  private int issueCount = 0;
+  private int successfulBuildCount;
+  private int failedBuildCount;
+  private int totalBuildCount;
+  private int changeListCount;
+  private int issueCount;
 
 
   public int getID() {

@@ -43,7 +43,7 @@ public class TimeToFixMonitor implements BuildFinishedSubscriber {
 
   // state for moving average
   private int firstBrokenBuildRunID = BuildRun.UNSAVED_ID;
-  private Date firstBrokenTime = null;
+  private Date firstBrokenTime;
 
 
   public TimeToFixMonitor(final int activeBuildID) {

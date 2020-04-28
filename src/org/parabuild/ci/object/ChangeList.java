@@ -73,16 +73,16 @@ public final class ChangeList implements Serializable, ObjectConstants {
   private static final long serialVersionUID = -4372844970766934869L; // NOPMD
 
   private int changeListID = -1;
-  private Date createdAt = null;
+  private Date createdAt;
   private Set changes = new HashSet(11);
-  private String client = null;
-  private String description = null;
-  private String email = null;
-  private String number = null;
-  private String user = null;
-  private String branch = null;
-  private boolean truncated = false;
-  private int originalSize = 0;
+  private String client;
+  private String description;
+  private String email;
+  private String number;
+  private String user;
+  private String branch;
+  private boolean truncated;
+  private int originalSize;
 
 
   /**

@@ -71,7 +71,7 @@ public final class ReRunBuildPanel extends MessagePanel {
 
   private final int activeBuildID;
   private int lastLoadedBuildRunID = BuildRun.UNSAVED_ID;
-  private ManualStartParametersPanel pnlParameters = null;
+  private ManualStartParametersPanel pnlParameters;
   private final String buildName;
 
 

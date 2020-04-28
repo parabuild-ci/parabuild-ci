@@ -29,9 +29,9 @@ public final class CleanCheckoutCounter {
   private static final Log log = LogFactory.getLog(CleanCheckoutCounter.class); // NOPMD
   private static final int DEFAULT_CLEAN_CHECKOUT = 1;
 
-  private int cleanCheckoutCounter = 0; // NOPMD
+  private int cleanCheckoutCounter; // NOPMD
   private final int activeBuildID;
-  private boolean forceNextCheckoutClean = false;
+  private boolean forceNextCheckoutClean;
 
 
   /**

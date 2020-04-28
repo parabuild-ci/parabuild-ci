@@ -61,7 +61,7 @@ final class AgentsTable extends AbstractFlatTable {
   private static final String CAPTION_CAPACITY = "Capacity";
   private static final String CAPTION_MAX_CONCURRENT_BUILDS = "Maximum concurrent builds";
 
-  private List agents = null;
+  private List agents;
 
 
   AgentsTable(final boolean showControls) {

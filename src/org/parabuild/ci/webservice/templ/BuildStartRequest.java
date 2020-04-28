@@ -37,32 +37,32 @@ public final class BuildStartRequest implements Serializable {
    */
   public static final byte REQUEST_CHAINED = 4;
 
-  private BuildStartRequestParameter[] parameterList = null;
-  private boolean cleanCheckout = false;
-  private boolean pinResult = false;
+  private BuildStartRequestParameter[] parameterList;
+  private boolean cleanCheckout;
+  private boolean pinResult;
   private int requestType;
   private int buildRunID;
   private int changeListID;
   private int userID;
   private int versionCounter;
-  private String label = null;
-  private String note = null;
+  private String label;
+  private String note;
   private final String versionTemplate = null;
 
   /**
    * List of {@link SourceControlSettingOverride} objects.
    */
-  private SourceControlSettingOverride[] sourceControlSettingsOverrides = null;
+  private SourceControlSettingOverride[] sourceControlSettingsOverrides;
 
   /**
    * Agent host.
    */
-  private AgentHost agentHost = null;
+  private AgentHost agentHost;
 
   /**
    * Ignore serialization.
    */
-  private boolean ignoreSerialization = false;
+  private boolean ignoreSerialization;
 
 
   /**

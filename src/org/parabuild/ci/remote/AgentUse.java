@@ -50,16 +50,16 @@ final class AgentUse {
   };
 
 
-  private int checkoutCounter = 0;
+  private int checkoutCounter;
 
-  private int totalCheckouts = 0;
+  private int totalCheckouts;
 
   private int capacity = 1;
 
   /**
    * Max concurrent builds, '0' means unlimited.
    */
-  private int maxConcurrentBuilds = 0;
+  private int maxConcurrentBuilds;
 
   private final AgentHost agentHost;
 

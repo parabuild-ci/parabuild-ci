@@ -30,14 +30,14 @@ public final class AgentConfig implements Serializable, ObjectConstants {
   public static final String BUILD_MANAGER = "<Build Manager>";
 
   private int ID = UNSAVED_ID;
-  private int capacity = 0;
-  private String host = null;
-  private long timeStamp = 0;
+  private int capacity;
+  private String host;
+  private long timeStamp;
   private boolean enabled = true;
-  private boolean deleted = false;
-  private boolean serialize = false;
+  private boolean deleted;
+  private boolean serialize;
   private String description = "";
-  private int maxConcurrentBuilds = 0;
+  private int maxConcurrentBuilds;
 
 
   public AgentConfig() {

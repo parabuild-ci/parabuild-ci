@@ -25,10 +25,10 @@ public final class ExecuteResult implements Serializable {
 
   private static final long serialVersionUID = -1905298511657059062L; // NOPMD
 
-  private String stdoutFileName = null;
-  private String stderrFileName = null;
-  private String mergedFileName = null;
-  private int resultCode = 0;
+  private String stdoutFileName;
+  private String stderrFileName;
+  private String mergedFileName;
+  private int resultCode;
 
 
   public ExecuteResult() {

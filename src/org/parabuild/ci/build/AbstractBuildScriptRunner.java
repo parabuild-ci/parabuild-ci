@@ -36,12 +36,12 @@ import java.util.List;
  */
 public abstract class AbstractBuildScriptRunner implements BuildScriptRunner {
 
-  private boolean timedOut = false;
-  private File mergedFile = null;
+  private boolean timedOut;
+  private File mergedFile;
   private final List timeoutMatches = new ArrayList(5);
   private int timeoutSecs = 60 * 60;
   private final List eventListenerList = new ArrayList(3);
-  private TimeoutCallback timeoutCallback = null;
+  private TimeoutCallback timeoutCallback;
   protected final Agent agent;
 
 

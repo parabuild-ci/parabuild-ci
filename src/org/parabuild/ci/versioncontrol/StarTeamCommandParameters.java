@@ -18,13 +18,13 @@ package org.parabuild.ci.versioncontrol;
  */
 class StarTeamCommandParameters {
 
-  private String exePath = null;
-  private String user = null;
-  private String password = null;
-  private String address = null;
-  private String project = null;
+  private String exePath;
+  private String user;
+  private String password;
+  private String address;
+  private String project;
   private int port = 49201;
-  private byte encryption = 0;
+  private byte encryption;
 
 
   final String getExePath() {

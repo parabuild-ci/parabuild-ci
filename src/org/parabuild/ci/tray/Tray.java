@@ -75,7 +75,7 @@ public final class Tray implements ActionListener, ItemListener {
   private final JPopupMenu menu = new JPopupMenu("Parabuild tray");
   private final TrayIcon trayIcon = new TrayIcon(makeIcon(TrayImageResourceCollection.IMAGE_ACCESS_FORBIDDEN), "Parabuild status", menu);
   private final Map statusMap = new HashMap(11);
-  private JMenuItem noBuildsAvailable = null;
+  private JMenuItem noBuildsAvailable;
 
   private List servers = new ArrayList(11); // initiallty set to empty list
   private int pollInterval = DEFAULT_POLL_INTERVAL;  // initially set to default poll interval

@@ -27,9 +27,9 @@ public final class DisplayGroup implements Serializable, ObjectConstants {
   private static final long serialVersionUID = -5907298521657059063L; // NOPMD
 
   private int ID = UNSAVED_ID;
-  private long timeStamp = 0;
+  private long timeStamp;
   private String description = "";
-  private String name = null;
+  private String name;
   private boolean enabled = true;
 
   public static final int DISPLAY_GROUP_ID_ALL = -1;

@@ -148,29 +148,29 @@ public class JNDIAuthenticator {
    * Password digest algorithm for cased when a password is stored
    * in a digested form rather than clear text.
    */
-  private String digestAlgorithm = null;
+  private String digestAlgorithm;
 
   /**
    * The type of authentication to use
    */
-  private String connectionSecurityLevel = null;
+  private String connectionSecurityLevel;
 
   /**
    * The connection username for the server we will contact.
    */
-  private String connectionPrincipal = null;
+  private String connectionPrincipal;
 
 
   /**
    * The connection password for the server we will contact.
    */
-  private String connectionCredentials = null;
+  private String connectionCredentials;
 
 
   /**
    * The connection URL for the server we will contact.
    */
-  private String connectionURL = null;
+  private String connectionURL;
 
 //  /**
 //   * The directory context linking us to our directory server.
@@ -189,7 +189,7 @@ public class JNDIAuthenticator {
   /**
    * How aliases should be dereference during search operations.
    */
-  private String derefAliases = null;
+  private String derefAliases;
 
   /**
    * Constant that holds the name of the environment property for specifying
@@ -206,7 +206,7 @@ public class JNDIAuthenticator {
    * The protocol that will be used in the communication with the
    * directory server.
    */
-  private String protocol = null;
+  private String protocol;
 
 
   /**
@@ -214,7 +214,7 @@ public class JNDIAuthenticator {
    * the default case, so an application authenticating against AD must
    * set referrals to "follow".
    */
-  private String referrals = null;
+  private String referrals;
 
 
   /**
@@ -227,7 +227,7 @@ public class JNDIAuthenticator {
    * The message format used to search for a user, with "{0}" marking
    * the spot where the username goes.
    */
-  private String userSearchTemplate = null;
+  private String userSearchTemplate;
 
 //  /**
 //   * The MessageFormat object associated with the current
@@ -239,19 +239,19 @@ public class JNDIAuthenticator {
   /**
    * Should we search the entire subtree for matching users?
    */
-  private boolean searchEntireSubtree = false;
+  private boolean searchEntireSubtree;
 
 
   /**
    * The attribute name used to retrieve the user password.
    */
-  private String userPasswordAttributeName = null;
+  private String userPasswordAttributeName;
 
 
   /**
    * The attribute name used to retrieve the user email. This is a mandatory attribute.
    */
-  private String userEmailAttributeName = null;
+  private String userEmailAttributeName;
 
 
   /**
@@ -259,7 +259,7 @@ public class JNDIAuthenticator {
    * user, with "{0}" marking the spot where the specified username
    * goes.
    */
-  private String userDistinguishedNameTemplate = null;
+  private String userDistinguishedNameTemplate;
 
 
   /**
@@ -272,33 +272,33 @@ public class JNDIAuthenticator {
    * The MessageFormat object associated with the current
    * <code>roleSearch</code>.
    */
-  private MessageFormat roleFormat = null;
+  private MessageFormat roleFormat;
 
 
   /**
    * The name of an attribute in the user's entry containing
    * roles for that user
    */
-  private String userRoleName = null;
+  private String userRoleName;
 
 
   /**
    * The name of the attribute containing roles held elsewhere
    */
-  private String roleName = null;
+  private String roleName;
 
 
   /**
    * The message format used to select roles for a user, with "{0}" marking
    * the spot where the distinguished name of the user goes.
    */
-  private String roleSearch = null;
+  private String roleSearch;
 
 
   /**
    * Should we search the entire subtree for matching memberships?
    */
-  private boolean roleSubtree = false;
+  private boolean roleSubtree;
 
 //  /**
 //   * The current user pattern to be used for lookup and binding of a user.
@@ -323,7 +323,7 @@ public class JNDIAuthenticator {
   /**
    * LDAP version.
    */
-  private String ldapVersion = null;
+  private String ldapVersion;
 
 
   /**

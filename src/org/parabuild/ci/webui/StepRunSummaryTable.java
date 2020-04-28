@@ -46,7 +46,7 @@ public final class StepRunSummaryTable extends AbstractFlatTable {
   private static final String COL_NAME_TIME = "Time";
   private static final String COL_NAME_SEQ_LOGS = "Logs";
 
-  private List steps = null;
+  private List steps;
 
 
   /**

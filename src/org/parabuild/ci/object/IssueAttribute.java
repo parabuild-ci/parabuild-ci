@@ -30,8 +30,8 @@ public final class IssueAttribute implements Serializable, ObjectConstants {
 
   private int issueID = Issue.UNSAVED_ID;
   private int ID = UNSAVED_ID;
-  private String name = null;
-  private String value = null;
+  private String name;
+  private String value;
 
 
   /**

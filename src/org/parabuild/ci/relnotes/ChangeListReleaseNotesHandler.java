@@ -46,7 +46,7 @@ final class ChangeListReleaseNotesHandler implements ReleaseNotesHandler {
 
   private static final Log log = LogFactory.getLog(ChangeListReleaseNotesHandler.class);
 
-  private IssueTracker tracker = null;
+  private IssueTracker tracker;
 
 
   /**

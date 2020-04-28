@@ -29,9 +29,9 @@ public final class BuildException extends Exception {
 
   private static final long serialVersionUID = -295003302496228790L; // NOPMD
 
-  private String logContent = null;
-  private boolean reported = false;
-  private String hostName = null;
+  private String logContent;
+  private boolean reported;
+  private String hostName;
 
 
   /**

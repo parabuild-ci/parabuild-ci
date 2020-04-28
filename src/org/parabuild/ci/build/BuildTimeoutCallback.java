@@ -36,9 +36,9 @@ public final class BuildTimeoutCallback implements TimeoutCallback, CommonConsta
   private static final Log log = LogFactory.getLog(BuildTimeoutCallback.class);
 
   private boolean notificationEnabled = true;
-  private BuildRun buildRun = null;
-  private BuildScriptRunner scriptRunner = null;
-  private BuildSequence sequence = null;
+  private BuildRun buildRun;
+  private BuildScriptRunner scriptRunner;
+  private BuildSequence sequence;
   private final NotificationManager notificationManager;
 
   /**

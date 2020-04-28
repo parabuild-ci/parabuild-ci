@@ -21,7 +21,7 @@ package org.parabuild.ci.build;
  */
 public final class ValidatingRunner {
 
-  private Runnable runner = null;
+  private Runnable runner;
 
 
   public ValidatingRunner(final Runnable delegate) {
@@ -78,7 +78,7 @@ public final class ValidatingRunner {
 
     private final Runnable delegate;
     private final ValidatingRunner validatingRunner;
-    private int counter = 0;
+    private int counter;
 
 
     protected AbstractRunner(final Runnable delegate, final ValidatingRunner validatingRunner) {

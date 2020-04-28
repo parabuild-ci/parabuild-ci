@@ -27,8 +27,8 @@ public final class BuildChangeListAttribute implements Serializable, ObjectConst
 
   private int buildChangeListID = Issue.UNSAVED_ID;
   private int ID = UNSAVED_ID;
-  private String name = null;
-  private String value = null;
+  private String name;
+  private String value;
 
 
   /**

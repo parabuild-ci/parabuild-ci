@@ -39,8 +39,8 @@ import java.util.Map;
  */
 final class ReferenceSourceControl implements SourceControl {
 
-  private SourceControl delegate = null;
-  private ConfigurationManager cm = null;
+  private SourceControl delegate;
+  private ConfigurationManager cm;
   private int buildID = BuildConfig.UNSAVED_ID;
 
 

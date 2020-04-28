@@ -23,9 +23,9 @@ import java.util.List;
 public class Vault {
 
 
-  private History history = null;
-  private Error error = null;
-  private Result result = null;
+  private History history;
+  private Error error;
+  private Result result;
 
 
   public History getHistory() {
@@ -102,7 +102,7 @@ public class Vault {
    */
   public static class Error {
 
-    private String message = null;
+    private String message;
 
 
     public String getMessage() {
@@ -127,7 +127,7 @@ public class Vault {
    */
   public static class Result {
 
-    private boolean success = false;
+    private boolean success;
 
 
     public boolean isSuccess() {
@@ -178,11 +178,11 @@ public class Vault {
     private int txid = -1;
     private int type = -1;
     private int version = -1;
-    private String date = null;
-    private String name = null;
-    private String user = null;
-    private String comment = null;
-    private String actionString = null;
+    private String date;
+    private String name;
+    private String user;
+    private String comment;
+    private String actionString;
 
     public int getTxid() {
       return txid;

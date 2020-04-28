@@ -33,8 +33,8 @@ public final class ResultConfigProperty implements Serializable, ObjectConstants
 
   private int resultConfigID = UNSAVED_ID;
   private int ID = -1;
-  private String name = null;
-  private String value = null;
+  private String name;
+  private String value;
   private long timeStamp = 1;
 
 

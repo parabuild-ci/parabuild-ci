@@ -25,8 +25,8 @@ import java.io.IOException;
  */
 final class SVNUpdateCommand extends SVNCommand {
 
-  private RepositoryPath depotPath = null;
-  private String changeListNumber = null;
+  private RepositoryPath depotPath;
+  private String changeListNumber;
   private final boolean ignoreExternals;
 
 

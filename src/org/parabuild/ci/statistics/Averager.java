@@ -18,8 +18,8 @@ package org.parabuild.ci.statistics;
  */
 public final class Averager {
 
-  private double average = 0;
-  private long counter = 0;
+  private double average;
+  private long counter;
 
 
   public Averager() {

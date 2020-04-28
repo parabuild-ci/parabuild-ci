@@ -18,7 +18,7 @@ package org.parabuild.ci.versioncontrol;
  */
 final class PVCSRunCommandParameters extends PVCSCommandParameters {
 
-  private String scriptContent = null;
+  private String scriptContent;
 
 
   public PVCSRunCommandParameters(final PVCSCommandParameters parameters, final String scriptContent) {

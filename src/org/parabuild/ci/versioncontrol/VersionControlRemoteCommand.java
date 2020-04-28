@@ -52,9 +52,9 @@ public class VersionControlRemoteCommand extends RemoteCommand {
    */
   private StderrLineProcessor stderrLineProcessor = new DefaultStderrLineProcessor();
 
-  private boolean respectErrorCode = false;
+  private boolean respectErrorCode;
 
-  private boolean showCurrentDirectoryInError = false;
+  private boolean showCurrentDirectoryInError;
 
 
   /**

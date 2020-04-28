@@ -20,7 +20,7 @@ import java.util.Date;
  */
 final class PVCSGetCommandParameters extends PVCSCommandParameters {
 
-  private Date date = null;
+  private Date date;
 
 
   public Date getDate() {

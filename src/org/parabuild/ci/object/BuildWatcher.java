@@ -34,10 +34,10 @@ public final class BuildWatcher implements Serializable, ObjectConstants {
   private int watcherID = UNSAVED_ID;
   private byte instantMessengerType = IM_TYPE_NONE;
   private byte level = LEVEL_BROKEN; // default devel is broken
-  private String email = null;
-  private String instantMessengerAddress = null;
+  private String email;
+  private String instantMessengerAddress;
   private long timeStamp = 1;
-  private boolean disabled = false;
+  private boolean disabled;
 
 
   /**

@@ -25,13 +25,13 @@ public final class BuildStatistics implements Serializable {
 
   private static final long serialVersionUID = -5345515381643142925L; // NOPMD
 
-  private int changeLists = 0;
-  private int issues = 0;
-  private int failedBuilds = 0;
-  private int failedBuildsPercent = 0;
-  private int successfulBuilds = 0;
-  private int successfulBuildsPercent = 0;
-  private int totalBuilds = 0;
+  private int changeLists;
+  private int issues;
+  private int failedBuilds;
+  private int failedBuildsPercent;
+  private int successfulBuilds;
+  private int successfulBuildsPercent;
+  private int totalBuilds;
   private boolean isDirty = true;
 
 

@@ -41,7 +41,7 @@ public abstract class ManualScheduleStartParametersPanel extends MessagePanel {
 
   private static final long serialVersionUID = 690555130643315824L;
   protected final PropertyToInputMap sourceControlSettingsPropertyToInputMap = new PropertyToInputMap(true, makePropertyHandler()); // strict map
-  protected GridIterator gridIterator = null;
+  protected GridIterator gridIterator;
 
 
   /**

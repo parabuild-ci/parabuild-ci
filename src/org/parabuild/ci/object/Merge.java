@@ -43,9 +43,9 @@ public class Merge implements ObjectConstants, Serializable {
    */
   public static final byte RESULT_VALIDATION_FAILED = 3;
 
-  private boolean validated = false;
+  private boolean validated;
   private byte resultCode = RESULT_NOT_MERGED;
-  private Date created = null;
+  private Date created;
   private int ID = UNSAVED_ID;
   private int mergeConfigurationID = MergeConfiguration.UNSAVED_ID;
 

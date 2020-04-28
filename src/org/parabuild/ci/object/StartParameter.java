@@ -49,17 +49,17 @@ public final class StartParameter implements Serializable, ObjectConstants {
   public static final byte TYPE_AGENT = StartParameterType.AGENT.byteValue();
 
   private boolean enabled = true;
-  private boolean required = false;
-  private boolean modifiable = false;
+  private boolean required;
+  private boolean modifiable;
   private byte presentation = PRESENTATION_CHECK_LIST;
   private byte type = TYPE_BUILD;
   private int buildID = BuildConfig.UNSAVED_ID;
   private int ID = UNSAVED_ID;
   private long timeStamp = 1L;
-  private String description = null;
-  private String name = null;
-  private String runtimeValue = null;
-  private String value = null;
+  private String description;
+  private String name;
+  private String runtimeValue;
+  private String value;
   private int order;
 
 

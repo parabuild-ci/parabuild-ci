@@ -21,9 +21,9 @@ import java.util.Date;
 public final class VaultHistoryCommandParameters extends VaultCommandParameters {
 
   private int rowLimit = Integer.MAX_VALUE;
-  private Date beginDate = null;
-  private Date endDate = null;
-  private String repositoryPath = null;
+  private Date beginDate;
+  private Date endDate;
+  private String repositoryPath;
 
 
   public int getRowLimit() {

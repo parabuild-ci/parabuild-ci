@@ -28,9 +28,9 @@ import java.util.Iterator;
  */
 final class P4ClientViewComposer {
 
-  private String clientName = null;
-  private String view = null;
-  private String realtiveBuildDir = null;
+  private String clientName;
+  private String view;
+  private String realtiveBuildDir;
 
 
   public void setClientName(final String clientName) {

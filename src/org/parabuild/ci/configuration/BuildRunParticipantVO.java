@@ -20,7 +20,7 @@ import org.parabuild.ci.object.ChangeList;
  */
 public final class BuildRunParticipantVO {
 
-  private ChangeList changeList = null;
+  private ChangeList changeList;
   private int firstBuildRunID = -1;
   private int firstBuildRunNumber = -1;
   private final int participantID;

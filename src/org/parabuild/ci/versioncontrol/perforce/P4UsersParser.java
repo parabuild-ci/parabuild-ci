@@ -40,7 +40,7 @@ import java.util.StringTokenizer;
  */
 final class P4UsersParser {
 
-  private File usersFile = null;
+  private File usersFile;
   private boolean caseSensitiveUserNames = true;
 
 

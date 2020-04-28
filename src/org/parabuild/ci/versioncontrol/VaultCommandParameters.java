@@ -19,16 +19,16 @@ package org.parabuild.ci.versioncontrol;
  */
 class VaultCommandParameters {
 
-  private String user = null;
-  private String host = null;
-  private String password = null;
-  private boolean useSSL = false;
-  private String proxyServer = null;
-  private String proxyPort = null;
-  private String proxyUser = null;
-  private String proxyPassword = null;
-  private String proxyDomain = null;
-  private String repository = null;
+  private String user;
+  private String host;
+  private String password;
+  private boolean useSSL;
+  private String proxyServer;
+  private String proxyPort;
+  private String proxyUser;
+  private String proxyPassword;
+  private String proxyDomain;
+  private String repository;
 
 
   /**

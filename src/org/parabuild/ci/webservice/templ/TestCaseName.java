@@ -106,7 +106,7 @@ public class TestCaseName implements Serializable {
   }
 
 
-  private Object __equalsCalc = null;
+  private Object __equalsCalc;
 
 
   public synchronized boolean equals(final Object obj) {
@@ -130,7 +130,7 @@ public class TestCaseName implements Serializable {
   }
 
 
-  private boolean __hashCodeCalc = false;
+  private boolean __hashCodeCalc;
 
 
   public synchronized int hashCode() {

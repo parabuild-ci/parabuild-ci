@@ -22,8 +22,8 @@ import java.util.Properties;
  */
 public class LinkURL {
 
-  private String url = null;
-  private Properties parameters = null;
+  private String url;
+  private Properties parameters;
 
 
   public LinkURL(final String url, final Properties parameters) {

@@ -19,11 +19,11 @@ package org.parabuild.ci.versioncontrol.mks;
 class MKSCommandParameters {
 
   private int port = 7001;
-  private String host = null;
-  private String exePath = null;
-  private String user = null;
-  private String project = null;
-  private String password = null;
+  private String host;
+  private String exePath;
+  private String user;
+  private String project;
+  private String password;
 
 
   public String getProject() {
@@ -46,7 +46,7 @@ class MKSCommandParameters {
   }
 
 
-  private String developmentPath = null;
+  private String developmentPath;
 
 
   public String getUser() {

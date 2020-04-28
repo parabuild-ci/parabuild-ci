@@ -43,7 +43,7 @@ final class SurroundChangeLogParser {
    */
   private final int maxChangeLists;
 
-  private String branch = null;
+  private String branch;
 
   private static final String FILE_HEADER = "File:";
   private static final int FILE_HEADER_LENGTH = FILE_HEADER.length();
@@ -278,11 +278,11 @@ File: test_mainline_branch/test/sourceline/alwaysvalid/src/readme.txt
   private static final class FlatChange {
 
     private byte changeType = Change.TYPE_UNKNOWN;
-    private Date date = null;
-    private String filePath = null;
-    private String revision = null;
-    private String userName = null;
-    private StringBuffer descr = null;
+    private Date date;
+    private String filePath;
+    private String revision;
+    private String userName;
+    private StringBuffer descr;
 
 
     public byte getChangeType() {

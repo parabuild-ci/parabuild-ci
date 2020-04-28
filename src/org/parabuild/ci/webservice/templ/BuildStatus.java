@@ -27,14 +27,14 @@ public final class BuildStatus {
   private int activeBuildID = -1;
   private int currentlyRunningBuildConfigID = -1;
   private int currentlyRunnigBuildRunID = -1;
-  private int currentlyRunningBuildNumber = 0;
+  private int currentlyRunningBuildNumber;
   private byte access = 2;
-  private byte schedule = 0;
-  private byte sourceControl = 0;
-  private String buildName = null;
-  private Calendar nextBuildTime = null;
-  private String currentlyRunningOnBuildHost = null;
-  private String currentlyRunningChangeListNumber = null;
+  private byte schedule;
+  private byte sourceControl;
+  private String buildName;
+  private Calendar nextBuildTime;
+  private String currentlyRunningOnBuildHost;
+  private String currentlyRunningChangeListNumber;
 
 
   public int getLastCleanBuildRunID() {

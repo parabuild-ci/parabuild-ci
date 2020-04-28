@@ -23,18 +23,18 @@ public final class TestStatistics implements Serializable {
   private static final long serialVersionUID = -5345515381643142925L; // NOPMD
 
   private boolean isDirty = true;
-  private int averageErrorTests = 0;
-  private int averageFailedTests = 0;
-  private int averageSuccessfulTests = 0;
-  private int averageTotalTests = 0;
-  private int buildCount = 0;
-  private int errorTests = 0;
-  private int errorTestsPercent = 0;
-  private int failedTests = 0;
-  private int failedTestsPercent = 0;
-  private int successfulTests = 0;
-  private int successfulTestsPercent = 0;
-  private int totalTests = 0;
+  private int averageErrorTests;
+  private int averageFailedTests;
+  private int averageSuccessfulTests;
+  private int averageTotalTests;
+  private int buildCount;
+  private int errorTests;
+  private int errorTestsPercent;
+  private int failedTests;
+  private int failedTestsPercent;
+  private int successfulTests;
+  private int successfulTestsPercent;
+  private int totalTests;
 
   /**
    * Copy constructor.

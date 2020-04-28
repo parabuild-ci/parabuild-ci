@@ -46,7 +46,7 @@ final class SurroundSourceControl extends AbstractSourceControl implements Commo
 
   private static final Log log = LogFactory.getLog(SurroundSourceControl.class);
 
-  private Date lastSyncDate = null;
+  private Date lastSyncDate;
 
 
   public SurroundSourceControl(final BuildConfig buildConfig) {
@@ -562,7 +562,7 @@ final class SurroundSourceControl extends AbstractSourceControl implements Commo
    */
   private static final class SurroundChangeListKey {
 
-    private int hashCode = 0;
+    private int hashCode;
 
 
     public SurroundChangeListKey(final ChangeList changeList) {

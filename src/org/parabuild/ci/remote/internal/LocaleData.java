@@ -26,9 +26,9 @@ public final class LocaleData implements Serializable {
 
   private static final long serialVersionUID = -8907298511657059064L; // NOPMD
 
-  private String language = null;
-  private String country = null;
-  private String variant = null;
+  private String language;
+  private String country;
+  private String variant;
 
 
   /**

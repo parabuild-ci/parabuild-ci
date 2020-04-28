@@ -37,9 +37,9 @@ public final class PackedLogInputStream extends InputStream {
 
   private final File zippedLogFile;
   private final String entryName;
-  private ZipFile file = null;
-  private InputStream delegate = null;
-  private boolean closed = false;
+  private ZipFile file;
+  private InputStream delegate;
+  private boolean closed;
 
 
   /**

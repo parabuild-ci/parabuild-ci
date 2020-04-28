@@ -73,7 +73,7 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
   public static final String PARABUILD_P4PASSWD = PARABUILD_PREFIX + P4Command.P4PASSWD;
 
 
-  private boolean lazyDepotInitCalled = false;
+  private boolean lazyDepotInitCalled;
 
   private final P4ClientNameGenerator clientNameGenerator;
 

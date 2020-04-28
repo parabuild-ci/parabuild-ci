@@ -19,7 +19,7 @@ import viewtier.ui.CheckBox;
 final class GroupMemberCheckBox extends CheckBox {
 
   private static final long serialVersionUID = 2636900388101356078L;
-  private GroupMemberVO groupMemberVO = null;
+  private GroupMemberVO groupMemberVO;
 
 
   /**

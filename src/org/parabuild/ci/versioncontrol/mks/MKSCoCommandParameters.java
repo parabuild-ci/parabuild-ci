@@ -23,7 +23,7 @@ import java.util.Date;
  */
 public final class MKSCoCommandParameters extends MKSCommandParameters {
 
-  private Date date = null;
+  private Date date;
   private String inputDateFormat;
 
 

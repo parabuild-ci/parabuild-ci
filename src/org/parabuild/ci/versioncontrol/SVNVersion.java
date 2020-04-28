@@ -21,8 +21,8 @@ package org.parabuild.ci.versioncontrol;
  */
 final class SVNVersion {
 
-  private int major = 0;
-  private int minor = 0;
+  private int major;
+  private int minor;
 
 
   public SVNVersion(final int major, final int minor) {

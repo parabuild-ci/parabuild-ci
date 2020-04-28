@@ -54,7 +54,7 @@ public final class UsersTable extends AbstractFlatTable {
   public static final String STR_EMAIL = "E-mail";
   public static final String STR_ACTION = "Action";
 
-  private List users = null;
+  private List users;
 
 
   public UsersTable() {

@@ -53,11 +53,11 @@ public final class StepResult implements Serializable, ObjectConstants, Lifecycl
 
   private byte pathType = PATH_TYPE_UNKNOWN;
   private int stepRunID = -1;
-  private String archiveFileName = null;
-  private String description = null;
-  private String path = null;
-  private boolean found = false;
-  private boolean pinned = false;
+  private String archiveFileName;
+  private String description;
+  private String path;
+  private boolean found;
+  private boolean pinned;
 
 
   /**

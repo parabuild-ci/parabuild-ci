@@ -51,7 +51,7 @@ import java.util.Properties;
 public final class ConfigurationService implements Service {
 
   private static final Log log = LogFactory.getLog(ConfigurationService.class);
-  private SessionFactory sessionFactory = null;
+  private SessionFactory sessionFactory;
 
 
   private byte status = SERVICE_STATUS_NOT_STARTED;

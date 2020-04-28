@@ -29,27 +29,27 @@ public final class Group implements Serializable, ObjectConstants {
   public static final String SYSTEM_ANONYMOUS_GROUP = "Anonymous";
 
   private int ID = UNSAVED_ID;
-  private long timeStamp = 0;
+  private long timeStamp;
   private String description = "";
-  private String name = null;
+  private String name;
   private boolean enabled = true;
 
   // build rights
-  private boolean allowedToStartBuild = false;
-  private boolean allowedToStopBuild = false;
-  private boolean allowedToCreateBuild = false;
-  private boolean allowedToUpdateBuild = false;
-  private boolean allowedToDeleteBuild = false;
+  private boolean allowedToStartBuild;
+  private boolean allowedToStopBuild;
+  private boolean allowedToCreateBuild;
+  private boolean allowedToUpdateBuild;
+  private boolean allowedToDeleteBuild;
   private boolean allowedToViewBuild = true;
-  private boolean allowedToPublishResults = false;
-  private boolean allowedToDeleteResults = false;
+  private boolean allowedToPublishResults;
+  private boolean allowedToDeleteResults;
 
   // result rights
-  private boolean allowedToCreateResultGroup = false;
-  private boolean allowedToDeleteResultGroup = false;
-  private boolean allowedToUpdateResultGroup = false;
+  private boolean allowedToCreateResultGroup;
+  private boolean allowedToDeleteResultGroup;
+  private boolean allowedToUpdateResultGroup;
   private boolean allowedToViewResultGroup = true;
-  private boolean allowedToActivateBuild = false;
+  private boolean allowedToActivateBuild;
 
 
   /**

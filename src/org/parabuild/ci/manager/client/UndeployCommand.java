@@ -37,7 +37,7 @@ public final class UndeployCommand extends AgentCommand {
   /**
    * The context path of the web application we are managing.
    */
-  private String path = null;
+  private String path;
 
 
   public String getPath() {

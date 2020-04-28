@@ -56,11 +56,11 @@ abstract class AbstractWrapperScriptGenerator implements WrapperScriptGenerator 
           "SECURITY_POLICY_FILE"
   };
 
-  String currentDir = null;
+  String currentDir;
   protected final Agent agent;
 
   private final Map addedVariables = new HashMap(11);
-  private String stepScriptPath = null;
+  private String stepScriptPath;
 
 
   AbstractWrapperScriptGenerator(final Agent agent) {

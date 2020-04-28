@@ -23,7 +23,7 @@ import java.util.Date;
 final class StarTeamCheckoutCommandParameters extends StarTeamCommandParameters {
 
   private byte eolConversion = VersionControlSystem.STARTEAM_EOL_ON;
-  private Date date = null;
+  private Date date;
 
 
   public byte getEolConversion() {

@@ -54,7 +54,7 @@ final class BuilderListTable extends AbstractFlatTable {
   private static final String CAPTION_BUILDER_DESCRIPTION = "Description";
   private static final String CAPTION_ACTION = "Action";
 
-  private List builderList = null;
+  private List builderList;
 
   /**
    * Creates and automatically pupulates the cluster list table.

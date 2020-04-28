@@ -36,7 +36,7 @@ public final class SupportService implements Service {
 
   private static final Log log = LogFactory.getLog(SupportService.class);
   private byte serviceStatus = SERVICE_STATUS_NOT_STARTED;
-  private PooledExecutor executor = null;
+  private PooledExecutor executor;
 
 
   public void startupService() {

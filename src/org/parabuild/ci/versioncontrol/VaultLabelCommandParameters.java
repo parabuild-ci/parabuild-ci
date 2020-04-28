@@ -18,9 +18,9 @@ package org.parabuild.ci.versioncontrol;
  */
 public final class VaultLabelCommandParameters extends VaultCommandParameters {
 
-  private String repositoryPath = null;
+  private String repositoryPath;
   private int version = -1;
-  private String label = null;
+  private String label;
 
 
   public int getVersion() {

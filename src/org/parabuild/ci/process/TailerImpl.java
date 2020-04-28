@@ -28,7 +28,7 @@ final class TailerImpl implements Tailer {
 
   private final CyclicBuffer cyclicBuffer;
   private final TailBufferSize tailBufferSize;
-  private long lineNumber = 0;
+  private long lineNumber;
 
 
   public TailerImpl(final TailBufferSize tailBufferSize) {

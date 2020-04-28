@@ -41,9 +41,9 @@ public class DashboardBuildStatusComponent extends CustomComponent {
   private static final String PARABUILD_THROBBER_RED = "/images/throbber-dash-red.gif";
   private static final String PARABUILD_THROBBER_GRAY = "/images/throbber-dash-gray.gif";
 
-  private BuildState buildState = null;
-  private boolean setShowDetails = false;
-  private SimpleDateFormat dateFormat = null;
+  private BuildState buildState;
+  private boolean setShowDetails;
+  private SimpleDateFormat dateFormat;
   private static final long serialVersionUID = -6652384422627467378L;
 
 

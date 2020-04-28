@@ -31,7 +31,7 @@ public final class OsCommand {
   /**
    * Counter to produce executor handles.
    */
-  private static int executorHandleCounter = 0;
+  private static int executorHandleCounter;
 
 
   private final File mergedFile;

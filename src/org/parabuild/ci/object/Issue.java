@@ -34,16 +34,16 @@ public final class Issue implements Serializable, ObjectConstants {
 
   private int ID = UNSAVED_ID;
   private byte trackerType = TYPE_UNDEFINED;
-  private String key = null;
-  private String description = null;
+  private String key;
+  private String description;
   private String product = "";
   private String version = "";
   private String project = "";
   private String status = "";
   private String closedBy = "";
   private String priority = "";
-  private Date closed = null;
-  private Date received = null;
+  private Date closed;
+  private Date received;
   private String url = "";
 
 

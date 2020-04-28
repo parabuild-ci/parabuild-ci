@@ -62,7 +62,7 @@ public final class BuildRunParticipantsTable extends AbstractFlatTable {
   public static final String STR_BUILD_NUMBER = "Build Number";
 
   private final SimpleDateFormat dateTimeFormat = new SimpleDateFormat(SystemConfigurationManagerFactory.getManager().getDateTimeFormat(), Locale.US); // NOPMD
-  private List participants = null;
+  private List participants;
   private final boolean showChangeListDescriptions;
   private final ChangeURLFactory changeURLFactory;
 

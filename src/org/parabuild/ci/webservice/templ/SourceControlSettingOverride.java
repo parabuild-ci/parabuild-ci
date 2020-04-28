@@ -23,9 +23,9 @@ public final class SourceControlSettingOverride implements Serializable {
 
   private static final long serialVersionUID = 0L;
   
-  private String name = null;
-  private String value = null;
-  private boolean nativeChangeListNumber = false;
+  private String name;
+  private String value;
+  private boolean nativeChangeListNumber;
 
 
   public String getName() {

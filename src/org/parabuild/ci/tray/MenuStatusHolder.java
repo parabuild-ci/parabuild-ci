@@ -21,9 +21,9 @@ import javax.swing.*;
  */
 final class MenuStatusHolder {
 
-  private BuildStatus buildStatus = null;
-  private JMenuItem menuItem = null;
-  private MenuStatus menuStatus = null;
+  private BuildStatus buildStatus;
+  private JMenuItem menuItem;
+  private MenuStatus menuStatus;
 
 
   public MenuStatusHolder(final BuildStatus buildStatus, final MenuStatus menuStatus, final JMenuItem menuItem) {

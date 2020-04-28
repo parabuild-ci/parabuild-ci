@@ -36,10 +36,10 @@ final class CVSCommand extends VersionControlRemoteCommand {
   private static final Log log = LogFactory.getLog(CVSCommand.class);
   private static final String CAPTION_SYSTEM_ERROR = "System error: ";
 
-  private String remotePasswFileName = null;
-  private String cvsRoot = null;
-  private String cvsPassword = null;
-  private String cvsRshPath = null;
+  private String remotePasswFileName;
+  private String cvsRoot;
+  private String cvsPassword;
+  private String cvsRshPath;
 
 
   /**

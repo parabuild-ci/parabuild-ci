@@ -31,11 +31,11 @@ public final class PublishedStepResult implements Serializable, ObjectConstants 
   private int activeBuildID = UNSAVED_ID;
   private int buildRunID = UNSAVED_ID;
   private int publisherBuildRunID = UNSAVED_ID;
-  private Date publishDate = null;
-  private String buildName = null;
-  private Date buildRunDate = null;
+  private Date publishDate;
+  private String buildName;
+  private Date buildRunDate;
   private int buildRunNumber = UNSAVED_ID;
-  private String description = null;
+  private String description;
 
 
   /**

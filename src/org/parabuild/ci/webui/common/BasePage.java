@@ -123,13 +123,13 @@ public abstract class BasePage extends Window {
   /**
    * @see
    */
-  private PageHeaderLabel lbHeaderLabel = null;
+  private PageHeaderLabel lbHeaderLabel;
 
   /**
    * Quick search panel is set when the tierlet was created with
    * link SWITCH_SHOW_QUICK_SEARCH switch on.
    */
-  private HeaderDividerPanel pnlHeaderDivider = null;
+  private HeaderDividerPanel pnlHeaderDivider;
 
   private boolean loginUsingRememberedUser = true;
 

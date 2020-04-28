@@ -22,8 +22,8 @@ package org.parabuild.ci.object;
  */
 public final class BuilderConfigurationAttribute {
 
-  private String name = null;
-  private String value = null;
+  private String name;
+  private String value;
 
 
   public String getName() {

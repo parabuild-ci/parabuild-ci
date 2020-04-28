@@ -46,7 +46,7 @@ final class PVCSSourceControl extends AbstractSourceControl {
 
   private static final Log log = LogFactory.getLog(PVCSSourceControl.class);
   private static final int DEFAULT_LABEL_BLOCK_SIZE = 1000;
-  private Date lastSyncDate = null;
+  private Date lastSyncDate;
 
 
   PVCSSourceControl(final BuildConfig buildConfig) {

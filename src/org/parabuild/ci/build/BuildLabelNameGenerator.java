@@ -51,7 +51,7 @@ public final class BuildLabelNameGenerator {
   public static final String PROPERTY_CHANGELIST_NUMBER = "changelist.number";
 
   private final Map keys = new HashMap(3);
-  private String labelTemplate = null;
+  private String labelTemplate;
   private static final String BUILD_DATE_FORMAT = "yyyyMMdd";
 
 

@@ -45,7 +45,7 @@ final class SettingsDialog extends JDialog {
   private final JButton btnSave = new JButton(CAPTION_SAVE); // NOPMD
   private final JButton btnCancel = new JButton(CAPTION_CANCEL); // NOPMD
 
-  private boolean isOK = false;
+  private boolean isOK;
   private static final String CAPTION_SHOW_INACTIVE_BUILDS = "Show inactive builds";
 
 

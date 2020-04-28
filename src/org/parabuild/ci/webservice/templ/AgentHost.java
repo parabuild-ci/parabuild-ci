@@ -21,7 +21,7 @@ import java.io.Serializable;
 public final class AgentHost implements Serializable {
 
   private static final long serialVersionUID = 0L;
-  private String host = null;
+  private String host;
 
 
   public String getHost() {

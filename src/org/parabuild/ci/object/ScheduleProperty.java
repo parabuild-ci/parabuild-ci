@@ -54,8 +54,8 @@ public final class ScheduleProperty implements Serializable, ObjectConstants {
 
   private int buildID = BuildConfig.UNSAVED_ID;
   private int propertyID = UNSAVED_ID;
-  private String propertyName = null;
-  private String propertyValue = null;
+  private String propertyName;
+  private String propertyValue;
   private long propertyTimeStamp = 1L;
 
 

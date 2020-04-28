@@ -38,8 +38,8 @@ final class CVSUsersParser {
   /** @noinspection UNUSED_SYMBOL,UnusedDeclaration*/
   private static final Log log = LogFactory.getLog(CVSUsersParser.class); // NOPMD
 
-  private File usersFile = null;
-  private String cvsRoot = null;
+  private File usersFile;
+  private String cvsRoot;
   private int buildID = BuildConfig.UNSAVED_ID;
 
 

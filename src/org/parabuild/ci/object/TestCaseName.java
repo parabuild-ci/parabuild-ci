@@ -27,7 +27,7 @@ public class TestCaseName implements Serializable, ObjectConstants {
 
   private int ID = UNSAVED_ID;
   private int testSuiteNameID = TestSuiteName.UNSAVED_ID;
-  private String name = null;
+  private String name;
 
 
   /**

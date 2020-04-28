@@ -20,7 +20,7 @@ import java.util.Date;
  */
 final class StarTeamDeleteLocalCommandParameters extends StarTeamCommandParameters {
 
-  private Date viewConfigDate = null;
+  private Date viewConfigDate;
 
 
   public Date getConfigDate() {

@@ -56,15 +56,15 @@ public final class BuildConfigPage extends BasePage implements ConversationalTie
   private final BuildHeaderPanel buildHeaderPanel = new BuildHeaderPanel();
 
   // details part
-  private CommonButton detailsTopCancelButton = null;
-  private CommonButton detailsTopSaveButton = null;
-  private CommonButton btnSaveAndStartDetailsTop = null;
-  private CommonButton detailsBottomCancelButton = null;
-  private CommonButton detailsBottomSaveButton = null;
-  private CommonButton btnSaveAndStartDetailsBottom = null;
+  private CommonButton detailsTopCancelButton;
+  private CommonButton detailsTopSaveButton;
+  private CommonButton btnSaveAndStartDetailsTop;
+  private CommonButton detailsBottomCancelButton;
+  private CommonButton detailsBottomSaveButton;
+  private CommonButton btnSaveAndStartDetailsBottom;
 
-  private BuildConfig buildConfig = null;
-  private BuildConfigTabs buildConfigTabs = null;
+  private BuildConfig buildConfig;
+  private BuildConfigTabs buildConfigTabs;
 
 
   public BuildConfigPage() {

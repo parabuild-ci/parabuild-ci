@@ -28,7 +28,7 @@ public final class CommandLinkWithSeparator extends Flow {
   private static final long serialVersionUID = -5990770164884868879L; // NOPMD
 
   private final MenuDividerLabel lbSeparator = new MenuDividerLabel();
-  private Link lnk = null;
+  private Link lnk;
 
 
   /**

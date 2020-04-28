@@ -26,7 +26,7 @@ import java.util.Properties;
  */
 public class CommonCommandLinkWithImage extends Flow {
 
-  private CommonLink commandLink = null;
+  private CommonLink commandLink;
   private static final long serialVersionUID = -7359475602236040393L;
 
 

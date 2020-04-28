@@ -36,8 +36,8 @@ public final class MergeDaemon {
 
   private final ClockDaemon queueDaemon = new ClockDaemon();
   private final ClockDaemon mergeDaemon = new ClockDaemon();
-  private MergeQueueUpdateRunner queueRunner = null;
-  private MergeRunner mergeRunner = null;
+  private MergeQueueUpdateRunner queueRunner;
+  private MergeRunner mergeRunner;
   private final int activeMergeConfigurationID;
 
 

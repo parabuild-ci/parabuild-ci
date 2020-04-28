@@ -34,14 +34,14 @@ public final class ResultConfig implements Serializable, ObjectConstants, Lifecy
   public static final byte RESULT_TYPE_DIR = 2;
   public static final byte RESULT_TYPE_URL = 3;
 
-  private boolean failIfNotFound = false;
-  private boolean ignoreTimestamp = false;
+  private boolean failIfNotFound;
+  private boolean ignoreTimestamp;
   private byte type = RESULT_TYPE_UNDEFINED;
   private int buildID = BuildConfig.UNSAVED_ID;
   private int ID = UNSAVED_ID;
-  private Integer autopublishGroupID = null;
-  private long timeStamp = 0;
-  private String description = null;
+  private Integer autopublishGroupID;
+  private long timeStamp;
+  private String description;
   private String path = "";
   private String shellVariable = "";
 

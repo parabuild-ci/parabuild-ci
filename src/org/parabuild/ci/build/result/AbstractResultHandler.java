@@ -64,7 +64,7 @@ public abstract class AbstractResultHandler implements ResultHandler {
   private final ErrorManager errorManager = ErrorManagerFactory.getErrorManager();
   private final String[] fullyQualifiedResultPaths;
   private final String[] resolvedResultPaths;
-  protected boolean pinResult = false;
+  protected boolean pinResult;
 
 
   /**

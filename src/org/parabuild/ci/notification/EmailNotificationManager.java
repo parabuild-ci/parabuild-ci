@@ -86,7 +86,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
 
 
   // fields
-  private Map vcsUserMap = null;
+  private Map vcsUserMap;
   private boolean enabled = true;
 
 

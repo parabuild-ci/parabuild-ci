@@ -64,9 +64,9 @@ public class BuildStatusesTable extends AbstractFlatTable {
   /**
    * Lazily initializable leader IDs.
    */
-  protected Set leaderIDs = null;
+  protected Set leaderIDs;
 
-  protected List statuses = null;
+  protected List statuses;
   private final String dateTimeFormat;
 
   private final int flags;

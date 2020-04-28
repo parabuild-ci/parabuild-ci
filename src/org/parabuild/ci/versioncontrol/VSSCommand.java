@@ -34,10 +34,10 @@ final class VSSCommand extends VersionControlRemoteCommand {
 
   private static final Log log = LogFactory.getLog(VSSCommand.class);
 
-  private String execPath = null;
-  private String password = null;
-  private String userName = null;
-  private String vssCommand = null;
+  private String execPath;
+  private String password;
+  private String userName;
+  private String vssCommand;
 
 
   /**

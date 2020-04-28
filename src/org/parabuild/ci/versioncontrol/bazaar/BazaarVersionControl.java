@@ -51,7 +51,7 @@ public final class BazaarVersionControl extends AbstractSourceControl {
   private static final Log LOG = LogFactory.getLog(BazaarVersionControl.class); // NOPMD
   private static final int INITIAL_CHANGE_LIST_CAPACITY = 101;
 
-  private String lastSyncRevision = null;
+  private String lastSyncRevision;
 
 
   public BazaarVersionControl(final BuildConfig buildConfig) {

@@ -36,7 +36,7 @@ public final class ChangeListsPanel extends Panel {
 
   private static final long serialVersionUID = 5805873768802255788L; // NOPMD
 
-  private boolean showFiles = false;
+  private boolean showFiles;
 
 
   public ChangeListsPanel() {

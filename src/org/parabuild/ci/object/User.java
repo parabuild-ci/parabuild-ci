@@ -35,19 +35,19 @@ public final class User implements Serializable, ObjectConstants {
   public static final String ROLE_USER = "user";
   public static final String ROLE_WEBSERVICE = "webservice";
 
-  private boolean admin = false;
+  private boolean admin;
   private boolean enabled = true;
   private int userID = UNSAVED_ID;
-  private long timeStamp = 0;
-  private String email = null;
+  private long timeStamp;
+  private String email;
   private String fullName = "";
-  private String name = null;
-  private String password = null;
+  private String name;
+  private String password;
   private String userRoles = ROLE_ADMIN;
   private byte imType = IM_TYPE_NONE;
   private String imAddress = "";
-  private boolean authenticateUsingLDAP = false;
-  private boolean disableAllEmail = false;
+  private boolean authenticateUsingLDAP;
+  private boolean disableAllEmail;
 
 
   /**

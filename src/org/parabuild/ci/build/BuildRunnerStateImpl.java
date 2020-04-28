@@ -24,12 +24,12 @@ final class BuildRunnerStateImpl implements BuildRunnerState {
 
   private volatile int currentlyRunningBuildRunID = BuildRun.UNSAVED_ID;
   private volatile int currentlyRunningBuildConfigID = BuildConfig.UNSAVED_ID;
-  private volatile BuildRun lastCleanBuildRun = null;
-  private volatile BuildRun lastCompleteBuildRun = null;
-  private volatile BuildSequence currentlyRunningStep = null;
-  private volatile String currentlyRunningOnBuildHost = null;
-  private volatile String currentlyRunningChangeListNumber = null;
-  private volatile int currentlyRunningBuildNumber = 0;
+  private volatile BuildRun lastCleanBuildRun;
+  private volatile BuildRun lastCompleteBuildRun;
+  private volatile BuildSequence currentlyRunningStep;
+  private volatile String currentlyRunningOnBuildHost;
+  private volatile String currentlyRunningChangeListNumber;
+  private volatile int currentlyRunningBuildNumber;
 
 
   /**

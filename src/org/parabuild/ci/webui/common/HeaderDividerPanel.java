@@ -41,8 +41,8 @@ public final class HeaderDividerPanel extends Panel {
   public static final String FIELD_NAME_SEARCH = "search";
   public static final String CAPTION_SEARCH = "Search";
 
-  private CommonField flQuery = null;
-  private Flow currentNavigationLinks = null; // NOPMD
+  private CommonField flQuery;
+  private Flow currentNavigationLinks; // NOPMD
 
 
   public HeaderDividerPanel(final int pageFlags) {

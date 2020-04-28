@@ -55,7 +55,7 @@ public final class StartBuildPanel extends MessagePanel {
   private static final Log log = LogFactory.getLog(StartBuildPanel.class); // NOPMD
   private static final long serialVersionUID = -194369566029085673L; // NOPMD
 
-  private ManualStartParametersPanel pnlStartParameters = null;
+  private ManualStartParametersPanel pnlStartParameters;
   private final int activeBuildID;
   private final String buildName;
   private final boolean publishingRun;

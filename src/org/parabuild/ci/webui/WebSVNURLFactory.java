@@ -32,8 +32,8 @@ public final class WebSVNURLFactory implements ChangeURLFactory {
    */
   private static final Log log = LogFactory.getLog(WebSVNURLFactory.class); // NOPMD
 
-  private String url = null;
-  private boolean showRevision = false;
+  private String url;
+  private boolean showRevision;
   private final String repname;
 
 

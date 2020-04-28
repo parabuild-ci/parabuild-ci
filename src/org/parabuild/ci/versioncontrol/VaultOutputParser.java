@@ -95,7 +95,7 @@ public final class VaultOutputParser {
     //private static final Log log = LogFactory.getLog(VaultOutputContentHandler.class);
 
     private final Vault parsed = new Vault();
-    private StringBuffer currentCharacters = null;
+    private StringBuffer currentCharacters;
 
 
     public Vault getParsed() {

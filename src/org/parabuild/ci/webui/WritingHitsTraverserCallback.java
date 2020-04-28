@@ -41,7 +41,7 @@ public final class WritingHitsTraverserCallback implements HitsTraverserCallback
 
   public static final String STR_SEPARATOR = "&nbsp;&nbsp;&gt;&nbsp;&nbsp;";
 
-  private transient PrintWriter pw = null;
+  private transient PrintWriter pw;
 
 
   /**

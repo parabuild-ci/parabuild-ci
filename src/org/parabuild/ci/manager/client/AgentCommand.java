@@ -52,13 +52,13 @@ public abstract class AgentCommand {
   /**
    * The login password for the <code>Agent Manager</code> application.
    */
-  protected String password = null;
+  protected String password;
 
 
   /**
    * The URL of the <code>Agent Manager</code> application to be used.
    */
-  protected String url = null;
+  protected String url;
 
 
   public String getPassword() {
@@ -84,7 +84,7 @@ public abstract class AgentCommand {
   /**
    * The login username for the <code>Manager</code> application.
    */
-  protected String username = null;
+  protected String username;
 
 
   public String getUsername() {

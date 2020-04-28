@@ -28,14 +28,14 @@ public final class HourlyStats implements Serializable, ObjectConstants, Persist
 
   private int ID = UNSAVED_ID;
   private int activeBuildID = UNSAVED_ID;
-  private Date sampleTime = null;
-  private int successfulBuildCount = 0;
-  private int failedBuildCount = 0;
-  private int totalBuildCount = 0;
-  private int changeListCount = 0;
-  private int issueCount = 0;
-  private int failedBuildPercent = 0;
-  private int successfulBuildPercent = 0;
+  private Date sampleTime;
+  private int successfulBuildCount;
+  private int failedBuildCount;
+  private int totalBuildCount;
+  private int changeListCount;
+  private int issueCount;
+  private int failedBuildPercent;
+  private int successfulBuildPercent;
 
 
   /**

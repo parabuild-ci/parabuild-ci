@@ -54,7 +54,7 @@ public final class ProjectListTable extends AbstractFlatTable {
   private static final String CAPTION_BUILD_COUNT = "Build Configurations";
   private static final String CAPTION_ACTION = "Action";
 
-  private List projects = null;
+  private List projects;
 
 
   public ProjectListTable(final boolean showControls) {

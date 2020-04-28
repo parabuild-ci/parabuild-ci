@@ -27,11 +27,11 @@ public final class VCSUserToEmailMap implements Serializable, ObjectConstants {
   private int buildID = BuildConfig.UNSAVED_ID;
   private int mapID = UNSAVED_ID;
   private byte instantMessengerType = IM_TYPE_NONE;
-  private String userName = null;
-  private String userEmail = null;
-  private String instantMessengerAddress = null;
+  private String userName;
+  private String userEmail;
+  private String instantMessengerAddress;
   private long timeStamp = 1;
-  private boolean disabled = false;
+  private boolean disabled;
 
 
   /**

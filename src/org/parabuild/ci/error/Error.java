@@ -78,7 +78,7 @@ public final class Error implements Serializable {
 
   private final SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss:SS z", Locale.US);
   private boolean sendEmail = true;
-  private boolean outputToLog = false;
+  private boolean outputToLog;
 
   private final Properties content = new Properties();
   private int activeMergeConfigurationID = MergeConfiguration.UNSAVED_ID;

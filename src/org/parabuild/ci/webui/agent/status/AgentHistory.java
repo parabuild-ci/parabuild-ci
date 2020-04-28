@@ -38,7 +38,7 @@ final class AgentHistory {
   /**
    * Generated image.
    */
-  private volatile ImmutableImage chart = null;
+  private volatile ImmutableImage chart;
 
 
   AgentHistory(final String hostName, final int agentID) {

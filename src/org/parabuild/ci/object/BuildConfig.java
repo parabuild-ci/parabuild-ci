@@ -59,14 +59,14 @@ public class BuildConfig implements Serializable, ObjectConstants, Lifecycle {
   private int buildID = UNSAVED_ID;
   private int activeBuildID = UNSAVED_ID;
   private int builderID = BuilderConfiguration.UNSAVED_ID;
-  private boolean sourceControlEmail = false;
+  private boolean sourceControlEmail;
   private byte access = ACCESS_PUBLIC;
   private byte scheduleType = SCHEDULE_TYPE_AUTOMATIC;
   private byte sourceControl = VersionControlSystem.SCM_UNDEFINED;
-  private long timeStamp = 0;
-  private String buildName = null;
+  private long timeStamp;
+  private String buildName;
   private String emailDomain = "";
-  private boolean subordinate = false;
+  private boolean subordinate;
 
 
   /**

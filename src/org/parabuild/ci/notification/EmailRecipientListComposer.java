@@ -53,15 +53,15 @@ public final class EmailRecipientListComposer {
 
   private final JNDIAuthenticator jndiAuthenticator;
   private boolean notifyBuildAdmin = true;
-  private Map versionControlMap = null;
+  private Map versionControlMap;
   private final Map configuredMap = new HashMap(11);
-  private String defaultDomain = null;
+  private String defaultDomain;
   private final List unmappedUsers = new ArrayList(1);
   private final List invalidEmails = new ArrayList(1);
   private final List toRecipients = new ArrayList(11);
   private final List bccRecipients = new ArrayList(11); // NOPMD
   private boolean caseSensitiveUserName = true;
-  private boolean advancedStopNotification = false;
+  private boolean advancedStopNotification;
 
 
   public EmailRecipientListComposer() {

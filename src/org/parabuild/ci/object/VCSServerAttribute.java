@@ -26,10 +26,10 @@ public final class VCSServerAttribute implements Serializable, ObjectConstants {
 
   private static final long serialVersionUID = 3955416338317148974L;
 
-  private Integer serverId = null;
-  private Integer id = null;
-  private String name = null;
-  private String value = null;
+  private Integer serverId;
+  private Integer id;
+  private String name;
+  private String value;
   private long timeStamp = 1;
 
 

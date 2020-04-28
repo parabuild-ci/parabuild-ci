@@ -41,13 +41,13 @@ public final class DeployCommand extends AgentCommand {
   /**
    * The context path of the web application we are managing.
    */
-  private String path = null;
+  private String path;
 
 
   /**
    * URL of the web application archive (WAR) file to be deployed.
    */
-  private String war = null;
+  private String war;
 
 
   public String getPath() {

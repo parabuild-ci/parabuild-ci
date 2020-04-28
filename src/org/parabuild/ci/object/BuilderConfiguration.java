@@ -26,11 +26,11 @@ public final class BuilderConfiguration implements Serializable, ObjectConstants
   private static final long serialVersionUID = -5907298521657059063L; // NOPMD
 
   private int ID = UNSAVED_ID;
-  private long timeStamp = 0;
+  private long timeStamp;
   private String description = "";
-  private String name = null;
+  private String name;
   private boolean enabled = true;
-  private boolean deleted = false;
+  private boolean deleted;
 
 
   /**

@@ -68,7 +68,7 @@ public abstract class MergeConfiguration implements Serializable, ObjectConstant
 
 
   private boolean indirectMerge = true;
-  private boolean preserveMarker = false;
+  private boolean preserveMarker;
   private boolean reverseBranchView = true;
   private byte branchViewSource = BRANCH_VIEW_SOURCE_BRANCH_NAME;
   private byte conflictResolutionMode = CONFLICT_RESOLUTION_MODE_NAG;
@@ -80,9 +80,9 @@ public abstract class MergeConfiguration implements Serializable, ObjectConstant
   private long timeStamp = 1;
   private String branchView = "";
   private String branchViewName = "";
-  private String description = null;
-  private String marker = null;
-  private String name = null;
+  private String description;
+  private String marker;
+  private String name;
 
 
   /**

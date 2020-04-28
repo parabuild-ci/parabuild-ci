@@ -37,7 +37,7 @@ public final class SimpleFileArchivedLogFinder {
 
   private final Agent agent;
   private final ArchiveManager archiveManager;
-  private boolean ignoreTimeStamp = false;
+  private boolean ignoreTimeStamp;
 
 
   public SimpleFileArchivedLogFinder(final Agent agent, final ArchiveManager archiveManager) {

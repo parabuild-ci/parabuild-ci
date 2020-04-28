@@ -28,7 +28,7 @@ public final class DisplayGroupBuild implements Serializable, ObjectConstants {
   private int ID = UNSAVED_ID;
   private int buildID = BuildConfig.UNSAVED_ID;
   private int displayGroupID = Group.UNSAVED_ID;
-  private long timeStamp = 0;
+  private long timeStamp;
 
 
   public DisplayGroupBuild() {

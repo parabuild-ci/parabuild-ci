@@ -24,7 +24,7 @@ import java.io.IOException;
 final class PVCSRunCommand extends PVCSCommand {
 
   private final PVCSRunCommandParameters parameters;
-  private String tempFile = null;
+  private String tempFile;
 
 
   /**

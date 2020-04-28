@@ -18,8 +18,8 @@ package org.parabuild.ci.versioncontrol;
  */
 final class VaultGetVersionCommandParameters extends VaultCommandParameters {
 
-  private boolean makeWriteable = false;
-  private String repositoryPath = null;
+  private boolean makeWriteable;
+  private String repositoryPath;
   private int version = -1;
 
   public boolean isMakeWriteable() {

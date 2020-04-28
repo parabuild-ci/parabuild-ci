@@ -31,9 +31,9 @@ public final class HibernateTransaction {
 
   private static final ThreadLocal sessionContext = new ThreadLocal();
 
-  private Transaction tx = null; // NOPMD (SingularField)
-  private Session session = null;
-  private int level = 0;
+  private Transaction tx; // NOPMD (SingularField)
+  private Session session;
+  private int level;
 
 
   public static HibernateTransaction beginTransaction() throws HibernateException {

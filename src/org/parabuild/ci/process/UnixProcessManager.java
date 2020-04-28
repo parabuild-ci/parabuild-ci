@@ -39,7 +39,7 @@ public final class UnixProcessManager implements ProcessManager {
 
   private static final Log log = LogFactory.getLog(UnixProcessManager.class);
 
-  private boolean deep = false;
+  private boolean deep;
   private final ProcessParser parser;
 
 

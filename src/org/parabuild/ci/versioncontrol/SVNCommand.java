@@ -34,12 +34,12 @@ abstract class SVNCommand extends VersionControlRemoteCommand {
 
   private static final Log LOG = LogFactory.getLog(SVNCommand.class); // NOPMD
 
-  private String url = null;
-  private String password = null;
-  private String user = null;
-  private String exePath = null;
-  private boolean interactive = false;
-  private boolean addTrustServerCert = false;
+  private String url;
+  private String password;
+  private String user;
+  private String exePath;
+  private boolean interactive;
+  private boolean addTrustServerCert;
 
 
   protected SVNCommand(final Agent agent, final String exePath, final String url) throws IOException, AgentFailureException {

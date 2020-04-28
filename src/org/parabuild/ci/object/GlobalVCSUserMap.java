@@ -29,9 +29,9 @@ public class GlobalVCSUserMap implements Serializable, ObjectConstants {
 
   private int ID = UNSAVED_ID;
 
-  private String vcsUserName = null;
-  private String email = null;
-  private String description = null;
+  private String vcsUserName;
+  private String email;
+  private String description;
 
 
   /**

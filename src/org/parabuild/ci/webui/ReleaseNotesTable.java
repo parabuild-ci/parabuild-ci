@@ -44,7 +44,7 @@ public final class ReleaseNotesTable extends AbstractFlatTable {
   private static final int COL_ISSUE_ID = 0;
   private static final int COL_ISSUE_DESCR = 1;
 
-  private List releaseNotesReportList = null;
+  private List releaseNotesReportList;
   private String buildRunIDAsString = "";
 
 

@@ -55,7 +55,7 @@ public class MKSSourceControl extends AbstractSourceControl {
   /**
    * Contains date when we did sync last time.
    */
-  private Date lastSyncDate = null;
+  private Date lastSyncDate;
 
 
   public MKSSourceControl(final BuildConfig buildConfig) {

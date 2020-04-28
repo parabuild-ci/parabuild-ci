@@ -113,12 +113,12 @@ final class ChangeListWindowMerger {
   private static final class FirstRunChangeListKey {
 
     // key elements
-    private String user = null;
-    private String description = null;
-    private String branch = null;
+    private String user;
+    private String description;
+    private String branch;
 
     // hash code
-    private int hashCode = 0;
+    private int hashCode;
 
 
     /**

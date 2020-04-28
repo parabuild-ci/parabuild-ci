@@ -35,8 +35,8 @@ public final class ChangeListIssueBinding implements Serializable {
   }
 
 
-  private ChangeList changeList = null;
-  private Issue issue = null;
+  private ChangeList changeList;
+  private Issue issue;
 
 
   public ChangeList getChangeList() {

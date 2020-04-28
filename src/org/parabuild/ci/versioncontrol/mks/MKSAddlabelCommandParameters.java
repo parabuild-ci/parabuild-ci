@@ -21,7 +21,7 @@ package org.parabuild.ci.versioncontrol.mks;
  */
 public class MKSAddlabelCommandParameters extends MKSCommandParameters {
 
-  private String label = null;
+  private String label;
 
 
   public String getLabel() {

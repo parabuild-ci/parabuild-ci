@@ -54,10 +54,10 @@ public final class RepeatableScheduler implements BuildScheduler {
 
   private static final Log log = LogFactory.getLog(RepeatableScheduler.class);
 
-  private boolean startedUp = false;
+  private boolean startedUp;
   private final int activeBuildID;
   private BuildRunner buildRunner;
-  private Scheduler scheduler = null;
+  private Scheduler scheduler;
   private final List triggerKeyList = new ArrayList(11);
   private SchedulerStatus schedulerStatus = SchedulerStatus.IDLE;
   private final CleanCheckoutCounter cleanCheckoutCounter;

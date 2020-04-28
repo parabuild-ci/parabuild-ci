@@ -58,7 +58,7 @@ public abstract class AbstractSourceControl implements SourceControl {
   private final Map<AgentHost, Boolean> agentHostCleanup = new HashMap<>(11);
   private final String checkoutDirectoryName;
   protected Map<String, SourceControlSetting> currentSettings;
-  private AgentHost agentHost = null;
+  private AgentHost agentHost;
 
 
   protected AbstractSourceControl(final BuildConfig buildConfig) {

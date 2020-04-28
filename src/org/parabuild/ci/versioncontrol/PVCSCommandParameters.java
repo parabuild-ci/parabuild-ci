@@ -17,14 +17,14 @@ package org.parabuild.ci.versioncontrol;
  */
 class PVCSCommandParameters {
 
-  private String user = null;
-  private String password = null;
-  private String pathToClient = null;
-  private String repository = null;
-  private String project = null;
-  private String branch = null;
-  private String label = null;
-  private String promotionGroup = null;
+  private String user;
+  private String password;
+  private String pathToClient;
+  private String repository;
+  private String project;
+  private String branch;
+  private String label;
+  private String promotionGroup;
 
 
   public PVCSCommandParameters() {

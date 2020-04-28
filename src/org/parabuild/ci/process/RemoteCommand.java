@@ -61,24 +61,24 @@ public class RemoteCommand implements Cleanable {
   private static final String STR_COMMAND_C = "command /c ";
   public static final String STR_SH_C = "sh -c ";
 
-  private boolean mergedOutput = false;
+  private boolean mergedOutput;
   private final Map env = new HashMap(5);
   private int timeoutSecs = Integer.MAX_VALUE;
-  private String command = null;
-  private String remoteTempInputFile = null;
-  private TimeoutCallback timeoutCallback = null;
-  protected File mergedFile = null;
-  protected File stderrFile = null;
-  protected File stdoutFile = null;
+  private String command;
+  private String remoteTempInputFile;
+  private TimeoutCallback timeoutCallback;
+  protected File mergedFile;
+  protected File stderrFile;
+  protected File stdoutFile;
   protected final Agent agent;
   protected final ProcessSignatureRegistry signatureRegistry = new ProcessSignatureRegistry();
-  protected InputStream is = null;
-  protected String remoteCurrentDir = null;
+  protected InputStream is;
+  protected String remoteCurrentDir;
 
   /**
    * Executor handler allows us to refer to remote command asynchronuously.
    */
-  private int handle = 0;
+  private int handle;
   private final int retryTimes;
   private final int retryItervalSecs;
   private final List ignoreErrorPatterns;

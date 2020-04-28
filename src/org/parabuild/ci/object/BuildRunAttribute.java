@@ -193,8 +193,8 @@ public final class BuildRunAttribute implements Serializable, ObjectConstants {
 
   private int buildRunID = BuildRun.UNSAVED_ID;
   private int ID = UNSAVED_ID;
-  private String name = null;
-  private String value = null;
+  private String name;
+  private String value;
   private long timeStamp = 1;
 
 

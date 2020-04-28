@@ -32,8 +32,8 @@ import java.util.Properties;
 public final class BuildResultLink extends Flow {
 
   private static final long serialVersionUID = -8378386076913980253L;
-  private String caption = null;
-  private ColoredResultLink delegate = null;
+  private String caption;
+  private ColoredResultLink delegate;
 
   /**
    * Creates the build result link with the given caption.

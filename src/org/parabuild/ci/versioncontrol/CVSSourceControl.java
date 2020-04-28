@@ -64,7 +64,7 @@ final class CVSSourceControl extends AbstractSourceControl implements CommonCons
   public static final String CVS_CVSROOT_USERS = "CVSROOT/users";
 
   private final SimpleDateFormat CVS_DATE_FORMATTER = makeCVSDateFormatter();
-  private Date lastSyncDate = null;
+  private Date lastSyncDate;
 
 
   /**

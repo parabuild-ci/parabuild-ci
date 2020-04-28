@@ -26,7 +26,7 @@ public class TestSuiteName implements Serializable, ObjectConstants {
   private static final long serialVersionUID = 136142447371206393L; // NOPMD
 
   private int ID = UNSAVED_ID;
-  private String name = null;
+  private String name;
 
 
   /**

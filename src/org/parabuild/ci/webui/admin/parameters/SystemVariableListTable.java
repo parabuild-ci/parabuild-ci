@@ -53,7 +53,7 @@ final class SystemVariableListTable extends AbstractFlatTable {
   public static final String CAPTION_DESCRIPTION = "Description";
   public static final String CAPTION_ACTION = "Action";
 
-  private List startParameters = null;
+  private List startParameters;
   private final byte variableType;
   private final int variableOwner;
 

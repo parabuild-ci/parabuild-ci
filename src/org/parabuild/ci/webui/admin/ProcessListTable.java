@@ -44,7 +44,7 @@ public final class ProcessListTable extends AbstractFlatTable {
 
   private static final int COLUMN_COUNT = 5;
 
-  private List processList = null;
+  private List processList;
 
 
   public ProcessListTable(final boolean editable) {

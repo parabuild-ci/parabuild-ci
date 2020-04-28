@@ -42,8 +42,8 @@ public abstract class AbstractUnixDaemonCreator implements UnixDaemonCreator {
   private static final Log log = LogFactory.getLog(AbstractUnixDaemonCreator.class); // NOPMD
 
 
-  private InstallerContext installerContext = null;
-  private DirectoryOwnerChanger directoryOwnerChanger = null;
+  private InstallerContext installerContext;
+  private DirectoryOwnerChanger directoryOwnerChanger;
 
 
   protected AbstractUnixDaemonCreator(final DirectoryOwnerChanger directoryOwnerChanger) {

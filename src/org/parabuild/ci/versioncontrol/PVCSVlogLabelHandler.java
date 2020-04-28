@@ -39,9 +39,9 @@ final class PVCSVlogLabelHandler implements PVCSVlogHandler {
   private final PVCSLabelCreator labelCreator;
   private final int fileBlockSize;
 
-  private String previousPath = null;
-  private String previousRevision = null;
-  private List collectedRevisionBlock = null;
+  private String previousPath;
+  private String previousRevision;
+  private List collectedRevisionBlock;
 
 
   /**

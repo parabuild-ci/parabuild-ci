@@ -18,8 +18,8 @@ package org.parabuild.ci.tray;
  */
 final class StatusMapKey {
 
-  private String hostPort = null;
-  private Integer buildID = null;
+  private String hostPort;
+  private Integer buildID;
 
 
   public StatusMapKey(final String hostPort, final Integer buildID) {

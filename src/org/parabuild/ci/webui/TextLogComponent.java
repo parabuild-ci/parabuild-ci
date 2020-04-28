@@ -36,7 +36,7 @@ public final class TextLogComponent extends CustomComponent {
   private static final long serialVersionUID = -4256625468445813797L; // NOPMD
   private static final Log log = LogFactory.getLog(TextLogComponent.class);
 
-  private String fileNameToShow = null;
+  private String fileNameToShow;
 
   private final ArchiveManager archiveManager;
   private final StepLog stepLog;

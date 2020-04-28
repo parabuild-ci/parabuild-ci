@@ -42,7 +42,7 @@ public final class ChangelistContentTable extends AbstractFlatTable {
   public static final int COL_FILE = 1;
   public static final int COL_REVISION = 2;
 
-  private List changes = null;
+  private List changes;
   private final ChangeURLFactory changeURLFactory;
   private final boolean showChangeListFiles;
 

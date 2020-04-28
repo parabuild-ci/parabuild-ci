@@ -56,7 +56,7 @@ public final class CleanUpBuildLogArchivePage extends BasePage implements Conver
 
   private int action = ACTION_CANCEL;
   private final CommonField flNumberOfDays = new CommonField(4, 4);
-  private MessagePanel pnlDeleteBuild = null; // NOPMD
+  private MessagePanel pnlDeleteBuild; // NOPMD
 
 
   /**

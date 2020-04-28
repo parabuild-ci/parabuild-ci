@@ -39,7 +39,7 @@ public final class ServiceManagerServlet extends GenericServlet {
   private static final long serialVersionUID = 6247201370637762943L; // NOPMD
   private final ServiceManager serviceManager = ServiceManager.getInstance();
   //  private static final Log log = LogFactory.getLog(ServiceManagerServlet.class);
-  private volatile boolean destroyed = false; // NOPMD
+  private volatile boolean destroyed; // NOPMD
 
 
   /**

@@ -18,8 +18,8 @@ package org.parabuild.ci.versioncontrol;
  */
 final class PVCSRevision {
 
-  private String filePath = null;
-  private String revision = null;
+  private String filePath;
+  private String revision;
 
 
   /**

@@ -110,8 +110,8 @@ final class P4NewChangeListsFinder {
   private static final class MyP4ChangeListDriver implements P4ChangeListDriver {
 
     private final int mergeConfigurationID;
-    private int minNumber = 0;
-    private int count = 0;
+    private int minNumber;
+    private int count;
 
 
     MyP4ChangeListDriver(final int mergeConfigurationID) {

@@ -38,8 +38,8 @@ public final class DisplayUserGroupVO implements Serializable {
     }
   };
 
-  private boolean groupMember = false;
-  private String groupName = null;
+  private boolean groupMember;
+  private String groupName;
   private int groupID = Group.UNSAVED_ID;
 
 

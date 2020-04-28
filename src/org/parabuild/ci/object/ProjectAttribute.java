@@ -25,8 +25,8 @@ public final class ProjectAttribute implements Serializable, ObjectConstants {
 
   private int projectID = User.UNSAVED_ID;
   private int ID = UNSAVED_ID;
-  private String name = null;
-  private String value = null;
+  private String name;
+  private String value;
   private long timestamp = 1;
 
 

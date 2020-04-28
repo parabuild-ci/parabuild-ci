@@ -33,11 +33,11 @@ public final class BuildStatus {
   private int lastBuildRunID = UNSET_ID;
   private int lastCleanBuildRunID = UNSET_ID;
   private int lastCompleteBuildRunID = UNSET_ID;
-  private byte schedule = 0;
-  private byte sourceControl = 0;
-  private String buildName = null;
-  private String currentlyRunningStepName = null;
-  private int lastBuildRunNumber = 0;
+  private byte schedule;
+  private byte sourceControl;
+  private String buildName;
+  private String currentlyRunningStepName;
+  private int lastBuildRunNumber;
 
 
   public BuildStatus() { // NOPMD

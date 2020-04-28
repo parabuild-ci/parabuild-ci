@@ -25,7 +25,7 @@ class BuildScriptMonitor implements BuildScriptEventSubscriber {
 
   private static final Log log = LogFactory.getLog(BuildScriptMonitor.class);
 
-  private int currentlyRunningHandle = 0;
+  private int currentlyRunningHandle;
 
 
   /**

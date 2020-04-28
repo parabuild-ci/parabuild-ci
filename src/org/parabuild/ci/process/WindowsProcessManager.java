@@ -46,45 +46,45 @@ final class WindowsProcessManager implements ProcessManager {
   /**
    * Win32-specific executable
    */
-  private String PV = null;
+  private String PV;
 
   /**
    * RemoteCommand used to query list of processes (-q: quiet, no
    * headers, tabs are separators; -e: show hidden processes; -l:
    * display command lines
    */
-  private String LIST_PROCESSES = null;
+  private String LIST_PROCESSES;
 
   /**
    * RemoteCommand used to query list of processes tree (PID and
    * PPID) (-q: quiet, no headers, tabs are separators; -e: show
    * hidden processes; -t: display PPID
    */
-  private String LIST_PPIDS = null;
+  private String LIST_PPIDS;
 
   /**
    * RemoteCommand used to query list of processes PID (-q:
    * quiet, no headers, tabs are separators; -e: show hidden
    * processes;
    */
-  private String LIST_PIDS = null;
+  private String LIST_PIDS;
 
   /**
    * RemoteCommand used to query environment of processes (-q:
    * quiet, no headers, tabs are separators; -e: show hidden
    * processes; -t: display PPID -i: use PID
    */
-  private String LIST_ENV = null;
+  private String LIST_ENV;
 
   /**
    * RemoteCommand used to kill process (-q: quiet, no headers,
    * tabs are separators; -e: show hidden processes; -f: force
    * -k: kill -i: use PID
    */
-  private String KILL = null;
+  private String KILL;
 
-  private boolean deep = false;
-  private AgentEnvironment agentEnvironment = null;
+  private boolean deep;
+  private AgentEnvironment agentEnvironment;
 
 
   /**

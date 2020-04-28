@@ -47,15 +47,15 @@ public final class BuildConfigTabs extends Tabs implements Saveable, Validatable
   private static final String CAPTION_RESULTS = "Results";
   private static final String CAPTION_VERSION_CONTROL = "Version Control";
 
-  private int tabIndexVersionControl = 0;
-  private int tabIndexGeneral = 0;
-  private int tabIndexNotification = 0;
-  private int tabIndexLogs = 0;
-  private int tabIndexResults = 0;
-  private int tabIndexManualRunParameters = 0;
-  private int tabIndexPromotionSettings = 0;
-  private int tabIndexIssueTrackers = 0;
-  private int tabIndexDisplayGroups = 0;
+  private int tabIndexVersionControl;
+  private int tabIndexGeneral;
+  private int tabIndexNotification;
+  private int tabIndexLogs;
+  private int tabIndexResults;
+  private int tabIndexManualRunParameters;
+  private int tabIndexPromotionSettings;
+  private int tabIndexIssueTrackers;
+  private int tabIndexDisplayGroups;
 
   /**
    * Notidication settings panel.
@@ -85,12 +85,12 @@ public final class BuildConfigTabs extends Tabs implements Saveable, Validatable
   /**
    * Manual start parameters settings panel.
    */
-  private ManualStartSettingsPanel pnlManualStartSettings = null;
+  private ManualStartSettingsPanel pnlManualStartSettings;
 
   /**
    * Prootional settings panel.
    */
-  private PromotionSettingsPanel pnlPromotionSettings = null;
+  private PromotionSettingsPanel pnlPromotionSettings;
 
 //  /**
 //   * General settings panel.

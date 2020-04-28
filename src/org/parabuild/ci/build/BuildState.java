@@ -55,21 +55,21 @@ public final class BuildState implements Serializable {
    * @noinspection UNUSED_SYMBOL, UnusedDeclaration
    */
   private static final Log log = LogFactory.getLog(BuildState.class); // NOPMD
-  private volatile BuildRun lastCleanBuildRun = null;
-  private volatile BuildRun lastCompleteBuildRun = null;
-  private volatile BuildSequence currentlyRunningStep = null;
-  private volatile BuildStatus status = null;
+  private volatile BuildRun lastCleanBuildRun;
+  private volatile BuildRun lastCompleteBuildRun;
+  private volatile BuildSequence currentlyRunningStep;
+  private volatile BuildStatus status;
   private volatile int activeBuildID = BuildConfig.UNSAVED_ID;
   private volatile int currentlyRunningBuildConfigID = BuildConfig.UNSAVED_ID;
   private volatile int currentlyRunningBuildRunID = BuildRun.UNSAVED_ID;
-  private volatile int currentlyRunningBuildNumber = 0;
+  private volatile int currentlyRunningBuildNumber;
   private volatile byte access = BuildConfig.ACCESS_PRIVATE;
-  private volatile byte schedule = 0;
-  private volatile byte sourceControl = 0;
-  private volatile String buildName = null;
-  private volatile Date nextBuildTime = null;
-  private volatile String currentlyRunningOnBuildHost = null;
-  private volatile String currentlyRunningChangeListNumber = null;
+  private volatile byte schedule;
+  private volatile byte sourceControl;
+  private volatile String buildName;
+  private volatile Date nextBuildTime;
+  private volatile String currentlyRunningOnBuildHost;
+  private volatile String currentlyRunningChangeListNumber;
 
 
 

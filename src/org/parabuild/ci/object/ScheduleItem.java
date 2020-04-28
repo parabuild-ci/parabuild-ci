@@ -36,10 +36,10 @@ public final class ScheduleItem implements Serializable, CommonConstants, Object
   private int buildID = BuildConfig.UNSAVED_ID;
   private int scheduleItemID = UNSAVED_ID;
   private long timeStamp = 1;
-  private String hour = null;
-  private String dayOfWeek = null;
-  private String dayOfMonth = null;
-  private boolean cleanCheckout = false;
+  private String hour;
+  private String dayOfWeek;
+  private String dayOfMonth;
+  private boolean cleanCheckout;
   private boolean runIfNoChanges = true;
 
 

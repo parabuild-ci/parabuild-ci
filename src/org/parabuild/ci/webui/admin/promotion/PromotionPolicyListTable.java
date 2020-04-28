@@ -52,7 +52,7 @@ final class PromotionPolicyListTable extends AbstractFlatTable {
   public static final String CAPTION_DESCRIPTION = "Description";
   public static final String CAPTION_ACTION = "Action";
 
-  private List policies = null;
+  private List policies;
 
 
   PromotionPolicyListTable(final boolean showControls) {

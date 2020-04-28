@@ -43,7 +43,7 @@ public final class ClearCaseViewNameGenerator {
 
 
   private final Map keys = new HashMap(3);
-  private String nameTemplate = null;
+  private String nameTemplate;
 
 
   /**

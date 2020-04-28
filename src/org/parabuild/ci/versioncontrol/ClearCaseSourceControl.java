@@ -56,7 +56,7 @@ final class ClearCaseSourceControl extends AbstractSourceControl {
   private static final String DEFAULT_VIEW_NAME_TEMPLATE = "${cc.user}_parabuild_${build.id}";
 
   private final SimpleDateFormat historyDateFormat = ClearCaseConstants.getHistoryDateFormat();
-  private Date lastSyncDate = null;
+  private Date lastSyncDate;
 
 
   /**

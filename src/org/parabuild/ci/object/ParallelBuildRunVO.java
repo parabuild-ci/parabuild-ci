@@ -23,7 +23,7 @@ public final class ParallelBuildRunVO implements Serializable, ObjectConstants {
   private static final long serialVersionUID = -4591276259024162394L; // NOPMD
 
   private int buildRunID = UNSAVED_ID;
-  private String buildName = null;
+  private String buildName;
   private byte dependence = BuildRun.DEPENDENCE_STANDALONE;
 
 

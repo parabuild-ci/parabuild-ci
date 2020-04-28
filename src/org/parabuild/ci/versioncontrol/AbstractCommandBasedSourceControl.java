@@ -50,7 +50,7 @@ public abstract class AbstractCommandBasedSourceControl extends AbstractSourceCo
   private static final String PARAMETER_PARABUILD_LABEL_DATETIME_TO_CREATE = "PARABUILD_LABEL_DATETIME";
   private static final String PARAMETER_PARABUILD_CHANGE_LIST_TIMESTAMP = "PARABUILD_CHANGE_LIST_TIMESTAMP";
   private static final String PARAMETER_PARABUILD_CHANGE_LIST_DATETIME = BuildScriptGenerator.VAR_PARABUILD_CHANGE_LIST_DATETIME;
-  private Date lastSyncDate = null;
+  private Date lastSyncDate;
 
 
   public AbstractCommandBasedSourceControl(final BuildConfig buildConfig) {

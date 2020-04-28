@@ -56,7 +56,7 @@ public final class Change implements Serializable, SimpleChange, ObjectConstants
   private int changeListID = ChangeList.UNSAVED_ID;
   private byte changeType = TYPE_UNKNOWN;
   private String filePath = "";
-  private String revision = null;
+  private String revision;
   private final ChangeList changeList = null;
 
 

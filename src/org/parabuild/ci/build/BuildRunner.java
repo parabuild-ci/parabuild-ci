@@ -84,18 +84,18 @@ public final class BuildRunner extends Thread {
   private byte command = RUNNER_COMMAND_SLEEP;
   private RunnerStatus runnerStatus = RunnerStatus.WAITING;
 
-  private StopRequest stopRequest = null;
+  private StopRequest stopRequest;
 
   // state objects
   private final int activeBuildID;
 
   private boolean labelingEnabled = true;
-  private boolean forceLabeling = false;
-  private boolean nextCleanCheckoutRequired = false;
-  private BuildStartRequest startRequest = null;
-  private Agent currentAgent = null;
+  private boolean forceLabeling;
+  private boolean nextCleanCheckoutRequired;
+  private BuildStartRequest startRequest;
+  private Agent currentAgent;
 
-  private SourceControl versionControl = null;
+  private SourceControl versionControl;
   private final ValidatingRunner selfDispatcher;
 
   // service objects

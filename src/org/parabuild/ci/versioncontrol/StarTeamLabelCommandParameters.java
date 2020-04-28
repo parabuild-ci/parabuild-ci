@@ -20,8 +20,8 @@ import java.util.Date;
  */
 final class StarTeamLabelCommandParameters extends StarTeamCommandParameters {
 
-  private Date labelDate = null;
-  private String label = null;
+  private Date labelDate;
+  private String label;
 
 
   public Date getLabelDate() {

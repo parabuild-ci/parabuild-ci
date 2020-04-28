@@ -54,9 +54,9 @@ public final class SourceControlSettingVO {
           });
 
 
-  private String name = null;
-  private String value = null;
-  private boolean nativeChangeListNumber = false;
+  private String name;
+  private String value;
+  private boolean nativeChangeListNumber;
 
 
   public SourceControlSettingVO() {

@@ -26,15 +26,15 @@ public final class StepRun implements Serializable, ObjectConstants {
 
   private static final long serialVersionUID = -7050766001138645007L; // NOPMD
 
-  private Date finishedAt = null;
-  private Date startedAt = null;
+  private Date finishedAt;
+  private Date startedAt;
   private int buildRunID = -1;
-  private int duration = 0;
-  private byte resultID = 0;
+  private int duration;
+  private byte resultID;
   private int ID = -1;
-  private long timeStamp = 0;
-  private String name = null;
-  private String resultDescription = null;
+  private long timeStamp;
+  private String name;
+  private String resultDescription;
 
 
   /**

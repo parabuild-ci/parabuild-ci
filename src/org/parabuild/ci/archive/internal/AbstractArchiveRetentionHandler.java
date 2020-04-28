@@ -37,7 +37,7 @@ public abstract class AbstractArchiveRetentionHandler {
    */
   private static final Log log = LogFactory.getLog(AbstractArchiveRetentionHandler.class); // NOPMD
 
-  private Long cutOffTimeMillis = null;
+  private Long cutOffTimeMillis;
   private final String buildLogPrefix;
   private final File buildLogDir;
   private final int activeBuildID;

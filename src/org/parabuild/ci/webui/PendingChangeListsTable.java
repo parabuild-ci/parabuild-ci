@@ -55,7 +55,7 @@ public final class PendingChangeListsTable extends AbstractFlatTable {
   public static final String STR_TIME = "Time";
 
   private final SimpleDateFormat dateTimeFormat = new SimpleDateFormat(SystemConfigurationManagerFactory.getManager().getDateTimeFormat(), Locale.US); // NOPMD
-  private List pendingChangeLists = null;
+  private List pendingChangeLists;
 
 
   public PendingChangeListsTable(final List pendingChangeLists) {

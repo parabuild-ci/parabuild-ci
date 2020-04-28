@@ -112,14 +112,14 @@ public final class StepLog implements Serializable, ObjectConstants, Lifecycle {
   // PK
   private int ID = -1;
 
-  private byte found = 0;
-  private byte type = 0;
+  private byte found;
+  private byte type;
   private byte pathType = PATH_TYPE_UNKNOWN;
   private int stepRunID = -1;
-  private long timeStamp = 0;
-  private String archiveFileName = null;
-  private String description = null;
-  private String path = null;
+  private long timeStamp;
+  private String archiveFileName;
+  private String description;
+  private String path;
 
 
   /**

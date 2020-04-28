@@ -23,7 +23,7 @@ import java.io.InputStream;
  */
 public final class CloseAwareInputStream extends FilterInputStream {
 
-  private boolean closed = false; // NOPMD  (SingularField)
+  private boolean closed; // NOPMD  (SingularField)
 
 
   /**

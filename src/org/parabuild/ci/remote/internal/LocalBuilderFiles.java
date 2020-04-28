@@ -39,15 +39,15 @@ public final class LocalBuilderFiles implements Serializable {
 
   private int buildID = BuildConfig.UNSAVED_ID;
   private final String customCheckoutDir;
-  private File buildLogDir = null;
-  private File checkoutDir = null;
-  private File checkoutHomeDir = null;
-  private File mainBuildPasswordDir = null;
-  private File stepsScriptsDir = null;
-  private File systemWorkingDir = null;
-  private File tempDirectory = null;
+  private File buildLogDir;
+  private File checkoutDir;
+  private File checkoutHomeDir;
+  private File mainBuildPasswordDir;
+  private File stepsScriptsDir;
+  private File systemWorkingDir;
+  private File tempDirectory;
 
-  private static int logFileSourceControlSource = 0;
+  private static int logFileSourceControlSource;
 
 
   public LocalBuilderFiles(final int buildID, final String customCheckoutDir) throws IOException {

@@ -415,16 +415,16 @@ public final class BuildRunTestsPage extends BasePage implements StatelessTierle
 
     private static final String [] RESULT_AS_STRING = {"Unknown", "Success", "Failure", "Error", "Skipped"};
 
-    private String name = null;
-    private short resultCode = 0;
-    private long durationMillis = 0L;
-    private boolean newFailure = false;
-    private boolean broken = false;
-    private boolean newTest = false;
-    private boolean fix = false;
-    private int brokenBuildRunCount = 0;
+    private String name;
+    private short resultCode;
+    private long durationMillis;
+    private boolean newFailure;
+    private boolean broken;
+    private boolean newTest;
+    private boolean fix;
+    private int brokenBuildRunCount;
     private int brokenSinceBuildRunID = BuildRun.UNSAVED_ID;
-    private String message = null;
+    private String message;
 
     public TestCaseVO(final String name, final short resultCode, final long durationMillis,
                       final boolean newFailure, final boolean broken, final int brokenBuildRunCount,

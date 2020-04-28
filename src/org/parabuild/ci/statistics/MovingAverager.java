@@ -25,8 +25,8 @@ public final class MovingAverager {
 
   private final int windowSize;
   private final LinkedList window = new LinkedList();
-  private long average = 0;
-  private double sum = 0;
+  private long average;
+  private double sum;
 
 
   public MovingAverager(final int windowSize) {

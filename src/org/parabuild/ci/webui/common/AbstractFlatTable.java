@@ -58,28 +58,28 @@ public abstract class AbstractFlatTable extends MessagePanel {
   public static final int TBL_ROW_FETCHED = 1;
 
 
-  private boolean editable = false;
+  private boolean editable;
   private boolean headerVisible = true;
-  private boolean rightMostCellBorderVisible = false;
+  private boolean rightMostCellBorderVisible;
   private Color gridColor = Pages.TABLE_GRID_COLOR;
   private Color headerBackground = Pages.TABLE_COLOR_HEADER_BG;
   private Color headerForeground = Pages.TABLE_COLOR_HEADER_FG;
   private Color oddRowBackground = Pages.TABLE_COLOR_ODD_ROW_BACKGROUND;
   //  private Color oddRowBackground = new Color(0xFBFBEE);
   private Color evenRowBackground = Pages.TABLE_COLOR_EVEN_ROW_BACKGROUND;
-  private GridIterator gridIter = null;
-  private int columnCount = 0;
+  private GridIterator gridIter;
+  private int columnCount;
   private int gridWidth = 1;
   private int headerHeight = DEFAULT_HEADER_HEIGHT;
   private int rowHeight = DEFAULT_ROW_HEIGHT;
-  private TableColumn[] columns = null;
+  private TableColumn[] columns;
 
   private final List rows = new ArrayList(20);
 
   /**
    * Optional edit commands.
    */
-  private TableCommands tableCommands = null;
+  private TableCommands tableCommands;
 
   /**
    * If true table will alternate colors automatically.
@@ -784,8 +784,8 @@ public abstract class AbstractFlatTable extends MessagePanel {
    */
   private static final class TableRow {
 
-    private CheckBox rowSelectCheckBox = null;
-    private Component[] rowComponents = null;
+    private CheckBox rowSelectCheckBox;
+    private Component[] rowComponents;
 
 
     /**
@@ -837,10 +837,10 @@ public abstract class AbstractFlatTable extends MessagePanel {
    */
   private static final class TableColumn {
 
-    private String header = null;
+    private String header;
     private boolean visible = true;
     private int width = 50;
-    private String relativeWidth = null;
+    private String relativeWidth;
 
 
     public String getHeader() {

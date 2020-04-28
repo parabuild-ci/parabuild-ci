@@ -70,7 +70,7 @@ final class P4ChangeLogParser {
    */
   public static final int MAX_CHANGE_LIST_CHUNK_SIZE = 500;
 
-  private boolean jobsCollectionEnabled = false;
+  private boolean jobsCollectionEnabled;
   private int maxChangeListSize = SystemProperty.DEFAULT_MAX_CHANGE_LIST_SIZE;
 
 

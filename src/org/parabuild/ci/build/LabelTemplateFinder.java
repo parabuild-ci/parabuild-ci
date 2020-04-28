@@ -34,8 +34,8 @@ public final class LabelTemplateFinder {
   private static final Log log = LogFactory.getLog(LabelTemplateFinder.class); // NOPMD
 
   private int buildID = BuildConfig.UNSAVED_ID;
-  private String template = null;
-  private String foundBuildName = null;
+  private String template;
+  private String foundBuildName;
 
 
   public void setBuildID(final int buildID) {

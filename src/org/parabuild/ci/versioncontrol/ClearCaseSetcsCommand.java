@@ -35,7 +35,7 @@ final class ClearCaseSetcsCommand extends ClearCaseCommand {
 
   private final String viewSpec;
   private final List updateLogFileNames = new ArrayList(5);
-  private String tempSpecFile = null;
+  private String tempSpecFile;
 
 
   public ClearCaseSetcsCommand(final Agent agent, final String exePath, final String viewSpec, final String ignoreLines) throws IOException, AgentFailureException {

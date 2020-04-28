@@ -30,10 +30,10 @@ public class BuildRunAction implements Serializable, ObjectConstants {
 
   private int ID = UNSAVED_ID;
   private int buildRunID = UNSAVED_ID;
-  private byte code = 0;
-  private String action = null;
-  private Date date = null;
-  private String description = null;
+  private byte code;
+  private String action;
+  private Date date;
+  private String description;
   private int userID = UNSAVED_ID;
 
   /**

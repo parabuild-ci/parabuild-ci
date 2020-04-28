@@ -53,7 +53,7 @@ public final class SearchPage extends BasePage implements ConversationalTierlet 
   private static final long serialVersionUID = 5113054037570114790L; // NOPMD
   private static final String TITLE = "Search";
 
-  private AdvancedSearchPanel pnlSearch = null;
+  private AdvancedSearchPanel pnlSearch;
 
 
   /**

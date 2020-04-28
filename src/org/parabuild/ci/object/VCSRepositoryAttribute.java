@@ -26,8 +26,8 @@ public final class VCSRepositoryAttribute implements Serializable, ObjectConstan
 
   private int repositoryId = BuildConfig.UNSAVED_ID;
   private int id = UNSAVED_ID;
-  private String name = null;
-  private String value = null;
+  private String name;
+  private String value;
   private long timeStamp = 1;
 
 

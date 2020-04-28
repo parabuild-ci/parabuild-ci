@@ -29,8 +29,8 @@ public final class BoostTestLogComponent extends AbstractXSLRendererComponent {
 
   private static final long serialVersionUID = -4256625468445813797L; // NOPMD
 
-  private ArchiveManager archiveManager = null;
-  private StepLog stepLog = null;
+  private ArchiveManager archiveManager;
+  private StepLog stepLog;
 
 
   /**

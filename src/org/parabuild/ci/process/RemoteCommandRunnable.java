@@ -32,11 +32,11 @@ final class RemoteCommandRunnable implements Runnable {
   private final File mergedFile;
 
   // Result
-  private volatile int resultCode = 0;
-  private volatile IOException ioException = null;
-  private volatile CommandStoppedException commandStoppedException = null;
-  private volatile AgentFailureException agentFailureException = null;
-  private volatile boolean resultAvailable = false;
+  private volatile int resultCode;
+  private volatile IOException ioException;
+  private volatile CommandStoppedException commandStoppedException;
+  private volatile AgentFailureException agentFailureException;
+  private volatile boolean resultAvailable;
 
 
   /**
