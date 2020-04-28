@@ -13,11 +13,21 @@
  */
 package org.parabuild.ci.build;
 
-import java.text.*;
-import java.util.*;
-import java.util.regex.*;
+import org.parabuild.ci.util.ArgumentValidator;
+import org.parabuild.ci.util.BuildException;
+import org.parabuild.ci.util.NamedPropertyUtils;
+import org.parabuild.ci.util.StringUtils;
 
-import org.parabuild.ci.util.*;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Responsible for handling build label names.
