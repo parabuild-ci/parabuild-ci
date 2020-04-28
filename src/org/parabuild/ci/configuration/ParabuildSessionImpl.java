@@ -13,12 +13,22 @@
  */
 package org.parabuild.ci.configuration;
 
-import java.io.*;
-import java.sql.*;
-import java.util.*;
+import net.sf.hibernate.Criteria;
+import net.sf.hibernate.FlushMode;
+import net.sf.hibernate.HibernateException;
+import net.sf.hibernate.LockMode;
+import net.sf.hibernate.Query;
+import net.sf.hibernate.ReplicationMode;
+import net.sf.hibernate.Session;
+import net.sf.hibernate.SessionFactory;
+import net.sf.hibernate.Transaction;
+import net.sf.hibernate.type.Type;
 
-import net.sf.hibernate.*;
-import net.sf.hibernate.type.*;
+import java.io.Serializable;
+import java.sql.Connection;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  */
