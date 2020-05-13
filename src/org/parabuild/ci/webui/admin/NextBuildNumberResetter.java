@@ -26,7 +26,7 @@ public final class NextBuildNumberResetter {
 
   private static final int DEFAULT_BUILD_NUMBER_GAP = 10;
 
-  private int gap;
+  private final int gap;
   private int buildID = BuildConfig.UNSAVED_ID;
   private final ConfigurationManager cm = ConfigurationManager.getInstance();
 

@@ -28,8 +28,8 @@ import java.util.Properties;
 final class SystemVariableCommandsFlow extends Flow {
 
   private static final long serialVersionUID = 6445311608524358286L;
-  private Link lnkEdit;
-  private Link lnkDelete;
+  private final Link lnkEdit;
+  private final Link lnkDelete;
 
 
   /**

@@ -13,11 +13,15 @@
  */
 package org.parabuild.ci.tray;
 
-import org.parabuild.ci.util.IoUtils;
-import org.parabuild.ci.util.RuntimeUtils;
-
 import java.io.IOException;
 import java.lang.reflect.Method;
+
+import static org.parabuild.ci.util.IoUtils.createIOException;
+import static org.parabuild.ci.util.RuntimeUtils.SYSTEM_TYPE_MACOSX;
+import static org.parabuild.ci.util.RuntimeUtils.SYSTEM_TYPE_WIN95;
+import static org.parabuild.ci.util.RuntimeUtils.SYSTEM_TYPE_WINNT;
+import static org.parabuild.ci.util.RuntimeUtils.execute;
+import static org.parabuild.ci.util.RuntimeUtils.systemType;
 
 /**
  * This class is responcible for launching a default Web browser
@@ -29,14 +33,15 @@ final class BrowserLauncher {
 
 
   public void launchBrowser(final String url) throws IOException, InterruptedException {
+
     try {
-      final int systemType = RuntimeUtils.systemType();
+      final int systemType = systemType();
       switch (systemType) {
-        case RuntimeUtils.SYSTEM_TYPE_WIN95:
-        case RuntimeUtils.SYSTEM_TYPE_WINNT:
-          RuntimeUtils.execute("rundll32 url.dll,FileProtocolHandler " + url);
+        case SYSTEM_TYPE_WIN95:
+        case SYSTEM_TYPE_WINNT:
+          execute("rundll32 url.dll,FileProtocolHandler " + url);
           break;
-        case RuntimeUtils.SYSTEM_TYPE_MACOSX:
+        case SYSTEM_TYPE_MACOSX:
           final Class fileMgr = Class.forName("com.apple.eio.FileManager");
           final Method openURL = fileMgr.getDeclaredMethod("openURL", String.class);
           openURL.invoke(null, url);
@@ -58,7 +63,7 @@ final class BrowserLauncher {
     } catch (final InterruptedException | IOException e) {
       throw e;
     } catch (final Exception e) {
-      throw IoUtils.createIOException(e);
+      throw createIOException(e);
     }
   }
 }

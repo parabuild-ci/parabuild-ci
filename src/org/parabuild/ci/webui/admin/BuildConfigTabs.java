@@ -47,15 +47,15 @@ public final class BuildConfigTabs extends Tabs implements Saveable, Validatable
   private static final String CAPTION_RESULTS = "Results";
   private static final String CAPTION_VERSION_CONTROL = "Version Control";
 
-  private int tabIndexVersionControl;
-  private int tabIndexGeneral;
-  private int tabIndexNotification;
-  private int tabIndexLogs;
-  private int tabIndexResults;
+  private final int tabIndexVersionControl;
+  private final int tabIndexGeneral;
+  private final int tabIndexNotification;
+  private final int tabIndexLogs;
+  private final int tabIndexResults;
   private int tabIndexManualRunParameters;
   private int tabIndexPromotionSettings;
   private int tabIndexIssueTrackers;
-  private int tabIndexDisplayGroups;
+  private final int tabIndexDisplayGroups;
 
   /**
    * Notidication settings panel.

@@ -61,7 +61,7 @@ public final class LinuxProcessParser implements ProcessParser {
    */
   private static final String LIST_PROCESSES_ENV = CMD_PS + " -e he -o pid,command --cols=512000";
 
-  private AgentEnvironment agentEnvironment;
+  private final AgentEnvironment agentEnvironment;
 
 
   public LinuxProcessParser(final AgentEnvironment agentEnvironment) {

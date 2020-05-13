@@ -36,7 +36,7 @@ import java.io.PrintWriter;
  */
 public final class InputStreamToFileCopierAndMerger extends InputStreamToFileCopier {
 
-  private PrintWriter copy;
+  private final PrintWriter copy;
 
 
   /**

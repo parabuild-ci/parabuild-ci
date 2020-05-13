@@ -36,8 +36,8 @@ public final class GridIterator implements Serializable {
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
   private static final Log log = LogFactory.getLog(GridIterator.class); // NOPMD
-  private Panel container;
-  private int sizeX;
+  private final Panel container;
+  private final int sizeX;
   private Layout cumulativeLayout = makeInitialLayout();
 
 

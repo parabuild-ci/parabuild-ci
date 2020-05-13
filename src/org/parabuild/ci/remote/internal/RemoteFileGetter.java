@@ -40,8 +40,8 @@ public final class RemoteFileGetter {
   /** @noinspection UNUSED_SYMBOL,UnusedDeclaration*/
   private static final Log log = LogFactory.getLog(RemoteFileGetter.class); // NOPMD
 
-  private ParabuildHessianProxyFactory proxyFactory;
-  private WebServiceLocator webServiceLocator;
+  private final ParabuildHessianProxyFactory proxyFactory;
+  private final WebServiceLocator webServiceLocator;
 
 
   public RemoteFileGetter(final WebServiceLocator webServiceLocator) {

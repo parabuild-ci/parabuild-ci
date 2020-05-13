@@ -42,7 +42,7 @@ public final class ClearCaseStorageNameGenerator {
 
 
   private final Map keys = new HashMap(3);
-  private String template;
+  private final String template;
 
 
   /**

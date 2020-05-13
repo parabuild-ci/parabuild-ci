@@ -34,7 +34,7 @@ abstract class ClearCaseCommand extends VersionControlRemoteCommand {
 
   private static final Log log = LogFactory.getLog(ClearCaseCommand.class);
 
-  private String cleartoolExePath;
+  private final String cleartoolExePath;
 
 
   public ClearCaseCommand(final Agent agent, final String exePath) throws IOException, AgentFailureException {

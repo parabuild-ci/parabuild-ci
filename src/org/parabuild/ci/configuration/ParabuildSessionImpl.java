@@ -36,7 +36,7 @@ public final class ParabuildSessionImpl implements Session {
 
   private static final long serialVersionUID = -121279693054868421L; // NOPMD
 
-  private Session s;
+  private final Session s;
 
 
   public ParabuildSessionImpl(final Session s) {

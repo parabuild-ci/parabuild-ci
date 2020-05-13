@@ -43,7 +43,7 @@ public final class RemoteAgentEnvironmentProxy implements AgentEnvironment {
    * @noinspection UNUSED_SYMBOL,UnusedDeclaration
    */
   private static final Log log = LogFactory.getLog(RemoteAgentEnvironmentProxy.class); // NOPMD
-  private WebServiceLocator webServiceLocator;
+  private final WebServiceLocator webServiceLocator;
 
 
   /**

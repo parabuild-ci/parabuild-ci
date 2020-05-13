@@ -29,8 +29,8 @@ import java.util.Properties;
 final class AgentCommandsFlow extends Flow {
 
   private static final long serialVersionUID = 8689537282594821739L;
-  private Link lnkEdit;
-  private Link lnkDelete;
+  private final Link lnkEdit;
+  private final Link lnkDelete;
   private final CommonLink lnkVariables;
 
 

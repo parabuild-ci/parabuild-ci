@@ -54,7 +54,7 @@ public final class TimeoutWatchdog implements Runnable {
   private long timeOutMillis = 60 * 1000; // default is 60 seconds
   private final List timeoutMatches = new ArrayList(11);
   private TimeoutCallback timeoutCallback;
-  private AgentEnvironment agentEnvironment;
+  private final AgentEnvironment agentEnvironment;
   private boolean active;
 
 

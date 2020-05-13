@@ -43,7 +43,7 @@ public abstract class AbstractUnixDaemonCreator implements UnixDaemonCreator {
 
 
   private InstallerContext installerContext;
-  private DirectoryOwnerChanger directoryOwnerChanger;
+  private final DirectoryOwnerChanger directoryOwnerChanger;
 
 
   protected AbstractUnixDaemonCreator(final DirectoryOwnerChanger directoryOwnerChanger) {

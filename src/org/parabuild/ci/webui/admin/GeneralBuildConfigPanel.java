@@ -34,10 +34,10 @@ public final class GeneralBuildConfigPanel extends MessagePanel implements Loada
   private static final long serialVersionUID = 5685188730000206429L; // NOPMD
   private static final Log log = LogFactory.getLog(GeneralBuildConfigPanel.class);
 
-  private BuildSequenceTable buildSequenceTable;
-  private LabelSettingsPanel labelSettingsPanel;
-  private ScheduleSettingsPanel scheduleSettingsPanel;
-  private DependenceSettingsPanel dependenceSettingsPanel;
+  private final BuildSequenceTable buildSequenceTable;
+  private final LabelSettingsPanel labelSettingsPanel;
+  private final ScheduleSettingsPanel scheduleSettingsPanel;
+  private final DependenceSettingsPanel dependenceSettingsPanel;
 
   private int buildID = BuildConfig.UNSAVED_ID;
 

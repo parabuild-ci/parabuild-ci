@@ -39,7 +39,7 @@
 
   <!-- Compile tray-->
   <target name="tray.compile" depends="tray.prepare">
-    <javac destdir="${build.dir.tray.classes}" includes="org/parabuild/ci/tray/**.java" excludes="**/BuildStatusServlet.java" debug="on" includeantruntime="false">
+    <javac destdir="${build.dir.tray.classes}" includes="org/parabuild/ci/tray/**.java" excludes="org/parabuild/ci/tray/BuildStatusServlet.java" debug="on" includeantruntime="false">
       <compilerarg value="-proc:none"/>
       <classpath>
         <pathelement path="${hessian.jar}"/>

@@ -34,10 +34,10 @@ abstract class SVNCommand extends VersionControlRemoteCommand {
 
   private static final Log LOG = LogFactory.getLog(SVNCommand.class); // NOPMD
 
-  private String url;
+  private final String url;
   private String password;
   private String user;
-  private String exePath;
+  private final String exePath;
   private boolean interactive;
   private boolean addTrustServerCert;
 

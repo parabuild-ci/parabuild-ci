@@ -38,7 +38,7 @@ public final class DisplayGroupBuildVO implements Serializable {
   };
 
   private int buildID = BuildConfig.UNSAVED_ID;
-  private String buildName;
+  private final String buildName;
   private boolean groupMember;
 
 

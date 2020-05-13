@@ -14,7 +14,6 @@
 package org.parabuild.ci.tray;
 
 import org.parabuild.ci.remote.internal.HessianServiceLocator;
-import org.parabuild.ci.remote.services.RemoteBuilderWebService;
 
 import java.io.IOException;
 
@@ -24,11 +23,12 @@ import java.io.IOException;
  * responsible for handling details of obtaining
  * BuildStatusService.
  *
- * @see RemoteBuilderWebService
+ * @see org.parabuild.ci.remote.services.RemoteBuilderWebService
  */
 final class BuildStatusServiceLocator {
 
   private static final String REMOTE_STATUS_PATH = "/parabuild/build/status/tray";
+
   private final HessianServiceLocator locator;
 
 
@@ -40,6 +40,7 @@ final class BuildStatusServiceLocator {
    * @param password
    */
   public BuildStatusServiceLocator(final String host, final String user, final String password) {
+
     locator = new HessianServiceLocator(BuildStatusService.class, REMOTE_STATUS_PATH, host, user, password);
   }
 
@@ -49,7 +50,8 @@ final class BuildStatusServiceLocator {
    * accessing hessian-based webservice.
    */
   public BuildStatusService getWebService() throws IOException {
+
     return new BuildStatusServiceHessianExceptionWrapper(
-      (BuildStatusService)locator.getWebService(), locator.getHost());
+            (BuildStatusService) locator.getWebService(), locator.getHost());
   }
 }

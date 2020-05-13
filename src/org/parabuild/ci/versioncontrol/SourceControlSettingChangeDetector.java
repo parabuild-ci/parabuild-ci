@@ -23,8 +23,8 @@ import java.util.Map;
  */
 public final class SourceControlSettingChangeDetector {
 
-  private Map currentSettings;
-  private Map newSettings;
+  private final Map currentSettings;
+  private final Map newSettings;
 
 
   /**

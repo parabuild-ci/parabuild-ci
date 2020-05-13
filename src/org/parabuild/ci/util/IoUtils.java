@@ -771,7 +771,7 @@ public final class IoUtils {
    */
   public static final class ExtensionFileFilter implements FilenameFilter {
 
-    private String ext;
+    private final String ext;
 
 
     /**

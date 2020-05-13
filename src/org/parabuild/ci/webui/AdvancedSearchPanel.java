@@ -41,13 +41,13 @@ public final class AdvancedSearchPanel extends MessagePanel {
   public static final String CAPTION_SEARCH = "         Search         ";
   public static final String CAPTION_BUILD = "Build:";
   private static final long serialVersionUID = 3185882169076162293L; // NOPMD
-  private CommonField flQuery;
-  private CommonButton btSearch;
+  private final CommonField flQuery;
+  private final CommonButton btSearch;
   /**
    * @noinspection FieldCanBeLocal
    */
-  private DaysAgoDropDown ddDays; // NOPMD
-  private BuildNameDropDown ddBuild;
+  private final DaysAgoDropDown ddDays; // NOPMD
+  private final BuildNameDropDown ddBuild;
   private boolean searchRequested;
 
 

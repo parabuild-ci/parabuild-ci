@@ -22,7 +22,7 @@ import javax.swing.*;
 final class MenuStatusHolder {
 
   private BuildStatus buildStatus;
-  private JMenuItem menuItem;
+  private final JMenuItem menuItem;
   private MenuStatus menuStatus;
 
 

@@ -68,7 +68,7 @@ public abstract class AbstractSourceControlPanel extends SourceControlPanel {
 
   protected final PropertyToInputMap propertyToInputMap = new PropertyToInputMap(false, makePropertyHandler()); // strict map
   protected int buildID = BuildConfig.UNSAVED_ID;
-  protected GridIterator gridIterator;
+  protected final GridIterator gridIterator;
   private int builderID = -1;
 
   private final CommonFieldLabel lbCustomCheckoutDir = new CommonFieldLabel(CAPTION_CUSTOM_CHECKOUT_DIR); // NOPMD

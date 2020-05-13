@@ -22,7 +22,7 @@ import org.parabuild.ci.util.ArgumentValidator;
  */
 public final class AgentHost {
 
-  private String host;
+  private final String host;
 
 
   private final String password;

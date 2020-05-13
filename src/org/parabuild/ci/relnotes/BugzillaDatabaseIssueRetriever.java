@@ -40,8 +40,8 @@ public final class BugzillaDatabaseIssueRetriever implements DatabaseIssueRetrie
   public static final String BUGZILLA_MYSQL_USER = IssueTrackerProperty.BUGZILLA_MYSQL_USER;
   public static final String BUGZILLA_MYSQL_PASSWORD = IssueTrackerProperty.BUGZILLA_MYSQL_PASSWORD;
 
-  private BugzillaDatabaseConnector bugzillaDatabaseConnector;
-  private Map props;
+  private final BugzillaDatabaseConnector bugzillaDatabaseConnector;
+  private final Map props;
 
 
   public BugzillaDatabaseIssueRetriever(final IssueTracker tracker) throws SQLException {

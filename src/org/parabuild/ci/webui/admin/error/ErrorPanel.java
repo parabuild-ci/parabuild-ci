@@ -30,7 +30,7 @@ final class ErrorPanel extends MessagePanel {
 
   private static final long serialVersionUID = -3085612289890248727L; // NOPMD
 
-  private GridIterator gridIterator;
+  private final GridIterator gridIterator;
 
 
   /**

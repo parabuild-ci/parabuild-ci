@@ -32,8 +32,8 @@ public final class FisheyeChangeURLFactory implements ChangeURLFactory {
    */
   private static final Log log = LogFactory.getLog(FisheyeChangeURLFactory.class); // NOPMD
 
-  private String url;
-  private boolean showRevision;
+  private final String url;
+  private final boolean showRevision;
   private final String viewcvsRoot;
 
 

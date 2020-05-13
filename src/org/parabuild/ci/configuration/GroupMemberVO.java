@@ -36,7 +36,7 @@ public final class GroupMemberVO implements Serializable {
   };
 
   private int ID = -1;
-  private String name;
+  private final String name;
   private boolean groupMember;
 
 

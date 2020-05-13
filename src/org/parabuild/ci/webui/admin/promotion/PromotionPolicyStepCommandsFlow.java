@@ -30,8 +30,8 @@ final class PromotionPolicyStepCommandsFlow extends Flow {
   private static final String CAPTION_EDIT = "Edit";
   private static final String CAPTION_DELETE = "Delete";
 
-  private Link lnkEdit;
-  private Link lnkDelete;
+  private final Link lnkEdit;
+  private final Link lnkDelete;
   private static final long serialVersionUID = -5520793710900146138L;
 
 

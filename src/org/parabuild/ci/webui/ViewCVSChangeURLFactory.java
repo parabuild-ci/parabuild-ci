@@ -25,9 +25,9 @@ import java.util.Properties;
  */
 public final class ViewCVSChangeURLFactory implements ChangeURLFactory {
 
-  private String viewcvsRoot;
-  private String viewcvsURL;
-  private boolean showRevision;
+  private final String viewcvsRoot;
+  private final String viewcvsURL;
+  private final boolean showRevision;
 
 
   public ViewCVSChangeURLFactory(final String viewcvsURL, final String viewcvsRoot) {

@@ -27,8 +27,8 @@ public final class ReturnTierletAttribuite implements Serializable {
 
   private static final long serialVersionUID = 6623871401199469833L; // NOPMD
 
-  private String tierlet;
-  private Parameters parameters;
+  private final String tierlet;
+  private final Parameters parameters;
 
 
   /**

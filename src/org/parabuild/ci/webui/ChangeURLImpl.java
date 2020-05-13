@@ -18,9 +18,9 @@ package org.parabuild.ci.webui;
  */
 final class ChangeURLImpl implements ChangeURL {
 
-  private String url;
+  private final String url;
 
-  private String caption;
+  private final String caption;
 
 
   /**

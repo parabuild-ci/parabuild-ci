@@ -21,7 +21,7 @@ import viewtier.cdk.RenderContext;
 public final class SearchResultComponent extends CustomComponent {
 
   private static final long serialVersionUID = -57748702723289399L;
-  private Hits hits;
+  private final Hits hits;
 
 
   public SearchResultComponent(final Hits hits) {

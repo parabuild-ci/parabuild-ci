@@ -24,7 +24,7 @@ import java.util.StringTokenizer;
  */
 public final class IssueDescriptionFilter {
 
-  private String pattern;
+  private final String pattern;
   private final Map pattersToRemove = new HashMap(11); // NOPMD (SingularField)
 
 

@@ -29,8 +29,8 @@ import java.util.Properties;
 public final class ProjectCommandsFlow extends Flow {
 
   private static final long serialVersionUID = -5296419812863188923L;
-  private Link lnkEdit;
-  private Link lnkDelete;
+  private final Link lnkEdit;
+  private final Link lnkDelete;
   private final Link lnkVariables;
 
 

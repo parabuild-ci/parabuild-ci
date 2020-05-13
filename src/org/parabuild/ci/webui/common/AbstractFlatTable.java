@@ -58,7 +58,7 @@ public abstract class AbstractFlatTable extends MessagePanel {
   public static final int TBL_ROW_FETCHED = 1;
 
 
-  private boolean editable;
+  private final boolean editable;
   private boolean headerVisible = true;
   private boolean rightMostCellBorderVisible;
   private Color gridColor = Pages.TABLE_GRID_COLOR;
@@ -67,8 +67,8 @@ public abstract class AbstractFlatTable extends MessagePanel {
   private Color oddRowBackground = Pages.TABLE_COLOR_ODD_ROW_BACKGROUND;
   //  private Color oddRowBackground = new Color(0xFBFBEE);
   private Color evenRowBackground = Pages.TABLE_COLOR_EVEN_ROW_BACKGROUND;
-  private GridIterator gridIter;
-  private int columnCount;
+  private final GridIterator gridIter;
+  private final int columnCount;
   private int gridWidth = 1;
   private int headerHeight = DEFAULT_HEADER_HEIGHT;
   private int rowHeight = DEFAULT_ROW_HEIGHT;

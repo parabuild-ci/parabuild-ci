@@ -32,11 +32,11 @@ public final class BugzillaMySQLConnectionFactory {
   private static final String STR_USER = "user";
   private static final String STR_PASSWORD = "password";
   
-  private String databaseHost;
-  private int databasePort;
-  private String databaseName;
-  private String databaseUser;
-  private String databasePassword;
+  private final String databaseHost;
+  private final int databasePort;
+  private final String databaseName;
+  private final String databaseUser;
+  private final String databasePassword;
 
 
   /**

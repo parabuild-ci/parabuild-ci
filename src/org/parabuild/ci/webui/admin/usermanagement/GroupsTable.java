@@ -122,8 +122,8 @@ public final class GroupsTable extends AbstractFlatTable {
   private static final class GroupActionMenuList extends Flow {
 
     private static final long serialVersionUID = -2944698083772523636L;
-    private Link lnkEdit;
-    private Link lnkDelete;
+    private final Link lnkEdit;
+    private final Link lnkDelete;
 
 
     /**

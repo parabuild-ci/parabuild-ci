@@ -29,8 +29,8 @@ public final class UnitTestPPLogComponent extends AbstractXSLRendererComponent {
 
   private static final long serialVersionUID = -4256625468445813797L; // NOPMD
 
-  private ArchiveManager archiveManager;
-  private StepLog stepLog;
+  private final ArchiveManager archiveManager;
+  private final StepLog stepLog;
 
 
   /**

@@ -27,7 +27,7 @@ import java.util.Properties;
 final class BuilderAgentCommandsFlow extends Flow {
 
   private static final long serialVersionUID = 6059505315278462156L;
-  private Link lnkDelete;
+  private final Link lnkDelete;
 
 
   /**

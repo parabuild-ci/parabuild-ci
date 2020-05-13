@@ -24,7 +24,7 @@ import java.io.IOException;
  */
 final class SVNCheckoutCommand extends SVNCommand {
 
-  private RepositoryPath depotPath;
+  private final RepositoryPath depotPath;
   private final boolean ignoreExternals;
 
 

@@ -48,8 +48,8 @@ public final class MacOsXDaemonCreator implements UnixDaemonCreator {
 
 
   private InstallerContext ictx;
-  private DirectoryOwnerChanger ownerChanger;
-  private InstallerUserCreator userCreator;
+  private final DirectoryOwnerChanger ownerChanger;
+  private final InstallerUserCreator userCreator;
 
 
   public MacOsXDaemonCreator(final InstallerUserCreator userCreator, final DirectoryOwnerChanger ownerChanger) {
@@ -156,8 +156,8 @@ public final class MacOsXDaemonCreator implements UnixDaemonCreator {
    */
   private static final class TemplateParameter {
 
-    private int idx;
-    private String to;
+    private final int idx;
+    private final String to;
 
 
     /**
