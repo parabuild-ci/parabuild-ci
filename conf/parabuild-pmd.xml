@@ -7,101 +7,43 @@
 
   <description>Parabuild PMD rule set</description>
 
-  <rule ref="rulesets/java/basic.xml">
-    <exclude name="CollapsibleIfStatements"/>
+  <rule ref="category/java/bestpractices.xml">
   </rule>
 
-  <rule ref="rulesets/java/braces.xml">
-    <exclude name="IfStmtsMustUseBraces"/>
-  </rule>
-
-  <rule ref="rulesets/java/clone.xml">
-  </rule>
-
-  <rule ref="rulesets/java/controversial.xml">
-    <exclude name="NullAssignment"/>
-    <exclude name="OnlyOneReturn"/>
-    <exclude name="AtLeastOneConstructor"/>
+  <rule ref="category/java/codestyle.xml">
+    <exclude name="CommentDefaultAccessModifier"/>
     <exclude name="CallSuperInConstructor"/>
-    <exclude name="AssignmentInOperand"/>
-  </rule>
-
-  <rule ref="rulesets/java/coupling.xml">
-    <exclude name="CouplingBetweenObjects"/>
-  </rule>
-
-  <rule ref="rulesets/java/design.xml">
-    <exclude name="UseUtilityClass"/>
-    <exclude name="AvoidDeeplyNestedIfStmts"/>
-    <exclude name="ImmutableField"/>
-    <exclude name="SimpleDateFormatNeedsLocale"/>
-    <exclude name="UseLocaleWithCaseConversions"/>
-    <exclude name="ConfusingTernary"/>
-    <exclude name="AvoidSynchronizedAtMethodLevel"/>
-    <!-- IDEA marks breaks after returns in switche as an error -->
-    <exclude name="MissingBreakInSwitch"/>
-    <!-- PMD does not recognize enumberation classes -->
-    <exclude name="MissingStaticMethodInNonInstantiatableClass"/>
-    <!-- PMD does not find closing method outside of the class -->
-    <exclude name="UncommentedEmptyConstructor"/>
-    <exclude name="UncommentedEmptyMethodBody"/>
-    <exclude name="ConstantsInInterface"/>
-    <exclude name="PositionLiteralsFirstInComparisons"/> <!-- REVIEWME -->
-  </rule>
-
-  <rule ref="rulesets/java/finalizers.xml"/>
-
-  <rule ref="rulesets/java/imports.xml">
-    <exclude name="DuplicateImports"/>
-  </rule>
-
-  <rule ref="rulesets/java/javabeans.xml">
-    <exclude name="BeanMembersShouldSerialize"/>
-  </rule>
-
-  <rule ref="rulesets/java/logging-java.xml"/>
-
-  <rule ref="rulesets/java/migrating.xml">
-    <exclude name="IntegerInstantiation"/>
-  </rule>
-
-  <rule ref="rulesets/java/naming.xml">
-    <exclude name="LongVariable"/>
+    <exclude name="AtLeastOneConstructor"/>
+    <exclude name="DefaultPackage"/>
+    <exclude name="OnlyOneReturn"/>
     <exclude name="ShortVariable"/>
-    <exclude name="VariableNamingConventions"/>
-    <exclude name="AbstractNaming"/>
-    <exclude name="SuspiciousConstantFieldName"/>
-    <exclude name="MethodNamingConventions"/>
-    <exclude name="AvoidFieldNameMatchingTypeName"/>
-    <exclude name="AvoidFieldNameMatchingMethodName"/>
+    <exclude name="LongVariable"/>
   </rule>
 
-  <rule ref="rulesets/java/optimizations.xml">
+
+  <rule ref="category/java/design.xml">
+    <exclude name="AvoidCatchingGenericException"/>
+    <exclude name="LawOfDemeter"/>
+  </rule>
+
+  <rule ref="category/java/documentation.xml">
+    <exclude name="CommentRequired"/>
+    <exclude name="CommentSize"/>
+  </rule>
+
+  <rule ref="category/java/errorprone.xml">
+    <exclude name="AvoidLiteralsInIfCondition"/>
+    <exclude name="BeanMembersShouldSerialize"/>
+    <exclude name="DataflowAnomalyAnalysis"/>
+  </rule>
+
+  <rule ref="category/java/multithreading.xml">
+  </rule>
+
+  <rule ref="category/java/performance.xml">
     <exclude name="AvoidInstantiatingObjectsInLoops"/>
   </rule>
 
-  <!--<rule ref="rulesets/java/newrules.xml"/>-->
-
-  <!--  <rule ref="rulesets/java/scratchpad.xml"/>-->
-
-  <rule ref="rulesets/java/strictexception.xml">
-    <exclude name="SignatureDeclareThrowsException"/>
-    <exclude name="ExceptionAsFlowControl"/>
-    <exclude name="AvoidThrowingRawExceptionTypes"/>
+  <rule ref="category/java/security.xml">
   </rule>
-
-  <rule ref="rulesets/java/strings.xml">
-    <exclude name="AvoidDuplicateLiterals"/>
-    <exclude name="ConsecutiveLiteralAppends"/>
-  </rule>
-
-  <rule ref="rulesets/java/sunsecure.xml">
-  </rule>
-
-  <rule ref="rulesets/java/unusedcode.xml">
-    <!--    <exclude name="UnusedPrivateField"/>-->
-    <!-- PMD complains on actually used method BuildConfigTabs.validate -->
-    <exclude name="UnusedPrivateMethod"/>
-  </rule>
-
 </ruleset>
