@@ -12,6 +12,14 @@ import com.google.gwt.user.client.ui.RootPanel;
 public final class RepositoryUtils {
 
   /**
+   * Utility class constructor.
+   */
+  private RepositoryUtils() {
+
+  }
+
+
+  /**
    * Adds adding a click handlers to a host page button.
    *
    * @param elementId a unique HTML button element ID from the host page.
