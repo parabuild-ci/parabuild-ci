@@ -169,7 +169,7 @@ public final class SourceControlSetting implements Serializable, ObjectConstants
    * @return return property value as int.
    * @throws NumberFormatException if this setting is not a valid integer.
    */
-  public int getPropertyValueAsInt() throws NumberFormatException {
+  public int getPropertyValueAsInt() {
     return Integer.parseInt(propertyValue);
   }
 

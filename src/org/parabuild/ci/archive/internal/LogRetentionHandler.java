@@ -55,7 +55,7 @@ public final class LogRetentionHandler extends AbstractArchiveRetentionHandler {
   }
 
 
-  public final void deleteExpired() throws IllegalStateException {
+  public final void deleteExpired() {
 
     // Validate
     if (getCutOffTimeMillis() == null) {

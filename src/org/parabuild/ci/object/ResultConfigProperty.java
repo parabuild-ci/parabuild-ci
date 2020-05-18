@@ -130,8 +130,9 @@ public final class ResultConfigProperty implements Serializable, ObjectConstants
    * Returns property value as int
    *
    * @return int property value
+   * @throws NumberFormatException if there was an error converting {@link #value} to integer.
    */
-  public int getValueAsInteger() throws NumberFormatException {
+  public int getValueAsInteger() {
     return Integer.parseInt(value);
   }
 

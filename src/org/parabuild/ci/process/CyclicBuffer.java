@@ -37,8 +37,9 @@ final class CyclicBuffer {
    *
    * @param maxSize The maximum number of elements in the
    * buffer.
+   * @throws IllegalArgumentException if max size is less then zero.
    */
-  public CyclicBuffer(final int maxSize) throws IllegalArgumentException {
+  public CyclicBuffer(final int maxSize) {
     ArgumentValidator.validateArgumentGTZero(maxSize, "max size");
     this.maxSize = maxSize;
     this.buffer = new Object[maxSize];

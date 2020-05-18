@@ -22,26 +22,33 @@ import java.io.Serializable;
  */
 public final class LabelProperty implements Serializable, ObjectConstants {
 
-  private static final long serialVersionUID = -4414663957957415079L; // NOPMD
-
   // Label type
   public static final String LABEL_TYPE = "build.label.type";
 
-  // Constant values
-
   // Label types
   public static final String LABEL_TYPE_NONE = "build.label.type.none";
+
+  // Constant values
+
   public static final String LABEL_TYPE_CUSTOM = "build.label.type.custom";
 
   // Attributes
   public static final String LABEL_CUSTOM_VALUE = "build.label.custom.value";
+
   public static final String LABEL_DELETE_ENABLED = "build.label.delete.enabled";
+
   public static final String LABEL_DELETE_OLD_DAYS = "build.label.delete.days";
 
+  private static final long serialVersionUID = -4414663957957415079L; // NOPMD
+
   private int buildID = BuildConfig.UNSAVED_ID;
+
   private int propertyID = UNSAVED_ID;
+
   private String propertyName;
+
   private String propertyValue;
+
   private long propertyTimeStamp = 1;
 
 
@@ -49,32 +56,34 @@ public final class LabelProperty implements Serializable, ObjectConstants {
    * Returns build ID
    *
    * @return String
-   *
    * @hibernate.property column="BUILD_ID" unique="false"
    * null="false"
    */
   public int getBuildID() {
+
     return buildID;
   }
 
 
   public void setBuildID(final int buildID) {
+
     this.buildID = buildID;
   }
 
 
   /**
    * @return int
-   *
    * @hibernate.id generator-class="identity" column="ID"
    * unsaved-value="-1"
    */
   public int getPropertyID() {
+
     return propertyID;
   }
 
 
   public void setPropertyID(final int propertyID) {
+
     this.propertyID = propertyID;
   }
 
@@ -83,16 +92,17 @@ public final class LabelProperty implements Serializable, ObjectConstants {
    * Returns property name
    *
    * @return String
-   *
    * @hibernate.property column="NAME" unique="true"
    * null="false"
    */
   public String getPropertyName() {
+
     return propertyName;
   }
 
 
   public void setPropertyName(final String propertyName) {
+
     this.propertyName = propertyName;
   }
 
@@ -101,16 +111,17 @@ public final class LabelProperty implements Serializable, ObjectConstants {
    * Returns property value
    *
    * @return String
-   *
    * @hibernate.property column="VALUE" unique="true"
    * null="false"
    */
   public String getPropertyValue() {
+
     return propertyValue;
   }
 
 
   public void setPropertyValue(final String propertyValue) {
+
     this.propertyValue = propertyValue;
   }
 
@@ -119,8 +130,10 @@ public final class LabelProperty implements Serializable, ObjectConstants {
    * Returns property value as int
    *
    * @return int property value
+   * @throws NumberFormatException if {@link #propertyValue} cannot be converted to integer.
    */
-  public int getPropertyValueAsInteger() throws NumberFormatException {
+  public int getPropertyValueAsInteger() {
+
     return Integer.parseInt(propertyValue);
   }
 
@@ -129,26 +142,28 @@ public final class LabelProperty implements Serializable, ObjectConstants {
    * Returns timestamp
    *
    * @return long
-   *
    * @hibernate.version column="TIMESTAMP"  null="false"
    */
   public long getPropertyTimeStamp() {
+
     return propertyTimeStamp;
   }
 
 
   public void setPropertyTimeStamp(final long propertyTimeStamp) {
+
     this.propertyTimeStamp = propertyTimeStamp;
   }
 
 
   public String toString() {
+
     return "LabelProperty{" +
-      "buildID=" + buildID +
-      ", propertyID=" + propertyID +
-      ", propertyName='" + propertyName + '\'' +
-      ", propertyValue='" + propertyValue + '\'' +
-      ", propertyTimeStamp=" + propertyTimeStamp +
-      '}';
+            "buildID=" + buildID +
+            ", propertyID=" + propertyID +
+            ", propertyName='" + propertyName + '\'' +
+            ", propertyValue='" + propertyValue + '\'' +
+            ", propertyTimeStamp=" + propertyTimeStamp +
+            '}';
   }
 }

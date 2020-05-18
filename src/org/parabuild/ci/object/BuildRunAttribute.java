@@ -25,8 +25,6 @@ import java.io.Serializable;
  */
 public final class BuildRunAttribute implements Serializable, ObjectConstants {
 
-  private static final long serialVersionUID = -3080999678374310690L; // NOPMD
-
   /**
    * Accumulated from all steps errors.
    */
@@ -47,22 +45,27 @@ public final class BuildRunAttribute implements Serializable, ObjectConstants {
    */
   public static final String ATTR_JUNIT_TESTS = "stat.parabuild.junit.tests";
 
-
   /**
    * Number of tests that didn't run.
    */
   public static final String ATTR_JUNIT_NOTRUN = "stat.parabuild.junit.notrun";
 
   public static final String ATTR_JUNIT_FATALS = "stat.parabuild.junit.fatals";
+
   public static final String ATTR_JUNIT_EXPECTED_FAILS = "stat.parabuild.junit.expected.fails";
+
   public static final String ATTR_JUNIT_UNEXPECTED_PASSES = "stat.parabuild.junit.unexpected.passes";
+
   public static final String ATTR_JUNIT_WARNINGS = "stat.parabuild.junit.warnings";
 
-
   public static final String ATTR_CLEAN_CHECKOUT = "attr.clean.checkout";
+
   public static final String ATTR_BUILDER_TIMESTAMP = "attr.builder.timestamp";
+
   public static final String ATTR_STARTED_USER_ID = "attr.started.user.id";
+
   public static final String ATTR_RE_RUN_BUILD_RUN_ID = "attr.re.run.build.run.id";
+
   public static final String ATTR_NOTE = "attr.note";
 
   /**
@@ -103,7 +106,6 @@ public final class BuildRunAttribute implements Serializable, ObjectConstants {
    */
   public static final String ATTR_LEAD_BUILD_RUN_ID = "lead.build.run.id";
 
-
   /**
    * PMD violations statistics.
    */
@@ -114,12 +116,13 @@ public final class BuildRunAttribute implements Serializable, ObjectConstants {
    */
   public static final String ATTR_FINDBUGS_PROBLEMS = "stat.parabuild.findbugs.bugs";
 
-
   /**
    * Checkstyle error statistics.
    */
   public static final String ATTR_CHECKSTYLE_ERRORS = "stat.parabuild.checkstyle.errors";
+
   public static final String ATTR_CHECKSTYLE_FILES_WITH_PROBLEMS = "stat.parabuild.checkstyle.problem.files";
+
   public static final String ATTR_CHECKSTYLE_FILES = "stat.parabuild.checkstyle.files";
 
   /**
@@ -136,7 +139,6 @@ public final class BuildRunAttribute implements Serializable, ObjectConstants {
    * The build ID this build run id fixes.
    */
   public static final String ATTR_FIXES_BUILD_ID = "fixes.build.run.id";
-
 
   /**
    * Number of new change lists. Can be missing if a build
@@ -180,7 +182,6 @@ public final class BuildRunAttribute implements Serializable, ObjectConstants {
    */
   public static final String NEW_TESTS = "new.tests";
 
-
   /**
    * Actual agent host.
    */
@@ -191,10 +192,16 @@ public final class BuildRunAttribute implements Serializable, ObjectConstants {
    */
   public static final String REFERENCE_P4_CLIENT_NAME = "reference.p4.client";
 
+  private static final long serialVersionUID = -3080999678374310690L; // NOPMD
+
   private int buildRunID = BuildRun.UNSAVED_ID;
+
   private int ID = UNSAVED_ID;
+
   private String name;
+
   private String value;
+
   private long timeStamp = 1;
 
 
@@ -202,6 +209,7 @@ public final class BuildRunAttribute implements Serializable, ObjectConstants {
    * Default constructor.
    */
   public BuildRunAttribute() {
+
   }
 
 
@@ -209,6 +217,7 @@ public final class BuildRunAttribute implements Serializable, ObjectConstants {
    * Constructor for new (unsaved) BuildRunAttribute
    */
   public BuildRunAttribute(final int buildRunID, final String name, final String value) {
+
     this.buildRunID = buildRunID;
     this.name = name;
     this.value = value;
@@ -219,6 +228,7 @@ public final class BuildRunAttribute implements Serializable, ObjectConstants {
    * Constructor for new (unsaved) BuildRunAttribute
    */
   public BuildRunAttribute(final int buildRunID, final String name, final int value) {
+
     this(buildRunID, name, Integer.toString(value));
   }
 
@@ -228,6 +238,7 @@ public final class BuildRunAttribute implements Serializable, ObjectConstants {
    * value.
    */
   public BuildRunAttribute(final int buildRunID, final String name, final boolean value) {
+
     this(buildRunID, name, Boolean.toString(value));
   }
 
@@ -237,6 +248,7 @@ public final class BuildRunAttribute implements Serializable, ObjectConstants {
    * value.
    */
   public BuildRunAttribute(final int buildRunID, final String name, final long value) {
+
     this(buildRunID, name, Long.toString(value));
   }
 
@@ -249,11 +261,13 @@ public final class BuildRunAttribute implements Serializable, ObjectConstants {
    * null="false"
    */
   public int getBuildRunID() {
+
     return buildRunID;
   }
 
 
   public void setBuildRunID(final int buildRunID) {
+
     this.buildRunID = buildRunID;
   }
 
@@ -266,11 +280,13 @@ public final class BuildRunAttribute implements Serializable, ObjectConstants {
    * unsaved-value="-1"
    */
   public int getID() {
+
     return ID;
   }
 
 
   public void setID(final int ID) {
+
     this.ID = ID;
   }
 
@@ -283,11 +299,13 @@ public final class BuildRunAttribute implements Serializable, ObjectConstants {
    * null="false"
    */
   public String getName() {
+
     return name;
   }
 
 
   public void setName(final String name) {
+
     this.name = name;
   }
 
@@ -300,16 +318,19 @@ public final class BuildRunAttribute implements Serializable, ObjectConstants {
    * null="false"
    */
   public String getValue() {
+
     return value;
   }
 
 
   public void setValue(final String value) {
+
     this.value = value;
   }
 
 
   public void setValue(final int propertyValue) {
+
     this.value = Integer.toString(propertyValue);
   }
 
@@ -318,8 +339,10 @@ public final class BuildRunAttribute implements Serializable, ObjectConstants {
    * Returns property value as int
    *
    * @return int property value
+   * @throws NumberFormatException if {@link #value} cannot be converted to integer.
    */
-  public int getValueAsInteger() throws NumberFormatException {
+  public int getValueAsInteger() {
+
     return Integer.parseInt(value);
   }
 
@@ -328,8 +351,10 @@ public final class BuildRunAttribute implements Serializable, ObjectConstants {
    * Returns property value as int
    *
    * @return int property value
+   * @throws NumberFormatException if {@link #value} cannot be converted to integer.
    */
-  public long getValueAsLong() throws NumberFormatException {
+  public long getValueAsLong() {
+
     return Long.parseLong(value);
   }
 
@@ -341,21 +366,25 @@ public final class BuildRunAttribute implements Serializable, ObjectConstants {
    * @hibernate.version column="TIMESTAMP"  null="false"
    */
   public long getTimeStamp() {
+
     return timeStamp;
   }
 
 
   public void setTimeStamp(final long timeStamp) {
+
     this.timeStamp = timeStamp;
   }
 
 
   public boolean isValueBlank() {
+
     return StringUtils.isBlank(value);
   }
 
 
   public String toString() {
+
     return "BuildRunAttribute{" +
             "buildRunID=" + buildRunID +
             ", ID=" + ID +

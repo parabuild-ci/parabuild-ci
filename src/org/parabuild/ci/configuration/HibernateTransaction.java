@@ -97,10 +97,14 @@ public final class HibernateTransaction {
   }
 
 
-  public static int getLevel() throws IllegalStateException {
-    final HibernateTransaction tlSession = (HibernateTransaction)sessionContext.get();
-    if (tlSession == null) return 0;
-    return tlSession.level;
+  public static int getLevel() {
+
+    int result = 0;
+    final HibernateTransaction tlSession = (HibernateTransaction) sessionContext.get();
+    if (tlSession != null) {
+      result = tlSession.level;
+    }
+    return result;
   }
 
 

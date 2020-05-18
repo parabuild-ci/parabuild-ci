@@ -12,6 +12,7 @@ public final class VersionControlUtil {
 
 
   private VersionControlUtil() {
+
   }
 
 
@@ -50,8 +51,9 @@ public final class VersionControlUtil {
    *
    * @param code the code to convert.
    * @return human-readable VCS name.
+   * @throws IllegalArgumentException if the code cannot be matched with a VCS.
    */
-  public static final String vcsToString(final int code) throws IllegalArgumentException {
+  public static final String vcsToString(final int code) {
 
     if (code < 0 || code >= VCS_NAMES.length) {
       throw new IllegalArgumentException("VCS code " + code + " is invalid");

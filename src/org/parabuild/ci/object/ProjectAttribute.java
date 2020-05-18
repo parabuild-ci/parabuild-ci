@@ -24,9 +24,13 @@ public final class ProjectAttribute implements Serializable, ObjectConstants {
   private static final long serialVersionUID = -6426274907331328221L; // NOPMD
 
   private int projectID = User.UNSAVED_ID;
+
   private int ID = UNSAVED_ID;
+
   private String name;
+
   private String value;
+
   private long timestamp = 1;
 
 
@@ -34,6 +38,7 @@ public final class ProjectAttribute implements Serializable, ObjectConstants {
    * Default constructor.
    */
   public ProjectAttribute() {
+
   }
 
 
@@ -44,6 +49,7 @@ public final class ProjectAttribute implements Serializable, ObjectConstants {
    * @param name
    */
   public ProjectAttribute(final int userID, final String name, final String value) {
+
     this.projectID = userID;
     this.name = name;
     this.value = value;
@@ -52,16 +58,17 @@ public final class ProjectAttribute implements Serializable, ObjectConstants {
 
   /**
    * @return String
-   *
    * @hibernate.property column="PROJECT_ID" unique="false"
    * null="false"
    */
   public int getProjectID() {
+
     return projectID;
   }
 
 
   public void setProjectID(final int projectID) {
+
     this.projectID = projectID;
   }
 
@@ -71,16 +78,17 @@ public final class ProjectAttribute implements Serializable, ObjectConstants {
    * generator-parameter-2="SEQUENCE_ID"
    *
    * @return int
-   *
    * @hibernate.id generator-class="identity" column="ID"
    * unsaved-value="-1"
    */
   public int getID() {
+
     return ID;
   }
 
 
   public void setID(final int ID) {
+
     this.ID = ID;
   }
 
@@ -89,16 +97,17 @@ public final class ProjectAttribute implements Serializable, ObjectConstants {
    * Returns property name
    *
    * @return String
-   *
    * @hibernate.property column="NAME" unique="true"
    * null="false"
    */
   public String getName() {
+
     return name;
   }
 
 
   public void setName(final String name) {
+
     this.name = name;
   }
 
@@ -107,21 +116,23 @@ public final class ProjectAttribute implements Serializable, ObjectConstants {
    * Returns property value
    *
    * @return String
-   *
    * @hibernate.property column="VALUE" unique="true"
    * null="false"
    */
   public String getValue() {
+
     return value;
   }
 
 
   public void setValue(final String value) {
+
     this.value = value;
   }
 
 
   public void setValue(final int propertyValue) {
+
     this.value = Integer.toString(propertyValue);
   }
 
@@ -130,8 +141,10 @@ public final class ProjectAttribute implements Serializable, ObjectConstants {
    * Returns property value as int
    *
    * @return int property value
+   * @throws NumberFormatException if there was an error converting {@link #value} to integer.
    */
-  public int getValueAsInteger() throws NumberFormatException {
+  public int getValueAsInteger() {
+
     return Integer.parseInt(value);
   }
 
@@ -140,26 +153,28 @@ public final class ProjectAttribute implements Serializable, ObjectConstants {
    * Returns timestamp
    *
    * @return long
-   *
    * @hibernate.version column="TIMESTAMP"  null="false"
    */
   public long getTimestamp() {
+
     return timestamp;
   }
 
 
   public void setTimestamp(final long timestamp) {
+
     this.timestamp = timestamp;
   }
 
 
   public String toString() {
+
     return "ProjectAttribute{" +
-      "projectID=" + projectID +
-      ", ID=" + ID +
-      ", name='" + name + '\'' +
-      ", value='" + value + '\'' +
-      ", timestamp=" + timestamp +
-      '}';
+            "projectID=" + projectID +
+            ", ID=" + ID +
+            ", name='" + name + '\'' +
+            ", value='" + value + '\'' +
+            ", timestamp=" + timestamp +
+            '}';
   }
 }

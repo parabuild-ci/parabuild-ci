@@ -104,7 +104,7 @@ public final class GridIterator implements Serializable {
    * @param comp2 - second component
    * @throws IllegalStateException if number of grid columns is not equal 2
    */
-  public void addPair(final Component comp, final Component comp2) throws IllegalStateException {
+  public void addPair(final Component comp, final Component comp2) {
     // REVIEWME: simeshev@parabuilci.org - this contidition will handle only cases for GI sizes 2 and 4
     if (this.sizeX != 2 && this.sizeX != 4 && this.sizeX != 6)
       throw new IllegalArgumentException("Pair can not be added because grid size is not equal 2");

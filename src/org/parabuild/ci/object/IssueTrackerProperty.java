@@ -24,55 +24,77 @@ import java.io.Serializable;
  */
 public final class IssueTrackerProperty implements Serializable, ObjectConstants {
 
-  private static final long serialVersionUID = -5713571700425080953L; // NOPMD
-
-  // //////////////////////////////////////////////////////////////////////////
-  // Common properties - DO NOT CHANGE!!!
-
   /**
    * Issue filter defines content to be present in issue
    * description to include an issue into build run's release
    * notes.
    */
   public static final String ISSUE_FILTER = "issue.filter";
+
+  // //////////////////////////////////////////////////////////////////////////
+  // Common properties - DO NOT CHANGE!!!
+
   public static final String ISSUE_URL_TEMPLATE = "issue.url.template";
+
   public static final String ISSUE_LINK_PATTERN = "issue.link.pattern";
+
+  public static final String JIRA_PROJECT = "jira.project";
 
   // //////////////////////////////////////////////////////////////////////////
   // Jira config properties - DO NOT CHANGE!!!
 
-  public static final String JIRA_PROJECT = "jira.project";
   public static final String JIRA_VERSIONS = "jira.versions";
+
   public static final String JIRA_FIX_VERSIONS = "jira.fix.versions";
+
+  public static final String BUGZILLA_PRODUCT = "bugzilla.product";
 
   // //////////////////////////////////////////////////////////////////////////
   // Bugzilla config properties - DO NOT CHANGE!!!
 
-  public static final String BUGZILLA_PRODUCT = "bugzilla.product";
   public static final String BUGZILLA_VERSION = "bugzilla.version";
+
   public static final String BUGZILLA_STATUSES = "bugzilla.statuses";
+
   public static final String BUGZILLA_MYSQL_HOST = "bugzilla.mysql.host";
+
   public static final String BUGZILLA_MYSQL_PORT = "bugzilla.mysql.port";
+
   public static final String BUGZILLA_MYSQL_DB = "bugzilla.mysql.db";
+
   public static final String BUGZILLA_MYSQL_USER = "bugzilla.mysql.user";
+
   public static final String BUGZILLA_MYSQL_PASSWORD = "bugzilla.mysql.password";
+
+  public static final String FOGBUGZ_DB_HOST = "fogbugz.db.host";
 
   // //////////////////////////////////////////////////////////////////////////
   // FogBugz config properties - DO NOT CHANGE!!!
 
-  public static final String FOGBUGZ_DB_HOST = "fogbugz.db.host";
   public static final String FOGBUGZ_DB_PORT = "fogbugz.db.port";
+
   public static final String FOGBUGZ_DB_DB = "fogbugz.db.db";
+
   public static final String FOGBUGZ_DB_USER = "fogbugz.db.user";
+
   public static final String FOGBUGZ_DB_PASSWORD = "fogbugz.db.password";
+
   public static final String FOGBUGZ_PROJECT_ID = "fogbugz.project.id";
+
   public static final String FOGBUGZ_STATUS_CLOSED = "fogbugz.status.closed";
+
   public static final String FOGBUGZ_STATUS_FIXED = "fogbugz.status.fixed";
 
+  private static final long serialVersionUID = -5713571700425080953L; // NOPMD
+
   private int trackerID = IssueTracker.UNSAVED_ID;
+
   private int ID = UNSAVED_ID;
+
   private String name;
+
   private String value;
+
   private long timeStamp = 1;
 
 
@@ -80,32 +102,34 @@ public final class IssueTrackerProperty implements Serializable, ObjectConstants
    * Returns issue tracker ID
    *
    * @return int
-   *
    * @hibernate.property column="ISSUE_TRACKER_ID" unique="false"
    * null="false"
    */
   public int getTrackerID() {
+
     return trackerID;
   }
 
 
   public void setTrackerID(final int trackerID) {
+
     this.trackerID = trackerID;
   }
 
 
   /**
    * @return int
-   *
    * @hibernate.id generator-class="identity" column="ID"
    * unsaved-value="-1"
    */
   public int getID() {
+
     return ID;
   }
 
 
   public void setID(final int ID) {
+
     this.ID = ID;
   }
 
@@ -114,16 +138,17 @@ public final class IssueTrackerProperty implements Serializable, ObjectConstants
    * Returns property name
    *
    * @return String
-   *
    * @hibernate.property column="NAME" unique="true"
    * null="false"
    */
   public String getName() {
+
     return name;
   }
 
 
   public void setName(final String name) {
+
     this.name = name;
   }
 
@@ -132,16 +157,17 @@ public final class IssueTrackerProperty implements Serializable, ObjectConstants
    * Returns property value
    *
    * @return String
-   *
    * @hibernate.property column="VALUE" unique="true"
    * null="false"
    */
   public String getValue() {
+
     return value;
   }
 
 
   public void setValue(final String value) {
+
     this.value = value;
   }
 
@@ -150,8 +176,10 @@ public final class IssueTrackerProperty implements Serializable, ObjectConstants
    * Returns property value as int
    *
    * @return int property value
+   * @throws NumberFormatException if {@link #value} cannot be converted to integer.
    */
-  public int getValueAsInteger() throws NumberFormatException {
+  public int getValueAsInteger() {
+
     return Integer.parseInt(value);
   }
 
@@ -160,26 +188,28 @@ public final class IssueTrackerProperty implements Serializable, ObjectConstants
    * Returns timestamp
    *
    * @return long
-   *
    * @hibernate.version column="TIMESTAMP"  null="false"
    */
   public long getTimeStamp() {
+
     return timeStamp;
   }
 
 
   public void setTimeStamp(final long timeStamp) {
+
     this.timeStamp = timeStamp;
   }
 
 
   public String toString() {
+
     return "IssueTrackerProperty{" +
-      "trackerID=" + trackerID +
-      ", ID=" + ID +
-      ", name='" + name + '\'' +
-      ", value='" + value + '\'' +
-      ", timeStamp=" + timeStamp +
-      '}';
+            "trackerID=" + trackerID +
+            ", ID=" + ID +
+            ", name='" + name + '\'' +
+            ", value='" + value + '\'' +
+            ", timeStamp=" + timeStamp +
+            '}';
   }
 }

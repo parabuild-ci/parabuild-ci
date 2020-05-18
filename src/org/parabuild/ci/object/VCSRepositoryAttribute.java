@@ -25,9 +25,13 @@ import java.io.Serializable;
 public final class VCSRepositoryAttribute implements Serializable, ObjectConstants {
 
   private int repositoryId = BuildConfig.UNSAVED_ID;
+
   private int id = UNSAVED_ID;
+
   private String name;
+
   private String value;
+
   private long timeStamp = 1;
 
 
@@ -35,6 +39,7 @@ public final class VCSRepositoryAttribute implements Serializable, ObjectConstan
    * Default constructor. Required by hibernate.
    */
   public VCSRepositoryAttribute() {
+
   }
 
 
@@ -45,6 +50,7 @@ public final class VCSRepositoryAttribute implements Serializable, ObjectConstan
    * @param name
    */
   public VCSRepositoryAttribute(final int repositoryId, final String name, final String value) {
+
     this.repositoryId = repositoryId;
     this.name = name;
     this.value = value;
@@ -59,6 +65,7 @@ public final class VCSRepositoryAttribute implements Serializable, ObjectConstan
    * @param value
    */
   public VCSRepositoryAttribute(final int repositoryId, final String name, final int value) {
+
     this(repositoryId, name, Integer.toString(value));
   }
 
@@ -70,11 +77,13 @@ public final class VCSRepositoryAttribute implements Serializable, ObjectConstan
    * @hibernate.property column="VCS_REPOSITORY_ID" unique="false" null="false"
    */
   public int getRepositoryId() {
+
     return repositoryId;
   }
 
 
   public void setRepositoryId(final int repositoryId) {
+
     this.repositoryId = repositoryId;
   }
 
@@ -88,11 +97,13 @@ public final class VCSRepositoryAttribute implements Serializable, ObjectConstan
    * unsaved-value="-1"
    */
   public int getId() {
+
     return id;
   }
 
 
   public void setId(final int id) {
+
     this.id = id;
   }
 
@@ -104,11 +115,13 @@ public final class VCSRepositoryAttribute implements Serializable, ObjectConstan
    * @hibernate.property column="NAME" unique="true" null="false"
    */
   public String getName() {
+
     return name;
   }
 
 
   public void setName(final String name) {
+
     this.name = name;
   }
 
@@ -120,16 +133,19 @@ public final class VCSRepositoryAttribute implements Serializable, ObjectConstan
    * @hibernate.property column="VALUE" unique="true" null="false"
    */
   public String getValue() {
+
     return value;
   }
 
 
   public void setValue(final String value) {
+
     this.value = value;
   }
 
 
   public void setValue(final int value) {
+
     this.value = Integer.toString(value);
   }
 
@@ -138,8 +154,10 @@ public final class VCSRepositoryAttribute implements Serializable, ObjectConstan
    * Returns property value as int
    *
    * @return int property value
+   * @throws NumberFormatException if there was an error converting {@link #value} to integer.
    */
-  public int getValueAsInteger() throws NumberFormatException {
+  public int getValueAsInteger() {
+
     return Integer.parseInt(value);
   }
 
@@ -151,17 +169,20 @@ public final class VCSRepositoryAttribute implements Serializable, ObjectConstan
    * @hibernate.version column="TIMESTAMP"  null="false"
    */
   public long getTimeStamp() {
+
     return timeStamp;
   }
 
 
   public void setTimeStamp(final long timeStamp) {
+
     this.timeStamp = timeStamp;
   }
 
 
   @Override
   public String toString() {
+
     return "VCSServerAttribute{" +
             "serverId=" + repositoryId +
             ", id=" + id +

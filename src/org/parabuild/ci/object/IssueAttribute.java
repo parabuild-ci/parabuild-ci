@@ -22,15 +22,20 @@ import java.io.Serializable;
  */
 public final class IssueAttribute implements Serializable, ObjectConstants {
 
-  private static final long serialVersionUID = -3080999678374310690L; // NOPMD
-
   public static final String JIRA_PROJECT = IssueTrackerProperty.JIRA_PROJECT;
+
   public static final String JIRA_VERSIONS = IssueTrackerProperty.JIRA_VERSIONS;
+
   public static final String JIRA_FIX_VERSIONS = IssueTrackerProperty.JIRA_FIX_VERSIONS;
 
+  private static final long serialVersionUID = -3080999678374310690L; // NOPMD
+
   private int issueID = Issue.UNSAVED_ID;
+
   private int ID = UNSAVED_ID;
+
   private String name;
+
   private String value;
 
 
@@ -38,6 +43,7 @@ public final class IssueAttribute implements Serializable, ObjectConstants {
    * Default constructor
    */
   public IssueAttribute() {
+
   }
 
 
@@ -45,6 +51,7 @@ public final class IssueAttribute implements Serializable, ObjectConstants {
    * Constructor
    */
   public IssueAttribute(final String name, final String value) {
+
     this.name = name;
     this.value = value;
   }
@@ -54,15 +61,16 @@ public final class IssueAttribute implements Serializable, ObjectConstants {
    * Returns issue ID that attr belongs to
    *
    * @return String
-   *
    * @hibernate.property column="ISSUE_ID" unique="false" null="false"
    */
   public int getIssueID() {
+
     return issueID;
   }
 
 
   public void setIssueID(final int issueID) {
+
     this.issueID = issueID;
   }
 
@@ -71,15 +79,16 @@ public final class IssueAttribute implements Serializable, ObjectConstants {
    * The getter method for this property ID
    *
    * @return int
-   *
    * @hibernate.id generator-class="identity" column="ID" unsaved-value="-1"
    */
   public int getID() {
+
     return ID;
   }
 
 
   public void setID(final int ID) {
+
     this.ID = ID;
   }
 
@@ -88,15 +97,16 @@ public final class IssueAttribute implements Serializable, ObjectConstants {
    * Returns property name
    *
    * @return String
-   *
    * @hibernate.property column="NAME" unique="true" null="false"
    */
   public String getName() {
+
     return name;
   }
 
 
   public void setName(final String name) {
+
     this.name = name;
   }
 
@@ -105,20 +115,22 @@ public final class IssueAttribute implements Serializable, ObjectConstants {
    * Returns property value
    *
    * @return String
-   *
    * @hibernate.property column="VALUE" unique="true" null="false"
    */
   public String getValue() {
+
     return value;
   }
 
 
   public void setValue(final String value) {
+
     this.value = value;
   }
 
 
   public void setPropertyValue(final int propertyValue) {
+
     this.value = Integer.toString(propertyValue);
   }
 
@@ -127,18 +139,21 @@ public final class IssueAttribute implements Serializable, ObjectConstants {
    * Returns property value as int
    *
    * @return int property value
+   * @throws NumberFormatException if {@link #value} cannot be converted to integer.
    */
-  public int getPropertyValueAsInteger() throws NumberFormatException {
+  public int getPropertyValueAsInteger() {
+
     return Integer.parseInt(value);
   }
 
 
   public String toString() {
+
     return "IssueAttribute{" +
-      "issueID=" + issueID +
-      ", ID=" + ID +
-      ", name='" + name + '\'' +
-      ", value='" + value + '\'' +
-      '}';
+            "issueID=" + issueID +
+            ", ID=" + ID +
+            ", name='" + name + '\'' +
+            ", value='" + value + '\'' +
+            '}';
   }
 }

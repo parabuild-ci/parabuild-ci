@@ -42,17 +42,17 @@ public final class DelegatingRetentionCache implements RetentionCache {
   /**
    * Returns all elements.
    */
-  public void removeAll() throws IllegalStateException, IOException {
+  public void removeAll() throws IOException {
     delegate.removeAll();
   }
 
 
-  public Element get(final Serializable key) throws IllegalStateException, CacheException {
+  public Element get(final Serializable key) throws CacheException {
     return delegate.get(key);
   }
 
 
-  public void put(final Element elem) throws IllegalArgumentException, IllegalStateException {
+  public void put(final Element elem) {
     delegate.put(elem);
   }
 

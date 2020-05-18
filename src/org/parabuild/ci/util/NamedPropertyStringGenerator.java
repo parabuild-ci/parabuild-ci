@@ -54,7 +54,7 @@ public final class NamedPropertyStringGenerator {
    * @throws IllegalArgumentException if a duplicate named
    *  property is found in namedProperties.
    */
-  public NamedPropertyStringGenerator(final NamedProperty[] namedProperties, final String template, final boolean strictOutput) throws IllegalArgumentException {
+  public NamedPropertyStringGenerator(final NamedProperty[] namedProperties, final String template, final boolean strictOutput) {
     for (int i = 0; i < namedProperties.length; i++) {
       final NamedProperty namedProperty = namedProperties[i];
       final String key = namedProperty.getPropertyName().toLowerCase();

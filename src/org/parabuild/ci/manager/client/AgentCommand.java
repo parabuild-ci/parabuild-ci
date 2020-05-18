@@ -107,7 +107,7 @@ public abstract class AgentCommand {
    *
    * @throws IllegalArgumentException if a validation error occurs
    */
-  public void execute() throws IllegalArgumentException, IOException {
+  public void execute() throws IOException {
 
     if (username == null || password == null || url == null) {
       throw new IllegalArgumentException("Must specify all of 'username', 'password', and 'url'");

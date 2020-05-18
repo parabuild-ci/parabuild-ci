@@ -25,17 +25,17 @@ public final class DummyStatelessRetentionCache implements RetentionCache {
   /**
    * Returns all elements.
    */
-  public void removeAll() throws IllegalStateException {
+  public void removeAll() {
     // do noting
   }
 
 
-  public Element get(final Serializable key) throws IllegalStateException {
+  public Element get(final Serializable key) {
     return null;  // never find anything
   }
 
 
-  public void put(final Element elem) throws IllegalArgumentException, IllegalStateException {
+  public void put(final Element elem) {
     // do noting
   }
 }

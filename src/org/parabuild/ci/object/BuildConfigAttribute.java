@@ -24,25 +24,40 @@ import java.io.Serializable;
  */
 public final class BuildConfigAttribute implements Serializable, ObjectConstants {
 
-  private static final long serialVersionUID = -6426274907331328221L; // NOPMD
-
   public static final String LOG_RETENTION_DAYS = "build.log.retention.days";
+
   public static final String LOG_PACK_DAYS = "build.log.pack.days";
+
   public static final String MESSAGE_PREFIX = "build.msg.prefix";
+
   public static final String RESULT_RETENTION_DAYS = "build.result.retention.days";
+
   public static final String SEND_FAILURE_ONCE = "build.send.failure.once";
+
   public static final String SEND_ONLY_LAST_STEP_RESULT = "build.send.only.last.step.result";
+
   public static final String SEND_FAILURES_ONLY = "build.send.failures.only";
+
   public static final String SEND_FILE_DETAILS = "build.send.email.file.details";
+
   public static final String SEND_START_NOTICE_FOR_FIRST_STEP_ONLY = "build.send.start.notice.for.first.step.only";
+
   public static final String SOURCE_BUILD_CONFIG_ID = "build.source.config.id";
+
   public static final String ENABLE_VERSION = "enable.version";
+
   public static final String VERSION_TEMPLATE = "version.template";
+
   public static final String VERSION_COUNTER_INCREMENT_MODE = "version.counter.increment.mode";
+
   public static final String VERSION_COUNTER_INCREMENT_IF_BROKEN = "version.counter.increment.if.broken";
+
   public static final String LAST_SAVED_TAB = "last.saved.tab";
+
   public static final String USE_FIRST_PARAMETER_VALUE_AS_DEFAULT = "use.first.parameter.value.as.default";
+
   public static final String PROMOTION_POLICY_ID = "promotion.policy.id";
+
   public static final String BUILD_CREATOR = "build.creator";
 
   /**
@@ -142,10 +157,16 @@ public final class BuildConfigAttribute implements Serializable, ObjectConstants
    */
   public static final String SHOW_MERCURIAL_PARAMETERS = "show.mercurial.parameters";
 
+  private static final long serialVersionUID = -6426274907331328221L; // NOPMD
+
   private int buildID = BuildConfig.UNSAVED_ID;
+
   private int propertyID = UNSAVED_ID;
+
   private String propertyName;
+
   private String propertyValue;
+
   private long propertyTimeStamp = 1;
 
 
@@ -153,6 +174,7 @@ public final class BuildConfigAttribute implements Serializable, ObjectConstants
    * Default constructor. Required by hibernate.
    */
   public BuildConfigAttribute() {
+
   }
 
 
@@ -163,6 +185,7 @@ public final class BuildConfigAttribute implements Serializable, ObjectConstants
    * @param propertyName
    */
   public BuildConfigAttribute(final int buildID, final String propertyName, final String propertyValue) {
+
     this.buildID = buildID;
     this.propertyName = propertyName;
     this.propertyValue = propertyValue;
@@ -177,6 +200,7 @@ public final class BuildConfigAttribute implements Serializable, ObjectConstants
    * @param propertyValue
    */
   public BuildConfigAttribute(final int buildID, final String propertyName, final int propertyValue) {
+
     this(buildID, propertyName, Integer.toString(propertyValue));
   }
 
@@ -189,11 +213,13 @@ public final class BuildConfigAttribute implements Serializable, ObjectConstants
    * null="false"
    */
   public int getBuildID() {
+
     return buildID;
   }
 
 
   public void setBuildID(final int buildID) {
+
     this.buildID = buildID;
   }
 
@@ -207,11 +233,13 @@ public final class BuildConfigAttribute implements Serializable, ObjectConstants
    * unsaved-value="-1"
    */
   public int getPropertyID() {
+
     return propertyID;
   }
 
 
   public void setPropertyID(final int propertyID) {
+
     this.propertyID = propertyID;
   }
 
@@ -224,11 +252,13 @@ public final class BuildConfigAttribute implements Serializable, ObjectConstants
    * null="false"
    */
   public String getPropertyName() {
+
     return propertyName;
   }
 
 
   public void setPropertyName(final String propertyName) {
+
     this.propertyName = propertyName;
   }
 
@@ -241,16 +271,19 @@ public final class BuildConfigAttribute implements Serializable, ObjectConstants
    * null="false"
    */
   public String getPropertyValue() {
+
     return propertyValue;
   }
 
 
   public void setPropertyValue(final String propertyValue) {
+
     this.propertyValue = propertyValue;
   }
 
 
   public void setPropertyValue(final int propertyValue) {
+
     this.propertyValue = Integer.toString(propertyValue);
   }
 
@@ -259,8 +292,10 @@ public final class BuildConfigAttribute implements Serializable, ObjectConstants
    * Returns property value as int
    *
    * @return int property value
+   * @throws NumberFormatException if {@link #propertyValue} cannot be converted to an integer.
    */
-  public int getPropertyValueAsInteger() throws NumberFormatException {
+  public int getPropertyValueAsInteger() {
+
     return Integer.parseInt(propertyValue);
   }
 
@@ -272,16 +307,19 @@ public final class BuildConfigAttribute implements Serializable, ObjectConstants
    * @hibernate.version column="TIMESTAMP"  null="false"
    */
   public long getPropertyTimeStamp() {
+
     return propertyTimeStamp;
   }
 
 
   public void setPropertyTimeStamp(final long propertyTimeStamp) {
+
     this.propertyTimeStamp = propertyTimeStamp;
   }
 
 
   public String toString() {
+
     return "BuildConfigAttribute [" +
             "buildID=" + buildID +
             ", propertyID=" + propertyID +

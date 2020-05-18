@@ -285,7 +285,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * @throws IllegalArgumentException if given log is not a
    *                                  single-file log.
    */
-  public InputStream getArchivedLogInputStream(final StepLog stepLog) throws IllegalArgumentException, IOException {
+  public InputStream getArchivedLogInputStream(final StepLog stepLog) throws IOException {
     final byte pathType = stepLog.getPathType();
     if (pathType == StepLog.PATH_TYPE_HTML_FILE
             || pathType == StepLog.PATH_TYPE_JUNIT_XML
@@ -333,7 +333,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * @throws IllegalArgumentException if given log is not a
    *                                  multifile log.
    */
-  public InputStream getArchivedLogInputStream(final StepLog stepLog, final String inArchiveFileName) throws IllegalArgumentException, IOException {
+  public InputStream getArchivedLogInputStream(final StepLog stepLog, final String inArchiveFileName) throws IOException {
     final byte pathType = stepLog.getPathType();
     if (pathType == StepLog.PATH_TYPE_HTML_DIR
             || pathType == StepLog.PATH_TYPE_HTML_FILE
@@ -357,7 +357,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * @throws IllegalArgumentException if given log is not a
    *                                  single-file log.
    */
-  public InputStream getArchivedResultInputStream(final StepResult stepResult) throws IllegalArgumentException, IOException {
+  public InputStream getArchivedResultInputStream(final StepResult stepResult) throws IOException {
     if (stepResult.getPathType() == StepResult.PATH_TYPE_SINGLE_FILE) {
       // get entry name
       final List entries = getArchivedResultEntries(stepResult);
@@ -384,7 +384,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * @throws IllegalArgumentException if given log is not a
    *                                  multifile log.
    */
-  public InputStream getArchivedResultInputStream(final StepResult stepResult, final String inArchiveFileName) throws IllegalArgumentException, IOException {
+  public InputStream getArchivedResultInputStream(final StepResult stepResult, final String inArchiveFileName) throws IOException {
     return getArchivedEntityInputStream(getArchivedResultHome(stepResult), inArchiveFileName);
   }
 

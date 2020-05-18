@@ -24,8 +24,6 @@ import java.io.Serializable;
  */
 public final class ScheduleProperty implements Serializable, ObjectConstants {
 
-  private static final long serialVersionUID = -6833252781560090419L; // NOPMD
-
   // defaults for props that are not set
   public static final int DEFAULT_COOLDOWN_INTERVAL = 0;
 
@@ -34,12 +32,19 @@ public final class ScheduleProperty implements Serializable, ObjectConstants {
 
   // Automatic build proerties
   public static final String AUTO_POLL_INTERVAL = "auto.poll.interval";
+
   public static final String AUTO_CLEAN_CHECKOUT = "auto.clean.checkout.interval";
+
   public static final String AUTO_CLEAN_CHECKOUT_IF_BROKEN = "auto.clean.checkout.if.broken";
+
   public static final String AUTO_REBUILD_IF_BROKEN = "auto.rebuild.if.broken";
+
   public static final String AUTO_COOLDOWN_INTERVAL = "auto.cooldown.interval";
+
   public static final String AUTO_BUILD_ONE_BY_ONE = "build.one.by.one";
+
   public static final String STICKY_AGENT = "sticky.agent";
+
   public static final String CLEAN_CHECKOUT_ON_AGENT_CHANGE = "clean.checkout.on.agent.change";
 
   public static final String SERIALIZE = "serialize";
@@ -52,10 +57,16 @@ public final class ScheduleProperty implements Serializable, ObjectConstants {
    */
   public static final String RUN_IF_NO_CHANGES = "run.if.no.changes";
 
+  private static final long serialVersionUID = -6833252781560090419L; // NOPMD
+
   private int buildID = BuildConfig.UNSAVED_ID;
+
   private int propertyID = UNSAVED_ID;
+
   private String propertyName;
+
   private String propertyValue;
+
   private long propertyTimeStamp = 1L;
 
 
@@ -67,11 +78,13 @@ public final class ScheduleProperty implements Serializable, ObjectConstants {
    * null="false"
    */
   public int getBuildID() {
+
     return buildID;
   }
 
 
   public void setBuildID(final int buildID) {
+
     this.buildID = buildID;
   }
 
@@ -84,11 +97,13 @@ public final class ScheduleProperty implements Serializable, ObjectConstants {
    * unsaved-value="-1"
    */
   public int getPropertyID() {
+
     return propertyID;
   }
 
 
   public void setPropertyID(final int propertyID) {
+
     this.propertyID = propertyID;
   }
 
@@ -101,11 +116,13 @@ public final class ScheduleProperty implements Serializable, ObjectConstants {
    * null="false"
    */
   public String getPropertyName() {
+
     return propertyName;
   }
 
 
   public void setPropertyName(final String propertyName) {
+
     this.propertyName = propertyName;
   }
 
@@ -118,16 +135,19 @@ public final class ScheduleProperty implements Serializable, ObjectConstants {
    * null="false"
    */
   public String getPropertyValue() {
+
     return propertyValue;
   }
 
 
   public void setPropertyValue(final String propertyValue) {
+
     this.propertyValue = propertyValue;
   }
 
 
   public void setPropertyValue(final int propertyValue) {
+
     this.propertyValue = Integer.toString(propertyValue);
   }
 
@@ -136,8 +156,10 @@ public final class ScheduleProperty implements Serializable, ObjectConstants {
    * Returns property value as int
    *
    * @return int property value
+   * @throws NumberFormatException if there was an error converting {@link #propertyValue} to integer.
    */
-  public int getPropertyValueAsInteger() throws NumberFormatException {
+  public int getPropertyValueAsInteger() {
+
     return Integer.parseInt(propertyValue);
   }
 
@@ -149,16 +171,19 @@ public final class ScheduleProperty implements Serializable, ObjectConstants {
    * @hibernate.version column="TIMESTAMP"  null="false"
    */
   public long getPropertyTimeStamp() {
+
     return propertyTimeStamp;
   }
 
 
   public void setPropertyTimeStamp(final long propertyTimeStamp) {
+
     this.propertyTimeStamp = propertyTimeStamp;
   }
 
 
   public String toString() {
+
     return "ScheduleProperty{" +
             "buildID=" + buildID +
             ", propertyID=" + propertyID +

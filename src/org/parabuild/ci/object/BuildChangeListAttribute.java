@@ -22,12 +22,16 @@ import java.io.Serializable;
  */
 public final class BuildChangeListAttribute implements Serializable, ObjectConstants {
 
-  private static final long serialVersionUID = -3080999678374310690L; // NOPMD
   public static final String ACCUREV_SNAPSHOT_NAME = "accurev.snapshot.name";
 
+  private static final long serialVersionUID = -3080999678374310690L; // NOPMD
+
   private int buildChangeListID = Issue.UNSAVED_ID;
+
   private int ID = UNSAVED_ID;
+
   private String name;
+
   private String value;
 
 
@@ -35,6 +39,7 @@ public final class BuildChangeListAttribute implements Serializable, ObjectConst
    * Default constructor
    */
   public BuildChangeListAttribute() {
+
   }
 
 
@@ -42,6 +47,7 @@ public final class BuildChangeListAttribute implements Serializable, ObjectConst
    * Constructor
    */
   public BuildChangeListAttribute(final String name, final String value) {
+
     this.name = name;
     this.value = value;
   }
@@ -54,11 +60,13 @@ public final class BuildChangeListAttribute implements Serializable, ObjectConst
    * @hibernate.property column="BUILD_CHANGELIST_ID" unique="false" null="false"
    */
   public int getBuildChangeListID() {
+
     return buildChangeListID;
   }
 
 
   public void setBuildChangeListID(final int buildChangeListID) {
+
     this.buildChangeListID = buildChangeListID;
   }
 
@@ -70,11 +78,13 @@ public final class BuildChangeListAttribute implements Serializable, ObjectConst
    * @hibernate.id generator-class="identity" column="ID" unsaved-value="-1"
    */
   public int getID() {
+
     return ID;
   }
 
 
   public void setID(final int ID) {
+
     this.ID = ID;
   }
 
@@ -86,11 +96,13 @@ public final class BuildChangeListAttribute implements Serializable, ObjectConst
    * @hibernate.property column="NAME" unique="true" null="false"
    */
   public String getName() {
+
     return name;
   }
 
 
   public void setName(final String name) {
+
     this.name = name;
   }
 
@@ -102,16 +114,19 @@ public final class BuildChangeListAttribute implements Serializable, ObjectConst
    * @hibernate.property column="VALUE" unique="true" null="false"
    */
   public String getValue() {
+
     return value;
   }
 
 
   public void setValue(final String value) {
+
     this.value = value;
   }
 
 
   public void setPropertyValue(final int propertyValue) {
+
     this.value = Integer.toString(propertyValue);
   }
 
@@ -120,13 +135,16 @@ public final class BuildChangeListAttribute implements Serializable, ObjectConst
    * Returns property value as int
    *
    * @return int property value
+   * @throws NumberFormatException if the {@link #value} cannot be converted to an integer.
    */
-  public int getPropertyValueAsInteger() throws NumberFormatException {
+  public int getPropertyValueAsInteger() {
+
     return Integer.parseInt(value);
   }
 
 
   public String toString() {
+
     return "BuildChangeListAttribute{" +
             "buildChangeListID=" + buildChangeListID +
             ", ID=" + ID +

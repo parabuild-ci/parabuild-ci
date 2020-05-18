@@ -53,17 +53,29 @@ public abstract class AbstractResultHandler implements ResultHandler {
    * @noinspection UNUSED_SYMBOL, UnusedDeclaration
    */
   private static final Log LOG = LogFactory.getLog(AbstractResultHandler.class); // NOPMD
+
   protected final ArchiveManager archiveManager;
+
   protected final Agent agent;
+
   protected final ConfigurationManager cm = ConfigurationManager.getInstance();
+
   protected final int stepRunID;
+
   protected final ResultConfig resultConfig;
+
   protected final SearchManager searchManager = SearchManager.getInstance();
+
   private final boolean resultIsFilePath;
+
   private final BuildRunConfig buildRunConfig;
+
   private final ErrorManager errorManager = ErrorManagerFactory.getErrorManager();
+
   private final String[] fullyQualifiedResultPaths;
+
   private final String[] resolvedResultPaths;
+
   protected boolean pinResult;
 
 
@@ -73,6 +85,7 @@ public abstract class AbstractResultHandler implements ResultHandler {
    * @param agent            for which this handler is created
    * @param stepRunID        step ID that is to be processed
    * @param resultIsFilePath
+   * @throws IllegalArgumentException if arguments didn't pass validation.
    */
   protected AbstractResultHandler(final Agent agent, final BuildRunConfig buildRunConfig,
                                   final String projectHome, final ResultConfig resultConfig, final int stepRunID,
@@ -108,6 +121,7 @@ public abstract class AbstractResultHandler implements ResultHandler {
 
 
   private static String[] qualifyResultPath(final String projectHome, final boolean resultIsFilePath, final String[] resolvedResultPath) {
+
     final String[] result = new String[resolvedResultPath.length];
     for (int i = 0; i < resolvedResultPath.length; i++) {
       result[i] = resultIsFilePath ? projectHome + '/' + resolvedResultPath[i] : resolvedResultPath[i];
@@ -120,8 +134,10 @@ public abstract class AbstractResultHandler implements ResultHandler {
    * Finds results, moves them to archive and adjusts database.
    * <p/>
    * This method should not throw any exceptions.
+   *
+   * @throws IllegalArgumentException if arguments didn't pass validation.
    */
-  public final void process() throws IllegalArgumentException {
+  public final void process() {
 
     // validate we are called with the correct result type
     if (resultConfig.getType() != resultType()) {
@@ -169,6 +185,7 @@ public abstract class AbstractResultHandler implements ResultHandler {
 
 
   public final void setPinResult(final boolean pinResult) {
+
     this.pinResult = pinResult;
   }
 
@@ -211,6 +228,7 @@ public abstract class AbstractResultHandler implements ResultHandler {
    * @param e         exception to report.
    */
   private void reportResultProcessingException(final String buildName, final Exception e) {
+
     final Error error = new Error("Error while processing build results");
     error.setDetails(e);
     error.setSendEmail(true);
@@ -225,6 +243,7 @@ public abstract class AbstractResultHandler implements ResultHandler {
    * Reports that result is out of range.
    */
   private void reportResultIsOutOfScope(final BuildConfig buildConfig, final String resultPath, final ResultConfig resultConfig) {
+
     final Error error = new Error("Custom build result path is outside of allowed scope");
     error.setDescription("Resulting custom build result path \"" + resultPath + "\" for result \"" + resultConfig.getDescription() + "\" is outside of allowed scope.");
     error.setBuildName(buildConfig.getBuildName());
@@ -242,6 +261,7 @@ public abstract class AbstractResultHandler implements ResultHandler {
    * @param fullyQualifiedResultPath
    */
   protected final void reportResultPathIsNotFile(final String fullyQualifiedResultPath) {
+
     final Error error = new Error("Custom build result path \"" + fullyQualifiedResultPath + "\" for result \"" + resultConfig.getDescription() + "\" was expected to be a file, but it was a directory");
     error.setPossibleCause("Custom build result configuration is not valid. Adjust result configuration.");
     error.setBuildName(buildRunConfig.getBuildName());
@@ -258,6 +278,7 @@ public abstract class AbstractResultHandler implements ResultHandler {
    * @param fullyQualifiedResultPath
    */
   protected final void reportResultPathIsNotDirectory(final String fullyQualifiedResultPath) {
+
     final Error error = new Error("Custom build result path \"" + fullyQualifiedResultPath + "\" for result \"" + resultConfig.getDescription() + "\" was expected to be a directory, but it was a file");
     error.setPossibleCause("Custom build result configuration is not valid. Adjust result configuration.");
     error.setBuildName(buildRunConfig.getBuildName());
@@ -272,6 +293,7 @@ public abstract class AbstractResultHandler implements ResultHandler {
    * Publishes this result if automatic publishing result group is defined.
    */
   protected final void publish(final StepResult stepResult) {
+
     final Integer autopublishGroupID = resultConfig.getAutopublishGroupID();
     if (autopublishGroupID != null) {
       ResultGroupManager.getInstance().publish(autopublishGroupID, stepResult);
@@ -299,6 +321,7 @@ public abstract class AbstractResultHandler implements ResultHandler {
 
 
   public final String toString() {
+
     return "AbstractResultHandler{" +
             "cm=" + cm +
             ", errorManager=" + errorManager +

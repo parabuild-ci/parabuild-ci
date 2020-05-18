@@ -61,7 +61,7 @@ public final class ResultRetentionHandler extends AbstractArchiveRetentionHandle
   }
 
 
-  public final void deleteExpired() throws IllegalStateException {
+  public final void deleteExpired() {
 
     //noinspection ControlFlowStatementWithoutBraces
     if (LOG.isDebugEnabled()) LOG.debug("Deleting expired, cutOffTimeMillis: " + getCutOffTimeMillis()); // NOPMD

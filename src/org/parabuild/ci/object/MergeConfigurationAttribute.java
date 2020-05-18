@@ -23,16 +23,22 @@ import java.io.Serializable;
  */
 public final class MergeConfigurationAttribute implements Serializable, ObjectConstants {
 
-  private static final long serialVersionUID = -3080999678374310690L; // NOPMD
-
   public static final String NAG_DAY_SENT_LAST_TIME = "nag.day.sent.last.time";
+
   public static final String SOURCE_BUILD_CONFIGURATION_ID_CHECKED_LAST_TIME = "source.build.configuration.id.checked.last.time";
+
   public static final String SOURCE_BUILD_RUN_ID_CHECKED_LAST_TIME = "source.build.run.id.checked.last.time";
 
+  private static final long serialVersionUID = -3080999678374310690L; // NOPMD
+
   private int mergeConfigurationID = MergeConfiguration.UNSAVED_ID;
+
   private int ID = UNSAVED_ID;
+
   private String name;
+
   private String value;
+
   private long timeStamp = 1;
 
 
@@ -40,16 +46,18 @@ public final class MergeConfigurationAttribute implements Serializable, ObjectCo
    * Default constructor
    */
   public MergeConfigurationAttribute() {
+
   }
 
 
   /**
    * Constructor
    *
-   * @param name of the attribute
+   * @param name  of the attribute
    * @param value of the attribute
    */
   public MergeConfigurationAttribute(final int mergeConfigurationID, final String name, final String value) {
+
     this.mergeConfigurationID = mergeConfigurationID;
     this.value = value;
     this.name = name;
@@ -59,10 +67,11 @@ public final class MergeConfigurationAttribute implements Serializable, ObjectCo
   /**
    * Constructor
    *
-   * @param name of the attribute
+   * @param name     of the attribute
    * @param intValue int of the attribute
    */
   public MergeConfigurationAttribute(final int stepRunID, final String name, final int intValue) {
+
     this(stepRunID, name, Integer.toString(intValue));
   }
 
@@ -70,10 +79,11 @@ public final class MergeConfigurationAttribute implements Serializable, ObjectCo
   /**
    * Constructor
    *
-   * @param name of the attribute
+   * @param name      of the attribute
    * @param longValue int of the attribute
    */
   public MergeConfigurationAttribute(final int stepRunID, final String name, final long longValue) {
+
     this(stepRunID, name, Long.toString(longValue));
   }
 
@@ -82,16 +92,17 @@ public final class MergeConfigurationAttribute implements Serializable, ObjectCo
    * Returns build ID
    *
    * @return String
-   *
    * @hibernate.property column="MERGE_CONFIGURATION_ID" unique="false"
    * null="false"
    */
   public int getMergeConfigurationID() {
+
     return mergeConfigurationID;
   }
 
 
   public void setMergeConfigurationID(final int mergeConfigurationID) {
+
     this.mergeConfigurationID = mergeConfigurationID;
   }
 
@@ -100,16 +111,17 @@ public final class MergeConfigurationAttribute implements Serializable, ObjectCo
    * The getter method for this property ID
    *
    * @return int
-   *
    * @hibernate.id generator-class="identity" column="ID"
    * unsaved-value="-1"
    */
   public int getID() {
+
     return ID;
   }
 
 
   public void setID(final int ID) {
+
     this.ID = ID;
   }
 
@@ -118,16 +130,17 @@ public final class MergeConfigurationAttribute implements Serializable, ObjectCo
    * Returns property name
    *
    * @return String
-   *
    * @hibernate.property column="NAME" unique="true"
    * null="false"
    */
   public String getName() {
+
     return name;
   }
 
 
   public void setName(final String name) {
+
     this.name = name;
   }
 
@@ -136,21 +149,23 @@ public final class MergeConfigurationAttribute implements Serializable, ObjectCo
    * Returns property value
    *
    * @return String
-   *
    * @hibernate.property column="VALUE" unique="true"
    * null="false"
    */
   public String getValue() {
+
     return value;
   }
 
 
   public void setValue(final String value) {
+
     this.value = value;
   }
 
 
   public void setValue(final int intValue) {
+
     this.value = Integer.toString(intValue);
   }
 
@@ -159,8 +174,10 @@ public final class MergeConfigurationAttribute implements Serializable, ObjectCo
    * Returns property value as int
    *
    * @return int property value
+   * @throws NumberFormatException if there was an error converting {@link #value} to integer.
    */
-  public int getValueAsInt() throws NumberFormatException {
+  public int getValueAsInt() {
+
     return Integer.parseInt(value);
   }
 
@@ -169,8 +186,10 @@ public final class MergeConfigurationAttribute implements Serializable, ObjectCo
    * Returns property value as int
    *
    * @return int property value
+   * @throws NumberFormatException if there was an error converting {@link #value} to long.
    */
-  public long getValueAsLong() throws NumberFormatException {
+  public long getValueAsLong() {
+
     return Long.parseLong(value);
   }
 
@@ -179,37 +198,39 @@ public final class MergeConfigurationAttribute implements Serializable, ObjectCo
    * Returns timestamp
    *
    * @return long
-   *
    * @hibernate.version column="TIMESTAMP"  null="false"
    */
   public long getTimeStamp() {
+
     return timeStamp;
   }
 
 
   public void setTimeStamp(final long timeStamp) {
+
     this.timeStamp = timeStamp;
   }
 
 
   /**
    * @return integer value
-   *
-   * @exception NumberFormatException if the string does not
-   *  contain a parsable integer.
+   * @throws NumberFormatException if the string does not
+   *                               contain a parsable integer.
    */
   public int getIntValue() {
+
     return Integer.parseInt(value);
   }
 
 
   public String toString() {
+
     return "MergeConfigurationAttribute{" +
-      "mergeConfigurationID=" + mergeConfigurationID +
-      ", ID=" + ID +
-      ", name='" + name + '\'' +
-      ", value='" + value + '\'' +
-      ", timeStamp=" + timeStamp +
-      '}';
+            "mergeConfigurationID=" + mergeConfigurationID +
+            ", ID=" + ID +
+            ", name='" + name + '\'' +
+            ", value='" + value + '\'' +
+            ", timeStamp=" + timeStamp +
+            '}';
   }
 }

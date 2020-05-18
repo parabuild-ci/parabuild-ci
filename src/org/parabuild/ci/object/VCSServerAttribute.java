@@ -27,9 +27,13 @@ public final class VCSServerAttribute implements Serializable, ObjectConstants {
   private static final long serialVersionUID = 3955416338317148974L;
 
   private Integer serverId;
+
   private Integer id;
+
   private String name;
+
   private String value;
+
   private long timeStamp = 1;
 
 
@@ -37,6 +41,7 @@ public final class VCSServerAttribute implements Serializable, ObjectConstants {
    * Default constructor. Required by hibernate.
    */
   public VCSServerAttribute() {
+
   }
 
 
@@ -44,6 +49,7 @@ public final class VCSServerAttribute implements Serializable, ObjectConstants {
    * Constructor.
    */
   public VCSServerAttribute(final int serverId, final String name, final String value) {
+
     this.serverId = serverId;
     this.name = name;
     this.value = value;
@@ -54,6 +60,7 @@ public final class VCSServerAttribute implements Serializable, ObjectConstants {
    * Constructor.
    */
   public VCSServerAttribute(final int serverId, final String name, final int value) {
+
     this(serverId, name, Integer.toString(value));
   }
 
@@ -65,11 +72,13 @@ public final class VCSServerAttribute implements Serializable, ObjectConstants {
    * @hibernate.property column="VCS_SERVER_ID" unique="false" null="false"
    */
   public int getServerId() {
+
     return serverId;
   }
 
 
   public void setServerId(final int serverId) {
+
     this.serverId = serverId;
   }
 
@@ -83,11 +92,13 @@ public final class VCSServerAttribute implements Serializable, ObjectConstants {
    * unsaved-value="-1"
    */
   public Integer getId() {
+
     return id;
   }
 
 
   public void setId(final Integer id) {
+
     this.id = id;
   }
 
@@ -99,11 +110,13 @@ public final class VCSServerAttribute implements Serializable, ObjectConstants {
    * @hibernate.property column="NAME" unique="true" null="false"
    */
   public String getName() {
+
     return name;
   }
 
 
   public void setName(final String name) {
+
     this.name = name;
   }
 
@@ -115,16 +128,19 @@ public final class VCSServerAttribute implements Serializable, ObjectConstants {
    * @hibernate.property column="VALUE" unique="true" null="false"
    */
   public String getValue() {
+
     return value;
   }
 
 
   public void setValue(final String value) {
+
     this.value = value;
   }
 
 
   public void setValue(final int value) {
+
     this.value = Integer.toString(value);
   }
 
@@ -133,8 +149,10 @@ public final class VCSServerAttribute implements Serializable, ObjectConstants {
    * Returns property value as int
    *
    * @return int property value
+   * @throws NumberFormatException if there was an error converting {@link #value} to integer.
    */
-  public int getValueAsInteger() throws NumberFormatException {
+  public int getValueAsInteger() {
+
     return Integer.parseInt(value);
   }
 
@@ -146,17 +164,20 @@ public final class VCSServerAttribute implements Serializable, ObjectConstants {
    * @hibernate.version column="TIMESTAMP"  null="false"
    */
   public long getTimeStamp() {
+
     return timeStamp;
   }
 
 
   public void setTimeStamp(final long timeStamp) {
+
     this.timeStamp = timeStamp;
   }
 
 
   @Override
   public String toString() {
+
     return "VCSServerAttribute{" +
             "serverId=" + serverId +
             ", id=" + id +

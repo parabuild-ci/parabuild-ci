@@ -23,7 +23,7 @@ public interface ResultHandler {
    * Finds results, moves them to archive and adjusts database.
    * This method should not throw any exceptions.
    */
-  void process() throws IllegalArgumentException;
+  void process();
 
 
   /**

@@ -32,12 +32,19 @@ public final class MarkerMatcherList implements MarkerMatcher {
 
   private static final Log LOG = LogFactory.getLog(HTMLDirLogHandler.class); // NOPMD
 
-  private final List matcherList = new ArrayList(1);
   private static final String PREFIX = "^";
+
   private static final String SUFFIX = "$";
 
+  private final List matcherList = new ArrayList(1);
 
-  public MarkerMatcherList(final List markers) throws PatternSyntaxException {
+
+  /**
+   * @param markers
+   * @throws PatternSyntaxException if markers contain a regex that cannot be parsed.
+   */
+  public MarkerMatcherList(final List markers) {
+
     for (int i = 0; i < markers.size(); i++) {
       final String marker = (String) markers.get(i);
       if (isRegex(marker)) {
@@ -50,16 +57,19 @@ public final class MarkerMatcherList implements MarkerMatcher {
 
 
   private static String stripRegex(final String marker) {
+
     return marker.substring(1, marker.length() - 1);
   }
 
 
   private static boolean isRegex(final String marker) {
+
     return marker.startsWith(PREFIX) && marker.endsWith(SUFFIX);
   }
 
 
   public boolean match(final String line) {
+
     for (int i = 0; i < matcherList.size(); i++) {
       final MarkerMatcher matcher = (MarkerMatcher) matcherList.get(i);
       if (matcher.match(line)) {
@@ -70,22 +80,32 @@ public final class MarkerMatcherList implements MarkerMatcher {
   }
 
 
+  public String toString() {
+
+    return "MarkerMatcherList{" +
+            "matcherList=" + matcherList +
+            '}';
+  }
+
   private static final class SimpleMatcher implements MarkerMatcher {
 
     private final String stringToMatch;
 
 
     SimpleMatcher(final String stringToMatch) {
+
       this.stringToMatch = stringToMatch;
     }
 
 
     public boolean match(final String string) {
+
       return string.contains(stringToMatch);
     }
 
 
     public String toString() {
+
       return "SimpleMatcher{" +
               "stringToMatch='" + stringToMatch + '\'' +
               '}';
@@ -97,27 +117,27 @@ public final class MarkerMatcherList implements MarkerMatcher {
     private final Pattern pattern;
 
 
-    RegexMatcher(final String regex) throws PatternSyntaxException {
+    /**
+     * @param regex
+     * @throws PatternSyntaxException if regex cannot be parsed.
+     */
+    RegexMatcher(final String regex) {
+
       this.pattern = Pattern.compile(regex);
     }
 
 
     public boolean match(final String line) {
+
       return pattern.matcher(line).matches();
     }
 
 
     public String toString() {
+
       return "RegexMatcher{" +
               "pattern=" + pattern +
               '}';
     }
-  }
-
-
-  public String toString() {
-    return "MarkerMatcherList{" +
-            "matcherList=" + matcherList +
-            '}';
   }
 }

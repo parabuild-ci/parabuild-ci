@@ -27,8 +27,10 @@ final class ListenPortConfig {
   /**
    * Retrieves HTTP listen port used by the app. It assumes there
    * is only one HTTP connector.
+   *
+   * @throws ConfigurationException if there was an error while getting Parabuild listener port
    */
-  public int getListenPort() throws ConfigurationException {
+  public int getListenPort() {
 
     try {
 

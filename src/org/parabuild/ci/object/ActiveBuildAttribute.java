@@ -24,10 +24,10 @@ import java.io.Serializable;
  */
 public final class ActiveBuildAttribute implements Serializable, ObjectConstants {
 
-  private static final long serialVersionUID = -6426274907331328221L; // NOPMD
-
   public static final String BUILD_NUMBER_SEQUENCE = "build.number.sequence";
+
   public static final String VERSION_COUNTER_SEQUENCE = "version.counter.sequence";
+
   public static final String SKIP_NEXT_SCHEDULED_BUILD = "skip.next.scheduled.build";
 
   /**
@@ -37,17 +37,27 @@ public final class ActiveBuildAttribute implements Serializable, ObjectConstants
 
   // statistics attributes
   public static final String STAT_PREFIX = "build.stat.";
+
   public static final String STAT_SUCC_BUILDS_TO_DATE = STAT_PREFIX + "successful.builds.to.date";
+
   public static final String STAT_FAILED_BUILDS_TO_DATE = STAT_PREFIX + "failed.builds.to.date";
+
   public static final String STAT_CHANGE_LISTS_TO_DATE = STAT_PREFIX + "change.lists.to.date";
+
   public static final String STAT_ISSUES_TO_DATE = STAT_PREFIX + "issues.to.date";
+
   public static final String STAT_AVERAGE_TIME_TO_FIX = "average.time.to.fix";
 
+  private static final long serialVersionUID = -6426274907331328221L; // NOPMD
 
   private int buildID = BuildConfig.UNSAVED_ID;
+
   private int propertyID = UNSAVED_ID;
+
   private String propertyName;
+
   private String propertyValue;
+
   private long propertyTimeStamp = 1;
 
 
@@ -55,6 +65,7 @@ public final class ActiveBuildAttribute implements Serializable, ObjectConstants
    * Default constructor. Required by hibernate.
    */
   public ActiveBuildAttribute() {
+
   }
 
 
@@ -65,6 +76,7 @@ public final class ActiveBuildAttribute implements Serializable, ObjectConstants
    * @param propertyName
    */
   public ActiveBuildAttribute(final int buildID, final String propertyName, final String propertyValue) {
+
     this.buildID = buildID;
     this.propertyName = propertyName;
     this.propertyValue = propertyValue;
@@ -78,6 +90,7 @@ public final class ActiveBuildAttribute implements Serializable, ObjectConstants
    * @param propertyName
    */
   public ActiveBuildAttribute(final int buildID, final String propertyName, final int propertyValue) {
+
     this(buildID, propertyName, Integer.toString(propertyValue));
   }
 
@@ -89,6 +102,7 @@ public final class ActiveBuildAttribute implements Serializable, ObjectConstants
    * @param propertyName
    */
   public ActiveBuildAttribute(final int buildID, final String propertyName, final long propertyValue) {
+
     this(buildID, propertyName, Long.toString(propertyValue));
   }
 
@@ -101,11 +115,13 @@ public final class ActiveBuildAttribute implements Serializable, ObjectConstants
    * null="false"
    */
   public int getBuildID() {
+
     return buildID;
   }
 
 
   public void setBuildID(final int buildID) {
+
     this.buildID = buildID;
   }
 
@@ -119,11 +135,13 @@ public final class ActiveBuildAttribute implements Serializable, ObjectConstants
    * unsaved-value="-1"
    */
   public int getPropertyID() {
+
     return propertyID;
   }
 
 
   public void setPropertyID(final int propertyID) {
+
     this.propertyID = propertyID;
   }
 
@@ -136,11 +154,13 @@ public final class ActiveBuildAttribute implements Serializable, ObjectConstants
    * null="false"
    */
   public String getPropertyName() {
+
     return propertyName;
   }
 
 
   public void setPropertyName(final String propertyName) {
+
     this.propertyName = propertyName;
   }
 
@@ -153,21 +173,25 @@ public final class ActiveBuildAttribute implements Serializable, ObjectConstants
    * null="false"
    */
   public String getPropertyValue() {
+
     return propertyValue;
   }
 
 
   public void setPropertyValue(final String propertyValue) {
+
     this.propertyValue = propertyValue;
   }
 
 
   public void setPropertyValue(final int propertyValue) {
+
     this.propertyValue = Integer.toString(propertyValue);
   }
 
 
   public void setPropertyValue(final long propertyValue) {
+
     this.propertyValue = Long.toString(propertyValue);
   }
 
@@ -176,8 +200,10 @@ public final class ActiveBuildAttribute implements Serializable, ObjectConstants
    * Returns property value as int
    *
    * @return int property value
+   * @throws NumberFormatException if the {@link #propertyValue} cannot be converted to an integer.
    */
-  public int getPropertyValueAsInteger() throws NumberFormatException {
+  public int getPropertyValueAsInteger() {
+
     return Integer.parseInt(propertyValue);
   }
 
@@ -189,16 +215,19 @@ public final class ActiveBuildAttribute implements Serializable, ObjectConstants
    * @hibernate.version column="TIMESTAMP"  null="false"
    */
   public long getPropertyTimeStamp() {
+
     return propertyTimeStamp;
   }
 
 
   public void setPropertyTimeStamp(final long propertyTimeStamp) {
+
     this.propertyTimeStamp = propertyTimeStamp;
   }
 
 
   public String toString() {
+
     return "BuildConfigAttribute [" +
             "buildID=" + buildID +
             ", propertyID=" + propertyID +

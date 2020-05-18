@@ -23,26 +23,42 @@ import java.io.Serializable;
  */
 public final class UserProperty implements Serializable, ObjectConstants {
 
-  private static final long serialVersionUID = -6426274907331328221L; // NOPMD
-
   public static final String AUTOCREATE_CREATE_BUILDER_FORAGENT = "autocreate.builder.for.agent";
+
   public static final String BUILD_STATUS_REFRESH_RATE = "refresh.rate";
+
   public static final String DASHBOARD_ROW_SIZE = "dashboard.row.size";
+
   public static final String DEFAULT_DISPLAY_GROUP = "default.display.group";
+
   public static final String FAILED_BUILD_COLOR = "red.color";
+
   public static final String IM_SEND_FAILURES = "im.send.failures";
+
   public static final String IM_SEND_SUCCESSES = "im.send.successes";
+
   public static final String IM_SEND_SYSTEM_ERRORS = "im.send.system.errs";
+
   public static final String MAX_RECENT_BUILDS = "max.recent.builds";
+
   public static final String REMEMBER_ME = "remember.me";
+
   public static final String SHOW_INACTIVE_BUILDS = "show.inactive.builds";
+
   public static final String SUCCESSFUL_BUILD_COLOR = "green.color";
+
   public static final String TAIL_WINDOW_SIZE = "tail.window.size";
 
+  private static final long serialVersionUID = -6426274907331328221L; // NOPMD
+
   private int userID = User.UNSAVED_ID;
+
   private int ID = UNSAVED_ID;
+
   private String name;
+
   private String value;
+
   private long timestamp = 1;
 
 
@@ -50,6 +66,7 @@ public final class UserProperty implements Serializable, ObjectConstants {
    * Default constructor. Required by hibernate.
    */
   public UserProperty() {
+
   }
 
 
@@ -60,6 +77,7 @@ public final class UserProperty implements Serializable, ObjectConstants {
    * @param name
    */
   public UserProperty(final int userID, final String name, final String value) {
+
     this.userID = userID;
     this.name = name;
     this.value = value;
@@ -70,16 +88,17 @@ public final class UserProperty implements Serializable, ObjectConstants {
    * Returns build ID
    *
    * @return String
-   *
    * @hibernate.property column="USER_ID" unique="false"
    * null="false"
    */
   public int getUserID() {
+
     return userID;
   }
 
 
   public void setUserID(final int userID) {
+
     this.userID = userID;
   }
 
@@ -89,16 +108,17 @@ public final class UserProperty implements Serializable, ObjectConstants {
    * generator-parameter-2="SEQUENCE_ID"
    *
    * @return int
-   *
    * @hibernate.id generator-class="identity" column="ID"
    * unsaved-value="-1"
    */
   public int getID() {
+
     return ID;
   }
 
 
   public void setID(final int ID) {
+
     this.ID = ID;
   }
 
@@ -107,16 +127,17 @@ public final class UserProperty implements Serializable, ObjectConstants {
    * Returns property name
    *
    * @return String
-   *
    * @hibernate.property column="NAME" unique="true"
    * null="false"
    */
   public String getName() {
+
     return name;
   }
 
 
   public void setName(final String name) {
+
     this.name = name;
   }
 
@@ -125,21 +146,23 @@ public final class UserProperty implements Serializable, ObjectConstants {
    * Returns property value
    *
    * @return String
-   *
    * @hibernate.property column="VALUE" unique="true"
    * null="false"
    */
   public String getValue() {
+
     return value;
   }
 
 
   public void setValue(final String value) {
+
     this.value = value;
   }
 
 
   public void setValue(final int propertyValue) {
+
     this.value = Integer.toString(propertyValue);
   }
 
@@ -148,8 +171,10 @@ public final class UserProperty implements Serializable, ObjectConstants {
    * Returns property value as int
    *
    * @return int property value
+   * @throws NumberFormatException if there was an error converting {@link #value} to integer.
    */
-  public int getValueAsInteger() throws NumberFormatException {
+  public int getValueAsInteger() {
+
     return Integer.parseInt(value);
   }
 
@@ -158,27 +183,29 @@ public final class UserProperty implements Serializable, ObjectConstants {
    * Returns timestamp
    *
    * @return long
-   *
    * @hibernate.version column="TIMESTAMP"  null="false"
    */
   public long getTimestamp() {
+
     return timestamp;
   }
 
 
   public void setTimestamp(final long timestamp) {
+
     this.timestamp = timestamp;
   }
 
 
   public String toString() {
+
     return "UserProperty{" +
-      "userID=" + userID +
-      ", ID=" + ID +
-      ", name='" + name + '\'' +
-      ", value='" + value + '\'' +
-      ", timestamp=" + timestamp +
-      '}';
+            "userID=" + userID +
+            ", ID=" + ID +
+            ", name='" + name + '\'' +
+            ", value='" + value + '\'' +
+            ", timestamp=" + timestamp +
+            '}';
   }
 }
 

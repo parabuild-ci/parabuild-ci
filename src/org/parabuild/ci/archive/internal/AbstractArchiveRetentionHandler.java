@@ -69,7 +69,7 @@ public abstract class AbstractArchiveRetentionHandler {
    *
    * @throws IllegalStateException if cut-off time is not set.
    */
-  public abstract void deleteExpired() throws IllegalStateException;
+  public abstract void deleteExpired();
 
 
   /**

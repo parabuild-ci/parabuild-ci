@@ -16,7 +16,6 @@ package org.parabuild.ci.build.log;
 import org.parabuild.ci.util.StringUtils;
 
 import java.util.List;
-import java.util.regex.PatternSyntaxException;
 
 /**
  * MarkerMatcherBuilder
@@ -27,7 +26,7 @@ import java.util.regex.PatternSyntaxException;
  */
 public final class MarkerMatcherBuilder {
 
-  public MarkerMatcher createMarkerMatcher(final String markers) throws PatternSyntaxException {
+  public MarkerMatcher createMarkerMatcher(final String markers) {
     final List markerList = StringUtils.multilineStringToList(markers);
     if (markerList.isEmpty()) {
       return new DummyMarkerMatcher();

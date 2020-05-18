@@ -142,7 +142,7 @@ public interface ArchiveManager {
    * @throws IllegalArgumentException if given log is
    * not a single-file log.
    */
-  InputStream getArchivedLogInputStream(StepLog stepLog) throws IllegalArgumentException, IOException;
+  InputStream getArchivedLogInputStream(StepLog stepLog) throws IOException;
 
 
   /**
@@ -156,7 +156,7 @@ public interface ArchiveManager {
    * @throws IllegalArgumentException if given log is
    * not a multifile log.
    */
-  InputStream getArchivedLogInputStream(StepLog stepLog, String inArchiveFileName) throws IllegalArgumentException, IOException;
+  InputStream getArchivedLogInputStream(StepLog stepLog, String inArchiveFileName) throws IOException;
 
 
   /**
@@ -191,7 +191,7 @@ public interface ArchiveManager {
    * @throws IllegalArgumentException if given log is
    * not a multifile log.
    */
-  InputStream getArchivedResultInputStream(StepResult stepResult, String inArchiveFileName) throws IllegalArgumentException, IOException;
+  InputStream getArchivedResultInputStream(StepResult stepResult, String inArchiveFileName) throws IOException;
 
 
   /**
@@ -218,7 +218,7 @@ public interface ArchiveManager {
    * @throws IllegalArgumentException if given log is
    * not a single-file log.
    */
-  InputStream getArchivedResultInputStream(StepResult stepResult) throws IllegalArgumentException, IOException;
+  InputStream getArchivedResultInputStream(StepResult stepResult) throws IOException;
 
 
   /**

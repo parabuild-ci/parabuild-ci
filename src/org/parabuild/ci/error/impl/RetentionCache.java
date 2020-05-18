@@ -27,17 +27,17 @@ interface RetentionCache {
   /**
    * Returns all elements.
    */
-  void removeAll() throws IllegalStateException, IOException;
+  void removeAll() throws IOException;
 
 
   /**
    * Gets element for the key.
    */
-  Element get(Serializable key) throws IllegalStateException, CacheException;
+  Element get(Serializable key) throws CacheException;
 
 
   /**
    * Puts an element to cache.
    */
-  void put(Element elem) throws IllegalArgumentException, IllegalStateException;
+  void put(Element elem);
 }

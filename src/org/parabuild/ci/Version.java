@@ -25,24 +25,33 @@ import java.util.Properties;
  */
 public final class Version implements Serializable {
 
-  private static final long serialVersionUID = -2274590107946127380L; // NOPMD
-
   public static final String STR_PRODUCT_NAME = "Parabuild";
 
+  private static final long serialVersionUID = -2274590107946127380L; // NOPMD
+
   private static final String META_INF_PARABUILD_VERSION_PROPERTIES = "META-INF/parabuild-version.properties";
+
   private static final String PARABUILD_RELEASE_VERSION = "parabuild.release.version";
+
   private static final String PARABUILD_RELEASE_CHANGE = "parabuild.release.change";
+
   private static final String PARABUILD_RELEASE_BUILD = "parabuild.release.build";
+
   private static final String PARABUILD_RELEASE_DATE = "parabuild.release.date";
+
   private static final String STR_SPACE = " ";
+
   private static final String SNAPSHOT = "SNAPSHOT";
 
- /**
+
+  /**
    * @return product name
    */
   public static String productName() {
+
     return STR_PRODUCT_NAME;
   }
+
 
   /**
    * @return product version
@@ -81,6 +90,7 @@ public final class Version implements Serializable {
 
 
   public static String versionToString(final boolean fullVersion) {
+
     final StringBuilder result = new StringBuilder(30);
 
     // static part
@@ -114,7 +124,7 @@ public final class Version implements Serializable {
   }
 
 
-  private static Properties readParabuildVersionProperties() throws IllegalStateException {
+  private static Properties readParabuildVersionProperties() {
 
     InputStream inputStream = null;
     try {
