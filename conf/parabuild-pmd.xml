@@ -32,6 +32,7 @@
     <exclude name="CyclomaticComplexity"/>
     <exclude name="ExcessiveImports"/>
     <exclude name="NPathComplexity"/>
+    <exclude name="TooManyMethods"/>
     <exclude name="TooManyFields"/>
     <exclude name="DataClass"/>
     <exclude name="LawOfDemeter"/>
