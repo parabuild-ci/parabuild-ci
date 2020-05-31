@@ -167,7 +167,7 @@ public final class AgentManager {
     synchronized (this) { // To protect builderIDToLastReturnedAgent
 
       // Prepare key
-      final Integer builderIDObject = new Integer(buildConfig.getBuilderID());
+      final Integer builderIDObject = Integer.valueOf(buildConfig.getBuilderID());
 
       // Try to find next if enabled
       AgentHost result = null;

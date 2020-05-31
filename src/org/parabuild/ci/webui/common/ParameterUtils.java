@@ -114,7 +114,7 @@ public final class ParameterUtils {
       return defaultValue;
     }
     try {
-      return new Integer(Integer.parseInt(paramValue));
+      return Integer.valueOf(Integer.parseInt(paramValue));
     } catch (final NumberFormatException e) {
       return defaultValue;
     }
@@ -122,7 +122,7 @@ public final class ParameterUtils {
 
 
   public static BuildRun getBuildRunFromParameters(final Parameters params) {
-    final int runID = getIntegerParameter(params, Pages.PARAM_BUILD_RUN_ID, new Integer(BuildRun.UNSAVED_ID));
+    final int runID = getIntegerParameter(params, Pages.PARAM_BUILD_RUN_ID, Integer.valueOf(BuildRun.UNSAVED_ID));
     if (runID == BuildRun.UNSAVED_ID) {
       return null;
     }
@@ -134,7 +134,7 @@ public final class ParameterUtils {
    * Returns -1 if parameter not found
    */
   public static int getLogIDFromParameters(final Parameters params) {
-    return getIntegerParameter(params, Pages.PARAM_LOG_ID, new Integer(-1));
+    return getIntegerParameter(params, Pages.PARAM_LOG_ID, Integer.valueOf(-1));
   }
 
 
@@ -142,7 +142,7 @@ public final class ParameterUtils {
    * Returns -1 if parameter not found
    */
   public static int getFileIDFromParameters(final Parameters params) {
-    return getIntegerParameter(params, Pages.PARAM_FILE_ID, new Integer(-1));
+    return getIntegerParameter(params, Pages.PARAM_FILE_ID, Integer.valueOf(-1));
   }
 
 
@@ -226,7 +226,7 @@ public final class ParameterUtils {
 
 
   public static ActiveMergeConfiguration getActiveMergeConfigurationFromParameters(final Parameters params) {
-    final int id = getIntegerParameter(params, Pages.PARAM_MERGE_ID, new Integer(MergeConfiguration.UNSAVED_ID));
+    final int id = getIntegerParameter(params, Pages.PARAM_MERGE_ID, Integer.valueOf(MergeConfiguration.UNSAVED_ID));
     if (id == MergeConfiguration.UNSAVED_ID) {
       return null;
     }

@@ -242,7 +242,7 @@ final class P4IntegratedSynchronizer {
 
 
                 private Integer makeKey(final String path, final int rev) {
-                  return new Integer(29 * (path != null ? path.hashCode() : 0) + rev);
+                  return Integer.valueOf(29 * (path != null ? path.hashCode() : 0) + rev);
                 }
 
               });
@@ -299,7 +299,7 @@ final class P4IntegratedSynchronizer {
 
                 // delete queue header if there are no merges in it
                 if (count == 0) {
-                  session.delete(session.get(Merge.class, new Integer(mergeID)));
+                  session.delete(session.get(Merge.class, Integer.valueOf(mergeID)));
                 }
               }
 

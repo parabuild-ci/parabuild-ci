@@ -25,5 +25,5 @@ public interface ObjectConstants {
   String OPTION_CHECKED = "checked";
   String RADIO_SELECTED = "selected";
   String RADIO_UNSELECTED = "unselected";
-  Integer UNSAVED_INTEGER_ID = new Integer(UNSAVED_ID);
+  Integer UNSAVED_INTEGER_ID = Integer.valueOf(UNSAVED_ID);
 }

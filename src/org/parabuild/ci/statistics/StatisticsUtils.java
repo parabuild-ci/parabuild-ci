@@ -120,8 +120,8 @@ public final class StatisticsUtils {
       final Date date = (Date) entry.getKey();
       final BuildStatistics bst = (BuildStatistics) entry.getValue();
       final String dateAsString = StringUtils.formatDate(date, dateFormat);
-      dataset.addValue(new Integer(bst.getFailedBuilds()), "Failed builds", dateAsString);
-      dataset.addValue(new Integer(bst.getSuccessfulBuilds()), "Successful builds", dateAsString);
+      dataset.addValue(Integer.valueOf(bst.getFailedBuilds()), "Failed builds", dateAsString);
+      dataset.addValue(Integer.valueOf(bst.getSuccessfulBuilds()), "Successful builds", dateAsString);
     }
 
     // create the chart object
@@ -174,9 +174,9 @@ public final class StatisticsUtils {
       final TestStatistics tst = (TestStatistics) entry.getValue();
       if (tst.getTotalTests() == 0) continue; // skip no-test values
       final String dateAsString = StringUtils.formatDate(date, dateFormat);
-      dataset.addValue(new Integer(tst.getAverageFailedTests()), CAPTION_FAILED_TESTS, dateAsString);
-      dataset.addValue(new Integer(tst.getAverageErrorTests()), CAPTION_ERROR_TESTS, dateAsString);
-      dataset.addValue(new Integer(tst.getAverageSuccessfulTests()), CAPTION_SUCCESSFUL_TESTS, dateAsString);
+      dataset.addValue(Integer.valueOf(tst.getAverageFailedTests()), CAPTION_FAILED_TESTS, dateAsString);
+      dataset.addValue(Integer.valueOf(tst.getAverageErrorTests()), CAPTION_ERROR_TESTS, dateAsString);
+      dataset.addValue(Integer.valueOf(tst.getAverageSuccessfulTests()), CAPTION_SUCCESSFUL_TESTS, dateAsString);
     }
 
     // create the chart object
@@ -200,9 +200,9 @@ public final class StatisticsUtils {
       final Map.Entry entry = (Map.Entry) iter.next();
       final String buildNumberAsString = entry.getKey().toString();
       final TestStatistics tst = (TestStatistics) entry.getValue();
-      final Integer failed = new Integer(tst.getFailedTests());
-      final Integer error = new Integer(tst.getErrorTests());
-      final Integer successful = new Integer(tst.getSuccessfulTests());
+      final Integer failed = Integer.valueOf(tst.getFailedTests());
+      final Integer error = Integer.valueOf(tst.getErrorTests());
+      final Integer successful = Integer.valueOf(tst.getSuccessfulTests());
       dataset.addValue(failed, CAPTION_FAILED_TESTS, buildNumberAsString);
       dataset.addValue(error, CAPTION_ERROR_TESTS, buildNumberAsString);
       dataset.addValue(successful, CAPTION_SUCCESSFUL_TESTS, buildNumberAsString);
@@ -267,7 +267,7 @@ public final class StatisticsUtils {
       final Date date = (Date) entry.getKey();
       final BuildStatistics bst = (BuildStatistics) entry.getValue();
       final String dateAsString = StringUtils.formatDate(date, dateFormat);
-      dataset.addValue(new Integer(bst.getChangeLists()), "Change lists", dateAsString);
+      dataset.addValue(Integer.valueOf(bst.getChangeLists()), "Change lists", dateAsString);
     }
 
     // create the chart object
@@ -308,7 +308,7 @@ public final class StatisticsUtils {
       final Map.Entry entry = (Map.Entry) iter.next();
       final Integer hour = (Integer) entry.getKey();
       final BuildStatistics bst = (BuildStatistics) entry.getValue();
-      dataset.addValue(new Integer(bst.getFailedBuilds()), "Failed builds", hour);
+      dataset.addValue(Integer.valueOf(bst.getFailedBuilds()), "Failed builds", hour);
     }
 
     // create the chart object
@@ -437,7 +437,7 @@ public final class StatisticsUtils {
       final Map.Entry entry = (Map.Entry) iter.next();
       final Integer dayOfWeek = (Integer) entry.getKey();
       final BuildStatistics bst = (BuildStatistics) entry.getValue();
-      dataset.addValue(new Integer(bst.getFailedBuilds()), "Failed builds", new ComparableDayOfWeek(dayOfWeek));
+      dataset.addValue(Integer.valueOf(bst.getFailedBuilds()), "Failed builds", new ComparableDayOfWeek(dayOfWeek));
     }
 
     // create the chart object

@@ -55,6 +55,6 @@ public class AutopublishDropdown extends CodeNameDropDown {
 
   public Integer getGroupID() {
     final int code = getCode();
-    return code == CODE_NOT_SET ? null : new Integer(code);
+    return code == CODE_NOT_SET ? null : Integer.valueOf(code);
   }
 }

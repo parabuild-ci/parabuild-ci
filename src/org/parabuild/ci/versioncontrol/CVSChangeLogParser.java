@@ -124,7 +124,7 @@ final class CVSChangeLogParser {
       // process RCS file name for excludes
       final String rcsFileName = line.substring(CVS_RCSFILE_LINE_LENGTH);
       if (processExcludes) {
-        if (missingRevisionsHashes.get(new Integer(rcsFileName.hashCode())) != null) {
+        if (missingRevisionsHashes.get(Integer.valueOf(rcsFileName.hashCode())) != null) {
           // should be excluded, read to the next entry.
           line = IoUtils.readToNotPast(reader, CVS_RCSFILE_LINE, null);
           // and go to the begining of the cycle

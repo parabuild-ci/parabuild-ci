@@ -139,8 +139,8 @@ public final class LinuxProcessParser implements ProcessParser {
         if (ProcessUtils.PROCESS_DEBUG_ENABLED) log.debug("Retrieved:" + p.toString());
         ret.add(p);
 
-        final Integer i_pid = new Integer(pid);
-        final Integer i_ppid = new Integer(ppid);
+        final Integer i_pid = Integer.valueOf(pid);
+        final Integer i_ppid = Integer.valueOf(ppid);
 
         processes.put(i_pid, p);
 
@@ -180,7 +180,7 @@ public final class LinuxProcessParser implements ProcessParser {
         final int pid = ProcessUtils.getPID(value);
         line = line.substring(pos + 1).trim();
 
-        ret.put(new Integer(pid), line);
+        ret.put(Integer.valueOf(pid), line);
       }
     } catch (final IOException ex) {
       final BuildException buildException = new BuildException("I/O error while reading data:", ex);

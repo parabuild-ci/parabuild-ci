@@ -110,7 +110,7 @@ public final class MergeManager {
 
     // start daemon if necessary
     final int mergeConfigurationID = mergeServiceConfiguration.getID();
-    if (!mergeDaemons.containsKey(new Integer(mergeConfigurationID))) {
+    if (!mergeDaemons.containsKey(Integer.valueOf(mergeConfigurationID))) {
       startMergeDaemon(getActiveMergeConfiguration(mergeConfigurationID));
     }
     return mergeServiceConfiguration;
@@ -120,7 +120,7 @@ public final class MergeManager {
   public MergeServiceConfiguration getActiveMerge(final int activeMergeID) {
     return (MergeServiceConfiguration)ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
-        return session.load(MergeServiceConfiguration.class, new Integer(activeMergeID));
+        return session.load(MergeServiceConfiguration.class, Integer.valueOf(activeMergeID));
       }
     });
   }
@@ -129,7 +129,7 @@ public final class MergeManager {
   public ActiveMergeConfiguration getActiveMergeConfiguration(final int id) {
     return (ActiveMergeConfiguration)ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
-        return session.load(ActiveMergeConfiguration.class, new Integer(id));
+        return session.load(ActiveMergeConfiguration.class, Integer.valueOf(id));
       }
     });
   }
@@ -168,7 +168,7 @@ public final class MergeManager {
    * @return Returns MergeDaemon or null if not found.
    */
   private MergeDaemon getMergeDaemon(final int id) {
-    return (MergeDaemon)mergeDaemons.get(new Integer(id));
+    return (MergeDaemon)mergeDaemons.get(Integer.valueOf(id));
   }
 
 
@@ -209,7 +209,7 @@ public final class MergeManager {
     stopMerge(id);
 
     // remove the merge from the list of daemons
-    mergeDaemons.remove(new Integer(id));
+    mergeDaemons.remove(Integer.valueOf(id));
   }
 
 
@@ -253,7 +253,7 @@ public final class MergeManager {
    * @return created {@link MergeDaemon}
    */
   private void startMergeDaemon(final ActiveMergeConfiguration configuration) {
-    final Integer configurationID = new Integer(configuration.getID());
+    final Integer configurationID = Integer.valueOf(configuration.getID());
     if (mergeDaemons.containsKey(configurationID)) {
       // issue a warning
       notifyMergeDaemonAlreadyStarted(configuration);
@@ -509,7 +509,7 @@ public final class MergeManager {
   public void resetMerge(final int activeMergeConfigurationID) throws IOException {
     ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
-        session.delete("from BranchMergeConfiguration bmc where bmc.activeMergeID = ?", new Integer(activeMergeConfigurationID), Hibernate.INTEGER);
+        session.delete("from BranchMergeConfiguration bmc where bmc.activeMergeID = ?", Integer.valueOf(activeMergeConfigurationID), Hibernate.INTEGER);
         return null;
       }
     });

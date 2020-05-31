@@ -48,7 +48,7 @@ public final class BuildNameLinkFlow extends Flow {
     lnkBuildName.setParameters(params);
     if (buildState.isParallel() && leaderIDs != null && !leaderIDs.isEmpty()) {
       final ConfigurationManager cm = ConfigurationManager.getInstance();
-      final Integer leaderBuildID = new Integer(cm.getSourceControlSettingValue(buildState.getActiveBuildID(), VersionControlSystem.REFERENCE_BUILD_ID, BuildConfig.UNSAVED_ID));
+      final Integer leaderBuildID = Integer.valueOf(cm.getSourceControlSettingValue(buildState.getActiveBuildID(), VersionControlSystem.REFERENCE_BUILD_ID, BuildConfig.UNSAVED_ID));
       if (leaderIDs.contains(leaderBuildID)) {
         add(new Label("&nbsp;&nbsp;&nbsp;")).add(lnkBuildName);
       } else {

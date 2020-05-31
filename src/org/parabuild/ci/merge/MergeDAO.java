@@ -147,7 +147,7 @@ public class MergeDAO {
     return (Integer) ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         session.saveOrUpdateCopy(branchChangeList);
-        return new Integer(branchChangeList.getID());
+        return Integer.valueOf(branchChangeList.getID());
       }
     });
   }
@@ -320,7 +320,7 @@ public class MergeDAO {
   public Integer getMergeConfigurationAttributeValue(final int mergeID, final String name, final Integer defaultValue) {
     final MergeConfigurationAttribute attribute = getMergeConfigurationAttribute(mergeID, name);
     if (attribute == null) return defaultValue;
-    return new Integer(attribute.getValueAsInt());
+    return Integer.valueOf(attribute.getValueAsInt());
   }
 
 
@@ -354,7 +354,7 @@ public class MergeDAO {
   public void deleteMergeQueueMember(final int id) {
     ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
-        session.delete(" from MergeChangeList where ID = ? ", new Integer(id), Hibernate.INTEGER);
+        session.delete(" from MergeChangeList where ID = ? ", Integer.valueOf(id), Hibernate.INTEGER);
         return null;
       }
     });
@@ -482,7 +482,7 @@ public class MergeDAO {
   public MergeConfiguration getMergeConfiguration(final int id) {
     return (MergeConfiguration)ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
-        return session.load(MergeConfiguration.class, new Integer(id));
+        return session.load(MergeConfiguration.class, Integer.valueOf(id));
       }
     });
   }

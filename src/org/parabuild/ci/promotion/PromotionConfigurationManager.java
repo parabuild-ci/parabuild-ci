@@ -83,7 +83,7 @@ public final class PromotionConfigurationManager {
   public void removePolicy(final int id) {
     ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
-        session.delete("from PromotionPolicy where ID = ?", new Integer(id), Hibernate.INTEGER);
+        session.delete("from PromotionPolicy where ID = ?", Integer.valueOf(id), Hibernate.INTEGER);
         return null;
       }
     });
@@ -114,7 +114,7 @@ public final class PromotionConfigurationManager {
   public void removePolicyStep(final int id) {
     ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
-        session.delete("from PromotionPolicyStep where ID = ?", new Integer(id), Hibernate.INTEGER);
+        session.delete("from PromotionPolicyStep where ID = ?", Integer.valueOf(id), Hibernate.INTEGER);
         return null;
       }
     });

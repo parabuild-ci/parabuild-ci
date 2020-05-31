@@ -165,7 +165,7 @@ final class WindowsProcessManager implements ProcessManager {
     for (int i = 0, n = ret.size(); i < n; i++) {
       final OSProcess p = (OSProcess) ret.get(i);
       final int pid = p.getPID();
-      final Integer iPid = new Integer(pid);
+      final Integer iPid = Integer.valueOf(pid);
       final Integer ppid = (Integer) pids.get(iPid);
       if (ppid != null) {
         p.setPPID(ppid);
@@ -235,7 +235,7 @@ final class WindowsProcessManager implements ProcessManager {
 
     // collect all children processes
     final List childrens = new ArrayList(11);
-    ProcessUtils.getChildren(new Integer(pid), tree, childrens);
+    ProcessUtils.getChildren(Integer.valueOf(pid), tree, childrens);
 
     return kill(childrens);
   }
@@ -352,8 +352,8 @@ final class WindowsProcessManager implements ProcessManager {
         }
         final String s_pid = st.nextToken();
         final String s_ppid = st.nextToken();
-        final Integer pid = new Integer(ProcessUtils.getPID(s_pid));
-        final Integer ppid = new Integer(ProcessUtils.getPID(s_ppid));
+        final Integer pid = Integer.valueOf(ProcessUtils.getPID(s_pid));
+        final Integer ppid = Integer.valueOf(ProcessUtils.getPID(s_ppid));
         ret.put(pid, ppid);
         if (ProcessUtils.PROCESS_DEBUG_ENABLED) log.debug("Tree retrieved:" + ppid + '/' + pid);
       }
@@ -389,8 +389,8 @@ final class WindowsProcessManager implements ProcessManager {
         }
         final String s_pid = st.nextToken();
         final String s_ppid = st.nextToken();
-        final Integer pid = new Integer(ProcessUtils.getPID(s_pid));
-        final Integer ppid = new Integer(ProcessUtils.getPID(s_ppid));
+        final Integer pid = Integer.valueOf(ProcessUtils.getPID(s_pid));
+        final Integer ppid = Integer.valueOf(ProcessUtils.getPID(s_ppid));
         // retrieve list of alread known childrens
         List l = (List) ret.get(ppid);
         if (l == null) {
@@ -524,7 +524,7 @@ final class WindowsProcessManager implements ProcessManager {
         }
         st.nextToken();
         final String s_pid = st.nextToken();
-        final Integer pid = new Integer(ProcessUtils.getPID(s_pid));
+        final Integer pid = Integer.valueOf(ProcessUtils.getPID(s_pid));
         ret.add(pid);
       }
     } catch (final IOException ex) {

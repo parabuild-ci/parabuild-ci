@@ -165,7 +165,7 @@ public final class ProcessUtils {
     ret.add(p);
     if (returnChildren && tree != null) {
       // Locate list of child processes PIDs in tree PPID->list of PIDs
-      final List children = (List)tree.get(new Integer(p.getPID()));
+      final List children = (List)tree.get(Integer.valueOf(p.getPID()));
       if (children == null) {
         return;
       }
@@ -217,7 +217,7 @@ public final class ProcessUtils {
     final List pids = new ArrayList(100);
     for (final Iterator iter = processes.iterator(); iter.hasNext();) {
       final OSProcess process = (OSProcess)iter.next();
-      pids.add(new Integer(process.getPID()));
+      pids.add(Integer.valueOf(process.getPID()));
     }
     return pids;
   }

@@ -95,7 +95,7 @@ final class VaultChangeLogParser {
       for (int i = 0, n = items.size(); i < n; i++) {
         final Vault.Item item = (Vault.Item)items.get(i);
         final int changeListNumber = item.getTxid();
-        final Integer key = new Integer(changeListNumber);
+        final Integer key = Integer.valueOf(changeListNumber);
         ChangeList changeList = (ChangeList)changeLists.get(key);
         if (changeList == null) {
           // new change list

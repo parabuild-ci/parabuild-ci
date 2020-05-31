@@ -13,9 +13,9 @@
  */
 package org.parabuild.ci.tray;
 
-import junit.framework.*;
-
-import com.gargoylesoftware.base.testing.*;
+import com.gargoylesoftware.base.testing.OrderedTestSuite;
+import junit.framework.TestCase;
+import junit.framework.TestSuite;
 
 /**
  * Tests StatusMapKey
@@ -24,7 +24,7 @@ public class SATestStatusMapKey extends TestCase {
 
 
   private static final String TEST_HOST_PORT = "localhost";
-  private static final Integer TEST_BUILD_ID = new Integer(1);
+  private static final Integer TEST_BUILD_ID = Integer.valueOf(1);
 
   private StatusMapKey statusMapKey = null;
 

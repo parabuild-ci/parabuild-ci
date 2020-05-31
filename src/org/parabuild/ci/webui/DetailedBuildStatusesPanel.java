@@ -123,7 +123,7 @@ public final class DetailedBuildStatusesPanel extends Panel {
         }
 
         // Check if leader is present
-        final Integer leaderBuildID = new Integer(cm.getSourceControlSettingValue(buildState.getActiveBuildID(), VersionControlSystem.REFERENCE_BUILD_ID, BuildConfig.UNSAVED_ID));
+        final Integer leaderBuildID = Integer.valueOf(cm.getSourceControlSettingValue(buildState.getActiveBuildID(), VersionControlSystem.REFERENCE_BUILD_ID, BuildConfig.UNSAVED_ID));
         if (leaderBuildIDs.contains(leaderBuildID)) {
           giLeftNav.add(marker).add(makeDependentBuildOffsetter(buildState, selectedBuildID)).add(lnkBuildName);
         } else {

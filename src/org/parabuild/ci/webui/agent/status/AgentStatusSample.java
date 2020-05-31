@@ -37,7 +37,7 @@ final class AgentStatusSample {
 
   AgentStatusSample(final int busyCounter, final byte activity, final String remoteVersion) {
     this.remoteVersion = remoteVersion;
-    this.busyCounter = new Integer(busyCounter);
+    this.busyCounter = Integer.valueOf(busyCounter);
     this.activity = activity;
   }
 

@@ -1271,7 +1271,7 @@ public final class ParabuildSoapBindingImpl implements Parabuild {
       sourceControlSetting.setPropertyTimeStamp(versionControlSetting.getPropertyTimeStamp());
       sourceControlSetting.setPropertyValue(versionControlSetting.getPropertyValue());
       cm.saveObject(sourceControlSetting);
-      buildIDsToUpdate.add(new Integer(versionControlSetting.getBuildID()));
+      buildIDsToUpdate.add(Integer.valueOf(versionControlSetting.getBuildID()));
     }
 
     // Notify about changes.
@@ -1321,7 +1321,7 @@ public final class ParabuildSoapBindingImpl implements Parabuild {
       o.setTimeStamp(buildSequence.getTimeoutMins());
       o.setType(buildSequence.getType());
       cm.saveObject(o);
-      buildIDsToUpdate.add(new Integer(buildSequence.getBuildID()));
+      buildIDsToUpdate.add(Integer.valueOf(buildSequence.getBuildID()));
     }
 
     // Notify about changes.
@@ -1361,7 +1361,7 @@ public final class ParabuildSoapBindingImpl implements Parabuild {
       o.setPropertyTimeStamp(scheduleProperty.getPropertyTimeStamp());
       o.setPropertyValue(scheduleProperty.getPropertyValue());
       cm.saveObject(o);
-      buildIDsToUpdate.add(new Integer(scheduleProperty.getBuildID()));
+      buildIDsToUpdate.add(Integer.valueOf(scheduleProperty.getBuildID()));
     }
 
     // Notify about changes.

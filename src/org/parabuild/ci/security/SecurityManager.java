@@ -417,7 +417,7 @@ public final class SecurityManager {
     try {
       final Cache cache = getBuildRightSetCache(activeBuildID);
       if (cache != null) {
-        cache.put(new Element(new Integer(userID), buildRights));
+        cache.put(new Element(Integer.valueOf(userID), buildRights));
       }
     } catch (final CacheException e) {
       if (log.isDebugEnabled()) {
@@ -435,7 +435,7 @@ public final class SecurityManager {
       if (cache == null) {
         return null;
       }
-      final Element element = cache.get(new Integer(userID));
+      final Element element = cache.get(Integer.valueOf(userID));
       if (element != null) {
         buildRights = (BuildRights) element.getValue();
       }
@@ -551,7 +551,7 @@ public final class SecurityManager {
   public User getUser(final int ID) {
     return (User) ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
-        return session.get(User.class, new Integer(ID));
+        return session.get(User.class, Integer.valueOf(ID));
       }
     });
   }
@@ -1034,7 +1034,7 @@ public final class SecurityManager {
     ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         session.delete("from UserGroup ug where ug.userID = ? and ug.groupID = ?",
-                new Object[]{new Integer(userID), new Integer(groupID)},
+                new Object[]{Integer.valueOf(userID), Integer.valueOf(groupID)},
                 new Type[]{Hibernate.INTEGER, Hibernate.INTEGER});
         return null;
       }
@@ -1050,7 +1050,7 @@ public final class SecurityManager {
     ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         session.delete("from GroupBuildAccess gba where gba.buildID = ? and gba.groupID = ?",
-                new Object[]{new Integer(activeBuildID), new Integer(groupID)},
+                new Object[]{Integer.valueOf(activeBuildID), Integer.valueOf(groupID)},
                 new Type[]{Hibernate.INTEGER, Hibernate.INTEGER});
         return null;
       }
@@ -1552,7 +1552,7 @@ public final class SecurityManager {
     try {
       final Cache cache = getResultGroupRightSetCache(activeResultGroupID);
       if (cache != null) {
-        cache.put(new Element(new Integer(userID), buildRights));
+        cache.put(new Element(Integer.valueOf(userID), buildRights));
       }
     } catch (final CacheException e) {
       if (log.isDebugEnabled()) {
@@ -1585,7 +1585,7 @@ public final class SecurityManager {
       if (cache == null) {
         return null;
       }
-      final Element element = cache.get(new Integer(userID));
+      final Element element = cache.get(Integer.valueOf(userID));
       if (element != null) {
         resultGroupRights = (ResultGroupRights) element.getValue();
       }
@@ -1631,7 +1631,7 @@ public final class SecurityManager {
     ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         session.delete("from ResultGroupAccess rga where rga.resultGroupID = ? and rga.groupID = ?",
-                new Object[]{new Integer(resultGroupID), new Integer(groupID)},
+                new Object[]{Integer.valueOf(resultGroupID), Integer.valueOf(groupID)},
                 new Type[]{Hibernate.INTEGER, Hibernate.INTEGER});
         return null;
       }
@@ -1825,7 +1825,7 @@ public final class SecurityManager {
       }
 
       // Return cached if present
-      final Integer userID = new Integer(user.getUserID());
+      final Integer userID = Integer.valueOf(user.getUserID());
       final Element element = cache.get(userID);
       if (element != null) {
         return (Boolean) element.getValue();

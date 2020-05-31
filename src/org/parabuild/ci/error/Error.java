@@ -436,7 +436,7 @@ public final class Error implements Serializable {
     result = addToKey(result, getDescription());
 //    result = addToHashCode(result, getStepName());
     result = addToKey(result, getDetails());
-    return new Integer(result); // NOPMD (IntegerInstantiation)
+    return Integer.valueOf(result); // NOPMD (IntegerInstantiation)
   }
 
 

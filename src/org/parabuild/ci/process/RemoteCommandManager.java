@@ -77,7 +77,7 @@ public final class RemoteCommandManager {
 
 
   private synchronized List getCommandList(final int buildID) {
-    final Integer key = new Integer(buildID);
+    final Integer key = Integer.valueOf(buildID);
     List commands = (List) commandListMap.get(key);
     if (commands == null) {
       commands = new ArrayList(11);

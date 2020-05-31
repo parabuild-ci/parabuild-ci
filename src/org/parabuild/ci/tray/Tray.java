@@ -218,7 +218,7 @@ public final class Tray implements ActionListener, ItemListener {
           final Map remoteStatusMap = new HashMap(11);
           for (final Iterator j = remoteStatusList.iterator(); j.hasNext();) {
             final BuildStatus remoteStatus = (BuildStatus)j.next();
-            remoteStatusMap.put(new Integer(remoteStatus.getActiveBuildID()), remoteStatus);
+            remoteStatusMap.put(Integer.valueOf(remoteStatus.getActiveBuildID()), remoteStatus);
           }
 
           // collect build IDs that were removed
@@ -248,7 +248,7 @@ public final class Tray implements ActionListener, ItemListener {
           for (final Iterator j = remoteStatusList.iterator(); j.hasNext();) {
             final BuildStatus remoteStatus = (BuildStatus)j.next();
             if (!showInactiveBuilds && remoteStatus.isInactive()) continue;
-            final Integer remoteBuildID = new Integer(remoteStatus.getActiveBuildID());
+            final Integer remoteBuildID = Integer.valueOf(remoteStatus.getActiveBuildID());
             final MenuStatusHolder menuStatusHolder = (MenuStatusHolder)statusMap.get(new StatusMapKey(hostPort, remoteBuildID));
             if (menuStatusHolder == null) {
               added.add(remoteStatus);

@@ -52,7 +52,7 @@ public class SSTestBuildRunConfig extends ServersideTestCase {
         brc.setBuilderID(0);
         ConfigurationManager.getInstance().saveObject(brc);
         assertTrue(brc.getBuildID() > 0);
-        return new Integer(brc.getBuildID());
+        return Integer.valueOf(brc.getBuildID());
       }
     });
 

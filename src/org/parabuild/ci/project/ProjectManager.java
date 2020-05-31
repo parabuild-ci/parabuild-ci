@@ -56,7 +56,7 @@ public class ProjectManager {
 
 
   public Project getProject(final int projectID) {
-    return getProject(new Integer(projectID));
+    return getProject(Integer.valueOf(projectID));
   }
 
 

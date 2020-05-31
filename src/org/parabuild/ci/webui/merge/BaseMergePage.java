@@ -53,7 +53,7 @@ public abstract class BaseMergePage extends BasePage {
       // validate
       final String stringMergeID = parameters.getParameterValue(Pages.PARAM_MERGE_ID);
       if (StringUtils.isValidInteger(stringMergeID)) {
-        activeMergeConfigurationID = new Integer(Integer.parseInt(stringMergeID));
+        activeMergeConfigurationID = Integer.valueOf(Integer.parseInt(stringMergeID));
       } else {
         return WebuiUtils.showMergeNotFound(this);
       }

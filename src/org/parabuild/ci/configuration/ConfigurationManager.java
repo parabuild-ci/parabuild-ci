@@ -280,7 +280,7 @@ public final class ConfigurationManager implements Serializable {
       return defaultValue;
     }
     try {
-      return new Integer(Integer.parseInt(ba.getPropertyValue()));
+      return Integer.valueOf(Integer.parseInt(ba.getPropertyValue()));
     } catch (final NumberFormatException e) {
       return defaultValue;
     }
@@ -400,7 +400,7 @@ public final class ConfigurationManager implements Serializable {
     return (List) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         return session.find("from IssueTracker as itr, order by itr.ID where itr.buildID = ?",
-                new Integer(buildID), Hibernate.INTEGER);
+                Integer.valueOf(buildID), Hibernate.INTEGER);
       }
     });
   }
@@ -446,7 +446,7 @@ public final class ConfigurationManager implements Serializable {
     return (List) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         return session.find("from VCSUserToEmailMap as map order by map.mapID where map.buildID = ?",
-                new Integer(buildID), Hibernate.INTEGER);
+                Integer.valueOf(buildID), Hibernate.INTEGER);
       }
     });
   }
@@ -460,7 +460,7 @@ public final class ConfigurationManager implements Serializable {
     return (List) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         return session.find("from BuildWatcher as bw order by bw.watcherID where bw.buildID = ?",
-                new Integer(buildID), Hibernate.INTEGER);
+                Integer.valueOf(buildID), Hibernate.INTEGER);
       }
     });
   }
@@ -475,7 +475,7 @@ public final class ConfigurationManager implements Serializable {
     return (List) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         return session.find("from IssueTrackerProperty as itp where itp.trackerID = ?",
-                new Integer(issueTrackerID), Hibernate.INTEGER);
+                Integer.valueOf(issueTrackerID), Hibernate.INTEGER);
       }
     });
   }
@@ -527,7 +527,7 @@ public final class ConfigurationManager implements Serializable {
           validateIsActiveBuildID(session, activeBuildID);
         }
         return session.find("from PendingIssue as pi where pi.buildID = ?",
-                new Integer(activeBuildID), Hibernate.INTEGER);
+                Integer.valueOf(activeBuildID), Hibernate.INTEGER);
       }
     });
   }
@@ -548,7 +548,7 @@ public final class ConfigurationManager implements Serializable {
             counter++;
           }
         }
-        return new Integer(counter);
+        return Integer.valueOf(counter);
       }
     });
   }
@@ -558,7 +558,7 @@ public final class ConfigurationManager implements Serializable {
     return (PendingIssue) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         final List result = session.find("from PendingIssue as pi where pi.buildID = ? and pi.issueID = ?",
-                new Object[]{new Integer(buildID), new Integer(issueID)},
+                new Object[]{Integer.valueOf(buildID), Integer.valueOf(issueID)},
                 new Type[]{Hibernate.INTEGER, Hibernate.INTEGER});
         if (result == null || result.isEmpty()) {
           return null;
@@ -624,7 +624,7 @@ public final class ConfigurationManager implements Serializable {
           deleteObject(pendingIssue);
           count++;
         }
-        return new Integer(count);
+        return Integer.valueOf(count);
       }
     });
   }
@@ -971,7 +971,7 @@ public final class ConfigurationManager implements Serializable {
   /**
    */
   public int getBuildRunAttributeValue(final int buildRunID, final String name, final int defaultValue) {
-    return getBuildRunAttributeValue(buildRunID, name, new Integer(defaultValue));
+    return getBuildRunAttributeValue(buildRunID, name, Integer.valueOf(defaultValue));
   }
 
 
@@ -1176,7 +1176,7 @@ public final class ConfigurationManager implements Serializable {
         // get this run participants
         return session.find("select distinct chl.user from BuildRunParticipant brp, ChangeList as chl " +
                 "where brp.buildRunID = ? and brp.changeListID = chl.changeListID",
-                new Integer(buildRunID), Hibernate.INTEGER);
+                Integer.valueOf(buildRunID), Hibernate.INTEGER);
       }
     });
   }
@@ -1343,7 +1343,7 @@ public final class ConfigurationManager implements Serializable {
     runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         session.saveOrUpdate(userToEmail);
-        return new Integer(userToEmail.getMapID());
+        return Integer.valueOf(userToEmail.getMapID());
       }
     });
   }
@@ -1386,7 +1386,7 @@ public final class ConfigurationManager implements Serializable {
           buildChangeList.setChangeListCreatedAt(chl.getCreatedAt()); // changeListCreatedAt is used for speed purposes
           session.save(buildChangeList);
         }
-        return new Integer(maxBuildChangeListID);
+        return Integer.valueOf(maxBuildChangeListID);
       }
     });
   }
@@ -1434,7 +1434,7 @@ public final class ConfigurationManager implements Serializable {
           final IssueChangeList issueChangeList = new IssueChangeList(issue.getID(), changeList.getChangeListID());
           session.saveOrUpdate(issueChangeList);
         }
-        return new Integer(result1);
+        return Integer.valueOf(result1);
       }
     });
   }
@@ -1463,7 +1463,7 @@ public final class ConfigurationManager implements Serializable {
     runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         session.saveOrUpdate(watcher);
-        return new Integer(watcher.getWatcherID());
+        return Integer.valueOf(watcher.getWatcherID());
       }
     });
   }
@@ -1583,7 +1583,7 @@ public final class ConfigurationManager implements Serializable {
   public Object getObject(final Class clazz, final int ID) {
     return runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
-        return session.get(clazz, new Integer(ID));
+        return session.get(clazz, Integer.valueOf(ID));
       }
     });
   }
@@ -1625,7 +1625,7 @@ public final class ConfigurationManager implements Serializable {
       if (LOG.isDebugEnabled()) {
         LOG.debug("delete parts ");
       }
-      final int deleted = session.delete("select scs from SourceControlSetting scs where scs.buildID = ? and scs.propertyName like '" + VersionControlSystem.P4_DEPOT_PATH + "%'", new Object[]{new Integer(buildID)}, new Type[]{Hibernate.INTEGER});
+      final int deleted = session.delete("select scs from SourceControlSetting scs where scs.buildID = ? and scs.propertyName like '" + VersionControlSystem.P4_DEPOT_PATH + "%'", new Object[]{Integer.valueOf(buildID)}, new Type[]{Hibernate.INTEGER});
       session.flush();
       if (LOG.isDebugEnabled()) {
         LOG.debug("deleted: " + deleted);
@@ -2036,7 +2036,7 @@ public final class ConfigurationManager implements Serializable {
   public LogConfig getLogConfig(final int logConfigID) {
     return (LogConfig) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
-        return session.get(LogConfig.class, new Integer(logConfigID));
+        return session.get(LogConfig.class, Integer.valueOf(logConfigID));
       }
     });
   }
@@ -2078,7 +2078,7 @@ public final class ConfigurationManager implements Serializable {
   public List getResultConfigProperties(final int resultConfigID) {
     return (List) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
-        return session.find("from ResultConfigProperty as rcp  where rcp.resultConfigID = ?", new Integer(resultConfigID), Hibernate.INTEGER);
+        return session.find("from ResultConfigProperty as rcp  where rcp.resultConfigID = ?", Integer.valueOf(resultConfigID), Hibernate.INTEGER);
       }
     });
   }
@@ -2093,7 +2093,7 @@ public final class ConfigurationManager implements Serializable {
     return (LogConfigProperty) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         final List result = session.find("from LogConfigProperty as lcp  where lcp.logConfigID = ? and lcp.name = ?",
-                new Object[]{new Integer(logConfigID), propName},
+                new Object[]{Integer.valueOf(logConfigID), propName},
                 new Type[]{Hibernate.INTEGER, Hibernate.STRING});
         if (result.size() == 1) {
           return result.get(0);
@@ -2127,7 +2127,7 @@ public final class ConfigurationManager implements Serializable {
     return (ResultConfigProperty) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         final List result = session.find("from ResultConfigProperty as rcp  where rcp.resultConfigID = ? and rcp.name = ?",
-                new Object[]{new Integer(resultConfigID), propName},
+                new Object[]{Integer.valueOf(resultConfigID), propName},
                 new Type[]{Hibernate.INTEGER, Hibernate.STRING});
         if (result.size() == 1) {
           return result.get(0);
@@ -2145,7 +2145,7 @@ public final class ConfigurationManager implements Serializable {
     return (List) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         return session.find("from BuildConfigAttribute as ba where ba.buildID = ?",
-                new Object[]{new Integer(buildID)},
+                new Object[]{Integer.valueOf(buildID)},
                 new Type[]{Hibernate.INTEGER});
       }
     });
@@ -2161,7 +2161,7 @@ public final class ConfigurationManager implements Serializable {
     final List configs = getExistingBuildConfigs();
     for (final Iterator iter = configs.iterator(); iter.hasNext(); ) {
       final BuildConfig buildConfig = (BuildConfig) iter.next();
-      result.put(new Integer(buildConfig.getBuildID()), buildConfig);
+      result.put(Integer.valueOf(buildConfig.getBuildID()), buildConfig);
     }
     return result;
   }
@@ -2367,7 +2367,7 @@ public final class ConfigurationManager implements Serializable {
         }
         final List list = session.find("select bchl from BuildChangeList as bchl " +
                 "where bchl.buildID = ? and bchl.changeListID = ?",
-                new Object[]{new Integer(activeBuildID), new Integer(changeListID)}, new Type[]{Hibernate.INTEGER, Hibernate.INTEGER});
+                new Object[]{Integer.valueOf(activeBuildID), Integer.valueOf(changeListID)}, new Type[]{Hibernate.INTEGER, Hibernate.INTEGER});
         if (list.size() == 1) {
           return list.get(0);
         }
@@ -2419,7 +2419,7 @@ public final class ConfigurationManager implements Serializable {
           LOG.debug("endChangeListID: " + endChangeListID);
         }
         if (endChangeListID == startChangeListID) {
-          return new Integer(startChangeListID); // nothing
+          return Integer.valueOf(startChangeListID); // nothing
         }
 
         // Prepare query to check existence of build change list
@@ -2436,7 +2436,7 @@ public final class ConfigurationManager implements Serializable {
                 "   and brp.changeListID > ? " +
                 "   and brp.changeListID <= ?" +
                 "   and brp.changeListID = chl.changeListID",
-                new Object[]{new Integer(sourceActiveBuildID), new Integer(beginChangeListID), new Integer(endChangeListID)},
+                new Object[]{Integer.valueOf(sourceActiveBuildID), Integer.valueOf(beginChangeListID), Integer.valueOf(endChangeListID)},
                 new Type[]{Hibernate.INTEGER, Hibernate.INTEGER, Hibernate.INTEGER});
 
         // copy
@@ -2461,7 +2461,7 @@ public final class ConfigurationManager implements Serializable {
           session.save(dest);
           maxNewID = Math.max(maxNewID, source.getChangeListID());
         }
-        return new Integer(maxNewID);
+        return Integer.valueOf(maxNewID);
       }
     });
   }
@@ -2525,7 +2525,7 @@ public final class ConfigurationManager implements Serializable {
                 " where n.buildID = ? " +
                 "   and n.new = 'Y' " +
                 "   and n.changeListCreatedAt <= ? ",
-                new Object[]{new Integer(activeBuildID), cutOffDate},
+                new Object[]{Integer.valueOf(activeBuildID), cutOffDate},
                 new Type[]{Hibernate.INTEGER, Hibernate.TIMESTAMP});
 
         //
@@ -2675,7 +2675,7 @@ public final class ConfigurationManager implements Serializable {
         final Integer bchlChangeListID = (Integer) bchlQuery.uniqueResult();
 
         if (brpChangeListID != null && bchlChangeListID != null) {
-          return new Integer(Math.max(brpChangeListID, bchlChangeListID));
+          return Integer.valueOf(Math.max(brpChangeListID, bchlChangeListID));
         }
 
         if (brpChangeListID != null) {
@@ -2686,7 +2686,7 @@ public final class ConfigurationManager implements Serializable {
           return bchlChangeListID;
         }
 
-        return new Integer(ChangeList.UNSAVED_ID);
+        return Integer.valueOf(ChangeList.UNSAVED_ID);
       }
     });
   }
@@ -2743,7 +2743,7 @@ public final class ConfigurationManager implements Serializable {
 
         // calculate next number
         final int newID = ba.getPropertyValueAsInteger() + 1;
-        final Integer integerNewID = new Integer(newID);
+        final Integer integerNewID = Integer.valueOf(newID);
         if (!doStoreIncrement) {
           return integerNewID;
         }
@@ -2772,12 +2772,12 @@ public final class ConfigurationManager implements Serializable {
         // find latest clean build run
         final BuildRun lastCleanBuildRun = getLastCleanBuildRun(activeBuildID);
         if (lastCleanBuildRun == null) {
-          return new Integer(ChangeList.UNSAVED_ID);
+          return Integer.valueOf(ChangeList.UNSAVED_ID);
         }
 //        if (log.isDebugEnabled()) log.debug("found build run: " + lastCleanBuildRun);
 
         // return result
-        return new Integer(getLatestBuildRunParticipantID(lastCleanBuildRun.getBuildRunID()));
+        return Integer.valueOf(getLatestBuildRunParticipantID(lastCleanBuildRun.getBuildRunID()));
       }
     });
   }
@@ -3053,7 +3053,7 @@ public final class ConfigurationManager implements Serializable {
 
       // check match count
       if (matchCount == attributes.size()) {
-        result = new Integer(currentIssueID);
+        result = Integer.valueOf(currentIssueID);
         break;
       }
     }
@@ -3237,7 +3237,7 @@ public final class ConfigurationManager implements Serializable {
         return session.find("select isht from IssueTracker as isht " +
                 " where isht.buildID = ? " +
                 " and isht.type = ?",
-                new Object[]{new Integer(buildID), new Byte(trackerType)},
+                new Object[]{Integer.valueOf(buildID), new Byte(trackerType)},
                 new Type[]{Hibernate.INTEGER, Hibernate.BYTE});
       }
     });
@@ -3250,7 +3250,7 @@ public final class ConfigurationManager implements Serializable {
       public Object runInTransaction() throws Exception {
         return session.find("select ish from  Issue ish, IssueChangeList as icl " +
                 "where  icl.changeListID = ? and icl.issueID = ish.ID ",
-                new Integer(changeListID),
+                Integer.valueOf(changeListID),
                 Hibernate.INTEGER);
       }
     });
@@ -3694,7 +3694,7 @@ public final class ConfigurationManager implements Serializable {
       public Object runInTransaction() throws Exception {
         return session.find("from StepRun as sr " +
                 "where sr.buildRunID = ? and sr.startedAt < ? order by sr.ID",
-                new Object[]{new Integer(stepRun.getBuildRunID()), stepRun.getStartedAt()},
+                new Object[]{Integer.valueOf(stepRun.getBuildRunID()), stepRun.getStartedAt()},
                 new Type[]{Hibernate.INTEGER, Hibernate.TIMESTAMP});
       }
     });
@@ -3941,7 +3941,7 @@ public final class ConfigurationManager implements Serializable {
 
 
   private static void validateIsActiveBuildID(final Session session, final int id) throws HibernateException {
-    final Object o = session.get(ActiveBuildConfig.class, new Integer(id));
+    final Object o = session.get(ActiveBuildConfig.class, Integer.valueOf(id));
     if (!(o instanceof ActiveBuildConfig)) {
       throw new IllegalArgumentException("Build ID '" + id + "' is not an active build");
     }
@@ -4127,7 +4127,7 @@ public final class ConfigurationManager implements Serializable {
    * @return build attribute value or 0 if not found.
    */
   public Integer getActiveBuildAttributeValue(final int buildID, final String attrName) {
-    return getActiveBuildAttributeValue(buildID, attrName, new Integer(0));
+    return getActiveBuildAttributeValue(buildID, attrName, Integer.valueOf(0));
   }
 
 
@@ -4142,7 +4142,7 @@ public final class ConfigurationManager implements Serializable {
     if (aba == null) {
       return defaultValue;
     }
-    return new Integer(aba.getPropertyValueAsInteger());
+    return Integer.valueOf(aba.getPropertyValueAsInteger());
   }
 
 
@@ -4896,7 +4896,7 @@ public final class ConfigurationManager implements Serializable {
   public int saveChangeList(final ChangeList changeList) {
     return (Integer) runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
-        return new Integer(saveChangeList(changeList, session));
+        return Integer.valueOf(saveChangeList(changeList, session));
       }
     });
   }

@@ -67,7 +67,7 @@ public final class BuildRunChangesDiffPage extends AbstractBuildRunResultPage im
 //    if (log.isDebugEnabled()) log.debug("params: " + params);
 
     // get params
-    final Integer startBuildNumber = new Integer(buildRun.getBuildRunNumber());
+    final Integer startBuildNumber = Integer.valueOf(buildRun.getBuildRunNumber());
     final Integer endBuildNumber = ParameterUtils.getIntegerParameter(params, Pages.PARAM_BUILD_END_NUMBER, null);
 
     // set title

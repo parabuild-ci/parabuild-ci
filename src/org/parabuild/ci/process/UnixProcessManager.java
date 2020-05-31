@@ -127,7 +127,7 @@ public final class UnixProcessManager implements ProcessManager {
         }
         // deep scan in environment
         if (!matches && deep) {
-          final String proc_env = (String) processes_env.get(new Integer(pid));
+          final String proc_env = (String) processes_env.get(Integer.valueOf(pid));
           if (proc_env != null) {
             matches = ProcessUtils.matches(proc_env, searchPatterns);
           }
@@ -178,7 +178,7 @@ public final class UnixProcessManager implements ProcessManager {
 
     // collect all children processes
     final List childrens = new ArrayList(11);
-    ProcessUtils.getChildren(new Integer(pid), tree, childrens);
+    ProcessUtils.getChildren(Integer.valueOf(pid), tree, childrens);
 
     return kill(childrens);
   }

@@ -107,7 +107,7 @@ public final class BuildListServiceImpl implements BuildListService {
     try {
 
       final BuildService result = new ThroughBuildServiceProxy(new BuildServiceImpl(buildConfig)); // valid/OK, create through
-      builds.put(new Integer(buildConfig.getActiveBuildID()), result);
+      builds.put(Integer.valueOf(buildConfig.getActiveBuildID()), result);
       result.startupService();
     } catch (final Exception e) {
       reportStartupException(buildConfig, e);
@@ -132,7 +132,7 @@ public final class BuildListServiceImpl implements BuildListService {
    * Returns the build
    */
   public BuildService getBuild(final int buildID) {
-    return (BuildService) builds.get(new Integer(buildID));
+    return (BuildService) builds.get(Integer.valueOf(buildID));
   }
 
 
@@ -149,7 +149,7 @@ public final class BuildListServiceImpl implements BuildListService {
     cm.markActiveBuildDeleted(activeBuildID);
 
     // remove from collections
-    final BuildService buildServiceToRemove = (BuildService) builds.remove(new Integer(activeBuildID));
+    final BuildService buildServiceToRemove = (BuildService) builds.remove(Integer.valueOf(activeBuildID));
     if (buildServiceToRemove == null) {
       throw new IllegalStateException("Build configuration ID " + activeBuildID + " not found.");
     }
@@ -239,7 +239,7 @@ public final class BuildListServiceImpl implements BuildListService {
     final List existingBuildConfigs = ConfigurationManager.getInstance().getExistingBuildConfigs();
     for (final Iterator i = existingBuildConfigs.iterator(); i.hasNext();) {
       final BuildConfig config = (BuildConfig) i.next();
-      if (builds.get(new Integer(config.getActiveBuildID())) == null) {
+      if (builds.get(Integer.valueOf(config.getActiveBuildID())) == null) {
         registerAndStartupBuildService(config);
       }
     }

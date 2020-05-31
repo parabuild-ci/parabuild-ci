@@ -13,14 +13,15 @@
  */
 package org.parabuild.ci.project;
 
-import org.apache.commons.logging.*;
-
-import junit.framework.*;
-
-import com.gargoylesoftware.base.testing.*;
+import com.gargoylesoftware.base.testing.OrderedTestSuite;
+import junit.framework.TestSuite;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.ServersideTestCase;
 import org.parabuild.ci.TestHelper;
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.object.Project;
+import org.parabuild.ci.object.ProjectBuild;
+import org.parabuild.ci.object.ProjectResultGroup;
 
 /**
  *
@@ -48,7 +49,7 @@ public class SSTestProjectManager extends ServersideTestCase {
 
 
   public void test_getProjectByInteger() {
-    final Project project = pm.getProject(new Integer(0));
+    final Project project = pm.getProject(Integer.valueOf(0));
     assertNotNull(project);
     assertEquals(Project.TYPE_SYSTEM, project.getType());
     assertEquals(Project.KEY_SYSTEM, project.getKey());

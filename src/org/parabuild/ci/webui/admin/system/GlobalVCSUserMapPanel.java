@@ -75,7 +75,7 @@ final class GlobalVCSUserMapPanel extends MessagePanel {
         if (isNew()) {
           map = new GlobalVCSUserMap();
         } else {
-          map = mappingManager.getMapping(new Integer(mappingID));
+          map = mappingManager.getMapping(Integer.valueOf(mappingID));
         }
         map.setVcsUserName(flVCSUser.getValue().trim());
         map.setEmail(flEmail.getValue().trim().toLowerCase());

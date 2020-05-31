@@ -20,6 +20,7 @@ import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.ServersideTestCase;
 import org.parabuild.ci.TestHelper;
 import org.parabuild.ci.build.AgentFailureException;
+import org.parabuild.ci.common.ValidationException;
 import org.parabuild.ci.common.VersionControlSystem;
 import org.parabuild.ci.configuration.AgentHost;
 import org.parabuild.ci.configuration.ConfigurationManager;
@@ -35,7 +36,6 @@ import org.parabuild.ci.remote.Agent;
 import org.parabuild.ci.remote.AgentManager;
 import org.parabuild.ci.util.BuildException;
 import org.parabuild.ci.util.CommandStoppedException;
-import org.parabuild.ci.common.ValidationException;
 
 import java.io.File;
 import java.io.IOException;
@@ -642,7 +642,7 @@ public class SSTestP4SourceControl extends ServersideTestCase {
   public void test_findFirstChangeList() throws IOException, CommandStoppedException, BuildException, ValidationException, AgentFailureException {
     final Integer firstChangeList = perforce.findFirstChangeList("merge_first_change_list_retriever_1", "//depot/dev/bt/... //merge_first_change_list_retriever_1/dev/bt/...");
     assertNotNull(firstChangeList);
-    assertEquals(new Integer(1118), firstChangeList);
+    assertEquals(Integer.valueOf(1118), firstChangeList);
   }
 
 

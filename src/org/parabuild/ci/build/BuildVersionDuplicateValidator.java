@@ -86,7 +86,7 @@ public final class BuildVersionDuplicateValidator {
     int wouldBeNewVersionCounter = versionCounterToTest;
     if (wouldBeNewVersionCounter == -1) {
       // if auto mode generate would-be version counter
-      if (cm.getBuildAttributeValue(activeBuildID, BuildConfigAttribute.VERSION_COUNTER_INCREMENT_MODE, new Integer(BuildConfigAttribute.VERSION_COUNTER_INCREMENT_MODE_MANUAL)).byteValue() == BuildConfigAttribute.VERSION_COUNTER_INCREMENT_MODE_AUTOMATIC)
+      if (cm.getBuildAttributeValue(activeBuildID, BuildConfigAttribute.VERSION_COUNTER_INCREMENT_MODE, Integer.valueOf(BuildConfigAttribute.VERSION_COUNTER_INCREMENT_MODE_MANUAL)).byteValue() == BuildConfigAttribute.VERSION_COUNTER_INCREMENT_MODE_AUTOMATIC)
       {
         wouldBeNewVersionCounter = cm.getNewVersionCounter(activeBuildID, false);
       }

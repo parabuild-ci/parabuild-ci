@@ -13,9 +13,9 @@
  */
 package org.parabuild.ci.merge;
 
-import java.util.*;
-
 import junit.framework.TestCase;
+
+import java.util.Date;
 
 /**
  */
@@ -26,7 +26,7 @@ public final class SATestMergeReportImpl extends TestCase {
   private static final String TEST_USER = "test user";
   private static final Date TEST_DATE = new Date();
   private static final String TEST_DESCRIPTION = "test description";
-  private static final Integer BRANCH_CHANGE_LIST_ID = new Integer(777);
+  private static final Integer BRANCH_CHANGE_LIST_ID = Integer.valueOf(777);
   private static final int CHANGE_LIST_ID = 888;
 
 

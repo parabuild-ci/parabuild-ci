@@ -104,13 +104,13 @@ final class UpgraderToVersion7 implements SingleStepSchemaUpgrader {
         IoUtils.closeHard(rsFoundFirstRun);
 
         // get first build run number
-        final Integer lookupKey = new Integer(firstBuildRunID);
+        final Integer lookupKey = Integer.valueOf(firstBuildRunID);
         Integer firstBuildRunNumber = (Integer)buildNumberLookup.get(lookupKey);
         if (firstBuildRunNumber == null) {
           psGetBuildRun.setInt(1, firstBuildRunID);
           final ResultSet rsGetBuildRun = psGetBuildRun.executeQuery(); // NOPMD
           rsGetBuildRun.next();
-          firstBuildRunNumber = new Integer(rsGetBuildRun.getInt(1));
+          firstBuildRunNumber = Integer.valueOf(rsGetBuildRun.getInt(1));
           buildNumberLookup.put(lookupKey, firstBuildRunNumber);
           IoUtils.closeHard(rsGetBuildRun);
         }

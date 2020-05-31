@@ -526,7 +526,7 @@ public final class BuildRunner extends Thread {
         cm.saveObject(new BuildRunAttribute(buildRun.getBuildRunID(), BuildRunAttribute.NEW_CHANGE_LIST_IN_THIS_BUILD, 0)); // no new
       } else if (localStartRequest.isParallel()) {
         cm.copyBuildRunParticipants(localStartRequest.getBuildRunID(), buildRun.getBuildRunID());
-        cm.saveObject(new BuildRunAttribute(buildRun.getBuildRunID(), BuildRunAttribute.NEW_CHANGE_LIST_IN_THIS_BUILD, cm.getBuildRunAttributeValue(localStartRequest.getBuildRunID(), BuildRunAttribute.NEW_CHANGE_LIST_IN_THIS_BUILD, new Integer(0)))); // same as for the leader
+        cm.saveObject(new BuildRunAttribute(buildRun.getBuildRunID(), BuildRunAttribute.NEW_CHANGE_LIST_IN_THIS_BUILD, cm.getBuildRunAttributeValue(localStartRequest.getBuildRunID(), BuildRunAttribute.NEW_CHANGE_LIST_IN_THIS_BUILD, Integer.valueOf(0)))); // same as for the leader
         cm.saveObject(new BuildRunAttribute(buildRun.getBuildRunID(), BuildRunAttribute.ATTR_LEAD_BUILD_RUN_ID, localStartRequest.getBuildRunID()));
         cm.saveObject(new BuildRunDependence(localStartRequest.getBuildRunID(), buildRun.getBuildRunID()));
       } else {
@@ -541,7 +541,7 @@ public final class BuildRunner extends Thread {
         // try to get version information from the leading build run ID
         final int leadingBuildRunID = localStartRequest.getBuildRunID();
         version = cm.getBuildRunAttributeValue(leadingBuildRunID, BuildRunAttribute.GENERATED_VERSION);
-        versionCounter = cm.getBuildRunAttributeValue(leadingBuildRunID, BuildRunAttribute.GENERATED_VERSION_COUNTER, new Integer(1));
+        versionCounter = cm.getBuildRunAttributeValue(leadingBuildRunID, BuildRunAttribute.GENERATED_VERSION_COUNTER, Integer.valueOf(1));
       } else {
         // NOTE: vimeshev - 2006-08-18 if version template is not
         // provide as a part of the build start request this could
@@ -554,7 +554,7 @@ public final class BuildRunner extends Thread {
         if (versionGenerationEnabled && !StringUtils.isBlank(versionTemplate)) {
           if (versionCounter == -1) {
             // if auto mode generate would-be version counter
-            if (cm.getBuildAttributeValue(activeBuildID, BuildConfigAttribute.VERSION_COUNTER_INCREMENT_MODE, new Integer(BuildConfigAttribute.VERSION_COUNTER_INCREMENT_MODE_MANUAL)).byteValue()
+            if (cm.getBuildAttributeValue(activeBuildID, BuildConfigAttribute.VERSION_COUNTER_INCREMENT_MODE, Integer.valueOf(BuildConfigAttribute.VERSION_COUNTER_INCREMENT_MODE_MANUAL)).byteValue()
                     == BuildConfigAttribute.VERSION_COUNTER_INCREMENT_MODE_AUTOMATIC) {
               versionCounter = cm.getNewVersionCounter(activeBuildID, false);
             }

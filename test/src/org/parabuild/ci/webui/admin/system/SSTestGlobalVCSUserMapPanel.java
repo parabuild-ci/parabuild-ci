@@ -41,7 +41,7 @@ public final class SSTestGlobalVCSUserMapPanel extends TestCase {
 
 
   public void testLoad() {
-    panel.load(GlobalVCSUserMapManager.getInstance().getMapping(new Integer(MAPPING_ID)));
+    panel.load(GlobalVCSUserMapManager.getInstance().getMapping(Integer.valueOf(MAPPING_ID)));
     assertEquals(MAPPING_ID, panel.getMappingID());
   }
 

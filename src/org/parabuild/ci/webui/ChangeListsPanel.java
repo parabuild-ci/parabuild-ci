@@ -73,7 +73,7 @@ public final class ChangeListsPanel extends Panel {
           changeListsCount++;
         }
 
-        return new Integer(changeListsCount);
+        return Integer.valueOf(changeListsCount);
       }
     });
   }

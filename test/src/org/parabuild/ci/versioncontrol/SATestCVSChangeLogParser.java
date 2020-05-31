@@ -13,16 +13,24 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.io.*;
-import java.util.*;
-import org.apache.commons.logging.*;
-
-import junit.framework.*;
-
-import com.gargoylesoftware.base.testing.*;
+import com.gargoylesoftware.base.testing.OrderedTestSuite;
+import junit.framework.TestCase;
+import junit.framework.TestSuite;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.TestHelper;
-import org.parabuild.ci.util.*;
-import org.parabuild.ci.object.*;
+import org.parabuild.ci.object.Change;
+import org.parabuild.ci.object.ChangeList;
+import org.parabuild.ci.util.IoUtils;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 
 /**
@@ -84,7 +92,7 @@ public class SATestCVSChangeLogParser extends TestCase {
     try {
       changeLogInputStream = makeTestChangeLogInputStream();
       final Map excludes = new HashMap(11);
-      excludes.put(new Integer("/opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/Build.java,v".hashCode()), Boolean.TRUE);
+      excludes.put(Integer.valueOf("/opt/cvs/cvsroot/bt/src/com/viewtier/parabuild/build/Build.java,v".hashCode()), Boolean.TRUE);
       changeLogParser.setRCSNamesHashesToExclude(excludes);
       final List result = changeLogParser.parseChangeLog(changeLogInputStream);
       assertTrue(!result.isEmpty());

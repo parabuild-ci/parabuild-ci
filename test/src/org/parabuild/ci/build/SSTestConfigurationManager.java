@@ -363,7 +363,7 @@ public final class SSTestConfigurationManager extends ServersideTestCase {
     final Integer id1 = (Integer) ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         session.saveOrUpdate(changeList);
-        return new Integer(changeList.getChangeListID());
+        return Integer.valueOf(changeList.getChangeListID());
       }
     });
     final int id = id1.intValue();
@@ -927,14 +927,14 @@ public final class SSTestConfigurationManager extends ServersideTestCase {
   public void test_findIssueIDByProductAndVersion() {
     final Integer result = configManager.findIssueIDByProductAndVersion(Issue.TYPE_BUGZILLA, "303", "test product", "test version");
     assertNotNull(result);
-    assertEquals(new Integer(5), result);
+    assertEquals(Integer.valueOf(5), result);
   }
 
 
   public void test_findIssueIDByProjectAndVersion() {
     final Integer result = configManager.findIssueIDByProjectAndVersion(Issue.TYPE_JIRA, "TEST-0005", "test_project", "");
     assertNotNull(result);
-    assertEquals(new Integer(7), result);
+    assertEquals(Integer.valueOf(7), result);
   }
 
 
@@ -1230,7 +1230,7 @@ public final class SSTestConfigurationManager extends ServersideTestCase {
 
 
   public void test_getBuildRunAttributeValue() {
-    assertEquals(new Integer(1), configManager.getBuildRunAttributeValue(9, BuildRunAttribute.ATTR_STARTED_USER_ID, new Integer(-1)));
+    assertEquals(Integer.valueOf(1), configManager.getBuildRunAttributeValue(9, BuildRunAttribute.ATTR_STARTED_USER_ID, Integer.valueOf(-1)));
     assertEquals(Long.valueOf(1), configManager.getBuildRunAttributeValue(9, BuildRunAttribute.ATTR_STARTED_USER_ID, Long.valueOf(-1)));
     assertEquals(true, configManager.getBuildRunAttributeValue(9, BuildRunAttribute.ATTR_CLEAN_CHECKOUT, false));
     assertEquals(false, configManager.getBuildRunAttributeValue(2, BuildRunAttribute.ATTR_CLEAN_CHECKOUT, false));
@@ -1337,12 +1337,12 @@ public final class SSTestConfigurationManager extends ServersideTestCase {
    */
   public void testGetCompletedBuildRuns() {
     final ArrayList iDs = new ArrayList(6);
-    iDs.add(new Integer(1));
-    iDs.add(new Integer(2));
-    iDs.add(new Integer(3));
-    iDs.add(new Integer(4));
-    iDs.add(new Integer(5));
-    iDs.add(new Integer(6));
+    iDs.add(Integer.valueOf(1));
+    iDs.add(Integer.valueOf(2));
+    iDs.add(Integer.valueOf(3));
+    iDs.add(Integer.valueOf(4));
+    iDs.add(Integer.valueOf(5));
+    iDs.add(Integer.valueOf(6));
     assertEquals(7, configManager.getCompletedBuildRuns(iDs, 20).size());
   }
 

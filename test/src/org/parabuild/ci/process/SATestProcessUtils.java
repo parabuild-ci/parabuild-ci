@@ -15,11 +15,11 @@ package org.parabuild.ci.process;
 
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-import org.parabuild.ci.util.IoUtils;
 import org.parabuild.ci.configuration.AgentHost;
 import org.parabuild.ci.object.AgentConfig;
 import org.parabuild.ci.remote.AgentEnvironment;
 import org.parabuild.ci.remote.AgentManager;
+import org.parabuild.ci.util.IoUtils;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -117,15 +117,15 @@ public class SATestProcessUtils extends TestCase {
     p1 = new OSProcess(1, 2, "A", "B", "C", "D");
     p2 = new OSProcess(3, 1, "A", "B", "C", "D");
     p3 = new OSProcess(4, 1, "A", "B", "C", "D");
-    processes.put(new Integer(p1.getPID()), p1);
-    processes.put(new Integer(p2.getPID()), p2);
-    processes.put(new Integer(p3.getPID()), p3);
+    processes.put(Integer.valueOf(p1.getPID()), p1);
+    processes.put(Integer.valueOf(p2.getPID()), p2);
+    processes.put(Integer.valueOf(p3.getPID()), p3);
 
     tree = new HashMap(11);
     final List l = new ArrayList(11);
-    l.add(new Integer(p2.getPID()));
-    l.add(new Integer(p3.getPID()));
-    tree.put(new Integer(p1.getPID()), l);
+    l.add(Integer.valueOf(p2.getPID()));
+    l.add(Integer.valueOf(p3.getPID()));
+    tree.put(Integer.valueOf(p1.getPID()), l);
 
     agentEnvironment = AgentManager.getInstance().getAgentEnvironment(new AgentHost(AgentConfig.BUILD_MANAGER, ""));
   }

@@ -194,7 +194,7 @@ final class Bugzilla216DatabaseConnector extends AbstractBugzillaDatabaseConnect
         final String status = rs.getString(5);
         final Date date = new Date(rs.getTimestamp(6).getTime());
         // store into collector
-        final Integer key = new Integer(bugID);
+        final Integer key = Integer.valueOf(bugID);
         if (found.get(key) == null) {
           ///////////////////////////
           //if (log.isDebugEnabled()) {

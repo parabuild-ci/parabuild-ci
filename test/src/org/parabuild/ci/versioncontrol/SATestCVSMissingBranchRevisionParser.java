@@ -13,14 +13,15 @@
  */
 package org.parabuild.ci.versioncontrol;
 
-import java.io.*;
-import java.util.*;
-
-import junit.framework.*;
-
-import com.gargoylesoftware.base.testing.*;
+import com.gargoylesoftware.base.testing.OrderedTestSuite;
+import junit.framework.TestCase;
+import junit.framework.TestSuite;
 import org.parabuild.ci.TestHelper;
-import org.parabuild.ci.util.*;
+import org.parabuild.ci.util.IoUtils;
+
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.util.Map;
 
 
 /**
@@ -42,7 +43,7 @@ public class SATestCVSMissingBranchRevisionParser extends TestCase {
       final Map result = changeLogParser.parse(is);
       assertTrue(!result.isEmpty());
       assertEquals(2, result.size());
-      assertNotNull(result.get(new Integer("/opt/cvs/cvsroot/test/sourceline/alwaysvalid/src/Attic/readme.txt,v".hashCode())));
+      assertNotNull(result.get(Integer.valueOf("/opt/cvs/cvsroot/test/sourceline/alwaysvalid/src/Attic/readme.txt,v".hashCode())));
     } finally {
       IoUtils.closeHard(is);
     }

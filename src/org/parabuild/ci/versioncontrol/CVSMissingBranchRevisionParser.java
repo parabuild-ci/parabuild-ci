@@ -99,7 +99,7 @@ final class CVSMissingBranchRevisionParser {
       if (line.startsWith(marker)) {
         // found RCS file name that revision is missing, add to map
         final String foundRCSName = line.substring(markerLength, line.length() - 1);
-        result.put(new Integer(foundRCSName.hashCode()), Boolean.TRUE);
+        result.put(Integer.valueOf(foundRCSName.hashCode()), Boolean.TRUE);
       }
     }
 

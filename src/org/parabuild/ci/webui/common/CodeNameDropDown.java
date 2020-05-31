@@ -58,7 +58,7 @@ public class CodeNameDropDown extends DropDown implements HasInputValue {
    */
   public final void addCodeNamePair(final int code, final String name) {
     addItem(name);
-    selectionMap.put(name, new Integer(code));
+    selectionMap.put(name, Integer.valueOf(code));
   }
 
 

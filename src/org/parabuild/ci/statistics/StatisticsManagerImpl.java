@@ -284,7 +284,7 @@ final class StatisticsManagerImpl implements StatisticsManager {
           final Object[] buildRun = (Object[]) buildRunIter.next();
           final Integer buildNumber = (Integer) buildRun[0];
           final String value = (String) buildRun[1];
-          result.put(buildNumber, new Integer(Integer.parseInt(value)));
+          result.put(buildNumber, Integer.valueOf(Integer.parseInt(value)));
         }
         return result;
       }
@@ -346,7 +346,7 @@ final class StatisticsManagerImpl implements StatisticsManager {
         delete(ActiveBuildAttribute.STAT_ISSUES_TO_DATE);
 
         // delete historical stats
-        final Integer id = new Integer(activeBuildID);
+        final Integer id = Integer.valueOf(activeBuildID);
         session.delete("from HourlyStats s where s.activeBuildID = ?", id, Hibernate.INTEGER);
         session.delete("from DailyStats s where s.activeBuildID = ?", id, Hibernate.INTEGER);
         session.delete("from MonthlyStats s where s.activeBuildID = ?", id, Hibernate.INTEGER);
@@ -361,7 +361,7 @@ final class StatisticsManagerImpl implements StatisticsManager {
        * Deletes ActiveBuildAttr
        */
       private void delete(final String attrName) throws HibernateException {
-        session.delete("from ActiveBuildAttribute aba where aba.buildID = ? and aba.propertyName = ?", new Object[]{new Integer(activeBuildID), attrName}, new Type[]{Hibernate.INTEGER, Hibernate.STRING});
+        session.delete("from ActiveBuildAttribute aba where aba.buildID = ? and aba.propertyName = ?", new Object[]{Integer.valueOf(activeBuildID), attrName}, new Type[]{Hibernate.INTEGER, Hibernate.STRING});
       }
     });
   }

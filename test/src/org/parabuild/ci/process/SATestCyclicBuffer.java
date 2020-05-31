@@ -13,10 +13,10 @@
  */
 package org.parabuild.ci.process;
 
-import java.util.*;
-
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+
+import java.util.List;
 
 /**
  *
@@ -28,26 +28,26 @@ public class SATestCyclicBuffer extends TestCase {
 
 
   public void test_add() {
-    buffer.add(new Integer(0));
-    buffer.add(new Integer(1));
-    buffer.add(new Integer(2));
-    buffer.add(new Integer(3));
+    buffer.add(Integer.valueOf(0));
+    buffer.add(Integer.valueOf(1));
+    buffer.add(Integer.valueOf(2));
+    buffer.add(Integer.valueOf(3));
     assertEquals(MAX_SIZE, buffer.length());
-    assertEquals(new Integer(1), buffer.get());
-    assertEquals(new Integer(2), buffer.get());
-    assertEquals(new Integer(3), buffer.get());
+    assertEquals(Integer.valueOf(1), buffer.get());
+    assertEquals(Integer.valueOf(2), buffer.get());
+    assertEquals(Integer.valueOf(3), buffer.get());
   }
 
 
   public void test_getAll() {
-    buffer.add(new Integer(0));
-    buffer.add(new Integer(1));
-    buffer.add(new Integer(2));
-    buffer.add(new Integer(3));
+    buffer.add(Integer.valueOf(0));
+    buffer.add(Integer.valueOf(1));
+    buffer.add(Integer.valueOf(2));
+    buffer.add(Integer.valueOf(3));
     final List all = buffer.getAll();
-    assertEquals(new Integer(1), all.get(0));
-    assertEquals(new Integer(2), all.get(1));
-    assertEquals(new Integer(3), all.get(2));
+    assertEquals(Integer.valueOf(1), all.get(0));
+    assertEquals(Integer.valueOf(2), all.get(1));
+    assertEquals(Integer.valueOf(3), all.get(2));
   }
 
 

@@ -48,7 +48,7 @@ public class SSTestActiveBuildConfig extends ServersideTestCase {
         abc.setBuilderID(0);
         ConfigurationManager.getInstance().saveObject(abc);
         assertTrue(abc.getBuildID() > 0);
-        return new Integer(abc.getBuildID());
+        return Integer.valueOf(abc.getBuildID());
       }
     });
 

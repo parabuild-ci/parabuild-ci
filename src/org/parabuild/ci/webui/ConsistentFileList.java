@@ -49,8 +49,8 @@ public final class ConsistentFileList implements Serializable {
     final List entries = archiveManager.getArchivedLogEntries(stepLog);
     for (int i = 0, n = entries.size(); i < n; i++) {
       final String entry = ((ArchiveEntry)entries.get(i)).getEntryName();
-      idMap.put(new Integer(i), entry);
-      nameIDMap.put(entry, new Integer(i));
+      idMap.put(Integer.valueOf(i), entry);
+      nameIDMap.put(entry, Integer.valueOf(i));
     }
   }
 
@@ -61,7 +61,7 @@ public final class ConsistentFileList implements Serializable {
    * @return assosiated file name
    */
   public String getFileNameByID(final int paramFileID) {
-    return (String)idMap.get(new Integer(paramFileID));
+    return (String)idMap.get(Integer.valueOf(paramFileID));
   }
 
 

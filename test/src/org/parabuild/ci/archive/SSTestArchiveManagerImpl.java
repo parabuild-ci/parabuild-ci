@@ -19,7 +19,6 @@ import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.ServersideTestCase;
 import org.parabuild.ci.TestHelper;
 import org.parabuild.ci.archive.internal.ArchiveManagerImpl;
-import org.parabuild.ci.util.StringUtils;
 import org.parabuild.ci.configuration.ConfigurationManager;
 import org.parabuild.ci.configuration.SystemConfigurationManagerFactory;
 import org.parabuild.ci.object.BuildConfig;
@@ -30,6 +29,7 @@ import org.parabuild.ci.object.BuildStepType;
 import org.parabuild.ci.object.StepLog;
 import org.parabuild.ci.object.StepResult;
 import org.parabuild.ci.object.SystemProperty;
+import org.parabuild.ci.util.StringUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -119,7 +119,7 @@ public class SSTestArchiveManagerImpl extends ServersideTestCase {
     final List deletedResults = new ArrayList(runResultList.size());
     for (int i = 0; i < resultCount; i++) {
       final StepResult stepResult = (StepResult) runResultList.get(i);
-      deletedResults.add(new Object[]{new Integer(stepResult.getID()), stepResult.getArchiveFileName()});
+      deletedResults.add(new Object[]{Integer.valueOf(stepResult.getID()), stepResult.getArchiveFileName()});
       archiveManager.deleteResult(stepResult);
     }
 

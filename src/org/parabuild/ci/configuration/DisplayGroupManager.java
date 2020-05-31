@@ -103,7 +103,7 @@ public final class DisplayGroupManager {
     ConfigurationManager.runInHibernate(new TransactionCallback() {
       public Object runInTransaction() throws Exception {
         session.delete("from DisplayGroupBuild dgb where dgb.buildID = ? and dgb.displayGroupID = ?",
-                new Object[]{new Integer(activeBuildID), new Integer(displayGroupID)},
+                new Object[]{Integer.valueOf(activeBuildID), Integer.valueOf(displayGroupID)},
                 new Type[]{Hibernate.INTEGER, Hibernate.INTEGER});
         return null;
       }
@@ -237,7 +237,7 @@ public final class DisplayGroupManager {
       // filter
       for (int i = 0, n = buildStatusList.size(); i < n; i++) {
         final BuildState buildState = (BuildState) buildStatusList.get(i);
-        if (buildIDSet.contains(new Integer(buildState.getActiveBuildID()))) {
+        if (buildIDSet.contains(Integer.valueOf(buildState.getActiveBuildID()))) {
           add(result, buildState, showInactiveWithAll);
         }
       }

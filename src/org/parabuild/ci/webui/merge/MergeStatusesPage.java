@@ -241,7 +241,7 @@ public class MergeStatusesPage extends BasePage implements ConversationalTierlet
 
   private Result selectDisplayGroup(final int groupID) {
     // validate group exists
-    final Integer integerGroupID = new Integer(getValidDisplayGroupID(groupID));
+    final Integer integerGroupID = Integer.valueOf(getValidDisplayGroupID(groupID));
 
     // set group in cookie
     final Cookie cookie = new Cookie(WebUIConstants.COOKIE_MERGE_DISPLAY_GROUP_ID, integerGroupID.toString());
@@ -346,7 +346,7 @@ public class MergeStatusesPage extends BasePage implements ConversationalTierlet
    * merge.
    */
   private static void markSessionDetailedView(final HttpSession sessn, final int mergeID) {
-    sessn.setAttribute(ATTR_DETAILED_MERGE_ID, new Integer(mergeID));
+    sessn.setAttribute(ATTR_DETAILED_MERGE_ID, Integer.valueOf(mergeID));
     sessn.setAttribute(ATTR_MERGE_STATUS_VIEW, Pages.STATUS_VIEW_DETAILED);
   }
 

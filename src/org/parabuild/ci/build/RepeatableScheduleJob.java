@@ -96,7 +96,7 @@ public final class RepeatableScheduleJob implements Job {
         return;
       }
       activeBuildID = dataMap.getInt(BUILD_ID_KEY);
-      final Integer integerActiveBuildID = new Integer(this.activeBuildID);
+      final Integer integerActiveBuildID = Integer.valueOf(this.activeBuildID);
 
       // get build runner
       buildRunner = (BuildRunner) dataMap.get(BUILD_RUNNER_KEY);

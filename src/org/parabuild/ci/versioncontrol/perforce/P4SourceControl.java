@@ -887,7 +887,7 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
 
     // format template w/given params
     final Object[] arguments = {
-            clientName, date, p4User, new Integer(buildID), root,
+            clientName, date, p4User, Integer.valueOf(buildID), root,
             clientView, modtimeOption, clobberOption,
             agent.getLocalHostName(), lineEnd
     };
@@ -1440,7 +1440,7 @@ public final class P4SourceControl extends AbstractSourceControl implements Comm
       for (final Iterator i = changeListNumberChunks.iterator(); i.hasNext(); ) {
         lastChunk = (List) i.next();
       }
-      return !lastChunk.isEmpty() ? new Integer(Integer.parseInt((String) lastChunk.get(lastChunk.size() - 1))) : null;
+      return !lastChunk.isEmpty() ? Integer.valueOf(Integer.parseInt((String) lastChunk.get(lastChunk.size() - 1))) : null;
     } catch (final IOException e) {
       throw new BuildException(NAME_UNEXPECTED_SYNC_ERROR, e, getAgentHost());
     } finally {

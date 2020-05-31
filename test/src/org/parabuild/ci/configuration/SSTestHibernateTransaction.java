@@ -13,13 +13,16 @@
  */
 package org.parabuild.ci.configuration;
 
-import java.util.*;
-import junit.framework.*;
-import org.apache.commons.logging.*;
-
-import net.sf.hibernate.*;
+import junit.framework.TestSuite;
+import net.sf.hibernate.Hibernate;
+import net.sf.hibernate.HibernateException;
+import net.sf.hibernate.Session;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.parabuild.ci.ServersideTestCase;
 import org.parabuild.ci.TestHelper;
+
+import java.util.List;
 
 /**
  */
@@ -80,7 +83,7 @@ public class SSTestHibernateTransaction extends ServersideTestCase {
       final HibernateTransaction hs = HibernateTransaction.beginTransaction();
       session = hs.getSession();
       final List result = session.find("from BuildSequence as bs order by bs.sequenceID where bs.buildID = ?",
-        new Integer(buildID), Hibernate.INTEGER);
+        Integer.valueOf(buildID), Hibernate.INTEGER);
       HibernateTransaction.commitTransaction();
     } catch (RuntimeException e) {
       HibernateTransaction.rollbackTransaction();

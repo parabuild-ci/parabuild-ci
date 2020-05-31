@@ -29,7 +29,7 @@ final class StatusMapKey {
 
 
   public StatusMapKey(final String hostPort, final int buildID) {
-    this(hostPort, new Integer(buildID));
+    this(hostPort, Integer.valueOf(buildID));
   }
 
 

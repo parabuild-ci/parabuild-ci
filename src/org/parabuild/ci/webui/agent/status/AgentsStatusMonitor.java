@@ -116,7 +116,7 @@ public final class AgentsStatusMonitor implements Runnable, Service {
     for (int i = 0; i < agents.size(); i++) {
       final AgentConfig agentConfig = (AgentConfig) agents.get(i);
       final String hostName = agentConfig.getHost();
-      final Integer agentConfigID = new Integer(agentConfig.getID());
+      final Integer agentConfigID = Integer.valueOf(agentConfig.getID());
       agentIDs.add(agentConfigID);
       AgentStatusSample agentStatusSample;
       if (agentConfig.isEnabled()) {
@@ -210,7 +210,7 @@ public final class AgentsStatusMonitor implements Runnable, Service {
   public AgentStatus getStatus(final int agentID) {
     final AgentHistory history;
     synchronized (lock) {
-      history = (AgentHistory) agentHistoryMap.get(new Integer(agentID));
+      history = (AgentHistory) agentHistoryMap.get(Integer.valueOf(agentID));
       if (history == null) {
         return null;
       }
@@ -225,7 +225,7 @@ public final class AgentsStatusMonitor implements Runnable, Service {
    * @param agentID agent ID
    */
   public void notifyAgentDeleted(final int agentID) {
-    agentHistoryMap.remove(new Integer(agentID));
+    agentHistoryMap.remove(Integer.valueOf(agentID));
   }
 
 

@@ -627,7 +627,7 @@ final class SystemConfigurationManagerImpl implements SystemConfigurationManager
             }
           }
           final BuildSequenceNumberIncrementer incrementer = new BuildSequenceNumberIncrementer();
-          return new Integer(incrementer.incrementBuildSequenceNumber(session.connection()));
+          return Integer.valueOf(incrementer.incrementBuildSequenceNumber(session.connection()));
         } finally {
           // invalidate cache for system property because it
           // was changed by BuildSequenceNumberIncrementer

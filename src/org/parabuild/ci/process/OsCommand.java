@@ -106,7 +106,7 @@ public final class OsCommand {
    * or null if not found.
    */
   public static OsCommand getCommand(final int handle) {
-    return (OsCommand)commands.get(new Integer(handle));
+    return (OsCommand)commands.get(Integer.valueOf(handle));
   }
 
 
@@ -121,7 +121,7 @@ public final class OsCommand {
    */
   private static void unregister(final OsCommand command) {
     synchronized (commands) {
-      commands.remove(new Integer(command.handle));
+      commands.remove(Integer.valueOf(command.handle));
     }
   }
 
@@ -132,7 +132,7 @@ public final class OsCommand {
    */
   private void register(final OsCommand command) {
     synchronized (commands) {
-      commands.put(new Integer(handle), command);
+      commands.put(Integer.valueOf(handle), command);
     }
   }
 

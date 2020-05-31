@@ -123,7 +123,7 @@ public final class ResumeGroupPanel extends MessagePanel {
       // Prepare selected
       selectedBuildIDs = new ArrayList(11);
       if (StringUtils.isValidInteger(buildID)) {
-        selectedBuildIDs.add(new Integer(buildID));
+        selectedBuildIDs.add(Integer.valueOf(buildID));
       }
       // Prepare selection
       selectionBuildIDs = new ArrayList(11);
@@ -131,7 +131,7 @@ public final class ResumeGroupPanel extends MessagePanel {
       for (int i = 0; i < list.size(); i++) {
         final BuildState buildState = (BuildState) list.get(i);
         if (buildState.isResumable() && !Integer.toString(buildState.getActiveBuildID()).equals(buildID)) {
-          selectionBuildIDs.add(new Integer(buildState.getActiveBuildID()));
+          selectionBuildIDs.add(Integer.valueOf(buildState.getActiveBuildID()));
         }
       }
     } else if (Pages.RESUME_GROUP_SOURCE_AGENT_STATUS.equals(source)) {
@@ -283,14 +283,14 @@ public final class ResumeGroupPanel extends MessagePanel {
         for (int j = 0; j < list.size(); j++) {
           final BuildState buildState = (BuildState) list.get(j);
           if (buildState.isResumable()) {
-            result.add(new Integer(buildState.getActiveBuildID()));
+            result.add(Integer.valueOf(buildState.getActiveBuildID()));
           }
         }
       } else {
         // Add build ID to the list
         final BuildConfig buildConfig = cm.findActiveBuildConfigByName(item);
         if (buildConfig != null) {
-          result.add(new Integer(buildConfig.getActiveBuildID()));
+          result.add(Integer.valueOf(buildConfig.getActiveBuildID()));
         }
       }
     }

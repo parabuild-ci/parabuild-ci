@@ -14,7 +14,6 @@
 package org.parabuild.ci.configuration;
 
 import junit.framework.TestCase;
-import org.parabuild.ci.object.GlobalVCSUserMap;
 
 import java.util.List;
 
@@ -41,13 +40,13 @@ public final class SSTestGlobalVCSUserMapManager extends TestCase {
 
 
   public void testGetMapping() throws Exception {
-    assertNotNull(manager.getMapping(new Integer(0)));
+    assertNotNull(manager.getMapping(Integer.valueOf(0)));
   }
 
 
   public void testDeleteMapping() throws Exception {
-    manager.deleteMapping(manager.getMapping(new Integer(0)));
-    assertNull(manager.getMapping(new Integer(0)));
+    manager.deleteMapping(manager.getMapping(Integer.valueOf(0)));
+    assertNull(manager.getMapping(Integer.valueOf(0)));
   }
 
 

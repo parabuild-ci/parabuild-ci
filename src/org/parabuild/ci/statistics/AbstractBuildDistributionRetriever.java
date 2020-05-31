@@ -51,7 +51,7 @@ abstract class AbstractBuildDistributionRetriever {
     final int distSize = distributionSize();
     final SortedMap result = new TreeMap(StatisticsUtils.INTEGER_COMPARATOR);
     for (int i = 0; i < distSize; i++) {
-      result.put(new Integer(distStart + i), new BuildStatistics());
+      result.put(Integer.valueOf(distStart + i), new BuildStatistics());
     }
 
     // get distribution
@@ -71,7 +71,7 @@ abstract class AbstractBuildDistributionRetriever {
               pd.getIssueCount());
       // NOTE: we just put to the result - we dont' expect that the
       // given target hour will be met more then once.
-      result.put(new Integer(pd.getTarget()), buildStats);
+      result.put(Integer.valueOf(pd.getTarget()), buildStats);
     }
 
     // return result

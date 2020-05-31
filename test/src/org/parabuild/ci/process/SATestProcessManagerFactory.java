@@ -17,13 +17,13 @@ import junit.framework.TestCase;
 import junit.framework.TestSuite;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.parabuild.ci.TestHelper;
 import org.parabuild.ci.build.AgentFailureException;
 import org.parabuild.ci.configuration.AgentHost;
 import org.parabuild.ci.configuration.SystemConstants;
 import org.parabuild.ci.object.AgentConfig;
 import org.parabuild.ci.remote.AgentEnvironment;
 import org.parabuild.ci.remote.AgentManager;
-import org.parabuild.ci.TestHelper;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -194,7 +194,7 @@ public class SATestProcessManagerFactory extends TestCase {
     final List pids = new ArrayList(11);
     for (int i = 0; i < procList.size(); i++) {
       final OSProcess p = (OSProcess) procList.get(i);
-      pids.add(new Integer(p.getPID()));
+      pids.add(Integer.valueOf(p.getPID()));
     }
     manager.killProcesses(pids);
 
@@ -437,7 +437,7 @@ public class SATestProcessManagerFactory extends TestCase {
 
     for (int i = 0; i < procList.size(); i++) {
       final OSProcess p = (OSProcess) procList.get(i);
-      toKill.add(new Integer(p.getPID()));
+      toKill.add(Integer.valueOf(p.getPID()));
     }
 
     manager.killProcesses(toKill);
@@ -500,7 +500,7 @@ public class SATestProcessManagerFactory extends TestCase {
     final List toKill = new ArrayList(11);
     for (int i = 0; i < procList.size(); i++) {
       final OSProcess p = (OSProcess) procList.get(i);
-      toKill.add(new Integer(p.getPID()));
+      toKill.add(Integer.valueOf(p.getPID()));
     }
 
     manager.killProcesses(toKill);

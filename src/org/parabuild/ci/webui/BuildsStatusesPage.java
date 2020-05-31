@@ -136,7 +136,7 @@ public class BuildsStatusesPage extends BasePage implements ConversationalTierle
     final Integer displayGroupIDFromParameters = ParameterUtils.getDisplayGroupIDFromParameters(params);
     if (displayGroupIDFromParameters != null) {
       displayGroupID = getValidDisplayGroupID(displayGroupIDFromParameters);
-      rememberDisplayGroupID(new Integer(displayGroupID));
+      rememberDisplayGroupID(Integer.valueOf(displayGroupID));
     } else {
       displayGroupID = getRememberedDisplayGroupID(request);
     }
@@ -351,7 +351,7 @@ public class BuildsStatusesPage extends BasePage implements ConversationalTierle
 
   private Result selectDisplayGroup(final int groupID) {
     // validate group exists
-    final Integer integerGroupID = new Integer(getValidDisplayGroupID(groupID));
+    final Integer integerGroupID = Integer.valueOf(getValidDisplayGroupID(groupID));
 
     // remember
     rememberDisplayGroupID(integerGroupID);
@@ -463,7 +463,7 @@ public class BuildsStatusesPage extends BasePage implements ConversationalTierle
    * build.
    */
   private static void markSessionDetailedView(final HttpSession sessn, final int buildID) {
-    sessn.setAttribute(WebUIConstants.SESSION_ATTR_DETAILED_BUILD_ID, new Integer(buildID));
+    sessn.setAttribute(WebUIConstants.SESSION_ATTR_DETAILED_BUILD_ID, Integer.valueOf(buildID));
     sessn.setAttribute(WebUIConstants.SESSION_ATTR_STATUS_VIEW, Pages.STATUS_VIEW_DETAILED);
   }
 

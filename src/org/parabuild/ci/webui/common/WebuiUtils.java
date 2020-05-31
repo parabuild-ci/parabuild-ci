@@ -608,7 +608,7 @@ public final class WebuiUtils {
     for (int i = 0; i < statuses.size(); i++) {
       final BuildState buildState = (BuildState) statuses.get(i);
       if (buildState.isParallel()) {
-        final Integer leaderBuildID = new Integer(cm.getSourceControlSettingValue(buildState.getActiveBuildID(), VersionControlSystem.REFERENCE_BUILD_ID, BuildConfig.UNSAVED_ID));
+        final Integer leaderBuildID = Integer.valueOf(cm.getSourceControlSettingValue(buildState.getActiveBuildID(), VersionControlSystem.REFERENCE_BUILD_ID, BuildConfig.UNSAVED_ID));
         // Lasy init
         if (leaderBuildIDs == null) {
           leaderBuildIDs = getLeaderBuildIDs(statuses);
@@ -636,7 +636,7 @@ public final class WebuiUtils {
       final BuildState leaderState = (BuildState) leaders.get(i);
       result.add(leaderState);
       if (parallelsPresent) {
-        final List dependents = (List) parallels.get(new Integer(leaderState.getActiveBuildID()));
+        final List dependents = (List) parallels.get(Integer.valueOf(leaderState.getActiveBuildID()));
         if (dependents != null) {
           result.addAll(dependents);
         }
@@ -652,7 +652,7 @@ public final class WebuiUtils {
     for (int i = 0; i < statuses.size(); i++) {
       final BuildState buildState = (BuildState) statuses.get(i);
       if (!buildState.isParallel()) {
-        leaderBuildIDs.add(new Integer(buildState.getActiveBuildID()));
+        leaderBuildIDs.add(Integer.valueOf(buildState.getActiveBuildID()));
       }
     }
     return leaderBuildIDs;

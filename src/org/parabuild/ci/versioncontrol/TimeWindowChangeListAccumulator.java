@@ -115,7 +115,7 @@ public final class TimeWindowChangeListAccumulator {
 //    int dateHashCode = (int)time ^ (int)(time >> 32);
 //
 //    // lookup change list
-//    Integer changeListHash = new Integer(user.hashCode() ^ message.hashCode() ^ dateHashCode);
+//    Integer changeListHash = Integer.valueOf(user.hashCode() ^ message.hashCode() ^ dateHashCode);
     ChangeList changeList = (ChangeList)changeListMap.get(key);
 //    if (log.isDebugEnabled()) log.debug("changeListMap.size() before: " + changeListMap.size());
     if (changeList != null) { // found
