@@ -45,6 +45,14 @@ public final class Version implements Serializable {
 
 
   /**
+   * Utility class constructor.
+   */
+  private Version() {
+
+  }
+
+
+  /**
    * @return product name
    */
   public static String productName() {

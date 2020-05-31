@@ -48,6 +48,7 @@
     <exclude name="AvoidLiteralsInIfCondition"/>
     <exclude name="BeanMembersShouldSerialize"/>
     <exclude name="DataflowAnomalyAnalysis"/>
+    <exclude name="CloseResource"/>
   </rule>
 
   <rule ref="category/java/multithreading.xml">
