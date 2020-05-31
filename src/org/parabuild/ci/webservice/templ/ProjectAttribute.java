@@ -218,7 +218,7 @@ public class ProjectAttribute implements Serializable {
       _hashCode += name.hashCode();
     }
     _hashCode += projectID;
-    _hashCode += new Long(timestamp).hashCode();
+    _hashCode += Long.valueOf(timestamp).hashCode();
     if (value != null) {
       _hashCode += value.hashCode();
     }

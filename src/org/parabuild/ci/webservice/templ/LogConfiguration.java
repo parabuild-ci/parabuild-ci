@@ -221,7 +221,7 @@ public class LogConfiguration implements Serializable {
     if (path != null) {
       _hashCode += path.hashCode();
     }
-    _hashCode += new Long(timeStamp).hashCode();
+    _hashCode += Long.valueOf(timeStamp).hashCode();
     _hashCode += type;
     __hashCodeCalc = false;
     return _hashCode;

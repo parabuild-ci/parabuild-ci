@@ -196,7 +196,7 @@ public class StepRunAttribute implements Serializable {
       _hashCode += name.hashCode();
     }
     _hashCode += stepRunID;
-    _hashCode += new Long(timeStamp).hashCode();
+    _hashCode += Long.valueOf(timeStamp).hashCode();
     if (value != null) {
       _hashCode += value.hashCode();
     }

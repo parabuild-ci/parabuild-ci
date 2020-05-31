@@ -226,7 +226,7 @@ public class Project implements Serializable {
     if (name != null) {
       _hashCode += name.hashCode();
     }
-    _hashCode += new Long(timeStamp).hashCode();
+    _hashCode += Long.valueOf(timeStamp).hashCode();
     _hashCode += type;
     __hashCodeCalc = false;
     return _hashCode;

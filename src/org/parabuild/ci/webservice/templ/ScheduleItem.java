@@ -276,7 +276,7 @@ public class ScheduleItem implements Serializable {
     }
     _hashCode += (runIfNoChanges ? Boolean.TRUE : Boolean.FALSE).hashCode();
     _hashCode += scheduleItemID;
-    _hashCode += new Long(timeStamp).hashCode();
+    _hashCode += Long.valueOf(timeStamp).hashCode();
     __hashCodeCalc = false;
     return _hashCode;
   }

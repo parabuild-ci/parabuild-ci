@@ -356,7 +356,7 @@ public class StepRun implements Serializable {
       _hashCode += startedAt.hashCode();
     }
     _hashCode += (successful ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    _hashCode += new Long(timeStamp).hashCode();
+    _hashCode += Long.valueOf(timeStamp).hashCode();
     __hashCodeCalc = false;
     return _hashCode;
   }

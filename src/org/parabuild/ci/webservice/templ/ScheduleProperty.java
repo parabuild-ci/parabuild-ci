@@ -195,7 +195,7 @@ public class ScheduleProperty implements Serializable {
     if (propertyName != null) {
       _hashCode += propertyName.hashCode();
     }
-    _hashCode += new Long(propertyTimeStamp).hashCode();
+    _hashCode += Long.valueOf(propertyTimeStamp).hashCode();
     if (propertyValue != null) {
       _hashCode += propertyValue.hashCode();
     }

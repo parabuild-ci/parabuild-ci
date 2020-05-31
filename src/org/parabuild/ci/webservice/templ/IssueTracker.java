@@ -163,7 +163,7 @@ public class IssueTracker implements Serializable {
     int _hashCode = 1;
     _hashCode += ID;
     _hashCode += buildID;
-    _hashCode += new Long(timeStamp).hashCode();
+    _hashCode += Long.valueOf(timeStamp).hashCode();
     _hashCode += type;
     __hashCodeCalc = false;
     return _hashCode;

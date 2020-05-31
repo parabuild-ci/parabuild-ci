@@ -164,7 +164,7 @@ public class DisplayGroupBuild implements Serializable {
     _hashCode += ID;
     _hashCode += buildID;
     _hashCode += displayGroupID;
-    _hashCode += new Long(timeStamp).hashCode();
+    _hashCode += Long.valueOf(timeStamp).hashCode();
     __hashCodeCalc = false;
     return _hashCode;
   }

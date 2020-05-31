@@ -271,7 +271,7 @@ public class BuildWatcher implements Serializable {
     }
     _hashCode += instantMessengerType;
     _hashCode += level;
-    _hashCode += new Long(timeStamp).hashCode();
+    _hashCode += Long.valueOf(timeStamp).hashCode();
     _hashCode += watcherID;
     __hashCodeCalc = false;
     return _hashCode;

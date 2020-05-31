@@ -116,7 +116,7 @@ public abstract class AbstractArchiveRetentionHandler {
    * @param days the cut off day.
    */
   public final void setCurrentCutOffDays(final int days) {
-    cutOffTimeMillis = new Long(calculateCutOffTimeFromDays(days));
+    cutOffTimeMillis = Long.valueOf(calculateCutOffTimeFromDays(days));
   }
 
 

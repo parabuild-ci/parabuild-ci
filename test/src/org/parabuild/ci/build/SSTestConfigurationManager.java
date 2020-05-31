@@ -1231,7 +1231,7 @@ public final class SSTestConfigurationManager extends ServersideTestCase {
 
   public void test_getBuildRunAttributeValue() {
     assertEquals(new Integer(1), configManager.getBuildRunAttributeValue(9, BuildRunAttribute.ATTR_STARTED_USER_ID, new Integer(-1)));
-    assertEquals(new Long(1), configManager.getBuildRunAttributeValue(9, BuildRunAttribute.ATTR_STARTED_USER_ID, new Long(-1)));
+    assertEquals(Long.valueOf(1), configManager.getBuildRunAttributeValue(9, BuildRunAttribute.ATTR_STARTED_USER_ID, Long.valueOf(-1)));
     assertEquals(true, configManager.getBuildRunAttributeValue(9, BuildRunAttribute.ATTR_CLEAN_CHECKOUT, false));
     assertEquals(false, configManager.getBuildRunAttributeValue(2, BuildRunAttribute.ATTR_CLEAN_CHECKOUT, false));
   }

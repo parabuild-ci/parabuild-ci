@@ -453,7 +453,7 @@ public class BuildSequence implements Serializable {
     if (successPatterns != null) {
       _hashCode += successPatterns.hashCode();
     }
-    _hashCode += new Long(timeStamp).hashCode();
+    _hashCode += Long.valueOf(timeStamp).hashCode();
     _hashCode += timeoutMins;
     _hashCode += type;
     __hashCodeCalc = false;

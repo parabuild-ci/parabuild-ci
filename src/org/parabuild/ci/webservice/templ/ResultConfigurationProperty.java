@@ -195,7 +195,7 @@ public class ResultConfigurationProperty implements Serializable {
       _hashCode += name.hashCode();
     }
     _hashCode += resultConfigID;
-    _hashCode += new Long(timeStamp).hashCode();
+    _hashCode += Long.valueOf(timeStamp).hashCode();
     if (value != null) {
       _hashCode += value.hashCode();
     }

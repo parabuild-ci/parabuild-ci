@@ -329,7 +329,7 @@ public class ResultConfiguration implements Serializable {
     if (shellVariable != null) {
       _hashCode += shellVariable.hashCode();
     }
-    _hashCode += new Long(timeStamp).hashCode();
+    _hashCode += Long.valueOf(timeStamp).hashCode();
     _hashCode += type;
     __hashCodeCalc = false;
     return _hashCode;

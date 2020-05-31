@@ -225,7 +225,7 @@ public class AgentConfiguration implements Serializable {
       _hashCode += host.hashCode();
     }
     _hashCode += (local ? Boolean.TRUE : Boolean.FALSE).hashCode();
-    _hashCode += new Long(timeStamp).hashCode();
+    _hashCode += Long.valueOf(timeStamp).hashCode();
     __hashCodeCalc = false;
     return _hashCode;
   }

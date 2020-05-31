@@ -198,7 +198,7 @@ public class BuildFarmConfiguration implements Serializable {
     if (name != null) {
       _hashCode += name.hashCode();
     }
-    _hashCode += new Long(timeStamp).hashCode();
+    _hashCode += Long.valueOf(timeStamp).hashCode();
     __hashCodeCalc = false;
     return _hashCode;
   }

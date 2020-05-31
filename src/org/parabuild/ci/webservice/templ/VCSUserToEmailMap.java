@@ -270,7 +270,7 @@ public class VCSUserToEmailMap implements Serializable {
     }
     _hashCode += instantMessengerType;
     _hashCode += mapID;
-    _hashCode += new Long(timeStamp).hashCode();
+    _hashCode += Long.valueOf(timeStamp).hashCode();
     if (userEmail != null) {
       _hashCode += userEmail.hashCode();
     }

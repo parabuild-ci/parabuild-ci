@@ -195,7 +195,7 @@ public class LogConfigurationProperty implements Serializable {
     if (name != null) {
       _hashCode += name.hashCode();
     }
-    _hashCode += new Long(timeStamp).hashCode();
+    _hashCode += Long.valueOf(timeStamp).hashCode();
     if (value != null) {
       _hashCode += value.hashCode();
     }

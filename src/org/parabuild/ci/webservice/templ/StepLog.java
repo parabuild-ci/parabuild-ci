@@ -301,7 +301,7 @@ public class StepLog implements Serializable {
     }
     _hashCode += pathType;
     _hashCode += stepRunID;
-    _hashCode += new Long(timeStamp).hashCode();
+    _hashCode += Long.valueOf(timeStamp).hashCode();
     _hashCode += type;
     __hashCodeCalc = false;
     return _hashCode;

@@ -13,10 +13,11 @@
  */
 package org.parabuild.ci.statistics;
 
-import java.util.*;
-
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SATestMovingAverager extends TestCase {
 
@@ -46,11 +47,11 @@ public class SATestMovingAverager extends TestCase {
 
   public void test_addWindow() {
     final List window = new ArrayList(5);
-    window.add(new Long(1));
-    window.add(new Long(2));
-    window.add(new Long(3));
-    window.add(new Long(4));
-    window.add(new Long(5));
+    window.add(Long.valueOf(1));
+    window.add(Long.valueOf(2));
+    window.add(Long.valueOf(3));
+    window.add(Long.valueOf(4));
+    window.add(Long.valueOf(5));
     assertEquals(4, movingAverager.addWindow(window));
     assertEquals(4, movingAverager.getAverage());
   }

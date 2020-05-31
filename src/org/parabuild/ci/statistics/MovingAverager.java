@@ -45,11 +45,11 @@ public final class MovingAverager {
    */
   public long add(final long value) {
     if (window.size() < windowSize) {
-      window.add(new Long(value));
+      window.add(Long.valueOf(value));
       sum += value;
       average = (long)(sum / window.size());
     } else {
-      window.add(new Long(value));
+      window.add(Long.valueOf(value));
       final Long first = (Long)window.removeFirst();
       sum += value;
       sum -= first;

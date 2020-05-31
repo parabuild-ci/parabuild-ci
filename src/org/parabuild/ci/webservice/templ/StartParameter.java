@@ -405,7 +405,7 @@ public class StartParameter implements Serializable {
     if (runtimeValue != null) {
       _hashCode += runtimeValue.hashCode();
     }
-    _hashCode += new Long(timeStamp).hashCode();
+    _hashCode += Long.valueOf(timeStamp).hashCode();
     _hashCode += type;
     if (value != null) {
       _hashCode += value.hashCode();

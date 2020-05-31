@@ -360,7 +360,7 @@ public class BuildRunTest implements Serializable {
     _hashCode += brokenBuildRunCount;
     _hashCode += brokenSinceBuildRunID;
     _hashCode += buildRunID;
-    _hashCode += new Long(durationMillis).hashCode();
+    _hashCode += Long.valueOf(durationMillis).hashCode();
     _hashCode += (fix ? Boolean.TRUE : Boolean.FALSE).hashCode();
     if (message != null) {
       _hashCode += message.hashCode();
