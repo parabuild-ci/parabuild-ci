@@ -21,7 +21,7 @@ import java.util.Date;
  */
 public final class SATestMergeReportImpl extends TestCase {
 
-  private static final Byte TEST_STATUS = new Byte((byte)1);
+  private static final Byte TEST_STATUS = Byte.valueOf(((byte)1);
   private static final String TEST_NUMBER = "2";
   private static final String TEST_USER = "test user";
   private static final Date TEST_DATE = new Date();

@@ -431,7 +431,7 @@ public final class ConfigurationManager implements Serializable {
                 " and itp1.value = ? " +
                 " and itp2.name = ? " +
                 " and itp2.value = ? ",
-                new Object[]{new Byte(trackerType), IssueTrackerProperty.JIRA_PROJECT, project, IssueTrackerProperty.JIRA_VERSIONS, affectedVersions},
+                new Object[]{Byte.valueOf((trackerType), IssueTrackerProperty.JIRA_PROJECT, project, IssueTrackerProperty.JIRA_VERSIONS, affectedVersions},
                 new Type[]{Hibernate.BYTE, Hibernate.STRING, Hibernate.STRING, Hibernate.STRING, Hibernate.STRING});
       }
     });
@@ -3098,7 +3098,7 @@ public final class ConfigurationManager implements Serializable {
       public Object runInTransaction() throws Exception {
         final List list = session.find("select ish.ID from Issue as ish " +
                 " where ish.trackerType = ? and ish.key = ? and ish.product = ? and ish.version = ? ",
-                new Object[]{new Byte(trackerType), key, product, version},
+                new Object[]{Byte.valueOf((trackerType), key, product, version},
                 new Type[]{Hibernate.BYTE, Hibernate.STRING, Hibernate.STRING, Hibernate.STRING});
         if (list.size() >= 1) {
           return list.get(0); // return first found
@@ -3126,7 +3126,7 @@ public final class ConfigurationManager implements Serializable {
       public Object runInTransaction() throws Exception {
         final List list = session.find("select ish.ID from Issue as ish " +
                 " where ish.trackerType = ? and ish.key = ? and ish.project = ? and ish.version = ? ",
-                new Object[]{new Byte(trackerType), key, project, version},
+                new Object[]{Byte.valueOf((trackerType), key, project, version},
                 new Type[]{Hibernate.BYTE, Hibernate.STRING, Hibernate.STRING, Hibernate.STRING});
         if (list.size() >= 1) {
           return list.get(0); // return first found
@@ -3237,7 +3237,7 @@ public final class ConfigurationManager implements Serializable {
         return session.find("select isht from IssueTracker as isht " +
                 " where isht.buildID = ? " +
                 " and isht.type = ?",
-                new Object[]{Integer.valueOf(buildID), new Byte(trackerType)},
+                new Object[]{Integer.valueOf(buildID), Byte.valueOf((trackerType)},
                 new Type[]{Hibernate.INTEGER, Hibernate.BYTE});
       }
     });
