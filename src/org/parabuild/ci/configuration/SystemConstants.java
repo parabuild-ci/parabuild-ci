@@ -24,14 +24,6 @@ public final class SystemConstants {
    */
   public static final String SYSTEM_PASSWORD = "Viewtier Parabuilt 2.0";
 
-
-  /**
-   * Constant class constructor.
-   */
-  private SystemConstants() {
-  }
-
-
   public static final String SYSTEM_PROPERTY_BUILDER_PASSWORD = "parabuild.builder.password";
 
   /**
@@ -95,4 +87,12 @@ public final class SystemConstants {
    * This property can be set from the command line.
    */
   public static final String SYSTEM_PROPERTY_SOURCE_IP_ADDRESS_CHECK_DISABLED = "parabuild.source.ip.address.check.disabled";
+
+
+  /**
+   * Constant class constructor.
+   */
+  private SystemConstants() {
+
+  }
 }
