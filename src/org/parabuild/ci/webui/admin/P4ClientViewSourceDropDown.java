@@ -59,7 +59,7 @@ final class P4ClientViewSourceDropDown extends CodeNameDropDown {
 
 
   private void processCodeSelection(final byte sourceCode) {
-    final Byte selectedCode = Byte.valueOf((sourceCode);
+    final Byte selectedCode = Byte.valueOf(sourceCode);
     for (final Iterator iterator = showOnSelectMap.entrySet().iterator(); iterator.hasNext();) {
       final Map.Entry entry = (Map.Entry) iterator.next();
       final Byte key = (Byte) entry.getKey();
@@ -81,7 +81,7 @@ final class P4ClientViewSourceDropDown extends CodeNameDropDown {
 
 
   public void showOnSelect(final byte sourceCode, final Component component) {
-    final Byte key = Byte.valueOf((sourceCode);
+    final Byte key = Byte.valueOf(sourceCode);
     Set showOnSelect = (Set) showOnSelectMap.get(key);
     if (showOnSelect == null) {
       showOnSelect = new HashSet(3);
