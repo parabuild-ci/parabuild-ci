@@ -26,7 +26,7 @@ public final class CommandLineParser {
   /** @noinspection UNUSED_SYMBOL,UnusedDeclaration*/
   private static final Log log = LogFactory.getLog(CommandLineParser.class); //NOPMD
 
-  private static final String QUOTE = "\'";
+  private static final String QUOTE = "'";
   private static final String DOUBLE_QUOTE = "\"";
 
   private static final int IS_NORMAL = 0;
@@ -44,7 +44,7 @@ public final class CommandLineParser {
     lastIsQuoted = false;
     current = new StringBuffer(100);
     parsed = new ArrayList(7);
-    for (final StringTokenizer st = new StringTokenizer(cmd, " \"\'", true); st.hasMoreTokens();) {
+    for (final StringTokenizer st = new StringTokenizer(cmd, " \"'", true); st.hasMoreTokens();) {
       final String next = st.nextToken();
       switch (state) {
         case IS_QUOTED:
