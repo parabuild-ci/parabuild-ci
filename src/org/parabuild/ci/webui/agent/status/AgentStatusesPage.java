@@ -116,7 +116,7 @@ public final class AgentStatusesPage extends BasePage implements ConversationalT
       } else {
         showAgentStatuses(session);
       }
-    } else //noinspection IfStatementWithIdenticalBranches
+    } else
       if (Pages.AGENT_STATUS_VIEW_LOAD.equalsIgnoreCase(viewMode)) {
         showAgentLoads(session);
       } else {

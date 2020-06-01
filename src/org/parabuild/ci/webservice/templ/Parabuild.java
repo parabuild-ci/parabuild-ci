@@ -18,7 +18,6 @@ import java.util.Calendar;
 /**
  * Parabuild web service template. This template is used to generate WSDL.
  *
- * @noinspection InterfaceNeverImplemented
  */
 public interface Parabuild {
 

@@ -67,7 +67,7 @@ import java.util.regex.Pattern;
 /**
  * Implements Parabuild service
  *
- * @noinspection ParameterNameDiffersFromOverriddenParameter,UnnecessaryFullyQualifiedName,UnusedDeclaration
+ * @noinspectionUnnecessaryFullyQualifiedName,UnusedDeclaration
  */
 public final class ParabuildSoapBindingImpl implements Parabuild {
 
