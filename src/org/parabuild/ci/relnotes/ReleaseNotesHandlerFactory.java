@@ -83,8 +83,6 @@ public final class ReleaseNotesHandlerFactory {
             ErrorManagerFactory.getErrorManager().reportSystemError(error);
           }
           break;
-        case IssueTracker.TYPE_FOGBUGZ:
-          break;
         case IssueTracker.TYPE_JIRA_LISTENER:
           // Jira is handled by PendingReleaseNotesHandler that is added later
           break;
@@ -95,6 +93,7 @@ public final class ReleaseNotesHandlerFactory {
           // the list of PendingIssues.
           compositeHandler.add(new ChangeListReleaseNotesHandler(tracker));
           break;
+        case IssueTracker.TYPE_FOGBUGZ:
         default:
           break;
       }

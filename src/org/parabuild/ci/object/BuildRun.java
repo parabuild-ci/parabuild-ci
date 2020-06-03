@@ -422,12 +422,11 @@ public final class BuildRun implements Serializable, ObjectConstants {
         return "BROKEN";
       case BUILD_RESULT_TIMEOUT:
         return "TIMED_OUT";
-      case BUILD_RESULT_UNKNOWN:
-        return "UNKNOWN";
       case BUILD_RESULT_STOPPED:
         return "STOPPED";
       case BUILD_RESULT_SYSTEM_ERROR:
         return "SYSTEM_ERROR";
+      case BUILD_RESULT_UNKNOWN:
       default:
         return "UNKNOWN";
     }

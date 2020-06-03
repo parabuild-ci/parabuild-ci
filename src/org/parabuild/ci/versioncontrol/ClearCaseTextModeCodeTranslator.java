@@ -46,9 +46,6 @@ public final class ClearCaseTextModeCodeTranslator {
       case VersionControlSystem.CLEARCASE_TEXT_MODE_NOT_SET:
         textMode = "";
         break;
-      case VersionControlSystem.CLEARCASE_TEXT_MODE_AUTO:
-        textMode = isWindows ? "msdos" : "unix";
-        break;
       case VersionControlSystem.CLEARCASE_TEXT_MODE_MSDOS:
         textMode = "msdos";
         break;
@@ -64,6 +61,7 @@ public final class ClearCaseTextModeCodeTranslator {
       case VersionControlSystem.CLEARCASE_TEXT_MODE_TRANSPARENT:
         textMode = "transparent";
         break;
+      case VersionControlSystem.CLEARCASE_TEXT_MODE_AUTO:
       default:
         textMode = isWindows ? "msdos" : "unix";
         break;

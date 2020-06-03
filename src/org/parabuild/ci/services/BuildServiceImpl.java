@@ -91,8 +91,6 @@ public final class BuildServiceImpl implements BuildService {
         result = new RepeatableScheduler(activeBuildID, buildRunner);
         break;
       case BuildConfig.SCHEDULE_TYPE_MANUAL:
-        result = new AutomaticScheduler(activeBuildID, sourceControl, buildRunner, false);
-        break;
       case BuildConfig.SCHEDULE_TYPE_PARALLEL:
         result = new AutomaticScheduler(activeBuildID, sourceControl, buildRunner, false);
         break;

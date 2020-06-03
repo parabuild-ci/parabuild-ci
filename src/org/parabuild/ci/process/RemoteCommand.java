@@ -377,8 +377,6 @@ public class RemoteCommand implements Cleanable {
         commandToExecute = STR_CMD_C + quotedWrapperScriptFile;
         break;
       case AgentEnvironment.SYSTEM_TYPE_CYGWIN:
-        commandToExecute = "sh " + quotedWrapperScriptFile;
-        break;
       default:
         commandToExecute = "sh " + quotedWrapperScriptFile;
         break;
