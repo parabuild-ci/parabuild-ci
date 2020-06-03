@@ -207,17 +207,17 @@ public final class ProjectPanel extends MessagePanel implements Validatable, Sav
 
 
       public void setPropertyValue(final ProjectAttribute property, final String propertyValue) {
-        ((ProjectAttribute)property).setValue(propertyValue);
+        property.setValue(propertyValue);
       }
 
 
       public String getPropertyValue(final ProjectAttribute property) {
-        return ((ProjectAttribute)property).getValue();
+        return property.getValue();
       }
 
 
       public String getPropertyName(final ProjectAttribute property) {
-        return ((ProjectAttribute)property).getName();
+        return property.getName();
       }
     };
   }

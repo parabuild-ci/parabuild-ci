@@ -216,17 +216,17 @@ public abstract class AbstractScheduleSettingsPanel extends ScheduleSettingsPane
 
 
       public void setPropertyValue(final ScheduleProperty property, final String propertyValue) {
-        ((ScheduleProperty) property).setPropertyValue(propertyValue);
+        property.setPropertyValue(propertyValue);
       }
 
 
       public String getPropertyValue(final ScheduleProperty property) {
-        return ((ScheduleProperty) property).getPropertyValue();
+        return property.getPropertyValue();
       }
 
 
       public String getPropertyName(final ScheduleProperty property) {
-        return ((ScheduleProperty) property).getPropertyName();
+        return property.getPropertyName();
       }
     };
   }

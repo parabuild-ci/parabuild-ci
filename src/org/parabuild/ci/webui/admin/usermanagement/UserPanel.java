@@ -460,7 +460,7 @@ public final class UserPanel extends MessagePanel implements Validatable, Saveab
 
 
       public String getPropertyName(final UserProperty property) {
-        return ((UserProperty) property).getName();
+        return property.getName();
       }
     };
   }
