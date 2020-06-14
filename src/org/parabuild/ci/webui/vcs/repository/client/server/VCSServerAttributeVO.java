@@ -7,13 +7,13 @@ import com.google.gwt.user.client.rpc.IsSerializable;
  */
 public final class VCSServerAttributeVO implements IsSerializable {
 
-  private Integer serverId = null;
+  private Integer serverId;
 
-  private Integer id = null;
+  private Integer id;
 
-  private String name = null;
+  private String name;
 
-  private String value = null;
+  private String value;
 
   private long timeStamp = 1;
 
