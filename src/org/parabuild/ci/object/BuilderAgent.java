@@ -31,10 +31,6 @@ public final class BuilderAgent implements Serializable, ObjectConstants {
   private long timeStamp;
 
 
-  public BuilderAgent() {
-  }
-
-
   /**
    * The getter method for member user ID
    *

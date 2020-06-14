@@ -40,10 +40,6 @@ public final class BuildStatus {
   private int lastBuildRunNumber;
 
 
-  public BuildStatus() { // NOPMD
-  }
-
-
   public final byte getBuildStatusID() {
     return buildStatusID;
   }

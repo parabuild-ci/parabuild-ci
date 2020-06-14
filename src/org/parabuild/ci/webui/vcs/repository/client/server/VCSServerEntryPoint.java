@@ -9,11 +9,6 @@ import org.parabuild.ci.webui.vcs.repository.common.RepositoryUtils;
 public final class VCSServerEntryPoint implements EntryPoint {
 
 
-  public VCSServerEntryPoint() {
-
-  }
-
-
   /**
    * Set up repository management module.
    */

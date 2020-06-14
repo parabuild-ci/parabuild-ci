@@ -50,10 +50,6 @@ public class Merge implements ObjectConstants, Serializable {
   private int mergeConfigurationID = MergeConfiguration.UNSAVED_ID;
 
 
-  public Merge() {
-  }
-
-
   /**
    * @hibernate.id generator-class="identity" column="ID"
    * unsaved-value="-1"
