@@ -61,6 +61,7 @@
     <exclude name="AvoidLiteralsInIfCondition"/>
     <exclude name="BeanMembersShouldSerialize"/>
     <exclude name="DataflowAnomalyAnalysis"/>
+    <exclude name="NullAssignment"/>
     <exclude name="CloseResource"/>
     <exclude name="ProperLogger"/>
   </rule>
