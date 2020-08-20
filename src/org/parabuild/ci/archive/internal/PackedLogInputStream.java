@@ -154,8 +154,8 @@ public final class PackedLogInputStream extends InputStream {
   public int hashCode() {
     int result = zippedLogFile.hashCode();
     result = 29 * result + entryName.hashCode();
-    result = 29 * result + (file != null ? file.hashCode() : 0);
-    result = 29 * result + (delegate != null ? delegate.hashCode() : 0);
+    result = 29 * result + (file == null ? 0 : file.hashCode());
+    result = 29 * result + (delegate == null ? 0 : delegate.hashCode());
     return result;
   }
 

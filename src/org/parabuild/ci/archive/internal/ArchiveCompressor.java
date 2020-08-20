@@ -114,7 +114,7 @@ public final class ArchiveCompressor {
    */
   public void recalculateCurrentCutOffTime() {
     final BuildConfigAttribute daysAttr = ConfigurationManager.getInstance().getBuildAttribute(buildID, BuildConfigAttribute.LOG_PACK_DAYS);
-    final String stringDays = daysAttr != null ? daysAttr.getPropertyValue() : Integer.toString(DEFAULT_COMPRESS_DAYS);
+    final String stringDays = daysAttr == null ? Integer.toString(DEFAULT_COMPRESS_DAYS) : daysAttr.getPropertyValue();
     if (StringUtils.isValidInteger(stringDays)) {
       cutOffTime = calculateCutOffTime(Integer.parseInt(stringDays));
     }

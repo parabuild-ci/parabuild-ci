@@ -182,7 +182,9 @@ final class WindowsProcessManager implements ProcessManager {
       final OSProcess p = (OSProcess) ret.get(i);
       final int pid = p.getPID();
 
-      if (searchPatterns != null) {
+      if (searchPatterns == null) {
+        matches = true;
+      } else {
         if (ProcessUtils.matches(p.getName(), searchPatterns) ||
                 ProcessUtils.matches(p.getPath(), searchPatterns) ||
                 ProcessUtils.matches(p.getCommandLine(), searchPatterns)) {
@@ -193,8 +195,6 @@ final class WindowsProcessManager implements ProcessManager {
           final String env = getEnvironment(pid);
           matches = ProcessUtils.matches(env, searchPatterns);
         }
-      } else {
-        matches = true;
       }
 
       // Ok, given process matches specified criterias

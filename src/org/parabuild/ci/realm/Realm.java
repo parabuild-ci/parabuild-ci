@@ -142,12 +142,11 @@ public final class Realm extends RealmBase {
   protected String getPassword(final String username) {
     final GenericPrincipal principal =
             (GenericPrincipal) principals.get(username);
-    if (principal != null) {
-      return principal.getPassword();
-    } else {
+    if (principal == null) {
       return null;
+    } else {
+      return principal.getPassword();
     }
-
   }
 
 

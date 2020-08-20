@@ -35,12 +35,12 @@ public final class EmailDuplicatesRemover {
     final Map alreadyExistsTracker = new HashMap(23);
     for (final Iterator i = addresses.iterator(); i.hasNext();) {
       final String email = ((InternetAddress)i.next()).getAddress().toLowerCase();
-      if (alreadyExistsTracker.get(email) != null) {
-        // remove from list
-        i.remove();
-      } else {
+      if (alreadyExistsTracker.get(email) == null) {
         // register
         alreadyExistsTracker.put(email, Boolean.TRUE);
+      } else {
+        // remove from list
+        i.remove();
       }
     }
   }

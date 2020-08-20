@@ -119,7 +119,9 @@ public final class UnixProcessManager implements ProcessManager {
       final OSProcess p = (OSProcess) ret.get(i);
       final int pid = p.getPID();
 
-      if (searchPatterns != null) {
+      if (searchPatterns == null) {
+        matches = true;
+      } else {
         if (ProcessUtils.matches(p.getName(), searchPatterns) ||
                 ProcessUtils.matches(p.getPath(), searchPatterns) ||
                 ProcessUtils.matches(p.getCommandLine(), searchPatterns)) {
@@ -132,8 +134,6 @@ public final class UnixProcessManager implements ProcessManager {
             matches = ProcessUtils.matches(proc_env, searchPatterns);
           }
         }
-      } else {
-        matches = true;
       }
 
       // Ok, given process matches specified criterias

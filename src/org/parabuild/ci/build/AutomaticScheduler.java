@@ -499,9 +499,11 @@ public final class AutomaticScheduler extends Thread implements BuildScheduler {
           return;
         }
         // check if we have to run cycle
-        if (runOnceRequest != null) {
-          runSchedulerCycle();
-        } else if (runContinuously && !SystemConfigurationManagerFactory.getManager().isTimeInScheduleGap(new Date())) {
+        if (runOnceRequest == null) {
+          if (runContinuously && !SystemConfigurationManagerFactory.getManager().isTimeInScheduleGap(new Date())) {
+            runSchedulerCycle();
+          }
+        } else {
           runSchedulerCycle();
         }
       }

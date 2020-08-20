@@ -99,7 +99,14 @@ final class UpgraderToVersion45 implements SingleStepSchemaUpgrader {
           final Timestamp finishedAt = rsBuildRuns.getTimestamp(4);
           if (startedAt == null || finishedAt == null) continue;
 
-          if (firstBrokenTime != null) {
+          if (firstBrokenTime == null) {
+            // previous clean
+            if (currentBuildRunResult != BuildRun.BUILD_RESULT_SUCCESS) {
+              // this is the first broken build
+              firstBrokenTime = finishedAt;
+              firstBrokenBuildRunID = currentBuildRunID;
+            }
+          } else {
             // previous was broken
             if (currentBuildRunResult == BuildRun.BUILD_RESULT_SUCCESS) {
               // now fixed, record time to fix
@@ -133,13 +140,6 @@ final class UpgraderToVersion45 implements SingleStepSchemaUpgrader {
               // reset
               firstBrokenBuildRunID = BuildRun.UNSAVED_ID;
               firstBrokenTime = null;
-            }
-          } else {
-            // previous clean
-            if (currentBuildRunResult != BuildRun.BUILD_RESULT_SUCCESS) {
-              // this is the first broken build
-              firstBrokenTime = finishedAt;
-              firstBrokenBuildRunID = currentBuildRunID;
             }
           }
         }

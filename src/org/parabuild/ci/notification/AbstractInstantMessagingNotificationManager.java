@@ -272,8 +272,8 @@ public abstract class AbstractInstantMessagingNotificationManager implements Not
       body.append(STR_CRCR);
       final String buildRunNumber = buildRun.getBuildRunNumber() >= 0 ? buildRun.getBuildRunNumberAsString() : "";
       final SimpleDateFormat formatter = new SimpleDateFormat(SystemConfigurationManagerFactory.getManager().getDateTimeFormat(), Locale.US);
-      final String startedAt = buildRun.getStartedAt() != null ? formatter.format(buildRun.getStartedAt()) : "";
-      final String finishedAt = buildRun.getFinishedAt() != null ? formatter.format(buildRun.getFinishedAt()) : "";
+      final String startedAt = buildRun.getStartedAt() == null ? "" : formatter.format(buildRun.getStartedAt());
+      final String finishedAt = buildRun.getFinishedAt() == null ? "" : formatter.format(buildRun.getFinishedAt());
       StringUtils.appendWithNewLineIfNotNull(body, "Build name:", buildRun.getBuildName());
       StringUtils.appendWithNewLineIfNotNull(body, "Build number:", buildRunNumber);
       StringUtils.appendWithNewLineIfNotNull(body, "Started at:", startedAt);

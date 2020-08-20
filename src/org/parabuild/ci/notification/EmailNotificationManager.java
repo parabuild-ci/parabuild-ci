@@ -185,7 +185,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
       body.append("Build Details").append(STR_CR);
       final String buildRunNumber = buildRun.getBuildRunNumber() >= 0 ? buildRun.getBuildRunNumberAsString() : "";
       final SimpleDateFormat formatter = createFormatter();
-      final String startedAt = buildRun.getStartedAt() != null ? formatter.format(buildRun.getStartedAt()) : "";
+      final String startedAt = buildRun.getStartedAt() == null ? "" : formatter.format(buildRun.getStartedAt());
       StringUtils.appendWithNewLineIfNotNull(body, "Build name:", buildRun.getBuildName());
       StringUtils.appendWithNewLineIfNotNull(body, "Build host:", cm.getBuildRunAttributeValue(buildRun.getBuildRunID(), BuildRunAttribute.AGENT_HOST));
       StringUtils.appendWithNewLineIfNotNull(body, "Build number:", buildRunNumber);
@@ -329,7 +329,9 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
   public void sendUserPassword(final String userName, final String newPassword) {
     try {
       final User user = SecurityManager.getInstance().getUserByName(userName);
-      if (user != null) {
+      if (user == nullOSProcess) {
+        log.warn("Could not send notification to user \"" + user + "\" - user does not exist");
+      } else {
         // compose subject
         final List to = new ArrayList(1);
         to.add(new InternetAddress(user.getEmail()));
@@ -347,8 +349,6 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
         msg.append("Build Administrator");
         // send
         sendMessage(new EmailRecipients(to, Collections.emptyList()), subj, msg, SystemProperty.MESSAGE_PRIORITY_NORMAL);
-      } else {
-        log.warn("Could not send notification to user \"" + user + "\" - user does not exist");
       }
     } catch (final Exception e) {
       reportErrorSendingPassword(e);

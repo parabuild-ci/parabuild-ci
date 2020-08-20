@@ -3611,10 +3611,10 @@ public final class ConfigurationManager implements Serializable {
         query.setInteger(0, stepRunID);
         query.setString(1, statName);
         StepRunAttribute attr = (StepRunAttribute) query.uniqueResult();
-        if (attr != null) {
-          attr.setValue(attr.getValueAsInt() + statValue);
-        } else {
+        if (attr == null) {
           attr = new StepRunAttribute(stepRunID, statName, statValue);
+        } else {
+          attr.setValue(attr.getValueAsInt() + statValue);
         }
         session.saveOrUpdate(attr);
         return null;
@@ -3639,10 +3639,10 @@ public final class ConfigurationManager implements Serializable {
         query.setInteger(0, buildRunID);
         query.setString(1, statName);
         BuildRunAttribute attr = (BuildRunAttribute) query.uniqueResult();
-        if (attr != null) {
-          attr.setValue(attr.getValueAsInteger() + statValue);
-        } else {
+        if (attr == null) {
           attr = new BuildRunAttribute(buildRunID, statName, statValue);
+        } else {
+          attr.setValue(attr.getValueAsInteger() + statValue);
         }
         session.saveOrUpdate(attr);
         return null;

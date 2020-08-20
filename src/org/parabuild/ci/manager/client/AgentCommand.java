@@ -158,7 +158,10 @@ public abstract class AgentCommand {
       httpURLConnection.setAllowUserInteraction(false);
       httpURLConnection.setDoInput(true);
       httpURLConnection.setUseCaches(false);
-      if (istream != null) {
+      if (istream == null) {
+        httpURLConnection.setDoOutput(false);
+        httpURLConnection.setRequestMethod("GET");
+      } else {
         httpURLConnection.setDoOutput(true);
         httpURLConnection.setRequestMethod("PUT");
         if (contentType != null) {
@@ -167,9 +170,6 @@ public abstract class AgentCommand {
         if (contentLength >= 0) {
           httpURLConnection.setRequestProperty("Content-Length", String.valueOf(contentLength));
         }
-      } else {
-        httpURLConnection.setDoOutput(false);
-        httpURLConnection.setRequestMethod("GET");
       }
       httpURLConnection.setRequestProperty("User-Agent", "Parabuild-Agent-Command/1.0");
 

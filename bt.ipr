@@ -202,7 +202,6 @@
       </inspection_tool>
       <inspection_tool class="BigDecimalEquals" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="BooleanMethodIsAlwaysInverted" enabled="false" level="WARNING" enabled_by_default="false" />
-      <inspection_tool class="BusyWait" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="CallToNativeMethodWhileLocked" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="CallToSimpleGetterInClass" enabled="true" level="WARNING" enabled_by_default="true">
         <option name="ignoreGetterCallsOnOtherObjects" value="false" />
@@ -243,7 +242,6 @@
       </inspection_tool>
       <inspection_tool class="DuplicateConditionJS" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="DynamicRegexReplaceableByCompiledPattern" enabled="true" level="WARNING" enabled_by_default="true" />
-      <inspection_tool class="EmptyInitializer" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="EmptySynchronizedStatement" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="EqualsAndHashcode" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="EqualsHashCodeCalledOnUrl" enabled="true" level="WARNING" enabled_by_default="true" />
@@ -255,9 +253,8 @@
       <inspection_tool class="FieldHidesSuperclassField" enabled="true" level="WARNING" enabled_by_default="true">
         <option name="m_ignoreInvisibleFields" value="true" />
       </inspection_tool>
-      <inspection_tool class="FieldMayBeFinal" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="FieldMayBeStatic" enabled="true" level="WARNING" enabled_by_default="true" />
-      <inspection_tool class="FinalPrivateMethod" enabled="false" level="WARNING" enabled_by_default="false" />
+      <inspection_tool class="FinalMethodInFinalClass" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="FinalStaticMethod" enabled="false" level="WARNING" enabled_by_default="false" />
       <inspection_tool class="FinalizeNotProtected" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="ForLoopReplaceableByWhileJS" enabled="true" level="WARNING" enabled_by_default="true">
@@ -268,14 +265,23 @@
       <inspection_tool class="GroovyRangeTypeCheck" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="GroovyUnresolvedAccess" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="GroovyUntypedAccess" enabled="true" level="WARNING" enabled_by_default="true" />
+      <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+        <option name="myValues">
+          <value>
+            <list size="2">
+              <item index="0" class="java.lang.String" itemvalue="objectid" />
+              <item index="1" class="java.lang.String" itemvalue="actiontype" />
+            </list>
+          </value>
+        </option>
+        <option name="myCustomValuesEnabled" value="true" />
+      </inspection_tool>
       <inspection_tool class="IfStatementWithIdenticalBranchesJS" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="IncrementDecrementUsedAsExpression" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="InnerClassVariableHidesOuterClassVariable" enabled="true" level="WARNING" enabled_by_default="true">
         <option name="m_ignoreInvisibleFields" value="true" />
       </inspection_tool>
       <inspection_tool class="InstanceofIncompatibleInterface" enabled="true" level="WARNING" enabled_by_default="true" />
-      <inspection_tool class="InstantiationOfUtilityClass" enabled="true" level="WARNING" enabled_by_default="true" />
-      <inspection_tool class="IteratorHasNextCallsIteratorNext" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="IteratorNextDoesNotThrowNoSuchElementException" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="JavaDoc" enabled="true" level="WARNING" enabled_by_default="true">
         <option name="TOP_LEVEL_CLASS_OPTIONS">
@@ -313,7 +319,6 @@
       <inspection_tool class="KeySetIterationMayUseEntrySet" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="LengthOneStringInIndexOf" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="LengthOneStringsInConcatenation" enabled="true" level="WARNING" enabled_by_default="true" />
-      <inspection_tool class="ListIndexOfReplaceableByContains" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="LiteralAsArgToStringEquals" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="LocalCanBeFinal" enabled="true" level="WARNING" enabled_by_default="true">
         <option name="REPORT_VARIABLES" value="true" />
@@ -423,6 +428,7 @@
       <inspection_tool class="RandomDoubleForRandomInteger" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="ReadObjectAndWriteObjectPrivate" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="ReadResolveAndWriteReplaceProtected" enabled="true" level="WARNING" enabled_by_default="true" />
+      <inspection_tool class="RedundantFieldInitialization" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="RedundantImplements" enabled="true" level="WARNING" enabled_by_default="true">
         <option name="ignoreSerializable" value="false" />
         <option name="ignoreCloneable" value="false" />
@@ -549,6 +555,19 @@
     <option name="OPTION_DOCUMENT_TAG_DEPRECATED" value="false" />
     <option name="OPTION_DEPRECATED_LIST" value="false" />
     <option name="OPEN_IN_BROWSER" value="false" />
+  </component>
+  <component name="PDMPlugin">
+    <option name="customRuleSets">
+      <list>
+        <option value="$PROJECT_DIR$/conf/parabuild-pmd.xml" />
+      </list>
+    </option>
+    <option name="options">
+      <map>
+        <entry key="Encoding" value="" />
+        <entry key="Target JDK" value="1.8" />
+      </map>
+    </option>
   </component>
   <component name="Palette2">
     <group name="Swing">

@@ -242,7 +242,7 @@ final class P4IntegratedSynchronizer {
 
 
                 private Integer makeKey(final String path, final int rev) {
-                  return Integer.valueOf(29 * (path != null ? path.hashCode() : 0) + rev);
+                  return Integer.valueOf(29 * (path == null ? 0 : path.hashCode()) + rev);
                 }
 
               });

@@ -192,10 +192,10 @@ public final class OSProcess {
     int result;
     result = pid;
     result = 29 * result + ppid;
-    result = 29 * result + (name != null ? name.hashCode() : 0);
-    result = 29 * result + (user != null ? user.hashCode() : 0);
-    result = 29 * result + (path != null ? path.hashCode() : 0);
-    result = 29 * result + (commandLine != null ? commandLine.hashCode() : 0);
+    result = 29 * result + (name == null ? 0 : name.hashCode());
+    result = 29 * result + (user == null ? 0 : user.hashCode());
+    result = 29 * result + (path == null ? 0 : path.hashCode());
+    result = 29 * result + (commandLine == null ? 0 : commandLine.hashCode());
     return result;
   }
 
