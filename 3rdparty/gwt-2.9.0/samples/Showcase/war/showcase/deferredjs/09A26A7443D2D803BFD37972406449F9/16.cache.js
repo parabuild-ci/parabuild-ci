@@ -1,0 +1,1 @@
+$wnd.showcase.runAsyncCallback16("function IXb(){var a,b,c,d,e;b=new Dlc(4,4);d=b.g;c=b.f;for(e=0;e<d;e++){for(a=0;a<c;a++){_kc(b,e,a,new mbc((NHb(),DHb)))}}Tkc(b,'cwGrid');return b}\nHDb(468,1,wSc);_.Ec=function NXb(){XFb(this.a,IXb())};ZOc(Fl)(16);\n//# sourceURL=showcase-16.js\n")
