@@ -329,7 +329,7 @@ final class EmailNotificationManager implements NotificationManager, CommonConst
   public void sendUserPassword(final String userName, final String newPassword) {
     try {
       final User user = SecurityManager.getInstance().getUserByName(userName);
-      if (user == nullOSProcess) {
+      if (user == null) {
         log.warn("Could not send notification to user \"" + user + "\" - user does not exist");
       } else {
         // compose subject
