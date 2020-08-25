@@ -116,7 +116,7 @@ commons-io-2.2.jar		commons-logging-1.1.3.jar	javassist-3.11.0.GA.jar		struts2-c
   <property name="sitemesh.jar" value="${3rdparty}/sitemesh/sitemesh-2.4.2.jar"/>
 
   <!-- GWT -->
-  <property name="gwt.sdk" location="${3rdparty}/gwt-2.8.2"/>
+  <property name="gwt.sdk" location="${3rdparty}/gwt-2.9.0"/>
   <property name="gwt-servlet.jar" value="${gwt.sdk}/gwt-servlet.jar"/>
   <property name="gwt-servlet-deps.jar" value="${gwt.sdk}/gwt-servlet-deps.jar"/>
   <property name="gwt-user.jar" value="${gwt.sdk}/gwt-user.jar"/>
