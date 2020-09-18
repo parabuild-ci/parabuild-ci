@@ -142,6 +142,29 @@
     <option name="NEW_SESSION_BEAN_LAST_PACKAGE" value="" />
   </component>
   <component name="EjbManager" enabled="false" />
+  <component name="EntryPointsManager">
+    <entry_points version="2.0">
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.webui.agent.status.AgentEnvironmentPage LOG" />
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.webui.agent.status.AgentStatus LOG" />
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.webui.agent.status.AgentStatusChartServlet LOG" />
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.webui.agent.status.AgentStatusesPage LOG" />
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.webui.agent.status.AgentStatusesTable LOG" />
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.webui.agent.status.AgentStatusPanel LOG" />
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.webui.tail.TailService log" />
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.statistics.AbstractStatsUpdater log" />
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.statistics.AbstractTestStatsUpdater log" />
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.statistics.CompositePersistentStatsUpdater log" />
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.statistics.DailyTestStatsUpdater log" />
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.statistics.StatisticsManagerImpl log" />
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.statistics.StatisticsUtils log" />
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.statistics.YearlyBuildStatsUpdater log" />
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.statistics.YearlyTestStatsUpdater log" />
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.search.LuceneDocumentFactory log" />
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.search.SearchManager log" />
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.archive.internal.AbstractArchiveRetentionHandler log" />
+      <entry_point TYPE="field" FQNAME="org.parabuild.ci.archive.internal.ArchiveManagerImpl LOG" />
+    </entry_points>
+  </component>
   <component name="ExportToHTMLSettings">
     <option name="PRINT_LINE_NUMBERS" value="false" />
     <option name="OPEN_IN_BROWSER" value="false" />
@@ -374,13 +397,14 @@
       <inspection_tool class="MultipleDeclaration" enabled="true" level="WARNING" enabled_by_default="true">
         <option name="ignoreForLoopDeclarations" value="true" />
       </inspection_tool>
-      <inspection_tool class="MultipleVariablesInDeclaration" enabled="true" level="WARNING" enabled_by_default="true" />
+      <inspection_tool class="MultipleVariablesInDeclaration" enabled="false" level="WARNING" enabled_by_default="false" />
       <inspection_tool class="NakedNotify" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="NegatedIfElse" enabled="true" level="WARNING" enabled_by_default="true">
         <option name="m_ignoreNegatedNullComparison" value="true" />
         <option name="m_ignoreNegatedZeroComparison" value="false" />
       </inspection_tool>
       <inspection_tool class="NestedSynchronizedStatement" enabled="true" level="WARNING" enabled_by_default="true" />
+      <inspection_tool class="NonFinalUtilityClass" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="NonSerializableFieldInSerializableClass" enabled="true" level="WARNING" enabled_by_default="true">
         <option name="ignorableAnnotations">
           <value />
@@ -481,6 +505,7 @@
         <option name="m_ignorePrimitives" value="false" />
       </inspection_tool>
       <inspection_tool class="StringBufferMustHaveInitialCapacity" enabled="true" level="WARNING" enabled_by_default="true" />
+      <inspection_tool class="StringBufferReplaceableByString" enabled="false" level="WARNING" enabled_by_default="false" />
       <inspection_tool class="StringBufferToStringInConcatenation" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="StringConcatenationInMessageFormatCall" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="StringEqualsEmptyString" enabled="true" level="WARNING" enabled_by_default="true" />
@@ -507,6 +532,7 @@
       <inspection_tool class="ThrowCaughtLocally" enabled="true" level="WARNING" enabled_by_default="true">
         <option name="ignoreRethrownExceptions" value="true" />
       </inspection_tool>
+      <inspection_tool class="ThrowsRuntimeException" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="TooBroadScope" enabled="true" level="WARNING" enabled_by_default="true">
         <option name="m_allowConstructorAsInitializer" value="false" />
         <option name="m_onlyLookAtBlocks" value="true" />
@@ -518,6 +544,7 @@
       <inspection_tool class="UnconditionalWait" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="UnnecessaryBoxing" enabled="false" level="WARNING" enabled_by_default="false" />
       <inspection_tool class="UnnecessaryConstantArrayCreationExpression" enabled="true" level="WARNING" enabled_by_default="true" />
+      <inspection_tool class="UnnecessaryConstructor" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="UnnecessaryFullyQualifiedName" enabled="true" level="WARNING" enabled_by_default="true">
         <option name="m_ignoreJavadoc" value="false" />
         <option name="ignoreInModuleStatements" value="true" />
@@ -529,6 +556,7 @@
       </inspection_tool>
       <inspection_tool class="UnusedImport" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="UseOfPropertiesAsHashtable" enabled="true" level="WARNING" enabled_by_default="true" />
+      <inspection_tool class="UtilityClassWithPublicConstructor" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="VolatileArrayField" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="VolatileLongOrDoubleField" enabled="true" level="WARNING" enabled_by_default="true" />
       <inspection_tool class="WaitCalledOnCondition" enabled="true" level="WARNING" enabled_by_default="true" />
