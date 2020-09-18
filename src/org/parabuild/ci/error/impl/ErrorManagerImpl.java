@@ -55,7 +55,7 @@ public final class ErrorManagerImpl implements ErrorManager {
   private static final String ERROR_FILE_EXTENSION = ".error";
 
 
-  private static volatile int errorCounter;
+  private static volatile int errorCounter = 0;
   private boolean notificationEnabled = true;
 
 
