@@ -160,11 +160,7 @@ commons-io-2.2.jar		commons-logging-1.1.3.jar	javassist-3.11.0.GA.jar		struts2-c
     <pathelement path="${smtp.jar}"/>
     <pathelement path="${struts2-core-2.5.16.jar}"/>
     <pathelement path="${viewtier.jar}"/>
-    <!-- Not found: -->
-    <!--<pathelement path="${xerces.jar}"/>-->
-    <!--<pathelement path="${xmlapis.jar}"/>-->
-    <!--<pathelement path="${jmx.jar}"/>-->
-
+    <!-- GWT -->
     <pathelement path="${gwt-user.jar}"/>
     <pathelement path="${gwt-validation-api.jar}"/>
     <pathelement path="${gwt-validation-api-sources.jar}"/>
