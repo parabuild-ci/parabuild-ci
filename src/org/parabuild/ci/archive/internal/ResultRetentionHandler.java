@@ -96,7 +96,7 @@ public final class ResultRetentionHandler extends AbstractArchiveRetentionHandle
           final File fileToDelete = new File(buildLogDir, fileName);
           if (fileToDelete.exists()) {
 
-            System.out.println("Deleting fileToDelete: " + fileToDelete);
+            LOG.debug("Deleting fileToDelete: " + fileToDelete);
             IoUtils.deleteFileHard(fileToDelete);
           } else {
 
