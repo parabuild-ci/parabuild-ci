@@ -54,8 +54,8 @@ public final class DocumentationLinksPage extends BasePage implements StatelessT
     lstDocs.add(lnkAdminManual);
 
     final CommonLink lnkAPIManual = new CommonLink("Parabuild Web Service API Manual", HREF_API_MANUAL_HTML);
-    lnkAdminManual.setTarget("_blank");
-    lstDocs.add(lnkAdminManual);
+    lnkAPIManual.setTarget("_blank");
+    lstDocs.add(lnkAPIManual);
 
     final CommonLink lnkUserManual = new CommonLink("Parabuild User's Manual", HREF_USER_MANUAL);
     lnkUserManual.setTarget("_blank");
