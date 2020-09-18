@@ -62,11 +62,21 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    */
   private static final Object LOCK = new Object();
 
+  /**
+   * Zip file extension.
+   */
+  private static final String DOT_ZIP = ".zip";
+
   private static int logFileStepSource;
+
   private static int resultFileStepSource;
+
   private final ConfigurationManager cm = ConfigurationManager.getInstance();
+
   private final File buildLogDir;
+
   private final File buildResultDir;
+
   private final int activeBuildID;
 
 
@@ -92,6 +102,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * fileName.
    */
   public File fileNameToLogPath(final String fileName) throws IOException {
+
     return new File(getBuildLogDir(), fileName);
   }
 
@@ -104,6 +115,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * given fileName.
    */
   public File fileNameToResultPath(final String archiveFileName) throws IOException {
+
     return new File(getBuildResultDir(), archiveFileName);
   }
 
@@ -115,6 +127,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * @param sequence the build step to generate the new log name for.
    */
   public String makeNewStepLogFileName(final BuildSequence sequence) {
+
     synchronized (LOCK) {
       logFileStepSource++;
       return getBuildLogPrefix() + 's' + sequence.getSequenceID()
@@ -131,6 +144,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * name.
    */
   public String makeNewLogFileNameOnly() {
+
     synchronized (LOCK) {
       logFileStepSource++;
       return getBuildLogPrefix()
@@ -147,6 +161,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * name.
    */
   public String makeNewResultFileNameOnly() {
+
     synchronized (LOCK) {
       resultFileStepSource++;
       return getBuildResultPrefix()
@@ -185,6 +200,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * @param stepLog StepLog to delete.
    */
   public void deleteLog(final StepLog stepLog) throws IOException {
+
     IoUtils.deleteFileHard(getDeletablePath(getArchivedLogHome(stepLog)));
   }
 
@@ -196,6 +212,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * @param stepResult StepResult to delete.
    */
   public void deleteResult(final StepResult stepResult) throws IOException {
+
     IoUtils.deleteFileHard(getDeletablePath(getArchivedResultHome(stepResult)));
     cm.deleteObject(stepResult);
   }
@@ -223,6 +240,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * @return fully qualified path to an archived log.
    */
   public File getArchivedLogHome(final StepLog stepLog) throws IOException {
+
     return fileNameToLogPath(stepLog.getArchiveFileName());
   }
 
@@ -234,6 +252,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * @return fully qualified path to an archived result.
    */
   public File getArchivedResultHome(final StepResult stepResult) throws IOException {
+
     return fileNameToResultPath(stepResult.getArchiveFileName());
   }
 
@@ -244,6 +263,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * the build results to.
    */
   public File getResultDir() throws IOException {
+
     return getBuildResultDir();
   }
 
@@ -252,6 +272,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * Returns build log prefix
    */
   public String getBuildLogPrefix() {
+
     return 'b' + Integer.toString(activeBuildID);
   }
 
@@ -271,6 +292,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * the build log to.
    */
   public File getBuildLogDir() throws IOException {
+
     IoUtils.createDirs(buildLogDir);
     return buildLogDir;
   }
@@ -286,6 +308,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    *                                  single-file log.
    */
   public InputStream getArchivedLogInputStream(final StepLog stepLog) throws IOException {
+
     final byte pathType = stepLog.getPathType();
     if (pathType == StepLog.PATH_TYPE_HTML_FILE
             || pathType == StepLog.PATH_TYPE_JUNIT_XML
@@ -310,7 +333,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
         return new FileInputStream(archivedLogHome);
       } else {
         // didn't find, try packed.
-        final File zippedLogHome = new File(archivedLogHome.getPath() + ".zip");
+        final File zippedLogHome = new File(archivedLogHome.getPath() + DOT_ZIP);
         if (zippedLogHome.exists()) {
           return new PackedLogInputStream(zippedLogHome, archivedLogHome.getName());
         } else {
@@ -334,6 +357,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    *                                  multifile log.
    */
   public InputStream getArchivedLogInputStream(final StepLog stepLog, final String inArchiveFileName) throws IOException {
+
     final byte pathType = stepLog.getPathType();
     if (pathType == StepLog.PATH_TYPE_HTML_DIR
             || pathType == StepLog.PATH_TYPE_HTML_FILE
@@ -358,6 +382,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    *                                  single-file log.
    */
   public InputStream getArchivedResultInputStream(final StepResult stepResult) throws IOException {
+
     if (stepResult.getPathType() == StepResult.PATH_TYPE_SINGLE_FILE) {
       // get entry name
       final List entries = getArchivedResultEntries(stepResult);
@@ -385,6 +410,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    *                                  multifile log.
    */
   public InputStream getArchivedResultInputStream(final StepResult stepResult, final String inArchiveFileName) throws IOException {
+
     return getArchivedEntityInputStream(getArchivedResultHome(stepResult), inArchiveFileName);
   }
 
@@ -393,6 +419,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * Helper method.
    */
   private static InputStream throwIllegalPathType(final StepResult stepResult) {
+
     throw new IllegalArgumentException("Can not get result for type "
             + stepResult.getPathType() + ". Result path:" + stepResult.getPath());
   }
@@ -407,6 +434,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * @throws FileNotFoundException if the give archive entity doesn't exist.
    */
   private static InputStream getArchivedEntityInputStream(final File archivedEntityHome, final String inArchiveFileName) throws IOException {
+
     if (archivedEntityHome.exists()) {
       // file exists return normal InputStream
       final File file = new File(archivedEntityHome, inArchiveFileName);
@@ -416,7 +444,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
       return new FileInputStream(file);
     } else {
       // didn't find, try packed.
-      final File zippedLogHome = new File(archivedEntityHome.getPath() + ".zip");
+      final File zippedLogHome = new File(archivedEntityHome.getPath() + DOT_ZIP);
       if (zippedLogHome.exists()) {
         return new PackedLogInputStream(zippedLogHome, inArchiveFileName);
       } else {
@@ -435,6 +463,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * @return list of {@link ArchiveEntry} constituting an archive dir.
    */
   public List getArchivedLogEntries(final StepLog stepLog) throws IOException {
+
     return getArchiveEntries(getArchivedLogHome(stepLog));
   }
 
@@ -458,6 +487,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * dir, single level.
    */
   public List getArchivedResultEntries(final StepResult stepResult) throws IOException {
+
     return getArchiveEntries(getArchivedResultHome(stepResult));
   }
 
@@ -470,6 +500,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * archive dir, single level.
    */
   private static List<ArchiveEntry> getArchiveEntries(final File archivePath) throws IOException {
+
     final List<ArchiveEntry> result = new ArrayList<>(11);
     if (archivePath.exists()) {
       if (archivePath.isDirectory()) {
@@ -478,6 +509,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
         final int baseDirLength = baseDir.getCanonicalPath().length();
         IoUtils.traverseDir(baseDir, new DirectoryTraverserCallback() {
           public boolean callback(final File file) throws IOException {
+
             if (file.isFile()) {
               result.add(new ArchiveEntryImpl(file.getCanonicalPath().substring(baseDirLength + 1), file.length()));
             }
@@ -490,7 +522,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
       }
     } else {
       // didn't find, try packed.
-      final File zippedLogHome = new File(archivePath.getPath() + ".zip");
+      final File zippedLogHome = new File(archivePath.getPath() + DOT_ZIP);
       if (zippedLogHome.exists()) {
         ZipFile zipFile = null;
         try {
@@ -524,7 +556,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
     }
 
     // didn't find, try compressed.
-    final File zippedLogHome = new File(archivedLogHome.getPath() + ".zip");
+    final File zippedLogHome = new File(archivedLogHome.getPath() + DOT_ZIP);
     if (zippedLogHome.exists()) {
       return zippedLogHome;
     }
@@ -540,6 +572,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * @param stepRun the step run to return the list of log lines for.
    */
   public List getLogWindowLines(final StepRun stepRun) {
+
     final List<String> result = new ArrayList<>(200);
     BufferedReader br = null;
     try {
@@ -577,7 +610,6 @@ public final class ArchiveManagerImpl implements ArchiveManager {
    * Deletes expired build logs it build settings explicitly
    * allow this. An expiration date is selected as a maximum of
    * build settings and system-wide minimum settings.
-   *
    */
   public void deleteExpiredBuildResults() throws IOException {
 
@@ -611,6 +643,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
 
 
   public String toString() {
+
     return "ArchiveManagerImpl{" +
             "buildLogDir=" + buildLogDir +
             ", buildResultDir=" + buildResultDir +
@@ -621,6 +654,7 @@ public final class ArchiveManagerImpl implements ArchiveManager {
 
 
   private File getBuildResultDir() throws IOException {
+
     IoUtils.createDirs(buildResultDir);
     return buildResultDir;
   }
