@@ -867,12 +867,25 @@
         <root url="jar://$PROJECT_DIR$/3rdparty/ehcache10/ehcache-1.0-src.zip!/" />
       </SOURCES>
     </library>
-    <library name="gwt-user">
+    <library name="freemarker">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.8.2/gwt-user.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/apache-freemarker-2.3.30-bin/freemarker.jar!/" />
       </CLASSES>
       <JAVADOC />
-      <SOURCES />
+      <SOURCES>
+        <root url="file://$PROJECT_DIR$/3rdparty/apache-freemarker-2.3.30-src/src/main/java" />
+        <root url="file://$PROJECT_DIR$/3rdparty/apache-freemarker-2.3.30-src/src/main/misc/identifierChars/src/main" />
+        <root url="file://$PROJECT_DIR$/3rdparty/apache-freemarker-2.3.30-src/src/test/java" />
+      </SOURCES>
+    </library>
+    <library name="gwt-user">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.9.0/gwt-user.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/3rdparty/gwt-2.9.0/gwt-user.jar!/" />
+      </SOURCES>
     </library>
     <library name="Hessian">
       <CLASSES>
@@ -987,6 +1000,13 @@
         <root url="file://$PROJECT_DIR$/3rdparty/rome08/src/java" />
       </SOURCES>
     </library>
+    <library name="Sitemesh">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/3rdparty/sitemesh/sitemesh-2.4.2.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
     <library name="Smack">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/3rdparty/smack141/smack.jar!/" />
@@ -1011,6 +1031,7 @@
     <library name="Struts 2">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.5.16/lib/struts2-core-2.5.16.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/struts-2.5.16/lib/struts2-sitemesh-plugin-2.5.16.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
