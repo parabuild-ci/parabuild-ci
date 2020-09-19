@@ -60,6 +60,7 @@
     </servlet>
 
     <servlet>
+        <!--suppress ServletWithoutMappingInspection -->
         <servlet-name>ServiceManagerServlet</servlet-name>
         <servlet-class>org.parabuild.ci.services.ServiceManagerServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
