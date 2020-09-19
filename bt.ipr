@@ -697,6 +697,24 @@
         <option name="CLASS_COUNT_TO_USE_IMPORT_ON_DEMAND" value="50" />
         <option name="NAMES_COUNT_TO_USE_IMPORT_ON_DEMAND" value="50" />
       </JavaCodeStyleSettings>
+      <JetCodeStyleSettings>
+        <option name="PACKAGES_TO_USE_STAR_IMPORTS">
+          <value>
+            <package name="java.util" alias="false" withSubpackages="false" />
+            <package name="kotlinx.android.synthetic" alias="false" withSubpackages="true" />
+            <package name="io.ktor" alias="false" withSubpackages="true" />
+          </value>
+        </option>
+        <option name="PACKAGES_IMPORT_LAYOUT">
+          <value>
+            <package name="" alias="false" withSubpackages="true" />
+            <package name="java" alias="false" withSubpackages="true" />
+            <package name="javax" alias="false" withSubpackages="true" />
+            <package name="kotlin" alias="false" withSubpackages="true" />
+            <package name="" alias="true" withSubpackages="true" />
+          </value>
+        </option>
+      </JetCodeStyleSettings>
       <XML>
         <option name="XML_ATTRIBUTE_WRAP" value="0" />
         <option name="XML_TEXT_WRAP" value="0" />
@@ -1001,12 +1019,7 @@
     </library>
     <library name="Tomcat">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/3rdparty/tomcat4131/server/lib/catalina.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/tomcat4131/server/lib/mx4j-jmx.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/tomcat4131/common/lib/servlet.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/tomcat4131/server/lib/servlets-manager.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/tomcat4131/common/lib/naming-resources.jar!/" />
-        <root url="jar://$PROJECT_DIR$/3rdparty/tomcat4131/server/lib/servlets-common.jar!/" />
+        <root url="jar://$PROJECT_DIR$/3rdparty/apache-tomcat-8.5.15/lib/servlet-api.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
