@@ -807,6 +807,9 @@
       </value>
     </option>
   </component>
+  <component name="SqlDialectMappings">
+    <file url="PROJECT" dialect="HSQLDB" />
+  </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
   </component>
