@@ -4,9 +4,9 @@
 
   <constant name="struts.enable.SlashesInActionNames" value="true"/>
   <constant name="struts.action.excludePattern" value=".*\.css, .*\.png, .*\.js, .*\.ico, .*\.jpg, /parabuild/.*\.htm, .*ServletRedirector.*, /server/service/.*, /repository/service/.*"/>
-  <constant name="struts.action.extension" value=""/>
-  <constant name="struts.devMode" value="true"/>
+  <constant name="struts.action.extension" value="jspa"/>
   <constant name="exception.logEnabled" value="true"/>
+  <constant name="struts.devMode" value="true"/>
 
   <!--
 
