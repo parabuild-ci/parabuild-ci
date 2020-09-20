@@ -424,12 +424,6 @@ commons-io-2.2.jar		commons-logging-1.1.3.jar	javassist-3.11.0.GA.jar		struts2-c
   </target>
 
 
-  <!-- Build agent manager -->
-  <target name="manager">
-    <ant antfile="build-manager.xml" inheritall="true" inheritrefs="true"/>
-  </target>
-
-
   <target name="docs" depends="init">
     <ant antfile="build-docs.xml" inheritall="true" inheritrefs="true"/>
   </target>
@@ -613,7 +607,6 @@ commons-io-2.2.jar		commons-logging-1.1.3.jar	javassist-3.11.0.GA.jar		struts2-c
   </target>
 
 
-
   <target name="test.css" description="Packages test css html with parabuild-ci.css and stores under temp" depends="init">
     <property name="test.css.dir" value="${build.dir}/test/css"/>
     <mkdir dir="${test.css.dir}"/>
@@ -691,4 +684,43 @@ commons-io-2.2.jar		commons-logging-1.1.3.jar	javassist-3.11.0.GA.jar		struts2-c
     </jar>
   </target>
 
+  <!-- ********************************************************************************** -->
+  <!-- Build agent manager                                                                -->
+  <!-- ********************************************************************************** -->
+
+  <property name="manager.staging" value="${build.dir}/manager_staging"/>
+  <property name="manager.classes.dir" value="${manager.staging}/classes"/>
+  <property name="manager.war.staging" value="${build.dir}/staging_manager_war"/>
+
+
+  <target name="manager" depends="manager.war"/>
+
+  <target name="manager.prepare">
+    <mkdir dir="${manager.classes.dir}"/>
+  </target>
+
+
+  <target name="manager.compile" depends="manager.prepare">
+    <javac destdir="${manager.classes.dir}" includes="org/parabuild/ci/manager/server/**.java" debug="on" includeantruntime="false">
+      <compilerarg value="-proc:none"/>
+      <classpath>
+        <pathelement path="${commons-logging.jar}"/>
+        <fileset dir="${tomcat.home}/lib"/>
+      </classpath>
+      <src path="${src}"/>
+    </javac>
+  </target>
+
+  <target name="manager.jar" depends="manager.compile">
+    <mkdir dir="${manager.war.staging}/WEB-INF/lib"/>
+    <jar destfile="${manager.war.staging}/WEB-INF/lib/parabuild-manager.jar" compress="false" update="true">
+      <fileset dir="${manager.classes.dir}"/>
+    </jar>
+  </target>
+
+  <target name="manager.war" depends="manager.jar">
+    <mkdir dir="${build.dir.tomcat}/etc/app"/>
+    <copy file="${config}/manager-web.xml" tofile="${manager.war.staging}/WEB-INF/web.xml"/>
+    <zip destfile="${build.dir.tomcat}/etc/app/parabuild-manager.war" basedir="${manager.war.staging}" update="true" compress="false"/>
+  </target>
 </project>
