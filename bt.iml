@@ -207,12 +207,12 @@
     <orderEntry type="library" name="junit" level="project" />
     <orderEntry type="library" name="mockito-all-1.8.5" level="project" />
     <orderEntry type="library" name="Freemarker" level="project" />
-    <orderEntry type="library" name="dwr" level="project" />
     <orderEntry type="library" name="gwt-user" level="project" />
     <orderEntry type="library" name="sources" level="project" />
     <orderEntry type="library" name="Struts 2" level="project" />
     <orderEntry type="library" name="Sitemesh" level="project" />
     <orderEntry type="library" name="freemarker" level="project" />
+    <orderEntry type="library" name="DWR" level="project" />
   </component>
   <component name="org.twodividedbyzero.idea.findbugs">
     <option name="_basePreferences">

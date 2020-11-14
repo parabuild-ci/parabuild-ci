@@ -856,6 +856,15 @@
         <root url="file://$PROJECT_DIR$/3rdparty/concurrent134/src" />
       </SOURCES>
     </library>
+    <library name="DWR">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/3rdparty/dwr-2.0.1/dwr.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="file://$PROJECT_DIR$/3rdparty/dwr-2.0.1/src/javadoc" />
+      </JAVADOC>
+      <SOURCES />
+    </library>
     <library name="Ehcahe">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/3rdparty/ehcache10/ehcache-1.0.jar!/" />
