@@ -14,4 +14,7 @@ public interface VersionControlUIConstants {
   String CAPTION_GIT_REPOSITORY = "Git repository:";
   String CAPTION_GIT_BRANCH = "Git branch:";
   String CAPTION_GIT_SETTINGS = "Git Settings";
+
+  String DEFAULT_UNIX_GIT_COMMAND = "/usr/bin/git";
+  String[] VALID_GIT_URL_PROTOCOLS = {"ssh://", "git://", "http://", "https://", "file://"};
 }

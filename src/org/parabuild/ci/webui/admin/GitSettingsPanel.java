@@ -45,6 +45,8 @@ import static org.parabuild.ci.common.VersionControlUIConstants.CAPTION_GIT_BRAN
 import static org.parabuild.ci.common.VersionControlUIConstants.CAPTION_GIT_DEPOT_PATH;
 import static org.parabuild.ci.common.VersionControlUIConstants.CAPTION_GIT_PATH_TO_EXE;
 import static org.parabuild.ci.common.VersionControlUIConstants.CAPTION_GIT_REPOSITORY;
+import static org.parabuild.ci.common.VersionControlUIConstants.DEFAULT_UNIX_GIT_COMMAND;
+import static org.parabuild.ci.common.VersionControlUIConstants.VALID_GIT_URL_PROTOCOLS;
 
 /**
  *
@@ -53,9 +55,7 @@ public final class GitSettingsPanel extends AbstractSourceControlPanel {
 
   private static final long serialVersionUID = 0L; // NOPMD
 
-  private static final String[] VALID_GIT_URL_PROTOCOLS = {"ssh://", "git://", "http://", "https://", "file://"};
   private static final String INVALID_PROTOCOL_MSG = makeInvalidProtocolMessage();
-  public static final String DEFAULT_UNIX_GIT_COMMAND = "/usr/bin/git";
 
 
   // captions
